@@ -662,4 +662,23 @@
         top: 57px;
         padding: 16px 0 12px;
       }
+   .hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-card {
+  max-width: 720px;   /* ensures the card content is a single aligned column */
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  width: 100%;
+}
+
+.main-input {
+  display: block;
+  width: 100%;
+  margin: 0 auto;     /* keeps it centered if any width changes later */
+}       
     }
