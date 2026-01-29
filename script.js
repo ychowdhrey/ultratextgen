@@ -1,4 +1,3 @@
- <script>
     // ===================
     // DATA: Text Styles
     // ===================
@@ -469,4 +468,3 @@
     // ===================
     renderDecorations();
     renderResults();
-  </script>
