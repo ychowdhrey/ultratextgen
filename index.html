@@ -1,11 +1,1332 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>UltraTextGen</title>
-  </head>
-  <body>
-    <h1>UltraTextGen is live</h1>
-    <p>Fancy text generator</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UltraTextGen – Fast Text Styles That Work Everywhere</title>
+  <meta name="description" content="Text styles for social, bios, usernames, and posts. Generate stylish Unicode text instantly for Instagram, TikTok, X, WhatsApp, and Discord.">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-base: #F8F9FB;
+      --bg-white: #FFFFFF;
+      --text-primary: #1a1a2e;
+      --text-secondary: #64748b;
+      --text-muted: #94a3b8;
+      --accent-purple: #8b5cf6;
+      --accent-blue: #3b82f6;
+      --border-light: #e2e8f0;
+      --shadow-soft: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+      --shadow-hover: 0 4px 20px rgba(0,0,0,0.08);
+      --radius: 12px;
+      --radius-lg: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    body.dark-mode {
+      --bg-base: #0f172a;
+      --bg-white: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border-light: #334155;
+      --shadow-soft: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 100;
+      padding: 12px 24px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .search-bar {
+      flex: 1;
+      max-width: 480px;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px 16px 10px 40px;
+      border: 1px solid var(--border-light);
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+
+    .search-bar svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      width: 16px;
+      height: 16px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-btn {
+      padding: 8px 12px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-btn:hover {
+      background: var(--bg-base);
+      color: var(--text-primary);
+    }
+
+    .header-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 48px 24px 32px;
+      background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(59, 130, 246, 0.02) 100%);
+    }
+
+    .hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+    }
+
+    .hero-headline {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .main-input {
+      width: 100%;
+      min-height: 100px;
+      padding: 16px;
+      border: 2px solid var(--border-light);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1.125rem;
+      resize: vertical;
+      outline: none;
+      transition: all 0.2s;
+      background: var(--bg-white);
+      color: var(--text-primary);
+    }
+
+    .main-input:focus {
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.08);
+    }
+
+    .main-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .char-count {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Platform Pills */
+    .platform-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+
+    .platform-pill {
+      padding: 6px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: 50px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-white);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .platform-pill:hover,
+    .platform-pill.active {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    /* Decoration Selector */
+    .decoration-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .decoration-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .decoration-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .decoration-tab {
+      padding: 6px 12px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-white);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .decoration-tab:hover,
+    .decoration-tab.active {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    .decoration-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+
+    .decoration-item {
+      padding: 6px 12px;
+      background: var(--bg-base);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .decoration-item:hover {
+      border-color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    .decoration-item.selected {
+      border-color: var(--accent-purple);
+      background: var(--accent-purple);
+      color: white;
+    }
+
+    .clear-decoration {
+      padding: 6px 12px;
+      background: transparent;
+      border: 1px dashed var(--border-light);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .clear-decoration:hover {
+      border-color: var(--text-muted);
+      color: var(--text-secondary);
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Category Tabs */
+    .category-section {
+      padding: 24px 0 16px;
+      position: sticky;
+      top: 57px;
+      background: var(--bg-base);
+      z-index: 50;
+    }
+
+    .category-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-tab {
+      padding: 10px 20px;
+      border: 1px solid var(--border-light);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-white);
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .category-tab:hover {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+    }
+
+    .category-tab.active {
+      background: var(--accent-purple);
+      border-color: var(--accent-purple);
+      color: white;
+    }
+
+    /* Results Grid */
+    .results-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 32px;
+    }
+
+    .style-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+
+    .style-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+
+    .style-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .style-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .style-tag {
+      font-size: 0.625rem;
+      padding: 2px 6px;
+      background: rgba(139, 92, 246, 0.1);
+      color: var(--accent-purple);
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .style-preview {
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    .style-preview.placeholder {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .style-decoration {
+      margin-top: 6px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      opacity: 0.8;
+    }
+
+    .copy-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: var(--bg-white);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-purple);
+      border-color: var(--accent-purple);
+      color: white;
+    }
+
+    .copy-btn.copied {
+      background: #10b981;
+      border-color: #10b981;
+      color: white;
+    }
+
+    .copy-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Sponsored Card */
+    .sponsored-card {
+      background: var(--bg-base);
+      border: 1px dashed var(--border-light);
+    }
+
+    .sponsored-label {
+      font-size: 0.625rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Ad Block */
+    .ad-block {
+      margin: 24px 0;
+      padding: 48px 24px;
+      background: var(--bg-base);
+      border: 1px dashed var(--border-light);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .ad-block-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Compatibility Notice */
+    .compat-notice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(139, 92, 246, 0.05);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .compat-notice svg {
+      width: 16px;
+      height: 16px;
+      color: var(--accent-purple);
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 48px;
+      padding: 48px 24px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-bottom: 32px;
+    }
+
+    .footer-link {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-purple);
+    }
+
+    .faq-section {
+      margin-top: 32px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 16px 0;
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding-bottom: 16px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-wrap: wrap;
+      }
+
+      .search-bar {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .header-btn span {
+        display: none;
+      }
+
+      .hero-card {
+        padding: 24px 16px;
+      }
+
+      .hero-headline {
+        font-size: 1.25rem;
+      }
+
+      .style-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .copy-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .category-section {
+        top: 57px;
+        padding: 16px 0 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">U</span>
+        <span>UltraTextGen</span>
+      </a>
+      
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search styles, emojis, symbols...">
+      </div>
+      
+      <div class="header-actions">
+        <button class="header-btn" id="historyBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>History</span>
+        </button>
+        <button class="header-btn" id="favoritesBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span>Favorites</span>
+        </button>
+        <button class="header-btn" id="darkModeBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1 class="hero-headline">Stylish text that works everywhere.</h1>
+        <div class="input-wrapper">
+          <textarea 
+            class="main-input" 
+            id="mainInput" 
+            placeholder="Type your text here..."
+            maxlength="500"
+          ></textarea>
+          <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+        
+        <!-- Platform Pills -->
+        <div class="platform-pills">
+          <span class="platform-pill active" data-platform="all">All</span>
+          <span class="platform-pill" data-platform="instagram">Instagram</span>
+          <span class="platform-pill" data-platform="tiktok">TikTok</span>
+          <span class="platform-pill" data-platform="x">X</span>
+          <span class="platform-pill" data-platform="whatsapp">WhatsApp</span>
+          <span class="platform-pill" data-platform="discord">Discord</span>
+        </div>
+
+        <!-- Decoration Selector -->
+        <div class="decoration-section">
+          <div class="decoration-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            Add decoration to results
+          </div>
+          <div class="decoration-tabs">
+            <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
+            <button class="decoration-tab" data-deco-tab="emojis">Emoji Combos</button>
+            <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
+          </div>
+          <div class="decoration-grid" id="decorationGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Category Tabs -->
+    <div class="category-section">
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="all">All</button>
+        <button class="category-tab" data-category="cool">✦ Cool</button>
+        <button class="category-tab" data-category="fancy">✧ Fancy</button>
+        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
+        <button class="category-tab" data-category="bold">𝗕 Bold</button>
+        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
+        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
+        <button class="category-tab" data-category="special">⚡ Special</button>
+      </div>
+    </div>
+
+    <!-- Compatibility Notice -->
+    <div class="compat-notice" id="compatNotice" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span id="compatText">Showing styles optimized for Instagram</span>
+    </div>
+
+    <!-- Results -->
+    <div class="results-grid" id="resultsGrid"></div>
+
+    <!-- Secondary Ad Block -->
+    <div class="ad-block">
+      <span class="ad-block-label">Advertisement</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="#" class="footer-link">Bold Text Generator</a>
+        <a href="#" class="footer-link">Cursive Text Generator</a>
+        <a href="#" class="footer-link">Aesthetic Text Generator</a>
+        <a href="#" class="footer-link">Discord Text Generator</a>
+        <a href="#" class="footer-link">Instagram Bio Text</a>
+        <a href="#" class="footer-link">Strikethrough Generator</a>
+        <a href="#" class="footer-link">Small Text Generator</a>
+        <a href="#" class="footer-link">Fancy Fonts</a>
+      </div>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <button class="faq-question">
+            What is UltraTextGen?
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            UltraTextGen is a free online tool that converts your regular text into stylish Unicode text that works on all social media platforms. The converted text uses special Unicode characters that look like different fonts but are actually just text, so they work everywhere – Instagram, TikTok, X (Twitter), WhatsApp, Discord, and more.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I use the generated text?
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Simply type or paste your text in the input box above. The styled versions appear instantly below. Click the "Copy" button next to any style you like, then paste it wherever you want – your bio, posts, messages, usernames, or anywhere else that accepts text.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Why doesn't the text work on some platforms?
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            While Unicode text works on most platforms, some apps or websites may not fully support all Unicode characters. If certain characters appear as boxes or question marks, try a different style. Use the platform filter to see styles that work best for your chosen platform.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is UltraTextGen free?
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Yes! UltraTextGen is completely free to use with no limits. We display some ads to keep the site running, but there are no paywalls or premium features.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 UltraTextGen. Fast text styles that work everywhere.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===================
+    // DATA: Text Styles
+    // ===================
+    const textStyles = {
+      'Ultra Bold': {
+        upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
+        lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
+        nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+        category: 'bold',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Bold Serif': {
+        upper: '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙',
+        lower: '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',
+        nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
+        category: 'bold',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Bold Italic': {
+        upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕',
+        lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
+        nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+        category: 'bold',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Italic': {
+        upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',
+        lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
+        nums: '0123456789',
+        category: 'fancy',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Italic Serif': {
+        upper: '𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍',
+        lower: '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧',
+        nums: '0123456789',
+        category: 'fancy',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Script': {
+        upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',
+        lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
+        nums: '0123456789',
+        category: 'cursive',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Script Bold': {
+        upper: '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',
+        lower: '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃',
+        nums: '0123456789',
+        category: 'cursive',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+      },
+      'Ultra Gothic': {
+        upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',
+        lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
+        nums: '0123456789',
+        category: 'gothic',
+        platforms: ['all', 'instagram', 'x', 'discord']
+      },
+      'Ultra Gothic Bold': {
+        upper: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
+        lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
+        nums: '0123456789',
+        category: 'gothic',
+        platforms: ['all', 'instagram', 'x', 'discord']
+      },
+      'Ultra Bubble': {
+        upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
+        lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
+        nums: '⓪①②③④⑤⑥⑦⑧⑨',
+        category: 'bubble',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Bubble Filled': {
+        upper: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
+        lower: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
+        nums: '⓿❶❷❸❹❺❻❼❽❾',
+        category: 'bubble',
+        platforms: ['all', 'instagram', 'discord']
+      },
+      'Ultra Square': {
+        upper: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
+        lower: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
+        nums: '0123456789',
+        category: 'cool',
+        platforms: ['all', 'instagram', 'discord']
+      },
+      'Ultra Square Filled': {
+        upper: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
+        lower: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
+        nums: '0123456789',
+        category: 'cool',
+        platforms: ['all', 'instagram', 'discord']
+      },
+      'Ultra Mono': {
+        upper: '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉',
+        lower: '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣',
+        nums: '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿',
+        category: 'cool',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Double': {
+        upper: '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ',
+        lower: '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫',
+        nums: '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡',
+        category: 'cool',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+      },
+      'Ultra Wide': {
+        upper: 'ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ',
+        lower: 'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ',
+        nums: '０１２３４５６７８９',
+        category: 'fancy',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Small Caps': {
+        upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        lower: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ',
+        nums: '0123456789',
+        category: 'fancy',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Tiny': {
+        upper: 'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ',
+        lower: 'ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ',
+        nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
+        category: 'special',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Flip': {
+        upper: '∀qƆpƎℲפHIſʞ˥WNOԀQɹS┴∩ΛMX⅄Z',
+        lower: 'ɐqɔpǝɟƃɥıɾʞlɯuodbɹsʇnʌʍxʎz',
+        nums: '0ƖᄅƐㄣϛ9ㄥ86',
+        category: 'special',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+      },
+      'Ultra Strike': {
+        decorator: (text) => [...text].map(c => c + '\u0336').join(''),
+        category: 'special',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Underline': {
+        decorator: (text) => [...text].map(c => c + '\u0332').join(''),
+        category: 'special',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+      },
+      'Ultra Wavy': {
+        decorator: (text) => [...text].map((c, i) => c + (i % 2 === 0 ? '\u0303' : '')).join(''),
+        category: 'special',
+        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+      },
+      'Ultra Slash': {
+        decorator: (text) => [...text].map(c => c + '\u0338').join(''),
+        category: 'special',
+        platforms: ['all', 'x', 'discord']
+      }
+    };
+
+    // ===================
+    // DATA: Decorations
+    // ===================
+    const decorations = {
+      symbols: [
+        { text: '✦ text ✦', prefix: '✦ ', suffix: ' ✦' },
+        { text: '★ text ★', prefix: '★ ', suffix: ' ★' },
+        { text: '◆ text ◆', prefix: '◆ ', suffix: ' ◆' },
+        { text: '● text ●', prefix: '● ', suffix: ' ●' },
+        { text: '♠ text ♠', prefix: '♠ ', suffix: ' ♠' },
+        { text: '♦ text ♦', prefix: '♦ ', suffix: ' ♦' },
+        { text: '→ text ←', prefix: '→ ', suffix: ' ←' },
+        { text: '⚡ text ⚡', prefix: '⚡ ', suffix: ' ⚡' },
+        { text: '✿ text ✿', prefix: '✿ ', suffix: ' ✿' },
+        { text: '☾ text ☽', prefix: '☾ ', suffix: ' ☽' },
+        { text: '「 text 」', prefix: '「 ', suffix: ' 」' },
+        { text: '【 text 】', prefix: '【 ', suffix: ' 】' },
+        { text: '『 text 』', prefix: '『 ', suffix: ' 』' },
+        { text: '〖 text 〗', prefix: '〖 ', suffix: ' 〗' }
+      ],
+      emojis: [
+        { text: '✨ text ✨', prefix: '✨ ', suffix: ' ✨' },
+        { text: '🔥 text 🔥', prefix: '🔥 ', suffix: ' 🔥' },
+        { text: '💫 text 💫', prefix: '💫 ', suffix: ' 💫' },
+        { text: '⭐ text ⭐', prefix: '⭐ ', suffix: ' ⭐' },
+        { text: '💖 text 💖', prefix: '💖 ', suffix: ' 💖' },
+        { text: '🌟 text 🌟', prefix: '🌟 ', suffix: ' 🌟' },
+        { text: '🦋 text 🦋', prefix: '🦋 ', suffix: ' 🦋' },
+        { text: '🌸 text 🌸', prefix: '🌸 ', suffix: ' 🌸' },
+        { text: '💎 text 💎', prefix: '💎 ', suffix: ' 💎' },
+        { text: '🎀 text 🎀', prefix: '🎀 ', suffix: ' 🎀' },
+        { text: '🌈 text 🌈', prefix: '🌈 ', suffix: ' 🌈' },
+        { text: '👑 text 👑', prefix: '👑 ', suffix: ' 👑' }
+      ],
+      dividers: [
+        { text: '═══ text ═══', prefix: '═══ ', suffix: ' ═══' },
+        { text: '━━━ text ━━━', prefix: '━━━ ', suffix: ' ━━━' },
+        { text: '─── text ───', prefix: '─── ', suffix: ' ───' },
+        { text: '••• text •••', prefix: '••• ', suffix: ' •••' },
+        { text: '┊ text ┊', prefix: '┊ ', suffix: ' ┊' },
+        { text: '╔ text ╗', prefix: '╔ ', suffix: ' ╗' },
+        { text: '▸ text ◂', prefix: '▸ ', suffix: ' ◂' },
+        { text: '◈ text ◈', prefix: '◈ ', suffix: ' ◈' }
+      ]
+    };
+
+    // ===================
+    // STATE
+    // ===================
+    let currentPlatform = 'all';
+    let currentCategory = 'all';
+    let currentDecoTab = 'symbols';
+    let selectedDecoration = null;
+    let searchQuery = '';
+
+    const normalUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const normalLower = 'abcdefghijklmnopqrstuvwxyz';
+    const normalNums = '0123456789';
+
+    // ===================
+    // FUNCTIONS
+    // ===================
+    function convertText(text, style) {
+      if (style.decorator) {
+        return style.decorator(text);
+      }
+      
+      const upperArr = [...style.upper];
+      const lowerArr = [...style.lower];
+      const numsArr = [...style.nums];
+      
+      return [...text].map(char => {
+        const upperIdx = normalUpper.indexOf(char);
+        if (upperIdx !== -1) return upperArr[upperIdx] || char;
+        
+        const lowerIdx = normalLower.indexOf(char);
+        if (lowerIdx !== -1) return lowerArr[lowerIdx] || char;
+        
+        const numIdx = normalNums.indexOf(char);
+        if (numIdx !== -1) return numsArr[numIdx] || char;
+        
+        return char;
+      }).join('');
+    }
+
+    function applyDecoration(text) {
+      if (!selectedDecoration || !text) return text;
+      return selectedDecoration.prefix + text + selectedDecoration.suffix;
+    }
+
+    function createStyleCard(name, convertedText, decoratedText, isSponsored = false) {
+      const card = document.createElement('div');
+      card.className = 'style-card' + (isSponsored ? ' sponsored-card' : '');
+      
+      const fullText = decoratedText || convertedText;
+      const safeText = fullText.replace(/"/g, '&quot;');
+      
+      let decoHtml = '';
+      if (selectedDecoration && convertedText) {
+        decoHtml = `<div class="style-decoration">${decoratedText}</div>`;
+      }
+      
+      card.innerHTML = `
+        <div class="style-info">
+          <p class="style-name">
+            ${name}
+            ${isSponsored ? '<span class="sponsored-label">Sponsored</span>' : ''}
+          </p>
+          <p class="style-preview ${!convertedText ? 'placeholder' : ''}">${convertedText || 'Type something above...'}</p>
+          ${decoHtml}
+        </div>
+        <button class="copy-btn" data-text="${safeText}" ${!fullText ? 'disabled' : ''}>Copy</button>
+      `;
+      
+      return card;
+    }
+
+    function renderDecorations() {
+      const grid = document.getElementById('decorationGrid');
+      grid.innerHTML = '';
+      
+      // Clear button
+      const clearBtn = document.createElement('span');
+      clearBtn.className = 'clear-decoration';
+      clearBtn.textContent = '✕ None';
+      clearBtn.addEventListener('click', () => {
+        selectedDecoration = null;
+        document.querySelectorAll('.decoration-item').forEach(i => i.classList.remove('selected'));
+        renderResults();
+      });
+      grid.appendChild(clearBtn);
+      
+      // Decoration items
+      decorations[currentDecoTab].forEach(deco => {
+        const item = document.createElement('span');
+        item.className = 'decoration-item';
+        if (selectedDecoration && selectedDecoration.text === deco.text) {
+          item.classList.add('selected');
+        }
+        item.textContent = deco.text;
+        item.addEventListener('click', () => {
+          if (selectedDecoration && selectedDecoration.text === deco.text) {
+            selectedDecoration = null;
+            item.classList.remove('selected');
+          } else {
+            selectedDecoration = deco;
+            document.querySelectorAll('.decoration-item').forEach(i => i.classList.remove('selected'));
+            item.classList.add('selected');
+          }
+          renderResults();
+        });
+        grid.appendChild(item);
+      });
+    }
+
+    function renderResults() {
+      const grid = document.getElementById('resultsGrid');
+      const inputText = document.getElementById('mainInput').value;
+      const compatNotice = document.getElementById('compatNotice');
+      const compatText = document.getElementById('compatText');
+      
+      grid.innerHTML = '';
+      
+      // Show/hide compatibility notice
+      if (currentPlatform !== 'all') {
+        compatNotice.style.display = 'flex';
+        const platformNames = {
+          instagram: 'Instagram',
+          tiktok: 'TikTok',
+          x: 'X (Twitter)',
+          whatsapp: 'WhatsApp',
+          discord: 'Discord'
+        };
+        compatText.textContent = `Showing styles optimized for ${platformNames[currentPlatform]}`;
+      } else {
+        compatNotice.style.display = 'none';
+      }
+      
+      // Filter styles
+      const filteredStyles = Object.entries(textStyles).filter(([name, style]) => {
+        // Platform filter
+        if (!style.platforms.includes(currentPlatform)) return false;
+        
+        // Category filter
+        if (currentCategory !== 'all' && style.category !== currentCategory) return false;
+        
+        // Search filter
+        if (searchQuery && !name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+        
+        return true;
+      });
+      
+      // Render styles with ads
+      let count = 0;
+      filteredStyles.forEach(([name, style]) => {
+        const converted = inputText ? convertText(inputText, style) : '';
+        const decorated = inputText ? applyDecoration(converted) : '';
+        
+        grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null));
+        count++;
+        
+        // Insert ad every 8 styles
+        if (count % 8 === 0) {
+          const adCard = document.createElement('div');
+          adCard.className = 'style-card sponsored-card';
+          adCard.innerHTML = `
+            <div class="style-info">
+              <p class="style-name"><span class="sponsored-label">Sponsored</span></p>
+              <p class="style-preview placeholder">Ad content here</p>
+            </div>
+          `;
+          grid.appendChild(adCard);
+        }
+      });
+      
+      // No results message
+      if (filteredStyles.length === 0) {
+        grid.innerHTML = `
+          <div class="style-card">
+            <div class="style-info">
+              <p class="style-preview placeholder">No styles found. Try a different filter or search term.</p>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // ===================
+    // EVENT LISTENERS
+    // ===================
+    
+    // Main input
+    const mainInput = document.getElementById('mainInput');
+    const charCount = document.getElementById('charCount');
+    
+    mainInput.addEventListener('input', () => {
+      charCount.textContent = mainInput.value.length;
+      renderResults();
+    });
+    
+    // Search input
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderResults();
+    });
+    
+    // Platform pills
+    document.querySelectorAll('.platform-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.platform-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentPlatform = pill.dataset.platform;
+        renderResults();
+      });
+    });
+    
+    // Category tabs
+    document.querySelectorAll('.category-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentCategory = tab.dataset.category;
+        renderResults();
+      });
+    });
+    
+    // Decoration tabs
+    document.querySelectorAll('.decoration-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.decoration-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentDecoTab = tab.dataset.decoTab;
+        renderDecorations();
+      });
+    });
+    
+    // Dark mode
+    document.getElementById('darkModeBtn').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+    
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+    
+    // Copy buttons (event delegation)
+    document.addEventListener('click', async (e) => {
+      if (e.target.classList.contains('copy-btn') && !e.target.disabled) {
+        const text = e.target.dataset.text;
+        try {
+          await navigator.clipboard.writeText(text);
+          e.target.textContent = '✓ Copied';
+          e.target.classList.add('copied');
+          setTimeout(() => {
+            e.target.textContent = 'Copy';
+            e.target.classList.remove('copied');
+          }, 1500);
+        } catch (err) {
+          console.error('Copy failed:', err);
+        }
+      }
+    });
+    
+    // ===================
+    // INITIALIZE
+    // ===================
+    renderDecorations();
+    renderResults();
+  </script>
+</body>
 </html>
