@@ -93,8 +93,6 @@ const textStyles = {
     lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
     nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
     type: 'map',
-
-
     category: 'bold',
 
     familySlug: 'bold-italic',
@@ -137,8 +135,6 @@ const textStyles = {
     lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
     nums: '0123456789',
    type: 'map',
-
-
     category: 'fancy',
 
     familySlug: 'bold-italic',
@@ -159,8 +155,6 @@ const textStyles = {
     lower: '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧',
     nums: '0123456789',
     type: 'map',
-
-
     category: 'fancy',
 
     familySlug: 'bold-italic',
@@ -181,8 +175,6 @@ const textStyles = {
     lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
     nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
    type: 'map',
-
-
     category: 'bold',
 
     familySlug: 'bold-italic',
@@ -203,8 +195,6 @@ const textStyles = {
     lower: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛',
     nums: '0123456789',
      type: 'map',
-
-
     category: 'bold',
 
     familySlug: 'bold-italic',
@@ -223,7 +213,6 @@ const textStyles = {
   'Ultra Alternating Bold': {
     type: 'procedure',
     procedureId: 'alternating-bold',
-
     category: 'bold',
 
     familySlug: 'bold-italic',
@@ -242,7 +231,6 @@ const textStyles = {
   'Ultra Alternating Italic': {
     type: 'procedure',
     procedureId: 'alternating-italic',
-
     category: 'fancy',
 
     familySlug: 'bold-italic',
@@ -261,7 +249,6 @@ const textStyles = {
   'Ultra Bold w Alternating Italic': {
     type: 'procedure',
     procedureId: 'bold-alternating-italic',
-
     category: 'bold',
 
     familySlug: 'bold-italic',
@@ -280,7 +267,6 @@ const textStyles = {
   'Ultra Italic Switch Serifs': {
     type: 'procedure',
     procedureId: 'italic-switch-serifs',
-
     category: 'fancy',
 
     familySlug: 'bold-italic',
@@ -304,8 +290,6 @@ const textStyles = {
     lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
     nums: '0123456789',
      type: 'map',
-
-
     category: 'cursive',
 
     familySlug: 'cursive',
@@ -325,7 +309,7 @@ const textStyles = {
     upper: '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',
     lower: '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃',
     nums: '0123456789',
-
+    type: 'map'
     category: 'cursive',
 
     familySlug: 'cursive',
@@ -349,7 +333,6 @@ const textStyles = {
     lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
     nums: '0123456789',
      type: 'map',
-
     category: 'gothic',
 
     familySlug: 'gothic',
@@ -370,8 +353,6 @@ const textStyles = {
     lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
     nums: '0123456789',
      type: 'map',
-
-
     category: 'gothic',
 
     familySlug: 'gothic',
@@ -395,8 +376,6 @@ const textStyles = {
     lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
     nums: '⓪①②③④⑤⑥⑦⑧⑨',
      type: 'map',
-
-
     category: 'bubble',
 
     familySlug: 'bubble',
@@ -417,8 +396,6 @@ const textStyles = {
     lower: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
     nums: '⓿❶❷❸❹❺❻❼❽❾',
      type: 'map',
-
-
     category: 'bubble',
 
     familySlug: 'bubble',
@@ -441,7 +418,7 @@ const textStyles = {
     type: 'decorator',
     decoratorId: 'strike',
     category: 'special',
-
+       
     familySlug: 'special',
     groupSlug: 'lines',
     slug: 'ultra-strike',
