@@ -1,470 +1,536 @@
-    // ===================
-    // DATA: Text Styles
-    // ===================
-    const textStyles = {
-      'Ultra Bold': {
-        upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
-        lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
-        nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
-        category: 'bold',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Bold Serif': {
-        upper: '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙',
-        lower: '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',
-        nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
-        category: 'bold',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Bold Italic': {
-        upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕',
-        lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
-        nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
-        category: 'bold',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Italic': {
-        upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',
-        lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
-        nums: '0123456789',
-        category: 'fancy',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Italic Serif': {
-        upper: '𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍',
-        lower: '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧',
-        nums: '0123456789',
-        category: 'fancy',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Script': {
-        upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',
-        lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
-        nums: '0123456789',
-        category: 'cursive',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Script Bold': {
-        upper: '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',
-        lower: '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃',
-        nums: '0123456789',
-        category: 'cursive',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
-      },
-      'Ultra Gothic': {
-        upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',
-        lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
-        nums: '0123456789',
-        category: 'gothic',
-        platforms: ['all', 'instagram', 'x', 'discord']
-      },
-      'Ultra Gothic Bold': {
-        upper: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
-        lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
-        nums: '0123456789',
-        category: 'gothic',
-        platforms: ['all', 'instagram', 'x', 'discord']
-      },
-      'Ultra Bubble': {
-        upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
-        lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
-        nums: '⓪①②③④⑤⑥⑦⑧⑨',
-        category: 'bubble',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Bubble Filled': {
-        upper: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
-        lower: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
-        nums: '⓿❶❷❸❹❺❻❼❽❾',
-        category: 'bubble',
-        platforms: ['all', 'instagram', 'discord']
-      },
-      'Ultra Square': {
-        upper: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
-        lower: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
-        nums: '0123456789',
-        category: 'cool',
-        platforms: ['all', 'instagram', 'discord']
-      },
-      'Ultra Square Filled': {
-        upper: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
-        lower: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
-        nums: '0123456789',
-        category: 'cool',
-        platforms: ['all', 'instagram', 'discord']
-      },
-      'Ultra Mono': {
-        upper: '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉',
-        lower: '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣',
-        nums: '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿',
-        category: 'cool',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Double': {
-        upper: '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ',
-        lower: '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫',
-        nums: '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡',
-        category: 'cool',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
-      },
-      'Ultra Wide': {
-        upper: 'ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ',
-        lower: 'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ',
-        nums: '０１２３４５６７８９',
-        category: 'fancy',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Small Caps': {
-        upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-        lower: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ',
-        nums: '0123456789',
-        category: 'fancy',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Tiny': {
-        upper: 'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ',
-        lower: 'ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ',
-        nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
-        category: 'special',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Flip': {
-        upper: '∀qƆpƎℲפHIſʞ˥WNOԀQɹS┴∩ΛMX⅄Z',
-        lower: 'ɐqɔpǝɟƃɥıɾʞlɯuodbɹsʇnʌʍxʎz',
-        nums: '0ƖᄅƐㄣϛ9ㄥ86',
-        category: 'special',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
-      },
-      'Ultra Strike': {
-        decorator: (text) => [...text].map(c => c + '\u0336').join(''),
-        category: 'special',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Underline': {
-        decorator: (text) => [...text].map(c => c + '\u0332').join(''),
-        category: 'special',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-      },
-      'Ultra Wavy': {
-        decorator: (text) => [...text].map((c, i) => c + (i % 2 === 0 ? '\u0303' : '')).join(''),
-        category: 'special',
-        platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
-      },
-      'Ultra Slash': {
-        decorator: (text) => [...text].map(c => c + '\u0338').join(''),
-        category: 'special',
-        platforms: ['all', 'x', 'discord']
-      }
-    };
+/* ==========================================================================
+   UltraTextGen — styles.js (Global registry)
+   Works for:
+   Homepage (overall)
+   Family category pages (/category/bold-fonts)
+   Group pages (/category/bold-fonts/bold)
+   Individual font pages (/font/ultra-bold)
+   ========================================================================== */
 
-    // ===================
-    // DATA: Decorations
-    // ===================
-    const decorations = {
-      symbols: [
-        { text: '✦ text ✦', prefix: '✦ ', suffix: ' ✦' },
-        { text: '★ text ★', prefix: '★ ', suffix: ' ★' },
-        { text: '◆ text ◆', prefix: '◆ ', suffix: ' ◆' },
-        { text: '● text ●', prefix: '● ', suffix: ' ●' },
-        { text: '♠ text ♠', prefix: '♠ ', suffix: ' ♠' },
-        { text: '♦ text ♦', prefix: '♦ ', suffix: ' ♦' },
-        { text: '→ text ←', prefix: '→ ', suffix: ' ←' },
-        { text: '⚡ text ⚡', prefix: '⚡ ', suffix: ' ⚡' },
-        { text: '✿ text ✿', prefix: '✿ ', suffix: ' ✿' },
-        { text: '☾ text ☽', prefix: '☾ ', suffix: ' ☽' },
-        { text: '「 text 」', prefix: '「 ', suffix: ' 」' },
-        { text: '【 text 】', prefix: '【 ', suffix: ' 】' },
-        { text: '『 text 』', prefix: '『 ', suffix: ' 』' },
-        { text: '〖 text 〗', prefix: '〖 ', suffix: ' 〗' }
-      ],
-      emojis: [
-        { text: '✨ text ✨', prefix: '✨ ', suffix: ' ✨' },
-        { text: '🔥 text 🔥', prefix: '🔥 ', suffix: ' 🔥' },
-        { text: '💫 text 💫', prefix: '💫 ', suffix: ' 💫' },
-        { text: '⭐ text ⭐', prefix: '⭐ ', suffix: ' ⭐' },
-        { text: '💖 text 💖', prefix: '💖 ', suffix: ' 💖' },
-        { text: '🌟 text 🌟', prefix: '🌟 ', suffix: ' 🌟' },
-        { text: '🦋 text 🦋', prefix: '🦋 ', suffix: ' 🦋' },
-        { text: '🌸 text 🌸', prefix: '🌸 ', suffix: ' 🌸' },
-        { text: '💎 text 💎', prefix: '💎 ', suffix: ' 💎' },
-        { text: '🎀 text 🎀', prefix: '🎀 ', suffix: ' 🎀' },
-        { text: '🌈 text 🌈', prefix: '🌈 ', suffix: ' 🌈' },
-        { text: '👑 text 👑', prefix: '👑 ', suffix: ' 👑' }
-      ],
-      dividers: [
-        { text: '═══ text ═══', prefix: '═══ ', suffix: ' ═══' },
-        { text: '━━━ text ━━━', prefix: '━━━ ', suffix: ' ━━━' },
-        { text: '─── text ───', prefix: '─── ', suffix: ' ───' },
-        { text: '••• text •••', prefix: '••• ', suffix: ' •••' },
-        { text: '┊ text ┊', prefix: '┊ ', suffix: ' ┊' },
-        { text: '╔ text ╗', prefix: '╔ ', suffix: ' ╗' },
-        { text: '▸ text ◂', prefix: '▸ ', suffix: ' ◂' },
-        { text: '◈ text ◈', prefix: '◈ ', suffix: ' ◈' }
-      ]
-    };
+/* -----------------------------
+   CATEGORY PAGES (Families)
+------------------------------ */
+const CATEGORY_PAGES = {
+  'bold-italic': {
+    slug: 'bold-fonts',
+    title: 'Bold & Italic Fonts',
+    description: 'Bold and italic Unicode fonts you can copy and paste.'
+  },
+  'cursive': {
+    slug: 'cursive-fonts',
+    title: 'Cursive Fonts',
+    description: 'Elegant cursive and script Unicode fonts.'
+  },
+  'gothic': {
+    slug: 'gothic-fonts',
+    title: 'Gothic Fonts',
+    description: 'Dark gothic and fraktur Unicode fonts.'
+  },
+  'bubble': {
+    slug: 'bubble-fonts',
+    title: 'Bubble Fonts',
+    description: 'Fun bubble and circle Unicode fonts.'
+  },
+  'special': {
+    slug: 'special-fonts',
+    title: 'Special Fonts',
+    description: 'Unique decorative Unicode fonts.'
+  }
+};
 
-    // ===================
-    // STATE
-    // ===================
-    let currentPlatform = 'all';
-    let currentCategory = 'all';
-    let currentDecoTab = 'symbols';
-    let selectedDecoration = null;
-    let searchQuery = '';
+/* -----------------------------
+   SITE ROUTING (Overall)
+   This is what you use for:
+   - Homepage H1/meta defaults
+   - Nav labels
+   - Canonical paths if needed
+------------------------------ */
+const SITE_PAGES = {
+  home: {
+    slug: '',
+    title: 'UltraTextGen – Fast Text Styles That Work Everywhere',
+    description: 'Text styles for social, bios, usernames, and posts. Generate stylish Unicode text instantly for Instagram, TikTok, X, WhatsApp, and Discord.'
+  },
+  categoryRoot: {
+    slug: 'category',
+    title: 'Font Categories',
+    description: 'Browse Unicode font categories and copy-paste styles.'
+  },
+  fontRoot: {
+    slug: 'font',
+    title: 'Fonts',
+    description: 'Browse individual Unicode font pages.'
+  }
+};
 
-    const normalUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const normalLower = 'abcdefghijklmnopqrstuvwxyz';
-    const normalNums = '0123456789';
+/* -----------------------------
+   HOMEPAGE TABS (Overall UI)
+   Your existing tabs map to these.
+   You can keep your current tab keys:
+   all, cool, fancy, cursive, bold, gothic, bubble, special
+------------------------------ */
+const UI_CATEGORIES = {
+  all:    { label: 'All',      icon: '' },
+  cool:   { label: 'Cool',     icon: '✦' },
+  fancy:  { label: 'Fancy',    icon: '✧' },
+  cursive:{ label: 'Cursive',  icon: '𝒞' },
+  bold:   { label: 'Bold',     icon: '𝗕' },
+  gothic: { label: 'Gothic',   icon: '𝔊' },
+  bubble: { label: 'Bubble',   icon: 'Ⓑ' },
+  special:{ label: 'Special',  icon: '⚡' }
+};
 
-    // ===================
-    // FUNCTIONS
-    // ===================
-    function convertText(text, style) {
-      if (style.decorator) {
-        return style.decorator(text);
-      }
-      
-      const upperArr = [...style.upper];
-      const lowerArr = [...style.lower];
-      const numsArr = [...style.nums];
-      
-      return [...text].map(char => {
-        const upperIdx = normalUpper.indexOf(char);
-        if (upperIdx !== -1) return upperArr[upperIdx] || char;
-        
-        const lowerIdx = normalLower.indexOf(char);
-        if (lowerIdx !== -1) return lowerArr[lowerIdx] || char;
-        
-        const numIdx = normalNums.indexOf(char);
-        if (numIdx !== -1) return numsArr[numIdx] || char;
-        
-        return char;
-      }).join('');
+/* -----------------------------
+   TEXT STYLES REGISTRY
+------------------------------ */
+const textStyles = {
+  /* =========================
+     BOLD & ITALIC FAMILY
+     ========================= */
+
+  'Ultra Bold': {
+    upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
+    lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
+    nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+
+    category: 'bold',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'bold',
+    slug: 'ultra-bold',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Bold Text Generator',
+      description: 'Convert text to bold Unicode font. Works on Instagram, TikTok, X, WhatsApp, Discord.',
+      keywords: ['bold text', 'bold font generator', 'instagram bold', 'copy paste bold']
     }
+  },
 
-    function applyDecoration(text) {
-      if (!selectedDecoration || !text) return text;
-      return selectedDecoration.prefix + text + selectedDecoration.suffix;
+  'Ultra Bold Serif': {
+    upper: '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙',
+    lower: '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',
+    nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
+
+    category: 'bold',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'bold',
+    slug: 'ultra-bold-serif',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Bold Serif Text Generator',
+      description: 'Convert text to bold serif Unicode font. Copy and paste for Instagram, TikTok, X, WhatsApp, Discord.',
+      keywords: ['bold serif', 'bold serif font', 'bold serif unicode', 'instagram bold serif']
     }
+  },
 
-    function createStyleCard(name, convertedText, decoratedText, isSponsored = false) {
-      const card = document.createElement('div');
-      card.className = 'style-card' + (isSponsored ? ' sponsored-card' : '');
-      
-      const fullText = decoratedText || convertedText;
-      const safeText = fullText.replace(/"/g, '&quot;');
-      
-      let decoHtml = '';
-      if (selectedDecoration && convertedText) {
-        decoHtml = `<div class="style-decoration">${decoratedText}</div>`;
-      }
-      
-      card.innerHTML = `
-        <div class="style-info">
-          <p class="style-name">
-            ${name}
-            ${isSponsored ? '<span class="sponsored-label">Sponsored</span>' : ''}
-          </p>
-          <p class="style-preview ${!convertedText ? 'placeholder' : ''}">${convertedText || 'Type something above...'}</p>
-          ${decoHtml}
-        </div>
-        <button class="copy-btn" data-text="${safeText}" ${!fullText ? 'disabled' : ''}>Copy</button>
-      `;
-      
-      return card;
+  'Ultra Italic': {
+    upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',
+    lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
+    nums: '0123456789',
+
+    category: 'fancy',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'italic',
+    slug: 'ultra-italic',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Italic Text Generator',
+      description: 'Convert text to italic Unicode font. Works across Instagram, TikTok, X, WhatsApp, Discord.',
+      keywords: ['italic text', 'italic font generator', 'instagram italic', 'copy paste italic']
     }
+  },
 
-    function renderDecorations() {
-      const grid = document.getElementById('decorationGrid');
-      grid.innerHTML = '';
-      
-      // Clear button
-      const clearBtn = document.createElement('span');
-      clearBtn.className = 'clear-decoration';
-      clearBtn.textContent = '✕ None';
-      clearBtn.addEventListener('click', () => {
-        selectedDecoration = null;
-        document.querySelectorAll('.decoration-item').forEach(i => i.classList.remove('selected'));
-        renderResults();
-      });
-      grid.appendChild(clearBtn);
-      
-      // Decoration items
-      decorations[currentDecoTab].forEach(deco => {
-        const item = document.createElement('span');
-        item.className = 'decoration-item';
-        if (selectedDecoration && selectedDecoration.text === deco.text) {
-          item.classList.add('selected');
-        }
-        item.textContent = deco.text;
-        item.addEventListener('click', () => {
-          if (selectedDecoration && selectedDecoration.text === deco.text) {
-            selectedDecoration = null;
-            item.classList.remove('selected');
-          } else {
-            selectedDecoration = deco;
-            document.querySelectorAll('.decoration-item').forEach(i => i.classList.remove('selected'));
-            item.classList.add('selected');
-          }
-          renderResults();
-        });
-        grid.appendChild(item);
-      });
+  'Ultra Italic Serif': {
+    upper: '𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍',
+    lower: '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧',
+    nums: '0123456789',
+
+    category: 'fancy',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'italic',
+    slug: 'ultra-italic-serif',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Italic Serif Text Generator',
+      description: 'Convert text to italic serif Unicode font. Copy and paste for social bios, posts, and usernames.',
+      keywords: ['italic serif', 'italic serif font', 'unicode italic serif', 'instagram italic serif']
     }
+  },
 
-    function renderResults() {
-      const grid = document.getElementById('resultsGrid');
-      const inputText = document.getElementById('mainInput').value;
-      const compatNotice = document.getElementById('compatNotice');
-      const compatText = document.getElementById('compatText');
-      
-      grid.innerHTML = '';
-      
-      // Show/hide compatibility notice
-      if (currentPlatform !== 'all') {
-        compatNotice.style.display = 'flex';
-        const platformNames = {
-          instagram: 'Instagram',
-          tiktok: 'TikTok',
-          x: 'X (Twitter)',
-          whatsapp: 'WhatsApp',
-          discord: 'Discord'
-        };
-        compatText.textContent = `Showing styles optimized for ${platformNames[currentPlatform]}`;
-      } else {
-        compatNotice.style.display = 'none';
-      }
-      
-      // Filter styles
-      const filteredStyles = Object.entries(textStyles).filter(([name, style]) => {
-        // Platform filter
-        if (!style.platforms.includes(currentPlatform)) return false;
-        
-        // Category filter
-        if (currentCategory !== 'all' && style.category !== currentCategory) return false;
-        
-        // Search filter
-        if (searchQuery && !name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
-        
-        return true;
-      });
-      
-      // Render styles with ads
-      let count = 0;
-      filteredStyles.forEach(([name, style]) => {
-        const converted = inputText ? convertText(inputText, style) : '';
-        const decorated = inputText ? applyDecoration(converted) : '';
-        
-        grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null));
-        count++;
-        
-        // Insert ad every 8 styles
-        if (count % 8 === 0) {
-          const adCard = document.createElement('div');
-          adCard.className = 'style-card sponsored-card';
-          adCard.innerHTML = `
-            <div class="style-info">
-              <p class="style-name"><span class="sponsored-label">Sponsored</span></p>
-              <p class="style-preview placeholder">Ad content here</p>
-            </div>
-          `;
-          grid.appendChild(adCard);
-        }
-      });
-      
-      // No results message
-      if (filteredStyles.length === 0) {
-        grid.innerHTML = `
-          <div class="style-card">
-            <div class="style-info">
-              <p class="style-preview placeholder">No styles found. Try a different filter or search term.</p>
-            </div>
-          </div>
-        `;
-      }
+  'Ultra Bold Italic': {
+    upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕',
+    lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
+    nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+
+    category: 'bold',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'bold-italic',
+    slug: 'ultra-bold-italic',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Bold Italic Text Generator',
+      description: 'Convert text to bold italic Unicode font. Great for emphasis in bios, posts, and usernames.',
+      keywords: ['bold italic', 'bold italic font', 'unicode bold italic', 'instagram bold italic']
     }
+  },
 
-    // ===================
-    // EVENT LISTENERS
-    // ===================
-    
-    // Main input
-    const mainInput = document.getElementById('mainInput');
-    const charCount = document.getElementById('charCount');
-    
-    mainInput.addEventListener('input', () => {
-      charCount.textContent = mainInput.value.length;
-      renderResults();
-    });
-    
-    // Search input
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      renderResults();
-    });
-    
-    // Platform pills
-    document.querySelectorAll('.platform-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        document.querySelectorAll('.platform-pill').forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        currentPlatform = pill.dataset.platform;
-        renderResults();
-      });
-    });
-    
-    // Category tabs
-    document.querySelectorAll('.category-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        currentCategory = tab.dataset.category;
-        renderResults();
-      });
-    });
-    
-    // Decoration tabs
-    document.querySelectorAll('.decoration-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.decoration-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        currentDecoTab = tab.dataset.decoTab;
-        renderDecorations();
-      });
-    });
-    
-    // Dark mode
-    document.getElementById('darkModeBtn').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-    
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        q.parentElement.classList.toggle('open');
-      });
-    });
-    
-    // Copy buttons (event delegation)
-    document.addEventListener('click', async (e) => {
-      if (e.target.classList.contains('copy-btn') && !e.target.disabled) {
-        const text = e.target.dataset.text;
-        try {
-          await navigator.clipboard.writeText(text);
-          e.target.textContent = '✓ Copied';
-          e.target.classList.add('copied');
-          setTimeout(() => {
-            e.target.textContent = 'Copy';
-            e.target.classList.remove('copied');
-          }, 1500);
-        } catch (err) {
-          console.error('Copy failed:', err);
-        }
-      }
-    });
-    
-    // ===================
-    // INITIALIZE
-    // ===================
-    renderDecorations();
-    renderResults();
+  'Ultra Bold Italic Serif': {
+    upper: '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁',
+    lower: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛',
+    nums: '0123456789',
+
+    category: 'bold',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'bold-italic',
+    slug: 'ultra-bold-italic-serif',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Bold Italic Serif Text Generator',
+      description: 'Convert text to bold italic serif Unicode font. Copy and paste anywhere.',
+      keywords: ['bold italic serif', 'unicode bold italic serif', 'bold italic serif font']
+    }
+  },
+
+  'Ultra Alternating Bold': {
+    type: 'procedure',
+    procedureId: 'alternating-bold',
+
+    category: 'bold',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'alternating',
+    slug: 'ultra-alternating-bold',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Alternating Bold Text Generator',
+      description: 'Alternating bold text style for usernames and bios. Copy and paste instantly.',
+      keywords: ['alternating bold', 'bold alternating text', 'instagram alternating bold']
+    }
+  },
+
+  'Ultra Alternating Italic': {
+    type: 'procedure',
+    procedureId: 'alternating-italic',
+
+    category: 'fancy',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'alternating',
+    slug: 'ultra-alternating-italic',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Alternating Italic Text Generator',
+      description: 'Alternating italic text style you can copy and paste anywhere.',
+      keywords: ['alternating italic', 'italic alternating text', 'instagram alternating italic']
+    }
+  },
+
+  'Ultra Bold w Alternating Italic': {
+    type: 'procedure',
+    procedureId: 'bold-alternating-italic',
+
+    category: 'bold',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'alternating',
+    slug: 'ultra-bold-alternating-italic',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Bold Alternating Italic Text Generator',
+      description: 'Alternate between bold and italic characters. Perfect for emphasis and style.',
+      keywords: ['bold alternating italic', 'alternate bold italic', 'unicode bold italic alternating']
+    }
+  },
+
+  'Ultra Italic Switch Serifs': {
+    type: 'procedure',
+    procedureId: 'italic-switch-serifs',
+
+    category: 'fancy',
+
+    familySlug: 'bold-italic',
+    groupSlug: 'alternating',
+    slug: 'ultra-italic-switch-serifs',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Italic Switch Serifs Text Generator',
+      description: 'Switch between italic serif and italic sans characters for a mixed style look.',
+      keywords: ['italic switch serifs', 'mixed italic serif sans', 'unicode switch serif italic']
+    }
+  },
+
+  /* =========================
+     CURSIVE
+     ========================= */
+  'Ultra Script': {
+    upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',
+    lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
+    nums: '0123456789',
+
+    category: 'cursive',
+
+    familySlug: 'cursive',
+    groupSlug: 'script',
+    slug: 'ultra-script',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Script Text Generator',
+      description: 'Convert text to elegant cursive script Unicode. Copy and paste anywhere.',
+      keywords: ['cursive text', 'script font generator', 'unicode script', 'instagram cursive']
+    }
+  },
+
+  'Ultra Script Bold': {
+    upper: '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',
+    lower: '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃',
+    nums: '0123456789',
+
+    category: 'cursive',
+
+    familySlug: 'cursive',
+    groupSlug: 'script',
+    slug: 'ultra-script-bold',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord'],
+
+    meta: {
+      title: 'Ultra Bold Script Text Generator',
+      description: 'Convert text to bold cursive script Unicode. Great for bios and titles.',
+      keywords: ['bold cursive', 'bold script', 'unicode bold script', 'instagram bold cursive']
+    }
+  },
+
+  /* =========================
+     GOTHIC
+     ========================= */
+  'Ultra Gothic': {
+    upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',
+    lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
+    nums: '0123456789',
+
+    category: 'gothic',
+
+    familySlug: 'gothic',
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic',
+
+    platforms: ['all', 'instagram', 'x', 'discord'],
+
+    meta: {
+      title: 'Ultra Gothic Text Generator',
+      description: 'Convert text to gothic fraktur Unicode font. Copy and paste instantly.',
+      keywords: ['gothic text', 'fraktur font', 'old english font', 'unicode gothic']
+    }
+  },
+
+  'Ultra Gothic Bold': {
+    upper: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
+    lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
+    nums: '0123456789',
+
+    category: 'gothic',
+
+    familySlug: 'gothic',
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-bold',
+
+    platforms: ['all', 'instagram', 'x', 'discord'],
+
+    meta: {
+      title: 'Ultra Bold Gothic Text Generator',
+      description: 'Convert text to bold gothic fraktur Unicode font. Copy and paste anywhere.',
+      keywords: ['bold gothic', 'bold fraktur', 'old english bold', 'unicode bold gothic']
+    }
+  },
+
+  /* =========================
+     BUBBLE
+     ========================= */
+  'Ultra Bubble': {
+    upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
+    lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
+    nums: '⓪①②③④⑤⑥⑦⑧⑨',
+
+    category: 'bubble',
+
+    familySlug: 'bubble',
+    groupSlug: 'circle',
+    slug: 'ultra-bubble',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Ultra Bubble Text Generator',
+      description: 'Convert text to bubble Unicode letters. Great for cute bios and usernames.',
+      keywords: ['bubble text', 'circle letters', 'bubble font generator', 'unicode bubble']
+    }
+  },
+
+  'Ultra Bubble Filled': {
+    upper: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
+    lower: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
+    nums: '⓿❶❷❸❹❺❻❼❽❾',
+
+    category: 'bubble',
+
+    familySlug: 'bubble',
+    groupSlug: 'circle',
+    slug: 'ultra-bubble-filled',
+
+    platforms: ['all', 'instagram', 'discord'],
+
+    meta: {
+      title: 'Ultra Black Bubble Text Generator',
+      description: 'Convert text to black bubble Unicode letters. Copy and paste instantly.',
+      keywords: ['black bubble text', 'filled bubble font', 'unicode black bubble', 'instagram bubble text']
+    }
+  },
+
+  /* =========================
+     SPECIAL (decorators)
+     ========================= */
+  'Ultra Strike': {
+    type: 'decorator',
+    decoratorId: 'strike',
+    category: 'special',
+
+    familySlug: 'special',
+    groupSlug: 'lines',
+    slug: 'ultra-strike',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Strikethrough Text Generator',
+      description: 'Add strikethrough to text using Unicode. Copy and paste anywhere.',
+      keywords: ['strikethrough text', 'strikeout generator', 'unicode strikethrough']
+    }
+  },
+
+  'Ultra Underline': {
+    type: 'decorator',
+    decoratorId: 'underline',
+    category: 'special',
+
+    familySlug: 'special',
+    groupSlug: 'lines',
+    slug: 'ultra-underline',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Underline Text Generator',
+      description: 'Underline text using Unicode combining characters. Copy and paste instantly.',
+      keywords: ['underline text', 'unicode underline', 'underline generator']
+    }
+  },
+
+  'Ultra Wavy': {
+    type: 'decorator',
+    decoratorId: 'wavy',
+    category: 'special',
+
+    familySlug: 'special',
+    groupSlug: 'effects',
+    slug: 'ultra-wavy',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord'],
+
+    meta: {
+      title: 'Wavy Text Generator',
+      description: 'Add a subtle wavy effect to text using Unicode. Copy and paste anywhere.',
+      keywords: ['wavy text', 'unicode wavy', 'text effect generator']
+    }
+  },
+
+  'Ultra Slash': {
+    type: 'decorator',
+    decoratorId: 'slash',
+    category: 'special',
+
+    familySlug: 'special',
+    groupSlug: 'lines',
+    slug: 'ultra-slash',
+
+    platforms: ['all', 'x', 'discord'],
+
+    meta: {
+      title: 'Slashthrough Text Generator',
+      description: 'Add a slash through your text using Unicode. Copy and paste instantly.',
+      keywords: ['slashthrough text', 'unicode slash', 'text slash generator']
+    }
+  }
+};
+
+/* -----------------------------
+   Registry Helpers (Global)
+------------------------------ */
+function getAllStyles() {
+  return Object.entries(textStyles).map(([name, style]) => ({ name, ...style }));
+}
+
+function getStyleBySlug(fontSlug) {
+  const entry = Object.entries(textStyles).find(([, style]) => style.slug === fontSlug);
+  if (!entry) return null;
+  const [name, style] = entry;
+  return { name, ...style };
+}
+
+function getFamilyByCategorySlug(categorySlug) {
+  const entry = Object.entries(CATEGORY_PAGES).find(([, fam]) => fam.slug === categorySlug);
+  if (!entry) return null;
+  const [familySlug, family] = entry;
+  return { familySlug, ...family };
+}
+
+function getStylesByFamilySlug(familySlug) {
+  return getAllStyles().filter(s => s.familySlug === familySlug);
+}
+
+function getStylesByFamilyAndGroup(familySlug, groupSlug) {
+  return getAllStyles().filter(s => s.familySlug === familySlug && s.groupSlug === groupSlug);
+}
+
+/* -----------------------------
+   Optional: expose globals explicitly
+------------------------------ */
+window.SITE_PAGES = SITE_PAGES;
+window.UI_CATEGORIES = UI_CATEGORIES;
+window.CATEGORY_PAGES = CATEGORY_PAGES;
+window.textStyles = textStyles;
+
+window.StyleRegistry = {
+  getAllStyles,
+  getStyleBySlug,
+  getFamilyByCategorySlug,
+  getStylesByFamilySlug,
+  getStylesByFamilyAndGroup
+};
+
