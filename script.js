@@ -25,7 +25,7 @@
    DATA: Decorations
    =================== */
 const decorations = {
-  symbols: [
+  Symbols: [
     { text: "★ text ★", prefix: "★ ", suffix: " ★" },
     { text: "☆ text ☆", prefix: "☆ ", suffix: " ☆" },
     { text: "✦ text ✦", prefix: "✦ ", suffix: " ✦" },
@@ -52,7 +52,7 @@ const decorations = {
     { text: "♫ text ♫", prefix: "♫ ", suffix: " ♫" },
     { text: "⚘ text ⚘", prefix: "⚘ ", suffix: " ⚘" }
   ],
-  bracketsAndFrames: [
+  Frames: [
     { text: "( text )", prefix: "( ", suffix: " )" },
     { text: "[ text ]", prefix: "[ ", suffix: " ]" },
     { text: "{ text }", prefix: "{ ", suffix: " }" },
@@ -74,7 +74,7 @@ const decorations = {
     { text: "⟮ text ⟯", prefix: "⟮ ", suffix: " ⟯" },
     { text: "⸨ text ⸩", prefix: "⸨ ", suffix: " ⸩" }
   ],
-  dividersAndSeparators: [
+  Dividers: [
     { text: "═══ text ═══", prefix: "═══ ", suffix: " ═══" },
     { text: "━━━ text ━━━", prefix: "━━━ ", suffix: " ━━━" },
     { text: "─── text ───", prefix: "─── ", suffix: " ───" },
@@ -85,49 +85,7 @@ const decorations = {
     { text: "✥ text ✥", prefix: "✥ ", suffix: " ✥" },
     { text: "❧ text ❧", prefix: "❧ ", suffix: " ❧" },
     { text: "༒ text ༒", prefix: "༒ ", suffix: " ༒" },
-    { text: "〰 text 〰", prefix: "〰 ", suffix: " 〰" }
-  ],
-  arrowsAndDirectional: [
-    { text: "← text →", prefix: "← ", suffix: " →" },
-    { text: "⇐ text ⇒", prefix: "⇐ ", suffix: " ⇒" },
-    { text: "⇚ text ⇛", prefix: "⇚ ", suffix: " ⇛" },
-    { text: "⇇ text ⇉", prefix: "⇇ ", suffix: " ⇉" },
-    { text: "↞ text ↠", prefix: "↞ ", suffix: " ↠" },
-    { text: "↢ text ↣", prefix: "↢ ", suffix: " ↣" },
-    { text: "⇜ text ⇝", prefix: "⇜ ", suffix: " ⇝" },
-    { text: "⟵ text ⟶", prefix: "⟵ ", suffix: " ⟶" },
-    { text: "⟸ text ⟹", prefix: "⟸ ", suffix: " ⟹" },
-    { text: "◄ text ►", prefix: "◄ ", suffix: " ►" },
-    { text: "◁ text ▷", prefix: "◁ ", suffix: " ▷" },
-    { text: "☚ text ☛", prefix: "☚ ", suffix: " ☛" },
-    { text: "☜ text ☞", prefix: "☜ ", suffix: " ☞" },
-    { text: "↼ text ⇀", prefix: "↼ ", suffix: " ⇀" },
-    { text: "↽ text ⇁", prefix: "↽ ", suffix: " ⇁" },
-    { text: "⮜ text ⮞", prefix: "⮜ ", suffix: " ⮞" },
-    { text: "⇤ text ⇥", prefix: "⇤ ", suffix: " ⇥" },
-    { text: "↩ text ↪", prefix: "↩ ", suffix: " ↪" },
-    { text: "↺ text ↻", prefix: "↺ ", suffix: " ↻" },
-    { text: "⥼ text ⥽", prefix: "⥼ ", suffix: " ⥽" }
-  ],
-  minimalAndAesthetic: [
-    { text: "• text •", prefix: "• ", suffix: " •" },
-    { text: "· text ·", prefix: "· ", suffix: " ·" },
-    { text: "° text °", prefix: "° ", suffix: " °" },
-    { text: "⁕ text ⁕", prefix: "⁕ ", suffix: " ⁕" },
-    { text: "† text †", prefix: "† ", suffix: " †" },
-    { text: "‡ text ‡", prefix: "‡ ", suffix: " ‡" },
-    { text: "○ text ○", prefix: "○ ", suffix: " ○" },
-    { text: "◦ text ◦", prefix: "◦ ", suffix: " ◦" },
-    { text: "＊ text ＊", prefix: "＊ ", suffix: " ＊" },
-    { text: "⁓ text ⁓", prefix: "⁓ ", suffix: " ⁓" },
-    { text: "⋆ text ⋆", prefix: "⋆ ", suffix: " ⋆" },
-    { text: "» text «", prefix: "» ", suffix: " «" },
-    { text: "› text ‹", prefix: "› ", suffix: " ‹" },
-    { text: "¤ text ¤", prefix: "¤ ", suffix: " ¤" },
-    { text: "§ text §", prefix: "§ ", suffix: " §" },
-    { text: "¶ text ¶", prefix: "¶ ", suffix: " ¶" }
-  ],
-  boxesAndLabels: [
+    { text: "〰 text 〰", prefix: "〰 ", suffix: " 〰" },
     { text: "❨ text ❩", prefix: "❨ ", suffix: " ❩" },
     { text: "❪ text ❫", prefix: "❪ ", suffix: " ❫" },
     { text: "❴ text ❵", prefix: "❴ ", suffix: " ❵" },
@@ -154,6 +112,49 @@ const decorations = {
     { text: "⦍ text ⦎", prefix: "⦍ ", suffix: " ⦎" },
     { text: "⧘ text ⧙", prefix: "⧘ ", suffix: " ⧙" },
     { text: "⧚ text ⧛", prefix: "⧚ ", suffix: " ⧛" }
+  ],
+  Arrows: [
+    { text: "← text →", prefix: "← ", suffix: " →" },
+    { text: "⇐ text ⇒", prefix: "⇐ ", suffix: " ⇒" },
+    { text: "⇚ text ⇛", prefix: "⇚ ", suffix: " ⇛" },
+    { text: "⇇ text ⇉", prefix: "⇇ ", suffix: " ⇉" },
+    { text: "↞ text ↠", prefix: "↞ ", suffix: " ↠" },
+    { text: "↢ text ↣", prefix: "↢ ", suffix: " ↣" },
+    { text: "⇜ text ⇝", prefix: "⇜ ", suffix: " ⇝" },
+    { text: "⟵ text ⟶", prefix: "⟵ ", suffix: " ⟶" },
+    { text: "⟸ text ⟹", prefix: "⟸ ", suffix: " ⟹" },
+    { text: "◄ text ►", prefix: "◄ ", suffix: " ►" },
+    { text: "◁ text ▷", prefix: "◁ ", suffix: " ▷" },
+    { text: "☚ text ☛", prefix: "☚ ", suffix: " ☛" },
+    { text: "☜ text ☞", prefix: "☜ ", suffix: " ☞" },
+    { text: "↼ text ⇀", prefix: "↼ ", suffix: " ⇀" },
+    { text: "↽ text ⇁", prefix: "↽ ", suffix: " ⇁" },
+    { text: "⮜ text ⮞", prefix: "⮜ ", suffix: " ⮞" },
+    { text: "⇤ text ⇥", prefix: "⇤ ", suffix: " ⇥" },
+    { text: "↩ text ↪", prefix: "↩ ", suffix: " ↪" },
+    { text: "↺ text ↻", prefix: "↺ ", suffix: " ↻" },
+    { text: "⥼ text ⥽", prefix: "⥼ ", suffix: " ⥽" }
+  ],
+  Minimal: [
+    { text: "• text •", prefix: "• ", suffix: " •" },
+    { text: "· text ·", prefix: "· ", suffix: " ·" },
+    { text: "° text °", prefix: "° ", suffix: " °" },
+    { text: "⁕ text ⁕", prefix: "⁕ ", suffix: " ⁕" },
+    { text: "† text †", prefix: "† ", suffix: " †" },
+    { text: "‡ text ‡", prefix: "‡ ", suffix: " ‡" },
+    { text: "○ text ○", prefix: "○ ", suffix: " ○" },
+    { text: "◦ text ◦", prefix: "◦ ", suffix: " ◦" },
+    { text: "＊ text ＊", prefix: "＊ ", suffix: " ＊" },
+    { text: "⁓ text ⁓", prefix: "⁓ ", suffix: " ⁓" },
+    { text: "⋆ text ⋆", prefix: "⋆ ", suffix: " ⋆" },
+    { text: "» text «", prefix: "» ", suffix: " «" },
+    { text: "› text ‹", prefix: "› ", suffix: " ‹" },
+    { text: "¤ text ¤", prefix: "¤ ", suffix: " ¤" },
+    { text: "§ text §", prefix: "§ ", suffix: " §" },
+    { text: "¶ text ¶", prefix: "¶ ", suffix: " ¶" }
+  ],
+  boxesAndLabels: [
+   
   ],
   emojis: [
     { text: "✨ text ✨", prefix: "✨ ", suffix: " ✨" },
