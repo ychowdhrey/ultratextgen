@@ -25,7 +25,7 @@
    DATA: Decorations
    =================== */
 const decorations = {
-  Symbols: [
+  symbols: [
     { text: "★ text ★", prefix: "★ ", suffix: " ★" },
     { text: "☆ text ☆", prefix: "☆ ", suffix: " ☆" },
     { text: "✦ text ✦", prefix: "✦ ", suffix: " ✦" },
@@ -52,7 +52,7 @@ const decorations = {
     { text: "♫ text ♫", prefix: "♫ ", suffix: " ♫" },
     { text: "⚘ text ⚘", prefix: "⚘ ", suffix: " ⚘" }
   ],
-  Frames: [
+  frames: [
     { text: "( text )", prefix: "( ", suffix: " )" },
     { text: "[ text ]", prefix: "[ ", suffix: " ]" },
     { text: "{ text }", prefix: "{ ", suffix: " }" },
@@ -74,7 +74,7 @@ const decorations = {
     { text: "⟮ text ⟯", prefix: "⟮ ", suffix: " ⟯" },
     { text: "⸨ text ⸩", prefix: "⸨ ", suffix: " ⸩" }
   ],
-  Dividers: [
+  cividers: [
     { text: "═══ text ═══", prefix: "═══ ", suffix: " ═══" },
     { text: "━━━ text ━━━", prefix: "━━━ ", suffix: " ━━━" },
     { text: "─── text ───", prefix: "─── ", suffix: " ───" },
@@ -113,7 +113,7 @@ const decorations = {
     { text: "⧘ text ⧙", prefix: "⧘ ", suffix: " ⧙" },
     { text: "⧚ text ⧛", prefix: "⧚ ", suffix: " ⧛" }
   ],
-  Arrows: [
+  arrows: [
     { text: "← text →", prefix: "← ", suffix: " →" },
     { text: "⇐ text ⇒", prefix: "⇐ ", suffix: " ⇒" },
     { text: "⇚ text ⇛", prefix: "⇚ ", suffix: " ⇛" },
@@ -135,7 +135,7 @@ const decorations = {
     { text: "↺ text ↻", prefix: "↺ ", suffix: " ↻" },
     { text: "⥼ text ⥽", prefix: "⥼ ", suffix: " ⥽" }
   ],
-  Minimal: [
+  minimal: [
     { text: "• text •", prefix: "• ", suffix: " •" },
     { text: "· text ·", prefix: "· ", suffix: " ·" },
     { text: "° text °", prefix: "° ", suffix: " °" },
@@ -152,9 +152,6 @@ const decorations = {
     { text: "¤ text ¤", prefix: "¤ ", suffix: " ¤" },
     { text: "§ text §", prefix: "§ ", suffix: " §" },
     { text: "¶ text ¶", prefix: "¶ ", suffix: " ¶" }
-  ],
-  boxesAndLabels: [
-   
   ],
   emojis: [
     { text: "✨ text ✨", prefix: "✨ ", suffix: " ✨" },
