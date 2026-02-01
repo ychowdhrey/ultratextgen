@@ -25,7 +25,7 @@
    DATA: Decorations
    =================== */
 const decorations = {
-  symbols: [
+   symbols: [
     { text: "★ text ★", prefix: "★ ", suffix: " ★" },
     { text: "☆ text ☆", prefix: "☆ ", suffix: " ☆" },
     { text: "✦ text ✦", prefix: "✦ ", suffix: " ✦" },
@@ -52,7 +52,7 @@ const decorations = {
     { text: "♫ text ♫", prefix: "♫ ", suffix: " ♫" },
     { text: "⚘ text ⚘", prefix: "⚘ ", suffix: " ⚘" }
   ],
-  frames: [
+   frames: [
     { text: "( text )", prefix: "( ", suffix: " )" },
     { text: "[ text ]", prefix: "[ ", suffix: " ]" },
     { text: "{ text }", prefix: "{ ", suffix: " }" },
@@ -74,7 +74,7 @@ const decorations = {
     { text: "⟮ text ⟯", prefix: "⟮ ", suffix: " ⟯" },
     { text: "⸨ text ⸩", prefix: "⸨ ", suffix: " ⸩" }
   ],
-  cividers: [
+   dividers: [
     { text: "═══ text ═══", prefix: "═══ ", suffix: " ═══" },
     { text: "━━━ text ━━━", prefix: "━━━ ", suffix: " ━━━" },
     { text: "─── text ───", prefix: "─── ", suffix: " ───" },
