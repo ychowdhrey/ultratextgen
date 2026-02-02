@@ -463,14 +463,8 @@ const decorations = {
         q.parentElement.classList.toggle("open");
       });
     });
-   document.addEventListener("click", async (e) => {
-     const btn =
-    e.target &&
-    e.target.classList &&
-    e.target.classList.contains("copy-btn")
-      ? e.target
-      : null;
-
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest ? e.target.closest(".copy-btn") : null;
   if (!btn || btn.disabled) return;
 
   const text = btn.dataset.text || "";
@@ -478,7 +472,6 @@ const decorations = {
   try {
     await navigator.clipboard.writeText(text);
 
-    // ✅ GA4 / GTM tracking
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "copy_text",
@@ -487,12 +480,10 @@ const decorations = {
 
     btn.textContent = "✓ Copied";
     btn.classList.add("copied");
-
     setTimeout(() => {
       btn.textContent = "Copy";
       btn.classList.remove("copied");
     }, 1500);
-
   } catch (err) {
     console.error("Copy failed:", err);
   }
