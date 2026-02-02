@@ -425,15 +425,6 @@ const decorations = {
       });
     }
 
-    $$(".platform-pill").forEach((pill) => {
-      pill.addEventListener("click", () => {
-        $$(".platform-pill").forEach((p) => p.classList.remove("active"));
-        pill.classList.add("active");
-        currentPlatform = pill.dataset.platform || "all";
-        renderResults();
-      });
-    });
-
     $$(".category-tab").forEach((tab) => {
       tab.addEventListener("click", () => {
         $$(".category-tab").forEach((t) => t.classList.remove("active"));
