@@ -205,7 +205,7 @@ const decorations = {
   /* ===================
      STATE
      =================== */
-  let currentPlatform = "all";
+  const currentPlatform = (window.UTG_PLATFORM || "all").toLowerCase();
   let currentCategory = "all";
   let currentDecoTab = "symbols";
   let selectedDecoration = null;
