@@ -463,26 +463,51 @@ const decorations = {
         q.parentElement.classList.toggle("open");
       });
     });
+   document.addEventListener("click", async (e) => {
+     const btn =
+    e.target &&
+    e.target.classList &&
+    e.target.classList.contains("copy-btn")
+      ? e.target
+      : null;
 
-    document.addEventListener("click", async (e) => {
-      const btn = e.target && e.target.classList && e.target.classList.contains("copy-btn") ? e.target : null;
-      if (!btn || btn.disabled) return;
+  if (!btn || btn.disabled) return;
 
-      const text = btn.dataset.text || "";
-      try {
-        await navigator.clipboard.writeText(text);
-        btn.textContent = "✓ Copied";
-        btn.classList.add("copied");
-        setTimeout(() => {
-          btn.textContent = "Copy";
-          btn.classList.remove("copied");
-        }, 1500);
-      } catch (err) {
-        console.error("Copy failed:", err);
-      }
+  const text = btn.dataset.text || "";
+
+  try {
+    await navigator.clipboard.writeText(text);
+
+    // ✅ GA4 / GTM tracking
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "copy_text",
+      copy_method: "button"
+    });
+
+    btn.textContent = "✓ Copied";
+    btn.classList.add("copied");
+
+    setTimeout(() => {
+      btn.textContent = "Copy";
+      btn.classList.remove("copied");
+    }, 1500);
+
+  } catch (err) {
+    console.error("Copy failed:", err);
+  }
+});
+
+document.addEventListener("copy", () => {
+  const selection = window.getSelection()?.toString();
+  if (selection && selection.length > 0) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "copy_text",
+      copy_method: "manual"
     });
   }
-
+});
   /* ===================
      INIT
      =================== */
