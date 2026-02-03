@@ -67,7 +67,7 @@ If something doesn’t help the user move faster, it doesn’t ship.
 https://ultratextgen.com
 
 
-##Platform pages :
+## Platform pages
 
 UltraTextGen includes dedicated pages for each major platform so styles render exactly as expected.
 
