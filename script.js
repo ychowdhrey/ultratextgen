@@ -382,11 +382,27 @@ const decorations = {
 
     const entries = Object.entries(stylesRegistry);
 
-    const filtered = entries.filter(([name, style]) => {
+    // Apply family/group filtering with priority logic:
+    // If UTG_GROUP is set, show only that group
+    // Else if UTG_FAMILY is set, show only that family
+    // Else show all
+    let familyGroupFiltered = entries;
+    if (currentGroup !== "all") {
+      // Group filter takes priority
+      familyGroupFiltered = entries.filter(([name, style]) => {
+        return style && isStyleInGroup(style, currentGroup);
+      });
+    } else if (currentFamily !== "all") {
+      // Family filter if no group specified
+      familyGroupFiltered = entries.filter(([name, style]) => {
+        return style && isStyleInFamily(style, currentFamily);
+      });
+    }
+
+    // Apply remaining filters
+    const filtered = familyGroupFiltered.filter(([name, style]) => {
       if (!style) return false;
       if (!isStylePlatformCompatible(style, currentPlatform)) return false;
-      if (!isStyleInFamily(style, currentFamily)) return false;
-      if (!isStyleInGroup(style, currentGroup)) return false;
       if (!isStyleInCategory(style, currentCategory)) return false;
       if (!isStyleMatchingSearch(name, searchQuery)) return false;
       return true;
