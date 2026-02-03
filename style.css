@@ -638,7 +638,11 @@
       .header-btn span {
         display: none;
       }
-
+    
+     .hero-inner {
+       max-width: 100%;
+      }
+       
       .hero-card {
         padding: 24px 16px;
       }
@@ -662,14 +666,15 @@
         top: 57px;
         padding: 16px 0 12px;
       }
+    }
+
    .hero-inner {
   max-width: 720px;
   margin: 0 auto;
 }
 
 .hero-card {
-  max-width: 720px;   /* ensures the card content is a single aligned column */
-  margin: 0 auto;
+  width: 100%;
 }
 
 .input-wrapper {
@@ -679,6 +684,4 @@
 .main-input {
   display: block;
   width: 100%;
-  margin: 0 auto;     /* keeps it centered if any width changes later */
 }       
-    }
