@@ -87,4 +87,6 @@ https://ultratextgen.com/whatsapp
 **X (Twitter):**
 https://ultratextgen.com/x
 
+## Category Pages
+
 Each platform page is optimized for compatibility and speed.
