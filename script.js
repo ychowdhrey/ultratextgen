@@ -206,6 +206,8 @@ const decorations = {
      STATE
      =================== */
   const currentPlatform = (window.UTG_PLATFORM || "all").toLowerCase();
+  const currentFamily = (window.UTG_FAMILY || "all").toLowerCase();
+  const currentGroup = (window.UTG_GROUP || "all").toLowerCase();
   let currentCategory = "all";
   let currentDecoTab = "symbols";
   let selectedDecoration = null;
@@ -258,6 +260,16 @@ const decorations = {
   function isStyleInCategory(style, categoryKey) {
     if (categoryKey === "all") return true;
     return (style.category || "") === categoryKey;
+  }
+
+  function isStyleInFamily(style, familyKey) {
+    if (!familyKey || familyKey === "all") return true;
+    return (style.familySlug || "") === familyKey;
+  }
+
+  function isStyleInGroup(style, groupKey) {
+    if (!groupKey || groupKey === "all") return true;
+    return (style.groupSlug || "") === groupKey;
   }
 
   function isStyleMatchingSearch(name, q) {
@@ -373,6 +385,8 @@ const decorations = {
     const filtered = entries.filter(([name, style]) => {
       if (!style) return false;
       if (!isStylePlatformCompatible(style, currentPlatform)) return false;
+      if (!isStyleInFamily(style, currentFamily)) return false;
+      if (!isStyleInGroup(style, currentGroup)) return false;
       if (!isStyleInCategory(style, currentCategory)) return false;
       if (!isStyleMatchingSearch(name, searchQuery)) return false;
       return true;
