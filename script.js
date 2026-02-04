@@ -209,8 +209,11 @@ const decorations = {
   const currentFamily = (window.UTG_FAMILY || "all").toLowerCase();
   const currentGroup = (window.UTG_GROUP || "all").toLowerCase();
   
+  // Category URL pattern for detecting category pages
+  const CATEGORY_URL_PATTERN = /^\/category\/([^\/]+)\/?/;
+  
   // Detect category from URL if on a category page
-  const categoryMatch = window.location.pathname.match(/^\/category\/([^\/]+)\/?/);
+  const categoryMatch = window.location.pathname.match(CATEGORY_URL_PATTERN);
   let currentCategory = categoryMatch ? categoryMatch[1] : "popular";
   
   let currentDecoTab = "symbols";
@@ -336,7 +339,7 @@ const decorations = {
     if (!tabsContainer || !fontCategories) return;
 
     // Detect category mode from URL
-    const categoryMatch = window.location.pathname.match(/^\/category\/([^\/]+)\/?/);
+    const categoryMatch = window.location.pathname.match(CATEGORY_URL_PATTERN);
     const isCategoryMode = !!categoryMatch;
     const urlCategorySlug = categoryMatch ? categoryMatch[1] : null;
 
@@ -355,8 +358,8 @@ const decorations = {
         
         if (isActive) {
           tab.classList.add("active");
-          // Active tab should not be clickable
-          tab.style.pointerEvents = "none";
+          // Active tab should not be clickable - remove href and it won't be a link
+          tab.removeAttribute("href");
         } else {
           // Other tabs navigate to their category pages
           tab.href = `/category/${key}/`;
