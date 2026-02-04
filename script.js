@@ -212,8 +212,12 @@ const decorations = {
   let currentDecoTab = "symbols";
   let selectedDecoration = null;
   let searchQuery = "";
-  let dynamicFonts = {}; // Store fonts loaded from API
+  let dynamicFonts = {}; // Store fonts loaded from API, keyed by category
   let isLoadingFonts = false;
+  
+  // Configuration
+  const API_BASE_URL = window.location.origin; // Use current origin, supports different environments
+  const DYNAMIC_CATEGORIES = ['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'];
 
   /* ===================
      ELEMENTS
@@ -261,7 +265,7 @@ const decorations = {
 
   function isStyleInCategory(style, categoryKey) {
     // For dynamic categories loaded from API
-    if (['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'].includes(categoryKey)) {
+    if (DYNAMIC_CATEGORIES.includes(categoryKey)) {
       return true; // We'll filter by loaded fonts instead
     }
     if (categoryKey === "all") return true;
@@ -328,6 +332,12 @@ const decorations = {
   async function loadFontsFromAPI(category) {
     if (isLoadingFonts) return;
     
+    // Check if fonts for this category are already cached
+    if (dynamicFonts[category]) {
+      renderResults();
+      return;
+    }
+    
     isLoadingFonts = true;
     
     try {
@@ -336,7 +346,7 @@ const decorations = {
         el.resultsGrid.innerHTML = '<div class="style-card"><div class="style-info"><p class="style-preview placeholder">Loading fonts...</p></div></div>';
       }
       
-      const response = await fetch(`http://localhost:3000/api/fonts/${category}`);
+      const response = await fetch(`${API_BASE_URL}/api/fonts/${category}`);
       
       if (!response.ok) {
         throw new Error(`Failed to load fonts: ${response.statusText}`);
@@ -348,11 +358,12 @@ const decorations = {
         throw new Error(data.message || 'Failed to load fonts');
       }
       
-      // Store loaded fonts
-      dynamicFonts = {};
+      // Cache fonts by category
+      const fontsObj = {};
       data.fonts.forEach(font => {
-        dynamicFonts[font.name] = font;
+        fontsObj[font.name] = font;
       });
+      dynamicFonts[category] = fontsObj;
       
       // Re-render with loaded fonts
       renderResults();
@@ -366,7 +377,7 @@ const decorations = {
           <div class="style-card">
             <div class="style-info">
               <p class="style-preview placeholder">
-                Failed to load fonts. Please make sure the server is running on port 3000.
+                Failed to load fonts. Please make sure the server is running.
                 <br><br>Error: ${error.message}
               </p>
             </div>
@@ -443,12 +454,12 @@ const decorations = {
     }
 
     // Use dynamic fonts if available for new categories
-    const isDynamicCategory = ['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'].includes(currentCategory);
+    const isDynamicCategory = DYNAMIC_CATEGORIES.includes(currentCategory);
     
     let entries;
-    if (isDynamicCategory && Object.keys(dynamicFonts).length > 0) {
-      // Use fonts from API
-      entries = Object.entries(dynamicFonts);
+    if (isDynamicCategory && dynamicFonts[currentCategory]) {
+      // Use fonts from API cache for this category
+      entries = Object.entries(dynamicFonts[currentCategory]);
     } else {
       // Fallback to static fonts from styles.js
       entries = Object.entries(stylesRegistry);
@@ -538,8 +549,7 @@ const decorations = {
         currentCategory = tab.dataset.category || "popular";
         
         // Load fonts from API for dynamic categories
-        const isDynamicCategory = ['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'].includes(currentCategory);
-        if (isDynamicCategory) {
+        if (DYNAMIC_CATEGORIES.includes(currentCategory)) {
           await loadFontsFromAPI(currentCategory);
         } else {
           renderResults();
