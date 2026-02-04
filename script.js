@@ -208,10 +208,12 @@ const decorations = {
   const currentPlatform = (window.UTG_PLATFORM || "all").toLowerCase();
   const currentFamily = (window.UTG_FAMILY || "all").toLowerCase();
   const currentGroup = (window.UTG_GROUP || "all").toLowerCase();
-  let currentCategory = "all";
+  let currentCategory = "popular";
   let currentDecoTab = "symbols";
   let selectedDecoration = null;
   let searchQuery = "";
+  let fontCategories = null;
+  let categoryFontMap = {};
 
   /* ===================
      ELEMENTS
@@ -257,9 +259,15 @@ const decorations = {
     return platforms.includes(platformKey);
   }
 
-  function isStyleInCategory(style, categoryKey) {
-    if (categoryKey === "all") return true;
-    return (style.category || "") === categoryKey;
+  function isStyleInCategory(name, categoryKey) {
+    // Dynamic category filtering based on fonts.json
+    if (!fontCategories || !categoryKey) return true;
+    
+    // Check if the font name is in the current category's font list
+    const categoryFonts = categoryFontMap[categoryKey];
+    if (!categoryFonts) return true;
+    
+    return categoryFonts.includes(name);
   }
 
   function isStyleInFamily(style, familyKey) {
@@ -314,6 +322,62 @@ const decorations = {
       </div>
     `;
     return adCard;
+  }
+
+  /* ===================
+     RENDER: Decorations
+     =================== */
+  function renderCategoryTabs() {
+    const tabsContainer = $("#categoryTabs");
+    if (!tabsContainer || !fontCategories) return;
+
+    tabsContainer.innerHTML = "";
+
+    // Render tabs from the loaded categories
+    Object.entries(fontCategories.categories).forEach(([key, category]) => {
+      const tab = document.createElement("button");
+      tab.className = "category-tab";
+      if (key === currentCategory) {
+        tab.classList.add("active");
+      }
+      tab.dataset.category = key;
+      tab.textContent = category.icon ? `${category.icon} ${category.label}` : category.label;
+      
+      tab.addEventListener("click", () => {
+        $$(".category-tab").forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        currentCategory = key;
+        renderResults();
+      });
+      
+      tabsContainer.appendChild(tab);
+    });
+  }
+
+  async function loadFontCategories() {
+    try {
+      const response = await fetch('/fonts.json');
+      if (!response.ok) {
+        throw new Error(`Failed to load fonts.json: ${response.statusText}`);
+      }
+      fontCategories = await response.json();
+      
+      // Build a map for quick lookup
+      Object.entries(fontCategories.categories).forEach(([key, category]) => {
+        categoryFontMap[key] = category.fonts || [];
+      });
+      
+      renderCategoryTabs();
+      renderResults();
+    } catch (error) {
+      console.error("Error loading font categories:", error);
+      // Fallback: show error message and render all fonts
+      const tabsContainer = $("#categoryTabs");
+      if (tabsContainer) {
+        tabsContainer.innerHTML = '<div style="color: var(--text-muted); padding: 10px; text-align: center;">Failed to load categories. Showing all fonts.</div>';
+      }
+      renderResults();
+    }
   }
 
   /* ===================
@@ -403,7 +467,7 @@ const decorations = {
     const filtered = familyGroupFiltered.filter(([name, style]) => {
       if (!style) return false;
       if (!isStylePlatformCompatible(style, currentPlatform)) return false;
-      if (!isStyleInCategory(style, currentCategory)) return false;
+      if (!isStyleInCategory(name, currentCategory)) return false;
       if (!isStyleMatchingSearch(name, searchQuery)) return false;
       return true;
     });
@@ -454,15 +518,6 @@ const decorations = {
         renderResults();
       });
     }
-
-    $$(".category-tab").forEach((tab) => {
-      tab.addEventListener("click", () => {
-        $$(".category-tab").forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        currentCategory = tab.dataset.category || "all";
-        renderResults();
-      });
-    });
 
     $$(".decoration-tab").forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -532,7 +587,9 @@ document.addEventListener("copy", () => {
     }
 
     renderDecorations();
-    renderResults();
+    
+    // Load font categories and render tabs
+    loadFontCategories();
   }
 
   if (document.readyState === "loading") {
