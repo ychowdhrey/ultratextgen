@@ -358,8 +358,7 @@ const decorations = {
         
         if (isActive) {
           tab.classList.add("active");
-          // Active tab should not be clickable - remove href and it won't be a link
-          tab.removeAttribute("href");
+          // Active tab should not be clickable - don't set href
         } else {
           // Other tabs navigate to their category pages
           tab.href = `/category/${key}/`;
