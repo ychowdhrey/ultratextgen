@@ -199,20 +199,23 @@ const fontsByCategory = {
 app.get('/api/fonts/:category', (req, res) => {
   const category = req.params.category.toLowerCase();
   
+  // Sanitize category parameter (allow only alphanumeric and hyphens)
+  const sanitizedCategory = category.replace(/[^a-z0-9-]/g, '');
+  
   // Check if category exists
-  if (!fontsByCategory[category]) {
+  if (!fontsByCategory[sanitizedCategory]) {
     return res.status(404).json({
       success: false,
       error: 'Category not found',
-      message: `The category "${category}" does not exist. Valid categories are: ${Object.keys(fontsByCategory).join(', ')}`
+      message: `The category does not exist. Valid categories are: ${Object.keys(fontsByCategory).join(', ')}`
     });
   }
   
   // Return fonts for the category
   res.json({
     success: true,
-    category: category,
-    fonts: fontsByCategory[category]
+    category: sanitizedCategory,
+    fonts: fontsByCategory[sanitizedCategory]
   });
 });
 
