@@ -212,12 +212,8 @@ const decorations = {
   let currentDecoTab = "symbols";
   let selectedDecoration = null;
   let searchQuery = "";
-  let dynamicFonts = {}; // Store fonts loaded from API, keyed by category
-  let isLoadingFonts = false;
-  
-  // Configuration
-  const API_BASE_URL = window.location.origin; // Use current origin, supports different environments
-  const DYNAMIC_CATEGORIES = ['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'];
+  let fontCategories = null;
+  let categoryFontMap = {};
 
   /* ===================
      ELEMENTS
@@ -263,13 +259,15 @@ const decorations = {
     return platforms.includes(platformKey);
   }
 
-  function isStyleInCategory(style, categoryKey) {
-    // For dynamic categories loaded from API
-    if (DYNAMIC_CATEGORIES.includes(categoryKey)) {
-      return true; // We'll filter by loaded fonts instead
-    }
-    if (categoryKey === "all") return true;
-    return (style.category || "") === categoryKey;
+  function isStyleInCategory(name, categoryKey) {
+    // Dynamic category filtering based on fonts.json
+    if (!fontCategories || !categoryKey) return true;
+    
+    // Check if the font name is in the current category's font list
+    const categoryFonts = categoryFontMap[categoryKey];
+    if (!categoryFonts) return true;
+    
+    return categoryFonts.includes(name);
   }
 
   function isStyleInFamily(style, familyKey) {
@@ -324,69 +322,6 @@ const decorations = {
       </div>
     `;
     return adCard;
-  }
-
-  /* ===================
-     API: Load Fonts
-     =================== */
-  async function loadFontsFromAPI(category) {
-    if (isLoadingFonts) return;
-    
-    // Check if fonts for this category are already cached
-    if (dynamicFonts[category]) {
-      renderResults();
-      return;
-    }
-    
-    isLoadingFonts = true;
-    
-    try {
-      // Show loading state
-      if (el.resultsGrid) {
-        el.resultsGrid.innerHTML = '<div class="style-card"><div class="style-info"><p class="style-preview placeholder">Loading fonts...</p></div></div>';
-      }
-      
-      const response = await fetch(`${API_BASE_URL}/api/fonts/${category}`);
-      
-      if (!response.ok) {
-        throw new Error(`Failed to load fonts: ${response.statusText}`);
-      }
-      
-      const data = await response.json();
-      
-      if (!data.success) {
-        throw new Error(data.message || 'Failed to load fonts');
-      }
-      
-      // Cache fonts by category
-      const fontsObj = {};
-      data.fonts.forEach(font => {
-        fontsObj[font.name] = font;
-      });
-      dynamicFonts[category] = fontsObj;
-      
-      // Re-render with loaded fonts
-      renderResults();
-      
-    } catch (error) {
-      console.error('Error loading fonts:', error);
-      
-      // Show error message
-      if (el.resultsGrid) {
-        el.resultsGrid.innerHTML = `
-          <div class="style-card">
-            <div class="style-info">
-              <p class="style-preview placeholder">
-                Failed to load fonts. Please make sure the server is running.
-                <br><br>Error: ${error.message}
-              </p>
-            </div>
-          </div>
-        `;
-      }
-    } finally {
-      isLoadingFonts = false;
-    }
   }
 
   /* ===================
@@ -509,44 +444,30 @@ const decorations = {
       }
     }
 
-    // Use dynamic fonts if available for new categories
-    const isDynamicCategory = DYNAMIC_CATEGORIES.includes(currentCategory);
-    
-    let entries;
-    if (isDynamicCategory && dynamicFonts[currentCategory]) {
-      // Use fonts from API cache for this category
-      entries = Object.entries(dynamicFonts[currentCategory]);
-    } else {
-      // Fallback to static fonts from styles.js
-      entries = Object.entries(stylesRegistry);
-    }
+    const entries = Object.entries(stylesRegistry);
 
     // Apply family/group filtering with priority logic:
     // If UTG_GROUP is set, show only that group
     // Else if UTG_FAMILY is set, show only that family
     // Else show all
     let familyGroupFiltered = entries;
-    if (!isDynamicCategory) {
-      if (currentGroup !== "all") {
-        // Group filter takes priority
-        familyGroupFiltered = entries.filter(([name, style]) => {
-          return style && isStyleInGroup(style, currentGroup);
-        });
-      } else if (currentFamily !== "all") {
-        // Family filter if no group specified
-        familyGroupFiltered = entries.filter(([name, style]) => {
-          return style && isStyleInFamily(style, currentFamily);
-        });
-      }
+    if (currentGroup !== "all") {
+      // Group filter takes priority
+      familyGroupFiltered = entries.filter(([name, style]) => {
+        return style && isStyleInGroup(style, currentGroup);
+      });
+    } else if (currentFamily !== "all") {
+      // Family filter if no group specified
+      familyGroupFiltered = entries.filter(([name, style]) => {
+        return style && isStyleInFamily(style, currentFamily);
+      });
     }
 
     // Apply remaining filters
     const filtered = familyGroupFiltered.filter(([name, style]) => {
       if (!style) return false;
-      if (!isDynamicCategory) {
-        if (!isStylePlatformCompatible(style, currentPlatform)) return false;
-        if (!isStyleInCategory(style, currentCategory)) return false;
-      }
+      if (!isStylePlatformCompatible(style, currentPlatform)) return false;
+      if (!isStyleInCategory(name, currentCategory)) return false;
       if (!isStyleMatchingSearch(name, searchQuery)) return false;
       return true;
     });
@@ -597,21 +518,6 @@ const decorations = {
         renderResults();
       });
     }
-
-    $$(".category-tab").forEach((tab) => {
-      tab.addEventListener("click", async () => {
-        $$(".category-tab").forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        currentCategory = tab.dataset.category || "popular";
-        
-        // Load fonts from API for dynamic categories
-        if (DYNAMIC_CATEGORIES.includes(currentCategory)) {
-          await loadFontsFromAPI(currentCategory);
-        } else {
-          renderResults();
-        }
-      });
-    });
 
     $$(".decoration-tab").forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -682,8 +588,8 @@ document.addEventListener("copy", () => {
 
     renderDecorations();
     
-    // Load default category (Popular) on page load
-    loadFontsFromAPI(currentCategory);
+    // Load font categories and render tabs
+    loadFontCategories();
   }
 
   if (document.readyState === "loading") {
