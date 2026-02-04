@@ -208,10 +208,12 @@ const decorations = {
   const currentPlatform = (window.UTG_PLATFORM || "all").toLowerCase();
   const currentFamily = (window.UTG_FAMILY || "all").toLowerCase();
   const currentGroup = (window.UTG_GROUP || "all").toLowerCase();
-  let currentCategory = "all";
+  let currentCategory = "popular";
   let currentDecoTab = "symbols";
   let selectedDecoration = null;
   let searchQuery = "";
+  let dynamicFonts = {}; // Store fonts loaded from API
+  let isLoadingFonts = false;
 
   /* ===================
      ELEMENTS
@@ -258,6 +260,10 @@ const decorations = {
   }
 
   function isStyleInCategory(style, categoryKey) {
+    // For dynamic categories loaded from API
+    if (['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'].includes(categoryKey)) {
+      return true; // We'll filter by loaded fonts instead
+    }
     if (categoryKey === "all") return true;
     return (style.category || "") === categoryKey;
   }
@@ -314,6 +320,62 @@ const decorations = {
       </div>
     `;
     return adCard;
+  }
+
+  /* ===================
+     API: Load Fonts
+     =================== */
+  async function loadFontsFromAPI(category) {
+    if (isLoadingFonts) return;
+    
+    isLoadingFonts = true;
+    
+    try {
+      // Show loading state
+      if (el.resultsGrid) {
+        el.resultsGrid.innerHTML = '<div class="style-card"><div class="style-info"><p class="style-preview placeholder">Loading fonts...</p></div></div>';
+      }
+      
+      const response = await fetch(`http://localhost:3000/api/fonts/${category}`);
+      
+      if (!response.ok) {
+        throw new Error(`Failed to load fonts: ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      
+      if (!data.success) {
+        throw new Error(data.message || 'Failed to load fonts');
+      }
+      
+      // Store loaded fonts
+      dynamicFonts = {};
+      data.fonts.forEach(font => {
+        dynamicFonts[font.name] = font;
+      });
+      
+      // Re-render with loaded fonts
+      renderResults();
+      
+    } catch (error) {
+      console.error('Error loading fonts:', error);
+      
+      // Show error message
+      if (el.resultsGrid) {
+        el.resultsGrid.innerHTML = `
+          <div class="style-card">
+            <div class="style-info">
+              <p class="style-preview placeholder">
+                Failed to load fonts. Please make sure the server is running on port 3000.
+                <br><br>Error: ${error.message}
+              </p>
+            </div>
+          </div>
+        `;
+      }
+    } finally {
+      isLoadingFonts = false;
+    }
   }
 
   /* ===================
@@ -380,30 +442,44 @@ const decorations = {
       }
     }
 
-    const entries = Object.entries(stylesRegistry);
+    // Use dynamic fonts if available for new categories
+    const isDynamicCategory = ['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'].includes(currentCategory);
+    
+    let entries;
+    if (isDynamicCategory && Object.keys(dynamicFonts).length > 0) {
+      // Use fonts from API
+      entries = Object.entries(dynamicFonts);
+    } else {
+      // Fallback to static fonts from styles.js
+      entries = Object.entries(stylesRegistry);
+    }
 
     // Apply family/group filtering with priority logic:
     // If UTG_GROUP is set, show only that group
     // Else if UTG_FAMILY is set, show only that family
     // Else show all
     let familyGroupFiltered = entries;
-    if (currentGroup !== "all") {
-      // Group filter takes priority
-      familyGroupFiltered = entries.filter(([name, style]) => {
-        return style && isStyleInGroup(style, currentGroup);
-      });
-    } else if (currentFamily !== "all") {
-      // Family filter if no group specified
-      familyGroupFiltered = entries.filter(([name, style]) => {
-        return style && isStyleInFamily(style, currentFamily);
-      });
+    if (!isDynamicCategory) {
+      if (currentGroup !== "all") {
+        // Group filter takes priority
+        familyGroupFiltered = entries.filter(([name, style]) => {
+          return style && isStyleInGroup(style, currentGroup);
+        });
+      } else if (currentFamily !== "all") {
+        // Family filter if no group specified
+        familyGroupFiltered = entries.filter(([name, style]) => {
+          return style && isStyleInFamily(style, currentFamily);
+        });
+      }
     }
 
     // Apply remaining filters
     const filtered = familyGroupFiltered.filter(([name, style]) => {
       if (!style) return false;
-      if (!isStylePlatformCompatible(style, currentPlatform)) return false;
-      if (!isStyleInCategory(style, currentCategory)) return false;
+      if (!isDynamicCategory) {
+        if (!isStylePlatformCompatible(style, currentPlatform)) return false;
+        if (!isStyleInCategory(style, currentCategory)) return false;
+      }
       if (!isStyleMatchingSearch(name, searchQuery)) return false;
       return true;
     });
@@ -456,11 +532,18 @@ const decorations = {
     }
 
     $$(".category-tab").forEach((tab) => {
-      tab.addEventListener("click", () => {
+      tab.addEventListener("click", async () => {
         $$(".category-tab").forEach((t) => t.classList.remove("active"));
         tab.classList.add("active");
-        currentCategory = tab.dataset.category || "all";
-        renderResults();
+        currentCategory = tab.dataset.category || "popular";
+        
+        // Load fonts from API for dynamic categories
+        const isDynamicCategory = ['popular', 'bold-fonts', 'bubble-fonts', 'cursive-fonts', 'gothic-fonts', 'special-fonts'].includes(currentCategory);
+        if (isDynamicCategory) {
+          await loadFontsFromAPI(currentCategory);
+        } else {
+          renderResults();
+        }
       });
     });
 
@@ -532,7 +615,9 @@ document.addEventListener("copy", () => {
     }
 
     renderDecorations();
-    renderResults();
+    
+    // Load default category (Popular) on page load
+    loadFontsFromAPI(currentCategory);
   }
 
   if (document.readyState === "loading") {
