@@ -392,6 +392,62 @@ const decorations = {
   /* ===================
      RENDER: Decorations
      =================== */
+  function renderCategoryTabs() {
+    const tabsContainer = $("#categoryTabs");
+    if (!tabsContainer || !fontCategories) return;
+
+    tabsContainer.innerHTML = "";
+
+    // Render tabs from the loaded categories
+    Object.entries(fontCategories.categories).forEach(([key, category]) => {
+      const tab = document.createElement("button");
+      tab.className = "category-tab";
+      if (key === currentCategory) {
+        tab.classList.add("active");
+      }
+      tab.dataset.category = key;
+      tab.textContent = category.icon ? `${category.icon} ${category.label}` : category.label;
+      
+      tab.addEventListener("click", () => {
+        $$(".category-tab").forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        currentCategory = key;
+        renderResults();
+      });
+      
+      tabsContainer.appendChild(tab);
+    });
+  }
+
+  async function loadFontCategories() {
+    try {
+      const response = await fetch('/fonts.json');
+      if (!response.ok) {
+        throw new Error(`Failed to load fonts.json: ${response.statusText}`);
+      }
+      fontCategories = await response.json();
+      
+      // Build a map for quick lookup
+      Object.entries(fontCategories.categories).forEach(([key, category]) => {
+        categoryFontMap[key] = category.fonts || [];
+      });
+      
+      renderCategoryTabs();
+      renderResults();
+    } catch (error) {
+      console.error("Error loading font categories:", error);
+      // Fallback: show error message and render all fonts
+      const tabsContainer = $("#categoryTabs");
+      if (tabsContainer) {
+        tabsContainer.innerHTML = '<div style="color: var(--text-muted); padding: 10px; text-align: center;">Failed to load categories. Showing all fonts.</div>';
+      }
+      renderResults();
+    }
+  }
+
+  /* ===================
+     RENDER: Decorations
+     =================== */
   function renderDecorations() {
     if (!el.decorationGrid) return;
 
