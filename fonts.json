@@ -1,0 +1,67 @@
+{
+  "categories": {
+    "popular": {
+      "label": "Popular",
+      "icon": "⭐",
+      "fonts": [
+        "Ultra Bold",
+        "Ultra Script",
+        "Ultra Bubble",
+        "Ultra Gothic",
+        "Ultra Italic",
+        "Ultra Bold Serif",
+        "Ultra Script Bold",
+        "Ultra Strike",
+        "Ultra Underline",
+        "Ultra Bubble Filled"
+      ]
+    },
+    "bold-fonts": {
+      "label": "Bold Fonts",
+      "icon": "𝗕",
+      "fonts": [
+        "Ultra Bold",
+        "Ultra Bold Serif",
+        "Ultra Bold Italic",
+        "Ultra Bold Italic Serif",
+        "Ultra Alternating Bold",
+        "Ultra Bold w Alternating Italic",
+        "Ultra Bold w Switch Serif"
+      ]
+    },
+    "bubble-fonts": {
+      "label": "Bubble Fonts",
+      "icon": "Ⓑ",
+      "fonts": [
+        "Ultra Bubble",
+        "Ultra Bubble Filled"
+      ]
+    },
+    "cursive-fonts": {
+      "label": "Cursive Fonts",
+      "icon": "𝒞",
+      "fonts": [
+        "Ultra Script",
+        "Ultra Script Bold"
+      ]
+    },
+    "gothic-fonts": {
+      "label": "Gothic Fonts",
+      "icon": "𝔊",
+      "fonts": [
+        "Ultra Gothic",
+        "Ultra Gothic Bold"
+      ]
+    },
+    "special-fonts": {
+      "label": "Special Fonts",
+      "icon": "⚡",
+      "fonts": [
+        "Ultra Strike",
+        "Ultra Underline",
+        "Ultra Wavy",
+        "Ultra Slash"
+      ]
+    }
+  }
+}
