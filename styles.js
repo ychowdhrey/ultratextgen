@@ -69,22 +69,6 @@ const SITE_PAGES = {
 };
 
 /* -----------------------------
-   HOMEPAGE TABS (Overall UI)
-
------------------------------- */
-const UI_CATEGORIES = {
-  all:    { label: 'All',      icon: '' },
-  cool:   { label: 'Cool',     icon: '✦' },
-  fancy:  { label: 'Fancy',    icon: '✧' },
-  cursive:{ label: 'Cursive',  icon: '𝒞' },
-  bold:   { label: 'Bold',     icon: '𝗕' },
-  gothic: { label: 'Gothic',   icon: '𝔊' },
-  bubble: { label: 'Bubble',   icon: 'Ⓑ' },
-  special:{ label: 'Special',  icon: '⚡' },
-   'upside-down-text': { label: 'Upside Down', icon: '🙃'}
-};
-
-/* -----------------------------
    TEXT STYLES REGISTRY
 ------------------------------ */
 const textStyles = {
