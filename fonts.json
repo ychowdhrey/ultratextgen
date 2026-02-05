@@ -67,6 +67,11 @@
       "label": "Upside Down",
       "icon": "ɐ",
       "fonts": [
+        "Fully Flipped Unicode",
+        "Mixed Flip Fallback",
+        "Reverse Order Only",
+        "Reverse + Flip Combo",
+        "Partial Upside Emphasis",
         "Line Level Upside Down",
         "Alternating Upside Down",
         "Mirror Illusion",
