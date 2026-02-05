@@ -62,6 +62,18 @@
         "Ultra Wavy",
         "Ultra Slash"
       ]
+    },
+    "upside-down-text": {
+      "label": "Upside Down",
+      "icon": "ɐ",
+      "fonts": [
+        "Line Level Upside Down",
+        "Alternating Upside Down",
+        "Mirror Illusion",
+        "Emoji Assisted Upside Down",
+        "Faux Upside Down Symbols",
+        "Upside Down Micro Text"
+      ]
     }
   }
 }
