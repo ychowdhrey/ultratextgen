@@ -70,9 +70,7 @@ const SITE_PAGES = {
 
 /* -----------------------------
    HOMEPAGE TABS (Overall UI)
-   Your existing tabs map to these.
-   You can keep your current tab keys:
-   all, cool, fancy, cursive, bold, gothic, bubble, special
+
 ------------------------------ */
 const UI_CATEGORIES = {
   all:    { label: 'All',      icon: '' },
@@ -82,7 +80,8 @@ const UI_CATEGORIES = {
   bold:   { label: 'Bold',     icon: '𝗕' },
   gothic: { label: 'Gothic',   icon: '𝔊' },
   bubble: { label: 'Bubble',   icon: 'Ⓑ' },
-  special:{ label: 'Special',  icon: '⚡' }
+  special:{ label: 'Special',  icon: '⚡' },
+   'upside-down-text': { label: 'Upside Down', icon: '🙃'}
 };
 
 /* -----------------------------
