@@ -688,7 +688,6 @@ function getStylesByFamilyAndGroup(familySlug, groupSlug) {
    Optional: expose globals explicitly
 ------------------------------ */
 window.SITE_PAGES = SITE_PAGES;
-window.UI_CATEGORIES = UI_CATEGORIES;
 window.CATEGORY_PAGES = CATEGORY_PAGES;
 window.textStyles = textStyles;
 
