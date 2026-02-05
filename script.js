@@ -208,7 +208,14 @@ const decorations = {
   const currentPlatform = (window.UTG_PLATFORM || "all").toLowerCase();
   const currentFamily = (window.UTG_FAMILY || "all").toLowerCase();
   const currentGroup = (window.UTG_GROUP || "all").toLowerCase();
-  let currentCategory = "popular";
+  
+  // Category URL pattern for detecting category pages
+  const CATEGORY_URL_PATTERN = /^\/category\/([^\/]+)\/?/;
+  
+  // Detect category from URL if on a category page
+  const categoryMatch = window.location.pathname.match(CATEGORY_URL_PATTERN);
+  let currentCategory = categoryMatch ? categoryMatch[1] : "popular";
+  
   let currentDecoTab = "symbols";
   let selectedDecoration = null;
   let searchQuery = "";
@@ -331,24 +338,50 @@ const decorations = {
     const tabsContainer = $("#categoryTabs");
     if (!tabsContainer || !fontCategories) return;
 
+    // Detect category mode from URL
+    const categoryMatch = window.location.pathname.match(CATEGORY_URL_PATTERN);
+    const isCategoryMode = !!categoryMatch;
+    const urlCategorySlug = categoryMatch ? categoryMatch[1] : null;
+
     tabsContainer.innerHTML = "";
 
     // Render tabs from the loaded categories
     Object.entries(fontCategories.categories).forEach(([key, category]) => {
-      const tab = document.createElement("button");
-      tab.className = "category-tab";
-      if (key === currentCategory) {
-        tab.classList.add("active");
-      }
-      tab.dataset.category = key;
-      tab.textContent = category.icon ? `${category.icon} ${category.label}` : category.label;
+      let tab;
+      const isActive = isCategoryMode ? (key === urlCategorySlug) : (key === currentCategory);
+      const tabText = category.icon ? `${category.icon} ${category.label}` : category.label;
       
-      tab.addEventListener("click", () => {
-        $$(".category-tab").forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        currentCategory = key;
-        renderResults();
-      });
+      if (isCategoryMode) {
+        // Category mode: render as <a> elements
+        tab = document.createElement("a");
+        tab.className = "category-tab";
+        
+        if (isActive) {
+          tab.classList.add("active");
+          // Active tab should not be clickable - don't set href
+        } else {
+          // Other tabs navigate to their category pages
+          tab.href = `/category/${key}/`;
+        }
+        
+        tab.textContent = tabText;
+      } else {
+        // Homepage mode: render as buttons with click handlers
+        tab = document.createElement("button");
+        tab.className = "category-tab";
+        if (isActive) {
+          tab.classList.add("active");
+        }
+        tab.dataset.category = key;
+        tab.textContent = tabText;
+        
+        tab.addEventListener("click", () => {
+          $$(".category-tab").forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          currentCategory = key;
+          renderResults();
+        });
+      }
       
       tabsContainer.appendChild(tab);
     });
