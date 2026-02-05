@@ -12,10 +12,10 @@
   // Flip character mapping
   const flipMap = {
     'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ',
-    'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'ן', 'm': 'ɯ', 'n': 'u', 'r': 'ɹ', 't': 'ʇ',
-    'v': 'ʌ', 'w': 'ʍ', 'y': 'ʎ',
+    'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'ן', 'm': 'ɯ', 'n': 'u', 'o': 'o', 'r': 'ɹ', 's': 's', 't': 'ʇ',
+    'v': 'ʌ', 'w': 'ʍ', 'x': 'x', 'y': 'ʎ', 'z': 'z',
     'A': '∀', 'C': 'Ɔ', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': 'פ', 'J': 'ſ', 'L': '˥', 'M': 'W',
-    'N': 'N', 'P': 'Ԁ', 'R': 'ᴚ', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'Y': '⅄',
+    'N': 'N', 'O': 'O', 'P': 'Ԁ', 'R': 'ᴚ', 'S': 'S', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X', 'Y': '⅄', 'Z': 'Z',
     '1': '⇂', '2': 'ᄅ', '3': 'Ɛ', '4': 'ㄣ', '5': 'ϛ', '6': '9', '7': 'ㄥ', '8': '8', '9': '6', '0': '0',
     '.': '˙', ',': '\'', '\'': ',', '"': '„', '_': '‾', '?': '¿', '!': '¡',
     '(': ')', ')': '(', '[': ']', ']': '[', '{': '}', '}': '{', '<': '>', '>': '<',
@@ -53,16 +53,8 @@
   // Transform functions for each variant
   const upsideDownTransforms = {
     fullyFlipped: (text) => {
-      const words = text.split(' ');
-      const processed = words.map(word => {
-        const chars = Array.from(word);
-        const allSupported = chars.every(ch => flipChar(ch) !== null || ch === ' ');
-        if (allSupported) {
-          return applyFlipAndReverse(word, 'fallback');
-        }
-        return word;
-      });
-      return processed.join(' ');
+      // Flip all text, using fallback for unsupported characters
+      return applyFlipAndReverse(text, 'fallback');
     },
 
     mixedFlipFallback: (text) => {

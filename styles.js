@@ -498,8 +498,8 @@ const textStyles = {
   'Fully Flipped Unicode': {
     type: 'function',
     transform: 'fullyFlipped',
-    family: 'upside-down',
-    category: ['special'],
+    familySlug: 'upside-down',
+    category: 'special',
     slug: 'upside-down-fully-flipped',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -514,8 +514,8 @@ const textStyles = {
   'Mixed Flip Fallback': {
     type: 'function',
     transform: 'mixedFlipFallback',
-    family: 'upside-down',
-    category: ['special'],
+    familySlug: 'upside-down',
+    category: 'special',
     slug: 'upside-down-mixed-fallback',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -530,8 +530,8 @@ const textStyles = {
   'Reverse Order Only': {
     type: 'function',
     transform: 'reverseOnly',
-    family: 'upside-down',
-    category: ['cool'],
+    familySlug: 'upside-down',
+    category: 'cool',
     slug: 'upside-down-reverse-only',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -546,8 +546,8 @@ const textStyles = {
   'Reverse + Flip Combo': {
     type: 'function',
     transform: 'reverseFlipCombo',
-    family: 'upside-down',
-    category: ['cool', 'special'],
+    familySlug: 'upside-down',
+    category: 'cool',
     slug: 'upside-down-reverse-flip',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -562,8 +562,8 @@ const textStyles = {
   'Partial Upside Emphasis': {
     type: 'function',
     transform: 'partialEmphasis',
-    family: 'upside-down',
-    category: ['fancy'],
+    familySlug: 'upside-down',
+    category: 'fancy',
     slug: 'upside-down-partial-emphasis',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -578,8 +578,8 @@ const textStyles = {
   'Line Level Upside Down': {
     type: 'function',
     transform: 'lineLevel',
-    family: 'upside-down',
-    category: ['special'],
+    familySlug: 'upside-down',
+    category: 'special',
     slug: 'upside-down-line-level',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -594,8 +594,8 @@ const textStyles = {
   'Alternating Upside Down': {
     type: 'function',
     transform: 'alternating',
-    family: 'upside-down',
-    category: ['cool', 'fancy'],
+    familySlug: 'upside-down',
+    category: 'cool',
     slug: 'upside-down-alternating',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -610,8 +610,8 @@ const textStyles = {
   'Mirror Illusion': {
     type: 'function',
     transform: 'mirrorIllusion',
-    family: 'upside-down',
-    category: ['special'],
+    familySlug: 'upside-down',
+    category: 'special',
     slug: 'upside-down-mirror-illusion',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -626,8 +626,8 @@ const textStyles = {
   'Emoji Assisted Upside Down': {
     type: 'function',
     transform: 'emojiAssisted',
-    family: 'upside-down',
-    category: ['cool', 'fancy'],
+    familySlug: 'upside-down',
+    category: 'cool',
     slug: 'upside-down-emoji-assisted',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -642,8 +642,8 @@ const textStyles = {
   'Faux Upside Down Symbols': {
     type: 'function',
     transform: 'fauxSymbols',
-    family: 'upside-down',
-    category: ['fancy'],
+    familySlug: 'upside-down',
+    category: 'fancy',
     slug: 'upside-down-faux-symbols',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
@@ -658,8 +658,8 @@ const textStyles = {
   'Upside Down Micro Text': {
     type: 'function',
     transform: 'microText',
-    family: 'upside-down',
-    category: ['special'],
+    familySlug: 'upside-down',
+    category: 'special',
     slug: 'upside-down-micro',
 
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
