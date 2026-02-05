@@ -35,6 +35,11 @@ const CATEGORY_PAGES = {
     slug: 'special-fonts',
     title: 'Special Fonts',
     description: 'Unique decorative Unicode fonts.'
+  },
+  'upside-down-text': {
+    slug: 'upside-down-text',
+    title: 'Upside Down Text',
+    description: 'Flip your text upside down with multiple Unicode styles.'
   }
 };
 
@@ -483,6 +488,186 @@ const textStyles = {
       title: 'Slashthrough Text Generator',
       description: 'Add a slash through your text using Unicode. Copy and paste instantly.',
       keywords: ['slashthrough text', 'unicode slash', 'text slash generator']
+    }
+  },
+
+  /* =========================
+     UPSIDE DOWN TEXT FAMILY
+     ========================= */
+
+  'Fully Flipped Unicode': {
+    type: 'function',
+    transform: 'fullyFlipped',
+    familySlug: 'upside-down-text',
+    category: 'special',
+    slug: 'upside-down-fully-flipped',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Fully Flipped Unicode Text Generator',
+      description: 'Flip your text completely upside down using Unicode. Copy and paste instantly.',
+      keywords: ['upside down text', 'flipped text', 'unicode upside down']
+    }
+  },
+
+  'Mixed Flip Fallback': {
+    type: 'function',
+    transform: 'mixedFlipFallback',
+    familySlug: 'upside-down-text',
+    category: 'special',
+    slug: 'upside-down-mixed-fallback',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Mixed Flip Fallback Text Generator',
+      description: 'Flip text upside down with fallback for unsupported characters. Works everywhere.',
+      keywords: ['upside down text fallback', 'mixed flip text', 'unicode flip fallback']
+    }
+  },
+
+  'Reverse Order Only': {
+    type: 'function',
+    transform: 'reverseOnly',
+    familySlug: 'upside-down-text',
+    category: 'cool',
+    slug: 'upside-down-reverse-only',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Reverse Order Text Generator',
+      description: 'Reverse your text order. Copy and paste instantly.',
+      keywords: ['reverse text', 'backwards text', 'text reverser']
+    }
+  },
+
+  'Reverse + Flip Combo': {
+    type: 'function',
+    transform: 'reverseFlipCombo',
+    familySlug: 'upside-down-text',
+    category: 'cool',
+    slug: 'upside-down-reverse-flip',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Reverse Flip Combo Text Generator',
+      description: 'Reverse and flip text upside down. Perfect for social media.',
+      keywords: ['reverse flip text', 'upside down reversed', 'flip and reverse']
+    }
+  },
+
+  'Partial Upside Emphasis': {
+    type: 'function',
+    transform: 'partialEmphasis',
+    familySlug: 'upside-down-text',
+    category: 'fancy',
+    slug: 'upside-down-partial-emphasis',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Partial Upside Emphasis Text Generator',
+      description: 'Emphasize parts of text by flipping upside down. Copy and paste.',
+      keywords: ['partial upside down', 'emphasis flip text', 'selective flip']
+    }
+  },
+
+  'Line Level Upside Down': {
+    type: 'function',
+    transform: 'lineLevel',
+    familySlug: 'upside-down-text',
+    category: 'special',
+    slug: 'upside-down-line-level',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Line Level Upside Down Text Generator',
+      description: 'Flip each line of text upside down. Great for multiline posts.',
+      keywords: ['line level upside down', 'multiline flip', 'flip lines']
+    }
+  },
+
+  'Alternating Upside Down': {
+    type: 'function',
+    transform: 'alternating',
+    familySlug: 'upside-down-text',
+    category: 'cool',
+    slug: 'upside-down-alternating',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Alternating Upside Down Text Generator',
+      description: 'Alternate words between normal and upside down. Unique style.',
+      keywords: ['alternating upside down', 'alternating flip', 'word alternating']
+    }
+  },
+
+  'Mirror Illusion': {
+    type: 'function',
+    transform: 'mirrorIllusion',
+    familySlug: 'upside-down-text',
+    category: 'special',
+    slug: 'upside-down-mirror-illusion',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Mirror Illusion Text Generator',
+      description: 'Create a mirror illusion effect with flipped text. Copy and paste.',
+      keywords: ['mirror illusion text', 'mirror flip', 'illusion text']
+    }
+  },
+
+  'Emoji Assisted Upside Down': {
+    type: 'function',
+    transform: 'emojiAssisted',
+    familySlug: 'upside-down-text',
+    category: 'cool',
+    slug: 'upside-down-emoji-assisted',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Emoji Assisted Upside Down Text Generator',
+      description: 'Add upside down face emoji to your text. Fun and eye-catching.',
+      keywords: ['emoji upside down', 'upside down emoji text', 'emoji flip']
+    }
+  },
+
+  'Faux Upside Down Symbols': {
+    type: 'function',
+    transform: 'fauxSymbols',
+    familySlug: 'upside-down-text',
+    category: 'fancy',
+    slug: 'upside-down-faux-symbols',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Faux Upside Down Symbols Text Generator',
+      description: 'Wrap text with upside down rotation symbols. Unique decoration.',
+      keywords: ['faux upside down', 'symbol wrap', 'rotation symbols']
+    }
+  },
+
+  'Upside Down Micro Text': {
+    type: 'function',
+    transform: 'microText',
+    familySlug: 'upside-down-text',
+    category: 'special',
+    slug: 'upside-down-micro',
+
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
+
+    meta: {
+      title: 'Upside Down Micro Text Generator',
+      description: 'Create compact flipped text. Perfect for space-constrained posts.',
+      keywords: ['upside down micro', 'micro flip text', 'compact upside down']
     }
   }
 };
