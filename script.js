@@ -609,6 +609,122 @@ document.addEventListener("copy", () => {
   }
 });
      }
+
+  /* ===================
+     CATEGORY NAVIGATION
+     =================== */
+  function initCategoryNavigation() {
+    const moreTrigger = document.querySelector('.category-nav-more-trigger');
+    const moreDropdown = document.querySelector('.category-nav-more-dropdown');
+    
+    if (!moreTrigger || !moreDropdown) return;
+
+    // Toggle dropdown on click
+    moreTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = moreTrigger.getAttribute('aria-expanded') === 'true';
+      
+      if (isExpanded) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    function openDropdown() {
+      moreTrigger.setAttribute('aria-expanded', 'true');
+      moreDropdown.removeAttribute('hidden');
+    }
+
+    function closeDropdown() {
+      moreTrigger.setAttribute('aria-expanded', 'false');
+      moreDropdown.setAttribute('hidden', '');
+    }
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!moreTrigger.contains(e.target) && !moreDropdown.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDropdown();
+      }
+    });
+
+    // Keyboard navigation for dropdown items
+    const dropdownItems = moreDropdown.querySelectorAll('.category-nav-more-item');
+    if (dropdownItems.length > 0) {
+      dropdownItems.forEach((item, index) => {
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'menuitem');
+        
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const nextItem = dropdownItems[index + 1] || dropdownItems[0];
+            nextItem.focus();
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prevItem = dropdownItems[index - 1] || dropdownItems[dropdownItems.length - 1];
+            prevItem.focus();
+          } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            item.click();
+            closeDropdown();
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeDropdown();
+            moreTrigger.focus();
+          }
+        });
+      });
+    }
+
+    // Set active state based on URL
+    highlightActiveCategory();
+  }
+
+  function highlightActiveCategory() {
+    const currentPath = window.location.pathname;
+    const categoryNavTabs = document.querySelectorAll('.category-nav-tab');
+    
+    // Check if current path matches any category
+    categoryNavTabs.forEach(tab => {
+      const href = tab.getAttribute('href');
+      if (href && currentPath === href) {
+        tab.classList.add('active');
+      } else if (href && href !== '/' && currentPath.startsWith(href)) {
+        tab.classList.add('active');
+      }
+    });
+
+    // Check if current path is in the "More" dropdown (for future use)
+    const moreDropdownItems = document.querySelectorAll('.category-nav-more-item');
+    let isInMore = false;
+    moreDropdownItems.forEach(item => {
+      const href = item.getAttribute('href');
+      if (href && currentPath === href) {
+        item.classList.add('active');
+        isInMore = true;
+      } else if (href && href !== '/' && currentPath.startsWith(href)) {
+        item.classList.add('active');
+        isInMore = true;
+      }
+    });
+
+    // Highlight "More" button if active category is inside it
+    if (isInMore) {
+      const moreTrigger = document.querySelector('.category-nav-more-trigger');
+      if (moreTrigger) {
+        moreTrigger.classList.add('active');
+      }
+    }
+  }
+
   /* ===================
      INIT
      =================== */
@@ -623,6 +739,9 @@ document.addEventListener("copy", () => {
     
     // Load font categories and render tabs
     loadFontCategories();
+
+    // Initialize category navigation dropdown
+    initCategoryNavigation();
   }
 
   if (document.readyState === "loading") {
