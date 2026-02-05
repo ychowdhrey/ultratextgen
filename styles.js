@@ -36,7 +36,7 @@ const CATEGORY_PAGES = {
     title: 'Special Fonts',
     description: 'Unique decorative Unicode fonts.'
   },
-  'upside-down': {
+  'upside-down-text': {
     slug: 'upside-down-text',
     title: 'Upside Down Text',
     description: 'Flip your text upside down with multiple Unicode styles.'
@@ -498,7 +498,7 @@ const textStyles = {
   'Fully Flipped Unicode': {
     type: 'function',
     transform: 'fullyFlipped',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-fully-flipped',
 
@@ -514,7 +514,7 @@ const textStyles = {
   'Mixed Flip Fallback': {
     type: 'function',
     transform: 'mixedFlipFallback',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-mixed-fallback',
 
@@ -530,7 +530,7 @@ const textStyles = {
   'Reverse Order Only': {
     type: 'function',
     transform: 'reverseOnly',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-reverse-only',
 
@@ -546,7 +546,7 @@ const textStyles = {
   'Reverse + Flip Combo': {
     type: 'function',
     transform: 'reverseFlipCombo',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-reverse-flip',
 
@@ -562,7 +562,7 @@ const textStyles = {
   'Partial Upside Emphasis': {
     type: 'function',
     transform: 'partialEmphasis',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'fancy',
     slug: 'upside-down-partial-emphasis',
 
@@ -578,7 +578,7 @@ const textStyles = {
   'Line Level Upside Down': {
     type: 'function',
     transform: 'lineLevel',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-line-level',
 
@@ -594,7 +594,7 @@ const textStyles = {
   'Alternating Upside Down': {
     type: 'function',
     transform: 'alternating',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-alternating',
 
@@ -610,7 +610,7 @@ const textStyles = {
   'Mirror Illusion': {
     type: 'function',
     transform: 'mirrorIllusion',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-mirror-illusion',
 
@@ -626,7 +626,7 @@ const textStyles = {
   'Emoji Assisted Upside Down': {
     type: 'function',
     transform: 'emojiAssisted',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-emoji-assisted',
 
@@ -642,7 +642,7 @@ const textStyles = {
   'Faux Upside Down Symbols': {
     type: 'function',
     transform: 'fauxSymbols',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'fancy',
     slug: 'upside-down-faux-symbols',
 
@@ -658,7 +658,7 @@ const textStyles = {
   'Upside Down Micro Text': {
     type: 'function',
     transform: 'microText',
-    familySlug: 'upside-down',
+    familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-micro',
 

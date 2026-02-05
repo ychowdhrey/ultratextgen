@@ -52,23 +52,27 @@
 
   // Transform functions for each variant
   const upsideDownTransforms = {
+    // Flip all characters and reverse - pure upside down
     fullyFlipped: (text) => {
-      // Flip all text, using fallback for unsupported characters
       return applyFlipAndReverse(text, 'fallback');
     },
 
+    // Same as fullyFlipped - kept for backward compatibility
     mixedFlipFallback: (text) => {
       return applyFlipAndReverse(text, 'fallback');
     },
 
+    // Only reverse character order, no flipping
     reverseOnly: (text) => {
       return reverseString(text);
     },
 
+    // Reverse and flip combo - same as fullyFlipped
     reverseFlipCombo: (text) => {
       return applyFlipAndReverse(text, 'fallback');
     },
 
+    // Flip only the last word (or text in [[brackets]] or {braces})
     partialEmphasis: (text) => {
       const markerRegex = /\[\[(.*?)\]\]|\{(.*?)\}/g;
       let hasMarkers = false;
@@ -90,17 +94,21 @@
       return words.join(' ');
     },
 
+    // Flip each line separately (for multiline text)
     lineLevel: (text) => {
       const lines = text.split('\n');
       return lines.map(line => applyFlipAndReverse(line, 'fallback')).join('\n');
     },
 
+    // Alternate between normal and flipped words
     alternating: (text) => {
       const words = text.split(' ');
       return words.map((word, index) => {
+        // Even index words: flip characters (no reverse)
         if (index % 2 === 0) {
           return Array.from(word).map(ch => flipChar(ch) || ch).join('');
         }
+        // Odd index words: keep normal
         return word;
       }).join(' ');
     },
