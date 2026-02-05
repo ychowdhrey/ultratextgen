@@ -87,5 +87,6 @@ UltraTextGen includes dedicated pages for each major platform so styles render e
 - https://ultratextgen.com/category/special-fonts/
 - https://ultratextgen.com/category/bubble-fonts/
 - https://ultratextgen.com/category/gothic-fonts/
+- https://ultratextgen.com/category/upside-down-text/
 
 Each platform page is optimized for compatibility and speed.
