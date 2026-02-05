@@ -5,6 +5,151 @@
 
 (function () {
 
+  /* ==========================================================================
+     UPSIDE DOWN TEXT UTILITIES
+     ========================================================================== */
+
+  // Flip character mapping
+  const flipMap = {
+    'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ', 'h': 'ɥ',
+    'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'ן', 'm': 'ɯ', 'n': 'u', 'o': 'o', 'r': 'ɹ', 's': 's', 't': 'ʇ',
+    'v': 'ʌ', 'w': 'ʍ', 'x': 'x', 'y': 'ʎ', 'z': 'z',
+    'A': '∀', 'C': 'Ɔ', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': 'פ', 'J': 'ſ', 'L': '˥', 'M': 'W',
+    'N': 'N', 'O': 'O', 'P': 'Ԁ', 'R': 'ᴚ', 'S': 'S', 'T': '┴', 'U': '∩', 'V': 'Λ', 'W': 'M', 'X': 'X', 'Y': '⅄', 'Z': 'Z',
+    '1': '⇂', '2': 'ᄅ', '3': 'Ɛ', '4': 'ㄣ', '5': 'ϛ', '6': '9', '7': 'ㄥ', '8': '8', '9': '6', '0': '0',
+    '.': '˙', ',': '\'', '\'': ',', '"': '„', '_': '‾', '?': '¿', '!': '¡',
+    '(': ')', ')': '(', '[': ']', ']': '[', '{': '}', '}': '{', '<': '>', '>': '<',
+    '&': '⅋', ';': '؛'
+  };
+
+  // Illusion character mapping for characters without good flips
+  const illusionMap = {
+    'o': 'o', 'O': 'O', 's': 's', 'S': 'S', 'x': 'x', 'X': 'X', 'z': 'z', 'Z': 'Z'
+  };
+
+  // Reverse a string by code points (emoji-safe)
+  function reverseString(str) {
+    return Array.from(str).reverse().join('');
+  }
+
+  // Flip a single character
+  function flipChar(ch) {
+    return flipMap[ch] || null;
+  }
+
+  // Apply flip and reverse (standard upside down)
+  function applyFlipAndReverse(str, fallbackMode = 'fallback') {
+    const chars = Array.from(str);
+    const reversed = chars.reverse();
+    const flipped = reversed.map(ch => {
+      const flip = flipChar(ch);
+      if (flip) return flip;
+      if (fallbackMode === 'fallback') return ch;
+      return ch;
+    });
+    return flipped.join('');
+  }
+
+  // Transform functions for each variant
+  const upsideDownTransforms = {
+    // Flip all characters and reverse - pure upside down
+    fullyFlipped: (text) => {
+      return applyFlipAndReverse(text, 'fallback');
+    },
+
+    // Same as fullyFlipped - kept for backward compatibility
+    mixedFlipFallback: (text) => {
+      return applyFlipAndReverse(text, 'fallback');
+    },
+
+    // Only reverse character order, no flipping
+    reverseOnly: (text) => {
+      return reverseString(text);
+    },
+
+    // Reverse and flip combo - same as fullyFlipped
+    reverseFlipCombo: (text) => {
+      return applyFlipAndReverse(text, 'fallback');
+    },
+
+    // Flip only the last word (or text in [[brackets]] or {braces})
+    partialEmphasis: (text) => {
+      const markerRegex = /\[\[(.*?)\]\]|\{(.*?)\}/g;
+      let hasMarkers = false;
+      
+      const result = text.replace(markerRegex, (match, bracket, brace) => {
+        hasMarkers = true;
+        const content = bracket || brace;
+        return applyFlipAndReverse(content, 'fallback');
+      });
+      
+      if (hasMarkers) return result;
+      
+      const words = text.split(' ');
+      if (words.length === 0) return text;
+      
+      const lastWord = words[words.length - 1];
+      words[words.length - 1] = applyFlipAndReverse(lastWord, 'fallback');
+      
+      return words.join(' ');
+    },
+
+    // Flip each line separately (for multiline text)
+    lineLevel: (text) => {
+      const lines = text.split('\n');
+      return lines.map(line => applyFlipAndReverse(line, 'fallback')).join('\n');
+    },
+
+    // Alternate between normal and flipped words
+    alternating: (text) => {
+      const words = text.split(' ');
+      return words.map((word, index) => {
+        // Even index words: flip characters (no reverse)
+        if (index % 2 === 0) {
+          return Array.from(word).map(ch => flipChar(ch) || ch).join('');
+        }
+        // Odd index words: keep normal
+        return word;
+      }).join(' ');
+    },
+
+    mirrorIllusion: (text) => {
+      const chars = Array.from(text);
+      const reversed = chars.reverse();
+      const transformed = reversed.map(ch => {
+        const flip = flipChar(ch);
+        if (flip) return flip;
+        
+        const illusion = illusionMap[ch];
+        if (illusion) return illusion;
+        
+        return ch;
+      });
+      return transformed.join('');
+    },
+
+    emojiAssisted: (text) => {
+      return '🙃 ' + text + ' 🙃';
+    },
+
+    fauxSymbols: (text) => {
+      return '⟲ ' + reverseString(text) + ' ⟲';
+    },
+
+    microText: (text) => {
+      const flipped = applyFlipAndReverse(text, 'fallback');
+      return flipped.replace(/\s+/g, ' ').trim();
+    }
+  };
+
+  // Apply upside down transform
+  function applyUpsideDownTransform(text, transformName) {
+    if (upsideDownTransforms[transformName]) {
+      return upsideDownTransforms[transformName](text);
+    }
+    return text;
+  }
+
   /* -----------------------------
      MAP RENDERER
      ----------------------------- */
@@ -82,6 +227,11 @@
      MASTER SWITCH
      ----------------------------- */
   function renderAny(text, style) {
+    // Handle function-based transforms (upside down)
+    if (style.type === 'function' && style.transform) {
+      return applyUpsideDownTransform(text, style.transform);
+    }
+
     switch (style.type) {
       case 'map':
         return renderMap(text, style);
