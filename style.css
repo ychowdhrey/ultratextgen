@@ -350,6 +350,7 @@
       gap: 8px;
       overflow-x: auto;
       padding-bottom: 8px;
+      padding-right: 16px;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
@@ -359,7 +360,7 @@
     }
 
     .category-tab {
-      padding: 10px 20px;
+      padding: 10px 16px;
       border: 1px solid var(--border-light);
       border-radius: 50px;
       font-size: 0.875rem;
@@ -665,6 +666,35 @@
       .category-section {
         top: 57px;
         padding: 16px 0 12px;
+      }
+
+      .category-tabs {
+        gap: 6px;
+        padding-right: 24px;
+      }
+
+      .category-tab {
+        padding: 8px 12px;
+        font-size: 0.8125rem;
+      }
+
+      .decoration-tabs {
+        gap: 6px;
+        overflow-x: auto;
+        padding-right: 16px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .decoration-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .decoration-tab {
+        padding: 5px 10px;
+        font-size: 0.6875rem;
+        flex-shrink: 0;
+        white-space: nowrap;
       }
     }
 
