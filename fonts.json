@@ -93,6 +93,24 @@
         "Faux Upside Down Symbols",
         "Upside Down Micro Text"
       ]
-    }
+    },
+  "word-wrappers": {
+    "label": "Word Wrappers",
+    "icon": "()",
+    "fonts": [
+      "Ultra Word Curly Wrap",
+      "Ultra Word Angle Wrap",
+      "Ultra Word Double Wrap",
+      "Ultra Word Arrow Wrap",
+      "Ultra Word Forward Arrow Wrap",
+      "Ultra Word Backward Arrow Wrap",
+      "Ultra Word Bracket Wrap",
+      "Ultra Word Chevron Wrap",
+      "Ultra Word Bar Wrap",
+      "Ultra Word Double Bar Wrap"
+  ]
+}
+
+    
   }
 }
