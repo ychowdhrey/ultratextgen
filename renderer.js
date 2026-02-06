@@ -422,7 +422,7 @@ function renderProcedure(text, style) {
     if (style.type === 'function' && style.transform) {
       return applyUpsideDownTransform(text, style.transform);
     }
-
+     
     switch (style.type) {
       case 'map':
         return renderMap(text, style);
