@@ -169,14 +169,63 @@ function mapToArray(mapStrOrArr, kind) {
   if (Array.isArray(mapStrOrArr)) return mapStrOrArr;
   const s = String(mapStrOrArr || '');
 
-  // Parentheses: "( A )( B )..."
-  if (s.includes('(') && s.includes(')')) {
-    if (kind === 'alphaUpper') return s.match(/\(\s*[A-Z]\s*\)/g) || [];
-    if (kind === 'alphaLower') return s.match(/\(\s*[a-z]\s*\)/g) || [];
-    if (kind === 'nums')      return s.match(/\(\s*\d\s*\)/g)     || [];
+  // **NEW** - Nested double wrap: "⦅❨A❩⦆⦅❨B❩⦆..."
+  if (s.includes('⦅❨') && s.includes('❩⦆')) {
+    if (kind === 'alphaUpper') return s.match(/⦅❨[A-Z]❩⦆/g) || [];
+    if (kind === 'alphaLower') return s.match(/⦅❨[a-z]❩⦆/g) || [];
+    if (kind === 'nums')      return s.match(/⦅❨\d❩⦆/g)     || [];
   }
 
-  // Curly: "❨A❩❨B❩..."
+  // **NEW** - Arrow wrap: "→A←→B←..."
+  if (s.includes('→') && s.includes('←')) {
+    if (kind === 'alphaUpper') return s.match(/→[A-Z]←/g) || [];
+    if (kind === 'alphaLower') return s.match(/→[a-z]←/g) || [];
+    if (kind === 'nums')      return s.match(/→\d←/g)     || [];
+  }
+
+  // **NEW** - Forward arrow only: "→A→B..."
+  if (s.includes('→') && !s.includes('←')) {
+    if (kind === 'alphaUpper') return s.match(/→[A-Z]/g) || [];
+    if (kind === 'alphaLower') return s.match(/→[a-z]/g) || [];
+    if (kind === 'nums')      return s.match(/→\d/g)     || [];
+  }
+
+  // **NEW** - Backward arrow only: "A←B←..."
+  if (s.includes('←') && !s.includes('→')) {
+    if (kind === 'alphaUpper') return s.match(/[A-Z]←/g) || [];
+    if (kind === 'alphaLower') return s.match(/[a-z]←/g) || [];
+    if (kind === 'nums')      return s.match(/\d←/g)     || [];
+  }
+
+  // **NEW** - Bracket: "[A][B]..."
+  if (s.includes('[') && s.includes(']')) {
+    if (kind === 'alphaUpper') return s.match(/\[[A-Z]\]/g) || [];
+    if (kind === 'alphaLower') return s.match(/\[[a-z]\]/g) || [];
+    if (kind === 'nums')      return s.match(/\[\d\]/g)     || [];
+  }
+
+  // **NEW** - Chevron: "‹A›‹B›..."
+  if (s.includes('‹') && s.includes('›')) {
+    if (kind === 'alphaUpper') return s.match(/‹[A-Z]›/g) || [];
+    if (kind === 'alphaLower') return s.match(/‹[a-z]›/g) || [];
+    if (kind === 'nums')      return s.match(/‹\d›/g)     || [];
+  }
+
+  // **NEW** - Double bar: "‖A‖‖B‖..."
+  if (s.includes('‖')) {
+    if (kind === 'alphaUpper') return s.match(/‖[A-Z]‖/g) || [];
+    if (kind === 'alphaLower') return s.match(/‖[a-z]‖/g) || [];
+    if (kind === 'nums')      return s.match(/‖\d‖/g)     || [];
+  }
+
+  // **NEW** - Single bar: "|A||B|..."
+  if (s.includes('|')) {
+    if (kind === 'alphaUpper') return s.match(/\|[A-Z]\|/g) || [];
+    if (kind === 'alphaLower') return s.match(/\|[a-z]\|/g) || [];
+    if (kind === 'nums')      return s.match(/\|\d\|/g)     || [];
+  }
+
+  // EXISTING - Curly: "❨A❩❨B❩..."
   if (s.includes('❨') && s.includes('❩')) {
     if (kind === 'alphaUpper') return s.match(/❨[A-Z]❩/g) || [];
     if (kind === 'alphaLower') return s.match(/❨[a-z]❩/g) || [];
