@@ -150,12 +150,12 @@
     return text;
   }
 
-  /* -----------------------------
-     MAP RENDERER
-     ----------------------------- */
-   // Split into user-perceived characters (emoji + combining-mark safe)
+/* -----------------------------
+   MAP RENDERER
+   ----------------------------- */
 
-   function splitGraphemes(str) {
+// Split into user-perceived characters (emoji + combining-mark safe)
+function splitGraphemes(str) {
   if (!str) return [];
   if (typeof Intl !== 'undefined' && Intl.Segmenter) {
     const seg = new Intl.Segmenter('en', { granularity: 'grapheme' });
@@ -163,7 +163,37 @@
   }
   return Array.from(str);
 }
-   
+
+// Convert a style.upper/lower/nums into an array of 26/26/10 tokens
+function mapToArray(mapStrOrArr, kind) {
+  if (Array.isArray(mapStrOrArr)) return mapStrOrArr;
+  const s = String(mapStrOrArr || '');
+
+  // Parentheses: "( A )( B )..."
+  if (s.includes('(') && s.includes(')')) {
+    if (kind === 'alphaUpper') return s.match(/\(\s*[A-Z]\s*\)/g) || [];
+    if (kind === 'alphaLower') return s.match(/\(\s*[a-z]\s*\)/g) || [];
+    if (kind === 'nums')      return s.match(/\(\s*\d\s*\)/g)     || [];
+  }
+
+  // Curly: "❨A❩❨B❩..."
+  if (s.includes('❨') && s.includes('❩')) {
+    if (kind === 'alphaUpper') return s.match(/❨[A-Z]❩/g) || [];
+    if (kind === 'alphaLower') return s.match(/❨[a-z]❩/g) || [];
+    if (kind === 'nums')      return s.match(/❨\d❩/g)     || [];
+  }
+
+  // Angle: "⦅A⦆⦅B⦆..."
+  if (s.includes('⦅') && s.includes('⦆')) {
+    if (kind === 'alphaUpper') return s.match(/⦅[A-Z]⦆/g) || [];
+    if (kind === 'alphaLower') return s.match(/⦅[a-z]⦆/g) || [];
+    if (kind === 'nums')      return s.match(/⦅\d⦆/g)     || [];
+  }
+
+  // Default: grapheme split, and drop spaces (for your spaced strings)
+  return splitGraphemes(s).filter(x => x !== ' ');
+}
+
 function renderMap(text, style) {
   if (!text) return '';
 
@@ -171,15 +201,16 @@ function renderMap(text, style) {
   const normalLower = 'abcdefghijklmnopqrstuvwxyz';
   const normalNums  = '0123456789';
 
-  // IMPORTANT: split as graphemes, not code units
-  // Also ignore spaces in mapping strings if you included "spaced" variants
-  const upperArr = splitGraphemes(style.upper).filter(x => x !== ' ');
-  const lowerArr = splitGraphemes(style.lower).filter(x => x !== ' ');
-  const numsArr  = splitGraphemes(style.nums).filter(x => x !== ' ');
+  const upperArr = mapToArray(style.upper, 'alphaUpper');
+  const lowerArr = mapToArray(style.lower, 'alphaLower');
+  const numsArr  = mapToArray(style.nums,  'nums');
 
-  // Optional: sanity check in console
-  // if (upperArr.length !== 26 || lowerArr.length !== 26) console.warn(style.slug, upperArr.length, lowerArr.length);
-  // if (numsArr.length !== 10) console.warn(style.slug, numsArr.length);
+  // Debug only (remove later if you want)
+  if (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10) {
+    console.warn('Bad map lengths', style.slug, {
+      upper: upperArr.length, lower: lowerArr.length, nums: numsArr.length
+    });
+  }
 
   return Array.from(text).map(char => {
     const u = normalUpper.indexOf(char);
