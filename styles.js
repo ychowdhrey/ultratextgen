@@ -82,18 +82,10 @@ const textStyles = {
     nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
     type: 'map',
     category: 'bold',
-
     familySlug: 'bold-italic',
     groupSlug: 'bold',
     slug: 'ultra-bold',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Bold Text Generator',
-      description: 'Convert text to bold Unicode font. Works on Instagram, TikTok, X, WhatsApp, Discord.',
-      keywords: ['bold text', 'bold font generator', 'instagram bold', 'copy paste bold']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Bold Serif': {
@@ -101,41 +93,23 @@ const textStyles = {
     lower: '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',
     nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
     type: 'map',
-
-
     category: 'bold',
-
     familySlug: 'bold-italic',
     groupSlug: 'bold',
     slug: 'ultra-bold-serif',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Bold Serif Text Generator',
-      description: 'Convert text to bold serif Unicode font. Copy and paste for Instagram, TikTok, X, WhatsApp, Discord.',
-      keywords: ['bold serif', 'bold serif font', 'bold serif unicode', 'instagram bold serif']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Italic': {
     upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',
     lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
     nums: '0123456789',
-   type: 'map',
+    type: 'map',
     category: 'fancy',
-
     familySlug: 'bold-italic',
     groupSlug: 'italic',
     slug: 'ultra-italic',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Italic Text Generator',
-      description: 'Convert text to italic Unicode font. Works across Instagram, TikTok, X, WhatsApp, Discord.',
-      keywords: ['italic text', 'italic font generator', 'instagram italic', 'copy paste italic']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Italic Serif': {
@@ -144,130 +118,74 @@ const textStyles = {
     nums: '0123456789',
     type: 'map',
     category: 'fancy',
-
     familySlug: 'bold-italic',
     groupSlug: 'italic',
     slug: 'ultra-italic-serif',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Italic Serif Text Generator',
-      description: 'Convert text to italic serif Unicode font. Copy and paste for social bios, posts, and usernames.',
-      keywords: ['italic serif', 'italic serif font', 'unicode italic serif', 'instagram italic serif']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Bold Italic': {
     upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕',
     lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
     nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
-   type: 'map',
+    type: 'map',
     category: 'bold',
-
     familySlug: 'bold-italic',
     groupSlug: 'bold-italic',
     slug: 'ultra-bold-italic',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Bold Italic Text Generator',
-      description: 'Convert text to bold italic Unicode font. Great for emphasis in bios, posts, and usernames.',
-      keywords: ['bold italic', 'bold italic font', 'unicode bold italic', 'instagram bold italic']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Bold Italic Serif': {
     upper: '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁',
     lower: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛',
     nums: '0123456789',
-     type: 'map',
+    type: 'map',
     category: 'bold',
-
     familySlug: 'bold-italic',
     groupSlug: 'bold-italic',
     slug: 'ultra-bold-italic-serif',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Bold Italic Serif Text Generator',
-      description: 'Convert text to bold italic serif Unicode font. Copy and paste anywhere.',
-      keywords: ['bold italic serif', 'unicode bold italic serif', 'bold italic serif font']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Alternating Bold': {
     type: 'procedure',
     procedureId: 'alternating-bold',
     category: 'bold',
-
     familySlug: 'bold-italic',
     groupSlug: 'alternating',
     slug: 'ultra-alternating-bold',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Alternating Bold Text Generator',
-      description: 'Alternating bold text style for usernames and bios. Copy and paste instantly.',
-      keywords: ['alternating bold', 'bold alternating text', 'instagram alternating bold']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Alternating Italic': {
     type: 'procedure',
     procedureId: 'alternating-italic',
     category: 'fancy',
-
     familySlug: 'bold-italic',
     groupSlug: 'alternating',
     slug: 'ultra-alternating-italic',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Alternating Italic Text Generator',
-      description: 'Alternating italic text style you can copy and paste anywhere.',
-      keywords: ['alternating italic', 'italic alternating text', 'instagram alternating italic']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Bold w Alternating Italic': {
     type: 'procedure',
     procedureId: 'bold-alternating-italic',
     category: 'bold',
-
     familySlug: 'bold-italic',
     groupSlug: 'alternating',
     slug: 'ultra-bold-alternating-italic',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Bold Alternating Italic Text Generator',
-      description: 'Alternate between bold and italic characters. Perfect for emphasis and style.',
-      keywords: ['bold alternating italic', 'alternate bold italic', 'unicode bold italic alternating']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Italic Switch Serifs': {
     type: 'procedure',
     procedureId: 'italic-switch-serifs',
     category: 'fancy',
-
     familySlug: 'bold-italic',
     groupSlug: 'alternating',
     slug: 'ultra-italic-switch-serifs',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Italic Switch Serifs Text Generator',
-      description: 'Switch between italic serif and italic sans characters for a mixed style look.',
-      keywords: ['italic switch serifs', 'mixed italic serif sans', 'unicode switch serif italic']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   /* =========================
@@ -277,20 +195,12 @@ const textStyles = {
     upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',
     lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
     nums: '0123456789',
-     type: 'map',
+    type: 'map',
     category: 'cursive',
-
     familySlug: 'cursive',
     groupSlug: 'script',
     slug: 'ultra-script',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Script Text Generator',
-      description: 'Convert text to elegant cursive script Unicode. Copy and paste anywhere.',
-      keywords: ['cursive text', 'script font generator', 'unicode script', 'instagram cursive']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Script Bold': {
@@ -299,18 +209,10 @@ const textStyles = {
     nums: '0123456789',
     type: 'map',
     category: 'cursive',
-
     familySlug: 'cursive',
     groupSlug: 'script',
     slug: 'ultra-script-bold',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord'],
-
-    meta: {
-      title: 'Ultra Bold Script Text Generator',
-      description: 'Convert text to bold cursive script Unicode. Great for bios and titles.',
-      keywords: ['bold cursive', 'bold script', 'unicode bold script', 'instagram bold cursive']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
   },
 
   /* =========================
@@ -320,40 +222,24 @@ const textStyles = {
     upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',
     lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
     nums: '0123456789',
-     type: 'map',
+    type: 'map',
     category: 'gothic',
-
     familySlug: 'gothic',
     groupSlug: 'fraktur',
     slug: 'ultra-gothic',
-
-    platforms: ['all', 'instagram', 'x', 'discord'],
-
-    meta: {
-      title: 'Ultra Gothic Text Generator',
-      description: 'Convert text to gothic fraktur Unicode font. Copy and paste instantly.',
-      keywords: ['gothic text', 'fraktur font', 'old english font', 'unicode gothic']
-    }
+    platforms: ['all', 'instagram', 'x', 'discord']
   },
 
   'Ultra Gothic Bold': {
     upper: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
     lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
     nums: '0123456789',
-     type: 'map',
+    type: 'map',
     category: 'gothic',
-
     familySlug: 'gothic',
     groupSlug: 'fraktur',
     slug: 'ultra-gothic-bold',
-
-    platforms: ['all', 'instagram', 'x', 'discord'],
-
-    meta: {
-      title: 'Ultra Bold Gothic Text Generator',
-      description: 'Convert text to bold gothic fraktur Unicode font. Copy and paste anywhere.',
-      keywords: ['bold gothic', 'bold fraktur', 'old english bold', 'unicode bold gothic']
-    }
+    platforms: ['all', 'instagram', 'x', 'discord']
   },
 
   /* =========================
@@ -363,40 +249,24 @@ const textStyles = {
     upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
     lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
     nums: '⓪①②③④⑤⑥⑦⑧⑨',
-     type: 'map',
+    type: 'map',
     category: 'bubble',
-
     familySlug: 'bubble',
     groupSlug: 'circle',
     slug: 'ultra-bubble',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Ultra Bubble Text Generator',
-      description: 'Convert text to bubble Unicode letters. Great for cute bios and usernames.',
-      keywords: ['bubble text', 'circle letters', 'bubble font generator', 'unicode bubble']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Bubble Filled': {
     upper: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
     lower: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
     nums: '⓿❶❷❸❹❺❻❼❽❾',
-     type: 'map',
+    type: 'map',
     category: 'bubble',
-
     familySlug: 'bubble',
     groupSlug: 'circle',
     slug: 'ultra-bubble-filled',
-
-    platforms: ['all', 'instagram', 'discord'],
-
-    meta: {
-      title: 'Ultra Black Bubble Text Generator',
-      description: 'Convert text to black bubble Unicode letters. Copy and paste instantly.',
-      keywords: ['black bubble text', 'filled bubble font', 'unicode black bubble', 'instagram bubble text']
-    }
+    platforms: ['all', 'instagram', 'discord']
   },
 
   /* =========================
@@ -406,72 +276,40 @@ const textStyles = {
     type: 'decorator',
     decoratorId: 'strike',
     category: 'special',
-       
     familySlug: 'special',
     groupSlug: 'lines',
     slug: 'ultra-strike',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Strikethrough Text Generator',
-      description: 'Add strikethrough to text using Unicode. Copy and paste anywhere.',
-      keywords: ['strikethrough text', 'strikeout generator', 'unicode strikethrough']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Underline': {
     type: 'decorator',
     decoratorId: 'underline',
     category: 'special',
-
     familySlug: 'special',
     groupSlug: 'lines',
     slug: 'ultra-underline',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Underline Text Generator',
-      description: 'Underline text using Unicode combining characters. Copy and paste instantly.',
-      keywords: ['underline text', 'unicode underline', 'underline generator']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Ultra Wavy': {
     type: 'decorator',
     decoratorId: 'wavy',
     category: 'special',
-
     familySlug: 'special',
     groupSlug: 'effects',
     slug: 'ultra-wavy',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord'],
-
-    meta: {
-      title: 'Wavy Text Generator',
-      description: 'Add a subtle wavy effect to text using Unicode. Copy and paste anywhere.',
-      keywords: ['wavy text', 'unicode wavy', 'text effect generator']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
   },
 
   'Ultra Slash': {
     type: 'decorator',
     decoratorId: 'slash',
     category: 'special',
-
     familySlug: 'special',
     groupSlug: 'lines',
     slug: 'ultra-slash',
-
-    platforms: ['all', 'x', 'discord'],
-
-    meta: {
-      title: 'Slashthrough Text Generator',
-      description: 'Add a slash through your text using Unicode. Copy and paste instantly.',
-      keywords: ['slashthrough text', 'unicode slash', 'text slash generator']
-    }
+    platforms: ['all', 'x', 'discord']
   },
 
   /* =========================
@@ -484,14 +322,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-fully-flipped',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Fully Flipped Unicode Text Generator',
-      description: 'Flip your text completely upside down using Unicode. Copy and paste instantly.',
-      keywords: ['upside down text', 'flipped text', 'unicode upside down']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Mixed Flip Fallback': {
@@ -500,14 +331,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-mixed-fallback',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Mixed Flip Fallback Text Generator',
-      description: 'Flip text upside down with fallback for unsupported characters. Works everywhere.',
-      keywords: ['upside down text fallback', 'mixed flip text', 'unicode flip fallback']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Reverse Order Only': {
@@ -516,14 +340,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-reverse-only',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Reverse Order Text Generator',
-      description: 'Reverse your text order. Copy and paste instantly.',
-      keywords: ['reverse text', 'backwards text', 'text reverser']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Reverse + Flip Combo': {
@@ -532,14 +349,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-reverse-flip',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Reverse Flip Combo Text Generator',
-      description: 'Reverse and flip text upside down. Perfect for social media.',
-      keywords: ['reverse flip text', 'upside down reversed', 'flip and reverse']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Partial Upside Emphasis': {
@@ -548,14 +358,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'fancy',
     slug: 'upside-down-partial-emphasis',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Partial Upside Emphasis Text Generator',
-      description: 'Emphasize parts of text by flipping upside down. Copy and paste.',
-      keywords: ['partial upside down', 'emphasis flip text', 'selective flip']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Line Level Upside Down': {
@@ -564,14 +367,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-line-level',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Line Level Upside Down Text Generator',
-      description: 'Flip each line of text upside down. Great for multiline posts.',
-      keywords: ['line level upside down', 'multiline flip', 'flip lines']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Alternating Upside Down': {
@@ -580,14 +376,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-alternating',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Alternating Upside Down Text Generator',
-      description: 'Alternate words between normal and upside down. Unique style.',
-      keywords: ['alternating upside down', 'alternating flip', 'word alternating']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Mirror Illusion': {
@@ -596,14 +385,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-mirror-illusion',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Mirror Illusion Text Generator',
-      description: 'Create a mirror illusion effect with flipped text. Copy and paste.',
-      keywords: ['mirror illusion text', 'mirror flip', 'illusion text']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Emoji Assisted Upside Down': {
@@ -612,14 +394,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'cool',
     slug: 'upside-down-emoji-assisted',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Emoji Assisted Upside Down Text Generator',
-      description: 'Add upside down face emoji to your text. Fun and eye-catching.',
-      keywords: ['emoji upside down', 'upside down emoji text', 'emoji flip']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Faux Upside Down Symbols': {
@@ -628,14 +403,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'fancy',
     slug: 'upside-down-faux-symbols',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Faux Upside Down Symbols Text Generator',
-      description: 'Wrap text with upside down rotation symbols. Unique decoration.',
-      keywords: ['faux upside down', 'symbol wrap', 'rotation symbols']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   'Upside Down Micro Text': {
@@ -644,14 +412,7 @@ const textStyles = {
     familySlug: 'upside-down-text',
     category: 'special',
     slug: 'upside-down-micro',
-
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord'],
-
-    meta: {
-      title: 'Upside Down Micro Text Generator',
-      description: 'Create compact flipped text. Perfect for space-constrained posts.',
-      keywords: ['upside down micro', 'micro flip text', 'compact upside down']
-    }
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   }
 };
 
