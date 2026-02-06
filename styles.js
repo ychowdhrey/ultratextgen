@@ -537,7 +537,112 @@ const textStyles = {
     category: 'special',
     slug: 'upside-down-micro',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  }
+  },
+
+   /* =========================
+     WORD WRAP TEXT FAMILY
+     ========================= */
+
+'Ultra Word Curly Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_curly_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'wrap',
+  slug: 'ultra_word_curly_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Angle Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_angle_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'wrap',
+  slug: 'ultra_word_angle_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Double Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_double_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'wrap',
+  slug: 'ultra_word_double_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Arrow Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_arrow_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'arrows',
+  slug: 'ultra_word_arrow_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Forward Arrow Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_forward_arrow_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'arrows',
+  slug: 'ultra_word_forward_arrow_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Backward Arrow Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_backward_arrow_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'arrows',
+  slug: 'ultra_word_backward_arrow_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Bracket Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_bracket_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'frames',
+  slug: 'ultra_word_bracket_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Chevron Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_chevron_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'frames',
+  slug: 'ultra_word_chevron_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Bar Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_bar_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'bars',
+  slug: 'ultra_word_bar_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Word Double Bar Wrap': {
+  type: 'procedure',
+  procedureId: 'ultra_word_double_bar_wrap',
+  category: 'word_wrappers',
+  familySlug: 'word_wrappers',
+  groupSlug: 'bars',
+  slug: 'ultra_word_double_bar_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
 };
 
 /* -----------------------------
