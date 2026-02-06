@@ -194,6 +194,8 @@ function mapToArray(mapStrOrArr, kind) {
   return splitGraphemes(s).filter(x => x !== ' ');
 }
 
+   // renderMap logic
+
 function renderMap(text, style) {
   if (!text) return '';
 
@@ -205,25 +207,66 @@ function renderMap(text, style) {
   const lowerArr = mapToArray(style.lower, 'alphaLower');
   const numsArr  = mapToArray(style.nums,  'nums');
 
+  const isSpaced =
+    style.groupSlug === 'spaced' ||
+    (style.slug || '').endsWith('-spaced');
+
   // Debug only (remove later if you want)
   if (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10) {
     console.warn('Bad map lengths', style.slug, {
-      upper: upperArr.length, lower: lowerArr.length, nums: numsArr.length
+      upper: upperArr.length,
+      lower: lowerArr.length,
+      nums: numsArr.length
     });
   }
 
-  return Array.from(text).map(char => {
-    const u = normalUpper.indexOf(char);
-    if (u !== -1) return upperArr[u] || char;
+  if (!isSpaced) {
+    return Array.from(text).map(char => {
+      const u = normalUpper.indexOf(char);
+      if (u !== -1) return upperArr[u] || char;
 
-    const l = normalLower.indexOf(char);
-    if (l !== -1) return lowerArr[l] || char;
+      const l = normalLower.indexOf(char);
+      if (l !== -1) return lowerArr[l] || char;
 
-    const n = normalNums.indexOf(char);
-    if (n !== -1) return numsArr[n] || char;
+      const n = normalNums.indexOf(char);
+      if (n !== -1) return numsArr[n] || char;
 
-    return char;
-  }).join('');
+      return char;
+    }).join('');
+  }
+
+  // Spaced output mode (adds spacing after each mapped glyph)
+  const out = [];
+  for (const ch of Array.from(text)) {
+    if (ch === '\n') {
+      if (out[out.length - 1] === ' ') out.pop();
+      out.push('\n');
+      continue;
+    }
+
+    if (ch === ' ') {
+      if (out[out.length - 1] === ' ') out.pop();
+      out.push(' ');
+      continue;
+    }
+
+    let mapped = ch;
+
+    const u = normalUpper.indexOf(ch);
+    if (u !== -1) mapped = upperArr[u] || ch;
+
+    const l = normalLower.indexOf(ch);
+    if (l !== -1) mapped = lowerArr[l] || ch;
+
+    const n = normalNums.indexOf(ch);
+    if (n !== -1) mapped = numsArr[n] || ch;
+
+    out.push(mapped);
+    out.push(' ');
+  }
+
+  if (out[out.length - 1] === ' ') out.pop();
+  return out.join('');
 }
 
   /* -----------------------------
