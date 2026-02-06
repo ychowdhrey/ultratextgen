@@ -354,14 +354,59 @@ function renderMap(text, style) {
       [...text].map((c,i)=> i%2===0
         ? renderMap(c, textStyles['Ultra Italic'])
         : renderMap(c, textStyles['Ultra Italic Serif'])
+      ).join(''),
+
+    // === WORD WRAPPERS - Wrap entire words ===
+    'ultra_word_curly_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `❨${word}❩` : word
+      ).join(''),
+
+    'ultra_word_angle_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `⦅${word}⦆` : word
+      ).join(''),
+
+    'ultra_word_double_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `⦅❨${word}❩⦆` : word
+      ).join(''),
+
+    'ultra_word_arrow_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `→${word}←` : word
+      ).join(''),
+
+    'ultra_word_forward_arrow_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `→${word}` : word
+      ).join(''),
+
+    'ultra_word_backward_arrow_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `${word}←` : word
+      ).join(''),
+
+    'ultra_word_bracket_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `[${word}]` : word
+      ).join(''),
+
+    'ultra_word_chevron_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `‹${word}›` : word
+      ).join(''),
+
+    'ultra_word_bar_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `|${word}|` : word
+      ).join(''),
+
+    'ultra_word_double_bar_wrap': text =>
+      text.split(/(\s+)/).map(word => 
+        word.trim() ? `‖${word}‖` : word
       ).join('')
   };
-
-  function renderProcedure(text, style) {
-    if (!text) return '';
-    const fn = procedures[style.procedureId];
-    return fn ? fn(text) : text;
-  }
 
   /* -----------------------------
      MASTER SWITCH
