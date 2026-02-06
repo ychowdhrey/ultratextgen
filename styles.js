@@ -40,6 +40,11 @@ const CATEGORY_PAGES = {
     slug: 'upside-down-text',
     title: 'Upside Down Text',
     description: 'Flip your text upside down with multiple Unicode styles.'
+  },
+   'word-wrappers': {
+    slug: 'word-wrappers',
+    title: 'Word Wrappers',
+    description: 'Automatically wrap words in decorative wrappers and separators.'
   }
 };
 
