@@ -284,18 +284,6 @@ const textStyles = {
   platforms: ['all', 'instagram', 'x', 'whatsapp']
 },
 
-'Ultra Bubble Outline': {
-  upper: 'A⃝B⃝C⃝D⃝E⃝F⃝G⃝H⃝I⃝J⃝K⃝L⃝M⃝N⃝O⃝P⃝Q⃝R⃝S⃝T⃝U⃝V⃝W⃝X⃝Y⃝Z⃝',
-  lower: 'a⃝b⃝c⃝d⃝e⃝f⃝g⃝h⃝i⃝j⃝k⃝l⃝m⃝n⃝o⃝p⃝q⃝r⃝s⃝t⃝u⃝v⃝w⃝x⃝y⃝z⃝',
-  nums: '0⃝1⃝2⃝3⃝4⃝5⃝6⃝7⃝8⃝9⃝',
-  type: 'map',
-  category: 'bubble',
-  familySlug: 'bubble',
-  groupSlug: 'outline',
-  slug: 'ultra-bubble-outline',
-  platforms: ['all', 'instagram', 'discord']
-},
-
 'Ultra Bubble Tiles': {
   upper: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
   lower: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
