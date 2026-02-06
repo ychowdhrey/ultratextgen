@@ -404,7 +404,7 @@ const textStyles = {
   groupSlug: 'spaced',
   slug: 'ultra-bubble-angle-spaced',
   platforms: ['all', 'instagram']
-}
+},
   /* =========================
      SPECIAL (decorators)
      ========================= */
