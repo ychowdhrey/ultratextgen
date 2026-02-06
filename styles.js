@@ -549,7 +549,7 @@ const textStyles = {
    ========================= */
 
 'Ultra Word Curly Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'wrap',
@@ -558,7 +558,7 @@ const textStyles = {
 },
 
 'Ultra Word Angle Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'wrap',
@@ -567,7 +567,7 @@ const textStyles = {
 },
 
 'Ultra Word Double Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'wrap',
@@ -576,7 +576,7 @@ const textStyles = {
 },
 
 'Ultra Word Arrow Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'arrows',
@@ -585,7 +585,7 @@ const textStyles = {
 },
 
 'Ultra Word Forward Arrow Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'arrows',
@@ -594,7 +594,7 @@ const textStyles = {
 },
 
 'Ultra Word Backward Arrow Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'arrows',
@@ -603,7 +603,7 @@ const textStyles = {
 },
 
 'Ultra Word Bracket Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'frames',
@@ -612,7 +612,7 @@ const textStyles = {
 },
 
 'Ultra Word Chevron Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'frames',
@@ -621,7 +621,7 @@ const textStyles = {
 },
 
 'Ultra Word Bar Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'bars',
@@ -630,7 +630,7 @@ const textStyles = {
 },
 
 'Ultra Word Double Bar Wrap': {
-  type: 'map',
+  type: 'procedure',
   category: 'word-wrappers',
   familySlug: 'word-wrappers',
   groupSlug: 'bars',
