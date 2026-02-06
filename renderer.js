@@ -411,6 +411,12 @@ function renderMap(text, style) {
   /* -----------------------------
      MASTER SWITCH
      ----------------------------- */
+function renderProcedure(text, style) {
+  if (!text) return '';
+  const fn = procedures[style.slug];
+  return fn ? fn(text) : text;
+}
+   
   function renderAny(text, style) {
     // Handle function-based transforms (upside down)
     if (style.type === 'function' && style.transform) {
