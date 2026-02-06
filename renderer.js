@@ -153,30 +153,47 @@
   /* -----------------------------
      MAP RENDERER
      ----------------------------- */
-  function renderMap(text, style) {
-    if (!text) return '';
+   // Split into user-perceived characters (emoji + combining-mark safe)
 
-    const normalUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const normalLower = 'abcdefghijklmnopqrstuvwxyz';
-    const normalNums  = '0123456789';
-
-    const upperArr = [...style.upper];
-    const lowerArr = [...style.lower];
-    const numsArr  = [...style.nums];
-
-    return [...text].map(char => {
-      const u = normalUpper.indexOf(char);
-      if (u !== -1) return upperArr[u] || char;
-
-      const l = normalLower.indexOf(char);
-      if (l !== -1) return lowerArr[l] || char;
-
-      const n = normalNums.indexOf(char);
-      if (n !== -1) return numsArr[n] || char;
-
-      return char;
-    }).join('');
+   function splitGraphemes(str) {
+  if (!str) return [];
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    const seg = new Intl.Segmenter('en', { granularity: 'grapheme' });
+    return Array.from(seg.segment(str), x => x.segment);
   }
+  return Array.from(str);
+}
+   
+function renderMap(text, style) {
+  if (!text) return '';
+
+  const normalUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const normalLower = 'abcdefghijklmnopqrstuvwxyz';
+  const normalNums  = '0123456789';
+
+  // IMPORTANT: split as graphemes, not code units
+  // Also ignore spaces in mapping strings if you included "spaced" variants
+  const upperArr = splitGraphemes(style.upper).filter(x => x !== ' ');
+  const lowerArr = splitGraphemes(style.lower).filter(x => x !== ' ');
+  const numsArr  = splitGraphemes(style.nums).filter(x => x !== ' ');
+
+  // Optional: sanity check in console
+  // if (upperArr.length !== 26 || lowerArr.length !== 26) console.warn(style.slug, upperArr.length, lowerArr.length);
+  // if (numsArr.length !== 10) console.warn(style.slug, numsArr.length);
+
+  return Array.from(text).map(char => {
+    const u = normalUpper.indexOf(char);
+    if (u !== -1) return upperArr[u] || char;
+
+    const l = normalLower.indexOf(char);
+    if (l !== -1) return lowerArr[l] || char;
+
+    const n = normalNums.indexOf(char);
+    if (n !== -1) return numsArr[n] || char;
+
+    return char;
+  }).join('');
+}
 
   /* -----------------------------
      DECORATORS
