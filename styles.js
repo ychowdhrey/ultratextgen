@@ -245,30 +245,166 @@ const textStyles = {
   /* =========================
      BUBBLE
      ========================= */
-  'Ultra Bubble': {
-    upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
-    lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
-    nums: '⓪①②③④⑤⑥⑦⑧⑨',
-    type: 'map',
-    category: 'bubble',
-    familySlug: 'bubble',
-    groupSlug: 'circle',
-    slug: 'ultra-bubble',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
 
-  'Ultra Bubble Filled': {
-    upper: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
-    lower: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
-    nums: '⓿❶❷❸❹❺❻❼❽❾',
-    type: 'map',
-    category: 'bubble',
-    familySlug: 'bubble',
-    groupSlug: 'circle',
-    slug: 'ultra-bubble-filled',
-    platforms: ['all', 'instagram', 'discord']
-  },
+/* ===== Canonical Bubble Forms (8) ===== */
 
+'Ultra Bubble': {
+  upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
+  lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
+  nums: '⓪①②③④⑤⑥⑦⑧⑨',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'circle',
+  slug: 'ultra-bubble',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Bubble Filled': {
+  upper: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
+  lower: '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩',
+  nums: '⓿❶❷❸❹❺❻❼❽❾',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'square',
+  slug: 'ultra-bubble-filled',
+  platforms: ['all', 'instagram', 'discord']
+},
+
+'Ultra Bubble Light': {
+  upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
+  lower: '⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵',
+  nums: '⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'light',
+  slug: 'ultra-bubble-light',
+  platforms: ['all', 'instagram', 'x', 'whatsapp']
+},
+
+'Ultra Bubble Outline': {
+  upper: 'A⃝B⃝C⃝D⃝E⃝F⃝G⃝H⃝I⃝J⃝K⃝L⃝M⃝N⃝O⃝P⃝Q⃝R⃝S⃝T⃝U⃝V⃝W⃝X⃝Y⃝Z⃝',
+  lower: 'a⃝b⃝c⃝d⃝e⃝f⃝g⃝h⃝i⃝j⃝k⃝l⃝m⃝n⃝o⃝p⃝q⃝r⃝s⃝t⃝u⃝v⃝w⃝x⃝y⃝z⃝',
+  nums: '0⃝1⃝2⃝3⃝4⃝5⃝6⃝7⃝8⃝9⃝',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'outline',
+  slug: 'ultra-bubble-outline',
+  platforms: ['all', 'instagram', 'discord']
+},
+
+'Ultra Bubble Tiles': {
+  upper: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
+  lower: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
+  nums: '0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'tiles',
+  slug: 'ultra-bubble-tiles',
+  platforms: ['all', 'instagram', 'discord']
+},
+
+'Ultra Bubble Parentheses': {
+  upper: '( A )( B )( C )( D )( E )( F )( G )( H )( I )( J )( K )( L )( M )( N )( O )( P )( Q )( R )( S )( T )( U )( V )( W )( X )( Y )( Z )',
+  lower: '( a )( b )( c )( d )( e )( f )( g )( h )( i )( j )( k )( l )( m )( n )( o )( p )( q )( r )( s )( t )( u )( v )( w )( x )( y )( z )',
+  nums: '( 0 )( 1 )( 2 )( 3 )( 4 )( 5 )( 6 )( 7 )( 8 )( 9 )',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'bracket',
+  slug: 'ultra-bubble-parentheses',
+  platforms: ['all', 'instagram', 'x', 'whatsapp']
+},
+
+'Ultra Bubble Curly': {
+  upper: '❨A❩❨B❩❨C❩❨D❩❨E❩❨F❩❨G❩❨H❩❨I❩❨J❩❨K❩❨L❩❨M❩❨N❩❨O❩❨P❩❨Q❩❨R❩❨S❩❨T❩❨U❩❨V❩❨W❩❨X❩❨Y❩❨Z❩',
+  lower: '❨a❩❨b❩❨c❩❨d❩❨e❩❨f❩❨g❩❨h❩❨i❩❨j❩❨k❩❨l❩❨m❩❨n❩❨o❩❨p❩❨q❩❨r❩❨s❩❨t❩❨u❩❨v❩❨w❩❨x❩❨y❩❨z❩',
+  nums: '❨0❩❨1❩❨2❩❨3❩❨4❩❨5❩❨6❩❨7❩❨8❩❨9❩',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'bracket',
+  slug: 'ultra-bubble-curly',
+  platforms: ['all', 'instagram', 'discord']
+},
+
+'Ultra Bubble Angle': {
+  upper: '⦅A⦆⦅B⦆⦅C⦆⦅D⦆⦅E⦆⦅F⦆⦅G⦆⦅H⦆⦅I⦆⦅J⦆⦅K⦆⦅L⦆⦅M⦆⦅N⦆⦅O⦆⦅P⦆⦅Q⦆⦅R⦆⦅S⦆⦅T⦆⦅U⦆⦅V⦆⦅W⦆⦅X⦆⦅Y⦆⦅Z⦆',
+  lower: '⦅a⦆⦅b⦆⦅c⦆⦅d⦆⦅e⦆⦅f⦆⦅g⦆⦅h⦆⦅i⦆⦅j⦆⦅k⦆⦅l⦆⦅m⦆⦅n⦆⦅o⦆⦅p⦆⦅q⦆⦅r⦆⦅s⦆⦅t⦆⦅u⦆⦅v⦆⦅w⦆⦅x⦆⦅y⦆⦅z⦆',
+  nums: '⦅0⦆⦅1⦆⦅2⦆⦅3⦆⦅4⦆⦅5⦆⦅6⦆⦅7⦆⦅8⦆⦅9⦆',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'bracket',
+  slug: 'ultra-bubble-angle',
+  platforms: ['all', 'instagram', 'discord']
+},
+
+/* ===== Rendering Variants (5) ===== */
+
+'Ultra Bubble Spaced': {
+  upper: 'Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ',
+  lower: 'ⓐ ⓑ ⓒ ⓓ ⓔ ⓕ ⓖ ⓗ ⓘ ⓙ ⓚ ⓛ ⓜ ⓝ ⓞ ⓟ ⓠ ⓡ ⓢ ⓣ ⓤ ⓥ ⓦ ⓧ ⓨ ⓩ',
+  nums: '⓪ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'spaced',
+  slug: 'ultra-bubble-spaced',
+  platforms: ['all', 'instagram', 'tiktok', 'x']
+},
+
+'Ultra Bubble Filled Spaced': {
+  upper: '🅐 🅑 🅒 🅓 🅔 🅕 🅖 🅗 🅘 🅙 🅚 🅛 🅜 🅝 🅞 🅟 🅠 🅡 🅢 🅣 🅤 🅥 🅦 🅧 🅨 🅩',
+  lower: '🅐 🅑 🅒 🅓 🅔 🅕 🅖 🅗 🅘 🅙 🅚 🅛 🅜 🅝 🅞 🅟 🅠 🅡 🅢 🅣 🅤 🅥 🅦 🅧 🅨 🅩',
+  nums: '⓿ ❶ ❷ ❸ ❹ ❺ ❻ ❼ ❽ ❾',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'spaced',
+  slug: 'ultra-bubble-filled-spaced',
+  platforms: ['all', 'instagram']
+},
+
+'Ultra Bubble Tiles Spaced': {
+  upper: '🄰 🄱 🄲 🄳 🄴 🄵 🄶 🄷 🄸 🄹 🄺 🄻 🄼 🄽 🄾 🄿 🅀 🅁 🅂 🅃 🅄 🅅 🅆 🅇 🅈 🅉',
+  lower: '🄰 🄱 🄲 🄳 🄴 🄵 🄶 🄷 🄸 🄹 🄺 🄻 🄼 🄽 🄾 🄿 🅀 🅁 🅂 🅃 🅄 🅅 🅆 🅇 🅈 🅉',
+  nums: '0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'spaced',
+  slug: 'ultra-bubble-tiles-spaced',
+  platforms: ['all', 'instagram']
+},
+
+'Ultra Bubble Curly Spaced': {
+  upper: '❨A❩ ❨B❩ ❨C❩ ❨D❩ ❨E❩ ❨F❩ ❨G❩ ❨H❩ ❨I❩ ❨J❩ ❨K❩ ❨L❩ ❨M❩ ❨N❩ ❨O❩ ❨P❩ ❨Q❩ ❨R❩ ❨S❩ ❨T❩ ❨U❩ ❨V❩ ❨W❩ ❨X❩ ❨Y❩ ❨Z❩',
+  lower: '❨a❩ ❨b❩ ❨c❩ ❨d❩ ❨e❩ ❨f❩ ❨g❩ ❨h❩ ❨i❩ ❨j❩ ❨k❩ ❨l❩ ❨m❩ ❨n❩ ❨o❩ ❨p❩ ❨q❩ ❨r❩ ❨s❩ ❨t❩ ❨u❩ ❨v❩ ❨w❩ ❨x❩ ❨y❩ ❨z❩',
+  nums: '❨0❩ ❨1❩ ❨2❩ ❨3❩ ❨4❩ ❨5❩ ❨6❩ ❨7❩ ❨8❩ ❨9❩',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'spaced',
+  slug: 'ultra-bubble-curly-spaced',
+  platforms: ['all', 'instagram']
+},
+
+'Ultra Bubble Angle Spaced': {
+  upper: '⦅A⦆ ⦅B⦆ ⦅C⦆ ⦅D⦆ ⦅E⦆ ⦅F⦆ ⦅G⦆ ⦅H⦆ ⦅I⦆ ⦅J⦆ ⦅K⦆ ⦅L⦆ ⦅M⦆ ⦅N⦆ ⦅O⦆ ⦅P⦆ ⦅Q⦆ ⦅R⦆ ⦅S⦆ ⦅T⦆ ⦅U⦆ ⦅V⦆ ⦅W⦆ ⦅X⦆ ⦅Y⦆ ⦅Z⦆',
+  lower: '⦅a⦆ ⦅b⦆ ⦅c⦆ ⦅d⦆ ⦅e⦆ ⦅f⦆ ⦅g⦆ ⦅h⦆ ⦅i⦆ ⦅j⦆ ⦅k⦆ ⦅l⦆ ⦅m⦆ ⦅n⦆ ⦅o⦆ ⦅p⦆ ⦅q⦆ ⦅r⦆ ⦅s⦆ ⦅t⦆ ⦅u⦆ ⦅v⦆ ⦅w⦆ ⦅x⦆ ⦅y⦆ ⦅z⦆',
+  nums: '⦅0⦆ ⦅1⦆ ⦅2⦆ ⦅3⦆ ⦅4⦆ ⦅5⦆ ⦅6⦆ ⦅7⦆ ⦅8⦆ ⦅9⦆',
+  type: 'map',
+  category: 'bubble',
+  familySlug: 'bubble',
+  groupSlug: 'spaced',
+  slug: 'ultra-bubble-angle-spaced',
+  platforms: ['all', 'instagram']
+}
   /* =========================
      SPECIAL (decorators)
      ========================= */
