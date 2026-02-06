@@ -269,6 +269,36 @@ function renderMap(text, style) {
     });
   }
 
+     // Helper function to extract wrapper pattern and apply to character
+  function applyWrapper(wrappedPattern, targetChar) {
+    // If the pattern doesn't contain wrappers, return as-is
+    if (!wrappedPattern) return targetChar;
+    
+    // Check for various wrapper patterns and extract prefix/suffix
+    const patterns = [
+      { regex: /^⦅❨[A-Za-z0-9]❩⦆$/, prefix: '⦅❨', suffix: '❩⦆' },      // Double wrap
+      { regex: /^❨[A-Za-z0-9]❩$/, prefix: '❨', suffix: '❩' },           // Curly
+      { regex: /^⦅[A-Za-z0-9]⦆$/, prefix: '⦅', suffix: '⦆' },           // Angle
+      { regex: /^→[A-Za-z0-9]←$/, prefix: '→', suffix: '←' },           // Arrow both
+      { regex: /^→[A-Za-z0-9]$/, prefix: '→', suffix: '' },             // Forward arrow
+      { regex: /^[A-Za-z0-9]←$/, prefix: '', suffix: '←' },             // Backward arrow
+      { regex: /^\[[A-Za-z0-9]\]$/, prefix: '[', suffix: ']' },         // Bracket
+      { regex: /^‹[A-Za-z0-9]›$/, prefix: '‹', suffix: '›' },           // Chevron
+      { regex: /^‖[A-Za-z0-9]‖$/, prefix: '‖', suffix: '‖' },           // Double bar
+      { regex: /^\|[A-Za-z0-9]\|$/, prefix: '|', suffix: '|' },         // Single bar
+      { regex: /^\(\s*[A-Za-z0-9]\s*\)$/, prefix: '(', suffix: ')' }    // Parentheses
+    ];
+
+    for (const pattern of patterns) {
+      if (pattern.regex.test(wrappedPattern)) {
+        return pattern.prefix + targetChar + pattern.suffix;
+      }
+    }
+
+    // If no pattern matches, return the wrapped pattern as-is (fallback for regular fonts)
+    return wrappedPattern;
+  }
+
   if (!isSpaced) {
     return Array.from(text).map(char => {
       const u = normalUpper.indexOf(char);
