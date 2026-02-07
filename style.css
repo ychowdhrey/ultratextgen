@@ -596,10 +596,6 @@
      padding-top: 0;
    }
 
-    .faq-item {
-      border-bottom: 1px solid var(--border-light);
-    }
-
     .faq-question {
       width: 100%;
       padding: 16px 0;
