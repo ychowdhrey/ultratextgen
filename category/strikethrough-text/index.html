@@ -307,23 +307,148 @@
 
   <div class="faq-item">
     <button class="faq-question" type="button">
-      Can I generate strikethrough text for non-English languages?
+      Can I generate strikethrough text for non-English Latin-based languages (e.g., French, Spanish)?
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
     </button>
     <div class="faq-answer">
-      Absolutely. Unicode combining characters work with virtually any script — Latin,
-      Cyrillic, Greek, Arabic, Devanagari, CJK, and more. The generator applies the
-      overlay character-by-character, so it adapts to whatever alphabet you input.
+      Absolutely. Unicode overlays work seamlessly with Latin scripts, including accented
+      characters common in languages like French or Spanish. The generator applies the
+      strikethrough to each letter, preserving diacritics and readability.
       <br><br>
-      That said, visual consistency can vary: some complex scripts or fonts render the
-      line at a slightly different vertical position. Always preview the output in your
-      target platform to confirm it looks as intended.
+      Example (French for "strikethrough text"): T̶e̶x̶t̶e̶ ̶b̶a̶r̶r̶é̶
+      <br><br>
+      Visual consistency is generally excellent, as Latin fonts are widely supported, but
+      older systems might show minor alignment issues with accents.
     </div>
   </div>
 
-  <!-- Section 5: Best Practices -->
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      Can I generate strikethrough text for Cyrillic scripts (e.g., Russian, Ukrainian)?
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="faq-answer">
+      Yes, Unicode combining characters adapt perfectly to Cyrillic alphabets. The overlay
+      is added per character, creating a clean horizontal line without disrupting the
+      script's unique shapes.
+      <br><br>
+      Example (Russian for "strikethrough text"): З̶а̶ч̶е̶р̶к̶н̶у̶т̶ы̶й̶ ̶т̶е̶к̶с̶т̶
+      <br><br>
+      Consistency is high in modern fonts, though some cursive-style renderings might
+      slightly offset the line — always test in your platform.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      Can I generate strikethrough text for Greek scripts?
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="faq-answer">
+      Definitely. Greek letters, including those with diacritics, support Unicode overlays
+      just like Latin. The generator processes each character individually for a uniform
+      effect.
+      <br><br>
+      Example (Greek for "strikethrough text"): Δ̶ι̶α̶γ̶ρ̶α̶μ̶μ̶έ̶ν̶ο̶ ̶κ̶ε̶ί̶μ̶ε̶ν̶ο̶
+      <br><br>
+      Visuals are reliable, but in fonts without strong Greek support, the line might
+      appear at a varied height; preview to ensure it aligns well.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      Can I generate strikethrough text for Arabic scripts (e.g., Arabic, Persian)?
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="faq-answer">
+      Yes, it works for right-to-left (RTL) scripts like Arabic. The overlay attaches to
+      each character, and the text direction remains intact, though the line follows the
+      RTL flow.
+      <br><br>
+      Example (Arabic for "strikethrough text"): ن̶ص̶ ̶م̶ش̶ط̶و̶ب̶
+      <br><br>
+      Consistency can vary more here due to ligatures (connected letters) and RTL
+      handling — some fonts might show the line slightly above or below the ideal
+      position. Always preview, especially in mixed RTL/LTR contexts.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      Can I generate strikethrough text for Devanagari scripts (e.g., Hindi, Sanskrit)?
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="faq-answer">
+      Absolutely. Devanagari's complex combining marks and conjuncts are compatible with
+      Unicode overlays, which apply to base characters and modifiers alike.
+      <br><br>
+      Example (Hindi for "strikethrough text"): स̶̶्ट̶̶्र̶ा̶इ̶क̶थ̶̶्र̶ू̶ ̶ट̶े̶क̶̶्स̶̶्ट̶
+      <br><br>
+      Visuals may have slight vertical positioning differences in intricate fonts, as the
+      line needs to span stacked elements — test outputs to confirm clarity.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      Can I generate strikethrough text for CJK scripts (e.g., Chinese, Japanese, Korean)?
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="faq-answer">
+      Yes, Unicode handles CJK ideographs and characters effectively. The overlay is
+      placed over each symbol, adapting to their block-like structure.
+      <br><br>
+      Example (Chinese for "strikethrough text"): 删̶除̶线̶文̶本̶
+      <br><br>
+      Consistency is solid, but in dense or variable-width fonts, the line might seem
+      shorter or offset — previewing is key for polished results.
+    </div>
+  </div>
+
+  <!-- Section 5: How Strikethrough Differs -->
+  <h3 class="faq-category">How Strikethrough Differs from Other Styles</h3>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      Does strikethrough work differently from bold in a text generator?
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="faq-answer">
+      Yes — they work in completely different ways.
+      <br><br>
+      <strong>Bold</strong> usually replaces each letter with a different Unicode character
+      (from the "Mathematical Alphanumeric Symbols" block). For example, plain "Test"
+      becomes 𝐓𝐞𝐬𝐭 — the actual characters change.
+      <br><br>
+      <strong>Strikethrough</strong> does not replace anything. It simply adds a special
+      "overlay" mark after every existing character. For example, plain "Test" becomes
+      T̶e̶s̶t̶ — the original letters stay exactly the same; only the line is added on top.
+      <br><br>
+      Because strikethrough is an overlay, it works on top of almost any text — including
+      bold text, non-English scripts, emojis, or even numbers and symbols. You can
+      strikethrough any language (Arabic, Hindi, Chinese, Russian, etc.) because the
+      overlay works on any script, while bold replacement only exists for certain
+      alphabets. So in the generator, just paste your text and see it striked through
+      instantly.
+    </div>
+  </div>
+
+  <!-- Section 6: Best Practices -->
   <h3 class="faq-category">Best Practices &amp; Tips</h3>
 
   <div class="faq-item">
