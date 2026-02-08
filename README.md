@@ -89,5 +89,6 @@ UltraTextGen includes dedicated pages for each major platform so styles render e
 - https://ultratextgen.com/category/gothic-fonts/
 - https://ultratextgen.com/category/upside-down-text/
 - https://ultratextgen.com/category/word-wrappers/
+- https://ultratextgen.com/category/strikethrough-text/
 
 Each platform page is optimized for compatibility and speed.
