@@ -31,10 +31,10 @@ const CATEGORY_PAGES = {
     title: 'Bubble Fonts',
     description: 'Fun bubble and circle Unicode fonts.'
   },
-  'special': {
-    slug: 'special-fonts',
-    title: 'Special Fonts',
-    description: 'Unique decorative Unicode fonts.'
+  'strikethrough-text': {
+    slug: 'strikethrough-text',
+    title: 'Strikethrough Text',
+    description: 'Strikethrough and decorative line effects for your text.'
   },
   'upside-down-text': {
     slug: 'upside-down-text',
@@ -399,7 +399,7 @@ const textStyles = {
   platforms: ['all', 'instagram']
 },
   /* =========================
-     SPECIAL (decorators)
+     Strikethrough Text
      ========================= */
   'Ultra Strike': {
     type: 'decorator',
