@@ -292,7 +292,7 @@ const decorations = {
     return String(name).toLowerCase().includes(String(q).toLowerCase());
   }
 
-  function createStyleCard(name, convertedText, decoratedText, isSponsored = false) {
+  function createStyleCard(name, convertedText, decoratedText, style, isSponsored = false) {
     const card = document.createElement("div");
     card.className = "style-card" + (isSponsored ? " sponsored-card" : "");
 
@@ -310,6 +310,7 @@ const decorations = {
           ${name}
           ${isSponsored ? '<span class="sponsored-label">Sponsored</span>' : ""}
         </p>
+         ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
         ${decoHtml}
       </div>
