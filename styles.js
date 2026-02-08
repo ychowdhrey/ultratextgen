@@ -418,6 +418,7 @@ const textStyles = {
   familySlug: 'strikethrough-text',
   groupSlug: 'lines',
   slug: 'ultra-double-strike',
+  note: 'Copy & Paste to Check',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
