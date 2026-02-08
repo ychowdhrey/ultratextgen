@@ -67,9 +67,9 @@
         "Ultra Gothic Bold"
       ]
     },
-    "special-fonts": {
-      "label": "Special Fonts",
-      "icon": "⚡",
+    "strikethrough-text": {
+      "label": "Strikethrough Text",
+      "icon": "✂️",
       "fonts": [
         "Ultra Strike",
         "Ultra Underline",
