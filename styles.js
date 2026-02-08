@@ -404,8 +404,8 @@ const textStyles = {
   'Ultra Strike': {
     type: 'decorator',
     decoratorId: 'strike',
-    category: 'special',
-    familySlug: 'special',
+     category: 'strikethrough',
+     familySlug: 'strikethrough-text',
     groupSlug: 'lines',
     slug: 'ultra-strike',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -414,8 +414,8 @@ const textStyles = {
   'Ultra Underline': {
     type: 'decorator',
     decoratorId: 'underline',
-    category: 'special',
-    familySlug: 'special',
+     category: 'strikethrough',
+     familySlug: 'strikethrough-text',
     groupSlug: 'lines',
     slug: 'ultra-underline',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -424,8 +424,8 @@ const textStyles = {
   'Ultra Wavy': {
     type: 'decorator',
     decoratorId: 'wavy',
-    category: 'special',
-    familySlug: 'special',
+     category: 'strikethrough',
+     familySlug: 'strikethrough-text',
     groupSlug: 'effects',
     slug: 'ultra-wavy',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
@@ -434,8 +434,8 @@ const textStyles = {
   'Ultra Slash': {
     type: 'decorator',
     decoratorId: 'slash',
-    category: 'special',
-    familySlug: 'special',
+     category: 'strikethrough',
+     familySlug: 'strikethrough-text',
     groupSlug: 'lines',
     slug: 'ultra-slash',
     platforms: ['all', 'x', 'discord']
