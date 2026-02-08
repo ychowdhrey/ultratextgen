@@ -72,12 +72,20 @@
       "icon": "✂️",
       "fonts": [
         "Ultra Strike",
-        "Ultra Underline",
-        "Ultra Wavy",
         "Ultra Slash"
       ]
     },
-    "upside-down-text": {
+
+  "underline-text": {
+    "label": "Underline Text",
+    "icon": "➖",
+    "fonts": [
+    "Ultra Underline",
+    "Ultra Wavy"
+  ]
+  },
+  
+  "upside-down-text": {
       "label": "Upside Down",
       "icon": "ɐ",
       "fonts": [
