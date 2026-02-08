@@ -411,34 +411,38 @@ const textStyles = {
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
-  'Ultra Underline': {
-    type: 'decorator',
-    decoratorId: 'underline',
-     category: 'strikethrough',
-     familySlug: 'strikethrough-text',
-    groupSlug: 'lines',
-    slug: 'ultra-underline',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
-
-  'Ultra Wavy': {
-    type: 'decorator',
-    decoratorId: 'wavy',
-     category: 'strikethrough',
-     familySlug: 'strikethrough-text',
-    groupSlug: 'effects',
-    slug: 'ultra-wavy',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
-  },
-
-  'Ultra Slash': {
+   'Ultra Slash': {
     type: 'decorator',
     decoratorId: 'slash',
-     category: 'strikethrough',
+      category: 'strikethrough',
      familySlug: 'strikethrough-text',
     groupSlug: 'lines',
     slug: 'ultra-slash',
     platforms: ['all', 'x', 'discord']
+  },
+
+  /* =========================
+     Underline Text
+     ========================= */
+
+   'Ultra Underline': {
+    type: 'decorator',
+    decoratorId: 'underline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-underline',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+  },
+   
+  'Ultra Wavy': {
+    type: 'decorator',
+    decoratorId: 'wavy',
+     category: 'underline',
+     familySlug: 'underline-text', // temporary home
+    groupSlug: 'effects',
+    slug: 'ultra-wavy',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
   },
 
   /* =========================
