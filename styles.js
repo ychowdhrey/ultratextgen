@@ -421,13 +421,13 @@ const textStyles = {
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
-'Ultra Alternate Strike': {
+'Ultra Crossed-Out': {
   type: 'decorator',
-  decoratorId: 'alternateStrike',
+  decoratorId: 'crossedOut',
   category: 'strikethrough',
   familySlug: 'strikethrough-text',
   groupSlug: 'lines',
-  slug: 'ultra-alternate-strike',
+  slug: 'ultra-crossed-out',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
