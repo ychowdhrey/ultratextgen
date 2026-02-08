@@ -515,7 +515,7 @@ const decorations = {
       }
 
       const decorated = converted ? applyDecoration(converted) : "";
-      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, false));
+      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
       count += 1;
 
       if (count % 8 === 0) {
