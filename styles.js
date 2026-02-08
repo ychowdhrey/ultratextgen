@@ -411,15 +411,35 @@ const textStyles = {
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
-   'Ultra Slash': {
-    type: 'decorator',
-    decoratorId: 'slash',
-      category: 'strikethrough',
-     familySlug: 'strikethrough-text',
-    groupSlug: 'lines',
-    slug: 'ultra-slash',
-    platforms: ['all', 'x', 'discord']
-  },
+'Ultra Double Strike': {
+  type: 'decorator',
+  decoratorId: 'doubleStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-double-strike',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Alternate Strike': {
+  type: 'decorator',
+  decoratorId: 'alternateStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-alternate-strike',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Slash': {
+   type: 'decorator',
+   decoratorId: 'slash',
+   category: 'strikethrough',
+   familySlug: 'strikethrough-text',
+   groupSlug: 'lines',
+   slug: 'ultra-slash',
+   platforms: ['all', 'x', 'discord']
+},
 
   /* =========================
      Underline Text
