@@ -319,10 +319,12 @@ function renderMap(text, style) {
 }
 
   /* -----------------------------
-     DECORATORS
+     Strikethrough and Underline
      ----------------------------- */
   const decorators = {
     strike:   t => [...t].map(c => c + '\u0336').join(''),
+    doubleStrike: t => [...t].map(c => c + '\u0336' + '\u0335').join(''),
+    alternateStrike: t => [...t].map(c => c === ' ' ? c : c + '\u0336').join(''),
     underline:t => [...t].map(c => c + '\u0332').join(''),
     wavy:    t => [...t].map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
     slash:   t => [...t].map(c => c + '\u0338').join('')
