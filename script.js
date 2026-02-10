@@ -333,7 +333,7 @@ const decorations = {
   }
 
   /* ===================
-     RENDER: Decorations
+     RENDER: Category Tabs
      =================== */
   function renderCategoryTabs() {
     const tabsContainer = $("#categoryTabs");
@@ -385,6 +385,94 @@ const decorations = {
       }
       
       tabsContainer.appendChild(tab);
+    });
+
+    // Apply desktop two-row layout with "More" button
+    setTimeout(() => collapseCategoryTabs(), 0);
+  }
+
+  /* ===================
+     COLLAPSE: Category Tabs (Desktop only)
+     =================== */
+  function collapseCategoryTabs() {
+    // Only apply on desktop (min-width: 641px)
+    if (window.innerWidth < 641) return;
+
+    const tabsContainer = $("#categoryTabs");
+    if (!tabsContainer) return;
+
+    // Remove any existing "More" button and reset state
+    const existingMore = tabsContainer.querySelector(".category-more");
+    if (existingMore) {
+      existingMore.remove();
+    }
+
+    // Reset all tabs to visible
+    const allTabs = Array.from(tabsContainer.querySelectorAll(".category-tab"));
+    allTabs.forEach(tab => {
+      tab.style.display = "";
+      tab.classList.remove("hidden-category");
+      tab.removeAttribute("aria-hidden");
+    });
+
+    // If container is expanded, don't collapse
+    if (tabsContainer.classList.contains("expanded")) return;
+
+    // Wait for layout to stabilize
+    requestAnimationFrame(() => {
+      // Group tabs by their offsetTop to detect rows
+      const rowMap = new Map();
+      allTabs.forEach(tab => {
+        const top = tab.offsetTop;
+        if (!rowMap.has(top)) {
+          rowMap.set(top, []);
+        }
+        rowMap.get(top).push(tab);
+      });
+
+      const rows = Array.from(rowMap.entries()).sort((a, b) => a[0] - b[0]);
+
+      // If we have more than 2 rows, hide tabs beyond row 2
+      if (rows.length > 2) {
+        const visibleRows = rows.slice(0, 2);
+        const lastVisibleRow = visibleRows[visibleRows.length - 1][1];
+        const lastVisibleTab = lastVisibleRow[lastVisibleRow.length - 1];
+
+        // Hide all tabs in rows beyond the second
+        let hiddenCount = 0;
+        for (let i = 2; i < rows.length; i++) {
+          rows[i][1].forEach(tab => {
+            tab.style.display = "none";
+            tab.classList.add("hidden-category");
+            tab.setAttribute("aria-hidden", "true");
+            hiddenCount++;
+          });
+        }
+
+        // Create and insert "More" button after last visible tab
+        const moreButton = document.createElement("button");
+        moreButton.className = "category-more";
+        moreButton.textContent = `More (${hiddenCount})`;
+        moreButton.setAttribute("type", "button");
+        
+        moreButton.addEventListener("click", () => {
+          // Show all hidden tabs
+          allTabs.forEach(tab => {
+            tab.style.display = "";
+            tab.classList.remove("hidden-category");
+            tab.removeAttribute("aria-hidden");
+          });
+
+          // Add expanded class to container
+          tabsContainer.classList.add("expanded");
+
+          // Remove the More button
+          moreButton.remove();
+        });
+
+        // Insert after last visible tab
+        lastVisibleTab.insertAdjacentElement("afterend", moreButton);
+      }
     });
   }
 
@@ -572,6 +660,20 @@ const decorations = {
       q.addEventListener("click", () => {
         q.parentElement.classList.toggle("open");
       });
+    });
+
+    // Debounced resize handler for category tabs
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const tabsContainer = $("#categoryTabs");
+        if (tabsContainer) {
+          // Reset expanded state on resize
+          tabsContainer.classList.remove("expanded");
+          collapseCategoryTabs();
+        }
+      }, 250);
     });
 document.addEventListener("click", async (e) => {
   const btn = e.target.closest ? e.target.closest(".copy-btn") : null;
