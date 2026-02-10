@@ -107,14 +107,15 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Category subpages / group pages -->
   <url>
-    <loc>https://ultratextgen.com/category/bold-fonts/italic/</loc>
-    <lastmod>2026-02-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://ultratextgen.com/category/italic-fonts/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
+  <!-- Category subpages / group pages -->
+  
   <url>
     <loc>https://ultratextgen.com/category/bold-fonts/bold-italic/</loc>
     <lastmod>2026-02-03</lastmod>
