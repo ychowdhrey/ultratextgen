@@ -386,6 +386,101 @@ const decorations = {
       
       tabsContainer.appendChild(tab);
     });
+
+    // Defer collapse logic so layout is ready
+    setTimeout(() => {
+      collapseCategoryTabs();
+    }, 0);
+  }
+
+  // Collapse overflowing category tabs into two visible rows on desktop,
+  // hide the rest and render a "More" button to expand and show all.
+  function collapseCategoryTabs() {
+    const tabsContainer = $("#categoryTabs");
+    if (!tabsContainer) return;
+
+    // Cleanup any previous "More" button
+    const prevMore = tabsContainer.querySelector(".category-more");
+    if (prevMore) prevMore.remove();
+
+    // Reset any previously hidden tabs
+    $$(".category-tab", tabsContainer).forEach(t => {
+      t.style.display = "";
+      t.removeAttribute("aria-hidden");
+      t.classList.remove("hidden-category");
+    });
+    tabsContainer.classList.remove("expanded");
+
+    // Only apply desktop behavior (leave mobile/tablet as-is)
+    if (window.innerWidth < 641) return;
+
+    const tabs = Array.from(tabsContainer.querySelectorAll(".category-tab"));
+    if (tabs.length === 0) return;
+
+    // Determine unique row top offsets (order-preserving)
+    const uniqueTops = [];
+    for (const t of tabs) {
+      const top = t.offsetTop;
+      if (!uniqueTops.includes(top)) {
+        uniqueTops.push(top);
+      }
+      if (uniqueTops.length > 2) break;
+    }
+
+    // If there are 2 or fewer rows, nothing to collapse
+    if (uniqueTops.length <= 2) return;
+
+    const secondRowTop = uniqueTops[1];
+
+    // Find tabs that are beyond the second row
+    const hiddenTabs = [];
+    let lastVisibleIndex = -1;
+    for (let i = 0; i < tabs.length; i++) {
+      const t = tabs[i];
+      if (t.offsetTop > secondRowTop) {
+        hiddenTabs.push(t);
+      } else {
+        lastVisibleIndex = i;
+      }
+    }
+
+    if (hiddenTabs.length === 0) return;
+
+    // Hide overflowing tabs
+    hiddenTabs.forEach(h => {
+      h.style.display = "none";
+      h.setAttribute("aria-hidden", "true");
+      h.classList.add("hidden-category");
+    });
+
+    // Create the More button and insert it after the last visible tab
+    const moreBtn = document.createElement("button");
+    moreBtn.className = "category-more";
+    moreBtn.type = "button";
+    moreBtn.textContent = "More";
+    moreBtn.addEventListener("click", () => {
+      // Reveal all tabs and remove the More button
+      hiddenTabs.forEach(h => {
+        h.style.display = "";
+        h.removeAttribute("aria-hidden");
+        h.classList.remove("hidden-category");
+      });
+      moreBtn.remove();
+      tabsContainer.classList.add("expanded");
+    });
+
+    // Insert after last visible tab; if lastVisibleIndex is last element, append to end
+    const insertBeforeEl = tabs[lastVisibleIndex + 1] || null;
+    tabsContainer.insertBefore(moreBtn, insertBeforeEl);
+  }
+
+  // Debounce helper for resize
+  function debounce(fn, wait = 120) {
+    let t = null;
+    return (...args) => {
+      if (t) clearTimeout(t);
+      t = setTimeout(() => fn(...args), wait);
+    };
   }
 
   async function loadFontCategories() {
@@ -610,6 +705,7 @@ document.addEventListener("copy", () => {
   }
 });
      }
+
   /* ===================
      INIT
      =================== */
@@ -624,6 +720,11 @@ document.addEventListener("copy", () => {
     
     // Load font categories and render tabs
     loadFontCategories();
+
+    // collapse/expand behavior should respond to resize on desktop
+    window.addEventListener('resize', debounce(() => {
+      collapseCategoryTabs();
+    }, 150));
   }
 
   if (document.readyState === "loading") {
@@ -632,4 +733,3 @@ document.addEventListener("copy", () => {
     init();
   }
 })();
-
