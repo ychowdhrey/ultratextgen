@@ -221,6 +221,7 @@ const decorations = {
   let searchQuery = "";
   let fontCategories = null;
   let categoryFontMap = {};
+  let categoryTabsResizeTimeout = null;
 
   /* ===================
      ELEMENTS
@@ -387,8 +388,8 @@ const decorations = {
       tabsContainer.appendChild(tab);
     });
 
-    // Apply desktop two-row layout with "More" button
-    setTimeout(() => collapseCategoryTabs(), 0);
+    // Apply desktop two-row layout with "More" button (deferred to ensure DOM layout is complete)
+    requestAnimationFrame(() => collapseCategoryTabs());
   }
 
   /* ===================
@@ -663,10 +664,9 @@ const decorations = {
     });
 
     // Debounced resize handler for category tabs
-    let resizeTimeout;
     window.addEventListener("resize", () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
+      clearTimeout(categoryTabsResizeTimeout);
+      categoryTabsResizeTimeout = setTimeout(() => {
         const tabsContainer = $("#categoryTabs");
         if (tabsContainer) {
           // Reset expanded state on resize
