@@ -742,3 +742,54 @@
   display: block;
   width: 100%;
 }       
+
+/* -----------------------------
+   Desktop: two-row category tabs
+   - Disable horizontal scrolling
+   - Wrap into rows
+   - Limit to two visible rows and show "More" button if overflow
+------------------------------ */
+@media (min-width: 641px) {
+  .category-tabs {
+    /* allow wrapping and hide overflow by default on desktop */
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding-right: 8px; /* small padding since scrollbar not needed */
+    /* cap height to approx two rows (approx. 48px per row + gap)
+       The exact value is conservative to accommodate the .category-tab padding */
+    max-height: calc(48px * 2 + 12px);
+    transition: max-height 0.18s ease;
+    position: relative;
+  }
+
+  /* Expanded state reveals all categories */
+  .category-tabs.expanded {
+    max-height: 1000px; /* large enough to show all */
+    overflow: visible;
+  }
+
+  /* Hidden category helper class (applied by JS) */
+  .category-tab.hidden-category {
+    display: none !important;
+  }
+
+  /* More button - visually matches category-tab */
+  .category-more {
+    padding: 10px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-white);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .category-more:hover {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+  }
+}
