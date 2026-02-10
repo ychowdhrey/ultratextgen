@@ -1,5 +1,3 @@
-/yandex_aa326290e0338f4f       /yandex_aa326290e0338f4f.html  200
-
 cat > _redirects << 'EOF'
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
@@ -8,5 +6,6 @@ cat > _redirects << 'EOF'
 /category/special-fonts/effects/            /category/strikethrough-text/ 301
 /category/special-fonts/effects/index.html  /category/strikethrough-text/ 301
 EOF
+
 
 
