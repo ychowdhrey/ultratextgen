@@ -77,121 +77,129 @@ const SITE_PAGES = {
    TEXT STYLES REGISTRY
 ------------------------------ */
 const textStyles = {
-  /* =========================
-     BOLD & ITALIC FAMILY
-     ========================= */
 
-  'Ultra Bold': {
-    upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
-    lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
-    nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
-    type: 'map',
-    category: 'bold',
-    familySlug: 'bold-italic',
-    groupSlug: 'bold',
-    slug: 'ultra-bold',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+   /* =========================
+   BOLD & ITALIC FAMILY
+   ========================= */
 
-  'Ultra Bold Serif': {
-    upper: '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙',
-    lower: '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',
-    nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
-    type: 'map',
-    category: 'bold',
-    familySlug: 'bold-italic',
-    groupSlug: 'bold',
-    slug: 'ultra-bold-serif',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+/* BOLD */
+'Ultra Bold': {
+  upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭',
+  lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
+  nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+  type: 'map',
+  category: 'bold',
+  familySlug: ['bold'],
+  groupSlug: 'bold',
+  slug: 'ultra-bold',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Italic': {
-    upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',
-    lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
-    nums: '0123456789',
-    type: 'map',
-    category: 'fancy',
-    familySlug: 'bold-italic',
-    groupSlug: 'italic',
-    slug: 'ultra-italic',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+'Ultra Bold Serif': {
+  upper: '𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙',
+  lower: '𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳',
+  nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
+  type: 'map',
+  category: 'bold',
+  familySlug: ['bold'],
+  groupSlug: 'bold',
+  slug: 'ultra-bold-serif',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Italic Serif': {
-    upper: '𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍',
-    lower: '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧',
-    nums: '0123456789',
-    type: 'map',
-    category: 'fancy',
-    familySlug: 'bold-italic',
-    groupSlug: 'italic',
-    slug: 'ultra-italic-serif',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+/* ITALIC */
+'Ultra Italic': {
+  upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',
+  lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
+  nums: '0123456789',
+  type: 'map',
+  category: 'italic',
+  familySlug: ['italic'],
+  groupSlug: 'italic',
+  slug: 'ultra-italic',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Bold Italic': {
-    upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕',
-    lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
-    nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
-    type: 'map',
-    category: 'bold',
-    familySlug: 'bold-italic',
-    groupSlug: 'bold-italic',
-    slug: 'ultra-bold-italic',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+'Ultra Italic Serif': {
+  upper: '𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍',
+  lower: '𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧',
+  nums: '0123456789',
+  type: 'map',
+  category: 'italic',
+  familySlug: ['italic'],
+  groupSlug: 'italic',
+  slug: 'ultra-italic-serif',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Bold Italic Serif': {
-    upper: '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁',
-    lower: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛',
-    nums: '0123456789',
-    type: 'map',
-    category: 'bold',
-    familySlug: 'bold-italic',
-    groupSlug: 'bold-italic',
-    slug: 'ultra-bold-italic-serif',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+/* BOLD ITALIC
+   appears in BOTH bold and italic pages */
+'Ultra Bold Italic': {
+  upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕',
+  lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
+  nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+  type: 'map',
+  category: 'bold',
+  familySlug: ['bold', 'italic'],
+  groupSlug: 'bold-italic',
+  slug: 'ultra-bold-italic',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Alternating Bold': {
-    type: 'procedure',
-    procedureId: 'alternating-bold',
-    category: 'bold',
-    familySlug: 'bold-italic',
-    groupSlug: 'alternating',
-    slug: 'ultra-alternating-bold',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+'Ultra Bold Italic Serif': {
+  upper: '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁',
+  lower: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛',
+  nums: '0123456789',
+  type: 'map',
+  category: 'bold',
+  familySlug: ['bold', 'italic'],
+  groupSlug: 'bold-italic',
+  slug: 'ultra-bold-italic-serif',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Alternating Italic': {
-    type: 'procedure',
-    procedureId: 'alternating-italic',
-    category: 'fancy',
-    familySlug: 'bold-italic',
-    groupSlug: 'alternating',
-    slug: 'ultra-alternating-italic',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+/* PROCEDURES */
+'Ultra Alternating Bold': {
+  type: 'procedure',
+  procedureId: 'alternating-bold',
+  category: 'bold',
+  familySlug: ['bold'],
+  groupSlug: 'alternating',
+  slug: 'ultra-alternating-bold',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Bold w Alternating Italic': {
-    type: 'procedure',
-    procedureId: 'bold-alternating-italic',
-    category: 'bold',
-    familySlug: 'bold-italic',
-    groupSlug: 'alternating',
-    slug: 'ultra-bold-alternating-italic',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+'Ultra Alternating Italic': {
+  type: 'procedure',
+  procedureId: 'alternating-italic',
+  category: 'italic',
+  familySlug: ['italic'],
+  groupSlug: 'alternating',
+  slug: 'ultra-alternating-italic',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
-  'Ultra Italic Switch Serifs': {
-    type: 'procedure',
-    procedureId: 'italic-switch-serifs',
-    category: 'fancy',
-    familySlug: 'bold-italic',
-    groupSlug: 'alternating',
-    slug: 'ultra-italic-switch-serifs',
-    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
-  },
+/* this is bold + italic behavior, so show on both pages */
+'Ultra Bold w Alternating Italic': {
+  type: 'procedure',
+  procedureId: 'bold-alternating-italic',
+  category: 'bold',
+  familySlug: ['bold', 'italic'],
+  groupSlug: 'alternating',
+  slug: 'ultra-bold-alternating-italic',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+/* italic focused, keep on italic page */
+'Ultra Italic Switch Serifs': {
+  type: 'procedure',
+  procedureId: 'italic-switch-serifs',
+  category: 'italic',
+  familySlug: ['italic'],
+  groupSlug: 'alternating',
+  slug: 'ultra-italic-switch-serifs',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
 
   /* =========================
      CURSIVE
