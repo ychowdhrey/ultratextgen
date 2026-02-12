@@ -260,7 +260,13 @@ const decorations = {
     return names[platformKey] || platformKey;
   }
 
-function isStyleInFamily(style, familyKey) {
+ function isStylePlatformCompatible(style, platformKey) {
+    const platforms = style.platforms || ["all"];
+    if (platformKey === "all") return true;
+    return platforms.includes(platformKey);
+  }
+   
+   function isStyleInFamily(style, familyKey) {
     if (!familyKey || familyKey === "all") return true;
     const slug = style.familySlug || "";
     if (Array.isArray(slug)) {
