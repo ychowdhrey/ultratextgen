@@ -11,11 +11,19 @@
    CATEGORY PAGES (Families)
 ------------------------------ */
 const CATEGORY_PAGES = {
-  'bold-italic': {
+  'bold': {
     slug: 'bold-fonts',
-    title: 'Bold & Italic Fonts',
-    description: 'Bold and italic Unicode fonts you can copy and paste.'
+    title: 'Bold Fonts',
+    description: 'Bold Unicode fonts you can copy and paste.'
   },
+   
+   const CATEGORY_PAGES = {
+  'italic': {
+    slug: 'italic-fonts',
+    title: 'Italic Fonts',
+    description: 'Italic Unicode fonts you can copy and paste.'
+  },
+   
   'cursive': {
     slug: 'cursive-fonts',
     title: 'Cursive Fonts',
