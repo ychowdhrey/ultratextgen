@@ -17,7 +17,6 @@ const CATEGORY_PAGES = {
     description: 'Bold Unicode fonts you can copy and paste.'
   },
    
-   const CATEGORY_PAGES = {
   'italic': {
     slug: 'italic-fonts',
     title: 'Italic Fonts',
