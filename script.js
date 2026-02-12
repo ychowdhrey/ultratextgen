@@ -260,12 +260,15 @@ const decorations = {
     return names[platformKey] || platformKey;
   }
 
-  function isStylePlatformCompatible(style, platformKey) {
-    const platforms = style.platforms || ["all"];
-    if (platformKey === "all") return true;
-    return platforms.includes(platformKey);
-  }
-
+function isStyleInFamily(style, familyKey) {
+    if (!familyKey || familyKey === "all") return true;
+    const slug = style.familySlug || "";
+    if (Array.isArray(slug)) {
+      return slug.includes(familyKey);
+    }
+    return slug === familyKey;
+}
+   
   function isStyleInCategory(name, categoryKey) {
     // Dynamic category filtering based on fonts.json
     if (!fontCategories || !categoryKey) return true;
