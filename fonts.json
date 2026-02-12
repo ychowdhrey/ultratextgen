@@ -16,23 +16,34 @@
         "Ultra Bubble Filled"
       ]
     },
-    "bold-fonts": {
-      "label": "Bold Fonts",
-      "icon": "𝗕",
-      "fonts": [
-        "Ultra Bold",
-        "Ultra Bold Serif",
-        "Ultra Bold Italic",
-        "Ultra Bold Italic Serif",
-        "Ultra Alternating Bold",
-        "Ultra Bold w Alternating Italic",
-        "Ultra Bold w Switch Serif",
-        "Ultra Italic",
-        "Ultra Italic Serif",
-        "Ultra Alternating Italic",
-        "Ultra Italic Switch Serifs"
-      ]
-    },
+  "bold-fonts": {
+   "label": "Bold Fonts",
+   "icon": "𝗕",
+   "fonts": [
+    "Ultra Bold",
+    "Ultra Bold Serif",
+    "Ultra Bold Italic",
+    "Ultra Bold Italic Serif",
+    "Ultra Alternating Bold",
+    "Ultra Bold w Alternating Italic",
+    "Ultra Bold w Switch Serif"
+     ]
+   },
+
+  "italic-fonts": {
+  "label": "Italic Fonts",
+  "icon": "𝘐",
+  "fonts": [
+    "Ultra Italic",
+    "Ultra Italic Serif",
+    "Ultra Bold Italic",
+    "Ultra Bold Italic Serif",
+    "Ultra Alternating Italic",
+    "Ultra Bold w Alternating Italic",
+    "Ultra Italic Switch Serifs"
+    ]
+  },
+
     "bubble-fonts": {
       "label": "Bubble Fonts",
       "icon": "Ⓑ",
