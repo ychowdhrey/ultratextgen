@@ -280,11 +280,6 @@ function isStyleInFamily(style, familyKey) {
     return categoryFonts.includes(name);
   }
 
-  function isStyleInFamily(style, familyKey) {
-    if (!familyKey || familyKey === "all") return true;
-    return (style.familySlug || "") === familyKey;
-  }
-
   function isStyleInGroup(style, groupKey) {
     if (!groupKey || groupKey === "all") return true;
     return (style.groupSlug || "") === groupKey;
