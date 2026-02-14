@@ -69,19 +69,24 @@ https://ultratextgen.com
 
 ## Platform pages
 
+## Platform pages
+
 UltraTextGen includes dedicated pages for each major platform so styles render exactly as expected.
 
-**Discord:** https://ultratextgen.com/discord
-**Facebook:** https://ultratextgen.com/facebook
-**Instagram:** https://ultratextgen.com/instagram
-**LinkedIn:** https://ultratextgen.com/linkedin
-**Pinterest:** https://ultratextgen.com/pinterest
-**Snapchat:** https://ultratextgen.com/snapchat
-**Telegram:** https://ultratextgen.com/telegram
-**TikTok:** https://ultratextgen.com/tiktok
-**WhatsApp:** https://ultratextgen.com/whatsapp
+### Social Media Platforms
+**Facebook:** https://ultratextgen.com/facebook  
+**Instagram:** https://ultratextgen.com/instagram  
+**LinkedIn:** https://ultratextgen.com/linkedin  
+**Pinterest:** https://ultratextgen.com/pinterest  
+**Snapchat:** https://ultratextgen.com/snapchat  
+**TikTok:** https://ultratextgen.com/tiktok  
 **X (Twitter):** https://ultratextgen.com/x  
-**YouTube:** https://ultratextgen.com/youtube
+**YouTube:** https://ultratextgen.com/youtube  
+
+### Messaging Platforms
+**Discord:** https://ultratextgen.com/discord  
+**Telegram:** https://ultratextgen.com/telegram  
+**WhatsApp:** https://ultratextgen.com/whatsapp  
 
 ## Category Pages
 
