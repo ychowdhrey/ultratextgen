@@ -1,13 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Instagram Text Generator | UltraTextGen</title>
+  <meta name="description" content="Generate stylish fonts for Instagram bios, captions, and comments. Copy‑paste ready." />
+  <link rel="canonical" href="https://ultratextgen.com/instagram/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">U</span>
+        <span>UltraTextGen</span>
+      </a>
+
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search styles, emojis, symbols...">
+      </div>
+
+      <div class="header-actions">
+        <button class="header-btn" id="historyBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>History</span>
+        </button>
+        <button class="header-btn" id="favoritesBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span>Favorites</span>
+        </button>
+        <button class="header-btn" id="darkModeBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1 class="hero-headline">Stylish fonts for Instagram bios & captions.</h1>
+        <div class="input-wrapper">
+          <textarea
+            class="main-input"
+            id="mainInput"
+            placeholder="Type your text here..."
+            maxlength="500"
+          ></textarea>
+          <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Decoration Selector -->
+        <div class="decoration-section">
+          <div class="decoration-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            Add decoration to results
+          </div>
+
+          <div class="decoration-tabs">
+            <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
+            <button class="decoration-tab" data-deco-tab="frames">Frames</button>
+            <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
+            <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
+            <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
+            <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
+            <button class="decoration-tab" data-deco-tab="flags">Flags</button>
+          </div>
+
+          <div class="decoration-grid" id="decorationGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Category Tabs -->
+    <div class="category-section">
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="all">All</button>
+        <button class="category-tab" data-category="cool">✦ Cool</button>
+        <button class="category-tab" data-category="fancy">✧ Fancy</button>
+        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
+        <button class="category-tab" data-category="bold">𝗕 Bold</button>
+        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
+        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
+        <button class="category-tab" data-category="special">⚡ Special</button>
+      </div>
+    </div>
+
+    <!-- Compatibility Notice -->
+    <div class="compat-notice" id="compatNotice" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span id="compatText">Showing styles optimized for Instagram</span>
+    </div>
+
+    <!-- Results -->
+    <div class="results-grid" id="resultsGrid"></div>
+
+    <!-- Secondary Ad Block -->
+    <div class="ad-block">
+      <span class="ad-block-label">Advertisement</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+   <h3 class="footer-heading">Text generators by platform</h3>
     <div class="footer-links">
       <a class="footer-link" href="/discord/">Discord</a>
-      <a class="footer-link" href="/facebook/">Facebook</a>
       <a class="footer-link" href="/instagram/">Instagram</a>
-      <a class="footer-link" href="/linkedin/">LinkedIn</a>
-      <a class="footer-link" href="/pinterest/">Pinterest</a>
-      <a class="footer-link" href="/snapchat/">Snapchat</a>
-      <a class="footer-link" href="/telegram/">Telegram</a>
       <a class="footer-link" href="/tiktok/">TikTok</a>
       <a class="footer-link" href="/whatsapp/">WhatsApp</a>
       <a class="footer-link" href="/x/">X</a>
-      <a class="footer-link" href="/youtube/">Youtube</a>
     </div>
+
+      <!-- ================================================
+     Instagram Text Generator FAQs — UltraTextGen
+     ================================================ -->
+
+<!-- Category 1: Changing Fonts in Your Instagram Bio -->
+<h3 class="faq-category">Changing Fonts in Your Instagram Bio</h3>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I change the font in my Instagram bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Instagram does not offer built-in font options for bios. To use a custom font, you need a Unicode text generator like UltraTextGen.
+    <br><br>
+    <strong>Steps to change your bio font</strong><br>
+    1. Open UltraTextGen and type your bio text into the input field.<br>
+    2. Browse the available font styles and select one that fits your profile.<br>
+    3. Copy the generated text.<br>
+    4. Open Instagram, go to Edit Profile, and paste it into the Bio field.
+    <br><br>
+    <strong>Example</strong><br>
+    Input: <em>Creative designer based in NYC</em><br>
+    Output in serif bold: <em>𝐂𝐫𝐞𝐚𝐭𝐢𝐯𝐞 𝐝𝐞𝐬𝐢𝐠𝐧𝐞𝐫 𝐛𝐚𝐬𝐞𝐝 𝐢𝐧 𝐍𝐘𝐂</em>
+    <br><br>
+    The result is real Unicode text, not an image, so it works across all devices and is searchable.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I use multiple font styles in the same Instagram bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. Since UltraTextGen generates Unicode text, you can mix different styles within one bio by generating each line or phrase separately and combining them.
+    <br><br>
+    <strong>Example</strong><br>
+    Line 1 in <a href="https://ultratextgen.com/category/bold-fonts/">bold</a>: <em>𝗝𝗼𝗵𝗻 𝗗𝗼𝗲</em><br>
+    Line 2 in <a href="https://ultratextgen.com/category/cursive-fonts/">cursive</a>: <em>𝒫𝒽𝑜𝓉𝑜𝑔𝓇𝒶𝓅𝒽𝑒𝓇 &amp; 𝒯𝓇𝒶𝓋𝑒𝓁𝑒𝓇</em><br>
+    Line 3 in normal text: <em>Based in London 🇬🇧</em>
+    <br><br>
+    Generate each line in its own style, then paste them together in the bio field. This creates a layered, visually distinct profile.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I get a cursive or script font in my Instagram bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    UltraTextGen includes several <a href="https://ultratextgen.com/category/cursive-fonts/">cursive and script font</a> styles that give your bio a handwritten or elegant appearance.
+    <br><br>
+    <strong>How to apply a cursive font</strong><br>
+    1. Enter your bio text in UltraTextGen.<br>
+    2. Select a cursive or script variant from the font list.<br>
+    3. Copy the output and paste it into your Instagram bio.
+    <br><br>
+    <strong>Example</strong><br>
+    Input: <em>Living life one adventure at a time</em><br>
+    Output: <em>𝐿𝒾𝓋𝒾𝓃𝑔 𝓁𝒾𝒻𝑒 𝑜𝓃𝑒 𝒶𝒹𝓋𝑒𝓃𝓉𝓊𝓇𝑒 𝒶𝓉 𝒶 𝓉𝒾𝓂𝑒</em>
+    <br><br>
+    Cursive fonts work on all devices because they use standard Unicode characters rather than custom rendering.
+  </div>
+</div>
+
+
+<!-- Category 2: Bold, Italic, and Special Text Styles -->
+<h3 class="faq-category">Bold, Italic, and Special Text Styles on Instagram</h3>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I bold text on Instagram?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Instagram does not have a native bold formatting option for bios, captions, or comments. UltraTextGen solves this by converting your text into <a href="https://ultratextgen.com/category/bold-fonts/">bold Unicode characters</a> that display as bold on any platform.
+    <br><br>
+    <strong>How it works</strong><br>
+    1. Type your text into UltraTextGen.<br>
+    2. Select the bold style.<br>
+    3. Copy the generated text and paste it into Instagram.
+    <br><br>
+    <strong>Example</strong><br>
+    Input: <em>New collection dropping Friday</em><br>
+    Output: <em>𝗡𝗲𝘄 𝗰𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗱𝗿𝗼𝗽𝗽𝗶𝗻𝗴 𝗙𝗿𝗶𝗱𝗮𝘆</em>
+    <br><br>
+    Bold text is effective for highlighting announcements, product names, or calls to action in captions and bios.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I italicize text on Instagram?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Use UltraTextGen to generate <a href="https://ultratextgen.com/category/italic-fonts/">italic Unicode text</a> that you can paste anywhere on Instagram, including bios, captions, comments, and stories.
+    <br><br>
+    <strong>Example</strong><br>
+    Input: <em>Less perfection, more authenticity</em><br>
+    Output: <em>𝘓𝘦𝘴𝘴 𝘱𝘦𝘳𝘧𝘦𝘤𝘵𝘪𝘰𝘯, 𝘮𝘰𝘳𝘦 𝘢𝘶𝘵𝘩𝘦𝘯𝘵𝘪𝘤𝘪𝘵𝘺</em>
+    <br><br>
+    Italic text adds subtle emphasis and works well for quotes, taglines, or descriptions within longer captions.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I bold just one word inside an Instagram caption?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. Generate only the word you want to emphasize in bold using UltraTextGen, then place it back into your full caption alongside the regular text.
+    <br><br>
+    <strong>Example</strong><br>
+    Caption: <em>Our biggest 𝗦𝗔𝗟𝗘 of the year starts tomorrow.</em>
+    <br><br>
+    In this example, only the word "SALE" was generated in bold. The rest remains in standard text. This technique draws attention to the key word without overwhelming the reader.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What other text styles can I use on Instagram besides bold and italic?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    UltraTextGen offers a wide range of Unicode text styles beyond bold and italic. All of them work on Instagram bios, captions, comments, and stories.
+    <br><br>
+    <strong>Available styles include</strong><br>
+    • <a href="https://ultratextgen.com/category/bubble-fonts/">Bubble text</a> — letters enclosed in circles, useful for numbered lists or playful profiles.<br>
+    • <a href="https://ultratextgen.com/category/gothic-fonts/">Gothic text</a> — ornamental blackletter style for a dramatic look.<br>
+    • <a href="https://ultratextgen.com/category/strikethrough-text/">Strikethrough text</a> — a line through your text, often used for humour or corrections.<br>
+    • <a href="https://ultratextgen.com/category/underline-text/">Underlined text</a> — draws attention without changing the font itself.<br>
+    • <a href="https://ultratextgen.com/category/upside-down-text/">Upside-down text</a> — flipped characters for creative or comedic content.
+    <br><br>
+    Each style is generated as Unicode, so no special app or rendering is required on the viewer's end.
+  </div>
+</div>
+
+
+<!-- Category 3: Fonts for Posts, Captions, and Stories -->
+<h3 class="faq-category">Custom Fonts for Instagram Posts, Captions, and Stories</h3>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I use a custom font in an Instagram post caption?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Instagram captions only support plain text by default. To add a custom font to a caption, generate your text in UltraTextGen, copy it, and paste it into the caption field when creating a post.
+    <br><br>
+    <strong>Example</strong><br>
+    Input: <em>Sunset chasing in Santorini</em><br>
+    Output in sans-serif bold italic: <em>𝙎𝙪𝙣𝙨𝙚𝙩 𝙘𝙝𝙖𝙨𝙞𝙣𝙜 𝙞𝙣 𝙎𝙖𝙣𝙩𝙤𝙧𝙞𝙣𝙞</em>
+    <br><br>
+    The styled text appears directly in your caption and is visible to all followers without any compatibility issues.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I use custom fonts in Instagram Stories?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. While Instagram Stories offer a few built-in fonts, UltraTextGen gives you access to many more styles.
+    <br><br>
+    <strong>How to use it</strong><br>
+    1. Generate your styled text in UltraTextGen.<br>
+    2. Copy the output.<br>
+    3. Open Instagram Stories, tap the text tool, and paste.
+    <br><br>
+    This is especially useful if you want fonts that Instagram's story editor does not include, such as <a href="https://ultratextgen.com/category/gothic-fonts/">gothic</a>, <a href="https://ultratextgen.com/category/bubble-fonts/">bubble</a>, or small caps styles.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Do custom fonts work in Instagram comments and DMs?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. Any Unicode text generated by UltraTextGen can be pasted into Instagram comments and direct messages. The styled characters are part of the Unicode standard, so they render correctly wherever text is supported.
+    <br><br>
+    <strong>Example use case</strong><br>
+    A brand replying to a follower's comment with a bold product name: <em>Thanks for the love! Try our new 𝗦𝘂𝗺𝗺𝗲𝗿 𝗚𝗹𝗼𝘄 collection.</em>
+  </div>
+</div>
+
+
+<!-- Category 4: How the Instagram Text Generator Works -->
+<h3 class="faq-category">How the Instagram Text Generator Works</h3>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Does Instagram support custom fonts natively?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Instagram does not offer native custom font support in profile bios, post captions, comments, or direct messages. These areas use the platform's default sans-serif font with no built-in option to change it.
+    <br><br>
+    Instagram does provide a limited set of font styles within Stories, Reels, and Notes. However, these built-in options do not extend to bios or captions.
+    <br><br>
+    <strong>How to get custom fonts where Instagram doesn't offer them</strong><br>
+    Unicode text generators like UltraTextGen are the most reliable workaround. They convert your text into special Unicode characters that visually resemble different typefaces — such as <a href="https://ultratextgen.com/category/bold-fonts/">𝗯𝗼𝗹𝗱</a>, <a href="https://ultratextgen.com/category/cursive-fonts/">𝒸𝓊𝓇𝓈𝒾𝓋𝑒</a>, or <a href="https://ultratextgen.com/category/bubble-fonts/">🅲🅸🆁🅲🅻🅴🅳</a>.
+    <br><br>
+    The output is plain text that you copy and paste directly into Instagram. No app installs, no workarounds within the Instagram editor — it simply works across all devices.
+    <br><br>
+    <strong>One thing to keep in mind</strong><br>
+    Overusing styled text can reduce readability and may affect how Instagram indexes your content in search. Use custom fonts for emphasis — names, headings, or key phrases — and keep searchable keywords like your niche or location in standard text.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is a Unicode text generator and how does it work for Instagram?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    A Unicode text generator converts standard characters (A-Z, a-z, 0-9) into visually different Unicode equivalents. These are not images or special formatting — they are actual text characters defined in the Unicode standard.
+    <br><br>
+    <strong>Why this matters for Instagram</strong><br>
+    Instagram strips out HTML and custom formatting. But because Unicode characters are treated as regular text, they display correctly in bios, captions, comments, stories, and DMs without being removed.
+    <br><br>
+    UltraTextGen maps your input to these alternate character sets, giving you access to styles like bold, italic, cursive, gothic, and more — all through simple copy and paste.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Do I need to install an app to use custom fonts on Instagram?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    No. UltraTextGen is a browser-based tool. You do not need to download or install anything. It works on desktop, mobile, and tablet browsers.
+    <br><br>
+    <strong>Workflow</strong><br>
+    1. Visit UltraTextGen in any browser.<br>
+    2. Type or paste your text.<br>
+    3. Select a font style and copy the output.<br>
+    4. Paste into Instagram.
+    <br><br>
+    There is no account required and no app permissions to grant.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Will custom fonts affect my Instagram reach or SEO?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Unicode-styled text may not be indexed the same way as standard text by Instagram's search. This means if you use a bold or cursive font for your entire bio, those words may not show up in Instagram search results.
+    <br><br>
+    <strong>Best practice</strong><br>
+    Use custom fonts for visual emphasis — headlines, names, or taglines — and keep important keywords like your niche, location, or profession in plain text so Instagram's search can read them.
+    <br><br>
+    <strong>Example</strong><br>
+    <em>𝗝𝗲𝗻𝗻𝗮 𝗟𝗲𝗲</em><br>
+    <em>Fitness Coach | London | DM for coaching</em>
+    <br><br>
+    Here, the name stands out in bold while the searchable keywords remain in standard characters.
+  </div>
+</div>
+
+
+<!-- Category 5: Language and Compatibility -->
+<h3 class="faq-category">Language Support and Compatibility</h3>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What languages does UltraTextGen support for Instagram fonts?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    UltraTextGen supports any language written using the Latin alphabet. If a language uses A to Z, including accented characters such as á, é, ñ, ü, and ç, the text can be converted into styled Unicode characters.
+    <br><br>
+    <strong>Supported Latin alphabet languages</strong><br>
+    English, Spanish, French, Portuguese, German, Italian, Dutch, Afrikaans, Indonesian, Malay, Filipino, Tagalog, Vietnamese, and Turkish.
+    <br><br>
+    These styled characters render correctly on Instagram across all devices.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Which languages are not supported for styled Instagram text?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Languages that use non-Latin scripts do not have styled Unicode character variants. As a result, text in these scripts will remain unchanged when processed.
+    <br><br>
+    <strong>Not supported for styled text</strong><br>
+    Arabic, Urdu, Persian, Hebrew, Hindi, Bengali, Tamil, Thai, Chinese, Japanese, Korean, and Sinhala.
+    <br><br>
+    This is a Unicode-level limitation, not a limitation of UltraTextGen.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Do custom fonts display correctly on all phones and devices?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Most modern devices — including iOS, Android, Windows, and macOS — support the Unicode characters used by UltraTextGen. The text will appear styled as expected on the vast majority of phones, tablets, and computers.
+    <br><br>
+    In rare cases, very old devices or outdated operating systems may display a blank square (□) or a replacement character (�) if they lack the required font files. This is uncommon with devices updated in the last several years.
+  </div>
+</div>
+
+
+<!-- Category 6: Troubleshooting -->
+<h3 class="faq-category">Troubleshooting Instagram Font Issues</h3>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Why doesn't Instagram have new fonts in the story editor?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Instagram rolls out new story fonts gradually and not all accounts receive updates at the same time. Some fonts are also region-specific or tied to app version.
+    <br><br>
+    If your Instagram story editor does not show new fonts, UltraTextGen lets you bypass that limitation entirely. Generate any font style in the tool, copy it, and paste it into the story text field. You get full control regardless of what Instagram makes available.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    My custom font is not displaying correctly on Instagram. What should I do?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    If styled text appears as blank boxes or question marks, try the following steps.
+    <br><br>
+    <strong>Common fixes</strong><br>
+    1. Update your Instagram app to the latest version.<br>
+    2. Update your phone's operating system.<br>
+    3. Try pasting the text from UltraTextGen into another app (like Notes) first to confirm the characters render correctly.<br>
+    4. If a specific style does not work, try a different font — some decorative Unicode ranges have less device support than standard bold or italic.
+    <br><br>
+    In most cases, widely used styles like bold, italic, and cursive display without issues on all modern devices.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can Instagram ban or restrict my account for using custom fonts?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    No. Custom fonts generated by UltraTextGen are standard Unicode characters. They are not a hack, exploit, or third-party injection. You are simply pasting text that uses different character ranges within the Unicode specification.
+    <br><br>
+    Instagram treats this text the same way it treats any other text input. There is no risk to your account from using Unicode-styled fonts in your bio, captions, or comments.
+  </div>
+</div>
+
+      <div class="footer-bottom">
+        © 2025 UltraTextGen. Fast text styles that work everywhere.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Platform flag -->
+  <script>
+    window.UTG_PLATFORM = "instagram";
+  </script>
+
+  <script src="/styles.js"></script>
+  <script src="/renderer.js"></script>
+  <script src="/script.js" defer></script>
+
+</body>
+</html>
