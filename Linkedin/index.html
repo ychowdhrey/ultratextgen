@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TikTok Text Generator | UltraTextGen</title>
+  <meta name="description" content="Create eye‑catching Unicode text for your TikTok captions and profile. Bold, italic, and fancy fonts." />
+  <link rel="canonical" href="https://ultratextgen.com/tiktok/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">U</span>
+        <span>UltraTextGen</span>
+      </a>
+
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search styles, emojis, symbols...">
+      </div>
+
+      <div class="header-actions">
+        <button class="header-btn" id="historyBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>History</span>
+        </button>
+        <button class="header-btn" id="favoritesBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span>Favorites</span>
+        </button>
+        <button class="header-btn" id="darkModeBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1 class="hero-headline">Text styles optimized for TikTok.</h1>
+        <div class="input-wrapper">
+          <textarea
+            class="main-input"
+            id="mainInput"
+            placeholder="Type your text here..."
+            maxlength="500"
+          ></textarea>
+          <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Decoration Selector -->
+        <div class="decoration-section">
+          <div class="decoration-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            Add decoration to results
+          </div>
+
+          <div class="decoration-tabs">
+            <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
+            <button class="decoration-tab" data-deco-tab="frames">Frames</button>
+            <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
+            <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
+            <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
+            <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
+            <button class="decoration-tab" data-deco-tab="flags">Flags</button>
+          </div>
+
+          <div class="decoration-grid" id="decorationGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Category Tabs -->
+    <div class="category-section">
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="all">All</button>
+        <button class="category-tab" data-category="cool">✦ Cool</button>
+        <button class="category-tab" data-category="fancy">✧ Fancy</button>
+        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
+        <button class="category-tab" data-category="bold">𝗕 Bold</button>
+        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
+        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
+        <button class="category-tab" data-category="special">⚡ Special</button>
+      </div>
+    </div>
+
+    <!-- Compatibility Notice -->
+    <div class="compat-notice" id="compatNotice" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span id="compatText">Showing styles optimized for TikTok</span>
+    </div>
+
+    <!-- Results -->
+    <div class="results-grid" id="resultsGrid"></div>
+
+    <!-- Secondary Ad Block -->
+    <div class="ad-block">
+      <span class="ad-block-label">Advertisement</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+   <h3 class="footer-heading">Text generators by platform</h3>
+      <div class="footer-links">
+        <a class="footer-link" href="/discord/">Discord</a>
+        <a class="footer-link" href="/instagram/">Instagram</a>
+        <a class="footer-link" href="/tiktok/">TikTok</a>
+        <a class="footer-link" href="/whatsapp/">WhatsApp</a>
+        <a class="footer-link" href="/x/">X</a>
+  </div>
+      
+<div class="faq-section">
+ <!-- About TikTok Text Styling -->
+<h3 class="faq-category">About TikTok Text Styling</h3>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is UltraTextGen's TikTok Text Generator?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    UltraTextGen is a free online tool that converts your regular text into stylish Unicode
+    fonts that work on TikTok. Choose from styles like <a href="https://ultratextgen.com/category/bold-fonts/">bold</a>,
+    <a href="https://ultratextgen.com/category/cursive-fonts/">cursive</a>,
+    <a href="https://ultratextgen.com/category/gothic-fonts/">gothic</a>, and more —
+    simply type your text, pick a style, copy, and paste it into
+    your TikTok profile or posts — no app downloads required.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I use the TikTok text generator?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Type or paste your text in the input box above, browse the styled results that appear
+    instantly, click <strong>Copy</strong> on the style you like, and paste it wherever you
+    need it on TikTok.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Is UltraTextGen free to use?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes — UltraTextGen is 100% free with no character limits, no sign-ups, and no premium
+    tiers. The site is supported by ads so every feature stays accessible to everyone.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Do I need to install anything?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    No. UltraTextGen runs entirely in your browser on any device — phone, tablet, or desktop.
+  </div>
+</div>
+
+<!-- TikTok Username (@Handle) -->
+<h3 class="faq-category">TikTok Username (@Handle)</h3>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is a TikTok username?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Your username (also called your handle) is the unique identifier that starts with
+    <strong>@</strong> (e.g., @exampleuser). It forms your profile URL and is how other
+    people find and tag you.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is the character limit for a TikTok username?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    TikTok usernames must be between <strong>2 and 24 characters</strong> long.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What characters are allowed in a TikTok username?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    You can use letters (A–Z, a–z), numbers (0–9), underscores (_), and periods (.). No
+    spaces, emojis, symbols, or other special characters are allowed.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Are there any restrictions on periods in TikTok usernames?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. A username cannot start or end with a period, and consecutive periods (e.g.,
+    "user..name") are not allowed.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I use fancy fonts or special characters in my TikTok username?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    No. TikTok usernames only support plain ASCII characters. Fancy fonts, emojis, Unicode
+    variations, and invisible characters are not supported and will either fail or be
+    converted to plain text. However, you can use styles like
+    <a href="https://ultratextgen.com/category/bold-fonts/">bold</a> and
+    <a href="https://ultratextgen.com/category/italic-fonts/">italic fonts</a> in your
+    display name, bio, and captions instead.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How often can I change my TikTok username?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    You can change your username once every <strong>30 days</strong>. Keep in mind that your
+    old username may be held temporarily before others can claim it.
+  </div>
+</div>
+
+<!-- TikTok Display Name -->
+<h3 class="faq-category">TikTok Display Name</h3>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is a TikTok display name?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Your display name is the visible name shown on your profile and alongside your posts
+    (e.g., "Example User 🌟"). Unlike the username, it does not affect your profile URL.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is the character limit for a TikTok display name?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    The maximum is <strong>30 characters</strong>. Emojis and symbols each count as one character.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I use fancy fonts in my TikTok display name?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes! Display names support Unicode fancy fonts such as
+    <a href="https://ultratextgen.com/category/cursive-fonts/">cursive</a>,
+    <a href="https://ultratextgen.com/category/bold-fonts/">bold</a>, or
+    <a href="https://ultratextgen.com/category/gothic-fonts/">gothic</a>,
+    as well as emojis and symbols. Use UltraTextGen's TikTok generator to create a
+    stylish display name instantly.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Do invisible characters work in TikTok display names?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Partially. TikTok may filter out some zero-width or invisible characters to prevent
+    abuse such as blank names. If the effect you want doesn't appear, try a simpler style.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How often can I change my TikTok display name?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    You can change it once every <strong>7 days</strong>.
+  </div>
+</div>
+
+<!-- TikTok Bio -->
+<h3 class="faq-category">TikTok Bio</h3>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is the character limit for a TikTok bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    The standard maximum is <strong>80 characters</strong>, including emojis, spaces, and URLs.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I use fancy text in my TikTok bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. Bios support Unicode fancy fonts, emojis, symbols, and even line breaks. Try styles like
+    <a href="https://ultratextgen.com/category/italic-fonts/">italic</a>,
+    <a href="https://ultratextgen.com/category/bubble-fonts/">bubble</a>, or
+    <a href="https://ultratextgen.com/category/underline-text/">underline text</a>
+    — generate stylish bio text at UltraTextGen's TikTok page.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I add line breaks to my TikTok bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes — you can press <strong>Enter</strong> in the TikTok app to add line breaks within
+    your bio.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I put links in my TikTok bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes, if your account qualifies (typically available for business accounts or accounts
+    that meet certain follower thresholds). URLs count toward the 80-character limit.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How often can I update my TikTok bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    There's no limit — you can edit your bio as often as you like.
+  </div>
+</div>
+
+<!-- Fancy Fonts & Invisible Characters -->
+<h3 class="faq-category">Fancy Fonts &amp; Invisible Characters</h3>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Why do some fancy fonts not show up correctly on TikTok?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    TikTok automatically removes certain zero-width or invisible Unicode symbols to prevent
+    abuse. Additionally, some characters may not render on every device — they may appear as
+    empty boxes depending on the user's phone or OS. This is a Unicode compatibility issue,
+    not necessarily a TikTok block. Widely supported styles like
+    <a href="https://ultratextgen.com/category/bold-fonts/">bold</a>,
+    <a href="https://ultratextgen.com/category/italic-fonts/">italic</a>, and
+    <a href="https://ultratextgen.com/category/cursive-fonts/">cursive fonts</a>
+    tend to display most reliably across devices.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What are zero-width or invisible characters?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    These are Unicode characters (e.g., U+200B Zero Width Space, U+200C Zero Width
+    Non-Joiner) that take up no visible space. They're sometimes used to create "blank"
+    names or hidden text. TikTok filters many of these to prevent spam and misleading
+    profiles.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Are there invisible characters that still work on TikTok?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Some alternatives like Hangul Filler (U+3164) or Braille Blank (U+2800) may work, but
+    even these can be filtered. Results vary by TikTok version and device. Always test
+    before committing to a change.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Where do fancy fonts work on TikTok?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Fancy fonts work in <strong>display names</strong>, <strong>bios</strong>,
+    <strong>video captions</strong>, and <strong>comments</strong>. They do
+    <strong>not</strong> work in usernames (@handles), which only allow plain ASCII
+    characters. Popular options include
+    <a href="https://ultratextgen.com/category/strikethrough-text/">strikethrough text</a>,
+    <a href="https://ultratextgen.com/category/upside-down-text/">upside-down text</a>, and
+    <a href="https://ultratextgen.com/category/bubble-fonts/">bubble fonts</a>.
+    Invisible characters have partial support in display names, bios, captions,
+    and comments — but some may be filtered by TikTok.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How can I test if a fancy font works on TikTok?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    The easiest way is to paste the styled text into a TikTok <strong>comment</strong>
+    first. Comments are a reliable testing ground — if the text displays correctly there, it
+    will likely work in your display name, bio, or captions too.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What should I do if my fancy text isn't displaying?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Try switching to a simpler Unicode style — highly compatible options include
+    <a href="https://ultratextgen.com/category/bold-fonts/">bold</a>,
+    <a href="https://ultratextgen.com/category/italic-fonts/">italic</a>, and
+    <a href="https://ultratextgen.com/category/underline-text/">underline text</a>.
+    UltraTextGen's TikTok page filters for styles
+    that are optimized for TikTok compatibility, so start there. Avoid overly complex or
+    combining characters, and test on different devices if possible.
+  </div>
+</div>
+
+<!-- Using UltraTextGen for TikTok -->
+<h3 class="faq-category">Using UltraTextGen for TikTok</h3>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Does UltraTextGen show styles that work specifically on TikTok?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. When you use the TikTok page, the tool automatically shows styles optimized for
+    TikTok so you can copy with confidence.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I use UltraTextGen for other platforms too?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Absolutely. UltraTextGen has dedicated pages for Instagram, Discord, WhatsApp, and
+    X (Twitter) — each filtered for platform-specific compatibility.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I add decorations or symbols to my text?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. UltraTextGen offers optional decorations including symbols,
+    <a href="https://ultratextgen.com/category/word-wrappers/">word wrappers</a>,
+    frames, dividers, arrows, minimal accents, emojis, and flags that you can add to your styled text.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I save my favorite styles?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes — UltraTextGen has a <strong>Favorites</strong> feature that lets you save styles
+    you like for quick access later, as well as a <strong>History</strong> feature to
+    revisit recently generated text.
+  </div>
+</div>
+
+<!-- TikTok Community Guidelines & Safety -->
+<h3 class="faq-category">TikTok Community Guidelines &amp; Safety</h3>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Are there rules about what I can put in my TikTok username, display name, or bio?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. All profile fields must comply with TikTok's community guidelines. Content that is
+    offensive, misleading, impersonating others, or violating any of TikTok's policies can
+    result in your profile being flagged or restricted.
+  </div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I use fancy text to impersonate someone on TikTok?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    No. Using styled text to impersonate another user or public figure violates TikTok's
+    community guidelines and can lead to account penalties.
+  </div>
+</div>
+  
+      <div class="footer-bottom">
+        © 2025 UltraTextGen. Fast text styles that work everywhere.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Platform flag -->
+  <script>
+    window.UTG_PLATFORM = "tiktok";
+  </script>
+
+  <script src="/styles.js"></script>
+  <script src="/renderer.js"></script>
+  <script src="/script.js" defer></script>
+
+</body>
+</html>
