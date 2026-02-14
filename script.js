@@ -205,7 +205,6 @@ const decorations = {
   /* ===================
      STATE
      =================== */
-  const currentPlatform = (window.UTG_PLATFORM || "all").toLowerCase();
   const currentFamily = (window.UTG_FAMILY || "all").toLowerCase();
   const currentGroup = (window.UTG_GROUP || "all").toLowerCase();
   
@@ -248,24 +247,6 @@ const decorations = {
     return selectedDecoration.prefix + text + selectedDecoration.suffix;
   }
 
-  function getPlatformLabel(platformKey) {
-    const names = {
-      instagram: "Instagram",
-      tiktok: "TikTok",
-      x: "X (Twitter)",
-      whatsapp: "WhatsApp",
-      discord: "Discord",
-      all: "All"
-    };
-    return names[platformKey] || platformKey;
-  }
-
- function isStylePlatformCompatible(style, platformKey) {
-    const platforms = style.platforms || ["all"];
-    if (platformKey === "all") return true;
-    return platforms.includes(platformKey);
-  }
-   
    function isStyleInFamily(style, familyKey) {
     if (!familyKey || familyKey === "all") return true;
     const slug = style.familySlug || "";
@@ -568,15 +549,6 @@ const decorations = {
 
     grid.innerHTML = "";
 
-    if (el.compatNotice && el.compatText) {
-      if (currentPlatform !== "all") {
-        el.compatNotice.style.display = "flex";
-        el.compatText.textContent = `Showing styles optimized for ${getPlatformLabel(currentPlatform)}`;
-      } else {
-        el.compatNotice.style.display = "none";
-      }
-    }
-
     const entries = Object.entries(stylesRegistry);
 
     // Apply family/group filtering with priority logic:
@@ -599,7 +571,6 @@ const decorations = {
     // Apply remaining filters
     const filtered = familyGroupFiltered.filter(([name, style]) => {
       if (!style) return false;
-      if (!isStylePlatformCompatible(style, currentPlatform)) return false;
       if (!isStyleInCategory(name, currentCategory)) return false;
       if (!isStyleMatchingSearch(name, searchQuery)) return false;
       return true;
