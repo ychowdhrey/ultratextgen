@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Facebook Text Generator | UltraTextGen</title>
+  <meta name="description" content="Create eye‑catching Unicode text for your TikTok captions and profile. Bold, italic, and fancy fonts." />
+  <link rel="canonical" href="https://ultratextgen.com/facebook/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">U</span>
+        <span>UltraTextGen</span>
+      </a>
+
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search styles, emojis, symbols...">
+      </div>
+
+      <div class="header-actions">
+        <button class="header-btn" id="historyBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>History</span>
+        </button>
+        <button class="header-btn" id="favoritesBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span>Favorites</span>
+        </button>
+        <button class="header-btn" id="darkModeBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1 class="hero-headline">Text styles optimized for TikTok.</h1>
+        <div class="input-wrapper">
+          <textarea
+            class="main-input"
+            id="mainInput"
+            placeholder="Type your text here..."
+            maxlength="500"
+          ></textarea>
+          <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Decoration Selector -->
+        <div class="decoration-section">
+          <div class="decoration-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            Add decoration to results
+          </div>
+
+          <div class="decoration-tabs">
+            <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
+            <button class="decoration-tab" data-deco-tab="frames">Frames</button>
+            <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
+            <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
+            <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
+            <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
+            <button class="decoration-tab" data-deco-tab="flags">Flags</button>
+          </div>
+
+          <div class="decoration-grid" id="decorationGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Category Tabs -->
+    <div class="category-section">
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="all">All</button>
+        <button class="category-tab" data-category="cool">✦ Cool</button>
+        <button class="category-tab" data-category="fancy">✧ Fancy</button>
+        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
+        <button class="category-tab" data-category="bold">𝗕 Bold</button>
+        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
+        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
+        <button class="category-tab" data-category="special">⚡ Special</button>
+      </div>
+    </div>
+
+    <!-- Compatibility Notice -->
+    <div class="compat-notice" id="compatNotice" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span id="compatText">Showing styles optimized for LinkedIn</span>
+    </div>
+
+    <!-- Results -->
+    <div class="results-grid" id="resultsGrid"></div>
+
+    <!-- Secondary Ad Block -->
+    <div class="ad-block">
+      <span class="ad-block-label">Advertisement</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <h3 class="footer-heading">Text generators by platform</h3>
+      <div class="footer-links">
+        <a class="footer-link" href="/discord/">Discord</a>
+        <a class="footer-link" href="/facebook/">Facebook</a>
+        <a class="footer-link" href="/instagram/">Instagram</a>
+        <a class="footer-link" href="/linkedin/">LinkedIn</a>
+        <a class="footer-link" href="/pinterest/">Pinterest</a>
+        <a class="footer-link" href="/snapchat/">Snapchat</a>
+        <a class="footer-link" href="/telegram/">Telegram</a>
+        <a class="footer-link" href="/tiktok/">TikTok</a>
+        <a class="footer-link" href="/whatsapp/">WhatsApp</a>
+        <a class="footer-link" href="/x/">X</a>
+        <a class="footer-link" href="/youtube/">Youtube</a>
+      </div>
+    </div>
+  </footer>
+      
+      <div class="footer-bottom">
+        © 2025 UltraTextGen. Fast text styles that work everywhere.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Platform flag -->
+  <script>
+    window.UTG_PLATFORM = "LinkedIn";
+  </script>
+
+  <script src="/styles.js"></script>
+  <script src="/renderer.js"></script>
+  <script src="/script.js" defer></script>
+
+</body>
+</html>
