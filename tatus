@@ -1,0 +1,198 @@
+[1mdiff --git a/discord/index.html b/discord/index.html[m
+[1mindex 9ddeb1d..c4bef1a 100644[m
+[1m--- a/discord/index.html[m
+[1m+++ b/discord/index.html[m
+[36m@@ -479,12 +479,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "discord";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ </body>[m
+[1mdiff --git a/facebook/index.html b/facebook/index.html[m
+[1mindex ed3bee6..03f6cb1 100644[m
+[1m--- a/facebook/index.html[m
+[1m+++ b/facebook/index.html[m
+[36m@@ -161,12 +161,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "LinkedIn";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/instagram/index.html b/instagram/index.html[m
+[1mindex b9e3f4e..bd5cdf7 100644[m
+[1m--- a/instagram/index.html[m
+[1m+++ b/instagram/index.html[m
+[36m@@ -559,12 +559,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "instagram";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/linkedin/index.html b/linkedin/index.html[m
+[1mindex bca210c..fa7856b 100644[m
+[1m--- a/linkedin/index.html[m
+[1m+++ b/linkedin/index.html[m
+[36m@@ -162,12 +162,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "LinkedIn";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/pinterest/index.html b/pinterest/index.html[m
+[1mindex 6e341e3..5fb7e4c 100644[m
+[1m--- a/pinterest/index.html[m
+[1m+++ b/pinterest/index.html[m
+[36m@@ -161,12 +161,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "LinkedIn";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/snapchat/index.html b/snapchat/index.html[m
+[1mindex c99fe67..d022d54 100644[m
+[1m--- a/snapchat/index.html[m
+[1m+++ b/snapchat/index.html[m
+[36m@@ -161,12 +161,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "LinkedIn";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/telegram/index.html b/telegram/index.html[m
+[1mindex 2c373ca..dc1488d 100644[m
+[1m--- a/telegram/index.html[m
+[1m+++ b/telegram/index.html[m
+[36m@@ -161,12 +161,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "LinkedIn";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/tiktok/index.html b/tiktok/index.html[m
+[1mindex 15abe30..dd41cd8 100644[m
+[1m--- a/tiktok/index.html[m
+[1m+++ b/tiktok/index.html[m
+[36m@@ -601,12 +601,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "tiktok";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/whatsapp/index.html b/whatsapp/index.html[m
+[1mindex 9f376e4..4f287b9 100644[m
+[1m--- a/whatsapp/index.html[m
+[1m+++ b/whatsapp/index.html[m
+[36m@@ -449,12 +449,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "whatsapp";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/x/index.html b/x/index.html[m
+[1mindex 2752ebb..df73dc8 100644[m
+[1m--- a/x/index.html[m
+[1m+++ b/x/index.html[m
+[36m@@ -683,12 +683,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "x";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
+[1mdiff --git a/youtube/index.html b/youtube/index.html[m
+[1mindex 0d51e66..ec3c63c 100644[m
+[1m--- a/youtube/index.html[m
+[1m+++ b/youtube/index.html[m
+[36m@@ -161,12 +161,7 @@[m
+     </div>[m
+   </footer>[m
+ [m
+[31m-  <!-- Platform flag -->[m
+[31m-  <script>[m
+[31m-    window.UTG_PLATFORM = "LinkedIn";[m
+[31m-  </script>[m
+[31m-[m
+[31m-  <script src="/styles.js"></script>[m
+[32m+[m[32m    <script src="/styles.js"></script>[m
+   <script src="/renderer.js"></script>[m
+   <script src="/script.js" defer></script>[m
+ [m
