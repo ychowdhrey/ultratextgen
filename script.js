@@ -230,8 +230,6 @@ const decorations = {
     searchInput: $("#searchInput"),
     resultsGrid: $("#resultsGrid"),
     decorationGrid: $("#decorationGrid"),
-    compatNotice: $("#compatNotice"),
-    compatText: $("#compatText"),
     darkModeBtn: $("#darkModeBtn")
   };
 
