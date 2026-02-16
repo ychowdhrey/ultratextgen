@@ -1,0 +1,10 @@
+{
+  "name": "ultratextgen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fast, clean Unicode text generator for social bios, captions, and usernames",
+  "scripts": {
+    "prebuild": "node scripts/update-sitemap.js",
+    "build": "echo 'Static site — no build step required'"
+  }
+}
