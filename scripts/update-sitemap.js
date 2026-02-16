@@ -60,20 +60,23 @@ function pathToUrl(filePath) {
  */
 function getGitLastMod(filePath) {
   try {
-    const fullPath = path.join(REPO_ROOT, filePath);
+    // Use repo-relative path (safer in CI and Cloudflare)
     const isoDate = execSync(
-      `git log -1 --format=%cI -- "${fullPath}"`,
+      `git log -1 --format=%cI -- "${filePath}"`,
       { cwd: REPO_ROOT, encoding: 'utf8' }
     ).trim();
-    
+
     if (!isoDate) {
-      return '2026-02-16';
+      // Fallback to current date if git returns empty
+      return new Date().toISOString().slice(0, 10);
     }
-    
+
     // Convert ISO date to YYYY-MM-DD
     return isoDate.split('T')[0];
+
   } catch (error) {
-    return '2026-02-16';
+    // If git fails (e.g., shallow clone, no history)
+    return new Date().toISOString().slice(0, 10);
   }
 }
 
