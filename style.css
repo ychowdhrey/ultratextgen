@@ -772,3 +772,149 @@
     color: var(--accent-purple);
   }
 }
+
+/* ===========================================
+   Editorial Content Sections
+   (for use-case pages: comment-fonts, etc.)
+   =========================================== */
+
+.hero-tagline {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.how-to-use,
+.why-section,
+.mood-explainers,
+.tips-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.how-to-use h2,
+.why-section h2,
+.mood-explainers h2,
+.tips-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.steps-grid,
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.step-card,
+.tip-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem;
+}
+
+.step-card h3,
+.tip-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.step-card p,
+.tip-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.why-content p {
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.mood-explainer {
+  margin-bottom: 2.5rem;
+}
+
+.mood-explainer h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mood-explainer p {
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.mood-example {
+  background: var(--bg-base);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-purple);
+  font-size: 0.95rem;
+  margin: 0.75rem 0;
+  color: var(--text-primary);
+}
+
+.mood-example strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Responsive adjustments for editorial sections */
+@media (max-width: 640px) {
+  .hero-tagline {
+    font-size: 0.95rem;
+  }
+
+  .how-to-use h2,
+  .why-section h2,
+  .mood-explainers h2,
+  .tips-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .steps-grid,
+  .tips-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-card,
+  .tip-card {
+    padding: 1.25rem;
+  }
+
+  .mood-explainer h3 {
+    font-size: 1.05rem;
+  }
+}
