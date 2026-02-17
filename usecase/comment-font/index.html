@@ -105,17 +105,20 @@
 
   <!-- Main Content -->
   <main class="container">
-    <!-- Category Tabs -->
+    <!-- Custom Mood Tabs (comment-font specific) -->
     <div class="category-section">
-      <div class="category-tabs" id="categoryTabs">
-        <button class="category-tab active" data-category="all">All</button>
-        <button class="category-tab" data-category="cool">✦ Cool</button>
-        <button class="category-tab" data-category="fancy">✧ Fancy</button>
-        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
-        <button class="category-tab" data-category="bold">𝗕 Bold</button>
-        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
-        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
-        <button class="category-tab" data-category="special">⚡ Special</button>
+      <div class="category-tabs" id="categoryTabs" style="display: none;">
+        <!-- Hidden - script.js will try to populate this, we ignore it -->
+      </div>
+      
+      <div class="category-tabs" id="moodTabs">
+        <button class="category-tab active" data-mood="all">All</button>
+        <button class="category-tab" data-mood="emphasis">💪 Emphasis</button>
+        <button class="category-tab" data-mood="sarcasm">🎭 Sarcasm & Wit</button>
+        <button class="category-tab" data-mood="warmth">✨ Warmth</button>
+        <button class="category-tab" data-mood="playful">🎈 Playful</button>
+        <button class="category-tab" data-mood="edgy">🖤 Edgy</button>
+        <button class="category-tab" data-mood="clean">🔲 Clean & Minimal</button>
       </div>
     </div>
 
@@ -388,10 +391,31 @@
     </div>
   </footer>
 
-  <!-- Page configuration: custom decorators and curated font slugs -->
+  <!-- Page configuration: custom decorators, font slugs, and mood filtering -->
   <script>
     // Set default active decoration tab
     window.UTG_DEFAULT_DECO_TAB = "high-energy";
+
+    // Mood-to-font-slug mappings
+    const MOOD_MAP = {
+      "all": [
+        "ultra-bold", "ultra-bold-italic", "ultra-bold-serif",
+        "ultra-strike", "ultra-underline",
+        "ultra-script", "ultra-script-bold", "ultra-italic", "ultra-italic-serif",
+        "ultra-bubble", "ultra-bubble-filled", "ultra-squared", "ultra-squared-filled",
+        "ultra-gothic", "ultra-gothic-bold",
+        "ultra-double-struck", "ultra-monospace", "ultra-small-caps"
+      ],
+      "emphasis": ["ultra-bold", "ultra-bold-italic", "ultra-bold-serif"],
+      "sarcasm": ["ultra-strike", "ultra-underline"],
+      "warmth": ["ultra-script", "ultra-script-bold", "ultra-italic", "ultra-italic-serif"],
+      "playful": ["ultra-bubble", "ultra-bubble-filled", "ultra-squared", "ultra-squared-filled"],
+      "edgy": ["ultra-gothic", "ultra-gothic-bold"],
+      "clean": ["ultra-double-struck", "ultra-monospace", "ultra-small-caps"]
+    };
+
+    // Start with all fonts visible
+    window.UTG_FONT_SLUGS = MOOD_MAP["all"];
 
     // Custom comment-specific decorators
     window.UTG_DECORATIONS = {
@@ -450,27 +474,28 @@
       ]
     };
 
-    // Curated font slugs for comment use
-    window.UTG_FONT_SLUGS = [
-      "ultra-bold",
-      "ultra-bold-italic",
-      "ultra-bold-serif",
-      "ultra-strike",
-      "ultra-underline",
-      "ultra-script",
-      "ultra-script-bold",
-      "ultra-italic",
-      "ultra-italic-serif",
-      "ultra-bubble",
-      "ultra-bubble-filled",
-      "ultra-squared",
-      "ultra-squared-filled",
-      "ultra-gothic",
-      "ultra-gothic-bold",
-      "ultra-double-struck",
-      "ultra-monospace",
-      "ultra-small-caps"
-    ];
+    // Bind mood tab behavior after DOM loads
+    document.addEventListener("DOMContentLoaded", function() {
+      const moodTabs = document.querySelectorAll("#moodTabs [data-mood]");
+      const mainInput = document.getElementById("mainInput");
+      
+      moodTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          // Update active state
+          moodTabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          
+          // Update the font slug filter
+          const mood = tab.dataset.mood;
+          window.UTG_FONT_SLUGS = MOOD_MAP[mood];
+          
+          // Trigger re-render by simulating input change
+          if (mainInput) {
+            mainInput.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        });
+      });
+    });
   </script>
 
   <script src="/styles.js"></script>
