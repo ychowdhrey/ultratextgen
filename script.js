@@ -566,6 +566,14 @@ const decorations = window.UTG_DECORATIONS || {
       });
     }
 
+   // Slug-based filtering (for usecase pages that curate specific fonts)
+    const allowedSlugs = window.UTG_FONT_SLUGS || null;
+    if (allowedSlugs) {
+      familyGroupFiltered = familyGroupFiltered.filter(([name, style]) => {
+        return style && style.slug && allowedSlugs.includes(style.slug);
+      });
+    }
+
     // Apply remaining filters
     const filtered = familyGroupFiltered.filter(([name, style]) => {
       if (!style) return false;
