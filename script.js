@@ -24,7 +24,7 @@
  /* ===================
    DATA: Decorations
    =================== */
-const decorations = {
+const decorations = window.UTG_DECORATIONS || {
    symbols: [
     { text: "★ text ★", prefix: "★ ", suffix: " ★" },
     { text: "☆ text ☆", prefix: "☆ ", suffix: " ☆" },
