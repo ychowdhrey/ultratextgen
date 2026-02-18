@@ -32,4 +32,3 @@ jobs:
           git add sitemap.xml
           git diff --cached --quiet || git commit -m "chore: regenerate sitemap.xml [skip ci]"
           git push
-```
