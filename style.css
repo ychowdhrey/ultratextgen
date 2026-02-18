@@ -918,3 +918,53 @@
     font-size: 1.05rem;
   }
 }
+
+/* All Categories at a Glance */
+.categories-glance {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.categories-glance-heading {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.categories-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.glance-card {
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.glance-card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-1px);
+}
+.glance-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.glance-card-header span:last-child {
+  font-weight: 500;
+  font-size: 14px;
+}
+.glance-card-count {
+  font-size: 12px;
+  color: #555;
+}
+.glance-card-preview {
+  font-size: 13px;
+  font-family: 'Space Mono', monospace;
+  margin-top: 8px;
+}
