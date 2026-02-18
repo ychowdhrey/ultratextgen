@@ -577,7 +577,7 @@ const decorations = window.UTG_DECORATIONS || {
     // Apply remaining filters
     const filtered = familyGroupFiltered.filter(([name, style]) => {
       if (!style) return false;
-      if (!isStyleInCategory(name, currentCategory)) return false;
+      if (!allowedSlugs && !isStyleInCategory(name, currentCategory)) return false;
       if (!isStyleMatchingSearch(name, searchQuery)) return false;
       return true;
     });
