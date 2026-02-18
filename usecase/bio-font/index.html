@@ -131,30 +131,65 @@
       <span class="ad-block-label">Advertisement</span>
     </div>
 
-    <!-- ===================== STYLE DEEP DIVES ===================== -->
-    <section class="mood-explainers">
-      <h2>Choosing the Right Bio Font Style</h2>
-      <div class="mood-explainer">
-        <h3>✍️ Cursive &amp; Script — Elegant and Eye-Catching</h3>
-        <p>Cursive and script bio fonts are the most popular choice for Instagram and TikTok bios. They feel personal, stylish, and polished — perfect for creators, influencers, and anyone who wants their profile to look curated. Ultra Script delivers a lighter cursive that's clean and modern, while Ultra Script Bold adds more weight for an elegant, attention-grabbing look.</p>
-        <div class="mood-example"><strong>Example:</strong> "𝒹𝓇𝑒𝒶𝓂𝑒𝓇 · 𝒸𝓇𝑒𝒶𝓉𝑜𝓇 · 𝓁𝒾𝓋𝒾𝓃𝑔 𝓂𝓎 𝒷𝑒𝓈𝓉 𝓁𝒾𝒻𝑒"</div>
-      </div>
-      <div class="mood-explainer">
-        <h3>🖤 Bold &amp; Italic — Strong and Versatile</h3>
-        <p>Bold bio fonts are the workhorse of profile styling. They're clean, punchy, and widely supported across every platform. Use Ultra Bold for maximum impact, Ultra Bold Italic for a dash of personality, or Ultra Italic Serif for a more classic, sophisticated feel. Ultra Alternating Bold is a standout choice that breaks up monotony with an eye-catching pattern.</p>
-        <div class="mood-example"><strong>Example:</strong> "𝗙𝗶𝘁𝗻𝗲𝘀𝘀 · 𝗠𝗶𝗻𝗱𝘀𝗲𝘁 · 𝗚𝗿𝗼𝘄𝘁𝗵"</div>
-      </div>
-      <div class="mood-explainer">
-        <h3>🏰 Gothic — Distinctive and Trending</h3>
-        <p>Gothic and Fraktur bio fonts carry a distinct aesthetic weight that's hugely popular in music, gaming, alternative, and streetwear communities. Ultra Gothic delivers the classic Fraktur look, while Ultra Gothic Bold adds heavier strokes for even more emphasis. These fonts signal a specific identity and vibe that plain text simply can't achieve.</p>
-        <div class="mood-example"><strong>Example:</strong> "𝔇𝔞𝔯𝔨 𝔰𝔬𝔲𝔩 · 𝔟𝔯𝔦𝔤𝔥𝔱 𝔪𝔦𝔫𝔡"</div>
-      </div>
-      <div class="mood-explainer">
-        <h3>🫧 Bubble — Fun and Friendly</h3>
-        <p>Bubble bio fonts turn your text into something that looks like stickers or buttons. They're lighthearted, instantly recognizable, and universally loved in bios. Ultra Bubble is the classic choice, Ultra Bubble Filled makes a bolder statement, and Ultra Bubble Light offers a softer variant for good contrast. Perfect for playful profiles and fan pages.</p>
-        <div class="mood-example"><strong>Example:</strong> "Ⓛⓘⓥⓘⓝⓖ ⓜⓨ ⓑⓔⓢⓣ ⓛⓘⓕⓔ ✌️"</div>
-      </div>
-    </section>
+    <script>
+      // Categories data for the "All Categories at a Glance" grid
+      (function() {
+        const GLANCE_CATEGORIES = [
+          { id: "gaming", emoji: "⚔️", label: "Gaming", color: "#FF3E3E", count: 12, preview: { left: "『", right: "』" } },
+          { id: "aesthetic", emoji: "✨", label: "Aesthetic", color: "#C9A0DC", count: 12, preview: { left: "·˚ ♡ ", right: " ♡ ˚·" } },
+          { id: "edgy", emoji: "💀", label: "Edgy / Dark", color: "#4A4A4A", count: 12, preview: { left: "† ", right: " †" } },
+          { id: "royal", emoji: "👑", label: "Royal / Elite", color: "#D4AF37", count: 12, preview: { left: "♛ ", right: " ♛" } },
+          { id: "cute", emoji: "🌸", label: "Cute / Kawaii", color: "#FF8FAB", count: 12, preview: { left: "♡ ", right: " ♡" } },
+          { id: "bold", emoji: "🔥", label: "Bold / Hype", color: "#FF6B00", count: 12, preview: { left: "⚡", right: "⚡" } },
+          { id: "clean", emoji: "🎯", label: "Clean / Minimal", color: "#6B7280", count: 12, preview: { left: "— ", right: " —" } },
+          { id: "mystical", emoji: "🌀", label: "Mystical", color: "#6A5ACD", count: 12, preview: { left: "☾ ", right: " ☽" } },
+          { id: "retro", emoji: "📟", label: "Retro / Pixel", color: "#00D4AA", count: 12, preview: { left: "►► ", right: " ◄◄" } },
+          { id: "nature", emoji: "🌿", label: "Nature / Organic", color: "#5B8C5A", count: 12, preview: { left: "⚘ ", right: " ⚘" } },
+        ];
+
+        function renderGlanceGrid() {
+          const grid = document.getElementById("categoriesGlanceGrid");
+          if (!grid) return;
+
+          const mainInput = document.getElementById("mainInput");
+          const name = (mainInput && mainInput.value.trim()) || "Shadow";
+
+          grid.innerHTML = GLANCE_CATEGORIES.map(cat => `
+            <div class="glance-card" data-glance-cat="${cat.id}">
+              <div class="glance-card-header">
+                <span>${cat.emoji}</span>
+                <span>${cat.label}</span>
+              </div>
+              <div class="glance-card-count">${cat.count} decorators</div>
+              <div class="glance-card-preview" style="color: ${cat.color}">
+                ${cat.preview.left}${name}${cat.preview.right}
+              </div>
+            </div>
+          `).join("");
+
+          // Click handler: scroll to top and switch decorator tab
+          grid.querySelectorAll(".glance-card").forEach(card => {
+            card.addEventListener("click", () => {
+              const catId = card.dataset.glanceCat;
+              const decoTab = document.querySelector(`.decoration-tab[data-deco-tab="${catId}"]`);
+              if (decoTab) {
+                decoTab.click();
+              }
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          renderGlanceGrid();
+          // Re-render when input changes so the preview name stays in sync
+          const mainInput = document.getElementById("mainInput");
+          if (mainInput) {
+            mainInput.addEventListener("input", renderGlanceGrid);
+          }
+        });
+      })();
+    </script>
   </main>
 
   <!-- Footer -->
