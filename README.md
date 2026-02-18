@@ -66,9 +66,6 @@ If something doesn’t help the user move faster, it doesn’t ship.
 ## Homepage
 https://ultratextgen.com
 
-
-## Platform pages
-
 ## Platform pages
 
 UltraTextGen includes dedicated pages for each major platform so styles render exactly as expected.
@@ -103,3 +100,9 @@ UltraTextGen includes dedicated pages for each major platform so styles render e
 - https://ultratextgen.com/category/italic-fonts/
 
 Each platform page is optimized for compatibility and speed.
+
+## Usecases 
+
+### Comment Font 
+A curated page built around comment moods, helping people express emphasis, sarcasm, warmth, playfulness, and more through ready-to-copy Unicode styles.
+- https://ultratextgen.com/usecase/comment-font/
