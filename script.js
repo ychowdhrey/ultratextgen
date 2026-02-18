@@ -215,7 +215,7 @@ const decorations = window.UTG_DECORATIONS || {
   const categoryMatch = window.location.pathname.match(CATEGORY_URL_PATTERN);
   let currentCategory = categoryMatch ? categoryMatch[1] : "popular";
   
-  let currentDecoTab = "symbols";
+  let currentDecoTab = window.UTG_DEFAULT_DECO_TAB || "symbols";
   let selectedDecoration = null;
   let searchQuery = "";
   let fontCategories = null;
