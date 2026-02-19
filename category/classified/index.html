@@ -382,6 +382,28 @@ const STYLE_MAP = {
     ]
   };
     // End of inline configuration script
+
+     // Bind mood tab behavior after DOM loads
+    document.addEventListener("DOMContentLoaded", function() {
+      const moodTabs = document.querySelectorAll("#moodTabs [data-mood]");
+      const mainInput = document.getElementById("mainInput");
+      
+      moodTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          moodTabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          
+          const mood = tab.dataset.mood;
+          window.UTG_FONT_SLUGS = STYLE_MAP[mood];
+          
+          // Trigger re-render
+          if (mainInput) {
+            mainInput.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        });
+      });
+    });
+    
   </script>
   <script src="/styles.js"></script>
   <script src="/renderer.js"></script>
