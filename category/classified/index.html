@@ -131,82 +131,26 @@
 
   <div class="decoration-grid" id="decorationGrid"></div>
 </div>
+</div>
+</div>
+</section>
 
-<script>
-// Style-to-font-slug mappings (classified-specific styles)
-const STYLE_MAP = {
-  "all": [
-    "ultra-classified-blocks",
-    "ultra-black-squares",
-    "ultra-white-squares",
-    "ultra-solid-squares",
-    "ultra-spaced-blocks",
-    "ultra-medium-shade",
-    "ultra-light-shade",
-    "ultra-top-blocks",
-    "ultra-bottom-blocks",
-    "ultra-alternating-squares",
-    "ultra-wave-blocks",
-    "ultra-split-blocks"
-  ],
-
-  "redaction": [
-    "ultra-classified-blocks",
-    "ultra-solid-squares",
-    "ultra-spaced-blocks",
-    "ultra-medium-shade",
-    "ultra-light-shade"
-  ],
-
-  "blocks": [
-    "ultra-top-blocks",
-    "ultra-bottom-blocks",
-    "ultra-wave-blocks",
-    "ultra-split-blocks"
-  ],
-
-  "squares": [
-    "ultra-black-squares",
-    "ultra-white-squares",
-    "ultra-alternating-squares"
-  ],
-
-  "shades": [
-    "ultra-medium-shade",
-    "ultra-light-shade"
-  ],
-
-  "minimal": [
-    "ultra-solid-squares",
-    "ultra-spaced-blocks"
-  ]
-};
-  
-
-    // Bind style tab behavior after DOM loads
-    document.addEventListener("DOMContentLoaded", function() {
-      const styleTabs = document.querySelectorAll("#moodTabs [data-mood]");
-      const mainInput = document.getElementById("mainInput");
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Custom Style Tabs (bio-font specific) -->
+    <div class="category-section">
+      <div class="category-tabs" id="categoryTabs" style="display: none;">
+        <!-- Hidden - script.js will try to populate this, we ignore it -->
+      </div>
       
-      styleTabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-          // Update active state
-          styleTabs.forEach(t => t.classList.remove("active"));
-          tab.classList.add("active");
-          
-          // Update the font slug filter
-          const style = tab.dataset.mood;
-          window.UTG_FONT_SLUGS = STYLE_MAP[style];
-          
-          // Trigger re-render by simulating input change
-          if (mainInput) {
-            mainInput.dispatchEvent(new Event("input", { bubbles: true }));
-          }
-        });
-      });
-    });
-</script>
-
+      <div class="category-tabs" id="moodTabs">
+        <button class="category-tab active" data-mood="all">All</button>
+        <button class="category-tab" data-mood="cursive">✍️ Cursive &amp; Script</button>
+        <button class="category-tab" data-mood="bold">🖤 Bold &amp; Italic</button>
+        <button class="category-tab" data-mood="gothic">🏰 Gothic</button>
+        <button class="category-tab" data-mood="bubble">🫧 Bubble</button>
+      </div>
+    </div>
     <!-- Results -->
     <div class="results-grid" id="resultsGrid"></div>
 
