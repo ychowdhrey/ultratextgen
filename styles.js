@@ -677,6 +677,118 @@ const textStyles = {
   slug: 'ultra_word_double_bar_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
+
+/* ================================
+   CLASSIFIED / REDACTED STYLES
+================================ */
+
+'Ultra Classified Blocks': {
+  pattern: '███ ███████ ████',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-classified-blocks'
+},
+
+'Ultra Black Squares': {
+  pattern: '⬛⬛⬛',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-black-squares'
+},
+
+'Ultra White Squares': {
+  pattern: '⬜⬜⬜',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-white-squares'
+},
+
+'Ultra Solid Squares': {
+  pattern: '■■■■',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-solid-squares'
+},
+
+'Ultra Spaced Blocks': {
+  pattern: '█ █ █ █ █ █',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-spaced-blocks'
+},
+
+'Ultra Medium Shade': {
+  pattern: '▓▓▓',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-medium-shade'
+},
+
+'Ultra Light Shade': {
+  pattern: '▒▒▒',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-light-shade'
+},
+
+'Ultra Top Blocks': {
+  pattern: '▀▀▀',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-top-blocks'
+},
+
+'Ultra Bottom Blocks': {
+  pattern: '▄▄▄',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-bottom-blocks'
+},
+
+'Ultra Alternating Squares': {
+  pattern: '■ □ ■ □ ■',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-alternating-squares'
+},
+
+'Ultra Wave Blocks': {
+  pattern: '▀▄▀▄▀▄',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-wave-blocks'
+},
+
+'Ultra Split Blocks': {
+  pattern: '▄▄▀▀▄▄',
+  type: 'pattern',
+  category: 'classified',
+  familySlug: ['classified'],
+  groupSlug: 'classified',
+  slug: 'ultra-split-blocks'
+},   
 };
 
 /* -----------------------------
