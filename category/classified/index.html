@@ -133,7 +133,219 @@
 </div>
 
 <script>
-  // Custom classified-specific decorators
+// Style-to-font-slug mappings (classified-specific styles)
+const STYLE_MAP = {
+  "all": [
+    "ultra-classified-blocks",
+    "ultra-black-squares",
+    "ultra-white-squares",
+    "ultra-solid-squares",
+    "ultra-spaced-blocks",
+    "ultra-medium-shade",
+    "ultra-light-shade",
+    "ultra-top-blocks",
+    "ultra-bottom-blocks",
+    "ultra-alternating-squares",
+    "ultra-wave-blocks",
+    "ultra-split-blocks"
+  ],
+
+  "redaction": [
+    "ultra-classified-blocks",
+    "ultra-solid-squares",
+    "ultra-spaced-blocks",
+    "ultra-medium-shade",
+    "ultra-light-shade"
+  ],
+
+  "blocks": [
+    "ultra-top-blocks",
+    "ultra-bottom-blocks",
+    "ultra-wave-blocks",
+    "ultra-split-blocks"
+  ],
+
+  "squares": [
+    "ultra-black-squares",
+    "ultra-white-squares",
+    "ultra-alternating-squares"
+  ],
+
+  "shades": [
+    "ultra-medium-shade",
+    "ultra-light-shade"
+  ],
+
+  "minimal": [
+    "ultra-solid-squares",
+    "ultra-spaced-blocks"
+  ]
+};
+  
+
+    // Bind style tab behavior after DOM loads
+    document.addEventListener("DOMContentLoaded", function() {
+      const styleTabs = document.querySelectorAll("#moodTabs [data-mood]");
+      const mainInput = document.getElementById("mainInput");
+      
+      styleTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          // Update active state
+          styleTabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          
+          // Update the font slug filter
+          const style = tab.dataset.mood;
+          window.UTG_FONT_SLUGS = STYLE_MAP[style];
+          
+          // Trigger re-render by simulating input change
+          if (mainInput) {
+            mainInput.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        });
+      });
+    });
+</script>
+
+    <!-- Results -->
+    <div class="results-grid" id="resultsGrid"></div>
+
+    <!-- Secondary Ad Block -->
+    <div class="ad-block">
+      <span class="ad-block-label">Advertisement</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <h3 class="footer-heading">Text generators by platform</h3>
+
+      <div class="footer-links">
+        <a class="footer-link" href="/discord/">Discord</a>
+        <a class="footer-link" href="/instagram/">Instagram</a>
+        <a class="footer-link" href="/tiktok/">TikTok</a>
+        <a class="footer-link" href="/whatsapp/">WhatsApp</a>
+        <a class="footer-link" href="/x/">X</a>
+      </div>
+
+      <h3 class="faq-category">Classified Text FAQs</h3>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          What is classified text?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Classified text is a redacted or censored effect created using Unicode symbols like █, ▓, ▒, ■, ⬛, and ⬜.
+          It mimics blacked-out documents while staying copy-paste compatible.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Can classified text reveal itself when highlighted?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          No. Unicode characters are static, so redaction symbols do not reveal hidden text on highlight.
+          If you need true spoiler reveal, use platform features like Discord (||text||) or Telegram Spoiler formatting.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Where can I use classified Unicode symbols?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Anywhere that supports Unicode text: posts, comments, bios, usernames, messages, documents, and emails.
+          Because the output is Unicode text (not formatting), it can be copied and pasted like normal characters.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Why do some symbols show as boxes or missing characters?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Some devices or fonts do not fully support certain Unicode symbols.
+          If one set renders poorly, try █ or ■ styles, update your device, or test on another app.
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 UltraTextGen. Fast text styles that work everywhere.
+      </div>
+    </div>
+  </footer>
+
+ <!-- Page configuration: custom decorators, font slugs, and style filtering -->
+  <script>
+    // Set default active decoration tab
+    window.UTG_DEFAULT_DECO_TAB = "redaction";
+
+// Style-to-font-slug mappings (classified-specific styles)
+const STYLE_MAP = {
+  "all": [
+    "ultra-classified-blocks",
+    "ultra-black-squares",
+    "ultra-white-squares",
+    "ultra-solid-squares",
+    "ultra-spaced-blocks",
+    "ultra-medium-shade",
+    "ultra-light-shade",
+    "ultra-top-blocks",
+    "ultra-bottom-blocks",
+    "ultra-alternating-squares",
+    "ultra-wave-blocks",
+    "ultra-split-blocks"
+  ],
+
+  "redaction": [
+    "ultra-classified-blocks",
+    "ultra-solid-squares",
+    "ultra-spaced-blocks",
+    "ultra-medium-shade",
+    "ultra-light-shade"
+  ],
+
+  "blocks": [
+    "ultra-top-blocks",
+    "ultra-bottom-blocks",
+    "ultra-wave-blocks",
+    "ultra-split-blocks"
+  ],
+
+  "squares": [
+    "ultra-black-squares",
+    "ultra-white-squares",
+    "ultra-alternating-squares"
+  ],
+
+  "shades": [
+    "ultra-medium-shade",
+    "ultra-light-shade"
+  ],
+
+  "minimal": [
+    "ultra-solid-squares",
+    "ultra-spaced-blocks"
+  ]
+};
+  // Start with all fonts visible
+    window.UTG_FONT_SLUGS = STYLE_MAP["all"];
+
+    // Custom classified-specific decorators
   window.UTG_DECORATIONS = {
     "redaction": [
       { text: "███ name ███", prefix: "███ ", suffix: " ███" },
@@ -224,111 +436,6 @@
       { text: "⟪ name ⟫", prefix: "⟪ ", suffix: " ⟫" }
     ]
   };
-</script>
-
-  <!-- Main Content -->
-  <main class="container">
-    <!-- Category Tabs -->
-    <div class="category-section">
-      <div class="category-tabs" id="categoryTabs">
-        <button class="category-tab active" data-category="all">All</button>
-        <button class="category-tab" data-category="cool">✦ Cool</button>
-        <button class="category-tab" data-category="fancy">✧ Fancy</button>
-        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
-        <button class="category-tab" data-category="bold">𝗕 Bold</button>
-        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
-        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
-        <button class="category-tab" data-category="special">⚡ Special</button>
-        <button class="category-tab" data-category="classified">⛔ Classified</button>
-      </div>
-    </div>
-
-    <!-- Results -->
-    <div class="results-grid" id="resultsGrid"></div>
-
-    <!-- Secondary Ad Block -->
-    <div class="ad-block">
-      <span class="ad-block-label">Advertisement</span>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <h3 class="footer-heading">Text generators by platform</h3>
-
-      <div class="footer-links">
-        <a class="footer-link" href="/discord/">Discord</a>
-        <a class="footer-link" href="/instagram/">Instagram</a>
-        <a class="footer-link" href="/tiktok/">TikTok</a>
-        <a class="footer-link" href="/whatsapp/">WhatsApp</a>
-        <a class="footer-link" href="/x/">X</a>
-      </div>
-
-      <h3 class="faq-category">Classified Text FAQs</h3>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          What is classified text?
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          Classified text is a redacted or censored effect created using Unicode symbols like █, ▓, ▒, ■, ⬛, and ⬜.
-          It mimics blacked-out documents while staying copy-paste compatible.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          Can classified text reveal itself when highlighted?
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          No. Unicode characters are static, so redaction symbols do not reveal hidden text on highlight.
-          If you need true spoiler reveal, use platform features like Discord (||text||) or Telegram Spoiler formatting.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          Where can I use classified Unicode symbols?
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          Anywhere that supports Unicode text: posts, comments, bios, usernames, messages, documents, and emails.
-          Because the output is Unicode text (not formatting), it can be copied and pasted like normal characters.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          Why do some symbols show as boxes or missing characters?
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          Some devices or fonts do not fully support certain Unicode symbols.
-          If one set renders poorly, try █ or ■ styles, update your device, or test on another app.
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        © 2025 UltraTextGen. Fast text styles that work everywhere.
-      </div>
-    </div>
-  </footer>
-
-  <!-- Category filter -->
-  <script>
-    window.UTG_FAMILY = "classified";
-  </script>
 
   <script src="/styles.js"></script>
   <script src="/renderer.js"></script>
