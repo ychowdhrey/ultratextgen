@@ -439,6 +439,18 @@ function renderProcedure(text, style) {
     }
   }
 
+// Add this pattern renderer function
+   
+function renderPattern(text, style) {
+  if (!text) return '';
+  const pattern = style.pattern || '███';
+  // Replace each word with the pattern to simulate redaction
+  return text.split(/(\s+)/).map(segment => {
+    if (segment.trim() === '') return segment; // preserve whitespace
+    return pattern;
+  }).join('');
+}
+
   /* -----------------------------
      EXPOSE GLOBAL
      ----------------------------- */
