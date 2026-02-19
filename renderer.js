@@ -418,6 +418,16 @@ function renderProcedure(text, style) {
   const fn = procedures[style.slug];
   return fn ? fn(text) : text;
 }
+
+// ✅ renderPattern goes HERE — after renderProcedure, before renderAny
+function renderPattern(text, style) {
+  if (!text) return '';
+  const pattern = style.pattern || '███';
+  return text.split(/(\s+)/).map(segment => {
+    if (segment.trim() === '') return segment;
+    return pattern;
+  }).join('');
+}
    
   function renderAny(text, style) {
     // Handle function-based transforms (upside down)
@@ -438,18 +448,6 @@ function renderProcedure(text, style) {
         return renderMap(text, style); // fallback
     }
   }
-
-// Add this pattern renderer function
-   
-function renderPattern(text, style) {
-  if (!text) return '';
-  const pattern = style.pattern || '███';
-  // Replace each word with the pattern to simulate redaction
-  return text.split(/(\s+)/).map(segment => {
-    if (segment.trim() === '') return segment; // preserve whitespace
-    return pattern;
-  }).join('');
-}
 
   /* -----------------------------
      EXPOSE GLOBAL
