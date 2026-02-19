@@ -6,5 +6,9 @@
   "scripts": {
     "prebuild": "node scripts/update-sitemap.js",
     "build": "echo 'Static site — no build step required'"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "glob": "^13.0.5"
   }
 }
