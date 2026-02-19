@@ -106,3 +106,7 @@ Each platform page is optimized for compatibility and speed.
 ### Comment Font 
 A curated page built around comment moods, helping people express emphasis, sarcasm, warmth, playfulness, and more through ready-to-copy Unicode styles.
 - https://ultratextgen.com/usecase/comment-font/
+
+### Bio Font 
+A dedicated page crafted for stylish profile bios. It organizes Unicode fonts by tone and personality, allowing users to instantly copy and paste a bio that reflects their identity.
+- https://ultratextgen.com/usecase/bio-font/
