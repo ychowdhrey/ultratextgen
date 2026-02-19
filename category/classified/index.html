@@ -143,14 +143,15 @@
         <!-- Hidden - script.js will try to populate this, we ignore it -->
       </div>
       
-      <div class="category-tabs" id="moodTabs">
-        <button class="category-tab active" data-mood="all">All</button>
-        <button class="category-tab" data-mood="cursive">✍️ Cursive &amp; Script</button>
-        <button class="category-tab" data-mood="bold">🖤 Bold &amp; Italic</button>
-        <button class="category-tab" data-mood="gothic">🏰 Gothic</button>
-        <button class="category-tab" data-mood="bubble">🫧 Bubble</button>
-      </div>
-    </div>
+  <div class="category-tabs" id="moodTabs">
+    <button class="category-tab active" data-mood="all">All</button>
+    <button class="category-tab" data-mood="redaction">🟥 Redaction</button>
+    <button class="category-tab" data-mood="blocks">▦ Blocks</button>
+    <button class="category-tab" data-mood="squares">◼️ Squares</button>
+    <button class="category-tab" data-mood="shades">▒ Shades</button>
+    <button class="category-tab" data-mood="minimal">🎯 Minimal</button>
+  </div>
+
     <!-- Results -->
     <div class="results-grid" id="resultsGrid"></div>
 
@@ -380,9 +381,11 @@ const STYLE_MAP = {
       { text: "⟪ name ⟫", prefix: "⟪ ", suffix: " ⟫" }
     ]
   };
-
+    // End of inline configuration script
+  </script>
   <script src="/styles.js"></script>
   <script src="/renderer.js"></script>
   <script src="/script.js" defer=""></script>
 
-</body></html>
+</body>
+</html>
