@@ -110,28 +110,121 @@
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
-        <!-- Decoration Selector -->
-        <div class="decoration-section">
-          <div class="decoration-label">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
-            Add decoration to results
-          </div>
-          <div class="decoration-tabs">
-            <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
-            <button class="decoration-tab" data-deco-tab="frames">Frames</button>
-            <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
-            <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
-            <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-            <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
-            <button class="decoration-tab" data-deco-tab="flags">Flags</button>
-          </div>
-          <div class="decoration-grid" id="decorationGrid"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Decoration Selector -->
+<div class="decoration-section">
+  <div class="decoration-label">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+    </svg>
+    Add decoration to results
+  </div>
+
+  <div class="decoration-tabs">
+    <button class="decoration-tab active" data-deco-tab="redaction">🟥 Redaction</button>
+    <button class="decoration-tab" data-deco-tab="stamps">🗂️ Stamps</button>
+    <button class="decoration-tab" data-deco-tab="dossier">📁 Dossier Frames</button>
+    <button class="decoration-tab" data-deco-tab="access">🔒 Access</button>
+    <button class="decoration-tab" data-deco-tab="evidence">🧾 Evidence</button>
+    <button class="decoration-tab" data-deco-tab="dividers">📏 Dividers</button>
+    <button class="decoration-tab" data-deco-tab="minimal">🎯 Minimal</button>
+  </div>
+
+  <div class="decoration-grid" id="decorationGrid"></div>
+</div>
+
+<script>
+  // Custom classified-specific decorators
+  window.UTG_DECORATIONS = {
+    "redaction": [
+      { text: "███ name ███", prefix: "███ ", suffix: " ███" },
+      { text: "████ name ████", prefix: "████ ", suffix: " ████" },
+      { text: "██████ name ██████", prefix: "██████ ", suffix: " ██████" },
+      { text: "▓▓▓ name ▓▓▓", prefix: "▓▓▓ ", suffix: " ▓▓▓" },
+      { text: "▓▓▓▓ name ▓▓▓▓", prefix: "▓▓▓▓ ", suffix: " ▓▓▓▓" },
+      { text: "▒▒▒ name ▒▒▒", prefix: "▒▒▒ ", suffix: " ▒▒▒" },
+      { text: "▒▒▒▒ name ▒▒▒▒", prefix: "▒▒▒▒ ", suffix: " ▒▒▒▒" },
+      { text: "■■■ name ■■■", prefix: "■■■ ", suffix: " ■■■" },
+      { text: "■■■■ name ■■■■", prefix: "■■■■ ", suffix: " ■■■■" },
+      { text: "⬛⬛⬛ name ⬛⬛⬛", prefix: "⬛⬛⬛ ", suffix: " ⬛⬛⬛" },
+      { text: "⬜⬜⬜ name ⬜⬜⬜", prefix: "⬜⬜⬜ ", suffix: " ⬜⬜⬜" },
+      { text: "▀▀▀ name ▀▀▀", prefix: "▀▀▀ ", suffix: " ▀▀▀" },
+      { text: "▄▄▄ name ▄▄▄", prefix: "▄▄▄ ", suffix: " ▄▄▄" }
+    ],
+
+    "stamps": [
+      { text: "⟦ CLASSIFIED ⟧ name", prefix: "⟦ CLASSIFIED ⟧ ", suffix: "" },
+      { text: "⟦ CONFIDENTIAL ⟧ name", prefix: "⟦ CONFIDENTIAL ⟧ ", suffix: "" },
+      { text: "⟦ RESTRICTED ⟧ name", prefix: "⟦ RESTRICTED ⟧ ", suffix: "" },
+      { text: "⟦ TOP SECRET ⟧ name", prefix: "⟦ TOP SECRET ⟧ ", suffix: "" },
+      { text: "⟦ EYES ONLY ⟧ name", prefix: "⟦ EYES ONLY ⟧ ", suffix: "" },
+      { text: "⟦ CLEARANCE REQUIRED ⟧ name", prefix: "⟦ CLEARANCE REQUIRED ⟧ ", suffix: "" },
+      { text: "【 CLASSIFIED 】name", prefix: "【 CLASSIFIED 】", suffix: "" },
+      { text: "【 CONFIDENTIAL 】name", prefix: "【 CONFIDENTIAL 】", suffix: "" },
+      { text: "【 TOP SECRET 】name", prefix: "【 TOP SECRET 】", suffix: "" }
+    ],
+
+    "dossier": [
+      { text: "⟦ name ⟧", prefix: "⟦ ", suffix: " ⟧" },
+      { text: "【 name 】", prefix: "【 ", suffix: " 】" },
+      { text: "〔 name 〕", prefix: "〔 ", suffix: " 〕" },
+      { text: "⟪ name ⟫", prefix: "⟪ ", suffix: " ⟫" },
+      { text: "⌈ name ⌉", prefix: "⌈ ", suffix: " ⌉" },
+      { text: "⌊ name ⌋", prefix: "⌊ ", suffix: " ⌋" },
+      { text: "⟦ ███ name ███ ⟧", prefix: "⟦ ███ ", suffix: " ███ ⟧" },
+      { text: "【 ■■■ name ■■■ 】", prefix: "【 ■■■ ", suffix: " ■■■ 】" },
+      { text: "〔 ▓▓▓ name ▓▓▓ 〕", prefix: "〔 ▓▓▓ ", suffix: " ▓▓▓ 〕" },
+      { text: "⟪ ⬛⬛⬛ name ⬛⬛⬛ ⟫", prefix: "⟪ ⬛⬛⬛ ", suffix: " ⬛⬛⬛ ⟫" }
+    ],
+
+    "access": [
+      { text: "🔒 name 🔒", prefix: "🔒 ", suffix: " 🔒" },
+      { text: "⛔ name ⛔", prefix: "⛔ ", suffix: " ⛔" },
+      { text: "🚫 name 🚫", prefix: "🚫 ", suffix: " 🚫" },
+      { text: "🕵️ name 🕵️", prefix: "🕵️ ", suffix: " 🕵️" },
+      { text: "🗄️ name 🗄️", prefix: "🗄️ ", suffix: " 🗄️" },
+      { text: "🧾 name 🧾", prefix: "🧾 ", suffix: " 🧾" },
+      { text: "🔎 name 🔎", prefix: "🔎 ", suffix: " 🔎" },
+      { text: "🔐 name 🔐", prefix: "🔐 ", suffix: " 🔐" },
+      { text: "⚠️ name ⚠️", prefix: "⚠️ ", suffix: " ⚠️" }
+    ],
+
+    "evidence": [
+      { text: "CASE: name", prefix: "CASE: ", suffix: "" },
+      { text: "FILE: name", prefix: "FILE: ", suffix: "" },
+      { text: "DOC: name", prefix: "DOC: ", suffix: "" },
+      { text: "ID: name", prefix: "ID: ", suffix: "" },
+      { text: "REF: name", prefix: "REF: ", suffix: "" },
+      { text: "SUBJECT: name", prefix: "SUBJECT: ", suffix: "" },
+      { text: "LOCATION: name", prefix: "LOCATION: ", suffix: "" },
+      { text: "STATUS: name", prefix: "STATUS: ", suffix: "" },
+      { text: "CLEARANCE: name", prefix: "CLEARANCE: ", suffix: "" },
+      { text: "TAG: name", prefix: "TAG: ", suffix: "" }
+    ],
+
+    "dividers": [
+      { text: "████████ name ████████", prefix: "████████ ", suffix: " ████████" },
+      { text: "■■■■■■■■ name ■■■■■■■■", prefix: "■■■■■■■■ ", suffix: " ■■■■■■■■" },
+      { text: "▓▓▓▓▓▓▓▓ name ▓▓▓▓▓▓▓▓", prefix: "▓▓▓▓▓▓▓▓ ", suffix: " ▓▓▓▓▓▓▓▓" },
+      { text: "▒▒▒▒▒▒▒▒ name ▒▒▒▒▒▒▒▒", prefix: "▒▒▒▒▒▒▒▒ ", suffix: " ▒▒▒▒▒▒▒▒" },
+      { text: "▀▀▀▀▀▀▀▀ name ▀▀▀▀▀▀▀▀", prefix: "▀▀▀▀▀▀▀▀ ", suffix: " ▀▀▀▀▀▀▀▀" },
+      { text: "▄▄▄▄▄▄▄▄ name ▄▄▄▄▄▄▄▄", prefix: "▄▄▄▄▄▄▄▄ ", suffix: " ▄▄▄▄▄▄▄▄" },
+      { text: "▀▄▀▄▀▄ name ▀▄▀▄▀▄", prefix: "▀▄▀▄▀▄ ", suffix: " ▀▄▀▄▀▄" },
+      { text: "▄▄▀▀▄▄ name ▄▄▀▀▄▄", prefix: "▄▄▀▀▄▄ ", suffix: " ▄▄▀▀▄▄" },
+      { text: "■ □ ■ □ name □ ■ □ ■", prefix: "■ □ ■ □ ", suffix: " □ ■ □ ■" }
+    ],
+
+    "minimal": [
+      { text: "[ name ]", prefix: "[ ", suffix: " ]" },
+      { text: "( name )", prefix: "( ", suffix: " )" },
+      { text: "{ name }", prefix: "{ ", suffix: " }" },
+      { text: "| name |", prefix: "| ", suffix: " |" },
+      { text: "— name —", prefix: "— ", suffix: " —" },
+      { text: "• name •", prefix: "• ", suffix: " •" },
+      { text: "⟨ name ⟩", prefix: "⟨ ", suffix: " ⟩" },
+      { text: "⟪ name ⟫", prefix: "⟪ ", suffix: " ⟫" }
+    ]
+  };
+</script>
 
   <!-- Main Content -->
   <main class="container">
