@@ -432,6 +432,8 @@ function renderProcedure(text, style) {
         return renderDecorator(text, style);
       case 'procedure':
         return renderProcedure(text, style);
+      case 'pattern':
+      return renderPattern(text, style); 
       default:
         return renderMap(text, style); // fallback
     }
