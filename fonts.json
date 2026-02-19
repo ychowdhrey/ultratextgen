@@ -129,8 +129,24 @@
       "Ultra Word Bar Wrap",
       "Ultra Word Double Bar Wrap"
   ]
-}
-
-    
+},
+    "classified": {
+      "label": "Classified / Redacted",
+      "icon": "█",
+      "fonts": [
+        "Ultra Classified Blocks",
+        "Ultra Black Squares",
+        "Ultra White Squares",
+        "Ultra Solid Squares",
+        "Ultra Spaced Blocks",
+        "Ultra Medium Shade",
+        "Ultra Light Shade",
+        "Ultra Top Blocks",
+        "Ultra Bottom Blocks",
+        "Ultra Alternating Squares",
+        "Ultra Wave Blocks",
+        "Ultra Split Blocks"
+      ]
+    }
   }
 }
