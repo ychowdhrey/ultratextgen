@@ -98,6 +98,7 @@ UltraTextGen includes dedicated pages for each major platform so styles render e
 - https://ultratextgen.com/category/word-wrappers/
 - https://ultratextgen.com/category/strikethrough-text/
 - https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/classified/
 
 Each platform page is optimized for compatibility and speed.
 
