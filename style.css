@@ -787,19 +787,23 @@
   text-align: center;
 }
 
+/* Generic editorial container sections */
 .how-to-use,
 .why-section,
 .mood-explainers,
-.tips-section {
+.tips-section,
+.editorial-section {
   max-width: 800px;
   margin: 3rem auto;
   padding: 0 1rem;
 }
 
+/* Section headings */
 .how-to-use h2,
 .why-section h2,
 .mood-explainers h2,
-.tips-section h2 {
+.tips-section h2,
+.editorial-section > h2 {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.75rem;
@@ -807,6 +811,7 @@
   color: var(--text-primary);
 }
 
+/* Shared card / grid patterns (unchanged) */
 .steps-grid,
 .tips-grid {
   display: grid;
@@ -857,25 +862,31 @@
   font-size: 1rem;
 }
 
-.mood-explainer {
+/* Generic content block (was .mood-explainer) */
+.mood-explainer,
+.editorial-block {
   margin-bottom: 2.5rem;
 }
 
-.mood-explainer h3 {
+.mood-explainer h3,
+.editorial-block h3 {
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
-.mood-explainer p {
+.mood-explainer p,
+.editorial-block p {
   color: var(--text-secondary);
   line-height: 1.65;
   margin-bottom: 0.75rem;
   font-size: 0.95rem;
 }
 
-.mood-example {
+/* Example callout (generic) */
+.mood-example,
+.block-example {
   background: var(--bg-base);
   padding: 0.75rem 1rem;
   border-radius: 8px;
@@ -885,7 +896,8 @@
   color: var(--text-primary);
 }
 
-.mood-example strong {
+.mood-example strong,
+.block-example strong {
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -899,7 +911,8 @@
   .how-to-use h2,
   .why-section h2,
   .mood-explainers h2,
-  .tips-section h2 {
+  .tips-section h2,
+  .editorial-section > h2 {
     font-size: 1.5rem;
   }
 
@@ -914,7 +927,8 @@
     padding: 1.25rem;
   }
 
-  .mood-explainer h3 {
+  .mood-explainer h3,
+  .editorial-block h3 {
     font-size: 1.05rem;
   }
 }
