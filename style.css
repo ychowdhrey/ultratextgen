@@ -265,7 +265,7 @@
     .decoration-tabs {
       display: flex;
       gap: 6px;
-      padding-right: 16x;
+      padding-right: 16px;
       margin-bottom: 12px;
       overflow-x: auto;
       scrollbar-width: none;
@@ -687,10 +687,6 @@
       .category-tab {
         padding: 8px 12px;
         font-size: 0.8125rem;
-      }
-
-      .decoration-tabs::-webkit-scrollbar {
-        display: none;
       }
 
       .decoration-tab {
