@@ -153,7 +153,7 @@
     }
 
     .hero-inner {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
@@ -162,6 +162,7 @@
       border-radius: var(--radius-lg);
       padding: 32px;
       box-shadow: var(--shadow-soft);
+      width: 100%;
       border: 1px solid var(--border-light);
     }
 
@@ -178,6 +179,7 @@
 
     .input-wrapper {
       position: relative;
+      width: 100%;
     }
 
     .main-input {
@@ -192,6 +194,7 @@
       outline: none;
       transition: all 0.2s;
       background: var(--bg-white);
+      display: block;
       color: var(--text-primary);
     }
 
@@ -261,7 +264,8 @@
 
     .decoration-tabs {
       display: flex;
-      gap: 8px;
+      gap: 6px;
+      padding-right: 16x;
       margin-bottom: 12px;
       overflow-x: auto;
       scrollbar-width: none;
@@ -366,7 +370,8 @@
       display: none;
     }
 
-    .category-tab {
+    .category-tab,
+    .category-more {
       padding: 10px 16px;
       border: 1px solid var(--border-light);
       border-radius: 50px;
@@ -684,14 +689,6 @@
         font-size: 0.8125rem;
       }
 
-      .decoration-tabs {
-        gap: 6px;
-        overflow-x: auto;
-        padding-right: 16px;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-
       .decoration-tabs::-webkit-scrollbar {
         display: none;
       }
@@ -702,25 +699,7 @@
         flex-shrink: 0;
         white-space: nowrap;
       }
-    }
-
-   .hero-inner {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.hero-card {
-  width: 100%;
-}
-
-.input-wrapper {
-  width: 100%;
-}
-
-.main-input {
-  display: block;
-  width: 100%;
-}       
+    }     
 
 /* -----------------------------
    Desktop: two-row category tabs
@@ -750,21 +729,6 @@
   /* Hidden category helper class (applied by JS) */
   .category-tab.hidden-category {
     display: none !important;
-  }
-
-  /* More button - visually matches category-tab */
-  .category-more {
-    padding: 10px 16px;
-    border: 1px solid var(--border-light);
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    background: var(--bg-white);
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-    flex-shrink: 0;
   }
 
   .category-more:hover {
