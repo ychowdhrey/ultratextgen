@@ -111,3 +111,12 @@ A curated page built around comment moods, helping people express emphasis, sarc
 ### Bio Font 
 A dedicated page crafted for stylish profile bios. It organizes Unicode fonts by tone and personality, allowing users to instantly copy and paste a bio that reflects their identity.
 - https://ultratextgen.com/usecase/bio-font/
+
+## Guides
+
+Fonts are not decoration. They are signals.
+These resources explore how Unicode typography encodes tone, authority, irony, and emphasis across online platforms.
+
+### The Rhetoric of Fonts
+A structured framework mapping font styles to rhetorical devices and practical use cases, helping users apply typography intentionally rather than stylistically.
+- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
