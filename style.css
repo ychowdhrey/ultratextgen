@@ -1304,3 +1304,41 @@ a:hover {
   .data-table td {
     padding: .4rem .5rem;
   }
+/* -----------------------------------------------
+   Component: Brand Card (.brand-card)
+   Bordered card for brand/use-case examples within articles.
+   Similar to .mood-explainer but with visible card container.
+   ----------------------------------------------- */
+.brand-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.brand-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+}
+
+/* -----------------------------------------------
+   Component: Tip Icon (.tip-icon)
+   Emoji icon displayed above tip-card headings.
+   ----------------------------------------------- */
+.tip-icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
