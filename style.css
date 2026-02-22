@@ -923,9 +923,52 @@
 }
 
 /* -----------------------------------------------
+   Component: Style Grid (.style-grid)
+   Compact label + preview cards in a responsive grid.
+   Use for: font showcases, feature lists, category overviews
+   ----------------------------------------------- */
+.style-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.style-grid-card {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 12px 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease;
+}
+
+.style-grid-card:hover {
+  border-color: var(--accent-purple);
+}
+
+.style-grid-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+  min-width: 85px;
+}
+
+.style-grid-preview {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* -----------------------------------------------
    Component: Data Table (.data-table)
-   Usage: Quick-reference tables inside any context
-   (FAQ answers, editorial blocks, standalone)
+   Quick-reference tables in any context.
    ----------------------------------------------- */
 .data-table-wrap {
   overflow-x: auto;
@@ -970,8 +1013,7 @@
 
 /* -----------------------------------------------
    Component: Compare Cards (.compare-grid)
-   Usage: Side-by-side feature/plan/option comparison
-   Supports any number of cards (2–3 typical)
+   Side-by-side comparison of anything.
    ----------------------------------------------- */
 .compare-grid {
   display: grid;
@@ -1018,7 +1060,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Variant: muted (default / paid / limited) */
 .compare-card.variant-muted .compare-badge {
   background: rgba(139, 92, 246, 0.1);
   color: var(--accent-purple);
@@ -1029,7 +1070,6 @@
   color: var(--text-muted);
 }
 
-/* Variant: positive (free / recommended / highlighted) */
 .compare-card.variant-positive .compare-badge {
   background: rgba(16, 185, 129, 0.1);
   color: #10b981;
@@ -1038,4 +1078,3 @@
 .compare-card.variant-positive li::before {
   content: "✓ ";
   color: #10b981;
-}
