@@ -1078,3 +1078,229 @@
 .compare-card.variant-positive li::before {
   content: "✓ ";
   color: #10b981;
+}
+
+a {
+  color: var(--accent-purple);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header-breadcrumb {
+  font-size: .8125rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-breadcrumb a {
+  color: var(--text-secondary);
+}
+
+.editorial-block strong,
+.mood-explainer strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.example-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.example-pair .ex-label {
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+}
+
+.example-pair .ex-plain {
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
+.example-pair .ex-arrow {
+  color: var(--accent-purple);
+  font-size: .85rem;
+  text-align: center;
+}
+
+.example-pair .ex-styled {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: .75rem;
+  margin-top: .75rem;
+}
+
+.compare-card {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+}
+
+.compare-card h4 {
+  font-size: .9rem;
+  font-weight: 600;
+  margin: 0 0 .5rem 0;
+  color: var(--text-primary);
+}
+
+.compare-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compare-card li {
+  font-size: .8rem;
+  color: var(--text-secondary);
+  padding: .2rem 0;
+  line-height: 1.5;
+}
+
+.compare-badge {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: .15rem .5rem;
+  border-radius: 4px;
+  margin-bottom: .5rem;
+}
+
+.compare-card.variant-muted .compare-badge {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple);
+}
+
+.compare-card.variant-muted li::before {
+  content: "· ";
+  color: var(--text-muted);
+}
+
+.compare-card.variant-positive .compare-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.compare-card.variant-positive li::before {
+  content: "✓ ";
+  color: #10b981;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.section-divider {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.article-section-label {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple);
+  margin-bottom: .75rem;
+}
+
+.pull-quote {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-top: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--border-light);
+  line-height: 1.4;
+}
+
+.cta-card {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.cta-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: .5rem;
+}
+
+.cta-card p {
+  color: var(--text-secondary);
+  font-size: .95rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: white;
+  font-family: inherit;
+  font-size: .9375rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform .15s, box-shadow .15s;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+  text-decoration: none;
+}
+
+/* Mobile responsive additions for new classes */
+@media (max-width: 640px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pull-quote {
+    font-size: 1.1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .data-table {
+    font-size: .78rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: .4rem .5rem;
+  }
