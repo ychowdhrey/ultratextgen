@@ -178,19 +178,23 @@
         <input type="text" id="searchInput" placeholder="Search styles, emojis, symbols...">
       </div>
       
-      <div class="header-actions">
-        <button class="header-btn" id="historyBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          <span>History</span>
-        </button>
-        <button class="header-btn" id="favoritesBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-          </svg>
-          <span>Favorites</span>
-        </button>
+  <div class="header-actions">
+    <a class="header-btn" href="/guide/" aria-label="Guide">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 19l7-7 3 3-7 7-3-3zM18 13l-6-6-8 8v6h6l8-8z" />
+    </svg>
+    <span>Guide</span>
+  </a>
+
+    <a class="header-btn" href="/usecase/" aria-label="Use cases">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    <span>Use cases</span>
+  </a>
+</div>
         <button class="header-btn" id="darkModeBtn">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
