@@ -921,3 +921,121 @@
   font-family: 'Space Mono', monospace;
   margin-top: 8px;
 }
+
+/* -----------------------------------------------
+   Component: Data Table (.data-table)
+   Usage: Quick-reference tables inside any context
+   (FAQ answers, editorial blocks, standalone)
+   ----------------------------------------------- */
+.data-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.data-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.data-table td {
+  padding: 0.5rem 0.75rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table code {
+  background: var(--bg-base);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  color: var(--text-primary);
+}
+
+/* -----------------------------------------------
+   Component: Compare Cards (.compare-grid)
+   Usage: Side-by-side feature/plan/option comparison
+   Supports any number of cards (2–3 typical)
+   ----------------------------------------------- */
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.compare-card {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+}
+
+.compare-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.compare-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compare-card li {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding: 0.2rem 0;
+  line-height: 1.5;
+}
+
+.compare-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+/* Variant: muted (default / paid / limited) */
+.compare-card.variant-muted .compare-badge {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple);
+}
+
+.compare-card.variant-muted li::before {
+  content: "· ";
+  color: var(--text-muted);
+}
+
+/* Variant: positive (free / recommended / highlighted) */
+.compare-card.variant-positive .compare-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.compare-card.variant-positive li::before {
+  content: "✓ ";
+  color: #10b981;
+}
