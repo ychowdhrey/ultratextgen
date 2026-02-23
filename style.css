@@ -1342,3 +1342,42 @@ a:hover {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
 }
+/* ===========================================
+   Category Index Page — /category/
+   Only truly new rules; everything else reuses
+   existing .style-card, .data-table, .block-example, etc.
+   =========================================== */
+
+/* Jump-link targets: offset for sticky header */
+.cat-anchor {
+  scroll-margin-top: 80px;
+}
+
+/* Clickable overview-table rows */
+.cat-overview-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.cat-overview-table tbody tr:hover {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+/* CTA link styled like .copy-btn but as an <a> */
+.cat-cta {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cat-cta:hover {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: white;
+}
