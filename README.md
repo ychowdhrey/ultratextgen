@@ -120,3 +120,11 @@ These resources explore how Unicode typography encodes tone, authority, irony, a
 ### The Rhetoric of Fonts
 A structured framework mapping font styles to rhetorical devices and practical use cases, helping users apply typography intentionally rather than stylistically.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
+
+### Branding with Fonts for Social Media
+A practical playbook for using Unicode typography in campaigns. Discover how visual text patterns increase scroll stopping power, reinforce brand recall, and create consistency across Instagram, LinkedIn, TikTok, and X.
+- https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
+
+### Style Your LinkedIn Hooks to Stand Out
+A focused guide on transforming ordinary LinkedIn openings into high performing hooks. Learn how subtle text variations improve scroll interruption, readability, engagement rate, click through rate, and memorability in professional feeds.
+- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
