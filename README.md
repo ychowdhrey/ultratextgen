@@ -139,6 +139,11 @@ A curated page built around comment moods, helping people express emphasis, sarc
 A dedicated page crafted for stylish profile bios. It organizes Unicode fonts by tone and personality, allowing users to instantly copy and paste a bio that reflects their identity.
 - https://ultratextgen.com/usecase/bio-font/
 
+### Before and After Emoji
+
+A contextual page built around emotional framing. It pairs text with starting and ending emojis to create contrast, progression, or transformation. Ideal for storytelling, reactions, announcements, and comment journeys where mood shifts matter.
+- https://ultratextgen.com/usecase/before-after-emoji/
+
 ## Guides
 
 Fonts are not decoration. They are signals.
