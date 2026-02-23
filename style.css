@@ -1381,3 +1381,7 @@ a:hover {
   border-color: var(--accent-purple);
   color: white;
 }
+/* Space between category detail cards on /category/ */
+.cat-anchor + .cat-anchor {
+  margin-top: 16px;
+}
