@@ -1349,7 +1349,7 @@ a:hover {
    =========================================== */
 
 /* /category/ index page */
-.cat-anchor {
+.style-card.cat-anchor {
   scroll-margin-top: 80px;
   margin-bottom: 16px;
 }
