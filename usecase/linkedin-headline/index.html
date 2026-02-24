@@ -218,7 +218,7 @@
     <div class="hero-inner">
       <div class="hero-card">
         <h1 class="hero-headline">LinkedIn Headline Text</h1>
-        <p class="hero-tagline">LinkedIn headlines max out at 220 characters — every word competes for attention. Use separators to create clear visual structure between your roles and value props. Apply font styling sparingly to one key phrase to make it pop. Identity signals like emojis add personality without taking up much space.</p>
+        <p class="hero-tagline">Craft a LinkedIn headline that stands out — in 220 characters or less.</p>
 
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your headline here..." maxlength="280"></textarea>
@@ -428,20 +428,52 @@
     })();
 
     // ── Separator & Identity data ──────────────────────────────────────────────
-    const SEPARATORS = {
-      clean:       ['|', '•', '–', '·', '‣'],
-      directional: ['→', '►', '➤', '▸', '⟶'],
-      structured:  ['▪', '■', '🔹', '◆', '▫']
-    };
+      const SEPARATORS = {
+    clean:       ['|','•','–','·','‣','―','‖','∙','⁃','○',
+                  '◦','⸱','⁚','∣','⋮','⁞','⋯','…','⸺','~'],
+  
+    directional: ['→','►','➤','▸','⟶','➜','➔','▶','⇒','⟹',
+                  '↠','➝','➞','≫','»','⊳','⋙','↗','⇨','⤳'],
+  
+    structured:  ['▪','■','🔹','◆','▫','◼','▸','◾','⬥','◇',
+                  '▹','◽','⬦','▣','◈','⬛','🔸','🔷','⬜','🔶'],
+  
+    minimal:     ['·','‐','/','\\','†','‡','⁕','⁎','∗','✱',
+                  '×','⊹','⊕','⊘','∘','⋄','∷','⁃','⌁','˚'],
+  
+    decorative:  ['✦','★','✧','❖','✶','✴','❯','✿','❋','✵',
+                  '✺','❁','✤','❂','✡','✪','❃','✻','❊','✹'],
 
+    Location:  ['🇺🇸','🇬🇧','🇩🇪','🇫🇷','🇪🇸','🇮🇳','🇯🇵','🇨🇳','🇧🇷','🇨🇦',
+            '🇦🇺','🇰🇷','🇸🇬','🇦🇪','🇳🇱','🇮🇹','🇲🇽','🇮🇱','🇸🇪','🌍']
+  };
     const IDENTITY = {
-      marketing:      ['📈', '📣', '🎯', '💬', '📢'],
-      analytics:      ['📊', '🔍', '📉', '🧮', '📐'],
-      tech:           ['💻', '⚙️', '🚀', '🔧', '🖥️'],
-      sustainability: ['🌱', '♻️', '🌍', '🌿', '💚'],
-      entrepreneur:   ['🔥', '💡', '🚀', '⚡', '🏆'],
-      creative:       ['🎨', '✍️', '🎬', '📸', '✨'],
-      leadership:     ['👔', '🎖️', '🏅', '🤝', '📋']
+      marketing:      ['📈','📣','🎯','💬','📢','🧲','📱','📰','🗣️','💡',
+                       '🎪','📝','🏷️','📮','🤳','👀','🔔','💥','📋','🌐'],
+    
+      analytics:      ['📊','📉','🔍','🧮','📐','🔬','🧠','📏','🗂️','💹',
+                       '🔢','🗃️','⚗️','🔎','🧪','📑','🧩','🎛️','📌','🗄️'],
+    
+      tech:           ['💻','⚙️','🖥️','🔧','📱','🤖','☁️','🔌','⌨️','🖱️',
+                       '🛠️','🔗','🧑‍💻','💾','🔐','📡','🏗️','⚡','🌐','🖨️'],
+    
+      sustainability: ['🌱','♻️','🌍','🌿','💚','☀️','🌊','🍃','🌳','💧',
+                       '🐝','🔋','🏔️','🌻','🌾','🦋','🧭','🪴','🌅','🤲'],
+    
+      entrepreneur:   ['🔥','💡','🚀','⚡','🏆','💰','🏗️','📊','🎯','🛤️',
+                       '💼','🌟','🔑','🧗','🎲','📈','⏩','🧱','💎','🦅'],
+    
+      creative:       ['🎨','✍️','🎬','📸','✨','🖌️','🎭','🎵','📐','💫',
+                       '🖋️','🎤','📽️','🪄','🎹','📓','🌈','🎧','🧵','💭'],
+    
+      leadership:     ['👔','🎖️','🏅','🤝','📋','👑','🎯','🧭','🔑','🏛️',
+                       '⚓','🦁','📢','🛡️','🌟','🗺️','🏆','💪','🎓','🤲'],
+    
+      finance:        ['💰','💳','📊','🏦','💹','📈','💵','🪙','📉','🧾',
+                       '💎','📑','🔐','⚖️','🏧','💲','📒','🤝','🏠','📆'],
+    
+      healthcare:     ['🏥','💊','🩺','❤️','🧬','🔬','🫀','🩻','💉','🧪',
+                       '🏋️','🧘','🌡️','🫁','🦷','👁️','🩹','🧑‍⚕️','♿','🤱']
     };
 
     // ── Variation templates ────────────────────────────────────────────────────
