@@ -1,0 +1,693 @@
+<!DOCTYPE html><html lang="en"><head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Headline Generator — Styled Text with Separators &amp; Identity Signals | UltraTextGen</title>
+  <meta name="description" content="Create a standout LinkedIn headline with structured separators and selective Unicode font styling. 4 LinkedIn-safe fonts, smart separator insertion, and instant copy. 220 characters max.">
+  <link rel="canonical" href="https://ultratextgen.com/usecase/linkedin-headline/">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a LinkedIn headline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your LinkedIn headline is the line of text that appears directly below your name on your LinkedIn profile. It's one of the most visible pieces of your profile — shown in search results, connection requests, and comment sections. By default LinkedIn sets it to your current job title, but you can customize it to describe your value, expertise, or professional identity in up to 220 characters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long can a LinkedIn headline be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LinkedIn allows up to 220 characters in your headline. This is enough for 2–4 distinct value phrases when separated with structured dividers like | or •. Use the character counter on this page to track your length as you build."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which font styles work on LinkedIn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LinkedIn renders Unicode characters, so the 4 styles available here — Ultra Bold (𝗟𝗶𝗸𝗲 𝘁𝗵𝗶𝘀), Ultra Bold Serif (𝐋𝐢𝐤𝐞 𝐭𝐡𝐢𝐬), Ultra Italic (𝘓𝘪𝘬𝘦 𝘵𝘩𝘪𝘴), and Ultra Bold Italic Serif (𝑳𝒊𝒌𝒆 𝒕𝒉𝒊𝒔) — all display correctly on LinkedIn profiles, posts, and comments. They are standard Unicode mathematical alphanumeric symbols, not images or formatting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I style my entire headline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — style only key phrases, not your entire headline. Styling a single word or short phrase creates contrast that draws the eye. A fully styled headline can look overwhelming or spammy. The most effective approach: keep most of your headline in plain text and bold just the title or key descriptor that defines your professional identity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What separators work best in LinkedIn headlines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most widely used separator in LinkedIn headlines is the pipe character | — it's clean, professional, and universally understood as a divider. The bullet • is also popular for a slightly softer look. Directional separators like → work well for headlines that show progression or flow (e.g., 'Built brands → Scaled revenue → Now advising founders'). Avoid overusing decorative separators — one consistent type throughout reads more professionally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Unicode text affect LinkedIn search?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LinkedIn's search engine indexes the plain-text equivalent of Unicode characters for many common styles. However, to be safe, keep your primary keywords (job title, skills, industry) in plain text and apply Unicode styling only to emphasis phrases. This ensures maximum searchability while still creating visual contrast in search results and feeds."
+      }
+    }
+  ]
+}
+</script>
+
+  <style>
+    .helper-section {
+      margin-top: 1.25rem;
+    }
+    .helper-section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .helper-chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-top: 0.5rem;
+    }
+    .helper-chip {
+      background: var(--base);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.3rem 0.65rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      line-height: 1.4;
+    }
+    .helper-chip:hover {
+      background: var(--accent-purple);
+      color: #fff;
+      border-color: var(--accent-purple);
+    }
+    .style-phrase-section {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .style-phrase-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .selection-indicator {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      min-height: 1.2em;
+    }
+    .selection-indicator em {
+      font-style: normal;
+      color: var(--accent-purple);
+      font-weight: 600;
+    }
+    .apply-btn {
+      background: var(--accent-purple);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      margin-top: 0.5rem;
+    }
+    .apply-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .apply-btn:not(:disabled):hover {
+      opacity: 0.85;
+    }
+    .variation-char-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .variation-char-over {
+      color: #e53e3e;
+      font-weight: 600;
+    }
+    .variations-placeholder {
+      text-align: center;
+      color: var(--text-muted);
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+    }
+    .char-warning {
+      color: #e53e3e !important;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">U</span>
+        <span>UltraTextGen</span>
+      </a>
+
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search styles, emojis, symbols...">
+      </div>
+
+      <div class="header-actions">
+        <button class="header-btn" id="historyBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>History</span>
+        </button>
+        <button class="header-btn" id="favoritesBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+          </svg>
+          <span>Favorites</span>
+        </button>
+        <button class="header-btn" id="darkModeBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1 class="hero-headline">LinkedIn Headline Text</h1>
+        <p class="hero-tagline">LinkedIn headlines max out at 220 characters — every word competes for attention. Use separators to create clear visual structure between your roles and value props. Apply font styling sparingly to one key phrase to make it pop. Identity signals like emojis add personality without taking up much space.</p>
+
+        <div class="input-wrapper">
+          <textarea class="main-input" id="mainInput" placeholder="Type your headline here..." maxlength="280"></textarea>
+          <span class="char-count"><span id="charCount">0</span>/220</span>
+        </div>
+
+        <!-- Separator Helpers -->
+        <div class="helper-section">
+          <div class="helper-section-title">Separators — click to insert at cursor</div>
+          <div class="decoration-tabs" id="sepTabs">
+            <button class="decoration-tab active" data-sep-tab="clean">Clean</button>
+            <button class="decoration-tab" data-sep-tab="directional">Directional</button>
+            <button class="decoration-tab" data-sep-tab="structured">Structured</button>
+          </div>
+          <div class="helper-chip-grid" id="sepGrid"></div>
+        </div>
+
+        <!-- Identity Signal Helpers -->
+        <div class="helper-section">
+          <div class="helper-section-title">Identity Signals — click to insert at cursor</div>
+          <div class="decoration-tabs" id="idTabs">
+            <button class="decoration-tab active" data-id-tab="marketing">Marketing</button>
+            <button class="decoration-tab" data-id-tab="analytics">Analytics</button>
+            <button class="decoration-tab" data-id-tab="tech">Tech</button>
+            <button class="decoration-tab" data-id-tab="sustainability">Sustainability</button>
+            <button class="decoration-tab" data-id-tab="entrepreneur">Entrepreneur</button>
+            <button class="decoration-tab" data-id-tab="creative">Creative</button>
+            <button class="decoration-tab" data-id-tab="leadership">Leadership</button>
+          </div>
+          <div class="helper-chip-grid" id="idGrid"></div>
+        </div>
+
+        <!-- Style a Phrase -->
+        <div class="style-phrase-section">
+          <div class="style-phrase-title">Style a phrase — highlight text above, then apply a font</div>
+          <div class="decoration-tabs" id="fontTabs">
+            <button class="decoration-tab active" data-font="Ultra Bold">𝗕 Bold</button>
+            <button class="decoration-tab" data-font="Ultra Bold Serif">𝐁 Bold Serif</button>
+            <button class="decoration-tab" data-font="Ultra Italic">𝘐 Italic</button>
+            <button class="decoration-tab" data-font="Ultra Bold Italic Serif">𝑩 Bold Italic Serif</button>
+          </div>
+          <div class="selection-indicator" id="selectionIndicator">Highlight a phrase in your headline to style it</div>
+          <button class="apply-btn" id="applyFontBtn" disabled>Apply to selection</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h2 style="margin-bottom: 1rem; font-size: 1.25rem;">Headline Variations</h2>
+    <div id="variationsGrid">
+      <div class="variations-placeholder">Type your headline above to see variations</div>
+    </div>
+
+    <!-- Editorial Section -->
+    <section class="editorial-section" style="margin-top: 2.5rem;">
+      <h2>Crafting the Perfect LinkedIn Headline</h2>
+      <div class="editorial-block">
+        <h3>Structure: Lead with Your Role, Follow with Your Value</h3>
+        <p>The most effective LinkedIn headlines open with a clear role or identity label, then add 1–2 value phrases separated by a clean divider. This structure works because LinkedIn search surfaces your headline directly — the first phrase is what viewers read first in search results and connection requests.</p>
+        <div class="block-example"><strong>Example:</strong> "Head of Growth | B2B SaaS | Scaled from $1M → $10M ARR"</div>
+      </div>
+      <div class="editorial-block">
+        <h3>Separators: Consistency Over Creativity</h3>
+        <p>Pick one separator type and use it throughout your headline. Mixing | and • and → in the same headline creates visual noise. The pipe | is the most widely used — it reads as professional and structured. Use directional separators like → when the phrases show progression or cause-and-effect. Avoid overloading a headline with more than 3–4 dividers.</p>
+        <div class="block-example"><strong>Clean:</strong> "Product Designer | Design Systems | Formerly Airbnb"</div>
+        <div class="block-example"><strong>Directional:</strong> "Engineer → Team Lead → VP Engineering | Building infra teams"</div>
+      </div>
+      <div class="editorial-block">
+        <h3>Font Styling: One Phrase, Maximum Impact</h3>
+        <p>Unicode bold in a LinkedIn headline is most effective when applied to a single key identifier — your title, your niche, or your strongest differentiator. Styling your entire headline diminishes the effect. The contrast between styled and unstyled text is what creates visual emphasis.</p>
+        <div class="block-example"><strong>Example:</strong> "𝗚𝗿𝗼𝘄𝘁𝗵 𝗠𝗮𝗿𝗸𝗲𝘁𝗲𝗿 | B2B SaaS | 3× revenue in 18 months"</div>
+      </div>
+      <div class="editorial-block">
+        <h3>Identity Signals: Emojis That Work Professionally</h3>
+        <p>A single, well-chosen emoji at the start of a headline adds visual differentiation in feeds and search results without compromising professionalism. The most effective are industry-specific signals: 📈 for growth/marketing, 💡 for strategy/innovation, 💻 for tech. Avoid generic emojis that don't reinforce your professional identity.</p>
+        <div class="block-example"><strong>Example:</strong> "📈 CMO | Consumer Brands | Built 3 marketing functions from 0"</div>
+      </div>
+    </section>
+
+    <div class="cta-card">
+      <h3>Make your comments stand out too</h3>
+      <p>Use styled Unicode fonts in LinkedIn comments to emphasize key points and increase visibility in busy comment sections.</p>
+      <a href="https://ultratextgen.com/usecase/comment-font/" class="cta-btn">
+        Try Comment Fonts →
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <h3 class="footer-heading">Text generators by platform</h3>
+
+      <div class="footer-links">
+        <a class="footer-link" href="/discord/">Discord</a>
+        <a class="footer-link" href="/facebook/">Facebook</a>
+        <a class="footer-link" href="/instagram/">Instagram</a>
+        <a class="footer-link" href="/linkedin/">LinkedIn</a>
+        <a class="footer-link" href="/pinterest/">Pinterest</a>
+        <a class="footer-link" href="/snapchat/">Snapchat</a>
+        <a class="footer-link" href="/telegram/">Telegram</a>
+        <a class="footer-link" href="/tiktok/">TikTok</a>
+        <a class="footer-link" href="/whatsapp/">WhatsApp</a>
+        <a class="footer-link" href="/x/">X</a>
+        <a class="footer-link" href="/youtube/">Youtube</a>
+      </div>
+
+<!-- LinkedIn Headlines -->
+<h3 class="faq-category">LinkedIn Headlines</h3>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is a LinkedIn headline?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Your LinkedIn headline is the line of text directly below your name on your LinkedIn profile. It's one of the most visible parts of your profile — shown in search results, connection requests, feed posts, and comments. By default LinkedIn sets it to your current job title, but you can customize it to describe your value, expertise, or professional identity in up to 220 characters.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How long can a LinkedIn headline be?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    LinkedIn allows up to 220 characters in your headline. This is enough for 2–4 distinct value phrases when separated with structured dividers like | or •. Use the character counter on this page to track your length as you build.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Which font styles work on LinkedIn?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    LinkedIn renders Unicode characters, so the 4 styles available here — Ultra Bold (𝗟𝗶𝗸𝗲 𝘁𝗵𝗶𝘀), Ultra Bold Serif (𝐋𝐢𝐤𝐞 𝐭𝐡𝐢𝐬), Ultra Italic (𝘓𝘪𝘬𝘦 𝘵𝘩𝘪𝘴), and Ultra Bold Italic Serif (𝑳𝒊𝒌𝒆 𝒕𝒉𝒊𝒔) — all display correctly on LinkedIn profiles, posts, and comments.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Should I style my entire headline?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    No — style only key phrases, not your entire headline. Styling a single word or short phrase creates contrast that draws the eye. A fully styled headline can look overwhelming or spammy. The most effective approach: keep most of your headline in plain text and bold just the title or key descriptor.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What separators work best in LinkedIn headlines?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    The most widely used separator in LinkedIn headlines is the pipe character | — clean, professional, and universally understood as a divider. The bullet • is also popular for a slightly softer look. Directional separators like → work well for headlines that show progression or flow. Avoid overusing decorative separators — one consistent type throughout reads more professionally.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Does Unicode text affect LinkedIn search?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    LinkedIn's search engine indexes the plain-text equivalent of Unicode characters for many common styles. To be safe, keep your primary keywords (job title, skills, industry) in plain text and apply Unicode styling only to emphasis phrases. This ensures maximum searchability while still creating visual contrast in search results and feeds.
+  </div>
+</div>
+
+      <div class="footer-bottom">
+        © 2025 UltraTextGen. Fast text styles that work everywhere.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/styles.js"></script>
+  <script src="/renderer.js"></script>
+  <!-- DO NOT load /script.js — this page has its own custom logic -->
+
+  <script>
+    // ── Dark mode ──────────────────────────────────────────────────────────────
+    (function () {
+      const btn = document.getElementById('darkModeBtn');
+      const root = document.documentElement;
+      if (localStorage.getItem('darkMode') === 'true') root.classList.add('dark');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          root.classList.toggle('dark');
+          localStorage.setItem('darkMode', root.classList.contains('dark'));
+        });
+      }
+    })();
+
+    // ── Separator & Identity data ──────────────────────────────────────────────
+    const SEPARATORS = {
+      clean:       ['|', '•', '–', '·', '‣'],
+      directional: ['→', '►', '➤', '▸', '⟶'],
+      structured:  ['▪', '■', '🔹', '◆', '▫']
+    };
+
+    const IDENTITY = {
+      marketing:      ['📈', '📣', '🎯', '💬', '📢'],
+      analytics:      ['📊', '🔍', '📉', '🧮', '📐'],
+      tech:           ['💻', '⚙️', '🚀', '🔧', '🖥️'],
+      sustainability: ['🌱', '♻️', '🌍', '🌿', '💚'],
+      entrepreneur:   ['🔥', '💡', '🚀', '⚡', '🏆'],
+      creative:       ['🎨', '✍️', '🎬', '📸', '✨'],
+      leadership:     ['👔', '🎖️', '🏅', '🤝', '📋']
+    };
+
+    // ── Variation templates ────────────────────────────────────────────────────
+    const VARIATION_TEMPLATES = [
+      { label: 'Clean Pipe',       fn: text => text.replace(/\s*[|•–·→►]\s*/g, ' | ') },
+      { label: 'Bullet Points',    fn: text => text.replace(/\s*[|•–·→►]\s*/g, ' • ') },
+      { label: 'Dash Separated',   fn: text => text.replace(/\s*[|•–·→►]\s*/g, ' – ') },
+      { label: 'Arrow Flow',       fn: text => text.replace(/\s*[|•–·→►]\s*/g, ' → ') },
+      { label: 'Triangle Flow',    fn: text => text.replace(/\s*[|•–·→►]\s*/g, ' ► ') },
+      { label: '📈 Marketing Lead',  fn: text => '📈 ' + text },
+      { label: '💡 Thought Leader',  fn: text => '💡 ' + text },
+      { label: '🚀 Growth Focus',    fn: text => '🚀 ' + text },
+      { label: '🎯 Target Driven',   fn: text => '🎯 ' + text },
+      { label: '⚡ High Energy',     fn: text => '⚡ ' + text }
+    ];
+
+    // ── Helpers ────────────────────────────────────────────────────────────────
+    const mainInput = document.getElementById('mainInput');
+    const charCount = document.getElementById('charCount');
+    const applyFontBtn = document.getElementById('applyFontBtn');
+    const selectionIndicator = document.getElementById('selectionIndicator');
+    const variationsGrid = document.getElementById('variationsGrid');
+
+    let activeFont = 'Ultra Bold';
+    let selStart = 0, selEnd = 0;
+
+    function updateCharCount() {
+      const len = mainInput.value.length;
+      charCount.textContent = len;
+      if (len > 220) {
+        charCount.parentElement.classList.add('char-warning');
+      } else {
+        charCount.parentElement.classList.remove('char-warning');
+      }
+    }
+
+    function insertAtCursor(chip, isSeparator) {
+      const ta = mainInput;
+      const start = ta.selectionStart;
+      const end = ta.selectionEnd;
+      const val = ta.value;
+
+      let insert;
+      if (isSeparator) {
+        // Smart spacing: space-separator-space unless at edge
+        const atStart = (start === 0);
+        const atEnd = (start === val.length);
+        const charBefore = start > 0 ? val[start - 1] : '';
+        const charAfter = start < val.length ? val[start] : '';
+
+        const needSpaceBefore = !atStart && charBefore !== ' ';
+        const needSpaceAfter = !atEnd && charAfter !== ' ';
+
+        insert = (needSpaceBefore ? ' ' : '') + chip + (needSpaceAfter ? ' ' : '');
+      } else {
+        // Identity signals: add surrounding spaces if needed
+        const charBefore = start > 0 ? val[start - 1] : '';
+        const charAfter = start < val.length ? val[start] : '';
+        const needSpaceBefore = start > 0 && charBefore !== ' ';
+        const needSpaceAfter = start < val.length && charAfter !== ' ';
+        insert = (needSpaceBefore ? ' ' : '') + chip + (needSpaceAfter ? ' ' : '');
+      }
+
+      const newVal = val.substring(0, start) + insert + val.substring(end);
+      ta.value = newVal;
+      const newCursor = start + insert.length;
+      ta.selectionStart = ta.selectionEnd = newCursor;
+      ta.focus();
+      updateCharCount();
+      renderVariations();
+    }
+
+    function buildChipGrid(gridEl, chips, isSeparator) {
+      gridEl.innerHTML = '';
+      chips.forEach(chip => {
+        const btn = document.createElement('button');
+        btn.className = 'helper-chip';
+        btn.textContent = chip;
+        btn.type = 'button';
+        btn.addEventListener('click', () => insertAtCursor(chip, isSeparator));
+        gridEl.appendChild(btn);
+      });
+    }
+
+    // ── Separator tabs ─────────────────────────────────────────────────────────
+    const sepGrid = document.getElementById('sepGrid');
+    const sepTabs = document.querySelectorAll('#sepTabs [data-sep-tab]');
+    let activeSepTab = 'clean';
+
+    function renderSepGrid() {
+      buildChipGrid(sepGrid, SEPARATORS[activeSepTab], true);
+    }
+
+    sepTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        sepTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeSepTab = tab.dataset.sepTab;
+        renderSepGrid();
+      });
+    });
+
+    renderSepGrid();
+
+    // ── Identity tabs ──────────────────────────────────────────────────────────
+    const idGrid = document.getElementById('idGrid');
+    const idTabs = document.querySelectorAll('#idTabs [data-id-tab]');
+    let activeIdTab = 'marketing';
+
+    function renderIdGrid() {
+      buildChipGrid(idGrid, IDENTITY[activeIdTab], false);
+    }
+
+    idTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        idTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeIdTab = tab.dataset.idTab;
+        renderIdGrid();
+      });
+    });
+
+    renderIdGrid();
+
+    // ── Font tabs ──────────────────────────────────────────────────────────────
+    const fontTabs = document.querySelectorAll('#fontTabs [data-font]');
+    fontTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        fontTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeFont = tab.dataset.font;
+      });
+    });
+
+    // ── Selection tracking ─────────────────────────────────────────────────────
+    function updateSelection() {
+      selStart = mainInput.selectionStart;
+      selEnd = mainInput.selectionEnd;
+      if (selStart !== selEnd) {
+        const selected = mainInput.value.substring(selStart, selEnd);
+        selectionIndicator.innerHTML = 'Selected: <em>' + escapeHtml(selected) + '</em>';
+        applyFontBtn.disabled = false;
+      } else {
+        selectionIndicator.textContent = 'Highlight a phrase in your headline to style it';
+        applyFontBtn.disabled = true;
+      }
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    mainInput.addEventListener('select', updateSelection);
+    mainInput.addEventListener('mouseup', updateSelection);
+    mainInput.addEventListener('keyup', updateSelection);
+
+    // ── Apply font to selection ────────────────────────────────────────────────
+    applyFontBtn.addEventListener('click', () => {
+      if (selStart === selEnd) return;
+      const val = mainInput.value;
+      const selectedText = val.substring(selStart, selEnd);
+      const style = textStyles[activeFont];
+      if (!style) return;
+      const transformed = UltraTextGenRender.renderAny(selectedText, style);
+      const newVal = val.substring(0, selStart) + transformed + val.substring(selEnd);
+      mainInput.value = newVal;
+      const newCursor = selStart + transformed.length;
+      mainInput.selectionStart = mainInput.selectionEnd = newCursor;
+      mainInput.focus();
+      selStart = selEnd = newCursor;
+      selectionIndicator.textContent = 'Highlight a phrase in your headline to style it';
+      applyFontBtn.disabled = true;
+      updateCharCount();
+      renderVariations();
+    });
+
+    // ── Input change ───────────────────────────────────────────────────────────
+    mainInput.addEventListener('input', () => {
+      updateCharCount();
+      renderVariations();
+    });
+
+    // ── Render variations ──────────────────────────────────────────────────────
+    function renderVariations() {
+      const text = mainInput.value.trim();
+      if (!text) {
+        variationsGrid.innerHTML = '<div class="variations-placeholder">Type your headline above to see variations</div>';
+        return;
+      }
+
+      variationsGrid.innerHTML = '';
+
+      VARIATION_TEMPLATES.forEach(tpl => {
+        const result = tpl.fn(text);
+        const len = result.length;
+        const isOver = len > 220;
+
+        const card = document.createElement('div');
+        card.className = 'style-card';
+
+        const info = document.createElement('div');
+        info.className = 'style-info';
+
+        const name = document.createElement('div');
+        name.className = 'style-name';
+        name.textContent = tpl.label;
+
+        const preview = document.createElement('div');
+        preview.className = 'style-preview';
+        preview.textContent = result;
+
+        const charInfo = document.createElement('div');
+        charInfo.className = 'variation-char-count' + (isOver ? ' variation-char-over' : '');
+        charInfo.textContent = len + '/220' + (isOver ? ' ⚠ over limit' : '');
+
+        info.appendChild(name);
+        info.appendChild(preview);
+        info.appendChild(charInfo);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.textContent = 'Copy';
+        copyBtn.type = 'button';
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(result).then(() => {
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('copied');
+            setTimeout(() => {
+              copyBtn.textContent = 'Copy';
+              copyBtn.classList.remove('copied');
+            }, 1500);
+          });
+        });
+
+        card.appendChild(info);
+        card.appendChild(copyBtn);
+        variationsGrid.appendChild(card);
+      });
+    }
+
+    // ── FAQ accordion ──────────────────────────────────────────────────────────
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body></html>
