@@ -425,6 +425,32 @@
       ]
     };
   </script>
+  
+  <script>
+  // Enforce prefix-only decorators for this page.
+  // Move any suffix content into prefix and clear suffix so the renderer only sees prefix.
+  (function enforcePrefixOnlyDecorators() {
+    if (!window.UTG_DECORATIONS) return;
+
+    Object.keys(window.UTG_DECORATIONS).forEach(category => {
+      const arr = window.UTG_DECORATIONS[category];
+      if (!Array.isArray(arr)) return;
+
+      arr.forEach(deco => {
+        deco.prefix = (deco.prefix || "").trim();
+        deco.suffix = (deco.suffix || "").trim();
+
+        if (deco.suffix) {
+          deco.prefix = deco.prefix ? (deco.prefix + " " + deco.suffix) : deco.suffix;
+          deco.suffix = "";
+        }
+      });
+    });
+
+    // Debug flag for devtools
+    window.UTG_DECORATIONS_PREFIX_ONLY = true;
+  })();
+</script>
 
   <script src="/styles.js"></script>
   <script src="/renderer.js"></script>
