@@ -144,23 +144,25 @@
           <span class="char-count"><span id="charCount">0</span>/280</span>
         </div>
 
-        <!-- Category Chips -->
+        <!-- Decoration Selector -->
         <div class="decoration-section">
           <div class="decoration-label">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
             </svg>
-            Filter by category
+            Add decoration to results
           </div>
 
           <div class="decoration-tabs">
-            <button class="decoration-tab active" data-category="teasing">🔥 Teasing Something</button>
-            <button class="decoration-tab" data-category="win">🎉 Celebrating a Win</button>
-            <button class="decoration-tab" data-category="motivation">💪 Motivation &amp; Hustle</button>
-            <button class="decoration-tab" data-category="confidence">💎 Confidence Statement</button>
-            <button class="decoration-tab" data-category="announcement">📢 Announcement</button>
-            <button class="decoration-tab" data-category="cta">👉 Call to Action</button>
+            <button class="decoration-tab active" data-deco-tab="teasing">🔥 Teasing Something</button>
+            <button class="decoration-tab" data-deco-tab="win">🎉 Celebrating a Win</button>
+            <button class="decoration-tab" data-deco-tab="motivation">💪 Motivation &amp; Hustle</button>
+            <button class="decoration-tab" data-deco-tab="confidence">💎 Confidence Statement</button>
+            <button class="decoration-tab" data-deco-tab="announcement">📢 Announcement</button>
+            <button class="decoration-tab" data-deco-tab="cta">👉 Call to Action</button>
           </div>
+
+          <div class="decoration-grid" id="decorationGrid"></div>
         </div>
       </div>
     </div>
@@ -168,6 +170,11 @@
 
   <!-- Main Content -->
   <main class="container">
+    <div class="category-section">
+      <div class="category-tabs" id="categoryTabs" style="display: none;">
+        <!-- Hidden - script.js will populate from fonts.json -->
+      </div>
+    </div>
     <div class="results-grid" id="resultsGrid"></div>
 
     <!-- ===================== EDITORIAL SECTION ===================== -->
@@ -328,191 +335,98 @@
   </footer>
 
   <script>
-    // ===================== EMOJI COMBO DATA =====================
-    const COMBOS = {
-      teasing: [
-        { emojis: "🔥🚀", label: "Teasing Something", defaultLine: "🔥🚀 Big news coming soon" },
-        { emojis: "👀✨", label: "Teasing Something", defaultLine: "👀✨ Stay tuned" },
-        { emojis: "⏳🎯", label: "Teasing Something", defaultLine: "⏳🎯 Something is brewing" },
-        { emojis: "🚀🌟", label: "Teasing Something", defaultLine: "🚀🌟 You're not ready for this" },
-        { emojis: "🔥📢", label: "Teasing Something", defaultLine: "🔥📢 Announcement loading" },
-        { emojis: "✨🕒", label: "Teasing Something", defaultLine: "✨🕒 Countdown begins" },
-        { emojis: "🚧🚀", label: "Teasing Something", defaultLine: "🚧🚀 In the works" },
-        { emojis: "👀🔥", label: "Teasing Something", defaultLine: "👀🔥 Watch this space" },
-        { emojis: "⚡🎬", label: "Teasing Something", defaultLine: "⚡🎬 Coming soon" },
-        { emojis: "🎯🔥", label: "Teasing Something", defaultLine: "🎯🔥 You'll want to see this" }
+    // Set default active decoration tab
+    window.UTG_DEFAULT_DECO_TAB = "teasing";
+
+    // Font slugs to show (curated for emoji combinations usecase)
+    window.UTG_FONT_SLUGS = [
+      "ultra-bold", "ultra-bold-serif",
+      "ultra-italic", "ultra-italic-serif",
+      "ultra-bold-italic", "ultra-bold-italic-serif",
+      "ultra-script", "ultra-script-bold",
+      "ultra-gothic", "ultra-gothic-bold",
+      "ultra-bubble", "ultra-bubble-filled",
+      "ultra-double-struck", "ultra-monospace"
+    ];
+
+    // Custom emoji-combination decorators (each emoji combo becomes a decorator)
+    window.UTG_DECORATIONS = {
+      "teasing": [
+        { text: "text 🔥🚀", prefix: "", suffix: " 🔥🚀" },
+        { text: "text 👀✨", prefix: "", suffix: " 👀✨" },
+        { text: "text ⏳🎯", prefix: "", suffix: " ⏳🎯" },
+        { text: "text 🚀🌟", prefix: "", suffix: " 🚀🌟" },
+        { text: "text 🔥📢", prefix: "", suffix: " 🔥📢" },
+        { text: "text ✨🕒", prefix: "", suffix: " ✨🕒" },
+        { text: "text 🚧🚀", prefix: "", suffix: " 🚧🚀" },
+        { text: "text 👀🔥", prefix: "", suffix: " 👀🔥" },
+        { text: "text ⚡🎬", prefix: "", suffix: " ⚡🎬" },
+        { text: "text 🎯🔥", prefix: "", suffix: " 🎯🔥" }
       ],
-      win: [
-        { emojis: "🎉🥂", label: "Celebrating a Win", defaultLine: "🎉🥂 We did it" },
-        { emojis: "🏆✨", label: "Celebrating a Win", defaultLine: "🏆✨ So proud of this milestone" },
-        { emojis: "🚀📈", label: "Celebrating a Win", defaultLine: "🚀📈 10K and counting" },
-        { emojis: "🎊🔥", label: "Celebrating a Win", defaultLine: "🎊🔥 Hard work paid off" },
-        { emojis: "💥🏆", label: "Celebrating a Win", defaultLine: "💥🏆 Victory feels good" },
-        { emojis: "🎉🚀", label: "Celebrating a Win", defaultLine: "🎉🚀 Level unlocked" },
-        { emojis: "🥳✨", label: "Celebrating a Win", defaultLine: "🥳✨ What a journey" },
-        { emojis: "🏅📈", label: "Celebrating a Win", defaultLine: "🏅📈 On to the next" },
-        { emojis: "🎉💎", label: "Celebrating a Win", defaultLine: "🎉💎 Earned, not given" },
-        { emojis: "🚀🎯", label: "Celebrating a Win", defaultLine: "🚀🎯 Mission accomplished" }
+      "win": [
+        { text: "text 🎉🥂", prefix: "", suffix: " 🎉🥂" },
+        { text: "text 🏆✨", prefix: "", suffix: " 🏆✨" },
+        { text: "text 🚀📈", prefix: "", suffix: " 🚀📈" },
+        { text: "text 🎊🔥", prefix: "", suffix: " 🎊🔥" },
+        { text: "text 💥🏆", prefix: "", suffix: " 💥🏆" },
+        { text: "text 🎉🚀", prefix: "", suffix: " 🎉🚀" },
+        { text: "text 🥳✨", prefix: "", suffix: " 🥳✨" },
+        { text: "text 🏅📈", prefix: "", suffix: " 🏅📈" },
+        { text: "text 🎉💎", prefix: "", suffix: " 🎉💎" },
+        { text: "text 🚀🎯", prefix: "", suffix: " 🚀🎯" }
       ],
-      motivation: [
-        { emojis: "🔥💪", label: "Motivation & Hustle", defaultLine: "🔥💪 No excuses" },
-        { emojis: "🚀⚡", label: "Motivation & Hustle", defaultLine: "🚀⚡ Let's go" },
-        { emojis: "🎯🔥", label: "Motivation & Hustle", defaultLine: "🎯🔥 Locked in" },
-        { emojis: "💼🔥", label: "Motivation & Hustle", defaultLine: "💼🔥 Built different" },
-        { emojis: "⚡🎯", label: "Motivation & Hustle", defaultLine: "⚡🎯 Stay focused" },
-        { emojis: "🚀💥", label: "Motivation & Hustle", defaultLine: "🚀💥 Make it happen" },
-        { emojis: "🔥📈", label: "Motivation & Hustle", defaultLine: "🔥📈 Keep pushing" },
-        { emojis: "💪🚀", label: "Motivation & Hustle", defaultLine: "💪🚀 Discipline wins" },
-        { emojis: "⚡💼", label: "Motivation & Hustle", defaultLine: "⚡💼 No days off" },
-        { emojis: "🎯🔥", label: "Motivation & Hustle", defaultLine: "🎯🔥 Eyes on the goal" }
+      "motivation": [
+        { text: "text 🔥💪", prefix: "", suffix: " 🔥💪" },
+        { text: "text 🚀⚡", prefix: "", suffix: " 🚀⚡" },
+        { text: "text 🎯🔥", prefix: "", suffix: " 🎯🔥" },
+        { text: "text 💼🔥", prefix: "", suffix: " 💼🔥" },
+        { text: "text ⚡🎯", prefix: "", suffix: " ⚡🎯" },
+        { text: "text 🚀💥", prefix: "", suffix: " 🚀💥" },
+        { text: "text 🔥📈", prefix: "", suffix: " 🔥📈" },
+        { text: "text 💪🚀", prefix: "", suffix: " 💪🚀" },
+        { text: "text ⚡💼", prefix: "", suffix: " ⚡💼" },
+        { text: "text 🎯🔥", prefix: "", suffix: " 🎯🔥" }
       ],
-      confidence: [
-        { emojis: "💎✨", label: "Confidence Statement", defaultLine: "💎✨ Built different" },
-        { emojis: "👑🔥", label: "Confidence Statement", defaultLine: "👑🔥 Own your lane" },
-        { emojis: "🎯🧠", label: "Confidence Statement", defaultLine: "🎯🧠 Trust the process" },
-        { emojis: "💎🚀", label: "Confidence Statement", defaultLine: "💎🚀 Top tier" },
-        { emojis: "👑💼", label: "Confidence Statement", defaultLine: "👑💼 Know your worth" },
-        { emojis: "🔥🎯", label: "Confidence Statement", defaultLine: "🔥🎯 I said what I said" },
-        { emojis: "💎⚡", label: "Confidence Statement", defaultLine: "💎⚡ Standards high" },
-        { emojis: "👑📈", label: "Confidence Statement", defaultLine: "👑📈 Leading, not following" },
-        { emojis: "🔥🧠", label: "Confidence Statement", defaultLine: "🔥🧠 Calculated moves" },
-        { emojis: "🎯💎", label: "Confidence Statement", defaultLine: "🎯💎 Precision over noise" }
+      "confidence": [
+        { text: "text 💎✨", prefix: "", suffix: " 💎✨" },
+        { text: "text 👑🔥", prefix: "", suffix: " 👑🔥" },
+        { text: "text 🎯🧠", prefix: "", suffix: " 🎯🧠" },
+        { text: "text 💎🚀", prefix: "", suffix: " 💎🚀" },
+        { text: "text 👑💼", prefix: "", suffix: " 👑💼" },
+        { text: "text 🔥🎯", prefix: "", suffix: " 🔥🎯" },
+        { text: "text 💎⚡", prefix: "", suffix: " 💎⚡" },
+        { text: "text 👑📈", prefix: "", suffix: " 👑📈" },
+        { text: "text 🔥🧠", prefix: "", suffix: " 🔥🧠" },
+        { text: "text 🎯💎", prefix: "", suffix: " 🎯💎" }
       ],
-      announcement: [
-        { emojis: "📢🔥", label: "Announcement", defaultLine: "📢🔥 We're live" },
-        { emojis: "🚀🎉", label: "Announcement", defaultLine: "🚀🎉 Officially launched" },
-        { emojis: "✨🎯", label: "Announcement", defaultLine: "✨🎯 Big update" },
-        { emojis: "📣🚀", label: "Announcement", defaultLine: "📣🚀 It's happening" },
-        { emojis: "🔥📦", label: "Announcement", defaultLine: "🔥📦 Now available" },
-        { emojis: "🎉🚀", label: "Announcement", defaultLine: "🎉🚀 Just dropped" },
-        { emojis: "⚡📢", label: "Announcement", defaultLine: "⚡📢 Public release" },
-        { emojis: "🚀📅", label: "Announcement", defaultLine: "🚀📅 Save the date" },
-        { emojis: "🎯📢", label: "Announcement", defaultLine: "🎯📢 Update inside" },
-        { emojis: "🔥🚀", label: "Announcement", defaultLine: "🔥🚀 The wait is over" }
+      "announcement": [
+        { text: "text 📢🔥", prefix: "", suffix: " 📢🔥" },
+        { text: "text 🚀🎉", prefix: "", suffix: " 🚀🎉" },
+        { text: "text ✨🎯", prefix: "", suffix: " ✨🎯" },
+        { text: "text 📣🚀", prefix: "", suffix: " 📣🚀" },
+        { text: "text 🔥📦", prefix: "", suffix: " 🔥📦" },
+        { text: "text 🎉🚀", prefix: "", suffix: " 🎉🚀" },
+        { text: "text ⚡📢", prefix: "", suffix: " ⚡📢" },
+        { text: "text 🚀📅", prefix: "", suffix: " 🚀📅" },
+        { text: "text 🎯📢", prefix: "", suffix: " 🎯📢" },
+        { text: "text 🔥🚀", prefix: "", suffix: " 🔥🚀" }
       ],
-      cta: [
-        { emojis: "👉📌", label: "Call to Action", defaultLine: "👉📌 Save this" },
-        { emojis: "🎯📊", label: "Call to Action", defaultLine: "🎯📊 Swipe for breakdown" },
-        { emojis: "🚀✨", label: "Call to Action", defaultLine: "🚀✨ Don't miss this" },
-        { emojis: "📌🔥", label: "Call to Action", defaultLine: "📌🔥 Bookmark this" },
-        { emojis: "👉🚀", label: "Call to Action", defaultLine: "👉🚀 Tap to learn more" },
-        { emojis: "🎯📥", label: "Call to Action", defaultLine: "🎯📥 Download below" },
-        { emojis: "📢👉", label: "Call to Action", defaultLine: "📢👉 Share this" },
-        { emojis: "🔥📌", label: "Call to Action", defaultLine: "🔥📌 Keep this handy" },
-        { emojis: "🚀👉", label: "Call to Action", defaultLine: "🚀👉 Comment below" },
-        { emojis: "🎯📎", label: "Call to Action", defaultLine: "🎯📎 Link in bio" }
+      "cta": [
+        { text: "text 👉📌", prefix: "", suffix: " 👉📌" },
+        { text: "text 🎯📊", prefix: "", suffix: " 🎯📊" },
+        { text: "text 🚀✨", prefix: "", suffix: " 🚀✨" },
+        { text: "text 📌🔥", prefix: "", suffix: " 📌🔥" },
+        { text: "text 👉🚀", prefix: "", suffix: " 👉🚀" },
+        { text: "text 🎯📥", prefix: "", suffix: " 🎯📥" },
+        { text: "text 📢👉", prefix: "", suffix: " 📢👉" },
+        { text: "text 🔥📌", prefix: "", suffix: " 🔥📌" },
+        { text: "text 🚀👉", prefix: "", suffix: " 🚀👉" },
+        { text: "text 🎯📎", prefix: "", suffix: " 🎯📎" }
       ]
     };
-
-    let activeCategory = "teasing";
-    let currentInput = "";
-
-    // ===================== RENDER =====================
-    function renderCombos(filterText) {
-      const grid = document.getElementById("resultsGrid");
-      const combos = COMBOS[activeCategory] || [];
-      const search = (filterText || "").toLowerCase().trim();
-
-      const filtered = search
-        ? combos.filter(c =>
-            c.defaultLine.toLowerCase().includes(search) ||
-            c.emojis.includes(search) ||
-            c.label.toLowerCase().includes(search)
-          )
-        : combos;
-
-      grid.innerHTML = filtered.map(combo => {
-        const preview = currentInput.trim()
-          ? currentInput.trim() + " " + combo.emojis
-          : combo.defaultLine;
-        return `<div class="style-card">
-  <div class="style-info">
-    <p class="style-name">${combo.label}</p>
-    <p class="style-preview">${preview}</p>
-  </div>
-  <button class="copy-btn" data-text="${preview.replace(/"/g, '&quot;')}">Copy</button>
-</div>`;
-      }).join("");
-    }
-
-    // ===================== COPY =====================
-    document.addEventListener("click", function(e) {
-      const btn = e.target.closest(".copy-btn");
-      if (!btn) return;
-      const text = btn.getAttribute("data-text");
-      navigator.clipboard.writeText(text).then(() => {
-        const original = btn.textContent;
-        btn.textContent = "✓ Copied";
-        btn.disabled = true;
-        if (window.dataLayer) {
-          window.dataLayer.push({ event: "copy_emoji_combo", combo_text: text });
-        }
-        setTimeout(() => {
-          btn.textContent = original;
-          btn.disabled = false;
-        }, 1500);
-      });
-    });
-
-    // ===================== CATEGORY CHIPS =====================
-    document.addEventListener("DOMContentLoaded", function() {
-      const chips = document.querySelectorAll("[data-category]");
-      const mainInput = document.getElementById("mainInput");
-      const charCount = document.getElementById("charCount");
-      const searchInput = document.getElementById("searchInput");
-      const darkModeBtn = document.getElementById("darkModeBtn");
-
-      chips.forEach(chip => {
-        chip.addEventListener("click", () => {
-          chips.forEach(c => c.classList.remove("active"));
-          chip.classList.add("active");
-          activeCategory = chip.dataset.category;
-          renderCombos(searchInput ? searchInput.value : "");
-        });
-      });
-
-      // Input decoration
-      if (mainInput) {
-        mainInput.addEventListener("input", () => {
-          currentInput = mainInput.value;
-          if (charCount) charCount.textContent = mainInput.value.length;
-          renderCombos(searchInput ? searchInput.value : "");
-        });
-      }
-
-      // Search
-      if (searchInput) {
-        searchInput.addEventListener("input", () => {
-          renderCombos(searchInput.value);
-        });
-      }
-
-      // Dark mode
-      if (darkModeBtn) {
-        darkModeBtn.addEventListener("click", () => {
-          document.body.classList.toggle("dark-mode");
-        });
-      }
-
-      // FAQ accordion
-      document.querySelectorAll(".faq-question").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const item = btn.closest(".faq-item");
-          const answer = item.querySelector(".faq-answer");
-          const isOpen = item.classList.contains("open");
-          document.querySelectorAll(".faq-item.open").forEach(openItem => {
-            openItem.classList.remove("open");
-            openItem.querySelector(".faq-answer").style.display = "none";
-          });
-          if (!isOpen) {
-            item.classList.add("open");
-            answer.style.display = "block";
-          }
-        });
-      });
-
-      // Initial render
-      renderCombos("");
-    });
   </script>
+
+  <script src="/styles.js"></script>
+  <script src="/renderer.js"></script>
+  <script src="/script.js" defer=""></script>
 </body></html>
