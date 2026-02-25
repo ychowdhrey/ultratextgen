@@ -91,43 +91,43 @@ UltraTextGen organizes Unicode font transformations into structured tone-based c
 
 ### Bold Fonts
 Strong emphasis and authority driven font variations.
-https://ultratextgen.com/category/bold-fonts/
+- https://ultratextgen.com/category/bold-fonts/
 
 ### Cursive Fonts
 Expressive, flowing font variations with a personal tone.
-https://ultratextgen.com/category/cursive-fonts/
+- https://ultratextgen.com/category/cursive-fonts/
 
 ### Italic Fonts
 Subtle emphasis and contrast through slanted font forms.
-https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/italic-fonts/
 
 ### Underline Text Fonts
 Highlight key words without increasing visual weight.
-https://ultratextgen.com/category/underline-text/
+- https://ultratextgen.com/category/underline-text/
 
 ### Strikethrough Fonts
 Create irony, revision, and rhetorical tension through crossed text.
-https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/strikethrough-text/
 
 ### Bubble Fonts
 Playful, scroll stopping decorative font variations.
-https://ultratextgen.com/category/bubble-fonts/
+- https://ultratextgen.com/category/bubble-fonts/
 
 ### Gothic Fonts
 Dramatic, intense font forms inspired by old world typography.
-https://ultratextgen.com/category/gothic-fonts/
+- https://ultratextgen.com/category/gothic-fonts/
 
 ### Upside Down Fonts
 Disrupt visual flow with inverted font transformations.
-https://ultratextgen.com/category/upside-down-text/
+- https://ultratextgen.com/category/upside-down-text/
 
 ### Word Wrapper Fonts
 Frame text with structured decorative font patterns.
-https://ultratextgen.com/category/word-wrappers/
+- https://ultratextgen.com/category/word-wrappers/
 
 ### Classified Fonts
 Specialty and experimental Unicode font variations.
-https://ultratextgen.com/category/classified/
+- https://ultratextgen.com/category/classified/
 
 ## Usecases 
 
