@@ -144,6 +144,10 @@ A dedicated page crafted for stylish profile bios. It organizes Unicode fonts by
 A contextual page built around emotional framing. It pairs text with starting and ending emojis to create contrast, progression, or transformation. Ideal for storytelling, reactions, announcements, and comment journeys where mood shifts matter.
 - https://ultratextgen.com/usecase/before-after-emoji/
 
+### Emoji Combinations
+A curated page of copy-paste emoji combinations organized by intent — teasing, celebrating wins, motivation, confidence, announcements, and calls to action. Perfect for Instagram, TikTok, LinkedIn, and other social platforms.
+- https://ultratextgen.com/usecase/emoji-combinations/
+
 ## Guides
 
 Fonts are not decoration. They are signals.
