@@ -1380,3 +1380,123 @@ a:hover {
   border-color: var(--accent-purple);
   color: white;
 }
+
+/* Helper / chip / small section utilities (moved from usecase-specific page) */
+
+/* Small helper block spacing */
+.helper-section {
+  margin-top: 1.25rem;
+}
+
+/* Small uppercase section label used across helper blocks */
+.helper-section-title,
+.style-phrase-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Chip grid layout for small interactive chips */
+.helper-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+}
+
+/* Interactive chip (use instead of many per-page variants) */
+.helper-chip,
+.chip {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 0.3rem 0.65rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  line-height: 1.4;
+}
+
+/* Hover / active state for chips */
+.helper-chip:hover,
+.chip:hover,
+.helper-chip.active,
+.chip.active {
+  background: var(--accent-purple);
+  color: #fff;
+  border-color: var(--accent-purple);
+}
+
+/* Reusable small section with top border (page blocks that separate controls) */
+.style-phrase-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Selection indicator / helper text under inputs */
+.selection-indicator {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  min-height: 1.2em;
+}
+.selection-indicator em {
+  font-style: normal;
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+/* Primary action button (rename apply-btn -> btn-primary for reuse) */
+.btn-primary,
+.apply-btn {
+  background: var(--accent-purple);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: 0.5rem;
+}
+.btn-primary:disabled,
+.apply-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.btn-primary:not(:disabled):hover,
+.apply-btn:not(:disabled):hover {
+  opacity: 0.85;
+}
+
+/* Small variation / character count helpers */
+.variation-char-count,
+.char-count-small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+.variation-char-over {
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+/* Empty-state placeholder for variations area */
+.variations-placeholder {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* Utility for red warning emphasis */
+.char-warning,
+.text-warning {
+  color: #e53e3e !important;
+  font-weight: 700;
+}
