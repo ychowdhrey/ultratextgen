@@ -1196,25 +1196,17 @@
         function initFaqAccordion() {
           const faqButtons = document.querySelectorAll('.faq-question');
           if (!faqButtons.length) return;
+
           faqButtons.forEach(btn => {
-            const answer = btn.nextElementSibling;
-            // Only target elements that match your markup
-            if (!answer || !answer.classList.contains('faq-answer')) return;
-      
-            // Ensure answers are hidden initially and aria reflects that
-            answer.hidden = true;
-            btn.classList.remove('open');
-            btn.setAttribute('aria-expanded', 'false');
-      
             btn.addEventListener('click', function () {
-              const isOpen = btn.classList.toggle('open');
-              answer.hidden = !isOpen;
-              btn.setAttribute('aria-expanded', String(isOpen));
+              const item = btn.closest('.faq-item');
+              if (item) {
+                item.classList.toggle('open');
+              }
             });
           });
         }
 
-  // If DOM is already ready, init immediately; otherwise wait
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initFaqAccordion);
   } else {
