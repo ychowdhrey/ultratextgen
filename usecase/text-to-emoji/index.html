@@ -18,6 +18,111 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a text to emoji converter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A text to emoji converter translates your entire sentence into a sequence of emojis that visually represent the meaning — word by word. Example: \"I love pizza\" → 👤 ❤️ ��."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does text to emoji conversion work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The converter scans your sentence and maps each word to a matching emoji using a structured emoji language system. Words without a direct emoji match are kept as plain text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of sentences work best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sentences with concrete, visual words (food, animals, emotions, weather, activities, objects) convert best. Abstract or technical language may leave some words as plain text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple, descriptive sentences convert very well. Abstract or idiomatic phrases may have fewer direct emoji matches. Use the \"View Emoji Breakdown\" feature to see each mapping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this tool free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — completely free. You can convert up to 500 characters per input, copy the result instantly, and paste it anywhere with no sign-up required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which languages are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The converter supports multiple languages (English, Spanish, French, German, Hindi, Arabic, Japanese, Korean, Russian, etc.) and attempts to detect language automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does full-sentence emoji text work best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full emoji sentences work well on visual, casual platforms like Instagram, Facebook comments, group chats, TikTok, Snapchat, stories and reels, and contests/giveaways."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should I avoid using full emoji sentences?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avoid full emoji sentences in professional or accessibility-sensitive contexts (LinkedIn headlines, formal emails, or places where screen-reader clarity and precision matter)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my emoji text display correctly on all devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the output uses Unicode-standard emojis supported by modern devices. Emoji appearance may vary by OS/version; very new emojis may show as placeholders on older systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are some fun ways to use text to emoji?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use emoji riddles, contests, story reactions, or as a learning tool for kids to pair words with images. Great for engagement and playful interactions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are emoji games to play over text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Try emoji charades (movie/song titles), story chains where each person converts a sentence, or riddles like 🍎 + 🏙️ = \"Big Apple.\""
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for marketing or social media campaigns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Emoji sentences can drive engagement in campaigns (decode-this contests, giveaway mechanics, comment hooks) — but match the approach to the platform and audience."
+      }
+    }
+  ]
+}
+</script>
+  
   <style>
     .emoji-output-block {
       background: var(--surface, #f8f9fa);
@@ -1085,6 +1190,37 @@
       t = t.replace(/[.,;:!?]+$/, '');
       return t;
     }
+
+    // FAQ accordion toggler (for this page only)
+    (function () {
+        function initFaqAccordion() {
+          const faqButtons = document.querySelectorAll('.faq-question');
+          if (!faqButtons.length) return;
+          faqButtons.forEach(btn => {
+            const answer = btn.nextElementSibling;
+            // Only target elements that match your markup
+            if (!answer || !answer.classList.contains('faq-answer')) return;
+      
+            // Ensure answers are hidden initially and aria reflects that
+            answer.hidden = true;
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+      
+            btn.addEventListener('click', function () {
+              const isOpen = btn.classList.toggle('open');
+              answer.hidden = !isOpen;
+              btn.setAttribute('aria-expanded', String(isOpen));
+            });
+          });
+        }
+
+  // If DOM is already ready, init immediately; otherwise wait
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFaqAccordion);
+  } else {
+    initFaqAccordion();
+  }
+})();
 
     function convertDigits(str) {
       return str.replace(/[0-9]/g, d => DIGIT_EMOJI[d] || d);
