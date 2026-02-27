@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,18 +47,46 @@
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- HEADER -->
 <header class="header">
   <div class="header-inner">
-    <a href="https://ultratextgen.com/" class="logo">
-      <div class="logo-icon">U</div>
-      UltraTextGen
+    <a href="/" class="logo">
+      <span class="logo-icon">U</span>
+      <span>UltraTextGen</span>
     </a>
-    <div class="header-breadcrumb">
-      <a href="https://ultratextgen.com/">Home</a>
-      <span>›</span>
-      <span>Guides</span>
+
+    <div class="search-bar">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search styles, emojis, symbols...">
+    </div>
+
+    <div class="header-actions">
+      <a class="header-btn" href="/guide/" aria-label="Guide">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 19l7-7 3 3-7 7-3-3zM18 13l-6-6-8 8v6h6l8-8z" />
+        </svg>
+        <span>Guide</span>
+      </a>
+      <a class="header-btn" href="/usecase/" aria-label="Use cases">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span>Use cases</span>
+      </a>
+      <button class="header-btn" id="darkModeBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
     </div>
   </div>
 </header>
@@ -60,96 +95,106 @@
 <section class="hero">
   <div class="hero-inner" style="max-width:800px;">
     <h1 class="hero-headline">Guides for expressive typography</h1>
-    <p class="hero-tagline">Fonts are not decoration. They are signals. These resources show how Unicode typography encodes tone, authority, irony, and emphasis across platforms.</p>
+    <p class="hero-tagline">Fonts carry meaning before words are read. These guides show you how to use Unicode typography to signal tone, build recognition, and shape how your message lands.</p>
   </div>
-</section>
-
-<!-- EDUCATIONAL STRIP -->
-<section class="editorial-section" style="margin-top:1rem;margin-bottom:0;">
-  <p style="text-align:center;color:var(--text-muted);font-size:0.9rem;line-height:1.6;max-width:620px;margin:0 auto;">Typography is a shortcut for meaning. The same sentence can signal sarcasm, authority, softness, or intensity depending on the font you choose.</p>
 </section>
 
 <!-- GUIDES -->
 <main class="container" style="max-width:900px;">
 
-  <section class="editorial-section" style="margin-top:3.5rem;">
-    <h2>Guides</h2>
-    <p class="section-subline">Explore frameworks and playbooks to use font variation with intention.</p>
+  <!-- Category 1: Platform & Posting -->
+  <section class="editorial-section" id="platform-posting">
+    <h2>Platform &amp; Posting</h2>
+    <p class="section-subline">Guides for writing that performs on specific platforms and contexts.</p>
 
-    <!-- Guide 1: The Rhetoric of Fonts -->
-    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:6px;">
-      <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0;">The Rhetoric of Fonts</h3>
-      <p class="usecase-outcome">Pick the exact tone you want to signal, on purpose.</p>
-      <p class="usecase-diff">Maps font styles to rhetorical devices so you stop styling and start communicating.</p>
-      <div class="usecase-example">Same words. Different signal.
-Sure. That's brilliant.
-S̶u̶r̶e̶.̶ ̶T̶h̶a̶t̶'̶s̶ ̶b̶r̶i̶l̶l̶i̶a̶n̶t̶.̶
-Strikethrough reads as sarcasm.</div>
-      <a class="usecase-cta" href="/guide/the-rhetoric-of-fonts/">Read guide →</a>
+    <!-- Guide: Style Your LinkedIn Hooks to Stand Out -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">💼</span>
+        Style Your LinkedIn Hooks to Stand Out
+      </div>
+      <p class="usecase-outcome">Turn the first line of a LinkedIn post into a scroll-stopping hook using Unicode styling.</p>
+      <p class="usecase-diff">Learn how visual friction, bold anchoring, and strikethrough contrast create hooks that earn clicks — with a four-step styling framework and ready-to-use templates.</p>
+      <div class="usecase-example">Before: Here's what I learned this week
+After: 𝗛𝗲𝗿𝗲'𝘀 𝘄𝗵𝗮𝘁 𝗜 𝗹𝗲𝗮𝗿𝗻𝗲𝗱 this week
+Bold the thesis. Plain the rest.</div>
+      <a class="usecase-cta" href="/guide/style-linkedin-hooks-to-stand-out/">Style Your LinkedIn Hooks →</a>
     </div>
 
-    <!-- Guide 2: Branding with Fonts for Social Media -->
-    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:6px;">
-      <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0;">Branding with Fonts for Social Media</h3>
-      <p class="usecase-outcome">Build visual consistency people recognize instantly.</p>
-      <p class="usecase-diff">A campaign playbook for repeatable text patterns across platforms.</p>
-      <div class="usecase-example">Pattern: same message, same signature
-𝗕𝗿𝗮𝗻𝗱 𝘃𝗼𝗶𝗰𝗲.
-𝗕𝗿𝗮𝗻𝗱 𝘃𝗼𝗶𝗰𝗲.
-Repetition builds memory.</div>
-      <a class="usecase-cta" href="/guide/branding-with-fonts-for-social-media/">Read guide →</a>
-    </div>
-
-    <!-- Guide 3: Style Your LinkedIn Hooks to Stand Out -->
-    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:6px;">
-      <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0;">Style Your LinkedIn Hooks to Stand Out</h3>
-      <p class="usecase-outcome">Turn ordinary openings into hooks that earn the pause.</p>
-      <p class="usecase-diff">Focused on scanability, authority signaling, and clean platform safe styling.</p>
-      <div class="usecase-example">Before
-Here's what I learned this week
-
-After
-𝗛𝗲𝗿𝗲'𝘀 𝘄𝗵𝗮𝘁 𝗜 𝗹𝗲𝗮𝗿𝗻𝗲𝗱
-this week
-
-Anchor the first line.</div>
-      <a class="usecase-cta" href="/guide/style-linkedin-hooks-to-stand-out/">Read guide →</a>
-    </div>
-
-    <!-- Guide 4: Personal Branding Through Typography -->
-    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:6px;">
-      <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0;">Personal Branding Through Typography</h3>
-      <p class="usecase-outcome">Make your formatting a signature people remember.</p>
-      <p class="usecase-diff">Four techniques for building recognition through consistent micro patterns.</p>
-      <div class="usecase-example">Signature format
-Yasir | Marketer | Storyteller | Ad Critic
-
-Consistency creates identity.</div>
-      <a class="usecase-cta" href="/guide/personal-branding-through-typography/">Read guide →</a>
-    </div>
-
-    <!-- Guide 5: Stop the Scroll with Font Variation -->
-    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:6px;">
-      <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0;">Stop the Scroll with Font Variation</h3>
-      <p class="usecase-outcome">Guide the eye with contrast, not clutter.</p>
-      <p class="usecase-diff">Five principles that turn emphasis into navigation.</p>
-      <div class="usecase-example">Before
-shipping tips for first timers
-
-After
-𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴 𝘁𝗶𝗽𝘀 for first timers
-
+    <!-- Guide: Stop the Scroll with Font Variation -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">👁️</span>
+        Stop the Scroll with Font Variation
+      </div>
+      <p class="usecase-outcome">Use font contrast to guide the eye through your post — so people read, not skip.</p>
+      <p class="usecase-diff">Five principles for using bold, italic, and mixed-weight text as visual navigation. Covers chunking, anchoring, and how to turn emphasis into a reading path — with before-and-after transformations.</p>
+      <div class="usecase-example">Before: shipping tips for first timers
+After: 𝗦𝗵𝗶𝗽𝗽𝗶𝗻𝗴 𝘁𝗶𝗽𝘀 for first timers
 Contrast creates anchors.</div>
-      <a class="usecase-cta" href="/guide/stop-the-scroll-with-font-variation/">Read guide →</a>
+      <a class="usecase-cta" href="/guide/stop-the-scroll-with-font-variation/">Stop the Scroll with Font Variation →</a>
+    </div>
+  </section>
+
+  <!-- Category 2: Branding & Identity -->
+  <section class="editorial-section" id="branding-identity">
+    <h2>Branding &amp; Identity</h2>
+    <p class="section-subline">Build recognition that compounds across every post and platform.</p>
+
+    <!-- Guide: Branding with Fonts for Social Media -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">📣</span>
+        Branding with Fonts for Social Media
+      </div>
+      <p class="usecase-outcome">Turn Unicode fonts into repeatable brand assets across your campaigns.</p>
+      <p class="usecase-diff">A five-strategy campaign playbook covering scroll-stopping, memorability, brand association, recurring series anchors, and seasonal flair — with a cheat sheet mapping campaign goals to font styles.</p>
+      <div class="usecase-example">♛ 𝕄𝕠𝕥𝕚𝕧𝕒𝕥𝕚𝕠𝕟 𝕄𝕠𝕟𝕕𝕒𝕪 ♛
+Same font, same framing, every week.
+Repetition builds recognition.</div>
+      <a class="usecase-cta" href="/guide/branding-with-fonts-for-social-media/">Branding with Fonts for Social Media →</a>
     </div>
 
+    <!-- Guide: Personal Branding Through Typography -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🪪</span>
+        Personal Branding Through Typography
+      </div>
+      <p class="usecase-outcome">Make your formatting a signature people recognize before they read your name.</p>
+      <p class="usecase-diff">Four techniques — consistent hook styling, signature formatting patterns, repetition as memory architecture, and micro-branding in comments — backed by cognitive science on pattern recognition and recall.</p>
+      <div class="usecase-example">Yasir | Marketer | Storyteller | Ad Critic
+Same format. Every post. Every platform.
+Consistency creates identity.</div>
+      <a class="usecase-cta" href="/guide/personal-branding-through-typography/">Personal Branding Through Typography →</a>
+    </div>
+  </section>
+
+  <!-- Category 3: Font Strategy & Meaning -->
+  <section class="editorial-section" id="font-strategy">
+    <h2>Font Strategy &amp; Meaning</h2>
+    <p class="section-subline">Understand why fonts carry meaning — and how to choose the right one.</p>
+
+    <!-- Guide: The Rhetoric of Fonts -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🎭</span>
+        The Rhetoric of Fonts
+      </div>
+      <p class="usecase-outcome">Every font carries a signal — a personality that adds weight, irony, or authority to your words.</p>
+      <p class="usecase-diff">Maps 15 classical rhetorical devices to specific Unicode font styles. Sarcasm → strikethrough, understatement → underline, gravitas → gothic. A complete reference for choosing fonts by meaning, not appearance.</p>
+      <div class="usecase-example">Sure. That's brilliant.
+S̶u̶r̶e̶.̶ ̶T̶h̶a̶t̶'̶s̶ ̶b̶r̶i̶l̶l̶i̶a̶n̶t̶.̶
+Same words. Strikethrough makes it sarcasm.</div>
+      <a class="usecase-cta" href="/guide/the-rhetoric-of-fonts/">The Rhetoric of Fonts →</a>
+    </div>
   </section>
 
   <!-- Cross-link CTA -->
   <div class="cta-card">
     <h3>Explore by font category</h3>
     <p>Looking for a specific style rather than a guide? Browse all Unicode font categories — bold, cursive, gothic, bubble, strikethrough and more.</p>
-    <a href="https://ultratextgen.com/category/" class="cta-btn">Browse Font Categories →</a>
+    <a href="/category/" class="cta-btn">Browse Font Categories →</a>
   </div>
 
 </main>
@@ -157,9 +202,43 @@ Contrast creates anchors.</div>
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-bottom">© 2026 <a href="https://ultratextgen.com/">UltraTextGen</a>. Fast text styles that work everywhere.</div>
+    <h2 class="faq-category" style="border-top:none;margin-top:0;padding-top:0;">Text generators by platform</h2>
+
+    <div class="footer-links">
+      <a class="footer-link" href="/discord/">Discord</a>
+      <a class="footer-link" href="/facebook/">Facebook</a>
+      <a class="footer-link" href="/instagram/">Instagram</a>
+      <a class="footer-link" href="/linkedin/">LinkedIn</a>
+      <a class="footer-link" href="/pinterest/">Pinterest</a>
+      <a class="footer-link" href="/snapchat/">Snapchat</a>
+      <a class="footer-link" href="/telegram/">Telegram</a>
+      <a class="footer-link" href="/tiktok/">TikTok</a>
+      <a class="footer-link" href="/whatsapp/">WhatsApp</a>
+      <a class="footer-link" href="/x/">X</a>
+      <a class="footer-link" href="/youtube/">Youtube</a>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 UltraTextGen. Fast text styles that work everywhere.
+    </div>
   </div>
 </footer>
 
+<!-- Dark mode + FAQ toggle -->
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+  var darkBtn = document.getElementById('darkModeBtn');
+  if (darkBtn) {
+    if (localStorage.getItem('darkMode') === 'true') document.body.classList.add('dark-mode');
+    darkBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+  }
+</script>
 </body>
 </html>
