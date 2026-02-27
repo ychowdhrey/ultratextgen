@@ -1500,3 +1500,84 @@ a:hover {
   color: #e53e3e !important;
   font-weight: 700;
 }
+
+/* ===========================================
+   Use Cases Page — /usecase/
+   New classes appended; no existing rules altered.
+   =========================================== */
+
+/* Example block inside each use-case card */
+.usecase-example {
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 8px 0;
+  white-space: pre-line;
+}
+
+/* Outcome headline inside each use-case card */
+.usecase-outcome {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+/* Differentiator line inside each use-case card */
+.usecase-diff {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+/* Muted subline beneath section headings */
+.section-subline {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Inline CTA link (replaces full-width .cat-cta on use-cases page) */
+.usecase-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.usecase-cta:hover {
+  opacity: 0.8;
+}
+
+/* Card spacing overrides scoped to use-cases page cards */
+.style-card.usecase-cards {
+  padding: 14px 18px;
+}
+
+/* Increase spacing between sections on the use-cases page */
+.editorial-section + .editorial-section,
+.editorial-section + .cta-card {
+  margin-top: 4rem;
+}
+
+/* Tighter gap between cards within editorial sections */
+.editorial-section .style-card + .style-card {
+  margin-top: 6px;
+}
+
+/* Small optional subline in the hero (use-cases page) */
+.hero-sub {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
