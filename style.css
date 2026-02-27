@@ -555,20 +555,19 @@
     }
       
    .faq-category {
-     margin-top: 40px;
+     margin-top: 24px;
      margin-bottom: 16px;
-     padding-top: 24px;
-     border-top: 1px solid var(--border-light);
+     padding-top: 0;
      font-size: 1.125rem;
      font-weight: 700;
      color: var(--text-primary);
    }
 
-/* Remove the border-top on the very first category so there's no double line */
-   .faq-category:first-of-type {
-     margin-top: 24px;
-     border-top: none;
-     padding-top: 0;
+/* Add border-top on all subsequent category headings (all but first) */
+   .faq-category ~ .faq-category {
+     margin-top: 40px;
+     padding-top: 24px;
+     border-top: 1px solid var(--border-light);
    }
 
     .faq-question {
