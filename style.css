@@ -1629,3 +1629,88 @@ a:hover {
   font-size: 0.95rem;
   margin: 0.75rem 0;
 }
+
+/* ===========================================
+   Symbol Library — /library/linkedin-symbol-library/
+   =========================================== */
+
+.symbol-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 0.75rem 0;
+}
+
+.symbol-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  font-size: 1.5rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  line-height: 1;
+}
+
+.symbol-tile:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.symbol-tile:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+
+.symbol-tile.is-copied {
+  background: var(--accent-purple);
+  color: #fff;
+  border-color: var(--accent-purple);
+}
+
+/* Toast notification */
+.symbol-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text-primary);
+  color: var(--bg-base);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 200;
+  white-space: nowrap;
+}
+
+.symbol-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive: tablet */
+@media (max-width: 768px) {
+  .symbol-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Responsive: mobile */
+@media (max-width: 480px) {
+  .symbol-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .symbol-tile {
+    font-size: 1.25rem;
+  }
+}
