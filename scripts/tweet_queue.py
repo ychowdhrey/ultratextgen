@@ -119,25 +119,20 @@ def get_diff_stats(sha: str) -> tuple[list[str], int, int]:
 # Scoring
 # ---------------------------------------------------------------------------
 
-
 def compute_confidence(commit: dict, files: list[str], added: int, removed: int) -> float:
     subject: str = commit["subject"].lower()
     total_lines = added + removed
 
-    # --- start from a neutral base ---
     confidence = 0.60
 
-    # Penalise tiny diffs early – they rarely warrant a tweet
     if total_lines < 5:
         confidence -= 0.20
 
-    # Check subject for explicit low-signal keywords
     for pat in LOW_CONFIDENCE_PATTERNS:
         if pat in subject:
             confidence -= 0.15
             break
 
-    # Boost based on touched files
     best_boost: float = 0.0
     for f in files:
         f_lower = f.lower()
@@ -148,21 +143,22 @@ def compute_confidence(commit: dict, files: list[str], added: int, removed: int)
                 break
 
     if best_boost:
-        # Replace base with best_boost, then scale back by diff size
         confidence = best_boost
         if total_lines < 5:
             confidence -= 0.15
         elif total_lines < 20:
             confidence -= 0.05
 
-    # Feature-addition keywords lift everything a little
     for kw in ("add", "new", "feat", "feature", "introduc", "creat"):
         if kw in subject:
             confidence += 0.05
             break
 
-    return round(min(max(confidence, 0.0), 1.0), 4)
+    # STRONG boost if author explicitly included [tweet]
+    if "[tweet]" in subject:
+        confidence = max(confidence, 0.90)
 
+    return round(min(max(confidence, 0.0), 1.0), 4)
 
 def build_tweet_pack(commit: dict, files: list[str], added: int, removed: int, confidence: float, repo: str) -> dict:
     sha = commit["sha"]
