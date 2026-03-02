@@ -1,0 +1,36 @@
+name: Commit to Tweet Queue
+
+on:
+  workflow_dispatch:
+    inputs:
+      commits_to_inspect:
+        description: 'Number of recent commits to inspect'
+        required: false
+        default: '20'
+
+jobs:
+  tweet-queue:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run tweet queue script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python scripts/tweet_queue.py \
+            --commits ${{ github.event.inputs.commits_to_inspect }}
