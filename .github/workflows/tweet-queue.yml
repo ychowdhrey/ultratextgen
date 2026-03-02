@@ -28,11 +28,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+      
       - name: Run tweet queue script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
-          python scripts/tweet_queue.py \
-            --commits ${{ github.event.inputs.commits_to_inspect }}
+          COMMITS="${{ github.event.inputs.commits_to_inspect }}"
+          COMMITS="${COMMITS:-20}"
+          python scripts/tweet_queue.py --commits "$COMMITS"
