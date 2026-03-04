@@ -676,7 +676,20 @@ function codeToFlagEmoji(code) {
     base + (cc.charCodeAt(1) - 65)
   );
 }
-window.codeToFlagEmoji = codeToFlagEmoji;
+window.UltraTextGen = window.UltraTextGen || {};
+
+UltraTextGen.isoToFlag = function(code){
+  if (!code) return "";
+  var cc = String(code).trim().toUpperCase();
+  if (!/^[A-Z]{2}$/.test(cc)) return "";
+
+  var base = 0x1F1E6;
+
+  return String.fromCodePoint(
+    base + (cc.charCodeAt(0) - 65),
+    base + (cc.charCodeAt(1) - 65)
+  );
+};
 
   /* ---------- Render country flags ---------- */
   var list = document.getElementById("countryFlagList");
