@@ -6,19 +6,35 @@
    copy-collection button.
    ========================================================== */
 
-/* ---- Symbol / flag rows ---- */
+/* ---- Symbol / flag grid ---- */
 .flag-rows {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px 8px;
   margin: 0.75rem 0;
 }
 
+@media (max-width: 1024px) {
+  .flag-rows { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .flag-rows { grid-template-columns: repeat(2, 1fr); }
+}
+
 .flag-row {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 4px 0;
+  text-align: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.flag-row:hover {
+  background: rgba(0, 0, 0, 0.03);
 }
 
 /* ---- Emoji button (clickable tile, no card chrome) ---- */
@@ -26,7 +42,7 @@
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
                "Segoe UI Symbol", system-ui, -apple-system,
                "Plus Jakarta Sans", "Space Mono", sans-serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 1;
   background: none;
   border: none;
@@ -57,11 +73,13 @@
   margin: 0;
 }
 
-/* ---- Label next to emoji ---- */
+/* ---- Label below emoji ---- */
 .flag-label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  white-space: nowrap;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
 }
 
 /* ---- Region / category filter pills ---- */
