@@ -694,7 +694,7 @@ UltraTextGen.isoToFlag = function(code){
   /* ---------- Render country flags ---------- */
   var list = document.getElementById("countryFlagList");
   COUNTRIES.forEach(function (c) {
-  var flag = codeToFlagEmoji(c.code);
+  var flag = UltraTextGen.isoToFlag(c.code);
 
   var row = document.createElement("div");
   row.className = "flag-row";
