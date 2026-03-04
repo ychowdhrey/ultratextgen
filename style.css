@@ -1714,3 +1714,20 @@ a:hover {
     font-size: 1.25rem;
   }
 }
+
+.flag-emoji {
+  /* Prefer emoji-capable fonts first so platform emoji glyphs are used */
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+               "Segoe UI Symbol", system-ui, -apple-system, "Plus Jakarta Sans",
+               "Space Mono", sans-serif;
+
+  font-size: 1.6rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.15s;
+}
