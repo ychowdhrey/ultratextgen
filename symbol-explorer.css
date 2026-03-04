@@ -1,0 +1,220 @@
+/* ==========================================================
+   symbol-explorer.css
+   Shared styles for UltraTextGen symbol / emoji explorer pages.
+   Covers: symbol rows, emoji buttons, twemoji sizing, region
+   filters, grid sections, format selector, preview, and
+   copy-collection button.
+   ========================================================== */
+
+/* ---- Symbol / flag rows ---- */
+.flag-rows {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 0.75rem 0;
+}
+
+.flag-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+/* ---- Emoji button (clickable tile, no card chrome) ---- */
+.flag-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+               "Segoe UI Symbol", system-ui, -apple-system,
+               "Plus Jakarta Sans", "Space Mono", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.15s;
+}
+
+.flag-emoji:hover {
+  transform: scale(1.15);
+}
+
+.flag-emoji:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---- Twemoji <img> sizing ---- */
+.flag-emoji img.emoji,
+.flag-grid-display img.emoji,
+.format-preview img.emoji {
+  height: 1.4em;
+  width: 1.4em;
+  vertical-align: -0.2em;
+  margin: 0;
+}
+
+/* ---- Label next to emoji ---- */
+.flag-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ---- Region / category filter pills ---- */
+.region-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.region-filter {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.region-filter:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.region-filter.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+/* ---- Grid section card ---- */
+.flag-grid-section {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-light, #e5e5e5);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-white, #fff);
+}
+
+.flag-grid-section h3 {
+  margin: 0 0 0.75rem 0;
+}
+
+.flag-grid-display {
+  font-size: 2rem;
+  line-height: 1.6;
+  letter-spacing: 3px;
+  padding: 12px 0;
+  word-break: break-all;
+}
+
+/* ---- Format selector (segmented control) ---- */
+.format-selector {
+  margin-top: 1rem;
+}
+
+.format-selector-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 6px;
+}
+
+.format-tabs {
+  display: inline-flex;
+  border: 1px solid var(--border-light, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-secondary, #f5f5f5);
+  padding: 3px;
+  gap: 2px;
+}
+
+.format-tab {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #6b7280);
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.format-tab:hover {
+  color: var(--text-primary, #1f2937);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.format-tab.active {
+  background: var(--accent-purple, #8b5cf6);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(139, 92, 246, 0.25);
+}
+
+/* ---- Format preview ---- */
+.format-preview {
+  margin-top: 0.75rem;
+  border: 1px dashed var(--border-light, #e0e0e0);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-height: 48px;
+  font-size: 1.35rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  background: var(--bg-secondary, #fafafa);
+  white-space: pre-wrap;
+  word-break: break-word;
+  transition: opacity 0.15s ease;
+}
+
+/* ---- Copy Collection button ---- */
+.copy-collection-btn {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border-light, #e0e0e0);
+  background: var(--bg-white, #fff);
+  color: var(--text-primary, #1f2937);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.copy-collection-btn:hover {
+  border-color: var(--accent-purple, #8b5cf6);
+  color: var(--accent-purple, #8b5cf6);
+  background: rgba(139, 92, 246, 0.04);
+}
+
+.copy-collection-btn.is-copied {
+  border-color: #10b981;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.copy-collection-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
