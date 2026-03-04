@@ -18,6 +18,9 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ultratextgen.com/library/emoji-flags/">
 
+<!-- Twemoji: cross-platform emoji images -->
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
 
@@ -115,6 +118,15 @@
   outline: 2px solid var(--accent-purple);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Twemoji image sizing — make parsed <img> tags match emoji size */
+.flag-emoji img.emoji,
+.flag-grid-display img.emoji {
+  height: 1.4em;
+  width: 1.4em;
+  vertical-align: -0.2em;
+  margin: 0;
 }
 
 /* Country name label */
@@ -802,6 +814,14 @@ UltraTextGen.isoToFlag = function(code){
     setupGridBtn(def.inlineId,   function () { return inlineText; });
     setupGridBtn(def.verticalId, function () { return verticalText; });
   });
+
+  /* ---------- Twemoji: parse all emoji into cross-platform images ---------- */
+  if (typeof twemoji !== "undefined") {
+    twemoji.parse(document.body, {
+      folder: "svg",
+      ext: ".svg"
+    });
+  }
 
 })();
 </script>
