@@ -666,40 +666,42 @@
   }
 
   /* ---------- Convert ISO alpha-2 code to flag emoji ---------- */
-  function codeToFlagEmoji(code) {
-    if (!code) return "";
-    var cc = code.trim().toUpperCase();
-    if (!/^[A-Z]{2}$/.test(cc)) return "";
-    var base = 0x1F1E6;
-    return String.fromCodePoint(
-      base + (cc.charCodeAt(0) - 65),
-      base + (cc.charCodeAt(1) - 65)
-    );
-  }
+function codeToFlagEmoji(code) {
+  if (!code) return "";
+  var cc = String(code).trim().toUpperCase();
+  if (!/^[A-Z]{2}$/.test(cc)) return "";
+  var base = 0x1F1E6;
+  return String.fromCodePoint(
+    base + (cc.charCodeAt(0) - 65),
+    base + (cc.charCodeAt(1) - 65)
+  );
+}
+window.codeToFlagEmoji = codeToFlagEmoji;
 
   /* ---------- Render country flags ---------- */
   var list = document.getElementById("countryFlagList");
   COUNTRIES.forEach(function (c) {
-    var flag = codeToFlagEmoji(c.code);
-    var row = document.createElement("div");
-    row.className = "flag-row";
-    row.setAttribute("data-region", c.region);
+  var flag = codeToFlagEmoji(c.code);
 
-    var btn = document.createElement("button");
-    btn.className = "flag-emoji symbol-tile";
-    btn.setAttribute("data-symbol", flag);
-    btn.setAttribute("aria-label", "Copy " + c.name + " flag");
-    btn.textContent = flag;
+  var row = document.createElement("div");
+  row.className = "flag-row";
+  row.setAttribute("data-region", c.region);
 
-    var label = document.createElement("span");
-    label.className = "flag-label";
-    label.textContent = c.name;
+  var btn = document.createElement("button");
+  btn.className = "flag-emoji symbol-tile";
+  btn.setAttribute("data-symbol", flag);
+  btn.setAttribute("aria-label", "Copy " + c.name + " flag");
+  btn.textContent = flag;
 
-    row.appendChild(btn);
-    row.appendChild(label);
-    list.appendChild(row);
-  });
+  var label = document.createElement("span");
+  label.className = "flag-label";
+  label.textContent = c.name;
 
+  row.appendChild(btn);
+  row.appendChild(label);
+  list.appendChild(row);
+});
+  
   /* ---------- Region filtering ---------- */
   var filterBtns = document.querySelectorAll(".region-filter");
   filterBtns.forEach(function (btn) {
