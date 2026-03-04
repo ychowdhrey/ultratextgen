@@ -91,6 +91,11 @@
 
 /* Flag emoji button — clickable, no card styling */
 .flag-emoji {
+  /* Emoji-capable fonts first so platform emoji glyphs are used */
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+               "Segoe UI Symbol", system-ui, -apple-system,
+               "Plus Jakarta Sans", "Space Mono", sans-serif;
+
   font-size: 1.6rem;
   line-height: 1;
   background: none;
