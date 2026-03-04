@@ -1,1 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Flag Emoji Explorer: Copy &amp; Paste Country Flag Emojis</title>
+<meta name="description" content="Browse and copy flag emojis for every country. Click any flag to copy it instantly — perfect for posts, bios, and messages.">
+
+<link rel="canonical" href="https://ultratextgen.com/library/emoji-flags/">
+<meta property="og:image" content="https://ultratextgen.com/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flag Emoji Explorer: Copy &amp; Paste Country Flag Emojis">
+<meta name="twitter:description" content="Browse and copy flag emojis for every country. Click any flag to copy it instantly.">
+<meta name="twitter:image" content="https://ultratextgen.com/logo.png">
+<meta property="og:title" content="Flag Emoji Explorer: Copy &amp; Paste Country Flag Emojis">
+<meta property="og:description" content="Browse and copy flag emojis for every country. Click any flag to copy it instantly — perfect for posts, bios, and messages.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/library/emoji-flags/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Flag Emoji Explorer: Copy & Paste Country Flag Emojis",
+  "description": "Browse and copy flag emojis for every country. Click any flag to copy it instantly.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/library/emoji-flags/",
+  "datePublished": "2026-03-04",
+  "dateModified": "2026-03-04"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ultratextgen.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Library",
+      "item": "https://ultratextgen.com/library/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Flag Emoji Explorer",
+      "item": "https://ultratextgen.com/library/emoji-flags/"
+    }
+  ]
+}
+</script>
+
+<style>
+/* Flag item row */
+.flag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 0.75rem 0;
+}
+
+.flag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.4;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+
+.flag-item:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+
+.flag-item:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+
+.flag-item.is-copied {
+  background: var(--accent-purple);
+  color: #fff;
+  border-color: var(--accent-purple);
+}
+
+.flag-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* Region filter buttons */
+.region-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.region-filter {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.region-filter:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.region-filter.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+/* Grid sections */
+.flag-grid-section {
+  margin: 1rem 0;
+}
+
+.flag-grid-display {
+  font-size: 2rem;
+  line-height: 1.6;
+  letter-spacing: 3px;
+  padding: 12px 0;
+  word-break: break-all;
+}
+
+.flag-grid-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+<script src="/header.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Flag Emoji Explorer</h1>
+    <p class="hero-tagline">Copy and paste flag emojis instantly.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Every country's flag is just one click away. Browse all 195 country flags, filter by region, and copy any flag emoji instantly. Works in posts, bios, captions, and messages across every major platform.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- COUNTRY FLAGS -->
+<section class="mood-explainers" id="country-flags">
+  <span class="article-section-label">Country Flags</span>
+  <h2>All Country Flags</h2>
+
+  <!-- Region filters -->
+  <div class="region-filters" id="regionFilters">
+    <button class="region-filter active" data-region="all">All</button>
+    <button class="region-filter" data-region="europe">Europe</button>
+    <button class="region-filter" data-region="asia">Asia</button>
+    <button class="region-filter" data-region="americas">Americas</button>
+    <button class="region-filter" data-region="africa">Africa</button>
+    <button class="region-filter" data-region="oceania">Oceania</button>
+  </div>
+
+  <!-- Country flag list (rendered by JS) -->
+  <div class="flag-list" id="countryFlagList"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ORGANIZATION FLAGS -->
+<section class="mood-explainers" id="org-flags">
+  <span class="article-section-label">Organization Flags</span>
+  <h2>Organization Flags</h2>
+  <div class="flag-list">
+    <span class="flag-item symbol-tile" data-symbol="🇪🇺" role="button" tabindex="0" aria-label="Copy European Union flag"><span class="flag-emoji">🇪🇺</span> European Union</span>
+    <span class="flag-item symbol-tile" data-symbol="🇺🇳" role="button" tabindex="0" aria-label="Copy United Nations flag"><span class="flag-emoji">🇺🇳</span> United Nations</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- REGIONAL FLAGS -->
+<section class="mood-explainers" id="regional-flags">
+  <span class="article-section-label">Regional Flags</span>
+  <h2>Regional Flags</h2>
+  <div class="flag-list">
+    <span class="flag-item symbol-tile" data-symbol="🏴󠁧󠁢󠁥󠁮󠁧󠁿" role="button" tabindex="0" aria-label="Copy England flag"><span class="flag-emoji">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> England</span>
+    <span class="flag-item symbol-tile" data-symbol="🏴󠁧󠁢󠁳󠁣󠁴󠁿" role="button" tabindex="0" aria-label="Copy Scotland flag"><span class="flag-emoji">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span> Scotland</span>
+    <span class="flag-item symbol-tile" data-symbol="🏴󠁧󠁢󠁷󠁬󠁳󠁿" role="button" tabindex="0" aria-label="Copy Wales flag"><span class="flag-emoji">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span> Wales</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- IDENTITY FLAGS -->
+<section class="mood-explainers" id="identity-flags">
+  <span class="article-section-label">Identity Flags</span>
+  <h2>Identity Flags</h2>
+  <div class="flag-list">
+    <span class="flag-item symbol-tile" data-symbol="🏳️‍🌈" role="button" tabindex="0" aria-label="Copy Rainbow Pride flag"><span class="flag-emoji">🏳️‍🌈</span> Rainbow Pride</span>
+    <span class="flag-item symbol-tile" data-symbol="🏳️‍⚧️" role="button" tabindex="0" aria-label="Copy Transgender Pride flag"><span class="flag-emoji">🏳️‍⚧️</span> Transgender Pride</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SYMBOLIC FLAGS -->
+<section class="mood-explainers" id="symbolic-flags">
+  <span class="article-section-label">Symbolic Flags</span>
+  <h2>Symbolic Flags</h2>
+  <div class="flag-list">
+    <span class="flag-item symbol-tile" data-symbol="🏁" role="button" tabindex="0" aria-label="Copy Chequered Flag"><span class="flag-emoji">🏁</span> Chequered Flag</span>
+    <span class="flag-item symbol-tile" data-symbol="🚩" role="button" tabindex="0" aria-label="Copy Triangular Flag"><span class="flag-emoji">🚩</span> Triangular Flag</span>
+    <span class="flag-item symbol-tile" data-symbol="🏳" role="button" tabindex="0" aria-label="Copy White Flag"><span class="flag-emoji">🏳</span> White Flag</span>
+    <span class="flag-item symbol-tile" data-symbol="🏴" role="button" tabindex="0" aria-label="Copy Black Flag"><span class="flag-emoji">🏴</span> Black Flag</span>
+    <span class="flag-item symbol-tile" data-symbol="🎌" role="button" tabindex="0" aria-label="Copy Crossed Flags"><span class="flag-emoji">🎌</span> Crossed Flags</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- REGIONAL FLAG GRIDS -->
+<section class="mood-explainers" id="flag-grids">
+  <span class="article-section-label">Flag Collections</span>
+  <h2>Regional Flag Grids</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy entire collections of flags for your content.</p>
+
+  <!-- EU -->
+  <div class="mood-explainer flag-grid-section">
+    <h3>European Union Members</h3>
+    <div class="flag-grid-display">🇦🇹 🇧🇪 🇧🇬 🇭🇷 🇨🇾 🇨🇿 🇩🇰 🇪🇪 🇫🇮 🇫🇷 🇩🇪 🇬🇷 🇭🇺 🇮🇪 🇮🇹 🇱🇻 🇱🇹 🇱🇺 🇲🇹 🇳🇱 🇵🇱 🇵🇹 🇷🇴 🇸🇰 🇸🇮 🇪🇸 🇸🇪</div>
+    <div class="flag-grid-actions">
+      <button class="copy-btn" id="euInline">Copy Inline</button>
+      <button class="copy-btn" id="euVertical">Copy Vertical</button>
+    </div>
+  </div>
+
+  <!-- ASEAN -->
+  <div class="mood-explainer flag-grid-section">
+    <h3>ASEAN</h3>
+    <div class="flag-grid-display">🇸🇬 🇲🇾 🇮🇩 🇹🇭 🇵🇭 🇻🇳 🇧🇳 🇰🇭 🇱🇦 🇲🇲</div>
+    <div class="flag-grid-actions">
+      <button class="copy-btn" id="aseanInline">Copy Inline</button>
+      <button class="copy-btn" id="aseanVertical">Copy Vertical</button>
+    </div>
+  </div>
+
+  <!-- Middle East -->
+  <div class="mood-explainer flag-grid-section">
+    <h3>Middle East</h3>
+    <div class="flag-grid-display">🇸🇦 🇦🇪 🇶🇦 🇰🇼 🇧🇭 🇴🇲 🇮🇱 🇯🇴 🇱🇧 🇮🇶 🇮🇷 🇾🇪</div>
+    <div class="flag-grid-actions">
+      <button class="copy-btn" id="meInline">Copy Inline</button>
+      <button class="copy-btn" id="meVertical">Copy Vertical</button>
+    </div>
+  </div>
+
+  <!-- G20 -->
+  <div class="mood-explainer flag-grid-section">
+    <h3>G20</h3>
+    <div class="flag-grid-display">🇦🇷 🇦🇺 🇧🇷 🇨🇦 🇨🇳 🇫🇷 🇩🇪 🇮🇳 🇮🇩 🇮🇹 🇯🇵 🇲🇽 🇷🇺 🇸🇦 🇿🇦 🇰🇷 🇹🇷 🇬🇧 🇺🇸</div>
+    <div class="flag-grid-actions">
+      <button class="copy-btn" id="g20Inline">Copy Inline</button>
+      <button class="copy-btn" id="g20Vertical">Copy Vertical</button>
+    </div>
+  </div>
+
+  <!-- Nordic -->
+  <div class="mood-explainer flag-grid-section">
+    <h3>Nordic Countries</h3>
+    <div class="flag-grid-display">🇩🇰 🇫🇮 🇮🇸 🇳🇴 🇸🇪</div>
+    <div class="flag-grid-actions">
+      <button class="copy-btn" id="nordicInline">Copy Inline</button>
+      <button class="copy-btn" id="nordicVertical">Copy Vertical</button>
+    </div>
+  </div>
+
+  <!-- South Asia -->
+  <div class="mood-explainer flag-grid-section">
+    <h3>South Asia</h3>
+    <div class="flag-grid-display">🇮🇳 🇵🇰 🇧🇩 🇱🇰 🇳🇵 🇧🇹 🇲🇻 🇦🇫</div>
+    <div class="flag-grid-actions">
+      <button class="copy-btn" id="saInline">Copy Inline</button>
+      <button class="copy-btn" id="saVertical">Copy Vertical</button>
+    </div>
+  </div>
+
+  <!-- East Asia -->
+  <div class="mood-explainer flag-grid-section">
+    <h3>East Asia</h3>
+    <div class="flag-grid-display">🇨🇳 🇯🇵 🇰🇷 🇹🇼 🇲🇳 🇭🇰 🇲🇴</div>
+    <div class="flag-grid-actions">
+      <button class="copy-btn" id="eaInline">Copy Inline</button>
+      <button class="copy-btn" id="eaVertical">Copy Vertical</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">© 2026 <a href="https://ultratextgen.com/">UltraTextGen</a>. Fast text styles that work everywhere.</div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Country data ---------- */
+  var COUNTRIES = [
+    { emoji: "🇦🇫", name: "Afghanistan", region: "asia" },
+    { emoji: "🇦🇱", name: "Albania", region: "europe" },
+    { emoji: "🇩🇿", name: "Algeria", region: "africa" },
+    { emoji: "🇦🇩", name: "Andorra", region: "europe" },
+    { emoji: "🇦🇴", name: "Angola", region: "africa" },
+    { emoji: "🇦🇬", name: "Antigua and Barbuda", region: "americas" },
+    { emoji: "🇦🇷", name: "Argentina", region: "americas" },
+    { emoji: "🇦🇲", name: "Armenia", region: "asia" },
+    { emoji: "🇦🇺", name: "Australia", region: "oceania" },
+    { emoji: "🇦🇹", name: "Austria", region: "europe" },
+    { emoji: "🇦🇿", name: "Azerbaijan", region: "asia" },
+    { emoji: "🇧🇸", name: "Bahamas", region: "americas" },
+    { emoji: "🇧🇭", name: "Bahrain", region: "asia" },
+    { emoji: "🇧🇩", name: "Bangladesh", region: "asia" },
+    { emoji: "🇧🇧", name: "Barbados", region: "americas" },
+    { emoji: "🇧🇾", name: "Belarus", region: "europe" },
+    { emoji: "🇧🇪", name: "Belgium", region: "europe" },
+    { emoji: "🇧🇿", name: "Belize", region: "americas" },
+    { emoji: "🇧🇯", name: "Benin", region: "africa" },
+    { emoji: "🇧🇹", name: "Bhutan", region: "asia" },
+    { emoji: "🇧🇴", name: "Bolivia", region: "americas" },
+    { emoji: "🇧🇦", name: "Bosnia and Herzegovina", region: "europe" },
+    { emoji: "🇧🇼", name: "Botswana", region: "africa" },
+    { emoji: "🇧🇷", name: "Brazil", region: "americas" },
+    { emoji: "🇧🇳", name: "Brunei", region: "asia" },
+    { emoji: "🇧🇬", name: "Bulgaria", region: "europe" },
+    { emoji: "🇧🇫", name: "Burkina Faso", region: "africa" },
+    { emoji: "🇧🇮", name: "Burundi", region: "africa" },
+    { emoji: "🇨🇻", name: "Cabo Verde", region: "africa" },
+    { emoji: "🇰🇭", name: "Cambodia", region: "asia" },
+    { emoji: "🇨🇲", name: "Cameroon", region: "africa" },
+    { emoji: "🇨🇦", name: "Canada", region: "americas" },
+    { emoji: "🇨🇫", name: "Central African Republic", region: "africa" },
+    { emoji: "🇹🇩", name: "Chad", region: "africa" },
+    { emoji: "🇨🇱", name: "Chile", region: "americas" },
+    { emoji: "🇨🇳", name: "China", region: "asia" },
+    { emoji: "🇨🇴", name: "Colombia", region: "americas" },
+    { emoji: "🇰🇲", name: "Comoros", region: "africa" },
+    { emoji: "🇨🇬", name: "Congo", region: "africa" },
+    { emoji: "🇨🇩", name: "Congo DR", region: "africa" },
+    { emoji: "🇨🇷", name: "Costa Rica", region: "americas" },
+    { emoji: "🇨🇮", name: "Côte d'Ivoire", region: "africa" },
+    { emoji: "🇭🇷", name: "Croatia", region: "europe" },
+    { emoji: "🇨🇺", name: "Cuba", region: "americas" },
+    { emoji: "🇨🇾", name: "Cyprus", region: "europe" },
+    { emoji: "🇨🇿", name: "Czechia", region: "europe" },
+    { emoji: "🇩🇰", name: "Denmark", region: "europe" },
+    { emoji: "🇩🇯", name: "Djibouti", region: "africa" },
+    { emoji: "🇩🇲", name: "Dominica", region: "americas" },
+    { emoji: "🇩🇴", name: "Dominican Republic", region: "americas" },
+    { emoji: "🇪🇨", name: "Ecuador", region: "americas" },
+    { emoji: "🇪🇬", name: "Egypt", region: "africa" },
+    { emoji: "🇸🇻", name: "El Salvador", region: "americas" },
+    { emoji: "🇬🇶", name: "Equatorial Guinea", region: "africa" },
+    { emoji: "🇪🇷", name: "Eritrea", region: "africa" },
+    { emoji: "🇪🇪", name: "Estonia", region: "europe" },
+    { emoji: "🇸🇿", name: "Eswatini", region: "africa" },
+    { emoji: "🇪🇹", name: "Ethiopia", region: "africa" },
+    { emoji: "🇫🇯", name: "Fiji", region: "oceania" },
+    { emoji: "🇫🇮", name: "Finland", region: "europe" },
+    { emoji: "🇫🇷", name: "France", region: "europe" },
+    { emoji: "🇬🇦", name: "Gabon", region: "africa" },
+    { emoji: "🇬🇲", name: "Gambia", region: "africa" },
+    { emoji: "🇬🇪", name: "Georgia", region: "europe" },
+    { emoji: "🇩🇪", name: "Germany", region: "europe" },
+    { emoji: "🇬🇭", name: "Ghana", region: "africa" },
+    { emoji: "🇬🇷", name: "Greece", region: "europe" },
+    { emoji: "🇬🇩", name: "Grenada", region: "americas" },
+    { emoji: "🇬🇹", name: "Guatemala", region: "americas" },
+    { emoji: "🇬🇳", name: "Guinea", region: "africa" },
+    { emoji: "🇬🇼", name: "Guinea-Bissau", region: "africa" },
+    { emoji: "🇬🇾", name: "Guyana", region: "americas" },
+    { emoji: "🇭🇹", name: "Haiti", region: "americas" },
+    { emoji: "🇭🇳", name: "Honduras", region: "americas" },
+    { emoji: "🇭🇺", name: "Hungary", region: "europe" },
+    { emoji: "🇮🇸", name: "Iceland", region: "europe" },
+    { emoji: "🇮🇳", name: "India", region: "asia" },
+    { emoji: "🇮🇩", name: "Indonesia", region: "asia" },
+    { emoji: "🇮🇷", name: "Iran", region: "asia" },
+    { emoji: "🇮🇶", name: "Iraq", region: "asia" },
+    { emoji: "🇮🇪", name: "Ireland", region: "europe" },
+    { emoji: "🇮🇱", name: "Israel", region: "asia" },
+    { emoji: "🇮🇹", name: "Italy", region: "europe" },
+    { emoji: "🇯🇲", name: "Jamaica", region: "americas" },
+    { emoji: "🇯🇵", name: "Japan", region: "asia" },
+    { emoji: "🇯🇴", name: "Jordan", region: "asia" },
+    { emoji: "🇰🇿", name: "Kazakhstan", region: "asia" },
+    { emoji: "🇰🇪", name: "Kenya", region: "africa" },
+    { emoji: "🇰🇮", name: "Kiribati", region: "oceania" },
+    { emoji: "🇰🇼", name: "Kuwait", region: "asia" },
+    { emoji: "🇰🇬", name: "Kyrgyzstan", region: "asia" },
+    { emoji: "🇱🇦", name: "Laos", region: "asia" },
+    { emoji: "🇱🇻", name: "Latvia", region: "europe" },
+    { emoji: "🇱🇧", name: "Lebanon", region: "asia" },
+    { emoji: "🇱🇸", name: "Lesotho", region: "africa" },
+    { emoji: "🇱🇷", name: "Liberia", region: "africa" },
+    { emoji: "🇱🇾", name: "Libya", region: "africa" },
+    { emoji: "🇱🇮", name: "Liechtenstein", region: "europe" },
+    { emoji: "🇱🇹", name: "Lithuania", region: "europe" },
+    { emoji: "🇱🇺", name: "Luxembourg", region: "europe" },
+    { emoji: "🇲🇬", name: "Madagascar", region: "africa" },
+    { emoji: "🇲🇼", name: "Malawi", region: "africa" },
+    { emoji: "🇲🇾", name: "Malaysia", region: "asia" },
+    { emoji: "🇲🇻", name: "Maldives", region: "asia" },
+    { emoji: "🇲🇱", name: "Mali", region: "africa" },
+    { emoji: "🇲🇹", name: "Malta", region: "europe" },
+    { emoji: "🇲🇭", name: "Marshall Islands", region: "oceania" },
+    { emoji: "🇲🇷", name: "Mauritania", region: "africa" },
+    { emoji: "🇲🇺", name: "Mauritius", region: "africa" },
+    { emoji: "🇲🇽", name: "Mexico", region: "americas" },
+    { emoji: "🇫🇲", name: "Micronesia", region: "oceania" },
+    { emoji: "🇲🇩", name: "Moldova", region: "europe" },
+    { emoji: "🇲🇨", name: "Monaco", region: "europe" },
+    { emoji: "🇲🇳", name: "Mongolia", region: "asia" },
+    { emoji: "🇲🇪", name: "Montenegro", region: "europe" },
+    { emoji: "🇲🇦", name: "Morocco", region: "africa" },
+    { emoji: "🇲🇿", name: "Mozambique", region: "africa" },
+    { emoji: "🇲🇲", name: "Myanmar", region: "asia" },
+    { emoji: "🇳🇦", name: "Namibia", region: "africa" },
+    { emoji: "🇳🇷", name: "Nauru", region: "oceania" },
+    { emoji: "🇳🇵", name: "Nepal", region: "asia" },
+    { emoji: "🇳🇱", name: "Netherlands", region: "europe" },
+    { emoji: "🇳🇿", name: "New Zealand", region: "oceania" },
+    { emoji: "🇳🇮", name: "Nicaragua", region: "americas" },
+    { emoji: "🇳🇪", name: "Niger", region: "africa" },
+    { emoji: "🇳🇬", name: "Nigeria", region: "africa" },
+    { emoji: "🇰🇵", name: "North Korea", region: "asia" },
+    { emoji: "🇲🇰", name: "North Macedonia", region: "europe" },
+    { emoji: "🇳🇴", name: "Norway", region: "europe" },
+    { emoji: "🇴🇲", name: "Oman", region: "asia" },
+    { emoji: "🇵🇰", name: "Pakistan", region: "asia" },
+    { emoji: "🇵🇼", name: "Palau", region: "oceania" },
+    { emoji: "🇵🇸", name: "Palestine", region: "asia" },
+    { emoji: "🇵🇦", name: "Panama", region: "americas" },
+    { emoji: "🇵🇬", name: "Papua New Guinea", region: "oceania" },
+    { emoji: "🇵🇾", name: "Paraguay", region: "americas" },
+    { emoji: "🇵🇪", name: "Peru", region: "americas" },
+    { emoji: "🇵🇭", name: "Philippines", region: "asia" },
+    { emoji: "🇵🇱", name: "Poland", region: "europe" },
+    { emoji: "🇵🇹", name: "Portugal", region: "europe" },
+    { emoji: "🇶🇦", name: "Qatar", region: "asia" },
+    { emoji: "🇷🇴", name: "Romania", region: "europe" },
+    { emoji: "🇷🇺", name: "Russia", region: "europe" },
+    { emoji: "🇷🇼", name: "Rwanda", region: "africa" },
+    { emoji: "🇰🇳", name: "Saint Kitts and Nevis", region: "americas" },
+    { emoji: "🇱🇨", name: "Saint Lucia", region: "americas" },
+    { emoji: "🇻🇨", name: "Saint Vincent and the Grenadines", region: "americas" },
+    { emoji: "🇼🇸", name: "Samoa", region: "oceania" },
+    { emoji: "🇸🇲", name: "San Marino", region: "europe" },
+    { emoji: "🇸🇹", name: "Sao Tome and Principe", region: "africa" },
+    { emoji: "🇸🇦", name: "Saudi Arabia", region: "asia" },
+    { emoji: "🇸🇳", name: "Senegal", region: "africa" },
+    { emoji: "🇷🇸", name: "Serbia", region: "europe" },
+    { emoji: "🇸🇨", name: "Seychelles", region: "africa" },
+    { emoji: "🇸🇱", name: "Sierra Leone", region: "africa" },
+    { emoji: "🇸🇬", name: "Singapore", region: "asia" },
+    { emoji: "🇸🇰", name: "Slovakia", region: "europe" },
+    { emoji: "🇸🇮", name: "Slovenia", region: "europe" },
+    { emoji: "🇸🇧", name: "Solomon Islands", region: "oceania" },
+    { emoji: "🇸🇴", name: "Somalia", region: "africa" },
+    { emoji: "🇿🇦", name: "South Africa", region: "africa" },
+    { emoji: "🇰🇷", name: "South Korea", region: "asia" },
+    { emoji: "🇸🇸", name: "South Sudan", region: "africa" },
+    { emoji: "🇪🇸", name: "Spain", region: "europe" },
+    { emoji: "🇱🇰", name: "Sri Lanka", region: "asia" },
+    { emoji: "🇸🇩", name: "Sudan", region: "africa" },
+    { emoji: "🇸🇷", name: "Suriname", region: "americas" },
+    { emoji: "🇸🇪", name: "Sweden", region: "europe" },
+    { emoji: "🇨🇭", name: "Switzerland", region: "europe" },
+    { emoji: "🇸🇾", name: "Syria", region: "asia" },
+    { emoji: "🇹🇯", name: "Tajikistan", region: "asia" },
+    { emoji: "🇹🇿", name: "Tanzania", region: "africa" },
+    { emoji: "🇹🇭", name: "Thailand", region: "asia" },
+    { emoji: "🇹🇱", name: "Timor-Leste", region: "asia" },
+    { emoji: "🇹🇬", name: "Togo", region: "africa" },
+    { emoji: "🇹🇴", name: "Tonga", region: "oceania" },
+    { emoji: "🇹🇹", name: "Trinidad and Tobago", region: "americas" },
+    { emoji: "🇹🇳", name: "Tunisia", region: "africa" },
+    { emoji: "🇹🇷", name: "Turkey", region: "europe" },
+    { emoji: "🇹🇲", name: "Turkmenistan", region: "asia" },
+    { emoji: "🇹🇻", name: "Tuvalu", region: "oceania" },
+    { emoji: "🇺🇬", name: "Uganda", region: "africa" },
+    { emoji: "🇺🇦", name: "Ukraine", region: "europe" },
+    { emoji: "🇦🇪", name: "United Arab Emirates", region: "asia" },
+    { emoji: "🇬🇧", name: "United Kingdom", region: "europe" },
+    { emoji: "🇺🇸", name: "United States", region: "americas" },
+    { emoji: "🇺🇾", name: "Uruguay", region: "americas" },
+    { emoji: "🇺🇿", name: "Uzbekistan", region: "asia" },
+    { emoji: "🇻🇺", name: "Vanuatu", region: "oceania" },
+    { emoji: "🇻🇦", name: "Vatican City", region: "europe" },
+    { emoji: "🇻🇪", name: "Venezuela", region: "americas" },
+    { emoji: "🇻🇳", name: "Vietnam", region: "asia" },
+    { emoji: "🇾🇪", name: "Yemen", region: "asia" },
+    { emoji: "🇿🇲", name: "Zambia", region: "africa" },
+    { emoji: "🇿🇼", name: "Zimbabwe", region: "africa" }
+  ];
+
+  /* ---------- Grid data ---------- */
+  var GRIDS = {
+    euInline:      "🇦🇹 🇧🇪 🇧🇬 🇭🇷 🇨🇾 🇨🇿 🇩🇰 🇪🇪 🇫🇮 🇫🇷 🇩🇪 🇬🇷 🇭🇺 🇮🇪 🇮🇹 🇱🇻 🇱🇹 🇱🇺 🇲🇹 🇳🇱 🇵🇱 🇵🇹 🇷🇴 🇸🇰 🇸🇮 🇪🇸 🇸🇪",
+    aseanInline:   "🇸🇬 🇲🇾 🇮🇩 🇹🇭 🇵🇭 🇻🇳 🇧🇳 🇰🇭 🇱🇦 🇲🇲",
+    meInline:      "🇸🇦 🇦🇪 🇶🇦 🇰🇼 🇧🇭 🇴🇲 🇮🇱 🇯🇴 🇱🇧 🇮🇶 🇮🇷 🇾🇪",
+    g20Inline:     "🇦🇷 🇦🇺 🇧🇷 🇨🇦 🇨🇳 🇫🇷 🇩🇪 🇮🇳 🇮🇩 🇮🇹 🇯🇵 🇲🇽 🇷🇺 🇸🇦 🇿🇦 🇰🇷 🇹🇷 🇬🇧 🇺🇸",
+    nordicInline:  "🇩🇰 🇫🇮 🇮🇸 🇳🇴 🇸🇪",
+    saInline:      "🇮🇳 🇵🇰 🇧🇩 🇱🇰 🇳🇵 🇧🇹 🇲🇻 🇦🇫",
+    eaInline:      "🇨🇳 🇯🇵 🇰🇷 🇹🇼 🇲🇳 🇭🇰 🇲🇴"
+  };
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById("symbolToast");
+  var toastTimer = null;
+
+  function showToast(symbol) {
+    toast.textContent = "Copied: " + symbol;
+    toast.classList.add("is-visible");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toast.classList.remove("is-visible");
+    }, 1000);
+  }
+
+  /* ---------- Clipboard helpers ---------- */
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "absolute";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand("copy");
+    } catch (e) {
+      /* silent */
+    }
+    document.body.removeChild(ta);
+  }
+
+  function copyText(text, el, label) {
+    label = label || text;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        feedback(el, label);
+      }).catch(function () {
+        fallbackCopy(text);
+        feedback(el, label);
+      });
+    } else {
+      fallbackCopy(text);
+      feedback(el, label);
+    }
+  }
+
+  /* Copy full data-symbol string (flag emojis use multiple code points) */
+  function copySymbol(tile) {
+    var symbol = (tile.getAttribute("data-symbol") || "").trim();
+    if (!symbol) return;
+    copyText(symbol, tile, symbol);
+  }
+
+  function feedback(el, label) {
+    el.classList.add("is-copied");
+    setTimeout(function () {
+      el.classList.remove("is-copied");
+    }, 1000);
+    showToast(label);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "copy_text", copy_method: "symbol_tile" });
+  }
+
+  /* ---------- Render country flags ---------- */
+  var list = document.getElementById("countryFlagList");
+  COUNTRIES.forEach(function (c) {
+    var span = document.createElement("span");
+    span.className = "flag-item symbol-tile";
+    span.setAttribute("data-symbol", c.emoji);
+    span.setAttribute("data-region", c.region);
+    span.setAttribute("role", "button");
+    span.setAttribute("tabindex", "0");
+    span.setAttribute("aria-label", "Copy " + c.name + " flag");
+    span.innerHTML = '<span class="flag-emoji">' + c.emoji + '</span> ' + c.name;
+    list.appendChild(span);
+  });
+
+  /* ---------- Region filtering ---------- */
+  var filterBtns = document.querySelectorAll(".region-filter");
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var region = btn.getAttribute("data-region");
+      filterBtns.forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      var items = list.querySelectorAll(".flag-item");
+      items.forEach(function (item) {
+        if (region === "all" || item.getAttribute("data-region") === region) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  /* ---------- Delegated click for symbol tiles ---------- */
+  document.addEventListener("click", function (e) {
+    var tile = e.target.closest(".symbol-tile");
+    if (tile) copySymbol(tile);
+  });
+
+  /* ---------- Keyboard: Enter and Space ---------- */
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var tile = e.target.closest(".symbol-tile");
+    if (!tile) return;
+    e.preventDefault();
+    copySymbol(tile);
+  });
+
+  /* ---------- Grid copy buttons ---------- */
+  function setupGridBtn(id, getText) {
+    var btn = document.getElementById(id);
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var text = getText();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          gridFeedback(btn, text);
+        }).catch(function () {
+          fallbackCopy(text);
+          gridFeedback(btn, text);
+        });
+      } else {
+        fallbackCopy(text);
+        gridFeedback(btn, text);
+      }
+    });
+  }
+
+  function gridFeedback(btn, text) {
+    btn.classList.add("copied");
+    var orig = btn.textContent;
+    btn.textContent = "Copied!";
+    setTimeout(function () {
+      btn.classList.remove("copied");
+      btn.textContent = orig;
+    }, 1500);
+    showToast(text.split(" ")[0] + "…");
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "copy_text", copy_method: "grid_copy" });
+  }
+
+  var gridDefs = [
+    { inlineId: "euInline",     verticalId: "euVertical",     key: "euInline" },
+    { inlineId: "aseanInline",  verticalId: "aseanVertical",  key: "aseanInline" },
+    { inlineId: "meInline",     verticalId: "meVertical",     key: "meInline" },
+    { inlineId: "g20Inline",    verticalId: "g20Vertical",    key: "g20Inline" },
+    { inlineId: "nordicInline", verticalId: "nordicVertical", key: "nordicInline" },
+    { inlineId: "saInline",     verticalId: "saVertical",     key: "saInline" },
+    { inlineId: "eaInline",     verticalId: "eaVertical",     key: "eaInline" }
+  ];
+
+  gridDefs.forEach(function (def) {
+    var inlineText = GRIDS[def.key];
+    var verticalText = inlineText.split(" ").join("\n");
+    setupGridBtn(def.inlineId,   function () { return inlineText; });
+    setupGridBtn(def.verticalId, function () { return verticalText; });
+  });
+
+})();
+</script>
+
+</body>
+</html>
