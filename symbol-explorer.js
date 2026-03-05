@@ -187,7 +187,7 @@
 
       FORMATS.forEach(function (fmt, fi) {
         var tab = document.createElement("button");
-        tab.className = "format-tab" + (fmt.id === "vertical" ? " active" :
+         tab.className = "format-tab" + (fmt.id === "vertical" ? " active" : "");
         tab.setAttribute("data-format", fmt.id);
         tab.setAttribute("data-group", gi);
         tab.textContent = fmt.label;
