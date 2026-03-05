@@ -156,7 +156,7 @@
     var container = document.getElementById(containerId);
     if (!container) return;
 
-    var activeFormats = groups.map(function () { return "inline"; });
+   var activeFormats = groups.map(function () { return "vertical"; });
 
     groups.forEach(function (group, gi) {
       var section = document.createElement("div");
@@ -187,7 +187,7 @@
 
       FORMATS.forEach(function (fmt, fi) {
         var tab = document.createElement("button");
-        tab.className = "format-tab" + (fi === 0 ? " active" : "");
+        tab.className = "format-tab" + (fmt.id === "vertical" ? " active" :
         tab.setAttribute("data-format", fmt.id);
         tab.setAttribute("data-group", gi);
         tab.textContent = fmt.label;
@@ -201,7 +201,7 @@
       var preview = document.createElement("div");
       preview.className = "format-preview";
       preview.id = "preview-" + gi;
-      preview.textContent = formatItems(group.flags, "inline");
+      preview.textContent = formatItems(group.flags, "vertical");
       section.appendChild(preview);
 
       /* Copy button */
