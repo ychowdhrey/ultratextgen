@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Text Generator — Stack Letters Vertically | UltraTextGen</title>
+  <meta name="description" content="Generate vertical text in 12 layouts: stacked, pyramid, diagonal, box, staircase, and more. Copy and paste anywhere — no sign-up needed.">
+  <link rel="canonical" href="https://ultratextgen.com/usecase/vertical-text/">
+  <meta property="og:title" content="Vertical Text Generator — Stack Letters Vertically | UltraTextGen">
+  <meta property="og:description" content="Generate vertical text in 12 layouts: stacked, pyramid, diagonal, box, staircase, and more. Copy and paste anywhere.">
+  <meta property="og:url" content="https://ultratextgen.com/usecase/vertical-text/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ultratextgen.com/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vertical Text Generator — Stack Letters Vertically | UltraTextGen">
+  <meta name="twitter:description" content="Generate vertical text in 12 layouts: stacked, pyramid, diagonal, box, staircase, and more.">
+  <meta name="twitter:image" content="https://ultratextgen.com/logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    /* ---- Vertical Text page-specific styles ---- */
+
+    .vt-hero {
+      background: linear-gradient(135deg, rgba(139,92,246,0.06) 0%, rgba(59,130,246,0.04) 100%);
+      border-bottom: 1px solid var(--border-light);
+      padding: 40px 24px 32px;
+    }
+
+    .vt-hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .vt-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .vt-hero p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .vt-input-wrapper {
+      position: relative;
+    }
+
+    .vt-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      background: var(--bg-white);
+      color: var(--text-primary);
+      resize: vertical;
+      min-height: 90px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .vt-input:focus {
+      border-color: var(--accent-purple);
+    }
+
+    .vt-char-count {
+      position: absolute;
+      bottom: 10px;
+      right: 14px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Controls bar */
+    .vt-controls {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 24px 0;
+    }
+
+    .vt-control-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .vt-control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .vt-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .vt-select {
+      padding: 9px 12px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      background: var(--bg-white);
+      color: var(--text-primary);
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .vt-select:focus {
+      border-color: var(--accent-purple);
+    }
+
+    .vt-toggle-group {
+      display: flex;
+      gap: 4px;
+    }
+
+    .vt-toggle {
+      padding: 7px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: var(--bg-white);
+      color: var(--text-secondary);
+      transition: all 0.18s;
+      font-family: inherit;
+    }
+
+    .vt-toggle.active,
+    .vt-toggle:hover {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.06);
+    }
+
+    .vt-toggle.active {
+      background: var(--accent-purple);
+      color: #fff;
+    }
+
+    /* Decoration section */
+    .vt-deco-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 20px;
+    }
+
+    .vt-recently-used {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .vt-recently-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      align-self: center;
+      margin-right: 4px;
+    }
+
+    /* Results */
+    .vt-results {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+
+    .vt-results-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    /* Monospace output inside cards */
+    .vt-card-output {
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      flex: 1;
+      overflow-x: auto;
+    }
+
+    .vt-card-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Disabled divider note */
+    .vt-divider-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Empty state */
+    .vt-placeholder {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .vt-hero {
+        padding: 28px 16px 24px;
+      }
+      .vt-controls,
+      .vt-deco-section,
+      .vt-results {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .vt-control-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <script src="/header.js"></script>
+
+  <!-- Hero / Input -->
+  <section class="vt-hero">
+    <div class="vt-hero-inner">
+      <h1>Vertical Text Generator</h1>
+      <p>Stack letters vertically in 12 layouts — stacked, pyramid, diagonal, box, staircase &amp; more. Copy and paste anywhere.</p>
+
+      <div class="vt-input-wrapper">
+        <textarea
+          class="vt-input"
+          id="vtInput"
+          placeholder="Type your text here…"
+          maxlength="500"
+          rows="3"
+          spellcheck="false"
+        ></textarea>
+        <span class="vt-char-count"><span id="vtCharCount">0</span>/500</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <div class="vt-controls">
+
+    <!-- Layout selector -->
+    <div class="vt-control-row">
+      <div class="vt-control-group">
+        <label class="vt-label" for="vtLayout">Layout Engine</label>
+        <select class="vt-select" id="vtLayout">
+          <option value="stacked">Stacked Letters</option>
+          <option value="reverse">Reverse Stacked</option>
+          <option value="upside-down">Upside Down Stacked</option>
+          <option value="extra-spaced">Extra Spaced Vertical</option>
+          <option value="box">Box Vertical</option>
+          <option value="staircase">Staircase Vertical</option>
+          <option value="double-column">Double Column Vertical</option>
+          <option value="pyramid">Pyramid (growing triangle)</option>
+          <option value="reverse-pyramid">Reverse Pyramid</option>
+          <option value="centered-pyramid">Centered Pyramid</option>
+          <option value="diagonal-right">Diagonal Right</option>
+          <option value="diagonal-left">Diagonal Left</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Word handling -->
+    <div class="vt-control-row">
+      <div class="vt-control-group">
+        <span class="vt-label">Word Break Mode</span>
+        <div class="vt-toggle-group" id="vtWordBreakGroup">
+          <button class="vt-toggle active" data-break="stack" type="button">Stack</button>
+          <button class="vt-toggle" data-break="continuous" type="button">Continuous</button>
+        </div>
+      </div>
+
+      <div class="vt-control-group" id="vtDividerModeGroup">
+        <span class="vt-label">Word Divider <span class="vt-divider-note" id="vtStackOnlyNote">(Stack mode only)</span></span>
+        <div class="vt-toggle-group" id="vtWordDividerGroup">
+          <button class="vt-toggle" data-divider="none" type="button">None</button>
+          <button class="vt-toggle active" data-divider="blank" type="button">Blank line</button>
+          <button class="vt-toggle" data-divider="line" type="button">Divider line</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Decoration Selector -->
+  <div class="vt-deco-section">
+    <div class="decoration-section">
+      <div class="decoration-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/>
+        </svg>
+        Add decoration to each line
+      </div>
+
+      <!-- Recently Used -->
+      <div id="vtRecentlyUsedRow" style="display:none; margin-bottom:10px;">
+        <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+          <span class="vt-recently-label">Recent</span>
+          <div id="vtRecentlyUsedChips" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+        </div>
+      </div>
+
+      <div class="decoration-tabs" id="vtDecoTabs">
+        <button class="decoration-tab active" data-deco-tab="none" type="button">None</button>
+        <button class="decoration-tab" data-deco-tab="bullets" type="button">Bullets</button>
+        <button class="decoration-tab" data-deco-tab="arrows" type="button">Arrows</button>
+        <button class="decoration-tab" data-deco-tab="dots" type="button">Dots</button>
+        <button class="decoration-tab" data-deco-tab="dividers" type="button">Dividers</button>
+        <button class="decoration-tab" data-deco-tab="emojis" type="button">Emojis</button>
+        <button class="decoration-tab" data-deco-tab="flags" type="button">Flags</button>
+      </div>
+
+      <div class="decoration-grid" id="vtDecoGrid"></div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="vt-results">
+    <div class="vt-results-label">Results</div>
+    <div class="results-grid" id="vtResultsGrid">
+      <div class="style-card">
+        <div class="vt-card-output vt-placeholder">Type something above to generate vertical text…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">© 2026 UltraTextGen. Fast text styles that work everywhere.</div>
+    </div>
+  </footer>
+
+  <!-- JS modules -->
+  <script src="/usecase/vertical-text/vertical-layouts.js"></script>
+  <script src="/usecase/vertical-text/vertical-decorators.js"></script>
+
+  <script>
+  (function () {
+    "use strict";
+
+    /* ---- Dark mode ---- */
+    if (localStorage.getItem("darkMode") === "true") {
+      document.documentElement.classList.add("dark");
+      document.body.classList.add("dark-mode");
+    }
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest("#darkModeBtn");
+      if (!btn) return;
+      var isDark = document.body.classList.toggle("dark-mode");
+      document.documentElement.classList.toggle("dark", isDark);
+      localStorage.setItem("darkMode", isDark ? "true" : "false");
+    });
+
+    /* ---- Vertical decoration data ---- */
+    var DECO_GROUPS = {
+      bullets:  { mode: "prefix",  items: ["●","○","◉","◎","◆","◇","▪","▫","▸","▹","◦","⦿","⊙","⊚","⊛"] },
+      arrows:   { mode: "prefix",  items: ["→","►","▶","➤","➜","➝","⇒","⇨","↠","⟹","➔","➞","⤳","↦","⊳"] },
+      dots:     { mode: "prefix",  items: ["·","•","∙","⋅","⁃","‣","⊡","⊞","⊟","⊠","◻","◼","▪","▫","‧"] },
+      dividers: { mode: "divider", items: ["───","━━━","═══","╌╌╌","┄┄┄","┈┈┈","╍╍╍","⋯⋯⋯","···","•••","---","___","~~~","⎯⎯⎯","┉┉┉"] },
+      emojis:   { mode: "prefix",  items: ["✨","🔹","🔸","⭐","💠","🔶","🔷","▪️","▫️","🟢","🔵","🟡","🟠","🔴","🟣"] },
+      flags:    { mode: "prefix",  items: ["🏁","🚩","🎌","🏴","🏳️","🇺🇸","🇬🇧","🇯🇵","🇰🇷","🇫🇷","🇩🇪","🇮🇹","🇪🇸","🇧🇷","🇮🇳"] }
+    };
+
+    /* ---- State ---- */
+    var state = {
+      input: "",
+      layoutKey: "stacked",
+      wordBreak: "stack",
+      wordDivider: "blank",   /* "none" | "blank" | "line" */
+      selectedDeco: null      /* { symbol, mode } or null */
+    };
+
+    var RECENTLY_USED_KEY = "vt_recently_used";
+    var MAX_RECENT = 6;
+
+    function getRecentlyUsed() {
+      try { return JSON.parse(localStorage.getItem(RECENTLY_USED_KEY) || "[]"); }
+      catch (e) { return []; }
+    }
+
+    function addRecentlyUsed(symbol, mode) {
+      var recent = getRecentlyUsed().filter(function (r) { return r.symbol !== symbol; });
+      recent.unshift({ symbol: symbol, mode: mode });
+      if (recent.length > MAX_RECENT) recent = recent.slice(0, MAX_RECENT);
+      try { localStorage.setItem(RECENTLY_USED_KEY, JSON.stringify(recent)); } catch (e) {}
+    }
+
+    /* ---- DOM refs ---- */
+    var inputEl       = document.getElementById("vtInput");
+    var charCountEl   = document.getElementById("vtCharCount");
+    var layoutSel     = document.getElementById("vtLayout");
+    var wordBreakGrp  = document.getElementById("vtWordBreakGroup");
+    var wordDivGrp    = document.getElementById("vtWordDividerGroup");
+    var dividerModeGrp = document.getElementById("vtDividerModeGroup");
+    var decoTabsEl    = document.getElementById("vtDecoTabs");
+    var decoGridEl    = document.getElementById("vtDecoGrid");
+    var resultsGrid   = document.getElementById("vtResultsGrid");
+    var recentRow     = document.getElementById("vtRecentlyUsedRow");
+    var recentChips   = document.getElementById("vtRecentlyUsedChips");
+
+    /* ---- Input ---- */
+    inputEl.addEventListener("input", function () {
+      state.input = inputEl.value;
+      charCountEl.textContent = state.input.length;
+      render();
+    });
+
+    /* ---- Layout selector ---- */
+    layoutSel.addEventListener("change", function () {
+      state.layoutKey = layoutSel.value;
+      render();
+    });
+
+    /* ---- Word break toggles ---- */
+    wordBreakGrp.addEventListener("click", function (e) {
+      var btn = e.target.closest(".vt-toggle");
+      if (!btn) return;
+      Array.from(wordBreakGrp.children).forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      state.wordBreak = btn.dataset.break;
+      /* Show/hide word divider mode when not in stack */
+      dividerModeGrp.style.opacity = state.wordBreak === "stack" ? "1" : "0.4";
+      dividerModeGrp.style.pointerEvents = state.wordBreak === "stack" ? "" : "none";
+      render();
+    });
+
+    /* ---- Word divider toggles ---- */
+    wordDivGrp.addEventListener("click", function (e) {
+      var btn = e.target.closest(".vt-toggle");
+      if (!btn) return;
+      Array.from(wordDivGrp.children).forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      state.wordDivider = btn.dataset.divider;
+      render();
+    });
+
+    /* ---- Decoration tabs ---- */
+    decoTabsEl.addEventListener("click", function (e) {
+      var btn = e.target.closest(".decoration-tab");
+      if (!btn) return;
+      Array.from(decoTabsEl.children).forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      var tabKey = btn.dataset.decoTab;
+      if (tabKey === "none") {
+        state.selectedDeco = null;
+        renderDecoGrid(null);
+      } else {
+        renderDecoGrid(tabKey);
+      }
+      render();
+    });
+
+    /* ---- Decoration grid ---- */
+    function renderDecoGrid(tabKey) {
+      decoGridEl.innerHTML = "";
+      if (!tabKey) return;
+      var group = DECO_GROUPS[tabKey];
+      if (!group) return;
+
+      group.items.forEach(function (sym) {
+        var chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "decoration-item";
+        chip.textContent = sym;
+        if (state.selectedDeco && state.selectedDeco.symbol === sym) {
+          chip.classList.add("selected");
+        }
+        chip.addEventListener("click", function () {
+          /* Toggle off if already selected */
+          if (state.selectedDeco && state.selectedDeco.symbol === sym) {
+            state.selectedDeco = null;
+            chip.classList.remove("selected");
+          } else {
+            state.selectedDeco = { symbol: sym, mode: group.mode };
+            Array.from(decoGridEl.children).forEach(function (c) { c.classList.remove("selected"); });
+            chip.classList.add("selected");
+            addRecentlyUsed(sym, group.mode);
+            refreshRecentlyUsed();
+          }
+          render();
+        });
+        decoGridEl.appendChild(chip);
+      });
+    }
+
+    /* ---- Recently used ---- */
+    function refreshRecentlyUsed() {
+      var recent = getRecentlyUsed();
+      if (!recent.length) { recentRow.style.display = "none"; return; }
+      recentRow.style.display = "";
+      recentChips.innerHTML = "";
+      recent.forEach(function (item) {
+        var chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "decoration-item";
+        chip.textContent = item.symbol;
+        if (state.selectedDeco && state.selectedDeco.symbol === item.symbol) {
+          chip.classList.add("selected");
+        }
+        chip.addEventListener("click", function () {
+          if (state.selectedDeco && state.selectedDeco.symbol === item.symbol) {
+            state.selectedDeco = null;
+          } else {
+            state.selectedDeco = { symbol: item.symbol, mode: item.mode };
+          }
+          refreshRecentlyUsed();
+          /* re-render active grid if open */
+          var activeTab = decoTabsEl.querySelector(".decoration-tab.active");
+          if (activeTab && activeTab.dataset.decoTab !== "none") {
+            renderDecoGrid(activeTab.dataset.decoTab);
+          }
+          render();
+        });
+        recentChips.appendChild(chip);
+      });
+    }
+
+    /* ---- Generate output for a layout key ---- */
+    function generateOutput(layoutKey, words, wordBreak, wordDivider) {
+      var VL = window.VerticalLayouts;
+      var divStr = wordDivider === "line" ? "───" : "";
+
+      switch (layoutKey) {
+        case "stacked":        return VL.makeVerticalStacked(words, wordBreak);
+        case "reverse":        return VL.makeVerticalReverse(words, wordBreak);
+        case "upside-down":    return VL.makeVerticalUpsideDown(words, wordBreak);
+        case "extra-spaced":   return VL.makeVerticalSpaced(words, wordBreak);
+        case "box":            return VL.makeVerticalBox(words, wordBreak);
+        case "staircase":      return VL.makeVerticalStaircase(words, wordBreak);
+        case "double-column":  return VL.makeVerticalDoubleColumn(words);
+        case "pyramid":        return VL.makeVerticalPyramid(words);
+        case "reverse-pyramid":return VL.makeVerticalReversePyramid(words);
+        case "centered-pyramid":return VL.makeVerticalCenteredPyramid(words);
+        case "diagonal-right": return VL.makeVerticalDiagonalRight(words);
+        case "diagonal-left":  return VL.makeVerticalDiagonalLeft(words);
+        default:               return VL.makeVerticalStacked(words, wordBreak);
+      }
+    }
+
+    /* ---- Render result cards ---- */
+    function render() {
+      var VL = window.VerticalLayouts;
+      var VDec = window.VerticalDecorators;
+
+      var rawInput = state.input.trim();
+      if (!rawInput) {
+        resultsGrid.innerHTML = '<div class="style-card"><div class="vt-card-output vt-placeholder">Type something above to generate vertical text…</div></div>';
+        return;
+      }
+
+      var words = VL.splitWords(rawInput);
+      var output = generateOutput(state.layoutKey, words, state.wordBreak, state.wordDivider);
+
+      /* Apply word divider spacing when in stack mode & blank line selected */
+      /* (blank line is native to the layout functions when mode=stack) */
+
+      /* Apply decoration */
+      var decorated = output;
+      if (state.selectedDeco) {
+        decorated = VDec.applyVerticalDecorator(output, state.selectedDeco, state.layoutKey);
+      }
+
+      /* Build card */
+      var safeText = decorated.replace(/"/g, "&quot;");
+      var layoutNames = {
+        "stacked": "Stacked Letters",
+        "reverse": "Reverse Stacked",
+        "upside-down": "Upside Down Stacked",
+        "extra-spaced": "Extra Spaced Vertical",
+        "box": "Box Vertical",
+        "staircase": "Staircase Vertical",
+        "double-column": "Double Column Vertical",
+        "pyramid": "Pyramid",
+        "reverse-pyramid": "Reverse Pyramid",
+        "centered-pyramid": "Centered Pyramid",
+        "diagonal-right": "Diagonal Right",
+        "diagonal-left": "Diagonal Left"
+      };
+
+      var cardName = layoutNames[state.layoutKey] || state.layoutKey;
+
+      resultsGrid.innerHTML =
+        '<div class="style-card" style="flex-direction:column;align-items:stretch;">' +
+          '<div class="vt-card-name">' + escapeHtml(cardName) + '</div>' +
+          '<div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start;">' +
+            '<div class="vt-card-output">' + escapeHtml(decorated) + '</div>' +
+            '<button class="copy-btn" data-text="' + safeText + '" type="button">Copy</button>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    /* ---- Copy button (delegated) ---- */
+    document.addEventListener("click", async function (e) {
+      var btn = e.target.closest(".copy-btn");
+      if (!btn || btn.disabled) return;
+      var text = btn.dataset.text || "";
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = "✓ Copied";
+        btn.classList.add("copied");
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+        }, 1500);
+      } catch (err) { console.error("Copy failed:", err); }
+    });
+
+    /* ---- Init ---- */
+    refreshRecentlyUsed();
+    render();
+
+  }());
+  </script>
+</body>
+</html>
