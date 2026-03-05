@@ -181,22 +181,16 @@
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
-        <!-- Decoration Selector -->
+        <!-- Vertical Control Panel: populated by verticalPageController.js -->
+        <div id="verticalControlPanel"></div>
+
+        <!-- Decoration Selector: vertical decorator grid injected by controller -->
         <div class="decoration-section">
           <div class="decoration-label">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
             </svg>
-            Add separator between characters
-          </div>
-
-          <div class="decoration-tabs">
-            <button class="decoration-tab active" data-deco-tab="spacers">📐 Spacers</button>
-            <button class="decoration-tab" data-deco-tab="bullets">🎯 Bullets</button>
-            <button class="decoration-tab" data-deco-tab="aesthetic">✨ Aesthetic</button>
-            <button class="decoration-tab" data-deco-tab="blocks">🔲 Blocks</button>
-            <button class="decoration-tab" data-deco-tab="arrows">➡️ Arrows</button>
-            <button class="decoration-tab" data-deco-tab="emoji">🌸 Emoji</button>
+            Add line decoration
           </div>
 
           <div class="decoration-grid" id="decorationGrid"></div>
@@ -439,124 +433,17 @@ i</div>
     </footer>
   </main>
 
-  <!-- Page configuration: custom decorators for vertical text -->
+  <!-- Page configuration: vertical mode flag -->
   <script>
-    window.UTG_DEFAULT_DECO_TAB = "spacers";
-
-    window.UTG_DECORATIONS = {
-      "spacers": [
-        { text: "· Middle Dot", prefix: "", suffix: "·" },
-        { text: "⋮ Vert. Ellipsis", prefix: "", suffix: "⋮" },
-        { text: "│ Thin Pipe", prefix: "", suffix: "│" },
-        { text: "┃ Heavy Pipe", prefix: "", suffix: "┃" },
-        { text: "╎ Light Dash", prefix: "", suffix: "╎" }
-      ],
-      "bullets": [
-        { text: "• Bullet", prefix: "", suffix: "•" },
-        { text: "◦ Open Bullet", prefix: "", suffix: "◦" },
-        { text: "▪ Small Square", prefix: "", suffix: "▪" },
-        { text: "▸ Right Pointer", prefix: "", suffix: "▸" },
-        { text: "‣ Triangle Bullet", prefix: "", suffix: "‣" }
-      ],
-      "aesthetic": [
-        { text: "✧ Star", prefix: "", suffix: "✧" },
-        { text: "♡ Heart", prefix: "", suffix: "♡" },
-        { text: "★ Filled Star", prefix: "", suffix: "★" },
-        { text: "✿ Flower", prefix: "", suffix: "✿" },
-        { text: "☆ Empty Star", prefix: "", suffix: "☆" }
-      ],
-      "blocks": [
-        { text: "▓ Dark Block", prefix: "", suffix: "▓" },
-        { text: "░ Light Block", prefix: "", suffix: "░" },
-        { text: "█ Full Block", prefix: "", suffix: "█" },
-        { text: "▊ Left 6/8", prefix: "", suffix: "▊" },
-        { text: "▌ Left Half", prefix: "", suffix: "▌" }
-      ],
-      "arrows": [
-        { text: "↓ Down Arrow", prefix: "", suffix: "↓" },
-        { text: "⬇ Bold Down", prefix: "", suffix: "⬇" },
-        { text: "▼ Down Triangle", prefix: "", suffix: "▼" },
-        { text: "⏬ Double Down", prefix: "", suffix: "⏬" },
-        { text: "↕ Up-Down", prefix: "", suffix: "↕" }
-      ],
-      "emoji": [
-        { text: "🌟 Star", prefix: "", suffix: "🌟" },
-        { text: "💫 Dizzy", prefix: "", suffix: "💫" },
-        { text: "🔥 Fire", prefix: "", suffix: "🔥" },
-        { text: "💎 Diamond", prefix: "", suffix: "💎" },
-        { text: "🌈 Rainbow", prefix: "", suffix: "🌈" }
-      ]
-    };
+    window.UTG_VERTICAL_MODE = true;
   </script>
 
   <script src="/styles.js"></script>
   <script src="/renderer.js"></script>
+  <script src="/js/vertical/verticalLayouts.js"></script>
+  <script src="/js/vertical/verticalDecorators.js"></script>
+  <script src="/js/vertical/verticalDecoratorData.js"></script>
   <script src="/script.js" defer=""></script>
-
-  <!-- Vertical text post-processor: runs after script.js renders cards -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var resultsGrid = document.getElementById('resultsGrid');
-      if (!resultsGrid) return;
-
-      function getActiveSep() {
-        var selected = document.querySelector('#decorationGrid .decoration-item.selected');
-        if (!selected) return null;
-        var label = selected.textContent;
-        var decos = window.UTG_DECORATIONS || {};
-        for (var tab in decos) {
-          var items = decos[tab];
-          for (var i = 0; i < items.length; i++) {
-            if (items[i].text === label) {
-              return items[i].suffix || null;
-            }
-          }
-        }
-        return null;
-      }
-
-      function verticalizeCard(card) {
-        var preview = card.querySelector('.style-preview');
-        var copyBtn = card.querySelector('.copy-btn');
-        if (!preview || preview.classList.contains('placeholder')) return;
-
-        var text = preview.textContent;
-        if (!text || !text.trim()) return;
-
-        var chars = Array.from(text);
-        var sep = getActiveSep();
-        var vertText = sep ? chars.join('\n' + sep + '\n') : chars.join('\n');
-
-        preview.textContent = vertText;
-        preview.style.whiteSpace = 'pre-wrap';
-
-        if (copyBtn) {
-          copyBtn.setAttribute('data-text', vertText);
-          copyBtn.disabled = false;
-        }
-
-        // Remove decoration div — separator is already embedded in the preview
-        var decoDiv = card.querySelector('.style-decoration');
-        if (decoDiv) decoDiv.remove();
-      }
-
-      var observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-          mutation.addedNodes.forEach(function (node) {
-            if (
-              node.nodeType === 1 &&
-              node.classList &&
-              node.classList.contains('style-card') &&
-              !node.classList.contains('sponsored-card')
-            ) {
-              verticalizeCard(node);
-            }
-          });
-        });
-      });
-
-      observer.observe(resultsGrid, { childList: true });
-    });
-  </script>
+  <script src="/js/vertical/verticalPageController.js" defer=""></script>
 
 </body></html>

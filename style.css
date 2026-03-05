@@ -1714,3 +1714,137 @@ a:hover {
     font-size: 1.25rem;
   }
 }
+
+/* ==========================================================================
+   Vertical Text Generator — vertical-specific components
+   ========================================================================== */
+
+/* Control panel container */
+.vertical-control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Each row in the control panel */
+.vertical-control-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.vertical-control-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  min-width: 90px;
+  padding-top: 6px;
+}
+
+/* Layout select dropdown */
+.vertical-layout-select {
+  flex: 1;
+  min-width: 160px;
+  padding: 6px 10px;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 8px;
+  background: var(--bg-card, #fff);
+  color: var(--text, #111);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* Generic chip */
+.vertical-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 20px;
+  background: var(--bg-card, #fff);
+  color: var(--text, #111);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+  white-space: nowrap;
+}
+
+.vertical-chip:hover:not(:disabled) {
+  border-color: var(--accent, #6366f1);
+  color: var(--accent, #6366f1);
+}
+
+.vertical-chip.active {
+  background: var(--accent, #6366f1);
+  border-color: var(--accent, #6366f1);
+  color: #fff;
+}
+
+.vertical-chip:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* Chip groups */
+.vertical-mode-chips,
+.vertical-divider-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Disabled word-divider row styling */
+.vertical-divider-row.disabled-row {
+  opacity: .4;
+  pointer-events: none;
+}
+
+/* Decoration tabs within the control panel */
+.vertical-deco-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+/* Recent decorators row */
+.vertical-recent-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.vertical-recent-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* Vertical preview — uses pre-wrap for multi-line stacked text */
+.vertical-preview {
+  white-space: pre-wrap;
+  font-family: monospace, monospace;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* Dark mode overrides */
+body.dark-mode .vertical-layout-select {
+  background: var(--bg-card-dark, #1e1e2e);
+  color: var(--text-dark, #e2e8f0);
+  border-color: var(--border-dark, #334155);
+}
+
+body.dark-mode .vertical-chip {
+  background: var(--bg-card-dark, #1e1e2e);
+  color: var(--text-dark, #e2e8f0);
+  border-color: var(--border-dark, #334155);
+}
