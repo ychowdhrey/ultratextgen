@@ -187,9 +187,10 @@ describe("applyVerticalDecorator — null decorator returns original", function 
 });
 
 describe("decoration data completeness", function () {
+  var MIN_DECORATION_OPTIONS = 10; // requirement: each group has 10–20 options
   var groups = ["bullets", "arrows", "dots", "dividers", "emojis", "flags"];
   groups.forEach(function (g) {
-    assert(DecoData[g] && DecoData[g].length >= 10, g + " has at least 10 options");
+    assert(DecoData[g] && DecoData[g].length >= MIN_DECORATION_OPTIONS, g + " has at least " + MIN_DECORATION_OPTIONS + " options");
   });
 });
 
