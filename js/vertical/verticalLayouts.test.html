@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Layouts + Decorators — Test Runner</title>
+  <style>
+    body { font-family: monospace; padding: 1.5rem; background: #1a1a1a; color: #eee; }
+    h1 { color: #7dd3fc; }
+    .pass { color: #4ade80; }
+    .fail { color: #f87171; }
+    pre { background: #2a2a2a; padding: .5rem; border-radius: 4px; white-space: pre-wrap; }
+    #summary { font-size: 1.2rem; margin-top: 1.5rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Vertical Text Generator — Tests</h1>
+  <div id="results"></div>
+  <div id="summary"></div>
+
+  <script src="/js/vertical/verticalLayouts.js"></script>
+  <script src="/js/vertical/verticalDecorators.js"></script>
+
+  <script>
+  (function () {
+    var L = window.UTGVerticalLayouts;
+    var D = window.UTGVerticalDecorators;
+
+    var passed = 0;
+    var failed = 0;
+    var out = document.getElementById('results');
+
+    function assert(name, actual, expected) {
+      var ok = actual === expected;
+      var div = document.createElement('div');
+      if (ok) {
+        div.className = 'pass';
+        div.textContent = '✓ ' + name;
+        passed++;
+      } else {
+        div.className = 'fail';
+        div.innerHTML = '✗ ' + name +
+          '<pre>Expected:\n' + JSON.stringify(expected) +
+          '\n\nActual:\n'   + JSON.stringify(actual) + '</pre>';
+        failed++;
+      }
+      out.appendChild(div);
+    }
+
+    /* ------------------------------------------------------------------
+       1. Stacked layout for "Hi" → "H\ni"
+       ------------------------------------------------------------------ */
+    assert(
+      '1. Stacked "Hi" → H\\ni',
+      L.makeLayoutStacked('Hi', 'stack', {}),
+      'H\ni'
+    );
+
+    /* ------------------------------------------------------------------
+       2. Pyramid for "Yes" → "Y\nY e\nY e s"
+       ------------------------------------------------------------------ */
+    assert(
+      '2. Pyramid "Yes" → Y / Y e / Y e s',
+      L.makeLayoutPyramid('Yes', 'stack', {}),
+      'Y\nY e\nY e s'
+    );
+
+    /* ------------------------------------------------------------------
+       3. Diagonal right for "Hi" → "H\n  i"
+       ------------------------------------------------------------------ */
+    assert(
+      '3. Diagonal Right "Hi" → H / (2 spaces)i',
+      L.makeLayoutDiagonalRight('Hi', 'stack', {}),
+      'H\n  i'
+    );
+
+    /* ------------------------------------------------------------------
+       4. Box layout for "Hi" — check frame characters
+       ------------------------------------------------------------------ */
+    var boxOut = L.makeLayoutBox('Hi', 'stack', {});
+    var hasTopFrame    = boxOut.indexOf('╔') !== -1 && boxOut.indexOf('╗') !== -1;
+    var hasBottomFrame = boxOut.indexOf('╚') !== -1 && boxOut.indexOf('╝') !== -1;
+    var hasSideFrame   = boxOut.indexOf('║') !== -1;
+    var hasBothChars   = boxOut.indexOf('H') !== -1 && boxOut.indexOf('i') !== -1;
+    assert(
+      '4. Box "Hi" has ╔═══╗ frame and both characters',
+      String(hasTopFrame && hasBottomFrame && hasSideFrame && hasBothChars),
+      'true'
+    );
+
+    /* ------------------------------------------------------------------
+       5. Double column for "Hi World" → two columns side by side
+       ------------------------------------------------------------------ */
+    var dcOut = L.makeLayoutDoubleColumn('Hi World', 'stack', {});
+    var lines = dcOut.split('\n');
+    var firstLineHasBoth = lines.length > 0 && lines[0].indexOf('H') !== -1 && lines[0].indexOf('W') !== -1;
+    assert(
+      '5. Double Column "Hi World" — first line has both H and W',
+      String(firstLineHasBoth),
+      'true'
+    );
+
+    /* ------------------------------------------------------------------
+       6. Prefix decorator on stacked "H\ni" with "→"
+          → "→ H\n→ i"
+       ------------------------------------------------------------------ */
+    assert(
+      '6. Prefix decorator "→" on H\\ni → → H / → i',
+      D.applyVerticalPrefixDecorator('H\ni', '→'),
+      '→ H\n→ i'
+    );
+
+    /* ------------------------------------------------------------------
+       7. Divider decorator preserves blank lines between word blocks
+       ------------------------------------------------------------------ */
+    // "Hi World" stacked → "H\ni\n\nW\no\nr\nl\nd"
+    var stackedHiWorld = L.makeLayoutStacked('Hi World', 'stack', { wordDividerMode: 'none' });
+    var divDecoOut = D.applyVerticalDividerDecorator(stackedHiWorld, '·', 'stacked');
+    // blank line must still be present (not replaced with a divider)
+    var hasBlankLine = divDecoOut.indexOf('\n\n') !== -1;
+    assert(
+      '7. Divider decorator preserves blank line between word blocks',
+      String(hasBlankLine),
+      'true'
+    );
+
+    /* ------------------------------------------------------------------
+       8. Divider falls back to prefix for double-column layout
+       ------------------------------------------------------------------ */
+    var dcDivOut = D.applyVerticalDividerDecorator('H   W\ni   o', '·', 'double-column');
+    var dcPrefixOut = D.applyVerticalPrefixDecorator('H   W\ni   o', '·');
+    assert(
+      '8. Divider fallback to prefix for double-column',
+      dcDivOut,
+      dcPrefixOut
+    );
+
+    /* ------------------------------------------------------------------
+       9. Continuous mode merges words: "Hello World" treated as "HelloWorld"
+       ------------------------------------------------------------------ */
+    var contOut = L.makeLayoutStacked('Hello World', 'continuous', {});
+    assert(
+      '9. Continuous mode "Hello World" starts with H (no space at line 6)',
+      contOut.split('\n')[5],
+      'W'
+    );
+
+    /* ------------------------------------------------------------------
+       10. Reverse stacked for "Hi" → "i\nH"
+       ------------------------------------------------------------------ */
+    assert(
+      '10. Reverse Stacked "Hi" → i\\nH',
+      L.makeLayoutReverseStacked('Hi', 'stack', {}),
+      'i\nH'
+    );
+
+    /* ------------------------------------------------------------------
+       Summary
+       ------------------------------------------------------------------ */
+    var summary = document.getElementById('summary');
+    summary.textContent = 'Results: ' + passed + ' passed, ' + failed + ' failed';
+    summary.style.color = failed === 0 ? '#4ade80' : '#f87171';
+  })();
+  </script>
+</body>
+</html>
