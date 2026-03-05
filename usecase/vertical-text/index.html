@@ -1,0 +1,655 @@
+<!DOCTYPE html><html lang="en"><head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Text Generator — Stack Letters Top-to-Bottom for Bios, Captions &amp; Art | UltraTextGen</title>
+  <meta name="description" content="Turn any text into vertical layouts — simple, spaced, boxed, staircase, and double column. Add bullet, arrow, emoji, or divider decorations. Copy and paste instantly.">
+  <link rel="canonical" href="https://ultratextgen.com/usecase/vertical-text/">
+  <meta property="og:title" content="Vertical Text Generator | UltraTextGen">
+  <meta property="og:description" content="Turn any text into vertical layouts — simple, spaced, boxed, staircase, and double column. Add decorations and copy instantly.">
+  <meta property="og:url" content="https://ultratextgen.com/usecase/vertical-text/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ultratextgen.com/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vertical Text Generator | UltraTextGen">
+  <meta name="twitter:description" content="Turn any text into vertical layouts — simple, spaced, boxed, staircase, and double column.">
+  <meta name="twitter:image" content="https://ultratextgen.com/logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://ultratextgen.com/usecase/" },
+    { "@type": "ListItem", "position": 3, "name": "Vertical Text", "item": "https://ultratextgen.com/usecase/vertical-text/" }
+  ]
+}
+  </script>
+
+  <!-- Vertical-text-specific styles (scoped via .vt-*) -->
+  <style>
+    /* Layout selector */
+    .vt-layout-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .vt-layout-tab {
+      padding: 8px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: 50px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-white);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .vt-layout-tab:hover,
+    .vt-layout-tab.active {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    .vt-layout-tab.active {
+      background: var(--accent-purple);
+      color: white;
+    }
+
+    /* Word break toggle */
+    .vt-toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .vt-toggle-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .vt-toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .vt-toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .vt-toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--border-light);
+      border-radius: 24px;
+      transition: 0.2s;
+    }
+
+    .vt-toggle-slider::before {
+      content: "";
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+
+    .vt-toggle input:checked + .vt-toggle-slider {
+      background: var(--accent-purple);
+    }
+
+    .vt-toggle input:checked + .vt-toggle-slider::before {
+      transform: translateX(20px);
+    }
+
+    .vt-toggle-state {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      min-width: 80px;
+    }
+
+    /* Decoration picker */
+    .vt-deco-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .vt-deco-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .vt-deco-tabs::-webkit-scrollbar { display: none; }
+
+    .vt-deco-tab {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      border: 1px solid var(--border-light);
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-white);
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-family: inherit;
+    }
+
+    .vt-deco-tab:hover,
+    .vt-deco-tab.active {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    .vt-deco-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-height: 160px;
+      overflow-y: auto;
+    }
+
+    .vt-deco-item {
+      padding: 6px 12px;
+      background: var(--bg-base);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .vt-deco-item:hover {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    .vt-deco-item.selected {
+      border-color: var(--accent-purple);
+      background: var(--accent-purple);
+      color: white;
+    }
+
+    .vt-clear-deco {
+      padding: 6px 12px;
+      background: transparent;
+      border: 1px dashed var(--border-light);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .vt-clear-deco:hover {
+      border-color: var(--text-muted);
+      color: var(--text-secondary);
+    }
+
+    /* Results grid — 2 col desktop, 1 col mobile */
+    .vt-results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding-bottom: 32px;
+    }
+
+    .vt-result-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .vt-result-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+
+    .vt-card-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .vt-card-preview {
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      word-break: break-word;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .vt-card-preview.placeholder {
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: inherit;
+    }
+
+    .vt-card-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 640px) {
+      .vt-results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vt-layout-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+      }
+
+      .vt-layout-tabs::-webkit-scrollbar { display: none; }
+
+      .vt-layout-tab {
+        flex-shrink: 0;
+      }
+
+      .vt-deco-tab {
+        padding: 5px 10px;
+        font-size: 0.6875rem;
+      }
+    }
+
+    .hero-sub {
+      color: var(--text-secondary);
+      text-align: center;
+      font-size: 0.95rem;
+      margin-top: -16px;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+<script src="/header.js"></script>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1 class="hero-headline">Vertical Text Generator</h1>
+        <p class="hero-sub">Stack letters top-to-bottom — perfect for bios, captions, and creative text art.</p>
+
+        <!-- Input -->
+        <div class="input-wrapper">
+          <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea>
+          <span class="char-count"><span id="charCount">0</span>/500</span>
+        </div>
+
+        <!-- Layout Selection -->
+        <div class="vt-layout-tabs" id="layoutTabs">
+          <button class="vt-layout-tab active" data-layout="simple">Simple</button>
+          <button class="vt-layout-tab" data-layout="spaced">Extra Spaced</button>
+          <button class="vt-layout-tab" data-layout="box">Box</button>
+          <button class="vt-layout-tab" data-layout="staircase">Staircase</button>
+          <button class="vt-layout-tab" data-layout="double-column">Double Column</button>
+        </div>
+
+        <!-- Word Break Toggle -->
+        <div class="vt-toggle-row">
+          <span class="vt-toggle-label">Word Break:</span>
+          <label class="vt-toggle">
+            <input type="checkbox" id="wordBreakToggle">
+            <span class="vt-toggle-slider"></span>
+          </label>
+          <span class="vt-toggle-state" id="wordBreakState">Stack</span>
+        </div>
+
+        <!-- Decoration Selector -->
+        <div class="vt-deco-section">
+          <div class="decoration-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+            Add vertical decoration
+          </div>
+
+          <div class="vt-deco-tabs" id="decoTabs">
+            <button class="vt-deco-tab active" data-deco-group="bullets">• Bullets</button>
+            <button class="vt-deco-tab" data-deco-group="arrows">→ Arrows</button>
+            <button class="vt-deco-tab" data-deco-group="dots">· Dots</button>
+            <button class="vt-deco-tab" data-deco-group="dividers">─ Dividers</button>
+            <button class="vt-deco-tab" data-deco-group="emojis">✨ Emojis</button>
+            <button class="vt-deco-tab" data-deco-group="flags">🇺🇸 Flags</button>
+          </div>
+
+          <div class="vt-deco-grid" id="decoGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="vt-results-grid" id="resultsGrid"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <h2 class="faq-category">Vertical Text FAQ</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          What is vertical text?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Vertical text places each letter on its own line, creating a top-to-bottom reading direction. It's popular in social media bios, aesthetic captions, and creative text art.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          How do I use the layouts?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Choose a layout from the options: Simple stacks letters vertically, Extra Spaced adds breathing room, Box wraps each letter in a box frame, Staircase creates indented steps, and Double Column puts two words side by side.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          What does the Word Break toggle do?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          In Stack mode, each word is separated by a blank line. In Continuous mode, spaces are removed and all letters flow as a single vertical stream.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          How do decorations work?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Prefix decorators (bullets, arrows, dots, emojis, flags) add a symbol before each letter line. Divider decorators insert a separator line between letter lines. Pick "None" to remove all decorations.
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 UltraTextGen. Fast text styles that work everywhere.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts — order matters -->
+  <script src="/usecase/vertical-text/vertical-layouts.js"></script>
+  <script src="/usecase/vertical-text/vertical-decoration-data.js"></script>
+  <script src="/usecase/vertical-text/vertical-decoration.js"></script>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var Layouts = window.VerticalLayouts;
+    var Deco    = window.VerticalDecoration;
+    var DecoData = window.VERTICAL_DECORATIONS;
+
+    if (!Layouts || !Deco || !DecoData) {
+      console.error("Vertical text dependencies missing.");
+      return;
+    }
+
+    /* ---- State ---- */
+    var currentLayout   = "simple";
+    var wordBreakMode   = "stack";     // "stack" | "continuous"
+    var currentDecoGroup = "bullets";
+    var selectedDecorator = null;      // { symbol, type }
+
+    /* ---- DOM refs ---- */
+    var mainInput       = document.getElementById("mainInput");
+    var charCount       = document.getElementById("charCount");
+    var resultsGrid     = document.getElementById("resultsGrid");
+    var decoGrid        = document.getElementById("decoGrid");
+    var wordBreakToggle = document.getElementById("wordBreakToggle");
+    var wordBreakState  = document.getElementById("wordBreakState");
+
+    /* ---- Helpers ---- */
+    function safeAttr(str) {
+      return String(str || "").replace(/"/g, "&quot;");
+    }
+
+    /* ---- Layout generators map ---- */
+    var layoutGenerators = {
+      "simple":        { label: "Simple",        fn: function (w, m) { return Layouts.makeVerticalSimple(w, m); } },
+      "spaced":        { label: "Extra Spaced",  fn: function (w, m) { return Layouts.makeVerticalSpaced(w, m); } },
+      "box":           { label: "Box",           fn: function (w, m) { return Layouts.makeVerticalBox(w, m); } },
+      "staircase":     { label: "Staircase",     fn: function (w, m) { return Layouts.makeVerticalStaircase(w, m); } },
+      "double-column": { label: "Double Column", fn: function (w)    { return Layouts.makeVerticalDoubleColumn(w); } },
+    };
+
+    /* ---- Decoration picker ---- */
+    function renderDecoGrid() {
+      if (!decoGrid) return;
+      var items = DecoData[currentDecoGroup] || [];
+
+      var html = '<button class="vt-clear-deco" data-deco-none="1">✕ None</button>';
+      items.forEach(function (item, i) {
+        var sel = selectedDecorator && selectedDecorator.symbol === item.symbol ? " selected" : "";
+        html += '<button class="vt-deco-item' + sel + '" data-deco-idx="' + i + '">' + item.label + '</button>';
+      });
+      decoGrid.innerHTML = html;
+    }
+
+    /* ---- Render results ---- */
+    function renderResults() {
+      if (!resultsGrid) return;
+      var inputText = mainInput ? mainInput.value : "";
+      resultsGrid.innerHTML = "";
+
+      if (!inputText.trim()) {
+        // Show placeholder cards
+        Object.keys(layoutGenerators).forEach(function (key) {
+          var gen = layoutGenerators[key];
+          var card = document.createElement("div");
+          card.className = "vt-result-card";
+          card.innerHTML =
+            '<div class="vt-card-name">' + gen.label + '</div>' +
+            '<div class="vt-card-preview placeholder">Type something above...</div>';
+          resultsGrid.appendChild(card);
+        });
+        return;
+      }
+
+      var words = Layouts.splitWords(inputText);
+
+      Object.keys(layoutGenerators).forEach(function (key) {
+        var gen = layoutGenerators[key];
+        var output = gen.fn(words, wordBreakMode);
+
+        // Apply vertical decoration
+        var decorated = output;
+        if (selectedDecorator) {
+          decorated = Deco.applyVerticalDecorator(output, selectedDecorator, key);
+        }
+
+        var displayText = decorated || output;
+        var safeText = safeAttr(displayText);
+
+        var card = document.createElement("div");
+        card.className = "vt-result-card";
+        card.innerHTML =
+          '<div class="vt-card-name">' + gen.label + '</div>' +
+          '<div class="vt-card-preview">' + escapeHtml(displayText) + '</div>' +
+          '<div class="vt-card-actions">' +
+            '<button class="copy-btn" data-text="' + safeText + '">Copy</button>' +
+          '</div>';
+
+        resultsGrid.appendChild(card);
+      });
+    }
+
+    function escapeHtml(text) {
+      var div = document.createElement("div");
+      div.appendChild(document.createTextNode(text));
+      return div.innerHTML;
+    }
+
+    /* ---- Event binding ---- */
+    // Input
+    if (mainInput && charCount) {
+      mainInput.addEventListener("input", function () {
+        charCount.textContent = String(mainInput.value.length);
+        renderResults();
+      });
+    }
+
+    // Layout tabs
+    document.querySelectorAll(".vt-layout-tab").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        document.querySelectorAll(".vt-layout-tab").forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+        currentLayout = tab.dataset.layout;
+        renderResults();
+      });
+    });
+
+    // Word break toggle
+    if (wordBreakToggle) {
+      wordBreakToggle.addEventListener("change", function () {
+        wordBreakMode = wordBreakToggle.checked ? "continuous" : "stack";
+        if (wordBreakState) {
+          wordBreakState.textContent = wordBreakToggle.checked ? "Continuous" : "Stack";
+        }
+        renderResults();
+      });
+    }
+
+    // Decoration tabs
+    document.querySelectorAll(".vt-deco-tab").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        document.querySelectorAll(".vt-deco-tab").forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+        currentDecoGroup = tab.dataset.decoGroup;
+        renderDecoGrid();
+      });
+    });
+
+    // Decoration grid clicks (delegated)
+    if (decoGrid) {
+      decoGrid.addEventListener("click", function (e) {
+        var btn = e.target.closest(".vt-deco-item");
+        var clearBtn = e.target.closest(".vt-clear-deco");
+
+        if (clearBtn) {
+          selectedDecorator = null;
+          renderDecoGrid();
+          renderResults();
+          return;
+        }
+
+        if (btn) {
+          var idx = parseInt(btn.dataset.decoIdx, 10);
+          var items = DecoData[currentDecoGroup] || [];
+          if (items[idx]) {
+            selectedDecorator = items[idx];
+            renderDecoGrid();
+            renderResults();
+          }
+        }
+      });
+    }
+
+    // Copy button (delegated, same pattern as existing)
+    document.addEventListener("click", async function (e) {
+      var btn = e.target.closest ? e.target.closest(".copy-btn") : null;
+      if (!btn || btn.disabled) return;
+
+      var text = btn.dataset.text || "";
+      try {
+        await navigator.clipboard.writeText(text);
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "copy_text", copy_method: "button" });
+
+        btn.textContent = "✓ Copied";
+        btn.classList.add("copied");
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+        }, 1500);
+      } catch (err) {
+        console.error("Copy failed:", err);
+      }
+    });
+
+    // FAQ toggle
+    document.querySelectorAll(".faq-question").forEach(function (q) {
+      q.addEventListener("click", function () {
+        q.parentElement.classList.toggle("open");
+      });
+    });
+
+    // Dark mode persistence
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+
+    /* ---- Init ---- */
+    renderDecoGrid();
+    renderResults();
+  })();
+  </script>
+</body>
+</html>
