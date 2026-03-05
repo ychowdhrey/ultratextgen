@@ -138,7 +138,7 @@
 
     <!-- 2. Input textarea -->
     <div class="vt-input-wrap">
-      <textarea id="vtInput" maxlength="500" placeholder="Type your text here…"></textarea>
+      <textarea id="vtInput" maxlength="500" placeholder="Type your text here…" aria-label="Text input for vertical generator"></textarea>
       <div class="vt-char-count"><span id="vtCharCount">0</span> / 500</div>
     </div>
 
@@ -149,15 +149,15 @@
     <!-- 4. Word handling controls -->
     <div class="vt-label">Word Break Mode</div>
     <div class="vt-toggle-group" id="vtWordBreak">
-      <label><input type="radio" name="wordBreak" value="stack" checked> Stack</label>
-      <label><input type="radio" name="wordBreak" value="continuous"> Continuous</label>
+      <label for="wb-stack"><input type="radio" name="wordBreak" id="wb-stack" value="stack" checked> Stack</label>
+      <label for="wb-continuous"><input type="radio" name="wordBreak" id="wb-continuous" value="continuous"> Continuous</label>
     </div>
 
     <div class="vt-label">Word Divider Mode</div>
     <div class="vt-toggle-group" id="vtWordDivider">
-      <label><input type="radio" name="wordDivider" value="none" checked> None</label>
-      <label><input type="radio" name="wordDivider" value="blank"> Blank line</label>
-      <label><input type="radio" name="wordDivider" value="divider"> Divider line</label>
+      <label for="wd-none"><input type="radio" name="wordDivider" id="wd-none" value="none" checked> None</label>
+      <label for="wd-blank"><input type="radio" name="wordDivider" id="wd-blank" value="blank"> Blank line</label>
+      <label for="wd-divider"><input type="radio" name="wordDivider" id="wd-divider" value="divider"> Divider line</label>
     </div>
 
     <!-- 5. Decoration selector -->
@@ -201,6 +201,7 @@
     var selectedDecorator = null;
     var recentDecorators = [];
     var MAX_RECENT = 6;
+    var WORD_DIVIDER_LINE = "──────";
 
     /* ---- layout chips ---- */
     Layouts.LAYOUTS.forEach(function (l) {
@@ -317,7 +318,7 @@
       // The layouts that use "stack" mode already separate words with blank lines.
       // "blank" keeps that; "divider" replaces blank-line separators with a divider line.
       if (dividerMode === "divider") {
-        return output.replace(/\n\n/g, "\n──────\n");
+        return output.replace(/\n\n/g, "\n" + WORD_DIVIDER_LINE + "\n");
       }
       return output; // "blank" is default behavior
     }
