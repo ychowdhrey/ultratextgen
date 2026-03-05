@@ -496,6 +496,7 @@ const decorations = window.UTG_DECORATIONS || {
      RENDER: Decorations
      =================== */
   function renderDecorations() {
+    if (window.UTG_VERTICAL_MODE) return;
     if (!el.decorationGrid) return;
 
     const grid = el.decorationGrid;
@@ -540,6 +541,7 @@ const decorations = window.UTG_DECORATIONS || {
      RENDER: Results
      =================== */
   function renderResults() {
+    if (window.UTG_VERTICAL_MODE) return;
     if (!el.resultsGrid) return;
 
     const grid = el.resultsGrid;
