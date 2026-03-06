@@ -432,6 +432,54 @@
       padding-bottom: 32px;
     }
 
+    /* Skeleton loading shimmer */
+    @keyframes shimmer {
+      0%   { background-position: -600px 0; }
+      100% { background-position: 600px 0; }
+    }
+
+    .skeleton {
+      background: linear-gradient(90deg, var(--border-light) 25%, var(--bg-base) 50%, var(--border-light) 75%);
+      background-size: 1200px 100%;
+      animation: shimmer 1.5s infinite linear;
+      border-radius: 6px;
+    }
+
+    .skeleton-tab {
+      display: inline-block;
+      height: 32px;
+      border-radius: 20px;
+    }
+
+    .skeleton-card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+    }
+
+    .skeleton-card .skeleton-line {
+      height: 12px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .skeleton-card .skeleton-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .skeleton-card .skeleton-btn {
+      width: 60px;
+      height: 34px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
     .style-card {
       background: var(--bg-white);
       border-radius: var(--radius);
