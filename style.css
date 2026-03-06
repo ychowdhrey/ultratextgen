@@ -560,6 +560,32 @@
       cursor: pointer;
       transition: all 0.2s;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .copy-kbd {
+      font-family: inherit;
+      font-size: 0.65rem;
+      font-weight: 600;
+      background: var(--border-light);
+      color: var(--text-muted);
+      border-radius: 3px;
+      padding: 1px 4px;
+      line-height: 1.4;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .copy-btn:hover .copy-kbd,
+    .copy-btn:focus-visible .copy-kbd {
+      opacity: 1;
+    }
+
+    .copy-btn:hover .copy-kbd {
+      background: rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
     }
 
     .copy-btn:hover {
@@ -617,10 +643,16 @@
       letter-spacing: 0.1em;
     }
 
+    /* FAQ Section (standalone, before footer) */
+    .faq-section-wrapper {
+      padding: 48px 24px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+
     /* Footer */
     .footer {
-      margin-top: 48px;
-      padding: 48px 24px;
+      padding: 24px 24px;
       background: var(--bg-white);
       border-top: 1px solid var(--border-light);
     }
