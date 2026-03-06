@@ -470,6 +470,41 @@ const decorations = window.UTG_DECORATIONS || {
     };
   }
 
+  function createSkeletonCard() {
+    const card = document.createElement("div");
+    card.className = "skeleton-card";
+    card.setAttribute("aria-hidden", "true");
+    card.innerHTML = `
+      <div class="style-info">
+        <div class="skeleton skeleton-line" style="width:28%"></div>
+        <div class="skeleton skeleton-line" style="width:65%"></div>
+      </div>
+      <div class="skeleton skeleton-btn"></div>
+    `;
+    return card;
+  }
+
+  function showLoadingState() {
+    const tabsContainer = $("#categoryTabs");
+    if (tabsContainer) {
+      tabsContainer.innerHTML = "";
+      [80, 60, 92, 68, 76, 52, 84, 64].forEach(w => {
+        const s = document.createElement("span");
+        s.className = "category-tab skeleton skeleton-tab";
+        s.style.width = w + "px";
+        s.setAttribute("aria-hidden", "true");
+        tabsContainer.appendChild(s);
+      });
+    }
+
+    if (el.resultsGrid) {
+      el.resultsGrid.innerHTML = "";
+      for (let i = 0; i < 8; i++) {
+        el.resultsGrid.appendChild(createSkeletonCard());
+      }
+    }
+  }
+
   async function loadFontCategories() {
     try {
       const response = await fetch('/fonts.json');
@@ -769,7 +804,10 @@ document.addEventListener("copy", () => {
     }
 
     renderDecorations();
-    
+
+    // Show skeleton placeholders while fonts.json loads
+    showLoadingState();
+
     // Load font categories and render tabs
     loadFontCategories();
 
