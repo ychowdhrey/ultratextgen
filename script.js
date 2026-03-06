@@ -615,12 +615,30 @@ const decorations = window.UTG_DECORATIONS || {
      EVENTS
      =================== */
   function bindEvents() {
+    let urlSyncTimer = null;
+    function syncInputUI() {
+      const len = el.mainInput.value.length;
+      if (el.charCount) el.charCount.textContent = String(len);
+      if (el.charCountWrapper) el.charCountWrapper.hidden = len === 0;
+      if (el.inputClearBtn) el.inputClearBtn.hidden = len === 0;
+    }
+    function pushUrlState() {
+      const params = new URLSearchParams(window.location.search);
+      const val = el.mainInput.value;
+      if (val) {
+        params.set("q", val);
+      } else {
+        params.delete("q");
+      }
+      const newSearch = params.toString() ? "?" + params.toString() : window.location.pathname;
+      history.replaceState(null, "", newSearch);
+    }
+
     if (el.mainInput) {
       el.mainInput.addEventListener("input", () => {
-        const len = el.mainInput.value.length;
-        if (el.charCount) el.charCount.textContent = String(len);
-        if (el.charCountWrapper) el.charCountWrapper.hidden = len === 0;
-        if (el.inputClearBtn) el.inputClearBtn.hidden = len === 0;
+        syncInputUI();
+        clearTimeout(urlSyncTimer);
+        urlSyncTimer = setTimeout(pushUrlState, 400);
         renderResults();
       });
     }
@@ -628,8 +646,8 @@ const decorations = window.UTG_DECORATIONS || {
     if (el.inputClearBtn && el.mainInput) {
       el.inputClearBtn.addEventListener("click", () => {
         el.mainInput.value = "";
-        el.inputClearBtn.hidden = true;
-        if (el.charCountWrapper) el.charCountWrapper.hidden = true;
+        syncInputUI();
+        pushUrlState();
         el.mainInput.focus();
         renderResults();
       });
@@ -651,9 +669,14 @@ const decorations = window.UTG_DECORATIONS || {
       });
     });
 
+    if (localStorage.getItem("darkMode") === "1") {
+      document.body.classList.add("dark-mode");
+    }
+
     if (el.darkModeBtn) {
       el.darkModeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", isDark ? "1" : "0");
       });
     }
 
@@ -714,6 +737,14 @@ document.addEventListener("copy", () => {
      INIT
      =================== */
   function init() {
+    // Restore input text from URL ?q= param (shareable links)
+    if (el.mainInput) {
+      const urlQ = new URLSearchParams(window.location.search).get("q");
+      if (urlQ) {
+        el.mainInput.value = urlQ;
+      }
+    }
+
     bindEvents();
 
     if (el.charCount && el.mainInput) {
