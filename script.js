@@ -227,10 +227,13 @@ const decorations = window.UTG_DECORATIONS || {
   const el = {
     mainInput: $("#mainInput"),
     charCount: $("#charCount"),
+    charCountWrapper: $("#charCountWrapper"),
+    inputClearBtn: $("#inputClearBtn"),
     searchInput: $("#searchInput"),
     resultsGrid: $("#resultsGrid"),
     decorationGrid: $("#decorationGrid"),
-    darkModeBtn: $("#darkModeBtn")
+    darkModeBtn: $("#darkModeBtn"),
+    copyToast: $("#copyToast")
   };
 
   /* ===================
@@ -306,12 +309,7 @@ const decorations = window.UTG_DECORATIONS || {
   function createAdCard() {
     const adCard = document.createElement("div");
     adCard.className = "style-card sponsored-card";
-    adCard.innerHTML = `
-      <div class="style-info">
-        <p class="style-name"><span class="sponsored-label">Sponsored</span></p>
-        <p class="style-preview placeholder">Ad content here</p>
-      </div>
-    `;
+    adCard.setAttribute("aria-hidden", "true");
     return adCard;
   }
 
@@ -617,9 +615,22 @@ const decorations = window.UTG_DECORATIONS || {
      EVENTS
      =================== */
   function bindEvents() {
-    if (el.mainInput && el.charCount) {
+    if (el.mainInput) {
       el.mainInput.addEventListener("input", () => {
-        el.charCount.textContent = String(el.mainInput.value.length);
+        const len = el.mainInput.value.length;
+        if (el.charCount) el.charCount.textContent = String(len);
+        if (el.charCountWrapper) el.charCountWrapper.hidden = len === 0;
+        if (el.inputClearBtn) el.inputClearBtn.hidden = len === 0;
+        renderResults();
+      });
+    }
+
+    if (el.inputClearBtn && el.mainInput) {
+      el.inputClearBtn.addEventListener("click", () => {
+        el.mainInput.value = "";
+        el.inputClearBtn.hidden = true;
+        if (el.charCountWrapper) el.charCountWrapper.hidden = true;
+        el.mainInput.focus();
         renderResults();
       });
     }
@@ -651,6 +662,15 @@ const decorations = window.UTG_DECORATIONS || {
         q.parentElement.classList.toggle("open");
       });
     });
+  let toastTimer = null;
+  function showCopyToast() {
+    const toast = el.copyToast;
+    if (!toast) return;
+    toast.classList.add("is-visible");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1800);
+  }
+
 document.addEventListener("click", async (e) => {
   const btn = e.target.closest ? e.target.closest(".copy-btn") : null;
   if (!btn || btn.disabled) return;
@@ -668,6 +688,7 @@ document.addEventListener("click", async (e) => {
 
     btn.textContent = "✓ Copied";
     btn.classList.add("copied");
+    showCopyToast();
     setTimeout(() => {
       btn.textContent = "Copy";
       btn.classList.remove("copied");
@@ -696,7 +717,10 @@ document.addEventListener("copy", () => {
     bindEvents();
 
     if (el.charCount && el.mainInput) {
-      el.charCount.textContent = String(el.mainInput.value.length);
+      const initLen = el.mainInput.value.length;
+      el.charCount.textContent = String(initLen);
+      if (el.charCountWrapper) el.charCountWrapper.hidden = initLen === 0;
+      if (el.inputClearBtn) el.inputClearBtn.hidden = initLen === 0;
     }
 
     renderDecorations();
