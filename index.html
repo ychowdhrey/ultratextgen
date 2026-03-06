@@ -191,8 +191,9 @@
         <h1 class="hero-headline">Stylish Font Generator</h1>
         <p class="hero-tagline">Turn plain text into bold, cursive, gothic, and decorative Unicode fonts you can copy and paste instantly.</p>
         <div class="input-wrapper">
-          <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea>
-          <span class="char-count"><span id="charCount">0</span>/500</span>
+          <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500" autofocus></textarea>
+          <button class="input-clear-btn" id="inputClearBtn" aria-label="Clear input" hidden>✕</button>
+          <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
         </div>
 
         <!-- Decoration Selector -->
@@ -719,6 +720,8 @@
       </div>
     </div>
   </footer>
+
+  <div class="copy-toast" id="copyToast">Copied!</div>
 
   <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
