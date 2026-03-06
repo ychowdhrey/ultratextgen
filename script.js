@@ -440,14 +440,20 @@ const decorations = window.UTG_DECORATIONS || {
     moreBtn.type = "button";
     moreBtn.textContent = "More";
     moreBtn.addEventListener("click", () => {
-      // Reveal all tabs and remove the More button
-      hiddenTabs.forEach(h => {
-        h.style.display = "";
-        h.removeAttribute("aria-hidden");
-        h.classList.remove("hidden-category");
-      });
-      moreBtn.remove();
-      tabsContainer.classList.add("expanded");
+      const isExpanded = tabsContainer.classList.contains("expanded");
+      if (isExpanded) {
+        // Collapse: re-run the collapse logic from scratch
+        collapseCategoryTabs();
+      } else {
+        // Expand: reveal all hidden tabs and switch button to "Less"
+        hiddenTabs.forEach(h => {
+          h.style.display = "";
+          h.removeAttribute("aria-hidden");
+          h.classList.remove("hidden-category");
+        });
+        moreBtn.textContent = "Less";
+        tabsContainer.classList.add("expanded");
+      }
     });
 
     // Insert after last visible tab; if lastVisibleIndex is last element, append to end
@@ -665,7 +671,9 @@ const decorations = window.UTG_DECORATIONS || {
         $$(".decoration-tab").forEach((t) => t.classList.remove("active"));
         tab.classList.add("active");
         currentDecoTab = tab.dataset.decoTab || "symbols";
+        selectedDecoration = null;
         renderDecorations();
+        renderResults();
       });
     });
 
