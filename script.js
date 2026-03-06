@@ -718,6 +718,12 @@ document.addEventListener("click", async (e) => {
     }, 1500);
   } catch (err) {
     console.error("Copy failed:", err);
+    btn.textContent = "✗ Failed";
+    btn.classList.add("copy-error");
+    setTimeout(() => {
+      btn.textContent = "Copy";
+      btn.classList.remove("copy-error");
+    }, 1500);
   }
 });
 
