@@ -526,6 +526,12 @@
       color: white;
     }
 
+    .copy-btn.copy-error {
+      background: #ef4444;
+      border-color: #ef4444;
+      color: white;
+    }
+
     .copy-btn:disabled {
       opacity: 0.5;
       cursor: not-allowed;
