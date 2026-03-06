@@ -300,7 +300,7 @@ const decorations = window.UTG_DECORATIONS || {
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
         ${decoHtml}
       </div>
-      <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""}>Copy</button>
+      <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="Copy to clipboard">Copy <kbd class="copy-kbd">↵</kbd></button>
     `;
 
     return card;
