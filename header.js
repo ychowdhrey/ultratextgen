@@ -63,4 +63,18 @@
       body.insertBefore(header, body.firstChild);
     }
   }
+
+  // Dark mode: apply saved preference immediately (before paint)
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+  }
+
+  // Dark mode toggle
+  var dmBtn = document.getElementById("darkModeBtn");
+  if (dmBtn) {
+    dmBtn.addEventListener("click", function () {
+      var isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark ? "true" : "false");
+    });
+  }
 })();
