@@ -64,17 +64,25 @@
     }
   }
 
-  // Dark mode: apply saved preference immediately (before paint)
+  // Dark mode: apply saved preference immediately (before paint, avoids FOUC)
   if (localStorage.getItem("darkMode") === "true") {
     document.body.classList.add("dark-mode");
   }
 
-  // Dark mode toggle
-  var dmBtn = document.getElementById("darkModeBtn");
-  if (dmBtn) {
-    dmBtn.addEventListener("click", function () {
-      var isDark = document.body.classList.toggle("dark-mode");
-      localStorage.setItem("darkMode", isDark ? "true" : "false");
-    });
+  // Dark mode toggle — bind after DOM is ready so the button is guaranteed in the DOM
+  function bindDarkModeBtn() {
+    var dmBtn = document.getElementById("darkModeBtn");
+    if (dmBtn) {
+      dmBtn.addEventListener("click", function () {
+        var isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", isDark ? "true" : "false");
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindDarkModeBtn);
+  } else {
+    bindDarkModeBtn();
   }
 })();
