@@ -310,7 +310,7 @@
      -------------------------------------------------------------------------- */
   function createVerticalStyleCard(name, text, style) {
     var card = document.createElement('div');
-    card.className = 'style-card';
+    card.className = 'style-card vertical-style-card';
 
     var info = document.createElement('div');
     info.className = 'style-info';
@@ -361,7 +361,21 @@
   /* --------------------------------------------------------------------------
      Init
      -------------------------------------------------------------------------- */
+  var DEFAULT_SAMPLE_TEXT = 'Hello';
+
   function init() {
+    /* Add vertical-specific class to results grid */
+    var grid = document.getElementById('resultsGrid');
+    if (grid) grid.classList.add('vertical-results-grid');
+
+    /* Preload sample text so results are visible on first load */
+    var input = document.getElementById('mainInput');
+    var charCount = document.getElementById('charCount');
+    if (input && !input.value.trim()) {
+      input.value = DEFAULT_SAMPLE_TEXT;
+      if (charCount) charCount.textContent = String(DEFAULT_SAMPLE_TEXT.length);
+    }
+
     buildControlPanel();
     bindMainInput();
     updateDecoLabel();
