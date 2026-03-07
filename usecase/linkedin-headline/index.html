@@ -307,19 +307,6 @@
   <!-- DO NOT load /script.js — this page has its own custom logic -->
 
   <script>
-    // ── Dark mode ──────────────────────────────────────────────────────────────
-    (function () {
-      const btn = document.getElementById('darkModeBtn');
-      const root = document.documentElement;
-      if (localStorage.getItem('darkMode') === 'true') root.classList.add('dark');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          root.classList.toggle('dark');
-          localStorage.setItem('darkMode', root.classList.contains('dark'));
-        });
-      }
-    })();
-
     // ── Separator & Identity data ──────────────────────────────────────────────
       const SEPARATORS = {
     clean:       ['|','•','–','·','‣','―','‖','∙','⁃','○',

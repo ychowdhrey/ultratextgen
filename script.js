@@ -712,18 +712,7 @@ const decorations = window.UTG_DECORATIONS || {
       });
     });
 
-    if (localStorage.getItem("darkMode") === "1") {
-      document.body.classList.add("dark-mode");
-    }
-
-    if (el.darkModeBtn) {
-      el.darkModeBtn.addEventListener("click", () => {
-        const isDark = document.body.classList.toggle("dark-mode");
-        localStorage.setItem("darkMode", isDark ? "1" : "0");
-      });
-    }
-
-    $$(".faq-question").forEach((q) => {
+$$(".faq-question").forEach((q) => {
       q.addEventListener("click", () => {
         q.parentElement.classList.toggle("open");
       });
