@@ -1,345 +1,502 @@
-/* =============================================================
-   Zalgo Text Page — Page-specific styles
-   /usecase/zalgo-text/zalgo-text.css
-   ============================================================= */
+/* ── Zalgo Text Generator Styles ─────────────────────────────────── */
 
-/* --- Style pill row ----------------------------------------- */
-.zalgo-style-pills {
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --border: #252530;
+  --border-active: #454560;
+  --text: #e8e8f0;
+  --text-dim: #8888a0;
+  --accent: #a78bfa;
+  --accent-dim: rgba(167,139,250,0.15);
+  --accent-glow: rgba(167,139,250,0.3);
+  --green: #4ade80;
+  --red: #f87171;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────────────── */
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #e8e8f0 40%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── Input Area ─────────────────────────────────────── */
+.input-section {
+  margin-bottom: 32px;
+}
+
+.input-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.text-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: var(--text);
+  resize: vertical;
+  min-height: 72px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.text-input::placeholder { color: #444460; }
+
+.char-counter {
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Controls Grid ──────────────────────────────────── */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 600px) {
+  .controls { grid-template-columns: 1fr; }
+}
+
+.control-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.control-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.control-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.control-label .icon {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* ── Pill Selector ──────────────────────────────────── */
+.pill-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 6px;
 }
 
-.zalgo-style-pill {
-  font-family: inherit;
-  font-size: 0.8125rem;
-  font-weight: 500;
+.pill {
   padding: 6px 14px;
-  border-radius: 50px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-
-.zalgo-style-pill:hover,
-.zalgo-style-pill.active {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  background: rgba(139, 92, 246, 0.06);
-}
-
-/* --- Intensity slider row ------------------------------------ */
-.zalgo-intensity-row {
-  margin-top: 14px;
-}
-
-.zalgo-intensity-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-  cursor: default;
-}
-
-.zalgo-intensity-value {
-  background: rgba(139, 92, 246, 0.1);
-  color: var(--accent-purple);
-  font-weight: 700;
-  font-size: 0.8125rem;
-  padding: 2px 8px;
   border-radius: 20px;
-  min-width: 28px;
-  text-align: center;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  transition: all 0.15s ease;
+  user-select: none;
+  font-family: 'Outfit', sans-serif;
 }
 
-.zalgo-slider {
-  width: 100%;
+.pill:hover {
+  border-color: var(--border-active);
+  color: var(--text);
+}
+
+.pill.active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Slider ─────────────────────────────────────────── */
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.slider-track {
+  flex: 1;
   -webkit-appearance: none;
   appearance: none;
   height: 4px;
-  border-radius: 4px;
-  background: var(--border-light);
+  border-radius: 2px;
+  background: var(--border);
   outline: none;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
-.zalgo-slider::-webkit-slider-thumb {
+.slider-track::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--accent-purple);
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 8px var(--accent-glow);
   cursor: pointer;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
-  transition: box-shadow 0.2s;
+  transition: transform 0.15s;
 }
 
-.zalgo-slider::-moz-range-thumb {
+.slider-track::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.slider-track::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--accent-purple);
-  border: none;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 8px var(--accent-glow);
   cursor: pointer;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
 }
 
-.zalgo-slider:focus::-webkit-slider-thumb,
-.zalgo-slider:hover::-webkit-slider-thumb {
-  box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.2);
+.slider-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
 }
 
-/* --- Live preview card --------------------------------------- */
-.zalgo-preview-card {
-  background: var(--bg-white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius);
-  padding: 16px 20px;
-  margin-top: 20px;
-  box-shadow: var(--shadow-soft);
+/* ── Shape Visual Selector ──────────────────────────── */
+.shape-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.zalgo-preview-header {
+.shape-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  transition: all 0.15s ease;
+  min-width: 72px;
+}
+
+.shape-option:hover {
+  border-color: var(--border-active);
+}
+
+.shape-option.active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+.shape-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 22px;
+}
+
+.shape-bars .bar {
+  width: 4px;
+  border-radius: 1px;
+  background: var(--text-dim);
+  transition: background 0.15s;
+}
+
+.shape-option.active .shape-bars .bar {
+  background: var(--accent);
+}
+
+.shape-option span {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0.3px;
+}
+
+.shape-option.active span {
+  color: var(--accent);
+}
+
+/* ── Output Section ─────────────────────────────────── */
+.output-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.output-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
 }
 
-.zalgo-preview-label {
-  font-size: 0.75rem;
+.output-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.output-badge {
+  font-size: 11px;
   font-weight: 600;
-  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 1.2px;
+  color: var(--green);
 }
 
-#zalgoPreviewOutput {
-  font-size: 1.125rem;
-  color: var(--text-primary);
-  line-height: 2;
-  word-break: break-all;
-  min-height: 2.5em;
+.output-chars {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.output-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.15s ease;
+}
+
+.btn-copy {
+  background: var(--accent);
+  color: #0a0a0f;
+}
+
+.btn-copy:hover {
+  background: #b99dff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.btn-copy.copied {
+  background: var(--green);
+}
+
+.btn-copy:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-regen {
+  background: var(--surface2);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+}
+
+.btn-regen:hover {
+  border-color: var(--border-active);
+  color: var(--text);
+}
+
+.output-body {
+  padding: 28px 22px;
+  min-height: 100px;
+  font-size: 22px;
+  line-height: 2.2;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-family: 'JetBrains Mono', serif;
   white-space: pre-wrap;
 }
 
-/* --- Zalgo preview text in result cards --------------------- */
-.zalgo-preview-text {
-  word-break: break-all;
-  line-height: 2.2;
+.output-placeholder {
+  color: #333348;
+  font-size: 15px;
+  font-style: italic;
 }
 
-/* --- Platform preset row ------------------------------------ */
-.zalgo-preset-row {
+/* ── Decode Section ─────────────────────────────────── */
+.decode-section {
+  margin-top: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.decode-row {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  margin-top: 16px;
+  gap: 12px;
+  align-items: flex-start;
 }
 
-.zalgo-preset-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-right: 2px;
-  white-space: nowrap;
+@media (max-width: 600px) {
+  .decode-row { flex-direction: column; }
+  .decode-arrow { transform: rotate(90deg); }
 }
 
-.zalgo-preset-pill {
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 4px 11px;
-  border-radius: 50px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
+.decode-input {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--text);
+  resize: vertical;
+  min-height: 56px;
+  outline: none;
 }
 
-.zalgo-preset-pill:hover,
-.zalgo-preset-pill.active {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  background: rgba(139, 92, 246, 0.06);
+.decode-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
-/* --- Output char count in preview header ------------------- */
-.zalgo-output-char-count {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  background: var(--bg-section, #f5f5f7);
-  border-radius: 20px;
-  padding: 2px 8px;
-  margin: 0 auto 0 8px;
-}
+.decode-input::placeholder { color: #444460; }
 
-/* --- Card name row with char badge ------------------------- */
-.zalgo-card-name-row {
+.decode-arrow {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 2px;
-}
-
-.zalgo-char-badge {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  background: var(--bg-section, #f5f5f7);
-  border-radius: 20px;
-  padding: 1px 7px;
-  white-space: nowrap;
+  justify-content: center;
+  padding-top: 14px;
+  color: var(--text-dim);
+  font-size: 20px;
   flex-shrink: 0;
 }
 
-/* --- Regenerate row ---------------------------------------- */
-.zalgo-regen-row {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 12px;
-}
-
-.zalgo-regen-btn {
-  font-family: inherit;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  padding: 7px 16px;
-  border-radius: var(--radius, 10px);
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.zalgo-regen-btn:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  background: rgba(139, 92, 246, 0.06);
-}
-
-/* --- Decode section ---------------------------------------- */
-.zalgo-decode-section {
-  background: var(--bg-white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius, 12px);
-  padding: 24px;
-  margin: 28px 0;
-  box-shadow: var(--shadow-soft);
-}
-
-.zalgo-decode-heading {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 6px;
-}
-
-.zalgo-decode-desc {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  margin: 0 0 14px;
-  line-height: 1.5;
-}
-
-.zalgo-decode-input {
-  margin-bottom: 14px;
-  min-height: 72px;
-  resize: vertical;
-}
-
-.zalgo-decode-output-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.zalgo-decode-output {
-  font-size: 1rem;
-  color: var(--text-primary);
-  line-height: 1.6;
+.decode-output {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--green);
+  min-height: 56px;
   word-break: break-word;
-  min-height: 1.6em;
-  padding: 10px 14px;
-  background: var(--bg-section, #f5f5f7);
+}
+
+.decode-output .placeholder {
+  color: #444460;
+}
+
+/* ── Tooltip ────────────────────────────────────────── */
+.tooltip-trigger {
+  position: relative;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.tooltip-trigger:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #222230;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 400;
+  padding: 8px 12px;
   border-radius: 8px;
-  white-space: pre-wrap;
-}
-
-/* --- Dark mode support -------------------------------------- */
-body.dark-mode .zalgo-style-pill {
-  background: var(--bg-white);
-  border-color: var(--border-light);
-  color: var(--text-secondary);
-}
-
-body.dark-mode .zalgo-style-pill:hover,
-body.dark-mode .zalgo-style-pill.active {
-  background: rgba(139, 92, 246, 0.12);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-
-body.dark-mode .zalgo-slider {
-  background: var(--border-light);
-}
-
-body.dark-mode .zalgo-preview-card {
-  background: var(--bg-white);
-  border-color: var(--border-light);
-}
-
-body.dark-mode .zalgo-preset-pill {
-  background: var(--bg-white);
-  border-color: var(--border-light);
-  color: var(--text-secondary);
-}
-
-body.dark-mode .zalgo-preset-pill:hover,
-body.dark-mode .zalgo-preset-pill.active {
-  background: rgba(139, 92, 246, 0.12);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-
-body.dark-mode .zalgo-regen-btn {
-  background: var(--bg-white);
-  border-color: var(--border-light);
-  color: var(--text-secondary);
-}
-
-body.dark-mode .zalgo-regen-btn:hover {
-  background: rgba(139, 92, 246, 0.12);
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-}
-
-body.dark-mode .zalgo-decode-section {
-  background: var(--bg-white);
-  border-color: var(--border-light);
-}
-
-body.dark-mode .zalgo-decode-output {
-  background: var(--bg-section, #1a1a2e);
-}
-
-body.dark-mode .zalgo-char-badge,
-body.dark-mode .zalgo-output-char-count {
-  background: var(--bg-section, #1a1a2e);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
+  letter-spacing: 0;
+  text-transform: none;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
