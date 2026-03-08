@@ -138,6 +138,150 @@
   line-height: 2.2;
 }
 
+/* --- Platform preset row ------------------------------------ */
+.zalgo-preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.zalgo-preset-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.zalgo-preset-pill {
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 11px;
+  border-radius: 50px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.zalgo-preset-pill:hover,
+.zalgo-preset-pill.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.06);
+}
+
+/* --- Output char count in preview header ------------------- */
+.zalgo-output-char-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-section, #f5f5f7);
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin: 0 auto 0 8px;
+}
+
+/* --- Card name row with char badge ------------------------- */
+.zalgo-card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.zalgo-char-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-section, #f5f5f7);
+  border-radius: 20px;
+  padding: 1px 7px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Regenerate row ---------------------------------------- */
+.zalgo-regen-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.zalgo-regen-btn {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: var(--radius, 10px);
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.zalgo-regen-btn:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.06);
+}
+
+/* --- Decode section ---------------------------------------- */
+.zalgo-decode-section {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius, 12px);
+  padding: 24px;
+  margin: 28px 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.zalgo-decode-heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.zalgo-decode-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.zalgo-decode-input {
+  margin-bottom: 14px;
+  min-height: 72px;
+  resize: vertical;
+}
+
+.zalgo-decode-output-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.zalgo-decode-output {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  word-break: break-word;
+  min-height: 1.6em;
+  padding: 10px 14px;
+  background: var(--bg-section, #f5f5f7);
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
 /* --- Dark mode support -------------------------------------- */
 body.dark-mode .zalgo-style-pill {
   background: var(--bg-white);
@@ -159,4 +303,43 @@ body.dark-mode .zalgo-slider {
 body.dark-mode .zalgo-preview-card {
   background: var(--bg-white);
   border-color: var(--border-light);
+}
+
+body.dark-mode .zalgo-preset-pill {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .zalgo-preset-pill:hover,
+body.dark-mode .zalgo-preset-pill.active {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+body.dark-mode .zalgo-regen-btn {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .zalgo-regen-btn:hover {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+body.dark-mode .zalgo-decode-section {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+}
+
+body.dark-mode .zalgo-decode-output {
+  background: var(--bg-section, #1a1a2e);
+}
+
+body.dark-mode .zalgo-char-badge,
+body.dark-mode .zalgo-output-char-count {
+  background: var(--bg-section, #1a1a2e);
 }
