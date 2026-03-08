@@ -1,0 +1,162 @@
+/* =============================================================
+   Zalgo Text Page — Page-specific styles
+   /usecase/zalgo-text/zalgo-text.css
+   ============================================================= */
+
+/* --- Style pill row ----------------------------------------- */
+.zalgo-style-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.zalgo-style-pill {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.zalgo-style-pill:hover,
+.zalgo-style-pill.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.06);
+}
+
+/* --- Intensity slider row ------------------------------------ */
+.zalgo-intensity-row {
+  margin-top: 14px;
+}
+
+.zalgo-intensity-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  cursor: default;
+}
+
+.zalgo-intensity-value {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.zalgo-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--border-light);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.zalgo-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+  transition: box-shadow 0.2s;
+}
+
+.zalgo-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+.zalgo-slider:focus::-webkit-slider-thumb,
+.zalgo-slider:hover::-webkit-slider-thumb {
+  box-shadow: 0 0 0 5px rgba(139, 92, 246, 0.2);
+}
+
+/* --- Live preview card --------------------------------------- */
+.zalgo-preview-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-top: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.zalgo-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.zalgo-preview-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#zalgoPreviewOutput {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  line-height: 2;
+  word-break: break-all;
+  min-height: 2.5em;
+  white-space: pre-wrap;
+}
+
+/* --- Zalgo preview text in result cards --------------------- */
+.zalgo-preview-text {
+  word-break: break-all;
+  line-height: 2.2;
+}
+
+/* --- Dark mode support -------------------------------------- */
+body.dark-mode .zalgo-style-pill {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .zalgo-style-pill:hover,
+body.dark-mode .zalgo-style-pill.active {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+body.dark-mode .zalgo-slider {
+  background: var(--border-light);
+}
+
+body.dark-mode .zalgo-preview-card {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+}
