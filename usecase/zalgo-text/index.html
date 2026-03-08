@@ -1,23 +1,17 @@
-<!DOCTYPE html><html lang="en"><head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
-  <!-- End Google Tag Manager -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zalgo Text Generator — Creepy Glitch &amp; Cursed Unicode Text | UltraTextGen</title>
-  <meta name="description" content="Generate creepy glitch Zalgo text using Unicode combining marks. Create cursed, corrupted, and glitch text styles you can copy and paste anywhere.">
+  <meta name="description" content="Generate creepy glitch Zalgo text using Unicode combining marks. Full control over characters, position, shape, frequency, and amplitude. Copy and paste anywhere.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/zalgo-text/">
   <meta property="og:image" content="https://ultratextgen.com/logo.png">
   <meta name="twitter:image" content="https://ultratextgen.com/logo.png">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Zalgo Text Generator — Creepy Glitch &amp; Cursed Unicode Text">
-  <meta property="og:description" content="Generate creepy glitch Zalgo text using Unicode combining marks. Create cursed, corrupted, and glitch text styles you can copy and paste anywhere.">
+  <meta property="og:description" content="Generate creepy glitch Zalgo text using Unicode combining marks. Full control over characters, position, shape, frequency, and amplitude.">
   <meta property="og:url" content="https://ultratextgen.com/usecase/zalgo-text/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="UltraTextGen">
@@ -25,11 +19,9 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zalgo Text Generator — Creepy Glitch &amp; Cursed Unicode Text">
-  <meta name="twitter:description" content="Generate creepy glitch Zalgo text using Unicode combining marks. Create cursed, corrupted, and glitch text styles you can copy and paste anywhere.">
+  <meta name="twitter:description" content="Generate creepy glitch Zalgo text using Unicode combining marks. Full control over characters, position, shape, frequency, and amplitude.">
 
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/usecase/zalgo-text/zalgo-text.css">
+  <link rel="stylesheet" href="zalgo-text.css">
 
 <script type="application/ld+json">
 {
@@ -65,7 +57,7 @@
       "name": "Where can I paste Zalgo text?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Zalgo text works on Discord, Instagram, TikTok, Twitter/X, WhatsApp, YouTube comments, and most platforms that support plain Unicode text. It's popular in horror-themed posts, meme captions, Halloween content, and anywhere a \"corrupted\" aesthetic fits. Paste it just like any other text."
+        "text": "Zalgo text works on Discord, Instagram, TikTok, Twitter/X, WhatsApp, YouTube comments, and most platforms that support plain Unicode text. It's popular in horror-themed posts, meme captions, Halloween content, and anywhere a corrupted aesthetic fits. Paste it just like any other text."
       }
     },
     {
@@ -74,14 +66,6 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Different platforms use different text rendering engines and fonts, which handle stacked Unicode combining marks differently. Some platforms clip or limit how far combining marks extend above and below a line. The same Zalgo text may look extremely chaotic on Discord but more restrained on Instagram or WhatsApp. This is normal — the underlying characters are identical; only the visual rendering differs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I remove Zalgo marks from text?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Use the Decode Zalgo Text section on this page. Paste any zalgo-corrupted text into the decode box and the original clean text appears instantly. The decoder strips all Unicode combining marks (Unicode character category M), leaving only the base characters. This works on zalgo text from any source."
       }
     },
     {
@@ -134,276 +118,69 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Generate creepy glitch Zalgo text using Unicode combining marks. Create cursed, corrupted, and glitch text styles you can copy and paste anywhere.",
+  "description": "Generate creepy glitch Zalgo text using Unicode combining marks. Full control over characters, position, shape, frequency, and amplitude.",
   "browserRequirements": "Requires JavaScript. Works in all modern browsers."
 }
 </script>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-card">
-        <h1 class="hero-headline">Zalgo Text Generator — Create Creepy Glitch Text</h1>
-        <p class="hero-tagline">Type your text below. Unicode combining marks are stacked above, through, and below each character to create a corrupted, cursed glitch effect. Copy and paste anywhere.</p>
-
-        <div class="input-wrapper">
-          <textarea class="main-input" id="mainInput" placeholder="Type your text here…" maxlength="500"></textarea>
-          <span class="char-count"><span id="charCount">0</span>/500</span>
-        </div>
-
-        <!-- Zalgo Control Panel: populated by zalgo-text.js -->
-        <div id="zalgoControlPanel"></div>
-
-        <!-- Live Preview -->
-        <div class="zalgo-preview-card">
-          <div class="zalgo-preview-header">
-            <span class="zalgo-preview-label">Live Preview</span>
-            <button class="copy-btn" id="previewCopyBtn" type="button" data-text="" disabled>Copy</button>
-          </div>
-          <div id="zalgoPreviewOutput">Your zalgo text will appear here…</div>
-        </div>
+    <div class="app">
+      <div class="header">
+        <h1>Zalgo Text Generator — Create Creepy Glitch Text</h1>
+        <p>Type your text below. Choose your ingredients — character type, position, shape, frequency, and amplitude — to craft exactly the corrupted effect you want. Copy and paste anywhere.</p>
       </div>
+
+      <!-- Text Input -->
+      <div class="input-section">
+        <label class="input-label" for="mainInput">Your Text</label>
+        <textarea class="text-input" id="mainInput" placeholder="Type your text here…" maxlength="500" rows="2">Hello World</textarea>
+        <div class="char-counter"><span id="charCount">11</span>/500</div>
+      </div>
+
+      <!-- Control Panel (populated by zalgo-text.js) -->
+      <div id="zalgoControlPanel"></div>
+
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
+      <!-- Decode (populated by zalgo-text.js) -->
+      <div id="zalgoDecodeSection"></div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main class="container">
-    <!-- Results Grid -->
-    <div class="results-grid" id="resultsGrid"></div>
-
-    <!-- Secondary Ad Block -->
-    <div class="ad-block">
-      <span class="ad-block-label">Advertisement</span>
-    </div>
+  <!-- Editorial Content -->
+  <main class="app">
 
     <!-- What is Zalgo Text -->
-    <section class="editorial-section">
-      <h2>What is Zalgo Text?</h2>
-      <div class="editorial-block">
-        <p>Zalgo text is ordinary text layered with dozens of <strong>Unicode combining marks</strong> — special characters that attach visually to a base character rather than occupying their own space. A single combining mark is normal: it's how accented letters like <em>é</em> or <em>ñ</em> are encoded in Unicode. Zalgo text adds <em>many</em> combining marks per character, causing them to stack chaotically above and below the baseline and collide with adjacent lines.</p>
-        <div class="block-example"><strong>Example — "Hello" as Zalgo text (Light style):</strong>
-H̷̦̓ȩ̵͊l̴̞̍l̸͓̊o̷͙̎</div>
-        <p>The result looks glitchy, cursed, or corrupted — like the text itself is falling apart. It's widely used in horror-themed posts, creepypasta, meme captions, Halloween content, and anywhere you want a "corrupted data" aesthetic.</p>
-      </div>
-      <div class="editorial-block">
-        <h3>How this generator works</h3>
-        <p>Choose a <strong>style</strong> to control <em>where</em> the marks appear (top, bottom, through, or everywhere) and an <strong>intensity</strong> slider to control <em>how many</em> marks are stacked. The results grid below shows seven preset variants — from barely-corrupted Light Zalgo to maximum-chaos Full Chaos — applied to your text, each with a one-click Copy button.</p>
-      </div>
+    <section class="editorial-section" style="margin-top:48px">
+      <h2 style="font-size:22px;font-weight:700;margin-bottom:16px">What is Zalgo Text?</h2>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px">Zalgo text is ordinary text layered with dozens of <strong style="color:var(--text)">Unicode combining marks</strong> — special characters that attach visually to a base character rather than occupying their own space. A single combining mark is normal: it's how accented letters like <em>é</em> or <em>ñ</em> are encoded in Unicode. Zalgo text adds <em>many</em> combining marks per character, causing them to stack chaotically above and below the baseline and collide with adjacent lines.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px">The result looks glitchy, cursed, or corrupted — like the text itself is falling apart. It's widely used in horror-themed posts, creepypasta, meme captions, Halloween content, and anywhere you want a "corrupted data" aesthetic.</p>
     </section>
 
-    <!-- How it Works -->
-    <section class="editorial-section">
-      <h2>How Zalgo Text Works</h2>
-      <div class="editorial-block">
-        <h3>The three combining-mark groups</h3>
-        <p>Unicode combining marks are divided into three visual positions relative to their base character:</p>
-        <ul>
-          <li><strong>Top marks</strong> — appear above the character (grave accents, circumflexes, and many more exotic diacritics). These create the tall spires shooting upward in heavy Zalgo text.</li>
-          <li><strong>Middle marks</strong> — overlay the character in the middle (strikethrough variants). These create the "glitch" strikethrough effect.</li>
-          <li><strong>Bottom marks</strong> — appear below the character (cedillas, underlines, and extended below-baseline marks). These create the roots growing downward.</li>
-        </ul>
-      </div>
-      <div class="editorial-block">
-        <h3>Style modes</h3>
-        <p>The style selector controls which groups are used:</p>
-        <ul>
-          <li><strong>Light Zalgo</strong> — a small number of marks from all three groups. Text remains mostly readable with a subtle corrupted look.</li>
-          <li><strong>Top Zalgo</strong> — only top marks. The text grows upward while the baseline stays clean.</li>
-          <li><strong>Bottom Zalgo</strong> — only bottom marks. The text develops roots below while the top stays clean.</li>
-          <li><strong>Glitch Zalgo</strong> — mostly middle (strikethrough) marks with minimal top and bottom. Creates a strikethrough-heavy glitch effect.</li>
-          <li><strong>Full Chaos</strong> — all three groups at full intensity. Maximum visual disruption.</li>
-        </ul>
-      </div>
-      <div class="editorial-block">
-        <h3>Intensity slider</h3>
-        <p>The intensity slider (1–10) controls the <em>quantity</em> of combining marks applied per character. At intensity 1, each character gets 1–2 marks. At intensity 10, each character can receive over a dozen marks per group. The style rules always apply — Top Zalgo at intensity 10 will have many top marks but zero bottom marks.</p>
-      </div>
+    <section class="editorial-section" style="margin-top:32px">
+      <h2 style="font-size:22px;font-weight:700;margin-bottom:16px">How This Generator Works</h2>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Characters</strong> controls which <em>type</em> of combining marks are used — bars (strikethrough-style), letters (superscript letter marks), symbols (enclosing/overlay marks), or noise (accent-style diacritics). "All" uses the full Unicode pool.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Position</strong> controls <em>where</em> marks attach — above, below, through the middle, or a combination. "Up & Down" gives the classic zalgo look with spires and roots but no strikethrough.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Shape</strong> controls how mark density <em>varies across your text</em>. Uniform applies even density everywhere. Slope Up starts clean and builds chaos. Wave oscillates. Pyramid peaks in the middle. Each shape creates a different visual rhythm.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Frequency</strong> is the probability that any given character receives marks at all. At 50%, roughly half your characters stay clean — great for a "corruption spreading" look. At 100%, every character is affected.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Amplitude</strong> is how many marks stack on each affected character. At 1, it's a subtle accent. At 20, it's maximum visual chaos.</p>
     </section>
 
-    <!-- Where to Use -->
-    <section class="editorial-section">
-      <h2>Where to Use Zalgo Text</h2>
-      <div class="editorial-block">
-        <h3>💬 Discord</h3>
-        <p><a href="/discord/">Discord</a> renders Unicode combining marks without stripping them, making it one of the best platforms for Zalgo text. Use it in messages, custom statuses, or bio fields for a striking horror or glitch aesthetic. Full Chaos Zalgo is especially effective in Discord's dark theme.</p>
-      </div>
-      <div class="editorial-block">
-        <h3>📸 Instagram</h3>
-        <p><a href="/instagram/">Instagram</a> supports Zalgo text in bios and captions. Lighter Zalgo styles work best — platforms may clip very tall combining-mark stacks depending on line height. Use Light or Medium Zalgo for bios that stand out without breaking the layout.</p>
-      </div>
-      <div class="editorial-block">
-        <h3>🎵 TikTok</h3>
-        <p><a href="/tiktok/">TikTok</a> bios and comments support Zalgo text. A short Zalgo-corrupted name or phrase in a comment section immediately draws attention. It's particularly popular in horror and true-crime content communities.</p>
-      </div>
-      <div class="editorial-block">
-        <h3>🐦 Twitter / X</h3>
-        <p><a href="/x/">Twitter / X</a> supports Zalgo text in tweets, bios, and replies. Keep in mind that very heavy Zalgo text can disrupt the readability of the surrounding timeline for other users — lighter styles are more courteous in public threads.</p>
-      </div>
-      <div class="editorial-block">
-        <h3>📱 WhatsApp &amp; other messengers</h3>
-        <p><a href="/whatsapp/">WhatsApp</a> and similar messengers pass Zalgo text through without modification. It's a fun way to send a "corrupted" message. The visual effect varies depending on the recipient's device font and rendering engine.</p>
-      </div>
+    <section class="editorial-section" style="margin-top:32px">
+      <h2 style="font-size:22px;font-weight:700;margin-bottom:16px">Where to Use Zalgo Text</h2>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Discord</strong> renders combining marks without stripping them, making it one of the best platforms for zalgo. Full Chaos is especially effective in Discord's dark theme.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Instagram</strong> supports zalgo in bios and captions. Lighter styles work best — very tall stacks may get clipped by line-height constraints.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">Twitter / X</strong> supports zalgo in tweets, bios, and replies. Keep in mind that heavy zalgo can disrupt readability for others in the timeline.</p>
+      <p style="color:var(--text-dim);line-height:1.7;margin-bottom:12px"><strong style="color:var(--text)">TikTok, WhatsApp, YouTube</strong> and most platforms that accept plain Unicode text will display zalgo text. The visual effect varies by platform rendering engine.</p>
     </section>
 
-    <!-- CTA Card -->
-    <div class="cta-card">
-      <h3>Want more text transformation tools?</h3>
-      <p>Try the <a href="/usecase/vertical-text/">Vertical Text Generator</a> to stack your text top-to-bottom, or explore the <a href="/usecase/bio-font/">Bio Font Generator</a> for Unicode font styles designed for bios and profiles.</p>
-      <a href="/usecase/vertical-text/" class="cta-btn">Try Vertical Text Generator →</a>
-    </div>
-
-    <!-- FAQ Section -->
-    <footer class="footer">
-      <div class="footer-inner">
-
-<h2 class="faq-category">About Zalgo Text</h2>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    What is Zalgo text?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Zalgo text is regular text that has been layered with Unicode combining marks — special characters that attach above, below, or through a base character.
-    The result looks glitchy, corrupted, or cursed, with diacritics stacking wildly above and below the letters.
-    It's purely decorative and has no special meaning; it's just a visually chaotic Unicode effect.
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    How does Zalgo text work?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Unicode includes three groups of combining marks: marks that appear above a character (like accent marks), marks that overlay a character in the middle (like strikethrough marks), and marks that appear below.
-    Zalgo text stacks many of these marks on every character.
-    Normally you'd use one or two combining marks per letter; Zalgo text applies dozens, causing them to collide and overflow into adjacent lines.
-  </div>
-</div>
-
-<h2 class="faq-category">Usage &amp; Safety</h2>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Is Zalgo text safe to use?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Yes, Zalgo text is just Unicode — it contains no code, scripts, or malware.
-    It is completely safe to copy and paste.
-    Some platforms may strip or limit combining marks to prevent display issues, so the effect may vary.
-    Very heavy Zalgo text can be visually disruptive to other users, so use it in contexts where that's expected or desired.
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Where can I paste Zalgo text?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Zalgo text works on <a href="/discord/">Discord</a>, <a href="/instagram/">Instagram</a>,
-    <a href="/tiktok/">TikTok</a>, <a href="/x/">Twitter / X</a>,
-    <a href="/whatsapp/">WhatsApp</a>, <a href="/youtube/">YouTube</a> comments, and most platforms that support plain Unicode text.
-    It's popular in horror-themed posts, meme captions, Halloween content, and anywhere a "corrupted" aesthetic fits.
-    Paste it just like any other text.
-  </div>
-</div>
-
-<h2 class="faq-category">Platform Differences</h2>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Why does Zalgo text look different across platforms?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Different platforms use different text rendering engines and fonts, which handle stacked Unicode combining marks differently.
-    Some platforms clip or limit how far combining marks extend above and below a line.
-    The same Zalgo text may look extremely chaotic on <a href="/discord/">Discord</a> but more restrained on <a href="/instagram/">Instagram</a> or <a href="/whatsapp/">WhatsApp</a>.
-    This is normal — the underlying characters are identical; only the visual rendering differs.
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    How much Zalgo text can I use on Instagram or Twitter?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Use the platform preset buttons above the generator for a quick answer.
-    The Twitter / X preset uses Light Zalgo at low intensity — the output stays short enough to fit in a 280-character tweet.
-    The Instagram preset uses a slightly higher intensity that renders cleanly in bios and captions without breaking layout.
-    The output character count shown in the preview tells you the actual length of your zalgo text, which is always longer than the original due to combining marks.
-    For Discord, heavy and chaos styles work well because its renderer displays combining marks without clipping.
-  </div>
-</div>
-
-<h2 class="faq-category">Decode &amp; Share</h2>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    How do I remove Zalgo marks from text?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Use the Decode Zalgo Text section below the results grid.
-    Paste any zalgo-corrupted text into the decode box and the original clean text appears instantly.
-    The decoder strips all Unicode combining marks (Unicode character category M, which includes Mn, Mc, and Me mark types) leaving only the base characters.
-    This works on zalgo text from any source, not just text generated here.
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Can I share a specific Zalgo text configuration as a link?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Yes. The page URL automatically updates as you type, showing your current text, style, and intensity as query parameters.
-    Copy the URL from your browser's address bar to share exactly what you've configured — when someone opens it, the generator loads with your text and settings pre-filled.
-  </div>
-</div>
-
-        <div class="footer-bottom">
-          © 2026 UltraTextGen. Fast text styles that work everywhere.
-        </div>
-      </div>
-    </footer>
   </main>
 
-  <!-- Page configuration: zalgo mode flag -->
-  <script>
-    window.UTG_ZALGO_MODE = true;
-  </script>
+  <script src="zalgo-text.js"></script>
 
-  <script src="/styles.js"></script>
-  <script src="/renderer.js"></script>
-  <script src="/script.js" defer></script>
-  <script src="/usecase/zalgo-text/zalgo-text.js" defer></script>
-
-</body></html>
+</body>
+</html>
