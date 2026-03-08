@@ -536,6 +536,7 @@ const decorations = window.UTG_DECORATIONS || {
      =================== */
   function renderDecorations() {
     if (window.UTG_VERTICAL_MODE) return;
+    if (window.UTG_ZALGO_MODE) return;
     if (!el.decorationGrid) return;
 
     const grid = el.decorationGrid;
@@ -581,6 +582,7 @@ const decorations = window.UTG_DECORATIONS || {
      =================== */
   function renderResults() {
     if (window.UTG_VERTICAL_MODE) return;
+    if (window.UTG_ZALGO_MODE) return;
     if (!el.resultsGrid) return;
 
     const grid = el.resultsGrid;
