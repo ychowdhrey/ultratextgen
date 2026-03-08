@@ -75,6 +75,22 @@
         "@type": "Answer",
         "text": "Different platforms use different text rendering engines and fonts, which handle stacked Unicode combining marks differently. Some platforms clip or limit how far combining marks extend above and below a line. The same Zalgo text may look extremely chaotic on Discord but more restrained on Instagram or WhatsApp. This is normal — the underlying characters are identical; only the visual rendering differs."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I remove Zalgo marks from text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the Decode Zalgo Text section on this page. Paste any zalgo-corrupted text into the decode box and the original clean text appears instantly. The decoder strips all Unicode combining marks (Unicode character category M), leaving only the base characters. This works on zalgo text from any source."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I share a specific Zalgo text configuration as a link?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The page URL automatically updates as you type, including your current text, style, and intensity as URL parameters. Copy the URL from your browser address bar to share your exact configuration. When someone opens it, the generator loads with your text and settings pre-filled."
+      }
     }
   ]
 }
@@ -324,6 +340,52 @@ H̷̦̓ȩ̵͊l̴̞̍l̸͓̊o̷͙̎</div>
     Some platforms clip or limit how far combining marks extend above and below a line.
     The same Zalgo text may look extremely chaotic on <a href="/discord/">Discord</a> but more restrained on <a href="/instagram/">Instagram</a> or <a href="/whatsapp/">WhatsApp</a>.
     This is normal — the underlying characters are identical; only the visual rendering differs.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How much Zalgo text can I use on Instagram or Twitter?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Use the platform preset buttons above the generator for a quick answer.
+    The Twitter / X preset uses Light Zalgo at low intensity — the output stays short enough to fit in a 280-character tweet.
+    The Instagram preset uses a slightly higher intensity that renders cleanly in bios and captions without breaking layout.
+    The output character count shown in the preview tells you the actual length of your zalgo text, which is always longer than the original due to combining marks.
+    For Discord, heavy and chaos styles work well because its renderer displays combining marks without clipping.
+  </div>
+</div>
+
+<h2 class="faq-category">Decode &amp; Share</h2>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I remove Zalgo marks from text?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Use the Decode Zalgo Text section below the results grid.
+    Paste any zalgo-corrupted text into the decode box and the original clean text appears instantly.
+    The decoder strips all Unicode combining marks (Unicode character category M, which includes Mn, Mc, and Me mark types) leaving only the base characters.
+    This works on zalgo text from any source, not just text generated here.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I share a specific Zalgo text configuration as a link?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes. The page URL automatically updates as you type, showing your current text, style, and intensity as query parameters.
+    Copy the URL from your browser's address bar to share exactly what you've configured — when someone opens it, the generator loads with your text and settings pre-filled.
   </div>
 </div>
 
