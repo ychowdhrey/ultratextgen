@@ -355,10 +355,10 @@
 }
 
 .output-body {
-  padding: 28px 22px;
-  min-height: 100px;
+  padding: 48px 22px;
+  min-height: 120px;
   font-size: 22px;
-  line-height: 2.2;
+  line-height: 3.5;
   word-break: break-word;
   overflow-wrap: break-word;
   font-family: 'JetBrains Mono', 'Courier New', serif;

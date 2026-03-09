@@ -204,11 +204,13 @@
         if (useMid)  marks += pickUnique(midPool, markCount);
         if (useDown) marks += pickUnique(downPool, markCount);
       } else {
-        // Multiple positions: split budget proportionally
+        // Multiple positions: split budget proportionally.
+        // Down-marks are visually heavier (cedillas, underlines extend further
+        // than above-accents), so we give down fewer marks to look balanced.
         if (useUp && upPool.length) {
           const count = useMid
             ? Math.max(1, Math.round(markCount * 0.50))
-            : Math.max(1, Math.round(markCount * 0.55));
+            : Math.max(1, Math.round(markCount * 0.60));
           marks += pickUnique(upPool, count);
         }
 
@@ -220,8 +222,8 @@
 
         if (useDown && downPool.length) {
           const count = useMid
-            ? Math.max(1, Math.round(markCount * 0.40))
-            : Math.max(1, Math.round(markCount * 0.45));
+            ? Math.max(1, Math.round(markCount * 0.35))
+            : Math.max(1, Math.round(markCount * 0.40));
           marks += pickUnique(downPool, count);
         }
       }
