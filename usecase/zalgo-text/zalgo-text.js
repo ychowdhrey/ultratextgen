@@ -207,7 +207,7 @@
         // Multiple positions: split budget proportionally
         if (useUp && upPool.length) {
           const count = useMid
-            ? Math.max(1, Math.round(markCount * 0.50))
+            ? Math.max(1, Math.round(markCount * 0.55))
             : Math.max(1, Math.round(markCount * 0.60));
           marks += pickUnique(upPool, count);
         }
@@ -221,7 +221,7 @@
         if (useDown && downPool.length) {
           const count = useMid
             ? Math.max(1, Math.round(markCount * 0.35))
-            : Math.max(1, Math.round(markCount * 0.40));
+            : Math.max(1, Math.round(markCount * 0.35));
           marks += pickUnique(downPool, count);
         }
       }
