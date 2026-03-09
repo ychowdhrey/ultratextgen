@@ -275,7 +275,7 @@
   background: var(--bg-white);
   border: 1px solid var(--border-light);
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .output-header {
@@ -284,6 +284,9 @@
   align-items: center;
   padding: 14px 18px;
   border-bottom: 1px solid var(--border-light);
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  background: var(--bg-white);
 }
 
 .output-header-left {
@@ -355,15 +358,16 @@
 }
 
 .output-body {
-  padding: 48px 22px;
+  padding: 80px 22px;
   min-height: 140px;
   font-size: 22px;
-  line-height: 3.5;
+  line-height: 5;
   word-break: break-word;
   overflow-wrap: break-word;
   font-family: system-ui, -apple-system, sans-serif;
   white-space: pre-wrap;
   color: var(--text-primary);
+  overflow: visible;
 }
 
 .output-placeholder {
