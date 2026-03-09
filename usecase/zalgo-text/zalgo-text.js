@@ -171,8 +171,10 @@
       let marks = '';
 
       if (useUp && upPool.length) {
+        // Below-marks are visually denser, so give up-marks a larger share
+        // to keep the result balanced when both positions are active.
         const count = useMid || useDown
-          ? Math.max(1, Math.ceil(markCount * 0.45))
+          ? Math.max(1, Math.ceil(markCount * 0.55))
           : markCount;
         for (let m = 0; m < count; m++) marks += pick(upPool);
       }
@@ -185,7 +187,7 @@
 
       if (useDown && downPool.length) {
         const count = useUp || useMid
-          ? Math.max(1, Math.ceil(markCount * 0.40))
+          ? Math.max(1, Math.ceil(markCount * 0.35))
           : markCount;
         for (let m = 0; m < count; m++) marks += pick(downPool);
       }
