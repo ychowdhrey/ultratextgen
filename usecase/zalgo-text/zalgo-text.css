@@ -500,3 +500,24 @@ body {
   pointer-events: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+
+/* ── Editorial Sections ─────────────────────────────── */
+.editorial-section {
+  margin-top: 32px;
+}
+
+.editorial-section:first-of-type {
+  margin-top: 48px;
+}
+
+.editorial-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.editorial-section p {
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
