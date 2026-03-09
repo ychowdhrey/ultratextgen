@@ -7,25 +7,29 @@
   'use strict';
 
   // ── Unicode Combining Mark Pools ────────────────────────────────
+  // Only true combining diacritical marks (Mn category) that stack
+  // vertically without adding visible width or box glyphs.
+
+  // ABOVE marks (U+0300 block — accents, dots, rings, hooks that render above)
   const MARKS_UP = [
     '\u0300','\u0301','\u0302','\u0303','\u0304','\u0305','\u0306','\u0307',
     '\u0308','\u0309','\u030A','\u030B','\u030C','\u030D','\u030E','\u030F',
     '\u0310','\u0311','\u0312','\u0313','\u0314','\u0315','\u031A','\u033D',
     '\u033E','\u033F','\u0340','\u0341','\u0342','\u0343','\u0344','\u0346',
     '\u034A','\u034B','\u034C','\u0350','\u0351','\u0352','\u0357','\u0358',
-    '\u035B','\u035D','\u035E','\u0360','\u0361','\u0363','\u0364','\u0365',
-    '\u0366','\u0367','\u0368','\u0369','\u036A','\u036B','\u036C','\u036D',
-    '\u036E','\u036F'
+    '\u035B','\u035D','\u035E','\u0360','\u0361'
   ];
 
+  // MID marks (strikethroughs and overlays — only the 5 that truly overlay)
   const MARKS_MID = [
-    '\u0334','\u0335','\u0336','\u0337','\u0338','\u0488','\u0489',
-    '\u20D0','\u20D1','\u20D2','\u20D3','\u20D4','\u20D5','\u20D6','\u20D7',
-    '\u20D8','\u20D9','\u20DA','\u20DB','\u20DC','\u20DD','\u20DE','\u20DF',
-    '\u20E0','\u20E1','\u20E2','\u20E3','\u20E4','\u20E5','\u20E6','\u20E7',
-    '\u20E8','\u20E9'
+    '\u0334',  // combining tilde overlay
+    '\u0335',  // combining short stroke overlay
+    '\u0336',  // combining long stroke overlay (strikethrough)
+    '\u0337',  // combining short solidus overlay
+    '\u0338'   // combining long solidus overlay
   ];
 
+  // BELOW marks (cedillas, underlines, hooks below)
   const MARKS_DOWN = [
     '\u0316','\u0317','\u0318','\u0319','\u031C','\u031D','\u031E','\u031F',
     '\u0320','\u0321','\u0322','\u0323','\u0324','\u0325','\u0326','\u0327',
@@ -35,27 +39,54 @@
     '\u0355','\u0356','\u0359','\u035A','\u035C','\u035F','\u0362'
   ];
 
-  // ── Character Type Filters ──────────────────────────────────────
-  const CHAR_POOLS = {
-    bars:    new Set(['\u0336','\u0335','\u0334','\u0337','\u0338']),
-    letters: new Set([
-      '\u0363','\u0364','\u0365','\u0366','\u0367','\u0368','\u0369','\u036A',
-      '\u036B','\u036C','\u036D','\u036E','\u036F'
-    ]),
-    symbols: new Set([
-      '\u0488','\u0489','\u20D0','\u20D1','\u20D2','\u20D3','\u20D4','\u20D5',
-      '\u20D6','\u20D7','\u20D8','\u20D9','\u20DA','\u20DB','\u20DC','\u20DD',
-      '\u20DE','\u20DF','\u20E0','\u20E1','\u20E2','\u20E3','\u20E4'
-    ]),
-    noise: new Set([
-      '\u0300','\u0301','\u0302','\u0303','\u0304','\u0305','\u0306','\u0307',
-      '\u0308','\u0309','\u030A','\u030B','\u030C','\u030D','\u030E','\u030F',
-      '\u0310','\u0311','\u0312','\u0313','\u0314','\u0315','\u0316','\u0317',
-      '\u0318','\u0319','\u031C','\u031D','\u031E','\u031F','\u0320','\u0321',
-      '\u0322','\u0323','\u0324','\u0325','\u0326','\u0327','\u0328','\u0329',
-      '\u032A','\u032B','\u032C','\u032D','\u032E','\u032F','\u0330','\u0331',
-      '\u0332','\u0333'
-    ])
+  // ── Character Type Sub-Pools ────────────────────────────────────
+  // These filter WITHIN each position pool to change the visual flavour.
+  // "all" = full pool, others select subsets that produce a distinct look.
+
+  // "bars" — strikethrough/line marks only (clean horizontal lines)
+  const CHAR_TYPE_UP_bars   = ['\u0305','\u030D','\u030E','\u033F','\u0310'];
+  const CHAR_TYPE_MID_bars  = ['\u0334','\u0335','\u0336','\u0337','\u0338'];
+  const CHAR_TYPE_DOWN_bars = ['\u0331','\u0332','\u0333','\u0320'];
+
+  // "letters" — superscript combining letter marks (small letters above)
+  const CHAR_TYPE_UP_letters   = [
+    '\u0363','\u0364','\u0365','\u0366','\u0367','\u0368','\u0369','\u036A',
+    '\u036B','\u036C','\u036D','\u036E','\u036F'
+  ];
+  const CHAR_TYPE_MID_letters  = MARKS_MID; // no letter mid marks exist, use full mid
+  const CHAR_TYPE_DOWN_letters = MARKS_DOWN; // no letter below marks exist, use full below
+
+  // "symbols" — dots, rings, hooks, exotic diacritics
+  const CHAR_TYPE_UP_symbols   = [
+    '\u0307','\u0308','\u030A','\u030B','\u0312','\u0313','\u0314',
+    '\u0344','\u0346','\u034A','\u034B','\u034C'
+  ];
+  const CHAR_TYPE_MID_symbols  = ['\u0334','\u0337','\u0338'];
+  const CHAR_TYPE_DOWN_symbols = [
+    '\u0323','\u0324','\u0325','\u0326','\u0328','\u0329','\u032A',
+    '\u0339','\u033A','\u033B','\u033C'
+  ];
+
+  // "noise" — dense accent/tonal marks (graves, acutes, breves, tildes)
+  const CHAR_TYPE_UP_noise   = [
+    '\u0300','\u0301','\u0302','\u0303','\u0304','\u0306','\u0309',
+    '\u030C','\u030F','\u0311','\u0340','\u0341','\u0342','\u0343',
+    '\u0350','\u0351','\u0352','\u0357','\u0358','\u035B'
+  ];
+  const CHAR_TYPE_MID_noise  = ['\u0335','\u0336'];
+  const CHAR_TYPE_DOWN_noise = [
+    '\u0316','\u0317','\u0318','\u0319','\u031C','\u031D','\u031E','\u031F',
+    '\u0321','\u0322','\u0327','\u032B','\u032C','\u032D','\u032E','\u032F',
+    '\u0330','\u0345','\u0347','\u0348','\u0349','\u034D','\u034E',
+    '\u0353','\u0354','\u0355','\u0356','\u0359','\u035A','\u035C','\u035F'
+  ];
+
+  // Map charType name → {up, mid, down} arrays
+  const CHAR_TYPE_MAP = {
+    bars:    { up: CHAR_TYPE_UP_bars,    mid: CHAR_TYPE_MID_bars,    down: CHAR_TYPE_DOWN_bars },
+    letters: { up: CHAR_TYPE_UP_letters, mid: CHAR_TYPE_MID_letters, down: CHAR_TYPE_DOWN_letters },
+    symbols: { up: CHAR_TYPE_UP_symbols, mid: CHAR_TYPE_MID_symbols, down: CHAR_TYPE_DOWN_symbols },
+    noise:   { up: CHAR_TYPE_UP_noise,   mid: CHAR_TYPE_MID_noise,   down: CHAR_TYPE_DOWN_noise }
   };
 
   // ── Shape Functions ─────────────────────────────────────────────
@@ -102,20 +133,17 @@
     const frequency = opts.frequency != null ? opts.frequency : 0.7;
     const amplitude = opts.amplitude != null ? opts.amplitude : 5;
 
-    // Build filtered pools
-    let upPool   = MARKS_UP.slice();
-    let midPool  = MARKS_MID.slice();
-    let downPool = MARKS_DOWN.slice();
-
-    if (charType !== 'all' && CHAR_POOLS[charType]) {
-      const allowed = CHAR_POOLS[charType];
-      const filterPool = (pool) => {
-        const filtered = pool.filter(m => allowed.has(m));
-        return filtered.length > 0 ? filtered : pool; // fallback to full
-      };
-      upPool   = filterPool(upPool);
-      midPool  = filterPool(midPool);
-      downPool = filterPool(downPool);
+    // Resolve mark pools based on character type
+    let upPool, midPool, downPool;
+    if (charType !== 'all' && CHAR_TYPE_MAP[charType]) {
+      const ct = CHAR_TYPE_MAP[charType];
+      upPool   = ct.up;
+      midPool  = ct.mid;
+      downPool = ct.down;
+    } else {
+      upPool   = MARKS_UP;
+      midPool  = MARKS_MID;
+      downPool = MARKS_DOWN;
     }
 
     // Position flags
@@ -127,23 +155,41 @@
     const chars = [...text];
     const len = chars.length;
 
+    const pick = (pool) => pool[Math.floor(Math.random() * pool.length)];
+
     return chars.map((ch, i) => {
-      if (ch === ' ') return ch;
+      if (ch === ' ' || ch === '\n' || ch === '\t') return ch;
+
+      // Frequency: probability this char gets marks at all
       if (Math.random() > frequency) return ch;
 
       const shapeMultiplier = shapeFn(i, len);
       const markCount = Math.max(1, Math.round(amplitude * shapeMultiplier));
 
+      // Distribute marks to each enabled position.
+      // Each position gets its share of the total markCount.
       let marks = '';
-      for (let m = 0; m < markCount; m++) {
-        const pools = [];
-        if (useUp   && upPool.length)   pools.push(upPool);
-        if (useMid  && midPool.length)  pools.push(midPool);
-        if (useDown && downPool.length) pools.push(downPool);
-        if (pools.length === 0) continue;
-        const pool = pools[Math.floor(Math.random() * pools.length)];
-        marks += pool[Math.floor(Math.random() * pool.length)];
+
+      if (useUp && upPool.length) {
+        const count = useMid || useDown
+          ? Math.max(1, Math.ceil(markCount * 0.45))
+          : markCount;
+        for (let m = 0; m < count; m++) marks += pick(upPool);
       }
+
+      if (useMid && midPool.length) {
+        // Mid marks are visually dense — use fewer (strikethroughs stack flat)
+        const count = Math.max(1, Math.ceil(markCount * 0.15));
+        for (let m = 0; m < count; m++) marks += pick(midPool);
+      }
+
+      if (useDown && downPool.length) {
+        const count = useUp || useMid
+          ? Math.max(1, Math.ceil(markCount * 0.40))
+          : markCount;
+        for (let m = 0; m < count; m++) marks += pick(downPool);
+      }
+
       return ch + marks;
     }).join('');
   }
