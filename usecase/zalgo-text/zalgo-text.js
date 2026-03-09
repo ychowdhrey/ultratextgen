@@ -125,6 +125,31 @@
     random:       [8,18,5,15,10,20,6]
   };
 
+  // ── Helpers ────────────────────────────────────────────────────
+  // Fisher-Yates shuffle (returns a new array)
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  // Pick `count` unique marks from a pool. If count > pool size, cycle
+  // through the pool again (re-shuffled) so duplicates only appear after
+  // every unique mark has been used once.
+  function pickUnique(pool, count) {
+    if (!pool.length) return '';
+    let result = '';
+    let deck = [];
+    for (let m = 0; m < count; m++) {
+      if (deck.length === 0) deck = shuffle(pool);
+      result += deck.pop();
+    }
+    return result;
+  }
+
   // ── Core Generator ──────────────────────────────────────────────
   function generateZalgo(text, opts) {
     const charType  = opts.charType  || 'all';
@@ -151,11 +176,12 @@
     const useMid  = position === 'all' || position === 'mid';
     const useDown = position === 'all' || position === 'down' || position === 'up-down';
 
+    // Count active positions for even budget distribution
+    const activePositions = (useUp ? 1 : 0) + (useMid ? 1 : 0) + (useDown ? 1 : 0);
+
     const shapeFn = SHAPES[shape] || SHAPES.uniform;
     const chars = [...text];
     const len = chars.length;
-
-    const pick = (pool) => pool[Math.floor(Math.random() * pool.length)];
 
     return chars.map((ch, i) => {
       if (ch === ' ' || ch === '\n' || ch === '\t') return ch;
@@ -164,30 +190,40 @@
       if (Math.random() > frequency) return ch;
 
       const shapeMultiplier = shapeFn(i, len);
-      const markCount = Math.max(1, Math.round(amplitude * shapeMultiplier));
+      // Allow 0 marks when shape multiplier is very low (preserves shape contrast)
+      const markCount = Math.round(amplitude * shapeMultiplier);
+      if (markCount <= 0) return ch;
 
-      // Distribute marks to each enabled position.
-      // Each position gets its share of the total markCount.
+      // Distribute full amplitude budget to active positions.
+      // Up/down get the lion's share; mid gets fewer (strikethroughs stack flat).
       let marks = '';
 
-      if (useUp && upPool.length) {
-        const count = useMid || useDown
-          ? Math.max(1, Math.ceil(markCount * 0.45))
-          : markCount;
-        for (let m = 0; m < count; m++) marks += pick(upPool);
-      }
+      if (activePositions === 1) {
+        // Single position gets the entire budget
+        if (useUp)   marks += pickUnique(upPool, markCount);
+        if (useMid)  marks += pickUnique(midPool, markCount);
+        if (useDown) marks += pickUnique(downPool, markCount);
+      } else {
+        // Multiple positions: split budget proportionally
+        if (useUp && upPool.length) {
+          const count = useMid
+            ? Math.max(1, Math.round(markCount * 0.50))
+            : Math.max(1, Math.round(markCount * 0.55));
+          marks += pickUnique(upPool, count);
+        }
 
-      if (useMid && midPool.length) {
-        // Mid marks are visually dense — use fewer (strikethroughs stack flat)
-        const count = Math.max(1, Math.ceil(markCount * 0.15));
-        for (let m = 0; m < count; m++) marks += pick(midPool);
-      }
+        if (useMid && midPool.length) {
+          // Mid marks are visually dense — cap at 2 to avoid illegibility
+          const count = Math.min(2, Math.max(1, Math.round(markCount * 0.10)));
+          marks += pickUnique(midPool, count);
+        }
 
-      if (useDown && downPool.length) {
-        const count = useUp || useMid
-          ? Math.max(1, Math.ceil(markCount * 0.40))
-          : markCount;
-        for (let m = 0; m < count; m++) marks += pick(downPool);
+        if (useDown && downPool.length) {
+          const count = useMid
+            ? Math.max(1, Math.round(markCount * 0.40))
+            : Math.max(1, Math.round(markCount * 0.45));
+          marks += pickUnique(downPool, count);
+        }
       }
 
       return ch + marks;
