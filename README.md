@@ -1,3 +1,6 @@
+🌍 Languages  
+[English](README.md) | [Français](README.fr.md) | [Español](README.es.md) | [Português](README.pt.md) | [Deutsch](README.de.md) | [Русский](README.ru.md) | [العربية](README.ar.md) | [Polski](README.pl.md) | [Türkçe](README.tr.md)
+
 # UltraTextGen
 
 UltraTextGen is a fast and clean Unicode text generator built for people who don't want to waste time.
