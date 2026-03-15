@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "Gerador de Texto Estilizado — Copie e Cole Fontes Unicode Decorativas",
+    "description": "Transforme texto simples em fontes Unicode estilizadas para copiar e colar. Escolha estilos em negrito, cursivo, gótico e decorativos para bios, nomes de usuário, comentários e publicações."
+  },
+  "hero": {
+    "title": "Gerador de Fontes Estilizadas",
+    "subtitle": "Transforme texto simples em fontes Unicode em negrito, cursivas, góticas e decorativas para copiar e colar instantaneamente."
+  },
+  "decorations": {
+    "label": "Adicionar decoração aos resultados",
+    "tabs": {
+      "symbols": "Símbolos",
+      "frames": "Molduras",
+      "dividers": "Divisores",
+      "arrows": "Setas",
+      "minimal": "Minimalista",
+      "emojis": "Emojis",
+      "flags": "Bandeiras"
+    }
+  },
+  "ui": {
+    "placeholder": "Digite seu texto aqui...",
+    "advertisement": "Publicidade"
+  },
+  "useCases": {
+    "title": "Casos de uso populares",
+    "viewAll": "Ver todos os casos de uso →",
+    "items": [
+      {
+        "title": "Título do LinkedIn",
+        "description": "Faça seu título do LinkedIn se destacar com texto Unicode em negrito e itálico que chama atenção nos resultados de busca."
+      },
+      {
+        "title": "Fontes para comentários",
+        "description": "Publique comentários chamativos no Instagram, YouTube e TikTok com fontes Unicode estilizadas que se destacam."
+      },
+      {
+        "title": "Texto em Emoji",
+        "description": "Converta seu texto em sequências de letras emoji — perfeitas para bios criativas, stories e chats em grupo."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Guias populares",
+    "viewAll": "Ver todos os guias →",
+    "items": [
+      {
+        "title": "A retórica das fontes",
+        "description": "Aprenda como as escolhas tipográficas influenciam percepção, confiança e emoção — e como usar isso a seu favor."
+      },
+      {
+        "title": "Personal Branding Through Typography",
+        "description": "Construa uma marca pessoal consistente em todas as plataformas sociais usando escolhas estratégicas de fontes Unicode."
+      },
+      {
+        "title": "Stop the Scroll With Font Variation",
+        "description": "Descubra como misturar estilos de fonte quebra o padrão de rolagem e gera mais engajamento nas redes sociais."
+      }
+    ]
+  },
+  "faq": {
+    "categories": [
+      {
+        "title": "Primeiros passos com o UltraTextGen",
+        "items": [
+          {
+            "question": "O que é o UltraTextGen e como funciona?",
+            "answer": "UltraTextGen é um gerador de texto Unicode gratuito e online que converte instantaneamente seu texto normal em fontes e decorações elegantes e criativas.\n    Ao contrário de ferramentas de formatação que dependem de marcação específica de cada aplicativo, o UltraTextGen substitui cada letra por um caractere Unicode real com aparência de negrito, itálico, cursivo, gótico ou decorado.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    Digite «hello» → obtenha 𝗵𝗲𝗹𝗹𝗼 (Ultra Bold), 𝘩𝘦𝘭𝘭𝘰 (Ultra Italic), 𝒽ℯ𝓁𝓁ℴ (Ultra Script) ou ⓗⓔⓛⓛⓞ (Ultra Bubble).\n    <br><br>\n    Como são caracteres reais — não códigos de formatação — funcionam em qualquer lugar onde texto simples seja aceito: bios de redes sociais, nomes de usuário, legendas, mensagens, e-mails e muito mais.\n    Sem aplicativos para instalar, sem cadastro e sem limites."
+          },
+          {
+            "question": "Como gero e copio texto estilizado?",
+            "answer": "Gerar texto estilizado leva apenas alguns segundos.\n    <br><br>\n    <strong>Passo a passo</strong><br>\n    1. Digite ou cole seu texto na caixa de entrada na página inicial.<br>\n    2. As versões estilizadas aparecem instantaneamente abaixo da caixa.<br>\n    3. Navegue pelos estilos ou escolha uma categoria como Bold, Cursive ou Gothic.<br>\n    4. Opcionalmente, clique em «Adicionar decoração» para adicionar molduras, símbolos ou divisores.<br>\n    5. Clique em «Copiar» ao lado do estilo desejado e cole onde quiser.\n    <br><br>\n    É só isso — sem necessidade de conta, e a ferramenta funciona tanto no computador quanto no celular."
+          },
+          {
+            "question": "O UltraTextGen é completamente gratuito?",
+            "answer": "Sim — 100% gratuito, sem limites diários, sem cadastro necessário, sem marcas d'água e sem taxas ocultas.\n    Você pode gerar e copiar o quanto de texto estilizado quiser, a qualquer hora."
+          }
+        ]
+      },
+      {
+        "title": "Texto Unicode vs. formatação de texto enriquecido",
+        "items": [
+          {
+            "question": "Como o texto Unicode é diferente do negrito e itálico no Word, Instagram ou Discord?",
+            "answer": "Negrito e itálico comuns usam códigos de formatação — geralmente chamados de marcação ou texto enriquecido — que só funcionam dentro do aplicativo que os suporta.\n    Por exemplo, o Discord usa **texto** para negrito, e as legendas do Instagram não têm nenhuma opção de formatação.\n    <br><br>\n    O UltraTextGen funciona de forma diferente. Ele substitui cada letra por um caractere Unicode único que já tem a aparência estilizada.\n    O resultado é texto simples que aparece em negrito, itálico, cursivo ou decorado sem nenhum motor de formatação por trás.\n    <br><br>\n    <strong>Por que isso importa</strong><br>\n    O negrito de texto enriquecido desaparece se você colá-lo em uma legenda do TikTok, em um assunto de e-mail ou em um campo de nome de usuário — esses lugares removem a formatação.\n    O texto Unicode mantém seu estilo porque os próprios caracteres são estilizados. Não há nada para remover.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    Um editor de texto enriquecido deixa a palavra «Sale» em negrito envolvendo-a em códigos invisíveis. Ao colar na bio do TikTok, vira um simples «Sale».\n    Com o UltraTextGen, «Sale» vira 𝗦𝗮𝗹𝗲 — e permanece assim na sua bio, no seu nome de usuário, no assunto do e-mail e em qualquer outro lugar."
+          },
+          {
+            "question": "O que um gerador de texto Unicode pode fazer que um editor de texto enriquecido não pode?",
+            "answer": "Editores de texto enriquecido como Google Docs ou Microsoft Word oferecem negrito, itálico e sublinhado — mas esses estilos somem no momento em que você os cola em uma bio de rede social, um campo de nome de usuário ou um e-mail de texto simples.\n    Um gerador de texto Unicode desbloqueia estilos e efeitos que nenhum editor de texto enriquecido consegue produzir nesses contextos.\n    <br><br>\n    <strong>O que o UltraTextGen pode fazer e o texto enriquecido não</strong><br>\n    — Texto em negrito e itálico dentro de bios do Instagram, legendas do TikTok e descrições do YouTube, onde não existe barra de ferramentas de formatação.<br>\n    — Estilos Gothic, Bubble e Cursive que editores de texto enriquecido não oferecem de forma alguma.<br>\n    — Texto de cabeça para baixo e espelhado — impossível em qualquer processador de texto.<br>\n    — Texto Zalgo (glitch) com diacríticos empilhados para uma aparência assustadora e corrompida.<br>\n    — Molduras decorativas, bordas e envoltórios ao redor do seu texto usando símbolos Unicode.<br>\n    — Nomes de usuário e nomes de exibição estilizados no Discord, Roblox, Steam e outras plataformas.<br>\n    — Texto tachado e sublinhado em lugares que não suportam essas opções de formatação nativamente.\n    <br><br>\n    Em resumo, o UltraTextGen oferece efeitos visuais de texto que viajam com os caracteres, funcionando em qualquer lugar onde texto simples seja aceito."
+          },
+          {
+            "question": "Posso usar texto Unicode em negrito em assuntos de e-mail?",
+            "answer": "Sim — e este é um exemplo perfeito de algo que um editor de texto enriquecido não consegue fazer.\n    Os assuntos de e-mail são texto simples, portanto a formatação em negrito comum é removida antes que o destinatário a veja.\n    <br><br>\n    Com o UltraTextGen, você pode colar caracteres Unicode em negrito diretamente no assunto e o destinatário os verá em negrito em sua caixa de entrada.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    Assunto normal: «Flash Sale — 50% Off Today»<br>\n    Assunto Unicode: «𝗙𝗹𝗮𝘀𝗵 𝗦𝗮𝗹𝗲 — 𝟱𝟬% 𝗢𝗳𝗳 𝗧𝗼𝗱𝗮𝘆»\n    <br><br>\n    A versão em negrito se destaca em uma caixa de entrada lotada sem precisar de ferramentas especiais de e-mail. Os principais clientes de e-mail — Gmail, Outlook, Apple Mail — renderizam caracteres Unicode corretamente."
+          }
+        ]
+      },
+      {
+        "title": "Estilos, fontes e decorações",
+        "items": [
+          {
+            "question": "Quais estilos de fonte o UltraTextGen oferece?",
+            "answer": "O UltraTextGen possui uma das maiores coleções de estilos de texto Unicode de alta qualidade, todos prefixados com «Ultra» para aparência e cobertura superiores.\n    <br><br>\n    <strong>Estilos principais</strong><br>\n    Ultra Bold e Ultra Bold Serif, Ultra Italic (múltiplas variantes), Ultra Script e Ultra Script Bold, Ultra Gothic, Ultra Bubble (Filled, Light, Tiles, Curly, Angle, Spaced e mais), Ultra Strike e Ultra Underline.\n    <br><br>\n    <strong>Estilos especiais</strong><br>\n    Upside Down e Flipped, Small Caps, Zalgo (Glitch), Word Wrappers e Frames, Backwards e Mirror, Double Struck, Fullwidth, Squared, Parenthesized e muito mais.\n    <br><br>\n    Novos estilos são adicionados regularmente, então favorite o site ou volte com frequência."
+          },
+          {
+            "question": "Posso combinar vários estilos e adicionar decorações ao meu texto?",
+            "answer": "Sim — misturar estilos e decorações com um clique são duas das maiores vantagens do UltraTextGen sobre outros geradores.\n    <br><br>\n    Você pode combinar estilos, como Bubble + Zalgo, Gothic + Upside Down ou Small Caps + Underline, e depois envolver o resultado com elementos decorativos.\n    <br><br>\n    <strong>Decorações disponíveis</strong><br>\n    Molduras e bordas (por exemplo ★彡[ text ]彡★ ou ╭─▸ text ╰─▸), setas, símbolos, divisores minimalistas, emojis e bandeiras.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    Comece com «hello» → aplique Ultra Gothic → adicione uma moldura de estrelas → resultado: ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★\n    <br><br>\n    Nenhum outro gerador torna a mistura e a decoração tão simples."
+          },
+          {
+            "question": "O que é o texto Zalgo ou glitch e como usá-lo?",
+            "answer": "O texto Zalgo é o estilo assustador, glitchado e «amaldiçoado» que adiciona diacríticos empilhados acima e abaixo de cada caractere, fazendo o texto parecer corrompido ou mal-assombrado.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    «hello» → h̷e̷l̷l̷o̷\n    <br><br>\n    É popular para memes de terror, bios de redes sociais com estética dark, nomes de usuário assustadores e para pregar peças em amigos em chats em grupo.\n    Basta digitar seu texto, selecionar o estilo Zalgo, copiar e colar — o UltraTextGen cuida do empilhamento automaticamente."
+          }
+        ]
+      },
+      {
+        "title": "Compatibilidade com plataformas",
+        "items": [
+          {
+            "question": "Onde posso usar o texto gerado pelo UltraTextGen?",
+            "answer": "Em qualquer lugar onde texto simples seja aceito. Como os caracteres estilizados são Unicode real — não códigos de formatação — eles acompanham seu texto para onde quer que você cole.\n    <br><br>\n    <strong>Redes sociais</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest e Snapchat.\n    <br><br>\n    <strong>Aplicativos de mensagens</strong><br>\n    WhatsApp, Telegram, Discord, Signal e iMessage.\n    <br><br>\n    <strong>Outros</strong><br>\n    Assuntos e assinaturas de e-mail, perfis de jogos (Roblox, Minecraft, Steam), posts em fóruns, currículos, apresentações e muito mais.\n    <br><br>\n    Também temos páginas de gerador dedicadas e otimizadas para cada plataforma principal, caso você queira estilos testados especificamente para aquele aplicativo."
+          },
+          {
+            "question": "Posso usar texto Unicode em nomes de usuário e nomes de exibição?",
+            "answer": "Com certeza. Caracteres Unicode são aceitos na maioria dos campos de nome de usuário e nome de exibição — incluindo Instagram, TikTok, Discord, Roblox, Steam e muitas outras plataformas.\n    <br><br>\n    <strong>Exemplo</strong><br>\n    Nome de usuário normal: «DarkWolf»<br>\n    Nome de usuário Unicode: «𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣» (Gothic) ou «ⒹⓐⓡⓚⓌⓞⓛⓕ» (Bubble)\n    <br><br>\n    Isso é algo que um editor de texto enriquecido nunca consegue fazer — campos de nome de usuário aceitam apenas texto simples, e caracteres Unicode estilizados contam como texto simples.\n    <br><br>\n    <strong>Dica</strong><br>\n    Se uma plataforma rejeitar certos caracteres no campo de nome de usuário, tente um estilo diferente. Alguns estilos têm compatibilidade mais ampla do que outros."
+          },
+          {
+            "question": "Por que alguns textos estilizados aparecem como caixas ou pontos de interrogação em certas plataformas?",
+            "answer": "Isso acontece quando a fonte instalada no dispositivo do visualizador não inclui glifos para aqueles caracteres Unicode específicos.\n    Não é um problema com o texto em si — na maioria dos dispositivos e navegadores modernos, a grande maioria dos estilos é exibida corretamente.\n    <br><br>\n    <strong>O que fazer</strong><br>\n    Se você notar caixas ou caracteres ausentes, tente um estilo diferente. Os estilos principais como Ultra Bold, Ultra Italic e Ultra Bubble têm o maior suporte em dispositivos.\n    Você também pode usar nossas páginas específicas por plataforma (como Discord ou Instagram) para encontrar estilos testados para aquele aplicativo."
+          }
+        ]
+      },
+      {
+        "title": "Suporte a idiomas e sistemas de escrita",
+        "items": [
+          {
+            "question": "Quais idiomas o UltraTextGen suporta para texto em negrito e estilizado?",
+            "answer": "O UltraTextGen suporta qualquer idioma escrito com o alfabeto latino.\n    Se um idioma usa de A a Z, incluindo caracteres acentuados como á, é, ñ, ü e ç, o texto pode ser convertido em estilos Unicode como negrito, itálico, cursivo e outros.\n    Isso funciona porque o Unicode fornece variantes de caracteres estilizados para letras do alfabeto latino e dígitos.\n    <br><br>\n    <strong>Idiomas com alfabeto latino suportados</strong><br>\n    Inglês, espanhol, francês, português, alemão, italiano, holandês, africâner, indonésio, malaio, filipino, tagalo, vietnamita e turco — entre muitos outros.\n    <br><br>\n    Esses idiomas podem ser estilizados de forma confiável em plataformas de redes sociais, aplicativos de mensagens e e-mails."
+          },
+          {
+            "question": "Quais idiomas não são suportados para texto estilizado?",
+            "answer": "Idiomas que usam sistemas de escrita não latinos não podem ser convertidos em estilos de fonte Unicode como negrito, itálico ou outros.\n    Esses sistemas de escrita não têm variantes de caracteres Unicode estilizados, portanto o texto permanecerá inalterado após a conversão.\n    <br><br>\n    <strong>Não suportados para texto estilizado</strong><br>\n    Árabe, urdu, persa, hebraico, hindi, bengali, tâmil, tailandês, chinês, japonês, coreano e cingalês.\n    <br><br>\n    Esta é uma limitação do próprio padrão Unicode, e não uma limitação do UltraTextGen.\n    Se você escreve em um desses idiomas, as palavras em alfabeto latino (nomes de marcas, frases em inglês, etc.) dentro do texto ainda serão convertidas."
+          },
+          {
+            "question": "Existem caracteres que não são convertidos?",
+            "answer": "A maioria das letras em inglês (A–Z, a–z), números (0–9) e pontuação básica são convertidos perfeitamente em todos os estilos.\n    Alguns símbolos muito raros ou caracteres especiais podem ter menos opções de estilo porque o Unicode não inclui variantes estilizadas de todos os caracteres.\n    <br><br>\n    Se um caractere não puder ser convertido, ele simplesmente permanece como texto normal — nunca gera erros ou resultados inutilizáveis.\n    Seu resultado será sempre utilizável."
+          }
+        ]
+      },
+      {
+        "title": "Privacidade e segurança",
+        "items": [
+          {
+            "question": "O texto que eu digito é armazenado ou rastreado?",
+            "answer": "Não. O UltraTextGen não armazena seu texto e não adiciona nenhum caractere oculto ou de rastreamento ao resultado.\n    A conversão acontece no seu navegador, e o que você copia é Unicode puro — nada mais."
+          },
+          {
+            "question": "O texto gerado é seguro para copiar e colar?",
+            "answer": "Sim — completamente seguro. O resultado é texto Unicode padrão sem scripts incorporados, sem formatação oculta e sem códigos de rastreamento.\n    Você pode colá-lo em qualquer aplicativo ou site sem nenhuma preocupação de segurança."
+          }
+        ]
+      },
+      {
+        "title": "Compatibilidade com celulares e dispositivos",
+        "items": [
+          {
+            "question": "O UltraTextGen funciona em celulares e tablets?",
+            "answer": "Sim — o site é totalmente responsivo e funciona muito bem em celulares, tablets e computadores.\n    Não há nenhum aplicativo para baixar. Basta abrir o UltraTextGen no navegador do seu celular, digitar seu texto, escolher um estilo e copiar.\n    Funciona no iPhone, Android, iPad e em qualquer dispositivo com um navegador moderno."
+          }
+        ]
+      },
+      {
+        "title": "Por que escolher o UltraTextGen",
+        "items": [
+          {
+            "question": "Por que devo escolher o UltraTextGen em vez de outros geradores de texto?",
+            "answer": "O UltraTextGen foi desenvolvido para ser o gerador de texto Unicode mais completo e fácil de usar disponível.\n    <br><br>\n    <strong>O que o diferencia</strong><br>\n    — Uma das maiores coleções de fontes premium com estilo «Ultra».<br>\n    — Mistura de estilos de verdade: combine vários estilos com um clique, algo que a maioria dos geradores não suporta.<br>\n    — Decorações com um clique: adicione molduras, bordas, símbolos e divisores sem precisar copiar e colar manualmente.<br>\n    — Páginas dedicadas para TikTok, Discord, Instagram e mais — com estilos testados para cada plataforma.<br>\n    — Interface rápida e limpa sem pop-ups que atrasam você.<br>\n    — Constantemente atualizado com novos estilos e decorações."
+          },
+          {
+            "question": "O UltraTextGen adiciona novos estilos?",
+            "answer": "Sim — novos estilos Ultra e decorações são adicionados regularmente.\n    Favorite o site para se manter atualizado sobre as últimas adições."
+          },
+          {
+            "question": "Como encontro o estilo de fonte ou a ferramenta certa para as minhas necessidades?",
+            "answer": "O UltraTextGen organiza estilos e ferramentas de três maneiras:\n    <br><br>\n    <strong>Por estilo de fonte</strong><br>\n    Navegue por todas as categorias de fontes — bold, cursive, gothic, bubble, strikethrough, underline, upside-down e mais. Cada página de categoria tem seu próprio gerador focado naquele estilo.\n    <br><br>\n    <strong>Por plataforma</strong><br>\n    Use um gerador específico para cada plataforma (como Instagram, TikTok ou LinkedIn) para estilos e dicas otimizados para as regras daquela plataforma.\n    <br><br>\n    <strong>Por tarefa</strong><br>\n    Visite a página de casos de uso para ferramentas específicas — fontes para comentários, combinações de emojis, emojis de antes e depois, e muito mais."
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 UltraTextGen. Estilos de texto rápidos que funcionam em qualquer lugar."
+  }
+}
