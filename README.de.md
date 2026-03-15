@@ -102,7 +102,7 @@ Schriftvarianten mit starker Betonung und Autorität.
 Ausdrucksstarke, fließende Schriftvarianten mit persönlichem Ton.
 - https://ultratextgen.com/category/cursive-fonts/
 
-### Kursiv-Schriften
+### Schrägschriften
 Subtile Betonung und Kontrast durch geneigte Schriftformen.
 - https://ultratextgen.com/category/italic-fonts/
 
@@ -164,7 +164,7 @@ Ein speziell entwickeltes Tool zum Erstellen herausragender LinkedIn-Überschrif
 Ein vollständiger Text-zu-Emoji-Konverter, der normalen Text mithilfe eines strukturierten Emoji-Sprachsystems in eine Emoji-Sequenz übersetzt. Unterstützt mehrere Sprachen, enthält eine Emoji-Aufschlüsselungsansicht und erzeugt sofort kopierbaren Output.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
-## Guides
+## Leitfäden
 
 Schriften sind keine Dekoration. Sie sind Signale.
 Diese Ressourcen untersuchen, wie Unicode-Typografie Ton, Autorität, Ironie und Betonung auf Online-Plattformen kodiert.
