@@ -50,11 +50,11 @@
         "description": "Lerne, wie Schriftentscheidungen Wahrnehmung, Vertrauen und Emotionen beeinflussen — und wie du das zu deinem Vorteil nutzt."
       },
       {
-        "title": "Personal Branding Through Typography",
+        "title": "Personal Branding durch Typografie",
         "description": "Baue eine konsistente persönliche Marke über alle sozialen Plattformen hinweg mit strategischen Unicode-Schriftentscheidungen auf."
       },
       {
-        "title": "Stop the Scroll With Font Variation",
+        "title": "Scrollstopper durch Schriftvariationen",
         "description": "Entdecke, wie das Mischen von Schriftstilen das Scroll-Muster durchbricht und das Engagement in sozialen Feeds steigert."
       }
     ]
@@ -66,7 +66,7 @@
         "items": [
           {
             "question": "Was ist UltraTextGen und wie funktioniert es?",
-            "answer": "UltraTextGen ist ein kostenloser Online-Unicode-Textgenerator, der deinen normalen Text sofort in stilvolle, ausgefallene Schriften und Dekorationen umwandelt.\n    Im Gegensatz zu Formatierungswerkzeugen, die auf anwendungsspezifische Auszeichnung angewiesen sind, ersetzt UltraTextGen jeden Buchstaben durch ein echtes Unicode-Zeichen, das fett, kursiv, kursiv, gotisch oder dekoriert aussieht.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Gib «hello» ein → erhalte 𝗵𝗲𝗹𝗹𝗼 (Ultra Bold), 𝘩𝘦𝘭𝘭𝘰 (Ultra Italic), 𝒽ℯ𝓁𝓁ℴ (Ultra Script) oder ⓗⓔⓛⓛⓞ (Ultra Bubble).\n    <br><br>\n    Da es sich um echte Zeichen handelt — keine Formatierungscodes — funktionieren sie überall, wo einfacher Text akzeptiert wird: Social-Media-Bios, Benutzernamen, Bildunterschriften, Nachrichten, E-Mails und mehr.\n    Keine Apps zum Installieren, keine Registrierung und keine Einschränkungen."
+            "answer": "UltraTextGen ist ein kostenloser Online-Unicode-Textgenerator, der deinen normalen Text sofort in stilvolle, ausgefallene Schriften und Dekorationen umwandelt.\n    Im Gegensatz zu Formatierungswerkzeugen, die auf anwendungsspezifische Auszeichnung angewiesen sind, ersetzt UltraTextGen jeden Buchstaben durch ein echtes Unicode-Zeichen, das fett, kursiv, in Schreibschrift, gotisch oder dekoriert aussieht.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Gib «hello» ein → erhalte 𝗵𝗲𝗹𝗹𝗼 (Ultra Bold), 𝘩𝘦𝘭𝘭𝘰 (Ultra Italic), 𝒽ℯ𝓁𝓁ℴ (Ultra Script) oder ⓗⓔⓛⓛⓞ (Ultra Bubble).\n    <br><br>\n    Da es sich um echte Zeichen handelt — keine Formatierungscodes — funktionieren sie überall, wo einfacher Text akzeptiert wird: Social-Media-Bios, Benutzernamen, Bildunterschriften, Nachrichten, E-Mails und mehr.\n    Keine Apps zum Installieren, keine Registrierung und keine Einschränkungen."
           },
           {
             "question": "Wie erstelle und kopiere ich stilisierten Text?",
@@ -83,7 +83,7 @@
         "items": [
           {
             "question": "Wie unterscheidet sich Unicode-Text von Fett und Kursiv in Word, Instagram oder Discord?",
-            "answer": "Normale Fett- und Kursivschrift verwendet Formatierungscodes — oft als Markup oder Rich Text bezeichnet — die nur innerhalb der App funktionieren, die sie unterstützt.\n    Discord verwendet beispielsweise **Text** für Fettschrift, und Instagram-Bildunterschriften haben überhaupt keine Formatierungsoptionen.\n    <br><br>\n    UltraTextGen funktioniert anders. Es ersetzt jeden Buchstaben durch ein einzigartiges Unicode-Zeichen, das bereits stilisiert aussieht.\n    Das Ergebnis ist einfacher Text, der fett, kursiv, kursiv oder dekoriert erscheint, ohne dass ein Formatierungsmodul dahintersteckt.\n    <br><br>\n    <strong>Warum das wichtig ist</strong><br>\n    Rich-Text-Fettschrift verschwindet, wenn du sie in eine TikTok-Bildunterschrift, eine E-Mail-Betreffzeile oder ein Benutzernamenfeld einfügst — diese Orte entfernen die Formatierung.\n    Unicode-Text behält seinen Stil, weil die Zeichen selbst stilisiert sind. Es gibt nichts zu entfernen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Ein Rich-Text-Editor macht das Wort «Sale» fett, indem er es in unsichtbare Codes einwickelt. Wenn du das in eine TikTok-Bio einfügst, wird daraus ein einfaches «Sale».\n    Mit UltraTextGen wird «Sale» zu 𝗦𝗮𝗹𝗲 — und bleibt so in deiner Bio, deinem Benutzernamen, deiner E-Mail-Betreffzeile und überall sonst."
+            "answer": "Normale Fett- und Kursivschrift verwendet Formatierungscodes — oft als Markup oder Rich Text bezeichnet — die nur innerhalb der App funktionieren, die sie unterstützt.\n    Discord verwendet beispielsweise **Text** für Fettschrift, und Instagram-Bildunterschriften haben überhaupt keine Formatierungsoptionen.\n    <br><br>\n    UltraTextGen funktioniert anders. Es ersetzt jeden Buchstaben durch ein einzigartiges Unicode-Zeichen, das bereits stilisiert aussieht.\n    Das Ergebnis ist einfacher Text, der fett, kursiv, in Schreibschrift oder dekoriert erscheint, ohne dass ein Formatierungsmodul dahintersteckt.\n    <br><br>\n    <strong>Warum das wichtig ist</strong><br>\n    Rich-Text-Fettschrift verschwindet, wenn du sie in eine TikTok-Bildunterschrift, eine E-Mail-Betreffzeile oder ein Benutzernamenfeld einfügst — diese Orte entfernen die Formatierung.\n    Unicode-Text behält seinen Stil, weil die Zeichen selbst stilisiert sind. Es gibt nichts zu entfernen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Ein Rich-Text-Editor macht das Wort «Sale» fett, indem er es in unsichtbare Codes einwickelt. Wenn du das in eine TikTok-Bio einfügst, wird daraus ein einfaches «Sale».\n    Mit UltraTextGen wird «Sale» zu 𝗦𝗮𝗹𝗲 — und bleibt so in deiner Bio, deinem Benutzernamen, deiner E-Mail-Betreffzeile und überall sonst."
           },
           {
             "question": "Was kann ein Unicode-Textgenerator, was ein Rich-Text-Editor nicht kann?",
@@ -173,7 +173,7 @@
         "items": [
           {
             "question": "Warum sollte ich UltraTextGen anderen Textgeneratoren vorziehen?",
-            "answer": "UltraTextGen ist darauf ausgelegt, der vollständigste und benutzerfreundlichste Unicode-Textgenerator zu sein, der verfügbar ist.\n    <br><br>\n    <strong>Was ihn auszeichnet</strong><br>\n    — Eine der größten Sammlungen von Premium-«Ultra»-Stilschriften.<br>\n    — Echtes Stile mischen: Kombiniere mehrere Stile mit einem Klick — etwas, das die meisten Generatoren nicht unterstützen.<br>\n    — Ein-Klick-Dekorationen: Füge Rahmen, Ränder, Symbole und Trennlinien hinzu, ohne manuell zu kopieren und einzufügen.<br>\n    — Dedizierte Plattformseiten für TikTok, Discord, Instagram und mehr — damit du Stile bekommst, die für deine Plattform getestet wurden.<br>\n    — Schnelle, übersichtliche Benutzeroberfläche ohne Pop-ups, die dich verlangsamen.<br>\n    — Ständig mit neuen Stilen und Dekorationen aktualisiert."
+            "answer": "UltraTextGen ist darauf ausgelegt, der vollständigste und benutzerfreundlichste Unicode-Textgenerator zu sein, der verfügbar ist.\n    <br><br>\n    <strong>Was ihn auszeichnet</strong><br>\n    — Eine der größten Sammlungen von Premium-«Ultra»-Stilschriften.<br>\n    — Echtes Stil-Mixing: Kombiniere mehrere Stile mit einem Klick — etwas, das die meisten Generatoren nicht unterstützen.<br>\n    — Ein-Klick-Dekorationen: Füge Rahmen, Ränder, Symbole und Trennlinien hinzu, ohne manuell zu kopieren und einzufügen.<br>\n    — Dedizierte Plattformseiten für TikTok, Discord, Instagram und mehr — damit du Stile bekommst, die für deine Plattform getestet wurden.<br>\n    — Schnelle, übersichtliche Benutzeroberfläche ohne Pop-ups, die dich verlangsamen.<br>\n    — Ständig mit neuen Stilen und Dekorationen aktualisiert."
           },
           {
             "question": "Fügt UltraTextGen neue Stile hinzu?",
