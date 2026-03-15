@@ -170,7 +170,7 @@ Les polices ne sont pas de la décoration. Ce sont des signaux.
 Ces ressources explorent comment la typographie Unicode encode le ton, l'autorité, l'ironie et l'emphase sur les plateformes en ligne.
 
 ### La Rhétorique des Polices
-Un cadre structuré associant les styles de polices à des procédés rhétoriques et à des cas d'usage pratiques, aidant les utilisateurs à appliquer la typographie intentionnellement plutôt que styliquement.
+Un cadre structuré associant les styles de polices à des procédés rhétoriques et à des cas d'usage pratiques, aidant les utilisateurs à appliquer la typographie intentionnellement plutôt que stylistiquement.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
 
 ### Branding avec des Polices pour les Réseaux Sociaux
