@@ -101,20 +101,21 @@
       color: var(--accent-purple);
       font-weight: 600;
     }
-    .embed-usecases {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1rem 0;
+    .embed-usecases-list {
+      margin: 1rem 0 0;
+      padding: 0;
     }
-    .embed-usecase-tag {
-      background: var(--bg-base);
-      border: 1px solid var(--border-light);
-      border-radius: 20px;
-      padding: 0.35rem 0.85rem;
-      font-size: 0.825rem;
+    .embed-usecases-list dt {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.925rem;
+      margin-top: 0.75rem;
+    }
+    .embed-usecases-list dd {
+      margin: 0.15rem 0 0;
       color: var(--text-secondary);
-      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -159,16 +160,24 @@
     <section class="editorial-section">
       <h2>Where This Widget Works Best</h2>
       <p style="color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;">The LinkedIn Headline Generator widget is a great fit for any site that helps professionals improve their online presence.</p>
-      <div class="embed-usecases">
-        <span class="embed-usecase-tag">Career blogs</span>
-        <span class="embed-usecase-tag">Resume building sites</span>
-        <span class="embed-usecase-tag">LinkedIn profile guides</span>
-        <span class="embed-usecase-tag">Personal branding websites</span>
-        <span class="embed-usecase-tag">University career pages</span>
-        <span class="embed-usecase-tag">Job search portals</span>
-        <span class="embed-usecase-tag">HR & recruiting blogs</span>
-        <span class="embed-usecase-tag">Professional coaching sites</span>
-      </div>
+      <dl class="embed-usecases-list">
+        <dt>Career blogs</dt>
+        <dd>Gives job seekers an immediate action step — improve their headline as the first move toward a stronger profile.</dd>
+        <dt>Resume building sites</dt>
+        <dd>Extra value for visitors who just revamped their CV. They can create a headline tailored to their new resume in seconds.</dd>
+        <dt>LinkedIn profile guides</dt>
+        <dd>A hands-on complement to written advice. Readers can apply what they just learned without leaving the page.</dd>
+        <dt>Personal branding websites</dt>
+        <dd>Helps visitors translate their brand positioning into a concise, professional headline they can use right away.</dd>
+        <dt>University career pages</dt>
+        <dd>Students and recent graduates get a quick win — a polished headline before they start networking or applying.</dd>
+        <dt>Job search portals</dt>
+        <dd>Keeps candidates on your site longer by offering a practical tool alongside job listings.</dd>
+        <dt>HR &amp; recruiting blogs</dt>
+        <dd>Adds interactive depth to articles about LinkedIn best practices, making the content more actionable for readers.</dd>
+        <dt>Professional coaching sites</dt>
+        <dd>Lets coaches offer a free, self-service tool that demonstrates the kind of improvement their paid services deliver.</dd>
+      </dl>
     </section>
 
     <!-- Notes -->
