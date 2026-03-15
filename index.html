@@ -10,8 +10,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stylish Text Generator — Copy & Paste Fancy Unicode Fonts</title>
-<meta name="description" content="Turn plain text into stylish Unicode fonts you can copy and paste. Choose bold, cursive, gothic, and decorative styles for bios, usernames, comments, and posts.">
+<title data-i18n="meta.title">Stylish Text Generator — Copy &amp; Paste Fancy Unicode Fonts</title>
+<meta name="description" data-i18n-content="meta.description" content="Turn plain text into stylish Unicode fonts you can copy and paste. Choose bold, cursive, gothic, and decorative styles for bios, usernames, comments, and posts.">
 
 <link rel="canonical" href="https://ultratextgen.com/">
 
@@ -175,6 +175,11 @@
   ]
 }
 </script>
+<style>
+.lang-switcher{display:flex;justify-content:center;gap:.75rem;padding:1rem 0;flex-wrap:wrap}
+.lang-option{padding:.3rem .65rem;border-radius:.375rem;font-size:.8125rem;font-weight:600;letter-spacing:.04em;color:var(--text-secondary);background:var(--bg-card);text-decoration:none;border:1px solid transparent;transition:color .15s,border-color .15s}
+.lang-option:hover,.lang-option.active{color:var(--text-primary);border-color:var(--text-secondary)}
+</style>
 </head>
   
 <body>
@@ -188,10 +193,10 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-card">
-        <h1 class="hero-headline">Stylish Font Generator</h1>
-        <p class="hero-tagline">Turn plain text into bold, cursive, gothic, and decorative Unicode fonts you can copy and paste instantly.</p>
+        <h1 class="hero-headline" data-i18n="hero.title">Stylish Font Generator</h1>
+        <p class="hero-tagline" data-i18n="hero.subtitle">Turn plain text into bold, cursive, gothic, and decorative Unicode fonts you can copy and paste instantly.</p>
         <div class="input-wrapper">
-          <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500" autofocus></textarea>
+          <textarea class="main-input" id="mainInput" placeholder="Type your text here..." data-i18n-placeholder="ui.placeholder" maxlength="500" autofocus></textarea>
           <button class="input-clear-btn" id="inputClearBtn" aria-label="Clear input" hidden>✕</button>
           <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
         </div>
@@ -202,16 +207,16 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
             </svg>
-            Add decoration to results
+            <span data-i18n="decorations.label">Add decoration to results</span>
        </div>
     <div class="decoration-tabs">
-    <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
-    <button class="decoration-tab" data-deco-tab="frames">Frames</button>
-    <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
-    <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
-    <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-    <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
-    <button class="decoration-tab" data-deco-tab="flags">Flags</button>
+    <button class="decoration-tab active" data-deco-tab="symbols" data-i18n="decorations.tabs.symbols">Symbols</button>
+    <button class="decoration-tab" data-deco-tab="frames" data-i18n="decorations.tabs.frames">Frames</button>
+    <button class="decoration-tab" data-deco-tab="dividers" data-i18n="decorations.tabs.dividers">Dividers</button>
+    <button class="decoration-tab" data-deco-tab="arrows" data-i18n="decorations.tabs.arrows">Arrows</button>
+    <button class="decoration-tab" data-deco-tab="minimal" data-i18n="decorations.tabs.minimal">Minimal</button>
+    <button class="decoration-tab" data-deco-tab="emojis" data-i18n="decorations.tabs.emojis">Emojis</button>
+    <button class="decoration-tab" data-deco-tab="flags" data-i18n="decorations.tabs.flags">Flags</button>
       </div>
           <div class="decoration-grid" id="decorationGrid"></div>
         </div>
@@ -233,54 +238,54 @@
 
     <!-- Secondary Ad Block -->
     <div class="ad-block">
-      <span class="ad-block-label">Advertisement</span>
+      <span class="ad-block-label" data-i18n="ui.advertisement">Advertisement</span>
     </div>
   </main>
 
   <!-- Popular Use Cases -->
   <section class="editorial-section">
-    <h2>Popular Use Cases</h2>
+    <h2 data-i18n="useCases.title">Popular Use Cases</h2>
     <div class="tips-grid">
       <a class="tip-card" href="/usecase/linkedin-headline/" aria-label="LinkedIn Headline use case">
         <div class="tip-icon">💼</div>
-        <h3>LinkedIn Headline</h3>
-        <p>Make your LinkedIn headline stand out with bold and italic Unicode text that grabs attention in search results.</p>
+        <h3 data-i18n="useCases.items.0.title">LinkedIn Headline</h3>
+        <p data-i18n="useCases.items.0.description">Make your LinkedIn headline stand out with bold and italic Unicode text that grabs attention in search results.</p>
       </a>
       <a class="tip-card" href="/usecase/comment-font/" aria-label="Comment Fonts use case">
         <div class="tip-icon">💬</div>
-        <h3>Comment Fonts</h3>
-        <p>Post eye-catching comments on Instagram, YouTube, and TikTok with styled Unicode fonts that pop.</p>
+        <h3 data-i18n="useCases.items.1.title">Comment Fonts</h3>
+        <p data-i18n="useCases.items.1.description">Post eye-catching comments on Instagram, YouTube, and TikTok with styled Unicode fonts that pop.</p>
       </a>
       <a class="tip-card" href="/usecase/text-to-emoji/" aria-label="Text to Emoji use case">
         <div class="tip-icon">😊</div>
-        <h3>Text to Emoji</h3>
-        <p>Convert your text into emoji letter sequences — perfect for creative bios, stories, and group chats.</p>
+        <h3 data-i18n="useCases.items.2.title">Text to Emoji</h3>
+        <p data-i18n="useCases.items.2.description">Convert your text into emoji letter sequences — perfect for creative bios, stories, and group chats.</p>
       </a>
     </div>
-    <p style="text-align:center;margin-top:1.5rem"><a class="cat-cta" href="/usecase/">View all use cases →</a></p>
+    <p style="text-align:center;margin-top:1.5rem"><a class="cat-cta" href="/usecase/" data-i18n="useCases.viewAll">View all use cases →</a></p>
   </section>
 
   <!-- Popular Guides -->
   <section class="editorial-section">
-    <h2>Popular Guides</h2>
+    <h2 data-i18n="guides.title">Popular Guides</h2>
     <div class="tips-grid">
       <a class="tip-card" href="/guide/the-rhetoric-of-fonts/" aria-label="The Rhetoric of Fonts guide">
         <div class="tip-icon">📚</div>
-        <h3>The Rhetoric of Fonts</h3>
-        <p>Learn how font choices influence perception, trust, and emotion — and how to use that to your advantage.</p>
+        <h3 data-i18n="guides.items.0.title">The Rhetoric of Fonts</h3>
+        <p data-i18n="guides.items.0.description">Learn how font choices influence perception, trust, and emotion — and how to use that to your advantage.</p>
       </a>
       <a class="tip-card" href="/guide/personal-branding-through-typography/" aria-label="Personal Branding Through Typography guide">
         <div class="tip-icon">🎨</div>
-        <h3>Personal Branding Through Typography</h3>
-        <p>Build a consistent personal brand across social platforms using strategic Unicode font choices.</p>
+        <h3 data-i18n="guides.items.1.title">Personal Branding Through Typography</h3>
+        <p data-i18n="guides.items.1.description">Build a consistent personal brand across social platforms using strategic Unicode font choices.</p>
       </a>
       <a class="tip-card" href="/guide/stop-the-scroll-with-font-variation/" aria-label="Stop the Scroll With Font Variation guide">
         <div class="tip-icon">📱</div>
-        <h3>Stop the Scroll With Font Variation</h3>
-        <p>Discover how mixing font styles breaks the scroll pattern and drives higher engagement on social feeds.</p>
+        <h3 data-i18n="guides.items.2.title">Stop the Scroll With Font Variation</h3>
+        <p data-i18n="guides.items.2.description">Discover how mixing font styles breaks the scroll pattern and drives higher engagement on social feeds.</p>
       </a>
     </div>
-    <p style="text-align:center;margin-top:1.5rem"><a class="cat-cta" href="/guide/">View all guides →</a></p>
+    <p style="text-align:center;margin-top:1.5rem"><a class="cat-cta" href="/guide/" data-i18n="guides.viewAll">View all guides →</a></p>
   </section>
 
   <!-- FAQ Section -->
@@ -288,16 +293,16 @@
     <div class="footer-inner">
 
 <!-- Getting Started -->
-<h2 class="faq-category">Getting Started with UltraTextGen</h2>
+<h2 class="faq-category" data-i18n="faq.categories.0.title">Getting Started with UltraTextGen</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    What is UltraTextGen and how does it work?
+    <span data-i18n="faq.categories.0.items.0.question">What is UltraTextGen and how does it work?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.0.items.0.answer">
     UltraTextGen is a free online Unicode text generator that instantly converts your normal text into stylish, fancy fonts and decorations.
     Unlike formatting tools that rely on app-specific markup, UltraTextGen replaces each letter with a real Unicode character that looks bold, italic, cursive, gothic, or decorated.
     <br><br>
@@ -311,12 +316,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    How do I generate and copy styled text?
+    <span data-i18n="faq.categories.0.items.1.question">How do I generate and copy styled text?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.0.items.1.answer">
     Generating styled text takes just a few seconds.
     <br><br>
     <strong>Step-by-step</strong><br>
@@ -332,12 +337,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Is UltraTextGen completely free to use?
+    <span data-i18n="faq.categories.0.items.2.question">Is UltraTextGen completely free to use?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.0.items.2.answer">
     Yes — 100% free with no daily limits, no account required, no watermarks, and no hidden fees.
     You can generate and copy as much styled text as you need, anytime.
   </div>
@@ -345,16 +350,16 @@
 
 
 <!-- Unicode vs Rich Text -->
-<h2 class="faq-category">Unicode Text vs Rich Text Formatting</h2>
+<h2 class="faq-category" data-i18n="faq.categories.1.title">Unicode Text vs Rich Text Formatting</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    How is Unicode text different from bold and italic in Word, Instagram, or Discord?
+    <span data-i18n="faq.categories.1.items.0.question">How is Unicode text different from bold and italic in Word, Instagram, or Discord?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.1.items.0.answer">
     Regular bold and italic use formatting codes — often called markup or rich text — that only work inside the app that supports them.
     For example, Discord uses **text** for bold, and Instagram captions have no formatting options at all.
     <br><br>
@@ -373,12 +378,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    What can a Unicode text generator do that a rich text editor cannot?
+    <span data-i18n="faq.categories.1.items.1.question">What can a Unicode text generator do that a rich text editor cannot?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.1.items.1.answer">
     Rich text editors like Google Docs or Microsoft Word give you bold, italic, and underline — but those styles vanish the moment you paste into a social media bio, a username field, or a plain-text email.
     A Unicode text generator unlocks styles and effects that no rich text editor can produce in those contexts.
     <br><br>
@@ -397,12 +402,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Can I use bold Unicode text in email subject lines?
+    <span data-i18n="faq.categories.1.items.2.question">Can I use bold Unicode text in email subject lines?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.1.items.2.answer">
     Yes — and this is a perfect example of something a rich text editor cannot do.
     Email subject lines are plain text, so regular bold formatting is stripped out before the recipient sees it.
     <br><br>
@@ -418,16 +423,16 @@
 
 
 <!-- Styles and Decorations -->
-<h2 class="faq-category">Styles, Fonts, and Decorations</h2>
+<h2 class="faq-category" data-i18n="faq.categories.2.title">Styles, Fonts, and Decorations</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    What font styles does UltraTextGen offer?
+    <span data-i18n="faq.categories.2.items.0.question">What font styles does UltraTextGen offer?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.2.items.0.answer">
     UltraTextGen has one of the largest collections of high-quality Unicode text styles, all prefixed with "Ultra" for superior look and coverage.
     <br><br>
     <strong>Core styles</strong><br>
@@ -442,12 +447,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Can I combine multiple styles and add decorations to my text?
+    <span data-i18n="faq.categories.2.items.1.question">Can I combine multiple styles and add decorations to my text?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.2.items.1.answer">
     Yes — style mixing and one-click decorations are two of UltraTextGen's biggest advantages over other generators.
     <br><br>
     You can layer styles together, such as Bubble + Zalgo, Gothic + Upside Down, or Small Caps + Underline, and then wrap the result with decorative elements.
@@ -464,12 +469,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    What is Zalgo or glitch text and how do I use it?
+    <span data-i18n="faq.categories.2.items.2.question">What is Zalgo or glitch text and how do I use it?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.2.items.2.answer">
     Zalgo text is the creepy, glitchy, "cursed" style that adds stacked diacritics above and below each character, making the text look corrupted or haunted.
     <br><br>
     <strong>Example</strong><br>
@@ -482,16 +487,16 @@
 
 
 <!-- Platform Compatibility -->
-<h2 class="faq-category">Platform Compatibility</h2>
+<h2 class="faq-category" data-i18n="faq.categories.3.title">Platform Compatibility</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Where can I use text generated by UltraTextGen?
+    <span data-i18n="faq.categories.3.items.0.question">Where can I use text generated by UltraTextGen?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.3.items.0.answer">
     Everywhere plain text is accepted. Because the styled characters are real Unicode — not formatting codes — they travel with your text no matter where you paste.
     <br><br>
     <strong>Social media</strong><br>
@@ -509,12 +514,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Can I use Unicode text for usernames and display names?
+    <span data-i18n="faq.categories.3.items.1.question">Can I use Unicode text for usernames and display names?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.3.items.1.answer">
     Absolutely. Unicode characters are accepted in most username and display name fields — including Instagram, TikTok, Discord, Roblox, Steam, and many other platforms.
     <br><br>
     <strong>Example</strong><br>
@@ -530,12 +535,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Why does some styled text show as boxes or question marks on certain platforms?
+    <span data-i18n="faq.categories.3.items.2.question">Why does some styled text show as boxes or question marks on certain platforms?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.3.items.2.answer">
     This happens when the font installed on the viewer's device does not include glyphs for those particular Unicode characters.
     It is not a problem with the text itself — on most modern devices and browsers, the vast majority of styles display correctly.
     <br><br>
@@ -547,16 +552,16 @@
 
 
 <!-- Language and Script Support -->
-<h2 class="faq-category">Language and Script Support</h2>
+<h2 class="faq-category" data-i18n="faq.categories.4.title">Language and Script Support</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    What languages does UltraTextGen support for bold and styled text?
+    <span data-i18n="faq.categories.4.items.0.question">What languages does UltraTextGen support for bold and styled text?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.4.items.0.answer">
     UltraTextGen supports any language written using the Latin alphabet.
     If a language uses A to Z, including accented characters such as á, é, ñ, ü, and ç, the text can be converted into bold, italic, cursive, and other Unicode styles.
     This works because Unicode provides styled character variants for Latin script letters and digits.
@@ -570,12 +575,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Which languages are not supported for styled text?
+    <span data-i18n="faq.categories.4.items.1.question">Which languages are not supported for styled text?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.4.items.1.answer">
     Languages that use non-Latin scripts cannot be converted into bold, italic, or other Unicode font styles.
     These scripts do not have styled Unicode character variants, so the text will remain unchanged after conversion.
     <br><br>
@@ -589,12 +594,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Are there any characters that don't convert?
+    <span data-i18n="faq.categories.4.items.2.question">Are there any characters that don't convert?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.4.items.2.answer">
     Most English letters (A–Z, a–z), numbers (0–9), and basic punctuation convert perfectly across all styles.
     Some very rare symbols or special characters may have fewer style options because Unicode doesn't include styled variants for every character.
     <br><br>
@@ -605,16 +610,16 @@
 
 
 <!-- Privacy and Safety -->
-<h2 class="faq-category">Privacy and Safety</h2>
+<h2 class="faq-category" data-i18n="faq.categories.5.title">Privacy and Safety</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Is the text I type stored or tracked?
+    <span data-i18n="faq.categories.5.items.0.question">Is the text I type stored or tracked?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.5.items.0.answer">
     No. UltraTextGen does not store your text and does not add any hidden or tracking characters to the output.
     The conversion happens in your browser, and what you copy is clean Unicode — nothing more.
   </div>
@@ -622,12 +627,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Is the generated text safe to copy and paste?
+    <span data-i18n="faq.categories.5.items.1.question">Is the generated text safe to copy and paste?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.5.items.1.answer">
     Yes — completely safe. The output is standard Unicode text with no embedded scripts, no hidden formatting, and no tracking codes.
     You can paste it into any app or website without any security concerns.
   </div>
@@ -635,16 +640,16 @@
 
 
 <!-- Mobile and Device Support -->
-<h2 class="faq-category">Mobile and Device Support</h2>
+<h2 class="faq-category" data-i18n="faq.categories.6.title">Mobile and Device Support</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Does UltraTextGen work on phones and tablets?
+    <span data-i18n="faq.categories.6.items.0.question">Does UltraTextGen work on phones and tablets?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.6.items.0.answer">
     Yes — the site is fully responsive and works great on phones, tablets, and desktops.
     There is no app to download. Just open UltraTextGen in your mobile browser, type your text, pick a style, and copy.
     It works on iPhone, Android, iPad, and any device with a modern browser.
@@ -653,16 +658,16 @@
 
 
 <!-- Why UltraTextGen -->
-<h2 class="faq-category">Why Choose UltraTextGen</h2>
+<h2 class="faq-category" data-i18n="faq.categories.7.title">Why Choose UltraTextGen</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Why should I choose UltraTextGen over other text generators?
+    <span data-i18n="faq.categories.7.items.0.question">Why should I choose UltraTextGen over other text generators?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.7.items.0.answer">
     UltraTextGen is built to be the most complete and easiest-to-use Unicode text generator available.
     <br><br>
     <strong>What sets it apart</strong><br>
@@ -677,12 +682,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Does UltraTextGen add new styles?
+    <span data-i18n="faq.categories.7.items.1.question">Does UltraTextGen add new styles?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.7.items.1.answer">
     Yes — new Ultra styles and decorations are added regularly.
     Bookmark the site to stay updated on the latest additions.
   </div>
@@ -690,12 +695,12 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    How do I find the right font style or tool for my needs?
+    <span data-i18n="faq.categories.7.items.2.question">How do I find the right font style or tool for my needs?</span>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
-  <div class="faq-answer">
+  <div class="faq-answer" data-i18n-html="faq.categories.7.items.2.answer">
     UltraTextGen organises styles and tools in three ways:
     <br><br>
     <strong>By font style</strong><br>
@@ -712,11 +717,20 @@
     </div>
   </section>
 
+  <!-- Language Switcher -->
+  <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+    <a class="lang-option" href="?lang=en" hreflang="en">EN</a>
+    <a class="lang-option" href="?lang=es" hreflang="es">ES</a>
+    <a class="lang-option" href="?lang=fr" hreflang="fr">FR</a>
+    <a class="lang-option" href="?lang=pt" hreflang="pt">PT</a>
+    <a class="lang-option" href="?lang=de" hreflang="de">DE</a>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-bottom">
-        © 2026 UltraTextGen. Fast text styles that work everywhere.
+        <span data-i18n="footer.copyright">© 2026 UltraTextGen. Fast text styles that work everywhere.</span>
       </div>
     </div>
   </footer>
@@ -726,6 +740,7 @@
   <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/i18n.js"></script>
 
 
 
