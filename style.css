@@ -2014,3 +2014,38 @@ body.dark-mode .vertical-chip {
   color: var(--text-dark, #e2e8f0);
   border-color: var(--border-dark, #334155);
 }
+
+/* Visible Breadcrumb Navigation */
+.breadcrumbs {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px 24px 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.breadcrumbs a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: 500;
+}
