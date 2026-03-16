@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://ultratextgen.com/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -132,6 +132,13 @@
     <lastmod>2026-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/embed/linkedin-headline-generator/</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
@@ -284,6 +291,13 @@
   <url>
     <loc>https://ultratextgen.com/usecase/linkedin-headline/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/usecase/linkedin-headline/embed/</loc>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
