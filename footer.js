@@ -3,6 +3,7 @@
 
   var footerLinksHTML =
     '<div class="footer-links">' +
+      '<a href="/about/" class="footer-link">About</a>' +
       '<a href="/privacy/" class="footer-link">Privacy Policy</a>' +
       '<a href="/terms/" class="footer-link">Terms of Service</a>' +
     '</div>' +
