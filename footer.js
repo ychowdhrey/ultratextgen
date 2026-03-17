@@ -3,10 +3,18 @@
 
   var footerLinksHTML =
     '<div class="footer-links">' +
-      '<a href="/about/" class="footer-link">About</a>' +
-      '<a href="/privacy/" class="footer-link">Privacy Policy</a>' +
-      '<a href="/terms/" class="footer-link">Terms of Service</a>' +
-      '<a href="/contact/" class="footer-link">Contact</a>' +
+      '<div class="footer-nav-links">' +
+        '<a href="/about/" class="footer-link">About</a>' +
+        '<a href="/privacy/" class="footer-link">Privacy Policy</a>' +
+        '<a href="/terms/" class="footer-link">Terms of Service</a>' +
+        '<a href="/contact/" class="footer-link">Contact</a>' +
+      '</div>' +
+      '<div class="footer-social-links">' +
+        '<a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>' +
+        '<a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>' +
+        '<a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
+        '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
+      '</div>' +
     '</div>' +
     '<div class="footer-bottom">' +
       '\u00a9 2026 UltraTextGen. Fast text styles that work everywhere.' +
