@@ -666,7 +666,16 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px 24px;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 32px;
+    }
+
+    .footer-nav-links,
+    .footer-social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
     }
 
     .footer-link {
