@@ -1276,6 +1276,48 @@ a:hover {
   font-weight: 500;
 }
 
+/* Horizontal example-pair layout for VS/comparison sections */
+.example-pair-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.example-pair-horizontal .ex-variant {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+}
+
+.example-pair-horizontal .ex-label {
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+}
+
+.example-pair-horizontal .ex-plain {
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
+.example-pair-horizontal .ex-styled {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .example-pair-horizontal {
+    grid-template-columns: 1fr;
+  }
+}
+
 .compare-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
