@@ -225,10 +225,6 @@ Lightweight embeddable versions of UltraTextGen tools, designed for integration 
 An embeddable version of the LinkedIn Headline tool for use on external websites and platforms.
 - https://ultratextgen.com/embed/linkedin-headline-generator/
 
-### LinkedIn Headline Embed
-A compact embeddable widget for the LinkedIn Headline use case, optimized for iframe integration.
-- https://ultratextgen.com/usecase/linkedin-headline/embed/
-
 ## Project Structure
 
 ```
