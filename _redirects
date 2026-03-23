@@ -7,6 +7,13 @@
 /usecase/comment-fonts/                     /usecase/comment-font/   301
 /usecase/comment-fonts/index.html           /usecase/comment-font/   301
 
+# Language query-param → path-based (301 permanent)
+/?lang=fr                                   /fr/    301
+/?lang=de                                   /de/    301
+/?lang=pt                                   /pt/    301
+/?lang=es                                   /es/    301
+/?lang=en                                   /       301
+
 
 
 
