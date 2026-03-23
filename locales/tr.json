@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "Şık Metin Oluşturucu — Dekoratif Unicode Yazı Tiplerini Kopyala ve Yapıştır",
+    "description": "Düz metni kopyalayıp yapıştırabileceğiniz şık Unicode yazı tiplerine dönüştürün. Bio'lar, kullanıcı adları, yorumlar ve gönderiler için kalın, italik, gotik ve dekoratif stiller seçin."
+  },
+  "hero": {
+    "title": "Şık Yazı Tipi Oluşturucu",
+    "subtitle": "Düz metni anında kopyalayıp yapıştırabileceğiniz kalın, italik, gotik ve dekoratif Unicode yazı tiplerine dönüştürün."
+  },
+  "decorations": {
+    "label": "Sonuçlara dekorasyon ekle",
+    "tabs": {
+      "symbols": "Semboller",
+      "frames": "Çerçeveler",
+      "dividers": "Ayırıcılar",
+      "arrows": "Oklar",
+      "minimal": "Minimal",
+      "emojis": "Emojiler",
+      "flags": "Bayraklar"
+    }
+  },
+  "ui": {
+    "placeholder": "Metninizi buraya yazın...",
+    "advertisement": "Reklam"
+  },
+  "useCases": {
+    "title": "Popüler Kullanım Alanları",
+    "viewAll": "Tüm kullanım alanlarını gör →",
+    "items": [
+      {
+        "title": "LinkedIn Başlığı",
+        "description": "LinkedIn başlığınızı arama sonuçlarında dikkat çeken kalın ve italik Unicode metinle öne çıkarın."
+      },
+      {
+        "title": "Yorum Yazı Tipleri",
+        "description": "Instagram, YouTube ve TikTok'ta öne çıkan şık Unicode yazı tipleriyle göz alıcı yorumlar yapın."
+      },
+      {
+        "title": "Metni Emojiye Çevir",
+        "description": "Metninizi emoji harf dizilerine dönüştürün — yaratıcı bio'lar, hikayeler ve grup sohbetleri için mükemmel."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Popüler Rehberler",
+    "viewAll": "Tüm rehberleri gör →",
+    "items": [
+      {
+        "title": "Yazı Tiplerinin Retoriği",
+        "description": "Yazı tipi seçimlerinin algıyı, güveni ve duyguları nasıl etkilediğini — ve bunu nasıl avantajınıza kullanabileceğinizi öğrenin."
+      },
+      {
+        "title": "Personal Branding Through Typography",
+        "description": "Stratejik Unicode yazı tipi seçimleriyle tüm sosyal platformlarda tutarlı bir kişisel marka oluşturun."
+      },
+      {
+        "title": "Stop the Scroll With Font Variation",
+        "description": "Yazı tipi stillerini karıştırmanın kaydırma düzenini nasıl bozduğunu ve sosyal akışlarda daha fazla etkileşim sağladığını keşfedin."
+      }
+    ]
+  },
+  "faq": {
+    "categories": [
+      {
+        "title": "UltraTextGen'e Başlarken",
+        "items": [
+          {
+            "question": "UltraTextGen nedir ve nasıl çalışır?",
+            "answer": "UltraTextGen, normal metninizi anında şık ve süslü yazı tiplerine ve dekorasyonlara dönüştüren ücretsiz bir çevrimiçi Unicode metin oluşturucudur.\n    Uygulamaya özgü biçimlendirmeye dayanan araçların aksine, UltraTextGen her harfi kalın, italik, el yazısı, gotik veya dekoratif görünen gerçek bir Unicode karakteriyle değiştirir.\n    <br><br>\n    <strong>Örnek</strong><br>\n    \"hello\" yazın → 𝗵𝗲𝗹𝗹𝗼 (Ultra Bold), 𝘩𝘦𝘭𝘭𝘰 (Ultra Italic), 𝒽ℯ𝓁𝓁ℴ (Ultra Script) veya ⓗⓔⓛⓛⓞ (Ultra Bubble) elde edin.\n    <br><br>\n    Bunlar gerçek karakterler olduğundan — biçimlendirme kodları değil — düz metnin kabul edildiği her yerde çalışır: sosyal medya bio'ları, kullanıcı adları, altyazılar, mesajlar, e-postalar ve daha fazlası.\n    Kurulacak uygulama yok, kayıt gerekmez ve sınır yoktur."
+          },
+          {
+            "question": "Şık metin nasıl oluşturulur ve kopyalanır?",
+            "answer": "Şık metin oluşturmak yalnızca birkaç saniye sürer.\n    <br><br>\n    <strong>Adım adım</strong><br>\n    1. Ana sayfadaki giriş kutusuna metninizi yazın veya yapıştırın.<br>\n    2. Şık sürümler hemen girişin altında görünür.<br>\n    3. Stillere göz atın veya Bold, Cursive ya da Gothic gibi bir kategori seçin.<br>\n    4. İsterseniz çerçeve, sembol veya ayırıcı eklemek için \"Dekorasyon ekle\" seçeneğine tıklayın.<br>\n    5. İstediğiniz stilin yanındaki \"Kopyala\" düğmesine tıklayın ve istediğiniz yere yapıştırın.\n    <br><br>\n    Hepsi bu kadar — hesap gerekmez ve araç hem masaüstü hem de mobilde çalışır."
+          },
+          {
+            "question": "UltraTextGen tamamen ücretsiz mi?",
+            "answer": "Evet — günlük sınır yok, hesap gerekmez, filigran yok ve gizli ücret yok; %100 ücretsiz.\n    İstediğiniz kadar şık metin oluşturabilir ve kopyalayabilirsiniz."
+          }
+        ]
+      },
+      {
+        "title": "Unicode Metin ile Zengin Metin Biçimlendirmesi",
+        "items": [
+          {
+            "question": "Unicode metin, Word, Instagram veya Discord'daki kalın ve italikten nasıl farklıdır?",
+            "answer": "Normal kalın ve italik, biçimlendirme kodları kullanır — genellikle işaretleme veya zengin metin olarak adlandırılır — ve yalnızca bunları destekleyen uygulamalar içinde çalışır.\n    Örneğin Discord kalın metin için **metin** kullanır ve Instagram altyazılarında hiç biçimlendirme seçeneği yoktur.\n    <br><br>\n    UltraTextGen farklı çalışır. Her harfi zaten stilize görünüme sahip benzersiz bir Unicode karakteriyle değiştirir.\n    Sonuç, herhangi bir biçimlendirme motoru olmadan kalın, italik, el yazısı veya dekoratif görünen düz metindir.\n    <br><br>\n    <strong>Bu neden önemli</strong><br>\n    Zengin metin kalını, bir TikTok altyazısına, e-posta konu satırına veya kullanıcı adı alanına yapıştırırsanız kaybolur — bu yerler biçimlendirmeyi siler.\n    Unicode metin, karakterlerin kendisi stilize olduğu için stilini korur. Silinecek hiçbir şey yoktur.\n    <br><br>\n    <strong>Örnek</strong><br>\n    Zengin metin editörü \"Sale\" kelimesini görünmez kodlara sararak kalın yapar. Bunu bir TikTok bio'suna yapıştırın, düz \"Sale\" olur.\n    UltraTextGen ile \"Sale\", 𝗦𝗮𝗹𝗲 olur — ve bio'nuzda, kullanıcı adınızda, e-posta konunuzda ve her yerde öyle kalır."
+          },
+          {
+            "question": "Bir Unicode metin oluşturucu, zengin metin editörünün yapamadığı neler yapabilir?",
+            "answer": "Google Docs veya Microsoft Word gibi zengin metin editörleri kalın, italik ve altı çizili sunar — ancak bu stiller bir sosyal medya bio'suna, kullanıcı adı alanına veya düz metin e-postasına yapıştırıldığında kaybolur.\n    Unicode metin oluşturucu, bu bağlamlarda hiçbir zengin metin editörünün üretemeyeceği stiller ve efektler sunar.\n    <br><br>\n    <strong>UltraTextGen'in zengin metnin yapamadığı şeyleri</strong><br>\n    — Biçimlendirme araç çubuğunun bulunmadığı Instagram bio'larında, TikTok altyazılarında ve YouTube açıklamalarında kalın ve italik metin.<br>\n    — Zengin metin editörlerinin hiç sunmadığı Gothic, Bubble ve Cursive yazı tipi stilleri.<br>\n    — Ters ve yansıtılmış metin — hiçbir kelime işlemcisinde mümkün değil.<br>\n    — Üst üste yerleştirilmiş diyakritiklerle ürkütücü, bozulmuş görünüm için Zalgo (glitch) metni.<br>\n    — Unicode sembolleri kullanarak metnin etrafında dekoratif çerçeveler, kenarlıklar ve sarmalayıcılar.<br>\n    — Discord, Roblox, Steam ve diğer platformlarda stilize kullanıcı adları ve görünen adlar.<br>\n    — Bu biçimlendirme seçeneklerini yerel olarak desteklemeyen yerlerde üstü çizili ve altı çizili metin.\n    <br><br>\n    Kısacası UltraTextGen, karakterlerle birlikte seyahat eden görsel metin efektleri sunar ve bunlar düz metnin kabul edildiği her yerde çalışır."
+          },
+          {
+            "question": "E-posta konu satırlarında kalın Unicode metin kullanabilir miyim?",
+            "answer": "Evet — ve bu, zengin metin editörünün yapamadığı şeye mükemmel bir örnektir.\n    E-posta konu satırları düz metindir, bu nedenle normal kalın biçimlendirme alıcı görmeden önce silinir.\n    <br><br>\n    UltraTextGen ile kalın Unicode karakterleri doğrudan konu satırına yapıştırabilirsiniz ve alıcı bunları gelen kutusunda kalın olarak görür.\n    <br><br>\n    <strong>Örnek</strong><br>\n    Normal konu satırı: \"Flash Sale — 50% Off Today\"<br>\n    Unicode konu satırı: \"𝗙𝗹𝗮𝘀𝗵 𝗦𝗮𝗹𝗲 — 𝟱𝟬% 𝗢𝗳𝗳 𝗧𝗼𝗱𝗮𝘆\"\n    <br><br>\n    Kalın sürüm, özel e-posta araçları olmadan kalabalık bir gelen kutusunda öne çıkar. Başlıca e-posta istemcilerinin çoğu — Gmail, Outlook, Apple Mail — Unicode karakterleri doğru şekilde görüntüler."
+          }
+        ]
+      },
+      {
+        "title": "Stiller, Yazı Tipleri ve Dekorasyonlar",
+        "items": [
+          {
+            "question": "UltraTextGen hangi yazı tipi stillerini sunuyor?",
+            "answer": "UltraTextGen, üstün görünüm ve kapsam için hepsi \"Ultra\" önekiyle sunulan en büyük yüksek kaliteli Unicode metin stilleri koleksiyonlarından birine sahiptir.\n    <br><br>\n    <strong>Temel stiller</strong><br>\n    Ultra Bold ve Ultra Bold Serif, Ultra Italic (birden fazla varyant), Ultra Script ve Ultra Script Bold, Ultra Gothic, Ultra Bubble (Filled, Light, Tiles, Curly, Angle, Spaced ve daha fazlası), Ultra Strike ve Ultra Underline.\n    <br><br>\n    <strong>Özel stiller</strong><br>\n    Upside Down ve Flipped, Small Caps, Zalgo (Glitch), Word Wrappers ve Frames, Backwards ve Mirror, Double Struck, Fullwidth, Squared, Parenthesized ve çok daha fazlası.\n    <br><br>\n    Yeni stiller düzenli olarak ekleniyor; siteyi yer imlerine ekleyin veya sık sık kontrol edin."
+          },
+          {
+            "question": "Birden fazla stili birleştirebilir ve metime dekorasyon ekleyebilir miyim?",
+            "answer": "Evet — stil karıştırma ve tek tıkla dekorasyonlar, UltraTextGen'in diğer oluşturuculara göre en büyük iki avantajıdır.\n    <br><br>\n    Bubble + Zalgo, Gothic + Upside Down veya Small Caps + Underline gibi stilleri katmanlayabilir ve ardından sonucu dekoratif öğelerle sarabilirsiniz.\n    <br><br>\n    <strong>Mevcut dekorasyonlar</strong><br>\n    Çerçeveler ve kenarlıklar (örneğin ★彡[ text ]彡★ veya ╭─▸ text ╰─▸), oklar, semboller, minimal ayırıcılar, emojiler ve bayraklar.\n    <br><br>\n    <strong>Örnek</strong><br>\n    \"hello\" ile başlayın → Ultra Gothic uygulayın → yıldız çerçevesi ekleyin → sonuç: ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★\n    <br><br>\n    Hiçbir oluşturucu karıştırmayı ve dekorasyonu bu kadar kolay yapmaz."
+          },
+          {
+            "question": "Zalgo veya glitch metni nedir ve nasıl kullanılır?",
+            "answer": "Zalgo metni, her karakterin üstüne ve altına üst üste bindirilmiş diyakritikler ekleyen; metni bozulmuş veya perili görüntüleyen ürkütücü, bozuk ve \"lanetli\" stildir.\n    <br><br>\n    <strong>Örnek</strong><br>\n    \"hello\" → h̷e̷l̷l̷o̷\n    <br><br>\n    Korku temalı memeler, edgy sosyal medya bio'ları, ürkütücü kullanıcı adları ve grup sohbetlerinde arkadaşlarla şakalaşmak için popülerdir.\n    Sadece metninizi yazın, Zalgo stilini seçin, kopyalayın ve yapıştırın — UltraTextGen yığınlamayı otomatik olarak halleder."
+          }
+        ]
+      },
+      {
+        "title": "Platform Uyumluluğu",
+        "items": [
+          {
+            "question": "UltraTextGen tarafından oluşturulan metni nerede kullanabilirim?",
+            "answer": "Düz metnin kabul edildiği her yerde. Stilize karakterler gerçek Unicode olduğundan — biçimlendirme kodları değil — metninizi nereye yapıştırırsanız yapıştırın onlarla birlikte gider.\n    <br><br>\n    <strong>Sosyal medya</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest ve Snapchat.\n    <br><br>\n    <strong>Mesajlaşma uygulamaları</strong><br>\n    WhatsApp, Telegram, Discord, Signal ve iMessage.\n    <br><br>\n    <strong>Diğer</strong><br>\n    E-posta konu satırları ve imzalar, oyun profilleri (Roblox, Minecraft, Steam), forum gönderileri, özgeçmişler, sunumlar ve daha fazlası.\n    <br><br>\n    Ayrıca o uygulama için özel olarak test edilmiş stiller istiyorsanız her büyük platform için optimize edilmiş özel oluşturucu sayfalarımız da mevcuttur."
+          },
+          {
+            "question": "Kullanıcı adları ve görünen adlar için Unicode metin kullanabilir miyim?",
+            "answer": "Kesinlikle. Unicode karakterler, Instagram, TikTok, Discord, Roblox, Steam ve diğer birçok platform dahil olmak üzere çoğu kullanıcı adı ve görünen ad alanında kabul edilir.\n    <br><br>\n    <strong>Örnek</strong><br>\n    Normal kullanıcı adı: \"DarkWolf\"<br>\n    Unicode kullanıcı adı: \"𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣\" (Gothic) veya \"ⒹⓐⓡⓚⓌⓞⓛⓕ\" (Bubble)\n    <br><br>\n    Bu, bir zengin metin editörünün asla yapamayacağı bir şeydir — kullanıcı adı alanları yalnızca düz metin kabul eder ve stilize Unicode karakterler düz metin sayılır.\n    <br><br>\n    <strong>İpucu</strong><br>\n    Bir platform kullanıcı adı alanında belirli karakterleri reddediyorsa farklı bir stil deneyin. Bazı stiller diğerlerinden daha geniş uyumluluğa sahiptir."
+          },
+          {
+            "question": "Bazı stilize metinler neden belirli platformlarda kutucuklar veya soru işaretleri olarak görünüyor?",
+            "answer": "Bu, izleyicinin cihazında yüklü yazı tipinin söz konusu Unicode karakterleri için glifler içermediği durumlarda olur.\n    Metnin kendisiyle ilgili bir sorun değildir — modern cihazların ve tarayıcıların büyük çoğunluğunda stillerin büyük çoğunluğu doğru şekilde görüntülenir.\n    <br><br>\n    <strong>Ne yapmalı</strong><br>\n    Kutucuklar veya eksik karakterler görürseniz farklı bir stil deneyin. Ultra Bold, Ultra Italic ve Ultra Bubble gibi temel stiller en geniş cihaz desteğine sahiptir.\n    Ayrıca o uygulama için test edilmiş stilleri bulmak amacıyla platforma özgü sayfalarımızı (Discord veya Instagram gibi) kullanabilirsiniz."
+          }
+        ]
+      },
+      {
+        "title": "Dil ve Alfabe Desteği",
+        "items": [
+          {
+            "question": "UltraTextGen kalın ve stilize metin için hangi dilleri destekliyor?",
+            "answer": "UltraTextGen, Latin alfabesiyle yazılan her dili destekler.\n    Bir dil, á, é, ñ, ü ve ç gibi aksanlı karakterler dahil A'dan Z'ye kadar harfler kullanıyorsa metin kalın, italik, el yazısı ve diğer Unicode stillerine dönüştürülebilir.\n    Bu, Unicode'un Latin alfabesi harfleri ve rakamlar için stilize karakter varyantları sağlaması sayesinde çalışır.\n    <br><br>\n    <strong>Desteklenen Latin alfabeli diller</strong><br>\n    İngilizce, İspanyolca, Fransızca, Portekizce, Almanca, İtalyanca, Hollandaca, Afrikaanca, Endonezce, Malezce, Filipince, Tagalogca, Vietnamca ve Türkçe — diğerleri arasında.\n    <br><br>\n    Bu diller sosyal medya platformlarında, mesajlaşma uygulamalarında ve e-postalarda güvenilir biçimde stilize edilebilir."
+          },
+          {
+            "question": "Stilize metin için hangi diller desteklenmiyor?",
+            "answer": "Latin dışı alfabeler kullanan diller kalın, italik veya diğer Unicode yazı tipi stillerine dönüştürülemez.\n    Bu alfabelerin stilize Unicode karakter varyantları yoktur, dolayısıyla metin dönüştürme sonrasında değişmeden kalır.\n    <br><br>\n    <strong>Stilize metin için desteklenmeyen diller</strong><br>\n    Arapça, Urduca, Farsça, İbranice, Hintçe, Bengalce, Tamilce, Tayca, Çince, Japonca, Korece ve Sinhala.\n    <br><br>\n    Bu, UltraTextGen'in değil Unicode standardının kendisinin bir sınırlamasıdır.\n    Bu dillerden birinde yazıyorsanız metindeki Latin alfabeli kelimeler (marka adları, İngilizce ifadeler vb.) yine de dönüştürülecektir."
+          },
+          {
+            "question": "Dönüştürülemeyen karakterler var mı?",
+            "answer": "İngilizce harflerin çoğu (A–Z, a–z), rakamlar (0–9) ve temel noktalama işaretleri tüm stillerde mükemmel şekilde dönüştürülür.\n    Bazı nadir semboller veya özel karakterler, Unicode'un her karakter için stilize varyantlar içermemesi nedeniyle daha az stil seçeneğine sahip olabilir.\n    <br><br>\n    Bir karakter dönüştürülemiyorsa basitçe normal metin olarak kalır — hiçbir zaman hata üretmez veya kullanılamaz sonuçlar vermez.\n    Çıktınız her zaman kullanılabilir olacaktır."
+          }
+        ]
+      },
+      {
+        "title": "Gizlilik ve Güvenlik",
+        "items": [
+          {
+            "question": "Yazdığım metin depolanıyor veya takip ediliyor mu?",
+            "answer": "Hayır. UltraTextGen metninizi depolamaz ve çıktıya gizli veya izleme karakterleri eklemez.\n    Dönüştürme tarayıcınızda gerçekleşir ve kopyaladığınız şey temiz Unicode'dur — bundan fazlası değil."
+          },
+          {
+            "question": "Oluşturulan metin kopyalamak ve yapıştırmak için güvenli mi?",
+            "answer": "Evet — tamamen güvenli. Çıktı, gömülü betikler, gizli biçimlendirme ve izleme kodları içermeyen standart Unicode metnidir.\n    Herhangi bir uygulama veya web sitesine güvenlik endişesi olmadan yapıştırabilirsiniz."
+          }
+        ]
+      },
+      {
+        "title": "Mobil ve Cihaz Desteği",
+        "items": [
+          {
+            "question": "UltraTextGen telefon ve tabletlerde çalışıyor mu?",
+            "answer": "Evet — site tamamen duyarlıdır ve telefon, tablet ve masaüstünde harika çalışır.\n    İndirilecek bir uygulama yoktur. Sadece mobil tarayıcınızda UltraTextGen'i açın, metninizi yazın, bir stil seçin ve kopyalayın.\n    iPhone, Android, iPad ve modern tarayıcıya sahip her cihazda çalışır."
+          }
+        ]
+      },
+      {
+        "title": "Neden UltraTextGen'i Seçmelisiniz",
+        "items": [
+          {
+            "question": "Neden UltraTextGen'i diğer metin oluşturucularına tercih etmeliyim?",
+            "answer": "UltraTextGen, mevcut en eksiksiz ve kullanımı en kolay Unicode metin oluşturucu olacak şekilde tasarlanmıştır.\n    <br><br>\n    <strong>Onu öne çıkaran özellikler</strong><br>\n    — En büyük premium \"Ultra\" stilli yazı tipi koleksiyonlarından biri.<br>\n    — Gerçek stil karıştırma: çoğu oluşturucunun desteklemediği şeyi tek tıkla birden fazla stili birleştirin.<br>\n    — Tek tıkla dekorasyonlar: manuel kopyala-yapıştır olmadan çerçeve, kenarlık, sembol ve ayırıcı ekleyin.<br>\n    — TikTok, Discord, Instagram ve daha fazlası için platformunuzda test edilmiş stilleri sunan özel platform sayfaları.<br>\n    — Sizi yavaşlatan açılır pencereler olmadan hızlı, temiz arayüz.<br>\n    — Yeni stiller ve dekorasyonlarla sürekli güncellenir."
+          },
+          {
+            "question": "UltraTextGen yeni stiller ekliyor mu?",
+            "answer": "Evet — yeni Ultra stiller ve dekorasyonlar düzenli olarak ekleniyor.\n    En son eklemelerden haberdar olmak için siteyi yer imlerine ekleyin."
+          },
+          {
+            "question": "İhtiyaçlarım için doğru yazı tipi stilini veya aracı nasıl bulabilirim?",
+            "answer": "UltraTextGen stiller ve araçları üç şekilde düzenler:\n    <br><br>\n    <strong>Yazı tipi stiline göre</strong><br>\n    Tüm yazı tipi kategorilerine göz atın — bold, cursive, gothic, bubble, strikethrough, underline, upside-down ve daha fazlası. Her kategori sayfasının o stile odaklanan kendi oluşturucusu vardır.\n    <br><br>\n    <strong>Platforma göre</strong><br>\n    O platformun kuralları için optimize edilmiş stiller ve ipuçları için platforma özgü oluşturucu kullanın (Instagram, TikTok veya LinkedIn gibi).\n    <br><br>\n    <strong>Göreve göre</strong><br>\n    Göreve özgü araçlar için kullanım alanı sayfasını ziyaret edin — yorum yazı tipleri, emoji kombinasyonları, öncesi-sonrası emojiler ve daha fazlası."
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 UltraTextGen. Her yerde çalışan hızlı metin stilleri."
+  }
+}
