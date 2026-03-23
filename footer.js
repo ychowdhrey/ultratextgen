@@ -5,6 +5,7 @@
     '<div class="footer-links">' +
       '<div class="footer-nav-links">' +
         '<a href="/about/" class="footer-link">About</a>' +
+        '<a href="/library/" class="footer-link">Library</a>' +
         '<a href="/privacy/" class="footer-link">Privacy Policy</a>' +
         '<a href="/terms/" class="footer-link">Terms of Service</a>' +
         '<a href="/contact/" class="footer-link">Contact</a>' +
