@@ -73,6 +73,7 @@ https://ultratextgen.com
 
 UltraTextGen propose des pages dédiées à chaque grande plateforme pour que les styles s'affichent exactement comme prévu.
 
+<!-- START_PLATFORMS -->
 ### Plateformes de Réseaux Sociaux
 **Facebook:** https://ultratextgen.com/facebook  
 **Instagram:** https://ultratextgen.com/instagram  
@@ -88,10 +89,13 @@ UltraTextGen propose des pages dédiées à chaque grande plateforme pour que le
 **Telegram:** https://ultratextgen.com/telegram  
 **WhatsApp:** https://ultratextgen.com/whatsapp  
 
+<!-- END_PLATFORMS -->
+
 ## Pages Catégories
 
 UltraTextGen organise les transformations de polices Unicode en catégories structurées basées sur le ton.
 
+<!-- START_CATEGORIES -->
 **Toutes les catégories:** https://ultratextgen.com/category/
 
 ### Polices Grasses
@@ -134,10 +138,13 @@ Encadrez le texte avec des motifs de polices décoratifs et structurés.
 Variations de polices Unicode spécialisées et expérimentales.
 - https://ultratextgen.com/category/classified/
 
+<!-- END_CATEGORIES -->
+
 ## Cas d'Usage
 
 Pages contextuelles conçues autour d'objectifs utilisateurs spécifiques, avec des outils adaptés et des styles Unicode sélectionnés.
 
+<!-- START_USECASES -->
 **Tous les cas d'usage:** https://ultratextgen.com/usecase/
 
 ### Police de Commentaire
@@ -164,11 +171,14 @@ Un outil spécialement conçu pour créer des titres LinkedIn qui se démarquent
 Un convertisseur de texte intégral en emojis qui traduit du texte ordinaire en une séquence d'emojis grâce à un système de langage emoji structuré. Prend en charge plusieurs langues, inclut une vue de décomposition des emojis et produit une sortie instantanément copiable.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
+<!-- END_USECASES -->
+
 ## Guides
 
 Les polices ne sont pas de la décoration. Ce sont des signaux.
 Ces ressources explorent comment la typographie Unicode encode le ton, l'autorité, l'ironie et l'emphase sur les plateformes en ligne.
 
+<!-- START_GUIDES -->
 ### La Rhétorique des Polices
 Un cadre structuré associant les styles de polices à des procédés rhétoriques et à des cas d'usage pratiques, aidant les utilisateurs à appliquer la typographie intentionnellement plutôt que stylistiquement.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
@@ -188,6 +198,8 @@ Une analyse approfondie de l'utilisation du texte Unicode comme signature strat�
 ### Arrêtez le Défilement avec la Variation de Polices
 Un guide sur l'utilisation stratégique de la variation de polices pour améliorer la lisibilité, réduire la charge cognitive et augmenter l'engagement. Détaille cinq principes — ancres visuelles, hiérarchie de contraste, segmentation, emphase comme navigation et répétition — avec des transformations avant-après.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
+
+<!-- END_GUIDES -->
 
 ## Structure du Projet
 
@@ -228,3 +240,9 @@ ultratextgen/
 - **CSS** — 2,3%
 
 Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif pur pour le navigateur.
+
+<!-- START_LIBRARY -->
+<!-- END_LIBRARY -->
+
+<!-- START_EMBED -->
+<!-- END_EMBED -->

@@ -73,6 +73,7 @@ https://ultratextgen.com
 
 UltraTextGen includes dedicated pages for each major platform so styles render exactly as expected.
 
+<!-- START_PLATFORMS -->
 ### Social Media Platforms
 **Facebook:** https://ultratextgen.com/facebook  
 **Instagram:** https://ultratextgen.com/instagram  
@@ -88,10 +89,13 @@ UltraTextGen includes dedicated pages for each major platform so styles render e
 **Telegram:** https://ultratextgen.com/telegram  
 **WhatsApp:** https://ultratextgen.com/whatsapp  
 
+<!-- END_PLATFORMS -->
+
 ## Category Pages
 
 UltraTextGen organizes Unicode font transformations into structured tone-based categories.
 
+<!-- START_CATEGORIES -->
 **All categories:** https://ultratextgen.com/category/
 
 ### Bold Fonts
@@ -134,10 +138,13 @@ Frame text with structured decorative font patterns.
 Specialty and experimental Unicode font variations.
 - https://ultratextgen.com/category/classified/
 
+<!-- END_CATEGORIES -->
+
 ## Use Cases
 
 Contextual pages designed around specific user goals, each with tailored tools and curated Unicode styles.
 
+<!-- START_USECASES -->
 **All use cases:** https://ultratextgen.com/usecase/
 
 ### Comment Font
@@ -172,11 +179,14 @@ A tool for converting horizontal text into vertical format, stacking characters 
 A generator that layers combining Unicode characters onto text to produce a glitchy, distorted aesthetic. Adjustable intensity for subtle or extreme visual effects.
 - https://ultratextgen.com/usecase/zalgo-text/
 
+<!-- END_USECASES -->
+
 ## Guides
 
 Fonts are not decoration. They are signals.
 These resources explore how Unicode typography encodes tone, authority, irony, and emphasis across online platforms.
 
+<!-- START_GUIDES -->
 ### The Rhetoric of Fonts
 A structured framework mapping font styles to rhetorical devices and practical use cases, helping users apply typography intentionally rather than stylistically.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
@@ -201,10 +211,13 @@ A guide on using strategic font variation to improve scanability, reduce cogniti
 A practical guide to styling LinkedIn comments with Unicode typography. Covers techniques for adding visual emphasis, structuring replies for readability, and standing out in comment threads.
 - https://ultratextgen.com/guide/linkedin-comments-guide/
 
+<!-- END_GUIDES -->
+
 ## Library
 
 Reference collections of Unicode symbols, emoji sets, and styling resources for quick access and integration.
 
+<!-- START_LIBRARY -->
 ### Emoji Flags
 A comprehensive reference of emoji flag sequences organized by country and region, ready to copy and paste.
 - https://ultratextgen.com/library/emoji-flags/
@@ -217,13 +230,18 @@ A curated collection of Unicode styling patterns optimized for LinkedIn comments
 A reference library of Unicode symbols and special characters that render correctly on LinkedIn, organized by category for easy discovery.
 - https://ultratextgen.com/library/linkedin-symbol-library/
 
+<!-- END_LIBRARY -->
+
 ## Embed Tools
 
 Lightweight embeddable versions of UltraTextGen tools, designed for integration into external pages and platforms.
 
+<!-- START_EMBED -->
 ### LinkedIn Headline Generator Embed
 An embeddable version of the LinkedIn Headline tool for use on external websites and platforms.
 - https://ultratextgen.com/embed/linkedin-headline-generator/
+
+<!-- END_EMBED -->
 
 ## Project Structure
 
