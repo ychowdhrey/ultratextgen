@@ -73,6 +73,7 @@ https://ultratextgen.com
 
 UltraTextGen bietet dedizierte Seiten für jede wichtige Plattform, damit Stile genau wie erwartet dargestellt werden.
 
+<!-- START_PLATFORMS -->
 ### Social-Media-Plattformen
 **Facebook:** https://ultratextgen.com/facebook  
 **Instagram:** https://ultratextgen.com/instagram  
@@ -88,10 +89,13 @@ UltraTextGen bietet dedizierte Seiten für jede wichtige Plattform, damit Stile 
 **Telegram:** https://ultratextgen.com/telegram  
 **WhatsApp:** https://ultratextgen.com/whatsapp  
 
+<!-- END_PLATFORMS -->
+
 ## Kategorie-Seiten
 
 UltraTextGen ordnet Unicode-Schriftarttransformationen in strukturierte, tonbasierte Kategorien ein.
 
+<!-- START_CATEGORIES -->
 **Alle Kategorien:** https://ultratextgen.com/category/
 
 ### Fette Schriften
@@ -134,10 +138,13 @@ Rahme Text mit strukturierten dekorativen Schriftmustern ein.
 Spezialisierte und experimentelle Unicode-Schriftvarianten.
 - https://ultratextgen.com/category/classified/
 
+<!-- END_CATEGORIES -->
+
 ## Anwendungsfälle
 
 Kontextuelle Seiten, die auf bestimmte Nutzerziele ausgerichtet sind, jeweils mit angepassten Tools und kuratierten Unicode-Stilen.
 
+<!-- START_USECASES -->
 **Alle Anwendungsfälle:** https://ultratextgen.com/usecase/
 
 ### Kommentar-Schrift
@@ -164,11 +171,14 @@ Ein speziell entwickeltes Tool zum Erstellen herausragender LinkedIn-Überschrif
 Ein vollständiger Text-zu-Emoji-Konverter, der normalen Text mithilfe eines strukturierten Emoji-Sprachsystems in eine Emoji-Sequenz übersetzt. Unterstützt mehrere Sprachen, enthält eine Emoji-Aufschlüsselungsansicht und erzeugt sofort kopierbaren Output.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
+<!-- END_USECASES -->
+
 ## Leitfäden
 
 Schriften sind keine Dekoration. Sie sind Signale.
 Diese Ressourcen untersuchen, wie Unicode-Typografie Ton, Autorität, Ironie und Betonung auf Online-Plattformen kodiert.
 
+<!-- START_GUIDES -->
 ### Die Rhetorik der Schriften
 Ein strukturiertes Rahmenwerk, das Schriftstile rhetorischen Mitteln und praktischen Anwendungsfällen zuordnet und Nutzern hilft, Typografie bewusst statt nur stilistisch einzusetzen.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
@@ -188,6 +198,8 @@ Eine tiefgehende Analyse zur Nutzung von Unicode-Text als strategische Signatur 
 ### Stoppe den Scroll mit Schriftvariationen
 Ein Leitfaden zur strategischen Nutzung von Schriftvariation zur Verbesserung der Scannbarkeit, Reduzierung der kognitiven Belastung und Steigerung des Engagements. Erklärt fünf Prinzipien — visuelle Anker, Kontrasthierarchie, Chunking, Betonung als Navigation und Wiederholung — mit Vorher-Nachher-Transformationen.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
+
+<!-- END_GUIDES -->
 
 ## Projektstruktur
 
@@ -228,3 +240,9 @@ ultratextgen/
 - **CSS** — 2,3%
 
 Keine Frameworks. Keine Build-Tools für das Frontend erforderlich. Reiner browser-nativer Code.
+
+<!-- START_LIBRARY -->
+<!-- END_LIBRARY -->
+
+<!-- START_EMBED -->
+<!-- END_EMBED -->

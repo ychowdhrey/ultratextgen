@@ -73,6 +73,7 @@ https://ultratextgen.com
 
 يتضمّن UltraTextGen صفحات مخصصة لكل منصة رئيسية لضمان ظهور الأنماط بالشكل المتوقع تمامًا.
 
+<!-- START_PLATFORMS -->
 ### منصات التواصل الاجتماعي
 **Facebook:** https://ultratextgen.com/facebook  
 **Instagram:** https://ultratextgen.com/instagram  
@@ -88,10 +89,13 @@ https://ultratextgen.com
 **Telegram:** https://ultratextgen.com/telegram  
 **WhatsApp:** https://ultratextgen.com/whatsapp  
 
+<!-- END_PLATFORMS -->
+
 ## صفحات الفئات
 
 ينظّم UltraTextGen تحويلات خطوط Unicode في فئات هيكلية قائمة على النبرة.
 
+<!-- START_CATEGORIES -->
 **جميع الفئات:** https://ultratextgen.com/category/
 
 ### الخطوط الغامقة
@@ -134,10 +138,13 @@ https://ultratextgen.com
 تنويعات خطوط Unicode متخصصة وتجريبية.
 - https://ultratextgen.com/category/classified/
 
+<!-- END_CATEGORIES -->
+
 ## حالات الاستخدام
 
 صفحات سياقية مصمّمة حول أهداف محددة للمستخدم، تضم أدوات مخصصة وأنماط Unicode منتقاة.
 
+<!-- START_USECASES -->
 **جميع حالات الاستخدام:** https://ultratextgen.com/usecase/
 
 ### خط التعليقات
@@ -164,11 +171,14 @@ https://ultratextgen.com
 محوّل نصوص متكامل إلى إيموجي يترجم النص العادي إلى تسلسل إيموجي باستخدام نظام لغة إيموجي منظّم. يدعم لغات متعددة، ويتضمن عرض تفصيل الإيموجي، ويولّد مخرجات جاهزة للنسخ فورًا.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
+<!-- END_USECASES -->
+
 ## الأدلة
 
 الخطوط ليست مجرد زينة. إنها إشارات.
 تستكشف هذه الموارد كيفية ترميز الطباعة Unicode للنبرة والسلطة والسخرية والتأكيد عبر المنصات الرقمية.
 
+<!-- START_GUIDES -->
 ### بلاغة الخطوط
 إطار عمل منظّم يربط أساليب الخطوط بالأساليب البلاغية وحالات الاستخدام العملي، مما يساعد المستخدمين على توظيف الطباعة بشكل مقصود لا مجرد أسلوبي.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
@@ -188,6 +198,8 @@ https://ultratextgen.com
 ### أوقف التمرير بتنويع الخطوط
 دليل حول الاستخدام الاستراتيجي لتنويع الخطوط لتحسين قابلية المسح والتصفح، وتقليل العبء الإدراكي، وزيادة التفاعل. يشرح خمسة مبادئ — المراسي البصرية، وتسلسل التباين، والتقطيع، والتأكيد كتنقل، والتكرار — مع تحويلات قبل وبعد.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
+
+<!-- END_GUIDES -->
 
 ## هيكل المشروع
 
@@ -228,3 +240,9 @@ ultratextgen/
 - **CSS** — 2.3%
 
 لا أطر عمل. لا أدوات بناء مطلوبة للواجهة الأمامية. كود نقي يعمل مباشرةً في المتصفح.
+
+<!-- START_LIBRARY -->
+<!-- END_LIBRARY -->
+
+<!-- START_EMBED -->
+<!-- END_EMBED -->
