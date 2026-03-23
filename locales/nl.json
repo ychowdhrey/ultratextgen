@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "Stijlvolle Tekstgenerator — Kopieer & Plak Decoratieve Unicode-lettertypen",
+    "description": "Zet gewone tekst om in stijlvolle Unicode-lettertypen om te kopiëren en plakken. Kies vetgedrukte, cursieve, gotische en decoratieve stijlen voor bio's, gebruikersnamen, reacties en berichten."
+  },
+  "hero": {
+    "title": "Stijlvolle Lettertypegenerator",
+    "subtitle": "Zet gewone tekst om in vetgedrukte, cursieve, gotische en decoratieve Unicode-lettertypen om direct te kopiëren en plakken."
+  },
+  "decorations": {
+    "label": "Decoratie toevoegen aan resultaten",
+    "tabs": {
+      "symbols": "Symbolen",
+      "frames": "Kaders",
+      "dividers": "Scheiders",
+      "arrows": "Pijlen",
+      "minimal": "Minimaal",
+      "emojis": "Emoji's",
+      "flags": "Vlaggen"
+    }
+  },
+  "ui": {
+    "placeholder": "Typ hier je tekst...",
+    "advertisement": "Advertentie"
+  },
+  "useCases": {
+    "title": "Populaire Gebruiksscenario's",
+    "viewAll": "Bekijk alle gebruiksscenario's →",
+    "items": [
+      {
+        "title": "LinkedIn-kop",
+        "description": "Laat je LinkedIn-kop opvallen met vetgedrukte en cursieve Unicode-tekst die de aandacht trekt in zoekresultaten."
+      },
+      {
+        "title": "Reactielettertypen",
+        "description": "Plaats opvallende reacties op Instagram, YouTube en TikTok met gestileerde Unicode-lettertypen die er uitspringen."
+      },
+      {
+        "title": "Tekst naar Emoji",
+        "description": "Zet je tekst om in emoji-letterreeksen — perfect voor creatieve bio's, stories en groepsgesprekken."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Populaire Gidsen",
+    "viewAll": "Bekijk alle gidsen →",
+    "items": [
+      {
+        "title": "De Retorica van Lettertypen",
+        "description": "Ontdek hoe lettertypekeuzes de perceptie, het vertrouwen en de emoties beïnvloeden — en hoe je dat in je voordeel gebruikt."
+      },
+      {
+        "title": "Personal Branding Through Typography",
+        "description": "Bouw een consistent persoonlijk merk op alle sociale platforms met strategische Unicode-lettertypekeuzes."
+      },
+      {
+        "title": "Stop the Scroll With Font Variation",
+        "description": "Ontdek hoe het mengen van letterstijlen het scrollpatroon doorbreekt en meer betrokkenheid genereert op sociale feeds."
+      }
+    ]
+  },
+  "faq": {
+    "categories": [
+      {
+        "title": "Aan de slag met UltraTextGen",
+        "items": [
+          {
+            "question": "Wat is UltraTextGen en hoe werkt het?",
+            "answer": "UltraTextGen is een gratis online Unicode-tekstgenerator die je gewone tekst direct omzet in stijlvolle, fraaie lettertypen en decoraties.\n    In tegenstelling tot opmaaktools die afhankelijk zijn van app-specifieke markup, vervangt UltraTextGen elke letter door een echt Unicode-teken dat er vetgedrukt, cursief, kalligrafisch, gotisch of gedecoreerd uitziet.\n    <br><br>\n    <strong>Voorbeeld</strong><br>\n    Typ \"hello\" → krijg 𝗵𝗲𝗹𝗹𝗼 (Ultra Bold), 𝘩𝘦𝘭𝘭𝘰 (Ultra Italic), 𝒽ℯ𝓁𝓁ℴ (Ultra Script) of ⓗⓔⓛⓛⓞ (Ultra Bubble).\n    <br><br>\n    Omdat dit echte tekens zijn — geen opmaakcodes — werken ze overal waar platte tekst wordt geaccepteerd: sociale media-bio's, gebruikersnamen, bijschriften, berichten, e-mails en meer.\n    Geen apps om te installeren, geen aanmelding en geen beperkingen."
+          },
+          {
+            "question": "Hoe genereer en kopieer ik gestileerde tekst?",
+            "answer": "Gestileerde tekst genereren kost slechts een paar seconden.\n    <br><br>\n    <strong>Stap voor stap</strong><br>\n    1. Typ of plak je tekst in het invoerveld op de homepage.<br>\n    2. Gestileerde versies verschijnen direct onder het invoerveld.<br>\n    3. Blader door stijlen of kies een categorie zoals Bold, Cursive of Gothic.<br>\n    4. Klik optioneel op \"Decoratie toevoegen\" voor kaders, symbolen of scheiders.<br>\n    5. Klik op \"Kopiëren\" naast de gewenste stijl en plak deze waar je wilt.\n    <br><br>\n    Dat is alles — geen account nodig en de tool werkt zowel op desktop als mobiel."
+          },
+          {
+            "question": "Is UltraTextGen volledig gratis?",
+            "answer": "Ja — 100% gratis zonder dagelijkse limieten, geen account vereist, geen watermerken en geen verborgen kosten.\n    Je kunt zoveel gestileerde tekst genereren en kopiëren als je nodig hebt, wanneer je maar wilt."
+          }
+        ]
+      },
+      {
+        "title": "Unicode-tekst vs. Rich Text Opmaak",
+        "items": [
+          {
+            "question": "Hoe verschilt Unicode-tekst van vet en cursief in Word, Instagram of Discord?",
+            "answer": "Gewone vet- en cursieve opmaak gebruikt opmaapcodes — vaak markup of rich text genoemd — die alleen werken in de app die ze ondersteunt.\n    Discord gebruikt bijvoorbeeld **tekst** voor vet en Instagram-bijschriften hebben helemaal geen opmaakopties.\n    <br><br>\n    UltraTextGen werkt anders. Het vervangt elke letter door een uniek Unicode-teken dat al de juiste uitstraling heeft.\n    Het resultaat is platte tekst die er vetgedrukt, cursief, kalligrafisch of gedecoreerd uitziet zonder enige opmaakmotor.\n    <br><br>\n    <strong>Waarom dit belangrijk is</strong><br>\n    Rich text vet verdwijnt als je het in een TikTok-bijschrift, een e-mailonderwerpregel of een gebruikersnaamveld plakt — die plaatsen verwijderen opmaak.\n    Unicode-tekst behoudt zijn stijl omdat de tekens zelf gestileerd zijn. Er valt niets te verwijderen.\n    <br><br>\n    <strong>Voorbeeld</strong><br>\n    Een rich text editor maakt het woord \"Sale\" vet door het in onzichtbare codes te wikkelen. Plak het in een TikTok-bio en het wordt gewoon \"Sale\".\n    Met UltraTextGen wordt \"Sale\" 𝗦𝗮𝗹𝗲 — en blijft dat in je bio, gebruikersnaam, e-mailonderwerp en overal elders."
+          },
+          {
+            "question": "Wat kan een Unicode-tekstgenerator dat een rich text editor niet kan?",
+            "answer": "Rich text editors zoals Google Docs of Microsoft Word bieden vet, cursief en onderstreept — maar die stijlen verdwijnen zodra je ze in een sociale media-bio, een gebruikersnaamveld of een platte-tekst-e-mail plakt.\n    Een Unicode-tekstgenerator ontgrendelt stijlen en effecten die geen rich text editor in die contexten kan produceren.\n    <br><br>\n    <strong>Dingen die UltraTextGen kan die rich text niet kan</strong><br>\n    — Vette en cursieve tekst in Instagram-bio's, TikTok-bijschriften en YouTube-beschrijvingen waar geen opmaakbalk bestaat.<br>\n    — Gothic-, Bubble- en Cursive-letterstijlen die rich text editors helemaal niet bieden.<br>\n    — Ondersteboven en gespiegelde tekst — onmogelijk in elke tekstverwerker.<br>\n    — Zalgo-tekst (glitch) met gestapelde diakritische tekens voor een griezelig, gecorrumpeerd uiterlijk.<br>\n    — Decoratieve kaders, randen en omhulsels rondom je tekst met Unicode-symbolen.<br>\n    — Gestileerde gebruikersnamen en weergavenamen op Discord, Roblox, Steam en andere platforms.<br>\n    — Doorgestreepte en onderstreepte tekst op plaatsen die die opmaakopties niet native ondersteunen.\n    <br><br>\n    Kortom, UltraTextGen geeft je visuele teksteffecten die meereizen met de tekens, zodat ze overal werken waar platte tekst wordt geaccepteerd."
+          },
+          {
+            "question": "Kan ik vette Unicode-tekst gebruiken in e-mailonderwerpregels?",
+            "answer": "Ja — en dit is een perfect voorbeeld van iets wat een rich text editor niet kan.\n    E-mailonderwerpregels zijn platte tekst, dus gewone vetgedrukte opmaak wordt verwijderd voordat de ontvanger het ziet.\n    <br><br>\n    Met UltraTextGen kun je vette Unicode-tekens direct in de onderwerpregel plakken en de ontvanger ziet ze als vet in hun inbox.\n    <br><br>\n    <strong>Voorbeeld</strong><br>\n    Normale onderwerpregel: \"Flash Sale — 50% Off Today\"<br>\n    Unicode-onderwerpregel: \"𝗙𝗹𝗮𝘀𝗵 𝗦𝗮𝗹𝗲 — 𝟱𝟬% 𝗢𝗳𝗳 𝗧𝗼𝗱𝗮𝘆\"\n    <br><br>\n    De vette versie valt op in een drukke inbox zonder speciale e-mailtools. De meeste grote e-mailclients — Gmail, Outlook, Apple Mail — geven Unicode-tekens correct weer."
+          }
+        ]
+      },
+      {
+        "title": "Stijlen, Lettertypen en Decoraties",
+        "items": [
+          {
+            "question": "Welke letterstijlen biedt UltraTextGen?",
+            "answer": "UltraTextGen heeft een van de grootste collecties hoogwaardige Unicode-tekststijlen, allemaal voorafgegaan door \"Ultra\" voor superieure uitstraling en dekking.\n    <br><br>\n    <strong>Kernstijlen</strong><br>\n    Ultra Bold en Ultra Bold Serif, Ultra Italic (meerdere varianten), Ultra Script en Ultra Script Bold, Ultra Gothic, Ultra Bubble (Filled, Light, Tiles, Curly, Angle, Spaced en meer), Ultra Strike en Ultra Underline.\n    <br><br>\n    <strong>Speciale stijlen</strong><br>\n    Upside Down en Flipped, Small Caps, Zalgo (Glitch), Word Wrappers en Frames, Backwards en Mirror, Double Struck, Fullwidth, Squared, Parenthesized en nog veel meer.\n    <br><br>\n    Er worden regelmatig nieuwe stijlen toegevoegd, dus sla de site op als bladwijzer of kom regelmatig terug."
+          },
+          {
+            "question": "Kan ik meerdere stijlen combineren en decoraties toevoegen aan mijn tekst?",
+            "answer": "Ja — stijlcombinaties en decoraties met één klik zijn twee van de grootste voordelen van UltraTextGen ten opzichte van andere generators.\n    <br><br>\n    Je kunt stijlen samenvoegen, zoals Bubble + Zalgo, Gothic + Upside Down of Small Caps + Underline, en het resultaat vervolgens omhullen met decoratieve elementen.\n    <br><br>\n    <strong>Beschikbare decoraties</strong><br>\n    Kaders en randen (bijvoorbeeld ★彡[ text ]彡★ of ╭─▸ text ╰─▸), pijlen, symbolen, minimale scheiders, emoji's en vlaggen.\n    <br><br>\n    <strong>Voorbeeld</strong><br>\n    Begin met \"hello\" → pas Ultra Gothic toe → voeg een sterkader toe → resultaat: ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★\n    <br><br>\n    Geen enkele andere generator maakt combineren en decoreren zo eenvoudig."
+          },
+          {
+            "question": "Wat is Zalgo- of glitch-tekst en hoe gebruik ik het?",
+            "answer": "Zalgo-tekst is de griezelige, glitchy, \"vervloekte\" stijl die gestapelde diakritische tekens boven en onder elk teken toevoegt, waardoor de tekst er gecorrumpeerd of achtervolgd uitziet.\n    <br><br>\n    <strong>Voorbeeld</strong><br>\n    \"hello\" → h̷e̷l̷l̷o̷\n    <br><br>\n    Het is populair voor horrorthema-memes, edgy sociale media-bio's, griezelige gebruikersnamen en het plagen van vrienden in groepsgesprekken.\n    Typ gewoon je tekst, selecteer de Zalgo-stijl, kopieer en plak — UltraTextGen verwerkt de stapeling automatisch."
+          }
+        ]
+      },
+      {
+        "title": "Platformcompatibiliteit",
+        "items": [
+          {
+            "question": "Waar kan ik tekst gebruiken die door UltraTextGen is gegenereerd?",
+            "answer": "Overal waar platte tekst wordt geaccepteerd. Omdat de gestileerde tekens echte Unicode zijn — geen opmaakcodes — gaan ze mee met je tekst waar je ook plakt.\n    <br><br>\n    <strong>Sociale media</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest en Snapchat.\n    <br><br>\n    <strong>Berichtenapps</strong><br>\n    WhatsApp, Telegram, Discord, Signal en iMessage.\n    <br><br>\n    <strong>Overig</strong><br>\n    E-mailonderwerpregels en handtekeningen, spelprofielen (Roblox, Minecraft, Steam), forumberichten, cv's, presentaties en meer.\n    <br><br>\n    We hebben ook speciale generatorpagina's geoptimaliseerd voor elk groot platform als je stijlen wilt die specifiek voor die app zijn getest."
+          },
+          {
+            "question": "Kan ik Unicode-tekst gebruiken voor gebruikersnamen en weergavenamen?",
+            "answer": "Absoluut. Unicode-tekens worden in de meeste gebruikersnaam- en weergavenaamvelden geaccepteerd — waaronder Instagram, TikTok, Discord, Roblox, Steam en vele andere platforms.\n    <br><br>\n    <strong>Voorbeeld</strong><br>\n    Normale gebruikersnaam: \"DarkWolf\"<br>\n    Unicode-gebruikersnaam: \"𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣\" (Gothic) of \"ⒹⓐⓡⓚⓌⓞⓛⓕ\" (Bubble)\n    <br><br>\n    Dit is iets wat een rich text editor nooit kan doen — gebruikersnaamvelden accepteren alleen platte tekst, en gestileerde Unicode-tekens tellen als platte tekst.\n    <br><br>\n    <strong>Tip</strong><br>\n    Als een platform bepaalde tekens in het gebruikersnaamveld weigert, probeer dan een andere stijl. Sommige stijlen hebben een bredere compatibiliteit dan andere."
+          },
+          {
+            "question": "Waarom verschijnt gestileerde tekst soms als vakjes of vraagtekens op bepaalde platforms?",
+            "answer": "Dit gebeurt wanneer het lettertype op het apparaat van de kijker geen glyphs bevat voor die specifieke Unicode-tekens.\n    Het is geen probleem met de tekst zelf — op de meeste moderne apparaten en browsers wordt de grote meerderheid van stijlen correct weergegeven.\n    <br><br>\n    <strong>Wat te doen</strong><br>\n    Als je vakjes of ontbrekende tekens ziet, probeer dan een andere stijl. Kernstijlen zoals Ultra Bold, Ultra Italic en Ultra Bubble hebben de breedste apparaatondersteuning.\n    Je kunt ook onze platformspecifieke pagina's (zoals Discord of Instagram) gebruiken om stijlen te vinden die voor die app zijn getest."
+          }
+        ]
+      },
+      {
+        "title": "Taal- en Schriftondersteuning",
+        "items": [
+          {
+            "question": "Welke talen ondersteunt UltraTextGen voor vette en gestileerde tekst?",
+            "answer": "UltraTextGen ondersteunt elke taal die met het Latijnse alfabet wordt geschreven.\n    Als een taal A tot Z gebruikt, inclusief letters met accenten zoals á, é, ñ, ü en ç, kan de tekst worden omgezet in vette, cursieve, kalligrafische en andere Unicode-stijlen.\n    Dit werkt omdat Unicode gestileerde tekenvarianten biedt voor Latijnse letters en cijfers.\n    <br><br>\n    <strong>Ondersteunde talen met Latijns alfabet</strong><br>\n    Engels, Spaans, Frans, Portugees, Duits, Italiaans, Nederlands, Afrikaans, Indonesisch, Maleis, Filipijns, Tagalog, Vietnamees en Turks — onder vele andere.\n    <br><br>\n    Deze talen kunnen betrouwbaar worden gestileerd op sociale mediaplatforms, berichtenapps en in e-mails."
+          },
+          {
+            "question": "Welke talen worden niet ondersteund voor gestileerde tekst?",
+            "answer": "Talen die niet-Latijnse schriften gebruiken, kunnen niet worden omgezet in vette, cursieve of andere Unicode-letterstijlen.\n    Deze schriften hebben geen gestileerde Unicode-tekenvarianten, waardoor de tekst ongewijzigd blijft na conversie.\n    <br><br>\n    <strong>Niet ondersteund voor gestileerde tekst</strong><br>\n    Arabisch, Urdu, Perzisch, Hebreeuws, Hindi, Bengaals, Tamil, Thai, Chinees, Japans, Koreaans en Sinhala.\n    <br><br>\n    Dit is een beperking van de Unicode-standaard zelf, niet van UltraTextGen.\n    Als je in een van deze talen schrijft, worden woorden in het Latijnse alfabet (merknamen, Engelse zinnen, enz.) in de tekst wel geconverteerd."
+          },
+          {
+            "question": "Zijn er tekens die niet worden geconverteerd?",
+            "answer": "De meeste Engelse letters (A–Z, a–z), cijfers (0–9) en basale leestekens worden in alle stijlen perfect geconverteerd.\n    Sommige zeer zeldzame symbolen of speciale tekens kunnen minder stijlopties hebben omdat Unicode niet voor elk teken gestileerde varianten bevat.\n    <br><br>\n    Als een teken niet kan worden geconverteerd, blijft het gewoon als normale tekst staan — het produceert nooit fouten of onbruikbare resultaten.\n    Je uitvoer is altijd bruikbaar."
+          }
+        ]
+      },
+      {
+        "title": "Privacy en Veiligheid",
+        "items": [
+          {
+            "question": "Wordt de tekst die ik typ opgeslagen of gevolgd?",
+            "answer": "Nee. UltraTextGen slaat je tekst niet op en voegt geen verborgen of volgtekens toe aan de uitvoer.\n    De conversie vindt plaats in je browser, en wat je kopieert is schone Unicode — niets meer."
+          },
+          {
+            "question": "Is de gegenereerde tekst veilig om te kopiëren en plakken?",
+            "answer": "Ja — volledig veilig. De uitvoer is standaard Unicode-tekst zonder ingesloten scripts, verborgen opmaak of volgcodes.\n    Je kunt het in elke app of website plakken zonder beveiligingsproblemen."
+          }
+        ]
+      },
+      {
+        "title": "Mobiele en Apparaatondersteuning",
+        "items": [
+          {
+            "question": "Werkt UltraTextGen op telefoons en tablets?",
+            "answer": "Ja — de site is volledig responsief en werkt uitstekend op telefoons, tablets en desktops.\n    Er is geen app om te downloaden. Open UltraTextGen gewoon in je mobiele browser, typ je tekst, kies een stijl en kopieer.\n    Het werkt op iPhone, Android, iPad en elk apparaat met een moderne browser."
+          }
+        ]
+      },
+      {
+        "title": "Waarom Kiezen voor UltraTextGen",
+        "items": [
+          {
+            "question": "Waarom zou ik UltraTextGen kiezen boven andere tekstgenerators?",
+            "answer": "UltraTextGen is gebouwd om de meest complete en eenvoudigst te gebruiken Unicode-tekstgenerator te zijn.\n    <br><br>\n    <strong>Wat het onderscheidt</strong><br>\n    — Een van de grootste collecties premium \"Ultra\"-gestileerde lettertypen.<br>\n    — Echt stijlmix: combineer meerdere stijlen met één klik, iets wat de meeste generators niet ondersteunen.<br>\n    — Decoraties met één klik: voeg kaders, randen, symbolen en scheiders toe zonder handmatig kopiëren en plakken.<br>\n    — Speciale platformpagina's voor TikTok, Discord, Instagram en meer — met stijlen getest voor jouw platform.<br>\n    — Snelle, overzichtelijke interface zonder pop-ups die je vertragen.<br>\n    — Voortdurend bijgewerkt met nieuwe stijlen en decoraties."
+          },
+          {
+            "question": "Voegt UltraTextGen nieuwe stijlen toe?",
+            "answer": "Ja — nieuwe Ultra-stijlen en decoraties worden regelmatig toegevoegd.\n    Sla de site op als bladwijzer om op de hoogte te blijven van de nieuwste toevoegingen."
+          },
+          {
+            "question": "Hoe vind ik de juiste letterstijl of tool voor mijn behoeften?",
+            "answer": "UltraTextGen organiseert stijlen en tools op drie manieren:\n    <br><br>\n    <strong>Op letterstijl</strong><br>\n    Blader door alle lettertypecategorieën — bold, cursive, gothic, bubble, strikethrough, underline, upside-down en meer. Elke categoriepagina heeft een eigen generator gericht op die stijl.\n    <br><br>\n    <strong>Op platform</strong><br>\n    Gebruik een platformspecifieke generator (zoals Instagram, TikTok of LinkedIn) voor stijlen en tips geoptimaliseerd voor de regels van dat platform.\n    <br><br>\n    <strong>Op taak</strong><br>\n    Bezoek de gebruiksscenario-pagina voor taakspecifieke tools — reactielettertypen, emoji-combinaties, voor-en-na-emoji's en meer."
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 UltraTextGen. Snelle tekststijlen die overal werken."
+  }
+}

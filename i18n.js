@@ -99,7 +99,7 @@
   }
 
   function detectLang() {
-    var supported = ["en", "es", "fr", "pt", "de"];
+    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi"];
 
     // 1. Detect from URL path prefix (e.g. /fr/, /de/)
     var pathMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
