@@ -86,17 +86,39 @@
   function markActiveLang(lang) {
     document.querySelectorAll(".lang-option").forEach(function (a) {
       var href = a.getAttribute("href");
-      a.classList.toggle("active", href === "?lang=" + lang);
+      // Match path-based (/fr/) or root (/) or legacy (?lang=xx)
+      var hrefLang;
+      if (href === "/" || href === "?lang=en") {
+        hrefLang = "en";
+      } else {
+        var pathMatch = href.match(/^\/([a-z]{2})\/$/);
+        hrefLang = pathMatch ? pathMatch[1] : href.replace("?lang=", "");
+      }
+      a.classList.toggle("active", hrefLang === lang);
     });
   }
 
-  function init() {
-    var params = new URLSearchParams(window.location.search);
-    var lang = params.get("lang") || "en";
-
-    // Validate lang — only allow known locales
+  function detectLang() {
     var supported = ["en", "es", "fr", "pt", "de"];
-    if (supported.indexOf(lang) === -1) lang = "en";
+
+    // 1. Detect from URL path prefix (e.g. /fr/, /de/)
+    var pathMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
+    if (pathMatch && supported.indexOf(pathMatch[1]) !== -1) {
+      return pathMatch[1];
+    }
+
+    // 2. Fall back to ?lang= query param (legacy / redirect fallback)
+    var params = new URLSearchParams(window.location.search);
+    var queryLang = params.get("lang");
+    if (queryLang && supported.indexOf(queryLang) !== -1) {
+      return queryLang;
+    }
+
+    return "en";
+  }
+
+  function init() {
+    var lang = detectLang();
 
     // Always set html lang attribute
     document.documentElement.lang = lang;
