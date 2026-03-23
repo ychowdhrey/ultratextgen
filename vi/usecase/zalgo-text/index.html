@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trình Tạo Chữ Zalgo — Chữ Lỗi, Bị Nguyền và Rùng Rợn | UltraTextGen</title>
+  <meta name="description" content="Tạo chữ Zalgo rùng rợn và lỗi bằng ký tự Unicode kết hợp. Kiểm soát hoàn toàn các ký tự, vị trí, hình dạng, tần suất và biên độ. Sao chép và dán ở bất kỳ đâu.">
+  <link rel="canonical" href="https://ultratextgen.com/vi/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/usecase/zalgo-text/">
+  <link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/usecase/zalgo-text/">
+  <meta property="og:image" content="https://ultratextgen.com/logo.png">
+  <meta name="twitter:image" content="https://ultratextgen.com/logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Trình Tạo Chữ Zalgo — Chữ Lỗi, Bị Nguyền và Rùng Rợn">
+  <meta property="og:description" content="Tạo chữ Zalgo rùng rợn và lỗi bằng ký tự Unicode kết hợp. Kiểm soát hoàn toàn các ký tự, vị trí, hình dạng, tần suất và biên độ.">
+  <meta property="og:url" content="https://ultratextgen.com/vi/usecase/zalgo-text/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="UltraTextGen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trình Tạo Chữ Zalgo — Chữ Lỗi, Bị Nguyền và Rùng Rợn">
+  <meta name="twitter:description" content="Tạo chữ Zalgo rùng rợn và lỗi bằng ký tự Unicode kết hợp. Kiểm soát hoàn toàn các ký tự, vị trí, hình dạng, tần suất và biên độ.">
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/usecase/zalgo-text/zalgo-text.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Chữ Zalgo là gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chữ Zalgo là văn bản thông thường được phủ nhiều ký tự Unicode kết hợp — các ký tự đặc biệt gắn liền về mặt hình ảnh phía trên, phía dưới hoặc xuyên qua ký tự cơ sở. Kết quả trông như bị lỗi, bị nguyền rủa hoặc bị hỏng, với các dấu phụ xếp chồng hỗn loạn. Đây thuần túy là trang trí và không có ý nghĩa đặc biệt; chỉ là một hiệu ứng hình ảnh Unicode hỗn loạn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chữ Zalgo hoạt động như thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unicode bao gồm ba nhóm ký tự kết hợp: ký tự xuất hiện trên ký tự, ký tự chồng chéo ở giữa và ký tự xuất hiện bên dưới. Chữ Zalgo xếp chồng nhiều ký tự này lên mỗi ký tự, khiến chúng va chạm và tràn vào các dòng liền kề."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Chữ Zalgo có an toàn để sử dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, chữ Zalgo chỉ là Unicode — không chứa mã, tập lệnh hoặc phần mềm độc hại. Hoàn toàn an toàn để sao chép và dán. Một số nền tảng có thể xóa hoặc giới hạn ký tự kết hợp để ngăn vấn đề hiển thị, vì vậy hiệu ứng có thể thay đổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể dán chữ Zalgo ở đâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chữ Zalgo hoạt động trên Discord, Instagram, TikTok, Twitter/X, WhatsApp, bình luận YouTube và hầu hết các nền tảng hỗ trợ văn bản Unicode thuần túy. Phổ biến trong các bài đăng chủ đề kinh dị, chú thích meme và nội dung Halloween."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tại sao chữ Zalgo trông khác nhau trên các nền tảng khác nhau?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Các nền tảng khác nhau sử dụng công cụ hiển thị văn bản và phông chữ khác nhau, xử lý các ký tự Unicode xếp chồng theo cách khác nhau. Cùng một chữ Zalgo có thể trông cực kỳ hỗn loạn trên Discord nhưng có kiểm soát hơn trên Instagram hoặc WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể chia sẻ cấu hình chữ Zalgo cụ thể dưới dạng liên kết không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. URL trang tự động cập nhật khi bạn gõ, bao gồm văn bản, kiểu dáng và cường độ hiện tại của bạn dưới dạng tham số URL. Sao chép URL từ thanh địa chỉ của trình duyệt để chia sẻ cấu hình chính xác của bạn."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://ultratextgen.com/vi/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Trình Tạo Chữ Zalgo",
+      "item": "https://ultratextgen.com/vi/usecase/zalgo-text/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Trình Tạo Chữ Zalgo",
+  "url": "https://ultratextgen.com/vi/usecase/zalgo-text/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Tạo chữ Zalgo rùng rợn và lỗi bằng ký tự Unicode kết hợp. Kiểm soát hoàn toàn các ký tự, vị trí, hình dạng, tần suất và biên độ.",
+  "browserRequirements": "Requires JavaScript. Works in all modern browsers."
+}
+</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="shared-header"></div>
+  <script src="/header.js"></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Chữ Zalgo</span>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="app">
+      <div class="zalgo-page-header">
+        <h1 class="hero-headline">Trình Tạo Chữ Zalgo — Tạo Chữ Lỗi và Rùng Rợn</h1>
+        <p>Nhập văn bản của bạn bên dưới. Chọn các thành phần — loại ký tự, vị trí, hình dạng, tần suất và biên độ — để tạo ra chính xác hiệu ứng bị hỏng mà bạn muốn. Sao chép và dán ở bất kỳ đâu.</p>
+      </div>
+
+      <!-- Text Input -->
+      <div class="input-section">
+        <label class="input-label" for="mainInput">Văn Bản Của Bạn</label>
+        <textarea class="text-input" id="mainInput" placeholder="Nhập văn bản của bạn ở đây…" maxlength="500" rows="2">Xin chào Thế giới</textarea>
+        <div class="char-counter"><span id="charCount">18</span>/500</div>
+      </div>
+
+      <!-- Control Panel (populated by zalgo-text.js) -->
+      <div id="zalgoControlPanel"></div>
+
+      <!-- Output (populated by zalgo-text.js) -->
+      <div id="zalgoOutputSection"></div>
+
+      <!-- Decode (populated by zalgo-text.js) -->
+      <div id="zalgoDecodeSection"></div>
+    </div>
+  </section>
+
+  <!-- Editorial Content -->
+  <main class="app">
+
+    <section class="editorial-section">
+      <h2>Chữ Zalgo Là Gì?</h2>
+      <p>Chữ Zalgo là văn bản thông thường được tải với hàng chục <strong>ký tự Unicode kết hợp</strong> — các ký tự đặc biệt gắn liền về mặt hình ảnh vào ký tự cơ sở mà không chiếm không gian riêng. Một ký tự kết hợp đơn lẻ là bình thường: đó là cách các chữ cái có dấu như <em>é</em> hoặc <em>ắ</em> được mã hóa trong Unicode. Chữ Zalgo thêm <em>nhiều</em> ký tự cho mỗi ký tự, khiến chúng xếp chồng hỗn loạn trên và dưới đường cơ sở.</p>
+      <p>Kết quả trông như chữ bị lỗi, bị nguyền rủa hoặc bị hỏng — như thể bản thân văn bản đang tan vỡ. Được sử dụng rộng rãi trong các bài đăng chủ đề kinh dị, creepypasta, chú thích meme và nội dung Halloween.</p>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Cách Trình Tạo Này Hoạt Động</h2>
+      <p><strong>Ký tự</strong> kiểm soát <em>loại</em> ký tự kết hợp được sử dụng — thanh (kiểu gạch ngang), chữ (ký hiệu chữ cái trên chỉ số), ký hiệu (ký hiệu bao quanh) hoặc nhiễu (dấu phụ nhấn mạnh). "Tất cả" sử dụng toàn bộ bộ Unicode.</p>
+      <p><strong>Vị trí</strong> kiểm soát <em>nơi</em> các ký tự gắn vào — trên, dưới, ở giữa hoặc kết hợp. "Trên và dưới" tạo ra giao diện Zalgo cổ điển với các tháp nhọn và rễ nhưng không có gạch ngang.</p>
+      <p><strong>Hình dạng</strong> kiểm soát cách mật độ ký tự <em>thay đổi trong văn bản</em>. Đồng đều áp dụng mật độ đồng đều ở mọi nơi. Dốc lên bắt đầu sạch và tăng dần hỗn loạn. Sóng dao động. Kim tự tháp đỉnh ở giữa.</p>
+      <p><strong>Tần suất</strong> là xác suất một ký tự nhất định nhận được dấu. Ở 50%, khoảng một nửa ký tự của bạn vẫn sạch. Ở 100%, mỗi ký tự đều bị ảnh hưởng.</p>
+      <p><strong>Biên độ</strong> là số dấu xếp chồng trên mỗi ký tự bị ảnh hưởng. Ở 1, đó là dấu nhẹ nhàng. Ở 20, đó là hỗn loạn hình ảnh tối đa.</p>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Sử Dụng Chữ Zalgo Ở Đâu</h2>
+      <p><strong>Discord</strong> hiển thị các ký tự kết hợp mà không xóa chúng, khiến đây là một trong những nền tảng tốt nhất cho Zalgo. Hỗn Loạn Hoàn Toàn đặc biệt hiệu quả trong chủ đề tối của Discord.</p>
+      <p><strong>Instagram</strong> hỗ trợ Zalgo trong tiểu sử và chú thích. Các kiểu nhẹ hơn hoạt động tốt nhất — các chồng quá cao có thể bị cắt do giới hạn chiều cao dòng.</p>
+      <p><strong>Twitter / X</strong> hỗ trợ Zalgo trong tweet, tiểu sử và trả lời. Hãy nhớ rằng Zalgo nặng có thể làm giảm khả năng đọc cho những người khác trên dòng thời gian.</p>
+      <p><strong>TikTok, WhatsApp, YouTube</strong> và hầu hết các nền tảng chấp nhận văn bản Unicode thuần túy sẽ hiển thị chữ Zalgo. Hiệu ứng hình ảnh thay đổi tùy theo công cụ hiển thị của nền tảng.</p>
+    </section>
+
+  </main>
+
+  <script>
+  window.zalgoI18n = {
+    controlCharacters:       'Ký tự',
+    controlPosition:         'Vị trí',
+    controlShape:            'Hình dạng',
+    controlFrequency:        'Tần suất',
+    controlAmplitude:        'Biên độ',
+    tooltipCharacters:       'Chọn loại ký tự kết hợp sẽ sử dụng',
+    tooltipPosition:         'Vị trí dấu xuất hiện so với mỗi ký tự',
+    tooltipShape:            'Cách mật độ dấu thay đổi theo chiều dài văn bản',
+    tooltipFrequency:        'Xác suất mỗi ký tự nhận được dấu (0 = không có, 100% = tất cả)',
+    tooltipAmplitude:        'Số dấu xếp chồng trên mỗi ký tự (1 = nhẹ nhàng, 20 = hỗn loạn)',
+    pillAll:                 'Tất cả',
+    pillBars:                'Thanh',
+    pillLetters:             'Chữ cái',
+    pillSymbols:             'Ký hiệu',
+    pillNoise:               'Nhiễu',
+    pillUpDown:              'Trên và dưới',
+    pillUp:                  'Trên',
+    pillMid:                 'Giữa',
+    pillDown:                'Dưới',
+    shapeUniform:            'Đồng đều',
+    shapeSlopeUp:            'Dốc lên',
+    shapeSlopeDown:          'Dốc xuống',
+    shapeWave:               'Sóng',
+    shapePyramid:            'Kim tự tháp',
+    shapeValley:             'Thung lũng',
+    shapeStaircase:          'Bậc thang',
+    shapeRandom:             'Ngẫu nhiên',
+    outputBadge:             'Kết Quả Trực Tiếp',
+    outputChars:             'ký tự',
+    btnRegenerate:           '↻ Tạo lại',
+    btnCopy:                 'Sao chép',
+    btnCopied:               '✓ Đã sao chép',
+    outputPlaceholder:       'Bắt đầu gõ để tạo chữ Zalgo…',
+    decodeTitle:             'Giải Mã Zalgo',
+    decodeTooltip:           'Dán bất kỳ chữ Zalgo nào để xóa ký tự kết hợp và hiển thị bản gốc',
+    decodePlaceholder:       'Dán chữ Zalgo vào đây để giải mã…',
+    decodeOutputPlaceholder: 'Văn bản sạch hiển thị ở đây'
+  };
+  </script>
+  <script src="/usecase/zalgo-text/zalgo-text.js"></script>
+
+<script src="/footer.js"></script>
+</body>
+</html>
