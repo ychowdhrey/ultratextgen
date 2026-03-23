@@ -164,6 +164,14 @@ A purpose-built tool for crafting standout LinkedIn headlines. Features structur
 A full-sentence text to emoji converter that translates plain text into a sequence of emojis using a structured emoji language system. Supports multiple languages, includes an emoji breakdown view, and produces instant copy-paste output.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
+### Vertical Text
+A tool for converting horizontal text into vertical format, stacking characters line by line for creative layouts, visual emphasis, and platform-specific formatting.
+- https://ultratextgen.com/usecase/vertical-text/
+
+### Zalgo Text
+A generator that layers combining Unicode characters onto text to produce a glitchy, distorted aesthetic. Adjustable intensity for subtle or extreme visual effects.
+- https://ultratextgen.com/usecase/zalgo-text/
+
 ## Guides
 
 Fonts are not decoration. They are signals.
@@ -189,6 +197,38 @@ A deep dive into using Unicode text as a strategic signature for personal brandi
 A guide on using strategic font variation to improve scanability, reduce cognitive load, and increase engagement. Breaks down five principles — visual anchors, contrast hierarchy, chunking, emphasis as navigation, and repetition — with before-and-after transformations.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
 
+### LinkedIn Comments Guide
+A practical guide to styling LinkedIn comments with Unicode typography. Covers techniques for adding visual emphasis, structuring replies for readability, and standing out in comment threads.
+- https://ultratextgen.com/guide/linkedin-comments-guide/
+
+## Library
+
+Reference collections of Unicode symbols, emoji sets, and styling resources for quick access and integration.
+
+### Emoji Flags
+A comprehensive reference of emoji flag sequences organized by country and region, ready to copy and paste.
+- https://ultratextgen.com/library/emoji-flags/
+
+### LinkedIn Comment Styling
+A curated collection of Unicode styling patterns optimized for LinkedIn comments, including formatting techniques and ready-to-use templates.
+- https://ultratextgen.com/library/linkedin-comment-styling/
+
+### LinkedIn Symbol Library
+A reference library of Unicode symbols and special characters that render correctly on LinkedIn, organized by category for easy discovery.
+- https://ultratextgen.com/library/linkedin-symbol-library/
+
+## Embed Tools
+
+Lightweight embeddable versions of UltraTextGen tools, designed for integration into external pages and platforms.
+
+### LinkedIn Headline Generator Embed
+An embeddable version of the LinkedIn Headline tool for use on external websites and platforms.
+- https://ultratextgen.com/embed/linkedin-headline-generator/
+
+### LinkedIn Headline Embed
+A compact embeddable widget for the LinkedIn Headline use case, optimized for iframe integration.
+- https://ultratextgen.com/usecase/linkedin-headline/embed/
+
 ## Project Structure
 
 ```
@@ -208,6 +248,8 @@ ultratextgen/
 ├── category/               # Font category pages
 ├── usecase/                # Use case pages
 ├── guide/                  # Editorial guide pages
+├── library/                # Reference collections and symbol libraries
+├── embed/                  # Embeddable tool widgets
 ├── discord/                # Discord platform page
 ├── facebook/               # Facebook platform page
 ├── instagram/              # Instagram platform page
