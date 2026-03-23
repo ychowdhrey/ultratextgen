@@ -1,4 +1,30 @@
+name: Update README Weekly
+
 on:
   schedule:
-    - cron: '0 3 * * 1'   # every Monday
+    - cron: '0 3 * * 1'
   workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Run README sync
+        run: node scripts/sync-readme.js
+
+      - name: Commit changes if any
+        run: |
+          git config --global user.name "ultratextgen-bot"
+          git config --global user.email "bot@ultratextgen.com"
+          git add README.md README.*.md
+          git commit -m "Weekly README sync from sitemap" || echo "No changes"
+          git push
