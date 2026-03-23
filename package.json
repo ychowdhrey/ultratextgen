@@ -5,7 +5,8 @@
   "description": "Fast, clean Unicode text generator for social bios, captions, and usernames",
   "scripts": {
     "prebuild": "node scripts/update-sitemap.js",
-    "build": "echo 'Static site — no build step required'"
+    "build": "echo 'Static site — no build step required'",
+    "sync-readme": "node scripts/sync-readme.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
