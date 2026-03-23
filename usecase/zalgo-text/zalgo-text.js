@@ -24,7 +24,7 @@
     pillLetters:             'Letters',
     pillSymbols:             'Symbols',
     pillNoise:               'Noise',
-    pillUpDown:              'Up \u0026 Down',
+    pillUpDown:              'Up & Down',
     pillUp:                  'Up',
     pillMid:                 'Mid',
     pillDown:                'Down',
@@ -38,13 +38,13 @@
     shapeRandom:             'Random',
     outputBadge:             'Live Output',
     outputChars:             'chars',
-    btnRegenerate:           '\u21bb Regenerate',
+    btnRegenerate:           '↻ Regenerate',
     btnCopy:                 'Copy',
-    btnCopied:               '\u2713 Copied',
-    outputPlaceholder:       'Start typing to generate zalgo text\u2026',
+    btnCopied:               '✓ Copied',
+    outputPlaceholder:       'Start typing to generate zalgo text…',
     decodeTitle:             'Decode Zalgo',
     decodeTooltip:           'Paste any zalgo text to strip combining marks and reveal the original',
-    decodePlaceholder:       'Paste zalgo text here to decode\u2026',
+    decodePlaceholder:       'Paste zalgo text here to decode…',
     decodeOutputPlaceholder: 'Clean text appears here'
   }, window.zalgoI18n || {});
 
