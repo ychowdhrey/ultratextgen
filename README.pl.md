@@ -73,6 +73,7 @@ https://ultratextgen.com
 
 UltraTextGen zawiera dedykowane strony dla każdej głównej platformy, aby style wyświetlały się dokładnie tak, jak oczekiwano.
 
+<!-- START_PLATFORMS -->
 ### Platformy Mediów Społecznościowych
 **Facebook:** https://ultratextgen.com/facebook  
 **Instagram:** https://ultratextgen.com/instagram  
@@ -88,10 +89,13 @@ UltraTextGen zawiera dedykowane strony dla każdej głównej platformy, aby styl
 **Telegram:** https://ultratextgen.com/telegram  
 **WhatsApp:** https://ultratextgen.com/whatsapp  
 
+<!-- END_PLATFORMS -->
+
 ## Strony Kategorii
 
 UltraTextGen organizuje transformacje czcionek Unicode w strukturalne kategorie oparte na tonie.
 
+<!-- START_CATEGORIES -->
 **Wszystkie kategorie:** https://ultratextgen.com/category/
 
 ### Czcionki Pogrubione
@@ -134,10 +138,13 @@ Ozdabiaj tekst strukturalnymi dekoracyjnymi wzorami czcionek.
 Specjalistyczne i eksperymentalne warianty czcionek Unicode.
 - https://ultratextgen.com/category/classified/
 
+<!-- END_CATEGORIES -->
+
 ## Przypadki Użycia
 
 Strony kontekstowe zaprojektowane wokół konkretnych celów użytkownika, każda z dopasowanymi narzędziami i dobranymi stylami Unicode.
 
+<!-- START_USECASES -->
 **Wszystkie przypadki użycia:** https://ultratextgen.com/usecase/
 
 ### Czcionka do Komentarzy
@@ -164,11 +171,14 @@ Narzędzie stworzone specjalnie do tworzenia wyróżniających się nagłówków
 Pełnoprawny konwerter tekstu na emoji, który tłumaczy zwykły tekst na sekwencję emoji za pomocą strukturalnego systemu języka emoji. Obsługuje wiele języków, zawiera widok rozkładu emoji i natychmiastowo generuje gotowe do skopiowania wyniki.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
+<!-- END_USECASES -->
+
 ## Poradniki
 
 Czcionki to nie dekoracja. To sygnały.
 Te zasoby badają, jak typografia Unicode koduje ton, autorytet, ironię i emfazę na platformach internetowych.
 
+<!-- START_GUIDES -->
 ### Retoryka Czcionek
 Ustrukturyzowany framework mapujący style czcionek na środki retoryczne i praktyczne przypadki użycia, pomagający użytkownikom stosować typografię celowo, a nie tylko estetycznie.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
@@ -188,6 +198,8 @@ Dogłębna analiza używania tekstu Unicode jako strategicznego podpisu dla pers
 ### Zatrzymaj Przewijanie za Pomocą Wariantów Czcionek
 Poradnik o strategicznym używaniu wariantów czcionek w celu poprawy przejrzystości, zmniejszenia obciążenia kognitywnego i zwiększenia zaangażowania. Omawia pięć zasad — kotwice wizualne, hierarchia kontrastu, chunking, emfaza jako nawigacja i powtarzanie — z transformacjami przed i po.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
+
+<!-- END_GUIDES -->
 
 ## Struktura Projektu
 
@@ -228,3 +240,9 @@ ultratextgen/
 - **CSS** — 2,3%
 
 Żadnych frameworków. Żadnych narzędzi do budowania wymaganych dla frontendu. Czysty, natywny kod przeglądarki.
+
+<!-- START_LIBRARY -->
+<!-- END_LIBRARY -->
+
+<!-- START_EMBED -->
+<!-- END_EMBED -->

@@ -73,6 +73,7 @@ https://ultratextgen.com
 
 UltraTextGen, stillerin tam olarak beklendiği gibi görüntülenmesi için her büyük platform için özel sayfalar içerir.
 
+<!-- START_PLATFORMS -->
 ### Sosyal Medya Platformları
 **Facebook:** https://ultratextgen.com/facebook  
 **Instagram:** https://ultratextgen.com/instagram  
@@ -88,10 +89,13 @@ UltraTextGen, stillerin tam olarak beklendiği gibi görüntülenmesi için her 
 **Telegram:** https://ultratextgen.com/telegram  
 **WhatsApp:** https://ultratextgen.com/whatsapp  
 
+<!-- END_PLATFORMS -->
+
 ## Kategori Sayfaları
 
 UltraTextGen, Unicode yazı tipi dönüşümlerini ton tabanlı yapılandırılmış kategoriler halinde düzenler.
 
+<!-- START_CATEGORIES -->
 **Tüm kategoriler:** https://ultratextgen.com/category/
 
 ### Kalın Yazı Tipleri
@@ -134,10 +138,13 @@ Metni yapılandırılmış dekoratif yazı tipi desenleriyle çerçeveleyin.
 Uzmanlaşmış ve deneysel Unicode yazı tipi varyasyonları.
 - https://ultratextgen.com/category/classified/
 
+<!-- END_CATEGORIES -->
+
 ## Kullanım Senaryoları
 
 Belirli kullanıcı hedefleri etrafında tasarlanmış, özel araçlar ve seçilmiş Unicode stilleri içeren bağlamsal sayfalar.
 
+<!-- START_USECASES -->
 **Tüm kullanım senaryoları:** https://ultratextgen.com/usecase/
 
 ### Yorum Yazı Tipi
@@ -164,11 +171,14 @@ Amaçlara göre düzenlenmiş hazır kopyala-yapıştır emoji kombinasyonların
 Düz metni yapılandırılmış bir emoji dil sistemi kullanarak bir dizi emojiye çeviren tam kapsamlı bir metin-emoji dönüştürücüsü. Birden fazla dili destekler, emoji döküm görünümü içerir ve anında kopyalanabilir çıktı üretir.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
+<!-- END_USECASES -->
+
 ## Rehberler
 
 Yazı tipleri dekor değildir. Sinyaldir.
 Bu kaynaklar, Unicode tipografisinin çevrimiçi platformlarda tonu, otoriteyi, ironiyi ve vurguyu nasıl kodladığını keşfeder.
 
+<!-- START_GUIDES -->
 ### Yazı Tiplerinin Retoriği
 Yazı tipi stillerini retorik araçlarla ve pratik kullanım senaryolarıyla eşleştiren, kullanıcıların tipografiyi yalnızca estetik değil kasıtlı biçimde uygulamasına yardımcı olan yapılandırılmış bir çerçeve.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
@@ -188,6 +198,8 @@ Unicode metnin kişisel markalaşma için stratejik bir imza olarak kullanılmas
 ### Yazı Tipi Varyasyonuyla Kaydırmayı Durdurun
 Taranabilirliği iyileştirmek, bilişsel yükü azaltmak ve etkileşimi artırmak için stratejik yazı tipi varyasyonu kullanımına dair bir kılavuz. Beş ilkeyi inceler — görsel çapalar, kontrast hiyerarşisi, parçalama, gezinme olarak vurgu ve tekrar — önce ve sonra dönüşümleriyle.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
+
+<!-- END_GUIDES -->
 
 ## Proje Yapısı
 
@@ -228,3 +240,9 @@ ultratextgen/
 - **CSS** — %2,3
 
 Framework yok. Frontend için derleme aracı gerekmez. Saf, tarayıcı-yerel kod.
+
+<!-- START_LIBRARY -->
+<!-- END_LIBRARY -->
+
+<!-- START_EMBED -->
+<!-- END_EMBED -->

@@ -73,6 +73,7 @@ https://ultratextgen.com
 
 UltraTextGen inclui páginas dedicadas a cada grande plataforma para que os estilos sejam renderizados exatamente como esperado.
 
+<!-- START_PLATFORMS -->
 ### Plataformas de Redes Sociais
 **Facebook:** https://ultratextgen.com/facebook  
 **Instagram:** https://ultratextgen.com/instagram  
@@ -88,10 +89,13 @@ UltraTextGen inclui páginas dedicadas a cada grande plataforma para que os esti
 **Telegram:** https://ultratextgen.com/telegram  
 **WhatsApp:** https://ultratextgen.com/whatsapp  
 
+<!-- END_PLATFORMS -->
+
 ## Páginas de Categorias
 
 UltraTextGen organiza as transformações de fontes Unicode em categorias estruturadas baseadas em tom.
 
+<!-- START_CATEGORIES -->
 **Todas as categorias:** https://ultratextgen.com/category/
 
 ### Fontes Negrito
@@ -134,10 +138,13 @@ Enquadre o texto com padrões de fonte decorativos e estruturados.
 Variações de fontes Unicode especializadas e experimentais.
 - https://ultratextgen.com/category/classified/
 
+<!-- END_CATEGORIES -->
+
 ## Casos de Uso
 
 Páginas contextuais projetadas em torno de objetivos específicos do usuário, cada uma com ferramentas adaptadas e estilos Unicode selecionados.
 
+<!-- START_USECASES -->
 **Todos os casos de uso:** https://ultratextgen.com/usecase/
 
 ### Fonte para Comentários
@@ -164,11 +171,14 @@ Uma ferramenta criada especificamente para elaborar títulos de LinkedIn que se 
 Um conversor de texto completo para emojis que traduz texto simples em uma sequência de emojis usando um sistema de linguagem emoji estruturado. Suporta vários idiomas, inclui uma visualização de detalhamento de emojis e produz saída instantânea pronta para copiar.
 - https://ultratextgen.com/usecase/text-to-emoji/
 
+<!-- END_USECASES -->
+
 ## Guias
 
 As fontes não são decoração. São sinais.
 Esses recursos exploram como a tipografia Unicode codifica tom, autoridade, ironia e ênfase nas plataformas online.
 
+<!-- START_GUIDES -->
 ### A Retórica das Fontes
 Um framework estruturado que mapeia estilos de fonte para recursos retóricos e casos de uso práticos, ajudando os usuários a aplicar tipografia de forma intencional, e não apenas estilística.
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
@@ -188,6 +198,8 @@ Uma análise aprofundada do uso do texto Unicode como assinatura estratégica pa
 ### Pare o Scroll com Variação de Fontes
 Um guia sobre o uso estratégico da variação de fontes para melhorar a legibilidade, reduzir a carga cognitiva e aumentar o engajamento. Detalha cinco princípios — âncoras visuais, hierarquia de contraste, segmentação, ênfase como navegação e repetição — com transformações de antes e depois.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
+
+<!-- END_GUIDES -->
 
 ## Estrutura do Projeto
 
@@ -228,3 +240,9 @@ ultratextgen/
 - **CSS** — 2,3%
 
 Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código puro nativo do navegador.
+
+<!-- START_LIBRARY -->
+<!-- END_LIBRARY -->
+
+<!-- START_EMBED -->
+<!-- END_EMBED -->
