@@ -6,6 +6,49 @@
 (function () {
   'use strict';
 
+  // ── i18n — read translated strings from window.zalgoI18n if provided,
+  //           otherwise fall back to English defaults.
+  const i18n = Object.assign({
+    controlCharacters:       'Characters',
+    controlPosition:         'Position',
+    controlShape:            'Shape',
+    controlFrequency:        'Frequency',
+    controlAmplitude:        'Amplitude',
+    tooltipCharacters:       'Choose which type of combining marks to use',
+    tooltipPosition:         'Where marks appear relative to each character',
+    tooltipShape:            'How mark density varies across the text length',
+    tooltipFrequency:        'Probability each character gets marks (0 = none, 100% = all)',
+    tooltipAmplitude:        'Number of marks stacked per character (1 = subtle, 20 = chaos)',
+    pillAll:                 'All',
+    pillBars:                'Bars',
+    pillLetters:             'Letters',
+    pillSymbols:             'Symbols',
+    pillNoise:               'Noise',
+    pillUpDown:              'Up & Down',
+    pillUp:                  'Up',
+    pillMid:                 'Mid',
+    pillDown:                'Down',
+    shapeUniform:            'Uniform',
+    shapeSlopeUp:            'Slope Up',
+    shapeSlopeDown:          'Slope Down',
+    shapeWave:               'Wave',
+    shapePyramid:            'Pyramid',
+    shapeValley:             'Valley',
+    shapeStaircase:          'Steps',
+    shapeRandom:             'Random',
+    outputBadge:             'Live Output',
+    outputChars:             'chars',
+    btnRegenerate:           '↻ Regenerate',
+    btnCopy:                 'Copy',
+    btnCopied:               '✓ Copied',
+    outputPlaceholder:       'Start typing to generate zalgo text…',
+    decodeTitle:             'Decode Zalgo',
+    decodeTooltip:           'Paste any zalgo text to strip combining marks and reveal the original',
+    decodePlaceholder:       'Paste zalgo text here to decode…',
+    decodeOutputPlaceholder: 'Clean text appears here'
+  }, window.zalgoI18n || {});
+
+
   // ── Unicode Combining Mark Pools ────────────────────────────────
   // Only true combining diacritical marks (Mn category) that stack
   // vertically without adding visible width or box glyphs.
@@ -267,30 +310,30 @@
     if (!panel) return;
 
     const charTypes = [
-      { id: 'all', label: 'All' },
-      { id: 'bars', label: 'Bars' },
-      { id: 'letters', label: 'Letters' },
-      { id: 'symbols', label: 'Symbols' },
-      { id: 'noise', label: 'Noise' }
+      { id: 'all',     label: i18n.pillAll },
+      { id: 'bars',    label: i18n.pillBars },
+      { id: 'letters', label: i18n.pillLetters },
+      { id: 'symbols', label: i18n.pillSymbols },
+      { id: 'noise',   label: i18n.pillNoise }
     ];
 
     const positions = [
-      { id: 'all', label: 'All' },
-      { id: 'up-down', label: 'Up & Down' },
-      { id: 'up', label: 'Up' },
-      { id: 'mid', label: 'Mid' },
-      { id: 'down', label: 'Down' }
+      { id: 'all',     label: i18n.pillAll },
+      { id: 'up-down', label: i18n.pillUpDown },
+      { id: 'up',      label: i18n.pillUp },
+      { id: 'mid',     label: i18n.pillMid },
+      { id: 'down',    label: i18n.pillDown }
     ];
 
     const shapeList = [
-      { id: 'uniform', label: 'Uniform' },
-      { id: 'slope-up', label: 'Slope Up' },
-      { id: 'slope-down', label: 'Slope Down' },
-      { id: 'wave', label: 'Wave' },
-      { id: 'pyramid', label: 'Pyramid' },
-      { id: 'valley', label: 'Valley' },
-      { id: 'staircase', label: 'Steps' },
-      { id: 'random', label: 'Random' }
+      { id: 'uniform',    label: i18n.shapeUniform },
+      { id: 'slope-up',   label: i18n.shapeSlopeUp },
+      { id: 'slope-down', label: i18n.shapeSlopeDown },
+      { id: 'wave',       label: i18n.shapeWave },
+      { id: 'pyramid',    label: i18n.shapePyramid },
+      { id: 'valley',     label: i18n.shapeValley },
+      { id: 'staircase',  label: i18n.shapeStaircase },
+      { id: 'random',     label: i18n.shapeRandom }
     ];
 
     panel.innerHTML = `
@@ -298,8 +341,8 @@
         <!-- Characters -->
         <div class="control-group">
           <div class="control-label">
-            <span class="icon">◆</span> Characters
-            ${tooltip('Choose which type of combining marks to use')}
+            <span class="icon">◆</span> ${i18n.controlCharacters}
+            ${tooltip(i18n.tooltipCharacters)}
           </div>
           ${pillGroup(charTypes, 'charType')}
         </div>
@@ -307,8 +350,8 @@
         <!-- Position -->
         <div class="control-group">
           <div class="control-label">
-            <span class="icon">↕</span> Position
-            ${tooltip('Where marks appear relative to each character')}
+            <span class="icon">↕</span> ${i18n.controlPosition}
+            ${tooltip(i18n.tooltipPosition)}
           </div>
           ${pillGroup(positions, 'position')}
         </div>
@@ -316,8 +359,8 @@
         <!-- Shape -->
         <div class="control-group full-width">
           <div class="control-label">
-            <span class="icon">〰</span> Shape
-            ${tooltip('How mark density varies across the text length')}
+            <span class="icon">〰</span> ${i18n.controlShape}
+            ${tooltip(i18n.tooltipShape)}
           </div>
           <div class="shape-grid">
             ${shapeList.map(s => `
@@ -332,8 +375,8 @@
         <!-- Frequency -->
         <div class="control-group">
           <div class="control-label">
-            <span class="icon">⚡</span> Frequency
-            ${tooltip('Probability each character gets marks (0 = none, 100% = all)')}
+            <span class="icon">⚡</span> ${i18n.controlFrequency}
+            ${tooltip(i18n.tooltipFrequency)}
           </div>
           <div class="slider-row">
             <input type="range" class="slider-track" id="frequencySlider"
@@ -345,8 +388,8 @@
         <!-- Amplitude -->
         <div class="control-group">
           <div class="control-label">
-            <span class="icon">◉</span> Amplitude
-            ${tooltip('Number of marks stacked per character (1 = subtle, 20 = chaos)')}
+            <span class="icon">◉</span> ${i18n.controlAmplitude}
+            ${tooltip(i18n.tooltipAmplitude)}
           </div>
           <div class="slider-row">
             <input type="range" class="slider-track" id="amplitudeSlider"
@@ -367,16 +410,16 @@
       <div class="output-section">
         <div class="output-header">
           <div class="output-header-left">
-            <span class="output-badge">Live Output</span>
-            <span class="output-chars" id="outputCharCount">0 chars</span>
+            <span class="output-badge">${i18n.outputBadge}</span>
+            <span class="output-chars" id="outputCharCount">0 ${i18n.outputChars}</span>
           </div>
           <div class="output-actions">
-            <button class="btn btn-regen" id="regenBtn">↻ Regenerate</button>
-            <button class="btn btn-copy" id="copyBtn" disabled>Copy</button>
+            <button class="btn btn-regen" id="regenBtn">${i18n.btnRegenerate}</button>
+            <button class="btn btn-copy" id="copyBtn" disabled>${i18n.btnCopy}</button>
           </div>
         </div>
         <div class="output-body" id="outputBody">
-          <span class="output-placeholder">Start typing to generate zalgo text…</span>
+          <span class="output-placeholder">${i18n.outputPlaceholder}</span>
         </div>
       </div>
     `;
@@ -390,15 +433,15 @@
     container.innerHTML = `
       <div class="decode-section">
         <div class="control-label" style="margin-bottom:12px">
-          <span class="icon">🔓</span> Decode Zalgo
-          ${tooltip('Paste any zalgo text to strip combining marks and reveal the original')}
+          <span class="icon">🔓</span> ${i18n.decodeTitle}
+          ${tooltip(i18n.decodeTooltip)}
         </div>
         <div class="decode-row">
           <textarea class="decode-input" id="decodeInput"
-            placeholder="Paste zalgo text here to decode…" rows="2"></textarea>
+            placeholder="${i18n.decodePlaceholder}" rows="2"></textarea>
           <div class="decode-arrow">→</div>
           <div class="decode-output" id="decodeOutput">
-            <span class="placeholder">Clean text appears here</span>
+            <span class="placeholder">${i18n.decodeOutputPlaceholder}</span>
           </div>
         </div>
       </div>
@@ -438,10 +481,10 @@
       body.textContent = state.output;
       body.classList.remove('output-placeholder');
     } else {
-      body.innerHTML = '<span class="output-placeholder">Start typing to generate zalgo text…</span>';
+      body.innerHTML = `<span class="output-placeholder">${i18n.outputPlaceholder}</span>`;
     }
 
-    if (chars) chars.textContent = state.output.length + ' chars';
+    if (chars) chars.textContent = state.output.length + ' ' + i18n.outputChars;
     if (btn)   btn.disabled = !state.output;
   }
 
@@ -517,10 +560,10 @@
         if (!state.output) return;
         try {
           await navigator.clipboard.writeText(state.output);
-          copyBtn.textContent = '✓ Copied';
+          copyBtn.textContent = i18n.btnCopied;
           copyBtn.classList.add('copied');
           setTimeout(() => {
-            copyBtn.textContent = 'Copy';
+            copyBtn.textContent = i18n.btnCopy;
             copyBtn.classList.remove('copied');
           }, 1500);
         } catch (err) {
@@ -531,10 +574,10 @@
           ta.select();
           document.execCommand('copy');
           document.body.removeChild(ta);
-          copyBtn.textContent = '✓ Copied';
+          copyBtn.textContent = i18n.btnCopied;
           copyBtn.classList.add('copied');
           setTimeout(() => {
-            copyBtn.textContent = 'Copy';
+            copyBtn.textContent = i18n.btnCopy;
             copyBtn.classList.remove('copied');
           }, 1500);
         }
@@ -558,7 +601,7 @@
           decodeOutput.textContent = clean;
           decodeOutput.classList.remove('placeholder');
         } else {
-          decodeOutput.innerHTML = '<span class="placeholder">Clean text appears here</span>';
+          decodeOutput.innerHTML = `<span class="placeholder">${i18n.decodeOutputPlaceholder}</span>`;
         }
       });
     }
