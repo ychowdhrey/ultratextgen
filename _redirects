@@ -1,3 +1,10 @@
+# Prevent Netlify automatic language-based redirects on the homepage.
+# Without this rule, Netlify detects the browser Accept-Language header
+# and redirects / to /fr/, /de/, etc. The 200! (forced rewrite) ensures
+# the root always serves the English homepage; users switch language
+# via the explicit language switcher in the footer.
+/  /index.html  200!
+
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
 /category/special-fonts/lines/              /category/strikethrough-text/ 301
