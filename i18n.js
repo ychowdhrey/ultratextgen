@@ -85,16 +85,8 @@
 
   function markActiveLang(lang) {
     document.querySelectorAll(".lang-option").forEach(function (a) {
-      var href = a.getAttribute("href");
-      // Match path-based (/fr/) or root (/) or legacy (?lang=xx)
-      var hrefLang;
-      if (href === "/" || href === "?lang=en") {
-        hrefLang = "en";
-      } else {
-        var pathMatch = href.match(/^\/([a-z]{2})\/$/);
-        hrefLang = pathMatch ? pathMatch[1] : href.replace("?lang=", "");
-      }
-      a.classList.toggle("active", hrefLang === lang);
+      var linkLang = a.getAttribute("hreflang") || "en";
+      a.classList.toggle("active", linkLang === lang);
     });
   }
 
