@@ -1,0 +1,5 @@
+# Prevent browsers and the Cloudflare CDN from caching any redirect
+# response on the root path.  An earlier 301 → /fr/ was cached by some
+# browsers; this ensures fresh responses are always fetched.
+/
+  Cache-Control: public, max-age=0, must-revalidate
