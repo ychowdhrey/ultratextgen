@@ -3,9 +3,18 @@ export async function onRequest(context) {
 
   // Only intercept the homepage — let all other paths pass through
   if (url.pathname === "/") {
-    // Serve /index.html directly, bypassing Cloudflare's i18n auto-redirect
+    // Build a clean request for /index.html WITHOUT the Accept-Language
+    // header.  Cloudflare Pages' automatic i18n routing uses that header
+    // to redirect / → /fr/ (or another locale).  Stripping it forces the
+    // ASSETS binding to return the root /index.html content directly.
+    const headers = new Headers(context.request.headers);
+    headers.delete("Accept-Language");
+
     return context.env.ASSETS.fetch(
-      new Request(new URL("/index.html", url.origin), context.request)
+      new Request(new URL("/index.html", url.origin), {
+        method: context.request.method,
+        headers,
+      })
     );
   }
 
