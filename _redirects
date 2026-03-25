@@ -1,8 +1,8 @@
-# Prevent Netlify automatic language-based redirects on the homepage.
-# Without this rule, Netlify detects the browser Accept-Language header
-# and redirects / to /fr/, /de/, etc. The 200! (forced rewrite) ensures
-# the root always serves the English homepage; users switch language
-# via the explicit language switcher in the footer.
+# Fallback rewrite: serve the English homepage for the root path.
+# The primary fix lives in functions/_middleware.js, which strips the
+# Accept-Language header before calling ASSETS.fetch() so Cloudflare
+# Pages' automatic i18n routing cannot redirect / to /fr/, /de/, etc.
+# This rule acts as a safety net if the middleware is not deployed.
 /  /index.html  200
 
 /category/special-fonts/                    /category/strikethrough-text/ 301
