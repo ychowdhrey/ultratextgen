@@ -1,0 +1,7 @@
+# Prevent browsers and edge caches from preserving a stale 301 redirect
+# from / to /fr/ (or any other locale).  The middleware enforces English
+# at the function layer; these headers are a belt-and-suspenders fallback.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
