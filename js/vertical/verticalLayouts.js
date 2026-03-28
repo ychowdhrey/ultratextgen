@@ -353,21 +353,21 @@
   }
 
   /* --------------------------------------------------------------------------
-     LAYOUTS registry — array of { id, label, fn } for UI iteration
+     LAYOUTS registry — array of { id, label, description, fn } for UI iteration
      -------------------------------------------------------------------------- */
   var LAYOUTS = [
-    { id: 'stacked',           label: 'Stacked',           fn: makeLayoutStacked },
-    { id: 'reverse-stacked',   label: 'Reverse Stacked',   fn: makeLayoutReverseStacked },
-    { id: 'upside-down',       label: 'Upside-Down',       fn: makeLayoutUpsideDownStacked },
-    { id: 'extra-spaced',      label: 'Extra Spaced',      fn: makeLayoutExtraSpaced },
-    { id: 'staircase',         label: 'Staircase',         fn: makeLayoutStaircase },
-    { id: 'pyramid',           label: 'Pyramid',           fn: makeLayoutPyramid },
-    { id: 'reverse-pyramid',   label: 'Reverse Pyramid',   fn: makeLayoutReversePyramid },
-    { id: 'centered-pyramid',  label: 'Centered Pyramid',  fn: makeLayoutCenteredPyramid },
-    { id: 'diagonal-right',    label: 'Diagonal Right',    fn: makeLayoutDiagonalRight },
-    { id: 'diagonal-left',     label: 'Diagonal Left',     fn: makeLayoutDiagonalLeft },
-    { id: 'box',               label: 'Box',               fn: makeLayoutBox },
-    { id: 'double-column',     label: 'Double Column',     fn: makeLayoutDoubleColumn }
+    { id: 'stacked',           label: 'Stacked',           description: 'Each character on its own line — most readable format',           fn: makeLayoutStacked },
+    { id: 'reverse-stacked',   label: 'Reverse Stacked',   description: 'Characters in reverse order, bottom to top',                      fn: makeLayoutReverseStacked },
+    { id: 'upside-down',       label: 'Upside-Down',       description: 'Flipped characters stacked vertically',                           fn: makeLayoutUpsideDownStacked },
+    { id: 'extra-spaced',      label: 'Extra Spaced',      description: 'Double spacing between each character for an airy look',          fn: makeLayoutExtraSpaced },
+    { id: 'staircase',         label: 'Staircase',         description: 'Characters indented progressively — diagonal flow',               fn: makeLayoutStaircase },
+    { id: 'pyramid',           label: 'Pyramid',           description: 'Characters build up line by line — full word at bottom',          fn: makeLayoutPyramid },
+    { id: 'reverse-pyramid',   label: 'Reverse Pyramid',   description: 'Full word at top, tapers down to the last character',             fn: makeLayoutReversePyramid },
+    { id: 'centered-pyramid',  label: 'Centered Pyramid',  description: 'Pyramid rows centered for a balanced, symmetrical appearance',    fn: makeLayoutCenteredPyramid },
+    { id: 'diagonal-right',    label: 'Diagonal Right',    description: 'Each character shifted progressively right — diagonal column',    fn: makeLayoutDiagonalRight },
+    { id: 'diagonal-left',     label: 'Diagonal Left',     description: 'Each character shifted progressively left — reverse diagonal',    fn: makeLayoutDiagonalLeft },
+    { id: 'box',               label: 'Box',               description: 'Stacked text wrapped in a Unicode border frame',                  fn: makeLayoutBox },
+    { id: 'double-column',     label: 'Double Column',     description: 'Two words displayed side by side in parallel columns',            fn: makeLayoutDoubleColumn }
   ];
 
   /* --------------------------------------------------------------------------
