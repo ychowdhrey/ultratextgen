@@ -14,8 +14,9 @@
   var Render     = window.UltraTextGenRender;
   var stylesRegistry = window.textStyles || {};
 
-  var RECENT_KEY     = 'utg_vertical_recent_decos';
-  var RECENT_MAX     = 6;
+  var RECENT_KEY      = 'utg_vertical_recent_decos';
+  var RECENT_MAX      = 6;
+  var LAYOUT_PREF_KEY = 'utg_vertical_layout_pref';
 
   /* ---- State ---- */
   var selectedLayoutId   = 'stacked';
@@ -49,6 +50,23 @@
   }
 
   /* --------------------------------------------------------------------------
+     Layout preference persistence
+     -------------------------------------------------------------------------- */
+  function loadLayoutPref() {
+    try {
+      var saved = localStorage.getItem(LAYOUT_PREF_KEY);
+      if (saved && Layouts.LAYOUTS.some(function (l) { return l.id === saved; })) {
+        return saved;
+      }
+    } catch (e) {}
+    return 'stacked';
+  }
+
+  function saveLayoutPref(layoutId) {
+    try { localStorage.setItem(LAYOUT_PREF_KEY, layoutId); } catch (e) {}
+  }
+
+  /* --------------------------------------------------------------------------
      Build the vertical control panel HTML and insert it
      -------------------------------------------------------------------------- */
   function buildControlPanel() {
@@ -57,7 +75,7 @@
 
     /* Layout selector */
     var layoutOptions = Layouts.LAYOUTS.map(function (l) {
-      return '<option value="' + l.id + '"' + (l.id === selectedLayoutId ? ' selected' : '') + '>' + l.label + '</option>';
+      return '<option value="' + l.id + '"' + (l.id === selectedLayoutId ? ' selected' : '') + (l.description ? ' title="' + l.description + '"' : '') + '>' + l.label + '</option>';
     }).join('');
 
     /* Word Divider chips — only visible in stack mode */
@@ -184,6 +202,7 @@
     if (layoutSelect) {
       layoutSelect.addEventListener('change', function () {
         selectedLayoutId = this.value;
+        saveLayoutPref(selectedLayoutId);
         triggerRender();
       });
     }
@@ -367,6 +386,9 @@
     /* Add vertical-specific class to results grid */
     var grid = document.getElementById('resultsGrid');
     if (grid) grid.classList.add('vertical-results-grid');
+
+    /* Restore persisted layout preference */
+    selectedLayoutId = loadLayoutPref();
 
     /* Preload sample text so results are visible on first load */
     var input = document.getElementById('mainInput');
