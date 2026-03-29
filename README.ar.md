@@ -75,20 +75,19 @@ https://ultratextgen.com
 
 <!-- START_PLATFORMS -->
 ### منصات التواصل الاجتماعي
-**Facebook:** https://ultratextgen.com/facebook  
-**Instagram:** https://ultratextgen.com/instagram  
-**LinkedIn:** https://ultratextgen.com/linkedin  
-**Pinterest:** https://ultratextgen.com/pinterest  
-**Snapchat:** https://ultratextgen.com/snapchat  
-**TikTok:** https://ultratextgen.com/tiktok  
-**X (Twitter):** https://ultratextgen.com/x  
-**YouTube:** https://ultratextgen.com/youtube  
+**Facebook:** https://ultratextgen.com/facebook/
+**Instagram:** https://ultratextgen.com/instagram/
+**LinkedIn:** https://ultratextgen.com/linkedin/
+**Pinterest:** https://ultratextgen.com/pinterest/
+**Snapchat:** https://ultratextgen.com/snapchat/
+**TikTok:** https://ultratextgen.com/tiktok/
+**X (Twitter):** https://ultratextgen.com/x/
+**YouTube:** https://ultratextgen.com/youtube/
 
 ### منصات المراسلة
-**Discord:** https://ultratextgen.com/discord  
-**Telegram:** https://ultratextgen.com/telegram  
-**WhatsApp:** https://ultratextgen.com/whatsapp  
-
+**Discord:** https://ultratextgen.com/discord/
+**Telegram:** https://ultratextgen.com/telegram/
+**WhatsApp:** https://ultratextgen.com/whatsapp/
 <!-- END_PLATFORMS -->
 
 ## صفحات الفئات
@@ -98,46 +97,16 @@ https://ultratextgen.com
 <!-- START_CATEGORIES -->
 **جميع الفئات:** https://ultratextgen.com/category/
 
-### الخطوط الغامقة
-تنويعات خطوط ذات تأثير قوي وتعبير عن السلطة.
 - https://ultratextgen.com/category/bold-fonts/
-
-### الخطوط المنحنية
-تنويعات خطوط معبّرة وسلسة، بنبرة شخصية.
-- https://ultratextgen.com/category/cursive-fonts/
-
-### الخطوط المائلة
-تأكيد خفيف وتباين من خلال أشكال الخط المائلة.
-- https://ultratextgen.com/category/italic-fonts/
-
-### الخطوط المسطّرة
-أبرز الكلمات الرئيسية دون زيادة الثقل البصري.
-- https://ultratextgen.com/category/underline-text/
-
-### الخطوط المشطوبة
-أنشئ السخرية والمراجعة والتوتر البلاغي عبر النص المشطوب.
-- https://ultratextgen.com/category/strikethrough-text/
-
-### خطوط الفقاعات
-تنويعات خطوط زخرفية مرحة ولافتة للنظر.
 - https://ultratextgen.com/category/bubble-fonts/
-
-### الخطوط القوطية
-أشكال خطوط درامية ومكثّفة مستوحاة من الطباعة القديمة.
-- https://ultratextgen.com/category/gothic-fonts/
-
-### الخطوط المقلوبة
-اكسر تدفق العين البصري بتحويلات الخط المقلوب.
-- https://ultratextgen.com/category/upside-down-text/
-
-### خطوط الإطار
-أطِّر نصّك بأنماط خطوط زخرفية منظّمة.
-- https://ultratextgen.com/category/word-wrappers/
-
-### الخطوط الخاصة
-تنويعات خطوط Unicode متخصصة وتجريبية.
 - https://ultratextgen.com/category/classified/
-
+- https://ultratextgen.com/category/cursive-fonts/
+- https://ultratextgen.com/category/gothic-fonts/
+- https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/underline-text/
+- https://ultratextgen.com/category/upside-down-text/
+- https://ultratextgen.com/category/word-wrappers/
 <!-- END_CATEGORIES -->
 
 ## حالات الاستخدام
@@ -147,30 +116,14 @@ https://ultratextgen.com
 <!-- START_USECASES -->
 **جميع حالات الاستخدام:** https://ultratextgen.com/usecase/
 
-### خط التعليقات
-صفحة مدروسة تدور حول مزاجيات التعليقات، تساعد الناس على التعبير عن التأكيد والسخرية والدفء والمرح والمزيد من خلال أنماط Unicode جاهزة للنسخ.
-- https://ultratextgen.com/usecase/comment-font/
-
-### خط البايو
-صفحة مخصصة لنبذ الملف الشخصي الأنيقة. تنظّم خطوط Unicode حسب النبرة والشخصية، مما يتيح للمستخدمين نسخ ولصق نبذة تعكس هويتهم فورًا.
-- https://ultratextgen.com/usecase/bio-font/
-
-### إيموجي قبل وبعد
-صفحة سياقية مبنية حول الإطار العاطفي. تقرن النص بإيموجي البداية والنهاية لخلق التباين والتطور والتحوّل. مثالية للقصص والردود والإعلانات.
 - https://ultratextgen.com/usecase/before-after-emoji/
-
-### توليفات الإيموجي
-صفحة منتقاة من توليفات الإيموجي الجاهزة للنسخ واللصق، منظّمة حسب القصد — المداعبة، الاحتفال بالانتصارات، التحفيز، الثقة، الإعلانات، والدعوة إلى اتخاذ إجراء. مثالية لـ Instagram وTikTok وLinkedIn والمزيد.
+- https://ultratextgen.com/usecase/bio-font/
+- https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
-
-### عنوان LinkedIn
-أداة مصمّمة خصيصًا لصياغة عناوين LinkedIn البارزة. تتضمن إدراج الفواصل المنظّمة، وتنسيق خط Unicode انتقائيًا عبر 4 خطوط آمنة لـ LinkedIn، وإيموجي إشارات الهوية، وعداد حيّ للأحرف ضمن حد 220 حرفًا.
 - https://ultratextgen.com/usecase/linkedin-headline/
-
-### تحويل النص إلى إيموجي
-محوّل نصوص متكامل إلى إيموجي يترجم النص العادي إلى تسلسل إيموجي باستخدام نظام لغة إيموجي منظّم. يدعم لغات متعددة، ويتضمن عرض تفصيل الإيموجي، ويولّد مخرجات جاهزة للنسخ فورًا.
 - https://ultratextgen.com/usecase/text-to-emoji/
-
+- https://ultratextgen.com/usecase/vertical-text/
+- https://ultratextgen.com/usecase/zalgo-text/
 <!-- END_USECASES -->
 
 ## الأدلة
@@ -179,26 +132,14 @@ https://ultratextgen.com
 تستكشف هذه الموارد كيفية ترميز الطباعة Unicode للنبرة والسلطة والسخرية والتأكيد عبر المنصات الرقمية.
 
 <!-- START_GUIDES -->
-### بلاغة الخطوط
-إطار عمل منظّم يربط أساليب الخطوط بالأساليب البلاغية وحالات الاستخدام العملي، مما يساعد المستخدمين على توظيف الطباعة بشكل مقصود لا مجرد أسلوبي.
-- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
-
-### بناء العلامة التجارية بالخطوط على وسائل التواصل الاجتماعي
-دليل عملي لاستخدام الطباعة Unicode في الحملات. اكتشف كيف تزيد أنماط النصوص المرئية من قوة إيقاف التمرير، وتعزّز التذكر بالعلامة التجارية، وتخلق الاتساق على Instagram وLinkedIn وX والمزيد.
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
-
-### نمّق مقدمات LinkedIn لتبرز من بين الآخرين
-دليل متخصص في تحويل افتتاحيات LinkedIn العادية إلى مقدمات عالية الأداء. تعلّم كيف تحسّن التنويعات النصية الدقيقة من مقاطعة التمرير والقراءة ومعدل التفاعل ومعدل النقر والإشارة إلى السلطة.
-- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
-
-### بناء العلامة الشخصية عبر الطباعة
-تحليل معمّق لاستخدام النص Unicode بوصفه توقيعًا استراتيجيًا للعلامة الشخصية. يغطي أربع تقنيات — أسلوب مقدمة متسق، أنماط تنسيق التوقيع، التكرار كهندسة للذاكرة، والميكروبراندينج في التعليقات — مدعومةً بعلم الإدراك.
+- https://ultratextgen.com/guide/linkedin-comments-guide/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
-
-### أوقف التمرير بتنويع الخطوط
-دليل حول الاستخدام الاستراتيجي لتنويع الخطوط لتحسين قابلية المسح والتصفح، وتقليل العبء الإدراكي، وزيادة التفاعل. يشرح خمسة مبادئ — المراسي البصرية، وتسلسل التباين، والتقطيع، والتأكيد كتنقل، والتكرار — مع تحويلات قبل وبعد.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
-
+- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
+- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
+- https://ultratextgen.com/guide/vertical-text-guide/
+- https://ultratextgen.com/guide/vertical-text/
 <!-- END_GUIDES -->
 
 ## هيكل المشروع
@@ -242,7 +183,11 @@ ultratextgen/
 لا أطر عمل. لا أدوات بناء مطلوبة للواجهة الأمامية. كود نقي يعمل مباشرةً في المتصفح.
 
 <!-- START_LIBRARY -->
+- https://ultratextgen.com/library/emoji-flags/
+- https://ultratextgen.com/library/linkedin-comment-styling/
+- https://ultratextgen.com/library/linkedin-symbol-library/
 <!-- END_LIBRARY -->
 
 <!-- START_EMBED -->
+- https://ultratextgen.com/embed/linkedin-headline-generator/
 <!-- END_EMBED -->
