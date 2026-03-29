@@ -75,20 +75,19 @@ UltraTextGen incluye páginas dedicadas a cada plataforma principal para que los
 
 <!-- START_PLATFORMS -->
 ### Plataformas de Redes Sociales
-**Facebook:** https://ultratextgen.com/facebook  
-**Instagram:** https://ultratextgen.com/instagram  
-**LinkedIn:** https://ultratextgen.com/linkedin  
-**Pinterest:** https://ultratextgen.com/pinterest  
-**Snapchat:** https://ultratextgen.com/snapchat  
-**TikTok:** https://ultratextgen.com/tiktok  
-**X (Twitter):** https://ultratextgen.com/x  
-**YouTube:** https://ultratextgen.com/youtube  
+**Facebook:** https://ultratextgen.com/facebook/
+**Instagram:** https://ultratextgen.com/instagram/
+**LinkedIn:** https://ultratextgen.com/linkedin/
+**Pinterest:** https://ultratextgen.com/pinterest/
+**Snapchat:** https://ultratextgen.com/snapchat/
+**TikTok:** https://ultratextgen.com/tiktok/
+**X (Twitter):** https://ultratextgen.com/x/
+**YouTube:** https://ultratextgen.com/youtube/
 
 ### Plataformas de Mensajería
-**Discord:** https://ultratextgen.com/discord  
-**Telegram:** https://ultratextgen.com/telegram  
-**WhatsApp:** https://ultratextgen.com/whatsapp  
-
+**Discord:** https://ultratextgen.com/discord/
+**Telegram:** https://ultratextgen.com/telegram/
+**WhatsApp:** https://ultratextgen.com/whatsapp/
 <!-- END_PLATFORMS -->
 
 ## Páginas de Categorías
@@ -98,46 +97,16 @@ UltraTextGen organiza las transformaciones de fuentes Unicode en categorías est
 <!-- START_CATEGORIES -->
 **Todas las categorías:** https://ultratextgen.com/category/
 
-### Fuentes en Negrita
-Variaciones de fuentes con énfasis fuerte y autoridad.
 - https://ultratextgen.com/category/bold-fonts/
-
-### Fuentes Cursivas
-Variaciones de fuentes expresivas y fluidas, con un tono personal.
-- https://ultratextgen.com/category/cursive-fonts/
-
-### Fuentes en Itálica
-Énfasis sutil y contraste mediante formas de fuente inclinadas.
-- https://ultratextgen.com/category/italic-fonts/
-
-### Fuentes Subrayadas
-Resalta palabras clave sin aumentar el peso visual.
-- https://ultratextgen.com/category/underline-text/
-
-### Fuentes Tachadas
-Crea ironía, revisión y tensión retórica mediante texto tachado.
-- https://ultratextgen.com/category/strikethrough-text/
-
-### Fuentes de Burbuja
-Variaciones de fuentes decorativas, llamativas y divertidas.
 - https://ultratextgen.com/category/bubble-fonts/
-
-### Fuentes Góticas
-Formas de fuente dramáticas e intensas, inspiradas en la tipografía del mundo antiguo.
-- https://ultratextgen.com/category/gothic-fonts/
-
-### Fuentes al Revés
-Interrumpe el flujo visual con transformaciones de fuente invertidas.
-- https://ultratextgen.com/category/upside-down-text/
-
-### Fuentes con Marco de Palabras
-Enmarca el texto con patrones de fuente decorativos y estructurados.
-- https://ultratextgen.com/category/word-wrappers/
-
-### Fuentes Clasificadas
-Variaciones de fuentes Unicode especializadas y experimentales.
 - https://ultratextgen.com/category/classified/
-
+- https://ultratextgen.com/category/cursive-fonts/
+- https://ultratextgen.com/category/gothic-fonts/
+- https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/underline-text/
+- https://ultratextgen.com/category/upside-down-text/
+- https://ultratextgen.com/category/word-wrappers/
 <!-- END_CATEGORIES -->
 
 ## Casos de Uso
@@ -147,30 +116,14 @@ Páginas contextuales diseñadas en torno a objetivos específicos del usuario, 
 <!-- START_USECASES -->
 **Todos los casos de uso:** https://ultratextgen.com/usecase/
 
-### Fuente para Comentarios
-Una página cuidadosamente creada en torno a los estados de ánimo en comentarios, ayudando a las personas a expresar énfasis, sarcasmo, calidez, diversión y más mediante estilos Unicode listos para copiar.
-- https://ultratextgen.com/usecase/comment-font/
-
-### Fuente para Bio
-Una página dedicada a bios de perfil con estilo. Organiza las fuentes Unicode por tono y personalidad, permitiendo a los usuarios copiar y pegar al instante una bio que refleje su identidad.
-- https://ultratextgen.com/usecase/bio-font/
-
-### Emoji Antes y Después
-Una página contextual construida en torno al encuadre emocional. Combina texto con emojis de inicio y fin para crear contraste, progresión o transformación. Ideal para narración, reacciones y anuncios.
 - https://ultratextgen.com/usecase/before-after-emoji/
-
-### Combinaciones de Emojis
-Una página curada de combinaciones de emojis listas para copiar y pegar, organizadas por intención — bromas, celebrar victorias, motivación, confianza, anuncios y llamadas a la acción. Perfecta para Instagram, TikTok, LinkedIn, y más.
+- https://ultratextgen.com/usecase/bio-font/
+- https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
-
-### Titular de LinkedIn
-Una herramienta creada específicamente para elaborar titulares de LinkedIn que destacan. Incluye inserción de separadores estructurados, estilo de fuente Unicode selectivo entre 4 fuentes compatibles con LinkedIn, emojis de señal de identidad y un contador de caracteres en tiempo real para el límite de 220 caracteres.
 - https://ultratextgen.com/usecase/linkedin-headline/
-
-### Texto a Emoji
-Un convertidor de texto completo a emojis que traduce texto plano en una secuencia de emojis mediante un sistema de lenguaje emoji estructurado. Compatible con varios idiomas, incluye una vista de desglose de emojis y produce resultados listos para copiar al instante.
 - https://ultratextgen.com/usecase/text-to-emoji/
-
+- https://ultratextgen.com/usecase/vertical-text/
+- https://ultratextgen.com/usecase/zalgo-text/
 <!-- END_USECASES -->
 
 ## Guías
@@ -179,26 +132,14 @@ Las fuentes no son decoración. Son señales.
 Estos recursos exploran cómo la tipografía Unicode codifica el tono, la autoridad, la ironía y el énfasis en las plataformas en línea.
 
 <!-- START_GUIDES -->
-### La Retórica de las Fuentes
-Un marco estructurado que relaciona estilos de fuente con recursos retóricos y casos de uso prácticos, ayudando a los usuarios a aplicar la tipografía de forma intencionada en lugar de estilística.
-- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
-
-### Branding con Fuentes para Redes Sociales
-Un manual práctico para usar tipografía Unicode en campañas. Descubre cómo los patrones de texto visual aumentan el poder de detener el scroll, refuerzan el recuerdo de marca y crean consistencia en Instagram, LinkedIn, X, y más.
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
-
-### Estiliza tus Ganchos de LinkedIn para Destacar
-Una guía enfocada en transformar las introducciones ordinarias de LinkedIn en ganchos de alto rendimiento. Aprende cómo las sutiles variaciones de texto mejoran la interrupción del scroll, la legibilidad, la tasa de engagement, la tasa de clics y la señalización de autoridad.
-- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
-
-### Personal Branding a través de la Tipografía
-Un análisis profundo del uso del texto Unicode como firma estratégica para el personal branding. Cubre cuatro técnicas — estilo de gancho consistente, patrones de formato de firma, repetición como arquitectura de memoria y micro-branding en comentarios — respaldadas por la ciencia cognitiva.
+- https://ultratextgen.com/guide/linkedin-comments-guide/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
-
-### Detén el Scroll con Variación de Fuentes
-Una guía sobre el uso estratégico de la variación de fuentes para mejorar la legibilidad, reducir la carga cognitiva y aumentar el engagement. Desglosa cinco principios — anclajes visuales, jerarquía de contraste, segmentación, énfasis como navegación y repetición — con transformaciones de antes y después.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
-
+- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
+- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
+- https://ultratextgen.com/guide/vertical-text-guide/
+- https://ultratextgen.com/guide/vertical-text/
 <!-- END_GUIDES -->
 
 ## Estructura del Proyecto
@@ -242,7 +183,11 @@ ultratextgen/
 Sin frameworks. Sin herramientas de build requeridas para el frontend. Código puro nativo del navegador.
 
 <!-- START_LIBRARY -->
+- https://ultratextgen.com/library/emoji-flags/
+- https://ultratextgen.com/library/linkedin-comment-styling/
+- https://ultratextgen.com/library/linkedin-symbol-library/
 <!-- END_LIBRARY -->
 
 <!-- START_EMBED -->
+- https://ultratextgen.com/embed/linkedin-headline-generator/
 <!-- END_EMBED -->

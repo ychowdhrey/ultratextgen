@@ -75,20 +75,19 @@ UltraTextGen includes dedicated pages for each major platform so styles render e
 
 <!-- START_PLATFORMS -->
 ### Social Media Platforms
-**Facebook:** https://ultratextgen.com/facebook  
-**Instagram:** https://ultratextgen.com/instagram  
-**LinkedIn:** https://ultratextgen.com/linkedin  
-**Pinterest:** https://ultratextgen.com/pinterest  
-**Snapchat:** https://ultratextgen.com/snapchat  
-**TikTok:** https://ultratextgen.com/tiktok  
-**X (Twitter):** https://ultratextgen.com/x  
-**YouTube:** https://ultratextgen.com/youtube  
+**Facebook:** https://ultratextgen.com/facebook/
+**Instagram:** https://ultratextgen.com/instagram/
+**LinkedIn:** https://ultratextgen.com/linkedin/
+**Pinterest:** https://ultratextgen.com/pinterest/
+**Snapchat:** https://ultratextgen.com/snapchat/
+**TikTok:** https://ultratextgen.com/tiktok/
+**X (Twitter):** https://ultratextgen.com/x/
+**YouTube:** https://ultratextgen.com/youtube/
 
 ### Messaging Platforms
-**Discord:** https://ultratextgen.com/discord  
-**Telegram:** https://ultratextgen.com/telegram  
-**WhatsApp:** https://ultratextgen.com/whatsapp  
-
+**Discord:** https://ultratextgen.com/discord/
+**Telegram:** https://ultratextgen.com/telegram/
+**WhatsApp:** https://ultratextgen.com/whatsapp/
 <!-- END_PLATFORMS -->
 
 ## Category Pages
@@ -98,46 +97,16 @@ UltraTextGen organizes Unicode font transformations into structured tone-based c
 <!-- START_CATEGORIES -->
 **All categories:** https://ultratextgen.com/category/
 
-### Bold Fonts
-Strong emphasis and authority driven font variations.
 - https://ultratextgen.com/category/bold-fonts/
-
-### Cursive Fonts
-Expressive, flowing font variations with a personal tone.
-- https://ultratextgen.com/category/cursive-fonts/
-
-### Italic Fonts
-Subtle emphasis and contrast through slanted font forms.
-- https://ultratextgen.com/category/italic-fonts/
-
-### Underline Text Fonts
-Highlight key words without increasing visual weight.
-- https://ultratextgen.com/category/underline-text/
-
-### Strikethrough Fonts
-Create irony, revision, and rhetorical tension through crossed text.
-- https://ultratextgen.com/category/strikethrough-text/
-
-### Bubble Fonts
-Playful, scroll stopping decorative font variations.
 - https://ultratextgen.com/category/bubble-fonts/
-
-### Gothic Fonts
-Dramatic, intense font forms inspired by old world typography.
-- https://ultratextgen.com/category/gothic-fonts/
-
-### Upside Down Fonts
-Disrupt visual flow with inverted font transformations.
-- https://ultratextgen.com/category/upside-down-text/
-
-### Word Wrapper Fonts
-Frame text with structured decorative font patterns.
-- https://ultratextgen.com/category/word-wrappers/
-
-### Classified Fonts
-Specialty and experimental Unicode font variations.
 - https://ultratextgen.com/category/classified/
-
+- https://ultratextgen.com/category/cursive-fonts/
+- https://ultratextgen.com/category/gothic-fonts/
+- https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/underline-text/
+- https://ultratextgen.com/category/upside-down-text/
+- https://ultratextgen.com/category/word-wrappers/
 <!-- END_CATEGORIES -->
 
 ## Use Cases
@@ -147,38 +116,14 @@ Contextual pages designed around specific user goals, each with tailored tools a
 <!-- START_USECASES -->
 **All use cases:** https://ultratextgen.com/usecase/
 
-### Comment Font
-A curated page built around comment moods, helping people express emphasis, sarcasm, warmth, playfulness, and more through ready-to-copy Unicode styles.
-- https://ultratextgen.com/usecase/comment-font/
-
-### Bio Font
-A dedicated page crafted for stylish profile bios. It organizes Unicode fonts by tone and personality, allowing users to instantly copy and paste a bio that reflects their identity.
-- https://ultratextgen.com/usecase/bio-font/
-
-### Before and After Emoji
-A contextual page built around emotional framing. It pairs text with starting and ending emojis to create contrast, progression, or transformation. Ideal for storytelling, reactions, and announcements.
 - https://ultratextgen.com/usecase/before-after-emoji/
-
-### Emoji Combinations
-A curated page of copy-paste emoji combinations organized by intent — teasing, celebrating wins, motivation, confidence, announcements, and calls to action. Perfect for Instagram, TikTok, LinkedIn, and more.
+- https://ultratextgen.com/usecase/bio-font/
+- https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
-
-### LinkedIn Headline
-A purpose-built tool for crafting standout LinkedIn headlines. Features structured separator insertion, selective Unicode font styling across 4 LinkedIn-safe fonts, identity signal emojis, and a live character counter for the 220-character limit.
 - https://ultratextgen.com/usecase/linkedin-headline/
-
-### Text to Emoji
-A full-sentence text to emoji converter that translates plain text into a sequence of emojis using a structured emoji language system. Supports multiple languages, includes an emoji breakdown view, and produces instant copy-paste output.
 - https://ultratextgen.com/usecase/text-to-emoji/
-
-### Vertical Text
-A tool for converting horizontal text into vertical format, stacking characters line by line for creative layouts, visual emphasis, and platform-specific formatting.
 - https://ultratextgen.com/usecase/vertical-text/
-
-### Zalgo Text
-A generator that layers combining Unicode characters onto text to produce a glitchy, distorted aesthetic. Adjustable intensity for subtle or extreme visual effects.
 - https://ultratextgen.com/usecase/zalgo-text/
-
 <!-- END_USECASES -->
 
 ## Guides
@@ -187,30 +132,14 @@ Fonts are not decoration. They are signals.
 These resources explore how Unicode typography encodes tone, authority, irony, and emphasis across online platforms.
 
 <!-- START_GUIDES -->
-### The Rhetoric of Fonts
-A structured framework mapping font styles to rhetorical devices and practical use cases, helping users apply typography intentionally rather than stylistically.
-- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
-
-### Branding with Fonts for Social Media
-A practical playbook for using Unicode typography in campaigns. Discover how visual text patterns increase scroll stopping power, reinforce brand recall, and create consistency across Instagram, LinkedIn, X, and more.
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
-
-### Style Your LinkedIn Hooks to Stand Out
-A focused guide on transforming ordinary LinkedIn openings into high performing hooks. Learn how subtle text variations improve scroll interruption, readability, engagement rate, click through rate, and authority signaling.
-- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
-
-### Personal Branding Through Typography
-A deep dive into using Unicode text as a strategic signature for personal branding. Covers four techniques — consistent hook styling, signature formatting patterns, repetition as memory architecture, and micro-branding in comments — backed by cognitive science.
-- https://ultratextgen.com/guide/personal-branding-through-typography/
-
-### Stop the Scroll with Font Variation
-A guide on using strategic font variation to improve scanability, reduce cognitive load, and increase engagement. Breaks down five principles — visual anchors, contrast hierarchy, chunking, emphasis as navigation, and repetition — with before-and-after transformations.
-- https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
-
-### LinkedIn Comments Guide
-A practical guide to styling LinkedIn comments with Unicode typography. Covers techniques for adding visual emphasis, structuring replies for readability, and standing out in comment threads.
 - https://ultratextgen.com/guide/linkedin-comments-guide/
-
+- https://ultratextgen.com/guide/personal-branding-through-typography/
+- https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
+- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
+- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
+- https://ultratextgen.com/guide/vertical-text-guide/
+- https://ultratextgen.com/guide/vertical-text/
 <!-- END_GUIDES -->
 
 ## Library
@@ -218,18 +147,9 @@ A practical guide to styling LinkedIn comments with Unicode typography. Covers t
 Reference collections of Unicode symbols, emoji sets, and styling resources for quick access and integration.
 
 <!-- START_LIBRARY -->
-### Emoji Flags
-A comprehensive reference of emoji flag sequences organized by country and region, ready to copy and paste.
 - https://ultratextgen.com/library/emoji-flags/
-
-### LinkedIn Comment Styling
-A curated collection of Unicode styling patterns optimized for LinkedIn comments, including formatting techniques and ready-to-use templates.
 - https://ultratextgen.com/library/linkedin-comment-styling/
-
-### LinkedIn Symbol Library
-A reference library of Unicode symbols and special characters that render correctly on LinkedIn, organized by category for easy discovery.
 - https://ultratextgen.com/library/linkedin-symbol-library/
-
 <!-- END_LIBRARY -->
 
 ## Embed Tools
@@ -237,10 +157,7 @@ A reference library of Unicode symbols and special characters that render correc
 Lightweight embeddable versions of UltraTextGen tools, designed for integration into external pages and platforms.
 
 <!-- START_EMBED -->
-### LinkedIn Headline Generator Embed
-An embeddable version of the LinkedIn Headline tool for use on external websites and platforms.
 - https://ultratextgen.com/embed/linkedin-headline-generator/
-
 <!-- END_EMBED -->
 
 ## Project Structure

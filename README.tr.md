@@ -75,20 +75,19 @@ UltraTextGen, stillerin tam olarak beklendiği gibi görüntülenmesi için her 
 
 <!-- START_PLATFORMS -->
 ### Sosyal Medya Platformları
-**Facebook:** https://ultratextgen.com/facebook  
-**Instagram:** https://ultratextgen.com/instagram  
-**LinkedIn:** https://ultratextgen.com/linkedin  
-**Pinterest:** https://ultratextgen.com/pinterest  
-**Snapchat:** https://ultratextgen.com/snapchat  
-**TikTok:** https://ultratextgen.com/tiktok  
-**X (Twitter):** https://ultratextgen.com/x  
-**YouTube:** https://ultratextgen.com/youtube  
+**Facebook:** https://ultratextgen.com/facebook/
+**Instagram:** https://ultratextgen.com/instagram/
+**LinkedIn:** https://ultratextgen.com/linkedin/
+**Pinterest:** https://ultratextgen.com/pinterest/
+**Snapchat:** https://ultratextgen.com/snapchat/
+**TikTok:** https://ultratextgen.com/tiktok/
+**X (Twitter):** https://ultratextgen.com/x/
+**YouTube:** https://ultratextgen.com/youtube/
 
 ### Mesajlaşma Platformları
-**Discord:** https://ultratextgen.com/discord  
-**Telegram:** https://ultratextgen.com/telegram  
-**WhatsApp:** https://ultratextgen.com/whatsapp  
-
+**Discord:** https://ultratextgen.com/discord/
+**Telegram:** https://ultratextgen.com/telegram/
+**WhatsApp:** https://ultratextgen.com/whatsapp/
 <!-- END_PLATFORMS -->
 
 ## Kategori Sayfaları
@@ -98,46 +97,16 @@ UltraTextGen, Unicode yazı tipi dönüşümlerini ton tabanlı yapılandırılm
 <!-- START_CATEGORIES -->
 **Tüm kategoriler:** https://ultratextgen.com/category/
 
-### Kalın Yazı Tipleri
-Güçlü vurgu ve otorite odaklı yazı tipi varyasyonları.
 - https://ultratextgen.com/category/bold-fonts/
-
-### El Yazısı Yazı Tipleri
-Kişisel bir tonla ifade edici, akıcı yazı tipi varyasyonları.
-- https://ultratextgen.com/category/cursive-fonts/
-
-### İtalik Yazı Tipleri
-Eğik yazı tipi formlarıyla ince vurgu ve kontrast.
-- https://ultratextgen.com/category/italic-fonts/
-
-### Altı Çizili Yazı Tipleri
-Görsel ağırlığı artırmadan anahtar kelimeleri vurgulayın.
-- https://ultratextgen.com/category/underline-text/
-
-### Üstü Çizili Yazı Tipleri
-Çizili metin aracılığıyla ironi, revizyon ve retorik gerilim yaratın.
-- https://ultratextgen.com/category/strikethrough-text/
-
-### Balon Yazı Tipleri
-Eğlenceli, dikkat çekici dekoratif yazı tipi varyasyonları.
 - https://ultratextgen.com/category/bubble-fonts/
-
-### Gotik Yazı Tipleri
-Eski dünya tipografisinden ilham alan dramatik ve yoğun yazı tipi formları.
-- https://ultratextgen.com/category/gothic-fonts/
-
-### Baş Aşağı Yazı Tipleri
-Ters yazı tipi dönüşümleriyle görsel akışı bozun.
-- https://ultratextgen.com/category/upside-down-text/
-
-### Kelime Çerçeveli Yazı Tipleri
-Metni yapılandırılmış dekoratif yazı tipi desenleriyle çerçeveleyin.
-- https://ultratextgen.com/category/word-wrappers/
-
-### Özel Yazı Tipleri
-Uzmanlaşmış ve deneysel Unicode yazı tipi varyasyonları.
 - https://ultratextgen.com/category/classified/
-
+- https://ultratextgen.com/category/cursive-fonts/
+- https://ultratextgen.com/category/gothic-fonts/
+- https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/underline-text/
+- https://ultratextgen.com/category/upside-down-text/
+- https://ultratextgen.com/category/word-wrappers/
 <!-- END_CATEGORIES -->
 
 ## Kullanım Senaryoları
@@ -147,30 +116,14 @@ Belirli kullanıcı hedefleri etrafında tasarlanmış, özel araçlar ve seçil
 <!-- START_USECASES -->
 **Tüm kullanım senaryoları:** https://ultratextgen.com/usecase/
 
-### Yorum Yazı Tipi
-Yorum modları etrafında kurulmuş, insanların hazır Unicode stilleri aracılığıyla vurgu, ironi, sıcaklık, neşe ve daha fazlasını ifade etmesine yardımcı olan özenle hazırlanmış bir sayfa.
-- https://ultratextgen.com/usecase/comment-font/
-
-### Biyografi Yazı Tipi
-Şık profil biyografileri için tasarlanmış özel bir sayfa. Unicode yazı tiplerini ton ve kişiliğe göre düzenleyerek kullanıcıların kimliklerini yansıtan bir biyografiyi anında kopyalayıp yapıştırmasına olanak tanır.
-- https://ultratextgen.com/usecase/bio-font/
-
-### Önce ve Sonra Emoji
-Duygusal çerçeveleme etrafında kurulmuş bağlamsal bir sayfa. Kontrast, ilerleme veya dönüşüm oluşturmak için metni başlangıç ve bitiş emojileriyle eşleştirir. Hikaye anlatımı, tepkiler ve duyurular için idealdir.
 - https://ultratextgen.com/usecase/before-after-emoji/
-
-### Emoji Kombinasyonları
-Amaçlara göre düzenlenmiş hazır kopyala-yapıştır emoji kombinasyonlarından oluşan özenle seçilmiş bir sayfa — takılma, kazanımları kutlama, motivasyon, özgüven, duyurular ve harekete geçirici mesajlar. Instagram, TikTok, LinkedIn ve daha fazlası için mükemmel.
+- https://ultratextgen.com/usecase/bio-font/
+- https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
-
-### LinkedIn Başlığı
-Öne çıkan LinkedIn başlıkları oluşturmak için özel olarak geliştirilmiş bir araç. Yapılandırılmış ayırıcı ekleme, 4 LinkedIn uyumlu yazı tipi arasında seçici Unicode yazı tipi stili, kimlik sinyali emojileri ve 220 karakterlik sınır için canlı karakter sayacı içerir.
 - https://ultratextgen.com/usecase/linkedin-headline/
-
-### Metinden Emojiye
-Düz metni yapılandırılmış bir emoji dil sistemi kullanarak bir dizi emojiye çeviren tam kapsamlı bir metin-emoji dönüştürücüsü. Birden fazla dili destekler, emoji döküm görünümü içerir ve anında kopyalanabilir çıktı üretir.
 - https://ultratextgen.com/usecase/text-to-emoji/
-
+- https://ultratextgen.com/usecase/vertical-text/
+- https://ultratextgen.com/usecase/zalgo-text/
 <!-- END_USECASES -->
 
 ## Rehberler
@@ -179,26 +132,14 @@ Yazı tipleri dekor değildir. Sinyaldir.
 Bu kaynaklar, Unicode tipografisinin çevrimiçi platformlarda tonu, otoriteyi, ironiyi ve vurguyu nasıl kodladığını keşfeder.
 
 <!-- START_GUIDES -->
-### Yazı Tiplerinin Retoriği
-Yazı tipi stillerini retorik araçlarla ve pratik kullanım senaryolarıyla eşleştiren, kullanıcıların tipografiyi yalnızca estetik değil kasıtlı biçimde uygulamasına yardımcı olan yapılandırılmış bir çerçeve.
-- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
-
-### Sosyal Medya için Yazı Tipleriyle Marka Oluşturma
-Unicode tipografisini kampanyalarda kullanmaya yönelik pratik bir kılavuz. Görsel metin desenlerinin kaydırma durdurma gücünü nasıl artırdığını, marka hatırlanırlığını nasıl güçlendirdiğini ve Instagram, LinkedIn, X ve daha fazlasında tutarlılık nasıl sağladığını keşfedin.
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
-
-### LinkedIn Kancalarınızı Öne Çıkmak için Stilize Edin
-Sıradan LinkedIn açılışlarını yüksek performanslı kancalara dönüştürmeye odaklanan bir kılavuz. Ince metin varyasyonlarının kaydırma kesintisini, okunabilirliği, etkileşim oranını, tıklama oranını ve otorite sinyallemesini nasıl iyileştirdiğini öğrenin.
-- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
-
-### Tipografi Yoluyla Kişisel Marka Oluşturma
-Unicode metnin kişisel markalaşma için stratejik bir imza olarak kullanılmasına dair derinlemesine bir inceleme. Dört tekniği kapsar — tutarlı kanca stili, imza biçimlendirme desenleri, hafıza mimarisi olarak tekrar ve yorumlarda mikro-markalama — bilişsel bilimle desteklenmiştir.
+- https://ultratextgen.com/guide/linkedin-comments-guide/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
-
-### Yazı Tipi Varyasyonuyla Kaydırmayı Durdurun
-Taranabilirliği iyileştirmek, bilişsel yükü azaltmak ve etkileşimi artırmak için stratejik yazı tipi varyasyonu kullanımına dair bir kılavuz. Beş ilkeyi inceler — görsel çapalar, kontrast hiyerarşisi, parçalama, gezinme olarak vurgu ve tekrar — önce ve sonra dönüşümleriyle.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
-
+- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
+- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
+- https://ultratextgen.com/guide/vertical-text-guide/
+- https://ultratextgen.com/guide/vertical-text/
 <!-- END_GUIDES -->
 
 ## Proje Yapısı
@@ -242,7 +183,11 @@ ultratextgen/
 Framework yok. Frontend için derleme aracı gerekmez. Saf, tarayıcı-yerel kod.
 
 <!-- START_LIBRARY -->
+- https://ultratextgen.com/library/emoji-flags/
+- https://ultratextgen.com/library/linkedin-comment-styling/
+- https://ultratextgen.com/library/linkedin-symbol-library/
 <!-- END_LIBRARY -->
 
 <!-- START_EMBED -->
+- https://ultratextgen.com/embed/linkedin-headline-generator/
 <!-- END_EMBED -->
