@@ -1007,6 +1007,60 @@
   font-weight: 600;
 }
 
+.block-example pre {
+  white-space: pre;
+  font-family: monospace;
+  line-height: 1.5;
+  background: rgba(255,255,255,0.03);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 0.5rem 0 0;
+}
+
+/* Accordion sections */
+.accordion-section {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--bg-white);
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  list-style: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.accordion-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-toggle::after {
+  content: "›";
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.accordion-section[open] > .accordion-toggle::after {
+  transform: rotate(90deg);
+}
+
+.accordion-section > .accordion-body {
+  padding: 0 1.25rem 1.25rem;
+}
+
 /* Responsive adjustments for editorial sections */
 @media (max-width: 640px) {
   .hero-tagline {
