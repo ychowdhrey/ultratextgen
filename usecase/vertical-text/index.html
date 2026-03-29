@@ -274,7 +274,13 @@ o</pre></div>
         </div>
         <div class="editorial-block">
           <h3>How this generator works</h3>
-          <p>Type your text, choose a Unicode font style (bold, italic, cursive, gothic, and more), then pick a layout. The generator applies it to every font style at once so you can compare all variations side by side and copy the one you want.</p>
+          <p>Type your text and choose from 12 layout styles — Stacked, Staircase, Pyramid, Box, and more. The generator applies your chosen layout across every Unicode font style (bold, italic, cursive, gothic, and more) at once, so you can compare all variations side by side and copy the one you want.</p>
+          <p>Two word modes control how multi-word input is handled:</p>
+          <ul>
+            <li><strong>Stack mode:</strong> Each word becomes its own vertical block, with optional dividers between words (None, Blank Line, or Divider Line).</li>
+            <li><strong>Continuous mode:</strong> All characters flow as a single vertical column, ignoring word boundaries.</li>
+          </ul>
+          <p>You can also add a line decorator — a dot, symbol, or emoji placed between each character for extra visual rhythm.</p>
           <div class="block-example"><strong>Example — "Hi" with a star decorator:</strong>
 <pre>H
 ✧
@@ -288,28 +294,53 @@ i</pre></div>
       <summary class="accordion-toggle">Vertical Layout Options</summary>
       <div class="accordion-body">
         <div class="editorial-block">
-          <p>Select a layout from the dropdown above to try it instantly. Each layout transforms your text differently while keeping it copy-pasteable as plain text.</p>
+          <p>Select a layout from the dropdown above to try it instantly. Each of the 12 layouts transforms your text differently while keeping it copy-pasteable as plain text. Here are five key layouts to get you started.</p>
         </div>
         <div class="editorial-block">
           <h3>Stacked (Default)</h3>
           <div class="block-example"><pre>H
 e
 y</pre></div>
-          <p>Most readable. Best for bios and comments.</p>
+          <p>Each character on its own line — the most readable format. Best for bios, profile descriptions, and comments.</p>
         </div>
         <div class="editorial-block">
           <h3>Staircase</h3>
           <div class="block-example"><pre>H
  e
   y</pre></div>
-          <p>Creates a diagonal flow.</p>
+          <p>Each character is indented one step further than the last, creating a diagonal visual flow. Works well for stylised hooks and profile aesthetics.</p>
         </div>
         <div class="editorial-block">
           <h3>Pyramid</h3>
           <div class="block-example"><pre>H
-He
-Hey</pre></div>
-          <p>Builds emphasis progressively.</p>
+H e
+H e y</pre></div>
+          <p>Characters build line by line until the full word appears at the bottom. Strong progressive emphasis — great for reveals and announcements.</p>
+        </div>
+        <div class="editorial-block">
+          <h3>Box</h3>
+          <div class="block-example"><pre>╔═══╗
+║ H ║
+║ e ║
+║ y ║
+╚═══╝</pre></div>
+          <p>Stacked characters wrapped in a Unicode border frame. Makes a single word feel designed. Works best for short emphasis words in posts or captions.</p>
+        </div>
+        <div class="editorial-block">
+          <h3>Double Column</h3>
+          <div class="block-example"><pre>H   W
+e   o
+y   w</pre></div>
+          <p>Two words displayed side by side in parallel columns. Useful for pairing a name with a title, or contrasting two short words visually.</p>
+        </div>
+        <div class="editorial-block">
+          <h3>Word divider options (Stack mode)</h3>
+          <p>When using Stack mode with multiple words, the Word Divider control lets you choose how word blocks are separated:</p>
+          <ul>
+            <li><strong>None:</strong> A single blank line between each word block.</li>
+            <li><strong>Blank Line:</strong> Two blank lines between word blocks for extra spacing.</li>
+            <li><strong>Divider Line:</strong> A Unicode rule (<code>────────</code>) between word blocks — useful for structured posts and lists.</li>
+          </ul>
         </div>
       </div>
     </details>
@@ -470,6 +501,7 @@ o</pre></div>
       <h2>Combining Vertical and Horizontal Text</h2>
       <div class="editorial-block">
         <p>The most effective use of vertical text is combining it with horizontal text rather than replacing it entirely. Use a single vertical word as a visual anchor, then continue with normal horizontal text below or beside it.</p>
+        <p>This is a manual technique — use this generator to produce the vertical portion, copy it, then compose the full hybrid post in your platform of choice.</p>
         <div class="block-example"><pre>Check this out:
 
 N
@@ -481,7 +513,7 @@ Feature launching tomorrow</pre></div>
       </div>
       <div class="editorial-block">
         <h3>When to use this approach</h3>
-        <p>Hybrid layouts work especially well in captions, comment threads, and announcements. Keep the vertical segment short (1–3 words) and the horizontal continuation concise. The layout pattern, font style, and word divider options in this generator let you create the vertical portion — copy it, then manually compose the full hybrid post in your platform of choice.</p>
+        <p>Hybrid layouts work especially well in captions, comment threads, and announcements. Keep the vertical segment short (1–3 words) and the horizontal continuation concise. The layout, font style, and word divider options in this generator let you create the vertical portion — then paste it into any post.</p>
       </div>
     </section>
 
