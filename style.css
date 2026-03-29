@@ -652,7 +652,7 @@
 
     /* Footer */
     .footer {
-      padding: 24px 24px;
+      padding: 40px 24px 24px;
       background: var(--bg-white);
       border-top: 1px solid var(--border-light);
     }
@@ -660,6 +660,28 @@
     .footer-inner {
       max-width: 900px;
       margin: 0 auto;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
     }
 
     .footer-links {
@@ -671,11 +693,19 @@
       margin-bottom: 32px;
     }
 
-    .footer-nav-links,
+    .footer-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+
     .footer-social-links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px 24px;
+      justify-content: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light);
     }
 
     .footer-link {
@@ -687,6 +717,67 @@
 
     .footer-link:hover {
       color: var(--accent-purple);
+    }
+
+    @media (max-width: 640px) {
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    /* Related Pages Block */
+    .related-pages {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .related-pages h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .related-pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-page-card {
+      display: block;
+      padding: 1.25rem;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .related-page-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .related-page-label {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-purple);
+      margin-bottom: 0.35rem;
+    }
+
+    .related-page-card h4 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.35;
     }
 
     .faq-section {
