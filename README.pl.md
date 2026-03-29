@@ -75,20 +75,19 @@ UltraTextGen zawiera dedykowane strony dla każdej głównej platformy, aby styl
 
 <!-- START_PLATFORMS -->
 ### Platformy Mediów Społecznościowych
-**Facebook:** https://ultratextgen.com/facebook  
-**Instagram:** https://ultratextgen.com/instagram  
-**LinkedIn:** https://ultratextgen.com/linkedin  
-**Pinterest:** https://ultratextgen.com/pinterest  
-**Snapchat:** https://ultratextgen.com/snapchat  
-**TikTok:** https://ultratextgen.com/tiktok  
-**X (Twitter):** https://ultratextgen.com/x  
-**YouTube:** https://ultratextgen.com/youtube  
+**Facebook:** https://ultratextgen.com/facebook/
+**Instagram:** https://ultratextgen.com/instagram/
+**LinkedIn:** https://ultratextgen.com/linkedin/
+**Pinterest:** https://ultratextgen.com/pinterest/
+**Snapchat:** https://ultratextgen.com/snapchat/
+**TikTok:** https://ultratextgen.com/tiktok/
+**X (Twitter):** https://ultratextgen.com/x/
+**YouTube:** https://ultratextgen.com/youtube/
 
 ### Komunikatory
-**Discord:** https://ultratextgen.com/discord  
-**Telegram:** https://ultratextgen.com/telegram  
-**WhatsApp:** https://ultratextgen.com/whatsapp  
-
+**Discord:** https://ultratextgen.com/discord/
+**Telegram:** https://ultratextgen.com/telegram/
+**WhatsApp:** https://ultratextgen.com/whatsapp/
 <!-- END_PLATFORMS -->
 
 ## Strony Kategorii
@@ -98,46 +97,16 @@ UltraTextGen organizuje transformacje czcionek Unicode w strukturalne kategorie 
 <!-- START_CATEGORIES -->
 **Wszystkie kategorie:** https://ultratextgen.com/category/
 
-### Czcionki Pogrubione
-Warianty czcionek z silnym naciskiem i autorytetem.
 - https://ultratextgen.com/category/bold-fonts/
-
-### Czcionki Kursywne
-Ekspresyjne, płynne warianty czcionek z osobistym tonem.
-- https://ultratextgen.com/category/cursive-fonts/
-
-### Czcionki Pochylone
-Subtelne wyróżnienie i kontrast dzięki pochylonym formom liter.
-- https://ultratextgen.com/category/italic-fonts/
-
-### Czcionki Podkreślone
-Podkreślaj kluczowe słowa bez zwiększania ciężaru wizualnego.
-- https://ultratextgen.com/category/underline-text/
-
-### Czcionki Przekreślone
-Twórz ironię, poprawki i napięcie retoryczne za pomocą przekreślonego tekstu.
-- https://ultratextgen.com/category/strikethrough-text/
-
-### Czcionki Bąbelkowe
-Zabawne, przyciągające wzrok dekoracyjne warianty czcionek.
 - https://ultratextgen.com/category/bubble-fonts/
-
-### Czcionki Gotyckie
-Dramatyczne, intensywne formy liter inspirowane typografią dawnego świata.
-- https://ultratextgen.com/category/gothic-fonts/
-
-### Czcionki Do Góry Nogami
-Zakłócaj przepływ wizualny za pomocą odwróconych transformacji czcionek.
-- https://ultratextgen.com/category/upside-down-text/
-
-### Czcionki z Obramowaniem Słów
-Ozdabiaj tekst strukturalnymi dekoracyjnymi wzorami czcionek.
-- https://ultratextgen.com/category/word-wrappers/
-
-### Czcionki Sklasyfikowane
-Specjalistyczne i eksperymentalne warianty czcionek Unicode.
 - https://ultratextgen.com/category/classified/
-
+- https://ultratextgen.com/category/cursive-fonts/
+- https://ultratextgen.com/category/gothic-fonts/
+- https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/underline-text/
+- https://ultratextgen.com/category/upside-down-text/
+- https://ultratextgen.com/category/word-wrappers/
 <!-- END_CATEGORIES -->
 
 ## Przypadki Użycia
@@ -147,30 +116,14 @@ Strony kontekstowe zaprojektowane wokół konkretnych celów użytkownika, każd
 <!-- START_USECASES -->
 **Wszystkie przypadki użycia:** https://ultratextgen.com/usecase/
 
-### Czcionka do Komentarzy
-Starannie przygotowana strona skupiona na nastrojach w komentarzach, pomagająca wyrażać emfazę, sarkazm, ciepło, żartobliwość i wiele więcej za pomocą gotowych do skopiowania stylów Unicode.
-- https://ultratextgen.com/usecase/comment-font/
-
-### Czcionka do Bio
-Dedykowana strona do stylowych biogramów profilowych. Organizuje czcionki Unicode według tonu i osobowości, umożliwiając użytkownikom natychmiastowe skopiowanie i wklejenie bio odzwierciedlającego ich tożsamość.
-- https://ultratextgen.com/usecase/bio-font/
-
-### Emoji Przed i Po
-Strona kontekstowa zbudowana wokół emocjonalnego kadrowania. Łączy tekst z emotikonami na początku i końcu, aby tworzyć kontrast, postęp lub transformację. Idealna do storytellingu, reakcji i ogłoszeń.
 - https://ultratextgen.com/usecase/before-after-emoji/
-
-### Kombinacje Emoji
-Strona z kurowanymi kombinacjami emoji gotowymi do kopiowania i wklejania, zorganizowanymi według intencji — droczenie się, świętowanie sukcesów, motywacja, pewność siebie, ogłoszenia i wezwania do działania. Idealna do Instagram, TikTok, LinkedIn i nie tylko.
+- https://ultratextgen.com/usecase/bio-font/
+- https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
-
-### Nagłówek LinkedIn
-Narzędzie stworzone specjalnie do tworzenia wyróżniających się nagłówków LinkedIn. Oferuje strukturalne wstawianie separatorów, selektywne stylizowanie czcionką Unicode spośród 4 czcionek bezpiecznych dla LinkedIn, emoji sygnalizujące tożsamość i licznik znaków na żywo dla limitu 220 znaków.
 - https://ultratextgen.com/usecase/linkedin-headline/
-
-### Tekst na Emoji
-Pełnoprawny konwerter tekstu na emoji, który tłumaczy zwykły tekst na sekwencję emoji za pomocą strukturalnego systemu języka emoji. Obsługuje wiele języków, zawiera widok rozkładu emoji i natychmiastowo generuje gotowe do skopiowania wyniki.
 - https://ultratextgen.com/usecase/text-to-emoji/
-
+- https://ultratextgen.com/usecase/vertical-text/
+- https://ultratextgen.com/usecase/zalgo-text/
 <!-- END_USECASES -->
 
 ## Poradniki
@@ -179,26 +132,14 @@ Czcionki to nie dekoracja. To sygnały.
 Te zasoby badają, jak typografia Unicode koduje ton, autorytet, ironię i emfazę na platformach internetowych.
 
 <!-- START_GUIDES -->
-### Retoryka Czcionek
-Ustrukturyzowany framework mapujący style czcionek na środki retoryczne i praktyczne przypadki użycia, pomagający użytkownikom stosować typografię celowo, a nie tylko estetycznie.
-- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
-
-### Branding z Czcionkami dla Mediów Społecznościowych
-Praktyczny podręcznik do używania typografii Unicode w kampaniach. Odkryj, jak wizualne wzorce tekstu zwiększają siłę zatrzymywania przewijania, wzmacniają zapamiętywanie marki i tworzą spójność na Instagram, LinkedIn, X i nie tylko.
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
-
-### Stylizuj Swoje Haki na LinkedIn, Żeby Się Wyróżniać
-Ukierunkowany poradnik o przekształcaniu zwykłych wstępów na LinkedIn w skuteczne haki. Dowiedz się, jak subtelne warianty tekstu poprawiają przerywanie przewijania, czytelność, wskaźnik zaangażowania, wskaźnik kliknięć i sygnalizowanie autorytetu.
-- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
-
-### Personal Branding przez Typografię
-Dogłębna analiza używania tekstu Unicode jako strategicznego podpisu dla personal brandingu. Omawia cztery techniki — spójny styl haka, wzorce formatowania podpisu, powtarzanie jako architektura pamięci i mikro-branding w komentarzach — poparte nauką kognitywną.
+- https://ultratextgen.com/guide/linkedin-comments-guide/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
-
-### Zatrzymaj Przewijanie za Pomocą Wariantów Czcionek
-Poradnik o strategicznym używaniu wariantów czcionek w celu poprawy przejrzystości, zmniejszenia obciążenia kognitywnego i zwiększenia zaangażowania. Omawia pięć zasad — kotwice wizualne, hierarchia kontrastu, chunking, emfaza jako nawigacja i powtarzanie — z transformacjami przed i po.
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
-
+- https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
+- https://ultratextgen.com/guide/the-rhetoric-of-fonts/
+- https://ultratextgen.com/guide/vertical-text-guide/
+- https://ultratextgen.com/guide/vertical-text/
 <!-- END_GUIDES -->
 
 ## Struktura Projektu
@@ -242,7 +183,11 @@ ultratextgen/
 Żadnych frameworków. Żadnych narzędzi do budowania wymaganych dla frontendu. Czysty, natywny kod przeglądarki.
 
 <!-- START_LIBRARY -->
+- https://ultratextgen.com/library/emoji-flags/
+- https://ultratextgen.com/library/linkedin-comment-styling/
+- https://ultratextgen.com/library/linkedin-symbol-library/
 <!-- END_LIBRARY -->
 
 <!-- START_EMBED -->
+- https://ultratextgen.com/embed/linkedin-headline-generator/
 <!-- END_EMBED -->
