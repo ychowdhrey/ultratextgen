@@ -138,6 +138,14 @@
         "@type": "Answer",
         "text": "Completely free. No sign-up, no limits, no watermarks. Type any text, pick a style, copy, and paste. The conversion happens entirely in your browser — nothing is sent to a server."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "How many layout options are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This generator includes 12 layout patterns: Stacked, Reverse Stacked, Upside-Down, Extra Spaced, Staircase, Pyramid, Reverse Pyramid, Centered Pyramid, Diagonal Right, Diagonal Left, Box, and Double Column. Each layout can be combined with any of the 80+ Unicode font styles available in the generator — giving you hundreds of possible combinations."
+      }
     }
   ]
 }
@@ -256,12 +264,83 @@ o</div>
       </div>
       <div class="editorial-block">
         <h3>How this generator works</h3>
-        <p>Type your text, choose a Unicode font style (bold, italic, cursive, gothic, and more), and the generator stacks every character on a separate line. You can also pick a separator — a dot, bullet, arrow, or emoji — that appears between each character to add spacing or visual flair.</p>
-        <p>You can also add separators like dots, symbols, or emojis to create different visual styles between each stacked character.</p>
-        <div class="block-example"><strong>Example — "Hi" with a star separator:</strong>
+        <p>Type your text, choose a Unicode font style (bold, italic, cursive, gothic, and more), then select one of <strong>12 layout patterns</strong> — from simple stacked characters to staircases, pyramids, box frames, and diagonal columns. The generator applies the chosen layout to every font style at once, so you can compare all variations side by side.</p>
+        <p>The generator runs in two word modes:</p>
+        <ul>
+          <li><strong>Stack mode:</strong> Each word becomes its own vertical block. Use word divider options to control how blocks are separated.</li>
+          <li><strong>Continuous mode:</strong> All characters flow vertically without word breaks.</li>
+        </ul>
+        <p>You can also add line decorators — dots, bullets, symbols, or emojis — that appear between each character to add spacing or visual rhythm.</p>
+        <div class="block-example"><strong>Example — "Hi" with a star decorator:</strong>
 H
 ✧
 i</div>
+      </div>
+      <div class="editorial-block">
+        <h3>Word divider options</h3>
+        <p>When using Stack mode with multiple words, you can control how word blocks are separated:</p>
+        <ul>
+          <li><strong>None:</strong> Words are separated by a single blank line.</li>
+          <li><strong>Blank Line:</strong> Words are separated by two blank lines for extra spacing.</li>
+          <li><strong>Divider Line:</strong> A horizontal rule is inserted between word blocks.</li>
+        </ul>
+        <div class="block-example"><strong>Example — "Hello World" with Divider Line:</strong>
+H
+e
+l
+l
+o
+────────
+W
+o
+r
+l
+d</div>
+      </div>
+    </section>
+
+    <!-- Vertical Layout Options -->
+    <section class="editorial-section">
+      <h2>Vertical Layout Options</h2>
+      <div class="editorial-block">
+        <p>Unlike standard vertical text generators, UltraTextGen offers <strong>12 layout patterns</strong>. Each layout applies a different spatial transformation while keeping your text readable. Select a layout from the dropdown above to try it instantly.</p>
+      </div>
+      <div class="editorial-block">
+        <h3>Stacked (Default)</h3>
+        <div class="block-example">H
+e
+y</div>
+        <p>Each character on its own line. The most readable format — ideal for bios, comments, and any context where clarity matters.</p>
+      </div>
+      <div class="editorial-block">
+        <h3>Staircase</h3>
+        <div class="block-example">H
+ e
+  y</div>
+        <p>Each character indented one step further than the last. Creates a diagonal visual flow that draws the eye downward.</p>
+      </div>
+      <div class="editorial-block">
+        <h3>Pyramid</h3>
+        <div class="block-example">H
+H e
+H e y</div>
+        <p>Characters build progressively line by line, revealing the full word at the bottom. Works best as a single-word emphasis block.</p>
+      </div>
+      <div class="editorial-block">
+        <h3>Box</h3>
+        <div class="block-example">╔═══╗
+║ H ║
+║ e ║
+║ y ║
+╚═══╝</div>
+        <p>Stacked text enclosed in a Unicode border frame. Creates a contained, badge-like appearance for single words or short phrases.</p>
+      </div>
+      <div class="editorial-block">
+        <h3>Double Column</h3>
+        <div class="block-example">H   W
+e   o
+y   w</div>
+        <p>Two words displayed side by side in parallel columns. Use in Stack mode with two words to create a balanced two-column layout.</p>
       </div>
     </section>
 
@@ -372,6 +451,26 @@ i</div>
       <a href="/usecase/bio-font/" class="cta-btn">Try Bio Font Generator →</a>
     </div>
 
+    <!-- Hybrid Layout -->
+    <section class="editorial-section">
+      <h2>Combining Vertical and Horizontal Text</h2>
+      <div class="editorial-block">
+        <p>The most effective use of vertical text is combining it with horizontal text rather than replacing it entirely. Use a single vertical word as a visual anchor, then continue with normal horizontal text below or beside it.</p>
+        <div class="block-example">Check this out:
+
+N
+E
+W
+
+Feature launching tomorrow</div>
+        <p>This technique uses vertical text as punctuation rather than replacement — creating visual contrast without sacrificing message clarity. The vertical word slows the reader's eye; the horizontal continuation delivers the message.</p>
+      </div>
+      <div class="editorial-block">
+        <h3>When to use this approach</h3>
+        <p>Hybrid layouts work especially well in captions, comment threads, and announcements. Keep the vertical segment short (1–3 words) and the horizontal continuation concise. The layout pattern, font style, and word divider options in this generator let you create the vertical portion — copy it, then manually compose the full hybrid post in your platform of choice.</p>
+      </div>
+    </section>
+
     <!-- FAQ Section -->
     <footer class="footer">
       <div class="footer-inner">
@@ -428,6 +527,20 @@ i</div>
   <div class="faq-answer">
     Stacked text is another name for vertical text — each letter is arranged one below another, forming a column instead of a row.
     This generator creates stacked text using plain Unicode characters and newlines, so the result works anywhere you can paste text.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How many layout options are available?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    This generator includes 12 layout patterns: Stacked, Reverse Stacked, Upside-Down, Extra Spaced, Staircase, Pyramid, Reverse Pyramid, Centered Pyramid, Diagonal Right, Diagonal Left, Box, and Double Column.
+    Each layout can be combined with any of the 80+ Unicode font styles available in the generator — giving you hundreds of possible combinations.
+    Select a layout from the dropdown above the results to switch between them instantly.
   </div>
 </div>
 
