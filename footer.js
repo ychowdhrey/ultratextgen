@@ -2,20 +2,44 @@
   "use strict";
 
   var footerLinksHTML =
-    '<div class="footer-links">' +
-      '<div class="footer-nav-links">' +
-        '<a href="/about/" class="footer-link">About</a>' +
+    '<div class="footer-columns">' +
+      '<div class="footer-col">' +
+        '<span class="footer-col-title">Explore</span>' +
+        '<a href="/" class="footer-link">Home</a>' +
+        '<a href="/guide/" class="footer-link">Guides</a>' +
+        '<a href="/usecase/" class="footer-link">Use Cases</a>' +
+        '<a href="/category/" class="footer-link">Categories</a>' +
         '<a href="/library/" class="footer-link">Library</a>' +
+      '</div>' +
+      '<div class="footer-col">' +
+        '<span class="footer-col-title">Popular Tools</span>' +
+        '<a href="/usecase/linkedin-headline/" class="footer-link">LinkedIn Headline</a>' +
+        '<a href="/usecase/comment-font/" class="footer-link">Comment Font</a>' +
+        '<a href="/usecase/bio-font/" class="footer-link">Bio Font</a>' +
+        '<a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a>' +
+        '<a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a>' +
+      '</div>' +
+      '<div class="footer-col">' +
+        '<span class="footer-col-title">Popular Categories</span>' +
+        '<a href="/category/bold-fonts/" class="footer-link">Bold Fonts</a>' +
+        '<a href="/category/cursive-fonts/" class="footer-link">Cursive Fonts</a>' +
+        '<a href="/category/gothic-fonts/" class="footer-link">Gothic Fonts</a>' +
+        '<a href="/category/bubble-fonts/" class="footer-link">Bubble Fonts</a>' +
+        '<a href="/category/strikethrough-text/" class="footer-link">Strikethrough</a>' +
+      '</div>' +
+      '<div class="footer-col">' +
+        '<span class="footer-col-title">Company</span>' +
+        '<a href="/about/" class="footer-link">About</a>' +
         '<a href="/privacy/" class="footer-link">Privacy Policy</a>' +
         '<a href="/terms/" class="footer-link">Terms of Service</a>' +
         '<a href="/contact/" class="footer-link">Contact</a>' +
       '</div>' +
-      '<div class="footer-social-links">' +
-        '<a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>' +
-        '<a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>' +
-        '<a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
-        '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
-      '</div>' +
+    '</div>' +
+    '<div class="footer-social-links">' +
+      '<a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>' +
+      '<a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>' +
+      '<a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
+      '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
     '</div>' +
     '<div class="footer-bottom">' +
       '\u00a9 2026 UltraTextGen. Fast text styles that work everywhere.' +
