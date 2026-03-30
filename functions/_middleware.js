@@ -17,17 +17,15 @@ export async function onRequest(context) {
   }
 
   // ── Fetch the root /index.html from ASSETS ──────────────────────────
-  // Set Accept-Language to "en" (not just delete it) so Cloudflare's i18n
-  // routing picks English even if it falls back from Accept-Language to
-  // geo-IP.  Also strip CF-IPCountry to remove the geo hint entirely.
-  const headers = new Headers(context.request.headers);
-  headers.set("Accept-Language", "en");
-  headers.delete("CF-IPCountry");
-
+  // Build a completely clean request with NO headers from the original
+  // request.  Copying the original headers forwards geo-IP signals
+  // (CF-Connecting-IP, X-Forwarded-For, etc.) that Cloudflare's i18n
+  // routing can use to serve a localized page even when Accept-Language
+  // is explicitly set to "en".
   let response = await context.env.ASSETS.fetch(
     new Request(new URL("/index.html", url.origin), {
-      method: context.request.method,
-      headers,
+      method: "GET",
+      headers: new Headers({ "Accept-Language": "en" }),
     })
   );
 
