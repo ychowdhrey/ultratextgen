@@ -154,8 +154,14 @@ function buildFaqEntities(faqCategories) {
     if (!cat.items) return;
     cat.items.forEach(function (item) {
       if (!item.question || !item.answer) return;
-      // Strip HTML tags for schema.org text
-      const plainAnswer = item.answer.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      // Replace block-level tags with spaces first to preserve word separation,
+      // then strip remaining HTML tags for schema.org plain text
+      const plainAnswer = item.answer
+        .replace(/<br\s*\/?>/gi, " ")
+        .replace(/<\/p>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
       entities.push({
         "@type": "Question",
         name: item.question,
@@ -186,6 +192,8 @@ function processLanguage(lang) {
 
   const translations = JSON.parse(fs.readFileSync(localeFile, "utf-8"));
   const html = fs.readFileSync(htmlFile, "utf-8");
+  // decodeEntities: false preserves existing HTML entities (e.g. &amp;, &lt;)
+  // in the source HTML rather than double-encoding them on output.
   const $ = cheerio.load(html, { decodeEntities: false });
 
   // Pre-render translations into body elements
