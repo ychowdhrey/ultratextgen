@@ -16,3 +16,9 @@
 # copies without sacrificing performance for repeat visits.
 /*.js
   Cache-Control: public, max-age=300, must-revalidate
+
+# Temporary fix: Tell returning users' browsers to clear their local cache
+# This breaks the local 301 redirect loop to /fr/ for users who cached it previously.
+# NOTE: Remove this section after 1-2 weeks once users have cleared their caches.
+/*
+  Clear-Site-Data: "cache"
