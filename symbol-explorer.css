@@ -53,6 +53,11 @@
   transition: transform 0.15s;
 }
 
+/* Extended chess symbols (Unicode 16.0, U+1FA00–U+1FA6F) need a web font */
+#extended-symbols .flag-emoji {
+  font-family: "Noto Sans Symbols 2", "Segoe UI Symbol", sans-serif;
+}
+
 .flag-emoji:hover {
   transform: scale(1.15);
 }
