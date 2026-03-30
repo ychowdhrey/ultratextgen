@@ -106,9 +106,15 @@ export async function onRequest(context) {
     .transform(response);
 
   // ── Build the final response with anti-cache headers ────────────────
-  // Prevent browsers / edge from caching a stale 301 → /fr/ redirect.
+  // "no-store" prevents browsers from keeping ANY cached copy of this
+  // response, which is critical because a previously cached 301 → /fr/
+  // redirect would persist indefinitely (301 = permanent).  "Vary:
+  // Accept-Language" tells CDN edge nodes and downstream proxies that
+  // the response varies by language preference, preventing a locale-
+  // specific cached response from being served to all users.
   const outHeaders = new Headers(rewritten.headers);
-  outHeaders.set("Cache-Control", "public, max-age=0, must-revalidate");
+  outHeaders.set("Cache-Control", "no-store");
+  outHeaders.set("Vary", "Accept-Language");
   outHeaders.delete("Location");
 
   return new Response(rewritten.body, {
