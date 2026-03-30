@@ -117,7 +117,29 @@
 
     markActiveLang(lang);
 
-    if (lang === "en") return; // English is already in the HTML
+    if (lang === "en") {
+      // Cloudflare's ASSETS may transparently serve a localized page
+      // (e.g. fr/index.html) for the root path.  The middleware rewrites
+      // head metadata to English, but the pre-rendered body text may still
+      // be in another language.  Detect this and restore English content.
+      var heroEl = document.querySelector("[data-i18n='hero.title']");
+      var needsRestore = heroEl && heroEl.textContent !== "Stylish Font Generator";
+
+      if (needsRestore) {
+        fetch("/locales/en.json")
+          .then(function (r) {
+            if (!r.ok) throw new Error("Not found");
+            return r.json();
+          })
+          .then(function (t) {
+            applyTranslations("en", t);
+          })
+          .catch(function () {
+            // Best-effort: leave content as-is on failure
+          });
+      }
+      return;
+    }
 
     fetch("/locales/" + lang + ".json")
       .then(function (r) {
