@@ -52,6 +52,14 @@ export async function onRequest(context) {
   const rewritten = new HTMLRewriter()
     .on("html", {
       element(el) {
+        // If ASSETS served a localized page (e.g. fr/index.html), the
+        // original lang attribute will be non-"en".  Preserve it as a
+        // data attribute so client-side i18n.js can detect that body
+        // content needs English restoration.
+        const servedLang = el.getAttribute("lang");
+        if (servedLang && servedLang !== "en") {
+          el.setAttribute("data-served-locale", servedLang);
+        }
         el.setAttribute("lang", "en");
       },
     })
