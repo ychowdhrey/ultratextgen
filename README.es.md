@@ -183,9 +183,21 @@ ultratextgen/
 Sin frameworks. Sin herramientas de build requeridas para el frontend. Código puro nativo del navegador.
 
 <!-- START_LIBRARY -->
+- https://ultratextgen.com/library/awareness-ribbons/
+- https://ultratextgen.com/library/card-suit-symbols/
+- https://ultratextgen.com/library/chess-symbols/
+- https://ultratextgen.com/library/currency-symbols/
 - https://ultratextgen.com/library/emoji-flags/
+- https://ultratextgen.com/library/hand-symbols/
+- https://ultratextgen.com/library/heart-symbols/
 - https://ultratextgen.com/library/linkedin-comment-styling/
 - https://ultratextgen.com/library/linkedin-symbol-library/
+- https://ultratextgen.com/library/music-symbols/
+- https://ultratextgen.com/library/religious-symbols/
+- https://ultratextgen.com/library/star-symbols/
+- https://ultratextgen.com/library/transport-symbols/
+- https://ultratextgen.com/library/weather-symbols/
+- https://ultratextgen.com/library/zodiac-symbols/
 <!-- END_LIBRARY -->
 
 <!-- START_EMBED -->
