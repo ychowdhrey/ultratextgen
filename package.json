@@ -5,7 +5,7 @@
   "description": "Fast, clean Unicode text generator for social bios, captions, and usernames",
   "scripts": {
     "prebuild": "node scripts/update-sitemap.js",
-    "build": "cp index.html _root.html",
+    "build": "cp index.html _root.html && cp usecase/zalgo-text/index.html usecase/zalgo-text/_root.html",
     "sync-readme": "node scripts/sync-readme.js"
   },
   "dependencies": {
