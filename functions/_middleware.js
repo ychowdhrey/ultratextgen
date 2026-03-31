@@ -49,6 +49,11 @@ export async function onRequest(context) {
   // Even a 200 response from ASSETS can contain localized content (e.g.
   // fr/index.html served transparently).  HTMLRewriter rewrites the
   // relevant tags so the root page is always English-canonical.
+  //
+  // When a non-English page is served, we also inject a <style> that
+  // hides body content until i18n.js has restored English translations,
+  // preventing a visible flash of foreign-language text.
+  let servedNonEnglish = false;
   const rewritten = new HTMLRewriter()
     .on("html", {
       element(el) {
@@ -59,8 +64,21 @@ export async function onRequest(context) {
         const servedLang = el.getAttribute("lang");
         if (servedLang && servedLang !== "en") {
           el.setAttribute("data-served-locale", servedLang);
+          servedNonEnglish = true;
         }
         el.setAttribute("lang", "en");
+      },
+    })
+    .on("head", {
+      element(el) {
+        if (servedNonEnglish) {
+          // Hide body until i18n.js applies English translations and
+          // removes the data-served-locale attribute.
+          el.append(
+            '<style id="locale-cloak">html[data-served-locale] body { visibility: hidden; }</style>',
+            { html: true }
+          );
+        }
       },
     })
     .on("title", {
