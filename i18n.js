@@ -1,10 +1,6 @@
 (function () {
   "use strict";
 
-  // Maximum time (ms) to wait for en.json before showing whatever content
-  // the page has.  Covers slow connections; typical fetch is under 1 s.
-  var CLOAK_TIMEOUT_MS = 3000;
-
   function getNestedValue(obj, path) {
     return path.split(".").reduce(function (acc, key) {
       return acc != null ? acc[key] : undefined;
@@ -121,41 +117,7 @@
 
     markActiveLang(lang);
 
-    if (lang === "en") {
-      // The Cloudflare middleware sets "data-served-locale" on <html> when
-      // ASSETS transparently served a localized page (e.g. fr/index.html)
-      // for the root path.  The middleware rewrites head metadata to English,
-      // but the pre-rendered body text remains in the served locale.
-      // Detect this signal and restore English body content.
-      var servedLocale = document.documentElement.getAttribute("data-served-locale");
-      if (servedLocale) {
-        // The middleware also injects a <style> that hides the body until
-        // we remove data-served-locale.  This prevents a flash of
-        // foreign-language text while we fetch English translations.
-        var uncloak = function () {
-          document.documentElement.removeAttribute("data-served-locale");
-        };
-        // Failsafe: if the fetch hangs or takes too long, show content
-        // after 3 seconds (French is better than a blank page).
-        var failsafe = setTimeout(uncloak, CLOAK_TIMEOUT_MS);
-        fetch("/locales/en.json")
-          .then(function (r) {
-            if (!r.ok) throw new Error("Not found");
-            return r.json();
-          })
-          .then(function (t) {
-            clearTimeout(failsafe);
-            applyTranslations("en", t);
-            uncloak();
-          })
-          .catch(function () {
-            clearTimeout(failsafe);
-            // Show localized content rather than a blank page
-            uncloak();
-          });
-      }
-      return;
-    }
+    if (lang === "en") return; // English is already in the HTML
 
     fetch("/locales/" + lang + ".json")
       .then(function (r) {
