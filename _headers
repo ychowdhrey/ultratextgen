@@ -1,9 +1,7 @@
-# Prevent browsers and edge caches from preserving a stale 301 redirect
-# from / to /fr/ (or any other locale).  The middleware enforces English
-# at the function layer; these headers are a belt-and-suspenders fallback.
-# "no-store" is stronger than "max-age=0, must-revalidate" — it tells
-# browsers to never keep a cached copy of the response (including any
-# previously cached 301 redirect).
+# Prevent browsers and edge caches from preserving a stale redirect
+# from / to /fr/ (or any other locale).  The middleware now requests
+# /_root.html (which has no locale variants) so i18n routing cannot
+# activate.  These headers are a belt-and-suspenders fallback.
 /
   Cache-Control: no-store
   Vary: Accept-Language
@@ -11,14 +9,7 @@
   Cache-Control: no-store
   Vary: Accept-Language
 
-# Prevent stale cached JavaScript from persisting old i18n logic.
 # Short max-age with must-revalidate ensures browsers check for fresh
 # copies without sacrificing performance for repeat visits.
 /*.js
   Cache-Control: public, max-age=300, must-revalidate
-
-# Temporary fix: Tell returning users' browsers to clear their local cache
-# This breaks the local 301 redirect loop to /fr/ for users who cached it previously.
-# NOTE: Remove this section after 1-2 weeks once users have cleared their caches.
-/*
-  Clear-Site-Data: "cache"
