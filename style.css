@@ -2273,3 +2273,11 @@ body.dark-mode .vertical-chip {
   color: var(--text-primary);
   font-weight: 500;
 }
+
+.symbol-tile--combo {
+  min-width: auto;
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
