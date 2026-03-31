@@ -1,7 +1,7 @@
 # Fallback rewrite: serve the English homepage for the root path.
-# The primary fix lives in functions/_middleware.js, which strips the
-# Accept-Language header before calling ASSETS.fetch() so Cloudflare
-# Pages' automatic i18n routing cannot redirect / to /fr/, /de/, etc.
+# The primary fix lives in functions/_middleware.js, which requests
+# /_root.html from ASSETS — a build-generated copy of index.html
+# with no locale variants, so i18n content negotiation cannot activate.
 # This rule acts as a safety net if the middleware is not deployed.
 /  /index.html  200
 
