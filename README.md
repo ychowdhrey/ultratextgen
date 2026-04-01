@@ -140,6 +140,8 @@ These resources explore how Unicode typography encodes tone, authority, irony, a
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
 - https://ultratextgen.com/guide/vertical-text-guide/
 - https://ultratextgen.com/guide/vertical-text/
+- https://ultratextgen.com/library/emoji-meanings-guide/
+- https://ultratextgen.com/library/linkedin-comment-styling/
 <!-- END_GUIDES -->
 
 ## Library
@@ -154,7 +156,6 @@ Reference collections of Unicode symbols, emoji sets, and styling resources for 
 - https://ultratextgen.com/library/emoji-flags/
 - https://ultratextgen.com/library/hand-symbols/
 - https://ultratextgen.com/library/heart-symbols/
-- https://ultratextgen.com/library/linkedin-comment-styling/
 - https://ultratextgen.com/library/linkedin-symbol-library/
 - https://ultratextgen.com/library/music-symbols/
 - https://ultratextgen.com/library/religious-symbols/
