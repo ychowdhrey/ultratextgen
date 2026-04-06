@@ -183,20 +183,47 @@ ultratextgen/
 Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif pur pour le navigateur.
 
 <!-- START_LIBRARY -->
+- https://ultratextgen.com/library/achievement-symbols/
+- https://ultratextgen.com/library/aesthetic-symbols/
+- https://ultratextgen.com/library/animal-emojis/
+- https://ultratextgen.com/library/arrow-symbols/
 - https://ultratextgen.com/library/awareness-ribbons/
+- https://ultratextgen.com/library/body-language-emojis/
+- https://ultratextgen.com/library/bracket-symbols/
+- https://ultratextgen.com/library/bullet-point-symbols/
 - https://ultratextgen.com/library/card-suit-symbols/
+- https://ultratextgen.com/library/checkmark-symbols/
 - https://ultratextgen.com/library/chess-symbols/
 - https://ultratextgen.com/library/currency-symbols/
+- https://ultratextgen.com/library/email-symbols/
 - https://ultratextgen.com/library/emoji-flags/
+- https://ultratextgen.com/library/emoji-meanings-guide/
+- https://ultratextgen.com/library/face-emojis/
+- https://ultratextgen.com/library/flower-symbols/
+- https://ultratextgen.com/library/food-drink-emojis/
+- https://ultratextgen.com/library/geometric-symbols/
 - https://ultratextgen.com/library/hand-symbols/
 - https://ultratextgen.com/library/heart-symbols/
+- https://ultratextgen.com/library/instagram-symbols/
+- https://ultratextgen.com/library/line-divider-symbols/
 - https://ultratextgen.com/library/linkedin-comment-styling/
+- https://ultratextgen.com/library/linkedin-post-formatting-symbols/
 - https://ultratextgen.com/library/linkedin-symbol-library/
+- https://ultratextgen.com/library/math-symbols/
 - https://ultratextgen.com/library/music-symbols/
+- https://ultratextgen.com/library/number-symbols/
+- https://ultratextgen.com/library/people-profession-emojis/
 - https://ultratextgen.com/library/religious-symbols/
+- https://ultratextgen.com/library/smiley-face-guide/
+- https://ultratextgen.com/library/sparkle-symbols/
+- https://ultratextgen.com/library/special-characters/
+- https://ultratextgen.com/library/sports-emojis/
 - https://ultratextgen.com/library/star-symbols/
+- https://ultratextgen.com/library/text-faces-kaomoji/
+- https://ultratextgen.com/library/tiktok-symbols/
 - https://ultratextgen.com/library/transport-symbols/
 - https://ultratextgen.com/library/weather-symbols/
+- https://ultratextgen.com/library/x-twitter-symbols/
 - https://ultratextgen.com/library/zodiac-symbols/
 <!-- END_LIBRARY -->
 
