@@ -198,7 +198,7 @@ p1_usage = '''<section class="editorial-section">
   <span class="article-section-label">Usage Guide</span>
   <h2>When to Use Which Dash</h2>
   <div class="editorial-block">
-    <p><strong>Hyphen (-)</strong>: Joins compound words (well-known, mother-in-law) and splits words at line breaks. Use the plain hyphen-minus (U+002F) in most situations.</p>
+    <p><strong>Hyphen (-)</strong>: Joins compound words (well-known, mother-in-law) and splits words at line breaks. Use the plain hyphen-minus (U+002D) in most situations.</p>
     <p><strong>En dash (&ndash;)</strong>: Indicates ranges (pages 10&ndash;20, 2019&ndash;2023) and connects related concepts. Slightly wider than a hyphen.</p>
     <p><strong>Em dash (&mdash;)</strong>: Marks interruptions, parenthetical remarks&mdash;like this&mdash;and strong breaks in thought. Wider than an en dash. No spaces needed around it in American style.</p>
     <p><strong>Minus sign (&minus;)</strong>: The mathematical minus at U+2212. Visually distinct from a hyphen &mdash; it aligns with the plus sign and is the correct character in equations.</p>
@@ -737,3 +737,71 @@ with open(f"{BASE}/traffic-road-sign-symbols/index.html", "w", encoding="utf-8")
 print("Page 8 done: traffic-road-sign-symbols")
 
 print("\nAll 8 pages generated successfully!")
+
+# ──────────────────────────────────────────────────────────────────────────
+# REGENERATE Page 3: Accent Marks with combining mark fixes
+# ──────────────────────────────────────────────────────────────────────────
+
+DOTTED_CIRCLE = "\u25cc"
+
+def flag_row_combining(char, label):
+    """For combining marks: display ◌+mark, use HTML entity in data-symbol."""
+    cp = ord(char)
+    entity = f"&#x{cp:04X};"
+    display = DOTTED_CIRCLE + char  # dotted circle as base
+    return f'''    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="{entity}" aria-label="Copy {label}">{display}</button>
+      <span class="flag-label">{label}</span>
+    </div>'''
+
+def section_combining(id_, label, h2, p_text, chars):
+    rows = "\n".join(flag_row_combining(c, n) for c, n in chars)
+    return f'''<section class="mood-explainers" id="{id_}">
+  <span class="article-section-label">{label}</span>
+  <h2>{h2}</h2>
+  <p>{p_text}</p>
+  <div class="flag-rows">
+{rows}
+  </div>
+</section>
+
+<div class="section-divider"></div>'''
+
+p3_sections_fixed = "\n\n".join([
+    section_combining("accents-above", "Accents Above", "Combining Marks Above",
+            "Combining diacritical marks that appear above a base character. Add these after any letter to accent it.",
+            combining_above),
+    section_combining("marks-below", "Marks Below", "Combining Marks Below",
+            "Combining diacritical marks that appear below a base character.",
+            combining_below),
+    section_combining("hooks-horns", "Hooks &amp; Horns", "Hooks, Horns &amp; Special Marks",
+            "Combining characters for specialized phonetic and linguistic notation.",
+            hooks_horns),
+    section("spacing-forms", "Spacing Forms", "Standalone Spacing Forms",
+            "These spacing accent characters have their own visual presence and can be typed alone or used decoratively. Unlike combining marks, they don\u2019t attach to a preceding letter.",
+            spacing_forms),
+])
+
+p3_html_fixed = p3_sections_fixed + "\n\n" + p3_usage
+
+p3_fixed = page_template(
+    title="Accent Marks &amp; Diacritics: Copy &amp; Paste Combining Characters",
+    meta_desc="Browse and copy accent marks and diacritical characters — combining marks, spacing forms, and accented letter quick-copies. Click any symbol to copy it instantly.",
+    canonical="https://ultratextgen.com/library/accent-marks-diacritics/",
+    breadcrumb3="Accent Marks &amp; Diacritics",
+    hero_h1="Accent Marks &amp; Diacritics",
+    hero_tagline="Every combining diacritic and accent mark character in Unicode — from acute and grave accents to tildes, cedillas, and beyond. Click any symbol to copy it instantly.",
+    intro_p="Diacritical marks are characters that combine with a preceding letter to modify its sound or meaning. They form the basis of accented letters like \u00e9, \u00f1, \u00fc, and \u00e7. This library includes both combining forms (which attach to the previous character) and standalone spacing forms.",
+    sections_html=p3_html_fixed,
+    cta_p="Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles \u2014 free and instant.",
+    related=[
+        ("/library/special-characters/", "Special Characters", "Unique Unicode symbols with individual meaning and standalone appeal."),
+        ("/library/math-symbols/", "Math Symbols", "Mathematical operators including Greek letters with diacritics."),
+        ("/library/aesthetic-symbols/", "Aesthetic Symbols", "Decorative Unicode symbols including combining marks for aesthetic bios."),
+        ("/library/star-symbols/", "Star Symbol Collection", "Stars, asterisks, and star variants in Unicode."),
+    ]
+)
+
+with open(f"{BASE}/accent-marks-diacritics/index.html", "w", encoding="utf-8") as f:
+    f.write(p3_fixed)
+print("Page 3 REGENERATED: accent-marks-diacritics (combining marks fixed)")
