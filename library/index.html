@@ -12,17 +12,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Library — Unicode Symbols, Emoji &amp; Formatting References A–Z | UltraTextGen</title>
-<meta name="description" content="Browse the UltraTextGen Library — an A–Z directory of 48 reference collections covering Unicode symbols, emoji, and formatting guides. Search, filter by use case or platform, and jump to any letter.">
+<meta name="description" content="Browse the UltraTextGen Library — an A–Z directory of 49 reference collections covering Unicode symbols, emoji, and formatting guides. Search, filter by use case or platform, and jump to any letter.">
 
 <link rel="canonical" href="https://ultratextgen.com/library/">
 <meta property="og:title" content="Library — Unicode Symbols, Emoji &amp; Formatting References A–Z | UltraTextGen">
-<meta property="og:description" content="Browse the UltraTextGen Library — an A–Z directory of 48 reference collections covering Unicode symbols, emoji, and formatting guides. Search, filter by use case or platform, and jump to any letter.">
+<meta property="og:description" content="Browse the UltraTextGen Library — an A–Z directory of 49 reference collections covering Unicode symbols, emoji, and formatting guides. Search, filter by use case or platform, and jump to any letter.">
 <meta property="og:url" content="https://ultratextgen.com/library/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ultratextgen.com/logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Library — Unicode Symbols, Emoji &amp; Formatting References A–Z | UltraTextGen">
-<meta name="twitter:description" content="Browse the UltraTextGen Library — an A–Z directory of 48 reference collections covering Unicode symbols, emoji, and formatting guides. Search, filter by use case or platform, and jump to any letter.">
+<meta name="twitter:description" content="Browse the UltraTextGen Library — an A–Z directory of 49 reference collections covering Unicode symbols, emoji, and formatting guides. Search, filter by use case or platform, and jump to any letter.">
 <meta name="twitter:image" content="https://ultratextgen.com/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -376,6 +376,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <input type="search" id="libSearch" placeholder="Search library…" autocomplete="off" aria-label="Search library">
   </div>
 
+  <!-- Subject filter -->
+  <div class="lib-filter-row" id="subjectRow">
+    <span class="lib-filter-label">Subject</span>
+  </div>
+
   <!-- Use Case filter -->
   <div class="lib-filter-row" id="useCaseRow">
     <span class="lib-filter-label">Use case</span>
@@ -430,6 +435,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   /* ── Data ───────────────────────────────────────────────────── */
   var LIBRARY = [
     {
+      title: "Accent Marks & Diacritics",
+      slug: "accent-marks-diacritics",
+      description: "Combining diacritical marks, accent characters, and spacing forms for typographic use.",
+      preview: "◌́ ◌̃ ◌̈ ◌̂ ◌̧",
+      useCases: ["Professional Posts", "Captions", "Bios"],
+      platforms: ["Universal", "LinkedIn"],
+      type: "Symbols",
+      subject: "Science & Technical",
+      alpha: "A"
+    },
+    {
       title: "Achievement Symbols",
       slug: "achievement-symbols",
       description: "Crowns, trophies, medals, and celebration symbols for wins and profiles.",
@@ -437,6 +453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Celebration"],
       platforms: ["Universal", "Instagram", "LinkedIn"],
       type: "Emojis",
+      subject: "Social & Awareness",
       alpha: "A"
     },
     {
@@ -447,16 +464,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Decorative",
+      subject: "Decorative & Aesthetic",
       alpha: "A"
     },
     {
       title: "Animal Emojis",
       slug: "animal-emojis",
       description: "Every animal emoji from mammals to insects, organized by category.",
-      preview: "🐶 🐱 🦁 🐘 ��",
+      preview: "🐶 🐱 🦁 🐘 🦋",
       useCases: ["Captions", "Reactions", "Bios"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Emojis",
+      subject: "Nature & Animals",
       alpha: "A"
     },
     {
@@ -467,16 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bullet Points", "Professional Posts"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
-      alpha: "A"
-    },
-    {
-      title: "Accent Marks & Diacritics",
-      slug: "accent-marks-diacritics",
-      description: "Combining diacritical marks, accent characters, and spacing forms for typographic use.",
-      preview: "◌́ ◌̃ ◌̈ ◌̂ ◌̧",
-      useCases: ["Professional Posts", "Captions", "Bios"],
-      platforms: ["Universal", "LinkedIn"],
-      type: "Symbols",
+      subject: "Shapes & Geometry",
       alpha: "A"
     },
     {
@@ -487,16 +497,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Professional Posts", "Reactions"],
       platforms: ["Universal", "LinkedIn", "Instagram"],
       type: "Emojis",
+      subject: "Social & Awareness",
       alpha: "A"
     },
     {
       title: "Body Language Emojis",
       slug: "body-language-emojis",
       description: "Eyes, mouths, action figures, and expressive person symbols.",
-      preview: "👁 👄 🏃 �� 🤷",
+      preview: "👁 👄 🏃 💃 🤷",
       useCases: ["Captions", "Reactions", "Comments"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Emojis",
+      subject: "People & Body",
       alpha: "B"
     },
     {
@@ -507,6 +519,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bullet Points", "Professional Posts"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
+      subject: "Marks & Indicators",
       alpha: "B"
     },
     {
@@ -517,6 +530,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bullet Points", "Professional Posts", "Email Formatting"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
+      subject: "Marks & Indicators",
       alpha: "B"
     },
     {
@@ -527,6 +541,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Reactions", "Bios"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Symbols",
+      subject: "Activities & Games",
       alpha: "C"
     },
     {
@@ -537,6 +552,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bullet Points", "Professional Posts", "Email Formatting"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
+      subject: "Marks & Indicators",
       alpha: "C"
     },
     {
@@ -547,6 +563,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Reactions", "Bios"],
       platforms: ["Universal", "Instagram"],
       type: "Symbols",
+      subject: "Activities & Games",
       alpha: "C"
     },
     {
@@ -557,6 +574,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Bullet Points", "Captions"],
       platforms: ["Universal", "Instagram", "LinkedIn"],
       type: "Symbols",
+      subject: "Marks & Indicators",
       alpha: "C"
     },
     {
@@ -567,6 +585,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Professional Posts", "Email Formatting"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
+      subject: "Science & Technical",
       alpha: "C"
     },
     {
@@ -577,17 +596,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Professional Posts", "Email Formatting", "Bullet Points"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
+      subject: "Marks & Indicators",
       alpha: "D"
-    },
-    {
-      title: "Email Symbols",
-      slug: "email-symbols",
-      description: "Symbols optimized for email subject lines, bullets, and signatures.",
-      preview: "⚡ 📣 ▸ ─ 📧",
-      useCases: ["Email Formatting", "Bullet Points", "Professional Posts"],
-      platforms: ["Email", "LinkedIn"],
-      type: "Symbols",
-      alpha: "E"
     },
     {
       title: "Egyptian Hieroglyphs",
@@ -597,6 +607,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Bios", "Reactions"],
       platforms: ["Universal"],
       type: "Symbols",
+      subject: "Arts & Culture",
+      alpha: "E"
+    },
+    {
+      title: "Email Symbols",
+      slug: "email-symbols",
+      description: "Symbols optimized for email subject lines, bullets, and signatures.",
+      preview: "⚡ 📣 ▸ ─ 📧",
+      useCases: ["Email Formatting", "Bullet Points", "Professional Posts"],
+      platforms: ["Email", "LinkedIn"],
+      type: "Symbols",
+      subject: "Platform Guides",
       alpha: "E"
     },
     {
@@ -607,6 +629,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Travel"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Emojis",
+      subject: "Food & Travel",
+      alpha: "E"
+    },
+    {
+      title: "Emoji Meanings Guide",
+      slug: "emoji-meanings-guide",
+      description: "What popular emojis actually mean — face expressions, hand gestures, heart colors, and double meanings explained.",
+      preview: "😏 🙃 💀 🫠 🤌",
+      useCases: ["Reactions", "Captions", "Comments"],
+      platforms: ["Universal", "Instagram", "TikTok"],
+      type: "Guide",
+      subject: "Emotions & Expressions",
       alpha: "E"
     },
     {
@@ -617,6 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Reactions", "Captions", "Comments"],
       platforms: ["Universal", "Instagram", "TikTok", "X"],
       type: "Emojis",
+      subject: "Emotions & Expressions",
       alpha: "F"
     },
     {
@@ -627,6 +662,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Emojis",
+      subject: "Nature & Animals",
       alpha: "F"
     },
     {
@@ -637,6 +673,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Reactions", "Bios"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Emojis",
+      subject: "Food & Travel",
       alpha: "F"
     },
     {
@@ -647,6 +684,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bullet Points", "Dividers", "Professional Posts"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
+      subject: "Shapes & Geometry",
       alpha: "G"
     },
     {
@@ -657,6 +695,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Reactions", "Captions", "Comments"],
       platforms: ["Universal", "Instagram", "TikTok", "X"],
       type: "Emojis",
+      subject: "People & Body",
       alpha: "H"
     },
     {
@@ -667,6 +706,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Reactions", "Bios", "Captions", "Celebration"],
       platforms: ["Universal", "Instagram", "TikTok", "X"],
       type: "Symbols",
+      subject: "Decorative & Aesthetic",
       alpha: "H"
     },
     {
@@ -677,6 +717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Instagram"],
       type: "Reference",
+      subject: "Platform Guides",
       alpha: "I"
     },
     {
@@ -687,16 +728,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Dividers", "Professional Posts", "Email Formatting"],
       platforms: ["Universal", "LinkedIn", "Email"],
       type: "Symbols",
+      subject: "Shapes & Geometry",
       alpha: "L"
     },
     {
-      title: "LinkedIn Post Formatting Symbols",
-      slug: "linkedin-post-formatting-symbols",
-      description: "Symbols and formatting characters for LinkedIn posts and updates.",
-      preview: "▶ ✅ 💡 🔑 📌",
-      useCases: ["Professional Posts", "Bullet Points", "Dividers"],
+      title: "LinkedIn Comment Styling",
+      slug: "linkedin-comment-styling",
+      description: "Techniques for styling LinkedIn comments with Unicode formatting, emphasis, and separators.",
+      preview: "✦ ▸ ─ 𝗕𝗼𝗹𝗱 ★",
+      useCases: ["Comments", "Professional Posts"],
       platforms: ["LinkedIn"],
-      type: "Reference",
+      type: "Guide",
+      subject: "Platform Guides",
       alpha: "L"
     },
     {
@@ -707,6 +750,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Professional Posts", "Bullet Points", "Comments"],
       platforms: ["LinkedIn"],
       type: "Reference",
+      subject: "Platform Guides",
       alpha: "L"
     },
     {
@@ -717,6 +761,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Professional Posts", "Captions"],
       platforms: ["Universal", "LinkedIn"],
       type: "Symbols",
+      subject: "Science & Technical",
       alpha: "M"
     },
     {
@@ -727,17 +772,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Symbols",
+      subject: "Arts & Culture",
       alpha: "M"
-    },
-    {
-      title: "Number Symbols",
-      slug: "number-symbols",
-      description: "Circled numbers, superscripts, subscripts, and numeral variants.",
-      preview: "① ② ③ ⑩ ⁵ ₃",
-      useCases: ["Bullet Points", "Professional Posts"],
-      platforms: ["Universal", "LinkedIn"],
-      type: "Symbols",
-      alpha: "N"
     },
     {
       title: "Norse / Viking Runes",
@@ -747,6 +783,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram"],
       type: "Symbols",
+      subject: "Arts & Culture",
+      alpha: "N"
+    },
+    {
+      title: "Number Symbols",
+      slug: "number-symbols",
+      description: "Circled numbers, superscripts, subscripts, and numeral variants.",
+      preview: "① ② ③ ⑩ ⁵ ₃",
+      useCases: ["Bullet Points", "Professional Posts"],
+      platforms: ["Universal", "LinkedIn"],
+      type: "Symbols",
+      subject: "Marks & Indicators",
       alpha: "N"
     },
     {
@@ -757,6 +805,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Professional Posts"],
       platforms: ["Universal", "LinkedIn", "Instagram"],
       type: "Emojis",
+      subject: "People & Body",
       alpha: "P"
     },
     {
@@ -767,6 +816,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram"],
       type: "Symbols",
+      subject: "Arts & Culture",
       alpha: "R"
     },
     {
@@ -777,6 +827,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Professional Posts", "Captions"],
       platforms: ["Universal", "LinkedIn"],
       type: "Symbols",
+      subject: "Marks & Indicators",
       alpha: "S"
     },
     {
@@ -787,6 +838,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Reactions", "Comments", "Captions"],
       platforms: ["Universal", "X", "WhatsApp"],
       type: "Guide",
+      subject: "Emotions & Expressions",
       alpha: "S"
     },
     {
@@ -797,6 +849,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Decorative",
+      subject: "Decorative & Aesthetic",
       alpha: "S"
     },
     {
@@ -807,6 +860,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Professional Posts"],
       platforms: ["Universal", "LinkedIn", "Instagram"],
       type: "Symbols",
+      subject: "Science & Technical",
       alpha: "S"
     },
     {
@@ -817,6 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Reactions", "Bios"],
       platforms: ["Universal", "Instagram", "TikTok", "X"],
       type: "Emojis",
+      subject: "Activities & Games",
       alpha: "S"
     },
     {
@@ -827,6 +882,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Bullet Points", "Captions"],
       platforms: ["Universal", "LinkedIn", "Instagram"],
       type: "Decorative",
+      subject: "Decorative & Aesthetic",
       alpha: "S"
     },
     {
@@ -837,6 +893,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Reactions", "Comments", "Captions"],
       platforms: ["Universal", "X", "WhatsApp"],
       type: "Decorative",
+      subject: "Decorative & Aesthetic",
       alpha: "T"
     },
     {
@@ -847,6 +904,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["TikTok"],
       type: "Reference",
+      subject: "Platform Guides",
       alpha: "T"
     },
     {
@@ -857,6 +915,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Reactions"],
       platforms: ["Universal", "Instagram"],
       type: "Emojis",
+      subject: "Food & Travel",
       alpha: "T"
     },
     {
@@ -867,6 +926,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Travel", "Bios"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Emojis",
+      subject: "Food & Travel",
       alpha: "T"
     },
     {
@@ -877,6 +937,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Reactions", "Travel"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Emojis",
+      subject: "Nature & Animals",
       alpha: "W"
     },
     {
@@ -887,6 +948,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Decorative",
+      subject: "Arts & Culture",
       alpha: "W"
     },
     {
@@ -897,6 +959,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Captions", "Reactions", "Comments"],
       platforms: ["X"],
       type: "Reference",
+      subject: "Platform Guides",
       alpha: "X"
     },
     {
@@ -907,16 +970,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       useCases: ["Bios", "Captions", "Reactions"],
       platforms: ["Universal", "Instagram", "TikTok"],
       type: "Symbols",
+      subject: "Arts & Culture",
       alpha: "Z"
     }
   ];
 
   /* ── Controlled vocabularies ── */
+  var SUBJECTS   = ["Emotions & Expressions","People & Body","Nature & Animals","Food & Travel","Activities & Games","Arts & Culture","Shapes & Geometry","Marks & Indicators","Decorative & Aesthetic","Science & Technical","Social & Awareness","Platform Guides"];
   var USE_CASES  = ["Bios","Captions","Comments","Bullet Points","Dividers","Professional Posts","Reactions","Celebration","Email Formatting","Travel"];
   var PLATFORMS  = ["LinkedIn","Instagram","TikTok","X","WhatsApp","Email","Universal"];
   var TYPES      = ["Symbols","Emojis","Decorative","Reference","Guide"];
 
   /* ── State ── */
+  var activeSubject = null;
   var activeUseCase = null;
   var activePlatform = null;
   var activeType = null;
@@ -928,6 +994,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (key === "useCases") return item.useCases.indexOf(value) !== -1;
       if (key === "platforms") return item.platforms.indexOf(value) !== -1;
       if (key === "type") return item.type === value;
+      if (key === "subject") return item.subject === value;
       return false;
     }).length;
   }
@@ -955,6 +1022,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   function updatePillStates() {
+    document.querySelectorAll("#subjectRow .lib-pill").forEach(function (btn) {
+      var active = btn.dataset.value === activeSubject;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
     document.querySelectorAll("#useCaseRow .lib-pill").forEach(function (btn) {
       var active = btn.dataset.value === activeUseCase;
       btn.classList.toggle("active", active);
@@ -971,13 +1043,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       btn.setAttribute("aria-pressed", String(active));
     });
 
-    var anyFilter = activeUseCase || activePlatform || activeType || searchQuery;
+    var anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
     var clearBtn = document.getElementById("clearFilters");
     clearBtn.classList.toggle("visible", !!anyFilter);
   }
 
   function getFiltered() {
     return LIBRARY.filter(function (item) {
+      if (activeSubject && item.subject !== activeSubject) return false;
       if (activeUseCase && item.useCases.indexOf(activeUseCase) === -1) return false;
       if (activePlatform && item.platforms.indexOf(activePlatform) === -1) return false;
       if (activeType && item.type !== activeType) return false;
@@ -1054,6 +1127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   function clearAll() {
+    activeSubject = null;
     activeUseCase = null;
     activePlatform = null;
     activeType = null;
@@ -1063,6 +1137,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   /* ── Init ── */
+  buildPills("subjectRow", SUBJECTS, "subject",
+    function () { return activeSubject; },
+    function (v) { activeSubject = v; });
+
   buildPills("useCaseRow", USE_CASES, "useCases",
     function () { return activeUseCase; },
     function (v) { activeUseCase = v; });
