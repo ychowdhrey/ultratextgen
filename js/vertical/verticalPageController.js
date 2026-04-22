@@ -318,9 +318,6 @@
       grid.appendChild(createVerticalStyleCard(name, decoratedText, style));
       count += 1;
 
-      if (count % 8 === 0) {
-        grid.appendChild(createAdCard());
-      }
     });
   }
 
@@ -352,16 +349,6 @@
     info.appendChild(preview);
     info.appendChild(copyBtn);
     card.appendChild(info);
-    return card;
-  }
-
-  /* --------------------------------------------------------------------------
-     Ad card (mirrors script.js createAdCard)
-     -------------------------------------------------------------------------- */
-  function createAdCard() {
-    var card = document.createElement('div');
-    card.className = 'style-card ad-card';
-    card.innerHTML = '<div class="ad-block"><span class="ad-block-label">Advertisement</span></div>';
     return card;
   }
 

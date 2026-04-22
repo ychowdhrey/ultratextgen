@@ -625,24 +625,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* Ad Block */
-    .ad-block {
-      margin: 24px 0;
-      padding: 48px 24px;
-      background: var(--bg-base);
-      border: 1px dashed var(--border-light);
-      border-radius: var(--radius);
-      text-align: center;
-    }
-
-    .ad-block-label {
-      font-size: 0.6875rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
     /* FAQ Section (standalone, before footer) */
     .faq-section-wrapper {
       padding: 48px 24px;
