@@ -149,19 +149,25 @@ Reference collections of Unicode symbols, emoji sets, and styling resources for 
 <!-- START_LIBRARY -->
 - https://ultratextgen.com/library/accent-marks-diacritics/
 - https://ultratextgen.com/library/achievement-symbols/
+- https://ultratextgen.com/library/aesthetic-borders-frames/
 - https://ultratextgen.com/library/aesthetic-symbols/
 - https://ultratextgen.com/library/animal-emojis/
 - https://ultratextgen.com/library/arrow-symbols/
 - https://ultratextgen.com/library/awareness-ribbons/
 - https://ultratextgen.com/library/body-language-emojis/
+- https://ultratextgen.com/library/bow-ribbon-symbols/
 - https://ultratextgen.com/library/bracket-symbols/
 - https://ultratextgen.com/library/bullet-point-symbols/
 - https://ultratextgen.com/library/card-suit-symbols/
 - https://ultratextgen.com/library/checkmark-symbols/
 - https://ultratextgen.com/library/chess-symbols/
+- https://ultratextgen.com/library/coquette-symbols/
+- https://ultratextgen.com/library/cottagecore-symbols/
 - https://ultratextgen.com/library/cross-x-symbols/
+- https://ultratextgen.com/library/crown-royalty-symbols/
 - https://ultratextgen.com/library/currency-symbols/
 - https://ultratextgen.com/library/dash-hyphen-symbols/
+- https://ultratextgen.com/library/discord-symbols/
 - https://ultratextgen.com/library/egyptian-hieroglyphs/
 - https://ultratextgen.com/library/email-symbols/
 - https://ultratextgen.com/library/emoji-flags/
@@ -170,18 +176,22 @@ Reference collections of Unicode symbols, emoji sets, and styling resources for 
 - https://ultratextgen.com/library/flower-symbols/
 - https://ultratextgen.com/library/food-drink-emojis/
 - https://ultratextgen.com/library/geometric-symbols/
+- https://ultratextgen.com/library/goth-grunge-symbols/
 - https://ultratextgen.com/library/hand-symbols/
 - https://ultratextgen.com/library/heart-symbols/
 - https://ultratextgen.com/library/instagram-symbols/
+- https://ultratextgen.com/library/kawaii-cute-symbols/
 - https://ultratextgen.com/library/line-divider-symbols/
 - https://ultratextgen.com/library/linkedin-comment-styling/
 - https://ultratextgen.com/library/linkedin-symbol-library/
 - https://ultratextgen.com/library/math-symbols/
+- https://ultratextgen.com/library/moon-celestial-symbols/
 - https://ultratextgen.com/library/music-symbols/
 - https://ultratextgen.com/library/norse-viking-runes/
 - https://ultratextgen.com/library/number-symbols/
 - https://ultratextgen.com/library/people-profession-emojis/
 - https://ultratextgen.com/library/religious-symbols/
+- https://ultratextgen.com/library/roblox-symbols/
 - https://ultratextgen.com/library/slash-backslash-symbols/
 - https://ultratextgen.com/library/smiley-face-guide/
 - https://ultratextgen.com/library/sparkle-symbols/
@@ -193,8 +203,10 @@ Reference collections of Unicode symbols, emoji sets, and styling resources for 
 - https://ultratextgen.com/library/traffic-road-sign-symbols/
 - https://ultratextgen.com/library/transport-symbols/
 - https://ultratextgen.com/library/weather-symbols/
+- https://ultratextgen.com/library/whisper-subliminal-symbols/
 - https://ultratextgen.com/library/witchy-occult-symbols/
 - https://ultratextgen.com/library/x-twitter-symbols/
+- https://ultratextgen.com/library/y2k-symbols/
 - https://ultratextgen.com/library/zodiac-symbols/
 <!-- END_LIBRARY -->
 
