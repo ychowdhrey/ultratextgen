@@ -156,9 +156,12 @@
     var container = document.getElementById(containerId);
     if (!container) return;
 
-   var activeFormats = groups.map(function () { return "vertical"; });
+   var activeFormats = groups.map(function (g) {
+     return (g && g.defaultFormat) ? g.defaultFormat : "vertical";
+   });
 
     groups.forEach(function (group, gi) {
+      var defaultFormat = activeFormats[gi];
       var section = document.createElement("div");
       section.className = "mood-explainer flag-grid-section";
 
@@ -187,7 +190,7 @@
 
       FORMATS.forEach(function (fmt, fi) {
         var tab = document.createElement("button");
-         tab.className = "format-tab" + (fmt.id === "vertical" ? " active" : "");
+         tab.className = "format-tab" + (fmt.id === defaultFormat ? " active" : "");
         tab.setAttribute("data-format", fmt.id);
         tab.setAttribute("data-group", gi);
         tab.textContent = fmt.label;
@@ -201,7 +204,7 @@
       var preview = document.createElement("div");
       preview.className = "format-preview";
       preview.id = "preview-" + gi;
-      preview.textContent = formatItems(group.flags, "vertical");
+      preview.textContent = formatItems(group.flags, defaultFormat);
       section.appendChild(preview);
 
       /* Copy button */

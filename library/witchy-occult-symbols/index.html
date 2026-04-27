@@ -621,6 +621,14 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="occult-collections">
+  <span class="article-section-label">Occult Collections</span>
+  <h2>Occult Sets</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy a complete witchy set in canonical order — the eight moon phases and the classical seven planets of traditional astrology.</p>
+  <div id="occultCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -661,6 +669,29 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Moon Phases (astronomical order)",
+      flags: ["🌑","🌒","🌓","🌔","🌕","🌖","🌗","🌘"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Classical Seven Planets",
+      flags: ["☉","☽","☿","♀","♂","♃","♄"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("occultCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
