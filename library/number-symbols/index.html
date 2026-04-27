@@ -447,6 +447,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="number-collections">
+  <span class="article-section-label">Number Collections</span>
+  <h2>Number Sequences</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy a full numbered sequence in one click — perfect for ranked lists, outlines, exponents, and footnotes.</p>
+  <div id="numberCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Format your posts with Unicode number styles</h3>
@@ -487,6 +497,49 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Circled Numbers 1–20",
+      flags: ["①","②","③","④","⑤","⑥","⑦","⑧","⑨","⑩","⑪","⑫","⑬","⑭","⑮","⑯","⑰","⑱","⑲","⑳"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Negative Circled Numbers 1–10",
+      flags: ["❶","❷","❸","❹","❺","❻","❼","❽","❾","❿"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Roman Numerals I–X",
+      flags: ["Ⅰ","Ⅱ","Ⅲ","Ⅳ","Ⅴ","Ⅵ","Ⅶ","Ⅷ","Ⅸ","Ⅹ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Superscript Digits 0–9",
+      flags: ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Subscript Digits 0–9",
+      flags: ["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Parenthesized Numbers 1–20",
+      flags: ["⑴","⑵","⑶","⑷","⑸","⑹","⑺","⑻","⑼","⑽","⑾","⑿","⒀","⒁","⒂","⒃","⒄","⒅","⒆","⒇"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("numberCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
