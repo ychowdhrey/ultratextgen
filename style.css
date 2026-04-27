@@ -1373,6 +1373,36 @@
   color: #10b981;
 }
 
+/* -----------------------------------------------
+   Component: Aesthetic hub helpers
+   Used by /library/aesthetic-symbols/ hub page.
+   ----------------------------------------------- */
+.compare-card.is-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.aesthetic-card-symbols {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+.aesthetic-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.symbol-pick-grid {
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+.symbol-pick-tile {
+  font-size: 1.75rem;
+}
+
 a {
   color: var(--accent-purple);
   text-decoration: none;
