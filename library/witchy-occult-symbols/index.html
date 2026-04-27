@@ -156,55 +156,50 @@
 <section class="mood-explainers" id="moon-phases">
   <span class="article-section-label">Moon Phases</span>
   <h2>Moon Phase Symbols</h2>
-  <p>Unicode moon phase symbols representing the lunar cycle.</p>
+  <p>Looking for the full lunar cycle? Moon phase symbols are now consolidated on the dedicated celestial page in canonical astronomical order.</p>
+  <div class="compare-grid" style="margin-top:1rem;">
+    <a href="/library/moon-celestial-symbols/#celestial-collections" class="compare-card variant-muted" style="text-decoration:none;color:inherit">
+      <h4>See: Moon Phases on Moon &amp; Celestial Symbols →</h4>
+      <p>The eight Unicode moon phases (🌑 🌒 🌓 🌔 🌕 🌖 🌗 🌘) plus crescent and dark/light moon variants, ready to copy as a sequence.</p>
+    </a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CLASSICAL 7 PLANETS (featured sub-group) -->
+<section class="mood-explainers" id="classical-7-planets">
+  <span class="article-section-label">Classical 7 Planets</span>
+  <h2>Classical Seven Planets (Sun → Saturn)</h2>
+  <p style="color:var(--text-secondary);margin-bottom:0.5rem;">The seven planets of traditional astrology in Chaldean order — the visible-sky bodies known to ancient astronomers.</p>
   <div class="flag-rows">
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌑" aria-label="Copy New Moon">🌑</button>
-      <span class="flag-label">New Moon</span>
+      <button class="flag-emoji symbol-tile" data-symbol="☉" aria-label="Copy Sun">☉</button>
+      <span class="flag-label">Sun</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌒" aria-label="Copy Waxing Crescent Moon">🌒</button>
-      <span class="flag-label">Waxing Crescent Moon</span>
+      <button class="flag-emoji symbol-tile" data-symbol="☽" aria-label="Copy Moon">☽</button>
+      <span class="flag-label">Moon</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌓" aria-label="Copy First Quarter Moon">🌓</button>
-      <span class="flag-label">First Quarter Moon</span>
+      <button class="flag-emoji symbol-tile" data-symbol="☿" aria-label="Copy Mercury">☿</button>
+      <span class="flag-label">Mercury</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌔" aria-label="Copy Waxing Gibbous Moon">🌔</button>
-      <span class="flag-label">Waxing Gibbous Moon</span>
+      <button class="flag-emoji symbol-tile" data-symbol="♀" aria-label="Copy Venus">♀</button>
+      <span class="flag-label">Venus</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌕" aria-label="Copy Full Moon">🌕</button>
-      <span class="flag-label">Full Moon</span>
+      <button class="flag-emoji symbol-tile" data-symbol="♂" aria-label="Copy Mars">♂</button>
+      <span class="flag-label">Mars</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌖" aria-label="Copy Waning Gibbous Moon">🌖</button>
-      <span class="flag-label">Waning Gibbous Moon</span>
+      <button class="flag-emoji symbol-tile" data-symbol="♃" aria-label="Copy Jupiter">♃</button>
+      <span class="flag-label">Jupiter</span>
     </div>
     <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌗" aria-label="Copy Last Quarter Moon">🌗</button>
-      <span class="flag-label">Last Quarter Moon</span>
-    </div>
-    <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="🌘" aria-label="Copy Waning Crescent Moon">🌘</button>
-      <span class="flag-label">Waning Crescent Moon</span>
-    </div>
-    <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="☽" aria-label="Copy First Quarter Moon Sign">☽</button>
-      <span class="flag-label">First Quarter Moon Sign</span>
-    </div>
-    <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="☾" aria-label="Copy Last Quarter Moon Sign">☾</button>
-      <span class="flag-label">Last Quarter Moon Sign</span>
-    </div>
-    <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="●" aria-label="Copy Black Circle (Dark Moon)">●</button>
-      <span class="flag-label">Black Circle (Dark Moon)</span>
-    </div>
-    <div class="flag-row">
-      <button class="flag-emoji symbol-tile" data-symbol="○" aria-label="Copy White Circle (Light Moon)">○</button>
-      <span class="flag-label">White Circle (Light Moon)</span>
+      <button class="flag-emoji symbol-tile" data-symbol="♄" aria-label="Copy Saturn">♄</button>
+      <span class="flag-label">Saturn</span>
     </div>
   </div>
 </section>
@@ -621,14 +616,6 @@
 
 <div class="section-divider"></div>
 
-<!-- COLLECTIONS -->
-<section class="mood-explainers" id="occult-collections">
-  <span class="article-section-label">Occult Collections</span>
-  <h2>Occult Sets</h2>
-  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy a complete witchy set in canonical order — the eight moon phases and the classical seven planets of traditional astrology.</p>
-  <div id="occultCollectionsContainer"></div>
-</section>
-
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -669,29 +656,6 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
-  var ns = window.UltraTextGen;
-  if (!ns || !ns.buildGrids) return;
-
-  var GROUPS = [
-    {
-      name: "Moon Phases (astronomical order)",
-      flags: ["🌑","🌒","🌓","🌔","🌕","🌖","🌗","🌘"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Classical Seven Planets",
-      flags: ["☉","☽","☿","♀","♂","♃","♄"],
-      defaultFormat: "inline"
-    }
-  ];
-
-  ns.buildGrids("occultCollectionsContainer", GROUPS);
-  ns.parseTwemoji(document.body);
-});
-</script>
 <script src="/footer.js"></script>
 </body>
 </html>
