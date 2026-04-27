@@ -252,6 +252,33 @@
 
 <div class="section-divider"></div>
 
+<!-- SUN PROGRESSION (curated cross-page sequence) -->
+<section class="mood-explainers" id="sun-progression">
+  <span class="article-section-label">Sun Progression</span>
+  <h2>Sun Progression Sequence</h2>
+  <p style="color:var(--text-secondary);margin-bottom:0.5rem;">The four-emoji day-cycle sequence — sunrise, midday sun, sunset, and night sky — in astronomical order.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌅" aria-label="Copy Sunrise">🌅</button>
+      <span class="flag-label">Sunrise</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌞" aria-label="Copy Sun with Face">🌞</button>
+      <span class="flag-label">Midday Sun</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌇" aria-label="Copy Sunset">🌇</button>
+      <span class="flag-label">Sunset</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🌃" aria-label="Copy Night with Stars">🌃</button>
+      <span class="flag-label">Night with Stars</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- SECTION 5 -->
 <section class="mood-explainers" id="cosmic-space">
   <span class="article-section-label">Cosmic &amp; Space</span>
@@ -281,6 +308,14 @@
 </section>
 
 <div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="celestial-collections">
+  <span class="article-section-label">Celestial Collections</span>
+  <h2>Celestial Sequences</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy a complete celestial sequence in one click — the eight moon phases in astronomical order, plus the Sun Progression cycle from sunrise to night.</p>
+  <div id="celestialCollectionsContainer"></div>
+</section>
 
 <!-- CTA -->
 <div class="cta-card">
@@ -328,6 +363,29 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Moon Phases (astronomical order)",
+      flags: ["🌑","🌒","🌓","🌔","🌕","🌖","🌗","🌘"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Sun Progression (day cycle)",
+      flags: ["🌅","🌞","🌇","🌃"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("celestialCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
