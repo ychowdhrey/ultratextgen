@@ -314,6 +314,16 @@
 </section>
 
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="zodiac-collections">
+  <span class="article-section-label">Zodiac Collections</span>
+  <h2>Zodiac &amp; Astrology Sets</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy the full zodiac wheels and the modern ten astrology planets in canonical order.</p>
+  <div id="zodiacCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -354,6 +364,34 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Western Zodiac (Aries → Pisces)",
+      flags: ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Chinese Zodiac (Rat → Pig)",
+      flags: ["🐀","🐂","🐅","🐇","🐉","🐍","🐎","🐐","🐒","🐓","🐕","🐖"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Modern 10 Astrology Planets",
+      flags: ["☉","☽","☿","♀","♂","♃","♄","♅","♆","♇"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("zodiacCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

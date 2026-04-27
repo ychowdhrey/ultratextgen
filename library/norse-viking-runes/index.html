@@ -565,6 +565,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="runes-collections">
+  <span class="article-section-label">Runic Collections</span>
+  <h2>Runic Alphabets</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy a complete runic alphabet in canonical fuþark order.</p>
+  <div id="runesCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -605,6 +615,29 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Elder Futhark (24 runes)",
+      flags: ["ᚠ","ᚢ","ᚦ","ᚨ","ᚱ","ᚲ","ᚷ","ᚹ","ᚺ","ᚾ","ᛁ","ᛃ","ᛇ","ᛈ","ᛉ","ᛊ","ᛏ","ᛒ","ᛖ","ᛗ","ᛚ","ᛜ","ᛞ","ᛟ"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Younger Futhark (16 runes, long-branch)",
+      flags: ["ᚠ","ᚢ","ᚦ","ᚬ","ᚱ","ᚴ","ᚼ","ᚾ","ᛁ","ᛅ","ᛋ","ᛏ","ᛒ","ᛘ","ᛚ","ᛦ"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("runesCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

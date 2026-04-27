@@ -403,6 +403,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="math-collections">
+  <span class="article-section-label">Math Collections</span>
+  <h2>Greek &amp; Numeric Sequences</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy canonical sequences in one click — the Greek alphabet from alpha to omega, plus full superscript and subscript digit runs.</p>
+  <div id="mathCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Write equations with Unicode font styles</h3>
@@ -443,6 +453,34 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "Greek Alphabet (lowercase α–ω)",
+      flags: ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Superscript Digits 0–9",
+      flags: ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Subscript Digits 0–9",
+      flags: ["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("mathCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

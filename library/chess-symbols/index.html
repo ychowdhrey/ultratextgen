@@ -269,6 +269,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="chess-collections">
+  <span class="article-section-label">Chess Collections</span>
+  <h2>Chess Piece Sets</h2>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Copy a full side of pieces in standard notation order (King, Queen, Rook, Bishop, Knight, Pawn).</p>
+  <div id="chessCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -309,6 +319,29 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    {
+      name: "White Chess Pieces",
+      flags: ["♔","♕","♖","♗","♘","♙"],
+      defaultFormat: "inline"
+    },
+    {
+      name: "Black Chess Pieces",
+      flags: ["♚","♛","♜","♝","♞","♟"],
+      defaultFormat: "inline"
+    }
+  ];
+
+  ns.buildGrids("chessCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
