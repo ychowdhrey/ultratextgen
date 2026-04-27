@@ -1403,6 +1403,35 @@
   font-size: 1.75rem;
 }
 
+.section-lead {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.section-lead.is-spaced {
+  margin-bottom: 0.75rem;
+}
+
+.faq-details {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-base);
+}
+
+.faq-details-summary {
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.faq-details-answer {
+  margin-top: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 a {
   color: var(--accent-purple);
   text-decoration: none;
