@@ -4,7 +4,7 @@ Read-only structural audit of UltraTextGen pages. Identifies generic / head-term
 
 ## Summary
 
-- **Pages scanned**: 95 HTML index pages across `/library/` (61), `/category/` (12), `/guide/` (9), `/usecase/` (10), plus the three top-level directory landing pages (`library/`, `category/`, `guide/`, `usecase/`).
+- **Pages scanned**: 95 HTML index pages across `/library/` (61), `/category/` (12), `/guide/` (9), `/usecase/` (10), plus the four top-level directory landing pages (`library/`, `category/`, `guide/`, `usecase/`).
 - **Topical clusters identified**: 7 (3 with strong existing hubs, 4 with hub opportunities).
 - **Hub candidates by tier**:
   - **High**: 2
