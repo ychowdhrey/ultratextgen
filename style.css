@@ -611,20 +611,6 @@
       cursor: not-allowed;
     }
 
-    /* Sponsored Card */
-    .sponsored-card {
-      background: var(--bg-base);
-      border: 1px dashed var(--border-light);
-    }
-
-    .sponsored-label {
-      font-size: 0.625rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
     /* FAQ Section (standalone, before footer) */
     .faq-section-wrapper {
       padding: 48px 24px;
@@ -639,7 +625,8 @@
       border-top: 1px solid var(--border-light);
     }
 
-    .footer-inner {
+    .footer-inner,
+    .faq-inner {
       max-width: 900px;
       margin: 0 auto;
     }
@@ -2252,11 +2239,6 @@ a:hover {
   align-self: flex-start;
   padding: 6px 12px;
   font-size: 0.75rem;
-}
-
-/* Ad cards span the full grid width */
-.vertical-results-grid .ad-card {
-  grid-column: 1 / -1;
 }
 
 /* Dark mode overrides */
