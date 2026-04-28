@@ -278,9 +278,9 @@ const decorations = window.UTG_DECORATIONS || {
     return String(name).toLowerCase().includes(String(q).toLowerCase());
   }
 
-  function createStyleCard(name, convertedText, decoratedText, style, isSponsored = false) {
+  function createStyleCard(name, convertedText, decoratedText, style) {
     const card = document.createElement("div");
-    card.className = "style-card" + (isSponsored ? " sponsored-card" : "");
+    card.className = "style-card";
 
     const fullText = decoratedText || convertedText;
     const safeText = safeAttr(fullText);
@@ -292,10 +292,7 @@ const decorations = window.UTG_DECORATIONS || {
 
     card.innerHTML = `
       <div class="style-info">
-        <p class="style-name">
-          ${name}
-          ${isSponsored ? '<span class="sponsored-label">Sponsored</span>' : ""}
-        </p>
+        <p class="style-name">${name}</p>
          ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
         ${decoHtml}
@@ -304,13 +301,6 @@ const decorations = window.UTG_DECORATIONS || {
     `;
 
     return card;
-  }
-
-  function createAdCard() {
-    const adCard = document.createElement("div");
-    adCard.className = "style-card sponsored-card";
-    adCard.setAttribute("aria-hidden", "true");
-    return adCard;
   }
 
   /* ===================
@@ -636,10 +626,6 @@ const decorations = window.UTG_DECORATIONS || {
       const decorated = converted ? applyDecoration(converted) : "";
       grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
       count += 1;
-
-      if (count % 8 === 0) {
-        grid.appendChild(createAdCard());
-      }
     });
 
     if (filtered.length === 0) {
