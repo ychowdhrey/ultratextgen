@@ -279,21 +279,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gap: 0.1rem 1rem;
   padding: 0.7rem 0.5rem;
   border-radius: 8px;
-  text-decoration: none;
   color: inherit;
-  cursor: pointer;
   border: 1px solid transparent;
-  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
-}
-.lib-entry:hover {
-  background: var(--bg-white);
-  border-color: var(--border-light);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-}
-.lib-entry:focus-visible {
-  outline: 2px solid var(--accent-purple);
-  outline-offset: 2px;
-  background: var(--bg-white);
 }
 .lib-entry-title {
   font-weight: 600;
@@ -304,12 +291,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   margin: 0;
   line-height: 1.3;
 }
-.lib-entry:hover .lib-entry-title,
-.lib-entry:focus-visible .lib-entry-title {
+.lib-entry-title-link {
+  color: inherit;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.lib-entry-title-link:hover,
+.lib-entry-title-link:focus-visible {
   color: var(--accent-purple);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+}
+.lib-entry-title-link:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
 }
 .lib-entry-desc {
   font-size: 0.82rem;
@@ -339,6 +335,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .lib-entry-tag {
   display: inline-block;
+  font-family: inherit;
   font-size: 0.65rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -349,6 +346,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   color: var(--text-muted);
   border: 1px solid var(--border-light);
   line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.lib-entry-tag:hover {
+  background: var(--bg-white);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.lib-entry-tag:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
 }
 .lib-entry-tag.is-type {
   color: var(--accent-purple);
@@ -1390,23 +1398,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       items.forEach(function (item, idx) {
         var titleId = "lib-entry-title-" + letter + "-" + idx;
         var tags = [];
-        if (item.type) tags.push('<span class="lib-entry-tag is-type">' + escHtml(item.type) + '</span>');
+        function tagBtn(filterKey, val, extraClass) {
+          var cls = "lib-entry-tag" + (extraClass ? " " + extraClass : "");
+          var label = "Filter by " + filterKey + ": " + val;
+          return '<button type="button" class="' + cls + '"' +
+            ' data-filter="' + escHtml(filterKey) + '"' +
+            ' data-value="' + escHtml(val) + '"' +
+            ' aria-label="' + escHtml(label) + '">' +
+            escHtml(val) + '</button>';
+        }
+        if (item.type) tags.push(tagBtn("type", item.type, "is-type"));
         (item.useCases || []).slice(0, 3).forEach(function (uc) {
-          tags.push('<span class="lib-entry-tag">' + escHtml(uc) + '</span>');
+          tags.push(tagBtn("useCases", uc));
         });
         (item.platforms || []).slice(0, 2).forEach(function (pl) {
           if (pl === "Universal") return;
-          tags.push('<span class="lib-entry-tag">' + escHtml(pl) + '</span>');
+          tags.push(tagBtn("platforms", pl));
         });
 
-        html += '<a class="lib-entry" href="/library/' + encodeURIComponent(item.slug) + '/" aria-labelledby="' + titleId + '">';
-        html += '<h3 class="lib-entry-title" id="' + titleId + '">' + escHtml(item.title) + '</h3>';
+        html += '<article class="lib-entry">';
+        html += '<h3 class="lib-entry-title" id="' + titleId + '">' +
+          '<a class="lib-entry-title-link" href="/library/' + encodeURIComponent(item.slug) + '/">' +
+          escHtml(item.title) + '</a></h3>';
         html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
         html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
         if (tags.length) {
-          html += '<span class="lib-entry-meta" aria-hidden="true">' + tags.join("") + '</span>';
+          html += '<div class="lib-entry-meta">' + tags.join("") + '</div>';
         }
-        html += '</a>';
+        html += '</article>';
       });
       html += '</section>';
     });
@@ -1515,6 +1534,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   document.getElementById("clearFilters").addEventListener("click", clearAll);
   document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
+
+  /* ── Tag-button → filter (event delegation) ── */
+  document.getElementById("libDirectory").addEventListener("click", function (e) {
+    var btn = e.target.closest && e.target.closest(".lib-entry-tag");
+    if (!btn) return;
+    var key = btn.dataset.filter;
+    var val = btn.dataset.value;
+    if (!key || !val) return;
+    if (key === "type") {
+      activeType = (activeType === val) ? null : val;
+    } else if (key === "useCases") {
+      activeUseCase = (activeUseCase === val) ? null : val;
+    } else if (key === "platforms") {
+      activePlatform = (activePlatform === val) ? null : val;
+    } else {
+      return;
+    }
+    render();
+  });
 
   /* ── Back-to-top ── */
   var backTop = document.getElementById("libBackTop");
