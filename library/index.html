@@ -187,10 +187,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .lib-alpha-bar {
   max-width: 900px;
   margin: 0 auto 2rem;
-  padding: 0 1.25rem;
+  padding: 0.5rem 1.25rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg-page, #f5f7f5);
+  backdrop-filter: saturate(180%) blur(6px);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
+}
+.lib-alpha-btn.is-current {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.lib-alpha-btn.is-current .alpha-count {
+  color: rgba(255, 255, 255, 0.85);
 }
 .lib-alpha-btn {
   display: inline-flex;
@@ -242,7 +256,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gap: 0.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--border-light);
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
+  font-size: inherit;
+  font-weight: inherit;
 }
 .lib-letter-heading .letter {
   font-size: 1.5rem;
@@ -259,15 +275,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .lib-entry {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   gap: 0.1rem 1rem;
   padding: 0.7rem 0.5rem;
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
-  transition: background 0.12s;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
 }
 .lib-entry:hover {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.lib-entry:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
   background: var(--bg-white);
 }
 .lib-entry-title {
@@ -276,9 +301,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   color: var(--text-primary);
   grid-column: 1;
   grid-row: 1;
+  margin: 0;
+  line-height: 1.3;
 }
-.lib-entry:hover .lib-entry-title {
+.lib-entry:hover .lib-entry-title,
+.lib-entry:focus-visible .lib-entry-title {
   color: var(--accent-purple);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 .lib-entry-desc {
   font-size: 0.82rem;
@@ -298,17 +329,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   text-align: right;
   letter-spacing: 0.05em;
 }
+.lib-entry-meta {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+.lib-entry-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: var(--bg-page, #eef0ee);
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  line-height: 1.4;
+}
+.lib-entry-tag.is-type {
+  color: var(--accent-purple);
+  border-color: var(--accent-purple);
+  background: transparent;
+}
 
 @media (max-width: 540px) {
   .lib-entry {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
   }
   .lib-entry-preview {
     grid-column: 1;
     grid-row: 3;
     text-align: left;
     margin-top: 0.2rem;
+  }
+  .lib-entry-meta {
+    grid-row: 4;
   }
 }
 
@@ -349,6 +409,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   margin: 0 auto 3rem;
   padding: 0 1.25rem;
 }
+
+/* ── Result count ── */
+.lib-result-count {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  padding: 0 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.lib-result-count[hidden] {
+  display: none;
+}
+
+/* ── Visually hidden (a11y) ── */
+.lib-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Back to top ── */
+.lib-back-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.lib-back-top:hover,
+.lib-back-top:focus-visible {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+  outline: none;
+}
+.lib-back-top.visible {
+  display: inline-flex;
+}
 </style>
 </head>
 <body>
@@ -374,8 +491,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="lib-controls" id="libControls">
   <!-- Search -->
   <div class="lib-search-wrap">
+    <label for="libSearch" class="lib-sr-only">Search library</label>
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" id="libSearch" placeholder="Search library…" autocomplete="off" aria-label="Search library">
+    <input type="search" id="libSearch" placeholder="Search library…" autocomplete="off">
   </div>
 
   <!-- Subject filter -->
@@ -407,6 +525,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ALPHA JUMP BAR -->
 <div class="lib-alpha-bar" id="alphaBar" aria-label="Jump to letter"></div>
 
+<!-- RESULT COUNT -->
+<div class="lib-result-count" id="libResultCount" role="status" aria-live="polite" hidden></div>
+
 <!-- DIRECTORY -->
 <main class="lib-directory" id="libDirectory" aria-label="Library directory"></main>
 
@@ -429,6 +550,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="footer">
   <div class="footer-inner"></div>
 </footer>
+
+<!-- BACK TO TOP -->
+<button type="button" class="lib-back-top" id="libBackTop" aria-label="Back to top" title="Back to top">↑</button>
 
 <script>
 (function () {
@@ -1204,28 +1328,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     ALPHABET.forEach(function (letter) {
       var count = filtered.filter(function (item) { return item.alpha === letter; }).length;
+      var hasItems = count > 0;
       var btn = document.createElement("a");
-      btn.className = "lib-alpha-btn" + (count === 0 ? " disabled" : "");
-      btn.href = count > 0 ? "#lib-letter-" + letter : "#";
-      btn.setAttribute("aria-label", letter + (count > 0 ? " — " + count + " entries" : " — no entries"));
-      btn.innerHTML = letter + '<span class="alpha-count">' + (count > 0 ? count : "·") + '</span>';
-      if (count === 0) btn.setAttribute("aria-disabled", "true");
+      btn.className = "lib-alpha-btn" + (hasItems ? "" : " disabled");
+      btn.dataset.letter = letter;
+      if (hasItems) {
+        btn.href = "#lib-letter-" + letter;
+      } else {
+        btn.setAttribute("aria-disabled", "true");
+        btn.setAttribute("tabindex", "-1");
+      }
+      btn.setAttribute("aria-label", letter + (hasItems ? " — " + count + " entries" : " — no entries"));
+      btn.innerHTML = letter + '<span class="alpha-count">' + (hasItems ? count : "·") + '</span>';
       bar.appendChild(btn);
     });
   }
 
   /* ── Directory render ── */
+  var letterObserver = null;
+
   function render() {
     var filtered = getFiltered();
     var dir = document.getElementById("libDirectory");
     var empty = document.getElementById("libEmpty");
+    var countEl = document.getElementById("libResultCount");
 
     updatePillStates();
     buildAlphaBar(filtered);
 
+    // Update result count line
+    var anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
+    if (anyFilter) {
+      countEl.hidden = false;
+      countEl.textContent = "Showing " + filtered.length + " of " + LIBRARY.length + " entries";
+    } else {
+      countEl.hidden = true;
+      countEl.textContent = "";
+    }
+
     if (filtered.length === 0) {
       dir.innerHTML = "";
       empty.classList.add("visible");
+      teardownLetterObserver();
       return;
     }
     empty.classList.remove("visible");
@@ -1241,23 +1385,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var html = "";
     letters.forEach(function (letter) {
       var items = groups[letter];
-      html += '<section class="lib-letter-section" id="lib-letter-' + letter + '" aria-label="' + letter + '">';
-      html += '<div class="lib-letter-heading"><span class="letter">' + letter + '</span><span class="lcount">(' + items.length + ')</span></div>';
-      items.forEach(function (item) {
-        html += '<a class="lib-entry" href="/library/' + item.slug + '/">';
-        html += '<span class="lib-entry-title">' + escHtml(item.title) + '</span>';
-        html += '<span class="lib-entry-desc">' + escHtml(item.description) + '</span>';
+      html += '<section class="lib-letter-section" id="lib-letter-' + letter + '" aria-labelledby="lib-letter-heading-' + letter + '">';
+      html += '<h2 class="lib-letter-heading" id="lib-letter-heading-' + letter + '"><span class="letter">' + letter + '</span><span class="lcount">(' + items.length + ')</span></h2>';
+      items.forEach(function (item, idx) {
+        var titleId = "lib-entry-title-" + letter + "-" + idx;
+        var tags = [];
+        if (item.type) tags.push('<span class="lib-entry-tag is-type">' + escHtml(item.type) + '</span>');
+        (item.useCases || []).slice(0, 3).forEach(function (uc) {
+          tags.push('<span class="lib-entry-tag">' + escHtml(uc) + '</span>');
+        });
+        (item.platforms || []).slice(0, 2).forEach(function (pl) {
+          if (pl === "Universal") return;
+          tags.push('<span class="lib-entry-tag">' + escHtml(pl) + '</span>');
+        });
+
+        html += '<a class="lib-entry" href="/library/' + encodeURIComponent(item.slug) + '/" aria-labelledby="' + titleId + '">';
+        html += '<h3 class="lib-entry-title" id="' + titleId + '">' + escHtml(item.title) + '</h3>';
+        html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
         html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
+        if (tags.length) {
+          html += '<span class="lib-entry-meta" aria-hidden="true">' + tags.join("") + '</span>';
+        }
         html += '</a>';
       });
       html += '</section>';
     });
 
     dir.innerHTML = html;
+
+    setupLetterObserver();
+  }
+
+  /* ── Active letter highlighting ── */
+  function teardownLetterObserver() {
+    if (letterObserver) {
+      letterObserver.disconnect();
+      letterObserver = null;
+    }
+    document.querySelectorAll(".lib-alpha-btn.is-current").forEach(function (el) {
+      el.classList.remove("is-current");
+    });
+  }
+
+  function setupLetterObserver() {
+    teardownLetterObserver();
+    if (!("IntersectionObserver" in window)) return;
+
+    var sections = document.querySelectorAll(".lib-letter-section");
+    if (!sections.length) return;
+
+    var visible = {};
+    letterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = entry.target.id; // lib-letter-X
+        var letter = id.replace("lib-letter-", "");
+        if (entry.isIntersecting) {
+          visible[letter] = entry.intersectionRatio;
+        } else {
+          delete visible[letter];
+        }
+      });
+
+      // Pick the topmost visible letter
+      var current = null;
+      var topY = Infinity;
+      Object.keys(visible).forEach(function (letter) {
+        var el = document.getElementById("lib-letter-" + letter);
+        if (!el) return;
+        var rect = el.getBoundingClientRect();
+        if (rect.top < topY) {
+          topY = rect.top;
+          current = letter;
+        }
+      });
+
+      document.querySelectorAll(".lib-alpha-btn").forEach(function (btn) {
+        btn.classList.toggle("is-current", btn.dataset.letter === current);
+      });
+    }, {
+      // Top offset accounts for the sticky alpha bar (~80px tall);
+      // bottom offset prevents the next section from activating too early.
+      rootMargin: "-80px 0px -60% 0px",
+      threshold: [0, 0.25, 0.5, 1]
+    });
+
+    sections.forEach(function (sec) { letterObserver.observe(sec); });
   }
 
   function escHtml(str) {
-    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
   }
 
   function clearAll() {
@@ -1294,6 +1515,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   document.getElementById("clearFilters").addEventListener("click", clearAll);
   document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
+
+  /* ── Back-to-top ── */
+  var backTop = document.getElementById("libBackTop");
+  if (backTop) {
+    var toggleBackTop = function () {
+      if (window.scrollY > 600) {
+        backTop.classList.add("visible");
+      } else {
+        backTop.classList.remove("visible");
+      }
+    };
+    window.addEventListener("scroll", toggleBackTop, { passive: true });
+    backTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    toggleBackTop();
+  }
+
+  /* ── ItemList JSON-LD (SEO) ── */
+  function injectItemListJsonLd() {
+    var itemListElement = LIBRARY.map(function (item, idx) {
+      return {
+        "@type": "ListItem",
+        "position": idx + 1,
+        "url": "https://ultratextgen.com/library/" + item.slug + "/",
+        "name": item.title
+      };
+    });
+    var data = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "UltraTextGen Library",
+      "url": "https://ultratextgen.com/library/",
+      "numberOfItems": LIBRARY.length,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": itemListElement
+    };
+    var script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(data);
+    document.head.appendChild(script);
+  }
+  injectItemListJsonLd();
 
   render();
 })();
