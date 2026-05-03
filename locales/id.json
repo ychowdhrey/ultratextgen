@@ -189,5 +189,20 @@
   },
   "footer": {
     "copyright": "© 2026 UltraTextGen. Gaya teks cepat yang bekerja di mana saja."
+  },
+  "notFound": {
+    "eyebrow": "ERR · 404 · SPESIMEN HILANG",
+    "title": "Halaman ini terlepas dari kumpulan gaya.",
+    "subtitle": "URL yang Anda buka tidak ada dalam koleksi kami. Namun kesalahan ini masih berfungsi sebagai teks. Coba 404 dalam Ultra Bold, Bubble, Gothic, Zalgo, dan lainnya.",
+    "backCta": "← Kembali ke generator",
+    "browseCta": "Jelajahi gaya",
+    "wallTitle": "404, diubah dengan semua cara yang kami ketahui.",
+    "wallSubtitle": "Setiap gaya di bawah ini dihasilkan oleh mesin yang sama yang menggerakkan UltraTextGen.",
+    "playgroundTitle": "Coba teks hilangmu sendiri.",
+    "playgroundSubtitle": "Ketik apa saja dan pratinjau dalam beberapa gaya Ultra sebelum kembali ke generator lengkap.",
+    "playgroundPlaceholder": "Ketik teksmu di sini...",
+    "fullGeneratorCta": "Buka generator lengkap",
+    "copy": "Salin",
+    "copied": "Disalin"
   }
 }

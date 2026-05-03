@@ -189,5 +189,20 @@
   },
   "footer": {
     "copyright": "© 2026 UltraTextGen. Her yerde çalışan hızlı metin stilleri."
+  },
+  "notFound": {
+    "eyebrow": "HATA · 404 · EKSİK ÖRNEK",
+    "title": "Bu sayfa stil koleksiyonundan kaçtı.",
+    "subtitle": "Açtığınız URL koleksiyonumuzda yok. Ancak hata yine de metin olarak çalışıyor. 404'ü Ultra Bold, Bubble, Gothic, Zalgo ve daha fazlasında deneyin.",
+    "backCta": "← Üreticiye geri dön",
+    "browseCta": "Stilleri keşfet",
+    "wallTitle": "404, bildiğimiz her şekilde dönüştürüldü.",
+    "wallSubtitle": "Aşağıdaki her stil, UltraTextGen'i destekleyen aynı motor tarafından üretilmektedir.",
+    "playgroundTitle": "Kendi kayıp metninizi deneyin.",
+    "playgroundSubtitle": "Herhangi bir şey yazın ve tam üreticiye dönmeden önce birkaç Ultra stilinde önizleyin.",
+    "playgroundPlaceholder": "Metninizi buraya yazın...",
+    "fullGeneratorCta": "Tam üreticiyi aç",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı"
   }
 }
