@@ -44,10 +44,10 @@
   /* ─── Copy helper ───────────────────────── */
   var toastTimer = null;
 
-  function showCopyToast(msg) {
+  function showCopyToast(message) {
     var toast = document.getElementById("copyToast");
     if (!toast) return;
-    toast.textContent = msg || "Copied!";
+    toast.textContent = message || "Copied!";
     toast.classList.add("is-visible");
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(function () {
@@ -65,7 +65,7 @@
       ta.style.left = "-9999px";
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand("copy"); } catch (e) { /* silent */ }
+      try { document.execCommand("copy"); } catch (error) { /* silent */ }
       document.body.removeChild(ta);
       button.classList.add("copied");
       button.textContent = "Copied";
