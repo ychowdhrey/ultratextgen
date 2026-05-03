@@ -139,7 +139,7 @@ Ces ressources explorent comment la typographie Unicode encode le ton, l'autorit
 - https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
 - https://ultratextgen.com/guide/vertical-text-guide/
-- https://ultratextgen.com/guide/vertical-text/
+- https://ultratextgen.com/guide/vertical-text-guide/
 <!-- END_GUIDES -->
 
 ## Structure du Projet
