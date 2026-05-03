@@ -189,5 +189,20 @@
   },
   "footer": {
     "copyright": "© 2026 UltraTextGen. Kiểu văn bản nhanh hoạt động ở mọi nơi."
+  },
+  "notFound": {
+    "eyebrow": "LỖI · 404 · MẪU BỊ THIẾU",
+    "title": "Trang này đã trượt ra khỏi bộ sưu tập phong cách.",
+    "subtitle": "URL bạn đã mở không có trong bộ sưu tập của chúng tôi. Nhưng lỗi vẫn hoạt động như văn bản. Thử 404 trong Ultra Bold, Bubble, Gothic, Zalgo và nhiều hơn nữa.",
+    "backCta": "← Quay lại trình tạo",
+    "browseCta": "Duyệt các phong cách",
+    "wallTitle": "404, được chuyển đổi theo mọi cách chúng tôi biết.",
+    "wallSubtitle": "Mỗi phong cách bên dưới được tạo ra bởi cùng một công cụ cung cấp năng lượng cho UltraTextGen.",
+    "playgroundTitle": "Thử văn bản bị thiếu của riêng bạn.",
+    "playgroundSubtitle": "Nhập bất cứ điều gì và xem trước trong một vài phong cách Ultra trước khi quay lại trình tạo đầy đủ.",
+    "playgroundPlaceholder": "Nhập văn bản của bạn tại đây...",
+    "fullGeneratorCta": "Mở trình tạo đầy đủ",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép"
   }
 }

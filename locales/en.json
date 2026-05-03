@@ -189,5 +189,20 @@
   },
   "footer": {
     "copyright": "© 2026 UltraTextGen. Fast text styles that work everywhere."
+  },
+  "notFound": {
+    "eyebrow": "ERR · 404 · MISSING SPECIMEN",
+    "title": "This page slipped out of the style set.",
+    "subtitle": "The URL you opened is not in our collection. But the error still works as text. Try 404 in Ultra Bold, Bubble, Gothic, Zalgo, and more.",
+    "backCta": "← Back to generator",
+    "browseCta": "Browse styles",
+    "wallTitle": "404, transformed every way we know.",
+    "wallSubtitle": "Every style below is generated from the same engine that powers UltraTextGen.",
+    "playgroundTitle": "Try your own missing text.",
+    "playgroundSubtitle": "Type anything and preview it in a few Ultra styles before returning to the full generator.",
+    "playgroundPlaceholder": "Type your text here...",
+    "fullGeneratorCta": "Open full generator",
+    "copy": "Copy",
+    "copied": "Copied"
   }
 }

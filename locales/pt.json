@@ -189,5 +189,20 @@
   },
   "footer": {
     "copyright": "© 2026 UltraTextGen. Estilos de texto rápidos que funcionam em qualquer lugar."
+  },
+  "notFound": {
+    "eyebrow": "ERR · 404 · ESPÉCIME FALTANDO",
+    "title": "Esta página escapou do conjunto de estilos.",
+    "subtitle": "A URL que você abriu não está na nossa coleção. Mas o erro ainda funciona como texto. Experimente 404 em Ultra Bold, Bubble, Gothic, Zalgo e mais.",
+    "backCta": "← Voltar ao gerador",
+    "browseCta": "Explorar estilos",
+    "wallTitle": "404, transformado de todas as formas que conhecemos.",
+    "wallSubtitle": "Cada estilo abaixo é gerado pelo mesmo motor que alimenta o UltraTextGen.",
+    "playgroundTitle": "Experimente seu próprio texto ausente.",
+    "playgroundSubtitle": "Digite qualquer coisa e visualize em alguns estilos Ultra antes de voltar ao gerador completo.",
+    "playgroundPlaceholder": "Digite seu texto aqui...",
+    "fullGeneratorCta": "Abrir gerador completo",
+    "copy": "Copiar",
+    "copied": "Copiado"
   }
 }
