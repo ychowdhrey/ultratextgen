@@ -139,7 +139,7 @@ Estos recursos exploran cómo la tipografía Unicode codifica el tono, la autori
 - https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
 - https://ultratextgen.com/guide/vertical-text-guide/
-- https://ultratextgen.com/guide/vertical-text/
+- https://ultratextgen.com/guide/vertical-text-guide/
 <!-- END_GUIDES -->
 
 ## Estructura del Proyecto
