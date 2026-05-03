@@ -13,6 +13,8 @@
 /category/special-fonts/effects/index.html  /category/strikethrough-text/ 301
 /usecase/comment-fonts/                     /usecase/comment-font/   301
 /usecase/comment-fonts/index.html           /usecase/comment-font/   301
+/guide/vertical-text/                       /guide/vertical-text-guide/ 301
+/guide/vertical-text/index.html             /guide/vertical-text-guide/ 301
 
 # Language query-param → path-based (301 permanent)
 /?lang=fr                                   /fr/    301
