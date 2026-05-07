@@ -1,6 +1,7 @@
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
+Disallow: /js/vertical/verticalLayouts.test.html
 
 User-agent: GPTBot
 Allow: /
