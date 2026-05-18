@@ -975,6 +975,43 @@
   padding: 0 1rem;
 }
 
+.editorial-section p,
+.editorial-section ul {
+  color: var(--text-primary);
+  line-height: 1.65;
+}
+
+.editorial-section > h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.editorial-section .compat-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.editorial-section .compat-list li {
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+}
+
+.editorial-section code {
+  background: var(--bg-light, rgba(0, 0, 0, 0.06));
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
 /* Section headings */
 .how-to-use h2,
 .why-section h2,
