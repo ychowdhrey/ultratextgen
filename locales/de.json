@@ -1,194 +1,194 @@
 {
   "meta": {
-    "title": "Stilvoller Textgenerator — Ausgefallene Unicode-Schriften kopieren und einfügen",
-    "description": "Verwandele normalen Text in stilvolle Unicode-Schriften zum Kopieren und Einfügen. Wähle aus Fett, Kursiv, Gotisch und dekorativen Stilen für Bios, Benutzernamen, Kommentare und Beiträge."
+    "title": "Schöne Schrift zum Kopieren — coole Schriftarten, Symbole & ästhetischer Text für Insta, TikTok & Co.",
+    "description": "Tipp deinen Text — und bekomm ihn sofort in schöner, stylischer, fancy oder ästhetischer Schrift zurück. Coole Schriftarten und Symbole zum Kopieren für Insta-Bio, TikTok, Discord, WhatsApp-Status und Gamer-Namen."
   },
   "hero": {
-    "title": "Stilvoller Schriftgenerator",
-    "subtitle": "Verwandele normalen Text in fette, kursive, gotische und dekorative Unicode-Schriften zum sofortigen Kopieren und Einfügen."
+    "title": "Schöne Schrift & coole Symbole zum Kopieren",
+    "subtitle": "Tipp dein Wort, such dir den Look aus, klick auf Kopieren — fertig. Ästhetische, fette, kursive, verschnörkelte und stylische Schriftarten für Insta-Bio, TikTok-Caption, Discord- oder Gamer-Namen, WhatsApp-Status und überall, wo normale Buchstaben einfach zu langweilig sind."
   },
   "decorations": {
-    "label": "Dekoration zu den Ergebnissen hinzufügen",
+    "label": "Symbole & Deko direkt um deinen Text legen",
     "tabs": {
       "symbols": "Symbole",
       "frames": "Rahmen",
       "dividers": "Trennlinien",
       "arrows": "Pfeile",
-      "minimal": "Minimalistisch",
+      "minimal": "Minimal",
       "emojis": "Emojis",
       "flags": "Flaggen"
     }
   },
   "ui": {
-    "placeholder": "Text hier eingeben...",
+    "placeholder": "Hier deinen Text eintippen…",
     "advertisement": "Werbung"
   },
   "useCases": {
-    "title": "Beliebte Anwendungsfälle",
-    "viewAll": "Alle Anwendungsfälle anzeigen →",
+    "title": "Wofür Leute UltraTextGen am liebsten nutzen",
+    "viewAll": "Alle Ideen anzeigen →",
     "items": [
       {
-        "title": "LinkedIn-Überschrift",
-        "description": "Lass deine LinkedIn-Überschrift mit fettem und kursivem Unicode-Text hervorstechen, der in den Suchergebnissen Aufmerksamkeit erregt."
+        "title": "Schrift für die Insta-Bio",
+        "description": "Heb deine Bio aus dem Feed — stylische Schriftarten, die Instagram nicht wieder rausrechnet. Reinkopieren, speichern, fertig."
       },
       {
-        "title": "Schriften für Kommentare",
-        "description": "Veröffentliche auffällige Kommentare auf Instagram, YouTube und TikTok mit stilvollen Unicode-Schriften, die hervorstechen."
+        "title": "Kommentare mit Style",
+        "description": "Schreib deinen Kommentar fett, kursiv oder verschnörkelt — egal ob unter Insta-Posts, YouTube-Videos oder TikToks."
       },
       {
-        "title": "Text zu Emoji",
-        "description": "Wandle deinen Text in Emoji-Buchstabenfolgen um — perfekt für kreative Bios, Stories und Gruppenchats."
+        "title": "Auffällige LinkedIn-Headline",
+        "description": "Eine fette oder kursive Headline springt in der LinkedIn-Suche sofort ins Auge — ganz ohne Hack oder Plugin."
       }
     ]
   },
   "guides": {
-    "title": "Beliebte Leitfäden",
-    "viewAll": "Alle Leitfäden anzeigen →",
+    "title": "Kurz reinlesen, bevor du postest",
+    "viewAll": "Alle Beiträge anzeigen →",
     "items": [
       {
-        "title": "Die Rhetorik der Schriften",
-        "description": "Lerne, wie Schriftentscheidungen Wahrnehmung, Vertrauen und Emotionen beeinflussen — und wie du das zu deinem Vorteil nutzt."
+        "title": "Warum Schrift überhaupt wirkt",
+        "description": "Welche Schrift Vertrauen aufbaut, welche flirtet, welche schreit — und wie du das gezielt für deinen Auftritt nutzt."
       },
       {
-        "title": "Personal Branding Through Typography",
-        "description": "Baue eine konsistente persönliche Marke über alle sozialen Plattformen hinweg mit strategischen Unicode-Schriftentscheidungen auf."
+        "title": "Personal Branding mit Schrift",
+        "description": "So baust du dir mit ein paar Unicode-Tricks einen wiedererkennbaren Look quer über Insta, TikTok, LinkedIn und Co."
       },
       {
-        "title": "Stop the Scroll With Font Variation",
-        "description": "Entdecke, wie das Mischen von Schriftstilen das Scroll-Muster durchbricht und das Engagement in sozialen Feeds steigert."
+        "title": "Schrift, die den Scroll stoppt",
+        "description": "Wie ein Schriftwechsel im Feed den Daumen kurz anhält — und was du daraus für deinen nächsten Post mitnimmst."
       }
     ]
   },
   "faq": {
     "categories": [
       {
-        "title": "Erste Schritte mit UltraTextGen",
+        "title": "Erste Schritte",
         "items": [
           {
-            "question": "Was ist UltraTextGen und wie funktioniert es?",
-            "answer": "UltraTextGen ist ein kostenloser Online-Unicode-Textgenerator, der deinen normalen Text sofort in stilvolle, ausgefallene Schriften und Dekorationen umwandelt.\n    Im Gegensatz zu Formatierungswerkzeugen, die auf anwendungsspezifische Auszeichnung angewiesen sind, ersetzt UltraTextGen jeden Buchstaben durch ein echtes Unicode-Zeichen, das fett, kursiv, kursiv, gotisch oder dekoriert aussieht.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Gib «hello» ein → erhalte 𝗵𝗲𝗹𝗹𝗼 (Ultra Bold), 𝘩𝘦𝘭𝘭𝘰 (Ultra Italic), 𝒽ℯ𝓁𝓁ℴ (Ultra Script) oder ⓗⓔⓛⓛⓞ (Ultra Bubble).\n    <br><br>\n    Da es sich um echte Zeichen handelt — keine Formatierungscodes — funktionieren sie überall, wo einfacher Text akzeptiert wird: Social-Media-Bios, Benutzernamen, Bildunterschriften, Nachrichten, E-Mails und mehr.\n    Keine Apps zum Installieren, keine Registrierung und keine Einschränkungen."
+            "question": "Was genau macht UltraTextGen?",
+            "answer": "UltraTextGen verwandelt das, was du tippst, in echte Unicode-Zeichen — also in Buchstaben, die schon fett, kursiv, verschnörkelt oder ästhetisch aussehen, ganz ohne App und ohne Schriftart-Installation.\n    <br><br>\n    <strong>Schnellbeispiel</strong><br>\n    «hallo» wird zu 𝗵𝗮𝗹𝗹𝗼 (fett), 𝘩𝘢𝘭𝘭𝘰 (kursiv), 𝒽𝒶𝓁𝓁ℴ (Schreibschrift) oder ⓗⓐⓛⓛⓞ (Bubble).\n    <br><br>\n    Weil das echte Zeichen sind und kein Formatierungs-Code, halten sie überall, wo du sie hinkopierst: Insta-Bio, TikTok-Caption, Discord-Name, WhatsApp-Status, E-Mail-Betreff. Keine Anmeldung, kein Download, kein Limit."
           },
           {
-            "question": "Wie erstelle und kopiere ich stilisierten Text?",
-            "answer": "Stilisierten Text zu erstellen dauert nur wenige Sekunden.\n    <br><br>\n    <strong>Schritt für Schritt</strong><br>\n    1. Gib deinen Text in das Eingabefeld auf der Startseite ein oder füge ihn ein.<br>\n    2. Stilisierte Versionen erscheinen sofort unter der Eingabe.<br>\n    3. Durchsuche die Stile oder wähle eine Kategorie wie Bold, Cursive oder Gothic.<br>\n    4. Klicke optional auf «Dekoration hinzufügen», um Rahmen, Symbole oder Trennlinien hinzuzufügen.<br>\n    5. Klicke auf «Kopieren» neben dem gewünschten Stil und füge ihn überall ein.\n    <br><br>\n    Das war's — kein Konto erforderlich, und das Tool funktioniert sowohl auf dem Desktop als auch auf dem Mobilgerät."
+            "question": "Wie kopiere ich mir eine Schrift?",
+            "answer": "Geht in ein paar Sekunden:\n    <br><br>\n    1. Text oben ins Feld tippen oder einfügen.<br>\n    2. Direkt darunter erscheinen alle Stile — fett, kursiv, Schreibschrift, Gothic, Bubble, ästhetisch, Zalgo und mehr.<br>\n    3. Optional: ein Symbol, einen Rahmen oder eine Trennlinie dazuklicken.<br>\n    4. Auf «Kopieren» neben dem Look tippen, der dir gefällt — und überall einfügen.\n    <br><br>\n    Funktioniert genauso am Handy wie am Laptop. Account brauchst du keinen."
           },
           {
-            "question": "Ist UltraTextGen vollständig kostenlos?",
-            "answer": "Ja — 100 % kostenlos ohne tägliche Limits, ohne Konto erforderlich, ohne Wasserzeichen und ohne versteckte Gebühren.\n    Du kannst so viel stilisierten Text generieren und kopieren, wie du benötigst, jederzeit."
+            "question": "Ist das wirklich kostenlos?",
+            "answer": "Ja, komplett. Kein Konto, kein Tageslimit, kein Wasserzeichen, keine Bezahlversion versteckt hinter den schönen Schriftarten. Du kannst so viel kopieren, wie du willst — auch jeden Tag."
           }
         ]
       },
       {
-        "title": "Unicode-Text vs. Rich-Text-Formatierung",
+        "title": "Unicode statt fetter Schrift aus dem Editor",
         "items": [
           {
-            "question": "Wie unterscheidet sich Unicode-Text von Fett und Kursiv in Word, Instagram oder Discord?",
-            "answer": "Normale Fett- und Kursivschrift verwendet Formatierungscodes — oft als Markup oder Rich Text bezeichnet — die nur innerhalb der App funktionieren, die sie unterstützt.\n    Discord verwendet beispielsweise **Text** für Fettschrift, und Instagram-Bildunterschriften haben überhaupt keine Formatierungsoptionen.\n    <br><br>\n    UltraTextGen funktioniert anders. Es ersetzt jeden Buchstaben durch ein einzigartiges Unicode-Zeichen, das bereits stilisiert aussieht.\n    Das Ergebnis ist einfacher Text, der fett, kursiv, kursiv oder dekoriert erscheint, ohne dass ein Formatierungsmodul dahintersteckt.\n    <br><br>\n    <strong>Warum das wichtig ist</strong><br>\n    Rich-Text-Fettschrift verschwindet, wenn du sie in eine TikTok-Bildunterschrift, eine E-Mail-Betreffzeile oder ein Benutzernamenfeld einfügst — diese Orte entfernen die Formatierung.\n    Unicode-Text behält seinen Stil, weil die Zeichen selbst stilisiert sind. Es gibt nichts zu entfernen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Ein Rich-Text-Editor macht das Wort «Sale» fett, indem er es in unsichtbare Codes einwickelt. Wenn du das in eine TikTok-Bio einfügst, wird daraus ein einfaches «Sale».\n    Mit UltraTextGen wird «Sale» zu 𝗦𝗮𝗹𝗲 — und bleibt so in deiner Bio, deinem Benutzernamen, deiner E-Mail-Betreffzeile und überall sonst."
+            "question": "Warum bleibt meine fette Schrift aus Word nicht in der Insta-Bio?",
+            "answer": "Word, Google Docs und Co. machen Text fett, indem sie unsichtbare Formatierungs-Codes drumherumlegen. Insta, TikTok, Discord oder die Betreffzeile einer E-Mail werfen diese Codes wieder raus — übrig bleibt ganz normaler Text.\n    <br><br>\n    UltraTextGen geht anders ran: Statt einen Code mitzuliefern, tauscht es jeden Buchstaben gegen ein Unicode-Zeichen, das schon von Haus aus fett, kursiv oder verschnörkelt aussieht. Da gibt's nichts zum Rausrechnen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «Sale» aus Word → in der TikTok-Bio wieder bloß „Sale“.<br>\n    «Sale» bei uns → 𝗦𝗮𝗹𝗲 — und das bleibt so, in Bio, Namen, Betreff, überall."
           },
           {
-            "question": "Was kann ein Unicode-Textgenerator, was ein Rich-Text-Editor nicht kann?",
-            "answer": "Rich-Text-Editoren wie Google Docs oder Microsoft Word bieten dir Fett, Kursiv und Unterstrichen — aber diese Stile verschwinden in dem Moment, in dem du sie in eine Social-Media-Bio, ein Benutzernamenfeld oder eine E-Mail mit einfachem Text einfügst.\n    Ein Unicode-Textgenerator schaltet Stile und Effekte frei, die kein Rich-Text-Editor in diesen Kontexten erzeugen kann.\n    <br><br>\n    <strong>Was UltraTextGen kann, was Rich Text nicht kann</strong><br>\n    — Fetten und kursiven Text innerhalb von Instagram-Bios, TikTok-Bildunterschriften und YouTube-Beschreibungen, wo keine Formatierungsleiste existiert.<br>\n    — Gothic-, Bubble- und Cursive-Schriftstile, die Rich-Text-Editoren gar nicht anbieten.<br>\n    — Umgekehrter und gespiegelter Text — in keinem Textverarbeitungsprogramm möglich.<br>\n    — Zalgo (Glitch)-Text mit gestapelten diakritischen Zeichen für ein gruseliges, korrumpiertes Aussehen.<br>\n    — Dekorative Rahmen, Ränder und Umhüllungen um deinen Text mit Unicode-Symbolen.<br>\n    — Stilisierte Benutzernamen und Anzeigenamen auf Discord, Roblox, Steam und anderen Plattformen.<br>\n    — Durchgestrichener und unterstrichener Text an Orten, die diese Formatierungsoptionen nicht nativ unterstützen.\n    <br><br>\n    Kurz gesagt gibt dir UltraTextGen visuelle Texteffekte, die mit den Zeichen reisen, sodass sie überall funktionieren, wo einfacher Text akzeptiert wird."
+            "question": "Was kann ein Unicode-Generator, was Word & Docs nicht können?",
+            "answer": "Im Grunde alles, was außerhalb vom eigenen Editor passieren soll:\n    <br><br>\n    — Fette und kursive Schrift in Insta-Bios, TikTok-Captions und YouTube-Beschreibungen, wo es gar keinen Formatierungs-Button gibt.<br>\n    — Gothic-, Bubble-, Schreibschrift- und ästhetische Stile, die Word überhaupt nicht anbietet.<br>\n    — Umgedrehte und gespiegelte Schrift.<br>\n    — Glitch- bzw. Zalgo-Schrift mit gestapelten Zeichen.<br>\n    — Rahmen, Trennlinien, Pfeile und Symbole direkt um den Text herum.<br>\n    — Stylische Namen für Discord, Roblox, Steam, CS, TikTok und Co.\n    <br><br>\n    Kurz gesagt: Schrift, die mitwandert — egal wohin du sie kopierst."
           },
           {
-            "question": "Kann ich fetten Unicode-Text in E-Mail-Betreffzeilen verwenden?",
-            "answer": "Ja — und das ist ein perfektes Beispiel für etwas, das ein Rich-Text-Editor nicht kann.\n    E-Mail-Betreffzeilen sind reiner Text, daher wird normale Fettformatierung entfernt, bevor der Empfänger sie sieht.\n    <br><br>\n    Mit UltraTextGen kannst du fette Unicode-Zeichen direkt in die Betreffzeile einfügen, und der Empfänger sieht sie als fett in seinem Posteingang.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normale Betreffzeile: «Flash Sale — 50% Off Today»<br>\n    Unicode-Betreffzeile: «𝗙𝗹𝗮𝘀𝗵 𝗦𝗮𝗹𝗲 — 𝟱𝟬% 𝗢𝗳𝗳 𝗧𝗼𝗱𝗮𝘆»\n    <br><br>\n    Die fette Version fällt in einem vollen Posteingang ohne spezielle E-Mail-Tools auf. Die meisten großen E-Mail-Clients — Gmail, Outlook, Apple Mail — rendern Unicode-Zeichen korrekt."
+            "question": "Funktioniert fette Schrift auch in der E-Mail-Betreffzeile?",
+            "answer": "Ja, und genau dafür wird's gerne genommen. Betreffzeilen sind reiner Text — fett aus Outlook oder Gmail wird auf dem Weg zum Empfänger entfernt. Unicode-Fettschrift bleibt drin, weil sie kein Format ist, sondern selbst schon das Zeichen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normal: „Letzte Chance — 50 % heute“<br>\n    Mit UltraTextGen: „𝗟𝗲𝘁𝘇𝘁𝗲 𝗖𝗵𝗮𝗻𝗰𝗲 — 𝟱𝟬 % 𝗵𝗲𝘂𝘁𝗲“\n    <br><br>\n    Im vollen Posteingang fällt das sofort auf. Gmail, Outlook und Apple Mail rendern Unicode sauber."
           }
         ]
       },
       {
-        "title": "Stile, Schriften und Dekorationen",
+        "title": "Schriftarten, Symbole und Deko",
         "items": [
           {
-            "question": "Welche Schriftstile bietet UltraTextGen?",
-            "answer": "UltraTextGen verfügt über eine der größten Sammlungen hochwertiger Unicode-Textstile, alle mit dem Präfix «Ultra» für überlegenes Aussehen und Abdeckung.\n    <br><br>\n    <strong>Kernstile</strong><br>\n    Ultra Bold und Ultra Bold Serif, Ultra Italic (mehrere Varianten), Ultra Script und Ultra Script Bold, Ultra Gothic, Ultra Bubble (Filled, Light, Tiles, Curly, Angle, Spaced und mehr), Ultra Strike und Ultra Underline.\n    <br><br>\n    <strong>Besondere Stile</strong><br>\n    Upside Down und Flipped, Small Caps, Zalgo (Glitch), Word Wrappers und Frames, Backwards und Mirror, Double Struck, Fullwidth, Squared, Parenthesized und viele mehr.\n    <br><br>\n    Neue Stile werden regelmäßig hinzugefügt, also markiere die Seite als Lesezeichen oder schaue regelmäßig vorbei."
+            "question": "Welche Schriftarten gibt's hier?",
+            "answer": "Eine ziemlich große Auswahl — und alle mit echter Bandbreite, nicht bloß die typischen drei Stile.\n    <br><br>\n    <strong>Klassiker</strong><br>\n    Fett (Bold), Fett-Serifen, mehrere Kursiv-Varianten, Schreibschrift, Schreibschrift fett, Gothic/Fraktur, Bubble in mehreren Varianten, durchgestrichen, unterstrichen.\n    <br><br>\n    <strong>Spezial</strong><br>\n    Umgedreht, gespiegelt, Small Caps, Zalgo (Glitch), Wort-Wrapper und Rahmen, Backwards, Double Struck, breite Schrift (Fullwidth), Squared, Eingeklammert — und etliche mehr.\n    <br><br>\n    Es kommen regelmäßig neue dazu — Lesezeichen setzen lohnt sich."
           },
           {
-            "question": "Kann ich mehrere Stile kombinieren und meinem Text Dekorationen hinzufügen?",
-            "answer": "Ja — Stile mischen und Ein-Klick-Dekorationen sind zwei der größten Vorteile von UltraTextGen gegenüber anderen Generatoren.\n    <br><br>\n    Du kannst Stile übereinanderlegen, z. B. Bubble + Zalgo, Gothic + Upside Down oder Small Caps + Underline, und dann das Ergebnis mit dekorativen Elementen umhüllen.\n    <br><br>\n    <strong>Verfügbare Dekorationen</strong><br>\n    Rahmen und Ränder (zum Beispiel ★彡[ text ]彡★ oder ╭─▸ text ╰─▸), Pfeile, Symbole, minimalistische Trennlinien, Emojis und Flaggen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Beginne mit «hello» → wende Ultra Gothic an → füge einen Sternrahmen hinzu → Ergebnis: ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★\n    <br><br>\n    Kein anderer Generator macht das Mischen und Dekorieren so einfach."
+            "question": "Kann ich Schriftarten kombinieren und Symbole drumrum bauen?",
+            "answer": "Klar — das ist sogar einer der Gründe, warum Leute hier hängenbleiben. Du kannst Stile übereinanderlegen, z. B. Bubble + Zalgo, Gothic + umgedreht oder Small Caps + Unterstrich, und dann noch Symbole oder einen Rahmen drüberlegen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «hallo» → Gothic anwenden → Sternenrahmen drumrum → ★彡[ 𝔥𝔞𝔩𝔩𝔬 ]彡★\n    <br><br>\n    <strong>Was als Deko bereitliegt</strong><br>\n    Rahmen, Pfeile, kleine Symbole, minimalistische Trennlinien, Emojis und Flaggen — alles ein Klick."
           },
           {
-            "question": "Was ist Zalgo- oder Glitch-Text und wie verwende ich ihn?",
-            "answer": "Zalgo-Text ist der gruselige, glitchige, «verfluchte» Stil, der gestapelte diakritische Zeichen über und unter jedem Buchstaben hinzufügt, sodass der Text korrumpiert oder heimgesucht wirkt.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «hello» → h̷e̷l̷l̷o̷\n    <br><br>\n    Er ist beliebt für Horror-Memes, düstere Social-Media-Bios, gruselige Benutzernamen und um Freunde in Gruppenchats zu erschrecken.\n    Gib einfach deinen Text ein, wähle den Zalgo-Stil, kopiere und füge ihn ein — UltraTextGen übernimmt das Stapeln automatisch."
+            "question": "Was ist eigentlich Zalgo- bzw. Glitch-Schrift?",
+            "answer": "Das ist der „verfluchte“ Look — Buchstaben, über und unter denen sich krakelige Zeichen stapeln, sodass der Text aussieht, als wäre er kaputt oder verhext.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    «hallo» → h̷a̷l̷l̷o̷\n    <br><br>\n    Beliebt für Horror-Posts, düstere Bios, gruselige Gamer-Namen oder um den Gruppenchat kurz zu erschrecken. Einfach Text eintippen, Zalgo wählen, kopieren — die Stapelung passiert automatisch."
           }
         ]
       },
       {
-        "title": "Plattformkompatibilität",
+        "title": "Plattformen — Insta, TikTok, Discord & Co.",
         "items": [
           {
-            "question": "Wo kann ich den von UltraTextGen generierten Text verwenden?",
-            "answer": "Überall, wo einfacher Text akzeptiert wird. Da die stilisierten Zeichen echtes Unicode sind — keine Formatierungscodes — reisen sie mit deinem Text, egal wohin du ihn einfügst.\n    <br><br>\n    <strong>Soziale Medien</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest und Snapchat.\n    <br><br>\n    <strong>Messaging-Apps</strong><br>\n    WhatsApp, Telegram, Discord, Signal und iMessage.\n    <br><br>\n    <strong>Sonstiges</strong><br>\n    E-Mail-Betreffzeilen und -Signaturen, Spielerprofile (Roblox, Minecraft, Steam), Foreneinträge, Lebensläufe, Präsentationen und mehr.\n    <br><br>\n    Wir haben auch dedizierte Generatorseiten, die für jede wichtige Plattform optimiert sind, wenn du Stile möchtest, die speziell für diese App getestet wurden."
+            "question": "Auf welchen Apps funktioniert das überhaupt?",
+            "answer": "Überall, wo du normalen Text reinschreiben kannst. Die stilisierten Buchstaben sind echtes Unicode — sie reisen mit, egal wohin du sie einfügst.\n    <br><br>\n    <strong>Social</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest, Snapchat.\n    <br><br>\n    <strong>Messenger</strong><br>\n    WhatsApp (auch im Status), Telegram, Discord, Signal, iMessage.\n    <br><br>\n    <strong>Außerdem</strong><br>\n    E-Mail-Betreff und Signatur, Gamer-Profile (Roblox, Minecraft, Steam, CS), Foren, Lebensläufe, Präsentationen.\n    <br><br>\n    Für die größten Plattformen gibt's eigene Seiten mit Schriften, die dort getestet wurden — z. B. für Insta und Discord."
           },
           {
-            "question": "Kann ich Unicode-Text für Benutzernamen und Anzeigenamen verwenden?",
-            "answer": "Absolut. Unicode-Zeichen werden in den meisten Benutzernamen- und Anzeigenamenfeldern akzeptiert — einschließlich Instagram, TikTok, Discord, Roblox, Steam und vielen anderen Plattformen.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normaler Benutzername: «DarkWolf»<br>\n    Unicode-Benutzername: «𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣» (Gothic) oder «ⒹⓐⓡⓚⓌⓞⓛⓕ» (Bubble)\n    <br><br>\n    Das ist etwas, was ein Rich-Text-Editor niemals tun kann — Benutzernamenfelder akzeptieren nur einfachen Text, und stilisierte Unicode-Zeichen zählen als einfacher Text.\n    <br><br>\n    <strong>Tipp</strong><br>\n    Wenn eine Plattform bestimmte Zeichen im Benutzernamenfeld ablehnt, versuche einen anderen Stil. Einige Stile haben eine breitere Kompatibilität als andere."
+            "question": "Kann ich das auch für meinen Insta-Namen oder Gamer-Namen nehmen?",
+            "answer": "Ja — und genau dafür wird's am häufigsten benutzt. Unicode-Zeichen zählen als normaler Text, also schluckt sie das Namensfeld bei Instagram, TikTok, Discord, Roblox, Steam oder CS in den meisten Fällen problemlos.\n    <br><br>\n    <strong>Beispiel</strong><br>\n    Normaler Name: „DarkWolf“<br>\n    Mit UltraTextGen: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣“ (Gothic) oder „ⒹⓐⓡⓚⓌⓞⓛⓕ“ (Bubble).\n    <br><br>\n    <strong>Tipp</strong><br>\n    Wenn ein Stil bei einer Plattform zickt (z. B. Zalgo bei Discord), probier einen Klassiker wie Bold oder Bubble — die haben fast überall freie Fahrt."
           },
           {
-            "question": "Warum werden manche stilisierten Texte auf bestimmten Plattformen als Kästchen oder Fragezeichen angezeigt?",
-            "answer": "Das passiert, wenn die auf dem Gerät des Betrachters installierte Schrift keine Glyphen für diese bestimmten Unicode-Zeichen enthält.\n    Es ist kein Problem mit dem Text selbst — auf den meisten modernen Geräten und Browsern wird die große Mehrheit der Stile korrekt angezeigt.\n    <br><br>\n    <strong>Was zu tun ist</strong><br>\n    Wenn du Kästchen oder fehlende Zeichen bemerkst, versuche einen anderen Stil. Kernstile wie Ultra Bold, Ultra Italic und Ultra Bubble haben die breiteste Gerätunterstützung.\n    Du kannst auch unsere plattformspezifischen Seiten (wie Discord oder Instagram) nutzen, um Stile zu finden, die für diese App getestet wurden."
+            "question": "Warum sieht meine Schrift bei manchen Leuten wie Kästchen aus?",
+            "answer": "Das liegt am Gerät der anderen Person: Wenn deren Schriftart kein Glyph für ein bestimmtes Unicode-Zeichen kennt, erscheint ein leeres Kästchen oder Fragezeichen. Mit dem Text selbst stimmt nichts, und bei modernen Smartphones passiert das selten.\n    <br><br>\n    <strong>Was hilft</strong><br>\n    Auf einen Klassiker wechseln — Bold, Italic oder Bubble laufen praktisch auf jedem Gerät. Wenn du für eine bestimmte App stylst, lohnt sich ein Blick auf die jeweilige Plattform-Seite (Insta, Discord, …)."
           }
         ]
       },
       {
-        "title": "Sprach- und Schriftunterstützung",
+        "title": "Welche Sprachen klappen?",
         "items": [
           {
-            "question": "Welche Sprachen unterstützt UltraTextGen für fetten und stilisierten Text?",
-            "answer": "UltraTextGen unterstützt jede Sprache, die das lateinische Alphabet verwendet.\n    Wenn eine Sprache A bis Z verwendet, einschließlich Zeichen mit Akzenten wie á, é, ñ, ü und ç, kann der Text in fette, kursive, kursive und andere Unicode-Stile umgewandelt werden.\n    Dies funktioniert, weil Unicode stilisierte Zeichenvarianten für lateinische Buchstaben und Ziffern bereitstellt.\n    <br><br>\n    <strong>Unterstützte Sprachen mit lateinischem Alphabet</strong><br>\n    Englisch, Spanisch, Französisch, Portugiesisch, Deutsch, Italienisch, Niederländisch, Afrikaans, Indonesisch, Malaiisch, Filipino, Tagalog, Vietnamesisch und Türkisch — unter vielen anderen.\n    <br><br>\n    Diese Sprachen können zuverlässig auf sozialen Medien, Messaging-Apps und in E-Mails stilisiert werden."
+            "question": "Funktioniert das auch mit Umlauten und anderen Sprachen?",
+            "answer": "Latein-Schriften ja — also alles, was A–Z benutzt, inklusive Umlaute (ä, ö, ü), ß sowie Akzente wie á, é, ñ, ç.\n    <br><br>\n    <strong>Funktioniert zuverlässig für</strong><br>\n    Deutsch, Englisch, Spanisch, Französisch, Italienisch, Portugiesisch, Niederländisch, Polnisch, Türkisch, Indonesisch, Vietnamesisch — und viele mehr.\n    <br><br>\n    Kleiner Hinweis: Bei sehr exotischen Stilen (z. B. manchen Schreibschrift-Varianten) gibt's Umlaute nicht in der gleichen Variante — dann bleibt der Buchstabe normal, der Rest stylisch."
           },
           {
-            "question": "Welche Sprachen werden für stilisierten Text nicht unterstützt?",
-            "answer": "Sprachen, die nicht-lateinische Schriften verwenden, können nicht in Unicode-Schriftstile wie Fett, Kursiv oder andere umgewandelt werden.\n    Diese Schriften haben keine stilisierten Unicode-Zeichenvarianten, sodass der Text nach der Konvertierung unverändert bleibt.\n    <br><br>\n    <strong>Nicht unterstützt für stilisierten Text</strong><br>\n    Arabisch, Urdu, Persisch, Hebräisch, Hindi, Bengalisch, Tamil, Thailändisch, Chinesisch, Japanisch, Koreanisch und Singhalesisch.\n    <br><br>\n    Dies ist eine Einschränkung des Unicode-Standards selbst, keine Einschränkung von UltraTextGen.\n    Wenn du in einer dieser Sprachen schreibst, werden lateinische Wörter (Markennamen, englische Phrasen usw.) im Text trotzdem konvertiert."
+            "question": "Und Arabisch, Russisch, Chinesisch?",
+            "answer": "Nicht-lateinische Schriften lassen sich leider nicht in fette oder kursive Unicode-Stile umwandeln — der Standard kennt dafür keine stilisierten Varianten.\n    <br><br>\n    <strong>Aktuell nicht stylebar</strong><br>\n    Arabisch, Persisch, Hebräisch, Hindi, Bengalisch, Tamil, Thai, Chinesisch, Japanisch, Koreanisch, Singhalesisch — und ja, auch Russisch/Kyrillisch.\n    <br><br>\n    Wenn du z. B. einen deutsch-russischen Mix schreibst, bleibt der kyrillische Teil normal, nur die lateinischen Wörter werden stylisch."
           },
           {
-            "question": "Gibt es Zeichen, die nicht konvertiert werden?",
-            "answer": "Die meisten englischen Buchstaben (A–Z, a–z), Zahlen (0–9) und grundlegende Satzzeichen werden in allen Stilen perfekt konvertiert.\n    Einige sehr seltene Symbole oder Sonderzeichen haben möglicherweise weniger Stiloptionen, da Unicode keine stilisierten Varianten für jedes Zeichen enthält.\n    <br><br>\n    Wenn ein Zeichen nicht konvertiert werden kann, bleibt es einfach als normaler Text — es verursacht niemals Fehler oder unbrauchbare Ergebnisse.\n    Deine Ausgabe wird immer verwendbar sein."
+            "question": "Werden wirklich alle Zeichen umgewandelt?",
+            "answer": "Buchstaben A–Z, a–z, Zahlen 0–9 und die normalen Satzzeichen — ja, in praktisch jedem Stil. Bei sehr seltenen Sonderzeichen kann es passieren, dass Unicode keine schicke Variante hat; dann bleibt das Zeichen einfach wie es ist. Kaputt geht dabei nichts — kopieren kannst du immer."
           }
         ]
       },
       {
-        "title": "Datenschutz und Sicherheit",
+        "title": "Datenschutz",
         "items": [
           {
-            "question": "Wird der Text, den ich eingebe, gespeichert oder verfolgt?",
-            "answer": "Nein. UltraTextGen speichert deinen Text nicht und fügt keine versteckten oder Tracking-Zeichen zur Ausgabe hinzu.\n    Die Konvertierung findet in deinem Browser statt, und was du kopierst, ist sauberes Unicode — nichts weiter."
+            "question": "Speichert ihr, was ich eintippe?",
+            "answer": "Nein. Die ganze Umwandlung läuft direkt in deinem Browser, ohne dass dein Text irgendwo zwischengespeichert oder an einen Server geschickt wird. Was du am Ende kopierst, ist sauberes Unicode — keine versteckten Tracking-Zeichen, nichts."
           },
           {
-            "question": "Ist der generierte Text sicher zum Kopieren und Einfügen?",
-            "answer": "Ja — vollkommen sicher. Die Ausgabe ist Standard-Unicode-Text ohne eingebettete Skripte, ohne versteckte Formatierung und ohne Tracking-Codes.\n    Du kannst ihn in jede App oder Website einfügen, ohne Sicherheitsbedenken."
+            "question": "Ist der Text wirklich sicher zum Einfügen?",
+            "answer": "Ja. Was kopiert wird, ist Standard-Unicode — kein Skript, keine versteckte Formatierung, kein Tracking-Code. Du kannst es ohne schlechtes Gefühl in jede App oder Website einfügen."
           }
         ]
       },
       {
-        "title": "Mobilgeräte- und Geräteunterstützung",
+        "title": "Handy, Tablet, Browser",
         "items": [
           {
-            "question": "Funktioniert UltraTextGen auf Smartphones und Tablets?",
-            "answer": "Ja — die Seite ist vollständig responsiv und funktioniert hervorragend auf Smartphones, Tablets und Desktops.\n    Es gibt keine App zum Herunterladen. Öffne einfach UltraTextGen in deinem mobilen Browser, gib deinen Text ein, wähle einen Stil und kopiere.\n    Es funktioniert auf iPhone, Android, iPad und jedem Gerät mit einem modernen Browser."
+            "question": "Geht das auch am Handy?",
+            "answer": "Klar — die Seite läuft am iPhone, Android und iPad genauso gut wie am Laptop. Keine App, kein Download. Browser auf, Text rein, Stil wählen, kopieren. Den kopierten Text kannst du danach direkt in Insta, TikTok, WhatsApp oder Discord einfügen."
           }
         ]
       },
       {
-        "title": "Warum UltraTextGen wählen",
+        "title": "Warum UltraTextGen?",
         "items": [
           {
-            "question": "Warum sollte ich UltraTextGen anderen Textgeneratoren vorziehen?",
-            "answer": "UltraTextGen ist darauf ausgelegt, der vollständigste und benutzerfreundlichste Unicode-Textgenerator zu sein, der verfügbar ist.\n    <br><br>\n    <strong>Was ihn auszeichnet</strong><br>\n    — Eine der größten Sammlungen von Premium-«Ultra»-Stilschriften.<br>\n    — Echtes Stile mischen: Kombiniere mehrere Stile mit einem Klick — etwas, das die meisten Generatoren nicht unterstützen.<br>\n    — Ein-Klick-Dekorationen: Füge Rahmen, Ränder, Symbole und Trennlinien hinzu, ohne manuell zu kopieren und einzufügen.<br>\n    — Dedizierte Plattformseiten für TikTok, Discord, Instagram und mehr — damit du Stile bekommst, die für deine Plattform getestet wurden.<br>\n    — Schnelle, übersichtliche Benutzeroberfläche ohne Pop-ups, die dich verlangsamen.<br>\n    — Ständig mit neuen Stilen und Dekorationen aktualisiert."
+            "question": "Was kann UltraTextGen besser als andere Schriftgeneratoren?",
+            "answer": "Ein paar Sachen, die zusammen den Unterschied machen:\n    <br><br>\n    — Eine der größten Auswahlen an «Ultra»-Stilen — von klassisch fett bis ästhetisch verschnörkelt.<br>\n    — Echtes Schriften-Kombinieren mit einem Klick (Gothic + Zalgo, Small Caps + Unterstrich …).<br>\n    — Symbole, Rahmen, Trennlinien und Pfeile direkt mit dazu — kein extra Kopieren nötig.<br>\n    — Eigene Seiten für die wichtigsten Plattformen (Insta, TikTok, Discord, LinkedIn …) mit Stilen, die dort getestet sind.<br>\n    — Schnelle Oberfläche, keine Werbe-Popups, die alles blockieren.<br>\n    — Regelmäßig neue Stile."
           },
           {
-            "question": "Fügt UltraTextGen neue Stile hinzu?",
-            "answer": "Ja — neue Ultra-Stile und Dekorationen werden regelmäßig hinzugefügt.\n    Markiere die Seite als Lesezeichen, um über die neuesten Ergänzungen informiert zu bleiben."
+            "question": "Kommen neue Schriftarten dazu?",
+            "answer": "Ja, ständig. Speicher die Seite als Lesezeichen — neue Stile und Deko-Sets tauchen alle paar Wochen auf."
           },
           {
-            "question": "Wie finde ich den richtigen Schriftstil oder das richtige Tool für meine Bedürfnisse?",
-            "answer": "UltraTextGen organisiert Stile und Tools auf drei Arten:\n    <br><br>\n    <strong>Nach Schriftstil</strong><br>\n    Durchsuche alle Schriftkategorien — bold, cursive, gothic, bubble, strikethrough, underline, upside-down und mehr. Jede Kategorieseite hat ihren eigenen Generator, der sich auf diesen Stil konzentriert.\n    <br><br>\n    <strong>Nach Plattform</strong><br>\n    Verwende einen plattformspezifischen Generator (wie Instagram, TikTok oder LinkedIn) für Stile und Tipps, die für die Regeln dieser Plattform optimiert sind.\n    <br><br>\n    <strong>Nach Aufgabe</strong><br>\n    Besuche die Anwendungsfallseite für aufgabenspezifische Tools — Schriften für Kommentare, Emoji-Kombinationen, Vorher-Nachher-Emojis und mehr."
+            "question": "Wie finde ich am schnellsten den richtigen Stil?",
+            "answer": "Drei Wege funktionieren:\n    <br><br>\n    <strong>Nach Look</strong><br>\n    Schau in den Schriftkategorien — fett, kursiv, Gothic, Bubble, ästhetisch, Schreibschrift, durchgestrichen, umgedreht. Jede Kategorie hat ihre eigene Seite mit Fokus auf diesen Stil.\n    <br><br>\n    <strong>Nach Plattform</strong><br>\n    Wenn du weißt, wofür der Text gedacht ist (Insta, TikTok, Discord, LinkedIn …), nimm direkt die jeweilige Plattformseite — da sind die Schriften vorgefiltert.\n    <br><br>\n    <strong>Nach Anlass</strong><br>\n    Brauchst du eine Bio-Schrift, einen Kommentar-Stil, Symbole für deinen Status? Über die Anwendungsfälle landest du beim passenden Tool."
           }
         ]
       }
     ]
   },
   "footer": {
-    "copyright": "© 2026 UltraTextGen. Schnelle Textstile, die überall funktionieren."
+    "copyright": "© 2026 UltraTextGen. Schnelle Schriftarten, die überall funktionieren."
   },
   "notFound": {
     "eyebrow": "ERR · 404 · FEHLENDES EXEMPLAR",
