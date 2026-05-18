@@ -1,207 +1,205 @@
 {
   "meta": {
-    "title": "Generador de Texto Elegante — Copia y Pega Fuentes Unicode Decorativas",
-    "description": "Convierte texto normal en fuentes Unicode estilizadas para copiar y pegar. Elige estilos en negrita, cursiva, gótico y decorativos para bios, nombres de usuario, comentarios y publicaciones."
+    "title": "Letras bonitas para copiar y pegar · Cursivas, aesthetic y símbolos para Instagram, TikTok y WhatsApp",
+    "description": "Generador de letras bonitas, cursivas, aesthetic, góticas y kawaii para copiar y pegar. Pásalas a tu bio de Instagram, tu estado de WhatsApp, tu nick de TikTok o Free Fire, y a Discord. Sin descargas y sin cuenta."
   },
   "hero": {
-    "title": "Generador de Fuentes Estilizadas",
-    "subtitle": "Convierte texto normal en fuentes Unicode en negrita, cursiva, góticas y decorativas para copiar y pegar al instante."
+    "title": "Letras bonitas para copiar y pegar",
+    "subtitle": "Escribe lo que quieras y mira cómo se transforma en letras cursivas, aesthetic, góticas y con símbolos. Listas para tu bio de Instagram, tu estado de WhatsApp, un nick de TikTok o Free Fire, o donde se te ocurra."
   },
   "decorations": {
-    "label": "Añadir decoración a los resultados",
+    "label": "Añade símbolos, marcos y separadores",
     "tabs": {
       "symbols": "Símbolos",
       "frames": "Marcos",
       "dividers": "Separadores",
       "arrows": "Flechas",
-      "minimal": "Minimalista",
+      "minimal": "Minimal",
       "emojis": "Emojis",
       "flags": "Banderas"
     }
   },
   "ui": {
-    "placeholder": "Escribe tu texto aquí...",
+    "placeholder": "Escribe aquí tu texto...",
     "advertisement": "Publicidad"
   },
   "useCases": {
-    "title": "Casos de uso populares",
-    "viewAll": "Ver todos los casos de uso →",
+    "title": "Para qué se usan más",
+    "viewAll": "Ver todas las ideas →",
     "items": [
       {
-        "title": "Titular de LinkedIn",
-        "description": "Haz que tu titular de LinkedIn destaque con texto Unicode en negrita e itálica que llama la atención en los resultados de búsqueda."
+        "title": "Bio de Instagram con onda",
+        "description": "Una bio de Insta con letras cursivas o aesthetic se nota a la primera. Cambia el tipo de letra, mete unos símbolos y queda lista para pegar."
       },
       {
-        "title": "Fuentes para comentarios",
-        "description": "Publica comentarios llamativos en Instagram, YouTube y TikTok con fuentes Unicode estilizadas que resaltan."
+        "title": "Estados y mensajes de WhatsApp",
+        "description": "Cumpleaños, frases, dedicatorias o un simple buenos días: poner el texto en letras bonitas hace que el mensaje se sienta distinto."
       },
       {
-        "title": "Texto a Emoji",
-        "description": "Convierte tu texto en secuencias de letras emoji, perfectas para bios creativas, historias y chats grupales."
+        "title": "Nicks de TikTok y Free Fire",
+        "description": "Nombres con letras chidas, góticas o con símbolos para destacar en tu perfil, en partidas o en los comentarios."
       }
     ]
   },
   "guides": {
-    "title": "Guías populares",
-    "viewAll": "Ver todas las guías →",
+    "title": "Lecturas rápidas",
+    "viewAll": "Ver más artículos →",
     "items": [
       {
-        "title": "La retórica de las fuentes",
-        "description": "Aprende cómo las elecciones tipográficas influyen en la percepción, la confianza y las emociones, y cómo aprovecharlas a tu favor."
+        "title": "Elige el tipo de letra que va contigo",
+        "description": "Cursiva elegante, gótica oscura, aesthetic suave, kawaii… cada estilo cuenta algo. Esta guía te ayuda a saber cuál encaja con tu perfil."
       },
       {
-        "title": "Marca personal a través de la tipografía",
-        "description": "Construye una marca personal coherente en todas las plataformas sociales usando elecciones estratégicas de fuentes Unicode."
+        "title": "Construye un look constante en tus redes",
+        "description": "Cómo usar el mismo tipo de letra y los mismos símbolos en Instagram, TikTok y X para que tu marca personal se reconozca al instante."
       },
       {
-        "title": "Detén el scroll con variación tipográfica",
-        "description": "Descubre cómo mezclar estilos de fuente rompe el patrón de desplazamiento y genera mayor engagement en las redes sociales."
+        "title": "Que no te pasen el feed por encima",
+        "description": "Mezclar letras y símbolos cambia el ritmo visual y hace que la gente se detenga. Aquí te contamos por qué funciona."
       }
     ]
   },
   "faq": {
     "categories": [
       {
-        "title": "Primeros pasos con UltraTextGen",
+        "title": "Cómo se usa",
         "items": [
           {
-            "question": "¿Qué es UltraTextGen y cómo funciona?",
-            "answer": "UltraTextGen es un generador de texto Unicode gratuito en línea que convierte al instante tu texto normal en fuentes y decoraciones elegantes y llamativas.\n    A diferencia de las herramientas de formato que dependen de marcado específico de cada aplicación, UltraTextGen reemplaza cada letra por un carácter Unicode real que tiene aspecto de negrita, itálica, cursiva, gótico o decorado.\n    <br><br>\n    <strong>Ejemplo</strong><br>\n    Escribe \"hello\" → obtén 𝗵𝗲𝗹𝗹𝗼 (Ultra Bold), 𝘩𝘦𝘭𝘭𝘰 (Ultra Italic), 𝒽ℯ𝓁𝓁ℴ (Ultra Script) o ⓗⓔⓛⓛⓞ (Ultra Bubble).\n    <br><br>\n    Como son caracteres reales —no códigos de formato— funcionan en cualquier lugar donde se acepte texto sin formato: bios de redes sociales, nombres de usuario, subtítulos, mensajes, correos electrónicos y más.\n    Sin aplicaciones que instalar, sin registro y sin límites."
+            "question": "¿Cómo funcionan las letras bonitas para copiar y pegar?",
+            "answer": "Esto no es un editor con negrita y cursiva como Word. Lo que hace UltraTextGen es cambiar cada letra que escribes por otra letra distinta del estándar Unicode que ya viene con esa forma.\n    <br><br>\n    Por eso aguanta el viaje cuando la pegas: aunque Instagram, WhatsApp o TikTok borren los formatos, las letras siguen viéndose iguales porque son caracteres, no estilos.\n    <br><br>\n    <strong>Un ejemplo rápido</strong><br>\n    Escribes <em>hola</em> y te aparece, entre otras:<br>\n    𝗵𝗼𝗹𝗮 (negrita), 𝘩𝘰𝘭𝘢 (cursiva), 𝒽ℴ𝓁𝒶 (cursiva elegante), 𝔥𝔬𝔩𝔞 (gótica), ⓗⓞⓛⓐ (burbuja).\n    <br><br>\n    Le das a copiar, lo pegas donde quieras y listo. No instalas nada, no abres cuenta."
           },
           {
-            "question": "¿Cómo genero y copio texto estilizado?",
-            "answer": "Generar texto estilizado solo lleva unos segundos.\n    <br><br>\n    <strong>Paso a paso</strong><br>\n    1. Escribe o pega tu texto en el cuadro de entrada de la página principal.<br>\n    2. Las versiones estilizadas aparecen al instante debajo del cuadro.<br>\n    3. Navega por los estilos o elige una categoría como Bold, Cursive o Gothic.<br>\n    4. Opcionalmente, haz clic en \"Añadir decoración\" para agregar marcos, símbolos o separadores.<br>\n    5. Haz clic en \"Copiar\" junto al estilo que prefieras y pégalo donde quieras.\n    <br><br>\n    Eso es todo: sin necesidad de cuenta, y funciona tanto en escritorio como en móvil."
+            "question": "¿Cómo lo uso paso a paso?",
+            "answer": "Es prácticamente instantáneo:\n    <br><br>\n    1. Escribe o pega tu texto en el recuadro de arriba.<br>\n    2. Debajo aparecen todas las versiones en distintos tipos de letras.<br>\n    3. Si quieres, pulsa «Añade símbolos, marcos y separadores» para decorarlo (corazones, estrellas, flechas...).<br>\n    4. Toca <strong>Copiar</strong> en el que más te guste.<br>\n    5. Pégalo en tu bio, en un comentario, en tu nick, en un estado de WhatsApp, donde sea.\n    <br><br>\n    Funciona igual desde el celular y desde la computadora."
           },
           {
-            "question": "¿Es UltraTextGen completamente gratuito?",
-            "answer": "Sí, 100 % gratuito sin límites diarios, sin cuenta requerida, sin marcas de agua y sin tarifas ocultas.\n    Puedes generar y copiar todo el texto estilizado que necesites, en cualquier momento."
+            "question": "¿Es gratis de verdad?",
+            "answer": "Sí, gratis sin asteriscos. No hay registro, no hay tope diario, no aparece una marca de agua rara y no te van a pedir tarjeta. Puedes generar todas las letras que quieras, las veces que quieras."
           }
         ]
       },
       {
-        "title": "Texto Unicode vs. formato de texto enriquecido",
+        "title": "Tipos de letras y símbolos",
         "items": [
           {
-            "question": "¿En qué se diferencia el texto Unicode de la negrita e itálica en Word, Instagram o Discord?",
-            "answer": "La negrita y la itálica convencionales usan códigos de formato —llamados habitualmente markup o texto enriquecido— que solo funcionan dentro de la aplicación que los admite.\n    Por ejemplo, Discord usa **texto** para la negrita, e Instagram no ofrece ninguna opción de formato en los pies de foto.\n    <br><br>\n    UltraTextGen funciona de otra manera. Reemplaza cada letra por un carácter Unicode único que ya tiene el aspecto estilizado.\n    El resultado es texto sin formato que parece negrita, itálica, cursiva o decorado sin ningún motor de formato detrás.\n    <br><br>\n    <strong>Por qué es importante</strong><br>\n    La negrita de texto enriquecido desaparece si la pegas en un pie de foto de TikTok, en el asunto de un correo o en un campo de nombre de usuario, porque esos sitios eliminan el formato.\n    El texto Unicode conserva su estilo porque los propios caracteres están estilizados. No hay nada que eliminar.\n    <br><br>\n    <strong>Ejemplo</strong><br>\n    Un editor de texto enriquecido pone la palabra «Sale» en negrita envolviéndola en códigos invisibles. Al pegarlo en una bio de TikTok se convierte en un simple «Sale».\n    Con UltraTextGen, «Sale» se convierte en 𝗦𝗮𝗹𝗲 y así se queda en tu bio, tu nombre de usuario, el asunto del correo y en cualquier otro lugar."
+            "question": "¿Qué tipos de letras puedo poner?",
+            "answer": "Hay un montón, y se van sumando nuevas. Algunos de los que más se usan:\n    <br><br>\n    <strong>Las clásicas</strong><br>\n    Letras en negrita, cursivas (𝓮𝓼𝓽𝓲𝓵𝓸 𝒸𝓊𝓇𝓈𝒾𝓋𝒶), góticas (𝔢𝔰𝔱𝔦𝔩𝔬), de burbuja (ⓔⓢⓣⓘⓛⓞ), small caps (ᴇsᴛɪʟᴏ).\n    <br><br>\n    <strong>Las aesthetic</strong><br>\n    Letras anchas, espaciadas, minimal, con símbolos sutiles. Las que se ven en los moodboards de Pinterest y en las bios de Instagram.\n    <br><br>\n    <strong>Las más creativas</strong><br>\n    Texto al revés, en espejo, glitch (Zalgo, h̷o̷l̷a̷), letras kawaii, y combinaciones con marcos como ★彡[ texto ]彡★."
           },
           {
-            "question": "¿Qué puede hacer un generador de texto Unicode que un editor de texto enriquecido no pueda?",
-            "answer": "Los editores de texto enriquecido como Google Docs o Microsoft Word ofrecen negrita, itálica y subrayado, pero esos estilos desaparecen en el momento en que los pegas en una bio de redes sociales, un campo de nombre de usuario o un correo de texto sin formato.\n    Un generador de texto Unicode desbloquea estilos y efectos que ningún editor de texto enriquecido puede producir en esos contextos.\n    <br><br>\n    <strong>Cosas que UltraTextGen puede hacer y el texto enriquecido no</strong><br>\n    — Texto en negrita e itálica dentro de bios de Instagram, pies de foto de TikTok y descripciones de YouTube, donde no existe barra de herramientas de formato.<br>\n    — Estilos Gothic, Bubble y Cursive que los editores de texto enriquecido no ofrecen en absoluto.<br>\n    — Texto al revés y reflejado, imposible en cualquier procesador de texto.<br>\n    — Texto Zalgo (glitch) con diacríticos apilados para un aspecto perturbador y corrupto.<br>\n    — Marcos decorativos, bordes y envolturas alrededor de tu texto usando símbolos Unicode.<br>\n    — Nombres de usuario y nombres de pantalla estilizados en Discord, Roblox, Steam y otras plataformas.<br>\n    — Texto tachado y subrayado en lugares que no admiten esas opciones de formato de forma nativa.\n    <br><br>\n    En resumen, UltraTextGen te da efectos visuales de texto que viajan con los caracteres, por lo que funcionan dondequiera que se acepte texto sin formato."
+            "question": "¿Cuál es la diferencia entre letras, fuentes y tipografía?",
+            "answer": "En la calle todo el mundo dice lo mismo, pero técnicamente:\n    <br><br>\n    — <strong>Letras</strong> es la palabra más usada en español. La gente busca «letras bonitas», «letras cursivas», «letras aesthetic». Es la forma natural.<br>\n    — <strong>Fuente</strong> y <strong>tipografía</strong> se refieren más bien al diseño tipográfico (Helvetica, Arial...). Pero también se usan como sinónimos de «letras» en internet, sobre todo en frases como «fuentes para Instagram».\n    <br><br>\n    Aquí da igual cómo lo llames. Lo que estás generando son caracteres Unicode que se ven como letras estilizadas y que puedes pegar en cualquier sitio."
           },
           {
-            "question": "¿Puedo usar texto Unicode en negrita en los asuntos de correo electrónico?",
-            "answer": "Sí, y este es un ejemplo perfecto de algo que un editor de texto enriquecido no puede hacer.\n    Los asuntos de correo son texto sin formato, por lo que el formato en negrita habitual se elimina antes de que el destinatario lo vea.\n    <br><br>\n    Con UltraTextGen puedes pegar caracteres Unicode en negrita directamente en el asunto y el destinatario los verá en negrita en su bandeja de entrada.\n    <br><br>\n    <strong>Ejemplo</strong><br>\n    Asunto normal: \"Flash Sale — 50% Off Today\"<br>\n    Asunto Unicode: \"𝗙𝗹𝗮𝘀𝗵 𝗦𝗮𝗹𝗲 — 𝟱𝟬% 𝗢𝗳𝗳 𝗧𝗼𝗱𝗮𝘆\"\n    <br><br>\n    La versión en negrita destaca en una bandeja de entrada repleta sin necesidad de herramientas especiales de correo. Los principales clientes de correo —Gmail, Outlook, Apple Mail— muestran correctamente los caracteres Unicode."
+            "question": "¿Qué son las letras aesthetic y por qué se ven así?",
+            "answer": "Las letras aesthetic son ese estilo limpio, espaciado y un poco minimal que se usa muchísimo en bios de Instagram, tableros de Pinterest y portadas de TikTok. La estética de moodboard, los tonos suaves, el «soft girl», el dark academia... todo eso suele ir acompañado de este tipo de letra.\n    <br><br>\n    Lo que las hace «aesthetic» no es la letra en sí, sino:\n    <br><br>\n    — Espaciado entre letras (𝔞 𝔢 𝔰 𝔱 𝔥 𝔢 𝔱 𝔦 𝔠).<br>\n    — Mayúsculas pequeñas o ancho completo (ａｅｓｔｈｅｔｉｃ).<br>\n    — Adornos sutiles: ✧, ✿, ⋆, ࿐, ❀.<br>\n    — Frases en inglés mezcladas con español.\n    <br><br>\n    Si buscas «texto aesthetic», esto es lo que la gente quiere decir."
+          },
+          {
+            "question": "¿Cómo agrego símbolos bonitos a mis textos?",
+            "answer": "Debajo del recuadro donde escribes hay una sección de decoraciones. Ahí encuentras:\n    <br><br>\n    — <strong>Símbolos</strong>: corazones, estrellas, lunas, flores, símbolos aesthetic.<br>\n    — <strong>Marcos</strong>: para envolver tu texto, tipo ╭─▸ texto ╰─▸ o ✧･ﾟ: *✧ texto ✧:･ﾟ✧.<br>\n    — <strong>Separadores y flechas</strong> para listas, viñetas o títulos.\n    <br><br>\n    Eliges los que quieras y se aplican a todas las versiones de tu texto a la vez. Así no tienes que copiar y pegar cada símbolo por separado.\n    <br><br>\n    Si solo buscas símbolos sueltos (corazones, kpop, kawaii, lunas, runas), también tenemos una biblioteca completa para copiar de uno en uno."
+          },
+          {
+            "question": "¿Qué es el texto Zalgo o glitch?",
+            "answer": "El Zalgo es ese texto que se ve corrupto, como si la pantalla estuviera fallando: h̵̢͍o̸̩͊l̶̲̾a̷̹̾. Se hace apilando símbolos invisibles encima y debajo de cada letra.\n    <br><br>\n    Se usa mucho para bios oscuras, contenido de terror, memes raros, bromas en grupos de WhatsApp o nicks que llamen la atención. Aquí lo generas con un clic, sin tener que armarlo a mano."
           }
         ]
       },
       {
-        "title": "Estilos, fuentes y decoraciones",
+        "title": "Para tus redes y apps",
         "items": [
           {
-            "question": "¿Qué estilos de fuente ofrece UltraTextGen?",
-            "answer": "UltraTextGen cuenta con una de las mayores colecciones de estilos de texto Unicode de alta calidad, todos con el prefijo «Ultra» para una apariencia y cobertura superiores.\n    <br><br>\n    <strong>Estilos principales</strong><br>\n    Ultra Bold y Ultra Bold Serif, Ultra Italic (múltiples variantes), Ultra Script y Ultra Script Bold, Ultra Gothic, Ultra Bubble (Filled, Light, Tiles, Curly, Angle, Spaced y más), Ultra Strike y Ultra Underline.\n    <br><br>\n    <strong>Estilos especiales</strong><br>\n    Upside Down y Flipped, Small Caps, Zalgo (Glitch), Word Wrappers y Frames, Backwards y Mirror, Double Struck, Fullwidth, Squared, Parenthesized y muchos más.\n    <br><br>\n    Se añaden nuevos estilos regularmente, así que guarda el sitio en favoritos o vuelve a visitarlo pronto."
+            "question": "¿Cómo pongo letras bonitas en mi bio de Instagram?",
+            "answer": "Es de las cosas más fáciles del mundo:\n    <br><br>\n    1. Escribe el texto de tu bio aquí arriba (tu nombre, descripción, frase, lo que sea).<br>\n    2. Elige el tipo de letra que te guste (cursiva, aesthetic, gótica...).<br>\n    3. Pulsa <strong>Copiar</strong>.<br>\n    4. Abre Instagram → Editar perfil → pega en el campo de la biografía.\n    <br><br>\n    <strong>Truco</strong>: combina dos estilos en la misma bio. Por ejemplo, el nombre en cursiva y la frase en small caps. Mete un par de símbolos (✧, ⋆, ࿐) entre líneas y se ve cuidado sin esfuerzo.\n    <br><br>\n    Funciona también para descripciones de fotos, comentarios y nombres de usuario."
           },
           {
-            "question": "¿Puedo combinar varios estilos y añadir decoraciones a mi texto?",
-            "answer": "Sí. Mezclar estilos y las decoraciones con un solo clic son dos de las mayores ventajas de UltraTextGen sobre otros generadores.\n    <br><br>\n    Puedes combinar estilos, como Bubble + Zalgo, Gothic + Upside Down o Small Caps + Underline, y luego envolver el resultado con elementos decorativos.\n    <br><br>\n    <strong>Decoraciones disponibles</strong><br>\n    Marcos y bordes (por ejemplo ★彡[ text ]彡★ o ╭─▸ text ╰─▸), flechas, símbolos, separadores minimalistas, emojis y banderas.\n    <br><br>\n    <strong>Ejemplo</strong><br>\n    Empieza con «hello» → aplica Ultra Gothic → añade un marco de estrellas → resultado: ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★\n    <br><br>\n    Ningún otro generador hace que mezclar y decorar sea tan fácil."
+            "question": "¿Y para los estados de WhatsApp?",
+            "answer": "Igual. Escribe tu mensaje, copia la versión que te guste y pégala donde escribes el estado, o directamente en un chat. WhatsApp respeta los caracteres porque son letras Unicode, no formato.\n    <br><br>\n    Va bien para felicitaciones de cumpleaños, dedicatorias, frases, o simplemente para que un «buenos días» se vea distinto. También en el nombre que aparece en tu perfil de WhatsApp."
           },
           {
-            "question": "¿Qué es el texto Zalgo o glitch y cómo lo uso?",
-            "answer": "El texto Zalgo es el estilo espeluznante, glitchy y «maldito» que añade diacríticos apilados por encima y por debajo de cada carácter, haciendo que el texto parezca corrupto o perturbador.\n    <br><br>\n    <strong>Ejemplo</strong><br>\n    «hello» → h̷e̷l̷l̷o̷\n    <br><br>\n    Es popular para memes de terror, bios de redes sociales con estética oscura, nombres de usuario escalofriantes y para gastar bromas en chats grupales.\n    Solo escribe tu texto, selecciona el estilo Zalgo, copia y pega: UltraTextGen gestiona el apilado automáticamente."
+            "question": "¿Funciona en TikTok, en nicks de Free Fire y en Discord?",
+            "answer": "Sí, en los tres. Es uno de los usos más comunes.\n    <br><br>\n    — <strong>TikTok</strong>: en tu bio, en tu nombre de usuario y en las descripciones de los videos. Las cursivas y las aesthetic son las que más se ven.<br>\n    — <strong>Free Fire</strong>: en el nick del personaje. Aquí lo que más se usa son letras chidas, góticas, símbolos y caracteres especiales. Si Free Fire te rechaza algún carácter, prueba con otro estilo: no todos los caracteres están permitidos en todos los servidores.<br>\n    — <strong>Discord</strong>: en el nombre de usuario, el apodo por servidor y los mensajes. También en los nombres de canales si eres admin.\n    <br><br>\n    Lo mismo aplica para Roblox, Steam, Minecraft y casi cualquier juego o app donde puedas poner un nombre."
+          },
+          {
+            "question": "¿Por qué algunas letras se ven como cuadritos o signos de pregunta?",
+            "answer": "No es culpa del texto. Pasa cuando el celular o la app de quien lo está leyendo no tiene instalada la fuente que dibuja esa letra Unicode. La letra existe; lo que falta es el dibujo.\n    <br><br>\n    <strong>Qué hacer si te pasa</strong>: prueba con otro tipo de letra. Los más compatibles —y los que casi nunca fallan— son la negrita, la cursiva, la de burbuja y small caps. Las góticas y las muy decorativas a veces no se ven bien en celulares antiguos o en algunas apps específicas."
+          },
+          {
+            "question": "¿Puedo usar letras bonitas en mi nombre de usuario?",
+            "answer": "En la mayoría de plataformas, sí: Instagram, TikTok, Discord, Roblox, Steam, X y muchas más aceptan caracteres Unicode en el nombre que se muestra. Por ejemplo, en lugar de <em>laura.93</em> puedes poner 𝓛𝓪𝓾𝓻𝓪 o ʟᴀᴜʀᴀ.\n    <br><br>\n    El nombre de usuario «interno» (el que va con @) suele aceptar solo letras y números normales. Pero el nombre que ve la gente sí admite letras bonitas casi siempre.\n    <br><br>\n    Si una plataforma te rechaza algún carácter, prueba otro estilo. La cursiva elegante, la gótica y small caps son los que más suelen pasar el filtro."
           }
         ]
       },
       {
-        "title": "Compatibilidad con plataformas",
+        "title": "Detalles técnicos (en cristiano)",
         "items": [
           {
-            "question": "¿Dónde puedo usar el texto generado por UltraTextGen?",
-            "answer": "En cualquier lugar donde se acepte texto sin formato. Como los caracteres estilizados son Unicode real —no códigos de formato—, viajan con tu texto sin importar dónde lo pegues.\n    <br><br>\n    <strong>Redes sociales</strong><br>\n    Instagram, TikTok, YouTube, X (Twitter), Facebook, LinkedIn, Pinterest y Snapchat.\n    <br><br>\n    <strong>Aplicaciones de mensajería</strong><br>\n    WhatsApp, Telegram, Discord, Signal e iMessage.\n    <br><br>\n    <strong>Otros</strong><br>\n    Asuntos y firmas de correo electrónico, perfiles de juegos (Roblox, Minecraft, Steam), foros, currículums, presentaciones y más.\n    <br><br>\n    También tenemos páginas dedicadas a cada plataforma principal con estilos probados específicamente para esa aplicación."
+            "question": "¿Por qué no basta con poner negrita o cursiva normal?",
+            "answer": "Porque la negrita y la cursiva de toda la vida (la de Word, Google Docs, etc.) son <em>etiquetas</em> de formato: la app guarda «este trozo va en negrita» aparte del texto. Si pegas eso en Instagram, en un nick, en un asunto de correo o en una bio, la etiqueta se pierde y vuelve a verse todo plano.\n    <br><br>\n    Las letras de aquí son distintas: son caracteres por sí mismos. Una 𝗮 en negrita no es una «a» con formato; es directamente otra letra del estándar Unicode. No hay nada que se pueda borrar al pegarla."
           },
           {
-            "question": "¿Puedo usar texto Unicode para nombres de usuario y nombres de pantalla?",
-            "answer": "Por supuesto. Los caracteres Unicode se aceptan en la mayoría de los campos de nombre de usuario y nombre de pantalla, incluyendo Instagram, TikTok, Discord, Roblox, Steam y muchas otras plataformas.\n    <br><br>\n    <strong>Ejemplo</strong><br>\n    Nombre de usuario normal: «DarkWolf»<br>\n    Nombre de usuario Unicode: «𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣» (Gothic) o «ⒹⓐⓡⓚⓌⓞⓛⓕ» (Bubble)\n    <br><br>\n    Esto es algo que un editor de texto enriquecido nunca puede hacer: los campos de nombre de usuario solo aceptan texto sin formato, y los caracteres Unicode estilizados cuentan como texto sin formato.\n    <br><br>\n    <strong>Consejo</strong><br>\n    Si una plataforma rechaza ciertos caracteres en el campo de nombre de usuario, prueba un estilo diferente. Algunos estilos tienen mayor compatibilidad que otros."
+            "question": "¿Sirve también para correos electrónicos?",
+            "answer": "Sí, y es de los trucos más útiles. Los asuntos de los correos no admiten negrita normal, pero sí admiten caracteres Unicode. Así que si pones tu asunto en 𝗻𝗲𝗴𝗿𝗶𝘁𝗮, se va a ver así en Gmail, Outlook, Apple Mail y casi cualquier bandeja moderna.\n    <br><br>\n    Va bien para newsletters, asuntos importantes o firmas. Eso sí, con cabeza: si abusas, te puede caer en spam."
           },
           {
-            "question": "¿Por qué algunos textos estilizados aparecen como cuadros o signos de interrogación en ciertas plataformas?",
-            "answer": "Esto ocurre cuando la fuente instalada en el dispositivo del usuario no incluye glifos para esos caracteres Unicode específicos.\n    No es un problema del propio texto: en la mayoría de dispositivos y navegadores modernos, la gran mayoría de los estilos se muestran correctamente.\n    <br><br>\n    <strong>Qué hacer</strong><br>\n    Si notas cuadros o caracteres que faltan, prueba un estilo diferente. Los estilos principales como Ultra Bold, Ultra Italic y Ultra Bubble tienen la mayor compatibilidad con dispositivos.\n    También puedes usar nuestras páginas específicas por plataforma (como Discord o Instagram) para encontrar estilos probados para esa aplicación."
+            "question": "¿Funciona con la ñ, las tildes y otros caracteres del español?",
+            "answer": "Sí. La ñ, las vocales con tilde (á, é, í, ó, ú) y la ü se respetan en la mayoría de estilos. Algunos estilos muy decorativos no tienen versión Unicode para la ñ o las tildes: en esos casos la letra se queda tal cual, sin cambiar, pero el resto del texto sí se transforma. Nunca te va a salir un texto roto."
+          },
+          {
+            "question": "¿Qué idiomas no funcionan?",
+            "answer": "Los que usan otros alfabetos: árabe, chino, japonés, coreano, hebreo, tailandés, hindi y similares. Unicode no incluye versiones estilizadas de esos caracteres, así que se quedan igual. Si en tu texto mezclas español o inglés con un idioma de estos, las partes en alfabeto latino sí se convierten."
           }
         ]
       },
       {
-        "title": "Compatibilidad con idiomas y escrituras",
+        "title": "Privacidad y dispositivos",
         "items": [
           {
-            "question": "¿Qué idiomas admite UltraTextGen para texto en negrita y estilizado?",
-            "answer": "UltraTextGen es compatible con cualquier idioma escrito en alfabeto latino.\n    Si un idioma usa de la A a la Z, incluidos caracteres acentuados como á, é, ñ, ü y ç, el texto puede convertirse en estilos Unicode como negrita, itálica, cursiva y otros.\n    Esto funciona porque Unicode proporciona variantes de caracteres estilizados para las letras del alfabeto latino y los dígitos.\n    <br><br>\n    <strong>Idiomas con alfabeto latino admitidos</strong><br>\n    Inglés, español, francés, portugués, alemán, italiano, neerlandés, afrikáans, indonesio, malayo, filipino, tagalo, vietnamita y turco, entre muchos otros.\n    <br><br>\n    Estos idiomas pueden estilizarse de forma fiable en plataformas de redes sociales, aplicaciones de mensajería y correos electrónicos."
+            "question": "¿Mis textos se guardan en algún lado?",
+            "answer": "No. Lo que escribes nunca sale de tu navegador. Aquí no se guarda lo que pones, no se manda a ningún servidor y no se añaden caracteres ocultos al resultado. Lo que copias es texto Unicode limpio, igual que si lo hubieras escrito a mano."
           },
           {
-            "question": "¿Qué idiomas no son compatibles con el texto estilizado?",
-            "answer": "Los idiomas que usan escrituras no latinas no pueden convertirse en estilos de fuente Unicode como negrita, itálica u otros.\n    Estas escrituras no tienen variantes de caracteres Unicode estilizados, por lo que el texto permanecerá sin cambios después de la conversión.\n    <br><br>\n    <strong>No compatibles con texto estilizado</strong><br>\n    Árabe, urdu, persa, hebreo, hindi, bengalí, tamil, tailandés, chino, japonés, coreano y cingalés.\n    <br><br>\n    Esta es una limitación del propio estándar Unicode, no una limitación de UltraTextGen.\n    Si escribes en uno de estos idiomas, las palabras en alfabeto latino (nombres de marca, frases en inglés, etc.) que aparezcan en el texto sí se convertirán."
+            "question": "¿Es seguro pegarlo en cualquier sitio?",
+            "answer": "Completamente. Son letras y nada más. No hay código, ni links ocultos, ni nada que pueda hacer algo raro al pegarlo. Lo puedes meter en un mensaje, en un perfil, en un correo, donde quieras."
           },
           {
-            "question": "¿Hay caracteres que no se convierten?",
-            "answer": "La mayoría de las letras en inglés (A–Z, a–z), los números (0–9) y la puntuación básica se convierten perfectamente en todos los estilos.\n    Algunos símbolos muy raros o caracteres especiales pueden tener menos opciones de estilo porque Unicode no incluye variantes estilizadas de todos los caracteres.\n    <br><br>\n    Si un carácter no puede convertirse, simplemente se queda como texto normal: nunca genera errores ni produce resultados inutilizables.\n    Tu resultado siempre será válido."
+            "question": "¿Va bien en el celular?",
+            "answer": "Sí, está pensado para celular. Abre la página desde el navegador del móvil, escribe, elige el estilo y toca copiar. Funciona igual de bien en iPhone y en Android, y también en tablets. No hay que descargar ninguna app."
           }
         ]
       },
       {
-        "title": "Privacidad y seguridad",
+        "title": "Por qué este generador y no otro",
         "items": [
           {
-            "question": "¿Se almacena o rastrea el texto que escribo?",
-            "answer": "No. UltraTextGen no almacena tu texto ni añade caracteres ocultos ni de seguimiento al resultado.\n    La conversión ocurre en tu navegador, y lo que copias es Unicode limpio, nada más."
+            "question": "¿Qué tiene de distinto UltraTextGen?",
+            "answer": "Lo intentamos resumir sin marketing raro:\n    <br><br>\n    — Más estilos que la media, y con buena cobertura (la ñ, las tildes y los números también se transforman en la mayoría).<br>\n    — Puedes <strong>combinar</strong> estilos: por ejemplo, gótica + texto al revés, o burbuja + glitch.<br>\n    — Añades símbolos, marcos, separadores y emojis con un clic. No tienes que copiarlos de listas sueltas.<br>\n    — Páginas pensadas para cada plataforma (Instagram, TikTok, WhatsApp, Discord, Free Fire...) con los estilos que mejor funcionan en cada una.<br>\n    — Carga rápido, no hay ventanas emergentes raras, no hay publicidad invasiva.<br>\n    — Está en español (y en otros 10 idiomas), no es una traducción automática."
           },
           {
-            "question": "¿Es seguro copiar y pegar el texto generado?",
-            "answer": "Sí, completamente seguro. El resultado es texto Unicode estándar sin scripts incrustados, sin formato oculto y sin códigos de seguimiento.\n    Puedes pegarlo en cualquier aplicación o sitio web sin ninguna preocupación de seguridad."
-          }
-        ]
-      },
-      {
-        "title": "Compatibilidad con móviles y dispositivos",
-        "items": [
-          {
-            "question": "¿Funciona UltraTextGen en teléfonos y tabletas?",
-            "answer": "Sí. El sitio es completamente responsivo y funciona perfectamente en teléfonos, tabletas y ordenadores de escritorio.\n    No hay ninguna aplicación que descargar. Abre UltraTextGen en el navegador de tu móvil, escribe tu texto, elige un estilo y copia.\n    Funciona en iPhone, Android, iPad y cualquier dispositivo con un navegador moderno."
-          }
-        ]
-      },
-      {
-        "title": "Por qué elegir UltraTextGen",
-        "items": [
-          {
-            "question": "¿Por qué debería elegir UltraTextGen frente a otros generadores de texto?",
-            "answer": "UltraTextGen está diseñado para ser el generador de texto Unicode más completo y fácil de usar disponible.\n    <br><br>\n    <strong>Lo que lo diferencia</strong><br>\n    — Una de las mayores colecciones de fuentes premium con estilo «Ultra».<br>\n    — Mezcla de estilos real: combina múltiples estilos con un solo clic, algo que la mayoría de los generadores no admite.<br>\n    — Decoraciones con un solo clic: añade marcos, bordes, símbolos y separadores sin copiar y pegar manualmente.<br>\n    — Páginas dedicadas a plataformas como TikTok, Discord, Instagram y más, con estilos probados para cada una.<br>\n    — Interfaz rápida y limpia sin ventanas emergentes que te ralenticen.<br>\n    — Actualizado constantemente con nuevos estilos y decoraciones."
+            "question": "¿Suben tipos de letras nuevas?",
+            "answer": "Sí, vamos añadiendo nuevos estilos, símbolos y marcos cada poco tiempo. Si vuelves cada mes, suele haber algo distinto."
           },
           {
-            "question": "¿UltraTextGen añade nuevos estilos?",
-            "answer": "Sí. Se añaden nuevos estilos Ultra y decoraciones regularmente.\n    Guarda el sitio en favoritos para estar al tanto de las últimas novedades."
-          },
-          {
-            "question": "¿Cómo encuentro el estilo de fuente o la herramienta adecuada para mis necesidades?",
-            "answer": "UltraTextGen organiza los estilos y las herramientas de tres maneras:\n    <br><br>\n    <strong>Por estilo de fuente</strong><br>\n    Explora todas las categorías de fuentes: bold, cursive, gothic, bubble, strikethrough, underline, upside-down y más. Cada página de categoría tiene su propio generador centrado en ese estilo.\n    <br><br>\n    <strong>Por plataforma</strong><br>\n    Usa un generador específico para cada plataforma (como Instagram, TikTok o LinkedIn) para obtener estilos y consejos optimizados para las reglas de esa plataforma.\n    <br><br>\n    <strong>Por tarea</strong><br>\n    Visita la página de casos de uso para herramientas específicas: fuentes para comentarios, combinaciones de emojis, emojis de antes y después, y más."
+            "question": "¿Cómo encuentro lo que necesito si hay tantos estilos?",
+            "answer": "Lo tenemos organizado de tres formas:\n    <br><br>\n    — <strong>Por tipo de letra</strong>: páginas separadas para cursivas, góticas, aesthetic, burbuja, small caps, glitch, etc. Cada una con su propio generador.<br>\n    — <strong>Por plataforma</strong>: páginas específicas para Instagram, TikTok, WhatsApp, Discord, Free Fire... con los estilos que mejor se ven en cada sitio.<br>\n    — <strong>Por uso</strong>: bios, nicks, comentarios, descripciones, títulos bonitos, frases para estados, etc.\n    <br><br>\n    Y si solo quieres símbolos sueltos (corazones, kawaii, kpop, lunas, runas, kaomojis...), tenemos una biblioteca aparte para copiarlos de uno en uno."
           }
         ]
       }
     ]
   },
   "footer": {
-    "copyright": "© 2026 UltraTextGen. Estilos de texto rápidos que funcionan en todas partes."
+    "copyright": "© 2026 UltraTextGen. Letras bonitas que funcionan en todas partes."
   },
   "notFound": {
-    "eyebrow": "ERR · 404 · ESPECIMEN FALTANTE",
-    "title": "Esta página se escapó del conjunto de estilos.",
-    "subtitle": "La URL que abriste no está en nuestra colección. Pero el error sigue funcionando como texto. Prueba 404 en Ultra Bold, Bubble, Gothic, Zalgo y más.",
+    "eyebrow": "ERR · 404 · ESPÉCIMEN PERDIDO",
+    "title": "Esta página se nos escapó del muestrario.",
+    "subtitle": "La URL que abriste no está en la colección. Pero el error sigue siendo texto, así que aquí tienes 404 en todos los estilos posibles.",
     "backCta": "← Volver al generador",
     "browseCta": "Explorar estilos",
-    "wallTitle": "404, transformado de todas las formas que conocemos.",
-    "wallSubtitle": "Cada estilo a continuación es generado por el mismo motor que impulsa UltraTextGen.",
+    "wallTitle": "404 en todas sus versiones.",
+    "wallSubtitle": "Cada estilo está hecho con el mismo motor que usa UltraTextGen.",
     "playgroundTitle": "Prueba tu propio texto perdido.",
-    "playgroundSubtitle": "Escribe cualquier cosa y previsualízala en algunos estilos Ultra antes de volver al generador completo.",
-    "playgroundPlaceholder": "Escribe tu texto aquí...",
-    "fullGeneratorCta": "Abrir generador completo",
+    "playgroundSubtitle": "Escribe cualquier cosa y mírala en unos cuantos estilos Ultra antes de volver al generador completo.",
+    "playgroundPlaceholder": "Escribe aquí tu texto...",
+    "fullGeneratorCta": "Abrir el generador",
     "copy": "Copiar",
     "copied": "Copiado"
   }
