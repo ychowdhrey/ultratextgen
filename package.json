@@ -6,7 +6,8 @@
   "scripts": {
     "prebuild": "node scripts/update-sitemap.js",
     "build": "cp index.html _root.html",
-    "sync-readme": "node scripts/sync-readme.js"
+    "sync-readme": "node scripts/sync-readme.js",
+    "audit:css": "node scripts/audit-css.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
