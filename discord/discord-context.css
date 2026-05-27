@@ -1,9 +1,18 @@
 /* ── Discord Context Selector ─────────────────────────────────────── */
-/* Supplements /style.css — Discord-page-only surface-aware UI layer. */
-/* Site tokens (--bg-white, --accent-purple, --border-light, etc.)    */
-/* are inherited from /style.css which is loaded first.               */
+/* Supplements /style.css — Discord-only surface-aware UI layer.       */
+/*                                                                     */
+/* Most of the container, label, chip, and callout chrome is inherited */
+/* from existing primitives in /style.css:                             */
+/*   .decoration-section  → container margin/border/padding            */
+/*   .decoration-label    → uppercase mini-header                      */
+/*   .decoration-tabs     → flex row with horizontal scroll            */
+/*   .decoration-tab      → chip base + hover/active (shared rule)     */
+/*   .platform-pill       → preset chip base + hover/active            */
+/*   .block-example       → guidance and note callout look             */
+/* Only the Discord-themed preview frame and Discord-specific bits     */
+/* are defined below.                                                  */
 
-/* Local tokens (Discord-flavored neutrals for the preview frame) */
+/* Local tokens for the Discord-themed preview frame */
 :root {
   --discord-preview-bg: #2b2d31;
   --discord-preview-text: #dbdee1;
@@ -14,80 +23,7 @@
   --discord-warn: #f87171;
 }
 
-.discord-context {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-light);
-}
-
-.discord-context-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.discord-context-label svg {
-  flex-shrink: 0;
-}
-
-.discord-context-tabs {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 14px;
-}
-
-.discord-context-tab {
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-
-.discord-context-tab:hover,
-.discord-context-tab.active {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  background: rgba(139, 92, 246, 0.05);
-}
-
-/* Guidance callout */
-.discord-context-guidance {
-  background: var(--bg-base);
-  border-left: 3px solid var(--accent-purple);
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  color: var(--text-primary);
-  line-height: 1.55;
-  margin-bottom: 14px;
-}
-
-.discord-context-guidance strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.discord-context-guidance code {
-  background: var(--bg-white);
-  border: 1px solid var(--border-light);
-  border-radius: 4px;
-  padding: 1px 5px;
-  font-size: 0.85em;
-}
-
+/* Inline character-limit pill inside the guidance callout */
 .discord-context-guidance .limit-pill {
   display: inline-block;
   margin-left: 6px;
@@ -104,6 +40,14 @@
 .discord-context-guidance .limit-pill.over {
   border-color: var(--discord-warn);
   color: var(--discord-warn);
+}
+
+.discord-context-guidance code {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.85em;
 }
 
 /* Discord-styled preview frame */
@@ -207,13 +151,8 @@
   flex-shrink: 0;
 }
 
-.discord-context-preview .preview-inline-name {
-  font-weight: 600;
-  color: var(--discord-preview-name);
-  margin-right: 6px;
-}
-
-/* Suggested style presets */
+/* Suggested style presets — inline row with an uppercase label.        */
+/* Individual chips inherit .platform-pill from /style.css.             */
 .discord-context-presets {
   display: flex;
   align-items: center;
@@ -231,33 +170,10 @@
   margin-right: 4px;
 }
 
-.discord-context-preset {
-  padding: 5px 12px;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-
-.discord-context-preset:hover,
-.discord-context-preset.active {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  background: rgba(139, 92, 246, 0.05);
-}
-
-/* Contextual notes (Nitro + Markdown) */
+/* Contextual notes — visual base inherited from .block-example.        */
+/* Default hidden; toggled visible via .show.                           */
 .discord-context-note {
   display: none;
-  background: var(--bg-base);
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  padding: 10px 14px;
   font-size: 0.8125rem;
   color: var(--text-secondary);
   line-height: 1.55;
@@ -265,10 +181,6 @@
 
 .discord-context-note.show {
   display: block;
-}
-
-.discord-context-note + .discord-context-note.show {
-  margin-top: 10px;
 }
 
 .discord-context-note .note-title {
@@ -289,30 +201,8 @@
   font-size: 0.85em;
 }
 
-.discord-context-note strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* Mobile */
+/* Mobile padding tweak for the preview frame */
 @media (max-width: 640px) {
-  .discord-context-tabs {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 4px;
-  }
-
-  .discord-context-tabs::-webkit-scrollbar {
-    display: none;
-  }
-
-  .discord-context-tab {
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
   .discord-context-preview {
     padding: 12px 14px;
   }
