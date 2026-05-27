@@ -159,7 +159,7 @@
     for (let i = 0; i < ctx.presets.length; i++) {
       const p = ctx.presets[i];
       html +=
-        '<button type="button" class="discord-context-preset" data-category="' +
+        '<button type="button" class="discord-context-preset platform-pill" data-category="' +
         escapeHtml(p.category) +
         '">' +
         escapeHtml(p.label) +
