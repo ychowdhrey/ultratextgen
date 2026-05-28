@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T09:40:49.516Z",
+  "generatedAt": "2026-05-28T09:44:34.600Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -33,8 +33,8 @@
     "oneOffClassCandidates": 120,
     "repeatedInlinePatterns": 15,
     "cssSelectorsTotal": 366,
-    "cssSelectorsReferenced": 335,
-    "cssSelectorsUnreferenced": 31
+    "cssSelectorsReferenced": 339,
+    "cssSelectorsUnreferenced": 27
   },
   "cssInventory": [
     {
@@ -4305,6 +4305,16 @@
         "via": "html"
       },
       {
+        "selector": ".helper-chip",
+        "line": 1819,
+        "via": "js"
+      },
+      {
+        "selector": ".helper-chip:hover",
+        "line": 1832,
+        "via": "js"
+      },
+      {
         "selector": ".helper-chip.active",
         "line": 1832,
         "via": "html"
@@ -4345,9 +4355,19 @@
         "via": "html"
       },
       {
+        "selector": ".variation-char-count",
+        "line": 1886,
+        "via": "js"
+      },
+      {
         "selector": ".variations-placeholder",
         "line": 1898,
         "via": "html"
+      },
+      {
+        "selector": ".char-warning",
+        "line": 1906,
+        "via": "js"
       },
       {
         "selector": ".usecase-example",
@@ -4772,34 +4792,14 @@
         "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
       },
       {
-        "selector": ".helper-chip",
-        "line": 1819,
-        "classes": [
-          "helper-chip"
-        ],
-        "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
-      },
-      {
         "selector": ".chip",
         "line": 1819,
         "classes": [
           "chip"
         ],
         "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
-      },
-      {
-        "selector": ".helper-chip:hover",
-        "line": 1832,
-        "classes": [
-          "helper-chip"
-        ],
-        "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
+        "verdict": "maybe-js",
+        "note": "token appears in a JS string — NEEDS VERIFICATION before touching"
       },
       {
         "selector": ".chip:hover",
@@ -4808,8 +4808,8 @@
           "chip"
         ],
         "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
+        "verdict": "maybe-js",
+        "note": "token appears in a JS string — NEEDS VERIFICATION before touching"
       },
       {
         "selector": ".btn-primary",
@@ -4842,16 +4842,6 @@
         "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
       },
       {
-        "selector": ".variation-char-count",
-        "line": 1886,
-        "classes": [
-          "variation-char-count"
-        ],
-        "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
-      },
-      {
         "selector": ".char-count-small",
         "line": 1886,
         "classes": [
@@ -4868,18 +4858,8 @@
           "variation-char-over"
         ],
         "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
-      },
-      {
-        "selector": ".char-warning",
-        "line": 1906,
-        "classes": [
-          "char-warning"
-        ],
-        "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
+        "verdict": "maybe-js",
+        "note": "token appears in a JS string — NEEDS VERIFICATION before touching"
       },
       {
         "selector": ".text-warning",
@@ -5105,5 +5085,5 @@
       "snippet": "class=\"preview-name\""
     }
   ],
-  "jsStrictTokenCount": 144
+  "jsStrictTokenCount": 179
 }
