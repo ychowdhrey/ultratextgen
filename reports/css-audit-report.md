@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-05-28T09:23:49.395Z_
+_Generated: 2026-05-28T09:26:40.435Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -19,9 +19,9 @@ _Generated: 2026-05-28T09:23:49.395Z_
 | Component class candidates | 80 |
 | One-off class candidates | 119 |
 | Repeated inline patterns | 21 |
-| style.css selectors parsed | 360 |
+| style.css selectors parsed | 364 |
 | …referenced (HTML/JS/structural) | 329 |
-| …unreferenced (needs verification) | 31 |
+| …unreferenced (needs verification) | 35 |
 
 Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
 
@@ -30,7 +30,7 @@ Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed:
 1. **717 inline styles** across 133 files — the biggest maintainability drag. 344 are low-risk and safe to consolidate.
 2. **21 repeated inline patterns** — e.g. `color:inherit; text-decoration:none` appears 246× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
-4. **31 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
+4. **35 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
 ## 3. Inline Style Findings
 
@@ -110,7 +110,7 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 
 | File | Size | Lines | Inferred purpose |
 | --- | --- | --- | --- |
-| style.css | 47.7 KB | 2336 | global site stylesheet |
+| style.css | 48.5 KB | 2360 | global site stylesheet |
 | usecase/zalgo-text/zalgo-text.css | 10.9 KB | 514 | page-specific usecase styling |
 | 404.css | 8.1 KB | 401 | error page styling |
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
@@ -233,6 +233,10 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | .jump-links a:hover | 2014 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .section-head | 2020 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .lede | 2025 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
+| .u-no-underline | 2335 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .u-text-center | 2346 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .u-mt-15 | 2350 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
+| .table-row-divider | 2354 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 
 JS class-reference tokens collected: 144 (strict). These were used to avoid falsely flagging JS-driven CSS.
 

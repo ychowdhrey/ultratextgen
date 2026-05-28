@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T09:23:49.395Z",
+  "generatedAt": "2026-05-28T09:26:40.435Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -32,16 +32,16 @@
     "componentClassCandidates": 80,
     "oneOffClassCandidates": 119,
     "repeatedInlinePatterns": 21,
-    "cssSelectorsTotal": 360,
+    "cssSelectorsTotal": 364,
     "cssSelectorsReferenced": 329,
-    "cssSelectorsUnreferenced": 31
+    "cssSelectorsUnreferenced": 35
   },
   "cssInventory": [
     {
       "file": "style.css",
-      "bytes": 48824,
-      "sizeHuman": "47.7 KB",
-      "lines": 2336,
+      "bytes": 49686,
+      "sizeHuman": "48.5 KB",
+      "lines": 2360,
       "purpose": "global site stylesheet"
     },
     {
@@ -6883,7 +6883,7 @@
     }
   ],
   "cssSelectors": {
-    "total": 360,
+    "total": 364,
     "referenced": [
       {
         "selector": "*",
@@ -8837,6 +8837,46 @@
         "line": 2025,
         "classes": [
           "lede"
+        ],
+        "ids": [],
+        "verdict": "no-reference-found",
+        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
+      },
+      {
+        "selector": ".u-no-underline",
+        "line": 2335,
+        "classes": [
+          "u-no-underline"
+        ],
+        "ids": [],
+        "verdict": "maybe-js",
+        "note": "token appears in a JS string — NEEDS VERIFICATION before touching"
+      },
+      {
+        "selector": ".u-text-center",
+        "line": 2346,
+        "classes": [
+          "u-text-center"
+        ],
+        "ids": [],
+        "verdict": "maybe-js",
+        "note": "token appears in a JS string — NEEDS VERIFICATION before touching"
+      },
+      {
+        "selector": ".u-mt-15",
+        "line": 2350,
+        "classes": [
+          "u-mt-15"
+        ],
+        "ids": [],
+        "verdict": "no-reference-found",
+        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
+      },
+      {
+        "selector": ".table-row-divider",
+        "line": 2354,
+        "classes": [
+          "table-row-divider"
         ],
         "ids": [],
         "verdict": "no-reference-found",
