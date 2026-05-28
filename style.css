@@ -2357,3 +2357,13 @@ body.dark-mode .vertical-chip {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.75rem;
 }
+
+.u-secondary-tight {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.u-secondary-block {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}

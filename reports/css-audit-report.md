@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-05-28T09:32:34.841Z_
+_Generated: 2026-05-28T09:40:49.516Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -11,24 +11,24 @@ _Generated: 2026-05-28T09:32:34.841Z_
 | HTML files scanned | 136 |
 | CSS files | 5 |
 | JS files scanned | 20 |
-| Inline `style="..."` occurrences | 414 |
-| Files containing inline styles | 113 |
-| Inline risk (low / med / high) | 41 / 300 / 73 |
+| Inline `style="..."` occurrences | 190 |
+| Files containing inline styles | 74 |
+| Inline risk (low / med / high) | 41 / 76 / 73 |
 | `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 224 |
-| Component class candidates | 83 |
+| Unique HTML classes | 226 |
+| Component class candidates | 85 |
 | One-off class candidates | 120 |
-| Repeated inline patterns | 17 |
-| style.css selectors parsed | 364 |
-| …referenced (HTML/JS/structural) | 333 |
+| Repeated inline patterns | 15 |
+| style.css selectors parsed | 366 |
+| …referenced (HTML/JS/structural) | 335 |
 | …unreferenced (needs verification) | 31 |
 
 Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
 
 ## 2. Top Problems
 
-1. **414 inline styles** across 113 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
-2. **17 repeated inline patterns** — e.g. `color:var(--text-secondary); margin-bottom:0.5rem` appears 211× and should become a utility class.
+1. **190 inline styles** across 74 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
+2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 68× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
 4. **31 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
@@ -40,29 +40,29 @@ Files with the most inline styles (full list in `css-audit-data.json`):
 | --- | --- |
 | category/index.html | 34 |
 | guide/index.html | 12 |
-| library/body-language-emojis/index.html | 11 |
 | usecase/index.html | 11 |
-| library/face-emojis/index.html | 10 |
 | usecase/vertical-text/index.html | 10 |
 | guide/linkedin-comments-guide/index.html | 8 |
 | guide/personal-branding-through-typography/index.html | 8 |
-| library/animal-emojis/index.html | 8 |
-| library/arrow-symbols/index.html | 8 |
-| library/currency-symbols/index.html | 8 |
-| library/math-symbols/index.html | 8 |
-| library/weather-symbols/index.html | 8 |
 | embed/linkedin-headline-generator/index.html | 7 |
-| library/card-suit-symbols/index.html | 7 |
-| library/music-symbols/index.html | 7 |
-| library/number-symbols/index.html | 7 |
-| library/achievement-symbols/index.html | 6 |
-| library/awareness-ribbons/index.html | 6 |
-| library/bracket-symbols/index.html | 6 |
-| library/bullet-point-symbols/index.html | 6 |
-| library/checkmark-symbols/index.html | 6 |
-| library/email-symbols/index.html | 6 |
-| library/flower-symbols/index.html | 6 |
-| library/geometric-symbols/index.html | 6 |
+| guide/stop-the-scroll-with-font-variation/index.html | 5 |
+| guide/style-linkedin-hooks-to-stand-out/index.html | 5 |
+| linkedin/index.html | 4 |
+| about/index.html | 3 |
+| contact/index.html | 3 |
+| guide/vertical-text-guide/index.html | 3 |
+| privacy/index.html | 3 |
+| terms/index.html | 3 |
+| usecase/bio-font/index.html | 3 |
+| usecase/linkedin-headline/index.html | 3 |
+| usecase/text-to-emoji/index.html | 3 |
+| category/classified/index.html | 2 |
+| discord/index.html | 2 |
+| library/index.html | 2 |
+| usecase/before-after-emoji/index.html | 2 |
+| usecase/comment-font/index.html | 2 |
+| usecase/emoji-combinations/index.html | 2 |
+| 404.html | 1 |
 
 Sample occurrences with risk classification:
 
@@ -110,7 +110,7 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 
 | File | Size | Lines | Inferred purpose |
 | --- | --- | --- | --- |
-| style.css | 48.5 KB | 2360 | global site stylesheet |
+| style.css | 48.7 KB | 2370 | global site stylesheet |
 | usecase/zalgo-text/zalgo-text.css | 10.9 KB | 514 | page-specific usecase styling |
 | 404.css | 8.1 KB | 401 | error page styling |
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
@@ -152,11 +152,9 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 | Pattern | Count | Suggested utility | Risk |
 | --- | --- | --- | --- |
-| color:var(--text-secondary); margin-bottom:0.5rem | 211 | u-mb-* | medium |
 | display:none; visibility:hidden | 68 | u-hidden (verify JS toggling first) | high |
 | align-items:stretch; flex-direction:column; gap:8px | 17 | (propose a utility/component class) | medium |
 | text-decoration:none | 17 | u-no-underline | low |
-| color:var(--text-secondary); margin-bottom:1.5rem | 13 | u-mb-* | medium |
 | color:var(--text-primary); font-weight:600; text-decor… | 10 | (propose a utility/component class) | medium |
 | align-items:stretch; flex-direction:column; gap:12px | 10 | (propose a utility/component class) | medium |
 | color:var(--text-secondary); font-size:0.875rem; line-… | 10 | u-text-secondary | medium |
