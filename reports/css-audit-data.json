@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T09:30:57.692Z",
+  "generatedAt": "2026-05-28T09:32:34.841Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -20,21 +20,21 @@
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 426,
+    "inlineStyleOccurrences": 414,
     "filesWithInlineStyles": 113,
     "inlineRiskTally": {
-      "low": 53,
+      "low": 41,
       "medium": 300,
       "high": 73
     },
     "styleBlocks": 5,
-    "uniqueClasses": 223,
+    "uniqueClasses": 224,
     "componentClassCandidates": 83,
-    "oneOffClassCandidates": 119,
-    "repeatedInlinePatterns": 18,
+    "oneOffClassCandidates": 120,
+    "repeatedInlinePatterns": 17,
     "cssSelectorsTotal": 364,
-    "cssSelectorsReferenced": 332,
-    "cssSelectorsUnreferenced": 32
+    "cssSelectorsReferenced": 333,
+    "cssSelectorsUnreferenced": 31
   },
   "cssInventory": [
     {
@@ -2904,90 +2904,6 @@
     },
     {
       "file": "usecase/vertical-text/index.html",
-      "line": 460,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 461,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 462,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 463,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 466,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 467,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 468,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 469,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 472,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 473,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 474,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 475,
-      "snippet": "style=\"padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);\"",
-      "decl": "padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
       "line": 478,
       "snippet": "style=\"padding:0.75rem;\"",
       "decl": "padding:0.75rem;",
@@ -3063,10 +2979,6 @@
       "count": 34
     },
     {
-      "file": "usecase/vertical-text/index.html",
-      "count": 22
-    },
-    {
       "file": "guide/index.html",
       "count": 12
     },
@@ -3080,6 +2992,10 @@
     },
     {
       "file": "library/face-emojis/index.html",
+      "count": 10
+    },
+    {
+      "file": "usecase/vertical-text/index.html",
       "count": 10
     },
     {
@@ -4560,6 +4476,11 @@
       "class": "symbol-tile--combo",
       "pages": 1,
       "occurrences": 20
+    },
+    {
+      "class": "table-row-divider",
+      "pages": 1,
+      "occurrences": 12
     }
   ],
   "repeatedPatterns": [
@@ -4592,12 +4513,6 @@
       "count": 13,
       "risk": "medium",
       "suggestedUtility": "u-mb-*"
-    },
-    {
-      "pattern": "border-bottom:1px solid rgba(255,255,255,0.08); padding:0.75rem",
-      "count": 12,
-      "risk": "low",
-      "suggestedUtility": "(propose a utility/component class)"
     },
     {
       "pattern": "color:var(--text-primary); font-weight:600; text-decoration:underline",
@@ -4710,15 +4625,7 @@
       "count": 20
     },
     {
-      "property": "padding",
-      "count": 20
-    },
-    {
       "property": "max-width",
-      "count": 16
-    },
-    {
-      "property": "border-bottom",
       "count": 16
     },
     {
@@ -4738,8 +4645,16 @@
       "count": 10
     },
     {
+      "property": "padding",
+      "count": 8
+    },
+    {
       "property": "text-align",
       "count": 6
+    },
+    {
+      "property": "border-bottom",
+      "count": 4
     },
     {
       "property": "height",
@@ -6424,6 +6339,11 @@
         "selector": ".u-mt-15",
         "line": 2350,
         "via": "html"
+      },
+      {
+        "selector": ".table-row-divider",
+        "line": 2354,
+        "via": "html"
       }
     ],
     "unreferenced": [
@@ -6732,16 +6652,6 @@
         "line": 2025,
         "classes": [
           "lede"
-        ],
-        "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
-      },
-      {
-        "selector": ".table-row-divider",
-        "line": 2354,
-        "classes": [
-          "table-row-divider"
         ],
         "ids": [],
         "verdict": "no-reference-found",
