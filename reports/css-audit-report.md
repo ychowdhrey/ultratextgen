@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-05-28T09:40:49.516Z_
+_Generated: 2026-05-28T09:44:34.600Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -20,8 +20,8 @@ _Generated: 2026-05-28T09:40:49.516Z_
 | One-off class candidates | 120 |
 | Repeated inline patterns | 15 |
 | style.css selectors parsed | 366 |
-| …referenced (HTML/JS/structural) | 335 |
-| …unreferenced (needs verification) | 31 |
+| …referenced (HTML/JS/structural) | 339 |
+| …unreferenced (needs verification) | 27 |
 
 Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
 
@@ -30,7 +30,7 @@ Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed:
 1. **190 inline styles** across 74 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
 2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 68× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
-4. **31 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
+4. **27 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
 ## 3. Inline Style Findings
 
@@ -210,17 +210,13 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | .tips-section h2 | 1177 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .header-breadcrumb | 1458 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .header-breadcrumb a | 1466 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .helper-chip | 1819 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .chip | 1819 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .helper-chip:hover | 1832 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .chip:hover | 1832 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
+| .chip | 1819 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .chip:hover | 1832 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 | .btn-primary | 1862 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .btn-primary:disabled | 1877 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .btn-primary:not(:disabled):hover | 1882 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .variation-char-count | 1886 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .char-count-small | 1886 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .variation-char-over | 1894 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .char-warning | 1906 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
+| .variation-char-over | 1894 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 | .text-warning | 1906 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .jump-links | 1994 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .jump-links a | 2002 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
@@ -228,7 +224,7 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | .section-head | 2020 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .lede | 2025 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 
-JS class-reference tokens collected: 144 (strict). These were used to avoid falsely flagging JS-driven CSS.
+JS class-reference tokens collected: 179 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
 ## 8. Recommended Next Actions
 

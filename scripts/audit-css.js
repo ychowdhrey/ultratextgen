@@ -167,6 +167,7 @@ function main() {
   // ── 6. JavaScript class usage (built first so CSS-usage checks can consult it) ──
   const jsStrict = new Set(); // high-confidence class references
   const jsLoose  = new Set(); // any token seen in a JS string (low confidence)
+  const jsClassEvidence = []; // sample evidence for the report
 
   function addTokens(target, raw) {
     raw.split(/[\s.]+/).forEach(tok => {
@@ -175,26 +176,19 @@ function main() {
     });
   }
 
-  const jsClassEvidence = []; // sample evidence for the report
-  for (const file of jsFiles) {
-    const content = fs.readFileSync(file, 'utf8');
+  // Extract class references from any JavaScript source — used for both
+  // standalone .js files and <script> blocks embedded in HTML.
+  function scanJs(content, sourceLabel) {
     let m;
-
     const reList = [
-      // classList.add / remove / toggle / contains / replace ( ...quoted... )
       /classList\.(?:add|remove|toggle|contains|replace)\(\s*([^)]*)\)/g,
-      // .className = "..."  |  '...'  |  `...`
       /\.className\s*=\s*[`'"]([^`'"]*)[`'"]/g,
-      // setAttribute('class', '...')
       /setAttribute\(\s*[`'"]class[`'"]\s*,\s*[`'"]([^`'"]*)[`'"]/g,
-      // getElementsByClassName('...')
       /getElementsByClassName\(\s*[`'"]([^`'"]+)[`'"]/g,
-      // class="..."  inside injected template/markup strings
       /class\s*=\s*[`'"]([^`'"]*)[`'"]/g
     ];
     for (const re of reList) {
       while ((m = re.exec(content)) !== null) {
-        // pull quoted substrings out of the captured argument list
         const inner = m[1];
         const quoted = inner.match(/[`'"]([^`'"]*)[`'"]/g);
         if (quoted) {
@@ -203,12 +197,10 @@ function main() {
           addTokens(jsStrict, inner);
         }
         if (jsClassEvidence.length < 40) {
-          jsClassEvidence.push({ file: rel(file), snippet: clip(m[0], 70) });
+          jsClassEvidence.push({ file: sourceLabel, snippet: clip(m[0], 70) });
         }
       }
     }
-
-    // querySelector / querySelectorAll — extract .class tokens from the selector
     const reQuery = /querySelector(?:All)?\(\s*[`'"]([^`'"]+)[`'"]/g;
     while ((m = reQuery.exec(content)) !== null) {
       const sel = m[1];
@@ -216,11 +208,18 @@ function main() {
       const reCls = /\.([A-Za-z][\w-]*)/g;
       while ((c = reCls.exec(sel)) !== null) jsStrict.add(c[1]);
     }
+    // Loose net: every string token, scanned line-by-line so an unbalanced
+    // quote in one expression can't desync the rest of a long script block.
+    const reStr = /[`'"]([^`'"\n]{1,200})[`'"]/g;
+    content.split('\n').forEach(line => {
+      reStr.lastIndex = 0;
+      let s;
+      while ((s = reStr.exec(line)) !== null) addTokens(jsLoose, s[1]);
+    });
+  }
 
-    // Loose net: every string/template literal token (only used to soften
-    // "unused" claims, never to assert usage).
-    const reStr = /[`'"]([^`'"]{1,200})[`'"]/g;
-    while ((m = reStr.exec(content)) !== null) addTokens(jsLoose, m[1]);
+  for (const file of jsFiles) {
+    scanJs(fs.readFileSync(file, 'utf8'), rel(file));
   }
 
   // ── 1 & 4: HTML inline styles + class usage ──
@@ -238,6 +237,7 @@ function main() {
   const reClassSq  = /class\s*=\s*'([^']*)'/g;
   const reIdDq     = /id\s*=\s*"([^"]*)"/g;
   const reStyleTag = /<style[^>]*>([\s\S]*?)<\/style>/gi;
+  const reScriptTag = /<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi;
 
   for (const file of htmlFiles) {
     const content = fs.readFileSync(file, 'utf8');
@@ -260,6 +260,14 @@ function main() {
           risk: classifyInlineRisk(decl)
         });
       }
+    }
+
+    // inline <script> blocks — feed their JS through the same class scanner
+    // so that JS-injected class names (className=, classList.add, etc.)
+    // are not falsely flagged as unused CSS.
+    reScriptTag.lastIndex = 0;
+    while ((m = reScriptTag.exec(content)) !== null) {
+      scanJs(m[1], `${relPath}#inline-script`);
     }
 
     // <style> blocks
