@@ -653,21 +653,6 @@
       margin-bottom: 4px;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-    }
-
-    .footer-nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-    }
-
     .footer-social-links {
       display: flex;
       flex-wrap: wrap;
@@ -965,10 +950,7 @@
 }
 
 /* Generic editorial container sections */
-.how-to-use,
-.why-section,
 .mood-explainers,
-.tips-section,
 .editorial-section {
   max-width: 800px;
   margin: 3rem auto;
@@ -1013,10 +995,7 @@
 }
 
 /* Section headings */
-.how-to-use h2,
-.why-section h2,
 .mood-explainers h2,
-.tips-section h2,
 .editorial-section > h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -1067,13 +1046,6 @@
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
-}
-
-.why-content p {
-  color: var(--text-primary);
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  font-size: 1rem;
 }
 
 /* Generic content block (was .mood-explainer) */
@@ -1176,10 +1148,7 @@
     font-size: 0.95rem;
   }
 
-  .how-to-use h2,
-  .why-section h2,
   .mood-explainers h2,
-  .tips-section h2,
   .editorial-section > h2 {
     font-size: 1.5rem;
   }
@@ -1455,18 +1424,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-.header-breadcrumb {
-  font-size: .8125rem;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.header-breadcrumb a {
-  color: var(--text-secondary);
 }
 
 .editorial-block strong,
@@ -1818,9 +1775,8 @@ a:hover {
   margin-top: 0.5rem;
 }
 
-/* Interactive chip (use instead of many per-page variants) */
-.helper-chip,
-.chip {
+/* Interactive chip */
+.helper-chip {
   background: var(--bg-white);
   border: 1px solid var(--border-light);
   border-radius: 6px;
@@ -1833,9 +1789,7 @@ a:hover {
 
 /* Hover / active state for chips */
 .helper-chip:hover,
-.chip:hover,
-.helper-chip.active,
-.chip.active {
+.helper-chip.active {
   background: var(--accent-purple);
   color: #fff;
   border-color: var(--accent-purple);
@@ -1861,8 +1815,7 @@ a:hover {
   font-weight: 600;
 }
 
-/* Primary action button (rename apply-btn -> btn-primary for reuse) */
-.btn-primary,
+/* Primary action button */
 .apply-btn {
   background: var(--accent-purple);
   color: #fff;
@@ -1875,19 +1828,16 @@ a:hover {
   transition: opacity 0.15s;
   margin-top: 0.5rem;
 }
-.btn-primary:disabled,
 .apply-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
-.btn-primary:not(:disabled):hover,
 .apply-btn:not(:disabled):hover {
   opacity: 0.85;
 }
 
 /* Small variation / character count helpers */
-.variation-char-count,
-.char-count-small {
+.variation-char-count {
   font-size: 0.75rem;
   color: var(--text-muted);
   margin-top: 0.25rem;
@@ -1906,8 +1856,7 @@ a:hover {
 }
 
 /* Utility for red warning emphasis */
-.char-warning,
-.text-warning {
+.char-warning {
   color: #e53e3e !important;
   font-weight: 700;
 }
@@ -1993,44 +1942,6 @@ a:hover {
   margin-top: 0.5rem;
 }
 
-.jump-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin: 14px 0 0;
-}
-
-.jump-links a {
-  border: 1px solid var(--border-light);
-  background: var(--bg-white);
-  color: var(--text-secondary);
-  padding: 6px 12px;
-  border-radius: 50px;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.jump-links a:hover {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  background: rgba(139, 92, 246, 0.05);
-}
-
-.section-head {
-  text-align: center;
-  margin-bottom: 1.75rem;
-}
-
-.lede {
-  color: var(--text-secondary);
-  max-width: 680px;
-  margin: 0.75rem auto 0;
-  font-size: 1rem;
-  line-height: 1.65;
-}
 
 .block-example {
   background: var(--bg-base);
