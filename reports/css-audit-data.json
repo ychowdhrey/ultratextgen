@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T09:28:52.350Z",
+  "generatedAt": "2026-05-28T09:30:57.692Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -20,21 +20,21 @@
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 471,
+    "inlineStyleOccurrences": 426,
     "filesWithInlineStyles": 113,
     "inlineRiskTally": {
-      "low": 98,
+      "low": 53,
       "medium": 300,
       "high": 73
     },
     "styleBlocks": 5,
-    "uniqueClasses": 221,
-    "componentClassCandidates": 81,
+    "uniqueClasses": 223,
+    "componentClassCandidates": 83,
     "oneOffClassCandidates": 119,
-    "repeatedInlinePatterns": 20,
+    "repeatedInlinePatterns": 18,
     "cssSelectorsTotal": 364,
-    "cssSelectorsReferenced": 330,
-    "cssSelectorsUnreferenced": 34
+    "cssSelectorsReferenced": 332,
+    "cssSelectorsUnreferenced": 32
   },
   "cssInventory": [
     {
@@ -481,20 +481,6 @@
       "risk": "high"
     },
     {
-      "file": "de/index.html",
-      "line": 360,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "de/index.html",
-      "line": 383,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
       "file": "de/usecase/zalgo-text/index.html",
       "line": 146,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -572,20 +558,6 @@
       "risk": "high"
     },
     {
-      "file": "es/index.html",
-      "line": 374,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "es/index.html",
-      "line": 397,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
       "file": "es/usecase/zalgo-text/index.html",
       "line": 146,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -605,20 +577,6 @@
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
-    },
-    {
-      "file": "fr/index.html",
-      "line": 360,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "fr/index.html",
-      "line": 383,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
     },
     {
       "file": "fr/usecase/zalgo-text/index.html",
@@ -727,48 +685,6 @@
     },
     {
       "file": "guide/linkedin-comments-guide/index.html",
-      "line": 192,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 508,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 547,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 644,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 768,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 840,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
       "line": 871,
       "snippet": "style=\"font-size:1.35rem;\"",
       "decl": "font-size:1.35rem;",
@@ -814,34 +730,6 @@
       "line": 902,
       "snippet": "style=\"text-align:center;\"",
       "decl": "text-align:center;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 156,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 340,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 539,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 581,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
       "risk": "low"
     },
     {
@@ -902,27 +790,6 @@
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 157,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 484,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 703,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
       "line": 770,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
@@ -958,72 +825,9 @@
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 131,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 154,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 227,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 228,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 239,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
       "line": 286,
       "snippet": "style=\"margin-top:1rem\"",
       "decl": "margin-top:1rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 296,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 318,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 341,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 427,
-      "snippet": "style=\"margin-top:1.5rem\"",
-      "decl": "margin-top:1.5rem",
       "risk": "low"
     },
     {
@@ -1090,20 +894,6 @@
       "risk": "high"
     },
     {
-      "file": "id/index.html",
-      "line": 360,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "id/index.html",
-      "line": 383,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
       "file": "id/usecase/zalgo-text/index.html",
       "line": 146,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -1118,27 +908,6 @@
       "risk": "high"
     },
     {
-      "file": "index.html",
-      "line": 359,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "index.html",
-      "line": 382,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "index.html",
-      "line": 410,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
       "file": "instagram/index.html",
       "line": 162,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -1151,20 +920,6 @@
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
-    },
-    {
-      "file": "it/index.html",
-      "line": 362,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "it/index.html",
-      "line": 385,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
     },
     {
       "file": "it/usecase/zalgo-text/index.html",
@@ -2805,20 +2560,6 @@
       "risk": "high"
     },
     {
-      "file": "nl/index.html",
-      "line": 328,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "nl/index.html",
-      "line": 351,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
       "file": "nl/usecase/zalgo-text/index.html",
       "line": 146,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -2838,20 +2579,6 @@
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
-    },
-    {
-      "file": "pl/index.html",
-      "line": 368,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "pl/index.html",
-      "line": 391,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
     },
     {
       "file": "pl/usecase/zalgo-text/index.html",
@@ -2887,20 +2614,6 @@
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
-    },
-    {
-      "file": "pt/index.html",
-      "line": 336,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "pt/index.html",
-      "line": 359,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
     },
     {
       "file": "pt/usecase/zalgo-text/index.html",
@@ -2957,20 +2670,6 @@
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
-    },
-    {
-      "file": "tr/index.html",
-      "line": 380,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "tr/index.html",
-      "line": 403,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
     },
     {
       "file": "tr/usecase/zalgo-text/index.html",
@@ -3330,20 +3029,6 @@
       "risk": "high"
     },
     {
-      "file": "vi/index.html",
-      "line": 355,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
-      "file": "vi/index.html",
-      "line": 378,
-      "snippet": "style=\"text-align:center;margin-top:1.5rem\"",
-      "decl": "text-align:center;margin-top:1.5rem",
-      "risk": "low"
-    },
-    {
       "file": "vi/usecase/zalgo-text/index.html",
       "line": 146,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -3382,19 +3067,7 @@
       "count": 22
     },
     {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "count": 14
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "count": 14
-    },
-    {
       "file": "guide/index.html",
-      "count": 12
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
       "count": 12
     },
     {
@@ -3410,7 +3083,11 @@
       "count": 10
     },
     {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "file": "guide/linkedin-comments-guide/index.html",
+      "count": 8
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
       "count": 8
     },
     {
@@ -3506,6 +3183,14 @@
       "count": 6
     },
     {
+      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "count": 5
+    },
+    {
+      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
+      "count": 5
+    },
+    {
       "file": "library/aesthetic-symbols/index.html",
       "count": 5
     },
@@ -3546,10 +3231,6 @@
       "count": 5
     },
     {
-      "file": "index.html",
-      "count": 4
-    },
-    {
       "file": "linkedin/index.html",
       "count": 4
     },
@@ -3562,35 +3243,7 @@
       "count": 3
     },
     {
-      "file": "de/index.html",
-      "count": 3
-    },
-    {
-      "file": "es/index.html",
-      "count": 3
-    },
-    {
-      "file": "fr/index.html",
-      "count": 3
-    },
-    {
       "file": "guide/vertical-text-guide/index.html",
-      "count": 3
-    },
-    {
-      "file": "id/index.html",
-      "count": 3
-    },
-    {
-      "file": "it/index.html",
-      "count": 3
-    },
-    {
-      "file": "nl/index.html",
-      "count": 3
-    },
-    {
-      "file": "pl/index.html",
       "count": 3
     },
     {
@@ -3598,15 +3251,7 @@
       "count": 3
     },
     {
-      "file": "pt/index.html",
-      "count": 3
-    },
-    {
       "file": "terms/index.html",
-      "count": 3
-    },
-    {
-      "file": "tr/index.html",
       "count": 3
     },
     {
@@ -3619,10 +3264,6 @@
     },
     {
       "file": "usecase/text-to-emoji/index.html",
-      "count": 3
-    },
-    {
-      "file": "vi/index.html",
       "count": 3
     },
     {
@@ -3722,7 +3363,15 @@
       "count": 1
     },
     {
+      "file": "de/index.html",
+      "count": 1
+    },
+    {
       "file": "de/usecase/zalgo-text/index.html",
+      "count": 1
+    },
+    {
+      "file": "es/index.html",
       "count": 1
     },
     {
@@ -3731,6 +3380,10 @@
     },
     {
       "file": "facebook/index.html",
+      "count": 1
+    },
+    {
+      "file": "fr/index.html",
       "count": 1
     },
     {
@@ -3746,11 +3399,23 @@
       "count": 1
     },
     {
+      "file": "id/index.html",
+      "count": 1
+    },
+    {
       "file": "id/usecase/zalgo-text/index.html",
       "count": 1
     },
     {
+      "file": "index.html",
+      "count": 1
+    },
+    {
       "file": "instagram/index.html",
+      "count": 1
+    },
+    {
+      "file": "it/index.html",
       "count": 1
     },
     {
@@ -3774,6 +3439,10 @@
       "count": 1
     },
     {
+      "file": "nl/index.html",
+      "count": 1
+    },
+    {
       "file": "nl/usecase/zalgo-text/index.html",
       "count": 1
     },
@@ -3782,7 +3451,15 @@
       "count": 1
     },
     {
+      "file": "pl/index.html",
+      "count": 1
+    },
+    {
       "file": "pl/usecase/zalgo-text/index.html",
+      "count": 1
+    },
+    {
+      "file": "pt/index.html",
       "count": 1
     },
     {
@@ -3802,11 +3479,19 @@
       "count": 1
     },
     {
+      "file": "tr/index.html",
+      "count": 1
+    },
+    {
       "file": "tr/usecase/zalgo-text/index.html",
       "count": 1
     },
     {
       "file": "usecase/zalgo-text/index.html",
+      "count": 1
+    },
+    {
+      "file": "vi/index.html",
       "count": 1
     },
     {
@@ -4090,6 +3775,11 @@
       "occurrences": 225
     },
     {
+      "class": "u-mt-15",
+      "pages": 15,
+      "occurrences": 45
+    },
+    {
       "class": "lang-switcher",
       "pages": 13,
       "occurrences": 13
@@ -4133,6 +3823,11 @@
       "class": "input-clear-btn",
       "pages": 11,
       "occurrences": 11
+    },
+    {
+      "class": "u-text-center",
+      "pages": 11,
+      "occurrences": 23
     },
     {
       "class": "faq-section-wrapper",
@@ -4881,18 +4576,6 @@
       "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
     {
-      "pattern": "margin-top:1.5rem; text-align:center",
-      "count": 23,
-      "risk": "low",
-      "suggestedUtility": "u-text-center"
-    },
-    {
-      "pattern": "margin-top:1.5rem",
-      "count": 23,
-      "risk": "low",
-      "suggestedUtility": "u-mt-*"
-    },
-    {
       "pattern": "align-items:stretch; flex-direction:column; gap:8px",
       "count": 17,
       "risk": "medium",
@@ -5007,14 +4690,6 @@
       "count": 68
     },
     {
-      "property": "margin-top",
-      "count": 58
-    },
-    {
-      "property": "text-align",
-      "count": 29
-    },
-    {
       "property": "gap",
       "count": 29
     },
@@ -5047,6 +4722,10 @@
       "count": 16
     },
     {
+      "property": "margin-top",
+      "count": 13
+    },
+    {
       "property": "margin",
       "count": 11
     },
@@ -5057,6 +4736,10 @@
     {
       "property": "line-height",
       "count": 10
+    },
+    {
+      "property": "text-align",
+      "count": 6
     },
     {
       "property": "height",
@@ -6731,6 +6414,16 @@
         "selector": ".u-no-underline",
         "line": 2335,
         "via": "html"
+      },
+      {
+        "selector": ".u-text-center",
+        "line": 2346,
+        "via": "html"
+      },
+      {
+        "selector": ".u-mt-15",
+        "line": 2350,
+        "via": "html"
       }
     ],
     "unreferenced": [
@@ -7039,26 +6732,6 @@
         "line": 2025,
         "classes": [
           "lede"
-        ],
-        "ids": [],
-        "verdict": "no-reference-found",
-        "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
-      },
-      {
-        "selector": ".u-text-center",
-        "line": 2346,
-        "classes": [
-          "u-text-center"
-        ],
-        "ids": [],
-        "verdict": "maybe-js",
-        "note": "token appears in a JS string — NEEDS VERIFICATION before touching"
-      },
-      {
-        "selector": ".u-mt-15",
-        "line": 2350,
-        "classes": [
-          "u-mt-15"
         ],
         "ids": [],
         "verdict": "no-reference-found",
