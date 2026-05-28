@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-05-28T09:30:57.692Z_
+_Generated: 2026-05-28T09:32:34.841Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -11,26 +11,26 @@ _Generated: 2026-05-28T09:30:57.692Z_
 | HTML files scanned | 136 |
 | CSS files | 5 |
 | JS files scanned | 20 |
-| Inline `style="..."` occurrences | 426 |
+| Inline `style="..."` occurrences | 414 |
 | Files containing inline styles | 113 |
-| Inline risk (low / med / high) | 53 / 300 / 73 |
+| Inline risk (low / med / high) | 41 / 300 / 73 |
 | `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 223 |
+| Unique HTML classes | 224 |
 | Component class candidates | 83 |
-| One-off class candidates | 119 |
-| Repeated inline patterns | 18 |
+| One-off class candidates | 120 |
+| Repeated inline patterns | 17 |
 | style.css selectors parsed | 364 |
-| …referenced (HTML/JS/structural) | 332 |
-| …unreferenced (needs verification) | 32 |
+| …referenced (HTML/JS/structural) | 333 |
+| …unreferenced (needs verification) | 31 |
 
 Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
 
 ## 2. Top Problems
 
-1. **426 inline styles** across 113 files — the biggest maintainability drag. 53 are low-risk and safe to consolidate.
-2. **18 repeated inline patterns** — e.g. `color:var(--text-secondary); margin-bottom:0.5rem` appears 211× and should become a utility class.
+1. **414 inline styles** across 113 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
+2. **17 repeated inline patterns** — e.g. `color:var(--text-secondary); margin-bottom:0.5rem` appears 211× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
-4. **32 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
+4. **31 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
 ## 3. Inline Style Findings
 
@@ -39,11 +39,11 @@ Files with the most inline styles (full list in `css-audit-data.json`):
 | File | Inline styles |
 | --- | --- |
 | category/index.html | 34 |
-| usecase/vertical-text/index.html | 22 |
 | guide/index.html | 12 |
 | library/body-language-emojis/index.html | 11 |
 | usecase/index.html | 11 |
 | library/face-emojis/index.html | 10 |
+| usecase/vertical-text/index.html | 10 |
 | guide/linkedin-comments-guide/index.html | 8 |
 | guide/personal-branding-through-typography/index.html | 8 |
 | library/animal-emojis/index.html | 8 |
@@ -157,7 +157,6 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | align-items:stretch; flex-direction:column; gap:8px | 17 | (propose a utility/component class) | medium |
 | text-decoration:none | 17 | u-no-underline | low |
 | color:var(--text-secondary); margin-bottom:1.5rem | 13 | u-mb-* | medium |
-| border-bottom:1px solid rgba(255,255,255,0.08); paddin… | 12 | (propose a utility/component class) | low |
 | color:var(--text-primary); font-weight:600; text-decor… | 10 | (propose a utility/component class) | medium |
 | align-items:stretch; flex-direction:column; gap:12px | 10 | (propose a utility/component class) | medium |
 | color:var(--text-secondary); font-size:0.875rem; line-… | 10 | u-text-secondary | medium |
@@ -173,7 +172,7 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 ### One-off classes (used on a single page)
 
-119 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
+120 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
 
 | Class | Occurrences |
 | --- | --- |
@@ -230,7 +229,6 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | .jump-links a:hover | 2014 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .section-head | 2020 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .lede | 2025 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .table-row-divider | 2354 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 
 JS class-reference tokens collected: 144 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
