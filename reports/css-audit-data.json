@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T09:26:40.435Z",
+  "generatedAt": "2026-05-28T09:28:52.350Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -20,21 +20,21 @@
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 717,
-    "filesWithInlineStyles": 133,
+    "inlineStyleOccurrences": 471,
+    "filesWithInlineStyles": 113,
     "inlineRiskTally": {
-      "low": 344,
+      "low": 98,
       "medium": 300,
       "high": 73
     },
     "styleBlocks": 5,
-    "uniqueClasses": 220,
-    "componentClassCandidates": 80,
+    "uniqueClasses": 221,
+    "componentClassCandidates": 81,
     "oneOffClassCandidates": 119,
-    "repeatedInlinePatterns": 21,
+    "repeatedInlinePatterns": 20,
     "cssSelectorsTotal": 364,
-    "cssSelectorsReferenced": 329,
-    "cssSelectorsUnreferenced": 35
+    "cssSelectorsReferenced": 330,
+    "cssSelectorsUnreferenced": 34
   },
   "cssInventory": [
     {
@@ -1174,34 +1174,6 @@
       "risk": "high"
     },
     {
-      "file": "library/accent-marks-diacritics/index.html",
-      "line": 474,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/accent-marks-diacritics/index.html",
-      "line": 478,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/accent-marks-diacritics/index.html",
-      "line": 482,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/accent-marks-diacritics/index.html",
-      "line": 486,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/achievement-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -1244,69 +1216,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/achievement-symbols/index.html",
-      "line": 393,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/achievement-symbols/index.html",
-      "line": 397,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/achievement-symbols/index.html",
-      "line": 401,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/achievement-symbols/index.html",
-      "line": 405,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-borders-frames/index.html",
-      "line": 247,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-borders-frames/index.html",
-      "line": 251,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-borders-frames/index.html",
-      "line": 255,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-borders-frames/index.html",
-      "line": 259,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-borders-frames/index.html",
-      "line": 263,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/aesthetic-symbols/index.html",
       "line": 180,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -1340,34 +1249,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/aesthetic-symbols/index.html",
-      "line": 473,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-symbols/index.html",
-      "line": 477,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-symbols/index.html",
-      "line": 481,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/aesthetic-symbols/index.html",
-      "line": 485,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/animal-emojis/index.html",
@@ -1426,34 +1307,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/animal-emojis/index.html",
-      "line": 559,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/animal-emojis/index.html",
-      "line": 563,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/animal-emojis/index.html",
-      "line": 567,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/animal-emojis/index.html",
-      "line": 571,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/arrow-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -1510,34 +1363,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/arrow-symbols/index.html",
-      "line": 884,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/arrow-symbols/index.html",
-      "line": 888,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/arrow-symbols/index.html",
-      "line": 892,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/arrow-symbols/index.html",
-      "line": 896,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/awareness-ribbons/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -1578,34 +1403,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/awareness-ribbons/index.html",
-      "line": 293,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/awareness-ribbons/index.html",
-      "line": 297,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/awareness-ribbons/index.html",
-      "line": 301,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/awareness-ribbons/index.html",
-      "line": 305,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/body-language-emojis/index.html",
@@ -1685,69 +1482,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/body-language-emojis/index.html",
-      "line": 580,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/body-language-emojis/index.html",
-      "line": 584,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/body-language-emojis/index.html",
-      "line": 588,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/body-language-emojis/index.html",
-      "line": 592,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bow-ribbon-symbols/index.html",
-      "line": 228,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bow-ribbon-symbols/index.html",
-      "line": 232,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bow-ribbon-symbols/index.html",
-      "line": 236,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bow-ribbon-symbols/index.html",
-      "line": 240,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bow-ribbon-symbols/index.html",
-      "line": 244,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/bracket-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -1790,34 +1524,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/bracket-symbols/index.html",
-      "line": 381,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bracket-symbols/index.html",
-      "line": 385,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bracket-symbols/index.html",
-      "line": 389,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bracket-symbols/index.html",
-      "line": 393,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/bullet-point-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -1858,34 +1564,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/bullet-point-symbols/index.html",
-      "line": 365,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bullet-point-symbols/index.html",
-      "line": 369,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bullet-point-symbols/index.html",
-      "line": 373,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/bullet-point-symbols/index.html",
-      "line": 377,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/card-suit-symbols/index.html",
@@ -1937,34 +1615,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/card-suit-symbols/index.html",
-      "line": 316,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/card-suit-symbols/index.html",
-      "line": 320,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/card-suit-symbols/index.html",
-      "line": 324,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/card-suit-symbols/index.html",
-      "line": 328,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/checkmark-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -2007,34 +1657,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/checkmark-symbols/index.html",
-      "line": 417,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/checkmark-symbols/index.html",
-      "line": 421,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/checkmark-symbols/index.html",
-      "line": 425,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/checkmark-symbols/index.html",
-      "line": 429,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/chess-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -2068,167 +1690,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:1.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:1.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/chess-symbols/index.html",
-      "line": 293,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/chess-symbols/index.html",
-      "line": 297,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/chess-symbols/index.html",
-      "line": 301,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/chess-symbols/index.html",
-      "line": 305,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/coquette-symbols/index.html",
-      "line": 295,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/coquette-symbols/index.html",
-      "line": 299,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/coquette-symbols/index.html",
-      "line": 303,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/coquette-symbols/index.html",
-      "line": 307,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/coquette-symbols/index.html",
-      "line": 311,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cottagecore-symbols/index.html",
-      "line": 303,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cottagecore-symbols/index.html",
-      "line": 307,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cottagecore-symbols/index.html",
-      "line": 311,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cottagecore-symbols/index.html",
-      "line": 315,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cottagecore-symbols/index.html",
-      "line": 319,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cross-x-symbols/index.html",
-      "line": 321,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cross-x-symbols/index.html",
-      "line": 325,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cross-x-symbols/index.html",
-      "line": 329,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/cross-x-symbols/index.html",
-      "line": 333,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/crown-royalty-symbols/index.html",
-      "line": 228,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/crown-royalty-symbols/index.html",
-      "line": 232,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/crown-royalty-symbols/index.html",
-      "line": 236,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/crown-royalty-symbols/index.html",
-      "line": 240,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/crown-royalty-symbols/index.html",
-      "line": 244,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/currency-symbols/index.html",
@@ -2287,125 +1748,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/currency-symbols/index.html",
-      "line": 445,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/currency-symbols/index.html",
-      "line": 449,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/currency-symbols/index.html",
-      "line": 453,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/currency-symbols/index.html",
-      "line": 457,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/dash-hyphen-symbols/index.html",
-      "line": 302,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/dash-hyphen-symbols/index.html",
-      "line": 306,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/dash-hyphen-symbols/index.html",
-      "line": 310,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/dash-hyphen-symbols/index.html",
-      "line": 314,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/discord-symbols/index.html",
-      "line": 414,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/discord-symbols/index.html",
-      "line": 418,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/discord-symbols/index.html",
-      "line": 422,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/discord-symbols/index.html",
-      "line": 426,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/discord-symbols/index.html",
-      "line": 430,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/egyptian-hieroglyphs/index.html",
-      "line": 4527,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/egyptian-hieroglyphs/index.html",
-      "line": 4531,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/egyptian-hieroglyphs/index.html",
-      "line": 4535,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/egyptian-hieroglyphs/index.html",
-      "line": 4539,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/email-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -2446,34 +1788,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/email-symbols/index.html",
-      "line": 457,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/email-symbols/index.html",
-      "line": 461,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/email-symbols/index.html",
-      "line": 465,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/email-symbols/index.html",
-      "line": 469,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/emoji-flags/index.html",
@@ -2588,34 +1902,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/face-emojis/index.html",
-      "line": 629,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/face-emojis/index.html",
-      "line": 633,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/face-emojis/index.html",
-      "line": 637,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/face-emojis/index.html",
-      "line": 641,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/flower-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -2658,34 +1944,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/flower-symbols/index.html",
-      "line": 405,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/flower-symbols/index.html",
-      "line": 409,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/flower-symbols/index.html",
-      "line": 413,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/flower-symbols/index.html",
-      "line": 417,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/food-drink-emojis/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -2719,34 +1977,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/food-drink-emojis/index.html",
-      "line": 490,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/food-drink-emojis/index.html",
-      "line": 494,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/food-drink-emojis/index.html",
-      "line": 498,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/food-drink-emojis/index.html",
-      "line": 502,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/geometric-symbols/index.html",
@@ -2791,130 +2021,11 @@
       "risk": "medium"
     },
     {
-      "file": "library/geometric-symbols/index.html",
-      "line": 493,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/geometric-symbols/index.html",
-      "line": 497,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/geometric-symbols/index.html",
-      "line": 501,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/geometric-symbols/index.html",
-      "line": 505,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/goth-grunge-symbols/index.html",
-      "line": 257,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/goth-grunge-symbols/index.html",
-      "line": 261,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/goth-grunge-symbols/index.html",
-      "line": 265,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/goth-grunge-symbols/index.html",
-      "line": 269,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/goth-grunge-symbols/index.html",
-      "line": 273,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/hand-symbols/index.html",
-      "line": 342,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/hand-symbols/index.html",
-      "line": 346,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/hand-symbols/index.html",
-      "line": 350,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/hand-symbols/index.html",
-      "line": 354,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/heart-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/heart-symbols/index.html",
-      "line": 335,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/heart-symbols/index.html",
-      "line": 339,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/heart-symbols/index.html",
-      "line": 343,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/heart-symbols/index.html",
-      "line": 347,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/index.html",
@@ -2966,69 +2077,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/instagram-symbols/index.html",
-      "line": 338,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/instagram-symbols/index.html",
-      "line": 342,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/instagram-symbols/index.html",
-      "line": 346,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/instagram-symbols/index.html",
-      "line": 350,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/kawaii-cute-symbols/index.html",
-      "line": 299,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/kawaii-cute-symbols/index.html",
-      "line": 303,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/kawaii-cute-symbols/index.html",
-      "line": 307,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/kawaii-cute-symbols/index.html",
-      "line": 311,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/kawaii-cute-symbols/index.html",
-      "line": 315,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/line-divider-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -3064,95 +2112,11 @@
       "risk": "medium"
     },
     {
-      "file": "library/line-divider-symbols/index.html",
-      "line": 322,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/line-divider-symbols/index.html",
-      "line": 326,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/line-divider-symbols/index.html",
-      "line": 330,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/line-divider-symbols/index.html",
-      "line": 334,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/linkedin-comment-styling/index.html",
       "line": 88,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
-    },
-    {
-      "file": "library/linkedin-comment-styling/index.html",
-      "line": 448,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/linkedin-comment-styling/index.html",
-      "line": 452,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/linkedin-comment-styling/index.html",
-      "line": 456,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/linkedin-comment-styling/index.html",
-      "line": 460,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/linkedin-symbol-library/index.html",
-      "line": 1139,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/linkedin-symbol-library/index.html",
-      "line": 1143,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/linkedin-symbol-library/index.html",
-      "line": 1147,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/linkedin-symbol-library/index.html",
-      "line": 1151,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/math-symbols/index.html",
@@ -3211,34 +2175,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/math-symbols/index.html",
-      "line": 462,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/math-symbols/index.html",
-      "line": 466,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/math-symbols/index.html",
-      "line": 470,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/math-symbols/index.html",
-      "line": 474,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/moon-celestial-symbols/index.html",
       "line": 259,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -3251,41 +2187,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:1.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:1.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/moon-celestial-symbols/index.html",
-      "line": 333,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/moon-celestial-symbols/index.html",
-      "line": 337,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/moon-celestial-symbols/index.html",
-      "line": 341,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/moon-celestial-symbols/index.html",
-      "line": 345,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/moon-celestial-symbols/index.html",
-      "line": 349,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/music-symbols/index.html",
@@ -3337,34 +2238,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/music-symbols/index.html",
-      "line": 360,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/music-symbols/index.html",
-      "line": 364,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/music-symbols/index.html",
-      "line": 368,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/music-symbols/index.html",
-      "line": 372,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/norse-viking-runes/index.html",
       "line": 447,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -3377,34 +2250,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:1.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:1.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/norse-viking-runes/index.html",
-      "line": 589,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/norse-viking-runes/index.html",
-      "line": 593,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/norse-viking-runes/index.html",
-      "line": 597,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/norse-viking-runes/index.html",
-      "line": 601,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/number-symbols/index.html",
@@ -3456,34 +2301,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/number-symbols/index.html",
-      "line": 471,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/number-symbols/index.html",
-      "line": 475,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/number-symbols/index.html",
-      "line": 479,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/number-symbols/index.html",
-      "line": 483,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/people-profession-emojis/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -3524,34 +2341,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/people-profession-emojis/index.html",
-      "line": 365,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/people-profession-emojis/index.html",
-      "line": 369,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/people-profession-emojis/index.html",
-      "line": 373,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/people-profession-emojis/index.html",
-      "line": 377,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/religious-symbols/index.html",
@@ -3596,97 +2385,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/religious-symbols/index.html",
-      "line": 317,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/religious-symbols/index.html",
-      "line": 321,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/religious-symbols/index.html",
-      "line": 325,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/religious-symbols/index.html",
-      "line": 329,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/roblox-symbols/index.html",
-      "line": 256,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/roblox-symbols/index.html",
-      "line": 260,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/roblox-symbols/index.html",
-      "line": 264,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/roblox-symbols/index.html",
-      "line": 268,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/roblox-symbols/index.html",
-      "line": 272,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/slash-backslash-symbols/index.html",
-      "line": 272,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/slash-backslash-symbols/index.html",
-      "line": 276,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/slash-backslash-symbols/index.html",
-      "line": 280,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/slash-backslash-symbols/index.html",
-      "line": 284,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/smiley-face-guide/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -3729,34 +2427,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/smiley-face-guide/index.html",
-      "line": 393,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/smiley-face-guide/index.html",
-      "line": 397,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/smiley-face-guide/index.html",
-      "line": 401,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/smiley-face-guide/index.html",
-      "line": 405,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/sparkle-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -3797,34 +2467,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/sparkle-symbols/index.html",
-      "line": 437,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/sparkle-symbols/index.html",
-      "line": 441,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/sparkle-symbols/index.html",
-      "line": 445,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/sparkle-symbols/index.html",
-      "line": 449,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/special-characters/index.html",
@@ -3904,62 +2546,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/sports-emojis/index.html",
-      "line": 330,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/sports-emojis/index.html",
-      "line": 334,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/sports-emojis/index.html",
-      "line": 338,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/sports-emojis/index.html",
-      "line": 342,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/star-symbols/index.html",
-      "line": 326,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/star-symbols/index.html",
-      "line": 330,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/star-symbols/index.html",
-      "line": 334,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/star-symbols/index.html",
-      "line": 338,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/text-faces-kaomoji/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -4002,34 +2588,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/text-faces-kaomoji/index.html",
-      "line": 325,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/text-faces-kaomoji/index.html",
-      "line": 329,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/text-faces-kaomoji/index.html",
-      "line": 333,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/text-faces-kaomoji/index.html",
-      "line": 337,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/tiktok-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -4065,95 +2623,11 @@
       "risk": "medium"
     },
     {
-      "file": "library/tiktok-symbols/index.html",
-      "line": 306,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/tiktok-symbols/index.html",
-      "line": 310,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/tiktok-symbols/index.html",
-      "line": 314,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/tiktok-symbols/index.html",
-      "line": 318,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/traffic-road-sign-symbols/index.html",
       "line": 140,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/traffic-road-sign-symbols/index.html",
-      "line": 334,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/traffic-road-sign-symbols/index.html",
-      "line": 338,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/traffic-road-sign-symbols/index.html",
-      "line": 342,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/traffic-road-sign-symbols/index.html",
-      "line": 346,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/transport-symbols/index.html",
-      "line": 393,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/transport-symbols/index.html",
-      "line": 397,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/transport-symbols/index.html",
-      "line": 401,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/transport-symbols/index.html",
-      "line": 405,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/weather-symbols/index.html",
@@ -4212,69 +2686,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/weather-symbols/index.html",
-      "line": 397,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/weather-symbols/index.html",
-      "line": 401,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/weather-symbols/index.html",
-      "line": 405,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/weather-symbols/index.html",
-      "line": 409,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/whisper-subliminal-symbols/index.html",
-      "line": 259,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/whisper-subliminal-symbols/index.html",
-      "line": 263,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/whisper-subliminal-symbols/index.html",
-      "line": 267,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/whisper-subliminal-symbols/index.html",
-      "line": 271,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/whisper-subliminal-symbols/index.html",
-      "line": 275,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/witchy-occult-symbols/index.html",
       "line": 161,
       "snippet": "style=\"margin-top:1rem;\"",
@@ -4283,52 +2694,10 @@
     },
     {
       "file": "library/witchy-occult-symbols/index.html",
-      "line": 162,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/witchy-occult-symbols/index.html",
       "line": 175,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:0.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/witchy-occult-symbols/index.html",
-      "line": 631,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/witchy-occult-symbols/index.html",
-      "line": 635,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/witchy-occult-symbols/index.html",
-      "line": 639,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/witchy-occult-symbols/index.html",
-      "line": 643,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/witchy-occult-symbols/index.html",
-      "line": 647,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "library/x-twitter-symbols/index.html",
@@ -4366,69 +2735,6 @@
       "risk": "medium"
     },
     {
-      "file": "library/x-twitter-symbols/index.html",
-      "line": 298,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/x-twitter-symbols/index.html",
-      "line": 302,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/x-twitter-symbols/index.html",
-      "line": 306,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/x-twitter-symbols/index.html",
-      "line": 310,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/y2k-symbols/index.html",
-      "line": 366,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/y2k-symbols/index.html",
-      "line": 370,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/y2k-symbols/index.html",
-      "line": 374,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/y2k-symbols/index.html",
-      "line": 378,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/y2k-symbols/index.html",
-      "line": 382,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
       "file": "library/zodiac-symbols/index.html",
       "line": 102,
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:0.5rem;\"",
@@ -4462,34 +2768,6 @@
       "snippet": "style=\"color:var(--text-secondary);margin-bottom:1.5rem;\"",
       "decl": "color:var(--text-secondary);margin-bottom:1.5rem;",
       "risk": "medium"
-    },
-    {
-      "file": "library/zodiac-symbols/index.html",
-      "line": 338,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/zodiac-symbols/index.html",
-      "line": 342,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/zodiac-symbols/index.html",
-      "line": 346,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
-    },
-    {
-      "file": "library/zodiac-symbols/index.html",
-      "line": 350,
-      "snippet": "style=\"text-decoration:none;color:inherit\"",
-      "decl": "text-decoration:none;color:inherit",
-      "risk": "low"
     },
     {
       "file": "linkedin/index.html",
@@ -5104,19 +3382,11 @@
       "count": 22
     },
     {
-      "file": "library/body-language-emojis/index.html",
-      "count": 15
-    },
-    {
       "file": "guide/linkedin-comments-guide/index.html",
       "count": 14
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "count": 14
-    },
-    {
-      "file": "library/face-emojis/index.html",
       "count": 14
     },
     {
@@ -5128,35 +3398,7 @@
       "count": 12
     },
     {
-      "file": "library/animal-emojis/index.html",
-      "count": 12
-    },
-    {
-      "file": "library/arrow-symbols/index.html",
-      "count": 12
-    },
-    {
-      "file": "library/currency-symbols/index.html",
-      "count": 12
-    },
-    {
-      "file": "library/math-symbols/index.html",
-      "count": 12
-    },
-    {
-      "file": "library/weather-symbols/index.html",
-      "count": 12
-    },
-    {
-      "file": "library/card-suit-symbols/index.html",
-      "count": 11
-    },
-    {
-      "file": "library/music-symbols/index.html",
-      "count": 11
-    },
-    {
-      "file": "library/number-symbols/index.html",
+      "file": "library/body-language-emojis/index.html",
       "count": 11
     },
     {
@@ -5164,99 +3406,31 @@
       "count": 11
     },
     {
-      "file": "library/achievement-symbols/index.html",
+      "file": "library/face-emojis/index.html",
       "count": 10
-    },
-    {
-      "file": "library/awareness-ribbons/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/bracket-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/bullet-point-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/checkmark-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/email-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/flower-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/geometric-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/people-profession-emojis/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/religious-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/smiley-face-guide/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/sparkle-symbols/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/text-faces-kaomoji/index.html",
-      "count": 10
-    },
-    {
-      "file": "library/aesthetic-symbols/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/chess-symbols/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/food-drink-emojis/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/instagram-symbols/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/line-divider-symbols/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/sports-emojis/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/tiktok-symbols/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/x-twitter-symbols/index.html",
-      "count": 9
-    },
-    {
-      "file": "library/zodiac-symbols/index.html",
-      "count": 9
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
       "count": 8
     },
     {
-      "file": "library/witchy-occult-symbols/index.html",
+      "file": "library/animal-emojis/index.html",
+      "count": 8
+    },
+    {
+      "file": "library/arrow-symbols/index.html",
+      "count": 8
+    },
+    {
+      "file": "library/currency-symbols/index.html",
+      "count": 8
+    },
+    {
+      "file": "library/math-symbols/index.html",
+      "count": 8
+    },
+    {
+      "file": "library/weather-symbols/index.html",
       "count": 8
     },
     {
@@ -5264,11 +3438,63 @@
       "count": 7
     },
     {
-      "file": "library/moon-celestial-symbols/index.html",
+      "file": "library/card-suit-symbols/index.html",
       "count": 7
     },
     {
-      "file": "library/norse-viking-runes/index.html",
+      "file": "library/music-symbols/index.html",
+      "count": 7
+    },
+    {
+      "file": "library/number-symbols/index.html",
+      "count": 7
+    },
+    {
+      "file": "library/achievement-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/awareness-ribbons/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/bracket-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/bullet-point-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/checkmark-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/email-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/flower-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/geometric-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/people-profession-emojis/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/religious-symbols/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/smiley-face-guide/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/sparkle-symbols/index.html",
       "count": 6
     },
     {
@@ -5276,27 +3502,15 @@
       "count": 6
     },
     {
-      "file": "library/aesthetic-borders-frames/index.html",
+      "file": "library/text-faces-kaomoji/index.html",
+      "count": 6
+    },
+    {
+      "file": "library/aesthetic-symbols/index.html",
       "count": 5
     },
     {
-      "file": "library/bow-ribbon-symbols/index.html",
-      "count": 5
-    },
-    {
-      "file": "library/coquette-symbols/index.html",
-      "count": 5
-    },
-    {
-      "file": "library/cottagecore-symbols/index.html",
-      "count": 5
-    },
-    {
-      "file": "library/crown-royalty-symbols/index.html",
-      "count": 5
-    },
-    {
-      "file": "library/discord-symbols/index.html",
+      "file": "library/chess-symbols/index.html",
       "count": 5
     },
     {
@@ -5304,75 +3518,35 @@
       "count": 5
     },
     {
-      "file": "library/goth-grunge-symbols/index.html",
+      "file": "library/food-drink-emojis/index.html",
       "count": 5
     },
     {
-      "file": "library/heart-symbols/index.html",
+      "file": "library/instagram-symbols/index.html",
       "count": 5
     },
     {
-      "file": "library/kawaii-cute-symbols/index.html",
+      "file": "library/line-divider-symbols/index.html",
       "count": 5
     },
     {
-      "file": "library/linkedin-comment-styling/index.html",
+      "file": "library/sports-emojis/index.html",
       "count": 5
     },
     {
-      "file": "library/roblox-symbols/index.html",
+      "file": "library/tiktok-symbols/index.html",
       "count": 5
     },
     {
-      "file": "library/traffic-road-sign-symbols/index.html",
+      "file": "library/x-twitter-symbols/index.html",
       "count": 5
     },
     {
-      "file": "library/whisper-subliminal-symbols/index.html",
-      "count": 5
-    },
-    {
-      "file": "library/y2k-symbols/index.html",
+      "file": "library/zodiac-symbols/index.html",
       "count": 5
     },
     {
       "file": "index.html",
-      "count": 4
-    },
-    {
-      "file": "library/accent-marks-diacritics/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/cross-x-symbols/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/dash-hyphen-symbols/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/egyptian-hieroglyphs/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/hand-symbols/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/linkedin-symbol-library/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/slash-backslash-symbols/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/star-symbols/index.html",
-      "count": 4
-    },
-    {
-      "file": "library/transport-symbols/index.html",
       "count": 4
     },
     {
@@ -5461,6 +3635,18 @@
     },
     {
       "file": "library/index.html",
+      "count": 2
+    },
+    {
+      "file": "library/moon-celestial-symbols/index.html",
+      "count": 2
+    },
+    {
+      "file": "library/norse-viking-runes/index.html",
+      "count": 2
+    },
+    {
+      "file": "library/witchy-occult-symbols/index.html",
       "count": 2
     },
     {
@@ -5573,6 +3759,18 @@
     },
     {
       "file": "library/emoji-flags/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/heart-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/linkedin-comment-styling/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/traffic-road-sign-symbols/index.html",
       "count": 1
     },
     {
@@ -5775,6 +3973,11 @@
       "class": "flag-label",
       "pages": 59,
       "occurrences": 4081
+    },
+    {
+      "class": "u-no-underline",
+      "pages": 58,
+      "occurrences": 246
     },
     {
       "class": "container",
@@ -6666,12 +4869,6 @@
   ],
   "repeatedPatterns": [
     {
-      "pattern": "color:inherit; text-decoration:none",
-      "count": 246,
-      "risk": "low",
-      "suggestedUtility": "u-no-underline"
-    },
-    {
       "pattern": "color:var(--text-secondary); margin-bottom:0.5rem",
       "count": 211,
       "risk": "medium",
@@ -6795,11 +4992,7 @@
   "propertyFrequency": [
     {
       "property": "color",
-      "count": 495
-    },
-    {
-      "property": "text-decoration",
-      "count": 273
+      "count": 249
     },
     {
       "property": "margin-bottom",
@@ -6828,6 +5021,10 @@
     {
       "property": "align-items",
       "count": 28
+    },
+    {
+      "property": "text-decoration",
+      "count": 27
     },
     {
       "property": "flex-direction",
@@ -8529,6 +6726,11 @@
         "selector": ".symbol-tile--combo",
         "line": 2327,
         "via": "html"
+      },
+      {
+        "selector": ".u-no-underline",
+        "line": 2335,
+        "via": "html"
       }
     ],
     "unreferenced": [
@@ -8841,16 +7043,6 @@
         "ids": [],
         "verdict": "no-reference-found",
         "note": "no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale)"
-      },
-      {
-        "selector": ".u-no-underline",
-        "line": 2335,
-        "classes": [
-          "u-no-underline"
-        ],
-        "ids": [],
-        "verdict": "maybe-js",
-        "note": "token appears in a JS string — NEEDS VERIFICATION before touching"
       },
       {
         "selector": ".u-text-center",

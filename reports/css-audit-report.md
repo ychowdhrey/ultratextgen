@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-05-28T09:26:40.435Z_
+_Generated: 2026-05-28T09:28:52.350Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -11,26 +11,26 @@ _Generated: 2026-05-28T09:26:40.435Z_
 | HTML files scanned | 136 |
 | CSS files | 5 |
 | JS files scanned | 20 |
-| Inline `style="..."` occurrences | 717 |
-| Files containing inline styles | 133 |
-| Inline risk (low / med / high) | 344 / 300 / 73 |
+| Inline `style="..."` occurrences | 471 |
+| Files containing inline styles | 113 |
+| Inline risk (low / med / high) | 98 / 300 / 73 |
 | `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 220 |
-| Component class candidates | 80 |
+| Unique HTML classes | 221 |
+| Component class candidates | 81 |
 | One-off class candidates | 119 |
-| Repeated inline patterns | 21 |
+| Repeated inline patterns | 20 |
 | style.css selectors parsed | 364 |
-| …referenced (HTML/JS/structural) | 329 |
-| …unreferenced (needs verification) | 35 |
+| …referenced (HTML/JS/structural) | 330 |
+| …unreferenced (needs verification) | 34 |
 
 Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
 
 ## 2. Top Problems
 
-1. **717 inline styles** across 133 files — the biggest maintainability drag. 344 are low-risk and safe to consolidate.
-2. **21 repeated inline patterns** — e.g. `color:inherit; text-decoration:none` appears 246× and should become a utility class.
+1. **471 inline styles** across 113 files — the biggest maintainability drag. 98 are low-risk and safe to consolidate.
+2. **20 repeated inline patterns** — e.g. `color:var(--text-secondary); margin-bottom:0.5rem` appears 211× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
-4. **35 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
+4. **34 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
 ## 3. Inline Style Findings
 
@@ -40,29 +40,29 @@ Files with the most inline styles (full list in `css-audit-data.json`):
 | --- | --- |
 | category/index.html | 34 |
 | usecase/vertical-text/index.html | 22 |
-| library/body-language-emojis/index.html | 15 |
 | guide/linkedin-comments-guide/index.html | 14 |
 | guide/style-linkedin-hooks-to-stand-out/index.html | 14 |
-| library/face-emojis/index.html | 14 |
 | guide/index.html | 12 |
 | guide/personal-branding-through-typography/index.html | 12 |
-| library/animal-emojis/index.html | 12 |
-| library/arrow-symbols/index.html | 12 |
-| library/currency-symbols/index.html | 12 |
-| library/math-symbols/index.html | 12 |
-| library/weather-symbols/index.html | 12 |
-| library/card-suit-symbols/index.html | 11 |
-| library/music-symbols/index.html | 11 |
-| library/number-symbols/index.html | 11 |
+| library/body-language-emojis/index.html | 11 |
 | usecase/index.html | 11 |
-| library/achievement-symbols/index.html | 10 |
-| library/awareness-ribbons/index.html | 10 |
-| library/bracket-symbols/index.html | 10 |
-| library/bullet-point-symbols/index.html | 10 |
-| library/checkmark-symbols/index.html | 10 |
-| library/email-symbols/index.html | 10 |
-| library/flower-symbols/index.html | 10 |
-| library/geometric-symbols/index.html | 10 |
+| library/face-emojis/index.html | 10 |
+| guide/stop-the-scroll-with-font-variation/index.html | 8 |
+| library/animal-emojis/index.html | 8 |
+| library/arrow-symbols/index.html | 8 |
+| library/currency-symbols/index.html | 8 |
+| library/math-symbols/index.html | 8 |
+| library/weather-symbols/index.html | 8 |
+| embed/linkedin-headline-generator/index.html | 7 |
+| library/card-suit-symbols/index.html | 7 |
+| library/music-symbols/index.html | 7 |
+| library/number-symbols/index.html | 7 |
+| library/achievement-symbols/index.html | 6 |
+| library/awareness-ribbons/index.html | 6 |
+| library/bracket-symbols/index.html | 6 |
+| library/bullet-point-symbols/index.html | 6 |
+| library/checkmark-symbols/index.html | 6 |
+| library/email-symbols/index.html | 6 |
 
 Sample occurrences with risk classification:
 
@@ -144,15 +144,14 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | flag-row | 59 | 4097 |
 | flag-emoji | 59 | 4097 |
 | flag-label | 59 | 4081 |
+| u-no-underline | 58 | 246 |
 | container | 53 | 59 |
 | breadcrumbs | 47 | 47 |
-| breadcrumb-separator | 47 | 86 |
 
 ### Repeated inline patterns → utility class candidates
 
 | Pattern | Count | Suggested utility | Risk |
 | --- | --- | --- | --- |
-| color:inherit; text-decoration:none | 246 | u-no-underline | low |
 | color:var(--text-secondary); margin-bottom:0.5rem | 211 | u-mb-* | medium |
 | display:none; visibility:hidden | 68 | u-hidden (verify JS toggling first) | high |
 | margin-top:1.5rem; text-align:center | 23 | u-text-center | low |
@@ -233,7 +232,6 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | .jump-links a:hover | 2014 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .section-head | 2020 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .lede | 2025 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
-| .u-no-underline | 2335 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 | .u-text-center | 2346 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 | .u-mt-15 | 2350 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
 | .table-row-divider | 2354 | no-reference-found | no HTML or JS reference found — NEEDS VERIFICATION (may be dynamic, generated, or stale) |
