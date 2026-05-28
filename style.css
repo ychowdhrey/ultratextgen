@@ -2333,3 +2333,27 @@ body.dark-mode .vertical-chip {
   font-size: 0.85rem;
   white-space: nowrap;
 }
+
+/* ─── Utility classes ────────────────────────────────────────────────────────
+   Low-risk replacements for the most-repeated inline styles, surfaced by
+   `npm run audit:css`. Adding these does not change any rendered page; HTML
+   migration happens in a follow-up PR.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.u-no-underline {
+  color: inherit;
+  text-decoration: none;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-mt-15 {
+  margin-top: 1.5rem;
+}
+
+.table-row-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem;
+}
