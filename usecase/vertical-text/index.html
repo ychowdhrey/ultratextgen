@@ -11,23 +11,23 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vertical Text Generator — Stack Text Top to Bottom for Social Media | UltraTextGen</title>
-  <meta name="description" content="Free vertical text generator. Convert horizontal text to vertical (top-to-bottom) stacked text for Instagram, TikTok, Discord, WhatsApp bios and comments. Copy and paste instantly.">
+  <title>Vertical &amp; Stacked Text Generator — Stack Text Top to Bottom | UltraTextGen</title>
+  <meta name="description" content="Free vertical & stacked text generator. Stack text top to bottom for Instagram, TikTok, Discord, WhatsApp and X bios and comments. Pick a layout, add separators, copy and paste instantly.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/vertical-text/">
   <meta property="og:image" content="https://ultratextgen.com/logo.png">
   <meta name="twitter:image" content="https://ultratextgen.com/logo.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Vertical Text Generator — Stack Text Top to Bottom for Social Media">
-  <meta property="og:description" content="Free vertical text generator. Convert horizontal text to vertical stacked text for Instagram, TikTok, Discord, WhatsApp bios and comments. Copy and paste instantly.">
+  <meta property="og:title" content="Vertical & Stacked Text Generator — Stack Text Top to Bottom">
+  <meta property="og:description" content="Free vertical & stacked text generator. Stack text top to bottom for Instagram, TikTok, Discord, WhatsApp and X bios and comments. Copy and paste instantly.">
   <meta property="og:url" content="https://ultratextgen.com/usecase/vertical-text/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="UltraTextGen">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vertical Text Generator — Stack Text Top to Bottom">
-  <meta name="twitter:description" content="Free tool to convert horizontal text to vertical stacked text. Copy and paste into Instagram bios, TikTok, Discord, WhatsApp and more.">
+  <meta name="twitter:title" content="Vertical & Stacked Text Generator — Stack Text Top to Bottom">
+  <meta name="twitter:description" content="Free tool to stack text vertically, top to bottom. Copy and paste stacked text into Instagram bios, TikTok, Discord, WhatsApp and more.">
 
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
@@ -82,7 +82,23 @@
       "name": "What is stacked text?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Stacked text is another name for vertical text — each letter is arranged one below another, forming a column instead of a row. This generator creates stacked text using plain Unicode characters and newlines, so the result works anywhere you can paste text."
+        "text": "Stacked text is another name for vertical text — each letter is arranged one below another, forming a column instead of a row. This generator creates stacked text using plain Unicode characters and newlines, so the result works anywhere you can paste text. Note that 'stacked text' is sometimes also used for a different effect — short lines of text layered on top of each other using Unicode combining marks (the 'double stack' or 'legend' look). That style only supports a few letters and often breaks when pasted, so this tool focuses on reliable top-to-bottom stacking instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a text stacker and how is it different from a double stack font?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A text stacker is any tool that turns a normal horizontal word into stacked, top-to-bottom text — that is exactly what this generator does, across every Unicode font style at once. A 'double stack font' is different: it layers one line of text on top of another on a single line using combining marks, so only certain letters render correctly and the result can break when pasted. For copy-and-paste reliability across Instagram, TikTok, Discord and more, the top-to-bottom stacker on this page is the safer choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My vertical text collapses into one line on Instagram — how do I fix it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instagram bios strip 'empty' formatting — it removes trailing spaces and collapses blank lines when you save. The stack of single characters this tool produces survives because every line has a real character on it, but a few habits help: don't leave a trailing space at the end of any line before the line break; edit your bio on the Instagram website (desktop), which preserves line breaks more reliably than the app; use the Word Divider control (Blank Line or Divider Line) instead of pressing Enter twice, since empty lines get stripped; and paste directly from this tool rather than from a rich-text editor like Google Docs, which can inject hidden formatting."
       }
     },
     {
@@ -182,7 +198,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Vertical Text Generator",
+  "name": "Vertical & Stacked Text Generator",
+  "alternateName": ["Stacked Text Generator", "Text Stacker", "Vertical Font Generator"],
   "url": "https://ultratextgen.com/usecase/vertical-text/",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
@@ -191,7 +208,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Convert horizontal text to vertical stacked text with Unicode font styles and optional separators. Copy and paste into Instagram bios, TikTok, Discord, WhatsApp and more.",
+  "description": "Convert horizontal text to vertical, top-to-bottom stacked text with Unicode font styles and optional separators. Copy and paste into Instagram bios, TikTok, Discord, WhatsApp and more.",
   "browserRequirements": "Requires JavaScript. Works in all modern browsers."
 }
 </script>
@@ -215,8 +232,8 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-card">
-        <h1 class="hero-headline">Vertical Text Generator — Stack Your Text Top to Bottom</h1>
-        <p class="hero-tagline">Type your text. Each character gets stacked vertically. Copy and paste into bios, comments, or anywhere you want text that reads top to bottom.</p>
+        <h1 class="hero-headline">Vertical &amp; Stacked Text Generator — Stack Your Text Top to Bottom</h1>
+        <p class="hero-tagline">Type your text and it gets stacked vertically, top to bottom. Pick a layout, add separators, then copy and paste your stacked text into bios, comments, or anywhere you want text that reads top to bottom.</p>
 
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea>
@@ -426,10 +443,16 @@ o</pre></div>
       </div>
 
       <div class="editorial-block">
+        <h3>🔼 Text Stacked On Top of Each Other (Combining marks)</h3>
+        <p>Some "stacked text" or "double stack font" generators do something different — they layer one short line of text <em>on top of another</em> on a single line using Unicode combining marks, producing the Le&#869;ge&#867;n&#875;d <strong>over-text</strong> look (sometimes called the "double stack" or "legend" style). That style only works with a handful of letters and often breaks when pasted. This generator focuses on clean top-to-bottom stacking that pastes reliably everywhere — for the layered combining-mark effect, see the <a href="/usecase/zalgo-text/">Zalgo Text Generator</a>.</p>
+      </div>
+
+      <div class="editorial-block">
         <h3>Which one should you use?</h3>
         <ul>
-          <li><strong>Stacked text:</strong> Social media, comments, bios</li>
-          <li><strong>Rotated text:</strong> Posters, graphics, design layouts</li>
+          <li><strong>Stacked / vertical text (this tool):</strong> Social media, comments, bios — reads top to bottom and pastes anywhere.</li>
+          <li><strong>Rotated text:</strong> Posters, graphics, design layouts.</li>
+          <li><strong>Text-on-top (combining marks):</strong> Short decorative usernames where limited letter support is acceptable.</li>
         </ul>
       </div>
 
@@ -457,22 +480,22 @@ o</pre></div>
           </thead>
           <tbody>
             <tr>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Scanning speed</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Fast, easy to skim</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Slower, forces pause</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Fast with a controlled pause</td>
+              <td class="table-row-divider">Scanning speed</td>
+              <td class="table-row-divider">Fast, easy to skim</td>
+              <td class="table-row-divider">Slower, forces pause</td>
+              <td class="table-row-divider">Fast with a controlled pause</td>
             </tr>
             <tr>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Attention</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Blends in</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Stands out</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Grabs attention, then explains</td>
+              <td class="table-row-divider">Attention</td>
+              <td class="table-row-divider">Blends in</td>
+              <td class="table-row-divider">Stands out</td>
+              <td class="table-row-divider">Grabs attention, then explains</td>
             </tr>
             <tr>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Best use</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Long content</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Hooks, names</td>
-              <td style="padding:0.75rem; border-bottom:1px solid rgba(255,255,255,0.08);">Captions, posts</td>
+              <td class="table-row-divider">Best use</td>
+              <td class="table-row-divider">Long content</td>
+              <td class="table-row-divider">Hooks, names</td>
+              <td class="table-row-divider">Captions, posts</td>
             </tr>
             <tr>
               <td style="padding:0.75rem;">Readability</td>
@@ -570,6 +593,22 @@ Feature launching tomorrow</pre></div>
   <div class="faq-answer">
     Stacked text is another name for vertical text — each letter is arranged one below another, forming a column instead of a row.
     This generator creates stacked text using plain Unicode characters and newlines, so the result works anywhere you can paste text.
+    <br><br>
+    Note that "stacked text" is sometimes also used for a different effect — short lines of text layered <em>on top of</em> each other using Unicode combining marks (the "double stack" or "legend" look). That style only supports a few letters and often breaks when pasted, so this tool focuses on reliable top-to-bottom stacking instead.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is a text stacker and how is it different from a double stack font?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    A text stacker is any tool that turns a normal horizontal word into stacked, top-to-bottom text — that is exactly what this generator does, across every Unicode font style at once.
+    A "double stack font" is different: it layers one line of text on top of another on a single line using combining marks, so only certain letters render correctly and the result can break when pasted.
+    For copy-and-paste reliability across Instagram, TikTok, Discord and more, the top-to-bottom stacker on this page is the safer choice.
   </div>
 </div>
 
@@ -623,6 +662,23 @@ Feature launching tomorrow</pre></div>
     <a href="https://ultratextgen.com/whatsapp/">WhatsApp</a>, and
     <a href="https://ultratextgen.com/x/">Twitter / X</a> all support plain text with newlines.
     Some platforms like <a href="https://ultratextgen.com/linkedin/">LinkedIn</a> may collapse multiple newlines in certain contexts, but vertical text generally renders correctly wherever plain text is accepted.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    My vertical text collapses into one line on Instagram — how do I fix it?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    <a href="https://ultratextgen.com/instagram/">Instagram</a> bios strip "empty" formatting — it removes trailing spaces and collapses blank lines when you save. The stack of single characters this tool produces survives because every line has a real character on it, but a few habits help:
+    <br><br>
+    • Don't leave a trailing space at the end of any line before the line break.<br>
+    • Edit your bio on the Instagram website (desktop) — it preserves line breaks more reliably than the app.<br>
+    • If you want gaps between word blocks, use the Word Divider control (Blank Line or Divider Line) instead of pressing Enter twice, since empty lines get stripped.<br>
+    • Paste directly from this tool rather than from a rich-text editor like Google Docs, which can inject hidden formatting.
   </div>
 </div>
 
