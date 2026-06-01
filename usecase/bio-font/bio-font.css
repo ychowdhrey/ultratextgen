@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Bio Font Generator — page-specific styles
+   Reuses global tokens from style.css (colors, radius, shadows).
+   All classes are prefixed `bf-` to avoid collisions with shared components.
+   ========================================================================== */
+
+/* ---- Platform selector (drives counter + preview + compatibility) ---- */
+.bf-platform-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.bf-platform-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.bf-platform-tab:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-purple);
+}
+.bf-platform-tab.active {
+  color: #fff;
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+}
+
+/* ---- Live character counter (platform-aware) ---- */
+.bf-counter {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.bf-counter.over {
+  color: #ef4444;
+}
+.bf-counter.over #charCount {
+  color: #ef4444;
+}
+
+/* ---- Compatibility note ---- */
+.bf-compat {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+.bf-compat svg {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  color: var(--accent-purple);
+}
+
+/* ---- Live profile preview (mock card) ---- */
+.bf-preview {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+.bf-preview-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bf-preview-avatar {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+}
+.bf-preview-meta {
+  min-width: 0;
+}
+.bf-preview-name {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+.bf-preview-platform {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.bf-preview-bio {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.bf-preview-bio.placeholder {
+  color: var(--text-muted);
+}
+
+/* ---- "How it works" 3-step strip ---- */
+.bf-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 28px 0 8px;
+}
+.bf-step {
+  position: relative;
+  padding: 16px 16px 16px 52px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.bf-step-num {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent-purple);
+}
+.bf-step-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.bf-step-desc {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+/* ---- Generic section wrapper for symbols / templates ---- */
+.bf-section {
+  margin-top: 36px;
+}
+.bf-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.bf-section-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+/* ---- Symbols & dividers: click-to-copy chips ---- */
+.bf-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.bf-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.12s ease;
+  user-select: none;
+}
+.bf-chip:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-soft);
+}
+.bf-chip.copied {
+  color: #fff;
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+}
+
+/* ---- Bio templates: ready-made copy-paste blocks ---- */
+.bf-template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.bf-template {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.bf-template-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .bf-steps {
+    grid-template-columns: 1fr;
+  }
+}
