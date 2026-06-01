@@ -239,6 +239,26 @@
 
           <div class="decoration-grid" id="decorationGrid"></div>
         </div>
+
+        <!-- Symbols & dividers: tap to copy a single glyph to your clipboard -->
+        <div class="decoration-section">
+          <div class="decoration-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+            Symbols &amp; dividers — tap to copy
+          </div>
+
+          <div class="decoration-tabs" id="bfSymbolTabs" role="tablist" aria-label="Symbol category">
+            <button class="bf-platform-tab active" data-symbol-tab="hearts" type="button">♡ Hearts</button>
+            <button class="bf-platform-tab" data-symbol-tab="stars" type="button">✦ Stars</button>
+            <button class="bf-platform-tab" data-symbol-tab="celestial" type="button">☾ Celestial</button>
+            <button class="bf-platform-tab" data-symbol-tab="cute" type="button">❀ Cute</button>
+            <button class="bf-platform-tab" data-symbol-tab="dividers" type="button">— Dividers</button>
+          </div>
+
+          <div class="bf-chip-grid" id="bfSymbolGrid"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -283,22 +303,6 @@
       </div>
 
       <div class="results-grid" id="resultsGrid"></div>
-    </section>
-
-    <!-- Symbols & Dividers (click to copy) -->
-    <section class="bf-section" aria-label="Symbols and dividers">
-      <h2 class="bf-section-title">Symbols &amp; Dividers</h2>
-      <p class="bf-section-sub">Tap any symbol to copy it instantly — sprinkle them around your name or use a divider to break up sections.</p>
-
-      <div class="decoration-tabs" id="bfSymbolTabs" role="tablist" aria-label="Symbol category">
-        <button class="bf-platform-tab active" data-symbol-tab="hearts" type="button">♡ Hearts</button>
-        <button class="bf-platform-tab" data-symbol-tab="stars" type="button">✦ Stars</button>
-        <button class="bf-platform-tab" data-symbol-tab="celestial" type="button">☾ Celestial</button>
-        <button class="bf-platform-tab" data-symbol-tab="cute" type="button">❀ Cute</button>
-        <button class="bf-platform-tab" data-symbol-tab="dividers" type="button">— Dividers</button>
-      </div>
-
-      <div class="bf-chip-grid" id="bfSymbolGrid"></div>
     </section>
 
     <!-- Bio templates -->
