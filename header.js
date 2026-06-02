@@ -1,6 +1,52 @@
 (function () {
   "use strict";
 
+  const GTM_CONTAINER_ID = "GTM-P55HXK8Q";
+  const GTM_LOADER_SELECTOR = 'script[src*="googletagmanager.com/gtm.js"]';
+  const GTM_NOSCRIPT_SELECTOR = 'noscript iframe[src*="googletagmanager.com/ns.html"]';
+
+  function insertGtmNoscript() {
+    if (!document.body || document.querySelector(GTM_NOSCRIPT_SELECTOR)) {
+      return;
+    }
+
+    const noscript = document.createElement("noscript");
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_CONTAINER_ID;
+    iframe.height = "0";
+    iframe.width = "0";
+    iframe.style.display = "none";
+    iframe.style.visibility = "hidden";
+    noscript.appendChild(iframe);
+    document.body.insertBefore(noscript, document.body.firstChild);
+  }
+
+  if (!window.__utgGtmInjected) {
+    window.__utgGtmInjected = true;
+
+    if (!document.querySelector(GTM_LOADER_SELECTOR)) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+
+      const firstScript = document.getElementsByTagName("script")[0];
+      const gtmScript = document.createElement("script");
+      gtmScript.async = true;
+      gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_CONTAINER_ID;
+
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(gtmScript, firstScript);
+      } else if (document.head) {
+        document.head.appendChild(gtmScript);
+      }
+
+      if (document.body) {
+        insertGtmNoscript();
+      } else {
+        document.addEventListener("DOMContentLoaded", insertGtmNoscript);
+      }
+    }
+  }
+
   var headerHTML = '<header class="header">' +
     '<div class="header-inner">' +
       '<a href="/" class="logo">' +
@@ -47,40 +93,48 @@
     '</div>' +
   '</header>';
 
-  var placeholder = document.getElementById("shared-header");
-  if (placeholder) {
-    placeholder.outerHTML = headerHTML;
-  } else {
-    var body = document.body;
-    var insertAfter = null;
-    for (var i = 0; i < body.childNodes.length; i++) {
-      var node = body.childNodes[i];
-      if (node.nodeType === 8 && node.nodeValue.trim() === "End Google Tag Manager (noscript)") {
-        insertAfter = node;
-        break;
-      }
-    }
-    var tmp = document.createElement("div");
-    tmp.innerHTML = headerHTML;
-    var header = tmp.firstChild;
-    if (insertAfter && insertAfter.nextSibling) {
-      body.insertBefore(header, insertAfter.nextSibling);
+  function initializeSharedHeader() {
+    var placeholder = document.getElementById("shared-header");
+    if (placeholder) {
+      placeholder.outerHTML = headerHTML;
     } else {
-      body.insertBefore(header, body.firstChild);
+      const body = document.body;
+      let insertAfter = body.querySelector(GTM_NOSCRIPT_SELECTOR);
+      if (insertAfter) {
+        insertAfter = insertAfter.parentNode;
+      } else {
+        for (let i = 0; i < body.childNodes.length; i++) {
+          const node = body.childNodes[i];
+          if (node.nodeType === 8 && node.nodeValue.trim() === "End Google Tag Manager (noscript)") {
+            insertAfter = node;
+            break;
+          }
+        }
+      }
+      const tmp = document.createElement("div");
+      tmp.innerHTML = headerHTML;
+      const header = tmp.firstChild;
+      body.insertBefore(header, insertAfter ? insertAfter.nextSibling : body.firstChild);
+    }
+
+    // Dark mode: apply saved preference immediately (before paint)
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+
+    // Dark mode toggle
+    var dmBtn = document.getElementById("darkModeBtn");
+    if (dmBtn) {
+      dmBtn.addEventListener("click", function () {
+        var isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", isDark ? "true" : "false");
+      });
     }
   }
 
-  // Dark mode: apply saved preference immediately (before paint)
-  if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark-mode");
-  }
-
-  // Dark mode toggle
-  var dmBtn = document.getElementById("darkModeBtn");
-  if (dmBtn) {
-    dmBtn.addEventListener("click", function () {
-      var isDark = document.body.classList.toggle("dark-mode");
-      localStorage.setItem("darkMode", isDark ? "true" : "false");
-    });
+  if (document.body) {
+    initializeSharedHeader();
+  } else {
+    document.addEventListener("DOMContentLoaded", initializeSharedHeader);
   }
 })();
