@@ -93,40 +93,48 @@
     '</div>' +
   '</header>';
 
-  var placeholder = document.getElementById("shared-header");
-  if (placeholder) {
-    placeholder.outerHTML = headerHTML;
-  } else {
-    const body = document.body;
-    let insertAfter = body.querySelector(GTM_NOSCRIPT_SELECTOR);
-    if (insertAfter) {
-      insertAfter = insertAfter.parentNode;
+  function initializeSharedHeader() {
+    var placeholder = document.getElementById("shared-header");
+    if (placeholder) {
+      placeholder.outerHTML = headerHTML;
     } else {
-      for (let i = 0; i < body.childNodes.length; i++) {
-        const node = body.childNodes[i];
-        if (node.nodeType === 8 && node.nodeValue.trim() === "End Google Tag Manager (noscript)") {
-          insertAfter = node;
-          break;
+      const body = document.body;
+      let insertAfter = body.querySelector(GTM_NOSCRIPT_SELECTOR);
+      if (insertAfter) {
+        insertAfter = insertAfter.parentNode;
+      } else {
+        for (let i = 0; i < body.childNodes.length; i++) {
+          const node = body.childNodes[i];
+          if (node.nodeType === 8 && node.nodeValue.trim() === "End Google Tag Manager (noscript)") {
+            insertAfter = node;
+            break;
+          }
         }
       }
+      const tmp = document.createElement("div");
+      tmp.innerHTML = headerHTML;
+      const header = tmp.firstChild;
+      body.insertBefore(header, insertAfter ? insertAfter.nextSibling : body.firstChild);
     }
-    const tmp = document.createElement("div");
-    tmp.innerHTML = headerHTML;
-    const header = tmp.firstChild;
-    body.insertBefore(header, insertAfter ? insertAfter.nextSibling : body.firstChild);
+
+    // Dark mode: apply saved preference immediately (before paint)
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+
+    // Dark mode toggle
+    var dmBtn = document.getElementById("darkModeBtn");
+    if (dmBtn) {
+      dmBtn.addEventListener("click", function () {
+        var isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", isDark ? "true" : "false");
+      });
+    }
   }
 
-  // Dark mode: apply saved preference immediately (before paint)
-  if (localStorage.getItem("darkMode") === "true") {
-    document.body.classList.add("dark-mode");
-  }
-
-  // Dark mode toggle
-  var dmBtn = document.getElementById("darkModeBtn");
-  if (dmBtn) {
-    dmBtn.addEventListener("click", function () {
-      var isDark = document.body.classList.toggle("dark-mode");
-      localStorage.setItem("darkMode", isDark ? "true" : "false");
-    });
+  if (document.body) {
+    initializeSharedHeader();
+  } else {
+    document.addEventListener("DOMContentLoaded", initializeSharedHeader);
   }
 })();
