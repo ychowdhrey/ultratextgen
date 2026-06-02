@@ -2,11 +2,29 @@
   "use strict";
 
   const GTM_CONTAINER_ID = "GTM-P55HXK8Q";
+  const GTM_LOADER_SELECTOR = 'script[src*="googletagmanager.com/gtm.js"]';
+  const GTM_NOSCRIPT_SELECTOR = 'noscript iframe[src*="googletagmanager.com/ns.html"]';
+
+  function insertGtmNoscript() {
+    if (!document.body || document.querySelector(GTM_NOSCRIPT_SELECTOR)) {
+      return;
+    }
+
+    const noscript = document.createElement("noscript");
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_CONTAINER_ID;
+    iframe.height = "0";
+    iframe.width = "0";
+    iframe.style.display = "none";
+    iframe.style.visibility = "hidden";
+    noscript.appendChild(iframe);
+    document.body.insertBefore(noscript, document.body.firstChild);
+  }
 
   if (!window.__utgGtmInjected) {
     window.__utgGtmInjected = true;
 
-    if (!document.querySelector('script[src*="googletagmanager.com/gtm.js"]')) {
+    if (!document.querySelector(GTM_LOADER_SELECTOR)) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
 
@@ -21,16 +39,10 @@
         document.head.appendChild(gtmScript);
       }
 
-      if (document.body && !document.querySelector('noscript iframe[src*="googletagmanager.com/ns.html"]')) {
-        const noscript = document.createElement("noscript");
-        const iframe = document.createElement("iframe");
-        iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_CONTAINER_ID;
-        iframe.height = "0";
-        iframe.width = "0";
-        iframe.style.display = "none";
-        iframe.style.visibility = "hidden";
-        noscript.appendChild(iframe);
-        document.body.insertBefore(noscript, document.body.firstChild);
+      if (document.body) {
+        insertGtmNoscript();
+      } else {
+        document.addEventListener("DOMContentLoaded", insertGtmNoscript);
       }
     }
   }
@@ -86,7 +98,7 @@
     placeholder.outerHTML = headerHTML;
   } else {
     const body = document.body;
-    let insertAfter = body.querySelector('noscript iframe[src*="googletagmanager.com/ns.html"]');
+    let insertAfter = body.querySelector(GTM_NOSCRIPT_SELECTOR);
     if (insertAfter) {
       insertAfter = insertAfter.parentNode;
     } else {
