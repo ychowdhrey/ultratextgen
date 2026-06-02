@@ -1,6 +1,40 @@
 (function () {
   "use strict";
 
+  const GTM_CONTAINER_ID = "GTM-P55HXK8Q";
+
+  if (!window.__utgGtmInjected) {
+    window.__utgGtmInjected = true;
+
+    if (!document.querySelector('script[src*="googletagmanager.com/gtm.js"]')) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+
+      var firstScript = document.getElementsByTagName("script")[0];
+      var gtmScript = document.createElement("script");
+      gtmScript.async = true;
+      gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_CONTAINER_ID;
+
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(gtmScript, firstScript);
+      } else if (document.head) {
+        document.head.appendChild(gtmScript);
+      }
+
+      if (document.body && !document.querySelector('noscript iframe[src*="googletagmanager.com/ns.html"]')) {
+        var noscript = document.createElement("noscript");
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_CONTAINER_ID;
+        iframe.height = "0";
+        iframe.width = "0";
+        iframe.style.display = "none";
+        iframe.style.visibility = "hidden";
+        noscript.appendChild(iframe);
+        document.body.insertBefore(noscript, document.body.firstChild);
+      }
+    }
+  }
+
   var headerHTML = '<header class="header">' +
     '<div class="header-inner">' +
       '<a href="/" class="logo">' +
@@ -52,22 +86,22 @@
     placeholder.outerHTML = headerHTML;
   } else {
     var body = document.body;
-    var insertAfter = null;
-    for (var i = 0; i < body.childNodes.length; i++) {
-      var node = body.childNodes[i];
-      if (node.nodeType === 8 && node.nodeValue.trim() === "End Google Tag Manager (noscript)") {
-        insertAfter = node;
-        break;
+    var insertAfter = body.querySelector('noscript iframe[src*="googletagmanager.com/ns.html"]');
+    if (insertAfter) {
+      insertAfter = insertAfter.parentNode;
+    } else {
+      for (var i = 0; i < body.childNodes.length; i++) {
+        var node = body.childNodes[i];
+        if (node.nodeType === 8 && node.nodeValue.trim() === "End Google Tag Manager (noscript)") {
+          insertAfter = node;
+          break;
+        }
       }
     }
     var tmp = document.createElement("div");
     tmp.innerHTML = headerHTML;
     var header = tmp.firstChild;
-    if (insertAfter && insertAfter.nextSibling) {
-      body.insertBefore(header, insertAfter.nextSibling);
-    } else {
-      body.insertBefore(header, body.firstChild);
-    }
+    body.insertBefore(header, insertAfter ? insertAfter.nextSibling : body.firstChild);
   }
 
   // Dark mode: apply saved preference immediately (before paint)
