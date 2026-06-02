@@ -221,6 +221,10 @@ const decorations = window.UTG_DECORATIONS || {
   let fontCategories = null;
   let categoryFontMap = {};
 
+  // Saved styles (return-driving mechanic) — persisted per device in localStorage
+  const SAVED_KEY = "utg_saved_styles";
+  let savedStyles = loadSavedStyles();
+
   /* ===================
      ELEMENTS
      =================== */
@@ -241,6 +245,49 @@ const decorations = window.UTG_DECORATIONS || {
      =================== */
   function safeAttr(str) {
     return String(str || "").replace(/"/g, "&quot;");
+  }
+
+  function loadSavedStyles() {
+    try {
+      const raw = localStorage.getItem(SAVED_KEY);
+      const list = raw ? JSON.parse(raw) : [];
+      return Array.isArray(list) ? list.filter((name) => typeof name === "string") : [];
+    } catch (err) {
+      return [];
+    }
+  }
+
+  function persistSavedStyles() {
+    try {
+      localStorage.setItem(SAVED_KEY, JSON.stringify(savedStyles));
+    } catch (err) {
+      // Storage may be unavailable (private mode / quota) — fail silently
+    }
+  }
+
+  function isSaved(name) {
+    return savedStyles.indexOf(name) !== -1;
+  }
+
+  function toggleSaved(name) {
+    if (!name || !stylesRegistry[name]) return;
+    const idx = savedStyles.indexOf(name);
+    const nowSaved = idx === -1;
+    if (nowSaved) {
+      savedStyles.push(name);
+    } else {
+      savedStyles.splice(idx, 1);
+    }
+    persistSavedStyles();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: nowSaved ? "save_style" : "unsave_style",
+      style_name: name
+    });
+
+    renderSavedStyles();
+    renderResults();
   }
 
   function applyDecoration(text) {
@@ -290,6 +337,9 @@ const decorations = window.UTG_DECORATIONS || {
       decoHtml = `<div class="style-decoration">${decoratedText}</div>`;
     }
 
+    const saved = isSaved(name);
+    const safeName = safeAttr(name);
+
     card.innerHTML = `
       <div class="style-info">
         <p class="style-name">${name}</p>
@@ -297,7 +347,10 @@ const decorations = window.UTG_DECORATIONS || {
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
         ${decoHtml}
       </div>
-      <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="Copy to clipboard">Copy <kbd class="copy-kbd">↵</kbd></button>
+      <div class="style-actions">
+        <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="Copy to clipboard">Copy <kbd class="copy-kbd">↵</kbd></button>
+        <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? "Remove from saved styles" : "Save this style"}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? "Saved" : "Save"}</span></button>
+      </div>
     `;
 
     return card;
@@ -568,6 +621,85 @@ const decorations = window.UTG_DECORATIONS || {
   }
 
   /* ===================
+     RENDER: Saved styles
+     =================== */
+  // Lazily build the "Your saved styles" section above the results grid.
+  function ensureSavedSection() {
+    if (!el.resultsGrid) return null;
+    let section = $("#savedSection");
+    if (section) return section;
+
+    const host = el.resultsGrid.closest("main") || el.resultsGrid.parentElement;
+    if (!host) return null;
+
+    section = document.createElement("section");
+    section.className = "saved-section";
+    section.id = "savedSection";
+    section.setAttribute("aria-label", "Your saved styles");
+    section.hidden = true;
+    section.innerHTML = `
+      <div class="saved-header">
+        <h2 class="saved-title">★ Your saved styles</h2>
+        <button class="saved-clear" id="savedClearBtn" type="button">Clear all</button>
+      </div>
+      <p class="saved-hint">Saved on this device — they'll be waiting here when you come back.</p>
+      <div class="results-grid saved-grid" id="savedGrid"></div>
+    `;
+    host.insertBefore(section, host.firstChild);
+
+    const clearBtn = $("#savedClearBtn", section);
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        savedStyles = [];
+        persistSavedStyles();
+        renderSavedStyles();
+        renderResults();
+      });
+    }
+    return section;
+  }
+
+  function renderSavedStyles() {
+    if (window.UTG_VERTICAL_MODE) return;
+    if (window.UTG_ZALGO_MODE) return;
+    if (!el.resultsGrid) return;
+
+    const section = ensureSavedSection();
+    if (!section) return;
+
+    const grid = $("#savedGrid", section);
+    if (!grid) return;
+
+    const valid = savedStyles.filter((name) => stylesRegistry[name]);
+
+    // Drop any saved names that no longer exist in the registry
+    if (valid.length !== savedStyles.length) {
+      savedStyles = valid;
+      persistSavedStyles();
+    }
+
+    if (valid.length === 0) {
+      section.hidden = true;
+      grid.innerHTML = "";
+      return;
+    }
+
+    section.hidden = false;
+    grid.innerHTML = "";
+
+    const inputText = el.mainInput ? el.mainInput.value : "";
+    valid.forEach((name) => {
+      const style = stylesRegistry[name];
+      let converted = "";
+      if (inputText && Render && typeof Render.renderAny === "function") {
+        converted = Render.renderAny(inputText, style);
+      }
+      const decorated = converted ? applyDecoration(converted) : "";
+      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
+    });
+  }
+
+  /* ===================
      RENDER: Results
      =================== */
   function renderResults() {
@@ -668,6 +800,7 @@ const decorations = window.UTG_DECORATIONS || {
         syncInputUI();
         clearTimeout(urlSyncTimer);
         urlSyncTimer = setTimeout(pushUrlState, 400);
+        renderSavedStyles();
         renderResults();
       });
     }
@@ -678,6 +811,7 @@ const decorations = window.UTG_DECORATIONS || {
         syncInputUI();
         pushUrlState();
         el.mainInput.focus();
+        renderSavedStyles();
         renderResults();
       });
     }
@@ -747,6 +881,14 @@ document.addEventListener("click", async (e) => {
   }
 });
 
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest ? e.target.closest(".save-btn") : null;
+  if (!btn) return;
+  const name = btn.dataset.style || "";
+  if (!name) return;
+  toggleSaved(name);
+});
+
 document.addEventListener("copy", () => {
   const selection = window.getSelection()?.toString();
   if (selection && selection.length > 0) {
@@ -781,6 +923,7 @@ document.addEventListener("copy", () => {
     }
 
     renderDecorations();
+    renderSavedStyles();
 
     // Show skeleton placeholders while fonts.json loads
     showLoadingState();

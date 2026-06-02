@@ -611,6 +611,97 @@
       cursor: not-allowed;
     }
 
+    /* Card action buttons (copy + save) */
+    .style-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .save-btn {
+      padding: 8px 12px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: var(--bg-white);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .save-btn .save-icon {
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .save-btn:hover {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+    }
+
+    .save-btn.is-saved {
+      background: rgba(139, 92, 246, 0.1);
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+    }
+
+    /* Saved styles section (return-driving) */
+    .saved-section {
+      margin-bottom: 20px;
+      padding: 16px 20px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .saved-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .saved-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .saved-clear {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.8125rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: color 0.2s;
+    }
+
+    .saved-clear:hover {
+      color: var(--accent-purple);
+    }
+
+    .saved-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin: 4px 0 12px;
+    }
+
+    .saved-grid {
+      padding-bottom: 0;
+    }
+
     /* FAQ Section (standalone, before footer) */
     .faq-section-wrapper {
       padding: 48px 24px;
@@ -879,6 +970,20 @@
       .copy-btn {
         width: 100%;
         text-align: center;
+      }
+
+      .style-actions {
+        width: 100%;
+      }
+
+      .style-actions .copy-btn {
+        width: auto;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .save-btn {
+        justify-content: center;
       }
 
       .category-section {
