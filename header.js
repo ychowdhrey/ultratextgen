@@ -10,8 +10,8 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
 
-      var firstScript = document.getElementsByTagName("script")[0];
-      var gtmScript = document.createElement("script");
+      const firstScript = document.getElementsByTagName("script")[0];
+      const gtmScript = document.createElement("script");
       gtmScript.async = true;
       gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_CONTAINER_ID;
 
@@ -22,8 +22,8 @@
       }
 
       if (document.body && !document.querySelector('noscript iframe[src*="googletagmanager.com/ns.html"]')) {
-        var noscript = document.createElement("noscript");
-        var iframe = document.createElement("iframe");
+        const noscript = document.createElement("noscript");
+        const iframe = document.createElement("iframe");
         iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_CONTAINER_ID;
         iframe.height = "0";
         iframe.width = "0";
@@ -85,22 +85,22 @@
   if (placeholder) {
     placeholder.outerHTML = headerHTML;
   } else {
-    var body = document.body;
-    var insertAfter = body.querySelector('noscript iframe[src*="googletagmanager.com/ns.html"]');
+    const body = document.body;
+    let insertAfter = body.querySelector('noscript iframe[src*="googletagmanager.com/ns.html"]');
     if (insertAfter) {
       insertAfter = insertAfter.parentNode;
     } else {
-      for (var i = 0; i < body.childNodes.length; i++) {
-        var node = body.childNodes[i];
+      for (let i = 0; i < body.childNodes.length; i++) {
+        const node = body.childNodes[i];
         if (node.nodeType === 8 && node.nodeValue.trim() === "End Google Tag Manager (noscript)") {
           insertAfter = node;
           break;
         }
       }
     }
-    var tmp = document.createElement("div");
+    const tmp = document.createElement("div");
     tmp.innerHTML = headerHTML;
-    var header = tmp.firstChild;
+    const header = tmp.firstChild;
     body.insertBefore(header, insertAfter ? insertAfter.nextSibling : body.firstChild);
   }
 
