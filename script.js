@@ -931,6 +931,9 @@ document.addEventListener("copy", () => {
     // Load font categories and render tabs
     loadFontCategories();
 
+    // Expose rerender hook for context-specific pages that adjust filters
+    window.UTG_RENDER_RESULTS = renderResults;
+
     // collapse/expand behavior should respond to resize on desktop
     window.addEventListener('resize', debounce(() => {
       collapseCategoryTabs();
