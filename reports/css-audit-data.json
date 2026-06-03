@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T07:41:06.568Z",
+  "generatedAt": "2026-06-03T08:34:24.452Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -7,11 +7,11 @@
     "mdTopN": 25
   },
   "summary": {
-    "htmlFiles": 139,
+    "htmlFiles": 140,
     "cssFiles": 6,
     "jsFiles": 21,
     "pageTypes": {
-      "other": 10,
+      "other": 11,
       "category": 17,
       "localized": 20,
       "platform": 11,
@@ -20,12 +20,12 @@
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 193,
-    "filesWithInlineStyles": 77,
+    "inlineStyleOccurrences": 194,
+    "filesWithInlineStyles": 78,
     "inlineRiskTally": {
       "low": 41,
       "medium": 76,
-      "high": 76
+      "high": 77
     },
     "styleBlocks": 5,
     "uniqueClasses": 252,
@@ -125,6 +125,13 @@
     },
     {
       "file": "answers/what-font-does-linkedin-use/index.html",
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/what-font-does-snapchat-use/index.html",
       "line": 88,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
@@ -678,28 +685,28 @@
     },
     {
       "file": "guide/index.html",
-      "line": 171,
+      "line": 165,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
     },
     {
       "file": "guide/index.html",
-      "line": 185,
+      "line": 179,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
     },
     {
       "file": "guide/index.html",
-      "line": 205,
+      "line": 199,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
     },
     {
       "file": "guide/index.html",
-      "line": 225,
+      "line": 219,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
@@ -1547,6 +1554,10 @@
       "count": 1
     },
     {
+      "file": "answers/what-font-does-snapchat-use/index.html",
+      "count": 1
+    },
+    {
       "file": "category/bold-fonts/bold/index.html",
       "count": 1
     },
@@ -1783,78 +1794,78 @@
   "componentClasses": [
     {
       "class": "hero-headline",
-      "pages": 136,
-      "occurrences": 136
+      "pages": 137,
+      "occurrences": 137
     },
     {
       "class": "hero",
-      "pages": 134,
-      "occurrences": 134
+      "pages": 135,
+      "occurrences": 135
     },
     {
       "class": "footer",
-      "pages": 125,
-      "occurrences": 125
+      "pages": 126,
+      "occurrences": 126
     },
     {
       "class": "footer-inner",
-      "pages": 125,
-      "occurrences": 125
+      "pages": 126,
+      "occurrences": 126
     },
     {
       "class": "hero-inner",
-      "pages": 123,
-      "occurrences": 123
+      "pages": 124,
+      "occurrences": 124
     },
     {
       "class": "editorial-section",
-      "pages": 108,
-      "occurrences": 314
+      "pages": 109,
+      "occurrences": 322
     },
     {
       "class": "hero-tagline",
-      "pages": 100,
-      "occurrences": 100
+      "pages": 101,
+      "occurrences": 101
     },
     {
       "class": "editorial-block",
-      "pages": 81,
-      "occurrences": 224
+      "pages": 82,
+      "occurrences": 230
     },
     {
       "class": "cta-card",
-      "pages": 80,
+      "pages": 81,
       "occurrences": 85
     },
     {
       "class": "cta-btn",
-      "pages": 80,
+      "pages": 81,
       "occurrences": 85
     },
     {
-      "class": "article-section-label",
-      "pages": 71,
-      "occurrences": 557
+      "class": "section-divider",
+      "pages": 72,
+      "occurrences": 491
     },
     {
-      "class": "section-divider",
-      "pages": 70,
-      "occurrences": 484
+      "class": "article-section-label",
+      "pages": 72,
+      "occurrences": 564
     },
     {
       "class": "compare-grid",
-      "pages": 69,
-      "occurrences": 88
+      "pages": 70,
+      "occurrences": 89
     },
     {
       "class": "compare-card",
-      "pages": 69,
-      "occurrences": 348
+      "pages": 70,
+      "occurrences": 351
     },
     {
       "class": "variant-muted",
-      "pages": 69,
-      "occurrences": 324
+      "pages": 70,
+      "occurrences": 327
     },
     {
       "class": "mood-explainers",
@@ -1863,8 +1874,8 @@
     },
     {
       "class": "u-no-underline",
-      "pages": 60,
-      "occurrences": 255
+      "pages": 61,
+      "occurrences": 258
     },
     {
       "class": "symbol-tile",
@@ -1903,33 +1914,33 @@
     },
     {
       "class": "breadcrumbs",
-      "pages": 50,
-      "occurrences": 50
+      "pages": 51,
+      "occurrences": 51
     },
     {
       "class": "breadcrumb-separator",
-      "pages": 50,
-      "occurrences": 91
+      "pages": 51,
+      "occurrences": 93
     },
     {
       "class": "breadcrumb-current",
-      "pages": 50,
-      "occurrences": 50
+      "pages": 51,
+      "occurrences": 51
     },
     {
       "class": "faq-item",
       "pages": 47,
-      "occurrences": 797
+      "occurrences": 806
     },
     {
       "class": "faq-question",
       "pages": 47,
-      "occurrences": 797
+      "occurrences": 806
     },
     {
       "class": "faq-answer",
       "pages": 47,
-      "occurrences": 797
+      "occurrences": 806
     },
     {
       "class": "active",
@@ -1999,7 +2010,7 @@
     {
       "class": "faq-category",
       "pages": 40,
-      "occurrences": 253
+      "occurrences": 256
     },
     {
       "class": "u-secondary-tight",
@@ -2057,6 +2068,26 @@
       "occurrences": 85
     },
     {
+      "class": "block-example",
+      "pages": 11,
+      "occurrences": 58
+    },
+    {
+      "class": "compare-badge",
+      "pages": 11,
+      "occurrences": 71
+    },
+    {
+      "class": "data-table-wrap",
+      "pages": 11,
+      "occurrences": 19
+    },
+    {
+      "class": "data-table",
+      "pages": 11,
+      "occurrences": 19
+    },
+    {
       "class": "input-clear-btn",
       "pages": 11,
       "occurrences": 11
@@ -2107,26 +2138,6 @@
       "occurrences": 11
     },
     {
-      "class": "block-example",
-      "pages": 10,
-      "occurrences": 57
-    },
-    {
-      "class": "compare-badge",
-      "pages": 10,
-      "occurrences": 68
-    },
-    {
-      "class": "data-table-wrap",
-      "pages": 10,
-      "occurrences": 17
-    },
-    {
-      "class": "data-table",
-      "pages": 10,
-      "occurrences": 17
-    },
-    {
       "class": "example-pair",
       "pages": 9,
       "occurrences": 123
@@ -2147,6 +2158,11 @@
       "occurrences": 76
     },
     {
+      "class": "section-subline",
+      "pages": 8,
+      "occurrences": 18
+    },
+    {
       "class": "mood-explainer",
       "pages": 8,
       "occurrences": 168
@@ -2160,11 +2176,6 @@
       "class": "u-secondary-block",
       "pages": 8,
       "occurrences": 13
-    },
-    {
-      "class": "section-subline",
-      "pages": 7,
-      "occurrences": 16
     },
     {
       "class": "variant-positive",
@@ -2209,17 +2220,17 @@
     {
       "class": "style-card",
       "pages": 5,
-      "occurrences": 32
+      "occurrences": 33
     },
     {
       "class": "style-name",
       "pages": 5,
-      "occurrences": 32
+      "occurrences": 33
     },
     {
       "class": "style-tag",
       "pages": 5,
-      "occurrences": 32
+      "occurrences": 33
     },
     {
       "class": "brand-card",
@@ -2942,7 +2953,7 @@
   "repeatedPatterns": [
     {
       "pattern": "display:none; visibility:hidden",
-      "count": 71,
+      "count": 72,
       "risk": "high",
       "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
@@ -3034,11 +3045,11 @@
   "propertyFrequency": [
     {
       "property": "display",
-      "count": 78
+      "count": 79
     },
     {
       "property": "visibility",
-      "count": 71
+      "count": 72
     },
     {
       "property": "gap",
