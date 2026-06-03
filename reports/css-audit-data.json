@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T07:34:47.231Z",
+  "generatedAt": "2026-06-03T07:41:06.568Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -11,25 +11,25 @@
     "cssFiles": 6,
     "jsFiles": 21,
     "pageTypes": {
-      "other": 7,
+      "other": 10,
       "category": 17,
       "localized": 20,
       "platform": 11,
       "embed": 1,
-      "guide": 10,
+      "guide": 8,
       "library": 62,
-      "usecase": 11
+      "usecase": 10
     },
-    "inlineStyleOccurrences": 211,
+    "inlineStyleOccurrences": 193,
     "filesWithInlineStyles": 77,
     "inlineRiskTally": {
-      "low": 56,
-      "medium": 79,
+      "low": 41,
+      "medium": 76,
       "high": 76
     },
     "styleBlocks": 5,
     "uniqueClasses": 252,
-    "componentClassCandidates": 86,
+    "componentClassCandidates": 89,
     "oneOffClassCandidates": 142,
     "repeatedInlinePatterns": 15,
     "cssSelectorsTotal": 365,
@@ -108,6 +108,27 @@
       "snippet": "style=\"max-width:900px;\"",
       "decl": "max-width:900px;",
       "risk": "medium"
+    },
+    {
+      "file": "answers/index.html",
+      "line": 53,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/is-linkedin-bold-text-safe/index.html",
+      "line": 96,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/what-font-does-linkedin-use/index.html",
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
     },
     {
       "file": "category/bold-fonts/bold/index.html",
@@ -657,52 +678,31 @@
     },
     {
       "file": "guide/index.html",
-      "line": 159,
+      "line": 171,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
     },
     {
       "file": "guide/index.html",
-      "line": 173,
+      "line": 185,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
     },
     {
       "file": "guide/index.html",
-      "line": 192,
+      "line": 205,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
     },
     {
       "file": "guide/index.html",
-      "line": 206,
+      "line": 225,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 226,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 246,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/is-linkedin-bold-text-safe/index.html",
-      "line": 96,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
     },
     {
       "file": "guide/linkedin-comments-guide/index.html",
@@ -915,41 +915,6 @@
       "risk": "medium"
     },
     {
-      "file": "guide/what-font-does-linkedin-use/index.html",
-      "line": 88,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "guide/what-font-does-linkedin-use/index.html",
-      "line": 204,
-      "snippet": "style=\"font-size:1.35rem;\"",
-      "decl": "font-size:1.35rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/what-font-does-linkedin-use/index.html",
-      "line": 206,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/what-font-does-linkedin-use/index.html",
-      "line": 211,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/what-font-does-linkedin-use/index.html",
-      "line": 216,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
       "file": "id/index.html",
       "line": 285,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -1025,48 +990,6 @@
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 264,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 269,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 274,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 279,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 284,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 289,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
     },
     {
       "file": "linkedin/index.html",
@@ -1343,59 +1266,17 @@
     },
     {
       "file": "usecase/index.html",
-      "line": 171,
+      "line": 178,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
     },
     {
       "file": "usecase/index.html",
-      "line": 188,
+      "line": 189,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:8px;",
       "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 199,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/linkedin-bold/index.html",
-      "line": 105,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/linkedin-bold/index.html",
-      "line": 233,
-      "snippet": "style=\"font-size:1.35rem;\"",
-      "decl": "font-size:1.35rem;",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/linkedin-bold/index.html",
-      "line": 235,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/linkedin-bold/index.html",
-      "line": 240,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/linkedin-bold/index.html",
-      "line": 245,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
     },
     {
       "file": "usecase/linkedin-headline/index.html",
@@ -1416,13 +1297,6 @@
       "line": 198,
       "snippet": "style=\"margin-top: 2.5rem;\"",
       "decl": "margin-top: 2.5rem;",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/linkedin-headline/index.html",
-      "line": 248,
-      "snippet": "style=\"margin-top:10px;\"",
-      "decl": "margin-top:10px;",
       "risk": "low"
     },
     {
@@ -1566,15 +1440,11 @@
     },
     {
       "file": "guide/index.html",
-      "count": 14
-    },
-    {
-      "file": "usecase/index.html",
       "count": 12
     },
     {
-      "file": "linkedin/index.html",
-      "count": 10
+      "file": "usecase/index.html",
+      "count": 11
     },
     {
       "file": "usecase/vertical-text/index.html",
@@ -1601,15 +1471,7 @@
       "count": 5
     },
     {
-      "file": "guide/what-font-does-linkedin-use/index.html",
-      "count": 5
-    },
-    {
-      "file": "usecase/linkedin-bold/index.html",
-      "count": 5
-    },
-    {
-      "file": "usecase/linkedin-headline/index.html",
+      "file": "linkedin/index.html",
       "count": 4
     },
     {
@@ -1634,6 +1496,10 @@
     },
     {
       "file": "usecase/bio-font/index.html",
+      "count": 3
+    },
+    {
+      "file": "usecase/linkedin-headline/index.html",
       "count": 3
     },
     {
@@ -1666,6 +1532,18 @@
     },
     {
       "file": "404.html",
+      "count": 1
+    },
+    {
+      "file": "answers/index.html",
+      "count": 1
+    },
+    {
+      "file": "answers/is-linkedin-bold-text-safe/index.html",
+      "count": 1
+    },
+    {
+      "file": "answers/what-font-does-linkedin-use/index.html",
       "count": 1
     },
     {
@@ -1754,10 +1632,6 @@
     },
     {
       "file": "guide/branding-with-fonts-for-social-media/index.html",
-      "count": 1
-    },
-    {
-      "file": "guide/is-linkedin-bold-text-safe/index.html",
       "count": 1
     },
     {
@@ -1919,13 +1793,13 @@
     },
     {
       "class": "footer",
-      "pages": 124,
-      "occurrences": 124
+      "pages": 125,
+      "occurrences": 125
     },
     {
       "class": "footer-inner",
-      "pages": 124,
-      "occurrences": 124
+      "pages": 125,
+      "occurrences": 125
     },
     {
       "class": "hero-inner",
@@ -1935,7 +1809,7 @@
     {
       "class": "editorial-section",
       "pages": 108,
-      "occurrences": 318
+      "occurrences": 314
     },
     {
       "class": "hero-tagline",
@@ -1944,38 +1818,23 @@
     },
     {
       "class": "editorial-block",
-      "pages": 82,
-      "occurrences": 227
+      "pages": 81,
+      "occurrences": 224
     },
     {
       "class": "cta-card",
-      "pages": 79,
-      "occurrences": 83
+      "pages": 80,
+      "occurrences": 85
     },
     {
       "class": "cta-btn",
-      "pages": 79,
-      "occurrences": 83
+      "pages": 80,
+      "occurrences": 85
     },
     {
       "class": "article-section-label",
-      "pages": 72,
-      "occurrences": 562
-    },
-    {
-      "class": "compare-grid",
-      "pages": 70,
-      "occurrences": 89
-    },
-    {
-      "class": "compare-card",
-      "pages": 70,
-      "occurrences": 351
-    },
-    {
-      "class": "variant-muted",
-      "pages": 70,
-      "occurrences": 327
+      "pages": 71,
+      "occurrences": 557
     },
     {
       "class": "section-divider",
@@ -1983,9 +1842,29 @@
       "occurrences": 484
     },
     {
+      "class": "compare-grid",
+      "pages": 69,
+      "occurrences": 88
+    },
+    {
+      "class": "compare-card",
+      "pages": 69,
+      "occurrences": 348
+    },
+    {
+      "class": "variant-muted",
+      "pages": 69,
+      "occurrences": 324
+    },
+    {
       "class": "mood-explainers",
       "pages": 67,
       "occurrences": 439
+    },
+    {
+      "class": "u-no-underline",
+      "pages": 60,
+      "occurrences": 255
     },
     {
       "class": "symbol-tile",
@@ -2018,14 +1897,9 @@
       "occurrences": 4081
     },
     {
-      "class": "u-no-underline",
-      "pages": 58,
-      "occurrences": 246
-    },
-    {
       "class": "container",
       "pages": 54,
-      "occurrences": 67
+      "occurrences": 62
     },
     {
       "class": "breadcrumbs",
@@ -2035,7 +1909,7 @@
     {
       "class": "breadcrumb-separator",
       "pages": 50,
-      "occurrences": 92
+      "occurrences": 91
     },
     {
       "class": "breadcrumb-current",
@@ -2044,88 +1918,88 @@
     },
     {
       "class": "faq-item",
-      "pages": 48,
-      "occurrences": 801
+      "pages": 47,
+      "occurrences": 797
     },
     {
       "class": "faq-question",
-      "pages": 48,
-      "occurrences": 801
+      "pages": 47,
+      "occurrences": 797
     },
     {
       "class": "faq-answer",
-      "pages": 48,
-      "occurrences": 801
+      "pages": 47,
+      "occurrences": 797
     },
     {
       "class": "active",
-      "pages": 47,
-      "occurrences": 95
+      "pages": 46,
+      "occurrences": 93
     },
     {
       "class": "hero-card",
-      "pages": 46,
-      "occurrences": 46
-    },
-    {
-      "class": "input-wrapper",
-      "pages": 46,
-      "occurrences": 46
-    },
-    {
-      "class": "main-input",
-      "pages": 46,
-      "occurrences": 46
-    },
-    {
-      "class": "char-count",
-      "pages": 46,
-      "occurrences": 46
-    },
-    {
-      "class": "decoration-tabs",
-      "pages": 44,
-      "occurrences": 50
-    },
-    {
-      "class": "decoration-tab",
-      "pages": 44,
-      "occurrences": 342
-    },
-    {
-      "class": "decoration-section",
-      "pages": 43,
+      "pages": 45,
       "occurrences": 45
     },
     {
-      "class": "decoration-grid",
-      "pages": 43,
-      "occurrences": 43
+      "class": "input-wrapper",
+      "pages": 45,
+      "occurrences": 45
     },
     {
-      "class": "results-grid",
-      "pages": 43,
-      "occurrences": 43
+      "class": "main-input",
+      "pages": 45,
+      "occurrences": 45
     },
     {
-      "class": "decoration-label",
+      "class": "char-count",
+      "pages": 45,
+      "occurrences": 45
+    },
+    {
+      "class": "decoration-tabs",
+      "pages": 43,
+      "occurrences": 49
+    },
+    {
+      "class": "decoration-tab",
+      "pages": 43,
+      "occurrences": 335
+    },
+    {
+      "class": "decoration-section",
       "pages": 42,
       "occurrences": 44
     },
     {
-      "class": "category-section",
+      "class": "decoration-grid",
       "pages": 42,
       "occurrences": 42
     },
     {
-      "class": "category-tabs",
+      "class": "results-grid",
       "pages": 42,
-      "occurrences": 46
+      "occurrences": 42
+    },
+    {
+      "class": "decoration-label",
+      "pages": 41,
+      "occurrences": 43
+    },
+    {
+      "class": "category-section",
+      "pages": 41,
+      "occurrences": 41
+    },
+    {
+      "class": "category-tabs",
+      "pages": 41,
+      "occurrences": 45
     },
     {
       "class": "faq-category",
-      "pages": 41,
-      "occurrences": 254
+      "pages": 40,
+      "occurrences": 253
     },
     {
       "class": "u-secondary-tight",
@@ -2134,8 +2008,8 @@
     },
     {
       "class": "category-tab",
-      "pages": 30,
-      "occurrences": 233
+      "pages": 29,
+      "occurrences": 225
     },
     {
       "class": "u-mt-15",
@@ -2153,11 +2027,6 @@
       "occurrences": 143
     },
     {
-      "class": "faq-section",
-      "pages": 13,
-      "occurrences": 13
-    },
-    {
       "class": "tips-grid",
       "pages": 13,
       "occurrences": 25
@@ -2173,6 +2042,11 @@
       "occurrences": 12
     },
     {
+      "class": "faq-section",
+      "pages": 12,
+      "occurrences": 12
+    },
+    {
       "class": "cat-cta",
       "pages": 12,
       "occurrences": 33
@@ -2181,11 +2055,6 @@
       "class": "tip-icon",
       "pages": 12,
       "occurrences": 85
-    },
-    {
-      "class": "block-example",
-      "pages": 11,
-      "occurrences": 58
     },
     {
       "class": "input-clear-btn",
@@ -2238,9 +2107,14 @@
       "occurrences": 11
     },
     {
+      "class": "block-example",
+      "pages": 10,
+      "occurrences": 57
+    },
+    {
       "class": "compare-badge",
-      "pages": 11,
-      "occurrences": 71
+      "pages": 10,
+      "occurrences": 68
     },
     {
       "class": "data-table-wrap",
@@ -2254,28 +2128,23 @@
     },
     {
       "class": "example-pair",
-      "pages": 10,
-      "occurrences": 124
+      "pages": 9,
+      "occurrences": 123
     },
     {
       "class": "ex-label",
-      "pages": 10,
-      "occurrences": 239
-    },
-    {
-      "class": "ex-arrow",
-      "pages": 10,
-      "occurrences": 77
+      "pages": 9,
+      "occurrences": 238
     },
     {
       "class": "ex-styled",
-      "pages": 10,
-      "occurrences": 139
+      "pages": 9,
+      "occurrences": 138
     },
     {
-      "class": "ex-plain",
+      "class": "ex-arrow",
       "pages": 9,
-      "occurrences": 111
+      "occurrences": 76
     },
     {
       "class": "mood-explainer",
@@ -2283,24 +2152,19 @@
       "occurrences": 168
     },
     {
+      "class": "ex-plain",
+      "pages": 8,
+      "occurrences": 110
+    },
+    {
       "class": "u-secondary-block",
       "pages": 8,
       "occurrences": 13
     },
     {
-      "class": "steps-grid",
+      "class": "section-subline",
       "pages": 7,
-      "occurrences": 8
-    },
-    {
-      "class": "step-card",
-      "pages": 7,
-      "occurrences": 31
-    },
-    {
-      "class": "step-number",
-      "pages": 7,
-      "occurrences": 31
+      "occurrences": 16
     },
     {
       "class": "variant-positive",
@@ -2323,14 +2187,39 @@
       "occurrences": 90
     },
     {
-      "class": "section-subline",
+      "class": "steps-grid",
       "pages": 6,
-      "occurrences": 15
+      "occurrences": 7
+    },
+    {
+      "class": "step-card",
+      "pages": 6,
+      "occurrences": 28
+    },
+    {
+      "class": "step-number",
+      "pages": 6,
+      "occurrences": 28
     },
     {
       "class": "pull-quote",
       "pages": 6,
       "occurrences": 6
+    },
+    {
+      "class": "style-card",
+      "pages": 5,
+      "occurrences": 32
+    },
+    {
+      "class": "style-name",
+      "pages": 5,
+      "occurrences": 32
+    },
+    {
+      "class": "style-tag",
+      "pages": 5,
+      "occurrences": 32
     },
     {
       "class": "brand-card",
@@ -3058,16 +2947,16 @@
       "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
     {
-      "pattern": "text-decoration:none",
-      "count": 29,
-      "risk": "low",
-      "suggestedUtility": "u-no-underline"
-    },
-    {
       "pattern": "align-items:stretch; flex-direction:column; gap:8px",
-      "count": 20,
+      "count": 17,
       "risk": "medium",
       "suggestedUtility": "(propose a utility/component class)"
+    },
+    {
+      "pattern": "text-decoration:none",
+      "count": 17,
+      "risk": "low",
+      "suggestedUtility": "u-no-underline"
     },
     {
       "pattern": "color:var(--text-primary); font-weight:600; text-decoration:underline",
@@ -3100,12 +2989,6 @@
       "suggestedUtility": "u-maxw-*"
     },
     {
-      "pattern": "font-size:1.35rem",
-      "count": 6,
-      "risk": "low",
-      "suggestedUtility": "u-fs-*"
-    },
-    {
       "pattern": "display:none",
       "count": 5,
       "risk": "high",
@@ -3116,6 +2999,12 @@
       "count": 5,
       "risk": "low",
       "suggestedUtility": "u-mt-*"
+    },
+    {
+      "pattern": "font-size:1.35rem",
+      "count": 4,
+      "risk": "low",
+      "suggestedUtility": "u-fs-*"
     },
     {
       "pattern": "margin-top:1rem",
@@ -3152,20 +3041,20 @@
       "count": 71
     },
     {
-      "property": "text-decoration",
-      "count": 39
-    },
-    {
       "property": "gap",
-      "count": 32
+      "count": 29
     },
     {
       "property": "align-items",
-      "count": 31
+      "count": 28
+    },
+    {
+      "property": "text-decoration",
+      "count": 27
     },
     {
       "property": "flex-direction",
-      "count": 30
+      "count": 27
     },
     {
       "property": "color",
@@ -3173,7 +3062,7 @@
     },
     {
       "property": "font-size",
-      "count": 22
+      "count": 20
     },
     {
       "property": "max-width",
@@ -3181,7 +3070,7 @@
     },
     {
       "property": "margin-top",
-      "count": 14
+      "count": 13
     },
     {
       "property": "margin",

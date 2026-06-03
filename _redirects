@@ -15,6 +15,12 @@
 /usecase/comment-fonts/index.html           /usecase/comment-font/   301
 /guide/vertical-text/                       /guide/vertical-text-guide/ 301
 /guide/vertical-text/index.html             /guide/vertical-text-guide/ 301
+/guide/what-font-does-linkedin-use/         /answers/what-font-does-linkedin-use/ 301
+/guide/what-font-does-linkedin-use/index.html /answers/what-font-does-linkedin-use/ 301
+/guide/is-linkedin-bold-text-safe/            /answers/is-linkedin-bold-text-safe/ 301
+/guide/is-linkedin-bold-text-safe/index.html  /answers/is-linkedin-bold-text-safe/ 301
+/usecase/linkedin-bold/                       /linkedin/ 301
+/usecase/linkedin-bold/index.html             /linkedin/ 301
 
 # Language query-param → path-based (301 permanent)
 /?lang=fr                                   /fr/    301
