@@ -7,6 +7,7 @@
         '<span class="footer-col-title">Explore</span>' +
         '<a href="/" class="footer-link">Home</a>' +
         '<a href="/guide/" class="footer-link">Guides</a>' +
+        '<a href="/answers/" class="footer-link">Answers</a>' +
         '<a href="/usecase/" class="footer-link">Use Cases</a>' +
         '<a href="/category/" class="footer-link">Categories</a>' +
         '<a href="/library/" class="footer-link">Library</a>' +
