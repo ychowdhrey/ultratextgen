@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-06-03T09:14:37.461Z_
+_Generated: 2026-06-03T09:18:32.959Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -8,27 +8,27 @@ _Generated: 2026-06-03T09:14:37.461Z_
 
 | Metric | Value |
 | --- | --- |
-| HTML files scanned | 140 |
-| CSS files | 6 |
-| JS files scanned | 21 |
-| Inline `style="..."` occurrences | 194 |
-| Files containing inline styles | 78 |
-| Inline risk (low / med / high) | 41 / 76 / 77 |
+| HTML files scanned | 142 |
+| CSS files | 7 |
+| JS files scanned | 22 |
+| Inline `style="..."` occurrences | 196 |
+| Files containing inline styles | 80 |
+| Inline risk (low / med / high) | 41 / 76 / 79 |
 | `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 252 |
+| Unique HTML classes | 259 |
 | Component class candidates | 89 |
-| One-off class candidates | 142 |
+| One-off class candidates | 149 |
 | Repeated inline patterns | 15 |
 | style.css selectors parsed | 365 |
 | …referenced (HTML/JS/structural) | 364 |
 | …unreferenced (needs verification) | 1 |
 
-Page-type breakdown: other: 11, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
+Page-type breakdown: other: 13, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
 
 ## 2. Top Problems
 
-1. **194 inline styles** across 78 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
-2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 72× and should become a utility class.
+1. **196 inline styles** across 80 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
+2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 74× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
 4. **1 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
@@ -72,8 +72,10 @@ Sample occurrences with risk classification:
 | about/index.html | 60 | style="display:none;visibility:hidden" | high |
 | about/index.html | 66 | style="max-width:800px;" | medium |
 | about/index.html | 73 | style="max-width:900px;" | medium |
+| answers/change-font-size-on-facebook/index.html | 86 | style="display:none;visibility:hidden" | high |
 | answers/index.html | 53 | style="display:none;visibility:hidden" | high |
 | answers/is-linkedin-bold-text-safe/index.html | 96 | style="display:none;visibility:hidden" | high |
+| answers/what-font-does-facebook-use/index.html | 86 | style="display:none;visibility:hidden" | high |
 | answers/what-font-does-linkedin-use/index.html | 88 | style="display:none;visibility:hidden" | high |
 | answers/what-font-does-snapchat-use/index.html | 88 | style="display:none;visibility:hidden" | high |
 | category/bold-fonts/bold/index.html | 108 | style="display:none;visibility:hidden" | high |
@@ -91,8 +93,6 @@ Sample occurrences with risk classification:
 | category/index.html | 130 | style="max-width:800px;" | medium |
 | category/index.html | 141 | style="max-width:900px;" | medium |
 | category/index.html | 146 | style="text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95r… | medium |
-| category/index.html | 160 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
-| category/index.html | 165 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
 
 Risk legend: **low** = low risk — safe to move into style.css; **medium** = medium risk — check visually before changing; **high** = high risk — likely page-specific or interactive, do not move blindly.
 
@@ -116,6 +116,7 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
 | symbol-explorer.css | 5.2 KB | 244 | symbol explorer feature styling |
 | usecase/bio-font/bio-font.css | 5.1 KB | 239 | page-specific usecase styling |
+| facebook/facebook-context.css | 1.2 KB | 66 | platform-specific (Discord) styling |
 
 ## 6. Reusable Component Candidates
 
@@ -123,23 +124,23 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 | Class | Pages | Occurrences |
 | --- | --- | --- |
-| hero-headline | 137 | 137 |
-| hero | 135 | 135 |
-| footer | 126 | 126 |
-| footer-inner | 126 | 126 |
-| hero-inner | 124 | 124 |
-| editorial-section | 109 | 322 |
-| hero-tagline | 101 | 101 |
-| editorial-block | 82 | 230 |
-| cta-card | 81 | 85 |
-| cta-btn | 81 | 85 |
-| section-divider | 72 | 491 |
-| article-section-label | 72 | 564 |
-| compare-grid | 70 | 89 |
-| compare-card | 70 | 351 |
-| variant-muted | 70 | 327 |
+| hero-headline | 139 | 139 |
+| hero | 137 | 137 |
+| footer | 128 | 128 |
+| footer-inner | 128 | 128 |
+| hero-inner | 126 | 126 |
+| editorial-section | 112 | 335 |
+| hero-tagline | 104 | 104 |
+| editorial-block | 85 | 239 |
+| cta-card | 83 | 87 |
+| cta-btn | 83 | 87 |
+| article-section-label | 75 | 576 |
+| section-divider | 75 | 501 |
+| compare-grid | 72 | 92 |
+| compare-card | 72 | 357 |
+| variant-muted | 72 | 331 |
 | mood-explainers | 67 | 439 |
-| u-no-underline | 61 | 258 |
+| u-no-underline | 62 | 260 |
 | symbol-tile | 60 | 4630 |
 | symbol-toast | 60 | 60 |
 | flag-rows | 59 | 344 |
@@ -147,13 +148,13 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | flag-emoji | 59 | 4097 |
 | flag-label | 59 | 4081 |
 | container | 54 | 62 |
-| breadcrumbs | 51 | 51 |
+| breadcrumbs | 53 | 53 |
 
 ### Repeated inline patterns → utility class candidates
 
 | Pattern | Count | Suggested utility | Risk |
 | --- | --- | --- | --- |
-| display:none; visibility:hidden | 72 | u-hidden (verify JS toggling first) | high |
+| display:none; visibility:hidden | 74 | u-hidden (verify JS toggling first) | high |
 | align-items:stretch; flex-direction:column; gap:8px | 17 | (propose a utility/component class) | medium |
 | text-decoration:none | 17 | u-no-underline | low |
 | color:var(--text-primary); font-weight:600; text-decor… | 10 | (propose a utility/component class) | medium |
@@ -171,7 +172,7 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 ### One-off classes (used on a single page)
 
-142 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
+149 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
 
 | Class | Occurrences |
 | --- | --- |
@@ -199,7 +200,7 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | --- | --- | --- | --- |
 | .variation-char-over | 2018 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 
-JS class-reference tokens collected: 193 (strict). These were used to avoid falsely flagging JS-driven CSS.
+JS class-reference tokens collected: 197 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
 ## 8. Recommended Next Actions
 
