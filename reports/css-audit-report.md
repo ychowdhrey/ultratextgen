@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-06-03T07:41:06.568Z_
+_Generated: 2026-06-03T08:34:24.452Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -8,12 +8,12 @@ _Generated: 2026-06-03T07:41:06.568Z_
 
 | Metric | Value |
 | --- | --- |
-| HTML files scanned | 139 |
+| HTML files scanned | 140 |
 | CSS files | 6 |
 | JS files scanned | 21 |
-| Inline `style="..."` occurrences | 193 |
-| Files containing inline styles | 77 |
-| Inline risk (low / med / high) | 41 / 76 / 76 |
+| Inline `style="..."` occurrences | 194 |
+| Files containing inline styles | 78 |
+| Inline risk (low / med / high) | 41 / 76 / 77 |
 | `<style>` blocks in HTML | 5 |
 | Unique HTML classes | 252 |
 | Component class candidates | 89 |
@@ -23,12 +23,12 @@ _Generated: 2026-06-03T07:41:06.568Z_
 | …referenced (HTML/JS/structural) | 364 |
 | …unreferenced (needs verification) | 1 |
 
-Page-type breakdown: other: 10, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
+Page-type breakdown: other: 11, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
 
 ## 2. Top Problems
 
-1. **193 inline styles** across 77 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
-2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 71× and should become a utility class.
+1. **194 inline styles** across 78 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
+2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 72× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
 4. **1 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
@@ -75,6 +75,7 @@ Sample occurrences with risk classification:
 | answers/index.html | 53 | style="display:none;visibility:hidden" | high |
 | answers/is-linkedin-bold-text-safe/index.html | 96 | style="display:none;visibility:hidden" | high |
 | answers/what-font-does-linkedin-use/index.html | 88 | style="display:none;visibility:hidden" | high |
+| answers/what-font-does-snapchat-use/index.html | 88 | style="display:none;visibility:hidden" | high |
 | category/bold-fonts/bold/index.html | 108 | style="display:none;visibility:hidden" | high |
 | category/bold-fonts/bold-italic/index.html | 108 | style="display:none;visibility:hidden" | high |
 | category/bold-fonts/index.html | 142 | style="display:none;visibility:hidden" | high |
@@ -92,7 +93,6 @@ Sample occurrences with risk classification:
 | category/index.html | 146 | style="text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95r… | medium |
 | category/index.html | 160 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
 | category/index.html | 165 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
-| category/index.html | 170 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
 
 Risk legend: **low** = low risk — safe to move into style.css; **medium** = medium risk — check visually before changing; **high** = high risk — likely page-specific or interactive, do not move blindly.
 
@@ -123,23 +123,23 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 | Class | Pages | Occurrences |
 | --- | --- | --- |
-| hero-headline | 136 | 136 |
-| hero | 134 | 134 |
-| footer | 125 | 125 |
-| footer-inner | 125 | 125 |
-| hero-inner | 123 | 123 |
-| editorial-section | 108 | 314 |
-| hero-tagline | 100 | 100 |
-| editorial-block | 81 | 224 |
-| cta-card | 80 | 85 |
-| cta-btn | 80 | 85 |
-| article-section-label | 71 | 557 |
-| section-divider | 70 | 484 |
-| compare-grid | 69 | 88 |
-| compare-card | 69 | 348 |
-| variant-muted | 69 | 324 |
+| hero-headline | 137 | 137 |
+| hero | 135 | 135 |
+| footer | 126 | 126 |
+| footer-inner | 126 | 126 |
+| hero-inner | 124 | 124 |
+| editorial-section | 109 | 322 |
+| hero-tagline | 101 | 101 |
+| editorial-block | 82 | 230 |
+| cta-card | 81 | 85 |
+| cta-btn | 81 | 85 |
+| section-divider | 72 | 491 |
+| article-section-label | 72 | 564 |
+| compare-grid | 70 | 89 |
+| compare-card | 70 | 351 |
+| variant-muted | 70 | 327 |
 | mood-explainers | 67 | 439 |
-| u-no-underline | 60 | 255 |
+| u-no-underline | 61 | 258 |
 | symbol-tile | 60 | 4630 |
 | symbol-toast | 60 | 60 |
 | flag-rows | 59 | 344 |
@@ -147,13 +147,13 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | flag-emoji | 59 | 4097 |
 | flag-label | 59 | 4081 |
 | container | 54 | 62 |
-| breadcrumbs | 50 | 50 |
+| breadcrumbs | 51 | 51 |
 
 ### Repeated inline patterns → utility class candidates
 
 | Pattern | Count | Suggested utility | Risk |
 | --- | --- | --- | --- |
-| display:none; visibility:hidden | 71 | u-hidden (verify JS toggling first) | high |
+| display:none; visibility:hidden | 72 | u-hidden (verify JS toggling first) | high |
 | align-items:stretch; flex-direction:column; gap:8px | 17 | (propose a utility/component class) | medium |
 | text-decoration:none | 17 | u-no-underline | low |
 | color:var(--text-primary); font-weight:600; text-decor… | 10 | (propose a utility/component class) | medium |
