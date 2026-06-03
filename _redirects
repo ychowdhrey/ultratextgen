@@ -1,3 +1,6 @@
+# Canonical host: enforce non-www
+https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
+
 # Fallback rewrite: serve the English homepage for the root path.
 # The primary fix lives in functions/_middleware.js, which requests
 # /_root.html from ASSETS — a build-generated copy of index.html
@@ -5,7 +8,19 @@
 # This rule acts as a safety net if the middleware is not deployed.
 /  /index.html  200
 
-/snapchat                                    /snapchat/                    301
+# Canonical path: enforce trailing slash on platform root pages
+/discord    /discord/    301
+/facebook   /facebook/   301
+/instagram  /instagram/  301
+/linkedin   /linkedin/   301
+/pinterest  /pinterest/  301
+/snapchat   /snapchat/   301
+/telegram   /telegram/   301
+/tiktok     /tiktok/     301
+/whatsapp   /whatsapp/   301
+/x          /x/          301
+/youtube    /youtube/    301
+
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
 /category/special-fonts/lines/              /category/strikethrough-text/ 301
@@ -38,4 +53,3 @@
 
 /404  /404.html  200
 /*    /404.html  404
-
