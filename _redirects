@@ -5,6 +5,7 @@
 # This rule acts as a safety net if the middleware is not deployed.
 /  /index.html  200
 
+/snapchat                                    /snapchat/                    301
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
 /category/special-fonts/lines/              /category/strikethrough-text/ 301
