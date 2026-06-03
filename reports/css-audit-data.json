@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T09:51:38.648Z",
+  "generatedAt": "2026-06-03T07:06:13.754Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -7,41 +7,41 @@
     "mdTopN": 25
   },
   "summary": {
-    "htmlFiles": 136,
-    "cssFiles": 5,
-    "jsFiles": 20,
+    "htmlFiles": 139,
+    "cssFiles": 6,
+    "jsFiles": 21,
     "pageTypes": {
       "other": 7,
       "category": 17,
       "localized": 20,
       "platform": 11,
       "embed": 1,
-      "guide": 8,
+      "guide": 10,
       "library": 62,
-      "usecase": 10
+      "usecase": 11
     },
-    "inlineStyleOccurrences": 190,
-    "filesWithInlineStyles": 74,
+    "inlineStyleOccurrences": 211,
+    "filesWithInlineStyles": 77,
     "inlineRiskTally": {
-      "low": 41,
-      "medium": 76,
-      "high": 73
+      "low": 56,
+      "medium": 79,
+      "high": 76
     },
     "styleBlocks": 5,
-    "uniqueClasses": 226,
-    "componentClassCandidates": 85,
-    "oneOffClassCandidates": 120,
+    "uniqueClasses": 252,
+    "componentClassCandidates": 86,
+    "oneOffClassCandidates": 142,
     "repeatedInlinePatterns": 15,
-    "cssSelectorsTotal": 339,
-    "cssSelectorsReferenced": 338,
+    "cssSelectorsTotal": 365,
+    "cssSelectorsReferenced": 364,
     "cssSelectorsUnreferenced": 1
   },
   "cssInventory": [
     {
       "file": "style.css",
-      "bytes": 48193,
-      "sizeHuman": "47.1 KB",
-      "lines": 2281,
+      "bytes": 51679,
+      "sizeHuman": "50.5 KB",
+      "lines": 2455,
       "purpose": "global site stylesheet"
     },
     {
@@ -71,1265 +71,1405 @@
       "sizeHuman": "5.2 KB",
       "lines": 244,
       "purpose": "symbol explorer feature styling"
+    },
+    {
+      "file": "usecase/bio-font/bio-font.css",
+      "bytes": 5172,
+      "sizeHuman": "5.1 KB",
+      "lines": 239,
+      "purpose": "page-specific usecase styling"
     }
   ],
   "inlineFindings": [
     {
       "file": "404.html",
-      "line": 38,
+      "line": 39,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "about/index.html",
-      "line": 59,
+      "line": 60,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "about/index.html",
-      "line": 65,
+      "line": 66,
       "snippet": "style=\"max-width:800px;\"",
       "decl": "max-width:800px;",
       "risk": "medium"
     },
     {
       "file": "about/index.html",
-      "line": 72,
+      "line": 73,
       "snippet": "style=\"max-width:900px;\"",
       "decl": "max-width:900px;",
       "risk": "medium"
     },
     {
       "file": "category/bold-fonts/bold/index.html",
-      "line": 107,
+      "line": 108,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/bold-fonts/bold-italic/index.html",
-      "line": 107,
+      "line": 108,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/bold-fonts/index.html",
-      "line": 141,
+      "line": 142,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/bubble-fonts/circle/index.html",
-      "line": 107,
+      "line": 108,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/bubble-fonts/index.html",
-      "line": 149,
+      "line": 150,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/classified/index.html",
-      "line": 101,
+      "line": 102,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/classified/index.html",
-      "line": 152,
+      "line": 153,
       "snippet": "style=\"display: none;\"",
       "decl": "display: none;",
       "risk": "high"
     },
     {
       "file": "category/cursive-fonts/index.html",
-      "line": 149,
+      "line": 150,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/cursive-fonts/script/index.html",
-      "line": 107,
+      "line": 108,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/gothic-fonts/fraktur/index.html",
-      "line": 107,
+      "line": 108,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/gothic-fonts/index.html",
-      "line": 149,
+      "line": 150,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "category/index.html",
-      "line": 117,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "category/index.html",
-      "line": 129,
-      "snippet": "style=\"max-width:800px;\"",
-      "decl": "max-width:800px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 140,
-      "snippet": "style=\"max-width:900px;\"",
-      "decl": "max-width:900px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 145,
-      "snippet": "style=\"text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95r…",
-      "decl": "text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95rem;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 159,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 164,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 169,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 174,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 179,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 184,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 189,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 194,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 199,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 204,
-      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
-      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 220,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 229,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 247,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 255,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 272,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 281,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 298,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 306,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 323,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 331,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 348,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 356,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 373,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 382,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 399,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 407,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 424,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 432,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 449,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/index.html",
-      "line": 457,
-      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
-      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
-      "risk": "medium"
-    },
-    {
-      "file": "category/italic-fonts/index.html",
-      "line": 149,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "category/strikethrough-text/index.html",
-      "line": 149,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "category/underline-text/index.html",
-      "line": 149,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "category/upside-down-text/index.html",
-      "line": 149,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "category/word-wrappers/index.html",
-      "line": 149,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "contact/index.html",
-      "line": 59,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "contact/index.html",
-      "line": 65,
-      "snippet": "style=\"max-width:800px;\"",
-      "decl": "max-width:800px;",
-      "risk": "medium"
-    },
-    {
-      "file": "contact/index.html",
-      "line": 72,
-      "snippet": "style=\"max-width:900px;\"",
-      "decl": "max-width:900px;",
-      "risk": "medium"
-    },
-    {
-      "file": "de/index.html",
-      "line": 283,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "de/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "discord/index.html",
-      "line": 284,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "discord/index.html",
-      "line": 491,
-      "snippet": "style=\"margin-top:2rem;\"",
-      "decl": "margin-top:2rem;",
-      "risk": "low"
-    },
-    {
-      "file": "embed/linkedin-headline-generator/index.html",
-      "line": 127,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "embed/linkedin-headline-generator/index.html",
-      "line": 141,
-      "snippet": "style=\"margin-top: 1.5rem;\"",
-      "decl": "margin-top: 1.5rem;",
-      "risk": "low"
-    },
-    {
-      "file": "embed/linkedin-headline-generator/index.html",
-      "line": 143,
-      "snippet": "style=\"color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;\"",
-      "decl": "color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;",
-      "risk": "medium"
-    },
-    {
-      "file": "embed/linkedin-headline-generator/index.html",
-      "line": 145,
-      "snippet": "style=\"height: 700px;\"",
-      "decl": "height: 700px;",
-      "risk": "medium"
-    },
-    {
-      "file": "embed/linkedin-headline-generator/index.html",
-      "line": 152,
-      "snippet": "style=\"color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;\"",
-      "decl": "color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;",
-      "risk": "medium"
-    },
-    {
-      "file": "embed/linkedin-headline-generator/index.html",
-      "line": 154,
-      "snippet": "style=\"width:100%;border:none;height:700px;\"",
-      "decl": "width:100%;border:none;height:700px;",
-      "risk": "medium"
-    },
-    {
-      "file": "embed/linkedin-headline-generator/index.html",
-      "line": 164,
-      "snippet": "style=\"color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;\"",
-      "decl": "color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;",
-      "risk": "medium"
-    },
-    {
-      "file": "es/index.html",
-      "line": 297,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "es/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "facebook/index.html",
-      "line": 162,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "fr/index.html",
-      "line": 283,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "fr/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "guide/branding-with-fonts-for-social-media/index.html",
-      "line": 538,
-      "snippet": "style=\"margin-top: 2rem;\"",
-      "decl": "margin-top: 2rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 59,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 71,
-      "snippet": "style=\"max-width:800px;\"",
-      "decl": "max-width:800px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 78,
-      "snippet": "style=\"max-width:900px;\"",
-      "decl": "max-width:900px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 86,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 101,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 115,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 129,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 143,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 164,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 178,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 198,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/index.html",
-      "line": 218,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 128,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 871,
-      "snippet": "style=\"font-size:1.35rem;\"",
-      "decl": "font-size:1.35rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 873,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 878,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 883,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 888,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 893,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "line": 902,
-      "snippet": "style=\"text-align:center;\"",
-      "decl": "text-align:center;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 616,
-      "snippet": "style=\"margin-top: 2rem;\"",
-      "decl": "margin-top: 2rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 636,
-      "snippet": "style=\"font-size:1.35rem;\"",
-      "decl": "font-size:1.35rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 638,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 643,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 648,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 653,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 658,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 663,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 770,
-      "snippet": "style=\"margin-top: 2rem;\"",
-      "decl": "margin-top: 2rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 790,
-      "snippet": "style=\"font-size:1.35rem;\"",
-      "decl": "font-size:1.35rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 792,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 797,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 802,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 286,
-      "snippet": "style=\"margin-top:1rem\"",
-      "decl": "margin-top:1rem",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 480,
-      "snippet": "style=\"font-size:1.35rem;\"",
-      "decl": "font-size:1.35rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 482,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 487,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 492,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/the-rhetoric-of-fonts/index.html",
-      "line": 429,
-      "snippet": "style=\"margin-top: 2rem;\"",
-      "decl": "margin-top: 2rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/vertical-text-guide/index.html",
-      "line": 87,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "guide/vertical-text-guide/index.html",
-      "line": 101,
-      "snippet": "style=\"max-width:800px;\"",
-      "decl": "max-width:800px;",
-      "risk": "medium"
-    },
-    {
-      "file": "guide/vertical-text-guide/index.html",
-      "line": 107,
-      "snippet": "style=\"max-width:900px;\"",
-      "decl": "max-width:900px;",
-      "risk": "medium"
-    },
-    {
-      "file": "id/index.html",
-      "line": 283,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "id/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "index.html",
-      "line": 232,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "instagram/index.html",
-      "line": 162,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "it/index.html",
-      "line": 285,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "it/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "library/index.html",
-      "line": 482,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "library/index.html",
-      "line": 528,
-      "snippet": "style=\"display:flex;align-items:center;gap:0.5rem;\"",
-      "decl": "display:flex;align-items:center;gap:0.5rem;",
-      "risk": "medium"
-    },
-    {
-      "file": "library/linkedin-comment-styling/index.html",
-      "line": 88,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "library/witchy-occult-symbols/index.html",
-      "line": 161,
-      "snippet": "style=\"margin-top:1rem;\"",
-      "decl": "margin-top:1rem;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 185,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 325,
-      "snippet": "style=\"margin-top:1rem;\"",
-      "decl": "margin-top:1rem;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 343,
-      "snippet": "style=\"margin-top:1rem;\"",
-      "decl": "margin-top:1rem;",
-      "risk": "low"
-    },
-    {
-      "file": "linkedin/index.html",
-      "line": 392,
-      "snippet": "style=\"margin-top:12px;\"",
-      "decl": "margin-top:12px;",
-      "risk": "low"
-    },
-    {
-      "file": "nl/index.html",
-      "line": 251,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "nl/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "pinterest/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "pl/index.html",
-      "line": 291,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "pl/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "privacy/index.html",
-      "line": 59,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "privacy/index.html",
-      "line": 65,
-      "snippet": "style=\"max-width:800px;\"",
-      "decl": "max-width:800px;",
-      "risk": "medium"
-    },
-    {
-      "file": "privacy/index.html",
-      "line": 72,
-      "snippet": "style=\"max-width:900px;\"",
-      "decl": "max-width:900px;",
-      "risk": "medium"
-    },
-    {
-      "file": "pt/index.html",
-      "line": 259,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "pt/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "snapchat/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "telegram/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "terms/index.html",
-      "line": 59,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "terms/index.html",
-      "line": 65,
-      "snippet": "style=\"max-width:800px;\"",
-      "decl": "max-width:800px;",
-      "risk": "medium"
-    },
-    {
-      "file": "terms/index.html",
-      "line": 72,
-      "snippet": "style=\"max-width:900px;\"",
-      "decl": "max-width:900px;",
-      "risk": "medium"
-    },
-    {
-      "file": "tiktok/index.html",
-      "line": 162,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "tr/index.html",
-      "line": 308,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "tr/usecase/zalgo-text/index.html",
-      "line": 146,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/before-after-emoji/index.html",
-      "line": 159,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/before-after-emoji/index.html",
-      "line": 214,
-      "snippet": "style=\"display: none;\"",
-      "decl": "display: none;",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/bio-font/index.html",
-      "line": 151,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/bio-font/index.html",
-      "line": 207,
-      "snippet": "style=\"display: none;\"",
-      "decl": "display: none;",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/bio-font/index.html",
-      "line": 261,
-      "snippet": "style=\"color: ${cat.color}\"",
-      "decl": "color: ${cat.color}",
-      "risk": "low"
-    },
-    {
-      "file": "usecase/comment-font/index.html",
-      "line": 170,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/comment-font/index.html",
-      "line": 223,
-      "snippet": "style=\"display: none;\"",
-      "decl": "display: none;",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/emoji-combinations/index.html",
-      "line": 133,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/emoji-combinations/index.html",
-      "line": 184,
-      "snippet": "style=\"display: none;\"",
-      "decl": "display: none;",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 52,
-      "snippet": "style=\"display:none;visibility:hidden\"",
-      "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 64,
-      "snippet": "style=\"max-width:800px;\"",
-      "decl": "max-width:800px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 72,
-      "snippet": "style=\"max-width:900px;\"",
-      "decl": "max-width:900px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 79,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 100,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 117,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 130,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 148,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 159,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 176,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/index.html",
-      "line": 187,
-      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
-      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/linkedin-headline/index.html",
       "line": 118,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
+      "file": "category/index.html",
+      "line": 130,
+      "snippet": "style=\"max-width:800px;\"",
+      "decl": "max-width:800px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 141,
+      "snippet": "style=\"max-width:900px;\"",
+      "decl": "max-width:900px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 146,
+      "snippet": "style=\"text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95r…",
+      "decl": "text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95rem;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 160,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 165,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 170,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 175,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 180,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 185,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 190,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 195,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 200,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 205,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 221,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 230,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 248,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 256,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 273,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 282,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 299,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 307,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 324,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 332,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 349,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 357,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 374,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 383,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 400,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 408,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 425,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 433,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 450,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 458,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/italic-fonts/index.html",
+      "line": 150,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/strikethrough-text/index.html",
+      "line": 150,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/underline-text/index.html",
+      "line": 150,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/upside-down-text/index.html",
+      "line": 150,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/word-wrappers/index.html",
+      "line": 150,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "contact/index.html",
+      "line": 60,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "contact/index.html",
+      "line": 66,
+      "snippet": "style=\"max-width:800px;\"",
+      "decl": "max-width:800px;",
+      "risk": "medium"
+    },
+    {
+      "file": "contact/index.html",
+      "line": 73,
+      "snippet": "style=\"max-width:900px;\"",
+      "decl": "max-width:900px;",
+      "risk": "medium"
+    },
+    {
+      "file": "de/index.html",
+      "line": 285,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "de/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "discord/index.html",
+      "line": 285,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "discord/index.html",
+      "line": 492,
+      "snippet": "style=\"margin-top:2rem;\"",
+      "decl": "margin-top:2rem;",
+      "risk": "low"
+    },
+    {
+      "file": "embed/linkedin-headline-generator/index.html",
+      "line": 128,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "embed/linkedin-headline-generator/index.html",
+      "line": 142,
+      "snippet": "style=\"margin-top: 1.5rem;\"",
+      "decl": "margin-top: 1.5rem;",
+      "risk": "low"
+    },
+    {
+      "file": "embed/linkedin-headline-generator/index.html",
+      "line": 144,
+      "snippet": "style=\"color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;\"",
+      "decl": "color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;",
+      "risk": "medium"
+    },
+    {
+      "file": "embed/linkedin-headline-generator/index.html",
+      "line": 146,
+      "snippet": "style=\"height: 700px;\"",
+      "decl": "height: 700px;",
+      "risk": "medium"
+    },
+    {
+      "file": "embed/linkedin-headline-generator/index.html",
+      "line": 153,
+      "snippet": "style=\"color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;\"",
+      "decl": "color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;",
+      "risk": "medium"
+    },
+    {
+      "file": "embed/linkedin-headline-generator/index.html",
+      "line": 155,
+      "snippet": "style=\"width:100%;border:none;height:700px;\"",
+      "decl": "width:100%;border:none;height:700px;",
+      "risk": "medium"
+    },
+    {
+      "file": "embed/linkedin-headline-generator/index.html",
+      "line": 165,
+      "snippet": "style=\"color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;\"",
+      "decl": "color: var(--text-secondary); font-size: 0.925rem; margin-bottom: 0.75rem;",
+      "risk": "medium"
+    },
+    {
+      "file": "es/index.html",
+      "line": 299,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "es/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "facebook/index.html",
+      "line": 163,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "fr/index.html",
+      "line": 285,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "fr/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/branding-with-fonts-for-social-media/index.html",
+      "line": 539,
+      "snippet": "style=\"margin-top: 2rem;\"",
+      "decl": "margin-top: 2rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 60,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 72,
+      "snippet": "style=\"max-width:800px;\"",
+      "decl": "max-width:800px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 79,
+      "snippet": "style=\"max-width:900px;\"",
+      "decl": "max-width:900px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 87,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 102,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 116,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 130,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 144,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 159,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 173,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 192,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 206,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 226,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/index.html",
+      "line": 246,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/is-linkedin-bold-text-safe/index.html",
+      "line": 96,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 129,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 872,
+      "snippet": "style=\"font-size:1.35rem;\"",
+      "decl": "font-size:1.35rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 874,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 879,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 884,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 889,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 894,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/linkedin-comments-guide/index.html",
+      "line": 903,
+      "snippet": "style=\"text-align:center;\"",
+      "decl": "text-align:center;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 617,
+      "snippet": "style=\"margin-top: 2rem;\"",
+      "decl": "margin-top: 2rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 637,
+      "snippet": "style=\"font-size:1.35rem;\"",
+      "decl": "font-size:1.35rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 639,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 644,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 649,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 654,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 659,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 664,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "line": 771,
+      "snippet": "style=\"margin-top: 2rem;\"",
+      "decl": "margin-top: 2rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "line": 791,
+      "snippet": "style=\"font-size:1.35rem;\"",
+      "decl": "font-size:1.35rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "line": 793,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "line": 798,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "line": 803,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
+      "line": 287,
+      "snippet": "style=\"margin-top:1rem\"",
+      "decl": "margin-top:1rem",
+      "risk": "low"
+    },
+    {
+      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
+      "line": 481,
+      "snippet": "style=\"font-size:1.35rem;\"",
+      "decl": "font-size:1.35rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
+      "line": 483,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
+      "line": 488,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
+      "line": 493,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/the-rhetoric-of-fonts/index.html",
+      "line": 430,
+      "snippet": "style=\"margin-top: 2rem;\"",
+      "decl": "margin-top: 2rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/vertical-text-guide/index.html",
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/vertical-text-guide/index.html",
+      "line": 102,
+      "snippet": "style=\"max-width:800px;\"",
+      "decl": "max-width:800px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/vertical-text-guide/index.html",
+      "line": 108,
+      "snippet": "style=\"max-width:900px;\"",
+      "decl": "max-width:900px;",
+      "risk": "medium"
+    },
+    {
+      "file": "guide/what-font-does-linkedin-use/index.html",
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/what-font-does-linkedin-use/index.html",
+      "line": 204,
+      "snippet": "style=\"font-size:1.35rem;\"",
+      "decl": "font-size:1.35rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/what-font-does-linkedin-use/index.html",
+      "line": 206,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/what-font-does-linkedin-use/index.html",
+      "line": 211,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/what-font-does-linkedin-use/index.html",
+      "line": 216,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "id/index.html",
+      "line": 285,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "id/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "index.html",
+      "line": 233,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "instagram/index.html",
+      "line": 163,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "it/index.html",
+      "line": 287,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "it/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/index.html",
+      "line": 483,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/index.html",
+      "line": 529,
+      "snippet": "style=\"display:flex;align-items:center;gap:0.5rem;\"",
+      "decl": "display:flex;align-items:center;gap:0.5rem;",
+      "risk": "medium"
+    },
+    {
+      "file": "library/linkedin-comment-styling/index.html",
+      "line": 84,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/witchy-occult-symbols/index.html",
+      "line": 162,
+      "snippet": "style=\"margin-top:1rem;\"",
+      "decl": "margin-top:1rem;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 186,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 264,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 269,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 274,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 279,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 284,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 289,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 353,
+      "snippet": "style=\"margin-top:1rem;\"",
+      "decl": "margin-top:1rem;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 371,
+      "snippet": "style=\"margin-top:1rem;\"",
+      "decl": "margin-top:1rem;",
+      "risk": "low"
+    },
+    {
+      "file": "linkedin/index.html",
+      "line": 420,
+      "snippet": "style=\"margin-top:12px;\"",
+      "decl": "margin-top:12px;",
+      "risk": "low"
+    },
+    {
+      "file": "nl/index.html",
+      "line": 253,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "nl/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "pinterest/index.html",
+      "line": 147,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "pl/index.html",
+      "line": 293,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "pl/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "privacy/index.html",
+      "line": 60,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "privacy/index.html",
+      "line": 66,
+      "snippet": "style=\"max-width:800px;\"",
+      "decl": "max-width:800px;",
+      "risk": "medium"
+    },
+    {
+      "file": "privacy/index.html",
+      "line": 73,
+      "snippet": "style=\"max-width:900px;\"",
+      "decl": "max-width:900px;",
+      "risk": "medium"
+    },
+    {
+      "file": "pt/index.html",
+      "line": 261,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "pt/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "snapchat/index.html",
+      "line": 147,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "telegram/index.html",
+      "line": 147,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "terms/index.html",
+      "line": 60,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "terms/index.html",
+      "line": 66,
+      "snippet": "style=\"max-width:800px;\"",
+      "decl": "max-width:800px;",
+      "risk": "medium"
+    },
+    {
+      "file": "terms/index.html",
+      "line": 73,
+      "snippet": "style=\"max-width:900px;\"",
+      "decl": "max-width:900px;",
+      "risk": "medium"
+    },
+    {
+      "file": "tiktok/index.html",
+      "line": 163,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "tr/index.html",
+      "line": 310,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "tr/usecase/zalgo-text/index.html",
+      "line": 148,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/before-after-emoji/index.html",
+      "line": 160,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/before-after-emoji/index.html",
+      "line": 215,
+      "snippet": "style=\"display: none;\"",
+      "decl": "display: none;",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/bio-font/index.html",
+      "line": 165,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/bio-font/index.html",
+      "line": 295,
+      "snippet": "style=\"display: none;\"",
+      "decl": "display: none;",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/bio-font/index.html",
+      "line": 352,
+      "snippet": "style=\"color: ${cat.color}\"",
+      "decl": "color: ${cat.color}",
+      "risk": "low"
+    },
+    {
+      "file": "usecase/comment-font/index.html",
+      "line": 172,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/comment-font/index.html",
+      "line": 225,
+      "snippet": "style=\"display: none;\"",
+      "decl": "display: none;",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/emoji-combinations/index.html",
+      "line": 134,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/emoji-combinations/index.html",
+      "line": 185,
+      "snippet": "style=\"display: none;\"",
+      "decl": "display: none;",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 53,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 65,
+      "snippet": "style=\"max-width:800px;\"",
+      "decl": "max-width:800px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 73,
+      "snippet": "style=\"max-width:900px;\"",
+      "decl": "max-width:900px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 80,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 101,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 118,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 131,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 149,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 160,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 171,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 188,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/index.html",
+      "line": 199,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:8px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:8px;",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/linkedin-bold/index.html",
+      "line": 105,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/linkedin-bold/index.html",
+      "line": 233,
+      "snippet": "style=\"font-size:1.35rem;\"",
+      "decl": "font-size:1.35rem;",
+      "risk": "low"
+    },
+    {
+      "file": "usecase/linkedin-bold/index.html",
+      "line": 235,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "usecase/linkedin-bold/index.html",
+      "line": 240,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "usecase/linkedin-bold/index.html",
+      "line": 245,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
       "file": "usecase/linkedin-headline/index.html",
-      "line": 191,
+      "line": 119,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "usecase/linkedin-headline/index.html",
+      "line": 192,
       "snippet": "style=\"margin-bottom: 1rem; font-size: 1.25rem;\"",
       "decl": "margin-bottom: 1rem; font-size: 1.25rem;",
       "risk": "low"
     },
     {
       "file": "usecase/linkedin-headline/index.html",
-      "line": 197,
+      "line": 198,
       "snippet": "style=\"margin-top: 2.5rem;\"",
       "decl": "margin-top: 2.5rem;",
       "risk": "low"
     },
     {
+      "file": "usecase/linkedin-headline/index.html",
+      "line": 248,
+      "snippet": "style=\"margin-top:10px;\"",
+      "decl": "margin-top:10px;",
+      "risk": "low"
+    },
+    {
       "file": "usecase/text-to-emoji/index.html",
-      "line": 295,
+      "line": 296,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "usecase/text-to-emoji/index.html",
-      "line": 329,
+      "line": 330,
       "snippet": "style=\"margin-bottom: 1rem; font-size: 1.25rem;\"",
       "decl": "margin-bottom: 1rem; font-size: 1.25rem;",
       "risk": "low"
     },
     {
       "file": "usecase/text-to-emoji/index.html",
-      "line": 354,
+      "line": 355,
       "snippet": "style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1…",
       "decl": "display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 2.5rem;",
       "risk": "medium"
     },
     {
       "file": "usecase/vertical-text/index.html",
-      "line": 202,
+      "line": 220,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "usecase/vertical-text/index.html",
-      "line": 449,
+      "line": 473,
       "snippet": "style=\"width:100%; border-collapse:collapse; margin:1rem 0;\"",
       "decl": "width:100%; border-collapse:collapse; margin:1rem 0;",
       "risk": "medium"
     },
     {
       "file": "usecase/vertical-text/index.html",
-      "line": 452,
+      "line": 476,
       "snippet": "style=\"text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);\"",
       "decl": "text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);",
       "risk": "medium"
     },
     {
       "file": "usecase/vertical-text/index.html",
-      "line": 453,
-      "snippet": "style=\"text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);\"",
-      "decl": "text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 454,
-      "snippet": "style=\"text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);\"",
-      "decl": "text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);",
-      "risk": "medium"
-    },
-    {
-      "file": "usecase/vertical-text/index.html",
-      "line": 455,
+      "line": 477,
       "snippet": "style=\"text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);\"",
       "decl": "text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);",
       "risk": "medium"
@@ -1337,69 +1477,83 @@
     {
       "file": "usecase/vertical-text/index.html",
       "line": 478,
-      "snippet": "style=\"padding:0.75rem;\"",
-      "decl": "padding:0.75rem;",
-      "risk": "low"
+      "snippet": "style=\"text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);\"",
+      "decl": "text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);",
+      "risk": "medium"
     },
     {
       "file": "usecase/vertical-text/index.html",
       "line": 479,
+      "snippet": "style=\"text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);\"",
+      "decl": "text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/vertical-text/index.html",
+      "line": 502,
       "snippet": "style=\"padding:0.75rem;\"",
       "decl": "padding:0.75rem;",
       "risk": "low"
     },
     {
       "file": "usecase/vertical-text/index.html",
-      "line": 480,
+      "line": 503,
       "snippet": "style=\"padding:0.75rem;\"",
       "decl": "padding:0.75rem;",
       "risk": "low"
     },
     {
       "file": "usecase/vertical-text/index.html",
-      "line": 481,
+      "line": 504,
+      "snippet": "style=\"padding:0.75rem;\"",
+      "decl": "padding:0.75rem;",
+      "risk": "low"
+    },
+    {
+      "file": "usecase/vertical-text/index.html",
+      "line": 505,
       "snippet": "style=\"padding:0.75rem;\"",
       "decl": "padding:0.75rem;",
       "risk": "low"
     },
     {
       "file": "usecase/zalgo-text/index.html",
-      "line": 152,
+      "line": 154,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "vi/index.html",
-      "line": 283,
+      "line": 285,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "vi/usecase/zalgo-text/index.html",
-      "line": 146,
+      "line": 148,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "whatsapp/index.html",
-      "line": 146,
+      "line": 147,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "x/index.html",
-      "line": 146,
+      "line": 147,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "youtube/index.html",
-      "line": 162,
+      "line": 163,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
@@ -1412,11 +1566,15 @@
     },
     {
       "file": "guide/index.html",
-      "count": 12
+      "count": 14
     },
     {
       "file": "usecase/index.html",
-      "count": 11
+      "count": 12
+    },
+    {
+      "file": "linkedin/index.html",
+      "count": 10
     },
     {
       "file": "usecase/vertical-text/index.html",
@@ -1443,7 +1601,15 @@
       "count": 5
     },
     {
-      "file": "linkedin/index.html",
+      "file": "guide/what-font-does-linkedin-use/index.html",
+      "count": 5
+    },
+    {
+      "file": "usecase/linkedin-bold/index.html",
+      "count": 5
+    },
+    {
+      "file": "usecase/linkedin-headline/index.html",
       "count": 4
     },
     {
@@ -1471,10 +1637,6 @@
       "count": 3
     },
     {
-      "file": "usecase/linkedin-headline/index.html",
-      "count": 3
-    },
-    {
       "file": "usecase/text-to-emoji/index.html",
       "count": 3
     },
@@ -1592,6 +1754,10 @@
     },
     {
       "file": "guide/branding-with-fonts-for-social-media/index.html",
+      "count": 1
+    },
+    {
+      "file": "guide/is-linkedin-bold-text-safe/index.html",
       "count": 1
     },
     {
@@ -1706,7 +1872,7 @@
   "styleBlockFindings": [
     {
       "file": "embed/linkedin-headline-generator/index.html",
-      "line": 51,
+      "line": 52,
       "cssLines": 70,
       "reusableGuess": "page-specific",
       "risk": "medium"
@@ -1720,21 +1886,21 @@
     },
     {
       "file": "library/index.html",
-      "line": 56,
+      "line": 57,
       "cssLines": 404,
       "reusableGuess": "page-specific",
       "risk": "high"
     },
     {
       "file": "usecase/linkedin-headline/embed/index.html",
-      "line": 42,
+      "line": 43,
       "cssLines": 74,
       "reusableGuess": "page-specific",
       "risk": "medium"
     },
     {
       "file": "usecase/text-to-emoji/index.html",
-      "line": 137,
+      "line": 138,
       "cssLines": 125,
       "reusableGuess": "page-specific",
       "risk": "medium"
@@ -1743,83 +1909,83 @@
   "componentClasses": [
     {
       "class": "hero-headline",
-      "pages": 133,
-      "occurrences": 133
+      "pages": 136,
+      "occurrences": 136
     },
     {
       "class": "hero",
-      "pages": 131,
-      "occurrences": 131
+      "pages": 134,
+      "occurrences": 134
     },
     {
       "class": "footer",
-      "pages": 122,
-      "occurrences": 122
+      "pages": 124,
+      "occurrences": 124
     },
     {
       "class": "footer-inner",
-      "pages": 122,
-      "occurrences": 122
+      "pages": 124,
+      "occurrences": 124
     },
     {
       "class": "hero-inner",
-      "pages": 120,
-      "occurrences": 120
+      "pages": 123,
+      "occurrences": 123
     },
     {
       "class": "editorial-section",
-      "pages": 105,
-      "occurrences": 298
+      "pages": 108,
+      "occurrences": 318
     },
     {
       "class": "hero-tagline",
-      "pages": 97,
-      "occurrences": 97
+      "pages": 100,
+      "occurrences": 100
     },
     {
       "class": "editorial-block",
-      "pages": 79,
-      "occurrences": 203
+      "pages": 82,
+      "occurrences": 227
     },
     {
       "class": "cta-card",
-      "pages": 77,
-      "occurrences": 79
+      "pages": 79,
+      "occurrences": 83
     },
     {
       "class": "cta-btn",
-      "pages": 77,
-      "occurrences": 79
+      "pages": 79,
+      "occurrences": 83
     },
     {
       "class": "article-section-label",
-      "pages": 69,
-      "occurrences": 541
+      "pages": 72,
+      "occurrences": 562
+    },
+    {
+      "class": "compare-grid",
+      "pages": 70,
+      "occurrences": 89
+    },
+    {
+      "class": "compare-card",
+      "pages": 70,
+      "occurrences": 351
+    },
+    {
+      "class": "variant-muted",
+      "pages": 70,
+      "occurrences": 327
     },
     {
       "class": "section-divider",
-      "pages": 68,
-      "occurrences": 472
+      "pages": 70,
+      "occurrences": 484
     },
     {
       "class": "mood-explainers",
       "pages": 67,
-      "occurrences": 437
-    },
-    {
-      "class": "compare-grid",
-      "pages": 66,
-      "occurrences": 85
-    },
-    {
-      "class": "compare-card",
-      "pages": 66,
-      "occurrences": 337
-    },
-    {
-      "class": "variant-muted",
-      "pages": 66,
-      "occurrences": 314
+      "occurrences": 439
     },
     {
       "class": "symbol-tile",
@@ -1858,108 +2024,108 @@
     },
     {
       "class": "container",
-      "pages": 53,
-      "occurrences": 59
+      "pages": 54,
+      "occurrences": 67
     },
     {
       "class": "breadcrumbs",
-      "pages": 47,
-      "occurrences": 47
+      "pages": 50,
+      "occurrences": 50
     },
     {
       "class": "breadcrumb-separator",
-      "pages": 47,
-      "occurrences": 86
+      "pages": 50,
+      "occurrences": 92
     },
     {
       "class": "breadcrumb-current",
-      "pages": 47,
-      "occurrences": 47
+      "pages": 50,
+      "occurrences": 50
     },
     {
       "class": "faq-item",
-      "pages": 47,
-      "occurrences": 805
+      "pages": 48,
+      "occurrences": 801
     },
     {
       "class": "faq-question",
-      "pages": 47,
-      "occurrences": 805
+      "pages": 48,
+      "occurrences": 801
     },
     {
       "class": "faq-answer",
-      "pages": 47,
-      "occurrences": 805
+      "pages": 48,
+      "occurrences": 801
     },
     {
       "class": "active",
-      "pages": 46,
-      "occurrences": 91
+      "pages": 47,
+      "occurrences": 95
     },
     {
       "class": "hero-card",
-      "pages": 45,
-      "occurrences": 45
+      "pages": 46,
+      "occurrences": 46
     },
     {
       "class": "input-wrapper",
-      "pages": 45,
-      "occurrences": 45
+      "pages": 46,
+      "occurrences": 46
     },
     {
       "class": "main-input",
-      "pages": 45,
-      "occurrences": 45
+      "pages": 46,
+      "occurrences": 46
     },
     {
       "class": "char-count",
-      "pages": 45,
-      "occurrences": 45
+      "pages": 46,
+      "occurrences": 46
     },
     {
       "class": "decoration-tabs",
-      "pages": 43,
-      "occurrences": 48
+      "pages": 44,
+      "occurrences": 50
     },
     {
       "class": "decoration-tab",
-      "pages": 43,
-      "occurrences": 335
+      "pages": 44,
+      "occurrences": 342
     },
     {
       "class": "decoration-section",
-      "pages": 42,
-      "occurrences": 43
-    },
-    {
-      "class": "decoration-grid",
-      "pages": 42,
-      "occurrences": 42
-    },
-    {
-      "class": "results-grid",
-      "pages": 42,
-      "occurrences": 42
-    },
-    {
-      "class": "decoration-label",
-      "pages": 41,
-      "occurrences": 42
-    },
-    {
-      "class": "category-section",
-      "pages": 41,
-      "occurrences": 41
-    },
-    {
-      "class": "category-tabs",
-      "pages": 41,
+      "pages": 43,
       "occurrences": 45
     },
     {
+      "class": "decoration-grid",
+      "pages": 43,
+      "occurrences": 43
+    },
+    {
+      "class": "results-grid",
+      "pages": 43,
+      "occurrences": 43
+    },
+    {
+      "class": "decoration-label",
+      "pages": 42,
+      "occurrences": 44
+    },
+    {
+      "class": "category-section",
+      "pages": 42,
+      "occurrences": 42
+    },
+    {
+      "class": "category-tabs",
+      "pages": 42,
+      "occurrences": 46
+    },
+    {
       "class": "faq-category",
-      "pages": 40,
-      "occurrences": 257
+      "pages": 41,
+      "occurrences": 254
     },
     {
       "class": "u-secondary-tight",
@@ -1968,8 +2134,8 @@
     },
     {
       "class": "category-tab",
-      "pages": 29,
-      "occurrences": 225
+      "pages": 30,
+      "occurrences": 233
     },
     {
       "class": "u-mt-15",
@@ -1987,6 +2153,11 @@
       "occurrences": 143
     },
     {
+      "class": "faq-section",
+      "pages": 13,
+      "occurrences": 13
+    },
+    {
       "class": "tips-grid",
       "pages": 13,
       "occurrences": 25
@@ -2002,11 +2173,6 @@
       "occurrences": 12
     },
     {
-      "class": "faq-section",
-      "pages": 12,
-      "occurrences": 12
-    },
-    {
       "class": "cat-cta",
       "pages": 12,
       "occurrences": 33
@@ -2015,6 +2181,11 @@
       "class": "tip-icon",
       "pages": 12,
       "occurrences": 85
+    },
+    {
+      "class": "block-example",
+      "pages": 11,
+      "occurrences": 58
     },
     {
       "class": "input-clear-btn",
@@ -2067,49 +2238,49 @@
       "occurrences": 11
     },
     {
+      "class": "compare-badge",
+      "pages": 11,
+      "occurrences": 71
+    },
+    {
       "class": "data-table-wrap",
-      "pages": 9,
-      "occurrences": 16
+      "pages": 10,
+      "occurrences": 17
     },
     {
       "class": "data-table",
-      "pages": 9,
-      "occurrences": 16
+      "pages": 10,
+      "occurrences": 17
     },
     {
-      "class": "block-example",
-      "pages": 8,
-      "occurrences": 55
+      "class": "example-pair",
+      "pages": 10,
+      "occurrences": 124
+    },
+    {
+      "class": "ex-label",
+      "pages": 10,
+      "occurrences": 239
+    },
+    {
+      "class": "ex-arrow",
+      "pages": 10,
+      "occurrences": 77
+    },
+    {
+      "class": "ex-styled",
+      "pages": 10,
+      "occurrences": 139
+    },
+    {
+      "class": "ex-plain",
+      "pages": 9,
+      "occurrences": 111
     },
     {
       "class": "mood-explainer",
       "pages": 8,
-      "occurrences": 164
-    },
-    {
-      "class": "example-pair",
-      "pages": 8,
-      "occurrences": 122
-    },
-    {
-      "class": "ex-label",
-      "pages": 8,
-      "occurrences": 232
-    },
-    {
-      "class": "ex-plain",
-      "pages": 8,
-      "occurrences": 108
-    },
-    {
-      "class": "ex-arrow",
-      "pages": 8,
-      "occurrences": 75
-    },
-    {
-      "class": "ex-styled",
-      "pages": 8,
-      "occurrences": 134
+      "occurrences": 168
     },
     {
       "class": "u-secondary-block",
@@ -2117,14 +2288,29 @@
       "occurrences": 13
     },
     {
-      "class": "compare-badge",
+      "class": "steps-grid",
       "pages": 7,
-      "occurrences": 57
+      "occurrences": 8
+    },
+    {
+      "class": "step-card",
+      "pages": 7,
+      "occurrences": 31
+    },
+    {
+      "class": "step-number",
+      "pages": 7,
+      "occurrences": 31
+    },
+    {
+      "class": "variant-positive",
+      "pages": 7,
+      "occurrences": 15
     },
     {
       "class": "mood-example",
       "pages": 7,
-      "occurrences": 154
+      "occurrences": 156
     },
     {
       "class": "platform-pills",
@@ -2137,24 +2323,9 @@
       "occurrences": 90
     },
     {
-      "class": "steps-grid",
+      "class": "section-subline",
       "pages": 6,
-      "occurrences": 7
-    },
-    {
-      "class": "step-card",
-      "pages": 6,
-      "occurrences": 28
-    },
-    {
-      "class": "step-number",
-      "pages": 6,
-      "occurrences": 28
-    },
-    {
-      "class": "variant-positive",
-      "pages": 6,
-      "occurrences": 14
+      "occurrences": 15
     },
     {
       "class": "pull-quote",
@@ -2195,6 +2366,111 @@
     },
     {
       "class": "alpha-count",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-chip-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-compat",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-counter",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-platform-row",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-platform-tab",
+      "pages": 1,
+      "occurrences": 11
+    },
+    {
+      "class": "bf-preview",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-preview-avatar",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-preview-bio",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-preview-head",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-preview-meta",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-preview-name",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-preview-platform",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-section",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "bf-section-sub",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "bf-section-title",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "bf-step",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
+      "class": "bf-step-desc",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
+      "class": "bf-step-num",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
+      "class": "bf-step-title",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
+      "class": "bf-steps",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "bf-template-grid",
       "pages": 1,
       "occurrences": 1
     },
@@ -2376,12 +2652,12 @@
     {
       "class": "ex-variant",
       "pages": 1,
-      "occurrences": 45
+      "occurrences": 49
     },
     {
       "class": "example-pair-horizontal",
       "pages": 1,
-      "occurrences": 15
+      "occurrences": 17
     },
     {
       "class": "footer-link",
@@ -2679,6 +2955,11 @@
       "occurrences": 1
     },
     {
+      "class": "placeholder",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
       "class": "region-filter",
       "pages": 1,
       "occurrences": 6
@@ -2772,21 +3053,21 @@
   "repeatedPatterns": [
     {
       "pattern": "display:none; visibility:hidden",
-      "count": 68,
+      "count": 71,
       "risk": "high",
       "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
     {
-      "pattern": "align-items:stretch; flex-direction:column; gap:8px",
-      "count": 17,
-      "risk": "medium",
-      "suggestedUtility": "(propose a utility/component class)"
-    },
-    {
       "pattern": "text-decoration:none",
-      "count": 17,
+      "count": 29,
       "risk": "low",
       "suggestedUtility": "u-no-underline"
+    },
+    {
+      "pattern": "align-items:stretch; flex-direction:column; gap:8px",
+      "count": 20,
+      "risk": "medium",
+      "suggestedUtility": "(propose a utility/component class)"
     },
     {
       "pattern": "color:var(--text-primary); font-weight:600; text-decoration:underline",
@@ -2819,6 +3100,12 @@
       "suggestedUtility": "u-maxw-*"
     },
     {
+      "pattern": "font-size:1.35rem",
+      "count": 6,
+      "risk": "low",
+      "suggestedUtility": "u-fs-*"
+    },
+    {
       "pattern": "display:none",
       "count": 5,
       "risk": "high",
@@ -2829,12 +3116,6 @@
       "count": 5,
       "risk": "low",
       "suggestedUtility": "u-mt-*"
-    },
-    {
-      "pattern": "font-size:1.35rem",
-      "count": 4,
-      "risk": "low",
-      "suggestedUtility": "u-fs-*"
     },
     {
       "pattern": "margin-top:1rem",
@@ -2864,27 +3145,27 @@
   "propertyFrequency": [
     {
       "property": "display",
-      "count": 75
+      "count": 78
     },
     {
       "property": "visibility",
-      "count": 68
-    },
-    {
-      "property": "gap",
-      "count": 29
-    },
-    {
-      "property": "align-items",
-      "count": 28
+      "count": 71
     },
     {
       "property": "text-decoration",
-      "count": 27
+      "count": 39
+    },
+    {
+      "property": "gap",
+      "count": 32
+    },
+    {
+      "property": "align-items",
+      "count": 31
     },
     {
       "property": "flex-direction",
-      "count": 27
+      "count": 30
     },
     {
       "property": "color",
@@ -2892,7 +3173,7 @@
     },
     {
       "property": "font-size",
-      "count": 20
+      "count": 22
     },
     {
       "property": "max-width",
@@ -2900,7 +3181,7 @@
     },
     {
       "property": "margin-top",
-      "count": 13
+      "count": 14
     },
     {
       "property": "margin",
@@ -2952,7 +3233,7 @@
     }
   ],
   "cssSelectors": {
-    "total": 339,
+    "total": 365,
     "referenced": [
       {
         "selector": "*",
@@ -3385,1270 +3666,1400 @@
         "via": "html"
       },
       {
-        "selector": ".faq-section-wrapper",
+        "selector": ".style-actions",
         "line": 612,
+        "via": "js"
+      },
+      {
+        "selector": ".save-btn",
+        "line": 620,
+        "via": "js"
+      },
+      {
+        "selector": ".save-btn .save-icon",
+        "line": 637,
+        "via": "js"
+      },
+      {
+        "selector": ".save-btn:hover",
+        "line": 642,
+        "via": "js"
+      },
+      {
+        "selector": ".save-btn.is-saved",
+        "line": 647,
+        "via": "js"
+      },
+      {
+        "selector": ".saved-section",
+        "line": 653,
+        "via": "js"
+      },
+      {
+        "selector": ".saved-header",
+        "line": 663,
+        "via": "js"
+      },
+      {
+        "selector": ".saved-title",
+        "line": 670,
+        "via": "js"
+      },
+      {
+        "selector": ".saved-clear",
+        "line": 677,
+        "via": "js"
+      },
+      {
+        "selector": ".saved-clear:hover",
+        "line": 689,
+        "via": "js"
+      },
+      {
+        "selector": ".saved-hint",
+        "line": 693,
+        "via": "js"
+      },
+      {
+        "selector": ".saved-grid",
+        "line": 699,
+        "via": "js"
+      },
+      {
+        "selector": ".faq-section-wrapper",
+        "line": 703,
         "via": "html"
       },
       {
         "selector": ".footer",
-        "line": 619,
+        "line": 710,
         "via": "html"
       },
       {
         "selector": ".footer-inner",
-        "line": 626,
-        "via": "html"
-      },
-      {
-        "selector": ".faq-inner",
-        "line": 626,
-        "via": "html"
-      },
-      {
-        "selector": ".footer-columns",
-        "line": 632,
-        "via": "js"
-      },
-      {
-        "selector": ".footer-col",
-        "line": 639,
-        "via": "js"
-      },
-      {
-        "selector": ".footer-col-title",
-        "line": 645,
-        "via": "js"
-      },
-      {
-        "selector": ".footer-social-links",
-        "line": 654,
-        "via": "html"
-      },
-      {
-        "selector": ".footer-link",
-        "line": 663,
-        "via": "html"
-      },
-      {
-        "selector": ".footer-link:hover",
-        "line": 670,
-        "via": "html"
-      },
-      {
-        "selector": ".footer-columns",
-        "line": 676,
-        "via": "js"
-      },
-      {
-        "selector": ".related-pages",
-        "line": 681,
-        "via": "html"
-      },
-      {
-        "selector": ".related-pages h2",
-        "line": 688,
-        "via": "html"
-      },
-      {
-        "selector": ".related-pages-grid",
-        "line": 696,
-        "via": "html"
-      },
-      {
-        "selector": ".related-page-card",
-        "line": 702,
-        "via": "html"
-      },
-      {
-        "selector": ".related-page-card:hover",
-        "line": 712,
-        "via": "html"
-      },
-      {
-        "selector": ".related-page-label",
         "line": 717,
         "via": "html"
       },
       {
+        "selector": ".faq-inner",
+        "line": 717,
+        "via": "html"
+      },
+      {
+        "selector": ".footer-columns",
+        "line": 723,
+        "via": "js"
+      },
+      {
+        "selector": ".footer-col",
+        "line": 730,
+        "via": "js"
+      },
+      {
+        "selector": ".footer-col-title",
+        "line": 736,
+        "via": "js"
+      },
+      {
+        "selector": ".footer-social-links",
+        "line": 745,
+        "via": "html"
+      },
+      {
+        "selector": ".footer-link",
+        "line": 754,
+        "via": "html"
+      },
+      {
+        "selector": ".footer-link:hover",
+        "line": 761,
+        "via": "html"
+      },
+      {
+        "selector": ".footer-columns",
+        "line": 767,
+        "via": "js"
+      },
+      {
+        "selector": ".related-pages",
+        "line": 772,
+        "via": "html"
+      },
+      {
+        "selector": ".related-pages h2",
+        "line": 779,
+        "via": "html"
+      },
+      {
+        "selector": ".related-pages-grid",
+        "line": 787,
+        "via": "html"
+      },
+      {
+        "selector": ".related-page-card",
+        "line": 793,
+        "via": "html"
+      },
+      {
+        "selector": ".related-page-card:hover",
+        "line": 803,
+        "via": "html"
+      },
+      {
+        "selector": ".related-page-label",
+        "line": 808,
+        "via": "html"
+      },
+      {
         "selector": ".related-page-card h4",
-        "line": 727,
+        "line": 818,
         "via": "html"
       },
       {
         "selector": ".faq-section",
-        "line": 735,
+        "line": 826,
         "via": "html"
       },
       {
         "selector": ".faq-category",
-        "line": 739,
+        "line": 830,
         "via": "html"
       },
       {
         "selector": ".faq-category ~ .faq-category",
-        "line": 748,
+        "line": 839,
         "via": "html"
       },
       {
         "selector": ".faq-question",
-        "line": 755,
+        "line": 846,
         "via": "html"
       },
       {
         "selector": ".faq-question svg",
-        "line": 771,
+        "line": 862,
         "via": "html"
       },
       {
         "selector": ".faq-item.open .faq-question svg",
-        "line": 778,
+        "line": 869,
         "via": "html"
       },
       {
         "selector": ".faq-answer",
-        "line": 782,
+        "line": 873,
         "via": "html"
       },
       {
         "selector": ".faq-item.open .faq-answer",
-        "line": 790,
+        "line": 881,
         "via": "html"
       },
       {
         "selector": "details[open] .faq-answer",
-        "line": 794,
+        "line": 885,
         "via": "html"
       },
       {
         "selector": "summary.faq-question",
-        "line": 798,
+        "line": 889,
         "via": "html"
       },
       {
         "selector": "summary.faq-question::-webkit-details-marker",
-        "line": 802,
+        "line": 893,
         "via": "html"
       },
       {
         "selector": ".footer-bottom",
-        "line": 806,
+        "line": 897,
         "via": "js"
       },
       {
         "selector": ".lang-switcher",
-        "line": 814,
+        "line": 905,
         "via": "html"
       },
       {
         "selector": ".lang-option",
-        "line": 823,
+        "line": 914,
         "via": "html"
       },
       {
         "selector": ".lang-option:hover",
-        "line": 836,
+        "line": 927,
         "via": "html"
       },
       {
         "selector": ".lang-option.active",
-        "line": 836,
+        "line": 927,
         "via": "html"
       },
       {
         "selector": ".header-inner",
-        "line": 845,
+        "line": 936,
         "via": "js"
       },
       {
         "selector": ".search-bar",
-        "line": 848,
+        "line": 939,
         "via": "js"
       },
       {
         "selector": ".header-btn span",
-        "line": 855,
+        "line": 946,
         "via": "js"
       },
       {
         "selector": ".hero-inner",
-        "line": 859,
+        "line": 950,
         "via": "html"
       },
       {
         "selector": ".hero-card",
-        "line": 863,
+        "line": 954,
         "via": "html"
       },
       {
         "selector": ".hero-headline",
-        "line": 867,
+        "line": 958,
         "via": "html"
       },
       {
         "selector": ".style-card",
-        "line": 871,
+        "line": 962,
         "via": "html"
       },
       {
         "selector": ".copy-btn",
-        "line": 877,
+        "line": 968,
         "via": "html"
       },
       {
+        "selector": ".style-actions",
+        "line": 973,
+        "via": "js"
+      },
+      {
+        "selector": ".style-actions .copy-btn",
+        "line": 977,
+        "via": "html"
+      },
+      {
+        "selector": ".save-btn",
+        "line": 983,
+        "via": "js"
+      },
+      {
         "selector": ".category-section",
-        "line": 882,
+        "line": 987,
         "via": "html"
       },
       {
         "selector": ".category-tabs",
-        "line": 887,
+        "line": 992,
         "via": "html"
       },
       {
         "selector": ".category-tab",
-        "line": 892,
+        "line": 997,
         "via": "html"
       },
       {
         "selector": ".decoration-tab",
-        "line": 897,
+        "line": 1002,
         "via": "html"
       },
       {
         "selector": ".category-tabs",
-        "line": 913,
+        "line": 1018,
         "via": "html"
       },
       {
         "selector": ".category-tabs.expanded",
-        "line": 924,
+        "line": 1029,
         "via": "html"
       },
       {
         "selector": ".category-tab.hidden-category",
-        "line": 930,
+        "line": 1035,
         "via": "html"
       },
       {
         "selector": ".hero-tagline",
-        "line": 936,
+        "line": 1041,
         "via": "html"
       },
       {
         "selector": ".mood-explainers",
-        "line": 950,
+        "line": 1055,
         "via": "html"
       },
       {
         "selector": ".editorial-section",
-        "line": 950,
+        "line": 1055,
         "via": "html"
       },
       {
         "selector": ".editorial-section p",
-        "line": 958,
+        "line": 1063,
         "via": "html"
       },
       {
         "selector": ".editorial-section ul",
-        "line": 958,
+        "line": 1063,
         "via": "html"
       },
       {
         "selector": ".editorial-section > h3",
-        "line": 964,
+        "line": 1069,
         "via": "html"
       },
       {
         "selector": ".editorial-section .compat-list",
-        "line": 972,
+        "line": 1077,
         "via": "html"
       },
       {
         "selector": ".editorial-section .compat-list li",
-        "line": 980,
+        "line": 1085,
         "via": "html"
       },
       {
         "selector": ".editorial-section code",
-        "line": 988,
+        "line": 1093,
         "via": "html"
       },
       {
         "selector": ".mood-explainers h2",
-        "line": 995,
+        "line": 1100,
         "via": "html"
       },
       {
         "selector": ".editorial-section > h2",
-        "line": 995,
+        "line": 1100,
         "via": "html"
       },
       {
         "selector": ".steps-grid",
-        "line": 1005,
+        "line": 1110,
         "via": "html"
       },
       {
         "selector": ".tips-grid",
-        "line": 1005,
+        "line": 1110,
         "via": "html"
       },
       {
         "selector": ".step-card",
-        "line": 1013,
+        "line": 1118,
         "via": "html"
       },
       {
         "selector": ".tip-card",
-        "line": 1013,
+        "line": 1118,
         "via": "html"
       },
       {
         "selector": ".step-number",
-        "line": 1022,
-        "via": "html"
-      },
-      {
-        "selector": ".step-card h3",
-        "line": 1034,
-        "via": "html"
-      },
-      {
-        "selector": ".tip-card h3",
-        "line": 1034,
-        "via": "html"
-      },
-      {
-        "selector": ".step-card p",
-        "line": 1042,
-        "via": "html"
-      },
-      {
-        "selector": ".tip-card p",
-        "line": 1042,
-        "via": "html"
-      },
-      {
-        "selector": ".mood-explainer",
-        "line": 1049,
-        "via": "html"
-      },
-      {
-        "selector": ".editorial-block",
-        "line": 1049,
-        "via": "html"
-      },
-      {
-        "selector": ".mood-explainer h3",
-        "line": 1055,
-        "via": "html"
-      },
-      {
-        "selector": ".editorial-block h3",
-        "line": 1055,
-        "via": "html"
-      },
-      {
-        "selector": ".mood-explainer p",
-        "line": 1063,
-        "via": "html"
-      },
-      {
-        "selector": ".editorial-block p",
-        "line": 1063,
-        "via": "html"
-      },
-      {
-        "selector": ".mood-example",
-        "line": 1071,
-        "via": "html"
-      },
-      {
-        "selector": ".block-example",
-        "line": 1071,
-        "via": "html"
-      },
-      {
-        "selector": ".mood-example strong",
-        "line": 1083,
-        "via": "html"
-      },
-      {
-        "selector": ".block-example strong",
-        "line": 1083,
-        "via": "html"
-      },
-      {
-        "selector": ".block-example pre",
-        "line": 1089,
-        "via": "html"
-      },
-      {
-        "selector": ".accordion-section",
-        "line": 1099,
-        "via": "html"
-      },
-      {
-        "selector": ".accordion-toggle",
-        "line": 1107,
-        "via": "html"
-      },
-      {
-        "selector": ".accordion-toggle::-webkit-details-marker",
-        "line": 1123,
-        "via": "html"
-      },
-      {
-        "selector": ".accordion-toggle::after",
         "line": 1127,
         "via": "html"
       },
       {
-        "selector": ".accordion-section[open] > .accordion-toggle::after",
-        "line": 1135,
-        "via": "html"
-      },
-      {
-        "selector": ".accordion-section > .accordion-body",
+        "selector": ".step-card h3",
         "line": 1139,
         "via": "html"
       },
       {
-        "selector": ".hero-tagline",
-        "line": 1146,
+        "selector": ".tip-card h3",
+        "line": 1139,
         "via": "html"
       },
       {
-        "selector": ".mood-explainers h2",
-        "line": 1149,
+        "selector": ".step-card p",
+        "line": 1147,
         "via": "html"
       },
       {
-        "selector": ".editorial-section > h2",
-        "line": 1149,
+        "selector": ".tip-card p",
+        "line": 1147,
         "via": "html"
       },
       {
-        "selector": ".steps-grid",
+        "selector": ".mood-explainer",
         "line": 1154,
         "via": "html"
       },
       {
-        "selector": ".tips-grid",
+        "selector": ".editorial-block",
         "line": 1154,
-        "via": "html"
-      },
-      {
-        "selector": ".step-card",
-        "line": 1160,
-        "via": "html"
-      },
-      {
-        "selector": ".tip-card",
-        "line": 1160,
         "via": "html"
       },
       {
         "selector": ".mood-explainer h3",
-        "line": 1165,
+        "line": 1160,
         "via": "html"
       },
       {
         "selector": ".editorial-block h3",
-        "line": 1165,
+        "line": 1160,
         "via": "html"
       },
       {
-        "selector": ".categories-glance",
-        "line": 1171,
+        "selector": ".mood-explainer p",
+        "line": 1168,
         "via": "html"
       },
       {
-        "selector": ".categories-glance-heading",
-        "line": 1178,
+        "selector": ".editorial-block p",
+        "line": 1168,
         "via": "html"
       },
       {
-        "selector": ".categories-glance-grid",
-        "line": 1184,
-        "via": "html"
-      },
-      {
-        "selector": ".glance-card",
-        "line": 1189,
-        "via": "html"
-      },
-      {
-        "selector": ".glance-card:hover",
-        "line": 1197,
-        "via": "html"
-      },
-      {
-        "selector": ".glance-card-header",
-        "line": 1202,
-        "via": "html"
-      },
-      {
-        "selector": ".glance-card-header span:last-child",
-        "line": 1208,
-        "via": "html"
-      },
-      {
-        "selector": ".glance-card-count",
-        "line": 1212,
-        "via": "html"
-      },
-      {
-        "selector": ".glance-card-preview",
-        "line": 1216,
-        "via": "html"
-      },
-      {
-        "selector": ".style-grid",
-        "line": 1221,
-        "via": "html"
-      },
-      {
-        "selector": ".style-grid-card",
-        "line": 1233,
-        "via": "html"
-      },
-      {
-        "selector": ".style-grid-card:hover",
-        "line": 1244,
-        "via": "html"
-      },
-      {
-        "selector": ".style-grid-label",
-        "line": 1248,
-        "via": "html"
-      },
-      {
-        "selector": ".style-grid-preview",
-        "line": 1256,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table-wrap",
-        "line": 1265,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table",
-        "line": 1274,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table th",
-        "line": 1280,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table td",
-        "line": 1291,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table tr:last-child td",
-        "line": 1297,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table code",
-        "line": 1301,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-grid",
-        "line": 1310,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card",
-        "line": 1321,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card h4",
-        "line": 1328,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card ul",
-        "line": 1335,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card li",
-        "line": 1341,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-badge",
-        "line": 1348,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-muted .compare-badge",
-        "line": 1359,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-muted li::before",
-        "line": 1364,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-positive .compare-badge",
-        "line": 1369,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-positive li::before",
-        "line": 1374,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.is-link",
-        "line": 1379,
-        "via": "html"
-      },
-      {
-        "selector": ".aesthetic-card-symbols",
-        "line": 1389,
-        "via": "html"
-      },
-      {
-        "selector": ".aesthetic-card-desc",
-        "line": 1395,
-        "via": "html"
-      },
-      {
-        "selector": ".symbol-pick-grid",
-        "line": 1401,
-        "via": "html"
-      },
-      {
-        "selector": ".symbol-pick-tile",
-        "line": 1405,
-        "via": "html"
-      },
-      {
-        "selector": ".section-lead",
-        "line": 1409,
-        "via": "html"
-      },
-      {
-        "selector": ".section-lead.is-spaced",
-        "line": 1414,
-        "via": "html"
-      },
-      {
-        "selector": "a",
-        "line": 1418,
-        "via": "structural"
-      },
-      {
-        "selector": "a:hover",
-        "line": 1423,
-        "via": "structural"
-      },
-      {
-        "selector": ".editorial-block strong",
-        "line": 1427,
-        "via": "html"
-      },
-      {
-        "selector": ".mood-explainer strong",
-        "line": 1427,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair",
-        "line": 1433,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair .ex-label",
-        "line": 1439,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair .ex-plain",
-        "line": 1447,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair .ex-arrow",
-        "line": 1452,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair .ex-styled",
-        "line": 1458,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair-horizontal",
-        "line": 1464,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair-horizontal .ex-variant",
-        "line": 1471,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair-horizontal .ex-label",
-        "line": 1481,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair-horizontal .ex-plain",
-        "line": 1489,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair-horizontal .ex-styled",
-        "line": 1494,
-        "via": "html"
-      },
-      {
-        "selector": ".example-pair-horizontal",
-        "line": 1502,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-grid",
-        "line": 1506,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card",
-        "line": 1513,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card h4",
-        "line": 1520,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card ul",
-        "line": 1527,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card li",
-        "line": 1533,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-badge",
-        "line": 1540,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-muted .compare-badge",
-        "line": 1551,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-muted li::before",
-        "line": 1556,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-positive .compare-badge",
-        "line": 1561,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-card.variant-positive li::before",
-        "line": 1566,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table tr:last-child td",
-        "line": 1571,
-        "via": "html"
-      },
-      {
-        "selector": ".section-divider",
-        "line": 1575,
-        "via": "html"
-      },
-      {
-        "selector": ".article-section-label",
-        "line": 1582,
-        "via": "html"
-      },
-      {
-        "selector": ".pull-quote",
-        "line": 1595,
-        "via": "html"
-      },
-      {
-        "selector": ".cta-card",
-        "line": 1608,
-        "via": "html"
-      },
-      {
-        "selector": ".cta-card h3",
-        "line": 1619,
-        "via": "html"
-      },
-      {
-        "selector": ".cta-card p",
-        "line": 1626,
-        "via": "html"
-      },
-      {
-        "selector": ".cta-btn",
-        "line": 1632,
-        "via": "html"
-      },
-      {
-        "selector": ".cta-btn:hover",
-        "line": 1647,
-        "via": "html"
-      },
-      {
-        "selector": ".compare-grid",
-        "line": 1656,
-        "via": "html"
-      },
-      {
-        "selector": ".pull-quote",
-        "line": 1659,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table",
-        "line": 1664,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table th",
-        "line": 1668,
-        "via": "html"
-      },
-      {
-        "selector": ".data-table td",
-        "line": 1668,
-        "via": "html"
-      },
-      {
-        "selector": ".brand-card",
-        "line": 1674,
-        "via": "html"
-      },
-      {
-        "selector": ".brand-card h3",
-        "line": 1686,
-        "via": "html"
-      },
-      {
-        "selector": ".brand-card p",
-        "line": 1696,
-        "via": "html"
-      },
-      {
-        "selector": ".tip-icon",
-        "line": 1703,
-        "via": "html"
-      },
-      {
-        "selector": ".style-card.cat-anchor",
-        "line": 1712,
-        "via": "html"
-      },
-      {
-        "selector": ".cat-overview-table tbody tr",
-        "line": 1723,
-        "via": "html"
-      },
-      {
-        "selector": ".cat-overview-table tbody tr:hover",
-        "line": 1728,
-        "via": "html"
-      },
-      {
-        "selector": ".cat-cta",
-        "line": 1731,
-        "via": "html"
-      },
-      {
-        "selector": ".cat-cta:hover",
-        "line": 1745,
-        "via": "html"
-      },
-      {
-        "selector": ".helper-section",
-        "line": 1750,
-        "via": "html"
-      },
-      {
-        "selector": ".helper-section-title",
-        "line": 1757,
-        "via": "html"
-      },
-      {
-        "selector": ".style-phrase-title",
-        "line": 1757,
-        "via": "html"
-      },
-      {
-        "selector": ".helper-chip-grid",
-        "line": 1768,
-        "via": "html"
-      },
-      {
-        "selector": ".helper-chip",
-        "line": 1776,
-        "via": "js"
-      },
-      {
-        "selector": ".helper-chip:hover",
-        "line": 1788,
-        "via": "js"
-      },
-      {
-        "selector": ".helper-chip.active",
-        "line": 1788,
-        "via": "html"
-      },
-      {
-        "selector": ".style-phrase-section",
-        "line": 1796,
-        "via": "html"
-      },
-      {
-        "selector": ".selection-indicator",
-        "line": 1803,
-        "via": "html"
-      },
-      {
-        "selector": ".selection-indicator em",
-        "line": 1811,
-        "via": "html"
-      },
-      {
-        "selector": ".apply-btn",
-        "line": 1816,
-        "via": "html"
-      },
-      {
-        "selector": ".apply-btn:disabled",
-        "line": 1830,
-        "via": "html"
-      },
-      {
-        "selector": ".apply-btn:not(:disabled):hover",
-        "line": 1834,
-        "via": "html"
-      },
-      {
-        "selector": ".variation-char-count",
-        "line": 1837,
-        "via": "js"
-      },
-      {
-        "selector": ".variations-placeholder",
-        "line": 1848,
-        "via": "html"
-      },
-      {
-        "selector": ".char-warning",
-        "line": 1856,
-        "via": "js"
-      },
-      {
-        "selector": ".usecase-example",
-        "line": 1862,
-        "via": "html"
-      },
-      {
-        "selector": ".usecase-outcome",
-        "line": 1880,
-        "via": "html"
-      },
-      {
-        "selector": ".usecase-diff",
-        "line": 1888,
-        "via": "html"
-      },
-      {
-        "selector": ".section-subline",
-        "line": 1895,
-        "via": "html"
-      },
-      {
-        "selector": ".usecase-cta",
-        "line": 1904,
-        "via": "html"
-      },
-      {
-        "selector": ".usecase-cta:hover",
-        "line": 1916,
-        "via": "html"
-      },
-      {
-        "selector": ".style-card.usecase-cards",
-        "line": 1919,
-        "via": "html"
-      },
-      {
-        "selector": ".editorial-section + .editorial-section",
-        "line": 1924,
-        "via": "html"
-      },
-      {
-        "selector": ".editorial-section + .cta-card",
-        "line": 1924,
-        "via": "html"
-      },
-      {
-        "selector": ".editorial-section .style-card + .style-card",
-        "line": 1930,
-        "via": "html"
-      },
-      {
-        "selector": ".hero-sub",
-        "line": 1935,
+        "selector": ".mood-example",
+        "line": 1176,
         "via": "html"
       },
       {
         "selector": ".block-example",
-        "line": 1943,
+        "line": 1176,
+        "via": "html"
+      },
+      {
+        "selector": ".mood-example strong",
+        "line": 1188,
+        "via": "html"
+      },
+      {
+        "selector": ".block-example strong",
+        "line": 1188,
+        "via": "html"
+      },
+      {
+        "selector": ".block-example pre",
+        "line": 1194,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-section:has(.editorial-grid)",
+        "line": 1204,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-intro",
+        "line": 1209,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid",
+        "line": 1218,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid .editorial-block",
+        "line": 1225,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid .editorial-block h3",
+        "line": 1235,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid .mood-label",
+        "line": 1242,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid .mood-when",
+        "line": 1248,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid .editorial-block p",
+        "line": 1256,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid .block-example:last-child",
+        "line": 1260,
+        "via": "html"
+      },
+      {
+        "selector": ".accordion-section",
+        "line": 1265,
+        "via": "html"
+      },
+      {
+        "selector": ".accordion-toggle",
+        "line": 1273,
+        "via": "html"
+      },
+      {
+        "selector": ".accordion-toggle::-webkit-details-marker",
+        "line": 1289,
+        "via": "html"
+      },
+      {
+        "selector": ".accordion-toggle::after",
+        "line": 1293,
+        "via": "html"
+      },
+      {
+        "selector": ".accordion-section[open] > .accordion-toggle::after",
+        "line": 1301,
+        "via": "html"
+      },
+      {
+        "selector": ".accordion-section > .accordion-body",
+        "line": 1305,
+        "via": "html"
+      },
+      {
+        "selector": ".hero-tagline",
+        "line": 1312,
+        "via": "html"
+      },
+      {
+        "selector": ".mood-explainers h2",
+        "line": 1315,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-section > h2",
+        "line": 1315,
+        "via": "html"
+      },
+      {
+        "selector": ".steps-grid",
+        "line": 1320,
+        "via": "html"
+      },
+      {
+        "selector": ".tips-grid",
+        "line": 1320,
+        "via": "html"
+      },
+      {
+        "selector": ".step-card",
+        "line": 1326,
+        "via": "html"
+      },
+      {
+        "selector": ".tip-card",
+        "line": 1326,
+        "via": "html"
+      },
+      {
+        "selector": ".mood-explainer h3",
+        "line": 1331,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-block h3",
+        "line": 1331,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid",
+        "line": 1336,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-grid .editorial-block",
+        "line": 1340,
+        "via": "html"
+      },
+      {
+        "selector": ".categories-glance",
+        "line": 1345,
+        "via": "html"
+      },
+      {
+        "selector": ".categories-glance-heading",
+        "line": 1352,
+        "via": "html"
+      },
+      {
+        "selector": ".categories-glance-grid",
+        "line": 1358,
+        "via": "html"
+      },
+      {
+        "selector": ".glance-card",
+        "line": 1363,
+        "via": "html"
+      },
+      {
+        "selector": ".glance-card:hover",
+        "line": 1371,
+        "via": "html"
+      },
+      {
+        "selector": ".glance-card-header",
+        "line": 1376,
+        "via": "html"
+      },
+      {
+        "selector": ".glance-card-header span:last-child",
+        "line": 1382,
+        "via": "html"
+      },
+      {
+        "selector": ".glance-card-count",
+        "line": 1386,
+        "via": "html"
+      },
+      {
+        "selector": ".glance-card-preview",
+        "line": 1390,
+        "via": "html"
+      },
+      {
+        "selector": ".style-grid",
+        "line": 1395,
+        "via": "html"
+      },
+      {
+        "selector": ".style-grid-card",
+        "line": 1407,
+        "via": "html"
+      },
+      {
+        "selector": ".style-grid-card:hover",
+        "line": 1418,
+        "via": "html"
+      },
+      {
+        "selector": ".style-grid-label",
+        "line": 1422,
+        "via": "html"
+      },
+      {
+        "selector": ".style-grid-preview",
+        "line": 1430,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table-wrap",
+        "line": 1439,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table",
+        "line": 1448,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table th",
+        "line": 1454,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table td",
+        "line": 1465,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table tr:last-child td",
+        "line": 1471,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table code",
+        "line": 1475,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-grid",
+        "line": 1484,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card",
+        "line": 1495,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card h4",
+        "line": 1502,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card ul",
+        "line": 1509,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card li",
+        "line": 1515,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-badge",
+        "line": 1522,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-muted .compare-badge",
+        "line": 1533,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-muted li::before",
+        "line": 1538,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-positive .compare-badge",
+        "line": 1543,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-positive li::before",
+        "line": 1548,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.is-link",
+        "line": 1553,
+        "via": "html"
+      },
+      {
+        "selector": ".aesthetic-card-symbols",
+        "line": 1563,
+        "via": "html"
+      },
+      {
+        "selector": ".aesthetic-card-desc",
+        "line": 1569,
+        "via": "html"
+      },
+      {
+        "selector": ".symbol-pick-grid",
+        "line": 1575,
+        "via": "html"
+      },
+      {
+        "selector": ".symbol-pick-tile",
+        "line": 1579,
+        "via": "html"
+      },
+      {
+        "selector": ".section-lead",
+        "line": 1583,
+        "via": "html"
+      },
+      {
+        "selector": ".section-lead.is-spaced",
+        "line": 1588,
+        "via": "html"
+      },
+      {
+        "selector": "a",
+        "line": 1592,
+        "via": "structural"
+      },
+      {
+        "selector": "a:hover",
+        "line": 1597,
+        "via": "structural"
+      },
+      {
+        "selector": ".editorial-block strong",
+        "line": 1601,
+        "via": "html"
+      },
+      {
+        "selector": ".mood-explainer strong",
+        "line": 1601,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair",
+        "line": 1607,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair .ex-label",
+        "line": 1613,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair .ex-plain",
+        "line": 1621,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair .ex-arrow",
+        "line": 1626,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair .ex-styled",
+        "line": 1632,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair-horizontal",
+        "line": 1638,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair-horizontal .ex-variant",
+        "line": 1645,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair-horizontal .ex-label",
+        "line": 1655,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair-horizontal .ex-plain",
+        "line": 1663,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair-horizontal .ex-styled",
+        "line": 1668,
+        "via": "html"
+      },
+      {
+        "selector": ".example-pair-horizontal",
+        "line": 1676,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-grid",
+        "line": 1680,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card",
+        "line": 1687,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card h4",
+        "line": 1694,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card ul",
+        "line": 1701,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card li",
+        "line": 1707,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-badge",
+        "line": 1714,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-muted .compare-badge",
+        "line": 1725,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-muted li::before",
+        "line": 1730,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-positive .compare-badge",
+        "line": 1735,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-card.variant-positive li::before",
+        "line": 1740,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table tr:last-child td",
+        "line": 1745,
+        "via": "html"
+      },
+      {
+        "selector": ".section-divider",
+        "line": 1749,
+        "via": "html"
+      },
+      {
+        "selector": ".article-section-label",
+        "line": 1756,
+        "via": "html"
+      },
+      {
+        "selector": ".pull-quote",
+        "line": 1769,
+        "via": "html"
+      },
+      {
+        "selector": ".cta-card",
+        "line": 1782,
+        "via": "html"
+      },
+      {
+        "selector": ".cta-card h3",
+        "line": 1793,
+        "via": "html"
+      },
+      {
+        "selector": ".cta-card p",
+        "line": 1800,
+        "via": "html"
+      },
+      {
+        "selector": ".cta-btn",
+        "line": 1806,
+        "via": "html"
+      },
+      {
+        "selector": ".cta-btn:hover",
+        "line": 1821,
+        "via": "html"
+      },
+      {
+        "selector": ".compare-grid",
+        "line": 1830,
+        "via": "html"
+      },
+      {
+        "selector": ".pull-quote",
+        "line": 1833,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table",
+        "line": 1838,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table th",
+        "line": 1842,
+        "via": "html"
+      },
+      {
+        "selector": ".data-table td",
+        "line": 1842,
+        "via": "html"
+      },
+      {
+        "selector": ".brand-card",
+        "line": 1848,
+        "via": "html"
+      },
+      {
+        "selector": ".brand-card h3",
+        "line": 1860,
+        "via": "html"
+      },
+      {
+        "selector": ".brand-card p",
+        "line": 1870,
+        "via": "html"
+      },
+      {
+        "selector": ".tip-icon",
+        "line": 1877,
+        "via": "html"
+      },
+      {
+        "selector": ".style-card.cat-anchor",
+        "line": 1886,
+        "via": "html"
+      },
+      {
+        "selector": ".cat-overview-table tbody tr",
+        "line": 1897,
+        "via": "html"
+      },
+      {
+        "selector": ".cat-overview-table tbody tr:hover",
+        "line": 1902,
+        "via": "html"
+      },
+      {
+        "selector": ".cat-cta",
+        "line": 1905,
+        "via": "html"
+      },
+      {
+        "selector": ".cat-cta:hover",
+        "line": 1919,
+        "via": "html"
+      },
+      {
+        "selector": ".helper-section",
+        "line": 1924,
+        "via": "html"
+      },
+      {
+        "selector": ".helper-section-title",
+        "line": 1931,
+        "via": "html"
+      },
+      {
+        "selector": ".style-phrase-title",
+        "line": 1931,
+        "via": "html"
+      },
+      {
+        "selector": ".helper-chip-grid",
+        "line": 1942,
+        "via": "html"
+      },
+      {
+        "selector": ".helper-chip",
+        "line": 1950,
+        "via": "js"
+      },
+      {
+        "selector": ".helper-chip:hover",
+        "line": 1962,
+        "via": "js"
+      },
+      {
+        "selector": ".helper-chip.active",
+        "line": 1962,
+        "via": "html"
+      },
+      {
+        "selector": ".style-phrase-section",
+        "line": 1970,
+        "via": "html"
+      },
+      {
+        "selector": ".selection-indicator",
+        "line": 1977,
+        "via": "html"
+      },
+      {
+        "selector": ".selection-indicator em",
+        "line": 1985,
+        "via": "html"
+      },
+      {
+        "selector": ".apply-btn",
+        "line": 1990,
+        "via": "html"
+      },
+      {
+        "selector": ".apply-btn:disabled",
+        "line": 2004,
+        "via": "html"
+      },
+      {
+        "selector": ".apply-btn:not(:disabled):hover",
+        "line": 2008,
+        "via": "html"
+      },
+      {
+        "selector": ".variation-char-count",
+        "line": 2011,
+        "via": "js"
+      },
+      {
+        "selector": ".variations-placeholder",
+        "line": 2022,
+        "via": "html"
+      },
+      {
+        "selector": ".char-warning",
+        "line": 2030,
+        "via": "js"
+      },
+      {
+        "selector": ".usecase-example",
+        "line": 2036,
+        "via": "html"
+      },
+      {
+        "selector": ".usecase-outcome",
+        "line": 2054,
+        "via": "html"
+      },
+      {
+        "selector": ".usecase-diff",
+        "line": 2062,
+        "via": "html"
+      },
+      {
+        "selector": ".section-subline",
+        "line": 2069,
+        "via": "html"
+      },
+      {
+        "selector": ".usecase-cta",
+        "line": 2078,
+        "via": "html"
+      },
+      {
+        "selector": ".usecase-cta:hover",
+        "line": 2090,
+        "via": "html"
+      },
+      {
+        "selector": ".style-card.usecase-cards",
+        "line": 2093,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-section + .editorial-section",
+        "line": 2098,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-section + .cta-card",
+        "line": 2098,
+        "via": "html"
+      },
+      {
+        "selector": ".editorial-section .style-card + .style-card",
+        "line": 2104,
+        "via": "html"
+      },
+      {
+        "selector": ".hero-sub",
+        "line": 2109,
+        "via": "html"
+      },
+      {
+        "selector": ".block-example",
+        "line": 2117,
         "via": "html"
       },
       {
         "selector": ".symbol-grid",
-        "line": 1953,
+        "line": 2127,
         "via": "html"
       },
       {
         "selector": ".symbol-tile",
-        "line": 1964,
+        "line": 2138,
         "via": "html"
       },
       {
         "selector": ".symbol-tile:hover",
-        "line": 1980,
+        "line": 2154,
         "via": "html"
       },
       {
         "selector": ".symbol-tile:focus-visible",
-        "line": 1986,
+        "line": 2160,
         "via": "html"
       },
       {
         "selector": ".symbol-tile.is-copied",
-        "line": 1991,
+        "line": 2165,
         "via": "html"
       },
       {
         "selector": ".symbol-toast",
-        "line": 1997,
+        "line": 2171,
         "via": "html"
       },
       {
         "selector": ".symbol-toast.is-visible",
-        "line": 2016,
+        "line": 2190,
         "via": "html"
       },
       {
         "selector": ".symbol-grid",
-        "line": 2024,
+        "line": 2198,
         "via": "html"
       },
       {
         "selector": ".symbol-grid",
-        "line": 2031,
+        "line": 2205,
         "via": "html"
       },
       {
         "selector": ".symbol-tile",
-        "line": 2034,
+        "line": 2208,
         "via": "html"
       },
       {
         "selector": ".vertical-control-panel",
-        "line": 2038,
+        "line": 2212,
         "via": "js"
       },
       {
         "selector": ".vertical-control-row",
-        "line": 2051,
+        "line": 2225,
         "via": "js"
       },
       {
         "selector": ".vertical-control-label",
-        "line": 2059,
+        "line": 2233,
         "via": "js"
       },
       {
         "selector": ".vertical-layout-select",
-        "line": 2069,
+        "line": 2243,
         "via": "js"
       },
       {
         "selector": ".vertical-chip",
-        "line": 2082,
+        "line": 2256,
         "via": "js"
       },
       {
         "selector": ".vertical-chip:hover:not(:disabled)",
-        "line": 2097,
+        "line": 2271,
         "via": "js"
       },
       {
         "selector": ".vertical-chip.active",
-        "line": 2102,
+        "line": 2276,
         "via": "html"
       },
       {
         "selector": ".vertical-chip:disabled",
-        "line": 2108,
+        "line": 2282,
         "via": "js"
       },
       {
         "selector": ".vertical-mode-chips",
-        "line": 2113,
+        "line": 2287,
         "via": "js"
       },
       {
         "selector": ".vertical-divider-chips",
-        "line": 2113,
+        "line": 2287,
         "via": "js"
       },
       {
         "selector": ".vertical-divider-row.disabled-row",
-        "line": 2121,
+        "line": 2295,
         "via": "js"
       },
       {
         "selector": ".vertical-deco-tabs",
-        "line": 2127,
+        "line": 2301,
         "via": "js"
       },
       {
         "selector": ".vertical-recent-row",
-        "line": 2135,
+        "line": 2309,
         "via": "js"
       },
       {
         "selector": ".vertical-recent-label",
-        "line": 2144,
+        "line": 2318,
         "via": "js"
       },
       {
         "selector": ".vertical-preview",
-        "line": 2152,
+        "line": 2326,
         "via": "js"
       },
       {
         "selector": ".vertical-results-grid",
-        "line": 2160,
+        "line": 2334,
         "via": "js"
       },
       {
         "selector": ".vertical-style-card",
-        "line": 2168,
+        "line": 2342,
         "via": "js"
       },
       {
         "selector": ".vertical-style-card .style-info",
-        "line": 2175,
+        "line": 2349,
         "via": "html"
       },
       {
         "selector": ".vertical-style-card .style-preview",
-        "line": 2179,
+        "line": 2353,
         "via": "html"
       },
       {
         "selector": ".vertical-style-card .copy-btn",
-        "line": 2184,
+        "line": 2358,
         "via": "html"
       },
       {
         "selector": "body.dark-mode .vertical-layout-select",
-        "line": 2190,
+        "line": 2364,
         "via": "js"
       },
       {
         "selector": "body.dark-mode .vertical-chip",
-        "line": 2197,
+        "line": 2371,
         "via": "js"
       },
       {
         "selector": ".breadcrumbs",
-        "line": 2203,
+        "line": 2377,
         "via": "html"
       },
       {
         "selector": ".breadcrumbs a",
-        "line": 2216,
+        "line": 2390,
         "via": "html"
       },
       {
         "selector": ".breadcrumbs a:hover",
-        "line": 2222,
+        "line": 2396,
         "via": "html"
       },
       {
         "selector": ".breadcrumb-separator",
-        "line": 2227,
+        "line": 2401,
         "via": "html"
       },
       {
         "selector": ".breadcrumb-current",
-        "line": 2233,
+        "line": 2407,
         "via": "html"
       },
       {
         "selector": ".symbol-tile--combo",
-        "line": 2238,
+        "line": 2412,
         "via": "html"
       },
       {
         "selector": ".u-no-underline",
-        "line": 2246,
+        "line": 2420,
         "via": "html"
       },
       {
         "selector": ".u-text-center",
-        "line": 2257,
+        "line": 2431,
         "via": "html"
       },
       {
         "selector": ".u-mt-15",
-        "line": 2261,
+        "line": 2435,
         "via": "html"
       },
       {
         "selector": ".table-row-divider",
-        "line": 2265,
+        "line": 2439,
         "via": "html"
       },
       {
         "selector": ".u-secondary-tight",
-        "line": 2270,
+        "line": 2444,
         "via": "html"
       },
       {
         "selector": ".u-secondary-block",
-        "line": 2275,
+        "line": 2449,
         "via": "html"
       }
     ],
     "unreferenced": [
       {
         "selector": ".variation-char-over",
-        "line": 1844,
+        "line": 2018,
         "classes": [
           "variation-char-over"
         ],
@@ -4820,5 +5231,5 @@
       "snippet": "class=\"preview-name\""
     }
   ],
-  "jsStrictTokenCount": 179
+  "jsStrictTokenCount": 193
 }
