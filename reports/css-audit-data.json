@@ -7,30 +7,30 @@
     "mdTopN": 25
   },
   "summary": {
-    "htmlFiles": 142,
-    "cssFiles": 7,
-    "jsFiles": 22,
+    "htmlFiles": 144,
+    "cssFiles": 9,
+    "jsFiles": 24,
     "pageTypes": {
       "other": 13,
       "category": 17,
       "localized": 20,
-      "platform": 11,
+      "platform": 13,
       "embed": 1,
       "guide": 8,
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 196,
-    "filesWithInlineStyles": 80,
+    "inlineStyleOccurrences": 198,
+    "filesWithInlineStyles": 82,
     "inlineRiskTally": {
       "low": 41,
       "medium": 76,
-      "high": 79
+      "high": 81
     },
     "styleBlocks": 5,
-    "uniqueClasses": 259,
+    "uniqueClasses": 269,
     "componentClassCandidates": 89,
-    "oneOffClassCandidates": 149,
+    "oneOffClassCandidates": 159,
     "repeatedInlinePatterns": 15,
     "cssSelectorsTotal": 365,
     "cssSelectorsReferenced": 364,
@@ -80,11 +80,25 @@
       "purpose": "page-specific usecase styling"
     },
     {
+      "file": "tiktok/tiktok-context.css",
+      "bytes": 3057,
+      "sizeHuman": "3.0 KB",
+      "lines": 147,
+      "purpose": "platform-specific (Discord) styling"
+    },
+    {
       "file": "facebook/facebook-context.css",
       "bytes": 1271,
       "sizeHuman": "1.2 KB",
       "lines": 66,
       "purpose": "platform-specific (Discord) styling"
+    },
+    {
+      "file": "tiktok/name-generator/name-generator.css",
+      "bytes": 1181,
+      "sizeHuman": "1.2 KB",
+      "lines": 69,
+      "purpose": "page/feature specific styling (inferred from path)"
     }
   ],
   "inlineFindings": [
@@ -1147,7 +1161,21 @@
     },
     {
       "file": "tiktok/index.html",
-      "line": 163,
+      "line": 106,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "tiktok/name-generator/index.html",
+      "line": 81,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "tiktok/what-font-does-tiktok-use/index.html",
+      "line": 80,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
@@ -1751,6 +1779,14 @@
       "count": 1
     },
     {
+      "file": "tiktok/name-generator/index.html",
+      "count": 1
+    },
+    {
+      "file": "tiktok/what-font-does-tiktok-use/index.html",
+      "count": 1
+    },
+    {
       "file": "tr/index.html",
       "count": 1
     },
@@ -1823,43 +1859,48 @@
   "componentClasses": [
     {
       "class": "hero-headline",
+      "pages": 141,
+      "occurrences": 141
+    },
+    {
+      "class": "hero",
       "pages": 139,
       "occurrences": 139
     },
     {
-      "class": "hero",
-      "pages": 137,
-      "occurrences": 137
-    },
-    {
       "class": "footer",
-      "pages": 128,
-      "occurrences": 128
+      "pages": 130,
+      "occurrences": 130
     },
     {
       "class": "footer-inner",
+      "pages": 130,
+      "occurrences": 130
+    },
+    {
+      "class": "hero-inner",
       "pages": 128,
       "occurrences": 128
     },
     {
-      "class": "hero-inner",
-      "pages": 126,
-      "occurrences": 126
-    },
-    {
       "class": "editorial-section",
-      "pages": 112,
-      "occurrences": 335
+      "pages": 115,
+      "occurrences": 348
     },
     {
       "class": "hero-tagline",
-      "pages": 104,
-      "occurrences": 104
+      "pages": 107,
+      "occurrences": 107
     },
     {
       "class": "editorial-block",
-      "pages": 85,
-      "occurrences": 239
+      "pages": 87,
+      "occurrences": 247
+    },
+    {
+      "class": "cta-btn",
+      "pages": 84,
+      "occurrences": 88
     },
     {
       "class": "cta-card",
@@ -1867,34 +1908,29 @@
       "occurrences": 87
     },
     {
-      "class": "cta-btn",
-      "pages": 83,
-      "occurrences": 87
+      "class": "section-divider",
+      "pages": 78,
+      "occurrences": 511
     },
     {
       "class": "article-section-label",
-      "pages": 75,
-      "occurrences": 576
-    },
-    {
-      "class": "section-divider",
-      "pages": 75,
-      "occurrences": 501
+      "pages": 77,
+      "occurrences": 578
     },
     {
       "class": "compare-grid",
-      "pages": 72,
-      "occurrences": 92
+      "pages": 75,
+      "occurrences": 97
     },
     {
       "class": "compare-card",
-      "pages": 72,
-      "occurrences": 357
+      "pages": 75,
+      "occurrences": 372
     },
     {
       "class": "variant-muted",
-      "pages": 72,
-      "occurrences": 331
+      "pages": 75,
+      "occurrences": 343
     },
     {
       "class": "mood-explainers",
@@ -1903,8 +1939,8 @@
     },
     {
       "class": "u-no-underline",
-      "pages": 62,
-      "occurrences": 260
+      "pages": 65,
+      "occurrences": 269
     },
     {
       "class": "symbol-tile",
@@ -1938,48 +1974,48 @@
     },
     {
       "class": "container",
-      "pages": 54,
+      "pages": 55,
       "occurrences": 62
     },
     {
       "class": "breadcrumbs",
-      "pages": 53,
-      "occurrences": 53
+      "pages": 55,
+      "occurrences": 55
     },
     {
       "class": "breadcrumb-separator",
-      "pages": 53,
-      "occurrences": 97
+      "pages": 55,
+      "occurrences": 101
     },
     {
       "class": "breadcrumb-current",
-      "pages": 53,
-      "occurrences": 53
+      "pages": 55,
+      "occurrences": 55
     },
     {
       "class": "faq-item",
       "pages": 47,
-      "occurrences": 791
+      "occurrences": 761
     },
     {
       "class": "faq-question",
       "pages": 47,
-      "occurrences": 791
+      "occurrences": 761
     },
     {
       "class": "faq-answer",
       "pages": 47,
-      "occurrences": 791
+      "occurrences": 761
     },
     {
       "class": "active",
       "pages": 46,
-      "occurrences": 93
+      "occurrences": 94
     },
     {
       "class": "hero-card",
-      "pages": 45,
-      "occurrences": 45
+      "pages": 46,
+      "occurrences": 46
     },
     {
       "class": "input-wrapper",
@@ -1999,17 +2035,17 @@
     {
       "class": "decoration-tabs",
       "pages": 43,
-      "occurrences": 50
+      "occurrences": 51
     },
     {
       "class": "decoration-tab",
       "pages": 43,
-      "occurrences": 339
+      "occurrences": 345
     },
     {
       "class": "decoration-section",
       "pages": 42,
-      "occurrences": 45
+      "occurrences": 46
     },
     {
       "class": "decoration-grid",
@@ -2024,7 +2060,7 @@
     {
       "class": "decoration-label",
       "pages": 41,
-      "occurrences": 44
+      "occurrences": 45
     },
     {
       "class": "category-section",
@@ -2039,7 +2075,7 @@
     {
       "class": "faq-category",
       "pages": 40,
-      "occurrences": 249
+      "occurrences": 241
     },
     {
       "class": "u-secondary-tight",
@@ -2050,6 +2086,26 @@
       "class": "category-tab",
       "pages": 28,
       "occurrences": 217
+    },
+    {
+      "class": "compare-badge",
+      "pages": 16,
+      "occurrences": 92
+    },
+    {
+      "class": "block-example",
+      "pages": 15,
+      "occurrences": 65
+    },
+    {
+      "class": "data-table-wrap",
+      "pages": 15,
+      "occurrences": 23
+    },
+    {
+      "class": "data-table",
+      "pages": 15,
+      "occurrences": 23
     },
     {
       "class": "u-mt-15",
@@ -2067,11 +2123,6 @@
       "occurrences": 143
     },
     {
-      "class": "compare-badge",
-      "pages": 13,
-      "occurrences": 77
-    },
-    {
       "class": "tips-grid",
       "pages": 13,
       "occurrences": 25
@@ -2087,17 +2138,7 @@
       "occurrences": 12
     },
     {
-      "class": "block-example",
-      "pages": 12,
-      "occurrences": 60
-    },
-    {
-      "class": "data-table-wrap",
-      "pages": 12,
-      "occurrences": 20
-    },
-    {
-      "class": "data-table",
+      "class": "variant-positive",
       "pages": 12,
       "occurrences": 20
     },
@@ -2167,6 +2208,11 @@
       "occurrences": 11
     },
     {
+      "class": "section-subline",
+      "pages": 10,
+      "occurrences": 21
+    },
+    {
       "class": "example-pair",
       "pages": 9,
       "occurrences": 123
@@ -2185,16 +2231,6 @@
       "class": "ex-arrow",
       "pages": 9,
       "occurrences": 76
-    },
-    {
-      "class": "variant-positive",
-      "pages": 9,
-      "occurrences": 17
-    },
-    {
-      "class": "section-subline",
-      "pages": 8,
-      "occurrences": 19
     },
     {
       "class": "mood-explainer",
@@ -2954,16 +2990,6 @@
       "occurrences": 1
     },
     {
-      "class": "seo-content",
-      "pages": 1,
-      "occurrences": 1
-    },
-    {
-      "class": "seo-heading",
-      "pages": 1,
-      "occurrences": 1
-    },
-    {
       "class": "style-grid",
       "pages": 1,
       "occurrences": 1
@@ -3012,12 +3038,72 @@
       "class": "table-row-divider",
       "pages": 1,
       "occurrences": 12
+    },
+    {
+      "class": "tiktok-context",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tiktok-context-guidance",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tiktok-context-label",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tiktok-context-note",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "tiktok-context-presets",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tiktok-context-preview",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tiktok-context-tab",
+      "pages": 1,
+      "occurrences": 6
+    },
+    {
+      "class": "tiktok-context-tabs",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tng-controls",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tng-field",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
+      "class": "tng-note",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "tng-results",
+      "pages": 1,
+      "occurrences": 1
     }
   ],
   "repeatedPatterns": [
     {
       "pattern": "display:none; visibility:hidden",
-      "count": 74,
+      "count": 76,
       "risk": "high",
       "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
@@ -3109,11 +3195,11 @@
   "propertyFrequency": [
     {
       "property": "display",
-      "count": 81
+      "count": 83
     },
     {
       "property": "visibility",
-      "count": 74
+      "count": 76
     },
     {
       "property": "gap",
@@ -5195,5 +5281,5 @@
       "snippet": "class=\"preview-name\""
     }
   ],
-  "jsStrictTokenCount": 197
+  "jsStrictTokenCount": 207
 }
