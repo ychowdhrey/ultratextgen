@@ -46,12 +46,16 @@ for (const file of files) {
 
   const scriptMatches = (content.match(new RegExp(GTM_ID, 'g')) || []);
   // noscript occurrences
-  const noscriptMatches = (content.match(new RegExp(`<noscript>[^<]*<iframe[^>]+googletagmanager\\.com/ns\\.html[^>]*id=${GTM_ID}`, 'g')) || []);
+  // Match noscript block containing an iframe pointing to GTM ns.html with the correct id param
+  const noscriptMatches = (content.match(new RegExp(
+    `<noscript>[\\s\\S]*?<iframe[^>]+googletagmanager\\.com/ns\\.html[^>]*[?&]id=${GTM_ID}`,
+    'g'
+  )) || []);
 
   const hasScript = scriptMatches.length > 0;
   const hasNoscript = noscriptMatches.length > 0;
-  // Duplicate detection: more than one occurrence of the GTM ID in a script tag context
-  const scriptTagCount = (content.match(new RegExp(`'${GTM_ID}'`, 'g')) || []).length;
+  // Duplicate detection: count occurrences of the GTM ID in any quote style
+  const scriptTagCount = (content.match(new RegExp('[\'"`]' + GTM_ID + '[\'"`]', 'g')) || []).length;
   const hasDuplicate = scriptTagCount > 1;
 
   if (!hasScript) {
