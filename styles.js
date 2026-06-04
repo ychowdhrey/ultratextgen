@@ -710,6 +710,7 @@ const textStyles = {
 },
 
 'Ultra Tiny Subscript': {
+  // Unicode does not provide full uppercase subscript letters, so uppercase falls back to standard A-Z.
   upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   lower: 'ₐᵦcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz',
   nums: '₀₁₂₃₄₅₆₇₈₉',
