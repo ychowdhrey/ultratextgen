@@ -52,6 +52,21 @@ const CATEGORY_PAGES = {
     slug: 'word-wrappers',
     title: 'Word Wrappers',
     description: 'Automatically wrap words in decorative wrappers and separators.'
+  },
+  'small-text': {
+    slug: 'small-text',
+    title: 'Small Text',
+    description: 'Small and tiny Unicode text styles for names and bios.'
+  },
+  'cute-fonts': {
+    slug: 'cute-fonts',
+    title: 'Cute Fonts',
+    description: 'Cute, preppy, and cutesy Unicode styles.'
+  },
+  'aesthetic-fonts': {
+    slug: 'aesthetic-fonts',
+    title: 'Aesthetic Fonts',
+    description: 'Aesthetic Unicode text styles for social profiles.'
   }
 };
 
@@ -675,6 +690,82 @@ const textStyles = {
   familySlug: 'word-wrappers',
   groupSlug: 'bars',
   slug: 'ultra_word_double_bar_wrap',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+/* =========================
+   SMALL / CUTE / AESTHETIC
+   ========================= */
+
+'Ultra Tiny Superscript': {
+  upper: 'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ',
+  lower: 'ᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ',
+  nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
+  type: 'map',
+  category: 'special',
+  familySlug: ['small-text', 'aesthetic-fonts'],
+  groupSlug: 'tiny',
+  slug: 'ultra-tiny-superscript',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Tiny Subscript': {
+  upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  lower: 'ₐᵦcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz',
+  nums: '₀₁₂₃₄₅₆₇₈₉',
+  type: 'map',
+  category: 'special',
+  familySlug: ['small-text'],
+  groupSlug: 'tiny',
+  slug: 'ultra-tiny-subscript',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Small Caps': {
+  upper: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘQʀsᴛᴜᴠᴡxʏᴢ',
+  lower: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘqʀsᴛᴜᴠᴡxʏᴢ',
+  nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
+  type: 'map',
+  category: 'cool',
+  familySlug: ['small-text', 'aesthetic-fonts'],
+  groupSlug: 'small-caps',
+  slug: 'ultra-small-caps',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Cute Script': {
+  upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',
+  lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
+  nums: '0123456789',
+  type: 'map',
+  category: 'cursive',
+  familySlug: ['cute-fonts', 'aesthetic-fonts'],
+  groupSlug: 'cute',
+  slug: 'ultra-cute-script',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Cute Bubble': {
+  upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
+  lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
+  nums: '⓪①②③④⑤⑥⑦⑧⑨',
+  type: 'map',
+  category: 'bubble',
+  familySlug: ['cute-fonts'],
+  groupSlug: 'cute',
+  slug: 'ultra-cute-bubble',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Aesthetic Gothic': {
+  upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',
+  lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
+  nums: '0123456789',
+  type: 'map',
+  category: 'gothic',
+  familySlug: ['aesthetic-fonts'],
+  groupSlug: 'aesthetic',
+  slug: 'ultra-aesthetic-gothic',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
