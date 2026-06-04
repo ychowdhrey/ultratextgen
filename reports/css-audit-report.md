@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-05-28T09:51:38.648Z_
+_Generated: 2026-06-04T07:35:27.441Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -8,27 +8,27 @@ _Generated: 2026-05-28T09:51:38.648Z_
 
 | Metric | Value |
 | --- | --- |
-| HTML files scanned | 136 |
-| CSS files | 5 |
-| JS files scanned | 20 |
-| Inline `style="..."` occurrences | 190 |
-| Files containing inline styles | 74 |
-| Inline risk (low / med / high) | 41 / 76 / 73 |
+| HTML files scanned | 144 |
+| CSS files | 9 |
+| JS files scanned | 24 |
+| Inline `style="..."` occurrences | 198 |
+| Files containing inline styles | 82 |
+| Inline risk (low / med / high) | 41 / 76 / 81 |
 | `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 226 |
-| Component class candidates | 85 |
-| One-off class candidates | 120 |
+| Unique HTML classes | 269 |
+| Component class candidates | 89 |
+| One-off class candidates | 159 |
 | Repeated inline patterns | 15 |
-| style.css selectors parsed | 339 |
-| …referenced (HTML/JS/structural) | 338 |
+| style.css selectors parsed | 365 |
+| …referenced (HTML/JS/structural) | 364 |
 | …unreferenced (needs verification) | 1 |
 
-Page-type breakdown: other: 7, category: 17, localized: 20, platform: 11, embed: 1, guide: 8, library: 62, usecase: 10
+Page-type breakdown: other: 13, category: 17, localized: 20, platform: 13, embed: 1, guide: 8, library: 62, usecase: 10
 
 ## 2. Top Problems
 
-1. **190 inline styles** across 74 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
-2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 68× and should become a utility class.
+1. **198 inline styles** across 82 files — the biggest maintainability drag. 41 are low-risk and safe to consolidate.
+2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 76× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
 4. **1 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
 
@@ -68,31 +68,31 @@ Sample occurrences with risk classification:
 
 | File | Line | Snippet | Risk |
 | --- | --- | --- | --- |
-| 404.html | 38 | style="display:none;visibility:hidden" | high |
-| about/index.html | 59 | style="display:none;visibility:hidden" | high |
-| about/index.html | 65 | style="max-width:800px;" | medium |
-| about/index.html | 72 | style="max-width:900px;" | medium |
-| category/bold-fonts/bold/index.html | 107 | style="display:none;visibility:hidden" | high |
-| category/bold-fonts/bold-italic/index.html | 107 | style="display:none;visibility:hidden" | high |
-| category/bold-fonts/index.html | 141 | style="display:none;visibility:hidden" | high |
-| category/bubble-fonts/circle/index.html | 107 | style="display:none;visibility:hidden" | high |
-| category/bubble-fonts/index.html | 149 | style="display:none;visibility:hidden" | high |
-| category/classified/index.html | 101 | style="display:none;visibility:hidden" | high |
-| category/classified/index.html | 152 | style="display: none;" | high |
-| category/cursive-fonts/index.html | 149 | style="display:none;visibility:hidden" | high |
-| category/cursive-fonts/script/index.html | 107 | style="display:none;visibility:hidden" | high |
-| category/gothic-fonts/fraktur/index.html | 107 | style="display:none;visibility:hidden" | high |
-| category/gothic-fonts/index.html | 149 | style="display:none;visibility:hidden" | high |
-| category/index.html | 117 | style="display:none;visibility:hidden" | high |
-| category/index.html | 129 | style="max-width:800px;" | medium |
-| category/index.html | 140 | style="max-width:900px;" | medium |
-| category/index.html | 145 | style="text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95r… | medium |
-| category/index.html | 159 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
-| category/index.html | 164 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
-| category/index.html | 169 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
-| category/index.html | 174 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
-| category/index.html | 179 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
-| category/index.html | 184 | style="color:var(--text-primary);font-weight:600;text-decoration:underline;" | medium |
+| 404.html | 39 | style="display:none;visibility:hidden" | high |
+| about/index.html | 60 | style="display:none;visibility:hidden" | high |
+| about/index.html | 66 | style="max-width:800px;" | medium |
+| about/index.html | 73 | style="max-width:900px;" | medium |
+| answers/change-font-size-on-facebook/index.html | 86 | style="display:none;visibility:hidden" | high |
+| answers/index.html | 53 | style="display:none;visibility:hidden" | high |
+| answers/is-linkedin-bold-text-safe/index.html | 96 | style="display:none;visibility:hidden" | high |
+| answers/what-font-does-facebook-use/index.html | 86 | style="display:none;visibility:hidden" | high |
+| answers/what-font-does-linkedin-use/index.html | 88 | style="display:none;visibility:hidden" | high |
+| answers/what-font-does-snapchat-use/index.html | 88 | style="display:none;visibility:hidden" | high |
+| category/bold-fonts/bold/index.html | 108 | style="display:none;visibility:hidden" | high |
+| category/bold-fonts/bold-italic/index.html | 108 | style="display:none;visibility:hidden" | high |
+| category/bold-fonts/index.html | 142 | style="display:none;visibility:hidden" | high |
+| category/bubble-fonts/circle/index.html | 108 | style="display:none;visibility:hidden" | high |
+| category/bubble-fonts/index.html | 150 | style="display:none;visibility:hidden" | high |
+| category/classified/index.html | 102 | style="display:none;visibility:hidden" | high |
+| category/classified/index.html | 153 | style="display: none;" | high |
+| category/cursive-fonts/index.html | 150 | style="display:none;visibility:hidden" | high |
+| category/cursive-fonts/script/index.html | 108 | style="display:none;visibility:hidden" | high |
+| category/gothic-fonts/fraktur/index.html | 108 | style="display:none;visibility:hidden" | high |
+| category/gothic-fonts/index.html | 150 | style="display:none;visibility:hidden" | high |
+| category/index.html | 118 | style="display:none;visibility:hidden" | high |
+| category/index.html | 130 | style="max-width:800px;" | medium |
+| category/index.html | 141 | style="max-width:900px;" | medium |
+| category/index.html | 146 | style="text-align:center;color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95r… | medium |
 
 Risk legend: **low** = low risk — safe to move into style.css; **medium** = medium risk — check visually before changing; **high** = high risk — likely page-specific or interactive, do not move blindly.
 
@@ -100,21 +100,25 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 
 | File | Line | CSS lines | Assessment | Risk |
 | --- | --- | --- | --- | --- |
-| embed/linkedin-headline-generator/index.html | 51 | 70 | page-specific | medium |
+| embed/linkedin-headline-generator/index.html | 52 | 70 | page-specific | medium |
 | js/vertical/verticalLayouts.test.html | 7 | 6 | page-specific | low |
-| library/index.html | 56 | 404 | page-specific | high |
-| usecase/linkedin-headline/embed/index.html | 42 | 74 | page-specific | medium |
-| usecase/text-to-emoji/index.html | 137 | 125 | page-specific | medium |
+| library/index.html | 57 | 404 | page-specific | high |
+| usecase/linkedin-headline/embed/index.html | 43 | 74 | page-specific | medium |
+| usecase/text-to-emoji/index.html | 138 | 125 | page-specific | medium |
 
 ## 5. CSS File Inventory
 
 | File | Size | Lines | Inferred purpose |
 | --- | --- | --- | --- |
-| style.css | 47.1 KB | 2281 | global site stylesheet |
+| style.css | 50.5 KB | 2455 | global site stylesheet |
 | usecase/zalgo-text/zalgo-text.css | 10.9 KB | 514 | page-specific usecase styling |
 | 404.css | 8.1 KB | 401 | error page styling |
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
 | symbol-explorer.css | 5.2 KB | 244 | symbol explorer feature styling |
+| usecase/bio-font/bio-font.css | 5.1 KB | 239 | page-specific usecase styling |
+| tiktok/tiktok-context.css | 3.0 KB | 147 | platform-specific (Discord) styling |
+| facebook/facebook-context.css | 1.2 KB | 66 | platform-specific (Discord) styling |
+| tiktok/name-generator/name-generator.css | 1.2 KB | 69 | page/feature specific styling (inferred from path) |
 
 ## 6. Reusable Component Candidates
 
@@ -122,37 +126,37 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 | Class | Pages | Occurrences |
 | --- | --- | --- |
-| hero-headline | 133 | 133 |
-| hero | 131 | 131 |
-| footer | 122 | 122 |
-| footer-inner | 122 | 122 |
-| hero-inner | 120 | 120 |
-| editorial-section | 105 | 298 |
-| hero-tagline | 97 | 97 |
-| editorial-block | 79 | 203 |
-| cta-card | 77 | 79 |
-| cta-btn | 77 | 79 |
-| article-section-label | 69 | 541 |
-| section-divider | 68 | 472 |
-| mood-explainers | 67 | 437 |
-| compare-grid | 66 | 85 |
-| compare-card | 66 | 337 |
-| variant-muted | 66 | 314 |
+| hero-headline | 141 | 141 |
+| hero | 139 | 139 |
+| footer | 130 | 130 |
+| footer-inner | 130 | 130 |
+| hero-inner | 128 | 128 |
+| editorial-section | 115 | 348 |
+| hero-tagline | 107 | 107 |
+| editorial-block | 87 | 247 |
+| cta-btn | 84 | 88 |
+| cta-card | 83 | 87 |
+| section-divider | 78 | 511 |
+| article-section-label | 77 | 578 |
+| compare-grid | 75 | 97 |
+| compare-card | 75 | 372 |
+| variant-muted | 75 | 343 |
+| mood-explainers | 67 | 439 |
+| u-no-underline | 65 | 269 |
 | symbol-tile | 60 | 4630 |
 | symbol-toast | 60 | 60 |
 | flag-rows | 59 | 344 |
 | flag-row | 59 | 4097 |
 | flag-emoji | 59 | 4097 |
 | flag-label | 59 | 4081 |
-| u-no-underline | 58 | 246 |
-| container | 53 | 59 |
-| breadcrumbs | 47 | 47 |
+| container | 55 | 62 |
+| breadcrumbs | 55 | 55 |
 
 ### Repeated inline patterns → utility class candidates
 
 | Pattern | Count | Suggested utility | Risk |
 | --- | --- | --- | --- |
-| display:none; visibility:hidden | 68 | u-hidden (verify JS toggling first) | high |
+| display:none; visibility:hidden | 76 | u-hidden (verify JS toggling first) | high |
 | align-items:stretch; flex-direction:column; gap:8px | 17 | (propose a utility/component class) | medium |
 | text-decoration:none | 17 | u-no-underline | low |
 | color:var(--text-primary); font-weight:600; text-decor… | 10 | (propose a utility/component class) | medium |
@@ -170,7 +174,7 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 ### One-off classes (used on a single page)
 
-120 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
+159 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
 
 | Class | Occurrences |
 | --- | --- |
@@ -180,15 +184,15 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | aesthetic-card-desc | 16 |
 | aesthetic-card-symbols | 7 |
 | alpha-count | 1 |
-| breakdown-grid | 1 |
-| breakdown-note | 1 |
-| breakdown-section | 1 |
-| breakdown-toggle | 1 |
-| cat-anchor | 10 |
-| cat-overview-table | 1 |
-| categories-glance | 1 |
-| categories-glance-grid | 1 |
-| categories-glance-heading | 1 |
+| bf-chip-grid | 1 |
+| bf-compat | 1 |
+| bf-counter | 1 |
+| bf-platform-row | 1 |
+| bf-platform-tab | 11 |
+| bf-preview | 1 |
+| bf-preview-avatar | 1 |
+| bf-preview-bio | 1 |
+| bf-preview-head | 1 |
 
 ## 7. Possible Unused CSS (NEEDS VERIFICATION)
 
@@ -196,9 +200,9 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 
 | Selector | Line | Verdict | Note |
 | --- | --- | --- | --- |
-| .variation-char-over | 1844 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
+| .variation-char-over | 2018 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 
-JS class-reference tokens collected: 179 (strict). These were used to avoid falsely flagging JS-driven CSS.
+JS class-reference tokens collected: 207 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
 ## 8. Recommended Next Actions
 

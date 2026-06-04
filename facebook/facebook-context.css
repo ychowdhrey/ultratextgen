@@ -1,0 +1,65 @@
+.facebook-context-guidance .limit-pill {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.facebook-context-guidance .limit-pill.over {
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.facebook-context-presets {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.facebook-context-presets .presets-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.facebook-context-note {
+  display: none;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.facebook-context-note.show {
+  display: block;
+}
+
+.facebook-context-note .note-title {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.facebook-context-note.safe {
+  border-left: 3px solid #16a34a;
+}
+
+#facebookDecorationSection.is-disabled {
+  opacity: 0.55;
+}
+
+#facebookDecorationSection.is-disabled .decoration-tabs,
+#facebookDecorationSection.is-disabled .decoration-grid {
+  pointer-events: none;
+}
