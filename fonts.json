@@ -96,10 +96,39 @@
     "Ultra Wavy"
   ]
   },
+  "small-text": {
+  "label": "Small Text",
+  "icon": "ᵗ",
+  "fonts": [
+    "Ultra Tiny Superscript",
+    "Ultra Tiny Subscript",
+    "Ultra Small Caps"
+  ]
+  },
+  "cute-fonts": {
+  "label": "Cute Fonts",
+  "icon": "♡",
+  "fonts": [
+    "Ultra Cute Script",
+    "Ultra Cute Bubble",
+    "Ultra Bubble Filled",
+    "Ultra Script Bold"
+  ]
+  },
+  "aesthetic-fonts": {
+  "label": "Aesthetic Fonts",
+  "icon": "✦",
+  "fonts": [
+    "Ultra Cute Script",
+    "Ultra Aesthetic Gothic",
+    "Ultra Small Caps",
+    "Ultra Tiny Superscript"
+  ]
+  },
   
   "upside-down-text": {
-      "label": "Upside Down",
-      "icon": "ɐ",
+    "label": "Upside Down",
+    "icon": "ɐ",
       "fonts": [
         "Fully Flipped Unicode",
         "Mixed Flip Fallback",
