@@ -96,24 +96,53 @@
     "Ultra Wavy"
   ]
   },
+  "small-text": {
+  "label": "Small Text",
+  "icon": "ᵗ",
+  "fonts": [
+    "Ultra Small Superscript Style",
+    "Ultra Tiny Subscript",
+    "Ultra Small Caps"
+  ]
+  },
+  "cute-fonts": {
+  "label": "Cute Fonts",
+  "icon": "♡",
+  "fonts": [
+    "Ultra Cute Script",
+    "Ultra Cute Bubble",
+    "Ultra Bubble Filled",
+    "Ultra Script Bold"
+  ]
+  },
+  "aesthetic-fonts": {
+  "label": "Aesthetic Fonts",
+  "icon": "✦",
+  "fonts": [
+    "Ultra Cute Script",
+    "Ultra Aesthetic Gothic",
+    "Ultra Small Caps",
+    "Ultra Small Superscript Style"
+  ]
+  },
   
   "upside-down-text": {
-      "label": "Upside Down",
-      "icon": "ɐ",
-      "fonts": [
-        "Fully Flipped Unicode",
-        "Mixed Flip Fallback",
-        "Reverse Order Only",
-        "Reverse + Flip Combo",
-        "Partial Upside Emphasis",
-        "Line Level Upside Down",
-        "Alternating Upside Down",
-        "Mirror Illusion",
-        "Emoji Assisted Upside Down",
-        "Faux Upside Down Symbols",
-        "Upside Down Micro Text"
-      ]
-    },
+    "label": "Upside Down",
+    "icon": "ɐ",
+    "fonts": [
+      "Fully Flipped Unicode",
+      "Mixed Flip Fallback",
+      "Reverse Order Only",
+      "Reverse + Flip Combo",
+      "Partial Upside Emphasis",
+      "Line Level Upside Down",
+      "Alternating Upside Down",
+      "Mirror Illusion",
+      "Emoji Assisted Upside Down",
+      "Faux Upside Down Symbols",
+      "Upside Down Micro Text"
+    ]
+  },
   "word-wrappers": {
     "label": "Word Wrappers",
     "icon": "()",

@@ -66,6 +66,12 @@
           '</svg>' +
           '<span>Guide</span>' +
         '</a>' +
+        '<a class="header-btn" href="/answers/" aria-label="Answers">' +
+          '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
+            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4v-4z" />' +
+          '</svg>' +
+          '<span>Answers</span>' +
+        '</a>' +
         '<a class="header-btn" href="/category/" aria-label="Category">' +
           '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">' +
             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h6v6H3V7zm12 0h6v6h-6V7zM3 17h6v4H3v-4zm12 0h6v4h-6v-4z"></path>' +

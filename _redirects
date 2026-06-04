@@ -1,9 +1,29 @@
+# Canonical host: enforce non-www
+https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
+
 # Fallback rewrite: serve the English homepage for the root path.
 # The primary fix lives in functions/_middleware.js, which requests
 # /_root.html from ASSETS — a build-generated copy of index.html
 # with no locale variants, so i18n content negotiation cannot activate.
 # This rule acts as a safety net if the middleware is not deployed.
 /  /index.html  200
+
+# Canonical path: enforce trailing slash on platform root pages
+/discord    /discord/    301
+/facebook   /facebook/   301
+/instagram  /instagram/  301
+/linkedin   /linkedin/   301
+/pinterest  /pinterest/  301
+/snapchat   /snapchat/   301
+/telegram   /telegram/   301
+/tiktok     /tiktok/     301
+/tiktok/name-generator  /tiktok/name-generator/  301
+/tiktok/what-font-does-tiktok-use  /tiktok/what-font-does-tiktok-use/  301
+/answers/how-to-change-tiktok-username  /answers/how-to-change-tiktok-username/  301
+/answers/what-is-a-tiktok-handle  /answers/what-is-a-tiktok-handle/  301
+/whatsapp   /whatsapp/   301
+/x          /x/          301
+/youtube    /youtube/    301
 
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
@@ -15,6 +35,12 @@
 /usecase/comment-fonts/index.html           /usecase/comment-font/   301
 /guide/vertical-text/                       /guide/vertical-text-guide/ 301
 /guide/vertical-text/index.html             /guide/vertical-text-guide/ 301
+/guide/what-font-does-linkedin-use/         /answers/what-font-does-linkedin-use/ 301
+/guide/what-font-does-linkedin-use/index.html /answers/what-font-does-linkedin-use/ 301
+/guide/is-linkedin-bold-text-safe/            /answers/is-linkedin-bold-text-safe/ 301
+/guide/is-linkedin-bold-text-safe/index.html  /answers/is-linkedin-bold-text-safe/ 301
+/usecase/linkedin-bold/                       /linkedin/ 301
+/usecase/linkedin-bold/index.html             /linkedin/ 301
 
 # Language query-param → path-based (301 permanent)
 /?lang=fr                                   /fr/    301
@@ -31,4 +57,3 @@
 
 /404  /404.html  200
 /*    /404.html  404
-
