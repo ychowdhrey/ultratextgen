@@ -100,7 +100,7 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/\"/g, "&quot;");
+      .replace(/"/g, "&quot;");
   }
 
   function previewText() {
@@ -260,9 +260,7 @@
     }
     presetBtn.classList.add("active");
 
-    if (!activateCategoryTab(slug)) {
-      window.location.href = "/category/" + slug + "/";
-    }
+    activateCategoryTab(slug);
   }
 
   function init() {

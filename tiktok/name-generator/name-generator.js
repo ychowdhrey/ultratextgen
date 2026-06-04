@@ -24,6 +24,8 @@
     }
   };
 
+  let runNonce = 0;
+
   const el = {
     keyword: document.getElementById("tngKeyword"),
     initials: document.getElementById("tngInitials"),
@@ -56,7 +58,8 @@
     const vibe = vibeBanks[el.vibe.value] || vibeBanks.aesthetic;
 
     const base = keyword || "creator";
-    const seed = Date.now();
+    runNonce += 1;
+    const seed = Date.now() + runNonce;
     const picks = [];
 
     for (let i = 0; i < 16; i++) {
