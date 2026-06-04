@@ -697,7 +697,7 @@ const textStyles = {
    SMALL / CUTE / AESTHETIC
    ========================= */
 
-'Ultra Tiny Superscript': {
+'Ultra Small Superscript Style': {
   upper: 'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻ',
   lower: 'ᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖqʳˢᵗᵘᵛʷˣʸᶻ',
   nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
@@ -705,7 +705,7 @@ const textStyles = {
   category: 'special',
   familySlug: ['small-text', 'aesthetic-fonts'],
   groupSlug: 'tiny',
-  slug: 'ultra-tiny-superscript',
+  slug: 'ultra-small-superscript-style',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
