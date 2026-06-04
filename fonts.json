@@ -129,20 +129,20 @@
   "upside-down-text": {
     "label": "Upside Down",
     "icon": "ɐ",
-      "fonts": [
-        "Fully Flipped Unicode",
-        "Mixed Flip Fallback",
-        "Reverse Order Only",
-        "Reverse + Flip Combo",
-        "Partial Upside Emphasis",
-        "Line Level Upside Down",
-        "Alternating Upside Down",
-        "Mirror Illusion",
-        "Emoji Assisted Upside Down",
-        "Faux Upside Down Symbols",
-        "Upside Down Micro Text"
-      ]
-    },
+    "fonts": [
+      "Fully Flipped Unicode",
+      "Mixed Flip Fallback",
+      "Reverse Order Only",
+      "Reverse + Flip Combo",
+      "Partial Upside Emphasis",
+      "Line Level Upside Down",
+      "Alternating Upside Down",
+      "Mirror Illusion",
+      "Emoji Assisted Upside Down",
+      "Faux Upside Down Symbols",
+      "Upside Down Micro Text"
+    ]
+  },
   "word-wrappers": {
     "label": "Word Wrappers",
     "icon": "()",
