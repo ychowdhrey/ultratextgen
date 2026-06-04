@@ -83,16 +83,8 @@
     return Array.from(new Set(list.filter(Boolean)));
   }
 
-  function escapeHtml(value) {
-    return String(value || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
   function validateHandle(raw) {
+    // TikTok handles are case-insensitive, so normalization uses lowercase.
     const v = String(raw || "").trim().toLowerCase().replace(/^@/, "");
     const reasons = [];
     if (v.length < 2 || v.length > 24) reasons.push("Must be 2–24 characters.");
@@ -169,24 +161,49 @@
   function runValidation() {
     if (!el.check || !el.checkResult) return;
     const result = validateHandle(el.check.value);
+    el.checkResult.innerHTML = "";
 
     if (!result.normalized) {
-      el.checkResult.innerHTML = '<div class="tng-empty">Enter a handle to check the format.</div>';
+      const empty = document.createElement("div");
+      empty.className = "tng-empty";
+      empty.textContent = "Enter a handle to check the format.";
+      el.checkResult.appendChild(empty);
       return;
     }
 
     if (!result.valid) {
-      el.checkResult.innerHTML =
-        '<div class="block-example"><strong>Format needs fixes:</strong><ul>' +
-        result.reasons.map(function (reason) { return "<li>" + escapeHtml(reason) + "</li>"; }).join("") +
-        "</ul></div>";
+      const wrap = document.createElement("div");
+      wrap.className = "block-example";
+      const strong = document.createElement("strong");
+      strong.textContent = "Format needs fixes:";
+      wrap.appendChild(strong);
+      const list = document.createElement("ul");
+      result.reasons.forEach(function (reason) {
+        const li = document.createElement("li");
+        li.textContent = reason;
+        list.appendChild(li);
+      });
+      wrap.appendChild(list);
+      el.checkResult.appendChild(wrap);
       return;
     }
 
-    el.checkResult.innerHTML =
-      '<div class="block-example"><strong>Format looks valid.</strong> ' +
-      '<a href="' + result.tiktokUrl + '" target="_blank" rel="noopener">Check @' + escapeHtml(result.normalized) + ' on TikTok →</a>' +
-      '<p>Availability is confirmed on TikTok, not here.</p></div>';
+    const wrap = document.createElement("div");
+    wrap.className = "block-example";
+    const strong = document.createElement("strong");
+    strong.textContent = "Format looks valid.";
+    wrap.appendChild(strong);
+    wrap.appendChild(document.createTextNode(" "));
+    const link = document.createElement("a");
+    link.href = result.tiktokUrl;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Check @" + result.normalized + " on TikTok →";
+    wrap.appendChild(link);
+    const note = document.createElement("p");
+    note.textContent = "Availability is checked on TikTok, not here.";
+    wrap.appendChild(note);
+    el.checkResult.appendChild(wrap);
   }
 
   function init() {
