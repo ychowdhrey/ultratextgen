@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-06-05T07:40:18.471Z_
+_Generated: 2026-06-05T07:50:18.028Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -9,15 +9,15 @@ _Generated: 2026-06-05T07:40:18.471Z_
 | Metric | Value |
 | --- | --- |
 | HTML files scanned | 155 |
-| CSS files | 10 |
-| JS files scanned | 25 |
-| Inline `style="..."` occurrences | 220 |
+| CSS files | 11 |
+| JS files scanned | 26 |
+| Inline `style="..."` occurrences | 219 |
 | Files containing inline styles | 93 |
-| Inline risk (low / med / high) | 43 / 85 / 92 |
+| Inline risk (low / med / high) | 43 / 85 / 91 |
 | `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 275 |
+| Unique HTML classes | 301 |
 | Component class candidates | 89 |
-| One-off class candidates | 165 |
+| One-off class candidates | 188 |
 | Repeated inline patterns | 15 |
 | style.css selectors parsed | 365 |
 | …referenced (HTML/JS/structural) | 364 |
@@ -27,7 +27,7 @@ Page-type breakdown: other: 21, category: 20, localized: 20, platform: 13, embed
 
 ## 2. Top Problems
 
-1. **220 inline styles** across 93 files — the biggest maintainability drag. 43 are low-risk and safe to consolidate.
+1. **219 inline styles** across 93 files — the biggest maintainability drag. 43 are low-risk and safe to consolidate.
 2. **15 repeated inline patterns** — e.g. `display:none; visibility:hidden` appears 87× and should become a utility class.
 3. **5 `<style>` blocks** embedded in HTML — review whether any belong in style.css.
 4. **1 style.css selectors** had no HTML/JS reference — possible dead CSS, but all marked *needs verification* (may be dynamic or generated).
@@ -62,7 +62,7 @@ Files with the most inline styles (full list in `css-audit-data.json`):
 | library/index.html | 2 |
 | roblox/name-generator/index.html | 2 |
 | usecase/before-after-emoji/index.html | 2 |
-| usecase/comment-font/index.html | 2 |
+| usecase/emoji-combinations/index.html | 2 |
 
 Sample occurrences with risk classification:
 
@@ -116,6 +116,7 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
 | symbol-explorer.css | 5.2 KB | 244 | symbol explorer feature styling |
 | usecase/bio-font/bio-font.css | 5.1 KB | 239 | page-specific usecase styling |
+| usecase/comment-font/comment-font.css | 4.1 KB | 249 | page-specific usecase styling |
 | tiktok/tiktok-context.css | 3.0 KB | 147 | platform-specific (Discord) styling |
 | roblox/name-generator/roblox-generator.css | 2.7 KB | 169 | page/feature specific styling (inferred from path) |
 | facebook/facebook-context.css | 1.2 KB | 66 | platform-specific (Discord) styling |
@@ -134,7 +135,7 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | hero-inner | 139 | 139 |
 | editorial-section | 123 | 392 |
 | hero-tagline | 115 | 115 |
-| editorial-block | 95 | 283 |
+| editorial-block | 94 | 277 |
 | cta-btn | 92 | 99 |
 | cta-card | 89 | 94 |
 | section-divider | 86 | 547 |
@@ -165,8 +166,8 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | color:var(--text-secondary); font-size:0.875rem; line-… | 13 | u-text-secondary | medium |
 | max-width:800px | 8 | u-maxw-* | medium |
 | max-width:900px | 8 | u-maxw-* | medium |
-| display:none | 5 | u-hidden (verify JS toggling first) | high |
 | margin-top:2rem | 5 | u-mt-* | low |
+| display:none | 4 | u-hidden (verify JS toggling first) | high |
 | font-size:1.35rem | 4 | u-fs-* | low |
 | margin-top:1rem | 4 | u-mt-* | low |
 | border-bottom:2px solid rgba(255,255,255,0.15); paddin… | 4 | u-text-left | medium |
@@ -175,13 +176,10 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 ### One-off classes (used on a single page)
 
-165 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
+188 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
 
 | Class | Occurrences |
 | --- | --- |
-| accordion-body | 4 |
-| accordion-section | 4 |
-| accordion-toggle | 4 |
 | aesthetic-card-desc | 16 |
 | aesthetic-card-symbols | 7 |
 | alpha-count | 1 |
@@ -194,6 +192,9 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 | bf-preview-avatar | 1 |
 | bf-preview-bio | 1 |
 | bf-preview-head | 1 |
+| bf-preview-meta | 1 |
+| bf-preview-name | 1 |
+| bf-preview-platform | 1 |
 
 ## 7. Possible Unused CSS (NEEDS VERIFICATION)
 
@@ -203,7 +204,7 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | --- | --- | --- | --- |
 | .variation-char-over | 2018 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 
-JS class-reference tokens collected: 222 (strict). These were used to avoid falsely flagging JS-driven CSS.
+JS class-reference tokens collected: 233 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
 ## 8. Recommended Next Actions
 
