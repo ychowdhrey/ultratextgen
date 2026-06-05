@@ -309,12 +309,12 @@
     }
   }
 
-  templateBank.forEach((template) => {
-    template.copyCount = Number(state.copyCounts[template.id]) || 0;
-  });
-
   function getStyleDefinition(styleId) {
     return styleLibrary.find((style) => style.id === styleId) || null;
+  }
+
+  function getTemplateCopyCount(template) {
+    return Number(state.copyCounts[template.id]) || template.copyCount || 0;
   }
 
   function getRendererStyle(styleId) {
@@ -417,6 +417,8 @@
 
     elements.quickPickCards.innerHTML = visibleTemplates.map((template) => {
       const preview = applyTemplateStyle(template);
+      // Styled Unicode glyphs are safe to render, but we still escape the full preview string
+      // because the card HTML is assembled with innerHTML.
       return `
         <button type="button" class="style-card template-card ${template.id === state.selectedTemplateId ? "is-selected" : ""}" data-template-id="${template.id}">
           <div class="style-info">
@@ -534,8 +536,7 @@
 
   function incrementCopyCount(template) {
     if (!template) return;
-    template.copyCount += 1;
-    state.copyCounts[template.id] = template.copyCount;
+    state.copyCounts[template.id] = getTemplateCopyCount(template) + 1;
     saveCopyCounts();
   }
 
@@ -555,7 +556,7 @@
         template_id: activeTemplate ? activeTemplate.id : null,
         template_platform: activeTemplate ? activeTemplate.platform : null,
         template_category: activeTemplate ? activeTemplate.category : null,
-        template_copy_count: activeTemplate ? activeTemplate.copyCount : null,
+        template_copy_count: activeTemplate ? getTemplateCopyCount(activeTemplate) : null,
         style_id: state.selectedStyleId
       });
       window.dataLayer.push({
@@ -681,6 +682,7 @@
 
   function init() {
     if (!elements.mainInput || !elements.quickPickCategoryTabs || !elements.quickPickCards || !elements.styleCards) {
+      console.warn("Comment style page could not initialize because required elements were not found.");
       return;
     }
 
