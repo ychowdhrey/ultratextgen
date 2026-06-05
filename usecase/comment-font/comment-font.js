@@ -4,10 +4,15 @@
   const COPY_COUNT_STORAGE_KEY = "utg-comment-template-copy-counts";
   const QUICK_PICK_VISIBLE_COUNT = 6;
   const Render = window.UltraTextGenRender;
+  const hasRenderer = Boolean(Render && typeof Render.renderAny === "function");
   const styleRegistry = Object.values(window.textStyles || {}).reduce((acc, style) => {
     if (style && style.slug) acc[style.slug] = style;
     return acc;
   }, {});
+
+  if (!hasRenderer) {
+    console.error("Comment style page could not find UltraTextGenRender.renderAny.");
+  }
 
   const MONOSPACE_STYLE = {
     upper: "𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉",
@@ -325,7 +330,7 @@
   }
 
   function renderStyledText(text, styleId) {
-    if (!text || !Render || typeof Render.renderAny !== "function") return text;
+    if (!text || !hasRenderer) return text;
     const style = getRendererStyle(styleId);
     return style ? Render.renderAny(text, style) : text;
   }
@@ -417,8 +422,6 @@
 
     elements.quickPickCards.innerHTML = visibleTemplates.map((template) => {
       const preview = applyTemplateStyle(template);
-      // Styled Unicode glyphs are safe to render, but we still escape the full preview string
-      // because the card HTML is assembled with innerHTML.
       return `
         <button type="button" class="style-card template-card ${template.id === state.selectedTemplateId ? "is-selected" : ""}" data-template-id="${template.id}">
           <div class="style-info">
@@ -426,6 +429,7 @@
               <span>${escapeHtml(template.category)}</span>
               <span class="style-tag">${escapeHtml(template.style)}</span>
             </div>
+            <!-- Escape the styled preview too because the card markup is assembled with innerHTML. -->
             <div class="style-preview">${escapeHtml(preview)}</div>
             <p class="template-meta">Loads the finished comment into the shared text bar for editing.</p>
           </div>
