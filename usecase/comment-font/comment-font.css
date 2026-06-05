@@ -1,0 +1,248 @@
+.comment-hero-inner {
+  max-width: 960px;
+}
+
+.comment-generator {
+  max-width: 1040px;
+  padding: 0 24px 48px;
+}
+
+.comment-generator .category-section {
+  position: static;
+  top: auto;
+  padding: 0 0 8px;
+  background: transparent;
+}
+
+.comment-bar {
+  margin-top: 24px;
+}
+
+.comment-bar-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.comment-bar-label,
+.filter-label,
+.quick-picks-kicker {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.comment-bar-hint,
+.panel-intro,
+.quick-picks-subheading,
+.inventory-copy,
+.editorial-note {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.comment-copy-btn {
+  min-width: 120px;
+  justify-content: center;
+  padding: 12px 18px;
+  font-size: 0.875rem;
+}
+
+.mode-panel {
+  padding: 20px 0 8px;
+}
+
+.mode-panel[hidden] {
+  display: none !important;
+}
+
+.comment-filter-group {
+  margin-bottom: 16px;
+}
+
+.quick-picks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 4px 0 12px;
+}
+
+.quick-picks-heading {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.comment-secondary-btn {
+  justify-content: center;
+}
+
+.quick-picks-grid,
+.style-library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.template-card,
+.comment-style-card {
+  width: 100%;
+  min-height: 100%;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.template-card:hover,
+.comment-style-card:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.template-card.is-selected,
+.comment-style-card.is-active {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+
+.template-card .style-name,
+.comment-style-card .style-name {
+  justify-content: space-between;
+}
+
+.template-card .style-preview,
+.comment-style-card .style-preview {
+  font-size: 1rem;
+}
+
+.template-meta,
+.style-helper {
+  margin-top: 10px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.style-helper {
+  margin-top: 8px;
+}
+
+.comment-inventory {
+  margin-top: 24px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.comment-inventory .accordion-toggle {
+  font-size: 1rem;
+}
+
+.inventory-block + .inventory-block {
+  margin-top: 20px;
+}
+
+.inventory-title {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.comment-emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.comment-emoji-chip {
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.comment-emoji-chip:hover,
+.comment-emoji-chip:focus-visible {
+  border-color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.comment-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.comment-editorial-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 20px;
+}
+
+.comment-editorial-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.comment-editorial-card p,
+.comment-editorial-card ul {
+  margin: 0;
+}
+
+.comment-editorial-card ul {
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+.comment-editorial-card li + li {
+  margin-top: 6px;
+}
+
+.comment-style-summary {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .comment-generator {
+    padding: 0 16px 40px;
+  }
+
+  .comment-bar-head,
+  .quick-picks-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .comment-copy-btn,
+  .comment-secondary-btn {
+    width: 100%;
+  }
+
+  .quick-picks-grid,
+  .style-library-grid,
+  .comment-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
