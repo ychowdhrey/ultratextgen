@@ -12,26 +12,27 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comment Font Generator — Bold, Italic & Fancy Fonts for YouTube, TikTok, Instagram Comments | UltraTextGen</title>
-  <meta name="description" content="Free comment font generator. Create bold, italic, cursive, gothic & strikethrough text for YouTube, TikTok, Instagram & Facebook comments. Copy and paste instantly. No sign-up.">
+  <title>Comment Style Generator — Stylish Text & Fonts for Social Comments | UltraTextGen</title>
+  <meta name="description" content="Free comment style generator. Pick a ready-made comment by feeling, or style your own text — bold, italic, cursive & more. Copy and paste into Instagram, YouTube & Facebook comments. No sign-up.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/comment-font/">
   <meta property="og:image" content="https://ultratextgen.com/logo.png">
   <meta name="twitter:image" content="https://ultratextgen.com/logo.png">
   
     <!-- Open Graph -->
-  <meta property="og:title" content="Comment Font Generator — Stand Out in Any Comment Section">
-  <meta property="og:description" content="Generate bold, italic, cursive & fancy Unicode fonts for social media comments. Works on YouTube, TikTok, Instagram, Facebook & more.">
+  <meta property="og:title" content="Comment Style Generator — Make Your Comment Stand Out">
+  <meta property="og:description" content="Pick a ready-made comment by feeling, or style your own text before you copy and paste into Instagram, YouTube, and Facebook comments.">
   <meta property="og:url" content="https://ultratextgen.com/usecase/comment-font/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="UltraTextGen">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Comment Font Generator — Bold & Fancy Fonts for Social Media">
-  <meta name="twitter:description" content="Free tool to create stylish Unicode comment fonts. Copy and paste into YouTube, TikTok, Instagram, Facebook & LinkedIn comments.">
+  <meta name="twitter:title" content="Comment Style Generator — Stylish Text for Social Comments">
+  <meta name="twitter:description" content="Free comment style generator. Pick a ready-made line or style your own text, then copy it into Instagram, YouTube, and Facebook comments.">
     
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/usecase/comment-font/comment-font.css">
 
 <script type="application/ld+json">
 {
@@ -141,7 +142,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Comment Font Generator",
+      "name": "Comment Style Generator",
       "item": "https://ultratextgen.com/usecase/comment-font/"
     }
   ]
@@ -151,8 +152,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Comment Font Generator",
-  "alternateName": ["Fancy Comment Text Generator", "YouTube Comment Font Generator", "Cool Comment Fonts", "Copy and Paste Comment Fonts"],
+  "name": "Comment Style Generator",
+  "alternateName": ["Comment Font Generator", "Fancy Comment Text Generator", "Comment Text Style Generator", "Copy and Paste Comment Styles"],
   "url": "https://ultratextgen.com/usecase/comment-font/",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
@@ -161,7 +162,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Generate stylish Unicode comment fonts for YouTube, TikTok, Instagram, Facebook, LinkedIn, and more. Copy and paste instantly.",
+  "description": "Pick a ready-made comment by feeling or style your own text for Instagram, YouTube, and Facebook comments. Copy and paste instantly.",
   "browserRequirements": "Requires JavaScript. Works in all modern browsers."
 }
 </script>
@@ -178,113 +179,136 @@
   <span class="breadcrumb-separator">›</span>
   <a href="/usecase/">Use Cases</a>
   <span class="breadcrumb-separator">›</span>
-  <span class="breadcrumb-current">Comment Fonts</span>
+  <span class="breadcrumb-current">Comment Style</span>
 </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-inner">
+    <div class="hero-inner comment-hero-inner">
       <div class="hero-card">
-        <h1 class="hero-headline">Comment Font Generator — Stylish Fonts for YouTube, TikTok & Instagram Comments</h1>
-        <p class="hero-tagline">Type your comment. Pick a style. Copy and paste bold, italic, or fancy text into any comment section — YouTube, TikTok, Instagram, and more.</p>
-        
-        <div class="input-wrapper">
-          <textarea class="main-input" id="mainInput" placeholder="Type your comment here..." maxlength="500"></textarea>
-          <span class="char-count"><span id="charCount">0</span>/500</span>
-        </div>
+        <h1 class="hero-headline">Comment Style Generator — Make Your Comment Stand Out</h1>
+        <p class="hero-tagline">Pick a ready-made comment by feeling, or style your own text before you copy and paste into Instagram, YouTube, and Facebook comments.</p>
 
-        <!-- Decoration Selector -->
-        <div class="decoration-section">
-          <div class="decoration-label">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
-            Add decoration to results
+        <div class="comment-bar">
+          <div class="comment-bar-head">
+            <div>
+              <p class="comment-bar-label">Shared comment bar</p>
+              <p class="comment-bar-hint" id="activeSelectionLabel">Quick Picks is ready — choose a card to load it into the main bar.</p>
+            </div>
+            <button class="copy-btn comment-copy-btn" id="copyMainBtn" type="button" disabled>Copy</button>
           </div>
 
-          <div class="decoration-tabs">
-            <button class="decoration-tab active" data-deco-tab="high-energy">🔥 High-Energy</button>
-            <button class="decoration-tab" data-deco-tab="agreement">💯 Agreement</button>
-            <button class="decoration-tab" data-deco-tab="motivation">🚀 Motivation</button>
-            <button class="decoration-tab" data-deco-tab="appreciation">❤️ Appreciation</button>
-            <button class="decoration-tab" data-deco-tab="thoughtful">🧠 Thoughtful</button>
-            <button class="decoration-tab" data-deco-tab="playful">😎 Playful</button>
-            <button class="decoration-tab" data-deco-tab="authority">📈 Authority</button>
+          <div class="input-wrapper">
+            <textarea class="main-input" id="mainInput" placeholder="Type or load a comment here..." maxlength="500"></textarea>
+            <button class="input-clear-btn" id="inputClearBtn" aria-label="Clear input" hidden>✕</button>
+            <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
           </div>
-
-          <div class="decoration-grid" id="decorationGrid"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <main class="container">
-    <!-- Custom Mood Tabs (comment-font specific) -->
-    <div class="category-section">
-      <div class="category-tabs" id="categoryTabs" style="display: none;">
-        <!-- Hidden - script.js will try to populate this, we ignore it -->
+  <main class="container comment-generator">
+    <section class="category-section" aria-label="Generator mode">
+      <div class="category-tabs" role="tablist" aria-label="Generator mode tabs">
+        <button class="category-tab active" type="button" data-mode="quick-picks">Quick Picks</button>
+        <button class="category-tab" type="button" data-mode="style-your-own">Style Your Own</button>
       </div>
-      
-      <div class="category-tabs" id="moodTabs">
-        <button class="category-tab active" data-mood="all">All</button>
-        <button class="category-tab" data-mood="emphasis">💪 Emphasis</button>
-        <button class="category-tab" data-mood="sarcasm">🎭 Sarcasm &amp; Wit</button>
-        <button class="category-tab" data-mood="warmth">✨ Warmth</button>
-        <button class="category-tab" data-mood="playful">🎈 Playful</button>
-        <button class="category-tab" data-mood="edgy">🖤 Edgy</button>
-        <button class="category-tab" data-mood="clean">🔲 Clean &amp; Minimal</button>
+    </section>
+
+    <section class="mode-panel" data-mode-panel="quick-picks">
+      <p class="panel-intro">Start with a ready-made line, then make it yours in the shared text bar before you copy.</p>
+
+      <div class="comment-filter-group">
+        <p class="filter-label">Platform</p>
+        <div class="platform-pills" aria-label="Platform filter">
+          <button class="platform-pill active" type="button" data-platform="instagram">Instagram</button>
+          <button class="platform-pill" type="button" data-platform="youtube">YouTube</button>
+          <button class="platform-pill" type="button" data-platform="facebook">Facebook</button>
+        </div>
       </div>
-    </div>
 
-    <!-- Results -->
-    <div class="results-grid" id="resultsGrid"></div>
+      <div class="comment-filter-group">
+        <p class="filter-label">Feeling</p>
+        <div class="category-tabs" id="quickPickCategoryTabs" aria-label="Feeling filters"></div>
+      </div>
 
-    <!-- ===================== MOOD DEEP DIVES ===================== -->
+      <div class="quick-picks-header">
+        <div>
+          <p class="quick-picks-kicker">Quick Picks</p>
+          <h2 class="quick-picks-heading" id="quickPickHeading">Instagram · Love &amp; Appreciation</h2>
+          <p class="quick-picks-subheading" id="quickPickSubheading">Tap a card to load the styled comment into the main bar, then edit it before you copy.</p>
+        </div>
+        <button class="copy-btn comment-secondary-btn" id="showMoreTemplatesBtn" type="button" hidden>Show more</button>
+      </div>
+
+      <div class="results-grid quick-picks-grid" id="quickPickCards"></div>
+    </section>
+
+    <section class="mode-panel" data-mode-panel="style-your-own" hidden>
+      <p class="panel-intro">Type in the shared text bar, choose a style, and keep decorators or emoji tucked away until you actually want them.</p>
+
+      <div class="comment-filter-group">
+        <p class="filter-label">Style mood</p>
+        <div class="category-tabs" aria-label="Style mood filters">
+          <button class="category-tab active" type="button" data-style-mood="all">All</button>
+          <button class="category-tab" type="button" data-style-mood="emphasis">💪 Emphasis</button>
+          <button class="category-tab" type="button" data-style-mood="sarcasm">🎭 Sarcasm &amp; Wit</button>
+          <button class="category-tab" type="button" data-style-mood="warmth">✨ Warmth</button>
+          <button class="category-tab" type="button" data-style-mood="playful">🎈 Playful</button>
+          <button class="category-tab" type="button" data-style-mood="edgy">🖤 Edgy</button>
+          <button class="category-tab" type="button" data-style-mood="clean">🔲 Clean &amp; Minimal</button>
+        </div>
+      </div>
+
+      <div class="results-grid style-library-grid" id="styleCards"></div>
+
+      <details class="accordion-section comment-inventory">
+        <summary class="accordion-toggle">Decorators &amp; emoji inventory</summary>
+        <div class="accordion-body">
+          <p class="inventory-copy">This stays secondary on purpose. Open it only when you deliberately want extra framing instead of a clean standout comment.</p>
+
+          <div class="inventory-block">
+            <h3 class="inventory-title">Decorator categories</h3>
+            <div class="decoration-tabs" id="decoratorTabs"></div>
+            <div class="decoration-grid" id="decoratorInventory"></div>
+          </div>
+
+          <div class="inventory-block">
+            <h3 class="inventory-title">Emoji accents</h3>
+            <div class="comment-emoji-grid" id="emojiInventory"></div>
+          </div>
+        </div>
+      </details>
+    </section>
+
     <section class="editorial-section">
-      <h2>Choosing the Right Comment Font Style</h2>
-      <p class="editorial-intro">Six moods, six jobs. Find the feeling you're going for, then copy the example straight into your comment.</p>
-      <div class="editorial-grid">
-        <div class="editorial-block">
-          <h3><span class="mood-label">💪 Emphasis</span><span class="mood-when">When you need your point to land</span></h3>
-          <p>Bold and bold italic are the workhorses of comment font styling. They mimic native formatting that most comment fields don't offer. Use these comment fonts when you're making a statement, answering a question, or correcting misinformation. They say "pay attention to this" without shouting.</p>
-          <div class="block-example"><strong>Example:</strong> "The real problem isn't the price — it's 𝗧𝗵𝗲 𝘄𝗮𝗶𝘁 𝘁𝗶𝗺𝗲"</div>
+      <h2>How to use the two-mode comment style generator</h2>
+      <p class="editorial-note">The page now does one job in two ways: start from a proven comment angle, or style your own text without turning the page into a platform-specific tool.</p>
+      <div class="comment-editorial-grid">
+        <div class="comment-editorial-card">
+          <h3>Quick Picks for speed</h3>
+          <p>Use Quick Picks when you already know the feeling you want — appreciation, hype, support, agreement, or a playful reaction. Choose the platform, choose the feeling, tap a card, then tweak the loaded line in the shared text bar so it sounds like you.</p>
         </div>
-        <div class="editorial-block">
-          <h3><span class="mood-label">🎭 Sarcasm &amp; Wit</span><span class="mood-when">When you disagree (cleverly)</span></h3>
-          <p>Strikethrough is one of the most underrated comment font tools in any comment section. Crossing out a word or phrase and replacing it communicates disagreement, retraction, or irony without being confrontational. Underline adds subtle emphasis that feels more deliberate than bold — a go-to font style for comments where tone matters.</p>
-          <div class="block-example"><strong>Example:</strong> "Their customer service is t̶o̶t̶a̶l̶l̶y̶ ̶g̶r̶e̶a̶t̶ non-existent"</div>
-          <div class="block-example"><strong>Example:</strong> "Oh sure, that's d̶e̶f̶i̶n̶i̶t̶e̶l̶y̶ how science works"</div>
+        <div class="comment-editorial-card">
+          <h3>Style Your Own for control</h3>
+          <p>Use Style Your Own when you already have the words. Pick a style that matches the job of the comment: bold to land a point, script to feel warm, italic to soften the tone, or a more expressive option when the vibe matters.</p>
         </div>
-        <div class="editorial-block">
-          <h3><span class="mood-label">✨ Warmth</span><span class="mood-when">When you mean it</span></h3>
-          <p>Script and italic comment fonts carry warmth and personality that plain text simply cannot. A compliment in cursive font feels more personal. A thank-you in italic feels more sincere. Use these comment styles when you want your words to feel human and heartfelt, not robotic.</p>
-          <div class="block-example"><strong>Example:</strong> "𝒯𝒽𝒾𝓈 𝓂𝒶𝒹𝑒 𝓂𝓎 𝑒𝓃𝓉𝒾𝓇𝑒 𝒹𝒶𝓎"</div>
-        </div>
-        <div class="editorial-block">
-          <h3><span class="mood-label">🎈 Playful</span><span class="mood-when">When you're having fun</span></h3>
-          <p>Bubble and filled bubble comment fonts turn text into something that looks like stickers or buttons. They're lighthearted and informal — the perfect font for comments filled with hype, fan reactions, inside jokes, and celebratory moments. They feel like you're smiling while typing.</p>
-          <div class="block-example"><strong>Example:</strong> "Ⓛⓔⓖⓔⓝⓓⓐⓡⓨ 🔥"</div>
-        </div>
-        <div class="editorial-block">
-          <h3><span class="mood-label">🖤 Edgy</span><span class="mood-when">When you want to set a vibe</span></h3>
-          <p>Gothic and fraktur comment fonts carry a distinct aesthetic weight. They're popular in music, gaming, horror, and alternative communities — not because they're "cool" generically, but because they signal a specific vibe. Use this comment font style when the aesthetic is part of the message.</p>
-          <div class="block-example"><strong>Example:</strong> "𝔗𝔥𝔦𝔰 𝔱𝔯𝔞𝔠𝔨 𝔥𝔦𝔱𝔰 𝔡𝔦𝔣𝔣𝔢𝔯𝔢𝔫𝔱 𝔞𝔱 𝟐𝔞𝔪"</div>
-        </div>
-        <div class="editorial-block">
-          <h3><span class="mood-label">🔲 Clean &amp; Minimal</span><span class="mood-when">When less says more</span></h3>
-          <p>Double-struck, monospace, and small caps are comment fonts that add distinction without shouting. They look deliberate and considered — like you chose your words carefully. These font styles for comments work well for thoughtful replies, counterarguments, or anything where you want to sound measured and precise.</p>
-          <div class="block-example"><strong>Example:</strong> "𝕋𝕙𝕖 𝕕𝕒𝕥𝕒 𝕤𝕒𝕪𝕤 𝕠𝕥𝕙𝕖𝕣𝕨𝕚𝕤𝕖"</div>
+        <div class="comment-editorial-card">
+          <h3>Keep the contrast, not the clutter</h3>
+          <ul>
+            <li>Style a key phrase, not every word.</li>
+            <li>Edit loaded templates before you copy so they feel personal.</li>
+            <li>Use decorators and emoji sparingly — they are optional inventory, not the main event.</li>
+          </ul>
         </div>
       </div>
     </section>
-  <div class="cta-card">
-    <h3>Emotion needs framing</h3>
-    <p>Use before and after emojis to frame your message and make it stand out.</p>
-    <a href="https://ultratextgen.com/usecase/before-after-emoji/" class="cta-btn">
-    Try Before & After →
-    </a>
-  </div>
+
+    <div class="cta-card">
+      <h3>Need extra framing after the main comment is done?</h3>
+      <p>Keep the core comment clean first, then use before-and-after emoji only when you intentionally want more visual framing.</p>
+      <a href="https://ultratextgen.com/usecase/before-after-emoji/" class="cta-btn">Try Before &amp; After →</a>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -495,11 +519,11 @@
 </div>
 
 <!-- How to Use the Comment Font Generator -->
-<h2 class="faq-category">How to Use the Comment Font Generator</h2>
+<h2 class="faq-category">How to Use the Comment Style Generator</h2>
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    How do I use the comment font generator?
+    How do I use the comment style generator?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
@@ -507,10 +531,10 @@
   <div class="faq-answer">
     It takes about 5 seconds:
     <br><br>
-    1. Type your comment in the text box<br>
-    2. Pick a style — fonts are grouped by mood: Emphasis, Sarcasm &amp; Wit, Warmth, Playful, Edgy, or Clean &amp; Minimal<br>
-    3. Click "Copy" on the style you like<br>
-    4. Paste directly into any comment box (YouTube, TikTok, Instagram, etc.)
+    1. Start with <strong>Quick Picks</strong> if you want a ready-made line, or type your own comment into the shared text bar<br>
+    2. Edit the comment in the main bar so it sounds like you<br>
+    3. Switch to <strong>Style Your Own</strong> when you want to apply a specific text style to what you wrote<br>
+    4. Use the main Copy button and paste directly into the comment box you care about
   </div>
 </div>
 
@@ -802,118 +826,11 @@
     </div>
   </footer>
 
-  <!-- Page configuration: custom decorators, font slugs, and mood filtering -->
-  <script>
-    // Set default active decoration tab
-    window.UTG_DEFAULT_DECO_TAB = "high-energy";
-
-    // Mood-to-font-slug mappings
-    const MOOD_MAP = {
-      "all": [
-        "ultra-bold", "ultra-bold-italic", "ultra-bold-serif",
-        "ultra-strike", "ultra-underline",
-        "ultra-script", "ultra-script-bold", "ultra-italic", "ultra-italic-serif",
-        "ultra-bubble", "ultra-bubble-filled", "ultra-squared", "ultra-squared-filled",
-        "ultra-gothic", "ultra-gothic-bold",
-        "ultra-double-struck", "ultra-monospace", "ultra-small-caps"
-      ],
-      "emphasis": ["ultra-bold", "ultra-bold-italic", "ultra-bold-serif"],
-      "sarcasm": ["ultra-strike", "ultra-underline"],
-      "warmth": ["ultra-script", "ultra-script-bold", "ultra-italic", "ultra-italic-serif"],
-      "playful": ["ultra-bubble", "ultra-bubble-filled", "ultra-squared", "ultra-squared-filled"],
-      "edgy": ["ultra-gothic", "ultra-gothic-bold"],
-      "clean": ["ultra-double-struck", "ultra-monospace", "ultra-small-caps"]
-    };
-
-    // Start with all fonts visible
-    window.UTG_FONT_SLUGS = MOOD_MAP["all"];
-
-    // Custom comment-specific decorators
-    window.UTG_DECORATIONS = {
-      "high-energy": [
-        { text: "⚠️ WARNING ⚠️", prefix: "⚠️ ", suffix: " ⚠️" },
-        { text: "🚨 BREAKING 🚨", prefix: "🚨 ", suffix: " 🚨" },
-        { text: "🔔 ALERT 🔔", prefix: "🔔 ", suffix: " 🔔" },
-        { text: "⏳ URGENT ⏳", prefix: "⏳ ", suffix: " ⏳" },
-        { text: "📢 MUST READ 📢", prefix: "📢 ", suffix: " 📢" },
-        { text: "🔥 HOT TAKE 🔥", prefix: "🔥 ", suffix: " 🔥" },
-        { text: "💣 TRUTH BOMB 💣", prefix: "💣 ", suffix: " 💣" }
-      ],
-      "agreement": [
-        { text: "📌 FACTS 📌", prefix: "📌 ", suffix: " 📌" },
-        { text: "💯 SO TRUE 💯", prefix: "💯 ", suffix: " 💯" },
-        { text: "👏 EXACTLY 👏", prefix: "👏 ", suffix: " 👏" },
-        { text: "🎯 THIS 🎯", prefix: "🎯 ", suffix: " 🎯" },
-        { text: "🎯 NAILED IT 🎯", prefix: "🎯 ", suffix: " 🎯" },
-        { text: "🎤 MIC DROP 🎤", prefix: "🎤 ", suffix: " 🎤" }
-      ],
-      "motivation": [
-        { text: "🚀 LEVEL UP 🚀", prefix: "🚀 ", suffix: " 🚀" },
-        { text: "🧠 MINDSET SHIFT 🧠", prefix: "🧠 ", suffix: " 🧠" },
-        { text: "🎮 GAME CHANGER 🎮", prefix: "🎮 ", suffix: " 🎮" },
-        { text: "💡 PRO TIP 💡", prefix: "💡 ", suffix: " 💡" },
-        { text: "⚡ BIG ENERGY ⚡", prefix: "⚡ ", suffix: " ⚡" },
-        { text: "🏆 MASTERY 🏆", prefix: "🏆 ", suffix: " 🏆" }
-      ],
-      "appreciation": [
-        { text: "🙏 GRATITUDE 🙏", prefix: "🙏 ", suffix: " 🙏" },
-        { text: "🫡 RESPECT 🫡", prefix: "🫡 ", suffix: " 🫡" },
-        { text: "❤️ APPRECIATION ❤️", prefix: "❤️ ", suffix: " ❤️" },
-        { text: "💙 THANK YOU 💙", prefix: "💙 ", suffix: " 💙" },
-        { text: "👏 WELL DONE 👏", prefix: "👏 ", suffix: " 👏" }
-      ],
-      "thoughtful": [
-        { text: "🧠 DEEP THOUGHT 🧠", prefix: "🧠 ", suffix: " 🧠" },
-        { text: "🔍 PERSPECTIVE 🔍", prefix: "🔍 ", suffix: " 🔍" },
-        { text: "💡 INSIGHT 💡", prefix: "💡 ", suffix: " 💡" },
-        { text: "🤔 WORTH THINKING 🤔", prefix: "🤔 ", suffix: " 🤔" },
-        { text: "📌 REMEMBER 📌", prefix: "📌 ", suffix: " 📌" }
-      ],
-      "playful": [
-        { text: "🎬 PLOT TWIST 🎬", prefix: "🎬 ", suffix: " 🎬" },
-        { text: "😂 LOL 😂", prefix: "😂 ", suffix: " 😂" },
-        { text: "👀 WAIT 👀", prefix: "👀 ", suffix: " 👀" },
-        { text: "🗣️ REAL TALK 🗣️", prefix: "🗣️ ", suffix: " 🗣️" },
-        { text: "👀 WATCH THIS 👀", prefix: "👀 ", suffix: " 👀" }
-      ],
-      "authority": [
-        { text: "📊 ANALYSIS 📊", prefix: "📊 ", suffix: " 📊" },
-        { text: "🧩 FRAMEWORK 🧩", prefix: "🧩 ", suffix: " 🧩" },
-        { text: "🔎 BREAKDOWN 🔎", prefix: "🔎 ", suffix: " 🔎" },
-        { text: "♟️ STRATEGY ♟️", prefix: "♟️ ", suffix: " ♟️" },
-        { text: "📘 CASE STUDY 📘", prefix: "📘 ", suffix: " 📘" }
-      ]
-    };
-
-    // Bind mood tab behavior after DOM loads
-    document.addEventListener("DOMContentLoaded", function() {
-      const moodTabs = document.querySelectorAll("#moodTabs [data-mood]");
-      const mainInput = document.getElementById("mainInput");
-      
-      moodTabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-          // Update active state
-          moodTabs.forEach(t => t.classList.remove("active"));
-          tab.classList.add("active");
-          
-          // Update the font slug filter
-          const mood = tab.dataset.mood;
-          window.UTG_FONT_SLUGS = MOOD_MAP[mood];
-          
-          // Trigger re-render by simulating input change
-          if (mainInput) {
-            mainInput.dispatchEvent(new Event("input", { bubbles: true }));
-          }
-        });
-      });
-    });
-  </script>
+  <div class="copy-toast" id="copyToast">Copied!</div>
 
   <script src="/styles.js"></script>
   <script src="/renderer.js"></script>
-  <script src="/script.js" defer=""></script>
-
-
-
-<script src="/footer.js"></script>
+  <script src="/usecase/comment-font/comment-font.js" defer></script>
+  <script src="/footer.js"></script>
+  <!-- Phase 2: community/UGC thread -->
 </body></html>
