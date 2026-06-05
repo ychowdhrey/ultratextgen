@@ -333,7 +333,8 @@
         return "unknown";
       }
       const data = await resp.json();
-      // code 0 = valid/available, code 1 = moderated, code 2 = already in use
+      // code 0 = valid/available, code 1 = moderated (treat as unknown — can't claim),
+      // code 2 = already in use (taken), anything else = unknown
       const result = data.code === 0 ? "available" : data.code === 2 ? "taken" : "unknown";
       availabilityCache.set(username, result);
       return result;
@@ -384,6 +385,7 @@
   }
 
   function buildName(parts) {
+    // Returns null if the assembled name fails validation — callers filter nulls out.
     const name = parts.join("").replace(/[^a-zA-Z0-9_]/g, "").slice(0, 20);
     const res = validateUsername(name);
     return res.valid ? name : null;
@@ -391,6 +393,15 @@
 
   function unique(list) {
     return Array.from(new Set(list.filter(Boolean)));
+  }
+
+  function shuffleArray(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
   }
 
   function generateNames() {
@@ -403,7 +414,7 @@
     if (currentLength > 0) {
       // N-letter mode: pull from the short word pool for that length
       const pool = shortWords[currentLength] || shortWords[4];
-      const shuffled = pool.slice().sort(() => Math.random() - 0.5);
+      const shuffled = shuffleArray(pool);
       return unique(shuffled).slice(0, 24);
     }
 
@@ -485,7 +496,7 @@
     if (!el.checkerResult) return;
     const raw = el.checker ? el.checker.value.trim() : "";
     if (!raw) {
-      el.checkerResult.innerHTML = '<div class="tng-empty">Enter a username above to check rules and availability.</div>';
+      el.checkerResult.innerHTML = '<div class="rng-empty">Enter a username above to check rules and availability.</div>';
       return;
     }
 
