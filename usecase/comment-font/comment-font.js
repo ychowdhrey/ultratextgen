@@ -256,7 +256,43 @@
     authority: "📈 Authority"
   };
 
-  const emojiInventory = ["🥺", "💛", "✨", "🔥", "👏", "🚀", "💫", "🌷", "💐", "😂", "😍", "🫶", "🙏", "🎉", "📚", "💡"];
+  const bracketsInventory = [
+    { label: "「 」", open: "「", close: "」" },
+    { label: "【 】", open: "【", close: "】" },
+    { label: "⟦ ⟧", open: "⟦", close: "⟧" },
+    { label: "▌ ▐", open: "▌ ", close: " ▐" },
+    { label: "✦ ✦", open: "✦ ", close: " ✦" },
+    { label: "꒰ ꒱", open: "꒰", close: "꒱" },
+    { label: "『 』", open: "『", close: "』" },
+    { label: "〔 〕", open: "〔", close: "〕" }
+  ];
+
+  const emojiGroups = {
+    "smileys": {
+      label: "😄 Smileys & Faces",
+      emojis: ["😊", "😍", "🥺", "😂", "🤩", "😭", "🥹", "😅", "🤣", "😎", "🫠", "🤔", "😤", "😩", "😏", "🥰", "😋", "🤗"]
+    },
+    "hearts": {
+      label: "❤️ Hearts & Love",
+      emojis: ["❤️", "💛", "💙", "💚", "🧡", "💜", "🖤", "🤍", "💕", "💞", "💓", "💗", "💖", "💝", "❤️‍🔥", "🫶", "💌", "💘"]
+    },
+    "hands": {
+      label: "👏 Hands & Gestures",
+      emojis: ["👏", "🙌", "🤝", "🫶", "🙏", "👍", "✌️", "🤞", "🫵", "💪", "🤙", "👋", "🫂", "🤜", "🤛", "✊", "🖐️", "☝️"]
+    },
+    "celebration": {
+      label: "🎉 Celebration",
+      emojis: ["🎉", "🎊", "🥳", "🎈", "🎁", "🏆", "🥂", "🍾", "🎶", "🎤", "🚀", "✨", "💫", "⭐", "🌟", "🔥", "💥", "🎯"]
+    },
+    "symbols": {
+      label: "✨ Symbols & Sparkles",
+      emojis: ["✨", "💡", "⚡", "💎", "🌈", "🔮", "💫", "🌙", "⭐", "🌸", "🌺", "🌻", "🦋", "🫧", "🪄", "🌊", "💠", "🔷"]
+    },
+    "nature": {
+      label: "🌿 Nature",
+      emojis: ["🌷", "🌸", "🌺", "🌻", "🌹", "🍀", "🌿", "🦋", "🐝", "🌊", "☀️", "🌙", "⭐", "🌈", "❄️", "🍃", "🌱", "🌾"]
+    }
+  };
 
   const elements = {
     mainInput: document.getElementById("mainInput"),
@@ -274,7 +310,11 @@
     styleCards: document.getElementById("styleCards"),
     decoratorTabs: document.getElementById("decoratorTabs"),
     decoratorInventory: document.getElementById("decoratorInventory"),
-    emojiInventory: document.getElementById("emojiInventory")
+    emojiGroupTabs: document.getElementById("emojiGroupTabs"),
+    emojiInventory: document.getElementById("emojiInventory"),
+    bracketsInventory: document.getElementById("bracketsInventory"),
+    styleFurtherRow: document.getElementById("styleFurtherRow"),
+    styleFurtherBtn: document.getElementById("styleFurtherBtn")
   };
 
   const state = {
@@ -286,6 +326,7 @@
     selectedStyleId: null,
     styleMood: "all",
     decoratorTab: "high-energy",
+    emojiGroup: "smileys",
     copyCounts: loadCopyCounts()
   };
 
@@ -375,6 +416,9 @@
     if (elements.charCountWrapper) elements.charCountWrapper.hidden = length === 0;
     if (elements.inputClearBtn) elements.inputClearBtn.hidden = length === 0;
     if (elements.copyMainBtn) elements.copyMainBtn.disabled = length === 0;
+    if (elements.styleFurtherRow) {
+      elements.styleFurtherRow.hidden = length === 0 || state.mode === "style-your-own";
+    }
   }
 
   function showCopyToast(message) {
@@ -477,9 +521,24 @@
     `).join("");
   }
 
+  function renderEmojiGroupTabs() {
+    if (!elements.emojiGroupTabs) return;
+    elements.emojiGroupTabs.innerHTML = Object.entries(emojiGroups).map(([key, group]) => `
+      <button type="button" class="decoration-tab ${key === state.emojiGroup ? "active" : ""}" data-emoji-group="${escapeHtml(key)}">${escapeHtml(group.label)}</button>
+    `).join("");
+  }
+
   function renderEmojiInventory() {
-    elements.emojiInventory.innerHTML = emojiInventory.map((emoji) => `
+    const group = emojiGroups[state.emojiGroup] || emojiGroups["smileys"];
+    elements.emojiInventory.innerHTML = group.emojis.map((emoji) => `
       <button type="button" class="comment-emoji-chip" data-emoji="${escapeHtml(emoji)}">${escapeHtml(emoji)}</button>
+    `).join("");
+  }
+
+  function renderBracketsInventory() {
+    if (!elements.bracketsInventory) return;
+    elements.bracketsInventory.innerHTML = bracketsInventory.map((item, index) => `
+      <button type="button" class="decoration-item bracket-item" data-bracket-index="${index}">${escapeHtml(item.label)}</button>
     `).join("");
   }
 
@@ -528,6 +587,21 @@
     setSelectionHint("Decorator added. Keep it subtle, then copy from the main bar.");
   }
 
+  function applyBracket(index) {
+    const bracket = bracketsInventory[index];
+    if (!bracket) return;
+    const text = elements.mainInput.value;
+    if (!text.trim()) {
+      elements.mainInput.focus();
+      setSelectionHint("Add your comment to the main bar first, then choose a frame to wrap it.");
+      return;
+    }
+    elements.mainInput.value = `${bracket.open}${text}${bracket.close}`;
+    state.selectedTemplateId = null;
+    syncInputUi();
+    setSelectionHint(`Frame applied. Edit or copy from the main bar.`);
+  }
+
   function appendEmoji(emoji) {
     const text = elements.mainInput.value;
     const suffix = text && !text.endsWith(" ") ? " " : "";
@@ -569,10 +643,7 @@
         template_id: activeTemplate ? activeTemplate.id : null
       });
       showCopyToast("Copied!");
-      setSelectionHint(activeTemplate
-        ? "Copied from the main bar with template tracking wired for analytics."
-        : "Copied from the main bar."
-      );
+      setSelectionHint("Copied from the main bar.");
     } catch (error) {
       console.error("Copy failed:", error);
       showCopyToast("Copy failed");
@@ -584,6 +655,7 @@
       button.addEventListener("click", () => {
         state.mode = button.dataset.mode;
         updateModeUi();
+        syncInputUi();
         if (state.mode === "quick-picks") {
           const activeTemplate = getActiveTemplate();
           setSelectionHint(activeTemplate
@@ -658,11 +730,38 @@
       applyDecorator(Number(button.dataset.decoratorIndex));
     });
 
+    if (elements.bracketsInventory) {
+      elements.bracketsInventory.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-bracket-index]");
+        if (!button) return;
+        applyBracket(Number(button.dataset.bracketIndex));
+      });
+    }
+
+    if (elements.emojiGroupTabs) {
+      elements.emojiGroupTabs.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-emoji-group]");
+        if (!button) return;
+        state.emojiGroup = button.dataset.emojiGroup;
+        renderEmojiGroupTabs();
+        renderEmojiInventory();
+      });
+    }
+
     elements.emojiInventory.addEventListener("click", (event) => {
       const button = event.target.closest("[data-emoji]");
       if (!button) return;
       appendEmoji(button.dataset.emoji);
     });
+
+    if (elements.styleFurtherBtn) {
+      elements.styleFurtherBtn.addEventListener("click", () => {
+        state.mode = "style-your-own";
+        updateModeUi();
+        syncInputUi();
+        setSelectionHint("Choose a style below to apply to your comment, or open the decorator inventory.");
+      });
+    }
 
     elements.mainInput.addEventListener("input", syncInputUi);
     elements.inputClearBtn.addEventListener("click", () => {
@@ -703,6 +802,8 @@
     renderStyleCards();
     renderDecoratorTabs();
     renderDecorators();
+    renderBracketsInventory();
+    renderEmojiGroupTabs();
     renderEmojiInventory();
     syncInputUi();
     bindEvents();

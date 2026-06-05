@@ -1,6 +1,6 @@
 # UltraTextGen — CSS Audit Report
 
-_Generated: 2026-06-05T07:55:35.089Z_
+_Generated: 2026-06-05T09:21:53.167Z_
 
 > Advisory only. This audit changes no CSS. Items marked **NEEDS VERIFICATION** are uncertain — confirm in a browser and check JavaScript before moving or deleting anything.
 
@@ -10,14 +10,14 @@ _Generated: 2026-06-05T07:55:35.089Z_
 | --- | --- |
 | HTML files scanned | 155 |
 | CSS files | 11 |
-| JS files scanned | 26 |
+| JS files scanned | 27 |
 | Inline `style="..."` occurrences | 219 |
 | Files containing inline styles | 93 |
 | Inline risk (low / med / high) | 43 / 85 / 91 |
 | `<style>` blocks in HTML | 5 |
-| Unique HTML classes | 301 |
+| Unique HTML classes | 306 |
 | Component class candidates | 89 |
-| One-off class candidates | 188 |
+| One-off class candidates | 193 |
 | Repeated inline patterns | 15 |
 | style.css selectors parsed | 365 |
 | …referenced (HTML/JS/structural) | 364 |
@@ -116,7 +116,7 @@ Risk legend: **low** = low risk — safe to move into style.css; **medium** = me
 | discord/discord-context.css | 5.4 KB | 210 | platform-specific (Discord) styling |
 | symbol-explorer.css | 5.2 KB | 244 | symbol explorer feature styling |
 | usecase/bio-font/bio-font.css | 5.1 KB | 239 | page-specific usecase styling |
-| usecase/comment-font/comment-font.css | 4.1 KB | 249 | page-specific usecase styling |
+| usecase/comment-font/comment-font.css | 5.0 KB | 299 | page-specific usecase styling |
 | tiktok/tiktok-context.css | 3.0 KB | 147 | platform-specific (Discord) styling |
 | roblox/name-generator/roblox-generator.css | 2.7 KB | 169 | page/feature specific styling (inferred from path) |
 | facebook/facebook-context.css | 1.2 KB | 66 | platform-specific (Discord) styling |
@@ -176,7 +176,7 @@ Classes used on ≥ 5 pages — strong candidates for shared components in style
 
 ### One-off classes (used on a single page)
 
-188 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
+193 classes appear on only one page — likely genuinely page-specific. Top 15 shown; full list in JSON.
 
 | Class | Occurrences |
 | --- | --- |
@@ -204,7 +204,7 @@ Selectors in `style.css` with **no** HTML reference and **no** strict JS referen
 | --- | --- | --- | --- |
 | .variation-char-over | 2018 | maybe-js | token appears in a JS string — NEEDS VERIFICATION before touching |
 
-JS class-reference tokens collected: 233 (strict). These were used to avoid falsely flagging JS-driven CSS.
+JS class-reference tokens collected: 235 (strict). These were used to avoid falsely flagging JS-driven CSS.
 
 ## 8. Recommended Next Actions
 

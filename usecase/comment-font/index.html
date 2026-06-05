@@ -60,7 +60,7 @@
       "name": "What are the High-Energy decorator options?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "High-Energy is the most popular category and comes with several sub-styles for different levels of intensity: <br><br> ⚠️ <strong>WARNING</strong> ⚠️ — attention-grabbing, great for \"don't miss this\" moments<br> 🚨 <strong>BREAKING</strong> 🚨 — for sharing news or reacting to something major<br> 🔔 <strong>ALERT</strong> 🔔 — a slightly softer \"pay attention\"<br> 🏆 <strong>URGENT</strong> 🏆 — adds gravitas<br> 💪 <strong>MUST READ</strong> 💪 — positions your comment as essential<br> 🔥 <strong>HOT TAKE</strong> 🔥 — signals a bold or contrarian opinion<br> 💣 <strong>TRUTH BOMB</strong> 💣 — for when you're dropping a hard truth <br><br> <strong>Example:</strong> A comment like 🔥 HOT TAKE 🔥 \"𝗧𝗵𝗲 𝘀𝗲𝗾𝘂𝗲𝗹 𝘄𝗮𝘀 𝗯𝗲𝘁𝘁𝗲𝗿 𝘁𝗵𝗮𝗻 𝘁𝗵𝗲 𝗼𝗿𝗶𝗴𝗶𝗻𝗮𝗹\" immediately grabs attention and invites engagement."
+        "text": "High-Energy decorators add a label before and after your comment text — options include ⚠️ WARNING, 🚨 BREAKING, 🔔 ALERT, ⏳ URGENT, 📢 MUST READ, 🔥 HOT TAKE, and 💣 TRUTH BOMB. Use them sparingly; they work best for rare, genuinely high-stakes moments rather than everyday commenting."
       }
     },
     {
@@ -73,10 +73,10 @@
     },
     {
       "@type": "Question",
-      "name": "Can I use comment fonts on LinkedIn?",
+      "name": "Which platforms support styled comment text from this generator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — and <a href=\"https://ultratextgen.com/linkedin/\">LinkedIn</a> is one of the most underrated platforms for it. LinkedIn doesn't offer native bold or italic in comments, so Unicode text is the only way to add emphasis. Two styles work especially well: <br><br> <strong><a href=\"https://ultratextgen.com/category/bold-fonts/\">Bold</a></strong> a few key words to make your point land — e.g., \"The real differentiator is 𝗱𝗶𝘀𝘁𝗿𝗶𝗯𝘂𝘁𝗶𝗼𝗻, not product\"<br> <strong><a href=\"https://ultratextgen.com/category/strikethrough-text/\">Strikethrough</a></strong> to negate a point with flair — e.g., \"This is a g̶r̶o̶w̶t̶h̶ retention problem\" <br><br> Influencers and thought leaders on LinkedIn get hundreds or thousands of comments per post. A styled comment helps you stand out in that sea of plain text, get noticed by the poster, and grow your reach through visibility."
+        "text": "Unicode-styled text works in comments, replies, bios, and text fields on YouTube, Instagram, Facebook, Discord, WhatsApp, Telegram, and most other apps that support modern Unicode. The core styles (Bold, Italic, Script) render correctly on virtually all modern devices."
       }
     },
     {
@@ -191,7 +191,7 @@
         <div class="comment-bar">
           <div class="comment-bar-head">
             <div>
-              <p class="comment-bar-label">Shared comment bar</p>
+              <p class="comment-bar-label">Your comment</p>
               <p class="comment-bar-hint" id="activeSelectionLabel">Quick Picks is ready — choose a card to load it into the main bar.</p>
             </div>
             <button class="copy-btn comment-copy-btn" id="copyMainBtn" type="button" disabled>Copy</button>
@@ -201,6 +201,9 @@
             <textarea class="main-input" id="mainInput" placeholder="Type or load a comment here..." maxlength="500"></textarea>
             <button class="input-clear-btn" id="inputClearBtn" aria-label="Clear input" hidden>✕</button>
             <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
+          </div>
+          <div class="style-further-row" id="styleFurtherRow" hidden>
+            <button class="style-further-btn" id="styleFurtherBtn" type="button">✨ Style it further →</button>
           </div>
         </div>
       </div>
@@ -274,7 +277,14 @@
           </div>
 
           <div class="inventory-block">
+            <h3 class="inventory-title">Brackets &amp; frames</h3>
+            <p class="inventory-copy inventory-copy--tight">Wraps the full comment in a matching pair — distinct from word-stamp decorators.</p>
+            <div class="brackets-grid" id="bracketsInventory"></div>
+          </div>
+
+          <div class="inventory-block">
             <h3 class="inventory-title">Emoji accents</h3>
+            <div class="emoji-group-tabs" id="emojiGroupTabs"></div>
             <div class="comment-emoji-grid" id="emojiInventory"></div>
           </div>
         </div>
@@ -347,20 +357,6 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Does YouTube allow fancy Unicode text in comments?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Yes. YouTube has supported Unicode text in comments for years.
-    It's completely safe and widely used by creators and viewers every day.
-    The styles available on this page are curated to avoid spam filters.
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
     What are the most popular comment font styles for YouTube?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -377,41 +373,6 @@
   </div>
 </div>
 
-<!-- TikTok Comments -->
-<h2 class="faq-category">TikTok Comments</h2>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Will fancy text work in TikTok comments?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Yes — <a href="https://ultratextgen.com/tiktok/">TikTok</a> is actually one of the best platforms for Unicode comment fonts.
-    Many users search for "TikTok comment font" because TikTok sometimes filters or buries plain-text comments.
-    Unicode-styled text tends to stand out more and can help your comment get noticed.
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    What comment font style works best on TikTok?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    The most popular TikTok comment styles are:
-    <br><br>
-    <strong><a href="https://ultratextgen.com/category/bold-fonts/">Bold</a></strong> (𝗟𝗶𝗸𝗲 𝘁𝗵𝗶𝘀) — punchy and direct, great for reactions<br>
-    <strong>Small text</strong> — feels like whispering, often used for humor<br>
-    <strong>Zalgo / glitch text</strong> — eye-catching in fast-scrolling feeds
-    <br><br>
-    <strong>Example:</strong> A comment like "𝗡𝗼 𝘄𝗮𝘆 𝘁𝗵𝗶𝘀 𝗶𝘀 𝗿𝗲𝗮𝗹 🔥" immediately stands out beneath a viral TikTok video.
-  </div>
-</div>
-
 <!-- Facebook & Instagram Comments -->
 <h2 class="faq-category">Facebook &amp; Instagram Comments</h2>
 
@@ -424,7 +385,7 @@
   </button>
   <div class="faq-answer">
     Yes. Both <a href="https://ultratextgen.com/facebook/">Facebook</a> and <a href="https://ultratextgen.com/instagram/">Instagram</a> render Unicode text in comments.
-    The effect is slightly subtler than on YouTube or TikTok because both platforms use very clean, uniform fonts — but <a href="https://ultratextgen.com/category/bold-fonts/">bold</a>, <a href="https://ultratextgen.com/category/italic-fonts/">italic</a>, and <a href="https://ultratextgen.com/category/cursive-fonts/">script</a> Unicode characters still stand out clearly against the default text.
+    The effect is slightly subtler than on YouTube because both platforms use very clean, uniform fonts — but <a href="https://ultratextgen.com/category/bold-fonts/">bold</a>, <a href="https://ultratextgen.com/category/italic-fonts/">italic</a>, and <a href="https://ultratextgen.com/category/cursive-fonts/">script</a> Unicode characters still stand out clearly against the default text.
   </div>
 </div>
 
@@ -446,77 +407,30 @@
   </div>
 </div>
 
+<!-- Where it works -->
+<h2 class="faq-category">Where It Works</h2>
+
 <div class="faq-item">
   <button class="faq-question" type="button">
-    Why do some of my Facebook comments look different or bigger?
+    Which platforms support styled comment text from this generator?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
   </button>
   <div class="faq-answer">
-    That's usually <a href="https://ultratextgen.com/facebook/">Facebook's</a> own font-scaling feature for short comments — not Unicode.
-    Our comment font generator gives you consistent styled text that works regardless of Facebook's display quirks.
-  </div>
-</div>
-
-<!-- Other Platforms -->
-<h2 class="faq-category">Other Platforms — X, LinkedIn, Discord, WhatsApp &amp; More</h2>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Which platforms support comment fonts from this generator?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Unicode-styled text works across virtually every major platform:
+    Unicode-styled text is plain text that any platform accepting standard characters can display.
+    It works in comments, replies, bios, and text fields on
     <a href="https://ultratextgen.com/youtube/">YouTube</a>,
-    <a href="https://ultratextgen.com/tiktok/">TikTok</a>,
     <a href="https://ultratextgen.com/instagram/">Instagram</a>,
     <a href="https://ultratextgen.com/facebook/">Facebook</a>,
-    <a href="https://ultratextgen.com/x/">X (Twitter)</a>,
-    <a href="https://ultratextgen.com/linkedin/">LinkedIn</a>,
+    <a href="https://ultratextgen.com/discord/">Discord</a>,
     <a href="https://ultratextgen.com/whatsapp/">WhatsApp</a>,
     <a href="https://ultratextgen.com/telegram/">Telegram</a>,
-    <a href="https://ultratextgen.com/discord/">Discord</a>,
-    <a href="https://ultratextgen.com/snapchat/">Snapchat</a>, and
-    <a href="https://ultratextgen.com/pinterest/">Pinterest</a>.
+    and most other apps that support modern Unicode.
+    The core styles (<a href="https://ultratextgen.com/category/bold-fonts/">Bold</a>, <a href="https://ultratextgen.com/category/italic-fonts/">Italic</a>, Script) render correctly on virtually all modern devices.
   </div>
 </div>
 
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Does fancy text work on X (Twitter)?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Yes, but <a href="https://ultratextgen.com/x/">X's</a> fast-moving feeds mean shorter styled text tends to land better.
-    A single <a href="https://ultratextgen.com/category/bold-fonts/">bold</a> phrase in a reply is more effective than styling an entire tweet.
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question" type="button">
-    Can I use comment fonts on LinkedIn?
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div class="faq-answer">
-    Yes — and <a href="https://ultratextgen.com/linkedin/">LinkedIn</a> is one of the most underrated platforms for it.
-    LinkedIn doesn't offer native bold or italic in comments, so Unicode text is the only way to add emphasis.
-    Two styles work especially well:
-    <br><br>
-    <strong><a href="https://ultratextgen.com/category/bold-fonts/">Bold</a></strong> a few key words to make your point land — e.g., "The real differentiator is 𝗱𝗶𝘀𝘁𝗿𝗶𝗯𝘂𝘁𝗶𝗼𝗻, not product"<br>
-    <strong><a href="https://ultratextgen.com/category/strikethrough-text/">Strikethrough</a></strong> to negate a point with flair — e.g., "This is a g̶r̶o̶w̶t̶h̶ retention problem"
-    <br><br>
-    Influencers and thought leaders on LinkedIn get hundreds or thousands of comments per post.
-    A styled comment helps you stand out in that sea of plain text, get noticed by the poster, and grow your reach through visibility.
-  </div>
-</div>
 
 <!-- How to Use the Comment Font Generator -->
 <h2 class="faq-category">How to Use the Comment Style Generator</h2>
@@ -626,17 +540,10 @@
     </svg>
   </button>
   <div class="faq-answer">
-    High-Energy is the most popular category and comes with several sub-styles for different levels of intensity:
+    High-Energy decorators are the most intense option in the inventory — they add a label like ⚠️ WARNING ⚠️ or 🚨 BREAKING 🚨 before and after your comment text.
+    Use them only when you genuinely want maximum visual weight; they're best reserved for rare moments rather than everyday commenting.
     <br><br>
-    ⚠️ <strong>WARNING</strong> ⚠️ — attention-grabbing, great for "don't miss this" moments<br>
-    🚨 <strong>BREAKING</strong> 🚨 — for sharing news or reacting to something major<br>
-    🔔 <strong>ALERT</strong> 🔔 — a slightly softer "pay attention"<br>
-    🏆 <strong>URGENT</strong> 🏆 — adds gravitas<br>
-    💪 <strong>MUST READ</strong> 💪 — positions your comment as essential<br>
-    🔥 <strong>HOT TAKE</strong> 🔥 — signals a bold or contrarian opinion<br>
-    💣 <strong>TRUTH BOMB</strong> 💣 — for when you're dropping a hard truth
-    <br><br>
-    <strong>Example:</strong> A comment like 🔥 HOT TAKE 🔥 "𝗧𝗵𝗲 𝘀𝗲𝗾𝘂𝗲𝗹 𝘄𝗮𝘀 𝗯𝗲𝘁𝘁𝗲𝗿 𝘁𝗵𝗮𝗻 𝘁𝗵𝗲 𝗼𝗿𝗶𝗴𝗶𝗻𝗮𝗹" immediately grabs attention and invites engagement.
+    Options include: ⚠️ WARNING, 🚨 BREAKING, 🔔 ALERT, ⏳ URGENT, 📢 MUST READ, 🔥 HOT TAKE, 💣 TRUTH BOMB.
   </div>
 </div>
 
