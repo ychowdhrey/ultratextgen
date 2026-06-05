@@ -166,6 +166,56 @@
   gap: 8px;
 }
 
+.emoji-group-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.brackets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bracket-item {
+  font-size: 0.9375rem;
+  letter-spacing: 0.05em;
+}
+
+.inventory-copy--tight {
+  margin-bottom: 10px;
+}
+
+.style-further-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.style-further-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border: 1px solid var(--accent-purple);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent-purple);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.style-further-btn:hover,
+.style-further-btn:focus-visible {
+  background: var(--accent-purple);
+  color: #fff;
+}
+
 .comment-emoji-chip {
   padding: 8px 12px;
   border: 1px solid var(--border-light);

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T07:55:35.089Z",
+  "generatedAt": "2026-06-05T09:21:53.167Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -9,7 +9,7 @@
   "summary": {
     "htmlFiles": 155,
     "cssFiles": 11,
-    "jsFiles": 26,
+    "jsFiles": 27,
     "pageTypes": {
       "other": 21,
       "category": 20,
@@ -28,9 +28,9 @@
       "high": 91
     },
     "styleBlocks": 5,
-    "uniqueClasses": 301,
+    "uniqueClasses": 306,
     "componentClassCandidates": 89,
-    "oneOffClassCandidates": 188,
+    "oneOffClassCandidates": 193,
     "repeatedInlinePatterns": 15,
     "cssSelectorsTotal": 365,
     "cssSelectorsReferenced": 364,
@@ -81,9 +81,9 @@
     },
     {
       "file": "usecase/comment-font/comment-font.css",
-      "bytes": 4242,
-      "sizeHuman": "4.1 KB",
-      "lines": 249,
+      "bytes": 5081,
+      "sizeHuman": "5.0 KB",
+      "lines": 299,
       "purpose": "page-specific usecase styling"
     },
     {
@@ -804,7 +804,7 @@
     },
     {
       "file": "guide/branding-with-fonts-for-social-media/index.html",
-      "line": 539,
+      "line": 546,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
       "risk": "low"
@@ -951,133 +951,133 @@
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 617,
+      "line": 624,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 637,
-      "snippet": "style=\"font-size:1.35rem;\"",
-      "decl": "font-size:1.35rem;",
-      "risk": "low"
-    },
-    {
-      "file": "guide/personal-branding-through-typography/index.html",
-      "line": 639,
-      "snippet": "style=\"text-decoration:none;\"",
-      "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
       "line": 644,
+      "snippet": "style=\"font-size:1.35rem;\"",
+      "decl": "font-size:1.35rem;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 646,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 649,
+      "line": 651,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 654,
+      "line": 656,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 659,
+      "line": 661,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 664,
+      "line": 666,
+      "snippet": "style=\"text-decoration:none;\"",
+      "decl": "text-decoration:none;",
+      "risk": "low"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 671,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 771,
+      "line": 778,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 791,
+      "line": 798,
       "snippet": "style=\"font-size:1.35rem;\"",
       "decl": "font-size:1.35rem;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 793,
+      "line": 800,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 798,
+      "line": 805,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 803,
+      "line": 810,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 287,
+      "line": 294,
       "snippet": "style=\"margin-top:1rem\"",
       "decl": "margin-top:1rem",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 481,
+      "line": 488,
       "snippet": "style=\"font-size:1.35rem;\"",
       "decl": "font-size:1.35rem;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 483,
+      "line": 490,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 488,
+      "line": 495,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 493,
+      "line": 500,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/the-rhetoric-of-fonts/index.html",
-      "line": 430,
+      "line": 437,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
       "risk": "low"
@@ -1168,7 +1168,7 @@
     },
     {
       "file": "library/witchy-occult-symbols/index.html",
-      "line": 162,
+      "line": 169,
       "snippet": "style=\"margin-top:1rem;\"",
       "decl": "margin-top:1rem;",
       "risk": "low"
@@ -2200,17 +2200,17 @@
     {
       "class": "faq-item",
       "pages": 51,
-      "occurrences": 781
+      "occurrences": 775
     },
     {
       "class": "faq-question",
       "pages": 51,
-      "occurrences": 781
+      "occurrences": 775
     },
     {
       "class": "faq-answer",
       "pages": 51,
-      "occurrences": 781
+      "occurrences": 775
     },
     {
       "class": "active",
@@ -2275,7 +2275,7 @@
     {
       "class": "faq-category",
       "pages": 44,
-      "occurrences": 245
+      "occurrences": 244
     },
     {
       "class": "decoration-label",
@@ -2630,6 +2630,11 @@
       "occurrences": 1
     },
     {
+      "class": "brackets-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
       "class": "breakdown-grid",
       "pages": 1,
       "occurrences": 1
@@ -2855,6 +2860,11 @@
       "occurrences": 1
     },
     {
+      "class": "emoji-group-tabs",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
       "class": "emoji-output-actions",
       "pages": 1,
       "occurrences": 1
@@ -2967,17 +2977,22 @@
     {
       "class": "inventory-block",
       "pages": 1,
-      "occurrences": 2
+      "occurrences": 3
     },
     {
       "class": "inventory-copy",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "inventory-copy--tight",
       "pages": 1,
       "occurrences": 1
     },
     {
       "class": "inventory-title",
       "pages": 1,
-      "occurrences": 2
+      "occurrences": 3
     },
     {
       "class": "is-spaced",
@@ -3331,6 +3346,16 @@
     },
     {
       "class": "rng-results",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "style-further-btn",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "style-further-row",
       "pages": 1,
       "occurrences": 1
     },
@@ -5631,5 +5656,5 @@
       "snippet": "class=\"preview-name\""
     }
   ],
-  "jsStrictTokenCount": 233
+  "jsStrictTokenCount": 235
 }
