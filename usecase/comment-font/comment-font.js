@@ -171,7 +171,7 @@
     { id: "bubblefilled", label: "Filled Bubble", description: "Fun when you want sticker-like emphasis.", mood: "playful", sourceSlug: "ultra-bubble-filled", sample: "saved folder" },
     { id: "gothic", label: "Gothic", description: "Adds an alt or aesthetic edge.", mood: "edgy", sourceSlug: "ultra-gothic", sample: "stayed with me" },
     { id: "gothicbold", label: "Bold Gothic", description: "Heavier gothic styling for dramatic lines.", mood: "edgy", sourceSlug: "ultra-gothic-bold", sample: "hidden gem" },
-    { id: "monospace", label: "Monospace", description: "Clean and precise when you want restraint.", mood: "clean", localStyle: MONOSPACE_STYLE, sample: "rewatching later" },
+    { id: "monospace", label: "Monospace", description: "Clean and precise when you want restraint.", mood: "clean", customStyle: MONOSPACE_STYLE, sample: "rewatching later" },
     { id: "smallcaps", label: "Small Caps", description: "Subtle distinction without looking spammy.", mood: "clean", sourceSlug: "ultra-small-caps", sample: "well said" }
   ];
 
@@ -289,7 +289,7 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/\"/g, "&quot;")
+      .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
 
@@ -320,7 +320,7 @@
   function getRendererStyle(styleId) {
     const definition = getStyleDefinition(styleId);
     if (!definition) return null;
-    if (definition.localStyle) return definition.localStyle;
+    if (definition.customStyle) return definition.customStyle;
     return styleRegistry[definition.sourceSlug] || null;
   }
 
