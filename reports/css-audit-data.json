@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T07:40:18.471Z",
+  "generatedAt": "2026-06-05T07:50:18.028Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -8,8 +8,8 @@
   },
   "summary": {
     "htmlFiles": 155,
-    "cssFiles": 10,
-    "jsFiles": 25,
+    "cssFiles": 11,
+    "jsFiles": 26,
     "pageTypes": {
       "other": 21,
       "category": 20,
@@ -20,17 +20,17 @@
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 220,
+    "inlineStyleOccurrences": 219,
     "filesWithInlineStyles": 93,
     "inlineRiskTally": {
       "low": 43,
       "medium": 85,
-      "high": 92
+      "high": 91
     },
     "styleBlocks": 5,
-    "uniqueClasses": 275,
+    "uniqueClasses": 301,
     "componentClassCandidates": 89,
-    "oneOffClassCandidates": 165,
+    "oneOffClassCandidates": 188,
     "repeatedInlinePatterns": 15,
     "cssSelectorsTotal": 365,
     "cssSelectorsReferenced": 364,
@@ -77,6 +77,13 @@
       "bytes": 5172,
       "sizeHuman": "5.1 KB",
       "lines": 239,
+      "purpose": "page-specific usecase styling"
+    },
+    {
+      "file": "usecase/comment-font/comment-font.css",
+      "bytes": 4242,
+      "sizeHuman": "4.1 KB",
+      "lines": 249,
       "purpose": "page-specific usecase styling"
     },
     {
@@ -1392,16 +1399,9 @@
     },
     {
       "file": "usecase/comment-font/index.html",
-      "line": 172,
+      "line": 173,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
-      "risk": "high"
-    },
-    {
-      "file": "usecase/comment-font/index.html",
-      "line": 225,
-      "snippet": "style=\"display: none;\"",
-      "decl": "display: none;",
       "risk": "high"
     },
     {
@@ -1748,10 +1748,6 @@
       "count": 2
     },
     {
-      "file": "usecase/comment-font/index.html",
-      "count": 2
-    },
-    {
       "file": "usecase/emoji-combinations/index.html",
       "count": 2
     },
@@ -2000,6 +1996,10 @@
       "count": 1
     },
     {
+      "file": "usecase/comment-font/index.html",
+      "count": 1
+    },
+    {
       "file": "usecase/zalgo-text/index.html",
       "count": 1
     },
@@ -2099,8 +2099,8 @@
     },
     {
       "class": "editorial-block",
-      "pages": 95,
-      "occurrences": 283
+      "pages": 94,
+      "occurrences": 277
     },
     {
       "class": "cta-btn",
@@ -2215,7 +2215,7 @@
     {
       "class": "active",
       "pages": 50,
-      "occurrences": 98
+      "occurrences": 99
     },
     {
       "class": "hero-card",
@@ -2244,13 +2244,8 @@
     },
     {
       "class": "decoration-tab",
-      "pages": 46,
-      "occurrences": 354
-    },
-    {
-      "class": "decoration-section",
       "pages": 45,
-      "occurrences": 49
+      "occurrences": 347
     },
     {
       "class": "decoration-grid",
@@ -2260,10 +2255,10 @@
     {
       "class": "results-grid",
       "pages": 45,
-      "occurrences": 45
+      "occurrences": 46
     },
     {
-      "class": "decoration-label",
+      "class": "decoration-section",
       "pages": 44,
       "occurrences": 48
     },
@@ -2275,12 +2270,17 @@
     {
       "class": "category-tabs",
       "pages": 44,
-      "occurrences": 48
+      "occurrences": 49
     },
     {
       "class": "faq-category",
       "pages": 44,
       "occurrences": 245
+    },
+    {
+      "class": "decoration-label",
+      "pages": 43,
+      "occurrences": 47
     },
     {
       "class": "u-secondary-tight",
@@ -2290,7 +2290,7 @@
     {
       "class": "category-tab",
       "pages": 28,
-      "occurrences": 217
+      "occurrences": 219
     },
     {
       "class": "compare-badge",
@@ -2314,8 +2314,8 @@
     },
     {
       "class": "block-example",
-      "pages": 16,
-      "occurrences": 69
+      "pages": 15,
+      "occurrences": 62
     },
     {
       "class": "u-mt-15",
@@ -2333,6 +2333,11 @@
       "occurrences": 143
     },
     {
+      "class": "copy-toast",
+      "pages": 13,
+      "occurrences": 13
+    },
+    {
       "class": "tips-grid",
       "pages": 13,
       "occurrences": 25
@@ -2341,11 +2346,6 @@
       "class": "tip-card",
       "pages": 13,
       "occurrences": 88
-    },
-    {
-      "class": "copy-toast",
-      "pages": 12,
-      "occurrences": 12
     },
     {
       "class": "section-subline",
@@ -2363,14 +2363,14 @@
       "occurrences": 36
     },
     {
+      "class": "input-clear-btn",
+      "pages": 12,
+      "occurrences": 12
+    },
+    {
       "class": "tip-icon",
       "pages": 12,
       "occurrences": 85
-    },
-    {
-      "class": "input-clear-btn",
-      "pages": 11,
-      "occurrences": 11
     },
     {
       "class": "u-text-center",
@@ -2453,19 +2453,19 @@
       "occurrences": 13
     },
     {
-      "class": "mood-example",
-      "pages": 7,
-      "occurrences": 156
-    },
-    {
       "class": "platform-pills",
-      "pages": 6,
-      "occurrences": 18
+      "pages": 7,
+      "occurrences": 19
     },
     {
       "class": "platform-pill",
-      "pages": 6,
-      "occurrences": 102
+      "pages": 7,
+      "occurrences": 105
+    },
+    {
+      "class": "mood-example",
+      "pages": 7,
+      "occurrences": 156
     },
     {
       "class": "steps-grid",
@@ -2509,21 +2509,6 @@
     }
   ],
   "oneOffClasses": [
-    {
-      "class": "accordion-body",
-      "pages": 1,
-      "occurrences": 4
-    },
-    {
-      "class": "accordion-section",
-      "pages": 1,
-      "occurrences": 4
-    },
-    {
-      "class": "accordion-toggle",
-      "pages": 1,
-      "occurrences": 4
-    },
     {
       "class": "aesthetic-card-desc",
       "pages": 1,
@@ -2700,6 +2685,71 @@
       "occurrences": 1
     },
     {
+      "class": "comment-bar",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-bar-head",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-bar-hint",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-bar-label",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-copy-btn",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-editorial-card",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
+      "class": "comment-editorial-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-emoji-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-filter-group",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
+      "class": "comment-generator",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-hero-inner",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-inventory",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-secondary-btn",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
       "class": "comparison-table",
       "pages": 1,
       "occurrences": 1
@@ -2751,6 +2801,11 @@
     },
     {
       "class": "discord-context-tabs",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "editorial-note",
       "pages": 1,
       "occurrences": 1
     },
@@ -2865,6 +2920,11 @@
       "occurrences": 1
     },
     {
+      "class": "filter-label",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
       "class": "footer-link",
       "pages": 1,
       "occurrences": 4
@@ -2903,6 +2963,21 @@
       "class": "hero-sub",
       "pages": 1,
       "occurrences": 1
+    },
+    {
+      "class": "inventory-block",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "inventory-copy",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "inventory-title",
+      "pages": 1,
+      "occurrences": 2
     },
     {
       "class": "is-spaced",
@@ -3030,6 +3105,11 @@
       "occurrences": 1
     },
     {
+      "class": "mode-panel",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
       "class": "notfound-char-count",
       "pages": 1,
       "occurrences": 1
@@ -3155,12 +3235,42 @@
       "occurrences": 1
     },
     {
+      "class": "panel-intro",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
       "class": "pill-count",
       "pages": 1,
       "occurrences": 1
     },
     {
       "class": "placeholder",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "quick-picks-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "quick-picks-header",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "quick-picks-heading",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "quick-picks-kicker",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "quick-picks-subheading",
       "pages": 1,
       "occurrences": 1
     },
@@ -3248,6 +3358,11 @@
       "class": "style-info",
       "pages": 1,
       "occurrences": 3
+    },
+    {
+      "class": "style-library-grid",
+      "pages": 1,
+      "occurrences": 1
     },
     {
       "class": "symbol-grid",
@@ -3385,16 +3500,16 @@
       "suggestedUtility": "u-maxw-*"
     },
     {
-      "pattern": "display:none",
-      "count": 5,
-      "risk": "high",
-      "suggestedUtility": "u-hidden (verify JS toggling first)"
-    },
-    {
       "pattern": "margin-top:2rem",
       "count": 5,
       "risk": "low",
       "suggestedUtility": "u-mt-*"
+    },
+    {
+      "pattern": "display:none",
+      "count": 4,
+      "risk": "high",
+      "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
     {
       "pattern": "font-size:1.35rem",
@@ -3430,7 +3545,7 @@
   "propertyFrequency": [
     {
       "property": "display",
-      "count": 94
+      "count": 93
     },
     {
       "property": "visibility",
@@ -5516,5 +5631,5 @@
       "snippet": "class=\"preview-name\""
     }
   ],
-  "jsStrictTokenCount": 222
+  "jsStrictTokenCount": 233
 }
