@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T07:35:27.441Z",
+  "generatedAt": "2026-06-05T07:40:18.471Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -7,12 +7,12 @@
     "mdTopN": 25
   },
   "summary": {
-    "htmlFiles": 144,
-    "cssFiles": 9,
-    "jsFiles": 24,
+    "htmlFiles": 155,
+    "cssFiles": 10,
+    "jsFiles": 25,
     "pageTypes": {
-      "other": 13,
-      "category": 17,
+      "other": 21,
+      "category": 20,
       "localized": 20,
       "platform": 13,
       "embed": 1,
@@ -20,17 +20,17 @@
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 198,
-    "filesWithInlineStyles": 82,
+    "inlineStyleOccurrences": 220,
+    "filesWithInlineStyles": 93,
     "inlineRiskTally": {
-      "low": 41,
-      "medium": 76,
-      "high": 81
+      "low": 43,
+      "medium": 85,
+      "high": 92
     },
     "styleBlocks": 5,
-    "uniqueClasses": 269,
+    "uniqueClasses": 275,
     "componentClassCandidates": 89,
-    "oneOffClassCandidates": 159,
+    "oneOffClassCandidates": 165,
     "repeatedInlinePatterns": 15,
     "cssSelectorsTotal": 365,
     "cssSelectorsReferenced": 364,
@@ -87,6 +87,13 @@
       "purpose": "platform-specific (Discord) styling"
     },
     {
+      "file": "roblox/name-generator/roblox-generator.css",
+      "bytes": 2815,
+      "sizeHuman": "2.7 KB",
+      "lines": 169,
+      "purpose": "page/feature specific styling (inferred from path)"
+    },
+    {
       "file": "facebook/facebook-context.css",
       "bytes": 1271,
       "sizeHuman": "1.2 KB",
@@ -138,6 +145,41 @@
       "risk": "high"
     },
     {
+      "file": "answers/discord-allowed-characters/index.html",
+      "line": 58,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/do-you-need-nitro-for-discord-fonts/index.html",
+      "line": 58,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/how-to-change-roblox-username/index.html",
+      "line": 112,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/how-to-change-roblox-username/index.html",
+      "line": 296,
+      "snippet": "style=\"margin-top:24px;\"",
+      "decl": "margin-top:24px;",
+      "risk": "low"
+    },
+    {
+      "file": "answers/how-to-change-tiktok-username/index.html",
+      "line": 86,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
       "file": "answers/index.html",
       "line": 53,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -147,6 +189,13 @@
     {
       "file": "answers/is-linkedin-bold-text-safe/index.html",
       "line": 96,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/what-font-does-discord-use/index.html",
+      "line": 58,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
@@ -168,6 +217,20 @@
     {
       "file": "answers/what-font-does-snapchat-use/index.html",
       "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "answers/what-is-a-tiktok-handle/index.html",
+      "line": 86,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/aesthetic-fonts/index.html",
+      "line": 67,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
@@ -231,6 +294,13 @@
     {
       "file": "category/cursive-fonts/script/index.html",
       "line": 108,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/cute-fonts/index.html",
+      "line": 67,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
@@ -349,140 +419,203 @@
     },
     {
       "file": "category/index.html",
-      "line": 221,
+      "line": 210,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 215,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 220,
+      "snippet": "style=\"color:var(--text-primary);font-weight:600;text-decoration:underline;\"",
+      "decl": "color:var(--text-primary);font-weight:600;text-decoration:underline;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 236,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 230,
+      "line": 245,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 248,
+      "line": 263,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 256,
+      "line": 271,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 273,
+      "line": 288,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 282,
+      "line": 297,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 299,
+      "line": 314,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 307,
+      "line": 322,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 324,
+      "line": 339,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 332,
+      "line": 347,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 349,
+      "line": 364,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 357,
+      "line": 372,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 374,
+      "line": 389,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 383,
+      "line": 397,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 400,
+      "line": 414,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 408,
+      "line": 422,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 425,
+      "line": 439,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 433,
+      "line": 447,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 450,
+      "line": 464,
       "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
       "decl": "flex-direction:column;align-items:stretch;gap:12px;",
       "risk": "medium"
     },
     {
       "file": "category/index.html",
-      "line": 458,
+      "line": 473,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 490,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 498,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 515,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 523,
+      "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
+      "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 540,
+      "snippet": "style=\"flex-direction:column;align-items:stretch;gap:12px;\"",
+      "decl": "flex-direction:column;align-items:stretch;gap:12px;",
+      "risk": "medium"
+    },
+    {
+      "file": "category/index.html",
+      "line": 548,
       "snippet": "style=\"font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;\"",
       "decl": "font-size:0.875rem;color:var(--text-secondary);line-height:1.6;margin:0;",
       "risk": "medium"
@@ -490,6 +623,13 @@
     {
       "file": "category/italic-fonts/index.html",
       "line": 150,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/small-text/index.html",
+      "line": 79,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
@@ -1125,6 +1265,27 @@
       "risk": "high"
     },
     {
+      "file": "roblox/index.html",
+      "line": 46,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "roblox/name-generator/index.html",
+      "line": 114,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "roblox/name-generator/index.html",
+      "line": 157,
+      "snippet": "style=\"margin-top:14px;\"",
+      "decl": "margin-top:14px;",
+      "risk": "low"
+    },
+    {
       "file": "snapchat/index.html",
       "line": 147,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -1492,7 +1653,7 @@
   "inlinePerFile": [
     {
       "file": "category/index.html",
-      "count": 34
+      "count": 43
     },
     {
       "file": "guide/index.html",
@@ -1563,6 +1724,10 @@
       "count": 3
     },
     {
+      "file": "answers/how-to-change-roblox-username/index.html",
+      "count": 2
+    },
+    {
       "file": "category/classified/index.html",
       "count": 2
     },
@@ -1572,6 +1737,10 @@
     },
     {
       "file": "library/index.html",
+      "count": 2
+    },
+    {
+      "file": "roblox/name-generator/index.html",
       "count": 2
     },
     {
@@ -1595,11 +1764,27 @@
       "count": 1
     },
     {
+      "file": "answers/discord-allowed-characters/index.html",
+      "count": 1
+    },
+    {
+      "file": "answers/do-you-need-nitro-for-discord-fonts/index.html",
+      "count": 1
+    },
+    {
+      "file": "answers/how-to-change-tiktok-username/index.html",
+      "count": 1
+    },
+    {
       "file": "answers/index.html",
       "count": 1
     },
     {
       "file": "answers/is-linkedin-bold-text-safe/index.html",
+      "count": 1
+    },
+    {
+      "file": "answers/what-font-does-discord-use/index.html",
       "count": 1
     },
     {
@@ -1612,6 +1797,14 @@
     },
     {
       "file": "answers/what-font-does-snapchat-use/index.html",
+      "count": 1
+    },
+    {
+      "file": "answers/what-is-a-tiktok-handle/index.html",
+      "count": 1
+    },
+    {
+      "file": "category/aesthetic-fonts/index.html",
       "count": 1
     },
     {
@@ -1643,6 +1836,10 @@
       "count": 1
     },
     {
+      "file": "category/cute-fonts/index.html",
+      "count": 1
+    },
+    {
       "file": "category/gothic-fonts/fraktur/index.html",
       "count": 1
     },
@@ -1652,6 +1849,10 @@
     },
     {
       "file": "category/italic-fonts/index.html",
+      "count": 1
+    },
+    {
+      "file": "category/small-text/index.html",
       "count": 1
     },
     {
@@ -1767,6 +1968,10 @@
       "count": 1
     },
     {
+      "file": "roblox/index.html",
+      "count": 1
+    },
+    {
       "file": "snapchat/index.html",
       "count": 1
     },
@@ -1859,78 +2064,83 @@
   "componentClasses": [
     {
       "class": "hero-headline",
+      "pages": 152,
+      "occurrences": 152
+    },
+    {
+      "class": "hero",
+      "pages": 150,
+      "occurrences": 150
+    },
+    {
+      "class": "footer",
       "pages": 141,
       "occurrences": 141
     },
     {
-      "class": "hero",
+      "class": "footer-inner",
+      "pages": 141,
+      "occurrences": 141
+    },
+    {
+      "class": "hero-inner",
       "pages": 139,
       "occurrences": 139
     },
     {
-      "class": "footer",
-      "pages": 130,
-      "occurrences": 130
-    },
-    {
-      "class": "footer-inner",
-      "pages": 130,
-      "occurrences": 130
-    },
-    {
-      "class": "hero-inner",
-      "pages": 128,
-      "occurrences": 128
-    },
-    {
       "class": "editorial-section",
-      "pages": 115,
-      "occurrences": 348
+      "pages": 123,
+      "occurrences": 392
     },
     {
       "class": "hero-tagline",
-      "pages": 107,
-      "occurrences": 107
+      "pages": 115,
+      "occurrences": 115
     },
     {
       "class": "editorial-block",
-      "pages": 87,
-      "occurrences": 247
+      "pages": 95,
+      "occurrences": 283
     },
     {
       "class": "cta-btn",
-      "pages": 84,
-      "occurrences": 88
+      "pages": 92,
+      "occurrences": 99
     },
     {
       "class": "cta-card",
-      "pages": 83,
-      "occurrences": 87
+      "pages": 89,
+      "occurrences": 94
     },
     {
       "class": "section-divider",
-      "pages": 78,
-      "occurrences": 511
+      "pages": 86,
+      "occurrences": 547
     },
     {
       "class": "article-section-label",
-      "pages": 77,
-      "occurrences": 578
+      "pages": 85,
+      "occurrences": 600
     },
     {
       "class": "compare-grid",
-      "pages": 75,
-      "occurrences": 97
+      "pages": 80,
+      "occurrences": 103
     },
     {
       "class": "compare-card",
-      "pages": 75,
-      "occurrences": 372
+      "pages": 80,
+      "occurrences": 390
     },
     {
       "class": "variant-muted",
-      "pages": 75,
-      "occurrences": 343
+      "pages": 80,
+      "occurrences": 357
+    },
+    {
+      "class": "u-no-underline",
+      "pages": 70,
+      "occurrences": 285
     },
     {
       "class": "mood-explainers",
@@ -1938,9 +2148,24 @@
       "occurrences": 439
     },
     {
-      "class": "u-no-underline",
-      "pages": 65,
-      "occurrences": 269
+      "class": "breadcrumbs",
+      "pages": 66,
+      "occurrences": 66
+    },
+    {
+      "class": "breadcrumb-separator",
+      "pages": 66,
+      "occurrences": 122
+    },
+    {
+      "class": "breadcrumb-current",
+      "pages": 66,
+      "occurrences": 66
+    },
+    {
+      "class": "container",
+      "pages": 60,
+      "occurrences": 67
     },
     {
       "class": "symbol-tile",
@@ -1973,109 +2198,89 @@
       "occurrences": 4081
     },
     {
-      "class": "container",
-      "pages": 55,
-      "occurrences": 62
-    },
-    {
-      "class": "breadcrumbs",
-      "pages": 55,
-      "occurrences": 55
-    },
-    {
-      "class": "breadcrumb-separator",
-      "pages": 55,
-      "occurrences": 101
-    },
-    {
-      "class": "breadcrumb-current",
-      "pages": 55,
-      "occurrences": 55
-    },
-    {
       "class": "faq-item",
-      "pages": 47,
-      "occurrences": 761
+      "pages": 51,
+      "occurrences": 781
     },
     {
       "class": "faq-question",
-      "pages": 47,
-      "occurrences": 761
+      "pages": 51,
+      "occurrences": 781
     },
     {
       "class": "faq-answer",
-      "pages": 47,
-      "occurrences": 761
+      "pages": 51,
+      "occurrences": 781
     },
     {
       "class": "active",
-      "pages": 46,
-      "occurrences": 94
+      "pages": 50,
+      "occurrences": 98
     },
     {
       "class": "hero-card",
-      "pages": 46,
-      "occurrences": 46
+      "pages": 50,
+      "occurrences": 50
     },
     {
       "class": "input-wrapper",
-      "pages": 45,
-      "occurrences": 45
+      "pages": 48,
+      "occurrences": 48
     },
     {
       "class": "main-input",
-      "pages": 45,
-      "occurrences": 45
+      "pages": 48,
+      "occurrences": 48
     },
     {
       "class": "char-count",
+      "pages": 48,
+      "occurrences": 48
+    },
+    {
+      "class": "decoration-tabs",
+      "pages": 46,
+      "occurrences": 54
+    },
+    {
+      "class": "decoration-tab",
+      "pages": 46,
+      "occurrences": 354
+    },
+    {
+      "class": "decoration-section",
+      "pages": 45,
+      "occurrences": 49
+    },
+    {
+      "class": "decoration-grid",
       "pages": 45,
       "occurrences": 45
     },
     {
-      "class": "decoration-tabs",
-      "pages": 43,
-      "occurrences": 51
-    },
-    {
-      "class": "decoration-tab",
-      "pages": 43,
-      "occurrences": 345
-    },
-    {
-      "class": "decoration-section",
-      "pages": 42,
-      "occurrences": 46
-    },
-    {
-      "class": "decoration-grid",
-      "pages": 42,
-      "occurrences": 42
-    },
-    {
       "class": "results-grid",
-      "pages": 42,
-      "occurrences": 42
+      "pages": 45,
+      "occurrences": 45
     },
     {
       "class": "decoration-label",
-      "pages": 41,
-      "occurrences": 45
+      "pages": 44,
+      "occurrences": 48
     },
     {
       "class": "category-section",
-      "pages": 41,
-      "occurrences": 41
+      "pages": 44,
+      "occurrences": 44
     },
     {
       "class": "category-tabs",
-      "pages": 41,
-      "occurrences": 45
+      "pages": 44,
+      "occurrences": 48
     },
     {
       "class": "faq-category",
-      "pages": 40,
-      "occurrences": 241
+      "pages": 44,
+      "occurrences": 245
     },
     {
       "class": "u-secondary-tight",
@@ -2089,23 +2294,28 @@
     },
     {
       "class": "compare-badge",
-      "pages": 16,
-      "occurrences": 92
-    },
-    {
-      "class": "block-example",
-      "pages": 15,
-      "occurrences": 65
+      "pages": 21,
+      "occurrences": 108
     },
     {
       "class": "data-table-wrap",
-      "pages": 15,
-      "occurrences": 23
+      "pages": 19,
+      "occurrences": 29
     },
     {
       "class": "data-table",
-      "pages": 15,
-      "occurrences": 23
+      "pages": 19,
+      "occurrences": 29
+    },
+    {
+      "class": "variant-positive",
+      "pages": 16,
+      "occurrences": 24
+    },
+    {
+      "class": "block-example",
+      "pages": 16,
+      "occurrences": 69
     },
     {
       "class": "u-mt-15",
@@ -2138,9 +2348,9 @@
       "occurrences": 12
     },
     {
-      "class": "variant-positive",
+      "class": "section-subline",
       "pages": 12,
-      "occurrences": 20
+      "occurrences": 29
     },
     {
       "class": "faq-section",
@@ -2150,7 +2360,7 @@
     {
       "class": "cat-cta",
       "pages": 12,
-      "occurrences": 33
+      "occurrences": 36
     },
     {
       "class": "tip-icon",
@@ -2208,11 +2418,6 @@
       "occurrences": 11
     },
     {
-      "class": "section-subline",
-      "pages": 10,
-      "occurrences": 21
-    },
-    {
       "class": "example-pair",
       "pages": 9,
       "occurrences": 123
@@ -2255,12 +2460,12 @@
     {
       "class": "platform-pills",
       "pages": 6,
-      "occurrences": 15
+      "occurrences": 18
     },
     {
       "class": "platform-pill",
       "pages": 6,
-      "occurrences": 90
+      "occurrences": 102
     },
     {
       "class": "steps-grid",
@@ -2285,17 +2490,17 @@
     {
       "class": "style-card",
       "pages": 5,
-      "occurrences": 35
+      "occurrences": 43
     },
     {
       "class": "style-name",
       "pages": 5,
-      "occurrences": 35
+      "occurrences": 43
     },
     {
       "class": "style-tag",
       "pages": 5,
-      "occurrences": 35
+      "occurrences": 43
     },
     {
       "class": "brand-card",
@@ -2462,7 +2667,7 @@
     {
       "class": "cat-anchor",
       "pages": 1,
-      "occurrences": 10
+      "occurrences": 13
     },
     {
       "class": "cat-overview-table",
@@ -2990,6 +3195,36 @@
       "occurrences": 1
     },
     {
+      "class": "rng-controls",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "rng-field",
+      "pages": 1,
+      "occurrences": 4
+    },
+    {
+      "class": "rng-length-tab",
+      "pages": 1,
+      "occurrences": 5
+    },
+    {
+      "class": "rng-length-tabs",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "rng-note",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "rng-results",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
       "class": "style-grid",
       "pages": 1,
       "occurrences": 1
@@ -3082,17 +3317,17 @@
     {
       "class": "tng-controls",
       "pages": 1,
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "class": "tng-field",
       "pages": 1,
-      "occurrences": 3
+      "occurrences": 4
     },
     {
       "class": "tng-note",
       "pages": 1,
-      "occurrences": 1
+      "occurrences": 2
     },
     {
       "class": "tng-results",
@@ -3103,7 +3338,7 @@
   "repeatedPatterns": [
     {
       "pattern": "display:none; visibility:hidden",
-      "count": 76,
+      "count": 87,
       "risk": "high",
       "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
@@ -3121,19 +3356,19 @@
     },
     {
       "pattern": "color:var(--text-primary); font-weight:600; text-decoration:underline",
-      "count": 10,
+      "count": 13,
       "risk": "medium",
       "suggestedUtility": "(propose a utility/component class)"
     },
     {
       "pattern": "align-items:stretch; flex-direction:column; gap:12px",
-      "count": 10,
+      "count": 13,
       "risk": "medium",
       "suggestedUtility": "(propose a utility/component class)"
     },
     {
       "pattern": "color:var(--text-secondary); font-size:0.875rem; line-height:1.6; margin:0",
-      "count": 10,
+      "count": 13,
       "risk": "medium",
       "suggestedUtility": "u-text-secondary"
     },
@@ -3195,35 +3430,35 @@
   "propertyFrequency": [
     {
       "property": "display",
-      "count": 83
+      "count": 94
     },
     {
       "property": "visibility",
-      "count": 76
+      "count": 87
     },
     {
       "property": "gap",
-      "count": 29
-    },
-    {
-      "property": "align-items",
-      "count": 28
-    },
-    {
-      "property": "text-decoration",
-      "count": 27
-    },
-    {
-      "property": "flex-direction",
-      "count": 27
+      "count": 32
     },
     {
       "property": "color",
-      "count": 25
+      "count": 31
+    },
+    {
+      "property": "align-items",
+      "count": 31
+    },
+    {
+      "property": "text-decoration",
+      "count": 30
+    },
+    {
+      "property": "flex-direction",
+      "count": 30
     },
     {
       "property": "font-size",
-      "count": 20
+      "count": 23
     },
     {
       "property": "max-width",
@@ -3231,19 +3466,19 @@
     },
     {
       "property": "margin-top",
-      "count": 13
+      "count": 15
     },
     {
       "property": "margin",
-      "count": 11
+      "count": 14
     },
     {
       "property": "font-weight",
-      "count": 10
+      "count": 13
     },
     {
       "property": "line-height",
-      "count": 10
+      "count": 13
     },
     {
       "property": "padding",
@@ -5281,5 +5516,5 @@
       "snippet": "class=\"preview-name\""
     }
   ],
-  "jsStrictTokenCount": 207
+  "jsStrictTokenCount": 222
 }
