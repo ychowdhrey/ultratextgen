@@ -529,7 +529,7 @@
   }
 
   function renderEmojiInventory() {
-    const group = emojiGroups[state.emojiGroup] || emojiGroups.smileys;
+    const group = emojiGroups[state.emojiGroup] || emojiGroups["smileys"];
     elements.emojiInventory.innerHTML = group.emojis.map((emoji) => `
       <button type="button" class="comment-emoji-chip" data-emoji="${escapeHtml(emoji)}">${escapeHtml(emoji)}</button>
     `).join("");
@@ -643,10 +643,7 @@
         template_id: activeTemplate ? activeTemplate.id : null
       });
       showCopyToast("Copied!");
-      setSelectionHint(activeTemplate
-        ? "Copied from the main bar."
-        : "Copied from the main bar."
-      );
+      setSelectionHint("Copied from the main bar.");
     } catch (error) {
       console.error("Copy failed:", error);
       showCopyToast("Copy failed");
