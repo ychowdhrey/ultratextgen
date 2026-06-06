@@ -188,20 +188,31 @@
         <h1 class="hero-headline">Comment Style Generator — Make Your Comment Stand Out</h1>
         <p class="hero-tagline">Pick a ready-made comment by feeling, or style your own text before you copy and paste into Instagram, YouTube, and Facebook comments.</p>
 
+        <section class="category-section mode-toggle-row" aria-label="Generator mode">
+          <div class="category-tabs" role="tablist" aria-label="Generator mode tabs">
+            <button class="category-tab active" type="button" data-mode="quick-picks">Comment Library</button>
+            <button class="category-tab" type="button" data-mode="style-your-own">Style Your Own</button>
+          </div>
+        </section>
+
         <div class="comment-bar">
           <div class="comment-bar-head">
             <div>
               <p class="comment-bar-label">Your comment</p>
-              <p class="comment-bar-hint" id="activeSelectionLabel">Quick Picks is ready — choose a card to load it into the main bar.</p>
+              <p class="comment-bar-hint" id="activeSelectionLabel">Comment Library is ready — choose a card to load it into your comment.</p>
             </div>
-            <button class="copy-btn comment-copy-btn" id="copyMainBtn" type="button" disabled>Copy</button>
+            <div class="comment-bar-actions">
+              <button class="comment-text-btn" id="clearStylingBtn" type="button">✕ Clear styling</button>
+              <button class="comment-text-btn" id="clearTextBtn" type="button">Clear</button>
+              <button class="copy-btn comment-copy-btn" id="copyMainBtn" type="button" disabled>Copy</button>
+            </div>
           </div>
 
           <div class="input-wrapper">
             <textarea class="main-input" id="mainInput" placeholder="Type or load a comment here..." maxlength="500"></textarea>
-            <button class="input-clear-btn" id="inputClearBtn" aria-label="Clear input" hidden>✕</button>
             <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
           </div>
+          <div class="comment-preview" id="styledPreview">Styled preview appears here as you choose style, frames, and emoji.</div>
           <div class="style-further-row" id="styleFurtherRow" hidden>
             <button class="style-further-btn" id="styleFurtherBtn" type="button">✨ Style it further →</button>
           </div>
@@ -211,15 +222,8 @@
   </section>
 
   <main class="container comment-generator">
-    <section class="category-section" aria-label="Generator mode">
-      <div class="category-tabs" role="tablist" aria-label="Generator mode tabs">
-        <button class="category-tab active" type="button" data-mode="quick-picks">Quick Picks</button>
-        <button class="category-tab" type="button" data-mode="style-your-own">Style Your Own</button>
-      </div>
-    </section>
-
     <section class="mode-panel" data-mode-panel="quick-picks">
-      <p class="panel-intro">Start with a ready-made line, then make it yours in the shared text bar before you copy.</p>
+      <p class="panel-intro">Start with a ready-made line, then make it yours in your comment bar before you copy. Your text stays put when you switch modes.</p>
 
       <div class="comment-filter-group">
         <p class="filter-label">Platform</p>
@@ -237,9 +241,9 @@
 
       <div class="quick-picks-header">
         <div>
-          <p class="quick-picks-kicker">Quick Picks</p>
+          <p class="quick-picks-kicker">Comment Library</p>
           <h2 class="quick-picks-heading" id="quickPickHeading">Instagram · Love &amp; Appreciation</h2>
-          <p class="quick-picks-subheading" id="quickPickSubheading">Tap a card to load the styled comment into the main bar, then edit it before you copy.</p>
+          <p class="quick-picks-subheading" id="quickPickSubheading">Tap a card to load the comment into your bar, then tweak and style it.</p>
         </div>
         <button class="copy-btn comment-secondary-btn" id="showMoreTemplatesBtn" type="button" hidden>Show more</button>
       </div>
@@ -248,7 +252,7 @@
     </section>
 
     <section class="mode-panel" data-mode-panel="style-your-own" hidden>
-      <p class="panel-intro">Type in the shared text bar, choose a style, and keep decorators or emoji tucked away until you actually want them.</p>
+      <p class="panel-intro">Type in your comment bar, choose a style, and open optional extras only when you need them.</p>
 
       <div class="comment-filter-group">
         <p class="filter-label">Style mood</p>
@@ -266,24 +270,35 @@
       <div class="results-grid style-library-grid" id="styleCards"></div>
 
       <details class="accordion-section comment-inventory">
-        <summary class="accordion-toggle">Decorators &amp; emoji inventory</summary>
+        <summary class="accordion-toggle">Decorate &amp; frame (optional)</summary>
         <div class="accordion-body">
-          <p class="inventory-copy">This stays secondary on purpose. Open it only when you deliberately want extra framing instead of a clean standout comment.</p>
+          <p class="inventory-copy">Use one optional extra at a time. Every option is reversible, and your source text in the bar always stays intact.</p>
+          <div class="category-tabs inventory-module-tabs" role="tablist" aria-label="Decoration modules">
+            <button class="category-tab active" type="button" data-inventory-module="word-stamps">Word-stamps</button>
+            <button class="category-tab" type="button" data-inventory-module="brackets">Brackets &amp; Frames</button>
+            <button class="category-tab" type="button" data-inventory-module="emoji">Emoji</button>
+          </div>
 
-          <div class="inventory-block">
-            <h3 class="inventory-title">Decorator categories</h3>
+          <div class="inventory-block" data-inventory-panel="word-stamps">
+            <h3 class="inventory-title">Word-stamps</h3>
+            <button class="comment-text-btn inventory-clear-btn" id="clearDecoratorBtn" type="button">✕ None</button>
             <div class="decoration-tabs" id="decoratorTabs"></div>
             <div class="decoration-grid" id="decoratorInventory"></div>
           </div>
 
-          <div class="inventory-block">
+          <div class="inventory-block" data-inventory-panel="brackets" hidden>
             <h3 class="inventory-title">Brackets &amp; frames</h3>
-            <p class="inventory-copy inventory-copy--tight">Wraps the full comment in a matching pair — distinct from word-stamp decorators.</p>
+            <button class="comment-text-btn inventory-clear-btn" id="clearBracketBtn" type="button">✕ None</button>
             <div class="brackets-grid" id="bracketsInventory"></div>
           </div>
 
-          <div class="inventory-block">
+          <div class="inventory-block" data-inventory-panel="emoji" hidden>
             <h3 class="inventory-title">Emoji accents</h3>
+            <div class="emoji-search-row">
+              <label class="filter-label" for="emojiSearchInput">Search</label>
+              <input id="emojiSearchInput" class="emoji-search-input" type="search" placeholder="Find emoji or label" autocomplete="off">
+            </div>
+            <button class="comment-text-btn inventory-clear-btn" id="clearEmojiBtn" type="button">✕ None</button>
             <div class="emoji-group-tabs" id="emojiGroupTabs"></div>
             <div class="comment-emoji-grid" id="emojiInventory"></div>
           </div>
@@ -292,25 +307,24 @@
     </section>
 
     <section class="editorial-section">
-      <h2>How to use the two-mode comment style generator</h2>
-      <p class="editorial-note">The page now does one job in two ways: start from a proven comment angle, or style your own text without turning the page into a platform-specific tool.</p>
+      <h2>How to use</h2>
       <div class="comment-editorial-grid">
         <div class="comment-editorial-card">
-          <h3>Quick Picks for speed</h3>
-          <p>Use Quick Picks when you already know the feeling you want — appreciation, hype, support, agreement, or a playful reaction. Choose the platform, choose the feeling, tap a card, then tweak the loaded line in the shared text bar so it sounds like you.</p>
+          <h3>① ✍️ Pick or type</h3>
+          <p>Choose a ready comment from the Comment Library, or type your own words in the bar.</p>
         </div>
         <div class="comment-editorial-card">
-          <h3>Style Your Own for control</h3>
-          <p>Use Style Your Own when you already have the words. Pick a style that matches the job of the comment: bold to land a point, script to feel warm, italic to soften the tone, or a more expressive option when the vibe matters.</p>
+          <h3>② 🎨 Make it yours</h3>
+          <p>Swap styles, add optional frames or emoji, and edit your words while keeping the source text safe.</p>
         </div>
         <div class="comment-editorial-card">
-          <h3>Keep the contrast, not the clutter</h3>
-          <ul>
-            <li>Style a key phrase, not every word.</li>
-            <li>Edit loaded templates before you copy so they feel personal.</li>
-            <li>Use decorators and emoji sparingly — they are optional inventory, not the main event.</li>
-          </ul>
+          <h3>③ 📋 Copy &amp; paste</h3>
+          <p>Copy the styled result and drop it into any comment box.</p>
         </div>
+      </div>
+      <div class="comment-mode-diagram">
+        <p><strong>[ Comment Library ]</strong> → ready comment → tweak → copy</p>
+        <p><strong>[ Style Your Own ]</strong> → your words → style → copy</p>
       </div>
     </section>
 
@@ -445,10 +459,10 @@
   <div class="faq-answer">
     It takes about 5 seconds:
     <br><br>
-    1. Start with <strong>Quick Picks</strong> if you want a ready-made line, or type your own comment into the shared text bar<br>
-    2. Edit the comment in the main bar so it sounds like you<br>
+    1. Start with <strong>Comment Library</strong> if you want a ready-made line, or type your own comment into your comment bar<br>
+    2. Edit the comment so it sounds like you<br>
     3. Switch to <strong>Style Your Own</strong> when you want to apply a specific text style to what you wrote<br>
-    4. Use the main Copy button and paste directly into the comment box you care about
+    4. Use Copy and paste directly into the comment box you care about
   </div>
 </div>
 
