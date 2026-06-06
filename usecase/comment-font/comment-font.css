@@ -15,7 +15,15 @@
 }
 
 .comment-bar {
-  margin-top: 24px;
+  margin-top: 18px;
+}
+
+.mode-toggle-row {
+  margin-top: 20px;
+}
+
+.mode-toggle-row .category-tabs {
+  justify-content: flex-start;
 }
 
 .comment-bar-head {
@@ -52,6 +60,45 @@
   justify-content: center;
   padding: 12px 18px;
   font-size: 0.875rem;
+}
+
+.comment-bar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.comment-text-btn {
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.8125rem;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.comment-text-btn:hover,
+.comment-text-btn:focus-visible {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+.comment-preview {
+  margin-top: 10px;
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  padding: 12px;
+  line-height: 1.5;
+  min-height: 48px;
+}
+
+.comment-preview.has-content {
+  border-style: solid;
+  color: var(--text-primary);
 }
 
 .mode-panel {
@@ -160,6 +207,14 @@
   color: var(--text-primary);
 }
 
+.inventory-module-tabs {
+  margin: 14px 0;
+}
+
+.inventory-clear-btn {
+  margin-bottom: 10px;
+}
+
 .comment-emoji-grid {
   display: flex;
   flex-wrap: wrap;
@@ -186,6 +241,25 @@
 
 .inventory-copy--tight {
   margin-bottom: 10px;
+}
+
+.emoji-search-row {
+  margin-bottom: 10px;
+}
+
+.emoji-search-input {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font: inherit;
+  padding: 10px 12px;
+}
+
+.emoji-search-input:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.3);
+  outline-offset: 1px;
 }
 
 .style-further-row {
@@ -232,6 +306,12 @@
   background: rgba(139, 92, 246, 0.05);
 }
 
+.comment-emoji-chip.selected {
+  border-color: var(--accent-purple);
+  background: var(--accent-purple);
+  color: #fff;
+}
+
 .comment-editorial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -274,6 +354,24 @@
   font-size: 0.75rem;
 }
 
+.comment-mode-diagram {
+  margin-top: 12px;
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  padding: 14px 16px;
+}
+
+.comment-mode-diagram p {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.comment-mode-diagram p + p {
+  margin-top: 8px;
+}
+
 @media (max-width: 640px) {
   .comment-generator {
     padding: 0 16px 40px;
@@ -288,6 +386,17 @@
   .comment-copy-btn,
   .comment-secondary-btn {
     width: 100%;
+  }
+
+  .comment-bar-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .comment-text-btn {
+    flex: 1 1 calc(50% - 6px);
+    justify-content: center;
+    text-align: center;
   }
 
   .quick-picks-grid,
