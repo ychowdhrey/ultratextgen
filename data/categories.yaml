@@ -185,14 +185,14 @@ categories:
     slug: armenian
     range: U+0530..U+058F
     master_category: scripts
-    description: Letters and characters used to write Armenian. Contains 94 assigned codepoints.
-    symbol_count: 94
+    description: Letters and characters used to write Armenian. Contains 91 assigned codepoints.
+    symbol_count: 91
     sample_symbols:
       - "Ա"
       - "Ճ"
       - "Օ"
-      - "ը"
-      - "պ"
+      - "թ"
+      - "ջ"
     unicode_version: "1.1"
     scripts:
       - Armenian
@@ -204,14 +204,14 @@ categories:
     slug: hebrew
     range: U+0590..U+05FF
     master_category: scripts
-    description: Letters and characters used to write Hebrew. Contains 90 assigned codepoints.
-    symbol_count: 90
+    description: Letters and characters used to write Hebrew. Contains 88 assigned codepoints.
+    symbol_count: 88
     sample_symbols:
       - "֑"
-      - "֣"
-      - "ֵ"
-      - "ׇ"
-      - "ן"
+      - "֢"
+      - "ֳ"
+      - "ׄ"
+      - "ם"
     unicode_version: "1.1"
     scripts:
       - Hebrew
@@ -432,14 +432,14 @@ categories:
     slug: bengali
     range: U+0980..U+09FF
     master_category: scripts
-    description: Letters and characters used to write Bengali. Contains 98 assigned codepoints.
-    symbol_count: 98
+    description: Letters and characters used to write Bengali. Contains 96 assigned codepoints.
+    symbol_count: 96
     sample_symbols:
       - "ঀ"
-      - "গ"
-      - "ফ"
-      - "ৄ"
-      - "৪"
+      - "ঘ"
+      - "ব"
+      - "ে"
+      - "৫"
     unicode_version: "1.1"
     scripts:
       - Bengali
@@ -489,14 +489,14 @@ categories:
     slug: oriya
     range: U+0B00..U+0B7F
     master_category: scripts
-    description: Letters and characters used to write Oriya. Contains 93 assigned codepoints.
-    symbol_count: 93
+    description: Letters and characters used to write Oriya. Contains 91 assigned codepoints.
+    symbol_count: 91
     sample_symbols:
       - "ଁ"
       - "ଘ"
       - "ଫ"
       - "ୁ"
-      - "ୡ"
+      - "ୣ"
     unicode_version: "1.1"
     scripts:
       - Oriya
@@ -926,14 +926,14 @@ categories:
     slug: mongolian
     range: U+1800..U+18AF
     master_category: scripts
-    description: Letters and characters used to write Mongolian. Contains 159 assigned codepoints.
-    symbol_count: 159
+    description: Letters and characters used to write Mongolian. Contains 158 assigned codepoints.
+    symbol_count: 158
     sample_symbols:
       - "᠀"
       - "ᠥ"
       - "ᡄ"
       - "ᡣ"
-      - "ᢈ"
+      - "ᢉ"
     unicode_version: "3.0"
     scripts:
       - Mongolian
@@ -1308,14 +1308,14 @@ categories:
     slug: superscripts-and-subscripts
     range: U+2070..U+209F
     master_category: scripts
-    description: Letters and characters used to write Latin. Contains 46 assigned codepoints.
-    symbol_count: 46
+    description: Letters and characters used to write Latin. Contains 42 assigned codepoints.
+    symbol_count: 42
     sample_symbols:
       - "⁰"
-      - "⁻"
-      - "₄"
-      - "₍"
-      - "ₖ"
+      - "⁺"
+      - "₂"
+      - "₊"
+      - "ₓ"
     unicode_version: "1.1"
     scripts:
       - Latin
@@ -1839,14 +1839,14 @@ categories:
     slug: latin-extended-d
     range: U+A720..U+A7FF
     master_category: scripts
-    description: Letters and characters used to write Latin. Contains 206 assigned codepoints.
-    symbol_count: 206
+    description: Letters and characters used to write Latin. Contains 204 assigned codepoints.
+    symbol_count: 204
     sample_symbols:
       - "꜠"
-      - "ꝉ"
-      - "ꝲ"
-      - "ꞛ"
-      - "Ꞔ"
+      - "Ꝉ"
+      - "ꝰ"
+      - "Ꞙ"
+      - "Ꟁ"
     unicode_version: "5.0"
     scripts:
       - Latin
@@ -2124,8 +2124,8 @@ categories:
     slug: latin-extended-e
     range: U+AB30..U+AB6F
     master_category: scripts
-    description: "Letters and characters used to write Greek, Latin. Contains 62 assigned codepoints."
-    symbol_count: 62
+    description: "Letters and characters used to write Greek, Latin. Contains 60 assigned codepoints."
+    symbol_count: 60
     sample_symbols:
       - "ꬰ"
       - "ꬼ"
@@ -2640,14 +2640,14 @@ categories:
     slug: latin-extended-f
     range: U+10780..U+107BF
     master_category: scripts
-    description: Letters and characters used to write Latin. Contains 62 assigned codepoints.
-    symbol_count: 62
+    description: Letters and characters used to write Latin. Contains 57 assigned codepoints.
+    symbol_count: 57
     sample_symbols:
       - "𐞀"
-      - "𐞍"
-      - "𐞙"
-      - "𐞥"
-      - "𐞲"
+      - "𐞌"
+      - "𐞗"
+      - "𐞢"
+      - "𐞭"
     unicode_version: "14.0"
     scripts:
       - Latin
@@ -3096,14 +3096,14 @@ categories:
     slug: arabic-extended-c
     range: U+10EC0..U+10EFF
     master_category: scripts
-    description: Letters and characters used to write Arabic. Contains 60 assigned codepoints.
-    symbol_count: 60
+    description: Letters and characters used to write Arabic. Contains 21 assigned codepoints.
+    symbol_count: 21
     sample_symbols:
       - "𐻂"
-      - "𐻏"
-      - "𐻛"
-      - "𐻧"
-      - "𐻴"
+      - "𐻆"
+      - "𐻒"
+      - "𐻖"
+      - "𐻻"
     unicode_version: "15.0"
     scripts:
       - Arabic
@@ -3723,8 +3723,8 @@ categories:
     slug: devanagari-extended-a
     range: U+11B00..U+11B5F
     master_category: scripts
-    description: Letters and characters used to write Devanagari. Contains 11 assigned codepoints.
-    symbol_count: 11
+    description: Letters and characters used to write Devanagari. Contains 10 assigned codepoints.
+    symbol_count: 10
     sample_symbols:
       - "𑬀"
       - "𑬂"
@@ -3965,26 +3965,6 @@ categories:
     has_page: false
     page_path: null
     notes: ""
-  - id: archaic_cuneiform_numerals
-    name: Archaic Cuneiform Numerals
-    slug: archaic-cuneiform-numerals
-    range: U+12550..U+1268F
-    master_category: scripts
-    description: "Letters and characters used to write Cuneiform, Proto Cuneiform. Contains 311 assigned codepoints."
-    symbol_count: 311
-    sample_symbols:
-      - "𒕐"
-      - "𒖎"
-      - "𒗌"
-      - "𒘊"
-      - "𒙈"
-    unicode_version: "18.0"
-    scripts:
-      - Cuneiform
-      - Proto Cuneiform
-    has_page: false
-    page_path: null
-    notes: ""
   - id: cypro_minoan
     name: Cypro-Minoan
     slug: cypro-minoan
@@ -4213,25 +4193,6 @@ categories:
     has_page: false
     page_path: null
     notes: ""
-  - id: chisoi
-    name: Chisoi
-    slug: chisoi
-    range: U+16D80..U+16DAF
-    master_category: scripts
-    description: Letters and characters used to write Chisoi. Contains 40 assigned codepoints.
-    symbol_count: 40
-    sample_symbols:
-      - "𖶀"
-      - "𖶈"
-      - "𖶐"
-      - "𖶘"
-      - "𖶢"
-    unicode_version: "18.0"
-    scripts:
-      - Chisoi
-    has_page: false
-    page_path: null
-    notes: ""
   - id: medefaidrin
     name: Medefaidrin
     slug: medefaidrin
@@ -4332,14 +4293,14 @@ categories:
     slug: khitan-small-script
     range: U+18B00..U+18CFF
     master_category: scripts
-    description: Letters and characters used to write Khitan Small Script. Contains 476 assigned codepoints.
-    symbol_count: 476
+    description: Letters and characters used to write Khitan Small Script. Contains 471 assigned codepoints.
+    symbol_count: 471
     sample_symbols:
       - "𘬀"
-      - "𘭟"
-      - "𘮾"
-      - "𘰝"
-      - "𘱼"
+      - "𘭞"
+      - "𘮼"
+      - "𘰚"
+      - "𘱸"
     unicode_version: "13.0"
     scripts:
       - Khitan Small Script
@@ -4351,8 +4312,8 @@ categories:
     slug: tangut-supplement
     range: U+18D00..U+18D7F
     master_category: scripts
-    description: Large bulk block of 33 ideographic characters; not suitable for manual symbol catalogs.
-    symbol_count: 33
+    description: Large bulk block of 31 ideographic characters; not suitable for manual symbol catalogs.
+    symbol_count: 31
     sample_symbols:
       - "𘴀"
       - "𘴆"
@@ -4384,44 +4345,6 @@ categories:
     has_page: false
     page_path: null
     notes: "bulk block, manual handling"
-  - id: jurchen
-    name: Jurchen
-    slug: jurchen
-    range: U+18E00..U+1919F
-    master_category: scripts
-    description: Letters and characters used to write Jurchen. Contains 914 assigned codepoints.
-    symbol_count: 914
-    sample_symbols:
-      - "𘸀"
-      - "𘺶"
-      - "𘽬"
-      - "𙀢"
-      - "𙃘"
-    unicode_version: "18.0"
-    scripts:
-      - Jurchen
-    has_page: false
-    page_path: null
-    notes: ""
-  - id: jurchen_radicals
-    name: Jurchen Radicals
-    slug: jurchen-radicals
-    range: U+191A0..U+191DF
-    master_category: scripts
-    description: Letters and characters used to write Jurchen. Contains 51 assigned codepoints.
-    symbol_count: 51
-    sample_symbols:
-      - "𙆠"
-      - "𙆪"
-      - "𙆴"
-      - "𙆾"
-      - "𙇈"
-    unicode_version: "18.0"
-    scripts:
-      - Jurchen
-    has_page: false
-    page_path: null
-    notes: ""
   - id: kana_extended_b
     name: Kana Extended-B
     slug: kana-extended-b
@@ -4466,14 +4389,14 @@ categories:
     slug: kana-extended-a
     range: U+1B100..U+1B12F
     master_category: scripts
-    description: "Letters and characters used to write Hiragana, Katakana. Contains 41 assigned codepoints."
-    symbol_count: 41
+    description: "Letters and characters used to write Hiragana, Katakana. Contains 35 assigned codepoints."
+    symbol_count: 35
     sample_symbols:
       - "𛄀"
-      - "𛄈"
-      - "𛄐"
-      - "𛄘"
-      - "𛄠"
+      - "𛄇"
+      - "𛄎"
+      - "𛄕"
+      - "𛄜"
     unicode_version: "10.0"
     scripts:
       - Hiragana
@@ -4486,14 +4409,14 @@ categories:
     slug: small-kana-extension
     range: U+1B130..U+1B16F
     master_category: scripts
-    description: "Letters and characters used to write Hiragana, Katakana. Contains 10 assigned codepoints."
-    symbol_count: 10
+    description: "Letters and characters used to write Hiragana, Katakana. Contains 9 assigned codepoints."
+    symbol_count: 9
     sample_symbols:
       - "𛄲"
+      - "𛅐"
       - "𛅑"
+      - "𛅒"
       - "𛅕"
-      - "𛅥"
-      - "𛅧"
     unicode_version: "12.0"
     scripts:
       - Hiragana
@@ -4563,17 +4486,16 @@ categories:
     slug: latin-extended-g
     range: U+1DF00..U+1DFFF
     master_category: scripts
-    description: "Letters and characters used to write Greek, Latin. Contains 188 assigned codepoints."
-    symbol_count: 188
+    description: Letters and characters used to write Latin. Contains 37 assigned codepoints.
+    symbol_count: 37
     sample_symbols:
       - "𝼀"
-      - "𝼥"
-      - "𝽊"
-      - "𝽯"
-      - "𝿘"
+      - "𝼇"
+      - "𝼎"
+      - "𝼕"
+      - "𝼜"
     unicode_version: "14.0"
     scripts:
-      - Greek
       - Latin
     has_page: false
     page_path: null
@@ -4849,8 +4771,8 @@ categories:
     slug: cjk-unified-ideographs-extension-d
     range: U+2B740..U+2B81F
     master_category: scripts
-    description: Large bulk block of 223 ideographic characters; not suitable for manual symbol catalogs.
-    symbol_count: 223
+    description: Large bulk block of 222 ideographic characters; not suitable for manual symbol catalogs.
+    symbol_count: 222
     sample_symbols:
       - "𫝀"
       - "𫝬"
@@ -4996,25 +4918,6 @@ categories:
     has_page: false
     page_path: null
     notes: "bulk block, manual handling"
-  - id: seal
-    name: Seal
-    slug: seal
-    range: U+3D000..U+3FC3F
-    master_category: scripts
-    description: Letters and characters used to write Seal. Contains 11328 assigned codepoints.
-    symbol_count: 11328
-    sample_symbols:
-      - "𽀀"
-      - "𽣙"
-      - "𾆲"
-      - "𾪋"
-      - "𿍤"
-    unicode_version: "18.0"
-    scripts:
-      - Seal
-    has_page: false
-    page_path: null
-    notes: ""
   - id: khmer_symbols
     name: Khmer Symbols
     slug: khmer-symbols
@@ -5039,14 +4942,14 @@ categories:
     slug: currency-symbols
     range: U+20A0..U+20CF
     master_category: symbols
-    description: Symbol characters in the Currency Symbols block. Contains 37 assigned codepoints.
-    symbol_count: 37
+    description: Symbol characters in the Currency Symbols block. Contains 34 assigned codepoints.
+    symbol_count: 34
     sample_symbols:
       - "₠"
-      - "₧"
-      - "₮"
-      - "₵"
-      - "₼"
+      - "₦"
+      - "€"
+      - "₲"
+      - "₸"
     unicode_version: "1.1"
     scripts: []
     has_page: true
@@ -5492,14 +5395,14 @@ categories:
     slug: miscellaneous-symbols-supplement
     range: U+1CEC0..U+1CEFF
     master_category: symbols
-    description: Symbol characters in the Miscellaneous Symbols Supplement block. Contains 53 assigned codepoints.
-    symbol_count: 53
+    description: Symbol characters in the Miscellaneous Symbols Supplement block. Contains 34 assigned codepoints.
+    symbol_count: 34
     sample_symbols:
       - "𜻀"
-      - "𜻊"
-      - "𜻝"
+      - "𜻆"
+      - "𜻌"
+      - "𜻡"
       - "𜻧"
-      - "𜻱"
     unicode_version: "17.0"
     scripts: []
     has_page: false
@@ -5546,14 +5449,14 @@ categories:
     slug: musical-symbols
     range: U+1D100..U+1D1FF
     master_category: symbols
-    description: Symbol characters in the Musical Symbols block. Contains 256 assigned codepoints.
-    symbol_count: 256
+    description: Symbol characters in the Musical Symbols block. Contains 233 assigned codepoints.
+    symbol_count: 233
     sample_symbols:
       - "𝄀"
-      - "𝄳"
-      - "𝅦"
-      - "𝆙"
-      - "𝇌"
+      - "𝄰"
+      - "𝅗𝅥"
+      - "𝆌"
+      - "𝆺"
     unicode_version: "3.1"
     scripts: []
     has_page: true
@@ -5575,24 +5478,6 @@ categories:
     unicode_version: "4.1"
     scripts:
       - Greek
-    has_page: false
-    page_path: null
-    notes: ""
-  - id: musical_symbols_supplement
-    name: Musical Symbols Supplement
-    slug: musical-symbols-supplement
-    range: U+1D250..U+1D28F
-    master_category: symbols
-    description: Symbol characters in the Musical Symbols Supplement block. Contains 50 assigned codepoints.
-    symbol_count: 50
-    sample_symbols:
-      - "𝉐"
-      - "𝉚"
-      - "𝉤"
-      - "𝉮"
-      - "𝉸"
-    unicode_version: "18.0"
-    scripts: []
     has_page: false
     page_path: null
     notes: ""
@@ -5646,24 +5531,6 @@ categories:
       - "𝌳"
       - "𝍄"
     unicode_version: "4.0"
-    scripts: []
-    has_page: false
-    page_path: null
-    notes: ""
-  - id: miscellaneous_symbols_and_arrows_extended
-    name: Miscellaneous Symbols and Arrows Extended
-    slug: miscellaneous-symbols-and-arrows-extended
-    range: U+1DB00..U+1DBFF
-    master_category: symbols
-    description: Symbol characters in the Miscellaneous Symbols and Arrows Extended block. Contains 29 assigned codepoints.
-    symbol_count: 29
-    sample_symbols:
-      - "𝬀"
-      - "𝬅"
-      - "𝬊"
-      - "𝬏"
-      - "𝬔"
-    unicode_version: "18.0"
     scripts: []
     has_page: false
     page_path: null
@@ -5727,8 +5594,8 @@ categories:
     slug: enclosed-alphanumeric-supplement
     range: U+1F100..U+1F1FF
     master_category: symbols
-    description: Symbol characters in the Enclosed Alphanumeric Supplement block. Contains 201 assigned codepoints.
-    symbol_count: 201
+    description: Symbol characters in the Enclosed Alphanumeric Supplement block. Contains 200 assigned codepoints.
+    symbol_count: 200
     sample_symbols:
       - "🄀"
       - "🄨"
@@ -5763,14 +5630,14 @@ categories:
     slug: geometric-shapes-extended
     range: U+1F780..U+1F7FF
     master_category: symbols
-    description: Symbol characters in the Geometric Shapes Extended block. Contains 120 assigned codepoints.
-    symbol_count: 120
+    description: Symbol characters in the Geometric Shapes Extended block. Contains 103 assigned codepoints.
+    symbol_count: 103
     sample_symbols:
       - "🞀"
-      - "🞘"
-      - "🞰"
-      - "🟈"
-      - "🟤"
+      - "🞔"
+      - "🞨"
+      - "🞼"
+      - "🟐"
     unicode_version: "7.0"
     scripts: []
     has_page: false
@@ -5889,14 +5756,14 @@ categories:
     slug: supplemental-punctuation
     range: U+2E00..U+2E7F
     master_category: punctuation
-    description: Punctuation marks and related typographic characters. Contains 98 assigned codepoints.
-    symbol_count: 98
+    description: Punctuation marks and related typographic characters. Contains 94 assigned codepoints.
+    symbol_count: 94
     sample_symbols:
       - "⸀"
-      - "⸓"
-      - "⸦"
-      - "⸹"
-      - "⹌"
+      - "⸒"
+      - "⸤"
+      - "⸶"
+      - "⹈"
     unicode_version: "4.1"
     scripts: []
     has_page: false
@@ -6079,14 +5946,14 @@ categories:
     slug: cuneiform-numbers-and-punctuation
     range: U+12400..U+1247F
     master_category: numbers
-    description: Numeric characters and number-related symbols. Contains 128 assigned codepoints.
-    symbol_count: 128
+    description: Numeric characters and number-related symbols. Contains 116 assigned codepoints.
+    symbol_count: 116
     sample_symbols:
       - "𒐀"
-      - "𒐙"
-      - "𒐲"
-      - "𒑋"
-      - "𒑤"
+      - "𒐗"
+      - "𒐮"
+      - "𒑅"
+      - "𒑜"
     unicode_version: "5.0"
     scripts:
       - Cuneiform
@@ -6170,14 +6037,14 @@ categories:
     slug: combining-diacritical-marks-extended
     range: U+1AB0..U+1AFF
     master_category: diacritics
-    description: Combining marks and diacritics applied to base characters. Contains 65 assigned codepoints.
-    symbol_count: 65
+    description: Combining marks and diacritics applied to base characters. Contains 58 assigned codepoints.
+    symbol_count: 58
     sample_symbols:
       - "᪰"
-      - "᪽"
-      - "᫊"
-      - "᫗"
-      - "᫤"
+      - "᪻"
+      - "᫆"
+      - "᫑"
+      - "᫜"
     unicode_version: "7.0"
     scripts: []
     has_page: false
@@ -6297,14 +6164,14 @@ categories:
     slug: transport-and-map-symbols
     range: U+1F680..U+1F6FF
     master_category: emoji
-    description: Pictographic and emoji-style characters. Contains 120 assigned codepoints.
-    symbol_count: 120
+    description: Pictographic and emoji-style characters. Contains 119 assigned codepoints.
+    symbol_count: 119
     sample_symbols:
       - "🚀"
-      - "🚘"
-      - "🚰"
-      - "🛈"
-      - "🛢"
+      - "🚗"
+      - "🚮"
+      - "🛅"
+      - "🛟"
     unicode_version: "6.0"
     scripts: []
     has_page: false
@@ -6333,12 +6200,12 @@ categories:
     slug: symbols-and-pictographs-extended-a
     range: U+1FA70..U+1FAFF
     master_category: emoji
-    description: Pictographic and emoji-style characters. Contains 128 assigned codepoints.
-    symbol_count: 128
+    description: Pictographic and emoji-style characters. Contains 120 assigned codepoints.
+    symbol_count: 120
     sample_symbols:
       - "🩰"
-      - "🪌"
-      - "🪥"
+      - "🪎"
+      - "🪦"
       - "🪾"
       - "🫛"
     unicode_version: "12.0"
@@ -6498,14 +6365,14 @@ categories:
     slug: mathematical-alphanumeric-symbols
     range: U+1D400..U+1D7FF
     master_category: technical
-    description: "Technical, mathematical, or specialized notation symbols. Contains 997 assigned codepoints."
-    symbol_count: 997
+    description: "Technical, mathematical, or specialized notation symbols. Contains 996 assigned codepoints."
+    symbol_count: 996
     sample_symbols:
       - "𝐀"
       - "𝓓"
       - "𝖦"
       - "𝙭"
-      - "𝜵"
+      - "𝜶"
     unicode_version: "3.1"
     scripts: []
     has_page: false
