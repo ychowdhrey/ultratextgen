@@ -1,0 +1,13 @@
+id,seed_topic,forum_query,platform,intent_type,notes
+FRQ-0001,unicode symbols,site:reddit.com unicode symbols,reddit,discovery,Broad sweep for symbol discussions and requests.
+FRQ-0002,copy paste symbols,site:reddit.com copy paste symbols,reddit,find-and-copy,Surfaces threads where users hunt for copyable characters.
+FRQ-0003,aesthetic symbols,site:reddit.com aesthetic symbols,reddit,decorate-profile,Aesthetic/bio styling intent; strong for coquette/kawaii pages.
+FRQ-0004,username symbols,site:reddit.com username symbols,reddit,decorate-username,Gamer/social username decoration intent.
+FRQ-0005,discord symbols,site:reddit.com discord symbols,reddit,platform-specific,Discord-flavored symbol requests and name fonts.
+FRQ-0006,instagram bio symbols,site:reddit.com instagram bio symbols,reddit,decorate-profile,IG bio dividers and aesthetic marks.
+FRQ-0007,heart symbols,site:reddit.com heart symbols copy paste,reddit,find-and-copy,Heart variants demand; map to heart-symbols page.
+FRQ-0008,arrow symbols,site:reddit.com arrow symbols copy paste,reddit,find-and-copy,Arrow block demand; map to arrow-symbols page.
+FRQ-0009,text dividers,site:reddit.com text dividers copy paste,reddit,decorate-profile,Divider/border demand; map to line-divider-symbols page.
+FRQ-0010,unicode symbols,site:quora.com how to type unicode symbols,quora,how-to,How-to intent; candidate for guide vs library decision.
+FRQ-0011,special characters,"site:superuser.com OR site:apple.stackexchange.com special characters keyboard",stackexchange,how-to,Niche forum how-to; usually a guide, not a library page.
+FRQ-0012,fancy text,"site:reddit.com OR site:quora.com fancy text generator",mixed,decorate-profile,Validates generator demand vs static symbol demand.
