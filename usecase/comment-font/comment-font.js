@@ -3,6 +3,14 @@
 
   const COPY_COUNT_STORAGE_KEY = "utg-comment-template-copy-counts";
   const QUICK_PICK_VISIBLE_COUNT = 6;
+  const PLAIN_STYLE_ID = "__plain__";
+  const INPUT_HISTORY_DEBOUNCE_MS = 250;
+  const PLAIN_STYLE_OPTION = {
+    id: PLAIN_STYLE_ID,
+    label: "Plain / None",
+    description: "Show the original text with no font styling.",
+    mood: "all"
+  };
   const Render = window.UltraTextGenRender;
   const hasRenderer = Boolean(Render && typeof Render.renderAny === "function");
   const styleRegistry = Object.values(window.textStyles || {}).reduce((acc, style) => {
@@ -270,35 +278,47 @@
   const emojiGroups = {
     "smileys": {
       label: "😄 Smileys & Faces",
+      keywords: ["smile", "grin", "laugh", "joy", "face", "reaction"],
       emojis: ["😊", "😍", "🥺", "😂", "🤩", "😭", "🥹", "😅", "🤣", "😎", "🫠", "🤔", "😤", "😩", "😏", "🥰", "😋", "🤗"]
     },
     "hearts": {
       label: "❤️ Hearts & Love",
+      keywords: ["heart", "love", "romance", "affection", "care", "valentine"],
       emojis: ["❤️", "💛", "💙", "💚", "🧡", "💜", "🖤", "🤍", "💕", "💞", "💓", "💗", "💖", "💝", "❤️‍🔥", "🫶", "💌", "💘"]
     },
     "hands": {
       label: "👏 Hands & Gestures",
+      keywords: ["hand", "gesture", "clap", "support", "applause", "agreement"],
       emojis: ["👏", "🙌", "🤝", "🫶", "🙏", "👍", "✌️", "🤞", "🫵", "💪", "🤙", "👋", "🫂", "🤜", "🤛", "✊", "🖐️", "☝️"]
     },
     "celebration": {
       label: "🎉 Celebration",
+      keywords: ["party", "festival", "hype", "win"],
       emojis: ["🎉", "🎊", "🥳", "🎈", "🎁", "🏆", "🥂", "🍾", "🎶", "🎤", "🚀", "✨", "💫", "⭐", "🌟", "🔥", "💥", "🎯"]
     },
     "symbols": {
       label: "✨ Symbols & Sparkles",
+      keywords: ["symbol", "sparkle", "magic", "glow", "aesthetic", "mystic"],
       emojis: ["✨", "💡", "⚡", "💎", "🌈", "🔮", "💫", "🌙", "⭐", "🌸", "🌺", "🌻", "🦋", "🫧", "🪄", "🌊", "💠", "🔷"]
     },
     "nature": {
       label: "🌿 Nature",
+      keywords: ["nature", "flower", "garden", "outdoor", "plant"],
       emojis: ["🌷", "🌸", "🌺", "🌻", "🌹", "🍀", "🌿", "🦋", "🐝", "🌊", "☀️", "🌙", "⭐", "🌈", "❄️", "🍃", "🌱", "🌾"]
     }
   };
 
   const elements = {
     mainInput: document.getElementById("mainInput"),
+    styledPreview: document.getElementById("styledPreview"),
     charCount: document.getElementById("charCount"),
     charCountWrapper: document.getElementById("charCountWrapper"),
-    inputClearBtn: document.getElementById("inputClearBtn"),
+    clearStylingBtn: document.getElementById("clearStylingBtn"),
+    clearTextBtn: document.getElementById("clearTextBtn"),
+    clearDecoratorBtn: document.getElementById("clearDecoratorBtn"),
+    clearBracketBtn: document.getElementById("clearBracketBtn"),
+    clearEmojiBtn: document.getElementById("clearEmojiBtn"),
+    emojiSearchInput: document.getElementById("emojiSearchInput"),
     copyMainBtn: document.getElementById("copyMainBtn"),
     copyToast: document.getElementById("copyToast"),
     activeSelectionLabel: document.getElementById("activeSelectionLabel"),
@@ -313,6 +333,7 @@
     emojiGroupTabs: document.getElementById("emojiGroupTabs"),
     emojiInventory: document.getElementById("emojiInventory"),
     bracketsInventory: document.getElementById("bracketsInventory"),
+    inventoryModuleTabs: document.querySelector(".inventory-module-tabs"),
     styleFurtherRow: document.getElementById("styleFurtherRow"),
     styleFurtherBtn: document.getElementById("styleFurtherBtn")
   };
@@ -324,9 +345,19 @@
     showAllTemplates: false,
     selectedTemplateId: null,
     selectedStyleId: null,
+    selectedDecoratorId: null,
+    selectedBracketIndex: null,
+    selectedEmoji: null,
     styleMood: "all",
+    inventoryModule: "word-stamps",
     decoratorTab: "high-energy",
     emojiGroup: "smileys",
+    emojiSearch: "",
+    history: [],
+    historyIndex: -1,
+    isRestoringHistory: false,
+    inputHistoryTimer: null,
+    styleRenderFrame: null,
     copyCounts: loadCopyCounts()
   };
 
@@ -376,6 +407,119 @@
     return style ? Render.renderAny(text, style) : text;
   }
 
+  function getSelectedDecorator() {
+    if (!state.selectedDecoratorId) return null;
+    const decorators = decoratorGroups[state.decoratorTab] || [];
+    return decorators.find((item) => item.text === state.selectedDecoratorId) || null;
+  }
+
+  /**
+   * Compose output non-destructively from source text.
+   * Order matters: style first, then word-stamp, then frame, then emoji accent.
+   * This keeps wrappers around the final styled text while preserving the source in the bar.
+   */
+  function composeStyledText(sourceText) {
+    if (!sourceText) return "";
+    let output = sourceText;
+    if (state.selectedStyleId) {
+      output = renderStyledText(output, state.selectedStyleId);
+    }
+    const decorator = getSelectedDecorator();
+    if (decorator) {
+      output = `${decorator.prefix}${output}${decorator.suffix}`;
+    }
+    if (state.selectedBracketIndex !== null && bracketsInventory[state.selectedBracketIndex]) {
+      const bracket = bracketsInventory[state.selectedBracketIndex];
+      output = `${bracket.open}${output}${bracket.close}`;
+    }
+    if (state.selectedEmoji) {
+      output = `${state.selectedEmoji} ${output} ${state.selectedEmoji}`;
+    }
+    return output;
+  }
+
+  function getSnapshot() {
+    return {
+      text: elements.mainInput.value,
+      selectedStyleId: state.selectedStyleId,
+      selectedDecoratorId: state.selectedDecoratorId,
+      selectedBracketIndex: state.selectedBracketIndex,
+      selectedEmoji: state.selectedEmoji
+    };
+  }
+
+  function snapshotsEqual(a, b) {
+    if (!a || !b) return false;
+    return a.text === b.text
+      && a.selectedStyleId === b.selectedStyleId
+      && a.selectedDecoratorId === b.selectedDecoratorId
+      && a.selectedBracketIndex === b.selectedBracketIndex
+      && a.selectedEmoji === b.selectedEmoji;
+  }
+
+  function pushHistory() {
+    if (state.isRestoringHistory) return;
+    const snapshot = getSnapshot();
+    const previous = state.history[state.historyIndex];
+    if (previous && snapshotsEqual(previous, snapshot)) return;
+    state.history = state.history.slice(0, state.historyIndex + 1);
+    state.history.push(snapshot);
+    state.historyIndex = state.history.length - 1;
+  }
+
+  function scheduleInputHistoryPush() {
+    window.clearTimeout(state.inputHistoryTimer);
+    state.inputHistoryTimer = window.setTimeout(() => {
+      pushHistory();
+    }, INPUT_HISTORY_DEBOUNCE_MS);
+  }
+
+  function scheduleStyleCardRender() {
+    if (state.styleRenderFrame) window.cancelAnimationFrame(state.styleRenderFrame);
+    state.styleRenderFrame = window.requestAnimationFrame(() => {
+      renderStyleCards();
+      state.styleRenderFrame = null;
+    });
+  }
+
+  function restoreSnapshot(snapshot) {
+    if (!snapshot) return;
+    state.isRestoringHistory = true;
+    elements.mainInput.value = snapshot.text || "";
+    state.selectedStyleId = snapshot.selectedStyleId || null;
+    state.selectedDecoratorId = snapshot.selectedDecoratorId || null;
+    state.selectedBracketIndex = Number.isInteger(snapshot.selectedBracketIndex) ? snapshot.selectedBracketIndex : null;
+    state.selectedEmoji = snapshot.selectedEmoji || null;
+    state.selectedTemplateId = null;
+    syncInputUi();
+    renderQuickPickCards();
+    renderStyleCards();
+    renderDecorators();
+    renderBracketsInventory();
+    renderEmojiInventory();
+    state.isRestoringHistory = false;
+  }
+
+  function handleUndoRedo(event) {
+    if (!(event.metaKey || event.ctrlKey) || event.altKey) return;
+    const key = String(event.key || "").toLowerCase();
+    if (key !== "z") return;
+    const shouldRedo = event.shiftKey;
+    if (shouldRedo) {
+      if (state.historyIndex >= state.history.length - 1) return;
+      event.preventDefault();
+      state.historyIndex += 1;
+      restoreSnapshot(state.history[state.historyIndex]);
+      setSelectionHint("Redo applied.");
+      return;
+    }
+    if (state.historyIndex <= 0) return;
+    event.preventDefault();
+    state.historyIndex -= 1;
+    restoreSnapshot(state.history[state.historyIndex]);
+    setSelectionHint("Undo applied.");
+  }
+
   function applyTemplateStyle(template) {
     const start = template.text.indexOf(template.keyPhrase);
     if (start === -1) return template.text;
@@ -412,12 +556,21 @@
   function syncInputUi() {
     const text = elements.mainInput.value;
     const length = text.length;
+    const styledText = composeStyledText(text);
     if (elements.charCount) elements.charCount.textContent = String(length);
     if (elements.charCountWrapper) elements.charCountWrapper.hidden = length === 0;
-    if (elements.inputClearBtn) elements.inputClearBtn.hidden = length === 0;
     if (elements.copyMainBtn) elements.copyMainBtn.disabled = length === 0;
     if (elements.styleFurtherRow) {
       elements.styleFurtherRow.hidden = length === 0 || state.mode === "style-your-own";
+    }
+    if (elements.styledPreview) {
+      if (length === 0) {
+        elements.styledPreview.textContent = "Styled preview appears here as you choose style, frames, and emoji.";
+        elements.styledPreview.classList.remove("has-content");
+      } else {
+        elements.styledPreview.textContent = styledText;
+        elements.styledPreview.classList.add("has-content");
+      }
     }
   }
 
@@ -461,7 +614,7 @@
       elements.quickPickHeading.textContent = `${platformLabel} · ${state.quickPickCategory}`;
     }
     if (elements.quickPickSubheading) {
-      elements.quickPickSubheading.textContent = "Tap a card to load the styled comment into the main bar, then edit it before you copy.";
+      elements.quickPickSubheading.textContent = "Tap a card to load a ready comment, then tweak and style it before you copy.";
     }
 
     elements.quickPickCards.innerHTML = visibleTemplates.map((template) => {
@@ -475,7 +628,7 @@
             </div>
             <!-- Escape the styled preview too because the card markup is assembled with innerHTML. -->
             <div class="style-preview">${escapeHtml(preview)}</div>
-            <p class="template-meta">Loads the finished comment into the shared text bar for editing.</p>
+            <p class="template-meta">Loads the ready comment into your bar so you can tweak and style it.</p>
           </div>
         </button>
       `;
@@ -483,25 +636,32 @@
 
     if (templates.length > QUICK_PICK_VISIBLE_COUNT) {
       elements.showMoreTemplatesBtn.hidden = false;
-      elements.showMoreTemplatesBtn.textContent = state.showAllTemplates ? "Show less" : "Show more";
+      elements.showMoreTemplatesBtn.textContent = state.showAllTemplates ? "Show fewer" : "Show more";
     } else {
       elements.showMoreTemplatesBtn.hidden = true;
     }
   }
 
+  function getStylePreviewText(styleId, sourceText) {
+    if (styleId === PLAIN_STYLE_ID) return sourceText;
+    return renderStyledText(sourceText, styleId);
+  }
+
   function renderStyleCards() {
+    const previewSampleText = elements.mainInput.value.trim() || "Your comment";
     const visibleStyles = styleLibrary.filter((style) => (
       state.styleMood === "all" || style.mood === state.styleMood
     ));
+    const allStyles = [PLAIN_STYLE_OPTION].concat(visibleStyles);
 
-    elements.styleCards.innerHTML = visibleStyles.map((style) => `
-      <button type="button" class="style-card comment-style-card ${style.id === state.selectedStyleId ? "is-active" : ""}" data-style-id="${style.id}">
+    elements.styleCards.innerHTML = allStyles.map((style) => `
+      <button type="button" class="style-card comment-style-card ${style.id === (state.selectedStyleId || PLAIN_STYLE_ID) ? "is-active" : ""}" data-style-id="${style.id}">
         <div class="style-info">
           <div class="style-name">
             <span>${escapeHtml(style.label)}</span>
             <span class="style-tag">${escapeHtml(styleMoodLabels[style.mood] || style.mood)}</span>
           </div>
-          <div class="style-preview">${escapeHtml(renderStyledText(style.sample, style.id))}</div>
+          <div class="style-preview">${escapeHtml(getStylePreviewText(style.id, previewSampleText))}</div>
           <p class="style-helper">${escapeHtml(style.description)}</p>
         </div>
       </button>
@@ -517,7 +677,7 @@
   function renderDecorators() {
     const decorators = decoratorGroups[state.decoratorTab] || [];
     elements.decoratorInventory.innerHTML = decorators.map((item, index) => `
-      <button type="button" class="decoration-item" data-decorator-index="${index}">${escapeHtml(item.text)}</button>
+      <button type="button" class="decoration-item ${item.text === state.selectedDecoratorId ? "selected" : ""}" data-decorator-index="${index}">${escapeHtml(item.text)}</button>
     `).join("");
   }
 
@@ -530,28 +690,43 @@
 
   function renderEmojiInventory() {
     const group = emojiGroups[state.emojiGroup] || emojiGroups["smileys"];
-    elements.emojiInventory.innerHTML = group.emojis.map((emoji) => `
-      <button type="button" class="comment-emoji-chip" data-emoji="${escapeHtml(emoji)}">${escapeHtml(emoji)}</button>
+    const query = state.emojiSearch.trim().toLowerCase();
+    const keywordMatch = (group.keywords || []).some((keyword) => keyword.includes(query));
+    const visibleEmojis = query && !keywordMatch ? [] : group.emojis;
+    elements.emojiInventory.innerHTML = visibleEmojis.map((emoji) => `
+      <button type="button" class="comment-emoji-chip ${emoji === state.selectedEmoji ? "selected" : ""}" data-emoji="${escapeHtml(emoji)}">${escapeHtml(emoji)}</button>
     `).join("");
   }
 
   function renderBracketsInventory() {
     if (!elements.bracketsInventory) return;
     elements.bracketsInventory.innerHTML = bracketsInventory.map((item, index) => `
-      <button type="button" class="decoration-item bracket-item" data-bracket-index="${index}">${escapeHtml(item.label)}</button>
+      <button type="button" class="decoration-item bracket-item ${index === state.selectedBracketIndex ? "selected" : ""}" data-bracket-index="${index}">${escapeHtml(item.label)}</button>
     `).join("");
+  }
+
+  function updateInventoryModuleUi() {
+    if (elements.inventoryModuleTabs) {
+      elements.inventoryModuleTabs.querySelectorAll("[data-inventory-module]").forEach((button) => {
+        button.classList.toggle("active", button.dataset.inventoryModule === state.inventoryModule);
+      });
+    }
+    document.querySelectorAll("[data-inventory-panel]").forEach((panel) => {
+      panel.hidden = panel.dataset.inventoryPanel !== state.inventoryModule;
+    });
   }
 
   function loadTemplate(templateId) {
     const template = templateBank.find((entry) => entry.id === templateId);
     if (!template) return;
-    elements.mainInput.value = applyTemplateStyle(template);
+    elements.mainInput.value = template.text;
     state.selectedTemplateId = template.id;
-    state.selectedStyleId = null;
+    state.selectedStyleId = getStyleDefinition(template.style) ? template.style : null;
     syncInputUi();
     renderQuickPickCards();
     renderStyleCards();
-    setSelectionHint(`${platformLabels[template.platform]} · ${template.category} loaded. Edit it in the main bar, then copy.`);
+    pushHistory();
+    setSelectionHint(`${platformLabels[template.platform]} · ${template.category} loaded. Edit in the bar — style appears in preview and copy output.`);
     elements.mainInput.focus();
   }
 
@@ -559,17 +734,17 @@
     const text = elements.mainInput.value;
     if (!text.trim()) {
       elements.mainInput.focus();
-      setSelectionHint("Type or paste a comment into the main bar first, then choose a style.");
+      setSelectionHint("Type or paste a comment first, then choose a style.");
       return;
     }
-    elements.mainInput.value = renderStyledText(text, styleId);
-    state.selectedStyleId = styleId;
+    state.selectedStyleId = styleId === PLAIN_STYLE_ID ? null : styleId;
     state.selectedTemplateId = null;
     syncInputUi();
     renderQuickPickCards();
     renderStyleCards();
+    pushHistory();
     const style = getStyleDefinition(styleId);
-    setSelectionHint(`${style ? style.label : "Style"} applied. Edit the text or copy it from the main bar.`);
+    setSelectionHint(`${style ? style.label : "Plain text"} selected. Your source text is unchanged.`);
   }
 
   function applyDecorator(index) {
@@ -578,13 +753,15 @@
     const text = elements.mainInput.value;
     if (!text.trim()) {
       elements.mainInput.focus();
-      setSelectionHint("Add your comment to the main bar first, then use decorators only if you really want the extra framing.");
+      setSelectionHint("Add your comment first, then use word-stamps only if you really want extra framing.");
       return;
     }
-    elements.mainInput.value = `${decoration.prefix}${text}${decoration.suffix}`;
+    state.selectedDecoratorId = state.selectedDecoratorId === decoration.text ? null : decoration.text;
     state.selectedTemplateId = null;
     syncInputUi();
-    setSelectionHint("Decorator added. Keep it subtle, then copy from the main bar.");
+    renderDecorators();
+    pushHistory();
+    setSelectionHint(state.selectedDecoratorId ? "Word-stamp enabled." : "Word-stamp removed.");
   }
 
   function applyBracket(index) {
@@ -593,22 +770,29 @@
     const text = elements.mainInput.value;
     if (!text.trim()) {
       elements.mainInput.focus();
-      setSelectionHint("Add your comment to the main bar first, then choose a frame to wrap it.");
+      setSelectionHint("Add your comment first, then choose a frame.");
       return;
     }
-    elements.mainInput.value = `${bracket.open}${text}${bracket.close}`;
+    state.selectedBracketIndex = state.selectedBracketIndex === index ? null : index;
     state.selectedTemplateId = null;
     syncInputUi();
-    setSelectionHint(`Frame applied. Edit or copy from the main bar.`);
+    renderBracketsInventory();
+    pushHistory();
+    setSelectionHint(state.selectedBracketIndex === null ? "Frame removed." : "Frame enabled.");
   }
 
   function appendEmoji(emoji) {
-    const text = elements.mainInput.value;
-    const suffix = text && !text.endsWith(" ") ? " " : "";
-    elements.mainInput.value = `${text}${suffix}${emoji}`.trimStart();
+    if (!elements.mainInput.value.trim()) {
+      elements.mainInput.focus();
+      setSelectionHint("Add your comment first, then pick an emoji accent.");
+      return;
+    }
+    state.selectedEmoji = state.selectedEmoji === emoji ? null : emoji;
     state.selectedTemplateId = null;
     syncInputUi();
-    setSelectionHint("Emoji added to the main bar. Edit the line if needed, then copy.");
+    renderEmojiInventory();
+    pushHistory();
+    setSelectionHint(state.selectedEmoji ? "Emoji accent enabled." : "Emoji accent removed.");
     elements.mainInput.focus();
   }
 
@@ -619,7 +803,7 @@
   }
 
   async function copyMainText() {
-    const text = elements.mainInput.value;
+    const text = composeStyledText(elements.mainInput.value);
     if (!text) return;
     const activeTemplate = getActiveTemplate();
 
@@ -643,7 +827,7 @@
         template_id: activeTemplate ? activeTemplate.id : null
       });
       showCopyToast("Copied!");
-      setSelectionHint("Copied from the main bar.");
+      setSelectionHint("Copied.");
     } catch (error) {
       console.error("Copy failed:", error);
       showCopyToast("Copy failed");
@@ -660,10 +844,10 @@
           const activeTemplate = getActiveTemplate();
           setSelectionHint(activeTemplate
             ? `${platformLabels[activeTemplate.platform]} · ${activeTemplate.category} is still loaded. Edit it or copy it.`
-            : "Quick Picks is ready — choose a card to load it into the main bar."
+            : "Comment Library is ready — choose a card to load it into your comment."
           );
         } else {
-          setSelectionHint("Type or paste text in the main bar, then choose a style or open the decorator inventory.");
+          setSelectionHint("Type or paste text in your comment bar, then swap styles or optional extras.");
         }
       });
     });
@@ -720,8 +904,10 @@
       const button = event.target.closest("[data-decorator-tab]");
       if (!button) return;
       state.decoratorTab = button.dataset.decoratorTab;
+      state.selectedDecoratorId = null;
       renderDecoratorTabs();
       renderDecorators();
+      syncInputUi();
     });
 
     elements.decoratorInventory.addEventListener("click", (event) => {
@@ -743,6 +929,8 @@
         const button = event.target.closest("[data-emoji-group]");
         if (!button) return;
         state.emojiGroup = button.dataset.emojiGroup;
+        state.emojiSearch = "";
+        if (elements.emojiSearchInput) elements.emojiSearchInput.value = "";
         renderEmojiGroupTabs();
         renderEmojiInventory();
       });
@@ -754,26 +942,99 @@
       appendEmoji(button.dataset.emoji);
     });
 
+    if (elements.emojiSearchInput) {
+      elements.emojiSearchInput.addEventListener("input", () => {
+        state.emojiSearch = elements.emojiSearchInput.value || "";
+        renderEmojiInventory();
+      });
+    }
+
+    if (elements.inventoryModuleTabs) {
+      elements.inventoryModuleTabs.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-inventory-module]");
+        if (!button) return;
+        state.inventoryModule = button.dataset.inventoryModule;
+        updateInventoryModuleUi();
+      });
+    }
+
     if (elements.styleFurtherBtn) {
       elements.styleFurtherBtn.addEventListener("click", () => {
         state.mode = "style-your-own";
         updateModeUi();
         syncInputUi();
-        setSelectionHint("Choose a style below to apply to your comment, or open the decorator inventory.");
+        setSelectionHint("Choose a style below to apply to your comment, or open optional extras.");
       });
     }
 
-    elements.mainInput.addEventListener("input", syncInputUi);
-    elements.inputClearBtn.addEventListener("click", () => {
-      elements.mainInput.value = "";
-      state.selectedTemplateId = null;
-      state.selectedStyleId = null;
+    elements.mainInput.addEventListener("input", () => {
       syncInputUi();
-      renderQuickPickCards();
-      renderStyleCards();
-      setSelectionHint("Cleared. Start with Quick Picks or type your own line.");
-      elements.mainInput.focus();
+      scheduleStyleCardRender();
+      scheduleInputHistoryPush();
     });
+
+    if (elements.clearStylingBtn) {
+      elements.clearStylingBtn.addEventListener("click", () => {
+        state.selectedStyleId = null;
+        state.selectedDecoratorId = null;
+        state.selectedBracketIndex = null;
+        state.selectedEmoji = null;
+        state.selectedTemplateId = null;
+        syncInputUi();
+        renderStyleCards();
+        renderDecorators();
+        renderBracketsInventory();
+        renderEmojiInventory();
+        pushHistory();
+        setSelectionHint("Styling cleared. Your text stayed the same.");
+      });
+    }
+
+    if (elements.clearTextBtn) {
+      elements.clearTextBtn.addEventListener("click", () => {
+        elements.mainInput.value = "";
+        state.selectedTemplateId = null;
+        syncInputUi();
+        renderQuickPickCards();
+        renderStyleCards();
+        pushHistory();
+        setSelectionHint("Text cleared.");
+        elements.mainInput.focus();
+      });
+    }
+
+    if (elements.clearDecoratorBtn) {
+      elements.clearDecoratorBtn.addEventListener("click", () => {
+        state.selectedDecoratorId = null;
+        syncInputUi();
+        renderDecorators();
+        pushHistory();
+        setSelectionHint("Word-stamp cleared.");
+      });
+    }
+
+    if (elements.clearBracketBtn) {
+      elements.clearBracketBtn.addEventListener("click", () => {
+        state.selectedBracketIndex = null;
+        syncInputUi();
+        renderBracketsInventory();
+        pushHistory();
+        setSelectionHint("Frame cleared.");
+      });
+    }
+
+    if (elements.clearEmojiBtn) {
+      elements.clearEmojiBtn.addEventListener("click", () => {
+        state.selectedEmoji = null;
+        syncInputUi();
+        renderEmojiInventory();
+        pushHistory();
+        setSelectionHint("Emoji accent cleared.");
+      });
+    }
+
+    window.addEventListener("keydown", handleUndoRedo);
+
     elements.copyMainBtn.addEventListener("click", copyMainText);
 
     document.querySelectorAll(".faq-question").forEach((question) => {
@@ -807,7 +1068,9 @@
     renderEmojiInventory();
     syncInputUi();
     bindEvents();
-    setSelectionHint("Quick Picks is ready — choose a card to load it into the main bar.");
+    updateInventoryModuleUi();
+    pushHistory();
+    setSelectionHint("Comment Library is ready — choose a card to load it into your comment.");
   }
 
   document.addEventListener("DOMContentLoaded", init);
