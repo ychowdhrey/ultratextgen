@@ -1,12 +1,12 @@
 {
   "slug": "degree-symbol",
   "title": "Degree Symbol: Copy & Paste ° Temperature & Angle Signs",
-  "meta_description": "Copy and paste the degree symbol (°) plus Celsius, Fahrenheit, Kelvin, angle, and prime signs. Click any symbol to copy it instantly.",
+  "meta_description": "Copy and paste the degree symbol (°) plus Celsius, Fahrenheit, Kelvin, angle, prime, and geometry signs. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/degree-symbol/",
   "breadcrumb": "Degree Symbol",
   "hero_h1": "Degree Symbol",
-  "hero_tagline": "The degree sign (°) and every temperature, angle, and prime symbol that goes with it. Click any symbol to copy it instantly.",
-  "intro": "The degree symbol marks temperature, angles, and coordinates. This library gathers the degree sign alongside the Celsius, Fahrenheit, and Kelvin marks, angle and geometry signs, and the prime characters used for minutes and seconds.",
+  "hero_tagline": "The degree sign (°) and every temperature, angle, prime, and geometry symbol that goes with it. Click any symbol to copy it instantly.",
+  "intro": "The degree symbol marks temperature, angles, and coordinates. This library gathers the degree sign with the Celsius, Fahrenheit, and Kelvin marks, a full set of angle signs, the prime characters used for minutes and seconds, and the geometry symbols that accompany them.",
   "date_published": "2026-06-07",
   "date_modified": "2026-06-07",
   "copy_pattern": "single",
@@ -36,10 +36,10 @@
       ]
     },
     {
-      "id": "angle-geometry",
+      "id": "angle-symbols",
       "label": "Angles",
-      "h2": "Angle & Geometry Symbols",
-      "intro": "Angle and geometry signs commonly written with degree measurements.",
+      "h2": "Angle Symbols",
+      "intro": "Angle signs commonly written with degree measurements.",
       "symbols": [
         {
           "char": "∠",
@@ -50,12 +50,28 @@
           "label": "Measured Angle"
         },
         {
+          "char": "∢",
+          "label": "Spherical Angle"
+        },
+        {
           "char": "∟",
           "label": "Right Angle"
         },
         {
-          "char": "⌀",
-          "label": "Diameter Sign"
+          "char": "⊾",
+          "label": "Right Angle With Arc"
+        },
+        {
+          "char": "⊿",
+          "label": "Right Triangle"
+        },
+        {
+          "char": "⦝",
+          "label": "Measured Right Angle With Dot"
+        },
+        {
+          "char": "⟂",
+          "label": "Perpendicular"
         }
       ]
     },
@@ -63,7 +79,7 @@
       "id": "prime-minute-second",
       "label": "Prime",
       "h2": "Prime, Minutes & Seconds",
-      "intro": "Prime characters used for arcminutes, arcseconds, and coordinate notation.",
+      "intro": "Prime characters used for arcminutes, arcseconds, and coordinate notation, including reversed forms.",
       "symbols": [
         {
           "char": "′",
@@ -76,6 +92,54 @@
         {
           "char": "‴",
           "label": "Triple Prime"
+        },
+        {
+          "char": "⁗",
+          "label": "Quadruple Prime"
+        },
+        {
+          "char": "‵",
+          "label": "Reversed Prime"
+        },
+        {
+          "char": "‶",
+          "label": "Reversed Double Prime"
+        },
+        {
+          "char": "‷",
+          "label": "Reversed Triple Prime"
+        }
+      ]
+    },
+    {
+      "id": "geometry-measurement",
+      "label": "Geometry",
+      "h2": "Geometry & Measurement",
+      "intro": "Circle and arc characters used alongside angle and degree notation.",
+      "symbols": [
+        {
+          "char": "⌀",
+          "label": "Diameter Sign"
+        },
+        {
+          "char": "⌒",
+          "label": "Arc"
+        },
+        {
+          "char": "⌓",
+          "label": "Segment"
+        },
+        {
+          "char": "⊙",
+          "label": "Circled Dot Operator"
+        },
+        {
+          "char": "⦿",
+          "label": "Circled Bullet"
+        },
+        {
+          "char": "∅",
+          "label": "Empty Set"
         }
       ]
     }
@@ -84,7 +148,7 @@
     {
       "href": "/library/math-symbols/",
       "title": "Math Symbols",
-      "desc": "Mathematical operators, Greek letters, and comparison signs."
+      "desc": "Mathematical operators, Greek letters, roots, and infinity signs."
     },
     {
       "href": "/library/weather-symbols/",

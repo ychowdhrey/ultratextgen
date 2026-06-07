@@ -1,12 +1,12 @@
 {
   "slug": "copyright-trademark-symbols",
   "title": "Copyright, Trademark & Legal Symbols: Copy & Paste © ® ™",
-  "meta_description": "Copy and paste copyright, registered, trademark, and other legal Unicode symbols — ©, ®, ™, ℠, ℗, and more. Click any symbol to copy it instantly.",
+  "meta_description": "Copy and paste copyright, registered, trademark, and other legal Unicode symbols — ©, ®, ™, ℠, ℗, §, ¶, and more. Click any symbol to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/copyright-trademark-symbols/",
   "breadcrumb": "Copyright, Trademark & Legal Symbols",
   "hero_h1": "Copyright, Trademark & Legal Symbols",
-  "hero_tagline": "Every copyright, trademark, and intellectual-property symbol in Unicode — ©, ®, ™, ℠, ℗, and the office marks that go with them. Click any symbol to copy it instantly.",
-  "intro": "Legal and intellectual-property symbols mark ownership, registration, and rights. This library collects the copyright sign, registered trademark, trademark and service marks, and related office and numero marks so you can paste the correct character anywhere.",
+  "hero_tagline": "Every copyright, trademark, and legal-document symbol in Unicode — ©, ®, ™, ℠, ℗, plus section, paragraph, and reference marks. Click any symbol to copy it instantly.",
+  "intro": "Legal and intellectual-property symbols mark ownership, registration, and rights, while reference marks structure formal documents. This library collects the copyright and registered signs, trademark and service marks, numero and office abbreviations, and the section, paragraph, dagger, and reference marks used in contracts and citations.",
   "date_published": "2026-06-07",
   "date_modified": "2026-06-07",
   "copy_pattern": "single",
@@ -15,7 +15,7 @@
       "id": "copyright-registered",
       "label": "Copyright",
       "h2": "Copyright & Registered Symbols",
-      "intro": "The core ownership marks: copyright, registered trademark, sound-recording copyright, and circled letter variants.",
+      "intro": "Ownership marks: copyright, registered trademark, sound-recording copyright, and circled-letter variants in capital and small forms.",
       "symbols": [
         {
           "char": "©",
@@ -36,6 +36,14 @@
         {
           "char": "Ⓡ",
           "label": "Circled Capital R"
+        },
+        {
+          "char": "ⓒ",
+          "label": "Circled Small C"
+        },
+        {
+          "char": "ⓡ",
+          "label": "Circled Small R"
         }
       ]
     },
@@ -43,7 +51,7 @@
       "id": "trademark-service",
       "label": "Trademark",
       "h2": "Trademark & Service Marks",
-      "intro": "Trademark and service-mark signs used to denote brand and service identifiers.",
+      "intro": "Trademark and service-mark signs that denote brand and service identifiers.",
       "symbols": [
         {
           "char": "™",
@@ -58,8 +66,8 @@
     {
       "id": "office-numero",
       "label": "Office Marks",
-      "h2": "Office & Numero Marks",
-      "intro": "Letterlike office abbreviations and the numero sign frequently paired with legal text.",
+      "h2": "Numero & Office Marks",
+      "intro": "Letterlike office abbreviations and the numero sign used in formal correspondence.",
       "symbols": [
         {
           "char": "№",
@@ -80,6 +88,50 @@
         {
           "char": "℆",
           "label": "Cada Una"
+        }
+      ]
+    },
+    {
+      "id": "section-reference",
+      "label": "Reference",
+      "h2": "Section, Paragraph & Reference Marks",
+      "intro": "Document marks for sections, paragraphs, footnotes, and citations.",
+      "symbols": [
+        {
+          "char": "§",
+          "label": "Section Sign"
+        },
+        {
+          "char": "¶",
+          "label": "Pilcrow / Paragraph Sign"
+        },
+        {
+          "char": "†",
+          "label": "Dagger"
+        },
+        {
+          "char": "‡",
+          "label": "Double Dagger"
+        },
+        {
+          "char": "※",
+          "label": "Reference Mark"
+        },
+        {
+          "char": "‖",
+          "label": "Double Vertical Line"
+        },
+        {
+          "char": "⁂",
+          "label": "Asterism"
+        },
+        {
+          "char": "⁑",
+          "label": "Two Asterisks Aligned Vertically"
+        },
+        {
+          "char": "⸿",
+          "label": "Capitulum"
         }
       ]
     }
