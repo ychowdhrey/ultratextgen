@@ -1,0 +1,80 @@
+{
+  "slug": "braille-pattern-symbols",
+  "title": "Braille Pattern Symbols: Copy & Paste ⠿ ⣿ Blank & Dot Characters",
+  "meta_description": "Copy and paste braille pattern symbols — the blank braille character (⠀), solid fills (⣿), and every dot combination. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/braille-pattern-symbols/",
+  "breadcrumb": "Braille Pattern Symbols",
+  "hero_h1": "Braille Pattern Symbols",
+  "hero_tagline": "Every braille dot pattern, from the invisible blank character to the fully solid block. Click any symbol to copy it instantly.",
+  "intro": "Braille pattern characters occupy a complete Unicode block of 256 dot combinations. Beyond their original tactile-reading purpose, they are widely used online: the blank braille pattern (⠀) is a popular invisible spacer for usernames and bios, while dense fills like ⣿ make compact bars and ASCII-style art. This library gathers the blank and light patterns, the solid and dense fills, and the individual dot positions you can mix to build your own shapes.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "blank-light-patterns",
+      "label": "Blank & Light",
+      "h2": "Blank & Light Patterns",
+      "intro": "The invisible blank braille pattern and progressively filled dot rows. The blank character renders as empty space yet counts as a visible glyph, which makes it a popular spacer.",
+      "symbols": [
+        { "char": "⠀", "label": "Blank Braille Pattern (invisible spacer)" },
+        { "char": "⠁", "label": "Braille Pattern Dots-1" },
+        { "char": "⠃", "label": "Braille Pattern Dots-12" },
+        { "char": "⠇", "label": "Braille Pattern Dots-123" },
+        { "char": "⠏", "label": "Braille Pattern Dots-1234" },
+        { "char": "⠟", "label": "Braille Pattern Dots-12345" },
+        { "char": "⠿", "label": "Braille Pattern Dots-123456" }
+      ]
+    },
+    {
+      "id": "dense-solid-fills",
+      "label": "Dense Fills",
+      "h2": "Dense & Solid Fills",
+      "intro": "Eight-dot patterns that read as filled blocks. The full pattern (⣿) is the densest braille glyph and works well for bars and shading.",
+      "symbols": [
+        { "char": "⣿", "label": "Braille Pattern Dots-12345678 (full block)" },
+        { "char": "⡿", "label": "Braille Pattern Dots-1234567" },
+        { "char": "⢿", "label": "Braille Pattern Dots-1234568" },
+        { "char": "⣟", "label": "Braille Pattern Dots-1234578" },
+        { "char": "⣯", "label": "Braille Pattern Dots-1234678" },
+        { "char": "⣷", "label": "Braille Pattern Dots-1235678" },
+        { "char": "⣾", "label": "Braille Pattern Dots-2345678" }
+      ]
+    },
+    {
+      "id": "dot-positions-spacers",
+      "label": "Dot Positions",
+      "h2": "Dot Positions & Spacers",
+      "intro": "Single dots and small clusters you can combine to draw custom braille shapes, dotted dividers, and textures.",
+      "symbols": [
+        { "char": "⠂", "label": "Braille Pattern Dots-2" },
+        { "char": "⠄", "label": "Braille Pattern Dots-3" },
+        { "char": "⠈", "label": "Braille Pattern Dots-4" },
+        { "char": "⠐", "label": "Braille Pattern Dots-5" },
+        { "char": "⠠", "label": "Braille Pattern Dots-6" },
+        { "char": "⡀", "label": "Braille Pattern Dots-7" },
+        { "char": "⢀", "label": "Braille Pattern Dots-8" },
+        { "char": "⠒", "label": "Braille Pattern Dots-25" },
+        { "char": "⠤", "label": "Braille Pattern Dots-36" },
+        { "char": "⠶", "label": "Braille Pattern Dots-2356" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    {
+      "href": "/library/line-divider-symbols/",
+      "title": "Line & Divider Symbols",
+      "desc": "Horizontal rules, dotted lines, and divider characters for clean layouts."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Squares, circles, triangles, and block shapes for diagrams and art."
+    }
+  ]
+}

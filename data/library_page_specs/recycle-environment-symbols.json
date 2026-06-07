@@ -1,0 +1,76 @@
+{
+  "slug": "recycle-environment-symbols",
+  "title": "Recycle Symbols: Copy & Paste ♻ ♲ Recycling & Eco Signs",
+  "meta_description": "Copy and paste recycle symbols — the universal recycling sign (♻), plastic resin codes (♳–♹), and eco and environment glyphs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/recycle-environment-symbols/",
+  "breadcrumb": "Recycle Symbols",
+  "hero_h1": "Recycle & Environment Symbols",
+  "hero_tagline": "The universal recycling sign, plastic resin codes, and eco-friendly glyphs in one place. Click any symbol to copy it instantly.",
+  "intro": "The recycling arrows are among the most recognizable symbols in the world, and Unicode encodes a full set of them. This library gathers the universal recycling signs, the numbered plastic resin-identification codes (♳ through ♹) used on packaging, and the green eco and environment glyphs for sustainability content. Click any character to copy it for labels, posts, or product descriptions.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "recycling-signs",
+      "label": "Recycling",
+      "h2": "Recycling Signs",
+      "intro": "The universal recycling symbol and its black, generic, and paper variants.",
+      "symbols": [
+        { "char": "♻", "label": "Black Universal Recycling Symbol" },
+        { "char": "♲", "label": "Universal Recycling Symbol" },
+        { "char": "♺", "label": "Recycling Symbol for Generic Materials" },
+        { "char": "♼", "label": "Recycled Paper Symbol" },
+        { "char": "♽", "label": "Partially-Recycled Paper Symbol" },
+        { "char": "♻️", "label": "Recycling Symbol (emoji)" }
+      ]
+    },
+    {
+      "id": "plastic-resin-codes",
+      "label": "Resin Codes",
+      "h2": "Plastic Resin Codes",
+      "intro": "The numbered resin-identification codes stamped on plastics, types 1 through 7.",
+      "symbols": [
+        { "char": "♳", "label": "Recycling Symbol for Type-1 Plastics (PETE)" },
+        { "char": "♴", "label": "Recycling Symbol for Type-2 Plastics (HDPE)" },
+        { "char": "♵", "label": "Recycling Symbol for Type-3 Plastics (PVC)" },
+        { "char": "♶", "label": "Recycling Symbol for Type-4 Plastics (LDPE)" },
+        { "char": "♷", "label": "Recycling Symbol for Type-5 Plastics (PP)" },
+        { "char": "♸", "label": "Recycling Symbol for Type-6 Plastics (PS)" },
+        { "char": "♹", "label": "Recycling Symbol for Type-7 Plastics (OTHER)" }
+      ]
+    },
+    {
+      "id": "eco-environment",
+      "label": "Eco & Nature",
+      "h2": "Eco & Environment Symbols",
+      "intro": "Green, plant, and planet glyphs for sustainability and environmental content.",
+      "symbols": [
+        { "char": "🌱", "label": "Seedling" },
+        { "char": "🌿", "label": "Herb" },
+        { "char": "🍃", "label": "Leaf Fluttering in Wind" },
+        { "char": "🌳", "label": "Deciduous Tree" },
+        { "char": "🌲", "label": "Evergreen Tree" },
+        { "char": "🌍", "label": "Globe Showing Europe-Africa" },
+        { "char": "🗑", "label": "Wastebasket" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Awareness Ribbons",
+      "desc": "Cause and awareness ribbon symbols in every color and meaning."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Sun, cloud, rain, snow, and other weather-related Unicode symbols."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}
