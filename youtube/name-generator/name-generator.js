@@ -16,7 +16,6 @@
     "kids-family": { prefix: ["happy", "family", "kiddo", "play", "sunshine", "tiny"], suffix: ["adventures", "fun", "world", "time", "tv", "club"] }
   };
 
-  const blockedTerms = ["slur", "hate", "violent"]; 
   const vibeList = [
     ["aesthetic", "Aesthetic"],
     ["cute", "Cute"],
@@ -31,6 +30,8 @@
     ["brandable", "Pro/Brandable"],
     ["kids-family", "Kids/Family"]
   ];
+  const MAX_KEYWORD_LENGTH = 24;
+  const MAX_INITIALS_LENGTH = 4;
 
   let selectedVibe = "";
   let runNonce = 0;
@@ -62,6 +63,15 @@
     return Array.from(new Set(list.filter(Boolean)));
   }
 
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
   function updateGenerateState() {
     if (!el.generate) return;
     const hasKeyword = sanitizeToken(el.keyword?.value).length > 0;
@@ -82,11 +92,6 @@
     return selectedVibe && vibeBanks[selectedVibe] ? vibeBanks[selectedVibe] : vibeBanks.aesthetic;
   }
 
-  function isBlocked(name) {
-    const n = name.toLowerCase();
-    return blockedTerms.some(function (term) { return n.includes(term); });
-  }
-
   function titleCase(input) {
     return input.split(/\s+/).filter(Boolean).map(function (part) {
       return part.charAt(0).toUpperCase() + part.slice(1);
@@ -100,8 +105,8 @@
   }
 
   function generateNames() {
-    const keyword = sanitizeToken(el.keyword?.value || "creator").slice(0, 24);
-    const initials = compact(el.initials?.value || "").slice(0, 4).toUpperCase();
+    const keyword = sanitizeToken(el.keyword?.value || "creator").slice(0, MAX_KEYWORD_LENGTH);
+    const initials = compact(el.initials?.value || "").slice(0, MAX_INITIALS_LENGTH).toUpperCase();
     const bank = pickVibe();
     const base = keyword || "creator";
 
@@ -121,9 +126,7 @@
       );
     }
 
-    return unique(picks).filter(function (name) {
-      return !isBlocked(name);
-    }).slice(0, 20);
+    return unique(picks).slice(0, 20);
   }
 
   async function copy(value, btn) {
@@ -147,11 +150,12 @@
       const len = name.length;
       const warn = len >= 45;
       const over = len > 50;
+      const safeName = escapeHtml(name);
       return '<div class="tng-card">' +
-        '<div class="tng-name">' + name + '</div>' +
+        '<div class="tng-name">' + safeName + '</div>' +
         '<div class="tng-meta' + (warn ? ' char-warning' : '') + '">' + len + '/50 chars' + (over ? ' · Over channel-name limit' : warn ? ' · Near channel-name limit' : '') + '</div>' +
         '<div class="tng-actions">' +
-          '<button class="copy-btn" type="button" data-name="' + name.replace(/"/g, '&quot;') + '">Copy</button>' +
+          '<button class="copy-btn" type="button" data-name="' + safeName + '">Copy</button>' +
           '<a class="copy-btn" href="/youtube/?q=' + encodeURIComponent(name) + '">Style this →</a>' +
         '</div>' +
       '</div>';
@@ -163,10 +167,10 @@
     if (!value) return { valid: false, reasons: ["Enter a handle to check format."] };
     if (value.length < 3) return { valid: false, reasons: ["Too short. Use 3-30 characters."] };
     if (value.length > 30) return { valid: false, reasons: ["Too long. Use 3-30 characters."] };
-    if (/^[._-]|[._-]$/.test(value)) return { valid: false, reasons: ["Cannot start or end with . _ -"] };
-    if (!/^[A-Za-z0-9](?:[A-Za-z0-9._-]{1,28})[A-Za-z0-9]$/.test(value)) {
+    if (!/^[A-Za-z0-9._-]+$/.test(value)) {
       return { valid: false, reasons: ["Contains unsupported characters. Use A-Z, 0-9, . _ - only."] };
     }
+    if (/^[._-]|[._-]$/.test(value)) return { valid: false, reasons: ["Cannot start or end with . _ -"] };
     return { valid: true, reasons: [] };
   }
 

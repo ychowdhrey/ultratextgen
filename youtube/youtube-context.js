@@ -59,14 +59,6 @@
     results: document.getElementById("resultsGrid")
   };
 
-  function escapeHtml(value) {
-    return String(value == null ? "" : value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
-
   function getInputText() {
     if (!el.input) return "";
     return el.input.value || "";
@@ -102,15 +94,41 @@
     if (!el.panel) return;
     const ctx = CONTEXTS[currentContext];
     const raw = getInputText();
-    const text = escapeHtml(raw || ctx.placeholder);
+    const text = raw || ctx.placeholder;
 
     el.panel.classList.add("is-fading");
     setTimeout(function () {
+      el.panel.textContent = "";
       if (ctx.mode === "handle") {
-        el.panel.innerHTML = '<div class="youtube-handle-explainer"><strong>YouTube handles only allow letters, numbers, <code>_ - .</code> — fancy fonts won\'t save.</strong> Style your <strong>channel name</strong> instead, or get handle ideas in <a href="/youtube/name-generator/">YouTube Name Generator</a>.</div>';
+        const wrap = document.createElement("div");
+        wrap.className = "youtube-handle-explainer";
+        const strong = document.createElement("strong");
+        strong.textContent = "YouTube handles only allow letters, numbers, _ - . — fancy fonts won't save.";
+        wrap.appendChild(strong);
+        wrap.appendChild(document.createTextNode(" Style your "));
+        const channelStrong = document.createElement("strong");
+        channelStrong.textContent = "channel name";
+        wrap.appendChild(channelStrong);
+        wrap.appendChild(document.createTextNode(" instead, or get handle ideas in "));
+        const link = document.createElement("a");
+        link.href = "/youtube/name-generator/";
+        link.textContent = "YouTube Name Generator";
+        wrap.appendChild(link);
+        wrap.appendChild(document.createTextNode("."));
+        el.panel.appendChild(wrap);
       } else {
         const label = currentContext === "video-title" ? "Preview · Video title context" : "Preview · YouTube " + currentContext.replace("-", " ");
-        el.panel.innerHTML = '<div class="youtube-context-preview"><div class="preview-label">' + label + '</div><div class="preview-line">' + text + "</div></div>";
+        const preview = document.createElement("div");
+        preview.className = "youtube-context-preview";
+        const previewLabel = document.createElement("div");
+        previewLabel.className = "preview-label";
+        previewLabel.textContent = label;
+        const previewLine = document.createElement("div");
+        previewLine.className = "preview-line";
+        previewLine.textContent = text;
+        preview.appendChild(previewLabel);
+        preview.appendChild(previewLine);
+        el.panel.appendChild(preview);
       }
       el.panel.classList.remove("is-fading");
     }, 25);
@@ -199,7 +217,18 @@
     document.addEventListener("click", function (event) {
       const btn = event.target.closest ? event.target.closest(".copy-btn") : null;
       if (!btn || !el.copyAnnounce) return;
-      const name = btn.closest(".style-card")?.querySelector(".style-name")?.childNodes?.[0]?.textContent?.trim() || "style";
+      let name = "style";
+      const card = btn.closest(".style-card");
+      if (card) {
+        const nameEl = card.querySelector(".style-name");
+        if (nameEl) {
+          const cleanName = nameEl.cloneNode(true);
+          const badge = cleanName.querySelector(".youtube-result-warning");
+          if (badge) badge.remove();
+          const trimmed = cleanName.textContent.trim();
+          if (trimmed) name = trimmed;
+        }        
+      }
       setTimeout(function () {
         el.copyAnnounce.textContent = "Copied " + name + " to clipboard.";
       }, 120);
