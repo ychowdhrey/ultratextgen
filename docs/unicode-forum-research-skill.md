@@ -146,55 +146,97 @@ and decoration intents → `.symbol-tile` single copy; set-oriented requests →
 
 ---
 
-## 5. Page vs. section decision
+## 5. Does this page deserve to exist?
 
-Not every discovered topic deserves a standalone page. Over-splitting creates
-thin, cannibalizing pages; under-splitting buries demand. Decide with this
-rubric:
+Before deciding *how* to build a topic, decide *whether* it should be a page at
+all. A `/library/<slug>/` page earns its place only when it clears all four
+gates:
 
-**Build a standalone `/library/<slug>/` page when ALL of these hold:**
+1. **Distinct head noun** — users search for it on its own ("arrow symbols"),
+   not merely as a modifier of an existing page ("blue arrow symbols").
+2. **Real demand** — `forum_evidence` is `medium`/`strong`, **or**
+   `search_volume` clears the batch threshold. A topic with `none` evidence and
+   thin volume does not deserve a page yet.
+3. **Uncovered symbols** — it maps to Unicode block(s) not already fully
+   represented by an existing page (run
+   `scripts/audit_library_opportunities.py`; watch the `blocks_covered` flag).
+4. **Enough depth** — it can support **≥ 3 H2 sections** and the validator's
+   minimum symbol count. If you can only find five symbols, it's a section, not
+   a page.
 
-- The topic has a **distinct head noun** users search for on its own
-  (e.g. "arrow symbols"), not just a modifier of an existing page.
-- It maps to **one or more Unicode blocks** not already fully covered by an
-  existing page (check with `scripts/audit_library_opportunities.py`).
-- `forum_evidence` is **medium** or **strong** (see scoring below) OR
-  `search_volume` clears the batch threshold.
-- It can support **at least 3 H2 sections** and the minimum symbol count the
-  validator enforces.
+A topic that fails gate 1 or 4 is structurally too thin. A topic that fails
+gate 2 is unproven. A topic that fails gate 3 is a duplicate.
 
-**Make it a section inside an existing page when ANY of these hold:**
+## 5a. Create vs. improve existing vs. skip
 
-- It's a **modifier/variant** of an existing topic ("broken heart symbols" →
-  a section on the existing heart-symbols page).
-- Its Unicode block is **already covered** by an existing page (audit flags
-  `blocks_covered`).
-- `forum_evidence` is **weak** and `search_volume` is low — fold it in and
-  revisit if demand grows.
-- Intent is `how-to` or `meaning` with little copy demand — that usually
-  belongs in a `/guide/` article, not a `/library/` page.
+Every opportunity resolves to exactly one of three actions. Record it in
+`dedupe_status` and explain in `notes`.
 
-When the decision is "section, not page," set `dedupe_status` to
-`fold-into:<existing-slug>` and `approval_status` to `pending`, and describe
-the target section in `notes`.
+**CREATE** a new standalone page when **all four gates above pass** and no
+existing page targets the same head noun / blocks.
+→ `dedupe_status = unique`, `copy_patterns` = `single` or `collection`.
+
+**IMPROVE EXISTING** — fold the demand into a page that already exists — when:
+
+- An existing page targets the **same head noun** (audit flags `dup_slug` or
+  `flag_strong_duplicate_risk`), **or**
+- The topic is a **modifier/variant** of an existing topic ("broken heart
+  symbols" → a section on `heart-symbols`), **or**
+- Its Unicode block is **already covered** (`blocks_covered`), but the existing
+  page is missing the section/symbols users are asking for.
+
+  Improving wins over creating whenever the demand can be satisfied by adding a
+  section, a symbol group, or refreshed copy to a page that already ranks —
+  this consolidates authority instead of splitting it.
+  → `dedupe_status = improve-existing:<slug>` or `fold-into:<slug>`, and
+  describe the target section in `notes`.
+
+**SKIP** when:
+
+- It fully duplicates an existing page with nothing to add (audit verdict
+  `reject-duplicate`), **or**
+- `forum_evidence` is `none`/`weak` **and** `demand_confidence` is `low` —
+  unproven, revisit if demand grows, **or**
+- Intent is `how-to` or `meaning` with little copy demand — that belongs in a
+  `/guide/` article, not `/library/`.
+  → `dedupe_status = skip` (or `review-overlap` if it needs a second look) and
+  `approval_status = rejected` with the reason in `notes`.
+
+When in doubt between create and improve, **prefer improve** — a thin new page
+cannibalizes an existing one.
 
 ---
 
-## 6. Evidence and confidence scoring
+## 6. Scoring forum evidence
 
 Two independent scores are recorded on every opportunity row. They are
 **not** the same thing: evidence measures *how much forum proof we have*;
 confidence measures *our overall belief in the demand* after combining forum
 proof with search volume and category knowledge.
 
-### `forum_evidence`
+### `forum_evidence` (and its numeric score)
 
-| Value    | Meaning                                                                 |
-|----------|-------------------------------------------------------------------------|
-| `none`   | No forum thread found; opportunity came from keyword data alone.        |
-| `weak`   | 1 tangential mention, or old/low-engagement thread.                     |
-| `medium` | 2–3 relevant threads, or one solid thread with real engagement/upvotes. |
-| `strong` | Multiple recent, high-engagement threads using consistent language.     |
+`forum_evidence` is a label; the auditor converts it to a numeric
+`forum_evidence_score` that feeds `priority_score` (see the workflow doc).
+
+| Label    | Score | Meaning                                                                 |
+|----------|-------|-------------------------------------------------------------------------|
+| `none`   | `0`   | No forum thread found; opportunity came from keyword data alone.        |
+| `weak`   | `10`  | 1 tangential mention, or old/low-engagement thread.                     |
+| `medium` | `15`  | 2–3 relevant threads, or one solid thread with real engagement/upvotes. |
+| `strong` | `25`  | Multiple recent, high-engagement threads using consistent language.     |
+
+How to grade evidence consistently:
+
+- **Recency** — threads from the last ~2 years count more than stale ones.
+- **Engagement** — upvotes, replies, "thank you" / "exactly what I needed".
+- **Language consistency** — multiple users using the *same* phrasing is a
+  strong signal the head noun is real.
+- **Specificity** — a request for the exact symbol family (not a vague "cool
+  symbols" thread) is worth more.
+
+Capture the threads in `forum_source_urls` and the queries in `forum_queries`
+so the score is auditable.
 
 ### `demand_confidence`
 
@@ -205,8 +247,10 @@ proof with search volume and category knowledge.
 | `high`   | Forum evidence is `medium`/`strong` **and** search volume is meaningful.   |
 
 Rule of thumb: a page should not be **approved** for a batch unless it reaches
-at least `forum_evidence = medium` **or** `demand_confidence = high`. Record the
-rationale in `notes`.
+at least `forum_evidence = medium` **or** `demand_confidence = high`. The
+auditor flags `missing_forum_evidence`, `missing_search_volume`, and
+`low_demand_confidence` so these never slip through. Record the rationale in
+`notes`.
 
 ---
 
