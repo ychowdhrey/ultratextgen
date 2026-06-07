@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghcategory" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhcategory" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhcategory" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshcategory" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshcategory)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhcategory)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhcategory)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="84"
+          font-weight="700" font-style="normal" fill="url(#ghcategory)"
+          text-anchor="middle" opacity="0.12"> small</text>
+    <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghcategory)"/>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="44" font-weight="700" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle"> small</text></g>
+    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">tiny + small</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="84"
+          font-weight="700" font-style="normal" fill="url(#ghcategory)"
+          text-anchor="middle" opacity="0.12"> small</text>
+    <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghcategory)"/>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="44" font-weight="700" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle"> small</text></g>
+    <text x="180" y="318" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">tiny + small</text></g>
+</svg>
