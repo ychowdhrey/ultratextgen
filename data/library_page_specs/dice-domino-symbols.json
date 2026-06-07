@@ -1,0 +1,78 @@
+{
+  "slug": "dice-domino-symbols",
+  "title": "Dice, Domino & Mahjong Symbols: Copy & Paste ⚀ ⚁ 🀄 Game Tiles",
+  "meta_description": "Copy and paste dice, domino, and mahjong symbols — all six die faces, domino tiles, and mahjong tiles. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/dice-domino-symbols/",
+  "breadcrumb": "Dice, Domino & Mahjong Symbols",
+  "hero_h1": "Dice, Domino & Mahjong Symbols",
+  "hero_tagline": "Every die face plus domino and mahjong tiles, ready to copy. Click any symbol to copy it instantly.",
+  "intro": "Game tiles have their own Unicode blocks. This library gathers all six dice faces, a set of domino tiles, and the mahjong tiles for dragons, winds, and suits — all plain Unicode characters you can copy into game notes, posts, and chats.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "dice-faces",
+      "label": "Dice",
+      "h2": "Dice Faces",
+      "intro": "The six faces of a standard die, from one to six pips.",
+      "symbols": [
+        { "char": "⚀", "label": "Die Face-1" },
+        { "char": "⚁", "label": "Die Face-2" },
+        { "char": "⚂", "label": "Die Face-3" },
+        { "char": "⚃", "label": "Die Face-4" },
+        { "char": "⚄", "label": "Die Face-5" },
+        { "char": "⚅", "label": "Die Face-6" },
+        { "char": "🎲", "label": "Game Die" }
+      ]
+    },
+    {
+      "id": "domino-tiles",
+      "label": "Dominoes",
+      "h2": "Domino Tiles",
+      "intro": "Horizontal domino tiles, including the tile back.",
+      "symbols": [
+        { "char": "🀰", "label": "Domino Tile Horizontal Back" },
+        { "char": "🀱", "label": "Domino Tile Horizontal 0-0" },
+        { "char": "🀲", "label": "Domino Tile Horizontal 0-1" },
+        { "char": "🀳", "label": "Domino Tile Horizontal 0-2" },
+        { "char": "🀴", "label": "Domino Tile Horizontal 0-3" },
+        { "char": "🀵", "label": "Domino Tile Horizontal 0-4" },
+        { "char": "🀶", "label": "Domino Tile Horizontal 0-5" },
+        { "char": "🀷", "label": "Domino Tile Horizontal 0-6" }
+      ]
+    },
+    {
+      "id": "mahjong-tiles",
+      "label": "Mahjong",
+      "h2": "Mahjong Tiles",
+      "intro": "Dragons, winds, and the first tile of each mahjong suit.",
+      "symbols": [
+        { "char": "🀄", "label": "Mahjong Tile Red Dragon" },
+        { "char": "🀅", "label": "Mahjong Tile Green Dragon" },
+        { "char": "🀆", "label": "Mahjong Tile White Dragon" },
+        { "char": "🀀", "label": "Mahjong Tile East Wind" },
+        { "char": "🀇", "label": "Mahjong Tile One of Characters" },
+        { "char": "🀐", "label": "Mahjong Tile One of Bamboos" },
+        { "char": "🀙", "label": "Mahjong Tile One of Circles" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "Spades, hearts, diamonds, and clubs plus playing card characters."
+    },
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Chess Symbols",
+      "desc": "Chess pieces in black and white to copy and paste."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Triangles, squares, circles, and other geometric shapes in Unicode."
+    }
+  ]
+}
