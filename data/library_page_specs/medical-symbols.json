@@ -1,0 +1,72 @@
+{
+  "slug": "medical-symbols",
+  "title": "Medical Symbols: Copy & Paste ⚕ Caduceus, Rx & Health Signs",
+  "meta_description": "Copy and paste medical symbols — the staff of Aesculapius, caduceus, prescription Rx mark, medical crosses, and health and emergency signs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/medical-symbols/",
+  "breadcrumb": "Medical Symbols",
+  "hero_h1": "Medical Symbols",
+  "hero_tagline": "The medical staff, caduceus, Rx mark, and the crosses and health signs that go with them. Click any symbol to copy it instantly.",
+  "intro": "Medical symbols mark pharmacies, hospitals, and health information. This library gathers the staff of Aesculapius and caduceus, the prescription Rx character, the medical and Greek crosses, and the emergency and health emoji used in modern messaging — all as plain Unicode characters you can copy anywhere.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "medical-pharmacy",
+      "label": "Medical",
+      "h2": "Medical & Pharmacy Signs",
+      "intro": "The traditional medical staff symbols and the prescription mark.",
+      "symbols": [
+        { "char": "⚕", "label": "Staff of Aesculapius" },
+        { "char": "⚕️", "label": "Medical Symbol (Emoji Style)" },
+        { "char": "☤", "label": "Caduceus" },
+        { "char": "⚚", "label": "Staff of Hermes" },
+        { "char": "℞", "label": "Prescription Take (Rx)" }
+      ]
+    },
+    {
+      "id": "medical-crosses",
+      "label": "Crosses",
+      "h2": "Medical Crosses & Plus Signs",
+      "intro": "Cross and plus marks used for clinics, first aid, and health services.",
+      "symbols": [
+        { "char": "✚", "label": "Heavy Greek Cross" },
+        { "char": "✛", "label": "Open Centre Cross" },
+        { "char": "✜", "label": "Heavy Open Centre Cross" },
+        { "char": "➕", "label": "Heavy Plus Sign" },
+        { "char": "⊕", "label": "Circled Plus" }
+      ]
+    },
+    {
+      "id": "health-emergency",
+      "label": "Health",
+      "h2": "Health & Emergency Symbols",
+      "intro": "Modern health, treatment, and emergency emoji.",
+      "symbols": [
+        { "char": "🩺", "label": "Stethoscope" },
+        { "char": "💊", "label": "Pill" },
+        { "char": "💉", "label": "Syringe" },
+        { "char": "🩹", "label": "Adhesive Bandage" },
+        { "char": "🧬", "label": "DNA" },
+        { "char": "🚑", "label": "Ambulance" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/cross-x-symbols/",
+      "title": "Cross & X Symbols",
+      "desc": "Crosses, multiplication marks, and X characters to copy and paste."
+    },
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Radioactive, biohazard, and warning signs in Unicode."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}
