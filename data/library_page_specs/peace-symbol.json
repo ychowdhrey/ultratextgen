@@ -1,0 +1,71 @@
+{
+  "slug": "peace-symbol",
+  "title": "Peace Symbol: Copy & Paste ☮ Peace Sign & Dove Characters",
+  "meta_description": "Copy and paste the peace symbol (☮) plus peace-sign gestures, doves, olive branches, and harmony characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/peace-symbol/",
+  "breadcrumb": "Peace Symbol",
+  "hero_h1": "Peace Symbol",
+  "hero_tagline": "The peace sign (☮) and the doves, hand gestures, and nature symbols that share its meaning. Click any symbol to copy it instantly.",
+  "intro": "The peace symbol has stood for anti-war movements and harmony since the 1950s. This library brings together the peace sign itself, the victory and hand gestures associated with it, the dove and olive-branch imagery of peace, and the heart and handshake symbols of goodwill — all ready to copy into bios, posts, and messages.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "peace-signs",
+      "label": "Peace Signs",
+      "h2": "Peace Signs & Gestures",
+      "intro": "The peace symbol and the hand gestures used to signal peace.",
+      "symbols": [
+        { "char": "☮", "label": "Peace Symbol" },
+        { "char": "☮️", "label": "Peace Symbol (Emoji Style)" },
+        { "char": "✌", "label": "Victory Hand" },
+        { "char": "✌️", "label": "Victory Hand (Emoji Style)" },
+        { "char": "🙏", "label": "Folded Hands" }
+      ]
+    },
+    {
+      "id": "doves-nature",
+      "label": "Doves",
+      "h2": "Doves & Nature",
+      "intro": "The dove and olive branch are long-standing emblems of peace.",
+      "symbols": [
+        { "char": "🕊", "label": "Dove" },
+        { "char": "🕊️", "label": "Dove (Emoji Style)" },
+        { "char": "🫒", "label": "Olive" },
+        { "char": "🌿", "label": "Herb (Olive Branch)" },
+        { "char": "🌱", "label": "Seedling" }
+      ]
+    },
+    {
+      "id": "goodwill-symbols",
+      "label": "Goodwill",
+      "h2": "Goodwill & Harmony",
+      "intro": "Hearts, hands, and handshake symbols expressing peace and goodwill.",
+      "symbols": [
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "🤲", "label": "Palms Up Together" },
+        { "char": "👐", "label": "Open Hands" },
+        { "char": "💛", "label": "Yellow Heart" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith and spiritual symbols from traditions around the world."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Hand gestures, pointing, and finger symbols to copy and paste."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    }
+  ]
+}

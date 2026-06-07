@@ -1,0 +1,72 @@
+{
+  "slug": "hazard-warning-symbols",
+  "title": "Hazard & Warning Symbols: Copy & Paste ☢ ☣ ⚠ Danger Signs",
+  "meta_description": "Copy and paste hazard and warning symbols — radioactive, biohazard, warning triangle, high voltage, skull and crossbones, and alert marks. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/hazard-warning-symbols/",
+  "breadcrumb": "Hazard & Warning Symbols",
+  "hero_h1": "Hazard & Warning Symbols",
+  "hero_tagline": "Radioactive, biohazard, high-voltage, and warning signs plus the alert marks that go with them. Click any symbol to copy it instantly.",
+  "intro": "Hazard symbols flag danger at a glance. This library gathers the radioactive, biohazard, and skull-and-crossbones marks, the warning and caution signs, the electrical and high-voltage glyphs, and the exclamation marks used for alerts — every one a plain Unicode character you can copy into labels, docs, and messages.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "toxic-radioactive",
+      "label": "Toxic",
+      "h2": "Toxic, Radioactive & Biohazard",
+      "intro": "The classic danger signs for radiation, biological hazards, and poison.",
+      "symbols": [
+        { "char": "☢", "label": "Radioactive Sign" },
+        { "char": "☣", "label": "Biohazard Sign" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "⚰", "label": "Coffin" },
+        { "char": "⚱", "label": "Funeral Urn" }
+      ]
+    },
+    {
+      "id": "warning-electrical",
+      "label": "Warning",
+      "h2": "Warning, Caution & Electrical",
+      "intro": "General warning marks and the high-voltage and electrical hazard signs.",
+      "symbols": [
+        { "char": "⚠", "label": "Warning Sign" },
+        { "char": "☡", "label": "Caution Sign" },
+        { "char": "⚡", "label": "High Voltage Sign" },
+        { "char": "☇", "label": "Lightning" },
+        { "char": "⌁", "label": "Electric Arrow" }
+      ]
+    },
+    {
+      "id": "alert-marks",
+      "label": "Alerts",
+      "h2": "Alert & Exclamation Marks",
+      "intro": "Exclamation and cross marks used to draw attention to a danger or error.",
+      "symbols": [
+        { "char": "‼", "label": "Double Exclamation Mark" },
+        { "char": "⁉", "label": "Exclamation Question Mark" },
+        { "char": "❗", "label": "Heavy Exclamation Mark Symbol" },
+        { "char": "❕", "label": "White Exclamation Mark Ornament" },
+        { "char": "❌", "label": "Cross Mark" },
+        { "char": "⛔", "label": "No Entry" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/traffic-road-sign-symbols/",
+      "title": "Traffic & Road Sign Symbols",
+      "desc": "Road, traffic, and transit signs to copy and paste."
+    },
+    {
+      "href": "/library/recycle-environment-symbols/",
+      "title": "Recycle & Environment Symbols",
+      "desc": "Recycling, eco, and environmental marks in Unicode."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}
