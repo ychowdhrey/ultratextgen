@@ -44,6 +44,8 @@ EXISTING = {
     "tiktok-symbols", "traffic-road-sign-symbols", "transport-symbols",
     "weather-symbols", "whisper-subliminal-symbols", "witchy-occult-symbols",
     "x-twitter-symbols", "y2k-symbols", "zodiac-symbols",
+    # batch-01-pilot pages now shipped on main — treat as published for dedupe.
+    "copyright-trademark-symbols", "degree-symbol", "fraction-symbols",
 }
 
 FORUM_EVIDENCE_SCORE = {"none": 0, "weak": 10, "medium": 15, "strong": 25}
@@ -79,7 +81,7 @@ def approval_for(action):
 
 
 rows = []
-_counter = [4]  # OPP-0001..0004 already exist in the seed file.
+_counter = [5]  # OPP-0001..0005 are the batch-01-pilot rows now on main.
 
 
 def add(primary, modifier, intent, ev, vol, conf, cat, blocks, copy, slug,
@@ -114,26 +116,35 @@ def add(primary, modifier, intent, ev, vol, conf, cat, blocks, copy, slug,
 # ===========================================================================
 # A. CREATE — distinct head noun, real demand, uncovered Unicode blocks.
 # ===========================================================================
+# NOTE: degree, copyright/trademark, infinity and square-root were promoted to
+# the batch-01-pilot and resolved on main (OPP-0001..0005): degree-symbol,
+# copyright-trademark-symbols and fraction-symbols SHIPPED as pages; infinity
+# and square-root were deliberately FOLDED into math-symbols. The rows below
+# defer to those decisions instead of re-proposing standalone pages.
 add("degree symbol", "copy paste", "find-and-copy", "strong", 110000, "high",
     "units", "Latin-1 Supplement (U+00B0) | Letterlike Symbols (U+2100..U+214F)",
     "single", "degree-symbol",
     "Degree Symbol: Copy & Paste ° Temperature & Angle Degrees",
-    "create", "unique", 25, 20, 12,
-    "CREATE. 110k vol, no existing page owns U+00B0; covers temperature/angle/° map.",
+    "improve_existing", "improve-existing:degree-symbol", 22, 8, 12,
+    "ALREADY SHIPPED on main as OPP-0002 /library/degree-symbol/. Kept as "
+    "improve_existing for future angle/temperature enhancements; do NOT recreate.",
     batch="batch-03")
-add("trademark copyright symbols", "tm c r copy paste", "find-and-copy", "strong",
+add("copyright trademark symbols", "tm c r copy paste", "find-and-copy", "strong",
     74000, "high", "legal",
     "Latin-1 Supplement (U+00A9,U+00AE) | Letterlike Symbols (U+2120,U+2122)",
-    "single", "trademark-copyright-symbols",
-    "Trademark, Copyright & Registered Symbols: Copy & Paste ™ © ®",
-    "create", "unique", 25, 20, 11,
-    "CREATE. tm 74k/copyright 60k/registered 18k cluster; no legal-marks page exists.")
+    "single", "copyright-trademark-symbols",
+    "Copyright, Trademark & Legal Symbols: Copy & Paste © ® ™",
+    "improve_existing", "improve-existing:copyright-trademark-symbols", 22, 8, 11,
+    "ALREADY SHIPPED on main as OPP-0001 /library/copyright-trademark-symbols/. "
+    "(my earlier slug 'trademark-copyright-symbols' realigned to the shipped slug.) "
+    "Kept as improve_existing for service-mark/sound-recording additions.")
 add("infinity symbol", "copy paste", "find-and-copy", "strong", 49500, "high",
     "math", "Mathematical Operators (U+221E) | Misc Math Symbols-B (U+29DC)",
-    "single", "infinity-symbol",
-    "Infinity Symbol: Copy & Paste ∞ Infinite & Lemniscate Signs",
-    "create", "unique", 23, 18, 9,
-    "CREATE. 49.5k vol; math-symbols covers operators broadly but ∞ has standalone intent.")
+    "single", "math-symbols",
+    "Infinity Symbol & Variants (section on math-symbols)",
+    "improve_existing", "fold-into:math-symbols", 20, 5, 9,
+    "DEFER to main OPP-0003: deliberately FOLDED into math-symbols (only ~6 real "
+    "glyphs ∞ ♾ ∝ ⧜ ⧝ ⧞ — too thin for a standalone page). Not a new page.")
 add("greek letter symbols", "alpha beta delta copy paste", "find-and-copy", "strong",
     60500, "high", "greek", "Greek and Coptic (U+0370..U+03FF)", "collection",
     "greek-letter-symbols",
@@ -327,7 +338,7 @@ improve = [
     ("number symbols", "copy paste", "find-and-copy", "medium", 5400, "medium",
      "numbers", "Number Forms (U+2150..U+218F) | Enclosed Alphanumerics", "number-symbols",
      "Number Symbols: Copy & Paste ① ② ⑩ Circled & Fancy Numbers", 18, 12,
-     "IMPROVE. number 5.4k; add circled/roman/superscript sections (also OPP-0001 fractions)."),
+     "IMPROVE. number 5.4k; add circled/roman/superscript sections (fractions shipped separately as OPP-0005 on main)."),
     ("special characters", "copy paste", "find-and-copy", "strong", 22200, "high",
      "special", "General Punctuation | Letterlike | Misc Technical", "special-characters",
      "Special Characters: Copy & Paste Symbols & Glyphs", 18, 13,
@@ -424,13 +435,13 @@ for (p, m, it, ev, vol, conf, cat, blocks, slug, title, copy_s, depth_s, note) i
 skips = [
     ("cute symbols", "kawaii copy paste", "decorate-profile", "strong", 49500, "high",
      "kawaii", "Misc Symbols", "kawaii-cute-symbols",
-     "Cute Symbols Copy Paste", "SKIP. Duplicate of kawaii-cute-symbols (see OPP-0003 fold)."),
+     "Cute Symbols Copy Paste", "SKIP. Duplicate of kawaii-cute-symbols (folds into that page)."),
     ("aesthetic symbols copy and paste", "", "decorate-profile", "strong", 4400, "high",
      "aesthetic", "Misc Symbols", "aesthetic-symbols",
      "Aesthetic Symbols Copy And Paste", "SKIP. Exact intent dup of aesthetic-symbols."),
     ("heart symbol copy paste", "", "find-and-copy", "strong", 22200, "high", "hearts",
      "Misc Symbols (U+2764)", "heart-symbols", "Heart Symbol Copy Paste",
-     "SKIP. Pure dup of heart-symbols (OPP-0002 owns improve)."),
+     "SKIP. Pure dup of heart-symbols; the heart-symbols improve_existing row owns it."),
     ("copy and paste symbols", "", "find-and-copy", "strong", 110000, "high", "generic",
      "all blocks", "special-characters", "Copy And Paste Symbols",
      "SKIP as standalone. Generic head term already served by special-characters/library hub."),
@@ -643,7 +654,7 @@ improve2 = [
     ("kawaii cute symbols", "copy paste", "decorate-profile", "strong", 5400, "high",
      "kawaii", "Misc Symbols | Katakana | Dingbats", "kawaii-cute-symbols",
      "Kawaii Cute Symbols: Copy & Paste ♡ ⊹ Aesthetic Characters", 20, 12,
-     "IMPROVE. kawaii emoticons 5.4k; add kaomoji-decor + pastel sections (OPP-0003 folds here)."),
+     "IMPROVE. kawaii emoticons 5.4k; add kaomoji-decor + pastel sections (cute-symbols demand folds here)."),
     ("coquette symbols", "aesthetic copy paste", "decorate-profile", "medium", 1900,
      "high", "coquette", "Dingbats | Misc Symbols bow/heart", "coquette-symbols",
      "Coquette Symbols: Copy & Paste ⊹ ♡ ๋ Soft Aesthetic", 19, 11,
@@ -786,7 +797,7 @@ review2 = [
      "REVIEW. uwu niche; fold into text-faces-kaomoji."),
     ("heart emoticon", "copy paste", "find-and-copy", "strong", 22200, "high", "hearts",
      "Misc Symbols (U+2665,U+2764) | Dingbats", "heart-symbols", "Heart Emoticon Copy Paste",
-     "REVIEW. heart emoticon 22k overlaps heart-symbols (OPP-0002) and emoji; confirm single owner."),
+     "REVIEW. heart emoticon 22k overlaps heart-symbols and emoji; confirm single owner."),
     ("flower emoticon", "copy paste", "decorate-profile", "weak", 2400, "low", "flowers",
      "Dingbats florets | Misc Symbols", "flower-symbols", "Flower Emoticon ❀ Copy Paste",
      "REVIEW. flower emoticon 2.4k; fold into flower-symbols (overlaps improve row)."),
@@ -828,21 +839,36 @@ for (p, m, it, ev, vol, conf, cat, blocks, slug, title, note) in skips2:
         "skip", 5, 0, 3, note, batch="batch-07")
 
 
-# --- Emit: keep the original 4 seed rows verbatim, append the rest. --------
+# --- Emit: keep the existing seed rows (main's batch-01-pilot) verbatim. ----
+# The seed is whatever is currently committed at data/library_opportunities.csv
+# (after the merge with main this is OPP-0001..0005). We re-emit those rows
+# untouched, deriving the `action` column from their dedupe_status, then append
+# the expanded candidate rows.
 SEED = OUT.read_text(encoding="utf-8").splitlines()
 seed_reader = list(csv.DictReader(SEED))
 
+
+def action_from_dedupe(dedupe, approval):
+    d = (dedupe or "").strip().lower()
+    if d.startswith("improve-existing") or d.startswith("fold-into"):
+        return "improve_existing"
+    if d == "skip":
+        return "skip"
+    if d in ("review-overlap", "needs-review"):
+        return "needs_review"
+    # 'unique' / 'clear' or an approved standalone -> a create row.
+    return "create"
+
+
+seed_actions = {}
 with OUT.open("w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=FIELDS)
     w.writeheader()
-    # Re-emit the 4 seed rows, adding the new `action` column.
-    seed_actions = {
-        "OPP-0001": "create", "OPP-0002": "improve_existing",
-        "OPP-0003": "skip", "OPP-0004": "needs_review",
-    }
     for r in seed_reader:
         r = dict(r)
-        r["action"] = seed_actions.get(r["id"], "needs_review")
+        act = action_from_dedupe(r.get("dedupe_status"), r.get("approval_status"))
+        seed_actions[r["id"]] = act
+        r["action"] = r.get("action") or act
         w.writerow({k: r.get(k, "") for k in FIELDS})
     for r in rows:
         w.writerow(r)
@@ -851,6 +877,6 @@ print(f"Wrote {len(seed_reader) + len(rows)} opportunity rows "
       f"({len(seed_reader)} seed + {len(rows)} new) to {OUT.relative_to(REPO)}")
 # Quick action tally
 from collections import Counter
-tally = Counter([seed_actions.get(r['id'], '?') for r in seed_reader] +
+tally = Counter([seed_actions[r['id']] for r in seed_reader] +
                 [r['action'] for r in rows])
 print("Action tally:", dict(tally))
