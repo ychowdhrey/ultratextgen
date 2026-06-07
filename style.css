@@ -2473,13 +2473,15 @@ body.dark-mode .vertical-chip {
    ============================================================ */
 
 /* Hero illustration banner */
-.guide-hero-figure {
+.guide-hero-figure,
+.page-hero-figure {
   max-width: 900px;
   margin: 1.5rem auto 0;
   padding: 0 1.25rem;
 }
 
-.guide-hero-figure img {
+.guide-hero-figure img,
+.page-hero-figure img {
   display: block;
   width: 100%;
   height: auto;

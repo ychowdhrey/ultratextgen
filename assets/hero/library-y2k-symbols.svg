@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghlibraryy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhlibraryy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhlibraryy" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshlibraryy" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshlibraryy)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryy)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryy)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle">☆</text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle">⌘</text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8">✧</text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle">⊹</text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghlibraryy)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle">✦</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <g><line x1="180" y1="158" x2="70" y2="78" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="300" y2="86" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="108" y2="264" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/><line x1="180" y1="158" x2="286" y2="244" stroke="#8b5cf6" stroke-width="1.5" opacity="0.32"/></g>
+    <text x="70" y="96" font-family="DejaVu Sans, sans-serif" font-size="60" fill="none" stroke="#1a1a2e" stroke-width="1.6" text-anchor="middle">☆</text><text x="300" y="104" font-family="DejaVu Sans, sans-serif" font-size="52" fill="#3b82f6" text-anchor="middle">⌘</text><text x="108" y="282" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#64748b" text-anchor="middle" opacity="0.8">✧</text><text x="286" y="262" font-family="DejaVu Sans, sans-serif" font-size="50" fill="#1a1a2e" text-anchor="middle">⊹</text>
+    <circle cx="180" cy="158" r="58" fill="url(#ghlibraryy)"/>
+    <text x="180" y="182" font-family="DejaVu Sans, sans-serif" font-size="66" fill="#fff"
+          text-anchor="middle">✦</text></g>
+</svg>

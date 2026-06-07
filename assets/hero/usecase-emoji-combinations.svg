@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghusecasee" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhusecasee" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhusecasee" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshusecasee" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshusecasee)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhusecasee)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhusecasee)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <rect x="30" y="120" width="120" height="120" rx="24" fill="#fff"
+          stroke="#1a1a2e" stroke-opacity="0.12"/>
+    <text x="90" y="200" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="58" font-weight="700"
+          fill="#64748b" text-anchor="middle">+</text>
+    <g transform="translate(180 180)">
+      <rect x="-26" y="-5" width="48" height="10" rx="5" fill="url(#ghusecasee)"/>
+      <polygon points="18,-12 40,0 18,12" fill="#3b82f6"/>
+    </g>
+    <rect x="210" y="120" width="120" height="120" rx="24" fill="url(#ghusecasee)"/>
+    <text x="270" y="200" font-family="DejaVu Sans, sans-serif" font-size="58" font-weight="700"
+          fill="#fff" text-anchor="middle">★</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <rect x="30" y="120" width="120" height="120" rx="24" fill="#fff"
+          stroke="#1a1a2e" stroke-opacity="0.12"/>
+    <text x="90" y="200" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="58" font-weight="700"
+          fill="#64748b" text-anchor="middle">+</text>
+    <g transform="translate(180 180)">
+      <rect x="-26" y="-5" width="48" height="10" rx="5" fill="url(#ghusecasee)"/>
+      <polygon points="18,-12 40,0 18,12" fill="#3b82f6"/>
+    </g>
+    <rect x="210" y="120" width="120" height="120" rx="24" fill="url(#ghusecasee)"/>
+    <text x="270" y="200" font-family="DejaVu Sans, sans-serif" font-size="58" font-weight="700"
+          fill="#fff" text-anchor="middle">★</text></g>
+</svg>
