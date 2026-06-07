@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gstylelin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvstylelin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowstylelin" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsstylelin" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsstylelin)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowstylelin)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvstylelin)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <rect x="56" y="78" width="210" height="26" rx="8" fill="url(#gstylelin)"/>
+    <rect x="56" y="124" width="150" height="11" rx="5" fill="#64748b" opacity="0.35"/>
+    <rect x="56" y="148" width="176" height="11" rx="5" fill="#64748b" opacity="0.35"/>
+    <path d="M250 60 L250 220 Q250 290 180 290 Q120 290 120 244"
+          fill="none" stroke="url(#gvstylelin)" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="250" cy="56" r="12" fill="#8b5cf6"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <rect x="56" y="78" width="210" height="26" rx="8" fill="url(#gstylelin)"/>
+    <rect x="56" y="124" width="150" height="11" rx="5" fill="#64748b" opacity="0.35"/>
+    <rect x="56" y="148" width="176" height="11" rx="5" fill="#64748b" opacity="0.35"/>
+    <path d="M250 60 L250 220 Q250 290 180 290 Q120 290 120 244"
+          fill="none" stroke="url(#gvstylelin)" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="250" cy="56" r="12" fill="#8b5cf6"/></g>
+</svg>
