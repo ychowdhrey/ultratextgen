@@ -1,0 +1,96 @@
+{
+  "slug": "square-root-symbol",
+  "title": "Square Root Symbol: Copy & Paste √ Radical Signs",
+  "meta_description": "Copy and paste the square root symbol (√) plus cube root, fourth root, exponents, and related operators. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/square-root-symbol/",
+  "breadcrumb": "Square Root Symbol",
+  "hero_h1": "Square Root Symbol",
+  "hero_tagline": "The square root sign (√) and the radical, exponent, and operator characters that go with it. Click any symbol to copy it instantly.",
+  "intro": "The square root, or radical, sign denotes roots in mathematics. This library gathers the square, cube, and fourth-root signs along with superscript exponents and the operators most often used beside them.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "radical-signs",
+      "label": "Radicals",
+      "h2": "Radical Signs",
+      "intro": "The square, cube, and fourth-root radical characters.",
+      "symbols": [
+        {
+          "char": "√",
+          "label": "Square Root"
+        },
+        {
+          "char": "∛",
+          "label": "Cube Root"
+        },
+        {
+          "char": "∜",
+          "label": "Fourth Root"
+        }
+      ]
+    },
+    {
+      "id": "powers-exponents",
+      "label": "Exponents",
+      "h2": "Powers & Exponents",
+      "intro": "Superscript characters for writing exponents and powers inline.",
+      "symbols": [
+        {
+          "char": "¹",
+          "label": "Superscript One"
+        },
+        {
+          "char": "²",
+          "label": "Superscript Two"
+        },
+        {
+          "char": "³",
+          "label": "Superscript Three"
+        },
+        {
+          "char": "ⁿ",
+          "label": "Superscript N"
+        }
+      ]
+    },
+    {
+      "id": "related-operators",
+      "label": "Operators",
+      "h2": "Related Operators",
+      "intro": "Operators commonly written alongside roots and powers.",
+      "symbols": [
+        {
+          "char": "±",
+          "label": "Plus-Minus Sign"
+        },
+        {
+          "char": "×",
+          "label": "Multiplication Sign"
+        },
+        {
+          "char": "÷",
+          "label": "Division Sign"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, and comparison signs."
+    },
+    {
+      "href": "/library/number-symbols/",
+      "title": "Number Symbols",
+      "desc": "Circled, superscript, Roman, and other Unicode number forms."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}
