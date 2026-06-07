@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T04:57:57.729Z",
+  "generatedAt": "2026-06-07T05:53:26.145Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -8,8 +8,8 @@
   },
   "summary": {
     "htmlFiles": 155,
-    "cssFiles": 11,
-    "jsFiles": 27,
+    "cssFiles": 12,
+    "jsFiles": 28,
     "pageTypes": {
       "other": 21,
       "category": 20,
@@ -20,17 +20,17 @@
       "library": 62,
       "usecase": 10
     },
-    "inlineStyleOccurrences": 219,
-    "filesWithInlineStyles": 93,
+    "inlineStyleOccurrences": 287,
+    "filesWithInlineStyles": 153,
     "inlineRiskTally": {
-      "low": 43,
-      "medium": 85,
-      "high": 91
+      "low": 45,
+      "medium": 86,
+      "high": 156
     },
     "styleBlocks": 5,
-    "uniqueClasses": 306,
+    "uniqueClasses": 342,
     "componentClassCandidates": 89,
-    "oneOffClassCandidates": 193,
+    "oneOffClassCandidates": 228,
     "repeatedInlinePatterns": 15,
     "cssSelectorsTotal": 365,
     "cssSelectorsReferenced": 364,
@@ -45,6 +45,13 @@
       "purpose": "global site stylesheet"
     },
     {
+      "file": "usecase/before-after-emoji/before-after-emoji.css",
+      "bytes": 11456,
+      "sizeHuman": "11.2 KB",
+      "lines": 510,
+      "purpose": "page-specific usecase styling"
+    },
+    {
       "file": "usecase/zalgo-text/zalgo-text.css",
       "bytes": 11190,
       "sizeHuman": "10.9 KB",
@@ -57,6 +64,13 @@
       "sizeHuman": "8.1 KB",
       "lines": 401,
       "purpose": "error page styling"
+    },
+    {
+      "file": "usecase/comment-font/comment-font.css",
+      "bytes": 7028,
+      "sizeHuman": "6.9 KB",
+      "lines": 408,
+      "purpose": "page-specific usecase styling"
     },
     {
       "file": "discord/discord-context.css",
@@ -77,13 +91,6 @@
       "bytes": 5172,
       "sizeHuman": "5.1 KB",
       "lines": 239,
-      "purpose": "page-specific usecase styling"
-    },
-    {
-      "file": "usecase/comment-font/comment-font.css",
-      "bytes": 5081,
-      "sizeHuman": "5.0 KB",
-      "lines": 299,
       "purpose": "page-specific usecase styling"
     },
     {
@@ -238,6 +245,13 @@
     {
       "file": "category/aesthetic-fonts/index.html",
       "line": 67,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "category/bold-fonts/alternating/index.html",
+      "line": 62,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
@@ -804,7 +818,14 @@
     },
     {
       "file": "guide/branding-with-fonts-for-social-media/index.html",
-      "line": 546,
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/branding-with-fonts-for-social-media/index.html",
+      "line": 550,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
       "risk": "low"
@@ -951,133 +972,161 @@
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 624,
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/personal-branding-through-typography/index.html",
+      "line": 628,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 644,
+      "line": 648,
       "snippet": "style=\"font-size:1.35rem;\"",
       "decl": "font-size:1.35rem;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 646,
+      "line": 650,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 651,
+      "line": 655,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 656,
+      "line": 660,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 661,
+      "line": 665,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 666,
+      "line": 670,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/personal-branding-through-typography/index.html",
-      "line": 671,
+      "line": 675,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 778,
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/stop-the-scroll-with-font-variation/index.html",
+      "line": 782,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 798,
+      "line": 802,
       "snippet": "style=\"font-size:1.35rem;\"",
       "decl": "font-size:1.35rem;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 800,
+      "line": 804,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 805,
+      "line": 809,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "line": 810,
+      "line": 814,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 294,
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
+      "line": 298,
       "snippet": "style=\"margin-top:1rem\"",
       "decl": "margin-top:1rem",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 488,
+      "line": 492,
       "snippet": "style=\"font-size:1.35rem;\"",
       "decl": "font-size:1.35rem;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 490,
+      "line": 494,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 495,
+      "line": 499,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "line": 500,
+      "line": 504,
       "snippet": "style=\"text-decoration:none;\"",
       "decl": "text-decoration:none;",
       "risk": "low"
     },
     {
       "file": "guide/the-rhetoric-of-fonts/index.html",
-      "line": 437,
+      "line": 66,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "guide/the-rhetoric-of-fonts/index.html",
+      "line": 441,
       "snippet": "style=\"margin-top: 2rem;\"",
       "decl": "margin-top: 2rem;",
       "risk": "low"
@@ -1146,6 +1195,230 @@
       "risk": "high"
     },
     {
+      "file": "library/accent-marks-diacritics/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/achievement-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/aesthetic-borders-frames/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/aesthetic-symbols/index.html",
+      "line": 142,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/animal-emojis/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/arrow-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/awareness-ribbons/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/body-language-emojis/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/bow-ribbon-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/bracket-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/bullet-point-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/card-suit-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/checkmark-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/chess-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/coquette-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/cottagecore-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/cross-x-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/crown-royalty-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/currency-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/dash-hyphen-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/discord-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/egyptian-hieroglyphs/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/email-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/emoji-flags/index.html",
+      "line": 92,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/emoji-meanings-guide/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/face-emojis/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/flower-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/food-drink-emojis/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/geometric-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/goth-grunge-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/hand-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/heart-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
       "file": "library/index.html",
       "line": 483,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -1160,6 +1433,27 @@
       "risk": "medium"
     },
     {
+      "file": "library/instagram-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/kawaii-cute-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/line-divider-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
       "file": "library/linkedin-comment-styling/index.html",
       "line": 84,
       "snippet": "style=\"display:none;visibility:hidden\"",
@@ -1167,11 +1461,186 @@
       "risk": "high"
     },
     {
+      "file": "library/linkedin-symbol-library/index.html",
+      "line": 88,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/math-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/moon-celestial-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/music-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/norse-viking-runes/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/number-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/people-profession-emojis/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/religious-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/roblox-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/slash-backslash-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/smiley-face-guide/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/sparkle-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/special-characters/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/sports-emojis/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/star-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/text-faces-kaomoji/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/tiktok-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/traffic-road-sign-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/transport-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/weather-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/whisper-subliminal-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
       "file": "library/witchy-occult-symbols/index.html",
-      "line": 169,
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/witchy-occult-symbols/index.html",
+      "line": 173,
       "snippet": "style=\"margin-top:1rem;\"",
       "decl": "margin-top:1rem;",
       "risk": "low"
+    },
+    {
+      "file": "library/x-twitter-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/y2k-symbols/index.html",
+      "line": 90,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
+    },
+    {
+      "file": "library/zodiac-symbols/index.html",
+      "line": 89,
+      "snippet": "style=\"display:none;visibility:hidden\"",
+      "decl": "display:none;visibility:hidden",
+      "risk": "high"
     },
     {
       "file": "linkedin/index.html",
@@ -1364,17 +1833,31 @@
     },
     {
       "file": "usecase/before-after-emoji/index.html",
-      "line": 160,
+      "line": 136,
       "snippet": "style=\"display:none;visibility:hidden\"",
       "decl": "display:none;visibility:hidden",
       "risk": "high"
     },
     {
       "file": "usecase/before-after-emoji/index.html",
-      "line": 215,
-      "snippet": "style=\"display: none;\"",
-      "decl": "display: none;",
-      "risk": "high"
+      "line": 169,
+      "snippet": "style=\"margin-top:16px;\"",
+      "decl": "margin-top:16px;",
+      "risk": "low"
+    },
+    {
+      "file": "usecase/before-after-emoji/index.html",
+      "line": 237,
+      "snippet": "style=\"margin:0 0 10px;font-size:0.875rem;color:var(--text-secondary);\"",
+      "decl": "margin:0 0 10px;font-size:0.875rem;color:var(--text-secondary);",
+      "risk": "medium"
+    },
+    {
+      "file": "usecase/before-after-emoji/index.html",
+      "line": 238,
+      "snippet": "style=\"padding:0;\"",
+      "decl": "padding:0;",
+      "risk": "low"
     },
     {
       "file": "usecase/bio-font/index.html",
@@ -1668,11 +2151,11 @@
       "count": 10
     },
     {
-      "file": "guide/linkedin-comments-guide/index.html",
-      "count": 8
+      "file": "guide/personal-branding-through-typography/index.html",
+      "count": 9
     },
     {
-      "file": "guide/personal-branding-through-typography/index.html",
+      "file": "guide/linkedin-comments-guide/index.html",
       "count": 8
     },
     {
@@ -1681,14 +2164,18 @@
     },
     {
       "file": "guide/stop-the-scroll-with-font-variation/index.html",
-      "count": 5
+      "count": 6
     },
     {
       "file": "guide/style-linkedin-hooks-to-stand-out/index.html",
-      "count": 5
+      "count": 6
     },
     {
       "file": "linkedin/index.html",
+      "count": 4
+    },
+    {
+      "file": "usecase/before-after-emoji/index.html",
       "count": 4
     },
     {
@@ -1736,15 +2223,23 @@
       "count": 2
     },
     {
+      "file": "guide/branding-with-fonts-for-social-media/index.html",
+      "count": 2
+    },
+    {
+      "file": "guide/the-rhetoric-of-fonts/index.html",
+      "count": 2
+    },
+    {
       "file": "library/index.html",
       "count": 2
     },
     {
-      "file": "roblox/name-generator/index.html",
+      "file": "library/witchy-occult-symbols/index.html",
       "count": 2
     },
     {
-      "file": "usecase/before-after-emoji/index.html",
+      "file": "roblox/name-generator/index.html",
       "count": 2
     },
     {
@@ -1801,6 +2296,10 @@
     },
     {
       "file": "category/aesthetic-fonts/index.html",
+      "count": 1
+    },
+    {
+      "file": "category/bold-fonts/alternating/index.html",
       "count": 1
     },
     {
@@ -1896,14 +2395,6 @@
       "count": 1
     },
     {
-      "file": "guide/branding-with-fonts-for-social-media/index.html",
-      "count": 1
-    },
-    {
-      "file": "guide/the-rhetoric-of-fonts/index.html",
-      "count": 1
-    },
-    {
       "file": "id/index.html",
       "count": 1
     },
@@ -1928,11 +2419,243 @@
       "count": 1
     },
     {
+      "file": "library/accent-marks-diacritics/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/achievement-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/aesthetic-borders-frames/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/aesthetic-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/animal-emojis/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/arrow-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/awareness-ribbons/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/body-language-emojis/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/bow-ribbon-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/bracket-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/bullet-point-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/card-suit-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/checkmark-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/chess-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/coquette-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/cottagecore-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/cross-x-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/crown-royalty-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/currency-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/dash-hyphen-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/discord-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/egyptian-hieroglyphs/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/email-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/emoji-flags/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/emoji-meanings-guide/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/face-emojis/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/flower-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/food-drink-emojis/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/geometric-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/goth-grunge-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/hand-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/heart-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/instagram-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/kawaii-cute-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/line-divider-symbols/index.html",
+      "count": 1
+    },
+    {
       "file": "library/linkedin-comment-styling/index.html",
       "count": 1
     },
     {
-      "file": "library/witchy-occult-symbols/index.html",
+      "file": "library/linkedin-symbol-library/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/math-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/moon-celestial-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/music-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/norse-viking-runes/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/number-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/people-profession-emojis/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/religious-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/roblox-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/slash-backslash-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/smiley-face-guide/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/sparkle-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/special-characters/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/sports-emojis/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/star-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/text-faces-kaomoji/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/tiktok-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/traffic-road-sign-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/transport-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/weather-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/whisper-subliminal-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/x-twitter-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/y2k-symbols/index.html",
+      "count": 1
+    },
+    {
+      "file": "library/zodiac-symbols/index.html",
       "count": 1
     },
     {
@@ -2090,7 +2813,7 @@
     {
       "class": "editorial-section",
       "pages": 123,
-      "occurrences": 392
+      "occurrences": 395
     },
     {
       "class": "hero-tagline",
@@ -2100,7 +2823,7 @@
     {
       "class": "editorial-block",
       "pages": 94,
-      "occurrences": 277
+      "occurrences": 282
     },
     {
       "class": "cta-btn",
@@ -2200,22 +2923,22 @@
     {
       "class": "faq-item",
       "pages": 51,
-      "occurrences": 775
+      "occurrences": 772
     },
     {
       "class": "faq-question",
       "pages": 51,
-      "occurrences": 775
+      "occurrences": 772
     },
     {
       "class": "faq-answer",
       "pages": 51,
-      "occurrences": 775
+      "occurrences": 772
     },
     {
       "class": "active",
       "pages": 50,
-      "occurrences": 99
+      "occurrences": 104
     },
     {
       "class": "hero-card",
@@ -2245,7 +2968,7 @@
     {
       "class": "decoration-tab",
       "pages": 45,
-      "occurrences": 347
+      "occurrences": 350
     },
     {
       "class": "decoration-grid",
@@ -2258,29 +2981,29 @@
       "occurrences": 46
     },
     {
-      "class": "decoration-section",
-      "pages": 44,
-      "occurrences": 48
-    },
-    {
       "class": "category-section",
       "pages": 44,
-      "occurrences": 44
+      "occurrences": 45
     },
     {
       "class": "category-tabs",
       "pages": 44,
-      "occurrences": 49
+      "occurrences": 50
     },
     {
       "class": "faq-category",
       "pages": 44,
-      "occurrences": 244
+      "occurrences": 243
+    },
+    {
+      "class": "decoration-section",
+      "pages": 43,
+      "occurrences": 47
     },
     {
       "class": "decoration-label",
-      "pages": 43,
-      "occurrences": 47
+      "pages": 42,
+      "occurrences": 46
     },
     {
       "class": "u-secondary-tight",
@@ -2290,7 +3013,7 @@
     {
       "class": "category-tab",
       "pages": 28,
-      "occurrences": 219
+      "occurrences": 224
     },
     {
       "class": "compare-badge",
@@ -2315,7 +3038,7 @@
     {
       "class": "block-example",
       "pages": 15,
-      "occurrences": 62
+      "occurrences": 65
     },
     {
       "class": "u-mt-15",
@@ -2363,14 +3086,14 @@
       "occurrences": 36
     },
     {
-      "class": "input-clear-btn",
-      "pages": 12,
-      "occurrences": 12
-    },
-    {
       "class": "tip-icon",
       "pages": 12,
       "occurrences": 85
+    },
+    {
+      "class": "input-clear-btn",
+      "pages": 11,
+      "occurrences": 11
     },
     {
       "class": "u-text-center",
@@ -2695,6 +3418,11 @@
       "occurrences": 1
     },
     {
+      "class": "comment-bar-actions",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
       "class": "comment-bar-head",
       "pages": 1,
       "occurrences": 1
@@ -2750,17 +3478,27 @@
       "occurrences": 1
     },
     {
+      "class": "comment-mode-diagram",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "comment-preview",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
       "class": "comment-secondary-btn",
       "pages": 1,
       "occurrences": 1
     },
     {
-      "class": "comparison-table",
+      "class": "comment-text-btn",
       "pages": 1,
-      "occurrences": 1
+      "occurrences": 5
     },
     {
-      "class": "compat-list",
+      "class": "comparison-table",
       "pages": 1,
       "occurrences": 1
     },
@@ -2806,11 +3544,6 @@
     },
     {
       "class": "discord-context-tabs",
-      "pages": 1,
-      "occurrences": 1
-    },
-    {
-      "class": "editorial-note",
       "pages": 1,
       "occurrences": 1
     },
@@ -2885,6 +3618,161 @@
       "occurrences": 1
     },
     {
+      "class": "emoji-search-input",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "emoji-search-row",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-caption-card",
+      "pages": 1,
+      "occurrences": 8
+    },
+    {
+      "class": "etg-caption-copy",
+      "pages": 1,
+      "occurrences": 8
+    },
+    {
+      "class": "etg-caption-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-caption-text",
+      "pages": 1,
+      "occurrences": 8
+    },
+    {
+      "class": "etg-deco-tabs-hidden",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-library-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-mode-btn",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "etg-mode-row",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-optional-badge",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-output-toggle",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-output-toggle-label",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-output-toggle-row",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-pairs-label",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-rhetoric-card",
+      "pages": 1,
+      "occurrences": 4
+    },
+    {
+      "class": "etg-rhetoric-grid",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-step",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-step-details-body",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-step-legend",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-step-secondary",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-step-summary",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-toggle-btn",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "etg-tone-btn",
+      "pages": 1,
+      "occurrences": 2
+    },
+    {
+      "class": "etg-tone-label",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-tone-row",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-usecase-chip",
+      "pages": 1,
+      "occurrences": 8
+    },
+    {
+      "class": "etg-usecase-chips",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "etg-vs-good",
+      "pages": 1,
+      "occurrences": 5
+    },
+    {
+      "class": "etg-vs-row",
+      "pages": 1,
+      "occurrences": 4
+    },
+    {
+      "class": "etg-vs-weak",
+      "pages": 1,
+      "occurrences": 3
+    },
+    {
       "class": "ex-variant",
       "pages": 1,
       "occurrences": 49
@@ -2932,7 +3820,7 @@
     {
       "class": "filter-label",
       "pages": 1,
-      "occurrences": 3
+      "occurrences": 4
     },
     {
       "class": "footer-link",
@@ -2980,12 +3868,17 @@
       "occurrences": 3
     },
     {
-      "class": "inventory-copy",
+      "class": "inventory-clear-btn",
       "pages": 1,
-      "occurrences": 2
+      "occurrences": 3
     },
     {
-      "class": "inventory-copy--tight",
+      "class": "inventory-copy",
+      "pages": 1,
+      "occurrences": 1
+    },
+    {
+      "class": "inventory-module-tabs",
       "pages": 1,
       "occurrences": 1
     },
@@ -3123,6 +4016,11 @@
       "class": "mode-panel",
       "pages": 1,
       "occurrences": 2
+    },
+    {
+      "class": "mode-toggle-row",
+      "pages": 1,
+      "occurrences": 1
     },
     {
       "class": "notfound-char-count",
@@ -3478,7 +4376,7 @@
   "repeatedPatterns": [
     {
       "pattern": "display:none; visibility:hidden",
-      "count": 87,
+      "count": 153,
       "risk": "high",
       "suggestedUtility": "u-hidden (verify JS toggling first)"
     },
@@ -3531,12 +4429,6 @@
       "suggestedUtility": "u-mt-*"
     },
     {
-      "pattern": "display:none",
-      "count": 4,
-      "risk": "high",
-      "suggestedUtility": "u-hidden (verify JS toggling first)"
-    },
-    {
       "pattern": "font-size:1.35rem",
       "count": 4,
       "risk": "low",
@@ -3561,6 +4453,12 @@
       "suggestedUtility": "(propose a utility/component class)"
     },
     {
+      "pattern": "display:none",
+      "count": 3,
+      "risk": "high",
+      "suggestedUtility": "u-hidden (verify JS toggling first)"
+    },
+    {
       "pattern": "color:var(--text-secondary); font-size:0.925rem; margin-bottom:0.75rem",
       "count": 3,
       "risk": "medium",
@@ -3570,19 +4468,19 @@
   "propertyFrequency": [
     {
       "property": "display",
-      "count": 93
+      "count": 158
     },
     {
       "property": "visibility",
-      "count": 87
+      "count": 153
+    },
+    {
+      "property": "color",
+      "count": 32
     },
     {
       "property": "gap",
       "count": 32
-    },
-    {
-      "property": "color",
-      "count": 31
     },
     {
       "property": "align-items",
@@ -3598,7 +4496,7 @@
     },
     {
       "property": "font-size",
-      "count": 23
+      "count": 24
     },
     {
       "property": "max-width",
@@ -3606,11 +4504,11 @@
     },
     {
       "property": "margin-top",
-      "count": 15
+      "count": 16
     },
     {
       "property": "margin",
-      "count": 14
+      "count": 15
     },
     {
       "property": "font-weight",
@@ -3622,7 +4520,7 @@
     },
     {
       "property": "padding",
-      "count": 8
+      "count": 9
     },
     {
       "property": "text-align",
@@ -5656,5 +6554,5 @@
       "snippet": "class=\"preview-name\""
     }
   ],
-  "jsStrictTokenCount": 235
+  "jsStrictTokenCount": 252
 }
