@@ -1,0 +1,81 @@
+{
+  "_comment": "TEMPLATE / EXAMPLE spec. Copy to <slug>.json, fill in real data, run scripts/generate_library_page_from_spec.py. The leading underscore keeps this from being mistaken for a real spec. Do NOT generate a page from this file.",
+  "slug": "example-symbols",
+  "title": "Example Symbols: Copy & Paste Reference",
+  "meta_description": "Browse and copy example Unicode symbols. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/example-symbols/",
+  "breadcrumb": "Example Symbols",
+  "hero_h1": "Example Symbols",
+  "hero_tagline": "A reference collection of example Unicode symbols. Click any symbol to copy it instantly.",
+  "intro": "This page demonstrates the JSON spec shape consumed by generate_library_page_from_spec.py. Replace every field with real, researched content before generating.",
+  "date_published": "2026-01-01",
+  "date_modified": "2026-01-01",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "section-one",
+      "label": "Group One",
+      "h2": "First Symbol Group",
+      "intro": "Short description of what this group contains and when to use it.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✦", "label": "Black Four Pointed Star" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "✪", "label": "Circled White Star" },
+        { "char": "✩", "label": "Stress Outlined White Star" }
+      ]
+    },
+    {
+      "id": "section-two",
+      "label": "Group Two",
+      "h2": "Second Symbol Group",
+      "intro": "Another themed grouping of related characters.",
+      "symbols": [
+        { "char": "❂", "label": "Circled Open Centre Eight Pointed Star" },
+        { "char": "✯", "label": "Pinwheel Star" },
+        { "char": "✫", "label": "Open Centre Black Star" },
+        { "char": "✬", "label": "Black Centre White Star" }
+      ]
+    },
+    {
+      "id": "section-three",
+      "label": "Group Three",
+      "h2": "Third Symbol Group",
+      "intro": "A third section so the page has the required minimum of three H2 headings.",
+      "symbols": [
+        { "char": "⭐", "label": "Star Emoji" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💫", "label": "Dizzy" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "collections",
+    "label": "Collections",
+    "h2": "Symbol Sets",
+    "intro": "Used only when copy_pattern is 'collection'. Copy a full set at once."
+  },
+  "collection_container_id": "exampleCollectionsContainer",
+  "collections": [
+    {
+      "name": "Classic Stars",
+      "flags": ["★", "☆", "✦", "✧"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkles, glitter, and shine characters for aesthetic text."
+    }
+  ]
+}
