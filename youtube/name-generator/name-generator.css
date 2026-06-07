@@ -1,0 +1,119 @@
+.tng-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.tng-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tng-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tng-field input {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  background: var(--bg-white);
+  color: var(--text-primary);
+}
+
+.tng-vibes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tng-vibe {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.tng-vibe.active {
+  border-color: rgba(139, 92, 246, 0.35);
+  background: rgba(139, 92, 246, 0.08);
+  color: var(--text-primary);
+}
+
+.tng-note {
+  margin-top: 14px;
+}
+
+.tng-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.tng-card {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-white);
+  padding: 12px;
+}
+
+.tng-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tng-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tng-meta.char-warning {
+  font-weight: 700;
+}
+
+.tng-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tng-empty {
+  border: 1px dashed var(--border-light);
+  border-radius: 10px;
+  padding: 16px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .tng-vibes {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  #tngGenerate {
+    position: sticky;
+    bottom: 16px;
+    z-index: 20;
+  }
+
+  .tng-results {
+    grid-template-columns: 1fr;
+  }
+}
