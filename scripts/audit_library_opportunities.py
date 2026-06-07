@@ -58,6 +58,28 @@ DATA_SYMBOL_RE = re.compile(r'data-symbol="([^"]+)"')
 # Matches "U+2600..U+26FF" or "U+2600" inside a unicode_blocks free-text field.
 RANGE_RE = re.compile(r"U\+([0-9A-Fa-f]{1,6})(?:\s*\.\.\s*U\+([0-9A-Fa-f]{1,6}))?")
 
+# Forum-evidence scoring scale (also documented in
+# docs/unicode-forum-research-skill.md). Feeds priority_score.
+FORUM_EVIDENCE_SCORE = {
+    "none": 0,
+    "weak": 10,
+    "medium": 15,
+    "strong": 25,
+}
+
+# Intent-overlap similarity at/above this threshold is treated as a strong
+# duplicate-risk signal, even without an exact slug/title match.
+STRONG_OVERLAP_THRESHOLD = 0.6
+
+
+def forum_evidence_score(value):
+    """Map a forum_evidence label to its numeric score (unknown -> 0)."""
+    return FORUM_EVIDENCE_SCORE.get((value or "").strip().lower(), 0)
+
+
+def is_blank(value):
+    return value is None or str(value).strip() == ""
+
 
 def normalize(text):
     """Lowercase, strip HTML entities/punctuation, collapse whitespace."""
@@ -212,12 +234,26 @@ def main():
         "flag_dup_title",
         "flag_intent_overlap",
         "flag_blocks_covered",
+        "flag_missing_forum_evidence",
+        "flag_missing_search_volume",
+        "flag_low_demand_confidence",
+        "flag_strong_duplicate_risk",
+        "forum_evidence_score",
         "audit_notes",
         "audit_verdict",
     ]
 
     rows_out = []
-    counts = {"dup_slug": 0, "dup_title": 0, "intent_overlap": 0, "blocks_covered": 0}
+    counts = {
+        "dup_slug": 0,
+        "dup_title": 0,
+        "intent_overlap": 0,
+        "blocks_covered": 0,
+        "missing_forum_evidence": 0,
+        "missing_search_volume": 0,
+        "low_demand_confidence": 0,
+        "strong_duplicate_risk": 0,
+    }
 
     for opp in opportunities:
         slug = (opp.get("slug") or "").strip()
@@ -273,11 +309,52 @@ def main():
             notes.append(f"{len(block_reasons)} declared block(s) already covered")
             counts["blocks_covered"] += 1
 
+        # 5. Missing / weak forum evidence
+        evidence_raw = (opp.get("forum_evidence") or "").strip().lower()
+        ev_score = forum_evidence_score(evidence_raw)
+        # "Missing" means absent, blank, or explicitly 'none'.
+        missing_forum = "yes" if evidence_raw in ("", "none") else "no"
+        if missing_forum == "yes":
+            notes.append("no forum evidence captured")
+            counts["missing_forum_evidence"] += 1
+
+        # 6. Missing search volume (blank or non-numeric)
+        sv_raw = (opp.get("search_volume") or "").strip().replace(",", "")
+        missing_sv = "no"
+        if is_blank(sv_raw):
+            missing_sv = "yes"
+        else:
+            try:
+                float(sv_raw)
+            except ValueError:
+                missing_sv = "yes"
+        if missing_sv == "yes":
+            notes.append("search volume missing or non-numeric")
+            counts["missing_search_volume"] += 1
+
+        # 7. Low demand confidence
+        confidence = (opp.get("demand_confidence") or "").strip().lower()
+        low_conf = "yes" if confidence == "low" else "no"
+        if low_conf == "yes":
+            notes.append("demand confidence is low")
+            counts["low_demand_confidence"] += 1
+
+        # 8. Strong duplicate risk: exact slug/title match OR a high
+        #    intent-overlap score against an existing page.
+        strong_overlap = any(sc >= STRONG_OVERLAP_THRESHOLD for _, sc in overlap_hits)
+        strong_dup = "yes" if (dup_slug == "yes" or dup_title == "yes"
+                               or strong_overlap) else "no"
+        if strong_dup == "yes":
+            notes.append("strong duplicate risk")
+            counts["strong_duplicate_risk"] += 1
+
         # Verdict
         if dup_slug == "yes" or dup_title == "yes":
             verdict = "reject-duplicate"
-        elif overlap_hits or block_reasons:
+        elif strong_overlap or block_reasons or overlap_hits:
             verdict = "review-overlap"
+        elif missing_forum == "yes" or missing_sv == "yes" or low_conf == "yes":
+            verdict = "needs-research"
         else:
             verdict = "clear"
 
@@ -286,6 +363,11 @@ def main():
         out["flag_dup_title"] = dup_title
         out["flag_intent_overlap"] = intent_overlap
         out["flag_blocks_covered"] = blocks_covered
+        out["flag_missing_forum_evidence"] = missing_forum
+        out["flag_missing_search_volume"] = missing_sv
+        out["flag_low_demand_confidence"] = low_conf
+        out["flag_strong_duplicate_risk"] = strong_dup
+        out["forum_evidence_score"] = ev_score
         out["audit_notes"] = "; ".join(notes)
         out["audit_verdict"] = verdict
         rows_out.append(out)
@@ -299,11 +381,16 @@ def main():
     print(f"Audited {len(opportunities)} opportunit(ies) against "
           f"{len(pages)} existing library pages "
           f"and {len(categories)} catalog blocks.")
-    print("Flags: "
+    print("Dedupe flags: "
           f"dup_slug={counts['dup_slug']}, "
           f"dup_title={counts['dup_title']}, "
           f"intent_overlap={counts['intent_overlap']}, "
+          f"strong_duplicate_risk={counts['strong_duplicate_risk']}, "
           f"blocks_covered={counts['blocks_covered']}")
+    print("Research flags: "
+          f"missing_forum_evidence={counts['missing_forum_evidence']}, "
+          f"missing_search_volume={counts['missing_search_volume']}, "
+          f"low_demand_confidence={counts['low_demand_confidence']}")
     print(f"Wrote {AUDIT_OUT.relative_to(REPO)}")
     return 0
 

@@ -1,13 +1,31 @@
 id,seed_topic,forum_query,platform,intent_type,notes
-FRQ-0001,unicode symbols,site:reddit.com unicode symbols,reddit,discovery,Broad sweep for symbol discussions and requests.
-FRQ-0002,copy paste symbols,site:reddit.com copy paste symbols,reddit,find-and-copy,Surfaces threads where users hunt for copyable characters.
-FRQ-0003,aesthetic symbols,site:reddit.com aesthetic symbols,reddit,decorate-profile,Aesthetic/bio styling intent; strong for coquette/kawaii pages.
-FRQ-0004,username symbols,site:reddit.com username symbols,reddit,decorate-username,Gamer/social username decoration intent.
-FRQ-0005,discord symbols,site:reddit.com discord symbols,reddit,platform-specific,Discord-flavored symbol requests and name fonts.
-FRQ-0006,instagram bio symbols,site:reddit.com instagram bio symbols,reddit,decorate-profile,IG bio dividers and aesthetic marks.
-FRQ-0007,heart symbols,site:reddit.com heart symbols copy paste,reddit,find-and-copy,Heart variants demand; map to heart-symbols page.
-FRQ-0008,arrow symbols,site:reddit.com arrow symbols copy paste,reddit,find-and-copy,Arrow block demand; map to arrow-symbols page.
-FRQ-0009,text dividers,site:reddit.com text dividers copy paste,reddit,decorate-profile,Divider/border demand; map to line-divider-symbols page.
-FRQ-0010,unicode symbols,site:quora.com how to type unicode symbols,quora,how-to,How-to intent; candidate for guide vs library decision.
-FRQ-0011,special characters,"site:superuser.com OR site:apple.stackexchange.com special characters keyboard",stackexchange,how-to,Niche forum how-to; usually a guide, not a library page.
-FRQ-0012,fancy text,"site:reddit.com OR site:quora.com fancy text generator",mixed,decorate-profile,Validates generator demand vs static symbol demand.
+FRQ-0001,heart symbols,site:reddit.com heart symbols copy paste,reddit,find-and-copy,Heart variants demand; map to heart-symbols page.
+FRQ-0002,heart symbols,site:quora.com how to type heart symbol on keyboard,quora,how-to,How-to phrasing; validates demand but leans guide.
+FRQ-0003,heart symbols,site:stackexchange.com heart unicode character,stackexchange,how-to,Technical input-method threads; supporting evidence only.
+FRQ-0004,star symbols,site:reddit.com star symbols copy paste,reddit,find-and-copy,Outline vs emoji stars; bio/username decoration.
+FRQ-0005,star symbols,site:quora.com aesthetic star symbols for bio,quora,decorate-profile,Aesthetic intent; mirror user wording in copy.
+FRQ-0006,star symbols,site:github.com star symbols unicode list,github,find-and-copy,Gists/READMEs listing star glyphs confirm copy demand.
+FRQ-0007,arrow symbols,site:reddit.com arrow symbols copy paste,reddit,find-and-copy,Arrow block demand; map to arrow-symbols page.
+FRQ-0008,arrow symbols,site:quora.com arrow symbol text copy,quora,find-and-copy,Directional arrow requests.
+FRQ-0009,arrow symbols,site:stackexchange.com arrow unicode character list,stackexchange,how-to,TeX/Unicode arrow references; supporting evidence.
+FRQ-0010,arrow symbols,site:github.com arrow unicode cheatsheet,github,find-and-copy,Cheatsheets indicate reusable copy lists.
+FRQ-0011,aesthetic symbols,site:reddit.com aesthetic symbols copy paste,reddit,decorate-profile,Aesthetic/bio styling; strong for coquette/kawaii.
+FRQ-0012,aesthetic symbols,site:quora.com aesthetic symbols for instagram,quora,decorate-profile,Cross-checks platform decoration intent.
+FRQ-0013,instagram bio symbols,site:reddit.com instagram bio symbols,reddit,decorate-profile,IG bio dividers and aesthetic marks.
+FRQ-0014,instagram bio symbols,site:quora.com how do people get symbols in their instagram bio,quora,decorate-profile,Captures exact user phrasing for titles.
+FRQ-0015,discord name symbols,site:reddit.com discord name symbols,reddit,decorate-username,Discord username/name font requests.
+FRQ-0016,discord name symbols,site:quora.com cool symbols for discord name,quora,decorate-username,Confirms username decoration demand.
+FRQ-0017,discord name symbols,site:github.com discord username symbols list,github,find-and-copy,Bot/README symbol lists for Discord names.
+FRQ-0018,text dividers,site:reddit.com text dividers copy paste,reddit,decorate-profile,Divider/border demand; map to line-divider-symbols.
+FRQ-0019,text dividers,site:quora.com aesthetic divider symbols for bio,quora,decorate-profile,Bio separator phrasing.
+FRQ-0020,text dividers,site:github.com text divider unicode snippet,github,decorate-profile,README divider snippets confirm reuse.
+FRQ-0021,bracket symbols,site:reddit.com bracket symbols copy paste,reddit,find-and-copy,Decorative/technical bracket variants.
+FRQ-0022,bracket symbols,site:quora.com fancy bracket symbols text,quora,decorate-profile,Decorative bracket framing for names.
+FRQ-0023,bracket symbols,site:stackexchange.com unicode bracket characters,stackexchange,how-to,Math/TeX bracket references; supporting evidence.
+FRQ-0024,bracket symbols,site:github.com unicode brackets list,github,find-and-copy,Glyph tables for brackets.
+FRQ-0025,cute symbols,site:reddit.com cute symbols copy paste,reddit,decorate-profile,Kawaii/cute decoration intent.
+FRQ-0026,cute symbols,site:quora.com cute symbols for username,quora,decorate-username,Cute username decoration phrasing.
+FRQ-0027,copy paste symbols,site:reddit.com copy paste symbols,reddit,find-and-copy,Broad copy-intent sweep across symbol families.
+FRQ-0028,copy paste symbols,site:quora.com where to copy paste symbols,quora,find-and-copy,Source-seeking phrasing; validates tool demand.
+FRQ-0029,copy paste symbols,site:stackexchange.com copy paste special characters,stackexchange,how-to,Input-method threads; supporting evidence.
+FRQ-0030,copy paste symbols,site:github.com copy paste unicode symbols readme,github,find-and-copy,READMEs/gists aggregating copyable symbols.

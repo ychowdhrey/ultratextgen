@@ -14,19 +14,29 @@ the discovery half in depth.
 
 ## Pipeline at a glance
 
+**Order matters: forum research comes first — before search volume and before
+any page spec is written.** Forum threads tell us a topic is real and in what
+words; only then is it worth pulling volume, and only after both do we score,
+dedupe, and spec a page.
+
 ```
-forum + keyword research
-        │
+1. forum research  (data/forum_research_queries.csv → forum_evidence)
+        │            qualitative demand + user language, captured FIRST
         ▼
+2. search volume   (keyword tooling → search_volume, demand_confidence)
+        │            quantitative demand, captured SECOND
+        ▼
+3. priority + dedupe
 data/library_opportunities.csv          ← one row per candidate page
         │
         ▼
 scripts/audit_library_opportunities.py  ← dedupe / overlap / block coverage
-        │   → data/library_opportunities_audit.csv
+        │   → data/library_opportunities_audit.csv   + research-gap flags
         ▼
 approve rows (approval_status = approved)
         │
         ▼
+4. page specs  (only for approved rows)
 data/library_page_specs/<slug>.json     ← one JSON spec per approved page
         │
         ▼
@@ -38,6 +48,10 @@ scripts/validate_library_pages.py       ← structural / SEO lint
         ▼
 batch PR → human review → merge
 ```
+
+A row must have `forum_evidence` and `search_volume` filled in **before** it
+is eligible for a page spec. The auditor enforces this by flagging
+`missing_forum_evidence` and `missing_search_volume`.
 
 ---
 
@@ -87,6 +101,36 @@ Attach a `search_volume` figure and derive `demand_confidence`
    - `low` — speculative; weak evidence and thin volume.
 
 Do **not** approve a page that is `low` confidence with `weak`/`none` evidence.
+
+---
+
+## 3a. Priority scoring
+
+Each opportunity gets a `priority_score` so a batch can be ranked. It is the
+sum of five component scores:
+
+```
+priority_score = search_volume_score
+               + forum_evidence_score
+               + copy_usefulness_score
+               + dedupe_score
+               + symbol_depth_score
+```
+
+| Component               | What it rewards                                              | Suggested range |
+|-------------------------|-------------------------------------------------------------|-----------------|
+| `search_volume_score`   | Monthly search demand, bucketed (higher volume → higher).   | 0–25            |
+| `forum_evidence_score`  | Forum proof: `none=0`, `weak=10`, `medium=15`, `strong=25`. | 0–25            |
+| `copy_usefulness_score` | How copy-friendly the symbols are (single-click value, real-world paste use). | 0–25 |
+| `dedupe_score`          | Uniqueness: `unique` high; `improve-existing`/`fold` low; `duplicate` 0. | 0–20 |
+| `symbol_depth_score`    | How many distinct, page-worthy symbols the topic supports.  | 0–15            |
+
+`forum_evidence_score` is computed by the auditor from the `forum_evidence`
+label using the scale above (single source of truth:
+`FORUM_EVIDENCE_SCORE` in `scripts/audit_library_opportunities.py`). The other
+four components are graded by the researcher; record the breakdown in `notes`
+so the total is auditable. Rank the batch by `priority_score` descending and
+spec the top rows first.
 
 ---
 
@@ -165,24 +209,39 @@ python3 scripts/audit_library_opportunities.py
 ```
 
 It cross-references each opportunity against the published `/library/` pages
-and `data/categories.yaml` and flags:
+and `data/categories.yaml`. **Dedupe / coverage flags:**
 
 - `flag_dup_slug` — slug already exists as a page.
 - `flag_dup_title` — title matches an existing page's `<title>`.
 - `flag_intent_overlap` — keyword/title tokens overlap an existing page
   (likely the same search intent).
+- `flag_strong_duplicate_risk` — exact slug/title match **or** a high
+  intent-overlap score; treat as a near-certain duplicate.
 - `flag_blocks_covered` — declared Unicode block(s) already represented by an
   existing page or a `has_page` catalog entry.
 
+**Research-gap flags** (forum-research fields are required before approval):
+
+- `flag_missing_forum_evidence` — `forum_evidence` is blank or `none`.
+- `flag_missing_search_volume` — `search_volume` is blank or non-numeric.
+- `flag_low_demand_confidence` — `demand_confidence` is `low`.
+
+The auditor also emits the numeric `forum_evidence_score` (`none=0`, `weak=10`,
+`medium=15`, `strong=25`) used by `priority_score`.
+
 Each row gets an `audit_verdict`:
 
-- `reject-duplicate` — resolve before proceeding (drop, or differentiate).
-- `review-overlap` — decide page vs. section (see skill doc, Section 5); if it
-  should fold into an existing page, set `dedupe_status = fold-into:<slug>`.
+- `reject-duplicate` — slug/title already exists; resolve before proceeding
+  (drop, or switch to **improve existing**).
+- `review-overlap` — intent/block overlap; decide create vs. improve vs. skip
+  (see skill doc, Sections 5 / 5a). If it should fold into an existing page,
+  set `dedupe_status = fold-into:<slug>` or `improve-existing:<slug>`.
+- `needs-research` — missing forum evidence, missing search volume, or low
+  demand confidence; go back and finish the research before approving.
 - `clear` — safe to spec and generate.
 
-Only flip `approval_status` to `approved` once the verdict is `clear` (or the
-overlap has been consciously resolved).
+Only flip `approval_status` to `approved` once the verdict is `clear` (or an
+overlap/research gap has been consciously resolved).
 
 ---
 
