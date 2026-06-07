@@ -1,0 +1,77 @@
+{
+  "slug": "tech-status-symbols",
+  "title": "Tech & Status Symbols: Copy & Paste 📶 🔋 ⏻ Wi-Fi, Battery & Power",
+  "meta_description": "Copy and paste tech status symbols — Wi-Fi and signal (📶), battery and power (🔋 ⏻), and sound and notification glyphs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/tech-status-symbols/",
+  "breadcrumb": "Tech & Status Symbols",
+  "hero_h1": "Tech & Status Symbols",
+  "hero_tagline": "Signal bars, battery, power, and notification glyphs — the status-bar icons of digital life. Click any symbol to copy it instantly.",
+  "intro": "The icons that fill a phone or laptop status bar have Unicode equivalents you can drop into text. This library gathers connectivity and signal glyphs, power and battery indicators including the standard IEC power symbol (⏻), and the sound and notification icons used across apps. Click any character to copy it for UI mockups, bios, captions, or status updates.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "connectivity-signal",
+      "label": "Connectivity",
+      "h2": "Connectivity & Signal",
+      "intro": "Wireless, signal, and network glyphs for status bars and connection states.",
+      "symbols": [
+        { "char": "📶", "label": "Antenna Bars (signal strength)" },
+        { "char": "🛜", "label": "Wireless (Wi-Fi)" },
+        { "char": "📡", "label": "Satellite Antenna" },
+        { "char": "📲", "label": "Mobile Phone with Arrow" },
+        { "char": "🌐", "label": "Globe with Meridians" },
+        { "char": "📳", "label": "Vibration Mode" },
+        { "char": "📴", "label": "Mobile Phone Off" }
+      ]
+    },
+    {
+      "id": "power-battery",
+      "label": "Power",
+      "h2": "Power & Battery",
+      "intro": "Battery, plug, and the IEC standard power-control glyphs.",
+      "symbols": [
+        { "char": "🔋", "label": "Battery" },
+        { "char": "🪫", "label": "Low Battery" },
+        { "char": "🔌", "label": "Electric Plug" },
+        { "char": "⚡", "label": "High Voltage (charging)" },
+        { "char": "⏻", "label": "Power Symbol" },
+        { "char": "⏼", "label": "Power On-Off Symbol" },
+        { "char": "⏽", "label": "Power On Symbol" }
+      ]
+    },
+    {
+      "id": "sound-notifications",
+      "label": "Sound & Alerts",
+      "h2": "Sound & Notifications",
+      "intro": "Volume, mute, and notification glyphs for media and alert states.",
+      "symbols": [
+        { "char": "🔇", "label": "Muted Speaker" },
+        { "char": "🔈", "label": "Speaker Low Volume" },
+        { "char": "🔉", "label": "Speaker Medium Volume" },
+        { "char": "🔊", "label": "Speaker High Volume" },
+        { "char": "🔔", "label": "Bell" },
+        { "char": "🔕", "label": "Bell with Slash (muted)" },
+        { "char": "📣", "label": "Megaphone" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/discord-symbols/",
+      "title": "Discord Symbols",
+      "desc": "Symbols and glyphs that render cleanly in Discord names and messages."
+    },
+    {
+      "href": "/library/instagram-symbols/",
+      "title": "Instagram Symbols",
+      "desc": "Symbols and characters that stand out in Instagram bios and captions."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}

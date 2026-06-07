@@ -1,0 +1,79 @@
+{
+  "slug": "unit-measurement-symbols",
+  "title": "Unit & Measurement Symbols: Copy & Paste Ω µ Å ℧ Scientific Units",
+  "meta_description": "Copy and paste scientific unit and measurement symbols — ohm (Ω), micro (µ), angstrom (Å), mho (℧), metric squares, and per-mille marks. Click to copy instantly.",
+  "canonical": "https://ultratextgen.com/library/unit-measurement-symbols/",
+  "breadcrumb": "Unit & Measurement Symbols",
+  "hero_h1": "Unit & Measurement Symbols",
+  "hero_tagline": "Ohm, micro, angstrom, and the full set of scientific unit glyphs for physics, chemistry, and engineering. Click any symbol to copy it instantly.",
+  "intro": "Scientific and engineering writing relies on dedicated Unicode unit symbols that ordinary keyboards do not provide. This library gathers the electrical and physics signs such as the ohm (Ω), micro (µ), mho (℧), and angstrom (Å); the pre-composed metric squares from the CJK Compatibility block like ㎏ and ㎜; and the temperature and ratio marks used for measurements. Click any character to copy it for lab reports, datasheets, or technical posts.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "electrical-physics-units",
+      "label": "Physics",
+      "h2": "Electrical & Physics Units",
+      "intro": "Dedicated single-character signs for resistance, conductance, and atomic-scale measurement.",
+      "symbols": [
+        { "char": "Ω", "label": "Ohm Sign" },
+        { "char": "µ", "label": "Micro Sign" },
+        { "char": "℧", "label": "Inverted Ohm Sign (mho / siemens)" },
+        { "char": "Å", "label": "Angstrom Sign" },
+        { "char": "ℏ", "label": "Planck Constant Over Two Pi" },
+        { "char": "ℓ", "label": "Script Small L (litre)" },
+        { "char": "℮", "label": "Estimated Sign" }
+      ]
+    },
+    {
+      "id": "metric-unit-squares",
+      "label": "Metric Squares",
+      "h2": "SI Metric Unit Squares",
+      "intro": "Pre-composed metric units from the CJK Compatibility block that fit a single character cell.",
+      "symbols": [
+        { "char": "㎏", "label": "Square Kg (kilogram)" },
+        { "char": "㎜", "label": "Square Mm (millimetre)" },
+        { "char": "㎝", "label": "Square Cm (centimetre)" },
+        { "char": "㎞", "label": "Square Km (kilometre)" },
+        { "char": "㎡", "label": "Square M Squared (square metre)" },
+        { "char": "㎥", "label": "Square M Cubed (cubic metre)" },
+        { "char": "㎒", "label": "Square Mhz (megahertz)" },
+        { "char": "㎓", "label": "Square Ghz (gigahertz)" },
+        { "char": "㏄", "label": "Square Cc (cubic centimetre)" }
+      ]
+    },
+    {
+      "id": "temperature-ratio-marks",
+      "label": "Temperature & Ratio",
+      "h2": "Temperature & Ratio Marks",
+      "intro": "Temperature-scale signs and the prime and ratio characters used in measurement notation.",
+      "symbols": [
+        { "char": "℃", "label": "Degree Celsius" },
+        { "char": "℉", "label": "Degree Fahrenheit" },
+        { "char": "K", "label": "Kelvin Sign" },
+        { "char": "′", "label": "Prime (feet / arcminutes)" },
+        { "char": "″", "label": "Double Prime (inches / arcseconds)" },
+        { "char": "‰", "label": "Per Mille Sign" },
+        { "char": "‱", "label": "Per Ten Thousand Sign" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, roots, and infinity signs."
+    },
+    {
+      "href": "/library/degree-symbol/",
+      "title": "Degree Symbol",
+      "desc": "The degree sign with temperature, angle, and prime characters."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Dollar, euro, pound, yen, and dozens more world currency signs."
+    }
+  ]
+}
