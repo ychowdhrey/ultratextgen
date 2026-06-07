@@ -829,7 +829,20 @@ def main():
             write_to=os.path.join(OG, f"{slug}.png"),
             output_width=1200, output_height=630)
         n += 1
+
+    # Homepage social card. The root index.html (and every localized homepage)
+    # references /og.png, so this single card backs all of them. It lives at the
+    # repo root rather than assets/og/ to match the existing og:image URL.
+    cairosvg.svg2png(
+        bytestring=og_png_svg(
+            "home", "Fancy Text Generator",
+            "60+ Unicode fonts to copy and paste anywhere",
+            m_brand, K_SITE).encode(),
+        write_to=os.path.join(ROOT, "og.png"),
+        output_width=1200, output_height=630)
+
     print(f"wrote {n} hero SVGs to assets/hero/ and {n} OG PNGs to assets/og/")
+    print("wrote homepage social card to og.png")
 
 
 if __name__ == "__main__":

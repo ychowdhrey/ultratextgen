@@ -70,10 +70,6 @@ def main():
             noart += 1
             continue
 
-        if "data-uthero" in html:
-            skipped += 1
-            continue
-
         og_url = f"{BASE}/assets/og/{slug}.png"
 
         # 1+2. line-scoped image swaps (og:image / twitter:image / JSON-LD image)
@@ -88,6 +84,13 @@ def main():
             swapped += 1
         html = new
 
+        # Strip any previously-wired figure so its placement is recomputed.
+        # Keeps the script idempotent *and* corrective when placement rules change.
+        had_figure = "data-uthero" in html
+        html = re.sub(
+            r'\n?<figure class="page-hero-figure" data-uthero>.*?</figure>\n?',
+            '\n', html, flags=re.S)
+
         # 3. insert hero figure
         alt = "Decorative typographic illustration for this page."
         ti = re.search(r'<title>(.*?)</title>', html, re.S)
@@ -96,7 +99,19 @@ def main():
             t = re.sub(r'<[^>]+>', '', t).replace("&amp;", "&")
             if t:
                 alt = f"Illustration representing {t}."
-        pos = find_hero_close(html)
+
+        # Generator pages carry the live tool (textarea#mainInput) inside the
+        # hero, so a figure placed *after* the hero lands below the whole tool.
+        # For those, anchor the illustration *above* the hero so it reads as a
+        # top-of-page banner. Pure content pages keep the figure under the hero.
+        is_generator = bool(re.search(r'id="mainInput"', html))
+        if is_generator:
+            hm = re.search(
+                r'[ \t]*(?:<!--[^>]*-->\s*)?<section[^>]*class="[^"]*\bhero\b[^"]*"',
+                html)
+            pos = hm.start() if hm else None
+        else:
+            pos = find_hero_close(html)
         if pos is None:
             mm = re.search(r'<main\b', html)
             pos = mm.start() if mm else None
@@ -108,6 +123,8 @@ def main():
         else:
             html = html[:pos] + figure_block(slug, alt) + html[pos:]
             inserted += 1
+            if had_figure:
+                skipped += 1
 
         open(path, "w", encoding="utf-8").write(html)
 
