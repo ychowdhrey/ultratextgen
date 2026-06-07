@@ -1,0 +1,74 @@
+{
+  "slug": "media-control-symbols",
+  "title": "Media Control Symbols: Copy & Paste ▶ ⏸ ⏹ Play, Pause, Power",
+  "meta_description": "Copy and paste media control symbols — play, pause, stop, record, skip, fast-forward, eject, and power buttons. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/media-control-symbols/",
+  "breadcrumb": "Media Control Symbols",
+  "hero_h1": "Media Control Symbols",
+  "hero_tagline": "Play, pause, stop, skip, eject, and power buttons — the full media-transport set. Click any symbol to copy it instantly.",
+  "intro": "Media control symbols are the universal buttons for playback and power. This library collects the play, pause, stop, and record glyphs, the skip, seek, fast-forward, and eject controls, and the IEC power symbols used on switches and devices — all plain Unicode characters you can copy into interfaces, docs, and posts.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "playback-controls",
+      "label": "Playback",
+      "h2": "Playback Controls",
+      "intro": "The core transport buttons for playing, pausing, stopping, and recording.",
+      "symbols": [
+        { "char": "▶", "label": "Black Right-Pointing Triangle (Play)" },
+        { "char": "⏸", "label": "Double Vertical Bar (Pause)" },
+        { "char": "⏹", "label": "Black Square for Stop" },
+        { "char": "⏺", "label": "Black Circle for Record" },
+        { "char": "⏯", "label": "Play or Pause Symbol" },
+        { "char": "◀", "label": "Black Left-Pointing Triangle (Reverse)" }
+      ]
+    },
+    {
+      "id": "skip-seek-eject",
+      "label": "Skip & Seek",
+      "h2": "Skip, Seek & Eject",
+      "intro": "Track navigation, fast-forward, rewind, and eject controls.",
+      "symbols": [
+        { "char": "⏭", "label": "Next Track" },
+        { "char": "⏮", "label": "Previous Track" },
+        { "char": "⏩", "label": "Fast-Forward" },
+        { "char": "⏪", "label": "Rewind" },
+        { "char": "⏫", "label": "Fast Up" },
+        { "char": "⏬", "label": "Fast Down" },
+        { "char": "⏏", "label": "Eject Symbol" }
+      ]
+    },
+    {
+      "id": "power-symbols",
+      "label": "Power",
+      "h2": "Power & Standby Symbols",
+      "intro": "The IEC 60417 power, standby, and sleep symbols used on devices.",
+      "symbols": [
+        { "char": "⏻", "label": "Power Symbol" },
+        { "char": "⏼", "label": "Power On-Off Symbol" },
+        { "char": "⏽", "label": "Power On Symbol" },
+        { "char": "⏾", "label": "Power Sleep Symbol" },
+        { "char": "⭘", "label": "Heavy Circle (Power Off)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "Directional arrows, triangles, and pointer characters to copy and paste."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Triangles, squares, circles, and other geometric shapes in Unicode."
+    },
+    {
+      "href": "/library/tech-status-symbols/",
+      "title": "Tech & Status Symbols",
+      "desc": "Battery, signal, and device status symbols to copy and paste."
+    }
+  ]
+}
