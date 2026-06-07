@@ -1,0 +1,104 @@
+{
+  "slug": "copyright-trademark-symbols",
+  "title": "Copyright, Trademark & Legal Symbols: Copy & Paste © ® ™",
+  "meta_description": "Copy and paste copyright, registered, trademark, and other legal Unicode symbols — ©, ®, ™, ℠, ℗, and more. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/copyright-trademark-symbols/",
+  "breadcrumb": "Copyright, Trademark & Legal Symbols",
+  "hero_h1": "Copyright, Trademark & Legal Symbols",
+  "hero_tagline": "Every copyright, trademark, and intellectual-property symbol in Unicode — ©, ®, ™, ℠, ℗, and the office marks that go with them. Click any symbol to copy it instantly.",
+  "intro": "Legal and intellectual-property symbols mark ownership, registration, and rights. This library collects the copyright sign, registered trademark, trademark and service marks, and related office and numero marks so you can paste the correct character anywhere.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "copyright-registered",
+      "label": "Copyright",
+      "h2": "Copyright & Registered Symbols",
+      "intro": "The core ownership marks: copyright, registered trademark, sound-recording copyright, and circled letter variants.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "Copyright Sign"
+        },
+        {
+          "char": "®",
+          "label": "Registered Sign"
+        },
+        {
+          "char": "℗",
+          "label": "Sound Recording Copyright"
+        },
+        {
+          "char": "Ⓒ",
+          "label": "Circled Capital C"
+        },
+        {
+          "char": "Ⓡ",
+          "label": "Circled Capital R"
+        }
+      ]
+    },
+    {
+      "id": "trademark-service",
+      "label": "Trademark",
+      "h2": "Trademark & Service Marks",
+      "intro": "Trademark and service-mark signs used to denote brand and service identifiers.",
+      "symbols": [
+        {
+          "char": "™",
+          "label": "Trade Mark Sign"
+        },
+        {
+          "char": "℠",
+          "label": "Service Mark"
+        }
+      ]
+    },
+    {
+      "id": "office-numero",
+      "label": "Office Marks",
+      "h2": "Office & Numero Marks",
+      "intro": "Letterlike office abbreviations and the numero sign frequently paired with legal text.",
+      "symbols": [
+        {
+          "char": "№",
+          "label": "Numero Sign"
+        },
+        {
+          "char": "℅",
+          "label": "Care Of"
+        },
+        {
+          "char": "℀",
+          "label": "Account Of"
+        },
+        {
+          "char": "℁",
+          "label": "Addressed To The Subject"
+        },
+        {
+          "char": "℆",
+          "label": "Cada Una"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Dollar, euro, pound, yen, and every other Unicode currency sign."
+    },
+    {
+      "href": "/library/number-symbols/",
+      "title": "Number Symbols",
+      "desc": "Circled, superscript, Roman, and other Unicode number forms."
+    }
+  ]
+}

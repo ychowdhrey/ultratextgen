@@ -1,0 +1,132 @@
+{
+  "slug": "fraction-symbols",
+  "title": "Fraction Symbols: Copy & Paste ½ ⅓ ¼ Unicode Fractions",
+  "meta_description": "Copy and paste Unicode fraction symbols — halves, thirds, quarters, eighths, and more vulgar fractions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/fraction-symbols/",
+  "breadcrumb": "Fraction Symbols",
+  "hero_h1": "Fraction Symbols",
+  "hero_tagline": "Every precomposed Unicode fraction — halves, thirds, quarters, eighths, and beyond. Click any symbol to copy it instantly.",
+  "intro": "Vulgar (precomposed) fraction characters render a complete fraction in a single glyph. This library collects the common halves, thirds, and quarters along with eighths, fifths, sixths, sevenths, ninths, and more.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "common-fractions",
+      "label": "Common",
+      "h2": "Halves, Thirds & Quarters",
+      "intro": "The everyday fractions: halves, thirds, and quarters.",
+      "symbols": [
+        {
+          "char": "½",
+          "label": "One Half"
+        },
+        {
+          "char": "⅓",
+          "label": "One Third"
+        },
+        {
+          "char": "⅔",
+          "label": "Two Thirds"
+        },
+        {
+          "char": "¼",
+          "label": "One Quarter"
+        },
+        {
+          "char": "¾",
+          "label": "Three Quarters"
+        }
+      ]
+    },
+    {
+      "id": "eighths",
+      "label": "Eighths",
+      "h2": "Eighth Fractions",
+      "intro": "The four precomposed eighth fractions.",
+      "symbols": [
+        {
+          "char": "⅛",
+          "label": "One Eighth"
+        },
+        {
+          "char": "⅜",
+          "label": "Three Eighths"
+        },
+        {
+          "char": "⅝",
+          "label": "Five Eighths"
+        },
+        {
+          "char": "⅞",
+          "label": "Seven Eighths"
+        }
+      ]
+    },
+    {
+      "id": "other-fractions",
+      "label": "More",
+      "h2": "Fifths, Sixths & Other Fractions",
+      "intro": "Fifths, sixths, sevenths, ninths, tenths, and the zero-thirds sign.",
+      "symbols": [
+        {
+          "char": "⅕",
+          "label": "One Fifth"
+        },
+        {
+          "char": "⅖",
+          "label": "Two Fifths"
+        },
+        {
+          "char": "⅗",
+          "label": "Three Fifths"
+        },
+        {
+          "char": "⅘",
+          "label": "Four Fifths"
+        },
+        {
+          "char": "⅙",
+          "label": "One Sixth"
+        },
+        {
+          "char": "⅚",
+          "label": "Five Sixths"
+        },
+        {
+          "char": "⅐",
+          "label": "One Seventh"
+        },
+        {
+          "char": "⅑",
+          "label": "One Ninth"
+        },
+        {
+          "char": "⅒",
+          "label": "One Tenth"
+        },
+        {
+          "char": "↉",
+          "label": "Zero Thirds"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/number-symbols/",
+      "title": "Number Symbols",
+      "desc": "Circled, superscript, Roman, and other Unicode number forms."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, and comparison signs."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}

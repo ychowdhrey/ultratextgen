@@ -1,0 +1,100 @@
+{
+  "slug": "degree-symbol",
+  "title": "Degree Symbol: Copy & Paste ° Temperature & Angle Signs",
+  "meta_description": "Copy and paste the degree symbol (°) plus Celsius, Fahrenheit, Kelvin, angle, and prime signs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/degree-symbol/",
+  "breadcrumb": "Degree Symbol",
+  "hero_h1": "Degree Symbol",
+  "hero_tagline": "The degree sign (°) and every temperature, angle, and prime symbol that goes with it. Click any symbol to copy it instantly.",
+  "intro": "The degree symbol marks temperature, angles, and coordinates. This library gathers the degree sign alongside the Celsius, Fahrenheit, and Kelvin marks, angle and geometry signs, and the prime characters used for minutes and seconds.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "degree-temperature",
+      "label": "Degree",
+      "h2": "Degree & Temperature Signs",
+      "intro": "The degree sign and the dedicated temperature-scale characters.",
+      "symbols": [
+        {
+          "char": "°",
+          "label": "Degree Sign"
+        },
+        {
+          "char": "℃",
+          "label": "Degree Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Degree Fahrenheit"
+        },
+        {
+          "char": "K",
+          "label": "Kelvin Sign"
+        }
+      ]
+    },
+    {
+      "id": "angle-geometry",
+      "label": "Angles",
+      "h2": "Angle & Geometry Symbols",
+      "intro": "Angle and geometry signs commonly written with degree measurements.",
+      "symbols": [
+        {
+          "char": "∠",
+          "label": "Angle"
+        },
+        {
+          "char": "∡",
+          "label": "Measured Angle"
+        },
+        {
+          "char": "∟",
+          "label": "Right Angle"
+        },
+        {
+          "char": "⌀",
+          "label": "Diameter Sign"
+        }
+      ]
+    },
+    {
+      "id": "prime-minute-second",
+      "label": "Prime",
+      "h2": "Prime, Minutes & Seconds",
+      "intro": "Prime characters used for arcminutes, arcseconds, and coordinate notation.",
+      "symbols": [
+        {
+          "char": "′",
+          "label": "Prime"
+        },
+        {
+          "char": "″",
+          "label": "Double Prime"
+        },
+        {
+          "char": "‴",
+          "label": "Triple Prime"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, and comparison signs."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Sun, cloud, rain, snow, and temperature-related Unicode symbols."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}
