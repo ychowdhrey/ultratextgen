@@ -1,0 +1,115 @@
+{
+  "slug": "greek-letter-symbols",
+  "title": "Greek Letter Symbols: Copy & Paste α β Δ Σ Ω π Alphabet",
+  "meta_description": "Copy and paste every Greek letter — uppercase, lowercase, and math variant forms including alpha, beta, delta, sigma, omega, and pi. Click any letter to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/greek-letter-symbols/",
+  "breadcrumb": "Greek Letter Symbols",
+  "hero_h1": "Greek Letter Symbols",
+  "hero_tagline": "The complete Greek alphabet — capitals, smalls, and the math variant glyphs — ready to copy. Click any letter to copy it instantly.",
+  "intro": "Greek letters show up everywhere from math and physics to fraternity names and fonts. This library gathers the full Greek alphabet in uppercase and lowercase, the final-form sigma, and the variant letterforms used as mathematical symbols, so you can copy alpha, beta, delta, sigma, omega, pi, and the rest without hunting through a character map.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "uppercase-greek",
+      "label": "Uppercase",
+      "h2": "Uppercase Greek Letters",
+      "intro": "The 24 capital letters of the Greek alphabet, from Alpha to Omega.",
+      "symbols": [
+        { "char": "Α", "label": "Greek Capital Letter Alpha" },
+        { "char": "Β", "label": "Greek Capital Letter Beta" },
+        { "char": "Γ", "label": "Greek Capital Letter Gamma" },
+        { "char": "Δ", "label": "Greek Capital Letter Delta" },
+        { "char": "Ε", "label": "Greek Capital Letter Epsilon" },
+        { "char": "Ζ", "label": "Greek Capital Letter Zeta" },
+        { "char": "Η", "label": "Greek Capital Letter Eta" },
+        { "char": "Θ", "label": "Greek Capital Letter Theta" },
+        { "char": "Ι", "label": "Greek Capital Letter Iota" },
+        { "char": "Κ", "label": "Greek Capital Letter Kappa" },
+        { "char": "Λ", "label": "Greek Capital Letter Lamda" },
+        { "char": "Μ", "label": "Greek Capital Letter Mu" },
+        { "char": "Ν", "label": "Greek Capital Letter Nu" },
+        { "char": "Ξ", "label": "Greek Capital Letter Xi" },
+        { "char": "Ο", "label": "Greek Capital Letter Omicron" },
+        { "char": "Π", "label": "Greek Capital Letter Pi" },
+        { "char": "Ρ", "label": "Greek Capital Letter Rho" },
+        { "char": "Σ", "label": "Greek Capital Letter Sigma" },
+        { "char": "Τ", "label": "Greek Capital Letter Tau" },
+        { "char": "Υ", "label": "Greek Capital Letter Upsilon" },
+        { "char": "Φ", "label": "Greek Capital Letter Phi" },
+        { "char": "Χ", "label": "Greek Capital Letter Chi" },
+        { "char": "Ψ", "label": "Greek Capital Letter Psi" },
+        { "char": "Ω", "label": "Greek Capital Letter Omega" }
+      ]
+    },
+    {
+      "id": "lowercase-greek",
+      "label": "Lowercase",
+      "h2": "Lowercase Greek Letters",
+      "intro": "The small letters, including the word-final sigma used at the end of a word.",
+      "symbols": [
+        { "char": "α", "label": "Greek Small Letter Alpha" },
+        { "char": "β", "label": "Greek Small Letter Beta" },
+        { "char": "γ", "label": "Greek Small Letter Gamma" },
+        { "char": "δ", "label": "Greek Small Letter Delta" },
+        { "char": "ε", "label": "Greek Small Letter Epsilon" },
+        { "char": "ζ", "label": "Greek Small Letter Zeta" },
+        { "char": "η", "label": "Greek Small Letter Eta" },
+        { "char": "θ", "label": "Greek Small Letter Theta" },
+        { "char": "ι", "label": "Greek Small Letter Iota" },
+        { "char": "κ", "label": "Greek Small Letter Kappa" },
+        { "char": "λ", "label": "Greek Small Letter Lamda" },
+        { "char": "μ", "label": "Greek Small Letter Mu" },
+        { "char": "ν", "label": "Greek Small Letter Nu" },
+        { "char": "ξ", "label": "Greek Small Letter Xi" },
+        { "char": "ο", "label": "Greek Small Letter Omicron" },
+        { "char": "π", "label": "Greek Small Letter Pi" },
+        { "char": "ρ", "label": "Greek Small Letter Rho" },
+        { "char": "σ", "label": "Greek Small Letter Sigma" },
+        { "char": "ς", "label": "Greek Small Letter Final Sigma" },
+        { "char": "τ", "label": "Greek Small Letter Tau" },
+        { "char": "υ", "label": "Greek Small Letter Upsilon" },
+        { "char": "φ", "label": "Greek Small Letter Phi" },
+        { "char": "χ", "label": "Greek Small Letter Chi" },
+        { "char": "ψ", "label": "Greek Small Letter Psi" },
+        { "char": "ω", "label": "Greek Small Letter Omega" }
+      ]
+    },
+    {
+      "id": "variant-greek",
+      "label": "Variants",
+      "h2": "Variant & Symbol Letterforms",
+      "intro": "Alternate glyph shapes for several Greek letters, used as distinct mathematical and scientific symbols.",
+      "symbols": [
+        { "char": "ϑ", "label": "Greek Theta Symbol" },
+        { "char": "ϕ", "label": "Greek Phi Symbol" },
+        { "char": "ϖ", "label": "Greek Pi Symbol" },
+        { "char": "ϱ", "label": "Greek Rho Symbol" },
+        { "char": "ϵ", "label": "Greek Lunate Epsilon Symbol" },
+        { "char": "ϐ", "label": "Greek Beta Symbol" },
+        { "char": "ϰ", "label": "Greek Kappa Symbol" },
+        { "char": "ϴ", "label": "Greek Capital Theta Symbol" },
+        { "char": "∇", "label": "Nabla (Del Operator)" },
+        { "char": "∂", "label": "Partial Differential" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, roots, infinity, and the Greek letters used in equations."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    {
+      "href": "/library/number-symbols/",
+      "title": "Number Symbols",
+      "desc": "Circled, superscript, and stylized number characters to copy and paste."
+    }
+  ]
+}
