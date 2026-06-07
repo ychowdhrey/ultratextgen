@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T05:53:26.145Z",
+  "generatedAt": "2026-06-07T07:34:01.317Z",
   "thresholds": {
     "componentMinPages": 5,
     "repeatedPatternMin": 3,
@@ -46,8 +46,8 @@
     },
     {
       "file": "usecase/before-after-emoji/before-after-emoji.css",
-      "bytes": 11456,
-      "sizeHuman": "11.2 KB",
+      "bytes": 11623,
+      "sizeHuman": "11.4 KB",
       "lines": 510,
       "purpose": "page-specific usecase styling"
     },
