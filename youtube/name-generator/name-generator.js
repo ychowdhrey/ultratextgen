@@ -129,11 +129,18 @@
     return unique(picks).slice(0, 20);
   }
 
+  function deriveHandle(name) {
+    const handle = String(name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (handle.length < 3 || handle.length > 30) return null;
+    return handle;
+  }
+
   async function copy(value, btn) {
+    const original = btn.textContent;
     try {
       await navigator.clipboard.writeText(value);
       btn.textContent = "Copied!";
-      setTimeout(function () { btn.textContent = "Copy"; }, 1000);
+      setTimeout(function () { btn.textContent = original; }, 1000);
     } catch (err) {
       console.error(err);
     }
@@ -151,11 +158,20 @@
       const warn = len >= 45;
       const over = len > 50;
       const safeName = escapeHtml(name);
+      const handle = deriveHandle(name);
+      const handleRow = handle
+        ? '<div class="tng-handle-row"><span class="tng-handle-suggest">@' + escapeHtml(handle) + '</span><span class="tng-handle-tag">handle-safe</span></div>'
+        : '<div class="tng-handle-row"><span class="tng-handle-tag warn">Shorten the name for a clean handle</span></div>';
+      const handleCopyBtn = handle
+        ? '<button class="copy-btn" type="button" data-handle="' + escapeHtml(handle) + '">Copy @handle</button>'
+        : '';
       return '<div class="tng-card">' +
         '<div class="tng-name">' + safeName + '</div>' +
         '<div class="tng-meta' + (warn ? ' char-warning' : '') + '">' + len + '/50 chars' + (over ? ' · Over channel-name limit' : warn ? ' · Near channel-name limit' : '') + '</div>' +
+        handleRow +
         '<div class="tng-actions">' +
-          '<button class="copy-btn" type="button" data-name="' + safeName + '">Copy</button>' +
+          '<button class="copy-btn" type="button" data-name="' + safeName + '">Copy name</button>' +
+          handleCopyBtn +
           '<a class="copy-btn" href="/youtube/?q=' + encodeURIComponent(name) + '">Style this →</a>' +
         '</div>' +
       '</div>';
@@ -164,26 +180,64 @@
 
   function validateHandle(raw) {
     const value = String(raw || "").trim().replace(/^@/, "");
-    if (!value) return { valid: false, reasons: ["Enter a handle to check format."] };
-    if (value.length < 3) return { valid: false, reasons: ["Too short. Use 3-30 characters."] };
-    if (value.length > 30) return { valid: false, reasons: ["Too long. Use 3-30 characters."] };
-    if (!/^[A-Za-z0-9._-]+$/.test(value)) {
-      return { valid: false, reasons: ["Contains unsupported characters. Use A-Z, 0-9, . _ - only."] };
+    if (!value) {
+      return { valid: false, normalized: "", reasons: ["Enter a handle to check format."], youtubeUrl: "" };
     }
-    if (/^[._-]|[._-]$/.test(value)) return { valid: false, reasons: ["Cannot start or end with . _ -"] };
-    return { valid: true, reasons: [] };
+    const reasons = [];
+    if (value.length < 3) reasons.push("Too short. Use 3–30 characters.");
+    if (value.length > 30) reasons.push("Too long. Use 3–30 characters.");
+    if (!/^[A-Za-z0-9._-]+$/.test(value)) reasons.push("Contains unsupported characters. Use A–Z, 0–9, . _ - only.");
+    if (/^[._-]|[._-]$/.test(value)) reasons.push("Cannot start or end with . _ -");
+    const valid = reasons.length === 0;
+    return { valid, normalized: value, reasons, youtubeUrl: "https://www.youtube.com/@" + value };
   }
 
   function runValidation() {
     if (!el.checkResult || !el.check) return;
     const result = validateHandle(el.check.value);
-    if (!result.valid) {
-      el.checkResult.innerHTML = '<div class="block-example"><strong>Format needs fixes:</strong><ul>' + result.reasons.map(function (reason) {
-        return '<li>' + reason + '</li>';
-      }).join("") + '</ul></div>';
+    el.checkResult.innerHTML = "";
+
+    if (!result.normalized) {
+      const empty = document.createElement("div");
+      empty.className = "tng-empty";
+      empty.textContent = "Enter a handle to check the format.";
+      el.checkResult.appendChild(empty);
       return;
     }
-    el.checkResult.innerHTML = '<div class="block-example"><strong>Format looks valid (availability not checked).</strong></div>';
+
+    if (!result.valid) {
+      const wrap = document.createElement("div");
+      wrap.className = "block-example";
+      const strong = document.createElement("strong");
+      strong.textContent = "Format needs fixes:";
+      wrap.appendChild(strong);
+      const list = document.createElement("ul");
+      result.reasons.forEach(function (reason) {
+        const li = document.createElement("li");
+        li.textContent = reason;
+        list.appendChild(li);
+      });
+      wrap.appendChild(list);
+      el.checkResult.appendChild(wrap);
+      return;
+    }
+
+    const wrap = document.createElement("div");
+    wrap.className = "block-example";
+    const strong = document.createElement("strong");
+    strong.textContent = "Format looks valid.";
+    wrap.appendChild(strong);
+    wrap.appendChild(document.createTextNode(" "));
+    const link = document.createElement("a");
+    link.href = result.youtubeUrl;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Check @" + result.normalized + " on YouTube →";
+    wrap.appendChild(link);
+    const note = document.createElement("p");
+    note.textContent = "Availability is checked on YouTube, not here.";
+    wrap.appendChild(note);
+    el.checkResult.appendChild(wrap);
   }
 
   function runGenerate() {
@@ -228,9 +282,15 @@
     el.generate.addEventListener("click", runGenerate);
 
     el.results.addEventListener("click", function (event) {
-      const btn = event.target.closest("button[data-name]");
-      if (!btn) return;
-      copy(btn.dataset.name, btn);
+      const nameBtn = event.target.closest("button[data-name]");
+      if (nameBtn) {
+        copy(nameBtn.dataset.name, nameBtn);
+        return;
+      }
+      const handleBtn = event.target.closest("button[data-handle]");
+      if (handleBtn) {
+        copy(handleBtn.dataset.handle, handleBtn);
+      }
     });
 
     if (el.checkButton) {
