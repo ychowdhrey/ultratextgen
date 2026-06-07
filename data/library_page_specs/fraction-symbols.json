@@ -1,0 +1,236 @@
+{
+  "slug": "fraction-symbols",
+  "title": "Fraction Symbols: Copy & Paste ½ ⅓ ¼ Unicode Fractions",
+  "meta_description": "Copy and paste Unicode fraction symbols — halves, thirds, quarters, eighths, fifths, and a build-your-own fraction set with superscript and subscript digits. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/fraction-symbols/",
+  "breadcrumb": "Fraction Symbols",
+  "hero_h1": "Fraction Symbols",
+  "hero_tagline": "Every precomposed Unicode fraction — halves, thirds, quarters, eighths, and beyond — plus the slash and digits to build any fraction you need. Click any symbol to copy it instantly.",
+  "intro": "Vulgar (precomposed) fraction characters render a complete fraction in a single glyph. This library collects the common halves, thirds, and quarters, the eighths, fifths, sixths, sevenths, ninths, and tenths, and a build-your-own set using the fraction slash with superscript and subscript digits.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "common-fractions",
+      "label": "Common",
+      "h2": "Halves, Thirds & Quarters",
+      "intro": "The everyday fractions: halves, thirds, and quarters.",
+      "symbols": [
+        {
+          "char": "½",
+          "label": "One Half"
+        },
+        {
+          "char": "⅓",
+          "label": "One Third"
+        },
+        {
+          "char": "⅔",
+          "label": "Two Thirds"
+        },
+        {
+          "char": "¼",
+          "label": "One Quarter"
+        },
+        {
+          "char": "¾",
+          "label": "Three Quarters"
+        }
+      ]
+    },
+    {
+      "id": "eighths",
+      "label": "Eighths",
+      "h2": "Eighth Fractions",
+      "intro": "The four precomposed eighth fractions.",
+      "symbols": [
+        {
+          "char": "⅛",
+          "label": "One Eighth"
+        },
+        {
+          "char": "⅜",
+          "label": "Three Eighths"
+        },
+        {
+          "char": "⅝",
+          "label": "Five Eighths"
+        },
+        {
+          "char": "⅞",
+          "label": "Seven Eighths"
+        }
+      ]
+    },
+    {
+      "id": "other-fractions",
+      "label": "More",
+      "h2": "Fifths, Sixths, Sevenths & More",
+      "intro": "Fifths, sixths, sevenths, ninths, tenths, and the zero-thirds sign.",
+      "symbols": [
+        {
+          "char": "⅕",
+          "label": "One Fifth"
+        },
+        {
+          "char": "⅖",
+          "label": "Two Fifths"
+        },
+        {
+          "char": "⅗",
+          "label": "Three Fifths"
+        },
+        {
+          "char": "⅘",
+          "label": "Four Fifths"
+        },
+        {
+          "char": "⅙",
+          "label": "One Sixth"
+        },
+        {
+          "char": "⅚",
+          "label": "Five Sixths"
+        },
+        {
+          "char": "⅐",
+          "label": "One Seventh"
+        },
+        {
+          "char": "⅑",
+          "label": "One Ninth"
+        },
+        {
+          "char": "⅒",
+          "label": "One Tenth"
+        },
+        {
+          "char": "↉",
+          "label": "Zero Thirds"
+        }
+      ]
+    },
+    {
+      "id": "build-fraction",
+      "label": "Build",
+      "h2": "Build Any Fraction (Slash + Superscripts)",
+      "intro": "Combine the fraction slash with superscript digits to write any numerator over a denominator.",
+      "symbols": [
+        {
+          "char": "⁄",
+          "label": "Fraction Slash"
+        },
+        {
+          "char": "⅟",
+          "label": "Fraction Numerator One"
+        },
+        {
+          "char": "⁰",
+          "label": "Superscript Zero"
+        },
+        {
+          "char": "¹",
+          "label": "Superscript One"
+        },
+        {
+          "char": "²",
+          "label": "Superscript Two"
+        },
+        {
+          "char": "³",
+          "label": "Superscript Three"
+        },
+        {
+          "char": "⁴",
+          "label": "Superscript Four"
+        },
+        {
+          "char": "⁵",
+          "label": "Superscript Five"
+        },
+        {
+          "char": "⁶",
+          "label": "Superscript Six"
+        },
+        {
+          "char": "⁷",
+          "label": "Superscript Seven"
+        },
+        {
+          "char": "⁸",
+          "label": "Superscript Eight"
+        },
+        {
+          "char": "⁹",
+          "label": "Superscript Nine"
+        }
+      ]
+    },
+    {
+      "id": "subscript-digits",
+      "label": "Subscripts",
+      "h2": "Subscript Digits",
+      "intro": "Subscript digits for denominators and chemical-style notation.",
+      "symbols": [
+        {
+          "char": "₀",
+          "label": "Subscript Zero"
+        },
+        {
+          "char": "₁",
+          "label": "Subscript One"
+        },
+        {
+          "char": "₂",
+          "label": "Subscript Two"
+        },
+        {
+          "char": "₃",
+          "label": "Subscript Three"
+        },
+        {
+          "char": "₄",
+          "label": "Subscript Four"
+        },
+        {
+          "char": "₅",
+          "label": "Subscript Five"
+        },
+        {
+          "char": "₆",
+          "label": "Subscript Six"
+        },
+        {
+          "char": "₇",
+          "label": "Subscript Seven"
+        },
+        {
+          "char": "₈",
+          "label": "Subscript Eight"
+        },
+        {
+          "char": "₉",
+          "label": "Subscript Nine"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/number-symbols/",
+      "title": "Number Symbols",
+      "desc": "Circled, superscript, Roman, and other Unicode number forms."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, roots, and infinity signs."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    }
+  ]
+}
