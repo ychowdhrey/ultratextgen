@@ -155,6 +155,11 @@
     }
   ];
 
+  // Emoji endings considered professional / restrained (LinkedIn-appropriate)
+  const PROFESSIONAL_EMOJIS = new Set([
+    "💡","📈","🎯","✅","🧠","🌱","😌","💆","😮‍💨","🏆","🔑","📘"
+  ]);
+
   // =========================================================================
   // DATA — Library cards (8 use-case categories)
   // =========================================================================
@@ -358,9 +363,8 @@
     let cards = useCase.cards;
     if (platformTone === "restrained") {
       // Prefer professional emojis, soft-filter (show all but re-rank)
-      const professionalEnds = new Set(["💡","📈","🎯","✅","🧠","🌱","😌","💆","😮‍💨","🏆","🔑","📘"]);
-      const professional = cards.filter(c => professionalEnds.has(c.end));
-      const casual = cards.filter(c => !professionalEnds.has(c.end));
+      const professional = cards.filter(c => PROFESSIONAL_EMOJIS.has(c.end));
+      const casual = cards.filter(c => !PROFESSIONAL_EMOJIS.has(c.end));
       cards = [...professional, ...casual];
     }
 
@@ -370,7 +374,7 @@
       const arcLabel = ARCS.find(a => a.id === card.arc)?.label || "";
       return `
         <div class="etg-library-card" role="article">
-          <p class="etg-library-preview" aria-label="Preview: ${previewText}">${previewText}</p>
+          <p class="etg-library-preview">${previewText}</p>
           <p class="etg-library-arc-tag">${arcLabel}</p>
           <div class="etg-library-card-actions">
             <button class="copy-btn etg-copy-btn" type="button"
@@ -413,6 +417,8 @@
       input.dispatchEvent(new Event("input", { bubbles: true }));
     }
     // Select the arc
+    // selectArc with rerender=false: update arc state without triggering a full re-render
+    // (used when loading a library card that will also set new textarea text)
     selectArc(arcId, false);
     // Switch to build mode
     switchMode("build");
