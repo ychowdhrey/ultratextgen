@@ -1,0 +1,77 @@
+{
+  "slug": "keyboard-symbols",
+  "title": "Keyboard Symbols: Copy & Paste ⌘ ⌥ ⇧ Mac & PC Key Glyphs",
+  "meta_description": "Copy and paste keyboard symbols — Mac modifier keys (⌘ ⌥ ⇧ ⌃), editing keys (⏎ ⌫ ⇥), and arrow and special key glyphs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/keyboard-symbols/",
+  "breadcrumb": "Keyboard Symbols",
+  "hero_h1": "Keyboard Symbols",
+  "hero_tagline": "Command, option, shift, and every other Mac and PC key glyph for writing clean shortcuts. Click any symbol to copy it instantly.",
+  "intro": "Documenting keyboard shortcuts reads far better with the real key glyphs than with spelled-out names. This library gathers the Mac modifier symbols such as command (⌘), option (⌥), shift (⇧), and control (⌃); the editing and navigation keys like return, backspace, and tab; and the arrow and special-key glyphs that complete a shortcut. Click any character to copy it for documentation, tutorials, or app interfaces.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "mac-modifier-keys",
+      "label": "Modifiers",
+      "h2": "Mac Modifier Keys",
+      "intro": "The modifier-key glyphs printed on Apple keyboards and used throughout macOS menus.",
+      "symbols": [
+        { "char": "⌘", "label": "Command Key (Place of Interest Sign)" },
+        { "char": "⌥", "label": "Option Key" },
+        { "char": "⇧", "label": "Shift Key (Upwards White Arrow)" },
+        { "char": "⌃", "label": "Control Key (Up Arrowhead)" },
+        { "char": "⇪", "label": "Caps Lock (Upwards White Arrow From Bar)" },
+        { "char": "⏏", "label": "Eject Key" },
+        { "char": "⎋", "label": "Escape Key (Broken Circle With Northwest Arrow)" }
+      ]
+    },
+    {
+      "id": "editing-navigation-keys",
+      "label": "Editing",
+      "h2": "Editing & Navigation Keys",
+      "intro": "Return, delete, tab, and space glyphs for text-editing shortcuts.",
+      "symbols": [
+        { "char": "⏎", "label": "Return Key (Return Symbol)" },
+        { "char": "↵", "label": "Carriage Return Arrow" },
+        { "char": "⌫", "label": "Delete Left / Backspace (Erase To The Left)" },
+        { "char": "⌦", "label": "Forward Delete (Erase To The Right)" },
+        { "char": "⇥", "label": "Tab Key (Rightwards Arrow To Bar)" },
+        { "char": "⇤", "label": "Back-Tab (Leftwards Arrow To Bar)" },
+        { "char": "␣", "label": "Space Key (Open Box)" }
+      ]
+    },
+    {
+      "id": "arrows-special-keys",
+      "label": "Arrows & Keys",
+      "h2": "Arrow & Special Keys",
+      "intro": "Directional arrow keys and the remaining special-key glyphs.",
+      "symbols": [
+        { "char": "↑", "label": "Up Arrow Key" },
+        { "char": "↓", "label": "Down Arrow Key" },
+        { "char": "←", "label": "Left Arrow Key" },
+        { "char": "→", "label": "Right Arrow Key" },
+        { "char": "⌨", "label": "Keyboard" },
+        { "char": "⎈", "label": "Control Key (Helm Symbol)" },
+        { "char": "⎙", "label": "Print Screen Symbol" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    {
+      "href": "/library/arrow-symbols/",
+      "title": "Arrow Symbols",
+      "desc": "Directional arrows in every style — straight, curved, and double-headed."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, roots, and infinity signs."
+    }
+  ]
+}
