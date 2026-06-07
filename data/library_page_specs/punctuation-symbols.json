@@ -1,0 +1,74 @@
+{
+  "slug": "punctuation-symbols",
+  "title": "Punctuation Symbols: Copy & Paste † ‡ ¶ ※ ‽ Special Marks",
+  "meta_description": "Copy and paste special punctuation symbols — dagger, double dagger, pilcrow, section sign, asterism, interrobang, and inverted marks. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/punctuation-symbols/",
+  "breadcrumb": "Punctuation Symbols",
+  "hero_h1": "Punctuation Symbols",
+  "hero_tagline": "Daggers, pilcrows, asterisms, interrobangs, and the inverted marks — the punctuation that isn't on your keyboard. Click any symbol to copy it instantly.",
+  "intro": "Beyond the everyday comma and period sits a whole set of special punctuation. This library gathers the dagger and double dagger used for footnotes, the asterism and reference marks, the pilcrow and section signs for paragraphs, and the interrobang and inverted marks — all plain Unicode characters you can copy into documents and posts.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "daggers-reference",
+      "label": "Daggers",
+      "h2": "Daggers, Asterisks & Reference Marks",
+      "intro": "Footnote daggers, asterisms, and reference marks used in typesetting.",
+      "symbols": [
+        { "char": "†", "label": "Dagger" },
+        { "char": "‡", "label": "Double Dagger" },
+        { "char": "⁑", "label": "Two Asterisks Aligned Vertically" },
+        { "char": "⁂", "label": "Asterism" },
+        { "char": "※", "label": "Reference Mark" },
+        { "char": "‖", "label": "Double Vertical Line" }
+      ]
+    },
+    {
+      "id": "paragraph-section",
+      "label": "Paragraph",
+      "h2": "Paragraph & Section Marks",
+      "intro": "Pilcrow, section, and per-mille marks used in legal and editorial text.",
+      "symbols": [
+        { "char": "¶", "label": "Pilcrow Sign" },
+        { "char": "⁋", "label": "Reversed Pilcrow Sign" },
+        { "char": "§", "label": "Section Sign" },
+        { "char": "‰", "label": "Per Mille Sign" },
+        { "char": "‱", "label": "Per Ten Thousand Sign" }
+      ]
+    },
+    {
+      "id": "interrobang-inverted",
+      "label": "Inverted",
+      "h2": "Interrobang & Inverted Marks",
+      "intro": "Combined and inverted question and exclamation marks.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang" },
+        { "char": "⸮", "label": "Reversed Question Mark" },
+        { "char": "¡", "label": "Inverted Exclamation Mark" },
+        { "char": "¿", "label": "Inverted Question Mark" },
+        { "char": "⁇", "label": "Double Question Mark" },
+        { "char": "⁉", "label": "Exclamation Question Mark" },
+        { "char": "⁈", "label": "Question Exclamation Mark" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "Em dashes, en dashes, hyphens, and minus signs to copy and paste."
+    },
+    {
+      "href": "/library/bracket-symbols/",
+      "title": "Bracket Symbols",
+      "desc": "Brackets, braces, and angle marks in every Unicode style."
+    }
+  ]
+}

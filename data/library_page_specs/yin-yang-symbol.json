@@ -1,0 +1,76 @@
+{
+  "slug": "yin-yang-symbol",
+  "title": "Yin Yang Symbol: Copy & Paste ☯ Taijitu Balance Character",
+  "meta_description": "Copy and paste the yin yang symbol (☯) plus the bagua trigrams, yin and yang line digrams, and balance characters from the I Ching. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/yin-yang-symbol/",
+  "breadcrumb": "Yin Yang Symbol",
+  "hero_h1": "Yin Yang Symbol",
+  "hero_tagline": "The yin yang (☯) taijitu plus the trigrams and yin/yang lines of the I Ching. Click any symbol to copy it instantly.",
+  "intro": "The yin yang, or taijitu, represents the balance of opposing forces. This library gathers the yin yang symbol alongside the half-shaded circles that echo its duality, the eight bagua trigrams of the I Ching, and the yin and yang line monograms and digrams — all plain Unicode characters you can copy into bios, posts, and designs.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "yin-yang-balance",
+      "label": "Yin Yang",
+      "h2": "Yin Yang & Balance",
+      "intro": "The taijitu and the half-shaded circles that mirror its sense of balance.",
+      "symbols": [
+        { "char": "☯", "label": "Yin Yang" },
+        { "char": "☯️", "label": "Yin Yang (Emoji Style)" },
+        { "char": "◐", "label": "Circle with Left Half Black" },
+        { "char": "◑", "label": "Circle with Right Half Black" },
+        { "char": "◒", "label": "Circle with Lower Half Black" },
+        { "char": "◓", "label": "Circle with Upper Half Black" }
+      ]
+    },
+    {
+      "id": "bagua-trigrams",
+      "label": "Trigrams",
+      "h2": "Bagua Trigrams (I Ching)",
+      "intro": "The eight trigrams that combine the yin and yang lines into elemental signs.",
+      "symbols": [
+        { "char": "☰", "label": "Trigram for Heaven (Qian)" },
+        { "char": "☱", "label": "Trigram for Lake (Dui)" },
+        { "char": "☲", "label": "Trigram for Fire (Li)" },
+        { "char": "☳", "label": "Trigram for Thunder (Zhen)" },
+        { "char": "☴", "label": "Trigram for Wind (Xun)" },
+        { "char": "☵", "label": "Trigram for Water (Kan)" },
+        { "char": "☶", "label": "Trigram for Mountain (Gen)" },
+        { "char": "☷", "label": "Trigram for Earth (Kun)" }
+      ]
+    },
+    {
+      "id": "yin-yang-lines",
+      "label": "Lines",
+      "h2": "Yin & Yang Lines",
+      "intro": "The monogram and digram line forms that build the trigrams.",
+      "symbols": [
+        { "char": "⚊", "label": "Monogram for Yang" },
+        { "char": "⚋", "label": "Monogram for Yin" },
+        { "char": "⚌", "label": "Digram for Greater Yang" },
+        { "char": "⚍", "label": "Digram for Lesser Yin" },
+        { "char": "⚎", "label": "Digram for Lesser Yang" },
+        { "char": "⚏", "label": "Digram for Greater Yin" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith and spiritual symbols from traditions around the world."
+    },
+    {
+      "href": "/library/witchy-occult-symbols/",
+      "title": "Witchy & Occult Symbols",
+      "desc": "Mystical, esoteric, and occult characters to copy and paste."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Moon & Celestial Symbols",
+      "desc": "Moon phases, stars, and celestial characters in Unicode."
+    }
+  ]
+}

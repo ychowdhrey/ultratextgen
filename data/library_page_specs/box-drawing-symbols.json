@@ -1,0 +1,89 @@
+{
+  "slug": "box-drawing-symbols",
+  "title": "Box Drawing & Block Symbols: Copy & Paste ─ │ ┌ █ ▓ ASCII Boxes",
+  "meta_description": "Copy and paste box drawing and block element symbols — lines, corners, double borders, full blocks, and shading characters for ASCII boxes. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/box-drawing-symbols/",
+  "breadcrumb": "Box Drawing & Block Symbols",
+  "hero_h1": "Box Drawing & Block Symbols",
+  "hero_tagline": "Lines, corners, double borders, and shaded blocks for building text boxes and ASCII art. Click any symbol to copy it instantly.",
+  "intro": "Box drawing and block element characters let you build frames, tables, and ASCII art in plain text. This library gathers the single-line pieces and corners, the double and heavy border variants, and the full and partial blocks used for shading and bar graphs — all plain Unicode characters you can copy into terminals, code comments, and posts.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "lines-corners",
+      "label": "Lines",
+      "h2": "Lines, Corners & Junctions",
+      "intro": "Single-line horizontal and vertical pieces, corners, and T-junctions.",
+      "symbols": [
+        { "char": "─", "label": "Box Drawings Light Horizontal" },
+        { "char": "│", "label": "Box Drawings Light Vertical" },
+        { "char": "┌", "label": "Box Drawings Light Down and Right" },
+        { "char": "┐", "label": "Box Drawings Light Down and Left" },
+        { "char": "└", "label": "Box Drawings Light Up and Right" },
+        { "char": "┘", "label": "Box Drawings Light Up and Left" },
+        { "char": "├", "label": "Box Drawings Light Vertical and Right" },
+        { "char": "┤", "label": "Box Drawings Light Vertical and Left" },
+        { "char": "┬", "label": "Box Drawings Light Down and Horizontal" },
+        { "char": "┴", "label": "Box Drawings Light Up and Horizontal" },
+        { "char": "┼", "label": "Box Drawings Light Vertical and Horizontal" }
+      ]
+    },
+    {
+      "id": "double-heavy",
+      "label": "Double & Heavy",
+      "h2": "Double & Heavy Borders",
+      "intro": "Double-line and heavy-weight variants for bolder frames.",
+      "symbols": [
+        { "char": "═", "label": "Box Drawings Double Horizontal" },
+        { "char": "║", "label": "Box Drawings Double Vertical" },
+        { "char": "╔", "label": "Box Drawings Double Down and Right" },
+        { "char": "╗", "label": "Box Drawings Double Down and Left" },
+        { "char": "╚", "label": "Box Drawings Double Up and Right" },
+        { "char": "╝", "label": "Box Drawings Double Up and Left" },
+        { "char": "╬", "label": "Box Drawings Double Vertical and Horizontal" },
+        { "char": "━", "label": "Box Drawings Heavy Horizontal" },
+        { "char": "┃", "label": "Box Drawings Heavy Vertical" },
+        { "char": "┏", "label": "Box Drawings Heavy Down and Right" },
+        { "char": "┓", "label": "Box Drawings Heavy Down and Left" }
+      ]
+    },
+    {
+      "id": "blocks-shading",
+      "label": "Blocks",
+      "h2": "Block Elements & Shading",
+      "intro": "Full, half, and fractional blocks plus shading characters for fills and bars.",
+      "symbols": [
+        { "char": "█", "label": "Full Block" },
+        { "char": "▉", "label": "Left Seven Eighths Block" },
+        { "char": "▊", "label": "Left Three Quarters Block" },
+        { "char": "▌", "label": "Left Half Block" },
+        { "char": "▎", "label": "Left One Quarter Block" },
+        { "char": "▏", "label": "Left One Eighth Block" },
+        { "char": "▀", "label": "Upper Half Block" },
+        { "char": "▄", "label": "Lower Half Block" },
+        { "char": "░", "label": "Light Shade" },
+        { "char": "▒", "label": "Medium Shade" },
+        { "char": "▓", "label": "Dark Shade" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/line-divider-symbols/",
+      "title": "Line & Divider Symbols",
+      "desc": "Lines, dividers, and separators to break up text."
+    },
+    {
+      "href": "/library/aesthetic-borders-frames/",
+      "title": "Aesthetic Borders & Frames",
+      "desc": "Decorative borders and frame characters for stylish text."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Triangles, squares, circles, and other geometric shapes in Unicode."
+    }
+  ]
+}

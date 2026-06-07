@@ -1,0 +1,71 @@
+{
+  "slug": "gender-symbols",
+  "title": "Gender Symbols: Copy & Paste ♂ ♀ ⚧ Male, Female & More",
+  "meta_description": "Copy and paste gender symbols — male, female, transgender, non-binary, neuter, and combined orientation signs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/gender-symbols/",
+  "breadcrumb": "Gender Symbols",
+  "hero_h1": "Gender Symbols",
+  "hero_tagline": "Male, female, transgender, and every combined gender and orientation sign in Unicode. Click any symbol to copy it instantly.",
+  "intro": "Gender symbols are used in biology, profiles, pronoun fields, and identity flags. This library collects the core male, female, transgender, and neuter signs, the doubled and interlocking orientation marks, and the relationship signs for marriage and partnership — all as plain Unicode characters you can copy anywhere.",
+  "date_published": "2026-06-07",
+  "date_modified": "2026-06-07",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "core-gender",
+      "label": "Core",
+      "h2": "Core Gender Signs",
+      "intro": "The primary signs for male, female, transgender, and neuter.",
+      "symbols": [
+        { "char": "♀", "label": "Female Sign" },
+        { "char": "♂", "label": "Male Sign" },
+        { "char": "⚧", "label": "Transgender Symbol" },
+        { "char": "⚲", "label": "Neuter Sign" },
+        { "char": "⚪", "label": "Medium White Circle (Agender)" }
+      ]
+    },
+    {
+      "id": "combined-orientation",
+      "label": "Combined",
+      "h2": "Combined & Orientation Signs",
+      "intro": "Doubled and interlocking signs used to represent orientation and gender combinations.",
+      "symbols": [
+        { "char": "⚢", "label": "Doubled Female Sign" },
+        { "char": "⚣", "label": "Doubled Male Sign" },
+        { "char": "⚤", "label": "Interlocked Female and Male Sign" },
+        { "char": "⚥", "label": "Male and Female Sign" },
+        { "char": "⚦", "label": "Male with Stroke Sign" },
+        { "char": "⚨", "label": "Vertical Male with Stroke Sign" },
+        { "char": "⚩", "label": "Horizontal Male with Stroke Sign" }
+      ]
+    },
+    {
+      "id": "relationship-signs",
+      "label": "Relationships",
+      "h2": "Marriage & Partnership Signs",
+      "intro": "Signs used in genealogy and records for unions and their dissolution.",
+      "symbols": [
+        { "char": "⚭", "label": "Marriage Symbol" },
+        { "char": "⚮", "label": "Divorce Symbol" },
+        { "char": "⚯", "label": "Unmarried Partnership Symbol" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "The twelve astrological signs plus planetary symbols to copy and paste."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Unique Unicode symbols with individual meaning and standalone appeal."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    }
+  ]
+}
