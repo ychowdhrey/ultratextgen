@@ -97,12 +97,15 @@ UltraTextGen organiza as transformações de fontes Unicode em categorias estrut
 <!-- START_CATEGORIES -->
 **Todas as categorias:** https://ultratextgen.com/category/
 
+- https://ultratextgen.com/category/aesthetic-fonts/
 - https://ultratextgen.com/category/bold-fonts/
 - https://ultratextgen.com/category/bubble-fonts/
 - https://ultratextgen.com/category/classified/
 - https://ultratextgen.com/category/cursive-fonts/
+- https://ultratextgen.com/category/cute-fonts/
 - https://ultratextgen.com/category/gothic-fonts/
 - https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/small-text/
 - https://ultratextgen.com/category/strikethrough-text/
 - https://ultratextgen.com/category/underline-text/
 - https://ultratextgen.com/category/upside-down-text/
@@ -133,6 +136,7 @@ Esses recursos exploram como a tipografia Unicode codifica tom, autoridade, iron
 
 <!-- START_GUIDES -->
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
+- https://ultratextgen.com/guide/comments-that-stand-out/
 - https://ultratextgen.com/guide/linkedin-comments-guide/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
@@ -191,17 +195,22 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/awareness-ribbons/
 - https://ultratextgen.com/library/body-language-emojis/
 - https://ultratextgen.com/library/bow-ribbon-symbols/
+- https://ultratextgen.com/library/box-drawing-symbols/
 - https://ultratextgen.com/library/bracket-symbols/
+- https://ultratextgen.com/library/braille-pattern-symbols/
 - https://ultratextgen.com/library/bullet-point-symbols/
 - https://ultratextgen.com/library/card-suit-symbols/
 - https://ultratextgen.com/library/checkmark-symbols/
 - https://ultratextgen.com/library/chess-symbols/
+- https://ultratextgen.com/library/copyright-trademark-symbols/
 - https://ultratextgen.com/library/coquette-symbols/
 - https://ultratextgen.com/library/cottagecore-symbols/
 - https://ultratextgen.com/library/cross-x-symbols/
 - https://ultratextgen.com/library/crown-royalty-symbols/
 - https://ultratextgen.com/library/currency-symbols/
 - https://ultratextgen.com/library/dash-hyphen-symbols/
+- https://ultratextgen.com/library/degree-symbol/
+- https://ultratextgen.com/library/dice-domino-symbols/
 - https://ultratextgen.com/library/discord-symbols/
 - https://ultratextgen.com/library/egyptian-hieroglyphs/
 - https://ultratextgen.com/library/email-symbols/
@@ -210,21 +219,31 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/face-emojis/
 - https://ultratextgen.com/library/flower-symbols/
 - https://ultratextgen.com/library/food-drink-emojis/
+- https://ultratextgen.com/library/fraction-symbols/
+- https://ultratextgen.com/library/gender-symbols/
 - https://ultratextgen.com/library/geometric-symbols/
 - https://ultratextgen.com/library/goth-grunge-symbols/
+- https://ultratextgen.com/library/greek-letter-symbols/
 - https://ultratextgen.com/library/hand-symbols/
+- https://ultratextgen.com/library/hazard-warning-symbols/
 - https://ultratextgen.com/library/heart-symbols/
 - https://ultratextgen.com/library/instagram-symbols/
 - https://ultratextgen.com/library/kawaii-cute-symbols/
+- https://ultratextgen.com/library/keyboard-symbols/
 - https://ultratextgen.com/library/line-divider-symbols/
 - https://ultratextgen.com/library/linkedin-comment-styling/
 - https://ultratextgen.com/library/linkedin-symbol-library/
 - https://ultratextgen.com/library/math-symbols/
+- https://ultratextgen.com/library/media-control-symbols/
+- https://ultratextgen.com/library/medical-symbols/
 - https://ultratextgen.com/library/moon-celestial-symbols/
 - https://ultratextgen.com/library/music-symbols/
 - https://ultratextgen.com/library/norse-viking-runes/
 - https://ultratextgen.com/library/number-symbols/
+- https://ultratextgen.com/library/peace-symbol/
 - https://ultratextgen.com/library/people-profession-emojis/
+- https://ultratextgen.com/library/punctuation-symbols/
+- https://ultratextgen.com/library/recycle-environment-symbols/
 - https://ultratextgen.com/library/religious-symbols/
 - https://ultratextgen.com/library/roblox-symbols/
 - https://ultratextgen.com/library/slash-backslash-symbols/
@@ -233,15 +252,18 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/special-characters/
 - https://ultratextgen.com/library/sports-emojis/
 - https://ultratextgen.com/library/star-symbols/
+- https://ultratextgen.com/library/tech-status-symbols/
 - https://ultratextgen.com/library/text-faces-kaomoji/
 - https://ultratextgen.com/library/tiktok-symbols/
 - https://ultratextgen.com/library/traffic-road-sign-symbols/
 - https://ultratextgen.com/library/transport-symbols/
+- https://ultratextgen.com/library/unit-measurement-symbols/
 - https://ultratextgen.com/library/weather-symbols/
 - https://ultratextgen.com/library/whisper-subliminal-symbols/
 - https://ultratextgen.com/library/witchy-occult-symbols/
 - https://ultratextgen.com/library/x-twitter-symbols/
 - https://ultratextgen.com/library/y2k-symbols/
+- https://ultratextgen.com/library/yin-yang-symbol/
 - https://ultratextgen.com/library/zodiac-symbols/
 <!-- END_LIBRARY -->
 
