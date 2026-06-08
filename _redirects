@@ -55,5 +55,9 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /?lang=pl                                   /pl/    301
 /?lang=vi                                   /vi/    301
 
+# Library: renamed/removed slug → live equivalent
+/library/linkedin-post-formatting-symbols/            /library/linkedin-symbol-library/ 301
+/library/linkedin-post-formatting-symbols/index.html  /library/linkedin-symbol-library/ 301
+
 /404  /404.html  200
 /*    /404.html  404
