@@ -1,0 +1,105 @@
+{
+  "slug": "laundry-care-symbols",
+  "title": "Laundry Care Symbols: Wash, Dry & Iron Symbol Meanings Chart",
+  "meta_description": "Laundry care symbols and their meanings — wash, bleach, dry, and iron care icons in copy-paste Unicode. Click any symbol to copy it for labels, notes, and posts.",
+  "canonical": "https://ultratextgen.com/library/laundry-care-symbols/",
+  "breadcrumb": "Laundry Care Symbols",
+  "hero_h1": "Laundry Care Symbols",
+  "hero_tagline": "Wash, bleach, dry, and iron care icons you can copy and paste. Click any symbol to copy it instantly.",
+  "intro": "The official ISO 3758 laundry care symbols printed on clothing tags are not encoded as standalone Unicode text characters, so this reference gathers the closest Unicode equivalents — emoji and geometric shapes — grouped by what each care instruction means: washing and water, bleaching, drying, ironing heat levels, and “do not” prohibitions. Every tile copies a single character you can paste into care labels, packing lists, notes, and posts. Use the Unicode name shown beside each symbol so readers know exactly what it stands for.",
+  "date_published": "2026-06-08",
+  "date_modified": "2026-06-08",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "washing",
+      "label": "Washing",
+      "h2": "Washing & Water Symbols",
+      "intro": "Closest Unicode stand-ins for the wash-tub care instruction — water, detergent, and machine-wash cues.",
+      "symbols": [
+        { "char": "🧺", "label": "Basket (laundry)" },
+        { "char": "🧼", "label": "Soap" },
+        { "char": "🧴", "label": "Lotion Bottle (detergent)" },
+        { "char": "💧", "label": "Droplet (water)" },
+        { "char": "🚿", "label": "Shower" },
+        { "char": "🛁", "label": "Bathtub" },
+        { "char": "♨", "label": "Hot Springs (hot water)" },
+        { "char": "🌊", "label": "Water Wave" }
+      ]
+    },
+    {
+      "id": "bleaching",
+      "label": "Bleaching",
+      "h2": "Bleaching Symbols",
+      "intro": "The bleach care symbol is a triangle; an empty triangle means bleach is allowed and a crossed one means do not bleach.",
+      "symbols": [
+        { "char": "△", "label": "White Up-Pointing Triangle (bleach allowed)" },
+        { "char": "▲", "label": "Black Up-Pointing Triangle" },
+        { "char": "⚠", "label": "Warning Sign" },
+        { "char": "🧪", "label": "Test Tube (chemicals)" },
+        { "char": "☣", "label": "Biohazard" },
+        { "char": "🚫", "label": "Prohibited (do not bleach)" }
+      ]
+    },
+    {
+      "id": "drying",
+      "label": "Drying",
+      "h2": "Drying Symbols",
+      "intro": "Sun, circle, and square shapes echo the tumble-dry and line-dry care icons.",
+      "symbols": [
+        { "char": "☀", "label": "Black Sun With Rays (line dry)" },
+        { "char": "🌞", "label": "Sun With Face" },
+        { "char": "◯", "label": "Large Circle (tumble dry)" },
+        { "char": "□", "label": "White Square (dry flat)" },
+        { "char": "💨", "label": "Dashing Away (air dry)" },
+        { "char": "🧷", "label": "Safety Pin (line dry pegs)" },
+        { "char": "🌡", "label": "Thermometer (drying heat)" }
+      ]
+    },
+    {
+      "id": "ironing",
+      "label": "Ironing",
+      "h2": "Ironing & Heat Symbols",
+      "intro": "Iron care symbols use one, two, or three dots for low, medium, and high heat — these Unicode dot characters mirror that scale.",
+      "symbols": [
+        { "char": "🔥", "label": "Fire (high heat)" },
+        { "char": "♨", "label": "Hot Springs (steam)" },
+        { "char": "•", "label": "One Dot (low heat)" },
+        { "char": "‥", "label": "Two Dots (medium heat)" },
+        { "char": "…", "label": "Three Dots (high heat)" },
+        { "char": "♻", "label": "Recycling (eco wash)" }
+      ]
+    },
+    {
+      "id": "do-not",
+      "label": "Do Not",
+      "h2": "“Do Not” Prohibition Symbols",
+      "intro": "On a care tag, a cross through any symbol means do not do it. Pair these with the symbols above to signal do not wash, bleach, dry, or iron.",
+      "symbols": [
+        { "char": "🚫", "label": "No Entry Sign (prohibited)" },
+        { "char": "⛔", "label": "No Entry" },
+        { "char": "❌", "label": "Cross Mark" },
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "✘", "label": "Heavy Ballot X" },
+        { "char": "⊘", "label": "Circled Division Slash" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Warning triangles, caution signs, and hazard symbols for safety labels."
+    },
+    {
+      "href": "/library/recycle-environment-symbols/",
+      "title": "Recycle & Environment Symbols",
+      "desc": "Recycling arrows and eco symbols for packaging and care labels."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Triangles, squares, circles, and other shapes used in care iconography."
+    }
+  ]
+}
