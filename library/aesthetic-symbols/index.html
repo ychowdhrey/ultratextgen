@@ -539,6 +539,16 @@
   </details>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="aesthetic-symbols-collections">
+  <span class="article-section-label">Aesthetic Collections</span>
+  <h2>Aesthetic Bio &amp; Divider Sets</h2>
+  <p class="u-secondary-block">Curated aesthetic strings ready to paste into a bio, username, or caption — copy the whole combo in one click.</p>
+  <div id="aestheticCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Style your bio with aesthetic Unicode fonts</h3>
@@ -579,6 +589,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Soft Sparkle Bio", flags: ["⊹","˚","₊","✧","₊","˚","⊹"], defaultFormat: "inline" },
+    { name: "Coquette Heart Combo", flags: ["୨୧","♡","ʚɞ","♡","୨୧"], defaultFormat: "inline" },
+    { name: "Nature Florette Set", flags: ["❀","✿","❁","✾","❀"], defaultFormat: "inline" },
+    { name: "Star Line Divider", flags: ["✦──✦"], defaultFormat: "inline" },
+    { name: "Minimal Dot Accent", flags: ["⊰","∘","⋆","✦","⋆","∘","⊱"], defaultFormat: "inline" },
+    { name: "Celestial Username Tag", flags: ["⋆˚࿔","✧","˚","⋆"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("aestheticCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -313,6 +313,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="tiktok-collections">
+  <span class="article-section-label">TikTok Collections</span>
+  <h2>TikTok Bio Separators &amp; Dividers</h2>
+  <p class="u-secondary-block">Ready-made TikTok strings you can paste straight into a bio, caption, or comment — copy the whole combo in one click.</p>
+  <div id="tiktokCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Style your TikTok bio with Unicode fonts</h3>
@@ -353,6 +363,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "TikTok Bio Separator", flags: ["✦──✦"], defaultFormat: "inline" },
+    { name: "Aesthetic Bio Combo", flags: ["⊹","‧₊˚","✧","‧₊˚","⊹"], defaultFormat: "inline" },
+    { name: "Dashed Caption Divider", flags: ["•·——·•"], defaultFormat: "inline" },
+    { name: "Fire Hype Combo", flags: ["🔥","⚡","💯","⚡","🔥"], defaultFormat: "inline" },
+    { name: "Sparkle Bio Accent", flags: ["✨","₊","˚","⭐","˚","₊","✨"], defaultFormat: "inline" },
+    { name: "Bar Section Spacer", flags: ["│","·","│","·","│"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("tiktokCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

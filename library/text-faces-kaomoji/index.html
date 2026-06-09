@@ -428,6 +428,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="kaomoji-collections">
+  <span class="article-section-label">Kaomoji Collections</span>
+  <h2>Themed Kaomoji Sets</h2>
+  <p class="u-secondary-block">Ready-made kaomoji sets grouped by mood — copy a whole set of related faces in one click for chats, captions, and comments.</p>
+  <div id="kaomojiCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Style your text with Unicode fonts</h3>
@@ -468,6 +478,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Happy Kaomoji Set", flags: ["(◠‿◠)","(^▽^)","(≧◡≦)","ヽ(•‿•)ノ"], defaultFormat: "inline" },
+    { name: "Cute Animal Kaomoji", flags: ["ʕ•ᴥ•ʔ","(=^・ω・^=)","(◕ᴗ◕✿)","(U ᵕ U❁)"], defaultFormat: "inline" },
+    { name: "Sad & Crying Set", flags: ["(T_T)","╥﹏╥","(;﹏;)","(｡•́︿•̀｡)"], defaultFormat: "inline" },
+    { name: "Shrug & Table-Flip Set", flags: ["¯\\_(ツ)_/¯","(╯°□°）╯︵ ┻━┻","┬─┬ノ(º_ºノ)"], defaultFormat: "inline" },
+    { name: "Love & Affection Set", flags: ["(♥ω♥)","(◍•ᴗ•◍)❤","(✿ ♥‿♥)","(づ｡◕‿‿◕｡)づ"], defaultFormat: "inline" },
+    { name: "Lenny Face Set", flags: ["( ͡° ͜ʖ ͡°)","( ͡~ ͜ʖ ͡°)","( ͡◉ ͜ʖ ͡◉)"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("kaomojiCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
