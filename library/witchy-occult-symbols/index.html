@@ -638,6 +638,16 @@
 
 <div class="section-divider"></div>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="witchy-collections">
+  <span class="article-section-label">Witchy Collections</span>
+  <h2>Witchy Bio &amp; Border Sets</h2>
+  <p class="u-secondary-block">Ready-made witchy strings you can paste straight into a bio, caption, or username — copy the whole combo in one click.</p>
+  <div id="witchyCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -682,6 +692,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Pentagram Bio Border", flags: ["⛧","˖","⛤","˖","⛧"], defaultFormat: "inline" },
+    { name: "Moon & Sun Combo", flags: ["☽","˚","✴","˚","☉"], defaultFormat: "inline" },
+    { name: "Witchy Star Trail", flags: ["✶","·","✴","·","✶"], defaultFormat: "inline" },
+    { name: "Crescent Moon Border", flags: ["☽⋆ﾟ｡⋆"], defaultFormat: "inline" },
+    { name: "Planetary Bio Combo", flags: ["☽","☿","♀","♂","♃","♄"], defaultFormat: "inline" },
+    { name: "Ankh Spell Divider", flags: ["☥","˖","⛤","˖","☥"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("witchyCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

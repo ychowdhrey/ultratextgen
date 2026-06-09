@@ -414,7 +414,7 @@
 <section class="mood-explainers" id="superscripts-subscripts">
   <span class="article-section-label">Superscripts &amp; Subscripts</span>
   <h2>Superscript &amp; Subscript Numbers</h2>
-  <p class="u-secondary-tight">Superscript and subscript digit characters for exponents and chemical formulas. For full 0–9 sequence copy and additional numeric styles, see the dedicated <a href="/library/number-symbols/#number-collections">number-symbols collections page</a>.</p>
+  <p class="u-secondary-tight">Superscript and subscript digit characters for exponents and chemical formulas. For additional numeric styles, see the dedicated <a href="/library/number-symbols/">number symbols page</a>.</p>
   <div class="flag-rows">
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="⁰" aria-label="Copy ⁰">⁰</button>
@@ -592,16 +592,6 @@
   </div>
 </section>
 
-<div class="section-divider"></div>
-
-<!-- COLLECTIONS -->
-<section class="mood-explainers" id="math-collections">
-  <span class="article-section-label">Math Collections</span>
-  <h2>Greek Alphabet Sequences</h2>
-  <p class="u-secondary-block">Copy the canonical Greek alphabet in one click — both uppercase Α–Ω and lowercase α–ω. For numeric digit sequences (superscripts, subscripts), see the dedicated <a href="/library/number-symbols/#number-collections">number-symbols collections page</a>.</p>
-  <div id="mathCollectionsContainer"></div>
-</section>
-
 <!-- CTA -->
 <div class="cta-card">
   <h3>Write equations with Unicode font styles</h3>
@@ -642,29 +632,6 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
-  var ns = window.UltraTextGen;
-  if (!ns || !ns.buildGrids) return;
-
-  var GROUPS = [
-    {
-      name: "Greek Alphabet (uppercase Α–Ω)",
-      flags: ["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω"],
-      defaultFormat: "inline"
-    },
-    {
-      name: "Greek Alphabet (lowercase α–ω)",
-      flags: ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω"],
-      defaultFormat: "inline"
-    }
-  ];
-
-  ns.buildGrids("mathCollectionsContainer", GROUPS);
-  ns.parseTwemoji(document.body);
-});
-</script>
 <script src="/footer.js"></script>
 </body>
 </html>

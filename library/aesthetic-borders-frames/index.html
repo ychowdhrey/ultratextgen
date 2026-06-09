@@ -252,6 +252,14 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="aesthetic-borders-frames-collections">
+  <span class="article-section-label">Borders &amp; Frames Collections</span>
+  <h2>Ready-to-Paste Borders &amp; Frames</h2>
+  <p class="u-secondary-block">Full decorative borders and corner frames you can paste straight around a bio or caption — copy the whole pattern in one click.</p>
+  <div id="bordersFramesCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -298,6 +306,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Floral Dash Frame", flags: ["❀━━━━━━━❀"], defaultFormat: "inline" },
+    { name: "Petal Bio Border", flags: ["✿ ━━━━━━ ✿"], defaultFormat: "inline" },
+    { name: "Star Corner Frame", flags: ["╭━━━ ⋆⭒☆⭒⋆ ━━━╮"], defaultFormat: "inline" },
+    { name: "Soft Rounded Frame", flags: ["╭┈ ୨୧ ┈╮"], defaultFormat: "inline" },
+    { name: "Heart Wrap Border", flags: ["♡━━━━━━━♡"], defaultFormat: "inline" },
+    { name: "Dotted Star Divider", flags: ["── ✦ ──"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("bordersFramesCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

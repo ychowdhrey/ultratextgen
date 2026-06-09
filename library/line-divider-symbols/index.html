@@ -329,6 +329,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="line-divider-collections">
+  <span class="article-section-label">Divider Collections</span>
+  <h2>Prebuilt Divider &amp; Separator Sets</h2>
+  <p class="u-secondary-block">Ready-made decorative dividers and ornamental separators you can drop between sections — copy the whole line in one click.</p>
+  <div id="lineDividerCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Format your emails and LinkedIn posts</h3>
@@ -369,6 +379,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Star Centered Divider", flags: ["✦────────✦"], defaultFormat: "inline" },
+    { name: "Floral Heart Divider", flags: ["❧──────❧"], defaultFormat: "inline" },
+    { name: "Diamond Rule", flags: ["♦───────♦"], defaultFormat: "inline" },
+    { name: "Dotted Section Break", flags: ["•──────────•"], defaultFormat: "inline" },
+    { name: "Dashed Soft Divider", flags: ["┄┄┄┄┄┄┄┄┄"], defaultFormat: "inline" },
+    { name: "Floral Diamond Separator", flags: ["✿──❖──✿"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("lineDividerCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

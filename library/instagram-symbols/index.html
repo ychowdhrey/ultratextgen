@@ -345,6 +345,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="instagram-collections">
+  <span class="article-section-label">Instagram Collections</span>
+  <h2>Instagram Bio &amp; Caption Combos</h2>
+  <p class="u-secondary-block">Ready-made Instagram strings you can paste straight into a bio, caption, or story — copy the whole combo in one click.</p>
+  <div id="instagramCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Style your Instagram bio with Unicode fonts</h3>
@@ -385,6 +395,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Instagram Bio Divider", flags: ["✦","⊹","˚","✧","˚","⊹","✦"], defaultFormat: "inline" },
+    { name: "Sparkle Caption Combo", flags: ["✨","•","✨","🌟","✨","•","✨"], defaultFormat: "inline" },
+    { name: "Flower Bio Separator", flags: ["✿","─","✿","─","✿"], defaultFormat: "inline" },
+    { name: "Dotted Bio Spacer", flags: ["·","◦","·","◦","·"], defaultFormat: "inline" },
+    { name: "Moon & Cloud Caption", flags: ["🌙","☁️","˖","✦","˖","☁️","🌙"], defaultFormat: "inline" },
+    { name: "Heart Eyes Caption Combo", flags: ["♡","˖","😍","˖","♡"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("instagramCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -261,6 +261,16 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="roblox-collections">
+  <span class="article-section-label">Roblox Collections</span>
+  <h2>Roblox Display Name &amp; Bio Combos</h2>
+  <p class="u-secondary-block">Ready-made decoration strings you can paste straight into a Roblox display name, bio, or group description — copy the whole combo in one click.</p>
+  <div id="robloxCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA: Generator cross-link (C2) -->
 <div class="cta-card">
   <h3>Need a Roblox username (not just symbols)?</h3>
@@ -318,6 +328,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Star Name Combo", flags: ["⋆","★","✦","★","⋆"], defaultFormat: "inline" },
+    { name: "Cute Bow Name Combo", flags: ["୨୧","♡","୨୧"], defaultFormat: "inline" },
+    { name: "Flower Display Name", flags: ["❀","✿","❁","✿","❀"], defaultFormat: "inline" },
+    { name: "Heart Wings Combo", flags: ["⋆","ʚɞ","⋆"], defaultFormat: "inline" },
+    { name: "Bracket Star Name", flags: ["꒰","⊹","✧","⊹","꒱"], defaultFormat: "inline" },
+    { name: "Sparkle Bio Divider", flags: ["⋆","☆","⊹","☆","⋆"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("robloxCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

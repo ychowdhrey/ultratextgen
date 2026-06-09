@@ -419,6 +419,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="star-collections">
+  <span class="article-section-label">Star Collections</span>
+  <h2>Star Bio &amp; Rating Sets</h2>
+  <p class="u-secondary-block">Ready-made star decorations, trails, and rating rows you can paste into a bio, caption, or review — copy the whole set in one click.</p>
+  <div id="starCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -463,6 +473,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Twinkle Bio Border", flags: ["⋆","˚","✦","✧","✦","˚","⋆"], defaultFormat: "inline" },
+    { name: "Shooting Star Trail", flags: ["｡˚⋆★彡"], defaultFormat: "inline" },
+    { name: "Starlit Username Tag", flags: ["✩","｡","✫","｡","✩"], defaultFormat: "inline" },
+    { name: "Five Star Rating Row", flags: ["★★★★★"], defaultFormat: "inline" },
+    { name: "Sparkle Accent Cluster", flags: ["✮","⋆","˙","⭒","˙","⋆","✮"], defaultFormat: "inline" },
+    { name: "Celestial Caption Glow", flags: ["˚","₊","‧","🌟","‧","₊","˚"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("starCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
