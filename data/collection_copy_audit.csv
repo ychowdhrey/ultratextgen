@@ -1,0 +1,80 @@
+slug,page_path,symbol_category,has_collection_now,collection_opportunity,verdict,rationale,checked_date
+accent-marks-diacritics,library/accent-marks-diacritics/index.html,Combining diacritics,no,no,N/A,"Combining marks attach to individual letters; users copy one mark at a time, not a set.",2026-06-09
+achievement-symbols,library/achievement-symbols/index.html,Achievement emojis,no,no,N/A,"Trophies, medals and award emojis are copied individually for a specific accolade, not pasted as a group.",2026-06-09
+aesthetic-borders-frames,library/aesthetic-borders-frames/index.html,Decorative borders/frames,no,yes,ADD,"Entire page is multi-symbol borders, frames and dividers (Floral/Star/Heart Borders, Corner Frames, Minimalist Dividers) meant to be pasted as a unit.",2026-06-09
+aesthetic-symbols,library/aesthetic-symbols/index.html,Aesthetic decoration,no,yes,ADD,"Aesthetic bio strings and divider/border sets (Sparkle/Heart/Nature aesthetic sets, Arrow & Divider sets) are typically pasted whole.",2026-06-09
+animal-emojis,library/animal-emojis/index.html,Animal emojis,no,no,N/A,Users pick one animal emoji for context; there is no natural set pasted together.,2026-06-09
+arrow-symbols,library/arrow-symbols/index.html,Directional arrows,no,no,N/A,"Arrows are functional single glyphs chosen for direction, not strung together as a collection.",2026-06-09
+awareness-ribbons,library/awareness-ribbons/index.html,Awareness ribbons,no,no,N/A,"A single cause ribbon is copied for a specific cause, not a set.",2026-06-09
+body-language-emojis,library/body-language-emojis/index.html,Gesture/body emojis,no,no,N/A,Expressive body and gesture emojis are used singly in context.,2026-06-09
+bow-ribbon-symbols,library/bow-ribbon-symbols/index.html,Coquette bows/ribbons,no,yes,ADD,Coquette/preppy bio decoration; bow+heart combos and ribbon strings are pasted together (page has a Bow & Heart Combos section).,2026-06-09
+box-drawing-symbols,library/box-drawing-symbols/index.html,Box-drawing / blocks,no,yes,ADD,"Box-drawing runs (lines, corners, junctions, shading) are assembled into multi-character borders and boxes - a textbook collection use.",2026-06-09
+bracket-symbols,library/bracket-symbols/index.html,Brackets/braces,no,no,N/A,"A bracket pair is copied individually to wrap text, not as a symbol set.",2026-06-09
+braille-pattern-symbols,library/braille-pattern-symbols/index.html,Braille patterns,no,no,N/A,"Braille glyphs are looked up and copied individually (blank or solid fill), not as a curated set.",2026-06-09
+bullet-point-symbols,library/bullet-point-symbols/index.html,Bullet markers,no,no,N/A,Users copy one bullet to mark list items; the set is not pasted together.,2026-06-09
+card-suit-symbols,library/card-suit-symbols/index.html,Card suits,no,no,N/A,Card suits are copied individually; the four-suit set is small and rarely pasted as a unit.,2026-06-09
+checkmark-symbols,library/checkmark-symbols/index.html,Checkmarks/status,no,no,N/A,Checkmarks and crosses are status glyphs chosen one at a time (explicit single-glyph case).,2026-06-09
+chess-symbols,library/chess-symbols/index.html,Chess pieces,yes,yes,KEEP,"Has a Chess Piece Sets grouping; full white/black piece sets form a coherent unit, though intent is borderline single-glyph.",2026-06-09
+copyright-trademark-symbols,library/copyright-trademark-symbols/index.html,Legal marks,no,no,N/A,Copyright/registered/trademark marks are inserted individually next to a name; no set use.,2026-06-09
+coquette-symbols,library/coquette-symbols/index.html,Coquette aesthetic,no,yes,ADD,"Soft feminine bio decoration; bows, hearts and dust strings are pasted together as aesthetic units.",2026-06-09
+cottagecore-symbols,library/cottagecore-symbols/index.html,Cottagecore aesthetic,no,yes,ADD,Cottagecore bio decoration including a Soft Cottagecore Borders set pasted as a unit.,2026-06-09
+cross-x-symbols,library/cross-x-symbols/index.html,Crosses / X marks,no,no,N/A,Crosses and X marks are copied individually for a specific glyph.,2026-06-09
+crown-royalty-symbols,library/crown-royalty-symbols/index.html,Crowns/royalty,no,no,N/A,A single crown or tiara is copied for a username; it is not pasted as a set.,2026-06-09
+currency-symbols,library/currency-symbols/index.html,Currency signs,no,no,N/A,Currency signs are copied one at a time for a price (explicit single-glyph case).,2026-06-09
+dash-hyphen-symbols,library/dash-hyphen-symbols/index.html,Dashes/hyphens,no,no,N/A,"A specific dash or hyphen is copied for typography, not as a collection.",2026-06-09
+degree-symbol,library/degree-symbol/index.html,Degree/angle signs,no,no,N/A,The degree sign and related marks are single-glyph inserts (explicit single-glyph case).,2026-06-09
+dice-domino-symbols,library/dice-domino-symbols/index.html,Dice/dominoes,no,no,N/A,"A single die or domino face is copied; the full face run is a minor sequence, not a typical paste unit.",2026-06-09
+discord-symbols,library/discord-symbols/index.html,Discord decoration,no,yes,ADD,Explicit Symbol Combo Templates and Dividers sections are built to be pasted whole into Discord bios and channels.,2026-06-09
+egyptian-hieroglyphs,library/egyptian-hieroglyphs/index.html,Hieroglyphs,no,no,N/A,"A reference of 1,072 glyphs browsed to copy one specific hieroglyph.",2026-06-09
+email-symbols,library/email-symbols/index.html,Email utility symbols,no,no,N/A,"Subject grabbers, bullets and status icons are inserted individually; dividers are single-character.",2026-06-09
+emoji-flags,library/emoji-flags/index.html,Country flags,yes,yes,KEEP,Regional flag grids are pasted as sets - already implemented and a genuine fit.,2026-06-09
+emoji-meanings-guide,library/emoji-meanings-guide/index.html,Editorial guide,no,no,N/A,"Editorial guide explaining emoji meanings, not a copy-grid page.",2026-06-09
+face-emojis,library/face-emojis/index.html,Face emojis,no,no,N/A,One expressive face emoji is chosen per context.,2026-06-09
+flower-symbols,library/flower-symbols/index.html,Flowers/nature,no,yes,ADD,Has a Floral Dividers & Aesthetic Bio Sets section; floral strings are pasted whole as decoration.,2026-06-09
+food-drink-emojis,library/food-drink-emojis/index.html,Food/drink emojis,no,no,N/A,Food and drink emojis are picked individually.,2026-06-09
+fraction-symbols,library/fraction-symbols/index.html,Fractions,no,no,N/A,A specific fraction glyph is copied; there is no set use.,2026-06-09
+gender-symbols,library/gender-symbols/index.html,Gender signs,no,no,N/A,A single gender or orientation sign is copied for identity.,2026-06-09
+geometric-symbols,library/geometric-symbols/index.html,Geometric shapes,no,no,N/A,Geometric shapes are functional single glyphs used for formatting.,2026-06-09
+goth-grunge-symbols,library/goth-grunge-symbols/index.html,Goth/grunge aesthetic,no,yes,ADD,"Dark-aesthetic bio decoration; crosses, daggers and dark florals are strung together as units.",2026-06-09
+greek-letter-symbols,library/greek-letter-symbols/index.html,Greek letters,no,no,N/A,"Primary intent is one Greek letter (alpha, pi); full-alphabet copy is already covered as a math sequence.",2026-06-09
+hand-symbols,library/hand-symbols/index.html,Hand emojis,no,no,N/A,Hand gestures are copied singly.,2026-06-09
+hazard-warning-symbols,library/hazard-warning-symbols/index.html,Hazard/warning signs,no,no,N/A,A specific warning sign is copied for labeling.,2026-06-09
+heart-symbols,library/heart-symbols/index.html,Hearts,no,yes,ADD,Colored-heart sets and decorative heart strings are commonly pasted whole into bios (weaker fit than dedicated decoration pages).,2026-06-09
+instagram-symbols,library/instagram-symbols/index.html,Instagram decoration,no,yes,ADD,Explicit Instagram Symbol Combos are built to paste as bio and caption units.,2026-06-09
+kawaii-cute-symbols,library/kawaii-cute-symbols/index.html,Kawaii aesthetic,no,yes,ADD,Cute decorative marks and pastel motifs are pasted together as aesthetic strings.,2026-06-09
+keyboard-symbols,library/keyboard-symbols/index.html,Keyboard glyphs,no,no,N/A,Modifier and key glyphs are inserted individually into shortcuts.,2026-06-09
+laundry-care-symbols,library/laundry-care-symbols/index.html,Care symbols,no,no,N/A,Care symbols are referenced and copied one at a time.,2026-06-09
+line-divider-symbols,library/line-divider-symbols/index.html,Line dividers,no,yes,ADD,Built around Decorative Divider Combos and Ornamental Separator Combos - multi-symbol dividers pasted as a unit.,2026-06-09
+linkedin-comment-styling,library/linkedin-comment-styling/index.html,Editorial guide,no,no,N/A,"Editorial how-to guide, not a copy-grid page.",2026-06-09
+linkedin-symbol-library,library/linkedin-symbol-library/index.html,LinkedIn utility,no,no,N/A,"Professional arrows, bullets and numbers are copied individually with no formatting loss.",2026-06-09
+math-symbols,library/math-symbols/index.html,Math operators,yes,no,REMOVE,"Math operators, comparison and set symbols are looked up one at a time (explicit single-glyph case); collection copy is a poor fit despite current use.",2026-06-09
+media-control-symbols,library/media-control-symbols/index.html,Media controls,no,no,N/A,Play/pause/stop glyphs are inserted individually.,2026-06-09
+medical-symbols,library/medical-symbols/index.html,Medical signs,no,no,N/A,"A specific medical sign (Rx, caduceus) is copied alone.",2026-06-09
+moon-celestial-symbols,library/moon-celestial-symbols/index.html,Moon/celestial,yes,yes,KEEP,Moon-phase sequences and night-sky sets are pasted as decorative units - already implemented and a genuine fit.,2026-06-09
+music-symbols,library/music-symbols/index.html,Music notes,no,yes,ADD,Has a Music Note Bio Decorations section; note strings are pasted as decoration (weaker fit; page is mostly single-note lookup).,2026-06-09
+norse-viking-runes,library/norse-viking-runes/index.html,Runes,yes,yes,KEEP,Full futhark alphabets are copied as runic sets - already implemented and a genuine fit.,2026-06-09
+number-symbols,library/number-symbols/index.html,Numerals,yes,no,REMOVE,"Circled, superscript and Roman numerals are chosen individually (explicit individual-numerals case); collection copy is a poor fit despite current use.",2026-06-09
+peace-symbol,library/peace-symbol/index.html,Peace symbols,no,no,N/A,A single peace sign or dove is copied.,2026-06-09
+people-profession-emojis,library/people-profession-emojis/index.html,Profession emojis,no,no,N/A,One profession emoji is picked per context.,2026-06-09
+punctuation-symbols,library/punctuation-symbols/index.html,Punctuation marks,no,no,N/A,Special punctuation marks are inserted individually.,2026-06-09
+recycle-environment-symbols,library/recycle-environment-symbols/index.html,Recycling/eco signs,no,no,N/A,A specific recycling or eco sign is copied alone.,2026-06-09
+religious-symbols,library/religious-symbols/index.html,Faith symbols,no,no,N/A,A single faith symbol is copied per tradition.,2026-06-09
+roblox-symbols,library/roblox-symbols/index.html,Roblox decoration,no,yes,ADD,"Cute/Y2K decoration strings for Roblox display names are pasted as units within the content filter (weaker, platform-driven fit).",2026-06-09
+slash-backslash-symbols,library/slash-backslash-symbols/index.html,Slashes,no,no,N/A,A specific slash or backslash glyph is copied alone.,2026-06-09
+smiley-face-guide,library/smiley-face-guide/index.html,Editorial guide,no,no,N/A,"Editorial guide on smiley meanings, not a copy-grid page.",2026-06-09
+sparkle-symbols,library/sparkle-symbols/index.html,Sparkles,no,yes,ADD,"Sparkle/glitter strings, aesthetic decorators and divider/border characters are pasted whole (explicit sparkle-string case).",2026-06-09
+special-characters,library/special-characters/index.html,Standalone specials,no,no,N/A,Meaningful standalone symbols are copied individually by definition.,2026-06-09
+sports-emojis,library/sports-emojis/index.html,Sports emojis,no,no,N/A,One sport or activity emoji is picked per post.,2026-06-09
+star-symbols,library/star-symbols/index.html,Stars,no,yes,ADD,Has Aesthetic Star Bio Decorations; star strings are pasted whole as decoration.,2026-06-09
+tech-status-symbols,library/tech-status-symbols/index.html,Status glyphs,no,no,N/A,"Wi-Fi, battery and power glyphs are inserted individually.",2026-06-09
+text-faces-kaomoji,library/text-faces-kaomoji/index.html,Kaomoji,no,yes,ADD,"Themed kaomoji combos can be offered as sets, though each kaomoji is already a self-contained unit (task-listed case; weaker fit).",2026-06-09
+tiktok-symbols,library/tiktok-symbols/index.html,TikTok decoration,no,yes,ADD,Has TikTok Bio Separators & Dividers built to paste as multi-symbol units.,2026-06-09
+traffic-road-sign-symbols,library/traffic-road-sign-symbols/index.html,Traffic/road signs,no,no,N/A,A specific traffic or road sign is copied; the stoplight trio is a minor sequence.,2026-06-09
+transport-symbols,library/transport-symbols/index.html,Transport emojis,no,no,N/A,One vehicle or transport emoji is picked per context.,2026-06-09
+unit-measurement-symbols,library/unit-measurement-symbols/index.html,Units/measures,no,no,N/A,Scientific unit symbols are inserted individually.,2026-06-09
+weather-symbols,library/weather-symbols/index.html,Weather,no,no,N/A,A single weather glyph is copied per condition.,2026-06-09
+witchy-occult-symbols,library/witchy-occult-symbols/index.html,Occult aesthetic,no,yes,ADD,"Witchy bio decoration; pentagram, moon and planetary strings are pasted as aesthetic units, though it doubles as an alchemical reference (weaker fit).",2026-06-09
+x-twitter-symbols,library/x-twitter-symbols/index.html,X/Twitter formatting,no,no,N/A,"Thread-formatting, quote markers and verification glyphs are functional single inserts.",2026-06-09
+y2k-symbols,library/y2k-symbols/index.html,Y2K aesthetic,no,yes,ADD,"Explicit Y2K Combo Templates; cyber, star and butterfly strings are pasted as decorative units.",2026-06-09
+yin-yang-symbol,library/yin-yang-symbol/index.html,Yin yang,no,no,N/A,The yin-yang glyph and related balance characters are copied individually.,2026-06-09
+zodiac-symbols,library/zodiac-symbols/index.html,Zodiac/astrology,yes,yes,KEEP,Has a Zodiac & Astrology Sets grouping; the 12-sign set and astrology strings are pasted as units - already implemented.,2026-06-09
