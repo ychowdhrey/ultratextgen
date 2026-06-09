@@ -262,6 +262,16 @@
 
 <div class="section-divider"></div>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="goth-grunge-collections">
+  <span class="article-section-label">Goth &amp; Grunge Collections</span>
+  <h2>Dark Aesthetic Bio Sets</h2>
+  <p class="u-secondary-block">Ready-made dark-aesthetic strings you can paste straight into a bio, caption, or username — copy the whole combo in one click.</p>
+  <div id="gothGrungeCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -308,6 +318,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Goth Cross Divider", flags: ["†","˖","♱","˖","†"], defaultFormat: "inline" },
+    { name: "Egyptian Cross Frame", flags: ["𓆩♱𓆪"], defaultFormat: "inline" },
+    { name: "Dagger Border", flags: ["✟","·","†","‡","†","·","✟"], defaultFormat: "inline" },
+    { name: "Wilted Rose Combo", flags: ["🥀","🖤","🥀"], defaultFormat: "inline" },
+    { name: "Dark Floral Trail", flags: ["❦","˖","🖤","˖","❧"], defaultFormat: "inline" },
+    { name: "Pentagram Bio Combo", flags: ["⛧","˖","𖤐","˖","⛧"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("gothGrungeCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

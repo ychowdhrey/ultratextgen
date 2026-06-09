@@ -455,6 +455,18 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="flower-collections">
+  <span class="article-section-label">Flower Collections</span>
+  <h2>Floral Bio &amp; Divider Sets</h2>
+  <p class="u-secondary-block">Ready-made floral dividers and blossom bio sets you can paste straight into a bio, caption, or username — copy the whole arrangement in one click.</p>
+  <div id="flowerCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -495,6 +507,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Blossom Bio Border", flags: ["✿","❀","❁","❀","✿"], defaultFormat: "inline" },
+    { name: "Florette Dot Divider", flags: ["✾","·","❀","·","✾"], defaultFormat: "inline" },
+    { name: "Garden Bloom Set", flags: ["🌷","🌸","🌼","🌻","🌹"], defaultFormat: "inline" },
+    { name: "Bracket Flower Combo", flags: ["꒰❀꒱"], defaultFormat: "inline" },
+    { name: "Heavy Florette Line", flags: ["❋","❃","❋","❃","❋"], defaultFormat: "inline" },
+    { name: "Soft Bloom Caption", flags: ["❀","🌿","🌸","🌿","❀"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("flowerCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

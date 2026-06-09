@@ -410,6 +410,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="music-collections">
+  <span class="article-section-label">Music Collections</span>
+  <h2>Music Note Bio &amp; Trail Sets</h2>
+  <p class="u-secondary-block">Ready-made music-note strings you can paste straight into a bio, caption, or playlist name — copy the whole combo in one click.</p>
+  <div id="musicCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -450,6 +460,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Note Bio Trail", flags: ["♪","˚","♫","˚","♪"], defaultFormat: "inline" },
+    { name: "Soft Melody Border", flags: ["⋆｡˚♬˚｡⋆"], defaultFormat: "inline" },
+    { name: "Beamed Note Combo", flags: ["♩","♪","♫","♬"], defaultFormat: "inline" },
+    { name: "Sparkle Note Divider", flags: ["₊","˚","♪","⋆","♫","˚","₊"], defaultFormat: "inline" },
+    { name: "Now Playing Caption", flags: ["🎶","˚","♪","˚","🎶"], defaultFormat: "inline" },
+    { name: "Minimal Note Accent", flags: ["·","♪","·","♬","·"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("musicCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

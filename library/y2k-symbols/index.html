@@ -371,6 +371,16 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="y2k-collections">
+  <span class="article-section-label">Y2K Collections</span>
+  <h2>Y2K Combo Templates</h2>
+  <p class="u-secondary-block">Ready-made Y2K strings you can paste straight into a bio, username, or caption — copy the whole combo in one click.</p>
+  <div id="y2kCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -417,6 +427,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Cyber Username Combo", flags: ["✮","⋆","˚","𖤐","˚","⋆","✮"], defaultFormat: "inline" },
+    { name: "Gothic Cross Bio Combo", flags: ["♱","✟","†","✟","♱"], defaultFormat: "inline" },
+    { name: "Egyptian Cross Frame", flags: ["𓆩♱𓆪"], defaultFormat: "inline" },
+    { name: "Butterfly Bio Combo", flags: ["🦋","‧₊˚","🫧","‧₊˚","🦋"], defaultFormat: "inline" },
+    { name: "Dark Star Combo", flags: ["𖤐","⛧","✯","⛧","𖤐"], defaultFormat: "inline" },
+    { name: "Sparkle Dust Divider", flags: ["𖥔","⊹","‧₊˚","⊹","𖥔"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("y2kCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

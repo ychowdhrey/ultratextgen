@@ -267,6 +267,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="box-drawing-collections">
+  <span class="article-section-label">Box Drawing Collections</span>
+  <h2>Prebuilt Borders &amp; Rules</h2>
+  <p class="u-secondary-block">Ready-made horizontal rules and bracket runs built from box-drawing characters — copy the whole line in one click.</p>
+  <div id="boxDrawingCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -303,6 +313,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Light Horizontal Rule", flags: ["────────────"], defaultFormat: "inline" },
+    { name: "Heavy Horizontal Rule", flags: ["━━━━━━━━━━━━"], defaultFormat: "inline" },
+    { name: "Double Horizontal Rule", flags: ["════════════"], defaultFormat: "inline" },
+    { name: "Light Top Border", flags: ["┌──────────┐"], defaultFormat: "inline" },
+    { name: "Double Top Border", flags: ["╔══════════╗"], defaultFormat: "inline" },
+    { name: "Shaded Gradient Bar", flags: ["░▒▓█▓▒░"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("boxDrawingCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -304,6 +304,16 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="kawaii-collections">
+  <span class="article-section-label">Kawaii Collections</span>
+  <h2>Kawaii Bio &amp; Username Sets</h2>
+  <p class="u-secondary-block">Ready-made kawaii combos — soft hearts, tiny faces, and pastel sparkle you can paste straight into a bio, username, or message in one click.</p>
+  <div id="kawaiiCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -350,6 +360,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Soft Heart Bio Combo", flags: ["꒰","♡","꒱","⋆","ෆ"], defaultFormat: "inline" },
+    { name: "Kawaii Sparkle Divider", flags: ["⊹","⋆","✧","⋆","⊹"], defaultFormat: "inline" },
+    { name: "Blossom Wing Username", flags: ["ʚ ✿ ɞ"], defaultFormat: "inline" },
+    { name: "Pastel Dust Border", flags: ["✦","⋆","❀","⋆","✦"], defaultFormat: "inline" },
+    { name: "Tiny Face Bio Wrap", flags: ["(˶˃ ᵕ ˂˶)","♡"], defaultFormat: "inline" },
+    { name: "Cute Bracket Combo", flags: ["꒰ ♡ ꒱"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("kawaiiCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

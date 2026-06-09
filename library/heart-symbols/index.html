@@ -342,6 +342,16 @@
   </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="heart-collections">
+  <span class="article-section-label">Heart Collections</span>
+  <h2>Heart Bio &amp; Border Sets</h2>
+  <p class="u-secondary-block">Ready-made heart strings you can paste straight into a bio, caption, or username — copy the whole combo in one click.</p>
+  <div id="heartCollectionsContainer"></div>
+</section>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -382,6 +392,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Rainbow Heart Row", flags: ["❤","🧡","💛","💚","💙","💜"], defaultFormat: "inline" },
+    { name: "Soft Heart Border", flags: ["⋆｡˚♡˚｡⋆"], defaultFormat: "inline" },
+    { name: "Pastel Heart Trio", flags: ["🩷","🤍","🩵"], defaultFormat: "inline" },
+    { name: "White Heart Bio Trail", flags: ["♡","˚","♡","˚","♡"], defaultFormat: "inline" },
+    { name: "Sparkling Love Combo", flags: ["💕","˖","💖","˖","💞"], defaultFormat: "inline" },
+    { name: "Floral Heart Divider", flags: ["❦","˚","｡","♡","｡","˚","❧"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("heartCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

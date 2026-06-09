@@ -419,6 +419,16 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="discord-collections">
+  <span class="article-section-label">Discord Collections</span>
+  <h2>Discord Bio &amp; Channel Combo Templates</h2>
+  <p class="u-secondary-block">Ready-made Discord strings you can paste straight into a username, bio, server name, or channel — copy the whole combo in one click.</p>
+  <div id="discordCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -469,6 +479,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Discord Channel Divider", flags: ["━━━┈┈┈━━━"], defaultFormat: "inline" },
+    { name: "Star Bracket Username Combo", flags: ["꒰","✦","⊹","✧","꒱"], defaultFormat: "inline" },
+    { name: "Heart Frame Bio Combo", flags: ["𓆩♡𓆪"], defaultFormat: "inline" },
+    { name: "Sparkle Bio Accent", flags: ["⋆","˚","⊹","✦","⊹","˚","⋆"], defaultFormat: "inline" },
+    { name: "Corner Bracket Channel Name", flags: ["「","✧","・","✧","」"], defaultFormat: "inline" },
+    { name: "Dotted Server Divider", flags: ["・","⊹","┈","┈","⊹","・"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("discordCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
