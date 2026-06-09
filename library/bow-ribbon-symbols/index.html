@@ -233,6 +233,16 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="bow-ribbon-collections">
+  <span class="article-section-label">Bow &amp; Ribbon Collections</span>
+  <h2>Bow &amp; Ribbon Bio Sets</h2>
+  <p class="u-secondary-block">Ready-made bow and ribbon combos you can paste straight into a bio, username, or caption — copy the whole set in one click.</p>
+  <div id="bowRibbonCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -279,6 +289,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Coquette Bow Combo", flags: ["୨୧","⋆","🎀","⋆","୨୧"], defaultFormat: "inline" },
+    { name: "Bow Heart Border", flags: ["🎀","♡","🎀","♡","🎀"], defaultFormat: "inline" },
+    { name: "Heart Wing Bio Wrap", flags: ["ʚ♡ɞ"], defaultFormat: "inline" },
+    { name: "Ribbon Bracket Combo", flags: ["꒰ ♡ ꒱"], defaultFormat: "inline" },
+    { name: "Knot Ribbon Divider", flags: ["⊰","୨୧","⋆","🎀","⋆","୨୧","⊱"], defaultFormat: "inline" },
+    { name: "Soft Ribbon Username", flags: ["୨","♡","୧"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("bowRibbonCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>

@@ -308,6 +308,16 @@
 
 <div class="section-divider"></div>
 
+<!-- COLLECTIONS -->
+<section class="mood-explainers" id="cottagecore-collections">
+  <span class="article-section-label">Cottagecore Collections</span>
+  <h2>Cottagecore Bio &amp; Divider Sets</h2>
+  <p class="u-secondary-block">Ready-made cottagecore borders and nature bio sets you can paste straight into a bio, caption, or username — copy the whole arrangement in one click.</p>
+  <div id="cottagecoreCollectionsContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- CTA -->
 <div class="cta-card">
   <h3>Transform text with Unicode fonts</h3>
@@ -354,6 +364,25 @@
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script src="/symbol-explorer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.buildGrids) return;
+
+  var GROUPS = [
+    { name: "Meadow Bio Combo", flags: ["🌿","🍄","🐝","🌾","🦋"], defaultFormat: "inline" },
+    { name: "Honey Garden Set", flags: ["🍯","🐝","🌾","🧺","🍞"], defaultFormat: "inline" },
+    { name: "Wildflower Star Divider", flags: ["✦","⋆","✿","⋆","✦"], defaultFormat: "inline" },
+    { name: "Moonlit Cottage Border", flags: ["☾","⋆","✦","⋆","☼"], defaultFormat: "inline" },
+    { name: "Egyptian Nature Wrap", flags: ["𓆩","✿","𓂃"], defaultFormat: "inline" },
+    { name: "Sparkle Nature Border", flags: ["*ೃ༄"], defaultFormat: "inline" }
+  ];
+
+  ns.buildGrids("cottagecoreCollectionsContainer", GROUPS);
+  ns.parseTwemoji(document.body);
+});
+</script>
 <script src="/footer.js"></script>
 </body>
 </html>
