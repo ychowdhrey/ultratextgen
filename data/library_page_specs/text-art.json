@@ -1,0 +1,190 @@
+{
+  "slug": "text-art",
+  "title": "Text Art: Copy & Paste ASCII & Unicode Art Collections",
+  "meta_description": "Copy and paste text art — ASCII cats, braille hearts, star frames, and kaomoji classics, plus blocks to draw your own. Click any piece to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/text-art/",
+  "breadcrumb": "Text Art",
+  "hero_h1": "Text Art",
+  "hero_tagline": "Finished ASCII and Unicode art pieces plus every box-drawing, block, and braille character you need to make your own. Click to copy instantly.",
+  "intro": "Text art (also called ASCII art) is artwork drawn entirely with characters — box-drawing lines, shaded blocks, braille dots, and plain keyboard symbols. It works anywhere text does: Discord chats, game lobbies, X posts, YouTube comments, and plain-text bios. This page collects small, ready-to-paste text art pieces you can copy in one click, plus the individual building-block characters if you want to draw something original.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "box-drawing-basics",
+      "label": "Lines",
+      "h2": "Box Drawing Characters",
+      "intro": "Straight lines, corners, and junctions — the skeleton of frames, tables, and structured text art.",
+      "symbols": [
+        { "char": "─", "label": "Box Drawings Light Horizontal" },
+        { "char": "│", "label": "Box Drawings Light Vertical" },
+        { "char": "┌", "label": "Box Drawings Light Down and Right" },
+        { "char": "┐", "label": "Box Drawings Light Down and Left" },
+        { "char": "└", "label": "Box Drawings Light Up and Right" },
+        { "char": "┘", "label": "Box Drawings Light Up and Left" },
+        { "char": "├", "label": "Box Drawings Light Vertical and Right" },
+        { "char": "┤", "label": "Box Drawings Light Vertical and Left" },
+        { "char": "┼", "label": "Box Drawings Light Vertical and Horizontal" },
+        { "char": "═", "label": "Box Drawings Double Horizontal" },
+        { "char": "║", "label": "Box Drawings Double Vertical" },
+        { "char": "╔", "label": "Box Drawings Double Down and Right" },
+        { "char": "╗", "label": "Box Drawings Double Down and Left" },
+        { "char": "╚", "label": "Box Drawings Double Up and Right" },
+        { "char": "╝", "label": "Box Drawings Double Up and Left" }
+      ]
+    },
+    {
+      "id": "block-shading",
+      "label": "Blocks",
+      "h2": "Block & Shading Characters",
+      "intro": "Solid and shaded blocks for filling shapes and creating gradients in larger pieces.",
+      "symbols": [
+        { "char": "█", "label": "Full Block" },
+        { "char": "▀", "label": "Upper Half Block" },
+        { "char": "▄", "label": "Lower Half Block" },
+        { "char": "▌", "label": "Left Half Block" },
+        { "char": "▐", "label": "Right Half Block" },
+        { "char": "░", "label": "Light Shade" },
+        { "char": "▒", "label": "Medium Shade" },
+        { "char": "▓", "label": "Dark Shade" },
+        { "char": "▖", "label": "Quadrant Lower Left" },
+        { "char": "▘", "label": "Quadrant Upper Left" }
+      ]
+    },
+    {
+      "id": "braille-texture",
+      "label": "Braille",
+      "h2": "Braille Dot Characters",
+      "intro": "Braille patterns give text art its finest resolution — most modern dot art is drawn with these.",
+      "symbols": [
+        { "char": "⠁", "label": "Braille Pattern Dots-1" },
+        { "char": "⠉", "label": "Braille Pattern Dots-14" },
+        { "char": "⠛", "label": "Braille Pattern Dots-1245" },
+        { "char": "⠿", "label": "Braille Pattern Dots-123456" },
+        { "char": "⣀", "label": "Braille Pattern Dots-78" },
+        { "char": "⣤", "label": "Braille Pattern Dots-3678" },
+        { "char": "⣶", "label": "Braille Pattern Dots-235678" },
+        { "char": "⣿", "label": "Braille Pattern Dots-12345678" },
+        { "char": "⡇", "label": "Braille Pattern Dots-1237" },
+        { "char": "⢸", "label": "Braille Pattern Dots-4568" }
+      ]
+    },
+    {
+      "id": "shape-accents",
+      "label": "Shapes",
+      "h2": "Geometric Shape Accents",
+      "intro": "Simple geometric characters for stars, diamonds, and decorative detail work.",
+      "symbols": [
+        { "char": "◆", "label": "Black Diamond" },
+        { "char": "◇", "label": "White Diamond" },
+        { "char": "●", "label": "Black Circle" },
+        { "char": "○", "label": "White Circle" },
+        { "char": "▲", "label": "Black Up-Pointing Triangle" },
+        { "char": "△", "label": "White Up-Pointing Triangle" },
+        { "char": "▼", "label": "Black Down-Pointing Triangle" },
+        { "char": "▽", "label": "White Down-Pointing Triangle" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "art-pieces",
+    "label": "Art Pieces",
+    "h2": "Ready-Made Text Art Pieces",
+    "intro": "Copy a complete multi-line text art piece in one click — keep the vertical format so the lines stay aligned."
+  },
+  "collection_container_id": "textArtContainer",
+  "collections": [
+    {
+      "name": "ASCII Cat",
+      "flags": [
+        "⠀⠀/\\_/\\",
+        "⠀( o.o )",
+        "⠀(⠀⠀v⠀⠀)",
+        "⠀⠀|⠀⠀⠀|",
+        "⠀(__|__)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Braille Heart",
+      "flags": [
+        "⠀⣠⣶⣶⣄⠀⣠⣶⣶⣄",
+        "⣸⣿⣿⣿⣿⣶⣿⣿⣿⣿⣇",
+        "⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿",
+        "⠈⢿⣿⣿⣿⣿⣿⣿⣿⡿⠁",
+        "⠀⠀⠙⢿⣿⣿⣿⡿⠋⠀",
+        "⠀⠀⠀⠀⠙⠿⠋⠀⠀"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Diamond Stack",
+      "flags": [
+        "⠀⠀◇",
+        "⠀◇◆◇",
+        "◇◆◆◆◇",
+        "⠀◇◆◇",
+        "⠀⠀◇"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Star Frame",
+      "flags": [
+        "✦─────────────✦",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "│⠀⠀your text⠀⠀│",
+        "│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│",
+        "✦─────────────✦"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Kaomoji Classics",
+      "flags": [
+        "¯\\_(ツ)_/¯",
+        "(╯°□°）╯︵ ┻━┻",
+        "( ͡° ͜ʖ ͡°)",
+        "(ノ◕ヮ◕)ノ*:・゚✧",
+        "(◕‿◕)",
+        "ʕ•ᴥ•ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Mountain Range",
+      "flags": [
+        "⠀⠀⠀⠀⠀▲",
+        "⠀⠀⠀⠀▲▲▲",
+        "⠀⠀▲⠀▲▲▲▲▲",
+        "⠀▲▲▲▲▲▲▲▲▲",
+        "▲▲▲▲▲▲▲▲▲▲▲"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/meme-text-art/",
+      "title": "Meme Text Art",
+      "desc": "Dot art faces, lenny packs, and meme-style text pieces."
+    },
+    {
+      "href": "/library/roblox-text-art/",
+      "title": "Roblox Text Art",
+      "desc": "Chat-friendly character faces and dot art for Roblox."
+    },
+    {
+      "href": "/library/box-drawing-symbols/",
+      "title": "Box Drawing Symbols",
+      "desc": "The full set of line and corner characters for frames and tables."
+    },
+    {
+      "href": "/library/braille-pattern-symbols/",
+      "title": "Braille Pattern Symbols",
+      "desc": "Every braille dot pattern used in high-resolution dot art."
+    }
+  ]
+}

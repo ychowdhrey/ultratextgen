@@ -1,0 +1,181 @@
+{
+  "slug": "roblox-text-art",
+  "title": "Roblox Text Art: Copy & Paste Man Face & Character Dot Art",
+  "meta_description": "Roblox text art for chat and bios — man face style dot art, blocky smiles, emote one-liners, and GG banners. Click any piece to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/roblox-text-art/",
+  "breadcrumb": "Roblox Text Art",
+  "hero_h1": "Roblox Text Art",
+  "hero_tagline": "Deadpan man-face-style dot art, blocky smiles, and chat emotes sized for Roblox chat. Click any piece to copy it instantly.",
+  "intro": "Roblox text art is small character art built to survive the Roblox chat box — deadpan man-face-style approximations, blocky smiles, and one-line emotes drawn with braille and block characters. Because Roblox chat has limited length and strict filtering, the best pieces stay compact and use plain Unicode rather than emojis. Copy a complete face below in one click, or build your own from the chat-safe blocks and dot characters in each section. For username glyphs and decorations, see our separate Roblox Symbols page.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "chat-blocks",
+      "label": "Blocks",
+      "h2": "Chat-Safe Block Characters",
+      "intro": "Solid and shaded blocks that render reliably in Roblox chat and on profile pages.",
+      "symbols": [
+        { "char": "█", "label": "Full Block" },
+        { "char": "▀", "label": "Upper Half Block" },
+        { "char": "▄", "label": "Lower Half Block" },
+        { "char": "░", "label": "Light Shade" },
+        { "char": "▒", "label": "Medium Shade" },
+        { "char": "▓", "label": "Dark Shade" },
+        { "char": "▌", "label": "Left Half Block" },
+        { "char": "▐", "label": "Right Half Block" }
+      ]
+    },
+    {
+      "id": "dot-art-characters",
+      "label": "Dot Art",
+      "h2": "Braille Dot Art Characters",
+      "intro": "The braille tones used to shade compact face art — from solid to nearly empty.",
+      "symbols": [
+        { "char": "⣿", "label": "Braille Pattern Dots-12345678" },
+        { "char": "⣷", "label": "Braille Pattern Dots-1235678" },
+        { "char": "⣶", "label": "Braille Pattern Dots-235678" },
+        { "char": "⣤", "label": "Braille Pattern Dots-3678" },
+        { "char": "⣀", "label": "Braille Pattern Dots-78" },
+        { "char": "⠿", "label": "Braille Pattern Dots-123456" },
+        { "char": "⠛", "label": "Braille Pattern Dots-1245" },
+        { "char": "⠉", "label": "Braille Pattern Dots-14" }
+      ]
+    },
+    {
+      "id": "expression-characters",
+      "label": "Expressions",
+      "h2": "Face & Expression Characters",
+      "intro": "Eyes and mouths for one-line chat faces that pass the Roblox text filter.",
+      "symbols": [
+        { "char": "ツ", "label": "Katakana Letter Tu (Smile Face)" },
+        { "char": "ಠ", "label": "Kannada Letter Ttha (Flat Stare Eye)" },
+        { "char": "◉", "label": "Fisheye" },
+        { "char": "◕", "label": "Circle With All But Upper Left Quadrant Black" },
+        { "char": "ʘ", "label": "Latin Letter Bilabial Click (Wide Eye)" },
+        { "char": "﹏", "label": "Wavy Low Line (Nervous Mouth)" },
+        { "char": "︶", "label": "Presentation Form for Vertical Right Parenthesis (Calm Mouth)" },
+        { "char": "︿", "label": "Presentation Form for Vertical Left Angle Bracket (Sad Mouth)" }
+      ]
+    },
+    {
+      "id": "gamer-glyphs",
+      "label": "Gamer Glyphs",
+      "h2": "Gamer Symbols for Roblox",
+      "intro": "Battle and rank glyphs to decorate chat messages, group shouts, and bios.",
+      "symbols": [
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "★", "label": "Black Star" },
+        { "char": "✪", "label": "Circled White Star" },
+        { "char": "ϟ", "label": "Greek Letter Koppa (Lightning Bolt)" },
+        { "char": "♛", "label": "Black Chess Queen" },
+        { "char": "乂", "label": "CJK Ideograph Yi (Crossed X)" },
+        { "char": "彡", "label": "CJK Radical Shan (Motion Lines)" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "roblox-art-sets",
+    "label": "Art Sets",
+    "h2": "Roblox Text Art Pieces",
+    "intro": "Copy a complete chat-ready face or banner in one click — keep the vertical format so lines stay aligned in chat."
+  },
+  "collection_container_id": "robloxTextArtContainer",
+  "collections": [
+    {
+      "name": "Deadpan Face (Man Face Style)",
+      "flags": [
+        "⣏⣉⣉⣉⣉⣉⣉⣹",
+        "⡇⢀⣀⠀⠀⣀⡀⢸",
+        "⡇⠘⠛⠂⠐⠛⠃⢸",
+        "⡇⠀⠀⠀⠀⠀⠀⢸",
+        "⡇⠐⠶⠶⠶⠶⠂⢸",
+        "⣇⣀⣀⣀⣀⣀⣀⣸"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Smirk Face (Dot Art)",
+      "flags": [
+        "⡏⠉⠉⠉⠉⠉⠉⢹",
+        "⡇⠀⣤⠀⠀⣤⠀⢸",
+        "⡇⠀⠛⠀⠀⠛⠀⢸",
+        "⡇⠀⠀⠀⠀⠀⠀⢸",
+        "⡇⠀⢀⣠⠤⠒⠁⢸",
+        "⣇⣀⣀⣀⣀⣀⣀⣸"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Blocky Smile",
+      "flags": [
+        "░░░░░░░░░░",
+        "░░██░░██░░",
+        "░░░░░░░░░░",
+        "░██░░░░██░",
+        "░░██████░░"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Chat Emote Pack",
+      "flags": [
+        "( ͡° ͜ʖ ͡°)",
+        "¯\\_(ツ)_/¯",
+        "(ง'̀-'́)ง",
+        "◉_◉",
+        "(✿◠‿◠)",
+        "ᕦ(ò_óˇ)ᕤ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "ASCII Sword",
+      "flags": [
+        "⠀⠀⠀/\\",
+        "⠀⠀⠀||",
+        "⠀⠀⠀||",
+        "⠀o=++=o",
+        "⠀⠀⠀||",
+        "⠀⠀⠀\\/"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "GG Banner",
+      "flags": [
+        "╔══════════╗",
+        "║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀║",
+        "║⠀⠀⠀G⠀G⠀!⠀⠀║",
+        "║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀║",
+        "╚══════════╝"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/roblox-symbols/",
+      "title": "Roblox Symbols",
+      "desc": "Glyphs and decorations for Roblox usernames and displays."
+    },
+    {
+      "href": "/library/text-art/",
+      "title": "Text Art",
+      "desc": "Classic ASCII and Unicode art pieces and building blocks."
+    },
+    {
+      "href": "/library/meme-text-art/",
+      "title": "Meme Text Art",
+      "desc": "Dot art faces, lenny packs, and meme-style text pieces."
+    },
+    {
+      "href": "/library/fortnite-symbols/",
+      "title": "Fortnite Symbols",
+      "desc": "Sweaty name characters and clan tag decorations for Fortnite."
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "slug": "nickname-symbols",
+  "title": "Nickname Symbols: Copy & Paste ꧁꧂ Stylish Nick Decorations",
+  "meta_description": "Nickname symbols and ready-made nick decorations — ꧁꧂ wings, ツ smileys, ♛ crowns, and 亗 pro tags for any game or app. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/nickname-symbols/",
+  "breadcrumb": "Nickname Symbols",
+  "hero_h1": "Nickname Symbols",
+  "hero_tagline": "Wings, brackets, crowns, and flair characters for stylish gaming nicks — plus ready-made name wrappers. Click any symbol to copy it instantly.",
+  "intro": "Nickname symbols are the decorative Unicode characters players wrap around their in-game names — the ꧁꧂ wings, ツ smiley, 彡 motion lines, and ♛ crowns you see in Free Fire, Mobile Legends, PUBG, and Fortnite lobbies. Because they are ordinary Unicode characters, they work in almost any game or app that accepts text names. Copy individual symbols below, or grab a complete ready-made nick decoration and replace 'YourName' with your own.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "wing-brackets",
+      "label": "Wings",
+      "h2": "Wing & Bracket Decorations",
+      "intro": "The famous ꧁꧂ wings plus ornamental brackets that frame a nickname on both sides.",
+      "symbols": [
+        { "char": "꧁", "label": "Javanese Rerenggan Left (Wing)" },
+        { "char": "꧂", "label": "Javanese Rerenggan Right (Wing)" },
+        { "char": "༺", "label": "Tibetan Mark Gug Rtags Gyon (Left Ornament)" },
+        { "char": "༻", "label": "Tibetan Mark Gug Rtags Gyas (Right Ornament)" },
+        { "char": "『", "label": "Left White Corner Bracket" },
+        { "char": "』", "label": "Right White Corner Bracket" },
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "【", "label": "Left Black Lenticular Bracket" },
+        { "char": "】", "label": "Right Black Lenticular Bracket" },
+        { "char": "❮", "label": "Heavy Left-Pointing Angle Quotation Mark Ornament" },
+        { "char": "❯", "label": "Heavy Right-Pointing Angle Quotation Mark Ornament" }
+      ]
+    },
+    {
+      "id": "cjk-flair",
+      "label": "CJK Flair",
+      "h2": "Katakana & CJK Flair Characters",
+      "intro": "Japanese kana and Chinese characters that double as faces, motion lines, and power words in nicks.",
+      "symbols": [
+        { "char": "ツ", "label": "Katakana Letter Tu (Smile Face)" },
+        { "char": "シ", "label": "Katakana Letter Si (Smile Face)" },
+        { "char": "ッ", "label": "Katakana Letter Small Tu (Small Smile)" },
+        { "char": "乂", "label": "CJK Ideograph Yi (Crossed X)" },
+        { "char": "彡", "label": "CJK Radical Shan (Motion Lines)" },
+        { "char": "ミ", "label": "Katakana Letter Mi (Motion Lines)" },
+        { "char": "亗", "label": "CJK Ideograph (Stacked Mountain Tag)" },
+        { "char": "龍", "label": "Long — Dragon" },
+        { "char": "神", "label": "Shen — God" },
+        { "char": "王", "label": "Wang — King" }
+      ]
+    },
+    {
+      "id": "crowns-stars",
+      "label": "Crowns & Stars",
+      "h2": "Crown & Star Symbols",
+      "intro": "Royalty and rank markers that signal status next to a nickname.",
+      "symbols": [
+        { "char": "♛", "label": "Black Chess Queen" },
+        { "char": "♚", "label": "Black Chess King" },
+        { "char": "♕", "label": "White Chess Queen" },
+        { "char": "♔", "label": "White Chess King" },
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✰", "label": "Shadowed White Star" },
+        { "char": "✯", "label": "Pinwheel Star" },
+        { "char": "⍟", "label": "APL Functional Symbol Circle Star" },
+        { "char": "㊝", "label": "Circled Ideograph Excellent" }
+      ]
+    },
+    {
+      "id": "power-accents",
+      "label": "Accents",
+      "h2": "Power & Battle Accents",
+      "intro": "Lightning, skulls, and blades for aggressive, sweaty-style nick decorations.",
+      "symbols": [
+        { "char": "ϟ", "label": "Greek Letter Koppa (Lightning Bolt)" },
+        { "char": "ψ", "label": "Greek Small Letter Psi (Trident)" },
+        { "char": "Ψ", "label": "Greek Capital Letter Psi (Trident)" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "✞", "label": "Shadowed White Latin Cross" },
+        { "char": "➤", "label": "Black Rightwards Arrowhead" },
+        { "char": "ヾ", "label": "Katakana Voiced Iteration Mark" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "nick-decorations",
+    "label": "Nick Decorations",
+    "h2": "Ready-Made Nick Decorations",
+    "intro": "Copy a full set of styled name templates in one click, then swap 'YourName' for your own nick."
+  },
+  "collection_container_id": "nickDecorationsContainer",
+  "collections": [
+    {
+      "name": "Classic Wings",
+      "flags": [
+        "꧁ YourName ꧂",
+        "꧁༺ YourName ༻꧂",
+        "꧁❮ YourName ❯꧂",
+        "꧁♛ YourName ♛꧂",
+        "꧁★ YourName ★꧂"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Smiley Tags",
+      "flags": [
+        "ツ YourName",
+        "YourName シ",
+        "꧁ツ YourName ツ꧂",
+        "彡 YourName 彡",
+        "ミ★ YourName ★ミ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Royal Nicks",
+      "flags": [
+        "♛ YourName ♛",
+        "♚YourName♚",
+        "【♔ YourName ♔】",
+        "『YourName』",
+        "㊝ YourName ㊝"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Pro Player Tags",
+      "flags": [
+        "ᴳᵒᵈ•YourName",
+        "亗 YourName 亗",
+        "乂•YourName•乂",
+        "YourName彡",
+        "꧁亗 YourName 亗꧂"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Dark Style",
+      "flags": [
+        "☠ YourName ☠",
+        "ϟYourNameϟ",
+        "꧁☠ YourName ☠꧂",
+        "⚔ YourName ⚔",
+        "✞ YourName ✞"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Star Frames",
+      "flags": [
+        "★彡 YourName 彡★",
+        "✰ YourName ✰",
+        "☆꧁ YourName ꧂☆",
+        "⍟ YourName ⍟",
+        "✯YourName✯"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/free-fire-name-symbols/",
+      "title": "Free Fire Name Symbols",
+      "desc": "FF nick characters and ready-made Free Fire name styles."
+    },
+    {
+      "href": "/library/ml-name-symbols/",
+      "title": "Mobile Legends Name Symbols",
+      "desc": "ML nick decorations and stylish name characters."
+    },
+    {
+      "href": "/library/fortnite-symbols/",
+      "title": "Fortnite Symbols",
+      "desc": "Sweaty name characters and clan tag decorations for Fortnite."
+    },
+    {
+      "href": "/library/roblox-symbols/",
+      "title": "Roblox Symbols",
+      "desc": "Glyphs and decorations for Roblox usernames and displays."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "slug": "emoji-combos",
+  "title": "Emoji Combos: Copy & Paste Aesthetic Emoji Combinations",
+  "meta_description": "Browse aesthetic emoji combos for bios, captions, and usernames — soft girl, cottage garden, night sky, and Y2K sets. Click any combo to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/emoji-combos/",
+  "breadcrumb": "Emoji Combos",
+  "hero_h1": "Emoji Combos",
+  "hero_tagline": "Curated aesthetic emoji combinations plus the single emojis to build your own. Click any symbol or combo to copy it instantly.",
+  "intro": "Emoji combos are short, curated strings of emojis that share one mood — think 🎀 🌸 ✨ for a soft-girl bio or 🌙 ⭐ ☁️ for a dreamy night theme. They are the fastest way to give an Instagram bio, TikTok caption, Discord status, or username an instant aesthetic. Copy a ready-made combo set below in one click, or mix your own from the individually copyable emojis in each themed section.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "aesthetic-staples",
+      "label": "Staples",
+      "h2": "Aesthetic Emoji Staples",
+      "intro": "The core emojis that appear in almost every aesthetic combo — sparkles, bows, butterflies, and soft sky elements.",
+      "symbols": [
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌸", "label": "Cherry Blossom" },
+        { "char": "🎀", "label": "Ribbon" },
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "☁️", "label": "Cloud" },
+        { "char": "🌷", "label": "Tulip" },
+        { "char": "💫", "label": "Dizzy" },
+        { "char": "🍓", "label": "Strawberry" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🫧", "label": "Bubbles" }
+      ]
+    },
+    {
+      "id": "cute-cozy",
+      "label": "Cozy",
+      "h2": "Cute & Cozy Emojis",
+      "intro": "Warm, homey emojis for cottagecore, study, and comfort-themed combos.",
+      "symbols": [
+        { "char": "🧸", "label": "Teddy Bear" },
+        { "char": "🍄", "label": "Mushroom" },
+        { "char": "🐚", "label": "Spiral Shell" },
+        { "char": "🕯️", "label": "Candle" },
+        { "char": "📖", "label": "Open Book" },
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "🧺", "label": "Basket" },
+        { "char": "🍯", "label": "Honey Pot" }
+      ]
+    },
+    {
+      "id": "bright-fun",
+      "label": "Bright",
+      "h2": "Bright & Fun Emojis",
+      "intro": "High-energy emojis for playful, colorful, and Y2K-leaning combinations.",
+      "symbols": [
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🍒", "label": "Cherries" },
+        { "char": "🍋", "label": "Lemon" },
+        { "char": "🌻", "label": "Sunflower" },
+        { "char": "🪩", "label": "Mirror Ball" },
+        { "char": "💖", "label": "Sparkling Heart" },
+        { "char": "🎉", "label": "Party Popper" }
+      ]
+    },
+    {
+      "id": "symbol-accents",
+      "label": "Accents",
+      "h2": "Symbol Accents for Combos",
+      "intro": "Text symbols that slot between emojis to make a combo feel hand-decorated.",
+      "symbols": [
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "✦", "label": "Black Four Pointed Star" },
+        { "char": "❀", "label": "White Florette" },
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "⋆", "label": "Star Operator" },
+        { "char": "°", "label": "Degree Sign" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Ready-Made Emoji Combo Sets",
+    "intro": "Copy a complete aesthetic emoji combination in one click — perfect for bios, captions, and statuses."
+  },
+  "collection_container_id": "emojiCombosContainer",
+  "collections": [
+    {
+      "name": "Soft Girl",
+      "flags": ["🎀", "🌸", "🩰", "🤍", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ocean Breeze",
+      "flags": ["🌊", "🐚", "🐬", "⛱️", "🫧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cottage Garden",
+      "flags": ["🍄", "🌷", "🐝", "🍓", "🧺"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Night Sky",
+      "flags": ["🌙", "⭐", "☁️", "💫", "🔭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Coffee Date",
+      "flags": ["☕", "🥐", "📖", "🍂", "🤎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Y2K Sparkle",
+      "flags": ["💿", "🦋", "💖", "⚡", "🪩"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cute Animals",
+      "flags": ["🐰", "🐻", "🍯", "🌼", "☀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sunset Vibes",
+      "flags": ["🌅", "🍊", "🌺", "🏝️", "🧡"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/aesthetic-symbols/",
+      "title": "Aesthetic Symbols",
+      "desc": "Decorative Unicode symbols for aesthetic bios and posts."
+    },
+    {
+      "href": "/library/color-emoji-combos/",
+      "title": "Color Emoji Combos",
+      "desc": "Emoji combos grouped by color theme — blue, pink, purple, and more."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Meme and joke emoji combinations for comments and chats."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkles, glitter, and shine characters for aesthetic text."
+    }
+  ]
+}

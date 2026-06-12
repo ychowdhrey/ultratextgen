@@ -1,0 +1,131 @@
+{
+  "slug": "minecraft-symbols",
+  "title": "Minecraft Symbols: Copy & Paste Chat & Server Name Characters",
+  "meta_description": "Copy Minecraft symbols for chat, MOTDs, and server names — arrows, block shading ░▒▓, box-drawing lines, and game-style icons. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/minecraft-symbols/",
+  "breadcrumb": "Minecraft Symbols",
+  "hero_h1": "Minecraft Symbols",
+  "hero_tagline": "Chat brackets, MOTD shading blocks, box-drawing lines, and game-themed icons that render in Minecraft's font. Click any symbol to copy it instantly.",
+  "intro": "Minecraft's default font renders a wide slice of Unicode, which is why servers decorate MOTDs, chat ranks, holograms, and kick screens with characters like ►, ▌, and ☠. This library collects the Minecraft symbols that show up reliably in chat, server list entries, scoreboard lines, and plugin configs — from shading blocks for MOTD banners to pickaxe and sword icons for rank prefixes. Paste them into server.properties-driven MOTD plugins, essentials chat formats, or anvil-renamed items.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "chat-rank-brackets",
+      "label": "Rank Brackets",
+      "h2": "Chat & Rank Bracket Symbols",
+      "intro": "Arrowheads and ornament brackets used around [Admin]-style rank tags and chat prefixes.",
+      "symbols": [
+        { "char": "►", "label": "Black Right-Pointing Pointer" },
+        { "char": "◄", "label": "Black Left-Pointing Pointer" },
+        { "char": "▶", "label": "Black Right-Pointing Triangle" },
+        { "char": "◀", "label": "Black Left-Pointing Triangle" },
+        { "char": "«", "label": "Left-Pointing Double Angle Quotation Mark" },
+        { "char": "»", "label": "Right-Pointing Double Angle Quotation Mark" },
+        { "char": "❰", "label": "Heavy Left-Pointing Angle Bracket Ornament" },
+        { "char": "❱", "label": "Heavy Right-Pointing Angle Bracket Ornament" },
+        { "char": "〘", "label": "Left White Tortoise Shell Bracket" },
+        { "char": "〙", "label": "Right White Tortoise Shell Bracket" }
+      ]
+    },
+    {
+      "id": "motd-blocks",
+      "label": "MOTD Blocks",
+      "h2": "Server List & MOTD Shading Blocks",
+      "intro": "Solid and shaded block elements for MOTD banners, progress bars, and pixel-style dividers.",
+      "symbols": [
+        { "char": "█", "label": "Full Block" },
+        { "char": "▓", "label": "Dark Shade" },
+        { "char": "▒", "label": "Medium Shade" },
+        { "char": "░", "label": "Light Shade" },
+        { "char": "▌", "label": "Left Half Block" },
+        { "char": "▐", "label": "Right Half Block" },
+        { "char": "■", "label": "Black Square" },
+        { "char": "□", "label": "White Square" },
+        { "char": "▪", "label": "Black Small Square" },
+        { "char": "▫", "label": "White Small Square" },
+        { "char": "◆", "label": "Black Diamond" },
+        { "char": "◇", "label": "White Diamond" }
+      ]
+    },
+    {
+      "id": "box-drawing-ui",
+      "label": "Line Drawing",
+      "h2": "Box-Drawing Lines for Chat UI",
+      "intro": "Line and corner pieces for framing /help menus, hologram panels, and scoreboard borders.",
+      "symbols": [
+        { "char": "─", "label": "Box Drawings Light Horizontal" },
+        { "char": "│", "label": "Box Drawings Light Vertical" },
+        { "char": "┌", "label": "Box Drawings Light Down and Right" },
+        { "char": "┐", "label": "Box Drawings Light Down and Left" },
+        { "char": "└", "label": "Box Drawings Light Up and Right" },
+        { "char": "┘", "label": "Box Drawings Light Up and Left" },
+        { "char": "╔", "label": "Box Drawings Double Down and Right" },
+        { "char": "╗", "label": "Box Drawings Double Down and Left" },
+        { "char": "╚", "label": "Box Drawings Double Up and Right" },
+        { "char": "╝", "label": "Box Drawings Double Up and Left" },
+        { "char": "═", "label": "Box Drawings Double Horizontal" },
+        { "char": "║", "label": "Box Drawings Double Vertical" }
+      ]
+    },
+    {
+      "id": "game-icons",
+      "label": "Game Icons",
+      "h2": "Game-Themed Icons",
+      "intro": "Pickaxes, swords, hearts, and potions — icons that match Minecraft's tools and HUD.",
+      "symbols": [
+        { "char": "⛏", "label": "Pick (Pickaxe)" },
+        { "char": "⚒", "label": "Hammer and Pick" },
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "🏹", "label": "Bow and Arrow" },
+        { "char": "🛡", "label": "Shield" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "❤", "label": "Heavy Black Heart (Health)" },
+        { "char": "⚗", "label": "Alembic (Brewing Stand)" },
+        { "char": "💎", "label": "Gem Stone (Diamond)" },
+        { "char": "✦", "label": "Black Four-Pointed Star (XP Sparkle)" },
+        { "char": "🔥", "label": "Fire" }
+      ]
+    },
+    {
+      "id": "arrows-markers",
+      "label": "Markers",
+      "h2": "Arrows, Checks & Warning Markers",
+      "intro": "Pointer arrows and status marks for tutorials, votes, and warning broadcasts.",
+      "symbols": [
+        { "char": "➤", "label": "Black Rightwards Arrowhead" },
+        { "char": "➜", "label": "Heavy Round-Tipped Rightwards Arrow" },
+        { "char": "→", "label": "Rightwards Arrow" },
+        { "char": "⇨", "label": "Rightwards White Arrow" },
+        { "char": "☛", "label": "Black Right Pointing Index" },
+        { "char": "✔", "label": "Heavy Check Mark" },
+        { "char": "✘", "label": "Heavy Ballot X" },
+        { "char": "⚠", "label": "Warning Sign" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/fortnite-symbols/",
+      "title": "Fortnite Symbols",
+      "desc": "Sweaty name characters and clan-tag glyphs for Fortnite."
+    },
+    {
+      "href": "/library/roblox-symbols/",
+      "title": "Roblox Symbols",
+      "desc": "Username and display-name characters that work in Roblox."
+    },
+    {
+      "href": "/library/box-drawing-symbols/",
+      "title": "Box Drawing Symbols",
+      "desc": "Every line, corner, and junction character for text frames."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Squares, triangles, and circles for clean text decoration."
+    }
+  ]
+}

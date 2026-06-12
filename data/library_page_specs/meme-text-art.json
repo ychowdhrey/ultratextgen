@@ -1,0 +1,183 @@
+{
+  "slug": "meme-text-art",
+  "title": "Meme Text Art: Copy & Paste Dot Art & Copypasta Memes",
+  "meta_description": "Meme text art to copy and paste — lenny face packs, table flips, disapproval looks, and original dot art reaction faces. Click any set to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/meme-text-art/",
+  "breadcrumb": "Meme Text Art",
+  "hero_h1": "Meme Text Art",
+  "hero_tagline": "Reaction faces, lenny packs, table flips, and dot art memes built from braille and block characters. Click any piece to copy it instantly.",
+  "intro": "Meme text art is the reaction-face side of ASCII art: lenny faces, table flips, disapproving stares, and braille dot art faces you paste into Discord, Twitch, and game chats for comedic effect. Unlike decorative text art, these pieces exist to be dropped into a conversation at exactly the right moment. Copy a complete face or flip set below in one click, or grab the shading blocks, braille density characters, and face-building glyphs to assemble your own meme.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "shading-blocks",
+      "label": "Shading",
+      "h2": "Shading Block Characters",
+      "intro": "The four classic shade levels plus half blocks — the pixels of block-style meme art.",
+      "symbols": [
+        { "char": "░", "label": "Light Shade" },
+        { "char": "▒", "label": "Medium Shade" },
+        { "char": "▓", "label": "Dark Shade" },
+        { "char": "█", "label": "Full Block" },
+        { "char": "▄", "label": "Lower Half Block" },
+        { "char": "▀", "label": "Upper Half Block" },
+        { "char": "▌", "label": "Left Half Block" },
+        { "char": "▐", "label": "Right Half Block" }
+      ]
+    },
+    {
+      "id": "braille-density",
+      "label": "Dot Density",
+      "h2": "Braille Density Characters",
+      "intro": "Braille patterns ordered from full to sparse — these are the grayscale tones of dot art memes.",
+      "symbols": [
+        { "char": "⣿", "label": "Braille Pattern Dots-12345678" },
+        { "char": "⣷", "label": "Braille Pattern Dots-1235678" },
+        { "char": "⣦", "label": "Braille Pattern Dots-23678" },
+        { "char": "⣤", "label": "Braille Pattern Dots-3678" },
+        { "char": "⣀", "label": "Braille Pattern Dots-78" },
+        { "char": "⠿", "label": "Braille Pattern Dots-123456" },
+        { "char": "⠟", "label": "Braille Pattern Dots-12345" },
+        { "char": "⠛", "label": "Braille Pattern Dots-1245" },
+        { "char": "⠉", "label": "Braille Pattern Dots-14" },
+        { "char": "⠁", "label": "Braille Pattern Dots-1" }
+      ]
+    },
+    {
+      "id": "face-builders",
+      "label": "Face Parts",
+      "h2": "Face-Building Characters",
+      "intro": "The borrowed letters and marks that form famous text faces — disapproval eyes, lenny mouths, and rage flips.",
+      "symbols": [
+        { "char": "ಠ", "label": "Kannada Letter Ttha (Disapproval Eye)" },
+        { "char": "°", "label": "Degree Sign (Lenny Eye)" },
+        { "char": "ʖ", "label": "Latin Letter Inverted Glottal Stop (Lenny Mouth)" },
+        { "char": "◉", "label": "Fisheye" },
+        { "char": "◕", "label": "Circle With All But Upper Left Quadrant Black" },
+        { "char": "ヮ", "label": "Katakana Letter Small Wa (Happy Mouth)" },
+        { "char": "﹏", "label": "Wavy Low Line (Worried Mouth)" },
+        { "char": "益", "label": "CJK Ideograph Yi (Rage Face Center)" },
+        { "char": "︵", "label": "Presentation Form for Vertical Left Parenthesis (Flip Arc)" },
+        { "char": "彡", "label": "CJK Radical Shan (Motion Lines)" }
+      ]
+    },
+    {
+      "id": "meme-emojis",
+      "label": "Meme Emojis",
+      "h2": "Meme Reaction Emojis",
+      "intro": "The emojis that headline meme replies — pair them with dot art for extra effect.",
+      "symbols": [
+        { "char": "🗿", "label": "Moai" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "🤡", "label": "Clown Face" },
+        { "char": "🐸", "label": "Frog" },
+        { "char": "👁", "label": "Eye" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "😎", "label": "Smiling Face With Sunglasses" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "meme-art-sets",
+    "label": "Meme Sets",
+    "h2": "Meme Text Art Sets",
+    "intro": "Copy a full reaction pack or dot art face in one click — vertical format keeps multi-line pieces aligned."
+  },
+  "collection_container_id": "memeTextArtContainer",
+  "collections": [
+    {
+      "name": "Lenny Face Pack",
+      "flags": [
+        "( ͡° ͜ʖ ͡°)",
+        "( ͡~ ͜ʖ ͡°)",
+        "( ͠° ͟ʖ ͡°)",
+        "( ͡o ͜ʖ ͡o)",
+        "ʕ ͡° ʖ̯ ͡°ʔ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Table Flip Set",
+      "flags": [
+        "(╯°□°）╯︵ ┻━┻",
+        "┬─┬ノ( º _ ºノ)",
+        "(ノಠ益ಠ)ノ彡┻━┻",
+        "┻━┻ ︵ヽ(`Д´)ノ︵ ┻━┻",
+        "┬──┬ ¯\\_(ツ)"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Disapproval Pack",
+      "flags": [
+        "ಠ_ಠ",
+        "ಠ‿ಠ",
+        "ಠ╭╮ಠ",
+        "(ಠ_ಠ)",
+        "ಠ▃ಠ"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Smug Smiley (Dot Art)",
+      "flags": [
+        "⠀⢀⣤⣶⣶⣶⣤⡀",
+        "⢰⣿⠋⠁⠀⠈⠙⣿⡆",
+        "⣿⡇⠀⣿⠀⣿⠀⢸⣿",
+        "⣿⡇⠀⠀⠀⠀⠀⢸⣿",
+        "⢿⣇⠀⠳⠶⠞⠀⣸⡿",
+        "⠀⠙⠷⣦⣤⣴⠾⠋"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Crying Face (Dot Art)",
+      "flags": [
+        "⠀⢀⣤⣶⣶⣶⣤⡀",
+        "⢰⣿⠋⠁⠀⠈⠙⣿⡆",
+        "⣿⡇⠀⣿⠀⣿⠀⢸⣿",
+        "⣿⡇⠀⢣⠀⢣⠀⢸⣿",
+        "⢿⣇⠀⢠⣤⡄⠀⣸⡿",
+        "⠀⠙⠷⣦⣤⣴⠾⠋"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Rage Eyes (Block Art)",
+      "flags": [
+        "░░░░░░░░░░",
+        "░░█▄░░▄█░░",
+        "░░░█░░█░░░",
+        "░░░░░░░░░░",
+        "░░▀▀▀▀▀▀░░"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/text-art/",
+      "title": "Text Art",
+      "desc": "Classic ASCII and Unicode art pieces and building blocks."
+    },
+    {
+      "href": "/library/roblox-text-art/",
+      "title": "Roblox Text Art",
+      "desc": "Chat-friendly character faces and dot art for Roblox."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "Japanese-style emoticons for every mood and reaction."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emojis",
+      "desc": "Sigma, rizz, and Gen-Z meme emoji combinations."
+    }
+  ]
+}
