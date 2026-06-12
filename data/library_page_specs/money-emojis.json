@@ -1,0 +1,154 @@
+{
+  "slug": "money-emojis",
+  "title": "Money Emojis: Copy & Paste 💰 💸 Cash & Rich Combos",
+  "meta_description": "Copy and paste money emojis — 💰 money bag, 💸 flying cash, 🤑 money face — plus rich-aesthetic bio combos and hustle captions. Tap any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/money-emojis/",
+  "breadcrumb": "Money Emojis",
+  "hero_h1": "Money Emojis",
+  "hero_tagline": "Cash, coins, banknotes, and rich-aesthetic combo sets for hustle bios and payday posts. Click any emoji to copy it instantly.",
+  "intro": "Money emojis are the universal shorthand for paydays, side hustles, and rich-aesthetic bios. This page collects the full cash cluster — 💰 money bag, 💸 money with wings, 🤑 money-mouth face, 💵 banknotes in every currency — plus banking, business, and luxury emojis. They show up in hustle-culture captions, finance-account bios, payday group chats, and celebration posts. If you need the plain ¢ € ₿ text glyphs instead, see our currency symbols page; this one owns the emoji and combo side.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "cash-currency",
+      "label": "Cash",
+      "h2": "Cash & Currency Emojis",
+      "intro": "Bags, banknotes, and coins — the core money set.",
+      "symbols": [
+        { "char": "💰", "label": "Money Bag" },
+        { "char": "💵", "label": "Dollar Banknote" },
+        { "char": "💴", "label": "Yen Banknote" },
+        { "char": "💶", "label": "Euro Banknote" },
+        { "char": "💷", "label": "Pound Banknote" },
+        { "char": "💸", "label": "Money With Wings" },
+        { "char": "🪙", "label": "Coin" },
+        { "char": "💲", "label": "Heavy Dollar Sign" },
+        { "char": "💱", "label": "Currency Exchange" }
+      ]
+    },
+    {
+      "id": "rich-faces",
+      "label": "Rich Faces",
+      "h2": "Rich Face & Gesture Emojis",
+      "intro": "Money-mouth grins, crowns, and flexes for when the bag is secured.",
+      "symbols": [
+        { "char": "🤑", "label": "Money-Mouth Face" },
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "💪", "label": "Flexed Biceps" },
+        { "char": "👑", "label": "Crown" },
+        { "char": "🔥", "label": "Fire" }
+      ]
+    },
+    {
+      "id": "banking-business",
+      "label": "Banking",
+      "h2": "Banking & Business Emojis",
+      "intro": "Banks, charts, and cards for finance accounts and investing posts.",
+      "symbols": [
+        { "char": "🏦", "label": "Bank" },
+        { "char": "🏧", "label": "ATM Sign" },
+        { "char": "💳", "label": "Credit Card" },
+        { "char": "🧾", "label": "Receipt" },
+        { "char": "📈", "label": "Chart Increasing" },
+        { "char": "📉", "label": "Chart Decreasing" },
+        { "char": "📊", "label": "Bar Chart" },
+        { "char": "💹", "label": "Chart Increasing With Yen" },
+        { "char": "💼", "label": "Briefcase" },
+        { "char": "🏛️", "label": "Classical Building" }
+      ]
+    },
+    {
+      "id": "luxury-bling",
+      "label": "Luxury",
+      "h2": "Luxury & Bling Emojis",
+      "intro": "Gems, champagne, and yachts for the rich-aesthetic side of the feed.",
+      "symbols": [
+        { "char": "💎", "label": "Gem Stone" },
+        { "char": "💍", "label": "Ring" },
+        { "char": "⌚", "label": "Watch" },
+        { "char": "🛥️", "label": "Motor Boat" },
+        { "char": "🏎️", "label": "Racing Car" },
+        { "char": "🚁", "label": "Helicopter" },
+        { "char": "🍾", "label": "Bottle With Popping Cork" },
+        { "char": "🥂", "label": "Clinking Glasses" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌟", "label": "Glowing Star" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Money & Rich Combo Sets",
+    "intro": "Copy a full money combo in one click — rich-aesthetic bios, hustle captions, and payday energy ready to paste."
+  },
+  "collection_container_id": "moneySetsContainer",
+  "collections": [
+    {
+      "name": "Rich Aesthetic Bio",
+      "flags": ["💰", "✨", "💎", "🤍", "🥂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hustle Mode",
+      "flags": ["💸", "📈", "💪", "🔥", "💼"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Payday Energy",
+      "flags": ["🤑", "💵", "💳", "🛍️", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Money Bag Stack",
+      "flags": ["💰", "💰", "💰", "💸", "🤑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Stock Market Watch",
+      "flags": ["📈", "💹", "💻", "☕", "🏦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Luxury Lifestyle",
+      "flags": ["💎", "🍾", "🛥️", "⌚", "🌴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Side Hustle Bio",
+      "flags": ["💻", "💸", "📦", "🚀", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Savings Goals",
+      "flags": ["🪙", "🏦", "📊", "🎯", "✅"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Text glyphs for every currency — ¢ € £ ¥ ₿ and more."
+    },
+    {
+      "href": "/library/jewelry-gem-emojis/",
+      "title": "Jewelry & Gem Emojis",
+      "desc": "Diamonds, rings, and bling combos for sparkling bios."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Achievement Symbols",
+      "desc": "Trophies, medals, and milestone symbols to copy and paste."
+    },
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Everyday item emojis — phones, locks, pins, and more."
+    }
+  ]
+}

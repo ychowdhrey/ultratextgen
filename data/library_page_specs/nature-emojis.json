@@ -1,0 +1,156 @@
+{
+  "slug": "nature-emojis",
+  "title": "Nature Emojis: Copy & Paste 🌿 🍄 🌊 Forest & Outdoor Combos",
+  "meta_description": "Copy and paste nature emojis — 🌳 trees, 🌿 leaves, 🍄 mushrooms, 🌊 waves — plus forest and outdoor combos for earthy bios. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/nature-emojis/",
+  "breadcrumb": "Nature Emojis",
+  "hero_h1": "Nature Emojis",
+  "hero_tagline": "Trees, leaves, mushrooms, mountains, and ocean emojis with outdoor combo sets for earthy aesthetics. Click any emoji to copy it instantly.",
+  "intro": "Nature emojis turn any bio or caption into a walk outdoors. This page covers the green world beyond flowers and animals — 🌲 trees and forests, 🌿 leaves and herbs, 🍄 mushrooms, 🏔️ mountains and volcanoes, and 🌊 ocean and sky emojis. They anchor cottagecore and earthy-aesthetic bios, hiking and camping captions, and environmental posts. For floral characters head to our flower symbols page, and for wildlife see animal emojis — this page owns the landscape. Combo sets for forest walks, ocean days, and camping trips are below.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "trees-forest",
+      "label": "Trees",
+      "h2": "Tree & Forest Emojis",
+      "intro": "Evergreens, palms, and falling leaves — the forest canopy in emoji form.",
+      "symbols": [
+        { "char": "🌲", "label": "Evergreen Tree" },
+        { "char": "🌳", "label": "Deciduous Tree" },
+        { "char": "🌴", "label": "Palm Tree" },
+        { "char": "🎋", "label": "Tanabata Tree" },
+        { "char": "🌵", "label": "Cactus" },
+        { "char": "🪵", "label": "Wood" },
+        { "char": "🍃", "label": "Leaf Fluttering in Wind" },
+        { "char": "🍂", "label": "Fallen Leaf" },
+        { "char": "🍁", "label": "Maple Leaf" },
+        { "char": "🌿", "label": "Herb" },
+        { "char": "☘️", "label": "Shamrock" },
+        { "char": "🍀", "label": "Four Leaf Clover" }
+      ]
+    },
+    {
+      "id": "plants-fungi",
+      "label": "Plants",
+      "h2": "Plant & Fungi Emojis",
+      "intro": "Seedlings, mushrooms, and forest-floor finds for cottagecore moods.",
+      "symbols": [
+        { "char": "🍄", "label": "Mushroom" },
+        { "char": "🌱", "label": "Seedling" },
+        { "char": "🪴", "label": "Potted Plant" },
+        { "char": "🌾", "label": "Sheaf of Rice" },
+        { "char": "🌰", "label": "Chestnut" },
+        { "char": "🪨", "label": "Rock" },
+        { "char": "🐚", "label": "Spiral Shell" }
+      ]
+    },
+    {
+      "id": "mountains-landscapes",
+      "label": "Mountains",
+      "h2": "Mountain & Landscape Emojis",
+      "intro": "Peaks, volcanoes, deserts, and campsites for outdoor adventure posts.",
+      "symbols": [
+        { "char": "🏔️", "label": "Snow-Capped Mountain" },
+        { "char": "⛰️", "label": "Mountain" },
+        { "char": "🌋", "label": "Volcano" },
+        { "char": "🗻", "label": "Mount Fuji" },
+        { "char": "🏕️", "label": "Camping" },
+        { "char": "⛺", "label": "Tent" },
+        { "char": "🏞️", "label": "National Park" },
+        { "char": "🏜️", "label": "Desert" },
+        { "char": "🏝️", "label": "Desert Island" }
+      ]
+    },
+    {
+      "id": "water-sky",
+      "label": "Water & Sky",
+      "h2": "Water & Sky Emojis",
+      "intro": "Waves, rain, rainbows, and sunrises to finish the landscape.",
+      "symbols": [
+        { "char": "🌊", "label": "Water Wave" },
+        { "char": "💧", "label": "Droplet" },
+        { "char": "🌧️", "label": "Cloud With Rain" },
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "☀️", "label": "Sun" },
+        { "char": "⛅", "label": "Sun Behind Cloud" },
+        { "char": "🌅", "label": "Sunrise" },
+        { "char": "🌄", "label": "Sunrise Over Mountains" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "⭐", "label": "Star" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Forest & Outdoor Combo Sets",
+    "intro": "Copy a full nature combo in one click — forest walks, ocean days, and campfire nights ready for earthy bios and captions."
+  },
+  "collection_container_id": "natureSetsContainer",
+  "collections": [
+    {
+      "name": "Forest Walk",
+      "flags": ["🌲", "🍄", "🌿", "🐾", "🍂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cottage Garden",
+      "flags": ["🪴", "🌱", "🍓", "🐝", "☀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ocean Day",
+      "flags": ["🌊", "🐚", "🏝️", "☀️", "🫧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mountain Escape",
+      "flags": ["🏔️", "🏕️", "🔥", "🌌", "🥾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Autumn Vibes",
+      "flags": ["🍁", "🍂", "🌰", "☕", "🌧️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Earthy Bio",
+      "flags": ["🌿", "🌍", "☀️", "🤎", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Camping Trip",
+      "flags": ["⛺", "🔥", "🌲", "🌌", "🦉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rainy Day",
+      "flags": ["🌧️", "💧", "☔", "🍃", "☕"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/flower-symbols/",
+      "title": "Flower Symbols",
+      "desc": "Floral emojis and Unicode flower characters in full depth."
+    },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal Emojis",
+      "desc": "Wildlife, pets, and every creature in the emoji set."
+    },
+    {
+      "href": "/library/cottagecore-symbols/",
+      "title": "Cottagecore Symbols",
+      "desc": "Soft rural-aesthetic symbols for cozy, earthy profiles."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Sun, rain, snow, and storm characters to copy and paste."
+    }
+  ]
+}
