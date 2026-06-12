@@ -1,0 +1,166 @@
+{
+  "slug": "clothing-fashion-emojis",
+  "title": "Clothing & Fashion Emojis: Copy & Paste 👗 👟 Outfit Combos",
+  "meta_description": "Clothing and fashion emojis to copy and paste — dresses 👗, sneakers 👟, hats 🎩, bags 👜, glasses, and outfit combo sets. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/clothing-fashion-emojis/",
+  "breadcrumb": "Clothing & Fashion Emojis",
+  "hero_h1": "Clothing & Fashion Emojis",
+  "hero_tagline": "Every clothing, shoe, hat, and accessory emoji, plus ready-made outfit combos. Click any emoji to copy it instantly.",
+  "intro": "Clothing and fashion emojis are the go-to for OOTD captions, style bios, thrift hauls, and shop listings — a dress and heels for a night out, a cap and sneakers for streetwear, a scarf and gloves for cozy season. This reference collects every garment, shoe, hat, bag, and accessory emoji in Unicode, with one-click outfit combo sets at the bottom.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "clothes-outfits",
+      "label": "Clothes",
+      "h2": "Clothing & Outfit Emojis",
+      "intro": "Dresses, shirts, jeans, and other garment emojis.",
+      "symbols": [
+        { "char": "👗", "label": "Dress" },
+        { "char": "👚", "label": "Woman's Clothes" },
+        { "char": "👕", "label": "T-Shirt" },
+        { "char": "👔", "label": "Necktie" },
+        { "char": "👖", "label": "Jeans" },
+        { "char": "🩳", "label": "Shorts" },
+        { "char": "👙", "label": "Bikini" },
+        { "char": "🥻", "label": "Sari" },
+        { "char": "👘", "label": "Kimono" },
+        { "char": "🧥", "label": "Coat" },
+        { "char": "🥼", "label": "Lab Coat" },
+        { "char": "🦺", "label": "Safety Vest" }
+      ]
+    },
+    {
+      "id": "shoes-footwear",
+      "label": "Shoes",
+      "h2": "Shoe & Footwear Emojis",
+      "intro": "Sneakers, heels, boots, and sandal emojis.",
+      "symbols": [
+        { "char": "👟", "label": "Running Shoe" },
+        { "char": "👞", "label": "Man's Shoe" },
+        { "char": "👠", "label": "High-Heeled Shoe" },
+        { "char": "👡", "label": "Woman's Sandal" },
+        { "char": "👢", "label": "Woman's Boot" },
+        { "char": "🥾", "label": "Hiking Boot" },
+        { "char": "🥿", "label": "Flat Shoe" },
+        { "char": "🩴", "label": "Thong Sandal" },
+        { "char": "🩰", "label": "Ballet Shoes" }
+      ]
+    },
+    {
+      "id": "hats-headwear",
+      "label": "Hats",
+      "h2": "Hat & Headwear Emojis",
+      "intro": "Caps, hats, helmets, and winter wear emojis.",
+      "symbols": [
+        { "char": "🎩", "label": "Top Hat" },
+        { "char": "🧢", "label": "Billed Cap" },
+        { "char": "👒", "label": "Woman's Hat" },
+        { "char": "🪖", "label": "Military Helmet" },
+        { "char": "⛑️", "label": "Rescue Worker's Helmet" },
+        { "char": "🎓", "label": "Graduation Cap" },
+        { "char": "🧣", "label": "Scarf" },
+        { "char": "🧤", "label": "Gloves" },
+        { "char": "🧦", "label": "Socks" }
+      ]
+    },
+    {
+      "id": "bags-accessories",
+      "label": "Bags & Glasses",
+      "h2": "Bag, Glasses & Accessory Emojis",
+      "intro": "Handbags, backpacks, eyewear, and carry-along accessories.",
+      "symbols": [
+        { "char": "👜", "label": "Handbag" },
+        { "char": "👛", "label": "Purse" },
+        { "char": "👝", "label": "Clutch Bag" },
+        { "char": "🎒", "label": "Backpack" },
+        { "char": "🧳", "label": "Luggage" },
+        { "char": "💼", "label": "Briefcase" },
+        { "char": "👓", "label": "Glasses" },
+        { "char": "🕶️", "label": "Sunglasses" },
+        { "char": "🥽", "label": "Goggles" },
+        { "char": "🌂", "label": "Closed Umbrella" }
+      ]
+    },
+    {
+      "id": "sewing-style",
+      "label": "Sewing & Style",
+      "h2": "Sewing & Style Extra Emojis",
+      "intro": "Thread, yarn, and finishing-touch emojis for makers and stylists.",
+      "symbols": [
+        { "char": "🧵", "label": "Thread" },
+        { "char": "🪡", "label": "Sewing Needle" },
+        { "char": "🧶", "label": "Yarn" },
+        { "char": "🪮", "label": "Hair Pick" },
+        { "char": "💄", "label": "Lipstick" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "outfit-sets",
+    "label": "Outfit Sets",
+    "h2": "Outfit Combo Sets",
+    "intro": "Copy a full outfit emoji combo in one click for OOTD captions and style bios."
+  },
+  "collection_container_id": "outfitSetsContainer",
+  "collections": [
+    {
+      "name": "OOTD Post",
+      "flags": ["👗", "👠", "👜", "💄", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Streetwear Fit",
+      "flags": ["🧢", "👟", "🎒", "🕶️", "⛓️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Formal Night",
+      "flags": ["🎩", "👔", "👞", "🥂", "🌹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Beach Outfit",
+      "flags": ["👙", "🩴", "👒", "🕶️", "🌊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cozy Season Layers",
+      "flags": ["🧣", "🧤", "🧥", "🧦", "☕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thrift Haul",
+      "flags": ["👚", "👖", "👜", "🛍️", "♻️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sewing Corner",
+      "flags": ["🧵", "🪡", "🧶", "✂️", "📏"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/beauty-nails-emojis/",
+      "title": "Beauty & Nails Emojis",
+      "desc": "Makeup, nail polish, and glam emoji combos."
+    },
+    {
+      "href": "/library/jewelry-gem-emojis/",
+      "title": "Jewelry & Gem Emojis",
+      "desc": "Diamonds, rings, and sparkling bling combos."
+    },
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Everyday item emojis from tech to household things."
+    },
+    {
+      "href": "/library/preppy-emoji-combos/",
+      "title": "Preppy Emoji Combos",
+      "desc": "Pink bow and smiley preppy aesthetic sets."
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "slug": "object-emojis",
+  "title": "Object Emojis: Copy & Paste 📌 📷 🔒 Everyday Item Emojis",
+  "meta_description": "Browse object emojis for everyday items — pins 📌, cameras 📷, locks 🔒, keys, candles, trophies, and household things. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/object-emojis/",
+  "breadcrumb": "Object Emojis",
+  "hero_h1": "Object Emojis",
+  "hero_tagline": "Everyday item emojis — tech, household, office, keys, and awards — sorted by theme. Click any emoji to copy it instantly.",
+  "intro": "Object emojis cover the everyday items people reach for in captions, lists, and bios: phones and cameras, locks and keys, furniture, office supplies, and trophies. This reference groups them by theme so you can find the right item fast, and the combo sets at the bottom bundle common scenarios — study sessions, moving day, online shopping — into one-click copies.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "tech-gadgets",
+      "label": "Tech",
+      "h2": "Tech & Gadget Emojis",
+      "intro": "Phones, computers, cameras, and audio gear.",
+      "symbols": [
+        { "char": "📱", "label": "Mobile Phone" },
+        { "char": "💻", "label": "Laptop" },
+        { "char": "🖥️", "label": "Desktop Computer" },
+        { "char": "⌨️", "label": "Keyboard" },
+        { "char": "🖱️", "label": "Computer Mouse" },
+        { "char": "📷", "label": "Camera" },
+        { "char": "🎥", "label": "Movie Camera" },
+        { "char": "🎤", "label": "Microphone" },
+        { "char": "🎧", "label": "Headphone" },
+        { "char": "📺", "label": "Television" },
+        { "char": "🔋", "label": "Battery" },
+        { "char": "🤖", "label": "Robot" }
+      ]
+    },
+    {
+      "id": "home-household",
+      "label": "Home",
+      "h2": "Home & Household Emojis",
+      "intro": "Houses, furniture, and around-the-home items.",
+      "symbols": [
+        { "char": "🏠", "label": "House" },
+        { "char": "🛋️", "label": "Couch and Lamp" },
+        { "char": "🛏️", "label": "Bed" },
+        { "char": "🪑", "label": "Chair" },
+        { "char": "🕯️", "label": "Candle" },
+        { "char": "🧸", "label": "Teddy Bear" },
+        { "char": "🛁", "label": "Bathtub" },
+        { "char": "🧹", "label": "Broom" },
+        { "char": "🧺", "label": "Basket" },
+        { "char": "🪴", "label": "Potted Plant" },
+        { "char": "🚪", "label": "Door" }
+      ]
+    },
+    {
+      "id": "office-organization",
+      "label": "Office",
+      "h2": "Office & Organization Emojis",
+      "intro": "Calendars, clipboards, and filing items for plans and lists.",
+      "symbols": [
+        { "char": "📅", "label": "Calendar" },
+        { "char": "🗓️", "label": "Spiral Calendar" },
+        { "char": "📋", "label": "Clipboard" },
+        { "char": "🗂️", "label": "Card Index Dividers" },
+        { "char": "📇", "label": "Card Index" },
+        { "char": "🗒️", "label": "Spiral Notepad" }
+      ]
+    },
+    {
+      "id": "locks-keys",
+      "label": "Locks & Keys",
+      "h2": "Lock, Key & Link Emojis",
+      "intro": "Security, privacy, and link emojis.",
+      "symbols": [
+        { "char": "🔒", "label": "Locked" },
+        { "char": "🔓", "label": "Unlocked" },
+        { "char": "🔐", "label": "Locked with Key" },
+        { "char": "🔏", "label": "Locked with Pen" },
+        { "char": "🔑", "label": "Key" },
+        { "char": "🗝️", "label": "Old Key" },
+        { "char": "🔗", "label": "Link" }
+      ]
+    },
+    {
+      "id": "everyday-items",
+      "label": "Everyday",
+      "h2": "Everyday Item Emojis",
+      "intro": "Coffee cups, light bulbs, shopping carts, and daily essentials.",
+      "symbols": [
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "💡", "label": "Light Bulb" },
+        { "char": "🔦", "label": "Flashlight" },
+        { "char": "🛒", "label": "Shopping Cart" },
+        { "char": "💳", "label": "Credit Card" },
+        { "char": "🧼", "label": "Soap" },
+        { "char": "🪥", "label": "Toothbrush" },
+        { "char": "🧴", "label": "Lotion Bottle" },
+        { "char": "📦", "label": "Package" }
+      ]
+    },
+    {
+      "id": "awards-prizes",
+      "label": "Awards",
+      "h2": "Trophy & Award Emojis",
+      "intro": "Trophies, medals, and gift emojis for wins and milestones.",
+      "symbols": [
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🥇", "label": "1st Place Medal" },
+        { "char": "🥈", "label": "2nd Place Medal" },
+        { "char": "🥉", "label": "3rd Place Medal" },
+        { "char": "🏅", "label": "Sports Medal" },
+        { "char": "🎁", "label": "Wrapped Gift" },
+        { "char": "🎈", "label": "Balloon" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "object-sets",
+    "label": "Combo Sets",
+    "h2": "Object Emoji Combo Sets",
+    "intro": "Copy a themed set of object emojis in one click for captions, lists, and bios."
+  },
+  "collection_container_id": "objectSetsContainer",
+  "collections": [
+    {
+      "name": "Work From Home",
+      "flags": ["💻", "☕", "📅", "🏠", "🪴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Study Session",
+      "flags": ["📚", "💡", "🗒️", "☕", "🎧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Content Creator Setup",
+      "flags": ["🎤", "🎧", "📷", "💻", "🔋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Moving Day",
+      "flags": ["🏠", "📦", "🔑", "🧹", "🚪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Online Shopping Haul",
+      "flags": ["🛒", "💳", "📦", "🏷️", "🎁"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cozy Night In",
+      "flags": ["🕯️", "🛋️", "🧸", "📺", "☕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Winner's Podium",
+      "flags": ["🏆", "🥇", "🥈", "🥉", "🏅"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/art-stationery-emojis/",
+      "title": "Art & Stationery Emojis",
+      "desc": "Pencils, palettes, notebooks, and creative supply emojis."
+    },
+    {
+      "href": "/library/clothing-fashion-emojis/",
+      "title": "Clothing & Fashion Emojis",
+      "desc": "Dresses, shoes, hats, and outfit emojis to copy and paste."
+    },
+    {
+      "href": "/library/money-emojis/",
+      "title": "Money Emojis",
+      "desc": "Cash, coin, and money bag emojis and combos."
+    },
+    {
+      "href": "/library/tech-status-symbols/",
+      "title": "Tech & Status Symbols",
+      "desc": "Battery, signal, and interface status characters."
+    }
+  ]
+}

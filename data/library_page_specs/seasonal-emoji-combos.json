@@ -1,0 +1,158 @@
+{
+  "slug": "seasonal-emoji-combos",
+  "title": "Seasonal Emoji Combos: Copy & Paste Summer Fall Spring Winter",
+  "meta_description": "Seasonal emoji combos for every time of year — summer ☀️🌊, fall 🍂🎃, winter ❄️☃️, and spring 🌸🐝 aesthetic sets. Click any symbol or set to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/seasonal-emoji-combos/",
+  "breadcrumb": "Seasonal Emoji Combos",
+  "hero_h1": "Seasonal Emoji Combos",
+  "hero_tagline": "Summer, fall, winter, and spring emoji sets for captions and bios — click any symbol or combo to copy it instantly.",
+  "intro": "Seasonal emoji combos let you match your captions, bios, and stories to the time of year — beach waves in summer, falling leaves in autumn, snowflakes in winter, and blossoms in spring. Each season below has individually copyable emojis plus ready-made aesthetic sets, and specific holidays like Christmas, Halloween, and Easter have their own dedicated pages linked under related resources.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "summer-emojis",
+      "label": "Summer",
+      "h2": "Summer Emojis",
+      "intro": "Sun, sea, and vacation emojis for summer aesthetic posts.",
+      "symbols": [
+        { "char": "☀️", "label": "Sun" },
+        { "char": "🌊", "label": "Water Wave" },
+        { "char": "🏖️", "label": "Beach with Umbrella" },
+        { "char": "🍉", "label": "Watermelon" },
+        { "char": "🍦", "label": "Soft Ice Cream" },
+        { "char": "🌴", "label": "Palm Tree" },
+        { "char": "🐚", "label": "Spiral Shell" },
+        { "char": "😎", "label": "Smiling Face with Sunglasses" },
+        { "char": "🍹", "label": "Tropical Drink" },
+        { "char": "⛱️", "label": "Umbrella on Ground" }
+      ]
+    },
+    {
+      "id": "fall-emojis",
+      "label": "Fall",
+      "h2": "Fall & Autumn Emojis",
+      "intro": "Leaves, harvest, and cozy emojis for autumn aesthetic posts.",
+      "symbols": [
+        { "char": "🍂", "label": "Fallen Leaf" },
+        { "char": "🍁", "label": "Maple Leaf" },
+        { "char": "🎃", "label": "Jack-O-Lantern" },
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "🌰", "label": "Chestnut" },
+        { "char": "🦔", "label": "Hedgehog" },
+        { "char": "🥧", "label": "Pie" },
+        { "char": "🧣", "label": "Scarf" },
+        { "char": "🍄", "label": "Mushroom" },
+        { "char": "🌾", "label": "Sheaf of Rice" }
+      ]
+    },
+    {
+      "id": "winter-emojis",
+      "label": "Winter",
+      "h2": "Winter Emojis",
+      "intro": "Snow, ice, and cozy-cold emojis for winter aesthetic posts.",
+      "symbols": [
+        { "char": "❄️", "label": "Snowflake" },
+        { "char": "☃️", "label": "Snowman" },
+        { "char": "⛄", "label": "Snowman Without Snow" },
+        { "char": "🧤", "label": "Gloves" },
+        { "char": "🌨️", "label": "Cloud with Snow" },
+        { "char": "🧊", "label": "Ice" },
+        { "char": "⛷️", "label": "Skier" },
+        { "char": "🛷", "label": "Sled" },
+        { "char": "🧦", "label": "Socks" },
+        { "char": "🍵", "label": "Teacup Without Handle" }
+      ]
+    },
+    {
+      "id": "spring-emojis",
+      "label": "Spring",
+      "h2": "Spring Emojis",
+      "intro": "Blossom, rain, and new-growth emojis for spring aesthetic posts.",
+      "symbols": [
+        { "char": "🌸", "label": "Cherry Blossom" },
+        { "char": "🌷", "label": "Tulip" },
+        { "char": "🐝", "label": "Honeybee" },
+        { "char": "🌱", "label": "Seedling" },
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "🐣", "label": "Hatching Chick" },
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "☔", "label": "Umbrella with Rain Drops" },
+        { "char": "🌼", "label": "Blossom" },
+        { "char": "🪺", "label": "Nest with Eggs" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "season-sets",
+    "label": "Season Sets",
+    "h2": "Seasonal Combo Sets",
+    "intro": "Copy a full seasonal emoji set in one click and paste it into captions, bios, or stories."
+  },
+  "collection_container_id": "seasonalCombosContainer",
+  "collections": [
+    {
+      "name": "Beach Day",
+      "flags": ["🏖️", "☀️", "🌊", "🐚", "🍦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Summer Sunset",
+      "flags": ["🌅", "🌴", "🍹", "😎", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Golden Autumn",
+      "flags": ["🍂", "🍁", "🌾", "☕", "🧡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Spooky Season",
+      "flags": ["🎃", "🍂", "🌙", "🕸️", "🧣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cozy Winter",
+      "flags": ["❄️", "☕", "🧦", "🕯️", "🤍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Snow Day",
+      "flags": ["☃️", "❄️", "🧤", "🛷", "🌨️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Spring Bloom",
+      "flags": ["🌸", "🌷", "🦋", "🐝", "🌈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "April Showers",
+      "flags": ["☔", "🌧️", "🌈", "🌱", "💧"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/christmas-symbols/",
+      "title": "Christmas Symbols",
+      "desc": "Trees, snowflakes, and festive characters for the holidays."
+    },
+    {
+      "href": "/library/halloween-symbols/",
+      "title": "Halloween Symbols",
+      "desc": "Pumpkins, skulls, and spooky characters for October."
+    },
+    {
+      "href": "/library/easter-symbols/",
+      "title": "Easter Symbols",
+      "desc": "Bunnies, eggs, and spring festive characters."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Sun, rain, snow, and storm characters to copy and paste."
+    }
+  ]
+}

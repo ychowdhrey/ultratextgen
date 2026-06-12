@@ -1,0 +1,172 @@
+{
+  "slug": "party-celebration-emojis",
+  "title": "Party & Celebration Emojis: Copy & Paste 🎉 Confetti Combos",
+  "meta_description": "Party emojis to copy and paste: 🎉 confetti, 🥳 partying face, balloons, fireworks, toasts, and celebration combo sets. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/party-celebration-emojis/",
+  "breadcrumb": "Party & Celebration Emojis",
+  "hero_h1": "Party & Celebration Emojis",
+  "hero_tagline": "Confetti, cake, fireworks, and toasts for every celebration — click any emoji to copy it instantly.",
+  "intro": "Party emojis turn any message into a celebration, from birthday wishes to congratulations comments and New Year countdowns. This library gathers the essential celebration emojis — 🎉 party popper, 🎊 confetti ball, 🥳 partying face — alongside birthday treats, clinking glasses, dance-floor energy, and fireworks. Copy single emojis for captions and invites, or grab a complete party combo set in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "party-essentials",
+      "label": "Party Essentials",
+      "h2": "Party Essentials",
+      "intro": "The core celebration emojis that say party without a single word.",
+      "symbols": [
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🎊", "label": "Confetti Ball" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "🪅", "label": "Piñata" },
+        { "char": "🎈", "label": "Balloon" },
+        { "char": "🎁", "label": "Wrapped Gift" },
+        { "char": "🎀", "label": "Ribbon" }
+      ]
+    },
+    {
+      "id": "birthday-treats",
+      "label": "Birthday Treats",
+      "h2": "Birthday Cake & Treats",
+      "intro": "Cakes, candles, and sweets for birthday posts and wishes.",
+      "symbols": [
+        { "char": "🎂", "label": "Birthday Cake" },
+        { "char": "🧁", "label": "Cupcake" },
+        { "char": "🍰", "label": "Shortcake" },
+        { "char": "🕯", "label": "Candle" },
+        { "char": "🍬", "label": "Candy" },
+        { "char": "🍭", "label": "Lollipop" }
+      ]
+    },
+    {
+      "id": "toasts-drinks",
+      "label": "Toasts & Drinks",
+      "h2": "Toasts & Celebration Drinks",
+      "intro": "Raise a glass with champagne, cocktails, and clinking mugs.",
+      "symbols": [
+        { "char": "🥂", "label": "Clinking Glasses" },
+        { "char": "🍾", "label": "Bottle With Popping Cork" },
+        { "char": "🍻", "label": "Clinking Beer Mugs" },
+        { "char": "🍹", "label": "Tropical Drink" },
+        { "char": "🍸", "label": "Cocktail Glass" }
+      ]
+    },
+    {
+      "id": "music-dance",
+      "label": "Music & Dance",
+      "h2": "Music & Dance Floor",
+      "intro": "Dancers, disco balls, and music notes for party-night energy.",
+      "symbols": [
+        { "char": "💃", "label": "Woman Dancing" },
+        { "char": "🕺", "label": "Man Dancing" },
+        { "char": "🪩", "label": "Mirror Ball" },
+        { "char": "🎶", "label": "Musical Notes" },
+        { "char": "🎵", "label": "Musical Note" },
+        { "char": "🎤", "label": "Microphone" },
+        { "char": "🔊", "label": "Speaker High Volume" },
+        { "char": "👯", "label": "People With Bunny Ears" }
+      ]
+    },
+    {
+      "id": "fireworks-sparkle",
+      "label": "Fireworks",
+      "h2": "Fireworks & Sparkle",
+      "intro": "Light up countdowns and big announcements with fireworks and stars.",
+      "symbols": [
+        { "char": "🎆", "label": "Fireworks" },
+        { "char": "🎇", "label": "Sparkler" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "💫", "label": "Dizzy" }
+      ]
+    },
+    {
+      "id": "trophies-flowers",
+      "label": "Wins & Flowers",
+      "h2": "Trophies, Medals & Flowers",
+      "intro": "Congratulations extras for wins, graduations, and milestones.",
+      "symbols": [
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🥇", "label": "1st Place Medal" },
+        { "char": "🎓", "label": "Graduation Cap" },
+        { "char": "💐", "label": "Bouquet" },
+        { "char": "🌹", "label": "Rose" },
+        { "char": "👑", "label": "Crown" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Celebration Combo Sets",
+    "intro": "Copy a full party combo in one click — perfect for birthday wishes, congrats comments, and countdowns."
+  },
+  "collection_container_id": "partySetsContainer",
+  "collections": [
+    {
+      "name": "Birthday Bash",
+      "flags": ["🎂", "🎉", "🎈", "🥳"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "New Year Countdown",
+      "flags": ["🎆", "🥂", "✨", "🎊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Party Night",
+      "flags": ["🪩", "💃", "🕺", "🎶"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Congrats",
+      "flags": ["🎉", "👏", "🏆", "💐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cheers",
+      "flags": ["🥂", "🍾", "🎊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Surprise Party",
+      "flags": ["🎁", "🎈", "🤫", "🥳"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Confetti Rain",
+      "flags": ["🎊", "🎉", "🎊", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Graduation Party",
+      "flags": ["🎓", "🎉", "👏", "🥳"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greeting-message-emojis/",
+      "title": "Greeting & Message Emojis",
+      "desc": "Good morning, thank you, and congratulations combo sets."
+    },
+    {
+      "href": "/library/wedding-anniversary-emojis/",
+      "title": "Wedding & Anniversary Emojis",
+      "desc": "Rings, bells, and couple combos for the big day."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkles, glitter, and shine characters for aesthetic text."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Achievement Symbols",
+      "desc": "Trophies, medals, and winner symbols for celebrating success."
+    }
+  ]
+}

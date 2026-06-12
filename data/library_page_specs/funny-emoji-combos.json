@@ -1,0 +1,166 @@
+{
+  "slug": "funny-emoji-combos",
+  "title": "Funny Emoji Combos: Copy & Paste Meme & Joke Emojis",
+  "meta_description": "Funny emoji combos to copy and paste: clown moments 🤡, laughing faces 😂, monkey trios 🙈, and joke sets for any group chat. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/funny-emoji-combos/",
+  "breadcrumb": "Funny Emoji Combos",
+  "hero_h1": "Funny Emoji Combos",
+  "hero_tagline": "Joke setups, clown moments, and laughing fits in emoji form — click any emoji to copy it instantly.",
+  "intro": "Funny emoji combos land a joke faster than any punchline — a 🤡 clown moment, the 🙈 🙉 🙊 monkey trio, or a well-timed 🐸 ☕ \"but that's none of my business.\" This library collects the funniest faces, classic meme emojis, and ready-made joke combinations for group chats, comment sections, and captions. Copy a single emoji or paste a whole combo set in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "laughing-faces",
+      "label": "Laughing Faces",
+      "h2": "Laughing & Cackling Faces",
+      "intro": "The full spectrum of laughter, from a snicker to rolling on the floor.",
+      "symbols": [
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "🤣", "label": "Rolling on the Floor Laughing" },
+        { "char": "😹", "label": "Cat With Tears of Joy" },
+        { "char": "😆", "label": "Grinning Squinting Face" },
+        { "char": "😝", "label": "Squinting Face With Tongue" },
+        { "char": "🤪", "label": "Zany Face" },
+        { "char": "😜", "label": "Winking Face With Tongue" }
+      ]
+    },
+    {
+      "id": "goofy-silly",
+      "label": "Goofy & Silly",
+      "h2": "Goofy & Silly Faces",
+      "intro": "Unserious faces for unserious moments.",
+      "symbols": [
+        { "char": "🤡", "label": "Clown Face" },
+        { "char": "🥴", "label": "Woozy Face" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "😵‍💫", "label": "Face With Spiral Eyes" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "🤭", "label": "Face With Hand Over Mouth" },
+        { "char": "😛", "label": "Face With Tongue" }
+      ]
+    },
+    {
+      "id": "meme-favorites",
+      "label": "Meme Favorites",
+      "h2": "Meme Favorite Emojis",
+      "intro": "The emojis the internet turned into running jokes.",
+      "symbols": [
+        { "char": "💀", "label": "Skull" },
+        { "char": "🗿", "label": "Moai" },
+        { "char": "🤓", "label": "Nerd Face" },
+        { "char": "🥸", "label": "Disguised Face" },
+        { "char": "🐸", "label": "Frog" },
+        { "char": "👻", "label": "Ghost" },
+        { "char": "💩", "label": "Pile of Poo" },
+        { "char": "🦆", "label": "Duck" }
+      ]
+    },
+    {
+      "id": "speak-no-evil",
+      "label": "Monkeys & Oops",
+      "h2": "Monkeys, Grimaces & Oops Faces",
+      "intro": "For secrets, awkward moments, and pretending you saw nothing.",
+      "symbols": [
+        { "char": "🙈", "label": "See-No-Evil Monkey" },
+        { "char": "🙉", "label": "Hear-No-Evil Monkey" },
+        { "char": "🙊", "label": "Speak-No-Evil Monkey" },
+        { "char": "😬", "label": "Grimacing Face" },
+        { "char": "🫢", "label": "Face With Open Eyes and Hand Over Mouth" },
+        { "char": "🤐", "label": "Zipper-Mouth Face" }
+      ]
+    },
+    {
+      "id": "joke-props",
+      "label": "Joke Props",
+      "h2": "Joke Props & Punchline Extras",
+      "intro": "Supporting-cast emojis that make a combo land.",
+      "symbols": [
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "🎪", "label": "Circus Tent" },
+        { "char": "🤹", "label": "Person Juggling" },
+        { "char": "🚨", "label": "Police Car Light" },
+        { "char": "📢", "label": "Loudspeaker" },
+        { "char": "🧠", "label": "Brain" },
+        { "char": "🍌", "label": "Banana" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Funny Combo Sets",
+    "intro": "Copy a complete joke combo in one click and drop it into the group chat."
+  },
+  "collection_container_id": "funnySetsContainer",
+  "collections": [
+    {
+      "name": "Clown Moment",
+      "flags": ["🤡", "🎪", "🤹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I'm Dead",
+      "flags": ["😂", "💀", "⚰"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nervous Laugh",
+      "flags": ["😅", "🫠", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Monkey Business",
+      "flags": ["🙈", "🙉", "🙊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chaotic Energy",
+      "flags": ["🤪", "🔥", "😜", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Laughing Fit",
+      "flags": ["😂", "🤣", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kermit Tea",
+      "flags": ["🐸", "☕", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Brain Empty",
+      "flags": ["🧠", "❌", "🦗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Banana Phone",
+      "flags": ["🍌", "📞", "🤙"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emojis",
+      "desc": "Sigma, rizz, and skull combos from current internet slang."
+    },
+    {
+      "href": "/library/laughing-emoji/",
+      "title": "Laughing Emoji & Kaomoji",
+      "desc": "LOL faces and laughing combo sets to copy and paste."
+    },
+    {
+      "href": "/library/poop-emoji/",
+      "title": "Poop Emoji",
+      "desc": "The 💩 emoji and its funniest combinations."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Judging looks, caught-in-4K combos, and disapproval kaomoji."
+    }
+  ]
+}
