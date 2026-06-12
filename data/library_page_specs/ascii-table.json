@@ -1,0 +1,141 @@
+{
+  "slug": "ascii-table",
+  "title": "ASCII Table: Copy & Paste ASCII Codes & Characters",
+  "meta_description": "ASCII table with decimal and hex codes for punctuation, digits, letters, and symbols — a quick developer reference chart. Click any character to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/ascii-table/",
+  "breadcrumb": "ASCII Table",
+  "hero_h1": "ASCII Table",
+  "hero_tagline": "Printable ASCII characters 33–126 with their decimal and hexadecimal codes. Click any character to copy it instantly.",
+  "intro": "The ASCII table maps the 128 characters of the American Standard Code for Information Interchange to the numbers 0–127 — the foundation of modern text encoding and the first 128 code points of Unicode. This reference covers the printable range (33–126) grouped by type, with each character labeled by its decimal and hex code. Codes 0–31 are non-printing control characters (like 10, the line feed), and 32 is the space.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ascii-punctuation-33-47",
+      "label": "Punctuation 33–47",
+      "h2": "ASCII Punctuation & Symbols (33–47)",
+      "intro": "The first printable block: punctuation and arithmetic symbols.",
+      "symbols": [
+        { "char": "!", "label": "33 / 0x21 — Exclamation Mark" },
+        { "char": "\"", "label": "34 / 0x22 — Quotation Mark" },
+        { "char": "#", "label": "35 / 0x23 — Number Sign" },
+        { "char": "$", "label": "36 / 0x24 — Dollar Sign" },
+        { "char": "%", "label": "37 / 0x25 — Percent Sign" },
+        { "char": "&", "label": "38 / 0x26 — Ampersand" },
+        { "char": "'", "label": "39 / 0x27 — Apostrophe" },
+        { "char": "(", "label": "40 / 0x28 — Left Parenthesis" },
+        { "char": ")", "label": "41 / 0x29 — Right Parenthesis" },
+        { "char": "*", "label": "42 / 0x2A — Asterisk" },
+        { "char": "+", "label": "43 / 0x2B — Plus Sign" },
+        { "char": ",", "label": "44 / 0x2C — Comma" },
+        { "char": "-", "label": "45 / 0x2D — Hyphen-Minus" },
+        { "char": ".", "label": "46 / 0x2E — Full Stop" },
+        { "char": "/", "label": "47 / 0x2F — Solidus (Slash)" }
+      ]
+    },
+    {
+      "id": "ascii-digits-48-57",
+      "label": "Digits 48–57",
+      "h2": "ASCII Digits (48–57)",
+      "intro": "The ten decimal digits — each digit's code is 48 plus its value.",
+      "symbols": [
+        { "char": "0", "label": "48 / 0x30 — Digit Zero" },
+        { "char": "1", "label": "49 / 0x31 — Digit One" },
+        { "char": "2", "label": "50 / 0x32 — Digit Two" },
+        { "char": "3", "label": "51 / 0x33 — Digit Three" },
+        { "char": "4", "label": "52 / 0x34 — Digit Four" },
+        { "char": "5", "label": "53 / 0x35 — Digit Five" },
+        { "char": "6", "label": "54 / 0x36 — Digit Six" },
+        { "char": "7", "label": "55 / 0x37 — Digit Seven" },
+        { "char": "8", "label": "56 / 0x38 — Digit Eight" },
+        { "char": "9", "label": "57 / 0x39 — Digit Nine" }
+      ]
+    },
+    {
+      "id": "ascii-punctuation-58-64",
+      "label": "Punctuation 58–64",
+      "h2": "ASCII Punctuation & Symbols (58–64)",
+      "intro": "The symbols between the digits and the uppercase letters.",
+      "symbols": [
+        { "char": ":", "label": "58 / 0x3A — Colon" },
+        { "char": ";", "label": "59 / 0x3B — Semicolon" },
+        { "char": "<", "label": "60 / 0x3C — Less-Than Sign" },
+        { "char": "=", "label": "61 / 0x3D — Equals Sign" },
+        { "char": ">", "label": "62 / 0x3E — Greater-Than Sign" },
+        { "char": "?", "label": "63 / 0x3F — Question Mark" },
+        { "char": "@", "label": "64 / 0x40 — Commercial At" }
+      ]
+    },
+    {
+      "id": "ascii-letters",
+      "label": "Letters 65–122",
+      "h2": "ASCII Letters (65–90 and 97–122)",
+      "intro": "Uppercase letters run from 65 (A) to 90 (Z); lowercase from 97 (a) to 122 (z) — always uppercase plus 32.",
+      "symbols": [
+        { "char": "A", "label": "65 / 0x41 — Latin Capital Letter A" },
+        { "char": "B", "label": "66 / 0x42 — Latin Capital Letter B" },
+        { "char": "C", "label": "67 / 0x43 — Latin Capital Letter C" },
+        { "char": "M", "label": "77 / 0x4D — Latin Capital Letter M" },
+        { "char": "N", "label": "78 / 0x4E — Latin Capital Letter N" },
+        { "char": "X", "label": "88 / 0x58 — Latin Capital Letter X" },
+        { "char": "Y", "label": "89 / 0x59 — Latin Capital Letter Y" },
+        { "char": "Z", "label": "90 / 0x5A — Latin Capital Letter Z" },
+        { "char": "a", "label": "97 / 0x61 — Latin Small Letter A" },
+        { "char": "b", "label": "98 / 0x62 — Latin Small Letter B" },
+        { "char": "m", "label": "109 / 0x6D — Latin Small Letter M" },
+        { "char": "n", "label": "110 / 0x6E — Latin Small Letter N" },
+        { "char": "x", "label": "120 / 0x78 — Latin Small Letter X" },
+        { "char": "z", "label": "122 / 0x7A — Latin Small Letter Z" }
+      ]
+    },
+    {
+      "id": "ascii-brackets-91-96",
+      "label": "Brackets 91–96",
+      "h2": "ASCII Brackets & Marks (91–96)",
+      "intro": "Square brackets, backslash, caret, underscore, and the grave accent.",
+      "symbols": [
+        { "char": "[", "label": "91 / 0x5B — Left Square Bracket" },
+        { "char": "\\", "label": "92 / 0x5C — Reverse Solidus (Backslash)" },
+        { "char": "]", "label": "93 / 0x5D — Right Square Bracket" },
+        { "char": "^", "label": "94 / 0x5E — Circumflex Accent (Caret)" },
+        { "char": "_", "label": "95 / 0x5F — Low Line (Underscore)" },
+        { "char": "`", "label": "96 / 0x60 — Grave Accent (Backtick)" }
+      ]
+    },
+    {
+      "id": "ascii-braces-123-126",
+      "label": "Braces 123–126",
+      "h2": "ASCII Braces & Tilde (123–126)",
+      "intro": "The final printable characters before the DEL control code at 127.",
+      "symbols": [
+        { "char": "{", "label": "123 / 0x7B — Left Curly Bracket" },
+        { "char": "|", "label": "124 / 0x7C — Vertical Line (Pipe)" },
+        { "char": "}", "label": "125 / 0x7D — Right Curly Bracket" },
+        { "char": "~", "label": "126 / 0x7E — Tilde" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/alt-codes/",
+      "title": "Alt Codes",
+      "desc": "Keyboard Alt key codes for typing special characters."
+    },
+    {
+      "href": "/library/html-entities/",
+      "title": "HTML Entities",
+      "desc": "Named HTML entity codes for symbols on the web."
+    },
+    {
+      "href": "/library/text-art/",
+      "title": "Text Art",
+      "desc": "ASCII and Unicode art collections to copy and paste."
+    },
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "The symbols printed on your keyboard keys, explained."
+    }
+  ]
+}
