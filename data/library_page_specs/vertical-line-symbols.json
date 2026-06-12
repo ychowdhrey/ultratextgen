@@ -1,0 +1,109 @@
+{
+  "slug": "vertical-line-symbols",
+  "title": "Vertical Line Symbols: Copy & Paste | ‖ │ ┃ Pipe & Bar Characters",
+  "meta_description": "Copy the vertical line symbol in every Unicode form — pipe |, double bar ‖, box-drawing │ ┃, and heavy dingbat bars. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/vertical-line-symbols/",
+  "breadcrumb": "Vertical Line Symbols",
+  "hero_h1": "Vertical Line Symbols",
+  "hero_tagline": "Every pipe, bar, and vertical rule Unicode offers — from the keyboard | to heavy ❚ bars. Click any symbol to copy it instantly.",
+  "intro": "The vertical line symbol — also called the pipe, bar, or vertical slash — separates items in headlines, bios, navigation menus, and code. Beyond the keyboard pipe |, Unicode includes double bars, dashed box-drawing verticals, heavy dingbat bars, and mathematical divides-by characters. Pick the exact weight and style of vertical line you need below; each one is a single copyable character.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "basic-pipes",
+      "label": "Pipes",
+      "h2": "Pipe & Bar Characters",
+      "intro": "The standard vertical bar and its direct relatives, including full-width and letter forms.",
+      "symbols": [
+        { "char": "|", "label": "Vertical Line (Pipe) — U+007C" },
+        { "char": "¦", "label": "Broken Bar — U+00A6" },
+        { "char": "‖", "label": "Double Vertical Line — U+2016" },
+        { "char": "∣", "label": "Divides — U+2223" },
+        { "char": "∥", "label": "Parallel To — U+2225" },
+        { "char": "｜", "label": "Fullwidth Vertical Line — U+FF5C" },
+        { "char": "￨", "label": "Halfwidth Forms Light Vertical — U+FFE8" },
+        { "char": "ǀ", "label": "Latin Letter Dental Click — U+01C0" },
+        { "char": "ǁ", "label": "Latin Letter Lateral Click — U+01C1" },
+        { "char": "⏐", "label": "Vertical Line Extension — U+23D0" }
+      ]
+    },
+    {
+      "id": "box-drawing-verticals",
+      "label": "Box Drawing",
+      "h2": "Box Drawing Vertical Lines",
+      "intro": "Light, heavy, dashed, and double verticals from the box-drawing block — ideal for dividers and frames.",
+      "symbols": [
+        { "char": "│", "label": "Box Drawings Light Vertical" },
+        { "char": "┃", "label": "Box Drawings Heavy Vertical" },
+        { "char": "┆", "label": "Box Drawings Light Triple Dash Vertical" },
+        { "char": "┇", "label": "Box Drawings Heavy Triple Dash Vertical" },
+        { "char": "┊", "label": "Box Drawings Light Quadruple Dash Vertical" },
+        { "char": "┋", "label": "Box Drawings Heavy Quadruple Dash Vertical" },
+        { "char": "╎", "label": "Box Drawings Light Double Dash Vertical" },
+        { "char": "╏", "label": "Box Drawings Heavy Double Dash Vertical" },
+        { "char": "║", "label": "Box Drawings Double Vertical" },
+        { "char": "╵", "label": "Box Drawings Light Up" },
+        { "char": "╷", "label": "Box Drawings Light Down" },
+        { "char": "╹", "label": "Box Drawings Heavy Up" },
+        { "char": "╻", "label": "Box Drawings Heavy Down" }
+      ]
+    },
+    {
+      "id": "heavy-bars",
+      "label": "Heavy Bars",
+      "h2": "Heavy & Decorative Bars",
+      "intro": "Thick dingbat bars and block-element verticals when you want a bolder divider.",
+      "symbols": [
+        { "char": "❘", "label": "Light Vertical Bar — U+2758" },
+        { "char": "❙", "label": "Medium Vertical Bar — U+2759" },
+        { "char": "❚", "label": "Heavy Vertical Bar — U+275A" },
+        { "char": "▏", "label": "Left One Eighth Block" },
+        { "char": "▕", "label": "Right One Eighth Block" },
+        { "char": "▮", "label": "Black Vertical Rectangle" },
+        { "char": "▌", "label": "Left Half Block" },
+        { "char": "█", "label": "Full Block" }
+      ]
+    },
+    {
+      "id": "math-technical",
+      "label": "Math & Technical",
+      "h2": "Mathematical & Technical Verticals",
+      "intro": "Negated divides, parallel operators, and bracket-extension pieces from the technical blocks.",
+      "symbols": [
+        { "char": "∤", "label": "Does Not Divide — U+2224" },
+        { "char": "∦", "label": "Not Parallel To — U+2226" },
+        { "char": "⎢", "label": "Left Square Bracket Extension — U+23A2" },
+        { "char": "⎥", "label": "Right Square Bracket Extension — U+23A5" },
+        { "char": "⎮", "label": "Integral Extension — U+23AE" },
+        { "char": "⎪", "label": "Curly Bracket Extension — U+23AA" },
+        { "char": "⎸", "label": "Left Vertical Box Line — U+23B8" },
+        { "char": "⎹", "label": "Right Vertical Box Line — U+23B9" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "Every horizontal dash, hyphen, and em dash character."
+    },
+    {
+      "href": "/library/box-drawing-symbols/",
+      "title": "Box Drawing Symbols",
+      "desc": "Lines, corners, and junctions for frames and tables."
+    },
+    {
+      "href": "/library/slash-backslash-symbols/",
+      "title": "Slash & Backslash Symbols",
+      "desc": "Forward slash, backslash, and divider slash characters."
+    },
+    {
+      "href": "/library/line-divider-symbols/",
+      "title": "Line & Divider Symbols",
+      "desc": "Horizontal rules and dividers for bios and posts."
+    }
+  ]
+}

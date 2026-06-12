@@ -1,0 +1,126 @@
+{
+  "slug": "clock-time-symbols",
+  "title": "Clock & Time Symbols: Copy & Paste 🕐 ⌛ ⏰ Time Characters",
+  "meta_description": "Copy clock and time symbols — all 24 Unicode clock faces 🕐, hourglasses ⌛, alarm clocks ⏰, watches, and AM/PM marks. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/clock-time-symbols/",
+  "breadcrumb": "Clock & Time Symbols",
+  "hero_h1": "Clock & Time Symbols",
+  "hero_tagline": "Every Unicode clock face plus hourglasses, timers, calendars, and day-night icons. Click any symbol to copy it instantly.",
+  "intro": "Unicode includes a full set of 24 clock-face time symbols — one for every hour and every half hour — alongside hourglasses, alarm clocks, stopwatches, and calendar icons. They are perfect for event announcements, schedules, countdown posts, deadline reminders, and out-of-office messages. Pick the exact time you need, from 🕐 one o'clock to 🕧 half past twelve, and paste it anywhere.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "clock-faces-hour",
+      "label": "O'Clock Faces",
+      "h2": "Clock Faces — On the Hour",
+      "intro": "Twelve clock-face emojis, one for each hour from one to twelve o'clock.",
+      "symbols": [
+        { "char": "🕐", "label": "Clock Face One O'Clock" },
+        { "char": "🕑", "label": "Clock Face Two O'Clock" },
+        { "char": "🕒", "label": "Clock Face Three O'Clock" },
+        { "char": "🕓", "label": "Clock Face Four O'Clock" },
+        { "char": "🕔", "label": "Clock Face Five O'Clock" },
+        { "char": "🕕", "label": "Clock Face Six O'Clock" },
+        { "char": "🕖", "label": "Clock Face Seven O'Clock" },
+        { "char": "🕗", "label": "Clock Face Eight O'Clock" },
+        { "char": "🕘", "label": "Clock Face Nine O'Clock" },
+        { "char": "🕙", "label": "Clock Face Ten O'Clock" },
+        { "char": "🕚", "label": "Clock Face Eleven O'Clock" },
+        { "char": "🕛", "label": "Clock Face Twelve O'Clock" }
+      ]
+    },
+    {
+      "id": "clock-faces-half",
+      "label": "Half-Past Faces",
+      "h2": "Clock Faces — Half Past",
+      "intro": "The matching half-hour set, from one-thirty through twelve-thirty.",
+      "symbols": [
+        { "char": "🕜", "label": "Clock Face One-Thirty" },
+        { "char": "🕝", "label": "Clock Face Two-Thirty" },
+        { "char": "🕞", "label": "Clock Face Three-Thirty" },
+        { "char": "🕟", "label": "Clock Face Four-Thirty" },
+        { "char": "🕠", "label": "Clock Face Five-Thirty" },
+        { "char": "🕡", "label": "Clock Face Six-Thirty" },
+        { "char": "🕢", "label": "Clock Face Seven-Thirty" },
+        { "char": "🕣", "label": "Clock Face Eight-Thirty" },
+        { "char": "🕤", "label": "Clock Face Nine-Thirty" },
+        { "char": "🕥", "label": "Clock Face Ten-Thirty" },
+        { "char": "🕦", "label": "Clock Face Eleven-Thirty" },
+        { "char": "🕧", "label": "Clock Face Twelve-Thirty" }
+      ]
+    },
+    {
+      "id": "timers-calendars",
+      "label": "Timers & Calendars",
+      "h2": "Timers, Watches & Calendars",
+      "intro": "Hourglasses, stopwatches, alarm clocks, and calendar icons for schedules and deadlines.",
+      "symbols": [
+        { "char": "⌚", "label": "Watch" },
+        { "char": "⏰", "label": "Alarm Clock" },
+        { "char": "⏱", "label": "Stopwatch" },
+        { "char": "⏲", "label": "Timer Clock" },
+        { "char": "⌛", "label": "Hourglass Done" },
+        { "char": "⏳", "label": "Hourglass Not Done" },
+        { "char": "🕰", "label": "Mantelpiece Clock" },
+        { "char": "📅", "label": "Calendar" },
+        { "char": "📆", "label": "Tear-Off Calendar" },
+        { "char": "🗓", "label": "Spiral Calendar" }
+      ]
+    },
+    {
+      "id": "day-night",
+      "label": "Day & Night",
+      "h2": "Day & Night Icons",
+      "intro": "Sunrise-to-night icons for marking morning, evening, and overnight times.",
+      "symbols": [
+        { "char": "🌅", "label": "Sunrise" },
+        { "char": "🌄", "label": "Sunrise Over Mountains" },
+        { "char": "🌞", "label": "Sun with Face" },
+        { "char": "🌇", "label": "Sunset" },
+        { "char": "🌆", "label": "Cityscape at Dusk" },
+        { "char": "🌃", "label": "Night with Stars" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🌛", "label": "First Quarter Moon Face" }
+      ]
+    },
+    {
+      "id": "duration-marks",
+      "label": "Duration Marks",
+      "h2": "Hourglass & Duration Marks",
+      "intro": "Text-style hourglasses, minute and second primes, and compact AM/PM characters.",
+      "symbols": [
+        { "char": "⧖", "label": "White Hourglass" },
+        { "char": "⧗", "label": "Black Hourglass" },
+        { "char": "′", "label": "Prime (Minutes)" },
+        { "char": "″", "label": "Double Prime (Seconds)" },
+        { "char": "㏂", "label": "Square AM" },
+        { "char": "㏘", "label": "Square PM" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Sun, rain, snow, and forecast characters to copy and paste."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Moon & Celestial Symbols",
+      "desc": "Moon phases, stars, and night-sky characters for aesthetic posts."
+    },
+    {
+      "href": "/library/media-control-symbols/",
+      "title": "Media Control Symbols",
+      "desc": "Play, pause, and fast-forward glyphs for player-style text."
+    },
+    {
+      "href": "/library/number-symbols/",
+      "title": "Number Symbols",
+      "desc": "Circled, keycap, and styled number characters to copy."
+    }
+  ]
+}
