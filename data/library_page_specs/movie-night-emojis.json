@@ -1,0 +1,170 @@
+{
+  "slug": "movie-night-emojis",
+  "title": "Movie Night Emojis: Copy & Paste 🍿 🎬 Film Combos",
+  "meta_description": "Copy and paste movie night emojis — 🍿 popcorn, 🎬 clapper, 📺 TV — plus film combo sets for Letterboxd bios and watch parties. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/movie-night-emojis/",
+  "breadcrumb": "Movie Night Emojis",
+  "hero_h1": "Movie Night Emojis",
+  "hero_tagline": "Popcorn, clapper boards, cozy couches, and ready-made film combo sets for your next watch party. Click any emoji to copy it instantly.",
+  "intro": "Movie night emojis set the scene before the opening credits roll. This page collects the classic cinema set — 🍿 popcorn, 🎬 clapper board, 🎥 movie camera, 📺 television — alongside snack, cozy-night-in, and genre-reaction emojis people drop into Letterboxd bios, group-chat watch-party invites, and Instagram captions. Scroll down for one-click combo sets covering everything from horror marathons to rom-com evenings.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "cinema-essentials",
+      "label": "Cinema",
+      "h2": "Cinema & Film Emojis",
+      "intro": "The core movie-night set: cameras, tickets, screens, and the all-important popcorn.",
+      "symbols": [
+        { "char": "🍿", "label": "Popcorn" },
+        { "char": "🎬", "label": "Clapper Board" },
+        { "char": "🎥", "label": "Movie Camera" },
+        { "char": "📽️", "label": "Film Projector" },
+        { "char": "🎞️", "label": "Film Frames" },
+        { "char": "🎟️", "label": "Admission Tickets" },
+        { "char": "🎫", "label": "Ticket" },
+        { "char": "📺", "label": "Television" },
+        { "char": "📼", "label": "Videocassette" },
+        { "char": "📀", "label": "DVD" }
+      ]
+    },
+    {
+      "id": "movie-snacks",
+      "label": "Snacks",
+      "h2": "Movie Snack Emojis",
+      "intro": "Concession-stand favorites to pair with the popcorn in captions and invites.",
+      "symbols": [
+        { "char": "🥤", "label": "Cup With Straw" },
+        { "char": "🍫", "label": "Chocolate Bar" },
+        { "char": "🍬", "label": "Candy" },
+        { "char": "🍭", "label": "Lollipop" },
+        { "char": "🧃", "label": "Beverage Box" },
+        { "char": "🍕", "label": "Pizza" },
+        { "char": "🌭", "label": "Hot Dog" },
+        { "char": "🍟", "label": "French Fries" }
+      ]
+    },
+    {
+      "id": "cozy-night-in",
+      "label": "Cozy Night",
+      "h2": "Cozy Night-In Emojis",
+      "intro": "Couch, blanket-fort, and late-night emojis for at-home streaming sessions.",
+      "symbols": [
+        { "char": "🛋️", "label": "Couch and Lamp" },
+        { "char": "🕯️", "label": "Candle" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🧸", "label": "Teddy Bear" },
+        { "char": "🧦", "label": "Socks" },
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "🌃", "label": "Night With Stars" },
+        { "char": "😴", "label": "Sleeping Face" }
+      ]
+    },
+    {
+      "id": "genre-reactions",
+      "label": "Genres",
+      "h2": "Genre & Reaction Emojis",
+      "intro": "Signal the genre — horror, rom-com, sci-fi — or react to the plot twist.",
+      "symbols": [
+        { "char": "😱", "label": "Face Screaming in Fear" },
+        { "char": "👻", "label": "Ghost" },
+        { "char": "🔪", "label": "Kitchen Knife" },
+        { "char": "💘", "label": "Heart With Arrow" },
+        { "char": "🥹", "label": "Face Holding Back Tears" },
+        { "char": "😭", "label": "Loudly Crying Face" },
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "🤠", "label": "Cowboy Hat Face" },
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "🦖", "label": "T-Rex" }
+      ]
+    },
+    {
+      "id": "stars-awards",
+      "label": "Awards",
+      "h2": "Star Rating & Award Emojis",
+      "intro": "Stars, trophies, and stage symbols for reviews, ratings, and premiere posts.",
+      "symbols": [
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🥇", "label": "1st Place Medal" },
+        { "char": "🎭", "label": "Performing Arts" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🥂", "label": "Clinking Glasses" },
+        { "char": "🎉", "label": "Party Popper" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Movie Night Combo Sets",
+    "intro": "Copy a full themed movie-night combo in one click — ready for bios, captions, and watch-party invites."
+  },
+  "collection_container_id": "movieNightSetsContainer",
+  "collections": [
+    {
+      "name": "Classic Movie Night",
+      "flags": ["🍿", "🎬", "📺", "🥤", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Horror Marathon",
+      "flags": ["🔪", "👻", "💀", "😱", "🕯️", "🌕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rom-Com Evening",
+      "flags": ["💘", "🍿", "🥹", "💌", "😭", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cozy Night In",
+      "flags": ["🛋️", "🧸", "☕", "🕯️", "📺", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Letterboxd Bio",
+      "flags": ["🎞️", "⭐", "⭐", "⭐", "⭐", "🎬", "🍿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Premiere Night",
+      "flags": ["🎟️", "🌟", "🎬", "🏆", "🥂", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sci-Fi Saturday",
+      "flags": ["🚀", "👽", "🛸", "🌌", "🍿", "📡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Family Animation Night",
+      "flags": ["🧸", "🍕", "🍿", "📺", "🌈", "😂"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Snacks, meals, and drinks to round out your movie-night captions."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, balloons, and celebration combos for premiere posts."
+    },
+    {
+      "href": "/library/media-control-symbols/",
+      "title": "Media Control Symbols",
+      "desc": "Play, pause, and playback symbols for music and video aesthetics."
+    },
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Everyday item emojis — cameras, phones, pins, and more."
+    }
+  ]
+}

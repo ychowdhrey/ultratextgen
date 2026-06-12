@@ -1,0 +1,158 @@
+{
+  "slug": "travel-vacation-emojis",
+  "title": "Travel & Vacation Emojis: Copy & Paste ✈ 🏖 Trip Combos",
+  "meta_description": "Copy and paste travel and vacation emojis — ✈️ plane, 🏖️ beach, 🗺️ map — plus trip-countdown combos for wanderlust bios. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/travel-vacation-emojis/",
+  "breadcrumb": "Travel & Vacation Emojis",
+  "hero_h1": "Travel & Vacation Emojis",
+  "hero_tagline": "Planes, beaches, maps, and luggage with trip-countdown combo sets for wanderlust captions. Click any emoji to copy it instantly.",
+  "intro": "Travel emojis are how vacations get announced before the boarding pass is even printed. This page gathers the full trip kit — ✈️ airplane, 🏖️ beach with umbrella, 🗺️ world map, 🧳 luggage — organized into transport, beach, sightseeing, and packing sections. Use them in wanderlust bios, trip-countdown captions, out-of-office messages, and travel-diary posts. One-click combo sets for beach vacations, road trips, and airport mode are at the bottom.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "getting-there",
+      "label": "Transport",
+      "h2": "Planes, Trains & Transport Emojis",
+      "intro": "Every way to get to the destination, from takeoff to ferry crossing.",
+      "symbols": [
+        { "char": "✈️", "label": "Airplane" },
+        { "char": "🛫", "label": "Airplane Departure" },
+        { "char": "🛬", "label": "Airplane Arrival" },
+        { "char": "🚆", "label": "Train" },
+        { "char": "🚗", "label": "Automobile" },
+        { "char": "🚐", "label": "Minibus" },
+        { "char": "⛴️", "label": "Ferry" },
+        { "char": "🚢", "label": "Ship" },
+        { "char": "🛳️", "label": "Passenger Ship" },
+        { "char": "🚠", "label": "Mountain Cableway" }
+      ]
+    },
+    {
+      "id": "beach-island",
+      "label": "Beach",
+      "h2": "Beach & Island Emojis",
+      "intro": "Umbrellas, palms, and tropical drinks for the classic beach-vacation post.",
+      "symbols": [
+        { "char": "🏖️", "label": "Beach With Umbrella" },
+        { "char": "🏝️", "label": "Desert Island" },
+        { "char": "⛱️", "label": "Umbrella on Ground" },
+        { "char": "🌴", "label": "Palm Tree" },
+        { "char": "🌊", "label": "Water Wave" },
+        { "char": "🩴", "label": "Thong Sandal" },
+        { "char": "🕶️", "label": "Sunglasses" },
+        { "char": "🧴", "label": "Lotion Bottle" },
+        { "char": "🍹", "label": "Tropical Drink" },
+        { "char": "🥥", "label": "Coconut" }
+      ]
+    },
+    {
+      "id": "sightseeing",
+      "label": "Sightseeing",
+      "h2": "Sightseeing & Navigation Emojis",
+      "intro": "Maps, compasses, and landmark emojis for the itinerary.",
+      "symbols": [
+        { "char": "🗺️", "label": "World Map" },
+        { "char": "🧭", "label": "Compass" },
+        { "char": "📍", "label": "Round Pushpin" },
+        { "char": "🗽", "label": "Statue of Liberty" },
+        { "char": "🗼", "label": "Tokyo Tower" },
+        { "char": "🗿", "label": "Moai" },
+        { "char": "🏛️", "label": "Classical Building" },
+        { "char": "🎡", "label": "Ferris Wheel" },
+        { "char": "📸", "label": "Camera With Flash" },
+        { "char": "🎒", "label": "Backpack" }
+      ]
+    },
+    {
+      "id": "packing-hotel",
+      "label": "Packing",
+      "h2": "Packing & Hotel Emojis",
+      "intro": "Luggage, passports, and check-in emojis for the practical side of the trip.",
+      "symbols": [
+        { "char": "🧳", "label": "Luggage" },
+        { "char": "🛎️", "label": "Bellhop Bell" },
+        { "char": "🏨", "label": "Hotel" },
+        { "char": "🛏️", "label": "Bed" },
+        { "char": "🛂", "label": "Passport Control" },
+        { "char": "🎫", "label": "Ticket" },
+        { "char": "💱", "label": "Currency Exchange" },
+        { "char": "🌐", "label": "Globe With Meridians" },
+        { "char": "☀️", "label": "Sun" },
+        { "char": "⏳", "label": "Hourglass Not Done" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Trip Combo Sets",
+    "intro": "Copy a full travel combo in one click — trip countdowns, beach getaways, and wanderlust bios ready to paste."
+  },
+  "collection_container_id": "travelSetsContainer",
+  "collections": [
+    {
+      "name": "Trip Countdown",
+      "flags": ["✈️", "🗓️", "⏳", "🎉", "🧳"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Beach Vacation",
+      "flags": ["🏖️", "🌊", "🍹", "🕶️", "☀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wanderlust Bio",
+      "flags": ["✈️", "🌍", "📍", "🧭", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Island Getaway",
+      "flags": ["🏝️", "🌴", "🥥", "🐠", "🌅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Euro Summer",
+      "flags": ["🛵", "🍝", "🏛️", "🍷", "📸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Road Trip",
+      "flags": ["🚗", "🗺️", "🎶", "⛽", "🌄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Airport Mode",
+      "flags": ["🛫", "☕", "🎧", "🛂", "💺"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Honeymoon",
+      "flags": ["💍", "✈️", "🏖️", "🥂", "💕"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/transport-symbols/",
+      "title": "Transport Symbols",
+      "desc": "Cars, trains, planes, and every vehicle emoji in depth."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Emoji Flags",
+      "desc": "Country flag emojis for every destination on the map."
+    },
+    {
+      "href": "/library/nature-emojis/",
+      "title": "Nature Emojis",
+      "desc": "Mountains, forests, and ocean emojis for outdoor adventures."
+    },
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Local dishes and drinks to flavor your travel captions."
+    }
+  ]
+}

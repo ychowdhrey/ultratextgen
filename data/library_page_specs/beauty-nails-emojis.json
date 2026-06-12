@@ -1,0 +1,154 @@
+{
+  "slug": "beauty-nails-emojis",
+  "title": "Beauty & Nails Emojis: Copy & Paste 💅 Makeup Combos",
+  "meta_description": "Copy and paste beauty and nails emojis — 💅 polish, 💄 lipstick, 🪞 mirror — plus girly glam combo sets for salon bios. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/beauty-nails-emojis/",
+  "breadcrumb": "Beauty & Nails Emojis",
+  "hero_h1": "Beauty & Nails Emojis",
+  "hero_tagline": "Nail polish, lipstick, spa, and glam emojis with girly combo sets for salon bios and fresh-set posts. Click any emoji to copy it instantly.",
+  "intro": "The 💅 nails emoji is shorthand for confidence, sass, and a fresh set — and it anchors a whole beauty cluster. This page collects nail, makeup, hair, and spa emojis — 💄 lipstick, 💋 kiss mark, 🪞 mirror, 🧖 steamy-room self-care — used in nail-tech and salon bios, get-ready-with-me captions, and coquette-adjacent girly aesthetics. Ready-made glam combo sets for fresh sets, spa days, and clean-girl bios are one click away at the bottom.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "nails-hands",
+      "label": "Nails",
+      "h2": "Nail & Hand Emojis",
+      "intro": "The iconic nail polish emoji and the hands that show off the manicure.",
+      "symbols": [
+        { "char": "💅", "label": "Nail Polish" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🖐️", "label": "Hand With Fingers Splayed" },
+        { "char": "🤙", "label": "Call Me Hand" },
+        { "char": "💍", "label": "Ring" },
+        { "char": "💎", "label": "Gem Stone" },
+        { "char": "✨", "label": "Sparkles" }
+      ]
+    },
+    {
+      "id": "makeup-essentials",
+      "label": "Makeup",
+      "h2": "Makeup & Cosmetics Emojis",
+      "intro": "Lipstick, lips, and the vanity-table lineup for beauty captions.",
+      "symbols": [
+        { "char": "💄", "label": "Lipstick" },
+        { "char": "💋", "label": "Kiss Mark" },
+        { "char": "👄", "label": "Mouth" },
+        { "char": "👁️", "label": "Eye" },
+        { "char": "🪞", "label": "Mirror" },
+        { "char": "🧴", "label": "Lotion Bottle" },
+        { "char": "🧼", "label": "Soap" },
+        { "char": "🎀", "label": "Ribbon" },
+        { "char": "👛", "label": "Purse" }
+      ]
+    },
+    {
+      "id": "hair-spa",
+      "label": "Hair & Spa",
+      "h2": "Hair & Spa Emojis",
+      "intro": "Haircuts, massages, and self-care-Sunday essentials.",
+      "symbols": [
+        { "char": "💇", "label": "Person Getting Haircut" },
+        { "char": "💇‍♀️", "label": "Woman Getting Haircut" },
+        { "char": "💆", "label": "Person Getting Massage" },
+        { "char": "🧖", "label": "Person in Steamy Room" },
+        { "char": "🧖‍♀️", "label": "Woman in Steamy Room" },
+        { "char": "🛁", "label": "Bathtub" },
+        { "char": "🚿", "label": "Shower" },
+        { "char": "🕯️", "label": "Candle" },
+        { "char": "🫧", "label": "Bubbles" }
+      ]
+    },
+    {
+      "id": "glam-vibes",
+      "label": "Glam",
+      "h2": "Glam & Girly Vibe Emojis",
+      "intro": "Heels, crowns, and butterflies to finish the glam aesthetic.",
+      "symbols": [
+        { "char": "👗", "label": "Dress" },
+        { "char": "👠", "label": "High-Heeled Shoe" },
+        { "char": "👜", "label": "Handbag" },
+        { "char": "🕶️", "label": "Sunglasses" },
+        { "char": "👑", "label": "Crown" },
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "🌸", "label": "Cherry Blossom" },
+        { "char": "💖", "label": "Sparkling Heart" },
+        { "char": "🥂", "label": "Clinking Glasses" },
+        { "char": "😘", "label": "Face Blowing a Kiss" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Beauty & Glam Combo Sets",
+    "intro": "Copy a full beauty combo in one click — fresh-set flexes, spa days, and clean-girl bios ready to paste."
+  },
+  "collection_container_id": "beautySetsContainer",
+  "collections": [
+    {
+      "name": "Fresh Set",
+      "flags": ["💅", "✨", "💖", "🫶", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glam Night Out",
+      "flags": ["💄", "👠", "👗", "🥂", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Self-Care Sunday",
+      "flags": ["🛁", "🕯️", "🧖‍♀️", "🍵", "💆‍♀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pink Coquette",
+      "flags": ["🎀", "💕", "💅", "🌸", "🦢"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nail Salon Bio",
+      "flags": ["💅", "📅", "✨", "📍", "💌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Clean Girl Aesthetic",
+      "flags": ["🧴", "🤍", "🪞", "🫧", "☁️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lip Combo",
+      "flags": ["💋", "💄", "👄", "✨", "💗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Spa Day",
+      "flags": ["🧖", "🥒", "🌿", "💆", "🫧"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/coquette-symbols/",
+      "title": "Coquette Symbols",
+      "desc": "Bows, ribbons, and soft girly symbols for coquette bios."
+    },
+    {
+      "href": "/library/clothing-fashion-emojis/",
+      "title": "Clothing & Fashion Emojis",
+      "desc": "Dresses, shoes, and outfit combos for fashion posts."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkles, glitter, and shine characters for aesthetic text."
+    },
+    {
+      "href": "/library/preppy-emoji-combos/",
+      "title": "Preppy Emoji Combos",
+      "desc": "Pink, bow, and smiley themed preppy combo sets."
+    }
+  ]
+}

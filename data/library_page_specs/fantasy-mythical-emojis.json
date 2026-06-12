@@ -1,0 +1,159 @@
+{
+  "slug": "fantasy-mythical-emojis",
+  "title": "Fantasy & Mythical Emojis: Copy & Paste 👽 🧚 🧙 Magic Combos",
+  "meta_description": "Copy and paste fantasy emojis — 👽 alien, 🧚 fairy, 🧙 wizard, 🐉 dragon — with mythical magic combos for usernames and bios. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/fantasy-mythical-emojis/",
+  "breadcrumb": "Fantasy & Mythical Emojis",
+  "hero_h1": "Fantasy & Mythical Emojis",
+  "hero_tagline": "Wizards, fairies, dragons, aliens, and enchanted combo sets for magical bios and usernames. Click any emoji to copy it instantly.",
+  "intro": "Fantasy emojis bring wizards, fairies, mermaids, and dragons straight into your bio. This page gathers every mythical being in the emoji set — 🧙 mage, 🧚 fairy, 🧜‍♀️ mermaid, 🧛 vampire — plus legendary creatures, alien and UFO emojis, and the magic objects that complete the scene. They power fairycore and dark-fantasy aesthetics, D&D and gaming usernames, book-tok captions, and Halloween posts. One-click magic combo sets wait at the bottom of the page.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "magical-beings",
+      "label": "Beings",
+      "h2": "Magical Being Emojis",
+      "intro": "Wizards, fairies, elves, and the rest of the enchanted cast.",
+      "symbols": [
+        { "char": "🧙", "label": "Mage" },
+        { "char": "🧚", "label": "Fairy" },
+        { "char": "🧜", "label": "Merperson" },
+        { "char": "🧜‍♀️", "label": "Mermaid" },
+        { "char": "🧝", "label": "Elf" },
+        { "char": "🧞", "label": "Genie" },
+        { "char": "🧛", "label": "Vampire" },
+        { "char": "🧟", "label": "Zombie" },
+        { "char": "👸", "label": "Princess" },
+        { "char": "🤴", "label": "Prince" },
+        { "char": "👼", "label": "Baby Angel" }
+      ]
+    },
+    {
+      "id": "creatures-monsters",
+      "label": "Creatures",
+      "h2": "Mythical Creature & Monster Emojis",
+      "intro": "Dragons, unicorns, ghosts, and goblins from legend and folklore.",
+      "symbols": [
+        { "char": "🐉", "label": "Dragon" },
+        { "char": "🐲", "label": "Dragon Face" },
+        { "char": "🦄", "label": "Unicorn" },
+        { "char": "👻", "label": "Ghost" },
+        { "char": "👹", "label": "Ogre" },
+        { "char": "👺", "label": "Goblin" },
+        { "char": "😈", "label": "Smiling Face With Horns" },
+        { "char": "👿", "label": "Angry Face With Horns" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "🦇", "label": "Bat" }
+      ]
+    },
+    {
+      "id": "aliens-space",
+      "label": "Aliens",
+      "h2": "Alien & Space Emojis",
+      "intro": "The 👽 alien emoji and its UFO, rocket, and galaxy companions.",
+      "symbols": [
+        { "char": "👽", "label": "Alien" },
+        { "char": "👾", "label": "Alien Monster" },
+        { "char": "🛸", "label": "Flying Saucer" },
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "🌌", "label": "Milky Way" },
+        { "char": "🪐", "label": "Ringed Planet" },
+        { "char": "☄️", "label": "Comet" },
+        { "char": "🌠", "label": "Shooting Star" }
+      ]
+    },
+    {
+      "id": "magic-objects",
+      "label": "Magic Objects",
+      "h2": "Magic Object & Quest Emojis",
+      "intro": "Wands, crystal balls, swords, and castles to build out the quest.",
+      "symbols": [
+        { "char": "🔮", "label": "Crystal Ball" },
+        { "char": "🪄", "label": "Magic Wand" },
+        { "char": "⚗️", "label": "Alembic" },
+        { "char": "📜", "label": "Scroll" },
+        { "char": "🗡️", "label": "Dagger" },
+        { "char": "⚔️", "label": "Crossed Swords" },
+        { "char": "🛡️", "label": "Shield" },
+        { "char": "🏰", "label": "Castle" },
+        { "char": "🗝️", "label": "Old Key" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "⚜️", "label": "Fleur-de-lis" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Magic Combo Sets",
+    "intro": "Copy a complete fantasy combo in one click — fairy gardens, wizard cores, and dark-fantasy sets ready for any bio."
+  },
+  "collection_container_id": "fantasySetsContainer",
+  "collections": [
+    {
+      "name": "Fairy Garden",
+      "flags": ["🧚", "🍄", "🌷", "✨", "🦋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wizard Core",
+      "flags": ["🧙", "🪄", "🔮", "📜", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dragon Keeper",
+      "flags": ["🐉", "🔥", "⚔️", "🏰", "🛡️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mermaid Lagoon",
+      "flags": ["🧜‍♀️", "🌊", "🐚", "🫧", "🔱"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Alien Encounter",
+      "flags": ["👽", "🛸", "🌌", "👾", "🚀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dark Fantasy",
+      "flags": ["🧛", "🦇", "🌕", "💀", "🕯️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Royal Kingdom",
+      "flags": ["👑", "🏰", "🤴", "👸", "⚜️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Unicorn Dreams",
+      "flags": ["🦄", "🌈", "✨", "☁️", "💖"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/fairycore-symbols/",
+      "title": "Fairycore Symbols",
+      "desc": "Fairy aesthetic symbols and sparkle packs for dreamy bios."
+    },
+    {
+      "href": "/library/witchy-occult-symbols/",
+      "title": "Witchy & Occult Symbols",
+      "desc": "Moons, pentacles, and mystical symbols to copy and paste."
+    },
+    {
+      "href": "/library/weapon-tool-emojis/",
+      "title": "Weapon & Tool Emojis",
+      "desc": "Swords, shields, and battle combos for gaming posts."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Moon & Celestial Symbols",
+      "desc": "Moon phases, stars, and celestial characters for night aesthetics."
+    }
+  ]
+}
