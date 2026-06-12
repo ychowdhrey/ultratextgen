@@ -1,0 +1,143 @@
+{
+  "slug": "fairycore-symbols",
+  "title": "Fairycore Symbols: Copy & Paste 🧚 🍄 ✨ Fairy Aesthetic",
+  "meta_description": "Fairycore symbols and emoji combos — fairies 🧚, mushrooms 🍄, sparkles ✨, and dainty flower characters for whimsical bios. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/fairycore-symbols/",
+  "breadcrumb": "Fairycore Symbols",
+  "hero_h1": "Fairycore Symbols",
+  "hero_tagline": "Fairies, toadstools, pixie-dust sparkles, and woodland flowers for an enchanted aesthetic. Click any symbol or combo to copy it instantly.",
+  "intro": "Fairycore is a whimsical aesthetic built around fairies, glowing forests, toadstool rings, and soft golden sparkle — think enchanted gardens and pixie dust. These fairycore symbols and emoji combos capture that magic with 🧚 fairies, 🍄 mushrooms, ✨ sparkles, and delicate florette characters like ✿ and ❀. Use them in Instagram bios, Pinterest board names, TikTok captions, and Discord about-me sections, or copy a ready-made combo set below.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "fairies-magic",
+      "label": "Fairies & Magic",
+      "h2": "Fairy & Magic Emoji",
+      "intro": "The fairy emoji family plus wands and sparkle magic.",
+      "symbols": [
+        { "char": "🧚", "label": "Fairy" },
+        { "char": "🧚‍♀️", "label": "Woman Fairy" },
+        { "char": "🧚‍♂️", "label": "Man Fairy" },
+        { "char": "🪄", "label": "Magic Wand" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💫", "label": "Dizzy" },
+        { "char": "🔮", "label": "Crystal Ball" }
+      ]
+    },
+    {
+      "id": "mushrooms-flora",
+      "label": "Mushrooms & Flora",
+      "h2": "Mushrooms & Woodland Flora",
+      "intro": "Toadstools, blossoms, and the Unicode florettes that anchor every fairycore layout.",
+      "symbols": [
+        { "char": "🍄", "label": "Mushroom" },
+        { "char": "🌷", "label": "Tulip" },
+        { "char": "🌸", "label": "Cherry Blossom" },
+        { "char": "🌼", "label": "Blossom" },
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "❀", "label": "White Florette" },
+        { "char": "🌿", "label": "Herb" },
+        { "char": "🍃", "label": "Leaf Fluttering in Wind" },
+        { "char": "🪷", "label": "Lotus" }
+      ]
+    },
+    {
+      "id": "pixie-sparkles",
+      "label": "Pixie Dust",
+      "h2": "Pixie Dust & Star Sparkles",
+      "intro": "Tiny star and sparkle characters for building dainty text dividers and username accents.",
+      "symbols": [
+        { "char": "⋆", "label": "Star Operator" },
+        { "char": "✦", "label": "Black Four Pointed Star" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "✩", "label": "Stress Outlined White Star" },
+        { "char": "˚", "label": "Ring Above" },
+        { "char": "୨୧", "label": "Aesthetic Bow Mark (Odia Digits)" },
+        { "char": "🌟", "label": "Glowing Star" }
+      ]
+    },
+    {
+      "id": "garden-creatures",
+      "label": "Garden Creatures",
+      "h2": "Enchanted Garden Creatures",
+      "intro": "Butterflies, snails, and gentle garden visitors that complete the fairy-garden scene.",
+      "symbols": [
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "🐌", "label": "Snail" },
+        { "char": "🐞", "label": "Lady Beetle" },
+        { "char": "🐝", "label": "Honeybee" },
+        { "char": "🐇", "label": "Rabbit" },
+        { "char": "🦢", "label": "Swan" },
+        { "char": "🕊", "label": "Dove" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Fairycore Combo Sets",
+    "intro": "Copy a complete fairycore emoji combo in one click — ready for bios, captions, and board names."
+  },
+  "collection_container_id": "fairycoreSetsContainer",
+  "collections": [
+    {
+      "name": "Fairy Garden",
+      "flags": ["🧚", "🍄", "🌷", "✨", "🌿", "🦋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pixie Dust Trail",
+      "flags": ["✨", "⋆", "˚", "✧", "🪄", "💫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mushroom Ring",
+      "flags": ["🍄", "🌿", "🍄", "✨", "🍄", "🍃"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Butterfly Meadow",
+      "flags": ["🦋", "🌼", "🌸", "🐝", "🍃"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Moonlit Fairy",
+      "flags": ["🌙", "✨", "🧚", "⋆", "☁️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dainty Bio Divider",
+      "flags": ["⋆˚✿˖°", "୨୧", "⋆˚❀˖°"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cottage Fairy",
+      "flags": ["🍄", "🐌", "🌷", "🧺", "🐇"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/cottagecore-symbols/",
+      "title": "Cottagecore Symbols",
+      "desc": "Mushrooms, honeybees, and rustic country-life characters."
+    },
+    {
+      "href": "/library/coquette-symbols/",
+      "title": "Coquette Symbols",
+      "desc": "Bows, ribbons, and soft feminine aesthetic characters."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkles, glitter, and shine characters for aesthetic text."
+    },
+    {
+      "href": "/library/fantasy-mythical-emojis/",
+      "title": "Fantasy & Mythical Emojis",
+      "desc": "Wizards, mermaids, and magic combos for fantasy lovers."
+    }
+  ]
+}

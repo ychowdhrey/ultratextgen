@@ -1,0 +1,140 @@
+{
+  "slug": "moai-emoji",
+  "title": "Moai Emoji: Copy & Paste 🗿 Rock Meme Combos",
+  "meta_description": "The moai emoji 🗿 plus deadpan faces, stone-faced kaomoji, and rock meme combos like 🗿 🍷 for dry replies and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/moai-emoji/",
+  "breadcrumb": "Moai Emoji",
+  "hero_h1": "Moai Emoji 🗿",
+  "hero_tagline": "The stone-faced moai 🗿 and every deadpan face, rock, and meme combo that goes with it. Click any symbol or combo to copy it instantly.",
+  "intro": "The moai emoji 🗿 depicts the monolithic stone heads of Easter Island (Rapa Nui), but the internet adopted it as the universal deadpan reaction — a face of pure, unbothered stone. It anchors meme combos like 🗿 🍷 and entire walls of silent judgment in comment sections on TikTok, Discord, and X. This page collects the moai emoji, its rock and stone relatives, matching expressionless faces and kaomoji, and one-click meme combo sets.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "moai-stone",
+      "label": "Moai & Stone",
+      "h2": "Moai & Stone Emoji",
+      "intro": "The moai itself plus the rocks, mountains, and monuments in its extended family.",
+      "symbols": [
+        { "char": "🗿", "label": "Moai" },
+        { "char": "🪨", "label": "Rock" },
+        { "char": "🗻", "label": "Mount Fuji" },
+        { "char": "⛰", "label": "Mountain" },
+        { "char": "🌋", "label": "Volcano" },
+        { "char": "🏛", "label": "Classical Building" },
+        { "char": "🏝", "label": "Desert Island" }
+      ]
+    },
+    {
+      "id": "deadpan-faces",
+      "label": "Deadpan Faces",
+      "h2": "Deadpan & Expressionless Faces",
+      "intro": "Faces that carry the same stone-cold energy as the moai.",
+      "symbols": [
+        { "char": "😐", "label": "Neutral Face" },
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "😶", "label": "Face Without Mouth" },
+        { "char": "🫥", "label": "Dotted Line Face" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "💀", "label": "Skull" }
+      ]
+    },
+    {
+      "id": "meme-companions",
+      "label": "Meme Companions",
+      "h2": "Moai Meme Companions",
+      "intro": "The emoji most often pasted next to 🗿 in replies — wine, fire, and silent approval.",
+      "symbols": [
+        { "char": "🍷", "label": "Wine Glass" },
+        { "char": "🥃", "label": "Tumbler Glass" },
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "📸", "label": "Camera with Flash" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "💪", "label": "Flexed Biceps" }
+      ]
+    },
+    {
+      "id": "stone-kaomoji",
+      "label": "Stone Kaomoji",
+      "h2": "Stone-Faced Kaomoji",
+      "intro": "Text faces with the same flat, unimpressed stare — built from real Unicode characters.",
+      "symbols": [
+        { "char": "ಠ_ಠ", "label": "Look of Disapproval" },
+        { "char": "(¬_¬)", "label": "Side-Eye Face" },
+        { "char": "(-_-)", "label": "Expressionless Text Face" },
+        { "char": "(；一_一)", "label": "Unamused Text Face" },
+        { "char": "•_•", "label": "Blank Stare Face" },
+        { "char": "(ㆆ_ㆆ)", "label": "Wary Stare Face" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Moai Meme Combo Sets",
+    "intro": "Copy a full moai meme combo in one click — from the classic wine pairing to an entire wall of stone."
+  },
+  "collection_container_id": "moaiSetsContainer",
+  "collections": [
+    {
+      "name": "Moai Wine Night",
+      "flags": ["🗿", "🍷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Moai Wall",
+      "flags": ["🗿", "🗿", "🗿", "🗿", "🗿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deadpan Reply",
+      "flags": ["🗿", "💀", "😐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Stone Cold Approval",
+      "flags": ["🗿", "👍", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Caught in 4K",
+      "flags": ["📸", "🗿", "📸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sigma Stare",
+      "flags": ["🗿", "🥃", "😏"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Island Origins",
+      "flags": ["🏝", "🗿", "🌋", "⛰"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/poop-emoji/",
+      "title": "Poop Emoji",
+      "desc": "The 💩 emoji with funny combos for jokes and group chats."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emojis",
+      "desc": "Sigma, rizz, and Gen-Z slang emoji combos."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Meme and joke emoji combinations to copy and paste."
+    },
+    {
+      "href": "/library/meme-text-art/",
+      "title": "Meme Text Art",
+      "desc": "Dot art and copypasta versions of classic memes."
+    }
+  ]
+}
