@@ -1,0 +1,160 @@
+{
+  "slug": "friendship-emojis",
+  "title": "Friendship & Love Emojis: Copy & Paste 🫂 Bestie Combos",
+  "meta_description": "Friendship emojis to copy and paste: 🫂 hugs, 👯 besties, yellow hearts, and bestie combo sets for bios, captions, and DMs. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/friendship-emojis/",
+  "breadcrumb": "Friendship & Love Emojis",
+  "hero_h1": "Friendship & Love Emojis",
+  "hero_tagline": "Hugs, besties, and friendship hearts for the people you love — click any emoji to copy it instantly.",
+  "intro": "Friendship emojis say what a plain text never quite can — from a quick 🫂 hug in a DM to a 👯 bestie post on a friendship anniversary. This library gathers hugging and holding-hands emojis, the yellow and white hearts traditionally used between friends, and the affectionate faces and small tokens that round out a caption. Copy a single emoji, or grab a whole bestie combo set in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "hugs-besties",
+      "label": "Hugs",
+      "h2": "Hugs & Support",
+      "intro": "Warm, supportive emojis for checking in on your people.",
+      "symbols": [
+        { "char": "🫂", "label": "People Hugging" },
+        { "char": "🤗", "label": "Smiling Face With Open Hands" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "🤞", "label": "Crossed Fingers" },
+        { "char": "🙌", "label": "Raising Hands" }
+      ]
+    },
+    {
+      "id": "friends-together",
+      "label": "Friends Together",
+      "h2": "Friends Together",
+      "intro": "Pairs and groups for squad posts and matching bios.",
+      "symbols": [
+        { "char": "👯", "label": "People With Bunny Ears" },
+        { "char": "👭", "label": "Women Holding Hands" },
+        { "char": "👬", "label": "Men Holding Hands" },
+        { "char": "👫", "label": "Woman and Man Holding Hands" },
+        { "char": "🧑‍🤝‍🧑", "label": "People Holding Hands" },
+        { "char": "💃", "label": "Woman Dancing" },
+        { "char": "🕺", "label": "Man Dancing" }
+      ]
+    },
+    {
+      "id": "friendship-hearts",
+      "label": "Friendship Hearts",
+      "h2": "Friendship Hearts",
+      "intro": "Yellow for friendship, white for loyalty — hearts for every bond.",
+      "symbols": [
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "💚", "label": "Green Heart" },
+        { "char": "🤍", "label": "White Heart" },
+        { "char": "💖", "label": "Sparkling Heart" },
+        { "char": "💗", "label": "Growing Heart" },
+        { "char": "💞", "label": "Revolving Hearts" },
+        { "char": "💕", "label": "Two Hearts" },
+        { "char": "💟", "label": "Heart Decoration" }
+      ]
+    },
+    {
+      "id": "love-affection",
+      "label": "Affection",
+      "h2": "Love & Affection Faces",
+      "intro": "Faces and notes that tell a friend you adore them.",
+      "symbols": [
+        { "char": "🥰", "label": "Smiling Face With Hearts" },
+        { "char": "😍", "label": "Smiling Face With Heart-Eyes" },
+        { "char": "😘", "label": "Face Blowing a Kiss" },
+        { "char": "🥹", "label": "Face Holding Back Tears" },
+        { "char": "💌", "label": "Love Letter" },
+        { "char": "💋", "label": "Kiss Mark" }
+      ]
+    },
+    {
+      "id": "friendship-tokens",
+      "label": "Tokens",
+      "h2": "Little Friendship Tokens",
+      "intro": "Sunflowers, rainbows, and lucky charms to brighten a friend's day.",
+      "symbols": [
+        { "char": "🌻", "label": "Sunflower" },
+        { "char": "🌷", "label": "Tulip" },
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🧸", "label": "Teddy Bear" },
+        { "char": "🍀", "label": "Four Leaf Clover" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Bestie Combo Sets",
+    "intro": "Copy a full friendship combo in one click for bios, birthday posts, and bestie appreciation."
+  },
+  "collection_container_id": "friendshipSetsContainer",
+  "collections": [
+    {
+      "name": "Best Friends Forever",
+      "flags": ["👯", "💖", "✨", "🫶"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bestie Hug",
+      "flags": ["🫂", "🤗", "💛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Friendship Goals",
+      "flags": ["👭", "💕", "🌟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Miss You Friend",
+      "flags": ["🥺", "💌", "💭", "💛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Squad Night",
+      "flags": ["👯", "🎉", "💃", "🕺"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Matching Energy",
+      "flags": ["🫶", "🫶", "💞"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Love You Bestie",
+      "flags": ["😘", "💖", "🫂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Long Distance",
+      "flags": ["🌍", "💌", "🫂", "💛"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    },
+    {
+      "href": "/library/greeting-message-emojis/",
+      "title": "Greeting & Message Emojis",
+      "desc": "Good morning, thank you, and miss-you combo sets."
+    },
+    {
+      "href": "/library/wedding-anniversary-emojis/",
+      "title": "Wedding & Anniversary Emojis",
+      "desc": "Rings, bells, and couple combos for the big day."
+    },
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Gesture and posture emojis for expressive messages."
+    }
+  ]
+}

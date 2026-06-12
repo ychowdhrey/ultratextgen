@@ -1,0 +1,166 @@
+{
+  "slug": "thumbs-up-emoji",
+  "title": "Thumbs Up Emoji: Copy & Paste 👍 👎 Approval Combos",
+  "meta_description": "Copy and paste the thumbs up emoji 👍 in every skin tone, plus thumbs down 👎, OK hands, and approval combo sets for chats. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/thumbs-up-emoji/",
+  "breadcrumb": "Thumbs Up Emoji",
+  "hero_h1": "Thumbs Up Emoji",
+  "hero_tagline": "Thumbs up, thumbs down, and every approval gesture in between — click any emoji to copy it instantly.",
+  "intro": "The thumbs up emoji 👍 is the internet's default sign of approval, agreement, and \"sounds good.\" This library collects the thumbs up and thumbs down emojis in every skin tone, the wider family of approval gestures like 👌 and 🤝, and the check marks that pair with them in polls, replies, and reviews. Grab a single character or copy a ready-made approval combo set in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "thumbs-up-tones",
+      "label": "Thumbs Up",
+      "h2": "Thumbs Up in Every Skin Tone",
+      "intro": "The classic thumbs up emoji plus all five skin tone variants.",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "👍🏻", "label": "Thumbs Up: Light Skin Tone" },
+        { "char": "👍🏼", "label": "Thumbs Up: Medium-Light Skin Tone" },
+        { "char": "👍🏽", "label": "Thumbs Up: Medium Skin Tone" },
+        { "char": "👍🏾", "label": "Thumbs Up: Medium-Dark Skin Tone" },
+        { "char": "👍🏿", "label": "Thumbs Up: Dark Skin Tone" }
+      ]
+    },
+    {
+      "id": "thumbs-down-tones",
+      "label": "Thumbs Down",
+      "h2": "Thumbs Down in Every Skin Tone",
+      "intro": "The disapproval counterpart, also available in all skin tones.",
+      "symbols": [
+        { "char": "👎", "label": "Thumbs Down" },
+        { "char": "👎🏻", "label": "Thumbs Down: Light Skin Tone" },
+        { "char": "👎🏼", "label": "Thumbs Down: Medium-Light Skin Tone" },
+        { "char": "👎🏽", "label": "Thumbs Down: Medium Skin Tone" },
+        { "char": "👎🏾", "label": "Thumbs Down: Medium-Dark Skin Tone" },
+        { "char": "👎🏿", "label": "Thumbs Down: Dark Skin Tone" }
+      ]
+    },
+    {
+      "id": "approval-gestures",
+      "label": "Approval Gestures",
+      "h2": "Approval & Agreement Gestures",
+      "intro": "Hand emojis that signal yes, nice work, and we have a deal.",
+      "symbols": [
+        { "char": "👌", "label": "OK Hand" },
+        { "char": "✌", "label": "Victory Hand" },
+        { "char": "🤙", "label": "Call Me Hand" },
+        { "char": "🤞", "label": "Crossed Fingers" },
+        { "char": "🫰", "label": "Hand With Index Finger and Thumb Crossed" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "💪", "label": "Flexed Biceps" },
+        { "char": "✊", "label": "Raised Fist" },
+        { "char": "👊", "label": "Oncoming Fist" },
+        { "char": "🫶", "label": "Heart Hands" }
+      ]
+    },
+    {
+      "id": "pointing-hands",
+      "label": "Pointing Hands",
+      "h2": "Pointing & Raised Hands",
+      "intro": "Direct attention up, down, or toward your call-to-action.",
+      "symbols": [
+        { "char": "☝", "label": "Index Pointing Up" },
+        { "char": "👆", "label": "Backhand Index Pointing Up" },
+        { "char": "👇", "label": "Backhand Index Pointing Down" },
+        { "char": "👈", "label": "Backhand Index Pointing Left" },
+        { "char": "👉", "label": "Backhand Index Pointing Right" },
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🖐", "label": "Hand With Fingers Splayed" },
+        { "char": "🖖", "label": "Vulcan Salute" }
+      ]
+    },
+    {
+      "id": "approval-marks",
+      "label": "Approval Marks",
+      "h2": "Check Marks & Approval Symbols",
+      "intro": "The marks that pair naturally with a thumbs up in polls and reviews.",
+      "symbols": [
+        { "char": "✅", "label": "Check Mark Button" },
+        { "char": "✔", "label": "Check Mark" },
+        { "char": "☑", "label": "Check Box With Check" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🆗", "label": "OK Button" },
+        { "char": "🆒", "label": "Cool Button" },
+        { "char": "❌", "label": "Cross Mark" },
+        { "char": "⭕", "label": "Hollow Red Circle" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Approval Combo Sets",
+    "intro": "Copy a full approval or disapproval combo in one click and paste it anywhere."
+  },
+  "collection_container_id": "thumbsUpSetsContainer",
+  "collections": [
+    {
+      "name": "Big Approval",
+      "flags": ["👍", "💯", "✅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Great Job",
+      "flags": ["👏", "👏", "👏", "🙌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deal Done",
+      "flags": ["🤝", "👍", "✅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hard Pass",
+      "flags": ["👎", "❌", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "All Good",
+      "flags": ["👌", "😎", "👍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Strong Yes",
+      "flags": ["💪", "🔥", "👍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Team Win",
+      "flags": ["🙌", "🎉", "👍", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fingers Crossed",
+      "flags": ["🤞", "🍀", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Hand gestures, pointing, and finger symbols to copy and paste."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "Check marks, ticks, and verification symbols in every style."
+    },
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Gesture and posture emojis for expressive messages."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Achievement Symbols",
+      "desc": "Trophies, medals, and winner symbols for celebrating success."
+    }
+  ]
+}

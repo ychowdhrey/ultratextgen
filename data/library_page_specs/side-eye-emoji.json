@@ -1,0 +1,151 @@
+{
+  "slug": "side-eye-emoji",
+  "title": "Side Eye Emoji & Kaomoji: Copy & Paste 👀 Judging Combos",
+  "meta_description": "Copy and paste side eye emojis like 👀 😒 🤨, judging kaomoji such as ಠ_ಠ, and caught-in-4K combo sets for memes and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/side-eye-emoji/",
+  "breadcrumb": "Side Eye Emoji",
+  "hero_h1": "Side Eye Emoji & Kaomoji",
+  "hero_tagline": "Every judging look in one place — side eye emojis, skeptical faces, and disapproving kaomoji. Click any symbol to copy it instantly.",
+  "intro": "The side eye emoji is the universal reaction for silent judgment, suspicion, and \"did they really just say that\" moments. This library collects the classic side eye emoji trio 👀 😒 🤨, the skeptical and unimpressed faces around them, and the judging kaomoji like ಠ_ಠ that long predate emoji. Use them in comment replies, group chats, and meme captions, or grab a ready-made combo set like the famous caught-in-4K pairing below.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "side-eye-faces",
+      "label": "Side Eye Faces",
+      "h2": "Classic Side Eye & Judging Faces",
+      "intro": "The core side eye emojis people reach for when words are unnecessary.",
+      "symbols": [
+        { "char": "👀", "label": "Eyes" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "🤨", "label": "Face With Raised Eyebrow" },
+        { "char": "🙄", "label": "Face With Rolling Eyes" },
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "😐", "label": "Neutral Face" },
+        { "char": "😶", "label": "Face Without Mouth" }
+      ]
+    },
+    {
+      "id": "suspicious-skeptical",
+      "label": "Suspicious",
+      "h2": "Suspicious & Skeptical Faces",
+      "intro": "Faces for doubt, scrutiny, and quietly questioning everything.",
+      "symbols": [
+        { "char": "🧐", "label": "Face With Monocle" },
+        { "char": "🤔", "label": "Thinking Face" },
+        { "char": "😕", "label": "Confused Face" },
+        { "char": "🫤", "label": "Face With Diagonal Mouth" },
+        { "char": "😬", "label": "Grimacing Face" },
+        { "char": "🥸", "label": "Disguised Face" },
+        { "char": "🕵", "label": "Detective" },
+        { "char": "🫣", "label": "Face With Peeking Eye" }
+      ]
+    },
+    {
+      "id": "eyes-cameras",
+      "label": "Eyes & Cameras",
+      "h2": "Eyes, Cameras & Receipts",
+      "intro": "Watchful-eye and camera emojis for catching someone in the act.",
+      "symbols": [
+        { "char": "👁", "label": "Eye" },
+        { "char": "📸", "label": "Camera With Flash" },
+        { "char": "📷", "label": "Camera" },
+        { "char": "🔍", "label": "Magnifying Glass Tilted Left" },
+        { "char": "🔎", "label": "Magnifying Glass Tilted Right" },
+        { "char": "🪞", "label": "Mirror" },
+        { "char": "👓", "label": "Glasses" },
+        { "char": "🕶", "label": "Sunglasses" }
+      ]
+    },
+    {
+      "id": "judging-kaomoji",
+      "label": "Judging Kaomoji",
+      "h2": "Judging & Side Eye Kaomoji",
+      "intro": "Text-face classics that deliver disapproval without a single emoji.",
+      "symbols": [
+        { "char": "ಠ_ಠ", "label": "Look of Disapproval" },
+        { "char": "ಠ‿ಠ", "label": "Smug Disapproval" },
+        { "char": "(¬_¬)", "label": "Side Eye Kaomoji" },
+        { "char": "(¬‿¬)", "label": "Sly Smile Kaomoji" },
+        { "char": "(¬､¬)", "label": "Shifty Eyes Kaomoji" },
+        { "char": "(←_←)", "label": "Glance Left Kaomoji" },
+        { "char": "(→_→)", "label": "Glance Right Kaomoji" },
+        { "char": "(눈_눈)", "label": "Squinting Judgment Kaomoji" },
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Lenny Face" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Side Eye Combo Sets",
+    "intro": "Copy a full judging combo in one click and paste it straight into your reply."
+  },
+  "collection_container_id": "sideEyeSetsContainer",
+  "collections": [
+    {
+      "name": "Caught in 4K",
+      "flags": ["🤨", "📸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Eye Lips Eye",
+      "flags": ["👁", "👄", "👁"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Triple Side Eye",
+      "flags": ["👀", "👀", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Judging You",
+      "flags": ["ಠ_ಠ", "👀", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Unbothered",
+      "flags": ["😒", "🙄", "💅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sus Detector",
+      "flags": ["🧐", "🔍", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Awkward Silence",
+      "flags": ["😐", "😑", "😶"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Receipts Ready",
+      "flags": ["👀", "📸", "🗂"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji organized by mood and meaning."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "Classic text faces and Japanese kaomoji to copy and paste."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Meme and joke emoji combinations for chats and captions."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emojis",
+      "desc": "Sigma, rizz, and skull combos from current internet slang."
+    }
+  ]
+}
