@@ -1,0 +1,113 @@
+{
+  "slug": "easter-symbols",
+  "title": "Easter Symbols & Emojis: Copy & Paste 🐰 🥚 ✝ Spring Festive",
+  "meta_description": "Easter symbols and emojis — bunnies, eggs, chicks, crosses, and spring flowers for cards, captions, and bios. Click any Easter symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/easter-symbols/",
+  "breadcrumb": "Easter Symbols",
+  "hero_h1": "Easter Symbols & Emojis",
+  "hero_tagline": "Bunnies, eggs, chicks, crosses, and spring greeting combos. Click any symbol to copy it instantly.",
+  "intro": "Easter symbols cover two springs at once: the egg-hunt side with bunnies, chicks, and chocolate, and the faith side with crosses, doves, and church services. This page brings together the Easter emoji and Unicode characters people copy for greeting cards, Sunday captions, school newsletters, and family group chats — plus one-click Happy Easter combos ready to paste anywhere.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "bunnies-eggs",
+      "label": "Bunnies & Eggs",
+      "h2": "Easter Bunnies & Eggs",
+      "intro": "The egg hunt essentials — rabbits, eggs, baskets, and chocolate.",
+      "symbols": [
+        { "char": "🐰", "label": "Rabbit Face" },
+        { "char": "🐇", "label": "Rabbit" },
+        { "char": "🥚", "label": "Egg" },
+        { "char": "🪺", "label": "Nest with Eggs" },
+        { "char": "🪹", "label": "Empty Nest" },
+        { "char": "🧺", "label": "Basket" },
+        { "char": "🍫", "label": "Chocolate Bar" },
+        { "char": "🎀", "label": "Ribbon" }
+      ]
+    },
+    {
+      "id": "chicks-spring-animals",
+      "label": "Chicks & Lambs",
+      "h2": "Chicks, Lambs & Spring Animals",
+      "intro": "New-life animals that belong to the season — chicks at every stage, lambs, and butterflies.",
+      "symbols": [
+        { "char": "🐣", "label": "Hatching Chick" },
+        { "char": "🐤", "label": "Baby Chick" },
+        { "char": "🐥", "label": "Front-Facing Baby Chick" },
+        { "char": "🐑", "label": "Ewe" },
+        { "char": "🐏", "label": "Ram" },
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "🐝", "label": "Honeybee" }
+      ]
+    },
+    {
+      "id": "faith-easter",
+      "label": "Faith",
+      "h2": "Crosses & Faith Symbols",
+      "intro": "Respectful characters for the Christian heart of Easter — crosses, churches, and doves.",
+      "symbols": [
+        { "char": "✝", "label": "Latin Cross" },
+        { "char": "✝️", "label": "Latin Cross (Emoji Style)" },
+        { "char": "☦", "label": "Orthodox Cross" },
+        { "char": "⛪", "label": "Church" },
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "🕊", "label": "Dove" },
+        { "char": "📖", "label": "Open Book" }
+      ]
+    },
+    {
+      "id": "spring-flowers",
+      "label": "Spring",
+      "h2": "Spring Flowers & Sunshine",
+      "intro": "Tulips, blossoms, and bright skies for fresh spring captions.",
+      "symbols": [
+        { "char": "🌷", "label": "Tulip" },
+        { "char": "🌼", "label": "Blossom" },
+        { "char": "🌸", "label": "Cherry Blossom" },
+        { "char": "🌻", "label": "Sunflower" },
+        { "char": "🪻", "label": "Hyacinth" },
+        { "char": "💐", "label": "Bouquet" },
+        { "char": "🌱", "label": "Seedling" },
+        { "char": "☀", "label": "Sun" },
+        { "char": "🌈", "label": "Rainbow" }
+      ]
+    },
+    {
+      "id": "easter-combos",
+      "label": "Easter Combos",
+      "h2": "Easter Greeting Combos",
+      "intro": "Ready-made spring greetings and decorations — each button copies the whole combo string at once.",
+      "symbols": [
+        { "char": "🐰🥚 Happy Easter 🥚🐰", "label": "Happy Easter Greeting" },
+        { "char": "🌷🐣🌷 Spring Is Here 🌷🐣🌷", "label": "Spring Is Here Greeting" },
+        { "char": "✝🕊✝ He Is Risen ✝🕊✝", "label": "He Is Risen Greeting" },
+        { "char": "•✿────🐰────✿•", "label": "Bunny Divider" },
+        { "char": "🥚🍫🧺🍫🥚", "label": "Easter Basket Combo" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith and spiritual symbols from traditions around the world."
+    },
+    {
+      "href": "/library/flower-symbols/",
+      "title": "Flower Symbols",
+      "desc": "Floral Unicode characters and flower emojis."
+    },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal Emojis",
+      "desc": "Every animal emoji from pets to wildlife."
+    },
+    {
+      "href": "/library/christmas-symbols/",
+      "title": "Christmas Symbols",
+      "desc": "Trees, snowflakes, and festive December characters."
+    }
+  ]
+}

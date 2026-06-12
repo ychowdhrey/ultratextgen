@@ -1,0 +1,113 @@
+{
+  "slug": "therian-symbols",
+  "title": "Therian Symbols: Copy & Paste Δ Theta-Delta & Alterhuman Marks",
+  "meta_description": "Browse theta-delta (θΔ) marks, paw prints, moon phases, and animal symbols used by the therian and alterhuman community. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/therian-symbols/",
+  "breadcrumb": "Therian Symbols",
+  "hero_h1": "Therian Symbols",
+  "hero_tagline": "The theta-delta (θΔ) community mark plus the paw, moon, and animal symbols of therian and alterhuman identity. Click any symbol to copy it instantly.",
+  "intro": "The therian symbol most people search for is the theta-delta — the Greek letters theta (θ) and delta (Δ) combined — adopted by the therianthropy community in 2003 as a shared, respectful identity mark. Therians are people who experience a deep, non-physical identification with an animal, and the wider alterhuman community uses related marks alongside paw prints, moon phases, and animal emoji. This page gathers the theta-delta in its common Unicode forms together with the nature and animal symbols used in TikTok bios, Tumblr blogs, and Discord profiles.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "theta-delta",
+      "label": "Theta-Delta",
+      "h2": "Theta-Delta Community Marks",
+      "intro": "The theta-delta mark built from real Greek letters — copy the combined pair or each letter on its own.",
+      "symbols": [
+        { "char": "θΔ", "label": "Theta-Delta (Therian Mark)" },
+        { "char": "ΘΔ", "label": "Capital Theta-Delta" },
+        { "char": "θ", "label": "Greek Small Letter Theta" },
+        { "char": "Θ", "label": "Greek Capital Letter Theta" },
+        { "char": "Δ", "label": "Greek Capital Letter Delta" },
+        { "char": "δ", "label": "Greek Small Letter Delta" },
+        { "char": "ϴ", "label": "Greek Capital Theta Symbol" },
+        { "char": "ϑ", "label": "Greek Theta Symbol" }
+      ]
+    },
+    {
+      "id": "paw-prints",
+      "label": "Paws & Canines",
+      "h2": "Paw Prints & Canine Symbols",
+      "intro": "Paw prints and the wolf, fox, and dog emoji that appear most often in therian bios.",
+      "symbols": [
+        { "char": "🐾", "label": "Paw Prints" },
+        { "char": "🐺", "label": "Wolf" },
+        { "char": "🦊", "label": "Fox" },
+        { "char": "🐕", "label": "Dog" },
+        { "char": "🐈‍⬛", "label": "Black Cat" },
+        { "char": "🦝", "label": "Raccoon" },
+        { "char": "🐅", "label": "Tiger" },
+        { "char": "🦴", "label": "Bone" }
+      ]
+    },
+    {
+      "id": "wild-animals",
+      "label": "Wild Animals",
+      "h2": "Wild Animal & Theriotype Symbols",
+      "intro": "Emoji for common theriotypes — from deer and big cats to birds of prey.",
+      "symbols": [
+        { "char": "🦌", "label": "Deer" },
+        { "char": "🐆", "label": "Leopard" },
+        { "char": "🦅", "label": "Eagle" },
+        { "char": "🦉", "label": "Owl" },
+        { "char": "🐦‍⬛", "label": "Black Bird" },
+        { "char": "🐍", "label": "Snake" },
+        { "char": "🦈", "label": "Shark" },
+        { "char": "🐉", "label": "Dragon" }
+      ]
+    },
+    {
+      "id": "moon-night",
+      "label": "Moon & Night",
+      "h2": "Moon & Night Symbols",
+      "intro": "Moon phases and crescent characters — a long-standing motif in therian and alterhuman spaces.",
+      "symbols": [
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "☾", "label": "Last Quarter Moon (Text)" },
+        { "char": "☽", "label": "First Quarter Moon (Text)" },
+        { "char": "🌕", "label": "Full Moon" },
+        { "char": "🌑", "label": "New Moon" },
+        { "char": "🌒", "label": "Waxing Crescent Moon" }
+      ]
+    },
+    {
+      "id": "forest-nature",
+      "label": "Forest & Nature",
+      "h2": "Forest & Nature Symbols",
+      "intro": "Woodland and wilderness characters for rounding out a quadrobics video caption or profile.",
+      "symbols": [
+        { "char": "🌲", "label": "Evergreen Tree" },
+        { "char": "🌿", "label": "Herb" },
+        { "char": "🍂", "label": "Fallen Leaf" },
+        { "char": "⛰", "label": "Mountain" },
+        { "char": "🪶", "label": "Feather" },
+        { "char": "🌾", "label": "Sheaf of Rice" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal Emojis",
+      "desc": "Every animal emoji from wolves to whales, ready to copy."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Moon & Celestial Symbols",
+      "desc": "Moon phases, stars, and celestial characters to copy and paste."
+    },
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet including theta and delta variants."
+    },
+    {
+      "href": "/library/nature-emojis/",
+      "title": "Nature Emojis",
+      "desc": "Forest, mountain, and outdoor emoji combos for nature lovers."
+    }
+  ]
+}
