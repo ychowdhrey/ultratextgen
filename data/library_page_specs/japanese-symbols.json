@@ -1,0 +1,160 @@
+{
+  "slug": "japanese-symbols",
+  "title": "Japanese Symbols: Copy & Paste 桜 愛 Kanji & Kana Characters",
+  "meta_description": "Japanese symbols to copy and paste — kanji like 桜 and 愛, hiragana, katakana, and punctuation with romaji meanings. Click any character to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/japanese-symbols/",
+  "breadcrumb": "Japanese Symbols",
+  "hero_h1": "Japanese Symbols",
+  "hero_tagline": "Kanji, hiragana, and katakana characters with romaji and meanings — ready for bios, captions, and usernames. Click any character to copy it instantly.",
+  "intro": "Japanese symbols are a staple of aesthetic bios and usernames, from the cherry-blossom kanji 桜 (sakura) to the katakana smile ツ. This library gathers meaningful kanji, the core hiragana and katakana syllabaries, and Japanese punctuation marks, each labeled with its romaji reading and English meaning. Copy them into Instagram captions, Discord names, or anywhere you want a touch of Japanese style — respectfully and with the meaning made clear.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "beautiful-kanji",
+      "label": "Kanji",
+      "h2": "Beautiful Kanji With Meanings",
+      "intro": "Evocative kanji for nature, light, and emotion — the most popular characters for aesthetic profiles.",
+      "symbols": [
+        { "char": "桜", "label": "Sakura — Cherry Blossom" },
+        { "char": "愛", "label": "Ai — Love" },
+        { "char": "夢", "label": "Yume — Dream" },
+        { "char": "月", "label": "Tsuki — Moon" },
+        { "char": "星", "label": "Hoshi — Star" },
+        { "char": "光", "label": "Hikari — Light" },
+        { "char": "空", "label": "Sora — Sky" },
+        { "char": "海", "label": "Umi — Sea" },
+        { "char": "雨", "label": "Ame — Rain" },
+        { "char": "花", "label": "Hana — Flower" },
+        { "char": "心", "label": "Kokoro — Heart" },
+        { "char": "魂", "label": "Tamashii — Soul" }
+      ]
+    },
+    {
+      "id": "hiragana",
+      "label": "Hiragana",
+      "h2": "Hiragana Characters",
+      "intro": "The rounded, flowing syllabary used for native Japanese words.",
+      "symbols": [
+        { "char": "あ", "label": "A — Hiragana Letter A" },
+        { "char": "い", "label": "I — Hiragana Letter I" },
+        { "char": "う", "label": "U — Hiragana Letter U" },
+        { "char": "え", "label": "E — Hiragana Letter E" },
+        { "char": "お", "label": "O — Hiragana Letter O" },
+        { "char": "か", "label": "Ka — Hiragana Letter Ka" },
+        { "char": "き", "label": "Ki — Hiragana Letter Ki" },
+        { "char": "さ", "label": "Sa — Hiragana Letter Sa" },
+        { "char": "し", "label": "Shi — Hiragana Letter Si" },
+        { "char": "の", "label": "No — Hiragana Letter No" },
+        { "char": "は", "label": "Ha — Hiragana Letter Ha" },
+        { "char": "ん", "label": "N — Hiragana Letter N" }
+      ]
+    },
+    {
+      "id": "katakana",
+      "label": "Katakana",
+      "h2": "Katakana Characters",
+      "intro": "The angular syllabary for loanwords — including ツ and シ, beloved as smiley faces in usernames.",
+      "symbols": [
+        { "char": "ツ", "label": "Tsu — Katakana Letter Tu (Smile Face)" },
+        { "char": "シ", "label": "Shi — Katakana Letter Si (Smile Face)" },
+        { "char": "ア", "label": "A — Katakana Letter A" },
+        { "char": "カ", "label": "Ka — Katakana Letter Ka" },
+        { "char": "サ", "label": "Sa — Katakana Letter Sa" },
+        { "char": "タ", "label": "Ta — Katakana Letter Ta" },
+        { "char": "ナ", "label": "Na — Katakana Letter Na" },
+        { "char": "ハ", "label": "Ha — Katakana Letter Ha" },
+        { "char": "マ", "label": "Ma — Katakana Letter Ma" },
+        { "char": "ヤ", "label": "Ya — Katakana Letter Ya" },
+        { "char": "ラ", "label": "Ra — Katakana Letter Ra" },
+        { "char": "ワ", "label": "Wa — Katakana Letter Wa" }
+      ]
+    },
+    {
+      "id": "japanese-punctuation",
+      "label": "Punctuation",
+      "h2": "Japanese Punctuation & Special Marks",
+      "intro": "Brackets, dots, and circled marks that give text an authentic Japanese typographic feel.",
+      "symbols": [
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "『", "label": "Left White Corner Bracket" },
+        { "char": "』", "label": "Right White Corner Bracket" },
+        { "char": "・", "label": "Katakana Middle Dot" },
+        { "char": "〜", "label": "Wave Dash" },
+        { "char": "。", "label": "Ideographic Full Stop" },
+        { "char": "々", "label": "Ideographic Iteration Mark" },
+        { "char": "㊗", "label": "Circled Ideograph Congratulation" },
+        { "char": "㊙", "label": "Circled Ideograph Secret" },
+        { "char": "〒", "label": "Postal Mark" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "japanese-sets",
+    "label": "Character Sets",
+    "h2": "Japanese Character Combo Sets",
+    "intro": "Copy a complete themed set of Japanese characters or a ready-made bio decoration in one click."
+  },
+  "collection_container_id": "japaneseSetsContainer",
+  "collections": [
+    {
+      "name": "Sakura Aesthetic Set",
+      "flags": ["桜", "花", "春", "風", "月"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Night Sky Set",
+      "flags": ["月", "星", "夜", "光", "夢"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ocean & Rain Set",
+      "flags": ["海", "波", "雨", "空"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Username Smileys",
+      "flags": ["ツ", "シ", "彡", "ノ"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ai — Love",
+      "flags": ["愛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Arigatou — Thank You",
+      "flags": ["ありがとう"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sakura Bio Frame",
+      "flags": ["☾ 月 ☽", "桜 · 夢 · 愛", "〜 ありがとう 〜"],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/chinese-symbols/",
+      "title": "Chinese Symbols",
+      "desc": "Lucky hanzi like 福 and 龍 with pinyin and meanings."
+    },
+    {
+      "href": "/library/korean-symbols/",
+      "title": "Korean Symbols",
+      "desc": "Hangul words, jamo letters, and K-pop fan slang to copy."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "Japanese-style emoticons built from kana and symbols."
+    },
+    {
+      "href": "/library/kawaii-cute-symbols/",
+      "title": "Kawaii Cute Symbols",
+      "desc": "Adorable Japanese-inspired symbols for soft aesthetics."
+    }
+  ]
+}
