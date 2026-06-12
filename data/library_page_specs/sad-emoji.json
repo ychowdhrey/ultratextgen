@@ -1,0 +1,144 @@
+{
+  "slug": "sad-emoji",
+  "title": "Sad Emoji & Kaomoji: Copy & Paste 😢 Sad Face Combos",
+  "meta_description": "Sad emoji 😢 😔 for melancholy bios and captions, heartbroken 💔 combo sets, and down-mood kaomoji like (μ_μ) in one library. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/sad-emoji/",
+  "breadcrumb": "Sad Emoji & Kaomoji",
+  "hero_h1": "Sad Emoji & Kaomoji",
+  "hero_tagline": "Melancholy faces, heartbreak symbols, and gloomy kaomoji for sad bios, captions, and late-night posts. Click any symbol to copy it instantly.",
+  "intro": "A sad emoji says what a paragraph can't — 😢 for a single tear, 😔 for quiet pensiveness, 💔 for outright heartbreak. This library covers the whole melancholy spectrum: classic sad faces, wilted-rose heartbreak symbols beloved by sad-aesthetic bios, drained and disappointed expressions, and downcast kaomoji like (μ_μ). For full-on sobbing and tears, head to the crying emoji page instead.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "sad-faces",
+      "label": "Core Sad Faces",
+      "h2": "Sad Face Emoji Variants",
+      "intro": "The essential sad faces, from a slight frown to a single rolling tear.",
+      "symbols": [
+        { "char": "😢", "label": "Crying Face" },
+        { "char": "😞", "label": "Disappointed Face" },
+        { "char": "😔", "label": "Pensive Face" },
+        { "char": "☹", "label": "Frowning Face" },
+        { "char": "🙁", "label": "Slightly Frowning Face" },
+        { "char": "😟", "label": "Worried Face" },
+        { "char": "😕", "label": "Confused Face" },
+        { "char": "😥", "label": "Sad but Relieved Face" }
+      ]
+    },
+    {
+      "id": "heartbreak-melancholy",
+      "label": "Heartbreak",
+      "h2": "Heartbreak & Melancholy Symbols",
+      "intro": "Broken hearts, wilted flowers, and rainy-day props for sad-aesthetic posts.",
+      "symbols": [
+        { "char": "💔", "label": "Broken Heart" },
+        { "char": "🥀", "label": "Wilted Flower" },
+        { "char": "🖤", "label": "Black Heart" },
+        { "char": "🌧", "label": "Cloud With Rain" },
+        { "char": "🌫", "label": "Fog" },
+        { "char": "🍂", "label": "Fallen Leaf" },
+        { "char": "🕯", "label": "Candle" },
+        { "char": "🎻", "label": "Violin" }
+      ]
+    },
+    {
+      "id": "drained-disappointed",
+      "label": "Drained Faces",
+      "h2": "Disappointed & Drained Faces",
+      "intro": "For the numb, deflated, checked-out kind of sad.",
+      "symbols": [
+        { "char": "😓", "label": "Downcast Face With Sweat" },
+        { "char": "🫤", "label": "Face With Diagonal Mouth" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "🫥", "label": "Dotted Line Face" },
+        { "char": "😶‍🌫️", "label": "Face in Clouds" },
+        { "char": "😮‍💨", "label": "Face Exhaling" },
+        { "char": "😦", "label": "Frowning Face With Open Mouth" }
+      ]
+    },
+    {
+      "id": "sad-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Sad Kaomoji & Text Faces",
+      "intro": "Downcast Japanese-style text faces that sigh, slump, and stare at the floor.",
+      "symbols": [
+        { "char": "(μ_μ)", "label": "Downcast Eyes Kaomoji" },
+        { "char": "(._.)", "label": "Blank Stare Kaomoji" },
+        { "char": "(´。＿。｀)", "label": "Hanging Head Kaomoji" },
+        { "char": "(◞‸◟)", "label": "Gloomy Frown Kaomoji" },
+        { "char": "( ´•︵•` )", "label": "Pouting Sadness Kaomoji" },
+        { "char": "（ ｉдｉ ）", "label": "Glum Tears Kaomoji" },
+        { "char": "(〒﹏〒)", "label": "Heavy-Hearted Kaomoji" },
+        { "char": "( ︶︿︶)", "label": "Resigned Sigh Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Sad Emoji Combo Sets",
+    "intro": "One-click melancholy — copy a complete sad combo for a bio, caption, or message."
+  },
+  "collection_container_id": "sadSetsContainer",
+  "collections": [
+    {
+      "name": "Heartbroken Set",
+      "flags": ["💔", "😢", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rainy Melancholy",
+      "flags": ["🌧", "😔", "☔", "🎧", "🕯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sad Boy Hours",
+      "flags": ["🌙", "😔", "💭", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Disappointed Sigh",
+      "flags": ["😞", "😮‍💨", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wilted Aesthetic",
+      "flags": ["🥀", "🍂", "🌫", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Missing You",
+      "flags": ["😢", "💌", "🌙", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kaomoji Sad Pack",
+      "flags": ["(μ_μ)", "(◞‸◟)", "(〒﹏〒)"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/crying-emoji/",
+      "title": "Crying Emoji & Kaomoji",
+      "desc": "Full sobbing — 😭 tears, wailing kaomoji, and crying combos."
+    },
+    {
+      "href": "/library/angry-emoji/",
+      "title": "Angry Emoji & Kaomoji",
+      "desc": "Rage faces and table-flip kaomoji when sad turns to mad."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Every heart character — including broken and black hearts."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The complete kaomoji collection for every emotion."
+    }
+  ]
+}

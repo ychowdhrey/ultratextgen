@@ -1,0 +1,143 @@
+{
+  "slug": "angry-emoji",
+  "title": "Angry Emoji & Kaomoji: Copy & Paste 😡 Rage Combos",
+  "meta_description": "Angry emoji 😡 🤬 😤, rage combo sets, and table-flip kaomoji like (╯°□°）╯︵ ┻━┻ for venting in chats and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/angry-emoji/",
+  "breadcrumb": "Angry Emoji & Kaomoji",
+  "hero_h1": "Angry Emoji & Kaomoji",
+  "hero_tagline": "Red-faced rage, steam, fire, and the legendary table-flip kaomoji — anger in every intensity. Click any symbol to copy it instantly.",
+  "intro": "The angry emoji scale runs from a mild 😠 scowl to the censor-grawlix fury of 🤬 — and when emoji aren't enough, there's always the table-flip kaomoji (╯°□°）╯︵ ┻━┻. This page gathers every mad face, the fire-and-explosion symbols that turn a complaint into a rage post, eye-rolling annoyed faces for lower-grade irritation, and one-click angry combo sets for chats, comments, and gaming rage moments.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "angry-faces",
+      "label": "Core Angry Faces",
+      "h2": "Angry & Mad Face Emojis",
+      "intro": "The core mad faces, from simmering scowl to swearing fury.",
+      "symbols": [
+        { "char": "😡", "label": "Enraged Face" },
+        { "char": "😠", "label": "Angry Face" },
+        { "char": "🤬", "label": "Face With Symbols on Mouth" },
+        { "char": "😤", "label": "Face With Steam From Nose" },
+        { "char": "👿", "label": "Angry Face With Horns" },
+        { "char": "😾", "label": "Pouting Cat" },
+        { "char": "💢", "label": "Anger Symbol" },
+        { "char": "🔥", "label": "Fire" }
+      ]
+    },
+    {
+      "id": "rage-fuel",
+      "label": "Rage Fuel",
+      "h2": "Explosions, Fire & Fury Symbols",
+      "intro": "Volcanoes, lightning, and blowing-up heads to crank the rage to maximum.",
+      "symbols": [
+        { "char": "🤯", "label": "Exploding Head" },
+        { "char": "💥", "label": "Collision" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🌋", "label": "Volcano" },
+        { "char": "🗯", "label": "Right Anger Bubble" },
+        { "char": "👹", "label": "Ogre" },
+        { "char": "😈", "label": "Smiling Face With Horns" }
+      ]
+    },
+    {
+      "id": "annoyed-faces",
+      "label": "Annoyed Faces",
+      "h2": "Annoyed & Fed-Up Faces",
+      "intro": "Sub-rage irritation — eye rolls, flat stares, and gritted teeth.",
+      "symbols": [
+        { "char": "🙄", "label": "Face With Rolling Eyes" },
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "🤨", "label": "Face With Raised Eyebrow" },
+        { "char": "😖", "label": "Confounded Face" },
+        { "char": "😣", "label": "Persevering Face" },
+        { "char": "🫨", "label": "Shaking Face" }
+      ]
+    },
+    {
+      "id": "rage-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Rage & Table-Flip Kaomoji",
+      "intro": "The table flips, glares, and growls of classic angry text faces.",
+      "symbols": [
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip Kaomoji" },
+        { "char": "(┛◉Д◉)┛彡┻━┻", "label": "Furious Table Flip Kaomoji" },
+        { "char": "┬─┬ノ( º _ ºノ)", "label": "Putting Table Back Kaomoji" },
+        { "char": "(╬ Ò﹏Ó)", "label": "Boiling Anger Kaomoji" },
+        { "char": "ヽ(`Д´)ﾉ", "label": "Shouting Rage Kaomoji" },
+        { "char": "(ﾉಥ益ಥ)ﾉ ┻━┻", "label": "Tearful Rage Flip Kaomoji" },
+        { "char": "(¬_¬)", "label": "Irritated Glare Kaomoji" },
+        { "char": "(≖_≖ )", "label": "Suspicious Glare Kaomoji" },
+        { "char": "(｀ﾍ´)", "label": "Grumpy Huff Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Rage Combo Sets",
+    "intro": "Copy a complete rage combo in one click — measured annoyance to full meltdown."
+  },
+  "collection_container_id": "angrySetsContainer",
+  "collections": [
+    {
+      "name": "Rage Mode",
+      "flags": ["😡", "🤬", "💢", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Steam Off",
+      "flags": ["😤", "💨", "😠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Last Nerve",
+      "flags": ["🙄", "😬", "😤", "💢"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Total Meltdown",
+      "flags": ["🤯", "💥", "🌋", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Villain Arc",
+      "flags": ["😈", "👿", "🔥", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Keyboard Smash",
+      "flags": ["😡", "⌨", "💥", "🤬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Table Flip Saga",
+      "flags": ["(╯°□°）╯︵ ┻━┻", "┬─┬ノ( º _ ºノ)", "(┛◉Д◉)┛彡┻━┻"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/sad-emoji/",
+      "title": "Sad Emoji & Kaomoji",
+      "desc": "Melancholy and heartbreak faces for the quieter low moods."
+    },
+    {
+      "href": "/library/shocked-emoji/",
+      "title": "Shocked Emoji & Kaomoji",
+      "desc": "Wide-eyed surprise and plot-twist reaction combos."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "Every kaomoji mood, from joy to table-flipping fury."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    }
+  ]
+}

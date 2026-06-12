@@ -1,0 +1,146 @@
+{
+  "slug": "happy-emoji",
+  "title": "Happy Emoji & Kaomoji: Copy & Paste 😊 Joy Combos",
+  "meta_description": "Happy emoji 😊 😄 🥰, joyful kaomoji like ヽ(´▽`)/, and sunny combo sets to brighten bios, captions, and messages. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/happy-emoji/",
+  "breadcrumb": "Happy Emoji & Kaomoji",
+  "hero_h1": "Happy Emoji & Kaomoji",
+  "hero_tagline": "Smiles, sunshine, and joyful kaomoji — every happy emoji from a soft 🙂 to a starstruck 🤩. Click any symbol to copy it instantly.",
+  "intro": "A well-placed happy emoji sets the tone of a whole message — 😊 reads warm and sincere, 😄 is open delight, 🥰 adds affection. This library collects every smiling face, the excitement and celebration boosters that pair with them, wholesome sunshine-and-flower symbols for feel-good bios, and cheerful kaomoji like ヽ(´▽`)/ — with one-click joy combos for captions, comments, and good-news messages.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "happy-faces",
+      "label": "Core Happy Faces",
+      "h2": "Happy & Smiling Face Emojis",
+      "intro": "The core smiles, from a gentle grin to beaming with hearts.",
+      "symbols": [
+        { "char": "😊", "label": "Smiling Face With Smiling Eyes" },
+        { "char": "😀", "label": "Grinning Face" },
+        { "char": "😃", "label": "Grinning Face With Big Eyes" },
+        { "char": "😄", "label": "Grinning Face With Smiling Eyes" },
+        { "char": "🙂", "label": "Slightly Smiling Face" },
+        { "char": "😁", "label": "Beaming Face With Smiling Eyes" },
+        { "char": "☺", "label": "Smiling Face" },
+        { "char": "🥰", "label": "Smiling Face With Hearts" },
+        { "char": "😺", "label": "Grinning Cat" }
+      ]
+    },
+    {
+      "id": "joy-boosters",
+      "label": "Joy Boosters",
+      "h2": "Excitement & Celebration Faces",
+      "intro": "When happy isn't enough — starstruck, partying, and head-over-heels faces.",
+      "symbols": [
+        { "char": "🤩", "label": "Star-Struck" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "😍", "label": "Smiling Face With Heart-Eyes" },
+        { "char": "🤗", "label": "Smiling Face With Open Hands" },
+        { "char": "😌", "label": "Relieved Face" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌞", "label": "Sun With Face" },
+        { "char": "🌈", "label": "Rainbow" }
+      ]
+    },
+    {
+      "id": "wholesome-warmth",
+      "label": "Wholesome Warmth",
+      "h2": "Sunshine & Wholesome Symbols",
+      "intro": "Sunflowers, butterflies, and lucky clovers for warm, feel-good combos.",
+      "symbols": [
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "🌻", "label": "Sunflower" },
+        { "char": "🌼", "label": "Blossom" },
+        { "char": "🦋", "label": "Butterfly" },
+        { "char": "🍀", "label": "Four Leaf Clover" },
+        { "char": "☀", "label": "Sun" },
+        { "char": "💐", "label": "Bouquet" }
+      ]
+    },
+    {
+      "id": "happy-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Happy Kaomoji & Text Faces",
+      "intro": "Beaming Japanese-style text faces throwing their arms up in joy.",
+      "symbols": [
+        { "char": "ヽ(´▽`)/", "label": "Arms Raised Joy Kaomoji" },
+        { "char": "＼(^o^)／", "label": "Cheering Kaomoji" },
+        { "char": "(＾▽＾)", "label": "Bright Smile Kaomoji" },
+        { "char": "(◕‿◕)", "label": "Sweet Smile Kaomoji" },
+        { "char": "(✿◠‿◠)", "label": "Flower Smile Kaomoji" },
+        { "char": "٩(◕‿◕｡)۶", "label": "Excited Dance Kaomoji" },
+        { "char": "(o^▽^o)", "label": "Rosy Cheeks Kaomoji" },
+        { "char": "(｡♥‿♥｡)", "label": "Love-Struck Kaomoji" },
+        { "char": "⊂((・▽・))⊃", "label": "Big Hug Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Happy Emoji Combo Sets",
+    "intro": "Copy a full burst of joy in one click and paste it into any caption or chat."
+  },
+  "collection_container_id": "happySetsContainer",
+  "collections": [
+    {
+      "name": "Pure Joy",
+      "flags": ["😊", "✨", "💛", "🌻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Best Day Ever",
+      "flags": ["😄", "🎉", "🥳", "🌈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sunshine Mood",
+      "flags": ["🌞", "😊", "🌻", "☀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Soft Smile",
+      "flags": ["🙂", "🌼", "🤍", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Grateful Heart",
+      "flags": ["😌", "🙏", "💛", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heart Eyes Overload",
+      "flags": ["😍", "🥰", "💖", "😻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kaomoji Joy Pack",
+      "flags": ["ヽ(´▽`)/", "＼(^o^)／", "٩(◕‿◕｡)۶"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/laughing-emoji/",
+      "title": "Laughing Emoji & Kaomoji",
+      "desc": "LOL faces and meme laughing combos when happy turns hilarious."
+    },
+    {
+      "href": "/library/smiley-face-guide/",
+      "title": "Smiley Face Guide",
+      "desc": "What every smiley actually means, face by face."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, cake, and celebration combos for big moments."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji library for every mood."
+    }
+  ]
+}
