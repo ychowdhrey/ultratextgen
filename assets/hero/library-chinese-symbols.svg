@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghlibraryc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhlibraryc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhlibraryc" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshlibraryc" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshlibraryc)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryc)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryc)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+            <rect x="40" y="96" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="82" y="152" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="700" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">Aa</text>
+            <rect x="140" y="96" width="84" height="84" rx="18" fill="url(#ghlibraryc)"
+                  stroke="#1a1a2e" stroke-opacity="0"/>
+            <text x="182" y="152" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
+                  font-weight="400" font-style="italic" fill="#fff"
+                  text-anchor="middle">Aa</text>
+            <rect x="240" y="96" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="282" y="152" font-family="DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="400" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">★</text>
+            <rect x="40" y="200" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="82" y="256" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
+                  font-weight="700" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">Aa</text>
+            <rect x="140" y="200" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="182" y="256" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="400" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">Aa</text>
+            <rect x="240" y="200" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="282" y="256" font-family="DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="400" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">♥</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+            <rect x="40" y="96" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="82" y="152" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="700" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">Aa</text>
+            <rect x="140" y="96" width="84" height="84" rx="18" fill="url(#ghlibraryc)"
+                  stroke="#1a1a2e" stroke-opacity="0"/>
+            <text x="182" y="152" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
+                  font-weight="400" font-style="italic" fill="#fff"
+                  text-anchor="middle">Aa</text>
+            <rect x="240" y="96" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="282" y="152" font-family="DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="400" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">★</text>
+            <rect x="40" y="200" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="82" y="256" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-size="40"
+                  font-weight="700" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">Aa</text>
+            <rect x="140" y="200" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="182" y="256" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="400" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">Aa</text>
+            <rect x="240" y="200" width="84" height="84" rx="18" fill="#fff"
+                  stroke="#1a1a2e" stroke-opacity="0.1"/>
+            <text x="282" y="256" font-family="DejaVu Sans, sans-serif" font-size="40"
+                  font-weight="400" font-style="normal" fill="#1a1a2e"
+                  text-anchor="middle">♥</text></g>
+</svg>
