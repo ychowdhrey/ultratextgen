@@ -43,11 +43,16 @@ def find_hero_close(html):
     return None
 
 
-def figure_block(slug, alt):
+def figure_block(slug):
+    # The hero SVG is a decorative typographic banner that restates the page
+    # title — it carries no unique content. It is marked decorative (empty alt
+    # + aria-hidden="true") so the Open Graph card (assets/og/<slug>.png) stays
+    # the single canonical image for Google Images and social sharing instead
+    # of competing with the visible hero.
     return (
-        f'\n<figure class="page-hero-figure" data-uthero>\n'
+        f'\n<figure class="page-hero-figure" data-uthero aria-hidden="true">\n'
         f'  <img src="/assets/hero/{slug}.svg" width="1200" height="340"\n'
-        f'       loading="lazy" alt="{alt}">\n'
+        f'       loading="lazy" alt="">\n'
         f'</figure>\n')
 
 
@@ -85,20 +90,14 @@ def main():
         html = new
 
         # Strip any previously-wired figure so its placement is recomputed.
-        # Keeps the script idempotent *and* corrective when placement rules change.
+        # Keeps the script idempotent *and* corrective when placement rules
+        # change. Tolerates extra attributes (e.g. aria-hidden) on the figure.
         had_figure = "data-uthero" in html
         html = re.sub(
-            r'\n?<figure class="page-hero-figure" data-uthero>.*?</figure>\n?',
+            r'\n?<figure class="page-hero-figure" data-uthero[^>]*>.*?</figure>\n?',
             '\n', html, flags=re.S)
 
-        # 3. insert hero figure
-        alt = "Decorative typographic illustration for this page."
-        ti = re.search(r'<title>(.*?)</title>', html, re.S)
-        if ti:
-            t = re.sub(r'\s*[|—–-]\s*UltraTextGen.*$', '', ti.group(1)).strip()
-            t = re.sub(r'<[^>]+>', '', t).replace("&amp;", "&")
-            if t:
-                alt = f"Illustration representing {t}."
+        # 3. insert hero figure (decorative — see figure_block)
 
         # Generator pages carry the live tool (textarea#mainInput) inside the
         # hero, so a figure placed *after* the hero lands below the whole tool.
@@ -121,7 +120,7 @@ def main():
         if pos is None:
             no_anchor.append(slug)
         else:
-            html = html[:pos] + figure_block(slug, alt) + html[pos:]
+            html = html[:pos] + figure_block(slug) + html[pos:]
             inserted += 1
             if had_figure:
                 skipped += 1
