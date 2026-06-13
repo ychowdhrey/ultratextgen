@@ -129,10 +129,10 @@ def main():
         rec = ("OG triple completed" if og_triple == "yes" else "OG present")
         rec += "; hero set decorative" if hero_decorative else ""
         remaining = ""
-        if ptype == "localized":
+        english_home = og.endswith("/assets/og/fancy-text-generator-preview.png")
+        if ptype == "localized" and english_home:
             remaining = "Localized OG card with translated copy (see report)"
-        elif og and og.endswith("/assets/og/fancy-text-generator-preview.png") \
-                and ptype != "homepage":
+        elif english_home and ptype != "homepage":
             remaining = "Consider page-specific OG card"
         rows.append({
             "Page URL": canonical,
