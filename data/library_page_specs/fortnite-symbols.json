@@ -1,0 +1,169 @@
+{
+  "slug": "fortnite-symbols",
+  "title": "Fortnite Symbols: Copy & Paste ツ 亗 Sweaty Name Characters",
+  "meta_description": "Sweaty Fortnite symbols — ツ 亗 乂 smiles, power kanji, clan-tag stars, and crosshair glyphs, plus ready-made sweaty name combos. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/fortnite-symbols/",
+  "breadcrumb": "Fortnite Symbols",
+  "hero_h1": "Fortnite Symbols",
+  "hero_tagline": "The ツ smiles, 亗 marks, power kanji, and crosshair glyphs behind every sweaty Fortnite name. Click any symbol to copy it instantly.",
+  "intro": "Sweaty Fortnite symbols are the shorthand of the competitive lobby: a ツ after your name, a 亗 or 乂 framing your clan tag, a single kanji that makes a four-letter name look like a pro's. Epic's display-name rules allow most of these Unicode characters, so they survive in your locker, on kill feeds, and in Arena leaderboards. Copy individual characters below, or grab a ready-made sweaty name combo and swap in your own name.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "sweaty-classics",
+      "label": "Sweaty Classics",
+      "h2": "Sweaty Classic Characters",
+      "intro": "The katakana and CJK marks that defined the sweaty name era — ツ above all.",
+      "symbols": [
+        { "char": "ツ", "label": "Katakana Tsu (Sweaty Smile)" },
+        { "char": "シ", "label": "Katakana Si (Tilted Smile)" },
+        { "char": "ッ", "label": "Katakana Small Tu" },
+        { "char": "ソ", "label": "Katakana So" },
+        { "char": "ン", "label": "Katakana N" },
+        { "char": "乂", "label": "Yi — Crossed Blades Mark" },
+        { "char": "亗", "label": "Sui — Stacked Tier Mark" },
+        { "char": "々", "label": "Ideographic Iteration Mark" },
+        { "char": "彡", "label": "San — Triple Slash" }
+      ]
+    },
+    {
+      "id": "power-kanji",
+      "label": "Power Kanji",
+      "h2": "Power Kanji for Names",
+      "intro": "Single kanji with heavyweight meanings — one character that carries a whole vibe.",
+      "symbols": [
+        { "char": "鬼", "label": "Oni — Demon" },
+        { "char": "龍", "label": "Ryu — Dragon" },
+        { "char": "神", "label": "Kami — God" },
+        { "char": "王", "label": "O — King" },
+        { "char": "影", "label": "Kage — Shadow" },
+        { "char": "刃", "label": "Ha — Blade" },
+        { "char": "雷", "label": "Kaminari — Thunder" },
+        { "char": "火", "label": "Hi — Fire" },
+        { "char": "風", "label": "Kaze — Wind" },
+        { "char": "闇", "label": "Yami — Darkness" }
+      ]
+    },
+    {
+      "id": "clan-stars",
+      "label": "Clan Stars",
+      "h2": "Clan-Tag Stars & Lightning",
+      "intro": "Stars and bolt glyphs that make two-letter clan tags pop in the kill feed.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✰", "label": "Shadowed White Star" },
+        { "char": "✦", "label": "Black Four-Pointed Star" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "✯", "label": "Pinwheel Star" },
+        { "char": "✪", "label": "Circled White Star" },
+        { "char": "⍟", "label": "APL Circle Star" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "ϟ", "label": "Greek Small Letter Koppa (Lightning Bolt Style)" }
+      ]
+    },
+    {
+      "id": "tag-brackets",
+      "label": "Tag Brackets",
+      "h2": "Clan-Tag Brackets",
+      "intro": "Corner and lenticular brackets that frame clan tags more cleanly than plain [ ].",
+      "symbols": [
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "『", "label": "Left White Corner Bracket" },
+        { "char": "』", "label": "Right White Corner Bracket" },
+        { "char": "【", "label": "Left Black Lenticular Bracket" },
+        { "char": "】", "label": "Right Black Lenticular Bracket" },
+        { "char": "〖", "label": "Left White Lenticular Bracket" },
+        { "char": "〗", "label": "Right White Lenticular Bracket" },
+        { "char": "《", "label": "Left Double Angle Bracket" },
+        { "char": "》", "label": "Right Double Angle Bracket" }
+      ]
+    },
+    {
+      "id": "combat-crosshairs",
+      "label": "Combat",
+      "h2": "Crosshair & Combat Glyphs",
+      "intro": "Crosshairs, crossed swords, and skulls for box-fighter and aim-demon energy.",
+      "symbols": [
+        { "char": "⌖", "label": "Position Indicator (Crosshair)" },
+        { "char": "✛", "label": "Open Centre Cross" },
+        { "char": "✜", "label": "Heavy Open Centre Cross" },
+        { "char": "◎", "label": "Bullseye" },
+        { "char": "⊕", "label": "Circled Plus (Scope)" },
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "🎯", "label": "Direct Hit" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "sweaty-name-combos",
+    "label": "Name Combos",
+    "h2": "Ready-Made Sweaty Name Combos",
+    "intro": "Copy a full sweaty name layout in one click, then replace the placeholder with your own name in the Epic display-name settings."
+  },
+  "collection_container_id": "fortniteCombosContainer",
+  "collections": [
+    {
+      "name": "Sweaty Smile Frame",
+      "flags": ["ツ", "YourName", "ツ"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Stacked Tier Tag",
+      "flags": ["亗", "YOURNAME", "亗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crossed Blades Wrap",
+      "flags": ["乂•", "YourName", "•乂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lightning Strike Tag",
+      "flags": ["ϟ", "YourName", "ϟ"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Shadow Kanji Combo",
+      "flags": ["影", "ɴᴀᴍᴇ", "彡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Star Bracket Clan Tag",
+      "flags": ["「★」", "YourName", "「★」"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crosshair Callout",
+      "flags": ["⌖", "YourName", "⌖"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/minecraft-symbols/",
+      "title": "Minecraft Symbols",
+      "desc": "Chat, MOTD, and server-name characters for Minecraft."
+    },
+    {
+      "href": "/library/roblox-symbols/",
+      "title": "Roblox Symbols",
+      "desc": "Username and display-name characters that work in Roblox."
+    },
+    {
+      "href": "/library/nickname-symbols/",
+      "title": "Nickname Symbols",
+      "desc": "Decorative characters for gamer tags on any platform."
+    },
+    {
+      "href": "/library/free-fire-name-symbols/",
+      "title": "Free Fire Name Symbols",
+      "desc": "Ornate ꧁꧂ frames and FF nick decorations to copy."
+    }
+  ]
+}

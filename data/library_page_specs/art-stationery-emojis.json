@@ -1,0 +1,166 @@
+{
+  "slug": "art-stationery-emojis",
+  "title": "Art & Stationery Emojis: Copy & Paste ✏ 🎨 Creative Combos",
+  "meta_description": "Art and stationery emojis to copy and paste — pencils ✏️, palettes 🎨, paintbrushes, notebooks, paper, and creative combo sets. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/art-stationery-emojis/",
+  "breadcrumb": "Art & Stationery Emojis",
+  "hero_h1": "Art & Stationery Emojis",
+  "hero_tagline": "Pencils, palettes, pens, paper, and desk supply emojis with creative combo sets. Click any emoji to copy it instantly.",
+  "intro": "Art and stationery emojis are staples of artist bios, study accounts, bullet journals, and writing captions — a palette and paintbrush for commissions-open posts, a pencil and notebook for study threads, an envelope for newsletter plugs. This reference gathers the drawing, writing, paper, and desk supply emojis in Unicode, plus one-click combo sets for common creative scenarios.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "drawing-painting",
+      "label": "Art",
+      "h2": "Drawing & Painting Emojis",
+      "intro": "Palette, brush, and picture emojis for visual artists.",
+      "symbols": [
+        { "char": "🎨", "label": "Artist Palette" },
+        { "char": "🖌️", "label": "Paintbrush" },
+        { "char": "🖍️", "label": "Crayon" },
+        { "char": "✏️", "label": "Pencil" },
+        { "char": "🖼️", "label": "Framed Picture" }
+      ]
+    },
+    {
+      "id": "pens-writing",
+      "label": "Pens",
+      "h2": "Pen & Writing Emojis",
+      "intro": "Pens, nibs, and writing emojis for authors and note-takers.",
+      "symbols": [
+        { "char": "🖊️", "label": "Pen" },
+        { "char": "🖋️", "label": "Fountain Pen" },
+        { "char": "✒️", "label": "Black Nib" },
+        { "char": "📝", "label": "Memo" },
+        { "char": "✍️", "label": "Writing Hand" }
+      ]
+    },
+    {
+      "id": "paper-notebooks",
+      "label": "Paper & Books",
+      "h2": "Paper, Notebook & Book Emojis",
+      "intro": "Pages, scrolls, notebooks, and book emojis in every color.",
+      "symbols": [
+        { "char": "📄", "label": "Page Facing Up" },
+        { "char": "📃", "label": "Page with Curl" },
+        { "char": "📜", "label": "Scroll" },
+        { "char": "📑", "label": "Bookmark Tabs" },
+        { "char": "📒", "label": "Ledger" },
+        { "char": "📓", "label": "Notebook" },
+        { "char": "📔", "label": "Notebook with Decorative Cover" },
+        { "char": "📕", "label": "Closed Book" },
+        { "char": "📗", "label": "Green Book" },
+        { "char": "📘", "label": "Blue Book" },
+        { "char": "📙", "label": "Orange Book" },
+        { "char": "📖", "label": "Open Book" },
+        { "char": "📚", "label": "Books" }
+      ]
+    },
+    {
+      "id": "desk-supplies",
+      "label": "Desk Supplies",
+      "h2": "Desk & Office Supply Emojis",
+      "intro": "Pins, clips, rulers, and filing emojis for organized desks.",
+      "symbols": [
+        { "char": "📌", "label": "Pushpin" },
+        { "char": "📍", "label": "Round Pushpin" },
+        { "char": "📎", "label": "Paperclip" },
+        { "char": "🖇️", "label": "Linked Paperclips" },
+        { "char": "📏", "label": "Straight Ruler" },
+        { "char": "📐", "label": "Triangular Ruler" },
+        { "char": "✂️", "label": "Scissors" },
+        { "char": "🗃️", "label": "Card File Box" },
+        { "char": "🗄️", "label": "File Cabinet" },
+        { "char": "📂", "label": "Open File Folder" },
+        { "char": "📁", "label": "File Folder" },
+        { "char": "🗑️", "label": "Wastebasket" }
+      ]
+    },
+    {
+      "id": "mail-news",
+      "label": "Mail & News",
+      "h2": "Mail, Label & Newspaper Emojis",
+      "intro": "Envelopes, postboxes, and print emojis for messages and news.",
+      "symbols": [
+        { "char": "✉️", "label": "Envelope" },
+        { "char": "📩", "label": "Envelope with Arrow" },
+        { "char": "📨", "label": "Incoming Envelope" },
+        { "char": "📧", "label": "E-Mail" },
+        { "char": "📮", "label": "Postbox" },
+        { "char": "📬", "label": "Open Mailbox with Raised Flag" },
+        { "char": "📰", "label": "Newspaper" },
+        { "char": "🗞️", "label": "Rolled-Up Newspaper" },
+        { "char": "🏷️", "label": "Label" },
+        { "char": "🔖", "label": "Bookmark" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "creative-sets",
+    "label": "Creative Sets",
+    "h2": "Creative Combo Sets",
+    "intro": "Copy a full art or stationery emoji combo in one click for bios and captions."
+  },
+  "collection_container_id": "creativeSetsContainer",
+  "collections": [
+    {
+      "name": "Artist Bio",
+      "flags": ["🎨", "🖌️", "✏️", "🖼️", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Study Notes",
+      "flags": ["📚", "📝", "✏️", "📌", "☕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bullet Journal",
+      "flags": ["📔", "🖊️", "📏", "🌸", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Writer's Desk",
+      "flags": ["✍️", "📜", "🖋️", "☕", "💡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Back to School",
+      "flags": ["🎒", "✏️", "📐", "📚", "🍎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mail Time",
+      "flags": ["✉️", "📮", "📬", "💌", "🏷️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sketchbook Session",
+      "flags": ["✏️", "📓", "🖍️", "🎨", "🎧"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/school-education-emojis/",
+      "title": "School & Education Emojis",
+      "desc": "Graduation, study, and classroom emoji combos."
+    },
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Everyday item emojis from tech to household things."
+    },
+    {
+      "href": "/library/email-symbols/",
+      "title": "Email Symbols",
+      "desc": "Envelope, at-sign, and mail characters for messages."
+    },
+    {
+      "href": "/library/bullet-point-symbols/",
+      "title": "Bullet Point Symbols",
+      "desc": "Dots, arrows, and list marker characters for clean lists."
+    }
+  ]
+}

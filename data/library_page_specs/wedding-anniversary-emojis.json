@@ -1,0 +1,155 @@
+{
+  "slug": "wedding-anniversary-emojis",
+  "title": "Wedding & Anniversary Emojis: Copy & Paste 💍 Ring Combos",
+  "meta_description": "Wedding and anniversary emojis to copy: 💍 rings, 👰 couples, doves, bells, and romantic combo sets for invitations and captions. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/wedding-anniversary-emojis/",
+  "breadcrumb": "Wedding & Anniversary Emojis",
+  "hero_h1": "Wedding & Anniversary Emojis",
+  "hero_tagline": "Rings, bells, couples, and toasts for weddings and anniversaries — click any emoji to copy it instantly.",
+  "intro": "Wedding emojis carry the romance of the big day into engagement announcements, save-the-dates, and anniversary captions. This library collects the essentials — the 💍 ring, 💒 wedding chapel, 👰 and 🤵 couple, doves, bells, and celebratory toasts — plus the hearts and flowers that finish a romantic post. Copy individual emojis or grab a complete wedding combo set like Just Married in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "rings-proposal",
+      "label": "Rings & Proposal",
+      "h2": "Rings, Chapels & Proposals",
+      "intro": "The ring, the venue, and the symbols of saying yes.",
+      "symbols": [
+        { "char": "💍", "label": "Ring" },
+        { "char": "💎", "label": "Gem Stone" },
+        { "char": "💒", "label": "Wedding" },
+        { "char": "⛪", "label": "Church" },
+        { "char": "💌", "label": "Love Letter" },
+        { "char": "🕊", "label": "Dove" }
+      ]
+    },
+    {
+      "id": "couples",
+      "label": "Couples",
+      "h2": "Brides, Grooms & Couples",
+      "intro": "The happy couple in every combination.",
+      "symbols": [
+        { "char": "👰", "label": "Person With Veil" },
+        { "char": "🤵", "label": "Person in Tuxedo" },
+        { "char": "💑", "label": "Couple With Heart" },
+        { "char": "💏", "label": "Kiss" },
+        { "char": "👫", "label": "Woman and Man Holding Hands" },
+        { "char": "👬", "label": "Men Holding Hands" },
+        { "char": "👭", "label": "Women Holding Hands" }
+      ]
+    },
+    {
+      "id": "romantic-hearts",
+      "label": "Hearts",
+      "h2": "Romantic Hearts",
+      "intro": "Hearts for vows, anniversaries, and everything in between.",
+      "symbols": [
+        { "char": "❤", "label": "Red Heart" },
+        { "char": "💕", "label": "Two Hearts" },
+        { "char": "💖", "label": "Sparkling Heart" },
+        { "char": "💘", "label": "Heart With Arrow" },
+        { "char": "💝", "label": "Heart With Ribbon" },
+        { "char": "💞", "label": "Revolving Hearts" },
+        { "char": "🤍", "label": "White Heart" }
+      ]
+    },
+    {
+      "id": "celebration-toasts",
+      "label": "Toasts & Flowers",
+      "h2": "Toasts, Bells & Flowers",
+      "intro": "Champagne, bouquets, and bells for the reception and the anniversary dinner.",
+      "symbols": [
+        { "char": "🥂", "label": "Clinking Glasses" },
+        { "char": "🍾", "label": "Bottle With Popping Cork" },
+        { "char": "💐", "label": "Bouquet" },
+        { "char": "🌹", "label": "Rose" },
+        { "char": "🌷", "label": "Tulip" },
+        { "char": "🔔", "label": "Bell" },
+        { "char": "🎊", "label": "Confetti Ball" },
+        { "char": "✨", "label": "Sparkles" }
+      ]
+    },
+    {
+      "id": "wedding-details",
+      "label": "Wedding Details",
+      "h2": "Dresses, Candles & Details",
+      "intro": "Finishing touches for invitations and wedding-day posts.",
+      "symbols": [
+        { "char": "👗", "label": "Dress" },
+        { "char": "🕯", "label": "Candle" },
+        { "char": "🎀", "label": "Ribbon" },
+        { "char": "🦢", "label": "Swan" },
+        { "char": "🌸", "label": "Cherry Blossom" },
+        { "char": "🍰", "label": "Shortcake" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Wedding & Anniversary Combo Sets",
+    "intro": "Copy a complete romantic combo in one click for announcements, invitations, and anniversary captions."
+  },
+  "collection_container_id": "weddingSetsContainer",
+  "collections": [
+    {
+      "name": "Just Married",
+      "flags": ["👰", "🤵", "💍", "💒"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "The Proposal",
+      "flags": ["💍", "🥹", "💖", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Anniversary Love",
+      "flags": ["💕", "🥂", "🌹", "💑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wedding Bells",
+      "flags": ["💒", "🔔", "🕊", "💐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Engagement Post",
+      "flags": ["💍", "✨", "🥂", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Honeymoon",
+      "flags": ["✈", "🏝", "💑", "🌅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Golden Anniversary",
+      "flags": ["💛", "💍", "🥂", "🎊"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, cake, and toast combos for every celebration."
+    },
+    {
+      "href": "/library/jewelry-gem-emojis/",
+      "title": "Jewelry & Gem Emojis",
+      "desc": "Diamonds, rings, and bling combos to copy and paste."
+    },
+    {
+      "href": "/library/friendship-emojis/",
+      "title": "Friendship & Love Emojis",
+      "desc": "Hugs, besties, and friendship-heart combo sets."
+    }
+  ]
+}

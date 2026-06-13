@@ -1,0 +1,160 @@
+{
+  "slug": "greeting-message-emojis",
+  "title": "Greeting & Message Emojis: Copy & Paste Thank You Good Morning Combos",
+  "meta_description": "Greeting emojis for good morning, thank you, sorry, and congratulations messages, with ready combo sets for WhatsApp chats. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/greeting-message-emojis/",
+  "breadcrumb": "Greeting & Message Emojis",
+  "hero_h1": "Greeting & Message Emojis",
+  "hero_tagline": "Good morning suns, thank-you hands, and congratulations confetti — click any emoji to copy it instantly.",
+  "intro": "Greeting emojis carry the warmth of a message before a single word is read — a 🌅 sunrise for good morning, a 🙏 thank you, a 🎉 congratulations. This library organizes message emojis by greeting, covering good morning, good night, thank you, congratulations, welcome, sorry, and miss you. Copy single emojis for WhatsApp statuses and family group chats, or grab a complete greeting combo set in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "good-morning",
+      "label": "Good Morning",
+      "h2": "Good Morning Emojis",
+      "intro": "Sunrises, coffee, and sunshine to open the day.",
+      "symbols": [
+        { "char": "🌅", "label": "Sunrise" },
+        { "char": "🌄", "label": "Sunrise Over Mountains" },
+        { "char": "☀", "label": "Sun" },
+        { "char": "🌞", "label": "Sun With Face" },
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "🐦", "label": "Bird" },
+        { "char": "🌻", "label": "Sunflower" }
+      ]
+    },
+    {
+      "id": "good-night",
+      "label": "Good Night",
+      "h2": "Good Night Emojis",
+      "intro": "Moons, stars, and sleepy faces to close the day.",
+      "symbols": [
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🌜", "label": "Last Quarter Moon Face" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌃", "label": "Night With Stars" },
+        { "char": "🌠", "label": "Shooting Star" },
+        { "char": "💤", "label": "Zzz" },
+        { "char": "😴", "label": "Sleeping Face" }
+      ]
+    },
+    {
+      "id": "thank-you",
+      "label": "Thank You",
+      "h2": "Thank You & Gratitude Emojis",
+      "intro": "Folded hands, flowers, and warm smiles to show appreciation.",
+      "symbols": [
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "💐", "label": "Bouquet" },
+        { "char": "🌹", "label": "Rose" },
+        { "char": "❤", "label": "Red Heart" },
+        { "char": "😊", "label": "Smiling Face With Smiling Eyes" },
+        { "char": "🤗", "label": "Smiling Face With Open Hands" },
+        { "char": "🫶", "label": "Heart Hands" }
+      ]
+    },
+    {
+      "id": "congratulations-welcome",
+      "label": "Congratulations",
+      "h2": "Congratulations & Welcome Emojis",
+      "intro": "Confetti, applause, and trophies for milestones and warm welcomes.",
+      "symbols": [
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🎊", "label": "Confetti Ball" },
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "🌺", "label": "Hibiscus" },
+        { "char": "✨", "label": "Sparkles" }
+      ]
+    },
+    {
+      "id": "sorry-miss-you",
+      "label": "Sorry & Miss You",
+      "h2": "Sorry & Miss You Emojis",
+      "intro": "Soft, sincere emojis for apologies and missing someone.",
+      "symbols": [
+        { "char": "🥺", "label": "Pleading Face" },
+        { "char": "😔", "label": "Pensive Face" },
+        { "char": "💔", "label": "Broken Heart" },
+        { "char": "💌", "label": "Love Letter" },
+        { "char": "💭", "label": "Thought Balloon" },
+        { "char": "🌷", "label": "Tulip" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Greeting Combo Sets",
+    "intro": "Copy a complete greeting combo in one click and paste it into a status, story, or chat."
+  },
+  "collection_container_id": "greetingSetsContainer",
+  "collections": [
+    {
+      "name": "Good Morning",
+      "flags": ["🌅", "☀", "☕", "😊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Good Night",
+      "flags": ["🌙", "⭐", "💤", "😴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thank You",
+      "flags": ["🙏", "💐", "❤", "😊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Congratulations",
+      "flags": ["🎉", "👏", "🏆", "🥳"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Welcome",
+      "flags": ["🤗", "🙏", "🌺", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Miss You",
+      "flags": ["🥺", "💌", "💭", "❤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sorry",
+      "flags": ["🙏", "😔", "🥺", "🌷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Happy Birthday",
+      "flags": ["🎂", "🎈", "🎉", "💝"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, cake, and toast combos for every celebration."
+    },
+    {
+      "href": "/library/friendship-emojis/",
+      "title": "Friendship & Love Emojis",
+      "desc": "Hugs, besties, and friendship-heart combo sets."
+    },
+    {
+      "href": "/library/whatsapp-symbols/",
+      "title": "WhatsApp Symbols",
+      "desc": "Status and bio characters for WhatsApp profiles."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    }
+  ]
+}

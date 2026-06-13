@@ -1,0 +1,163 @@
+{
+  "slug": "nerd-emoji",
+  "title": "Nerd Emoji: Copy & Paste 🤓 Nerd Face Meme Combos",
+  "meta_description": "The 🤓 nerd emoji plus erm-actually ☝ meme combos, study and science emojis, and glasses kaomoji like (⌐■_■) for replies. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/nerd-emoji/",
+  "breadcrumb": "Nerd Emoji & Meme Combos",
+  "hero_h1": "Nerd Emoji & Meme Combos",
+  "hero_tagline": "The 🤓 nerd face, the ☝🤓 \"erm, actually\" meme kit, study props, and glasses kaomoji. Click any symbol to copy it instantly.",
+  "intro": "The nerd emoji 🤓 went from \"bookworm\" to one of the internet's favorite meme reactions — paired with ☝ it instantly reads as \"erm, actually...\" pedantry. This page collects the nerd emoji and its bespectacled relatives, the full erm-actually meme kit, study and science props for genuine academic posts, and glasses kaomoji like (⌐■_■) — plus one-click nerd combo sets for replies and captions.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "nerd-faces",
+      "label": "Core Nerd Faces",
+      "h2": "Nerd Face & Glasses Emojis",
+      "intro": "The nerd face and every other pair of glasses in the emoji set.",
+      "symbols": [
+        { "char": "🤓", "label": "Nerd Face" },
+        { "char": "🧐", "label": "Face With Monocle" },
+        { "char": "👓", "label": "Glasses" },
+        { "char": "🥸", "label": "Disguised Face" },
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "🕶", "label": "Sunglasses" }
+      ]
+    },
+    {
+      "id": "erm-actually",
+      "label": "Erm, Actually",
+      "h2": "\"Erm, Actually\" Meme Essentials",
+      "intro": "The raised finger and talking props that turn 🤓 into the famous correction meme.",
+      "symbols": [
+        { "char": "☝", "label": "Index Pointing Up" },
+        { "char": "🗣", "label": "Speaking Head" },
+        { "char": "💬", "label": "Speech Balloon" },
+        { "char": "🤔", "label": "Thinking Face" },
+        { "char": "📢", "label": "Loudspeaker" },
+        { "char": "🧠", "label": "Brain" }
+      ]
+    },
+    {
+      "id": "study-props",
+      "label": "Study Props",
+      "h2": "Study, School & Bookworm Emojis",
+      "intro": "Books, lab gear, and stationery for studygram bios and exam-season posts.",
+      "symbols": [
+        { "char": "📚", "label": "Books" },
+        { "char": "📖", "label": "Open Book" },
+        { "char": "✏", "label": "Pencil" },
+        { "char": "📝", "label": "Memo" },
+        { "char": "🧪", "label": "Test Tube" },
+        { "char": "🔬", "label": "Microscope" },
+        { "char": "🧮", "label": "Abacus" },
+        { "char": "💻", "label": "Laptop" },
+        { "char": "🎓", "label": "Graduation Cap" },
+        { "char": "📐", "label": "Triangular Ruler" }
+      ]
+    },
+    {
+      "id": "tech-brainy",
+      "label": "Tech & Brainy",
+      "h2": "Tech, Science & Big-Brain Emojis",
+      "intro": "Computers, atoms, and retro-gaming characters for full nerd credentials.",
+      "symbols": [
+        { "char": "💡", "label": "Light Bulb" },
+        { "char": "⚛", "label": "Atom Symbol" },
+        { "char": "🖥", "label": "Desktop Computer" },
+        { "char": "⌨", "label": "Keyboard" },
+        { "char": "🖱", "label": "Computer Mouse" },
+        { "char": "🤖", "label": "Robot" },
+        { "char": "👾", "label": "Alien Monster" },
+        { "char": "🧬", "label": "DNA" }
+      ]
+    },
+    {
+      "id": "nerd-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Glasses & Nerd Kaomoji",
+      "intro": "Text faces pushing up their glasses or scribbling notes.",
+      "symbols": [
+        { "char": "(⌐■_■)", "label": "Cool Glasses Kaomoji" },
+        { "char": "( •_•)>⌐■-■", "label": "Putting On Glasses Kaomoji" },
+        { "char": "(⌐⊙_⊙)", "label": "Wide-Eyed Glasses Kaomoji" },
+        { "char": "φ(．．)", "label": "Taking Notes Kaomoji" },
+        { "char": "✍(◔◡◔)", "label": "Writing Happily Kaomoji" },
+        { "char": "(¬‿¬)", "label": "Knowing Smirk Kaomoji" },
+        { "char": "(☞ﾟヮﾟ)☞", "label": "Finger Guns Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Nerd Meme Combo Sets",
+    "intro": "Copy a complete nerd combo in one click — from the classic ☝🤓 to full study-grind strings."
+  },
+  "collection_container_id": "nerdSetsContainer",
+  "collections": [
+    {
+      "name": "Erm, Actually",
+      "flags": ["☝", "🤓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Well Ackchyually",
+      "flags": ["☝", "🤓", "📖", "💬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nerd Alert",
+      "flags": ["🤓", "📢", "🚨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Study Grind",
+      "flags": ["📚", "✏", "🤓", "☕", "💻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Math Lord",
+      "flags": ["🤓", "➗", "➕", "📐", "🧮"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gamer Nerd",
+      "flags": ["🤓", "🎮", "👾", "⌨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lab Rat",
+      "flags": ["🥼", "🥽", "🧪", "🔬", "🤓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glasses Push-Up",
+      "flags": ["( •_•)>⌐■-■", "(⌐■_■)"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emoji Combos",
+      "desc": "Sigma, rizz, and the rest of the Gen-Z meme emoji dictionary."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Joke and meme emoji strings for comment sections."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Judging looks and skeptical reaction combos."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every face emoji in one browsable, copyable grid."
+    }
+  ]
+}

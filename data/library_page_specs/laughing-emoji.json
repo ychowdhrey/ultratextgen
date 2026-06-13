@@ -1,0 +1,148 @@
+{
+  "slug": "laughing-emoji",
+  "title": "Laughing Emoji & Kaomoji: Copy & Paste 😂 LOL Combos",
+  "meta_description": "Grab laughing emoji 😂 🤣 💀, LOL kaomoji like (≧▽≦), and ready-made meme reaction combos for comments and group chats. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/laughing-emoji/",
+  "breadcrumb": "Laughing Emoji & Kaomoji",
+  "hero_h1": "Laughing Emoji & Kaomoji",
+  "hero_tagline": "From 😂 tears of joy to 💀 dead-from-laughing memes and (≧▽≦) kaomoji — every way to laugh in text. Click any symbol to copy it instantly.",
+  "intro": "The laughing emoji 😂 has topped most-used-emoji lists for a decade, while 💀 and 😭 have become its meme-era replacements for \"I'm dead.\" This page gathers every laughing emoji variant, the skull and pointing reactions Gen Z actually uses, playful giggle and smirk faces, and Japanese laughing kaomoji — plus one-click LOL combo sets for comments, replies, and group chats.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "laughing-faces",
+      "label": "Core Laughing Faces",
+      "h2": "Laughing Emoji Variants",
+      "intro": "The classic laughing faces, from polite chuckle to rolling on the floor.",
+      "symbols": [
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "🤣", "label": "Rolling on the Floor Laughing" },
+        { "char": "😆", "label": "Grinning Squinting Face" },
+        { "char": "😄", "label": "Grinning Face With Smiling Eyes" },
+        { "char": "😁", "label": "Beaming Face With Smiling Eyes" },
+        { "char": "😅", "label": "Grinning Face With Sweat" },
+        { "char": "🤭", "label": "Face With Hand Over Mouth" },
+        { "char": "😹", "label": "Cat With Tears of Joy" }
+      ]
+    },
+    {
+      "id": "dead-laughing",
+      "label": "Dead From Laughing",
+      "h2": "Skull & Meme Laughing Reactions",
+      "intro": "The meme-speak way to say something killed you — skulls, headstones, and pointing.",
+      "symbols": [
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "🪦", "label": "Headstone" },
+        { "char": "🫵", "label": "Index Pointing at the Viewer" },
+        { "char": "😵", "label": "Face With Crossed-Out Eyes" },
+        { "char": "😮‍💨", "label": "Face Exhaling" }
+      ]
+    },
+    {
+      "id": "giggles-smirks",
+      "label": "Giggles & Smirks",
+      "h2": "Giggling, Smirking & Silly Faces",
+      "intro": "Lighter laughs — teasing smirks, tongues out, and upside-down irony.",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😝", "label": "Squinting Face With Tongue" },
+        { "char": "😜", "label": "Winking Face With Tongue" },
+        { "char": "🤪", "label": "Zany Face" },
+        { "char": "😛", "label": "Face With Tongue" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "😬", "label": "Grimacing Face" }
+      ]
+    },
+    {
+      "id": "laughing-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Laughing Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces beaming, cackling, and waving their arms with joy.",
+      "symbols": [
+        { "char": "(≧▽≦)", "label": "Squinting Laugh Kaomoji" },
+        { "char": "ヽ(´▽`)/", "label": "Arms-Up Laughing Kaomoji" },
+        { "char": "(´∀｀)", "label": "Easy Grin Kaomoji" },
+        { "char": "（＾ｖ＾）", "label": "Cheeky Smile Kaomoji" },
+        { "char": "(＾ω＾)", "label": "Happy Chuckle Kaomoji" },
+        { "char": "(≧∇≦)/", "label": "Waving Laugh Kaomoji" },
+        { "char": "ヾ(≧▽≦*)o", "label": "Uncontrollable Laugh Kaomoji" },
+        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Sparkling Laugh Kaomoji" },
+        { "char": "(¬‿¬)", "label": "Sly Grin Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "LOL Combo Sets",
+    "intro": "Copy a whole laughing combo in one click — perfect for fast comment-section reactions."
+  },
+  "collection_container_id": "laughingSetsContainer",
+  "collections": [
+    {
+      "name": "Crying Laughing Spam",
+      "flags": ["😂", "😂", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I'm Dead",
+      "flags": ["💀", "💀", "🙏", "😭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "LMAO Pack",
+      "flags": ["🤣", "✋", "😭", "💀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wheeze Mode",
+      "flags": ["😆", "😮‍💨", "😂", "💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pointing and Laughing",
+      "flags": ["🫵", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Try Not to Laugh",
+      "flags": ["🤭", "😬", "😂", "💥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Clown Show",
+      "flags": ["🤡", "🎪", "😂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kaomoji LOL Pack",
+      "flags": ["(≧▽≦)", "ヽ(´▽`)/", "(≧∇≦)/"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/crying-emoji/",
+      "title": "Crying Emoji & Kaomoji",
+      "desc": "Sobbing faces and tears-of-joy combos — laughter's closest cousin."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Meme and joke emoji strings ready to paste anywhere."
+    },
+    {
+      "href": "/library/happy-emoji/",
+      "title": "Happy Emoji & Kaomoji",
+      "desc": "Smiles, joy combos, and sunshine-mood emoji sets."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji library for every mood and reaction."
+    }
+  ]
+}

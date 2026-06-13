@@ -1,0 +1,172 @@
+{
+  "slug": "brainrot-slang-emojis",
+  "title": "Brainrot & Slang Emoji Combos: Copy & Paste Sigma Rizz 67",
+  "meta_description": "Brainrot and slang emoji combos to copy: sigma 🗿, rizz 😏, skull 💀, aura ✨, 67, and other current Gen Z meme sets in one place. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/brainrot-slang-emojis/",
+  "breadcrumb": "Brainrot & Slang Emojis",
+  "hero_h1": "Brainrot & Slang Emoji Combos",
+  "hero_tagline": "Sigma, rizz, aura, and skull-spam — the emoji shorthand of current internet slang. Click any emoji to copy it instantly.",
+  "intro": "Brainrot emojis are the visual shorthand of 2024–2026 internet slang: the 🗿 moai for sigma stoicism, 😏 for rizz, 💀 for \"I'm dead,\" ✨ for aura points, and the inexplicable \"6 7.\" This library collects the emojis behind the slang and the exact combos people spam in TikTok comments and Discord chats. Trends move fast, so this page is refreshed as new slang takes over — copy a single emoji or a full combo set in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "sigma-aura",
+      "label": "Sigma & Aura",
+      "h2": "Sigma & Aura Emojis",
+      "intro": "Stone-faced stoicism and aura-farming essentials.",
+      "symbols": [
+        { "char": "🗿", "label": "Moai" },
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "🐺", "label": "Wolf" },
+        { "char": "🥶", "label": "Cold Face" },
+        { "char": "🧊", "label": "Ice" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🌌", "label": "Milky Way" },
+        { "char": "🧘", "label": "Person in Lotus Position" }
+      ]
+    },
+    {
+      "id": "rizz-smirk",
+      "label": "Rizz",
+      "h2": "Rizz & Smirk Emojis",
+      "intro": "Charisma signals for W-rizz moments (and L-rizz disasters).",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😼", "label": "Cat With Wry Smile" },
+        { "char": "😉", "label": "Winking Face" },
+        { "char": "🕴", "label": "Person in Suit Levitating" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "💘", "label": "Heart With Arrow" }
+      ]
+    },
+    {
+      "id": "skull-dead",
+      "label": "Skull & Dead",
+      "h2": "Skull & \"I'm Dead\" Emojis",
+      "intro": "When something is so funny the only response is 💀.",
+      "symbols": [
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "😭", "label": "Loudly Crying Face" },
+        { "char": "😹", "label": "Cat With Tears of Joy" },
+        { "char": "⚰", "label": "Coffin" },
+        { "char": "🪦", "label": "Headstone" }
+      ]
+    },
+    {
+      "id": "fire-goat",
+      "label": "Fire & GOAT",
+      "h2": "Fire, GOAT & W Emojis",
+      "intro": "Hype emojis for wins, GOATs, and anything cooking.",
+      "symbols": [
+        { "char": "🔥", "label": "Fire" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🐐", "label": "Goat" },
+        { "char": "👑", "label": "Crown" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "📈", "label": "Chart Increasing" },
+        { "char": "📉", "label": "Chart Decreasing" }
+      ]
+    },
+    {
+      "id": "sus-chaos",
+      "label": "Sus & Chaos",
+      "h2": "Sus, NPC & Chaos Emojis",
+      "intro": "Suspicion, mewing, and pure brainrot chaos energy.",
+      "symbols": [
+        { "char": "🤨", "label": "Face With Raised Eyebrow" },
+        { "char": "📸", "label": "Camera With Flash" },
+        { "char": "📮", "label": "Postbox" },
+        { "char": "🧍", "label": "Person Standing" },
+        { "char": "🤖", "label": "Robot" },
+        { "char": "🤡", "label": "Clown Face" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "🤫", "label": "Shushing Face" },
+        { "char": "🧏", "label": "Deaf Person" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Brainrot Combo Sets",
+    "intro": "Copy the exact slang combo in one click — sigma grindset to skull spam, ready to paste."
+  },
+  "collection_container_id": "brainrotSetsContainer",
+  "collections": [
+    {
+      "name": "Sigma Grindset",
+      "flags": ["🗿", "🥶", "💯", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "W Rizz",
+      "flags": ["😏", "🔥", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "L Rizz",
+      "flags": ["💀", "📉", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Skull Spam",
+      "flags": ["💀", "💀", "💀", "😭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Six Seven",
+      "flags": ["6️⃣", "7️⃣", "🤷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Aura Check",
+      "flags": ["✨", "🌌", "🗿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Caught in 4K",
+      "flags": ["🤨", "📸", "💀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "GOAT Status",
+      "flags": ["🐐", "👑", "🔥", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mewing",
+      "flags": ["🤫", "🧏", "📈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "NPC Energy",
+      "flags": ["🧍", "🤖", "📱"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/moai-emoji/",
+      "title": "Moai Emoji",
+      "desc": "The 🗿 rock meme in every deadpan combo."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "General meme and joke emoji combinations for chats."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Judging looks, caught-in-4K combos, and disapproval kaomoji."
+    },
+    {
+      "href": "/library/meme-text-art/",
+      "title": "Meme Text Art",
+      "desc": "Dot art and copypasta meme collections to paste anywhere."
+    }
+  ]
+}

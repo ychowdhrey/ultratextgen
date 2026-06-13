@@ -1,0 +1,144 @@
+{
+  "slug": "shocked-emoji",
+  "title": "Shocked Emoji & Kaomoji: Copy & Paste 😱 Surprise Combos",
+  "meta_description": "Shocked emoji 😱 😲 🤯, surprised kaomoji like (⊙_⊙), and plot-twist combo sets for jaw-drop reactions and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/shocked-emoji/",
+  "breadcrumb": "Shocked Emoji & Kaomoji",
+  "hero_h1": "Shocked Emoji & Kaomoji",
+  "hero_tagline": "Screams, gasps, jaw drops, and wide-eyed (⊙_⊙) kaomoji — every degree of surprise. Click any symbol to copy it instantly.",
+  "intro": "When something is genuinely unbelievable, the shocked emoji does the talking — 😱 screams, 😲 gasps, and 🤯 has its mind blown entirely. This page rounds up every shocked and surprised face, the exclamation marks that punch up a gasp, nervous and spooked expressions, and bug-eyed kaomoji like Σ(ﾟДﾟ) — with one-click surprise combos for plot twists, gossip threads, and jump-scare reactions.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "shocked-faces",
+      "label": "Core Shocked Faces",
+      "h2": "Shocked & Surprised Face Emojis",
+      "intro": "The main surprise faces, from a quiet gasp to a full scream.",
+      "symbols": [
+        { "char": "😱", "label": "Face Screaming in Fear" },
+        { "char": "😨", "label": "Fearful Face" },
+        { "char": "😲", "label": "Astonished Face" },
+        { "char": "😮", "label": "Face With Open Mouth" },
+        { "char": "😯", "label": "Hushed Face" },
+        { "char": "😳", "label": "Flushed Face" },
+        { "char": "🙀", "label": "Weary Cat" },
+        { "char": "🫢", "label": "Face With Open Eyes and Hand Over Mouth" }
+      ]
+    },
+    {
+      "id": "mind-blown",
+      "label": "Mind Blown",
+      "h2": "Mind-Blown & Exclamation Symbols",
+      "intro": "Exploding heads and emphasis marks that make the shock land harder.",
+      "symbols": [
+        { "char": "🤯", "label": "Exploding Head" },
+        { "char": "‼", "label": "Double Exclamation Mark" },
+        { "char": "⁉", "label": "Exclamation Question Mark" },
+        { "char": "❗", "label": "Red Exclamation Mark" },
+        { "char": "❓", "label": "Red Question Mark" },
+        { "char": "💥", "label": "Collision" },
+        { "char": "😵", "label": "Face With Crossed-Out Eyes" },
+        { "char": "😵‍💫", "label": "Face With Spiral Eyes" }
+      ]
+    },
+    {
+      "id": "nervous-spooked",
+      "label": "Nervous & Spooked",
+      "h2": "Nervous, Spooked & Speechless Faces",
+      "intro": "For when the surprise is unsettling — peeking, chills, and stunned silence.",
+      "symbols": [
+        { "char": "🫣", "label": "Face With Peeking Eye" },
+        { "char": "👀", "label": "Eyes" },
+        { "char": "😧", "label": "Anguished Face" },
+        { "char": "🥶", "label": "Cold Face" },
+        { "char": "👻", "label": "Ghost" },
+        { "char": "😶", "label": "Face Without Mouth" }
+      ]
+    },
+    {
+      "id": "shocked-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Shocked Kaomoji & Text Faces",
+      "intro": "Bug-eyed, jaw-dropped Japanese-style text faces frozen in disbelief.",
+      "symbols": [
+        { "char": "(⊙_⊙)", "label": "Wide Eyes Kaomoji" },
+        { "char": "Σ(ﾟДﾟ)", "label": "Sudden Shock Kaomoji" },
+        { "char": "Σ(°△°|||)", "label": "Startled Jolt Kaomoji" },
+        { "char": "w(°ｏ°)w", "label": "Hands-Up Gasp Kaomoji" },
+        { "char": "(ﾟоﾟ)", "label": "Open-Mouth Stare Kaomoji" },
+        { "char": "ヽ(ﾟДﾟ)ﾉ", "label": "Panicked Flail Kaomoji" },
+        { "char": "(○o○)", "label": "Round-Eyed Surprise Kaomoji" },
+        { "char": "☉_☉", "label": "Frozen Stare Kaomoji" },
+        { "char": "(((ﾟДﾟ;)))", "label": "Trembling Shock Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Surprise Combo Sets",
+    "intro": "Copy a full shock reaction in one click — built for plot twists and breaking news."
+  },
+  "collection_container_id": "shockedSetsContainer",
+  "collections": [
+    {
+      "name": "Jump Scare",
+      "flags": ["😱", "‼", "💥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Speechless",
+      "flags": ["😶", "😳", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Plot Twist",
+      "flags": ["😮", "🤯", "⁉", "🍿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Caught Off Guard",
+      "flags": ["😳", "🫢", "👀", "❗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Horror Scream",
+      "flags": ["😱", "👻", "🕷", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mind Blown",
+      "flags": ["🤯", "💥", "🧠", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kaomoji Shock Pack",
+      "flags": ["(⊙_⊙)", "Σ(ﾟДﾟ)", "ヽ(ﾟДﾟ)ﾉ"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/angry-emoji/",
+      "title": "Angry Emoji & Kaomoji",
+      "desc": "Rage faces and table-flip kaomoji when shock turns to fury."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Judging looks for the suspicious kind of surprise."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every face emoji in one copyable reference grid."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The complete kaomoji library across every emotion."
+    }
+  ]
+}
