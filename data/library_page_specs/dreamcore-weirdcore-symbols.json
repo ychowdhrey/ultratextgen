@@ -1,0 +1,157 @@
+{
+  "slug": "dreamcore-weirdcore-symbols",
+  "title": "Dreamcore & Weirdcore Symbols: Copy & Paste 👁 🌈 ⋆ Surreal Aesthetic",
+  "meta_description": "Dreamcore and weirdcore symbols — surreal eyes 👁, rainbows 🌈, glitch blocks, doors, and sleepcore combos for liminal posts. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/dreamcore-weirdcore-symbols/",
+  "breadcrumb": "Dreamcore & Weirdcore Symbols",
+  "hero_h1": "Dreamcore & Weirdcore Symbols",
+  "hero_tagline": "Surreal eyes, endless doors, static glitch blocks, and sleepy skies for liminal-space aesthetics. Click any symbol or combo to copy it instantly.",
+  "intro": "Dreamcore and weirdcore are sibling internet aesthetics built on the surreal logic of dreams — nostalgic skies, watching eyes, doors to nowhere, and slightly-off familiar objects. These dreamcore and weirdcore symbols translate that mood into copyable text: 👁 eyes, 🌈 rainbows, 📺 old televisions, shade blocks for static, and a sleepcore set for softer, drowsier edits. Use them in Discord statuses, Tumblr headers, TikTok captions, and YouTube descriptions, or grab a whole surreal combo below.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "eyes-surreal",
+      "label": "Watching Eyes",
+      "h2": "Watching Eye Symbols",
+      "intro": "The unblinking eyes at the heart of weirdcore imagery, from emoji to Egyptian hieroglyphs.",
+      "symbols": [
+        { "char": "👁", "label": "Eye" },
+        { "char": "👁️", "label": "Eye (Emoji Style)" },
+        { "char": "👀", "label": "Eyes" },
+        { "char": "𓂀", "label": "Eye of Horus (Egyptian Hieroglyph)" },
+        { "char": "𓁹", "label": "Egyptian Hieroglyph Eye" },
+        { "char": "◉", "label": "Fisheye" },
+        { "char": "⊙", "label": "Circled Dot Operator" },
+        { "char": "👁️‍🗨️", "label": "Eye in Speech Bubble" }
+      ]
+    },
+    {
+      "id": "dream-sky",
+      "label": "Dream Sky",
+      "h2": "Dreamcore Sky Symbols",
+      "intro": "Rainbows, clouds, and swirling skies — the bright, nostalgic half of the aesthetic.",
+      "symbols": [
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "☁️", "label": "Cloud" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌀", "label": "Cyclone" },
+        { "char": "🫧", "label": "Bubbles" },
+        { "char": "🌌", "label": "Milky Way" },
+        { "char": "💫", "label": "Dizzy" }
+      ]
+    },
+    {
+      "id": "weirdcore-objects",
+      "label": "Weirdcore Objects",
+      "h2": "Weirdcore Object Symbols",
+      "intro": "Doors, holes, mirrors, and old TVs — familiar objects placed where they should not be.",
+      "symbols": [
+        { "char": "📺", "label": "Television" },
+        { "char": "🚪", "label": "Door" },
+        { "char": "🕳", "label": "Hole" },
+        { "char": "🪞", "label": "Mirror" },
+        { "char": "🛗", "label": "Elevator" },
+        { "char": "🎈", "label": "Balloon" },
+        { "char": "🩹", "label": "Adhesive Bandage" },
+        { "char": "🧸", "label": "Teddy Bear" }
+      ]
+    },
+    {
+      "id": "sleepcore",
+      "label": "Sleepcore",
+      "h2": "Sleepcore Symbols",
+      "intro": "The drowsy sub-aesthetic — beds, night skies, and the soft pull of sleep.",
+      "symbols": [
+        { "char": "💤", "label": "Zzz" },
+        { "char": "🛏", "label": "Bed" },
+        { "char": "😴", "label": "Sleeping Face" },
+        { "char": "🌃", "label": "Night with Stars" },
+        { "char": "🕰", "label": "Mantelpiece Clock" },
+        { "char": "🥱", "label": "Yawning Face" }
+      ]
+    },
+    {
+      "id": "glitch-static",
+      "label": "Glitch & Static",
+      "h2": "Glitch & Static Block Characters",
+      "intro": "Unicode shade and block characters that read as TV static and corrupted pixels.",
+      "symbols": [
+        { "char": "░", "label": "Light Shade" },
+        { "char": "▒", "label": "Medium Shade" },
+        { "char": "▓", "label": "Dark Shade" },
+        { "char": "█", "label": "Full Block" },
+        { "char": "▚", "label": "Quadrant Upper Left and Lower Right" },
+        { "char": "⋆", "label": "Star Operator" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Dreamcore & Weirdcore Combo Sets",
+    "intro": "Copy a full surreal combo in one click — eyes, skies, static, and sleep, ready to paste anywhere."
+  },
+  "collection_container_id": "dreamcoreSetsContainer",
+  "collections": [
+    {
+      "name": "Dreamcore Sky",
+      "flags": ["🌈", "☁️", "👁", "⭐", "🌀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Weirdcore Hallway",
+      "flags": ["🚪", "📺", "🕳", "🪞", "👁"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sleepcore Drift",
+      "flags": ["💤", "🛏", "🌙", "☁️", "😴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "All-Seeing Eyes",
+      "flags": ["👁", "𓂀", "◉", "👀", "⊙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Static Glitch Bars",
+      "flags": ["░▒▓█▓▒░", "▓▒░⋆░▒▓", "█▓▒░"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pastel Dream",
+      "flags": ["🫧", "🌈", "🪞", "💫", "☁️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Liminal Night",
+      "flags": ["🌃", "🛗", "🕰", "🌌", "🚪"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/fairycore-symbols/",
+      "title": "Fairycore Symbols",
+      "desc": "Fairies, mushrooms, and pixie-dust sparkles for enchanted bios."
+    },
+    {
+      "href": "/library/y2k-symbols/",
+      "title": "Y2K Symbols",
+      "desc": "Retro-futuristic 2000s characters and cyber aesthetic marks."
+    },
+    {
+      "href": "/library/goth-grunge-symbols/",
+      "title": "Goth & Grunge Symbols",
+      "desc": "Dark aesthetic characters for goth and grunge profiles."
+    },
+    {
+      "href": "/library/aesthetic-symbols/",
+      "title": "Aesthetic Symbols",
+      "desc": "The master collection of aesthetic text symbols and dividers."
+    }
+  ]
+}

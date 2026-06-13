@@ -1,0 +1,142 @@
+{
+  "slug": "preppy-emoji-combos",
+  "title": "Preppy Emoji Combos: Copy & Paste Pink Bow Smiley Themes",
+  "meta_description": "Preppy emoji combos with pink hearts 🩷, bows 🎀, lightning bolts ⚡, smileys, and beachy themes for bright bios. Click any combo or symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/preppy-emoji-combos/",
+  "breadcrumb": "Preppy Emoji Combos",
+  "hero_h1": "Preppy Emoji Combos",
+  "hero_tagline": "Pink hearts, bows, lightning bolts, smileys, and beachy brights — the full preppy starter pack. Click any symbol or combo to copy it instantly.",
+  "intro": "The preppy aesthetic is all about bright, happy maximalism — hot pink, smiley faces, lightning bolts, shells, and leopard print. These preppy emoji combos bundle the look into ready-to-paste strings for Instagram bios, TikTok usernames, phone-case-worthy captions, and bedroom-decor Pinterest boards. Copy individual symbols from the themed grids or grab a complete preppy combo set in one click below.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "pink-bows",
+      "label": "Pink & Bows",
+      "h2": "Pink Hearts & Bow Emoji",
+      "intro": "The pink core of the preppy palette — hearts in every shade plus the signature bow.",
+      "symbols": [
+        { "char": "🎀", "label": "Ribbon" },
+        { "char": "🩷", "label": "Pink Heart" },
+        { "char": "💗", "label": "Growing Heart" },
+        { "char": "💕", "label": "Two Hearts" },
+        { "char": "💖", "label": "Sparkling Heart" },
+        { "char": "🌸", "label": "Cherry Blossom" }
+      ]
+    },
+    {
+      "id": "smiley-bright",
+      "label": "Smiley & Bright",
+      "h2": "Smiley & Lightning Bolt Emoji",
+      "intro": "Smileys, bolts, and rainbows — the happy-energy icons preppy is famous for.",
+      "symbols": [
+        { "char": "😊", "label": "Smiling Face with Smiling Eyes" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "☮️", "label": "Peace Symbol" },
+        { "char": "✌️", "label": "Victory Hand" },
+        { "char": "🌟", "label": "Glowing Star" }
+      ]
+    },
+    {
+      "id": "beach-tropical",
+      "label": "Beachy",
+      "h2": "Beachy & Tropical Emoji",
+      "intro": "Shells, palms, and fruit for the coastal-prep side of the aesthetic.",
+      "symbols": [
+        { "char": "🌊", "label": "Water Wave" },
+        { "char": "🐚", "label": "Spiral Shell" },
+        { "char": "🌴", "label": "Palm Tree" },
+        { "char": "🦩", "label": "Flamingo" },
+        { "char": "🍉", "label": "Watermelon" },
+        { "char": "🍍", "label": "Pineapple" },
+        { "char": "🥥", "label": "Coconut" },
+        { "char": "🌺", "label": "Hibiscus" }
+      ]
+    },
+    {
+      "id": "glam-shopping",
+      "label": "Glam",
+      "h2": "Glam & Shopping Emoji",
+      "intro": "Nails, bags, and leopard print for the glossy shopping-spree finish.",
+      "symbols": [
+        { "char": "💅", "label": "Nail Polish" },
+        { "char": "🛍️", "label": "Shopping Bags" },
+        { "char": "👛", "label": "Purse" },
+        { "char": "👜", "label": "Handbag" },
+        { "char": "💄", "label": "Lipstick" },
+        { "char": "🐆", "label": "Leopard" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "🤎", "label": "Brown Heart" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Preppy Combo Sets",
+    "intro": "Copy a complete preppy emoji combo in one click — pre-mixed themes for bios, usernames, and captions."
+  },
+  "collection_container_id": "preppySetsContainer",
+  "collections": [
+    {
+      "name": "Classic Preppy",
+      "flags": ["🩷", "⚡", "😊", "🌺", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pink Bow Energy",
+      "flags": ["🎀", "🩷", "💕", "🌸", "💖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Beachy Preppy",
+      "flags": ["🌊", "🐚", "🦩", "🌴", "🍉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Smiley Lightning",
+      "flags": ["😊", "⚡", "🌈", "☮️", "✌️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Glam Shopping Spree",
+      "flags": ["🛍️", "💅", "👛", "💄", "🩷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Leopard Luxe",
+      "flags": ["🐆", "🤎", "⭐", "👜", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Summer Prep",
+      "flags": ["🍍", "🌺", "⚡", "🐚", "😊"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/coquette-symbols/",
+      "title": "Coquette Symbols",
+      "desc": "Bows, ribbons, and soft feminine aesthetic characters."
+    },
+    {
+      "href": "/library/beauty-nails-emojis/",
+      "title": "Beauty & Nails Emojis",
+      "desc": "Nail polish, makeup, and glam combos for beauty bios."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "The master collection of aesthetic emoji combinations."
+    },
+    {
+      "href": "/library/kawaii-cute-symbols/",
+      "title": "Kawaii & Cute Symbols",
+      "desc": "Adorable Japanese-style cute characters and faces."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "slug": "crying-emoji",
+  "title": "Crying Emoji & Kaomoji: Copy & Paste 😭 Tears Combos",
+  "meta_description": "Copy and paste crying emoji like 😭 😢 🥹, sobbing kaomoji such as (T_T), and tearful combo sets for captions and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/crying-emoji/",
+  "breadcrumb": "Crying Emoji & Kaomoji",
+  "hero_h1": "Crying Emoji & Kaomoji",
+  "hero_tagline": "Every crying emoji from full 😭 sobbing to 🥹 held-back tears, plus kaomoji and ready-made tear combos. Click any symbol to copy it instantly.",
+  "intro": "The crying emoji is one of the most-used characters on the internet — 😭 alone doubles as genuine sobbing and exaggerated crying-laughing. This page collects every crying emoji variant, the water and heartbreak symbols that pair with them, classic Japanese crying kaomoji like (;﹏;), and one-click combo sets for captions, comments, and group-chat reactions. If you want quieter melancholy rather than open tears, see the sad emoji page linked below.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "crying-faces",
+      "label": "Core Crying Faces",
+      "h2": "Crying Emoji Variants",
+      "intro": "The main crying faces, from loud sobbing to a single happy tear.",
+      "symbols": [
+        { "char": "😭", "label": "Loudly Crying Face" },
+        { "char": "😢", "label": "Crying Face" },
+        { "char": "🥹", "label": "Face Holding Back Tears" },
+        { "char": "🥲", "label": "Smiling Face With Tear" },
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "🤣", "label": "Rolling on the Floor Laughing" },
+        { "char": "😿", "label": "Crying Cat" },
+        { "char": "😪", "label": "Sleepy Face" }
+      ]
+    },
+    {
+      "id": "tears-and-rain",
+      "label": "Tears & Rain",
+      "h2": "Tears, Drops & Rain Symbols",
+      "intro": "Water and weather symbols that amplify a crying message or combo.",
+      "symbols": [
+        { "char": "💧", "label": "Droplet" },
+        { "char": "💦", "label": "Sweat Droplets" },
+        { "char": "🌧", "label": "Cloud With Rain" },
+        { "char": "☔", "label": "Umbrella With Rain Drops" },
+        { "char": "🌊", "label": "Water Wave" },
+        { "char": "💔", "label": "Broken Heart" },
+        { "char": "🫠", "label": "Melting Face" }
+      ]
+    },
+    {
+      "id": "distress-faces",
+      "label": "Distress Faces",
+      "h2": "Related Distress & Pleading Faces",
+      "intro": "Faces on the edge of tears — weary, overwhelmed, or pleading.",
+      "symbols": [
+        { "char": "😩", "label": "Weary Face" },
+        { "char": "😫", "label": "Tired Face" },
+        { "char": "😣", "label": "Persevering Face" },
+        { "char": "😖", "label": "Confounded Face" },
+        { "char": "🥺", "label": "Pleading Face" },
+        { "char": "😞", "label": "Disappointed Face" },
+        { "char": "😥", "label": "Sad but Relieved Face" },
+        { "char": "😰", "label": "Anxious Face With Sweat" }
+      ]
+    },
+    {
+      "id": "crying-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Crying Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces that cry with full-width tears — paste them anywhere plain text works.",
+      "symbols": [
+        { "char": "(T_T)", "label": "Streaming Tears Kaomoji" },
+        { "char": "(;_;)", "label": "Quiet Tears Kaomoji" },
+        { "char": "(ToT)", "label": "Wailing Kaomoji" },
+        { "char": "(;﹏;)", "label": "Trembling Tears Kaomoji" },
+        { "char": "(╥﹏╥)", "label": "Heavy Tears Kaomoji" },
+        { "char": "(ಥ_ಥ)", "label": "Tearful Eyes Kaomoji" },
+        { "char": "( ; ω ; )", "label": "Soft Sobbing Kaomoji" },
+        { "char": "(｡•́︿•̀｡)", "label": "Welling Up Kaomoji" },
+        { "char": "・゜・(ノД`)・゜・", "label": "Dramatic Sobbing Kaomoji" },
+        { "char": "(个_个)", "label": "Tears Falling Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Crying Emoji Combo Sets",
+    "intro": "Ready-made crying combos — copy a full set with one click and paste it straight into a caption or reply."
+  },
+  "collection_container_id": "cryingSetsContainer",
+  "collections": [
+    {
+      "name": "Full Sobbing Breakdown",
+      "flags": ["😭", "😭", "💧", "💔", "🥀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tears of Joy",
+      "flags": ["😂", "🤣", "😭", "✋", "💀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Holding It Together",
+      "flags": ["🥹", "🥲", "💧", "🤍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rainy Day Cry",
+      "flags": ["🌧", "☔", "😢", "💧", "🎧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pleading Tears",
+      "flags": ["🥺", "💧", "👉", "👈", "💗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heartbreak Cry",
+      "flags": ["💔", "😭", "🥀", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kaomoji Cry Pack",
+      "flags": ["(;﹏;)", "(T_T)", "(ಥ_ಥ)", "(╥﹏╥)"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/sad-emoji/",
+      "title": "Sad Emoji & Kaomoji",
+      "desc": "Melancholy, disappointed, and heartbroken faces for quieter sadness."
+    },
+    {
+      "href": "/library/laughing-emoji/",
+      "title": "Laughing Emoji & Kaomoji",
+      "desc": "LOL faces, skull combos, and crying-laughing reactions."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji library — happy, sad, angry, and everything between."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    }
+  ]
+}

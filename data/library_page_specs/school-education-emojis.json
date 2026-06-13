@@ -1,0 +1,158 @@
+{
+  "slug": "school-education-emojis",
+  "title": "School & Education Emojis: Copy & Paste 🎓 📚 Study Combos",
+  "meta_description": "Copy and paste school emojis — 🎓 graduation cap, 📚 books, ✏️ pencil — with study-bio combos for back-to-school posts. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/school-education-emojis/",
+  "breadcrumb": "School & Education Emojis",
+  "hero_h1": "School & Education Emojis",
+  "hero_tagline": "Graduation caps, books, pencils, and ready-made study combo sets for student bios and class posts. Click any emoji to copy it instantly.",
+  "intro": "School emojis cover everything from the first day of class to graduation day. This page gathers the full education set — 🎓 graduation cap, 📚 books, ✏️ pencil, 🔬 microscope — organized into supplies, achievement, science, and study-time sections. Students use them in study-account bios, back-to-school captions, and exam-week group chats; teachers drop them into classroom newsletters and celebration posts. One-click combo sets for graduation, exam week, and study-grind aesthetics are at the bottom.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "school-supplies",
+      "label": "Supplies",
+      "h2": "School Supply Emojis",
+      "intro": "Books, notebooks, pencils, and the rest of the pencil-case lineup.",
+      "symbols": [
+        { "char": "📚", "label": "Books" },
+        { "char": "📖", "label": "Open Book" },
+        { "char": "📓", "label": "Notebook" },
+        { "char": "📒", "label": "Ledger" },
+        { "char": "📝", "label": "Memo" },
+        { "char": "✏️", "label": "Pencil" },
+        { "char": "🖊️", "label": "Pen" },
+        { "char": "🖍️", "label": "Crayon" },
+        { "char": "📏", "label": "Straight Ruler" },
+        { "char": "📐", "label": "Triangular Ruler" },
+        { "char": "✂️", "label": "Scissors" },
+        { "char": "📎", "label": "Paperclip" }
+      ]
+    },
+    {
+      "id": "graduation-achievement",
+      "label": "Graduation",
+      "h2": "Graduation & Achievement Emojis",
+      "intro": "Caps, diplomas, and medals for graduation posts and academic wins.",
+      "symbols": [
+        { "char": "🎓", "label": "Graduation Cap" },
+        { "char": "🏫", "label": "School" },
+        { "char": "🎒", "label": "Backpack" },
+        { "char": "📜", "label": "Scroll" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🥇", "label": "1st Place Medal" },
+        { "char": "🏅", "label": "Sports Medal" },
+        { "char": "🎉", "label": "Party Popper" }
+      ]
+    },
+    {
+      "id": "science-subjects",
+      "label": "Subjects",
+      "h2": "Science & Subject Emojis",
+      "intro": "Lab gear, geography, math, and arts emojis for every class on the timetable.",
+      "symbols": [
+        { "char": "🔬", "label": "Microscope" },
+        { "char": "🧪", "label": "Test Tube" },
+        { "char": "🧬", "label": "DNA" },
+        { "char": "🔭", "label": "Telescope" },
+        { "char": "🧮", "label": "Abacus" },
+        { "char": "🌍", "label": "Globe Showing Europe-Africa" },
+        { "char": "🗺️", "label": "World Map" },
+        { "char": "🎨", "label": "Artist Palette" },
+        { "char": "🎵", "label": "Musical Note" },
+        { "char": "🔢", "label": "Input Numbers" }
+      ]
+    },
+    {
+      "id": "study-time",
+      "label": "Study Time",
+      "h2": "Study & Exam Emojis",
+      "intro": "Late-night cram sessions, deadlines, and lightbulb moments.",
+      "symbols": [
+        { "char": "⏰", "label": "Alarm Clock" },
+        { "char": "📅", "label": "Calendar" },
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "💡", "label": "Light Bulb" },
+        { "char": "🤓", "label": "Nerd Face" },
+        { "char": "🧠", "label": "Brain" },
+        { "char": "💻", "label": "Laptop" },
+        { "char": "📊", "label": "Bar Chart" },
+        { "char": "✅", "label": "Check Mark Button" },
+        { "char": "🍎", "label": "Red Apple" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "School & Study Combo Sets",
+    "intro": "Copy a complete study or school combo in one click — perfect for student bios, back-to-school captions, and exam-week posts."
+  },
+  "collection_container_id": "schoolSetsContainer",
+  "collections": [
+    {
+      "name": "Back to School",
+      "flags": ["🎒", "📚", "✏️", "🏫", "🍎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Graduation Day",
+      "flags": ["🎓", "📜", "🎉", "🥳", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Study Grind Bio",
+      "flags": ["📚", "☕", "💻", "🧠", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Exam Week",
+      "flags": ["📝", "⏰", "☕", "💪", "🍀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Science Class",
+      "flags": ["🔬", "🧪", "🧬", "🥽", "📊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Teacher Appreciation",
+      "flags": ["🍎", "📚", "✏️", "💐", "🌟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Math Mode",
+      "flags": ["🧮", "📐", "📏", "🔢", "✏️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bookworm Aesthetic",
+      "flags": ["📖", "🕯️", "☕", "🍂", "🤓"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/art-stationery-emojis/",
+      "title": "Art & Stationery Emojis",
+      "desc": "Pencils, palettes, and creative-tool emojis for art accounts."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators and notation characters to copy and paste."
+    },
+    {
+      "href": "/library/people-profession-emojis/",
+      "title": "People & Profession Emojis",
+      "desc": "Teachers, scientists, and other profession emojis."
+    },
+    {
+      "href": "/library/nerd-emoji/",
+      "title": "Nerd Emoji",
+      "desc": "The 🤓 nerd face and meme combo sets built around it."
+    }
+  ]
+}

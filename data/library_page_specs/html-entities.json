@@ -1,0 +1,145 @@
+{
+  "slug": "html-entities",
+  "title": "HTML Entities: Copy & Paste Symbol Codes for the Web",
+  "meta_description": "HTML entities reference — named codes like &amp;, &copy;, and &hearts; with the characters they produce, grouped by type. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/html-entities/",
+  "breadcrumb": "HTML Entities",
+  "hero_h1": "HTML Entities",
+  "hero_tagline": "Named HTML entity codes and the characters they produce — reserved characters, punctuation, math, and more. Click any character to copy it instantly.",
+  "intro": "HTML entities are named codes like &amp; and &copy; that let you write special characters safely in web markup — essential for the reserved characters &, <, and >, and convenient for symbols that are hard to type. This reference lists the most useful HTML entities grouped by category, with each character labeled by its entity name. Click a character to copy the symbol itself, or type the entity code shown in its label into your HTML.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "reserved-characters",
+      "label": "Reserved",
+      "h2": "Reserved HTML Characters",
+      "intro": "The characters that must always be escaped in HTML markup.",
+      "symbols": [
+        { "char": "&", "label": "&amp; — Ampersand" },
+        { "char": "<", "label": "&lt; — Less-Than Sign" },
+        { "char": ">", "label": "&gt; — Greater-Than Sign" },
+        { "char": "\"", "label": "&quot; — Quotation Mark" },
+        { "char": "'", "label": "&apos; — Apostrophe" }
+      ]
+    },
+    {
+      "id": "punctuation-entities",
+      "label": "Punctuation",
+      "h2": "Punctuation & Typography Entities",
+      "intro": "Smart quotes, dashes, and typographic marks for clean web copy.",
+      "symbols": [
+        { "char": " ", "label": "&nbsp; — Non-Breaking Space (Renders Blank)" },
+        { "char": "–", "label": "&ndash; — En Dash" },
+        { "char": "—", "label": "&mdash; — Em Dash" },
+        { "char": "…", "label": "&hellip; — Horizontal Ellipsis" },
+        { "char": "•", "label": "&bull; — Bullet" },
+        { "char": "§", "label": "&sect; — Section Sign" },
+        { "char": "¶", "label": "&para; — Pilcrow Sign" },
+        { "char": "“", "label": "&ldquo; — Left Double Quotation Mark" },
+        { "char": "”", "label": "&rdquo; — Right Double Quotation Mark" },
+        { "char": "‘", "label": "&lsquo; — Left Single Quotation Mark" },
+        { "char": "’", "label": "&rsquo; — Right Single Quotation Mark" },
+        { "char": "«", "label": "&laquo; — Left Guillemet" },
+        { "char": "»", "label": "&raquo; — Right Guillemet" }
+      ]
+    },
+    {
+      "id": "currency-legal-entities",
+      "label": "Currency & Legal",
+      "h2": "Currency & Legal Entities",
+      "intro": "Money symbols plus the copyright, registered, and trademark signs.",
+      "symbols": [
+        { "char": "©", "label": "&copy; — Copyright Sign" },
+        { "char": "®", "label": "&reg; — Registered Sign" },
+        { "char": "™", "label": "&trade; — Trade Mark Sign" },
+        { "char": "€", "label": "&euro; — Euro Sign" },
+        { "char": "£", "label": "&pound; — Pound Sign" },
+        { "char": "¥", "label": "&yen; — Yen Sign" },
+        { "char": "¢", "label": "&cent; — Cent Sign" }
+      ]
+    },
+    {
+      "id": "math-entities",
+      "label": "Math",
+      "h2": "Math & Measurement Entities",
+      "intro": "Operators, fractions, and comparison symbols for technical pages.",
+      "symbols": [
+        { "char": "×", "label": "&times; — Multiplication Sign" },
+        { "char": "÷", "label": "&divide; — Division Sign" },
+        { "char": "±", "label": "&plusmn; — Plus-Minus Sign" },
+        { "char": "½", "label": "&frac12; — Fraction One Half" },
+        { "char": "¼", "label": "&frac14; — Fraction One Quarter" },
+        { "char": "¾", "label": "&frac34; — Fraction Three Quarters" },
+        { "char": "°", "label": "&deg; — Degree Sign" },
+        { "char": "µ", "label": "&micro; — Micro Sign" },
+        { "char": "∞", "label": "&infin; — Infinity" },
+        { "char": "≈", "label": "&asymp; — Almost Equal To" },
+        { "char": "≠", "label": "&ne; — Not Equal To" },
+        { "char": "≤", "label": "&le; — Less-Than or Equal To" },
+        { "char": "≥", "label": "&ge; — Greater-Than or Equal To" },
+        { "char": "√", "label": "&radic; — Square Root" }
+      ]
+    },
+    {
+      "id": "arrows-shapes-entities",
+      "label": "Arrows & Shapes",
+      "h2": "Arrow, Heart & Shape Entities",
+      "intro": "Directional arrows, card suits, and stars with named entity codes.",
+      "symbols": [
+        { "char": "←", "label": "&larr; — Leftwards Arrow" },
+        { "char": "→", "label": "&rarr; — Rightwards Arrow" },
+        { "char": "↑", "label": "&uarr; — Upwards Arrow" },
+        { "char": "↓", "label": "&darr; — Downwards Arrow" },
+        { "char": "↔", "label": "&harr; — Left Right Arrow" },
+        { "char": "♥", "label": "&hearts; — Black Heart Suit" },
+        { "char": "♦", "label": "&diams; — Black Diamond Suit" },
+        { "char": "♣", "label": "&clubs; — Black Club Suit" },
+        { "char": "♠", "label": "&spades; — Black Spade Suit" },
+        { "char": "★", "label": "&starf; — Black Star" },
+        { "char": "☆", "label": "&star; — White Star" }
+      ]
+    },
+    {
+      "id": "accented-entities",
+      "label": "Accented Letters",
+      "h2": "Accented Letter Entities",
+      "intro": "European accented letters with their named entities.",
+      "symbols": [
+        { "char": "é", "label": "&eacute; — E with Acute" },
+        { "char": "è", "label": "&egrave; — E with Grave" },
+        { "char": "ê", "label": "&ecirc; — E with Circumflex" },
+        { "char": "ñ", "label": "&ntilde; — N with Tilde" },
+        { "char": "ü", "label": "&uuml; — U with Diaeresis" },
+        { "char": "ç", "label": "&ccedil; — C with Cedilla" },
+        { "char": "å", "label": "&aring; — A with Ring Above" },
+        { "char": "ø", "label": "&oslash; — O with Stroke" },
+        { "char": "æ", "label": "&aelig; — Ligature AE" },
+        { "char": "ß", "label": "&szlig; — Sharp S (Eszett)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/alt-codes/",
+      "title": "Alt Codes",
+      "desc": "Keyboard Alt key codes for typing special characters."
+    },
+    {
+      "href": "/library/ascii-table/",
+      "title": "ASCII Table",
+      "desc": "Decimal and hex codes for every printable ASCII character."
+    },
+    {
+      "href": "/library/latex-symbols/",
+      "title": "LaTeX Symbols",
+      "desc": "Math notation characters with their LaTeX commands."
+    },
+    {
+      "href": "/library/copyright-trademark-symbols/",
+      "title": "Copyright & Trademark Symbols",
+      "desc": "©, ®, ™ and other legal marks to copy and paste."
+    }
+  ]
+}

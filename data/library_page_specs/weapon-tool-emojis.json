@@ -1,0 +1,154 @@
+{
+  "slug": "weapon-tool-emojis",
+  "title": "Weapon & Tool Emojis: Copy & Paste ⚔ 🔪 🔨 Battle Combos",
+  "meta_description": "Reference list of weapon and tool emojis — swords ⚔️, shields 🛡️, bows 🏹, hammers 🔨, plus gaming battle combo sets. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/weapon-tool-emojis/",
+  "breadcrumb": "Weapon & Tool Emojis",
+  "hero_h1": "Weapon & Tool Emojis",
+  "hero_tagline": "Swords, shields, hammers, and workshop tools for gaming bios and battle-themed posts. Click any emoji to copy it instantly.",
+  "intro": "Weapon and tool emojis show up constantly in gaming clips, clan names, RPG-flavored bios, and DIY captions — crossed swords for a duel, a shield for defense mains, a hammer and wrench for builders. This reference lists the blade, ranged, tool, and hardware emojis in Unicode, with ready-made loadout combo sets you can copy in one click.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "swords-blades",
+      "label": "Blades",
+      "h2": "Sword & Blade Emojis",
+      "intro": "Swords, daggers, and other bladed emojis.",
+      "symbols": [
+        { "char": "⚔️", "label": "Crossed Swords" },
+        { "char": "🗡️", "label": "Dagger" },
+        { "char": "🔪", "label": "Kitchen Knife" },
+        { "char": "🪓", "label": "Axe" },
+        { "char": "🪃", "label": "Boomerang" }
+      ]
+    },
+    {
+      "id": "shields-ranged",
+      "label": "Shields & Ranged",
+      "h2": "Shield & Ranged Emojis",
+      "intro": "Defense and ranged emojis for battle-themed posts.",
+      "symbols": [
+        { "char": "🛡️", "label": "Shield" },
+        { "char": "🏹", "label": "Bow and Arrow" },
+        { "char": "🔫", "label": "Water Pistol" },
+        { "char": "💣", "label": "Bomb" },
+        { "char": "🧨", "label": "Firecracker" },
+        { "char": "🎯", "label": "Direct Hit" }
+      ]
+    },
+    {
+      "id": "hammers-tools",
+      "label": "Tools",
+      "h2": "Hammer & Workshop Tool Emojis",
+      "intro": "Hammers, wrenches, and build-and-repair tool emojis.",
+      "symbols": [
+        { "char": "🔨", "label": "Hammer" },
+        { "char": "⚒️", "label": "Hammer and Pick" },
+        { "char": "🛠️", "label": "Hammer and Wrench" },
+        { "char": "⛏️", "label": "Pick" },
+        { "char": "🪛", "label": "Screwdriver" },
+        { "char": "🔧", "label": "Wrench" },
+        { "char": "🪚", "label": "Carpentry Saw" },
+        { "char": "🧰", "label": "Toolbox" },
+        { "char": "🪜", "label": "Ladder" }
+      ]
+    },
+    {
+      "id": "hardware-parts",
+      "label": "Hardware",
+      "h2": "Hardware & Parts Emojis",
+      "intro": "Gears, bolts, and mechanical part emojis.",
+      "symbols": [
+        { "char": "⚙️", "label": "Gear" },
+        { "char": "🔩", "label": "Nut and Bolt" },
+        { "char": "🧲", "label": "Magnet" },
+        { "char": "🪝", "label": "Hook" },
+        { "char": "⛓️", "label": "Chains" },
+        { "char": "🪤", "label": "Mouse Trap" },
+        { "char": "🔗", "label": "Link" }
+      ]
+    },
+    {
+      "id": "battle-effects",
+      "label": "Effects",
+      "h2": "Battle Effect & Power Emojis",
+      "intro": "Impact, energy, and magic emojis that round out a battle combo.",
+      "symbols": [
+        { "char": "💥", "label": "Collision" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "🪄", "label": "Magic Wand" },
+        { "char": "🧪", "label": "Test Tube" },
+        { "char": "💫", "label": "Dizzy" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "loadout-sets",
+    "label": "Loadout Sets",
+    "h2": "Battle & Loadout Combo Sets",
+    "intro": "Copy a full weapon or tool emoji loadout in one click for gaming bios and clips."
+  },
+  "collection_container_id": "weaponLoadoutsContainer",
+  "collections": [
+    {
+      "name": "Knight's Loadout",
+      "flags": ["⚔️", "🛡️", "🏰", "🐎", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Battle Royale Drop",
+      "flags": ["🔫", "💣", "🧨", "🎯", "💥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Medieval Quest",
+      "flags": ["🗡️", "🛡️", "🐉", "🏹", "🏰"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Archer Build",
+      "flags": ["🏹", "🎯", "🪶", "🌲", "💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mage Build",
+      "flags": ["🪄", "🧪", "⚡", "💫", "🔮"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Craftsman's Bench",
+      "flags": ["🔨", "🪛", "🔧", "🪚", "🧰"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mining Run",
+      "flags": ["⛏️", "🪨", "💎", "🪜", "🔦"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/fortnite-symbols/",
+      "title": "Fortnite Symbols",
+      "desc": "Sweaty name characters and clan tag decorations."
+    },
+    {
+      "href": "/library/minecraft-symbols/",
+      "title": "Minecraft Symbols",
+      "desc": "Chat, MOTD, and server name characters."
+    },
+    {
+      "href": "/library/fantasy-mythical-emojis/",
+      "title": "Fantasy & Mythical Emojis",
+      "desc": "Wizards, dragons, and magic emoji combos."
+    },
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Caution, danger, and warning sign characters."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "slug": "latex-symbols",
+  "title": "LaTeX Symbols: Copy & Paste Math Notation & Commands",
+  "meta_description": "Copy LaTeX math symbols with their commands — \\sum, \\alpha, \\infty, integrals, Greek letters, relations, and set notation. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/latex-symbols/",
+  "breadcrumb": "LaTeX Symbols",
+  "hero_h1": "LaTeX Symbols",
+  "hero_tagline": "Unicode equivalents of common LaTeX math notation, each labeled with its LaTeX command. Click any symbol to copy it instantly.",
+  "intro": "LaTeX symbols normally live inside .tex documents, but you often need the real Unicode character — for an email, a Slack message, lecture notes, or a forum post where LaTeX does not render. This reference pairs each glyph with its LaTeX command, so you can copy the actual character or recall the command for your document. It covers Greek letters, operators, relations, set and logic notation, arrows, and the miscellaneous symbols students and researchers reach for most.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "greek-letters",
+      "label": "Greek Letters",
+      "h2": "Greek Letters",
+      "intro": "The Greek letters used throughout mathematics and physics, with their LaTeX commands.",
+      "symbols": [
+        { "char": "α", "label": "\\alpha — Greek Small Letter Alpha" },
+        { "char": "β", "label": "\\beta — Greek Small Letter Beta" },
+        { "char": "γ", "label": "\\gamma — Greek Small Letter Gamma" },
+        { "char": "δ", "label": "\\delta — Greek Small Letter Delta" },
+        { "char": "θ", "label": "\\theta — Greek Small Letter Theta" },
+        { "char": "λ", "label": "\\lambda — Greek Small Letter Lambda" },
+        { "char": "μ", "label": "\\mu — Greek Small Letter Mu" },
+        { "char": "π", "label": "\\pi — Greek Small Letter Pi" },
+        { "char": "σ", "label": "\\sigma — Greek Small Letter Sigma" },
+        { "char": "φ", "label": "\\varphi — Greek Small Letter Phi" },
+        { "char": "Δ", "label": "\\Delta — Greek Capital Letter Delta" },
+        { "char": "Ω", "label": "\\Omega — Greek Capital Letter Omega" }
+      ]
+    },
+    {
+      "id": "operators",
+      "label": "Operators",
+      "h2": "Operators & Big Operators",
+      "intro": "Sums, products, integrals, and the arithmetic operators of everyday math.",
+      "symbols": [
+        { "char": "∑", "label": "\\sum — N-Ary Summation" },
+        { "char": "∏", "label": "\\prod — N-Ary Product" },
+        { "char": "∫", "label": "\\int — Integral" },
+        { "char": "∬", "label": "\\iint — Double Integral" },
+        { "char": "∮", "label": "\\oint — Contour Integral" },
+        { "char": "√", "label": "\\sqrt — Square Root" },
+        { "char": "∂", "label": "\\partial — Partial Differential" },
+        { "char": "∇", "label": "\\nabla — Nabla" },
+        { "char": "±", "label": "\\pm — Plus-Minus Sign" },
+        { "char": "×", "label": "\\times — Multiplication Sign" },
+        { "char": "÷", "label": "\\div — Division Sign" },
+        { "char": "⋅", "label": "\\cdot — Dot Operator" }
+      ]
+    },
+    {
+      "id": "relations",
+      "label": "Relations",
+      "h2": "Relations & Comparisons",
+      "intro": "Equality, inequality, and equivalence relations with their commands.",
+      "symbols": [
+        { "char": "≤", "label": "\\leq — Less-Than or Equal To" },
+        { "char": "≥", "label": "\\geq — Greater-Than or Equal To" },
+        { "char": "≠", "label": "\\neq — Not Equal To" },
+        { "char": "≈", "label": "\\approx — Almost Equal To" },
+        { "char": "≡", "label": "\\equiv — Identical To" },
+        { "char": "∼", "label": "\\sim — Tilde Operator" },
+        { "char": "≅", "label": "\\cong — Approximately Equal To" },
+        { "char": "∝", "label": "\\propto — Proportional To" }
+      ]
+    },
+    {
+      "id": "sets-logic",
+      "label": "Sets & Logic",
+      "h2": "Set Theory & Logic",
+      "intro": "Membership, subsets, unions, quantifiers, and logical connectives.",
+      "symbols": [
+        { "char": "∈", "label": "\\in — Element Of" },
+        { "char": "∉", "label": "\\notin — Not an Element Of" },
+        { "char": "⊂", "label": "\\subset — Subset Of" },
+        { "char": "⊆", "label": "\\subseteq — Subset of or Equal To" },
+        { "char": "∪", "label": "\\cup — Union" },
+        { "char": "∩", "label": "\\cap — Intersection" },
+        { "char": "∅", "label": "\\emptyset — Empty Set" },
+        { "char": "∀", "label": "\\forall — For All" },
+        { "char": "∃", "label": "\\exists — There Exists" },
+        { "char": "¬", "label": "\\neg — Not Sign" },
+        { "char": "∧", "label": "\\land — Logical And" },
+        { "char": "∨", "label": "\\lor — Logical Or" }
+      ]
+    },
+    {
+      "id": "arrows",
+      "label": "Arrows",
+      "h2": "Arrows & Maps",
+      "intro": "Implication and mapping arrows used in proofs and function definitions.",
+      "symbols": [
+        { "char": "→", "label": "\\rightarrow — Rightwards Arrow" },
+        { "char": "←", "label": "\\leftarrow — Leftwards Arrow" },
+        { "char": "↔", "label": "\\leftrightarrow — Left Right Arrow" },
+        { "char": "⇒", "label": "\\Rightarrow — Rightwards Double Arrow" },
+        { "char": "⇔", "label": "\\Leftrightarrow — Left Right Double Arrow" },
+        { "char": "↦", "label": "\\mapsto — Rightwards Arrow from Bar" }
+      ]
+    },
+    {
+      "id": "misc-math",
+      "label": "Miscellaneous",
+      "h2": "Miscellaneous Math Symbols",
+      "intro": "Infinity, geometry marks, delimiters, and proof shorthand.",
+      "symbols": [
+        { "char": "∞", "label": "\\infty — Infinity" },
+        { "char": "ℵ", "label": "\\aleph — Alef Symbol" },
+        { "char": "ℏ", "label": "\\hbar — Planck Constant Over Two Pi" },
+        { "char": "ℓ", "label": "\\ell — Script Small L" },
+        { "char": "⊥", "label": "\\perp — Up Tack (Perpendicular)" },
+        { "char": "∥", "label": "\\parallel — Parallel To" },
+        { "char": "∠", "label": "\\angle — Angle" },
+        { "char": "⌈", "label": "\\lceil — Left Ceiling" },
+        { "char": "⌋", "label": "\\rfloor — Right Floor" },
+        { "char": "⋯", "label": "\\cdots — Midline Horizontal Ellipsis" },
+        { "char": "∴", "label": "\\therefore — Therefore" },
+        { "char": "∵", "label": "\\because — Because" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Plus-minus, infinity, and every math operator to copy and paste."
+    },
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet for math, science, and fraternity names."
+    },
+    {
+      "href": "/library/fraction-symbols/",
+      "title": "Fraction Symbols",
+      "desc": "Ready-made Unicode fractions like ½, ⅓, and ¾ to copy."
+    },
+    {
+      "href": "/library/html-entities/",
+      "title": "HTML Entities",
+      "desc": "Named HTML character entities with their codes and symbols."
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "slug": "chinese-symbols",
+  "title": "Chinese Symbols: Copy & Paste 福 龍 Chinese Characters",
+  "meta_description": "Copy and paste Chinese symbols with pinyin and meanings — lucky characters like 福 and 龍, love, nature, and strength hanzi. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/chinese-symbols/",
+  "breadcrumb": "Chinese Symbols",
+  "hero_h1": "Chinese Symbols",
+  "hero_tagline": "Meaningful Chinese characters — luck, love, dragons, and nature — each labeled with pinyin and meaning. Click any symbol to copy it instantly.",
+  "intro": "Chinese symbols carry centuries of meaning in a single character, which is why hanzi like 福 (good fortune) and 龍 (dragon) appear in usernames, bios, tattoos, and Lunar New Year posts worldwide. This library collects culturally meaningful Chinese characters organized by theme, each labeled with its pinyin romanization and English meaning so you know exactly what you are copying. Use them to add depth to a profile, decorate a caption, or send an auspicious greeting.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "lucky-characters",
+      "label": "Lucky Characters",
+      "h2": "Lucky & Blessing Characters",
+      "intro": "Auspicious characters traditionally displayed for good fortune, prosperity, and happiness.",
+      "symbols": [
+        { "char": "福", "label": "Fu — Good Fortune" },
+        { "char": "禄", "label": "Lu — Prosperity" },
+        { "char": "寿", "label": "Shou — Longevity" },
+        { "char": "喜", "label": "Xi — Happiness" },
+        { "char": "财", "label": "Cai — Wealth" },
+        { "char": "吉", "label": "Ji — Auspicious" },
+        { "char": "祥", "label": "Xiang — Good Luck" },
+        { "char": "旺", "label": "Wang — Flourishing" }
+      ]
+    },
+    {
+      "id": "love-virtue",
+      "label": "Love & Virtue",
+      "h2": "Love, Peace & Virtue Characters",
+      "intro": "Characters expressing love, harmony, and the virtues prized in Chinese tradition.",
+      "symbols": [
+        { "char": "爱", "label": "Ai — Love" },
+        { "char": "和", "label": "He — Harmony" },
+        { "char": "安", "label": "An — Peace" },
+        { "char": "信", "label": "Xin — Trust" },
+        { "char": "善", "label": "Shan — Kindness" },
+        { "char": "真", "label": "Zhen — Truth" },
+        { "char": "美", "label": "Mei — Beauty" },
+        { "char": "德", "label": "De — Virtue" }
+      ]
+    },
+    {
+      "id": "nature-elements",
+      "label": "Nature & Elements",
+      "h2": "Dragons, Nature & the Elements",
+      "intro": "Animals of legend and the natural elements — favorites for aesthetic bios and usernames.",
+      "symbols": [
+        { "char": "龍", "label": "Long — Dragon (Traditional)" },
+        { "char": "龙", "label": "Long — Dragon (Simplified)" },
+        { "char": "凤", "label": "Feng — Phoenix" },
+        { "char": "虎", "label": "Hu — Tiger" },
+        { "char": "花", "label": "Hua — Flower" },
+        { "char": "月", "label": "Yue — Moon" },
+        { "char": "日", "label": "Ri — Sun" },
+        { "char": "水", "label": "Shui — Water" },
+        { "char": "火", "label": "Huo — Fire" },
+        { "char": "山", "label": "Shan — Mountain" },
+        { "char": "风", "label": "Feng — Wind" },
+        { "char": "雪", "label": "Xue — Snow" }
+      ]
+    },
+    {
+      "id": "strength-spirit",
+      "label": "Strength & Spirit",
+      "h2": "Strength, Power & Spirit Characters",
+      "intro": "Bold characters for strength, courage, and destiny — popular in gamer tags and bold bios.",
+      "symbols": [
+        { "char": "力", "label": "Li — Strength" },
+        { "char": "勇", "label": "Yong — Courage" },
+        { "char": "武", "label": "Wu — Martial" },
+        { "char": "王", "label": "Wang — King" },
+        { "char": "帝", "label": "Di — Emperor" },
+        { "char": "仙", "label": "Xian — Immortal" },
+        { "char": "梦", "label": "Meng — Dream" },
+        { "char": "心", "label": "Xin — Heart" },
+        { "char": "永", "label": "Yong — Eternal" },
+        { "char": "命", "label": "Ming — Destiny" }
+      ]
+    },
+    {
+      "id": "chinese-punctuation",
+      "label": "Punctuation",
+      "h2": "Chinese Punctuation & Marks",
+      "intro": "Full-width punctuation and brackets from the CJK Symbols and Punctuation block.",
+      "symbols": [
+        { "char": "。", "label": "Ideographic Full Stop" },
+        { "char": "、", "label": "Ideographic Comma" },
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "《", "label": "Left Double Angle Bracket" },
+        { "char": "》", "label": "Right Double Angle Bracket" },
+        { "char": "〇", "label": "Ideographic Number Zero" },
+        { "char": "々", "label": "Ideographic Iteration Mark" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "chinese-sets",
+    "label": "Character Sets",
+    "h2": "Chinese Character Combo Sets",
+    "intro": "Copy a full themed set of Chinese characters — or a classic blessing phrase — with one click."
+  },
+  "collection_container_id": "chineseSetsContainer",
+  "collections": [
+    {
+      "name": "Good Fortune Set (Fu Lu Shou Xi Cai)",
+      "flags": ["福", "禄", "寿", "喜", "财"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dragon & Power Set",
+      "flags": ["龍", "虎", "凤", "勇", "力"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Love & Harmony Set",
+      "flags": ["爱", "和", "平", "安", "心"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nature Aesthetic Set",
+      "flags": ["山", "水", "月", "花", "雪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gongxi Facai — Wishing You Prosperity",
+      "flags": ["恭喜发财"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Jixiang Ruyi — Good Luck as You Wish",
+      "flags": ["吉祥如意"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lucky Bio Frame",
+      "flags": ["✦ 福 ✦", "龍 · 凤", "平安喜乐"],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/japanese-symbols/",
+      "title": "Japanese Symbols",
+      "desc": "Kanji, hiragana, and katakana characters with romaji and meanings."
+    },
+    {
+      "href": "/library/korean-symbols/",
+      "title": "Korean Symbols",
+      "desc": "Hangul words, jamo letters, and K-pop fan slang to copy."
+    },
+    {
+      "href": "/library/hindi-symbols/",
+      "title": "Hindi Symbols",
+      "desc": "Devanagari characters and sacred words with romanization."
+    },
+    {
+      "href": "/library/yin-yang-symbol/",
+      "title": "Yin Yang Symbol",
+      "desc": "The yin yang and balance symbols of Chinese philosophy."
+    }
+  ]
+}

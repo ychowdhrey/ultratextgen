@@ -1,0 +1,163 @@
+{
+  "slug": "free-fire-name-symbols",
+  "title": "Free Fire Name Symbols: Copy & Paste ꧁꧂ ツ FF Nick Characters",
+  "meta_description": "Free Fire name symbols — ornate ꧁꧂ frames, crowns, katakana flair, and ready-made FF nick wrappers for stylish nicknames. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/free-fire-name-symbols/",
+  "breadcrumb": "Free Fire Name Symbols",
+  "hero_h1": "Free Fire Name Symbols",
+  "hero_tagline": "Ornate ꧁꧂ frames, crowns, and flourish characters for Free Fire nicknames, plus one-click nick wrappers. Click any symbol to copy it instantly.",
+  "intro": "Free Fire name symbols (simbol FF) are all about ornament: the famous ꧁꧂ Javanese frames, Tibetan scroll marks like ༺༻ and ༒, and crowns that turn a plain nick into a booyah-worthy one. Free Fire's name field accepts these Unicode characters, so they display in lobbies, kill notifications, and guild rosters. Copy single characters below, or grab a complete FF nick wrapper and paste your own name into the middle.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "ornate-frames",
+      "label": "Ornate Frames",
+      "h2": "Ornate Frame Characters",
+      "intro": "The Javanese and Tibetan ornaments that anchor almost every decorated FF nick.",
+      "symbols": [
+        { "char": "꧁", "label": "Javanese Left Rerenggan" },
+        { "char": "꧂", "label": "Javanese Right Rerenggan" },
+        { "char": "꧅", "label": "Javanese Pada Luhur" },
+        { "char": "༺", "label": "Tibetan Mark Gug Rtags Gyon" },
+        { "char": "༻", "label": "Tibetan Mark Gug Rtags Gyas" },
+        { "char": "༒", "label": "Tibetan Mark Rgya Gram Shad" },
+        { "char": "࿐", "label": "Tibetan Mark Bska Shog Gi Mgo Rgyan (Flag Flourish)" },
+        { "char": "❰", "label": "Heavy Left-Pointing Angle Bracket Ornament" },
+        { "char": "❱", "label": "Heavy Right-Pointing Angle Bracket Ornament" }
+      ]
+    },
+    {
+      "id": "crowns-royalty",
+      "label": "Crowns",
+      "h2": "Crown & Royalty Marks",
+      "intro": "Crowns and regal glyphs for top-of-the-leaderboard nicknames.",
+      "symbols": [
+        { "char": "👑", "label": "Crown" },
+        { "char": "♛", "label": "Black Chess Queen" },
+        { "char": "♚", "label": "Black Chess King" },
+        { "char": "♕", "label": "White Chess Queen" },
+        { "char": "♔", "label": "White Chess King" },
+        { "char": "⚜", "label": "Fleur-de-Lis" },
+        { "char": "㊝", "label": "Circled Ideograph Excellent" },
+        { "char": "❂", "label": "Circled Open Centre Eight Pointed Star" }
+      ]
+    },
+    {
+      "id": "katakana-flair",
+      "label": "Katakana Flair",
+      "h2": "Katakana & CJK Flair",
+      "intro": "The メ and 彡 strokes that give FF nicks their slashed, fast look.",
+      "symbols": [
+        { "char": "メ", "label": "Katakana Me (Slash Mark)" },
+        { "char": "彡", "label": "San — Triple Slash" },
+        { "char": "ミ", "label": "Katakana Mi" },
+        { "char": "ツ", "label": "Katakana Tsu (Smile)" },
+        { "char": "丶", "label": "CJK Dot Stroke" },
+        { "char": "个", "label": "Ge — Spire Mark" },
+        { "char": "乡", "label": "Xiang — Ribbon Curl" },
+        { "char": "王", "label": "Wang — King" }
+      ]
+    },
+    {
+      "id": "stars-flowers",
+      "label": "Stars & Flowers",
+      "h2": "Star & Flower Accents",
+      "intro": "Floral asterisks and stars to dot around a nick or guild name.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "✩", "label": "Stress Outlined White Star" },
+        { "char": "✫", "label": "Open Centre Black Star" },
+        { "char": "✬", "label": "Black Centre White Star" },
+        { "char": "❉", "label": "Balloon-Spoked Asterisk" },
+        { "char": "❀", "label": "White Florette" },
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "✼", "label": "Open Centre Teardrop-Spoked Asterisk" },
+        { "char": "⁂", "label": "Asterism" }
+      ]
+    },
+    {
+      "id": "daggers-arrows",
+      "label": "Daggers & Arrows",
+      "h2": "Dagger & Arrow Glyphs",
+      "intro": "Daggers and feathered arrows for an aggressive squad-leader edge.",
+      "symbols": [
+        { "char": "†", "label": "Dagger" },
+        { "char": "‡", "label": "Double Dagger" },
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "➳", "label": "White-Feathered Rightwards Arrow" },
+        { "char": "➸", "label": "Heavy Black-Feathered Rightwards Arrow" },
+        { "char": "➹", "label": "Heavy Black-Feathered North East Arrow" },
+        { "char": "☄", "label": "Comet" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "ff-nick-wrappers",
+    "label": "Nick Wrappers",
+    "h2": "Ready-Made FF Nick Wrappers",
+    "intro": "Copy a complete Free Fire nick frame in one click, then swap the placeholder for your own name in the rename card screen."
+  },
+  "collection_container_id": "ffNickWrappersContainer",
+  "collections": [
+    {
+      "name": "Classic Royale Frame",
+      "flags": ["꧁༒", "YourNick", "༒꧂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pro Player Frame",
+      "flags": ["꧁•ᴾᴿᴼ•", "YourNick", "꧂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tibetan Scroll Tag",
+      "flags": ["༺", "YourNick", "༻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flame Banner Nick",
+      "flags": ["🔥", "YourNick", "࿐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crowned Booyah Nick",
+      "flags": ["👑", "YourNick", "♛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dagger Strike Frame",
+      "flags": ["꧁†", "YourNick", "†꧂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Star Squad Tag",
+      "flags": ["★彡", "YourNick", "彡★"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/ml-name-symbols/",
+      "title": "Mobile Legends Name Symbols",
+      "desc": "ML nick frames, rank letters, and squad decorations."
+    },
+    {
+      "href": "/library/fortnite-symbols/",
+      "title": "Fortnite Symbols",
+      "desc": "Sweaty ツ 亗 characters and clan-tag glyphs for Fortnite."
+    },
+    {
+      "href": "/library/nickname-symbols/",
+      "title": "Nickname Symbols",
+      "desc": "Decorative characters for gamer tags on any platform."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Every Unicode star to accent usernames and bios."
+    }
+  ]
+}

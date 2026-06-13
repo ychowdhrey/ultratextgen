@@ -1,0 +1,151 @@
+{
+  "slug": "jewelry-gem-emojis",
+  "title": "Jewelry & Gem Emojis: Copy & Paste 💎 💍 Bling Combos",
+  "meta_description": "Copy and paste jewelry and gem emojis — diamonds 💎, rings 💍, crowns 👑, crystals 🔮, and sparkling bling combo sets for bios. Click any emoji to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/jewelry-gem-emojis/",
+  "breadcrumb": "Jewelry & Gem Emojis",
+  "hero_h1": "Jewelry & Gem Emojis",
+  "hero_tagline": "Diamonds, rings, crowns, and crystal emojis with ready-made bling combo sets. Click any emoji to copy it instantly.",
+  "intro": "Jewelry and gem emojis add instant shine to bios, captions, and usernames — a diamond for luxury vibes, a ring for engagement posts, a crystal ball for witchy aesthetics. This collection gathers the gem, bling, and sparkle emojis in one place, including the geometric diamond shapes, plus one-click combo sets for princess, disco, and rich-aesthetic themes.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "gems-crystals",
+      "label": "Gems",
+      "h2": "Gem & Crystal Emojis",
+      "intro": "Gemstones, crystals, and charm emojis.",
+      "symbols": [
+        { "char": "💎", "label": "Gem Stone" },
+        { "char": "🔮", "label": "Crystal Ball" },
+        { "char": "🪩", "label": "Mirror Ball" },
+        { "char": "🦪", "label": "Oyster" },
+        { "char": "🧿", "label": "Nazar Amulet" },
+        { "char": "📿", "label": "Prayer Beads" }
+      ]
+    },
+    {
+      "id": "rings-royalty",
+      "label": "Rings & Crowns",
+      "h2": "Ring, Crown & Treasure Emojis",
+      "intro": "Rings, crowns, and precious keepsake emojis.",
+      "symbols": [
+        { "char": "💍", "label": "Ring" },
+        { "char": "👑", "label": "Crown" },
+        { "char": "🪙", "label": "Coin" },
+        { "char": "⌚", "label": "Watch" },
+        { "char": "🪞", "label": "Mirror" }
+      ]
+    },
+    {
+      "id": "diamond-shapes",
+      "label": "Diamond Shapes",
+      "h2": "Diamond Shape Symbols",
+      "intro": "Geometric diamond characters for decorating names and dividers.",
+      "symbols": [
+        { "char": "💠", "label": "Diamond with a Dot" },
+        { "char": "🔷", "label": "Large Blue Diamond" },
+        { "char": "🔶", "label": "Large Orange Diamond" },
+        { "char": "🔹", "label": "Small Blue Diamond" },
+        { "char": "🔸", "label": "Small Orange Diamond" },
+        { "char": "♦️", "label": "Diamond Suit" },
+        { "char": "◆", "label": "Black Diamond" },
+        { "char": "◇", "label": "White Diamond" }
+      ]
+    },
+    {
+      "id": "sparkle-shine",
+      "label": "Sparkle",
+      "h2": "Sparkle & Shine Emojis",
+      "intro": "Sparkles and stars to pair with any bling combo.",
+      "symbols": [
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💫", "label": "Dizzy" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌠", "label": "Shooting Star" },
+        { "char": "❇️", "label": "Sparkle" }
+      ]
+    },
+    {
+      "id": "luxury-life",
+      "label": "Luxury",
+      "h2": "Luxury Lifestyle Emojis",
+      "intro": "Champagne, shopping, and money emojis for rich-aesthetic posts.",
+      "symbols": [
+        { "char": "🥂", "label": "Clinking Glasses" },
+        { "char": "🍾", "label": "Bottle with Popping Cork" },
+        { "char": "🛍️", "label": "Shopping Bags" },
+        { "char": "💸", "label": "Money with Wings" },
+        { "char": "💰", "label": "Money Bag" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "bling-sets",
+    "label": "Bling Sets",
+    "h2": "Bling Combo Sets",
+    "intro": "Copy a full jewelry and gem emoji combo in one click for bios and captions."
+  },
+  "collection_container_id": "blingSetsContainer",
+  "collections": [
+    {
+      "name": "Diamond Bling",
+      "flags": ["💎", "✨", "💍", "🤍", "🥂"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Princess Core",
+      "flags": ["👑", "💍", "🎀", "🩰", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crystal Witch",
+      "flags": ["🔮", "💎", "🌙", "🧿", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Disco Glam",
+      "flags": ["🪩", "✨", "💃", "🥂", "💋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pearl Mermaid",
+      "flags": ["🦪", "🐚", "🧜‍♀️", "💎", "🌊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rich Aesthetic",
+      "flags": ["💰", "💸", "💎", "🛍️", "🍾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Engagement Glow",
+      "flags": ["💍", "🥂", "🍾", "💐", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/wedding-anniversary-emojis/",
+      "title": "Wedding & Anniversary Emojis",
+      "desc": "Ring, bell, and couple emoji combos for big days."
+    },
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Crown & Royalty Symbols",
+      "desc": "Crown characters and royal decorations for names."
+    },
+    {
+      "href": "/library/money-emojis/",
+      "title": "Money Emojis",
+      "desc": "Cash, coin, and money bag emojis and combos."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkles, glitter, and shine characters for aesthetic text."
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "poop-emoji",
+  "title": "Poop Emoji: Copy & Paste 💩 Funny Combos",
+  "meta_description": "The poop emoji 💩 with toilets, stink clouds, gross-out faces, and funny meme combos for jokes, pranks, and silly group chats. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/poop-emoji/",
+  "breadcrumb": "Poop Emoji",
+  "hero_h1": "Poop Emoji 💩",
+  "hero_tagline": "The smiling pile of poo 💩 and every toilet, stink cloud, and gross-out face that belongs beside it. Click any symbol or combo to copy it instantly.",
+  "intro": "The poop emoji 💩 — officially Pile of Poo — has been the internet's favorite piece of toilet humor since the early emoji days, complete with its trademark friendly smile. It headlines prank texts, birthday roasts, dog-walk updates, and group-chat chaos everywhere. This page collects the poop emoji with its bathroom supporting cast, the funniest reaction faces to pair it with, and one-click combo sets for maximum comedic effect.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "poop-bathroom",
+      "label": "Poop & Bathroom",
+      "h2": "Poop & Bathroom Emoji",
+      "intro": "The star of the show plus every bathroom fixture it calls home.",
+      "symbols": [
+        { "char": "💩", "label": "Pile of Poo" },
+        { "char": "🚽", "label": "Toilet" },
+        { "char": "🧻", "label": "Roll of Paper" },
+        { "char": "🪠", "label": "Plunger" },
+        { "char": "🚾", "label": "Water Closet" },
+        { "char": "🧼", "label": "Soap" },
+        { "char": "🚻", "label": "Restroom" }
+      ]
+    },
+    {
+      "id": "laughing-faces",
+      "label": "Laughing Faces",
+      "h2": "Laughing Reaction Faces",
+      "intro": "The faces that do the laughing when the poop emoji lands in chat.",
+      "symbols": [
+        { "char": "😂", "label": "Face with Tears of Joy" },
+        { "char": "🤣", "label": "Rolling on the Floor Laughing" },
+        { "char": "😆", "label": "Grinning Squinting Face" },
+        { "char": "🤭", "label": "Face with Hand Over Mouth" },
+        { "char": "😜", "label": "Winking Face with Tongue" },
+        { "char": "🤪", "label": "Zany Face" }
+      ]
+    },
+    {
+      "id": "gross-out",
+      "label": "Gross-Out",
+      "h2": "Gross-Out & Stink Emoji",
+      "intro": "Nauseated faces, skunks, and dash clouds for full smell-o-vision storytelling.",
+      "symbols": [
+        { "char": "🤢", "label": "Nauseated Face" },
+        { "char": "🤮", "label": "Face Vomiting" },
+        { "char": "😷", "label": "Face with Medical Mask" },
+        { "char": "🤧", "label": "Sneezing Face" },
+        { "char": "🦨", "label": "Skunk" },
+        { "char": "💨", "label": "Dashing Away" },
+        { "char": "🙊", "label": "Speak-No-Evil Monkey" }
+      ]
+    },
+    {
+      "id": "warning-signs",
+      "label": "Warning Signs",
+      "h2": "Warning & Hazard Signs",
+      "intro": "Caution tape for the truly catastrophic bathroom emergency.",
+      "symbols": [
+        { "char": "⚠️", "label": "Warning" },
+        { "char": "☣️", "label": "Biohazard" },
+        { "char": "🚫", "label": "Prohibited" },
+        { "char": "⛔", "label": "No Entry" },
+        { "char": "🚧", "label": "Construction" },
+        { "char": "🚨", "label": "Police Car Light" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Funny Poop Combo Sets",
+    "intro": "Copy a complete poop emoji combo in one click — pre-built jokes for texts, comments, and group chats."
+  },
+  "collection_container_id": "poopSetsContainer",
+  "collections": [
+    {
+      "name": "Classic Stinker",
+      "flags": ["💩", "💨", "🦨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Toilet Run",
+      "flags": ["🏃", "💨", "🚽", "💩"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Code Brown Alert",
+      "flags": ["🚨", "⚠️", "💩", "🚨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Laughing at It",
+      "flags": ["💩", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gross-Out Combo",
+      "flags": ["🤢", "💩", "🤮"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bathroom Essentials",
+      "flags": ["🚽", "🧻", "🪠", "🧼"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Poop Parade",
+      "flags": ["💩", "💩", "💩", "🎉"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/moai-emoji/",
+      "title": "Moai Emoji",
+      "desc": "The 🗿 rock emoji with deadpan meme combos."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Meme and joke emoji combinations to copy and paste."
+    },
+    {
+      "href": "/library/nerd-emoji/",
+      "title": "Nerd Emoji",
+      "desc": "The 🤓 nerd face and its meme combo collections."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emojis",
+      "desc": "Sigma, rizz, and Gen-Z slang emoji combos."
+    }
+  ]
+}

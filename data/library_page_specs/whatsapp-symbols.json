@@ -1,0 +1,129 @@
+{
+  "slug": "whatsapp-symbols",
+  "title": "WhatsApp Symbols: Copy & Paste Status & Bio Characters",
+  "meta_description": "Copy and paste WhatsApp symbols for your status, bio, and group names — ticks, hearts, stars, and decorative characters. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/whatsapp-symbols/",
+  "breadcrumb": "WhatsApp Symbols",
+  "hero_h1": "WhatsApp Symbols",
+  "hero_tagline": "Ticks, hearts, stars, and decorations for WhatsApp statuses, bios, and group names. Click any symbol to copy it instantly.",
+  "intro": "WhatsApp symbols dress up the parts of the app that plain text leaves bare — your About line, status updates, group names, and broadcast messages. This library collects the characters people paste into WhatsApp most: check-mark ticks, hearts in every colour, stars and sparkles, plus dividers and ready-made status decorations. Everything here is standard Unicode, so it renders on both Android and iPhone without extra apps.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ticks-checks",
+      "label": "Ticks",
+      "h2": "Ticks & Check Marks",
+      "intro": "Tick characters echo WhatsApp's famous delivery ticks and work great in to-do statuses and group rules.",
+      "symbols": [
+        { "char": "✓", "label": "Check Mark" },
+        { "char": "✔", "label": "Heavy Check Mark" },
+        { "char": "✅", "label": "White Heavy Check Mark" },
+        { "char": "☑", "label": "Ballot Box with Check" },
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "✘", "label": "Heavy Ballot X" }
+      ]
+    },
+    {
+      "id": "hearts-love",
+      "label": "Hearts",
+      "h2": "Hearts & Love Symbols",
+      "intro": "Heart characters for couple statuses, anniversary messages, and family group names.",
+      "symbols": [
+        { "char": "♥", "label": "Black Heart Suit" },
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "❤️", "label": "Red Heart" },
+        { "char": "💚", "label": "Green Heart" },
+        { "char": "🤍", "label": "White Heart" },
+        { "char": "💙", "label": "Blue Heart" },
+        { "char": "💞", "label": "Revolving Hearts" },
+        { "char": "💌", "label": "Love Letter" }
+      ]
+    },
+    {
+      "id": "stars-sparkles",
+      "label": "Stars",
+      "h2": "Stars & Sparkles",
+      "intro": "Stars and sparkle characters that make an About line or status headline stand out.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✦", "label": "Black Four Pointed Star" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "💫", "label": "Dizzy" }
+      ]
+    },
+    {
+      "id": "bullets-dividers",
+      "label": "Decorations",
+      "h2": "Bullets, Arrows & Dividers",
+      "intro": "Structure a long status or group description with bullets, arrows, and divider characters.",
+      "symbols": [
+        { "char": "•", "label": "Bullet" },
+        { "char": "◦", "label": "White Bullet" },
+        { "char": "▪", "label": "Black Small Square" },
+        { "char": "➤", "label": "Black Rightwards Arrowhead" },
+        { "char": "➜", "label": "Heavy Round-Tipped Rightwards Arrow" },
+        { "char": "❖", "label": "Black Diamond Minus White X" },
+        { "char": "◈", "label": "White Diamond Containing Black Small Diamond" },
+        { "char": "┊", "label": "Box Drawings Light Quadruple Dash Vertical" },
+        { "char": "─", "label": "Box Drawings Light Horizontal" },
+        { "char": "✽", "label": "Heavy Teardrop-Spoked Asterisk" }
+      ]
+    },
+    {
+      "id": "popular-emoji",
+      "label": "Popular Emoji",
+      "h2": "Popular WhatsApp Status Emojis",
+      "intro": "The emojis most often pasted into WhatsApp statuses, captions, and reply reactions.",
+      "symbols": [
+        { "char": "😂", "label": "Face with Tears of Joy" },
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🌹", "label": "Rose" },
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "🎵", "label": "Musical Note" }
+      ]
+    },
+    {
+      "id": "status-combos",
+      "label": "Status Combos",
+      "h2": "Ready-Made Status Decorations",
+      "intro": "One-click status and bio decorations — each button copies the whole combo string at once.",
+      "symbols": [
+        { "char": "•──────♡──────•", "label": "Heart Line Divider" },
+        { "char": "✦ ♡ ✦ ♡ ✦", "label": "Star and Heart String" },
+        { "char": "✿ ❀ ✿ ❀ ✿", "label": "Flower Divider" },
+        { "char": "♪ ♫ ♬ ♫ ♪", "label": "Music Note Decoration" },
+        { "char": "★·.·´¯`·.·★", "label": "Classic Star Frame" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/instagram-symbols/",
+      "title": "Instagram Symbols",
+      "desc": "Symbols and characters for Instagram bios, captions, and stories."
+    },
+    {
+      "href": "/library/tiktok-symbols/",
+      "title": "TikTok Symbols",
+      "desc": "Trending symbols for TikTok usernames, bios, and captions."
+    },
+    {
+      "href": "/library/discord-symbols/",
+      "title": "Discord Symbols",
+      "desc": "Symbols for Discord server names, channels, and statuses."
+    },
+    {
+      "href": "/library/greeting-message-emojis/",
+      "title": "Greeting & Message Emojis",
+      "desc": "Thank you, good morning, and greeting emoji combos for chats."
+    }
+  ]
+}

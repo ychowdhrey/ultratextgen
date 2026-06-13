@@ -1,0 +1,175 @@
+{
+  "slug": "loading-text-symbols",
+  "title": "Loading Text & Progress Bars: Copy & Paste ▓▒░ Blocks",
+  "meta_description": "Loading text and progress bars made of ▓▒░ blocks — fill sequences, buffering spinners, and Y2K loading captions for bios. Click any set to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/loading-text-symbols/",
+  "breadcrumb": "Loading Text & Progress Bars",
+  "hero_h1": "Loading Text & Progress Bars",
+  "hero_tagline": "Block-built loading bars, buffering spinners, and Y2K-style loading captions. Click any symbol or set to copy it instantly.",
+  "intro": "Loading text recreates the look of a progress bar or buffering screen using nothing but Unicode block elements like ▓ ▒ ░ and █. It is a staple of Y2K-aesthetic bios, 'personality loading…' captions, and retro-styled Discord statuses. Copy a ready-made loading bar or full fill sequence below in one click, or grab individual shade blocks, fill levels, and spinner characters to design your own.",
+  "date_published": "2026-06-12",
+  "date_modified": "2026-06-12",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "shade-blocks",
+      "label": "Shades",
+      "h2": "Shade & Fill Blocks",
+      "intro": "The classic shade ramp — from light static to solid fill — that every text progress bar is built from.",
+      "symbols": [
+        { "char": "░", "label": "Light Shade" },
+        { "char": "▒", "label": "Medium Shade" },
+        { "char": "▓", "label": "Dark Shade" },
+        { "char": "█", "label": "Full Block" },
+        { "char": "▄", "label": "Lower Half Block" },
+        { "char": "▀", "label": "Upper Half Block" }
+      ]
+    },
+    {
+      "id": "fill-levels",
+      "label": "Fill Levels",
+      "h2": "Block Fill Level Characters",
+      "intro": "Eighth-step blocks that rise vertically or grow horizontally — perfect for smooth bar gradients and equalizers.",
+      "symbols": [
+        { "char": "▁", "label": "Lower One Eighth Block" },
+        { "char": "▂", "label": "Lower One Quarter Block" },
+        { "char": "▃", "label": "Lower Three Eighths Block" },
+        { "char": "▄", "label": "Lower Half Block" },
+        { "char": "▅", "label": "Lower Five Eighths Block" },
+        { "char": "▆", "label": "Lower Three Quarters Block" },
+        { "char": "▇", "label": "Lower Seven Eighths Block" },
+        { "char": "█", "label": "Full Block" },
+        { "char": "▏", "label": "Left One Eighth Block" },
+        { "char": "▍", "label": "Left Three Eighths Block" },
+        { "char": "▌", "label": "Left Half Block" },
+        { "char": "▊", "label": "Left Three Quarters Block" }
+      ]
+    },
+    {
+      "id": "bar-segments",
+      "label": "Segments",
+      "h2": "Progress Bar Segment Characters",
+      "intro": "Filled and empty segment pairs for step-style progress bars and rating tracks.",
+      "symbols": [
+        { "char": "▰", "label": "Black Parallelogram (Filled Segment)" },
+        { "char": "▱", "label": "White Parallelogram (Empty Segment)" },
+        { "char": "▮", "label": "Black Vertical Rectangle" },
+        { "char": "▯", "label": "White Vertical Rectangle" },
+        { "char": "■", "label": "Black Square" },
+        { "char": "□", "label": "White Square" },
+        { "char": "●", "label": "Black Circle" },
+        { "char": "○", "label": "White Circle" }
+      ]
+    },
+    {
+      "id": "spinners-timers",
+      "label": "Spinners",
+      "h2": "Spinner & Timer Characters",
+      "intro": "Rotating circle quarters, arrows, and hourglasses for buffering and please-wait moments.",
+      "symbols": [
+        { "char": "◐", "label": "Circle With Left Half Black" },
+        { "char": "◓", "label": "Circle With Upper Half Black" },
+        { "char": "◑", "label": "Circle With Right Half Black" },
+        { "char": "◒", "label": "Circle With Lower Half Black" },
+        { "char": "↻", "label": "Clockwise Open Circle Arrow" },
+        { "char": "↺", "label": "Anticlockwise Open Circle Arrow" },
+        { "char": "⌛", "label": "Hourglass Done" },
+        { "char": "⏳", "label": "Hourglass Not Done" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "loading-bar-sets",
+    "label": "Bar Sets",
+    "h2": "Ready-Made Loading Bars & Sequences",
+    "intro": "Copy a single loading line or a whole fill sequence in one click — vertical format keeps each stage on its own line."
+  },
+  "collection_container_id": "loadingBarsContainer",
+  "collections": [
+    {
+      "name": "Classic Loading Sequence",
+      "flags": [
+        "░░░░░░░░░░ 0%",
+        "▓▓░░░░░░░░ 20%",
+        "▓▓▓▓░░░░░░ 40%",
+        "▓▓▓▓▓▓░░░░ 60%",
+        "▓▓▓▓▓▓▓▓░░ 80%",
+        "▓▓▓▓▓▓▓▓▓▓ 100%"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Gradient Loading Lines",
+      "flags": [
+        "█▓▒░ loading ░▒▓█",
+        "░▒▓█ LOADING █▓▒░",
+        "▓▒░ now loading… ░▒▓",
+        "░░▒▒▓▓██▓▓▒▒░░",
+        "█▓▒░░▒▓██▓▒░░▒▓█"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Segment Fill Stages",
+      "flags": [
+        "▰▱▱▱▱▱",
+        "▰▰▱▱▱▱",
+        "▰▰▰▱▱▱",
+        "▰▰▰▰▱▱",
+        "▰▰▰▰▰▱",
+        "▰▰▰▰▰▰"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Mini Equalizers",
+      "flags": [
+        "▁▂▃▄▅▆▇█",
+        "█▇▆▅▄▃▂▁",
+        "▁▃▅▇▅▃▁",
+        "▂▅▇▅▂▅▇▅▂",
+        "▇▃▅▁▅▃▇"
+      ],
+      "defaultFormat": "vertical"
+    },
+    {
+      "name": "Buffering Spinner Frames",
+      "flags": ["◐", "◓", "◑", "◒"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Y2K Loading Captions",
+      "flags": [
+        "˗ˏˋ loading… ˎˊ˗",
+        "【 LOADING ▓▒░ 】",
+        "✧ buffering ✧",
+        "( 25% ■□□□ )",
+        "⌛ please wait ⌛"
+      ],
+      "defaultFormat": "vertical"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/y2k-symbols/",
+      "title": "Y2K Symbols",
+      "desc": "Retro-futuristic symbols for the Y2K aesthetic."
+    },
+    {
+      "href": "/library/tech-status-symbols/",
+      "title": "Tech & Status Symbols",
+      "desc": "Battery, signal, and interface status characters."
+    },
+    {
+      "href": "/library/line-divider-symbols/",
+      "title": "Line & Divider Symbols",
+      "desc": "Horizontal rules and dividers for bios and posts."
+    },
+    {
+      "href": "/library/text-art/",
+      "title": "Text Art",
+      "desc": "Classic ASCII and Unicode art pieces and building blocks."
+    }
+  ]
+}
