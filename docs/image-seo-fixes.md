@@ -79,6 +79,32 @@ All 13 references (`og:image` + `twitter:image` on the English homepage, the 10
 localized homepages, `404.html`, and the build-generated `_root.html`) were
 updated. `git mv` preserves file history.
 
+### e) Localized homepage OG cards generated
+
+The 10 localized homepages (`/de/`, `/es/`, `/fr/`, `/it/`, `/nl/`, `/pl/`,
+`/pt/`, `/tr/`, `/id/`, `/vi/`) previously shared the **English** home card —
+English image copy on a translated page. Each now has its own card with
+translated, keyword-led copy, generated through the existing
+`scripts/generate-site-art.py` visual system and rendered to 1200×630 PNG:
+
+| Locale | Card filename | Baked title |
+|---|---|---|
+| de | `coole-schriftarten-generator-preview.png` | Coole Schriftarten Generator |
+| es | `generador-de-letras-bonitas-preview.png` | Generador de Letras Bonitas |
+| fr | `generateur-de-polices-preview.png` | Générateur de Polices |
+| it | `generatore-di-testo-stilizzato-preview.png` | Generatore di Testo Stilizzato |
+| nl | `mooie-letters-generator-preview.png` | Mooie Letters Generator |
+| pl | `generator-ladnych-czcionek-preview.png` | Generator Ładnych Czcionek |
+| pt | `gerador-de-letras-diferentes-preview.png` | Gerador de Letras Diferentes |
+| tr | `sekilli-yazi-olusturucu-preview.png` | Şekilli Yazı Oluşturucu |
+| id | `generator-font-aesthetic-preview.png` | Generator Font Aesthetic |
+| vi | `tao-chu-kieu-dep-preview.png` | Tạo Chữ Kiểu Đẹp |
+
+Each card's `og:image` + `twitter:image` are wired into its localized homepage.
+Glyph rendering (including Turkish ş/ı, Polish Ł, and stacked Vietnamese
+diacritics) was visually verified — no missing-glyph boxes. The localized
+**zalgo** pages already carried translated cards and were left unchanged.
+
 ### d) Source-of-truth scripts updated
 
 Fixes were made **centrally** so they persist through future regeneration:
@@ -86,6 +112,9 @@ Fixes were made **centrally** so they persist through future regeneration:
 - **`scripts/wire-site-art.py`** — the generator that wires hero figures into
   pages now emits decorative figures (`aria-hidden="true"` + `alt=""`) and its
   idempotency regex tolerates the new attribute. Future runs stay correct.
+- **`scripts/generate-site-art.py`** — homepage card now writes to
+  `assets/og/fancy-text-generator-preview.png` (was the generic root `og.png`),
+  and a `LOCALIZED_HOME` registry generates the 10 localized homepage cards.
 - **`scripts/make-hero-decorative.py`** *(new)* — idempotent migration that made
   the 220 existing heroes decorative.
 - **`scripts/build-image-seo-status.py`** *(new)* — regenerates
@@ -131,41 +160,40 @@ highest-traffic pages were verified first.
 
 ## 5. High-priority pages still needing custom design work
 
-These pages are correctly wired but would benefit from a **bespoke OG card**
-(design task, not code):
+Every indexable page — including all 10 localized homepages (see §6) — now has a
+unique, page-specific OG card. There is **no remaining duplicate-OG problem**:
+the only shared card was the generic `og.png`, now scoped to the English
+homepage alone. Remaining items are *optional design polish*, not gaps:
 
-- **Localized homepages** (`/de/`, `/es/`, `/fr/`, `/it/`, `/nl/`, `/pl/`,
-  `/pt/`, `/tr/`, `/id/`, `/vi/`) currently reuse the English
-  `fancy-text-generator-preview.png`. See §6.
 - **`/library/slash-backslash-symbols/`** — highest-volume page on the site
   (165k for "/"); its card already exists but is worth a design review given the
   traffic ceiling.
-
-All highest/high-priority English pages already have unique, page-specific OG
-cards — there is **no duplicate-OG problem** among content pages (each uses its
-own `/assets/og/<slug>.png`). The only shared card was the generic `og.png`,
-now scoped to the homepage family.
+- The new localized cards reuse the master brand motif. A future pass could give
+  high-demand locales a bespoke motif, but this is low priority while localized
+  organic demand remains small.
 
 ---
 
-## 6. Localized image opportunities
+## 6. Localized image opportunities — implemented
 
-The localized homepages and zalgo pages have translated body copy but their OG
-card text is still English. There is **no automated text-on-image OG generator**
-in the repo (cards are pre-rendered design assets), so these are flagged as
-design tasks rather than auto-generated. Recommended assets and copy:
+**Update:** the original audit assumed there was no text-on-image OG generator.
+There is — `scripts/generate-site-art.py` bakes per-page title/subtitle into the
+1200×630 card (it already produced the localized *zalgo* cards). It was extended
+with a `LOCALIZED_HOME` registry, so the 10 localized homepage cards are now
+**generated and wired** rather than left as a backlog item. See §2(e) for the
+full filename/copy table.
 
-| Locale | Recommended filename | OG copy |
-|---|---|---|
-| German (`/de/`) | `coole-schriftarten-generator-preview.png` | "Coole Schriftarten Generator / Schöne Schriftarten und Symbole kopieren" |
-| Spanish (`/es/`) | `generador-de-letras-bonitas-preview.png` | "Generador de Letras Bonitas / Fuentes y símbolos para copiar" |
-| French (`/fr/`) | `generateur-de-polices-preview.png` | "Générateur de Polices / Polices et symboles à copier" |
-| Others (`it/nl/pl/pt/tr/id/vi`) | `<localized-keyword>-preview.png` | translate headline + "copy fonts & symbols" tagline |
+What this delivers:
 
-Prioritise locales only as their organic demand grows — current localized
-traffic is minimal in both SEMrush and GSC, so this is a low-urgency backlog
-item. The data model to track this (`primaryKeyword`, `imageSeoPriority`,
-remaining recommendation) is captured per-page in `data/image_seo_status.csv`.
+- A translated page no longer surfaces an English-text social card — the OG card
+  and Google Images thumbnail now match the page language and primary keyword.
+- Filenames are descriptive and keyword-led per locale (e.g.
+  `generador-de-letras-bonitas-preview.png`), aiding Google Images.
+- Regeneration is reproducible: `python3 scripts/generate-site-art.py` rebuilds
+  every card, including these, from the registry.
+
+The localized *zalgo* pages already carried translated cards and were unchanged.
+Per-page status (intent, priority, card path) is in `data/image_seo_status.csv`.
 
 ---
 
@@ -185,3 +213,8 @@ remaining recommendation) is captured per-page in `data/image_seo_status.csv`.
 - **Non-indexable pages** (`/usecase/linkedin-headline/embed/`,
   `verticalLayouts.test.html`) carry `robots: noindex` and were deliberately
   excluded from OG/Twitter requirements.
+- **Localized card generation** uses `cairosvg` (a documented dev-only
+  requirement of `generate-site-art.py`, not a runtime/browser dependency). Only
+  the 11 home/localized cards were rendered in this pass; the 221 existing
+  per-page cards were left byte-for-byte unchanged to avoid render churn. Glyph
+  coverage for all locales was visually verified.

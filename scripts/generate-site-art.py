@@ -545,6 +545,38 @@ def glyphs(*g):
     return P(scatter_glyphs, glyphs=list(g))
 
 
+# Localized homepage social cards. Each localized homepage (de/, es/, ...) used
+# to share the English homepage card, leaving English copy on a translated page.
+# Each entry is  locale -> (og_filename, title, subtitle)  and renders with the
+# master brand motif. Filenames are descriptive (keyword-led) for Google Images.
+LOCALIZED_HOME = {
+  "de": ("coole-schriftarten-generator-preview",
+         "Coole Schriftarten Generator", "Schöne Schriftarten und Symbole kopieren"),
+  "es": ("generador-de-letras-bonitas-preview",
+         "Generador de Letras Bonitas", "Fuentes y símbolos para copiar y pegar"),
+  "fr": ("generateur-de-polices-preview",
+         "Générateur de Polices", "Polices et symboles à copier-coller"),
+  "it": ("generatore-di-testo-stilizzato-preview",
+         "Generatore di Testo Stilizzato", "Caratteri e simboli da copiare e incollare"),
+  "nl": ("mooie-letters-generator-preview",
+         "Mooie Letters Generator", "Stijlvolle lettertypen en symbolen om te kopiëren"),
+  "pl": ("generator-ladnych-czcionek-preview",
+         "Generator Ładnych Czcionek", "Stylowe czcionki i symbole do skopiowania"),
+  "pt": ("gerador-de-letras-diferentes-preview",
+         "Gerador de Letras Diferentes", "Fontes e símbolos para copiar e colar"),
+  "tr": ("sekilli-yazi-olusturucu-preview",
+         "Şekilli Yazı Oluşturucu", "Havalı yazı tipleri ve sembolleri kopyala"),
+  "id": ("generator-font-aesthetic-preview",
+         "Generator Font Aesthetic", "Font dan simbol keren untuk disalin"),
+  "vi": ("tao-chu-kieu-dep-preview",
+         "Tạo Chữ Kiểu Đẹp", "Phông chữ và ký tự đặc biệt để sao chép"),
+}
+
+# The homepage card filename (root index.html + the fallback for localized
+# homepages). Lives under assets/og/ like every other per-page card.
+HOME_CARD = "fancy-text-generator-preview"
+
+
 PAGES = {
   # ---- site root / overview ----
   "about": ("About UltraTextGen", "The team and the mission behind the tool", m_brand, K_SITE),
@@ -971,19 +1003,25 @@ def main():
             output_width=1200, output_height=630)
         n += 1
 
-    # Homepage social card. The root index.html (and every localized homepage)
-    # references /og.png, so this single card backs all of them. It lives at the
-    # repo root rather than assets/og/ to match the existing og:image URL.
+    # Homepage social card. The English root index.html references this card.
     cairosvg.svg2png(
         bytestring=og_png_svg(
-            "home", "Fancy Text Generator",
+            HOME_CARD, "Fancy Text Generator",
             "60+ Unicode fonts to copy and paste anywhere",
             m_brand, K_SITE).encode(),
-        write_to=os.path.join(ROOT, "og.png"),
+        write_to=os.path.join(OG, f"{HOME_CARD}.png"),
         output_width=1200, output_height=630)
 
+    # Localized homepage cards — translated copy on a translated page.
+    for _loc, (fname, title, sub) in LOCALIZED_HOME.items():
+        cairosvg.svg2png(
+            bytestring=og_png_svg(fname, title, sub, m_brand, K_SITE).encode(),
+            write_to=os.path.join(OG, f"{fname}.png"),
+            output_width=1200, output_height=630)
+
     print(f"wrote {n} hero SVGs to assets/hero/ and {n} OG PNGs to assets/og/")
-    print("wrote homepage social card to og.png")
+    print(f"wrote homepage card + {len(LOCALIZED_HOME)} localized homepage cards "
+          "to assets/og/")
 
 
 if __name__ == "__main__":
