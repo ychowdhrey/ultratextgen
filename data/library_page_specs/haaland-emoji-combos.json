@@ -1,0 +1,154 @@
+{
+  "slug": "haaland-emoji-combos",
+  "title": "Haaland Emoji Combos 🇳🇴⚽🐐 Copy & Paste",
+  "meta_description": "Haaland emoji combos 🇳🇴⚽ — fan emoji sets for bios, captions, and comments. Click any emoji or combo to copy it instantly.",
+  "breadcrumb": "Haaland Emoji Combos",
+  "hero_h1": "Haaland Emoji Combos",
+  "hero_tagline": "Fan emoji sets for Haaland — flag, football, and signature combos. Click any emoji or combo to copy it.",
+  "intro": "Erling Haaland fans pair the Norway flag 🇳🇴 with the ball ⚽ and the goal machine 🤖. These combos suit fan bios, captions, and comments. Copy a single emoji below, or grab a full combo set with one click.",
+  "canonical": "https://ultratextgen.com/library/haaland-emoji-combos/",
+  "date_published": "2026-06-14",
+  "date_modified": "2026-06-14",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "haaland-emojis",
+      "label": "Haaland",
+      "h2": "Haaland Emojis",
+      "intro": "The signature emojis for the player.",
+      "symbols": [
+        {
+          "char": "🇳🇴",
+          "label": "Norway Flag"
+        },
+        {
+          "char": "⚽",
+          "label": "Soccer Ball"
+        },
+        {
+          "char": "🐐",
+          "label": "GOAT"
+        },
+        {
+          "char": "🤖",
+          "label": "Robot (Goal Machine)"
+        },
+        {
+          "char": "9️⃣",
+          "label": "Number 9"
+        },
+        {
+          "char": "🏆",
+          "label": "Trophy"
+        },
+        {
+          "char": "🔵",
+          "label": "Sky Blue (Club Colour)"
+        },
+        {
+          "char": "🔥",
+          "label": "Fire"
+        }
+      ]
+    },
+    {
+      "id": "norway-emojis",
+      "label": "Norway",
+      "h2": "Norway & Goal Machine Emojis",
+      "intro": "The Viking power and clinical finishing.",
+      "symbols": [
+        {
+          "char": "🇳🇴",
+          "label": "Norway Flag"
+        },
+        {
+          "char": "🤖",
+          "label": "Robot"
+        },
+        {
+          "char": "💪",
+          "label": "Flexed Biceps"
+        },
+        {
+          "char": "🎯",
+          "label": "Direct Hit"
+        },
+        {
+          "char": "⚡",
+          "label": "Lightning"
+        },
+        {
+          "char": "🏆",
+          "label": "Trophy"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Haaland Combo Sets",
+    "intro": "Copy a full combo in one click and paste it into a bio, caption, or username."
+  },
+  "collection_container_id": "haalandCombosContainer",
+  "collections": [
+    {
+      "name": "Erling",
+      "flags": [
+        "🇳🇴",
+        "⚽",
+        "🤖"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Goal Machine",
+      "flags": [
+        "⚽",
+        "🤖",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Norway",
+      "flags": [
+        "🇳🇴",
+        "⚽",
+        "💪"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cyborg Striker",
+      "flags": [
+        "🤖",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "World Cup Emoji Combos",
+      "desc": "World Cup emoji sets and combos for fan bios and captions."
+    },
+    {
+      "href": "/library/football-symbols/",
+      "title": "Football Symbols",
+      "desc": "Soccer and football symbols, trophies, and match combos."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Flag Emojis",
+      "desc": "Country and regional flag emojis ready to copy and paste."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Aesthetic emoji combinations for every mood and theme."
+    }
+  ]
+}

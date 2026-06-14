@@ -1,0 +1,158 @@
+{
+  "slug": "usa-emoji-combos",
+  "title": "USA Emoji Combos 🇺🇸⚽ Copy & Paste",
+  "meta_description": "USA emoji combos 🇺🇸⚽ — USMNT colours and football sets for fan bios and captions. Click any emoji or combo to copy it instantly.",
+  "breadcrumb": "USA Emoji Combos",
+  "hero_h1": "USA Emoji Combos",
+  "hero_tagline": "USMNT colours and football emoji sets for USA fans — click any emoji or combo to copy it.",
+  "intro": "USA fans pair the flag 🇺🇸 with the ball ⚽ and the colours of the USMNT. As a 2026 host nation, the USA goes all in. Copy a single emoji below, or grab a full combo set with one click.",
+  "canonical": "https://ultratextgen.com/library/usa-emoji-combos/",
+  "date_published": "2026-06-14",
+  "date_modified": "2026-06-14",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "usa-emojis",
+      "label": "USA",
+      "h2": "USA Emojis",
+      "intro": "The flag, the ball, and the national colours.",
+      "symbols": [
+        {
+          "char": "🇺🇸",
+          "label": "USA Flag"
+        },
+        {
+          "char": "⚽",
+          "label": "Soccer Ball"
+        },
+        {
+          "char": "🔴",
+          "label": "Red Circle"
+        },
+        {
+          "char": "⚪",
+          "label": "White Circle"
+        },
+        {
+          "char": "🔵",
+          "label": "Blue Circle"
+        },
+        {
+          "char": "🦅",
+          "label": "Eagle"
+        },
+        {
+          "char": "🏆",
+          "label": "Trophy"
+        },
+        {
+          "char": "🎉",
+          "label": "Party Popper"
+        }
+      ]
+    },
+    {
+      "id": "pride-emojis",
+      "label": "Pride",
+      "h2": "USA Pride Emojis",
+      "intro": "Red, white, and blue stars and stripes.",
+      "symbols": [
+        {
+          "char": "🔴",
+          "label": "Red Circle"
+        },
+        {
+          "char": "⚪",
+          "label": "White Circle"
+        },
+        {
+          "char": "🔵",
+          "label": "Blue Circle"
+        },
+        {
+          "char": "🦅",
+          "label": "Eagle"
+        },
+        {
+          "char": "⭐",
+          "label": "Star"
+        },
+        {
+          "char": "🏆",
+          "label": "Trophy"
+        },
+        {
+          "char": "🔥",
+          "label": "Fire"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "USA Combo Sets",
+    "intro": "Copy a full combo in one click and paste it into a bio, caption, or username."
+  },
+  "collection_container_id": "usaCombosContainer",
+  "collections": [
+    {
+      "name": "USMNT",
+      "flags": [
+        "🇺🇸",
+        "⚽",
+        "🏆"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Go USA",
+      "flags": [
+        "🇺🇸",
+        "⚽",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Stars and Stripes",
+      "flags": [
+        "🔴",
+        "⚪",
+        "🔵"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "USA 2026 Host",
+      "flags": [
+        "🇺🇸",
+        "🏟️",
+        "⚽"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "World Cup Emoji Combos",
+      "desc": "World Cup emoji sets and combos for fan bios and captions."
+    },
+    {
+      "href": "/library/football-symbols/",
+      "title": "Football Symbols",
+      "desc": "Soccer and football symbols, trophies, and match combos."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Flag Emojis",
+      "desc": "Country and regional flag emojis ready to copy and paste."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Aesthetic emoji combinations for every mood and theme."
+    }
+  ]
+}
