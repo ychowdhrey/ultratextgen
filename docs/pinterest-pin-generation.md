@@ -41,11 +41,11 @@ No screenshots, no stretched OG image, no ad-banner styling.
 | Metric | Count |
 |---|---|
 | Total pages reviewed | **240** |
-| Pages included (pins generated) | **230** |
-| Pages excluded | **10** |
-| Pinterest images generated | **230** (all 1000×1500 PNG) |
+| Pages included (pins generated) | **235** |
+| Pages excluded | **5** |
+| Pinterest images generated | **235** (all 1000×1500 PNG) |
 | Boards defined | **12** |
-| Secondary board assignments | **96** |
+| Secondary board assignments | **98** |
 
 ---
 
@@ -55,17 +55,17 @@ No screenshots, no stretched OG image, no ad-banner styling.
 |---|---:|---:|
 | Discord Fonts, Symbols & Names | 2 | 3 |
 | Instagram Bio Symbols & Aesthetic Text | 20 | 12 |
-| Fancy Text Generator & Copy Paste Fonts | 59 | 0 |
+| Fancy Text Generator & Copy Paste Fonts | 61 | 0 |
 | International Fancy Font Generators | 20 | 0 |
 | TikTok, Snapchat & WhatsApp Fonts | 11 | 9 |
 | LinkedIn Fonts & Professional Text | 4 | 4 |
 | Gaming Symbols & Usernames | 8 | 1 |
-| Special Characters, Unicode & Keyboard Symbols | 24 | 56 |
-| Emoji Copy Paste & Emoji Combos | 44 | 1 |
+| Special Characters, Unicode & Keyboard Symbols | 25 | 57 |
+| Emoji Copy Paste & Emoji Combos | 44 | 2 |
 | Cute Symbols, Hearts & Decorative Text | 17 | 6 |
 | Text Art, Kaomoji & ASCII Faces | 2 | 4 |
-| Font Guides & Typography Tips | 19 | 0 |
-| **Total (primary)** | **230** | **96** |
+| Font Guides & Typography Tips | 21 | 0 |
+| **Total (primary)** | **235** | **98** |
 
 ### Board assignment logic
 
@@ -96,19 +96,19 @@ Secondary boards are added only when a page naturally matches a second board
 
 | Design template | Pages | Page types |
 |---|---:|---|
-| `library_symbols_vertical` | 146 | symbol library |
+| `library_symbols_vertical` | 147 | symbol library (incl. `/library/` hub) |
 | `localized_vertical` | 20 | localized homepages + localized use cases |
-| `category_vertical` | 19 | category detail |
+| `category_vertical` | 20 | category detail + `/category/` hub |
 | `platform_vertical` | 17 | platform + tiktok/youtube/roblox sub-pages |
-| `answer_vertical` | 11 | answer |
-| `usecase_vertical` | 8 | use case |
-| `guide_vertical` | 8 | guide articles |
+| `answer_vertical` | 12 | answer + `/answers/` hub |
+| `usecase_vertical` | 9 | use case + `/usecase/` hub |
+| `guide_vertical` | 9 | guide articles + `/guide/` hub |
 | `homepage_vertical` | 1 | homepage |
-| **Total** | **230** | |
+| **Total** | **235** | |
 
 ---
 
-## Pages excluded (10)
+## Pages excluded (5)
 
 | Page | Reason |
 |---|---|
@@ -117,17 +117,13 @@ Secondary boards are added only when a page naturally matches a second board
 | `/privacy/` | legal page |
 | `/terms/` | legal page |
 | `/embed/linkedin-headline-generator/` | embed page |
-| `/category/` | navigation only page |
-| `/usecase/` | navigation only page |
-| `/library/` | navigation only page |
-| `/answers/` | navigation only page |
-| `/guide/` | navigation only page |
 
 The five overview/index hubs (`/category/`, `/usecase/`, `/library/`,
-`/answers/`, `/guide/`) are excluded under the rule "index pages that are
-only navigation, unless they have strong search intent" — they carry **no
-search volume** in `image_seo_status.csv` and exist only to route to detail
-pages. See manual review below if you'd rather pin the hubs too.
+`/answers/`, `/guide/`) **are included** — each is a strong topical landing
+page with real keyword and visual intent (a font-categories hub, a symbol &
+emoji library hub, etc.), not pure navigation. The `/library/` hub is mapped
+to Special Characters (secondary: Emoji); `/answers/` and `/guide/` to Font
+Guides; `/category/` and `/usecase/` to Fancy Text.
 
 ---
 
@@ -147,7 +143,7 @@ published_pin_url, design_template, visual_glyphs, notes`
 - `utm_destination_url` appends
   `utm_source=pinterest&utm_medium=social&utm_campaign=organic_pins&utm_content=<slug>`.
 - Titles target 40–90 chars; descriptions target 150–300 chars and are
-  **unique per pin** (230/230 unique descriptions).
+  **unique per pin** (235/235 unique descriptions).
 
 ---
 
@@ -155,7 +151,7 @@ published_pin_url, design_template, visual_glyphs, notes`
 
 | # | Check | Result |
 |---|---|---|
-| 1 | Every included row has a Pinterest image | ✅ 230/230 |
+| 1 | Every included row has a Pinterest image | ✅ 235/235 |
 | 2 | Every Pinterest image is exactly 1000×1500 | ✅ |
 | 3 | Every included row has a (primary) board | ✅ |
 | 4 | Every included row has a pin title | ✅ |
@@ -164,31 +160,28 @@ published_pin_url, design_template, visual_glyphs, notes`
 | 7 | No excluded page has a Pinterest image / image requirement | ✅ (0 stray files) |
 | 8 | Existing OG images not overwritten | ✅ (`assets/og/`, `guide/assets/og/` unchanged) |
 | 9 | Existing image-SEO metadata unchanged | ✅ (`image_seo_status.csv` read-only) |
-| 10 | Pages included vs excluded reported | ✅ 230 included / 10 excluded |
+| 10 | Pages included vs excluded reported | ✅ 235 included / 5 excluded |
 
-Also verified: pin title lengths all within 40–90 chars; pin descriptions
-all within 150–300 chars; 230 image files on disk == 230 included rows.
+Also verified: pin title lengths all within 40–90 chars and **unique
+(235/235)**; pin descriptions all within 150–300 chars and **unique
+(235/235)**; 235 image files on disk == 235 included rows.
 
 ---
 
 ## Pages needing manual review
 
-1. **Duplicate pin title.** `category/bold-fonts/` and
-   `category/bold-fonts/bold/` both resolve to the title
-   *"Bold Fonts — Copy and Paste Font Style — UltraTextGen"* (they share the
-   "Bold Fonts Generator" title upstream; their descriptions differ). Consider
-   a distinguishing title for the `/bold/` variant.
-2. **Overview hubs.** The 5 navigation hubs were excluded for lack of search
-   volume. If any hub (e.g. `/library/`) is judged to have strong search
-   intent, flip it to included and re-run.
-3. **Localized descriptions.** Localized pins keep the translated title and
+1. **Localized descriptions.** Localized pins keep the translated title and
    subtitle but use an English copy-and-paste CTA sentence. Fine for an
    international board, but worth a native-language pass before publishing.
-4. **Emoji / CJK pages.** Colour-emoji and CJK code points do not rasterize in
+2. **Emoji / CJK pages.** Colour-emoji and CJK code points do not rasterize in
    the bundled fonts, so emoji-themed and CJK library pins use a brand vector
    motif (smiley, paw, etc.); their `visual_glyphs` cell holds a short motif
    descriptor rather than literal emoji. This mirrors how the OG cards handle
    the same pages — no action required, noted for transparency.
+
+**Resolved since first draft:** the two "Bold Fonts" category variants now get
+distinct titles (collisions are auto-disambiguated with subtitle keywords), and
+the 5 overview hubs are now included as pins.
 
 ---
 

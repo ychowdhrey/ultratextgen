@@ -176,9 +176,6 @@ def pin_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE):
 
 
 # ---------------------------------------------------------------- eligibility
-EXCLUDE_OVERVIEW = {"category", "usecase", "library", "answers", "guide"}
-
-
 def classify(row):
     """Return (include: bool, exclusion_reason: str). exclusion_reason is ''
     when the page is included."""
@@ -189,11 +186,9 @@ def classify(row):
                        else "utility page")
     if ptype == "embed" or slug.startswith("embed-") or "/embed/" in row["Page URL"]:
         return False, "embed page"
-    # navigation-only hub/index pages (no search volume, pure nav) — excluded
-    # per "index pages that are only navigation, unless they have strong
-    # search intent". These hubs carry no search volume in the source data.
-    if slug in EXCLUDE_OVERVIEW:
-        return False, "navigation only page"
+    # The overview hubs (/category/, /usecase/, /library/, /answers/, /guide/)
+    # are kept: each is a strong topical landing page with real keyword + visual
+    # intent, not pure navigation.
     return True, ""
 
 
@@ -263,6 +258,11 @@ def assign_boards(slug, row, title, sub):
         secondary = next((m for m in matches if m != primary), "")
         return primary, secondary
     if slug == "homepage":
+        return B_FANCY, ""
+    # overview hubs land on their natural topical board (not the bare keyword)
+    if slug == "library":
+        return B_SPECIAL, B_EMOJI
+    if slug in ("category", "usecase"):
         return B_FANCY, ""
 
     if matches:
@@ -354,9 +354,13 @@ def pin_title(row, slug, title, sub):
     elif ptype == "localized":
         t = f"{base} — Copy and Paste Fonts"
     elif ptype == "guide":
-        t = f"{base}: A Practical Typography Guide"
+        # avoid "...Typography Guide: A Practical Typography Guide"
+        if "guide" in base.lower() or "typography" in base.lower():
+            t = f"{base} — Copy and Paste Fonts"
+        else:
+            t = f"{base}: A Practical Typography Guide"
     elif ptype == "answer" or q:
-        t = base if q else f"{base} — Quick Answer"
+        t = base if (q or "answer" in base.lower()) else f"{base} — Quick Answer"
         t = f"{t} | Fonts & Symbols Help" if len(t) < 40 else t
     elif ptype == "symbol library":
         t = f"{name} to Copy and Paste"
@@ -524,6 +528,7 @@ def main():
     included = 0
     excluded = 0
     board_counts = {b: 0 for b in ALL_BOARDS}
+    used_titles = set()
     issues = []
 
     for row in rows:
@@ -566,6 +571,20 @@ def main():
         primary, secondary = assign_boards(slug, row, title, sub)
         board_counts[primary] += 1
 
+        # unique pin title: disambiguate any collision with subtitle keywords
+        # (e.g. the two "Bold Fonts" category variants share a base title).
+        ptitle = pin_title(row, slug, title, sub)
+        if ptitle in used_titles:
+            extra = " ".join(sub.split()[:4]).strip(" —:.,")
+            ptitle = f"{clean_name(title)} — {extra}"
+            if len(ptitle) > 90:
+                ptitle = ptitle[:88].rsplit(" ", 1)[0].rstrip(" —:|")
+            if len(ptitle) < 40:
+                ptitle = f"{ptitle} | UltraTextGen"
+            while ptitle in used_titles:
+                ptitle += " ·"
+        used_titles.add(ptitle)
+
         pin_path = f"assets/pinterest/{slug}.png"
         rec.update({
             "include_in_pinterest": "yes",
@@ -574,7 +593,7 @@ def main():
             "pinterest_image_height": str(PIN_H),
             "pinterest_board_primary": primary,
             "pinterest_board_secondary": secondary,
-            "pin_title": pin_title(row, slug, title, sub),
+            "pin_title": ptitle,
             "pin_description": pin_description(row, slug, title, sub, tmpl, glyphs, glyphs_real),
             "pin_keywords": pin_keywords(row, slug, title, tmpl, glyphs),
             "pin_alt_text": pin_alt(row, slug, title, glyphs, tmpl),
