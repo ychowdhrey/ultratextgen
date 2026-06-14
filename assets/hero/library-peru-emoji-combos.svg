@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghlibraryp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhlibraryp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhlibraryp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshlibraryp" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshlibraryp)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryp)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryp)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <line x1="92" y1="60" x2="92" y2="300" stroke="#1a1a2e" stroke-width="9"
+          stroke-linecap="round"/>
+    <path d="M92 72 q60 -28 120 0 q60 28 120 0 l0 96 q-60 28 -120 0 q-60 -28 -120 0 Z"
+          fill="url(#ghlibraryp)"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <line x1="92" y1="60" x2="92" y2="300" stroke="#1a1a2e" stroke-width="9"
+          stroke-linecap="round"/>
+    <path d="M92 72 q60 -28 120 0 q60 28 120 0 l0 96 q-60 28 -120 0 q-60 -28 -120 0 Z"
+          fill="url(#ghlibraryp)"/></g>
+</svg>
