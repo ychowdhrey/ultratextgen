@@ -1,0 +1,158 @@
+{
+  "slug": "world-cup-emoji-combos",
+  "title": "World Cup Emoji & Combos ⚽🏆 2026",
+  "meta_description": "World Cup emoji combos for 2026 — ⚽🏆🌎 fan sets for bios, captions, and usernames. Click any emoji or combo to copy it instantly.",
+  "breadcrumb": "World Cup Emoji Combos",
+  "hero_h1": "World Cup Emoji & Combos",
+  "hero_tagline": "Trophy, ball, and globe emoji sets for the 2026 World Cup — click any emoji or combo to copy it.",
+  "intro": "The World Cup brings out the flags, the trophy, and the celebration emojis. These combos are built for fan bios, matchday captions, and team usernames during the 2026 tournament. Grab a single emoji from the sections below, or copy a ready-made combo set with one click.",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "wc-emojis",
+      "label": "World Cup",
+      "h2": "World Cup Emojis",
+      "intro": "The trophy, the ball, and the global stage.",
+      "symbols": [
+        {
+          "char": "🏆",
+          "label": "Trophy"
+        },
+        {
+          "char": "⚽",
+          "label": "Soccer Ball"
+        },
+        {
+          "char": "🌎",
+          "label": "Globe (Americas)"
+        },
+        {
+          "char": "🥅",
+          "label": "Goal Net"
+        },
+        {
+          "char": "🥇",
+          "label": "Gold Medal"
+        },
+        {
+          "char": "🏟️",
+          "label": "Stadium"
+        },
+        {
+          "char": "🏁",
+          "label": "Chequered Flag"
+        },
+        {
+          "char": "👑",
+          "label": "Crown"
+        }
+      ]
+    },
+    {
+      "id": "wc-fan",
+      "label": "Fans",
+      "h2": "Celebration & Fan Emojis",
+      "intro": "Hype, fire, and confetti for goals and wins.",
+      "symbols": [
+        {
+          "char": "🎉",
+          "label": "Party Popper"
+        },
+        {
+          "char": "🎊",
+          "label": "Confetti Ball"
+        },
+        {
+          "char": "🔥",
+          "label": "Fire"
+        },
+        {
+          "char": "💪",
+          "label": "Flexed Biceps"
+        },
+        {
+          "char": "🐐",
+          "label": "GOAT"
+        },
+        {
+          "char": "📣",
+          "label": "Megaphone"
+        },
+        {
+          "char": "🥳",
+          "label": "Partying Face"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "World Cup Combo Sets",
+    "intro": "Copy a full combo in one click and paste it into a bio, caption, or username."
+  },
+  "collection_container_id": "wcCombosContainer",
+  "collections": [
+    {
+      "name": "World Cup 2026",
+      "flags": [
+        "🏆",
+        "⚽",
+        "🌎"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Goal Celebration",
+      "flags": [
+        "⚽",
+        "🔥",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Champions",
+      "flags": [
+        "🏆",
+        "🥇",
+        "👑"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fan Hype",
+      "flags": [
+        "📣",
+        "🔥",
+        "💪"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/football-symbols/",
+      "title": "Football Symbols",
+      "desc": "Soccer and football symbols, trophies, and match combos."
+    },
+    {
+      "href": "/library/soccer-emoji-copy-paste/",
+      "title": "Soccer Emoji List",
+      "desc": "The full soccer emoji set, ready to copy and paste."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Flag Emojis",
+      "desc": "Country and regional flag emojis ready to copy and paste."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, fireworks, and celebration emojis for big moments."
+    }
+  ],
+  "canonical": "https://ultratextgen.com/library/world-cup-emoji-combos/",
+  "date_published": "2026-06-14",
+  "date_modified": "2026-06-14"
+}
