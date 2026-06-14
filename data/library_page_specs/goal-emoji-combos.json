@@ -1,0 +1,150 @@
+{
+  "slug": "goal-emoji-combos",
+  "title": "Goal Emoji ⚽🥅 Celebration Combos",
+  "meta_description": "Goal emoji combos ⚽🥅 — goal celebration sets for football captions and reactions. Click any emoji or combo to copy it instantly.",
+  "breadcrumb": "Goal Emoji Combos",
+  "hero_h1": "Goal Emoji & Celebration Combos",
+  "hero_tagline": "Goal and net emoji sets for celebrating a strike — click any emoji or combo to copy it.",
+  "intro": "Nothing beats the moment the ball hits the net. These goal emoji combos pair the ball ⚽ and goal 🥅 with fire, confetti, and celebration emojis for captions and reactions. Copy a single emoji below, or grab a ready-made goal combo with one click.",
+  "canonical": "https://ultratextgen.com/library/goal-emoji-combos/",
+  "date_published": "2026-06-14",
+  "date_modified": "2026-06-14",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "goal-emojis",
+      "label": "Goal",
+      "h2": "Goal Emojis",
+      "intro": "The ball, the net, and the strike.",
+      "symbols": [
+        {
+          "char": "⚽",
+          "label": "Soccer Ball"
+        },
+        {
+          "char": "🥅",
+          "label": "Goal Net"
+        },
+        {
+          "char": "🎯",
+          "label": "Direct Hit"
+        },
+        {
+          "char": "💥",
+          "label": "Collision"
+        },
+        {
+          "char": "🔥",
+          "label": "Fire"
+        },
+        {
+          "char": "💪",
+          "label": "Flexed Biceps"
+        },
+        {
+          "char": "📣",
+          "label": "Megaphone"
+        }
+      ]
+    },
+    {
+      "id": "celebration-emojis",
+      "label": "Celebration",
+      "h2": "Goal Celebration Emojis",
+      "intro": "The roar after the ball goes in.",
+      "symbols": [
+        {
+          "char": "🎉",
+          "label": "Party Popper"
+        },
+        {
+          "char": "🎊",
+          "label": "Confetti Ball"
+        },
+        {
+          "char": "🙌",
+          "label": "Raising Hands"
+        },
+        {
+          "char": "🕺",
+          "label": "Man Dancing"
+        },
+        {
+          "char": "🥳",
+          "label": "Partying Face"
+        },
+        {
+          "char": "🏆",
+          "label": "Trophy"
+        }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Goal Combo Sets",
+    "intro": "Copy a full combo in one click and paste it into a bio, caption, or username."
+  },
+  "collection_container_id": "goalCombosContainer",
+  "collections": [
+    {
+      "name": "Goal!",
+      "flags": [
+        "⚽",
+        "🥅",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Goooal",
+      "flags": [
+        "🥅",
+        "⚽",
+        "🎉"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Screamer",
+      "flags": [
+        "⚽",
+        "💥",
+        "🔥"
+      ],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Net Buster",
+      "flags": [
+        "🥅",
+        "⚽",
+        "💪"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "World Cup Emoji Combos",
+      "desc": "World Cup emoji sets and combos for fan bios and captions."
+    },
+    {
+      "href": "/library/football-symbols/",
+      "title": "Football Symbols",
+      "desc": "Soccer and football symbols, trophies, and match combos."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Flag Emojis",
+      "desc": "Country and regional flag emojis ready to copy and paste."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Aesthetic emoji combinations for every mood and theme."
+    }
+  ]
+}
