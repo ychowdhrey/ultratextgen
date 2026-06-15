@@ -61,27 +61,5 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /library/whisper-subliminal-symbols/                  /library/aesthetic-symbols/ 301
 /library/whisper-subliminal-symbols/index.html        /library/aesthetic-symbols/ 301
 
-# Football/World Cup font variants → consolidated generator (Phase 6)
-/world-cup-font                  /usecase/football-font/ 301
-/world-cup-font/                 /usecase/football-font/ 301
-/world-cup-2026-font             /usecase/football-font/ 301
-/world-cup-2026-font/            /usecase/football-font/ 301
-/fifa-font                       /usecase/football-font/ 301
-/fifa-font/                      /usecase/football-font/ 301
-/fifa-world-cup-font             /usecase/football-font/ 301
-/fifa-world-cup-font/            /usecase/football-font/ 301
-/soccer-font                     /usecase/football-font/ 301
-/soccer-font/                    /usecase/football-font/ 301
-/sports-font                     /usecase/football-font/ 301
-/sports-font/                    /usecase/football-font/ 301
-/football-fancy-text-generator   /usecase/football-font/ 301
-/football-fancy-text-generator/  /usecase/football-font/ 301
-/football-text-generator         /usecase/football-font/ 301
-/football-text-generator/        /usecase/football-font/ 301
-/football-decorative-text        /usecase/football-font/ 301
-/football-decorative-text/       /usecase/football-font/ 301
-/football-banner-text            /usecase/football-font/ 301
-/football-banner-text/           /usecase/football-font/ 301
-
 /404  /404.html  200
 /*    /404.html  404
