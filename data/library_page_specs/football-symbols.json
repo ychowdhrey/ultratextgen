@@ -151,6 +151,46 @@
           "label": "Chequered Flag"
         }
       ]
+    },
+    {
+      "id": "dividers",
+      "label": "Dividers",
+      "h2": "Football Dividers & Separators",
+      "intro": "Soccer-ball divider lines for bios, posts, and banners.",
+      "symbols": [
+        {
+          "char": "⚽▬▬▬▬▬▬▬⚽",
+          "label": "Ball Bar Divider"
+        },
+        {
+          "char": "•◦•◦⚽◦•◦•",
+          "label": "Dotted Ball Divider"
+        },
+        {
+          "char": "─────⚽─────",
+          "label": "Line Ball Divider"
+        },
+        {
+          "char": "✦•·····⚽·····•✦",
+          "label": "Sparkle Ball Divider"
+        },
+        {
+          "char": "▰▰▰▰⚽▰▰▰▰",
+          "label": "Block Ball Divider"
+        },
+        {
+          "char": "═══════⚽═══════",
+          "label": "Double Line Divider"
+        },
+        {
+          "char": "↞−−−−⚽−−−−↠",
+          "label": "Arrow Ball Divider"
+        },
+        {
+          "char": "꒰⚽꒱─────────",
+          "label": "Bracket Ball Divider"
+        }
+      ]
     }
   ],
   "related": [
@@ -177,5 +217,5 @@
   ],
   "canonical": "https://ultratextgen.com/library/football-symbols/",
   "date_published": "2026-06-14",
-  "date_modified": "2026-06-14"
+  "date_modified": "2026-06-16"
 }

@@ -83,6 +83,46 @@
           "label": "Partying Face"
         }
       ]
+    },
+    {
+      "id": "captions-chants",
+      "label": "Captions",
+      "h2": "Matchday Captions & Chants",
+      "intro": "Ready-made lines for matchday posts, WhatsApp status, and banners.",
+      "symbols": [
+        {
+          "char": "GOOOAL! ⚽🔥",
+          "label": "Goal Shout"
+        },
+        {
+          "char": "It's coming home 🏆🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+          "label": "Coming Home"
+        },
+        {
+          "char": "Vamos! ⚽💪",
+          "label": "Vamos"
+        },
+        {
+          "char": "We are the champions 🏆🎉",
+          "label": "Champions"
+        },
+        {
+          "char": "Matchday ⚽🔥",
+          "label": "Matchday"
+        },
+        {
+          "char": "Full time 🟥🟨⚽",
+          "label": "Full Time"
+        },
+        {
+          "char": "What a goal! ⚽😱",
+          "label": "What a Goal"
+        },
+        {
+          "char": "Let's go! 🚩⚽",
+          "label": "Let's Go"
+        }
+      ]
     }
   ],
   "collection_section": {
@@ -154,5 +194,5 @@
   ],
   "canonical": "https://ultratextgen.com/library/world-cup-emoji-combos/",
   "date_published": "2026-06-14",
-  "date_modified": "2026-06-14"
+  "date_modified": "2026-06-16"
 }

@@ -1,0 +1,165 @@
+{
+  "slug": "football-ascii-art",
+  "title": "Football ASCII Art ⚽ Copy & Paste",
+  "meta_description": "Copy and paste football ASCII art — soccer ball, goal, and pitch characters plus ready-made one-line art for forums, Discord, and bios.",
+  "canonical": "https://ultratextgen.com/library/football-ascii-art/",
+  "breadcrumb": "Football ASCII Art",
+  "hero_h1": "Football ASCII Art",
+  "hero_tagline": "Soccer ball, goal, and pitch characters plus ready-made one-line football art. Click any piece to copy it.",
+  "intro": "Football ASCII art uses plain text characters to draw the game — round shapes for the ball, lines and boxes for the goal and pitch, and compact one-line pieces you can drop into forums, Discord, or a bio. Click any character or piece below to copy it, and combine them to build your own.",
+  "date_published": "2026-06-16",
+  "date_modified": "2026-06-16",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ball-chars",
+      "label": "Ball & Goal",
+      "h2": "Ball & Goal Characters",
+      "intro": "Round and circular characters that read as a ball.",
+      "symbols": [
+        {
+          "char": "⚽",
+          "label": "Soccer Ball"
+        },
+        {
+          "char": "◯",
+          "label": "Large Circle"
+        },
+        {
+          "char": "⊙",
+          "label": "Circled Dot"
+        },
+        {
+          "char": "●",
+          "label": "Black Circle"
+        },
+        {
+          "char": "○",
+          "label": "White Circle"
+        },
+        {
+          "char": "◉",
+          "label": "Fisheye"
+        },
+        {
+          "char": "⬤",
+          "label": "Black Large Circle"
+        },
+        {
+          "char": "◍",
+          "label": "Circle with Vertical Fill"
+        }
+      ]
+    },
+    {
+      "id": "pitch-chars",
+      "label": "Pitch & Net",
+      "h2": "Pitch & Net Pieces",
+      "intro": "Lines and boxes for building a goal, net, or pitch.",
+      "symbols": [
+        {
+          "char": "═",
+          "label": "Double Line"
+        },
+        {
+          "char": "║",
+          "label": "Double Vertical"
+        },
+        {
+          "char": "╬",
+          "label": "Cross Junction"
+        },
+        {
+          "char": "▭",
+          "label": "Rectangle"
+        },
+        {
+          "char": "▬",
+          "label": "Black Rectangle"
+        },
+        {
+          "char": "┃",
+          "label": "Heavy Vertical"
+        },
+        {
+          "char": "╋",
+          "label": "Heavy Cross"
+        },
+        {
+          "char": "⌗",
+          "label": "Viewdata / Net"
+        },
+        {
+          "char": "▦",
+          "label": "Square with Grid"
+        },
+        {
+          "char": "⊞",
+          "label": "Squared Plus"
+        }
+      ]
+    },
+    {
+      "id": "ready-ascii",
+      "label": "Ready Art",
+      "h2": "Ready Football ASCII",
+      "intro": "Compact one-line pieces ready to paste.",
+      "symbols": [
+        {
+          "char": "≡⚽≡",
+          "label": "Ball in Lines"
+        },
+        {
+          "char": "[⚽]",
+          "label": "Boxed Ball"
+        },
+        {
+          "char": "►⚽◄",
+          "label": "Kickoff"
+        },
+        {
+          "char": "⌁GOAL⌁",
+          "label": "Goal Banner"
+        },
+        {
+          "char": "|‾⚽‾|",
+          "label": "Ball in Goal"
+        },
+        {
+          "char": "○⚽○",
+          "label": "Ball Trio"
+        },
+        {
+          "char": "≪⚽≫",
+          "label": "Ball in Chevrons"
+        },
+        {
+          "char": "⚽⚡GOAL⚡⚽",
+          "label": "Goal Flash"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/meme-text-art/",
+      "title": "Meme Text Art",
+      "desc": "ASCII and text-art building blocks for memes and posts."
+    },
+    {
+      "href": "/library/football-symbols/",
+      "title": "Football Symbols",
+      "desc": "Soccer and football symbols, trophies, and match combos."
+    },
+    {
+      "href": "/library/sports-emojis/",
+      "title": "Sports Emojis",
+      "desc": "Every sport and activity emoji, organized by category."
+    },
+    {
+      "href": "/library/soccer-emoji-copy-paste/",
+      "title": "Soccer Emoji List",
+      "desc": "The full soccer emoji set, ready to copy and paste."
+    }
+  ]
+}
