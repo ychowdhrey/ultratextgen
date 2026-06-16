@@ -1,0 +1,133 @@
+{
+  "slug": "guess-soccer-team-by-emoji",
+  "title": "Guess the Soccer Team by Emoji ⚽ (Clues & Answers)",
+  "meta_description": "Guess the soccer team by emoji — national and club team emoji clues with answers, plus a World Cup emoji quiz. Click any clue to copy it.",
+  "canonical": "https://ultratextgen.com/library/guess-soccer-team-by-emoji/",
+  "breadcrumb": "Guess the Soccer Team",
+  "hero_h1": "Guess the Soccer Team by Emoji",
+  "hero_tagline": "National and club team emoji clues with answers, plus a World Cup quiz round. Click any clue to copy it.",
+  "intro": "Turn emojis into a team-guessing game. Each clue below hints at a national side or club through its colours and nicknames — no logos needed — and the answer sits right beside it. Click a clue to copy the emojis for a quiz, story, or party round, then reveal the team.",
+  "date_published": "2026-06-16",
+  "date_modified": "2026-06-16",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "national-teams",
+      "label": "National",
+      "h2": "National Team Clues",
+      "intro": "Colours and nicknames of famous national sides.",
+      "symbols": [
+        {
+          "char": "🇧🇷⚽💛",
+          "label": "Brazil"
+        },
+        {
+          "char": "🇦🇷⚽🤍💙",
+          "label": "Argentina"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽🦁",
+          "label": "England (Three Lions)"
+        },
+        {
+          "char": "🇫🇷⚽🐓",
+          "label": "France"
+        },
+        {
+          "char": "🇳🇱⚽🟠",
+          "label": "Netherlands (Oranje)"
+        },
+        {
+          "char": "🇮🇹⚽💙",
+          "label": "Italy (Azzurri)"
+        }
+      ]
+    },
+    {
+      "id": "club-teams",
+      "label": "Clubs",
+      "h2": "Club Team Clues",
+      "intro": "Club colours and nicknames — guess the badge.",
+      "symbols": [
+        {
+          "char": "⚪👑⚽",
+          "label": "Real Madrid"
+        },
+        {
+          "char": "🔴🔵⚽",
+          "label": "Barcelona"
+        },
+        {
+          "char": "🔴😈⚽",
+          "label": "Man United (Red Devils)"
+        },
+        {
+          "char": "🩵⚽🏆",
+          "label": "Man City"
+        },
+        {
+          "char": "🔴⚽🎶",
+          "label": "Liverpool (YNWA)"
+        },
+        {
+          "char": "⚪🐓⚽",
+          "label": "Tottenham (Spurs)"
+        }
+      ]
+    },
+    {
+      "id": "wc-quiz",
+      "label": "World Cup",
+      "h2": "World Cup Emoji Quiz",
+      "intro": "Tournament-themed clues for a party round.",
+      "symbols": [
+        {
+          "char": "🏆⚽🌎",
+          "label": "The World Cup"
+        },
+        {
+          "char": "🇦🇷🏆🐐",
+          "label": "Argentina Champions"
+        },
+        {
+          "char": "🏴󠁧󠁢󠁥󠁮󠁧󠁿🏆🎉",
+          "label": "It's Coming Home"
+        },
+        {
+          "char": "🇫🇷🏆⭐⭐",
+          "label": "France (2 Stars)"
+        },
+        {
+          "char": "🇩🇪🏆⭐⭐⭐⭐",
+          "label": "Germany (4 Stars)"
+        },
+        {
+          "char": "🇮🇹🏆⭐⭐⭐⭐",
+          "label": "Italy (4 Stars)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/world-cup-emoji-combos/",
+      "title": "World Cup Emoji Combos",
+      "desc": "World Cup emoji sets and combos for fan bios and captions."
+    },
+    {
+      "href": "/library/football-symbols/",
+      "title": "Football Symbols",
+      "desc": "Soccer and football symbols, trophies, and match combos."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Aesthetic emoji combinations for every mood and theme."
+    },
+    {
+      "href": "/library/sports-emojis/",
+      "title": "Sports Emojis",
+      "desc": "Every sport and activity emoji, organized by category."
+    }
+  ]
+}
