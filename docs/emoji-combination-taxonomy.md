@@ -180,11 +180,14 @@ research: a whole competitor — emojicombos.com — plus TikTok Discover hubs, 
 1. **Document the field properly.** Update `unicode-library-workflow.md` §5 to
    reference this doc and list all five `copy_patterns` values (it currently
    names only two).
-2. **Let the auditor know `combo` is volume-exempt.** Teach
-   `scripts/audit_library_opportunities.py` not to raise
-   `flag_missing_search_volume` / `flag_low_demand_confidence` for
-   `copy_patterns = combo` when `forum_evidence` is `medium`+ (§7), so social
-   demand isn't gated out.
+2. ~~**Let the auditor know `combo` is volume-exempt.**~~ **Done.**
+   `scripts/audit_library_opportunities.py` now waives
+   `flag_missing_search_volume` / `flag_low_demand_confidence` (and the
+   resulting `needs-research` verdict) for `copy_patterns = combo` rows with
+   `forum_evidence` `medium`+ (§7), via the `is_volume_exempt(...)` helper.
+   Waivers are surfaced as `combo_volume_waived` in the run summary and noted
+   per row in `audit_notes`. Unproven combos (`none`/`weak` evidence) stay
+   gated.
 3. **Re-theme, don't multiply, the combos.** Treat the 96 `*-emoji-combos` as a
    `combo` family to re-point at vibe/context/fandom over time (per the
    2026-06-17 audit); keep them live for now.
