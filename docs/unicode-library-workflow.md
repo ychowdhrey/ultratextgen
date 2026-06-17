@@ -4,7 +4,9 @@ This document describes the end-to-end system for proposing, vetting,
 generating, validating, and shipping batches of Unicode symbol **library
 pages** (`/library/<slug>/`). It is the operating manual; the companion
 [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md) covers
-the discovery half in depth.
+the discovery half in depth. The product *why* behind these mechanics lives in
+[`jtbd-principles.md`](./jtbd-principles.md), and the page-vs-section call is
+codified in [`page-vs-section-decisions.md`](./page-vs-section-decisions.md).
 
 > **Golden rule: do not publish directly.** Every page reaches `master`
 > through a reviewed batch PR. Nothing in this system auto-merges or
@@ -235,7 +237,10 @@ Each row gets an `audit_verdict`:
   (drop, or switch to **improve existing**).
 - `review-overlap` — intent/block overlap; decide create vs. improve vs. skip
   (see skill doc, Sections 5 / 5a). If it should fold into an existing page,
-  set `dedupe_status = fold-into:<slug>` or `improve-existing:<slug>`.
+  set `dedupe_status = fold-into:<slug>` or `improve-existing:<slug>`. For the
+  "own page vs. fold in as a section" call (e.g. a format/subdivision like
+  *text faces* alongside *emoji*), apply the gate in
+  [`page-vs-section-decisions.md`](./page-vs-section-decisions.md).
 - `needs-research` — missing forum evidence, missing search volume, or low
   demand confidence; go back and finish the research before approving.
 - `clear` — safe to spec and generate.
