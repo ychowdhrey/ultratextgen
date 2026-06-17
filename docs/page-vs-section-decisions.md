@@ -9,11 +9,17 @@ get its **own page** (a spoke) or fold in as a **section** on the parent
 
 This doc is the standing answer, so we decide it the same way every time. It
 implements the JTBD principles in
-[`jtbd-principles.md`](./jtbd-principles.md).
+[`jtbd-principles.md`](./jtbd-principles.md) — in particular *one primary
+intent per page* and *declare canonical ownership* — and concrete applications
+appear in [`jtbd-build-spec.md`](./jtbd-build-spec.md).
 
 > **One-line rule:** A new **page** needs *both* demand (someone searches the
 > exact query) *and* supply (enough distinct, quality items to not be thin). A
 > **section** needs neither — it's enrichment of a page that already exists.
+
+This is the same decision as "secondary content earns its own H1/title vs.
+stays a section" (JTBD §2): a spoke that clears the gate becomes a page with its
+own primary intent; everything else stays a section under the hub's intent.
 
 ---
 
@@ -60,16 +66,21 @@ not about the item count — it's about whether a spoke page exists:**
 
 - The **subject** page is the hub (e.g. `/library/animal-emojis/`).
 - A qualifying **subdivision/format** is a spoke (e.g. a `cat-kaomoji` page).
+- The spoke must live in the **namespace for its page type** (JTBD §4) — a
+  reference spoke under `/library/`, an answer under `/answers/`, etc.
 - Link **both ways**: hub → spoke teaser ("see all →"), spoke → hub.
-- **One canonical home per query.** Never let hub and spoke target the same
-  search intent — that's self-cannibalization (JTBD §4).
+- **Declare canonical ownership.** Add the spoke to the build spec's ownership
+  table and never let hub and spoke target the same search intent — that's
+  self-cannibalization (JTBD §7).
 
 ---
 
 ## 5. Guardrails
 
 - **Thin content:** a page under ~12 items with no backfill copy will likely be
-  left unindexed. Don't ship it; fold it.
+  left unindexed. Don't ship it; fold it. A real page must also clear the
+  **ad-network content-length threshold** (JTBD §8) — anything thinner is a
+  section by definition.
 - **Cannibalization:** if a proposed spoke overlaps the hub's intent, fold it
   in instead (mirrors the auditor's `review-overlap` → `fold-into:<slug>`
   verdict in the library workflow).
