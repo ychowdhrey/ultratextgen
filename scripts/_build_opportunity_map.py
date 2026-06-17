@@ -51,7 +51,7 @@ EXISTING = {
 FORUM_EVIDENCE_SCORE = {"none": 0, "weak": 10, "medium": 15, "strong": 25}
 
 FIELDS = [
-    "id", "primary_keyword", "modifier", "intent", "forum_queries",
+    "id", "page_type", "primary_keyword", "modifier", "intent", "forum_queries",
     "forum_evidence", "forum_source_urls", "search_volume", "demand_confidence",
     "symbol_category", "unicode_blocks", "copy_patterns", "slug", "title",
     "priority_score", "dedupe_status", "approval_status", "batch", "action", "notes",
@@ -869,8 +869,10 @@ with OUT.open("w", newline="", encoding="utf-8") as fh:
         act = action_from_dedupe(r.get("dedupe_status"), r.get("approval_status"))
         seed_actions[r["id"]] = act
         r["action"] = r.get("action") or act
+        r["page_type"] = r.get("page_type") or "library"
         w.writerow({k: r.get(k, "") for k in FIELDS})
     for r in rows:
+        r.setdefault("page_type", "library")
         w.writerow(r)
 
 print(f"Wrote {len(seed_reader) + len(rows)} opportunity rows "
