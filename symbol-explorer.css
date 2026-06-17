@@ -43,7 +43,10 @@
                "Segoe UI Symbol", system-ui, -apple-system,
                "Plus Jakarta Sans", "Space Mono", sans-serif;
   font-size: 2rem;
-  line-height: 1;
+  /* 1.35 (not 1) so multi-line text faces / kaomoji like (ノಠ益ಠ)ノ keep
+     breathing room when they wrap to a second line; single emoji never wrap,
+     so they are visually unaffected. */
+  line-height: 1.35;
   background: none;
   border: none;
   cursor: pointer;
