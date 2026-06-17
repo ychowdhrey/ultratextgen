@@ -7,6 +7,9 @@ Checks:
   - No alternateName item is longer than 60 characters (warning only).
   - No alternateName array contains duplicate identical items.
   - alternateName is never placed on BreadcrumbList or FAQPage Question entities.
+  - presentation_class consistency (library/ pages, per docs/emoji-combination-taxonomy.md §10):
+      * ERROR  — alternateName sells "emoji" but the page ships zero emoji glyphs (off-intent).
+      * WARNING — page is >=30% emoji glyphs but no alternateName captures the "emoji" query.
 Reports coverage stats.
 """
 import json
@@ -19,12 +22,27 @@ LD_RE = re.compile(
     r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
     re.DOTALL | re.IGNORECASE,
 )
+SYMBOL_TILE_RE = re.compile(r'data-symbol="([^"]*)"')
+# §10 emoji-share threshold below which the "missing emoji synonym" warning fires.
+EMOJI_SHARE_WARN = 0.30
+
+
+def is_emoji_glyph(tok):
+    """Strict emoji test honoring the §8 FE0F overlap: bare BMP symbols (❤ ★ ☮)
+    count as text symbols, not emoji."""
+    return (
+        any(ord(c) >= 0x1F000 for c in tok)          # SMP emoji blocks
+        or "️" in tok or "‍" in tok          # variation selector / ZWJ sequence
+        or any(0x1F1E6 <= ord(c) <= 0x1F1FF for c in tok)  # regional-indicator flags
+        or any(0x1F3FB <= ord(c) <= 0x1F3FF for c in tok)  # skin-tone modifiers
+    )
 
 errors = []
 warnings = []
 pages_with_alt = 0
 total_alt_blocks = 0
 files_scanned = 0
+current_alt_items = []
 
 
 def walk_alt(obj, path, file):
@@ -38,6 +56,7 @@ def walk_alt(obj, path, file):
                 errors.append(f"{file}: alternateName on disallowed @type '{atype}'")
             alt = obj["alternateName"]
             items = alt if isinstance(alt, list) else [alt]
+            current_alt_items.extend(str(i) for i in items)
             if isinstance(alt, list):
                 if len(alt) > 8:
                     errors.append(f"{file}: alternateName has {len(alt)} items (>8) on {atype}")
@@ -61,6 +80,7 @@ for html in sorted(ROOT.rglob("index.html")):
     text = html.read_text(encoding="utf-8")
     rel = html.relative_to(ROOT)
     had_alt = False
+    current_alt_items.clear()
     for block in LD_RE.findall(text):
         raw = block.strip()
         try:
@@ -73,6 +93,21 @@ for html in sorted(ROOT.rglob("index.html")):
         walk_alt(data, rel, rel)
     if had_alt:
         pages_with_alt += 1
+
+    # §10 presentation_class consistency — scoped to library/ reference pages.
+    if had_alt and rel.parts and rel.parts[0] == "library":
+        tiles = SYMBOL_TILE_RE.findall(text)
+        emoji_tiles = sum(1 for t in tiles if is_emoji_glyph(t))
+        share = emoji_tiles / len(tiles) if tiles else 0
+        sells_emoji = any("emoji" in a.lower() for a in current_alt_items)
+        if sells_emoji and emoji_tiles == 0:
+            errors.append(
+                f"{rel}: alternateName sells 'emoji' but page has 0 emoji glyphs (§10 off-intent)"
+            )
+        elif not sells_emoji and share >= EMOJI_SHARE_WARN:
+            warnings.append(
+                f"{rel}: {share:.0%} emoji glyphs but no 'emoji' alternateName (§10 missing synonym)"
+            )
 
 print(f"Files scanned:           {files_scanned}")
 print(f"Pages with alternateName:{pages_with_alt}")
