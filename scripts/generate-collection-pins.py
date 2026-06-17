@@ -46,7 +46,50 @@ OUT = os.path.join(ROOT, "assets", "collection-pins")
 AUDIT = os.path.join(ROOT, "data", "collection_copy_audit.csv")
 SPEC_DIR = os.path.join(ROOT, "data", "library_page_specs")
 CSV_OUT = os.path.join(ROOT, "data", "collection_pins.csv")
+# Pinterest bulk-create upload file (exact 8-column template Pinterest expects;
+# mirrors the working data/pinterest_upload_*.csv used for the page pins).
+UPLOAD_OUT = os.path.join(ROOT, "data", "pinterest_upload_collections.csv")
+UPLOAD_COLUMNS = ["Title", "Media URL", "Pinterest board", "Thumbnail",
+                  "Description", "Link", "Publish date", "Keywords"]
+GH_RAW = "https://raw.githubusercontent.com/ychowdhrey/ultratextgen"
 os.makedirs(OUT, exist_ok=True)
+
+
+def git_ref():
+    """Branch/ref used to build the public Media URL. Override with PIN_RAW_REF
+    (e.g. PIN_RAW_REF=main after merging) — Pinterest fetches the raw image from
+    GitHub, so the ref must contain the rendered pins."""
+    if os.environ.get("PIN_RAW_REF"):
+        return os.environ["PIN_RAW_REF"]
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=ROOT).decode().strip()
+    except Exception:
+        return "main"
+
+
+def media_url(slug):
+    return f"{GH_RAW}/{git_ref()}/assets/collection-pins/{slug}.png"
+
+
+def write_upload_csv(rows):
+    """Map the internal inventory rows to Pinterest's bulk-create template.
+    Pinterest's format allows one board per Pin, so we use board_primary (the
+    copy-paste board); board_secondary stays in the internal CSV for reference."""
+    with open(UPLOAD_OUT, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=UPLOAD_COLUMNS)
+        w.writeheader()
+        for r in rows:
+            w.writerow({
+                "Title": r["pin_title"],
+                "Media URL": media_url(r["slug"]),
+                "Pinterest board": r["board_primary"],
+                "Thumbnail": "",
+                "Description": r["pin_description"],
+                "Link": r["utm_destination_url"],
+                "Publish date": "",
+                "Keywords": r["pin_keywords"],
+            })
 
 DOMAIN = "https://ultratextgen.com"
 PIN_W, PIN_H = 1000, 1500
@@ -338,7 +381,18 @@ COLUMNS = ["slug", "page_url", "is_emoji_pin", "category", "board_primary",
 
 
 def main():
-    only = set(sys.argv[1:])
+    args = sys.argv[1:]
+    # Regenerate only the Pinterest upload CSV from the existing inventory
+    # (no rendering). Useful after merging to refresh Media URLs:
+    #   PIN_RAW_REF=main python3 scripts/generate-collection-pins.py --upload-only
+    if "--upload-only" in args:
+        rows = list(csv.DictReader(open(CSV_OUT, encoding="utf-8")))
+        write_upload_csv(rows)
+        print(f"wrote {len(rows)} rows -> data/pinterest_upload_collections.csv")
+        print(f"Media URL ref: {git_ref()}")
+        return
+
+    only = set(args)
     keep = [r for r in csv.DictReader(open(AUDIT, encoding="utf-8"))
             if r["verdict"] == "KEEP" and (not only or r["slug"] in only)]
 
@@ -379,9 +433,11 @@ def main():
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(out_rows)
+    write_upload_csv(out_rows)
 
     print(f"\nrendered {len(out_rows)} pins -> assets/collection-pins/")
     print(f"inventory -> data/collection_pins.csv")
+    print(f"pinterest upload -> data/pinterest_upload_collections.csv (ref={git_ref()})")
     if skipped:
         print(f"skipped (no rows): {len(skipped)} -> {', '.join(skipped[:8])}")
     print("--- pins per primary (copy-paste) board ---")

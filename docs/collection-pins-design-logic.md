@@ -99,7 +99,25 @@ keywords. Destinations carry `utm_campaign=collections`.
      [`scripts/_extract_groups.js`](../scripts/_extract_groups.js);
    - `emoji-flags` → curated region grids.
 3. `python3 scripts/generate-collection-pins.py [slug ...]` renders
-   `assets/collection-pins/<slug>.png` and writes the upload inventory
-   `data/collection_pins.csv` (title, description, keywords, alt, both boards,
-   destination + UTM).
+   `assets/collection-pins/<slug>.png` and writes two CSVs:
+   - `data/collection_pins.csv` — internal inventory (title, description,
+     keywords, alt, **both** boards, destination + UTM);
+   - `data/pinterest_upload_collections.csv` — the **Pinterest bulk-create**
+     file in Pinterest's exact 8-column template
+     (`Title, Media URL, Pinterest board, Thumbnail, Description, Link,
+     Publish date, Keywords`), mirroring the working `pinterest_upload_*.csv`
+     used for the page pins.
 4. Re-running is idempotent; pass slugs to regenerate a subset.
+
+### Uploading to Pinterest
+
+- Pinterest's bulk format allows **one board per Pin**, so the upload file uses
+  each pin's copy-paste **primary** board. Create these three boards in the
+  account first, with exact names: *Copy and Paste Symbols*, *Cute Symbols &
+  Hearts to Copy and Paste*, *Emojis & Combos to Copy and Paste*.
+- **Media URL** must be a public image link. It is built from the current git
+  branch so it resolves immediately. After merging to `main`, refresh the file
+  so the URLs are permanent:
+  `PIN_RAW_REF=main python3 scripts/generate-collection-pins.py --upload-only`
+  (`--upload-only` rewrites the upload CSV from the inventory without
+  re-rendering).
