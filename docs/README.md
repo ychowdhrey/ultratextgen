@@ -69,6 +69,16 @@ These run across page types rather than producing a type.
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 
+### Scheduled routines (Claude Code on the web)
+
+Not GitHub Actions — these are [routines](https://code.claude.com/docs/en/routines)
+configured in the web UI ([claude.ai/code/routines](https://claude.ai/code/routines)),
+not files in this repo. They run as full Claude sessions and open PRs for review.
+
+| Routine | Trigger | Action |
+|---|---|---|
+| Weekly infrastructure review | weekly schedule | run the [Weekly infrastructure review](#weekly-infrastructure-review); open a PR updating this map (no auto-merge) |
+
 ---
 
 ## Known gaps
