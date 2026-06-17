@@ -102,22 +102,32 @@ here so they aren't lost. Update as they're closed or new ones appear.
 ## Weekly infrastructure review
 
 The routine that keeps this map honest and lets structure emerge from real work
-instead of up-front design.
+instead of up-front design. It runs in **two parts** ("digest feeds AI"), wired
+up under [`infra-review/`](./infra-review/):
+
+- **Digest (automated).** The
+  [`weekly-pr-digest.yml`](../.github/workflows/weekly-pr-digest.yml) Action
+  runs every Monday, classifies the past 7 days of merged PRs by lane (via
+  [`scripts/weekly_pr_digest.py`](../scripts/weekly_pr_digest.py)), and writes
+  `infra-review/<date>.md` + `infra-review/latest.md`. PRs that don't match a
+  known lane are flagged as a **signal**.
+- **Review (judgment).** A scheduled Claude session consumes `latest.md` via
+  [`infra-review/weekly-review-prompt.md`](./infra-review/weekly-review-prompt.md),
+  updates this map, and opens a PR.
 
 **Cadence:** weekly.
 
-**Input:** all PRs merged to `main` in the last 7 days.
+**Input:** `infra-review/latest.md` — all PRs merged to `main` in the last 7
+days, pre-classified by lane.
 
-**Steps:**
+**Steps (the review session):**
 
-1. List the week's merged PRs (title + changed paths).
-2. Classify each into a **lane** — an existing page type, an operational track,
-   or *none of the above*.
-3. For any PR that doesn't fit a lane, that's a **signal**: either a new lane is
-   emerging or an existing one needs widening. Add it to
-   [Known gaps](#known-gaps) (or open a new row in the tables above).
-4. If a PR closed a gap, tick it off / update the maturity column.
-5. Note recurring manual work — anything done by hand 3+ weeks running is a
+1. Read the digest's lane classification of the week's merged PRs.
+2. For any PR flagged **Unclassified**, that's a **signal**: either a new lane is
+   emerging (add a row to the tables above) or the classifier should learn the
+   path (add a rule to `LANE_RULES` in `scripts/weekly_pr_digest.py`).
+3. If a PR closed a gap, tick it off / update the maturity column.
+4. Note recurring manual work — anything done by hand 3+ weeks running is a
    candidate to systematize (script, backlog column, or doc).
 6. Open a PR with the updated map on a `claude/infra-review-<date>` branch — a
    small, additive diff. **Do not merge** (golden rule: a human reviews and
