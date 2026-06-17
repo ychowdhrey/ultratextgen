@@ -79,6 +79,26 @@ Keep the file append-only during a batch; don't delete rejected rows — set
 `approval_status = rejected` and explain why in `notes` so the same idea isn't
 re-proposed later.
 
+### Lane (`page_type`)
+
+Every row carries a `page_type` — the content lane it belongs to (`library`,
+`category`, `answers`, `usecase`, `guide`; see
+[`README.md`](./README.md) for the lane map). It defaults to `library` and is
+the **first column after `id`**. The lane controls two things:
+
+- **Dedup scope.** The auditor compares a row only against *published pages in
+  its own lane* (`library` rows against `/library/`, `category` rows against
+  `/category/`, etc.), so a `/category/` opportunity is never falsely flagged as
+  a duplicate of a `/library/` page. An unknown `page_type` falls back to
+  `library` with a warning, so a typo can't silently disable dedup.
+- **Namespace + schema.** Where the page ships and which structured data it
+  uses, per [`jtbd-principles.md`](./jtbd-principles.md) §4.
+
+This makes the backlog the single funnel for **all** lanes — scouting, the
+`stage` lifecycle, and the demand gate apply to `/category/` and `/answers/`
+candidates exactly as they do to `/library/`. (The library lane is still the
+only one with a generator/validator; other lanes are hand-built for now.)
+
 ### Lifecycle (`stage`)
 
 Each row carries a `stage` that tracks where it sits in the pipeline,

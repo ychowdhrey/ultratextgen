@@ -30,8 +30,8 @@ workflow that produces it.
 | Type | Namespace | Schema | Governing workflow | Source of record | Generator + validator | Maturity |
 |---|---|---|---|---|---|---|
 | **Library** (symbol/emoji reference) | `/library/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) (+ [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md)) | `data/library_opportunities.csv` | `generate_library_page_from_spec.py` + `validate_library_pages.py` | ✅ fully systematized |
-| **Category** (style generators) | `/category/` | `WebApplication` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy only) | ⚠️ ad-hoc (GSC in spec md) | ❌ none | ⚠️ strategy, no pipeline |
-| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy only) | ⚠️ ad-hoc (GSC in spec md) | ❌ none | ⚠️ strategy, no pipeline |
+| **Category** (style generators) | `/category/` | `WebApplication` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog + strategy, no generator |
+| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Guide** (articles) | `/guide/` | `Article` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 
@@ -76,10 +76,10 @@ These run across page types rather than producing a type.
 The structure is emergent; these are the open infrastructure debts, tracked
 here so they aren't lost. Update as they're closed or new ones appear.
 
-1. **Demand backlog is library-only.** `library_opportunities.csv` has no
-   `/category/` or `/answers/` rows — scouting, the `stage` lifecycle, and the
-   demand gate don't reach those lanes. Candidate fix: a `page_type` column on
-   the opportunity CSV (or sibling backlogs) so all lanes share one funnel.
+1. ~~**Demand backlog is library-only.**~~ **Closed** — the opportunity CSV now
+   carries a `page_type` column (default `library`) and the auditor dedupes
+   per-lane, so scouting, the `stage` lifecycle, and the demand gate reach
+   `/category/` and `/answers/`. (Still no generator for those lanes — see #2.)
 2. **No production pipeline for category/answers.** Strategy exists
    (`jtbd-build-spec.md`); there is no generator/validator equivalent of the
    library lane. These pages are hand-built.
