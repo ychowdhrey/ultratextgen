@@ -69,6 +69,16 @@ These run across page types rather than producing a type.
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 
+### Scheduled routines (Claude Code on the web)
+
+Not GitHub Actions — these are [routines](https://code.claude.com/docs/en/routines)
+configured in the web UI ([claude.ai/code/routines](https://claude.ai/code/routines)),
+not files in this repo. They run as full Claude sessions and open PRs for review.
+
+| Routine | Trigger | Action |
+|---|---|---|
+| Weekly infrastructure review | weekly schedule | run the [Weekly infrastructure review](#weekly-infrastructure-review); open a PR updating this map (no auto-merge) |
+
 ---
 
 ## Known gaps
@@ -119,8 +129,28 @@ days, pre-classified by lane.
 3. If a PR closed a gap, tick it off / update the maturity column.
 4. Note recurring manual work — anything done by hand 3+ weeks running is a
    candidate to systematize (script, backlog column, or doc).
-5. Open a small, additive PR with the updated map.
+6. Open a PR with the updated map on a `claude/infra-review-<date>` branch — a
+   small, additive diff. **Do not merge** (golden rule: a human reviews and
+   merges). If the past 7 days produced no changes worth recording, say so and
+   open nothing.
 
-**Output:** an up-to-date map + a current [Known gaps](#known-gaps) list. The
-goal is not to design the whole system now — it's to make sure every new piece
-of work is *placed*, so the structure reveals itself over time.
+**Output:** a PR updating this map + a current [Known gaps](#known-gaps) list,
+or an explicit "no changes" note. The goal is not to design the whole system
+now — it's to make sure every new piece of work is *placed*, so the structure
+reveals itself over time.
+
+### Running it as a scheduled routine
+
+This review runs as a **[routine](https://code.claude.com/docs/en/routines)**
+(weekly schedule trigger), not a GitHub Action — creating/editing it lives in
+the Claude Code web UI at [claude.ai/code/routines](https://claude.ai/code/routines),
+not in this repo. The routine's prompt is intentionally thin and points back
+here so the *process* stays version-controlled in this file. Paste this as the
+routine prompt:
+
+> Run the UltraTextGen **Weekly infrastructure review** exactly as documented in
+> `docs/README.md` (the "Weekly infrastructure review" section). Input: all PRs
+> merged to `main` in the last 7 days. Follow steps 1–6 there. Open a PR on a
+> `claude/infra-review-<date>` branch with a small, additive diff to
+> `docs/README.md`; **do not merge** — a human reviews it. If nothing this week
+> warrants a map change, open no PR and end with a one-line "no changes" summary.
