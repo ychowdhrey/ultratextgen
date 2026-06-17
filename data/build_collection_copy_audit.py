@@ -1,30 +1,52 @@
 #!/usr/bin/env python3
 """Build / refresh the collection-copy suitability ledger for every library page.
 
-Idempotent: if data/collection_copy_audit.csv exists, rows are updated in place
-(refreshing checked_date + fields) and new library pages are appended. The CSV
-always contains exactly one row per current library/*/index.html page, sorted by
-slug. Run from the repo root: python3 data/build_collection_copy_audit.py
+A page is a "collection" (copy-the-whole-set is a real job, rendered via
+``UltraTextGen.buildGrids``) per the taxonomy in
+``docs/emoji-combination-taxonomy.md`` §3. Two sources classify each page, in
+priority order:
+
+1. **Spec** (authoritative). If ``data/library_page_specs/<slug>.json`` exists,
+   ``copy_pattern == "collection"`` means the page should ship set-copy.
+2. **Legacy dict** (``LEGACY_AUDIT`` below). Manual judgements for the original
+   pre-spec pages that have no spec file.
+
+The verdict is then *derived* from (opportunity, has_collection_now) so the
+ledger always reflects current reality:
+
+    opportunity=yes & has now -> KEEP     (correct: keep set-copy)
+    opportunity=yes & missing -> ADD      (should add set-copy)
+    opportunity=no  & has now -> REMOVE   (set-copy is a poor fit)
+    opportunity=no  & missing -> N/A      (correct as a single-glyph page)
+
+Idempotent: rows in data/collection_copy_audit.csv are updated in place and new
+pages appended; the CSV holds exactly one row per current library/*/index.html
+page, sorted by slug. Run from the repo root:
+python3 data/build_collection_copy_audit.py
 """
 import csv
 import datetime
 import glob
+import json
 import os
 import re
 import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(REPO, "data", "collection_copy_audit.csv")
+SPECS_DIR = os.path.join(REPO, "data", "library_page_specs")
 TODAY = datetime.date.today().isoformat()
 
 FIELDS = [
-    "slug", "page_path", "symbol_category", "has_collection_now",
-    "collection_opportunity", "verdict", "rationale", "checked_date",
+    "slug", "page_path", "symbol_category", "copy_pattern", "has_collection_now",
+    "collection_opportunity", "verdict", "rationale", "source", "checked_date",
 ]
 
-# Audit verdicts. Tuple: (symbol_category, collection_opportunity, verdict, rationale)
-# has_collection_now is detected from the page source (buildGrids / copy-collection-btn).
-AUDIT = {
+# Legacy manual judgements for the original pre-spec pages (used only when no
+# spec file exists for the slug). Tuple: (symbol_category, collection_opportunity,
+# _verdict, rationale). The third element is historical; the verdict column is now
+# derived in main(). has_collection_now is detected from the page source.
+LEGACY_AUDIT = {
     "accent-marks-diacritics": ("Combining diacritics", "no", "N/A",
         "Combining marks attach to individual letters; users copy one mark at a time, not a set."),
     "achievement-symbols": ("Achievement emojis", "no", "N/A",
@@ -194,13 +216,51 @@ def detect_has_collection(page_path):
     return "yes" if re.search(r"buildGrids|copy-collection-btn", html) else "no"
 
 
+def load_spec(slug):
+    path = os.path.join(SPECS_DIR, slug + ".json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def classify(slug):
+    """Return (symbol_category, copy_pattern, collection_opportunity, rationale,
+    source) for a slug, preferring its spec over the legacy dict."""
+    spec = load_spec(slug)
+    if spec is not None:
+        pattern = spec.get("copy_pattern", "")
+        opportunity = "yes" if pattern == "collection" else "no"
+        category = spec.get("breadcrumb") or spec.get("hero_h1") or slug
+        if opportunity == "yes":
+            rationale = ("Spec copy_pattern=collection: page ships a buildGrids "
+                         "set-copy block; pasting the whole set is a real job.")
+        else:
+            rationale = ("Spec copy_pattern=single: glyphs are copied "
+                         "individually; there is no whole-set paste job.")
+        return category, pattern, opportunity, rationale, "spec"
+
+    if slug in LEGACY_AUDIT:
+        category, opportunity, _verdict, rationale = LEGACY_AUDIT[slug]
+        pattern = "collection" if opportunity == "yes" else "single"
+        return category, pattern, opportunity, rationale, "legacy"
+
+    return None
+
+
+def derive_verdict(opportunity, has_now):
+    if opportunity == "yes":
+        return "KEEP" if has_now == "yes" else "ADD"
+    return "REMOVE" if has_now == "yes" else "N/A"
+
+
 def main():
     pages = sorted(glob.glob(os.path.join(REPO, "library", "*", "index.html")))
     slugs = [os.path.basename(os.path.dirname(p)) for p in pages]
 
-    missing = [s for s in slugs if s not in AUDIT]
+    missing = [s for s in slugs if classify(s) is None]
     if missing:
-        sys.exit("ERROR: no audit entry for: " + ", ".join(missing))
+        sys.exit("ERROR: no spec or legacy-audit entry for: " + ", ".join(missing))
 
     # Load existing ledger (idempotent merge).
     existing = {}
@@ -210,18 +270,24 @@ def main():
                 existing[row["slug"]] = row
 
     rows = []
+    counts = {"KEEP": 0, "ADD": 0, "REMOVE": 0, "N/A": 0}
     for slug in slugs:
         page_path = "library/%s/index.html" % slug
-        category, opportunity, verdict, rationale = AUDIT[slug]
+        category, pattern, opportunity, rationale, source = classify(slug)
+        has_now = detect_has_collection(page_path)
+        verdict = derive_verdict(opportunity, has_now)
+        counts[verdict] += 1
         row = existing.get(slug, {})
         row.update({
             "slug": slug,
             "page_path": page_path,
             "symbol_category": category,
-            "has_collection_now": detect_has_collection(page_path),
+            "copy_pattern": pattern,
+            "has_collection_now": has_now,
             "collection_opportunity": opportunity,
             "verdict": verdict,
             "rationale": rationale,
+            "source": source,
             "checked_date": TODAY,
         })
         rows.append(row)
@@ -233,6 +299,17 @@ def main():
         w.writerows(rows)
 
     print("Wrote %d rows to %s (pages found: %d)" % (len(rows), CSV_PATH, len(pages)))
+    print("Verdicts: KEEP=%(KEEP)d ADD=%(ADD)d REMOVE=%(REMOVE)d N/A=%(N/A)d" % counts)
+    if counts["ADD"]:
+        print("ADD (need collection-copy):")
+        for r in rows:
+            if r["verdict"] == "ADD":
+                print("  - %s [%s]" % (r["slug"], r["source"]))
+    if counts["REMOVE"]:
+        print("REMOVE (collection-copy is a poor fit):")
+        for r in rows:
+            if r["verdict"] == "REMOVE":
+                print("  - %s [%s]" % (r["slug"], r["source"]))
     assert len(rows) == len(pages), "row count != page count"
 
 

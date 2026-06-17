@@ -9,7 +9,7 @@
   "intro": "Box drawing and block element characters let you build frames, tables, and ASCII art in plain text. This library gathers the single-line pieces and corners, the double and heavy border variants, and the full and partial blocks used for shading and bar graphs — all plain Unicode characters you can copy into terminals, code comments, and posts.",
   "date_published": "2026-06-07",
   "date_modified": "2026-06-07",
-  "copy_pattern": "single",
+  "copy_pattern": "collection",
   "sections": [
     {
       "id": "lines-corners",
@@ -68,6 +68,21 @@
         { "char": "▓", "label": "Dark Shade" }
       ]
     }
+  ],
+  "collection_section": {
+    "id": "box-drawing-collections",
+    "label": "Box Drawing Collections",
+    "h2": "Prebuilt Borders & Rules",
+    "intro": "Ready-made horizontal rules and bracket runs built from box-drawing characters — copy the whole line in one click."
+  },
+  "collection_container_id": "boxDrawingCollectionsContainer",
+  "collections": [
+    { "name": "Light Horizontal Rule", "flags": ["────────────"], "defaultFormat": "inline" },
+    { "name": "Heavy Horizontal Rule", "flags": ["━━━━━━━━━━━━"], "defaultFormat": "inline" },
+    { "name": "Double Horizontal Rule", "flags": ["════════════"], "defaultFormat": "inline" },
+    { "name": "Light Top Border", "flags": ["┌──────────┐"], "defaultFormat": "inline" },
+    { "name": "Double Top Border", "flags": ["╔══════════╗"], "defaultFormat": "inline" },
+    { "name": "Shaded Gradient Bar", "flags": ["░▒▓█▓▒░"], "defaultFormat": "inline" }
   ],
   "related": [
     {
