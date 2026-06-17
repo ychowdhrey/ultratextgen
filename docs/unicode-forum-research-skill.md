@@ -261,6 +261,7 @@ For each kept opportunity, fill a row in `data/library_opportunities.csv`:
 | Field               | Source                                                        |
 |---------------------|---------------------------------------------------------------|
 | `id`                | `OPP-NNNN`, unique                                            |
+| `page_type`         | content lane: `library` (default) / `category` / `answers` / `usecase` / `guide` |
 | `primary_keyword`   | head noun (Section 3)                                         |
 | `modifier`          | qualifier (Section 3)                                         |
 | `intent`            | intent class (Section 4)                                      |
@@ -272,7 +273,7 @@ For each kept opportunity, fill a row in `data/library_opportunities.csv`:
 | `symbol_category`   | short category tag (stars, arrows, hearts…)                  |
 | `unicode_blocks`    | block name + range(s), e.g. `Arrows (U+2190..U+21FF)`        |
 | `copy_patterns`     | `single` or `collection`                                     |
-| `slug`              | proposed `/library/<slug>/`                                  |
+| `slug`              | proposed `/<page_type>/<slug>/` (e.g. `/library/<slug>/`)    |
 | `title`             | proposed `<title>` in user language                          |
 | `priority_score`    | your ranking (volume × confidence × strategic fit)          |
 | `dedupe_status`     | `unique` / `review-overlap` / `fold-into:<slug>`            |
