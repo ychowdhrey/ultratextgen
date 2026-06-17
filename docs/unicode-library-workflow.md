@@ -21,9 +21,13 @@ and dated approved-scope plans live in build specs like
 **Order matters: forum research comes first — before search volume and before
 any page spec is written.** Forum threads tell us a topic is real and in what
 words; only then is it worth pulling volume, and only after both do we score,
-dedupe, and spec a page.
+dedupe, and spec a page. Stage 0 (scouting) is the inbox that feeds it: a place
+to capture a raw idea the moment it appears, before it has earned any evidence.
 
 ```
+0. scouting        (raw idea → opportunity row, stage = scout)
+        │            "this format/topic exists" — captured the moment we learn it
+        ▼
 1. forum research  (data/forum_research_queries.csv → forum_evidence)
         │            qualitative demand + user language, captured FIRST
         ▼
@@ -55,19 +59,56 @@ batch PR → human review → merge
 
 A row must have `forum_evidence` and `search_volume` filled in **before** it
 is eligible for a page spec. The auditor enforces this by flagging
-`missing_forum_evidence` and `missing_search_volume`.
+`missing_forum_evidence` and `missing_search_volume`. A `scout` row therefore
+*cannot* skip ahead to a page — it is gated until it earns its way through
+research and volume.
 
 ---
 
 ## 1. The opportunity file
 
-`data/library_opportunities.csv` is the backlog. Each row is one **candidate
-page**, captured in user language with evidence and scoring attached. Field
-definitions are documented in the forum-research skill, Section 7.
+`data/library_opportunities.csv` is the **living backlog and system of record**
+for what UltraTextGen might build — it grows continuously as scope increases.
+Each row is one **candidate page**, captured in user language with evidence and
+scoring attached. Field definitions are documented in the forum-research skill,
+Section 7. (Build specs such as
+[`jtbd-build-spec.md`](./jtbd-build-spec.md) are *dated snapshots* of the
+approved rows; the CSV is the canonical source, not the spec.)
 
 Keep the file append-only during a batch; don't delete rejected rows — set
 `approval_status = rejected` and explain why in `notes` so the same idea isn't
 re-proposed later.
+
+### Lifecycle (`stage`)
+
+Each row carries a `stage` that tracks where it sits in the pipeline,
+**orthogonal** to `approval_status` and `priority_score`:
+
+| `stage` | Meaning | Required fields |
+|---|---|---|
+| `scout` | raw idea captured; not yet researched | `primary_keyword`, `notes` (source) |
+| `researched` | forum evidence attached | + `forum_evidence`, `forum_source_urls` |
+| `scored` | volume + priority computed | + `search_volume`, `demand_confidence`, `priority_score` |
+| `approved` | cleared the auditor; in a build batch | + `slug`, `batch`, `approval_status = approved` |
+| `built` | page shipped under `/library/` | — |
+
+This is additive: existing rows default to the stage implied by which fields
+they already have. The auditor's research-gap flags
+(`missing_forum_evidence` / `missing_search_volume`) already prevent a row from
+being specced before it reaches `scored`, so `stage` is a human-readable mirror
+of that gate, not a second enforcement path.
+
+### Stage 0 — scouting
+
+Scouting is the **inbox for the flow**: the moment we learn a format or topic
+exists (a competitor page, a removed section, a forum thread, our own
+realization — e.g. *kaomoji / text faces*), drop a `stage = scout` row in
+immediately with just the `primary_keyword` and a `notes` line recording **where
+it came from**. No evidence is required yet; the point is to never lose the
+lead. It then flows through research → volume → scoring like any other row, and
+the demand gate decides whether it ever becomes a page (see
+[`page-vs-section-decisions.md`](./page-vs-section-decisions.md) for the
+page-vs-section call once demand is known).
 
 ---
 
@@ -200,6 +241,34 @@ UltraTextGen.buildGrids("zodiacCollectionsContainer", GROUPS);
 
 A page may use single sections **and** a collection block; if it calls
 `buildGrids`, the validator treats it as a collection page.
+
+### The symbol explorer is the `collection` runtime — `copy_patterns` is the join key
+
+`copy_patterns` in the opportunity backlog is what ties a row to the symbol
+explorer:
+
+| `copy_patterns` | Renders as | Serves the job |
+|---|---|---|
+| `single` | individual `.symbol-tile` buttons | "I want *this one* character" |
+| `collection` | `UltraTextGen.buildGrids(...)` (symbol-explorer.js) | "I want a *whole matching set*" |
+
+"Copy a whole group" is a **distinct JTBD** from grabbing one glyph, so the
+backlog tracks it as its own copy pattern and the explorer is its runtime.
+Two links to keep intact:
+
+- **Forward (provenance):** an opportunity row with `copy_patterns = collection`
+  → its page spec's `collections`/`groups` → `buildGrids` renders it. Record the
+  originating opportunity `id`/`slug` in the spec's `notes` so every explorer
+  page traces back to the backlog row that justified it.
+- **Backward (signal → scouting):** which **groups** users actually copy is a
+  demand signal. When that data is available, a heavily-copied group is a lead —
+  open a `stage = scout` row for it (§1). This closes the loop: the explorer
+  both *consumes* approved opportunities and *produces* new ones.
+
+> Provenance and the backward signal are documented habits today, not enforced
+> by a script. Treat the `id`/`slug` note as required when speccing a
+> collection page; wire the copy-signal harvest only once copy-event analytics
+> exist.
 
 ---
 
