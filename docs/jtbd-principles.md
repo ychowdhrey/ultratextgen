@@ -1,10 +1,12 @@
 # Jobs-To-Be-Done (JTBD) — Product Principles
 
-This is the **why** behind UltraTextGen's content and information architecture.
-It is the reference for product/IA decisions; the mechanical companion —
-*does this become a page or a section?* — lives in
+This is the **why** behind UltraTextGen's content and information architecture,
+plus the reusable **global rules** every page decision follows. It is the
+evergreen reference; the concrete, dated applications of these rules live in
+build specs such as [`jtbd-build-spec.md`](./jtbd-build-spec.md). The
+mechanical companion — *does this become a page or a section?* — is
 [`page-vs-section-decisions.md`](./page-vs-section-decisions.md), and the
-production pipeline that enforces demand gating lives in
+production pipeline that enforces demand gating is
 [`unicode-library-workflow.md`](./unicode-library-workflow.md).
 
 > **The job:** *"Help me express this feeling / thing / identity in text —
@@ -28,7 +30,41 @@ intent order (the most-wanted format first).
 
 ---
 
-## 2. Serve the primary intent first, then enable discovery
+## 2. One primary intent per page
+
+Each page has exactly **one** primary target query. Everything else is
+secondary, served as a **section** — never as a competing H1/title. This is the
+unit of the whole system: a page = a job. (How much secondary content earns its
+own page vs. stays a section is the
+[page-vs-section gate](./page-vs-section-decisions.md).)
+
+---
+
+## 3. Title/H1 must match the searcher's verb
+
+The page must read, in the SERP, as *the thing being searched for*. An **answer
+query** ("do you need nitro for discord fonts?") needs a title that answers it —
+a generator/tool title does not win a question query, and vice-versa. Match the
+searcher's verb and intent, or the page loses the click even when it ranks.
+
+---
+
+## 4. Namespace = page type
+
+URL namespace encodes page type so intent and template stay aligned:
+
+| Page type | Namespace | Schema |
+|---|---|---|
+| Answer / Q&A | `/answers/` | `QAPage` / `FAQPage` |
+| Style generator | `/category/` | `WebApplication` |
+| Symbol/character reference | `/library/` | `Article` + `BreadcrumbList` |
+
+Don't mix types within a namespace, and match the structured-data type to the
+page type.
+
+---
+
+## 5. Serve the primary intent first, then enable discovery
 
 A user who came for the cat **emoji** 🐱 should get that immediately — then be
 *delighted* to discover cat **text faces** they didn't know existed.
@@ -37,12 +73,14 @@ A user who came for the cat **emoji** 🐱 should get that immediately — then 
 - **Companion formats below** ("came for emoji, found text art") create
   discovery and time-on-page without making anyone hunt.
 
-This is why the default pattern is **hub-and-spoke**, not isolated silos —
-see [`page-vs-section-decisions.md`](./page-vs-section-decisions.md).
+This is why the default pattern is **hub-and-spoke**: every new page links
+**up** to its hub once; tools/generators get a **downstream CTA**; reference
+pages cross-link both ways. Mechanics in
+[`page-vs-section-decisions.md`](./page-vs-section-decisions.md).
 
 ---
 
-## 3. Demand decides — never the cross-product
+## 6. Demand decides — never the cross-product
 
 The tempting failure mode is **combinatorial generation**: mint a page for
 every `subject × format × emotion` intersection. The top competitor
@@ -58,37 +96,49 @@ for it *and* we can make it genuinely deep and useful. Coverage comes from
 > categorization is a cost (cannibalization, thin content, split authority),
 > not a free win.
 
-This principle is operationalized by the demand gate in the library workflow
-(`forum_evidence` + `search_volume` → `demand_confidence`) and by the
-page-vs-section gate.
+Operationalized by the demand gate in the library workflow (`forum_evidence` +
+`search_volume` → `demand_confidence`) and the page-vs-section gate.
 
 ---
 
-## 4. One canonical home per intent
+## 7. Declare canonical ownership — pages must not compete
 
-Every distinct job should have exactly **one** page that owns it. Related
-pages **link** to that home rather than re-hosting the same content. This keeps
-link equity concentrated and stops our own pages from competing with each
-other for the same query (keyword cannibalization).
+Every distinct query family has exactly **one** declared canonical owner; all
+related pages **link** to it instead of re-hosting the content. Maintain an
+explicit **canonical-ownership table** in each build spec (see the example in
+[`jtbd-build-spec.md`](./jtbd-build-spec.md)) so no two pages target the same
+primary query. This concentrates link equity and prevents self-cannibalization.
+
+**Corollary — additive only:** new pages must target *different* SERPs than the
+ones existing pages already win. Never remove or relocate content that holds a
+ranking to chase an adjacent query; add a new owner for the new intent and
+cross-link.
 
 ---
 
-## 5. Useful > Impressive
+## 8. Useful > Impressive (and ad-eligible)
 
 Consistent with the repo's core philosophy (*Fast > Fancy, Clean > Clever,
 Useful > Impressive*): a page earns its place by **doing the job better** —
 faster copy, the right characters, clear intent — not by existing to capture a
-long-tail string we can't actually satisfy.
+long-tail string we can't actually satisfy. Practically, a real page is also
+**content-bearing and above the ad-network length threshold**; anything thinner
+belongs as a section, not a page.
 
 ---
 
 ## Decision checklist (apply before creating or expanding content)
 
-1. **What job is the user hiring this page for?** State it in their words.
-2. **What's the primary format for that job?** Put it first.
-3. **What companion formats serve the same job?** Surface them below.
-4. **Is there real demand** (forum evidence + search volume)? If not, don't
+1. **What job is the user hiring this page for?** State it in their words, as
+   one primary intent.
+2. **What's the primary format/answer for that job?** Put it first; phrase the
+   title/H1 to match the searcher's verb.
+3. **Correct namespace + schema for the page type?** (§4)
+4. **What companion formats serve the same job?** Surface them below
+   (hub-and-spoke).
+5. **Is there real demand** (forum evidence + search volume)? If not, don't
    build it — at most fold it into an existing home.
-5. **Does it deserve its own page or a section?** Apply
+6. **Page or section?** Apply
    [`page-vs-section-decisions.md`](./page-vs-section-decisions.md).
-6. **Is there already a canonical home?** If yes, link — don't duplicate.
+7. **Who is the canonical owner of this query?** If one exists, link — don't
+   duplicate. If new, add it to the ownership table and keep it additive.

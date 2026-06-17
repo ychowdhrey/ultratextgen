@@ -5,8 +5,10 @@ generating, validating, and shipping batches of Unicode symbol **library
 pages** (`/library/<slug>/`). It is the operating manual; the companion
 [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md) covers
 the discovery half in depth. The product *why* behind these mechanics lives in
-[`jtbd-principles.md`](./jtbd-principles.md), and the page-vs-section call is
-codified in [`page-vs-section-decisions.md`](./page-vs-section-decisions.md).
+[`jtbd-principles.md`](./jtbd-principles.md), the page-vs-section call is
+codified in [`page-vs-section-decisions.md`](./page-vs-section-decisions.md),
+and dated approved-scope plans live in build specs like
+[`jtbd-build-spec.md`](./jtbd-build-spec.md).
 
 > **Golden rule: do not publish directly.** Every page reaches `master`
 > through a reviewed batch PR. Nothing in this system auto-merges or
