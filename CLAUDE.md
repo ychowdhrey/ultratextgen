@@ -56,7 +56,9 @@ ultratextgen/
 ├── category/               # Category landing pages (bold, cursive, etc.)
 ├── usecase/                # Use case pages (bio, comment, etc.)
 ├── guide/                  # Educational article pages
-├── library/                # Symbol/emoji reference libraries
+├── library/                # Symbol/emoji/emoticon/kaomoji reference libraries
+│                           #   (classify each page by presentation_class +
+│                           #    copy_patterns — see docs/emoji-combination-taxonomy.md)
 ├── js/vertical/            # Vertical text feature module
 │
 └── Platform pages:
