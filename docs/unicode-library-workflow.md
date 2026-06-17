@@ -235,6 +235,15 @@ region.
 
 ## 5. Copy patterns
 
+> **Full vocabulary lives in
+> [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md).** The two
+> interaction models below are the page-rendering mechanics, but the
+> `copy_patterns` backlog field actually carries **five** values —
+> `single`, `combo`, `collection`, `section`, `transform`. In particular,
+> `combo` (a crafted multi-glyph *string* copied whole, e.g. kaomoji) is **not**
+> the same as `collection` (a *set of peers* copied together, e.g. zodiac
+> signs); conflating them is the classic mistake. Tag rows by that taxonomy.
+
 Two interaction models, chosen per page via `copy_pattern`:
 
 ### `single` — browse-and-copy

@@ -80,6 +80,14 @@ FORUM_EVIDENCE_SCORE = {
     "strong": 25,
 }
 
+# Copy patterns whose demand is socially discovered (TikTok, forums) rather than
+# keyword search — see docs/emoji-combination-taxonomy.md §7. For these, the
+# search-volume / demand-confidence gate misfires, so we waive it *provided*
+# there is real social proof (forum_evidence at least 'medium'). Unproven combos
+# (none/weak evidence) are still gated like anything else.
+VOLUME_EXEMPT_PATTERNS = {"combo"}
+VOLUME_EXEMPT_MIN_EVIDENCE = FORUM_EVIDENCE_SCORE["medium"]  # 15
+
 # Intent-overlap similarity at/above this threshold is treated as a strong
 # duplicate-risk signal, even without an exact slug/title match.
 STRONG_OVERLAP_THRESHOLD = 0.6
@@ -88,6 +96,19 @@ STRONG_OVERLAP_THRESHOLD = 0.6
 def forum_evidence_score(value):
     """Map a forum_evidence label to its numeric score (unknown -> 0)."""
     return FORUM_EVIDENCE_SCORE.get((value or "").strip().lower(), 0)
+
+
+def is_volume_exempt(copy_patterns, ev_score):
+    """
+    True when an opportunity's demand is socially discovered (a `combo` whose
+    JTBD is "copy this whole arrangement") and it has at least 'medium' forum
+    evidence. Such rows are waived from the keyword search-volume /
+    demand-confidence gate, which only models acquisition search intent and
+    misfires on socially-distributed combos. See
+    docs/emoji-combination-taxonomy.md §7.
+    """
+    pattern = (copy_patterns or "").strip().lower()
+    return pattern in VOLUME_EXEMPT_PATTERNS and ev_score >= VOLUME_EXEMPT_MIN_EVIDENCE
 
 
 def is_blank(value):
@@ -296,6 +317,7 @@ def main():
         "missing_search_volume": 0,
         "low_demand_confidence": 0,
         "strong_duplicate_risk": 0,
+        "volume_exempt_waived": 0,
     }
 
     for opp in opportunities:
@@ -364,6 +386,10 @@ def main():
             notes.append("no forum evidence captured")
             counts["missing_forum_evidence"] += 1
 
+        # Socially-discovered combos with real forum proof are waived from the
+        # keyword search-volume / demand-confidence gate (see helper docstring).
+        volume_exempt = is_volume_exempt(opp.get("copy_patterns"), ev_score)
+
         # 6. Missing search volume (blank or non-numeric)
         sv_raw = (opp.get("search_volume") or "").strip().replace(",", "")
         missing_sv = "no"
@@ -374,14 +400,23 @@ def main():
                 float(sv_raw)
             except ValueError:
                 missing_sv = "yes"
-        if missing_sv == "yes":
+        if missing_sv == "yes" and volume_exempt:
+            missing_sv = "no"
+            notes.append("combo: search-volume gate waived "
+                         "(socially-discovered, forum_evidence>=medium)")
+            counts["volume_exempt_waived"] += 1
+        elif missing_sv == "yes":
             notes.append("search volume missing or non-numeric")
             counts["missing_search_volume"] += 1
 
         # 7. Low demand confidence
         confidence = (opp.get("demand_confidence") or "").strip().lower()
         low_conf = "yes" if confidence == "low" else "no"
-        if low_conf == "yes":
+        if low_conf == "yes" and volume_exempt:
+            low_conf = "no"
+            notes.append("combo: demand-confidence gate waived "
+                         "(socially-discovered)")
+        elif low_conf == "yes":
             notes.append("demand confidence is low")
             counts["low_demand_confidence"] += 1
 
@@ -436,7 +471,8 @@ def main():
     print("Research flags: "
           f"missing_forum_evidence={counts['missing_forum_evidence']}, "
           f"missing_search_volume={counts['missing_search_volume']}, "
-          f"low_demand_confidence={counts['low_demand_confidence']}")
+          f"low_demand_confidence={counts['low_demand_confidence']}, "
+          f"combo_volume_waived={counts['volume_exempt_waived']}")
     print(f"Wrote {AUDIT_OUT.relative_to(REPO)}")
     return 0
 
