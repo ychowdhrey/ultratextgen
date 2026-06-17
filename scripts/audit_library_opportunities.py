@@ -45,6 +45,19 @@ CATEGORIES_YAML = REPO / "data" / "categories.yaml"
 LIBRARY_DIR = REPO / "library"
 AUDIT_OUT = REPO / "data" / "library_opportunities_audit.csv"
 
+# Each opportunity row carries a `page_type` (the content lane); dedup is
+# scoped to the published pages in that lane's namespace. Defaults to
+# `library` for rows without the column (back-compat). See
+# docs/unicode-library-workflow.md and docs/README.md.
+DEFAULT_PAGE_TYPE = "library"
+CONTENT_DIRS = {
+    "library": REPO / "library",
+    "category": REPO / "category",
+    "answers": REPO / "answers",
+    "usecase": REPO / "usecase",
+    "guide": REPO / "guide",
+}
+
 # Tokens that carry no discriminating intent and should be ignored when
 # comparing keywords / titles for overlap.
 STOPWORDS = {
@@ -141,17 +154,17 @@ def load_categories():
     return cats
 
 
-# --- Existing published library pages -------------------------------------
-def scan_existing_pages():
+# --- Existing published pages (scoped per page_type) -----------------------
+def scan_existing_pages(pages_dir):
     """
-    Walk library/*/index.html. Returns a dict keyed by slug with the page's
+    Walk <pages_dir>/*/index.html. Returns a dict keyed by slug with the page's
     normalized title, keyword tokens, and the set of codepoints it copies
     (derived from data-symbol attributes).
     """
     pages = {}
-    if not LIBRARY_DIR.is_dir():
+    if not pages_dir.is_dir():
         return pages
-    for index_path in sorted(LIBRARY_DIR.glob("*/index.html")):
+    for index_path in sorted(pages_dir.glob("*/index.html")):
         slug = index_path.parent.name
         html = index_path.read_text(encoding="utf-8", errors="replace")
 
@@ -172,13 +185,48 @@ def scan_existing_pages():
     return pages
 
 
+# Memoized per-page-type page scans, so each lane is walked at most once.
+_PAGES_CACHE = {}
+_TITLES_CACHE = {}
+
+
+def get_pages(page_type):
+    """Published pages for a page_type's namespace (memoized).
+
+    Unknown page types fall back to the library lane so a typo can't silently
+    disable dedup; the row is still checked against *some* published set.
+    """
+    pages_dir = CONTENT_DIRS.get(page_type)
+    if pages_dir is None:
+        sys.stderr.write(
+            f"[warn] unknown page_type '{page_type}'; "
+            f"defaulting dedup scope to '{DEFAULT_PAGE_TYPE}'.\n"
+        )
+        page_type = DEFAULT_PAGE_TYPE
+        pages_dir = CONTENT_DIRS[DEFAULT_PAGE_TYPE]
+    if page_type not in _PAGES_CACHE:
+        _PAGES_CACHE[page_type] = scan_existing_pages(pages_dir)
+    return _PAGES_CACHE[page_type]
+
+
+def get_titles(page_type):
+    """Normalized titles → slug for a page_type's published pages (memoized)."""
+    if page_type not in _TITLES_CACHE:
+        _TITLES_CACHE[page_type] = {
+            slug: p["title_norm"]
+            for slug, p in get_pages(page_type).items()
+            if p["title_norm"]
+        }
+    return _TITLES_CACHE[page_type]
+
+
 def jaccard(a, b):
     if not a or not b:
         return 0.0
     return len(a & b) / len(a | b)
 
 
-def covered_blocks(opp_ranges, pages, categories):
+def covered_blocks(opp_ranges, pages, categories, page_type=DEFAULT_PAGE_TYPE):
     """
     Return a list of human-readable reasons a declared block is already
     covered, either by an existing page's actual symbols or by a catalog
@@ -189,7 +237,7 @@ def covered_blocks(opp_ranges, pages, categories):
         # Existing page already copies symbols inside this range?
         for slug, page in pages.items():
             if any(start <= cp <= end for cp in page["codepoints"]):
-                reasons.append(f"U+{start:04X}..U+{end:04X} in /library/{slug}/")
+                reasons.append(f"U+{start:04X}..U+{end:04X} in /{page_type}/{slug}/")
                 break
         # Catalog already marks an overlapping block as having a page?
         for cat in categories:
@@ -217,17 +265,12 @@ def main():
         sys.stderr.write(f"[error] missing {OPPORTUNITIES_CSV}\n")
         return 1
 
-    pages = scan_existing_pages()
     categories = load_categories()
 
     with OPPORTUNITIES_CSV.open(newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
         opportunities = list(reader)
         fieldnames = reader.fieldnames or []
-
-    existing_titles = {
-        slug: p["title_norm"] for slug, p in pages.items() if p["title_norm"]
-    }
 
     audit_fields = fieldnames + [
         "flag_dup_slug",
@@ -256,6 +299,9 @@ def main():
     }
 
     for opp in opportunities:
+        page_type = (opp.get("page_type") or DEFAULT_PAGE_TYPE).strip().lower()
+        pages = get_pages(page_type)
+        existing_titles = get_titles(page_type)
         slug = (opp.get("slug") or "").strip()
         title_norm = normalize(opp.get("title", ""))
         opp_tokens = tokenize(
@@ -280,7 +326,7 @@ def main():
                 break
         dup_title = "yes" if dup_title_slug else "no"
         if dup_title == "yes":
-            notes.append(f"title matches /library/{dup_title_slug}/")
+            notes.append(f"title matches /{page_type}/{dup_title_slug}/")
             counts["dup_title"] += 1
 
         # 3. Intent overlap (token similarity, excluding exact slug dup)
@@ -303,7 +349,7 @@ def main():
             counts["intent_overlap"] += 1
 
         # 4. Blocks already covered
-        block_reasons = covered_blocks(opp_ranges, pages, categories)
+        block_reasons = covered_blocks(opp_ranges, pages, categories, page_type)
         blocks_covered = "; ".join(block_reasons) if block_reasons else "no"
         if block_reasons:
             notes.append(f"{len(block_reasons)} declared block(s) already covered")
