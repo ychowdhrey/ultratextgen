@@ -1,0 +1,67 @@
+name: Weekly PR digest
+
+# Compiles the past 7 days of PRs merged to main into a markdown digest under
+# docs/infra-review/, classified by infrastructure lane. This is the
+# deterministic input for the weekly infrastructure review (docs/README.md).
+# It does NOT update the infra map itself — that judgment step is done by the
+# scheduled Claude session that consumes the digest (see
+# docs/infra-review/weekly-review-prompt.md).
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC (after the README sync at 03:00)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compute window
+        id: window
+        run: |
+          echo "until=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          echo "since=$(date -u -d '7 days ago' +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Collect merged PRs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr list --base main --state merged \
+            --search "merged:>=${{ steps.window.outputs.since }}" \
+            --json number,title,url,mergedAt,labels,files \
+            --limit 200 > /tmp/prs.json
+          echo "Collected $(jq 'length' /tmp/prs.json) PR(s)."
+
+      - name: Build digest
+        run: |
+          mkdir -p docs/infra-review
+          OUT="docs/infra-review/${{ steps.window.outputs.until }}.md"
+          python3 scripts/weekly_pr_digest.py \
+            --since "${{ steps.window.outputs.since }}" \
+            --until "${{ steps.window.outputs.until }}" \
+            < /tmp/prs.json > "$OUT"
+          cp "$OUT" docs/infra-review/latest.md
+          echo "Wrote $OUT"
+
+      - name: Commit digest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/infra-review/
+          if git diff --cached --quiet; then
+            echo "No digest changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: weekly PR digest ${{ steps.window.outputs.until }} [skip ci]"
+          git push
