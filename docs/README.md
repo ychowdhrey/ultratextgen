@@ -34,6 +34,7 @@ workflow that produces it.
 | **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Guide** (articles) | `/guide/` | `Article` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
+| **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 
 **Only the Library lane is structurally complete** (discovery → scouting →
 research → volume → score → dedupe → spec → generate → validate → PR). The
@@ -51,7 +52,7 @@ These run across page types rather than producing a type.
 | Image SEO (hero art, OG cards) | `make-hero-decorative.py`, `add-og-dimensions.py`, `build-image-seo-status.py` | [`image-seo-fixes.md`](./image-seo-fixes.md) | per batch |
 | Pinterest pins | `generate-pinterest.py` | [`pinterest-pin-generation.md`](./pinterest-pin-generation.md) | per batch |
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
-| Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ in workflow §5 only | per batch |
+| Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ `es/`, `locales/`, `README.*.md`) | ❌ none | as needed |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
@@ -64,6 +65,7 @@ These run across page types rather than producing a type.
 |---|---|---|
 | `update-sitemap.yml` | daily 00:00 UTC | regenerate `sitemap.xml` (`[skip ci]`) |
 | `update_readme.yml` | weekly (Mon 03:00 UTC) | sync README from sitemap (`sync-readme.js`) |
+| `weekly-pr-digest.yml` | weekly (Mon 06:00 UTC) | classify merged PRs by lane → `docs/infra-review/<date>.md` + `latest.md` |
 | `tweet-queue.yml` | daily 09:00 UTC (+ manual) | post qualifying commits (`tweet_queue.py`) |
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
@@ -96,6 +98,10 @@ here so they aren't lost. Update as they're closed or new ones appear.
 3. **Usecase and guide lanes are undocumented** — no workflow, no backlog.
 4. **Operational tracks without docs:** schema/alternateName SEO, i18n, CSS/GTM
    CI checks. Scripts exist; the process is tribal knowledge.
+5. **Platform pages lane is undocumented** — the eleven social-network generator
+   pages (`/discord/`, `/instagram/`, `/x/`, …) receive SEO and FAQ updates but
+   have no governing workflow, backlog, or generator. The classifier also has no
+   rules for them, so PRs that touch those paths are flagged Unclassified.
 
 ---
 
