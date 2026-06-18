@@ -2673,3 +2673,82 @@ body.dark-mode .vertical-chip {
   color: var(--accent-purple);
   border-bottom-color: var(--accent-purple);
 }
+
+/* ID page: alphabet & symbol showcases (huruf aesthetic A–Z, simbol aesthetic) */
+.glyph-section {
+  max-width: 900px;
+}
+
+.alpha-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.alpha-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.alpha-label {
+  flex: 0 0 90px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.alpha-glyphs {
+  flex: 1 1 240px;
+  text-align: left;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.glyph-group {
+  margin-top: 1.75rem;
+}
+
+.glyph-group h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.glyph-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.glyph-copy {
+  cursor: pointer;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  padding: 0.5rem 0.7rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.glyph-grid .glyph-copy {
+  min-width: 2.6rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.glyph-copy:hover {
+  border-color: var(--accent-purple);
+}
+
+.glyph-copy.copied {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
