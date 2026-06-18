@@ -16,38 +16,34 @@
       <feDropShadow dx="0" dy="10" stdDeviation="22" flood-color="#1a1a2e" flood-opacity="0.10"/>
     </filter>
   </defs>
-
   <rect width="1000" height="1500" fill="#FBFBFE"/>
   <rect width="1000" height="1500" fill="url(#dots)"/>
   <circle cx="850" cy="180" r="360" fill="url(#glow)"/>
   <rect width="1000" height="14" fill="url(#gh)"/>
-
   <text x="500" y="92" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="6" fill="#64748b">ULTRATEXTGEN.COM</text>
-
-  <rect x="350" y="128" width="300" height="50" rx="25" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="360" y="128" width="280" height="50" rx="25" fill="#ffffff" stroke="#e2e8f0"/>
   <text x="500" y="161" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="2" fill="#8b5cf6">TATTOO LETTERING</text>
-
-  <text x="500" y="300" text-anchor="middle" font-size="76" font-weight="700" fill="#1a1a2e">Preview your tattoo</text>
-  <text x="500" y="390" text-anchor="middle" font-size="76" font-weight="700" fill="url(#g)">before you ink it</text>
-
-  <!-- demo card: forearm + stacked name -->
-  <rect x="140" y="500" width="720" height="540" rx="30" fill="#ffffff" stroke="#e2e8f0" filter="url(#sh)"/>
-  <!-- stylised arm -->
+  <text x="500" y="300" text-anchor="middle" font-size="74" font-weight="700" fill="#1a1a2e">Preview your tattoo</text>
+  <text x="500" y="392" text-anchor="middle" font-size="74" font-weight="700" fill="url(#g)">before you ink it</text>
+  <rect x="140" y="500" width="720" height="545" rx="30" fill="#ffffff" stroke="#e2e8f0" filter="url(#sh)"/>
   <rect x="600" y="540" width="150" height="460" rx="75" fill="#f1ece7" stroke="#e7ded4"/>
-  <!-- stacked name down the arm -->
-  <g text-anchor="middle" font-size="74" font-weight="600" fill="#1a1a2e" font-style="italic">
-    <text x="675" y="640">G</text><text x="675" y="712">R</text><text x="675" y="784">A</text><text x="675" y="856">C</text><text x="675" y="928">E</text>
-  </g>
-  <!-- generator echo on the left -->
-  <g text-anchor="middle" font-size="74" font-weight="600" fill="url(#g)">
-    <text x="290" y="640">G</text><text x="290" y="712">R</text><text x="290" y="784">A</text><text x="290" y="856">C</text><text x="290" y="928">E</text>
-  </g>
-  <text x="290" y="985" text-anchor="middle" font-size="24" fill="#64748b">type any word</text>
-  <text x="675" y="985" text-anchor="middle" font-size="24" fill="#64748b">see it on skin</text>
-
-  <!-- CTA -->
-  <rect x="230" y="1230" width="540" height="96" rx="48" fill="url(#gh)" filter="url(#sh)"/>
-  <text x="500" y="1291" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">Try the free generator →</text>
-
-  <text x="500" y="1430" text-anchor="middle" font-size="27" fill="#94a3b8">ultratextgen.com/usecase/vertical-text</text>
+  <g text-anchor="middle" font-size="70" font-weight="600" fill="url(#g)" font-style="italic">
+<text x="290" y="666.0">G</text>
+<text x="290" y="738.0">R</text>
+<text x="290" y="810.0">A</text>
+<text x="290" y="882.0">C</text>
+<text x="290" y="954.0">E</text>
+</g>
+  <g text-anchor="middle" font-size="70" font-weight="600" fill="#1a1a2e" font-style="italic">
+<text x="675" y="666.0">G</text>
+<text x="675" y="738.0">R</text>
+<text x="675" y="810.0">A</text>
+<text x="675" y="882.0">C</text>
+<text x="675" y="954.0">E</text>
+</g>
+  <text x="290" y="990" text-anchor="middle" font-size="24" fill="#64748b">type any word</text>
+  <text x="675" y="990" text-anchor="middle" font-size="24" fill="#64748b">see it on skin</text>
+  <rect x="208" y="1235" width="584" height="96" rx="48" fill="url(#gh)" filter="url(#sh)"/>
+  <text x="500" y="1296" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">Try the free generator →</text>
+  <text x="500" y="1432" text-anchor="middle" font-size="27" fill="#94a3b8">ultratextgen.com/usecase/vertical-text</text>
 </svg>

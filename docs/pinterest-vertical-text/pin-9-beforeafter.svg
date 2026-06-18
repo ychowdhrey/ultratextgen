@@ -22,18 +22,34 @@
   <rect width="1000" height="14" fill="url(#gh)"/>
   <text x="500" y="92" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="6" fill="#64748b">ULTRATEXTGEN.COM</text>
   <rect x="374" y="128" width="252" height="50" rx="25" fill="#ffffff" stroke="#e2e8f0"/>
-  <text x="500" y="161" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="2" fill="#8b5cf6">THE PSYCHOLOGY</text>
-  <text x="500" y="300" text-anchor="middle" font-size="74" font-weight="700" fill="#1a1a2e">Why your eye can't</text>
-  <text x="500" y="392" text-anchor="middle" font-size="74" font-weight="700" fill="url(#g)">ignore vertical text</text>
+  <text x="500" y="161" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="2" fill="#8b5cf6">BEFORE / AFTER</text>
+  <text x="500" y="300" text-anchor="middle" font-size="74" font-weight="700" fill="#1a1a2e">Same post.</text>
+  <text x="500" y="392" text-anchor="middle" font-size="74" font-weight="700" fill="url(#g)">One stops the scroll.</text>
   <rect x="140" y="500" width="720" height="545" rx="30" fill="#ffffff" stroke="#e2e8f0" filter="url(#sh)"/>
-  <text x="500" y="640" text-anchor="middle" font-size="120" font-weight="700" fill="url(#g)">70%</text>
-  <text x="500" y="690" text-anchor="middle" font-size="28" fill="#64748b">faster to read horizontal than vertical*</text>
-  <line x1="220" y1="740" x2="780" y2="740" stroke="#e2e8f0" stroke-width="2"/>
-  <circle cx="245" cy="790" r="9" fill="#8b5cf6"/><text x="280" y="800" font-size="29" fill="#1a1a2e">Orientation contrast is pre-attentive</text>
-  <circle cx="245" cy="860" r="9" fill="#8b5cf6"/><text x="280" y="870" font-size="29" fill="#1a1a2e">Reading slows, attention resets</text>
-  <circle cx="245" cy="930" r="9" fill="#8b5cf6"/><text x="280" y="940" font-size="29" fill="#1a1a2e">The scroll rhythm gets interrupted</text>
-  <text x="500" y="1012" text-anchor="middle" font-size="22" fill="#94a3b8">*Yu et al., 2010 · Porter &amp; Arblaster, 2020</text>
+  <rect x="180" y="560" width="300" height="370" rx="20" fill="#f8fafc" stroke="#e2e8f0"/>
+  <g stroke="#cbd5e1" stroke-width="10" stroke-linecap="round">
+    <line x1="215" y1="620" x2="445" y2="620"/>
+    <line x1="215" y1="670" x2="445" y2="670"/>
+    <line x1="215" y1="720" x2="445" y2="720"/>
+    <line x1="215" y1="770" x2="445" y2="770"/>
+    <line x1="215" y1="820" x2="445" y2="820"/>
+  </g>
+  <text x="330" y="900" text-anchor="middle" font-size="25" fill="#94a3b8">scrolled past</text>
+  <rect x="520" y="560" width="300" height="370" rx="20" fill="#f5f3ff" stroke="#8b5cf6" stroke-opacity="0.35"/>
+  <g text-anchor="middle" font-size="64" font-weight="700" fill="url(#g)">
+<text x="585" y="620">W</text>
+<text x="585" y="690">A</text>
+<text x="585" y="760">I</text>
+<text x="585" y="830">T</text>
+</g>
+  <g stroke="#cbd5e1" stroke-width="10" stroke-linecap="round">
+    <line x1="650" y1="640" x2="790" y2="640"/>
+    <line x1="650" y1="700" x2="790" y2="700"/>
+    <line x1="650" y1="760" x2="790" y2="760"/>
+  </g>
+  <text x="670" y="900" text-anchor="middle" font-size="25" font-weight="700" fill="#8b5cf6">stopped</text>
+  <text x="500" y="1012" text-anchor="middle" font-size="26" fill="#64748b">a flat caption vs. a vertical hook</text>
   <rect x="271" y="1235" width="458" height="96" rx="48" fill="url(#gh)" filter="url(#sh)"/>
-  <text x="500" y="1296" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">Read the science →</text>
+  <text x="500" y="1296" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">See why it works →</text>
   <text x="500" y="1432" text-anchor="middle" font-size="27" fill="#94a3b8">ultratextgen.com/guide/vertical-text-guide</text>
 </svg>

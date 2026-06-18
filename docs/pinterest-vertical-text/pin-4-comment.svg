@@ -16,43 +16,31 @@
       <feDropShadow dx="0" dy="10" stdDeviation="22" flood-color="#1a1a2e" flood-opacity="0.10"/>
     </filter>
   </defs>
-
   <rect width="1000" height="1500" fill="#FBFBFE"/>
   <rect width="1000" height="1500" fill="url(#dots)"/>
   <circle cx="850" cy="180" r="360" fill="url(#glow)"/>
   <rect width="1000" height="14" fill="url(#gh)"/>
-
   <text x="500" y="92" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="6" fill="#64748b">ULTRATEXTGEN.COM</text>
-
-  <rect x="345" y="128" width="310" height="50" rx="25" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="346" y="128" width="308" height="50" rx="25" fill="#ffffff" stroke="#e2e8f0"/>
   <text x="500" y="161" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="2" fill="#8b5cf6">COMMENTS &amp; REPLIES</text>
-
-  <text x="500" y="300" text-anchor="middle" font-size="78" font-weight="700" fill="#1a1a2e">The comment they</text>
-  <text x="500" y="392" text-anchor="middle" font-size="78" font-weight="700" fill="url(#g)">scroll back to</text>
-
-  <!-- demo card: comment thread -->
-  <rect x="140" y="500" width="720" height="540" rx="30" fill="#ffffff" stroke="#e2e8f0" filter="url(#sh)"/>
-  <!-- two muted comments -->
+  <text x="500" y="300" text-anchor="middle" font-size="74" font-weight="700" fill="#1a1a2e">The comment they</text>
+  <text x="500" y="392" text-anchor="middle" font-size="74" font-weight="700" fill="url(#g)">scroll back to</text>
+  <rect x="140" y="500" width="720" height="545" rx="30" fill="#ffffff" stroke="#e2e8f0" filter="url(#sh)"/>
   <g>
-    <circle cx="210" cy="585" r="26" fill="#e2e8f0"/>
-    <rect x="252" y="565" width="140" height="16" rx="8" fill="#cbd5e1"/>
-    <rect x="252" y="595" width="430" height="14" rx="7" fill="#eef2f7"/>
-    <circle cx="210" cy="690" r="26" fill="#e2e8f0"/>
-    <rect x="252" y="670" width="120" height="16" rx="8" fill="#cbd5e1"/>
-    <rect x="252" y="700" width="380" height="14" rx="7" fill="#eef2f7"/>
+    <circle cx="210" cy="585" r="26" fill="#e2e8f0"/><rect x="252" y="565" width="140" height="16" rx="8" fill="#cbd5e1"/><rect x="252" y="595" width="430" height="14" rx="7" fill="#eef2f7"/>
+    <circle cx="210" cy="690" r="26" fill="#e2e8f0"/><rect x="252" y="670" width="120" height="16" rx="8" fill="#cbd5e1"/><rect x="252" y="700" width="380" height="14" rx="7" fill="#eef2f7"/>
   </g>
-  <!-- highlighted reply with stacked word -->
   <rect x="170" y="752" width="660" height="240" rx="20" fill="#f5f3ff" stroke="#8b5cf6" stroke-opacity="0.35"/>
   <g text-anchor="middle" font-size="58" font-weight="700" fill="url(#g)">
-    <text x="250" y="812">T</text><text x="250" y="868">H</text><text x="250" y="924">I</text><text x="250" y="980">S</text>
-  </g>
-  <text x="360" y="885" font-size="30" font-weight="600" fill="#1a1a2e">exactly what I</text>
-  <text x="360" y="925" font-size="30" font-weight="600" fill="#1a1a2e">was thinking</text>
-  <text x="500" y="1010" text-anchor="middle" font-size="26" fill="#64748b">lead your reply with one stacked word</text>
-
-  <!-- CTA -->
-  <rect x="210" y="1230" width="580" height="96" rx="48" fill="url(#gh)" filter="url(#sh)"/>
-  <text x="500" y="1291" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">Try the free text stacker →</text>
-
-  <text x="500" y="1430" text-anchor="middle" font-size="27" fill="#94a3b8">ultratextgen.com/usecase/vertical-text</text>
+<text x="250" y="826.0">T</text>
+<text x="250" y="882.0">H</text>
+<text x="250" y="938.0">I</text>
+<text x="250" y="994.0">S</text>
+</g>
+  <text x="360" y="865" font-size="30" font-weight="600" fill="#1a1a2e">exactly what I</text>
+  <text x="360" y="905" font-size="30" font-weight="600" fill="#1a1a2e">was thinking</text>
+  <text x="500" y="1012" text-anchor="middle" font-size="26" fill="#64748b">lead your reply with one stacked word</text>
+  <rect x="176" y="1235" width="647" height="96" rx="48" fill="url(#gh)" filter="url(#sh)"/>
+  <text x="500" y="1296" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">Try the free text stacker →</text>
+  <text x="500" y="1432" text-anchor="middle" font-size="27" fill="#94a3b8">ultratextgen.com/usecase/vertical-text</text>
 </svg>
