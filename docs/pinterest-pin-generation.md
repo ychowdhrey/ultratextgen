@@ -17,6 +17,71 @@ Run `python3 scripts/generate-pinterest.py` to regenerate everything
 
 ---
 
+## Adding a new pin board — the system (read this BEFORE generating)
+
+Every new Pinterest batch (a language board, a use-case board, a campaign set)
+**must reuse this system**. Three boards in a row drifted off it and each one had
+to be reworked — don't be the fourth. The rules below are non-negotiable.
+
+### 1. Put files in the canonical locations (never invent new folders)
+
+| What | Where it goes | Example |
+|---|---|---|
+| Generator script | `scripts/generate-<board>-pins.py` | `scripts/generate-id-pins.py` |
+| Pin images (1000×1500 PNG, 2:3) | `assets/pinterest/<board>/<slug>.png` | `assets/pinterest/vertical-text/copy-paste.png` |
+| Internal inventory CSV | `data/<board>_pinterest_pins.csv` | `data/id_pinterest_pins.csv` |
+| Importer-ready upload CSV | `data/<board>_pinterest_pins_upload.csv` | `data/id_pinterest_pins_upload.csv` |
+| Board doc | `docs/<board>-pinterest-board.md` | `docs/vertical-text-pinterest-board.md` |
+
+**Do NOT** create a top-level `pinterest-kit/`-style folder, put pins or SVGs under
+`docs/`, bundle your own font files, or hand-name a CSV. Those are the exact
+mistakes that caused PRs #303–#306 to be redone. The `/id/` and `/vertical-text/`
+boards are the reference implementations — mirror them.
+
+### 2. Reuse the generator and the brand skin — don't write a new template
+
+Mirror `scripts/generate-id-pins.py` / `scripts/generate-vertical-text-pins.py`.
+Each imports the shared tokens and helpers from `scripts/generate-site-art.py`
+(the single source of truth for the brand look) so every pin renders identically
+to `assets/pinterest/`:
+
+- soft off-white panel + faint dot grid + brand **purple→blue** gradient
+- left accent bar, kicker, large keyword title + underline
+- one focal motif/hero card per pin
+- the `UltraTextGen.com` wordmark at the bottom
+
+**Never** introduce a bespoke look: no Poppins/Baloo/Pacifico, no centered pills,
+no rotating saturated background colors, no green CTA button. That was the
+"didn't match UltraTextGen" rebuild (`28d610d`). Use the system fonts the brand
+helpers already use (system Liberation/DejaVu/Symbola stack) — **do not commit
+`.ttf` files into the repo.**
+
+### 3. Wire the upload CSV through the converter (not by hand)
+
+Register the board in `SOURCES` in `scripts/build_pinterest_upload.py`, then call
+`convert("<board>")` at the end of your generator's `main()`. The `*_upload.csv`
+is produced **only** by `scripts/pinterest_csv.py`. Read
+[`pinterest-csv-format.md`](./pinterest-csv-format.md) — uploading any other
+schema fails Pinterest's importer.
+
+### Checklist before you commit a new board
+
+- [ ] Generator at `scripts/generate-<board>-pins.py`, mirrors an existing one
+- [ ] Imports brand tokens from `generate-site-art.py` (no new visual template)
+- [ ] Images at `assets/pinterest/<board>/`, all exactly 1000×1500
+- [ ] No bundled fonts, no new top-level folder, no SVGs under `docs/`
+- [ ] Inventory + `_upload.csv` in `data/`, board registered in `build_pinterest_upload.py`
+- [ ] Board doc at `docs/<board>-pinterest-board.md` (mirror the vertical-text one)
+
+> **Known cleanup:** the Spanish `/es/` board still lives in the orphaned
+> top-level `pinterest-kit/` directory with its own generator and a hand-named
+> `pinterest-bulk-upload.csv`. It is the one board not yet on this system and
+> should be migrated to the layout above (`scripts/generate-es-pins.py`,
+> `assets/pinterest/es/`, `data/es_pinterest_pins[_upload].csv`) — do **not**
+> copy it as a pattern.
+
+---
+
 ## How the pins are built
 
 The generator **extends the existing brand system** rather than inventing a
