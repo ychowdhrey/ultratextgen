@@ -77,6 +77,13 @@ def sparkle(d, cx, cy, s, color):
     d.polygon([(cx - s, cy), (cx, cy + s * 0.28), (cx + s, cy),
                (cx, cy - s * 0.28)], fill=color)
 
+def heart(d, cx, cy, s, color):
+    r = s * 0.55
+    d.ellipse([cx - r, cy - r, cx, cy], fill=color)
+    d.ellipse([cx, cy - r, cx + r, cy], fill=color)
+    d.polygon([(cx - r, cy - r * 0.15), (cx + r, cy - r * 0.15),
+               (cx, cy + r * 1.15)], fill=color)
+
 def text_w(d, txt, fnt, ls=0):
     if ls == 0:
         return d.textlength(txt, font=fnt)
@@ -201,12 +208,11 @@ def render(p):
         outy = cy0 + 410
         ow = text_w(d, out, of)
         ascent, _ = of.getmetrics()
-        if p.get("sparkles"):
-            draw_centered(d, outy, out, of, accent)
-            sparkle(d, cmid - ow / 2 - 45, outy + ascent * 0.45, 26, accent + (255,))
-            sparkle(d, cmid + ow / 2 + 45, outy + ascent * 0.45, 26, accent + (255,))
-        else:
-            draw_centered(d, outy, out, of, accent)
+        draw_centered(d, outy, out, of, accent)
+        deco = sparkle if p.get("sparkles") else heart if p.get("hearts") else None
+        if deco:
+            deco(d, cmid - ow / 2 - 45, outy + ascent * 0.45, 26, accent + (255,))
+            deco(d, cmid + ow / 2 + 45, outy + ascent * 0.45, 26, accent + (255,))
         if p.get("strike"):
             midy = outy + ascent * 0.52
             d.line([(cmid - ow / 2, midy), (cmid + ow / 2, midy)],
@@ -305,6 +311,38 @@ PINS = [
  dict(n=20, file="tachado", cat="TACHADO", accent="amber",
       headline="Letras tachadas\ny subrayadas",
       **{"in": "texto"}, out="texto", font="bold", strike=True),
+ # ---- long-tail: seasonal, phrases & specific names ----
+ dict(n=21, file="feliz-cumpleanos", cat="CUMPLEAÑOS", accent="pink",
+      headline="Letras bonitas para\nFeliz Cumpleaños",
+      **{"in": "Cumpleaños"}, out="Cumpleaños", font="great", sparkles=True),
+ dict(n=22, file="feliz-cumple-amor", cat="MI AMOR", accent="rose",
+      headline="Feliz Cumpleaños\nmi amor",
+      **{"in": "Mi Amor"}, out="Mi Amor", font="dancing", hearts=True),
+ dict(n=23, file="feliz-navidad", cat="NAVIDAD", accent="teal",
+      headline="Letras bonitas para\nFeliz Navidad",
+      **{"in": "Navidad"}, out="Navidad", font="lobster"),
+ dict(n=24, file="ano-nuevo", cat="AÑO NUEVO", accent="indigo",
+      headline="Letras bonitas para\nFeliz Año Nuevo",
+      **{"in": "Año Nuevo"}, out="Año Nuevo", font="great"),
+ dict(n=25, file="te-amo", cat="TE AMO", accent="rose",
+      headline="Cómo escribir\nTe amo bonito",
+      **{"in": "Te amo"}, out="Te amo", font="great", hearts=True),
+ dict(n=26, file="frases-bonitas", cat="FRASES", accent="purple",
+      headline="Frases con\nletras bonitas",
+      **{"in": "Te quiero"}, out="Te quiero", font="dancing"),
+ dict(n=27, file="nombre-angel", cat="NOMBRES", accent="blue",
+      headline="El nombre Ángel\nen letras bonitas",
+      **{"in": "Ángel"}, out="Ángel", font="dancing"),
+ dict(n=28, file="nombre-dulce", cat="NOMBRES", accent="pink",
+      headline="El nombre Dulce\nen letras bonitas",
+      **{"in": "Dulce"}, out="Dulce", font="great"),
+ dict(n=29, file="nombres-populares", cat="NOMBRES", accent="violet",
+      headline="Tu nombre favorito\nen letras bonitas",
+      multi=[("Camila", "great"), ("Mateo", "dancing"),
+             ("Isabella", "lobster"), ("José", "baloo")]),
+ dict(n=30, file="letras-decoradas", cat="DECORADAS", accent="rose",
+      headline="Letras decoradas con\ncorazones y flores",
+      **{"in": "amor"}, out="amor", font="great", hearts=True),
 ]
 
 if __name__ == "__main__":
