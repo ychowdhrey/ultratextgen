@@ -184,6 +184,21 @@ with open(csv_path, "w", newline="", encoding="utf-8") as f:
         w.writerow([f"{i:02d}-{slug}.png", title, full_desc, keys,
                     link(q), utm(q,slug), BOARD, kw])
 
+# ---- emit pinterest-bulk-upload.csv (Pinterest's exact required schema) ----
+# Pinterest "Bulk create Pins" needs EXACT headers and a public Media URL
+# ending in .png/.jpg/.mp4. The repo is public, so we serve the images
+# straight from GitHub raw (Pinterest ingests the file at upload time).
+RAW_BASE = ("https://raw.githubusercontent.com/ychowdhrey/ultratextgen/"
+            "claude/modest-edison-xr5q47/pinterest-kit/images/")
+bulk_path = os.path.join(HERE, "pinterest-bulk-upload.csv")
+with open(bulk_path, "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f)
+    w.writerow(["Title", "Media URL", "Pinterest board",
+                "Description", "Link", "Keywords"])
+    for i,(slug,kw,title,desc,tags,keys,q) in enumerate(P,1):
+        w.writerow([title[:100], f"{RAW_BASE}{i:02d}-{slug}.png", BOARD,
+                    f"{desc} {tags}"[:500], utm(q,slug), keys])
+
 # ---- emit pin-copy.md ----
 md = [f"# Tablero de Pinterest (ES) — Copy de los {len(P)} pines\n",
  f"**Tablero:** `{BOARD}`  ",
@@ -208,4 +223,4 @@ md.append("Sube primero los de mayor volumen (01–05), luego el resto. Los "
  "los 30 de golpe.")
 with open(os.path.join(HERE,"pin-copy.md"),"w",encoding="utf-8") as f:
     f.write("\n".join(md)+"\n")
-print(f"wrote pins.csv ({len(P)} rows) + pin-copy.md")
+print(f"wrote pins.csv + pinterest-bulk-upload.csv ({len(P)} rows) + pin-copy.md")
