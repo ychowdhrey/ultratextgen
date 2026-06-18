@@ -52,8 +52,16 @@ ultratextgen/
 │   ├── update-sitemap.js   # Sitemap generator (Node.js)
 │   ├── inject-faq-jsonld.js# FAQ structured data injector
 │   ├── tweet_queue.py      # Git-to-tweet automation (Python)
+│   ├── generate-site-art.py# SINGLE source of truth for the brand pin/art skin
+│   ├── generate-pinterest.py     # Per-page pin generator (imports generate-site-art)
+│   ├── generate-id-pins.py       # /id/ board generator (mirror this for new boards)
+│   ├── generate-vertical-text-pins.py # vertical-text board generator
 │   ├── pinterest_csv.py    # SINGLE source of truth for the Pinterest upload schema
 │   └── build_pinterest_upload.py # inventory CSV -> *_upload.csv (importer-ready)
+│
+├── assets/pinterest/<board>/ # Pin images (1000×1500 PNG, 2:3) — the ONLY place pins go
+├── data/*_pinterest_pins.csv      # internal inventory CSVs (never uploaded)
+├── data/*_pinterest_pins_upload.csv # importer-ready CSVs (upload these only)
 │
 ├── category/               # Category landing pages (bold, cursive, etc.)
 ├── usecase/                # Use case pages (bio, comment, etc.)
@@ -298,3 +306,11 @@ Do not add a test framework unless explicitly requested.
   The internal inventory CSVs (`data/*_pins.csv`) are NOT importable. Only the
   `data/*_upload.csv` files are — generated solely via `scripts/pinterest_csv.py`
   / `scripts/build_pinterest_upload.py`. See `docs/pinterest-csv-format.md`.
+- Do not create a new Pinterest board off-system. Read
+  `docs/pinterest-pin-generation.md` ("Adding a new pin board") FIRST, every time.
+  Specifically: do not put pins in a new top-level folder (e.g. `pinterest-kit/`)
+  or under `docs/` — they go in `assets/pinterest/<board>/`; do not write a
+  bespoke generator or visual template — mirror `scripts/generate-id-pins.py` and
+  import the brand skin from `scripts/generate-site-art.py`; do not bundle `.ttf`
+  font files; do not invent a pin look (no Poppins/pills/saturated colors/green
+  CTA — use the off-white panel + dot grid + purple→blue brand skin).
