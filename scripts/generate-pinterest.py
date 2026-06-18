@@ -626,6 +626,9 @@ def main():
     print(f"reviewed {len(rows)} pages | included {included} | excluded {excluded}")
     print(f"generated {generated} pinterest images -> assets/pinterest/")
     print(f"wrote inventory -> data/pinterest_pins.csv")
+    # derive the Pinterest-importer-ready upload CSV (schema owned by
+    # scripts/pinterest_csv.py); never upload the inventory above directly.
+    _load(os.path.join(HERE, "build_pinterest_upload.py"), "build_upload").convert("page")
     print("--- pins per board (primary) ---")
     for b in ALL_BOARDS:
         print(f"  {board_counts[b]:4}  {b}")

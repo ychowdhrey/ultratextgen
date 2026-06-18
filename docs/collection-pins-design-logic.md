@@ -99,7 +99,13 @@ keywords. Destinations carry `utm_campaign=collections`.
      [`scripts/_extract_groups.js`](../scripts/_extract_groups.js);
    - `emoji-flags` → curated region grids.
 3. `python3 scripts/generate-collection-pins.py [slug ...]` renders
-   `assets/collection-pins/<slug>.png` and writes the upload inventory
+   `assets/collection-pins/<slug>.png` and writes the internal inventory
    `data/collection_pins.csv` (title, description, keywords, alt, both boards,
    destination + UTM).
 4. Re-running is idempotent; pass slugs to regenerate a subset.
+
+> **Uploading to Pinterest:** do **not** upload `data/collection_pins.csv` (it is
+> an internal inventory). The generator also writes the importer-ready
+> `data/collection_pins_upload.csv` via `scripts/build_pinterest_upload.py`. That
+> file — and the exact Pinterest schema it follows — is documented in
+> [docs/pinterest-csv-format.md](./pinterest-csv-format.md).

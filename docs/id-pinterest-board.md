@@ -11,7 +11,11 @@ the generator to stand out… a HOW TO PIN BOARD in Indonesian").
   `utm_source=pinterest&utm_medium=social&utm_campaign=id_howto_pins`.
 - **Generator:** [`scripts/generate-id-pins.py`](../scripts/generate-id-pins.py)
 - **Images:** `assets/pinterest/id/<slug>.png` (1000×1500, 2:3)
-- **Upload inventory:** [`data/id_pinterest_pins.csv`](../data/id_pinterest_pins.csv)
+- **Internal inventory:** `data/id_pinterest_pins.csv` (not for upload)
+- **Upload this to Pinterest:** [`data/id_pinterest_pins_upload.csv`](../data/id_pinterest_pins_upload.csv)
+  — the importer-ready CSV (exact schema, public image URLs). See
+  [docs/pinterest-csv-format.md](./pinterest-csv-format.md). Create a board named
+  exactly `Tulisan Aesthetic, Font & Simbol Keren (Copy Paste)` first.
 
 ---
 
@@ -80,8 +84,8 @@ a box. Requires: `cairosvg`, `fonts-symbola`, `fonts-noto-core`,
 14 pins → ~3–4 weeks at 3–4 fresh pins/week (Pinterest favors steady fresh pins
 over bulk dumps). Lead with the two highest-volume how-tos (`cara-membuat-…`,
 `huruf-aesthetic-a-z`), then the social/use-case set. Re-pin evergreen winners to
-the board every ~2 weeks. Use the `pin_title` / `pin_description` / `pin_keywords`
-straight from the CSV.
+the board every ~2 weeks. The `Title` / `Description` / `Keywords` columns of the
+`_upload.csv` are ready to use as-is.
 
 ## The 14 pins
 
@@ -117,8 +121,10 @@ straight from the CSV.
 ## Regenerate
 
 ```bash
-python3 scripts/generate-id-pins.py   # writes assets/pinterest/id/*.png + data/id_pinterest_pins.csv
+python3 scripts/generate-id-pins.py   # writes the PNGs, the inventory, AND
+                                       # data/id_pinterest_pins_upload.csv
 ```
 
 Idempotent. To add/edit a pin, append to `PINS` in the script (keep samples within
-the Symbola-safe set above) and re-run.
+the Symbola-safe set above) and re-run. To refresh only the upload CSV from the
+existing inventory: `python3 scripts/build_pinterest_upload.py id`.
