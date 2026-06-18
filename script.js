@@ -881,6 +881,30 @@ document.addEventListener("click", async (e) => {
   }
 });
 
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest ? e.target.closest(".glyph-copy") : null;
+  if (!btn) return;
+
+  const text = btn.dataset.text || btn.textContent || "";
+  if (!text) return;
+
+  try {
+    await navigator.clipboard.writeText(text);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "copy_text",
+      copy_method: "glyph"
+    });
+
+    btn.classList.add("copied");
+    showCopyToast();
+    setTimeout(() => btn.classList.remove("copied"), 1200);
+  } catch (err) {
+    console.error("Copy failed:", err);
+  }
+});
+
 document.addEventListener("click", (e) => {
   const btn = e.target.closest ? e.target.closest(".save-btn") : null;
   if (!btn) return;
