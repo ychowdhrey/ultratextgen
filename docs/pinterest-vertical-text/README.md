@@ -183,25 +183,36 @@ Provided SVG templates are marked `[SVG: pin-N.svg]`.
 
 ---
 
-## Producing the images
+## The files
 
-The `pin-*.svg` files are 1000×1500 (Pinterest's recommended 2:3). Pinterest needs raster
-uploads, so convert to PNG/JPG. Any of these works:
+All 18 pins are provided as **both** `pin-*.svg` (editable source) and `pin-*.png`
+(1000×1500, upload-ready). Pinterest needs raster uploads, so **just upload the PNGs** —
+no conversion needed.
+
+| # | File | # | File |
+|---|---|---|---|
+| 1 | pin-1-bio | 10 | pin-10-science |
+| 2 | pin-2-twitter-bio | 11 | pin-11-bestpractice |
+| 3 | pin-3-username | 12 | pin-12-speedbump |
+| 4 | pin-4-comment | 13 | pin-13-tattoo |
+| 5 | pin-5-discord | 14 | pin-14-tattoo-name |
+| 6 | pin-6-reactions | 15 | pin-15-howto |
+| 7 | pin-7-hook | 16 | pin-16-copypaste |
+| 8 | pin-8-hybrid | 17 | pin-17-platforms |
+| 9 | pin-9-beforeafter | 18 | pin-18-noapp |
+
+### Regenerating / editing
+
+All pins are produced by `generate_pins.py` (requires `pip install cairosvg`). Edit the
+`PINS` list at the bottom — change a headline, stacked word, CTA or destination — then:
 
 ```bash
-# ImageMagick
-magick -density 144 pin-1-bio.svg pin-1-bio.png
-
-# rsvg-convert (librsvg)
-rsvg-convert -w 1000 -h 1500 pin-1-bio.svg -o pin-1-bio.png
-
-# Inkscape
-inkscape pin-1-bio.svg --export-type=png -w 1000 -h 1500
+python3 generate_pins.py    # rewrites every .svg and .png
 ```
 
-Or open the SVG in a browser and screenshot, or import into Canva/Figma to restyle with
-photos. The 6 provided templates cover one pin per angle — duplicate and swap the headline
-+ stacked word to produce the remaining 12 (and 3–5 color/photo variants each).
+To make the 3–5 colour/photo **variants per concept** that Pinterest rewards, either tweak
+the gradient stops in `generate_pins.py` and re-run, or drop the SVGs into Canva/Figma and
+swap in background photos.
 
 ## Publishing tips
 

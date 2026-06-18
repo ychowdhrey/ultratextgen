@@ -21,25 +21,22 @@
   <circle cx="850" cy="180" r="360" fill="url(#glow)"/>
   <rect width="1000" height="14" fill="url(#gh)"/>
   <text x="500" y="92" text-anchor="middle" font-size="28" font-weight="700" letter-spacing="6" fill="#64748b">ULTRATEXTGEN.COM</text>
-  <rect x="381" y="128" width="238" height="50" rx="25" fill="#ffffff" stroke="#e2e8f0"/>
-  <text x="500" y="161" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="2" fill="#8b5cf6">CAPTION HOOKS</text>
-  <text x="500" y="300" text-anchor="middle" font-size="74" font-weight="700" fill="#1a1a2e">Stop the scroll</text>
-  <text x="500" y="392" text-anchor="middle" font-size="74" font-weight="700" fill="url(#g)">in 4 letters</text>
+  <rect x="353" y="128" width="294" height="50" rx="25" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="500" y="161" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="2" fill="#8b5cf6">NAMES &amp; USERNAMES</text>
+  <text x="500" y="300" text-anchor="middle" font-size="74" font-weight="700" fill="#1a1a2e">One word, stacked,</text>
+  <text x="500" y="392" text-anchor="middle" font-size="74" font-weight="700" fill="url(#g)">instantly aesthetic</text>
   <rect x="140" y="500" width="720" height="545" rx="30" fill="#ffffff" stroke="#e2e8f0" filter="url(#sh)"/>
   <g stroke="#64748b" stroke-width="11" stroke-linecap="round" opacity="0.16">
-    <line x1="500" y1="560" x2="790" y2="560"/><line x1="500" y1="628" x2="760" y2="628"/>
+    <line x1="520" y1="600" x2="800" y2="600"/><line x1="520" y1="668" x2="780" y2="668"/>
+    <line x1="520" y1="872" x2="800" y2="872"/><line x1="520" y1="940" x2="760" y2="940"/>
   </g>
-  <g text-anchor="middle" font-size="104" font-weight="700" fill="url(#g)">
-<text x="330" y="605">S</text>
-<text x="330" y="715">T</text>
-<text x="330" y="825">O</text>
-<text x="330" y="935">P</text>
+  <g text-anchor="middle" font-size="118" font-weight="700" fill="url(#g)">
+<text x="340" y="650">A</text>
+<text x="340" y="775">V</text>
+<text x="340" y="900">A</text>
 </g>
-  <text x="500" y="726" font-size="30" font-weight="600" fill="#1a1a2e">scrolling if</text>
-  <text x="500" y="770" font-size="30" font-weight="600" fill="#1a1a2e">you've ever</text>
-  <text x="500" y="814" font-size="30" font-weight="600" fill="#1a1a2e">felt this</text>
-  <text x="500" y="1012" text-anchor="middle" font-size="26" fill="#64748b">open your caption with a vertical hook</text>
-  <rect x="271" y="1235" width="458" height="96" rx="48" fill="url(#gh)" filter="url(#sh)"/>
-  <text x="500" y="1296" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">See how it works →</text>
-  <text x="500" y="1432" text-anchor="middle" font-size="27" fill="#94a3b8">ultratextgen.com/guide/vertical-text-guide</text>
+  <text x="500" y="1012" text-anchor="middle" font-size="26" fill="#64748b">your name, reading top-to-bottom</text>
+  <rect x="208" y="1235" width="584" height="96" rx="48" fill="url(#gh)" filter="url(#sh)"/>
+  <text x="500" y="1296" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">Try the free generator →</text>
+  <text x="500" y="1432" text-anchor="middle" font-size="27" fill="#94a3b8">ultratextgen.com/usecase/vertical-text</text>
 </svg>
