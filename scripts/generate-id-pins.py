@@ -37,6 +37,14 @@ os.makedirs(PIN_DIR, exist_ok=True)
 DEST = "https://ultratextgen.com/id/"
 PIN_W, PIN_H = 1000, 1500
 
+# Public base URL where the rendered PNGs are served. Pinterest's bulk-CSV
+# "Media URL" must be a *publicly reachable* link to the image file itself, so
+# this points at the live site (the pins live at /assets/pinterest/id/ once the
+# branch deploys). Override for testing, e.g. a raw-GitHub branch URL:
+#   PIN_MEDIA_BASE="https://raw.githubusercontent.com/ychowdhrey/ultratextgen/<branch>/assets/pinterest/id/"
+MEDIA_BASE = os.environ.get(
+    "PIN_MEDIA_BASE", "https://ultratextgen.com/assets/pinterest/id/")
+
 # Font stack that actually rasterises the Mathematical Alphanumeric glyphs under
 # cairosvg. Symbola is serif, so "sans" variants read as serif — fine for a pin.
 AES = ("Symbola, 'Noto Sans Math', 'Noto Sans Symbols2', "
@@ -433,7 +441,6 @@ def utm(slug):
 
 
 def description(pin):
-    samples = ", ".join(s for _, s in pin["rows"] if not pin.get("vertical"))[:90]
     d = (f"{pin['headline']} — {pin['benefit']} Ketik sekali, salin semua gaya "
          f"Unicode di UltraTextGen: gratis, langsung di browser, tanpa aplikasi. "
          f"Cocok untuk bio, caption, nama, status & komentar.")
@@ -442,14 +449,13 @@ def description(pin):
     return d
 
 
-def alt(pin):
-    return (f"Pin Pinterest vertikal berbahasa Indonesia: {pin['headline']} — "
-            f"contoh tulisan aesthetic untuk disalin dari UltraTextGen.")
-
-
-COLUMNS = ["slug", "image_path", "width", "height", "board", "pin_title",
-           "pin_description", "pin_keywords", "pin_alt_text",
-           "destination_url", "utm_destination_url"]
+# Pinterest "Bulk create Pins" CSV schema — header names must match exactly.
+# Required: Title, Media URL, Pinterest board. Thumbnail is video-only (blank
+# for image pins); Publish date left blank so pins publish on upload (or the
+# user schedules in the UI). Keywords is a comma-separated list. Alt text is
+# not part of this schema, so it is kept in the docs/notes, not the CSV.
+COLUMNS = ["Title", "Media URL", "Pinterest board", "Thumbnail",
+           "Description", "Link", "Publish date", "Keywords"]
 
 
 def main():
@@ -461,27 +467,28 @@ def main():
         cairosvg.svg2png(bytestring=svg.encode(), write_to=path,
                          output_width=PIN_W, output_height=PIN_H)
         out.append({
-            "slug": pin["slug"],
-            "image_path": f"assets/pinterest/id/{pin['slug']}.png",
-            "width": str(PIN_W), "height": str(PIN_H),
-            "board": BOARD,
-            "pin_title": pin["title"],
-            "pin_description": description(pin),
-            "pin_keywords": ", ".join(pin["kw"]),
-            "pin_alt_text": alt(pin),
-            "destination_url": DEST,
-            "utm_destination_url": utm(pin["slug"]),
+            "Title": pin["title"],
+            "Media URL": f"{MEDIA_BASE}{pin['slug']}.png",
+            "Pinterest board": BOARD,
+            "Thumbnail": "",
+            "Description": description(pin),
+            "Link": utm(pin["slug"]),
+            "Publish date": "",
+            "Keywords": ", ".join(pin["kw"]),
         })
-    with open(CSV_OUT, "w", newline="", encoding="utf-8") as f:
+    # CSV UTF-8 with BOM — Pinterest's importer expects UTF-8 and the BOM keeps
+    # the styled-Unicode samples/keywords intact across spreadsheet apps.
+    with open(CSV_OUT, "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(out)
     print(f"generated {len(out)} Indonesian pins -> assets/pinterest/id/")
-    print(f"wrote inventory -> data/id_pinterest_pins.csv")
+    print(f"wrote Pinterest bulk CSV -> data/id_pinterest_pins.csv")
+    print(f"media base: {MEDIA_BASE}")
     for r in out:
-        tl, dl = len(r["pin_title"]), len(r["pin_description"])
-        flag = "" if (40 <= tl <= 100 and 100 <= dl <= 500) else "  <-- check len"
-        print(f"  {r['slug']:36} title {tl:3} desc {dl:3}{flag}")
+        tl, dl = len(r["Title"]), len(r["Description"])
+        flag = "" if (tl <= 100 and dl <= 500) else "  <-- check len"
+        print(f"  {r['Title'][:48]:48} title {tl:3} desc {dl:3}{flag}")
 
 
 if __name__ == "__main__":

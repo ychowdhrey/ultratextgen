@@ -11,7 +11,28 @@ the generator to stand out… a HOW TO PIN BOARD in Indonesian").
   `utm_source=pinterest&utm_medium=social&utm_campaign=id_howto_pins`.
 - **Generator:** [`scripts/generate-id-pins.py`](../scripts/generate-id-pins.py)
 - **Images:** `assets/pinterest/id/<slug>.png` (1000×1500, 2:3)
-- **Upload inventory:** [`data/id_pinterest_pins.csv`](../data/id_pinterest_pins.csv)
+- **Upload CSV:** [`data/id_pinterest_pins.csv`](../data/id_pinterest_pins.csv)
+
+## Uploading to Pinterest (Bulk create Pins)
+
+The CSV is written in Pinterest's **exact bulk-CSV schema** (saved as UTF-8 with
+BOM) — header names must match or the importer rejects it:
+
+`Title, Media URL, Pinterest board, Thumbnail, Description, Link, Publish date, Keywords`
+
+- **Title / Media URL / Pinterest board** are required. **Thumbnail** is video-only
+  (blank here). **Publish date** is blank (publish on upload, or schedule in the UI).
+- **Media URL must be a publicly reachable link to the PNG itself.** It defaults to
+  the live site (`https://ultratextgen.com/assets/pinterest/id/<slug>.png`), which
+  resolves once this branch is merged and the static site redeploys.
+- **Pinterest board** must match a board that exists in your account — create a
+  board named exactly `Tulisan Aesthetic, Font & Simbol Keren (Copy Paste)` first.
+- To upload **before** the deploy, regenerate against the public raw-GitHub branch
+  URL (Pinterest fetches and stores its own copy at import time):
+  ```bash
+  PIN_MEDIA_BASE="https://raw.githubusercontent.com/ychowdhrey/ultratextgen/<branch>/assets/pinterest/id/" \
+    python3 scripts/generate-id-pins.py
+  ```
 
 ---
 
@@ -80,8 +101,8 @@ a box. Requires: `cairosvg`, `fonts-symbola`, `fonts-noto-core`,
 14 pins → ~3–4 weeks at 3–4 fresh pins/week (Pinterest favors steady fresh pins
 over bulk dumps). Lead with the two highest-volume how-tos (`cara-membuat-…`,
 `huruf-aesthetic-a-z`), then the social/use-case set. Re-pin evergreen winners to
-the board every ~2 weeks. Use the `pin_title` / `pin_description` / `pin_keywords`
-straight from the CSV.
+the board every ~2 weeks. The `Title` / `Description` / `Keywords` columns are
+ready to use as-is.
 
 ## The 14 pins
 
