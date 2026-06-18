@@ -382,6 +382,14 @@ def main():
 
     print(f"\nrendered {len(out_rows)} pins -> assets/collection-pins/")
     print(f"inventory -> data/collection_pins.csv")
+    # derive the Pinterest-importer-ready upload CSV (schema owned by
+    # scripts/pinterest_csv.py); never upload the inventory above directly.
+    import importlib.util as _ilu
+    _bs = _ilu.spec_from_file_location(
+        "build_upload", os.path.join(HERE, "build_pinterest_upload.py"))
+    _bu = _ilu.module_from_spec(_bs)
+    _bs.loader.exec_module(_bu)
+    _bu.convert("collection")
     if skipped:
         print(f"skipped (no rows): {len(skipped)} -> {', '.join(skipped[:8])}")
     print("--- pins per primary (copy-paste) board ---")

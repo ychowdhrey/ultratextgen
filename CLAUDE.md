@@ -51,7 +51,9 @@ ultratextgen/
 ├── scripts/
 │   ├── update-sitemap.js   # Sitemap generator (Node.js)
 │   ├── inject-faq-jsonld.js# FAQ structured data injector
-│   └── tweet_queue.py      # Git-to-tweet automation (Python)
+│   ├── tweet_queue.py      # Git-to-tweet automation (Python)
+│   ├── pinterest_csv.py    # SINGLE source of truth for the Pinterest upload schema
+│   └── build_pinterest_upload.py # inventory CSV -> *_upload.csv (importer-ready)
 │
 ├── category/               # Category landing pages (bold, cursive, etc.)
 ├── usecase/                # Use case pages (bio, comment, etc.)
@@ -292,3 +294,7 @@ Do not add a test framework unless explicitly requested.
 - Do not add inline `<style>` blocks to HTML pages — add to `style.css`
 - Do not skip Google Tag Manager snippets when creating new pages
 - Do not skip JSON-LD structured data when creating new pages
+- Do not upload (or hand-author) a pin CSV in any schema other than Pinterest's.
+  The internal inventory CSVs (`data/*_pins.csv`) are NOT importable. Only the
+  `data/*_upload.csv` files are — generated solely via `scripts/pinterest_csv.py`
+  / `scripts/build_pinterest_upload.py`. See `docs/pinterest-csv-format.md`.

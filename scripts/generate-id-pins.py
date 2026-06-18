@@ -17,7 +17,9 @@ lays the styled-text rows onto the tall 1000x1500 pin used across the site.
 
 Outputs:
   - assets/pinterest/id/<slug>.png      1000x1500 vertical pins
-  - data/id_pinterest_pins.csv          upload inventory (title/desc/kw/alt/url)
+  - data/id_pinterest_pins.csv          internal inventory (title/desc/kw/alt/url)
+  - data/id_pinterest_pins_upload.csv   Pinterest-importer-ready CSV (the file you
+                                        upload) — written via build_pinterest_upload
 
 Run:  python3 scripts/generate-id-pins.py
 Requires: cairosvg, plus a font covering the Mathematical Alphanumeric block
@@ -55,6 +57,13 @@ ART = _load(os.path.join(HERE, "generate-site-art.py"), "siteart")
 PURPLE, BLUE, INK, SUB = ART.PURPLE, ART.BLUE, ART.INK, ART.SUB
 PANEL, SANS = ART.PANEL, ART.SANS
 defs, esc = ART.defs, ART.esc
+
+
+def _build_upload():
+    """Derive the Pinterest-importer-ready upload CSV from the inventory just
+    written, via the shared converter (single source of truth for the schema)."""
+    conv = _load(os.path.join(HERE, "build_pinterest_upload.py"), "build_upload")
+    conv.convert("id")
 
 
 # ============================================================ style transforms
@@ -478,6 +487,7 @@ def main():
         w.writerows(out)
     print(f"generated {len(out)} Indonesian pins -> assets/pinterest/id/")
     print(f"wrote inventory -> data/id_pinterest_pins.csv")
+    _build_upload()
     for r in out:
         tl, dl = len(r["pin_title"]), len(r["pin_description"])
         flag = "" if (40 <= tl <= 100 and 100 <= dl <= 500) else "  <-- check len"
