@@ -73,12 +73,17 @@ schema fails Pinterest's importer.
 - [ ] Inventory + `_upload.csv` in `data/`, board registered in `build_pinterest_upload.py`
 - [ ] Board doc at `docs/<board>-pinterest-board.md` (mirror the vertical-text one)
 
-> **Known cleanup:** the Spanish `/es/` board still lives in the orphaned
-> top-level `pinterest-kit/` directory with its own generator and a hand-named
-> `pinterest-bulk-upload.csv`. It is the one board not yet on this system and
-> should be migrated to the layout above (`scripts/generate-es-pins.py`,
-> `assets/pinterest/es/`, `data/es_pinterest_pins[_upload].csv`) — do **not**
-> copy it as a pattern.
+### Reference boards (all on this system)
+
+| Board | Generator | Images | Doc |
+|---|---|---|---|
+| Per-page (English) | `generate-pinterest.py` | `assets/pinterest/*.png` | this doc |
+| Indonesian `/id/` | `generate-id-pins.py` | `assets/pinterest/id/` | `id-pinterest-board.md` |
+| Vertical text | `generate-vertical-text-pins.py` | `assets/pinterest/vertical-text/` | `vertical-text-pinterest-board.md` |
+| Spanish `/es/` | `generate-es-pins.py` | `assets/pinterest/es/` | `es-pinterest-board.md` |
+
+The `/es/` board was previously a stray top-level `pinterest-kit/` and has been
+migrated onto this system — there are now **no** off-system Pinterest boards.
 
 ---
 
