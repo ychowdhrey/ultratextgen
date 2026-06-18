@@ -50,7 +50,7 @@ These run across page types rather than producing a type.
 | Track | Scripts | Doc | Cadence |
 |---|---|---|---|
 | Image SEO (hero art, OG cards) | `make-hero-decorative.py`, `add-og-dimensions.py`, `build-image-seo-status.py` | [`image-seo-fixes.md`](./image-seo-fixes.md) | per batch |
-| Pinterest pins | `generate-pinterest.py` | [`pinterest-pin-generation.md`](./pinterest-pin-generation.md) | per batch |
+| Pinterest pins (+ new boards) | `generate-pinterest.py`, `generate-id-pins.py`, `generate-vertical-text-pins.py` (skin: `generate-site-art.py`); CSV: `pinterest_csv.py` + `build_pinterest_upload.py` | [`pinterest-pin-generation.md`](./pinterest-pin-generation.md) (board conventions) + [`pinterest-csv-format.md`](./pinterest-csv-format.md) | per batch |
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ `es/`, `locales/`, `README.*.md`) | ❌ none | as needed |
@@ -102,6 +102,10 @@ here so they aren't lost. Update as they're closed or new ones appear.
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive SEO and FAQ updates but
    have no governing workflow, backlog, or generator. The classifier also has no
    rules for them, so PRs that touch those paths are flagged Unclassified.
+6. **One Pinterest board is off-system.** The Spanish `/es/` board lives in an
+   orphaned top-level `pinterest-kit/` (own generator, bundled fonts, hand-named
+   CSV) instead of the `assets/pinterest/` + `data/*_upload.csv` pipeline every
+   other board uses. Migrate it per `docs/pinterest-pin-generation.md`.
 
 ---
 
