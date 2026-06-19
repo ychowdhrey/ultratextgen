@@ -70,6 +70,12 @@ SOURCES = {
         title="pin_title", image="image_path",
         board="board", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords"),
+    "es": dict(
+        inventory="es_pinterest_pins.csv",
+        out="es_pinterest_pins_upload.csv",
+        title="pin_title", image="image_path",
+        board="board", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords"),
 }
 
 
