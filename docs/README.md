@@ -97,15 +97,23 @@ here so they aren't lost. Update as they're closed or new ones appear.
    library lane. These pages are hand-built.
 3. **Usecase and guide lanes are undocumented** — no workflow, no backlog.
 4. **Operational tracks without docs:** schema/alternateName SEO, i18n, CSS/GTM
-   CI checks. Scripts exist; the process is tribal knowledge.
+   CI checks. Scripts exist; the process is tribal knowledge. The
+   alternateName SEO track is now **actively in use** — PR #277 added
+   `alternateName` to 30+ category/library/platform pages and PR #291 updated
+   `validate-alternatenames.py` — making the missing governing doc the most
+   pressing gap here.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
-   pages (`/discord/`, `/instagram/`, `/x/`, …) receive SEO and FAQ updates but
-   have no governing workflow, backlog, or generator. The classifier also has no
-   rules for them, so PRs that touch those paths are flagged Unclassified.
-6. **One Pinterest board is off-system.** The Spanish `/es/` board lives in an
-   orphaned top-level `pinterest-kit/` (own generator, bundled fonts, hand-named
-   CSV) instead of the `assets/pinterest/` + `data/*_upload.csv` pipeline every
-   other board uses. Migrate it per `docs/pinterest-pin-generation.md`.
+   pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
+   (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
+   governing workflow, backlog, or generator. The classifier correctly routes
+   them to "Platform pages" via path rules in `LANE_RULES`.
+6. **Pinterest off-system patterns (two).** (a) The Spanish `/es/` board lives
+   in `pinterest-kit/` (own generator, bundled fonts, hand-named CSV) instead
+   of the `assets/pinterest/<board>/` + `data/*_upload.csv` pipeline. (b) ~334
+   pins for category, answers, and library pages are stored flat in
+   `assets/pinterest/` root rather than a named board subdirectory — these
+   should be moved to `assets/pinterest/<board>/` and wired into the upload
+   pipeline. Migrate both per `docs/pinterest-pin-generation.md`.
 
 ---
 
