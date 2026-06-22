@@ -123,6 +123,7 @@ Strony kontekstowe zaprojektowane wokół konkretnych celów użytkownika, każd
 - https://ultratextgen.com/usecase/bio-font/
 - https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
+- https://ultratextgen.com/usecase/football-font/
 - https://ultratextgen.com/usecase/linkedin-headline/
 - https://ultratextgen.com/usecase/text-to-emoji/
 - https://ultratextgen.com/usecase/vertical-text/
@@ -262,9 +263,13 @@ ultratextgen/
 - https://ultratextgen.com/library/flower-symbols/
 - https://ultratextgen.com/library/foden-emoji-combos/
 - https://ultratextgen.com/library/food-drink-emojis/
+- https://ultratextgen.com/library/football-ascii-art/
 - https://ultratextgen.com/library/football-emoji-copy-paste/
+- https://ultratextgen.com/library/football-kaomoji/
+- https://ultratextgen.com/library/football-reaction-emojis/
 - https://ultratextgen.com/library/football-symbols/
 - https://ultratextgen.com/library/football-trophy-emoji/
+- https://ultratextgen.com/library/football-username-ideas/
 - https://ultratextgen.com/library/fortnite-symbols/
 - https://ultratextgen.com/library/fourth-of-july-symbols/
 - https://ultratextgen.com/library/fraction-symbols/
@@ -284,6 +289,8 @@ ultratextgen/
 - https://ultratextgen.com/library/greek-letter-symbols/
 - https://ultratextgen.com/library/greeting-message-emojis/
 - https://ultratextgen.com/library/griezmann-emoji-combos/
+- https://ultratextgen.com/library/guess-soccer-player-by-emoji/
+- https://ultratextgen.com/library/guess-soccer-team-by-emoji/
 - https://ultratextgen.com/library/haaland-emoji-combos/
 - https://ultratextgen.com/library/halloween-symbols/
 - https://ultratextgen.com/library/hand-symbols/
