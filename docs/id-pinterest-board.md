@@ -81,13 +81,13 @@ a box. Requires: `cairosvg`, `fonts-symbola`, `fonts-noto-core`,
 
 ## Posting cadence
 
-14 pins → ~3–4 weeks at 3–4 fresh pins/week (Pinterest favors steady fresh pins
+28 pins → ~6–8 weeks at 3–4 fresh pins/week (Pinterest favors steady fresh pins
 over bulk dumps). Lead with the two highest-volume how-tos (`cara-membuat-…`,
-`huruf-aesthetic-a-z`), then the social/use-case set. Re-pin evergreen winners to
-the board every ~2 weeks. The `Title` / `Description` / `Keywords` columns of the
-`_upload.csv` are ready to use as-is.
+`huruf-aesthetic-a-z`), then the social/use-case set, then the batch-2 keyword
+angles below. Re-pin evergreen winners to the board every ~2 weeks. The `Title` /
+`Description` / `Keywords` columns of the `_upload.csv` are ready to use as-is.
 
-## The 14 pins
+## The 28 pins
 
 1. **Cara Membuat Tulisan Aesthetic** — `cara-membuat-tulisan-aesthetic`
    *Cara Membuat Tulisan Aesthetic — Copy Paste Gratis* · kw: cara membuat tulisan aesthetic, tulisan aesthetic, tulisan aesthetic copy paste, font aesthetic, ubah font aesthetic
@@ -117,6 +117,37 @@ the board every ~2 weeks. The `Title` / `Description` / `Keywords` columns of th
     *Tulisan Aesthetic buat X / Twitter — Copy Paste* · kw: tulisan aesthetic twitter, text unik, tulisan unik, font unik, tulisan aesthetic
 14. **Tulisan Tumpuk / Vertikal** — `tulisan-tumpuk-vertikal`
     *Tulisan Tumpuk / Vertikal Keren — Copy Paste* · kw: tulisan tumpuk keren, tulisan tumpuk, tulisan unik, tulisan keren, tulisan aesthetic
+
+### Batch 2 — new keyword angles (validated vs Search Console + Semrush)
+
+15. **Tulisan TikTok Aesthetic** — `tulisan-tiktok-aesthetic`
+    *Tulisan TikTok Aesthetic — Font Nama & Bio Copy Paste* · kw: tulisan tiktok aesthetic, font tiktok aesthetic, nama tiktok aesthetic, font tiktok, tulisan aesthetic
+16. **Font ML Aesthetic** — `font-ml-aesthetic`
+    *Font ML Aesthetic — Nickname Mobile Legends Copy Paste* · kw: font ml aesthetic, font yang bisa di ml, nickname ml keren, nickname ml simple, font keren untuk nickname
+17. **Ubah Tulisan Jadi Aesthetic** — `ketikan-aesthetic`
+    *Ubah Tulisan Jadi Aesthetic — Generator Gratis Copy Paste* · kw: ketikan aesthetic, ubah tulisan jadi aesthetic, bikin tulisan aesthetic, buat tulisan aesthetic, edit tulisan aesthetic
+18. **Gaya Tulisan Aesthetic** — `gaya-tulisan-aesthetic`
+    *Gaya Tulisan Aesthetic — Banyak Pilihan Font Copy Paste* · kw: gaya tulisan aesthetic, gaya font aesthetic, gaya tulisan, model tulisan aesthetic, tulisan aesthetic
+19. **Tulisan Aesthetic Dark** — `tulisan-aesthetic-dark`
+    *Tulisan Aesthetic Dark & Gothic — Font Copy Paste* · kw: tulisan dark aesthetic, tulisan aesthetic dark, font gothic, font dark aesthetic, tulisan keren dark
+20. **Caption Aesthetic buat Story** — `caption-aesthetic-story`
+    *Caption Aesthetic buat Story IG — Font Copy Paste* · kw: caption aesthetic, tulisan story aesthetic, caption estetik, teks estetik, tulisan aesthetic
+21. **Tulisan Rapi & Aesthetic** — `tulisan-rapi-aesthetic`
+    *Tulisan Rapi & Aesthetic — Font Bersih Copy Paste* · kw: tulisan rapi dan aesthetic, tulisan rapi aesthetic, tulisan bagus aesthetic, font rapi aesthetic, tulisan aesthetic
+22. **Huruf Aesthetic buat Nickname** — `huruf-aesthetic-nickname`
+    *Huruf Aesthetic buat Nickname — Font Keren Copy Paste* · kw: huruf aesthetic untuk nickname, font keren untuk nickname, huruf aesthetic nickname, nickname aesthetic, huruf aesthetic
+23. **Abjad Aesthetic A–Z** — `abjad-aesthetic`
+    *Abjad Aesthetic A–Z — Huruf Abjad Copy Paste* · kw: abjad aesthetic, huruf abjad aesthetic, tulisan abjad aesthetic, abjad aesthetic copy paste, huruf aesthetic
+24. **Tulisan Aesthetic Simple** — `tulisan-aesthetic-simple`
+    *Tulisan Aesthetic Simple & Minimalis — Copy Paste* · kw: tulisan aesthetic simple, font simple aesthetic, tulisan simple aesthetic, font minimalis aesthetic, tulisan aesthetic
+25. **Huruf Kecil Aesthetic** — `huruf-kecil-aesthetic`
+    *Huruf Kecil Aesthetic (Small Caps) — Copy Paste* · kw: huruf kecil aesthetic, font kecil aesthetic, small caps aesthetic, tulisan kecil aesthetic, huruf aesthetic
+26. **Simbol & Huruf Aesthetic** — `simbol-huruf-aesthetic`
+    *Simbol & Huruf Aesthetic Copy Paste — Hiasan Teks* · kw: simbol huruf aesthetic, simbol aesthetic, hiasan tulisan aesthetic, simbol keren aesthetic, huruf aesthetic
+27. **Tulisan Nama WA Aesthetic** — `tulisan-nama-wa-aesthetic`
+    *Tulisan Nama WA Keren Aesthetic — Font Copy Paste* · kw: tulisan nama wa keren aesthetic, nama wa aesthetic, font wa aesthetic, tulisan nama wa, tulisan aesthetic
+28. **Font Aesthetic Tinggal Copy** — `font-aesthetic-copy`
+    *Font Aesthetic Tinggal Copy — Salin Sekali Tap* · kw: font aesthetic copy, salin font aesthetic, huruf aesthetic copy, font aesthetic copy paste, tulisan aesthetic copy
 
 ## Regenerate
 
