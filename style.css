@@ -2837,3 +2837,46 @@ body.dark-mode .vertical-chip {
   color: var(--text-primary);
   word-break: break-word;
 }
+
+/* ── Ready-made name chips (gaming-name JTBD pages) ──────────────────────────
+   Click-to-copy decorated nicknames. Tiles are auto-wired by symbol-explorer.js
+   via the .symbol-tile class; styling here uses theme tokens so it follows dark
+   mode automatically. */
+.uname-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin: 1rem 0 0.5rem;
+}
+.uname-chip {
+  font-family: inherit;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  text-align: center;
+  padding: 14px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  word-break: break-word;
+}
+.uname-chip:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.16);
+}
+.uname-chip:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+.uname-chip.is-copied {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+.uname-note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+}

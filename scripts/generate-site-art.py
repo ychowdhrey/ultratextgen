@@ -649,6 +649,16 @@ PAGES = {
   "usecase-vertical-text": ("Vertical & Stacked Text", "Stack your text top to bottom",
         P(m_vertical, letters="TEXT"), K_USE),
   "usecase-zalgo-text": ("Zalgo Text Generator", "Create creepy glitch text", m_zalgo, K_USE),
+  "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
+        P(m_typo, sample="@Aa"), K_USE),
+
+  # ---- gaming-name use cases (Indonesian) ----
+  "id-usecase-nama-ff-keren": ("Nama FF Keren", "Simbol payung & font keren buat nickname Free Fire",
+        m_profile, K_USE),
+  "id-usecase-nama-guild-ff-keren": ("Nama Guild FF Keren", "Tag squad & bingkai nama tim Free Fire",
+        m_trophy, K_USE),
+  "id-usecase-nama-ml-keren": ("Nama ML Keren", "Font aesthetic & simbol nickname Mobile Legends",
+        m_profile, K_USE),
 
   # ---- localized zalgo ----
   "de-usecase-zalgo-text": ("Zalgo-Textgenerator", "Erstelle gruseligen Glitch-Text", m_zalgo, K_USE),
