@@ -51,6 +51,7 @@ LANE_RULES = [
     (".github/workflows/", "CI / automation"),
     ("scripts/", "Scripts / tooling"),
     ("docs/", "Docs"),
+    ("CLAUDE.md", "Docs"),
     ("style.css", "Styling"),
     ("symbol-explorer", "Symbol explorer"),
     ("renderer.js", "Core JS"),
