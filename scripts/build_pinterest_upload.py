@@ -76,6 +76,12 @@ SOURCES = {
         title="pin_title", image="image_path",
         board="board", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords"),
+    "gaming_names": dict(
+        inventory="gaming_names_pinterest_pins.csv",
+        out="gaming_names_pinterest_pins_upload.csv",
+        title="pin_title", image="image_path",
+        board="board", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords"),
 }
 
 
