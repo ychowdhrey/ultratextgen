@@ -153,14 +153,8 @@
 
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
-  <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Ketik nama guild atau squad kamu…" maxlength="100">SQUAD</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Ketik nama guild atau squad kamu…" maxlength="100">SQUAD</textarea></div>
 </div></div></section>
-
-<main class="container">
-  <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
-  <div class="results-grid" id="resultsGrid"></div>
-</main>
 
 <!-- INTRO -->
 <section class="editorial-section">
@@ -319,10 +313,9 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<!-- Generator scripts -->
+<!-- Generator scripts (Tag Studio is the engine — no generic generator UI) -->
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
-<script src="/script.js" defer></script>
 
 <!-- Symbol explorer + live tag studio -->
 <script src="/symbol-explorer.js"></script>
