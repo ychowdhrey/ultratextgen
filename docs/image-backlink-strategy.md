@@ -3,7 +3,21 @@
 **Date:** 2026-06-27
 **Status:** Design / decision doc (no code written yet)
 **Scope:** Whether and how UltraTextGen should turn its images into a
-backlink-earning channel, given the site's zero-backend constraint.
+backlink-earning channel.
+
+**Decision recorded (2026-06-27):**
+- **Track 1 (static iframe widgets)** — proceed when ready; runs on the
+  current free Cloudflare plan, $0/mo.
+- **Track 2 (embeddable image endpoint)** — **parked as a scaling
+  opportunity**, gated on monetization (see §6.1). It requires Cloudflare
+  Workers Paid (~$5/mo) and is not built until revenue covers it.
+
+**Platform note:** the site runs on **Cloudflare Pages** and already ships a
+Pages Function (`functions/_middleware.js`, using `HTMLRewriter` + the `ASSETS`
+binding) with edge cache control in `_headers`. So edge compute is already in
+use — Track 2 is the *same primitive*, not a new architecture, and the
+Cloudflare-native renderer is [`workers-og`](https://github.com/kvnang/workers-og)
+(satori + resvg-wasm), the equivalent of `@vercel/og`.
 
 This is a **decision doc**, not an implementation pass. It exists so we choose
 the approach deliberately before touching pages or adding infrastructure.
@@ -71,35 +85,47 @@ is a followed backlink. *That* is an embeddable image.
 ## 3. The constraint that gates everything
 
 A query-driven image (`/img?text=…&style=…`) must be **rendered on request**.
-That requires a server. UltraTextGen's defining constraint
-(`CLAUDE.md`) is **no backend, no build step, no runtime dependencies** — a pure
-static site on Netlify.
+That requires edge compute. The site already has it: it runs on **Cloudflare
+Pages** with a Pages Function (`functions/_middleware.js`) and edge caching
+(`_headers`). So the blocker is *not* architecture — it's the **CPU cost of
+rendering**: image generation (satori + resvg-wasm) exceeds Cloudflare's free
+plan 10 ms CPU cap per invocation, so Track 2 requires **Workers Paid
+(~$5/mo)**.
 
-So the real decision is not "which image" — it is **"are we willing to add a
-single server-rendered endpoint to an otherwise static site?"** Every option
-below is a different answer to that one question.
+So the real decision is not "which image" and not "are we willing to add a
+backend" (we already run one) — it is **"is there enough revenue to justify
+$5/mo of edge compute?"** That makes Track 2 a *monetization-gated scaling
+opportunity*, not an architectural one. Every option below is read against that
+gate.
 
 ---
 
 ## 4. Options compared
 
-### Option A — Serverless image function (the only true backlink path)
+### Option A — Cloudflare Worker image endpoint (the only true backlink path) — PARKED, see §6.1
 
-A Netlify Function / edge function renders `text + style → PNG/SVG` on request
-(e.g. `satori` + `resvg`, or `@vercel/og`). Front-end stays static; we add one
-function.
+A Pages Function / Worker renders `text + style → PNG/SVG` on request using
+[`workers-og`](https://github.com/kvnang/workers-og) (satori + resvg-wasm, the
+Cloudflare-native `@vercel/og`). Same runtime as the existing
+`functions/_middleware.js`; front-end stays static.
 
 - **Backlink value:** ✅ Real. Hotlinked image + followed anchor on third-party
   pages.
-- **Aligns with hosting:** Netlify Functions are first-class; no new host.
-- **Cost:** Function invocations + bandwidth on every render and every page-view
-  that embeds it. Needs caching (CDN cache headers, deterministic URLs) or it
-  gets expensive at scale. Hotlink bandwidth is borne by us, not the embedder.
+- **Aligns with hosting:** ✅ Native — we already run a Pages Function. No new
+  host, no migration.
+- **Cost:** **~$5/mo flat** (Workers Paid — required because render CPU exceeds
+  the free plan's 10 ms cap). **Egress is free on Cloudflare**, so the hotlinked
+  image bandwidth that would be metered/billed on Netlify costs us nothing here.
+  With deterministic URLs + immutable cache headers, CPU is billed per *unique*
+  (text,style), not per view.
 - **Maintenance:** New surface area — font bundling for the renderer, input
   sanitisation (the `text` param is user-controlled and lands in an image →
   abuse/content risk), cache strategy, an `/embed/` builder UI.
-- **Philosophy cost:** This is the meaningful departure — it ends "zero
-  backend." Worth naming explicitly to the maintainer before building.
+- **Gate:** Not an architecture decision (we already run edge compute) — a
+  **spend** decision. Parked until monetization covers the $5/mo (§6.1).
+- **Platform footnote:** moving to **Netlify would be strictly worse** for this
+  — it meters egress, so every embedder's page-view bills us for bandwidth, plus
+  a migration cost to port the i18n middleware/redirects/headers. No upside.
 
 ### Option B — Client-side canvas + download (static-safe, but not a backlink)
 
@@ -152,28 +178,44 @@ measurable in analytics.
 
 ## 6. Recommendation
 
-Two tracks, sequenced by effort-to-value:
+Two tracks, split cleanly along the free/paid line:
 
-1. **Now, static-safe:** Clone the **Option D** widget pattern for the top 3–4
-   generators. Real backlinks, no backend, reuses a proven in-repo pattern.
-2. **Deliberate decision:** Treat **Option A** as the only path to a true
-   *embeddable image*, and gate it on an explicit maintainer decision to add one
-   serverless function. If yes, the build order is: image function → caching →
-   input sanitisation → `/embed/` builder UI → wrapped-anchor snippet. Option B
-   (canvas download) can ride along purely for shareability.
+1. **Now, free:** Clone the **Option D** widget pattern for the top 3–4
+   generators. Real backlinks, runs on the current free Cloudflare plan ($0/mo),
+   reuses a proven in-repo pattern. This also *tests the adoption assumption*
+   that gates Track 2's entire payoff — if nobody embeds a free widget, nobody
+   will embed an image either.
+2. **Later, when monetized:** Treat **Option A** as a parked scaling opportunity
+   (§6.1). It's the only path to a true *embeddable image*, but it needs ~$5/mo
+   of Workers Paid, so it waits for revenue.
 
 **Do not** pursue the static-chart + manual-credit box as a primary tactic
 (§2) — it reads like an embeddable image but yields almost no links.
+
+### 6.1 Track 2 — parked scaling opportunity (decided 2026-06-27)
+
+Status: **parked.** Not built today — the site is on the free Cloudflare plan
+and image rendering needs Workers Paid (~$5/mo). This is deliberate, not a gap.
+
+**Unlock when *either* trigger fires:**
+- **Monetization** lands and covers the $5/mo flat compute (the primary gate), **or**
+- **Track 1 widgets show real embed adoption** — i.e. proof that people will
+  embed our assets, which de-risks the bigger build.
+
+**Build order once unlocked:** enable Workers Paid → image Worker (`workers-og`)
+→ deterministic URLs + immutable edge cache → input sanitisation → `/embed/`
+builder UI → wrapped-anchor snippet. Option B (canvas download) can ride along
+purely for shareability.
 
 ---
 
 ## 7. Open decisions for the maintainer
 
-- [ ] Are we willing to end "zero backend" for one serverless image endpoint
-      (Option A)? This is the gating call.
-- [ ] If yes: invocation/bandwidth budget and cache strategy for hotlinked
-      images at scale.
-- [ ] Content-safety policy for the user-controlled `text` param rendered into
-      an image.
-- [ ] Greenlight the Option D widget clones (top generators) — these can proceed
-      regardless of the Option A decision.
+- [x] ~~Architecture: are we willing to run edge compute?~~ Already do
+      (`functions/_middleware.js`) — resolved, not a blocker.
+- [ ] **Monetization** that covers ~$5/mo Workers Paid — the trigger that
+      unparks Track 2 (§6.1).
+- [ ] When Track 2 is built: content-safety policy for the user-controlled
+      `text` param rendered into an image.
+- [ ] Greenlight the Option D widget clones (top generators) — these run free
+      and proceed independently of the Track 2 gate.
