@@ -229,7 +229,9 @@ const textStyles = {
   'Ultra Script': {
     upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',
     lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
-    nums: '0123456789',
+    // Unicode has no true script digits; pair the elegant script letters with
+    // matching sans-serif numerals instead of a flat ASCII fallback.
+    nums: '𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫',
     type: 'map',
     category: 'cursive',
     familySlug: 'cursive',
@@ -241,13 +243,75 @@ const textStyles = {
   'Ultra Script Bold': {
     upper: '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',
     lower: '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃',
-    nums: '0123456789',
+    // Bold script has no digit set either — use bold sans-serif numerals to match weight.
+    nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
     type: 'map',
     category: 'cursive',
     familySlug: 'cursive',
     groupSlug: 'script',
     slug: 'ultra-script-bold',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
+  // Airy / elegant cursive — script letters with even spacing (uses spaced render mode).
+  'Ultra Script Elegant': {
+    upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵',
+    lower: '𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
+    nums: '𝟢𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫',
+    type: 'map',
+    category: 'cursive',
+    familySlug: 'cursive',
+    groupSlug: 'script',
+    slug: 'ultra-script-elegant-spaced',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+  },
+
+  // Airy bold cursive variant.
+  'Ultra Script Bold Elegant': {
+    upper: '𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩',
+    lower: '𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃',
+    nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+    type: 'map',
+    category: 'cursive',
+    familySlug: 'cursive',
+    groupSlug: 'script',
+    slug: 'ultra-script-bold-elegant-spaced',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+  },
+
+  // Gothic-cursive crossover (bold fraktur) — serves the "gothic cursive" intent.
+  'Ultra Gothic Script': {
+    upper: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
+    lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
+    nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
+    type: 'map',
+    category: 'cursive',
+    familySlug: ['cursive', 'gothic'],
+    groupSlug: 'script',
+    slug: 'ultra-gothic-script',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
+  // Chicano / lowrider-style stylized nametag — bold script inside ornate flourishes.
+  'Ultra Chicano Script': {
+    type: 'procedure',
+    procedureId: 'ultra_cursive_chicano',
+    category: 'cursive',
+    familySlug: 'cursive',
+    groupSlug: 'script',
+    slug: 'ultra_cursive_chicano',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
+  // Aesthetic bio line — script wrapped in sparkle accents (the most-requested cursive pairing).
+  'Ultra Script Sparkle': {
+    type: 'procedure',
+    procedureId: 'ultra_cursive_sparkle',
+    category: 'cursive',
+    familySlug: 'cursive',
+    groupSlug: 'script',
+    slug: 'ultra_cursive_sparkle',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
 
   /* =========================
