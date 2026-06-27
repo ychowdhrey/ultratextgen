@@ -75,6 +75,22 @@
         "@type": "Answer",
         "text": "Bikin teks nama guildnya gratis sepenuhnya di UltraTextGen — tanpa daftar, tanpa aplikasi. Yang berbayar cuma proses ganti nama guild di dalam Free Fire (pakai diamond), itu aturan dari gamenya."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Gimana cara bikin tag singkatan guild yang samaan satu squad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pakai Studio Tag di halaman ini: ketik singkatan guild (misal RRQ atau EVOS), pilih font, bingkai, dan pemisah, lalu klik Bagikan Template Tim. Kamu dapat link yang menyimpan resep gaya tag (font + bingkai), bukan teks jadi. Tiap anggota tinggal buka link itu, ketik namanya sendiri, dan gaya tag-nya otomatis samaan satu squad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cara dapat nama guild FF yang belum dipakai gimana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pakai bagian Kombinasi Langka di halaman ini — ketik namamu lalu klik Acak lagi untuk dapat campuran font dan simbol yang jarang dipakai, jadi peluang nama kembar lebih kecil. Catatan: tetap cek ketersediaan di dalam Free Fire saat ganti nama, karena kami tidak bisa memastikan satu nama sudah dipakai pemain lain atau belum."
+      }
     }
   ]
 }
@@ -132,6 +148,9 @@
   </div>
 </section>
 
+<!-- SHARED TEMPLATE BANNER (shown when opened via a team-template link) -->
+<p class="ts-banner" id="tagStudioBanner" hidden></p>
+
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Ketik nama guild atau squad kamu…" maxlength="100">SQUAD</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
@@ -153,12 +172,32 @@
 
 <div class="section-divider"></div>
 
-<!-- READY-MADE GUILD WRAPPERS -->
+<!-- TAG STUDIO (live singkatan / prefix builder) -->
+<section class="mood-explainers" id="tag-studio">
+  <span class="article-section-label">Bikin Tag Guild</span>
+  <h2>Studio Tag &amp; Singkatan Guild</h2>
+  <p class="u-secondary-block">Ketik singkatan guild kamu di kolom paling atas (misal RRQ, EVOS, BTR), lalu pilih font, bingkai, dan pemisah — tag langsung jadi dan bisa disalin. Pakai tombol <em>Bagikan Template Tim</em> biar satu squad pakai gaya yang sama.</p>
+  <div id="tagStudioMount" class="ts-studio"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- LIVE READY-MADE FRAMES -->
 <section class="mood-explainers" id="bingkai-guild">
-  <span class="article-section-label">Tag Guild Siap Pakai</span>
-  <h2>Bingkai &amp; Tag Nama Guild</h2>
-  <p class="u-secondary-block">Salin tag lengkap dalam satu klik, lalu ganti <em>TAG</em> di tengah dengan singkatan guild kamu (misal RRQ, EVOS, BTR).</p>
-  <div id="guildTagWrappersContainer"></div>
+  <span class="article-section-label">Bingkai Siap Pakai</span>
+  <h2>Bingkai Tag Nama Guild</h2>
+  <p class="u-secondary-tight">Tiap bingkai langsung ngikutin nama yang kamu ketik di atas. Klik buat salin.</p>
+  <div id="guildTagFramesMount" class="ts-frames"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- KOMBINASI LANGKA (belum dipakai) -->
+<section class="mood-explainers" id="kombinasi-langka">
+  <span class="article-section-label">Belum Dipakai</span>
+  <h2>Kombinasi Langka (Biar Belum Dipasaran)</h2>
+  <p class="u-secondary-tight">Campuran font + simbol yang jarang dipakai, biar nama guild kamu beda dari yang lain. Klik <em>Acak lagi</em> buat variasi baru, klik tag buat salin.</p>
+  <div id="rareCombosMount" class="ts-rare"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -211,6 +250,17 @@
     <button class="uname-chip symbol-tile" data-symbol="⚔ᴡᴀʀʟᴏʀᴅ⚔" aria-label="Salin nama">⚔ᴡᴀʀʟᴏʀᴅ⚔</button>
     <button class="uname-chip symbol-tile" data-symbol="꧁•ᴠᴇɴᴏᴍ•꧂" aria-label="Salin nama">꧁•ᴠᴇɴᴏᴍ•꧂</button>
     <button class="uname-chip symbol-tile" data-symbol="࿐ʀᴀɢɴᴀʀᴏᴋ࿐" aria-label="Salin nama">࿐ʀᴀɢɴᴀʀᴏᴋ࿐</button>
+  </div>
+
+  <h3>Nama Guild FF Seram</h3>
+  <p class="uname-note">Tema gelap dan serem buat bikin lawan merinding.</p>
+  <div class="uname-grid">
+    <button class="uname-chip symbol-tile" data-symbol="꧁☠ʀᴇᴀᴘᴇʀ☠꧂" aria-label="Salin nama">꧁☠ʀᴇᴀᴘᴇʀ☠꧂</button>
+    <button class="uname-chip symbol-tile" data-symbol="༺†ᴄᴜʀsᴇ†༻" aria-label="Salin nama">༺†ᴄᴜʀsᴇ†༻</button>
+    <button class="uname-chip symbol-tile" data-symbol="⚰𝔇𝔢𝔪𝔬𝔫⚰" aria-label="Salin nama">⚰𝔇𝔢𝔪𝔬𝔫⚰</button>
+    <button class="uname-chip symbol-tile" data-symbol="꧁☬ᴡʀᴀɪᴛʜ☬꧂" aria-label="Salin nama">꧁☬ᴡʀᴀɪᴛʜ☬꧂</button>
+    <button class="uname-chip symbol-tile" data-symbol="彡𝔊𝔯𝔦𝔪彡" aria-label="Salin nama">彡𝔊𝔯𝔦𝔪彡</button>
+    <button class="uname-chip symbol-tile" data-symbol="࿐☠ɴᴇᴄʀᴏ☠࿐" aria-label="Salin nama">࿐☠ɴᴇᴄʀᴏ☠࿐</button>
   </div>
 </section>
 
@@ -274,24 +324,75 @@
 <script src="/renderer.js"></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + live tag studio -->
 <script src="/symbol-explorer.js"></script>
+<script src="/js/tag-studio.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   var ns = window.UltraTextGen;
-  if (!ns || !ns.buildGrids) return;
+  if (!ns || !ns.tagStudio) return;
 
-  var GROUPS = [
-    { name: "Bingkai Payung", flags: ["꧁", "TAG", "꧂"], defaultFormat: "inline" },
-    { name: "Tag Kurung Lentera", flags: ["【", "TAG", "】"], defaultFormat: "inline" },
-    { name: "Gulungan Tibet", flags: ["༺", "TAG", "༻"], defaultFormat: "inline" },
-    { name: "Tag Bintang", flags: ["★彡", "TAG", "彡★"], defaultFormat: "inline" },
-    { name: "Tag Pedang", flags: ["⚔", "TAG", "⚔"], defaultFormat: "inline" },
-    { name: "Tag Brand ™", flags: ["•", "TAG", "•™"], defaultFormat: "inline" }
-  ];
+  ns.tagStudio.init({
+    inputId: "mainInput",
+    studioMount: "tagStudioMount",
+    framesMount: "guildTagFramesMount",
+    rareMount: "rareCombosMount",
+    bannerMount: "tagStudioBanner",
+    charLimit: 12,
+    fonts: [
+      { key: "Ultra Small Caps", label: "Small Caps", safe: true },
+      { key: "Ultra Bold", label: "Bold", safe: true },
+      { key: "Ultra Bold Serif", label: "Bold Serif", safe: true },
+      { key: "Ultra Gothic", label: "Gotik", safe: false },
+      { key: "Ultra Script", label: "Kursif", safe: false }
+    ],
+    brackets: [
+      { id: "umbrella", l: "꧁", r: "꧂", label: "꧁ ꧂" },
+      { id: "lantern", l: "【", r: "】", label: "【 】" },
+      { id: "scroll", l: "༺", r: "༻", label: "༺ ༻" },
+      { id: "star", l: "★彡", r: "彡★", label: "★彡 彡★" },
+      { id: "square", l: "[", r: "]", label: "[ ]" },
+      { id: "none", l: "", r: "", label: "Tanpa" }
+    ],
+    separators: [
+      { id: "none", value: "", label: "Rapat" },
+      { id: "dot", value: "•", label: "•" },
+      { id: "space", value: " ", label: "Spasi" }
+    ],
+    frames: [
+      { name: "Bingkai Payung", l: "꧁", r: "꧂" },
+      { name: "Kurung Lentera", l: "【", r: "】" },
+      { name: "Gulungan Tibet", l: "༺", r: "༻" },
+      { name: "Tag Bintang", l: "★彡", r: "彡★" },
+      { name: "Tag Pedang", l: "⚔", r: "⚔" },
+      { name: "Tag Brand ™", l: "•", r: "•™" }
+    ],
+    rareSymbols: [
+      { l: "࿐", r: "࿐" }, { l: "᪥", r: "᪥" }, { l: "⚜", r: "⚜" },
+      { l: "༒", r: "༒" }, { l: "⫷", r: "⫸" }, { l: "꙰", r: "꙰" },
+      { l: "᯽", r: "᯽" }, { l: "⩩", r: "⩨" }, { l: "❪", r: "❫" }
+    ],
+    text: {
+      fontLabel: "Font",
+      bracketLabel: "Bingkai",
+      sepLabel: "Pemisah",
+      copyTag: "Salin Tag",
+      copy: "Salin",
+      shareTemplate: "Bagikan Template Tim",
+      shareCopied: "Link template disalin!",
+      safeBadge: "Aman",
+      riskBadge: "Bisa kotak",
+      safeNote: "Font ini paling aman dibaca di game.",
+      riskNote: "Font ini kadang muncul sebagai kotak ▯ di sebagian HP.",
+      previewPlaceholder: "Ketik singkatan guild di atas…",
+      framePlaceholder: "—",
+      rareShuffle: "Acak lagi",
+      rarePlaceholder: "…",
+      sharedBanner: "Kamu buka template tim — ketik namamu sendiri di atas biar gaya tag-nya samaan satu squad."
+    }
+  });
 
-  ns.buildGrids("guildTagWrappersContainer", GROUPS);
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
