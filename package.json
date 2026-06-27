@@ -8,7 +8,8 @@
     "build": "cp index.html _root.html",
     "sync-readme": "node scripts/sync-readme.js",
     "audit:css": "node scripts/audit-css.js",
-    "check:gtm": "node scripts/check-gtm.js"
+    "check:gtm": "node scripts/check-gtm.js",
+    "check:images": "python3 scripts/check-image-assets.py"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
