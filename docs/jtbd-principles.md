@@ -164,6 +164,14 @@ The repeatable method that produced the small-text differentiator list
 > *differentiating features* (from unsolved frustrations). A scope with only
 > pages is half-done.
 
+**Where un-built findings go.** Demand and frustrations we surface but don't
+build immediately must land in the standing
+[`opportunity-register.md`](./opportunity-register.md) — the scannable backlog,
+indexed by cluster **and by market/language**. A dated build spec freezes a
+decision; the register is the evergreen "what haven't we capitalized on yet?"
+ledger, and the **per-language** rows are the part most easily lost. A research
+pass isn't finished until its un-built findings are rows there.
+
 This is additive to §6/§7, not a replacement: features live on the canonical
 owner page for the job; they never spawn a thin page of their own.
 
