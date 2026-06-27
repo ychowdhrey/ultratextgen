@@ -75,6 +75,10 @@
           {
             "question": "Trang này có miễn phí thật không, hay xài một lúc lại bắt trả tiền?",
             "answer": "Free 100%, không bắt đăng ký, không giới hạn lượt copy, không gắn watermark vào chữ. Copy paste bao nhiêu lần cũng được, lúc nào cũng được. Mở web lên là dùng, đóng tab là xong - không cần tạo tài khoản gì cả."
+          },
+          {
+            "question": "Chữ kiểu có dấu là gì? Tạo chữ kiểu có giữ được dấu tiếng Việt không?",
+            "answer": "Chữ kiểu có dấu là chữ kiểu vẫn giữ nguyên dấu thanh và dấu mũ của tiếng Việt (á, à, ả, ã, ạ, ă, â, ê, ô, ơ, ư, đ). UltraTextGen đổi từng chữ cái Latin sang kí tự Unicode có sẵn kiểu dáng, còn các nguyên âm có dấu được giữ nguyên nên bạn đọc vẫn đúng chính tả - không bị mất dấu, không ra ô vuông.\n    <br><br>\n    <strong>Ví dụ</strong><br>\n    Gõ \"chữ kiểu đẹp\" → ra 𝗰𝗵ữ 𝗸𝗶ể𝘂 đẹ𝗽 (đậm), 𝘤𝘩ữ 𝘬𝘪ể𝘶 đẹ𝘱 (nghiêng), ᴄʜữ ᴋɪểᴜ đẹᴘ (small caps).\n    <br><br>\n    <strong>Mẹo</strong><br>\n    Với caption tiếng Việt có dấu, ba kiểu Đậm, Nghiêng và Small Caps cho ra dấu đều và đẹp nhất. Kiểu cong nghệ thuật như Script hay Gothic đôi khi không có biến thể cho nguyên âm có dấu - khi đó công cụ giữ nguyên chữ gốc để bạn vẫn đọc được, thay vì hiển thị lỗi."
           }
         ]
       },
