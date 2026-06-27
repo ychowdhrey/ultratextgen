@@ -33,7 +33,7 @@ const cheerio = require("cheerio");
 
 const ROOT = path.resolve(__dirname, "..");
 const LOCALES_DIR = path.join(ROOT, "locales");
-const SUPPORTED = ["de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr", "vi"];
+const SUPPORTED = ["de", "es", "fr", "hi", "id", "it", "nl", "pl", "pt", "tr", "vi"];
 
 /* ───────────────────────── helpers ───────────────────────── */
 
