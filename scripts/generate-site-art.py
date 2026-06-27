@@ -651,7 +651,8 @@ PAGES = {
   "usecase-zalgo-text": ("Zalgo Text Generator", "Create creepy glitch text", m_zalgo, K_USE),
   "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
         P(m_typo, sample="@Aa"), K_USE),
-  "usecase-football-font": ("Football & World Cup Font Generator", "Stylish fonts for fan posts", m_ball, K_USE),
+  "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
+        P(m_typo, sample="[T]"), K_USE),
 
   # ---- gaming-name use cases (Indonesian) ----
   "id-usecase-nama-ff-keren": ("Nama FF Keren", "Simbol payung & font keren buat nickname Free Fire",
@@ -660,6 +661,8 @@ PAGES = {
         m_trophy, K_USE),
   "id-usecase-nama-ml-keren": ("Nama ML Keren", "Font aesthetic & simbol nickname Mobile Legends",
         m_profile, K_USE),
+  "id-usecase-nama-squad-ml-keren": ("Nama Squad ML Keren", "Tag singkatan & font aesthetic squad Mobile Legends",
+        m_trophy, K_USE),
 
   # ---- localized zalgo ----
   "de-usecase-zalgo-text": ("Zalgo-Textgenerator", "Erstelle gruseligen Glitch-Text", m_zalgo, K_USE),
