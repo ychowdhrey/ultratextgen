@@ -183,10 +183,53 @@ No two rows compete; everything additive (§7).
 
 ---
 
-## Open item
+## i18n — Indonesia (id), analyzed 2026-06-27
 
-- **Other-language volume not yet checked** (Semrush MCP out of API units,
-  2026-06-27). Top up at https://www.semrush.com/mcp-access, then append an
-  i18n section: head terms across ES/BR/DE/FR/RU/ID and whether localized
-  small-text/aesthetic variants clear the demand gate (the prior spec already
-  flagged strong non-EN demand for aesthetic fonts — small-text may mirror it).
+Source: 7,066-keyword Semrush `id` export (user-provided). **Method note (§9 /
+demand gate):** the raw 112,650 summed volume is **~69% noise for our intent** —
+strip it before believing any total.
+
+**Noise to exclude (not Unicode styling):**
+- Excel/Word **case-conversion** — "merubah huruf besar ke kecil di excel" (37.7K
+  vol). A spreadsheet text-case tool, not us.
+- **School typography** — "huruf a kecil", "huruf kecil disebut", abjad/aksara/
+  arab/latin (20.7K). Education.
+- **Handwriting / case** — "tulisan tangan kecil", uppercase-vs-lowercase (~21K).
+
+**Genuinely addressable ≈ 15–18K**, and it points somewhere *different from the
+US*:
+
+| Cluster (id) | ~Vol | Note |
+|---|---|---|
+| **Superscript — "kecil diatas"** | **~7,700** | "tulisan kecil diatas" 2,400 · "huruf kecil diatas" 1,300. The dominant ID cluster. |
+| → **for nicknames** | ~1,300 | "huruf kecil diatas **untuk nickname**" 880 — gaming flair, JTBD 5. |
+| "tulisan kecil" styling head | ~7,000 | ID equivalent of "small text generator" (+ font/generator/keren). |
+| **Free Fire** | ~320+ | "tulisan kecil ff" — FF is *the* ID game (not Fortnite). |
+| **WhatsApp how-to** | ~450 | "cara membuat tulisan kecil di wa" — WA is *the* ID platform (not Discord). |
+| TM/ordinal superscript | ~370 | "tulisan tm kecil", "th kecil diatas". |
+| subscript ("subskrip / kecil dibawah") | ~500 | technical. |
+
+**Finding:** in Indonesia the killer app is **superscript small letters to
+decorate gaming nicknames — Free Fire, shared on WhatsApp**, searched as
+*"huruf kecil diatas untuk nickname."* The US drivers (Discord, the "tiny" head
+noun) are nearly absent. Same underlying style we already ship; platform + game
+flip.
+
+**Decision (clears the demand gate):** build a **localized ID page** — NOT a
+translated copy of the English hub. Working title *"Generator Huruf Kecil Diatas
+(untuk Nickname)"*, leading with **Free Fire + WhatsApp**, superscript-first,
+with the nickname suffix builder. Canonical owner of `tulisan kecil diatas` /
+`huruf kecil diatas untuk nickname`. The English hub does NOT target these
+(different language SERP → no cannibalization, §7).
+
+**Why we win it (a11y/honesty differentiators land hardest here):**
+- **F1 per-character coverage indicator** matters most for *names*: superscript
+  has no real `q`, weak `c/f/…`; a nickname renders broken and no ID competitor
+  warns. This is the moat.
+- **F2 safe-mode for FF / WhatsApp** — flag which superscript chars actually
+  render in FF nicknames / WA (they reject or tofu some). Nobody checks.
+- They already want **superscript + symbols together** ("simbol huruf kecil
+  diatas" 170) — our decoration system pairs them natively.
+
+**Still open:** ES/BR/DE/FR/RU exports not yet provided. Repeat this
+noise-strip-then-cluster method per market before trusting totals.
