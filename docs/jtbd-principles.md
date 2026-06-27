@@ -127,6 +127,48 @@ belongs as a section, not a page.
 
 ---
 
+## 9. Differentiator discovery — mine frustrations into *features*, not just pages
+
+Demand (§6) tells you **what to build**. It does **not** tell you **how to win**
+the SERP once you're on it. The KD-39, $0.01-CPC, DR-15-ranks-#3 reality of this
+niche means pages are won on **doing the job better**, not on links — so every
+build must also answer *what would make this the best `<thing>` generator?*
+
+The repeatable method that produced the small-text differentiator list
+(2026-06), to run **every** time we scope a cluster:
+
+1. **Read the same forum signal twice.** The forum sweep
+   ([`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md))
+   surfaces both *intents* (→ JTBD/pages) and *frustrations* (→ features).
+   Don't stop at intent. Harvest the complaints: "missing letters," "shows as
+   boxes on Android," "Hypixel says invalid characters," "Reddit stopped
+   rendering `^()`." Grade them the same way (cross-community consistency, not
+   single-thread volume).
+2. **Keep only frustrations no current ranker solves.** A frustration the
+   top-5 already fix is table stakes, not an edge. The winners are the
+   recurring pains every competitor *ignores*. That gap **is** the moat.
+3. **Convert each surviving frustration into a concrete capability** the
+   renderer/UI can own — not a paragraph of copy. Examples from small-text:
+   per-character coverage indicator (missing-letter honesty), per-platform
+   "safe mode" (tofu boxes), native-vs-Unicode router (use Discord `-#` /
+   Reddit `^()` when better), mixed big/small composer (shrink a *selection*),
+   honest "visual only — char count unchanged" note.
+4. **Prefer capabilities the architecture is already half-way to.** The
+   renderer's existing fallback system is most of a coverage indicator and a
+   safe-mode; lean on what exists before inventing.
+5. **Honesty is a differentiator here.** Competitors mislead ("saves 40%
+   space," silent letter drops). Correcting them earns trust with the exact
+   communities (HN, Tumblr, accessibility-aware users) that amplify tools.
+
+> **Rule:** Every cluster scope ships two lists — *pages* (from demand) **and**
+> *differentiating features* (from unsolved frustrations). A scope with only
+> pages is half-done.
+
+This is additive to §6/§7, not a replacement: features live on the canonical
+owner page for the job; they never spawn a thin page of their own.
+
+---
+
 ## Decision checklist (apply before creating or expanding content)
 
 1. **What job is the user hiring this page for?** State it in their words, as
@@ -142,3 +184,6 @@ belongs as a section, not a page.
    [`page-vs-section-decisions.md`](./page-vs-section-decisions.md).
 7. **Who is the canonical owner of this query?** If one exists, link — don't
    duplicate. If new, add it to the ownership table and keep it additive.
+8. **What would make this the best `<thing>` generator?** Run the
+   differentiator-discovery pass (§9): list the unsolved frustrations and the
+   capabilities that answer them. Ship that list alongside the pages.
