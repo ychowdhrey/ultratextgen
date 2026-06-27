@@ -651,6 +651,7 @@ PAGES = {
   "usecase-zalgo-text": ("Zalgo Text Generator", "Create creepy glitch text", m_zalgo, K_USE),
   "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
         P(m_typo, sample="@Aa"), K_USE),
+  "usecase-football-font": ("Football & World Cup Font Generator", "Stylish fonts for fan posts", m_ball, K_USE),
 
   # ---- gaming-name use cases (Indonesian) ----
   "id-usecase-nama-ff-keren": ("Nama FF Keren", "Simbol payung & font keren buat nickname Free Fire",
@@ -982,8 +983,14 @@ PAGES = {
   "library-egypt-emoji-combos": ("Egypt Emoji Combos", "Fan emoji sets to copy and paste", m_flag, K_LIB),
   "library-england-emoji-combos": ("England Emoji Combos", "Fan emoji sets to copy and paste", m_flag, K_LIB),
   "library-foden-emoji-combos": ("Foden Emoji Combos", "Fan emoji sets to copy and paste", m_ball, K_LIB),
+  "library-football-ascii-art": ("Football ASCII Art", "Soccer balls, goals and pitches", m_ball, K_LIB),
   "library-football-emoji-copy-paste": ("Football Emoji Copy & Paste", "Soccer, rugby and trophies", m_ball, K_LIB),
+  "library-football-kaomoji": ("Football Kaomoji", "Cute football text faces", m_kaomoji, K_LIB),
+  "library-football-reaction-emojis": ("Football Reaction Emojis", "Goal, win and banter combos", m_ball, K_LIB),
   "library-football-symbols": ("Football Symbols & Combos", "Goals, cards and match sets", m_ball, K_LIB),
+  "library-football-username-ideas": ("Football Username Ideas & Symbols", "Ready-made handles and symbols", m_ball, K_LIB),
+  "library-guess-soccer-player-by-emoji": ("Guess the Soccer Player by Emoji", "Emoji clues with answers", m_ball, K_LIB),
+  "library-guess-soccer-team-by-emoji": ("Guess the Soccer Team by Emoji", "Team emoji clues with answers", m_flag, K_LIB),
   "library-football-trophy-emoji": ("Football & World Cup Trophy Emoji", "Trophies, medals and crowns", m_trophy, K_LIB),
   "library-france-emoji-combos": ("France Emoji Combos", "Fan emoji sets to copy and paste", m_flag, K_LIB),
   "library-gavi-emoji-combos": ("Gavi Emoji Combos", "Fan emoji sets to copy and paste", m_ball, K_LIB),
