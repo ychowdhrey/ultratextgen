@@ -1103,6 +1103,30 @@
   font-size: 0.9em;
 }
 
+/* Cursive alphabet reference block */
+.cursive-alphabet {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0 0.75rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.cursive-alphabet-row {
+  margin: 0.35rem 0;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.cursive-alphabet-note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 /* Section headings */
 .mood-explainers h2,
 .editorial-section > h2 {

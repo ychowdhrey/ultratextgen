@@ -66,7 +66,12 @@
       "icon": "𝒞",
       "fonts": [
         "Ultra Script",
-        "Ultra Script Bold"
+        "Ultra Script Bold",
+        "Ultra Script Elegant",
+        "Ultra Script Bold Elegant",
+        "Ultra Gothic Script",
+        "Ultra Chicano Script",
+        "Ultra Script Sparkle"
       ]
     },
     "gothic-fonts": {
@@ -74,7 +79,8 @@
       "icon": "𝔊",
       "fonts": [
         "Ultra Gothic",
-        "Ultra Gothic Bold"
+        "Ultra Gothic Bold",
+        "Ultra Gothic Script"
       ]
     },
     "strikethrough-text": {
