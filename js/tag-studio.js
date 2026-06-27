@@ -394,5 +394,58 @@
     ns.tagStudio._instances.push({ state: state, buildShareUrl: buildShareUrl });
   }
 
-  ns.tagStudio = { init: init };
+  /* ============================
+     liveChips — standalone helper
+     Renders a flat grid of copy chips, each showing the user's typed
+     input in a fixed font + frame, re-rendering on every keystroke.
+     Used to make "ready-made" example grids reflect the typed name
+     instead of a baked-in placeholder. Clicking a chip copies it via
+     the global .symbol-tile handler (no per-chip wiring needed).
+
+     config = {
+       inputId, mount,
+       items: [{ fontKey, l, r, sep }],
+       text: { placeholder, copyLabel }
+     }
+     ============================ */
+  function liveChips(config) {
+    const cfg = config || {};
+    const input = document.getElementById(cfg.inputId || "mainInput");
+    const mount = document.getElementById(cfg.mount);
+    if (!input || !mount) return;
+
+    const items = cfg.items || [];
+    const placeholder = (cfg.text && cfg.text.placeholder) || "…";
+    const copyLabel = (cfg.text && cfg.text.copyLabel) || "Copy";
+
+    mount.innerHTML = "";
+    const chips = items.map(function () {
+      const chip = el("button", "uname-chip symbol-tile");
+      chip.type = "button";
+      chip.setAttribute("aria-label", copyLabel);
+      mount.appendChild(chip);
+      return chip;
+    });
+
+    function render() {
+      const raw = (input.value || "").trim();
+      items.forEach(function (item, i) {
+        const chip = chips[i];
+        if (!raw) {
+          chip.textContent = placeholder;
+          chip.removeAttribute("data-symbol");
+          return;
+        }
+        const styled = styleText(raw, item.fontKey);
+        const out = frameText(styled, item.l, item.r, item.sep != null ? item.sep : "");
+        chip.textContent = out;
+        chip.setAttribute("data-symbol", out);
+      });
+    }
+
+    render();
+    input.addEventListener("input", render);
+  }
+
+  ns.tagStudio = { init: init, liveChips: liveChips };
 })();
