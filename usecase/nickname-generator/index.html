@@ -160,8 +160,8 @@
 <section class="mood-explainers" id="nick-wrappers">
   <span class="article-section-label">Ready-Made Frames</span>
   <h2>One-Click Nickname Frames</h2>
-  <p class="u-secondary-block">Copy a complete frame in one click, then swap <em>YourName</em> in the middle for your own.</p>
-  <div id="nickWrappersContainer"></div>
+  <p class="u-secondary-block">Every frame uses the name you type at the top — change it and these update instantly. Click to copy.</p>
+  <div id="nickWrappersContainer" class="uname-grid"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -192,40 +192,20 @@
 <!-- READY-MADE NICKNAMES -->
 <section class="editorial-section" id="nickname-ideas">
   <span class="article-section-label">Nickname Ideas</span>
-  <h2>Ready-Made Nickname Ideas (Click to Copy)</h2>
+  <h2>Your Name, Ready-Made (Click to Copy)</h2>
+  <p class="u-secondary-block">These sets restyle the name you typed at the top — type your own and every idea below becomes yours.</p>
 
   <h3>Stylish Nicknames</h3>
   <p class="uname-note">Clean, eye-catching name styles for any profile.</p>
-  <div class="uname-grid">
-    <button class="uname-chip symbol-tile" data-symbol="꧁༒𝙇𝙐𝙉𝘼༒꧂" aria-label="Copy nickname">꧁༒𝙇𝙐𝙉𝘼༒꧂</button>
-    <button class="uname-chip symbol-tile" data-symbol="༺𝓢𝓱𝓪𝓭𝓸𝔀༻" aria-label="Copy nickname">༺𝓢𝓱𝓪𝓭𝓸𝔀༻</button>
-    <button class="uname-chip symbol-tile" data-symbol="𝕍𝔼ℕ𝕆𝕄™" aria-label="Copy nickname">𝕍𝔼ℕ𝕆𝕄™</button>
-    <button class="uname-chip symbol-tile" data-symbol="彡𝐍𝐎𝐕𝐀彡" aria-label="Copy nickname">彡𝐍𝐎𝐕𝐀彡</button>
-    <button class="uname-chip symbol-tile" data-symbol="ᴀʟᴘʜᴀ•ᵒᵍ" aria-label="Copy nickname">ᴀʟᴘʜᴀ•ᵒᵍ</button>
-    <button class="uname-chip symbol-tile" data-symbol="꧁ℜ𝔢𝔵꧂" aria-label="Copy nickname">꧁ℜ𝔢𝔵꧂</button>
-  </div>
+  <div class="uname-grid" id="ideaStylish"></div>
 
   <h3>Cute Nicknames</h3>
   <p class="uname-note">Soft, aesthetic names for TikTok &amp; Instagram.</p>
-  <div class="uname-grid">
-    <button class="uname-chip symbol-tile" data-symbol="꒰ꔫ𝓜𝓲𝓪ꔫ꒱" aria-label="Copy nickname">꒰ꔫ𝓜𝓲𝓪ꔫ꒱</button>
-    <button class="uname-chip symbol-tile" data-symbol="⋆˚✿𝓛𝓲𝓵𝔂✿˚⋆" aria-label="Copy nickname">⋆˚✿𝓛𝓲𝓵𝔂✿˚⋆</button>
-    <button class="uname-chip symbol-tile" data-symbol="♡𝒷𝑒𝓁𝓁𝒶♡" aria-label="Copy nickname">♡𝒷𝑒𝓁𝓁𝒶♡</button>
-    <button class="uname-chip symbol-tile" data-symbol="✧˖°𝕜𝕠𝕜𝕠°˖✧" aria-label="Copy nickname">✧˖°𝕜𝕠𝕜𝕠°˖✧</button>
-    <button class="uname-chip symbol-tile" data-symbol="ʚ𝓼𝓷𝓸𝔀𝔂ɞ" aria-label="Copy nickname">ʚ𝓼𝓷𝓸𝔀𝔂ɞ</button>
-    <button class="uname-chip symbol-tile" data-symbol="₊˚⊹𝓪𝓲𝓻𝓲⊹˚₊" aria-label="Copy nickname">₊˚⊹𝓪𝓲𝓻𝓲⊹˚₊</button>
-  </div>
+  <div class="uname-grid" id="ideaCute"></div>
 
   <h3>Gamer Tags</h3>
   <p class="uname-note">Sharp, sweaty tags for FPS &amp; battle royale.</p>
-  <div class="uname-grid">
-    <button class="uname-chip symbol-tile" data-symbol="メ𝐃𝐀𝐑𝐊彡" aria-label="Copy nickname">メ𝐃𝐀𝐑𝐊彡</button>
-    <button class="uname-chip symbol-tile" data-symbol="꧁☬ʀᴇᴀᴘᴇʀ☬꧂" aria-label="Copy nickname">꧁☬ʀᴇᴀᴘᴇʀ☬꧂</button>
-    <button class="uname-chip symbol-tile" data-symbol="★彡[ᴢᴇᴜꜱ]彡★" aria-label="Copy nickname">★彡[ᴢᴇᴜꜱ]彡★</button>
-    <button class="uname-chip symbol-tile" data-symbol="࿐ꜰᴜʀʏ࿐" aria-label="Copy nickname">࿐ꜰᴜʀʏ࿐</button>
-    <button class="uname-chip symbol-tile" data-symbol="xX_ꜱɴɪᴘᴇʀ_Xx" aria-label="Copy nickname">xX_ꜱɴɪᴘᴇʀ_Xx</button>
-    <button class="uname-chip symbol-tile" data-symbol="⚔ᴡᴀʀʟᴏʀᴅ⚔" aria-label="Copy nickname">⚔ᴡᴀʀʟᴏʀᴅ⚔</button>
-  </div>
+  <div class="uname-grid" id="ideaGamer"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -249,6 +229,10 @@
 <section class="editorial-section">
   <span class="article-section-label">Related Resources</span>
   <div class="compare-grid">
+    <a href="/usecase/clan-tag-generator/" class="compare-card variant-muted u-no-underline">
+      <h4>Clan Tag Generator</h4>
+      <p>Style a short [TAG] and share one link so your whole squad matches.</p>
+    </a>
     <a href="/library/nickname-symbols/" class="compare-card variant-muted u-no-underline">
       <h4>Nickname Symbols</h4>
       <p>Decorative characters for gamer tags on any platform.</p>
@@ -276,24 +260,69 @@
 <script src="/renderer.js"></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + live nickname chips -->
 <script src="/symbol-explorer.js"></script>
+<script src="/js/tag-studio.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   var ns = window.UltraTextGen;
-  if (!ns || !ns.buildGrids) return;
+  if (!ns || !ns.tagStudio || !ns.tagStudio.liveChips) return;
 
-  var GROUPS = [
-    { name: "Classic Gaming Frame", flags: ["꧁༒", "YourName", "༒꧂"], defaultFormat: "inline" },
-    { name: "Scroll Tag", flags: ["༺", "YourName", "༻"], defaultFormat: "inline" },
-    { name: "Cute Bracket", flags: ["꒰ꔫ", "YourName", "ꔫ꒱"], defaultFormat: "inline" },
-    { name: "Sparkle Frame", flags: ["⋆˚✿", "YourName", "✿˚⋆"], defaultFormat: "inline" },
-    { name: "Heart Wrap", flags: ["♡", "YourName", "♡"], defaultFormat: "inline" },
-    { name: "Slash Squad Tag", flags: ["★彡", "YourName", "彡★"], defaultFormat: "inline" }
-  ];
+  var placeholder = { placeholder: "Type a name above…", copyLabel: "Copy nickname" };
 
-  ns.buildGrids("nickWrappersContainer", GROUPS);
+  // Ready-Made Frames — the typed name wrapped in each frame.
+  ns.tagStudio.liveChips({
+    inputId: "mainInput", mount: "nickWrappersContainer", text: placeholder,
+    items: [
+      { fontKey: "Ultra Bold Italic", l: "꧁༒", r: "༒꧂" },
+      { fontKey: "Ultra Script Bold", l: "༺", r: "༻" },
+      { fontKey: "Ultra Cute Script", l: "꒰ꔫ", r: "ꔫ꒱" },
+      { fontKey: "Ultra Cute Script", l: "⋆˚✿", r: "✿˚⋆" },
+      { fontKey: "Ultra Cute Script", l: "♡", r: "♡" },
+      { fontKey: "Ultra Bold", l: "★彡", r: "彡★" }
+    ]
+  });
+
+  // Stylish — clean, eye-catching styles.
+  ns.tagStudio.liveChips({
+    inputId: "mainInput", mount: "ideaStylish", text: placeholder,
+    items: [
+      { fontKey: "Ultra Bold Italic", l: "꧁༒", r: "༒꧂" },
+      { fontKey: "Ultra Script Bold", l: "༺", r: "༻" },
+      { fontKey: "Ultra Gothic", l: "", r: "™" },
+      { fontKey: "Ultra Bold", l: "彡", r: "彡" },
+      { fontKey: "Ultra Small Caps", l: "", r: "•ᵒᵍ" },
+      { fontKey: "Ultra Gothic", l: "꧁", r: "꧂" }
+    ]
+  });
+
+  // Cute — soft, aesthetic styles.
+  ns.tagStudio.liveChips({
+    inputId: "mainInput", mount: "ideaCute", text: placeholder,
+    items: [
+      { fontKey: "Ultra Cute Script", l: "꒰ꔫ", r: "ꔫ꒱" },
+      { fontKey: "Ultra Cute Script", l: "⋆˚✿", r: "✿˚⋆" },
+      { fontKey: "Ultra Cute Script", l: "♡", r: "♡" },
+      { fontKey: "Ultra Cute Script", l: "✧˖°", r: "°˖✧" },
+      { fontKey: "Ultra Cute Script", l: "ʚ", r: "ɞ" },
+      { fontKey: "Ultra Cute Script", l: "₊˚⊹", r: "⊹˚₊" }
+    ]
+  });
+
+  // Gamer — sharp, sweaty tags.
+  ns.tagStudio.liveChips({
+    inputId: "mainInput", mount: "ideaGamer", text: placeholder,
+    items: [
+      { fontKey: "Ultra Bold", l: "メ", r: "彡" },
+      { fontKey: "Ultra Small Caps", l: "꧁☬", r: "☬꧂" },
+      { fontKey: "Ultra Small Caps", l: "★彡[", r: "]彡★" },
+      { fontKey: "Ultra Small Caps", l: "࿐", r: "࿐" },
+      { fontKey: "Ultra Small Caps", l: "xX_", r: "_Xx" },
+      { fontKey: "Ultra Small Caps", l: "⚔", r: "⚔" }
+    ]
+  });
+
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
