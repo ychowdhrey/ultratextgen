@@ -405,9 +405,22 @@ function renderMap(text, style) {
       ).join(''),
 
     'ultra_word_double_bar_wrap': text =>
-      text.split(/(\s+)/).map(word => 
+      text.split(/(\s+)/).map(word =>
         word.trim() ? `‖${word}‖` : word
-      ).join('')
+      ).join(''),
+
+    // === CURSIVE PROCEDURES ===
+    // Chicano / lowrider nametag: bold script inside ornate flourishes.
+    'ultra_cursive_chicano': text =>
+      text.trim()
+        ? `꧁༺ ${renderMap(text, textStyles['Ultra Script Bold'])} ༻꧂`
+        : text,
+
+    // Aesthetic bio line: script wrapped in sparkle accents (the top cursive pairing).
+    'ultra_cursive_sparkle': text =>
+      text.trim()
+        ? `⋆˚꒰ ${renderMap(text, textStyles['Ultra Script'])} ꒱˚⋆`
+        : text
   };
 
   /* -----------------------------
