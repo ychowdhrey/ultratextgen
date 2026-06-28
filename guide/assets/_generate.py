@@ -274,6 +274,32 @@ def m_discord(p):
     return g
 
 
+def m_personality(p):
+    # a palette of the same letter in six personality treatments
+    chips = [("A", "700", "normal", "normal", PURPLE),
+             ("A", "700", "italic", "Georgia", BLUE),
+             ("A", "400", "normal", "normal", INK),
+             ("a", "700", "normal", "normal", SUB),
+             ("A", "400", "italic", "Georgia", PURPLE),
+             ("A", "700", "normal", "Courier New, monospace", BLUE)]
+    g = ""
+    for i, (ch, w, st, fam, col) in enumerate(chips):
+        cx = 40 + (i % 3) * 110
+        cy = 70 + (i // 3) * 130
+        fill = f"url(#g{p})" if i == 0 else "#fff"
+        stroke = "none" if i == 0 else INK
+        ink = "#fff" if i == 0 else col
+        famn = fam if fam not in ("normal",) else SANS
+        g += f"""
+        <g transform="translate({cx} {cy})">
+          <rect width="96" height="108" rx="16" fill="{fill}" stroke="{stroke}"
+                stroke-opacity="0.12"/>
+          <text x="48" y="74" font-family="{famn}" font-size="58" font-weight="{w}"
+                font-style="{st}" fill="{ink}" text-anchor="middle">{ch}</text>
+        </g>"""
+    return g
+
+
 GUIDES = {
     "index": ("Guides for Expressive Typography",
               "Frameworks & playbooks for Unicode text", m_index),
@@ -299,6 +325,8 @@ GUIDES = {
               "An honest guide for creators", m_accessibility),
     "discord-text-formatting-explained": ("Discord Text Formatting Decoded",
               "Markdown vs Unicode vs Nitro", m_discord),
+    "font-personality-and-brand": ("Font Personality & Brand",
+              "Match a Unicode style to your identity", m_personality),
 }
 
 
