@@ -76,6 +76,16 @@ SOURCES = {
         title="pin_title", image="image_path",
         board="board", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords"),
+    # localized single-language boards (de, fr, it, nl, pl, pt, tr, vi) — same
+    # inventory shape as "es", produced by scripts/generate-<locale>-pins.py
+    # via scripts/_locale_pin_kit.py.
+    **{loc: dict(
+        inventory=f"{loc}_pinterest_pins.csv",
+        out=f"{loc}_pinterest_pins_upload.csv",
+        title="pin_title", image="image_path",
+        board="board", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords")
+       for loc in ("de", "fr", "it", "nl", "pl", "pt", "tr", "vi")},
     "gaming_names": dict(
         inventory="gaming_names_pinterest_pins.csv",
         out="gaming_names_pinterest_pins_upload.csv",
