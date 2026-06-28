@@ -64,6 +64,14 @@ is produced **only** by `scripts/pinterest_csv.py`. Read
 [`pinterest-csv-format.md`](./pinterest-csv-format.md) — uploading any other
 schema fails Pinterest's importer.
 
+> **Localized boards share a renderer.** The single-language boards
+> (`de`, `fr`, `it`, `nl`, `pl`, `pt`, `tr`, `vi`) are thin generators that all
+> import [`scripts/_locale_pin_kit.py`](../scripts/_locale_pin_kit.py) — the
+> parameterized version of the `/es/` pin template. To add another language,
+> copy `scripts/generate-pt-pins.py`, swap in native PINS + board metadata, and
+> register the locale in both `SOURCES` (`build_pinterest_upload.py`) and the
+> `_locale_pin_kit` board list. Do **not** clone the whole SVG template again.
+
 ### Checklist before you commit a new board
 
 - [ ] Generator at `scripts/generate-<board>-pins.py`, mirrors an existing one
