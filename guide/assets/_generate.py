@@ -208,6 +208,72 @@ def m_vertical(p):
           text-anchor="middle">orientation = friction</text>"""
 
 
+def m_boxes(p):
+    # a styled glyph that degrades into tofu boxes — the compatibility story
+    boxes = ""
+    for i in range(3):
+        x = 196 + i * 56
+        boxes += f"""<rect x="{x}" y="150" width="44" height="60" rx="6"
+              fill="none" stroke="{SUB}" stroke-width="4" opacity="0.55"/>
+            <line x1="{x}" y1="150" x2="{x+44}" y2="210" stroke="{SUB}"
+              stroke-width="3" opacity="0.4"/>
+            <line x1="{x+44}" y1="150" x2="{x}" y2="210" stroke="{SUB}"
+              stroke-width="3" opacity="0.4"/>"""
+    return f"""
+    <g transform="translate(70 150)">
+      <rect x="-6" y="0" width="120" height="60" rx="14" fill="url(#g{p})"/>
+      <text x="54" y="44" font-family="Georgia, {SANS}" font-size="44"
+            font-weight="700" font-style="italic" fill="#fff"
+            text-anchor="middle">Aa</text>
+    </g>
+    <text x="176" y="190" font-family="{SANS}" font-size="34" fill="{SUB}"
+          text-anchor="middle">&#8594;</text>
+    {boxes}
+    <text x="180" y="280" font-family="{SANS}" font-size="19" fill="{SUB}"
+          text-anchor="middle">a glyph the device can&#8217;t draw</text>"""
+
+
+def m_accessibility(p):
+    # a styled letter being read aloud as code-point names — sound waves
+    waves = ""
+    for i in range(5):
+        x = 226 + i * 26
+        h = [22, 46, 70, 40, 18][i]
+        waves += f'<rect x="{x}" y="{180-h/2}" width="12" height="{h}" rx="6" fill="url(#gv{p})"/>'
+    return f"""
+    <g transform="translate(60 120)">
+      <rect width="120" height="120" rx="22" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.12"/>
+      <text x="60" y="84" font-family="Georgia, {SANS}" font-size="74"
+            font-weight="700" fill="url(#g{p})" text-anchor="middle">B</text>
+    </g>
+    <path d="M196 180 L214 168 L214 192 Z" fill="{INK}" opacity="0.6"/>
+    {waves}
+    <text x="180" y="290" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">&#8220;mathematical bold capital B&#8230;&#8221;</text>"""
+
+
+def m_discord(p):
+    # the 3-system model: three stacked chips
+    rows = [("MD", "#fff", INK, "message only"),
+            ("Uni", "url(#g" + p + ")", "#fff", "names everywhere"),
+            ("Nitro", "#fff", INK, "color, not in-server")]
+    g = ""
+    for i, (label, fill, ink, note) in enumerate(rows):
+        y = 70 + i * 78
+        stroke = "none" if fill.startswith("url") else INK
+        g += f"""
+        <g transform="translate(50 {y})">
+          <rect width="260" height="60" rx="16" fill="{fill}" stroke="{stroke}"
+                stroke-opacity="0.12"/>
+          <text x="24" y="39" font-family="{SANS}" font-size="26"
+                font-weight="700" fill="{ink}">{label}</text>
+          <text x="250" y="38" font-family="{SANS}" font-size="16" fill="{ink}"
+                opacity="0.75" text-anchor="end">{note}</text>
+        </g>"""
+    return g
+
+
 GUIDES = {
     "index": ("Guides for Expressive Typography",
               "Frameworks & playbooks for Unicode text", m_index),
@@ -227,6 +293,12 @@ GUIDES = {
               "Scroll-stopping first lines", m_hooks),
     "vertical-text-guide": ("Vertical Text",
               "The science of reading disruption", m_vertical),
+    "why-fonts-show-as-boxes": ("Why Fonts Show as Boxes",
+              "Which Unicode styles are safe everywhere", m_boxes),
+    "fancy-fonts-accessibility-guide": ("Are Fancy Fonts Bad for Accessibility?",
+              "An honest guide for creators", m_accessibility),
+    "discord-text-formatting-explained": ("Discord Text Formatting Decoded",
+              "Markdown vs Unicode vs Nitro", m_discord),
 }
 
 
