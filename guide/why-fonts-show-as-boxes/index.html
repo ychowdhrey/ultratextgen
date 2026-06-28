@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why Your Fancy Font Shows Up as Boxes (and How to Fix It) | UltraTextGen</title>
+<meta name="description" content="Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.">
+
+<link rel="canonical" href="https://ultratextgen.com/guide/why-fonts-show-as-boxes/">
+<meta property="og:image" content="https://ultratextgen.com/guide/assets/og/why-fonts-show-as-boxes.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Your Fancy Font Shows Up as Boxes (and How to Fix It) | UltraTextGen">
+<meta name="twitter:description" content="Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.">
+<meta name="twitter:image" content="https://ultratextgen.com/guide/assets/og/why-fonts-show-as-boxes.png">
+<meta property="og:title" content="Why Your Fancy Font Shows Up as Boxes (and How to Fix It)">
+<meta property="og:description" content="Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/guide/why-fonts-show-as-boxes/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Your Fancy Font Shows Up as Boxes (and How to Fix It)",
+  "description": "Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/guide/assets/og/why-fonts-show-as-boxes.png",
+  "mainEntityOfPage": "https://ultratextgen.com/guide/why-fonts-show-as-boxes/",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://ultratextgen.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Why Fonts Show as Boxes", "item": "https://ultratextgen.com/guide/why-fonts-show-as-boxes/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does my fancy font show up as boxes for other people but not me?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the boxes are drawn by the reader's device, not yours. A styled “font” is really a set of special Unicode characters. Your phone happens to have a font that can draw them, so you see them perfectly. When a friend's device has no glyph for a character, it falls back to the .notdef box (□), often called “tofu.” Your text is intact — their device just can't paint it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which font styles are safe to use everywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Bold and italic sans-serif, bold/italic serif, and small caps are the safest — they map to the Mathematical Alphanumeric block that nearly every modern device ships a glyph for. Monospace, fullwidth and circled styles are usually fine. Fraktur (blackletter), double-struck, heavily decorative and zalgo styles are the most likely to break on older Android and some apps." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I stop my text from breaking?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pick a Tier 1 style for anything important, keep the meaning readable even if the styling drops, and never put a load-bearing word (a name, link, or call to action) in a risky style alone. Then test on a second device — ideally an older Android phone — before you commit it to a bio." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the boxes the same thing as question marks or garbled text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A box (tofu) means the character arrived fine but the device has no glyph to draw it. A question mark or � means the character was lost or mis-decoded along the way (an encoding problem). Garbled “mojibake” means the bytes were read with the wrong encoding. Boxes are a font problem; the others are data problems." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script src="/header.js"></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/guide/">Guides</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Why Fonts Show as Boxes</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Why Your Fancy Font Turns Into Boxes</h1>
+    <p class="hero-tagline">The boxes aren't a bug in your text. They're a missing glyph on the reader's device. Once you understand that, the fix is simple: choose styles that everyone's phone can actually draw.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Accessibility &amp; Compatibility</span>
+      <span class="guide-pill">⏱ 8 min read</span>
+      <span class="guide-pill">Style safety tiers</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/guide/assets/why-fonts-show-as-boxes.svg" width="1200" height="340"
+       alt="A styled letterform on the left degrading into empty tofu boxes on the right, showing a glyph the device cannot draw.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>A box (□ ▯), often called "tofu," means the reader's device has no glyph for that character — your text arrived fine, it just can't be drawn there.</li>
+    <li>"Fonts" from a generator are really substitute Unicode characters, so support depends entirely on the <em>viewer's</em> device, OS, and app.</li>
+    <li>Use the Style Safety Tiers: bold, italic and small caps are near-universal; Fraktur, double-struck and zalgo are the most fragile.</li>
+    <li>Never put a load-bearing word in a risky style alone, and always test on a second device before you commit it to a bio.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Core Idea</span>
+    <h2>Boxes Are the Reader's Device Talking, Not Yours</h2>
+    <div class="editorial-block">
+      <p>You styled your name, it looked perfect, and a friend replied: "it's just squares for me." The instinct is to assume you did something wrong. You didn't.</p>
+      <p>Here is the one fact that explains the whole thing: <strong>the styled "fonts" you copy from a generator are not fonts at all.</strong> They're ordinary text made of special <a href="/library/">Unicode characters</a> — the bold "𝗮" is a different character from a normal "a," not the same letter wearing a costume. When you paste them, the characters travel with your message. What happens next is entirely up to the <em>reader's</em> device.</p>
+      <p>Every device keeps a set of fonts that map characters to little pictures called <strong>glyphs</strong>. When a device meets a character it has no glyph for, it draws a placeholder: the <strong>.notdef box</strong> — □ or ▯ — nicknamed <strong>"tofu"</strong> (the font family Noto is literally named "no more tofu"). So the box isn't your text failing. It's the reader's device saying "I received this character, but I don't own a picture for it."</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: why it's invisible to you -->
+  <section class="editorial-section">
+    <span class="article-section-label">Why It's Sneaky</span>
+    <h2>The Failure Is Invisible to the Author</h2>
+    <div class="editorial-block">
+      <p>This is what makes boxes so frustrating: <strong>you can't reproduce the problem on your own phone.</strong> Your device has the glyph, so it renders perfectly for you, every time. Meanwhile a chunk of your audience — often older Android phones, certain web browsers, or specific apps — sees a row of squares.</p>
+      <p>That asymmetry is why "my bio looks broken to some people" is one of the most-asked questions across Discord, Instagram and TikTok. The author and the audience are looking at the same characters through different fonts.</p>
+      <div class="mood-explainer">
+        <div class="mood-example">What you see: <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> &nbsp;·&nbsp; What an older Android sees: ▯▯▯▯▯▯▯▯▯</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: Style Safety Tiers (framework) -->
+  <section class="editorial-section">
+    <span class="article-section-label">Framework</span>
+    <h2>The Style Safety Tiers</h2>
+    <div class="editorial-block">
+      <p>Not all styles are equally risky. Support tracks how widely a style's underlying Unicode block is shipped in device fonts. Here's the hierarchy, safest first.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Tier</th><th>Styles</th><th>Why</th><th>Use for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1 · Universal</strong></td><td>Bold &amp; italic sans, bold/italic serif, 𝚖𝚘𝚗𝚘, small caps</td><td>Mathematical Alphanumeric block — shipped almost everywhere</td><td>Anything important: names, hooks, CTAs</td></tr>
+          <tr><td><strong>2 · Mostly safe</strong></td><td>Fullwidth, Ⓒⓘⓡⓒⓛⓔⓓ, monospace symbols</td><td>Common blocks, occasional gaps on very old devices</td><td>Decorative emphasis, captions</td></tr>
+          <tr><td><strong>3 · Risky</strong></td><td>𝔉𝔯𝔞𝔨𝔱𝔲𝔯, 𝕯𝖔𝖚𝖇𝖑𝖊-𝖘𝖙𝖗𝖚𝖈𝖐, enclosed/squared, decoratives</td><td>Sparse coverage on older Android &amp; some apps</td><td>Throwaway flair only — never load-bearing</td></tr>
+          <tr><td><strong>4 · Fragile</strong></td><td>Z̸̢a̵l̷g̶o, obscure symbol runs, regional decoratives ꧁☬꧂</td><td>Combining marks &amp; rare glyphs break or look broken</td><td>One-off jokes; expect breakage</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="editorial-block">
+      <p>The rule of thumb: <strong>the prettier and more unusual a style looks, the fewer devices can draw it.</strong> Decorative cursive and blackletter are exactly the styles people reach for in bios — and exactly the ones most likely to turn into tofu.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the rules -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Rules</span>
+    <h2>Three Rules That Keep Your Text Readable</h2>
+
+    <div class="editorial-block">
+      <h3>1. Never style a load-bearing word alone</h3>
+      <p>If a word <em>must</em> be read — your name, a link, a price, a call to action — keep it in plain text or a Tier 1 style. If it turns to boxes, your message still survives.</p>
+      <div class="example-pair">
+        <span class="ex-label">Fragile</span>
+        <span class="ex-plain">𝕯𝕸 𝖒𝖊 𝖙𝖔 𝖔𝖗𝖉𝖊𝖗</span>
+        <span class="ex-arrow">↓</span>
+        <span class="ex-label">Safe</span>
+        <span class="ex-styled">𝗗𝗠 𝗺𝗲 to order</span>
+      </div>
+    </div>
+
+    <div class="editorial-block">
+      <h3>2. Keep meaning in the plain layer</h3>
+      <p>Treat styling as a topcoat, not the structure. A reader who sees only boxes should still get your point from the unstyled words around them.</p>
+    </div>
+
+    <div class="editorial-block">
+      <h3>3. Apply the 2-device test</h3>
+      <p>Before a style goes into a bio, view it on a second device — ideally an older Android phone, the worst-case renderer. If it survives there, it'll survive almost anywhere.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: boxes vs question marks -->
+  <section class="editorial-section">
+    <span class="article-section-label">Don't Confuse These</span>
+    <h2>Boxes vs Question Marks vs Garbled Text</h2>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">□ Box (tofu)</span>
+        <p>The character arrived fine; the device has no glyph to draw it. <strong>A font problem.</strong> Fix it by choosing a safer style.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">? or �</span>
+        <p>The character was lost or mis-decoded in transit. <strong>A data problem.</strong> The styling won't help — the text itself changed.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">Ã© garbage</span>
+        <p>"Mojibake" — bytes read with the wrong encoding. <strong>Also a data problem</strong>, usually from a broken copy/export step.</p>
+      </div>
+    </div>
+    <div class="editorial-block">
+      <p>This guide is about the first one — a font problem you fix by choosing a safer style. The other two are data problems: the characters themselves changed in transit, so no style choice will bring them back.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: platform notes -->
+  <section class="editorial-section">
+    <span class="article-section-label">Platform Field Notes</span>
+    <h2>Where Boxes Show Up Most</h2>
+    <div class="editorial-block">
+      <ul>
+        <li><strong>Discord</strong> — styled names render for most desktop users, but older Android clients and screen readers struggle. See <a href="/guide/discord-text-formatting-explained/">Discord text formatting decoded</a>.</li>
+        <li><strong>Instagram &amp; TikTok</strong> — bios render via the viewer's system fonts, so the same bio can look crisp on iPhone and broken on a budget Android.</li>
+        <li><strong>Older Android, generally</strong> — the single most common source of tofu. If you only test on an iPhone, you're testing the easy case.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="pull-quote">Your characters are never broken.<br>The reader's device simply ran out of pictures.<br><br>Style for the worst phone in the room, not the best.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Generate text in a device-safe style</h3>
+    <p>Pick a Tier 1 style — bold, italic or small caps — and it'll render almost everywhere. Type it once, copy it, paste it anywhere.</p>
+    <a href="/" class="cta-btn">Open the Text Generator →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/instagram/">Instagram</a>
+    <a class="platform-pill" href="/tiktok/">TikTok</a>
+    <a class="platform-pill" href="/discord/">Discord</a>
+    <a class="platform-pill" href="/linkedin/">LinkedIn</a>
+    <a class="platform-pill" href="/x/">X</a>
+    <a class="platform-pill" href="/whatsapp/">WhatsApp</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why does my fancy font show up as boxes for other people but not me?</button>
+    <div class="faq-answer">
+      <p>Because the boxes are drawn by the reader's device, not yours. A styled "font" is really a set of special Unicode characters. Your phone happens to have a font that can draw them, so you see them perfectly. When a friend's device has no glyph for a character, it falls back to the .notdef box (□), often called "tofu." Your text is intact — their device just can't paint it.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Which font styles are safe to use everywhere?</button>
+    <div class="faq-answer">
+      <p>Bold and italic sans-serif, bold/italic serif, and small caps are the safest — they map to the Mathematical Alphanumeric block that nearly every modern device ships a glyph for. Monospace, fullwidth and circled styles are usually fine. Fraktur (blackletter), double-struck, heavily decorative and zalgo styles are the most likely to break on older Android and some apps. Make a safe one with the <a href="/">text generator</a>.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">How do I stop my text from breaking?</button>
+    <div class="faq-answer">
+      <p>Pick a Tier 1 style for anything important, keep the meaning readable even if the styling drops, and never put a load-bearing word (a name, link, or call to action) in a risky style alone. Then test on a second device — ideally an older Android phone — before you commit it to a bio.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Are the boxes the same thing as question marks or garbled text?</button>
+    <div class="faq-answer">
+      <p>No. A box (tofu) means the character arrived fine but the device has no glyph to draw it. A question mark or � means the character was lost or mis-decoded along the way (an encoding problem). Garbled "mojibake" means the bytes were read with the wrong encoding. Boxes are a font problem; the others are data problems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/guide/fancy-fonts-accessibility-guide/">
+      <span class="related-tag">♿</span>
+      <span class="related-title">Fonts &amp; Accessibility</span>
+      <span class="related-desc">What screen readers do with styled text.</span>
+    </a>
+    <a class="related-card" href="/guide/discord-text-formatting-explained/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">Discord Formatting Decoded</span>
+      <span class="related-desc">Markdown vs Unicode vs Nitro, untangled.</span>
+    </a>
+    <a class="related-card" href="/guide/the-rhetoric-of-fonts/">
+      <span class="related-tag">🎭</span>
+      <span class="related-title">The Rhetoric of Fonts</span>
+      <span class="related-desc">What each Unicode style actually signals.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js"></script>
+</body>
+</html>
