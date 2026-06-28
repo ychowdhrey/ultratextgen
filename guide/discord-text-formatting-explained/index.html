@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discord Fonts &amp; Formatting Explained: Markdown vs Unicode vs Nitro | UltraTextGen</title>
+<meta name="description" content="Why bold works in Discord chat but not your username — the three different text systems Discord uses (Markdown, Unicode fonts, Nitro), and exactly when to use each.">
+
+<link rel="canonical" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<meta property="og:image" content="https://ultratextgen.com/guide/assets/og/discord-text-formatting-explained.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discord Fonts &amp; Formatting Explained: Markdown vs Unicode vs Nitro | UltraTextGen">
+<meta name="twitter:description" content="Why bold works in Discord chat but not your username — the three different text systems Discord uses (Markdown, Unicode fonts, Nitro), and exactly when to use each.">
+<meta name="twitter:image" content="https://ultratextgen.com/guide/assets/og/discord-text-formatting-explained.png">
+<meta property="og:title" content="Discord Fonts &amp; Formatting Explained: Markdown vs Unicode vs Nitro">
+<meta property="og:description" content="Why bold works in Discord chat but not your username — the three different text systems Discord uses (Markdown, Unicode fonts, Nitro), and exactly when to use each.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Discord Text Formatting Decoded: Markdown vs Unicode Fonts vs Nitro",
+  "description": "Why bold works in Discord chat but not your username — the three different text systems Discord uses (Markdown, Unicode fonts, Nitro), and exactly when to use each.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/guide/assets/og/discord-text-formatting-explained.png",
+  "mainEntityOfPage": "https://ultratextgen.com/guide/discord-text-formatting-explained/",
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://ultratextgen.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Discord Text Formatting", "item": "https://ultratextgen.com/guide/discord-text-formatting-explained/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does bold work in Discord chat but not in my username?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because they use different systems. In chat, **bold** is Markdown — Discord renders it when it displays your message. Names (username, nickname, server, channel, role) don't run Markdown, so the asterisks just show literally. To style a name you need Unicode “fonts” — special characters that already look bold — pasted directly into the field." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Unicode fonts the same as Discord Nitro fonts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Unicode “fonts” are free substitute characters you can paste anywhere a name is allowed; they work for everyone but can render as boxes on some devices and break screen readers. Nitro Display Name Styles are a paid feature that applies a real font, color and effects to your display name — but the color and effects don't show inside servers, where your role color wins; only the font carries over." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make colored text in Discord?",
+      "acceptedAnswer": { "@type": "Answer", "text": "With ANSI code blocks: wrap your text in a triple-backtick block tagged “ansi” and add escape codes for color. It's limited to eight fixed colors, works only inside code blocks, and is unreliable on mobile (it often shows as plain text). It's for messages, not names." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do the asterisks show up instead of bold text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Two common reasons: there's a space between the asterisks and the word (`** text **` won't bold — `**text**` will), or the text is inside a code block (backticks turn off Markdown). Also remember Markdown only works in messages, never in names." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script src="/header.js"></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/guide/">Guides</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Discord Text Formatting</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Discord Text Formatting, Decoded</h1>
+    <p class="hero-tagline">You don't have a "fonts" problem — you have a three-systems problem. Discord uses Markdown, Unicode characters, and Nitro styles for completely different jobs. Once you know which field uses which, every "why doesn't this work?" answers itself.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Platform Mastery</span>
+      <span class="guide-pill">⏱ 8 min read</span>
+      <span class="guide-pill">The 3-System Model</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/guide/assets/discord-text-formatting-explained.svg" width="1200" height="340"
+       alt="Three stacked chips labelled Markdown, Unicode and Nitro, showing Discord's three different text systems.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Discord has three unrelated text systems: <strong>Markdown</strong> (messages), <strong>Unicode "fonts"</strong> (names everywhere), and <strong>Nitro</strong> (paid display-name styles).</li>
+    <li>Markdown like <code>**bold**</code> only renders in messages — it never works in usernames, nicknames, or server/channel names.</li>
+    <li>Unicode "fonts" work in every name field but can show as boxes on some devices and break screen readers.</li>
+    <li>Nitro adds real color and effects to your display name — but inside a server, your role color wins and only the font shows.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the reframe -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Reframe</span>
+    <h2>It's Not Fonts — It's Three Different Systems</h2>
+    <div class="editorial-block">
+      <p>Almost every Discord "why won't my text work" question comes from blurring three things that have nothing to do with each other. Discord <em>teaches</em> you Markdown in chat, so you assume the same trick should style your name. It doesn't — names run a different system entirely.</p>
+      <p>Here's the whole territory in one frame. Learn which system each field uses and you'll never be surprised again.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>System</th><th>What it is</th><th>Where it works</th><th>The catch</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Symbols Discord renders (<code>**bold**</code>, <code>*italic*</code>, <code>~~strike~~</code>, ANSI color)</td><td>Messages only</td><td>Dies in every name field; ANSI color is desktop-only</td></tr>
+          <tr><td><strong>Unicode "fonts"</strong></td><td>Substitute characters that already look styled (𝗯𝗼𝗹𝗱, 𝓬𝓾𝓻𝓼𝓲𝓿𝓮)</td><td>Display name, nickname, server/channel/role names, bio, messages</td><td>Can render as boxes; breaks screen readers; rejected in the @username</td></tr>
+          <tr><td><strong>Nitro styles</strong></td><td>Paid Display Name Styles: real font + color + effects</td><td>Your display name</td><td>Color/effects don't show inside servers (role color wins); costs money</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 1</span>
+    <h2>Markdown — for Messages</h2>
+    <div class="editorial-block">
+      <p>Markdown is the formatting Discord applies when it <em>displays</em> your message. You type symbols around your words and Discord swaps them for real styling.</p>
+      <ul>
+        <li><code>**bold**</code> → <strong>bold</strong></li>
+        <li><code>*italic*</code> → <em>italic</em></li>
+        <li><code>~~strikethrough~~</code> → strikethrough</li>
+        <li><code>__underline__</code> → underline</li>
+        <li><code>||spoiler||</code> → hidden until clicked</li>
+        <li><code>&gt; quote</code> and <code>`code`</code></li>
+      </ul>
+      <p>This is the <em>right</em> way to format a message — it stays real text, so it's searchable and accessible. The catch is the two mistakes that make it "not work":</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Won't bold</span>
+          <p><code>** text **</code> — a space inside the asterisks cancels it. Use <code>**text**</code>.</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Won't bold</span>
+          <p>Inside a <code>`code block`</code>, backticks switch Markdown off. Move the styling outside.</p>
+        </div>
+      </div>
+      <p><strong>And the big one:</strong> Markdown does nothing in a username, nickname, server name or channel name. Those aren't messages, so Discord never runs Markdown on them.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 2</span>
+    <h2>Unicode "Fonts" — for Names</h2>
+    <div class="editorial-block">
+      <p>To style a <em>name</em>, you can't ask Discord to render anything — so you use characters that already look styled. A generator turns "Nova" into 𝗡𝗼𝘃𝗮 or 𝓝𝓸𝓿𝓪 using special <a href="/library/">Unicode characters</a>, and you paste the finished result straight into the field. No rendering required, so it survives where Markdown can't.</p>
+      <p>This works in your display name, server nickname, server and channel names, role names, your bio, and messages. There's exactly one place it's blocked:</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>The @username rejects it.</strong> Your unique handle (the lowercase one after the @) allows only a–z, 0–9, <code>_</code> and <code>.</code> — for mentions, search and routing. Paste a fancy font there and Discord refuses to save it. Style your <em>display name</em> instead.</div>
+      </div>
+      <p>Two honest caveats, both covered in depth elsewhere: Unicode names can <a href="/guide/why-fonts-show-as-boxes/">show as boxes</a> on some devices (especially older Android), and they're <a href="/guide/fancy-fonts-accessibility-guide/">hard for screen readers</a>. Pick a safe style (bold, italic, small caps) and keep it tasteful — many large servers moderate hard-to-read or zalgo names.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 3 Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 3</span>
+    <h2>Nitro Display Name Styles — Paid, and Narrower Than You Think</h2>
+    <div class="editorial-block">
+      <p>Discord's paid Nitro tier offers Display Name Styles: a real font, color and even animated effects applied to your display name. It looks great on your profile card. But there's a catch people discover the hard way:</p>
+      <div class="mood-explainer">
+        <div class="mood-example">Inside a server, your <strong>role color</strong> overrides the Nitro color, and effects are stripped — so other members usually see only the <em>font</em>, not the color or animation. The full effect shows mainly on your profile, not in the member list or chat.</div>
+      </div>
+      <p>So Nitro is worth it if you want a polished profile card and a distinct display font everywhere. It's <em>not</em> the way to get colored text into a conversation — that's a different tool (next section).</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: colored text bonus -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Color Question</span>
+    <h2>What About Colored Text in Messages?</h2>
+    <div class="editorial-block">
+      <p>Colored text in a message is a fourth, narrower trick: <strong>ANSI code blocks</strong>. You wrap text in a triple-backtick block tagged <code>ansi</code> and add escape codes for color. Be clear-eyed about the limits:</p>
+      <ul>
+        <li>Only <strong>eight fixed colors</strong> — no custom hex.</li>
+        <li><strong>Code-block only</strong> — it can't color a normal sentence inline.</li>
+        <li><strong>Unreliable on mobile</strong> — it frequently renders as plain text for phone users.</li>
+      </ul>
+      <p>Useful for a desktop-first server's warnings or logs; not a general styling tool. If half your members are on mobile, assume they won't see the color.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: decision -->
+  <section class="editorial-section">
+    <span class="article-section-label">Decide Fast</span>
+    <h2>Which System Do You Need?</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>I want to…</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Bold/italic a word in a message</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>Style my display name or nickname</td><td>Unicode font (paste it in)</td></tr>
+          <tr><td>Decorate a server or channel name</td><td>Unicode font + symbols</td></tr>
+          <tr><td>Change my unique @username's look</td><td>Not possible — style the display name instead</td></tr>
+          <tr><td>A colored, animated profile name</td><td>Nitro Display Name Styles</td></tr>
+          <tr><td>Colored text in a message</td><td>ANSI code block (desktop, 8 colors)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">Discord didn't break your bold.<br>You used the chat system on a name field.<br><br>Match the system to the field, and it just works.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Make a Discord-ready name</h3>
+    <p>Generate a device-safe Unicode style, copy it, and paste it into your display name or server nickname — no Nitro required.</p>
+    <a href="/discord/" class="cta-btn">Open the Discord Font Tool →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/discord/">Discord</a>
+    <a class="platform-pill" href="/instagram/">Instagram</a>
+    <a class="platform-pill" href="/tiktok/">TikTok</a>
+    <a class="platform-pill" href="/telegram/">Telegram</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why does bold work in Discord chat but not in my username?</button>
+    <div class="faq-answer">
+      <p>Because they use different systems. In chat, <code>**bold**</code> is Markdown — Discord renders it when it displays your message. Names (username, nickname, server, channel, role) don't run Markdown, so the asterisks just show literally. To style a name you need Unicode "fonts" — special characters that already look bold — pasted directly into the field.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Are Unicode fonts the same as Discord Nitro fonts?</button>
+    <div class="faq-answer">
+      <p>No. Unicode "fonts" are free substitute characters you can paste anywhere a name is allowed; they work for everyone but can render as boxes on some devices and break screen readers. Nitro Display Name Styles are a paid feature that applies a real font, color and effects to your display name — but the color and effects don't show inside servers, where your role color wins; only the font carries over.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">How do I make colored text in Discord?</button>
+    <div class="faq-answer">
+      <p>With ANSI code blocks: wrap your text in a triple-backtick block tagged "ansi" and add escape codes for color. It's limited to eight fixed colors, works only inside code blocks, and is unreliable on mobile (it often shows as plain text). It's for messages, not names.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why do the asterisks show up instead of bold text?</button>
+    <div class="faq-answer">
+      <p>Two common reasons: there's a space between the asterisks and the word (<code>** text **</code> won't bold — <code>**text**</code> will), or the text is inside a code block (backticks turn off Markdown). Also remember Markdown only works in messages, never in names.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/guide/why-fonts-show-as-boxes/">
+      <span class="related-tag">⬜</span>
+      <span class="related-title">Why Fonts Show as Boxes</span>
+      <span class="related-desc">Which name styles are safe on every device.</span>
+    </a>
+    <a class="related-card" href="/guide/fancy-fonts-accessibility-guide/">
+      <span class="related-tag">♿</span>
+      <span class="related-title">Fonts &amp; Accessibility</span>
+      <span class="related-desc">Keep styled names readable for everyone.</span>
+    </a>
+    <a class="related-card" href="/guide/personal-branding-through-typography/">
+      <span class="related-tag">🪪</span>
+      <span class="related-title">Personal Branding Through Typography</span>
+      <span class="related-desc">Make your name a signature people recognize.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js"></script>
+</body>
+</html>

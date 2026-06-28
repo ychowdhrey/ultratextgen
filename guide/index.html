@@ -76,8 +76,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="hero-headline">Guides for expressive typography</h1>
     <p class="hero-tagline">Fonts carry meaning before words are read. These guides show you how to use Unicode typography to signal tone, build recognition, and shape how your message lands.</p>
     <div class="guide-meta">
-      <span class="guide-pill is-accent">8 guides</span>
-      <span class="guide-pill">4 themes</span>
+      <span class="guide-pill is-accent">11 guides</span>
+      <span class="guide-pill">5 themes</span>
       <span class="guide-pill">Free &amp; no sign-up</span>
     </div>
   </div>
@@ -259,6 +259,54 @@ T
 — just another comment
 Same word. Vertical makes it stop traffic.</div>
       <a class="usecase-cta" href="/guide/vertical-text-guide/">Vertical Text Guide →</a>
+    </div>
+  </section>
+
+  <!-- Category 5: Unicode, Accessibility & Compatibility -->
+  <section class="editorial-section" id="unicode-compatibility">
+    <h2>Unicode, Accessibility &amp; Compatibility</h2>
+    <p class="section-subline">How styled text actually works under the hood — why it breaks, who it excludes, and how to use it without either.</p>
+
+    <!-- Guide: Why Fonts Show as Boxes -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">⬜</span>
+        Why Your Fancy Font Turns Into Boxes
+      </div>
+      <p class="usecase-outcome">Understand why styled text shows as squares for some people — and which styles are safe everywhere.</p>
+      <p class="usecase-diff">The boxes aren't a bug in your text; they're a missing glyph on the reader's device. Includes the Style Safety Tiers (which Unicode styles render universally vs which break) and the 2-device test.</p>
+      <div class="usecase-example">You see: 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈
+An older Android sees: ▯▯▯▯▯▯▯▯▯
+Style for the worst phone in the room.</div>
+      <a class="usecase-cta" href="/guide/why-fonts-show-as-boxes/">Why Fonts Show as Boxes →</a>
+    </div>
+
+    <!-- Guide: Fonts & Accessibility -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">♿</span>
+        Are Fancy Fonts Bad for Accessibility?
+      </div>
+      <p class="usecase-outcome">An honest guide to what screen readers do with styled text — and how to style without excluding anyone.</p>
+      <p class="usecase-diff">Not "never use it." The Plain-Core Rule: keep load-bearing text plain, style only decoration. Includes a screen-reader read-aloud demo and a 60-second test on your own phone.</p>
+      <div class="usecase-example">You wrote: 𝗛𝗲𝗹𝗹𝗼
+A screen reader says: "mathematical bold
+capital H, mathematical bold small e…"</div>
+      <a class="usecase-cta" href="/guide/fancy-fonts-accessibility-guide/">Fonts &amp; Accessibility →</a>
+    </div>
+
+    <!-- Guide: Discord Text Formatting Decoded -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🎮</span>
+        Discord Text Formatting, Decoded
+      </div>
+      <p class="usecase-outcome">Why bold works in Discord chat but not your username — and exactly when to use each system.</p>
+      <p class="usecase-diff">You don't have a fonts problem, you have a three-systems problem. The 3-System Model maps Markdown (messages), Unicode fonts (names), and Nitro (paid styles) to the field each one actually works in.</p>
+      <div class="usecase-example">Chat: **bold** → bold (Markdown)
+Name: paste 𝗯𝗼𝗹𝗱 (Unicode)
+@username: neither — style the display name.</div>
+      <a class="usecase-cta" href="/guide/discord-text-formatting-explained/">Discord Formatting Decoded →</a>
     </div>
   </section>
 
