@@ -3134,3 +3134,211 @@ body.dark-mode .vertical-chip {
   .ts-preview { font-size: 1.3rem; }
   .ts-actions .ts-btn { flex: 1 1 auto; text-align: center; }
 }
+
+/* ============================================================
+   Bubble Letters A–Z explorer  (category/bubble-fonts/)
+   ============================================================ */
+.bubble-az,
+.bubble-alphabet {
+  margin: 2.5rem 0;
+}
+.bubble-az-heading,
+.bubble-alphabet-head h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+.bubble-az-intro {
+  color: var(--text-secondary);
+  max-width: 60ch;
+  margin: 0 0 1.25rem;
+  line-height: 1.55;
+}
+
+/* Letter / number picker */
+.bubble-strip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.bubble-chip {
+  min-width: 2.4rem;
+  height: 2.4rem;
+  padding: 0 0.45rem;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: "Fredoka", "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.08s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.bubble-chip:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-1px);
+}
+.bubble-chip.is-active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.bubble-strip-digits .bubble-chip {
+  color: var(--text-secondary);
+}
+
+/* Selected-letter stage */
+.bubble-letter-panel {
+  margin-top: 1.25rem;
+}
+.bubble-stage {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.bubble-outline-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+.bubble-outline {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.bubble-outline.is-small {
+  width: 100%;
+}
+.bubble-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.bubble-btn {
+  flex: 1 1 auto;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.bubble-btn:hover { border-color: var(--accent-purple); }
+.bubble-btn-primary {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.bubble-btn-primary:hover { background: var(--accent-blue); border-color: var(--accent-blue); }
+
+/* Detail column: copy-paste variants + how-to-draw */
+.bubble-detail-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.7rem;
+}
+.bubble-variants {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+.bubble-variant {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, transform 0.08s ease;
+}
+.bubble-variant:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.bubble-variant-glyph {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--text-primary);
+}
+.bubble-variant-name {
+  flex: 1 1 auto;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.bubble-variant-copy {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.bubble-variant-copy.is-copied { color: var(--ts-safe); }
+
+.bubble-howto { margin-top: 1.5rem; }
+.bubble-howto-steps {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.bubble-howto-steps li { margin-bottom: 0.3rem; }
+.bubble-howto-tip {
+  margin: 0.6rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Printable alphabet grid */
+.bubble-alphabet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.bubble-alphabet-head .bubble-btn-primary { flex: 0 0 auto; }
+.bubble-alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.bubble-alpha-cell {
+  padding: 0.4rem;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.08s ease;
+}
+.bubble-alpha-cell:hover { border-color: var(--accent-purple); transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  .bubble-stage { grid-template-columns: 1fr; }
+}
+
+/* Print surface — hidden on screen, isolated when printing */
+#bubblePrintRoot { display: none; }
+.bubble-print-title { font-weight: 700; margin: 0 0 1rem; }
+.bubble-print-sheet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+.bubble-print-sheet .bubble-outline { width: 100%; }
+
+@media print {
+  body.is-printing > *:not(#bubblePrintRoot) { display: none !important; }
+  body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
+}
