@@ -2866,6 +2866,54 @@ body.dark-mode .vertical-chip {
   word-break: break-word;
 }
 
+.symbols-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Quick copy strip (ES) — símbolos y letras para copiar y pegar, above the fold
+   ========================================================================== */
+.quick-copy {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.quick-copy-block {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quick-copy-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Word-length chips (other-alphabet samples) sit alongside single glyphs */
+.glyph-copy.glyph-word {
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   Letras en otros idiomas (ES) — copyable alphabet rows reuse .abc-* layout
+   ========================================================================== */
+.abc-line.glyph-copy {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.idiomas-note {
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
 /* ── Ready-made name chips (gaming-name JTBD pages) ──────────────────────────
    Click-to-copy decorated nicknames. Tiles are auto-wired by symbol-explorer.js
    via the .symbol-tile class; styling here uses theme tokens so it follows dark
