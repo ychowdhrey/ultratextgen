@@ -60,3 +60,61 @@ These published pages pull ≥100 impressions but have no `improve_existing` opp
 | `ronaldo-emoji-combos` | 118 | 2 | 1.7% |
 
 > `emoji-combos` alone (5,948 impr, 0.7% CTR) is the single largest improvement opportunity on the whole property and currently sits outside the backlog.
+
+---
+
+## 4. Separating intent vs CTR vs ranking (added 2026-06-29)
+
+A 0% / low-CTR page can mean three different things, each with a different fix. Diagnose with **two layers**:
+
+**Layer 1 — Query-text intent (free; from this GSC export's Query column).** Classify each impression-weighted query by its words: copy-paste/tool words (`copy paste`, `symbol`, `text`, `unicode`, `emoji`, `aesthetic`, `bio`) vs other-intent words (`meaning`, `definition`, `logo`, `supported`, `what is`). This catches outright mismatches.
+
+**Layer 2 — SERP composition (the decider; your "who ranks page 1" idea).** For the head queries driving impressions, look at the *type* of domains on page 1. This both confirms intent and reveals the competitive bar. Three patterns:
+
+- **A · Tool sites dominate** → copy-paste intent confirmed *and* competitors are beatable → it's a **ranking gap** → WORK ON IT (depth, on-page SEO, internal links).
+- **B · Authority/reference sites dominate** (dev-docs, Wikipedia, Emojipedia) → intent may match but the bar is an **authority wall** → low ROI unless we have a real differentiation angle.
+- **C · Mixed / definition sites present** → the head term is partly **not** copy-paste intent → only the copy-paste sub-queries are addressable; expect a lower CTR ceiling.
+
+### Layer 1 result — query-intent fingerprint (pages ≥70 impr)
+
+`copy%` = share of impressions from copy-paste-intent queries; `other%` = meaning/logo/etc.
+
+| Page | Impr | Clicks | copy% | other% | Layer-1 read |
+|---|---:|---:|---:|---:|---|
+| `emoji-combos` | 5948 | 44 | 100% | 0% | Matched intent, converting → CTR tune |
+| `y2k-symbols` | 2755 | 57 | 100% | 0% | Matched intent, converting → CTR tune |
+| `roblox-symbols` | 2731 | 135 | 98% | 1% | Matched intent, converting → CTR tune |
+| `discord-symbols` | 2215 | 50 | 100% | 0% | Matched intent, converting → CTR tune |
+| `neymar-emoji-combos` | 1355 | 7 | 100% | 0% | Matched intent, converting → CTR tune |
+| `slash-backslash-symbols` | 414 | 0 | 99% | 1% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `html-entities` | 326 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `sad-emoji` | 188 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `greek-letter-symbols` | 166 | 0 | 98% | 2% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `flower-symbols` | 159 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `emoji-flags` | 157 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `instagram-symbols` | 146 | 3 | 90% | 5% | Matched intent, converting → CTR tune |
+| `email-symbols` | 143 | 2 | 99% | 0% | Matched intent, converting → CTR tune |
+| `cross-x-symbols` | 142 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `x-twitter-symbols` | 138 | 0 | 83% | 15% | Partly mismatched — inspect tail |
+| `coquette-symbols` | 135 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `ronaldo-emoji-combos` | 118 | 2 | 100% | 0% | Matched intent, converting → CTR tune |
+| `chess-symbols` | 93 | 1 | 100% | 0% | Matched intent, converting → CTR tune |
+| `ascii-table` | 87 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `fortnite-symbols` | 85 | 4 | 100% | 0% | Matched intent, converting → CTR tune |
+| `dash-hyphen-symbols` | 74 | 0 | 99% | 1% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+| `bow-ribbon-symbols` | 72 | 0 | 100% | 0% | Matched intent, 0 clicks → rank/CTR (needs Layer 2) |
+
+> Layer 1 alone can't split **ranking** from **CTR** — that needs each query's *average position*, which this export lacks. Re-export the same GSC report with the **Average Position** column to bucket mechanically: pos 1–8 + low CTR = snippet/title problem; pos 9–30 = ranking problem (then Layer 2 says if it's winnable).
+
+### Layer 2 result — SERP samples (Jun 2026)
+
+Four pages that look identical in GSC (~135–414 impr, 0% CTR) split cleanly once you read the SERP:
+
+| Query | Page-1 domain mix | Pattern | Verdict |
+|---|---|---|---|
+| `coquette symbols` | emojicombos, emojidb, aestheticcombos, symbolcombos, Pinterest | A · tool sites | **Winnable ranking fix — work on it** |
+| `flag emoji` | Emojipedia, EmojiTerra, Flagpedia, iEmoji | B · emoji authorities | Copy-paste intent, but authority wall — medium-hard |
+| `html entities` | W3Schools, MDN, GeeksforGeeks, php.net, Codecademy | B · dev-doc authorities | Developer intent + authority wall — **deprioritize** |
+| `slash symbol` | Wikipedia, byjus, testbook, WMU + emojicombos, symbolsdb | C · mixed/definition | Head term half grammar-definition — target copy-paste sub-queries only, low ceiling |
+
+**Takeaway for the top-20:** most of the 0%-CTR cluster is matched copy-paste intent (Layer 1 ≥98% copy), so the problem is overwhelmingly **ranking**, not intent. Prioritise the Pattern-A pages (tool-site SERPs we can beat — e.g. `coquette-symbols`, `bow-ribbon-symbols`, `flower-symbols`); treat dev/reference-authority pages (`html-entities`, `ascii-table`, `alt-codes`) as low-ROI; and for mixed-intent head terms (`slash symbol`, `greek letters`) write for the copy-paste sub-queries rather than the ambiguous head.
