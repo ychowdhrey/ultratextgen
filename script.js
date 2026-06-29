@@ -235,6 +235,14 @@ const decorations = window.UTG_DECORATIONS || {
   const SCOPE_VALUES = ["whole", "first-line"];
   let currentScope = loadScopePref();
 
+  // Format marks — optional combining underline / strikethrough layered on top
+  // of whatever style is generated. Opt-in per page via window.UTG_FORMAT_MARKS
+  // so the control only surfaces where the job calls for it (e.g. the bold
+  // italic page, where users explicitly search "bold italic underline").
+  // Persisted per device so the choice survives reloads.
+  const FORMAT_KEY = "utg_format_marks";
+  let formatMarks = loadFormatMarks();
+
   /* ===================
      ELEMENTS
      =================== */
@@ -292,6 +300,26 @@ const decorations = window.UTG_DECORATIONS || {
     }
   }
 
+  function loadFormatMarks() {
+    const fallback = { underline: false, strike: false };
+    try {
+      const raw = localStorage.getItem(FORMAT_KEY);
+      const parsed = raw ? JSON.parse(raw) : null;
+      if (!parsed || typeof parsed !== "object") return fallback;
+      return { underline: !!parsed.underline, strike: !!parsed.strike };
+    } catch (err) {
+      return fallback;
+    }
+  }
+
+  function persistFormatMarks() {
+    try {
+      localStorage.setItem(FORMAT_KEY, JSON.stringify(formatMarks));
+    } catch (err) {
+      // Storage may be unavailable — fail silently
+    }
+  }
+
   function isSaved(name) {
     return savedStyles.indexOf(name) !== -1;
   }
@@ -320,6 +348,18 @@ const decorations = window.UTG_DECORATIONS || {
   function applyDecoration(text) {
     if (!selectedDecoration || !text) return text;
     return selectedDecoration.prefix + text + selectedDecoration.suffix;
+  }
+
+  // Layer combining underline (U+0332) and/or strikethrough (U+0336) onto every
+  // rendered glyph. Combining marks attach to the preceding base character, so
+  // we iterate by code point — the spread operator keeps astral chars (e.g. the
+  // bold-italic 𝘼) intact. Newlines are skipped; spaces are kept so the line
+  // runs continuously, matching what people expect from a real underline.
+  // No toggles active → returns the text untouched, so other pages are unaffected.
+  function applyFormatMarks(text) {
+    if (!text || (!formatMarks.underline && !formatMarks.strike)) return text;
+    const marks = (formatMarks.strike ? "\u0336" : "") + (formatMarks.underline ? "\u0332" : "");
+    return [...text].map((ch) => (ch === "\n" ? ch : ch + marks)).join("");
   }
 
   // Render input through a style, honoring the current emphasis scope.
@@ -712,6 +752,61 @@ const decorations = window.UTG_DECORATIONS || {
     return control;
   }
 
+  // Lazily inject the "Add formatting" control (underline / strikethrough)
+  // directly above the results grid. Opt-in per page via window.UTG_FORMAT_MARKS
+  // so it only appears where the job calls for it — searchers explicitly want
+  // "bold italic underline" / "bold italic strikethrough", a layer no
+  // competitor generator serves cleanly. The toggles stack on top of whichever
+  // style is generated, so every card in the grid gains the formatting at once.
+  function ensureFormatControl() {
+    if (!window.UTG_FORMAT_MARKS) return null;
+    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE) return null;
+    if (!el.resultsGrid) return null;
+
+    let control = $("#formatControl");
+    if (control) return control;
+
+    const host = el.resultsGrid.parentElement;
+    if (!host) return null;
+
+    control = document.createElement("div");
+    control.className = "format-control";
+    control.id = "formatControl";
+    control.innerHTML = `
+      <span class="format-control-label">Add formatting</span>
+      <div class="format-chips" role="group" aria-label="Layer underline or strikethrough on every style">
+        <button class="format-chip${formatMarks.underline ? " active" : ""}" type="button" data-format="underline" aria-pressed="${formatMarks.underline}"><span class="format-chip-demo">U̲n̲d̲e̲r̲l̲i̲n̲e̲</span></button>
+        <button class="format-chip${formatMarks.strike ? " active" : ""}" type="button" data-format="strike" aria-pressed="${formatMarks.strike}"><span class="format-chip-demo">S̶t̶r̶i̶k̶e̶</span></button>
+      </div>
+    `;
+    // Sit alongside the scope control if present, otherwise straight above the grid.
+    const scopeControl = $("#scopeControl");
+    if (scopeControl && scopeControl.parentElement === host) {
+      host.insertBefore(control, scopeControl.nextSibling);
+    } else {
+      host.insertBefore(control, el.resultsGrid);
+    }
+
+    $$(".format-chip", control).forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const key = chip.getAttribute("data-format");
+        if (key !== "underline" && key !== "strike") return;
+        formatMarks[key] = !formatMarks[key];
+        persistFormatMarks();
+        chip.classList.toggle("active", formatMarks[key]);
+        chip.setAttribute("aria-pressed", String(formatMarks[key]));
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "set_format_mark", mark: key, on: formatMarks[key] });
+
+        renderSavedStyles();
+        renderResults();
+      });
+    });
+
+    return control;
+  }
+
   /* ===================
      RENDER: Saved styles
      =================== */
@@ -784,7 +879,7 @@ const decorations = window.UTG_DECORATIONS || {
       const style = stylesRegistry[name];
       let converted = "";
       if (inputText) {
-        converted = applyScope(inputText, style);
+        converted = applyFormatMarks(applyScope(inputText, style));
       }
       const decorated = converted ? applyDecoration(converted) : "";
       grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
@@ -844,7 +939,7 @@ const decorations = window.UTG_DECORATIONS || {
     filtered.forEach(([name, style]) => {
       let converted = "";
       if (inputText) {
-        converted = applyScope(inputText, style);
+        converted = applyFormatMarks(applyScope(inputText, style));
       }
 
       const decorated = converted ? applyDecoration(converted) : "";
@@ -1040,6 +1135,7 @@ document.addEventListener("copy", () => {
 
     renderDecorations();
     ensureScopeControl();
+    ensureFormatControl();
     renderSavedStyles();
 
     // Show skeleton placeholders while fonts.json loads
