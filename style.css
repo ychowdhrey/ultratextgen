@@ -428,6 +428,70 @@
       color: white;
     }
 
+    /* Scope control — "Apply style to" (whole text / first line only) */
+    .scope-control {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 4px 0 16px;
+    }
+
+    .scope-control-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .scope-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .scope-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 50px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-white);
+      color: var(--text-secondary);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .scope-chip:hover {
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      background: rgba(139, 92, 246, 0.05);
+    }
+
+    .scope-chip.active {
+      background: var(--accent-purple);
+      border-color: var(--accent-purple);
+      color: #fff;
+    }
+
+    .scope-chip-tag {
+      font-size: 0.625rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 6px;
+      border-radius: 50px;
+      background: rgba(139, 92, 246, 0.12);
+      color: var(--accent-purple);
+    }
+
+    .scope-chip.active .scope-chip-tag {
+      background: rgba(255, 255, 255, 0.22);
+      color: #fff;
+    }
+
     /* Results Grid */
     .results-grid {
       display: flex;

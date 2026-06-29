@@ -225,6 +225,16 @@ const decorations = window.UTG_DECORATIONS || {
   const SAVED_KEY = "utg_saved_styles";
   let savedStyles = loadSavedStyles();
 
+  // Emphasis scope — how much of the input gets styled. Persisted per device.
+  //   'whole'      → style the entire input (default; best for bios/usernames)
+  //   'first-line' → style only the first line, leave the rest plain text.
+  //                  This is the accessibility-friendly pattern for social
+  //                  posts: the hook stands out while the body stays plain
+  //                  (readable by search and screen readers).
+  const SCOPE_KEY = "utg_scope_pref";
+  const SCOPE_VALUES = ["whole", "first-line"];
+  let currentScope = loadScopePref();
+
   /* ===================
      ELEMENTS
      =================== */
@@ -265,6 +275,23 @@ const decorations = window.UTG_DECORATIONS || {
     }
   }
 
+  function loadScopePref() {
+    try {
+      const saved = localStorage.getItem(SCOPE_KEY);
+      return SCOPE_VALUES.indexOf(saved) !== -1 ? saved : "whole";
+    } catch (err) {
+      return "whole";
+    }
+  }
+
+  function persistScopePref() {
+    try {
+      localStorage.setItem(SCOPE_KEY, currentScope);
+    } catch (err) {
+      // Storage may be unavailable — fail silently
+    }
+  }
+
   function isSaved(name) {
     return savedStyles.indexOf(name) !== -1;
   }
@@ -293,6 +320,23 @@ const decorations = window.UTG_DECORATIONS || {
   function applyDecoration(text) {
     if (!selectedDecoration || !text) return text;
     return selectedDecoration.prefix + text + selectedDecoration.suffix;
+  }
+
+  // Render input through a style, honoring the current emphasis scope.
+  // 'first-line' styles only the first line and leaves the remaining lines as
+  // plain text — the recommended pattern for social posts (the hook pops while
+  // the body stays searchable and screen-reader friendly). Single-line input
+  // falls back to styling the whole thing.
+  function applyScope(text, style) {
+    if (!text || !Render || typeof Render.renderAny !== "function") return "";
+    if (currentScope === "first-line") {
+      const nlIndex = text.indexOf("\n");
+      if (nlIndex === -1) return Render.renderAny(text, style);
+      const firstLine = text.slice(0, nlIndex);
+      const rest = text.slice(nlIndex); // original newline(s) + body, untouched
+      return Render.renderAny(firstLine, style) + rest;
+    }
+    return Render.renderAny(text, style);
   }
 
    function isStyleInFamily(style, familyKey) {
@@ -621,6 +665,54 @@ const decorations = window.UTG_DECORATIONS || {
   }
 
   /* ===================
+     RENDER: Scope control
+     =================== */
+  // Lazily inject the "Apply style to" control row directly above the results
+  // grid. Injected from JS so it appears on every generator page without
+  // editing each HTML file (skipped on the dedicated vertical/zalgo pages,
+  // which run their own controllers).
+  function ensureScopeControl() {
+    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE) return null;
+    if (!el.resultsGrid) return null;
+
+    let control = $("#scopeControl");
+    if (control) return control;
+
+    const host = el.resultsGrid.parentElement;
+    if (!host) return null;
+
+    control = document.createElement("div");
+    control.className = "scope-control";
+    control.id = "scopeControl";
+    control.innerHTML = `
+      <span class="scope-control-label">Apply style to</span>
+      <div class="scope-chips" role="group" aria-label="Choose how much text to style">
+        <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole">Whole text</button>
+        <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line">First line only <span class="scope-chip-tag">for posts</span></button>
+      </div>
+    `;
+    host.insertBefore(control, el.resultsGrid);
+
+    $$(".scope-chip", control).forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const scope = chip.getAttribute("data-scope");
+        if (!scope || scope === currentScope || SCOPE_VALUES.indexOf(scope) === -1) return;
+        currentScope = scope;
+        persistScopePref();
+        $$(".scope-chip", control).forEach((c) => c.classList.toggle("active", c === chip));
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "set_scope", scope: currentScope });
+
+        renderSavedStyles();
+        renderResults();
+      });
+    });
+
+    return control;
+  }
+
+  /* ===================
      RENDER: Saved styles
      =================== */
   // Lazily build the "Your saved styles" section above the results grid.
@@ -691,8 +783,8 @@ const decorations = window.UTG_DECORATIONS || {
     valid.forEach((name) => {
       const style = stylesRegistry[name];
       let converted = "";
-      if (inputText && Render && typeof Render.renderAny === "function") {
-        converted = Render.renderAny(inputText, style);
+      if (inputText) {
+        converted = applyScope(inputText, style);
       }
       const decorated = converted ? applyDecoration(converted) : "";
       grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
@@ -751,8 +843,8 @@ const decorations = window.UTG_DECORATIONS || {
 
     filtered.forEach(([name, style]) => {
       let converted = "";
-      if (inputText && Render && typeof Render.renderAny === "function") {
-        converted = Render.renderAny(inputText, style);
+      if (inputText) {
+        converted = applyScope(inputText, style);
       }
 
       const decorated = converted ? applyDecoration(converted) : "";
@@ -947,6 +1039,7 @@ document.addEventListener("copy", () => {
     }
 
     renderDecorations();
+    ensureScopeControl();
     renderSavedStyles();
 
     // Show skeleton placeholders while fonts.json loads
