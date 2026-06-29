@@ -121,10 +121,12 @@ Pages contextuelles conçues autour d'objectifs utilisateurs spécifiques, avec 
 
 - https://ultratextgen.com/usecase/before-after-emoji/
 - https://ultratextgen.com/usecase/bio-font/
+- https://ultratextgen.com/usecase/clan-tag-generator/
 - https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
 - https://ultratextgen.com/usecase/football-font/
 - https://ultratextgen.com/usecase/linkedin-headline/
+- https://ultratextgen.com/usecase/nickname-generator/
 - https://ultratextgen.com/usecase/text-to-emoji/
 - https://ultratextgen.com/usecase/vertical-text/
 - https://ultratextgen.com/usecase/zalgo-text/
@@ -138,12 +140,16 @@ Ces ressources explorent comment la typographie Unicode encode le ton, l'autorit
 <!-- START_GUIDES -->
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
 - https://ultratextgen.com/guide/comments-that-stand-out/
+- https://ultratextgen.com/guide/discord-text-formatting-explained/
+- https://ultratextgen.com/guide/fancy-fonts-accessibility-guide/
+- https://ultratextgen.com/guide/font-personality-and-brand/
 - https://ultratextgen.com/guide/linkedin-comments-guide/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
 - https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
 - https://ultratextgen.com/guide/vertical-text-guide/
+- https://ultratextgen.com/guide/why-fonts-show-as-boxes/
 <!-- END_GUIDES -->
 
 ## Structure du Projet
