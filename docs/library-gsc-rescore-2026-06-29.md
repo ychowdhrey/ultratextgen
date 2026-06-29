@@ -118,3 +118,49 @@ Four pages that look identical in GSC (~135–414 impr, 0% CTR) split cleanly on
 | `slash symbol` | Wikipedia, byjus, testbook, WMU + emojicombos, symbolsdb | C · mixed/definition | Head term half grammar-definition — target copy-paste sub-queries only, low ceiling |
 
 **Takeaway for the top-20:** most of the 0%-CTR cluster is matched copy-paste intent (Layer 1 ≥98% copy), so the problem is overwhelmingly **ranking**, not intent. Prioritise the Pattern-A pages (tool-site SERPs we can beat — e.g. `coquette-symbols`, `bow-ribbon-symbols`, `flower-symbols`); treat dev/reference-authority pages (`html-entities`, `ascii-table`, `alt-codes`) as low-ROI; and for mixed-intent head terms (`slash symbol`, `greek letters`) write for the copy-paste sub-queries rather than the ambiguous head.
+
+---
+
+## 5. Position-resolved diagnosis (added 2026-06-29, *supersedes the §2 ranking*)
+
+With the **Average Position** column added (`Query___Position___29th_June.csv`), ranking and CTR separate mechanically. This **overturns part of §2**: several pages I'd flagged as low-CTR are actually on page 1 and just under-clicking (snippet fixes), while others are page 3–6 where 0% CTR is *expected* and no title tweak helps until they rank.
+
+**Rule:** impression-weighted avg position per page → `copy% < 60` = **INTENT**; else `pos > 10.5` (page 2+) = **RANKING**; else on page 1 but actual clicks < 50% of position-expected = **CTR/SNIPPET**; else OK. (`gsc_avg_position` is now a column in `data/library_opportunities.csv`.)
+
+Bucket counts (pages ≥20 impr): **38 RANKING · 8 CTR/SNIPPET · 8 OK · 1 INTENT.** Ranking is the most common issue, but the snippet pages hold the biggest *absolute* click upside because they already sit on page 1.
+
+### Tier 1 — CTR / snippet quick wins (already on page 1, under-clicking)
+
+Fix = rewrite `<title>` + meta description (and add/repair rich-result markup). High confidence, immediate, no ranking work needed. `+clk*` = extra clicks/3mo if CTR reached position-normal.
+
+| Page | Impr | Clicks | CTR | Avg pos | +clk* (3mo) | In backlog? |
+|---|---:|---:|---:|---:|---:|---|
+| `emoji-combos` | 5,948 | 44 | 0.7% | 7.7 | **+157** | no — add row |
+| `y2k-symbols` | 2,755 | 57 | 2.1% | 6.3 | +65 | yes (OPP-0137) |
+| `discord-symbols` | 2,215 | 50 | 2.3% | 6.5 | +59 | yes (OPP-0064) |
+| `neymar-emoji-combos` | 1,355 | 7 | 0.5% | 7.6 | +43 | no — add row |
+| `coquette-symbols` | 135 | 0 | 0.0% | 7.3 | +5 | yes (OPP-0134/0240) |
+| `arrow-symbols` | 55 | 0 | 0.0% | 6.9 | +4 | yes (OPP-0023/0024) |
+| `ronaldo-emoji-combos` | 118 | 2 | 1.7% | 6.9 | +3 | no — add row |
+| `argentina-emoji-combos` | 41 | 0 | 0.0% | 7.6 | +1 | no — add row |
+
+> **Highest-ROI action on the whole property:** rewrite the title/meta on `emoji-combos` and its family (`neymar`/`ronaldo`/`argentina-emoji-combos`) — page-1 positions, ~200 missed clicks/quarter combined, and none of them are in the improve-existing backlog yet.
+
+### Tier 2 — Ranking builds (page 2+; need depth / internal links / authority)
+
+0% CTR here is structural (you can't be clicked from page 3). Fix = content depth + internal links; then re-check. Apply the §4 Layer-2 SERP test to sort *winnable* from *authority walls* before investing.
+
+| Page | Impr | Clicks | Avg pos | SERP read (where sampled) |
+|---|---:|---:|---:|---|
+| `slash-backslash-symbols` | 414 | 0 | 32.8 | §4-C mixed (Wikipedia+grammar) — target copy-paste sub-queries |
+| `html-entities` | 326 | 0 | 57.4 | §4-B dev-doc wall (W3Schools/MDN) — **deprioritize** |
+| `sad-emoji` | 188 | 0 | 14.6 | closest to page 1 — combos/kaomoji family; sample SERP |
+| `greek-letter-symbols` | 166 | 0 | 50.9 | heavy competition (Wikipedia/RapidTables); sample |
+| `flower-symbols` | 159 | 0 | 43.9 | likely tool-site SERP (winnable); sample |
+| `emoji-flags` | 157 | 0 | 58.1 | §4-B Emojipedia wall — low ROI |
+| `cross-x-symbols` | 142 | 0 | 11.7 | just off page 1 — nearest ranking win |
+| `email-symbols` | 143 | 2 | 25.0 | needs_review row; sample SERP |
+| `ascii-table` | 87 | 0 | 66.6 | reference-authority wall — low ROI |
+| `fortnite-symbols` | 85 | 4 | 13.4 | page-2 top, gaming intent — winnable |
+
+**Net recommendation:** do all of Tier 1 first (fast title/meta rewrites, biggest absolute gain), starting with the `emoji-combos` family; in parallel add backlog rows for the four combos pages that are missing them. Then attack Tier 2 in two passes — first the near-page-1 pages (`cross-x-symbols` pos 11.7, `fortnite` 13.4, `sad-emoji` 14.6), then SERP-test the deeper ones and skip the authority walls (`html-entities`, `emoji-flags`, `ascii-table`).
