@@ -129,6 +129,20 @@ const textStyles = {
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
+/* Double-struck / "blackboard bold" — reads as an outline bold weight.
+   C, H, N, P, Q, R, Z use letterlike-symbol code points (no math variant). */
+'Ultra Double-Struck': {
+  upper: '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ',
+  lower: '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫',
+  nums: '𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡',
+  type: 'map',
+  category: 'bold',
+  familySlug: ['bold'],
+  groupSlug: 'bold',
+  slug: 'ultra-double-struck',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+},
+
 /* ITALIC */
 'Ultra Italic': {
   upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡',
@@ -247,7 +261,8 @@ const textStyles = {
     nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
     type: 'map',
     category: 'cursive',
-    familySlug: 'cursive',
+    // Cross-listed onto the bold page: it is a bold-weight script.
+    familySlug: ['cursive', 'bold'],
     groupSlug: 'script',
     slug: 'ultra-script-bold',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
@@ -335,7 +350,8 @@ const textStyles = {
     nums: '0123456789',
     type: 'map',
     category: 'gothic',
-    familySlug: 'gothic',
+    // Cross-listed onto the bold page: it is a bold-weight blackletter.
+    familySlug: ['gothic', 'bold'],
     groupSlug: 'fraktur',
     slug: 'ultra-gothic-bold',
     platforms: ['all', 'instagram', 'x', 'discord']
