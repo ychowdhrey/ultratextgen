@@ -852,115 +852,107 @@ const textStyles = {
 
 /* ================================
    CLASSIFIED / REDACTED STYLES
+   These use type:'redact' — they black out the USER'S OWN text and preserve
+   word length, so the redaction traces the shape of the sentence (the way
+   real redacted documents read). See renderRedact() in renderer.js.
 ================================ */
 
-'Ultra Classified Blocks': {
-  pattern: '███ ███████ ████',
-  type: 'pattern',
+// --- Full-text blackout (length-preserving) -------------------------------
+'Ultra Redacted': {
+  type: 'redact',
+  redactChar: '█',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-classified-blocks'
+  slug: 'ultra-redacted-blocks'
 },
 
-'Ultra Black Squares': {
-  pattern: '⬛⬛⬛',
-  type: 'pattern',
+'Ultra Redacted Heavy Shade': {
+  type: 'redact',
+  redactChar: '▓',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-black-squares'
+  slug: 'ultra-redacted-shade'
 },
 
-'Ultra White Squares': {
-  pattern: '⬜⬜⬜',
-  type: 'pattern',
+'Ultra Redacted Light Shade': {
+  type: 'redact',
+  redactChar: '▒',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-white-squares'
+  slug: 'ultra-redacted-light'
 },
 
-'Ultra Solid Squares': {
-  pattern: '■■■■',
-  type: 'pattern',
+'Ultra Redacted Squares': {
+  type: 'redact',
+  redactChar: '■',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-solid-squares'
+  slug: 'ultra-redacted-squares'
 },
 
-'Ultra Spaced Blocks': {
-  pattern: '█ █ █ █ █ █',
-  type: 'pattern',
+'Ultra Redacted Emoji': {
+  type: 'redact',
+  redactChar: '⬛',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-spaced-blocks'
+  slug: 'ultra-redacted-emoji'
 },
 
-'Ultra Medium Shade': {
-  pattern: '▓▓▓',
-  type: 'pattern',
+'Ultra White Redacted': {
+  type: 'redact',
+  redactChar: '⬜',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-medium-shade'
+  slug: 'ultra-white-redacted'
 },
 
-'Ultra Light Shade': {
-  pattern: '▒▒▒',
-  type: 'pattern',
+// --- Selective / partial redaction ----------------------------------------
+'Ultra Selective Redact': {
+  type: 'redact',
+  redactChar: '█',
+  redactMode: 'selective',
+  note: 'Wrap the words to hide in [[double brackets]] — only those get blacked out.',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-light-shade'
+  slug: 'ultra-selective-redact'
 },
 
-'Ultra Top Blocks': {
-  pattern: '▀▀▀',
-  type: 'pattern',
+'Ultra Alternate Redact': {
+  type: 'redact',
+  redactChar: '█',
+  redactMode: 'alternate',
+  note: 'Redacts every other word, leaving the rest readable.',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-top-blocks'
+  slug: 'ultra-alternate-redact'
 },
 
-'Ultra Bottom Blocks': {
-  pattern: '▄▄▄',
-  type: 'pattern',
+// --- Typewriter document base (the look of real classified paperwork) -----
+'Ultra Typewriter Document': {
+  upper: '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉',
+  lower: '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣',
+  nums:  '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿',
+  type: 'map',
+  note: 'Monospace typewriter look — pair with a redaction stamp for the full document feel.',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-bottom-blocks'
+  slug: 'ultra-typewriter'
 },
-
-'Ultra Alternating Squares': {
-  pattern: '■ □ ■ □ ■',
-  type: 'pattern',
-  category: 'classified',
-  familySlug: ['classified'],
-  groupSlug: 'classified',
-  slug: 'ultra-alternating-squares'
-},
-
-'Ultra Wave Blocks': {
-  pattern: '▀▄▀▄▀▄',
-  type: 'pattern',
-  category: 'classified',
-  familySlug: ['classified'],
-  groupSlug: 'classified',
-  slug: 'ultra-wave-blocks'
-},
-
-'Ultra Split Blocks': {
-  pattern: '▄▄▀▀▄▄',
-  type: 'pattern',
-  category: 'classified',
-  familySlug: ['classified'],
-  groupSlug: 'classified',
-  slug: 'ultra-split-blocks'
-},   
 };
 
 /* -----------------------------

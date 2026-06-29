@@ -3406,3 +3406,57 @@ body.dark-mode .vertical-chip {
   body.is-printing > *:not(#bubblePrintRoot) { display: none !important; }
   body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
 }
+
+/* =====================================================
+   Censor bars & boxes (classified page quick-copy palette)
+   ===================================================== */
+.censor-bars {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+.censor-bars-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.censor-bar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.censor-bar-chip {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.censor-bar-chip:hover {
+  border-color: var(--accent-purple);
+}
+
+.censor-bar-chip:active {
+  transform: translateY(1px);
+}
+
+.censor-bar-chip.copied {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+.censor-bar-chip.copied::after {
+  content: " ✓";
+}

@@ -172,18 +172,15 @@
       "label": "Classified / Redacted",
       "icon": "█",
       "fonts": [
-        "Ultra Classified Blocks",
-        "Ultra Black Squares",
-        "Ultra White Squares",
-        "Ultra Solid Squares",
-        "Ultra Spaced Blocks",
-        "Ultra Medium Shade",
-        "Ultra Light Shade",
-        "Ultra Top Blocks",
-        "Ultra Bottom Blocks",
-        "Ultra Alternating Squares",
-        "Ultra Wave Blocks",
-        "Ultra Split Blocks"
+        "Ultra Redacted",
+        "Ultra Redacted Heavy Shade",
+        "Ultra Redacted Light Shade",
+        "Ultra Redacted Squares",
+        "Ultra Redacted Emoji",
+        "Ultra White Redacted",
+        "Ultra Selective Redact",
+        "Ultra Alternate Redact",
+        "Ultra Typewriter Document"
       ]
     }
   }

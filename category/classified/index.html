@@ -12,11 +12,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Classified Text Generator | UltraTextGen</title>
-  <meta name="description" content="Generate classified and redacted Unicode symbols like ███, ⬛⬛⬛, ▓▓▓, and more. Perfect for censored text effects, mystery posts, and dramatic reveals. Copy and paste instantly.">
+  <title>Redacted Text Generator — Blacked Out &amp; Classified Text | UltraTextGen</title>
+  <meta name="description" content="Black out your own text with a redacted / classified look. Type a sentence and it's censored character-for-character (length preserved), redact only the words you choose, or grab a ready-made censor bar. Copy and paste instantly.">
   <link rel="canonical" href="https://ultratextgen.com/category/classified/">
-  <meta property="og:title" content="Classified Text Generator | UltraTextGen">
-  <meta property="og:description" content="Generate classified and redacted Unicode symbols like ███, ⬛⬛⬛, ▓▓▓, and more. Perfect for censored text effects, mystery posts, and dramatic reveals. Copy and paste instantly.">
+  <meta property="og:title" content="Redacted Text Generator — Blacked Out &amp; Classified Text | UltraTextGen">
+  <meta property="og:description" content="Black out your own text with a redacted / classified look. Type a sentence and it's censored character-for-character, redact only the words you choose, or grab a ready-made censor bar. Copy and paste instantly.">
   <meta property="og:url" content="https://ultratextgen.com/category/classified/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/category-classified.png">
@@ -24,8 +24,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Classified Text Generator | UltraTextGen">
-  <meta name="twitter:description" content="Generate classified and redacted Unicode symbols like ███, ⬛⬛⬛, ▓▓▓, and more. Perfect for censored text effects, mystery posts, and dramatic reveals. Copy and paste instantly.">
+  <meta name="twitter:title" content="Redacted Text Generator — Blacked Out &amp; Classified Text | UltraTextGen">
+  <meta name="twitter:description" content="Black out your own text with a redacted / classified look. Type a sentence and it's censored character-for-character, redact only the words you choose, or grab a ready-made censor bar. Copy and paste instantly.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/category-classified.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -66,6 +66,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Some devices, apps, or fonts may not fully support certain Unicode symbols. If a symbol renders incorrectly, try a different symbol set (like █ or ■), update your OS, or test on a different device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the redacted text generator keep my text length, and can I redact only some words?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The generator blacks out your text character-for-character, so each word keeps its original length — 'The agent arrived at 9 PM' becomes 'The █████ arrived at █ ██'. To hide only specific words, use the Selective style and wrap those words in [[double brackets]]; everything outside the brackets stays readable. The Alternate style redacts every other word automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can redacted text be uncovered, unredacted, or decoded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Unicode block redaction permanently replaces the original letters, so there is nothing hidden underneath to highlight, decode, or unredact. This differs from image redaction (a black box over a screenshot), which can sometimes be reversed if the original pixels remain."
         }
       }
     ]
@@ -113,7 +129,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Generate classified and redacted Unicode symbols like ███, ⬛⬛⬛, ▓▓▓, and more. Perfect for censored text effects, mystery posts, and dramatic reveals. Copy and paste instantly.",
+  "description": "Black out your own text with a redacted / classified look. Type a sentence and it is censored character-for-character with word length preserved, redact only the words you choose, or grab a ready-made censor bar. Copy and paste instantly.",
   "browserRequirements": "Requires JavaScript. Works in all modern browsers."
 }
 </script>
@@ -142,7 +158,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-card">
-        <h1 class="hero-headline">Classified Text Generator</h1>
+        <h1 class="hero-headline">Redacted &amp; Classified Text Generator</h1>
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
@@ -176,6 +192,24 @@
 
   <!-- Main Content -->
   <main class="container">
+
+    <!-- Ready-to-copy censor bars & boxes (no typing needed) -->
+    <section class="censor-bars" aria-label="Ready-to-copy censor bars and boxes">
+      <p class="censor-bars-label">Just need a bar? Click any censor bar or box to copy it.</p>
+      <div class="censor-bar-grid" id="censorBarGrid">
+        <button type="button" class="censor-bar-chip" data-bar="███">███</button>
+        <button type="button" class="censor-bar-chip" data-bar="█████">█████</button>
+        <button type="button" class="censor-bar-chip" data-bar="████████">████████</button>
+        <button type="button" class="censor-bar-chip" data-bar="▓▓▓▓">▓▓▓▓</button>
+        <button type="button" class="censor-bar-chip" data-bar="▒▒▒▒">▒▒▒▒</button>
+        <button type="button" class="censor-bar-chip" data-bar="■■■">■■■</button>
+        <button type="button" class="censor-bar-chip" data-bar="⬛⬛⬛">⬛⬛⬛</button>
+        <button type="button" class="censor-bar-chip" data-bar="⬜⬜⬜">⬜⬜⬜</button>
+        <button type="button" class="censor-bar-chip" data-bar="▬▬▬▬">▬▬▬▬</button>
+        <button type="button" class="censor-bar-chip" data-bar="▮▮▮">▮▮▮</button>
+      </div>
+    </section>
+
     <!-- Custom Style Tabs (bio-font specific) -->
     <div class="category-section">
       <div class="category-tabs" id="categoryTabs" style="display: none;">
@@ -185,10 +219,10 @@
   <div class="category-tabs" id="moodTabs">
     <button class="category-tab active" data-mood="all">All</button>
     <button class="category-tab" data-mood="redaction">🟥 Redaction</button>
-    <button class="category-tab" data-mood="blocks">▦ Blocks</button>
-    <button class="category-tab" data-mood="squares">◼️ Squares</button>
-    <button class="category-tab" data-mood="shades">▒ Shades</button>
-    <button class="category-tab" data-mood="minimal">🎯 Minimal</button>
+    <button class="category-tab" data-mood="selective">🎯 Selective</button>
+    <button class="category-tab" data-mood="emoji">⬛ Emoji</button>
+    <button class="category-tab" data-mood="white">⬜ White</button>
+    <button class="category-tab" data-mood="document">⌨️ Document</button>
   </div>
 
     <!-- Results -->
@@ -271,7 +305,7 @@
     This includes blackout bars (████), pixelated overlays, shade blocks (▒▒▒), and square fills (■■■).
     <br><br>
     Censored fonts are popular for creating joke spoilers, fake "leaked" documents, and dramatic social media posts.
-    The <a href="https://ultratextgen.com/category/classified/">Classified Text Generator</a> offers multiple censored styles — including Redaction, Blocks, Squares, Shades, and Minimal — so you can pick the look that fits your content.
+    The <a href="https://ultratextgen.com/category/classified/">Classified Text Generator</a> offers multiple censored styles — full blocks, heavy and light shades, squares, emoji blocks, white bars, selective (redact only chosen words), and a typewriter document look — so you can pick the look that fits your content.
   </div>
 </div>
 
@@ -287,15 +321,35 @@
     </svg>
   </button>
   <div class="faq-answer">
-    A redacted font generator takes your normal text and replaces each character with Unicode block symbols that look like blacked-out content.
+    A redacted font generator takes your normal text and replaces each character with Unicode block symbols that look like blacked-out content. UltraTextGen redacts <em>your own words</em> and preserves the length of each one, so the blackout traces the shape of your sentence — just like a real redacted document.
     <br><br>
-    <strong>How to use UltraTextGen's Classified Text Generator</strong><br>
+    <strong>How to use UltraTextGen's Redacted Text Generator</strong><br>
     1. Type or paste your text into the input box (up to 500 characters).<br>
-    2. Browse the generated styles — Redaction (█), Blocks (▦), Squares (◼), Shades (▒), or Minimal.<br>
-    3. Optionally add decorators like 🗂️ Stamps, 📁 Dossier Frames, or 🔒 Access tags for extra effect.<br>
-    4. Click to copy and paste the result into any app, message, or post.
+    2. Browse the generated styles — full blocks (█), heavy/light shades (▓ ▒), squares (■), emoji blocks (⬛), white bars (⬜), or the typewriter document look.<br>
+    3. Want to hide only certain words? Use the 🎯 Selective style and wrap the secret words in [[double brackets]] — for example <em>The [[agent]] arrived at [[9 PM]]</em>.<br>
+    4. Just need a bar? Click any ready-made censor bar at the top to copy it instantly.<br>
+    5. Optionally add decorators like 🗂️ Stamps, 📁 Dossier Frames, or 🔒 Access tags, then copy and paste anywhere.
     <br><br>
     Because the output is Unicode text — not an image or a special font file — it works on every platform that supports standard text.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Does it keep my text length, and can I redact only some words?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes to both. The generator blacks out your text <strong>character-for-character</strong>, so each word stays the same length as the original — <em>The agent arrived at 9 PM</em> becomes <em>The █████ arrived at █ ██</em>. This is what makes it read like a genuine redacted document instead of a generic block of symbols.
+    <br><br>
+    To hide only specific words, use the <strong>🎯 Selective</strong> style and wrap those words in <code>[[double brackets]]</code>. Everything outside the brackets stays readable:
+    <br><br>
+    Input: <em>Subject [[John Doe]] was last seen at [[Site 19]]</em><br>
+    Output: <em>Subject ████ ███ was last seen at ████ ██</em>
+    <br><br>
+    Prefer an automatic pattern? The <strong>Alternate</strong> style redacts every other word — handy for teasers and SCP-style entries.
   </div>
 </div>
 
@@ -523,6 +577,22 @@
 
 <div class="faq-item">
   <button class="faq-question" type="button">
+    Can redacted text be uncovered, unredacted, or decoded?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="faq-answer">
+    No. When you redact text with Unicode blocks, the original letters are <strong>permanently replaced</strong> — they are not hidden underneath, so there is nothing to highlight, decode, or "unredact." That is exactly why it is safe for joke spoilers and privacy-friendly screenshots: once it is copied, the words are gone.
+    <br><br>
+    This is different from <em>image</em> redaction (a black box drawn over a screenshot), which can sometimes be reversed if the original pixels remain underneath.
+    <br><br>
+    For the full explanation — including how to redact properly and why blurred or pixelated text is risky — see our guide: <a href="https://ultratextgen.com/guide/how-to-uncover-redacted-text/">How to uncover redacted text (and when you can't)</a>.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
     Why do some redacted symbols show as blank boxes or missing characters?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -566,51 +636,42 @@
     window.UTG_DEFAULT_DECO_TAB = "redaction";
 
 // Style-to-font-slug mappings (classified-specific styles)
+// Every style below blacks out the user's OWN text and preserves word length.
 const STYLE_MAP = {
   "all": [
-    "ultra-classified-blocks",
-    "ultra-black-squares",
-    "ultra-white-squares",
-    "ultra-solid-squares",
-    "ultra-spaced-blocks",
-    "ultra-medium-shade",
-    "ultra-light-shade",
-    "ultra-top-blocks",
-    "ultra-bottom-blocks",
-    "ultra-alternating-squares",
-    "ultra-wave-blocks",
-    "ultra-split-blocks"
+    "ultra-redacted-blocks",
+    "ultra-redacted-shade",
+    "ultra-redacted-light",
+    "ultra-redacted-squares",
+    "ultra-selective-redact",
+    "ultra-alternate-redact",
+    "ultra-redacted-emoji",
+    "ultra-white-redacted",
+    "ultra-typewriter"
   ],
 
   "redaction": [
-    "ultra-classified-blocks",
-    "ultra-solid-squares",
-    "ultra-spaced-blocks",
-    "ultra-medium-shade",
-    "ultra-light-shade"
+    "ultra-redacted-blocks",
+    "ultra-redacted-shade",
+    "ultra-redacted-light",
+    "ultra-redacted-squares"
   ],
 
-  "blocks": [
-    "ultra-top-blocks",
-    "ultra-bottom-blocks",
-    "ultra-wave-blocks",
-    "ultra-split-blocks"
+  "selective": [
+    "ultra-selective-redact",
+    "ultra-alternate-redact"
   ],
 
-  "squares": [
-    "ultra-black-squares",
-    "ultra-white-squares",
-    "ultra-alternating-squares"
+  "emoji": [
+    "ultra-redacted-emoji"
   ],
 
-  "shades": [
-    "ultra-medium-shade",
-    "ultra-light-shade"
+  "white": [
+    "ultra-white-redacted"
   ],
 
-  "minimal": [
-    "ultra-solid-squares",
-    "ultra-spaced-blocks"
+  "document": [
+    "ultra-typewriter"
   ]
 };
   // Start with all fonts visible
@@ -728,6 +789,25 @@ const STYLE_MAP = {
           }
         });
       });
+
+      // Quick-copy for the ready-made censor bars / boxes.
+      const barGrid = document.getElementById("censorBarGrid");
+      if (barGrid) {
+        barGrid.addEventListener("click", async function (e) {
+          const chip = e.target.closest(".censor-bar-chip");
+          if (!chip) return;
+          const bar = chip.dataset.bar || chip.textContent;
+          try {
+            await navigator.clipboard.writeText(bar);
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: "copy_text", copy_method: "censor_bar" });
+            chip.classList.add("copied");
+            setTimeout(() => chip.classList.remove("copied"), 1200);
+          } catch (err) {
+            console.error("Copy failed:", err);
+          }
+        });
+      }
     });
     
   </script>
