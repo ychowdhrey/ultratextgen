@@ -65,7 +65,8 @@ ultratextgen/
 │
 ├── category/               # Category landing pages (bold, cursive, etc.)
 ├── usecase/                # Use case pages (bio, comment, etc.)
-├── guide/                  # Educational article pages
+├── guide/                  # Educational / authority articles — explore-and-learn intent
+├── answers/                # Single-question, zero-click answer pages (see "Guide vs Answer")
 ├── library/                # Symbol/emoji/emoticon/kaomoji reference libraries
 │                           #   (classify each page by presentation_class +
 │                           #    copy_patterns — see docs/emoji-combination-taxonomy.md)
@@ -75,6 +76,27 @@ ultratextgen/
     discord/ facebook/ instagram/ linkedin/ pinterest/
     snapchat/ telegram/ tiktok/ whatsapp/ x/ youtube/
 ```
+
+---
+
+## Content Types: Guide vs Answer
+
+`guide/` and `answers/` look similar (both reuse the `editorial-section` template) but
+serve **different search intents**. Pick by the dominant query before creating a page —
+misfiling weakens both the page and the cluster.
+
+| | `answers/` | `guide/` |
+|---|---|---|
+| **Intent** | Informational, **zero-click**, confusion-clearer. A sharp question with a direct answer. | Educational / thought-leadership / **authority**. Explore-and-learn; a topic explored in depth. |
+| **Typical query** | "is X safe", "how to do X", "what font does X use", "can you X" | "X explained", "the complete guide to X", branding/strategy topics |
+| **Slug** | the **question** — `is-linkedin-bold-text-safe`, `how-to-uncover-redacted-text` | the **topic** — `discord-text-formatting-explained` |
+| **Primary schema** | `QAPage` and/or `FAQPage` + `BreadcrumbList`. **No** `Article`. | `Article` (author, publisher, datePublished) + `FAQPage` + `BreadcrumbList` |
+| **Breadcrumb** | `Answers` | `Guides` |
+| **Template** | leads with a **"Short answer"** block; no Key Takeaways / related-guides | `guide-meta` pills, **Key Takeaways**, **related-guides** |
+
+Rule of thumb: if the value is "resolve one question in seconds," it's an **answer**.
+If the value is "understand a topic / build authority," it's a **guide**. A guide may
+bundle many sub-questions; an answer stays tightly scoped to one.
 
 ---
 
