@@ -61,6 +61,12 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /category/bold-fonts/alternating/             /category/bold-fonts/ 301
 /category/bold-fonts/alternating/index.html   /category/bold-fonts/ 301
 
+# Cursive/Gothic: thin/duplicate group pages folded into the parent (301)
+/category/cursive-fonts/script/               /category/cursive-fonts/ 301
+/category/cursive-fonts/script/index.html     /category/cursive-fonts/ 301
+/category/gothic-fonts/fraktur/               /category/gothic-fonts/ 301
+/category/gothic-fonts/fraktur/index.html     /category/gothic-fonts/ 301
+
 # Library: renamed/removed slug → live equivalent
 /library/linkedin-post-formatting-symbols/            /library/linkedin-symbol-library/ 301
 /library/linkedin-post-formatting-symbols/index.html  /library/linkedin-symbol-library/ 301

@@ -3407,56 +3407,144 @@ body.dark-mode .vertical-chip {
   body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
 }
 
-/* =====================================================
-   Censor bars & boxes (classified page quick-copy palette)
-   ===================================================== */
-.censor-bars {
-  margin: 0 0 1.5rem;
-  padding: 1rem 1.25rem;
-  background: var(--bg-white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-}
+/* ===========================================================
+   Bold-italic page: hero subhead, format toggles, JTBD content
+   (hero-subhead is shared with other pages; format/content
+   blocks are gated to pages that opt in via window.UTG_FORMAT_MARKS)
+   =========================================================== */
 
-.censor-bars-label {
-  margin: 0 0 0.75rem;
-  font-size: 0.9rem;
+.hero-subhead {
+  margin: 10px auto 0;
+  max-width: 540px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--text-secondary);
 }
 
-.censor-bar-grid {
+.hero-subhead strong {
+  color: var(--text-primary);
+}
+
+/* Underline / strikethrough toggle row — mirrors .scope-control */
+.format-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0 16px;
+}
+
+.format-control-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.format-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
-.censor-bar-chip {
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.2;
-  letter-spacing: 0.05em;
-  color: var(--text-primary);
-  background: var(--bg-base);
+.format-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 50px;
   border: 1px solid var(--border-light);
-  border-radius: var(--radius);
-  padding: 0.5rem 0.85rem;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.15s ease, transform 0.1s ease;
+  transition: all 0.2s;
 }
 
-.censor-bar-chip:hover {
-  border-color: var(--accent-purple);
-}
-
-.censor-bar-chip:active {
-  transform: translateY(1px);
-}
-
-.censor-bar-chip.copied {
+.format-chip:hover {
   border-color: var(--accent-purple);
   color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
 }
 
-.censor-bar-chip.copied::after {
-  content: " ✓";
+.format-chip.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+/* JTBD / SEO content section */
+.page-content {
+  max-width: 900px;
+  margin: 8px auto 0;
+  padding: 32px 24px 8px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.page-content h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 28px 0 12px;
+}
+
+.page-content h2:first-child {
+  margin-top: 0;
+}
+
+.page-content p {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.page-content code {
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 0.85em;
+}
+
+.how-to-steps,
+.variant-list {
+  margin: 0 0 12px;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.how-to-steps li,
+.variant-list li {
+  margin-bottom: 8px;
+}
+
+.page-content strong {
+  color: var(--text-primary);
+}
+
+.platform-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.platform-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-soft);
+}
+
+.platform-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.platform-card p {
+  margin: 0;
+  font-size: 0.9rem;
 }
