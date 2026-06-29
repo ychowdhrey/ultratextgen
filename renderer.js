@@ -441,7 +441,45 @@ function renderPattern(text, style) {
     return pattern;
   }).join('');
 }
-   
+
+/* -----------------------------
+   REDACT RENDERER
+   Length-preserving blackout of the user's OWN text. Each visible character
+   becomes a redact block (style.redactChar), so the redaction traces the
+   shape of the sentence — the way real classified/redacted text reads.
+
+   Modes (style.redactMode):
+     'all'        → redact every word (default)
+     'selective'  → redact only text wrapped in [[double brackets]],
+                    e.g. "The [[agent]] arrived at [[9 PM]]"
+     'alternate'  → redact every other word, leaving the rest readable
+   ----------------------------- */
+function renderRedact(text, style) {
+  if (!text) return '';
+  const ch = style.redactChar || '█';
+  const mode = style.redactMode || 'all';
+
+  // Replace each visible grapheme with the redact char; keep spaces/newlines.
+  const blackout = chunk =>
+    splitGraphemes(chunk)
+      .map(g => (g === ' ' || g === '\n' || g === '\t') ? g : ch)
+      .join('');
+
+  // Selective: only the parts inside [[ ]] get redacted; markers are removed.
+  if (mode === 'selective') {
+    return text.replace(/\[\[([\s\S]*?)\]\]/g, (m, inner) => blackout(inner));
+  }
+
+  // Word-aware modes (preserve the original whitespace between words).
+  let wordIndex = -1;
+  return text.split(/(\s+)/).map(segment => {
+    if (segment.trim() === '') return segment;
+    wordIndex += 1;
+    if (mode === 'alternate' && wordIndex % 2 === 1) return segment; // keep readable
+    return blackout(segment);
+  }).join('');
+}
+
   function renderAny(text, style) {
     // Handle function-based transforms (upside down)
     if (style.type === 'function' && style.transform) {
@@ -456,7 +494,9 @@ function renderPattern(text, style) {
       case 'procedure':
         return renderProcedure(text, style);
       case 'pattern':
-      return renderPattern(text, style); 
+      return renderPattern(text, style);
+      case 'redact':
+      return renderRedact(text, style);
       default:
         return renderMap(text, style); // fallback
     }
