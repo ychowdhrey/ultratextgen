@@ -91,9 +91,18 @@ not about the item count — it's about whether a spoke page exists:**
 
 ## 6. Worked example — kaomoji / text faces (US data, 2026-06)
 
-Demand for `[subject] kaomoji` (broad-match, US — the only market with real
-intent; MX is near-zero, ID is the *Situ Kamojing* lake place-name, and any
-"Yakuza 0" rows are the video game — all noise):
+Demand for `[subject] kaomoji` (broad-match, US — the market analysed here;
+any "Yakuza 0" rows are the video game and person-name rows are noise).
+
+> **Correction (2026-06):** an earlier draft of this section read "MX is
+> near-zero." That was true only for the *modifier* broad-match it sampled.
+> The **head term is huge outside the US** — `kaomoji` is ~165K/mo in MX and
+> ~1.4M globally (ID 201K · MX 165K · PH 135K · US 90.5K). "kaomoji" is a
+> script-identical loanword, so the English page competes in every market
+> (emojicombos' English page ranks #1 for "kaomoji" in Brazil). The lever is
+> owning the **loanword**, not translating it — native-language terms
+> (`caritas japonesas` ~1.1K, `carinhas` low thousands) are a rounding error
+> by comparison. See §7.
 
 **Emotion / aesthetic cluster (real demand):**
 `heart 480 · cute 390 · sad 260 · happy 170 · star 90 · shrug 70 · flower 50 · angel 40`
@@ -131,3 +140,52 @@ showing in a section:
    ├─ spoke page exists ..................... teaser 6–8 + "see all →"
    └─ no spoke page ........................ show everything
 ```
+
+---
+
+## 7. Built — kaomoji emotion-modifier spokes (2026-06)
+
+Re-scoped against keyword-level demand (deduped exact `[mood] kaomoji/kamoji`,
+not the inflated topic buckets) × the international multiplier (the loanword
+and its modifiers are script-identical, so each spoke also captures
+MX/BR/ID/PH). Supply was checked per mood — every shipped spoke carries
+16–23 distinct faces, clearing the thin-content gate.
+
+### Canonical ownership table
+
+| Page | Owns the intent | Status |
+|---|---|---|
+| `/library/text-faces-kaomoji/` (hub) | the **head term** — `kaomoji` / `kamoji` / `text faces` | live |
+| `/library/love-kaomoji/` | `heart / love / kiss / hug kaomoji` (~6,080 US) | **built** |
+| `/library/happy-kaomoji/` | `happy / smiling kaomoji` (~4,430 US) | **built** |
+| `/library/cat-kaomoji/` | `cat kaomoji` (~3,700 US) | **built** |
+| `/library/crying-kaomoji/` | `crying / sad kaomoji` (~2,660 US) | **built** |
+| `/library/cute-kaomoji/` | `cute kaomoji` | **built** |
+| `/library/sparkle-kaomoji/` | `sparkle / star kaomoji` (~1,690 US) | **built** |
+
+Hub keeps each mood as a **teaser section + "see all →"** linking its spoke;
+each spoke links back to the hub. Hub owns the head term, spokes own
+`[mood] kaomoji` — different queries, no self-cannibalization.
+
+**Tier 2 (not yet built):** `angry-kaomoji` (~1,040) and `shocked-kaomoji`
+(nervous/surprised, ~1,210).
+
+**Stays a section/teaser, not a page:** dog + other animals (demand exists at
+`dog kaomoji` 590 but supply fails the gate — dog kaomoji are sparse and read
+as generic animal); shrug, lenny, hug, sleepy, table-flip (thin exact demand).
+
+### Note on `cute` — why it's a page despite thin US exact volume
+
+`cute kamoji` is only ~390 US exact, which would normally fail the gate. It
+ships as a page because the demand is **international**: `cute kaomoji` is
+~2,900 in Brazil alone, and the script-identical loanword means the English
+page serves those markets. This is the one spoke justified by global rather
+than US-only demand — flagged so it doesn't read as a gate violation.
+
+### Superseded
+
+§6's row "`cute / heart / sad / happy` kaomoji … belong on the **face /
+emotion** hubs, not animal" is now realised as dedicated kaomoji spokes under
+`/library/` (the kaomoji hub IS the emotion hub for text faces). Cat earned a
+page after all — re-checked, it clears **both** demand (×international) and
+supply, where §6 only had the thin US-exact 170.

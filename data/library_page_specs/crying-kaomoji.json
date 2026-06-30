@@ -1,0 +1,72 @@
+{
+  "slug": "crying-kaomoji",
+  "title": "Crying & Sad Kaomoji: Copy & Paste Crying Text Faces",
+  "meta_description": "Browse and copy crying and sad kaomoji — also spelled kamoji — Japanese text faces for tears, sobbing, and gloomy moods. Click any to copy it instantly.",
+  "breadcrumb": "Crying & Sad Kaomoji",
+  "hero_h1": "Crying & Sad Kaomoji",
+  "hero_tagline": "Copy and paste crying and sad kaomoji — Japanese text faces for tears, sobbing, and low moods. Click any face to copy it instantly.",
+  "intro": "Crying and sad kaomoji (also spelled kamoji) are Japanese-style text faces that express tears, sobbing, and gloom using streaming-eye characters like ﹏ and ╥. A crying kaomoji such as (╥﹏╥) or (｡•́︿•̀｡) is plain Unicode text, so it pastes cleanly into bios, captions, comments, and messages. Browse by intensity below — from a single tear to full sobbing — and click any face to copy it instantly.",
+  "date_published": "2026-06-30",
+  "date_modified": "2026-06-30",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "crying",
+      "label": "Crying",
+      "h2": "Crying Kaomoji",
+      "intro": "Everyday crying faces for sad or overwhelmed moments.",
+      "symbols": [
+        { "char": "(╥﹏╥)", "label": "Crying" },
+        { "char": "(T_T)", "label": "Tears" },
+        { "char": "(；﹏；)", "label": "Quiet Cry" },
+        { "char": "(ㄒoㄒ)", "label": "Crying Eyes" },
+        { "char": "(个_个)", "label": "Weepy" },
+        { "char": "(;_;)", "label": "Single Tear" }
+      ]
+    },
+    {
+      "id": "sobbing",
+      "label": "Sobbing",
+      "h2": "Sobbing & Streaming Tears Kaomoji",
+      "intro": "Heavier, streaming-tear faces for full-on sobbing.",
+      "symbols": [
+        { "char": "(｡•́︿•̀｡)", "label": "Sobbing" },
+        { "char": "(πーπ)", "label": "Streaming Tears" },
+        { "char": "(ToT)", "label": "Wailing" },
+        { "char": "(Q_Q)", "label": "Heavy Tears" },
+        { "char": "(；へ：)", "label": "Trembling Cry" }
+      ]
+    },
+    {
+      "id": "sad",
+      "label": "Sad",
+      "h2": "Sad & Upset Kaomoji",
+      "intro": "Downcast faces for sadness, hurt, and disappointment.",
+      "symbols": [
+        { "char": "(._.)", "label": "Downcast" },
+        { "char": "(´；ω；`)", "label": "Tearful" },
+        { "char": "( ; ω ; )", "label": "About to Cry" },
+        { "char": "(╯︵╰,)", "label": "Sad and Crying" }
+      ]
+    },
+    {
+      "id": "gloomy",
+      "label": "Gloomy",
+      "h2": "Gloomy & Disappointed Kaomoji",
+      "intro": "Flat, deflated faces for gloomy or let-down moods.",
+      "symbols": [
+        { "char": "(¬_¬)", "label": "Unimpressed" },
+        { "char": "(；￣Д￣)", "label": "Distressed" },
+        { "char": "(´-ω-`)", "label": "Deflated" },
+        { "char": "(⇀‸↼‶)", "label": "Sulking" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling, excited, and joyful Japanese text faces to copy and paste." },
+    { "href": "/library/sad-emoji/", "title": "Sad Emoji", "desc": "Sad and downcast emoji to copy and paste for low moods." },
+    { "href": "/library/crying-emoji/", "title": "Crying Emoji", "desc": "Crying and sobbing emoji for tears, grief, and big feelings." }
+  ]
+}

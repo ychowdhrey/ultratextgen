@@ -1,0 +1,84 @@
+{
+  "slug": "cat-kaomoji",
+  "title": "Cat Kaomoji: Copy & Paste Cute Cat Text Faces",
+  "meta_description": "Browse and copy cat kaomoji — also spelled cat kamoji — cute Japanese cat text faces with whiskers and paws. Happy, sad, and sleepy cats. Click any to copy.",
+  "breadcrumb": "Cat Kaomoji",
+  "hero_h1": "Cat Kaomoji",
+  "hero_tagline": "Copy and paste cat kaomoji — cute Japanese cat text faces with whiskers, paws, and big eyes. Click any face to copy it instantly.",
+  "intro": "Cat kaomoji (also spelled cat kamoji) are Japanese-style text faces built around the classic whisker shape =^・ω・^= — the most expressive single-animal family of kaomoji. A cat kaomoji like (=^・ω・^=) or ฅ^•ﻌ•^ฅ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse happy, sad, sleepy, and paw-raised cats below and click any face to copy it instantly.",
+  "date_published": "2026-06-30",
+  "date_modified": "2026-06-30",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic-cats",
+      "label": "Classic Cats",
+      "h2": "Classic Cat Kaomoji",
+      "intro": "The core whisker-faced cats every cat kaomoji set starts with.",
+      "symbols": [
+        { "char": "(=^・ω・^=)", "label": "Classic Cat" },
+        { "char": "(=^‥^=)", "label": "Cat Eyes" },
+        { "char": "(=｀ω´=)", "label": "Smug Cat" },
+        { "char": "(＾• ω •＾)", "label": "Soft Cat" },
+        { "char": "(=ↀωↀ=)", "label": "Wide-Eyed Cat" },
+        { "char": "(=^◡^=)", "label": "Smiling Cat" }
+      ]
+    },
+    {
+      "id": "happy-cats",
+      "label": "Happy Cats",
+      "h2": "Happy Cat Kaomoji",
+      "intro": "Cheerful, content cats for a good mood.",
+      "symbols": [
+        { "char": "(=^▽^=)", "label": "Happy Cat" },
+        { "char": "＼(=^‥^)/", "label": "Cheering Cat" },
+        { "char": "(=˘ω˘=)", "label": "Cozy Cat" },
+        { "char": "ฅ(＾・ω・＾ฅ)", "label": "Paws-Up Cat" },
+        { "char": "(=•ㅅ•=)", "label": "Cute Cat" }
+      ]
+    },
+    {
+      "id": "sad-cats",
+      "label": "Sad Cats",
+      "h2": "Sad & Crying Cat Kaomoji",
+      "intro": "Teary and upset cats for sad or pleading moments.",
+      "symbols": [
+        { "char": "(=；ェ；=)", "label": "Crying Cat" },
+        { "char": "(=ＴェＴ=)", "label": "Sobbing Cat" },
+        { "char": "(=｀╥´=)", "label": "Upset Cat" },
+        { "char": "(╥ω╥)", "label": "Teary Cat" }
+      ]
+    },
+    {
+      "id": "paws-whiskers",
+      "label": "Paws & Whiskers",
+      "h2": "Cats with Paws & Whiskers",
+      "intro": "Cats reaching out with little paws and ฅ-shaped whiskers.",
+      "symbols": [
+        { "char": "ฅ^•ﻌ•^ฅ", "label": "Whisker Paws" },
+        { "char": "(ↀДↀ)✧", "label": "Sparkle Cat" },
+        { "char": "ฅ(•ㅅ•❀)ฅ", "label": "Flower Paws" },
+        { "char": "(=^･ｪ･^=)づ", "label": "Reaching Cat" },
+        { "char": "(＾• ω •＾)づ", "label": "Offering Paw" }
+      ]
+    },
+    {
+      "id": "big-eyed-cats",
+      "label": "Big-Eyed Cats",
+      "h2": "Big-Eyed Cat Kaomoji",
+      "intro": "Wide, sparkly-eyed cats for an extra-cute look.",
+      "symbols": [
+        { "char": "(=①ω①=)", "label": "Big Eyes Cat" },
+        { "char": "(=ＯｴＯ=)", "label": "Surprised Cat" },
+        { "char": "(✧ᆺ✧)", "label": "Sparkly Eyes Cat" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/animal-emojis/", "title": "Animal Emojis", "desc": "Cats, dogs, and every other animal emoji to copy and paste." },
+    { "href": "/library/kawaii-cute-symbols/", "title": "Kawaii Cute Symbols", "desc": "Soft, cute Unicode symbols for kawaii and aesthetic text." }
+  ]
+}
