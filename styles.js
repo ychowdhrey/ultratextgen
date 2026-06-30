@@ -33,6 +33,11 @@ const CATEGORY_PAGES = {
     title: 'Gothic Fonts',
     description: 'Dark gothic and fraktur Unicode fonts.'
   },
+  'old-english': {
+    slug: 'old-english-fonts',
+    title: 'Old English Fonts',
+    description: 'Old English blackletter fonts for names, tattoos, and varsity lettering.'
+  },
   'bubble': {
     slug: 'bubble-fonts',
     title: 'Bubble Fonts',
@@ -337,10 +342,12 @@ const textStyles = {
   'Ultra Gothic': {
     upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',
     lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
-    nums: '0123456789',
+    // Mathematical Fraktur has no digits — pair with Mathematical Bold digits
+    // (the closest heavy match) so numbers stop falling back to plain ASCII.
+    nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
     type: 'map',
     category: 'gothic',
-    familySlug: 'gothic',
+    familySlug: ['gothic', 'old-english'],
     groupSlug: 'fraktur',
     slug: 'ultra-gothic',
     platforms: ['all', 'instagram', 'x', 'discord']
@@ -349,13 +356,59 @@ const textStyles = {
   'Ultra Gothic Bold': {
     upper: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
     lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
-    nums: '0123456789',
+    nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
     type: 'map',
     category: 'gothic',
-    // Cross-listed onto the bold page: it is a bold-weight blackletter.
-    familySlug: ['gothic', 'bold'],
+    // Bold Fraktur is the heavy "Old English" newspaper/tattoo look — cross-list
+    // it onto the bold page and the Old English page.
+    familySlug: ['gothic', 'bold', 'old-english'],
     groupSlug: 'fraktur',
     slug: 'ultra-gothic-bold',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Fraktur with a combining underline — serves the "gothic underline" intent
+  // (seen directly in Search Console impressions for this page).
+  'Ultra Gothic Underline': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_underline',
+    category: 'gothic',
+    familySlug: ['gothic', 'old-english'],
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-underline',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Blackletter bookended with crosses — religious / "gothic bible verse" intent.
+  'Ultra Gothic Cross': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_cross',
+    category: 'gothic',
+    familySlug: ['gothic', 'old-english'],
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-cross',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Fraktur wrapped in occult accents — goth / metal / dark-aesthetic intent.
+  'Ultra Gothic Occult': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_occult',
+    category: 'gothic',
+    familySlug: 'gothic',
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-occult',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Fraktur struck through — grunge / edgy intent.
+  'Ultra Gothic Strikethrough': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_strike',
+    category: 'gothic',
+    familySlug: 'gothic',
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-strike',
     platforms: ['all', 'instagram', 'x', 'discord']
   },
 
