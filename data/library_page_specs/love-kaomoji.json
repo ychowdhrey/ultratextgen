@@ -1,0 +1,75 @@
+{
+  "slug": "love-kaomoji",
+  "title": "Love & Heart Kaomoji: Copy & Paste Cute Love Text Faces",
+  "meta_description": "Browse and copy love and heart kaomoji — also spelled kamoji — Japanese text faces for affection, kisses, hugs, and crushes. Click any to copy it instantly.",
+  "breadcrumb": "Love & Heart Kaomoji",
+  "hero_h1": "Love & Heart Kaomoji",
+  "hero_tagline": "Copy and paste love and heart kaomoji — cute Japanese text faces for crushes, kisses, and hugs. Click any face to copy it instantly.",
+  "intro": "Love and heart kaomoji (also spelled kamoji) are Japanese-style text faces that show affection using hearts, blushing cheeks, and outstretched arms. Unlike a plain heart emoji, a heart kaomoji such as (♥ω♥) or (づ｡◕‿‿◕｡)づ pastes as pure Unicode text into any bio, caption, comment, or message — so it looks the same everywhere. Pick a mood below and click any face to copy it instantly.",
+  "date_published": "2026-06-30",
+  "date_modified": "2026-06-30",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "hearts-love",
+      "label": "Hearts & Love",
+      "h2": "Heart & Love Kaomoji",
+      "intro": "Classic heart kaomoji for showing love, adoration, and a happy crush.",
+      "symbols": [
+        { "char": "(♥ω♥)", "label": "Heart Eyes" },
+        { "char": "(◍•ᴗ•◍)❤", "label": "In Love" },
+        { "char": "(✿ ♥‿♥)", "label": "Flower Heart" },
+        { "char": "(｡♥‿♥｡)", "label": "Smiling Heart" },
+        { "char": "(♡μ_μ)", "label": "Lovestruck" },
+        { "char": "(◕‿◕)♡", "label": "Sweet Heart" },
+        { "char": "(♥‿♥)", "label": "Heart Smile" },
+        { "char": "(´｡• ᵕ •｡`) ♡", "label": "Content Love" }
+      ]
+    },
+    {
+      "id": "blowing-kisses",
+      "label": "Kisses",
+      "h2": "Blowing a Kiss Kaomoji",
+      "intro": "Kiss kaomoji for sending a smooch, a flirt, or a goodnight.",
+      "symbols": [
+        { "char": "( ˘ ³˘)♥", "label": "Blowing a Kiss" },
+        { "char": "(*^3^)/~☆", "label": "Throwing a Kiss" },
+        { "char": "(っ˘ω˘ς )", "label": "Shy Kiss" },
+        { "char": "(づ￣ ³￣)づ", "label": "Kissy Face" },
+        { "char": "( ˘ ³˘)♡", "label": "Soft Kiss" }
+      ]
+    },
+    {
+      "id": "hugging",
+      "label": "Hugs",
+      "h2": "Hugging & Affection Kaomoji",
+      "intro": "Hug kaomoji with open arms for comfort, support, and closeness.",
+      "symbols": [
+        { "char": "(づ｡◕‿‿◕｡)づ", "label": "Big Hug" },
+        { "char": "(つ≧▽≦)つ", "label": "Come Here Hug" },
+        { "char": "⊂((・▽・))⊃", "label": "Squeeze Hug" },
+        { "char": "٩(♡ε♡ )۶", "label": "Loving Hug" },
+        { "char": "⊂(´• ω •`⊂)", "label": "Reaching Hug" }
+      ]
+    },
+    {
+      "id": "in-love-blushing",
+      "label": "Blushing",
+      "h2": "In Love & Blushing Kaomoji",
+      "intro": "Blushing kaomoji for shy, flustered, and butterflies-in-the-stomach moments.",
+      "symbols": [
+        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "label": "Blushing" },
+        { "char": "(//ω//)", "label": "Flustered" },
+        { "char": "(*ﾉ∀ﾉ)", "label": "Shy Smile" },
+        { "char": "(„ᵕᴗᵕ„)", "label": "Bashful" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling, excited, and joyful Japanese text faces to copy and paste." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/heart-symbols/", "title": "Heart Symbols", "desc": "Heart emojis and Unicode heart characters in every color and style." }
+  ]
+}
