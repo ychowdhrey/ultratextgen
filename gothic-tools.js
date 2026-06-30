@@ -198,12 +198,77 @@
     render();
   }
 
+  /* ---- 5. Quick-fill use-case chips ------------------------------------ */
+  function initQuickfill() {
+    const input = document.getElementById("mainInput");
+    if (!input) return;
+    document.querySelectorAll(".quickfill [data-fill]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        input.value = btn.dataset.fill;
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.focus();
+        const top = input.getBoundingClientRect().top;
+        if (top < 0 || top > window.innerHeight) input.scrollIntoView({ block: "center" });
+      });
+    });
+  }
+
+  /* ---- 6. Old English Roman-numeral / date tool ------------------------ */
+  function toRoman(n) {
+    n = Math.max(1, Math.min(3999, Math.floor(n || 0)));
+    const map = [[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],
+      [50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]];
+    let out = "";
+    for (const [v, s] of map) while (n >= v) { out += s; n -= v; }
+    return out;
+  }
+
+  function initRomanTool() {
+    const wrap = document.getElementById("oeRoman");
+    if (!wrap || !hasRender) return;
+    const styleKey = styles["Ultra Gothic Bold"] ? "Ultra Gothic Bold" : Object.keys(styles)[0];
+
+    const input = document.createElement("input");
+    input.type = "number";
+    input.min = "1";
+    input.max = "3999";
+    input.value = "2024";
+    input.className = "compat-input roman-input";
+    input.setAttribute("aria-label", "Year or number to convert to Old English Roman numerals");
+
+    const plain = document.createElement("span");
+    plain.className = "roman-plain";
+
+    const out = document.createElement("button");
+    out.type = "button";
+    out.className = "gsym-tile roman-out";
+    out.setAttribute("aria-label", "Copy Old English Roman numerals");
+
+    function update() {
+      const roman = toRoman(parseInt(input.value, 10));
+      plain.textContent = roman || "—";
+      out.textContent = roman ? Render.renderAny(roman, styles[styleKey]) : "—";
+    }
+    out.addEventListener("click", () => flashCopy(out.textContent, out));
+    input.addEventListener("input", update);
+
+    const row = document.createElement("div");
+    row.className = "roman-row";
+    row.appendChild(input);
+    row.appendChild(plain);
+    row.appendChild(out);
+    wrap.appendChild(row);
+    update();
+  }
+
   /* ---- boot ------------------------------------------------------------ */
   function boot() {
     initLivePreview();
     initGlyphCharts();
     initSymbolStrips();
     initCompatTester();
+    initQuickfill();
+    initRomanTool();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);
