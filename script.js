@@ -409,6 +409,29 @@ const decorations = window.UTG_DECORATIONS || {
     return String(name).toLowerCase().includes(String(q).toLowerCase());
   }
 
+  // Where a style works, surfaced on each result card (opt-in per page via
+  // window.UTG_SHOW_PLATFORMS). Reads the style's own `platforms` array.
+  const PLATFORM_LABELS = {
+    instagram: "IG", x: "X", discord: "Discord", tiktok: "TikTok",
+    whatsapp: "WhatsApp", facebook: "Facebook", telegram: "Telegram",
+    youtube: "YouTube", snapchat: "Snapchat", linkedin: "LinkedIn"
+  };
+
+  function platformChipsHtml(style) {
+    if (!window.UTG_SHOW_PLATFORMS) return "";
+    const list = Array.isArray(style && style.platforms) ? style.platforms : null;
+    if (!list || !list.length) return "";
+    if (list.includes("all")) {
+      return `<div class="style-platforms"><span class="plat-chip is-all">Works everywhere</span></div>`;
+    }
+    const chips = list
+      .map(p => PLATFORM_LABELS[p])
+      .filter(Boolean)
+      .map(lbl => `<span class="plat-chip">${lbl}</span>`)
+      .join("");
+    return chips ? `<div class="style-platforms">${chips}</div>` : "";
+  }
+
   function createStyleCard(name, convertedText, decoratedText, style) {
     const card = document.createElement("div");
     card.className = "style-card";
@@ -430,6 +453,7 @@ const decorations = window.UTG_DECORATIONS || {
          ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
         <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
         ${decoHtml}
+        ${platformChipsHtml(style)}
       </div>
       <div class="style-actions">
         <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="Copy to clipboard">Copy <kbd class="copy-kbd">↵</kbd></button>

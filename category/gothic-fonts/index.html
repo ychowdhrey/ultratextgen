@@ -27,6 +27,7 @@
   <meta name="twitter:description" content="Dark gothic, fraktur, and blackletter fonts for edgy profiles, gaming usernames, metal band aesthetics, and mysterious vibes. Copy and paste anywhere.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/category-gothic-fonts.png">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
 
@@ -182,7 +183,7 @@
 }
 </script>
 </head>
-<body>
+<body class="theme-gothic">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -206,7 +207,9 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-card">
-        <h1 class="hero-headline">Gothic Fonts Generator</h1>
+        <p class="g-eyebrow">Blackletter · Fraktur · Old English</p>
+        <h1 class="g-title">Gothic Font Generator</h1>
+        <div class="g-live is-empty" id="gLive" data-style="Ultra Gothic Bold" data-placeholder="Your name" aria-hidden="true"></div>
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
@@ -223,7 +226,7 @@
     <div class="decoration-tabs">
     <button class="decoration-tab active" data-deco-tab="crosses">Crosses</button>
     <button class="decoration-tab" data-deco-tab="occult">Occult</button>
-    <button class="decoration-tab" data-deco-tab="runes">Runes</button>
+    <button class="decoration-tab" data-deco-tab="emoji">Emoji</button>
     <button class="decoration-tab" data-deco-tab="frames">Frames</button>
     <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
       </div>
@@ -258,6 +261,16 @@
     <!-- ============================================================
          UNIQUE EDITORIAL CONTENT (indexing + JTBD coverage)
          ============================================================ -->
+    <section class="editorial-section">
+      <h2>Check it renders before you paste</h2>
+      <p>
+        The #1 gothic complaint is boxes or squares (□□□) — that happens when a device is missing
+        the blackletter glyphs. This checks, live on your current device, which styles render
+        cleanly. Each result above also shows the platforms it works on.
+      </p>
+      <div class="gothic-compat" id="gothicCompat"></div>
+    </section>
+
     <section class="editorial-section">
       <h2>Gothic, Fraktur &amp; Blackletter — what you're copying</h2>
       <p>
@@ -330,13 +343,13 @@
     </section>
 
     <section class="editorial-section">
-      <h2>Will gothic text show up on your device?</h2>
+      <h2>Gothic symbols to pair with your text</h2>
       <p>
-        The #1 gothic complaint is boxes or squares (□□□) — that happens when a device is
-        missing the blackletter glyphs. This checks, live on your current device, which styles
-        render cleanly before you paste them somewhere public:
+        People searching gothic fonts also want the symbols that go with them — crosses, daggers,
+        and occult/medieval marks (not math symbols). Tap any to copy, then drop it into a bio or
+        beside a name:
       </p>
-      <div class="gothic-compat" id="gothicCompat"></div>
+      <div class="gsym-strip" data-symbols="☩ ⛧ ⸸ ✝ ✟ † ‡ ☠ 𖤐 ⚰ ☦ ♰ ♱ ⛤ ☥ ⚱ ❦ ⚜ ✠ ♆"></div>
     </section>
 
     <section class="editorial-section">
@@ -572,6 +585,7 @@
   <!-- Category filter + gothic-themed decorations -->
   <script>
     window.UTG_FAMILY = "gothic";
+    window.UTG_SHOW_PLATFORMS = true;
     window.UTG_DEFAULT_DECO_TAB = "crosses";
     window.UTG_DECORATIONS = {
       crosses: [
@@ -598,15 +612,19 @@
         { text: "𓆩 text 𓆪", prefix: "𓆩 ", suffix: " 𓆪" },
         { text: "♆ text ♆", prefix: "♆ ", suffix: " ♆" }
       ],
-      runes: [
-        { text: "ᚱ text ᚱ", prefix: "ᚱ ", suffix: " ᚱ" },
-        { text: "ᚢ text ᚢ", prefix: "ᚢ ", suffix: " ᚢ" },
-        { text: "ᚾ text ᚾ", prefix: "ᚾ ", suffix: " ᚾ" },
-        { text: "ᚦ text ᚦ", prefix: "ᚦ ", suffix: " ᚦ" },
-        { text: "ᛟ text ᛟ", prefix: "ᛟ ", suffix: " ᛟ" },
-        { text: "ᛉ text ᛉ", prefix: "ᛉ ", suffix: " ᛉ" },
-        { text: "ᚨ text ᚨ", prefix: "ᚨ ", suffix: " ᚨ" },
-        { text: "ᛊ text ᛊ", prefix: "ᛊ ", suffix: " ᛊ" }
+      emoji: [
+        { text: "🦇 text 🦇", prefix: "🦇 ", suffix: " 🦇" },
+        { text: "💀 text 💀", prefix: "💀 ", suffix: " 💀" },
+        { text: "⚰️ text ⚰️", prefix: "⚰️ ", suffix: " ⚰️" },
+        { text: "🕯️ text 🕯️", prefix: "🕯️ ", suffix: " 🕯️" },
+        { text: "🥀 text 🥀", prefix: "🥀 ", suffix: " 🥀" },
+        { text: "🕸️ text 🕸️", prefix: "🕸️ ", suffix: " 🕸️" },
+        { text: "⛓️ text ⛓️", prefix: "⛓️ ", suffix: " ⛓️" },
+        { text: "🌹 text 🌹", prefix: "🌹 ", suffix: " 🌹" },
+        { text: "🗡️ text 🗡️", prefix: "🗡️ ", suffix: " 🗡️" },
+        { text: "🌑 text 🌑", prefix: "🌑 ", suffix: " 🌑" },
+        { text: "🔥 text 🔥", prefix: "🔥 ", suffix: " 🔥" },
+        { text: "🐍 text 🐍", prefix: "🐍 ", suffix: " 🐍" }
       ],
       frames: [
         { text: "꧁ text ꧂", prefix: "꧁ ", suffix: " ꧂" },
