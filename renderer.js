@@ -450,6 +450,12 @@ function renderMap(text, style) {
       text.trim()
         ? [...renderMap(text, textStyles['Ultra Gothic'])]
             .map(c => (c === ' ' || c === '\n') ? c : c + '̶').join('')
+        : text,
+
+    // Old English name inside a chicano-style banner — the nameplate intent.
+    'ultra-old-english-banner': text =>
+      text.trim()
+        ? `꧁༺ ${renderMap(text, textStyles['Ultra Gothic Bold'])} ༻꧂`
         : text
   };
 
