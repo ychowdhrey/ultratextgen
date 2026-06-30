@@ -27,6 +27,7 @@
   <meta name="twitter:description" content="Copy and paste Old English blackletter text for name tattoos, jerseys, the Old English D, and chicano lettering.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/category-gothic-fonts.png">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
 <script type="application/ld+json">
@@ -113,7 +114,7 @@
 }
 </script>
 </head>
-<body>
+<body class="theme-gothic">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -137,7 +138,9 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-card">
-        <h1 class="hero-headline">Old English Font Generator</h1>
+        <p class="g-eyebrow">Old English · Blackletter · Tattoo Lettering</p>
+        <h1 class="g-title">Old English Font Generator</h1>
+        <div class="g-live is-empty" id="gLive" data-style="Ultra Gothic Bold" data-placeholder="Your name" aria-hidden="true"></div>
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type a name or word…" maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
@@ -183,6 +186,16 @@
     <!-- ============================================================
          UNIQUE EDITORIAL CONTENT
          ============================================================ -->
+    <section class="editorial-section">
+      <h2>Check it renders before you paste</h2>
+      <p>
+        Old English sometimes shows as boxes (□□□) on older devices. This checks, live on your
+        current device, which styles render cleanly. Each result above also shows the platforms
+        it works on.
+      </p>
+      <div class="gothic-compat" id="gothicCompat"></div>
+    </section>
+
     <section class="editorial-section">
       <h2>Old English lettering, ready to copy</h2>
       <p>
@@ -241,12 +254,12 @@
     </section>
 
     <section class="editorial-section">
-      <h2>Will Old English text show up on your device?</h2>
+      <h2>Symbols to pair with Old English</h2>
       <p>
-        Blackletter sometimes shows as boxes (□□□) on older devices. This checks, live on your
-        current device, which styles render cleanly before you post a name or paste it into a bio:
+        The marks that go with Old English lettering — crosses, banners, stars, and fleur-de-lis
+        for tattoos, jerseys, and monograms. Tap any to copy:
       </p>
-      <div class="gothic-compat" id="gothicCompat"></div>
+      <div class="gsym-strip" data-symbols="✝ ✟ ☩ ☦ ✠ ♰ ♱ † ‡ ★ ✪ ✦ ❖ ⚜ ❦ ❧"></div>
     </section>
 
     <section class="editorial-section">
@@ -359,6 +372,7 @@
   <!-- Category filter + Old English decorations -->
   <script>
     window.UTG_FAMILY = "old-english";
+    window.UTG_SHOW_PLATFORMS = true;
     window.UTG_DEFAULT_DECO_TAB = "crosses";
     window.UTG_DECORATIONS = {
       crosses: [

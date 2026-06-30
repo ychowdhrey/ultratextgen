@@ -1,152 +1,213 @@
 /* ==========================================================================
    UltraTextGen — gothic-tools.js
-   Live "will it render on your device?" compatibility tester for gothic /
-   blackletter styles. Self-contained IIFE. Loads AFTER styles.js + renderer.js.
+   Progressive enhancements for the Gothic / Old English pages. Loads AFTER
+   styles.js + renderer.js + script.js (all defer, so order is preserved).
 
-   It mounts into #gothicCompat (if present) and answers the single biggest
-   gothic complaint: "why do I see boxes/squares?" — by detecting, on THIS
-   device, whether each blackletter style actually has glyphs.
+   Adds, without touching the shared generator:
+     1. Live blackletter preview in the hero (#gLive)
+     2. Click-to-copy glyph tiles + "copy series" for the A–Z / 0–9 charts
+     3. Copyable gothic-symbol strips (.gsym-strip[data-symbols])
+     4. The device compatibility tester (#gothicCompat)
+
+   Raw glyph text stays in the DOM for SEO; JS only enhances it in place.
    ========================================================================== */
 (function () {
   "use strict";
 
-  const mount = document.getElementById("gothicCompat");
-  if (!mount) return;
-
   const Render = window.UltraTextGenRender;
   const styles = window.textStyles || {};
-  if (!Render || typeof Render.renderAny !== "function") return;
+  const hasRender = Render && typeof Render.renderAny === "function";
 
-  // Styles surfaced in the tester, in display order. Each maps to a registry key.
-  const TESTS = [
-    { label: "Fraktur — 𝔤𝔬𝔱𝔥𝔦𝔠", key: "Ultra Gothic" },
-    { label: "Bold Fraktur / Old English — 𝖌𝖔𝖙𝖍𝖎𝖈", key: "Ultra Gothic Bold" },
-    { label: "Gothic Underline", key: "Ultra Gothic Underline" },
-    { label: "Gothic + Cross", key: "Ultra Gothic Cross" },
-    { label: "Gothic Occult", key: "Ultra Gothic Occult" },
-    { label: "Gothic Strikethrough", key: "Ultra Gothic Strikethrough" }
-  ].filter(t => styles[t.key]);
-
-  // --- Canvas glyph-support detector -------------------------------------
-  // Compares the drawn width of a glyph against the width of a code point no
-  // font has (every browser falls back to the same .notdef "tofu" box, so an
-  // unsupported glyph measures identical to the reference).
-  function makeDetector() {
-    let ctx;
-    try {
-      ctx = document.createElement("canvas").getContext("2d");
-    } catch (e) {
-      return null;
-    }
-    if (!ctx) return null;
-    const family = (getComputedStyle(mount).fontFamily || "sans-serif");
-    ctx.font = "36px " + family;
-    const refWidth = ctx.measureText(String.fromCodePoint(0x10fffd)).width;
-    return function supported(ch) {
-      if (!ch) return true;
-      return ctx.measureText(ch).width !== refWidth;
-    };
-  }
-
-  const detect = makeDetector();
-
-  // Representative base glyph for a style: render lowercase "a" and grab the
-  // first Mathematical-Alphanumeric code point (skips wrapper symbols like ✝/⛧).
-  function baseGlyph(key) {
-    const out = Render.renderAny("a", styles[key]);
-    for (const c of out) {
-      if (c.codePointAt(0) >= 0x1d400) return c;
-    }
-    return null;
-  }
-
-  const supportMap = {};
-  TESTS.forEach(t => {
-    supportMap[t.key] = detect ? detect(baseGlyph(t.key)) : true;
-  });
-
-  // --- Build the widget ---------------------------------------------------
-  const input = document.createElement("input");
-  input.type = "text";
-  input.className = "compat-input";
-  input.maxLength = 60;
-  input.setAttribute("aria-label", "Text to test for gothic compatibility");
-  input.placeholder = "Type a name to test…";
-
-  // Seed from the main generator input if it already has text.
-  const mainInput = document.getElementById("mainInput");
-  input.value = (mainInput && mainInput.value.trim()) || "Your Name";
-
-  const list = document.createElement("div");
-  list.className = "compat-rows";
-
-  const note = document.createElement("p");
-  note.className = "compat-note";
-  note.innerHTML = detect
-    ? 'Checked live on <strong>this device</strong>. A ⚠ flag means your current device is missing those glyphs — they may show as boxes for some viewers too. Tap a sample to copy it.'
-    : "Showing how each style renders. Tap a sample to copy it.";
-
-  function badge(ok) {
-    const b = document.createElement("span");
-    b.className = "compat-badge " + (ok ? "is-ok" : "is-warn");
-    b.textContent = ok ? "✓ Renders" : "⚠ May break";
-    return b;
-  }
-
-  function rowFor(t) {
-    const row = document.createElement("button");
-    row.type = "button";
-    row.className = "compat-row";
-    row.dataset.ok = String(supportMap[t.key]);
-
-    const name = document.createElement("span");
-    name.className = "compat-name";
-    name.textContent = t.label;
-
-    const sample = document.createElement("span");
-    sample.className = "compat-sample";
-
-    row.appendChild(badge(supportMap[t.key]));
-    row.appendChild(name);
-    row.appendChild(sample);
-    row.addEventListener("click", () => copyRow(t, sample.textContent, row));
-    return { row, sample, key: t.key };
-  }
-
-  const built = TESTS.map(rowFor);
-  built.forEach(b => list.appendChild(b.row));
-
-  function render() {
-    const text = input.value.trim() || "Your Name";
-    built.forEach(b => {
-      b.sample.textContent = Render.renderAny(text, styles[b.key]);
-    });
-  }
-
-  function copyRow(t, text, row) {
+  /* ---- shared copy helper ---------------------------------------------- */
+  function flashCopy(text, el) {
     if (!text) return;
     const done = () => {
-      row.classList.add("is-copied");
-      setTimeout(() => row.classList.remove("is-copied"), 1100);
+      el.classList.add("is-copied");
+      setTimeout(() => el.classList.remove("is-copied"), 1000);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done).catch(() => {});
+    } else {
+      done();
     }
   }
 
-  input.addEventListener("input", render);
-  if (mainInput) {
-    mainInput.addEventListener("input", () => {
-      const v = mainInput.value.trim();
-      if (v) {
-        input.value = v.slice(0, 60);
-        render();
+  /* ---- 1. Live hero preview -------------------------------------------- */
+  function initLivePreview() {
+    const live = document.getElementById("gLive");
+    const input = document.getElementById("mainInput");
+    if (!live || !input || !hasRender) return;
+
+    const styleKey = live.dataset.style && styles[live.dataset.style]
+      ? live.dataset.style
+      : (styles["Ultra Gothic Bold"] ? "Ultra Gothic Bold" : Object.keys(styles)[0]);
+    const placeholder = live.dataset.placeholder || "Your name";
+
+    function update() {
+      const text = input.value.trim();
+      if (text) {
+        live.classList.remove("is-empty");
+        live.textContent = Render.renderAny(text, styles[styleKey]);
+      } else {
+        live.classList.add("is-empty");
+        live.textContent = Render.renderAny(placeholder, styles[styleKey]);
       }
+    }
+    input.addEventListener("input", update);
+    update();
+  }
+
+  /* ---- 2. Click-to-copy glyph charts ----------------------------------- */
+  function initGlyphCharts() {
+    document.querySelectorAll(".glyph-row").forEach(row => {
+      if (row.dataset.enhanced) return;
+      const tokens = (row.textContent || "").trim().split(/\s+/).filter(Boolean);
+      if (tokens.length < 2) return;
+      row.dataset.enhanced = "1";
+      row.textContent = "";
+
+      tokens.forEach(tok => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "glyph-tile";
+        b.textContent = tok;
+        b.setAttribute("aria-label", "Copy " + tok);
+        b.addEventListener("click", () => flashCopy(tok, b));
+        row.appendChild(b);
+      });
+
+      const series = document.createElement("button");
+      series.type = "button";
+      series.className = "copy-series";
+      series.textContent = "Copy series";
+      series.title = "Copy the whole row: " + tokens.join(" ");
+      series.addEventListener("click", () => flashCopy(tokens.join(" "), series));
+      row.appendChild(series);
     });
   }
 
-  mount.appendChild(input);
-  mount.appendChild(list);
-  mount.appendChild(note);
-  render();
+  /* ---- 3. Copyable gothic-symbol strips -------------------------------- */
+  function initSymbolStrips() {
+    document.querySelectorAll(".gsym-strip[data-symbols]").forEach(strip => {
+      if (strip.dataset.enhanced) return;
+      strip.dataset.enhanced = "1";
+      const syms = strip.dataset.symbols.trim().split(/\s+/).filter(Boolean);
+      strip.textContent = "";
+      syms.forEach(s => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "gsym-tile";
+        b.textContent = s;
+        b.setAttribute("aria-label", "Copy " + s);
+        b.addEventListener("click", () => flashCopy(s, b));
+        strip.appendChild(b);
+      });
+    });
+  }
+
+  /* ---- 4. Device compatibility tester ---------------------------------- */
+  function initCompatTester() {
+    const mount = document.getElementById("gothicCompat");
+    if (!mount || !hasRender) return;
+
+    const TESTS = [
+      { label: "Fraktur — 𝔤𝔬𝔱𝔥𝔦𝔠", key: "Ultra Gothic" },
+      { label: "Bold Fraktur / Old English — 𝖌𝖔𝖙𝖍", key: "Ultra Gothic Bold" },
+      { label: "Gothic Underline", key: "Ultra Gothic Underline" },
+      { label: "Gothic + Cross", key: "Ultra Gothic Cross" },
+      { label: "Gothic Occult", key: "Ultra Gothic Occult" },
+      { label: "Gothic Strikethrough", key: "Ultra Gothic Strikethrough" }
+    ].filter(t => styles[t.key]);
+
+    function makeDetector() {
+      let ctx;
+      try { ctx = document.createElement("canvas").getContext("2d"); }
+      catch (e) { return null; }
+      if (!ctx) return null;
+      ctx.font = "36px " + (getComputedStyle(mount).fontFamily || "sans-serif");
+      const refWidth = ctx.measureText(String.fromCodePoint(0x10fffd)).width;
+      return ch => !ch ? true : ctx.measureText(ch).width !== refWidth;
+    }
+    const detect = makeDetector();
+
+    function baseGlyph(key) {
+      const out = Render.renderAny("a", styles[key]);
+      for (const c of out) if (c.codePointAt(0) >= 0x1d400) return c;
+      return null;
+    }
+    const supportMap = {};
+    TESTS.forEach(t => { supportMap[t.key] = detect ? detect(baseGlyph(t.key)) : true; });
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "compat-input";
+    input.maxLength = 60;
+    input.setAttribute("aria-label", "Text to test for gothic compatibility");
+    input.placeholder = "Type a name to test…";
+    const mainInput = document.getElementById("mainInput");
+    input.value = (mainInput && mainInput.value.trim()) || "Your Name";
+
+    const list = document.createElement("div");
+    list.className = "compat-rows";
+
+    const note = document.createElement("p");
+    note.className = "compat-note";
+    note.innerHTML = detect
+      ? 'Checked live on <strong>this device</strong>. A ⚠ flag means your device is missing those glyphs — they may show as boxes for some viewers too. Tap a sample to copy it.'
+      : "Showing how each style renders. Tap a sample to copy it.";
+
+    function badge(ok) {
+      const b = document.createElement("span");
+      b.className = "compat-badge " + (ok ? "is-ok" : "is-warn");
+      b.textContent = ok ? "✓ Renders" : "⚠ May break";
+      return b;
+    }
+
+    const built = TESTS.map(t => {
+      const row = document.createElement("button");
+      row.type = "button";
+      row.className = "compat-row";
+      row.dataset.ok = String(supportMap[t.key]);
+      const name = document.createElement("span");
+      name.className = "compat-name";
+      name.textContent = t.label;
+      const sample = document.createElement("span");
+      sample.className = "compat-sample";
+      row.appendChild(badge(supportMap[t.key]));
+      row.appendChild(name);
+      row.appendChild(sample);
+      row.addEventListener("click", () => flashCopy(sample.textContent, row));
+      list.appendChild(row);
+      return { sample, key: t.key };
+    });
+
+    function render() {
+      const text = input.value.trim() || "Your Name";
+      built.forEach(b => { b.sample.textContent = Render.renderAny(text, styles[b.key]); });
+    }
+    input.addEventListener("input", render);
+    if (mainInput) {
+      mainInput.addEventListener("input", () => {
+        const v = mainInput.value.trim();
+        if (v) { input.value = v.slice(0, 60); render(); }
+      });
+    }
+    mount.appendChild(input);
+    mount.appendChild(list);
+    mount.appendChild(note);
+    render();
+  }
+
+  /* ---- boot ------------------------------------------------------------ */
+  function boot() {
+    initLivePreview();
+    initGlyphCharts();
+    initSymbolStrips();
+    initCompatTester();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
 })();
