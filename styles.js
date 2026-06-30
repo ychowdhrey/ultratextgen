@@ -412,6 +412,18 @@ const textStyles = {
     platforms: ['all', 'instagram', 'x', 'discord']
   },
 
+  // Old English nameplate — bold blackletter inside a chicano banner. Old
+  // English page only (the nameplate / name-tattoo intent).
+  'Ultra Old English Banner': {
+    type: 'procedure',
+    procedureId: 'ultra-old-english-banner',
+    category: 'gothic',
+    familySlug: ['old-english'],
+    groupSlug: 'fraktur',
+    slug: 'ultra-old-english-banner',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
   /* =========================
      BUBBLE
      ========================= */

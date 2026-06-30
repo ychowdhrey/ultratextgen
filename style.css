@@ -3870,3 +3870,53 @@ body.theme-gothic .category-section { position: static; background: transparent;
 @media (prefers-reduced-motion: reduce) {
   .glyph-tile, .gsym-tile, .copy-series { transition: none; }
 }
+
+/* Old English: quick-fill use-case chips + Roman-numeral date tool */
+.quickfill {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.quickfill-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+.quickfill button {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+.quickfill button:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+.roman-tool { margin-top: 12px; }
+.roman-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.roman-input { width: 130px; }
+.roman-plain {
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.roman-out {
+  font-size: 1.5rem;
+  min-width: 70px;
+  padding: 8px 14px;
+}
