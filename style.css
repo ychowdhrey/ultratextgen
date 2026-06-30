@@ -3684,3 +3684,239 @@ body.dark-mode .vertical-chip {
   padding-top: 8px;
   border-top: 1px solid var(--border-light);
 }
+
+
+/* ==========================================================================
+   GOTHIC / OLD ENGLISH PAGE THEME
+   Keeps the UltraTextGen brand palette (purple → blue, off-white panels, dot
+   grid). The "gothic feel" comes from SHAPES & ORNAMENTS, not new colors:
+   a blackletter display face, a pointed-arch hero crown, quatrefoil section
+   dividers, and an illuminated drop-cap. Scoped to body.theme-gothic.
+   ========================================================================== */
+
+/* ---- Blackletter display type (brand colors) -------------------------- */
+body.theme-gothic .hero-headline,
+body.theme-gothic .g-title,
+body.theme-gothic .editorial-section > h2,
+body.theme-gothic .glyph-chart h3,
+body.theme-gothic .editorial-grid .style-card h3,
+body.theme-gothic .style-card .style-name,
+body.theme-gothic .faq-category,
+body.theme-gothic .g-eyebrow {
+  font-family: 'UnifrakturCook', Georgia, serif;
+  font-weight: 700;
+}
+
+body.theme-gothic .g-eyebrow {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-purple);
+  text-align: center;
+  margin: 6px 0 2px;
+}
+
+body.theme-gothic .hero-headline,
+body.theme-gothic .g-title {
+  color: var(--text-primary);
+  text-align: center;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 0 auto 6px;
+}
+/* Illuminated drop-cap in brand purple. */
+body.theme-gothic .g-title::first-letter,
+body.theme-gothic .hero-headline::first-letter {
+  font-size: 1.5em;
+  color: var(--accent-purple);
+  padding-right: 0.04em;
+}
+
+/* ---- Hero card: brand panel + gothic ornament frame ------------------- */
+body.theme-gothic .page-hero-figure { display: none; }
+body.theme-gothic .hero { padding-top: 40px; }
+body.theme-gothic .hero-card { position: relative; overflow: visible; }
+
+/* Pointed-arch "crown" — the signature gothic shape, in brand purple. */
+body.theme-gothic .hero-card::after {
+  content: "";
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 84' fill='none' stroke='%238b5cf6' stroke-width='3'%3E%3Cpath d='M12 84 L12 42 Q12 10 60 6 Q108 10 108 42 L108 84'/%3E%3Cpath d='M32 84 L32 48 Q32 26 60 24 Q88 26 88 48 L88 84'/%3E%3Ccircle cx='60' cy='33' r='6'/%3E%3C/svg%3E") center bottom / contain no-repeat;
+}
+
+/* Live preview — types your text in blackletter immediately (brand purple). */
+body.theme-gothic .g-live {
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--accent-purple);
+  padding: 6px 14px 14px;
+  word-break: break-word;
+}
+body.theme-gothic .g-live.is-empty { opacity: 0.4; }
+
+/* ---- Editorial sections: quatrefoil dividers + brand underline -------- */
+body.theme-gothic .editorial-section { position: relative; }
+body.theme-gothic .editorial-section + .editorial-section {
+  border-top: 1px solid var(--border-light);
+  margin-top: 40px;
+  padding-top: 40px;
+}
+/* Quatrefoil medallion sitting on the divider rule. */
+body.theme-gothic .editorial-section + .editorial-section::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 26px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff' stroke='%238b5cf6' stroke-width='1.3'%3E%3Ccircle cx='12' cy='7.5' r='4.6'/%3E%3Ccircle cx='12' cy='16.5' r='4.6'/%3E%3Ccircle cx='7.5' cy='12' r='4.6'/%3E%3Ccircle cx='16.5' cy='12' r='4.6'/%3E%3C/svg%3E") center / 26px no-repeat,
+    var(--bg-base);
+  padding: 0 10px;
+}
+body.theme-gothic .editorial-section > h2 {
+  color: var(--text-primary);
+}
+body.theme-gothic .editorial-section > h2::after {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 2px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+}
+
+/* ---- Result cards: brand panel, blackletter names -------------------- */
+body.theme-gothic .style-card .style-name {
+  color: var(--accent-purple);
+  font-size: 1.15rem;
+}
+
+/* Per-card platform capability chips. */
+.style-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+.style-platforms .plat-chip {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+.style-platforms .plat-chip.is-all {
+  background: color-mix(in srgb, var(--accent-purple) 12%, transparent);
+  color: var(--accent-purple);
+  border-color: color-mix(in srgb, var(--accent-purple) 30%, transparent);
+}
+
+/* ---- Click-to-copy glyph tiles + symbol strip (brand) ---------------- */
+body.theme-gothic .glyph-row { gap: 6px; }
+.glyph-tile,
+.gsym-tile {
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 8px 10px;
+  min-width: 40px;
+  text-align: center;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.04s ease, border-color 0.12s ease;
+}
+.glyph-tile:hover,
+.gsym-tile:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.glyph-tile.is-copied,
+.gsym-tile.is-copied { background: var(--accent-purple); color: #fff; border-color: var(--accent-purple); }
+
+.copy-series {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 12px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent-purple);
+  border: 1px solid var(--accent-purple);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.copy-series:hover { background: color-mix(in srgb, var(--accent-purple) 10%, transparent); }
+.copy-series.is-copied { background: var(--accent-purple); color: #fff; }
+
+.gsym-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+/* ---- Decoration tabs: subtle gothic active state (brand) ------------- */
+body.theme-gothic .category-section { position: static; background: transparent; padding-top: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .glyph-tile, .gsym-tile, .copy-series { transition: none; }
+}
+
+/* Old English: quick-fill use-case chips + Roman-numeral date tool */
+.quickfill {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.quickfill-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+.quickfill button {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+.quickfill button:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+.roman-tool { margin-top: 12px; }
+.roman-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.roman-input { width: 130px; }
+.roman-plain {
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.roman-out {
+  font-size: 1.5rem;
+  min-width: 70px;
+  padding: 8px 14px;
+}
