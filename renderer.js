@@ -420,6 +420,36 @@ function renderMap(text, style) {
     'ultra_cursive_sparkle': text =>
       text.trim()
         ? `⋆˚꒰ ${renderMap(text, textStyles['Ultra Script'])} ꒱˚⋆`
+        : text,
+
+    // === GOTHIC PROCEDURES ===
+    // Keyed by style.slug (see renderProcedure). Each builds on the Fraktur /
+    // Bold Fraktur maps and adds a combining mark or symbol wrapper.
+
+    // Fraktur + combining underline — the "gothic underline" intent.
+    'ultra-gothic-underline': text =>
+      text.trim()
+        ? [...renderMap(text, textStyles['Ultra Gothic'])]
+            .map(c => (c === ' ' || c === '\n') ? c : c + '̲').join('')
+        : text,
+
+    // Bold Fraktur bookended with crosses — religious / bible-verse intent.
+    'ultra-gothic-cross': text =>
+      text.trim()
+        ? `✝ ${renderMap(text, textStyles['Ultra Gothic Bold'])} ✝`
+        : text,
+
+    // Fraktur wrapped in occult accents — goth / metal / dark-aesthetic intent.
+    'ultra-gothic-occult': text =>
+      text.trim()
+        ? `⛧ ${renderMap(text, textStyles['Ultra Gothic'])} ⛧`
+        : text,
+
+    // Fraktur struck through — grunge / edgy intent.
+    'ultra-gothic-strike': text =>
+      text.trim()
+        ? [...renderMap(text, textStyles['Ultra Gothic'])]
+            .map(c => (c === ' ' || c === '\n') ? c : c + '̶').join('')
         : text
   };
 
