@@ -115,6 +115,22 @@
         "@type": "Answer",
         "text": "Simply type or paste your text into UltraTextGen, select a Gothic style such as bold, symbolic, or tattoo-inspired, and click generate. Your styled text appears instantly. <br><br> <strong>Example</strong><br> Typing \"Dark Vibes\" might produce 𝔇𝔞𝔯𝔨 𝔙𝔦𝔟𝔢𝔰 — ready to copy and paste anywhere."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Gothic and Old English fonts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They overlap. \"Gothic\" is the broad family of medieval blackletter scripts (Textura, Fraktur, Schwabacher). \"Old English\" usually means the heavy, high-contrast blackletter weight used on tattoos, sports jerseys, and newspaper mastheads — the bold 𝕺𝖑𝖉 𝕰𝖓𝖌𝖑𝖎𝖘𝖍 look. In Unicode they share the same glyph blocks, so this generator produces both. For the chunky tattoo/jersey style specifically, use the dedicated Old English font generator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I make gothic numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with one caveat: true blackletter digits do not exist in Unicode — the Fraktur block only covers letters. When you type numbers here they are paired with bold digits (𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗), the closest heavy match, so they don't fall back to plain text. Genuine ornate blackletter numerals only exist as drawn lettering or image fonts, which copy-paste Unicode cannot reproduce."
+      }
     }
   ]
 }
@@ -205,13 +221,11 @@
             Add decoration to results
        </div>
     <div class="decoration-tabs">
-    <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
+    <button class="decoration-tab active" data-deco-tab="crosses">Crosses</button>
+    <button class="decoration-tab" data-deco-tab="occult">Occult</button>
+    <button class="decoration-tab" data-deco-tab="runes">Runes</button>
     <button class="decoration-tab" data-deco-tab="frames">Frames</button>
     <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
-    <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
-    <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-    <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
-    <button class="decoration-tab" data-deco-tab="flags">Flags</button>
       </div>
           <div class="decoration-grid" id="decorationGrid"></div>
         </div>
@@ -240,6 +254,101 @@
     
     <!-- Results -->
     <div class="results-grid" id="resultsGrid"></div>
+
+    <!-- ============================================================
+         UNIQUE EDITORIAL CONTENT (indexing + JTBD coverage)
+         ============================================================ -->
+    <section class="editorial-section">
+      <h2>Gothic, Fraktur &amp; Blackletter — what you're copying</h2>
+      <p>
+        Type anything above and this generator rewrites it in <strong>blackletter</strong> —
+        the dense, angular medieval script people mean by "gothic font." It isn't a
+        downloaded typeface; it's real <strong>Unicode</strong>, so the styled text pastes
+        straight into Instagram, TikTok, Discord, X, a gaming username, or a YouTube title
+        and keeps its look with nothing to install.
+      </p>
+      <p>
+        There are two base blackletter alphabets in Unicode and four decorated variants built
+        from them, so you get six distinct gothic looks in one place — from a light scholarly
+        <span lang="und">𝔉𝔯𝔞𝔨𝔱𝔲𝔯</span> to a heavy <span lang="und">𝕺𝖑𝖉 𝕰𝖓𝖌𝖑𝖎𝖘𝖍</span> tattoo
+        weight. Looking specifically for the chunky Old English / Olde English style used on
+        jerseys, name tattoos and varsity lettering? See the dedicated
+        <a href="/category/old-english-fonts/">Old English font generator</a>.
+      </p>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Every gothic letter, A to Z</h2>
+      <p class="glyph-sub">
+        The full blackletter alphabet for the two base styles — copy a single letter, or type
+        a word above to style the whole thing.
+      </p>
+      <div class="gothic-charts">
+        <div class="glyph-chart">
+          <h3>Fraktur — 𝔊𝔬𝔱𝔥𝔦𝔠</h3>
+          <p class="glyph-sub">The classic medieval blackletter. Lighter, scholarly, German-manuscript feel.</p>
+          <div class="glyph-row">𝔄 𝔅 ℭ 𝔇 𝔈 𝔉 𝔊 ℌ ℑ 𝔍 𝔎 𝔏 𝔐 𝔑 𝔒 𝔓 𝔔 ℜ 𝔖 𝔗 𝔘 𝔙 𝔚 𝔛 𝔜 ℨ</div>
+          <div class="glyph-row">𝔞 𝔟 𝔠 𝔡 𝔢 𝔣 𝔤 𝔥 𝔦 𝔧 𝔨 𝔩 𝔪 𝔫 𝔬 𝔭 𝔮 𝔯 𝔰 𝔱 𝔲 𝔳 𝔴 𝔵 𝔶 𝔷</div>
+          <div class="glyph-row">𝟎 𝟏 𝟐 𝟑 𝟒 𝟓 𝟔 𝟕 𝟖 𝟗</div>
+        </div>
+        <div class="glyph-chart">
+          <h3>Bold Fraktur / Old English — 𝕲𝖔𝖙𝖍𝖎𝖈</h3>
+          <p class="glyph-sub">The heavy, high-contrast weight — the "Old English" look used for tattoos and jerseys.</p>
+          <div class="glyph-row">𝕬 𝕭 𝕮 𝕯 𝕰 𝕱 𝕲 𝕳 𝕴 𝕵 𝕶 𝕷 𝕸 𝕹 𝕺 𝕻 𝕼 𝕽 𝕾 𝕿 𝖀 𝖁 𝖂 𝖃 𝖄 𝖅</div>
+          <div class="glyph-row">𝖆 𝖇 𝖈 𝖉 𝖊 𝖋 𝖌 𝖍 𝖎 𝖏 𝖐 𝖑 𝖒 𝖓 𝖔 𝖕 𝖖 𝖗 𝖘 𝖙 𝖚 𝖛 𝖜 𝖝 𝖞 𝖟</div>
+          <div class="glyph-row">𝟎 𝟏 𝟐 𝟑 𝟒 𝟓 𝟔 𝟕 𝟖 𝟗</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Six gothic styles in one generator</h2>
+      <div class="editorial-grid">
+        <div class="style-card"><p class="style-preview">𝔊𝔬𝔱𝔥𝔦𝔠</p><p>Fraktur — the classic blackletter</p></div>
+        <div class="style-card"><p class="style-preview">𝕲𝖔𝖙𝖍𝖎𝖈</p><p>Bold Fraktur / Old English weight</p></div>
+        <div class="style-card"><p class="style-preview">𝔊̲𝔬̲𝔱̲𝔥̲𝔦̲𝔠̲</p><p>Gothic Underline</p></div>
+        <div class="style-card"><p class="style-preview">✝ 𝕲𝖔𝖙𝖍𝖎𝖈 ✝</p><p>Gothic + Cross (bible-verse / memorial)</p></div>
+        <div class="style-card"><p class="style-preview">⛧ 𝔊𝔬𝔱𝔥𝔦𝔠 ⛧</p><p>Gothic Occult (goth / metal)</p></div>
+        <div class="style-card"><p class="style-preview">𝔊̶𝔬̶𝔱̶𝔥̶𝔦̶𝔠̶</p><p>Gothic Strikethrough (grunge)</p></div>
+      </div>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Gothic numbers (0–9)</h2>
+      <p>
+        A heads-up most generators skip: <strong>true blackletter digits don't exist in
+        Unicode</strong> — the Fraktur block only covers A–Z and a–z. So when you type
+        numbers here, we pair them with the closest heavy match — bold digits — instead of
+        dropping back to plain text:
+      </p>
+      <div class="glyph-row">𝟎 𝟏 𝟐 𝟑 𝟒 𝟓 𝟔 𝟕 𝟖 𝟗</div>
+      <p>
+        Great for dates, jersey numbers, and "<span lang="und">𝟒𝟒𝟒</span>"-style bios. If you
+        need genuine ornate blackletter numerals (for a tattoo stencil, say), those only exist
+        as drawn lettering or image fonts — copy-paste Unicode can't reproduce them.
+      </p>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Will gothic text show up on your device?</h2>
+      <p>
+        The #1 gothic complaint is boxes or squares (□□□) — that happens when a device is
+        missing the blackletter glyphs. This checks, live on your current device, which styles
+        render cleanly before you paste them somewhere public:
+      </p>
+      <div class="gothic-compat" id="gothicCompat"></div>
+    </section>
+
+    <section class="editorial-section">
+      <h2>Types of gothic lettering</h2>
+      <p>"Gothic" covers a family of medieval blackletter scripts. The main ones:</p>
+      <div class="editorial-grid">
+        <div class="style-card"><h3>Textura</h3><p>The earliest, tightest form — narrow, uniform vertical strokes. The "spiky" cathedral look.</p></div>
+        <div class="style-card"><h3>Fraktur</h3><p>German blackletter with "broken" curves. The classic <span lang="und">𝔊𝔬𝔱𝔥𝔦𝔠</span> alphabet on this page.</p></div>
+        <div class="style-card"><h3>Schwabacher</h3><p>Rounder, bolder cousin of Fraktur — heavy and decorative.</p></div>
+        <div class="style-card"><h3>Old English</h3><p>The chunky tattoo / jersey / newspaper-masthead style. <a href="/category/old-english-fonts/">Old English generator →</a></p></div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -297,6 +406,39 @@
     Textura — the earliest form, known for its tight, uniform vertical strokes.
     <br><br>
     UltraTextGen offers variations like bold Gothic (𝕲𝖔𝖙𝖍𝖎𝖈), symbolic styles, and tattoo-inspired scripts to match your vibe.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    What is the difference between Gothic and Old English fonts?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    They overlap. "Gothic" is the broad family of medieval blackletter scripts (Textura, Fraktur, Schwabacher).
+    "Old English" usually means the heavy, high-contrast blackletter weight used on tattoos, sports jerseys, and
+    newspaper mastheads — the bold 𝕺𝖑𝖉 𝕰𝖓𝖌𝖑𝖎𝖘𝖍 look.
+    In Unicode they share the same glyph blocks, so this generator produces both.
+    <br><br>
+    For the chunky tattoo/jersey style specifically, use the dedicated <a href="/category/old-english-fonts/">Old English font generator</a>.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Can I make gothic numbers?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Yes, with one caveat: true blackletter digits do not exist in Unicode — the Fraktur block only covers letters.
+    When you type numbers here they are paired with bold digits (𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗), the closest heavy match,
+    so they don't fall back to plain text.
+    <br><br>
+    Genuine ornate blackletter numerals only exist as drawn lettering or image fonts, which copy-paste Unicode cannot reproduce.
   </div>
 </div>
 
@@ -427,14 +569,70 @@
     </div>
   </footer>
 
-  <!-- Category filter -->
+  <!-- Category filter + gothic-themed decorations -->
   <script>
     window.UTG_FAMILY = "gothic";
+    window.UTG_DEFAULT_DECO_TAB = "crosses";
+    window.UTG_DECORATIONS = {
+      crosses: [
+        { text: "✝ text ✝", prefix: "✝ ", suffix: " ✝" },
+        { text: "✟ text ✟", prefix: "✟ ", suffix: " ✟" },
+        { text: "☩ text ☩", prefix: "☩ ", suffix: " ☩" },
+        { text: "☦ text ☦", prefix: "☦ ", suffix: " ☦" },
+        { text: "✠ text ✠", prefix: "✠ ", suffix: " ✠" },
+        { text: "✚ text ✚", prefix: "✚ ", suffix: " ✚" },
+        { text: "♰ text ♰", prefix: "♰ ", suffix: " ♰" },
+        { text: "♱ text ♱", prefix: "♱ ", suffix: " ♱" },
+        { text: "† text †", prefix: "† ", suffix: " †" },
+        { text: "‡ text ‡", prefix: "‡ ", suffix: " ‡" }
+      ],
+      occult: [
+        { text: "⛧ text ⛧", prefix: "⛧ ", suffix: " ⛧" },
+        { text: "𖤐 text 𖤐", prefix: "𖤐 ", suffix: " 𖤐" },
+        { text: "☠ text ☠", prefix: "☠ ", suffix: " ☠" },
+        { text: "⚰ text ⚰", prefix: "⚰ ", suffix: " ⚰" },
+        { text: "☽ text ☾", prefix: "☽ ", suffix: " ☾" },
+        { text: "⛤ text ⛤", prefix: "⛤ ", suffix: " ⛤" },
+        { text: "☥ text ☥", prefix: "☥ ", suffix: " ☥" },
+        { text: "⚱ text ⚱", prefix: "⚱ ", suffix: " ⚱" },
+        { text: "𓆩 text 𓆪", prefix: "𓆩 ", suffix: " 𓆪" },
+        { text: "♆ text ♆", prefix: "♆ ", suffix: " ♆" }
+      ],
+      runes: [
+        { text: "ᚱ text ᚱ", prefix: "ᚱ ", suffix: " ᚱ" },
+        { text: "ᚢ text ᚢ", prefix: "ᚢ ", suffix: " ᚢ" },
+        { text: "ᚾ text ᚾ", prefix: "ᚾ ", suffix: " ᚾ" },
+        { text: "ᚦ text ᚦ", prefix: "ᚦ ", suffix: " ᚦ" },
+        { text: "ᛟ text ᛟ", prefix: "ᛟ ", suffix: " ᛟ" },
+        { text: "ᛉ text ᛉ", prefix: "ᛉ ", suffix: " ᛉ" },
+        { text: "ᚨ text ᚨ", prefix: "ᚨ ", suffix: " ᚨ" },
+        { text: "ᛊ text ᛊ", prefix: "ᛊ ", suffix: " ᛊ" }
+      ],
+      frames: [
+        { text: "꧁ text ꧂", prefix: "꧁ ", suffix: " ꧂" },
+        { text: "༺ text ༻", prefix: "༺ ", suffix: " ༻" },
+        { text: "【 text 】", prefix: "【 ", suffix: " 】" },
+        { text: "❰ text ❱", prefix: "❰ ", suffix: " ❱" },
+        { text: "⟬ text ⟭", prefix: "⟬ ", suffix: " ⟭" },
+        { text: "☩ text ☩", prefix: "☩ ", suffix: " ☩" },
+        { text: "「 text 」", prefix: "「 ", suffix: " 」" },
+        { text: "⸉ text ⸊", prefix: "⸉ ", suffix: " ⸊" }
+      ],
+      dividers: [
+        { text: "✝═══ text ═══✝", prefix: "✝═══ ", suffix: " ═══✝" },
+        { text: "⛧─── text ───⛧", prefix: "⛧─── ", suffix: " ───⛧" },
+        { text: "†•••• text ••••†", prefix: "†•••• ", suffix: " ••••†" },
+        { text: "═══ text ═══", prefix: "═══ ", suffix: " ═══" },
+        { text: "⸸━━ text ━━⸸", prefix: "⸸━━ ", suffix: " ━━⸸" },
+        { text: "♰ ═══ text ═══ ♰", prefix: "♰ ═══ ", suffix: " ═══ ♰" }
+      ]
+    };
   </script>
 
   <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/gothic-tools.js" defer=""></script>
 
 
 

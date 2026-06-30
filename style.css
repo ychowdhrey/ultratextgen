@@ -3548,3 +3548,139 @@ body.dark-mode .vertical-chip {
   margin: 0;
   font-size: 0.9rem;
 }
+
+/* ==========================================================================
+   Gothic compatibility tester (gothic-tools.js) + per-style alphabet charts
+   ========================================================================== */
+.gothic-compat {
+  margin-top: 14px;
+}
+
+.compat-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+}
+
+.compat-input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+}
+
+.compat-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compat-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "badge name" "badge sample";
+  align-items: center;
+  gap: 2px 14px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.compat-row:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.compat-row.is-copied {
+  border-color: var(--ts-safe);
+}
+
+.compat-badge {
+  grid-area: badge;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.compat-badge.is-ok {
+  color: var(--ts-safe);
+  background: color-mix(in srgb, var(--ts-safe) 12%, transparent);
+}
+
+.compat-badge.is-warn {
+  color: var(--ts-risk);
+  background: color-mix(in srgb, var(--ts-risk) 14%, transparent);
+}
+
+.compat-name {
+  grid-area: name;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.compat-sample {
+  grid-area: sample;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.compat-note {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Per-style alphabet / number reference charts (static, crawlable) */
+.gothic-charts {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.glyph-chart {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-soft);
+}
+
+.glyph-chart h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.glyph-chart .glyph-sub {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.glyph-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.glyph-row + .glyph-row {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
