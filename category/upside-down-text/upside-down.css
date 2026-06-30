@@ -1,0 +1,316 @@
+/* ── Upside Down Text Generator Styles ───────────────────────────── */
+/* Supplements /style.css — tool-specific component styles only.      */
+/* Design tokens (--bg-base, --bg-white, --text-primary, etc.) are    */
+/* inherited from /style.css which loads first. Mirrors the zalgo      */
+/* control/output pattern for visual consistency across tools.        */
+
+:root {
+  --ud-accent-dim: rgba(139, 92, 246, 0.15);
+  --ud-accent-glow: rgba(139, 92, 246, 0.3);
+  --ud-border-active: #6d4fc7;
+  --ud-surface2: rgba(0, 0, 0, 0.06);
+  --ud-green: #4ade80;
+}
+
+/* ── Layout ─────────────────────────────────────────── */
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+.ud-page-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.ud-page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.ud-page-header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ── Input ──────────────────────────────────────────── */
+.input-section { margin-bottom: 24px; }
+
+.input-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.text-input {
+  width: 100%;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 16px;
+  color: var(--text-primary);
+  resize: vertical;
+  min-height: 72px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px var(--ud-accent-dim);
+}
+
+.text-input::placeholder { color: var(--text-muted); }
+
+.char-counter {
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* ── Controls ───────────────────────────────────────── */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .controls { grid-template-columns: 1fr; }
+}
+
+.control-group {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.control-group.full-width { grid-column: 1 / -1; }
+
+.control-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.control-label .icon { font-size: 13px; opacity: 0.7; }
+
+.mode-desc {
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ── Pills ──────────────────────────────────────────── */
+.pill-group { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.pill:hover { border-color: var(--ud-border-active); color: var(--text-primary); }
+
+.pill.active {
+  background: var(--ud-accent-dim);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+/* ── Output ─────────────────────────────────────────── */
+.output-section {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-white);
+}
+
+.output-header-left { display: flex; align-items: center; gap: 10px; }
+
+.output-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--ud-green);
+}
+
+.output-chars {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.btn {
+  padding: 7px 18px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.btn-copy { background: var(--accent-purple); color: #fff; }
+
+.btn-copy:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--ud-accent-glow);
+}
+
+.btn-copy.copied { background: var(--ud-green); }
+
+.btn-copy:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.output-body {
+  padding: 28px 22px;
+  min-height: 96px;
+  font-size: 24px;
+  line-height: 1.9;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-family: system-ui, -apple-system, sans-serif;
+  white-space: pre-wrap;
+  color: var(--text-primary);
+}
+
+.output-placeholder {
+  color: var(--text-muted);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.coverage-note {
+  padding: 10px 18px 14px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  border-top: 1px dashed var(--border-light);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ── Tooltip ────────────────────────────────────────── */
+.tooltip-trigger {
+  position: relative;
+  cursor: help;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--ud-surface2);
+  border: 1px solid var(--border-light);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.tooltip-trigger:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 400;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: max-content;
+  max-width: 220px;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
+  letter-spacing: 0;
+  text-transform: none;
+  pointer-events: none;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ── Editorial ──────────────────────────────────────── */
+.editorial-section { margin-top: 32px; }
+.editorial-section:first-of-type { margin-top: 48px; }
+
+.editorial-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.editorial-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+  color: var(--text-primary);
+}
+
+.editorial-section p,
+.editorial-section li {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.editorial-section .example {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  color: var(--text-primary);
+}
