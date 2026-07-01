@@ -146,7 +146,7 @@
         "items": [
           {
             "question": "What languages and alphabets work?",
-            "answer": "Unicode styled variants only exist for the Latin alphabet (A–Z, a–z) and Arabic digits (0–9). So every language written in Latin script works: English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Malay, Tagalog, Afrikaans, Swahili, Hungarian, Czech — all fine.<br><br>Accented characters (á, é, ñ, ü, ç) keep their accents in most styles. A handful of decorative styles drop the accent because Unicode doesn't define a styled variant for it — try a different style if that matters."
+            "answer": "Unicode styled variants only exist for the Latin alphabet (A–Z, a–z) and Arabic digits (0–9). So the core letters of every Latin-script language are supported: English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Malay, Tagalog, Afrikaans, Swahili, Hungarian, Czech.<br><br>One caveat for accented letters (á, é, ñ, ü, ç, and Vietnamese letters like ữ, ế, đ): Unicode defines no styled variant for them, so in most alphabet styles — bold, italic, script, fraktur — the accented letter stays plain while the letters around it are styled. The accent itself is never lost. Styles that add marks or symbols instead of swapping letters (strikethrough, underline, and decorative wraps) keep accents fully intact, so they're the best pick for heavily-accented languages like Vietnamese."
           },
           {
             "question": "Why doesn't Arabic, Cyrillic, Hindi, Chinese, or Japanese text transform?",
