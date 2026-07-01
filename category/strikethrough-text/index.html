@@ -204,13 +204,11 @@
             Add decoration to results
        </div>
     <div class="decoration-tabs">
-    <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
-    <button class="decoration-tab" data-deco-tab="frames">Frames</button>
-    <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
-    <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
-    <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-    <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
-    <button class="decoration-tab" data-deco-tab="flags">Flags</button>
+    <button class="decoration-tab active" data-deco-tab="done">Done</button>
+    <button class="decoration-tab" data-deco-tab="sale">Sale</button>
+    <button class="decoration-tab" data-deco-tab="cross">Cross Out</button>
+    <button class="decoration-tab" data-deco-tab="redacted">Redacted</button>
+    <button class="decoration-tab" data-deco-tab="sass">Sass</button>
       </div>
           <div class="decoration-grid" id="decorationGrid"></div>
         </div>
@@ -602,6 +600,60 @@ Just type your Hindi sentence using English letters (like “Aaj mausam bahut ac
   <!-- Category filter -->
   <script>
     window.UTG_FAMILY = "strikethrough-text";
+    // JTBD-matched decorations: mark-done, sale/price, cross-out, redaction, irony
+    window.UTG_DEFAULT_DECO_TAB = "done";
+    window.UTG_DECORATIONS = {
+      done: [
+        { text: "✔ text ✔", prefix: "✔ ", suffix: " ✔" },
+        { text: "✅ text ✅", prefix: "✅ ", suffix: " ✅" },
+        { text: "☑ text ☑", prefix: "☑ ", suffix: " ☑" },
+        { text: "✓ text ✓", prefix: "✓ ", suffix: " ✓" },
+        { text: "🗹 text 🗹", prefix: "🗹 ", suffix: " 🗹" },
+        { text: "👍 text 👍", prefix: "👍 ", suffix: " 👍" },
+        { text: "🎉 text 🎉", prefix: "🎉 ", suffix: " 🎉" },
+        { text: "🏁 text 🏁", prefix: "🏁 ", suffix: " 🏁" }
+      ],
+      sale: [
+        { text: "🏷 text 🏷", prefix: "🏷 ", suffix: " 🏷" },
+        { text: "🔥 text 🔥", prefix: "🔥 ", suffix: " 🔥" },
+        { text: "💸 text 💸", prefix: "💸 ", suffix: " 💸" },
+        { text: "💥 text 💥", prefix: "💥 ", suffix: " 💥" },
+        { text: "⬇ text ⬇", prefix: "⬇ ", suffix: " ⬇" },
+        { text: "‼ text ‼", prefix: "‼ ", suffix: " ‼" },
+        { text: "★ text ★", prefix: "★ ", suffix: " ★" },
+        { text: "❗ text ❗", prefix: "❗ ", suffix: " ❗" }
+      ],
+      cross: [
+        { text: "✗ text ✗", prefix: "✗ ", suffix: " ✗" },
+        { text: "✘ text ✘", prefix: "✘ ", suffix: " ✘" },
+        { text: "✖ text ✖", prefix: "✖ ", suffix: " ✖" },
+        { text: "❌ text ❌", prefix: "❌ ", suffix: " ❌" },
+        { text: "⊘ text ⊘", prefix: "⊘ ", suffix: " ⊘" },
+        { text: "⨯ text ⨯", prefix: "⨯ ", suffix: " ⨯" },
+        { text: "╳ text ╳", prefix: "╳ ", suffix: " ╳" },
+        { text: "☓ text ☓", prefix: "☓ ", suffix: " ☓" }
+      ],
+      redacted: [
+        { text: "█ text █", prefix: "█ ", suffix: " █" },
+        { text: "▓ text ▓", prefix: "▓ ", suffix: " ▓" },
+        { text: "▒ text ▒", prefix: "▒ ", suffix: " ▒" },
+        { text: "░ text ░", prefix: "░ ", suffix: " ░" },
+        { text: "▬ text ▬", prefix: "▬ ", suffix: " ▬" },
+        { text: "■ text ■", prefix: "■ ", suffix: " ■" },
+        { text: "▮ text ▮", prefix: "▮ ", suffix: " ▮" },
+        { text: "▪ text ▪", prefix: "▪ ", suffix: " ▪" }
+      ],
+      sass: [
+        { text: "😏 text 😏", prefix: "😏 ", suffix: " 😏" },
+        { text: "💀 text 💀", prefix: "💀 ", suffix: " 💀" },
+        { text: "🙄 text 🙄", prefix: "🙄 ", suffix: " 🙄" },
+        { text: "🤡 text 🤡", prefix: "🤡 ", suffix: " 🤡" },
+        { text: "😂 text 😂", prefix: "😂 ", suffix: " 😂" },
+        { text: "🤷 text 🤷", prefix: "🤷 ", suffix: " 🤷" },
+        { text: "* text *", prefix: "* ", suffix: " *" },
+        { text: "~ text ~", prefix: "~ ", suffix: " ~" }
+      ]
+    };
   </script>
 
   <script src="/styles.js"></script>
