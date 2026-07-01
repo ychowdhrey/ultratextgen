@@ -619,6 +619,58 @@ const textStyles = {
    platforms: ['all', 'x', 'discord']
 },
 
+'Ultra Thin Strike': {
+  type: 'decorator',
+  decoratorId: 'shortStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-thin-strike',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Heavy Strike': {
+  type: 'decorator',
+  decoratorId: 'heavyStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-heavy-strike',
+  note: 'Copy & Paste to Check',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Wavy Strike': {
+  type: 'decorator',
+  decoratorId: 'wavyStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-wavy-strike',
+  note: 'Copy & Paste to Check',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+},
+
+'Ultra Light Slash': {
+  type: 'decorator',
+  decoratorId: 'shortSlash',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-light-slash',
+  platforms: ['all', 'x', 'discord']
+},
+
+'Ultra Strike + Underline': {
+  type: 'decorator',
+  decoratorId: 'strikeUnderline',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-strike-underline',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
   /* =========================
      Underline Text
      ========================= */
