@@ -250,6 +250,13 @@
           <span class="char-count" id="charCountWrapper" hidden><span id="charCount">0</span>/500</span>
         </div>
 
+        <!-- Accent-aware hint: shows only when the input contains diacritics -->
+        <div class="accent-notice" id="accentNotice" role="note" hidden>
+          <span class="accent-notice-icon" aria-hidden="true">◌́</span>
+          <span class="accent-notice-text">Your text has accent marks. Most styles leave letters like <b>é</b> and <b>ữ</b> plain — <b>strikethrough, underline and symbol-wrap</b> styles keep them. <a href="/guide/fancy-fonts-and-accents/">Which styles keep accents →</a></span>
+          <button type="button" class="accent-notice-close" id="accentNoticeClose" aria-label="Dismiss">✕</button>
+        </div>
+
         <!-- Decoration Selector -->
         <div class="decoration-section">
           <div class="decoration-label">
@@ -800,6 +807,7 @@
   <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/accent-notice.js" defer></script>
 <script src="/i18n.js"></script>
 
 
