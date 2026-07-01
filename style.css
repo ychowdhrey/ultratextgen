@@ -3920,3 +3920,58 @@ body.theme-gothic .category-section { position: static; background: transparent;
   min-width: 70px;
   padding: 8px 14px;
 }
+
+/* ==========================================================================
+   Accent / diacritic input notice
+   Shown by accent-notice.js only when the input contains diacritics.
+   See /guide/fancy-fonts-and-accents/ and data/accent-support.json.
+   ========================================================================== */
+.accent-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent-purple);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+.accent-notice[hidden] {
+  display: none;
+}
+.accent-notice-icon {
+  font-size: 1rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.accent-notice-text b {
+  color: inherit;
+  font-weight: 600;
+}
+.accent-notice-text a {
+  color: var(--accent-purple);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.accent-notice-text a:hover {
+  text-decoration: underline;
+}
+.accent-notice-close {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 2px;
+}
+.accent-notice-close:hover {
+  color: var(--accent-purple);
+}
