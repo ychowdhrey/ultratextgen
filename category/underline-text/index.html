@@ -203,13 +203,11 @@
             Add decoration to results
        </div>
     <div class="decoration-tabs">
-    <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
-    <button class="decoration-tab" data-deco-tab="frames">Frames</button>
-    <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
-    <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
+    <button class="decoration-tab active" data-deco-tab="emphasis">Emphasis</button>
+    <button class="decoration-tab" data-deco-tab="rules">Rules</button>
+    <button class="decoration-tab" data-deco-tab="pointers">Pointers</button>
+    <button class="decoration-tab" data-deco-tab="important">Important</button>
     <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-    <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
-    <button class="decoration-tab" data-deco-tab="flags">Flags</button>
       </div>
           <div class="decoration-grid" id="decorationGrid"></div>
         </div>
@@ -606,6 +604,60 @@
   <!-- Category filter -->
   <script>
     window.UTG_FAMILY = "underline-text";
+    // JTBD-matched decorations: emphasis, heading rules, pointers, importance
+    window.UTG_DEFAULT_DECO_TAB = "emphasis";
+    window.UTG_DECORATIONS = {
+      emphasis: [
+        { text: "‼ text ‼", prefix: "‼ ", suffix: " ‼" },
+        { text: "❗ text ❗", prefix: "❗ ", suffix: " ❗" },
+        { text: "★ text ★", prefix: "★ ", suffix: " ★" },
+        { text: "➤ text ➤", prefix: "➤ ", suffix: " ➤" },
+        { text: "» text «", prefix: "» ", suffix: " «" },
+        { text: "▸ text ◂", prefix: "▸ ", suffix: " ◂" },
+        { text: "✦ text ✦", prefix: "✦ ", suffix: " ✦" },
+        { text: "❖ text ❖", prefix: "❖ ", suffix: " ❖" }
+      ],
+      rules: [
+        { text: "▬▬ text ▬▬", prefix: "▬▬ ", suffix: " ▬▬" },
+        { text: "══ text ══", prefix: "══ ", suffix: " ══" },
+        { text: "── text ──", prefix: "── ", suffix: " ──" },
+        { text: "―― text ――", prefix: "―― ", suffix: " ――" },
+        { text: "▔▔ text ▔▔", prefix: "▔▔ ", suffix: " ▔▔" },
+        { text: "‾‾ text ‾‾", prefix: "‾‾ ", suffix: " ‾‾" },
+        { text: "━━ text ━━", prefix: "━━ ", suffix: " ━━" },
+        { text: "═ text ═", prefix: "═ ", suffix: " ═" }
+      ],
+      pointers: [
+        { text: "→ text ←", prefix: "→ ", suffix: " ←" },
+        { text: "⟶ text ⟵", prefix: "⟶ ", suffix: " ⟵" },
+        { text: "☞ text ☜", prefix: "☞ ", suffix: " ☜" },
+        { text: "▶ text ◀", prefix: "▶ ", suffix: " ◀" },
+        { text: "➜ text ➜", prefix: "➜ ", suffix: " ➜" },
+        { text: "⇒ text ⇐", prefix: "⇒ ", suffix: " ⇐" },
+        { text: "➤ text ➤", prefix: "➤ ", suffix: " ➤" },
+        { text: "› text ‹", prefix: "› ", suffix: " ‹" }
+      ],
+      important: [
+        { text: "📌 text 📌", prefix: "📌 ", suffix: " 📌" },
+        { text: "⚠ text ⚠", prefix: "⚠ ", suffix: " ⚠" },
+        { text: "🔖 text 🔖", prefix: "🔖 ", suffix: " 🔖" },
+        { text: "📍 text 📍", prefix: "📍 ", suffix: " 📍" },
+        { text: "🚩 text 🚩", prefix: "🚩 ", suffix: " 🚩" },
+        { text: "📢 text 📢", prefix: "📢 ", suffix: " 📢" },
+        { text: "✅ text ✅", prefix: "✅ ", suffix: " ✅" },
+        { text: "❗ text ❗", prefix: "❗ ", suffix: " ❗" }
+      ],
+      minimal: [
+        { text: "• text •", prefix: "• ", suffix: " •" },
+        { text: "· text ·", prefix: "· ", suffix: " ·" },
+        { text: "° text °", prefix: "° ", suffix: " °" },
+        { text: "○ text ○", prefix: "○ ", suffix: " ○" },
+        { text: "◦ text ◦", prefix: "◦ ", suffix: " ◦" },
+        { text: "⋆ text ⋆", prefix: "⋆ ", suffix: " ⋆" },
+        { text: "– text –", prefix: "– ", suffix: " –" },
+        { text: "— text —", prefix: "— ", suffix: " —" }
+      ]
+    };
   </script>
 
   <script src="/styles.js"></script>
