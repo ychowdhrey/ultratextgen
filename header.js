@@ -21,6 +21,32 @@
     document.body.insertBefore(noscript, document.body.firstChild);
   }
 
+  // Journey ads script (scriptwrapper). Injected here so every current and
+  // future page that loads header.js gets it automatically — same pattern as
+  // the GTM loader above. Do not hand-add this tag to individual pages.
+  const ADS_SCRIPT_SRC = "//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js";
+  const ADS_SCRIPT_SELECTOR = 'script[src*="scripts.scriptwrapper.com/tags/"]';
+
+  if (!window.__utgAdsInjected && !document.querySelector(ADS_SCRIPT_SELECTOR)) {
+    window.__utgAdsInjected = true;
+
+    const adsScript = document.createElement("script");
+    adsScript.type = "text/javascript";
+    adsScript.async = true;
+    adsScript.setAttribute("data-noptimize", "1");
+    adsScript.setAttribute("data-cfasync", "false");
+    adsScript.src = ADS_SCRIPT_SRC;
+
+    if (document.head) {
+      document.head.appendChild(adsScript);
+    } else {
+      const firstAdsScript = document.getElementsByTagName("script")[0];
+      if (firstAdsScript && firstAdsScript.parentNode) {
+        firstAdsScript.parentNode.insertBefore(adsScript, firstAdsScript);
+      }
+    }
+  }
+
   if (!window.__utgGtmInjected) {
     window.__utgGtmInjected = true;
 
