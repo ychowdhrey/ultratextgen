@@ -1,20 +1,18 @@
 #!/usr/bin/env node
 'use strict';
 
-// Verifies the Journey ads script (scriptwrapper) is deployed site-wide.
+// Verifies the Journey ads script (scriptwrapper) is present on every page.
 //
-// The ad tag is NOT hand-added per page. It is injected at runtime by
-// header.js (single source of truth), which every page loads. So this check
-// enforces two invariants:
-//   1. header.js still references the ad tag id.
-//   2. Every non-skipped HTML page loads header.js (and thus gets the ad tag).
+// The tag is hard-coded into each page's <head> (right after the Grow
+// initializer) so Journey's verification crawler — which reads raw HTML and
+// does not execute JS — can detect it. This check enforces that every
+// non-skipped HTML page carries exactly one copy of the tag.
 
 const fs = require('fs');
 const path = require('path');
 const { globSync } = require('glob');
 
 const AD_TAG_ID = 'e381520a-ca23-48ca-a066-83c420ddddea';
-const HEADER_SCRIPT_RE = /<script[^>]+src=["']\/header\.js["']/i;
 const ROOT = path.resolve(__dirname, '..');
 
 // Patterns in the file path that indicate files to skip
@@ -37,21 +35,12 @@ function shouldSkip(filePath) {
   return false;
 }
 
-const errors = [];
-
-// 1. The single source of truth (header.js) must still carry the ad tag.
-const headerPath = path.join(ROOT, 'header.js');
-const headerContent = fs.existsSync(headerPath) ? fs.readFileSync(headerPath, 'utf8') : '';
-if (!headerContent.includes(AD_TAG_ID)) {
-  errors.push('MISSING ad tag in header.js (single source of truth)');
-}
-
-// 2. Every non-skipped HTML page must load header.js so the ad tag propagates.
 const files = globSync('**/*.html', { cwd: ROOT, absolute: true });
 
 let passed = 0;
 let failed = 0;
 let skipped = 0;
+const errors = [];
 
 for (const file of files) {
   if (shouldSkip(file)) {
@@ -62,11 +51,16 @@ for (const file of files) {
   const rel = path.relative(ROOT, file);
   const content = fs.readFileSync(file, 'utf8');
 
-  if (HEADER_SCRIPT_RE.test(content)) {
-    passed++;
-  } else {
-    errors.push(`MISSING header.js (no ad script): ${rel}`);
+  const count = (content.match(new RegExp(AD_TAG_ID, 'g')) || []).length;
+
+  if (count === 0) {
+    errors.push(`MISSING Journey ads script: ${rel}`);
     failed++;
+  } else if (count > 1) {
+    errors.push(`DUPLICATE Journey ads script: ${rel}`);
+    failed++;
+  } else {
+    passed++;
   }
 }
 
@@ -85,6 +79,6 @@ if (errors.length > 0) {
   process.exit(1);
 } else {
   console.log('');
-  console.log('All checked pages deploy the Journey ads script. ✓');
+  console.log('All checked pages have the Journey ads script. ✓');
   process.exit(0);
 }
