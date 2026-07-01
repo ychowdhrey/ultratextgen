@@ -33,7 +33,7 @@ workflow that produces it.
 | **Category** (style generators) | `/category/` | `WebApplication` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
-| **Guide** (articles) | `/guide/` | `Article` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
+| **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) + `guide-opportunity-map-<date>.md` | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 
 **Only the Library lane is structurally complete** (discovery → scouting →
@@ -56,9 +56,10 @@ These run across page types rather than producing a type.
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
 | Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | [`image-backlink-strategy.md`](./image-backlink-strategy.md) (decision doc) | ad hoc |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
-| i18n / localization | `prerender-i18n.js` (+ `es/`, `locales/`, `README.*.md`) | ❌ none | as needed |
+| i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `pl/`, `pt/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
+| Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`image-assets-check.yml`) |
 
 ---
 
@@ -72,6 +73,7 @@ These run across page types rather than producing a type.
 | `tweet-queue.yml` | daily 09:00 UTC (+ manual) | post qualifying commits (`tweet_queue.py`) |
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
+| `image-assets-check.yml` | on `pull_request` (HTML/`assets/og`/`assets/hero`/`assets/pinterest` paths) | `check-image-assets.py` (PR #315) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 
 ### Scheduled routines (Claude Code on the web)
@@ -98,13 +100,20 @@ here so they aren't lost. Update as they're closed or new ones appear.
 2. **No production pipeline for category/answers.** Strategy exists
    (`jtbd-build-spec.md`); there is no generator/validator equivalent of the
    library lane. These pages are hand-built.
-3. **Usecase and guide lanes are undocumented** — no workflow, no backlog.
+3. ~~**Usecase and guide lanes are undocumented**~~ **Partially closed** — PR #342
+   added [`guide-content-workflow.md`](./guide-content-workflow.md) (research →
+   opportunity → hand-build loop, backlog via `page_type=guide` rows) for the
+   Guide lane. **Usecase is still undocumented** — no workflow, no backlog.
 4. **Operational tracks without docs:** schema/alternateName SEO, i18n, CSS/GTM
    CI checks. Scripts exist; the process is tribal knowledge. The
    alternateName SEO track is now **actively in use** — PR #277 added
    `alternateName` to 30+ category/library/platform pages and PR #291 updated
    `validate-alternatenames.py` — making the missing governing doc the most
-   pressing gap here.
+   pressing gap here. i18n has also grown fast: PRs #327–#336 shipped 7 new
+   localized homepages (`de/`, `fr/`, `id/`, `it/`, `pl/`, `pt/`, `vi/`), all of
+   which the digest classifier missed (it only knew `es/`) — `LANE_RULES` now
+   has a path rule per locale directory, but the *process* for building a
+   localized homepage is still tribal knowledge.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
    (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
@@ -117,6 +126,11 @@ here so they aren't lost. Update as they're closed or new ones appear.
    `assets/pinterest/` root rather than a named board subdirectory — these
    should be moved to `assets/pinterest/<board>/` and wired into the upload
    pipeline. Migrate both per `docs/pinterest-pin-generation.md`.
+7. **Homepage (`index.html`, `_root.html`) has no lane or owner.** It isn't a
+   page type in the table above, so edits to it (PRs #310, #330, #331 this
+   week) never resolve to a lane — the digest classifier has no rule for it,
+   and inventing one (e.g. folding it into "Docs" or "Core JS") would misrepresent
+   what changed. Needs a decision: its own row, or explicit non-lane status.
 
 ---
 
