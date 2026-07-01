@@ -323,11 +323,16 @@ function renderMap(text, style) {
      ----------------------------- */
   const decorators = {
     strike:   t => [...t].map(c => c + '\u0336').join(''),
+    shortStrike: t => [...t].map(c => c + '\u0335').join(''),
     doubleStrike: t => [...t].map(c => c + '\u0336' + '\u0335').join(''),
+    heavyStrike: t => [...t].map(c => c + '\u0336' + '\u0336').join(''),
+    wavyStrike: t => [...t].map(c => c + '\u0334').join(''),
     crossedOut: t => [...t].map(c => c === ' ' ? c : c + '\u0336' + '\u0338').join(''),
     underline:t => [...t].map(c => c + '\u0332').join(''),
     wavy:    t => [...t].map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
-    slash:   t => [...t].map(c => c + '\u0338').join('')
+    slash:   t => [...t].map(c => c + '\u0338').join(''),
+    shortSlash: t => [...t].map(c => c + '\u0337').join(''),
+    strikeUnderline: t => [...t].map(c => c + '\u0336' + '\u0332').join('')
   };
 
   function renderDecorator(text, style) {
