@@ -44,7 +44,11 @@
     fr: { copy: "Copier", copied: "✓ Copié", failed: "✗ Échec", copyTitle: "Copier dans le presse-papiers",
           save: "Enregistrer", saved: "Enregistré", saveTitle: "Enregistrer ce style", unsaveTitle: "Retirer des styles enregistrés",
           empty: "Tape quelque chose au-dessus…",
-          noStyles: "Aucun style trouvé. Essaie un autre filtre ou terme de recherche." }
+          noStyles: "Aucun style trouvé. Essaie un autre filtre ou terme de recherche." },
+    nl: { copy: "Kopieer", copied: "✓ Gekopieerd", failed: "✗ Mislukt", copyTitle: "Kopiëren naar klembord",
+          save: "Bewaar", saved: "Bewaard", saveTitle: "Bewaar deze stijl", unsaveTitle: "Verwijder uit bewaarde stijlen",
+          empty: "Typ hierboven iets…",
+          noStyles: "Geen stijlen gevonden. Probeer een ander filter of zoekwoord." }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
   const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
