@@ -59,6 +59,13 @@
       copyCollection: " Koleksiyonu Kopyala",
       copiedBtn: " Kopyalandı!",
       formats: { inline: "Yan yana", vertical: "Alt alta", comma: "Virgüllü", space: "Boşluklu", bullet: "Maddeli" }
+    },
+    fr: {
+      copied: "Copié : ",
+      copyFormat: "Format de copie",
+      copyCollection: " Copier la collection",
+      copiedBtn: " Copié !",
+      formats: { inline: "En ligne", vertical: "Vertical", comma: "Virgules", space: "Espaces", bullet: "Liste" }
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
