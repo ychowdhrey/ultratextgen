@@ -3984,3 +3984,232 @@ body.theme-gothic .category-section { position: static; background: transparent;
 .accent-notice-close:hover {
   color: var(--accent-purple);
 }
+
+/* ==========================================================================
+   Demo preview, safety pill, share & platform preview
+   ========================================================================== */
+
+/* Multi-line input (and the two-line demo text) keeps its line breaks */
+.style-preview { white-space: pre-wrap; }
+
+/* Ghost sample rendered while the input is empty */
+.style-preview.is-demo {
+  opacity: 0.62;
+}
+
+/* Render-safety pill on result cards (reuses the .ts-pill primitives) */
+.style-card .ts-pill {
+  display: inline-block;
+  margin-top: 6px;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: help;
+}
+
+/* Preview button sits between Copy and Save */
+.preview-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.preview-btn:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+@media (max-width: 640px) {
+  .preview-label { display: none; }
+}
+
+/* Share button rides the scope-control row, pushed to the right */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 6px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.share-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+.share-btn.copied {
+  border-color: var(--ts-safe);
+  color: var(--ts-safe);
+}
+
+/* --- Platform preview modal ------------------------------------------- */
+body.preview-open { overflow: hidden; }
+
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+/* display:flex above would otherwise defeat the hidden attribute's UA rule */
+.preview-modal[hidden] { display: none; }
+.preview-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+.preview-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+}
+.preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.preview-title {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+.preview-close {
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.preview-close:hover { color: var(--text-primary); background: var(--bg-base); }
+.preview-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.preview-tab {
+  padding: 5px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.preview-tab.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: color-mix(in srgb, var(--accent-purple) 10%, var(--bg-white));
+}
+.preview-note {
+  margin: 12px 0 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Shared mockup bits — platform-brand colors are scoped locals on purpose:
+   the mockups replicate external UIs and must not follow the site theme. */
+.pv-mock {
+  border-radius: 12px;
+  padding: 14px;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.pv-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+}
+.pv-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+/* Instagram profile bio */
+.pv-instagram { --pv-bg: #ffffff; --pv-fg: #111827; --pv-muted: #737373;
+  background: var(--pv-bg); color: var(--pv-fg); border: 1px solid #e5e7eb; }
+.pv-ig-head { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+.pv-ig-stats { display: flex; gap: 14px; font-size: 0.78rem; color: var(--pv-fg); }
+.pv-ig-stats b { display: block; text-align: center; }
+.pv-ig-name { font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; }
+.pv-ig-bio { font-size: 0.85rem; }
+.pv-ig-btn { margin-top: 10px; text-align: center; font-size: 0.8rem; font-weight: 600;
+  border: 1px solid #dbdbdb; border-radius: 8px; padding: 5px; color: var(--pv-fg); }
+
+/* LinkedIn post */
+.pv-linkedin { --pv-bg: #ffffff; --pv-fg: #1f2328; --pv-muted: #666666;
+  background: var(--pv-bg); color: var(--pv-fg); border: 1px solid #e0e0e0; }
+.pv-li-head { display: flex; gap: 10px; margin-bottom: 10px; }
+.pv-li-name { font-weight: 700; font-size: 0.85rem; }
+.pv-li-sub { font-size: 0.72rem; color: var(--pv-muted); }
+.pv-li-body { font-size: 0.88rem; }
+.pv-li-actions { display: flex; gap: 18px; margin-top: 12px; padding-top: 8px;
+  border-top: 1px solid #e0e0e0; font-size: 0.75rem; color: var(--pv-muted); font-weight: 600; }
+
+/* Discord message (always dark — that's the product) */
+.pv-discord { --pv-bg: #313338; --pv-fg: #dbdee1; --pv-muted: #949ba4;
+  background: var(--pv-bg); color: var(--pv-fg); }
+.pv-dc-row { display: flex; gap: 12px; }
+.pv-dc-name { font-weight: 600; color: #f2b96a; font-size: 0.88rem; margin-right: 8px; }
+.pv-dc-time { font-size: 0.7rem; color: var(--pv-muted); }
+.pv-dc-msg { font-size: 0.88rem; margin-top: 2px; }
+
+/* X post */
+.pv-x { --pv-bg: #000000; --pv-fg: #e7e9ea; --pv-muted: #71767b;
+  background: var(--pv-bg); color: var(--pv-fg); }
+.pv-x-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.pv-x-name { font-weight: 700; font-size: 0.85rem; }
+.pv-x-handle { color: var(--pv-muted); font-size: 0.8rem; }
+.pv-x-body { font-size: 0.92rem; }
+.pv-x-actions { display: flex; gap: 24px; margin-top: 10px; color: var(--pv-muted); font-size: 0.75rem; }
+
+/* WhatsApp bubble */
+.pv-whatsapp { --pv-bg: #e5ddd5; --pv-bubble: #d9fdd3; --pv-fg: #111b21; --pv-muted: #667781;
+  background: var(--pv-bg); }
+.pv-wa-bubble { max-width: 85%; margin-left: auto; background: var(--pv-bubble);
+  color: var(--pv-fg); border-radius: 10px 10px 2px 10px; padding: 8px 10px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.08); }
+.pv-wa-msg { font-size: 0.88rem; }
+.pv-wa-meta { display: block; text-align: right; font-size: 0.65rem; color: var(--pv-muted); margin-top: 2px; }
+
+/* TikTok comment */
+.pv-tiktok { --pv-bg: #ffffff; --pv-fg: #161823; --pv-muted: #86878b;
+  background: var(--pv-bg); color: var(--pv-fg); border: 1px solid #e5e7eb; }
+.pv-tt-row { display: flex; gap: 10px; }
+.pv-tt-row > div { flex: 1; }
+.pv-tt-name { font-size: 0.75rem; font-weight: 600; color: var(--pv-muted); }
+.pv-tt-msg { font-size: 0.85rem; margin: 2px 0; }
+.pv-tt-meta { font-size: 0.72rem; color: var(--pv-muted); }
+.pv-tt-like { color: var(--pv-muted); font-size: 0.72rem; text-align: center; }
+
+@media (max-width: 640px) {
+  .preview-modal { align-items: flex-end; padding: 0; }
+  .preview-dialog { max-width: 100%; border-radius: 16px 16px 0 0; }
+}
