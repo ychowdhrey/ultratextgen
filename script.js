@@ -21,6 +21,26 @@
     console.error("styles.js is missing or window.textStyles is empty.");
   }
 
+  /* ===================
+     UI strings (localized by <html lang>)
+     =================== */
+  const UI_STRINGS = {
+    en: { copy: "Copy", copied: "✓ Copied", failed: "✗ Failed", copyTitle: "Copy to clipboard",
+          save: "Save", saved: "Saved", saveTitle: "Save this style", unsaveTitle: "Remove from saved styles",
+          empty: "Type something above...",
+          noStyles: "No styles found. Try a different filter or search term." },
+    pt: { copy: "Copiar", copied: "✓ Copiado", failed: "✗ Falhou", copyTitle: "Copiar para a área de transferência",
+          save: "Salvar", saved: "Salvo", saveTitle: "Salvar este estilo", unsaveTitle: "Remover dos estilos salvos",
+          empty: "Digite algo aí em cima...",
+          noStyles: "Nenhum estilo encontrado. Tente outro filtro ou termo de busca." },
+    id: { copy: "Salin", copied: "✓ Tersalin", failed: "✗ Gagal", copyTitle: "Salin ke papan klip",
+          save: "Simpan", saved: "Tersimpan", saveTitle: "Simpan gaya ini", unsaveTitle: "Hapus dari gaya tersimpan",
+          empty: "Ketik sesuatu di atas...",
+          noStyles: "Tidak ada gaya yang ditemukan. Coba filter atau kata kunci lain." }
+  };
+  const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
+  const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
+
  /* ===================
    DATA: Decorations
    =================== */
@@ -213,7 +233,10 @@ const decorations = window.UTG_DECORATIONS || {
   
   // Detect category from URL if on a category page
   const categoryMatch = window.location.pathname.match(CATEGORY_URL_PATTERN);
-  let currentCategory = categoryMatch ? categoryMatch[1] : "popular";
+  // On family-scoped pages (window.UTG_FAMILY) the default "popular" category
+  // may not intersect the family at all, leaving the grid empty on load —
+  // start unfiltered there so the family's styles render immediately.
+  let currentCategory = categoryMatch ? categoryMatch[1] : (currentFamily !== "all" ? null : "popular");
   
   let currentDecoTab = window.UTG_DEFAULT_DECO_TAB || "symbols";
   let selectedDecoration = null;
@@ -451,13 +474,13 @@ const decorations = window.UTG_DECORATIONS || {
       <div class="style-info">
         <p class="style-name">${name}</p>
          ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
-        <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
+        <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || STR.empty}</p>
         ${decoHtml}
         ${platformChipsHtml(style)}
       </div>
       <div class="style-actions">
-        <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="Copy to clipboard">Copy <kbd class="copy-kbd">↵</kbd></button>
-        <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? "Remove from saved styles" : "Save this style"}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? "Saved" : "Save"}</span></button>
+        <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${STR.copy} <kbd class="copy-kbd">↵</kbd></button>
+        <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
       </div>
     `;
 
@@ -976,7 +999,7 @@ const decorations = window.UTG_DECORATIONS || {
       empty.className = "style-card";
       empty.innerHTML = `
         <div class="style-info">
-          <p class="style-preview placeholder">No styles found. Try a different filter or search term.</p>
+          <p class="style-preview placeholder">${STR.noStyles}</p>
         </div>
       `;
       grid.appendChild(empty);
@@ -1074,19 +1097,19 @@ document.addEventListener("click", async (e) => {
       copy_method: "button"
     });
 
-    btn.textContent = "✓ Copied";
+    btn.textContent = STR.copied;
     btn.classList.add("copied");
     showCopyToast();
     setTimeout(() => {
-      btn.textContent = "Copy";
+      btn.textContent = STR.copy;
       btn.classList.remove("copied");
     }, 1500);
   } catch (err) {
     console.error("Copy failed:", err);
-    btn.textContent = "✗ Failed";
+    btn.textContent = STR.failed;
     btn.classList.add("copy-error");
     setTimeout(() => {
-      btn.textContent = "Copy";
+      btn.textContent = STR.copy;
       btn.classList.remove("copy-error");
     }, 1500);
   }
