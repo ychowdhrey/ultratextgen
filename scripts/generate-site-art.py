@@ -632,7 +632,7 @@ PAGES = {
         P(m_typo, sample="under", size=68, deco="underline", label="emphasised"), K_CAT),
   "category-upside-down-text": ("Upside Down Text Generator", "Flipped, mirrored, reversed text",
         P(m_typo, sample="flip", weight="700", size=80, rot=180, label=" uʍop ǝpısdn"), K_CAT),
-  "category-word-wrappers": ("Word Wrapper Generator", "Wrap text in brackets and symbols",
+  "category-text-decorator": ("Text Decorator", "Decorate text with symbols and borders",
         glyphs("⟦", "❖", "⟧", "✦", "⟨"), K_CAT),
 
   # ---- usecase overview + pages ----
