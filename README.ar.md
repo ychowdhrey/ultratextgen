@@ -109,7 +109,7 @@ https://ultratextgen.com
 - https://ultratextgen.com/category/strikethrough-text/
 - https://ultratextgen.com/category/underline-text/
 - https://ultratextgen.com/category/upside-down-text/
-- https://ultratextgen.com/category/word-wrappers/
+- https://ultratextgen.com/category/text-decorator/
 <!-- END_CATEGORIES -->
 
 ## حالات الاستخدام
