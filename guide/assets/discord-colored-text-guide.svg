@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gdiscordc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvdiscordc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowdiscordc" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsdiscordc" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsdiscordc)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowdiscordc)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvdiscordc)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <g transform="translate(48 60)">
+      <rect width="264" height="180" rx="18" fill="#1a1a2e"/>
+      <text x="22" y="36" font-family="Courier New, monospace" font-size="17"
+            fill="#8a8fa3">```ansi</text>
+      <rect x="22" y="52" width="120" height="13" rx="6" fill="#e06c75"/>
+      <rect x="22" y="80" width="168" height="13" rx="6" fill="#98c379"/>
+      <rect x="22" y="108" width="96" height="13" rx="6" fill="#61afef"/>
+      <rect x="152" y="108" width="60" height="13" rx="6" fill="#e5c07b"/>
+      <text x="22" y="152" font-family="Courier New, monospace" font-size="17"
+            fill="#8a8fa3">```</text>
+    </g>
+    <g transform="translate(238 216)">
+      <rect width="76" height="98" rx="16" fill="#fff" stroke="#1a1a2e"
+            stroke-opacity="0.14"/>
+      <text x="38" y="44" font-family="Courier New, monospace" font-size="13"
+            fill="#64748b" text-anchor="middle">[2;31m</text>
+      <text x="38" y="70" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="24" fill="#8b5cf6"
+            text-anchor="middle">?</text>
+    </g>
+    <text x="150" y="300" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="18" fill="#64748b"
+          text-anchor="middle">8 colors, code blocks only</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <g transform="translate(48 60)">
+      <rect width="264" height="180" rx="18" fill="#1a1a2e"/>
+      <text x="22" y="36" font-family="Courier New, monospace" font-size="17"
+            fill="#8a8fa3">```ansi</text>
+      <rect x="22" y="52" width="120" height="13" rx="6" fill="#e06c75"/>
+      <rect x="22" y="80" width="168" height="13" rx="6" fill="#98c379"/>
+      <rect x="22" y="108" width="96" height="13" rx="6" fill="#61afef"/>
+      <rect x="152" y="108" width="60" height="13" rx="6" fill="#e5c07b"/>
+      <text x="22" y="152" font-family="Courier New, monospace" font-size="17"
+            fill="#8a8fa3">```</text>
+    </g>
+    <g transform="translate(238 216)">
+      <rect width="76" height="98" rx="16" fill="#fff" stroke="#1a1a2e"
+            stroke-opacity="0.14"/>
+      <text x="38" y="44" font-family="Courier New, monospace" font-size="13"
+            fill="#64748b" text-anchor="middle">[2;31m</text>
+      <text x="38" y="70" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="24" fill="#8b5cf6"
+            text-anchor="middle">?</text>
+    </g>
+    <text x="150" y="300" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="18" fill="#64748b"
+          text-anchor="middle">8 colors, code blocks only</text></g>
+</svg>

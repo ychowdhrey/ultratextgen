@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Instagram Bio Line Breaks Not Working? The Fix That Sticks | UltraTextGen</title>
+<meta name="description" content="Instagram collapses your bio into one line because its server strips spaces and empty lines on save. Here's why it happens and the invisible character (U+2800) that makes spacing survive.">
+
+<link rel="canonical" href="https://ultratextgen.com/guide/instagram-bio-line-breaks/">
+<meta property="og:image" content="https://ultratextgen.com/guide/assets/og/instagram-bio-line-breaks.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Instagram Bio Line Breaks Not Working? The Fix That Sticks | UltraTextGen">
+<meta name="twitter:description" content="Instagram collapses your bio into one line because its server strips spaces and empty lines on save. Here's why it happens and the invisible character (U+2800) that makes spacing survive.">
+<meta name="twitter:image" content="https://ultratextgen.com/guide/assets/og/instagram-bio-line-breaks.png">
+<meta property="og:title" content="Why Your Instagram Bio Collapses Into One Line (and How to Make Spacing Stick)">
+<meta property="og:description" content="Instagram collapses your bio into one line because its server strips spaces and empty lines on save. Here's why it happens and the invisible character (U+2800) that makes spacing survive.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/guide/instagram-bio-line-breaks/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Your Instagram Bio Collapses Into One Line (and How to Make Spacing Stick)",
+  "description": "Instagram collapses your bio into one line because its server strips spaces and empty lines on save. Here's why it happens and the invisible character (U+2800) that makes spacing survive.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/guide/assets/og/instagram-bio-line-breaks.png",
+  "mainEntityOfPage": "https://ultratextgen.com/guide/instagram-bio-line-breaks/",
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-02"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://ultratextgen.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Instagram Bio Line Breaks", "item": "https://ultratextgen.com/guide/instagram-bio-line-breaks/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does my Instagram bio collapse into one line?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because Instagram cleans up your bio on the server when you press save. It trims spaces at the start and end of lines and collapses runs of consecutive newlines. The most common trigger is a trailing space: if a line ends with a space before you press Enter, the trim removes the space and the line break gets eaten with it, so two lines merge into one. It's a deliberate cleanup rule, not a bug or a glitch on your phone." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I add blank lines to my Instagram bio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Put an invisible character on the line you want to keep blank. The braille blank (U+2800, ⠀) looks like empty space but counts as visible text, so Instagram's cleanup rule preserves the line instead of collapsing it. Type your line, press Enter, paste ⠀ on the empty line, press Enter again, and continue. Also make sure no line ends with a trailing space before the Enter." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the invisible character for Instagram line breaks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the braille pattern blank, Unicode code point U+2800 (⠀). Unlike a regular space, Instagram's trim treats it as a real printable character, so a line containing only ⠀ survives the save. It works better than the zero-width space, which some apps strip, and better than a period, which is visible. You can copy it from most Unicode symbol libraries." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do line breaks count against the 150-character bio limit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — every character in your bio counts toward the 150-character limit, including newlines, invisible braille blanks, divider symbols, and styled Unicode letters. A four-line bio with two spacer lines can spend 6 to 10 characters on pure structure. That's usually worth it for readability, but budget for it: write your text first, then add spacing with whatever characters remain." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do my line breaks work in captions but not my bio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively — trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/guide/">Guides</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Instagram Bio Line Breaks</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Why Your Instagram Bio Collapses Into One Line (and How to Make Spacing Stick)</h1>
+    <p class="hero-tagline">You didn't mistype anything. Instagram's server deliberately strips your spacing when you press save. The fix is a character the cleanup rule can't see — and a three-step method that makes your layout survive every time.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Platform: Instagram</span>
+      <span class="guide-pill">⏱ 7 min read</span>
+      <span class="guide-pill">The Save-Proof Bio method</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/guide/assets/instagram-bio-line-breaks.svg" width="1200" height="340"
+       alt="A neatly spaced four-line Instagram bio on the left being squashed into a single run-on line on the right after pressing save.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Your bio collapsing isn't a bug or your mistake — Instagram's server trims leading/trailing spaces and collapses consecutive newlines on save, as a spam-cleanup rule.</li>
+    <li>The classic trap is a trailing space before Enter: the trim eats the space <em>and</em> the line break behind it, merging two lines into one.</li>
+    <li>The braille blank U+2800 (⠀) looks empty but counts as real text, so a "blank" line containing it survives the save — that's the whole trick.</li>
+    <li>Everything counts against the 150-character limit: newlines, invisible blanks, dividers. Write the words first, then spend leftover characters on spacing.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Core Idea</span>
+    <h2>Your Bio Didn't Break. It Got Cleaned.</h2>
+    <div class="editorial-block">
+      <p>You know the moment. You lay out four tidy lines — who you are, what you do, a divider, a link nudge — press save, and Instagram hands you back one long run-on sentence. You re-type it. Same result. You start wondering if your keyboard is broken or the app is glitching.</p>
+      <p>Neither. Here's the one fact that explains everything: <strong>when you save your bio, Instagram's server runs a cleanup pass over it.</strong> That pass trims spaces from the start and end of every line, and it collapses runs of consecutive newlines down to almost nothing. Your carefully placed blank lines aren't being lost in transit — they're being <em>deleted on purpose</em>, by a rule, the instant you hit save.</p>
+      <p>That distinction matters, because you can't out-type a rule. Re-entering the same spacing harder, on a different day, in a different mood, produces the same collapse. What you <em>can</em> do is understand exactly what the rule looks for — and then hand it something it can't see.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the trap -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Trap</span>
+    <h2>The Trailing Space That Eats Your Line Break</h2>
+    <div class="editorial-block">
+      <p>The single most common failure isn't the blank-line collapse at all. It's subtler: <strong>a trailing space before you press Enter.</strong></p>
+      <p>Type "Coffee roaster ☕" — then, out of pure typing habit, tap the spacebar before hitting return. You've now written <em>line, space, newline</em>. When Instagram's trim runs, it removes that trailing space, and the line break sitting behind it gets eaten in the same pass. Two lines you clearly typed as separate become one. Because the space is invisible in the editor, the collapse looks completely random to you.</p>
+      <p>Where you edit matters too. The mobile app at least gives you a return key that (usually) inserts a real newline. Instagram's <strong>desktop editor is historically much worse</strong>: depending on the browser and the year, pressing Enter has submitted the form, been ignored, or inserted a break that the save step then discarded. If your line breaks vanish every single time and you're editing at instagram.com on a laptop, the fix may be as simple as: write the bio in your phone's Notes app, paste it into the mobile app, and save there.</p>
+      <p>So the failure has two heads — trailing spaces that eat single breaks, and the newline-collapse that eats blank lines. The method below handles both.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: framework -->
+  <section class="editorial-section">
+    <span class="article-section-label">Framework</span>
+    <h2>The Save-Proof Bio Method</h2>
+    <div class="editorial-block">
+      <p>Three steps, in order, every time you edit your bio. Follow all three and the layout you see in the editor is the layout everyone sees on your profile.</p>
+    </div>
+
+    <div class="editorial-block">
+      <h3>Step 1: End every line clean — no trailing spaces</h3>
+      <p>Before each Enter, make sure the last character on the line is a real character: a letter, an emoji, a symbol. If you're pasting a pre-written bio, this is the first thing to audit, because invisible trailing spaces travel with the paste. The last visible thing on the line should be the last thing on the line, period.</p>
+    </div>
+
+    <div class="editorial-block">
+      <h3>Step 2: Put U+2800 on every intentionally blank line</h3>
+      <p>A truly empty line is exactly what the collapse rule deletes. So don't give it one. The <strong>braille pattern blank — U+2800, rendered ⠀</strong> — is a character that <em>looks</em> like nothing but <em>counts</em> as visible text. A line containing only ⠀ isn't empty as far as Instagram's cleanup is concerned, so it survives the save untouched. You beat a rule with a character the rule can't see. (Why braille blank and not a zero-width space? Because zero-width characters are exactly what sanitizers strip; the braille blank is a legitimate printable character from the braille block, so it gets left alone.)</p>
+    </div>
+
+    <div class="editorial-block">
+      <h3>Step 3: Budget the 150 characters — invisible ones included</h3>
+      <p>Every newline, every ⠀, every divider symbol counts against Instagram's 150-character bio limit. Write your actual words first, check the count, and only then spend what's left on spacing and <a href="/guide/dividers-separators-guide/">dividers</a>. Structure is a luxury you buy with leftover characters — more on the trade-off below.</p>
+    </div>
+
+    <div class="editorial-block">
+      <p>When something still goes wrong, diagnose it from the symptom.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Whole bio collapses into one line</strong></td><td>Trailing spaces before your Enters — the trim eats the space and the break behind it</td><td>Delete the space before every line break (Step 1), re-save</td></tr>
+          <tr><td><strong>Blank lines disappear, text lines survive</strong></td><td>Consecutive-newline collapse — empty lines are exactly what the rule removes</td><td>Put ⠀ (U+2800) on each intentionally blank line (Step 2)</td></tr>
+          <tr><td><strong>Spacing looks right in the editor, dies on save</strong></td><td>The cleanup runs server-side <em>at save time</em> — the editor preview never shows it</td><td>Trust the saved profile, not the editor; apply Steps 1–2 and check the live profile</td></tr>
+          <tr><td><strong>Line breaks lost when typing on desktop</strong></td><td>The web editor handles Enter inconsistently across browsers</td><td>Write the bio in a notes app, paste and save in the mobile app instead</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: before/after -->
+  <section class="editorial-section">
+    <span class="article-section-label">Worked Example</span>
+    <h2>The Same Bio, Fragile vs Save-Proof</h2>
+    <div class="editorial-block">
+      <p>Here's a typical four-line bio. The fragile version has a trailing space after "roaster" and a genuinely empty line before the CTA. The save-proof version ends every line clean and parks a braille blank on the spacer line.</p>
+      <div class="example-pair">
+        <span class="ex-label">What you typed (collapses on save)</span>
+        <span class="ex-plain">Coffee roaster ☕␠⏎ Small batches, big opinions⏎ ⏎ ↓ New roast every Friday</span>
+        <span class="ex-arrow">↓</span>
+        <span class="ex-label">Save-proof version (spacing survives)</span>
+        <span class="ex-styled">Coffee roaster ☕⏎ Small batches, big opinions⏎ ⠀⏎ ↓ New roast every Friday</span>
+      </div>
+      <p>The two versions look nearly identical in the editor — that ␠ (the trailing space) and the difference between an empty line and a ⠀ line are invisible to the eye. But on save, the first collapses to "Coffee roaster ☕ Small batches, big opinions ↓ New roast every Friday" and the second keeps all four lines, spacer included. Invisible inputs, wildly different outputs. That's the whole game.</p>
+      <p>If you want the spacer line to carry a visible divider instead of pure emptiness — a row of ┈ or ━ or ୨୧ — pull one from the <a href="/library/line-divider-symbols/">line divider symbol library</a>. A visible divider survives the save for the same reason ⠀ does: it's real text, so the collapse rule leaves the line alone.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: why Instagram does this + honest limits -->
+  <section class="editorial-section">
+    <span class="article-section-label">Honest Limits</span>
+    <h2>Why Instagram Does This — and What the Trick Costs You</h2>
+    <div class="editorial-block">
+      <p>It's worth saying plainly: the cleanup rule isn't malice, and it isn't sloppiness. Bios are a favorite canvas for spam — walls of blank lines that shove content off-screen, whitespace tricks that hide links, padding that games search snippets. Trimming stray spaces and collapsing empty lines is <strong>standard abuse-hygiene for a short identity field</strong>. Your artfully spaced bio is collateral damage from a rule aimed at someone else. That's also why the rule is unlikely to ever go away — and why a workaround character beats waiting for a fix.</p>
+      <p>Now the honest part. The Save-Proof method has a real cost: <strong>characters.</strong> The bio limit is 150, and everything counts — every newline, every invisible ⠀, every glyph of a divider. A bio with three text lines and two spacer lines spends roughly 6–8 characters on pure structure; add a 12-symbol divider and you've spent 20 characters saying nothing. If your copy is already pushing the limit, spacing is the thing to sacrifice, not words.</p>
+      <p>And know when <em>not</em> to bother. If your bio is one or two short lines, whitespace engineering adds nothing — a single clean line often reads more confident than a stack of fragments. Screen readers also announce braille blanks inconsistently (some skip them, some pause oddly), so a bio built from many spacer lines can be noisier for assistive tech than a compact one. Use one deliberate blank line to separate identity from call-to-action, and stop there. Structure should serve the words, not replace them.</p>
+      <p>One thing this trick does <em>not</em> affect: your reach. Spacing characters and styled text in a bio don't suppress your account — if you've heard otherwise, read the <a href="/guide/instagram-fonts-shadowban-myth/">Instagram fonts shadowban myth</a> piece before you strip your bio bare out of fear.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: beyond instagram -->
+  <section class="editorial-section">
+    <span class="article-section-label">Beyond Instagram</span>
+    <h2>The Same Trick Travels</h2>
+    <div class="editorial-block">
+      <p>Instagram isn't the only app that sanitizes short profile fields. <strong>TikTok bios collapse whitespace the same way, and the same U+2800 fix works there</strong> — write clean line endings, park a braille blank on empty lines, and the layout holds. The character budget is even tighter (80 characters), so the "words first, spacing second" discipline matters more, not less.</p>
+      <p>Once your spacing survives the save, the next lever is what the lines actually look like. Styled Unicode text — bold, script, small caps — pastes into a bio exactly like the braille blank does, because it's all just characters. The <a href="/usecase/bio-font/">bio font generator</a> renders your lines in device-safe styles you can copy straight in, and the <a href="/instagram/">Instagram fonts page</a> covers what works on the platform more broadly. A bio that's both structured <em>and</em> styled is two paste operations away.</p>
+    </div>
+  </section>
+
+  <div class="pull-quote">You can't out-type a server-side rule.<br>You beat it with a character it can't see.<br><br>Clean line endings, a braille blank on every spacer, and 150 characters spent on purpose.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Build a save-proof bio</h3>
+    <p>Write your lines, style them in a device-safe font, and copy them with the spacing already survivable. Structure and style in one paste.</p>
+    <a href="/usecase/bio-font/" class="cta-btn">Build a save-proof bio →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/instagram/">Instagram</a>
+    <a class="platform-pill" href="/tiktok/">TikTok</a>
+    <a class="platform-pill" href="/discord/">Discord</a>
+    <a class="platform-pill" href="/linkedin/">LinkedIn</a>
+    <a class="platform-pill" href="/x/">X</a>
+    <a class="platform-pill" href="/whatsapp/">WhatsApp</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why does my Instagram bio collapse into one line?</button>
+    <div class="faq-answer">
+      <p>Because Instagram cleans up your bio on the server when you press save. It trims spaces at the start and end of lines and collapses runs of consecutive newlines. The most common trigger is a trailing space: if a line ends with a space before you press Enter, the trim removes the space and the line break gets eaten with it, so two lines merge into one. It's a deliberate cleanup rule, not a bug or a glitch on your phone.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">How do I add blank lines to my Instagram bio?</button>
+    <div class="faq-answer">
+      <p>Put an invisible character on the line you want to keep blank. The braille blank (U+2800, ⠀) looks like empty space but counts as visible text, so Instagram's cleanup rule preserves the line instead of collapsing it. Type your line, press Enter, paste ⠀ on the empty line, press Enter again, and continue. Also make sure no line ends with a trailing space before the Enter.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">What is the invisible character for Instagram line breaks?</button>
+    <div class="faq-answer">
+      <p>It's the braille pattern blank, Unicode code point U+2800 (⠀). Unlike a regular space, Instagram's trim treats it as a real printable character, so a line containing only ⠀ survives the save. It works better than the zero-width space, which some apps strip, and better than a period, which is visible. You can copy it from most Unicode symbol libraries.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Do line breaks count against the 150-character bio limit?</button>
+    <div class="faq-answer">
+      <p>Yes — every character in your bio counts toward the 150-character limit, including newlines, invisible braille blanks, divider symbols, and styled Unicode letters. A four-line bio with two spacer lines can spend 6 to 10 characters on pure structure. That's usually worth it for readability, but budget for it: write your text first, then add spacing with whatever characters remain.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why do my line breaks work in captions but not my bio?</button>
+    <div class="faq-answer">
+      <p>Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively — trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/guide/instagram-fonts-shadowban-myth/">
+      <span class="related-tag">🚫</span>
+      <span class="related-title">The Instagram Fonts Shadowban Myth</span>
+      <span class="related-desc">Do fancy fonts really tank your reach? The evidence, examined.</span>
+    </a>
+    <a class="related-card" href="/guide/dividers-separators-guide/">
+      <span class="related-tag">┈</span>
+      <span class="related-title">Dividers &amp; Separators Guide</span>
+      <span class="related-desc">Structure bios and posts with lines that actually render.</span>
+    </a>
+    <a class="related-card" href="/guide/why-fonts-show-as-boxes/">
+      <span class="related-tag">▯</span>
+      <span class="related-title">Why Fonts Show as Boxes</span>
+      <span class="related-desc">Missing glyphs, tofu, and the styles that render everywhere.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
