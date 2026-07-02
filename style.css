@@ -42,6 +42,15 @@
     }
 
     /* Header */
+    /* header.js is deferred; reserve its rendered height per viewport range
+       so late injection can't shift content below it. Values mirror .header's
+       measured wrap heights; the placeholder is replaced by the header. */
+    #shared-header { min-height: 63px; }
+    @media (max-width: 861px) { #shared-header { min-height: 83px; } }
+    @media (max-width: 640px) { #shared-header { min-height: 75px; } }
+    @media (max-width: 594px) { #shared-header { min-height: 131px; } }
+    @media (max-width: 409px) { #shared-header { min-height: 187px; } }
+
     .header {
       position: sticky;
       top: 0;

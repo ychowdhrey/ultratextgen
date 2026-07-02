@@ -1,51 +1,9 @@
 (function () {
   "use strict";
 
-  const GTM_CONTAINER_ID = "GTM-P55HXK8Q";
-  const GTM_LOADER_SELECTOR = 'script[src*="googletagmanager.com/gtm.js"]';
+  // GTM loads solely via the inline snippet each page ships in <head>;
+  // this selector only locates the noscript iframe to position the header.
   const GTM_NOSCRIPT_SELECTOR = 'noscript iframe[src*="googletagmanager.com/ns.html"]';
-
-  function insertGtmNoscript() {
-    if (!document.body || document.querySelector(GTM_NOSCRIPT_SELECTOR)) {
-      return;
-    }
-
-    const noscript = document.createElement("noscript");
-    const iframe = document.createElement("iframe");
-    iframe.src = "https://www.googletagmanager.com/ns.html?id=" + GTM_CONTAINER_ID;
-    iframe.height = "0";
-    iframe.width = "0";
-    iframe.style.display = "none";
-    iframe.style.visibility = "hidden";
-    noscript.appendChild(iframe);
-    document.body.insertBefore(noscript, document.body.firstChild);
-  }
-
-  if (!window.__utgGtmInjected) {
-    window.__utgGtmInjected = true;
-
-    if (!document.querySelector(GTM_LOADER_SELECTOR)) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-
-      const firstScript = document.getElementsByTagName("script")[0];
-      const gtmScript = document.createElement("script");
-      gtmScript.async = true;
-      gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_CONTAINER_ID;
-
-      if (firstScript && firstScript.parentNode) {
-        firstScript.parentNode.insertBefore(gtmScript, firstScript);
-      } else if (document.head) {
-        document.head.appendChild(gtmScript);
-      }
-
-      if (document.body) {
-        insertGtmNoscript();
-      } else {
-        document.addEventListener("DOMContentLoaded", insertGtmNoscript);
-      }
-    }
-  }
 
   var headerHTML = '<header class="header">' +
     '<div class="header-inner">' +

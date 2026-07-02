@@ -32,6 +32,8 @@
   <meta name="twitter:title" content="Vertical Font & Stacked Text Generator — Stack Text Top to Bottom">
   <meta name="twitter:description" content="Free vertical font generator that stacks text vertically, top to bottom. Copy and paste stacked text into Instagram bios, TikTok, Discord, WhatsApp and more.">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
@@ -225,11 +227,13 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/">Home</a>
@@ -827,13 +831,13 @@ Feature launching tomorrow</pre></div>
     window.UTG_VERTICAL_MODE = true;
   </script>
 
-  <script src="/styles.js"></script>
-  <script src="/renderer.js"></script>
+  <script src="/styles.js" defer></script>
+  <script src="/renderer.js" defer></script>
   <script src="/js/vertical/verticalLayouts.js"></script>
   <script src="/js/vertical/verticalDecorators.js"></script>
   <script src="/js/vertical/verticalDecoratorData.js"></script>
   <script src="/script.js" defer=""></script>
   <script src="/js/vertical/verticalPageController.js" defer=""></script>
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body></html>
