@@ -715,6 +715,11 @@ PAGES = {
   "fr-texte-en-gras": ("Texte en Gras", "Gras Unicode à copier-coller",
         P(m_typo, sample="Gras", weight="800", size=80, label="épais et net"), K_CAT),
   "fr-library-symboles": ("Symboles Spéciaux", "Cœurs, étoiles et déco pour bio", m_grid, K_LIB),
+  "fr-ecriture-gothique": ("Écriture Gothique", "Lettres gothiques à copier-coller",
+        P(m_typo, sample="Goth", ff=SERIF, weight="800", size=80, label="dark et médiévale"), K_CAT),
+  "fr-petite-ecriture": ("Petite Écriture", "Petit texte à copier-coller",
+        P(m_typo, sample=" small", size=44, label="petite écriture"), K_CAT),
+  "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_profile, K_USE),
   "vi-usecase-zalgo-text": ("Trình Tạo Chữ Zalgo", "Tạo chữ lỗi và rùng rợn", m_zalgo, K_USE),
 
   # ---- platform pages ----
