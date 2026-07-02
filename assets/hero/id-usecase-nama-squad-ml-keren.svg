@@ -23,21 +23,25 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhidusecas)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhidusecas)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="54" y="64" width="252" height="232" rx="26" fill="#fff"
-          stroke="#1a1a2e" stroke-opacity="0.10"/>
-    <circle cx="116" cy="128" r="34" fill="url(#ghidusecas)"/>
-    <rect x="166" y="106" width="118" height="16" rx="8" fill="#1a1a2e"/>
-    <rect x="166" y="134" width="86" height="11" rx="5" fill="#64748b" opacity="0.5"/>
-    <rect x="80" y="194" width="200" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="216" width="170" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="252" width="120" height="26" rx="13" fill="url(#gvhidusecas)"/></g>
+    <path d="M120 86 h120 v40 a60 60 0 0 1 -120 0 Z" fill="url(#ghidusecas)"/>
+    <path d="M118 96 h-26 a22 22 0 0 0 44 6" fill="none" stroke="#8b5cf6"
+          stroke-width="8"/>
+    <path d="M242 96 h26 a22 22 0 0 1 -44 6" fill="none" stroke="#8b5cf6"
+          stroke-width="8"/>
+    <rect x="168" y="184" width="24" height="44" fill="url(#gvhidusecas)"/>
+    <rect x="132" y="228" width="96" height="22" rx="8" fill="url(#ghidusecas)"/>
+    <rect x="146" y="252" width="68" height="20" rx="8" fill="#64748b" opacity="0.5"/>
+    <text x="180" y="142" font-family="DejaVu Sans, sans-serif" font-size="44" fill="#fff"
+          text-anchor="middle">★</text></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="54" y="64" width="252" height="232" rx="26" fill="#fff"
-          stroke="#1a1a2e" stroke-opacity="0.10"/>
-    <circle cx="116" cy="128" r="34" fill="url(#ghidusecas)"/>
-    <rect x="166" y="106" width="118" height="16" rx="8" fill="#1a1a2e"/>
-    <rect x="166" y="134" width="86" height="11" rx="5" fill="#64748b" opacity="0.5"/>
-    <rect x="80" y="194" width="200" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="216" width="170" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="252" width="120" height="26" rx="13" fill="url(#gvhidusecas)"/></g>
+    <path d="M120 86 h120 v40 a60 60 0 0 1 -120 0 Z" fill="url(#ghidusecas)"/>
+    <path d="M118 96 h-26 a22 22 0 0 0 44 6" fill="none" stroke="#8b5cf6"
+          stroke-width="8"/>
+    <path d="M242 96 h26 a22 22 0 0 1 -44 6" fill="none" stroke="#8b5cf6"
+          stroke-width="8"/>
+    <rect x="168" y="184" width="24" height="44" fill="url(#gvhidusecas)"/>
+    <rect x="132" y="228" width="96" height="22" rx="8" fill="url(#ghidusecas)"/>
+    <rect x="146" y="252" width="68" height="20" rx="8" fill="#64748b" opacity="0.5"/>
+    <text x="180" y="142" font-family="DejaVu Sans, sans-serif" font-size="44" fill="#fff"
+          text-anchor="middle">★</text></g>
 </svg>
