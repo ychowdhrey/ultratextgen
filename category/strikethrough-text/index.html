@@ -25,6 +25,8 @@
   <meta name="twitter:title" content="Strikethrough Text Generator — Cross Out &amp; Line-Through Text | UltraTextGen">
   <meta name="twitter:description" content="Cross out text instantly — single, double, slash, wavy and line-through strikethrough styles to copy and paste. Works on Instagram, Discord, TikTok, X and more.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/category-strikethrough-text.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
@@ -166,11 +168,13 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/">Home</a>
@@ -656,11 +660,11 @@ Just type your Hindi sentence using English letters (like “Aaj mausam bahut ac
     };
   </script>
 
-  <script src="/styles.js"></script>
-<script src="/renderer.js"></script>
+  <script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
 <script src="/script.js" defer=""></script>
 
 
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body></html>

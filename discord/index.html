@@ -28,6 +28,8 @@
   <meta name="twitter:description" content="Free Discord font generator with 100+ copy-and-paste Unicode fonts. Style your display name, server nickname, bio, and chat — no Nitro required.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/discord.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="discord-context.css">
@@ -301,13 +303,15 @@
 </head>
 
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
 
   <!-- Your full existing body markup starts -->
-<script src="/header.js"></script>
+<script src="/header.js" defer></script>
 
 
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -932,11 +936,11 @@
     </div>
   </div></footer>
 
-    <script src="/styles.js"></script>
-  <script src="/renderer.js"></script>
+    <script src="/styles.js" defer></script>
+  <script src="/renderer.js" defer></script>
   <script src="/script.js" defer=""></script>
   <script src="discord-context.js" defer></script>
 
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body></html>
