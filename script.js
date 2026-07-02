@@ -243,6 +243,18 @@ const decorations = window.UTG_DECORATIONS || {
   const FORMAT_KEY = "utg_format_marks";
   let formatMarks = loadFormatMarks();
 
+  // Demo text rendered through every style while the input is empty, so the
+  // first paint shows the whole catalog styled instead of placeholder rows.
+  // Two lines on purpose: the first-line scope and heading use cases read
+  // naturally. Pages can override via window.UTG_DEMO_TEXT.
+  const DEMO_TEXT = window.UTG_DEMO_TEXT ||
+    "Welcome to UltraTextGen.\nType anything. Make it ultra.";
+
+  // Per-style copy counts + last-used timestamps, persisted per device.
+  // Most-copied styles float to the top of the grid on the next render.
+  const USAGE_KEY = "utg_style_usage";
+  let styleUsage = loadStyleUsage();
+
   /* ===================
      ELEMENTS
      =================== */
@@ -263,6 +275,16 @@ const decorations = window.UTG_DECORATIONS || {
      =================== */
   function safeAttr(str) {
     return String(str || "").replace(/"/g, "&quot;");
+  }
+
+  // Escape converted text before it lands in innerHTML. Styles that don't
+  // remap ASCII (decorators, redact) pass < > & through verbatim, so a
+  // crafted ?q= link could otherwise inject markup into every card.
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   }
 
   function loadSavedStyles() {
@@ -318,6 +340,36 @@ const decorations = window.UTG_DECORATIONS || {
     } catch (err) {
       // Storage may be unavailable — fail silently
     }
+  }
+
+  function loadStyleUsage() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(USAGE_KEY) || "{}");
+      return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+    } catch (err) {
+      return {};
+    }
+  }
+
+  function recordStyleUsage(name) {
+    if (!name || !stylesRegistry[name]) return;
+    const entry = styleUsage[name] || { c: 0, t: 0 };
+    entry.c += 1;
+    entry.t = Date.now();
+    styleUsage[name] = entry;
+    try {
+      localStorage.setItem(USAGE_KEY, JSON.stringify(styleUsage));
+    } catch (err) {
+      // Storage may be unavailable — fail silently
+    }
+  }
+
+  function usageCount(name) {
+    return styleUsage[name] ? styleUsage[name].c || 0 : 0;
+  }
+
+  function usageLast(name) {
+    return styleUsage[name] ? styleUsage[name].t || 0 : 0;
   }
 
   function isSaved(name) {
@@ -432,16 +484,88 @@ const decorations = window.UTG_DECORATIONS || {
     return chips ? `<div class="style-platforms">${chips}</div>` : "";
   }
 
-  function createStyleCard(name, convertedText, decoratedText, style) {
+  /* ===================
+     RENDER SAFETY
+     =================== */
+  // Does the visitor's own device have a glyph for this character? Compares
+  // the canvas rasterization against a guaranteed-unassigned code point: an
+  // identical bitmap means the font fell back to the same missing-glyph box.
+  // Results are cached per character — the check runs once per style.
+  const glyphSupportCache = {};
+  let glyphCtx = null;
+  function deviceRendersGlyph(ch) {
+    if (!ch) return true;
+    if (ch in glyphSupportCache) return glyphSupportCache[ch];
+    let supported = true;
+    try {
+      if (!glyphCtx) {
+        const canvas = document.createElement("canvas");
+        canvas.width = canvas.height = 24;
+        glyphCtx = canvas.getContext("2d", { willReadFrequently: true });
+      }
+      const draw = (c) => {
+        glyphCtx.clearRect(0, 0, 24, 24);
+        glyphCtx.font = "18px sans-serif";
+        glyphCtx.fillText(c, 2, 18);
+        return glyphCtx.getImageData(0, 0, 24, 24).data.join(",");
+      };
+      const tofu = "\u{E01ED}"; // unassigned code point → always the .notdef box
+      supported = draw(ch) !== draw(tofu);
+    } catch (err) {
+      supported = true; // canvas unavailable → don't cry wolf
+    }
+    glyphSupportCache[ch] = supported;
+    return supported;
+  }
+
+  // A representative converted character for a style (astral-safe), used to
+  // probe device support for the style's Unicode block.
+  function sampleGlyph(style) {
+    const maps = [style && style.upper, style && style.lower, style && style.nums];
+    for (const map of maps) {
+      if (map) {
+        for (const key in map) {
+          if (map[key]) return [...String(map[key])][0];
+        }
+      }
+    }
+    return "";
+  }
+
+  // Compact per-card trust signal built from the style's own `platforms`
+  // data plus the device glyph probe. Tooltips carry the honest caveats no
+  // competitor surfaces (platform filters, screen readers, tofu boxes).
+  function safetyPillHtml(name, style) {
+    if (!style) return "";
+    const glyph = sampleGlyph(style);
+    if (glyph && !deviceRendersGlyph(glyph)) {
+      return `<span class="ts-pill ts-pill-risk" title="Your device's fonts can't display this style — it may show as boxes (□). It can still look fine on other devices.">⚠ May not show on your device</span>`;
+    }
+    const platforms = Array.isArray(style.platforms) ? style.platforms : null;
+    // Pages that render the platform chip row already say where a style
+    // works — only the device warning above adds signal there.
+    if (window.UTG_SHOW_PLATFORMS && platforms && platforms.length) return "";
+    if (platforms && platforms.includes("all")) {
+      return `<span class="ts-pill ts-pill-safe" title="Renders on all major platforms. Heads up: screen readers may spell styled letters out character by character, so keep body text plain.">✓ Safe to paste anywhere</span>`;
+    }
+    if (platforms && platforms.length) {
+      const names = platforms.map((p) => PLATFORM_LABELS[p]).filter(Boolean).join(", ");
+      return `<span class="ts-pill ts-pill-risk" title="Best on: ${safeAttr(names)}. Other platforms may strip or garble it — paste a test first.">⚠ Works best on ${safeAttr(names)}</span>`;
+    }
+    return "";
+  }
+
+  function createStyleCard(name, convertedText, decoratedText, style, isDemo) {
     const card = document.createElement("div");
     card.className = "style-card";
 
-    const fullText = decoratedText || convertedText;
+    const fullText = isDemo ? "" : decoratedText || convertedText;
     const safeText = safeAttr(fullText);
+    const previewText = decoratedText && isDemo ? decoratedText : convertedText;
 
     let decoHtml = "";
-    if (selectedDecoration && convertedText) {
-      decoHtml = `<div class="style-decoration">${decoratedText}</div>`;
+    if (selectedDecoration && convertedText && !isDemo) {
+      decoHtml = `<div class="style-decoration">${escapeHtml(decoratedText)}</div>`;
     }
 
     const saved = isSaved(name);
@@ -451,12 +575,14 @@ const decorations = window.UTG_DECORATIONS || {
       <div class="style-info">
         <p class="style-name">${name}</p>
          ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
-        <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
+        <p class="style-preview ${!previewText ? "placeholder" : ""}${isDemo ? " is-demo" : ""}">${previewText ? escapeHtml(previewText) : "Type something above..."}</p>
         ${decoHtml}
+        ${safetyPillHtml(name, style)}
         ${platformChipsHtml(style)}
       </div>
       <div class="style-actions">
-        <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="Copy to clipboard">Copy <kbd class="copy-kbd">↵</kbd></button>
+        <button class="copy-btn" data-text="${safeText}" data-style="${safeName}" ${!fullText ? "disabled" : ""} title="${isDemo ? "Type your text above to copy" : "Copy to clipboard"}">Copy <kbd class="copy-kbd">↵</kbd></button>
+        <button class="preview-btn" data-style="${safeName}" type="button" title="Preview on Instagram, LinkedIn, Discord &amp; more">👁 <span class="preview-label">Preview</span></button>
         <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? "Remove from saved styles" : "Save this style"}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? "Saved" : "Save"}</span></button>
       </div>
     `;
@@ -754,8 +880,45 @@ const decorations = window.UTG_DECORATIONS || {
         <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole">Whole text</button>
         <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line">First line only <span class="scope-chip-tag">for posts</span></button>
       </div>
+      <button class="share-btn" id="shareBtn" type="button" title="Share a link that reopens this page with your text filled in">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>
+        Share
+      </button>
     `;
     host.insertBefore(control, el.resultsGrid);
+
+    const shareBtn = $("#shareBtn", control);
+    if (shareBtn) {
+      shareBtn.addEventListener("click", async () => {
+        const val = el.mainInput ? el.mainInput.value : "";
+        const url = window.location.origin + window.location.pathname +
+          (val ? "?q=" + encodeURIComponent(val) : "");
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "share_text", share_method: navigator.share ? "native" : "link_copy" });
+
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url });
+            return;
+          } catch (err) {
+            if (err && err.name === "AbortError") return; // user closed the sheet
+          }
+        }
+        try {
+          await navigator.clipboard.writeText(url);
+          const label = shareBtn.lastChild;
+          shareBtn.classList.add("copied");
+          label.textContent = " Link copied";
+          setTimeout(() => {
+            shareBtn.classList.remove("copied");
+            label.textContent = " Share";
+          }, 1500);
+        } catch (err) {
+          console.error("Share failed:", err);
+        }
+      });
+    }
 
     $$(".scope-chip", control).forEach((chip) => {
       chip.addEventListener("click", () => {
@@ -899,14 +1062,12 @@ const decorations = window.UTG_DECORATIONS || {
     grid.innerHTML = "";
 
     const inputText = el.mainInput ? el.mainInput.value : "";
+    const isDemo = !inputText;
     valid.forEach((name) => {
       const style = stylesRegistry[name];
-      let converted = "";
-      if (inputText) {
-        converted = applyFormatMarks(applyScope(inputText, style));
-      }
+      const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
+      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
     });
   }
 
@@ -958,16 +1119,20 @@ const decorations = window.UTG_DECORATIONS || {
       return true;
     });
 
+    // Most-copied styles first (recency breaks ties); untouched styles keep
+    // registry order thanks to stable sort. Copying doesn't rerender, so
+    // cards never jump around mid-session — the order upgrades on return.
+    filtered.sort((a, b) =>
+      usageCount(b[0]) - usageCount(a[0]) || usageLast(b[0]) - usageLast(a[0])
+    );
+
+    const isDemo = !inputText;
     let count = 0;
 
     filtered.forEach(([name, style]) => {
-      let converted = "";
-      if (inputText) {
-        converted = applyFormatMarks(applyScope(inputText, style));
-      }
-
+      const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
+      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
       count += 1;
     });
 
@@ -980,6 +1145,173 @@ const decorations = window.UTG_DECORATIONS || {
         </div>
       `;
       grid.appendChild(empty);
+    }
+  }
+
+  /* ===================
+     PLATFORM PREVIEW
+     =================== */
+  // "See it before you paste it" — renders the styled text inside lightweight
+  // CSS mockups of real platform UIs. One shared modal, built on first use.
+  const PREVIEW_PLATFORMS = [
+    { key: "instagram", label: "Instagram" },
+    { key: "linkedin", label: "LinkedIn" },
+    { key: "discord", label: "Discord" },
+    { key: "x", label: "X" },
+    { key: "whatsapp", label: "WhatsApp" },
+    { key: "tiktok", label: "TikTok" }
+  ];
+
+  function defaultPreviewPlatform() {
+    const forced = (window.UTG_PREVIEW_PLATFORM || "").toLowerCase();
+    if (PREVIEW_PLATFORMS.some((p) => p.key === forced)) return forced;
+    const seg = (window.location.pathname.split("/")[1] || "").toLowerCase();
+    if (PREVIEW_PLATFORMS.some((p) => p.key === seg)) return seg;
+    return "instagram";
+  }
+
+  let previewPlatform = defaultPreviewPlatform();
+  let previewStyleName = "";
+  let previewLastFocus = null;
+
+  // Each mockup takes the styled text as a plain string; it is inserted with
+  // textContent (never innerHTML), so no escaping gymnastics are needed.
+  function buildMockup(platform) {
+    const av = `<span class="pv-avatar" aria-hidden="true"></span>`;
+    switch (platform) {
+      case "instagram":
+        return `
+          <div class="pv-mock pv-instagram">
+            <div class="pv-ig-head">${av}<div class="pv-ig-stats"><span><b>128</b> posts</span><span><b>3,410</b> followers</span><span><b>512</b> following</span></div></div>
+            <div class="pv-ig-name">yourname</div>
+            <div class="pv-text pv-ig-bio"></div>
+            <div class="pv-ig-btn">Edit profile</div>
+          </div>`;
+      case "linkedin":
+        return `
+          <div class="pv-mock pv-linkedin">
+            <div class="pv-li-head">${av}<div><div class="pv-li-name">Your Name</div><div class="pv-li-sub">Marketing Lead · 1st</div><div class="pv-li-sub">2h · 🌐</div></div></div>
+            <div class="pv-text pv-li-body"></div>
+            <div class="pv-li-actions"><span>👍 Like</span><span>💬 Comment</span><span>↗ Share</span></div>
+          </div>`;
+      case "discord":
+        return `
+          <div class="pv-mock pv-discord">
+            <div class="pv-dc-row">${av}<div><span class="pv-dc-name">yourname</span><span class="pv-dc-time">Today at 9:41 AM</span><div class="pv-text pv-dc-msg"></div></div></div>
+          </div>`;
+      case "x":
+        return `
+          <div class="pv-mock pv-x">
+            <div class="pv-x-head">${av}<div><span class="pv-x-name">Your Name</span> <span class="pv-x-handle">@yourname · 2h</span></div></div>
+            <div class="pv-text pv-x-body"></div>
+            <div class="pv-x-actions"><span>💬 12</span><span>🔁 34</span><span>♥ 208</span></div>
+          </div>`;
+      case "whatsapp":
+        return `
+          <div class="pv-mock pv-whatsapp">
+            <div class="pv-wa-bubble"><div class="pv-text pv-wa-msg"></div><span class="pv-wa-meta">9:41 ✓✓</span></div>
+          </div>`;
+      case "tiktok":
+        return `
+          <div class="pv-mock pv-tiktok">
+            <div class="pv-tt-row">${av}<div><div class="pv-tt-name">yourname</div><div class="pv-text pv-tt-msg"></div><div class="pv-tt-meta">2h ago · Reply</div></div><span class="pv-tt-like">♥<br>1.2K</span></div>
+          </div>`;
+      default:
+        return `<div class="pv-mock"><div class="pv-text"></div></div>`;
+    }
+  }
+
+  function ensurePreviewModal() {
+    let modal = $("#previewModal");
+    if (modal) return modal;
+
+    modal = document.createElement("div");
+    modal.className = "preview-modal";
+    modal.id = "previewModal";
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="preview-backdrop" data-preview-close></div>
+      <div class="preview-dialog" role="dialog" aria-modal="true" aria-label="Platform preview">
+        <div class="preview-head">
+          <span class="preview-title" id="previewTitle">Preview</span>
+          <button class="preview-close" type="button" data-preview-close aria-label="Close preview">✕</button>
+        </div>
+        <div class="preview-tabs" role="tablist">
+          ${PREVIEW_PLATFORMS.map((p) =>
+            `<button class="preview-tab" type="button" role="tab" data-platform="${p.key}">${p.label}</button>`
+          ).join("")}
+        </div>
+        <div class="preview-body" id="previewBody"></div>
+        <p class="preview-note">Simulated look — fonts can differ slightly per device and app version.</p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-preview-close]")) closePreview();
+      const tab = e.target.closest(".preview-tab");
+      if (tab) {
+        previewPlatform = tab.dataset.platform || previewPlatform;
+        renderPreviewBody();
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.hidden) closePreview();
+    });
+
+    return modal;
+  }
+
+  function previewTextFor(styleName) {
+    const style = stylesRegistry[styleName];
+    if (!style) return "";
+    const source = (el.mainInput && el.mainInput.value) || DEMO_TEXT;
+    const converted = applyFormatMarks(applyScope(source, style));
+    return selectedDecoration ? applyDecoration(converted) : converted;
+  }
+
+  function renderPreviewBody() {
+    const modal = ensurePreviewModal();
+    const body = $("#previewBody", modal);
+    const title = $("#previewTitle", modal);
+    if (!body) return;
+
+    $$(".preview-tab", modal).forEach((t) =>
+      t.classList.toggle("active", t.dataset.platform === previewPlatform)
+    );
+    if (title) title.textContent = previewStyleName ? `${previewStyleName} — preview` : "Preview";
+
+    body.innerHTML = buildMockup(previewPlatform);
+    const textEl = $(".pv-text", body);
+    if (textEl) textEl.textContent = previewTextFor(previewStyleName);
+  }
+
+  function openPreview(styleName) {
+    if (!stylesRegistry[styleName]) return;
+    previewStyleName = styleName;
+    previewLastFocus = document.activeElement;
+    const modal = ensurePreviewModal();
+    renderPreviewBody();
+    modal.hidden = false;
+    document.body.classList.add("preview-open");
+    const closeBtn = $(".preview-close", modal);
+    if (closeBtn) closeBtn.focus();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "preview_open",
+      preview_platform: previewPlatform,
+      style_name: styleName
+    });
+  }
+
+  function closePreview() {
+    const modal = $("#previewModal");
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.classList.remove("preview-open");
+    if (previewLastFocus && typeof previewLastFocus.focus === "function") {
+      previewLastFocus.focus();
     }
   }
 
@@ -1013,6 +1345,17 @@ const decorations = window.UTG_DECORATIONS || {
         urlSyncTimer = setTimeout(pushUrlState, 400);
         renderSavedStyles();
         renderResults();
+      });
+
+      // Ctrl/Cmd+Enter copies the top result (saved styles first) without
+      // leaving the input — plain Enter still inserts a newline.
+      el.mainInput.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter" || (!e.ctrlKey && !e.metaKey)) return;
+        const topBtn = $("#savedGrid .copy-btn:not([disabled])") ||
+          $("#resultsGrid .copy-btn:not([disabled])");
+        if (!topBtn) return;
+        e.preventDefault();
+        topBtn.click();
       });
     }
 
@@ -1068,10 +1411,14 @@ document.addEventListener("click", async (e) => {
   try {
     await navigator.clipboard.writeText(text);
 
+    const styleName = btn.dataset.style || "";
+    recordStyleUsage(styleName);
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "copy_text",
-      copy_method: "button"
+      copy_method: "button",
+      style_name: styleName
     });
 
     btn.textContent = "✓ Copied";
@@ -1122,6 +1469,14 @@ document.addEventListener("click", (e) => {
   const name = btn.dataset.style || "";
   if (!name) return;
   toggleSaved(name);
+});
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest ? e.target.closest(".preview-btn") : null;
+  if (!btn) return;
+  const name = btn.dataset.style || "";
+  if (!name) return;
+  openPreview(name);
 });
 
 document.addEventListener("copy", () => {
