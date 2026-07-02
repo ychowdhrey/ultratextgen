@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How Unicode Text Styling Really Works (and Why It Breaks) | UltraTextGen</title>
+<meta name="description" content="Fancy fonts from a generator aren't fonts at all — they're substitute Unicode characters. The Four-Layer Model explains why styled text copy-pastes anywhere, and exactly where and why it breaks.">
+
+<link rel="canonical" href="https://ultratextgen.com/guide/how-unicode-fonts-work/">
+<meta property="og:image" content="https://ultratextgen.com/guide/assets/og/how-unicode-fonts-work.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Unicode Text Styling Really Works (and Why It Breaks) | UltraTextGen">
+<meta name="twitter:description" content="Fancy fonts from a generator aren't fonts at all — they're substitute Unicode characters. The Four-Layer Model explains why styled text copy-pastes anywhere, and exactly where and why it breaks.">
+<meta name="twitter:image" content="https://ultratextgen.com/guide/assets/og/how-unicode-fonts-work.png">
+<meta property="og:title" content="How Unicode Text Styling Really Works (and Why It Breaks)">
+<meta property="og:description" content="Fancy fonts from a generator aren't fonts at all — they're substitute Unicode characters. The Four-Layer Model explains why styled text copy-pastes anywhere, and exactly where and why it breaks.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/guide/how-unicode-fonts-work/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Unicode Text Styling Really Works (and Why It Breaks)",
+  "description": "Fancy fonts from a generator aren't fonts at all — they're substitute Unicode characters. The Four-Layer Model explains why styled text copy-pastes anywhere, and exactly where and why it breaks.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/guide/assets/og/how-unicode-fonts-work.png",
+  "mainEntityOfPage": "https://ultratextgen.com/guide/how-unicode-fonts-work/",
+  "datePublished": "2026-07-02",
+  "dateModified": "2026-07-02"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://ultratextgen.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "How Unicode Fonts Work", "item": "https://ultratextgen.com/guide/how-unicode-fonts-work/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are fancy fonts from a generator real fonts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A font is a file installed on a device that changes how ordinary letters are drawn. A generator never touches fonts — it swaps your letters for different Unicode characters that happen to look bold, italic, or gothic. The bold 𝗮 (U+1D5EE) is a separate character from the regular a (U+0061), the same way ß is separate from B. That is why the styling travels with the text instead of living on your device." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does styled text survive copy-paste?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because there is no styling to lose — the style is baked into the characters themselves. Copy-paste moves characters, and these are just characters. Rich-text bold (a word processor's bold button, or Markdown) is metadata layered on top of plain letters, and metadata gets dropped when text moves between apps. Unicode styling is data, not metadata, so every plain-text field carries it untouched." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do some sites reject styled characters in usernames?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Username and handle fields are usually validated against a small whitelist — often just a–z, 0–9, dots and underscores — because handles are used for logins, mentions, and URLs, where lookalike characters enable impersonation. A styled 𝗮 is not on that whitelist, so the field rejects it. Bios and posts are free-text fields with no such whitelist, which is why the exact same characters work fine there." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a platform delete or strip the styling from my text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It can't strip the styling without rewriting your text, because there is no separate style layer to remove — the characters are the styling. In ordinary bios and posts, platforms store and echo back exactly the characters you typed. What a platform can do is refuse the characters at the door (username validators do this) or normalize them internally for search, which is why styled words often don't show up in search results." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is using Unicode fonts against platform rules?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No major platform bans them in free-text fields like bios, posts, or comments — these are standard Unicode characters, from the same standard emoji live in. The real limits are practical, not legal: heavy styling is harder for screen readers, invisible to search, and occasionally unreadable on old devices. Use it as seasoning on short decorative phrases and you're well within both the rules and good taste." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/guide/">Guides</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">How Unicode Fonts Work</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">How Unicode Text Styling Really Works (and Why It Breaks)</h1>
+    <p class="hero-tagline">Every "fancy font" you've ever copied is a stack of substitute Unicode characters — not a font. That one fact predicts exactly where your styled text will shine, and exactly where it will break.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Unicode Education</span>
+      <span class="guide-pill">⏱ 9 min read</span>
+      <span class="guide-pill">The Four-Layer Model</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/guide/assets/how-unicode-fonts-work.svg" width="1200" height="340"
+       alt="A plain letter a and a bold Unicode 𝗮 shown as two separate characters with different code points, flowing through four layers: character, code point, encoding, and glyph.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>A generator "font" is not a font. The bold 𝗮 (U+1D5EE) is a completely different character from a (U+0061) — not the same letter wearing a costume.</li>
+    <li>Every text failure — tofu boxes, rejected usernames, invisible search results, garbled screen readers — happens at exactly one of four layers: Character, Code point, Encoding, or Glyph.</li>
+    <li>Copy-paste works everywhere because the styling is data (the characters themselves), not metadata a platform can strip.</li>
+    <li>The costs are real: styled text is hostile to screen readers and invisible to search — style short decorative phrases, never the words people need to find or hear.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Core Idea</span>
+    <h2>The Bold Isn't a Costume. It's a Different Letter.</h2>
+    <div class="editorial-block">
+      <p>Ask most people how a font generator works and you'll get some version of "it applies a font to my text." It doesn't — it <em>can't</em>. A font is a file installed on a device, and no website can install files onto Instagram's servers or your reader's phone. Something else is happening, and it's stranger and more elegant than a font.</p>
+      <p><strong>The generator is swapping your letters for entirely different characters.</strong> When you type "bold" and get 𝗯𝗼𝗹𝗱, none of your original letters survived. Each one was replaced by a lookalike from a distant corner of the Unicode standard — the same universal character catalog that gives every letter, symbol, and emoji on Earth a number.</p>
+      <div class="example-pair">
+        <span class="ex-label">Looks like</span>
+        <span class="ex-styled">𝗯𝗼𝗹𝗱</span>
+        <span class="ex-arrow">↓</span>
+        <span class="ex-label">Actually is</span>
+        <span class="ex-plain">U+1D5EF U+1D5FC U+1D5F9 U+1D5F1</span>
+      </div>
+      <p>The regular letter a is character number U+0061. The bold 𝗮 is character number U+1D5EE. To a computer these are as unrelated as "a" and "%". It is not the same letter wearing a costume — it's a different letter that happens to be drawn to resemble a bold a. That single fact is the master key to this entire guide: it explains why the styling survives copy-paste, why platforms can't remove it, why usernames reject it, and why it sometimes collapses into boxes.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: origin story -->
+  <section class="editorial-section">
+    <span class="article-section-label">Origin Story</span>
+    <h2>These Characters Were Built for Math, Not Bios</h2>
+    <div class="editorial-block">
+      <p>Why would Unicode contain a second, bold copy of the whole alphabet? Not for aesthetics. In 2001, Unicode added the <strong>Mathematical Alphanumeric Symbols</strong> block (U+1D400–U+1D7FF) because mathematicians needed style to carry <em>meaning</em>. In a physics paper, 𝐇 (bold) might be a matrix while 𝐻 (italic) is a variable and ℍ (double-struck) is a number system — three different objects that must stay distinct even in plain text.</p>
+      <p>So Unicode shipped whole parallel alphabets: 𝗯𝗼𝗹𝗱 𝘀𝗮𝗻𝘀, 𝘪𝘵𝘢𝘭𝘪𝘤, 𝒮𝒸𝓇𝒾𝓅𝓉, 𝔉𝔯𝔞𝔨𝔱𝔲𝔯, 𝕕𝕠𝕦𝕓𝕝𝕖-𝕤𝕥𝕣𝕦𝕔𝕜, 𝚖𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎. Fraktur wasn't added to make gothic usernames — it's how mathematicians write Lie algebras. Then the internet discovered that these characters paste beautifully into any bio, and an academic tool became the engine of every "fancy font" site on the web.</p>
+      <p>A few styles come from elsewhere in the catalog: ꜱᴍᴀʟʟ ᴄᴀᴘꜱ is largely borrowed from phonetic notation, and circled or fullwidth letters come from East Asian typography. The <a href="/library/">symbol library</a> catalogs thousands of these repurposed characters, and <a href="/guide/fancy-fonts-and-accents/">fancy fonts and accents</a> covers what happens when they meet accented letters. The pattern is always the same: characters designed for one job, borrowed for decoration.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the framework -->
+  <section class="editorial-section">
+    <span class="article-section-label">Framework</span>
+    <h2>The Four-Layer Model</h2>
+    <div class="editorial-block">
+      <p>Here is the mental model that makes every text failure diagnosable. Between your intention and your reader's eyeball, text passes through four layers. Each layer can fail — and each failure has a distinct signature.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Layer</th><th>What it is</th><th>Question it answers</th><th>What breaks here</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1 · Character</strong></td><td>The abstract letter you mean — "bold sans a"</td><td>Which symbol is this?</td><td>Rejected usernames, search misses, screen-reader confusion</td></tr>
+          <tr><td><strong>2 · Code point</strong></td><td>Its number in the Unicode catalog — U+1D5EE</td><td>What's its ID?</td><td>Lookalike filters and anti-impersonation checks act here</td></tr>
+          <tr><td><strong>3 · Encoding</strong></td><td>The bytes that carry it in transit — UTF-8: F0 9D 97 AE</td><td>How does it travel?</td><td>Mojibake (Ã© garbage), � replacement characters</td></tr>
+          <tr><td><strong>4 · Glyph / Font</strong></td><td>The picture the reader's device draws</td><td>What does it look like?</td><td>Tofu boxes □, styles that look different per device</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="editorial-block">
+      <p>Notice who owns each layer. You control layer 1 (what you type). The Unicode Consortium owns layer 2. The network and the platform handle layer 3 — and in 2026, UTF-8 is so universal that layer 3 almost never fails anymore. Layer 4 belongs entirely to <em>the reader's device</em>. That's the punchline most people miss: the last and most visible layer is the one the author has zero control over. When your gothic bio turns into □□□□ on a friend's phone, nothing you sent broke — their device just has no picture for those characters. <a href="/guide/why-fonts-show-as-boxes/">Why fonts show as boxes</a> dedicates a whole guide to that one layer.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: failure cheat sheet -->
+  <section class="editorial-section">
+    <span class="article-section-label">Cheat Sheet</span>
+    <h2>Every Common Failure, Mapped to Its Layer</h2>
+    <div class="editorial-block">
+      <p>Once you know the layers, every complaint you've ever seen about "fonts breaking" files itself neatly. Diagnose the layer and the fix becomes obvious.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>What you see</th><th>Layer</th><th>What's really happening</th><th>The fix</th></tr></thead>
+        <tbody>
+          <tr><td>□□□ tofu boxes</td><td>4 · Glyph</td><td>Reader's device has no picture for the character</td><td>Use a safer style (bold/italic, not Fraktur)</td></tr>
+          <tr><td>"Username contains invalid characters"</td><td>1 · Character</td><td>The field whitelists plain a–z; styled letters aren't on the list</td><td>Keep handles plain; style the display name or bio</td></tr>
+          <tr><td>Bold vanished from your Discord message</td><td>1 · Character</td><td>That was <strong>Markdown</strong> formatting, not Unicode — different mechanism entirely</td><td>See <a href="/guide/discord-text-formatting-explained/">Discord formatting decoded</a></td></tr>
+          <tr><td>Profile never appears in search</td><td>1 · Character</td><td>The index stored 𝓭𝓮𝓼𝓲𝓰𝓷𝓮𝓻; people search "designer" — no match</td><td>Keep findable words plain</td></tr>
+          <tr><td>Screen reader spells out gibberish</td><td>1 · Character</td><td>It announces "mathematical bold small a…" letter by letter</td><td>Style less; see the <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a></td></tr>
+          <tr><td>Ã© mojibake garbage</td><td>3 · Encoding</td><td>Bytes decoded with the wrong charset — rare now, usually old exports</td><td>Re-copy from the source; not a style problem</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: bios vs usernames -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Consequences</span>
+    <h2>Why Bios Say Yes and Usernames Say No</h2>
+    <div class="editorial-block">
+      <p>The model also explains the two behaviors that confuse people most: styled text pastes <em>everywhere</em>, yet certain fields flatly refuse it. Both follow from the same fact — the styling is the characters.</p>
+      <p><strong>Copy-paste works because there is nothing extra to lose.</strong> When a word processor makes text bold, the bold is metadata riding alongside plain letters, and it dies the moment you paste into a plain-text box. Unicode styling has no metadata: 𝗯𝗼𝗹𝗱 is just four characters, so any field that accepts text accepts them, styling intact. By the same logic, a platform <strong>cannot "strip" the style from your bio</strong> — there's no style layer to peel off. Removing the bold would mean rewriting your characters into different characters, and platforms don't rewrite what you typed into free-text fields. (The persistent rumor that Instagram punishes fancy bios doesn't hold up either — see <a href="/guide/instagram-fonts-shadowban-myth/">the shadowban myth, tested</a>.)</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">Free-text field · bio, post, comment</span>
+        <p>Accepts any Unicode. Your 𝓼𝓽𝔂𝓵𝓮𝓭 characters are stored and echoed back exactly. <strong>Styling survives.</strong></p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">Identity field · username, handle</span>
+        <p>Validated against a whitelist (often just a–z, 0–9, . and _) because handles live in URLs and logins, where lookalikes enable impersonation. <strong>Styled characters bounce at the door.</strong></p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">Indexed field · search, mentions</span>
+        <p>Stored as typed, but the search index normalizes or ignores exotic characters. Your text displays fine yet <strong>never matches a query.</strong></p>
+      </div>
+    </div>
+    <div class="editorial-block">
+      <p>So "will this field take my fancy text?" is really "is this a display field or an identity field?" Games are the strictest case of all — <a href="/guide/game-username-allowed-symbols/">which symbols game usernames actually allow</a> maps that territory.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: honest limits -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Honest Limits</span>
+    <h2>When You Shouldn't Use Any of This</h2>
+    <div class="editorial-block">
+      <p>A pillar guide owes you the downsides, and they're not small. Because a styled 𝗮 is a genuinely different character, every system that treats text as <em>meaning</em> rather than <em>pixels</em> gets worse:</p>
+      <ul>
+        <li><strong>Screen readers</strong> often announce styled words character by character — "mathematical bold small b, mathematical bold small o…" — turning your hook into noise for blind readers. The <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a> shows exactly what each style sounds like.</li>
+        <li><strong>Search and discovery</strong> silently fail. A recruiter searching "designer" will never surface the profile that says 𝓭𝓮𝓼𝓲𝓰𝓷𝓮𝓻 — and on LinkedIn that has real costs (<a href="/guide/linkedin-fonts-recruiters-ats/">what recruiters and ATS systems see</a>).</li>
+        <li><strong>Old devices</strong> still draw tofu for the rarer blocks, so the fancier the style, the smaller the audience that sees it as intended.</li>
+      </ul>
+      <div class="mood-explainer">
+        <div class="mood-example">Searches for "launch": <strong>Launch day 🚀</strong> ✓ found &nbsp;·&nbsp; <strong>𝓛𝓪𝓾𝓷𝓬𝓱 𝓭𝓪𝔂 🚀</strong> ✗ invisible</div>
+      </div>
+      <p>The working rule: <strong>style the decoration, never the information.</strong> A styled flourish around a plain, searchable, hearable core sentence gets you the attention without the costs. If a word needs to be found, heard, or typed by someone else — leave it plain.</p>
+    </div>
+  </section>
+
+  <div class="pull-quote">The style isn't painted onto the letters.<br>The style <em>is</em> the letters.<br><br>Once you see that, every "broken font" mystery solves itself.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>See it for yourself — style any text →</h3>
+    <p>Type a word and watch it re-spelled in dozens of parallel Unicode alphabets — bold, italic, script, Fraktur and more. Copy any of them: it's just text.</p>
+    <a href="/" class="cta-btn">Open the Text Generator →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/instagram/">Instagram</a>
+    <a class="platform-pill" href="/tiktok/">TikTok</a>
+    <a class="platform-pill" href="/discord/">Discord</a>
+    <a class="platform-pill" href="/linkedin/">LinkedIn</a>
+    <a class="platform-pill" href="/x/">X</a>
+    <a class="platform-pill" href="/whatsapp/">WhatsApp</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Are fancy fonts from a generator real fonts?</button>
+    <div class="faq-answer">
+      <p>No. A font is a file installed on a device that changes how ordinary letters are drawn. A generator never touches fonts — it swaps your letters for different Unicode characters that happen to look bold, italic, or gothic. The bold 𝗮 (U+1D5EE) is a separate character from the regular a (U+0061), the same way ß is separate from B. That is why the styling travels with the text instead of living on your device.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why does styled text survive copy-paste?</button>
+    <div class="faq-answer">
+      <p>Because there is no styling to lose — the style is baked into the characters themselves. Copy-paste moves characters, and these are just characters. Rich-text bold (a word processor's bold button, or Markdown) is metadata layered on top of plain letters, and metadata gets dropped when text moves between apps. Unicode styling is data, not metadata, so every plain-text field carries it untouched.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why do some sites reject styled characters in usernames?</button>
+    <div class="faq-answer">
+      <p>Username and handle fields are usually validated against a small whitelist — often just a–z, 0–9, dots and underscores — because handles are used for logins, mentions, and URLs, where lookalike characters enable impersonation. A styled 𝗮 is not on that whitelist, so the field rejects it. Bios and posts are free-text fields with no such whitelist, which is why the exact same characters work fine there.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Can a platform delete or strip the styling from my text?</button>
+    <div class="faq-answer">
+      <p>It can't strip the styling without rewriting your text, because there is no separate style layer to remove — the characters are the styling. In ordinary bios and posts, platforms store and echo back exactly the characters you typed. What a platform can do is refuse the characters at the door (username validators do this) or normalize them internally for search, which is why styled words often don't show up in search results.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Is using Unicode fonts against platform rules?</button>
+    <div class="faq-answer">
+      <p>No major platform bans them in free-text fields like bios, posts, or comments — these are standard Unicode characters, from the same standard emoji live in. The real limits are practical, not legal: heavy styling is harder for screen readers, invisible to search, and occasionally unreadable on old devices. Use it as seasoning on short decorative phrases and you're well within both the rules and good taste.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/guide/why-fonts-show-as-boxes/">
+      <span class="related-tag">□</span>
+      <span class="related-title">Why Fonts Show as Boxes</span>
+      <span class="related-desc">Layer 4 in depth: tofu, glyphs, and safe styles.</span>
+    </a>
+    <a class="related-card" href="/guide/fancy-fonts-accessibility-guide/">
+      <span class="related-tag">♿</span>
+      <span class="related-title">Fonts &amp; Accessibility</span>
+      <span class="related-desc">What screen readers do with styled text.</span>
+    </a>
+    <a class="related-card" href="/guide/fancy-fonts-and-accents/">
+      <span class="related-tag">é</span>
+      <span class="related-title">Fancy Fonts &amp; Accents</span>
+      <span class="related-desc">Why é, ñ and ü break styled alphabets.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
