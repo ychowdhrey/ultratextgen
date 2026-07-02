@@ -36,7 +36,11 @@
     id: { copy: "Salin", copied: "✓ Tersalin", failed: "✗ Gagal", copyTitle: "Salin ke papan klip",
           save: "Simpan", saved: "Tersimpan", saveTitle: "Simpan gaya ini", unsaveTitle: "Hapus dari gaya tersimpan",
           empty: "Ketik sesuatu di atas...",
-          noStyles: "Tidak ada gaya yang ditemukan. Coba filter atau kata kunci lain." }
+          noStyles: "Tidak ada gaya yang ditemukan. Coba filter atau kata kunci lain." },
+    tr: { copy: "Kopyala", copied: "✓ Kopyalandı", failed: "✗ Başarısız", copyTitle: "Panoya kopyala",
+          save: "Kaydet", saved: "Kaydedildi", saveTitle: "Bu stili kaydet", unsaveTitle: "Kayıtlı stillerden çıkar",
+          empty: "Yukarıya bir şeyler yaz...",
+          noStyles: "Stil bulunamadı. Başka bir filtre veya arama terimi dene." }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
   const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
