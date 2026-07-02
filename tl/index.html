@@ -48,6 +48,8 @@
 <meta name="twitter:description" content="Gawing stylish ang text mo — fancy fonts, cool na letra & aesthetic symbols para sa FB & IG bio, TikTok caption, at name style sa Mobile Legends.">
 <meta name="twitter:image" content="https://ultratextgen.com/assets/og/generator-font-aesthetic-preview.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 
@@ -211,11 +213,13 @@
 </head>
 
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -941,13 +945,13 @@ O</pre>
 
   <div class="copy-toast" id="copyToast">Copied!</div>
 
-  <script src="/styles.js"></script>
-<script src="/renderer.js"></script>
+  <script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
 <script src="/script.js" defer=""></script>
-<script src="/i18n.js"></script>
+<script src="/i18n.js" defer></script>
 
 
 
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body></html>
