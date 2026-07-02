@@ -29,6 +29,35 @@
     '<polyline points="20 6 9 17 4 12"/></svg>';
 
   /* ============================
+     UI strings (localized by <html lang>)
+     ============================ */
+  const UI_STRINGS = {
+    en: {
+      copied: "Copied: ",
+      copyFormat: "Copy Format",
+      copyCollection: " Copy Collection",
+      copiedBtn: " Copied!",
+      formats: { inline: "Inline", vertical: "Vertical", comma: "Comma", space: "Space", bullet: "Bullet" }
+    },
+    pt: {
+      copied: "Copiado: ",
+      copyFormat: "Formato de cópia",
+      copyCollection: " Copiar coleção",
+      copiedBtn: " Copiado!",
+      formats: { inline: "Em linha", vertical: "Vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
+    },
+    id: {
+      copied: "Disalin: ",
+      copyFormat: "Format Salin",
+      copyCollection: " Salin Koleksi",
+      copiedBtn: " Tersalin!",
+      formats: { inline: "Sebaris", vertical: "Vertikal", comma: "Koma", space: "Spasi", bullet: "Butir" }
+    }
+  };
+  const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
+  const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
+
+  /* ============================
      Toast
      ============================ */
   var toastEl = null;
@@ -42,7 +71,7 @@
   function showToast(msg) {
     var t = getToast();
     if (!t) return;
-    t.textContent = "Copied: " + msg;
+    t.textContent = STR.copied + msg;
     t.classList.add("is-visible");
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(function () {
@@ -182,7 +211,7 @@
 
       var selLabel = document.createElement("div");
       selLabel.className = "format-selector-label";
-      selLabel.textContent = "Copy Format";
+      selLabel.textContent = STR.copyFormat;
       selWrap.appendChild(selLabel);
 
       var tabs = document.createElement("div");
@@ -193,7 +222,7 @@
          tab.className = "format-tab" + (fmt.id === defaultFormat ? " active" : "");
         tab.setAttribute("data-format", fmt.id);
         tab.setAttribute("data-group", gi);
-        tab.textContent = fmt.label;
+        tab.textContent = STR.formats[fmt.id] || fmt.label;
         tabs.appendChild(tab);
       });
 
@@ -212,7 +241,7 @@
       copyBtn.className = "copy-collection-btn";
       copyBtn.id = "copyBtn-" + gi;
       copyBtn.setAttribute("data-group", gi);
-      copyBtn.innerHTML = COPY_ICON + " Copy Collection";
+      copyBtn.innerHTML = COPY_ICON + STR.copyCollection;
       section.appendChild(copyBtn);
 
       container.appendChild(section);
@@ -266,10 +295,10 @@
 
   function copyCollectionFeedback(btn) {
     btn.classList.add("is-copied");
-    btn.innerHTML = CHECK_ICON + " Copied!";
+    btn.innerHTML = CHECK_ICON + STR.copiedBtn;
     setTimeout(function () {
       btn.classList.remove("is-copied");
-      btn.innerHTML = COPY_ICON + " Copy Collection";
+      btn.innerHTML = COPY_ICON + STR.copyCollection;
     }, 1500);
   }
 
