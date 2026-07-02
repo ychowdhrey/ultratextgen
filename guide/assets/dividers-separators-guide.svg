@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gdividers" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvdividers" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowdividers" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsdividers" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsdividers)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowdividers)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvdividers)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <line x1="60" y1="86" x2="300" y2="86" stroke="#64748b" stroke-width="2"
+          opacity="0.5" stroke-dasharray="2 7"/>
+    <line x1="60" y1="146" x2="140" y2="146" stroke="#1a1a2e" stroke-width="4"
+          opacity="0.6"/>
+    <circle cx="180" cy="146" r="12" fill="url(#gdividers)"/>
+    <line x1="220" y1="146" x2="300" y2="146" stroke="#1a1a2e" stroke-width="4"
+          opacity="0.6"/>
+    <line x1="60" y1="206" x2="300" y2="206" stroke="url(#gdividers)" stroke-width="10"
+          stroke-linecap="round"/>
+    <line x1="60" y1="258" x2="300" y2="258" stroke="#64748b" stroke-width="3" opacity="0.5"/>
+    <line x1="60" y1="268" x2="300" y2="268" stroke="#64748b" stroke-width="3" opacity="0.5"/>
+    <text x="180" y="322" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="18" fill="#64748b"
+          text-anchor="middle">motif · symmetry · weight</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <line x1="60" y1="86" x2="300" y2="86" stroke="#64748b" stroke-width="2"
+          opacity="0.5" stroke-dasharray="2 7"/>
+    <line x1="60" y1="146" x2="140" y2="146" stroke="#1a1a2e" stroke-width="4"
+          opacity="0.6"/>
+    <circle cx="180" cy="146" r="12" fill="url(#gdividers)"/>
+    <line x1="220" y1="146" x2="300" y2="146" stroke="#1a1a2e" stroke-width="4"
+          opacity="0.6"/>
+    <line x1="60" y1="206" x2="300" y2="206" stroke="url(#gdividers)" stroke-width="10"
+          stroke-linecap="round"/>
+    <line x1="60" y1="258" x2="300" y2="258" stroke="#64748b" stroke-width="3" opacity="0.5"/>
+    <line x1="60" y1="268" x2="300" y2="268" stroke="#64748b" stroke-width="3" opacity="0.5"/>
+    <text x="180" y="322" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="18" fill="#64748b"
+          text-anchor="middle">motif · symmetry · weight</text></g>
+</svg>

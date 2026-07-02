@@ -225,6 +225,14 @@ clear tool/library tie-in, and competitor-gap differentiation. **Batch label:
 
 ## 8. Next steps
 
+> **Update 2026-07-02:** the batch remainder is BUILT — briefs 4–12 (OPP-0778, 0775,
+> 0776, 0772, 0792, 0779, 0773, 0781, 0784) plus the pillar OPP-0766
+> (`how-unicode-fonts-work`) shipped as one 10-page follow-up PR. Hub gained the
+> pillar card, a **Platform Mastery — Discord** section (0771 moved in, 0772/0773
+> added), six Platform & Posting cards, and a dividers card under Attention &
+> Format Design. Remaining from batch-guide-01: the `pending`/`needs_review` rows
+> (0768, 0770, 0774, 0777, 0780, 0782, 0783, 0785–0791, 0793).
+
 1. **Ship this PR** (3 pages + map + CSV + workflow). Human review per workflow §8.
 2. **Build batch remainder** in priority order (4–12), 5 pages per follow-up PR.
 3. **Resolve the two overlap flags** (0789, 0793) before building them.
