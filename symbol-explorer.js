@@ -52,6 +52,13 @@
       copyCollection: " Salin Koleksi",
       copiedBtn: " Tersalin!",
       formats: { inline: "Sebaris", vertical: "Vertikal", comma: "Koma", space: "Spasi", bullet: "Butir" }
+    },
+    tr: {
+      copied: "Kopyalandı: ",
+      copyFormat: "Kopyalama Biçimi",
+      copyCollection: " Koleksiyonu Kopyala",
+      copiedBtn: " Kopyalandı!",
+      formats: { inline: "Yan yana", vertical: "Alt alta", comma: "Virgüllü", space: "Boşluklu", bullet: "Maddeli" }
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
