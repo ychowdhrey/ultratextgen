@@ -40,7 +40,11 @@
     tr: { copy: "Kopyala", copied: "✓ Kopyalandı", failed: "✗ Başarısız", copyTitle: "Panoya kopyala",
           save: "Kaydet", saved: "Kaydedildi", saveTitle: "Bu stili kaydet", unsaveTitle: "Kayıtlı stillerden çıkar",
           empty: "Yukarıya bir şeyler yaz...",
-          noStyles: "Stil bulunamadı. Başka bir filtre veya arama terimi dene." }
+          noStyles: "Stil bulunamadı. Başka bir filtre veya arama terimi dene." },
+    fr: { copy: "Copier", copied: "✓ Copié", failed: "✗ Échec", copyTitle: "Copier dans le presse-papiers",
+          save: "Enregistrer", saved: "Enregistré", saveTitle: "Enregistrer ce style", unsaveTitle: "Retirer des styles enregistrés",
+          empty: "Tape quelque chose au-dessus…",
+          noStyles: "Aucun style trouvé. Essaie un autre filtre ou terme de recherche." }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
   const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
