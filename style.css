@@ -501,6 +501,17 @@
       color: #fff;
     }
 
+    /* Plain-language hint so the "first line only" scope reads clearly even
+       on touch devices, where the chip tooltips aren't reachable. Spans the
+       full row so it drops beneath the chips. */
+    .scope-hint {
+      flex-basis: 100%;
+      margin: 0;
+      font-size: 0.75rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+    }
+
     /* Results Grid */
     .results-grid {
       display: flex;
@@ -3997,13 +4008,24 @@ body.theme-gothic .category-section { position: static; background: transparent;
   opacity: 0.62;
 }
 
-/* Render-safety pill on result cards (reuses the .ts-pill primitives) */
+/* Render-safety indicator on result cards (reuses the .ts-pill primitives).
+   "Safe anywhere" is the expected default on nearly every style, so it stays
+   quiet — a muted, borderless inline hint — to avoid alarm-fatigue and card
+   noise. The warning states are the exceptions that carry real per-card
+   signal, so those keep the prominent boxed pill. */
 .style-card .ts-pill {
   display: inline-block;
   margin-top: 6px;
   text-transform: none;
   letter-spacing: 0;
   cursor: help;
+}
+.style-card .ts-pill-safe {
+  border: none;
+  padding: 0.05rem 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 /* Preview button sits between Copy and Save */

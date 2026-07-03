@@ -577,7 +577,7 @@ const decorations = window.UTG_DECORATIONS || {
     // works — only the device warning above adds signal there.
     if (window.UTG_SHOW_PLATFORMS && platforms && platforms.length) return "";
     if (platforms && platforms.includes("all")) {
-      return `<span class="ts-pill ts-pill-safe" title="Renders on all major platforms. Heads up: screen readers may spell styled letters out character by character, so keep body text plain.">✓ Safe to paste anywhere</span>`;
+      return `<span class="ts-pill ts-pill-safe" title="Renders on all major platforms. Heads up: screen readers may spell styled letters out character by character, so keep body text plain.">✓ Safe anywhere</span>`;
     }
     if (platforms && platforms.length) {
       const names = platforms.map((p) => PLATFORM_LABELS[p]).filter(Boolean).join(", ");
@@ -907,13 +907,14 @@ const decorations = window.UTG_DECORATIONS || {
     control.innerHTML = `
       <span class="scope-control-label">Apply style to</span>
       <div class="scope-chips" role="group" aria-label="Choose how much text to style">
-        <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole">Whole text</button>
-        <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line">First line only <span class="scope-chip-tag">for posts</span></button>
+        <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole" title="Style every line of your text.">Whole text</button>
+        <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line" title="Style only the first line (your headline or hook) and leave the rest as plain, readable text — ideal for social posts.">First line only <span class="scope-chip-tag">for posts</span></button>
       </div>
       <button class="share-btn" id="shareBtn" type="button" title="Share a link that reopens this page with your text filled in">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>
         Share
       </button>
+      <p class="scope-hint">Tip: “First line only” styles just your opening hook and keeps the rest plain — great for LinkedIn or Instagram posts where the body needs to stay readable.</p>
     `;
     host.insertBefore(control, el.resultsGrid);
 
