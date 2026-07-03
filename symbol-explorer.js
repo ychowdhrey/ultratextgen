@@ -66,6 +66,13 @@
       copyCollection: " Copier la collection",
       copiedBtn: " Copié !",
       formats: { inline: "En ligne", vertical: "Vertical", comma: "Virgules", space: "Espaces", bullet: "Liste" }
+    },
+    nl: {
+      copied: "Gekopieerd: ",
+      copyFormat: "Kopieerformaat",
+      copyCollection: " Kopieer collectie",
+      copiedBtn: " Gekopieerd!",
+      formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
