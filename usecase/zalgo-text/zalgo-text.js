@@ -62,7 +62,14 @@
     fitDiscordNick:          'Discord nickname',
     decodeCopy:              'Copy',
     decodeCopied:            '✓ Copied',
-    decodeRemoved:           'marks removed'
+    decodeRemoved:           'marks removed',
+    variantsTitle:           'More styles',
+    variantsTooltip:         'Your text in other zalgo flavours — copy any of them without touching the controls',
+    variantUpDown:           'Up & Down',
+    variantSpires:           'Spires',
+    variantRoots:            'Roots',
+    variantStrike:           'Strikethrough',
+    variantTinyStack:        'Tiny Stack'
   }, window.zalgoI18n || {});
 
 
@@ -306,6 +313,23 @@
       settings: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1.0, amplitude: 1 } }
   ];
 
+  // ── Output Variants ─────────────────────────────────────────────
+  // Fixed-flavour renders of the same input shown under the main
+  // output, so users can grab an alternate look without learning the
+  // controls (the one thing list-style generators did better).
+  const VARIANTS = [
+    { id: 'updown', labelKey: 'variantUpDown',
+      opts: { charType: 'all', position: 'up-down', shape: 'uniform', frequency: 0.9, amplitude: 5 } },
+    { id: 'spires', labelKey: 'variantSpires',
+      opts: { charType: 'all', position: 'up', shape: 'uniform', frequency: 1, amplitude: 6 } },
+    { id: 'roots', labelKey: 'variantRoots',
+      opts: { charType: 'all', position: 'down', shape: 'uniform', frequency: 1, amplitude: 6 } },
+    { id: 'strike', labelKey: 'variantStrike',
+      opts: { charType: 'all', position: 'mid', shape: 'uniform', frequency: 1, amplitude: 2 } },
+    { id: 'tiny', labelKey: 'variantTinyStack',
+      opts: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1, amplitude: 1 } }
+  ];
+
   // ── Platform Character Limits ───────────────────────────────────
   // Combining marks each count toward these limits, so heavy zalgo
   // "eats" a platform budget far faster than plain text.
@@ -488,7 +512,45 @@
           <span class="fit-badges" id="fitBadges"></span>
         </div>
       </div>
+      <div class="variant-strip" id="variantStrip" hidden>
+        <div class="control-label variant-strip-label">
+          <span class="icon">⌁</span> ${i18n.variantsTitle}
+          ${tooltip(i18n.variantsTooltip)}
+        </div>
+        <div id="variantRows">
+          ${VARIANTS.map(v => `
+            <div class="variant-row" data-variant="${v.id}">
+              <span class="variant-label">${i18n[v.labelKey]}</span>
+              <span class="variant-text" data-variant-text="${v.id}"></span>
+              <button class="btn variant-copy" type="button" data-variant-copy="${v.id}">${i18n.btnCopy}</button>
+            </div>
+          `).join('')}
+        </div>
+      </div>
     `;
+  }
+
+  // Re-render each fixed-flavour variant from the current input text.
+  // Full strings are kept here so Copy always copies the whole text
+  // even when the visible row is ellipsis-truncated.
+  const variantOutputs = {};
+  function updateVariants() {
+    const strip = $('#variantStrip');
+    if (!strip) return;
+
+    const input = $('#mainInput');
+    const text = input ? input.value.trim() : '';
+    if (!text) {
+      strip.hidden = true;
+      return;
+    }
+
+    strip.hidden = false;
+    VARIANTS.forEach(v => {
+      variantOutputs[v.id] = generateZalgo(text, v.opts);
+      const el = strip.querySelector(`[data-variant-text="${v.id}"]`);
+      if (el) el.textContent = variantOutputs[v.id];
+    });
   }
 
   // ── Platform Fit Badges ─────────────────────────────────────────
@@ -584,6 +646,7 @@
     if (btn)   btn.disabled = !state.output;
 
     updatePlatformFit();
+    updateVariants();
   }
 
   // ── Preset Handling ─────────────────────────────────────────────
@@ -724,6 +787,17 @@
     const regenBtn = $('#regenBtn');
     if (regenBtn) {
       regenBtn.addEventListener('click', runGenerate);
+    }
+
+    // Variant strip copy buttons (delegated — strip is rebuilt per input)
+    const variantStrip = $('#variantStrip');
+    if (variantStrip) {
+      variantStrip.addEventListener('click', (e) => {
+        const copyBtnEl = e.target.closest('[data-variant-copy]');
+        if (!copyBtnEl) return;
+        const text = variantOutputs[copyBtnEl.dataset.variantCopy];
+        if (text) copyToClipboard(text, copyBtnEl, i18n.btnCopy);
+      });
     }
 
     // Decode input

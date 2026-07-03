@@ -698,6 +698,86 @@
   border-color: rgba(248, 113, 113, 0.35);
 }
 
+/* ── Variant Strip ──────────────────────────────────── */
+.variant-strip {
+  margin-top: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.variant-strip-label {
+  margin-bottom: 4px;
+}
+
+.variant-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.variant-row:last-child {
+  border-bottom: none;
+  padding-bottom: 2px;
+}
+
+.variant-label {
+  flex: 0 0 96px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary);
+}
+
+.variant-text {
+  flex: 1;
+  font-size: 17px;
+  line-height: 2.6;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.variant-copy {
+  flex-shrink: 0;
+  background: var(--zalgo-surface2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  padding: 5px 13px;
+  font-size: 12px;
+}
+
+.variant-copy:hover {
+  border-color: var(--zalgo-border-active);
+  color: var(--text-primary);
+}
+
+.variant-copy.copied {
+  background: var(--zalgo-green);
+  border-color: var(--zalgo-green);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .variant-row {
+    flex-wrap: wrap;
+    gap: 6px 14px;
+  }
+  .variant-label {
+    flex-basis: auto;
+  }
+  .variant-text {
+    flex-basis: 100%;
+    order: 3;
+  }
+}
+
 /* ── Editorial Sections ─────────────────────────────── */
 .editorial-section {
   margin-top: 32px;
