@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gtiktokfo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvtiktokfo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowtiktokfo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotstiktokfo" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotstiktokfo)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowtiktokfo)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvtiktokfo)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <g transform="translate(58 52)">
+      <rect width="110" height="216" rx="22" fill="#fff" stroke="#1a1a2e"
+            stroke-opacity="0.14"/>
+      <rect x="18" y="30" width="74" height="12" rx="6" fill="#1a1a2e" opacity="0.8"/>
+      <rect x="18" y="56" width="58" height="10" rx="5" fill="#64748b" opacity="0.4"/>
+      <rect x="18" y="80" width="66" height="10" rx="5" fill="#64748b" opacity="0.4"/>
+      <text x="55" y="140" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#64748b"
+            text-anchor="middle">app font</text>
+      <text x="55" y="166" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#64748b"
+            text-anchor="middle">not yours</text>
+    </g>
+    <g transform="translate(192 52)">
+      <rect width="110" height="216" rx="22" fill="url(#gtiktokfo)"/>
+      <text x="55" y="52" font-family="Georgia, Liberation Sans, DejaVu Sans, sans-serif" font-size="26"
+            font-weight="700" font-style="italic" fill="#fff"
+            text-anchor="middle">𝓃𝒶𝓂𝑒</text>
+      <text x="55" y="92" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="22" font-weight="700"
+            fill="#fff" text-anchor="middle">𝗯𝗶𝗼</text>
+      <text x="55" y="146" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#fff"
+            opacity="0.85" text-anchor="middle">your text</text>
+      <text x="55" y="170" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#fff"
+            opacity="0.85" text-anchor="middle">yours to style</text>
+    </g>
+    <text x="180" y="316" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="18" fill="#64748b"
+          text-anchor="middle">two different &#8220;fonts&#8221;</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <g transform="translate(58 52)">
+      <rect width="110" height="216" rx="22" fill="#fff" stroke="#1a1a2e"
+            stroke-opacity="0.14"/>
+      <rect x="18" y="30" width="74" height="12" rx="6" fill="#1a1a2e" opacity="0.8"/>
+      <rect x="18" y="56" width="58" height="10" rx="5" fill="#64748b" opacity="0.4"/>
+      <rect x="18" y="80" width="66" height="10" rx="5" fill="#64748b" opacity="0.4"/>
+      <text x="55" y="140" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#64748b"
+            text-anchor="middle">app font</text>
+      <text x="55" y="166" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#64748b"
+            text-anchor="middle">not yours</text>
+    </g>
+    <g transform="translate(192 52)">
+      <rect width="110" height="216" rx="22" fill="url(#gtiktokfo)"/>
+      <text x="55" y="52" font-family="Georgia, Liberation Sans, DejaVu Sans, sans-serif" font-size="26"
+            font-weight="700" font-style="italic" fill="#fff"
+            text-anchor="middle">𝓃𝒶𝓂𝑒</text>
+      <text x="55" y="92" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="22" font-weight="700"
+            fill="#fff" text-anchor="middle">𝗯𝗶𝗼</text>
+      <text x="55" y="146" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#fff"
+            opacity="0.85" text-anchor="middle">your text</text>
+      <text x="55" y="170" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#fff"
+            opacity="0.85" text-anchor="middle">yours to style</text>
+    </g>
+    <text x="180" y="316" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="18" fill="#64748b"
+          text-anchor="middle">two different &#8220;fonts&#8221;</text></g>
+</svg>
