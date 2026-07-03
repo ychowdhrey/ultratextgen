@@ -50,7 +50,7 @@
       "name": "How do I decorate my text with symbols?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Type or paste your text into the input box, pick a decoration category (Symbols, Frames, Dividers, Arrows, Minimal, Emojis, or Flags), and your decorated text appears instantly. Click copy on any style and paste it into Instagram, TikTok, Discord, WhatsApp, or any other app. <br><br> No account or download required."
+        "text": "Type or paste your text, pick a vibe (Sparkle, Hearts, Coquette, Kawaii, Gaming, Gothic, Celestial, and more), and the decorator instantly generates dozens of decorated versions — wrappers, stacked symbols, banners, and word rhythms. Hit Shuffle for a completely fresh set, switch between decorating the whole text or each word, and dial the intensity from Light to Extra. <br><br> Click copy on any result and paste it into Instagram, TikTok, Discord, WhatsApp, or any other app. No account or download required."
       }
     },
     {
@@ -193,31 +193,14 @@
     <div class="hero-inner">
       <div class="hero-card">
         <h1 class="hero-headline">Text Decorator</h1>
-        <p class="hero-sub">Decorate your text with symbols, borders &amp; emoji — ★Hello★ ꧁Hello꧂ ❄️Hello❄️</p>
+        <p class="hero-sub">Pick a vibe, get dozens of decorated versions of your text — copy any of them.</p>
         <div class="input-wrapper">
-          <textarea class="main-input" id="mainInput" placeholder="Type text to decorate..." maxlength="500"></textarea>
+          <textarea class="main-input" id="mainInput" placeholder="Type your text, name, or caption..." maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
-        <!-- Decoration Selector -->
-        <div class="decoration-section">
-          <div class="decoration-label">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
-            Add decoration to results
-       </div>
-    <div class="decoration-tabs">
-    <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
-    <button class="decoration-tab" data-deco-tab="frames">Frames</button>
-    <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
-    <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
-    <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-    <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
-    <button class="decoration-tab" data-deco-tab="flags">Flags</button>
-      </div>
-          <div class="decoration-grid" id="decorationGrid"></div>
-        </div>
+        <!-- Decoration engine controls (built by decoratorPageController.js) -->
+        <div id="decoratorControlPanel"></div>
       </div>
     </div>
   </section>
@@ -273,10 +256,10 @@
     </svg>
   </button>
   <div class="faq-answer">
-    Type or paste your text into the input box, pick a decoration category (Symbols, Frames, Dividers, Arrows, Minimal, Emojis, or Flags), and your decorated text appears instantly.
-    Click copy on any style you like and paste it directly into Instagram, TikTok, Twitter (X), WhatsApp, Discord, or any other platform.
+    Type or paste your text, pick a vibe (Sparkle, Hearts, Coquette, Kawaii, Gaming, Gothic, Celestial, and more), and the decorator instantly generates dozens of decorated versions — wrappers, stacked symbols, banners, and word rhythms.
+    Hit <strong>Shuffle</strong> for a completely fresh set, switch between decorating the whole text or each word, and dial the intensity from Light to Extra.
     <br><br>
-    No account or download required. If you'd rather copy ready-made symbols one by one, browse our
+    Click copy on any result and paste it directly into Instagram, TikTok, Twitter (X), WhatsApp, Discord, or any other platform. No account or download required. If you'd rather copy ready-made symbols one by one, browse our
     <a href="/library/aesthetic-symbols/">aesthetic symbols</a> and
     <a href="/library/aesthetic-borders-frames/">borders &amp; frames</a> libraries.
   </div>
@@ -415,9 +398,9 @@
     </svg>
   </button>
   <div class="faq-answer">
-    Currently, we offer preset categories including Symbols, Frames, Dividers, Arrows, Minimal, Emojis, and Flags.
+    The decorator composes results from 14 theme packs (Sparkle, Hearts, Coquette, Kawaii, Gaming, Gothic, Celestial, Flowers, Fire &amp; Ice, Y2K, Arrows, Music, Minimal, and Brackets), so no two Shuffles give the same set. You can also layer a Unicode font — bold, script, gothic, bubble, and more — under any decoration.
     <br><br>
-    We're always expanding based on user feedback, so if you have ideas for custom decorations, feel free to suggest them via our contact form.
+    We're always expanding based on user feedback, so if you have ideas for new vibes or symbols, feel free to suggest them via our contact form.
   </div>
 </div>
 <div class="faq-item">
@@ -485,11 +468,15 @@
   <!-- Category filter -->
   <script>
     window.UTG_FAMILY = "text-decorator";
+    window.UTG_DECORATOR_MODE = true;
   </script>
 
   <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
+<script src="/js/decorator/decoratorData.js"></script>
+<script src="/js/decorator/decoratorEngine.js"></script>
 <script src="/script.js" defer=""></script>
+<script src="/js/decorator/decoratorPageController.js" defer=""></script>
 
 
 
