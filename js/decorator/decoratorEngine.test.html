@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>decoratorEngine.js — manual test page</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.3rem; }
+    .pass { color: #15803d; }
+    .fail { color: #b91c1c; font-weight: 700; }
+    li { margin: 4px 0; }
+    pre { background: #f5f5f5; padding: 8px 12px; border-radius: 6px; white-space: pre-wrap; }
+    .sample { border: 1px solid #ddd; border-radius: 8px; padding: 8px 12px; margin: 6px 0; }
+    .sample small { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>decoratorEngine.js — manual tests</h1>
+  <p>Open this file in a browser from the repo root (needs styles.js for the font-name check). All rows should be green.</p>
+  <ul id="results"></ul>
+  <h2>Visual samples ("Hello World", seed 1, intensity 2)</h2>
+  <div id="samples"></div>
+
+  <script src="/styles.js"></script>
+  <script src="decoratorData.js"></script>
+  <script src="decoratorEngine.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var out = document.getElementById('results');
+      var Engine = window.UTGDecoratorEngine;
+
+      function assert(name, cond, detail) {
+        var li = document.createElement('li');
+        li.className = cond ? 'pass' : 'fail';
+        li.textContent = (cond ? '✓ ' : '✗ ') + name + (cond ? '' : (' — ' + (detail || '')));
+        out.appendChild(li);
+      }
+
+      /* 1. Themes loaded and well-formed */
+      var themes = Engine.THEMES;
+      assert('themes loaded (>= 10)', themes.length >= 10, 'got ' + themes.length);
+      themes.forEach(function (t) {
+        var ok = t.key && t.label && t.icon &&
+          Array.isArray(t.pairs) && t.pairs.length >= 3 &&
+          t.pairs.every(function (p) { return Array.isArray(p) && p.length === 2; }) &&
+          Array.isArray(t.charms) && t.charms.length >= 3 &&
+          Array.isArray(t.sprinkles) && t.sprinkles.length >= 2 &&
+          Array.isArray(t.lines) && t.lines.length >= 1;
+        assert('theme "' + t.key + '" shape valid', ok);
+      });
+
+      /* 2. Every theme produces its quota, deduplicated */
+      themes.forEach(function (t) {
+        var res = Engine.generate('Hello World', { theme: t.key, seed: 1 });
+        var texts = res.map(function (r) { return r.text; });
+        var unique = new Set(texts);
+        assert('theme "' + t.key + '" generates 6+ unique results',
+          res.length >= 6 && unique.size === texts.length,
+          res.length + ' results, ' + unique.size + ' unique');
+        assert('theme "' + t.key + '" outputs contain the input',
+          texts.every(function (x) { return x.indexOf('Hello') !== -1; }));
+      });
+
+      /* 3. "all" mode covers every theme */
+      var all = Engine.generate('Hello World', { theme: 'all', seed: 1 });
+      var coveredThemes = new Set(all.map(function (r) { return r.theme; }));
+      assert('"all" covers every theme', coveredThemes.size === themes.length,
+        coveredThemes.size + '/' + themes.length);
+
+      /* 4. Determinism + shuffle */
+      var a = Engine.generate('Yasir', { theme: 'sparkle', seed: 7 });
+      var b = Engine.generate('Yasir', { theme: 'sparkle', seed: 7 });
+      var c = Engine.generate('Yasir', { theme: 'sparkle', seed: 8 });
+      assert('same seed → identical output', JSON.stringify(a) === JSON.stringify(b));
+      assert('new seed → different output', JSON.stringify(a) !== JSON.stringify(c));
+
+      /* 5. Typing must not reshuffle: same seed, longer text, same recipes order */
+      var short1 = Engine.generate('He', { theme: 'hearts', seed: 3 });
+      var long1 = Engine.generate('Hello', { theme: 'hearts', seed: 3 });
+      assert('text change keeps recipe order stable',
+        short1.map(function (r) { return r.recipe; }).join() ===
+        long1.map(function (r) { return r.recipe; }).join());
+
+      /* 6. Scope: words wraps every word */
+      var wordRes = Engine.generate('one two three', { theme: 'brackets', scope: 'words', seed: 1 });
+      assert('scope "words" decorates each word',
+        wordRes.some(function (r) {
+          return r.text.indexOf('one') !== -1 && r.text.indexOf('two') !== -1 &&
+            (r.text.match(/【|〖|「|《|⟦|﴾|⌜/g) || []).length >= 2;
+        }));
+
+      /* 7. Banner recipe emits multi-line output */
+      var banner = Engine.generate('Hello', { theme: 'minimal', seed: 1 })
+        .filter(function (r) { return r.recipe === 'Banner'; });
+      assert('banner recipe is multi-line',
+        banner.length > 0 && banner.every(function (r) { return r.text.split('\n').length === 3; }));
+
+      /* 8. Intensity raises decoration weight */
+      var light = Engine.generate('Hi', { theme: 'sparkle', seed: 2, intensity: 1 });
+      var extra = Engine.generate('Hi', { theme: 'sparkle', seed: 2, intensity: 3 });
+      var lenSum = function (rs) {
+        return rs.reduce(function (s, r) { return s + Array.from(r.text).length; }, 0);
+      };
+      assert('intensity 3 produces heavier decoration than 1', lenSum(extra) > lenSum(light),
+        lenSum(light) + ' vs ' + lenSum(extra));
+
+      /* 9. Page controller font names exist in styles.js (when loaded) */
+      if (window.textStyles) {
+        ['Ultra Bold', 'Ultra Italic', 'Ultra Script', 'Ultra Gothic',
+         'Ultra Bubble', 'Ultra Small Caps', 'Ultra Double-Struck'].forEach(function (name) {
+          assert('font option "' + name + '" exists in styles.js', !!window.textStyles[name]);
+        });
+      }
+
+      /* Visual samples */
+      var samples = document.getElementById('samples');
+      Engine.generate('Hello World', { theme: 'all', seed: 1, perTheme: 1 }).forEach(function (r) {
+        var div = document.createElement('div');
+        div.className = 'sample';
+        div.innerHTML = '<small>' + r.icon + ' ' + r.themeLabel + ' · ' + r.recipe + '</small>';
+        var pre = document.createElement('pre');
+        pre.textContent = r.text;
+        div.appendChild(pre);
+        samples.appendChild(div);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -4453,3 +4453,121 @@ body.preview-open { overflow: hidden; }
   .preview-modal { align-items: flex-end; padding: 0; }
   .preview-dialog { max-width: 100%; border-radius: 16px 16px 0 0; }
 }
+
+/* ==========================================================================
+   Text Decorator page (js/decorator/) — extends the vertical-control-panel
+   base classes with decorator-specific pieces.
+   ========================================================================== */
+
+.deco-theme-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.deco-theme-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 20px;
+  background: var(--bg-card, #fff);
+  color: var(--text, #111);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+  white-space: nowrap;
+}
+
+.deco-theme-chip:hover {
+  border-color: var(--accent-purple, #8b5cf6);
+  color: var(--accent-purple, #8b5cf6);
+}
+
+.deco-theme-chip.active {
+  background: var(--accent-purple, #8b5cf6);
+  border-color: var(--accent-purple, #8b5cf6);
+  color: #fff;
+}
+
+.deco-theme-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.deco-options-row {
+  align-items: center;
+  gap: 16px;
+}
+
+.deco-option-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deco-option-group .vertical-control-label {
+  min-width: 0;
+  padding-top: 0;
+}
+
+.deco-font-select {
+  flex: 0 1 auto;
+  min-width: 130px;
+}
+
+.deco-shuffle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--accent-purple, #8b5cf6), var(--accent-blue, #3b82f6));
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .15s, transform .1s;
+}
+
+.deco-shuffle-btn:hover {
+  opacity: .88;
+}
+
+.deco-shuffle-btn:active {
+  transform: scale(.96);
+}
+
+/* Multi-line results (banner recipe) keep their line breaks */
+.decorator-preview {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+body.dark-mode .deco-theme-chip {
+  background: var(--bg-card-dark, #1e1e2e);
+  color: var(--text-dark, #e2e8f0);
+  border-color: var(--border-dark, #334155);
+}
+
+body.dark-mode .deco-theme-chip.active {
+  background: var(--accent-purple, #8b5cf6);
+  border-color: var(--accent-purple, #8b5cf6);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .deco-options-row {
+    gap: 10px;
+  }
+  .deco-shuffle-btn {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+}
