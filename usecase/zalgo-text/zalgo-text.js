@@ -15,7 +15,7 @@
     controlFrequency:        'Frequency',
     controlAmplitude:        'Amplitude',
     tooltipCharacters:       'Choose which type of combining marks to use',
-    tooltipPosition:         'Where marks appear relative to each character',
+    tooltipPosition:         'Where marks appear relative to each character. Mid (overlay) marks can show as □ boxes on some devices and are filtered by Roblox.',
     tooltipShape:            'How mark density varies across the text length',
     tooltipFrequency:        'Probability each character gets marks (0 = none, 100% = all)',
     tooltipAmplitude:        'Number of marks stacked per character (1 = subtle, 20 = chaos)',
@@ -45,7 +45,24 @@
     decodeTitle:             'Decode Zalgo',
     decodeTooltip:           'Paste any zalgo text to strip combining marks and reveal the original',
     decodePlaceholder:       'Paste zalgo text here to decode…',
-    decodeOutputPlaceholder: 'Clean text appears here'
+    decodeOutputPlaceholder: 'Clean text appears here',
+    controlPresets:          'Quick Presets',
+    tooltipPresets:          'One-click starting points — pick one, then fine-tune any control below',
+    presetSubtle:            'Subtle',
+    presetClassic:           'Classic',
+    presetCursed:            'Cursed',
+    presetChaos:             'HE COMES',
+    presetTinyStack:         'Tiny Stack',
+    presetCustom:            'Custom',
+    fitTitle:                'Will it fit?',
+    fitTooltip:              'Zalgo marks count toward platform character limits. Green = your output fits.',
+    fitDiscordMsg:           'Discord message',
+    fitXPost:                'X / Tweet',
+    fitInstaBio:             'Instagram bio',
+    fitDiscordNick:          'Discord nickname',
+    decodeCopy:              'Copy',
+    decodeCopied:            '✓ Copied',
+    decodeRemoved:           'marks removed'
   }, window.zalgoI18n || {});
 
 
@@ -273,6 +290,32 @@
     }).join('');
   }
 
+  // ── Presets ─────────────────────────────────────────────────────
+  // One-click starting points. Previews are pre-rendered (deterministic)
+  // so the buttons read as a visual intensity scale at a glance.
+  const PRESETS = [
+    { id: 'subtle',    labelKey: 'presetSubtle',    preview: 'he̾͢ll͚͘o̡͡',
+      settings: { charType: 'all', position: 'up-down', shape: 'uniform', frequency: 0.5, amplitude: 2 } },
+    { id: 'classic',   labelKey: 'presetClassic',   preview: 'h̩̺̑̈́e̫̖͒l̨̰͂́l̪̈͋ͅō̫͇̌',
+      settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 0.8, amplitude: 5 } },
+    { id: 'cursed',    labelKey: 'presetCursed',    preview: 'ḩ̸͈̗́͊͋͗͑e̸̡̲̭̓̑̍͐̎l̷̳̪̲̒̍͒́̏l̶̡̙͍̃̀̽̔̍o̵̢̺̼͗́̋̕͝',
+      settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 0.95, amplitude: 9 } },
+    { id: 'chaos',     labelKey: 'presetChaos',     preview: 'h̵̶̘͖̭̠͓͚́̀̌͌̓̐̋̍͒ͅe̶̸̢͇̤̯̪̔͌̐̀̒̄̌̿͟͢͡',
+      settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 1.0, amplitude: 18 } },
+    { id: 'tinystack', labelKey: 'presetTinyStack', preview: 'hͪeͦlͪlͯoͫ',
+      settings: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1.0, amplitude: 1 } }
+  ];
+
+  // ── Platform Character Limits ───────────────────────────────────
+  // Combining marks each count toward these limits, so heavy zalgo
+  // "eats" a platform budget far faster than plain text.
+  const PLATFORM_LIMITS = [
+    { id: 'discord-msg',  labelKey: 'fitDiscordMsg',  limit: 2000 },
+    { id: 'x-post',       labelKey: 'fitXPost',       limit: 280 },
+    { id: 'insta-bio',    labelKey: 'fitInstaBio',    limit: 150 },
+    { id: 'discord-nick', labelKey: 'fitDiscordNick', limit: 32 }
+  ];
+
   // ── State ───────────────────────────────────────────────────────
   const state = {
     charType:  'all',
@@ -280,7 +323,8 @@
     shape:     'uniform',
     frequency: 0.8,
     amplitude: 5,
-    output:    ''
+    output:    '',
+    preset:    'classic'
   };
 
   // ── DOM References ──────────────────────────────────────────────
@@ -288,8 +332,10 @@
   const $$ = (sel) => document.querySelectorAll(sel);
 
   // ── Helpers ─────────────────────────────────────────────────────
+  // Tooltip trigger is a real button so it works by tap and keyboard,
+  // not just mouse hover (mobile is the majority of traffic).
   function tooltip(text) {
-    return `<span class="tooltip-trigger">?<span class="tooltip-text">${text}</span></span>`;
+    return `<button type="button" class="tooltip-trigger" aria-label="${text}">?<span class="tooltip-text" role="tooltip">${text}</span></button>`;
   }
 
   function pillGroup(items, groupAttr) {
@@ -337,6 +383,20 @@
     ];
 
     panel.innerHTML = `
+      <div class="control-group preset-group">
+        <div class="control-label">
+          <span class="icon">✦</span> ${i18n.controlPresets}
+          ${tooltip(i18n.tooltipPresets)}
+        </div>
+        <div class="preset-row">
+          ${PRESETS.map(p => `
+            <button class="preset-option${state.preset === p.id ? ' active' : ''}" data-preset="${p.id}">
+              <span class="preset-preview">${p.preview}</span>
+              <span class="preset-name">${i18n[p.labelKey]}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
       <div class="controls">
         <!-- Characters -->
         <div class="control-group">
@@ -421,8 +481,38 @@
         <div class="output-body" id="outputBody">
           <span class="output-placeholder">${i18n.outputPlaceholder}</span>
         </div>
+        <div class="platform-fit" id="platformFit" hidden>
+          <span class="fit-title">${i18n.fitTitle}
+            ${tooltip(i18n.fitTooltip)}
+          </span>
+          <span class="fit-badges" id="fitBadges"></span>
+        </div>
       </div>
     `;
+  }
+
+  // ── Platform Fit Badges ─────────────────────────────────────────
+  // Combining marks count toward character limits everywhere, so a
+  // 10-char name can become 200+ chars of zalgo. Show at a glance
+  // which platform budgets the current output still fits.
+  function updatePlatformFit() {
+    const wrap   = $('#platformFit');
+    const badges = $('#fitBadges');
+    if (!wrap || !badges) return;
+
+    if (!state.output) {
+      wrap.hidden = true;
+      return;
+    }
+
+    const len = state.output.length;
+    wrap.hidden = false;
+    badges.innerHTML = PLATFORM_LIMITS.map(p => {
+      const fits = len <= p.limit;
+      return `<span class="fit-badge ${fits ? 'fit-yes' : 'fit-no'}" title="${len} / ${p.limit}">
+        ${fits ? '✓' : '✕'} ${i18n[p.labelKey]}
+      </span>`;
+    }).join('');
   }
 
   // ── Build Decode Section ────────────────────────────────────────
@@ -431,10 +521,16 @@
     if (!container) return;
 
     container.innerHTML = `
-      <div class="decode-section">
-        <div class="control-label" style="margin-bottom:12px">
-          <span class="icon">🔓</span> ${i18n.decodeTitle}
-          ${tooltip(i18n.decodeTooltip)}
+      <div class="decode-section" id="unzalgo">
+        <div class="decode-header">
+          <div class="control-label">
+            <span class="icon">🔓</span> ${i18n.decodeTitle}
+            ${tooltip(i18n.decodeTooltip)}
+          </div>
+          <div class="decode-meta">
+            <span class="decode-removed" id="decodeRemoved" hidden></span>
+            <button class="btn btn-copy" id="decodeCopyBtn" disabled>${i18n.decodeCopy}</button>
+          </div>
         </div>
         <div class="decode-row">
           <textarea class="decode-input" id="decodeInput"
@@ -486,6 +582,43 @@
 
     if (chars) chars.textContent = state.output.length + ' ' + i18n.outputChars;
     if (btn)   btn.disabled = !state.output;
+
+    updatePlatformFit();
+  }
+
+  // ── Preset Handling ─────────────────────────────────────────────
+  // Applying a preset updates state AND the visible controls in place
+  // (no innerHTML rebuild, so slider/input listeners stay attached).
+  function syncControlsToState() {
+    const panel = $('#zalgoControlPanel');
+    if (!panel) return;
+    panel.querySelectorAll('.pill[data-group="charType"]').forEach(p =>
+      p.classList.toggle('active', p.dataset.value === state.charType));
+    panel.querySelectorAll('.pill[data-group="position"]').forEach(p =>
+      p.classList.toggle('active', p.dataset.value === state.position));
+    panel.querySelectorAll('.shape-option').forEach(s =>
+      s.classList.toggle('active', s.dataset.shape === state.shape));
+    const freqSlider = $('#frequencySlider');
+    const freqValue  = $('#frequencyValue');
+    if (freqSlider) freqSlider.value = state.frequency;
+    if (freqValue)  freqValue.textContent = Math.round(state.frequency * 100) + '%';
+    const ampSlider = $('#amplitudeSlider');
+    const ampValue  = $('#amplitudeValue');
+    if (ampSlider) ampSlider.value = state.amplitude;
+    if (ampValue)  ampValue.textContent = state.amplitude;
+  }
+
+  function setActivePreset(id) {
+    state.preset = id;
+    const panel = $('#zalgoControlPanel');
+    if (!panel) return;
+    panel.querySelectorAll('.preset-option').forEach(b =>
+      b.classList.toggle('active', b.dataset.preset === id));
+  }
+
+  // Any manual tweak means the user has left the preset
+  function clearActivePreset() {
+    if (state.preset) setActivePreset(null);
   }
 
   // ── Event Binding ───────────────────────────────────────────────
@@ -494,6 +627,19 @@
 
     // Pill buttons (characters + position)
     panel.addEventListener('click', (e) => {
+      // Preset buttons
+      const presetBtn = e.target.closest('.preset-option[data-preset]');
+      if (presetBtn) {
+        const preset = PRESETS.find(p => p.id === presetBtn.dataset.preset);
+        if (preset) {
+          Object.assign(state, preset.settings);
+          setActivePreset(preset.id);
+          syncControlsToState();
+          runGenerate();
+        }
+        return;
+      }
+
       const pill = e.target.closest('.pill[data-group]');
       if (pill) {
         const group = pill.dataset.group;
@@ -504,6 +650,7 @@
         panel.querySelectorAll(`.pill[data-group="${group}"]`).forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
 
+        clearActivePreset();
         runGenerate();
         return;
       }
@@ -514,8 +661,20 @@
         state.shape = shapeBtn.dataset.shape;
         panel.querySelectorAll('.shape-option').forEach(s => s.classList.remove('active'));
         shapeBtn.classList.add('active');
+        clearActivePreset();
         runGenerate();
       }
+    });
+
+    // Tooltips: tap/click to toggle (hover still works via CSS).
+    // One listener on document handles all tooltip triggers, including
+    // ones injected later, and closes any open tooltip on outside tap.
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.tooltip-trigger');
+      document.querySelectorAll('.tooltip-trigger.open').forEach(t => {
+        if (t !== trigger) t.classList.remove('open');
+      });
+      if (trigger) trigger.classList.toggle('open');
     });
 
     // Frequency slider
@@ -556,31 +715,8 @@
     // Copy button
     const copyBtn = $('#copyBtn');
     if (copyBtn) {
-      copyBtn.addEventListener('click', async () => {
-        if (!state.output) return;
-        try {
-          await navigator.clipboard.writeText(state.output);
-          copyBtn.textContent = i18n.btnCopied;
-          copyBtn.classList.add('copied');
-          setTimeout(() => {
-            copyBtn.textContent = i18n.btnCopy;
-            copyBtn.classList.remove('copied');
-          }, 1500);
-        } catch (err) {
-          // Fallback
-          const ta = document.createElement('textarea');
-          ta.value = state.output;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-          copyBtn.textContent = i18n.btnCopied;
-          copyBtn.classList.add('copied');
-          setTimeout(() => {
-            copyBtn.textContent = i18n.btnCopy;
-            copyBtn.classList.remove('copied');
-          }, 1500);
-        }
+      copyBtn.addEventListener('click', () => {
+        if (state.output) copyToClipboard(state.output, copyBtn, i18n.btnCopy);
       });
     }
 
@@ -591,20 +727,81 @@
     }
 
     // Decode input
-    const decodeInput  = $('#decodeInput');
-    const decodeOutput = $('#decodeOutput');
+    const decodeInput   = $('#decodeInput');
+    const decodeOutput  = $('#decodeOutput');
+    const decodeCopyBtn = $('#decodeCopyBtn');
+    const decodeRemoved = $('#decodeRemoved');
+    let decodedText = '';
     if (decodeInput && decodeOutput) {
       decodeInput.addEventListener('input', () => {
         const raw = decodeInput.value;
         const clean = raw.replace(/[\u0300-\u036f\u0488\u0489\u1AB0-\u1AFF\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]/g, '');
+        decodedText = clean;
         if (clean) {
           decodeOutput.textContent = clean;
           decodeOutput.classList.remove('placeholder');
         } else {
           decodeOutput.innerHTML = `<span class="placeholder">${i18n.decodeOutputPlaceholder}</span>`;
         }
+        if (decodeCopyBtn) decodeCopyBtn.disabled = !clean;
+        if (decodeRemoved) {
+          const removed = raw.length - clean.length;
+          decodeRemoved.hidden = removed <= 0;
+          decodeRemoved.textContent = removed + ' ' + i18n.decodeRemoved;
+        }
       });
     }
+    if (decodeCopyBtn) {
+      decodeCopyBtn.addEventListener('click', () => {
+        if (decodedText) copyToClipboard(decodedText, decodeCopyBtn, i18n.decodeCopy);
+      });
+    }
+
+    // One-click copy for the static "copy & paste examples" gallery.
+    // Cards live in page HTML (indexable), the behaviour lives here.
+    document.querySelectorAll('.zx-example').forEach(card => {
+      const copyCard = () => {
+        const textEl = card.querySelector('.zx-text');
+        const btnEl  = card.querySelector('.zx-copy');
+        if (textEl) copyToClipboard(textEl.textContent, btnEl, i18n.btnCopy);
+      };
+      card.addEventListener('click', copyCard);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          copyCard();
+        }
+      });
+    });
+  }
+
+  // Shared clipboard helper with execCommand fallback + button feedback
+  function copyToClipboard(text, btn, idleLabel) {
+    const done = () => {
+      if (!btn) return;
+      btn.textContent = i18n.btnCopied;
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = idleLabel;
+        btn.classList.remove('copied');
+      }, 1500);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => {
+        legacyCopy(text); done();
+      });
+    } else {
+      legacyCopy(text); done();
+    }
+  }
+
+  function legacyCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
   }
 
   // ── URL State Sync ──────────────────────────────────────────────
