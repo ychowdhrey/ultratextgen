@@ -33,10 +33,11 @@
 
   /* ---- State ---- */
   var selectedTheme = 'all';
-  var scope         = 'text';   // 'text' | 'words'
+  var scope         = 'text';   // 'text' | 'words' | 'letters'
   var intensity     = 2;        // 1..3
   var seed          = 1;
   var selectedFont  = 'none';
+  var customSymbol  = '';       // user-supplied emoji/symbol (🇵🇰, ★, …)
 
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
@@ -48,16 +49,18 @@
       if (p.theme && (p.theme === 'all' || Engine.THEMES.some(function (t) { return t.key === p.theme; }))) {
         selectedTheme = p.theme;
       }
-      if (p.scope === 'words' || p.scope === 'text') scope = p.scope;
+      if (p.scope === 'words' || p.scope === 'text' || p.scope === 'letters') scope = p.scope;
       if (p.intensity >= 1 && p.intensity <= 3) intensity = p.intensity;
       if (FONT_OPTIONS.some(function (f) { return f.key === p.font; })) selectedFont = p.font;
+      if (typeof p.symbol === 'string') customSymbol = p.symbol.slice(0, 8);
     } catch (e) {}
   }
 
   function savePrefs() {
     try {
       localStorage.setItem(PREF_KEY, JSON.stringify({
-        theme: selectedTheme, scope: scope, intensity: intensity, font: selectedFont
+        theme: selectedTheme, scope: scope, intensity: intensity,
+        font: selectedFont, symbol: customSymbol
       }));
     } catch (e) {}
   }
@@ -104,6 +107,7 @@
             '<span class="vertical-mode-chips">' +
               '<button class="vertical-chip deco-scope-chip' + (scope === 'text' ? ' active' : '') + '" data-scope="text">Whole text</button>' +
               '<button class="vertical-chip deco-scope-chip' + (scope === 'words' ? ' active' : '') + '" data-scope="words">Each word</button>' +
+              '<button class="vertical-chip deco-scope-chip' + (scope === 'letters' ? ' active' : '') + '" data-scope="letters">Each letter</button>' +
             '</span>' +
           '</span>' +
 
@@ -115,6 +119,13 @@
           '<span class="deco-option-group">' +
             '<label class="vertical-control-label" for="decoFontSelect">Font</label>' +
             '<select class="vertical-layout-select deco-font-select" id="decoFontSelect">' + fontOptions + '</select>' +
+          '</span>' +
+
+          '<span class="deco-option-group">' +
+            '<label class="vertical-control-label" for="decoSymbolInput">Your symbol</label>' +
+            '<input class="deco-symbol-input" id="decoSymbolInput" type="text" maxlength="8" ' +
+              'placeholder="🇵🇰 ★ 🐐 …" autocomplete="off" spellcheck="false" ' +
+              'title="Paste any emoji or symbol to decorate your text with it">' +
           '</span>' +
 
           '<button class="deco-shuffle-btn" id="decoShuffleBtn" type="button" title="Generate a fresh set of decorations">🎲 Shuffle</button>' +
@@ -160,6 +171,16 @@
     if (fontSelect) {
       fontSelect.addEventListener('change', function () {
         selectedFont = this.value;
+        savePrefs();
+        triggerRender();
+      });
+    }
+
+    var symbolInput = $('#decoSymbolInput', panel);
+    if (symbolInput) {
+      symbolInput.value = customSymbol;
+      symbolInput.addEventListener('input', function () {
+        customSymbol = this.value;
         savePrefs();
         triggerRender();
       });
@@ -224,7 +245,8 @@
       theme: selectedTheme,
       scope: scope,
       intensity: intensity,
-      seed: seed
+      seed: seed,
+      customSymbol: customSymbol.trim()
     });
 
     results.forEach(function (r) {

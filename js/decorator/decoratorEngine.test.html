@@ -91,6 +91,35 @@
             (r.text.match(/【|〖|「|《|⟦|﴾|⌜/g) || []).length >= 2;
         }));
 
+      /* 6b. Scope: letters decorates every letter, even in a single word */
+      var letterRes = Engine.generate('YASIR', { theme: 'brackets', scope: 'letters', seed: 1 });
+      assert('scope "letters" decorates each letter',
+        letterRes.some(function (r) {
+          return ['Y', 'A', 'S', 'I', 'R'].every(function (ch) { return r.text.indexOf(ch) !== -1; }) &&
+            (r.text.match(/【|〖|「|《|⟦|﴾|⌜|◈|¤|｜/g) || []).length >= 4;
+        }));
+      var letterWhole = Engine.generate('YASIR', { theme: 'sparkle', scope: 'text', seed: 5 });
+      var letterSplit = Engine.generate('YASIR', { theme: 'sparkle', scope: 'letters', seed: 5 });
+      assert('single word: "letters" differs from "whole text"',
+        JSON.stringify(letterWhole) !== JSON.stringify(letterSplit));
+
+      /* 6c. Custom symbol — flag emoji stays intact and leads the results */
+      var flag = Engine.generate('YASIR', { theme: 'all', scope: 'text', seed: 1, customSymbol: '🇵🇰' });
+      assert('custom symbol results come first', flag[0].theme === 'custom');
+      var customResults = flag.filter(function (r) { return r.theme === 'custom'; });
+      assert('custom symbol produces 4+ variations', customResults.length >= 4,
+        'got ' + customResults.length);
+      assert('flag emoji 🇵🇰 never splits into 🇵 / 🇰',
+        customResults.every(function (r) {
+          return r.text.split('🇵').length === r.text.split('🇵🇰').length;
+        }));
+      var flagLetters = Engine.generate('YASIR', { theme: 'all', scope: 'letters', seed: 1, customSymbol: '🇵🇰' })
+        .filter(function (r) { return r.theme === 'custom'; });
+      assert('custom symbol + letters gives 🇵🇰-between-letters style',
+        flagLetters.some(function (r) {
+          return (r.text.match(/🇵🇰/g) || []).length >= 4 && r.text.indexOf('Y') !== -1;
+        }));
+
       /* 7. Banner recipe emits multi-line output */
       var banner = Engine.generate('Hello', { theme: 'minimal', seed: 1 })
         .filter(function (r) { return r.recipe === 'Banner'; });
