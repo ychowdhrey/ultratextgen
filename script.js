@@ -914,7 +914,6 @@ const decorations = window.UTG_DECORATIONS || {
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>
         Share
       </button>
-      <p class="scope-hint">Tip: “First line only” styles just your opening hook and keeps the rest plain — great for LinkedIn or Instagram posts where the body needs to stay readable.</p>
     `;
     host.insertBefore(control, el.resultsGrid);
 
