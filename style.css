@@ -2447,10 +2447,13 @@ a:hover {
   word-break: break-word;
 }
 
-/* Vertical results grid — multi-column layout for compact vertical cards */
+/* Vertical results grid — multi-column layout for compact vertical cards.
+   align-items: start keeps short cards from stretching to the tallest
+   card in their row (Box/Pyramid cards can be very tall). */
 .vertical-results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  align-items: start;
   gap: 10px;
   padding-bottom: 32px;
 }
@@ -2488,6 +2491,232 @@ body.dark-mode .vertical-chip {
   background: var(--bg-card-dark, #1e1e2e);
   color: var(--text-dark, #e2e8f0);
   border-color: var(--border-dark, #334155);
+}
+
+/* Active state must survive the dark-mode background override above */
+body.dark-mode .vertical-chip.active {
+  background: var(--accent, #6366f1);
+  border-color: var(--accent, #6366f1);
+  color: #fff;
+}
+
+/* Layout picker — visual buttons with a mini preview per layout */
+.vertical-layout-picker {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 8px;
+  min-width: 200px;
+}
+
+.vertical-layout-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 6px;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 10px;
+  background: var(--bg-card, #fff);
+  color: var(--text, #111);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s;
+}
+
+.vertical-layout-option:hover {
+  border-color: var(--accent, #6366f1);
+}
+
+.vertical-layout-option.active {
+  border-color: var(--accent, #6366f1);
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: inset 0 0 0 1px var(--accent, #6366f1);
+}
+
+.vertical-layout-mini {
+  margin: 0;
+  font-family: monospace, monospace;
+  font-size: 0.5rem;
+  line-height: 1.15;
+  max-height: 44px;
+  overflow: hidden;
+  color: var(--text-muted, #888);
+  text-align: left;
+  pointer-events: none;
+}
+
+.vertical-layout-option.active .vertical-layout-mini {
+  color: var(--accent, #6366f1);
+}
+
+.vertical-layout-name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+body.dark-mode .vertical-layout-option {
+  background: var(--bg-card-dark, #1e1e2e);
+  color: var(--text-dark, #e2e8f0);
+  border-color: var(--border-dark, #334155);
+}
+
+body.dark-mode .vertical-layout-option.active {
+  border-color: var(--accent, #6366f1);
+  background: rgba(99, 102, 241, 0.18);
+}
+
+/* Spacing / safe-mode chip group */
+.vertical-safe-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Custom separator input */
+.vertical-custom-sep-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.vertical-custom-sep-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.vertical-custom-sep {
+  width: 110px;
+  padding: 5px 10px;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 8px;
+  background: var(--bg-card, #fff);
+  color: var(--text, #111);
+  font-size: 0.85rem;
+}
+
+body.dark-mode .vertical-custom-sep {
+  background: var(--bg-card-dark, #1e1e2e);
+  color: var(--text-dark, #e2e8f0);
+  border-color: var(--border-dark, #334155);
+}
+
+/* Fit badges row — live per-platform character budget */
+.vertical-fit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 22px;
+  font-size: 0.75rem;
+}
+
+.vertical-fit-count {
+  font-weight: 600;
+  color: var(--text-muted, #888);
+}
+
+.vertical-fit-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.vertical-fit-badge.fit {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+}
+
+.vertical-fit-badge.no-fit {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+body.dark-mode .vertical-fit-badge.fit { color: #4ade80; }
+body.dark-mode .vertical-fit-badge.no-fit { color: #f87171; }
+
+.vertical-fit-note {
+  color: var(--text-muted, #888);
+  font-style: italic;
+}
+
+/* Caps readability hint */
+.vertical-caps-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted, #888);
+}
+
+.vertical-caps-btn {
+  padding: 2px 10px;
+  border: 1px solid var(--accent, #6366f1);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--accent, #6366f1);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vertical-caps-btn:hover {
+  background: var(--accent, #6366f1);
+  color: #fff;
+}
+
+/* Card meta line — char count + collapsed-duplicates note */
+.vertical-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0 4px;
+  font-size: 0.7rem;
+  color: var(--text-muted, #888);
+}
+
+.vertical-dupe-note {
+  padding: 1px 7px;
+  border: 1px dashed var(--border, #e0e0e0);
+  border-radius: 10px;
+  cursor: help;
+}
+
+.vertical-empty-note {
+  grid-column: 1 / -1;
+  color: var(--text-muted, #888);
+  font-size: 0.9rem;
+  padding: 16px 0;
+}
+
+/* Decoration items are now real <button>s for keyboard access —
+   neutralize UA button styling so they match the old spans */
+button.decoration-item,
+button.clear-decoration {
+  font-family: inherit;
+  color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Which-format comparison table (was inline-styled in the page HTML) */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.comparison-table th {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.comparison-table td {
+  padding: 0.75rem;
 }
 
 /* Visible Breadcrumb Navigation */

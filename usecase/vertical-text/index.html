@@ -111,7 +111,7 @@
       "name": "My vertical text collapses into one line on Instagram — how do I fix it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Instagram bios strip 'empty' formatting — it removes trailing spaces and collapses blank lines when you save. The stack of single characters this tool produces survives because every line has a real character on it, but a few habits help: don't leave a trailing space at the end of any line before the line break; edit your bio on the Instagram website (desktop), which preserves line breaks more reliably than the app; use the Word Divider control (Blank Line or Divider Line) instead of pressing Enter twice, since empty lines get stripped; and paste directly from this tool rather than from a rich-text editor like Google Docs, which can inject hidden formatting."
+        "text": "Instagram bios strip 'empty' formatting — it removes trailing spaces and collapses blank lines when you save. This generator's Platform-safe spacing mode (on by default) solves that: blank lines and indents are built from an invisible Unicode character (Braille Pattern Blank, U+2800), so every line has a real character on it and the layout survives saving. A few extra habits help: edit your bio on the Instagram website (desktop), which preserves line breaks more reliably than the app, and paste directly from this tool rather than from a rich-text editor like Google Docs, which can inject hidden formatting."
       }
     },
     {
@@ -127,7 +127,7 @@
       "name": "How do I add separators between characters?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Click the decoration tabs above the results. Each tab has a set of separator characters — dots, bullets, aesthetic symbols, blocks, arrows, or emoji. Click any separator to insert it between each character in the vertical stack. Click it again to remove it. The copy button always copies the full version with separators included."
+        "text": "Use the Line Decoration tabs in the panel above: Bullets, Arrows, Dots, Dividers, Emojis, or Flags. Click any separator to add it to the vertical stack — bullets, arrows and flags appear beside each letter, while dots, dividers and emojis appear between letters. Click it again (or ✕ None) to remove it, or type your own symbol in the Custom field. The copy button always copies the full version with separators included."
       }
     },
     {
@@ -135,7 +135,7 @@
       "name": "What is the character limit for vertical text in Instagram bios?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Instagram bios allow up to 150 characters. Keep in mind that vertical text uses newlines between each character, so a 10-character word becomes roughly 19 characters (10 chars + 9 newlines). With a separator, it grows further. Aim for short words or 2-4 character phrases to fit within the bio limit."
+        "text": "Instagram bios allow up to 150 characters. Keep in mind that vertical text uses newlines between each character, so a 10-character word becomes roughly 19 characters (10 chars + 9 newlines). With a separator, it grows further. The live output counter above the results shows your exact character count and whether it fits the Instagram, TikTok and X bio limits. Aim for short words or 2-4 character phrases to fit within the bio limit."
       }
     },
     {
@@ -260,20 +260,9 @@
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
 
-        <!-- Vertical Control Panel: populated by verticalPageController.js -->
+        <!-- Vertical Control Panel: populated by verticalPageController.js
+             (layout picker, word mode, dividers, spacing, decorations) -->
         <div id="verticalControlPanel"></div>
-
-        <!-- Decoration Selector: vertical decorator grid injected by controller -->
-        <div class="decoration-section">
-          <div class="decoration-label">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
-            Add line decoration
-          </div>
-
-          <div class="decoration-grid" id="decorationGrid"></div>
-        </div>
       </div>
     </div>
   </section>
@@ -311,11 +300,13 @@ o</pre></div>
           <h3>How this generator works</h3>
           <p>Type your text and choose from 12 layout styles — Stacked, Staircase, Pyramid, Box, and more. The generator applies your chosen layout across every Unicode font style (bold, italic, cursive, gothic, and more) at once, so you can compare all variations side by side and copy the one you want.</p>
           <p>Because each character is restyled into a Unicode font <em>before</em> it is stacked, this page works as a vertical font generator as much as a vertical text generator: pick the vertical font that fits your vibe, then copy the stacked, top-to-bottom result.</p>
-          <p>Two word modes control how multi-word input is handled:</p>
+          <p>Three word modes control how multi-word input is handled:</p>
           <ul>
             <li><strong>Stack mode:</strong> Each word becomes its own vertical block, with optional dividers between words (None, Blank Line, or Divider Line).</li>
             <li><strong>Continuous mode:</strong> All characters flow as a single vertical column, ignoring word boundaries.</li>
+            <li><strong>Word per Line mode:</strong> Each whole word sits on its own line — a word-by-word stack instead of letter-by-letter.</li>
           </ul>
+          <p>The <strong>Spacing</strong> control decides how the output is padded. Platform-safe (the default) builds blank lines and indents from an invisible Unicode character so the layout survives Instagram and TikTok, which strip empty lines and extra spaces when you save. Raw keeps plain spaces and empty lines.</p>
           <p>You can also add a line decorator — a dot, symbol, or emoji placed between each character for extra visual rhythm.</p>
           <div class="block-example"><strong>Example — "Hi" with a star decorator:</strong>
 <pre>H
@@ -330,7 +321,7 @@ i</pre></div>
       <summary class="accordion-toggle">Vertical Layout Options</summary>
       <div class="accordion-body">
         <div class="editorial-block">
-          <p>Select a layout from the dropdown above to try it instantly. Each of the 12 layouts transforms your text differently while keeping it copy-pasteable as plain text. Here are five key layouts to get you started.</p>
+          <p>Pick a layout from the visual layout picker above to try it instantly — each option shows a mini preview of its shape. All 12 layouts transform your text differently while keeping it copy-pasteable as plain text. Here are five key layouts to get you started.</p>
         </div>
         <div class="editorial-block">
           <h3>Stacked (Default)</h3>
@@ -491,13 +482,13 @@ o</pre></div>
     <section class="editorial-section">
       <h2>Which Text Format Works Best?</h2>
       <div class="editorial-block">
-        <table class="comparison-table" style="width:100%; border-collapse:collapse; margin:1rem 0;">
+        <table class="comparison-table">
           <thead>
             <tr>
-              <th style="text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);">Behavior</th>
-              <th style="text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);">Horizontal</th>
-              <th style="text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);">Vertical</th>
-              <th style="text-align:left; padding:0.75rem; border-bottom:2px solid rgba(255,255,255,0.15);">Hybrid</th>
+              <th>Behavior</th>
+              <th>Horizontal</th>
+              <th>Vertical</th>
+              <th>Hybrid</th>
             </tr>
           </thead>
           <tbody>
@@ -520,10 +511,10 @@ o</pre></div>
               <td class="table-row-divider">Captions, posts</td>
             </tr>
             <tr>
-              <td style="padding:0.75rem;">Readability</td>
-              <td style="padding:0.75rem;">High</td>
-              <td style="padding:0.75rem;">Lower (long text)</td>
-              <td style="padding:0.75rem;">Balanced</td>
+              <td>Readability</td>
+              <td>High</td>
+              <td>Lower (long text)</td>
+              <td>Balanced</td>
             </tr>
           </tbody>
         </table>
@@ -659,7 +650,7 @@ Feature launching tomorrow</pre></div>
   <div class="faq-answer">
     This generator includes 12 layout patterns: Stacked, Reverse Stacked, Upside-Down, Extra Spaced, Staircase, Pyramid, Reverse Pyramid, Centered Pyramid, Diagonal Right, Diagonal Left, Box, and Double Column.
     Each layout can be combined with any of the 80+ Unicode font styles available in the generator — giving you hundreds of possible combinations.
-    Select a layout from the dropdown above the results to switch between them instantly.
+    Pick a layout from the visual layout picker above the results — each option shows a mini preview — to switch between them instantly.
   </div>
 </div>
 
@@ -710,11 +701,10 @@ Feature launching tomorrow</pre></div>
     </svg>
   </button>
   <div class="faq-answer">
-    <a href="https://ultratextgen.com/instagram/">Instagram</a> bios strip "empty" formatting — it removes trailing spaces and collapses blank lines when you save. The stack of single characters this tool produces survives because every line has a real character on it, but a few habits help:
+    <a href="https://ultratextgen.com/instagram/">Instagram</a> bios strip "empty" formatting — it removes trailing spaces and collapses blank lines when you save. This generator's <strong>Platform-safe spacing</strong> mode (on by default) solves that: blank lines and indents are built from an invisible Unicode character (Braille Pattern Blank, U+2800), so every line has a real character on it and the layout survives saving. A few extra habits help:
     <br><br>
-    • Don't leave a trailing space at the end of any line before the line break.<br>
+    • Keep Spacing set to Platform-safe when pasting into Instagram or TikTok.<br>
     • Edit your bio on the Instagram website (desktop) — it preserves line breaks more reliably than the app.<br>
-    • If you want gaps between word blocks, use the Word Divider control (Blank Line or Divider Line) instead of pressing Enter twice, since empty lines get stripped.<br>
     • Paste directly from this tool rather than from a rich-text editor like Google Docs, which can inject hidden formatting.
   </div>
 </div>
@@ -746,6 +736,7 @@ Feature launching tomorrow</pre></div>
     <a href="https://ultratextgen.com/instagram/">Instagram</a> bios allow up to 150 characters.
     Keep in mind that vertical text uses newlines between each character, so a 10-character word becomes roughly 19 characters (10 chars + 9 newlines).
     With a separator, it grows further.
+    The live output counter above the results shows your exact character count and whether it fits the Instagram, TikTok and X bio limits.
     Aim for short words or 2–4 character phrases to fit within the bio limit.
   </div>
 </div>
@@ -758,9 +749,9 @@ Feature launching tomorrow</pre></div>
     </svg>
   </button>
   <div class="faq-answer">
-    Click one of the decoration tabs above the results: Spacers, Bullets, Aesthetic, Blocks, Arrows, or Emoji.
-    Each tab has a set of separator characters. Click any separator to insert it between each character in the vertical stack.
-    Click it again (or click "✕ None") to remove it.
+    Use the Line Decoration tabs in the panel above: Bullets, Arrows, Dots, Dividers, Emojis, or Flags.
+    Bullets, arrows and flags appear beside each letter; dots, dividers and emojis appear between letters.
+    Click any separator to add it, click it again (or "✕ None") to remove it — or type your own symbol in the Custom field.
     The copy button always copies the full version with separators included.
   </div>
 </div>
@@ -833,9 +824,9 @@ Feature launching tomorrow</pre></div>
 
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
-  <script src="/js/vertical/verticalLayouts.js"></script>
-  <script src="/js/vertical/verticalDecorators.js"></script>
-  <script src="/js/vertical/verticalDecoratorData.js"></script>
+  <script src="/js/vertical/verticalLayouts.js" defer></script>
+  <script src="/js/vertical/verticalDecorators.js" defer></script>
+  <script src="/js/vertical/verticalDecoratorData.js" defer></script>
   <script src="/script.js" defer=""></script>
   <script src="/js/vertical/verticalPageController.js" defer=""></script>
 
