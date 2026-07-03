@@ -2,6 +2,11 @@
    UltraTextGen — verticalLayouts.js
    Pure layout engine functions for the Vertical Text Generator.
    Exposes window.UTGVerticalLayouts.
+
+   Word modes:
+     'stack'      — one vertical block per word (units = letters)
+     'continuous' — a single block, spaces removed (units = letters)
+     'word-lines' — a single block where each WORD is a unit (one word per line)
    ========================================================================== */
 
 (function () {
@@ -25,6 +30,22 @@
   };
 
   /* --------------------------------------------------------------------------
+     Grapheme-safe character splitting.
+     Intl.Segmenter keeps ZWJ emoji (👩‍👩‍👧‍👦), flags and skin tones whole;
+     Array.from is the fallback for older engines.
+     -------------------------------------------------------------------------- */
+  var GRAPHEME_SEGMENTER = (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function')
+    ? new Intl.Segmenter(undefined, { granularity: 'grapheme' })
+    : null;
+
+  function chars(word) {
+    if (GRAPHEME_SEGMENTER) {
+      return Array.from(GRAPHEME_SEGMENTER.segment(word), function (s) { return s.segment; });
+    }
+    return Array.from(word);
+  }
+
+  /* --------------------------------------------------------------------------
      Helper: split input into words
      -------------------------------------------------------------------------- */
   function splitWords(input) {
@@ -36,258 +57,150 @@
      -------------------------------------------------------------------------- */
   function wordBlockSeparator(mode) {
     if (mode === 'divider-line') return '\n────────\n';
-    return '\n\n'; // 'none' or 'blank-line' → single blank line between blocks
+    if (mode === 'blank-line')   return '\n\n\n';  // two blank lines between blocks
+    return '\n\n';                                 // 'none' → single blank line
   }
 
   /* --------------------------------------------------------------------------
-     Internal: turn an array of chars into stacked lines for one word block
+     Internal: resolve input + mode into an array of unit blocks.
+     Each block is an array of units (graphemes or whole words) that a layout
+     arranges vertically. Layouts stay mode-agnostic by operating on units.
      -------------------------------------------------------------------------- */
-  function stackChars(chars) {
-    return chars.join('\n');
-  }
-
-  /* --------------------------------------------------------------------------
-     Internal: get char array for a word (Array.from handles emoji/surrogate pairs)
-     -------------------------------------------------------------------------- */
-  function chars(word) {
-    return Array.from(word);
-  }
-
-  /* --------------------------------------------------------------------------
-     Layout 1: Stacked — each character on its own line
-     -------------------------------------------------------------------------- */
-  function makeLayoutStacked(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
+  function unitBlocks(input, mode) {
     if (mode === 'continuous') {
       var all = chars(input.replace(/\s+/g, ''));
-      return stackChars(all);
+      return all.length ? [all] : [];
     }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(function (w) { return stackChars(chars(w)); }).join(sep);
+    if (mode === 'word-lines') {
+      var words = splitWords(input);
+      return words.length ? [words] : [];
+    }
+    return splitWords(input).map(chars);
   }
 
   /* --------------------------------------------------------------------------
-     Layout 2: Reverse Stacked — characters in reverse order, each on own line
+     Internal: render blocks through a per-block function and join them
+     -------------------------------------------------------------------------- */
+  function renderBlocks(input, mode, options, blockFn) {
+    options = options || {};
+    var blocks = unitBlocks(input, mode);
+    if (blocks.length === 0) return '';
+    var sep = wordBlockSeparator(options.wordDividerMode || 'none');
+    return blocks.map(blockFn).join(sep);
+  }
+
+  /* --------------------------------------------------------------------------
+     Layout 1: Stacked — each unit on its own line
+     -------------------------------------------------------------------------- */
+  function makeLayoutStacked(input, mode, options) {
+    return renderBlocks(input, mode, options, function (units) {
+      return units.join('\n');
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     Layout 2: Reverse Stacked — units in reverse order, each on own line
      -------------------------------------------------------------------------- */
   function makeLayoutReverseStacked(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    if (mode === 'continuous') {
-      var all = chars(input.replace(/\s+/g, '')).reverse();
-      return stackChars(all);
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(function (w) { return stackChars(chars(w).reverse()); }).join(sep);
+    return renderBlocks(input, mode, options, function (units) {
+      return units.slice().reverse().join('\n');
+    });
   }
 
   /* --------------------------------------------------------------------------
-     Layout 3: Upside-Down Stacked — flip each char, then reverse order and stack
+     Layout 3: Upside-Down Stacked — flip each unit, then reverse order and stack
      -------------------------------------------------------------------------- */
   function makeLayoutUpsideDownStacked(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function flipAndStack(word) {
-      var flipped = chars(word).map(function (ch) { return FLIP_MAP[ch] || ch; });
-      return stackChars(flipped.reverse());
+    function flipUnit(unit) {
+      return chars(unit).map(function (ch) { return FLIP_MAP[ch] || ch; }).reverse().join('');
     }
-
-    if (mode === 'continuous') {
-      return flipAndStack(input.replace(/\s+/g, ''));
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(flipAndStack).join(sep);
+    return renderBlocks(input, mode, options, function (units) {
+      return units.map(flipUnit).reverse().join('\n');
+    });
   }
 
   /* --------------------------------------------------------------------------
-     Layout 4: Extra Spaced — blank line between each character line
+     Layout 4: Extra Spaced — blank line between each unit line
      -------------------------------------------------------------------------- */
   function makeLayoutExtraSpaced(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function extraStack(word) {
-      return chars(word).join('\n\n');
-    }
-
-    if (mode === 'continuous') {
-      return extraStack(input.replace(/\s+/g, ''));
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(extraStack).join(sep);
+    return renderBlocks(input, mode, options, function (units) {
+      return units.join('\n\n');
+    });
   }
 
   /* --------------------------------------------------------------------------
-     Layout 5: Staircase — each line indented by N*indentStep spaces
+     Layout 5: Staircase — each line indented by N*indentStep spaces.
+     The indent keeps climbing across word blocks in stack mode.
      -------------------------------------------------------------------------- */
   function makeLayoutStaircase(input, mode, options) {
     options = options || {};
     var indentStep = options.indentStep != null ? options.indentStep : 1;
-    var wdMode = options.wordDividerMode || 'none';
-
-    function staircaseWord(word, startIndex) {
-      return chars(word).map(function (ch, i) {
-        return ' '.repeat((startIndex + i) * indentStep) + ch;
-      }).join('\n');
-    }
-
-    if (mode === 'continuous') {
-      return staircaseWord(input.replace(/\s+/g, ''), 0);
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
     var index = 0;
-    var blocks = words.map(function (w) {
-      var block = staircaseWord(w, index);
-      index += chars(w).length;
-      return block;
+    return renderBlocks(input, mode, options, function (units) {
+      return units.map(function (unit) {
+        return ' '.repeat((index++) * indentStep) + unit;
+      }).join('\n');
     });
-    return blocks.join(sep);
   }
 
   /* --------------------------------------------------------------------------
-     Layout 6: Pyramid — progressive build: each line adds one more character
+     Layout 6: Pyramid — progressive build: each line adds one more unit
        Y
        Y a
        Y a s
      -------------------------------------------------------------------------- */
   function makeLayoutPyramid(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function pyramidWord(word) {
-      var cs = chars(word);
-      return cs.map(function (_, i) { return cs.slice(0, i + 1).join(' '); }).join('\n');
-    }
-
-    if (mode === 'continuous') {
-      return pyramidWord(input.replace(/\s+/g, ''));
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(pyramidWord).join(sep);
+    return renderBlocks(input, mode, options, function (units) {
+      return units.map(function (_, i) { return units.slice(0, i + 1).join(' '); }).join('\n');
+    });
   }
 
   /* --------------------------------------------------------------------------
      Layout 7: Reverse Pyramid — start full then shrink
      -------------------------------------------------------------------------- */
   function makeLayoutReversePyramid(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function reversePyramidWord(word) {
-      var cs = chars(word);
-      return cs.map(function (_, i) { return cs.slice(i).join(' '); }).join('\n');
-    }
-
-    if (mode === 'continuous') {
-      return reversePyramidWord(input.replace(/\s+/g, ''));
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(reversePyramidWord).join(sep);
+    return renderBlocks(input, mode, options, function (units) {
+      return units.map(function (_, i) { return units.slice(i).join(' '); }).join('\n');
+    });
   }
 
   /* --------------------------------------------------------------------------
      Layout 8: Centered Pyramid — pyramid rows centered by max width
      -------------------------------------------------------------------------- */
   function makeLayoutCenteredPyramid(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function centeredPyramidWord(word) {
-      var cs = chars(word);
-      var maxWidth = cs.length * 2 - 1; // "a b c" for n chars
-      return cs.map(function (_, i) {
-        var row = cs.slice(0, i + 1).join(' ');
+    return renderBlocks(input, mode, options, function (units) {
+      var rows = units.map(function (_, i) { return units.slice(0, i + 1).join(' '); });
+      var maxWidth = rows[rows.length - 1].length;
+      return rows.map(function (row) {
         var pad = Math.floor((maxWidth - row.length) / 2);
         return ' '.repeat(pad) + row;
       }).join('\n');
-    }
-
-    if (mode === 'continuous') {
-      return centeredPyramidWord(input.replace(/\s+/g, ''));
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(centeredPyramidWord).join(sep);
+    });
   }
 
   /* --------------------------------------------------------------------------
-     Layout 9: Diagonal Right — each char indented +2 spaces per line
+     Layout 9: Diagonal Right — each unit indented +2 spaces per line.
+     Indent keeps climbing across word blocks in stack mode.
      -------------------------------------------------------------------------- */
   function makeLayoutDiagonalRight(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function diagonalRightWord(word, startIndex) {
-      return chars(word).map(function (ch, i) {
-        return ' '.repeat((startIndex + i) * 2) + ch;
-      }).join('\n');
-    }
-
-    if (mode === 'continuous') {
-      return diagonalRightWord(input.replace(/\s+/g, ''), 0);
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
     var index = 0;
-    var blocks = words.map(function (w) {
-      var block = diagonalRightWord(w, index);
-      index += chars(w).length;
-      return block;
+    return renderBlocks(input, mode, options, function (units) {
+      return units.map(function (unit) {
+        return ' '.repeat((index++) * 2) + unit;
+      }).join('\n');
     });
-    return blocks.join(sep);
   }
 
   /* --------------------------------------------------------------------------
-     Layout 10: Diagonal Left — indent decreases from max to 0
+     Layout 10: Diagonal Left — indent decreases from max to 0 within each block
      -------------------------------------------------------------------------- */
   function makeLayoutDiagonalLeft(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function diagonalLeftWord(word) {
-      var cs = chars(word);
-      var max = (cs.length - 1) * 2;
-      return cs.map(function (ch, i) {
-        return ' '.repeat(max - i * 2) + ch;
+    return renderBlocks(input, mode, options, function (units) {
+      var max = (units.length - 1) * 2;
+      return units.map(function (unit, i) {
+        return ' '.repeat(max - i * 2) + unit;
       }).join('\n');
-    }
-
-    if (mode === 'continuous') {
-      return diagonalLeftWord(input.replace(/\s+/g, ''));
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(diagonalLeftWord).join(sep);
+    });
   }
 
   /* --------------------------------------------------------------------------
@@ -298,40 +211,29 @@
        ╚═══╝
      -------------------------------------------------------------------------- */
   function makeLayoutBox(input, mode, options) {
-    options = options || {};
-    var wdMode = options.wordDividerMode || 'none';
-
-    function boxWord(word) {
-      var cs = chars(word);
-      var maxLen = Math.max.apply(null, cs.map(function (ch) { return ch.length; }));
+    return renderBlocks(input, mode, options, function (units) {
+      var maxLen = Math.max.apply(null, units.map(function (u) { return u.length; }));
       var innerWidth = maxLen + 2; // 1 space padding each side
       var top = '╔' + '═'.repeat(innerWidth) + '╗';
       var bottom = '╚' + '═'.repeat(innerWidth) + '╝';
-      var rows = cs.map(function (ch) {
-        var pad = ' '.repeat(innerWidth - 1 - ch.length);
-        return '║ ' + ch + pad + '║';
+      var rows = units.map(function (u) {
+        var pad = ' '.repeat(innerWidth - 1 - u.length);
+        return '║ ' + u + pad + '║';
       });
       return [top].concat(rows).concat([bottom]).join('\n');
-    }
-
-    if (mode === 'continuous') {
-      return boxWord(input.replace(/\s+/g, ''));
-    }
-
-    var words = splitWords(input);
-    if (words.length === 0) return '';
-    var sep = wordBlockSeparator(wdMode);
-    return words.map(boxWord).join(sep);
+    });
   }
 
   /* --------------------------------------------------------------------------
-     Layout 12: Double Column — two words side by side with 3-space gap.
-     Falls back to Stacked for continuous mode or <2 words.
+     Layout 12: Double Column — words side by side in column pairs with a
+     3-space gap. Every word is shown: words are chunked into pairs and each
+     pair becomes its own block (an odd last word stands alone).
+     Falls back to Stacked for continuous / word-lines modes or <2 words.
      -------------------------------------------------------------------------- */
   function makeLayoutDoubleColumn(input, mode, options) {
     options = options || {};
 
-    if (mode === 'continuous') {
+    if (mode !== 'stack') {
       return makeLayoutStacked(input, mode, options);
     }
 
@@ -340,20 +242,30 @@
       return makeLayoutStacked(input, mode, options);
     }
 
-    var word1 = chars(words[0]);
-    var word2 = chars(words[1]);
-    var maxLen = Math.max(word1.length, word2.length);
-    var lines = [];
-    for (var i = 0; i < maxLen; i++) {
-      var c1 = i < word1.length ? word1[i] : ' ';
-      var c2 = i < word2.length ? word2[i] : '';
-      lines.push(c1 + '   ' + c2);
+    function pairBlock(w1, w2) {
+      var u1 = chars(w1);
+      var u2 = w2 ? chars(w2) : [];
+      var maxLen = Math.max(u1.length, u2.length);
+      var lines = [];
+      for (var i = 0; i < maxLen; i++) {
+        var c1 = i < u1.length ? u1[i] : ' ';
+        var c2 = i < u2.length ? u2[i] : '';
+        lines.push(c2 ? c1 + '   ' + c2 : c1);
+      }
+      return lines.join('\n');
     }
-    return lines.join('\n');
+
+    var blocks = [];
+    for (var i = 0; i < words.length; i += 2) {
+      blocks.push(pairBlock(words[i], words[i + 1]));
+    }
+    var sep = wordBlockSeparator(options.wordDividerMode || 'none');
+    return blocks.join(sep);
   }
 
   /* --------------------------------------------------------------------------
-     LAYOUTS registry — array of { id, label, description, fn } for UI iteration
+     LAYOUTS registry — array of { id, label, description, fn } for UI iteration.
+     maxUnits caps quadratic layouts (pyramids expand to n²/2 characters).
      -------------------------------------------------------------------------- */
   var LAYOUTS = [
     { id: 'stacked',           label: 'Stacked',           description: 'Each character on its own line — most readable format',           fn: makeLayoutStacked },
@@ -361,19 +273,20 @@
     { id: 'upside-down',       label: 'Upside-Down',       description: 'Flipped characters stacked vertically',                           fn: makeLayoutUpsideDownStacked },
     { id: 'extra-spaced',      label: 'Extra Spaced',      description: 'Double spacing between each character for an airy look',          fn: makeLayoutExtraSpaced },
     { id: 'staircase',         label: 'Staircase',         description: 'Characters indented progressively — diagonal flow',               fn: makeLayoutStaircase },
-    { id: 'pyramid',           label: 'Pyramid',           description: 'Characters build up line by line — full word at bottom',          fn: makeLayoutPyramid },
-    { id: 'reverse-pyramid',   label: 'Reverse Pyramid',   description: 'Full word at top, tapers down to the last character',             fn: makeLayoutReversePyramid },
-    { id: 'centered-pyramid',  label: 'Centered Pyramid',  description: 'Pyramid rows centered for a balanced, symmetrical appearance',    fn: makeLayoutCenteredPyramid },
+    { id: 'pyramid',           label: 'Pyramid',           description: 'Characters build up line by line — full word at bottom',          fn: makeLayoutPyramid,         maxUnits: 40 },
+    { id: 'reverse-pyramid',   label: 'Reverse Pyramid',   description: 'Full word at top, tapers down to the last character',             fn: makeLayoutReversePyramid,  maxUnits: 40 },
+    { id: 'centered-pyramid',  label: 'Centered Pyramid',  description: 'Pyramid rows centered for a balanced, symmetrical appearance',    fn: makeLayoutCenteredPyramid, maxUnits: 40 },
     { id: 'diagonal-right',    label: 'Diagonal Right',    description: 'Each character shifted progressively right — diagonal column',    fn: makeLayoutDiagonalRight },
     { id: 'diagonal-left',     label: 'Diagonal Left',     description: 'Each character shifted progressively left — reverse diagonal',    fn: makeLayoutDiagonalLeft },
     { id: 'box',               label: 'Box',               description: 'Stacked text wrapped in a Unicode border frame',                  fn: makeLayoutBox },
-    { id: 'double-column',     label: 'Double Column',     description: 'Two words displayed side by side in parallel columns',            fn: makeLayoutDoubleColumn }
+    { id: 'double-column',     label: 'Double Column',     description: 'Words paired side by side in parallel columns',                   fn: makeLayoutDoubleColumn }
   ];
 
   /* --------------------------------------------------------------------------
      Expose
      -------------------------------------------------------------------------- */
   window.UTGVerticalLayouts = {
+    chars: chars,
     splitWords: splitWords,
     makeLayoutStacked: makeLayoutStacked,
     makeLayoutReverseStacked: makeLayoutReverseStacked,
