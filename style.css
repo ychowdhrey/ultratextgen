@@ -501,17 +501,6 @@
       color: #fff;
     }
 
-    /* Plain-language hint so the "first line only" scope reads clearly even
-       on touch devices, where the chip tooltips aren't reachable. Spans the
-       full row so it drops beneath the chips. */
-    .scope-hint {
-      flex-basis: 100%;
-      margin: 0;
-      font-size: 0.75rem;
-      line-height: 1.45;
-      color: var(--text-muted);
-    }
-
     /* Results Grid */
     .results-grid {
       display: flex;
