@@ -297,6 +297,15 @@
 
     loadPrefs();
 
+    /* ?vibe= deep link (e.g. /category/text-decorator/?vibe=birthday) lets
+       use-case pages land visitors on a preselected theme. Beats saved prefs. */
+    try {
+      var vibe = new URLSearchParams(window.location.search).get('vibe');
+      if (vibe && (vibe === 'all' || Engine.THEMES.some(function (t) { return t.key === vibe; }))) {
+        selectedTheme = vibe;
+      }
+    } catch (e) {}
+
     /* Preload sample text (or ?q= share param) so the page always shows
        finished decorations — never an empty grid. */
     var input = $('#mainInput');
