@@ -444,7 +444,103 @@
   color: var(--text-muted);
 }
 
+.decode-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.decode-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.decode-removed {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--zalgo-green);
+}
+
+/* ── Copy &amp; Paste Examples Gallery ─────────────────── */
+.zx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.zx-example {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  overflow: hidden;
+}
+
+.zx-example:hover {
+  border-color: var(--zalgo-border-active);
+  transform: translateY(-1px);
+}
+
+.zx-text {
+  font-size: 18px;
+  line-height: 3;
+  color: var(--text-primary);
+  word-break: break-word;
+  text-align: center;
+  padding: 14px 4px;
+}
+
+.zx-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.zx-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.zx-copy {
+  padding: 5px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  background: var(--zalgo-surface2);
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.zx-example:hover .zx-copy {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+.zx-copy.copied {
+  background: var(--zalgo-green) !important;
+  border-color: var(--zalgo-green) !important;
+  color: #fff !important;
+}
+
 /* ── Tooltip ────────────────────────────────────────── */
+/* Trigger is a <button> so it works by tap (mobile) and keyboard,   */
+/* not just hover. `.open` is toggled by JS on tap.                  */
 .tooltip-trigger {
   position: relative;
   cursor: help;
@@ -453,15 +549,20 @@
   justify-content: center;
   width: 15px;
   height: 15px;
+  padding: 0;
   border-radius: 50%;
   background: var(--zalgo-surface2);
   border: 1px solid var(--border-light);
   font-size: 9px;
   font-weight: 700;
+  font-family: inherit;
+  line-height: 1;
   color: var(--text-secondary);
 }
 
-.tooltip-trigger:hover .tooltip-text {
+.tooltip-trigger:hover .tooltip-text,
+.tooltip-trigger:focus-visible .tooltip-text,
+.tooltip-trigger.open .tooltip-text {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -479,7 +580,11 @@
   font-weight: 400;
   padding: 8px 12px;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: normal;
+  width: max-content;
+  max-width: min(240px, 72vw);
+  text-align: left;
+  line-height: 1.45;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
@@ -488,6 +593,109 @@
   text-transform: none;
   pointer-events: none;
   box-shadow: var(--shadow-soft);
+}
+
+/* ── Presets ────────────────────────────────────────── */
+.preset-group {
+  margin-bottom: 20px;
+}
+
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  flex: 1 1 100px;
+  min-width: 96px;
+  padding: 14px 10px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  transition: all 0.15s ease;
+  overflow: hidden;
+}
+
+.preset-option:hover {
+  border-color: var(--zalgo-border-active);
+}
+
+.preset-option.active {
+  background: var(--zalgo-accent-dim);
+  border-color: var(--accent-purple);
+}
+
+.preset-preview {
+  font-size: 15px;
+  line-height: 2.4;
+  color: var(--text-primary);
+  pointer-events: none;
+}
+
+.preset-name {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.preset-option.active .preset-name {
+  color: var(--accent-purple);
+}
+
+/* ── Platform Fit Badges ────────────────────────────── */
+.platform-fit {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.fit-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.fit-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.fit-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  cursor: default;
+}
+
+.fit-badge.fit-yes {
+  color: var(--zalgo-green);
+  border-color: rgba(74, 222, 128, 0.35);
+}
+
+.fit-badge.fit-no {
+  color: var(--zalgo-red);
+  border-color: rgba(248, 113, 113, 0.35);
 }
 
 /* ── Editorial Sections ─────────────────────────────── */
