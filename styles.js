@@ -53,10 +53,10 @@ const CATEGORY_PAGES = {
     title: 'Upside Down Text',
     description: 'Flip your text upside down with multiple Unicode styles.'
   },
-   'word-wrappers': {
-    slug: 'word-wrappers',
-    title: 'Word Wrappers',
-    description: 'Automatically wrap words in decorative wrappers and separators.'
+   'text-decorator': {
+    slug: 'text-decorator',
+    title: 'Text Decorator',
+    description: 'Decorate your text with symbols, borders, brackets, and emoji wrappers.'
   },
   'small-text': {
     slug: 'small-text',
@@ -846,8 +846,8 @@ const textStyles = {
 
 'Ultra Word Curly Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_curly_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -855,8 +855,8 @@ const textStyles = {
 
 'Ultra Word Angle Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_angle_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -864,8 +864,8 @@ const textStyles = {
 
 'Ultra Word Double Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_double_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -873,8 +873,8 @@ const textStyles = {
 
 'Ultra Word Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -882,8 +882,8 @@ const textStyles = {
 
 'Ultra Word Forward Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_forward_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -891,8 +891,8 @@ const textStyles = {
 
 'Ultra Word Backward Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_backward_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -900,8 +900,8 @@ const textStyles = {
 
 'Ultra Word Bracket Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'frames',
   slug: 'ultra_word_bracket_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -909,8 +909,8 @@ const textStyles = {
 
 'Ultra Word Chevron Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'frames',
   slug: 'ultra_word_chevron_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -918,8 +918,8 @@ const textStyles = {
 
 'Ultra Word Bar Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'bars',
   slug: 'ultra_word_bar_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -927,8 +927,8 @@ const textStyles = {
 
 'Ultra Word Double Bar Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'bars',
   slug: 'ultra_word_double_bar_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']

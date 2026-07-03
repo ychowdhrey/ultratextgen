@@ -152,8 +152,8 @@
       "Upside Down Micro Text"
     ]
   },
-  "word-wrappers": {
-    "label": "Word Wrappers",
+  "text-decorator": {
+    "label": "Text Decorator",
     "icon": "()",
     "fonts": [
       "Ultra Word Curly Wrap",

@@ -67,6 +67,11 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /category/gothic-fonts/fraktur/               /category/gothic-fonts/ 301
 /category/gothic-fonts/fraktur/index.html     /category/gothic-fonts/ 301
 
+# Category: word-wrappers repositioned as text-decorator (301)
+/category/word-wrappers               /category/text-decorator/ 301
+/category/word-wrappers/              /category/text-decorator/ 301
+/category/word-wrappers/index.html    /category/text-decorator/ 301
+
 # Library: renamed/removed slug → live equivalent
 /library/linkedin-post-formatting-symbols/            /library/linkedin-symbol-library/ 301
 /library/linkedin-post-formatting-symbols/index.html  /library/linkedin-symbol-library/ 301
