@@ -95,13 +95,28 @@
      Signature: (text, theme, rng, intensity, scope)
      -------------------------------------------------------------------------- */
 
-  /* Curated wrapper pair around the text (or each word). */
+  /* Per-word grapheme arrays: "Hi yo" -> [['H','i'], ['y','o']].
+     Word gaps survive letter-scope decoration as double spaces. */
+  function letterWords(text) {
+    return words(text).map(graphemes);
+  }
+
+  function spacedLetters(text) {
+    return letterWords(text).map(function (ls) { return ls.join(' '); }).join('   ');
+  }
+
+  /* Curated wrapper pair around the text, each word, or each letter. */
   function recipeClassic(text, theme, rng, intensity, scope) {
     var pair = pick(rng, theme.pairs);
     if (scope === 'words') {
       return words(text).map(function (w) {
         return joinPair(pair[0], w, pair[1]);
       }).join(' ');
+    }
+    if (scope === 'letters') {
+      return letterWords(text).map(function (ls) {
+        return ls.map(function (ch) { return joinPair(pair[0], ch, pair[1]); }).join(' ');
+      }).join('  ');
     }
     return joinPair(pair[0], text, pair[1]);
   }
@@ -116,36 +131,54 @@
         return seq + ' ' + w + ' ' + right;
       }).join('  ');
     }
-    return seq + ' ' + text + ' ' + right;
+    var core = scope === 'letters' ? spacedLetters(text) : text;
+    return seq + ' ' + core + ' ' + right;
   }
 
-  /* Wrapper pair with extra charms tucked inside — the "extra" look. */
+  /* Wrapper pair with extra charms tucked inside — the "extra" look.
+     Letter scope gives the [Y | A | S | I | R] name-card style. */
   function recipeLayered(text, theme, rng, intensity, scope) {
     var pair = pick(rng, theme.pairs);
     var charm = pick(rng, theme.charms);
     var inner = charm.repeat(Math.max(1, intensity - 1));
-    var core = scope === 'words'
-      ? words(text).join(' ' + pick(rng, theme.sprinkles) + ' ')
-      : text;
+    var sprinkle = pick(rng, theme.sprinkles);
+    var core = text;
+    if (scope === 'words') {
+      core = words(text).join(' ' + sprinkle + ' ');
+    } else if (scope === 'letters') {
+      core = letterWords(text).map(function (ls) {
+        return ls.join(' ' + sprinkle + ' ');
+      }).join(' ' + sprinkle + ' ');
+    }
     return joinPair(pair[0] + inner, core, mirrorSequence(inner) + pair[1]);
   }
 
   /* Divider line above and below — bios, headers, announcements. */
   function recipeBanner(text, theme, rng, intensity, scope) {
     var line = pick(rng, theme.lines);
+    var core = scope === 'letters' ? spacedLetters(text) : text;
     if (intensity >= 3) {
       var charm = pick(rng, theme.charms);
-      text = charm + ' ' + text + ' ' + mirrorSequence(charm);
+      core = charm + ' ' + core + ' ' + mirrorSequence(charm);
     }
-    return line + '\n' + text + '\n' + line;
+    return line + '\n' + core + '\n' + line;
   }
 
-  /* Sprinkles between words — caption rhythm. Needs 2+ words. */
+  /* Sprinkles woven between words (or letters) — caption rhythm.
+     Letter scope + a custom symbol gives 🇵🇰 Y 🇵🇰 A 🇵🇰 S 🇵🇰. */
   function recipeInterleave(text, theme, rng, intensity, scope) {
-    var w = words(text);
-    if (w.length < 2) return null;
     var sprinkle = pick(rng, theme.sprinkles);
-    var joined = w.join(' ' + sprinkle + ' ');
+    var joined;
+    if (scope === 'letters') {
+      if (graphemes(text.replace(/\s+/g, '')).length < 2) return null;
+      joined = letterWords(text).map(function (ls) {
+        return ls.join(' ' + sprinkle + ' ');
+      }).join(' ' + sprinkle + ' ');
+    } else {
+      var w = words(text);
+      if (w.length < 2) return null;
+      joined = w.join(' ' + sprinkle + ' ');
+    }
     if (intensity >= 2) {
       var pair = pick(rng, theme.pairs);
       return joinPair(pair[0], joined, pair[1]);
@@ -162,18 +195,41 @@
   ];
 
   /* --------------------------------------------------------------------------
+     Custom symbol theme — the user drops in any emoji or symbol (🇵🇰, ★, 🐐)
+     and every recipe composes with it. This is how names get flag-framed:
+     🇵🇰 YASIR 🇵🇰  or  🇵🇰 Y 🇵🇰 A 🇵🇰 S 🇵🇰 I 🇵🇰 R 🇵🇰.
+     -------------------------------------------------------------------------- */
+  function buildCustomTheme(symbol) {
+    var s = symbol.trim();
+    if (!s) return null;
+    return {
+      key: 'custom',
+      label: 'Your symbol',
+      icon: graphemes(s)[0],
+      pairs: [[s, s]],
+      charms: [s],
+      sprinkles: [s],
+      lines: [[s, s, s, s, s].join(' '), s + ' ⎯⎯⎯ ' + s + ' ⎯⎯⎯ ' + s]
+    };
+  }
+
+  /* --------------------------------------------------------------------------
      generate()
      -------------------------------------------------------------------------- */
   function generate(text, options) {
     var opts = options || {};
     var themeKey  = opts.theme || 'all';
-    var scope     = opts.scope === 'words' ? 'words' : 'text';
+    var scope     = (opts.scope === 'words' || opts.scope === 'letters') ? opts.scope : 'text';
     var intensity = Math.min(3, Math.max(1, opts.intensity || 2));
     var seed      = (opts.seed === undefined ? 1 : opts.seed) | 0;
 
     var selected = themeKey === 'all'
-      ? THEMES
+      ? THEMES.slice()
       : THEMES.filter(function (t) { return t.key === themeKey; });
+
+    /* A custom symbol always leads the results, whatever vibe is active. */
+    var custom = opts.customSymbol ? buildCustomTheme(opts.customSymbol) : null;
+    if (custom) selected.unshift(custom);
 
     var perTheme = opts.perTheme || (themeKey === 'all' ? 3 : 8);
 
@@ -186,10 +242,14 @@
       var produced = 0;
       var attempt = 0;
 
+      /* The custom symbol is an explicit user request — give it a full row
+         of variations even in "all vibes" mode. */
+      var quota = theme.key === 'custom' ? Math.max(perTheme, 5) : perTheme;
+
       /* Cycle recipes until the per-theme quota is met; a recipe can appear
          twice with different picks, which is what makes single-theme view
          feel deep rather than repetitive. */
-      while (produced < perTheme && attempt < perTheme * 3) {
+      while (produced < quota && attempt < quota * 3) {
         var recipe = RECIPES[attempt % RECIPES.length];
         attempt += 1;
         var out = recipe.fn(text, theme, rng, intensity, scope);
