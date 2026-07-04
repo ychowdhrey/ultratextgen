@@ -56,9 +56,11 @@ These run across page types rather than producing a type.
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
 | Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | [`image-backlink-strategy.md`](./image-backlink-strategy.md) (decision doc) | ad hoc |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
-| i18n / localization | `prerender-i18n.js` (+ `es/`, `locales/`, `README.*.md`) | ❌ none | as needed |
+| i18n / localization | `prerender-i18n.js` (+ per-language homepages `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `pl/`, `pt/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`); Pinterest boards via `_locale_pin_kit.py` (`generate-<lang>-pins.py`) | ❌ none | as needed |
+| Ads / monetization | `header.js` (Journey ads script injection), `scripts/check-ads.js` (CI), `scripts/update-ads-txt.sh` (daily `ads.txt` sync from Journey) | ❌ none | per batch + daily (`ads.txt`) |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
+| Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`image-assets-check.yml`) |
 
 ---
 
@@ -72,6 +74,9 @@ These run across page types rather than producing a type.
 | `tweet-queue.yml` | daily 09:00 UTC (+ manual) | post qualifying commits (`tweet_queue.py`) |
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
+| `image-assets-check.yml` | on `pull_request` (HTML/`assets/og`/`assets/hero`/`assets/pinterest` paths) | `check-image-assets.py` (flags missing image assets) |
+| `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json` paths) | `npm run check:ads` (`scripts/check-ads.js`) |
+| `update-ads-txt.yml` | daily 00:30 UTC + manual | refresh `ads.txt` from Journey, auto-commit (`[skip ci]`) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 
 ### Scheduled routines (Claude Code on the web)
@@ -105,18 +110,34 @@ here so they aren't lost. Update as they're closed or new ones appear.
    `alternateName` to 30+ category/library/platform pages and PR #291 updated
    `validate-alternatenames.py` — making the missing governing doc the most
    pressing gap here.
-5. **Platform pages lane is undocumented** — the eleven social-network generator
-   pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
-   (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
-   governing workflow, backlog, or generator. The classifier correctly routes
-   them to "Platform pages" via path rules in `LANE_RULES`.
-6. **Pinterest off-system patterns (two).** (a) The Spanish `/es/` board lives
-   in `pinterest-kit/` (own generator, bundled fonts, hand-named CSV) instead
-   of the `assets/pinterest/<board>/` + `data/*_upload.csv` pipeline. (b) ~334
-   pins for category, answers, and library pages are stored flat in
-   `assets/pinterest/` root rather than a named board subdirectory — these
-   should be moved to `assets/pinterest/<board>/` and wired into the upload
-   pipeline. Migrate both per `docs/pinterest-pin-generation.md`.
+5. **Platform pages lane is undocumented** — the twelve social-network generator
+   pages (`/discord/`, `/instagram/`, `/x/`, `/roblox/`, …) receive active SEO
+   updates (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
+   governing workflow, backlog, or generator. The classifier now routes all
+   twelve to "Platform pages" via path rules in `LANE_RULES` (`roblox/` was
+   added this review — it was previously falling through as unclassified).
+6. ~~**Pinterest off-system patterns (two).**~~ (a) **Closed** — the Spanish
+   `/es/` board now lives on the standard `assets/pinterest/es/` +
+   `data/es_pinterest_pins_upload.csv` pipeline (`pinterest-kit/` is gone); the
+   `de/fr/id/it/nl/pl/pt/tr/vi` boards added since (PR #341, #374) followed the
+   same pipeline via the shared `_locale_pin_kit.py` renderer. (b) **Still
+   open** — ~342 pins for category, answers, and library pages are still
+   stored flat in `assets/pinterest/` root rather than a named board
+   subdirectory. Migrate per `docs/pinterest-pin-generation.md`.
+7. **i18n classifier lag.** The site has grown to eleven per-language
+   homepages (`de/ es/ fr/ id/ it/ nl/ pl/ pt/ tl/ tr/ vi/`), each getting
+   regular JTBD-driven depth passes (PRs #327–336, #352, #358, #363, #373,
+   #375–376, #381, #390, #393, …), but `LANE_RULES` only recognized `es/` —
+   every other language's pages fell through to "Unclassified" for at least
+   two consecutive digests. Fixed this review: all eleven language prefixes
+   now map to the `i18n` lane. Also added: `embed/` → "Image backlinks" (was
+   falling through despite already having a named operational track above).
+8. **Ads / monetization is a new, undocumented track.** PRs #366–368 stood up
+   a site-wide Journey ads integration (`header.js` script injection, a
+   `ads-check.yml` CI guard, and a daily `update-ads-txt.yml` sync replacing
+   Google AdSense) with no governing doc — added as a row under Operational
+   tracks above, but the "why" (Journey vs. AdSense, revenue rationale) still
+   needs a real writeup.
 
 ---
 
