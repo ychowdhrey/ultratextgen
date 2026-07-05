@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Tekstgenerator - 88 Unicode-skrifttyper (kopier og lim inn)",
+    "description": "Gjør vanlig tekst om til kul tekst med 88 Unicode-skrifttyper: fet skrift, kursiv tekst, håndskrift, gotisk, bobler, små bokstaver, aesthetic, opp ned og Zalgo. Kopier til Instagram-bio, TikTok, Discord, LinkedIn og WhatsApp. Gratis, raskt og uten konto."
+  },
+  "hero": {
+    "title": "Tekstgenerator for kule skrifttyper",
+    "subtitle": "Skriv én gang og få 88 fine skrifttyper du kan kopiere og lime inn direkte: håndskrift, fet skrift, kursiv tekst, fine bokstaver, Instagram-skrifttyper, TikTok-tekst, Discord-navn og WhatsApp-status."
+  },
+  "decorations": {
+    "label": "Legg til symboler, rammer og pynt",
+    "tabs": {
+      "symbols": "Symboler",
+      "frames": "Rammer",
+      "dividers": "Skillere",
+      "arrows": "Piler",
+      "minimal": "Minimal",
+      "emojis": "Emojier",
+      "flags": "Flagg"
+    }
+  },
+  "ui": {
+    "placeholder": "Skriv teksten din her...",
+    "advertisement": "Annonse"
+  },
+  "useCases": {
+    "title": "Hva folk bruker kul tekst til",
+    "viewAll": "Vis alle bruksområder ->",
+    "items": [
+      {
+        "title": "Instagram-bio, navn og captions",
+        "description": "Gjør bioen eller visningsnavnet mer personlig med håndskrift, fet skrift, fine bokstaver og diskrete symboler som kan limes inn med en gang."
+      },
+      {
+        "title": "TikTok-tekster som synes",
+        "description": "Gi første linje mer trykk med fet, kursiv eller aesthetic tekst, slik at captionen skiller seg ut uten å bli vanskelig å lese."
+      },
+      {
+        "title": "Discord, Roblox og gaming-navn",
+        "description": "Bytt stil på visningsnavn, servernavn eller gamertag med gotiske bokstaver, bobletekst, small caps eller glitch-effekter. Ingen app, ingen Nitro."
+      },
+      {
+        "title": "Håndskrift og vertikal tekst",
+        "description": "Lag gammeldags håndskrift, stablet tekst og dekorative linjeskift for profiler, grupper, pins og meldinger."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Populære guider",
+    "viewAll": "Vis alle guider ->",
+    "items": [
+      {
+        "title": "Hvilken skrifttype passer til hvilken følelse?",
+        "description": "Lett, elegant, tydelig eller edgy: lær å velge Unicode-stil etter bio, caption, overskrift eller navn."
+      },
+      {
+        "title": "Personlig merkevare med typografi",
+        "description": "Lag en gjenkjennelig stil på tvers av sosiale kanaler uten bilder, apper eller spesialfonter."
+      },
+      {
+        "title": "Stopp scrollingen med tekstvariasjon",
+        "description": "Se hvordan små forskjeller i fet skrift, kursiv, small caps og symboler kan gjøre en linje mer synlig i feeden."
+      }
+    ]
+  },
+  "faq": {
+    "categories": [
+      {
+        "title": "Grunnleggende om tekstgeneratoren",
+        "items": [
+          {
+            "question": "Hva er en tekstgenerator for kule skrifttyper?",
+            "answer": "En tekstgenerator bytter bokstavene du skriver med andre Unicode-tegn som allerede ser fete, kursiverte, håndskrevne, gotiske, boblete eller dekorative ut. Skriv <code>hei</code> og få for eksempel fet skrift, kursiv tekst, håndskrift, gotisk tekst eller bobletekst.<br><br>Fordi resultatet er ekte Unicode, ikke et bilde og ikke en installert font, kan du kopiere og lime det inn i Instagram-bioer, TikTok-captions, Discord-navn, LinkedIn-overskrifter, WhatsApp-statuser og nesten alle felt som godtar vanlig tekst."
+          },
+          {
+            "question": "Hvordan skiller Unicode-skrifttyper seg fra vanlige skrifttyper som Arial?",
+            "answer": "En vanlig skrifttype er en fil på enheten din som forteller hvordan bokstaven A skal tegnes. Hvis fonten mangler, vises den samme A-en bare med et annet utseende.<br><br>Unicode-skrifttyper fungerer annerledes. De er egne tegn med egne kodepunkter: A, matematisk fet A, kursiv A, script-A, gotisk A og innringet A er forskjellige tegn. Derfor overlever de copy paste. Du limer ikke inn formatering, du limer inn en annen bokstav som allerede ser stylet ut.<br><br>Ulempen er tilgjengelighet: skjermlesere kan lese opp tegnet bokstavelig, for eksempel \"mathematical bold capital A\". Bruk derfor kul tekst til korte aksenter, ikke hele avsnitt."
+          },
+          {
+            "question": "Er UltraTextGen gratis, og hva er haken?",
+            "answer": "Ja. Gratis, ingen konto, ingen daglig grense, ingen vannmerke og ingen e-postinnsamling. Siden finansieres med annonser. Vi tar ikke betalt per kopiering, skjuler ikke stiler bak registrering og legger ikke inn usynlige sporingstegn i teksten du kopierer."
+          }
+        ]
+      },
+      {
+        "title": "Fet, kursiv og stylet tekst på plattformer",
+        "items": [
+          {
+            "question": "Hvordan gjør jeg Instagram-bioen min fet eller kursiv?",
+            "answer": "Instagram har ingen ekte formateringsknapp for bio, navn eller kommentarer. Derfor bruker mange en tekstgenerator som lager Unicode-bokstaver som allerede ser fete eller kursiverte ut.<br><br><strong>Slik gjør du:</strong><br>1. Skriv bioen din i UltraTextGen.<br>2. Velg fet skrift, kursiv tekst, håndskrift eller en annen stil.<br>3. Trykk på Kopier.<br>4. Lim inn i Instagram-appen under Bio eller Navn.<br><br>For best kompatibilitet, velg enkel fet sans-serif eller kursiv stil. Ikke bruk for mye Zalgo eller veldig dekorative tegn i brukernavn, siden Instagram kan avvise dem."
+          },
+          {
+            "question": "Kan jeg lage fet tekst på Discord uten Nitro?",
+            "answer": "Ja. I Discord-meldinger kan du bruke Markdown, for eksempel <code>**tekst**</code> for fet skrift. Men Markdown fungerer ikke i visningsnavn, serverkallenavn, status eller About me.<br><br>Unicode-fet skrift fungerer i disse feltene uten Nitro fordi selve tegnene er fete. Lim inn en fet versjon av navnet ditt, og den vises som fet tekst på servere der Discord godtar tegnene."
+          },
+          {
+            "question": "Hvilken skrifttype bruker LinkedIn, og hvorfor fungerer Unicode-fet skrift der?",
+            "answer": "LinkedIn bruker sin egen typografi, ofte kalt LinkedIn Sans, for mye av teksten på plattformen. Men LinkedIn gir deg ingen fet-knapp i overskrift, Om-seksjon eller innlegg.<br><br>Unicode-fet skrift fungerer fordi tegnene er egne Unicode-tegn. LinkedIn trenger ikke tolke formatering, det viser bare tegnene. Bruk enkel fet skrift til overskrifter og korte uthevinger. Unngå Zalgo, fullwidth og tung dekorasjon i profesjonelle profiler, siden det kan forstyrre søk og skjermlesere."
+          },
+          {
+            "question": "Hvordan lager jeg vertikal eller stablet tekst?",
+            "answer": "Vertikal tekst plasserer en bokstav per linje, slik at ordet leses ovenfra og ned. Det brukes i Discord-kanaler, Pinterest-pins, estetiske Instagram-innlegg og noen ganger i kommentarer som skal skille seg ut.<br><br>Du kan skrive teksten her, velge en stil og deretter bruke den vertikale tekstgeneratoren for å få linjeskiftene automatisk. Det fungerer bra med fet skrift, håndskrift og fullwidth."
+          }
+        ]
+      },
+      {
+        "title": "Skrifttyper, symboler og dekorasjon",
+        "items": [
+          {
+            "question": "Hvilke stiler finnes i generatoren?",
+            "answer": "Det finnes rundt 88 stiler organisert i familier: fet skrift, kursiv, håndskrift, gotisk/fraktur, boblebokstaver, small caps, fullwidth, innringede bokstaver, understrek, gjennomstreket tekst, opp ned, speilvendt tekst, baklengs tekst, Zalgo/glitch og flere dekorative ordrammer.<br><br>Det betyr at du kan lage alt fra diskret fin skrift til en bio til tydeligere gaming- og aesthetic-stiler."
+          },
+          {
+            "question": "Kan jeg blande flere stiler med symboler?",
+            "answer": "Ja. Unicode-stiler kan kombineres med rammer, skillere, piler, hjerter og andre symboler. Du kan for eksempel ta et navn i håndskrift, legge til en tynn stjerne mellom ordene og ramme inn linjen med enkle symboler.<br><br>Ryddige resultater kommer ofte fra maks to stiler om gangen: fet + understrek, kursiv + small caps eller bobletekst + luftige mellomrom. For mye dekorasjon blir fort vanskelig å lese."
+          },
+          {
+            "question": "Hva er Zalgo eller glitch-tekst?",
+            "answer": "Zalgo er tekst som ser ødelagt, hacket eller dryppende ut. Den lages med kombinerende merker over og under bokstavene. Effekten er populær for skrekk, memes, Halloween, Discord-navn og visuelt ekstreme captions.<br><br>Bruk den sparsomt. Mange plattformer godtar den i visningsnavn, men ikke i brukernavn, og for mye Zalgo kan bli vanskelig å lese på mobil."
+          }
+        ]
+      },
+      {
+        "title": "Kompatibilitet og feilsøking",
+        "items": [
+          {
+            "question": "Hvorfor vises noen bokstaver som ruter eller spørsmålstegn?",
+            "answer": "Ruter, tomme blokker eller spørsmålstegn betyr som regel at enheten som viser teksten mangler en font som kan tegne akkurat det Unicode-tegnet. Det er et visningsproblem hos mottakeren, ikke at den kopierte teksten er ødelagt.<br><br>For bredest støtte, velg fet skrift, kursiv, small caps, fullwidth eller innringede bokstaver. Gotiske og veldig dekorative stiler kan av og til mangle på eldre telefoner."
+          },
+          {
+            "question": "Kan jeg bruke kule skrifttyper i brukernavn og visningsnavn?",
+            "answer": "Ofte ja, men det avhenger av plattformen. Visningsnavn på Instagram, TikTok, Discord, Steam, Roblox og Telegram pleier å godta flere Unicode-tegn. Ekte @-handles er strengere og tillater ofte bare vanlige bokstaver, tall, punktum og understrek.<br><br>En god regel: bruk kul tekst i visningsnavn, bio og status. Hold selve brukernavnet enkelt hvis plattformen klager."
+          },
+          {
+            "question": "Er kul Unicode-tekst bra for tilgjengelighet?",
+            "answer": "Ikke alltid. Skjermlesere kan lese opp hvert Unicode-tegn med sitt tekniske navn, noe som gjør lange linjer med stylet tekst slitsomme å høre på.<br><br>Bruk derfor kul tekst som aksent: ett ord, en kort overskrift eller en linje i en bio. Hold viktig informasjon, kontaktinfo og lengre avsnitt i vanlig tekst. Unngå Zalgo og tung dekorasjon der tilgjengelighet er viktig."
+          },
+          {
+            "question": "Kan jeg bruke fet Unicode i e-postemner?",
+            "answer": "Ja, e-postemner er vanlig tekst, så Unicode er en av få måter å få et ord til å se fetere ut i innboksen. Bruk det på ett eller to ord, ikke hele emnelinjen.<br><br>For mange spesialtegn kan trigge spamfiltre eller se rotete ut i enkelte e-postklienter, så hold det kort og tydelig."
+          }
+        ]
+      },
+      {
+        "title": "Språk og alfabet",
+        "items": [
+          {
+            "question": "Hvilke språk og alfabet fungerer?",
+            "answer": "Unicode-stylede varianter finnes hovedsakelig for latinske bokstaver (A-Z, a-z) og arabiske sifre (0-9). Det betyr at norsk, engelsk, svensk, dansk, spansk, fransk, tysk, nederlandsk, polsk, tyrkisk, vietnamesisk og mange andre språk med latinsk alfabet fungerer.<br><br>Norske bokstaver som æ, ø og å har ikke alltid egne stylede Unicode-varianter. I mange stiler blir de stående uendret, eller beholder markeringen sin. Prøv en annen stil hvis akkurat disse bokstavene må se perfekte ut."
+          },
+          {
+            "question": "Hvorfor endres ikke arabiske, kyrilliske, hindi, kinesiske eller japanske tegn?",
+            "answer": "Unicode definerer ikke samme sett med dekorative, fete og kursiverte varianter for alle skriftsystemer. Derfor finnes det ingen direkte erstatning for arabiske, hebraiske, devanagari, kinesiske, japanske, koreanske, kyrilliske eller greske tegn.<br><br>Latinske ord midt i en annen tekst, for eksempel merkenavn, hashtags eller engelske uttrykk, kan fortsatt styles. Resten av teksten blir stående som den er."
+          }
+        ]
+      },
+      {
+        "title": "Personvern og sikkerhet",
+        "items": [
+          {
+            "question": "Lagres, logges eller sendes teksten jeg skriver?",
+            "answer": "Nei. Selve konverteringen skjer i nettleseren din med JavaScript. Teksten du skriver sendes ikke til en server for å genereres.<br><br>Siden bruker analyse og annonser, men innholdet i tekstfeltet trenger ikke forlate nettleseren. Det du kopierer er ren Unicode uten skjulte vannmerker."
+          },
+          {
+            "question": "Fungerer generatoren på mobil og nettbrett?",
+            "answer": "Ja. UltraTextGen fungerer i moderne mobilnettlesere på iPhone, Android og nettbrett. Du skriver, trykker på Kopier og limer direkte inn i Instagram, TikTok, WhatsApp, Discord eller hvilken app du vil."
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 UltraTextGen. Kul tekst som fungerer overalt."
+  },
+  "notFound": {
+    "eyebrow": "ERR · 404 · SIDE MANGLER",
+    "title": "Denne siden gled ut av stilbiblioteket.",
+    "subtitle": "Adressen finnes ikke i samlingen vår, men generatoren fungerer fortsatt. Prøv 404 i fet skrift, bobler, gotisk tekst, Zalgo og flere stiler.",
+    "backCta": "<- Til generatoren",
+    "browseCta": "Bla gjennom stiler",
+    "wallTitle": "404 i alle stiler vi kan.",
+    "wallSubtitle": "Alt her nede genereres av samme motor som driver UltraTextGen.",
+    "playgroundTitle": "Test din egen manglende tekst.",
+    "playgroundSubtitle": "Skriv noe og se det i noen favorittstiler før du går tilbake.",
+    "playgroundPlaceholder": "Skriv teksten din her...",
+    "fullGeneratorCta": "Åpne hele generatoren",
+    "copy": "Kopier",
+    "copied": "Kopiert"
+  }
+}
