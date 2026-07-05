@@ -56,6 +56,7 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /?lang=vi                                   /vi/    301
 /?lang=tl                                   /tl/    301
 /?lang=sv                                   /sv/    301
+/?lang=no                                   /no/    301
 
 # Bold: thin/duplicate group pages folded into the parent family page (301)
 /category/bold-fonts/bold/                     /category/bold-fonts/ 301
