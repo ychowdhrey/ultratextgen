@@ -15,13 +15,89 @@
 
   if (!Engine) return;
 
+  var PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
+  var UI = {
+    en: {
+      allVibes: 'All vibes',
+      vibe: 'Vibe',
+      decorate: 'Decorate',
+      wholeText: 'Whole text',
+      eachWord: 'Each word',
+      eachLetter: 'Each letter',
+      intensity: 'Intensity',
+      light: 'Light',
+      normal: 'Normal',
+      extra: 'Extra',
+      font: 'Font',
+      normalText: 'Normal text',
+      yourSymbol: 'Your symbol',
+      symbolPlaceholder: '🇵🇰 ★ 🐐 …',
+      symbolTitle: 'Paste any emoji or symbol to decorate your text with it',
+      shuffle: '🎲 Shuffle',
+      shuffleTitle: 'Generate a fresh set of decorations',
+      empty: 'Type something above to decorate it.',
+      copy: 'Copy',
+      sample: 'Hello World',
+      themes: {}
+    },
+    tr: {
+      allVibes: 'Tüm tarzlar',
+      vibe: 'Tarz',
+      decorate: 'Süsleme',
+      wholeText: 'Tüm metin',
+      eachWord: 'Her kelime',
+      eachLetter: 'Her harf',
+      intensity: 'Yoğunluk',
+      light: 'Hafif',
+      normal: 'Normal',
+      extra: 'Ekstra',
+      font: 'Font',
+      normalText: 'Normal yazı',
+      yourSymbol: 'Sembolün',
+      symbolPlaceholder: '🇹🇷 ★ ♡ …',
+      symbolTitle: 'Metnini süslemek için herhangi bir emoji veya sembol yapıştır',
+      shuffle: '🎲 Karıştır',
+      shuffleTitle: 'Yeni süslemeler oluştur',
+      empty: 'Süslemek için yukarıya bir şey yaz.',
+      copy: 'Kopyala',
+      sample: 'Merhaba Dünya',
+      themes: {
+        sparkle: 'Parıltı',
+        hearts: 'Kalpler',
+        coquette: 'Coquette',
+        kawaii: 'Kawaii',
+        gaming: 'Oyun',
+        gothic: 'Gotik',
+        celestial: 'Gökyüzü',
+        flowers: 'Çiçekler',
+        birthday: 'Doğum günü',
+        energy: 'Ateş ve buz',
+        y2k: 'Y2K',
+        arrows: 'Oklar',
+        music: 'Müzik',
+        minimal: 'Minimal',
+        brackets: 'Parantezler',
+        custom: 'Özel'
+      }
+    }
+  };
+  var STR = UI[PAGE_LANG] || UI.en;
+
+  function ui(key) {
+    return STR[key] || UI.en[key] || key;
+  }
+
+  function localThemeLabel(theme) {
+    return (STR.themes && STR.themes[theme.key]) || theme.label;
+  }
+
   var PREF_KEY = 'utg_decorator_prefs';
-  var DEFAULT_SAMPLE_TEXT = 'Hello World';
+  var DEFAULT_SAMPLE_TEXT = ui('sample');
 
   /* Optional Unicode font applied before decorating. Names must exist in
      styles.js — verified at build time by decoratorEngine.test.html. */
   var FONT_OPTIONS = [
-    { key: 'none',    label: 'Normal text',   styleName: null },
+    { key: 'none',    label: ui('normalText'), styleName: null },
     { key: 'bold',    label: '𝗕𝗼𝗹𝗱',          styleName: 'Ultra Bold' },
     { key: 'italic',  label: '𝘐𝘵𝘢𝘭𝘪𝘤',        styleName: 'Ultra Italic' },
     { key: 'script',  label: '𝓢𝓬𝓻𝓲𝓹𝓽',       styleName: 'Ultra Script' },
@@ -72,18 +148,18 @@
     var panel = $('#decoratorControlPanel');
     if (!panel) return;
 
-    var themeChips = [{ key: 'all', icon: '✳︎', label: 'All vibes' }]
+    var themeChips = [{ key: 'all', icon: '✳︎', label: ui('allVibes') }]
       .concat(Engine.THEMES)
       .map(function (t) {
         return '<button class="deco-theme-chip' + (t.key === selectedTheme ? ' active' : '') +
           '" data-theme="' + t.key + '"><span class="deco-theme-icon">' + t.icon +
-          '</span>' + t.label + '</button>';
+          '</span>' + localThemeLabel(t) + '</button>';
       }).join('');
 
     var intensityChips = [
-      { val: 1, label: 'Light' },
-      { val: 2, label: 'Normal' },
-      { val: 3, label: 'Extra' }
+      { val: 1, label: ui('light') },
+      { val: 2, label: ui('normal') },
+      { val: 3, label: ui('extra') }
     ].map(function (c) {
       return '<button class="vertical-chip deco-intensity-chip' + (c.val === intensity ? ' active' : '') +
         '" data-intensity="' + c.val + '">' + c.label + '</button>';
@@ -97,38 +173,38 @@
       '<div class="vertical-control-panel decorator-control-panel">' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Vibe</label>' +
+          '<label class="vertical-control-label">' + ui('vibe') + '</label>' +
           '<div class="deco-theme-chips">' + themeChips + '</div>' +
         '</div>' +
 
         '<div class="vertical-control-row deco-options-row">' +
           '<span class="deco-option-group">' +
-            '<label class="vertical-control-label">Decorate</label>' +
+            '<label class="vertical-control-label">' + ui('decorate') + '</label>' +
             '<span class="vertical-mode-chips">' +
-              '<button class="vertical-chip deco-scope-chip' + (scope === 'text' ? ' active' : '') + '" data-scope="text">Whole text</button>' +
-              '<button class="vertical-chip deco-scope-chip' + (scope === 'words' ? ' active' : '') + '" data-scope="words">Each word</button>' +
-              '<button class="vertical-chip deco-scope-chip' + (scope === 'letters' ? ' active' : '') + '" data-scope="letters">Each letter</button>' +
+              '<button class="vertical-chip deco-scope-chip' + (scope === 'text' ? ' active' : '') + '" data-scope="text">' + ui('wholeText') + '</button>' +
+              '<button class="vertical-chip deco-scope-chip' + (scope === 'words' ? ' active' : '') + '" data-scope="words">' + ui('eachWord') + '</button>' +
+              '<button class="vertical-chip deco-scope-chip' + (scope === 'letters' ? ' active' : '') + '" data-scope="letters">' + ui('eachLetter') + '</button>' +
             '</span>' +
           '</span>' +
 
           '<span class="deco-option-group">' +
-            '<label class="vertical-control-label">Intensity</label>' +
+            '<label class="vertical-control-label">' + ui('intensity') + '</label>' +
             '<span class="vertical-mode-chips">' + intensityChips + '</span>' +
           '</span>' +
 
           '<span class="deco-option-group">' +
-            '<label class="vertical-control-label" for="decoFontSelect">Font</label>' +
+            '<label class="vertical-control-label" for="decoFontSelect">' + ui('font') + '</label>' +
             '<select class="vertical-layout-select deco-font-select" id="decoFontSelect">' + fontOptions + '</select>' +
           '</span>' +
 
           '<span class="deco-option-group">' +
-            '<label class="vertical-control-label" for="decoSymbolInput">Your symbol</label>' +
+            '<label class="vertical-control-label" for="decoSymbolInput">' + ui('yourSymbol') + '</label>' +
             '<input class="deco-symbol-input" id="decoSymbolInput" type="text" maxlength="8" ' +
-              'placeholder="🇵🇰 ★ 🐐 …" autocomplete="off" spellcheck="false" ' +
-              'title="Paste any emoji or symbol to decorate your text with it">' +
+              'placeholder="' + ui('symbolPlaceholder') + '" autocomplete="off" spellcheck="false" ' +
+              'title="' + ui('symbolTitle') + '">' +
           '</span>' +
 
-          '<button class="deco-shuffle-btn" id="decoShuffleBtn" type="button" title="Generate a fresh set of decorations">🎲 Shuffle</button>' +
+          '<button class="deco-shuffle-btn" id="decoShuffleBtn" type="button" title="' + ui('shuffleTitle') + '">' + ui('shuffle') + '</button>' +
         '</div>' +
 
       '</div>';
@@ -235,7 +311,7 @@
     if (!inputText) {
       var empty = document.createElement('div');
       empty.className = 'style-card';
-      empty.innerHTML = '<div class="style-info"><p class="style-preview placeholder">Type something above to decorate it.</p></div>';
+      empty.innerHTML = '<div class="style-info"><p class="style-preview placeholder">' + ui('empty') + '</p></div>';
       grid.appendChild(empty);
       return;
     }
@@ -263,7 +339,7 @@
 
     var nameLine = document.createElement('p');
     nameLine.className = 'style-name';
-    nameLine.textContent = result.icon + ' ' + result.themeLabel + ' · ' + result.recipe;
+    nameLine.textContent = result.icon + ' ' + localThemeLabel({ key: result.theme, label: result.themeLabel }) + ' · ' + result.recipe;
 
     var preview = document.createElement('p');
     preview.className = 'style-preview decorator-preview';
@@ -280,7 +356,7 @@
        (clipboard write + toast), same as on the vertical text page. */
     var copyBtn = document.createElement('button');
     copyBtn.className = 'copy-btn';
-    copyBtn.textContent = 'Copy';
+    copyBtn.textContent = ui('copy');
     copyBtn.dataset.text = result.text;
 
     actions.appendChild(copyBtn);
