@@ -14,6 +14,14 @@
   var Render     = window.UltraTextGenRender;
   var stylesRegistry = window.textStyles || {};
 
+  /* Localized pages define window.verticalI18n before this script loads
+     (same pattern as window.zalgoI18n on the zalgo page). Missing keys fall
+     back to the built-in English strings. */
+  var I18N = window.verticalI18n || {};
+  function t(key, fallback) {
+    return I18N[key] != null ? I18N[key] : fallback;
+  }
+
   var RECENT_KEY      = 'utg_vertical_recent_decos';
   var RECENT_MAX      = 6;
   var LAYOUT_PREF_KEY = 'utg_vertical_layout_pref';
@@ -31,9 +39,9 @@
      how platforms approximately count). Styled Unicode letters can count as
      2 on some platforms — the row tooltip says so. */
   var PLATFORM_LIMITS = [
-    { label: 'Instagram bio', limit: 150 },
-    { label: 'TikTok bio',    limit: 80 },
-    { label: 'X bio',         limit: 160 }
+    { label: t('fitInstagram', 'Instagram bio'), limit: 150 },
+    { label: t('fitTikTok',    'TikTok bio'),    limit: 80 },
+    { label: t('fitX',         'X bio'),         limit: 160 }
   ];
 
   /* ---- State ---- */
@@ -157,17 +165,17 @@
     var layoutOptions = Layouts.LAYOUTS.map(function (l) {
       var active = l.id === selectedLayoutId;
       return '<button type="button" class="vertical-layout-option' + (active ? ' active' : '') + '"' +
-        ' data-layout="' + l.id + '" title="' + l.description + '" aria-pressed="' + active + '">' +
+        ' data-layout="' + l.id + '" title="' + t('layoutTip_' + l.id, l.description) + '" aria-pressed="' + active + '">' +
         '<pre class="vertical-layout-mini" aria-hidden="true">' + layoutPreview(l) + '</pre>' +
-        '<span class="vertical-layout-name">' + l.label + '</span>' +
+        '<span class="vertical-layout-name">' + t('layout_' + l.id, l.label) + '</span>' +
         '</button>';
     }).join('');
 
     /* Word mode chips */
     var modeChips = [
-      { val: 'stack',      label: 'Stack',         tip: 'Each word becomes its own vertical block' },
-      { val: 'continuous', label: 'Continuous',    tip: 'All letters flow in one column — spaces are removed' },
-      { val: 'word-lines', label: 'Word per Line', tip: 'Each whole word on its own line instead of each letter' }
+      { val: 'stack',      label: t('modeStack', 'Stack'),             tip: t('modeStackTip', 'Each word becomes its own vertical block') },
+      { val: 'continuous', label: t('modeContinuous', 'Continuous'),   tip: t('modeContinuousTip', 'All letters flow in one column — spaces are removed') },
+      { val: 'word-lines', label: t('modeWordLines', 'Word per Line'), tip: t('modeWordLinesTip', 'Each whole word on its own line instead of each letter') }
     ].map(function (c) {
       return '<button type="button" class="vertical-chip vertical-mode-chip' + (c.val === wordBreakMode ? ' active' : '') + '"' +
         ' data-mode="' + c.val + '" title="' + c.tip + '" aria-pressed="' + (c.val === wordBreakMode) + '">' + c.label + '</button>';
@@ -175,9 +183,9 @@
 
     /* Word Divider chips — only meaningful in stack mode */
     var dividerChips = [
-      { val: 'none',         label: 'None',         tip: 'Single blank line between word blocks' },
-      { val: 'blank-line',   label: 'Blank Line',   tip: 'Two blank lines between word blocks for extra spacing' },
-      { val: 'divider-line', label: 'Divider Line', tip: 'A ──────── line between word blocks' }
+      { val: 'none',         label: t('dividerNone', 'None'),         tip: t('dividerNoneTip', 'Single blank line between word blocks') },
+      { val: 'blank-line',   label: t('dividerBlank', 'Blank Line'),  tip: t('dividerBlankTip', 'Two blank lines between word blocks for extra spacing') },
+      { val: 'divider-line', label: t('dividerLine', 'Divider Line'), tip: t('dividerLineTip', 'A ──────── line between word blocks') }
     ].map(function (c) {
       return '<button type="button" class="vertical-chip vertical-divider-chip' + (c.val === wordDividerMode ? ' active' : '') + '"' +
         ' data-divider="' + c.val + '" title="' + c.tip + '" aria-pressed="' + (c.val === wordDividerMode) + '">' + c.label + '</button>';
@@ -185,8 +193,8 @@
 
     /* Spacing (platform-safe) chips */
     var safeChips = [
-      { val: 'safe', label: 'Platform-safe', tip: 'Pads blank lines and indents with an invisible character (U+2800) so the layout survives Instagram and TikTok, which strip empty lines and extra spaces' },
-      { val: 'raw',  label: 'Raw',           tip: 'Plain spaces and empty lines — exact characters, but Instagram/TikTok may collapse them' }
+      { val: 'safe', label: t('spacingSafe', 'Platform-safe'), tip: t('spacingSafeTip', 'Pads blank lines and indents with an invisible character (U+2800) so the layout survives Instagram and TikTok, which strip empty lines and extra spaces') },
+      { val: 'raw',  label: t('spacingRaw', 'Raw'),            tip: t('spacingRawTip', 'Plain spaces and empty lines — exact characters, but Instagram/TikTok may collapse them') }
     ].map(function (c) {
       var active = (c.val === 'safe') === platformSafe;
       return '<button type="button" class="vertical-chip vertical-safe-chip' + (active ? ' active' : '') + '"' +
@@ -195,49 +203,49 @@
 
     /* Decoration tabs */
     var decoTabs = Object.keys(DecoData).map(function (tabKey) {
-      return '<button type="button" class="decoration-tab' + (tabKey === currentDecoTab ? ' active' : '') + '" data-vert-deco-tab="' + tabKey + '">' + capitalize(tabKey) + '</button>';
+      return '<button type="button" class="decoration-tab' + (tabKey === currentDecoTab ? ' active' : '') + '" data-vert-deco-tab="' + tabKey + '">' + t('tab_' + tabKey, capitalize(tabKey)) + '</button>';
     }).join('');
 
     panel.innerHTML =
       '<div class="vertical-control-panel">' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Layout</label>' +
+          '<label class="vertical-control-label">' + t('labelLayout', 'Layout') + '</label>' +
           '<div class="vertical-layout-picker" id="vertLayoutPicker">' + layoutOptions + '</div>' +
         '</div>' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Word Mode</label>' +
+          '<label class="vertical-control-label">' + t('labelWordMode', 'Word Mode') + '</label>' +
           '<div class="vertical-mode-chips">' + modeChips + '</div>' +
         '</div>' +
 
         '<div class="vertical-control-row vertical-divider-row' + (wordBreakMode !== 'stack' ? ' disabled-row' : '') + '">' +
-          '<label class="vertical-control-label">Word Divider</label>' +
+          '<label class="vertical-control-label">' + t('labelWordDivider', 'Word Divider') + '</label>' +
           '<div class="vertical-divider-chips">' + dividerChips + '</div>' +
         '</div>' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Spacing</label>' +
+          '<label class="vertical-control-label">' + t('labelSpacing', 'Spacing') + '</label>' +
           '<div class="vertical-safe-chips">' + safeChips + '</div>' +
         '</div>' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Line Decoration</label>' +
+          '<label class="vertical-control-label">' + t('labelLineDecoration', 'Line Decoration') + '</label>' +
           '<div class="decoration-tabs vertical-deco-tabs">' + decoTabs + '</div>' +
           '<div id="vertDecoGrid" class="decoration-grid"></div>' +
           '<div class="vertical-custom-sep-row">' +
-            '<label class="vertical-custom-sep-label" for="vertCustomSep">Custom:</label>' +
+            '<label class="vertical-custom-sep-label" for="vertCustomSep">' + t('labelCustom', 'Custom:') + '</label>' +
             '<input type="text" id="vertCustomSep" class="vertical-custom-sep" maxlength="8"' +
-              ' placeholder="any symbol" title="Type your own separator — it goes between each line of the stack">' +
+              ' placeholder="' + t('customPlaceholder', 'any symbol') + '" title="' + t('customTip', 'Type your own separator — it goes between each line of the stack') + '">' +
           '</div>' +
         '</div>' +
 
         '<div class="vertical-fit-row" id="vertFitRow"' +
-          ' title="Counted in characters incl. line breaks. Styled Unicode fonts can count as 2 characters on some platforms."></div>' +
+          ' title="' + t('fitRowTip', 'Counted in characters incl. line breaks. Styled Unicode fonts can count as 2 characters on some platforms.') + '"></div>' +
 
         '<div class="vertical-caps-hint" id="vertCapsHint" hidden>' +
-          '💡 Stacked text reads best in CAPS and short words. ' +
-          '<button type="button" class="vertical-caps-btn" id="vertCapsBtn">Use CAPS</button>' +
+          '💡 ' + t('capsHint', 'Stacked text reads best in CAPS and short words.') + ' ' +
+          '<button type="button" class="vertical-caps-btn" id="vertCapsBtn">' + t('capsBtn', 'Use CAPS') + '</button>' +
         '</div>' +
 
       '</div>';
@@ -265,7 +273,7 @@
       recentRow.className = 'vertical-recent-row';
       var recentLabel = document.createElement('span');
       recentLabel.className = 'vertical-recent-label';
-      recentLabel.textContent = 'Recent:';
+      recentLabel.textContent = t('recentLabel', 'Recent:');
       recentRow.appendChild(recentLabel);
       recent.forEach(function (deco) {
         recentRow.appendChild(makeDecoItem(deco, true));
@@ -277,8 +285,8 @@
     var clearBtn = document.createElement('button');
     clearBtn.type = 'button';
     clearBtn.className = 'clear-decoration';
-    clearBtn.textContent = '✕ None';
-    clearBtn.title = 'Remove the line decoration';
+    clearBtn.textContent = '✕ ' + t('clearDecoration', 'None');
+    clearBtn.title = t('clearDecorationTip', 'Remove the line decoration');
     clearBtn.addEventListener('click', function () {
       selectDecorator(null);
     });
@@ -299,8 +307,8 @@
     if (selected) item.classList.add('selected');
     item.setAttribute('aria-pressed', String(!!selected));
     item.title = deco.mode === 'prefix'
-      ? deco.label + ' — appears beside each letter'
-      : deco.label + ' — appears between each letter';
+      ? deco.label + ' — ' + t('decoBesideTip', 'appears beside each letter')
+      : deco.label + ' — ' + t('decoBetweenTip', 'appears between each letter');
     item.textContent = deco.label;
     item.dataset.decoId = deco.id;
     item.addEventListener('click', function () {
@@ -475,7 +483,7 @@
     if (!plainText) { row.innerHTML = ''; return; }
 
     var count = countChars(plainText);
-    var html = '<span class="vertical-fit-count">Output: ' + count + ' chars</span>';
+    var html = '<span class="vertical-fit-count">' + t('fitOutput', 'Output:') + ' ' + count + ' ' + t('charsUnit', 'chars') + '</span>';
     PLATFORM_LIMITS.forEach(function (p) {
       var fits = count <= p.limit;
       html += '<span class="vertical-fit-badge ' + (fits ? 'fit' : 'no-fit') + '">' +
@@ -533,7 +541,9 @@
     var plainDecorated = Decorators.applyVerticalDecorator(layoutText, selectedDecorator, selectedLayoutId);
     var plainFinal = platformSafe ? makePlatformSafe(plainDecorated) : plainDecorated;
     updateFitRow(plainFinal, capped.truncated
-      ? layoutEntry.label + ' uses the first ' + layoutEntry.maxUnits + ' characters'
+      ? t('truncatedNote', '{layout} uses the first {n} characters')
+          .replace('{layout}', t('layout_' + layoutEntry.id, layoutEntry.label))
+          .replace('{n}', String(layoutEntry.maxUnits))
       : '');
     updateCapsHint(inputText);
 
@@ -574,7 +584,7 @@
       if (items.length === 0) {
         var empty = document.createElement('p');
         empty.className = 'vertical-empty-note';
-        empty.textContent = 'No styles match "' + searchFilter + '".';
+        empty.textContent = t('noStylesMatch', 'No styles match "{query}".').replace('{query}', searchFilter);
         grid.appendChild(empty);
         return;
       }
@@ -630,13 +640,15 @@
     meta.className = 'vertical-card-meta';
     var count = document.createElement('span');
     count.className = 'vertical-card-count';
-    count.textContent = countChars(item.text) + ' chars';
+    count.textContent = countChars(item.text) + ' ' + t('charsUnit', 'chars');
     meta.appendChild(count);
     if (item.dupes.length > 0) {
       var dupeNote = document.createElement('span');
       dupeNote.className = 'vertical-dupe-note';
-      dupeNote.textContent = '+' + item.dupes.length + ' identical style' + (item.dupes.length > 1 ? 's' : '');
-      dupeNote.title = 'Same result as: ' + item.dupes.join(', ');
+      dupeNote.textContent = (item.dupes.length > 1
+        ? t('identicalStyles', '+{n} identical styles')
+        : t('identicalStyle', '+{n} identical style')).replace('{n}', String(item.dupes.length));
+      dupeNote.title = t('sameResultAs', 'Same result as:') + ' ' + item.dupes.join(', ');
       meta.appendChild(dupeNote);
     }
 
@@ -647,8 +659,8 @@
     var copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 'copy-btn';
-    copyBtn.textContent = 'Copy';
-    copyBtn.title = 'Copy to clipboard';
+    copyBtn.textContent = t('btnCopy', 'Copy');
+    copyBtn.title = t('btnCopyTip', 'Copy to clipboard');
     copyBtn.dataset.text = item.text;
     copyBtn.dataset.style = item.name;
     if (!item.text || !item.text.trim()) copyBtn.disabled = true;
@@ -664,7 +676,7 @@
   /* --------------------------------------------------------------------------
      Init
      -------------------------------------------------------------------------- */
-  var DEFAULT_SAMPLE_TEXT = 'Hello';
+  var DEFAULT_SAMPLE_TEXT = t('sampleText', 'Hello');
 
   function init() {
     /* Add vertical-specific class to results grid */
