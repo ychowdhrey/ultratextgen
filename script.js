@@ -48,7 +48,27 @@
     nl: { copy: "Kopieer", copied: "✓ Gekopieerd", failed: "✗ Mislukt", copyTitle: "Kopiëren naar klembord",
           save: "Bewaar", saved: "Bewaard", saveTitle: "Bewaar deze stijl", unsaveTitle: "Verwijder uit bewaarde stijlen",
           empty: "Typ hierboven iets…",
-          noStyles: "Geen stijlen gevonden. Probeer een ander filter of zoekwoord." }
+          noStyles: "Geen stijlen gevonden. Probeer een ander filter of zoekwoord." },
+    es: { copy: "Copiar", copied: "✓ Copiado", failed: "✗ Falló", copyTitle: "Copiar al portapapeles",
+          save: "Guardar", saved: "Guardado", saveTitle: "Guardar este estilo", unsaveTitle: "Quitar de los estilos guardados",
+          empty: "Escribe algo arriba...",
+          noStyles: "No se encontraron estilos. Prueba otro filtro o término de búsqueda." },
+    de: { copy: "Kopieren", copied: "✓ Kopiert", failed: "✗ Fehlgeschlagen", copyTitle: "In die Zwischenablage kopieren",
+          save: "Speichern", saved: "Gespeichert", saveTitle: "Diesen Stil speichern", unsaveTitle: "Aus gespeicherten Stilen entfernen",
+          empty: "Tipp oben etwas ein...",
+          noStyles: "Keine Stile gefunden. Probiere einen anderen Filter oder Suchbegriff." },
+    it: { copy: "Copia", copied: "✓ Copiato", failed: "✗ Errore", copyTitle: "Copia negli appunti",
+          save: "Salva", saved: "Salvato", saveTitle: "Salva questo stile", unsaveTitle: "Rimuovi dagli stili salvati",
+          empty: "Scrivi qualcosa qui sopra...",
+          noStyles: "Nessuno stile trovato. Prova un altro filtro o termine di ricerca." },
+    pl: { copy: "Kopiuj", copied: "✓ Skopiowano", failed: "✗ Błąd", copyTitle: "Kopiuj do schowka",
+          save: "Zapisz", saved: "Zapisano", saveTitle: "Zapisz ten styl", unsaveTitle: "Usuń z zapisanych stylów",
+          empty: "Wpisz coś powyżej...",
+          noStyles: "Nie znaleziono stylów. Spróbuj innego filtra lub hasła." },
+    vi: { copy: "Sao chép", copied: "✓ Đã sao chép", failed: "✗ Thất bại", copyTitle: "Sao chép vào bộ nhớ tạm",
+          save: "Lưu", saved: "Đã lưu", saveTitle: "Lưu kiểu chữ này", unsaveTitle: "Xóa khỏi kiểu chữ đã lưu",
+          empty: "Nhập gì đó ở trên...",
+          noStyles: "Không tìm thấy kiểu chữ nào. Thử bộ lọc hoặc từ khóa khác." }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
   const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;

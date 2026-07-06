@@ -736,6 +736,28 @@ PAGES = {
   "nl-library-speciale-tekens": ("Speciale Tekens", "Hartjes, sterretjes en symbolen voor je bio", m_grid, K_LIB),
   "vi-usecase-zalgo-text": ("Trình Tạo Chữ Zalgo", "Tạo chữ lỗi và rùng rợn", m_zalgo, K_USE),
 
+  # ---- localized vertical text ----
+  "de-usecase-vertical-text": ("Vertikaler Text-Generator", "Text von oben nach unten stapeln",
+        P(m_vertical, letters="TEXT"), K_USE),
+  "es-usecase-vertical-text": ("Generador de Texto Vertical", "Apila tu texto de arriba abajo",
+        P(m_vertical, letters="TEXT"), K_USE),
+  "fr-usecase-vertical-text": ("Générateur de Texte Vertical", "Empilez votre texte de haut en bas",
+        P(m_vertical, letters="TEXT"), K_USE),
+  "id-usecase-vertical-text": ("Generator Teks Vertikal", "Susun tulisan dari atas ke bawah",
+        P(m_vertical, letters="TEKS"), K_USE),
+  "it-usecase-vertical-text": ("Generatore di Testo Verticale", "Impila il testo dall'alto in basso",
+        P(m_vertical, letters="TEST"), K_USE),
+  "nl-usecase-vertical-text": ("Verticale Tekst Generator", "Stapel je tekst van boven naar beneden",
+        P(m_vertical, letters="TEKS"), K_USE),
+  "pl-usecase-vertical-text": ("Generator Tekstu Pionowego", "Ułóż tekst od góry do dołu",
+        P(m_vertical, letters="TEKS"), K_USE),
+  "pt-usecase-vertical-text": ("Gerador de Texto Vertical", "Empilhe seu texto de cima para baixo",
+        P(m_vertical, letters="TEXT"), K_USE),
+  "tr-usecase-vertical-text": ("Dikey Yazı Oluşturucu", "Metni yukarıdan aşağıya dizin",
+        P(m_vertical, letters="YAZI"), K_USE),
+  "vi-usecase-vertical-text": ("Trình Tạo Chữ Dọc", "Xếp chữ từ trên xuống dưới",
+        P(m_vertical, letters="DOC"), K_USE),
+
   # ---- platform pages ----
   "discord": ("Discord Font Generator", "Copy-and-paste fonts — no Nitro needed", m_chat, K_PLAT),
   "facebook": ("Facebook Font Generator", "Stylish text for posts and profiles", m_profile, K_PLAT),
