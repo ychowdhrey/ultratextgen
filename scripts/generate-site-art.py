@@ -734,7 +734,7 @@ PAGES = {
   "fr-calligraphie": ("Calligraphie en Ligne", "Alphabet calligraphie à copier-coller",
         P(m_typo, sample="Callig", ff=SERIF, style="italic", weight="400", size=58,
           label="sans plume ni encre"), K_CAT),
-  "fr-usecase-gras-linkedin": ("Gras LinkedIn", "Écrire en gras sur LinkedIn", m_headline, K_USE),
+  "fr-police-linkedin": ("Police LinkedIn", "Écrire en gras et stylé sur LinkedIn", m_headline, K_PLAT),
   "fr-ecriture-facebook": ("Écriture Facebook", "Gras et polices stylées pour FB", m_profile, K_PLAT),
   "fr-usecase-ecriture-tatouage": ("Écriture Tatouage", "Teste ton lettrage avant l'encre",
         P(m_typo, sample="Amour", ff=SERIF, style="italic", weight="400", size=60,
