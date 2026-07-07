@@ -145,13 +145,14 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="shared-header"></div>
-  <script src="/header.js"></script>
+  <script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/es/">Inicio</a>
@@ -227,7 +228,7 @@
     controlFrequency:        'Frecuencia',
     controlAmplitude:        'Amplitud',
     tooltipCharacters:       'Elige qué tipo de marcas combinadas utilizar',
-    tooltipPosition:         'Dónde aparecen las marcas en relación a cada carácter',
+    tooltipPosition:         'Dónde aparecen las marcas en relación a cada carácter. Las marcas medias (superpuestas) pueden verse como cuadros □ en algunos dispositivos y Roblox las filtra.',
     tooltipShape:            'Cómo varía la densidad de marcas a lo largo del texto',
     tooltipFrequency:        'Probabilidad de que cada carácter reciba marcas (0 = ninguno, 100% = todos)',
     tooltipAmplitude:        'Número de marcas apiladas por carácter (1 = sutil, 20 = caos)',
@@ -257,11 +258,35 @@
     decodeTitle:             'Decodificar Zalgo',
     decodeTooltip:           'Pega cualquier texto Zalgo para eliminar las marcas combinadas y revelar el original',
     decodePlaceholder:       'Pega texto Zalgo aquí para decodificarlo…',
-    decodeOutputPlaceholder: 'El texto limpio aparece aquí'
+    decodeOutputPlaceholder: 'El texto limpio aparece aquí',
+    controlPresets:          'Ajustes rápidos',
+    tooltipPresets:          'Puntos de partida con un clic — elige uno y luego afina cualquier control',
+    presetSubtle:            'Sutil',
+    presetClassic:           'Clásico',
+    presetCursed:            'Maldito',
+    presetChaos:             'ÉL VIENE',
+    presetTinyStack:         'Letras mini',
+    presetCustom:            'Personalizado',
+    fitTitle:                '¿Cabrá?',
+    fitTooltip:              'Las marcas zalgo cuentan para los límites de caracteres de cada plataforma. Verde = tu texto cabe.',
+    fitDiscordMsg:           'Mensaje de Discord',
+    fitXPost:                'Post de X / Tweet',
+    fitInstaBio:             'Bio de Instagram',
+    fitDiscordNick:          'Apodo de Discord',
+    decodeCopy:              'Copiar',
+    decodeCopied:            '✓ Copiado',
+    decodeRemoved:           'marcas eliminadas',
+    variantsTitle:           'Más estilos',
+    variantsTooltip:         'Tu texto en otros sabores zalgo — copia cualquiera sin tocar los controles',
+    variantUpDown:           'Arriba y abajo',
+    variantSpires:           'Agujas',
+    variantRoots:            'Raíces',
+    variantStrike:           'Tachado',
+    variantTinyStack:        'Letras mini'
   };
   </script>
   <script src="/usecase/zalgo-text/zalgo-text.js"></script>
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body>
 </html>

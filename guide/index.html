@@ -31,6 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:url" content="https://ultratextgen.com/guide/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/style.css">
@@ -57,11 +58,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/">Home</a>
@@ -75,8 +78,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="hero-headline">Guides for expressive typography</h1>
     <p class="hero-tagline">Fonts carry meaning before words are read. These guides show you how to use Unicode typography to signal tone, build recognition, and shape how your message lands.</p>
     <div class="guide-meta">
-      <span class="guide-pill is-accent">12 guides</span>
-      <span class="guide-pill">5 themes</span>
+      <span class="guide-pill is-accent">23 guides</span>
+      <span class="guide-pill">6 themes</span>
       <span class="guide-pill">Free &amp; no sign-up</span>
     </div>
   </div>
@@ -180,6 +183,90 @@ After: 𝗚𝗿𝗲𝗮𝘁 𝗽𝗼𝗶𝗻𝘁. Here's what I'd add:
 → [Example]</div>
       <a class="usecase-cta" href="/library/linkedin-comment-styling/">LinkedIn Comment Styling →</a>
     </div>
+
+    <!-- Guide: Does Bold Text Hurt LinkedIn Reach? -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">📊</span>
+        Does Bold Text Hurt Your LinkedIn Reach?
+      </div>
+      <p class="usecase-outcome">Stop fearing (or worshipping) bold text — use the 10–15% Emphasis Rule to bold for readers, not the algorithm.</p>
+      <p class="usecase-diff">A 1.2M-post study found no algorithmic penalty or boost for Unicode bold — the slight underperformance of bold-heavy posts is correlation with promotional writing, not causation. The real costs live elsewhere.</p>
+      <div class="usecase-example">Before: 𝗲𝘃𝗲𝗿𝘆 𝘀𝗶𝗻𝗴𝗹𝗲 𝘄𝗼𝗿𝗱 𝗯𝗼𝗹𝗱𝗲𝗱
+After: one 𝗹𝗮𝗻𝗱𝗶𝗻𝗴 𝗽𝗼𝗶𝗻𝘁 per post
+When everything is bold, nothing is.</div>
+      <a class="usecase-cta" href="/guide/linkedin-bold-text-reach/">Does Bold Hurt LinkedIn Reach? →</a>
+    </div>
+
+    <!-- Guide: Will Recruiters & ATS See Your Fancy Text? -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🔎</span>
+        Will Recruiters &amp; ATS See Your Fancy Text?
+      </div>
+      <p class="usecase-outcome">Stay findable by every recruiter and readable by every ATS while still styling where decoration pays off.</p>
+      <p class="usecase-diff">Recruiter search is exact-character matching, so one styled letter in your name erases you from results — and ATS parsers strip or garble Unicode bold. The Style-Safe Job Search map splits every field into red, yellow and green zones.</p>
+      <div class="usecase-example">Recruiter types "Sarah" → 𝓢𝓪𝓻𝓪𝓱 = 0 matches
+Name &amp; headline keywords: plain only
+Post hooks: style away.</div>
+      <a class="usecase-cta" href="/guide/linkedin-fonts-recruiters-ats/">Recruiters, ATS &amp; Fancy Text →</a>
+    </div>
+
+    <!-- Guide: Instagram Bio Line Breaks -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">↩️</span>
+        Why Your Instagram Bio Collapses Into One Line
+      </div>
+      <p class="usecase-outcome">Build a bio whose line breaks and blank lines survive Instagram's save, every time.</p>
+      <p class="usecase-diff">Instagram's server trims trailing spaces and collapses empty lines when you save — a spam-cleanup rule, not a bug. The Save-Proof Bio method beats it with clean line endings, the invisible braille blank U+2800, and a deliberate 150-character budget.</p>
+      <div class="usecase-example">Coffee roaster ☕
+⠀
+↓ New roast every Friday</div>
+      <a class="usecase-cta" href="/guide/instagram-bio-line-breaks/">Make Bio Spacing Stick →</a>
+    </div>
+
+    <!-- Guide: Instagram Fonts Shadowban Myth -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">👻</span>
+        Do Fancy Fonts Get You Shadowbanned?
+      </div>
+      <p class="usecase-outcome">Stop blaming your bio font for reach drops — and fix the quiet costs that actually lose you followers.</p>
+      <p class="usecase-diff">No shadowban explainer lists fonts as a cause; the panic is post-hoc reasoning. The Real-Cost vs Myth Ledger shows what styled text actually costs — search invisibility, screen-reader breakage, tofu boxes — and how to prove it in two minutes.</p>
+      <div class="usecase-example">Name: 𝓐𝓿𝓪 🍰 𝓑𝓪𝓴𝓮𝓼 → unfindable in search
+Name: Ava Bakes | Sourdough → findable
+Style the bio body, keep the name plain.</div>
+      <a class="usecase-cta" href="/guide/instagram-fonts-shadowban-myth/">The Shadowban Myth, Busted →</a>
+    </div>
+
+    <!-- Guide: Why Did TikTok Change My Font? -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🎵</span>
+        Why Did TikTok Change My Font?
+      </div>
+      <p class="usecase-outcome">Understand what TikTok Sans changed, why there's no revert switch, and style the text you actually control.</p>
+      <p class="usecase-diff">TikTok's update replaced the app's interface font with TikTok Sans, and no setting brings the old look back. The UI-Font vs Your-Font split shows which side is locked — and how to style everything on your side with update-proof Unicode.</p>
+      <div class="usecase-example">App font: locked by TikTok 🔒
+Your nickname, bio &amp; captions: 𝓎𝑜𝓊𝓇𝓈
+daily recipes → ᴅᴀɪʟʏ ʀᴇᴄɪᴘᴇꜱ ⋆</div>
+      <a class="usecase-cta" href="/guide/tiktok-font-changed/">The TikTok Font Change, Explained →</a>
+    </div>
+
+    <!-- Guide: Game Username Allowed Characters -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🕹️</span>
+        What Characters Are Allowed in Game Usernames?
+      </div>
+      <p class="usecase-outcome">Stop losing names to rejections — find the field, place, or filter that actually blocked your symbols.</p>
+      <p class="usecase-diff">Per-game rules for Roblox, Fortnite, Valorant and COD in one Game-Name Rules Matrix, built on the username-vs-display-name rule: handles are locked-down ASCII, display layers are where Unicode lives.</p>
+      <div class="usecase-example">꧁ShadowKing꧂ → rejected (username field)
+Shadow_King + display ꧁Shadow King꧂ → accepted
+ᴠɪᴘᴇʀᴍᴀɪɴ#ACE → passes in Valorant</div>
+      <a class="usecase-cta" href="/guide/game-username-allowed-symbols/">Game Username Rules →</a>
+    </div>
   </section>
 
   <!-- Category 2: Branding & Identity -->
@@ -273,12 +360,40 @@ T
 Same word. Vertical makes it stop traffic.</div>
       <a class="usecase-cta" href="/guide/vertical-text-guide/">Vertical Text Guide →</a>
     </div>
+
+    <!-- Guide: Dividers, Separators & Headers -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">➖</span>
+        Dividers, Separators &amp; Headers
+      </div>
+      <p class="usecase-outcome">Compose dividers and headers that structure a bio — and survive the save button — instead of gambling on symbol dumps.</p>
+      <p class="usecase-diff">Dump sites hand you 500 dividers and no guidance. Divider Anatomy — motif, symmetry, weight — teaches you to compose your own, with a survival table showing which dividers live through an Instagram save and which turn to tofu.</p>
+      <div class="usecase-example">─── ✦ 𝗔𝗕𝗢𝗨𝗧 ✦ ───
+┈┈┈┈┈┈┈
+motif · symmetry · weight</div>
+      <a class="usecase-cta" href="/guide/dividers-separators-guide/">Dividers &amp; Separators Guide →</a>
+    </div>
   </section>
 
   <!-- Category 5: Unicode, Accessibility & Compatibility -->
   <section class="editorial-section" id="unicode-compatibility">
     <h2>Unicode, Accessibility &amp; Compatibility</h2>
     <p class="section-subline">How styled text actually works under the hood — why it breaks, who it excludes, and how to use it without either.</p>
+
+    <!-- Guide: How Unicode Fonts Work (pillar) -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🧬</span>
+        How Unicode Text Styling Really Works
+      </div>
+      <p class="usecase-outcome">Get the real mental model of what a "fancy font" is — and predict every place it will or won't work.</p>
+      <p class="usecase-diff">Generator fonts aren't fonts — they're substitute Unicode characters borrowed from math notation. The Four-Layer Model (Character → Code point → Encoding → Glyph) pins every failure — tofu, rejected usernames, invisible search — to exactly one layer.</p>
+      <div class="usecase-example">a → 𝗮 is U+0061 → U+1D5EE:
+a different letter, not a costume.
+The style IS the characters.</div>
+      <a class="usecase-cta" href="/guide/how-unicode-fonts-work/">How Unicode Fonts Work →</a>
+    </div>
 
     <!-- Guide: Why Fonts Show as Boxes -->
     <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
@@ -322,6 +437,13 @@ capital H, mathematical bold small e…"</div>
       <a class="usecase-cta" href="/guide/fancy-fonts-accessibility-guide/">Fonts &amp; Accessibility →</a>
     </div>
 
+  </section>
+
+  <!-- Category 6: Platform Mastery — Discord -->
+  <section class="editorial-section" id="discord-mastery">
+    <h2>Platform Mastery — Discord</h2>
+    <p class="section-subline">The three text systems Discord actually runs on — and the field-by-field rules for names, channels, and colored text.</p>
+
     <!-- Guide: Discord Text Formatting Decoded -->
     <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
       <div class="style-name">
@@ -334,6 +456,34 @@ capital H, mathematical bold small e…"</div>
 Name: paste 𝗯𝗼𝗹𝗱 (Unicode)
 @username: neither — style the display name.</div>
       <a class="usecase-cta" href="/guide/discord-text-formatting-explained/">Discord Formatting Decoded →</a>
+    </div>
+
+    <!-- Guide: Where Fancy Fonts Work in Discord -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🗺️</span>
+        Where Fancy Fonts Work in Discord
+      </div>
+      <p class="usecase-outcome">Know instantly which Discord field accepts fancy fonts — and stop hitting "invalid username."</p>
+      <p class="usecase-diff">The Field Permission Matrix covers all nine Discord text fields: why the @handle rejects Unicode while display names, nicknames, roles, servers and channels accept it — plus the honest costs of styling each one.</p>
+      <div class="usecase-example">@𝕹𝖔𝖛𝖆 → invalid username
+@nova_riot + display name 𝕹𝖔𝖛𝖆 ⚔ → works
+Ctrl+K can't find 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 by typing "aesthetic"</div>
+      <a class="usecase-cta" href="/guide/discord-where-fonts-work/">Discord Field Permission Map →</a>
+    </div>
+
+    <!-- Guide: Colored Text in Discord (ANSI) -->
+    <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div class="style-name">
+        <span class="style-tag">🌈</span>
+        Colored Text in Discord (ANSI)
+      </div>
+      <p class="usecase-outcome">Get real red, green and blue text into Discord messages — and know exactly when the trick will fail before you post it.</p>
+      <p class="usecase-diff">The full ANSI recipe: the ```ansi fence, the 8-color palette, and the invisible escape-character trap — plus the honest part: a client support matrix and a 4-question Reality Check for when to use an embed instead.</p>
+      <div class="usecase-example">```ansi + ESC[31m → red text
+8 colors, bold + underline — no hex
+Desktop: renders · Mobile: raw codes</div>
+      <a class="usecase-cta" href="/guide/discord-colored-text-guide/">Discord Colored Text (ANSI) →</a>
     </div>
   </section>
 
@@ -360,6 +510,6 @@ Name: paste 𝗯𝗼𝗹𝗱 (Unicode)
     });
   });
 </script>
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body>
 </html>

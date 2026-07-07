@@ -239,6 +239,13 @@ function mapToArray(mapStrOrArr, kind) {
     if (kind === 'nums')      return s.match(/⦅\d⦆/g)     || [];
   }
 
+  // Parentheses: "( A )( B )..."
+  if (s.includes('(') && s.includes(')')) {
+    if (kind === 'alphaUpper') return s.match(/\( ?[A-Z] ?\)/g) || [];
+    if (kind === 'alphaLower') return s.match(/\( ?[a-z] ?\)/g) || [];
+    if (kind === 'nums')      return s.match(/\( ?\d ?\)/g)     || [];
+  }
+
   // Default: grapheme split, and drop spaces (for your spaced strings)
   return splitGraphemes(s).filter(x => x !== ' ');
 }
@@ -260,8 +267,9 @@ function renderMap(text, style) {
     style.groupSlug === 'spaced' ||
     (style.slug || '').endsWith('-spaced');
 
-  // Debug only (remove later if you want)
-  if (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10) {
+  // Map integrity check — only warn when a debug flag is set, never in production
+  if (window.UTG_DEBUG &&
+      (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10)) {
     console.warn('Bad map lengths', style.slug, {
       upper: upperArr.length,
       lower: lowerArr.length,
@@ -323,11 +331,20 @@ function renderMap(text, style) {
      ----------------------------- */
   const decorators = {
     strike:   t => [...t].map(c => c + '\u0336').join(''),
+    shortStrike: t => [...t].map(c => c + '\u0335').join(''),
     doubleStrike: t => [...t].map(c => c + '\u0336' + '\u0335').join(''),
+    heavyStrike: t => [...t].map(c => c + '\u0336' + '\u0336').join(''),
+    wavyStrike: t => [...t].map(c => c + '\u0334').join(''),
     crossedOut: t => [...t].map(c => c === ' ' ? c : c + '\u0336' + '\u0338').join(''),
     underline:t => [...t].map(c => c + '\u0332').join(''),
+    doubleUnderline: t => [...t].map(c => c + '\u0333').join(''),
+    wavyUnderline: t => [...t].map(c => c + '\u0330').join(''),
+    overline: t => [...t].map(c => c + '\u0305').join(''),
+    doubleOverline: t => [...t].map(c => c + '\u033f').join(''),
     wavy:    t => [...t].map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
-    slash:   t => [...t].map(c => c + '\u0338').join('')
+    slash:   t => [...t].map(c => c + '\u0338').join(''),
+    shortSlash: t => [...t].map(c => c + '\u0337').join(''),
+    strikeUnderline: t => [...t].map(c => c + '\u0336' + '\u0332').join('')
   };
 
   function renderDecorator(text, style) {

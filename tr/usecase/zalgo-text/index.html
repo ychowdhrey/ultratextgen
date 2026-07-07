@@ -145,13 +145,14 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="shared-header"></div>
-  <script src="/header.js"></script>
+  <script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/tr/">Ana Sayfa</a>
@@ -217,6 +218,28 @@
       <p><strong>TikTok, WhatsApp, YouTube</strong> ve düz Unicode metni kabul eden çoğu platform Zalgo metnini görüntüler. Görsel etki, platformun oluşturma motoruna göre değişir.</p>
     </section>
 
+    <section class="editorial-section">
+      <span class="article-section-label">İlgili sayfalar</span>
+      <div class="compare-grid">
+        <a href="/tr/yazi-stilleri/" class="compare-card variant-muted u-no-underline">
+          <h4>Yazı Stilleri</h4>
+          <p>Bozuk yazı dışında kalın, gotik, el yazısı ve bubble stilleri.</p>
+        </a>
+        <a href="/tr/metin-susleme/" class="compare-card variant-muted u-no-underline">
+          <h4>Metin Süsleme</h4>
+          <p>Yazının etrafına sembol, çerçeve ve ayraç ekle.</p>
+        </a>
+        <a href="/tr/library/estetik-semboller/" class="compare-card variant-muted u-no-underline">
+          <h4>Estetik Semboller</h4>
+          <p>Soft, y2k, coquette ve kawaii sembolleri kopyala.</p>
+        </a>
+        <a href="/tr/sekilli-nick/" class="compare-card variant-muted u-no-underline">
+          <h4>Şekilli Nick</h4>
+          <p>Oyun ve Discord isimleri için hazır çerçeveli nickler.</p>
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <script>
@@ -227,7 +250,7 @@
     controlFrequency:        'Sıklık',
     controlAmplitude:        'Genlik',
     tooltipCharacters:       'Hangi tür birleştirici işaretlerin kullanılacağını seçin',
-    tooltipPosition:         'İşaretlerin her karaktere göre nerede göründüğü',
+    tooltipPosition:         'İşaretlerin her karaktere göre nerede görüneceği. Orta (üst üste binen) işaretler bazı cihazlarda □ kutu olarak görünebilir ve Roblox bunları filtreler.',
     tooltipShape:            'İşaret yoğunluğunun metin uzunluğuna göre nasıl değiştiği',
     tooltipFrequency:        'Her karakterin işaret alması olasılığı (0 = hiç, %100 = tümü)',
     tooltipAmplitude:        'Karakter başına yığılan işaret sayısı (1 = ince, 20 = kaos)',
@@ -257,11 +280,35 @@
     decodeTitle:             'Zalgo\'yu Çöz',
     decodeTooltip:           'Orijinali ortaya çıkarmak için birleştirici işaretleri kaldırmak üzere herhangi bir Zalgo metnini yapıştırın',
     decodePlaceholder:       'Çözmek için Zalgo metnini buraya yapıştırın…',
-    decodeOutputPlaceholder: 'Temiz metin burada görünür'
+    decodeOutputPlaceholder: 'Temiz metin burada görünür',
+    controlPresets:          'Hızlı ön ayarlar',
+    tooltipPresets:          'Tek tıkla başlangıç noktaları — birini seç, sonra istediğin ayarı incelt',
+    presetSubtle:            'Hafif',
+    presetClassic:           'Klasik',
+    presetCursed:            'Lanetli',
+    presetChaos:             'O GELİYOR',
+    presetTinyStack:         'Mini harfler',
+    presetCustom:            'Özel',
+    fitTitle:                'Sığar mı?',
+    fitTooltip:              'Zalgo işaretleri platform karakter sınırlarına dahildir. Yeşil = çıktın sığıyor.',
+    fitDiscordMsg:           'Discord mesajı',
+    fitXPost:                'X gönderisi / Tweet',
+    fitInstaBio:             'Instagram biyografisi',
+    fitDiscordNick:          'Discord takma adı',
+    decodeCopy:              'Kopyala',
+    decodeCopied:            '✓ Kopyalandı',
+    decodeRemoved:           'işaret kaldırıldı',
+    variantsTitle:           'Daha fazla stil',
+    variantsTooltip:         'Metnin diğer zalgo tatlarında — ayarlara dokunmadan kopyala',
+    variantUpDown:           'Üst ve alt',
+    variantSpires:           'Kuleler',
+    variantRoots:            'Kökler',
+    variantStrike:           'Üstü çizili',
+    variantTinyStack:        'Mini harfler'
   };
   </script>
   <script src="/usecase/zalgo-text/zalgo-text.js"></script>
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body>
 </html>

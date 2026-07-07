@@ -25,6 +25,8 @@
   <meta name="twitter:title" content="Bubble Fonts | UltraTextGen">
   <meta name="twitter:description" content="Fun bubble fonts for playful bios, cute captions, and friendly messages. Perfect for kid-friendly content and cheerful vibes.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/category-bubble-fonts.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Fredoka:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
@@ -190,11 +192,13 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/">Home</a>
@@ -246,6 +250,25 @@
   <!-- Main Content -->
   <main class="container">
 
+    <!-- Category Tabs -->
+    <div class="category-section">
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="all">All</button>
+        <button class="category-tab" data-category="cool">✦ Cool</button>
+        <button class="category-tab" data-category="fancy">✧ Fancy</button>
+        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
+        <button class="category-tab" data-category="bold">𝗕 Bold</button>
+        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
+        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
+        <button class="category-tab" data-category="special">⚡ Special</button>
+      </div>
+    </div>
+
+    <!-- Compatibility Notice -->
+
+    <!-- Results -->
+    <div class="results-grid" id="resultsGrid"></div>
+
     <!-- ===== Bubble Letters A–Z explorer ===== -->
     <section class="bubble-az" id="bubbleAZ" aria-labelledby="bubbleAZHeading">
       <h2 class="bubble-az-heading" id="bubbleAZHeading">Bubble Letters A–Z</h2>
@@ -271,25 +294,6 @@
       </p>
       <div class="bubble-alphabet-grid" id="bubbleAlphabetGrid"></div>
     </section>
-
-    <!-- Category Tabs -->
-    <div class="category-section">
-      <div class="category-tabs" id="categoryTabs">
-        <button class="category-tab active" data-category="all">All</button>
-        <button class="category-tab" data-category="cool">✦ Cool</button>
-        <button class="category-tab" data-category="fancy">✧ Fancy</button>
-        <button class="category-tab" data-category="cursive">𝒞 Cursive</button>
-        <button class="category-tab" data-category="bold">𝗕 Bold</button>
-        <button class="category-tab" data-category="gothic">𝔊 Gothic</button>
-        <button class="category-tab" data-category="bubble">Ⓑ Bubble</button>
-        <button class="category-tab" data-category="special">⚡ Special</button>
-      </div>
-    </div>
-
-    <!-- Compatibility Notice -->
-    
-    <!-- Results -->
-    <div class="results-grid" id="resultsGrid"></div>
   </main>
 
   <!-- Footer -->
@@ -586,12 +590,12 @@
   <!-- Print surface for bubble outlines (hidden on screen) -->
   <div id="bubblePrintRoot" aria-hidden="true"></div>
 
-  <script src="/styles.js"></script>
-<script src="/renderer.js"></script>
+  <script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
 <script src="/script.js" defer=""></script>
 <script src="/js/bubble/bubbleExplorer.js" defer=""></script>
 
 
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body></html>

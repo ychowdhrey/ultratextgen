@@ -28,6 +28,8 @@
   <meta name="twitter:description" content="Create bold, italic, and stylish Telegram text for channels and group messages. Copy and paste Unicode fonts instantly.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/telegram.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
@@ -91,7 +93,7 @@
       "name": "How do I add symbols, frames, or decorations to my Telegram text?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The generator includes built-in decoration options you can combine with any font style. <br><br> <strong>Available decoration categories</strong><br> • <strong>Symbols</strong> — Stars, hearts, arrows, and aesthetic characters<br> • <strong>Frames</strong> — Bordered text boxes and wraps<br> • <strong>Dividers</strong> — Decorative line separators<br> • <strong>Arrows</strong> — Directional symbols and pointers<br> • <strong>Minimal Emojis</strong> — Clean, subtle emoji accents<br> • <strong>Flags</strong> — Country flag emojis <br><br> <strong>How to use</strong><br> Enter your text → toggle \"Add decoration to results\" → pick a decoration type → preview and copy → paste into Telegram. <br><br> <strong>Example</strong><br> Plain: New update → Decorated: ✦ 𝗡𝗲𝘄 𝘂𝗽𝗱𝗮𝘁𝗲 ✦ <br><br> Decorations are especially useful for channel posts, group announcements, and making pinned messages more visible. You can also explore <a href=\"https://ultratextgen.com/category/word-wrappers/\">word wrappers</a> for additional framing options."
+        "text": "The generator includes built-in decoration options you can combine with any font style. <br><br> <strong>Available decoration categories</strong><br> • <strong>Symbols</strong> — Stars, hearts, arrows, and aesthetic characters<br> • <strong>Frames</strong> — Bordered text boxes and wraps<br> • <strong>Dividers</strong> — Decorative line separators<br> • <strong>Arrows</strong> — Directional symbols and pointers<br> • <strong>Minimal Emojis</strong> — Clean, subtle emoji accents<br> • <strong>Flags</strong> — Country flag emojis <br><br> <strong>How to use</strong><br> Enter your text → toggle \"Add decoration to results\" → pick a decoration type → preview and copy → paste into Telegram. <br><br> <strong>Example</strong><br> Plain: New update → Decorated: ✦ 𝗡𝗲𝘄 𝘂𝗽𝗱𝗮𝘁𝗲 ✦ <br><br> Decorations are especially useful for channel posts, group announcements, and making pinned messages more visible. You can also explore the <a href=\"https://ultratextgen.com/category/text-decorator/\">text decorator</a> for additional framing options."
       }
     },
     {
@@ -163,11 +165,13 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
 
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -445,7 +449,7 @@
     <strong>Example</strong><br>
     Plain: New update → Decorated: ✦ 𝗡𝗲𝘄 𝘂𝗽𝗱𝗮𝘁𝗲 ✦
     <br><br>
-    Decorations are especially useful for channel posts, group announcements, and making pinned messages more visible. You can also explore <a href="https://ultratextgen.com/category/word-wrappers/">word wrappers</a> for additional framing options.
+    Decorations are especially useful for channel posts, group announcements, and making pinned messages more visible. You can also explore the <a href="https://ultratextgen.com/category/text-decorator/">text decorator</a> for additional framing options.
   </div>
 </div>
 
@@ -588,11 +592,11 @@
     
   
 
-    <script src="/styles.js"></script>
-  <script src="/renderer.js"></script>
+    <script src="/styles.js" defer></script>
+  <script src="/renderer.js" defer></script>
   <script src="/script.js" defer=""></script>
 
 
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body></html>
