@@ -3641,8 +3641,9 @@ button.clear-decoration {
 .bubble-print-sheet .bubble-outline { width: 100%; }
 
 @media print {
-  body.is-printing > *:not(#bubblePrintRoot) { display: none !important; }
+  body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot) { display: none !important; }
   body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
+  body.is-printing #cursivePrintRoot { display: block !important; padding: 1rem; }
 }
 
 /* ===========================================================
@@ -4864,4 +4865,245 @@ body.dark-mode .tattoo-badge.is-safe {
 
 body.dark-mode .tattoo-badge.is-roomy {
   background: rgba(251, 191, 36, 0.12);
+}
+
+/* ===========================================================
+   Cursive experience — category/cursive-fonts/
+   Generator quick chips, section nav, letters A–Z grid + panel,
+   alphabet charts, words gallery, name & signature studio, and
+   the printable practice sheet. Explorer panel reuses bubble-*
+   components; chips reuse vertical-chip.
+   =========================================================== */
+
+/* Quick-fill chips under the hero input */
+.cursive-quick-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* Sticky on-page section nav */
+.cursive-section-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  padding: 10px 16px;
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.cursive-section-nav a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cursive-section-nav a:hover {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+
+/* Generator preview cards render the script glyphs larger */
+.cursive-preview {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Letters A–Z grid */
+.cursive-letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.cursive-letter-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.cursive-letter-cell:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
+}
+
+.cursive-letter-cell.is-active {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25);
+}
+
+.cursive-letter-pair {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.cursive-letter-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.cursive-letter-panel { margin-top: 10px; }
+
+.cursive-letter-figure { text-align: center; }
+
+.cursive-letter-big {
+  margin: 0;
+  font-size: 4.5rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+/* Alphabet charts */
+.cursive-chart-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cursive-chart {
+  margin: 18px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.cursive-chart-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cursive-chart-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.cursive-alphabet-row {
+  margin: 6px 0;
+  font-size: 1.45rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+}
+
+/* Words in cursive gallery */
+.cursive-word-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+  margin: 14px 0 24px;
+}
+
+.cursive-word-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.cursive-word-render {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+}
+
+.cursive-word-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.cursive-word-card .copy-btn { align-self: flex-start; }
+
+/* Name & signature studio */
+.cursive-name-tool { margin: 16px 0 24px; }
+
+.cursive-name-input {
+  min-height: auto;
+  height: 52px;
+  resize: none;
+}
+
+/* Printable practice sheet (screen-hidden, print-isolated) */
+#cursivePrintRoot { display: none; }
+
+.cursive-print-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.cursive-print-row {
+  display: grid;
+  grid-template-columns: 110px 90px 1fr;
+  align-items: end;
+  gap: 0.75rem;
+  border-bottom: 1px dotted #94a3b8;
+  padding-bottom: 0.35rem;
+}
+
+.cursive-print-model { font-size: 1.6rem; }
+
+.cursive-print-trace {
+  font-size: 1.4rem;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+.cursive-print-line { min-height: 1.6rem; }
+
+/* Dark mode */
+body.dark-mode .cursive-section-nav {
+  background: var(--bg-base);
+  border-color: var(--border-light);
+}
+
+body.dark-mode .cursive-section-nav a,
+body.dark-mode .cursive-letter-cell,
+body.dark-mode .cursive-chart,
+body.dark-mode .cursive-word-card {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+}
+
+@media (max-width: 640px) {
+  .cursive-letter-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); }
+  .cursive-letter-big { font-size: 3.2rem; }
+  .cursive-alphabet-row { font-size: 1.15rem; }
 }
