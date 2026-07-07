@@ -49,9 +49,19 @@
     // search for ("love in cursive", "happy birthday in cursive", …).
     quickWords: ["love", "Happy Birthday", "Thank You", "family", "forever", "blessed"],
 
-    // Popular-name chips for the signature studio (top "«name» in cursive"
-    // searches). Kept short; any name can be typed.
-    nameChips: ["Olivia", "Isabella", "Emily", "Elizabeth", "Emma", "Sophia", "Grace", "David", "Joseph", "Alex"],
+    // Flourish decorators for the signature studio — applied to the rendered
+    // name before each preset adds its own wrapper, so they compose cleanly.
+    signatureDecorators: [
+      { name: "None" },
+      { name: "Underline", combining: "̲" },
+      { name: "Sparkle",   pre: "⋆˚ ", post: " ˚⋆" },
+      { name: "Hearts",    pre: "♡ ",  post: " ♡" },
+      { name: "Ornate",    pre: "꧁ ",  post: " ꧂" },
+      { name: "Soft dots", pre: "˚₊· ", post: " ·₊˚" }
+    ],
+
+    // Joiner choices for the monogram-initials preset (O.G. / O·G / O♡G / O&G).
+    monogramJoiners: [".", "·", "♡", "&"],
 
     // Platform bio limits for the will-it-fit badges (counted in code points,
     // matching how the platforms count pasted Unicode).

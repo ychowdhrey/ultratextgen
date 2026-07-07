@@ -613,73 +613,75 @@
     <!-- 5. Names & signatures -->
     <section id="cursive-names" aria-labelledby="cursiveNamesHeading">
       <h2 class="bubble-az-heading" id="cursiveNamesHeading">Cursive name &amp; signature generator</h2>
-      <p class="bubble-az-intro">Type a first name — or a full name — and preview it as a cursive signature:
-        classic script, bold autograph, underline flourish, ornate nameplate, and monogram initials.</p>
+      <p class="bubble-az-intro">Type a first name — or a full name — and design your cursive signature:
+        pick a flourish, choose how monogram initials join, then copy the text or download it as a PNG
+        for email footers, watermarks, and documents.</p>
       <div class="cursive-name-tool">
         <div class="input-wrapper">
           <input type="text" class="main-input cursive-name-input" id="cursiveNameInput" placeholder="Type a name… e.g. Olivia Grace" maxlength="60">
         </div>
-        <div class="cursive-quick-row" id="cursiveNameChips" aria-label="Popular names"></div>
+        <div class="cursive-sig-controls" id="cursiveSignatureControls"></div>
         <div class="results-grid" id="cursiveNameResults"></div>
       </div>
     <h3>Popular names in cursive</h3>
+    <p class="bubble-az-intro">Tap any name to load it into the studio above and restyle it with flourishes.</p>
     <div class="cursive-word-grid">
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Olivia" role="button" tabindex="0" title="Load Olivia into the signature studio">
         <span class="cursive-word-render">𝓞𝓵𝓲𝓿𝓲𝓪</span>
         <span class="cursive-word-label">Olivia in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓞𝓵𝓲𝓿𝓲𝓪" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Isabella" role="button" tabindex="0" title="Load Isabella into the signature studio">
         <span class="cursive-word-render">𝓘𝓼𝓪𝓫𝓮𝓵𝓵𝓪</span>
         <span class="cursive-word-label">Isabella in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓘𝓼𝓪𝓫𝓮𝓵𝓵𝓪" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Emily" role="button" tabindex="0" title="Load Emily into the signature studio">
         <span class="cursive-word-render">𝓔𝓶𝓲𝓵𝔂</span>
         <span class="cursive-word-label">Emily in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓔𝓶𝓲𝓵𝔂" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Elizabeth" role="button" tabindex="0" title="Load Elizabeth into the signature studio">
         <span class="cursive-word-render">𝓔𝓵𝓲𝔃𝓪𝓫𝓮𝓽𝓱</span>
         <span class="cursive-word-label">Elizabeth in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓔𝓵𝓲𝔃𝓪𝓫𝓮𝓽𝓱" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Emma" role="button" tabindex="0" title="Load Emma into the signature studio">
         <span class="cursive-word-render">𝓔𝓶𝓶𝓪</span>
         <span class="cursive-word-label">Emma in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓔𝓶𝓶𝓪" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Sophia" role="button" tabindex="0" title="Load Sophia into the signature studio">
         <span class="cursive-word-render">𝓢𝓸𝓹𝓱𝓲𝓪</span>
         <span class="cursive-word-label">Sophia in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓢𝓸𝓹𝓱𝓲𝓪" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Ava" role="button" tabindex="0" title="Load Ava into the signature studio">
         <span class="cursive-word-render">𝓐𝓿𝓪</span>
         <span class="cursive-word-label">Ava in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓐𝓿𝓪" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Grace" role="button" tabindex="0" title="Load Grace into the signature studio">
         <span class="cursive-word-render">𝓖𝓻𝓪𝓬𝓮</span>
         <span class="cursive-word-label">Grace in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓖𝓻𝓪𝓬𝓮" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Victoria" role="button" tabindex="0" title="Load Victoria into the signature studio">
         <span class="cursive-word-render">𝓥𝓲𝓬𝓽𝓸𝓻𝓲𝓪</span>
         <span class="cursive-word-label">Victoria in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓥𝓲𝓬𝓽𝓸𝓻𝓲𝓪" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="David" role="button" tabindex="0" title="Load David into the signature studio">
         <span class="cursive-word-render">𝓓𝓪𝓿𝓲𝓭</span>
         <span class="cursive-word-label">David in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓓𝓪𝓿𝓲𝓭" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="Joseph" role="button" tabindex="0" title="Load Joseph into the signature studio">
         <span class="cursive-word-render">𝓙𝓸𝓼𝓮𝓹𝓱</span>
         <span class="cursive-word-label">Joseph in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓙𝓸𝓼𝓮𝓹𝓱" data-style="Ultra Script Bold">Copy</button>
       </div>
-      <div class="cursive-word-card">
+      <div class="cursive-word-card cursive-name-example" data-name="James" role="button" tabindex="0" title="Load James into the signature studio">
         <span class="cursive-word-render">𝓙𝓪𝓶𝓮𝓼</span>
         <span class="cursive-word-label">James in cursive</span>
         <button type="button" class="copy-btn" data-text="𝓙𝓪𝓶𝓮𝓼" data-style="Ultra Script Bold">Copy</button>
