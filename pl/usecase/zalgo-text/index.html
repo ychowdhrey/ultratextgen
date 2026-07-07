@@ -145,13 +145,14 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="shared-header"></div>
-  <script src="/header.js"></script>
+  <script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/pl/">Strona główna</a>
@@ -227,7 +228,7 @@
     controlFrequency:        'Częstotliwość',
     controlAmplitude:        'Amplituda',
     tooltipCharacters:       'Wybierz typ znaków łączących do użycia',
-    tooltipPosition:         'Gdzie znaki pojawiają się względem każdego znaku',
+    tooltipPosition:         'Gdzie znaki pojawiają się względem każdej litery. Środkowe (nakładane) znaki mogą wyświetlać się jako kwadraty □ na niektórych urządzeniach, a Roblox je filtruje.',
     tooltipShape:            'Jak gęstość znaków zmienia się na długości tekstu',
     tooltipFrequency:        'Prawdopodobieństwo, że każdy znak otrzyma oznaczenia (0 = żadne, 100% = wszystkie)',
     tooltipAmplitude:        'Liczba ułożonych oznaczeń na znak (1 = subtelnie, 20 = chaos)',
@@ -257,11 +258,35 @@
     decodeTitle:             'Dekoduj Zalgo',
     decodeTooltip:           'Wklej dowolny tekst Zalgo, aby usunąć znaki łączące i odkryć oryginał',
     decodePlaceholder:       'Wklej tekst Zalgo tutaj, aby go zdekodować…',
-    decodeOutputPlaceholder: 'Czysty tekst pojawi się tutaj'
+    decodeOutputPlaceholder: 'Czysty tekst pojawi się tutaj',
+    controlPresets:          'Szybkie presety',
+    tooltipPresets:          'Punkty startowe jednym kliknięciem — wybierz jeden, potem dostrój dowolną kontrolkę',
+    presetSubtle:            'Subtelny',
+    presetClassic:           'Klasyczny',
+    presetCursed:            'Przeklęty',
+    presetChaos:             'ON NADCHODZI',
+    presetTinyStack:         'Mini litery',
+    presetCustom:            'Własny',
+    fitTitle:                'Zmieści się?',
+    fitTooltip:              'Znaki zalgo liczą się do limitów znaków platform. Zielony = twój tekst się mieści.',
+    fitDiscordMsg:           'Wiadomość Discord',
+    fitXPost:                'Post na X / Tweet',
+    fitInstaBio:             'Bio na Instagramie',
+    fitDiscordNick:          'Pseudonim Discord',
+    decodeCopy:              'Kopiuj',
+    decodeCopied:            '✓ Skopiowano',
+    decodeRemoved:           'znaków usunięto',
+    variantsTitle:           'Więcej stylów',
+    variantsTooltip:         'Twój tekst w innych odmianach zalgo — kopiuj bez dotykania ustawień',
+    variantUpDown:           'Góra i dół',
+    variantSpires:           'Iglice',
+    variantRoots:            'Korzenie',
+    variantStrike:           'Przekreślony',
+    variantTinyStack:        'Mini litery'
   };
   </script>
   <script src="/usecase/zalgo-text/zalgo-text.js"></script>
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body>
 </html>

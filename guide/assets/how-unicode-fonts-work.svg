@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghowunico" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhowunico" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhowunico" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshowunico" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshowunico)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhowunico)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhowunico)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+        <g transform="translate(60 56)">
+          <rect width="240" height="52" rx="14" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#1a1a2e">A</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#1a1a2e"
+                opacity="0.7" text-anchor="end">character</text>
+        </g><line x1="180" y1="108" x2="180" y2="122" stroke="#8b5cf6" stroke-width="4"/>
+        <g transform="translate(60 122)">
+          <rect width="240" height="52" rx="14" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#1a1a2e">U+0041</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#1a1a2e"
+                opacity="0.7" text-anchor="end">code point</text>
+        </g><line x1="180" y1="174" x2="180" y2="188" stroke="#8b5cf6" stroke-width="4"/>
+        <g transform="translate(60 188)">
+          <rect width="240" height="52" rx="14" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#1a1a2e">01000001</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#1a1a2e"
+                opacity="0.7" text-anchor="end">encoding</text>
+        </g><line x1="180" y1="240" x2="180" y2="254" stroke="#8b5cf6" stroke-width="4"/>
+        <g transform="translate(60 254)">
+          <rect width="240" height="52" rx="14" fill="url(#ghowunico)" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#fff">𝗔?</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#fff"
+                opacity="0.7" text-anchor="end">glyph</text>
+        </g></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+        <g transform="translate(60 56)">
+          <rect width="240" height="52" rx="14" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#1a1a2e">A</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#1a1a2e"
+                opacity="0.7" text-anchor="end">character</text>
+        </g><line x1="180" y1="108" x2="180" y2="122" stroke="#8b5cf6" stroke-width="4"/>
+        <g transform="translate(60 122)">
+          <rect width="240" height="52" rx="14" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#1a1a2e">U+0041</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#1a1a2e"
+                opacity="0.7" text-anchor="end">code point</text>
+        </g><line x1="180" y1="174" x2="180" y2="188" stroke="#8b5cf6" stroke-width="4"/>
+        <g transform="translate(60 188)">
+          <rect width="240" height="52" rx="14" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#1a1a2e">01000001</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#1a1a2e"
+                opacity="0.7" text-anchor="end">encoding</text>
+        </g><line x1="180" y1="240" x2="180" y2="254" stroke="#8b5cf6" stroke-width="4"/>
+        <g transform="translate(60 254)">
+          <rect width="240" height="52" rx="14" fill="url(#ghowunico)" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="#fff">𝗔?</text>
+          <text x="222" y="33" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#fff"
+                opacity="0.7" text-anchor="end">glyph</text>
+        </g></g>
+</svg>

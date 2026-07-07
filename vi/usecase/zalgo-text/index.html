@@ -145,13 +145,14 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="shared-header"></div>
-  <script src="/header.js"></script>
+  <script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/vi/">Trang chủ</a>
@@ -217,6 +218,28 @@
       <p><strong>TikTok, WhatsApp, YouTube</strong> và hầu hết các nền tảng chấp nhận văn bản Unicode thuần túy sẽ hiển thị chữ Zalgo. Hiệu ứng hình ảnh thay đổi tùy theo công cụ hiển thị của nền tảng.</p>
     </section>
 
+    <section class="editorial-section">
+      <span class="article-section-label">Trang Liên Quan</span>
+      <div class="compare-grid">
+        <a href="/vi/chu-kieu/" class="compare-card variant-muted u-no-underline">
+          <h4>Chữ Kiểu</h4>
+          <p>Đổi chữ thường sang 100+ kiểu đậm, nghiêng, gothic, bong bóng.</p>
+        </a>
+        <a href="/vi/usecase/nick-ff/" class="compare-card variant-muted u-no-underline">
+          <h4>Nick FF Đẹp</h4>
+          <p>Ghép chữ Zalgo với khung ꧁꧂ cho nick game kiểu horror.</p>
+        </a>
+        <a href="/vi/ki-tu-dac-biet/" class="compare-card variant-muted u-no-underline">
+          <h4>Kí Tự Đặc Biệt</h4>
+          <p>Kho kí hiệu trang trí tên và bio — bấm là copy.</p>
+        </a>
+        <a href="/vi/ky-tu-vo-hinh/" class="compare-card variant-muted u-no-underline">
+          <h4>Kí Tự Vô Hình</h4>
+          <p>Kí tự trống để đặt tên có dấu cách và gửi tin nhắn trống.</p>
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <script>
@@ -227,7 +250,7 @@
     controlFrequency:        'Tần suất',
     controlAmplitude:        'Biên độ',
     tooltipCharacters:       'Chọn loại ký tự kết hợp sẽ sử dụng',
-    tooltipPosition:         'Vị trí dấu xuất hiện so với mỗi ký tự',
+    tooltipPosition:         'Vị trí các dấu xuất hiện so với mỗi ký tự. Dấu giữa (đè lên chữ) có thể hiển thị thành ô vuông □ trên một số thiết bị và bị Roblox lọc.',
     tooltipShape:            'Cách mật độ dấu thay đổi theo chiều dài văn bản',
     tooltipFrequency:        'Xác suất mỗi ký tự nhận được dấu (0 = không có, 100% = tất cả)',
     tooltipAmplitude:        'Số dấu xếp chồng trên mỗi ký tự (1 = nhẹ nhàng, 20 = hỗn loạn)',
@@ -257,11 +280,35 @@
     decodeTitle:             'Giải Mã Zalgo',
     decodeTooltip:           'Dán bất kỳ chữ Zalgo nào để xóa ký tự kết hợp và hiển thị bản gốc',
     decodePlaceholder:       'Dán chữ Zalgo vào đây để giải mã…',
-    decodeOutputPlaceholder: 'Văn bản sạch hiển thị ở đây'
+    decodeOutputPlaceholder: 'Văn bản sạch hiển thị ở đây',
+    controlPresets:          'Cài đặt nhanh',
+    tooltipPresets:          'Điểm khởi đầu một cú nhấp — chọn một cái rồi tinh chỉnh bất kỳ điều khiển nào',
+    presetSubtle:            'Nhẹ',
+    presetClassic:           'Cổ điển',
+    presetCursed:            'Bị nguyền',
+    presetChaos:             'HẮN ĐẾN',
+    presetTinyStack:         'Chữ mini',
+    presetCustom:            'Tùy chỉnh',
+    fitTitle:                'Có vừa không?',
+    fitTooltip:              'Các dấu zalgo được tính vào giới hạn ký tự của nền tảng. Xanh = văn bản của bạn vừa.',
+    fitDiscordMsg:           'Tin nhắn Discord',
+    fitXPost:                'Bài đăng X / Tweet',
+    fitInstaBio:             'Tiểu sử Instagram',
+    fitDiscordNick:          'Biệt danh Discord',
+    decodeCopy:              'Sao chép',
+    decodeCopied:            '✓ Đã sao chép',
+    decodeRemoved:           'dấu đã xóa',
+    variantsTitle:           'Nhiều kiểu hơn',
+    variantsTooltip:         'Văn bản của bạn trong các kiểu zalgo khác — sao chép mà không cần chạm vào điều khiển',
+    variantUpDown:           'Trên và dưới',
+    variantSpires:           'Tháp nhọn',
+    variantRoots:            'Rễ',
+    variantStrike:           'Gạch ngang',
+    variantTinyStack:        'Chữ mini'
   };
   </script>
   <script src="/usecase/zalgo-text/zalgo-text.js"></script>
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body>
 </html>

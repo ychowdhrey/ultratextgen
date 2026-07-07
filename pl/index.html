@@ -29,6 +29,8 @@
 <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/">
 <link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/">
 <link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/">
 
 <meta name="robots" content="index, follow">
 
@@ -47,6 +49,8 @@
 <meta name="twitter:description" content="Generator ładnych czcionek, estetycznych literek i stylowego tekstu do skopiowania. Pogrubione, kursywą, gotyk, bubble, Zalgo i symbole — wklej w bio na insta, w podpis TikToka, w nick do gry albo na Discord.">
 <meta name="twitter:image" content="https://ultratextgen.com/assets/og/generator-ladnych-czcionek-preview.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 
@@ -314,11 +318,13 @@
 </head>
   
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -991,20 +997,22 @@
         <a class="lang-option" href="/tr/" hreflang="tr">TR</a>
         <a class="lang-option active" href="/pl/" hreflang="pl">PL</a>
         <a class="lang-option" href="/vi/" hreflang="vi">VI</a>
+        <a class="lang-option" href="/sv/" hreflang="sv">SV</a>
+        <a class="lang-option" href="/no/" hreflang="no">NO</a>
       </div>
     </div>
   </footer>
 
   <div class="copy-toast" id="copyToast">Copied!</div>
 
-  <script src="/styles.js"></script>
-<script src="/renderer.js"></script>
+  <script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
 <script src="/script.js" defer=""></script>
-<script src="/i18n.js"></script>
+<script src="/i18n.js" defer></script>
 
 
 
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 
 </body></html>

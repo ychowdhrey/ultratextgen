@@ -53,10 +53,10 @@ const CATEGORY_PAGES = {
     title: 'Upside Down Text',
     description: 'Flip your text upside down with multiple Unicode styles.'
   },
-   'word-wrappers': {
-    slug: 'word-wrappers',
-    title: 'Word Wrappers',
-    description: 'Automatically wrap words in decorative wrappers and separators.'
+   'text-decorator': {
+    slug: 'text-decorator',
+    title: 'Text Decorator',
+    description: 'Decorate your text with symbols, borders, brackets, and emoji wrappers.'
   },
   'small-text': {
     slug: 'small-text',
@@ -619,6 +619,58 @@ const textStyles = {
    platforms: ['all', 'x', 'discord']
 },
 
+'Ultra Thin Strike': {
+  type: 'decorator',
+  decoratorId: 'shortStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-thin-strike',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Heavy Strike': {
+  type: 'decorator',
+  decoratorId: 'heavyStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-heavy-strike',
+  note: 'Copy & Paste to Check',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Wavy Strike': {
+  type: 'decorator',
+  decoratorId: 'wavyStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-wavy-strike',
+  note: 'Copy & Paste to Check',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+},
+
+'Ultra Light Slash': {
+  type: 'decorator',
+  decoratorId: 'shortSlash',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-light-slash',
+  platforms: ['all', 'x', 'discord']
+},
+
+'Ultra Strike + Underline': {
+  type: 'decorator',
+  decoratorId: 'strikeUnderline',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-strike-underline',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
   /* =========================
      Underline Text
      ========================= */
@@ -633,11 +685,53 @@ const textStyles = {
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
    
+  'Ultra Double Underline': {
+    type: 'decorator',
+    decoratorId: 'doubleUnderline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-double-underline',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+  },
+
+  'Ultra Wavy Underline': {
+    type: 'decorator',
+    decoratorId: 'wavyUnderline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-wavy-underline',
+    note: 'Copy & Paste to Check',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
+  'Ultra Overline': {
+    type: 'decorator',
+    decoratorId: 'overline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-overline',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
+  'Ultra Double Overline': {
+    type: 'decorator',
+    decoratorId: 'doubleOverline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-double-overline',
+    note: 'Copy & Paste to Check',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
   'Ultra Wavy': {
     type: 'decorator',
     decoratorId: 'wavy',
      category: 'underline',
-     familySlug: 'underline-text', // temporary home
+     familySlug: 'underline-text',
     groupSlug: 'effects',
     slug: 'ultra-wavy',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
@@ -752,8 +846,8 @@ const textStyles = {
 
 'Ultra Word Curly Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_curly_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -761,8 +855,8 @@ const textStyles = {
 
 'Ultra Word Angle Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_angle_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -770,8 +864,8 @@ const textStyles = {
 
 'Ultra Word Double Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_double_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -779,8 +873,8 @@ const textStyles = {
 
 'Ultra Word Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -788,8 +882,8 @@ const textStyles = {
 
 'Ultra Word Forward Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_forward_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -797,8 +891,8 @@ const textStyles = {
 
 'Ultra Word Backward Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_backward_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -806,8 +900,8 @@ const textStyles = {
 
 'Ultra Word Bracket Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'frames',
   slug: 'ultra_word_bracket_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -815,8 +909,8 @@ const textStyles = {
 
 'Ultra Word Chevron Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'frames',
   slug: 'ultra_word_chevron_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -824,8 +918,8 @@ const textStyles = {
 
 'Ultra Word Bar Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'bars',
   slug: 'ultra_word_bar_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -833,8 +927,8 @@ const textStyles = {
 
 'Ultra Word Double Bar Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'bars',
   slug: 'ultra_word_double_bar_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']

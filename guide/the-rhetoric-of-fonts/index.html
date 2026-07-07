@@ -31,6 +31,7 @@
   <meta property="og:url" content="https://ultratextgen.com/guide/the-rhetoric-of-fonts/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/style.css">
@@ -107,11 +108,13 @@
   </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/">Home</a>
@@ -425,7 +428,7 @@
   <div class="mood-explainer">
     <h3>Anadiplosis → Ultra Word Double Wrap</h3>
     <p>Anadiplosis links clauses by ending one and beginning the next with the same word. Each link forged from the previous one.</p>
-    <p><a href="https://ultratextgen.com/category/word-wrappers/">Ultra Word Double Wrap</a> encloses words in paired delimiters, visually linking each element — echoing the chain-like structure.</p>
+    <p><a href="https://ultratextgen.com/category/text-decorator/">Ultra Word Double Wrap</a> encloses words in paired delimiters, visually linking each element — echoing the chain-like structure.</p>
     <div class="mood-example">
       <div class="example-pair">
         <span class="ex-label">Ultra Word Double Wrap</span>
@@ -473,7 +476,7 @@
         <tr><td><strong>Epigram</strong></td><td><a href="https://ultratextgen.com/category/cursive-fonts/">Script Bold</a></td><td>𝓣𝓮𝓶𝓹𝓽𝓪𝓽𝓲𝓸𝓷</td><td>Elegant flourish, confident weight</td></tr>
         <tr><td><strong>Gravitas</strong></td><td><a href="https://ultratextgen.com/category/gothic-fonts/">Gothic Bold</a></td><td>𝖂𝖊 𝖘𝖍𝖆𝖑𝖑 𝖓𝖔𝖙</td><td>Gothic weight commands authority</td></tr>
         <tr><td><strong>Anaphora</strong></td><td><a href="https://ultratextgen.com/category/bold-fonts/">Ultra Bold</a></td><td>𝗪𝗲 𝘀𝗵𝗮𝗹𝗹 𝗳𝗶𝗴𝗵𝘁</td><td>Maximum weight = emphatic repetition</td></tr>
-        <tr><td><strong>Anadiplosis</strong></td><td><a href="https://ultratextgen.com/category/word-wrappers/">Word Double Wrap</a></td><td>«Fear» «leads»</td><td>Wrapping links words into a chain</td></tr>
+        <tr><td><strong>Anadiplosis</strong></td><td><a href="https://ultratextgen.com/category/text-decorator/">Word Double Wrap</a></td><td>«Fear» «leads»</td><td>Wrapping links words into a chain</td></tr>
         <tr><td><strong>Oxymoron</strong></td><td><a href="https://ultratextgen.com/category/classified/">Alt. Squares</a></td><td>◼◻◼◻◼◻◼</td><td>Opposing elements forced together</td></tr>
         <tr><td><strong>Dramatic irony</strong></td><td><a href="https://ultratextgen.com/category/strikethrough-text/">Crossed-Out</a></td><td>x̶x̶x̶x̶x̶x̶</td><td>Audience sees what the subject cannot</td></tr>
       </tbody>
@@ -610,6 +613,6 @@
     });
   });
 </script>
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body>
 </html>

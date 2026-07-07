@@ -29,6 +29,8 @@
 <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/">
 <link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/">
 <link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/">
 
 <meta name="robots" content="index, follow">
 
@@ -47,6 +49,8 @@
 <meta name="twitter:description" content="Şekilli yazı, font ve nick oluşturucu — Instagram bio, oyun nicki, kalpli/kelebekli nick, WhatsApp ve Discord için kalın, italik, el yazısı, gotik, balon font ve şekilli rakam.">
 <meta name="twitter:image" content="https://ultratextgen.com/assets/og/sekilli-yazi-olusturucu-preview.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 
@@ -323,11 +327,13 @@
 </head>
 
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -376,6 +382,69 @@
     <!-- Results -->
     <div class="results-grid" id="resultsGrid"></div>
   </main>
+
+  <!-- Türkçe yazı araçları -->
+  <section class="editorial-section" aria-label="Türkçe yazı araçları">
+    <h2>Türkçe yazı araçları</h2>
+    <p class="editorial-intro">Her stilin Türkçe hazırlanmış kendi sayfası var: hazır örnekler, kullanım ipuçları ve o stile ayarlanmış üretici. Yapmak istediğine uyan aracı seç:</p>
+    <div class="tips-grid">
+      <a class="tip-card" href="/tr/yazi-stilleri/" aria-label="Yazı stilleri">
+        <div class="tip-icon">🔤</div>
+        <h3>Yazı Stilleri</h3>
+        <p>Tüm değişik yazı tipleri tek sayfada — bio, nick ve durum için kopyala yapıştır alfabelerle.</p>
+      </a>
+      <a class="tip-card" href="/tr/sekilli-nick/" aria-label="Şekilli nick">
+        <div class="tip-icon">🎮</div>
+        <h3>Şekilli Nick</h3>
+        <p>꧁༒꧂ çerçeveli, kalpli ve kelebekli hazır nickler — adını yaz, nickin anında hazır.</p>
+      </a>
+      <a class="tip-card" href="/tr/usecase/pubg-nick/" aria-label="PUBG şekilli nick">
+        <div class="tip-icon">🎯</div>
+        <h3>PUBG Şekilli Nick</h3>
+        <p>PUBG Mobile isimleri, klan tag'leri, boşluklu nick hilesi ve isim değiştirme adımları.</p>
+      </a>
+      <a class="tip-card" href="/tr/library/semboller/" aria-label="Şekilli semboller">
+        <div class="tip-icon">✦</div>
+        <h3>Şekilli Semboller</h3>
+        <p>Yıldız, kalp, kelebek, çerçeve ve estetik semboller — dokun, anında kopyalansın.</p>
+      </a>
+      <a class="tip-card" href="/tr/library/estetik-semboller/" aria-label="Estetik semboller">
+        <div class="tip-icon">♡</div>
+        <h3>Estetik Semboller</h3>
+        <p>Coquette, kawaii, y2k, soft kalp ve bio ayraçları — estetik sembolleri tek dokunuşla kopyala.</p>
+      </a>
+      <a class="tip-card" href="/tr/metin-susleme/" aria-label="Metin süsleme">
+        <div class="tip-icon">★</div>
+        <h3>Metin Süsleme</h3>
+        <p>Yazını yıldız, kalp, ok ve çerçevelerle otomatik süsle — dekoratif nick ve bio hazır.</p>
+      </a>
+      <a class="tip-card" href="/tr/el-yazisi-fontu/" aria-label="El yazısı fontu">
+        <div class="tip-icon">✒️</div>
+        <h3>El Yazısı Fontu</h3>
+        <p>Zarif el yazısı (𝓮𝓵 𝔂𝓪𝔃𝓲𝓼𝓲) — romantik bio, şık isim ve dövme önizlemesi için.</p>
+      </a>
+      <a class="tip-card" href="/tr/kucuk-yazi/" aria-label="Küçük yazı">
+        <div class="tip-icon">ᵃᵇᶜ</div>
+        <h3>Küçük Yazı</h3>
+        <p>Small caps ve üst simge minik harfler (ᵇᵘ ᵗᵃʳᶻ) — sade bio ve pro oyuncu nicki için.</p>
+      </a>
+      <a class="tip-card" href="/tr/kalin-yazi/" aria-label="Kalın yazı">
+        <div class="tip-icon">🅱️</div>
+        <h3>Kalın Yazı</h3>
+        <p>Dikkat çeken kalın stiller (𝗯𝗼𝗹𝗱) — başlık, vurgu ve net okunan nickler için.</p>
+      </a>
+      <a class="tip-card" href="/tr/instagram-yazi-tipi/" aria-label="Instagram yazı tipi">
+        <div class="tip-icon">📸</div>
+        <h3>Instagram Yazı Tipi</h3>
+        <p>Bio, görünen ad ve açıklama için Instagram'a en uygun fontlar ve hazır bio satırları.</p>
+      </a>
+      <a class="tip-card" href="/tr/usecase/zalgo-text/" aria-label="Zalgo bozuk yazı">
+        <div class="tip-icon">👻</div>
+        <h3>Zalgo (Bozuk Yazı)</h3>
+        <p>Lanetli glitch görünümlü yazı — korku temalı meme, Cadılar Bayramı ve ürkütücü nick için.</p>
+      </a>
+    </div>
+  </section>
 
   <!-- Popular Use Cases -->
   <section class="editorial-section">
@@ -897,18 +966,20 @@
         <a class="lang-option active" href="/tr/" hreflang="tr">TR</a>
         <a class="lang-option" href="/pl/" hreflang="pl">PL</a>
         <a class="lang-option" href="/vi/" hreflang="vi">VI</a>
+        <a class="lang-option" href="/sv/" hreflang="sv">SV</a>
+        <a class="lang-option" href="/no/" hreflang="no">NO</a>
       </div>
     </div>
   </footer>
 
   <div class="copy-toast" id="copyToast">Kopyalandı!</div>
 
-  <script src="/styles.js"></script>
-<script src="/renderer.js"></script>
+  <script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
 <script src="/script.js" defer=""></script>
-<script src="/i18n.js"></script>
+<script src="/i18n.js" defer></script>
 
 
 
 
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>

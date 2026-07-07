@@ -100,20 +100,23 @@ here so they aren't lost. Update as they're closed or new ones appear.
 2. **No production pipeline for category/answers.** Strategy exists
    (`jtbd-build-spec.md`); there is no generator/validator equivalent of the
    library lane. These pages are hand-built.
-3. ~~**Usecase and guide lanes are undocumented**~~ **Partially closed** — PR #342
-   added [`guide-content-workflow.md`](./guide-content-workflow.md) (research →
-   opportunity → hand-build loop, backlog via `page_type=guide` rows) for the
-   Guide lane. **Usecase is still undocumented** — no workflow, no backlog.
+3. **Usecase and guide lanes are undocumented** — no workflow, no backlog.
+   **Newly active (2026-06-27):** PR #312 added 4 new usecase pages hand-built
+   across two namespaces: `/usecase/nickname-generator/` (EN) and
+   `/id/usecase/nama-ff-keren/`, `/id/usecase/nama-guild-ff-keren/`,
+   `/id/usecase/nama-ml-keren/` (localized). The `/id/usecase/` sub-namespace
+   is new — a localized usecase path not currently reflected in the page-type
+   table. Documenting this lane (and the localized variant) is now urgent.
 4. **Operational tracks without docs:** schema/alternateName SEO, i18n, CSS/GTM
    CI checks. Scripts exist; the process is tribal knowledge. The
    alternateName SEO track is now **actively in use** — PR #277 added
    `alternateName` to 30+ category/library/platform pages and PR #291 updated
    `validate-alternatenames.py` — making the missing governing doc the most
-   pressing gap here. i18n has also grown fast: PRs #327–#336 shipped 7 new
-   localized homepages (`de/`, `fr/`, `id/`, `it/`, `pl/`, `pt/`, `vi/`), all of
-   which the digest classifier missed (it only knew `es/`) — `LANE_RULES` now
-   has a path rule per locale directory, but the *process* for building a
-   localized homepage is still tribal knowledge.
+   pressing gap here. The **i18n track** is also multi-week active: `/id/`
+   received content expansions in PRs #302, #310, and #312, and PR #312
+   introduced a localized usecase sub-namespace (`/id/usecase/`) with no
+   governing workflow — the i18n governing doc and namespace definition are
+   overdue.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
    (`alternateName`: PR #277; FAQ structured data: PR #290) but have no

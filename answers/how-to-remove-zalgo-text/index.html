@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How to Remove Zalgo Text (Unzalgo) — Decode Cursed Text | UltraTextGen</title>
+  <meta name="description" content="Paste zalgo into a decoder that strips Unicode combining marks and the original text comes back instantly — it's always recoverable. Here's how unzalgo works, plus how moderators can filter zalgo automatically.">
+  <link rel="canonical" href="https://ultratextgen.com/answers/how-to-remove-zalgo-text/">
+  <meta property="og:title" content="How to Remove Zalgo Text (Unzalgo) — Decode Cursed Text">
+  <meta property="og:description" content="Paste zalgo into a decoder that strips Unicode combining marks and the original text comes back instantly — it's always recoverable.">
+  <meta property="og:url" content="https://ultratextgen.com/answers/how-to-remove-zalgo-text/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://ultratextgen.com/assets/og/usecase-zalgo-text.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Remove Zalgo Text (Unzalgo) — Decode Cursed Text">
+  <meta name="twitter:description" content="Paste zalgo into a decoder that strips Unicode combining marks and the original text comes back instantly.">
+  <meta name="twitter:image" content="https://ultratextgen.com/assets/og/usecase-zalgo-text.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I remove zalgo text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paste the corrupted text into an unzalgo decoder — a tool that strips Unicode combining marks. Zalgo is ordinary text plus stacked combining marks, so removing the marks restores the original instantly and losslessly. UltraTextGen's zalgo generator has a built-in Decode Zalgo box that does this as you type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can zalgo text always be decoded back to normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The original characters are never altered — zalgo only attaches combining marks to them. Strip the marks (Unicode ranges U+0300–U+036F and related combining blocks) and the base text is exactly what was typed. Nothing is encrypted or destroyed, so decoding is always lossless."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I remove zalgo text by hand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not practically. Combining marks have no independent width, so you can't select or delete them one by one in most editors — backspacing often deletes the whole visible character. A decoder that filters the combining-mark Unicode ranges is the reliable way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do moderators block zalgo automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Discord, AutoMod supports regex rules that match runs of combining marks (for example several characters in the U+0300–U+036F range in a row), and the MEE6 bot ships a dedicated zalgo filter that can delete or warn. Forums and wikis often use similar regex-based filters. The same combining-mark ranges a decoder strips are what a filter matches."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Answers", "item": "https://ultratextgen.com/answers/" },
+    { "@type": "ListItem", "position": 3, "name": "How to Remove Zalgo Text", "item": "https://ultratextgen.com/answers/how-to-remove-zalgo-text/" }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/answers/">Answers</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">How to Remove Zalgo Text</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">How to Remove Zalgo Text (Unzalgo)</h1>
+    <p class="hero-tagline">Someone sent you c̷u̴r̶s̵e̸d̶ text, or you over-corrupted your own. Here's how to get the clean original back — instantly, and always losslessly.</p>
+  </div>
+</section>
+
+<section class="editorial-section">
+  <span class="article-section-label">Short answer</span>
+  <div class="editorial-block">
+    <p>Paste the corrupted text into an <strong>unzalgo decoder</strong> — a tool that strips Unicode combining marks. Zalgo is just ordinary text with dozens of invisible-width marks stacked on each letter, so removing the marks restores the original perfectly. The <a href="/usecase/zalgo-text/#unzalgo">Decode Zalgo box in our zalgo generator</a> does this live as you paste: corrupted text in, clean text out, with a count of how many marks were removed.</p>
+  </div>
+  <div class="block-example">
+    <strong>In one line:</strong> zalgo = text + combining marks · remove the marks · original text returns, guaranteed.
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Why it works</span>
+  <h2>Zalgo never destroys the original text</h2>
+  <div class="editorial-block">
+    <p>Unicode "combining marks" are characters that attach visually to the letter before them — the accent in <em>é</em> is one. Zalgo abuses this by stacking many marks per letter, but the base letters underneath are untouched. Nothing is encrypted, substituted, or lost.</p>
+    <p>That means decoding is <strong>always possible and always lossless</strong>: filter out every character in the combining-mark ranges (U+0300–U+036F and a few related blocks) and what remains is exactly what was typed. A zalgo'd password, name, or message can always be read by anyone with a decoder — worth remembering before you use zalgo to "hide" anything.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">By hand?</span>
+  <h2>Why you can't easily delete zalgo manually</h2>
+  <div class="editorial-block">
+    <p>Combining marks have no width of their own, so your cursor can't land between them. In most editors, pressing backspace at the end of a zalgo'd letter deletes the entire visible character — letter and all its marks — or behaves unpredictably. Selecting "just the marks" with a mouse is impossible.</p>
+    <p>A decoder sidesteps all of this by filtering the text programmatically. Paste, copy the clean result, done.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">For moderators</span>
+  <h2>Blocking zalgo in your community automatically</h2>
+  <div class="editorial-block">
+    <p>If you moderate a Discord server, forum, or wiki, you don't have to decode zalgo case by case. <strong>Discord AutoMod</strong> accepts regex rules that match runs of combining marks — a pattern that catches several U+0300–U+036F characters in a row flags virtually all zalgo while leaving accented names like "José" alone. The <strong>MEE6 bot</strong> ships a ready-made zalgo filter that can delete messages or warn users.</p>
+    <p>The same trick works anywhere regex filters are available: match the combining-mark ranges a decoder strips, and you've matched zalgo. Decoding a suspicious username first (to see what it actually says) is still a good habit before acting on it.</p>
+  </div>
+</section>
+
+<div class="cta-card">
+  <h3>Decode zalgo text now</h3>
+  <p>Paste any cursed text into the built-in decoder — clean text appears instantly, free, no sign-up.</p>
+  <a href="/usecase/zalgo-text/#unzalgo" class="cta-btn">Open the Unzalgo Decoder →</a>
+</div>
+
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Related: wondering whether that corrupted message could harm your device? See <a href="/answers/is-zalgo-text-safe/">is zalgo text safe</a>. Trying to make zalgo that survives a game's chat filter instead? See <a href="/answers/does-zalgo-work-on-roblox/">does zalgo work on Roblox</a>. And to create (rather than remove) glitch text, use the <a href="/usecase/zalgo-text/">Zalgo Text Generator</a>.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<script src="/footer.js" defer></script>
+</body>
+</html>

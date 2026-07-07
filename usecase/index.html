@@ -25,6 +25,8 @@
   <meta name="twitter:title" content="Choose What You Want to Create — Comments, Bios, Headlines &amp; Emoji | UltraTextGen">
   <meta name="twitter:description" content="Pick the tool that matches your moment — comment fonts, bio fonts, LinkedIn headlines, emoji combinations and more. Each tool is built for a specific social media use case.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/usecase.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
@@ -50,11 +52,13 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<script src="/header.js"></script>
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/">Home</a>
@@ -98,6 +102,17 @@ l
 l
 o</div>
         <a class="usecase-cta" href="/usecase/vertical-text/">Generate Vertical Text →</a>
+      </div>
+
+      <div class="style-card usecase-cards" style="flex-direction:column;align-items:stretch;gap:8px;">
+        <div class="style-name">
+          <span class="style-tag">【 】</span>
+          Text Decorator
+        </div>
+        <p class="usecase-outcome">Frame your words in symbols, brackets, and borders.</p>
+        <p class="usecase-diff">Wrap text in visual containers — boxed names, emoji banners, and decorated captions that stand apart from the feed.</p>
+        <div class="usecase-example" aria-label="Example showing text wrapped in decorative symbols">★彡[ hello ]彡★</div>
+        <a class="usecase-cta" href="/category/text-decorator/">Open Text Decorator →</a>
       </div>
     </section>
 
@@ -263,5 +278,5 @@ Doubt → Confidence</div>
       });
     });
   </script>
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body></html>
