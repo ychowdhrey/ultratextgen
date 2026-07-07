@@ -71,6 +71,7 @@ ultratextgen/
 │                           #   (classify each page by presentation_class +
 │                           #    copy_patterns — see docs/emoji-combination-taxonomy.md)
 ├── js/vertical/            # Vertical text feature module
+├── js/tattoo/              # Tattoo lettering studio module (names, dates→roman, initials, symbols)
 │
 └── Platform pages:
     discord/ facebook/ instagram/ linkedin/ pinterest/

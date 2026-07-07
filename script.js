@@ -869,6 +869,7 @@ const decorations = window.UTG_DECORATIONS || {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
     if (window.UTG_DECORATOR_MODE) return;
+    if (window.UTG_TATTOO_MODE) return;
     if (!el.decorationGrid) return;
 
     const grid = el.decorationGrid;
@@ -917,7 +918,7 @@ const decorations = window.UTG_DECORATIONS || {
   // editing each HTML file (skipped on the dedicated vertical/zalgo pages,
   // which run their own controllers).
   function ensureScopeControl() {
-    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE || window.UTG_DECORATOR_MODE) return null;
+    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE || window.UTG_DECORATOR_MODE || window.UTG_TATTOO_MODE) return null;
     if (!el.resultsGrid) return null;
 
     let control = $("#scopeControl");
@@ -1002,7 +1003,7 @@ const decorations = window.UTG_DECORATIONS || {
   // style is generated, so every card in the grid gains the formatting at once.
   function ensureFormatControl() {
     if (!window.UTG_FORMAT_MARKS) return null;
-    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE || window.UTG_DECORATOR_MODE) return null;
+    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE || window.UTG_DECORATOR_MODE || window.UTG_TATTOO_MODE) return null;
     if (!el.resultsGrid) return null;
 
     let control = $("#formatControl");
@@ -1092,6 +1093,7 @@ const decorations = window.UTG_DECORATIONS || {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
     if (window.UTG_DECORATOR_MODE) return;
+    if (window.UTG_TATTOO_MODE) return;
     if (!el.resultsGrid) return;
 
     const section = ensureSavedSection();
@@ -1134,6 +1136,7 @@ const decorations = window.UTG_DECORATIONS || {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
     if (window.UTG_DECORATOR_MODE) return;
+    if (window.UTG_TATTOO_MODE) return;
     if (!el.resultsGrid) return;
 
     const grid = el.resultsGrid;
