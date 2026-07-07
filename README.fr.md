@@ -105,11 +105,12 @@ UltraTextGen organise les transformations de polices Unicode en catégories stru
 - https://ultratextgen.com/category/cute-fonts/
 - https://ultratextgen.com/category/gothic-fonts/
 - https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/old-english-fonts/
 - https://ultratextgen.com/category/small-text/
 - https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/text-decorator/
 - https://ultratextgen.com/category/underline-text/
 - https://ultratextgen.com/category/upside-down-text/
-- https://ultratextgen.com/category/text-decorator/
 <!-- END_CATEGORIES -->
 
 ## Cas d'Usage
@@ -140,14 +141,25 @@ Ces ressources explorent comment la typographie Unicode encode le ton, l'autorit
 <!-- START_GUIDES -->
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
 - https://ultratextgen.com/guide/comments-that-stand-out/
+- https://ultratextgen.com/guide/discord-colored-text-guide/
 - https://ultratextgen.com/guide/discord-text-formatting-explained/
+- https://ultratextgen.com/guide/discord-where-fonts-work/
+- https://ultratextgen.com/guide/dividers-separators-guide/
 - https://ultratextgen.com/guide/fancy-fonts-accessibility-guide/
+- https://ultratextgen.com/guide/fancy-fonts-and-accents/
 - https://ultratextgen.com/guide/font-personality-and-brand/
+- https://ultratextgen.com/guide/game-username-allowed-symbols/
+- https://ultratextgen.com/guide/how-unicode-fonts-work/
+- https://ultratextgen.com/guide/instagram-bio-line-breaks/
+- https://ultratextgen.com/guide/instagram-fonts-shadowban-myth/
+- https://ultratextgen.com/guide/linkedin-bold-text-reach/
 - https://ultratextgen.com/guide/linkedin-comments-guide/
+- https://ultratextgen.com/guide/linkedin-fonts-recruiters-ats/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
 - https://ultratextgen.com/guide/stop-the-scroll-with-font-variation/
 - https://ultratextgen.com/guide/style-linkedin-hooks-to-stand-out/
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
+- https://ultratextgen.com/guide/tiktok-font-changed/
 - https://ultratextgen.com/guide/vertical-text-guide/
 - https://ultratextgen.com/guide/why-fonts-show-as-boxes/
 <!-- END_GUIDES -->
@@ -224,6 +236,7 @@ Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif 
 - https://ultratextgen.com/library/canada-emoji-combos/
 - https://ultratextgen.com/library/card-emoji-soccer/
 - https://ultratextgen.com/library/card-suit-symbols/
+- https://ultratextgen.com/library/cat-kaomoji/
 - https://ultratextgen.com/library/checkmark-symbols/
 - https://ultratextgen.com/library/chess-symbols/
 - https://ultratextgen.com/library/chile-emoji-combos/
@@ -242,7 +255,9 @@ Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif 
 - https://ultratextgen.com/library/cross-x-symbols/
 - https://ultratextgen.com/library/crown-royalty-symbols/
 - https://ultratextgen.com/library/crying-emoji/
+- https://ultratextgen.com/library/crying-kaomoji/
 - https://ultratextgen.com/library/currency-symbols/
+- https://ultratextgen.com/library/cute-kaomoji/
 - https://ultratextgen.com/library/dash-hyphen-symbols/
 - https://ultratextgen.com/library/de-bruyne-emoji-combos/
 - https://ultratextgen.com/library/degree-symbol/
@@ -301,6 +316,7 @@ Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif 
 - https://ultratextgen.com/library/halloween-symbols/
 - https://ultratextgen.com/library/hand-symbols/
 - https://ultratextgen.com/library/happy-emoji/
+- https://ultratextgen.com/library/happy-kaomoji/
 - https://ultratextgen.com/library/hazard-warning-symbols/
 - https://ultratextgen.com/library/heart-symbols/
 - https://ultratextgen.com/library/hindi-symbols/
@@ -310,6 +326,7 @@ Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif 
 - https://ultratextgen.com/library/instagram-symbols/
 - https://ultratextgen.com/library/invisible-character/
 - https://ultratextgen.com/library/ipa-phonetic-symbols/
+- https://ultratextgen.com/library/iphone-emojis/
 - https://ultratextgen.com/library/iran-emoji-combos/
 - https://ultratextgen.com/library/ireland-emoji-combos/
 - https://ultratextgen.com/library/islamic-symbols/
@@ -333,6 +350,7 @@ Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif 
 - https://ultratextgen.com/library/linkedin-comment-styling/
 - https://ultratextgen.com/library/linkedin-symbol-library/
 - https://ultratextgen.com/library/loading-text-symbols/
+- https://ultratextgen.com/library/love-kaomoji/
 - https://ultratextgen.com/library/math-symbols/
 - https://ultratextgen.com/library/mbappe-emoji-combos/
 - https://ultratextgen.com/library/media-control-symbols/
@@ -402,6 +420,7 @@ Pas de frameworks. Pas d'outils de build requis pour le frontend. Du code natif 
 - https://ultratextgen.com/library/south-africa-emoji-combos/
 - https://ultratextgen.com/library/south-korea-emoji-combos/
 - https://ultratextgen.com/library/spain-emoji-combos/
+- https://ultratextgen.com/library/sparkle-kaomoji/
 - https://ultratextgen.com/library/sparkle-symbols/
 - https://ultratextgen.com/library/special-characters/
 - https://ultratextgen.com/library/sports-emojis/
