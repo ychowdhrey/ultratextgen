@@ -28,7 +28,7 @@
     resultsGrid: $("#resultsGrid"),
     letterPanel: $("#cursiveLetterPanel"),
     nameInput: $("#cursiveNameInput"),
-    nameChips: $("#cursiveNameChips"),
+    sigControls: $("#cursiveSignatureControls"),
     nameResults: $("#cursiveNameResults"),
     printRoot: $("#cursivePrintRoot"),
     printBtn: $("#cursivePrintSheet")
@@ -55,14 +55,24 @@
     try { return R.renderAny(text, style); } catch (e) { return text; }
   }
 
-  // Apply a preset: render through its base style, then wrap or add a
-  // combining mark per visible character (the underline-flourish look).
-  function renderPreset(text, preset) {
+  function applyCombining(text, mark) {
+    return [...text].map((c) => (c === " " || c === "\n") ? c : c + mark).join("");
+  }
+
+  function applyWrap(text, wrap) {
+    let out = text;
+    if (wrap.combining) out = applyCombining(out, wrap.combining);
+    return (wrap.pre || "") + out + (wrap.post || "");
+  }
+
+  // Apply a preset: render through its base style, add the preset's combining
+  // mark to the letters only, then let the decorator and the preset's own
+  // pre/post wrap around — so an underlined name keeps its flourish clean.
+  function renderPreset(text, preset, decorator) {
     let out = renderWith(text, preset.base);
     if (!out || !out.trim()) return "";
-    if (preset.combining) {
-      out = [...out].map((c) => (c === " " || c === "\n") ? c : c + preset.combining).join("");
-    }
+    if (preset.combining) out = applyCombining(out, preset.combining);
+    if (decorator && decorator.name !== "None") out = applyWrap(out, decorator);
     return (preset.pre || "") + out + (preset.post || "");
   }
 
@@ -90,6 +100,9 @@
 
     card.appendChild(info);
 
+    const actions = document.createElement("div");
+    actions.className = "cursive-card-actions";
+
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "copy-btn";
@@ -101,7 +114,19 @@
       btn.dataset.text = text;
       btn.dataset.style = o.styleName || name;
     }
-    card.appendChild(btn);
+    actions.appendChild(btn);
+
+    if (o.png && text && !o.demo) {
+      const png = document.createElement("button");
+      png.type = "button";
+      png.className = "cursive-png-btn";
+      png.textContent = "PNG";
+      png.title = "Download as PNG image";
+      png.addEventListener("click", () => downloadTextPNG(text, o.pngName || name));
+      actions.appendChild(png);
+    }
+
+    card.appendChild(actions);
     return card;
   }
 
@@ -197,6 +222,38 @@
     return out;
   }
 
+  // Render any text (signature, word) onto a wide canvas, scaling the font
+  // down so long names still fit, and download it as a PNG.
+  function downloadTextPNG(text, label) {
+    const width = 1600, height = 640, pad = 120;
+    const canvas = document.createElement("canvas");
+    canvas.width = width; canvas.height = height;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, width, height);
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    let fontSize = 220;
+    ctx.font = "700 " + fontSize + "px " + GLYPH_FONT;
+    const measured = ctx.measureText(text).width;
+    if (measured > width - pad * 2) {
+      fontSize = Math.max(60, Math.floor(fontSize * (width - pad * 2) / measured));
+      ctx.font = "700 " + fontSize + "px " + GLYPH_FONT;
+    }
+    ctx.fillStyle = "#1a1a2e";
+    ctx.fillText(text, width / 2, height * 0.52);
+    const slug = String(label || "signature").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "signature";
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "cursive-" + slug + ".png";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }, "image/png");
+  }
+
   function downloadLetterPNG(ch, glyphPair) {
     const size = 1024;
     const canvas = document.createElement("canvas");
@@ -220,6 +277,27 @@
     }, "image/png");
   }
 
+  // Which case the letter panel's preview/copy/PNG act on: capital letters
+  // are what most "cursive s" searches want, but the pair is the default view.
+  let letterCase = "both";
+  const CASES = [
+    { id: "upper", label: "Capital" },
+    { id: "lower", label: "Lowercase" },
+    { id: "both",  label: "Both" }
+  ];
+
+  function caseGlyph(primary, ch) {
+    if (letterCase === "upper") return primary.upper;
+    if (letterCase === "lower") return primary.lower;
+    return primary.upper + " " + primary.lower;
+  }
+
+  function caseLabel(ch) {
+    if (letterCase === "upper") return "Capital " + ch + " in cursive";
+    if (letterCase === "lower") return "Lowercase " + ch.toLowerCase() + " in cursive";
+    return "Capital and lowercase " + ch + " in cursive";
+  }
+
   function selectLetter(ch, opts) {
     if (!el.letterPanel) return;
     $$(".cursive-letter-cell").forEach((cell) => {
@@ -233,34 +311,49 @@
     const stage = document.createElement("div");
     stage.className = "bubble-stage";
 
-    // Left: the big letter pair + actions.
+    // Left: the big letter + case toggle + actions.
     const figure = document.createElement("div");
     figure.className = "bubble-outline-card cursive-letter-figure";
 
+    const caseRow = document.createElement("div");
+    caseRow.className = "cursive-case-row";
+    CASES.forEach((c) => {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "vertical-chip" + (letterCase === c.id ? " active" : "");
+      chip.textContent = c.label;
+      chip.addEventListener("click", () => {
+        letterCase = c.id;
+        selectLetter(ch, { silent: true });
+      });
+      caseRow.appendChild(chip);
+    });
+    figure.appendChild(caseRow);
+
     const big = document.createElement("p");
     big.className = "cursive-letter-big";
-    big.textContent = primary.upper + " " + primary.lower;
+    big.textContent = caseGlyph(primary, ch);
     figure.appendChild(big);
 
     const tag = document.createElement("p");
     tag.className = "bubble-az-intro";
-    tag.textContent = "Capital and lowercase " + ch + " in cursive";
+    tag.textContent = caseLabel(ch);
     figure.appendChild(tag);
 
     const actions = document.createElement("div");
     actions.className = "bubble-actions";
-    const copyPair = document.createElement("button");
-    copyPair.type = "button";
-    copyPair.className = "bubble-btn bubble-btn-primary copy-btn";
-    copyPair.textContent = "Copy both";
-    copyPair.dataset.text = primary.upper + " " + primary.lower;
-    copyPair.dataset.style = primary.name;
-    actions.appendChild(copyPair);
+    const copyBtn = document.createElement("button");
+    copyBtn.type = "button";
+    copyBtn.className = "bubble-btn bubble-btn-primary copy-btn";
+    copyBtn.textContent = letterCase === "both" ? "Copy both" : "Copy " + (letterCase === "upper" ? primary.upper : primary.lower);
+    copyBtn.dataset.text = caseGlyph(primary, ch);
+    copyBtn.dataset.style = primary.name;
+    actions.appendChild(copyBtn);
     const dl = document.createElement("button");
     dl.type = "button";
     dl.className = "bubble-btn";
     dl.textContent = "Download PNG";
-    dl.addEventListener("click", () => downloadLetterPNG(ch, primary.upper + " " + primary.lower));
+    dl.addEventListener("click", () => downloadLetterPNG(ch, caseGlyph(primary, ch)));
     actions.appendChild(dl);
     figure.appendChild(actions);
 
@@ -376,6 +469,9 @@
      Name & signature studio
      --------------------------------------------------------------- */
 
+  let activeDecorator = null;   // one of D.signatureDecorators, null = None
+  let activeJoiner = ".";       // monogram-initials joiner
+
   function renderNames() {
     if (!el.nameResults) return;
     const raw = el.nameInput ? el.nameInput.value : "";
@@ -385,29 +481,82 @@
     const frag = document.createDocumentFragment();
     const seen = {};
     (D.signatures || []).forEach((preset) => {
-      const source = preset.initials ? initialsOf(name).split(" ").join(preset.joiner || ".") + (preset.joiner || ".") : name;
-      const out = renderPreset(source, preset);
+      // Trailing joiner only for the classic dotted form (O.G.); symbol
+      // joiners read better between initials only (O♡G, O&G).
+      const trail = activeJoiner === "." ? "." : "";
+      const source = preset.initials ? initialsOf(name).split(" ").join(activeJoiner) + trail : name;
+      // The flourish decorator styles the name itself; monogram initials
+      // stay clean so the joiner remains readable.
+      const out = renderPreset(source, preset, preset.initials ? null : activeDecorator);
       if (!out || seen[out]) return;
       seen[out] = true;
-      frag.appendChild(buildCard(preset.name, out, { demo: isDemo, styleName: preset.name }));
+      frag.appendChild(buildCard(preset.name, out, { demo: isDemo, styleName: preset.name, png: true, pngName: preset.name }));
     });
 
     el.nameResults.innerHTML = "";
     el.nameResults.appendChild(frag);
   }
 
-  function buildNameChips() {
-    if (!el.nameChips || !el.nameInput) return;
-    (D.nameChips || []).forEach((name) => {
-      const chip = document.createElement("button");
-      chip.type = "button";
-      chip.className = "vertical-chip cursive-quick-chip";
-      chip.textContent = name;
-      chip.addEventListener("click", () => {
-        el.nameInput.value = name;
+  // Chip-row control (same look as the vertical/tattoo control panels).
+  function chipRow(labelText, chips, isActive, onPick) {
+    const row = document.createElement("div");
+    row.className = "vertical-control-row";
+    const label = document.createElement("span");
+    label.className = "vertical-control-label";
+    label.textContent = labelText;
+    row.appendChild(label);
+    const wrap = document.createElement("div");
+    wrap.className = "vertical-mode-chips";
+    chips.forEach((chip) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "vertical-chip" + (isActive(chip) ? " active" : "");
+      btn.textContent = chip.label;
+      btn.addEventListener("click", () => {
+        onPick(chip);
+        $$(".vertical-chip", wrap).forEach((b) => b.classList.toggle("active", b === btn));
         renderNames();
       });
-      el.nameChips.appendChild(chip);
+      wrap.appendChild(btn);
+    });
+    row.appendChild(wrap);
+    return row;
+  }
+
+  function buildSignatureControls() {
+    if (!el.sigControls) return;
+    const decos = D.signatureDecorators || [];
+    el.sigControls.appendChild(chipRow(
+      "Flourish",
+      decos.map((d) => ({ label: d.name, value: d })),
+      (chip) => (activeDecorator ? activeDecorator.name : "None") === chip.value.name,
+      (chip) => { activeDecorator = chip.value.name === "None" ? null : chip.value; }
+    ));
+    el.sigControls.appendChild(chipRow(
+      "Monogram joiner",
+      (D.monogramJoiners || ["."]).map((j) => ({ label: "O" + j + "G", value: j })),
+      (chip) => chip.value === activeJoiner,
+      (chip) => { activeJoiner = chip.value; }
+    ));
+  }
+
+  // The popular-names gallery doubles as the studio's example picker.
+  function bindNameExamples() {
+    $$(".cursive-name-example").forEach((card) => {
+      const load = () => {
+        if (!el.nameInput) return;
+        el.nameInput.value = card.dataset.name || "";
+        renderNames();
+        el.nameInput.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.nameInput.focus({ preventScroll: true });
+      };
+      card.addEventListener("click", (e) => {
+        if (e.target.closest(".copy-btn")) return; // copy stays copy
+        load();
+      });
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); load(); }
+      });
     });
   }
 
@@ -433,7 +582,8 @@
 
     buildQuickRow();
     bindLetterGrid();
-    buildNameChips();
+    buildSignatureControls();
+    bindNameExamples();
 
     if (el.input) {
       const seeded = readUrlText();
