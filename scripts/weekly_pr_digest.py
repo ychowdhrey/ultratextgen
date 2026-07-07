@@ -45,6 +45,8 @@ LANE_RULES = [
     ("whatsapp/", "Platform pages"),
     ("x/", "Platform pages"),
     ("youtube/", "Platform pages"),
+    ("roblox/", "Platform pages"),
+    ("embed/", "Image backlinks"),
     ("assets/", "Image SEO"),
     ("data/library_opportunities", "Opportunity backlog"),
     ("data/", "Data / backlog"),
