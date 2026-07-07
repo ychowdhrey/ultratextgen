@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tattoo Fonts — Free Tattoo Lettering Generator (Preview Your Ink) | UltraTextGen</title>
-  <meta name="description" content="Tattoo fonts: type your name, word, or date and compare cursive, gothic, and script tattoo lettering before the needle. Free tattoo font generator — no app.">
+  <meta name="description" content="Tattoo fonts: compare cursive, gothic, and script lettering on your exact name, turn a date into roman numerals, and preview initials and symbols — free, before the needle.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/tattoo-fonts/">
 
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/tattoo-fonts/">
@@ -54,7 +54,14 @@
   "inLanguage": "en",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
-  "description": "Preview tattoo lettering before the needle: type a name, word, or date and compare cursive, gothic, fine italic, and typewriter tattoo fonts side by side — then screenshot your favorites and show your tattoo artist. Free, no app.",
+  "description": "Preview tattoo lettering before the needle: compare cursive, gothic, fine italic, and typewriter tattoo fonts on your exact name, convert a date into roman numerals, build letter monograms, and browse tattoo symbols with their meanings — then screenshot your favorites and show your tattoo artist. Free, no app.",
+  "featureList": [
+    "Compare 10 tattoo lettering styles on your exact name or word",
+    "Date and number to roman numerals converter with tattoo formats",
+    "Single letter and two-initial monogram generator",
+    "Tattoo symbol library with meanings",
+    "Ink test — preview lettering at real-world viewing sizes"
+  ],
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -89,6 +96,11 @@
       "@type": "Question",
       "name": "How do I show a lettering style to my tattoo artist?",
       "acceptedAnswer": { "@type": "Answer", "text": "Type your exact word (not a sample word) at the top of the page, screenshot the two or three renderings you like best, and bring them to your appointment. Say what you like about each — \"the connections in the cursive,\" \"the weight of the gothic\" — rather than asking for a pixel-perfect copy. A good artist takes the direction and redraws the lettering by hand for your skin and placement." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write a date in roman numerals for a tattoo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Convert each part of the date separately — day, month, year — and join them with a separator: 12 June 2020 becomes XII·VI·MMXX. The Date → Roman mode on this page does the conversion for you and lets you compare separators (dots, dashes, bars, stacked lines) and orders (day-month-year or month-day-year). Double-check the numerals with your artist before the appointment: a misconverted date is the single most common lettering-tattoo regret." }
     }
   ]
 }
@@ -127,26 +139,18 @@
   <div class="hero-inner">
     <div class="hero-card">
       <h1 class="hero-headline">Tattoo font generator</h1>
-      <p class="hero-tagline">Type the word, name, or date you're thinking of getting inked and compare tattoo lettering styles instantly — cursive, gothic, italic, typewriter. Screenshot the renderings you like and show them to your tattoo artist: they'll draw the final lettering, this page just helps you pick the direction.</p>
-      <div class="input-wrapper">
-        <textarea class="main-input" id="mainInput" placeholder="Type your text here..." maxlength="500" autofocus=""></textarea>
+      <p class="hero-tagline">Everything a lettering tattoo needs, in one place: compare tattoo fonts on your exact name or word, turn a date into roman numerals, build a letter monogram, or pick a small symbol with meaning. Screenshot what you like and show your tattoo artist — they'll draw the final lettering, this page helps you pick the direction.</p>
+      <div class="tattoo-mode-tabs" id="tattooModeTabs"></div>
+      <div class="input-wrapper" id="tattooTextWrap">
+        <textarea class="main-input" id="mainInput" placeholder="Type your name, word, or quote..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
-      <div class="decoration-section">
-        <div class="decoration-label">Add decoration to results</div>
-        <div class="decoration-tabs">
-          <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
-          <button class="decoration-tab" data-deco-tab="frames">Frames</button>
-          <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-        </div>
-        <div class="decoration-grid" id="decorationGrid"></div>
-      </div>
+      <div id="tattooControlPanel"></div>
     </div>
   </div>
 </section>
 
 <main class="container">
-  <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
   <div class="results-grid" id="resultsGrid"></div>
 
   <!-- Preview before the needle -->
@@ -218,6 +222,18 @@
     <p>To dig into one family before committing, the <a href="/category/cursive-fonts/">cursive fonts</a> and <a href="/category/gothic-fonts/">gothic fonts</a> pages break down every variant — and if your idea leans subtle rather than ornate, <a href="/category/italic-fonts/">italic fonts</a> covers the quiet end of the spectrum.</p>
   </section>
 
+  <!-- Dates, numerals, initials, symbols -->
+  <section class="editorial-section">
+    <h2>Dates in roman numerals, initials, and symbols</h2>
+    <p class="editorial-intro">Half of lettering tattoos aren't words at all — they're a date, a pair of initials, or a small symbol. The modes at the top of this page are built for exactly those jobs:</p>
+    <div class="block-example">
+      — <strong>Date → Roman</strong>: enter a date and get XII·VI·MMXX with your choice of separator (dots, dashes, bars, stacked) and order — then the same numerals in script, blackletter, and typewriter, plus plain-figure fonts<br>
+      — <strong>Letters &amp; initials</strong>: a single letter carries the whole design — compare your initial in every alphabet, or join two initials with ♡, ∞, or &amp;<br>
+      — <strong>Symbols</strong>: the small marks people actually get — semicolon (the story continues), infinity, crescent moon, anchor — each with its meaning
+    </div>
+    <p>Two honest warnings from the numbers side. First, <strong>verify the conversion</strong>: a misconverted roman-numeral date is the most common lettering regret, so have your artist double-check the numerals this page generates. Second, <strong>most script alphabets have no matching ornate digits</strong> — that's why dates usually switch to roman numerals or typewriter figures, and why mixing a cursive name with a plain date on a second line is a completely standard, good-looking solution.</p>
+  </section>
+
   <!-- From screenshot to artist -->
   <section class="editorial-section">
     <h2>From screenshot to tattoo artist</h2>
@@ -272,6 +288,7 @@
     <div class="faq-item"><button class="faq-question" type="button">Can I use these fonts as-is for my tattoo?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">No — and it matters to say so plainly. These Unicode renderings are a working base, not a stencil-ready design. They help you pick a direction — cursive, gothic, italic — and show it clearly to your tattoo artist. The artist then adapts the lettering to your skin: stroke weight, the connections between letters, the curve of the placement. Final lettering is their craft, not a generator's.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">What is the minimum size for fine-line lettering?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">The finer and more detailed the lettering, the more room it needs. Thin strokes and small loops tend to thicken and close up over the years — a fine-script word under half an inch tall can become unreadable. Simple rule: if you want it small, choose a simple style (italic, typewriter); if you want ornate cursive, give it space. Your artist will tell you the exact minimum size for your placement.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">How do I show a lettering style to my tattoo artist?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Type your exact word (not a sample word) at the top of the page, screenshot the two or three renderings you like best, and bring them to your appointment. Say what you like about each — "the connections in the cursive," "the weight of the gothic" — rather than asking for a pixel-perfect copy. A good artist takes the direction and redraws the lettering by hand for your skin and placement.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">How do I write a date in roman numerals for a tattoo?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Convert each part of the date separately — day, month, year — and join them with a separator: 12 June 2020 becomes XII·VI·MMXX. The Date → Roman mode on this page does the conversion for you and lets you compare separators (dots, dashes, bars, stacked lines) and orders (day-month-year or month-day-year). Double-check the numerals with your artist before the appointment: a misconverted date is the single most common lettering-tattoo regret.</div></div>
 
     <!-- Language Switcher -->
     <div class="lang-switcher" role="navigation" aria-label="Language switcher">
@@ -292,9 +309,12 @@
 <div class="copy-toast" id="copyToast">Copied!</div>
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<script src="/styles.js"></script>
-<script src="/renderer.js"></script>
-<script src="/script.js" defer=""></script>
-<script src="/symbol-explorer.js"></script>
+<script>window.UTG_TATTOO_MODE = true;</script>
+<script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
+<script src="/js/tattoo/tattooData.js" defer></script>
+<script src="/script.js" defer></script>
+<script src="/js/tattoo/tattooPageController.js" defer></script>
+<script src="/symbol-explorer.js" defer></script>
 <script src="/footer.js"></script>
 </body></html>

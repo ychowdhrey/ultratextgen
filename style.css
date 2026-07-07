@@ -4592,3 +4592,276 @@ body.dark-mode .deco-symbol-input {
   color: var(--text-dark, #e2e8f0);
   border-color: var(--border-dark, #334155);
 }
+
+/* ==========================================================================
+   TATTOO LETTERING STUDIO (/usecase/tattoo-fonts/)
+   Prefix: tattoo-*. Reuses .vertical-chip / .vertical-control-row for the
+   control panel and .style-card / .copy-btn for cards, like the decorator.
+   ========================================================================== */
+
+/* Generic hide utility (mode panels toggle it) */
+.u-hidden {
+  display: none !important;
+}
+
+/* Mode tabs — four big pills under the headline */
+.tattoo-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 16px 0 14px;
+}
+
+.tattoo-mode-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .15s, background .15s, box-shadow .15s;
+}
+
+.tattoo-mode-tab:hover {
+  border-color: var(--accent-purple);
+}
+
+.tattoo-mode-tab.active {
+  border-color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.08);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+
+.tattoo-mode-tab-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.tattoo-mode-tab-hint {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .tattoo-mode-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Control panel groups */
+.tattoo-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.tattoo-panel-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Date fields */
+.tattoo-date-fields {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tattoo-date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tattoo-date-field input {
+  width: 110px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.tattoo-date-field input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.tattoo-date-field-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* Letter picker */
+.tattoo-letter-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  gap: 5px;
+  min-width: 220px;
+}
+
+.tattoo-letter-btn {
+  padding: 7px 0;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s;
+}
+
+.tattoo-letter-btn:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+.tattoo-letter-btn.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+/* Results — cards with display-size previews */
+.tattoo-card {
+  align-items: center;
+}
+
+.tattoo-preview {
+  font-size: 1.8rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  transition: font-size .2s, filter .2s;
+}
+
+.tattoo-preview.is-sample {
+  color: var(--text-secondary);
+}
+
+/* Ink test: shrink previews toward real-world viewing sizes. The slight
+   blur on the smallest step approximates how ink spreads over the years. */
+.tattoo-size-arm .tattoo-preview {
+  font-size: 1.15rem;
+}
+
+.tattoo-size-room .tattoo-preview {
+  font-size: 0.85rem;
+  filter: blur(0.4px);
+}
+
+.tattoo-sample-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.tattoo-grid-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-top: 14px;
+}
+
+/* Aging badges — reuse the trust/safety tokens (green/amber, dark-aware) */
+.tattoo-badge {
+  font-size: 0.625rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tattoo-badge.is-safe {
+  color: var(--ts-safe);
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.tattoo-badge.is-roomy {
+  color: var(--ts-risk);
+  background: rgba(217, 119, 6, 0.1);
+}
+
+/* Symbol library */
+.tattoo-symbol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.tattoo-symbol-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 10px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.tattoo-symbol-tile:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Keep the tile surface on copy (override .glyph-copy.copied's purple fill,
+   which would drown the meaning caption) — signal with the border instead. */
+.tattoo-symbol-tile.copied {
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border-color: var(--ts-safe);
+  box-shadow: inset 0 0 0 1px var(--ts-safe);
+}
+
+.tattoo-symbol-glyph {
+  font-size: 1.9rem;
+  line-height: 1.1;
+}
+
+.tattoo-symbol-name {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.tattoo-second-select {
+  max-width: 220px;
+}
+
+/* Dark mode — chips/selects reused from vertical already have overrides;
+   tattoo-specific surfaces inherit the swapped custom properties above. */
+body.dark-mode .tattoo-mode-tab.active {
+  background: rgba(139, 92, 246, 0.16);
+}
+
+body.dark-mode .tattoo-badge.is-safe {
+  background: rgba(74, 222, 128, 0.12);
+}
+
+body.dark-mode .tattoo-badge.is-roomy {
+  background: rgba(251, 191, 36, 0.12);
+}
