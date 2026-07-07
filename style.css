@@ -2389,6 +2389,12 @@ a:hover {
   color: var(--accent, #6366f1);
 }
 
+/* Keep active chips readable while hovered — the hover rule above would
+   otherwise paint accent text on the accent background. */
+.vertical-chip.active:hover:not(:disabled) {
+  color: #fff;
+}
+
 .vertical-chip.active {
   background: var(--accent, #6366f1);
   border-color: var(--accent, #6366f1);
@@ -5106,4 +5112,46 @@ body.dark-mode .cursive-word-card {
   .cursive-letter-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); }
   .cursive-letter-big { font-size: 3.2rem; }
   .cursive-alphabet-row { font-size: 1.15rem; }
+}
+
+/* Cursive signature studio controls, card actions & interactive name cards */
+.cursive-sig-controls { margin: 10px 0 4px; }
+
+.cursive-case-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.cursive-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cursive-png-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cursive-png-btn:hover {
+  border-color: var(--accent-purple);
+  color: var(--text-primary);
+}
+
+.cursive-name-example { cursor: pointer; transition: border-color 0.15s ease, transform 0.15s ease; }
+
+.cursive-name-example:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
 }
