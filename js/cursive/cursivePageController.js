@@ -16,9 +16,29 @@
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
 
   const D = window.UTG_CURSIVE_DATA || {};
+
+  // Optional per-page localization table (see the translated cursive pages).
+  // Every user-facing string falls back to English, so the English page needs
+  // no cursiveI18n at all and behaves exactly as before.
+  const I18N = window.cursiveI18n || {};
+  function t(key, fallback) {
+    return I18N[key] != null ? I18N[key] : fallback;
+  }
+  // Look up a localized value in a nested table (e.g. I18N.presets['Script Hearts']).
+  function pick(table, id, fallback) {
+    const sec = I18N[table];
+    return (sec && sec[id] != null) ? sec[id] : fallback;
+  }
+  // Fill {placeholders} in a template string.
+  function fmt(str, map) {
+    return String(str).replace(/\{(\w+)\}/g, (m, k) => (map[k] != null ? map[k] : m));
+  }
+  // Display label for a registry style key ("Ultra Script" → localized name).
+  function styleLabel(name) { return pick("styles", name, name); }
+
   const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const GLYPH_FONT = "'Plus Jakarta Sans', 'Segoe UI Symbol', 'Noto Sans Symbols 2', sans-serif";
-  const DEMO_TEXT = "Hello";
+  const DEMO_TEXT = t("demoText", "Hello");
 
   const el = {
     input: $("#mainInput"),
@@ -106,10 +126,10 @@
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "copy-btn";
-    btn.textContent = "Copy";
+    btn.textContent = t("copy", "Copy");
     if (o.demo || !text) {
       btn.disabled = true;
-      btn.title = "Type your text above first";
+      btn.title = t("typeFirst", "Type your text above first");
     } else {
       btn.dataset.text = text;
       btn.dataset.style = o.styleName || name;
@@ -121,7 +141,7 @@
       png.type = "button";
       png.className = "cursive-png-btn";
       png.textContent = "PNG";
-      png.title = "Download as PNG image";
+      png.title = t("downloadPngTitle", "Download as PNG image");
       png.addEventListener("click", () => downloadTextPNG(text, o.pngName || name));
       actions.appendChild(png);
     }
@@ -147,14 +167,14 @@
       const out = renderWith(text, name);
       if (!out || seen[out]) return;
       seen[out] = true;
-      frag.appendChild(buildCard(name, out, { demo: isDemo, styleName: name }));
+      frag.appendChild(buildCard(styleLabel(name), out, { demo: isDemo, styleName: name }));
     });
 
     (D.presets || []).forEach((preset) => {
       const out = renderPreset(text, preset);
       if (!out || seen[out]) return;
       seen[out] = true;
-      frag.appendChild(buildCard(preset.name, out, { demo: isDemo, styleName: preset.name }));
+      frag.appendChild(buildCard(pick("presets", preset.name, preset.name), out, { demo: isDemo, styleName: preset.name }));
     });
 
     el.resultsGrid.innerHTML = "";
@@ -171,21 +191,22 @@
     const count = [...rendered].length;
     const note = document.createElement("span");
     note.className = "vertical-fit-count";
-    note.textContent = count + " characters";
+    note.textContent = count + " " + t("characters", "characters");
     el.fitRow.appendChild(note);
 
     (D.platformLimits || []).forEach((p) => {
       const ok = count <= p.limit;
       const badge = document.createElement("span");
       badge.className = "vertical-fit-badge " + (ok ? "fit" : "no-fit");
-      badge.textContent = (ok ? "✓ " : "✗ ") + p.label + " (" + p.limit + ")";
+      badge.textContent = (ok ? "✓ " : "✗ ") + pick("platformLimits", p.label, p.label) + " (" + p.limit + ")";
       el.fitRow.appendChild(badge);
     });
   }
 
   function buildQuickRow() {
     if (!el.quickRow || !el.input) return;
-    (D.quickWords || []).forEach((word) => {
+    const words = Array.isArray(I18N.quickWords) ? I18N.quickWords : (D.quickWords || []);
+    words.forEach((word) => {
       const chip = document.createElement("button");
       chip.type = "button";
       chip.className = "vertical-chip cursive-quick-chip";
@@ -281,9 +302,9 @@
   // are what most "cursive s" searches want, but the pair is the default view.
   let letterCase = "both";
   const CASES = [
-    { id: "upper", label: "Capital" },
-    { id: "lower", label: "Lowercase" },
-    { id: "both",  label: "Both" }
+    { id: "upper", label: t("caseUpper", "Capital") },
+    { id: "lower", label: t("caseLower", "Lowercase") },
+    { id: "both",  label: t("caseBoth", "Both") }
   ];
 
   function caseGlyph(primary, ch) {
@@ -293,9 +314,9 @@
   }
 
   function caseLabel(ch) {
-    if (letterCase === "upper") return "Capital " + ch + " in cursive";
-    if (letterCase === "lower") return "Lowercase " + ch.toLowerCase() + " in cursive";
-    return "Capital and lowercase " + ch + " in cursive";
+    if (letterCase === "upper") return fmt(t("labelUpper", "Capital {ch} in cursive"), { ch: ch });
+    if (letterCase === "lower") return fmt(t("labelLower", "Lowercase {ch} in cursive"), { ch: ch.toLowerCase() });
+    return fmt(t("labelBoth", "Capital and lowercase {ch} in cursive"), { ch: ch });
   }
 
   function selectLetter(ch, opts) {
@@ -345,14 +366,14 @@
     const copyBtn = document.createElement("button");
     copyBtn.type = "button";
     copyBtn.className = "bubble-btn bubble-btn-primary copy-btn";
-    copyBtn.textContent = letterCase === "both" ? "Copy both" : "Copy " + (letterCase === "upper" ? primary.upper : primary.lower);
+    copyBtn.textContent = letterCase === "both" ? t("copyBoth", "Copy both") : t("copy", "Copy") + " " + (letterCase === "upper" ? primary.upper : primary.lower);
     copyBtn.dataset.text = caseGlyph(primary, ch);
     copyBtn.dataset.style = primary.name;
     actions.appendChild(copyBtn);
     const dl = document.createElement("button");
     dl.type = "button";
     dl.className = "bubble-btn";
-    dl.textContent = "Download PNG";
+    dl.textContent = t("downloadPng", "Download PNG");
     dl.addEventListener("click", () => downloadLetterPNG(ch, caseGlyph(primary, ch)));
     actions.appendChild(dl);
     figure.appendChild(actions);
@@ -362,7 +383,7 @@
     detail.className = "bubble-detail";
     const title = document.createElement("h3");
     title.className = "bubble-detail-title";
-    title.textContent = ch + " in cursive — every style, click to copy";
+    title.textContent = fmt(t("everyStyle", "{ch} in cursive — every style, click to copy"), { ch: ch });
     detail.appendChild(title);
 
     const list = document.createElement("div");
@@ -378,10 +399,10 @@
         glyph.textContent = v[kind];
         const meta = document.createElement("span");
         meta.className = "bubble-variant-name";
-        meta.textContent = v.name.replace(/^Ultra /, "") + (kind === "upper" ? " — capital" : " — lowercase");
+        meta.textContent = pick("styles", v.name, v.name.replace(/^Ultra /, "")) + (kind === "upper" ? t("suffixCapital", " — capital") : t("suffixLowercase", " — lowercase"));
         const cta = document.createElement("span");
         cta.className = "bubble-variant-copy";
-        cta.textContent = "Copy";
+        cta.textContent = t("copy", "Copy");
         row.appendChild(glyph); row.appendChild(meta); row.appendChild(cta);
         list.appendChild(row);
       });
@@ -399,10 +420,10 @@
       glyph.textContent = glyphText;
       const meta = document.createElement("span");
       meta.className = "bubble-variant-name";
-      meta.textContent = acc.name + " accent";
+      meta.textContent = fmt(t("accentLabel", "{name} accent"), { name: pick("accents", acc.name, acc.name) });
       const cta = document.createElement("span");
       cta.className = "bubble-variant-copy";
-      cta.textContent = "Copy";
+      cta.textContent = t("copy", "Copy");
       row.appendChild(glyph); row.appendChild(meta); row.appendChild(cta);
       list.appendChild(row);
     });
@@ -437,7 +458,7 @@
     wrap.className = "bubble-print-wrap";
     const h = document.createElement("h2");
     h.className = "bubble-print-title";
-    h.textContent = "Cursive alphabet practice sheet — ultratextgen.com";
+    h.textContent = t("practiceTitle", "Cursive alphabet practice sheet — ultratextgen.com");
     wrap.appendChild(h);
 
     const sheet = document.createElement("div");
@@ -475,7 +496,7 @@
   function renderNames() {
     if (!el.nameResults) return;
     const raw = el.nameInput ? el.nameInput.value : "";
-    const name = raw.trim() ? raw.trim() : "Olivia";
+    const name = raw.trim() ? raw.trim() : t("demoName", "Olivia");
     const isDemo = !raw.trim();
 
     const frag = document.createDocumentFragment();
@@ -490,7 +511,7 @@
       const out = renderPreset(source, preset, preset.initials ? null : activeDecorator);
       if (!out || seen[out]) return;
       seen[out] = true;
-      frag.appendChild(buildCard(preset.name, out, { demo: isDemo, styleName: preset.name, png: true, pngName: preset.name }));
+      frag.appendChild(buildCard(pick("signatures", preset.name, preset.name), out, { demo: isDemo, styleName: preset.name, png: true, pngName: preset.name }));
     });
 
     el.nameResults.innerHTML = "";
@@ -527,13 +548,13 @@
     if (!el.sigControls) return;
     const decos = D.signatureDecorators || [];
     el.sigControls.appendChild(chipRow(
-      "Flourish",
-      decos.map((d) => ({ label: d.name, value: d })),
+      t("flourishLabel", "Flourish"),
+      decos.map((d) => ({ label: pick("decorators", d.name, d.name), value: d })),
       (chip) => (activeDecorator ? activeDecorator.name : "None") === chip.value.name,
       (chip) => { activeDecorator = chip.value.name === "None" ? null : chip.value; }
     ));
     el.sigControls.appendChild(chipRow(
-      "Monogram joiner",
+      t("monogramLabel", "Monogram joiner"),
       (D.monogramJoiners || ["."]).map((j) => ({ label: "O" + j + "G", value: j })),
       (chip) => chip.value === activeJoiner,
       (chip) => { activeJoiner = chip.value; }
