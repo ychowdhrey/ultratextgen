@@ -9,6 +9,10 @@
      date    — date or number → roman numerals + plain-figure fonts
      letters — single letters and two-initial monograms
      symbols — copyable tattoo symbols with their meanings
+
+   Localized pages define window.tattooI18n before this script loads (same
+   pattern as window.verticalI18n / window.zalgoI18n). Missing keys fall
+   back to the built-in English strings.
    ========================================================================== */
 
 (function () {
@@ -19,20 +23,40 @@
   const DATA = window.UTG_TATTOO_DATA;
   if (!Render || !DATA) return;
 
-  const SAMPLE_TEXT = 'Sofia';
+  const I18N = window.tattooI18n || {};
+  function t(key, fallback) {
+    return I18N[key] != null ? I18N[key] : fallback;
+  }
+  /* Lookup in a nested i18n table (e.g. I18N.symbols['∞']). */
+  function pick(table, id, fallback) {
+    const sec = I18N[table];
+    return (sec && sec[id] != null) ? sec[id] : fallback;
+  }
+  /* Lookup a field of a nested i18n record (e.g. I18N.lettering[key].note). */
+  function pickField(table, id, field, fallback) {
+    const sec = I18N[table];
+    const item = sec && sec[id];
+    return (item && item[field] != null) ? item[field] : fallback;
+  }
+
+  const SAMPLE_TEXT = t('sampleName', 'Sofia');
   const SAMPLE_DATE = { d: 12, m: 6, y: 2020 };
 
   const MODES = [
-    { id: 'names',   label: 'Names & words',   hint: 'Type a name, word or quote' },
-    { id: 'date',    label: 'Date → Roman',    hint: 'Turn a date or number into roman numerals' },
-    { id: 'letters', label: 'Letters & initials', hint: 'Single letters and monograms' },
-    { id: 'symbols', label: 'Symbols',         hint: 'Small symbols with meaning' }
+    { id: 'names',   label: t('modeNamesLabel', 'Names & words'),
+      hint: t('modeNamesHint', 'Type a name, word or quote') },
+    { id: 'date',    label: t('modeDateLabel', 'Date → Roman'),
+      hint: t('modeDateHint', 'Turn a date or number into roman numerals') },
+    { id: 'letters', label: t('modeLettersLabel', 'Letters & initials'),
+      hint: t('modeLettersHint', 'Single letters and monograms') },
+    { id: 'symbols', label: t('modeSymbolsLabel', 'Symbols'),
+      hint: t('modeSymbolsHint', 'Small symbols with meaning') }
   ];
 
   const SIZE_VIEWS = [
-    { id: 'close', label: 'Close-up' },
-    { id: 'arm',   label: 'At arm’s length' },
-    { id: 'room',  label: 'Across the room' }
+    { id: 'close', label: t('sizeClose', 'Close-up') },
+    { id: 'arm',   label: t('sizeArm', 'At arm’s length') },
+    { id: 'room',  label: t('sizeRoom', 'Across the room') }
   ];
 
   /* ---- State ---- */
@@ -95,10 +119,10 @@
     const info = el('div', 'style-info');
     const nameRow = el('div', 'style-name');
     nameRow.appendChild(el('span', null, opts.label));
-    if (opts.family) nameRow.appendChild(el('span', 'style-tag', opts.family));
+    if (opts.family) nameRow.appendChild(el('span', 'style-tag', pick('families', opts.family, opts.family)));
     if (opts.hold) {
       nameRow.appendChild(el('span', 'tattoo-badge ' + (opts.hold === 'safe' ? 'is-safe' : 'is-roomy'),
-        opts.hold === 'safe' ? 'holds up small' : 'needs room'));
+        opts.hold === 'safe' ? t('badgeSafe', 'holds up small') : t('badgeRoomy', 'needs room')));
     }
     info.appendChild(nameRow);
 
@@ -109,7 +133,7 @@
     info.appendChild(preview);
     card.appendChild(info);
 
-    const btn = el('button', 'copy-btn', 'Copy');
+    const btn = el('button', 'copy-btn', t('copy', 'Copy'));
     btn.type = 'button';
     btn.dataset.text = opts.text;
     if (opts.styleKey) btn.dataset.style = opts.styleKey;
@@ -133,15 +157,19 @@
     const input = $('#mainInput');
     const raw = input ? input.value.trim() : '';
     const text = raw || SAMPLE_TEXT;
-    if (!raw) grid.appendChild(sampleHint('Showing “' + SAMPLE_TEXT + '” — type your name, word or quote above.'));
+    if (!raw) {
+      grid.appendChild(sampleHint(
+        t('sampleHintName', 'Showing “{text}” — type your name, word or quote above.')
+          .replace('{text}', SAMPLE_TEXT)));
+    }
 
     DATA.LETTERING.forEach(function (entry) {
       if (!styleFor(entry.key)) return;
       grid.appendChild(buildCard({
-        label: entry.label,
+        label: pickField('lettering', entry.key, 'label', entry.label),
         family: entry.family,
         hold: entry.hold,
-        note: entry.note,
+        note: pickField('lettering', entry.key, 'note', entry.note),
         text: applyStyle(text, entry.key),
         styleKey: entry.key,
         sample: !raw
@@ -182,30 +210,31 @@
     const state = dateParts();
     const sep = currentSeparator();
     if (state.sample) {
-      grid.appendChild(sampleHint('Showing a sample date (12 · 6 · 2020) — enter your date or number above.'));
+      grid.appendChild(sampleHint(
+        t('sampleHintDate', 'Showing a sample date (12 · 6 · 2020) — enter your date or number above.')));
     }
 
     const romanParts = state.parts.map(toRoman);
     if (romanParts.some(function (p) { return p === null; })) {
-      grid.appendChild(sampleHint('Roman numerals cover 1–3999 — check the values above.'));
+      grid.appendChild(sampleHint(t('romanRange', 'Roman numerals cover 1–3999 — check the values above.')));
       return;
     }
 
-    grid.appendChild(gridHeading('Roman numerals'));
+    grid.appendChild(gridHeading(t('headingRoman', 'Roman numerals')));
     const romanPlain = romanParts.join(sep.ch);
     DATA.ROMAN_STYLES.forEach(function (entry) {
       if (entry.key && !styleFor(entry.key)) return;
       grid.appendChild(buildCard({
-        label: entry.label,
+        label: pickField('roman', entry.label, 'label', entry.label),
         family: 'Roman',
-        note: entry.note,
+        note: pickField('roman', entry.label, 'note', entry.note),
         text: entry.key ? applyStyle(romanPlain, entry.key) : romanPlain,
         styleKey: entry.key || '',
         sample: state.sample
       }));
     });
 
-    grid.appendChild(gridHeading('Plain figures'));
+    grid.appendChild(gridHeading(t('headingFigures', 'Plain figures')));
     const digitsPlain = state.parts
       .map(function (n, i) {
         // Two-digit day/month (12.06.2020) — the standard tattoo date format.
@@ -217,9 +246,9 @@
         return Array.from(font.digits)[Number(dch)] || dch;
       });
       grid.appendChild(buildCard({
-        label: font.label,
+        label: pickField('digits', font.label, 'label', font.label),
         family: 'Figures',
-        note: font.note,
+        note: pickField('digits', font.label, 'note', font.note),
         text: text,
         sample: state.sample
       }));
@@ -244,7 +273,7 @@
       const plain = monoSecond ? monoFirst + joiner.ch + monoSecond : monoFirst;
       const text = applyStyle(plain, entry.key);
       grid.appendChild(buildCard({
-        label: entry.label,
+        label: pickField('lettering', entry.key, 'label', entry.label),
         family: entry.family,
         hold: entry.hold,
         text: text,
@@ -258,15 +287,16 @@
      -------------------------------------------------------------------------- */
   function renderSymbols(grid) {
     DATA.SYMBOL_GROUPS.forEach(function (group) {
-      grid.appendChild(gridHeading(group.label));
+      grid.appendChild(gridHeading(pick('groups', group.id, group.label)));
       const wrap = el('div', 'tattoo-symbol-grid');
       group.items.forEach(function (item) {
+        const name = pick('symbols', item.ch, item.name);
         const tile = el('button', 'glyph-copy tattoo-symbol-tile');
         tile.type = 'button';
         tile.dataset.text = item.ch;
-        tile.setAttribute('aria-label', 'Copy ' + item.name);
+        tile.setAttribute('aria-label', t('copyAria', 'Copy {name}').replace('{name}', name));
         tile.appendChild(el('span', 'tattoo-symbol-glyph', item.ch));
-        tile.appendChild(el('span', 'tattoo-symbol-name', item.name));
+        tile.appendChild(el('span', 'tattoo-symbol-name', name));
         wrap.appendChild(tile);
       });
       grid.appendChild(wrap);
@@ -314,8 +344,8 @@
 
   function setMode(next) {
     mode = next;
-    $$('.tattoo-mode-tab').forEach(function (t) {
-      t.classList.toggle('active', t.dataset.mode === mode);
+    $$('.tattoo-mode-tab').forEach(function (t2) {
+      t2.classList.toggle('active', t2.dataset.mode === mode);
     });
     const textWrap = $('#tattooTextWrap');
     if (textWrap) textWrap.classList.toggle('u-hidden', mode !== 'names');
@@ -359,7 +389,7 @@
     // The ink test applies to names + letters — the "will it stay readable?" check.
     const panel = el('div', 'tattoo-control-group');
     panel.dataset.tattooSize = '1';
-    panel.appendChild(chipRow('Ink test', SIZE_VIEWS,
+    panel.appendChild(chipRow(t('inkTest', 'Ink test'), SIZE_VIEWS,
       function (chip) { return chip.id === sizeView; },
       function (chip) { sizeView = chip.id; }));
     host.appendChild(panel);
@@ -370,7 +400,7 @@
     panel.dataset.tattooPanel = 'date';
 
     const inputRow = el('div', 'vertical-control-row');
-    inputRow.appendChild(el('span', 'vertical-control-label', 'Your date'));
+    inputRow.appendChild(el('span', 'vertical-control-label', t('yourDate', 'Your date')));
     const fields = el('div', 'tattoo-date-fields');
 
     function numField(id, placeholder, label, max) {
@@ -388,17 +418,23 @@
       return wrap;
     }
 
-    fields.appendChild(numField('tattooDay', '12', 'Day', 31));
-    fields.appendChild(numField('tattooMonth', '6', 'Month', 12));
-    fields.appendChild(numField('tattooYear', '2020', 'Year or number', 3999));
+    fields.appendChild(numField('tattooDay', '12', t('day', 'Day'), 31));
+    fields.appendChild(numField('tattooMonth', '6', t('month', 'Month'), 12));
+    fields.appendChild(numField('tattooYear', '2020', t('yearOrNumber', 'Year or number'), 3999));
     inputRow.appendChild(fields);
     panel.appendChild(inputRow);
 
-    panel.appendChild(chipRow('Order', DATA.DATE_ORDERS,
+    panel.appendChild(chipRow(t('order', 'Order'),
+      DATA.DATE_ORDERS.map(function (o) {
+        return { id: o.id, label: pick('orders', o.id, o.label) };
+      }),
       function (chip) { return chip.id === dateOrder; },
       function (chip) { dateOrder = chip.id; }));
 
-    panel.appendChild(chipRow('Separator', DATA.DATE_SEPARATORS,
+    panel.appendChild(chipRow(t('separator', 'Separator'),
+      DATA.DATE_SEPARATORS.map(function (s) {
+        return { id: s.id, label: pick('seps', s.id, s.label) };
+      }),
       function (chip) { return chip.id === dateSep; },
       function (chip) { dateSep = chip.id; }));
 
@@ -412,7 +448,7 @@
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
     const firstRow = el('div', 'vertical-control-row');
-    firstRow.appendChild(el('span', 'vertical-control-label', 'Your letter'));
+    firstRow.appendChild(el('span', 'vertical-control-label', t('yourLetter', 'Your letter')));
     const letterGrid = el('div', 'tattoo-letter-grid');
     alphabet.forEach(function (letter) {
       const btn = el('button', 'tattoo-letter-btn' + (letter === monoFirst ? ' active' : ''), letter);
@@ -430,14 +466,14 @@
     panel.appendChild(firstRow);
 
     const secondRow = el('div', 'vertical-control-row');
-    secondRow.appendChild(el('span', 'vertical-control-label', 'Second initial'));
+    secondRow.appendChild(el('span', 'vertical-control-label', t('secondInitial', 'Second initial')));
     const secondWrap = el('div', 'vertical-mode-chips');
     const select = document.createElement('select');
     select.className = 'vertical-layout-select tattoo-second-select';
-    select.setAttribute('aria-label', 'Second initial');
+    select.setAttribute('aria-label', t('secondInitial', 'Second initial'));
     const noneOpt = document.createElement('option');
     noneOpt.value = '';
-    noneOpt.textContent = 'None — single letter';
+    noneOpt.textContent = t('secondNone', 'None — single letter');
     select.appendChild(noneOpt);
     alphabet.forEach(function (letter) {
       const opt = document.createElement('option');
@@ -454,7 +490,10 @@
     secondRow.appendChild(secondWrap);
     panel.appendChild(secondRow);
 
-    const joinerRow = chipRow('Joined by', DATA.JOINERS,
+    const joinerRow = chipRow(t('joinedBy', 'Joined by'),
+      DATA.JOINERS.map(function (j) {
+        return { id: j.id, label: pick('joiners', j.id, j.label), ch: j.ch };
+      }),
       function (chip) { return chip.id === monoJoiner; },
       function (chip) { monoJoiner = chip.id; });
     joinerRow.classList.add('vertical-divider-row', 'disabled-row');
@@ -467,7 +506,7 @@
     const panel = el('div', 'tattoo-control-group u-hidden');
     panel.dataset.tattooPanel = 'symbols';
     panel.appendChild(el('p', 'tattoo-panel-note',
-      'Tap any symbol to copy it — pair one with a name or date, or wear it alone.'));
+      t('symbolsNote', 'Tap any symbol to copy it — pair one with a name or date, or wear it alone.')));
     host.appendChild(panel);
   }
 

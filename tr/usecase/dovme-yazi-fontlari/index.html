@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dövme Yazı Fontları — Dövmeni Mürekkepten Önce Test Et | UltraTextGen</title>
-  <meta name="description" content="Dövme yazı fontları: kelimeni, ismini veya tarihini yaz; el yazısı, gotik ve italik dövme yazılarını iğneden önce karşılaştır. Ekran görüntüsünü dövmecine göster.">
+  <meta name="description" content="Dövme yazı fontları: el yazısı, gotik ve script stillerini kendi isminde karşılaştır, tarihi Roma rakamına çevir, sembolleri iğneden önce ücretsiz önizle.">
   <link rel="canonical" href="https://ultratextgen.com/tr/usecase/dovme-yazi-fontlari/">
 
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/tattoo-fonts/">
@@ -49,13 +49,30 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Dövme Yazı Fontları",
-  "alternateName": ["Dövme Yazıları", "Dövme Fontları", "Dövme Yazı Tipleri", "Dövme Yazısı Oluşturucu", "Dövme Yazı Stilleri"],
+  "alternateName": [
+    "Dövme Yazıları",
+    "Dövme Fontları",
+    "Dövme Yazı Tipleri",
+    "Dövme Yazısı Oluşturucu",
+    "Dövme Yazı Stilleri"
+  ],
   "url": "https://ultratextgen.com/tr/usecase/dovme-yazi-fontlari/",
   "inLanguage": "tr",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
-  "description": "Dövme fikrindeki yazıyı iğneden önce önizle: kelimeni, ismini veya tarihini yaz; el yazısı, gotik, italik ve daktilo dövme yazı fontlarını karşılaştır — ekran görüntüsünü dövme sanatçına göster. Ücretsiz, uygulamasız.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" }
+  "description": "Dövme yazını iğneden önce önizle: el yazısı, gotik, ince italik ve daktilo dövme yazı fontlarını kendi isminde karşılaştır, tarihi Roma rakamlarına çevir, harf monogramları kur ve anlamlarıyla birlikte dövme sembollerine göz at — sonra en beğendiklerinin ekran görüntüsünü al ve dövme sanatçına göster. Ücretsiz, uygulamasız.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TRY"
+  },
+  "featureList": [
+    "10 dövme yazı stilini kendi isminde veya kelimende karşılaştır",
+    "Dövme formatlarıyla tarih ve sayıdan Roma rakamına çevirici",
+    "Tek harf ve çift baş harfli monogram oluşturucu",
+    "Anlamlarıyla birlikte dövme sembol kütüphanesi",
+    "Mürekkep testi — yazıyı gerçek bakış mesafelerinde önizle"
+  ]
 }
 </script>
 
@@ -68,27 +85,50 @@
     {
       "@type": "Question",
       "name": "Dövme yazı fontu nasıl seçilir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Görünüşten değil, anlamdan yola çık. İsim veya sevgi sözü → el yazısı: sıcak ve zamansız. Güçlü tek kelime, motto → gotik: yoğun ve iddialı. Kısa bir söz → ince italik: sade ve zarif. Tarih → Roma rakamları veya daktilo stili. Metnini sayfanın en üstüne yaz, stilleri yan yana karşılaştır ve içine en çok işleyen iki üç tanesini ayır — son kararı dövme sanatçınla birlikte verirsin." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Görünüşten değil, anlamdan yola çık. İsim veya sevgi sözü → el yazısı: sıcak ve zamansız. Güçlü tek kelime, motto → gotik: yoğun ve iddialı. Kısa bir söz → ince italik: sade ve zarif. Tarih → Roma rakamları veya daktilo stili. Metnini sayfanın en üstüne yaz, stilleri yan yana karşılaştır ve içine en çok işleyen iki üç tanesini ayır — son kararı dövme sanatçınla birlikte verirsin."
+      }
     },
     {
       "@type": "Question",
       "name": "İsim dövmesi için hangi yazı tipi kullanılır?",
-      "acceptedAnswer": { "@type": "Answer", "text": "İsim dövmesinin klasiği el yazısıdır: birbirine bağlanan harfler kişisel, elle yazılmış bir hava verir ve yıllar içinde iyi yaşlanır. Kalın bir script (𝓓𝓮𝓯𝓷𝓮) daha güçlü durur, ince bir script (𝒟𝑒𝒻𝓃𝑒) daha narin. İsim kısaysa ve karakter istiyorsan gotiği de dene — chicano tarzında çok yaygındır. Karar vermeden önce ikisini de bu sayfada kendi isminle karşılaştır." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İsim dövmesinin klasiği el yazısıdır: birbirine bağlanan harfler kişisel, elle yazılmış bir hava verir ve yıllar içinde iyi yaşlanır. Kalın bir script (𝓓𝓮𝓯𝓷𝓮) daha güçlü durur, ince bir script (𝒟𝑒𝒻𝓃𝑒) daha narin. İsim kısaysa ve karakter istiyorsan gotiği de dene — chicano tarzında çok yaygındır. Karar vermeden önce ikisini de bu sayfada kendi isminle karşılaştır."
+      }
     },
     {
       "@type": "Question",
       "name": "Bu fontlar dövmede olduğu gibi kullanılabilir mi?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Hayır — ve bunu açıkça söylemek gerekiyor: bu Unicode stiller bir çalışma tabanıdır, mürekkebe hazır bir çizim değil. Sana yön seçtirir — el yazısı mı, gotik mi, italik mi — ve bu yönü dövmecine net biçimde gösterme imkânı verir. Sonrasını sanatçı devralır: çizgi kalınlığını, harf bağlantılarını ve yerleştirilecek bölgenin kavisini tenine göre yeniden çizer. Son harf tasarımı onun zanaatıdır." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır — ve bunu açıkça söylemek gerekiyor: bu Unicode stiller bir çalışma tabanıdır, mürekkebe hazır bir çizim değil. Sana yön seçtirir — el yazısı mı, gotik mi, italik mi — ve bu yönü dövmecine net biçimde gösterme imkânı verir. Sonrasını sanatçı devralır: çizgi kalınlığını, harf bağlantılarını ve yerleştirilecek bölgenin kavisini tenine göre yeniden çizer. Son harf tasarımı onun zanaatıdır."
+      }
     },
     {
       "@type": "Question",
       "name": "İnce yazılı dövme için minimum boyut ne olmalı?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yazı inceldikçe ihtiyaç duyduğu alan büyür. Çok ince çizgiler ve küçük kıvrımlar yıllar içinde kalınlaşıp kapanma eğilimindedir — bir santimden alçak ince script bir kelime zamanla okunmaz hâle gelebilir. Basit kural: küçük istiyorsan sade bir stil seç (italik, daktilo); süslü el yazısı istiyorsan yer ayır. Kesin minimum boyutu, seçtiğin bölgeye göre dövme sanatçın söyler." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yazı inceldikçe ihtiyaç duyduğu alan büyür. Çok ince çizgiler ve küçük kıvrımlar yıllar içinde kalınlaşıp kapanma eğilimindedir — bir santimden alçak ince script bir kelime zamanla okunmaz hâle gelebilir. Basit kural: küçük istiyorsan sade bir stil seç (italik, daktilo); süslü el yazısı istiyorsan yer ayır. Kesin minimum boyutu, seçtiğin bölgeye göre dövme sanatçın söyler."
+      }
     },
     {
       "@type": "Question",
       "name": "Seçtiğim stili dövmecime nasıl gösteririm?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sayfanın üstüne tam kelimeni yaz (örnek bir kelime değil — harfler her şeyi değiştirir), en beğendiğin iki üç stilin ekran görüntüsünü al ve randevuya götür. Her birinde neyi sevdiğini söyle — «el yazısındaki bağlantılar», «gotiğin kalınlığı» — birebir kopya istemek yerine. Türkçe karakterlere dikkat: ş, ı ve ğ Unicode stillerde çoğunlukla normal harf olarak kalır; dövmecine belirt, son çizimde bunları sorunsuz işler." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sayfanın üstüne tam kelimeni yaz (örnek bir kelime değil — harfler her şeyi değiştirir), en beğendiğin iki üç stilin ekran görüntüsünü al ve randevuya götür. Her birinde neyi sevdiğini söyle — «el yazısındaki bağlantılar», «gotiğin kalınlığı» — birebir kopya istemek yerine. Türkçe karakterlere dikkat: ş, ı ve ğ Unicode stillerde çoğunlukla normal harf olarak kalır; dövmecine belirt, son çizimde bunları sorunsuz işler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dövme için tarih Roma rakamlarıyla nasıl yazılır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tarihin her parçasını — gün, ay, yıl — ayrı ayrı çevir ve bir ayraçla birleştir: 12 Haziran 2020, XII·VI·MMXX olur. Bu sayfadaki Tarih → Romen modu çevirmeyi senin yerine yapar; ayraçları (nokta, tire, çizgi, alt alta satırlar) ve sıralamaları (gün-ay-yıl veya ay-gün-yıl) karşılaştırmanı sağlar. Randevudan önce rakamları dövme sanatçınla bir kez daha kontrol et: yanlış çevrilmiş tarih, yazı dövmelerinde en sık görülen pişmanlıktır."
+      }
     }
   ]
 }
@@ -125,26 +165,18 @@
   <div class="hero-inner">
     <div class="hero-card">
       <h1 class="hero-headline">Dövme yazı fontları</h1>
-      <p class="hero-tagline">Dövme fikrindeki kelimeyi, ismi veya tarihi yaz; stilleri anında karşılaştır — el yazısı, gotik, italik, daktilo. Beğendiğin dövme yazılarının ekran görüntüsünü al ve dövmecine göster: son harf çizimini o yapar, bu sayfa sana yönü seçtirir.</p>
-      <div class="input-wrapper">
-        <textarea class="main-input" id="mainInput" placeholder="Metnini buraya yaz..." maxlength="500" autofocus=""></textarea>
+      <p class="hero-tagline">Yazı dövmesinin ihtiyacı olan her şey tek yerde: dövme yazı fontlarını kendi isminde veya kelimende karşılaştır, tarihi Roma rakamına çevir, harflerden monogram kur ya da anlamı olan küçük bir sembol seç. Beğendiklerinin ekran görüntüsünü al ve dövme sanatçına göster — son harf çizimini o yapar, bu sayfa sana yönü seçtirir.</p>
+      <div class="tattoo-mode-tabs" id="tattooModeTabs"></div>
+      <div class="input-wrapper" id="tattooTextWrap">
+        <textarea class="main-input" id="mainInput" placeholder="İsmini, kelimeni veya sözünü yaz..." maxlength="500" autofocus=""></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
-      <div class="decoration-section">
-        <div class="decoration-label">Sonuca süsleme ekle</div>
-        <div class="decoration-tabs">
-          <button class="decoration-tab active" data-deco-tab="symbols">Semboller</button>
-          <button class="decoration-tab" data-deco-tab="frames">Çerçeveler</button>
-          <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
-        </div>
-        <div class="decoration-grid" id="decorationGrid"></div>
-      </div>
+      <div id="tattooControlPanel"></div>
     </div>
   </div>
 </section>
 
 <main class="container">
-  <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
   <div class="results-grid" id="resultsGrid"></div>
 
   <!-- İğneden önce önizle -->
@@ -240,6 +272,8 @@
     <div class="faq-item"><button class="faq-question" type="button">Bu fontlar dövmede olduğu gibi kullanılabilir mi?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Hayır — ve bunu açıkça söylemek gerekiyor: bu Unicode stiller bir çalışma tabanıdır, mürekkebe hazır bir çizim değil. Sana yön seçtirir — el yazısı mı, gotik mi, italik mi — ve bu yönü dövmecine net biçimde gösterme imkânı verir. Sonrasını sanatçı devralır: çizgi kalınlığını, harf bağlantılarını ve yerleştirilecek bölgenin kavisini tenine göre yeniden çizer. Son harf tasarımı onun zanaatıdır.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">İnce yazılı dövme için minimum boyut ne olmalı?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Yazı inceldikçe ihtiyaç duyduğu alan büyür. Çok ince çizgiler ve küçük kıvrımlar yıllar içinde kalınlaşıp kapanma eğilimindedir — bir santimden alçak ince script bir kelime zamanla okunmaz hâle gelebilir. Basit kural: küçük istiyorsan sade bir stil seç (italik, daktilo); süslü el yazısı istiyorsan yer ayır. Kesin minimum boyutu, seçtiğin bölgeye göre dövme sanatçın söyler.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Seçtiğim stili dövmecime nasıl gösteririm?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Sayfanın üstüne tam kelimeni yaz (örnek bir kelime değil — harfler her şeyi değiştirir), en beğendiğin iki üç stilin ekran görüntüsünü al ve randevuya götür. Her birinde neyi sevdiğini söyle — «el yazısındaki bağlantılar», «gotiğin kalınlığı» — birebir kopya istemek yerine. Türkçe karakterlere dikkat: ş, ı ve ğ Unicode stillerde çoğunlukla normal harf olarak kalır; dövmecine belirt, son çizimde bunları sorunsuz işler.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Dövme için tarih Roma rakamlarıyla nasıl yazılır?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Tarihin her parçasını — gün, ay, yıl — ayrı ayrı çevir ve bir ayraçla birleştir: 12 Haziran 2020, XII·VI·MMXX olur. Bu sayfadaki Tarih → Romen modu çevirmeyi senin yerine yapar; ayraçları (nokta, tire, çizgi, alt alta satırlar) ve sıralamaları (gün-ay-yıl veya ay-gün-yıl) karşılaştırmanı sağlar. Randevudan önce rakamları dövme sanatçınla bir kez daha kontrol et: yanlış çevrilmiş tarih, yazı dövmelerinde en sık görülen pişmanlıktır.</div></div>
+
 
     <!-- Language Switcher -->
     <div class="lang-switcher" role="navigation" aria-label="Language switcher">
@@ -259,9 +293,234 @@
 
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<script src="/styles.js"></script>
-<script src="/renderer.js"></script>
-<script src="/script.js" defer=""></script>
+<!-- Page configuration: tattoo mode flag + i18n -->
+<script>
+window.UTG_TATTOO_MODE = true;
+window.tattooI18n = {
+  "sampleName": "Defne",
+  "modeNamesLabel": "İsimler & kelimeler",
+  "modeNamesHint": "Bir isim, kelime veya söz yaz",
+  "modeDateLabel": "Tarih → Romen",
+  "modeDateHint": "Tarihi veya sayıyı Roma rakamına çevir",
+  "modeLettersLabel": "Harfler & baş harfler",
+  "modeLettersHint": "Tek harfler ve monogramlar",
+  "modeSymbolsLabel": "Semboller",
+  "modeSymbolsHint": "Anlamı olan küçük semboller",
+  "sizeClose": "Yakından",
+  "sizeArm": "Kol mesafesinden",
+  "sizeRoom": "Odanın öbür ucundan",
+  "inkTest": "Mürekkep testi",
+  "yourDate": "Tarihin",
+  "day": "Gün",
+  "month": "Ay",
+  "yearOrNumber": "Yıl veya sayı",
+  "order": "Sıralama",
+  "separator": "Ayraç",
+  "yourLetter": "Harfin",
+  "secondInitial": "İkinci baş harf",
+  "secondNone": "Yok — tek harf",
+  "joinedBy": "Birleştirici",
+  "symbolsNote": "Kopyalamak için bir sembole dokun — bir isim ya da tarihle eşleştir veya tek başına taşı.",
+  "sampleHintName": "“{text}” gösteriliyor — yukarıya kendi ismini, kelimeni veya sözünü yaz.",
+  "sampleHintDate": "Örnek bir tarih gösteriliyor (12 · 6 · 2020) — yukarıya kendi tarihini veya sayını gir.",
+  "romanRange": "Roma rakamları 1–3999 aralığını kapsar — yukarıdaki değerleri kontrol et.",
+  "headingRoman": "Roma rakamları",
+  "headingFigures": "Düz rakamlar",
+  "badgeSafe": "küçükte dayanır",
+  "badgeRoomy": "yer ister",
+  "copy": "Kopyala",
+  "copyAria": "{name} stilini kopyala",
+  "families": {
+    "Script": "El Yazısı",
+    "Gothic": "Gotik",
+    "Italic": "İtalik",
+    "Minimal": "Minimal",
+    "Roman": "Romen",
+    "Figures": "Rakamlar"
+  },
+  "orders": {
+    "dmy": "Gün · Ay · Yıl",
+    "mdy": "Ay · Gün · Yıl",
+    "y": "Sadece yıl"
+  },
+  "seps": {
+    "space": "boşluk",
+    "stack": "alt alta"
+  },
+  "joiners": {
+    "none": "Yok"
+  },
+  "lettering": {
+    "Ultra Script Bold": {
+      "label": "Kalın El Yazısı",
+      "note": "İsim dövmesinin klasiği — bağlantılı ve sıcak, küçük boyutta bile formunu korur."
+    },
+    "Ultra Script": {
+      "label": "İnce El Yazısı",
+      "note": "Narin ve havadar — orta boyutta çok güzel; ince kıvrımların iyi yaşlanmak için yere ihtiyacı var."
+    },
+    "Ultra Chicano Script": {
+      "label": "Chicano İsim Plakası",
+      "note": "Süslü bir bandın içinde kalın el yazısı — klasik isim plakası çerçevesi."
+    },
+    "Ultra Gothic": {
+      "label": "Gotik Blackletter",
+      "note": "Fraktur blackletter — yoğun ve iddialı, güçlü bir kelimeyi taşımak için yapılmış."
+    },
+    "Ultra Gothic Bold": {
+      "label": "Ağır Old English",
+      "note": "Ağır Old English görünümü — old school ve Chicano yazı geleneğinin demirbaşı."
+    },
+    "Ultra Old English Banner": {
+      "label": "Old English Bantlı",
+      "note": "Bant içinde ağır blackletter — sahnedeki en güçlü isim plakası."
+    },
+    "Ultra Italic": {
+      "label": "İnce İtalik",
+      "note": "Gösterişsiz bir eğim — kaburga, bilek veya köprücük kemiği boyunca sessizce süzülür."
+    },
+    "Ultra Italic Serif": {
+      "label": "Serifli İtalik",
+      "note": "Kitap havalı serifli italik — bir romandan alınmış satır gibi okunur."
+    },
+    "Ultra Typewriter Document": {
+      "label": "Daktilo",
+      "note": "Ham, edebi monospace — bir tarih ya da kısa bir satır için biçilmiş kaftan."
+    },
+    "Ultra Small Caps": {
+      "label": "Küçük Kapital",
+      "note": "Minik, eşit büyük harfler — ince çizgi minimalistlerin tercihi."
+    }
+  },
+  "roman": {
+    "Classic": {
+      "label": "Klasik",
+      "note": "Düz büyük harfler — çoğu sanatçının işlediği hâli."
+    },
+    "Serif Italic": {
+      "label": "Serifli İtalik",
+      "note": "Anıt kazıması görünümü, eğik hâliyle."
+    },
+    "Script": {
+      "label": "El Yazısı",
+      "note": "Akıcı el yazısıyla Roma rakamları."
+    },
+    "Blackletter": {
+      "label": "Blackletter",
+      "note": "Fraktur rakamlar — koyu ve süslü."
+    },
+    "Heavy Old English": {
+      "label": "Ağır Old English",
+      "note": "En ağır blackletter rakamlar."
+    },
+    "Typewriter": {
+      "label": "Daktilo",
+      "note": "Monospace rakamlar — temiz ve belge havasında."
+    }
+  },
+  "digits": {
+    "Typewriter": {
+      "label": "Daktilo",
+      "note": "Monospace rakamlar — klasik tarih görünümü."
+    },
+    "Bold Serif": {
+      "label": "Kalın Serif",
+      "note": "Ağır kitap rakamları — blackletter ile eşleşir."
+    },
+    "Bold Sans": {
+      "label": "Kalın Sans",
+      "note": "Modern ağır rakamlar — kalın el yazısıyla eşleşir."
+    },
+    "Fine Sans": {
+      "label": "İnce Sans",
+      "note": "Hafif rakamlar — ince el yazısı ve italikle eşleşir."
+    },
+    "Double-Struck": {
+      "label": "Çift Çizgili",
+      "note": "Kontur rakamlar — ince çizgi için beklenmedik bir seçim."
+    },
+    "Wide Spaced": {
+      "label": "Geniş Aralıklı",
+      "note": "Tam genişlik rakamlar — havadar, editoryal aralık."
+    },
+    "Tiny": {
+      "label": "Minik",
+      "note": "Minyatür rakamlar — kulak arkası ölçeği."
+    }
+  },
+  "groups": {
+    "minimal": "İnce çizgi & minimal",
+    "celestial": "Gökyüzü",
+    "love": "Aşk & anma",
+    "faith": "İnanç & koruma",
+    "journey": "Güç & yolculuk",
+    "music": "Müzik & sanat",
+    "zodiac": "Burçlar"
+  },
+  "symbols": {
+    ";": "Noktalı virgül — hikâye devam ediyor",
+    "∞": "Sonsuzluk — sonu olmayan",
+    "·": "Tek nokta — bir duraklama",
+    "—": "Tire — bir çizgi, bir yol",
+    "~": "Dalga — dinginlik, akış",
+    "✕": "Çarpı — bir kesişme noktası",
+    "°": "Küçük daire — bütünlük",
+    "⋮": "Üç nokta — mi vida loca / tamamlanmamış",
+    "☾": "Hilal — değişim, döngüler",
+    "☽": "Büyüyen ay — büyüme",
+    "☼": "Güneş — yaşam gücü",
+    "✦": "Dört köşeli yıldız — rehberlik",
+    "✧": "Kontur yıldız — umut",
+    "⋆": "Küçük yıldız — sessiz bir kıvılcım",
+    "★": "Dolu yıldız — hırs",
+    "✵": "Işınlı yıldız — enerji",
+    "♡": "Kontur kalp — hafifçe taşınan aşk",
+    "❥": "Yatık kalp — bağlılık",
+    "❦": "Çiçekli kalp — anma",
+    "➳": "Ok — aşka tutulmuş",
+    "✿": "Çiçek — açmakta",
+    "❀": "Açan çiçek — birinin anısı",
+    "✝": "Latin haçı — inanç",
+    "†": "Hançer haç — fedakârlık",
+    "☦": "Ortodoks haçı",
+    "☯": "Yin yang — denge",
+    "ॐ": "Om — ilk ses",
+    "✡": "Davut Yıldızı",
+    "☪": "Ay yıldız",
+    "ᛉ": "Algiz rünü — koruma",
+    "⚓": "Çapa — sağlam dur",
+    "✈": "Uçak — gidişler, dönüşler",
+    "➵": "Ok — yalnızca ileri",
+    "→": "Sağ ok — hep ileri",
+    "⚔": "Çapraz kılıçlar — savaşmaya devam",
+    "♆": "Üç dişli mızrak — deniz",
+    "Δ": "Delta — değişim",
+    "Ω": "Omega — son, dayanıklılık",
+    "♪": "Sekizlik nota",
+    "♫": "Bağlı notalar",
+    "♬": "Çift bağlı notalar",
+    "𝄞": "Sol anahtarı",
+    "✎": "Kalem — yaratanın imzası",
+    "♈": "Koç",
+    "♉": "Boğa",
+    "♊": "İkizler",
+    "♋": "Yengeç",
+    "♌": "Aslan",
+    "♍": "Başak",
+    "♎": "Terazi",
+    "♏": "Akrep",
+    "♐": "Yay",
+    "♑": "Oğlak",
+    "♒": "Kova",
+    "♓": "Balık"
+  }
+};
+</script>
+<script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
+<script src="/js/tattoo/tattooData.js" defer></script>
+<script src="/script.js" defer></script>
+<script src="/js/tattoo/tattooPageController.js" defer></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js"></script>
 </body></html>
