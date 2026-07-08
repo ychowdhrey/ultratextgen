@@ -55,6 +55,7 @@ These run across page types rather than producing a type.
 | Pinterest pins (+ new boards) | `generate-pinterest.py`, `generate-id-pins.py`, `generate-vertical-text-pins.py` (skin: `generate-site-art.py`); CSV: `pinterest_csv.py` + `build_pinterest_upload.py` | [`pinterest-pin-generation.md`](./pinterest-pin-generation.md) (board conventions) + [`pinterest-csv-format.md`](./pinterest-csv-format.md) | per batch |
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
 | Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | [`image-backlink-strategy.md`](./image-backlink-strategy.md) (decision doc) | ad hoc |
+| **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `pl/`, `pt/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
@@ -134,6 +135,17 @@ here so they aren't lost. Update as they're closed or new ones appear.
    week) never resolve to a lane — the digest classifier has no rule for it,
    and inventing one (e.g. folding it into "Docs" or "Core JS") would misrepresent
    what changed. Needs a decision: its own row, or explicit non-lane status.
+8. **Visual/printable output mode has principles but no pipeline.** The second
+   output mode ([`jtbd-principles.md`](./jtbd-principles.md) §10) is live across
+   three surfaces — the curved/arc tool (`/curved-text/`), printable bubble
+   letters (`/category/bubble-fonts/`), and cursive practice sheets
+   (`/category/cursive-fonts/`) — but each was hand-built with its own module.
+   There is **no shared SVG/PNG export helper, no generator/validator, and no
+   dedicated governing doc** (it's governed only by §10 + the `CLAUDE.md` scope
+   note). The `/curved-text/` top-level namespace is also not in the page-type
+   table and has no `LANE_RULES` entry in `scripts/weekly_pr_digest.py`, so PRs
+   touching it won't classify. Decide: promote to a full lane (shared export
+   util + a governing doc) or keep it a principle-governed cross-cutting track.
 
 ---
 
