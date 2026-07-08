@@ -1219,7 +1219,12 @@ PAGES = {
   # Turkish
   "tr-sekilli-yazi": ("Şekilli Yazı", "Şekilli harfler kopyala yapıştır",
         P(m_typo, sample="Şa", size=88, label="şekilli yazı"), K_CAT),
-  # German
+
+  # ---- Discord font pages (demand-validated locales) ----
+  "de-discord-schriftart": ("Discord Schriftart", "Schriften für Nick, Bio und Kanal — ohne Nitro", m_chat, K_PLAT),
+  "es-fuentes-para-discord": ("Fuentes para Discord", "Letras para nick, canal y bio — sin Nitro", m_chat, K_PLAT),
+  "pl-czcionki-discord": ("Czcionki na Discord", "Czcionki do nicku, kanału i bio — bez Nitro", m_chat, K_PLAT),
+  "id-font-discord": ("Font Discord", "Font untuk nama, channel, dan bio — tanpa Nitro", m_chat, K_PLAT),
 }
 
 
