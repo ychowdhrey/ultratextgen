@@ -13,46 +13,45 @@
         "Ultra Script Bold",
         "Ultra Strike",
         "Ultra Underline",
-        "Ultra Bubble Filled"
+        "Ultra Bubble Filled",
+        "Ultra Fullwidth"
       ]
     },
-  "bold-fonts": {
-   "label": "Bold Fonts",
-   "icon": "𝗕",
-   "fonts": [
-    "Ultra Bold",
-    "Ultra Bold Serif",
-    "Ultra Double-Struck",
-    "Ultra Bold Italic",
-    "Ultra Bold Italic Serif",
-    "Ultra Script Bold",
-    "Ultra Gothic Bold",
-    "Ultra Alternating Bold",
-    "Ultra Bold w Alternating Italic"
-     ]
-   },
-
-  "italic-fonts": {
-  "label": "Italic Fonts",
-  "icon": "𝘐",
-  "fonts": [
-    "Ultra Italic",
-    "Ultra Italic Serif",
-    "Ultra Bold Italic",
-    "Ultra Bold Italic Serif",
-    "Ultra Alternating Italic",
-    "Ultra Bold w Alternating Italic",
-    "Ultra Italic Switch Serifs"
-    ]
-  },
-
+    "bold-fonts": {
+      "label": "Bold Fonts",
+      "icon": "𝗕",
+      "fonts": [
+        "Ultra Bold",
+        "Ultra Bold Serif",
+        "Ultra Double-Struck",
+        "Ultra Bold Italic",
+        "Ultra Bold Italic Serif",
+        "Ultra Script Bold",
+        "Ultra Gothic Bold",
+        "Ultra Alternating Bold",
+        "Ultra Bold w Alternating Italic"
+      ]
+    },
+    "italic-fonts": {
+      "label": "Italic Fonts",
+      "icon": "𝘐",
+      "fonts": [
+        "Ultra Italic",
+        "Ultra Italic Serif",
+        "Ultra Bold Italic",
+        "Ultra Bold Italic Serif",
+        "Ultra Alternating Italic",
+        "Ultra Bold w Alternating Italic",
+        "Ultra Italic Switch Serifs"
+      ]
+    },
     "bubble-fonts": {
       "label": "Bubble Fonts",
       "icon": "Ⓑ",
       "fonts": [
         "Ultra Bubble",
         "Ultra Bubble Filled",
-         "Ultra Bubble Light",
+        "Ultra Bubble Light",
         "Ultra Bubble Tiles",
         "Ultra Bubble Parentheses",
         "Ultra Bubble Curly",
@@ -96,78 +95,76 @@
         "Ultra Crossed-Out"
       ]
     },
-
-  "underline-text": {
-    "label": "Underline Text",
-    "icon": "➖",
-    "fonts": [
-    "Ultra Underline",
-    "Ultra Wavy"
-  ]
-  },
-  "small-text": {
-  "label": "Small Text",
-  "icon": "ᵗ",
-  "fonts": [
-    "Ultra Small Superscript Style",
-    "Ultra Tiny Subscript",
-    "Ultra Small Caps"
-  ]
-  },
-  "cute-fonts": {
-  "label": "Cute Fonts",
-  "icon": "♡",
-  "fonts": [
-    "Ultra Cute Script",
-    "Ultra Cute Bubble",
-    "Ultra Bubble Filled",
-    "Ultra Script Bold"
-  ]
-  },
-  "aesthetic-fonts": {
-  "label": "Aesthetic Fonts",
-  "icon": "✦",
-  "fonts": [
-    "Ultra Cute Script",
-    "Ultra Aesthetic Gothic",
-    "Ultra Small Caps",
-    "Ultra Small Superscript Style"
-  ]
-  },
-  
-  "upside-down-text": {
-    "label": "Upside Down",
-    "icon": "ɐ",
-    "fonts": [
-      "Fully Flipped Unicode",
-      "Mixed Flip Fallback",
-      "Reverse Order Only",
-      "Reverse + Flip Combo",
-      "Partial Upside Emphasis",
-      "Line Level Upside Down",
-      "Alternating Upside Down",
-      "Mirror Illusion",
-      "Emoji Assisted Upside Down",
-      "Faux Upside Down Symbols",
-      "Upside Down Micro Text"
-    ]
-  },
-  "text-decorator": {
-    "label": "Text Decorator",
-    "icon": "()",
-    "fonts": [
-      "Ultra Word Curly Wrap",
-      "Ultra Word Angle Wrap",
-      "Ultra Word Double Wrap",
-      "Ultra Word Arrow Wrap",
-      "Ultra Word Forward Arrow Wrap",
-      "Ultra Word Backward Arrow Wrap",
-      "Ultra Word Bracket Wrap",
-      "Ultra Word Chevron Wrap",
-      "Ultra Word Bar Wrap",
-      "Ultra Word Double Bar Wrap"
-  ]
-},
+    "underline-text": {
+      "label": "Underline Text",
+      "icon": "➖",
+      "fonts": [
+        "Ultra Underline",
+        "Ultra Wavy"
+      ]
+    },
+    "small-text": {
+      "label": "Small Text",
+      "icon": "ᵗ",
+      "fonts": [
+        "Ultra Small Superscript Style",
+        "Ultra Tiny Subscript",
+        "Ultra Small Caps"
+      ]
+    },
+    "cute-fonts": {
+      "label": "Cute Fonts",
+      "icon": "♡",
+      "fonts": [
+        "Ultra Cute Script",
+        "Ultra Cute Bubble",
+        "Ultra Bubble Filled",
+        "Ultra Script Bold"
+      ]
+    },
+    "aesthetic-fonts": {
+      "label": "Aesthetic Fonts",
+      "icon": "✦",
+      "fonts": [
+        "Ultra Cute Script",
+        "Ultra Aesthetic Gothic",
+        "Ultra Small Caps",
+        "Ultra Small Superscript Style"
+      ]
+    },
+    "upside-down-text": {
+      "label": "Upside Down",
+      "icon": "ɐ",
+      "fonts": [
+        "Fully Flipped Unicode",
+        "Mixed Flip Fallback",
+        "Reverse Order Only",
+        "Reverse + Flip Combo",
+        "Partial Upside Emphasis",
+        "Line Level Upside Down",
+        "Alternating Upside Down",
+        "Mirror Illusion",
+        "Emoji Assisted Upside Down",
+        "Faux Upside Down Symbols",
+        "Upside Down Micro Text"
+      ]
+    },
+    "text-decorator": {
+      "label": "Text Decorator",
+      "icon": "()",
+      "fonts": [
+        "Ultra Word Curly Wrap",
+        "Ultra Word Angle Wrap",
+        "Ultra Word Double Wrap",
+        "Ultra Word Arrow Wrap",
+        "Ultra Word Forward Arrow Wrap",
+        "Ultra Word Backward Arrow Wrap",
+        "Ultra Word Bracket Wrap",
+        "Ultra Word Chevron Wrap",
+        "Ultra Word Bar Wrap",
+        "Ultra Word Double Bar Wrap"
+      ]
+    },
     "classified": {
       "label": "Classified / Redacted",
       "icon": "█",
@@ -181,6 +178,53 @@
         "Ultra Selective Redact",
         "Ultra Alternate Redact",
         "Ultra Typewriter Document"
+      ]
+    },
+    "fullwidth-fonts": {
+      "label": "Fullwidth",
+      "icon": "Ａ",
+      "fonts": [
+        "Ultra Fullwidth"
+      ]
+    },
+    "faux-fonts": {
+      "label": "Faux Script",
+      "icon": "Я",
+      "fonts": [
+        "Ultra Faux Cyrillic",
+        "Ultra Faux Greek",
+        "Ultra Katakana"
+      ]
+    },
+    "ancient-fonts": {
+      "label": "Ancient & Runes",
+      "icon": "ᚱ",
+      "fonts": [
+        "Ultra Runic",
+        "Ultra Old Italic",
+        "Ultra Cherokee",
+        "Ultra Canadian Syllabics",
+        "Ultra Ethiopic",
+        "Ultra Tibetan",
+        "Ultra Bopomofo",
+        "Ultra Yi"
+      ]
+    },
+    "emoji-letter-fonts": {
+      "label": "Emoji Letters",
+      "icon": "🅰",
+      "fonts": [
+        "Ultra Emoji Block",
+        "Ultra Squared",
+        "Ultra Regional Indicator"
+      ]
+    },
+    "novelty-fonts": {
+      "label": "Novelty",
+      "icon": "🔢",
+      "fonts": [
+        "Ultra Keycap Numbers",
+        "Ultra Currency"
       ]
     }
   }
