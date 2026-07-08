@@ -33,7 +33,10 @@ const cheerio = require("cheerio");
 
 const ROOT = path.resolve(__dirname, "..");
 const LOCALES_DIR = path.join(ROOT, "locales");
-const SUPPORTED = ["de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr", "vi"];
+const SUPPORTED = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "sv", "no", "ar"];
+
+// Right-to-left locales. Mirrors RTL_LANGS in i18n.js.
+const RTL_LANGS = ["ar", "he", "fa", "ur"];
 
 /* ───────────────────────── helpers ───────────────────────── */
 
@@ -195,6 +198,12 @@ function processLanguage(lang) {
   // decodeEntities: false preserves existing HTML entities (e.g. &amp;, &lt;)
   // in the source HTML rather than double-encoding them on output.
   const $ = cheerio.load(html, { decodeEntities: false });
+
+  // Ensure <html> carries the right lang + direction. For RTL locales this
+  // bakes dir="rtl" into the static HTML so the page renders correctly even
+  // before i18n.js runs (and for crawlers that don't execute JS).
+  $("html").attr("lang", lang);
+  $("html").attr("dir", RTL_LANGS.includes(lang) ? "rtl" : "ltr");
 
   // Pre-render translations into body elements
   const textCount = prerenderTranslations($, translations);

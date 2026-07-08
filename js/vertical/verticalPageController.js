@@ -14,20 +14,51 @@
   var Render     = window.UltraTextGenRender;
   var stylesRegistry = window.textStyles || {};
 
+  /* Localized pages define window.verticalI18n before this script loads
+     (same pattern as window.zalgoI18n on the zalgo page). Missing keys fall
+     back to the built-in English strings. */
+  var I18N = window.verticalI18n || {};
+  function t(key, fallback) {
+    return I18N[key] != null ? I18N[key] : fallback;
+  }
+
   var RECENT_KEY      = 'utg_vertical_recent_decos';
   var RECENT_MAX      = 6;
   var LAYOUT_PREF_KEY = 'utg_vertical_layout_pref';
+  var SAFE_PREF_KEY   = 'utg_vertical_safe_pref';
+
+  /* Invisible-but-real character (Braille Pattern Blank). Instagram and
+     TikTok strip empty lines and leading/trailing spaces on save; lines and
+     indents built from U+2800 survive. */
+  var BRAILLE_BLANK = '⠀';
+
+  /* Cards rendered immediately; the rest render when scrolled near. */
+  var INITIAL_CARDS = 24;
+
+  /* Character budgets for the fit badges (counted in code points, which is
+     how platforms approximately count). Styled Unicode letters can count as
+     2 on some platforms — the row tooltip says so. */
+  var PLATFORM_LIMITS = [
+    { label: t('fitInstagram', 'Instagram bio'), limit: 150 },
+    { label: t('fitTikTok',    'TikTok bio'),    limit: 80 },
+    { label: t('fitX',         'X bio'),         limit: 160 }
+  ];
 
   /* ---- State ---- */
   var selectedLayoutId   = 'stacked';
-  var wordBreakMode      = 'stack';      // 'stack' | 'continuous'
+  var wordBreakMode      = 'stack';      // 'stack' | 'continuous' | 'word-lines'
   var wordDividerMode    = 'none';       // 'none' | 'blank-line' | 'divider-line'
   var selectedDecorator  = null;         // { id, label, symbol, mode } or null
   var currentDecoTab     = Object.keys(DecoData)[0] || 'bullets';
+  var platformSafe       = true;
+  var searchFilter       = '';
+  var lazyObserver       = null;
 
   /* ---- Helpers ---- */
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
+
+  function countChars(text) { return Array.from(text).length; }
 
   /* --------------------------------------------------------------------------
      Recently-used decorators
@@ -50,7 +81,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     Layout preference persistence
+     Preference persistence
      -------------------------------------------------------------------------- */
   function loadLayoutPref() {
     try {
@@ -66,57 +97,155 @@
     try { localStorage.setItem(LAYOUT_PREF_KEY, layoutId); } catch (e) {}
   }
 
+  function loadSafePref() {
+    try { return localStorage.getItem(SAFE_PREF_KEY) !== 'off'; } catch (e) { return true; }
+  }
+
+  function saveSafePref(on) {
+    try { localStorage.setItem(SAFE_PREF_KEY, on ? 'on' : 'off'); } catch (e) {}
+  }
+
+  /* --------------------------------------------------------------------------
+     Platform-safe output: pad blank lines with U+2800 and rebuild leading
+     indents from U+2800 so the result survives Instagram/TikTok saving.
+     Applied as the last step, after styling and decoration.
+     -------------------------------------------------------------------------- */
+  function makePlatformSafe(text) {
+    return text.split('\n').map(function (line) {
+      var noTrail = line.replace(/[ \t]+$/, '');
+      if (noTrail === '') return BRAILLE_BLANK;
+      return noTrail.replace(/^ +/, function (m) {
+        return new Array(m.length + 1).join(BRAILLE_BLANK);
+      });
+    }).join('\n');
+  }
+
+  /* --------------------------------------------------------------------------
+     Quadratic layouts (pyramids) expand to n²/2 characters — cap their input.
+     Counts layout units (letters, or words in word-lines mode) and truncates
+     the raw input once the layout's maxUnits is reached.
+     -------------------------------------------------------------------------- */
+  function truncateForLayout(input, layoutEntry, mode) {
+    var max = layoutEntry.maxUnits;
+    if (!max) return { text: input, truncated: false };
+
+    if (mode === 'word-lines') {
+      var words = Layouts.splitWords(input);
+      if (words.length <= max) return { text: input, truncated: false };
+      return { text: words.slice(0, max).join(' '), truncated: true };
+    }
+
+    var out = '';
+    var units = 0;
+    var graphemes = Layouts.chars(input);
+    for (var i = 0; i < graphemes.length; i++) {
+      var g = graphemes[i];
+      if (!/^\s+$/.test(g)) {
+        if (units === max) return { text: out, truncated: true };
+        units += 1;
+      }
+      out += g;
+    }
+    return { text: input, truncated: false };
+  }
+
   /* --------------------------------------------------------------------------
      Build the vertical control panel HTML and insert it
      -------------------------------------------------------------------------- */
+  function layoutPreview(layoutEntry) {
+    var sample = layoutEntry.id === 'double-column' ? 'ab cd' : 'abc';
+    return layoutEntry.fn(sample, 'stack', { wordDividerMode: 'none', indentStep: 1 });
+  }
+
   function buildControlPanel() {
     var panel = $('#verticalControlPanel');
     if (!panel) return;
 
-    /* Layout selector */
+    /* Visual layout picker — every layout as a button with a mini preview */
     var layoutOptions = Layouts.LAYOUTS.map(function (l) {
-      return '<option value="' + l.id + '"' + (l.id === selectedLayoutId ? ' selected' : '') + (l.description ? ' title="' + l.description + '"' : '') + '>' + l.label + '</option>';
+      var active = l.id === selectedLayoutId;
+      return '<button type="button" class="vertical-layout-option' + (active ? ' active' : '') + '"' +
+        ' data-layout="' + l.id + '" title="' + t('layoutTip_' + l.id, l.description) + '" aria-pressed="' + active + '">' +
+        '<pre class="vertical-layout-mini" aria-hidden="true">' + layoutPreview(l) + '</pre>' +
+        '<span class="vertical-layout-name">' + t('layout_' + l.id, l.label) + '</span>' +
+        '</button>';
     }).join('');
 
-    /* Word Divider chips — only visible in stack mode */
-    var dividerChips = [
-      { val: 'none',         label: 'None' },
-      { val: 'blank-line',   label: 'Blank Line' },
-      { val: 'divider-line', label: 'Divider Line' }
+    /* Word mode chips */
+    var modeChips = [
+      { val: 'stack',      label: t('modeStack', 'Stack'),             tip: t('modeStackTip', 'Each word becomes its own vertical block') },
+      { val: 'continuous', label: t('modeContinuous', 'Continuous'),   tip: t('modeContinuousTip', 'All letters flow in one column — spaces are removed') },
+      { val: 'word-lines', label: t('modeWordLines', 'Word per Line'), tip: t('modeWordLinesTip', 'Each whole word on its own line instead of each letter') }
     ].map(function (c) {
-      return '<button class="vertical-chip vertical-divider-chip' + (c.val === wordDividerMode ? ' active' : '') + '" data-divider="' + c.val + '">' + c.label + '</button>';
+      return '<button type="button" class="vertical-chip vertical-mode-chip' + (c.val === wordBreakMode ? ' active' : '') + '"' +
+        ' data-mode="' + c.val + '" title="' + c.tip + '" aria-pressed="' + (c.val === wordBreakMode) + '">' + c.label + '</button>';
+    }).join('');
+
+    /* Word Divider chips — only meaningful in stack mode */
+    var dividerChips = [
+      { val: 'none',         label: t('dividerNone', 'None'),         tip: t('dividerNoneTip', 'Single blank line between word blocks') },
+      { val: 'blank-line',   label: t('dividerBlank', 'Blank Line'),  tip: t('dividerBlankTip', 'Two blank lines between word blocks for extra spacing') },
+      { val: 'divider-line', label: t('dividerLine', 'Divider Line'), tip: t('dividerLineTip', 'A ──────── line between word blocks') }
+    ].map(function (c) {
+      return '<button type="button" class="vertical-chip vertical-divider-chip' + (c.val === wordDividerMode ? ' active' : '') + '"' +
+        ' data-divider="' + c.val + '" title="' + c.tip + '" aria-pressed="' + (c.val === wordDividerMode) + '">' + c.label + '</button>';
+    }).join('');
+
+    /* Spacing (platform-safe) chips */
+    var safeChips = [
+      { val: 'safe', label: t('spacingSafe', 'Platform-safe'), tip: t('spacingSafeTip', 'Pads blank lines and indents with an invisible character (U+2800) so the layout survives Instagram and TikTok, which strip empty lines and extra spaces') },
+      { val: 'raw',  label: t('spacingRaw', 'Raw'),            tip: t('spacingRawTip', 'Plain spaces and empty lines — exact characters, but Instagram/TikTok may collapse them') }
+    ].map(function (c) {
+      var active = (c.val === 'safe') === platformSafe;
+      return '<button type="button" class="vertical-chip vertical-safe-chip' + (active ? ' active' : '') + '"' +
+        ' data-safe="' + c.val + '" title="' + c.tip + '" aria-pressed="' + active + '">' + c.label + '</button>';
     }).join('');
 
     /* Decoration tabs */
     var decoTabs = Object.keys(DecoData).map(function (tabKey) {
-      return '<button class="decoration-tab' + (tabKey === currentDecoTab ? ' active' : '') + '" data-vert-deco-tab="' + tabKey + '">' + capitalize(tabKey) + '</button>';
+      return '<button type="button" class="decoration-tab' + (tabKey === currentDecoTab ? ' active' : '') + '" data-vert-deco-tab="' + tabKey + '">' + t('tab_' + tabKey, capitalize(tabKey)) + '</button>';
     }).join('');
 
     panel.innerHTML =
       '<div class="vertical-control-panel">' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Layout</label>' +
-          '<select class="vertical-layout-select" id="vertLayoutSelect">' + layoutOptions + '</select>' +
+          '<label class="vertical-control-label">' + t('labelLayout', 'Layout') + '</label>' +
+          '<div class="vertical-layout-picker" id="vertLayoutPicker">' + layoutOptions + '</div>' +
         '</div>' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Word Mode</label>' +
-          '<div class="vertical-mode-chips">' +
-            '<button class="vertical-chip vertical-mode-chip' + (wordBreakMode === 'stack' ? ' active' : '') + '" data-mode="stack">Stack</button>' +
-            '<button class="vertical-chip vertical-mode-chip' + (wordBreakMode === 'continuous' ? ' active' : '') + '" data-mode="continuous">Continuous</button>' +
-          '</div>' +
+          '<label class="vertical-control-label">' + t('labelWordMode', 'Word Mode') + '</label>' +
+          '<div class="vertical-mode-chips">' + modeChips + '</div>' +
         '</div>' +
 
-        '<div class="vertical-control-row vertical-divider-row' + (wordBreakMode === 'continuous' ? ' disabled-row' : '') + '">' +
-          '<label class="vertical-control-label">Word Divider</label>' +
+        '<div class="vertical-control-row vertical-divider-row' + (wordBreakMode !== 'stack' ? ' disabled-row' : '') + '">' +
+          '<label class="vertical-control-label">' + t('labelWordDivider', 'Word Divider') + '</label>' +
           '<div class="vertical-divider-chips">' + dividerChips + '</div>' +
         '</div>' +
 
         '<div class="vertical-control-row">' +
-          '<label class="vertical-control-label">Line Decoration</label>' +
+          '<label class="vertical-control-label">' + t('labelSpacing', 'Spacing') + '</label>' +
+          '<div class="vertical-safe-chips">' + safeChips + '</div>' +
+        '</div>' +
+
+        '<div class="vertical-control-row">' +
+          '<label class="vertical-control-label">' + t('labelLineDecoration', 'Line Decoration') + '</label>' +
           '<div class="decoration-tabs vertical-deco-tabs">' + decoTabs + '</div>' +
           '<div id="vertDecoGrid" class="decoration-grid"></div>' +
+          '<div class="vertical-custom-sep-row">' +
+            '<label class="vertical-custom-sep-label" for="vertCustomSep">' + t('labelCustom', 'Custom:') + '</label>' +
+            '<input type="text" id="vertCustomSep" class="vertical-custom-sep" maxlength="8"' +
+              ' placeholder="' + t('customPlaceholder', 'any symbol') + '" title="' + t('customTip', 'Type your own separator — it goes between each line of the stack') + '">' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="vertical-fit-row" id="vertFitRow"' +
+          ' title="' + t('fitRowTip', 'Counted in characters incl. line breaks. Styled Unicode fonts can count as 2 characters on some platforms.') + '"></div>' +
+
+        '<div class="vertical-caps-hint" id="vertCapsHint" hidden>' +
+          '💡 ' + t('capsHint', 'Stacked text reads best in CAPS and short words.') + ' ' +
+          '<button type="button" class="vertical-caps-btn" id="vertCapsBtn">' + t('capsBtn', 'Use CAPS') + '</button>' +
         '</div>' +
 
       '</div>';
@@ -144,7 +273,7 @@
       recentRow.className = 'vertical-recent-row';
       var recentLabel = document.createElement('span');
       recentLabel.className = 'vertical-recent-label';
-      recentLabel.textContent = 'Recent:';
+      recentLabel.textContent = t('recentLabel', 'Recent:');
       recentRow.appendChild(recentLabel);
       recent.forEach(function (deco) {
         recentRow.appendChild(makeDecoItem(deco, true));
@@ -153,13 +282,13 @@
     }
 
     /* Clear button */
-    var clearBtn = document.createElement('span');
+    var clearBtn = document.createElement('button');
+    clearBtn.type = 'button';
     clearBtn.className = 'clear-decoration';
-    clearBtn.textContent = '✕ None';
+    clearBtn.textContent = '✕ ' + t('clearDecoration', 'None');
+    clearBtn.title = t('clearDecorationTip', 'Remove the line decoration');
     clearBtn.addEventListener('click', function () {
-      selectedDecorator = null;
-      $$('.decoration-item').forEach(function (i) { i.classList.remove('selected'); });
-      triggerRender();
+      selectDecorator(null);
     });
     grid.appendChild(clearBtn);
 
@@ -171,55 +300,70 @@
   }
 
   function makeDecoItem(deco, fromRecent) {
-    var item = document.createElement('span');
+    var item = document.createElement('button');
+    item.type = 'button';
     item.className = 'decoration-item';
-    if (selectedDecorator && selectedDecorator.id === deco.id) {
-      item.classList.add('selected');
-    }
+    var selected = selectedDecorator && selectedDecorator.id === deco.id;
+    if (selected) item.classList.add('selected');
+    item.setAttribute('aria-pressed', String(!!selected));
+    item.title = deco.mode === 'prefix'
+      ? deco.label + ' — ' + t('decoBesideTip', 'appears beside each letter')
+      : deco.label + ' — ' + t('decoBetweenTip', 'appears between each letter');
     item.textContent = deco.label;
     item.dataset.decoId = deco.id;
     item.addEventListener('click', function () {
       var isSame = selectedDecorator && selectedDecorator.id === deco.id;
-      $$('.decoration-item').forEach(function (i) { i.classList.remove('selected'); });
-      if (isSame) {
-        selectedDecorator = null;
-      } else {
-        selectedDecorator = deco;
-        item.classList.add('selected');
-        if (!fromRecent) addToRecent(deco);
-      }
-      triggerRender();
+      if (!isSame && !fromRecent) addToRecent(deco);
+      selectDecorator(isSame ? null : deco);
     });
     return item;
+  }
+
+  function selectDecorator(deco) {
+    selectedDecorator = deco;
+    $$('.decoration-item').forEach(function (i) {
+      var on = deco && i.dataset.decoId === deco.id;
+      i.classList.toggle('selected', !!on);
+      i.setAttribute('aria-pressed', String(!!on));
+    });
+    var customInput = $('#vertCustomSep');
+    if (customInput && (!deco || deco.id !== 'custom')) customInput.value = '';
+    triggerRender();
   }
 
   /* --------------------------------------------------------------------------
      Bind events on control panel
      -------------------------------------------------------------------------- */
   function bindControlPanelEvents(panel) {
-    /* Layout select */
-    var layoutSelect = $('#vertLayoutSelect', panel);
-    if (layoutSelect) {
-      layoutSelect.addEventListener('change', function () {
-        selectedLayoutId = this.value;
+    /* Layout picker */
+    $$('.vertical-layout-option', panel).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        selectedLayoutId = this.dataset.layout;
         saveLayoutPref(selectedLayoutId);
+        $$('.vertical-layout-option', panel).forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
         triggerRender();
       });
-    }
+    });
 
     /* Word mode chips */
     $$('.vertical-mode-chip', panel).forEach(function (btn) {
       btn.addEventListener('click', function () {
         wordBreakMode = this.dataset.mode;
-        $$('.vertical-mode-chip', panel).forEach(function (b) { b.classList.remove('active'); });
-        this.classList.add('active');
-        /* Enable/disable divider row */
+        $$('.vertical-mode-chip', panel).forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        /* Word dividers only apply when words become separate blocks */
         var divRow = $('.vertical-divider-row', panel);
-        if (divRow) {
-          divRow.classList.toggle('disabled-row', wordBreakMode === 'continuous');
-        }
+        var dividersOff = wordBreakMode !== 'stack';
+        if (divRow) divRow.classList.toggle('disabled-row', dividersOff);
         $$('.vertical-divider-chip', panel).forEach(function (b) {
-          b.disabled = wordBreakMode === 'continuous';
+          b.disabled = dividersOff;
         });
         triggerRender();
       });
@@ -228,10 +372,27 @@
     /* Divider chips */
     $$('.vertical-divider-chip', panel).forEach(function (btn) {
       btn.addEventListener('click', function () {
-        if (wordBreakMode === 'continuous') return;
+        if (wordBreakMode !== 'stack') return;
         wordDividerMode = this.dataset.divider;
-        $$('.vertical-divider-chip', panel).forEach(function (b) { b.classList.remove('active'); });
-        this.classList.add('active');
+        $$('.vertical-divider-chip', panel).forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        triggerRender();
+      });
+    });
+
+    /* Spacing (platform-safe) chips */
+    $$('.vertical-safe-chip', panel).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        platformSafe = this.dataset.safe === 'safe';
+        saveSafePref(platformSafe);
+        $$('.vertical-safe-chip', panel).forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
         triggerRender();
       });
     });
@@ -245,6 +406,38 @@
         renderDecoGrid();
       });
     });
+
+    /* Custom separator */
+    var customInput = $('#vertCustomSep', panel);
+    if (customInput) {
+      customInput.addEventListener('input', function () {
+        var val = this.value;
+        if (val.trim() === '') {
+          if (selectedDecorator && selectedDecorator.id === 'custom') {
+            selectedDecorator = null;
+            triggerRender();
+          }
+          return;
+        }
+        selectedDecorator = { id: 'custom', label: val, symbol: val, mode: 'divider' };
+        $$('.decoration-item').forEach(function (i) {
+          i.classList.remove('selected');
+          i.setAttribute('aria-pressed', 'false');
+        });
+        triggerRender();
+      });
+    }
+
+    /* Caps hint button */
+    var capsBtn = $('#vertCapsBtn', panel);
+    if (capsBtn) {
+      capsBtn.addEventListener('click', function () {
+        var input = document.getElementById('mainInput');
+        if (!input) return;
+        input.value = input.value.toUpperCase();
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    }
   }
 
   /* --------------------------------------------------------------------------
@@ -261,13 +454,56 @@
     }
   }
 
+  /* Header search filters the style cards by name (script.js's own filter is
+     suppressed on this page). The header is injected after us, so listen at
+     the document level. */
+  function bindHeaderSearch() {
+    document.addEventListener('input', function (e) {
+      if (!e.target || e.target.id !== 'searchInput') return;
+      searchFilter = (e.target.value || '').trim().toLowerCase();
+      triggerRender();
+    });
+  }
+
   /* --------------------------------------------------------------------------
-     Trigger render (debounced slightly for performance)
+     Trigger render (debounced for typing performance)
      -------------------------------------------------------------------------- */
   var renderTimer = null;
   function triggerRender() {
     if (renderTimer) clearTimeout(renderTimer);
-    renderTimer = setTimeout(renderVerticalResults, 0);
+    renderTimer = setTimeout(renderVerticalResults, 120);
+  }
+
+  /* --------------------------------------------------------------------------
+     Fit badges + caps hint
+     -------------------------------------------------------------------------- */
+  function updateFitRow(plainText, truncatedNote) {
+    var row = $('#vertFitRow');
+    if (!row) return;
+    if (!plainText) { row.innerHTML = ''; return; }
+
+    var count = countChars(plainText);
+    var html = '<span class="vertical-fit-count">' + t('fitOutput', 'Output:') + ' ' + count + ' ' + t('charsUnit', 'chars') + '</span>';
+    PLATFORM_LIMITS.forEach(function (p) {
+      var fits = count <= p.limit;
+      html += '<span class="vertical-fit-badge ' + (fits ? 'fit' : 'no-fit') + '">' +
+        (fits ? '✓' : '✗') + ' ' + p.label + ' (' + p.limit + ')</span>';
+    });
+    if (truncatedNote) {
+      html += '<span class="vertical-fit-note">' + truncatedNote + '</span>';
+    }
+    row.innerHTML = html;
+  }
+
+  function updateCapsHint(inputText) {
+    var hint = $('#vertCapsHint');
+    if (!hint) return;
+    var isCharMode = wordBreakMode !== 'word-lines';
+    var longestWord = Layouts.splitWords(inputText).reduce(function (m, w) {
+      return Math.max(m, Layouts.chars(w).length);
+    }, 0);
+    var show = isCharMode && /[a-z]/.test(inputText) && longestWord >= 6;
+    hint.hidden = !show;
   }
 
   /* --------------------------------------------------------------------------
@@ -276,33 +512,48 @@
   function renderVerticalResults() {
     var grid = document.getElementById('resultsGrid');
     if (!grid) return;
+    if (lazyObserver) { lazyObserver.disconnect(); lazyObserver = null; }
     grid.innerHTML = '';
 
     var inputText = (document.getElementById('mainInput') || {}).value || '';
-    if (!inputText.trim()) return;
+    if (!inputText.trim()) {
+      updateFitRow('');
+      updateCapsHint('');
+      return;
+    }
 
     /* Find selected layout function */
     var layoutEntry = Layouts.LAYOUTS.find(function (l) { return l.id === selectedLayoutId; });
     if (!layoutEntry) return;
 
+    /* Cap quadratic layouts before they explode */
+    var capped = truncateForLayout(inputText, layoutEntry, wordBreakMode);
+
     var layoutOptions = {
-      wordDividerMode: wordBreakMode === 'continuous' ? 'none' : wordDividerMode,
+      wordDividerMode: wordBreakMode !== 'stack' ? 'none' : wordDividerMode,
       indentStep: 1
     };
 
     /* Compute layout output (plain text, layout only) */
-    var layoutText = layoutEntry.fn(inputText, wordBreakMode, layoutOptions);
+    var layoutText = layoutEntry.fn(capped.text, wordBreakMode, layoutOptions);
 
-    /* Iterate over all registered styles */
-    var entries = Object.entries(stylesRegistry);
-    var count = 0;
+    /* Plain (unstyled) final output drives the fit badges */
+    var plainDecorated = Decorators.applyVerticalDecorator(layoutText, selectedDecorator, selectedLayoutId);
+    var plainFinal = platformSafe ? makePlatformSafe(plainDecorated) : plainDecorated;
+    updateFitRow(plainFinal, capped.truncated
+      ? t('truncatedNote', '{layout} uses the first {n} characters')
+          .replace('{layout}', t('layout_' + layoutEntry.id, layoutEntry.label))
+          .replace('{n}', String(layoutEntry.maxUnits))
+      : '');
+    updateCapsHint(inputText);
 
-    entries.forEach(function (entry) {
-      var name  = entry[0];
-      var style = entry[1];
+    /* Compute every style's final text, collapsing identical results */
+    var items = [];
+    var seenOutput = {};
+    Object.keys(stylesRegistry).forEach(function (name) {
+      var style = stylesRegistry[name];
       if (!style) return;
 
-      /* Apply font style per line */
       var styledLines = layoutText.split('\n').map(function (line) {
         if (line.trim() === '') return '';
         if (Render && typeof Render.renderAny === 'function') {
@@ -311,20 +562,70 @@
         return line;
       }).join('\n');
 
-      /* Apply vertical decoration */
       var decoratedText = Decorators.applyVerticalDecorator(styledLines, selectedDecorator, selectedLayoutId);
+      var finalText = platformSafe ? makePlatformSafe(decoratedText) : decoratedText;
 
-      /* Render card */
-      grid.appendChild(createVerticalStyleCard(name, decoratedText, style));
-      count += 1;
-
+      var prev = seenOutput[finalText];
+      if (prev) {
+        prev.dupes.push(name);
+        return;
+      }
+      var item = { name: name, text: finalText, dupes: [] };
+      seenOutput[finalText] = item;
+      items.push(item);
     });
+
+    /* Header search filter */
+    if (searchFilter) {
+      items = items.filter(function (item) {
+        var hay = item.name + ' ' + item.dupes.join(' ');
+        return hay.toLowerCase().indexOf(searchFilter) !== -1;
+      });
+      if (items.length === 0) {
+        var empty = document.createElement('p');
+        empty.className = 'vertical-empty-note';
+        empty.textContent = t('noStylesMatch', 'No styles match "{query}".').replace('{query}', searchFilter);
+        grid.appendChild(empty);
+        return;
+      }
+    }
+
+    /* Render the first chunk now, the rest when scrolled near */
+    items.slice(0, INITIAL_CARDS).forEach(function (item) {
+      grid.appendChild(createVerticalStyleCard(item));
+    });
+
+    if (items.length > INITIAL_CARDS) {
+      var sentinel = document.createElement('div');
+      sentinel.className = 'vertical-lazy-sentinel';
+      grid.appendChild(sentinel);
+
+      var renderRest = function () {
+        if (lazyObserver) { lazyObserver.disconnect(); lazyObserver = null; }
+        var frag = document.createDocumentFragment();
+        items.slice(INITIAL_CARDS).forEach(function (item) {
+          frag.appendChild(createVerticalStyleCard(item));
+        });
+        sentinel.replaceWith(frag);
+      };
+
+      if ('IntersectionObserver' in window) {
+        /* Huge top margin catches jumps PAST the sentinel (End key, anchor
+           links) — those never intersect a plain viewport-sized root. */
+        lazyObserver = new IntersectionObserver(function (observed) {
+          if (observed.some(function (entry) { return entry.isIntersecting; })) renderRest();
+        }, { rootMargin: '100000px 0px 600px 0px' });
+        lazyObserver.observe(sentinel);
+      } else {
+        renderRest();
+      }
+    }
   }
 
   /* --------------------------------------------------------------------------
      Create a vertical style card
      -------------------------------------------------------------------------- */
-  function createVerticalStyleCard(name, text, style) {
+  function createVerticalStyleCard(item) {
     var card = document.createElement('div');
     card.className = 'style-card vertical-style-card';
 
@@ -333,19 +634,39 @@
 
     var nameLine = document.createElement('p');
     nameLine.className = 'style-name';
-    nameLine.textContent = name;
+    nameLine.textContent = item.name;
+
+    var meta = document.createElement('p');
+    meta.className = 'vertical-card-meta';
+    var count = document.createElement('span');
+    count.className = 'vertical-card-count';
+    count.textContent = countChars(item.text) + ' ' + t('charsUnit', 'chars');
+    meta.appendChild(count);
+    if (item.dupes.length > 0) {
+      var dupeNote = document.createElement('span');
+      dupeNote.className = 'vertical-dupe-note';
+      dupeNote.textContent = (item.dupes.length > 1
+        ? t('identicalStyles', '+{n} identical styles')
+        : t('identicalStyle', '+{n} identical style')).replace('{n}', String(item.dupes.length));
+      dupeNote.title = t('sameResultAs', 'Same result as:') + ' ' + item.dupes.join(', ');
+      meta.appendChild(dupeNote);
+    }
 
     var preview = document.createElement('p');
     preview.className = 'style-preview vertical-preview';
-    preview.textContent = text;
+    preview.textContent = item.text;
 
     var copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
     copyBtn.className = 'copy-btn';
-    copyBtn.textContent = 'Copy';
-    copyBtn.dataset.text = text;
-    if (!text || !text.trim()) copyBtn.disabled = true;
+    copyBtn.textContent = t('btnCopy', 'Copy');
+    copyBtn.title = t('btnCopyTip', 'Copy to clipboard');
+    copyBtn.dataset.text = item.text;
+    copyBtn.dataset.style = item.name;
+    if (!item.text || !item.text.trim()) copyBtn.disabled = true;
 
     info.appendChild(nameLine);
+    info.appendChild(meta);
     info.appendChild(preview);
     info.appendChild(copyBtn);
     card.appendChild(info);
@@ -353,29 +674,18 @@
   }
 
   /* --------------------------------------------------------------------------
-     Update decoration section label
-     -------------------------------------------------------------------------- */
-  function updateDecoLabel() {
-    var label = document.querySelector('.decoration-label');
-    if (label) {
-      var svgEl = label.querySelector('svg');
-      label.textContent = 'Add line decoration';
-      if (svgEl) label.insertBefore(svgEl, label.firstChild);
-    }
-  }
-
-  /* --------------------------------------------------------------------------
      Init
      -------------------------------------------------------------------------- */
-  var DEFAULT_SAMPLE_TEXT = 'Hello';
+  var DEFAULT_SAMPLE_TEXT = t('sampleText', 'Hello');
 
   function init() {
     /* Add vertical-specific class to results grid */
     var grid = document.getElementById('resultsGrid');
     if (grid) grid.classList.add('vertical-results-grid');
 
-    /* Restore persisted layout preference */
+    /* Restore persisted preferences */
     selectedLayoutId = loadLayoutPref();
+    platformSafe = loadSafePref();
 
     /* Preload sample text so results are visible on first load */
     var input = document.getElementById('mainInput');
@@ -387,8 +697,8 @@
 
     buildControlPanel();
     bindMainInput();
-    updateDecoLabel();
-    triggerRender();
+    bindHeaderSearch();
+    renderVerticalResults();
   }
 
   if (document.readyState === 'loading') {

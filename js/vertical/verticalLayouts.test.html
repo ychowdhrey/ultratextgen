@@ -155,6 +155,57 @@
     );
 
     /* ------------------------------------------------------------------
+       11. Word divider modes are distinct: none / blank-line / divider-line
+       ------------------------------------------------------------------ */
+    assert(
+      '11a. Divider "none" → single blank line between blocks',
+      L.makeLayoutStacked('Hi Yo', 'stack', { wordDividerMode: 'none' }),
+      'H\ni\n\nY\no'
+    );
+    assert(
+      '11b. Divider "blank-line" → two blank lines between blocks',
+      L.makeLayoutStacked('Hi Yo', 'stack', { wordDividerMode: 'blank-line' }),
+      'H\ni\n\n\nY\no'
+    );
+    assert(
+      '11c. Divider "divider-line" → rule between blocks',
+      L.makeLayoutStacked('Hi Yo', 'stack', { wordDividerMode: 'divider-line' }),
+      'H\ni\n────────\nY\no'
+    );
+
+    /* ------------------------------------------------------------------
+       12. ZWJ emoji stay whole (grapheme segmentation)
+       ------------------------------------------------------------------ */
+    assert(
+      '12. ZWJ family emoji stays on one line',
+      L.makeLayoutStacked('👩‍👩‍👧‍👦🔥', 'stack', {}),
+      '👩‍👩‍👧‍👦\n🔥'
+    );
+
+    /* ------------------------------------------------------------------
+       13. Word-per-line mode
+       ------------------------------------------------------------------ */
+    assert(
+      '13a. Word per Line stacked "hello world now"',
+      L.makeLayoutStacked('hello world now', 'word-lines', {}),
+      'hello\nworld\nnow'
+    );
+    assert(
+      '13b. Word per Line pyramid builds by word',
+      L.makeLayoutPyramid('hello world now', 'word-lines', {}),
+      'hello\nhello world\nhello world now'
+    );
+
+    /* ------------------------------------------------------------------
+       14. Double Column shows every word (pairs + odd remainder)
+       ------------------------------------------------------------------ */
+    assert(
+      '14. Double Column "ab cd ef" pairs first two, stacks remainder',
+      L.makeLayoutDoubleColumn('ab cd ef', 'stack', { wordDividerMode: 'none' }),
+      'a   c\nb   d\n\ne\nf'
+    );
+
+    /* ------------------------------------------------------------------
        Summary
        ------------------------------------------------------------------ */
     var summary = document.getElementById('summary');
