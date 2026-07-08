@@ -5155,3 +5155,39 @@ body.dark-mode .cursive-word-card {
   border-color: var(--accent-purple);
   transform: translateY(-2px);
 }
+
+/* ==========================================================================
+   RTL support — Arabic (ar) and other right-to-left locales
+   --------------------------------------------------------------------------
+   Activated by dir="rtl" on <html>, which the prerender build bakes into
+   ar/*.html and i18n.js sets at runtime. Layout (flex/grid, text-align,
+   inline spacing) mirrors automatically under dir="rtl"; the rules below
+   handle the parts that must NOT mirror.
+
+   Core idea: UltraTextGen styles the LATIN alphabet, so generated output,
+   the input field and code samples must keep their own direction. We use
+   `unicode-bidi: plaintext` so each line's direction follows its first
+   strong character — Latin fancy text reads left-to-right while Arabic
+   passthrough reads right-to-left, with no explicit dir needed.
+   ========================================================================== */
+html[dir="rtl"] body { text-align: right; }
+
+/* Generated fancy text, the input, and any code/latin sample:
+   direction follows content, per line. */
+html[dir="rtl"] .style-preview,
+html[dir="rtl"] textarea,
+html[dir="rtl"] input[type="text"],
+html[dir="rtl"] .input-wrapper textarea,
+html[dir="rtl"] code,
+html[dir="rtl"] pre,
+html[dir="rtl"] .glyph,
+html[dir="rtl"] .symbol-cell {
+  unicode-bidi: plaintext;
+}
+
+/* Keyboard hints and copy chips carry Latin glyphs / punctuation — keep LTR. */
+html[dir="rtl"] .copy-kbd { direction: ltr; }
+
+/* Directional affordance: the "→" links in localized copy point at reading
+   flow, so flip them for RTL. Authors use .rtl-flip on such inline arrows. */
+html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
