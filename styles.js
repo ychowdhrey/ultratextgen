@@ -72,6 +72,31 @@ const CATEGORY_PAGES = {
     slug: 'aesthetic-fonts',
     title: 'Aesthetic Fonts',
     description: 'Aesthetic Unicode text styles for social profiles.'
+  },
+  'fullwidth': {
+    slug: 'fullwidth-fonts',
+    title: 'Fullwidth / Vaporwave Fonts',
+    description: 'Fullwidth vaporwave text with wide, aesthetic spacing.'
+  },
+  'faux': {
+    slug: 'faux-fonts',
+    title: 'Faux Script Fonts',
+    description: 'Faux Cyrillic, Greek, and Japanese katakana lookalike letters.'
+  },
+  'ancient': {
+    slug: 'ancient-fonts',
+    title: 'Ancient & Rune Fonts',
+    description: 'Runic, Cherokee, Ethiopic, and other ancient-script lookalike fonts.'
+  },
+  'emoji-letters': {
+    slug: 'emoji-letter-fonts',
+    title: 'Emoji Letter Fonts',
+    description: 'Emoji block letters, squared letters, and regional-indicator flag letters.'
+  },
+  'novelty': {
+    slug: 'novelty-fonts',
+    title: 'Novelty Fonts',
+    description: 'Keycap numbers, currency-symbol letters, and other novelty text styles.'
   }
 };
 
@@ -1114,6 +1139,248 @@ const textStyles = {
   groupSlug: 'classified',
   slug: 'ultra-typewriter'
 },
+
+  /* =========================
+     FULLWIDTH / VAPORWAVE
+     ========================= */
+
+  'Ultra Fullwidth': {
+    upper: 'ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ',
+    lower: 'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ',
+    nums: '０１２３４５６７８９',
+    type: 'map',
+    note: 'Vaporwave · wide aesthetic',
+    category: 'fullwidth',
+    familySlug: ['fullwidth'],
+    groupSlug: 'fullwidth',
+    slug: 'ultra-fullwidth',
+    platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
+  },
+
+  /* =========================
+     FAUX-SCRIPT LOOKALIKES
+     ========================= */
+
+  'Ultra Faux Cyrillic': {
+    upper: 'АВСДЕҒГНІЈКЛМИОРԚЯЅТЦѴШХҮЗ',
+    lower: 'абсдеғгніјклмиорԛяѕтцѵшхуз',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Faux Russian look · lookalike letters',
+    category: 'faux',
+    familySlug: ['faux'],
+    groupSlug: 'faux',
+    slug: 'ultra-faux-cyrillic',
+    platforms: ["all","instagram","tiktok","x","discord"]
+  },
+
+  'Ultra Faux Greek': {
+    upper: 'ΑΒϹΔΕϜΓΗΙϳΚΛΜΝΟΡϘΡΣΤΥVΩΧΥΖ',
+    lower: 'αβϲδεϝγηιϳκλμνορϙρστυvωχυζ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Greek lookalike letters',
+    category: 'faux',
+    familySlug: ['faux'],
+    groupSlug: 'faux',
+    slug: 'ultra-faux-greek',
+    platforms: ["all","instagram","tiktok","x","discord"]
+  },
+
+  'Ultra Katakana': {
+    upper: 'アバクダエフガハイジカルマナオパクラサタウヴワクヤザ',
+    lower: 'アバクダエフガハイジカルマナオパクラサタウヴワクヤザ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Japanese katakana style',
+    category: 'faux',
+    familySlug: ['faux'],
+    groupSlug: 'faux',
+    slug: 'ultra-katakana',
+    platforms: ["all","instagram","tiktok","x","discord"]
+  },
+
+  /* =========================
+     ANCIENT & RUNE SCRIPTS
+     (homoglyph maps — partial coverage falls back to Latin)
+     ========================= */
+
+  'Ultra Runic': {
+    upper: 'ᚨᛒᚲᛞᛖᚠᚷᚺᛁᛃᚲᛚᛗᚾᛟᛈᚲᚱᛊᛏᚢᚡᚹᛪᛦᛉ',
+    lower: 'ᚨᛒᚲᛞᛖᚠᚷᚺᛁᛃᚲᛚᛗᚾᛟᛈᚲᚱᛊᛏᚢᚡᚹᛪᛦᛉ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Elder Futhark runes',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'runic',
+    slug: 'ultra-runic',
+    platforms: ["instagram","x","discord"]
+  },
+
+  'Ultra Old Italic': {
+    upper: '𐌀𐌁𐌂𐌃𐌄𐌅𐌆𐌇𐌉𐌉𐌊𐌋𐌌𐌍𐌏𐌐𐌒𐌓𐌔𐌕𐌖𐌖𐌜𐌗𐌙𐌆',
+    lower: '𐌀𐌁𐌂𐌃𐌄𐌅𐌆𐌇𐌉𐌉𐌊𐌋𐌌𐌍𐌏𐌐𐌒𐌓𐌔𐌕𐌖𐌖𐌜𐌗𐌙𐌆',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Ancient Italic / Etruscan look',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-old-italic',
+    platforms: ["discord","x"]
+  },
+
+  'Ultra Cherokee': {
+    upper: 'ᎪᏴᏯᎠᎼᏅᏻᏋᏖᎻ᏶ᏮᏇᏑᏎᏲQᎱᏪᎲᏜᏙᏤXᎹᏓ',
+    lower: 'ᎪᏴᏯᎠᎼᏅᏻᏋᏖᎻ᏶ᏮᏇᏑᏎᏲqᎱᏪᎲᏜᏙᏤxᎹᏓ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Cherokee syllabary lookalikes',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-cherokee',
+    platforms: ["discord","x"]
+  },
+
+  'Ultra Canadian Syllabics': {
+    upper: 'ᗅᗷᑕᗪᕾᖴGᕼᑊJᖽᒪᗰᑎᗝᑥQᗇᔕTᑌᐯᗯ᙭ᖻᒿ',
+    lower: 'ᗅᗷᑕᗪᕾᖴgᕼᑊjᖽᒪᗰᑎᗝᑥqᗇᔕtᑌᐯᗯ᙭ᖻᒿ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Canadian Aboriginal syllabics',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-canadian-syllabics',
+    platforms: ["discord","x"]
+  },
+
+  'Ultra Ethiopic': {
+    upper: 'ሀለሐመሠረሰሸቀበተኀነአከወዐዘየደጀገጠጰጸፈ',
+    lower: 'ሀለሐመሠረሰሸቀበተኀነአከወዐዘየደጀገጠጰጸፈ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Ethiopic / Geez script style',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-ethiopic',
+    platforms: ["discord","x"]
+  },
+
+  'Ultra Tibetan': {
+    upper: 'ཀཁགངཅཆཇཉཏཐདནཔཕབམཙཚཛཝཞཟཡརལཤ',
+    lower: 'ཀཁགངཅཆཇཉཏཐདནཔཕབམཙཚཛཝཞཟཡརལཤ',
+    nums: '༠༡༢༣༤༥༦༧༨༩',
+    type: 'map',
+    note: 'Tibetan script style',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-tibetan',
+    platforms: ["discord","x"]
+  },
+
+  'Ultra Bopomofo': {
+    upper: 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞ',
+    lower: 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Bopomofo (Zhuyin) style',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-bopomofo',
+    platforms: ["discord","x"]
+  },
+
+  'Ultra Yi': {
+    upper: 'ꀀꀁꀂꀃꀄꀅꀆꀇꀈꀉꀊꀋꀌꀍꀎꀏꀐꀑꀒꀓꀔꀕꀖꀗꀘꀙ',
+    lower: 'ꀀꀁꀂꀃꀄꀅꀆꀇꀈꀉꀊꀋꀌꀍꀎꀏꀐꀑꀒꀓꀔꀕꀖꀗꀘꀙ',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Yi script style',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-yi',
+    platforms: ["discord","x"]
+  },
+
+  /* =========================
+     EMOJI LETTERS
+     ========================= */
+
+  'Ultra Emoji Block': {
+    upper: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
+    lower: '🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Filled emoji block letters',
+    category: 'emoji-letters',
+    familySlug: ['emoji-letters'],
+    groupSlug: 'emoji-letters',
+    slug: 'ultra-emoji-block',
+    platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
+  },
+
+  'Ultra Squared': {
+    upper: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
+    lower: '🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Outlined square letters',
+    category: 'emoji-letters',
+    familySlug: ['emoji-letters'],
+    groupSlug: 'emoji-letters',
+    slug: 'ultra-squared',
+    platforms: ["all","instagram","x","discord"]
+  },
+
+  'Ultra Regional Indicator': {
+    upper: ["🇦⁠", "🇧⁠", "🇨⁠", "🇩⁠", "🇪⁠", "🇫⁠", "🇬⁠", "🇭⁠", "🇮⁠", "🇯⁠", "🇰⁠", "🇱⁠", "🇲⁠", "🇳⁠", "🇴⁠", "🇵⁠", "🇶⁠", "🇷⁠", "🇸⁠", "🇹⁠", "🇺⁠", "🇻⁠", "🇼⁠", "🇽⁠", "🇾⁠", "🇿⁠"],
+    lower: ["🇦⁠", "🇧⁠", "🇨⁠", "🇩⁠", "🇪⁠", "🇫⁠", "🇬⁠", "🇭⁠", "🇮⁠", "🇯⁠", "🇰⁠", "🇱⁠", "🇲⁠", "🇳⁠", "🇴⁠", "🇵⁠", "🇶⁠", "🇷⁠", "🇸⁠", "🇹⁠", "🇺⁠", "🇻⁠", "🇼⁠", "🇽⁠", "🇾⁠", "🇿⁠"],
+    nums: '0123456789',
+    type: 'map',
+    note: 'Flag / regional-indicator letters',
+    category: 'emoji-letters',
+    familySlug: ['emoji-letters'],
+    groupSlug: 'emoji-letters',
+    slug: 'ultra-regional-indicator',
+    platforms: ["all","instagram","x","discord"]
+  },
+
+  /* =========================
+     NOVELTY
+     ========================= */
+
+  'Ultra Keycap Numbers': {
+    upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    lower: 'abcdefghijklmnopqrstuvwxyz',
+    nums: ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"],
+    type: 'map',
+    note: 'Keycap digits (0-9)',
+    category: 'novelty',
+    familySlug: ['novelty'],
+    groupSlug: 'novelty',
+    slug: 'ultra-keycap-numbers',
+    platforms: ["all","instagram","x","discord"]
+  },
+
+  'Ultra Currency': {
+    upper: '₳฿¢₫€₣₲HIJ₭£₥₦O₱Q₹$₮UV₩X¥Z',
+    lower: '₳฿¢₫€₣₲hij₭£₥₦o₱q₹$₮uv₩x¥z',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Currency-symbol lookalikes · partial',
+    category: 'novelty',
+    familySlug: ['novelty'],
+    groupSlug: 'novelty',
+    slug: 'ultra-currency',
+    platforms: ["instagram","x","discord"]
+  },
 };
 
 /* -----------------------------
