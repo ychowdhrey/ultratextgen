@@ -11,6 +11,7 @@
         '<a href="/usecase/" class="footer-link">Use Cases</a>' +
         '<a href="/category/" class="footer-link">Categories</a>' +
         '<a href="/library/" class="footer-link">Library</a>' +
+        '<a href="/printables/" class="footer-link">Printables</a>' +
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Popular Tools</span>' +

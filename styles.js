@@ -97,6 +97,40 @@ const SITE_PAGES = {
     slug: 'font',
     title: 'Fonts',
     description: 'Browse individual Unicode font pages.'
+  },
+  printablesRoot: {
+    slug: 'printables',
+    title: 'Printable Letters & Alphabets',
+    description: 'Free printable letters, alphabets, tracing sheets, and PNG downloads.'
+  }
+};
+
+/* -----------------------------
+   PRINTABLE PAGES (Printables cluster)
+   Downloadable / traceable resources (print + PNG), distinct from the
+   copy-paste font generators in CATEGORY_PAGES. Each page is driven by the
+   shared engine at /js/printables/printablesEngine.js via a per-page config.
+------------------------------ */
+const PRINTABLE_PAGES = {
+  'bubble-letters': {
+    slug: 'bubble-letters',
+    title: 'Printable Bubble Letters',
+    description: 'Bubble letters A–Z and 0–9 as large printable outlines to trace, color, and download as PNG.'
+  },
+  'cursive-alphabet': {
+    slug: 'cursive-alphabet',
+    title: 'Cursive Alphabet & Practice Sheets',
+    description: 'The cursive alphabet A–Z with printable practice sheets to trace and per-letter PNG downloads.'
+  },
+  'block-letters': {
+    slug: 'block-letters',
+    title: 'Printable Block Letters',
+    description: 'Block letter and number stencils A–Z, 0–9 to print, trace, and cut out.'
+  },
+  'name-tracing': {
+    slug: 'name-tracing',
+    title: 'Name Tracing Worksheets',
+    description: 'Type any name to build a free printable tracing worksheet with model and trace rows.'
   }
 };
 
@@ -1150,6 +1184,7 @@ function getStylesByFamilyAndGroup(familySlug, groupSlug) {
 ------------------------------ */
 window.SITE_PAGES = SITE_PAGES;
 window.CATEGORY_PAGES = CATEGORY_PAGES;
+window.PRINTABLE_PAGES = PRINTABLE_PAGES;
 window.textStyles = textStyles;
 
 window.StyleRegistry = {
