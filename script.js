@@ -21,6 +21,58 @@
     console.error("styles.js is missing or window.textStyles is empty.");
   }
 
+  /* ===================
+     UI strings (localized by <html lang>)
+     =================== */
+  const UI_STRINGS = {
+    en: { copy: "Copy", copied: "✓ Copied", failed: "✗ Failed", copyTitle: "Copy to clipboard",
+          save: "Save", saved: "Saved", saveTitle: "Save this style", unsaveTitle: "Remove from saved styles",
+          empty: "Type something above...",
+          noStyles: "No styles found. Try a different filter or search term." },
+    pt: { copy: "Copiar", copied: "✓ Copiado", failed: "✗ Falhou", copyTitle: "Copiar para a área de transferência",
+          save: "Salvar", saved: "Salvo", saveTitle: "Salvar este estilo", unsaveTitle: "Remover dos estilos salvos",
+          empty: "Digite algo aí em cima...",
+          noStyles: "Nenhum estilo encontrado. Tente outro filtro ou termo de busca." },
+    id: { copy: "Salin", copied: "✓ Tersalin", failed: "✗ Gagal", copyTitle: "Salin ke papan klip",
+          save: "Simpan", saved: "Tersimpan", saveTitle: "Simpan gaya ini", unsaveTitle: "Hapus dari gaya tersimpan",
+          empty: "Ketik sesuatu di atas...",
+          noStyles: "Tidak ada gaya yang ditemukan. Coba filter atau kata kunci lain." },
+    tr: { copy: "Kopyala", copied: "✓ Kopyalandı", failed: "✗ Başarısız", copyTitle: "Panoya kopyala",
+          save: "Kaydet", saved: "Kaydedildi", saveTitle: "Bu stili kaydet", unsaveTitle: "Kayıtlı stillerden çıkar",
+          empty: "Yukarıya bir şeyler yaz...",
+          noStyles: "Stil bulunamadı. Başka bir filtre veya arama terimi dene." },
+    fr: { copy: "Copier", copied: "✓ Copié", failed: "✗ Échec", copyTitle: "Copier dans le presse-papiers",
+          save: "Enregistrer", saved: "Enregistré", saveTitle: "Enregistrer ce style", unsaveTitle: "Retirer des styles enregistrés",
+          empty: "Tape quelque chose au-dessus…",
+          noStyles: "Aucun style trouvé. Essaie un autre filtre ou terme de recherche." },
+    nl: { copy: "Kopieer", copied: "✓ Gekopieerd", failed: "✗ Mislukt", copyTitle: "Kopiëren naar klembord",
+          save: "Bewaar", saved: "Bewaard", saveTitle: "Bewaar deze stijl", unsaveTitle: "Verwijder uit bewaarde stijlen",
+          empty: "Typ hierboven iets…",
+          noStyles: "Geen stijlen gevonden. Probeer een ander filter of zoekwoord." },
+    es: { copy: "Copiar", copied: "✓ Copiado", failed: "✗ Falló", copyTitle: "Copiar al portapapeles",
+          save: "Guardar", saved: "Guardado", saveTitle: "Guardar este estilo", unsaveTitle: "Quitar de los estilos guardados",
+          empty: "Escribe algo arriba...",
+          noStyles: "No se encontraron estilos. Prueba otro filtro o término de búsqueda." },
+    de: { copy: "Kopieren", copied: "✓ Kopiert", failed: "✗ Fehlgeschlagen", copyTitle: "In die Zwischenablage kopieren",
+          save: "Speichern", saved: "Gespeichert", saveTitle: "Diesen Stil speichern", unsaveTitle: "Aus gespeicherten Stilen entfernen",
+          empty: "Tipp oben etwas ein...",
+          noStyles: "Keine Stile gefunden. Probiere einen anderen Filter oder Suchbegriff." },
+    it: { copy: "Copia", copied: "✓ Copiato", failed: "✗ Errore", copyTitle: "Copia negli appunti",
+          save: "Salva", saved: "Salvato", saveTitle: "Salva questo stile", unsaveTitle: "Rimuovi dagli stili salvati",
+          empty: "Scrivi qualcosa qui sopra...",
+          noStyles: "Nessuno stile trovato. Prova un altro filtro o termine di ricerca." },
+    pl: { copy: "Kopiuj", copied: "✓ Skopiowano", failed: "✗ Błąd", copyTitle: "Kopiuj do schowka",
+          save: "Zapisz", saved: "Zapisano", saveTitle: "Zapisz ten styl", unsaveTitle: "Usuń z zapisanych stylów",
+          empty: "Wpisz coś powyżej...",
+          noStyles: "Nie znaleziono stylów. Spróbuj innego filtra lub hasła." },
+    vi: { copy: "Sao chép", copied: "✓ Đã sao chép", failed: "✗ Thất bại", copyTitle: "Sao chép vào bộ nhớ tạm",
+          save: "Lưu", saved: "Đã lưu", saveTitle: "Lưu kiểu chữ này", unsaveTitle: "Xóa khỏi kiểu chữ đã lưu",
+          empty: "Nhập gì đó ở trên...",
+          noStyles: "Không tìm thấy kiểu chữ nào. Thử bộ lọc hoặc từ khóa khác." }
+  };
+  const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
+  const STR = UI_STRINGS[PAGE_LANG] || UI_STRINGS.en;
+
  /* ===================
    DATA: Decorations
    =================== */
@@ -213,7 +265,10 @@ const decorations = window.UTG_DECORATIONS || {
   
   // Detect category from URL if on a category page
   const categoryMatch = window.location.pathname.match(CATEGORY_URL_PATTERN);
-  let currentCategory = categoryMatch ? categoryMatch[1] : "popular";
+  // On family-scoped pages (window.UTG_FAMILY) the default "popular" category
+  // may not intersect the family at all, leaving the grid empty on load —
+  // start unfiltered there so the family's styles render immediately.
+  let currentCategory = categoryMatch ? categoryMatch[1] : (currentFamily !== "all" ? null : "popular");
   
   let currentDecoTab = window.UTG_DEFAULT_DECO_TAB || "symbols";
   let selectedDecoration = null;
@@ -235,6 +290,26 @@ const decorations = window.UTG_DECORATIONS || {
   const SCOPE_VALUES = ["whole", "first-line"];
   let currentScope = loadScopePref();
 
+  // Format marks — optional combining underline / strikethrough layered on top
+  // of whatever style is generated. Opt-in per page via window.UTG_FORMAT_MARKS
+  // so the control only surfaces where the job calls for it (e.g. the bold
+  // italic page, where users explicitly search "bold italic underline").
+  // Persisted per device so the choice survives reloads.
+  const FORMAT_KEY = "utg_format_marks";
+  let formatMarks = loadFormatMarks();
+
+  // Demo text rendered through every style while the input is empty, so the
+  // first paint shows the whole catalog styled instead of placeholder rows.
+  // Two lines on purpose: the first-line scope and heading use cases read
+  // naturally. Pages can override via window.UTG_DEMO_TEXT.
+  const DEMO_TEXT = window.UTG_DEMO_TEXT ||
+    "Welcome to UltraTextGen.\nType anything. Make it ultra.";
+
+  // Per-style copy counts + last-used timestamps, persisted per device.
+  // Most-copied styles float to the top of the grid on the next render.
+  const USAGE_KEY = "utg_style_usage";
+  let styleUsage = loadStyleUsage();
+
   /* ===================
      ELEMENTS
      =================== */
@@ -255,6 +330,16 @@ const decorations = window.UTG_DECORATIONS || {
      =================== */
   function safeAttr(str) {
     return String(str || "").replace(/"/g, "&quot;");
+  }
+
+  // Escape converted text before it lands in innerHTML. Styles that don't
+  // remap ASCII (decorators, redact) pass < > & through verbatim, so a
+  // crafted ?q= link could otherwise inject markup into every card.
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   }
 
   function loadSavedStyles() {
@@ -292,6 +377,56 @@ const decorations = window.UTG_DECORATIONS || {
     }
   }
 
+  function loadFormatMarks() {
+    const fallback = { underline: false, strike: false };
+    try {
+      const raw = localStorage.getItem(FORMAT_KEY);
+      const parsed = raw ? JSON.parse(raw) : null;
+      if (!parsed || typeof parsed !== "object") return fallback;
+      return { underline: !!parsed.underline, strike: !!parsed.strike };
+    } catch (err) {
+      return fallback;
+    }
+  }
+
+  function persistFormatMarks() {
+    try {
+      localStorage.setItem(FORMAT_KEY, JSON.stringify(formatMarks));
+    } catch (err) {
+      // Storage may be unavailable — fail silently
+    }
+  }
+
+  function loadStyleUsage() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(USAGE_KEY) || "{}");
+      return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+    } catch (err) {
+      return {};
+    }
+  }
+
+  function recordStyleUsage(name) {
+    if (!name || !stylesRegistry[name]) return;
+    const entry = styleUsage[name] || { c: 0, t: 0 };
+    entry.c += 1;
+    entry.t = Date.now();
+    styleUsage[name] = entry;
+    try {
+      localStorage.setItem(USAGE_KEY, JSON.stringify(styleUsage));
+    } catch (err) {
+      // Storage may be unavailable — fail silently
+    }
+  }
+
+  function usageCount(name) {
+    return styleUsage[name] ? styleUsage[name].c || 0 : 0;
+  }
+
+  function usageLast(name) {
+    return styleUsage[name] ? styleUsage[name].t || 0 : 0;
+  }
+
   function isSaved(name) {
     return savedStyles.indexOf(name) !== -1;
   }
@@ -320,6 +455,18 @@ const decorations = window.UTG_DECORATIONS || {
   function applyDecoration(text) {
     if (!selectedDecoration || !text) return text;
     return selectedDecoration.prefix + text + selectedDecoration.suffix;
+  }
+
+  // Layer combining underline (U+0332) and/or strikethrough (U+0336) onto every
+  // rendered glyph. Combining marks attach to the preceding base character, so
+  // we iterate by code point — the spread operator keeps astral chars (e.g. the
+  // bold-italic 𝘼) intact. Newlines are skipped; spaces are kept so the line
+  // runs continuously, matching what people expect from a real underline.
+  // No toggles active → returns the text untouched, so other pages are unaffected.
+  function applyFormatMarks(text) {
+    if (!text || (!formatMarks.underline && !formatMarks.strike)) return text;
+    const marks = (formatMarks.strike ? "\u0336" : "") + (formatMarks.underline ? "\u0332" : "");
+    return [...text].map((ch) => (ch === "\n" ? ch : ch + marks)).join("");
   }
 
   // Render input through a style, honoring the current emphasis scope.
@@ -369,16 +516,111 @@ const decorations = window.UTG_DECORATIONS || {
     return String(name).toLowerCase().includes(String(q).toLowerCase());
   }
 
-  function createStyleCard(name, convertedText, decoratedText, style) {
+  // Where a style works, surfaced on each result card (opt-in per page via
+  // window.UTG_SHOW_PLATFORMS). Reads the style's own `platforms` array.
+  const PLATFORM_LABELS = {
+    instagram: "IG", x: "X", discord: "Discord", tiktok: "TikTok",
+    whatsapp: "WhatsApp", facebook: "Facebook", telegram: "Telegram",
+    youtube: "YouTube", snapchat: "Snapchat", linkedin: "LinkedIn"
+  };
+
+  function platformChipsHtml(style) {
+    if (!window.UTG_SHOW_PLATFORMS) return "";
+    const list = Array.isArray(style && style.platforms) ? style.platforms : null;
+    if (!list || !list.length) return "";
+    if (list.includes("all")) {
+      return `<div class="style-platforms"><span class="plat-chip is-all">Works everywhere</span></div>`;
+    }
+    const chips = list
+      .map(p => PLATFORM_LABELS[p])
+      .filter(Boolean)
+      .map(lbl => `<span class="plat-chip">${lbl}</span>`)
+      .join("");
+    return chips ? `<div class="style-platforms">${chips}</div>` : "";
+  }
+
+  /* ===================
+     RENDER SAFETY
+     =================== */
+  // Does the visitor's own device have a glyph for this character? Compares
+  // the canvas rasterization against a guaranteed-unassigned code point: an
+  // identical bitmap means the font fell back to the same missing-glyph box.
+  // Results are cached per character — the check runs once per style.
+  const glyphSupportCache = {};
+  let glyphCtx = null;
+  function deviceRendersGlyph(ch) {
+    if (!ch) return true;
+    if (ch in glyphSupportCache) return glyphSupportCache[ch];
+    let supported = true;
+    try {
+      if (!glyphCtx) {
+        const canvas = document.createElement("canvas");
+        canvas.width = canvas.height = 24;
+        glyphCtx = canvas.getContext("2d", { willReadFrequently: true });
+      }
+      const draw = (c) => {
+        glyphCtx.clearRect(0, 0, 24, 24);
+        glyphCtx.font = "18px sans-serif";
+        glyphCtx.fillText(c, 2, 18);
+        return glyphCtx.getImageData(0, 0, 24, 24).data.join(",");
+      };
+      const tofu = "\u{E01ED}"; // unassigned code point → always the .notdef box
+      supported = draw(ch) !== draw(tofu);
+    } catch (err) {
+      supported = true; // canvas unavailable → don't cry wolf
+    }
+    glyphSupportCache[ch] = supported;
+    return supported;
+  }
+
+  // A representative converted character for a style (astral-safe), used to
+  // probe device support for the style's Unicode block.
+  function sampleGlyph(style) {
+    const maps = [style && style.upper, style && style.lower, style && style.nums];
+    for (const map of maps) {
+      if (map) {
+        for (const key in map) {
+          if (map[key]) return [...String(map[key])][0];
+        }
+      }
+    }
+    return "";
+  }
+
+  // Compact per-card trust signal built from the style's own `platforms`
+  // data plus the device glyph probe. Tooltips carry the honest caveats no
+  // competitor surfaces (platform filters, screen readers, tofu boxes).
+  function safetyPillHtml(name, style) {
+    if (!style) return "";
+    const glyph = sampleGlyph(style);
+    if (glyph && !deviceRendersGlyph(glyph)) {
+      return `<span class="ts-pill ts-pill-risk" title="Your device's fonts can't display this style — it may show as boxes (□). It can still look fine on other devices.">⚠ May not show on your device</span>`;
+    }
+    const platforms = Array.isArray(style.platforms) ? style.platforms : null;
+    // Pages that render the platform chip row already say where a style
+    // works — only the device warning above adds signal there.
+    if (window.UTG_SHOW_PLATFORMS && platforms && platforms.length) return "";
+    if (platforms && platforms.includes("all")) {
+      return `<span class="ts-pill ts-pill-safe" title="Renders on all major platforms. Heads up: screen readers may spell styled letters out character by character, so keep body text plain.">✓ Safe anywhere</span>`;
+    }
+    if (platforms && platforms.length) {
+      const names = platforms.map((p) => PLATFORM_LABELS[p]).filter(Boolean).join(", ");
+      return `<span class="ts-pill ts-pill-risk" title="Best on: ${safeAttr(names)}. Other platforms may strip or garble it — paste a test first.">⚠ Works best on ${safeAttr(names)}</span>`;
+    }
+    return "";
+  }
+
+  function createStyleCard(name, convertedText, decoratedText, style, isDemo) {
     const card = document.createElement("div");
     card.className = "style-card";
 
-    const fullText = decoratedText || convertedText;
+    const fullText = isDemo ? "" : decoratedText || convertedText;
     const safeText = safeAttr(fullText);
+    const previewText = decoratedText && isDemo ? decoratedText : convertedText;
 
     let decoHtml = "";
-    if (selectedDecoration && convertedText) {
-      decoHtml = `<div class="style-decoration">${decoratedText}</div>`;
+    if (selectedDecoration && convertedText && !isDemo) {
+      decoHtml = `<div class="style-decoration">${escapeHtml(decoratedText)}</div>`;
     }
 
     const saved = isSaved(name);
@@ -388,12 +630,14 @@ const decorations = window.UTG_DECORATIONS || {
       <div class="style-info">
         <p class="style-name">${name}</p>
          ${style?.note ? `<p class="style-note">${style.note}</p>` : ""}
-        <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || "Type something above..."}</p>
+        <p class="style-preview ${!convertedText ? "placeholder" : ""}">${convertedText || STR.empty}</p>
         ${decoHtml}
+        ${safetyPillHtml(name, style)}
+        ${platformChipsHtml(style)}
       </div>
       <div class="style-actions">
-        <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="Copy to clipboard">Copy <kbd class="copy-kbd">↵</kbd></button>
-        <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? "Remove from saved styles" : "Save this style"}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? "Saved" : "Save"}</span></button>
+        <button class="copy-btn" data-text="${safeText}" ${!fullText ? "disabled" : ""} title="${STR.copyTitle}">${STR.copy} <kbd class="copy-kbd">↵</kbd></button>
+        <button class="save-btn ${saved ? "is-saved" : ""}" data-style="${safeName}" type="button" aria-pressed="${saved}" title="${saved ? STR.unsaveTitle : STR.saveTitle}"><span class="save-icon" aria-hidden="true">${saved ? "★" : "☆"}</span><span class="save-label">${saved ? STR.saved : STR.save}</span></button>
       </div>
     `;
 
@@ -624,6 +868,9 @@ const decorations = window.UTG_DECORATIONS || {
   function renderDecorations() {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
+    if (window.UTG_DECORATOR_MODE) return;
+    if (window.UTG_TATTOO_MODE) return;
+    if (window.UTG_CURSIVE_MODE) return;
     if (!el.decorationGrid) return;
 
     const grid = el.decorationGrid;
@@ -672,7 +919,7 @@ const decorations = window.UTG_DECORATIONS || {
   // editing each HTML file (skipped on the dedicated vertical/zalgo pages,
   // which run their own controllers).
   function ensureScopeControl() {
-    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE) return null;
+    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE || window.UTG_DECORATOR_MODE || window.UTG_TATTOO_MODE || window.UTG_CURSIVE_MODE) return null;
     if (!el.resultsGrid) return null;
 
     let control = $("#scopeControl");
@@ -687,11 +934,48 @@ const decorations = window.UTG_DECORATIONS || {
     control.innerHTML = `
       <span class="scope-control-label">Apply style to</span>
       <div class="scope-chips" role="group" aria-label="Choose how much text to style">
-        <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole">Whole text</button>
-        <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line">First line only <span class="scope-chip-tag">for posts</span></button>
+        <button class="scope-chip${currentScope === "whole" ? " active" : ""}" type="button" data-scope="whole" title="Style every line of your text.">Whole text</button>
+        <button class="scope-chip${currentScope === "first-line" ? " active" : ""}" type="button" data-scope="first-line" title="Style only the first line (your headline or hook) and leave the rest as plain, readable text — ideal for social posts.">First line only <span class="scope-chip-tag">for posts</span></button>
       </div>
+      <button class="share-btn" id="shareBtn" type="button" title="Share a link that reopens this page with your text filled in">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342a3 3 0 100-2.684m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684m0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684"/></svg>
+        Share
+      </button>
     `;
     host.insertBefore(control, el.resultsGrid);
+
+    const shareBtn = $("#shareBtn", control);
+    if (shareBtn) {
+      shareBtn.addEventListener("click", async () => {
+        const val = el.mainInput ? el.mainInput.value : "";
+        const url = window.location.origin + window.location.pathname +
+          (val ? "?q=" + encodeURIComponent(val) : "");
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "share_text", share_method: navigator.share ? "native" : "link_copy" });
+
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url });
+            return;
+          } catch (err) {
+            if (err && err.name === "AbortError") return; // user closed the sheet
+          }
+        }
+        try {
+          await navigator.clipboard.writeText(url);
+          const label = shareBtn.lastChild;
+          shareBtn.classList.add("copied");
+          label.textContent = " Link copied";
+          setTimeout(() => {
+            shareBtn.classList.remove("copied");
+            label.textContent = " Share";
+          }, 1500);
+        } catch (err) {
+          console.error("Share failed:", err);
+        }
+      });
+    }
 
     $$(".scope-chip", control).forEach((chip) => {
       chip.addEventListener("click", () => {
@@ -703,6 +987,61 @@ const decorations = window.UTG_DECORATIONS || {
 
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: "set_scope", scope: currentScope });
+
+        renderSavedStyles();
+        renderResults();
+      });
+    });
+
+    return control;
+  }
+
+  // Lazily inject the "Add formatting" control (underline / strikethrough)
+  // directly above the results grid. Opt-in per page via window.UTG_FORMAT_MARKS
+  // so it only appears where the job calls for it — searchers explicitly want
+  // "bold italic underline" / "bold italic strikethrough", a layer no
+  // competitor generator serves cleanly. The toggles stack on top of whichever
+  // style is generated, so every card in the grid gains the formatting at once.
+  function ensureFormatControl() {
+    if (!window.UTG_FORMAT_MARKS) return null;
+    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE || window.UTG_DECORATOR_MODE || window.UTG_TATTOO_MODE || window.UTG_CURSIVE_MODE) return null;
+    if (!el.resultsGrid) return null;
+
+    let control = $("#formatControl");
+    if (control) return control;
+
+    const host = el.resultsGrid.parentElement;
+    if (!host) return null;
+
+    control = document.createElement("div");
+    control.className = "format-control";
+    control.id = "formatControl";
+    control.innerHTML = `
+      <span class="format-control-label">Add formatting</span>
+      <div class="format-chips" role="group" aria-label="Layer underline or strikethrough on every style">
+        <button class="format-chip${formatMarks.underline ? " active" : ""}" type="button" data-format="underline" aria-pressed="${formatMarks.underline}"><span class="format-chip-demo">U̲n̲d̲e̲r̲l̲i̲n̲e̲</span></button>
+        <button class="format-chip${formatMarks.strike ? " active" : ""}" type="button" data-format="strike" aria-pressed="${formatMarks.strike}"><span class="format-chip-demo">S̶t̶r̶i̶k̶e̶</span></button>
+      </div>
+    `;
+    // Sit alongside the scope control if present, otherwise straight above the grid.
+    const scopeControl = $("#scopeControl");
+    if (scopeControl && scopeControl.parentElement === host) {
+      host.insertBefore(control, scopeControl.nextSibling);
+    } else {
+      host.insertBefore(control, el.resultsGrid);
+    }
+
+    $$(".format-chip", control).forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const key = chip.getAttribute("data-format");
+        if (key !== "underline" && key !== "strike") return;
+        formatMarks[key] = !formatMarks[key];
+        persistFormatMarks();
+        chip.classList.toggle("active", formatMarks[key]);
+        chip.setAttribute("aria-pressed", String(formatMarks[key]));
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "set_format_mark", mark: key, on: formatMarks[key] });
 
         renderSavedStyles();
         renderResults();
@@ -754,6 +1093,9 @@ const decorations = window.UTG_DECORATIONS || {
   function renderSavedStyles() {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
+    if (window.UTG_DECORATOR_MODE) return;
+    if (window.UTG_TATTOO_MODE) return;
+    if (window.UTG_CURSIVE_MODE) return;
     if (!el.resultsGrid) return;
 
     const section = ensureSavedSection();
@@ -780,14 +1122,12 @@ const decorations = window.UTG_DECORATIONS || {
     grid.innerHTML = "";
 
     const inputText = el.mainInput ? el.mainInput.value : "";
+    const isDemo = !inputText;
     valid.forEach((name) => {
       const style = stylesRegistry[name];
-      let converted = "";
-      if (inputText) {
-        converted = applyScope(inputText, style);
-      }
+      const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
+      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
     });
   }
 
@@ -797,6 +1137,9 @@ const decorations = window.UTG_DECORATIONS || {
   function renderResults() {
     if (window.UTG_VERTICAL_MODE) return;
     if (window.UTG_ZALGO_MODE) return;
+    if (window.UTG_DECORATOR_MODE) return;
+    if (window.UTG_TATTOO_MODE) return;
+    if (window.UTG_CURSIVE_MODE) return;
     if (!el.resultsGrid) return;
 
     const grid = el.resultsGrid;
@@ -839,16 +1182,20 @@ const decorations = window.UTG_DECORATIONS || {
       return true;
     });
 
+    // Most-copied styles first (recency breaks ties); untouched styles keep
+    // registry order thanks to stable sort. Copying doesn't rerender, so
+    // cards never jump around mid-session — the order upgrades on return.
+    filtered.sort((a, b) =>
+      usageCount(b[0]) - usageCount(a[0]) || usageLast(b[0]) - usageLast(a[0])
+    );
+
+    const isDemo = !inputText;
     let count = 0;
 
     filtered.forEach(([name, style]) => {
-      let converted = "";
-      if (inputText) {
-        converted = applyScope(inputText, style);
-      }
-
+      const converted = applyFormatMarks(applyScope(inputText || DEMO_TEXT, style));
       const decorated = converted ? applyDecoration(converted) : "";
-      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style));
+      grid.appendChild(createStyleCard(name, converted, selectedDecoration ? decorated : null, style, isDemo));
       count += 1;
     });
 
@@ -857,10 +1204,177 @@ const decorations = window.UTG_DECORATIONS || {
       empty.className = "style-card";
       empty.innerHTML = `
         <div class="style-info">
-          <p class="style-preview placeholder">No styles found. Try a different filter or search term.</p>
+          <p class="style-preview placeholder">${STR.noStyles}</p>
         </div>
       `;
       grid.appendChild(empty);
+    }
+  }
+
+  /* ===================
+     PLATFORM PREVIEW
+     =================== */
+  // "See it before you paste it" — renders the styled text inside lightweight
+  // CSS mockups of real platform UIs. One shared modal, built on first use.
+  const PREVIEW_PLATFORMS = [
+    { key: "instagram", label: "Instagram" },
+    { key: "linkedin", label: "LinkedIn" },
+    { key: "discord", label: "Discord" },
+    { key: "x", label: "X" },
+    { key: "whatsapp", label: "WhatsApp" },
+    { key: "tiktok", label: "TikTok" }
+  ];
+
+  function defaultPreviewPlatform() {
+    const forced = (window.UTG_PREVIEW_PLATFORM || "").toLowerCase();
+    if (PREVIEW_PLATFORMS.some((p) => p.key === forced)) return forced;
+    const seg = (window.location.pathname.split("/")[1] || "").toLowerCase();
+    if (PREVIEW_PLATFORMS.some((p) => p.key === seg)) return seg;
+    return "instagram";
+  }
+
+  let previewPlatform = defaultPreviewPlatform();
+  let previewStyleName = "";
+  let previewLastFocus = null;
+
+  // Each mockup takes the styled text as a plain string; it is inserted with
+  // textContent (never innerHTML), so no escaping gymnastics are needed.
+  function buildMockup(platform) {
+    const av = `<span class="pv-avatar" aria-hidden="true"></span>`;
+    switch (platform) {
+      case "instagram":
+        return `
+          <div class="pv-mock pv-instagram">
+            <div class="pv-ig-head">${av}<div class="pv-ig-stats"><span><b>128</b> posts</span><span><b>3,410</b> followers</span><span><b>512</b> following</span></div></div>
+            <div class="pv-ig-name">yourname</div>
+            <div class="pv-text pv-ig-bio"></div>
+            <div class="pv-ig-btn">Edit profile</div>
+          </div>`;
+      case "linkedin":
+        return `
+          <div class="pv-mock pv-linkedin">
+            <div class="pv-li-head">${av}<div><div class="pv-li-name">Your Name</div><div class="pv-li-sub">Marketing Lead · 1st</div><div class="pv-li-sub">2h · 🌐</div></div></div>
+            <div class="pv-text pv-li-body"></div>
+            <div class="pv-li-actions"><span>👍 Like</span><span>💬 Comment</span><span>↗ Share</span></div>
+          </div>`;
+      case "discord":
+        return `
+          <div class="pv-mock pv-discord">
+            <div class="pv-dc-row">${av}<div><span class="pv-dc-name">yourname</span><span class="pv-dc-time">Today at 9:41 AM</span><div class="pv-text pv-dc-msg"></div></div></div>
+          </div>`;
+      case "x":
+        return `
+          <div class="pv-mock pv-x">
+            <div class="pv-x-head">${av}<div><span class="pv-x-name">Your Name</span> <span class="pv-x-handle">@yourname · 2h</span></div></div>
+            <div class="pv-text pv-x-body"></div>
+            <div class="pv-x-actions"><span>💬 12</span><span>🔁 34</span><span>♥ 208</span></div>
+          </div>`;
+      case "whatsapp":
+        return `
+          <div class="pv-mock pv-whatsapp">
+            <div class="pv-wa-bubble"><div class="pv-text pv-wa-msg"></div><span class="pv-wa-meta">9:41 ✓✓</span></div>
+          </div>`;
+      case "tiktok":
+        return `
+          <div class="pv-mock pv-tiktok">
+            <div class="pv-tt-row">${av}<div><div class="pv-tt-name">yourname</div><div class="pv-text pv-tt-msg"></div><div class="pv-tt-meta">2h ago · Reply</div></div><span class="pv-tt-like">♥<br>1.2K</span></div>
+          </div>`;
+      default:
+        return `<div class="pv-mock"><div class="pv-text"></div></div>`;
+    }
+  }
+
+  function ensurePreviewModal() {
+    let modal = $("#previewModal");
+    if (modal) return modal;
+
+    modal = document.createElement("div");
+    modal.className = "preview-modal";
+    modal.id = "previewModal";
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="preview-backdrop" data-preview-close></div>
+      <div class="preview-dialog" role="dialog" aria-modal="true" aria-label="Platform preview">
+        <div class="preview-head">
+          <span class="preview-title" id="previewTitle">Preview</span>
+          <button class="preview-close" type="button" data-preview-close aria-label="Close preview">✕</button>
+        </div>
+        <div class="preview-tabs" role="tablist">
+          ${PREVIEW_PLATFORMS.map((p) =>
+            `<button class="preview-tab" type="button" role="tab" data-platform="${p.key}">${p.label}</button>`
+          ).join("")}
+        </div>
+        <div class="preview-body" id="previewBody"></div>
+        <p class="preview-note">Simulated look — fonts can differ slightly per device and app version.</p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target.closest("[data-preview-close]")) closePreview();
+      const tab = e.target.closest(".preview-tab");
+      if (tab) {
+        previewPlatform = tab.dataset.platform || previewPlatform;
+        renderPreviewBody();
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.hidden) closePreview();
+    });
+
+    return modal;
+  }
+
+  function previewTextFor(styleName) {
+    const style = stylesRegistry[styleName];
+    if (!style) return "";
+    const source = (el.mainInput && el.mainInput.value) || DEMO_TEXT;
+    const converted = applyFormatMarks(applyScope(source, style));
+    return selectedDecoration ? applyDecoration(converted) : converted;
+  }
+
+  function renderPreviewBody() {
+    const modal = ensurePreviewModal();
+    const body = $("#previewBody", modal);
+    const title = $("#previewTitle", modal);
+    if (!body) return;
+
+    $$(".preview-tab", modal).forEach((t) =>
+      t.classList.toggle("active", t.dataset.platform === previewPlatform)
+    );
+    if (title) title.textContent = previewStyleName ? `${previewStyleName} — preview` : "Preview";
+
+    body.innerHTML = buildMockup(previewPlatform);
+    const textEl = $(".pv-text", body);
+    if (textEl) textEl.textContent = previewTextFor(previewStyleName);
+  }
+
+  function openPreview(styleName) {
+    if (!stylesRegistry[styleName]) return;
+    previewStyleName = styleName;
+    previewLastFocus = document.activeElement;
+    const modal = ensurePreviewModal();
+    renderPreviewBody();
+    modal.hidden = false;
+    document.body.classList.add("preview-open");
+    const closeBtn = $(".preview-close", modal);
+    if (closeBtn) closeBtn.focus();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "preview_open",
+      preview_platform: previewPlatform,
+      style_name: styleName
+    });
+  }
+
+  function closePreview() {
+    const modal = $("#previewModal");
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.classList.remove("preview-open");
+    if (previewLastFocus && typeof previewLastFocus.focus === "function") {
+      previewLastFocus.focus();
     }
   }
 
@@ -894,6 +1408,17 @@ const decorations = window.UTG_DECORATIONS || {
         urlSyncTimer = setTimeout(pushUrlState, 400);
         renderSavedStyles();
         renderResults();
+      });
+
+      // Ctrl/Cmd+Enter copies the top result (saved styles first) without
+      // leaving the input — plain Enter still inserts a newline.
+      el.mainInput.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter" || (!e.ctrlKey && !e.metaKey)) return;
+        const topBtn = $("#savedGrid .copy-btn:not([disabled])") ||
+          $("#resultsGrid .copy-btn:not([disabled])");
+        if (!topBtn) return;
+        e.preventDefault();
+        topBtn.click();
       });
     }
 
@@ -949,25 +1474,29 @@ document.addEventListener("click", async (e) => {
   try {
     await navigator.clipboard.writeText(text);
 
+    const styleName = btn.dataset.style || "";
+    recordStyleUsage(styleName);
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "copy_text",
-      copy_method: "button"
+      copy_method: "button",
+      style_name: styleName
     });
 
-    btn.textContent = "✓ Copied";
+    btn.textContent = STR.copied;
     btn.classList.add("copied");
     showCopyToast();
     setTimeout(() => {
-      btn.textContent = "Copy";
+      btn.textContent = STR.copy;
       btn.classList.remove("copied");
     }, 1500);
   } catch (err) {
     console.error("Copy failed:", err);
-    btn.textContent = "✗ Failed";
+    btn.textContent = STR.failed;
     btn.classList.add("copy-error");
     setTimeout(() => {
-      btn.textContent = "Copy";
+      btn.textContent = STR.copy;
       btn.classList.remove("copy-error");
     }, 1500);
   }
@@ -1005,6 +1534,14 @@ document.addEventListener("click", (e) => {
   toggleSaved(name);
 });
 
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest ? e.target.closest(".preview-btn") : null;
+  if (!btn) return;
+  const name = btn.dataset.style || "";
+  if (!name) return;
+  openPreview(name);
+});
+
 document.addEventListener("copy", () => {
   const selection = window.getSelection()?.toString();
   if (selection && selection.length > 0) {
@@ -1040,6 +1577,7 @@ document.addEventListener("copy", () => {
 
     renderDecorations();
     ensureScopeControl();
+    ensureFormatControl();
     renderSavedStyles();
 
     // Show skeleton placeholders while fonts.json loads

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Şekilli Yazı, Havalı Nick ve Güzel Fontlar — Kopyala Yapıştır",
-    "description": "Şekilli yazı oluşturucu — Instagram bio, oyun nicki, WhatsApp durum ve Discord için kalın, italik, el yazısı, gotik ve balon fontlar. Sembol kopyala yapıştır, anında kullan."
+    "description": "Şekilli yazı, font ve nick oluşturucu — Instagram bio, oyun nicki, WhatsApp ve Discord için kalın, italik, el yazısı, gotik, balon font ve şekilli rakam. Kopyala yapıştır, anında kullan."
   },
   "hero": {
     "title": "Şekilli Yazı ve Havalı Nick Oluşturucu",
@@ -70,7 +70,7 @@
           },
           {
             "question": "Şekilli yazıyı nerelere yapıştırabilirim?",
-            "answer": "Düz metin kabul eden her yere. Stiller gerçek karakter olduğu için yapıştırınca kaybolmaz.\n    <br><br>\n    En çok kullanıldığı yerler:<br>\n    — Instagram bio, kullanıcı adı ve yorumlar<br>\n    — TikTok bio ve video açıklaması<br>\n    — WhatsApp durumu, profil ismi ve sohbet mesajları<br>\n    — Discord nick, sunucu ismi ve sohbet<br>\n    — Oyun nick'i: PUBG, Free Fire, Mobile Legends, Valorant, Roblox<br>\n    — YouTube yorum ve kanal açıklaması<br>\n    — X (Twitter), Facebook, Snapchat, Pinterest<br>\n    — E-posta konu satırı, Gmail imzası\n    <br><br>\n    Yapıştır, aynısı kalır."
+            "answer": "Düz metin kabul eden her yere. Stiller gerçek karakter olduğu için yapıştırınca kaybolmaz.\n    <br><br>\n    En çok kullanıldığı yerler:<br>\n    — Instagram bio, kullanıcı adı ve yorumlar<br>\n    — TikTok bio ve video açıklaması<br>\n    — WhatsApp durumu, profil ismi ve sohbet mesajları<br>\n    — Discord nick, sunucu ismi ve sohbet<br>\n    — Oyun nick'i: PUBG, Free Fire, Mobile Legends, Valorant, Roblox<br>\n    — YouTube yorum ve kanal açıklaması<br>\n    — LinkedIn başlık (headline), gönderi ve yorumlar<br>\n    — X (Twitter), Facebook, Snapchat, Pinterest<br>\n    — E-posta konu satırı, Gmail imzası\n    <br><br>\n    Yapıştır, aynısı kalır."
           },
           {
             "question": "Ücretsiz mi? Üye olmam gerekiyor mu?",
@@ -92,6 +92,10 @@
           {
             "question": "Zalgo / glitch yazı nedir, nasıl yapılır?",
             "answer": "Zalgo, harflerin üstüne ve altına üst üste işaretler yığarak \"bozulmuş\", korku filmi havasında bir yazı çıkarır.\n    <br><br>\n    Örnek: <em>melisa</em> → m̷̢e̸̢l̷̢i̶̢s̵̢a̷̢\n    <br><br>\n    Edgy biolar, korku temalı paylaşımlar, ürkütücü nickler ve grup sohbetinde arkadaşı trollemek için sevilen bir stil. Yazıyı yaz, Zalgo'yu seç, kopyala — gerisi otomatik."
+          },
+          {
+            "question": "Şekilli rakam ve sayı nasıl yazılır?",
+            "answer": "Harfler gibi rakamlar da stilize oluyor. Kutuya sayını yaz, altta her stilin rakam karşılığı çıkar.\n    <br><br>\n    Örnek: <em>2025</em> → 𝟮𝟬𝟮𝟱 (kalın), 𝟸𝟶𝟸𝟻 (daktilo), ②⓪②⑤ (balon), ２０２５ (geniş / fullwidth)\n    <br><br>\n    Doğum tarihi, forma numarası, oyun seviyesi veya bio'daki yıl için birebir.\n    <br><br>\n    Not: Şekilli rakamları telefon numarası, IBAN veya doğrulama kodu gibi yerlerde kullanma — bazı sistemler okuyamaz."
           }
         ]
       },
@@ -126,6 +130,10 @@
           {
             "question": "Nick alanı bazı karakterleri kabul etmiyor, ne yapayım?",
             "answer": "Platforma göre kısıtlamalar değişiyor. Bir karakter reddedilirse çözüm basit: <strong>başka bir stile geç</strong>.\n    <br><br>\n    En geniş uyumlu olanlar — neredeyse her yerde geçen güvenli stiller:<br>\n    — Kalın (Ultra Bold)<br>\n    — İtalik (Ultra Italic)<br>\n    — Küçük büyük harf (Small Caps)<br>\n    — Balon (Bubble)\n    <br><br>\n    Karmaşık süslemeli stiller (Zalgo, çok katmanlı gotik) bazı oyun ve uygulamalar tarafından bloklanabilir. Sadeden başla, fazlasını yavaş yavaş ekle."
+          },
+          {
+            "question": "Kalpli, kelebekli ve kılıçlı şekilli isim nasıl yapılır?",
+            "answer": "İsmini yaz, etrafına tek tıkla sembol sar — kalp, kelebek, kılıç, yıldız.\n    <br><br>\n    — <strong>Kalpli:</strong> ♡ 𝓜𝓮𝓵𝓲𝓼𝓪 ♡, ❤ 𝕄𝕖𝕝𝕚𝕤𝕒 ❤<br>\n    — <strong>Kelebekli:</strong> ƸӜƷ 𝓔𝓯𝓮 ƸӜƷ<br>\n    — <strong>Kılıç / silah:</strong> ︻デ═══一 𝓚𝓪𝓪𝓷 一═══デ︻<br>\n    — <strong>Yıldızlı:</strong> ★彡 𝓢𝓮𝓭𝓪 彡★\n    <br><br>\n    Önce ismini yaz, stilini seç (gotik ve el yazısı en çok tutuyor), sonra <em>Çerçeveler</em> veya <em>Semboller</em> sekmesinden süslemeyi ekle. Instagram bio, oyun nicki ve Discord ismi için birebir."
           }
         ]
       },

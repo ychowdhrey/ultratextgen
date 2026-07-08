@@ -1,0 +1,69 @@
+{
+  "slug": "sparkle-kaomoji",
+  "title": "Sparkle & Star Kaomoji: Copy & Paste Sparkly Text Faces",
+  "meta_description": "Browse and copy sparkle and star kaomoji — also spelled kamoji — Japanese text faces with sparkles, stars, and glitter. Click any to copy it instantly.",
+  "breadcrumb": "Sparkle & Star Kaomoji",
+  "hero_h1": "Sparkle & Star Kaomoji",
+  "hero_tagline": "Copy and paste sparkle and star kaomoji — Japanese text faces with sparkles, stars, and glitter accents. Click any face to copy it instantly.",
+  "intro": "Sparkle and star kaomoji (also spelled kamoji) are Japanese-style text faces decorated with sparkle and star characters like ✧, ☆, and ﾟ.* for an aesthetic, magical look. A sparkle kaomoji such as (★ω★) or (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse sparkling faces, star faces, and glitter-throwing kaomoji below and click any to copy it instantly.",
+  "date_published": "2026-06-30",
+  "date_modified": "2026-06-30",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "sparkling-faces",
+      "label": "Sparkling Faces",
+      "h2": "Sparkling Face Kaomoji",
+      "intro": "Bright faces with sparkle eyes and shine accents.",
+      "symbols": [
+        { "char": "(★ω★)", "label": "Star Eyes" },
+        { "char": "(✧ω✧)", "label": "Sparkle Eyes" },
+        { "char": "✧(•̀ᴗ•́)✧", "label": "Determined Sparkle" },
+        { "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "label": "Throwing Sparkles" },
+        { "char": "(☆▽☆)", "label": "Shining Eyes" }
+      ]
+    },
+    {
+      "id": "stars",
+      "label": "Stars",
+      "h2": "Star Kaomoji",
+      "intro": "Star-eyed and star-accented faces for a starry look.",
+      "symbols": [
+        { "char": "(★≧▽≦)", "label": "Starstruck" },
+        { "char": "(≧▽≦)/☆", "label": "Catching a Star" },
+        { "char": "☆ﾐ(o*･ω･)ﾉ", "label": "Star Wave" },
+        { "char": "⋆｡˚☽˚｡⋆", "label": "Starry Night" }
+      ]
+    },
+    {
+      "id": "magic-glitter",
+      "label": "Magic & Glitter",
+      "h2": "Magic & Glitter Kaomoji",
+      "intro": "Dreamy, magical faces with glitter and shine.",
+      "symbols": [
+        { "char": "(＊♡∀♡)", "label": "Dazzled" },
+        { "char": "(∩˃o˂∩)♡", "label": "Sparkle Hug" },
+        { "char": "٩(✧ω✧)۶", "label": "Sparkle Cheer" },
+        { "char": "(´｡• ω •｡`) ✧", "label": "Soft Sparkle" }
+      ]
+    },
+    {
+      "id": "throwing-sparkles",
+      "label": "Throwing Sparkles",
+      "h2": "Throwing Sparkles Kaomoji",
+      "intro": "Faces flinging sparkles and stars for a magical flourish.",
+      "symbols": [
+        { "char": "(∩^o^)⊃━☆ﾟ.*", "label": "Casting Sparkles" },
+        { "char": "(ﾉ>ω<)ﾉ", "label": "Tossing Up" },
+        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Surrounded by Stars" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/sparkle-symbols/", "title": "Sparkle Symbols", "desc": "Sparkles, glitter, and shine characters for aesthetic text." },
+    { "href": "/library/star-symbols/", "title": "Star Symbols", "desc": "Star characters and symbols in every style to copy and paste." }
+  ]
+}

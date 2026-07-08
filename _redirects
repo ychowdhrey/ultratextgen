@@ -54,6 +54,9 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /?lang=tr                                   /tr/    301
 /?lang=pl                                   /pl/    301
 /?lang=vi                                   /vi/    301
+/?lang=tl                                   /tl/    301
+/?lang=sv                                   /sv/    301
+/?lang=no                                   /no/    301
 
 # Bold: thin/duplicate group pages folded into the parent family page (301)
 /category/bold-fonts/bold/                     /category/bold-fonts/ 301
@@ -61,11 +64,32 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /category/bold-fonts/alternating/             /category/bold-fonts/ 301
 /category/bold-fonts/alternating/index.html   /category/bold-fonts/ 301
 
+# Cursive/Gothic: thin/duplicate group pages folded into the parent (301)
+/category/cursive-fonts/script/               /category/cursive-fonts/ 301
+/category/cursive-fonts/script/index.html     /category/cursive-fonts/ 301
+/category/gothic-fonts/fraktur/               /category/gothic-fonts/ 301
+/category/gothic-fonts/fraktur/index.html     /category/gothic-fonts/ 301
+
+# Category: word-wrappers repositioned as text-decorator (301)
+/category/word-wrappers               /category/text-decorator/ 301
+/category/word-wrappers/              /category/text-decorator/ 301
+/category/word-wrappers/index.html    /category/text-decorator/ 301
+
 # Library: renamed/removed slug → live equivalent
 /library/linkedin-post-formatting-symbols/            /library/linkedin-symbol-library/ 301
 /library/linkedin-post-formatting-symbols/index.html  /library/linkedin-symbol-library/ 301
 /library/whisper-subliminal-symbols/                  /library/aesthetic-symbols/ 301
 /library/whisper-subliminal-symbols/index.html        /library/aesthetic-symbols/ 301
+
+# Consolidated localized pages → canonical equivalents (avoid keyword cannibalization)
+/pt/gerador-de-fontes/            /pt/                          301
+/pt/gerador-de-fontes/index.html  /pt/                          301
+/pt/texto-empilhado/              /pt/usecase/vertical-text/    301
+/pt/texto-empilhado/index.html    /pt/usecase/vertical-text/    301
+/fr/texte-empile/                 /fr/usecase/vertical-text/    301
+/fr/texte-empile/index.html       /fr/usecase/vertical-text/    301
+/de/gestapelter-text/             /de/usecase/vertical-text/    301
+/de/gestapelter-text/index.html   /de/usecase/vertical-text/    301
 
 /404  /404.html  200
 /*    /404.html  404

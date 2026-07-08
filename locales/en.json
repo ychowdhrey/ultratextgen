@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Fancy Text Generator — 60+ Unicode Fonts (Copy & Paste)",
-    "description": "Turn plain text into 60+ Unicode fonts — bold, italic, cursive, gothic, bubble, small caps, aesthetic, upside-down and Zalgo. Copy and paste straight into Instagram bios, TikTok captions, Discord names, LinkedIn headlines, and WhatsApp. Free, instant, no sign-up."
+    "title": "Fancy Text Generator — 88 Unicode Fonts (Copy & Paste)",
+    "description": "Turn plain text into 88 Unicode fonts — bold, italic, cursive, gothic, bubble, small caps, aesthetic, upside-down and Zalgo. Copy and paste straight into Instagram bios, TikTok captions, Discord names, LinkedIn headlines, and WhatsApp. Free, instant, no sign-up."
   },
   "hero": {
     "title": "Fancy Text Generator",
-    "subtitle": "Type once, get 60+ Unicode fonts you can copy and paste anywhere — Instagram bios, TikTok captions, Discord names, LinkedIn headlines, WhatsApp, email subject lines, even game profiles."
+    "subtitle": "Type once, get 88 Unicode fonts you can copy and paste anywhere — Instagram bios, TikTok captions, Discord names, LinkedIn headlines, WhatsApp, email subject lines, even game profiles."
   },
   "decorations": {
     "label": "Add decoration to results",
@@ -108,7 +108,7 @@
         "items": [
           {
             "question": "What styles are in the library?",
-            "answer": "Around 65 styles, organised into twelve families:<br><br><strong>Bold</strong> — sans, serif, italic-bold (6 variants).<br><strong>Italic</strong> — 4 variants including monospace italic.<br><strong>Cursive / script</strong> — regular and bold script.<br><strong>Gothic / fraktur</strong> — Old English and bold fraktur.<br><strong>Bubble</strong> — 12 variants (filled, light, tiles, curly, angle, spaced, and more).<br><strong>Strikethrough</strong> — slash, tilde, short, long.<br><strong>Underline</strong> — solid and double.<br><strong>Special</strong> — small caps, superscript / tiny, fullwidth, squared, parenthesized.<br><strong>Cool / aesthetic</strong> — spaced styles for Y2K and Tumblr energy.<br><strong>Fancy</strong> — double-struck and outlined.<br><strong>Word wrappers</strong> — 10 styles that auto-bracket each word (★彡[ word ]彡★, ╭─▸ word ╰─▸, etc.).<br><strong>Classified</strong> — upside-down, mirror, backwards, Zalgo (glitch), plus 8 more transforms."
+            "answer": "Around 65 styles, organised into twelve families:<br><br><strong>Bold</strong> — sans, serif, italic-bold (6 variants).<br><strong>Italic</strong> — 4 variants including monospace italic.<br><strong>Cursive / script</strong> — regular and bold script.<br><strong>Gothic / fraktur</strong> — Old English and bold fraktur.<br><strong>Bubble</strong> — 12 variants (filled, light, tiles, curly, angle, spaced, and more).<br><strong>Strikethrough</strong> — slash, tilde, short, long.<br><strong>Underline</strong> — solid and double.<br><strong>Special</strong> — small caps, superscript / tiny, fullwidth, squared, parenthesized.<br><strong>Cool / aesthetic</strong> — spaced styles for Y2K and Tumblr energy.<br><strong>Fancy</strong> — double-struck and outlined.<br><strong>Text decorator</strong> — 10 styles that auto-bracket each word (★彡[ word ]彡★, ╭─▸ word ╰─▸, etc.).<br><strong>Classified</strong> — upside-down, mirror, backwards, Zalgo (glitch), plus 8 more transforms."
           },
           {
             "question": "Can I stack multiple styles together?",
@@ -146,7 +146,7 @@
         "items": [
           {
             "question": "What languages and alphabets work?",
-            "answer": "Unicode styled variants only exist for the Latin alphabet (A–Z, a–z) and Arabic digits (0–9). So every language written in Latin script works: English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Malay, Tagalog, Afrikaans, Swahili, Hungarian, Czech — all fine.<br><br>Accented characters (á, é, ñ, ü, ç) keep their accents in most styles. A handful of decorative styles drop the accent because Unicode doesn't define a styled variant for it — try a different style if that matters."
+            "answer": "Unicode styled variants only exist for the Latin alphabet (A–Z, a–z) and Arabic digits (0–9). So the core letters of every Latin-script language are supported: English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Malay, Tagalog, Afrikaans, Swahili, Hungarian, Czech.<br><br>One caveat for accented letters (á, é, ñ, ü, ç, and Vietnamese letters like ữ, ế, đ): Unicode defines no styled variant for them, so in most alphabet styles — bold, italic, script, fraktur — the accented letter stays plain while the letters around it are styled. The accent itself is never lost. Styles that add marks or symbols instead of swapping letters (strikethrough, underline, and decorative wraps) keep accents fully intact, so they're the best pick for heavily-accented languages like Vietnamese."
           },
           {
             "question": "Why doesn't Arabic, Cyrillic, Hindi, Chinese, or Japanese text transform?",

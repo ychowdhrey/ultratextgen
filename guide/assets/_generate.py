@@ -300,6 +300,246 @@ def m_personality(p):
     return g
 
 
+def m_unicode_layers(p):
+    # the Four-Layer Model: character -> code point -> encoding -> glyph
+    rows = [("A", "character"), ("U+0041", "code point"),
+            ("01000001", "encoding"), ("𝗔?", "glyph")]
+    g = ""
+    for i, (label, note) in enumerate(rows):
+        y = 56 + i * 66
+        fill = f"url(#g{p})" if i == 3 else "#fff"
+        ink = "#fff" if i == 3 else INK
+        g += f"""
+        <g transform="translate(60 {y})">
+          <rect width="240" height="52" rx="14" fill="{fill}" stroke="{INK}"
+                stroke-opacity="0.12"/>
+          <text x="22" y="34" font-family="Courier New, monospace" font-size="24"
+                font-weight="700" fill="{ink}">{label}</text>
+          <text x="222" y="33" font-family="{SANS}" font-size="15" fill="{ink}"
+                opacity="0.7" text-anchor="end">{note}</text>
+        </g>"""
+        if i < 3:
+            g += f'<line x1="180" y1="{y+52}" x2="180" y2="{y+66}" stroke="{PURPLE}" stroke-width="4"/>'
+    return g
+
+
+def m_li_reach(p):
+    # two near-equal bars: bold vs plain — no algorithmic penalty
+    return f"""
+    <rect x="70" y="100" width="84" height="180" rx="14" fill="url(#gv{p})"/>
+    <rect x="200" y="112" width="84" height="168" rx="14" fill="#d7d4f7"/>
+    <text x="112" y="86" font-family="{SANS}" font-size="24" font-weight="700"
+          fill="{INK}" text-anchor="middle">bold</text>
+    <text x="242" y="86" font-family="{SANS}" font-size="24"
+          fill="{SUB}" text-anchor="middle">plain</text>
+    <line x1="50" y1="292" x2="310" y2="292" stroke="{SUB}" stroke-width="3"
+          opacity="0.4"/>
+    <text x="180" y="326" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">no penalty — just restraint</text>"""
+
+
+def m_ig_linebreaks(p):
+    # a bio card whose spacer line is held open by an invisible character
+    return f"""
+    <g transform="translate(60 60)">
+      <rect width="240" height="240" rx="22" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.12"/>
+      <rect x="26" y="34" width="150" height="12" rx="6" fill="{INK}" opacity="0.75"/>
+      <rect x="26" y="62" width="188" height="10" rx="5" fill="{SUB}" opacity="0.4"/>
+      <g>
+        <rect x="26" y="96" width="188" height="26" rx="8" fill="{PANEL2}"/>
+        <circle cx="44" cy="109" r="4" fill="url(#g{p})"/>
+        <circle cx="60" cy="109" r="4" fill="url(#g{p})"/>
+        <circle cx="76" cy="109" r="4" fill="url(#g{p})" opacity="0.45"/>
+        <text x="206" y="115" font-family="Courier New, monospace" font-size="15"
+              fill="{PURPLE}" text-anchor="end">U+2800</text>
+      </g>
+      <rect x="26" y="140" width="170" height="10" rx="5" fill="{SUB}" opacity="0.4"/>
+      <rect x="26" y="164" width="140" height="10" rx="5" fill="{SUB}" opacity="0.4"/>
+      <rect x="26" y="198" width="98" height="24" rx="12" fill="url(#g{p})"/>
+    </g>
+    <text x="180" y="330" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">the blank line that survives save</text>"""
+
+
+def m_ig_shadowban(p):
+    # a magnifier that can't match a styled name — myth vs real cost
+    return f"""
+    <g transform="translate(56 84)">
+      <rect width="248" height="54" rx="16" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.12"/>
+      <text x="20" y="36" font-family="Georgia, {SANS}" font-size="28"
+            font-style="italic" font-weight="700" fill="url(#g{p})">𝓢𝓪𝓻𝓪𝓱 ✿</text>
+    </g>
+    <g transform="translate(56 168)">
+      <rect width="248" height="54" rx="16" fill="{PANEL2}"/>
+      <text x="20" y="35" font-family="{SANS}" font-size="24" fill="{SUB}">sarah</text>
+      <text x="228" y="35" font-family="{SANS}" font-size="24" fill="{PURPLE}"
+            text-anchor="end">0 results</text>
+    </g>
+    <g transform="translate(250 210)">
+      <circle cx="0" cy="0" r="34" fill="none" stroke="{INK}" stroke-width="8"
+              opacity="0.75"/>
+      <line x1="24" y1="24" x2="58" y2="58" stroke="{INK}" stroke-width="10"
+            stroke-linecap="round" opacity="0.75"/>
+    </g>
+    <text x="180" y="316" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">not banned — unfindable</text>"""
+
+
+def m_discord_fields(p):
+    # field permission matrix: checks and crosses
+    rows = [("@handle", False), ("display", True), ("nickname", True),
+            ("#channel", False)]
+    g = ""
+    for i, (label, ok) in enumerate(rows):
+        y = 62 + i * 62
+        mark = ("✓", f"url(#g{p})", "#fff") if ok else ("✕", "#fff", SUB)
+        stroke = "none" if ok else INK
+        g += f"""
+        <g transform="translate(56 {y})">
+          <rect width="180" height="48" rx="12" fill="#fff" stroke="{INK}"
+                stroke-opacity="0.12"/>
+          <text x="20" y="32" font-family="{SANS}" font-size="21"
+                font-weight="600" fill="{INK}">{label}</text>
+        </g>
+        <g transform="translate(256 {y})">
+          <rect width="48" height="48" rx="12" fill="{mark[1]}" stroke="{stroke}"
+                stroke-opacity="0.12"/>
+          <text x="24" y="33" font-family="{SANS}" font-size="26" font-weight="700"
+                fill="{mark[2]}" text-anchor="middle">{mark[0]}</text>
+        </g>"""
+    return g + f"""
+    <text x="180" y="330" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">every field has a rule</text>"""
+
+
+def m_dividers(p):
+    # divider anatomy: motif + symmetry + weight
+    return f"""
+    <line x1="60" y1="86" x2="300" y2="86" stroke="{SUB}" stroke-width="2"
+          opacity="0.5" stroke-dasharray="2 7"/>
+    <line x1="60" y1="146" x2="140" y2="146" stroke="{INK}" stroke-width="4"
+          opacity="0.6"/>
+    <circle cx="180" cy="146" r="12" fill="url(#g{p})"/>
+    <line x1="220" y1="146" x2="300" y2="146" stroke="{INK}" stroke-width="4"
+          opacity="0.6"/>
+    <line x1="60" y1="206" x2="300" y2="206" stroke="url(#g{p})" stroke-width="10"
+          stroke-linecap="round"/>
+    <line x1="60" y1="258" x2="300" y2="258" stroke="{SUB}" stroke-width="3" opacity="0.5"/>
+    <line x1="60" y1="268" x2="300" y2="268" stroke="{SUB}" stroke-width="3" opacity="0.5"/>
+    <text x="180" y="322" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">motif · symmetry · weight</text>"""
+
+
+def m_li_ats(p):
+    # recruiter search bar that can't see a styled name
+    return f"""
+    <g transform="translate(52 70)">
+      <rect width="256" height="56" rx="28" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.12"/>
+      <circle cx="34" cy="28" r="11" fill="none" stroke="{SUB}" stroke-width="4"/>
+      <line x1="42" y1="37" x2="52" y2="47" stroke="{SUB}" stroke-width="4"
+            stroke-linecap="round"/>
+      <text x="70" y="37" font-family="{SANS}" font-size="24" fill="{INK}">Sarah Chen</text>
+    </g>
+    <g transform="translate(52 168)">
+      <rect width="256" height="70" rx="18" fill="url(#g{p})"/>
+      <text x="24" y="30" font-family="Georgia, {SANS}" font-size="26"
+            font-style="italic" font-weight="700" fill="#fff">𝓢𝓪𝓻𝓪𝓱 𝓒𝓱𝓮𝓷 ✨</text>
+      <text x="24" y="56" font-family="{SANS}" font-size="16" fill="#fff"
+            opacity="0.8">invisible to this search</text>
+    </g>
+    <path d="M170 132 L180 156 L190 132" fill="none" stroke="{SUB}"
+          stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+    <text x="180" y="300" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">styled name, empty results page</text>"""
+
+
+def m_discord_ansi(p):
+    # a code block with colored lines — desktop yes, mobile no
+    return f"""
+    <g transform="translate(48 60)">
+      <rect width="264" height="180" rx="18" fill="{INK}"/>
+      <text x="22" y="36" font-family="Courier New, monospace" font-size="17"
+            fill="#8a8fa3">```ansi</text>
+      <rect x="22" y="52" width="120" height="13" rx="6" fill="#e06c75"/>
+      <rect x="22" y="80" width="168" height="13" rx="6" fill="#98c379"/>
+      <rect x="22" y="108" width="96" height="13" rx="6" fill="#61afef"/>
+      <rect x="152" y="108" width="60" height="13" rx="6" fill="#e5c07b"/>
+      <text x="22" y="152" font-family="Courier New, monospace" font-size="17"
+            fill="#8a8fa3">```</text>
+    </g>
+    <g transform="translate(238 216)">
+      <rect width="76" height="98" rx="16" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.14"/>
+      <text x="38" y="44" font-family="Courier New, monospace" font-size="13"
+            fill="{SUB}" text-anchor="middle">[2;31m</text>
+      <text x="38" y="70" font-family="{SANS}" font-size="24" fill="{PURPLE}"
+            text-anchor="middle">?</text>
+    </g>
+    <text x="150" y="300" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">8 colors, code blocks only</text>"""
+
+
+def m_tiktok_font(p):
+    # two phones: the app's UI font vs the text you control
+    return f"""
+    <g transform="translate(58 52)">
+      <rect width="110" height="216" rx="22" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.14"/>
+      <rect x="18" y="30" width="74" height="12" rx="6" fill="{INK}" opacity="0.8"/>
+      <rect x="18" y="56" width="58" height="10" rx="5" fill="{SUB}" opacity="0.4"/>
+      <rect x="18" y="80" width="66" height="10" rx="5" fill="{SUB}" opacity="0.4"/>
+      <text x="55" y="140" font-family="{SANS}" font-size="15" fill="{SUB}"
+            text-anchor="middle">app font</text>
+      <text x="55" y="166" font-family="{SANS}" font-size="15" fill="{SUB}"
+            text-anchor="middle">not yours</text>
+    </g>
+    <g transform="translate(192 52)">
+      <rect width="110" height="216" rx="22" fill="url(#g{p})"/>
+      <text x="55" y="52" font-family="Georgia, {SANS}" font-size="26"
+            font-weight="700" font-style="italic" fill="#fff"
+            text-anchor="middle">𝓃𝒶𝓂𝑒</text>
+      <text x="55" y="92" font-family="{SANS}" font-size="22" font-weight="700"
+            fill="#fff" text-anchor="middle">𝗯𝗶𝗼</text>
+      <text x="55" y="146" font-family="{SANS}" font-size="15" fill="#fff"
+            opacity="0.85" text-anchor="middle">your text</text>
+      <text x="55" y="170" font-family="{SANS}" font-size="15" fill="#fff"
+            opacity="0.85" text-anchor="middle">yours to style</text>
+    </g>
+    <text x="180" y="316" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">two different &#8220;fonts&#8221;</text>"""
+
+
+def m_game_names(p):
+    # a name tag with accepted and rejected symbols
+    return f"""
+    <g transform="translate(48 76)">
+      <rect width="264" height="64" rx="16" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.12"/>
+      <text x="22" y="42" font-family="{SANS}" font-size="26" font-weight="700"
+            fill="{INK}">Nova_7</text>
+      <g transform="translate(226 32)">
+        <circle r="18" fill="url(#g{p})"/>
+        <text y="8" font-family="{SANS}" font-size="22" font-weight="700"
+              fill="#fff" text-anchor="middle">✓</text>
+      </g>
+    </g>
+    <g transform="translate(48 170)">
+      <rect width="264" height="64" rx="16" fill="{PANEL2}"/>
+      <text x="22" y="43" font-family="{SANS}" font-size="26" font-weight="700"
+            fill="{SUB}">꧁Nova꧂</text>
+      <g transform="translate(226 32)">
+        <circle r="18" fill="#fff" stroke="{INK}" stroke-opacity="0.15"/>
+        <text y="8" font-family="{SANS}" font-size="22" font-weight="700"
+              fill="{SUB}" text-anchor="middle">✕</text>
+      </g>
+    </g>
+    <text x="180" y="292" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">handle strict &#183; display name free</text>"""
+
+
 GUIDES = {
     "index": ("Guides for Expressive Typography",
               "Frameworks & playbooks for Unicode text", m_index),
@@ -327,6 +567,26 @@ GUIDES = {
               "Markdown vs Unicode vs Nitro", m_discord),
     "font-personality-and-brand": ("Font Personality & Brand",
               "Match a Unicode style to your identity", m_personality),
+    "how-unicode-fonts-work": ("How Unicode Text Styling Really Works",
+              "The four layers behind every fancy font", m_unicode_layers),
+    "linkedin-bold-text-reach": ("Does Bold Text Hurt LinkedIn Reach?",
+              "What 1M+ posts reveal about the myth", m_li_reach),
+    "instagram-bio-line-breaks": ("Why Your Instagram Bio Collapses",
+              "Make line breaks and spacing stick", m_ig_linebreaks),
+    "instagram-fonts-shadowban-myth": ("Do Fonts Get You Shadowbanned?",
+              "The myth, busted — and the real costs", m_ig_shadowban),
+    "discord-where-fonts-work": ("Where Fancy Fonts Work in Discord",
+              "The field-by-field permission map", m_discord_fields),
+    "dividers-separators-guide": ("Dividers, Separators & Headers",
+              "Structure a bio or post with symbols", m_dividers),
+    "linkedin-fonts-recruiters-ats": ("Will Recruiters See Your Fancy Text?",
+              "LinkedIn search, ATS parsing & your name", m_li_ats),
+    "discord-colored-text-guide": ("Colored Text in Discord (ANSI)",
+              "What's possible, what breaks on mobile", m_discord_ansi),
+    "tiktok-font-changed": ("Why Did TikTok Change My Font?",
+              "TikTok Sans vs the fonts you control", m_tiktok_font),
+    "game-username-allowed-symbols": ("Game Username Character Rules",
+              "Roblox, Fortnite, Valorant & COD", m_game_names),
 }
 
 

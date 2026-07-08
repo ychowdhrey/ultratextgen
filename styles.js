@@ -33,6 +33,11 @@ const CATEGORY_PAGES = {
     title: 'Gothic Fonts',
     description: 'Dark gothic and fraktur Unicode fonts.'
   },
+  'old-english': {
+    slug: 'old-english-fonts',
+    title: 'Old English Fonts',
+    description: 'Old English blackletter fonts for names, tattoos, and varsity lettering.'
+  },
   'bubble': {
     slug: 'bubble-fonts',
     title: 'Bubble Fonts',
@@ -48,10 +53,10 @@ const CATEGORY_PAGES = {
     title: 'Upside Down Text',
     description: 'Flip your text upside down with multiple Unicode styles.'
   },
-   'word-wrappers': {
-    slug: 'word-wrappers',
-    title: 'Word Wrappers',
-    description: 'Automatically wrap words in decorative wrappers and separators.'
+   'text-decorator': {
+    slug: 'text-decorator',
+    title: 'Text Decorator',
+    description: 'Decorate your text with symbols, borders, brackets, and emoji wrappers.'
   },
   'small-text': {
     slug: 'small-text',
@@ -176,6 +181,7 @@ const textStyles = {
   nums: '𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵',
   type: 'map',
   category: 'bold',
+  note: 'Modern · sans-serif',
   familySlug: ['bold', 'italic'],
   groupSlug: 'bold-italic',
   slug: 'ultra-bold-italic',
@@ -188,6 +194,7 @@ const textStyles = {
   nums: '0123456789',
   type: 'map',
   category: 'bold',
+  note: 'Classic · serif',
   familySlug: ['bold', 'italic'],
   groupSlug: 'bold-italic',
   slug: 'ultra-bold-italic-serif',
@@ -335,10 +342,12 @@ const textStyles = {
   'Ultra Gothic': {
     upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ',
     lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
-    nums: '0123456789',
+    // Mathematical Fraktur has no digits — pair with Mathematical Bold digits
+    // (the closest heavy match) so numbers stop falling back to plain ASCII.
+    nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
     type: 'map',
     category: 'gothic',
-    familySlug: 'gothic',
+    familySlug: ['gothic', 'old-english'],
     groupSlug: 'fraktur',
     slug: 'ultra-gothic',
     platforms: ['all', 'instagram', 'x', 'discord']
@@ -347,14 +356,72 @@ const textStyles = {
   'Ultra Gothic Bold': {
     upper: '𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅',
     lower: '𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟',
-    nums: '0123456789',
+    nums: '𝟎𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗',
     type: 'map',
     category: 'gothic',
-    // Cross-listed onto the bold page: it is a bold-weight blackletter.
-    familySlug: ['gothic', 'bold'],
+    // Bold Fraktur is the heavy "Old English" newspaper/tattoo look — cross-list
+    // it onto the bold page and the Old English page.
+    familySlug: ['gothic', 'bold', 'old-english'],
     groupSlug: 'fraktur',
     slug: 'ultra-gothic-bold',
     platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Fraktur with a combining underline — serves the "gothic underline" intent
+  // (seen directly in Search Console impressions for this page).
+  'Ultra Gothic Underline': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_underline',
+    category: 'gothic',
+    familySlug: ['gothic', 'old-english'],
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-underline',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Blackletter bookended with crosses — religious / "gothic bible verse" intent.
+  'Ultra Gothic Cross': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_cross',
+    category: 'gothic',
+    familySlug: ['gothic', 'old-english'],
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-cross',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Fraktur wrapped in occult accents — goth / metal / dark-aesthetic intent.
+  'Ultra Gothic Occult': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_occult',
+    category: 'gothic',
+    familySlug: 'gothic',
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-occult',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Fraktur struck through — grunge / edgy intent.
+  'Ultra Gothic Strikethrough': {
+    type: 'procedure',
+    procedureId: 'ultra_gothic_strike',
+    category: 'gothic',
+    familySlug: 'gothic',
+    groupSlug: 'fraktur',
+    slug: 'ultra-gothic-strike',
+    platforms: ['all', 'instagram', 'x', 'discord']
+  },
+
+  // Old English nameplate — bold blackletter inside a chicano banner. Old
+  // English page only (the nameplate / name-tattoo intent).
+  'Ultra Old English Banner': {
+    type: 'procedure',
+    procedureId: 'ultra-old-english-banner',
+    category: 'gothic',
+    familySlug: ['old-english'],
+    groupSlug: 'fraktur',
+    slug: 'ultra-old-english-banner',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
   },
 
   /* =========================
@@ -552,6 +619,58 @@ const textStyles = {
    platforms: ['all', 'x', 'discord']
 },
 
+'Ultra Thin Strike': {
+  type: 'decorator',
+  decoratorId: 'shortStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-thin-strike',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Heavy Strike': {
+  type: 'decorator',
+  decoratorId: 'heavyStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-heavy-strike',
+  note: 'Copy & Paste to Check',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
+'Ultra Wavy Strike': {
+  type: 'decorator',
+  decoratorId: 'wavyStrike',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-wavy-strike',
+  note: 'Copy & Paste to Check',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+},
+
+'Ultra Light Slash': {
+  type: 'decorator',
+  decoratorId: 'shortSlash',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-light-slash',
+  platforms: ['all', 'x', 'discord']
+},
+
+'Ultra Strike + Underline': {
+  type: 'decorator',
+  decoratorId: 'strikeUnderline',
+  category: 'strikethrough',
+  familySlug: 'strikethrough-text',
+  groupSlug: 'lines',
+  slug: 'ultra-strike-underline',
+  platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+},
+
   /* =========================
      Underline Text
      ========================= */
@@ -566,11 +685,53 @@ const textStyles = {
     platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
   },
    
+  'Ultra Double Underline': {
+    type: 'decorator',
+    decoratorId: 'doubleUnderline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-double-underline',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
+  },
+
+  'Ultra Wavy Underline': {
+    type: 'decorator',
+    decoratorId: 'wavyUnderline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-wavy-underline',
+    note: 'Copy & Paste to Check',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
+  'Ultra Overline': {
+    type: 'decorator',
+    decoratorId: 'overline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-overline',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
+  'Ultra Double Overline': {
+    type: 'decorator',
+    decoratorId: 'doubleOverline',
+     category: 'underline',
+     familySlug: 'underline-text',
+    groupSlug: 'lines',
+    slug: 'ultra-double-overline',
+    note: 'Copy & Paste to Check',
+    platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
+  },
+
   'Ultra Wavy': {
     type: 'decorator',
     decoratorId: 'wavy',
      category: 'underline',
-     familySlug: 'underline-text', // temporary home
+     familySlug: 'underline-text',
     groupSlug: 'effects',
     slug: 'ultra-wavy',
     platforms: ['all', 'instagram', 'tiktok', 'x', 'discord']
@@ -685,8 +846,8 @@ const textStyles = {
 
 'Ultra Word Curly Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_curly_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -694,8 +855,8 @@ const textStyles = {
 
 'Ultra Word Angle Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_angle_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -703,8 +864,8 @@ const textStyles = {
 
 'Ultra Word Double Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'wrap',
   slug: 'ultra_word_double_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -712,8 +873,8 @@ const textStyles = {
 
 'Ultra Word Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -721,8 +882,8 @@ const textStyles = {
 
 'Ultra Word Forward Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_forward_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -730,8 +891,8 @@ const textStyles = {
 
 'Ultra Word Backward Arrow Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'arrows',
   slug: 'ultra_word_backward_arrow_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -739,8 +900,8 @@ const textStyles = {
 
 'Ultra Word Bracket Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'frames',
   slug: 'ultra_word_bracket_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -748,8 +909,8 @@ const textStyles = {
 
 'Ultra Word Chevron Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'frames',
   slug: 'ultra_word_chevron_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -757,8 +918,8 @@ const textStyles = {
 
 'Ultra Word Bar Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'bars',
   slug: 'ultra_word_bar_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -766,8 +927,8 @@ const textStyles = {
 
 'Ultra Word Double Bar Wrap': {
   type: 'procedure',
-  category: 'word-wrappers',
-  familySlug: 'word-wrappers',
+  category: 'text-decorator',
+  familySlug: 'text-decorator',
   groupSlug: 'bars',
   slug: 'ultra_word_double_bar_wrap',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -852,115 +1013,107 @@ const textStyles = {
 
 /* ================================
    CLASSIFIED / REDACTED STYLES
+   These use type:'redact' — they black out the USER'S OWN text and preserve
+   word length, so the redaction traces the shape of the sentence (the way
+   real redacted documents read). See renderRedact() in renderer.js.
 ================================ */
 
-'Ultra Classified Blocks': {
-  pattern: '███ ███████ ████',
-  type: 'pattern',
+// --- Full-text blackout (length-preserving) -------------------------------
+'Ultra Redacted': {
+  type: 'redact',
+  redactChar: '█',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-classified-blocks'
+  slug: 'ultra-redacted-blocks'
 },
 
-'Ultra Black Squares': {
-  pattern: '⬛⬛⬛',
-  type: 'pattern',
+'Ultra Redacted Heavy Shade': {
+  type: 'redact',
+  redactChar: '▓',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-black-squares'
+  slug: 'ultra-redacted-shade'
 },
 
-'Ultra White Squares': {
-  pattern: '⬜⬜⬜',
-  type: 'pattern',
+'Ultra Redacted Light Shade': {
+  type: 'redact',
+  redactChar: '▒',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-white-squares'
+  slug: 'ultra-redacted-light'
 },
 
-'Ultra Solid Squares': {
-  pattern: '■■■■',
-  type: 'pattern',
+'Ultra Redacted Squares': {
+  type: 'redact',
+  redactChar: '■',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-solid-squares'
+  slug: 'ultra-redacted-squares'
 },
 
-'Ultra Spaced Blocks': {
-  pattern: '█ █ █ █ █ █',
-  type: 'pattern',
+'Ultra Redacted Emoji': {
+  type: 'redact',
+  redactChar: '⬛',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-spaced-blocks'
+  slug: 'ultra-redacted-emoji'
 },
 
-'Ultra Medium Shade': {
-  pattern: '▓▓▓',
-  type: 'pattern',
+'Ultra White Redacted': {
+  type: 'redact',
+  redactChar: '⬜',
+  redactMode: 'all',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-medium-shade'
+  slug: 'ultra-white-redacted'
 },
 
-'Ultra Light Shade': {
-  pattern: '▒▒▒',
-  type: 'pattern',
+// --- Selective / partial redaction ----------------------------------------
+'Ultra Selective Redact': {
+  type: 'redact',
+  redactChar: '█',
+  redactMode: 'selective',
+  note: 'Wrap the words to hide in [[double brackets]] — only those get blacked out.',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-light-shade'
+  slug: 'ultra-selective-redact'
 },
 
-'Ultra Top Blocks': {
-  pattern: '▀▀▀',
-  type: 'pattern',
+'Ultra Alternate Redact': {
+  type: 'redact',
+  redactChar: '█',
+  redactMode: 'alternate',
+  note: 'Redacts every other word, leaving the rest readable.',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-top-blocks'
+  slug: 'ultra-alternate-redact'
 },
 
-'Ultra Bottom Blocks': {
-  pattern: '▄▄▄',
-  type: 'pattern',
+// --- Typewriter document base (the look of real classified paperwork) -----
+'Ultra Typewriter Document': {
+  upper: '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉',
+  lower: '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣',
+  nums:  '𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿',
+  type: 'map',
+  note: 'Monospace typewriter look — pair with a redaction stamp for the full document feel.',
   category: 'classified',
   familySlug: ['classified'],
   groupSlug: 'classified',
-  slug: 'ultra-bottom-blocks'
+  slug: 'ultra-typewriter'
 },
-
-'Ultra Alternating Squares': {
-  pattern: '■ □ ■ □ ■',
-  type: 'pattern',
-  category: 'classified',
-  familySlug: ['classified'],
-  groupSlug: 'classified',
-  slug: 'ultra-alternating-squares'
-},
-
-'Ultra Wave Blocks': {
-  pattern: '▀▄▀▄▀▄',
-  type: 'pattern',
-  category: 'classified',
-  familySlug: ['classified'],
-  groupSlug: 'classified',
-  slug: 'ultra-wave-blocks'
-},
-
-'Ultra Split Blocks': {
-  pattern: '▄▄▀▀▄▄',
-  type: 'pattern',
-  category: 'classified',
-  familySlug: ['classified'],
-  groupSlug: 'classified',
-  slug: 'ultra-split-blocks'
-},   
 };
 
 /* -----------------------------

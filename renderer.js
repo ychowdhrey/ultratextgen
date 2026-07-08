@@ -239,6 +239,13 @@ function mapToArray(mapStrOrArr, kind) {
     if (kind === 'nums')      return s.match(/⦅\d⦆/g)     || [];
   }
 
+  // Parentheses: "( A )( B )..."
+  if (s.includes('(') && s.includes(')')) {
+    if (kind === 'alphaUpper') return s.match(/\( ?[A-Z] ?\)/g) || [];
+    if (kind === 'alphaLower') return s.match(/\( ?[a-z] ?\)/g) || [];
+    if (kind === 'nums')      return s.match(/\( ?\d ?\)/g)     || [];
+  }
+
   // Default: grapheme split, and drop spaces (for your spaced strings)
   return splitGraphemes(s).filter(x => x !== ' ');
 }
@@ -260,8 +267,9 @@ function renderMap(text, style) {
     style.groupSlug === 'spaced' ||
     (style.slug || '').endsWith('-spaced');
 
-  // Debug only (remove later if you want)
-  if (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10) {
+  // Map integrity check — only warn when a debug flag is set, never in production
+  if (window.UTG_DEBUG &&
+      (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10)) {
     console.warn('Bad map lengths', style.slug, {
       upper: upperArr.length,
       lower: lowerArr.length,
@@ -323,11 +331,20 @@ function renderMap(text, style) {
      ----------------------------- */
   const decorators = {
     strike:   t => [...t].map(c => c + '\u0336').join(''),
+    shortStrike: t => [...t].map(c => c + '\u0335').join(''),
     doubleStrike: t => [...t].map(c => c + '\u0336' + '\u0335').join(''),
+    heavyStrike: t => [...t].map(c => c + '\u0336' + '\u0336').join(''),
+    wavyStrike: t => [...t].map(c => c + '\u0334').join(''),
     crossedOut: t => [...t].map(c => c === ' ' ? c : c + '\u0336' + '\u0338').join(''),
     underline:t => [...t].map(c => c + '\u0332').join(''),
+    doubleUnderline: t => [...t].map(c => c + '\u0333').join(''),
+    wavyUnderline: t => [...t].map(c => c + '\u0330').join(''),
+    overline: t => [...t].map(c => c + '\u0305').join(''),
+    doubleOverline: t => [...t].map(c => c + '\u033f').join(''),
     wavy:    t => [...t].map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
-    slash:   t => [...t].map(c => c + '\u0338').join('')
+    slash:   t => [...t].map(c => c + '\u0338').join(''),
+    shortSlash: t => [...t].map(c => c + '\u0337').join(''),
+    strikeUnderline: t => [...t].map(c => c + '\u0336' + '\u0332').join('')
   };
 
   function renderDecorator(text, style) {
@@ -420,6 +437,42 @@ function renderMap(text, style) {
     'ultra_cursive_sparkle': text =>
       text.trim()
         ? `⋆˚꒰ ${renderMap(text, textStyles['Ultra Script'])} ꒱˚⋆`
+        : text,
+
+    // === GOTHIC PROCEDURES ===
+    // Keyed by style.slug (see renderProcedure). Each builds on the Fraktur /
+    // Bold Fraktur maps and adds a combining mark or symbol wrapper.
+
+    // Fraktur + combining underline — the "gothic underline" intent.
+    'ultra-gothic-underline': text =>
+      text.trim()
+        ? [...renderMap(text, textStyles['Ultra Gothic'])]
+            .map(c => (c === ' ' || c === '\n') ? c : c + '̲').join('')
+        : text,
+
+    // Bold Fraktur bookended with crosses — religious / bible-verse intent.
+    'ultra-gothic-cross': text =>
+      text.trim()
+        ? `✝ ${renderMap(text, textStyles['Ultra Gothic Bold'])} ✝`
+        : text,
+
+    // Fraktur wrapped in occult accents — goth / metal / dark-aesthetic intent.
+    'ultra-gothic-occult': text =>
+      text.trim()
+        ? `⛧ ${renderMap(text, textStyles['Ultra Gothic'])} ⛧`
+        : text,
+
+    // Fraktur struck through — grunge / edgy intent.
+    'ultra-gothic-strike': text =>
+      text.trim()
+        ? [...renderMap(text, textStyles['Ultra Gothic'])]
+            .map(c => (c === ' ' || c === '\n') ? c : c + '̶').join('')
+        : text,
+
+    // Old English name inside a chicano-style banner — the nameplate intent.
+    'ultra-old-english-banner': text =>
+      text.trim()
+        ? `꧁༺ ${renderMap(text, textStyles['Ultra Gothic Bold'])} ༻꧂`
         : text
   };
 
@@ -441,7 +494,45 @@ function renderPattern(text, style) {
     return pattern;
   }).join('');
 }
-   
+
+/* -----------------------------
+   REDACT RENDERER
+   Length-preserving blackout of the user's OWN text. Each visible character
+   becomes a redact block (style.redactChar), so the redaction traces the
+   shape of the sentence — the way real classified/redacted text reads.
+
+   Modes (style.redactMode):
+     'all'        → redact every word (default)
+     'selective'  → redact only text wrapped in [[double brackets]],
+                    e.g. "The [[agent]] arrived at [[9 PM]]"
+     'alternate'  → redact every other word, leaving the rest readable
+   ----------------------------- */
+function renderRedact(text, style) {
+  if (!text) return '';
+  const ch = style.redactChar || '█';
+  const mode = style.redactMode || 'all';
+
+  // Replace each visible grapheme with the redact char; keep spaces/newlines.
+  const blackout = chunk =>
+    splitGraphemes(chunk)
+      .map(g => (g === ' ' || g === '\n' || g === '\t') ? g : ch)
+      .join('');
+
+  // Selective: only the parts inside [[ ]] get redacted; markers are removed.
+  if (mode === 'selective') {
+    return text.replace(/\[\[([\s\S]*?)\]\]/g, (m, inner) => blackout(inner));
+  }
+
+  // Word-aware modes (preserve the original whitespace between words).
+  let wordIndex = -1;
+  return text.split(/(\s+)/).map(segment => {
+    if (segment.trim() === '') return segment;
+    wordIndex += 1;
+    if (mode === 'alternate' && wordIndex % 2 === 1) return segment; // keep readable
+    return blackout(segment);
+  }).join('');
+}
+
   function renderAny(text, style) {
     // Handle function-based transforms (upside down)
     if (style.type === 'function' && style.transform) {
@@ -456,7 +547,9 @@ function renderPattern(text, style) {
       case 'procedure':
         return renderProcedure(text, style);
       case 'pattern':
-      return renderPattern(text, style); 
+      return renderPattern(text, style);
+      case 'redact':
+      return renderRedact(text, style);
       default:
         return renderMap(text, style); // fallback
     }
