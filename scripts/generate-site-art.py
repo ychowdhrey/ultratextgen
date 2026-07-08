@@ -1198,10 +1198,6 @@ PAGES = {
   # Portuguese
   "pt-combos-de-emoji": ("Combos de Emoji", "Combinações de emoji para copiar e colar", m_smiley, K_LIB),
   "pt-fontes-para-discord": ("Fontes para Discord", "Letras para nick, canal e bio — sem Nitro", m_chat, K_PLAT),
-  "pt-gerador-de-fontes": ("Gerador de Fontes", "Dezenas de fontes para copiar e colar",
-        P(m_typo, sample="Fon", size=88, label="fontes diferentes"), K_CAT),
-  "pt-texto-empilhado": ("Texto Empilhado", "Empilhe seu texto linha por linha",
-        P(m_vertical, letters="TEXT"), K_USE),
   # Vietnamese
   "vi-combo-emoji": ("Combo Emoji", "Bộ emoji để sao chép và dán", m_smiley, K_LIB),
   "vi-font-discord": ("Font Discord", "Chữ kiểu cho nick và bio Discord", m_chat, K_PLAT),
@@ -1214,8 +1210,6 @@ PAGES = {
   # French
   "fr-combos-emoji": ("Combos Emoji", "Combinaisons d'emoji à copier-coller", m_smiley, K_LIB),
   "fr-police-discord": ("Police Discord", "Écriture pour pseudo et bio — sans Nitro", m_chat, K_PLAT),
-  "fr-texte-empile": ("Texte Empilé", "Empile ton texte ligne par ligne",
-        P(m_vertical, letters="TXT"), K_USE),
   # Polish
   "pl-literki": ("Literki", "Ładne literki do skopiowania",
         P(m_typo, sample="Aa", size=88, label="ładne literki"), K_CAT),
@@ -1225,9 +1219,12 @@ PAGES = {
   # Turkish
   "tr-sekilli-yazi": ("Şekilli Yazı", "Şekilli harfler kopyala yapıştır",
         P(m_typo, sample="Şa", size=88, label="şekilli yazı"), K_CAT),
-  # German
-  "de-gestapelter-text": ("Gestapelter Text", "Staple deinen Text Zeile für Zeile",
-        P(m_vertical, letters="TEXT"), K_USE),
+
+  # ---- Discord font pages (demand-validated locales) ----
+  "de-discord-schriftart": ("Discord Schriftart", "Schriften für Nick, Bio und Kanal — ohne Nitro", m_chat, K_PLAT),
+  "es-fuentes-para-discord": ("Fuentes para Discord", "Letras para nick, canal y bio — sin Nitro", m_chat, K_PLAT),
+  "pl-czcionki-discord": ("Czcionki na Discord", "Czcionki do nicku, kanału i bio — bez Nitro", m_chat, K_PLAT),
+  "id-font-discord": ("Font Discord", "Font untuk nama, channel, dan bio — tanpa Nitro", m_chat, K_PLAT),
 }
 
 
