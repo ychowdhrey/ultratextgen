@@ -5192,6 +5192,74 @@ html[dir="rtl"] .copy-kbd { direction: ltr; }
    flow, so flip them for RTL. Authors use .rtl-flip on such inline arrows. */
 html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 
+/* ============================================================
+   Contextual decoration showcase — static, crawlable SEO block
+   Injected as the final section of <main> on decorator pages.
+   ============================================================ */
+.deco-showcase {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+.deco-showcase-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+.deco-showcase-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+.deco-showcase-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.625rem;
+}
+.deco-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.deco-chip:hover,
+.deco-chip:focus-visible {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+  outline: none;
+}
+.deco-chip-ex {
+  font-size: 1rem;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+.deco-chip-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.deco-chip.copied {
+  border-color: var(--ts-safe);
+}
+.deco-chip.copied .deco-chip-label {
+  color: var(--ts-safe);
+}
+.deco-chip.copied .deco-chip-label::after {
+  content: " · Copied!";
+}
 /* ==========================================================================
    CURVED / ARC TEXT TOOL  (/curved-text/)
    Pairs with the vertical-text module. Controls on the left, live SVG on the
