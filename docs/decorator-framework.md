@@ -274,10 +274,18 @@ keyword-rich `<h2>`, an intro sentence, and ~10 labelled, copyable example strin
   for `.deco-chip[data-copy]` (works on content pages that don't load `script.js`).
 - `.deco-showcase*` styles in `style.css` (theme-token based; verified light + dark).
 
-**Live on 14 pages:** `discord`, `instagram`, `linkedin`, `tiktok`, `gothic-fonts`,
-`cursive-fonts`, `aesthetic-fonts`, `word-wrappers`, `nickname-generator` (flagship SEO), plus
-`roblox`, `roblox/name-generator`, `tiktok/name-generator`, `youtube/name-generator`,
-`clan-tag-generator` (gaming pages — here the showcase *is* the decoration feature).
+**Live on 29 pages:**
+- *Platform* — `discord`, `instagram`, `linkedin`, `tiktok`, `whatsapp`, `x`, `snapchat`,
+  `telegram`, `facebook`, `youtube`, `pinterest`
+- *Font/category* — `gothic-fonts`, `cursive-fonts`, `aesthetic-fonts`, `bold-fonts`,
+  `cute-fonts`, `bubble-fonts`, `italic-fonts`, `small-text`, `upside-down-text`, `word-wrappers`
+- *Use-case* — `nickname-generator`, `bio-font`, `football-font`
+- *Gaming pages w/ no live panel (showcase IS the feature)* — `roblox`, `roblox/name-generator`,
+  `tiktok/name-generator`, `youtube/name-generator`, `clan-tag-generator`
+
+**Intentionally skipped:** the *effect* pages — `strikethrough-text`, `underline-text`,
+`emoji-combinations`, `classified` — where the feature is a text effect, not name-wrapping, so
+a "Popular decorations" block would read as off-topic filler.
 
 Copy is hand-authored per page (persona-specific, honest — e.g. LinkedIn shows separators not
 hearts; Roblox notes in-game character filtering). To extend to more pages, add a spec and
