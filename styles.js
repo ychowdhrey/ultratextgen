@@ -122,10 +122,15 @@ const PRINTABLE_PAGES = {
     title: 'Cursive Alphabet & Practice Sheets',
     description: 'The cursive alphabet A–Z with printable practice sheets to trace and per-letter PNG downloads.'
   },
+  'calligraphy-alphabet': {
+    slug: 'calligraphy-alphabet',
+    title: 'Calligraphy Alphabet & Practice Sheets',
+    description: 'The calligraphy alphabet A–Z — blackletter and elegant script — with printable practice sheets and PNG downloads.'
+  },
   'block-letters': {
     slug: 'block-letters',
-    title: 'Printable Block Letters',
-    description: 'Block letter and number stencils A–Z, 0–9 to print, trace, and cut out.'
+    title: 'Printable Block Letters & Stencils',
+    description: 'Block letter and number stencils A–Z, 0–9 — letter stencils and alphabet stencils to print, trace, and cut out.'
   },
   'name-tracing': {
     slug: 'name-tracing',

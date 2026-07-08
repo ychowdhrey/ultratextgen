@@ -91,10 +91,21 @@
     try { return R.renderAny(text, style); } catch (e) { return text; }
   }
 
-  // Copy-paste Unicode variants of a single character, drawn from a familySlug.
+  // Copy-paste Unicode variants of a single character. A page may supply an
+  // explicit curated list of registry style keys (CFG.variantStyles) — useful
+  // when the set spans more than one familySlug (e.g. calligraphy = blackletter
+  // + elegant script) — otherwise all map styles in CFG.variantFamily are used.
   function familyStyles() {
-    if (!CFG.variantFamily) return [];
     const reg = registry();
+    if (Array.isArray(CFG.variantStyles) && CFG.variantStyles.length) {
+      const out = [];
+      CFG.variantStyles.forEach((name) => {
+        const s = reg[name];
+        if (s && s.type === "map") out.push({ name: name, style: s });
+      });
+      return out;
+    }
+    if (!CFG.variantFamily) return [];
     const out = [];
     Object.keys(reg).forEach((name) => {
       const s = reg[name];
@@ -355,7 +366,7 @@
     const detail = document.createElement("div");
     detail.className = "bubble-detail";
 
-    const variants = CFG.variantFamily ? buildVariants(ch) : null;
+    const variants = (CFG.variantStyles || CFG.variantFamily) ? buildVariants(ch) : null;
     if (variants) {
       const title = document.createElement("h3");
       title.className = "bubble-detail-title";
