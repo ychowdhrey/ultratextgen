@@ -142,10 +142,12 @@ here so they aren't lost. Update as they're closed or new ones appear.
    (`/category/cursive-fonts/`) — but each was hand-built with its own module.
    There is **no shared SVG/PNG export helper, no generator/validator, and no
    dedicated governing doc** (it's governed only by §10 + the `CLAUDE.md` scope
-   note). The `/curved-text/` top-level namespace is also not in the page-type
-   table and has no `LANE_RULES` entry in `scripts/weekly_pr_digest.py`, so PRs
-   touching it won't classify. Decide: promote to a full lane (shared export
-   util + a governing doc) or keep it a principle-governed cross-cutting track.
+   note). PRs touching it now classify — `scripts/weekly_pr_digest.py` has
+   `LANE_RULES` entries for `curved-text/` and `js/curved|bubble|cursive/` → the
+   "Visual & printable assets" lane — but the `/curved-text/` top-level namespace
+   is still absent from the page-type table. Decide: promote to a full lane
+   (shared export util + a governing doc) or keep it a principle-governed
+   cross-cutting track.
 
 ---
 
