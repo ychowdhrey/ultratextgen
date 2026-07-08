@@ -1,6 +1,18 @@
 (function () {
   "use strict";
 
+  // Right-to-left languages. Kept in one place so i18n.js and the
+  // prerender build stay in sync on which locales are RTL.
+  var RTL_LANGS = ["ar", "he", "fa", "ur"];
+
+  function isRtl(lang) {
+    return RTL_LANGS.indexOf(lang) !== -1;
+  }
+
+  function applyDir(lang) {
+    document.documentElement.dir = isRtl(lang) ? "rtl" : "ltr";
+  }
+
   function getNestedValue(obj, path) {
     return path.split(".").reduce(function (acc, key) {
       return acc != null ? acc[key] : undefined;
@@ -8,8 +20,9 @@
   }
 
   function applyTranslations(lang, t) {
-    // Set html lang attribute
+    // Set html lang + direction attributes
     document.documentElement.lang = lang;
+    applyDir(lang);
 
     // Update <title> via data-i18n on the title element
     var titleEl = document.querySelector("title[data-i18n]");
@@ -91,7 +104,7 @@
   }
 
   function detectLang() {
-    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "sv", "no", "ja", "th", "ru"];
+    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "sv", "no", "ja", "th", "ru", "ar"];
 
     // 1. Detect from URL path prefix (e.g. /fr/, /de/)
     var pathMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
@@ -112,8 +125,9 @@
   function init() {
     var lang = detectLang();
 
-    // Always set html lang attribute
+    // Always set html lang + direction attributes
     document.documentElement.lang = lang;
+    applyDir(lang);
 
     markActiveLang(lang);
 
