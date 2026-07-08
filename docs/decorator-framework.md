@@ -219,20 +219,32 @@ profile name — never fork a bespoke set per locale.
 | B — platform | `discord` · `instagram` · `linkedin` · `tiktok` · `whatsapp` · `x` · `snapchat` · `telegram` · `facebook` · `youtube` · `pinterest` |
 | C — JTBD | `nickname-generator` |
 
-**Already contextual via the older inline pattern (pre-registry, left as-is):**
-`bio-font`, `football-font`, `emoji-combinations`, `classified`, `before-after-emoji`, and
-(in PR #371) `strikethrough-text`, `underline-text`. *Future cleanup: migrate these to the
-registry so all decorator content lives in one file.*
+**Migrated into the registry (round 2 — was inline):** `football-font`, `classified`,
+`bio-font`, `emoji-combinations`. Their exact curated sets now live as profiles in
+`decorators.js`; the pages carry only `UTG_DECORATOR_PROFILE`. Page-specific logic was
+preserved — `classified`/`bio-font` keep their `STYLE_MAP` font-mood switching, and
+`emoji-combinations` keeps its `enforcePrefixOnlyDecorators()` transform (the
+`/decorators.js` include is placed *before* it so `UTG_DECORATIONS` exists when it runs).
+
+**Also added as profiles + wired (round 2):** `strikethrough-text`, `underline-text`
+(the #371 sets — Done/Sale/Cross/Redacted/Sass and Emphasis/Rules/Pointers/Important/Minimal).
+These were still on the generic default on this branch; they now resolve from the registry.
+
+**Left inline by design:** `before-after-emoji` — its JS *generates* decorations
+dynamically (not a static set), so it can't be a static profile. Documented, not migrated.
 
 **Verified:** headless-Chromium pass across a font page, the minified template, the Discord
 dual-tab-row page, LinkedIn, nickname, and word-wrappers — profile resolves, default tab is
 active, tab keys align with decoration keys, grids render, and tab-switching swaps sets.
 
-**Deliberately NOT done (blocked on missing UI — separate work):** these pages have **no
-standard decoration panel** (`.decoration-tabs` + `#decorationGrid`), so a profile has
-nothing to bind to. Adding contextual decorators here means first adding the panel:
-`roblox/` · `roblox/name-generator` · `tiktok/name-generator` · `youtube/name-generator` ·
-`usecase/clan-tag-generator` · `usecase/zalgo-text` (runs its own zalgo controller).
+**Gaming pages with no standard panel — served via the static showcase instead (round 2):**
+`roblox/`, `roblox/name-generator`, `tiktok/name-generator`, `youtube/name-generator` are
+content / name-idea pages with **no font-styling engine** — a live profile has nothing to
+bind to. Rather than bolt a whole generator onto them, they now carry the **static
+copy-paste decoration showcase** (see below), which gives gaming personas ready-made
+decorators right on the page. `usecase/clan-tag-generator` already has its own live
+`tag-studio` frames tool and additionally gets the static showcase. `usecase/zalgo-text`
+runs its own zalgo controller (decorations fight the effect by design) — left as-is.
 
 **Bespoke decoration UI (needs a custom pass, not the standard profile):**
 `usecase/linkedin-headline` and `usecase/comment-font` have a decoration UI **without**
@@ -253,10 +265,20 @@ labels). Google renders JS, so this content *can* be indexed — but JS-injected
 the real, reliable win is UX + differentiation** (the moat section above), which is what
 drives the return visits and shares that *do* move rankings.
 
-If we want a genuine on-page SEO lever from this system, the next step is a **static,
-crawlable "Popular \<context\> decorations" content block** per page — real sentences and
-example strings in the HTML source, not JS-injected — e.g. *"Popular Discord name
-decorations: ꧁ ꧂, 【 】, ⟬ ⟭ …"* with a line on when to use each. That is additive content
-on the canonical owner page (consistent with §8/§9) and is the recommended **Phase 2**.
-It was intentionally *not* forced onto 22 pages in this pass — doing it well means
-per-page copy, not a template dump.
+**Phase 2 — DONE (round 2): the static, crawlable showcase.** Each flagship/gaming page now
+carries a real HTML `<section class="deco-showcase">` — the final block of `<main>` — with a
+keyword-rich `<h2>`, an intro sentence, and ~10 labelled, copyable example strings in the
+**HTML source** (not JS-injected). Example: *"Popular Discord Name Decorations"* → `꧁ Nova ꧂`
+(Gaming bracket), `|| Nova ||` (Spoiler tag), … Files:
+- `decorations-showcase.js` — tiny self-contained click/keyboard copy-to-clipboard handler
+  for `.deco-chip[data-copy]` (works on content pages that don't load `script.js`).
+- `.deco-showcase*` styles in `style.css` (theme-token based; verified light + dark).
+
+**Live on 14 pages:** `discord`, `instagram`, `linkedin`, `tiktok`, `gothic-fonts`,
+`cursive-fonts`, `aesthetic-fonts`, `word-wrappers`, `nickname-generator` (flagship SEO), plus
+`roblox`, `roblox/name-generator`, `tiktok/name-generator`, `youtube/name-generator`,
+`clan-tag-generator` (gaming pages — here the showcase *is* the decoration feature).
+
+Copy is hand-authored per page (persona-specific, honest — e.g. LinkedIn shows separators not
+hearts; Roblox notes in-game character filtering). To extend to more pages, add a spec and
+inject the same section before `</main>`; keep per-page copy, never a template dump.

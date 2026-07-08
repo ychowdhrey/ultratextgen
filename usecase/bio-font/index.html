@@ -671,7 +671,6 @@
   <!-- Page configuration: custom decorators, font slugs, and style filtering -->
   <script>
     // Set default active decoration tab
-    window.UTG_DEFAULT_DECO_TAB = "gaming";
 
     // Style-to-font-slug mappings (bio-specific fonts) — read by bio-font.js mood tabs
     window.STYLE_MAP = {
@@ -691,117 +690,10 @@
     window.UTG_FONT_SLUGS = window.STYLE_MAP["all"];
 
     // Custom bio-specific decorators
-    window.UTG_DECORATIONS = {
-      "gaming": [
-        { text: "『 name 』", prefix: "『", suffix: "』" },
-        { text: "꧁ name ꧂", prefix: "꧁", suffix: "꧂" },
-        { text: "▸ name ◂", prefix: "▸ ", suffix: " ◂" },
-        { text: "⟬ name ⟭", prefix: "⟬", suffix: "⟭" },
-        { text: "✦ name ✦", prefix: "✦ ", suffix: " ✦" },
-        { text: "【 name 】", prefix: "【", suffix: "】" },
-        { text: "◥ name ◤", prefix: "◥", suffix: "◤" },
-        { text: "⫸ name ⫷", prefix: "⫸ ", suffix: " ⫷" },
-        { text: "⌁ name ⌁", prefix: "⌁ ", suffix: " ⌁" },
-        { text: "≫ name ≪", prefix: "≫ ", suffix: " ≪" },
-        { text: "╾ name ╼", prefix: "╾ ", suffix: " ╼" },
-        { text: "◈ name ◈", prefix: "◈ ", suffix: " ◈" }
-      ],
-      "aesthetic": [
-        { text: "·˚ ♡ name ♡ ˚·", prefix: "·˚ ♡ ", suffix: " ♡ ˚·" },
-        { text: "✿ name ✿", prefix: "✿ ", suffix: " ✿" },
-        { text: "⋆˙⟡ name ⟡˙⋆", prefix: "⋆˙⟡ ", suffix: " ⟡˙⋆" },
-        { text: "˚₊‧ name ‧₊˚", prefix: "˚₊‧ ", suffix: " ‧₊˚" },
-        { text: "⊹ ⋆ name ⋆ ⊹", prefix: "⊹ ⋆ ", suffix: " ⋆ ⊹" },
-        { text: "·:*¨ name ¨*:·", prefix: "·:*¨ ", suffix: " ¨*:·" },
-        { text: "。˚ ✦ name ✦ ˚。", prefix: "。˚ ✦ ", suffix: " ✦ ˚。" },
-        { text: "ꕥ name ꕥ", prefix: "ꕥ ", suffix: " ꕥ" },
-        { text: "✧˖° name °˖✧", prefix: "✧˖° ", suffix: " °˖✧" },
-        { text: "᯽ name ᯽", prefix: "᯽ ", suffix: " ᯽" }
-      ],
-      "edgy": [
-        { text: "† name †", prefix: "† ", suffix: " †" },
-        { text: "꧁☠ name ☠꧂", prefix: "꧁☠ ", suffix: " ☠꧂" },
-        { text: "✞ name ✞", prefix: "✞ ", suffix: " ✞" },
-        { text: "⛧ name ⛧", prefix: "⛧ ", suffix: " ⛧" },
-        { text: "☬ name ☬", prefix: "☬ ", suffix: " ☬" },
-        { text: "⸸ name ⸸", prefix: "⸸ ", suffix: " ⸸" },
-        { text: "༒ name ༒", prefix: "༒ ", suffix: " ༒" },
-        { text: "⚰ name ⚰", prefix: "⚰ ", suffix: " ⚰" },
-        { text: "☽ name ☾", prefix: "☽ ", suffix: " ☾" },
-        { text: "⊗ name ⊗", prefix: "⊗ ", suffix: " ⊗" }
-      ],
-      "royal": [
-        { text: "♛ name ♛", prefix: "♛ ", suffix: " ♛" },
-        { text: "♚ name ♚", prefix: "♚ ", suffix: " ♚" },
-        { text: "◆ name ◆", prefix: "◆ ", suffix: " ◆" },
-        { text: "❖ name ❖", prefix: "❖ ", suffix: " ❖" },
-        { text: "⚜ name ⚜", prefix: "⚜ ", suffix: " ⚜" },
-        { text: "۞ name ۞", prefix: "۞ ", suffix: " ۞" },
-        { text: "❂ name ❂", prefix: "❂ ", suffix: " ❂" },
-        { text: "⊰ name ⊱", prefix: "⊰ ", suffix: " ⊱" },
-        { text: "✠ name ✠", prefix: "✠ ", suffix: " ✠" }
-      ],
-      "cute": [
-        { text: "♡ name ♡", prefix: "♡ ", suffix: " ♡" },
-        { text: "☆ name ☆", prefix: "☆ ", suffix: " ☆" },
-        { text: "₊˚ name ˚₊", prefix: "₊˚ ", suffix: " ˚₊" },
-        { text: "🎀 name 🎀", prefix: "🎀 ", suffix: " 🎀" },
-        { text: "⋆ ˚꒰ name ꒱˚ ⋆", prefix: "⋆ ˚꒰ ", suffix: " ꒱˚ ⋆" },
-        { text: "♪ name ♪", prefix: "♪ ", suffix: " ♪" },
-        { text: "✩°｡⋆ name ⋆｡°✩", prefix: "✩°｡⋆ ", suffix: " ⋆｡°✩" },
-        { text: "ʚ name ɞ", prefix: "ʚ ", suffix: " ɞ" },
-        { text: "𖦹 name 𖦹", prefix: "𖦹 ", suffix: " 𖦹" }
-      ],
-      "bold": [
-        { text: "⚡ name ⚡", prefix: "⚡", suffix: "⚡" },
-        { text: "★ name ★", prefix: "★ ", suffix: " ★" },
-        { text: "》name《", prefix: "》", suffix: "《" },
-        { text: "▓▒░ name ░▒▓", prefix: "▓▒░ ", suffix: " ░▒▓" },
-        { text: "█▓ name ▓█", prefix: "█▓ ", suffix: " ▓█" },
-        { text: "◄ name ►", prefix: "◄ ", suffix: " ►" },
-        { text: "⧫ name ⧫", prefix: "⧫ ", suffix: " ⧫" }
-      ],
-      "clean": [
-        { text: "— name —", prefix: "— ", suffix: " —" },
-        { text: "• name •", prefix: "• ", suffix: " •" },
-        { text: "| name |", prefix: "| ", suffix: " |" },
-        { text: "· name ·", prefix: "· ", suffix: " ·" },
-        { text: "‹ name ›", prefix: "‹ ", suffix: " ›" },
-        { text: "⟨ name ⟩", prefix: "⟨ ", suffix: " ⟩" },
-        { text: "⌈ name ⌉", prefix: "⌈ ", suffix: " ⌉" },
-        { text: "⌊ name ⌋", prefix: "⌊ ", suffix: " ⌋" }
-      ],
-      "mystical": [
-        { text: "☾ name ☽", prefix: "☾ ", suffix: " ☽" },
-        { text: "⊹ name ⊹", prefix: "⊹ ", suffix: " ⊹" },
-        { text: "✧ name ✧", prefix: "✧ ", suffix: " ✧" },
-        { text: "☸ name ☸", prefix: "☸ ", suffix: " ☸" },
-        { text: "⊛ name ⊛", prefix: "⊛ ", suffix: " ⊛" },
-        { text: "⌘ name ⌘", prefix: "⌘ ", suffix: " ⌘" },
-        { text: "❋ name ❋", prefix: "❋ ", suffix: " ❋" },
-        { text: "⟁ name ⟁", prefix: "⟁ ", suffix: " ⟁" }
-      ],
-      "retro": [
-        { text: "►► name ◄◄", prefix: "►► ", suffix: " ◄◄" },
-        { text: "■□ name □■", prefix: "■□ ", suffix: " □■" },
-        { text: "«« name »»", prefix: "«« ", suffix: " »»" },
-        { text: "┃ name ┃", prefix: "┃ ", suffix: " ┃" },
-        { text: "░░ name ░░", prefix: "░░ ", suffix: " ░░" },
-        { text: "▶ name ◀", prefix: "▶ ", suffix: " ◀" },
-        { text: "⊞ name ⊞", prefix: "⊞ ", suffix: " ⊞" },
-        { text: "⏏ name ⏏", prefix: "⏏ ", suffix: " ⏏" }
-      ],
-      "nature": [
-        { text: "⚘ name ⚘", prefix: "⚘ ", suffix: " ⚘" },
-        { text: "❧ name ❧", prefix: "❧ ", suffix: " ❧" },
-        { text: "✾ name ✾", prefix: "✾ ", suffix: " ✾" },
-        { text: "⊱✿ name ✿⊰", prefix: "⊱✿ ", suffix: " ✿⊰" },
-        { text: "☘ name ☘", prefix: "☘ ", suffix: " ☘" },
-        { text: "❀ name ❀", prefix: "❀ ", suffix: " ❀" },
-        { text: "❦ name ❦", prefix: "❦ ", suffix: " ❦" }
-      ]
-    };
+    window.UTG_DECORATOR_PROFILE = "bio";
+
   </script>
+  <script src="/decorators.js"></script>
 
   <script src="/styles.js"></script>
   <script src="/renderer.js"></script>

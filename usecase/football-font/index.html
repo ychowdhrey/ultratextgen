@@ -369,76 +369,10 @@
 
   <!-- Football decoration presets -->
   <script>
-    window.UTG_DEFAULT_DECO_TAB = "emojis";
-    window.UTG_DECORATIONS = {
-      symbols: [
-        { text: "⚽ text ⚽", prefix: "⚽ ", suffix: " ⚽" },
-        { text: "🏆 text 🏆", prefix: "🏆 ", suffix: " 🏆" },
-        { text: "🥅 text 🥅", prefix: "🥅 ", suffix: " 🥅" },
-        { text: "🔥 text 🔥", prefix: "🔥 ", suffix: " 🔥" },
-        { text: "⭐ text ⭐", prefix: "⭐ ", suffix: " ⭐" },
-        { text: "👑 text 👑", prefix: "👑 ", suffix: " 👑" },
-        { text: "🐐 text 🐐", prefix: "🐐 ", suffix: " 🐐" },
-        { text: "💪 text 💪", prefix: "💪 ", suffix: " 💪" },
-        { text: "🎯 text 🎯", prefix: "🎯 ", suffix: " 🎯" },
-        { text: "🚩 text 🚩", prefix: "🚩 ", suffix: " 🚩" }
-      ],
-      frames: [
-        { text: "「 text 」", prefix: "「", suffix: "」" },
-        { text: "【 text 】", prefix: "【", suffix: "】" },
-        { text: "⚽• text •⚽", prefix: "⚽•", suffix: "•⚽" },
-        { text: "► text ◄", prefix: "►", suffix: "◄" },
-        { text: "▌ text ▐", prefix: "▌", suffix: "▐" },
-        { text: "〔 text 〕", prefix: "〔", suffix: "〕" },
-        { text: "❰ text ❱", prefix: "❰", suffix: "❱" },
-        { text: "⟦ text ⟧", prefix: "⟦", suffix: "⟧" }
-      ],
-      dividers: [
-        { text: "─⚽─ text ─⚽─", prefix: "─⚽─ ", suffix: " ─⚽─" },
-        { text: "✦⚽✦ text ✦⚽✦", prefix: "✦⚽✦ ", suffix: " ✦⚽✦" },
-        { text: "▰▰⚽ text ⚽▰▰", prefix: "▰▰⚽ ", suffix: " ⚽▰▰" },
-        { text: "•◦⚽◦• text", prefix: "•◦⚽◦• ", suffix: " •◦⚽◦•" },
-        { text: "═══⚽ text ⚽═══", prefix: "═══⚽ ", suffix: " ⚽═══" },
-        { text: "₊˚⚽ text ⚽˚₊", prefix: "₊˚⚽ ", suffix: " ⚽˚₊" }
-      ],
-      arrows: [
-        { text: "➤ text ➤", prefix: "➤ ", suffix: " ➤" },
-        { text: "» text «", prefix: "» ", suffix: " «" },
-        { text: "→ text ←", prefix: "→ ", suffix: " ←" },
-        { text: "⟶ text ⟵", prefix: "⟶ ", suffix: " ⟵" },
-        { text: "⚽➤ text ➤⚽", prefix: "⚽➤ ", suffix: " ➤⚽" },
-        { text: "➔ text ➔", prefix: "➔ ", suffix: " ➔" }
-      ],
-      minimal: [
-        { text: "˚⚽˚ text ˚⚽˚", prefix: "˚⚽˚ ", suffix: " ˚⚽˚" },
-        { text: "·⚽· text ·⚽·", prefix: "·⚽· ", suffix: " ·⚽·" },
-        { text: "⊹ text ⊹", prefix: "⊹ ", suffix: " ⊹" },
-        { text: "✦ text ✦", prefix: "✦ ", suffix: " ✦" },
-        { text: "˖ text ˖", prefix: "˖ ", suffix: " ˖" },
-        { text: ".⚽. text .⚽.", prefix: ".⚽. ", suffix: " .⚽." }
-      ],
-      emojis: [
-        { text: "⚽🔥 text 🔥⚽", prefix: "⚽🔥 ", suffix: " 🔥⚽" },
-        { text: "🏆⚽ text ⚽🏆", prefix: "🏆⚽ ", suffix: " ⚽🏆" },
-        { text: "🥅⚽ text ⚽🥅", prefix: "🥅⚽ ", suffix: " ⚽🥅" },
-        { text: "🐐⚽ text ⚽🐐", prefix: "🐐⚽ ", suffix: " ⚽🐐" },
-        { text: "🎉⚽ text ⚽🎉", prefix: "🎉⚽ ", suffix: " ⚽🎉" },
-        { text: "💪🔥 text 🔥💪", prefix: "💪🔥 ", suffix: " 🔥💪" },
-        { text: "⚽⭐ text ⭐⚽", prefix: "⚽⭐ ", suffix: " ⭐⚽" },
-        { text: "🚩⚽ text ⚽🚩", prefix: "🚩⚽ ", suffix: " ⚽🚩" }
-      ],
-      flags: [
-        { text: "🇧🇷 text 🇧🇷", prefix: "🇧🇷 ", suffix: " 🇧🇷" },
-        { text: "🇦🇷 text 🇦🇷", prefix: "🇦🇷 ", suffix: " 🇦🇷" },
-        { text: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 text 🏴󠁧󠁢󠁥󠁮󠁧󠁿", prefix: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 ", suffix: " 🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-        { text: "🇫🇷 text 🇫🇷", prefix: "🇫🇷 ", suffix: " 🇫🇷" },
-        { text: "🇪🇸 text 🇪🇸", prefix: "🇪🇸 ", suffix: " 🇪🇸" },
-        { text: "🇩🇪 text 🇩🇪", prefix: "🇩🇪 ", suffix: " 🇩🇪" },
-        { text: "🇵🇹 text 🇵🇹", prefix: "🇵🇹 ", suffix: " 🇵🇹" },
-        { text: "🇮🇹 text 🇮🇹", prefix: "🇮🇹 ", suffix: " 🇮🇹" }
-      ]
-    };
+    window.UTG_DECORATOR_PROFILE = "football";
+
   </script>
+  <script src="/decorators.js"></script>
 
   <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
