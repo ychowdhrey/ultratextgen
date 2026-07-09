@@ -66,6 +66,15 @@
     namePng: $("#pt-name-png"),
     namePreview: $("#pt-name-preview"),
     nameRows: $("#pt-name-rows"),
+    // Coloring-sheet designer (optional; gated on its own mounts)
+    designInput: $("#pt-design-input"),
+    designHeading: $("#pt-design-heading"),
+    designFill: $("#pt-design-fill"),
+    designBorder: $("#pt-design-border"),
+    designFooter: $("#pt-design-footer"),
+    designPreview: $("#pt-design-preview"),
+    designPrint: $("#pt-design-print"),
+    designPng: $("#pt-design-png"),
     printRoot: $("#pt-print-root")
   };
 
@@ -305,10 +314,12 @@
     el.printRoot.innerHTML = "";
     const wrap = document.createElement("div");
     wrap.className = "bubble-print-wrap";
-    const h = document.createElement("h2");
-    h.className = "bubble-print-title";
-    h.textContent = titleText;
-    wrap.appendChild(h);
+    if (titleText) {
+      const h = document.createElement("h2");
+      h.className = "bubble-print-title";
+      h.textContent = titleText;
+      wrap.appendChild(h);
+    }
     wrap.appendChild(bodyNode);
     el.printRoot.appendChild(wrap);
     document.body.classList.add("is-printing");
@@ -604,12 +615,261 @@
   }
 
   /* ---------------------------------------------------------------
+     Section: coloring-sheet designer
+     Type a word/name -> a decorated, colorable, print-ready sheet with
+     an optional heading, a signature/date footer, a decorative symbol
+     border, and a multi-color interior fill (dots / stripes / hearts /
+     stars) so a child colors many small regions (fine-motor practice).
+     Everything is one self-contained SVG (native, client-side) so the
+     preview, the print sheet, and the PNG stay in sync. Gated on
+     #pt-design-input + #pt-design-preview so other pages are untouched.
+     --------------------------------------------------------------- */
+
+  const DESIGN = CFG.designer || {};
+  const DESIGN_DEMO = DESIGN.demo || CFG.nameDemo || "Hello";
+  const FILL_KINDS = ["plain", "dots", "stripes", "hearts", "stars"];
+  const BORDER_SETS = Object.assign({
+    none: "",
+    stars: "★",
+    hearts: "♥",
+    dots: "●",
+    flowers: "✿",
+    party: "★ ♥ ✿"
+  }, DESIGN.borders || {});
+
+  let designUid = 0;
+
+  function svgMake(tag, attrs, parent) {
+    const node = document.createElementNS(SVGNS, tag);
+    if (attrs) Object.keys(attrs).forEach((k) => { if (attrs[k] !== "" && attrs[k] != null) node.setAttribute(k, attrs[k]); });
+    if (parent) parent.appendChild(node);
+    return node;
+  }
+
+  function starPath(cx, cy, outer, inner, points) {
+    let d = "";
+    const step = Math.PI / points;
+    for (let i = 0; i < points * 2; i++) {
+      const r = (i % 2 === 0) ? outer : inner;
+      const a = -Math.PI / 2 + i * step;
+      d += (i === 0 ? "M" : "L") + (cx + r * Math.cos(a)).toFixed(1) + " " + (cy + r * Math.sin(a)).toFixed(1);
+    }
+    return d + "Z";
+  }
+  function heartPath(cx, cy, s) {
+    const y = cy - s * 0.55;
+    return "M" + cx + " " + (y + s * 0.35) +
+      " C" + cx + " " + y + " " + (cx - s) + " " + y + " " + (cx - s) + " " + (y + s * 0.5) +
+      " C" + (cx - s) + " " + (y + s * 1.05) + " " + cx + " " + (y + s * 1.35) + " " + cx + " " + (y + s * 1.65) +
+      " C" + cx + " " + (y + s * 1.35) + " " + (cx + s) + " " + (y + s * 1.05) + " " + (cx + s) + " " + (y + s * 0.5) +
+      " C" + (cx + s) + " " + y + " " + cx + " " + y + " " + cx + " " + (y + s * 0.35) + " Z";
+  }
+
+  function designText() {
+    const raw = el.designInput ? el.designInput.value : "";
+    return (raw && raw.trim()) ? raw.trim().slice(0, 24) : DESIGN_DEMO;
+  }
+  function designHeadingText() {
+    return el.designHeading ? el.designHeading.value.trim().slice(0, 48) : "";
+  }
+  function designFillKind() {
+    const v = el.designFill ? el.designFill.value : "plain";
+    return FILL_KINDS.indexOf(v) === -1 ? "plain" : v;
+  }
+  function designBorderSym() {
+    return BORDER_SETS[el.designBorder ? el.designBorder.value : "none"] || "";
+  }
+  function designFooterOn() { return !!(el.designFooter && el.designFooter.checked); }
+
+  // A tiled pattern of small outline shapes. Applied as the glyph's own
+  // fill (fill="url(#pattern)") so it paints only inside the letters —
+  // no clipPath needed (text-as-clip is unreliable across renderers).
+  // Each little shape is a region a child colors -> multi-color / fine-motor.
+  function addFillPattern(defs, kind, uid) {
+    const isStripe = kind === "stripes";
+    const pat = svgMake("pattern", {
+      id: "ptpat" + uid, patternUnits: "userSpaceOnUse",
+      width: isStripe ? 30 : 48, height: isStripe ? 30 : 48,
+      patternTransform: isStripe ? "rotate(45)" : ""
+    }, defs);
+    const col = "#9aa3b2", sw = 3;
+    if (kind === "dots") svgMake("circle", { cx: 24, cy: 24, r: 12, fill: "none", stroke: col, "stroke-width": sw }, pat);
+    else if (kind === "stripes") svgMake("line", { x1: 15, y1: 0, x2: 15, y2: 30, stroke: col, "stroke-width": 6 }, pat);
+    else if (kind === "hearts") svgMake("path", { d: heartPath(24, 24, 13), fill: "none", stroke: col, "stroke-width": sw }, pat);
+    else if (kind === "stars") svgMake("path", { d: starPath(24, 25, 15, 7, 5), fill: "none", stroke: col, "stroke-width": sw }, pat);
+    return "url(#ptpat" + uid + ")";
+  }
+
+  function addBorderRow(svg, symbols, y) {
+    const count = 11, W = 1000, gap = (W - 120) / (count - 1);
+    for (let i = 0; i < count; i++) {
+      const t = svgMake("text", { x: 60 + i * gap, y: y, "text-anchor": "middle", "font-size": 34, fill: "#c8ccd6", "font-family": FONT }, svg);
+      t.textContent = symbols[i % symbols.length];
+    }
+  }
+
+  function addFooter(svg, y) {
+    const field = (x, label, lineEnd) => {
+      const t = svgMake("text", { x: x, y: y, "font-family": FONT, "font-size": 30, "font-weight": 600, fill: INK }, svg);
+      t.textContent = label;
+      svgMake("line", { x1: x + 110, y1: y + 6, x2: lineEnd, y2: y + 6, stroke: "#9aa3b2", "stroke-width": 2 }, svg);
+    };
+    field(90, "Name:", 470);
+    field(560, "Date:", 910);
+  }
+
+  // The whole designed sheet as one portrait SVG (1000x1400).
+  function designSheetSVG() {
+    const text = designText();
+    const heading = designHeadingText();
+    const fill = designFillKind();
+    const borderSym = designBorderSym();
+    const footer = designFooterOn();
+    const uid = ++designUid;
+    const W = 1000, H = 1400, M = 70;
+
+    const svg = svgMake("svg", { viewBox: "0 0 " + W + " " + H, class: "pt-design-sheet-svg", role: "img", "aria-label": (heading || text) + " coloring sheet" });
+    const defs = svgMake("defs", null, svg);
+
+    svgMake("rect", { x: 18, y: 18, width: W - 36, height: H - 36, rx: 26, fill: "#ffffff", stroke: "#e2e6ee", "stroke-width": 3 }, svg);
+
+    if (borderSym) {
+      const strip = borderSym.split(" ").filter(Boolean);
+      addBorderRow(svg, strip, 78);
+      addBorderRow(svg, strip, H - 48);
+    }
+
+    if (heading) {
+      const h = svgMake("text", { x: W / 2, y: 168, "text-anchor": "middle", "font-family": FONT, "font-weight": 700, "font-size": 62, fill: INK }, svg);
+      h.textContent = heading;
+    }
+
+    const availW = W - M * 2;
+    const len = Math.max(1, [...text].length);
+    const fs = Math.max(110, Math.min(360, Math.round(availW * 1.3 / len)));
+    const cy = heading ? 740 : 700;
+    const fontAttrs = {
+      x: W / 2, y: cy, "text-anchor": "middle", "dominant-baseline": "central",
+      "font-family": FONT, "font-weight": 700, "font-size": fs, "stroke-linejoin": "round"
+    };
+    // Guarantee the word fits the width; only compress when it would overflow.
+    if (len * fs * 0.66 > availW) { fontAttrs.textLength = availW; fontAttrs.lengthAdjust = "spacingAndGlyphs"; }
+
+    // Interior: plain white (open to color), or a tiled pattern painted as
+    // the glyph fill. Plain keeps stroke under fill (thin clean edge); a
+    // pattern draws stroke on top so the letter boundary stays crisp.
+    const fillRef = (fill !== "plain") ? addFillPattern(defs, fill, uid) : "#ffffff";
+    const outline = svgMake("text", Object.assign({}, fontAttrs, {
+      fill: fillRef, stroke: INK, "stroke-width": Math.max(4, STROKE),
+      "paint-order": (fill === "plain") ? "stroke" : ""
+    }), svg);
+    outline.textContent = text;
+
+    if (footer) addFooter(svg, H - 150);
+
+    const cred = svgMake("text", { x: W / 2, y: H - 24, "text-anchor": "middle", "font-family": FONT, "font-size": 22, fill: "#aeb4c0" }, svg);
+    cred.textContent = "ultratextgen.com";
+    return svg;
+  }
+
+  function renderDesignPreview() {
+    if (!el.designPreview) return;
+    el.designPreview.innerHTML = "";
+    el.designPreview.appendChild(designSheetSVG());
+  }
+
+  function printDesign() {
+    const holder = document.createElement("div");
+    holder.className = "pt-design-print-holder";
+    holder.appendChild(designSheetSVG());
+    printWrap("", holder);
+  }
+
+  function roundRectPath(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  // PNG mirrors the sheet layout via Canvas text (outline + heading +
+  // border + footer). Interior fill patterns are print-only; the PNG
+  // saves the clean outline, which is what most "download" users reuse.
+  function designPNG() {
+    withFont(() => {
+      const W = 1000, H = 1400, scale = 2;
+      const canvas = document.createElement("canvas");
+      canvas.width = W * scale; canvas.height = H * scale;
+      const ctx = canvas.getContext("2d");
+      ctx.scale(scale, scale);
+      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, W, H);
+      ctx.strokeStyle = "#e2e6ee"; ctx.lineWidth = 3;
+      roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
+
+      const text = designText(), heading = designHeadingText();
+      const borderSym = designBorderSym();
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+
+      if (borderSym) {
+        const strip = borderSym.split(" ").filter(Boolean);
+        const count = 11, gap = (W - 120) / (count - 1);
+        ctx.font = "34px " + FONT; ctx.fillStyle = "#c8ccd6";
+        for (let i = 0; i < count; i++) {
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, 78);
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, H - 48);
+        }
+      }
+
+      let cy = 700;
+      if (heading) { ctx.font = "700 62px " + FONT; ctx.fillStyle = INK; ctx.fillText(heading, W / 2, 168); cy = 740; }
+
+      const len = Math.max(1, [...text].length);
+      let fs = Math.max(110, Math.min(360, Math.round((W - 140) * 1.3 / len)));
+      ctx.font = "700 " + fs + "px " + FONT;
+      const measured = ctx.measureText(text).width;
+      if (measured > W - 140) { fs = Math.floor(fs * (W - 140) / measured); ctx.font = "700 " + fs + "px " + FONT; }
+      ctx.lineJoin = "round";
+      ctx.fillStyle = "#ffffff"; ctx.fillText(text, W / 2, cy);
+      ctx.lineWidth = Math.max(6, STROKE); ctx.strokeStyle = INK; ctx.strokeText(text, W / 2, cy);
+
+      if (designFooterOn()) {
+        ctx.textAlign = "left"; ctx.font = "600 30px " + FONT; ctx.fillStyle = INK;
+        const fy = H - 150;
+        ctx.fillText("Name:", 90, fy); ctx.fillText("Date:", 560, fy);
+        ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(200, fy + 16); ctx.lineTo(470, fy + 16);
+        ctx.moveTo(670, fy + 16); ctx.lineTo(910, fy + 16); ctx.stroke();
+        ctx.textAlign = "center";
+      }
+
+      ctx.font = "22px " + FONT; ctx.fillStyle = "#aeb4c0"; ctx.fillText("ultratextgen.com", W / 2, H - 24);
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "sheet") + ".png");
+    });
+  }
+
+  function buildDesigner() {
+    if (!el.designInput || !el.designPreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderDesignPreview, 120); };
+    el.designInput.addEventListener("input", schedule);
+    if (el.designHeading) el.designHeading.addEventListener("input", schedule);
+    [el.designFill, el.designBorder, el.designFooter].forEach((c) => { if (c) c.addEventListener("change", renderDesignPreview); });
+    if (el.designPrint) el.designPrint.addEventListener("click", printDesign);
+    if (el.designPng) el.designPng.addEventListener("click", designPNG);
+    renderDesignPreview();
+  }
+
+  /* ---------------------------------------------------------------
      Wiring
      --------------------------------------------------------------- */
 
   function init() {
     buildStrip();
     buildAlphabetGrid();
+    buildDesigner();
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);
 
