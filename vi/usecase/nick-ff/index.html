@@ -159,6 +159,16 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
+<!-- KIỂM TRA TÊN -->
+<section class="editorial-section" id="kiem-tra-ten">
+  <span class="article-section-label">Kiểm Tra Tên</span>
+  <h2>Tên Của Bạn Có Qua Được Free Fire Không?</h2>
+  <p class="u-secondary-block">Ô nickname Free Fire chỉ nhận <strong>12 kí tự</strong> — và kí tự đặc biệt như ꧁ ꧂ bị tính <strong>2 kí tự</strong> mỗi kí hiệu (nên ꧁KING꧂ chiếm 8 trên 12). Tên bị từ chối là mất luôn Thẻ Đổi Tên. Kiểm tra trước ở đây: bộ đếm chạy tự động khi bạn gõ ở trên, hoặc dán tên đã copy vào ô.</p>
+  <div id="ffNameChecker"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
@@ -306,6 +316,10 @@
 <section class="editorial-section">
   <span class="article-section-label">Trang Liên Quan</span>
   <div class="compare-grid">
+    <a href="/vi/ki-tu-dac-biet-ff/" class="compare-card variant-muted u-no-underline">
+      <h4>Kí Tự Đặc Biệt FF</h4>
+      <p>500+ kí tự riêng cho Free Fire — khung, khoảng trống, kanji, kèm máy kiểm tra tên.</p>
+    </a>
     <a href="/vi/ki-tu-dac-biet/" class="compare-card variant-muted u-no-underline">
       <h4>Kí Tự Đặc Biệt</h4>
       <p>Kho đầy đủ kí hiệu cho nick — khung, vương miện, tim, katakana.</p>
@@ -349,12 +363,35 @@
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + wrappers + kiểm tra tên -->
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/gamename/game-rules.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   var ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "ffNameChecker",
+      games: ["ff"],
+      inputId: "mainInput",
+      text: {
+        inputLabel: "Kiểm tra tên trước khi dùng Thẻ Đổi Tên",
+        placeholder: "Dán tên đã copy vào đây…",
+        ok: "An toàn cho Free Fire",
+        warn: "Có thể hiện ô vuông ▯ trên máy khác",
+        fail: "Free Fire sẽ từ chối tên này",
+        empty: "Gõ hoặc dán tên để kiểm tra",
+        weightNote: "Free Fire tính kí tự đặc biệt là 2 kí tự mỗi kí hiệu.",
+        issue: {
+          "over-limit": "Quá dài — bỏ bớt một kí hiệu hoặc rút gọn tên gốc.",
+          "space": "Dấu cách thường bị từ chối — dùng kí tự khoảng trống ẩn.",
+          "unknown-chars": "Những kí tự này hiếm được hỗ trợ, có thể hiện ô vuông:",
+          "too-short": "Quá ngắn."
+        }
+      }
+    });
+  }
   if (!ns || !ns.buildGrids) return;
 
   var GROUPS = [

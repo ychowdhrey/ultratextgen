@@ -83,6 +83,14 @@
     },
     {
       "@type": "Question",
+      "name": "How many characters can a Free Fire name have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Free Fire nickname field allows 12 characters, and decorative Unicode symbols count as 2 characters each. For example ꧁KING꧂ uses 8 of the 12 (4 letters + 2 double-width umbrellas). Use the name checker on this page — it counts your name exactly the way Free Fire does before you spend a Name Change Card."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Why is my Free Fire name rejected or shown as boxes?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -154,6 +162,16 @@
   <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
   <div class="results-grid" id="resultsGrid"></div>
 </main>
+
+<!-- NAME CHECK -->
+<section class="editorial-section" id="name-check">
+  <span class="article-section-label">Name Check</span>
+  <h2>Will Your Name Survive in Free Fire?</h2>
+  <p class="u-secondary-block">Free Fire's nickname field allows <strong>12 characters</strong> — and decorative symbols like ꧁ ꧂ count as <strong>2 each</strong> (so ꧁KING꧂ uses 8 of the 12). A rejected paste wastes a Name Change Card, so check before you rename: it updates as you type above, or paste any styled name you copied.</p>
+  <div id="ffNameChecker"></div>
+</section>
+
+<div class="section-divider"></div>
 
 <!-- INTRO -->
 <section class="editorial-section">
@@ -326,6 +344,18 @@
       <h4>Invisible Character</h4>
       <p>Blank character for Free Fire names with spaces.</p>
     </a>
+    <a href="/library/ml-name-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Mobile Legends Name Symbols</h4>
+      <p>ML nickname characters — frames, crowns, and katakana that render in-game.</p>
+    </a>
+    <a href="/guide/game-username-allowed-symbols/" class="compare-card variant-muted u-no-underline">
+      <h4>Allowed Symbols by Game</h4>
+      <p>Which characters survive in Roblox, Fortnite, Valorant, and COD name fields.</p>
+    </a>
+    <a href="/roblox/name-generator/" class="compare-card variant-muted u-no-underline">
+      <h4>Roblox Username Generator</h4>
+      <p>Rule-legal username ideas by vibe, with a not-taken availability check.</p>
+    </a>
   </div>
 </section>
 
@@ -337,12 +367,35 @@
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + wrappers + name checker -->
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/gamename/game-rules.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   var ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "ffNameChecker",
+      games: ["ff"],
+      inputId: "mainInput",
+      text: {
+        inputLabel: "Check a name before you spend a rename card",
+        placeholder: "Paste the styled name you copied…",
+        ok: "Looks safe for Free Fire",
+        warn: "May show boxes ▯ on some phones",
+        fail: "Free Fire will reject this",
+        empty: "Type or paste a name to check it",
+        weightNote: "Free Fire counts decorative symbols as 2 characters each.",
+        issue: {
+          "over-limit": "Too long — drop a symbol or shorten the base name.",
+          "space": "A plain space is rejected — use the invisible character trick below instead.",
+          "unknown-chars": "These characters are rarely supported and may render as boxes:",
+          "too-short": "Too short."
+        }
+      }
+    });
+  }
   if (!ns || !ns.buildGrids) return;
 
   var GROUPS = [
