@@ -1,25 +1,31 @@
 /*
- * hiraganaChartController.js — interactive + printable hiragana chart.
+ * kanaChart.js — shared engine for the interactive + printable kana charts.
  *
- * Reads window.UltraHiraganaData and builds a click-to-copy chart from native
- * Unicode kana. All output is client-side: an on-screen grid, a print sheet
- * (window.print() into a hidden surface), and a Canvas-rendered PNG. No font
- * binaries are bundled — kana use the visitor's system Japanese font stack.
+ * One engine powers both /hiragana-chart/ and /katakana-chart/. A page declares
+ *   window.UTG_KANA = { set: "hiragana"|"katakana", name, pngPrefix, url }
+ * and includes the matching data file (js/kana/<set>Data.js), which registers
+ * window.UltraKanaData[set]. Everything is client-side: an on-screen grid, a
+ * print sheet (window.print() into a hidden surface), and a Canvas-rendered
+ * PNG. No font binaries are bundled — kana use the visitor's system Japanese
+ * font stack.
  *
  * Controls (authored as crawlable HTML, wired here):
- *   #hira-romaji-toggle   show / hide romaji  (hidden = self-quiz mode)
- *   #hira-sec-dakuten     include the voiced section
- *   #hira-sec-yoon        include the combinations section
- *   #hira-print / #hira-png   export the visible chart
- * Mounts: #hira-chart (grids), #hira-print-root (print surface), #hira-toast.
+ *   #kana-romaji-toggle   show / hide romaji  (hidden = self-quiz mode)
+ *   #kana-sec-dakuten     include the voiced section
+ *   #kana-sec-yoon        include the combinations section
+ *   #kana-print / #kana-png   export the visible chart
+ * Mounts: #kana-chart (grids), #kana-print-root (print surface), #kana-toast.
  *
  * IIFE + global-namespace, matching the rest of the frontend (no imports).
  */
 (function () {
   "use strict";
 
-  const DATA = window.UltraHiraganaData;
-  if (!DATA) return;
+  const CFG = window.UTG_KANA || {};
+  const SET = CFG.set || "hiragana";
+  const NAME = CFG.name || "Kana Chart";
+  const PNG_PREFIX = CFG.pngPrefix || "kana-chart";
+  const URL_LINE = CFG.url || "ultratextgen.com";
 
   const $ = (sel, root) => (root || document).querySelector(sel);
 
@@ -31,24 +37,30 @@
   const INK = "#1a1a2e";
 
   const el = {
-    chart: $("#hira-chart"),
-    romaji: $("#hira-romaji-toggle"),
-    dakuten: $("#hira-sec-dakuten"),
-    yoon: $("#hira-sec-yoon"),
-    print: $("#hira-print"),
-    png: $("#hira-png"),
-    printRoot: $("#hira-print-root"),
-    toast: $("#hira-toast")
+    chart: $("#kana-chart"),
+    romaji: $("#kana-romaji-toggle"),
+    dakuten: $("#kana-sec-dakuten"),
+    yoon: $("#kana-sec-yoon"),
+    print: $("#kana-print"),
+    png: $("#kana-png"),
+    printRoot: $("#kana-print-root"),
+    toast: $("#kana-toast")
   };
 
   const state = { romaji: true, dakuten: true, yoon: true };
+
+  function dataset() {
+    return (window.UltraKanaData || {})[SET] || null;
+  }
 
   /* --------------------------------------------------------------
      State
      -------------------------------------------------------------- */
 
   function visibleSections() {
-    return DATA.sections.filter((s) => {
+    const data = dataset();
+    if (!data) return [];
+    return data.sections.filter((s) => {
       if (s.key === "dakuten") return state.dakuten;
       if (s.key === "yoon") return state.yoon;
       return true; // gojuon always shown
@@ -93,48 +105,48 @@
     const o = opts || {};
     const showRomaji = o.showRomaji !== false;
     const wrap = document.createElement("section");
-    wrap.className = "hira-section";
+    wrap.className = "kana-section";
     wrap.dataset.section = section.key;
 
     const head = document.createElement("div");
-    head.className = "hira-section-head";
+    head.className = "kana-section-head";
     const h = document.createElement("h2");
-    h.className = "hira-section-title";
+    h.className = "kana-section-title";
     h.textContent = section.label;
     head.appendChild(h);
     if (section.note && o.notes !== false) {
       const p = document.createElement("p");
-      p.className = "hira-section-note";
+      p.className = "kana-section-note";
       p.textContent = section.note;
       head.appendChild(p);
     }
     wrap.appendChild(head);
 
     const grid = document.createElement("div");
-    grid.className = "hira-grid hira-cols-" + section.cols.length;
+    grid.className = "kana-grid kana-cols-" + section.cols.length;
 
     section.rows.forEach((row) => {
       row.cells.forEach((cell) => {
         if (!cell) {
           const gap = document.createElement("div");
-          gap.className = "hira-cell hira-cell-empty";
+          gap.className = "kana-cell kana-cell-empty";
           gap.setAttribute("aria-hidden", "true");
           grid.appendChild(gap);
           return;
         }
         const node = o.interactive ? document.createElement("button") : document.createElement("div");
-        node.className = "hira-cell";
+        node.className = "kana-cell";
         if (o.interactive) {
           node.type = "button";
           node.setAttribute("aria-label", "Copy " + cell.k + " — " + cell.r);
           node.addEventListener("click", () => copyKana(cell.k, cell.r));
         }
         const glyph = document.createElement("span");
-        glyph.className = "hira-kana";
+        glyph.className = "kana-glyph";
         glyph.textContent = cell.k;
         node.appendChild(glyph);
         const rom = document.createElement("span");
-        rom.className = "hira-romaji";
+        rom.className = "kana-romaji";
         rom.textContent = cell.r;
         if (!showRomaji) rom.classList.add("is-hidden");
         node.appendChild(rom);
@@ -148,7 +160,7 @@
 
   function renderChart() {
     if (!el.chart) return;
-    el.chart.classList.toggle("hira-no-romaji", !state.romaji);
+    el.chart.classList.toggle("kana-no-romaji", !state.romaji);
     el.chart.innerHTML = "";
     visibleSections().forEach((section) => {
       el.chart.appendChild(buildSection(section, { interactive: true, showRomaji: state.romaji }));
@@ -163,17 +175,17 @@
     if (!el.printRoot) { window.print(); return; }
     el.printRoot.innerHTML = "";
     const wrap = document.createElement("div");
-    wrap.className = "hira-print-wrap";
+    wrap.className = "kana-print-wrap";
     const title = document.createElement("h1");
-    title.className = "hira-print-title";
-    title.textContent = "Hiragana chart" + (state.romaji ? "" : " (blank — fill in the romaji)");
+    title.className = "kana-print-title";
+    title.textContent = NAME + (state.romaji ? "" : " (blank — fill in the romaji)");
     wrap.appendChild(title);
     visibleSections().forEach((section) => {
       wrap.appendChild(buildSection(section, { interactive: false, showRomaji: state.romaji }));
     });
     const cred = document.createElement("p");
-    cred.className = "hira-print-cred";
-    cred.textContent = "ultratextgen.com/hiragana-chart";
+    cred.className = "kana-print-cred";
+    cred.textContent = URL_LINE;
     wrap.appendChild(cred);
     el.printRoot.appendChild(wrap);
     document.body.classList.add("is-printing");
@@ -202,6 +214,7 @@
 
   function chartPNG() {
     const sections = visibleSections();
+    if (!sections.length) return;
     const showRomaji = state.romaji;
     const scale = 2;
     const MARGIN = 48;
@@ -232,10 +245,10 @@
     ctx.textAlign = "left";
     ctx.textBaseline = "alphabetic";
     ctx.font = "700 40px " + ROMAJI_FONT;
-    ctx.fillText("Hiragana Chart", MARGIN, MARGIN + 34);
+    ctx.fillText(NAME, MARGIN, MARGIN + 34);
     ctx.fillStyle = "#94a3b8";
     ctx.font = "500 18px " + ROMAJI_FONT;
-    ctx.fillText("ultratextgen.com/hiragana-chart", MARGIN, MARGIN + 62);
+    ctx.fillText(URL_LINE, MARGIN, MARGIN + 62);
 
     let y = MARGIN + HEADER_H;
     sections.forEach((section) => {
@@ -269,7 +282,7 @@
       y += section.rows.length * CELL_H + SECTION_GAP;
     });
 
-    downloadCanvas(canvas, "hiragana-chart" + (showRomaji ? "" : "-blank") + ".png");
+    downloadCanvas(canvas, PNG_PREFIX + (showRomaji ? "" : "-blank") + ".png");
   }
 
   // Faint diagonal hatch for empty grid slots (yi/ye, wi/wu/we) so the PNG
@@ -290,6 +303,7 @@
      -------------------------------------------------------------- */
 
   function init() {
+    if (!dataset()) return;
     if (el.romaji) {
       state.romaji = el.romaji.checked;
       el.romaji.addEventListener("change", () => { state.romaji = el.romaji.checked; renderChart(); });

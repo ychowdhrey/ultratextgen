@@ -2,14 +2,14 @@
  * hiraganaData.js — the hiragana syllabary as plain data.
  *
  * Native Unicode kana (no font registry, no bundled binaries) grouped into the
- * three sections a standard printable chart shows:
+ * three sections a standard chart shows:
  *   - gojuon:  the 46 basic kana, rows = consonant group, columns = vowel
  *   - dakuten: voiced / semi-voiced kana (゛/ ゜) — g, z, d, b, p rows
  *   - yoon:    contracted combinations (small ゃゅょ) — 3 columns (ya, yu, yo)
  *
  * A cell is { k: kana, r: romaji } or null for a gap in the grid (e.g. yi/ye,
- * wi/wu/we). Exposed as a single global for the controller — no ES modules,
- * matching the rest of the frontend.
+ * wi/wu/we). Self-registers into the shared window.UltraKanaData registry the
+ * kana chart engine reads — no ES modules, matching the rest of the frontend.
  */
 (function () {
   "use strict";
@@ -71,7 +71,6 @@
     ]
   };
 
-  window.UltraHiraganaData = {
-    sections: [GOJUON, DAKUTEN, YOON]
-  };
+  window.UltraKanaData = window.UltraKanaData || {};
+  window.UltraKanaData.hiragana = { sections: [GOJUON, DAKUTEN, YOON] };
 })();
