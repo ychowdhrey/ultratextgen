@@ -1,0 +1,72 @@
+{
+  "slug": "blushing-kaomoji",
+  "title": "Blushing Kaomoji: Copy & Paste Shy & Blush Text Faces",
+  "meta_description": "Browse and copy blushing kaomoji — also spelled blush kamoji — shy, flustered Japanese text faces with rosy cheeks. Click any to copy it instantly.",
+  "breadcrumb": "Blushing Kaomoji",
+  "hero_h1": "Blushing Kaomoji",
+  "hero_tagline": "Copy and paste blushing kaomoji — shy, flustered Japanese text faces with rosy cheeks. Click any face to copy it instantly.",
+  "intro": "Blushing kaomoji (also spelled blush kamoji) are Japanese-style text faces with rosy cheeks — for shyness, embarrassment, and being flustered. A blushing kaomoji like (⁄ ⁄•⁄ω⁄•⁄ ⁄) or (//∇//) uses combining marks for the blush, but it is still plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse blushing, shy, flustered, and bashful faces below and click any face to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "blushing",
+      "label": "Blushing",
+      "h2": "Blushing Kaomoji",
+      "intro": "Warm, rosy-cheeked faces caught blushing.",
+      "symbols": [
+        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "label": "Deep Blush" },
+        { "char": "(//∇//)", "label": "Rosy Cheeks" },
+        { "char": "(〃▽〃)", "label": "Warm Blush" },
+        { "char": "(„ಡωಡ„)", "label": "Soft Blush" },
+        { "char": "(*/ω＼*)", "label": "Hiding Blush" },
+        { "char": "(⸝⸝ᵕᴗᵕ⸝⸝)", "label": "Gentle Blush" }
+      ]
+    },
+    {
+      "id": "shy",
+      "label": "Shy",
+      "h2": "Shy Kaomoji",
+      "intro": "Timid faces peeking out shyly.",
+      "symbols": [
+        { "char": "(๑˃́ ⌄ ˂̀๑)", "label": "Shy Smile" },
+        { "char": "( 〃▽〃)", "label": "Bashful" },
+        { "char": "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)", "label": "Very Shy" },
+        { "char": "(*ﾉωﾉ)", "label": "Covering Face" },
+        { "char": "(ﾉ*° ▽°)ﾉ", "label": "Flustered Wave" }
+      ]
+    },
+    {
+      "id": "flustered",
+      "label": "Flustered",
+      "h2": "Flustered Kaomoji",
+      "intro": "Overwhelmed, flustered faces.",
+      "symbols": [
+        { "char": "(⑉꒦ິ^꒦ິ⑉)", "label": "Overwhelmed" },
+        { "char": "(‘◇’)", "label": "Startled Blush" },
+        { "char": "(๑′ㅂ‵๑)", "label": "Nervous Smile" },
+        { "char": "(๑´ㅂ`๑)", "label": "Happy Fluster" }
+      ]
+    },
+    {
+      "id": "bashful",
+      "label": "Bashful",
+      "h2": "Bashful Kaomoji",
+      "intro": "Sweet, bashful faces looking away.",
+      "symbols": [
+        { "char": "(‘⌣’ʃ)", "label": "Coy" },
+        { "char": "(๑ㅅ๑)", "label": "Tiny Bashful" },
+        { "char": "(।˃̣̣̥᷄◡˂̣̣̥᷅ ｀)", "label": "Sheepish" },
+        { "char": "(*ᴗ͈ˬᴗ͈)", "label": "Warm Bashful" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/love-kaomoji/", "title": "Love Kaomoji", "desc": "Affection, kisses, hugs, and crush text faces to copy." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling, excited, and joyful Japanese text faces to copy." }
+  ]
+}

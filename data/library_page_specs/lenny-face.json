@@ -1,0 +1,86 @@
+{
+  "slug": "lenny-face",
+  "title": "Lenny Face: Copy & Paste ( ͡° ͜ʖ ͡°) Text Faces",
+  "meta_description": "Copy and paste Lenny face ( ͡° ͜ʖ ͡°) and every variant — winking, happy, flexing, gun, and peeking Lenny faces. Plain Unicode text. Click any to copy it instantly.",
+  "breadcrumb": "Lenny Face",
+  "hero_h1": "Lenny Face",
+  "hero_tagline": "Copy and paste the classic Lenny face ( ͡° ͜ʖ ͡°) and every variant — winking, happy, flexing, and gun-toting Lennys. Click any face to copy it instantly.",
+  "intro": "The Lenny face ( ͡° ͜ʖ ͡°) is a suggestive, knowing text face built from Unicode combining marks — the ͡ tilde arches the brows and the ͜ mark forms the smirk. Because a Lenny face is plain Unicode text, it pastes cleanly into Discord, chat, comments, bios, and usernames with no image needed. Browse the classic Lenny, plus happy, winking, smug, flexing, and action variants below, and click any face to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic-lenny",
+      "label": "Classic Lenny",
+      "h2": "Classic Lenny Face",
+      "intro": "The original knowing smirk every Lenny face collection starts with.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Classic Lenny" },
+        { "char": "(͡° ͜ʖ ͡°)", "label": "Tight Lenny" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Winking Lenny" },
+        { "char": "( ͡ᵔ ͜ʖ ͡ᵔ )", "label": "Happy Lenny" },
+        { "char": "( ͠° ͟ʖ ͡°)", "label": "Raised-Brow Lenny" },
+        { "char": "( ͡° ʖ̯ ͡°)", "label": "Flat Lenny" }
+      ]
+    },
+    {
+      "id": "happy-lenny",
+      "label": "Happy Lenny",
+      "h2": "Happy & Excited Lenny Faces",
+      "intro": "Cheerful, wide-smirk Lennys for good news and hype.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡° )", "label": "Grinning Lenny" },
+        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Flexing Lenny" },
+        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Wide-Eyed Lenny" },
+        { "char": "( ͡• ͜ʖ ͡•)", "label": "Soft Lenny" },
+        { "char": "☜(ﾟヮﾟ☜)", "label": "Pointing Lenny" }
+      ]
+    },
+    {
+      "id": "smug-lenny",
+      "label": "Smug & Winking",
+      "h2": "Smug & Winking Lenny Faces",
+      "intro": "Sly, suggestive Lennys for a knowing reaction.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡ °)", "label": "Smug Lenny" },
+        { "char": "( ͡°㇏ ͡°)", "label": "Sly Lenny" },
+        { "char": "( ͡~ ͜ʖ ͡~)", "label": "Double Wink" },
+        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Curious Lenny" },
+        { "char": "(  ͡° ͜ʖ ͡°)", "label": "Wide Smirk" }
+      ]
+    },
+    {
+      "id": "action-lenny",
+      "label": "Action Lenny",
+      "h2": "Action & Gun Lenny Faces",
+      "intro": "Lennys mid-action — pointing guns, peeking, and reaching out.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)=ε/̵͇̿̿/’̿’̿ ̿", "label": "Gun Lenny" },
+        { "char": "┴┬┴┤( ͡° ͜ʖ├┬┴┬", "label": "Peeking Lenny" },
+        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Marching Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)ﾉ", "label": "Waving Lenny" },
+        { "char": "(づ ͡° ͜ʖ ͡°)づ", "label": "Hugging Lenny" }
+      ]
+    },
+    {
+      "id": "mini-lenny",
+      "label": "Mini Lenny",
+      "h2": "Small & Stacked Lenny Faces",
+      "intro": "Compact and multi-Lenny variants for extra emphasis.",
+      "symbols": [
+        { "char": "( ° ͜ʖ °)", "label": "Mini Lenny" },
+        { "char": "( ͜ʖ )", "label": "Bare Smirk" },
+        { "char": "( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)", "label": "Double Lenny" },
+        { "char": "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)", "label": "Lenny Army" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling, excited, and joyful Japanese text faces to copy." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/discord-symbols/", "title": "Discord Symbols", "desc": "Symbols and text faces that paste cleanly into Discord chat and names." }
+  ]
+}

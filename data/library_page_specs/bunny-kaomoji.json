@@ -1,0 +1,73 @@
+{
+  "slug": "bunny-kaomoji",
+  "title": "Bunny Kaomoji: Copy & Paste Cute Rabbit Text Faces",
+  "meta_description": "Browse and copy bunny kaomoji — also spelled bunny kamoji — cute Japanese rabbit text faces with long ears and little paws. Click any to copy it instantly.",
+  "breadcrumb": "Bunny Kaomoji",
+  "hero_h1": "Bunny Kaomoji",
+  "hero_tagline": "Copy and paste bunny kaomoji — cute Japanese rabbit text faces with long ears, twitchy noses, and little paws. Click any face to copy it instantly.",
+  "intro": "Bunny kaomoji (also spelled bunny kamoji) are Japanese-style text faces shaped like rabbits — usually with (\\(\\ ears or a ˘ﻌ˘ nose. A bunny kaomoji like (\\(\\ or ૮ ˘ﻌ˘ ა is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse classic bunnies, happy bunnies, paws-up bunnies, and sleepy bunnies below and click any face to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic-bunnies",
+      "label": "Classic Bunnies",
+      "h2": "Classic Bunny Kaomoji",
+      "intro": "The core long-eared rabbit faces.",
+      "symbols": [
+        { "char": "(\\(\\", "label": "Bunny Ears" },
+        { "char": "( •ᴗ•)", "label": "Little Bunny" },
+        { "char": "(•ㅅ•)", "label": "Nose Bunny" },
+        { "char": "૮ ˘ﻌ˘ ა", "label": "Round Bunny" },
+        { "char": "( ˘ ³˘)", "label": "Soft Bunny" },
+        { "char": "(´• ω •`)", "label": "Wide Bunny" }
+      ]
+    },
+    {
+      "id": "happy-bunnies",
+      "label": "Happy Bunnies",
+      "h2": "Happy Bunny Kaomoji",
+      "intro": "Cheerful, hopping rabbits.",
+      "symbols": [
+        { "char": "(≧ᆺ≦)", "label": "Happy Bunny" },
+        { "char": "(=˘ᆺ˘=)", "label": "Content Bunny" },
+        { "char": "ヽ(・ᴥ・)ﾉ", "label": "Cheer Bunny" },
+        { "char": "(ᵔᴥᵔ)", "label": "Smiling Bunny" },
+        { "char": "(＾• ﻌ •＾)", "label": "Beaming Bunny" }
+      ]
+    },
+    {
+      "id": "paws-up-bunnies",
+      "label": "Paws-Up Bunnies",
+      "h2": "Paws-Up Bunny Kaomoji",
+      "intro": "Rabbits reaching out with little paws.",
+      "symbols": [
+        { "char": "/(^ x ^)\\", "label": "Peeking Bunny" },
+        { "char": "/(=•ㅅ•=)\\", "label": "Framed Bunny" },
+        { "char": "(づ˘ᴥ˘)づ", "label": "Hug Bunny" },
+        { "char": "੭•̀ω•́)੭", "label": "Paws-Up" },
+        { "char": "ฅ(•ㅅ•❀)ฅ", "label": "Flower Bunny" }
+      ]
+    },
+    {
+      "id": "sleepy-bunnies",
+      "label": "Sleepy Bunnies",
+      "h2": "Sleepy Bunny Kaomoji",
+      "intro": "Drowsy, resting rabbits.",
+      "symbols": [
+        { "char": "(=˘ﻌ˘=)", "label": "Dozing Bunny" },
+        { "char": "( ˘ᴗ˘ )", "label": "Calm Bunny" },
+        { "char": "(´-ᴥ-`)", "label": "Sleepy Bunny" },
+        { "char": "(￣ᴥ￣)", "label": "Napping Bunny" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/cat-kaomoji/", "title": "Cat Kaomoji", "desc": "Cute cat text faces with whiskers, paws, and big eyes." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/animal-emojis/", "title": "Animal Emojis", "desc": "Rabbits and every other animal emoji to copy and paste." }
+  ]
+}

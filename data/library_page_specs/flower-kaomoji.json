@@ -1,0 +1,73 @@
+{
+  "slug": "flower-kaomoji",
+  "title": "Flower Kaomoji: Copy & Paste Cute Flower Text Faces",
+  "meta_description": "Browse and copy flower kaomoji — also spelled flower kamoji — cute Japanese text faces with ❀ and ✿ flowers, flower crowns, and blooms. Click any to copy it instantly.",
+  "breadcrumb": "Flower Kaomoji",
+  "hero_h1": "Flower Kaomoji",
+  "hero_tagline": "Copy and paste flower kaomoji — cute Japanese text faces decorated with ❀ and ✿ flowers, flower crowns, and blooms. Click any face to copy it instantly.",
+  "intro": "Flower kaomoji (also spelled flower kamoji) are Japanese-style text faces decorated with ❀, ✿, and ❁ flowers — soft, cottagecore, and full of cheer. A flower kaomoji like (◠‿◠✿) or (◕‿◕)❀ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse flower faces, flower crowns, faces holding flowers, and blooming faces below and click any face to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "flower-faces",
+      "label": "Flower Faces",
+      "h2": "Flower Face Kaomoji",
+      "intro": "Smiling faces with a flower tucked beside them.",
+      "symbols": [
+        { "char": "(◠‿◠✿)", "label": "Flower Smile" },
+        { "char": "(◕‿◕)❀", "label": "Cheerful Bloom" },
+        { "char": "(✿◠‿◠)", "label": "Side Flower" },
+        { "char": "(❁´◡`❁)", "label": "Double Flower" },
+        { "char": "(◡‿◡✿)", "label": "Content Flower" },
+        { "char": "(✿◕‿◕)", "label": "Bright Bloom" }
+      ]
+    },
+    {
+      "id": "flower-crown",
+      "label": "Flower Crown",
+      "h2": "Flower Crown Kaomoji",
+      "intro": "Faces wearing a little crown of flowers.",
+      "symbols": [
+        { "char": "❀(◕‿◕)❀", "label": "Flower Crown" },
+        { "char": "✿(´▽`)✿", "label": "Soft Crown" },
+        { "char": "❁(´◡`❁)", "label": "Crowned Bloom" },
+        { "char": "✿♡‿♡✿", "label": "Love Crown" },
+        { "char": "❀(*´▽`*)❀", "label": "Beaming Crown" }
+      ]
+    },
+    {
+      "id": "holding-flowers",
+      "label": "Holding Flowers",
+      "h2": "Kaomoji Holding Flowers",
+      "intro": "Faces offering a flower with little hands.",
+      "symbols": [
+        { "char": "(っ˘ω˘)っ✿", "label": "Offering Flower" },
+        { "char": "(´• ω •`)ノ✿", "label": "Giving Bloom" },
+        { "char": "ヽ(´◡`✿)ノ", "label": "Cheer Flower" },
+        { "char": "(◕ᴗ◕✿)づ", "label": "Reaching Bloom" },
+        { "char": "(*ﾟ▽ﾟ)ノ❀", "label": "Wave Flower" }
+      ]
+    },
+    {
+      "id": "blooming",
+      "label": "Blooming",
+      "h2": "Blooming Kaomoji",
+      "intro": "Dreamy, cottagecore faces framed by blooms.",
+      "symbols": [
+        { "char": "✿*ﾟ‘ﾟ･✿(ヽ°◡°)ﾉ✿*ﾟ", "label": "Flower Trail" },
+        { "char": "❀｡•́‿•̀｡❀", "label": "Framed Bloom" },
+        { "char": "✿(๑•ᴗ•๑)✿", "label": "Blossom Face" },
+        { "char": "❁◕ ‿ ◕❁", "label": "Petal Eyes" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Cute and kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/love-kaomoji/", "title": "Love Kaomoji", "desc": "Affection, kisses, hugs, and crush text faces to copy." },
+    { "href": "/library/flower-symbols/", "title": "Flower Symbols", "desc": "Every flower and blossom symbol to copy and paste." }
+  ]
+}

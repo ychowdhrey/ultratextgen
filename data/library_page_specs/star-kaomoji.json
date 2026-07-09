@@ -1,0 +1,73 @@
+{
+  "slug": "star-kaomoji",
+  "title": "Star Kaomoji: Copy & Paste Starry-Eyed Text Faces",
+  "meta_description": "Browse and copy star kaomoji — also spelled star kamoji — Japanese text faces with starry eyes, sparkles, and excitement. Click any to copy it instantly.",
+  "breadcrumb": "Star Kaomoji",
+  "hero_h1": "Star Kaomoji",
+  "hero_tagline": "Copy and paste star kaomoji — Japanese text faces with starry eyes, sparkles, and star-struck excitement. Click any face to copy it instantly.",
+  "intro": "Star kaomoji (also spelled star kamoji) are Japanese-style text faces built around ★ and ☆ — for excitement, wonder, and starry-eyed hype. A star kaomoji like (★ω★) or ☆*:.｡.o(≧▽≦)o.｡.:*☆ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and usernames. Browse starry eyes, excited stars, sparkle stars, and wishing stars below and click any face to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "starry-eyes",
+      "label": "Starry Eyes",
+      "h2": "Starry-Eyed Kaomoji",
+      "intro": "Faces with stars for eyes — full of wonder.",
+      "symbols": [
+        { "char": "(★ω★)", "label": "Star Eyes" },
+        { "char": "(☆▽☆)", "label": "Star Struck" },
+        { "char": "(✧ω✧)", "label": "Sparkle Eyes" },
+        { "char": "(⭐▽⭐)", "label": "Shining Eyes" },
+        { "char": "(★‿★)", "label": "Dazzled" },
+        { "char": "(☆ω☆)", "label": "Wonder" }
+      ]
+    },
+    {
+      "id": "excited-stars",
+      "label": "Excited Stars",
+      "h2": "Excited Star Kaomoji",
+      "intro": "Cheering faces surrounded by stars.",
+      "symbols": [
+        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Overjoyed Stars" },
+        { "char": "ヽ(*・ω・)ﾉ⭐", "label": "Cheer Star" },
+        { "char": "＼(★ω★)／", "label": "Star Hooray" },
+        { "char": "(ノ◕ヮ◕)ノ*:･ﾟ✧", "label": "Throwing Stars" },
+        { "char": "o(≧∇≦o)★", "label": "Excited Star" }
+      ]
+    },
+    {
+      "id": "sparkle-stars",
+      "label": "Sparkle Stars",
+      "h2": "Sparkle Star Kaomoji",
+      "intro": "Faces framed with sparkles and twinkles.",
+      "symbols": [
+        { "char": "✧(•̀ᴗ•́)✧", "label": "Twinkle Face" },
+        { "char": "(ﾉ*・ω・)ﾉ⋆｡ﾟ☁︎｡⋆", "label": "Star Trail" },
+        { "char": "｡ﾟ+.(★ω★).+ﾟ｡", "label": "Framed Stars" },
+        { "char": "⋆｡°✩(๑•ᴗ•๑)✩°｡⋆", "label": "Starry Frame" },
+        { "char": "*✧･ﾟ(≧◡≦)*✧･ﾟ", "label": "Glimmer" }
+      ]
+    },
+    {
+      "id": "wishing-stars",
+      "label": "Wishing Stars",
+      "h2": "Wishing Star Kaomoji",
+      "intro": "Soft, dreamy faces reaching for a star.",
+      "symbols": [
+        { "char": "(っ˘ω˘ς)⭐", "label": "Wishing" },
+        { "char": "(੭｡╹▿╹｡)੭⭐", "label": "Catch a Star" },
+        { "char": "(๑´ㅂ`๑)✧", "label": "Dreamy Star" },
+        { "char": "(´｡• ω •｡`)☆", "label": "Hopeful Star" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/sparkle-kaomoji/", "title": "Sparkle Kaomoji", "desc": "Sparkly, starry, and glittery kaomoji text faces to copy." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling, excited, and joyful Japanese text faces to copy." },
+    { "href": "/library/star-symbols/", "title": "Star Symbols", "desc": "Stars in every weight and style to copy and paste." }
+  ]
+}

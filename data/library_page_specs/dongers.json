@@ -1,0 +1,72 @@
+{
+  "slug": "dongers",
+  "title": "Dongers: Copy & Paste ヽ༼ຈل͜ຈ༽ﾉ Donger Text Faces",
+  "meta_description": "Copy and paste dongers — the ヽ༼ຈل͜ຈ༽ﾉ \"raise your dongers\" text faces and every flexing, marching, and angry donger variant. Click any to copy it instantly.",
+  "breadcrumb": "Dongers",
+  "hero_h1": "Dongers",
+  "hero_tagline": "Copy and paste dongers — the ヽ༼ຈل͜ຈ༽ﾉ \"raise your dongers\" faces plus flexing, marching, and angry variants. Click any to copy it instantly.",
+  "intro": "Dongers are elaborate, arm-raising text faces — the heavy-duty cousins of the Lenny face, made famous by the Twitch \"raise your dongers\" meme ヽ༼ຈل͜ຈ༽ﾉ. A donger is plain Unicode text built from Thai, Tibetan, and other script marks, so it pastes cleanly into Discord, Twitch chat, comments, and bios. Browse raise-your-dongers, flexing, marching, and angry dongers below and click any to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "raise-your-dongers",
+      "label": "Raise Your Dongers",
+      "h2": "Raise Your Dongers",
+      "intro": "The classic arms-up donger of Twitch fame.",
+      "symbols": [
+        { "char": "ヽ༼ຈل͜ຈ༽ﾉ", "label": "Raise Dongers" },
+        { "char": "ヽ༼ ºل͟º ༽ﾉ", "label": "Loud Donger" },
+        { "char": "ヽ༼ᐛ༽ﾉ", "label": "Happy Donger" },
+        { "char": "ヽ༼ຈ_ຈ༽ﾉ", "label": "Serious Donger" },
+        { "char": "ᕦ༼ຈل͜ຈ༽ᕤ", "label": "Flex Donger" }
+      ]
+    },
+    {
+      "id": "flexing-dongers",
+      "label": "Flexing Dongers",
+      "h2": "Flexing Donger Faces",
+      "intro": "Dongers showing off their muscles.",
+      "symbols": [
+        { "char": "ᕦ(ò_óˇ)ᕤ", "label": "Flexing" },
+        { "char": "ᕦ(ˇò_ó)ᕤ", "label": "Strong Flex" },
+        { "char": "ᕙ(⇀‸↼‶)ᕗ", "label": "Big Flex" },
+        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Lenny Flex" },
+        { "char": "ᕙ(`▽´)ᕗ", "label": "Proud Flex" }
+      ]
+    },
+    {
+      "id": "marching-dongers",
+      "label": "Marching Dongers",
+      "h2": "Marching Donger Faces",
+      "intro": "Dongers on the move, arms swinging.",
+      "symbols": [
+        { "char": "ᕕ( ᐛ )ᕗ", "label": "Marching" },
+        { "char": "ᕕ(ຈل͜ຈ)ᕗ", "label": "Donger March" },
+        { "char": "ᕕ( ᐖ)ᕗ", "label": "Striding" },
+        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Lenny March" },
+        { "char": "ᕕ(╭ರ⌓ರ)ᕗ", "label": "Determined March" }
+      ]
+    },
+    {
+      "id": "angry-dongers",
+      "label": "Angry Dongers",
+      "h2": "Angry Donger Faces",
+      "intro": "Dongers ready to flip a table.",
+      "symbols": [
+        { "char": "ヽ༼ ಠ益ಠ ༽ﾉ", "label": "Furious Donger" },
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip" },
+        { "char": "ヽ(｀Д´)ﾉ", "label": "Yelling" },
+        { "char": "৻( •̀ ᗜ •́ ৻)", "label": "Fired Up" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/lenny-face/", "title": "Lenny Face", "desc": "The classic ( ͡° ͜ʖ ͡°) smirk plus every Lenny variant to copy." },
+    { "href": "/library/shrug-kaomoji/", "title": "Shrug Kaomoji", "desc": "The ¯\\_(ツ)_/¯ shrug and every indifferent variant to copy." },
+    { "href": "/library/discord-symbols/", "title": "Discord Symbols", "desc": "Symbols and text faces that paste cleanly into Discord chat." }
+  ]
+}

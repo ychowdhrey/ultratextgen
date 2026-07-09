@@ -1,0 +1,70 @@
+{
+  "slug": "shrug-kaomoji",
+  "title": "Shrug Kaomoji: Copy & Paste ¯\\_(ツ)_/¯ Text Faces",
+  "meta_description": "Copy and paste the shrug kaomoji ¯\\_(ツ)_/¯ and every variant — indifferent, confused, and Lenny shrugs. Plain Unicode text. Click any to copy it instantly.",
+  "breadcrumb": "Shrug Kaomoji",
+  "hero_h1": "Shrug Kaomoji",
+  "hero_tagline": "Copy and paste the shrug kaomoji ¯\\_(ツ)_/¯ and every variant — indifferent, confused, and Lenny-faced shrugs. Click any to copy it instantly.",
+  "intro": "The shrug kaomoji ¯\\_(ツ)_/¯ — the \"smugshrug\" — is the classic text face for \"I don't know\" and \"whatever.\" It is plain Unicode text (the katakana ツ makes the face), so it pastes cleanly into Slack, Discord, chat, comments, and bios with no image. Browse the classic shrug plus indifferent, confused, and Lenny shrug variants below and click any to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic-shrug",
+      "label": "Classic Shrug",
+      "h2": "Classic Shrug Kaomoji",
+      "intro": "The original ¯\\_(ツ)_/¯ and its closest cousins.",
+      "symbols": [
+        { "char": "¯\\_(ツ)_/¯", "label": "Classic Shrug" },
+        { "char": "¯\\_(ᵔ)_/¯", "label": "Soft Shrug" },
+        { "char": "¯\\(°_o)/¯", "label": "Puzzled Shrug" },
+        { "char": "¯\\_(⊙_ʖ⊙)_/¯", "label": "Wide-Eyed Shrug" },
+        { "char": "乁( ◔ ౪◔)ㄏ", "label": "Casual Shrug" }
+      ]
+    },
+    {
+      "id": "indifferent-shrug",
+      "label": "Indifferent",
+      "h2": "Indifferent Shrug Kaomoji",
+      "intro": "Careless, \"whatever\" shrugs with dropped arms.",
+      "symbols": [
+        { "char": "┐(´∀｀)┌", "label": "Whatever" },
+        { "char": "╮(╯▽╰)╭", "label": "Carefree Shrug" },
+        { "char": "┐(￣ヘ￣)┌", "label": "Meh Shrug" },
+        { "char": "┐( ˘_˘ )┌", "label": "Blank Shrug" },
+        { "char": "╮(╯_╰)╭", "label": "Give-Up Shrug" }
+      ]
+    },
+    {
+      "id": "confused-shrug",
+      "label": "Confused",
+      "h2": "Confused Shrug Kaomoji",
+      "intro": "Unsure, questioning shrugs.",
+      "symbols": [
+        { "char": "¯\\_(◉‿◉)_/¯", "label": "Confused Shrug" },
+        { "char": "┐(‘~`;)┌", "label": "Unsure Shrug" },
+        { "char": "ヽ(・_・;)ノ", "label": "No Idea" },
+        { "char": "╮(. ❛ ᴗ ❛.)╭", "label": "Innocent Shrug" }
+      ]
+    },
+    {
+      "id": "lenny-shrug",
+      "label": "Lenny Shrug",
+      "h2": "Lenny Shrug Kaomoji",
+      "intro": "Shrugs wearing the ( ͡° ͜ʖ ͡°) smirk.",
+      "symbols": [
+        { "char": "¯\\_( ͡° ͜ʖ ͡°)_/¯", "label": "Lenny Shrug" },
+        { "char": "乁( ͡° ͜ʖ ͡°)ㄏ", "label": "Smug Shrug" },
+        { "char": "¯\\_( ͠° ͟ʖ ͡°)_/¯", "label": "Sly Shrug" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/lenny-face/", "title": "Lenny Face", "desc": "The classic ( ͡° ͜ʖ ͡°) smirk plus every Lenny variant to copy." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling, excited, and joyful Japanese text faces to copy." },
+    { "href": "/library/discord-symbols/", "title": "Discord Symbols", "desc": "Symbols and text faces that paste cleanly into Discord chat." }
+  ]
+}

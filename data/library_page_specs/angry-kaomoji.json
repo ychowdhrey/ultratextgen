@@ -1,0 +1,73 @@
+{
+  "slug": "angry-kaomoji",
+  "title": "Angry Kaomoji: Copy & Paste Mad & Rage Text Faces",
+  "meta_description": "Browse and copy angry kaomoji — also spelled angry kamoji — Japanese text faces for rage, table flips, and grumpy moods. Click any to copy it instantly.",
+  "breadcrumb": "Angry Kaomoji",
+  "hero_h1": "Angry Kaomoji",
+  "hero_tagline": "Copy and paste angry kaomoji — Japanese text faces for rage, table flips, yelling, and grumpy moods. Click any face to copy it instantly.",
+  "intro": "Angry kaomoji (also spelled angry kamoji) are Japanese-style text faces for frustration and rage — from a grumpy pout to a full table flip. An angry kaomoji like (╬ Ò﹏Ó) or (╯°□°）╯︵ ┻━┻ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse furious, table-flip, yelling, and grumpy faces below and click any face to copy it instantly.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-09",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "furious",
+      "label": "Furious",
+      "h2": "Furious Kaomoji",
+      "intro": "Faces boiling over with rage.",
+      "symbols": [
+        { "char": "(╬ Ò﹏Ó)", "label": "Furious" },
+        { "char": "(╬ಠ益ಠ)", "label": "Seething" },
+        { "char": "٩(╬ʘ益ʘ╬)۶", "label": "Enraged" },
+        { "char": "(`皿´)", "label": "Gritted Teeth" },
+        { "char": "(≖、≖)", "label": "Cold Fury" },
+        { "char": "(ﾒ` ﾛ ´)", "label": "Menacing" }
+      ]
+    },
+    {
+      "id": "table-flip",
+      "label": "Table Flip",
+      "h2": "Table Flip Kaomoji",
+      "intro": "The classic rage-quit table flips.",
+      "symbols": [
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip" },
+        { "char": "(ノಠ益ಠ)ノ彡┻━┻", "label": "Angry Flip" },
+        { "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻", "label": "Double Flip" },
+        { "char": "ヽ(ﾟ□ﾟ)ﾉ┻━┻", "label": "Furious Flip" },
+        { "char": "(ノ｀Д´)ノ彡┻━┻", "label": "Rage Flip" }
+      ]
+    },
+    {
+      "id": "yelling",
+      "label": "Yelling",
+      "h2": "Yelling Kaomoji",
+      "intro": "Faces shouting with arms up.",
+      "symbols": [
+        { "char": "ヽ(`Д´)ﾉ", "label": "Yelling" },
+        { "char": "ヽ(≧Д≦)ノ", "label": "Shouting" },
+        { "char": "＼(*｀∀´)/", "label": "Ranting" },
+        { "char": "(＃`Д´)", "label": "Angry Shout" },
+        { "char": "o(`ω´ )o", "label": "Steamed" }
+      ]
+    },
+    {
+      "id": "grumpy",
+      "label": "Grumpy",
+      "h2": "Grumpy Kaomoji",
+      "intro": "Sulky, annoyed faces.",
+      "symbols": [
+        { "char": "(¬､¬)", "label": "Side Glare" },
+        { "char": "(￣ヘ￣)", "label": "Annoyed" },
+        { "char": "(－‸ლ)", "label": "Facepalm" },
+        { "char": "(눈_눈)", "label": "Unamused" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/crying-kaomoji/", "title": "Crying Kaomoji", "desc": "Sobbing, teary, and full-cry Japanese text faces to copy." },
+    { "href": "/library/dongers/", "title": "Dongers", "desc": "The ヽ༼ຈل͜ຈ༽ﾉ raise-your-dongers faces and every variant." },
+    { "href": "/library/angry-emoji/", "title": "Angry Emoji", "desc": "Rage faces, fire combos, and table-flip emoji sets." }
+  ]
+}
