@@ -875,7 +875,12 @@
     if (el.namePng) el.namePng.addEventListener("click", () => wordPNG(nameValue()));
 
     if (el.strip || el.panel) {
+      // CFG.initialChar locks a page to a single letter on load (spoke pages);
+      // falls back to CHARS[0] when unset so existing pages are unaffected.
       let initial = CHARS[0];
+      if (CFG.initialChar && CHARS.indexOf(String(CFG.initialChar).toUpperCase()) !== -1) {
+        initial = String(CFG.initialChar).toUpperCase();
+      }
       const h = (window.location.hash || "").replace(/^#/, "");
       const match = CHARS.filter((c) => charSlug(c) === h)[0];
       if (match) initial = match;

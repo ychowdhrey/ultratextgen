@@ -166,6 +166,11 @@ const PRINTABLE_PAGES = {
     slug: 'handwriting-worksheet-generator',
     title: 'Handwriting Worksheet Generator',
     description: 'Make a custom handwriting worksheet and dial the tracing difficulty — dotted, dashed, faded, or blank — with age presets from Pre-K to Grade 2.'
+  },
+  'alphabet-coloring-pages': {
+    slug: 'alphabet-coloring-pages',
+    title: 'Alphabet Coloring Pages',
+    description: 'Free printable alphabet coloring pages A–Z — big single-line letter outlines to color and print, plus a page for every letter.'
   }
 };
 
