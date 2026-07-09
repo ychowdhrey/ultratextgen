@@ -75,7 +75,9 @@
     // Difficulty generator (handwriting-worksheet-generator)
     genInput: $("#pt-gen-input"),
     genPreview: $("#pt-gen-preview"),
+    genPreviewMeta: $("#pt-gen-preview-meta"),
     genSlider: $("#pt-gen-slider"),
+    genLevels: $("#pt-gen-levels"),
     genLevel: $("#pt-gen-level"),
     genHint: $("#pt-gen-hint"),
     genPresets: $("#pt-gen-presets"),
@@ -89,6 +91,8 @@
     designHeading: $("#pt-design-heading"),
     designFill: $("#pt-design-fill"),
     designBorder: $("#pt-design-border"),
+    designFillGroup: $("#pt-design-fill-group"),
+    designBorderGroup: $("#pt-design-border-group"),
     designFooter: $("#pt-design-footer"),
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
@@ -757,25 +761,42 @@
     const v = (raw && raw.trim()) ? raw.trim().slice(0, 42) : GEN_DEMO;
     return applyCase(v);
   }
-  function genLevel() {
-    const v = el.genSlider ? parseInt(el.genSlider.value, 10) : 2;
-    return Math.max(1, Math.min(TRACE_LEVELS.length, v || 2));
-  }
 
-  function renderGenPreview() {
+  // Difficulty is one internal source of truth (1..7). The level buttons
+  // (authored as crawlable HTML) and the age presets both set it; an optional
+  // slider stays in sync when a page still ships one.
+  let genLevelState = 2;
+  function clampLevel(v) { return Math.max(1, Math.min(TRACE_LEVELS.length, v || 2)); }
+  function genLevel() {
+    if (el.genSlider) return clampLevel(parseInt(el.genSlider.value, 10));
+    return clampLevel(genLevelState);
+  }
+  function setGenLevel(v) {
+    genLevelState = clampLevel(v);
+    if (el.genSlider) el.genSlider.value = String(genLevelState);
+    renderGenPreview();
+  }
+  function genRowCount() {
+    return Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
+  }
+  function genModelOn() { return !el.genModel || el.genModel.checked; }
+
+  // The full worksheet as a DOM node — the SINGLE primitive behind both the
+  // live paper preview and the printed sheet, so what you see is what prints.
+  function genSheetNode() {
+    const word = genValue();
     const level = genLevel();
-    const spec = levelSpec(level);
-    if (el.genLevel) el.genLevel.textContent = "Level " + level + " · " + spec.label;
-    if (el.genHint) el.genHint.textContent = spec.hint;
-    if (el.genPresets) {
-      $$(".pt-gen-preset", el.genPresets).forEach((b) => {
-        b.classList.toggle("is-active", parseInt(b.dataset.level, 10) === level);
-        b.setAttribute("aria-pressed", parseInt(b.dataset.level, 10) === level ? "true" : "false");
-      });
-    }
-    if (!el.genPreview) return;
-    el.genPreview.innerHTML = "";
-    el.genPreview.appendChild(traceWordSVG(genValue(), level, { guides: true }));
+    const sheet = document.createElement("div");
+    sheet.className = "pt-gen-sheet";
+    // A solid model row on top so the target is always visible (unless the
+    // chosen level already IS the solid model, or the user turned it off).
+    if (genModelOn() && level !== 1) sheet.appendChild(genRow(word, 1));
+    const traceCount = genRowCount();
+    for (let i = 0; i < traceCount; i++) sheet.appendChild(genRow(word, level));
+    // Finish on blank ruled lines for independent writing (skip if already blank).
+    const blanks = level === TRACE_LEVELS.length ? 0 : 2;
+    for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length));
+    return sheet;
   }
 
   function genRow(word, level) {
@@ -785,22 +806,61 @@
     return row;
   }
 
-  function buildGeneratorSheet() {
-    const word = genValue();
+  // A small inline sample of a level's look, injected into each level button
+  // so the ladder shows — not just tells — dotted vs dashed vs faded.
+  function levelSampleSVG(level) {
+    if (levelSpec(level).blank) {
+      const svg = document.createElementNS(SVGNS, "svg");
+      svg.setAttribute("viewBox", "0 0 120 60");
+      svg.setAttribute("class", "pt-level-sample");
+      svg.setAttribute("aria-hidden", "true");
+      addGuide(svg, 120, 42, false);
+      return svg;
+    }
+    const svg = traceWordSVG("Aa", level, { guides: false });
+    svg.setAttribute("class", "pt-trace-svg pt-level-sample");
+    svg.setAttribute("aria-hidden", "true");
+    return svg;
+  }
+
+  function updateGenUI() {
     const level = genLevel();
     const spec = levelSpec(level);
-    const includeModel = !el.genModel || el.genModel.checked;
-    const traceCount = Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
-    const sheet = document.createElement("div");
-    sheet.className = "pt-gen-sheet";
-    // A solid model row on top so the target is always visible (unless the
-    // chosen level already IS the solid model).
-    if (includeModel && level !== 1) sheet.appendChild(genRow(word, 1));
-    for (let i = 0; i < traceCount; i++) sheet.appendChild(genRow(word, level));
-    // Finish on blank ruled lines for independent writing (skip if already blank).
-    const blanks = level === TRACE_LEVELS.length ? 0 : 2;
-    for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length));
-    printWrap(word + " — " + spec.label + " worksheet · ultratextgen.com", sheet);
+    if (el.genLevel) el.genLevel.textContent = "Level " + level + " · " + spec.label;
+    if (el.genHint) el.genHint.textContent = spec.hint;
+    // Level ladder buttons.
+    $$(".pt-level", el.genLevels || document).forEach((b) => {
+      const on = parseInt(b.dataset.level, 10) === level;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-checked", on ? "true" : "false");
+    });
+    // Age presets are shortcuts; light up the one that matches the level.
+    if (el.genPresets) {
+      $$(".pt-gen-preset", el.genPresets).forEach((b) => {
+        const on = parseInt(b.dataset.level, 10) === level;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    if (el.genPreviewMeta) {
+      const parts = [];
+      if (genModelOn() && level !== 1) parts.push("1 model");
+      parts.push(genRowCount() + " trace");
+      if (level !== TRACE_LEVELS.length) parts.push("2 blank");
+      el.genPreviewMeta.textContent = parts.join(" · ") + " · US Letter";
+    }
+  }
+
+  function renderGenPreview() {
+    updateGenUI();
+    if (!el.genPreview) return;
+    el.genPreview.innerHTML = "";
+    el.genPreview.appendChild(genSheetNode());
+  }
+
+  function buildGeneratorSheet() {
+    const spec = levelSpec(genLevel());
+    printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode());
   }
 
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
@@ -860,7 +920,7 @@
   }
 
   function initGenerator() {
-    if (!el.genInput && !el.genSlider) return;
+    if (!el.genInput && !el.genSlider && !el.genLevels) return;
     if (el.genInput) {
       let timer = null;
       el.genInput.addEventListener("input", () => {
@@ -868,18 +928,27 @@
         timer = setTimeout(renderGenPreview, 120);
       });
     }
-    if (el.genSlider) el.genSlider.addEventListener("input", renderGenPreview);
+    if (el.genSlider) el.genSlider.addEventListener("input", () => setGenLevel(parseInt(el.genSlider.value, 10)));
     if (el.genCase) el.genCase.addEventListener("change", renderGenPreview);
+    if (el.genRows) el.genRows.addEventListener("change", renderGenPreview);
+    if (el.genModel) el.genModel.addEventListener("change", renderGenPreview);
+    // Level ladder — buttons authored in HTML (crawlable); wire + add samples.
+    if (el.genLevels) {
+      $$(".pt-level", el.genLevels).forEach((b) => {
+        const lvl = parseInt(b.dataset.level, 10);
+        const slot = b.querySelector(".pt-level-sample-slot");
+        if (slot) slot.appendChild(levelSampleSVG(lvl));
+        b.addEventListener("click", () => setGenLevel(lvl));
+      });
+    }
     if (el.genPresets) {
       $$(".pt-gen-preset", el.genPresets).forEach((b) => {
-        b.addEventListener("click", () => {
-          if (el.genSlider) el.genSlider.value = b.dataset.level;
-          renderGenPreview();
-        });
+        b.addEventListener("click", () => setGenLevel(parseInt(b.dataset.level, 10)));
       });
     }
     if (el.genPrint) el.genPrint.addEventListener("click", buildGeneratorSheet);
     if (el.genPng) el.genPng.addEventListener("click", () => genWordPNG(genValue(), genLevel()));
+    if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
   }
 
@@ -907,6 +976,10 @@
   }, DESIGN.borders || {});
 
   let designUid = 0;
+  // Selection state for the swatch button groups (fill + border). Buttons are
+  // authored in HTML (crawlable) and drive this; falls back to <select> values
+  // for any page still shipping selects.
+  const designState = { fill: "plain", border: "none" };
 
   function svgMake(tag, attrs, parent) {
     const node = document.createElementNS(SVGNS, tag);
@@ -942,11 +1015,46 @@
     return el.designHeading ? el.designHeading.value.trim().slice(0, 48) : "";
   }
   function designFillKind() {
-    const v = el.designFill ? el.designFill.value : "plain";
+    const v = el.designFillGroup ? designState.fill : (el.designFill ? el.designFill.value : "plain");
     return FILL_KINDS.indexOf(v) === -1 ? "plain" : v;
   }
+  function designBorderKey() {
+    return el.designBorderGroup ? designState.border : (el.designBorder ? el.designBorder.value : "none");
+  }
   function designBorderSym() {
-    return BORDER_SETS[el.designBorder ? el.designBorder.value : "none"] || "";
+    return BORDER_SETS[designBorderKey()] || "";
+  }
+
+  // Mini swatch previews injected into the fill / border option buttons so the
+  // choices are visible (not hidden inside a <select>).
+  function fillSwatchSVG(kind) {
+    const svg = svgMake("svg", { viewBox: "0 0 44 44", class: "pt-swatch-svg", "aria-hidden": "true" });
+    const defs = svgMake("defs", null, svg);
+    // White base so the swatch reads the same in light and dark mode…
+    svgMake("rect", { x: 4, y: 4, width: 36, height: 36, rx: 9, fill: "#ffffff", stroke: INK, "stroke-width": 2.5 }, svg);
+    // …then the tiled fill pattern on top for the non-plain kinds.
+    if (kind !== "plain") {
+      svgMake("rect", { x: 5, y: 5, width: 34, height: 34, rx: 8, fill: addFillPattern(defs, kind, "sw-" + kind), stroke: "none" }, svg);
+    }
+    return svg;
+  }
+  function borderSwatchSVG(key) {
+    const sym = BORDER_SETS[key] || "";
+    const svg = svgMake("svg", { viewBox: "0 0 44 44", class: "pt-swatch-svg", "aria-hidden": "true" });
+    svgMake("rect", { x: 4, y: 4, width: 36, height: 36, rx: 9, fill: "#ffffff", stroke: "#d7dbe4", "stroke-width": 2 }, svg);
+    const symbols = sym.split(" ").filter(Boolean);
+    if (!symbols.length) {
+      const dash = svgMake("text", { x: 22, y: 22, "text-anchor": "middle", "dominant-baseline": "central", "font-family": FONT, "font-size": 18, fill: "#c8ccd6" }, svg);
+      dash.textContent = "—";
+      return svg;
+    }
+    [10, 22, 34].forEach((x, i) => {
+      const t = svgMake("text", { x: x, y: 12, "text-anchor": "middle", "dominant-baseline": "central", "font-family": FONT, "font-size": 11, fill: "#aab0bd" }, svg);
+      t.textContent = symbols[i % symbols.length];
+    });
+    const big = svgMake("text", { x: 22, y: 27, "text-anchor": "middle", "dominant-baseline": "central", "font-family": FONT, "font-size": 17, fill: "#8b93a7" }, svg);
+    big.textContent = symbols[0];
+    return svg;
   }
   function designFooterOn() { return !!(el.designFooter && el.designFooter.checked); }
 
@@ -1119,12 +1227,38 @@
     });
   }
 
+  // Wire one swatch button group: inject each swatch preview, set the active
+  // state, and re-render on click. `field` is the designState key it drives.
+  function wireSwatchGroup(group, field, swatchFor) {
+    if (!group) return;
+    const buttons = $$(".pt-swatch", group);
+    const preset = buttons.filter((b) => b.classList.contains("is-active"))[0] || buttons[0];
+    if (preset) designState[field] = preset.dataset.value;
+    buttons.forEach((b) => {
+      const slot = b.querySelector(".pt-swatch-art");
+      if (slot) slot.appendChild(swatchFor(b.dataset.value));
+      b.setAttribute("aria-checked", b === preset ? "true" : "false");
+      b.classList.toggle("is-active", b === preset);
+      b.addEventListener("click", () => {
+        designState[field] = b.dataset.value;
+        buttons.forEach((o) => {
+          const on = o === b;
+          o.classList.toggle("is-active", on);
+          o.setAttribute("aria-checked", on ? "true" : "false");
+        });
+        renderDesignPreview();
+      });
+    });
+  }
+
   function buildDesigner() {
     if (!el.designInput || !el.designPreview) return;
     let timer = null;
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderDesignPreview, 120); };
     el.designInput.addEventListener("input", schedule);
     if (el.designHeading) el.designHeading.addEventListener("input", schedule);
+    wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG);
+    wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG);
     [el.designFill, el.designBorder, el.designFooter].forEach((c) => { if (c) c.addEventListener("change", renderDesignPreview); });
     if (el.designPrint) el.designPrint.addEventListener("click", printDesign);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
