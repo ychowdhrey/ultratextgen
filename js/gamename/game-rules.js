@@ -36,6 +36,7 @@
     ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
     pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, noSpace: true, field: "display" },
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
+    standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
     discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
     fortnite: { label: "Fortnite", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
     valorant: { label: "Valorant (Riot ID)", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
