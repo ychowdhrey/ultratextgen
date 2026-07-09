@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "Ozdobné písmo a stylový text ke zkopírování — písmenka na Instagram, TikTok a nicky",
+    "description": "Generátor ozdobného písma, estetických písmenek a stylového textu ke zkopírování. Tučné, kurzíva, gotika, bublinkové, Zalgo a symboly — vlož do bia na Instagramu, do popisku na TikToku, do herního nicku nebo na Discord. Zdarma, bez účtu."
+  },
+  "hero": {
+    "title": "Ozdobné písmo a stylová písmenka ke zkopírování",
+    "subtitle": "Napiš text, vyber styl — tučné, kurzíva, gotika, bublinkové nebo s ozdobami. Vlož do bia na Instagramu, do herního nicku, do statusu na WhatsAppu nebo do popisku na TikToku. Bez aplikace, bez přihlašování."
+  },
+  "decorations": {
+    "label": "Přidej ozdoby k textu",
+    "tabs": {
+      "symbols": "Symboly",
+      "frames": "Rámečky",
+      "dividers": "Oddělovače",
+      "arrows": "Šipky",
+      "minimal": "Minimalistické",
+      "emojis": "Emoji",
+      "flags": "Vlajky"
+    }
+  },
+  "ui": {
+    "placeholder": "Napiš text...",
+    "advertisement": "Reklama"
+  },
+  "useCases": {
+    "title": "Na co to lidé nejčastěji používají",
+    "viewAll": "Zobrazit další využití →",
+    "items": [
+      {
+        "title": "Titulek na LinkedInu",
+        "description": "Vyčnívej ve vyhledávání na LinkedInu — tučný nebo lehce ozdobený titulek zabere dřív, než někdo stihne odscrollovat dál."
+      },
+      {
+        "title": "Komentáře pod příspěvky",
+        "description": "Stylové komentáře na Instagramu, YouTube i TikToku — okem je zachytíš snáz než stovky obyčejných pod populárním příspěvkem."
+      },
+      {
+        "title": "Text zapsaný v emoji",
+        "description": "Proměň nápis v sekvenci písmenek-emoji — kreativní bio, story, skupinové chaty nebo čistě pro srandu s kamarády."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Mrkni na návody",
+    "viewAll": "Všechny návody →",
+    "items": [
+      {
+        "title": "Rétorika písma",
+        "description": "Proč jedno písmo budí důvěru a druhé vypadá jako spam — čili jak typografie ovlivňuje to, co při čtení cítíme."
+      },
+      {
+        "title": "Osobní značka skrze typografii",
+        "description": "Jak vybrat písmenka, která ladí s tvým vibem a zůstanou divákovi v hlavě — ať jde o LinkedIn, Instagram nebo Discord."
+      },
+      {
+        "title": "Zastav scrollování — hraj si s písmem",
+        "description": "Proč se lidé zastaví u příspěvků s jiným stylem textu a jak toho využít ke zvýšení dosahů."
+      }
+    ]
+  },
+  "faq": {
+    "categories": [
+      {
+        "title": "První otázky",
+        "items": [
+          {
+            "question": "Co je UltraTextGen a co se tu vlastně děje?",
+            "answer": "Je to bezplatný generátor písmenek — napíšeš obyčejný text a my ho převedeme na stylizované znaky Unicode, které vypadají jako ozdobné písmo.\n    <br><br>\n    Hlavní věc: jsou to <strong>opravdové znaky</strong>, ne ztučnění z Wordu nebo markdown z Discordu. Proto fungují všude, kam se dá napsat obyčejný text — v biu na Instagramu, v nicku, v komentáři, v e-mailu, ve statusu na WhatsAppu.\n    <br><br>\n    <strong>Příklad</strong><br>\n    Napíšeš „ahoj\" → dostaneš 𝗮𝗵𝗼𝗷 (tučné), 𝘢𝘩𝘰𝘫 (kurzíva), 𝒶𝒽ℴ𝒿 (kaligrafie) nebo ⓐⓗⓞⓙ (bublinkové). Všechno jedním kliknutím."
+          },
+          {
+            "question": "Jak zkopírovat ozdobná písmenka za 5 vteřin?",
+            "answer": "1. Napíšeš nebo vložíš text do pole nahoře.<br>\n    2. Styly se hned objeví pod ním — tučné, kurzíva, gotika, bublinkové a ještě pár desítek dalších.<br>\n    3. Když chceš, přidej ozdoby — rámečky, hvězdičky, šipky.<br>\n    4. Klikneš na „Kopírovat\" u toho, který ti sedí, a vložíš, kam jen chceš.\n    <br><br>\n    A je to. Bez registrace, bez instalace apky. Funguje stejně na počítači i na telefonu."
+          },
+          {
+            "question": "Zdarma? Bez limitů, bez účtu?",
+            "answer": "Ano, celé je to <strong>100% zdarma</strong>. Žádný účet, žádný denní limit, žádné vodoznaky, žádný háček. Můžeš tím prohnat celou knížku a nic se nestane."
+          }
+        ]
+      },
+      {
+        "title": "Instagram, TikTok, Discord — kam to vložit",
+        "items": [
+          {
+            "question": "Jak dostat stylový text do bia na Instagramu?",
+            "answer": "Instagram nemá žádnou lištu pro formátování, ale přijímá Unicode — takže všechno, co u nás vygeneruješ, ti v biu naskočí bez problémů.\n    <br><br>\n    <strong>Jak na to</strong><br>\n    1. Napiš, co chceš mít v biu (třeba jméno, hashtag, krátký popis).<br>\n    2. Vyber styl — tučné a kurzíva fungují na většině zařízení nejlíp.<br>\n    3. Zkopíruj výsledek a vlož ho v „Upravit profil → Bio\" v aplikaci.\n    <br><br>\n    Tip: když chceš ozdobit, přidej rámeček typu ⋆｡˚ nebo hvězdičku ✦ po straně — vypadá to dobře a nekrade to pozornost zbytku bia."
+          },
+          {
+            "question": "Fungují písmenka v popiscích na TikToku?",
+            "answer": "Ano — TikTok vykresluje Unicode v popiscích, popisech profilu i komentářích. Nejlíp se osvědčí <strong>tučné</strong>, <strong>kurzíva</strong>, <strong>bublinkové</strong> a <strong>kapitálky</strong>. Styly s hromadou ozdob se u dlouhých popisků občas ořežou, tak si pro jistotu příspěvek zkontroluj v náhledu před zveřejněním."
+          },
+          {
+            "question": "Dá se udělat nick do hry nebo na Discord?",
+            "answer": "Jasně — to je asi nejčastější důvod, proč lidé na takové generátory chodí. Discord, Roblox, Steam, Minecraft, většina her přijímá Unicode v nicku.\n    <br><br>\n    <strong>Příklad</strong><br>\n    Obyčejný nick: „DarkWolf\"<br>\n    Po stylizaci: „𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣\" (gotika), „ⒹⓐⓡⓚⓌⓞⓛⓕ\" (bublinkové) nebo „๖ۣۜDarkWolf\" (s ozdobou po straně).\n    <br><br>\n    <strong>Pozor:</strong> některé hry mají filtry a exotické znaky nepřijmou. Když jeden styl neprojde, dej jiný — tučné a kurzíva projdou skoro všude."
+          },
+          {
+            "question": "Funguje to ve statusu na WhatsAppu, na Telegramu a v Messengeru?",
+            "answer": "Ano — WhatsApp, Telegram, Messenger, Signal, iMessage. Cokoli přijímá obyčejný text, přijme i písmenka Unicode. Vložíš je do statusu nebo do zprávy a vypadají jako ozdobné písmo.\n    <br><br>\n    K WhatsAppu ještě dodám: pokud ti jde jen o ztučnění, můžeš použít jejich vlastní syntax (<code>*text*</code> udělá tučné). Ale Unicode funguje všude — i tam, kde to WhatsApp nepodporuje, třeba v názvu kontaktu."
+          },
+          {
+            "question": "A v předmětu e-mailu nebo v životopise?",
+            "answer": "Tady Unicode odvede největší práci. Předmět e-mailu je obyčejný text, takže ztučnění z Outlooku odpadá. Ale „𝗙𝗮𝗸𝘁𝘂𝗿𝗮 — 𝗣𝗢𝗭𝗢𝗥\" už v příjemcově schránce působí silněji.\n    <br><br>\n    V životopise dokáže lehce ztučněné jméno v záhlaví přitáhnout pohled personalisty. Jen to nepřeháněj — celý životopis v gotice nepůsobí profesionálně."
+          }
+        ]
+      },
+      {
+        "title": "Styly, písmenka a ozdoby",
+        "items": [
+          {
+            "question": "Jaké styly písmenek mám na výběr?",
+            "answer": "Hodně. Vážně hodně. Ve zkratce:\n    <br><br>\n    <strong>Základní</strong><br>\n    Tučné (bold), kurzíva, kaligrafie (script), gotika, bublinkové (v kolečkách), kapitálky, přeškrtnuté, podtržené, dvojitě tažené (double struck).\n    <br><br>\n    <strong>Zábavné</strong><br>\n    Text vzhůru nohama, zrcadlově obrácený, Zalgo (glitch s čárkami nad písmeny), text ve čtverečcích, v závorkách, fullwidth (rozházený).\n    <br><br>\n    <strong>Doplňky</strong><br>\n    Rámečky kolem textu, hvězdičky, srdíčka, šipky, oddělovače, vlajky, emoji — dají se na styl písmenek navrstvit.\n    <br><br>\n    Čas od času přibývají nové — vyplatí se přidat si stránku do záložek."
+          },
+          {
+            "question": "Můžu spojit několik stylů najednou?",
+            "answer": "Ano — a to je největší přednost UltraTextGenu. Můžeš navrstvit třeba <strong>bublinkové + Zalgo</strong>, <strong>gotiku + vzhůru nohama</strong> nebo <strong>kapitálky + podtržení</strong> a pak to celé uzavřít do rámečku nebo hvězdičky.\n    <br><br>\n    <strong>Příklad</strong><br>\n    „ahoj\" → vybereš gotiku → přidáš rámeček s hvězdičkami → vyjde: ★彡[ 𝔞𝔥𝔬𝔧 ]彡★\n    <br><br>\n    Čím víc experimentuješ, tím zajímavější věci vzniknou. Doporučuju začít jedním stylem a přidat jednu ozdobu — ne všechno naráz."
+          },
+          {
+            "question": "Co je Zalgo a ty divné čárky nad písmeny?",
+            "answer": "Zalgo je takový „prokletý\", glitchový styl — nad a pod každé písmeno naletí spousta diakritických znamének. Vypadá to, jako by se text rozpadal nebo byl z hororu.\n    <br><br>\n    <strong>Příklad</strong><br>\n    „ahoj\" → a̷̢h̴̢ơ̷j̴̜\n    <br><br>\n    Nejčastěji to vídáš v temných biích na Instagramu, v halloweenských memech, v herních klanech, které chtějí vypadat hrozivě, nebo když si z toho někdo dělá srandu."
+          },
+          {
+            "question": "Kde brát hezké symboly, hvězdičky a srdíčka?",
+            "answer": "Všechno, co máš v sekci „Ozdoby\" pod textovým polem, můžeš kopírovat zvlášť — i bez psaní textu. Prostě jako samostatné znaky do bia, nicku nebo příspěvku.\n    <br><br>\n    — <strong>Estetické symboly</strong>: ✦ ✧ ⋆ ｡ ☆ ♡ ❀ ✿<br>\n    — <strong>Rámečky a obruby</strong>: ╭─▸ │ ╰─▸ nebo ★彡[ ]彡★<br>\n    — <strong>Šipky</strong>: → ⇨ ➤ ⟶<br>\n    — <strong>Minimalistické oddělovače</strong>: ·  ⋅  ─  •<br>\n    — <strong>Vlajky a emoji</strong>.\n    <br><br>\n    Nejčastěji se používají v estetických biích na Instagramu a Pinterestu — hodí se úplně ke všemu, od citátů po seznamy zájmů."
+          }
+        ]
+      },
+      {
+        "title": "České znaky, kompatibilita, problémy",
+        "items": [
+          {
+            "question": "A české znaky? Funguje to s á, č, ď, é, ě, í, ň, ó, ř, š, ť, ú, ů, ý, ž?",
+            "answer": "<strong>Krátce:</strong> záleží na stylu.\n    <br><br>\n    Unicode má stylizované varianty pro základní abecedu A–Z, takže <em>a</em>, <em>c</em>, <em>e</em>, <em>s</em>, <em>z</em> se v pohodě promění třeba na tučné. Ale pro <em>á</em>, <em>č</em>, <em>ě</em>, <em>ř</em>, <em>š</em>, <em>ž</em> stylizované verze existují jen v části stylů (hlavně tučné, kurzíva, kapitálky).\n    <br><br>\n    Když styl nemá verzi pro český znak s diakritikou, zůstane v původní podobě — text je pořád čitelný, česká písmenka s háčky a čárkami prostě vypadají „obyčejněji\" než zbytek. Pro nicky bez diakritiky to není žádný problém. Pro celé věty v češtině doporučuju <strong>tučné</strong>, <strong>kurzívu</strong> nebo <strong>monospace</strong> — ty si s naší abecedou poradí nejlíp."
+          },
+          {
+            "question": "Proč se někomu zobrazují čtverečky místo písmenek?",
+            "answer": "Protože systémové písmo na straně příjemce daný znak Unicode neobsahuje. Není to problém s tvým textem — jeho telefon nebo aplikace prostě ten konkrétní znak v sadě nemá.\n    <br><br>\n    Drž se <strong>tučných</strong>, <strong>kurzívy</strong> a <strong>bublinkových</strong> — ty mají nejširší podporu. Hodně exotické styly (fullwidth, čtverečky) se na starších Androidech nebo v některých e-mailových klientech můžou zobrazit jako □."
+          },
+          {
+            "question": "Instagram mi v nicku ořízl část znaků — co teď?",
+            "answer": "Instagram má filtr na pole <strong>uživatelské jméno</strong> (čili @login) — bere jen písmena, číslice, tečky a podtržítka. Sem stylizovaná písmenka nevložíš.\n    <br><br>\n    Ale do pole <strong>„Jméno\"</strong> (zobrazované jméno) a do <strong>bia</strong> ano — a tam projde většina stylů. Když se jeden neuloží, dej jiný. Tučné obvykle projde bez problémů."
+          },
+          {
+            "question": "Jsou nějaké znaky, které vůbec nejdou převést?",
+            "answer": "Standardní písmena (A–Z, a–z), číslice a základní interpunkce se převedou bez problémů. Některé vzácné symboly nebo speciální znaky nemají v Unicode stylizované protějšky — pak zůstanou v původní podobě. Nic se nerozbije, text je pořád ke zkopírování."
+          }
+        ]
+      },
+      {
+        "title": "Bezpečnost, soukromí, telefon",
+        "items": [
+          {
+            "question": "Ukládá se můj text někam?",
+            "answer": "Ne. Celý převod písmenek probíhá <strong>ve tvém prohlížeči</strong> — nic neputuje na naše servery, nic se neukládá, nic se nesleduje. Zkopírovaný text je čistý Unicode, bez skrytých znaků, bez jakýchkoli identifikátorů."
+          },
+          {
+            "question": "Je bezpečné vkládat tato písmenka kamkoli?",
+            "answer": "Ano — jsou to standardní znaky Unicode, stejné jako ty, které používá celý internet. Nic uvnitř, žádné skripty, žádné skryté formátování, žádné kódy. V klidu je vlož do životopisu, do pracovního e-mailu, do bia na LinkedInu — kam chceš."
+          },
+          {
+            "question": "Funguje to na telefonu?",
+            "answer": "Ano — stránka se plně přizpůsobí mobilu. iPhone, Android, tablet — všechno klape. Napíšeš text, klikneš, zkopíruje se do schránky, vložíš v aplikaci. Bez instalace čehokoli z obchodu."
+          }
+        ]
+      },
+      {
+        "title": "Čím se lišíme",
+        "items": [
+          {
+            "question": "Čím se lišíte od jiných generátorů písmenek?",
+            "answer": "Konkrétně:\n    <br><br>\n    — <strong>Jedna z největších sbírek</strong> stylů Ultra — tučné, kurzíva, gotika, bublinkové a ještě pár desítek dalších.<br>\n    — <strong>Kombinování stylů</strong> — většina generátorů ti dá jeden styl naráz, my dovolíme vrstvit.<br>\n    — <strong>Ozdoby jedním kliknutím</strong> — rámečky, hvězdičky, oddělovače bez lepení znak po znaku.<br>\n    — <strong>Stránky pro konkrétní platformy</strong> — Instagram, TikTok, Discord. Ukazujeme tam jen styly, které v dané apce fungují.<br>\n    — <strong>Rychle a bez vyskakovacích oken</strong> — žádné captchy, žádné „přijmout vše\" před každým kliknutím."
+          },
+          {
+            "question": "Přibývají nové styly?",
+            "answer": "Ano, pravidelně. Čas od času naskočí nové varianty, ozdoby a rámečky. Nejjednodušší je uložit si stránku do záložek nebo se sem jednou za čas vrátit."
+          },
+          {
+            "question": "Jak najít přesně ten styl, který hledám?",
+            "answer": "Tři cesty:\n    <br><br>\n    <strong>Podle stylu</strong> — kategorie nahoře: tučné, kurzíva, gotika, bublinkové, přeškrtnuté, vzhůru nohama a další.<br>\n    <strong>Podle platformy</strong> — mrkni na podstránku pro Instagram, TikTok, Discord — tam jsou jen styly, které na dané platformě fungují.<br>\n    <strong>Podle cíle</strong> — sekce využití má nástroje ušité na konkrétní potřebu: titulek na LinkedIn, komentáře, text s emoji."
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 UltraTextGen. Ozdobná písmenka, která fungují všude."
+  },
+  "notFound": {
+    "eyebrow": "CHYBA · 404 · CHYBĚJÍCÍ EXEMPLÁŘ",
+    "title": "Tahle stránka vypadla ze sbírky stylů.",
+    "subtitle": "Adresa, kterou jsi otevřel, neodpovídá ničemu v naší sbírce. Ale chyba pořád funguje jako text — mrkni na „404\" v Ultra Bold, Bublinkovém, Gotice, Zalgu a dalších.",
+    "backCta": "← Zpět do generátoru",
+    "browseCta": "Procházet styly",
+    "wallTitle": "404 přepsané každým způsobem, který známe.",
+    "wallSubtitle": "Každý styl níže vzniká ve stejném enginu, který pohání celý UltraTextGen.",
+    "playgroundTitle": "Vyzkoušej svůj chybějící text.",
+    "playgroundSubtitle": "Napiš cokoli a podívej se na to v pár stylech Ultra, než se vrátíš do plného generátoru.",
+    "playgroundPlaceholder": "Napiš text...",
+    "fullGeneratorCta": "Otevřít plný generátor",
+    "copy": "Kopírovat",
+    "copied": "Zkopírováno"
+  }
+}

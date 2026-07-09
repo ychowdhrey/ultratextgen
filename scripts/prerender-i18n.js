@@ -33,7 +33,7 @@ const cheerio = require("cheerio");
 
 const ROOT = path.resolve(__dirname, "..");
 const LOCALES_DIR = path.join(ROOT, "locales");
-const SUPPORTED = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "sv", "no", "ar"];
+const SUPPORTED = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "sv", "no", "ar", "cs", "sk", "hr", "bs", "sr", "ro"];
 
 // Right-to-left locales. Mirrors RTL_LANGS in i18n.js.
 const RTL_LANGS = ["ar", "he", "fa", "ur"];
