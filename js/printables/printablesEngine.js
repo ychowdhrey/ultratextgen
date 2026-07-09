@@ -51,6 +51,12 @@
   const FONT = CFG.font || "'Plus Jakarta Sans', 'Segoe UI Symbol', sans-serif";
   const STROKE = CFG.strokeWidth || 9;
   const NOUN = CFG.noun || "letter";                // "bubble letter", "block letter"…
+  // Extra space between letters in multi-letter (word/name) output, expressed
+  // as a fraction of the font size (em). Puffy, non-connecting outlines
+  // (bubble, block) read better with a little breathing room so each letter
+  // can be traced and colored on its own; connected glyphs (cursive) leave
+  // this at 0 so their joins stay intact.
+  const LETTER_SPACING = Number(CFG.letterSpacing) || 0;
   const PNG_PREFIX = CFG.pngPrefix || "printable";
   const GLYPH_STYLE = CFG.glyphStyle || "";         // primary registry style (glyph mode)
   const INK = "#1a1a2e";
@@ -191,7 +197,9 @@
   function wordOutlineSVG(word, opts) {
     const o = opts || {};
     const chars = [...String(word)];
-    const w = Math.max(200, chars.length * 118 + 80);
+    const fontSize = 150;
+    const spacing = fontSize * LETTER_SPACING;
+    const w = Math.max(200, chars.length * 118 + 80 + Math.max(0, chars.length - 1) * spacing);
     const svg = document.createElementNS(SVGNS, "svg");
     svg.setAttribute("viewBox", "0 0 " + w + " 200");
     svg.setAttribute("class", "pt-word-outline");
@@ -204,12 +212,18 @@
     text.setAttribute("dominant-baseline", "central");
     text.setAttribute("font-family", FONT);
     text.setAttribute("font-weight", "700");
-    text.setAttribute("font-size", "150");
+    text.setAttribute("font-size", String(fontSize));
     text.setAttribute("fill", o.solid ? INK : "#ffffff");
     text.setAttribute("stroke", o.solid ? "none" : "#8b93a7");
     text.setAttribute("stroke-width", o.solid ? "0" : "3");
     text.setAttribute("stroke-linejoin", "round");
     text.setAttribute("paint-order", "stroke");
+    // Nudge the anchor left by half a letter-gap so the trailing space SVG adds
+    // after the final glyph doesn't push the centered word off-center.
+    if (spacing) {
+      text.setAttribute("letter-spacing", String(spacing));
+      text.setAttribute("dx", String(-spacing / 2));
+    }
     text.textContent = word;
     svg.appendChild(text);
     return svg;
@@ -296,12 +310,18 @@
       ctx.textBaseline = "middle";
       ctx.lineJoin = "round";
       const out = RENDER === "glyph" ? renderGlyph(text) : text;
+      // Match the on-screen/print letter spacing (em fraction of the font size).
+      const applySpacing = (px) => {
+        if (LETTER_SPACING && "letterSpacing" in ctx) ctx.letterSpacing = px + "px";
+      };
       let fontSize = 300;
       ctx.font = "700 " + fontSize + "px " + FONT;
+      applySpacing(fontSize * LETTER_SPACING);
       const measured = ctx.measureText(out).width;
       if (measured > width - pad * 2) {
         fontSize = Math.max(54, Math.floor(fontSize * (width - pad * 2) / measured));
         ctx.font = "700 " + fontSize + "px " + FONT;
+        applySpacing(fontSize * LETTER_SPACING);
       }
       if (RENDER === "outline") {
         ctx.fillStyle = "#ffffff";
