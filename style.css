@@ -3649,10 +3649,11 @@ button.clear-decoration {
 .bubble-print-sheet .bubble-outline { width: 100%; }
 
 @media print {
-  body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot):not(#pt-print-root) { display: none !important; }
+  body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot):not(#pt-print-root):not(#kana-print-root) { display: none !important; }
   body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
   body.is-printing #cursivePrintRoot { display: block !important; padding: 1rem; }
   body.is-printing #pt-print-root { display: block !important; padding: 1rem; }
+  body.is-printing #kana-print-root { display: block !important; padding: 1rem; }
 }
 
 /* ===========================================================
@@ -5835,6 +5836,180 @@ body.dark-mode .pt-paper { background: #fff; border-color: var(--border-light); 
 @media (max-width: 780px) {
   .curved-tool { grid-template-columns: 1fr; }
 }
+
+/* ===========================================================
+   Kana charts (/hiragana-chart/, /katakana-chart/)
+   Interactive click-to-copy kana grid + print sheet + PNG.
+   All native Unicode kana; no bundled fonts. Screen uses the
+   theme tokens; the print sheet forces light for paper.
+   =========================================================== */
+
+.kana-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 8px 0 24px;
+  padding: 16px 18px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.kana-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.kana-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.kana-switch input { width: 16px; height: 16px; accent-color: var(--accent-purple); cursor: pointer; }
+
+.kana-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.kana-btn {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.08s ease, background 0.15s ease;
+}
+
+.kana-btn:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+
+.kana-btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  border-color: transparent;
+}
+
+.kana-btn-primary:hover { border-color: transparent; filter: brightness(1.05); }
+
+.kana-toast {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ts-safe);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.kana-toast.is-visible { opacity: 1; }
+
+/* Sections + grid */
+.kana-section { margin: 0 0 34px; }
+.kana-section-head { margin: 0 0 12px; }
+.kana-section-title { font-size: 1.15rem; font-weight: 700; margin: 0; }
+.kana-section-note { font-size: 0.85rem; color: var(--text-muted); margin: 3px 0 0; }
+
+.kana-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.kana-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); max-width: 560px; }
+.kana-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 340px; }
+
+.kana-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  aspect-ratio: 1 / 1;
+  padding: 6px;
+  font-family: inherit;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: border-color 0.12s ease, transform 0.08s ease, box-shadow 0.12s ease;
+}
+
+button.kana-cell:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+button.kana-cell:active { transform: translateY(0); }
+
+.kana-cell-empty {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--border-light);
+  cursor: default;
+  opacity: 0.4;
+}
+
+.kana-glyph {
+  font-size: 1.9rem;
+  line-height: 1.1;
+  font-weight: 500;
+  font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'YuGothic',
+    'Noto Sans JP', 'Noto Sans CJK JP', Meiryo, 'MS PGothic', sans-serif;
+}
+
+.kana-romaji {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.kana-romaji.is-hidden { visibility: hidden; }
+
+/* When romaji is hidden, let the kana breathe a little more */
+.kana-no-romaji .kana-glyph { font-size: 2.1rem; }
+
+@media (max-width: 640px) {
+  .kana-glyph { font-size: 1.6rem; }
+  .kana-no-romaji .kana-glyph { font-size: 1.8rem; }
+  .kana-cols-5 { gap: 6px; }
+}
+
+/* Print sheet — force a clean light layout regardless of theme */
+#kana-print-root { display: none; }
+.kana-print-wrap { color: #1a1a2e; background: #fff; }
+.kana-print-title { font-size: 1.4rem; font-weight: 700; margin: 0 0 1rem; }
+.kana-print-cred { font-size: 0.8rem; color: #94a3b8; margin-top: 0.5rem; }
+.kana-print-wrap .kana-section { margin-bottom: 1.2rem; break-inside: avoid; }
+.kana-print-wrap .kana-section-title { font-size: 1rem; }
+.kana-print-wrap .kana-cell {
+  background: #fff;
+  border: 1px solid #cbd2dc;
+  color: #1a1a2e;
+}
+.kana-print-wrap .kana-glyph { color: #1a1a2e; }
+.kana-print-wrap .kana-romaji { color: #64748b; }
+
+/* Dark mode */
+body.dark-mode .kana-btn-primary { color: #fff; }
+body.dark-mode .kana-cell-empty { opacity: 0.35; }
+
 
 /* ==========================================================
    Game name checker (js/gamename/game-rules.js)
