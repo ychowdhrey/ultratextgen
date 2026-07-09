@@ -163,6 +163,16 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
+<!-- VERIFICADOR DE NICK -->
+<section class="editorial-section" id="verificador-de-nick">
+  <span class="article-section-label">Verificador de Nick</span>
+  <h2>O Nick Vai Passar no Free Fire?</h2>
+  <p class="u-secondary-block">O campo de nick do Free Fire aceita <strong>12 caracteres</strong> — e símbolos decorativos como ꧁ ꧂ contam como <strong>2 cada</strong> (então ꧁KING꧂ ocupa 8 dos 12). Nick recusado é Cartão de Troca de Nome jogado fora. Confira antes: o contador acompanha o que você digita acima, ou cole aqui o nick pronto que você copiou.</p>
+  <div id="ffNameChecker"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
@@ -443,6 +453,34 @@
 
 <!-- Symbol explorer + wrappers -->
 <script src="/symbol-explorer.js"></script>
+<script src="/js/gamename/game-rules.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  const ns = window.UltraTextGen;
+  if (!ns || !ns.gameRules) return;
+  ns.gameRules.initChecker({
+    mount: "ffNameChecker",
+    games: ["ff"],
+    inputId: "mainInput",
+    text: {
+      inputLabel: "Confira o nick antes de gastar o Cartão de Troca de Nome",
+      placeholder: "Cole aqui o nick que você copiou…",
+      ok: "Seguro para o Free Fire",
+      warn: "Pode aparecer quadradinho ▯ em alguns celulares",
+      fail: "O Free Fire vai recusar este nick",
+      empty: "Digite ou cole um nick para conferir",
+      weightNote: "O Free Fire conta símbolos decorativos como 2 caracteres cada.",
+      issue: {
+        "over-limit": "Muito longo — tire um símbolo ou encurte o nome base.",
+        "space": "Espaço comum é recusado — use o caractere invisível (veja o truque abaixo).",
+        "unknown-chars": "Estes caracteres quase não têm suporte e podem virar quadradinhos:",
+        "too-short": "Muito curto."
+      }
+    }
+  });
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";

@@ -19,6 +19,7 @@
       --radius-lg: 16px;
       --ts-safe: #16a34a;
       --ts-risk: #d97706;
+      --ts-fail: #dc2626;
     }
 
     body {
@@ -39,6 +40,7 @@
       --shadow-soft: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
       --ts-safe: #4ade80;
       --ts-risk: #fbbf24;
+      --ts-fail: #f87171;
     }
 
     /* Header */
@@ -6007,3 +6009,71 @@ button.kana-cell:active { transform: translateY(0); }
 /* Dark mode */
 body.dark-mode .kana-btn-primary { color: #fff; }
 body.dark-mode .kana-cell-empty { opacity: 0.35; }
+
+
+/* ==========================================================
+   Game name checker (js/gamename/game-rules.js)
+   ========================================================== */
+.gr-checker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.gr-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.gr-tab {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gr-tab.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  border-color: transparent;
+}
+.gr-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); }
+.gr-input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-size: 1.15rem;
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+.gr-input:focus { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.gr-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+.gr-badge {
+  font-weight: 700;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.gr-badge-ok { color: var(--ts-safe); border-color: var(--ts-safe); }
+.gr-badge-warn { color: var(--ts-risk); border-color: var(--ts-risk); }
+.gr-badge-fail { color: var(--ts-fail); border-color: var(--ts-fail); }
+.gr-badge-empty { color: var(--text-muted); }
+.gr-count { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.gr-count.is-over { color: var(--ts-fail); font-weight: 700; }
+.gr-notes { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
+.gr-notes:empty { display: none; }
+.gr-note { font-size: 0.8rem; color: var(--text-secondary); padding-left: 1rem; position: relative; }
+.gr-note::before { content: "·"; position: absolute; left: 0.3rem; font-weight: 700; }
+.gr-note-over-limit, .gr-note-space, .gr-note-charset,
+.gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
+.gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }

@@ -1,0 +1,323 @@
+/* ==========================================================
+   game-rules.js
+   Per-game nickname rule engine for UltraTextGen.
+
+   The one thing no nickname site does: tell the player whether
+   the styled name they are about to copy will actually SURVIVE
+   the game's rename screen — before they spend a Name Change
+   Card, diamonds, UC, or a 14-day cooldown on a rejected paste.
+
+   Data:    UltraTextGen.gameRules.RULES          (per-game rule table)
+   Logic:   UltraTextGen.gameRules.analyze(str, gameId)
+   UI:      UltraTextGen.gameRules.initChecker(config)
+
+   Rules are structural (limits, weighting, charset policy) and live
+   here so twenty pages share one maintenance point. All UI labels
+   are passed in via config.text, so the same engine drives EN, ID,
+   VI, PT, TR… pages — same pattern as tag-studio.js.
+   ========================================================== */
+(function () {
+  "use strict";
+
+  const ns = (window.UltraTextGen = window.UltraTextGen || {});
+
+  /* ============================
+     Rule table
+     limit        max glyphs the name field accepts
+     min          min glyphs
+     weighted     true = decorative Unicode counts as 2 glyphs (Free Fire)
+     asciiPattern set = the field only accepts this charset (username-locked
+                  games); everything else is rejected outright
+     noSpace      true = a plain space is rejected (invisible chars instead)
+     field        which name this rule describes: 'display' or 'username'
+     ============================ */
+  const RULES = {
+    ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display" },
+    ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
+    pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, noSpace: true, field: "display" },
+    lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
+    standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
+    discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
+    fortnite: { label: "Fortnite", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
+    valorant: { label: "Valorant (Riot ID)", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
+    roblox: { label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true },
+    robloxDisplay: { label: "Roblox (display name)", limit: 20, min: 3, weighted: false, noSpace: false, field: "display" },
+    minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ }
+  };
+
+  /* ============================
+     Character classification
+     ============================ */
+
+  // Symbols the mobile-game community uses at scale and that render
+  // in Free Fire / PUBG / ML name fields on current clients.
+  const SAFE_SYMBOLS =
+    "꧁꧂꧅" + // ꧁ ꧂ ꧅ Javanese umbrellas
+    "༺༻༼༽ྺྻ༒࿐" + // ༺ ༻ ༼ ༽ ྺ ྻ ༒ ࿐-family
+    "ༀ࿓࿔" +
+    "メ彡ツッシ〆乂亞亗" + // メ 彡 ツ ッ シ 〆 乂 亞 亗-family
+    "亀龍鬼刀王星火雷神桜夜" + // common kanji accents
+    "☠⚔†‡☭⛧" + // ☠ ⚔ † ‡
+    "♛♚♕♔⛜⚜" + // ♛ ♚ ♕ ♔ ⚜
+    "★☆✦✧✩✪✯✰✴✵✶✿❀❁❤♡♥♦♣♠" + // stars, florettes, hearts, suits
+    "•◦∙⋆°˚。｡・" + // dots & interpuncts
+    "『』【】「」〈〉《》｢｣" + // 『』【】「」〈〉《》
+    "‹›«»❰❱❬❭❮❯" + // quotes/ornate brackets
+    "™®©∞×÷✖❌" + // ™ ® © ∞ ×
+    "☀☁☂☔⛱✈✻✼☘❤" + // ☀ ☁ ☂ ☔ ⛱ payung set
+    "᲼ㅤ​⠀" + // invisible fillers (ㅤ U+3164, braille blank, ZWSP)
+    "■□▲△▼▽●○◆◇▀▄︻︼" + // geometry / ▄▀ / ︻︼ sniper art
+    "一丶丿"; // stroke marks
+
+  // Unicode ranges of the "styled letter" alphabets our generator emits.
+  // These render almost everywhere modern, but are technically exotic —
+  // we call them 'styled', count them fine, and only warn on truly
+  // unknown characters.
+  const STYLED_RANGES = [
+    [0x1d400, 0x1d7ff], // Mathematical Alphanumeric Symbols (bold/italic/script/fraktur/…)
+    [0x1d100, 0x1d1ff], // musical (rare accents)
+    [0x2460, 0x24ff],   // enclosed alphanumerics
+    [0x1f100, 0x1f1ff], // enclosed alphanumeric supplement
+    [0xff00, 0xffef],   // full-width forms
+    [0x1e00, 0x1eff],   // latin extended additional (Vietnamese!)
+    [0x0100, 0x024f],   // latin extended A/B
+    [0x0400, 0x04ff],   // Cyrillic (renders everywhere; display-name fields accept it)
+    [0x0250, 0x02af],   // IPA (small caps live here)
+    [0x1d00, 0x1d7f],   // phonetic extensions (small caps)
+    [0x02b0, 0x02ff],   // spacing modifiers (superscripts)
+    [0x1d2c, 0x1d6a],   // superscript letters
+    [0x2070, 0x209f],   // super/subscripts
+    [0x0300, 0x036f],   // combining diacritics (zalgo-lite accents)
+    [0x3040, 0x30ff],   // hiragana + katakana
+    [0x0e00, 0x0e7f],   // Thai
+    [0x0600, 0x06ff]    // Arabic
+  ];
+
+  function isAsciiWord(cp) {
+    return (
+      (cp >= 0x30 && cp <= 0x39) ||
+      (cp >= 0x41 && cp <= 0x5a) ||
+      (cp >= 0x61 && cp <= 0x7a) ||
+      cp === 0x5f || cp === 0x2e || cp === 0x2d || cp === 0x27
+    );
+  }
+
+  function inStyledRanges(cp) {
+    for (let i = 0; i < STYLED_RANGES.length; i++) {
+      if (cp >= STYLED_RANGES[i][0] && cp <= STYLED_RANGES[i][1]) return true;
+    }
+    return false;
+  }
+
+  function classifyChar(ch) {
+    const cp = ch.codePointAt(0);
+    if (cp === 0x20) return "space";
+    if (isAsciiWord(cp)) return "ascii";
+    if (SAFE_SYMBOLS.indexOf(ch) !== -1) return "safe";
+    if (inStyledRanges(cp)) return "styled";
+    // Emoji presentation & pictographs: widely supported in FF/PUBG,
+    // but count double and can be blocked by stricter games.
+    if (cp >= 0x1f000 && cp <= 0x1faff) return "emoji";
+    if (cp >= 0x2190 && cp <= 0x2bff) return "safe"; // arrows/misc symbols block
+    return "unknown";
+  }
+
+  /* ============================
+     analyze(str, gameId) → report
+     ============================ */
+  function analyze(str, gameId) {
+    const rule = RULES[gameId] || RULES.ff;
+    const chars = Array.from(str || "");
+    let weightedLen = 0;
+    let plain = 0, safe = 0, styled = 0, emoji = 0, unknown = 0, spaces = 0;
+    const badChars = [];
+
+    chars.forEach(function (ch) {
+      const cls = classifyChar(ch);
+      if (cls === "ascii") { plain++; weightedLen += 1; }
+      else if (cls === "space") { spaces++; weightedLen += 1; }
+      else { // safe / styled / emoji / unknown all count double where weighted
+        if (cls === "safe") safe++;
+        else if (cls === "styled") styled++;
+        else if (cls === "emoji") emoji++;
+        else { unknown++; if (badChars.indexOf(ch) === -1) badChars.push(ch); }
+        weightedLen += rule.weighted ? 2 : 1;
+      }
+    });
+
+    const glyphs = chars.length;
+    const effective = rule.weighted ? weightedLen : glyphs;
+    const issues = [];
+
+    if (!glyphs) issues.push("empty");
+    if (glyphs && rule.min && glyphs < rule.min) issues.push("too-short");
+    if (rule.limit && effective > rule.limit) issues.push("over-limit");
+    if (rule.noSpace && spaces > 0) issues.push("space");
+    if (rule.asciiPattern && glyphs && !rule.asciiPattern.test(str)) issues.push("charset");
+    if (rule.singleUnderscore && glyphs) {
+      const u = str.split("_").length - 1;
+      if (u > 1 || /^_|_$/.test(str)) issues.push("underscore");
+    }
+    if (!rule.asciiPattern && unknown > 0) issues.push("unknown-chars");
+    if (rule.strict && (safe + styled + emoji + unknown) > 0) issues.push("strict-symbols");
+
+    // Level: fail = the game will reject it; warn = may render as boxes
+    // or be rejected on some clients; ok = clears every structural rule.
+    let level = "ok";
+    if (
+      issues.indexOf("over-limit") !== -1 ||
+      issues.indexOf("charset") !== -1 ||
+      issues.indexOf("underscore") !== -1 ||
+      issues.indexOf("space") !== -1 ||
+      issues.indexOf("too-short") !== -1
+    ) level = "fail";
+    else if (issues.indexOf("unknown-chars") !== -1 || issues.indexOf("strict-symbols") !== -1) level = "warn";
+    if (issues.indexOf("empty") !== -1) level = "empty";
+
+    return {
+      game: gameId,
+      rule: rule,
+      glyphs: glyphs,
+      effective: effective,
+      limit: rule.limit || 0,
+      counts: { plain: plain, safe: safe, styled: styled, emoji: emoji, unknown: unknown, spaces: spaces },
+      badChars: badChars,
+      issues: issues,
+      level: level
+    };
+  }
+
+  /* ============================
+     Checker UI
+     config = {
+       mount:   element id to render into
+       games:   [gameId, …] shown as tabs (first = active)
+       inputId: optional main generator input to mirror until the user
+                pastes/types into the checker box directly
+       text: {
+         inputLabel, placeholder, counterOver,
+         ok, warn, fail, empty,               // badge labels
+         issue: { 'over-limit': …, space: …, charset: …, underscore: …,
+                  'unknown-chars': …, 'strict-symbols': …, 'too-short': … },
+         weightNote                            // e.g. "symbols count as 2"
+       }
+     }
+     ============================ */
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text != null) node.textContent = text;
+    return node;
+  }
+
+  function initChecker(config) {
+    const cfg = config || {};
+    const mount = document.getElementById(cfg.mount);
+    if (!mount) return;
+
+    const text = cfg.text || {};
+    const issueText = text.issue || {};
+    const games = (cfg.games || ["ff"]).filter(function (g) { return RULES[g]; });
+    if (!games.length) return;
+
+    const state = { game: games[0], dirty: false };
+
+    mount.innerHTML = "";
+    mount.classList.add("gr-checker");
+
+    // Game tabs (only when more than one game is offered)
+    let tabsWrap = null;
+    if (games.length > 1) {
+      tabsWrap = el("div", "gr-tabs");
+      games.forEach(function (g) {
+        const tab = el("button", "gr-tab", RULES[g].label);
+        tab.type = "button";
+        tab.setAttribute("data-game", g);
+        tabsWrap.appendChild(tab);
+      });
+      tabsWrap.addEventListener("click", function (e) {
+        const tab = e.target.closest(".gr-tab");
+        if (!tab) return;
+        state.game = tab.getAttribute("data-game");
+        render();
+      });
+      mount.appendChild(tabsWrap);
+    }
+
+    if (text.inputLabel) mount.appendChild(el("div", "gr-label", text.inputLabel));
+
+    const box = document.createElement("input");
+    box.type = "text";
+    box.className = "gr-input";
+    box.placeholder = text.placeholder || "";
+    box.setAttribute("aria-label", text.inputLabel || text.placeholder || "Name to check");
+    mount.appendChild(box);
+
+    const meta = el("div", "gr-meta");
+    const badge = el("span", "gr-badge");
+    const count = el("span", "gr-count");
+    meta.appendChild(badge);
+    meta.appendChild(count);
+    mount.appendChild(meta);
+
+    const notes = el("ul", "gr-notes");
+    mount.appendChild(notes);
+
+    // Mirror the main generator input until the user touches the checker,
+    // so the counter feels live without any extra step.
+    const mainInput = cfg.inputId ? document.getElementById(cfg.inputId) : null;
+    if (mainInput) {
+      mainInput.addEventListener("input", function () {
+        if (!state.dirty) { box.value = mainInput.value; render(); }
+      });
+      box.value = mainInput.value || "";
+    }
+    box.addEventListener("input", function () { state.dirty = true; render(); });
+
+    function render() {
+      const report = analyze(box.value, state.game);
+      const rule = report.rule;
+
+      if (tabsWrap) {
+        tabsWrap.querySelectorAll(".gr-tab").forEach(function (tab) {
+          tab.classList.toggle("active", tab.getAttribute("data-game") === state.game);
+        });
+      }
+
+      // Badge
+      badge.className = "gr-badge gr-badge-" + report.level;
+      badge.textContent =
+        report.level === "ok" ? (text.ok || "Looks safe") :
+        report.level === "warn" ? (text.warn || "May show boxes") :
+        report.level === "fail" ? (text.fail || "Will be rejected") :
+        (text.empty || "");
+
+      // Counter — weighted games show the effective count.
+      if (report.limit) {
+        count.textContent = report.effective + " / " + report.limit;
+        count.classList.toggle("is-over", report.effective > report.limit);
+      } else {
+        count.textContent = String(report.glyphs);
+      }
+
+      // Notes
+      notes.innerHTML = "";
+      if (rule.weighted && text.weightNote && report.glyphs) {
+        notes.appendChild(el("li", "gr-note", text.weightNote));
+      }
+      report.issues.forEach(function (code) {
+        if (code === "empty") return;
+        let msg = issueText[code];
+        if (!msg) return;
+        if (code === "unknown-chars" && report.badChars.length) {
+          msg += " " + report.badChars.slice(0, 6).join(" ");
+        }
+        notes.appendChild(el("li", "gr-note gr-note-" + code, msg));
+      });
+    }
+
+    render();
+  }
+
+  ns.gameRules = { RULES: RULES, analyze: analyze, initChecker: initChecker, classifyChar: classifyChar };
+})();
