@@ -56,6 +56,7 @@ CONTENT_DIRS = {
     "answers": REPO / "answers",
     "usecase": REPO / "usecase",
     "guide": REPO / "guide",
+    "printables": REPO / "printables",
 }
 
 # Tokens that carry no discriminating intent and should be ignored when

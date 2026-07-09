@@ -82,7 +82,7 @@ re-proposed later.
 ### Lane (`page_type`)
 
 Every row carries a `page_type` — the content lane it belongs to (`library`,
-`category`, `answers`, `usecase`, `guide`; see
+`category`, `answers`, `usecase`, `guide`, `printables`; see
 [`README.md`](./README.md) for the lane map). It defaults to `library` and is
 the **first column after `id`**. The lane controls two things:
 

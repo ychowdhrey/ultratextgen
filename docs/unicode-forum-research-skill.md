@@ -261,7 +261,7 @@ For each kept opportunity, fill a row in `data/library_opportunities.csv`:
 | Field               | Source                                                        |
 |---------------------|---------------------------------------------------------------|
 | `id`                | `OPP-NNNN`, unique                                            |
-| `page_type`         | content lane: `library` (default) / `category` / `answers` / `usecase` / `guide` |
+| `page_type`         | content lane: `library` (default) / `category` / `answers` / `usecase` / `guide` / `printables` |
 | `primary_keyword`   | head noun (Section 3)                                         |
 | `modifier`          | qualifier (Section 3)                                         |
 | `intent`            | intent class (Section 4)                                      |
