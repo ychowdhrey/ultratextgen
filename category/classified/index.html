@@ -636,7 +636,6 @@
  <!-- Page configuration: custom decorators, font slugs, and style filtering -->
   <script>
     // Set default active decoration tab
-    window.UTG_DEFAULT_DECO_TAB = "redaction";
 
 // Style-to-font-slug mappings (classified-specific styles)
 // Every style below blacks out the user's OWN text and preserves word length.
@@ -681,96 +680,8 @@ const STYLE_MAP = {
     window.UTG_FONT_SLUGS = STYLE_MAP["all"];
 
     // Custom classified-specific decorators
-  window.UTG_DECORATIONS = {
-    "redaction": [
-      { text: "███ name ███", prefix: "███ ", suffix: " ███" },
-      { text: "████ name ████", prefix: "████ ", suffix: " ████" },
-      { text: "██████ name ██████", prefix: "██████ ", suffix: " ██████" },
-      { text: "▓▓▓ name ▓▓▓", prefix: "▓▓▓ ", suffix: " ▓▓▓" },
-      { text: "▓▓▓▓ name ▓▓▓▓", prefix: "▓▓▓▓ ", suffix: " ▓▓▓▓" },
-      { text: "▒▒▒ name ▒▒▒", prefix: "▒▒▒ ", suffix: " ▒▒▒" },
-      { text: "▒▒▒▒ name ▒▒▒▒", prefix: "▒▒▒▒ ", suffix: " ▒▒▒▒" },
-      { text: "■■■ name ■■■", prefix: "■■■ ", suffix: " ■■■" },
-      { text: "■■■■ name ■■■■", prefix: "■■■■ ", suffix: " ■■■■" },
-      { text: "⬛⬛⬛ name ⬛⬛⬛", prefix: "⬛⬛⬛ ", suffix: " ⬛⬛⬛" },
-      { text: "⬜⬜⬜ name ⬜⬜⬜", prefix: "⬜⬜⬜ ", suffix: " ⬜⬜⬜" },
-      { text: "▀▀▀ name ▀▀▀", prefix: "▀▀▀ ", suffix: " ▀▀▀" },
-      { text: "▄▄▄ name ▄▄▄", prefix: "▄▄▄ ", suffix: " ▄▄▄" }
-    ],
+    window.UTG_DECORATOR_PROFILE = "classified";
 
-    "stamps": [
-      { text: "⟦ CLASSIFIED ⟧ name", prefix: "⟦ CLASSIFIED ⟧ ", suffix: "" },
-      { text: "⟦ CONFIDENTIAL ⟧ name", prefix: "⟦ CONFIDENTIAL ⟧ ", suffix: "" },
-      { text: "⟦ RESTRICTED ⟧ name", prefix: "⟦ RESTRICTED ⟧ ", suffix: "" },
-      { text: "⟦ TOP SECRET ⟧ name", prefix: "⟦ TOP SECRET ⟧ ", suffix: "" },
-      { text: "⟦ EYES ONLY ⟧ name", prefix: "⟦ EYES ONLY ⟧ ", suffix: "" },
-      { text: "⟦ CLEARANCE REQUIRED ⟧ name", prefix: "⟦ CLEARANCE REQUIRED ⟧ ", suffix: "" },
-      { text: "【 CLASSIFIED 】name", prefix: "【 CLASSIFIED 】", suffix: "" },
-      { text: "【 CONFIDENTIAL 】name", prefix: "【 CONFIDENTIAL 】", suffix: "" },
-      { text: "【 TOP SECRET 】name", prefix: "【 TOP SECRET 】", suffix: "" }
-    ],
-
-    "dossier": [
-      { text: "⟦ name ⟧", prefix: "⟦ ", suffix: " ⟧" },
-      { text: "【 name 】", prefix: "【 ", suffix: " 】" },
-      { text: "〔 name 〕", prefix: "〔 ", suffix: " 〕" },
-      { text: "⟪ name ⟫", prefix: "⟪ ", suffix: " ⟫" },
-      { text: "⌈ name ⌉", prefix: "⌈ ", suffix: " ⌉" },
-      { text: "⌊ name ⌋", prefix: "⌊ ", suffix: " ⌋" },
-      { text: "⟦ ███ name ███ ⟧", prefix: "⟦ ███ ", suffix: " ███ ⟧" },
-      { text: "【 ■■■ name ■■■ 】", prefix: "【 ■■■ ", suffix: " ■■■ 】" },
-      { text: "〔 ▓▓▓ name ▓▓▓ 〕", prefix: "〔 ▓▓▓ ", suffix: " ▓▓▓ 〕" },
-      { text: "⟪ ⬛⬛⬛ name ⬛⬛⬛ ⟫", prefix: "⟪ ⬛⬛⬛ ", suffix: " ⬛⬛⬛ ⟫" }
-    ],
-
-    "access": [
-      { text: "🔒 name 🔒", prefix: "🔒 ", suffix: " 🔒" },
-      { text: "⛔ name ⛔", prefix: "⛔ ", suffix: " ⛔" },
-      { text: "🚫 name 🚫", prefix: "🚫 ", suffix: " 🚫" },
-      { text: "🕵️ name 🕵️", prefix: "🕵️ ", suffix: " 🕵️" },
-      { text: "🗄️ name 🗄️", prefix: "🗄️ ", suffix: " 🗄️" },
-      { text: "🧾 name 🧾", prefix: "🧾 ", suffix: " 🧾" },
-      { text: "🔎 name 🔎", prefix: "🔎 ", suffix: " 🔎" },
-      { text: "🔐 name 🔐", prefix: "🔐 ", suffix: " 🔐" },
-      { text: "⚠️ name ⚠️", prefix: "⚠️ ", suffix: " ⚠️" }
-    ],
-
-    "evidence": [
-      { text: "CASE: name", prefix: "CASE: ", suffix: "" },
-      { text: "FILE: name", prefix: "FILE: ", suffix: "" },
-      { text: "DOC: name", prefix: "DOC: ", suffix: "" },
-      { text: "ID: name", prefix: "ID: ", suffix: "" },
-      { text: "REF: name", prefix: "REF: ", suffix: "" },
-      { text: "SUBJECT: name", prefix: "SUBJECT: ", suffix: "" },
-      { text: "LOCATION: name", prefix: "LOCATION: ", suffix: "" },
-      { text: "STATUS: name", prefix: "STATUS: ", suffix: "" },
-      { text: "CLEARANCE: name", prefix: "CLEARANCE: ", suffix: "" },
-      { text: "TAG: name", prefix: "TAG: ", suffix: "" }
-    ],
-
-    "dividers": [
-      { text: "████████ name ████████", prefix: "████████ ", suffix: " ████████" },
-      { text: "■■■■■■■■ name ■■■■■■■■", prefix: "■■■■■■■■ ", suffix: " ■■■■■■■■" },
-      { text: "▓▓▓▓▓▓▓▓ name ▓▓▓▓▓▓▓▓", prefix: "▓▓▓▓▓▓▓▓ ", suffix: " ▓▓▓▓▓▓▓▓" },
-      { text: "▒▒▒▒▒▒▒▒ name ▒▒▒▒▒▒▒▒", prefix: "▒▒▒▒▒▒▒▒ ", suffix: " ▒▒▒▒▒▒▒▒" },
-      { text: "▀▀▀▀▀▀▀▀ name ▀▀▀▀▀▀▀▀", prefix: "▀▀▀▀▀▀▀▀ ", suffix: " ▀▀▀▀▀▀▀▀" },
-      { text: "▄▄▄▄▄▄▄▄ name ▄▄▄▄▄▄▄▄", prefix: "▄▄▄▄▄▄▄▄ ", suffix: " ▄▄▄▄▄▄▄▄" },
-      { text: "▀▄▀▄▀▄ name ▀▄▀▄▀▄", prefix: "▀▄▀▄▀▄ ", suffix: " ▀▄▀▄▀▄" },
-      { text: "▄▄▀▀▄▄ name ▄▄▀▀▄▄", prefix: "▄▄▀▀▄▄ ", suffix: " ▄▄▀▀▄▄" },
-      { text: "■ □ ■ □ name □ ■ □ ■", prefix: "■ □ ■ □ ", suffix: " □ ■ □ ■" }
-    ],
-
-    "minimal": [
-      { text: "[ name ]", prefix: "[ ", suffix: " ]" },
-      { text: "( name )", prefix: "( ", suffix: " )" },
-      { text: "{ name }", prefix: "{ ", suffix: " }" },
-      { text: "| name |", prefix: "| ", suffix: " |" },
-      { text: "— name —", prefix: "— ", suffix: " —" },
-      { text: "• name •", prefix: "• ", suffix: " •" },
-      { text: "⟨ name ⟩", prefix: "⟨ ", suffix: " ⟩" },
-      { text: "⟪ name ⟫", prefix: "⟪ ", suffix: " ⟫" }
-    ]
-  };
     // End of inline configuration script
 
      // Bind mood tab behavior after DOM loads
@@ -814,6 +725,7 @@ const STYLE_MAP = {
     });
     
   </script>
+  <script src="/decorators.js"></script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/script.js" defer=""></script>

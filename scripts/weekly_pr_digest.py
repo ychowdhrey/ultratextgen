@@ -34,6 +34,7 @@ LANE_RULES = [
     ("answers/", "Answer pages"),
     ("usecase/", "Usecase pages"),
     ("guide/", "Guide pages"),
+    ("curved-text/", "Visual & printable assets"),
     ("discord/", "Platform pages"),
     ("facebook/", "Platform pages"),
     ("instagram/", "Platform pages"),
@@ -61,6 +62,10 @@ LANE_RULES = [
     ("script.js", "Core JS"),
     ("header.js", "Core JS"),
     ("fonts.json", "Core JS"),
+    # Visual/printable output modules (must precede the generic "js/" rule).
+    ("js/curved/", "Visual & printable assets"),
+    ("js/bubble/", "Visual & printable assets"),
+    ("js/cursive/", "Visual & printable assets"),
     ("js/", "Core JS"),
     ("package.json", "Scripts / tooling"),
     ("sitemap.xml", "SEO / sitemap"),

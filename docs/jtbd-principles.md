@@ -9,10 +9,14 @@ mechanical companion — *does this become a page or a section?* — is
 production pipeline that enforces demand gating is
 [`unicode-library-workflow.md`](./unicode-library-workflow.md).
 
-> **The job:** *"Help me express this feeling / thing / identity in text —
-> easily, and more expressively than plain words."* People hire UltraTextGen
-> to make their writing more expressive and effortless. Everything below
-> follows from that one sentence.
+> **The job:** *"Help me express this feeling / thing / identity — easily, and
+> more expressively than plain words."* Usually that means **stylized text they
+> can copy and paste**; increasingly it also means a **downloadable or printable
+> visual asset** (a bubble-letter coloring sheet, a cursive practice page,
+> curved/arc text for a logo or sticker) for jobs plain characters can't do.
+> People hire UltraTextGen to make their expression more expressive and
+> effortless — **in text first, and as a visual asset where the job demands it.**
+> Everything below follows from that one sentence.
 
 ---
 
@@ -169,6 +173,44 @@ owner page for the job; they never spawn a thin page of their own.
 
 ---
 
+## 10. Two output modes — copy-paste text first, visual asset as the follow-up
+
+The product now ships in **two output modes**, and the order matters:
+
+1. **Copy-paste Unicode text** — the front door. Fastest path to the job, works
+   inline everywhere, zero-click. This is still the primary answer for almost
+   every query.
+2. **Downloadable / printable visual asset** — the higher-intent follow-up for
+   jobs plain characters *cannot* do: tracing, coloring, printing, classroom
+   handouts, logo / sticker / signage art. Shipped examples: the printable
+   bubble-letter sheets (per-letter + A–Z) on `/category/bubble-fonts/`, the
+   cursive practice sheets on `/category/cursive-fonts/`, and the curved/arc
+   text tool at `/curved-text/`.
+
+**Rules for the visual mode:**
+
+- **Text mode leads; visual mode follows.** On a page that serves a copy-paste
+  intent, the Unicode styles come first; the printable/visual affordance is a
+  section *below* (hub-and-spoke, §5), not the H1. Don't turn a copy-paste page
+  into an image tool.
+- **Demand gates it too (§6).** A visual asset earns its place the same way a
+  page does — real, evidenced demand for *that* job (e.g. "printable bubble
+  letters to color," "cursive practice sheet"). It is not a free add-on to
+  sprinkle on every generator.
+- **Client-side, SVG/PNG, native APIs only.** Generated in the browser with
+  SVG/Canvas, exported as SVG/PNG. **No** server-side rendering, image-processing
+  library, or bundled font binary. (Mirrors the hard line in `CLAUDE.md`.)
+- **Honesty carries over (§9).** A curve or a printable outline is a *visual
+  layout*, not a Unicode property — say so. Curved/printable output is an image
+  and cannot be pasted as characters; the page must set that expectation instead
+  of implying copy-paste.
+
+> **Rule:** Visual/printable output is a real second output mode, not a
+> reversal of "text-first." Lead with copy-paste text, add a visual asset only
+> where a distinct, evidenced job needs one, and build it client-side as SVG/PNG.
+
+---
+
 ## Decision checklist (apply before creating or expanding content)
 
 1. **What job is the user hiring this page for?** State it in their words, as
@@ -187,3 +229,7 @@ owner page for the job; they never spawn a thin page of their own.
 8. **What would make this the best `<thing>` generator?** Run the
    differentiator-discovery pass (§9): list the unsolved frustrations and the
    capabilities that answer them. Ship that list alongside the pages.
+9. **Which output mode does the job need?** (§10) Copy-paste text is the
+   default and leads. Add a downloadable/printable **visual asset** only if a
+   distinct, evidenced job needs one — and build it client-side as SVG/PNG,
+   below the text styles, with honest "this is an image, not characters" framing.
