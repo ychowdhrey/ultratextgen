@@ -408,7 +408,24 @@
         });
       })();
     </script>
-  </main>
+  
+  <section class="deco-showcase" aria-labelledby="deco-showcase-title">
+    <h2 class="deco-showcase-title" id="deco-showcase-title">Popular Bio Decorations</h2>
+    <p class="deco-showcase-intro">Decorations for your bio and username — gaming brackets, aesthetic sparkles and symbols to copy and paste across Instagram, TikTok, Discord and more.</p>
+    <ul class="deco-showcase-grid">
+      <li class="deco-chip" data-copy="꧁ you ꧂"><span class="deco-chip-ex">꧁ you ꧂</span><span class="deco-chip-label">Gaming frame</span></li>
+      <li class="deco-chip" data-copy="【 you 】"><span class="deco-chip-ex">【 you 】</span><span class="deco-chip-label">Bracket</span></li>
+      <li class="deco-chip" data-copy="『 you 』"><span class="deco-chip-ex">『 you 』</span><span class="deco-chip-label">Corner bracket</span></li>
+      <li class="deco-chip" data-copy="⟬ you ⟭"><span class="deco-chip-ex">⟬ you ⟭</span><span class="deco-chip-label">Angle bracket</span></li>
+      <li class="deco-chip" data-copy="◥ you ◤"><span class="deco-chip-ex">◥ you ◤</span><span class="deco-chip-label">Blade frame</span></li>
+      <li class="deco-chip" data-copy="⋆˙⟡ you ⟡˙⋆"><span class="deco-chip-ex">⋆˙⟡ you ⟡˙⋆</span><span class="deco-chip-label">Sparkle</span></li>
+      <li class="deco-chip" data-copy="✦ you ✦"><span class="deco-chip-ex">✦ you ✦</span><span class="deco-chip-label">Star</span></li>
+      <li class="deco-chip" data-copy="☾ you ☽"><span class="deco-chip-ex">☾ you ☽</span><span class="deco-chip-label">Crescent</span></li>
+      <li class="deco-chip" data-copy="≫ you ≪"><span class="deco-chip-ex">≫ you ≪</span><span class="deco-chip-label">Chevrons</span></li>
+      <li class="deco-chip" data-copy="♛ you ♛"><span class="deco-chip-ex">♛ you ♛</span><span class="deco-chip-label">Crown</span></li>
+    </ul>
+  </section>
+</main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -674,7 +691,6 @@
   <!-- Page configuration: custom decorators, font slugs, and style filtering -->
   <script>
     // Set default active decoration tab
-    window.UTG_DEFAULT_DECO_TAB = "gaming";
 
     // Style-to-font-slug mappings (bio-specific fonts) — read by bio-font.js mood tabs
     window.STYLE_MAP = {
@@ -694,117 +710,10 @@
     window.UTG_FONT_SLUGS = window.STYLE_MAP["all"];
 
     // Custom bio-specific decorators
-    window.UTG_DECORATIONS = {
-      "gaming": [
-        { text: "『 name 』", prefix: "『", suffix: "』" },
-        { text: "꧁ name ꧂", prefix: "꧁", suffix: "꧂" },
-        { text: "▸ name ◂", prefix: "▸ ", suffix: " ◂" },
-        { text: "⟬ name ⟭", prefix: "⟬", suffix: "⟭" },
-        { text: "✦ name ✦", prefix: "✦ ", suffix: " ✦" },
-        { text: "【 name 】", prefix: "【", suffix: "】" },
-        { text: "◥ name ◤", prefix: "◥", suffix: "◤" },
-        { text: "⫸ name ⫷", prefix: "⫸ ", suffix: " ⫷" },
-        { text: "⌁ name ⌁", prefix: "⌁ ", suffix: " ⌁" },
-        { text: "≫ name ≪", prefix: "≫ ", suffix: " ≪" },
-        { text: "╾ name ╼", prefix: "╾ ", suffix: " ╼" },
-        { text: "◈ name ◈", prefix: "◈ ", suffix: " ◈" }
-      ],
-      "aesthetic": [
-        { text: "·˚ ♡ name ♡ ˚·", prefix: "·˚ ♡ ", suffix: " ♡ ˚·" },
-        { text: "✿ name ✿", prefix: "✿ ", suffix: " ✿" },
-        { text: "⋆˙⟡ name ⟡˙⋆", prefix: "⋆˙⟡ ", suffix: " ⟡˙⋆" },
-        { text: "˚₊‧ name ‧₊˚", prefix: "˚₊‧ ", suffix: " ‧₊˚" },
-        { text: "⊹ ⋆ name ⋆ ⊹", prefix: "⊹ ⋆ ", suffix: " ⋆ ⊹" },
-        { text: "·:*¨ name ¨*:·", prefix: "·:*¨ ", suffix: " ¨*:·" },
-        { text: "。˚ ✦ name ✦ ˚。", prefix: "。˚ ✦ ", suffix: " ✦ ˚。" },
-        { text: "ꕥ name ꕥ", prefix: "ꕥ ", suffix: " ꕥ" },
-        { text: "✧˖° name °˖✧", prefix: "✧˖° ", suffix: " °˖✧" },
-        { text: "᯽ name ᯽", prefix: "᯽ ", suffix: " ᯽" }
-      ],
-      "edgy": [
-        { text: "† name †", prefix: "† ", suffix: " †" },
-        { text: "꧁☠ name ☠꧂", prefix: "꧁☠ ", suffix: " ☠꧂" },
-        { text: "✞ name ✞", prefix: "✞ ", suffix: " ✞" },
-        { text: "⛧ name ⛧", prefix: "⛧ ", suffix: " ⛧" },
-        { text: "☬ name ☬", prefix: "☬ ", suffix: " ☬" },
-        { text: "⸸ name ⸸", prefix: "⸸ ", suffix: " ⸸" },
-        { text: "༒ name ༒", prefix: "༒ ", suffix: " ༒" },
-        { text: "⚰ name ⚰", prefix: "⚰ ", suffix: " ⚰" },
-        { text: "☽ name ☾", prefix: "☽ ", suffix: " ☾" },
-        { text: "⊗ name ⊗", prefix: "⊗ ", suffix: " ⊗" }
-      ],
-      "royal": [
-        { text: "♛ name ♛", prefix: "♛ ", suffix: " ♛" },
-        { text: "♚ name ♚", prefix: "♚ ", suffix: " ♚" },
-        { text: "◆ name ◆", prefix: "◆ ", suffix: " ◆" },
-        { text: "❖ name ❖", prefix: "❖ ", suffix: " ❖" },
-        { text: "⚜ name ⚜", prefix: "⚜ ", suffix: " ⚜" },
-        { text: "۞ name ۞", prefix: "۞ ", suffix: " ۞" },
-        { text: "❂ name ❂", prefix: "❂ ", suffix: " ❂" },
-        { text: "⊰ name ⊱", prefix: "⊰ ", suffix: " ⊱" },
-        { text: "✠ name ✠", prefix: "✠ ", suffix: " ✠" }
-      ],
-      "cute": [
-        { text: "♡ name ♡", prefix: "♡ ", suffix: " ♡" },
-        { text: "☆ name ☆", prefix: "☆ ", suffix: " ☆" },
-        { text: "₊˚ name ˚₊", prefix: "₊˚ ", suffix: " ˚₊" },
-        { text: "🎀 name 🎀", prefix: "🎀 ", suffix: " 🎀" },
-        { text: "⋆ ˚꒰ name ꒱˚ ⋆", prefix: "⋆ ˚꒰ ", suffix: " ꒱˚ ⋆" },
-        { text: "♪ name ♪", prefix: "♪ ", suffix: " ♪" },
-        { text: "✩°｡⋆ name ⋆｡°✩", prefix: "✩°｡⋆ ", suffix: " ⋆｡°✩" },
-        { text: "ʚ name ɞ", prefix: "ʚ ", suffix: " ɞ" },
-        { text: "𖦹 name 𖦹", prefix: "𖦹 ", suffix: " 𖦹" }
-      ],
-      "bold": [
-        { text: "⚡ name ⚡", prefix: "⚡", suffix: "⚡" },
-        { text: "★ name ★", prefix: "★ ", suffix: " ★" },
-        { text: "》name《", prefix: "》", suffix: "《" },
-        { text: "▓▒░ name ░▒▓", prefix: "▓▒░ ", suffix: " ░▒▓" },
-        { text: "█▓ name ▓█", prefix: "█▓ ", suffix: " ▓█" },
-        { text: "◄ name ►", prefix: "◄ ", suffix: " ►" },
-        { text: "⧫ name ⧫", prefix: "⧫ ", suffix: " ⧫" }
-      ],
-      "clean": [
-        { text: "— name —", prefix: "— ", suffix: " —" },
-        { text: "• name •", prefix: "• ", suffix: " •" },
-        { text: "| name |", prefix: "| ", suffix: " |" },
-        { text: "· name ·", prefix: "· ", suffix: " ·" },
-        { text: "‹ name ›", prefix: "‹ ", suffix: " ›" },
-        { text: "⟨ name ⟩", prefix: "⟨ ", suffix: " ⟩" },
-        { text: "⌈ name ⌉", prefix: "⌈ ", suffix: " ⌉" },
-        { text: "⌊ name ⌋", prefix: "⌊ ", suffix: " ⌋" }
-      ],
-      "mystical": [
-        { text: "☾ name ☽", prefix: "☾ ", suffix: " ☽" },
-        { text: "⊹ name ⊹", prefix: "⊹ ", suffix: " ⊹" },
-        { text: "✧ name ✧", prefix: "✧ ", suffix: " ✧" },
-        { text: "☸ name ☸", prefix: "☸ ", suffix: " ☸" },
-        { text: "⊛ name ⊛", prefix: "⊛ ", suffix: " ⊛" },
-        { text: "⌘ name ⌘", prefix: "⌘ ", suffix: " ⌘" },
-        { text: "❋ name ❋", prefix: "❋ ", suffix: " ❋" },
-        { text: "⟁ name ⟁", prefix: "⟁ ", suffix: " ⟁" }
-      ],
-      "retro": [
-        { text: "►► name ◄◄", prefix: "►► ", suffix: " ◄◄" },
-        { text: "■□ name □■", prefix: "■□ ", suffix: " □■" },
-        { text: "«« name »»", prefix: "«« ", suffix: " »»" },
-        { text: "┃ name ┃", prefix: "┃ ", suffix: " ┃" },
-        { text: "░░ name ░░", prefix: "░░ ", suffix: " ░░" },
-        { text: "▶ name ◀", prefix: "▶ ", suffix: " ◀" },
-        { text: "⊞ name ⊞", prefix: "⊞ ", suffix: " ⊞" },
-        { text: "⏏ name ⏏", prefix: "⏏ ", suffix: " ⏏" }
-      ],
-      "nature": [
-        { text: "⚘ name ⚘", prefix: "⚘ ", suffix: " ⚘" },
-        { text: "❧ name ❧", prefix: "❧ ", suffix: " ❧" },
-        { text: "✾ name ✾", prefix: "✾ ", suffix: " ✾" },
-        { text: "⊱✿ name ✿⊰", prefix: "⊱✿ ", suffix: " ✿⊰" },
-        { text: "☘ name ☘", prefix: "☘ ", suffix: " ☘" },
-        { text: "❀ name ❀", prefix: "❀ ", suffix: " ❀" },
-        { text: "❦ name ❦", prefix: "❦ ", suffix: " ❦" }
-      ]
-    };
+    window.UTG_DECORATOR_PROFILE = "bio";
+
   </script>
+  <script src="/decorators.js"></script>
 
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
@@ -814,4 +723,5 @@
 
 
 <script src="/footer.js" defer></script>
+  <script src="/decorations-showcase.js"></script>
 </body></html>

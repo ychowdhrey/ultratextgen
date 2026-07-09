@@ -6,9 +6,13 @@ This file provides context for AI assistants working in this repository. Read it
 
 ## Project Overview
 
-**UltraTextGen** is a fast, zero-framework Unicode text generator. It converts plain text into stylized Unicode fonts that work across social platforms (LinkedIn, Instagram, Discord, etc.). The tool runs entirely in the browser with no backend, no build step, and no runtime dependencies.
+**UltraTextGen** is a fast, zero-framework text-expression tool. Its core is a Unicode text generator that converts plain text into stylized fonts that work across social platforms (LinkedIn, Instagram, Discord, etc.). It has since grown a **second output mode: in-browser visual & printable asset generation** — printable bubble-letter and cursive practice/coloring sheets (per-letter and full A–Z), and the curved/arc text tool (`/curved-text/`) — rendered client-side as **SVG/PNG** that users copy, download, or print.
 
-**Core philosophy**: Fast > Fancy, Clean > Clever, Useful > Impressive.
+Copy-paste Unicode is still the front door and satisfies the job fastest. Visual assets are the on-brand, higher-intent **follow-up** for jobs plain characters can't do (trace, color, print, logo/sticker art) — added where real demand exists, never as a default.
+
+**Scope note (updated):** the earlier "text-only, no image generator" boundary has been intentionally lifted. UltraTextGen now *does* generate images — but only **client-side, on demand, as SVG/PNG built with native Canvas/SVG**. This is not a reversal of the philosophy; it's the same philosophy applied to a new job.
+
+**Core philosophy**: Fast > Fancy, Clean > Clever, Useful > Impressive. **Client-side only is a hard line:** visual generation must use native SVG/Canvas in the browser — never a server-side renderer, an image-processing library, or bundled font binaries.
 
 ---
 
@@ -317,6 +321,11 @@ Do not add a test framework unless explicitly requested.
 
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
+- Do not generate images server-side or with an image-processing library. Visual/printable
+  output (bubble/cursive sheets, curved text, etc.) is **client-side SVG/Canvas → SVG/PNG only**,
+  built with native browser APIs, and must not bundle `.ttf`/`.otf` font binaries.
+- Do not make a visual/printable feature the *default* answer for a query that copy-paste
+  Unicode already serves — visual assets are the higher-intent follow-up, gated on real demand
 - Do not edit `sitemap.xml` directly
 - Do not add `var` declarations — use `const`/`let`
 - Do not use `import`/`export` ES module syntax in frontend scripts
