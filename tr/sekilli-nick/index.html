@@ -142,6 +142,16 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
+<!-- NİCK KONTROL -->
+<section class="editorial-section" id="nick-kontrol">
+  <span class="article-section-label">Nick Kontrol</span>
+  <h2>Nickin Oyunda Geçer mi?</h2>
+  <p class="u-secondary-block">Her oyunun isim kuralı farklı: PUBG Mobile <strong>14 karakter</strong> alır ve Rename Card 180 UC; Free Fire <strong>12 karakter</strong> alır ve süslü semboller <strong>2 karakter</strong> sayılır. Reddedilen bir yapıştırma, isim değiştirme kartını boşa harcar. Oyunu seç, nickini kontrol et — sayaç yukarıda yazdıklarını otomatik takip eder, istersen kopyaladığın hazır nicki de yapıştırabilirsin.</p>
+  <div id="trNickChecker"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
@@ -452,6 +462,34 @@
 
 <!-- Symbol explorer + wrappers -->
 <script src="/symbol-explorer.js"></script>
+<script src="/js/gamename/game-rules.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  const ns = window.UltraTextGen;
+  if (!ns || !ns.gameRules) return;
+  ns.gameRules.initChecker({
+    mount: "trNickChecker",
+    games: ["pubg", "ff", "ml", "discord"],
+    inputId: "mainInput",
+    text: {
+      inputLabel: "İsim değiştirme kartını harcamadan önce nickini kontrol et",
+      placeholder: "Kopyaladığın nicki buraya yapıştır…",
+      ok: "Bu oyun için güvenli",
+      warn: "Bazı telefonlarda kutu ▯ görünebilir",
+      fail: "Bu oyun nicki reddeder",
+      empty: "Kontrol etmek için nick yaz veya yapıştır",
+      weightNote: "Free Fire süslü sembolleri 2 karakter sayar.",
+      issue: {
+        "over-limit": "Çok uzun — bir sembol çıkar veya ismi kısalt.",
+        "space": "Normal boşluk reddedilir — görünmez karakter hilesini kullan.",
+        "unknown-chars": "Bu karakterler nadiren desteklenir, kutu olarak görünebilir:",
+        "too-short": "Çok kısa."
+      }
+    }
+  });
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
