@@ -3647,9 +3647,10 @@ button.clear-decoration {
 .bubble-print-sheet .bubble-outline { width: 100%; }
 
 @media print {
-  body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot) { display: none !important; }
+  body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot):not(#pt-print-root) { display: none !important; }
   body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
   body.is-printing #cursivePrintRoot { display: block !important; padding: 1rem; }
+  body.is-printing #pt-print-root { display: block !important; padding: 1rem; }
 }
 
 /* ===========================================================
@@ -5191,3 +5192,393 @@ html[dir="rtl"] .copy-kbd { direction: ltr; }
 /* Directional affordance: the "→" links in localized copy point at reading
    flow, so flip them for RTL. Authors use .rtl-flip on such inline arrows. */
 html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
+
+/* ===========================================================
+   Printables cluster (/printables/) — hub cards + shared engine
+   (js/printables/printablesEngine.js). Reuses the .bubble-* and
+   .cursive-print-* primitives; this block adds only what is new.
+   =========================================================== */
+
+/* Hub grid of printable cards */
+.printable-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.printable-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+.printable-card:hover { border-color: var(--accent-purple); transform: translateY(-2px); }
+.printable-card h3 { margin: 0; font-size: 1.1rem; color: var(--text-primary); }
+.printable-card p { margin: 0; font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); }
+.printable-card-art {
+  font-size: 1.9rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-purple);
+  opacity: 0.85;
+}
+.printable-card-cta {
+  margin-top: 0.15rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent-purple);
+}
+
+/* Selected-character figure in glyph mode (cursive) */
+.pt-glyph-figure {
+  margin: 0;
+  text-align: center;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+.pt-glyph-print {
+  margin: 0;
+  text-align: center;
+  font-size: 6rem;
+  line-height: 1.2;
+  color: #1a1a2e;
+}
+.pt-glyph-cell {
+  display: block;
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--text-primary);
+}
+
+/* Whole-word outline (name worksheet, outline mode) */
+.pt-word-outline { display: block; width: 100%; height: auto; }
+
+/* Name / word tool */
+.pt-name-tool { margin: 0.5rem 0 0; }
+.pt-name-input { min-height: auto; height: 52px; resize: none; }
+.pt-name-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+}
+.pt-name-rows-label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; }
+.pt-name-rows-select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.pt-name-preview {
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.pt-name-preview .pt-word-outline { max-height: 120px; }
+.pt-name-glyph { color: #1a1a2e; }
+.pt-name-actions { margin-top: 0.25rem; }
+.pt-alpha-print-row { margin-top: 0.9rem; }
+
+/* Practice-sheet model cell that holds an outline SVG (outline mode) */
+.pt-model-svg .bubble-outline { width: 84px; height: auto; }
+
+/* ---- Print surfaces for the shared engine ---- */
+#pt-print-root { display: none; }
+.bubble-print-single { text-align: center; }
+.bubble-print-single .bubble-outline { width: 60%; max-width: 420px; margin: 0 auto; }
+
+/* Name tracing worksheet (print) */
+.pt-name-sheet { display: flex; flex-direction: column; gap: 0.4rem; }
+.pt-name-row {
+  display: flex;
+  align-items: flex-end;
+  min-height: 92px;
+  border-bottom: 1px solid #94a3b8;
+}
+.pt-name-row.pt-name-blank { min-height: 92px; }
+.pt-name-row .pt-word-outline { width: 100%; max-height: 120px; }
+.pt-name-word {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: #334155;
+  padding-bottom: 0.15rem;
+}
+.pt-name-word.is-trace { color: #cbd5e1; }
+
+/* Dark-mode: keep print-preview cards light so white-fill outlines stay visible */
+body.dark-mode .pt-name-preview { background: #fff; border-color: var(--border-light); }
+body.dark-mode .printable-card-art { color: var(--accent-blue); }
+
+/* ============================================================
+   Alphabet coloring pages cluster
+   (/printables/alphabet-coloring-pages/ hub + letter-* spokes)
+   ============================================================ */
+
+/* Hub: real, crawlable A–Z link grid to the 26 spoke pages */
+.pt-az-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.pt-az-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.08s ease;
+}
+.pt-az-link:hover { border-color: var(--accent-purple); transform: translateY(-2px); }
+.pt-az-link-letter {
+  font-family: "Baloo 2", "Fredoka", "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--accent-purple);
+  min-width: 1.4rem;
+}
+.pt-az-link-word { font-size: 0.9rem; color: var(--text-secondary); }
+
+/* Spoke: hollow upper/lower letter figures in the hero (line-art look) */
+.pt-letter-figures {
+  margin: 1.1rem 0 0;
+  font-family: "Baloo 2", "Fredoka", "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--accent-purple);
+}
+
+/* Spoke: compact linked A–Z strip for lateral navigation */
+.pt-az-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0;
+}
+.pt-az-strip a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  padding: 0 0.35rem;
+  border: 1px solid var(--border-light);
+  border-radius: 9px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: "Baloo 2", "Fredoka", "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.08s ease;
+}
+.pt-az-strip a:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.pt-az-strip a.is-current {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+/* Spoke: previous / next letter navigation */
+.pt-letter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.pt-letter-nav a {
+  font-weight: 600;
+  color: var(--accent-purple);
+  text-decoration: none;
+}
+.pt-letter-nav a:hover { text-decoration: underline; }
+.pt-letter-nav .pt-nav-spacer { flex: 1 1 auto; }
+
+/* Dark-mode tweaks for the coloring cluster */
+body.dark-mode .pt-letter-figures { -webkit-text-stroke-color: var(--accent-blue); }
+body.dark-mode .pt-az-link-letter { color: var(--accent-blue); }
+
+/* ============================================================
+   Contextual decoration showcase — static, crawlable SEO block
+   Injected as the final section of <main> on decorator pages.
+   ============================================================ */
+.deco-showcase {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+.deco-showcase-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+.deco-showcase-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+.deco-showcase-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.625rem;
+}
+.deco-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.deco-chip:hover,
+.deco-chip:focus-visible {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+  outline: none;
+}
+.deco-chip-ex {
+  font-size: 1rem;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+.deco-chip-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.deco-chip.copied {
+  border-color: var(--ts-safe);
+}
+.deco-chip.copied .deco-chip-label {
+  color: var(--ts-safe);
+}
+.deco-chip.copied .deco-chip-label::after {
+  content: " · Copied!";
+}
+/* ==========================================================================
+   CURVED / ARC TEXT TOOL  (/curved-text/)
+   Pairs with the vertical-text module. Controls on the left, live SVG on the
+   right; collapses to a single column on mobile.
+   ========================================================================== */
+.curved-tool {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 8px;
+}
+.curved-controls {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.curved-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.curved-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.curved-field input[type="range"] { width: 100%; accent-color: var(--accent-purple); }
+.curved-field input[type="color"] {
+  width: 44px; height: 32px; padding: 0;
+  border: 1px solid var(--border-light); border-radius: 8px;
+  background: var(--bg-white); cursor: pointer;
+}
+.curved-field select,
+.curved-field textarea {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+}
+.curved-field textarea { resize: vertical; min-height: 64px; }
+.curved-row { display: flex; gap: 12px; }
+.curved-row .curved-field { flex: 1; }
+.curved-check {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.875rem; color: var(--text-primary); font-weight: 500;
+}
+.curved-check input { accent-color: var(--accent-purple); width: 16px; height: 16px; }
+
+.curved-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.curved-preview {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  /* Fixed light canvas so dark default text stays visible in both themes. */
+  background:
+    linear-gradient(45deg, #eef1f6 25%, transparent 25%, transparent 75%, #eef1f6 75%) 0 0 / 24px 24px,
+    linear-gradient(45deg, #eef1f6 25%, #ffffff 25%, #ffffff 75%, #eef1f6 75%) 12px 12px / 24px 24px;
+  overflow: auto;
+}
+.curved-preview .utg-curved-svg { max-width: 100%; height: auto; }
+.curved-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.curved-toast {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #10b981;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.curved-toast.is-visible { opacity: 1; }
+
+@media (max-width: 780px) {
+  .curved-tool { grid-template-columns: 1fr; }
+}
