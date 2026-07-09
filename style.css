@@ -5423,6 +5423,105 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 body.dark-mode .pt-name-preview { background: #fff; border-color: var(--border-light); }
 body.dark-mode .pt-gen-preview { background: #fff; border-color: var(--border-light); }
 body.dark-mode .printable-card-art { color: var(--accent-blue); }
+
+/* ============================================================
+   Alphabet coloring pages cluster
+   (/printables/alphabet-coloring-pages/ hub + letter-* spokes)
+   ============================================================ */
+
+/* Hub: real, crawlable A–Z link grid to the 26 spoke pages */
+.pt-az-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.pt-az-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.08s ease;
+}
+.pt-az-link:hover { border-color: var(--accent-purple); transform: translateY(-2px); }
+.pt-az-link-letter {
+  font-family: "Baloo 2", "Fredoka", "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--accent-purple);
+  min-width: 1.4rem;
+}
+.pt-az-link-word { font-size: 0.9rem; color: var(--text-secondary); }
+
+/* Spoke: hollow upper/lower letter figures in the hero (line-art look) */
+.pt-letter-figures {
+  margin: 1.1rem 0 0;
+  font-family: "Baloo 2", "Fredoka", "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--accent-purple);
+}
+
+/* Spoke: compact linked A–Z strip for lateral navigation */
+.pt-az-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0;
+}
+.pt-az-strip a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  padding: 0 0.35rem;
+  border: 1px solid var(--border-light);
+  border-radius: 9px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: "Baloo 2", "Fredoka", "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.08s ease;
+}
+.pt-az-strip a:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.pt-az-strip a.is-current {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+/* Spoke: previous / next letter navigation */
+.pt-letter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.pt-letter-nav a {
+  font-weight: 600;
+  color: var(--accent-purple);
+  text-decoration: none;
+}
+.pt-letter-nav a:hover { text-decoration: underline; }
+.pt-letter-nav .pt-nav-spacer { flex: 1 1 auto; }
+
+/* Dark-mode tweaks for the coloring cluster */
+body.dark-mode .pt-letter-figures { -webkit-text-stroke-color: var(--accent-blue); }
+body.dark-mode .pt-az-link-letter { color: var(--accent-blue); }
+
 /* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
    Injected as the final section of <main> on decorator pages.
