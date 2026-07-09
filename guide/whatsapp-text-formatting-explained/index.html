@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WhatsApp Text Formatting Explained: Bold, Italic &amp; Unicode Fonts | UltraTextGen</title>
+<meta name="description" content="How WhatsApp's *bold*, _italic_, ~strike~ and monospace markdown actually works, exactly where it renders, and how to use Unicode fonts for the name and bio that markdown can't reach.">
+
+<link rel="canonical" href="https://ultratextgen.com/guide/whatsapp-text-formatting-explained/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/fancy-text-generator-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WhatsApp Text Formatting Explained: Bold, Italic &amp; Unicode Fonts | UltraTextGen">
+<meta name="twitter:description" content="How WhatsApp's *bold*, _italic_, ~strike~ and monospace markdown actually works, exactly where it renders, and how to use Unicode fonts for the name and bio that markdown can't reach.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/fancy-text-generator-preview.png">
+<meta property="og:title" content="WhatsApp Text Formatting Explained: Bold, Italic &amp; Unicode Fonts">
+<meta property="og:description" content="How WhatsApp's *bold*, _italic_, ~strike~ and monospace markdown actually works, exactly where it renders, and how to use Unicode fonts for the name and bio that markdown can't reach.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/guide/whatsapp-text-formatting-explained/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WhatsApp Text Formatting Explained: Markdown for Chats, Unicode Fonts for Everything Else",
+  "description": "How WhatsApp's *bold*, _italic_, ~strike~ and monospace markdown actually works, exactly where it renders, and how to use Unicode fonts for the name and bio that markdown can't reach.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/guide/assets/og/whatsapp-text-formatting-explained.png",
+  "mainEntityOfPage": "https://ultratextgen.com/guide/whatsapp-text-formatting-explained/",
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://ultratextgen.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "WhatsApp Text Formatting", "item": "https://ultratextgen.com/guide/whatsapp-text-formatting-explained/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I make bold text in WhatsApp?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Wrap the words in single asterisks: type *hello* and WhatsApp shows hello in bold when the message is sent. It works in chats, group messages, captions and status text. It does not work in your profile name or your About/bio line — those aren't messages, so WhatsApp never runs the markdown on them." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are all the WhatsApp formatting shortcuts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There are five: *bold* with asterisks, _italic_ with underscores, ~strikethrough~ with tildes, and monospace with three backticks on each side (```like this```). WhatsApp also added bulleted and numbered lists, block quotes with a > and inline `code` with single backticks in recent versions. All of them render only in messages." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why won't formatting work in my WhatsApp name or bio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the name and the About/bio field aren't messages — WhatsApp doesn't apply its markdown there, so *asterisks* just show as literal characters. To style a name or bio you paste in Unicode font characters that already look bold or cursive, so no rendering is needed. Generate the style, copy it, and paste it into the field." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change the font in WhatsApp?",
+      "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp has no built-in font switcher beyond the chat-size setting and the FixedSys monospace trick. To get a genuinely different look — bold, cursive, small caps — you paste Unicode characters that carry the style themselves. They work in your name, About line, group names and messages, but can render as boxes on some older devices and are harder for screen readers." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/guide/">Guides</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">WhatsApp Text Formatting</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">WhatsApp Text Formatting, Explained</h1>
+    <p class="hero-tagline">WhatsApp gives you real formatting — but only in one place. Markdown like *bold* and _italic_ works inside messages and nowhere else. Your name and bio need a completely different trick. Once you know which field runs markdown and which doesn't, the confusion disappears.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Platform Mastery</span>
+      <span class="guide-pill">⏱ 7 min read</span>
+      <span class="guide-pill">Messages vs Name Fields</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>WhatsApp has native markdown: <code>*bold*</code>, <code>_italic_</code>, <code>~strike~</code> and <code>```monospace```</code> — but it renders <strong>only in messages</strong>.</li>
+    <li>The same markdown does <strong>nothing</strong> in your profile name, your About/bio line, or a WhatsApp Web display — those aren't messages.</li>
+    <li>To style a name or bio you paste <strong>Unicode "fonts"</strong> — characters that already look bold or cursive, so no rendering is needed.</li>
+    <li>Unicode names work everywhere but can show as boxes on some older devices and are harder for screen readers — pick a safe style.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the reframe -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Reframe</span>
+    <h2>Two Different Jobs, Two Different Tools</h2>
+    <div class="editorial-block">
+      <p>Nearly every "why won't my WhatsApp text format?" question comes from mixing up two things that have nothing to do with each other. WhatsApp <em>teaches</em> you markdown in chat, so it feels like the same asterisks should style your name too. They don't — the name is not a message, and markdown only ever runs on messages.</p>
+      <p>Here is the whole picture in one frame. Match the tool to the field and every surprise answers itself.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Tool</th><th>What it is</th><th>Where it works</th><th>The catch</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Symbols WhatsApp renders (<code>*bold*</code>, <code>_italic_</code>, <code>~strike~</code>, <code>```mono```</code>)</td><td>Messages, captions, status text</td><td>Dies in the profile name and About/bio; symbols show literally there</td></tr>
+          <tr><td><strong>Unicode "fonts"</strong></td><td>Substitute characters that already look styled (𝗯𝗼𝗹𝗱, 𝓬𝓾𝓻𝓼𝓲𝓿𝓮)</td><td>Profile name, About/bio, group names, messages</td><td>Can render as boxes on old devices; harder for screen readers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">Tool 1</span>
+    <h2>Native Markdown — for Messages</h2>
+    <div class="editorial-block">
+      <p>Markdown is the formatting WhatsApp applies when it <em>sends</em> your message. You type a symbol on each side of your words and WhatsApp swaps the symbols for real styling once the message goes through. There are five core shortcuts:</p>
+      <ul>
+        <li><code>*bold*</code> → <strong>bold</strong> (single asterisks)</li>
+        <li><code>_italic_</code> → <em>italic</em> (underscores)</li>
+        <li><code>~strikethrough~</code> → strikethrough (tildes)</li>
+        <li><code>```monospace```</code> → fixed-width text (three backticks each side)</li>
+        <li><code>`inline code`</code> → short fixed-width snippet (single backticks)</li>
+      </ul>
+      <p>You can combine them — <code>*_bold italic_*</code> nests cleanly. Newer versions also add <strong>bulleted lists</strong> (start a line with <code>-</code> or <code>*</code> and a space), <strong>numbered lists</strong> (<code>1.</code> and a space) and <strong>block quotes</strong> (start a line with <code>&gt;</code>). All of it renders the same way on Android, iPhone and WhatsApp Web because it's the app doing the drawing, not the font.</p>
+      <p>This is the <em>right</em> way to format a message — it stays real, selectable text, so it's searchable and works with screen readers. The catch is the two mistakes that make it "not work":</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Won't bold</span>
+          <p>A stray space breaks the pair — <code>*text *</code> or a lone unmatched <code>*</code> won't format. Wrap tightly: <code>*text*</code>.</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Won't bold</span>
+          <p>Older app versions may not support lists or quotes. If a shortcut shows as literal symbols, update WhatsApp first.</p>
+        </div>
+      </div>
+      <p><strong>And the big one:</strong> markdown does nothing in your profile name or your About/bio line. Those aren't messages, so WhatsApp never runs markdown on them — the asterisks just sit there as plain characters.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">Tool 2</span>
+    <h2>Unicode "Fonts" — for the Name and Bio</h2>
+    <div class="editorial-block">
+      <p>To style a <em>name</em> or an <em>About</em> line, you can't ask WhatsApp to render anything — so you use characters that already look styled. A generator turns "Sara" into 𝗦𝗮𝗿𝗮 or 𝓢𝓪𝓻𝓪 using special <a href="/library/">Unicode characters</a>, and you paste the finished result straight into the field. No rendering required, so it survives exactly where markdown can't.</p>
+      <p>This works in your profile name, your About/bio, group subjects and descriptions, broadcast names, and inside messages too. It's the only way to carry a distinct look into the parts of WhatsApp that markdown never touches:</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>Your phone number stays plain.</strong> WhatsApp identifies you by number, not by a handle, so there's no lowercase @username to worry about — but the styling still lives only in the display name and bio, not in how you're routed. Style the <em>display name</em> and the <em>About</em> line; the number underneath is always unchanged.</div>
+      </div>
+      <p>Two honest caveats, both covered in depth elsewhere: Unicode names can <a href="/guide/why-fonts-show-as-boxes/">show as boxes</a> on some devices (especially older Android), and they're <a href="/guide/fancy-fonts-accessibility-guide/">harder for screen readers</a>. Pick a safe style — bold, italic or small caps — and keep it tasteful rather than a wall of zalgo glitch text that recipients can't read.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: monospace -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Monospace Question</span>
+    <h2>What About the "Different Font" Trick?</h2>
+    <div class="editorial-block">
+      <p>People often reach for the <strong>monospace</strong> shortcut when they want their whole message to look different. Wrapping text in three backticks — <code>```like this```</code> — gives you a fixed-width typewriter style, and it's the closest thing to a genuine font change WhatsApp offers in chat. Be clear-eyed about the limits:</p>
+      <ul>
+        <li>It's <strong>one style only</strong> — there's no cursive, no bubble, no outline built in.</li>
+        <li>It's <strong>message-only</strong> — like the rest of markdown, it can't reach the name or bio.</li>
+        <li>It reads as <strong>"code," not "fancy"</strong> — great for a phone number, IBAN or serial, less so for a warm greeting.</li>
+      </ul>
+      <p>For anything beyond monospace — a bold name, a cursive bio, a small-caps status — you're back to Unicode characters. There is no hidden font menu; the look you paste in <em>is</em> the font.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: decision -->
+  <section class="editorial-section">
+    <span class="article-section-label">Decide Fast</span>
+    <h2>Which Tool Do You Need?</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>I want to…</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Bold or italicize a word in a chat</td><td>Markdown <code>*…*</code> / <code>_…_</code></td></tr>
+          <tr><td>Cross out a price or typo in a message</td><td>Markdown <code>~…~</code></td></tr>
+          <tr><td>Send a code, IBAN or number cleanly</td><td>Monospace <code>```…```</code></td></tr>
+          <tr><td>Style my profile name</td><td>Unicode font (paste it in)</td></tr>
+          <tr><td>Style my About/bio line</td><td>Unicode font (paste it in)</td></tr>
+          <tr><td>Decorate a group name</td><td>Unicode font + symbols</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">WhatsApp didn't ignore your bold.<br>You used the chat trick on a name field.<br><br>Match the tool to the field, and it just works.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Make a WhatsApp-ready name</h3>
+    <p>Generate a device-safe Unicode style, copy it, and paste it into your profile name or About line — no app setting to hunt for.</p>
+    <a href="/whatsapp/" class="cta-btn">Open the WhatsApp Font Tool →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/whatsapp/">WhatsApp</a>
+    <a class="platform-pill" href="/instagram/">Instagram</a>
+    <a class="platform-pill" href="/telegram/">Telegram</a>
+    <a class="platform-pill" href="/discord/">Discord</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">How do I make bold text in WhatsApp?</button>
+    <div class="faq-answer">
+      <p>Wrap the words in single asterisks: type <code>*hello*</code> and WhatsApp shows <strong>hello</strong> in bold when the message is sent. It works in chats, group messages, captions and status text. It does not work in your profile name or your About/bio line — those aren't messages, so WhatsApp never runs the markdown on them.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">What are all the WhatsApp formatting shortcuts?</button>
+    <div class="faq-answer">
+      <p>There are five: <code>*bold*</code> with asterisks, <code>_italic_</code> with underscores, <code>~strikethrough~</code> with tildes, and monospace with three backticks on each side (<code>```like this```</code>). WhatsApp also added bulleted and numbered lists, block quotes with a <code>&gt;</code> and inline <code>`code`</code> with single backticks in recent versions. All of them render only in messages.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why won't formatting work in my WhatsApp name or bio?</button>
+    <div class="faq-answer">
+      <p>Because the name and the About/bio field aren't messages — WhatsApp doesn't apply its markdown there, so <code>*asterisks*</code> just show as literal characters. To style a name or bio you paste in Unicode font characters that already look bold or cursive, so no rendering is needed. Generate the style, copy it, and paste it into the field.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Can I change the font in WhatsApp?</button>
+    <div class="faq-answer">
+      <p>WhatsApp has no built-in font switcher beyond the chat-size setting and the monospace trick. To get a genuinely different look — bold, cursive, small caps — you paste Unicode characters that carry the style themselves. They work in your name, About line, group names and messages, but can render as boxes on some older devices and are harder for screen readers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/guide/why-fonts-show-as-boxes/">
+      <span class="related-tag">⬜</span>
+      <span class="related-title">Why Fonts Show as Boxes</span>
+      <span class="related-desc">Which name styles are safe on every device.</span>
+    </a>
+    <a class="related-card" href="/guide/fancy-fonts-accessibility-guide/">
+      <span class="related-tag">♿</span>
+      <span class="related-title">Fonts &amp; Accessibility</span>
+      <span class="related-desc">Keep styled names readable for everyone.</span>
+    </a>
+    <a class="related-card" href="/guide/personal-branding-through-typography/">
+      <span class="related-tag">🪪</span>
+      <span class="related-title">Personal Branding Through Typography</span>
+      <span class="related-desc">Make your name a signature people recognize.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
