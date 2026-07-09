@@ -5523,6 +5523,79 @@ body.dark-mode .pt-letter-figures { -webkit-text-stroke-color: var(--accent-blue
 body.dark-mode .pt-az-link-letter { color: var(--accent-blue); }
 
 /* ============================================================
+   Coloring-sheet designer (type a word -> decorated colorable
+   sheet). Powers /printables/coloring-page-maker/ via the shared
+   engine's #pt-design-* mounts.
+   ============================================================ */
+.pt-design-tool { margin: 0.5rem 0 0; }
+.pt-design-input { min-height: auto; height: 54px; resize: none; }
+.pt-design-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 0;
+}
+.pt-design-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.pt-design-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.pt-design-field input[type="text"],
+.pt-design-field select {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.pt-design-field input[type="text"] { cursor: text; }
+.pt-design-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: end;
+  padding-bottom: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.pt-design-check input { width: 1.05rem; height: 1.05rem; cursor: pointer; }
+.pt-design-preview {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-subtle, #f4f5f8);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+.pt-design-sheet-svg {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+.pt-design-actions { margin-top: 0.25rem; }
+
+/* Keep the designer preview light in dark mode so the white sheet reads */
+body.dark-mode .pt-design-preview { background: #1c2030; }
+
+/* Print: the designed sheet fills the page on its own */
+.pt-design-print-holder { text-align: center; }
+.pt-design-print-holder .pt-design-sheet-svg {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: none;
+}
+
+/* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
    Injected as the final section of <main> on decorator pages.
    ============================================================ */
