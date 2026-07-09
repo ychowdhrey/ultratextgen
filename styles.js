@@ -161,6 +161,11 @@ const PRINTABLE_PAGES = {
     slug: 'name-tracing',
     title: 'Name Tracing Worksheets',
     description: 'Type any name to build a free printable tracing worksheet with model and trace rows.'
+  },
+  'handwriting-worksheet-generator': {
+    slug: 'handwriting-worksheet-generator',
+    title: 'Handwriting Worksheet Generator',
+    description: 'Make a custom handwriting worksheet and dial the tracing difficulty — dotted, dashed, faded, or blank — with age presets from Pre-K to Grade 2.'
   }
 };
 

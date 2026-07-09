@@ -66,6 +66,18 @@
     namePng: $("#pt-name-png"),
     namePreview: $("#pt-name-preview"),
     nameRows: $("#pt-name-rows"),
+    // Difficulty generator (handwriting-worksheet-generator)
+    genInput: $("#pt-gen-input"),
+    genPreview: $("#pt-gen-preview"),
+    genSlider: $("#pt-gen-slider"),
+    genLevel: $("#pt-gen-level"),
+    genHint: $("#pt-gen-hint"),
+    genPresets: $("#pt-gen-presets"),
+    genRows: $("#pt-gen-rows"),
+    genCase: $("#pt-gen-case"),
+    genModel: $("#pt-gen-model"),
+    genPrint: $("#pt-gen-print"),
+    genPng: $("#pt-gen-png"),
     printRoot: $("#pt-print-root")
   };
 
@@ -604,12 +616,250 @@
   }
 
   /* ---------------------------------------------------------------
+     Section: adjustable-difficulty tracing generator
+     ---------------------------------------------------------------
+     One difficulty slider is the source of truth (7 steps). Age presets
+     are shortcuts that snap the slider to a sensible starting level; the
+     user can nudge from there. Each level is a coherent combination of the
+     three knobs a teacher thinks in — thickness (stroke width), nearness
+     (dash gap) and intensity (ink / opacity) — driven from one control.
+     All native SVG (stroke-dasharray / stroke-width / opacity); no fonts
+     bundled, no server render.
+     --------------------------------------------------------------- */
+
+  const GHOST = "#c3c9d6";
+  const FAINT = "#d7dbe4";
+  const GUIDE = "#9aa2b1";
+  const GUIDE_MID = "#c7ccd8";
+
+  // Level 1 (easiest) → 7 (hardest). Round caps + a near-zero dash render
+  // the stroke as a row of dots; longer dashes read as a broken guideline.
+  const TRACE_LEVELS = [
+    { key: "solid",    label: "Solid model",  hint: "Full dark letters — trace right on top",
+      fill: INK,   stroke: "none", sw: 0, dash: "",        cap: "round", opacity: 1 },
+    { key: "bold-dot", label: "Bold dotted",  hint: "Thick, closely-spaced dots to join",
+      fill: "none", stroke: INK,   sw: 8, dash: "0.1 11",  cap: "round", opacity: 1 },
+    { key: "fine-dot", label: "Fine dotted",  hint: "Thinner dots with a little more space",
+      fill: "none", stroke: INK,   sw: 5, dash: "0.1 16",  cap: "round", opacity: 0.92 },
+    { key: "dashed",   label: "Dashed",       hint: "Broken dashes — more line to complete",
+      fill: "none", stroke: INK,   sw: 4, dash: "15 15",   cap: "butt",  opacity: 0.85 },
+    { key: "faded",    label: "Faded ghost",  hint: "Light gray letters to write over",
+      fill: GHOST,  stroke: "none", sw: 0, dash: "",        cap: "round", opacity: 1 },
+    { key: "faint",    label: "Faint guide",  hint: "Barely-there outline — almost solo",
+      fill: "none", stroke: FAINT, sw: 2, dash: "0.1 22",  cap: "round", opacity: 1 },
+    { key: "blank",    label: "Blank line",   hint: "No guide — write it from memory",
+      blank: true }
+  ];
+
+  function levelSpec(level) {
+    const i = Math.max(0, Math.min(TRACE_LEVELS.length - 1, (level || 1) - 1));
+    return TRACE_LEVELS[i];
+  }
+
+  // Ruled guideline (top / midline / baseline) inside a worksheet SVG.
+  function addGuide(svg, w, y, dashed) {
+    const l = document.createElementNS(SVGNS, "line");
+    l.setAttribute("x1", "8");
+    l.setAttribute("x2", String(w - 8));
+    l.setAttribute("y1", String(y));
+    l.setAttribute("y2", String(y));
+    l.setAttribute("stroke", dashed ? GUIDE_MID : GUIDE);
+    l.setAttribute("stroke-width", dashed ? "1.5" : "2");
+    if (dashed) l.setAttribute("stroke-dasharray", "6 8");
+    svg.appendChild(l);
+  }
+
+  // A word rendered at a difficulty level, on a ruled baseline. The single
+  // primitive behind both the live preview and every printed row.
+  const TRACE_FONT_SIZE = 132;
+  const TRACE_BASE = 158, TRACE_MID = 104, TRACE_TOP = 50, TRACE_H = 210;
+
+  function traceWordSVG(word, level, opts) {
+    const o = opts || {};
+    const spec = levelSpec(level);
+    const chars = [...String(word)];
+    const w = Math.max(360, chars.length * 116 + 120);
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + w + " " + TRACE_H);
+    svg.setAttribute("class", "pt-trace-svg");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", word + " — " + spec.label);
+    if (o.guides !== false) {
+      addGuide(svg, w, TRACE_TOP, false);
+      addGuide(svg, w, TRACE_MID, true);
+      addGuide(svg, w, TRACE_BASE, false);
+    }
+    if (!spec.blank) {
+      const t = document.createElementNS(SVGNS, "text");
+      t.setAttribute("x", String(w / 2));
+      t.setAttribute("y", String(TRACE_BASE));
+      t.setAttribute("text-anchor", "middle");
+      t.setAttribute("font-family", FONT);
+      t.setAttribute("font-weight", "700");
+      t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+      t.setAttribute("fill", spec.fill);
+      if (spec.stroke && spec.stroke !== "none") {
+        t.setAttribute("stroke", spec.stroke);
+        t.setAttribute("stroke-width", String(spec.sw));
+        if (spec.dash) t.setAttribute("stroke-dasharray", spec.dash);
+        t.setAttribute("stroke-linecap", spec.cap || "round");
+        t.setAttribute("stroke-linejoin", "round");
+      }
+      if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
+      t.textContent = word;
+      svg.appendChild(t);
+    }
+    return svg;
+  }
+
+  const GEN_DEMO = CFG.genDemo || "Emma";
+
+  function applyCase(word) {
+    const mode = el.genCase ? el.genCase.value : "as-typed";
+    if (mode === "upper") return word.toUpperCase();
+    if (mode === "lower") return word.toLowerCase();
+    if (mode === "title") return word.replace(/\b\w/g, (c) => c.toUpperCase());
+    return word;
+  }
+  function genValue() {
+    const raw = el.genInput ? el.genInput.value : "";
+    const v = (raw && raw.trim()) ? raw.trim().slice(0, 42) : GEN_DEMO;
+    return applyCase(v);
+  }
+  function genLevel() {
+    const v = el.genSlider ? parseInt(el.genSlider.value, 10) : 2;
+    return Math.max(1, Math.min(TRACE_LEVELS.length, v || 2));
+  }
+
+  function renderGenPreview() {
+    const level = genLevel();
+    const spec = levelSpec(level);
+    if (el.genLevel) el.genLevel.textContent = "Level " + level + " · " + spec.label;
+    if (el.genHint) el.genHint.textContent = spec.hint;
+    if (el.genPresets) {
+      $$(".pt-gen-preset", el.genPresets).forEach((b) => {
+        b.classList.toggle("is-active", parseInt(b.dataset.level, 10) === level);
+        b.setAttribute("aria-pressed", parseInt(b.dataset.level, 10) === level ? "true" : "false");
+      });
+    }
+    if (!el.genPreview) return;
+    el.genPreview.innerHTML = "";
+    el.genPreview.appendChild(traceWordSVG(genValue(), level, { guides: true }));
+  }
+
+  function genRow(word, level) {
+    const row = document.createElement("div");
+    row.className = "pt-gen-row";
+    row.appendChild(traceWordSVG(word, level, { guides: true }));
+    return row;
+  }
+
+  function buildGeneratorSheet() {
+    const word = genValue();
+    const level = genLevel();
+    const spec = levelSpec(level);
+    const includeModel = !el.genModel || el.genModel.checked;
+    const traceCount = Math.max(1, Math.min(8, parseInt((el.genRows && el.genRows.value) || "3", 10) || 3));
+    const sheet = document.createElement("div");
+    sheet.className = "pt-gen-sheet";
+    // A solid model row on top so the target is always visible (unless the
+    // chosen level already IS the solid model).
+    if (includeModel && level !== 1) sheet.appendChild(genRow(word, 1));
+    for (let i = 0; i < traceCount; i++) sheet.appendChild(genRow(word, level));
+    // Finish on blank ruled lines for independent writing (skip if already blank).
+    const blanks = level === TRACE_LEVELS.length ? 0 : 2;
+    for (let i = 0; i < blanks; i++) sheet.appendChild(genRow(word, TRACE_LEVELS.length));
+    printWrap(word + " — " + spec.label + " worksheet · ultratextgen.com", sheet);
+  }
+
+  // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
+  function genWordPNG(word, level) {
+    const spec = levelSpec(level);
+    withFont(() => {
+      const width = 1600, height = 460, pad = 96;
+      const canvas = document.createElement("canvas");
+      canvas.width = width; canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, width, height);
+
+      let fontSize = 300;
+      ctx.font = "700 " + fontSize + "px " + FONT;
+      const measured = ctx.measureText(word).width;
+      if (measured > width - pad * 2) {
+        fontSize = Math.max(60, Math.floor(fontSize * (width - pad * 2) / measured));
+      }
+      const base = Math.round(height * 0.72);
+      // Ruled guides.
+      const drawGuide = (y, dashed) => {
+        ctx.beginPath();
+        ctx.setLineDash(dashed ? [6, 8] : []);
+        ctx.lineWidth = dashed ? 1.5 : 2;
+        ctx.strokeStyle = dashed ? GUIDE_MID : GUIDE;
+        ctx.moveTo(pad * 0.5, y); ctx.lineTo(width - pad * 0.5, y); ctx.stroke();
+      };
+      drawGuide(base, false);
+      drawGuide(base - Math.round(fontSize * 0.52), true);
+      drawGuide(base - Math.round(fontSize * 0.74), false);
+
+      if (!spec.blank) {
+        ctx.font = "700 " + fontSize + "px " + FONT;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "alphabetic";
+        ctx.lineJoin = "round";
+        const scale = fontSize / TRACE_FONT_SIZE;
+        ctx.globalAlpha = spec.opacity == null ? 1 : spec.opacity;
+        if (spec.fill && spec.fill !== "none") {
+          ctx.fillStyle = spec.fill;
+          ctx.fillText(word, width / 2, base);
+        }
+        if (spec.stroke && spec.stroke !== "none") {
+          ctx.strokeStyle = spec.stroke;
+          ctx.lineWidth = Math.max(1, spec.sw * scale);
+          ctx.lineCap = spec.cap || "round";
+          const dash = (spec.dash || "").split(/\s+/).filter(Boolean).map((n) => Math.max(0.01, parseFloat(n) * scale));
+          ctx.setLineDash(dash.length ? dash : []);
+          ctx.strokeText(word, width / 2, base);
+          ctx.setLineDash([]);
+        }
+        ctx.globalAlpha = 1;
+      }
+      downloadCanvas(canvas, (PNG_PREFIX || "handwriting") + "-" + (slugify(word) || "word") + "-L" + level + ".png");
+    });
+  }
+
+  function initGenerator() {
+    if (!el.genInput && !el.genSlider) return;
+    if (el.genInput) {
+      let timer = null;
+      el.genInput.addEventListener("input", () => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(renderGenPreview, 120);
+      });
+    }
+    if (el.genSlider) el.genSlider.addEventListener("input", renderGenPreview);
+    if (el.genCase) el.genCase.addEventListener("change", renderGenPreview);
+    if (el.genPresets) {
+      $$(".pt-gen-preset", el.genPresets).forEach((b) => {
+        b.addEventListener("click", () => {
+          if (el.genSlider) el.genSlider.value = b.dataset.level;
+          renderGenPreview();
+        });
+      });
+    }
+    if (el.genPrint) el.genPrint.addEventListener("click", buildGeneratorSheet);
+    if (el.genPng) el.genPng.addEventListener("click", () => genWordPNG(genValue(), genLevel()));
+    renderGenPreview();
+  }
+
+  /* ---------------------------------------------------------------
      Wiring
      --------------------------------------------------------------- */
 
   function init() {
     buildStrip();
     buildAlphabetGrid();
+    initGenerator();
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);
 
