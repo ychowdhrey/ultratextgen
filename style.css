@@ -3647,10 +3647,45 @@ button.clear-decoration {
 .bubble-print-sheet .bubble-outline { width: 100%; }
 
 @media print {
+  /* Predictable page box so every sheet is sized to fit within one printable
+     page at the browser's default margins. */
+  @page { size: Letter portrait; margin: 12mm; }
+
   body.is-printing > *:not(#bubblePrintRoot):not(#cursivePrintRoot):not(#pt-print-root) { display: none !important; }
-  body.is-printing #bubblePrintRoot { display: block !important; padding: 1rem; }
-  body.is-printing #cursivePrintRoot { display: block !important; padding: 1rem; }
-  body.is-printing #pt-print-root { display: block !important; padding: 1rem; }
+  body.is-printing #bubblePrintRoot,
+  body.is-printing #cursivePrintRoot,
+  body.is-printing #pt-print-root { display: block !important; padding: 0 !important; }
+
+  /* Never split a repeating unit across a page break. */
+  .pt-gen-row,
+  .pt-name-row,
+  .cursive-print-row,
+  .bubble-print-sheet > *,
+  .bubble-alpha-cell { break-inside: avoid; }
+
+  /* Compact print title. */
+  .bubble-print-title { font-size: 13pt; margin: 0 0 4mm; }
+
+  /* Handwriting worksheet: full-width ruled rows at the fixed short aspect, so
+     the standard sheet (model + trace + blank) lands on one page. */
+  .pt-gen-sheet { gap: 2mm; }
+  .pt-gen-row { width: 100%; }
+  .pt-gen-row .pt-trace-svg { width: 100%; height: auto; max-height: none; }
+
+  /* Name tracing: hollow word kept compact so the rows fit; the ruled line
+     under each row spans the full width. */
+  .pt-name-sheet { gap: 2mm; }
+  .pt-name-row { min-height: 20mm; }
+  .pt-name-row.pt-name-blank { min-height: 18mm; }
+  .pt-name-row .pt-word-outline { width: auto; height: 20mm; max-width: 100%; max-height: none; }
+
+  /* Coloring sheet: one whole page, centered, guaranteed to fit at default
+     margins (aspect 1000:1400 -> 170mm wide is ~238mm tall). */
+  .pt-design-print-holder { display: flex; justify-content: center; align-items: flex-start; }
+  .pt-design-print-holder .pt-design-sheet-svg { width: 170mm; max-width: 100%; height: auto; box-shadow: none; }
+
+  /* Single big letter / number: large, centered, still one page. */
+  .bubble-print-single .bubble-outline { width: 150mm; max-width: 100%; height: auto; }
 }
 
 /* ===========================================================

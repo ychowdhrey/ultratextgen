@@ -706,32 +706,45 @@
 
   // A word rendered at a difficulty level, on a ruled baseline. The single
   // primitive behind both the live preview and every printed row.
-  const TRACE_FONT_SIZE = 132;
-  const TRACE_BASE = 158, TRACE_MID = 104, TRACE_TOP = 50, TRACE_H = 210;
+  // Fixed worksheet-line aspect (wide + short) so every row is the same shape
+  // regardless of word length: full-width ruled lines with the word centered on
+  // the baseline. A fixed viewBox is what lets a printed sheet fit its rows on
+  // one page — a word-length-dependent box makes short words tall and overflows.
+  const TRACE_VW = 1000, TRACE_VH = 156;              // ~6.4:1 line (short + wide)
+  const TRACE_TOP = 30, TRACE_MID = 80, TRACE_BASE = 118;
+  const TRACE_FONT_SIZE = 116;                        // cap size on the baseline
+  const TRACE_INSET = 34;                             // keep the word off the edges
 
   function traceWordSVG(word, level, opts) {
     const o = opts || {};
     const spec = levelSpec(level);
-    const chars = [...String(word)];
-    const w = Math.max(360, chars.length * 116 + 120);
     const svg = document.createElementNS(SVGNS, "svg");
-    svg.setAttribute("viewBox", "0 0 " + w + " " + TRACE_H);
+    svg.setAttribute("viewBox", "0 0 " + TRACE_VW + " " + TRACE_VH);
     svg.setAttribute("class", "pt-trace-svg");
+    svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", word + " — " + spec.label);
     if (o.guides !== false) {
-      addGuide(svg, w, TRACE_TOP, false);
-      addGuide(svg, w, TRACE_MID, true);
-      addGuide(svg, w, TRACE_BASE, false);
+      addGuide(svg, TRACE_VW, TRACE_TOP, false);
+      addGuide(svg, TRACE_VW, TRACE_MID, true);
+      addGuide(svg, TRACE_VW, TRACE_BASE, false);
     }
     if (!spec.blank) {
+      const avail = TRACE_VW - TRACE_INSET * 2;
+      // Compress only when the word would run past the ruled line; short words
+      // keep the full cap height (this font advances ~0.62em per glyph).
+      const approx = [...String(word)].length * TRACE_FONT_SIZE * 0.62;
       const t = document.createElementNS(SVGNS, "text");
-      t.setAttribute("x", String(w / 2));
+      t.setAttribute("x", String(TRACE_VW / 2));
       t.setAttribute("y", String(TRACE_BASE));
       t.setAttribute("text-anchor", "middle");
       t.setAttribute("font-family", FONT);
       t.setAttribute("font-weight", "700");
       t.setAttribute("font-size", String(TRACE_FONT_SIZE));
+      if (approx > avail) {
+        t.setAttribute("textLength", String(avail));
+        t.setAttribute("lengthAdjust", "spacingAndGlyphs");
+      }
       t.setAttribute("fill", spec.fill);
       if (spec.stroke && spec.stroke !== "none") {
         t.setAttribute("stroke", spec.stroke);
