@@ -34,6 +34,7 @@ workflow that produces it.
 | **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) + `guide-opportunity-map-<date>.md` | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
+| **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | [`coloring-sheet-generator-strategy.md`](./coloring-sheet-generator-strategy.md) (strategy) + `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog + strategy, no generator |
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 
 **Only the Library lane is structurally complete** (discovery → scouting →
@@ -58,6 +59,7 @@ These run across page types rather than producing a type.
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `pl/`, `pt/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
+| ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | `library_opportunities.csv` `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
 | Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`image-assets-check.yml`) |
