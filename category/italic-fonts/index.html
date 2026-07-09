@@ -249,7 +249,24 @@
     
     <!-- Results -->
     <div class="results-grid" id="resultsGrid"></div>
-  </main>
+  
+  <section class="deco-showcase" aria-labelledby="deco-showcase-title">
+    <h2 class="deco-showcase-title" id="deco-showcase-title">Popular Italic Text Decorations</h2>
+    <p class="deco-showcase-intro">Light, airy decorations to pair with italic text — delicate sparkles, elegant flourishes and clean separators to copy and paste.</p>
+    <ul class="deco-showcase-grid">
+      <li class="deco-chip" data-copy="⋆ Ava ⋆"><span class="deco-chip-ex">⋆ Ava ⋆</span><span class="deco-chip-label">Star</span></li>
+      <li class="deco-chip" data-copy="˚ Ava ˚"><span class="deco-chip-ex">˚ Ava ˚</span><span class="deco-chip-label">Ring</span></li>
+      <li class="deco-chip" data-copy="·˚ Ava ˚·"><span class="deco-chip-ex">·˚ Ava ˚·</span><span class="deco-chip-label">Delicate</span></li>
+      <li class="deco-chip" data-copy="⟡ Ava ⟡"><span class="deco-chip-ex">⟡ Ava ⟡</span><span class="deco-chip-label">Diamond</span></li>
+      <li class="deco-chip" data-copy="✧ Ava ✧"><span class="deco-chip-ex">✧ Ava ✧</span><span class="deco-chip-label">Sparkle</span></li>
+      <li class="deco-chip" data-copy="❧ Ava ❧"><span class="deco-chip-ex">❧ Ava ❧</span><span class="deco-chip-label">Floret</span></li>
+      <li class="deco-chip" data-copy="» Ava «"><span class="deco-chip-ex">» Ava «</span><span class="deco-chip-label">Chevrons</span></li>
+      <li class="deco-chip" data-copy="— Ava —"><span class="deco-chip-ex">— Ava —</span><span class="deco-chip-label">Em dash</span></li>
+      <li class="deco-chip" data-copy="• Ava •"><span class="deco-chip-ex">• Ava •</span><span class="deco-chip-label">Bullet</span></li>
+      <li class="deco-chip" data-copy="✦ Ava ✦"><span class="deco-chip-ex">✦ Ava ✦</span><span class="deco-chip-label">Sparkle star</span></li>
+    </ul>
+  </section>
+</main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -612,6 +629,8 @@
     window.UTG_FAMILY = "italic";
   </script>
 
+  <script>window.UTG_DECORATOR_PROFILE = "italic";</script>
+  <script src="/decorators.js"></script>
   <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer=""></script>
@@ -619,4 +638,5 @@
 
 
 <script src="/footer.js" defer></script>
+  <script src="/decorations-showcase.js"></script>
 </body></html>
