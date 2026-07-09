@@ -161,6 +161,11 @@ const PRINTABLE_PAGES = {
     slug: 'name-tracing',
     title: 'Name Tracing Worksheets',
     description: 'Type any name to build a free printable tracing worksheet with model and trace rows.'
+  },
+  'alphabet-coloring-pages': {
+    slug: 'alphabet-coloring-pages',
+    title: 'Alphabet Coloring Pages',
+    description: 'Free printable alphabet coloring pages A–Z — big single-line letter outlines to color and print, plus a page for every letter.'
   }
 };
 
