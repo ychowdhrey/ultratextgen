@@ -80,6 +80,7 @@
     [0xff00, 0xffef],   // full-width forms
     [0x1e00, 0x1eff],   // latin extended additional (Vietnamese!)
     [0x0100, 0x024f],   // latin extended A/B
+    [0x0400, 0x04ff],   // Cyrillic (renders everywhere; display-name fields accept it)
     [0x0250, 0x02af],   // IPA (small caps live here)
     [0x1d00, 0x1d7f],   // phonetic extensions (small caps)
     [0x02b0, 0x02ff],   // spacing modifiers (superscripts)
