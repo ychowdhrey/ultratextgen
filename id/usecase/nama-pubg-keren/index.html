@@ -146,6 +146,16 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
+<!-- CEK NAMA -->
+<section class="editorial-section" id="cek-nama">
+  <span class="article-section-label">Cek Nama</span>
+  <h2>Nama Kamu Lolos di PUBG Mobile Nggak?</h2>
+  <p class="u-secondary-block">Nama PUBG Mobile maksimal <strong>14 karakter</strong>, harus unik, dan spasi biasa ditolak. Rename Card harganya 180 UC — cek dulu sebelum kepakai: hitungannya jalan otomatis pas kamu ngetik di atas, atau tempel nama jadi yang udah kamu salin.</p>
+  <div id="pubgNameChecker"></div>
+</section>
+
+<div class="section-divider"></div>
+
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
@@ -298,12 +308,34 @@
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + wrappers + cek nama -->
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/gamename/game-rules.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   var ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "pubgNameChecker",
+      games: ["pubg"],
+      inputId: "mainInput",
+      text: {
+        inputLabel: "Cek nama sebelum Rename Card kepakai",
+        placeholder: "Tempel nama jadi yang udah kamu salin…",
+        ok: "Aman buat PUBG Mobile",
+        warn: "Bisa jadi kotak ▯ di HP lain",
+        fail: "Bakal ditolak PUBG Mobile",
+        empty: "Ketik atau tempel nama buat dicek",
+        issue: {
+          "over-limit": "Kepanjangan — maksimal 14 karakter di PUBG Mobile.",
+          "space": "Spasi biasa ditolak — pakai karakter tak terlihat.",
+          "unknown-chars": "Karakter ini jarang didukung dan bisa tampil kotak:",
+          "too-short": "Terlalu pendek."
+        }
+      }
+    });
+  }
   if (!ns || !ns.buildGrids) return;
 
   var GROUPS = [

@@ -83,6 +83,14 @@
     },
     {
       "@type": "Question",
+      "name": "Nama FF maksimal berapa karakter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kolom nickname Free Fire menerima maksimal 12 karakter, dan simbol Unicode hias dihitung 2 karakter per simbol. Contohnya ꧁KING꧂ memakai 8 dari 12 (4 huruf + 2 payung yang masing-masing dihitung dobel). Pakai fitur Cek Nama di halaman ini — hitungannya sama persis dengan cara Free Fire menghitung, jadi Kartu Ganti Nama kamu nggak kebuang sia-sia."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Kenapa nama FF saya ditolak atau berubah jadi kotak?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -156,6 +164,16 @@
   <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
   <div class="results-grid" id="resultsGrid"></div>
 </main>
+
+<!-- CEK NAMA -->
+<section class="editorial-section" id="cek-nama">
+  <span class="article-section-label">Cek Nama</span>
+  <h2>Nama Kamu Lolos di Free Fire Nggak?</h2>
+  <p class="u-secondary-block">Kolom nickname Free Fire cuma nerima <strong>12 karakter</strong> — dan simbol hias kayak ꧁ ꧂ dihitung <strong>2 karakter</strong> per simbol (jadi ꧁KING꧂ makan 8 dari 12). Nama yang ditolak berarti Kartu Ganti Nama kebuang sia-sia. Cek dulu di sini: hitungannya jalan otomatis pas kamu ngetik di atas, atau tempel nama jadi yang udah kamu salin.</p>
+  <div id="ffNameChecker"></div>
+</section>
+
+<div class="section-divider"></div>
 
 <!-- INTRO -->
 <section class="editorial-section">
@@ -335,12 +353,35 @@
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + wrappers + cek nama -->
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/gamename/game-rules.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   var ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "ffNameChecker",
+      games: ["ff"],
+      inputId: "mainInput",
+      text: {
+        inputLabel: "Cek nama sebelum Kartu Ganti Nama kepakai",
+        placeholder: "Tempel nama jadi yang udah kamu salin…",
+        ok: "Aman buat Free Fire",
+        warn: "Bisa jadi kotak ▯ di HP lain",
+        fail: "Bakal ditolak Free Fire",
+        empty: "Ketik atau tempel nama buat dicek",
+        weightNote: "Free Fire ngitung simbol hias sebagai 2 karakter per simbol.",
+        issue: {
+          "over-limit": "Kepanjangan — hapus satu simbol atau pendekin nama dasarnya.",
+          "space": "Spasi biasa ditolak — pakai trik karakter tak terlihat di bawah.",
+          "unknown-chars": "Karakter ini jarang didukung dan bisa tampil kotak:",
+          "too-short": "Terlalu pendek."
+        }
+      }
+    });
+  }
   if (!ns || !ns.buildGrids) return;
 
   var GROUPS = [
