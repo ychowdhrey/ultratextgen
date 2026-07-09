@@ -1,0 +1,30 @@
+{
+  "cluster": {
+    "slug": "number-coloring-pages",
+    "hub_title": "Number Coloring Pages 0–9 — Free Printable Number Sheets | UltraTextGen",
+    "hub_h1": "Number Coloring Pages (0–9)",
+    "hub_tagline": "Free printable number coloring pages. Pick a number for a big, clean single-line outline to color, print the whole set 0–9 at once, or open any number's own page — no sign-up.",
+    "hub_meta": "Free printable number coloring pages 0–9. Big single-line number outlines to color and print, plus a page for every number from 0 to 9. Print the whole set or download any number as a PNG.",
+    "hub_og_desc": "Free printable number coloring pages 0–9. Color and print big number outlines, or open a page for any number.",
+    "font_family": "Baloo 2",
+    "font_css": "'Baloo 2', 'Plus Jakarta Sans', sans-serif",
+    "font_query": "Baloo+2:wght@400;500;600;700",
+    "stroke_width": 4,
+    "noun": "coloring page",
+    "grid_noun": "numbers 0–9",
+    "png_prefix": "coloring",
+    "og_image": "https://ultratextgen.com/assets/og/category.png"
+  },
+  "numbers": [
+    { "number": "0", "name": "Zero", "count_word": "zero", "things": ["zero cookies on an empty plate", "zero clouds in a clear sky", "an empty box"], "fact": "Zero means none at all — a round outline shaped like an O, and a fun one to color as a hole, a bubble, or a big doughnut." },
+    { "number": "1", "name": "One", "count_word": "one", "things": ["one sun", "one nose", "one moon", "one big balloon"], "fact": "One is the very first counting number — a single tall line, so it is the quickest number to color." },
+    { "number": "2", "name": "Two", "count_word": "two", "things": ["two eyes", "two shoes", "two ducks", "two wheels on a bike"], "fact": "Two has a friendly curve at the top and a flat foot at the bottom, a bit like a swan gliding on a pond." },
+    { "number": "3", "name": "Three", "count_word": "three", "things": ["three bears", "three wheels on a trike", "three scoops of ice cream"], "fact": "Three is made of two round bumps stacked together, like a letter E turned around — easy to trace and color." },
+    { "number": "4", "name": "Four", "count_word": "four", "things": ["four wheels on a car", "four legs on a dog", "four corners of a square"], "fact": "Four has sharp straight lines and a little triangle window, so it is fun to color each part a different color." },
+    { "number": "5", "name": "Five", "count_word": "five", "things": ["five fingers on a hand", "five points on a star", "five petals on a flower"], "fact": "Five has a flat hat, a straight back, and a big round belly — hold up one whole hand to show five." },
+    { "number": "6", "name": "Six", "count_word": "six", "things": ["six legs on a bug", "six eggs in a carton", "six sides on a snowflake"], "fact": "Six curls down into a loop at the bottom, a bit like an elephant's trunk swinging low." },
+    { "number": "7", "name": "Seven", "count_word": "seven", "things": ["seven days in a week", "seven colors in a rainbow", "seven spots on a ladybug"], "fact": "Seven is a flat line across the top with a slide going down — one of the easiest numbers to draw and color." },
+    { "number": "8", "name": "Eight", "count_word": "eight", "things": ["eight legs on a spider", "eight arms on an octopus", "eight crayons in a box"], "fact": "Eight is two circles stacked in a tall figure — trace it in one smooth loop, then color the top and bottom differently." },
+    { "number": "9", "name": "Nine", "count_word": "nine", "things": ["nine planets people once counted", "nine squares in a tic-tac-toe grid", "nine candles on a birthday cake"], "fact": "Nine is a round loop at the top with a tail hanging down, like a balloon on a string — the last single-digit number to color." }
+  ]
+}

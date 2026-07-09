@@ -166,6 +166,11 @@ const PRINTABLE_PAGES = {
     slug: 'alphabet-coloring-pages',
     title: 'Alphabet Coloring Pages',
     description: 'Free printable alphabet coloring pages A–Z — big single-line letter outlines to color and print, plus a page for every letter.'
+  },
+  'number-coloring-pages': {
+    slug: 'number-coloring-pages',
+    title: 'Number Coloring Pages',
+    description: 'Free printable number coloring pages 0–9 — big single-line number outlines to color and print, plus a page for every number.'
   }
 };
 

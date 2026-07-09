@@ -45,7 +45,9 @@
 
   const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const DIGITS = "0123456789".split("");
-  const CHARS = (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
+  const CHARS = (CFG.charset === "digits") ? DIGITS.slice()
+    : (CFG.charset === "alnum") ? LETTERS.concat(DIGITS)
+    : LETTERS.slice();
 
   const RENDER = CFG.render || "outline";           // "outline" | "glyph"
   const FONT = CFG.font || "'Plus Jakarta Sans', 'Segoe UI Symbol', sans-serif";
@@ -470,6 +472,13 @@
       b.addEventListener("click", () => selectChar(ch));
       return b;
     };
+    if (CFG.charset === "digits") {
+      const digitRow = document.createElement("div");
+      digitRow.className = "bubble-strip-row bubble-strip-digits";
+      DIGITS.forEach((ch) => digitRow.appendChild(make(ch)));
+      el.strip.appendChild(digitRow);
+      return;
+    }
     const letterRow = document.createElement("div");
     letterRow.className = "bubble-strip-row";
     LETTERS.forEach((ch) => letterRow.appendChild(make(ch)));
@@ -505,7 +514,7 @@
         const sheet = document.createElement("div");
         sheet.className = "bubble-print-sheet";
         CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : outlineSVG(ch, { small: true })));
-        printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
+        printWrap(cap(NOUN) + " " + (CFG.gridNoun || "alphabet") + " — ultratextgen.com", sheet);
       });
     }
   }
