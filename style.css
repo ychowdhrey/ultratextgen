@@ -5322,8 +5322,106 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 }
 .pt-name-word.is-trace { color: #cbd5e1; }
 
+/* ---- Adjustable-difficulty tracing generator ---- */
+.pt-gen-tool { margin: 0.5rem 0 0; }
+.pt-gen-input { min-height: auto; height: 52px; resize: none; }
+
+.pt-gen-field { margin-top: 1rem; }
+.pt-gen-field-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Age presets — shortcuts that snap the slider */
+.pt-gen-presets { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pt-gen-preset {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.pt-gen-preset:hover { border-color: var(--accent-purple); }
+.pt-gen-preset.is-active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.pt-gen-preset small { display: block; font-weight: 500; opacity: 0.8; font-size: 0.72rem; }
+
+/* Difficulty slider — the source of truth */
+.pt-gen-slider {
+  width: 100%;
+  margin: 0.25rem 0 0.4rem;
+  accent-color: var(--accent-purple);
+  cursor: pointer;
+}
+.pt-gen-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+.pt-gen-readout {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+.pt-gen-level { font-weight: 700; color: var(--accent-purple); }
+.pt-gen-hint { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* Secondary options (case, rows, model row) */
+.pt-gen-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1rem;
+}
+.pt-gen-opt { display: flex; align-items: center; gap: 0.45rem; }
+.pt-gen-opt label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; }
+.pt-gen-select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Live preview */
+.pt-gen-preview {
+  margin: 1.1rem 0;
+  padding: 1rem 1.25rem;
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.pt-trace-svg { display: block; width: 100%; height: auto; max-height: 160px; }
+.pt-gen-actions { margin-top: 0.25rem; }
+
+/* Generator worksheet (print) */
+.pt-gen-sheet { display: flex; flex-direction: column; gap: 0.55rem; }
+.pt-gen-row { width: 100%; }
+.pt-gen-row .pt-trace-svg { width: 100%; max-height: 150px; }
+
 /* Dark-mode: keep print-preview cards light so white-fill outlines stay visible */
 body.dark-mode .pt-name-preview { background: #fff; border-color: var(--border-light); }
+body.dark-mode .pt-gen-preview { background: #fff; border-color: var(--border-light); }
 body.dark-mode .printable-card-art { color: var(--accent-blue); }
 /* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
