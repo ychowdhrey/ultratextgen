@@ -80,7 +80,7 @@
       "name": "Can Discord channel names use Unicode characters like blackletter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Partly. Text channel slugs are forced to lowercase with hyphens and no spaces, so heavy styling is limited there. Category names, role names, and the channel topic accept Unicode, including blackletter (fraktur) and other decorative styles."
+        "text": "Mostly no. Text channel slugs are force-lowercased with hyphens replacing spaces, and that filter only recognizes ordinary A-Z — stylized letterforms like fraktur (blackletter), bold, and script are typically stripped or rejected rather than kept. Symbol dividers, small caps, and fullwidth letters generally survive. Category names, role names, and the channel topic skip this normalization entirely, so blackletter and other decorative styles render as typed there."
       }
     },
     {
@@ -89,6 +89,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Usernames are strict: lowercase Latin letters (a–z), numbers (0–9), underscores, and periods only. No consecutive periods, no spaces, no emoji, and no Unicode font characters. For styled text, use your display name instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Discord block certain words no matter what font you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Usernames and display names can't contain @, #, :, or three backticks in a row, and can't use the reserved words everyone, here, system message, or discord. The filter checks the underlying text, so styling a blocked word in a fancy Unicode font does not get around the restriction."
       }
     },
     {
@@ -202,9 +210,9 @@
         </tr>
         <tr>
           <td>Channel name</td>
-          <td>Limited</td>
+          <td>Letters only, mostly no</td>
           <td>Server-controlled</td>
-          <td>Lowercase and hyphen style naming is standard; no spaces/uppercase in normal channel slugs</td>
+          <td>Forced lowercase + hyphens; true stylized letterforms (fraktur/blackletter, bold, script, mathematical alphanumeric) are stripped or rejected — see below</td>
         </tr>
         <tr>
           <td>Role name</td>
@@ -220,6 +228,28 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Channel names</span>
+  <h2>Can channel names use fraktur or blackletter letters?</h2>
+  <div class="editorial-block">
+    <p><strong>No, not usually.</strong> Discord force-lowercases a text channel name and swaps spaces for hyphens on save. That lowercasing rule only recognizes ordinary A–Z — it has no special case for stylized Unicode letterforms, so fraktur (blackletter), bold, script, and Mathematical Alphanumeric letters are typically stripped out or rejected outright rather than passed through.</p>
+    <p>What <em>does</em> survive: Unicode symbols used as dividers or prefixes (⊹ ➤ │ ⌗), and a narrow set of letter-like characters — small caps and fullwidth forms — that Discord's filter reads as lowercase-equivalent. Category names, voice channel names, and channel topics skip this normalization entirely, so that's where fraktur, bold, and other decorative letter styles actually render as typed.</p>
+    <p>Discord hasn't published an official validation regex for channel names, so this behavior is based on tested results, not documentation — expect edge cases.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Reserved words</span>
+  <h2>Names Discord blocks outright, regardless of style</h2>
+  <div class="editorial-block">
+    <p>Separate from the Unicode question, usernames and display names can't contain the substrings <code>@</code>, <code>#</code>, <code>:</code>, or three backticks in a row, and can't be (or contain, in some forms) the reserved words <strong>everyone</strong>, <strong>here</strong>, <strong>system message</strong>, or <strong>discord</strong> — no styled version of these gets around the filter, since it checks the underlying text, not the font. Webhook names have their own reserved word: <strong>clyde</strong>.</p>
   </div>
 </section>
 
@@ -285,7 +315,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
       </button>
       <div class="faq-answer">
-        Partly. Text channel slugs are forced to lowercase with hyphens and no spaces, so heavy styling is limited there. Category names, role names, and the channel topic accept Unicode, including blackletter (fraktur) and other decorative styles.
+        Mostly no. Text channel slugs are force-lowercased with hyphens replacing spaces, and that filter only recognizes ordinary A–Z — stylized letterforms like fraktur (blackletter), bold, and script are typically stripped or rejected rather than kept. Symbol dividers, small caps, and fullwidth letters generally survive. Category names, role names, and the channel topic skip this normalization entirely, so blackletter and other decorative styles render as typed there.
       </div>
     </div>
     <div class="faq-item">
@@ -295,6 +325,15 @@
       </button>
       <div class="faq-answer">
         Usernames are strict: lowercase Latin letters (a–z), numbers (0–9), underscores, and periods only. No consecutive periods, no spaces, no emoji, and no Unicode font characters. For styled text, use your display name instead.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Does Discord block certain words no matter what font you use?
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+      <div class="faq-answer">
+        Yes. Usernames and display names can't contain @, #, :, or three backticks in a row, and can't use the reserved words everyone, here, system message, or discord. The filter checks the underlying text, so styling a blocked word in a fancy Unicode font does not get around the restriction.
       </div>
     </div>
     <div class="faq-item">

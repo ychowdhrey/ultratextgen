@@ -91,6 +91,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "Question",
       "name": "Why do my line breaks work in captions but not my bio?",
       "acceptedAnswer": { "@type": "Answer", "text": "Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively — trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I paste line breaks from my Notes app into my Instagram bio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — write your bio with line breaks in Notes (or any text app), then paste it into the Instagram bio field, ideally in the mobile app. The pasted newlines are preserved; you still need Steps 1-2 (no trailing spaces, U+2800 on blank lines) for the spacing to survive the save. The invisible separator character U+2063 is a secondary option that also survives Instagram's cleanup if U+2800 ever behaves oddly in a particular font." }
     }
   ]
 }
@@ -317,6 +322,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="faq-question" type="button">Why do my line breaks work in captions but not my bio?</button>
     <div class="faq-answer">
       <p>Captions and bios go through different cleanup rules. Captions are long-form fields and preserve most line breaks (though very long runs of blank lines still get trimmed). The bio is a short identity field that Instagram sanitizes much more aggressively — trailing spaces are trimmed and consecutive newlines are collapsed on save. That's why the same spacing that survives in a caption dies in a bio, and why the bio needs the U+2800 trick.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Can I paste line breaks from my Notes app into my Instagram bio?</button>
+    <div class="faq-answer">
+      <p>Yes — write your bio with line breaks in Notes (or any text app), then paste it into the Instagram bio field, ideally in the mobile app. The pasted newlines are preserved; you still need Steps 1–2 (no trailing spaces, U+2800 on blank lines) for the spacing to survive the save. The invisible separator character U+2063 is a secondary option that also survives Instagram's cleanup if U+2800 ever behaves oddly in a particular font.</p>
     </div>
   </div>
 </section>

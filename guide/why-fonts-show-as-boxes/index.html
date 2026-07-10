@@ -13,8 +13,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Why Your Fancy Font Shows Up as Boxes (and How to Fix It) | UltraTextGen</title>
-<meta name="description" content="Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.">
+<title>Why Text Shows as Boxes (Tofu) — Fancy Fonts Break It Worst | UltraTextGen</title>
+<meta name="description" content="Boxes or squares instead of text? It's a missing glyph (tofu), not corrupted text. What causes it in browsers, apps, and copied Unicode fonts — plus which styles are safe everywhere.">
 
 <link rel="canonical" href="https://ultratextgen.com/guide/why-fonts-show-as-boxes/">
 <meta property="og:image" content="https://ultratextgen.com/guide/assets/og/why-fonts-show-as-boxes.png">
@@ -22,11 +22,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Why Your Fancy Font Shows Up as Boxes (and How to Fix It) | UltraTextGen">
-<meta name="twitter:description" content="Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.">
+<meta name="twitter:title" content="Why Text Shows as Boxes (Tofu) — Fancy Fonts Break It Worst | UltraTextGen">
+<meta name="twitter:description" content="Boxes or squares instead of text? It's a missing glyph (tofu), not corrupted text. What causes it, and which styled fonts are safe everywhere.">
 <meta name="twitter:image" content="https://ultratextgen.com/guide/assets/og/why-fonts-show-as-boxes.png">
-<meta property="og:title" content="Why Your Fancy Font Shows Up as Boxes (and How to Fix It)">
-<meta property="og:description" content="Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.">
+<meta property="og:title" content="Why Text Shows as Boxes (Tofu) — And Why Fancy Fonts Break It Worst">
+<meta property="og:description" content="Boxes or squares instead of text? It's a missing glyph (tofu), not corrupted text. What causes it in browsers, apps, and copied Unicode fonts — plus which styles are safe everywhere.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ultratextgen.com/guide/why-fonts-show-as-boxes/">
 
@@ -40,8 +40,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Why Your Fancy Font Shows Up as Boxes (and How to Fix It)",
-  "description": "Styled text showing as boxes or squares for other people? Here's why it happens, which Unicode font styles are safe on every device, and how to test before you post.",
+  "headline": "Why Text Shows as Boxes (Tofu) — And Why Fancy Fonts Break It Worst",
+  "description": "Boxes or squares instead of text? It's a missing glyph (tofu), not corrupted text. What causes it in browsers, apps, and copied Unicode fonts — plus which styles are safe everywhere.",
   "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
   "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
   "image": "https://ultratextgen.com/guide/assets/og/why-fonts-show-as-boxes.png",
@@ -86,6 +86,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "Question",
       "name": "Are the boxes the same thing as question marks or garbled text?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. A box (tofu) means the character arrived fine but the device has no glyph to draw it. A question mark or � means the character was lost or mis-decoded along the way (an encoding problem). Garbled “mojibake” means the bytes were read with the wrong encoding. Boxes are a font problem; the others are data problems." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a shaded block symbol like ▓ or ▒ mean when I see it in a message?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's usually the same tofu problem in a different shape. Shade and block characters (░ ▒ ▓ █) are real, valid Unicode symbols — often used deliberately for retro UI, glitch effects, or loading-bar aesthetics — but on a device or app with a thin font, they can render as generic boxes instead of their intended shading. If you typed or copied one on purpose, it isn't broken; check it on another device before assuming it failed." }
     }
   ]
 }
@@ -258,6 +263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><strong>Discord</strong> — styled names render for most desktop users, but older Android clients and screen readers struggle. See <a href="/guide/discord-text-formatting-explained/">Discord text formatting decoded</a>.</li>
         <li><strong>Instagram &amp; TikTok</strong> — bios render via the viewer's system fonts, so the same bio can look crisp on iPhone and broken on a budget Android.</li>
         <li><strong>Older Android, generally</strong> — the single most common source of tofu. If you only test on an iPhone, you're testing the easy case.</li>
+        <li><strong>iPhone specifically</strong> — testing on iOS isn't a free pass. Apple's system font, San Francisco, doesn't cover the same Unicode ranges Google's Noto font does on Android, so certain decorative and rare-block styles that render fine on Android can still turn to boxes on iPhone. Treat both platforms as separate tests, not one stand-in for the other.</li>
       </ul>
     </div>
   </section>
@@ -316,6 +322,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="faq-question" type="button">Are the boxes the same thing as question marks or garbled text?</button>
     <div class="faq-answer">
       <p>No. A box (tofu) means the character arrived fine but the device has no glyph to draw it. A question mark or � means the character was lost or mis-decoded along the way (an encoding problem). Garbled "mojibake" means the bytes were read with the wrong encoding. Boxes are a font problem; the others are data problems.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">What does a shaded block symbol like ▓ or ▒ mean when I see it in a message?</button>
+    <div class="faq-answer">
+      <p>It's usually the same tofu problem in a different shape. Shade and block characters (░ ▒ ▓ █) are real, valid Unicode symbols — often used deliberately for retro UI, glitch effects, or loading-bar aesthetics — but on a device or app with a thin font, they can render as generic boxes instead of their intended shading. If you typed or copied one on purpose, it isn't broken; check it on another device before assuming it failed.</p>
     </div>
   </div>
 </section>
