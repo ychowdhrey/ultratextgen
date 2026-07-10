@@ -176,6 +176,11 @@ const PRINTABLE_PAGES = {
     slug: 'coloring-page-maker',
     title: 'Coloring Page Maker',
     description: 'Type any name or word to make your own printable coloring page — heading, name-and-date line, decorative borders, and multi-color fills. Print or PNG, no sign-up.'
+  },
+  'dot-to-dot-alphabet': {
+    slug: 'dot-to-dot-alphabet',
+    title: 'Dot-to-Dot Alphabet',
+    description: 'Free printable dot-to-dot letters A–Z — a numbered connect-the-dots puzzle for every letter, plus a page for every letter and a one-click print of the whole alphabet.'
   }
 };
 
