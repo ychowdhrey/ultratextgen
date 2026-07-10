@@ -35,8 +35,21 @@
        },
        kaomoji:  [{ text, label }],
        asciiArt: [{ art, label }],
-       phraseBank: [{ text, nativeScript, romanization, translation }]
+       phraseBank: [{ text, nativeScript, romanization, translation }],
+       ui: {                                         // OPTIONAL, non-English pages only
+         showingSample, copyButton, copyAriaPrefix, asciiArtDefaultLabel
+       }
      }
+
+   `ui` overrides this controller's own small set of hardcoded English
+   strings (the "Showing "<sample>"..." helper line, the "Copy" button
+   label, and the "Copy " aria-label prefix) -- the same optional
+   inline-config-override precedent as `window.tattooI18n` / `window.verticalI18n`
+   (see js/tattoo/tattooPageController.js, js/vertical/verticalPageController.js).
+   Everything else user-facing on an event page is generated per-page,
+   already-translated static HTML by scripts/generate_event_page_from_spec.py
+   (see its STRINGS dict) and needs no override here. Missing `ui` keys fall
+   back to the built-in English defaults below.
 
    DOM contract a generated page must provide (see
    scripts/generate_event_page_from_spec.py):
@@ -63,6 +76,15 @@
 
   const SAMPLE_TEXT = DATA.samplePhrase || DATA.eventName || "your text";
   let renderTimer = null;
+
+  /* A page in a non-English language defines window.UTG_EVENT_DATA.ui with
+     translated overrides for this controller's own small set of hardcoded
+     English strings (same optional-override precedent as window.tattooI18n /
+     window.verticalI18n). Missing keys fall back to the English default. */
+  const UI = DATA.ui || {};
+  function t(key, fallback) {
+    return UI[key] != null ? UI[key] : fallback;
+  }
 
   /* ---- Helpers (same tiny DOM helpers as tattooPageController.js) ---- */
   function $(sel, root) { return (root || document).querySelector(sel); }
@@ -100,7 +122,7 @@
     card.appendChild(info);
 
     const actions = el("div", "style-actions");
-    const btn = el("button", "copy-btn", "Copy");
+    const btn = el("button", "copy-btn", t("copyButton", "Copy"));
     btn.type = "button";
     btn.dataset.text = text;
     btn.dataset.style = styleKey;
@@ -120,8 +142,10 @@
     const text = raw || SAMPLE_TEXT;
 
     if (!raw) {
+      const showingSample = t("showingSample",
+        "Showing “{sample}” — type your own name, wish, or greeting above.");
       grid.appendChild(el("p", "u-secondary-tight",
-        "Showing “" + SAMPLE_TEXT + "” — type your own name, wish, or greeting above."));
+        showingSample.replace("{sample}", SAMPLE_TEXT)));
     }
 
     const keys = (DATA.fonts && DATA.fonts.curatedKeys) || [];
@@ -164,7 +188,7 @@
       tile.type = "button";
       tile.dataset.text = item.text;
       tile.textContent = item.text;
-      if (item.label) tile.setAttribute("aria-label", "Copy " + item.label);
+      if (item.label) tile.setAttribute("aria-label", t("copyAriaPrefix", "Copy ") + item.label);
       grid.appendChild(tile);
     });
   }
@@ -180,7 +204,7 @@
     const text = pre.textContent.replace(/\s+$/, "");
     const ns = window.UltraTextGen;
     if (ns && typeof ns.copyText === "function") {
-      ns.copyText(text, btn, label || "ASCII art");
+      ns.copyText(text, btn, label || t("asciiArtDefaultLabel", "ASCII art"));
       return;
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -198,11 +222,11 @@
       const card = el("div", "art-piece-card");
 
       const head = el("div", "art-piece-head");
-      head.appendChild(el("span", "art-piece-label", piece.label || "ASCII Art"));
-      const copyBtn = el("button", "art-piece-copy", "Copy");
+      head.appendChild(el("span", "art-piece-label", piece.label || t("asciiArtDefaultLabel", "ASCII Art")));
+      const copyBtn = el("button", "art-piece-copy", t("copyButton", "Copy"));
       copyBtn.type = "button";
-      copyBtn.dataset.label = piece.label || "ASCII art";
-      copyBtn.setAttribute("aria-label", "Copy " + (piece.label || "ASCII art"));
+      copyBtn.dataset.label = piece.label || t("asciiArtDefaultLabel", "ASCII art");
+      copyBtn.setAttribute("aria-label", t("copyAriaPrefix", "Copy ") + (piece.label || t("asciiArtDefaultLabel", "ASCII art")));
       head.appendChild(copyBtn);
       card.appendChild(head);
 
