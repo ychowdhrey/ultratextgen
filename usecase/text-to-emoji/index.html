@@ -14,10 +14,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Text to Emoji Converter and Emoji Translator | UltraTextGen</title>
-  <meta name="description" content="Convert text to emoji using a structured emoji language system. Copy and paste instantly.">
+  <meta name="description" content="Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/text-to-emoji/">
   <meta property="og:title" content="Text to Emoji Converter and Emoji Translator | UltraTextGen">
-  <meta property="og:description" content="Convert text to emoji using a structured emoji language system. Copy and paste instantly.">
+  <meta property="og:description" content="Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.">
   <meta property="og:url" content="https://ultratextgen.com/usecase/text-to-emoji/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/usecase-text-to-emoji.png">
@@ -26,7 +26,7 @@
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Text to Emoji Converter and Emoji Translator | UltraTextGen">
-  <meta name="twitter:description" content="Convert text to emoji using a structured emoji language system. Copy and paste instantly.">
+  <meta name="twitter:description" content="Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/usecase-text-to-emoji.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@
       "name": "What is a text to emoji converter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A text to emoji converter translates your entire sentence into a sequence of emojis that visually represent the meaning — word by word. Example: \"I love pizza\" → 👤 ❤️ ��."
+        "text": "A text to emoji converter turns your text into emoji. UltraTextGen has four modes: Emojify adds a matching emoji after each word, Replace swaps words for emoji, Letters turns each letter into an emoji letter, and Emoji → Text decodes emoji back into words. Example: \"I love pizza\" → \"I love ❤️ pizza 🍕\"."
       }
     },
     {
@@ -52,7 +52,7 @@
       "name": "How does text to emoji conversion work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The converter scans your sentence and maps each word to a matching emoji using a structured emoji language system. Words without a direct emoji match are kept as plain text."
+        "text": "Type or paste text and it converts instantly as you type — no button needed. Emojify and Replace match each word to an emoji from a built-in dictionary (with plural and tense handling); Letters maps every character to an emoji letter; Emoji → Text reverses the process. Words with no emoji match are kept as plain text."
       }
     },
     {
@@ -250,6 +250,58 @@
       transition: opacity 0.15s;
     }
     .convert-btn:hover { opacity: 0.88; }
+    /* Mode tabs (segmented control) */
+    .mode-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .mode-tab {
+      flex: 1 1 auto;
+      min-width: 120px;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: 1px solid var(--border, #e2e8f0);
+      background: var(--surface, #f8f9fa);
+      color: var(--text-muted, #64748b);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .mode-tab:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
+    .mode-tab.active {
+      background: var(--accent, #6366f1);
+      border-color: var(--accent, #6366f1);
+      color: #fff;
+    }
+    .mode-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted, #64748b);
+      margin-top: 0.6rem;
+      min-height: 1.1rem;
+    }
+    /* Starter phrase chips */
+    .phrase-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+    .phrase-chip {
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border, #e2e8f0);
+      background: none;
+      color: var(--text, #1e293b);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .phrase-chip:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
+    .phrase-chip.surprise { font-weight: 700; }
     .clear-btn {
       padding: 0.75rem 1.25rem;
       border-radius: 8px;
@@ -307,7 +359,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Convert text to emoji using a structured emoji language system. Copy and paste instantly.",
+  "description": "Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.",
   "browserRequirements": "Requires JavaScript. Works in all modern browsers."
 }
 </script>
@@ -338,13 +390,23 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-card">
-        <h1 class="hero-headline">Text to Emoji Generator</h1>
-        <p class="hero-tagline">Convert plain text into emoji using a structured emoji language system. Copy and paste instantly.</p>
+        <h1 class="hero-headline">Text to Emoji Converter</h1>
+        <p class="hero-tagline">Turn any text into emoji — instantly, as you type. Sprinkle emoji into your words, replace them, spell in emoji letters, or decode emoji back to text. Copy and paste anywhere.</p>
+
+        <div class="mode-tabs" id="modeTabs" role="tablist" aria-label="Conversion mode">
+          <button class="mode-tab active" type="button" data-mode="emojify" role="tab" aria-selected="true">✨ Emojify</button>
+          <button class="mode-tab" type="button" data-mode="replace" role="tab" aria-selected="false">🔄 Replace</button>
+          <button class="mode-tab" type="button" data-mode="letters" role="tab" aria-selected="false">🔤 Letters</button>
+          <button class="mode-tab" type="button" data-mode="decode" role="tab" aria-selected="false">↩️ Emoji → Text</button>
+        </div>
+        <p class="mode-hint" id="modeHint"></p>
 
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your sentence here…" maxlength="500"></textarea>
           <span class="char-count"><span id="charCount">0</span>/500</span>
         </div>
+
+        <div class="phrase-chips" id="phraseChips"></div>
 
         <div class="hero-convert-actions">
           <button class="convert-btn" id="convertBtn" type="button">Convert</button>
@@ -357,11 +419,11 @@
 
   <!-- Main Content -->
   <main class="container">
-    <h2 style="margin-bottom: 1rem; font-size: 1.25rem;">Structured Emoji Language</h2>
+    <h2 style="margin-bottom: 1rem; font-size: 1.25rem;">Your emoji result</h2>
 
     <!-- Output block -->
     <div class="emoji-output-block" id="outputBlock">
-      <div class="emoji-output-label">System Mode</div>
+      <div class="emoji-output-label" id="emojiOutputLabel">Result</div>
       <div class="emoji-output-text" id="emojiOutput">Your emoji translation will appear here.</div>
       <div class="emoji-output-actions">
         <button class="copy-btn" id="copyOutputBtn" type="button">Copy</button>
@@ -414,9 +476,9 @@
     </svg>
   </button>
   <div class="faq-answer">
-    A text to emoji converter translates your entire sentence into a sequence of emojis that visually represent the meaning — word by word.
+    A text to emoji converter turns your text into emoji so you can copy and paste it anywhere. UltraTextGen gives you <strong>four modes</strong>:
     <br><br>
-    For example, <strong>"I love pizza"</strong> becomes <strong>👤 ❤️ 🍕</strong>. Every word gets mapped to an emoji, turning your full message into a visual expression you can copy and paste anywhere.
+    <strong>✨ Emojify</strong> keeps your words and adds a matching emoji after each one — <strong>"I love pizza"</strong> → <strong>"I love ❤️ pizza 🍕"</strong>. <strong>🔄 Replace</strong> swaps words for emoji. <strong>🔤 Letters</strong> turns each letter into an emoji letter (great for names). <strong>↩️ Emoji → Text</strong> decodes emoji back into words.
   </div>
 </div>
 
@@ -428,7 +490,7 @@
     </svg>
   </button>
   <div class="faq-answer">
-    The converter scans your sentence and maps each word to a matching emoji using a <strong>structured emoji language system</strong>. Words without a direct emoji match are kept as plain text so your message stays readable.
+    Just type or paste your text — it converts <strong>instantly as you type</strong>, no button required. Emojify and Replace match each word to an emoji from a built-in dictionary (and handle plurals and tenses automatically); Letters maps every character to an emoji letter; Emoji → Text reverses the whole thing. Words with no emoji match stay as plain text so your message stays readable.
     <br><br>
     All emojis follow <strong>Unicode standards</strong>, so they display consistently across devices and platforms.
   </div>
@@ -608,891 +670,396 @@
   <!-- DO NOT load /script.js — this page has its own custom logic -->
 
   <script>
-    // ── Emoji Dictionary ───────────────────────────────────────────────────────
-    // Each key is a lowercase word/phrase; value is the emoji string.
-    const EMOJI_DICT = {
-      // Pronouns
-      'i': '👤👇',
-      'me': '👤👇',
-      'my': '👤👇',
-      'myself': '👤👇',
-      'you': '👤🙌',
-      'your': '👤🙌',
-      'yourself': '👤🙌',
-      'we': '👥👇',
-      'us': '👥👇',
-      'our': '👥👇',
-      'ourselves': '👥👇',
-      'he': '👤👆',
-      'him': '👤👆',
-      'his': '👤👆',
-      'she': '👤👆',
-      'her': '👤👆',
-      'hers': '👤👆',
-      'they': '👥👆',
-      'them': '👥👆',
-      'their': '👥👆',
-      'theirs': '👥👆',
-      'someone': '👤👤',
-      'somebody': '👤👤',
-      'everyone': '👤💯',
-      'everybody': '👤💯',
-      'nobody': '👤❌',
-      'this': '👇👇',
-      'these': '👇👇',
-      'that': '👆👆',
-      'those': '👆👆',
-      'it': '👆👆',
-      'here': '🗺👇',
-      'there': '🗺👆',
+    // ── Emoji lexicon: lowercase word → one emoji ───────────────────────────────
+    // Accuracy first. Synonyms share an emoji. Plurals/tenses handled at lookup.
+    const EMOJI_LEXICON = {
+      // Emotions & reactions
+      'love':'❤️','loves':'❤️','loved':'❤️','loving':'❤️','heart':'❤️','hearts':'❤️',
+      'like':'👍','likes':'👍','liked':'👍','yes':'✅','no':'❌','ok':'👌','okay':'👌',
+      'happy':'😊','happiness':'😊','glad':'😊','joy':'😄','joyful':'😄','smile':'😄','smiling':'😄',
+      'sad':'😢','unhappy':'😢','cry':'😭','crying':'😭','cried':'😭','tears':'😭','tear':'😢',
+      'angry':'😠','anger':'😠','mad':'😠','rage':'😡','furious':'😡','annoyed':'😤',
+      'laugh':'😂','laughing':'😂','laughed':'😂','lol':'😂','funny':'😂','hilarious':'🤣',
+      'scared':'😨','fear':'😨','afraid':'😱','shocked':'😱','shock':'😱','surprised':'😮','wow':'😮',
+      'tired':'😴','sleepy':'😴','exhausted':'😩','bored':'🥱','yawn':'🥱',
+      'cool':'😎','awesome':'😎','amazing':'🤩','excited':'🤩','love-struck':'😍',
+      'kiss':'😘','kisses':'😘','kissing':'😘','hug':'🤗','hugs':'🤗','hugging':'🤗',
+      'think':'🤔','thinking':'🤔','thought':'💭','confused':'😕','worried':'😟','nervous':'😬',
+      'sick':'🤒','ill':'🤒','fever':'🤒','crazy':'🤪','silly':'🤪','wink':'😉','winking':'😉',
+      'proud':'😌','relieved':'😌','calm':'😌','grateful':'🙏','thanks':'🙏','thank':'🙏','please':'🙏','pray':'🙏',
+      'strong':'💪','strength':'💪','muscle':'💪','flex':'💪','power':'💪','fight':'👊','punch':'👊',
+      'clap':'👏','clapping':'👏','applause':'👏','wave':'👋','hi':'👋','hello':'👋','hey':'👋','bye':'👋','goodbye':'👋',
+      'perfect':'💯','best':'💯','hundred':'💯','fire':'🔥','lit':'🔥','hot':'🔥',
+      'party':'🎉','celebrate':'🎉','celebration':'🎉','congrats':'🎊','congratulations':'🎊','yay':'🎉',
 
-      // Nouns & Verbs (doubled emoji)
-      'eye': '👁️👁️',
-      'eyes': '👁️👁️',
-      'see': '👁️👁️',
-      'look': '👁️👁️',
-      'watch': '👁️👁️',
-      'view': '👁️👁️',
-      'peer': '👁️👁️',
-      'observe': '👁️👁️',
-      'notice': '👁️👁️',
-      'spot': '👁️👁️',
-      'witness': '👁️👁️',
-      'stare': '👁️👁️',
-      'glance': '👁️👁️',
-      'glimpse': '👁️👁️',
-      'mouth': '👄👄',
-      'eat': '👄👄',
-      'chew': '👄👄',
-      'swallow': '👄👄',
-      'ear': '👂👂',
-      'hear': '👂👂',
-      'listen': '👂👂',
-      'brain': '🧠🧠',
-      'know': '🧠🧠',
-      'understand': '🧠🧠',
-      'thought': '💭💭',
-      'think': '💭💭',
-      'consider': '💭💭',
-      'tongue': '👅👅',
-      'lick': '👅👅',
-      'taste': '👅👅',
-      'speech': '🗣️🗣️',
-      'talk': '🗣️🗣️',
-      'speak': '🗣️🗣️',
-      'say': '🗣️🗣️',
-      'tell': '🗣️🗣️',
-      'said': '🗣️🗣️',
-      'spoke': '🗣️🗣️',
-      'talking': '🗣️🗣️',
-      'walking': '🚶‍♂️🚶‍♂️',
-      'go': '🚶‍♂️🚶‍♂️',
-      'walk': '🚶‍♂️🚶‍♂️',
-      'went': '🚶‍♂️🚶‍♂️',
-      'gone': '🚶‍♂️🚶‍♂️',
-      'going': '🚶‍♂️🚶‍♂️',
-      'ability': '💪💪',
-      'can': '💪💪',
-      'able': '💪💪',
-      'work': '⚙️⚙️',
-      'function': '⚙️⚙️',
-      'operate': '⚙️⚙️',
-      'worked': '⚙️⚙️',
-      'working': '⚙️⚙️',
-      'book': '📖📖',
-      'read': '📖📖',
-      'reading': '📖📖',
-      'house': '🏡🏡',
-      'home': '🏡🏡',
-      'live': '🏡🏡',
-      'living': '🏡🏡',
-      'factory': '🏭🏭',
-      'make': '🏭🏭',
-      'do': '🏭🏭',
-      'build': '🏭🏭',
-      'create': '🏭🏭',
-      'made': '🏭🏭',
-      'did': '🏭🏭',
-      'done': '🏭🏭',
-      'built': '🏭🏭',
-      'created': '🏭🏭',
-      'making': '🏭🏭',
-      'doing': '🏭🏭',
-      'building': '🏭🏭',
-      'creating': '🏭🏭',
-      'sleep': '😴😴',
-      'rest': '😴😴',
-      'sleeping': '😴😴',
-      'slept': '😴😴',
-      'hold': '🤲🤲',
-      'have': '🤲🤲',
-      'possess': '🤲🤲',
-      'own': '🤲🤲',
-      'had': '🤲🤲',
-      'held': '🤲🤲',
-      'having': '🤲🤲',
-      'gift': '🎁🎁',
-      'give': '🎁🎁',
-      'gave': '🎁🎁',
-      'given': '🎁🎁',
-      'giving': '🎁🎁',
-      'box': '📦📦',
-      'thing': '📦📦',
-      'package': '📦📦',
-      'help': '⛑️⛑️',
-      'assist': '⛑️⛑️',
-      'helped': '⛑️⛑️',
-      'helping': '⛑️⛑️',
-      'laugh': '😂😂',
-      'laughed': '😂😂',
-      'laughing': '😂😂',
-      'run': '🏃🏼🏃🏼',
-      'sprint': '🏃🏼🏃🏼',
-      'ran': '🏃🏼🏃🏼',
-      'running': '🏃🏼🏃🏼',
-      'like': '👍👍',
-      'approve': '👍👍',
-      'liked': '👍👍',
-      'liking': '👍👍',
-      'dislike': '👎👎',
-      'hate': '👎👎',
-      'hated': '👎👎',
-      'hating': '👎👎',
-      'love': '❤️❤️',
-      'adore': '❤️❤️',
-      'loved': '❤️❤️',
-      'loving': '❤️❤️',
-      'car': '🚗🚗',
-      'drive': '🚗🚗',
-      'drove': '🚗🚗',
-      'driving': '🚗🚗',
-      'vote': '🗳️🗳️',
-      'decide': '🗳️🗳️',
-      'choose': '🗳️🗳️',
-      'chose': '🗳️🗳️',
-      'chosen': '🗳️🗳️',
-      'name': '🪪🪪',
-      'identity': '🪪🪪',
-      'feel': '💛💛',
-      'sense': '💛💛',
-      'felt': '💛💛',
-      'feeling': '💛💛',
-      'jump': '🦘🦘',
-      'leap': '🦘🦘',
-      'jumped': '🦘🦘',
-      'jumping': '🦘🦘',
-      'fly': '🦅🦅',
-      'soar': '🦅🦅',
-      'flew': '🦅🦅',
-      'flying': '🦅🦅',
-      'kiss': '😘😘',
-      'kissed': '😘😘',
-      'kissing': '😘😘',
-      'smile': '😀😀',
-      'happy': '😀😀',
-      'smiled': '😀😀',
-      'smiling': '😀😀',
-      'cry': '😭😭',
-      'weep': '😭😭',
-      'cried': '😭😭',
-      'crying': '😭😭',
-      'foot': '🦶🦶',
-      'step': '🦶🦶',
-      'kick': '🦶🦶',
-      'luck': '🍀🍀',
-      'lucky': '🍀🍀',
-      'plant': '🌱🌱',
-      'grow': '🌱🌱',
-      'grew': '🌱🌱',
-      'growing': '🌱🌱',
-      'wish': '🌠🌠',
-      'hope': '🌠🌠',
-      'wished': '🌠🌠',
-      'hoping': '🌠🌠',
-      'scissors': '✂️✂️',
-      'cut': '✂️✂️',
-      'cutting': '✂️✂️',
-      'stop': '🛑🛑',
-      'halt': '🛑🛑',
-      'stopped': '🛑🛑',
-      'stopping': '🛑🛑',
-      'fire': '🔥🔥',
-      'burn': '🔥🔥',
-      'burned': '🔥🔥',
-      'burning': '🔥🔥',
-      'soccer': '⚽⚽',
+      // People, family, pronouns
+      'i':'👤','me':'👤','my':'👤','myself':'👤','you':'👤','your':'👤','he':'👤','him':'👤','she':'👤','her':'👤',
+      'we':'👥','us':'👥','they':'👥','them':'👥','people':'👥','crowd':'👥','everyone':'👥','group':'👥','team':'👥',
+      'person':'🧍','human':'🧍','man':'👨','men':'👨','guy':'👨','boy':'👦','boys':'👦',
+      'woman':'👩','women':'👩','girl':'👧','girls':'👧','lady':'👩',
+      'baby':'👶','babies':'👶','child':'🧒','kid':'🧒','kids':'🧒','children':'🧒',
+      'mom':'👩','mother':'👩','mum':'👩','mommy':'👩','dad':'👨','father':'👨','daddy':'👨',
+      'family':'👪','parents':'👪','grandma':'👵','grandmother':'👵','grandpa':'👴','grandfather':'👴',
+      'friend':'🧑‍🤝‍🧑','friends':'🧑‍🤝‍🧑','buddy':'🧑‍🤝‍🧑','couple':'💑',
+      'king':'👑','queen':'👑','crown':'👑','royal':'👑','prince':'🤴','princess':'👸',
+      'baby-angel':'👼','angel':'👼','devil':'😈','ghost':'👻','robot':'🤖','alien':'👽','superhero':'🦸',
+      'doctor':'👨‍⚕️','nurse':'👩‍⚕️','police':'👮','cop':'👮','chef':'👨‍🍳','teacher':'🧑‍🏫',
+      'santa':'🎅','clown':'🤡','cowboy':'🤠','ninja':'🥷','zombie':'🧟','vampire':'🧛',
 
-      // Compound Nouns/Verbs (two different emoji)
-      'learn': '🧠🧑‍🎓',
-      'study': '🧠🧑‍🎓',
-      'learned': '🧠🧑‍🎓',
-      'studied': '🧠🧑‍🎓',
-      'learning': '🧠🧑‍🎓',
-      'studying': '🧠🧑‍🎓',
-      'remember': '🧠🎗️',
-      'recall': '🧠🎗️',
-      'remembered': '🧠🎗️',
-      'remembering': '🧠🎗️',
-      'forget': '🧠➖',
-      'forgot': '🧠➖',
-      'forgetting': '🧠➖',
-      'receive': '🎁⬅️',
-      'get': '🎁⬅️',
-      'obtain': '🎁⬅️',
-      'got': '🎁⬅️',
-      'gotten': '🎁⬅️',
-      'getting': '🎁⬅️',
-      'receiving': '🎁⬅️',
-      'take': '🤲⬅️',
-      'steal': '🤲⬅️',
-      'took': '🤲⬅️',
-      'taken': '🤲⬅️',
-      'taking': '🤲⬅️',
-      'dream': '😴💭',
-      'fantasize': '😴💭',
-      'dreamed': '😴💭',
-      'dreamt': '😴💭',
-      'dreaming': '😴💭',
-      'want': '😍💎',
-      'desire': '😍💎',
-      'crave': '😍💎',
-      'wanted': '😍💎',
-      'wanting': '😍💎',
-      'use': '🤲⚙️',
-      'utilize': '🤲⚙️',
-      'used': '🤲⚙️',
-      'using': '🤲⚙️',
-      'need': '🤲🚨',
-      'must': '🤲🚨',
-      'needed': '🤲🚨',
-      'needing': '🤲🚨',
-      'bring': '🤲🚶‍♂️',
-      'carry': '🤲🚶‍♂️',
-      'deliver': '🤲🚶‍♂️',
-      'brought': '🤲🚶‍♂️',
-      'carrying': '🤲🚶‍♂️',
-      'delivering': '🤲🚶‍♂️',
-      'ask': '🗣️❓',
-      'inquire': '🗣️❓',
-      'asked': '🗣️❓',
-      'asking': '🗣️❓',
-      'joke': '🗣️😂',
-      'jest': '🗣️😂',
-      'joked': '🗣️😂',
-      'joking': '🗣️😂',
-      'school': '🏛️🧑‍🏫',
-      'academy': '🏛️🧑‍🏫',
-      'university': '🏛️🧑‍🏫',
-      'college': '🏛️🧑‍🏫',
-      'clothes': '👕👖',
-      'wear': '👕👖',
-      'wore': '👕👖',
-      'wearing': '👕👖',
-      'become': '🐛🦋',
-      'transform': '🐛🦋',
-      'change': '🐛🦋',
-      'became': '🐛🦋',
-      'changed': '🐛🦋',
-      'becoming': '🐛🦋',
-      'changing': '🐛🦋',
-      'share': '🤲↔️',
-      'distribute': '🤲↔️',
-      'shared': '🤲↔️',
-      'sharing': '🤲↔️',
-      'show': '🤲👁️',
-      'display': '🤲👁️',
-      'showed': '🤲👁️',
-      'showing': '🤲👁️',
-      'follow': '🦆🐥',
-      'chase': '🦆🐥',
-      'followed': '🦆🐥',
-      'following': '🦆🐥',
+      // Face & body
+      'eye':'👁️','eyes':'👀','see':'👀','look':'👀','looking':'👀','watch':'👀','watching':'👀','stare':'👀',
+      'ear':'👂','hear':'👂','listen':'👂','listening':'👂','nose':'👃','smell':'👃',
+      'mouth':'👄','lips':'👄','tongue':'👅','tooth':'🦷','teeth':'🦷','bone':'🦴',
+      'brain':'🧠','mind':'🧠','smart':'🧠','genius':'🧠','hand':'✋','hands':'✋','foot':'🦶','feet':'🦶','leg':'🦵',
+      'hair':'💇','beard':'🧔','point':'👉','thumbs':'👍','ok-hand':'👌','pray-hands':'🙏',
 
-      // Tenses
-      'now': '🕚👇',
-      'present': '🕑👇',
-      'future': '🕑🔮',
-      'will': '🔜',
-      'would': '🕑🤷🏼',
-      'could': '🕑🤷🏼',
-      'might': '🕑🤷🏼',
-      'should': '🕑❗️',
+      // Food
+      'food':'🍽️','eat':'🍽️','eating':'🍽️','ate':'🍽️','hungry':'🍽️','meal':'🍽️','dinner':'🍽️','lunch':'🍽️',
+      'pizza':'🍕','burger':'🍔','hamburger':'🍔','fries':'🍟','hotdog':'🌭','sandwich':'🥪','taco':'🌮','burrito':'🌯',
+      'chicken':'🍗','meat':'🍖','steak':'🥩','bacon':'🥓','egg':'🥚','eggs':'🥚','cheese':'🧀',
+      'bread':'🍞','toast':'🍞','croissant':'🥐','pancake':'🥞','pancakes':'🥞','waffle':'🧇','pretzel':'🥨',
+      'rice':'🍚','noodles':'🍜','ramen':'🍜','soup':'🍲','sushi':'🍣','salad':'🥗','pasta':'🍝','spaghetti':'🍝',
+      'apple':'🍎','banana':'🍌','orange':'🍊','lemon':'🍋','grapes':'🍇','strawberry':'🍓','cherry':'🍒','cherries':'🍒',
+      'peach':'🍑','watermelon':'🍉','pineapple':'🍍','mango':'🥭','coconut':'🥥','kiwi':'🥝','avocado':'🥑',
+      'tomato':'🍅','carrot':'🥕','corn':'🌽','potato':'🥔','pepper':'🌶️','broccoli':'🥦','mushroom':'🍄','onion':'🧅','garlic':'🧄',
+      'cake':'🍰','birthday':'🎂','cupcake':'🧁','pie':'🥧','cookie':'🍪','cookies':'🍪','chocolate':'🍫','candy':'🍬',
+      'lollipop':'🍭','donut':'🍩','doughnut':'🍩','icecream':'🍦','honey':'🍯','popcorn':'🍿','salt':'🧂',
+      'coffee':'☕','tea':'🍵','milk':'🥛','juice':'🧃','water':'💧','beer':'🍺','wine':'🍷','cocktail':'🍸',
+      'drink':'🥤','soda':'🥤','champagne':'🍾','cheers':'🍻','bottle':'🍾',
 
-      // Negation
-      'not': '❌❌',
-      'no': '❌❌',
-      "don't": '❌❌',
-      'dont': '❌❌',
-      "doesn't": '❌❌',
-      'doesnt': '❌❌',
-      "didn't": '❌❌',
-      'didnt': '❌❌',
-      "won't": '❌❌',
-      'wont': '❌❌',
-      "can't": '❌❌',
-      'cant': '❌❌',
-      'never': '❌❌',
+      // Animals
+      'dog':'🐶','dogs':'🐶','puppy':'🐶','cat':'🐱','cats':'🐱','kitten':'🐱','mouse':'🐭','rat':'🐀','hamster':'🐹',
+      'rabbit':'🐰','bunny':'🐰','fox':'🦊','bear':'🐻','panda':'🐼','koala':'🐨','tiger':'🐯','lion':'🦁',
+      'cow':'🐮','pig':'🐷','frog':'🐸','monkey':'🐵','chicken-animal':'🐔','penguin':'🐧','bird':'🐦','birds':'🐦',
+      'chick':'🐤','duck':'🦆','eagle':'🦅','owl':'🦉','bat':'🦇','wolf':'🐺','horse':'🐴','unicorn':'🦄','zebra':'🦓',
+      'deer':'🦌','giraffe':'🦒','elephant':'🐘','rhino':'🦏','hippo':'🦛','camel':'🐫',
+      'snake':'🐍','turtle':'🐢','lizard':'🦎','dinosaur':'🦖','dragon':'🐲','crocodile':'🐊',
+      'whale':'🐳','dolphin':'🐬','fish':'🐟','fishes':'🐟','shark':'🦈','octopus':'🐙','crab':'🦀','shrimp':'🦐',
+      'snail':'🐌','butterfly':'🦋','bug':'🐛','ant':'🐜','bee':'🐝','ladybug':'🐞','spider':'🕷️','scorpion':'🦂',
+      'sheep':'🐑','goat':'🐐','chipmunk':'🐿️','hedgehog':'🦔','bat-animal':'🦇','paw':'🐾','paws':'🐾',
 
-      // Adjectives (single base emoji — no 💛 suffix)
-      'good': '👍',
-      'great': '👍',
-      'bad': '👎',
-      'terrible': '👎',
-      'new': '👒',
-      'young': '👒',
-      'slow': '🐌',
-      'fast': '🐆',
-      'quick': '🐆',
-      'old': '👵',
-      'aged': '👵',
-      'first': '🥇',
-      'last': '🏁',
-      'final': '🏁',
-      'long': '🐍',
-      'short': '🤏',
-      'brief': '🤏',
-      'big': '🐘',
-      'large': '🐘',
-      'huge': '🐘',
-      'small': '🐜',
-      'little': '🐜',
-      'tiny': '🐜',
-      'tall': '🌲',
-      'high': '🌲',
-      'other': '👽',
-      'different': '👽',
-      'same': '🟰',
-      'identical': '🟰',
-      'similar': '〰️',
-      'right': '✅',
-      'correct': '✅',
-      'wrong': '❌',
-      'incorrect': '❌',
-      'important': '❗️',
-      'crucial': '❗️',
-      'public': '👥',
-      'next': '⏭️',
-      'previous': '⏮️',
-      'prior': '⏮️',
-      'many': '✖️',
-      'few': '➖',
-      'all': '💯',
-      'every': '💯',
-      'entire': '💯',
-      'empty': '🪫',
-      'more': '➕',
-      'early': '🌄',
-      'late': '🌃',
-      'strong': '💪',
-      'powerful': '💪',
-      'pretty': '💐',
-      'beautiful': '💐',
-      'thankful': '🙏',
-      'grateful': '🙏',
-      'gentle': '☁️',
-      'soft': '☁️',
-      'kind': '☺️',
-      'friendly': '☺️',
-      'helpful': '⛑️',
-      'silly': '🤡',
-      'foolish': '🤡',
-      'salty': '🧂',
-      'sweet': '🍭',
-      'sour': '🍋',
-      'bitter': '🍋',
+      // Nature & weather
+      'sun':'☀️','sunny':'☀️','sunshine':'☀️','moon':'🌙','moonlight':'🌙','star':'⭐','stars':'⭐',
+      'night':'🌙','morning':'🌅','sunrise':'🌅','sunset':'🌇','dawn':'🌄',
+      'cloud':'☁️','clouds':'☁️','cloudy':'☁️','rain':'🌧️','rainy':'🌧️','raining':'🌧️','storm':'⛈️','thunder':'⛈️',
+      'lightning':'⚡','snow':'❄️','snowing':'❄️','snowflake':'❄️','snowman':'⛄','cold':'🥶','freezing':'🥶',
+      'rainbow':'🌈','wind':'💨','windy':'💨','tornado':'🌪️','fog':'🌫️','umbrella':'☂️',
+      'flower':'🌸','flowers':'🌸','rose':'🌹','roses':'🌹','tulip':'🌷','sunflower':'🌻','blossom':'🌼','bouquet':'💐',
+      'tree':'🌳','trees':'🌳','forest':'🌲','palm':'🌴','cactus':'🌵','leaf':'🍃','leaves':'🍃','plant':'🌱','seedling':'🌱',
+      'grass':'🌿','clover':'🍀','luck':'🍀','lucky':'🍀','mushroom-nature':'🍄',
+      'earth':'🌍','world':'🌍','globe':'🌍','planet':'🪐','space':'🌌','galaxy':'🌌','comet':'☄️','meteor':'☄️',
+      'mountain':'⛰️','mountains':'🏔️','volcano':'🌋','ocean':'🌊','sea':'🌊','wave':'🌊','waves':'🌊','beach':'🏖️',
+      'water-nature':'💧','drop':'💧','fire-nature':'🔥','flame':'🔥','ice':'🧊',
 
-      // Colors
-      'red': '🟥🟥',
-      'orange': '🟧🟧',
-      'yellow': '🟨🟨',
-      'green': '🟩🟩',
-      'blue': '🟦🟦',
-      'purple': '🟪🟪',
-      'black': '⬛️⬛️',
-      'white': '⬜️⬜️',
-      'brown': '🟫🟫',
-      'pink': '🟥⬜️',
-      'teal': '🟦🟩',
-      'cyan': '🟦🟩',
-      'gray': '⬛️⬜️',
-      'grey': '⬛️⬜️',
-      'navy': '🟦⬛️',
-      'lilac': '🟪⬜️',
-      'lavender': '🟪⬜️',
-      'cream': '⬜️🟨',
-      'ivory': '⬜️🟨',
-      'beige': '⬜️🟨',
+      // Activities & verbs
+      'run':'🏃','running':'🏃','ran':'🏃','jog':'🏃','walk':'🚶','walking':'🚶','walked':'🚶',
+      'dance':'💃','dancing':'💃','danced':'💃','sing':'🎤','singing':'🎤','sang':'🎤','song':'🎵','music':'🎵',
+      'sleep':'😴','sleeping':'😴','slept':'😴','rest':'😴','dream':'💤','dreams':'💤','dreaming':'💤',
+      'swim':'🏊','swimming':'🏊','surf':'🏄','surfing':'🏄','dive':'🤿','diving':'🤿',
+      'drive':'🚗','driving':'🚗','drove':'🚗','fly':'✈️','flying':'✈️','flew':'✈️','travel':'✈️','trip':'🧳','vacation':'🏖️',
+      'read':'📖','reading':'📖','write':'✍️','writing':'✍️','wrote':'✍️','draw':'🎨','drawing':'🎨','paint':'🎨',
+      'play':'🎮','playing':'🎮','game':'🎮','gaming':'🎮','games':'🎮','win':'🏆','winner':'🏆','won':'🏆','trophy':'🏆',
+      'work':'💼','working':'💼','worked':'💼','job':'💼','business':'💼','study':'📚','studying':'📚','learn':'📚',
+      'cook':'🍳','cooking':'🍳','bake':'🍞','shop':'🛍️','shopping':'🛒','buy':'🛒','sell':'💰',
+      'call':'📞','calling':'📞','phone':'📱','text':'💬','texting':'💬','message':'💬','chat':'💬','talk':'🗣️','talking':'🗣️','say':'🗣️','speak':'🗣️',
+      'jump':'🤸','climb':'🧗','climbing':'🧗','ride':'🚴','bike':'🚴','cycling':'🚴',
+      'kiss-verb':'💋','laugh-verb':'😂','build':'🔨','make':'🔨','fix':'🔧','repair':'🔧','clean':'🧹','wash':'🧼',
+      'search':'🔍','find':'🔍','look-for':'🔍','found':'🔍','cut':'✂️','photo':'📷','picture':'📷','camera':'📷',
+      'grow':'📈','grew':'📈','win-up':'📈','fall':'📉','drop-down':'📉','stop':'🛑','go':'✅','wait':'⏳',
 
-      // Prepositions (spatial)
-      'toward': '➡️➡️',
-      'up': '⬆️⬆️',
-      'down': '⬇️⬇️',
-      'over': '↗️↘️',
-      'above': '↗️↘️',
-      'under': '↘️↗️',
-      'below': '↘️↗️',
-      'on': '⤵️⤵️',
-      'onto': '⤵️⤵️',
-      'against': '➡️⏸️',
-      'beyond': '⏸️➡️',
-      'behind': '⏺️⏸️',
-      'between': '➡️⬅️',
-      'among': '➡️⬅️',
-      'through': '↔️↔️',
-      'across': '↔️↔️',
-      'near': '↪️⏸️',
-      'close': '↪️⏸️',
-      'far': '↩️⏸️',
-      'distant': '↩️⏸️',
-      'around': '↪️↩️',
+      // Objects, tech, money
+      'money':'💰','cash':'💵','dollar':'💵','dollars':'💵','rich':'🤑','coin':'🪙','coins':'🪙','bank':'🏦','card':'💳',
+      'gem':'💎','diamond':'💎','ring':'💍','gift':'🎁','present':'🎁','gifts':'🎁','box':'📦','package':'📦',
+      'computer':'💻','laptop':'💻','pc':'💻','keyboard':'⌨️','mouse-tech':'🖱️','tablet':'📱','tv':'📺','television':'📺',
+      'camera-obj':'📷','video':'📹','film':'🎬','movie':'🎬','movies':'🎬','cinema':'🎬','popcorn-movie':'🍿',
+      'book':'📚','books':'📚','notebook':'📓','pen':'🖊️','pencil':'✏️','paper':'📄','note':'📝','notes':'📝','letter':'✉️','mail':'📧','email':'📧',
+      'clock':'🕐','time':'⏰','watch-time':'⌚','alarm':'⏰','hourglass':'⏳','calendar':'📅','date':'📅',
+      'tonight':'🌙','today':'☀️','tomorrow':'📅','yesterday':'📅','week':'📅','weekend':'🎉','month':'📅','year':'📅','now':'⏰','soon-time':'⏳','later':'⏳','birthday-day':'🎂',
+      'key':'🔑','keys':'🔑','lock':'🔒','locked':'🔒','unlock':'🔓','door':'🚪','window':'🪟','bell':'🔔',
+      'light':'💡','idea':'💡','bulb':'💡','flashlight':'🔦','candle':'🕯️','battery':'🔋','plug':'🔌',
+      'phone-obj':'📱','mobile':'📱','headphones':'🎧','microphone':'🎤','speaker':'🔊','radio':'📻',
+      'scissors':'✂️','hammer':'🔨','wrench':'🔧','knife':'🔪','gun':'🔫','bomb':'💣','shield':'🛡️','sword':'⚔️',
+      'medal':'🏅','award':'🏅','flag':'🚩','balloon':'🎈','balloons':'🎈','confetti':'🎊',
+      'pill':'💊','medicine':'💊','syringe':'💉','shot':'💉','bandage':'🩹','thermometer':'🌡️',
+      'trash':'🗑️','recycle':'♻️','magnet':'🧲','telescope':'🔭','microscope':'🔬','dna':'🧬','test':'🧪',
+      'brush':'🖌️','crayon':'🖍️','pushpin':'📌','pin':'📌','clip':'📎','ruler':'📏','folder':'📁','chart':'📊','graph':'📈',
 
-      // Prepositions (manner)
-      'with': '🤝➡️',
-      'without': '❌➡️',
-      'except': '❌➡️',
-      'about': '🔄🔄',
-      'regarding': '🔄🔄',
+      // Places & buildings
+      'home':'🏠','house':'🏠','houses':'🏠','apartment':'🏢','building':'🏢','office':'🏢','city':'🏙️','town':'🏘️',
+      'school':'🏫','university':'🎓','college':'🎓','graduate':'🎓','graduation':'🎓','hospital':'🏥','church':'⛪',
+      'store':'🏪','shop-place':'🏪','market':'🏬','hotel':'🏨','restaurant':'🍴','cafe':'☕','gym':'🏋️',
+      'castle':'🏰','tent':'⛺','camp':'⛺','farm':'🚜','factory':'🏭','bridge':'🌉','tower':'🗼','statue':'🗽',
+      'park':'🏞️','garden':'🌷','pool':'🏊','stadium':'🏟️','island':'🏝️','desert':'🏜️',
 
-      // Prepositions (time)
-      'during': '🕑⤵️',
-      'while': '🕑⤵️',
+      // Transport
+      'car':'🚗','cars':'🚗','taxi':'🚕','bus':'🚌','truck':'🚚','train':'🚆','subway':'🚇','tram':'🚊',
+      'plane':'✈️','airplane':'✈️','flight':'✈️','helicopter':'🚁','rocket':'🚀','ship':'🚢','boat':'⛵','sailboat':'⛵',
+      'bicycle':'🚲','motorcycle':'🏍️','scooter':'🛴','skateboard':'🛹','wheel':'🎡','anchor':'⚓','fuel':'⛽','gas':'⛽',
 
-      // Time words
-      'second': '⏱️➗',
-      'seconds': '⏱️➗',
-      'minute': '⏱️⏱️',
-      'minutes': '⏱️⏱️',
-      'hour': '⏱️💯',
-      'hours': '⏱️💯',
-      'day': '☀️☀️',
-      'days': '☀️☀️',
-      'night': '🌃🌃',
-      'morning': '🌄🌄',
-      'dawn': '🌄🌄',
-      'evening': '🌅🌅',
-      'sunset': '🌅🌅',
-      'week': '🗓️➗',
-      'month': '🗓️🗓️',
-      'year': '🗓️💯',
-      'today': '☀️👇',
-      'tonight': '🌃👇',
-      'yesterday': '☀️⬅️',
-      'tomorrow': '☀️➡️',
-      'monday': '☀️1️⃣',
-      'tuesday': '☀️2️⃣',
-      'wednesday': '☀️3️⃣',
-      'thursday': '☀️4️⃣',
-      'friday': '☀️5️⃣',
-      'saturday': '☀️6️⃣',
-      'sunday': '☀️7️⃣',
+      // Sports & hobbies
+      'soccer':'⚽','football':'⚽','basketball':'🏀','baseball':'⚾','tennis':'🎾','volleyball':'🏐','rugby':'🏉',
+      'golf':'⛳','bowling':'🎳','boxing':'🥊','ski':'🎿','skiing':'⛷️','snowboard':'🏂','skate':'⛸️',
+      'run-sport':'🏃','yoga':'🧘','meditate':'🧘','weights':'🏋️','lift':'🏋️','fishing':'🎣',
+      'chess':'♟️','dice':'🎲','dart':'🎯','target':'🎯','goal':'🎯','cards':'🃏','puzzle':'🧩','art':'🎨',
+      'guitar':'🎸','piano':'🎹','drum':'🥁','drums':'🥁','trumpet':'🎺','violin':'🎻','saxophone':'🎷','note-music':'🎵','notes-music':'🎶',
+      'circus':'🎪','ticket':'🎫','theater':'🎭','mask':'🎭','microphone-hobby':'🎤','headphone':'🎧',
 
-      // Clock times
-      '1:00': '🕐🕐',
-      '2:00': '🕑🕑',
-      '3:00': '🕒🕒',
-      '4:00': '🕓🕓',
-      '5:00': '🕔🕔',
-      '6:00': '🕕🕕',
-      '7:00': '🕖🕖',
-      '8:00': '🕗🕗',
-      '9:00': '🕘🕘',
-      '10:00': '🕙🕙',
-      '11:00': '🕚🕚',
-      '12:00': '🕛🕛',
-      'noon': '🕛🕛',
-      'midnight': '🕛🕛',
-
-      // Conjunctions (coordinating)
-      'also': '➕➡️',
-      'plus': '➕➡️',
-      'but': '➖➡️',
-      'yet': '➖➡️',
-      'however': '➖➡️',
-      'or': '⚖️➡️',
-      'either': '⚖️➡️',
-
-      // Conjunctions (subordinating)
-      'because': '🔗➡️',
-      'since': '🔗➡️',
-      'therefore': '🔗⬅️',
-      'thus': '🔗⬅️',
-      'hence': '🔗⬅️',
-      'if': '💡➡️',
-      'unless': '💡➡️',
-      'though': '🤲➡️',
-      'although': '🤲➡️',
-      'so': '⚙️➡️',
-
-      // Relative clauses
-      'which': '⏭️⏭️',
-      'who': '⏭️⏭️',
-      'whom': '⏭️⏭️',
-
-      // Question words
-      'what': '❓❓',
-      'where': '🗺️❓',
-      'when': '🕑❓',
-      'why': '✨❓',
-      'how': '⚙️❓',
-
-      // Directions
-      'north': '🧭⬆️',
-      'south': '🧭⬇️',
-      'east': '🧭➡️',
-      'west': '🧭⬅️',
-      'left': '👈👈',
-      'straight': '⏸️⏺️',
-      'forward': '⏸️⏺️',
-      'back': '⏺️⏸️',
-
-      // World
-      'world': '🌎🌏',
-      'earth': '🌎🌏',
+      // Symbols, time, holidays, misc
+      'christmas':'🎄','xmas':'🎄','tree-christmas':'🎄','halloween':'🎃','pumpkin':'🎃','easter':'🐰','valentine':'💝',
+      'newyear':'🎆','fireworks':'🎆','sparkler':'🎇','sparkles':'✨','magic':'✨','shine':'✨','glitter':'✨',
+      'peace':'☮️','yin':'☯️','infinity':'♾️','warning':'⚠️','danger':'⚠️','check':'✅','cross':'❌','wrong':'❌',
+      'question':'❓','exclamation':'❗','plus':'➕','add':'➕','minus':'➖','equals':'🟰','percent':'💯',
+      'up':'⬆️','down':'⬇️','left':'⬅️','right':'➡️','back':'🔙','soon':'🔜','top':'🔝','new':'🆕','free':'🆓','cool-sign':'🆒',
+      'red':'🔴','green':'🟢','blue':'🔵','yellow':'🟡','orange-color':'🟠','purple':'🟣','black':'⚫','white':'⚪',
+      'small':'🤏','big':'🫸','fast':'💨','slow':'🐌','loud':'📢','quiet':'🤫','secret':'🤫','shh':'🤫',
+      'clean-sparkle':'✨','poop':'💩','skull':'💀','dead':'💀','death':'💀','alien-symbol':'👾','game-over':'👾',
+      'medal-first':'🥇','first':'🥇','second':'🥈','third':'🥉','number-one':'🥇',
+      'baby-bottle':'🍼','pacifier':'🍼','footprint':'👣','footprints':'👣','muscle-arm':'💪',
+      'blood':'🩸','sweat':'💦','splash':'💦','zzz':'💤','anger-symbol':'💢','dizzy':'💫','boom':'💥','explosion':'💥',
+      'hole':'🕳️','speech':'💬','thought-bubble':'💭','eye-speech':'👁️‍🗨️','hundred-points':'💯'
     };
 
-    // Multi-word phrases (matched BEFORE single words, longest first)
-    const MULTI_WORD_PHRASES = [
-      // 4-word phrases first
-      ['last night', '🌃⬅️'],
-      ['tomorrow night', '🌃➡️'],
-      ['north america', '🌎⬆️'],
-      ['south america', '🌎⬇️'],
-      ['day before yesterday', '☀️⬅️⬅️'],
-      // 3-word phrases
-      ['in order to', '⚙️➡️'],
-      ['as much as', '🟰➡️'],
-      ['in case of', '💡➡️'],
-      ['how much money', '💰❓'],
-      ['how much', '#️⃣❓'],
-      ['how many', '#️⃣❓'],
-      // 2-word phrases
-      ['pick up', '🤲⬆️'],
-      ['put down', '🤲⬇️'],
-      ['light green', '🟩⬜️'],
-      ['dark blue', '🟦⬛️'],
-      ['dark brown', '🟫⬛️'],
-      ['next to', '⬇️⏸️'],
-      ['due to', '🔗➡️'],
-      ['because of', '🔗➡️'],
-      ['similar to', '〰️➡️'],
-      ['according to', '🗣️⬅️'],
-      ['out of', '🚪➡️'],
-      ['come in', '🚪⬅️'],
-      ['go out', '🚪➡️'],
-      ['play soccer', '⚽⚽'],
-      ['going to', '🔜'],
+    // ── Reverse map: emoji → best plain-English word (Emoji → Text mode) ─────────
+    const EMOJI_TO_WORD = {
+      '❤️':'love','💛':'love','💚':'love','💙':'love','💜':'love','🧡':'love','🖤':'love','🤍':'love','💕':'love','💖':'love','💗':'love','💓':'love','💞':'love','💘':'love','💝':'love',
+      '👍':'yes','👎':'no','✅':'yes','❌':'no','👌':'okay','🙏':'thanks','👏':'clap','👋':'hi','🤝':'deal','✊':'fist','👊':'punch','✌️':'peace','🤞':'luck','🤙':'call','💪':'strong','🫶':'love',
+      '😊':'happy','😄':'happy','😃':'happy','😁':'happy','🙂':'happy','😆':'laugh','😂':'laugh','🤣':'laugh','😅':'sweat','😉':'wink','😍':'love','🥰':'love','😘':'kiss','😗':'kiss','😙':'kiss',
+      '😢':'sad','😭':'cry','😞':'sad','😔':'sad','🙁':'sad','☹️':'sad','😟':'worried','😥':'sad','😩':'tired','😫':'tired','😴':'sleep','😪':'sleepy','🥱':'bored',
+      '😠':'angry','😡':'angry','🤬':'angry','😤':'annoyed','😱':'scared','😨':'scared','😰':'nervous','😳':'shocked','😮':'wow','😲':'wow','🤯':'mind-blown',
+      '😎':'cool','🤩':'amazing','🥳':'party','😏':'smirk','😐':'meh','😑':'blank','🙄':'eyeroll','😬':'nervous','🤔':'thinking','🤗':'hug','🤒':'sick','🤢':'sick','🤮':'sick','🥶':'cold','🥵':'hot','🤪':'crazy','😇':'angel','🤠':'cowboy','🥺':'please','😈':'devil','🤡':'clown',
+      '💯':'perfect','🔥':'fire','⭐':'star','🌟':'star','✨':'sparkles','💫':'dizzy','💥':'boom','💢':'anger','💦':'sweat','💤':'sleep','🎉':'party','🎊':'celebrate','🎈':'balloon','🎁':'gift',
+      '👤':'i','👥':'we','🧍':'person','👨':'man','👩':'woman','👦':'boy','👧':'girl','👶':'baby','🧒':'kid','👪':'family','👴':'grandpa','👵':'grandma','👑':'king','🤴':'prince','👸':'princess','👼':'angel','👻':'ghost','🤖':'robot','👽':'alien','🎅':'santa',
+      '👁️':'eye','👀':'look','👂':'ear','👃':'nose','👄':'mouth','👅':'tongue','🦷':'tooth','🧠':'brain','✋':'hand','🦶':'foot','👣':'footprints','💀':'dead','💩':'poop',
+      '🍕':'pizza','🍔':'burger','🍟':'fries','🌭':'hotdog','🥪':'sandwich','🌮':'taco','🌯':'burrito','🍗':'chicken','🍖':'meat','🥩':'steak','🥓':'bacon','🥚':'egg','🧀':'cheese','🍞':'bread','🥐':'croissant','🥞':'pancakes','🧇':'waffle',
+      '🍚':'rice','🍜':'ramen','🍲':'soup','🍣':'sushi','🥗':'salad','🍝':'pasta',
+      '🍎':'apple','🍌':'banana','🍊':'orange','🍋':'lemon','🍇':'grapes','🍓':'strawberry','🍒':'cherry','🍑':'peach','🍉':'watermelon','🍍':'pineapple','🥭':'mango','🥥':'coconut','🥝':'kiwi','🥑':'avocado','🍅':'tomato','🥕':'carrot','🌽':'corn','🥔':'potato','🌶️':'pepper','🥦':'broccoli','🍄':'mushroom',
+      '🍰':'cake','🎂':'birthday','🧁':'cupcake','🥧':'pie','🍪':'cookie','🍫':'chocolate','🍬':'candy','🍭':'lollipop','🍩':'donut','🍦':'icecream','🍯':'honey','🍿':'popcorn',
+      '☕':'coffee','🍵':'tea','🥛':'milk','🧃':'juice','💧':'water','🍺':'beer','🍷':'wine','🍸':'cocktail','🥤':'soda','🍾':'champagne','🍻':'cheers',
+      '🐶':'dog','🐱':'cat','🐭':'mouse','🐹':'hamster','🐰':'rabbit','🦊':'fox','🐻':'bear','🐼':'panda','🐨':'koala','🐯':'tiger','🦁':'lion','🐮':'cow','🐷':'pig','🐸':'frog','🐵':'monkey','🐔':'chicken','🐧':'penguin','🐦':'bird','🦆':'duck','🦅':'eagle','🦉':'owl','🐺':'wolf','🐴':'horse','🦄':'unicorn','🐘':'elephant','🐍':'snake','🐢':'turtle','🦖':'dinosaur','🐲':'dragon',
+      '🐳':'whale','🐬':'dolphin','🐟':'fish','🦈':'shark','🐙':'octopus','🦀':'crab','🦋':'butterfly','🐝':'bee','🐞':'ladybug','🕷️':'spider','🐑':'sheep','🐐':'goat','🐾':'paws',
+      '☀️':'sun','🌙':'moon','🌈':'rainbow','☁️':'cloud','🌧️':'rain','⛈️':'storm','⚡':'lightning','❄️':'snow','⛄':'snowman','💨':'wind','🌊':'ocean','🔥':'fire','🧊':'ice',
+      '🌸':'flower','🌹':'rose','🌷':'tulip','🌻':'sunflower','💐':'bouquet','🌳':'tree','🌲':'forest','🌴':'palm','🌵':'cactus','🍃':'leaf','🌱':'plant','🍀':'luck','🌍':'earth','🌌':'galaxy','🪐':'planet','⛰️':'mountain','🌋':'volcano','🏖️':'beach',
+      '🏃':'run','🚶':'walk','💃':'dance','🕺':'dance','🎤':'sing','🎵':'music','🎶':'music','🏊':'swim','🏄':'surf','✈️':'fly','🚗':'car','🚀':'rocket','⛵':'boat','🚲':'bike',
+      '📖':'read','✍️':'write','🎨':'art','🎮':'game','🏆':'win','💼':'work','📚':'study','🍳':'cook','🛒':'shopping','📞':'call','💬':'chat','🗣️':'talk',
+      '💰':'money','💵':'dollar','🤑':'rich','💎':'diamond','💍':'ring','💻':'computer','📱':'phone','📷':'camera','🎬':'movie','📺':'tv','🎧':'headphones','🕐':'time','⏰':'alarm','📅':'calendar','🔑':'key','🔒':'lock','🚪':'door','💡':'idea','🔔':'bell','🔋':'battery',
+      '🏠':'home','🏢':'building','🏙️':'city','🏫':'school','🎓':'graduate','🏥':'hospital','⛪':'church','🏪':'store','🏨':'hotel','🏋️':'gym','🏰':'castle','⛺':'camp','🏭':'factory','🗽':'statue',
+      '⚽':'soccer','🏀':'basketball','⚾':'baseball','🎾':'tennis','🏐':'volleyball','⛳':'golf','🥊':'boxing','🎿':'ski','🎣':'fishing','🎯':'target','🎲':'dice','🧩':'puzzle','🎸':'guitar','🎹':'piano','🥁':'drums','🎺':'trumpet','🎻':'violin',
+      '🎄':'christmas','🎃':'halloween','🎆':'fireworks','☮️':'peace','⚠️':'warning','❓':'question','❗':'exclamation','➕':'plus','➖':'minus','⬆️':'up','⬇️':'down','⬅️':'left','➡️':'right','🔴':'red','🟢':'green','🔵':'blue','🟡':'yellow','🟣':'purple','⚫':'black','⚪':'white','🥇':'first','🥈':'second','🥉':'third'
+    };
+
+    // ── Popular starter phrases ─────────────────────────────────────────────────
+    const STARTER_PHRASES = [
+      'I love you','Happy Birthday','Good morning sunshine','Let’s party tonight',
+      'I love pizza','Sweet dreams','You are amazing','Good luck',
+      'I miss you','Best friends forever','Time to eat','Let’s go to the beach',
+      'Happy New Year','I am so tired','Movie night','Congratulations'
     ];
+    // ── Function words (kept as text; never force-mapped) ───────────────────────
+    const STOP_WORDS = new Set([
+      'a','an','the','is','am','are','was','were','be','been','being',
+      'of','to','in','on','at','by','for','with','as','it','its',
+      'and','or','but','so','if','then','than','that','this','these','those',
+      'do','does','did','has','have','had','will','would','can','could','should',
+      'i','you','he','she','we','they','me','him','her','us','them','my','your'
+    ]);
 
-    // Articles and "to be" forms to silently drop
-    const ARTICLES = new Set(['a', 'an', 'the']);
-    const TO_BE = new Set(['is', 'am', 'are', 'was', 'were', 'be', 'been', 'being']);
-
-    // Digit to emoji
-    const DIGIT_EMOJI = { '0': '0️⃣', '1': '1️⃣', '2': '2️⃣', '3': '3️⃣', '4': '4️⃣',
-                          '5': '5️⃣', '6': '6️⃣', '7': '7️⃣', '8': '8️⃣', '9': '9️⃣' };
-
-    // ── Conversion Logic ───────────────────────────────────────────────────────
-    function normalizeToken(tok) {
-      // Lowercase
-      let t = tok.toLowerCase();
-      // Remove trailing punctuation (but keep it for sentence-end detection)
-      t = t.replace(/[.,;:!?]+$/, '');
-      return t;
-    }
-
-    // FAQ accordion toggler (for this page only)
-    (function () {
-        function initFaqAccordion() {
-          const faqButtons = document.querySelectorAll('.faq-question');
-          if (!faqButtons.length) return;
-
-          faqButtons.forEach(btn => {
-            btn.addEventListener('click', function () {
-              const item = btn.closest('.faq-item');
-              if (item) {
-                item.classList.toggle('open');
-              }
-            });
-          });
-        }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFaqAccordion);
-  } else {
-    initFaqAccordion();
-  }
-})();
-
-    function convertDigits(str) {
-      return str.replace(/[0-9]/g, d => DIGIT_EMOJI[d] || d);
-    }
-
-    // Try to match a phrase in the dictionary (normalized, lowercased)
-    function lookupPhrase(phrase) {
-      const key = phrase.toLowerCase().trim();
-      // Direct lookup
-      if (EMOJI_DICT[key]) return EMOJI_DICT[key];
-      // Try stripping trailing 's' for simple plurals
-      if (key.endsWith('s') && EMOJI_DICT[key.slice(0, -1)]) return EMOJI_DICT[key.slice(0, -1)];
+    // Letter mode: A–Z → regional indicator symbols (space-separated so pairs
+    // don't merge into flags), digits → keycaps.
+    const RI_BASE = 0x1F1E6; // 🇦
+    function letterToEmoji(ch) {
+      const c = ch.toLowerCase();
+      if (c >= 'a' && c <= 'z') return String.fromCodePoint(RI_BASE + (c.charCodeAt(0) - 97));
+      if (c >= '0' && c <= '9') return c + '️⃣'; // keycap
       return null;
     }
 
-    function convertText(input) {
-      if (!input.trim()) return { output: '', tokens: [] };
+    // ── Word lookup with plural/tense fallback ──────────────────────────────────
+    function lookupWord(raw) {
+      const w = raw.toLowerCase();
+      if (EMOJI_LEXICON[w]) return EMOJI_LEXICON[w];
+      const tries = [];
+      if (w.endsWith('ies') && w.length > 4) tries.push(w.slice(0, -3) + 'y');
+      if (w.endsWith('es') && w.length > 3) tries.push(w.slice(0, -2));
+      if (w.endsWith('s') && w.length > 2) tries.push(w.slice(0, -1));
+      if (w.endsWith('ing') && w.length > 4) { tries.push(w.slice(0, -3)); tries.push(w.slice(0, -3) + 'e'); }
+      if (w.endsWith('ed') && w.length > 3) { tries.push(w.slice(0, -2)); tries.push(w.slice(0, -1)); tries.push(w.slice(0, -2) + 'e'); }
+      for (const t of tries) if (EMOJI_LEXICON[t]) return EMOJI_LEXICON[t];
+      return null;
+    }
 
-      // Tokenize: split on whitespace, preserve punctuation at end of tokens
-      const rawTokens = input.trim().split(/\s+/);
-      const tokens = []; // {raw, norm, punct}
-      for (const raw of rawTokens) {
-        // Detect terminal punctuation
-        const punctMatch = raw.match(/([.!?]+)$/);
-        const punct = punctMatch ? punctMatch[1] : '';
-        const body = punct ? raw.slice(0, -punct.length) : raw;
-        tokens.push({ raw, body, norm: body.toLowerCase(), punct });
-      }
+    // Split a token into leading punct / core word / trailing punct
+    function splitToken(tok) {
+      const m = tok.match(/^([^A-Za-z0-9]*)([A-Za-z0-9'’-]*?)([^A-Za-z0-9]*)$/);
+      if (!m) return { lead: '', core: tok, trail: '' };
+      return { lead: m[1], core: m[2], trail: m[3] };
+    }
 
-      const outputParts = [];
-      const breakdown = []; // [{word, emoji}]
-      let i = 0;
+    // ── Conversion modes ────────────────────────────────────────────────────────
+    // Returns { output: string, breakdown: [{word, emoji}] }
 
-      while (i < tokens.length) {
-        // Try multi-word phrase matching (longest first)
-        let matched = false;
-
-        for (const [phrase, emoji] of MULTI_WORD_PHRASES) {
-          const words = phrase.split(' ');
-          const len = words.length;
-          if (i + len > tokens.length) continue;
-
-          const slice = tokens.slice(i, i + len).map(t => t.norm).join(' ');
-          if (slice === phrase) {
-            outputParts.push(emoji);
-            breakdown.push({ word: tokens.slice(i, i + len).map(t => t.raw).join(' '), emoji });
-            // Check punct on last token
-            const lastPunct = tokens[i + len - 1].punct;
-            if (lastPunct) {
-              const pe = punctEmoji(lastPunct);
-              if (pe) { outputParts.push(pe); breakdown.push({ word: lastPunct, emoji: pe }); }
-            }
-            i += len;
-            matched = true;
-            break;
-          }
-        }
-        if (matched) continue;
-
-        // Single token processing
-        const tok = tokens[i];
-        const norm = tok.norm;
-
-        // Drop articles and to-be forms
-        if (ARTICLES.has(norm) || TO_BE.has(norm)) {
-          i++;
-          continue;
-        }
-
-        // Special handling: "and" + "also" → same emoji
-        if (norm === 'and') {
-          outputParts.push('➕➡️');
-          breakdown.push({ word: tok.raw, emoji: '➕➡️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-
-        // Prepositions that need context: to/from/in/out/at/before/after/next/past
-        if (norm === 'to') {
-          outputParts.push('➡️➡️');
-          breakdown.push({ word: tok.raw, emoji: '➡️➡️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'from') {
-          outputParts.push('⬅️⬅️');
-          breakdown.push({ word: tok.raw, emoji: '⬅️⬅️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'in' || norm === 'into' || norm === 'inside') {
-          outputParts.push('🚪⬅️');
-          breakdown.push({ word: tok.raw, emoji: '🚪⬅️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'out' || norm === 'outside') {
-          outputParts.push('🚪➡️');
-          breakdown.push({ word: tok.raw, emoji: '🚪➡️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'come' || norm === 'came' || norm === 'enter' || norm === 'arrive' || norm === 'arrived' || norm === 'coming') {
-          outputParts.push('🚪⬅️');
-          breakdown.push({ word: tok.raw, emoji: '🚪⬅️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'leave' || norm === 'exit' || norm === 'depart' || norm === 'left' || norm === 'leaving' || norm === 'departed') {
-          outputParts.push('🚪➡️');
-          breakdown.push({ word: tok.raw, emoji: '🚪➡️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'at') {
-          outputParts.push('🗺️⤵️');
-          breakdown.push({ word: tok.raw, emoji: '🗺️⤵️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'before' || norm === 'until') {
-          outputParts.push('➡️🕑');
-          breakdown.push({ word: tok.raw, emoji: '➡️🕑' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'after') {
-          outputParts.push('🕑➡️');
-          breakdown.push({ word: tok.raw, emoji: '🕑➡️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-        if (norm === 'past') {
-          outputParts.push('⏸️➡️');
-          breakdown.push({ word: tok.raw, emoji: '⏸️➡️' });
-          if (tok.punct) {
-            const pe = punctEmoji(tok.punct);
-            if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-          }
-          i++;
-          continue;
-        }
-
-        // Dictionary lookup
-        const emoji = lookupPhrase(norm) || lookupPhrase(tok.body);
+    function convertEmojify(text) {
+      const parts = text.split(/(\s+)/);
+      const out = [];
+      const breakdown = [];
+      for (const p of parts) {
+        if (/^\s+$/.test(p) || p === '') { out.push(p); continue; }
+        const { lead, core, trail } = splitToken(p);
+        const emoji = core && !STOP_WORDS.has(core.toLowerCase()) ? lookupWord(core) : null;
         if (emoji) {
-          outputParts.push(emoji);
-          breakdown.push({ word: tok.raw.replace(/[.!?]+$/, ''), emoji });
-        } else if (/^\d+$/.test(norm)) {
-          // Pure number
-          const converted = convertDigits(norm);
-          outputParts.push(converted);
-          breakdown.push({ word: tok.raw.replace(/[.!?]+$/, ''), emoji: converted });
-        } else if (/^[A-Za-z0-9:]+$/.test(norm) && norm in EMOJI_DICT) {
-          outputParts.push(EMOJI_DICT[norm]);
-          breakdown.push({ word: tok.raw, emoji: EMOJI_DICT[norm] });
+          out.push(lead + core + trail + ' ' + emoji);
+          breakdown.push({ word: core, emoji });
         } else {
-          // Unmapped — keep as plain text
-          const display = tok.raw.replace(/[.!?]+$/, '');
-          outputParts.push(display);
-          breakdown.push({ word: display, emoji: display });
+          out.push(p);
         }
-
-        // Handle terminal punctuation
-        if (tok.punct) {
-          const pe = punctEmoji(tok.punct);
-          if (pe) { outputParts.push(pe); breakdown.push({ word: tok.punct, emoji: pe }); }
-        }
-
-        i++;
       }
-
-      return {
-        output: outputParts.join(' '),
-        tokens: breakdown
-      };
+      return { output: out.join('').replace(/[ ]{2,}/g, ' ').trim(), breakdown };
     }
 
-    function punctEmoji(p) {
-      if (p.includes('!')) return '❗️❗️';
-      if (p.includes('?')) return '❓❓';
-      if (p.includes('.')) return '⚫️⚫️';
-      return null;
+    function convertReplace(text) {
+      const parts = text.split(/(\s+)/);
+      const out = [];
+      const breakdown = [];
+      for (const p of parts) {
+        if (/^\s+$/.test(p) || p === '') { out.push(p); continue; }
+        const { lead, core, trail } = splitToken(p);
+        const emoji = core && !STOP_WORDS.has(core.toLowerCase()) ? lookupWord(core) : null;
+        if (emoji) {
+          out.push(lead + emoji + trail);
+          breakdown.push({ word: core, emoji });
+        } else {
+          out.push(p);
+        }
+      }
+      return { output: out.join('').trim(), breakdown };
     }
 
-    // ── UI ─────────────────────────────────────────────────────────────────────
+    function convertLetters(text) {
+      const out = [];
+      const breakdown = [];
+      const words = text.split(/(\s+)/);
+      for (const w of words) {
+        if (/^\s+$/.test(w)) { out.push('  '); continue; }
+        const chars = [];
+        for (const ch of w) {
+          const e = letterToEmoji(ch);
+          if (e) { chars.push(e); if (/[A-Za-z0-9]/.test(ch)) breakdown.push({ word: ch.toUpperCase(), emoji: e }); }
+          else chars.push(ch);
+        }
+        out.push(chars.join(' '));
+      }
+      return { output: out.join('').trim(), breakdown };
+    }
+
+    function convertDecode(text) {
+      const out = [];
+      const breakdown = [];
+      const seg = (typeof Intl !== 'undefined' && Intl.Segmenter)
+        ? Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text), s => s.segment)
+        : Array.from(text);
+      for (const g of seg) {
+        if (/^\s+$/.test(g)) { out.push(' '); continue; }
+        const word = EMOJI_TO_WORD[g] || EMOJI_TO_WORD[g.replace(/️/g, '')];
+        if (word) { out.push(word + ' '); breakdown.push({ word, emoji: g }); }
+        else if (/[A-Za-z0-9]/.test(g)) { out.push(g); }
+        // unknown emoji: skip silently
+      }
+      return { output: out.join('').replace(/\s{2,}/g, ' ').trim(), breakdown };
+    }
+
+    const MODES = {
+      emojify: { fn: convertEmojify, label: 'Emojified text', hint: 'Keeps your words and sprinkles a matching emoji after each one it recognises.' },
+      replace: { fn: convertReplace, label: 'Emoji translation', hint: 'Swaps each recognised word for its emoji. Unmatched words stay as text.' },
+      letters: { fn: convertLetters, label: 'Emoji letters', hint: 'Turns every letter into a boxed emoji letter — great for names and titles.' },
+      decode:  { fn: convertDecode,  label: 'Decoded text', hint: 'Reverse mode: paste emoji and read them back as plain English words.' }
+    };
+    // ── UI ──────────────────────────────────────────────────────────────────────
     const mainInput = document.getElementById('mainInput');
     const charCountEl = document.getElementById('charCount');
     const convertBtn = document.getElementById('convertBtn');
     const clearBtn = document.getElementById('clearBtn');
     const emojiOutput = document.getElementById('emojiOutput');
+    const emojiOutputLabel = document.getElementById('emojiOutputLabel');
     const copyOutputBtn = document.getElementById('copyOutputBtn');
     const breakdownToggle = document.getElementById('breakdownToggle');
     const breakdownSection = document.getElementById('breakdownSection');
     const breakdownGrid = document.getElementById('breakdownGrid');
+    const modeTabs = document.getElementById('modeTabs');
+    const modeHint = document.getElementById('modeHint');
+    const phraseChips = document.getElementById('phraseChips');
 
+    const PLACEHOLDER = 'Your emoji translation will appear here.';
+    let currentMode = 'emojify';
     let lastBreakdown = [];
 
-    mainInput.addEventListener('input', () => {
-      charCountEl.textContent = mainInput.value.length;
-    });
+    // FAQ accordion (this page only)
+    (function () {
+      function initFaqAccordion() {
+        const faqButtons = document.querySelectorAll('.faq-question');
+        if (!faqButtons.length) return;
+        faqButtons.forEach(btn => {
+          btn.addEventListener('click', function () {
+            const item = btn.closest('.faq-item');
+            if (item) item.classList.toggle('open');
+          });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initFaqAccordion);
+      else initFaqAccordion();
+    })();
 
-    convertBtn.addEventListener('click', () => {
-      const result = convertText(mainInput.value);
-      if (!result.output) {
-        emojiOutput.textContent = 'Your emoji translation will appear here.';
+    function render() {
+      const mode = MODES[currentMode];
+      emojiOutputLabel.textContent = mode.label;
+      const val = mainInput.value;
+      charCountEl.textContent = val.length;
+      if (!val.trim()) {
+        emojiOutput.textContent = PLACEHOLDER;
         lastBreakdown = [];
         renderBreakdown([]);
         return;
       }
-      emojiOutput.textContent = result.output;
-      lastBreakdown = result.tokens;
-      renderBreakdown(result.tokens);
+      const result = mode.fn(val);
+      emojiOutput.textContent = result.output || PLACEHOLDER;
+      lastBreakdown = result.breakdown;
+      renderBreakdown(result.breakdown);
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      modeHint.textContent = MODES[mode].hint;
+      Array.from(modeTabs.querySelectorAll('.mode-tab')).forEach(t => {
+        const active = t.dataset.mode === mode;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', String(active));
+      });
+      mainInput.placeholder = mode === 'decode'
+        ? 'Paste emoji here to decode…'
+        : (mode === 'letters' ? 'Type a name or word…' : 'Type your sentence here…');
+      render();
+    }
+
+    // Live conversion
+    mainInput.addEventListener('input', render);
+    convertBtn.addEventListener('click', render);
+
+    modeTabs.addEventListener('click', (e) => {
+      const tab = e.target.closest('.mode-tab');
+      if (tab) setMode(tab.dataset.mode);
     });
 
     clearBtn.addEventListener('click', () => {
       mainInput.value = '';
-      charCountEl.textContent = '0';
-      emojiOutput.textContent = 'Your emoji translation will appear here.';
-      lastBreakdown = [];
-      renderBreakdown([]);
-      // Close breakdown if open
+      render();
       breakdownSection.classList.remove('open');
       breakdownToggle.classList.remove('open');
       breakdownToggle.setAttribute('aria-expanded', 'false');
       breakdownSection.setAttribute('aria-hidden', 'true');
+      mainInput.focus();
     });
 
     copyOutputBtn.addEventListener('click', () => {
       const text = emojiOutput.textContent;
-      if (!text || text === 'Your emoji translation will appear here.') return;
+      if (!text || text === PLACEHOLDER) return;
       navigator.clipboard.writeText(text).then(() => {
         copyOutputBtn.textContent = 'Copied!';
         copyOutputBtn.classList.add('copied');
@@ -1527,6 +1094,38 @@
         breakdownGrid.appendChild(row);
       });
     }
+
+    // ── Starter phrase chips ──────────────────────────────────────────────────
+    let surpriseIdx = 0;
+    function loadPhrase(text) {
+      mainInput.value = text;
+      if (currentMode === 'decode') setMode('emojify');
+      else render();
+      mainInput.focus();
+    }
+    (function initChips() {
+      STARTER_PHRASES.slice(0, 8).forEach(phrase => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'phrase-chip';
+        btn.textContent = phrase;
+        btn.addEventListener('click', () => loadPhrase(phrase));
+        phraseChips.appendChild(btn);
+      });
+      const surprise = document.createElement('button');
+      surprise.type = 'button';
+      surprise.className = 'phrase-chip surprise';
+      surprise.textContent = '🎲 Surprise me';
+      surprise.addEventListener('click', () => {
+        surpriseIdx = (surpriseIdx + 1) % STARTER_PHRASES.length;
+        loadPhrase(STARTER_PHRASES[surpriseIdx]);
+      });
+      phraseChips.appendChild(surprise);
+    })();
+
+    // Init
+    modeHint.textContent = MODES.emojify.hint;
+    render();
   </script>
 <script src="/footer.js" defer></script>
 </body>
