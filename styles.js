@@ -176,6 +176,11 @@ const PRINTABLE_PAGES = {
     slug: 'coloring-page-maker',
     title: 'Coloring Page Maker',
     description: 'Type any name or word to make your own printable coloring page — heading, name-and-date line, decorative borders, and multi-color fills. Print or PNG, no sign-up.'
+  },
+  'banner-maker': {
+    slug: 'banner-maker',
+    title: 'Printable Banner Maker',
+    description: 'Type a word or phrase to build a printable letter banner — one cut-out flag per letter with string holes, paginated to print across multiple sheets.'
   }
 };
 

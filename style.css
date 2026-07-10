@@ -5679,6 +5679,101 @@ body.dark-mode .pt-paper { background: #fff; border-color: var(--border-light); 
 }
 
 /* ============================================================
+   Banner maker (type a phrase -> printable letter-banner flags).
+   Powers /printables/banner-maker/ via the shared engine's
+   #pt-banner-* mounts, reusing the .pt-studio / .pt-paper layout
+   above. Each flag is a pennant with a dashed cut line and two
+   string-hole markers; .pt-banner-page is one printed sheet — long
+   phrases paginate into several, in reading order, via the
+   break-after rule in the @media print block below.
+   ============================================================ */
+.pt-banner-pages { display: flex; flex-direction: column; gap: 1.5rem; }
+.pt-banner-page {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px dashed var(--border-light);
+}
+.pt-banner-page:last-child { border-bottom: none; padding-bottom: 0; }
+.pt-banner-page-title {
+  margin: 0 0 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.pt-banner-instructions {
+  margin: 0 0 0.9rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.pt-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+.pt-banner-cell { text-align: center; }
+.pt-banner-index {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.pt-banner-flag { width: 100%; height: auto; display: block; margin: 0 auto; }
+.pt-banner-gap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100px;
+  border-left: 1px dashed var(--border-light);
+  border-right: 1px dashed var(--border-light);
+}
+.pt-banner-gap span {
+  display: block;
+  padding-bottom: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.pt-banner-page-foot {
+  margin: 0.75rem 0 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* Keep the banner pages light in dark mode so the printed look reads true */
+body.dark-mode .pt-banner-page-title,
+body.dark-mode .pt-banner-index { color: var(--text-secondary); }
+
+@media (max-width: 640px) {
+  .pt-banner-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Print pagination: one .pt-banner-page per printed sheet, in strict
+   reading order, so cutting and stringing the flags in page + index
+   order reproduces the phrase correctly. */
+@media print {
+  .pt-banner-page {
+    border-bottom: none;
+    page-break-after: always;
+    break-after: page;
+  }
+  .pt-banner-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  .pt-banner-cell, .pt-banner-gap {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .pt-banner-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
    Injected as the final section of <main> on decorator pages.
    ============================================================ */
