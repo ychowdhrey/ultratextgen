@@ -14,8 +14,17 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   /* ----------------------------------------------------------------------
+     i18n: localized bio-font pages provide translated copy via
+     window.BIO_FONT_CONFIG. When a field is absent the English default is
+     used, so the English page behaves exactly as before.
+     ---------------------------------------------------------------------- */
+  const I18N = window.BIO_FONT_CONFIG || {};
+  const STRINGS = I18N.strings || {};
+
+  /* ----------------------------------------------------------------------
      DATA: platforms (bio character limits + compatibility guidance)
-     Sourced from each platform's profile/bio field limits.
+     Sourced from each platform's profile/bio field limits. Limits are
+     universal; label + note are localizable.
      ---------------------------------------------------------------------- */
   const PLATFORMS = {
     all:       { label: "All platforms", limit: 500, note: "Unicode fonts and symbols work anywhere text is supported — bios, usernames, captions and more. Always paste-test in the field before saving." },
@@ -25,10 +34,19 @@
     x:         { label: "X (Twitter) bio", limit: 160, note: "X supports Unicode in both your bio and display name. Bold or script styles help a personal brand stand out." },
     tinder:    { label: "Tinder About me", limit: 500, note: "Tinder has no native font option, so Unicode is the only way to style your profile. Style your name or one key line so it stays readable." }
   };
+  (function localizePlatforms() {
+    const p = I18N.platforms || {};
+    for (const k in p) {
+      if (!PLATFORMS[k]) continue;
+      if (p[k].label) PLATFORMS[k].label = p[k].label;
+      if (p[k].note) PLATFORMS[k].note = p[k].note;
+    }
+  })();
 
   /* ----------------------------------------------------------------------
      DATA: Symbols & dividers (click-to-copy) — what “aesthetic” searchers
-     actually assemble alongside fonts.
+     actually assemble alongside fonts. Glyphs are universal; only the tab
+     labels are localizable.
      ---------------------------------------------------------------------- */
   const SYMBOL_TABS = {
     hearts:   { label: "♡ Hearts",  items: ["♡", "♥", "❤", "❥", "❣", "ღ", "❦", "❧", "♥︎", "💗", "💖", "🤍", "💜", "💞", "💝"] },
@@ -50,11 +68,15 @@
       "▸ ◂ ▸ ◂ ▸ ◂"
     ] }
   };
+  (function localizeSymbolLabels() {
+    const s = I18N.symbolLabels || {};
+    for (const k in s) { if (SYMBOL_TABS[k] && s[k]) SYMBOL_TABS[k].label = s[k]; }
+  })();
 
   /* ----------------------------------------------------------------------
      DATA: ready-made bio templates ({name} is swapped for the typed text)
      ---------------------------------------------------------------------- */
-  const TEMPLATES = [
+  const TEMPLATES = (I18N.templates && I18N.templates.length) ? I18N.templates : [
     "✦ {name} ✦ · dreamer · creator ·",
     "🌙 {name} ✦ just vibes ✦",
     "✧⁕·˙˚ {name} ˚˙·⁕✧",
@@ -64,6 +86,10 @@
     "☾ {name} · coffee · chaos · ✨",
     "❀ {name} ❀ · she/her · 🌸"
   ];
+
+  const PREVIEW_PLACEHOLDER = STRINGS.previewPlaceholder || "Your styled bio will appear here as you type…";
+  const PREVIEW_NAME = STRINGS.previewName || "your_handle";
+  const TEMPLATE_NAME_FALLBACK = STRINGS.templateNameFallback || "name";
 
   /* ----------------------------------------------------------------------
      STATE + ELEMENTS
@@ -115,11 +141,11 @@
   function syncPreview() {
     const v = inputValue();
     if (el.previewBio) {
-      el.previewBio.textContent = v || "Your styled bio will appear here as you type…";
+      el.previewBio.textContent = v || PREVIEW_PLACEHOLDER;
       el.previewBio.classList.toggle("placeholder", !v);
     }
     const name = firstName();
-    if (el.previewName) el.previewName.textContent = name || "your_handle";
+    if (el.previewName) el.previewName.textContent = name || PREVIEW_NAME;
     if (el.previewAvatar) el.previewAvatar.textContent = (name || "U").charAt(0).toUpperCase();
   }
 
@@ -232,7 +258,7 @@
 
   function renderTemplates() {
     if (!el.templateGrid) return;
-    const name = firstName() || "name";
+    const name = firstName() || TEMPLATE_NAME_FALLBACK;
     el.templateGrid.innerHTML = TEMPLATES.map((tpl) => {
       const filled = tpl.replace(/\{name\}/g, name);
       return (
