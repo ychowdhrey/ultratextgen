@@ -20,6 +20,7 @@
         '<a href="/usecase/bio-font/" class="footer-link">Bio Font</a>' +
         '<a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a>' +
         '<a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a>' +
+        '<a href="/ascii-art-generator/" class="footer-link">ASCII Art Generator</a>' +
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Popular Categories</span>' +
