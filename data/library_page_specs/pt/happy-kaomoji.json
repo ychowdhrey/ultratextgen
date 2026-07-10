@@ -1,0 +1,177 @@
+{
+  "slug": "happy-kaomoji",
+  "lang": "pt",
+  "title": "Kaomoji Felizes: Copiar e Colar Carinhas Alegres",
+  "meta_description": "Explore e copie kaomoji felizes — carinhas de texto japonesas que sorriem, comemoram e estão alegres. Clique para copiar na hora.",
+  "breadcrumb": "Kaomoji Felizes",
+  "hero_h1": "Kaomoji Felizes",
+  "hero_tagline": "Copie e cole kaomoji felizes — carinhas de texto japonesas que sorriem e estão alegres. Clique em qualquer carinha para copiá-la na hora.",
+  "intro": "Os kaomoji felizes (também escritos kamoji) são carinhas de texto japonesas que capturam cada nuance do bom humor — um sorriso tranquilo, pura empolgação ou uma dança de comemoração. Um kaomoji feliz como (◠‿◠) ou ＼(≧▽≦)／ é texto Unicode comum, então cola direitinho em bios, legendas, comentários e nomes de usuário. Explore por humor abaixo e clique em qualquer carinha para copiá-la. Seja procurando \"kaomoji felizes\" ou \"kaomoji alegres\", todas as carinhas aqui são gratuitas para copiar e colar.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/pt/library/happy-kaomoji/",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Kaomoji",
+  "library_url": "https://ultratextgen.com/pt/library/kaomoji/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/happy-kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/happy-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/happy-kaomoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/happy-kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/happy-kaomoji/"
+    }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "related": [
+    {
+      "href": "/pt/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "O hub completo de kaomoji — todas as carinhas japonesas em um só lugar."
+    },
+    {
+      "href": "/pt/library/cute-kaomoji/",
+      "title": "Kaomoji Fofos",
+      "desc": "Carinhas kawaii com olhos brilhantes e bochechas coradas."
+    },
+    {
+      "href": "/pt/library/love-kaomoji/",
+      "title": "Kaomoji de Amor",
+      "desc": "Corações, beijos e abraços em forma de carinha."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Crie sua própria carinha — combine olhos, bocas e braços e copie."
+    }
+  ],
+  "sections": [
+    {
+      "id": "smiling",
+      "label": "Sorrindo",
+      "h2": "Kaomoji Sorrindo",
+      "intro": "Sorrisos suaves e amigáveis para mensagens felizes do dia a dia.",
+      "symbols": [
+        {
+          "char": "(◠‿◠)",
+          "label": "Sorriso Suave"
+        },
+        {
+          "char": "(^▽^)",
+          "label": "Sorrisão"
+        },
+        {
+          "char": "(≧◡≦)",
+          "label": "Olhos Felizes"
+        },
+        {
+          "char": "( ´ ▽ ` )",
+          "label": "Sorriso Relaxado"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Sorriso Radiante"
+        },
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Sorriso Doce"
+        },
+        {
+          "char": "(•‿•)",
+          "label": "Sorriso Simples"
+        }
+      ]
+    },
+    {
+      "id": "excited",
+      "label": "Empolgados",
+      "h2": "Kaomoji Empolgados e Alegres",
+      "intro": "Carinhas cheias de energia com os braços pro alto para momentos animados.",
+      "symbols": [
+        {
+          "char": "ヽ(•‿•)ノ",
+          "label": "Comemorando"
+        },
+        {
+          "char": "٩(◕‿◕)۶",
+          "label": "Eba!"
+        },
+        {
+          "char": "＼(≧▽≦)／",
+          "label": "Muito Feliz"
+        },
+        {
+          "char": "ヽ(>∀<☆)ノ",
+          "label": "Radiante"
+        },
+        {
+          "char": "(★^O^★)",
+          "label": "Olhos de Estrela"
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "label": "Contentes",
+      "h2": "Kaomoji Contentes e Satisfeitos",
+      "intro": "Carinhas calmas e satisfeitas para um bom humor tranquilo.",
+      "symbols": [
+        {
+          "char": "(─‿─)",
+          "label": "Satisfeito"
+        },
+        {
+          "char": "(｡•̀ᴗ-)✧",
+          "label": "Piscadela Confiante"
+        },
+        {
+          "char": "( ˙▿˙ )",
+          "label": "Contente"
+        },
+        {
+          "char": "(✯◡✯)",
+          "label": "Feliz Brilhante"
+        }
+      ]
+    },
+    {
+      "id": "celebrating",
+      "label": "Comemorando",
+      "h2": "Kaomoji Comemorando e Dançando",
+      "intro": "Carinhas que dançam e comemoram vitórias e boas notícias.",
+      "symbols": [
+        {
+          "char": "ヽ(´▽`)/",
+          "label": "Grito de Alegria"
+        },
+        {
+          "char": "⊂(´• ω •`⊂)",
+          "label": "Dança Feliz"
+        },
+        {
+          "char": "♪┏(・o･)┛♪",
+          "label": "Dançando"
+        },
+        {
+          "char": "＼(^o^)／",
+          "label": "Comemoração"
+        }
+      ]
+    }
+  ]
+}

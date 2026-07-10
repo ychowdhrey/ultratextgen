@@ -1,0 +1,169 @@
+{
+  "slug": "crying-kaomoji",
+  "lang": "es",
+  "title": "Kaomoji Llorando: Copiar y Pegar Caritas Llorando",
+  "meta_description": "Explora y copia kaomoji llorando — caritas de texto japonesas para lágrimas, sollozos y ánimo sombrío. Haz clic para copiar al instante.",
+  "breadcrumb": "Kaomoji Llorando",
+  "hero_h1": "Kaomoji Llorando",
+  "hero_tagline": "Copia y pega kaomoji llorando — caritas de texto japonesas para lágrimas y sollozos. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji llorando (también escritos kamoji) son caritas de texto japonesas para lágrimas y sollozos, con caracteres de ojos que gotean como ﹏ y ╥. Un kaomoji llorando como (╥﹏╥) o (｡•́︿•̀｡) es texto Unicode normal, así que se pega sin problemas en biografías, subtítulos, comentarios y mensajes. Explora por intensidad abajo — desde una sola lágrima hasta el llanto total — y haz clic en cualquier carita para copiarla. Ya busques \"kaomoji llorando\" o \"kaomoji de lágrimas\", todas las caritas aquí son gratis para copiar y pegar.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/crying-kaomoji/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "crumb_library": "Kaomoji",
+  "library_url": "https://ultratextgen.com/es/library/kaomoji/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/crying-kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/crying-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/crying-kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/crying-kaomoji/"
+    }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "El centro completo de kaomoji — todas las caritas japonesas en un solo lugar."
+    },
+    {
+      "href": "/es/library/sad-kaomoji/",
+      "title": "Kaomoji Tristes",
+      "desc": "Caritas melancólicas y decepcionadas para un ánimo bajo."
+    },
+    {
+      "href": "/es/library/cat-kaomoji/",
+      "title": "Kaomoji de Gato",
+      "desc": "Caritas de gatito tierno con bigotes y patitas."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Crea tu propia carita — combina ojos, bocas y brazos y cópiala."
+    }
+  ],
+  "sections": [
+    {
+      "id": "crying",
+      "label": "Llorando",
+      "h2": "Kaomoji Llorando",
+      "intro": "Caritas de llanto del día a día para momentos tristes o abrumadores.",
+      "symbols": [
+        {
+          "char": "(╥﹏╥)",
+          "label": "Llorando"
+        },
+        {
+          "char": "(T_T)",
+          "label": "Lágrimas"
+        },
+        {
+          "char": "(；﹏；)",
+          "label": "Llanto Silencioso"
+        },
+        {
+          "char": "(ㄒoㄒ)",
+          "label": "Ojos Llorosos"
+        },
+        {
+          "char": "(个_个)",
+          "label": "Lloroso"
+        },
+        {
+          "char": "(;_;)",
+          "label": "Una Lágrima"
+        }
+      ]
+    },
+    {
+      "id": "sobbing",
+      "label": "Sollozando",
+      "h2": "Kaomoji Sollozando y con Lágrimas",
+      "intro": "Caritas con lágrimas a chorros para el llanto más fuerte.",
+      "symbols": [
+        {
+          "char": "(｡•́︿•̀｡)",
+          "label": "Sollozando"
+        },
+        {
+          "char": "(πーπ)",
+          "label": "Lágrimas a Chorros"
+        },
+        {
+          "char": "(ToT)",
+          "label": "Lamentándose"
+        },
+        {
+          "char": "(Q_Q)",
+          "label": "Lágrimas Intensas"
+        },
+        {
+          "char": "(；へ：)",
+          "label": "Llanto Tembloroso"
+        }
+      ]
+    },
+    {
+      "id": "sad",
+      "label": "Tristes",
+      "h2": "Kaomoji Tristes y Disgustados",
+      "intro": "Caritas abatidas para la tristeza, el dolor y la decepción.",
+      "symbols": [
+        {
+          "char": "(._.)",
+          "label": "Abatido"
+        },
+        {
+          "char": "(´；ω；`)",
+          "label": "Lloroso"
+        },
+        {
+          "char": "( ; ω ; )",
+          "label": "A Punto de Llorar"
+        },
+        {
+          "char": "(╯︵╰,)",
+          "label": "Triste y Llorando"
+        }
+      ]
+    },
+    {
+      "id": "gloomy",
+      "label": "Sombríos",
+      "h2": "Kaomoji Sombríos y Decepcionados",
+      "intro": "Caritas planas y desinfladas para un ánimo sombrío o decepcionado.",
+      "symbols": [
+        {
+          "char": "(¬_¬)",
+          "label": "Indiferente"
+        },
+        {
+          "char": "(；￣Д￣)",
+          "label": "Angustiado"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Desinflado"
+        },
+        {
+          "char": "(⇀‸↼‶)",
+          "label": "Enfurruñado"
+        }
+      ]
+    }
+  ]
+}
