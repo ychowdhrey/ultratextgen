@@ -1,0 +1,175 @@
+{
+  "slug": "diwali",
+  "event_name": "Diwali",
+  "aliases": ["Deepavali", "Festival of Lights"],
+
+  "title": "Diwali Fonts, Symbols & Kaomoji Generator | UltraTextGen",
+  "meta_description": "Style a Diwali greeting live, copy diya and firework emoji, sparkly kaomoji, curated ASCII art, and ready-made phrases with native script, romanization, and translation.",
+
+  "hero_h1": "Diwali Text & Symbol Generator",
+  "hero_tagline": "Type a name or wish and style it in curated festive fonts, then copy diyas, fireworks, sparklers, and kaomoji — or tap a ready-made greeting to style it instantly.",
+
+  "intro": "Diwali (Deepavali), the Festival of Lights, is one of the biggest gifting-and-greeting occasions of the year — rows of diyas on doorsteps, fireworks overhead, rangoli patterns underfoot, and messages wishing family and friends light, prosperity, and joy for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the diya-and-firework emoji people actually paste, sparkly kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that restyle instantly when you tap them.",
+
+  "date_window": "on a different date each year, in October or November, set by the Hindu lunar calendar",
+
+  "sample_phrase": "Happy Diwali",
+
+  "canonical": "https://ultratextgen.com/events/diwali/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Serif",
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Script Sparkle",
+      "Ultra Bubble",
+      "Ultra Bubble Filled",
+      "Ultra Small Caps",
+      "Ultra Fullwidth"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Diwali Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🪔", "🎆", "🎇", "🧨", "✨", "🌟", "🙏", "🕉", "🪷", "🌺", "🍬", "🎊", "🛕"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(★ω★)", "label": "Starry Eyes" },
+    { "text": "(✧ω✧)", "label": "Sparkly Eyes" },
+    { "text": "٩(✧ω✧)۶", "label": "Cheering Sparkle" },
+    { "text": "(☆▽☆)", "label": "Bright Excitement" },
+    { "text": "(∩^o^)⊃━☆ﾟ.*", "label": "Sparkler Toss" },
+    { "text": "\\(^o^)/", "label": "Joyful Celebration" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Diya Lamp",
+        "art": "        (\n       ( )\n      (   )\n    .---------.\n   /  ~ ~ ~ ~  \\\n   '-----------'\n        | |\n      __| |__"
+      },
+      {
+        "label": "Firework Burst",
+        "art": "       .   *   .\n        \\  |  /\n     *--  \\|/  --*\n    -------+-------\n     *--  /|\\  --*\n        /  |  \\\n       .   *   ."
+      },
+      {
+        "label": "Sparkler",
+        "art": "          \\|/\n        -- * --\n          /|\\\n           |\n           |\n          (|)\n          | |\n          |_|"
+      },
+      {
+        "label": "Rangoli Pattern",
+        "art": "        *\n      *   *\n    *   o   *\n  *   o   o   *\n    *   o   *\n      *   *\n        *"
+      },
+      {
+        "label": "Marigold Garland",
+        "art": "  @-@-@-@-@-@-@-@-@\n   \\|/ \\|/ \\|/ \\|/\n    O   O   O   O"
+      },
+      {
+        "label": "Sweets Box",
+        "art": "   .-----------.\n  /   MITHAI    \\\n |  ___________  |\n |  | o  o  o |  |\n |  |_________|  |\n  \\_____________/"
+      },
+      {
+        "label": "Diwali Banner",
+        "art": " +----------------------+\n |    HAPPY  DIWALI     |\n |  *** SHUBH DEEPAVALI *** |\n +----------------------+"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Shubh Deepavali",
+      "native_script": "शुभ दीपावली",
+      "romanization": "Shubh Dīpāvalī",
+      "translation": "Happy / Auspicious Diwali",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Deepavali ki Shubhkamnaayein",
+      "native_script": "दीपावली की शुभकामनाएं",
+      "romanization": "Dīpāvalī kī shubhkāmnāeṁ",
+      "translation": "Best wishes for Diwali",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Happy Diwali",
+      "native_script": "Happy Diwali",
+      "romanization": "—",
+      "translation": "The safest, most universal Diwali greeting — works for any audience.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Wishing You Light and Prosperity",
+      "native_script": "Wishing You Light and Prosperity",
+      "romanization": "—",
+      "translation": "A warmer, wish-style line for family or close friends.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Happy Diwali to You and Your Family",
+      "native_script": "Happy Diwali to You and Your Family",
+      "romanization": "—",
+      "translation": "A whole-household greeting, not just an individual one.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "May Your Diwali Sparkle and Shine",
+      "native_script": "May Your Diwali Sparkle and Shine",
+      "romanization": "—",
+      "translation": "A festive line that leans into the fireworks-and-lights theme.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Wishing You a Diwali Full of Joy",
+      "native_script": "Wishing You a Diwali Full of Joy",
+      "romanization": "—",
+      "translation": "A simple, upbeat alternative to the standard greeting.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Happy Deepavali",
+      "native_script": "Happy Deepavali",
+      "romanization": "—",
+      "translation": "The Deepavali spelling, common across Southeast Asia and South India.",
+      "needs_native_speaker_review": false
+    }
+  ],
+
+  "companion_answer_slug": "diwali-wishes-what-to-say",
+
+  "related": [
+    {
+      "href": "/library/diwali-symbols/",
+      "title": "Diwali Symbols",
+      "desc": "A broader reference library of Diwali diyas, fireworks, rangoli flowers, and greeting combos."
+    },
+    {
+      "href": "/library/hindi-symbols/",
+      "title": "Hindi Symbols",
+      "desc": "Devanagari characters and Hindi script symbols to copy and paste."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full cursive font family for elegant greeting cards and captions."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    },
+    {
+      "href": "/library/sparkle-kaomoji/",
+      "title": "Sparkle Kaomoji",
+      "desc": "More sparkly, glittery kaomoji faces for festive chat messages."
+    }
+  ]
+}

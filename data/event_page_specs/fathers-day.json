@@ -1,0 +1,150 @@
+{
+  "slug": "fathers-day",
+  "event_name": "Father's Day",
+  "aliases": [],
+
+  "title": "Father's Day Fonts, Symbols & Message Generator | UltraTextGen",
+  "meta_description": "Style a Father's Day message live in bold, rugged fonts, copy necktie, tool, and heart emoji, kaomoji, and curated ASCII art, or tap a ready-made line like World's Best Dad.",
+
+  "hero_h1": "Father's Day Text & Symbol Generator",
+  "hero_tagline": "Type a name or message and style it in bold, rugged fonts, then copy necktie, tool, and heart emoji, kaomoji, and ASCII art — or tap a ready-made line to style it instantly.",
+
+  "intro": "Father's Day is a lower-key occasion than the big lunar and gifting holidays — it's mostly a card, a text, or a caption, so this page stays focused instead of padded: a handful of bold, rugged font styles you can preview on your own text, the necktie, tool, and heart emoji people actually paste, a couple of warm kaomoji, a few original ASCII art pieces, and a short phrase bank of lines that style instantly when you tap them. Note: in the US, Father's Day falls on the third Sunday of June, but the date varies significantly by country, so check a local calendar before sending anything time-sensitive.",
+
+  "date_window": "the third Sunday of June in the US — the date varies by country, so check a local calendar",
+
+  "sample_phrase": "Happy Father's Day",
+
+  "canonical": "https://ultratextgen.com/events/fathers-day/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Serif",
+      "Ultra Double-Struck",
+      "Ultra Gothic Bold",
+      "Ultra Small Caps",
+      "Ultra Squared",
+      "Ultra Typewriter Document",
+      "Ultra Old English Banner"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Father's Day Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["👔", "🔧", "🔨", "🎣", "🔥", "🏈", "❤️", "👨‍👧‍👦", "🤝"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "ᕦ(ò_óˇ)ᕤ", "label": "Strong Dad Flex" },
+    { "text": "( •̀ᴗ•́ )و", "label": "Proud Dad" },
+    { "text": "(^_^)/", "label": "Cheerful Wave" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Necktie",
+        "art": "   /\\\n  /  \\\n /    \\\n \\    /\n  \\  /\n   \\/\n   /\\\n  /  \\\n /    \\\n/______\\"
+      },
+      {
+        "label": "Wrench",
+        "art": "  ___\n /o o\\___________\n \\___/           \\\n     \\___________/"
+      },
+      {
+        "label": "Heart",
+        "art": " __    __\n/  \\  /  \\\n\\   \\/   /\n \\      /\n  \\    /\n   \\  /\n    \\/"
+      },
+      {
+        "label": "Fishing Rod",
+        "art": "|\n \\\n  \\\n   \\\n    \\\n     \\___\n         \\\n          o"
+      },
+      {
+        "label": "Trophy",
+        "art": "  ___________\n |           |\n  \\_________/\n  (_)     (_)\n   |    #1   |\n   |   DAD   |\n   \\_________/\n    |_______|"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy Father's Day",
+      "native_script": "Happy Father's Day",
+      "romanization": "Happy Father's Day",
+      "translation": "The universal greeting — safe on any card, text, or caption.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "World's Best Dad",
+      "native_script": "World's Best Dad",
+      "romanization": "World's Best Dad",
+      "translation": "The classic line for a mug, card, or banner.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Love You Dad",
+      "native_script": "Love You Dad",
+      "romanization": "Love You Dad",
+      "translation": "Short and sincere — works for a text or a card sign-off.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Thanks for Always Being There",
+      "native_script": "Thanks for Always Being There",
+      "romanization": "Thanks for Always Being There",
+      "translation": "A heartfelt line for a dad who's shown up consistently.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "To the Best Dad Ever",
+      "native_script": "To the Best Dad Ever",
+      "romanization": "To the Best Dad Ever",
+      "translation": "A warm, simple card-front line.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "My Hero, My Dad",
+      "native_script": "My Hero, My Dad",
+      "romanization": "My Hero, My Dad",
+      "translation": "A proud, admiring line for a card or caption.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Feliz Dia del Padre",
+      "native_script": "Feliz Día del Padre",
+      "romanization": "Feliz Día del Padre",
+      "translation": "Spanish for \"Happy Father's Day\" — a globally recognized greeting.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "fathers-day-messages-what-to-write",
+
+  "related": [
+    {
+      "href": "/category/gothic-fonts/",
+      "title": "Gothic Fonts",
+      "desc": "The full gothic font family for a bolder, more rugged look on a card or caption."
+    },
+    {
+      "href": "/category/old-english-fonts/",
+      "title": "Old English Fonts",
+      "desc": "Banner-style blackletter fonts that suit a bold Father's Day headline."
+    },
+    {
+      "href": "/library/weapon-tool-emojis/",
+      "title": "Weapon & Tool Emojis",
+      "desc": "A broader reference library of hammer, wrench, and tool emoji to pair with your message."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Browse and copy heart emojis and Unicode heart characters in every color and style."
+    }
+  ]
+}

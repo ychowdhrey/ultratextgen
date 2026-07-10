@@ -1,0 +1,148 @@
+{
+  "slug": "mothers-day",
+  "event_name": "Mother's Day",
+  "aliases": [],
+
+  "title": "Mother's Day Fonts, Symbols & Phrases Generator | UltraTextGen",
+  "meta_description": "Style a Mother's Day message live in warm cursive fonts, copy bouquet, tulip, and heart emoji, and tap a ready-made phrase like Happy Mother's Day to style it instantly.",
+
+  "hero_h1": "Mother's Day Text & Symbol Generator",
+  "hero_tagline": "Type a name or message and style it in warm, elegant fonts, then copy bouquet, tulip, and heart emoji, or tap a ready-made phrase to style it instantly. Note: the date below is the US date — Mother's Day falls on a different day in many countries.",
+
+  "intro": "Mother's Day is a gratitude-and-gifting occasion built around a small set of warm, simple lines — a card, a text, a gift tag. This page gathers what people actually reach for: a handful of warm, elegant fonts you can preview on your own text, the bouquet and heart emoji people paste into a message, a few original ASCII art pieces, and a short phrase bank — Happy Mother's Day, Love You Mom, World's Best Mom, and more — that styles instantly when you tap it.",
+
+  "date_window": "the 2nd Sunday of May in the US and many other countries — but the date varies significantly abroad, so check your own country's date first (e.g. the UK and Ireland celebrate Mothering Sunday in March instead)",
+
+  "sample_phrase": "Happy Mother's Day",
+
+  "canonical": "https://ultratextgen.com/events/mothers-day/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Cute Script",
+      "Ultra Italic Serif",
+      "Ultra Bold Italic Serif",
+      "Ultra Small Caps"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Bouquets, Blooms & Hearts",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["💐", "🌷", "🌹", "🌻", "❤️", "💕", "🥰", "👩‍👧‍👦", "🫂"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(◕‿◕)♡", "label": "Warm & Loving" },
+    { "text": "(´▽`) ❤", "label": "Happy & Grateful" },
+    { "text": "╰(*´︶`*)╯", "label": "Big Warm Hug" },
+    { "text": "(´,,•ω•,,)♡", "label": "Gentle & Sweet" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Tulip",
+        "art": "   _\n  (@)\n (@@@)\n  \\|/\n   |\n  /|\\"
+      },
+      {
+        "label": "Bouquet",
+        "art": "  @   @   @\n /|\\ /|\\ /|\\\n  \\  |  /\n   \\ | /\n    (=)\n     |"
+      },
+      {
+        "label": "Heart",
+        "art": "   **   **\n  ****  ****\n **************\n  ************\n   **********\n    ********\n      ****\n       **"
+      },
+      {
+        "label": "Teacup",
+        "art": "   ) ) )\n  ( ( (\n .-------.\n(         )__\n \\       /  )\n  `-----'--'"
+      },
+      {
+        "label": "Thank You Banner",
+        "art": "+----------------------+\n|  T H A N K   Y O U   |\n|         MOM          |\n+----------------------+"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy Mother's Day",
+      "native_script": "Happy Mother's Day",
+      "romanization": "Happy Mother's Day",
+      "translation": "The universal greeting — safe on any card, text, or caption.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Love You Mom",
+      "native_script": "Love You Mom",
+      "romanization": "Love You Mom",
+      "translation": "Short and personal — good for a text or a gift tag.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "World's Best Mom",
+      "native_script": "World's Best Mom",
+      "romanization": "World's Best Mom",
+      "translation": "The classic mug-and-card superlative.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Thank You for Everything",
+      "native_script": "Thank You for Everything",
+      "romanization": "Thank You for Everything",
+      "translation": "A gratitude-first line for a longer card message.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "To the Best Mom Ever",
+      "native_script": "To the Best Mom Ever",
+      "romanization": "To the Best Mom Ever",
+      "translation": "A warm, direct card-opener.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Feliz Dia de la Madre",
+      "native_script": "Feliz Día de la Madre",
+      "romanization": "feh-LEEZ DEE-ah deh lah MAH-dreh",
+      "translation": "Spanish for \"Happy Mother's Day\" — a globally recognized Mother's Day phrase.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "mothers-day-messages-what-to-write",
+
+  "related": [
+    {
+      "href": "/library/flower-symbols/",
+      "title": "Flower Symbols",
+      "desc": "Browse and copy floral Unicode symbols and characters to pair with a Mother's Day message."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    },
+    {
+      "href": "/library/flower-kaomoji/",
+      "title": "Flower Kaomoji",
+      "desc": "A deeper library of flower and blossom kaomoji for a softer, floral message."
+    },
+    {
+      "href": "/library/hug-kaomoji/",
+      "title": "Hug Kaomoji",
+      "desc": "Warm hug text faces for a caring, affectionate message."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full cursive font family for elegant cards and captions."
+    }
+  ]
+}
