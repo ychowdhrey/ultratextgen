@@ -1,0 +1,165 @@
+{
+  "slug": "crying-kaomoji",
+  "lang": "id",
+  "title": "Kaomoji Menangis: Salin & Tempel Wajah Teks Menangis",
+  "meta_description": "Jelajahi dan salin kaomoji menangis — wajah teks ala Jepang untuk air mata, isak tangis, dan suasana muram. Klik mana pun untuk langsung menyalinnya.",
+  "breadcrumb": "Kaomoji Menangis",
+  "hero_h1": "Kaomoji Menangis",
+  "hero_tagline": "Salin dan tempel kaomoji menangis — wajah teks ala Jepang untuk air mata dan isak tangis. Klik wajah mana pun untuk langsung menyalinnya.",
+  "intro": "Kaomoji menangis (juga dieja kamoji) adalah wajah teks ala Jepang untuk air mata dan isak tangis, dengan karakter mata mengalir seperti ﹏ dan ╥. Kaomoji menangis seperti (╥﹏╥) atau (｡•́︿•̀｡) adalah teks Unicode biasa, jadi bisa ditempel dengan rapi ke bio, caption, komentar, dan pesan. Telusuri berdasarkan intensitas di bawah — dari satu tetes air mata sampai tangisan penuh — lalu klik wajah mana pun untuk menyalinnya. Baik kamu mencari \"kaomoji menangis\" maupun \"kaomoji nangis\", semua wajah di sini gratis untuk disalin dan ditempel.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/id/library/crying-kaomoji/",
+  "home_url": "https://ultratextgen.com/id/",
+  "crumb_home": "Beranda",
+  "crumb_library": "Kaomoji",
+  "library_url": "https://ultratextgen.com/id/library/kaomoji/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/crying-kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/crying-kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/crying-kaomoji/"
+    }
+  ],
+  "cta": "Pakai UltraTextGen untuk mengubah teks biasa menjadi tebal, miring, kursif, dan 100+ gaya font Unicode lainnya — gratis dan instan.",
+  "related": [
+    {
+      "href": "/id/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Pusat kaomoji lengkap — semua wajah teks Jepang dalam satu tempat."
+    },
+    {
+      "href": "/id/library/sad-kaomoji/",
+      "title": "Kaomoji Sedih",
+      "desc": "Wajah teks murung dan kecewa untuk suasana hati rendah."
+    },
+    {
+      "href": "/id/library/happy-kaomoji/",
+      "title": "Kaomoji Senang",
+      "desc": "Wajah teks Jepang yang tersenyum dan ceria."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Bikin wajah teksmu sendiri — campur mata, mulut, dan tangan lalu salin."
+    }
+  ],
+  "sections": [
+    {
+      "id": "crying",
+      "label": "Menangis",
+      "h2": "Kaomoji Menangis",
+      "intro": "Wajah menangis sehari-hari untuk momen sedih atau kewalahan.",
+      "symbols": [
+        {
+          "char": "(╥﹏╥)",
+          "label": "Menangis"
+        },
+        {
+          "char": "(T_T)",
+          "label": "Air Mata"
+        },
+        {
+          "char": "(；﹏；)",
+          "label": "Tangis Diam"
+        },
+        {
+          "char": "(ㄒoㄒ)",
+          "label": "Mata Menangis"
+        },
+        {
+          "char": "(个_个)",
+          "label": "Cengeng"
+        },
+        {
+          "char": "(;_;)",
+          "label": "Setetes Air Mata"
+        }
+      ]
+    },
+    {
+      "id": "sobbing",
+      "label": "Terisak",
+      "h2": "Kaomoji Terisak & Air Mata Mengalir",
+      "intro": "Wajah air mata mengalir untuk tangisan yang lebih hebat.",
+      "symbols": [
+        {
+          "char": "(｡•́︿•̀｡)",
+          "label": "Terisak"
+        },
+        {
+          "char": "(πーπ)",
+          "label": "Air Mata Mengalir"
+        },
+        {
+          "char": "(ToT)",
+          "label": "Meraung"
+        },
+        {
+          "char": "(Q_Q)",
+          "label": "Air Mata Deras"
+        },
+        {
+          "char": "(；へ：)",
+          "label": "Tangis Gemetar"
+        }
+      ]
+    },
+    {
+      "id": "sad",
+      "label": "Sedih",
+      "h2": "Kaomoji Sedih & Kesal",
+      "intro": "Wajah murung untuk kesedihan, luka, dan kekecewaan.",
+      "symbols": [
+        {
+          "char": "(._.)",
+          "label": "Murung"
+        },
+        {
+          "char": "(´；ω；`)",
+          "label": "Berlinang"
+        },
+        {
+          "char": "( ; ω ; )",
+          "label": "Mau Nangis"
+        },
+        {
+          "char": "(╯︵╰,)",
+          "label": "Sedih dan Menangis"
+        }
+      ]
+    },
+    {
+      "id": "gloomy",
+      "label": "Muram",
+      "h2": "Kaomoji Muram & Kecewa",
+      "intro": "Wajah datar dan lesu untuk suasana muram atau kecewa.",
+      "symbols": [
+        {
+          "char": "(¬_¬)",
+          "label": "Datar"
+        },
+        {
+          "char": "(；￣Д￣)",
+          "label": "Tertekan"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Kempis"
+        },
+        {
+          "char": "(⇀‸↼‶)",
+          "label": "Merajuk"
+        }
+      ]
+    }
+  ]
+}

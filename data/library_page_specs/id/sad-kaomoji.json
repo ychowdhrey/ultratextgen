@@ -1,0 +1,185 @@
+{
+  "slug": "sad-kaomoji",
+  "lang": "id",
+  "title": "Kaomoji Sedih: Salin & Tempel Wajah Teks Sedih & Murung",
+  "meta_description": "Jelajahi dan salin kaomoji sedih — wajah teks ala Jepang untuk kesedihan, kekecewaan, dan suasana murung. Klik mana pun untuk langsung menyalinnya.",
+  "breadcrumb": "Kaomoji Sedih",
+  "hero_h1": "Kaomoji Sedih",
+  "hero_tagline": "Salin dan tempel kaomoji sedih — wajah teks ala Jepang yang murung dan kecewa. Klik wajah mana pun untuk langsung menyalinnya.",
+  "intro": "Kaomoji sedih (juga dieja kamoji) adalah wajah teks ala Jepang untuk suasana hati muram yang belum sampai menangis — kekecewaan, helaan napas, kesepian, dan mendung di hati. Kaomoji sedih seperti (´･_･`) atau (｡•́︿•̀｡) adalah teks Unicode biasa, jadi bisa ditempel dengan rapi ke bio, caption, komentar, dan pesan. Telusuri berdasarkan perasaan di bawah, lalu klik wajah mana pun untuk menyalinnya. Baik kamu mencari \"kaomoji sedih\" maupun \"kaomoji murung\", semua wajah di sini gratis untuk disalin dan ditempel. Untuk air mata dan tangisan, lihat halaman kaomoji menangis.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/id/library/sad-kaomoji/",
+  "home_url": "https://ultratextgen.com/id/",
+  "crumb_home": "Beranda",
+  "crumb_library": "Kaomoji",
+  "library_url": "https://ultratextgen.com/id/library/kaomoji/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/sad-kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/sad-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/sad-kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/sad-kaomoji/"
+    }
+  ],
+  "cta": "Pakai UltraTextGen untuk mengubah teks biasa menjadi tebal, miring, kursif, dan 100+ gaya font Unicode lainnya — gratis dan instan.",
+  "related": [
+    {
+      "href": "/id/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Pusat kaomoji lengkap — semua wajah teks Jepang dalam satu tempat."
+    },
+    {
+      "href": "/id/library/crying-kaomoji/",
+      "title": "Kaomoji Menangis",
+      "desc": "Wajah teks untuk air mata dan isak tangis."
+    },
+    {
+      "href": "/id/library/cat-kaomoji/",
+      "title": "Kaomoji Kucing",
+      "desc": "Wajah teks kucing lucu dengan kumis dan cakar."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Bikin wajah teksmu sendiri — campur mata, mulut, dan tangan lalu salin."
+    }
+  ],
+  "sections": [
+    {
+      "id": "downcast",
+      "label": "Murung",
+      "h2": "Kaomoji Murung",
+      "intro": "Wajah tenang berenergi rendah untuk suasana hati yang buruk.",
+      "symbols": [
+        {
+          "char": "(´･_･`)",
+          "label": "Gelisah"
+        },
+        {
+          "char": "(._.)",
+          "label": "Lesu"
+        },
+        {
+          "char": "(ｰ_ｰ)",
+          "label": "Letih"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Kempis"
+        },
+        {
+          "char": "( ˘･з･)",
+          "label": "Biasa Aja"
+        },
+        {
+          "char": "(´ω`)",
+          "label": "Muram"
+        },
+        {
+          "char": "(－‸ლ)",
+          "label": "Tepuk Jidat"
+        }
+      ]
+    },
+    {
+      "id": "disappointed",
+      "label": "Kecewa",
+      "h2": "Kaomoji Kecewa & Menghela Napas",
+      "intro": "Wajah kecewa dan menghela napas saat harapan tak tercapai.",
+      "symbols": [
+        {
+          "char": "(︶︹︶)",
+          "label": "Kecewa"
+        },
+        {
+          "char": "( ´Д`)",
+          "label": "Menghela Napas"
+        },
+        {
+          "char": "(=____=)",
+          "label": "Terkuras"
+        },
+        {
+          "char": "┐(´～`)┌",
+          "label": "Pasrah"
+        },
+        {
+          "char": "(－_－)",
+          "label": "Datar"
+        },
+        {
+          "char": "(´ﾟдﾟ`)",
+          "label": "Nelangsa"
+        }
+      ]
+    },
+    {
+      "id": "lonely",
+      "label": "Kesepian",
+      "h2": "Kaomoji Kesepian & Muram",
+      "intro": "Wajah menyendiri dan sendu saat merasa sendirian.",
+      "symbols": [
+        {
+          "char": "(｡•́︿•̀｡)",
+          "label": "Cemberut Sedih"
+        },
+        {
+          "char": "(っ- ‸ - ς)",
+          "label": "Merajuk"
+        },
+        {
+          "char": "(´ᗒ﹏ᗕ`)",
+          "label": "Tertekan"
+        },
+        {
+          "char": "⊙︿⊙",
+          "label": "Sendu"
+        },
+        {
+          "char": "( ╥﹏╥)",
+          "label": "Berkaca-kaca"
+        }
+      ]
+    },
+    {
+      "id": "hurt",
+      "label": "Terluka",
+      "h2": "Kaomoji Terluka & Pilu",
+      "intro": "Wajah nyeri dan terluka untuk kesedihan yang lebih dalam.",
+      "symbols": [
+        {
+          "char": "(◞‸◟)",
+          "label": "Patah Semangat"
+        },
+        {
+          "char": "(⌣́_⌣̀)",
+          "label": "Terluka"
+        },
+        {
+          "char": "(μ_μ)",
+          "label": "Berduka"
+        },
+        {
+          "char": "(╯︵╰,)",
+          "label": "Hancur"
+        },
+        {
+          "char": "(๑◕︵◕๑)",
+          "label": "Terluka Hati"
+        }
+      ]
+    }
+  ]
+}

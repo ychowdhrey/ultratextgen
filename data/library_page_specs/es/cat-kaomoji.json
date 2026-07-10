@@ -1,0 +1,193 @@
+{
+  "slug": "cat-kaomoji",
+  "lang": "es",
+  "title": "Kaomoji de Gato: Copiar y Pegar Caritas de Gatito Tierno",
+  "meta_description": "Explora y copia kaomoji de gato — caritas de texto japonesas de gatitos tiernos con bigotes y patitas. Gatos felices, tristes y dormilones. Haz clic para copiar.",
+  "breadcrumb": "Kaomoji de Gato",
+  "hero_h1": "Kaomoji de Gato",
+  "hero_tagline": "Copia y pega kaomoji de gato — caritas de texto japonesas de gatitos tiernos con bigotes y patitas. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji de gato (también escritos kamoji) son caritas de texto japonesas construidas en torno a la forma clásica de bigotes =^・ω・^= — la familia de un solo animal más expresiva. Un kaomoji de gato como (=^・ω・^=) o ฅ^•ﻌ•^ฅ es texto Unicode normal, así que se pega sin problemas en biografías, subtítulos, comentarios y nombres de usuario. Explora gatos felices, tristes, dormilones y con las patitas en alto abajo, y haz clic en cualquier carita para copiarla. Ya busques \"kaomoji de gato\" o \"kaomoji de gatito\", todos los gatos aquí son gratis para copiar y pegar.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/cat-kaomoji/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "crumb_library": "Kaomoji",
+  "library_url": "https://ultratextgen.com/es/library/kaomoji/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/cat-kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/cat-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/cat-kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/cat-kaomoji/"
+    }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "El centro completo de kaomoji — todas las caritas japonesas en un solo lugar."
+    },
+    {
+      "href": "/es/library/cute-kaomoji/",
+      "title": "Kaomoji Tiernos",
+      "desc": "Caritas kawaii con ojos brillantes y mejillas sonrojadas."
+    },
+    {
+      "href": "/es/library/happy-kaomoji/",
+      "title": "Kaomoji Felices",
+      "desc": "Caritas de texto japonesas que sonríen y celebran."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Crea tu propia carita — combina ojos, bocas y brazos y cópiala."
+    }
+  ],
+  "sections": [
+    {
+      "id": "classic-cats",
+      "label": "Gatos Clásicos",
+      "h2": "Kaomoji de Gato Clásico",
+      "intro": "Los gatos con bigotes básicos con los que empieza toda colección de kaomoji de gato.",
+      "symbols": [
+        {
+          "char": "(=^・ω・^=)",
+          "label": "Gato Clásico"
+        },
+        {
+          "char": "(=^‥^=)",
+          "label": "Ojos de Gato"
+        },
+        {
+          "char": "(=｀ω´=)",
+          "label": "Gato Presumido"
+        },
+        {
+          "char": "(＾• ω •＾)",
+          "label": "Gato Suave"
+        },
+        {
+          "char": "(=ↀωↀ=)",
+          "label": "Gato Ojiabierto"
+        },
+        {
+          "char": "(=^◡^=)",
+          "label": "Gato Sonriente"
+        }
+      ]
+    },
+    {
+      "id": "happy-cats",
+      "label": "Gatos Felices",
+      "h2": "Kaomoji de Gato Feliz",
+      "intro": "Gatos alegres y contentos para el buen humor.",
+      "symbols": [
+        {
+          "char": "(=^▽^=)",
+          "label": "Gato Feliz"
+        },
+        {
+          "char": "＼(=^‥^)/",
+          "label": "Gato Animando"
+        },
+        {
+          "char": "(=˘ω˘=)",
+          "label": "Gato Acurrucado"
+        },
+        {
+          "char": "ฅ(＾・ω・＾ฅ)",
+          "label": "Gato Patas Arriba"
+        },
+        {
+          "char": "(=•ㅅ•=)",
+          "label": "Gato Tierno"
+        }
+      ]
+    },
+    {
+      "id": "sad-cats",
+      "label": "Gatos Tristes",
+      "h2": "Kaomoji de Gato Triste y Llorón",
+      "intro": "Gatos llorosos y molestos para momentos tristes o de súplica.",
+      "symbols": [
+        {
+          "char": "(=；ェ；=)",
+          "label": "Gato Llorando"
+        },
+        {
+          "char": "(=ＴェＴ=)",
+          "label": "Gato Sollozando"
+        },
+        {
+          "char": "(=｀╥´=)",
+          "label": "Gato Molesto"
+        },
+        {
+          "char": "(╥ω╥)",
+          "label": "Gato Lloroso"
+        }
+      ]
+    },
+    {
+      "id": "paws-whiskers",
+      "label": "Patas y Bigotes",
+      "h2": "Gatos con Patas y Bigotes",
+      "intro": "Gatos que estiran sus patitas y bigotes en forma de ฅ.",
+      "symbols": [
+        {
+          "char": "ฅ^•ﻌ•^ฅ",
+          "label": "Patas con Bigotes"
+        },
+        {
+          "char": "(ↀДↀ)✧",
+          "label": "Gato Brillante"
+        },
+        {
+          "char": "ฅ(•ㅅ•❀)ฅ",
+          "label": "Patas con Flor"
+        },
+        {
+          "char": "(=^･ｪ･^=)づ",
+          "label": "Gato que Alcanza"
+        },
+        {
+          "char": "(＾• ω •＾)づ",
+          "label": "Ofreciendo la Pata"
+        }
+      ]
+    },
+    {
+      "id": "big-eyed-cats",
+      "label": "Gatos de Ojos Grandes",
+      "h2": "Kaomoji de Gato de Ojos Grandes",
+      "intro": "Gatos de ojos grandes y brillantes para un look extra tierno.",
+      "symbols": [
+        {
+          "char": "(=①ω①=)",
+          "label": "Gato de Ojos Grandes"
+        },
+        {
+          "char": "(=ＯｴＯ=)",
+          "label": "Gato Sorprendido"
+        },
+        {
+          "char": "(✧ᆺ✧)",
+          "label": "Gato de Ojos Brillantes"
+        }
+      ]
+    }
+  ]
+}
