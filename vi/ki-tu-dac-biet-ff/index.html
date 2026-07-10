@@ -244,7 +244,7 @@
     <div class="decoration-label">Ghép thử tên: gõ tên của bạn, chọn font, bọc khung — copy nguyên cụm</div>
     <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Gõ tên FF của bạn…" maxlength="100"></textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
     <div class="decoration-section namecheck-inline"><div class="decoration-label">Kiểm tra tên FF — trực tiếp khi bạn gõ</div><div id="ffNameChecker"></div></div>
-    <div class="decoration-section"><div class="decoration-label">Thêm kí hiệu, khung viền vào kết quả</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Kí hiệu</button><button class="decoration-tab" data-deco-tab="frames">Khung viền</button><button class="decoration-tab" data-deco-tab="minimal">Tối giản</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+    <div class="decoration-section"><div class="decoration-label">Thêm kí hiệu, khung viền vào kết quả</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Ngẫu nhiên</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Kí hiệu</button><button class="decoration-tab" data-deco-tab="frames">Khung viền</button><button class="decoration-tab" data-deco-tab="minimal">Tối giản</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
   </div></div></section>
 
   <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
@@ -335,35 +335,16 @@
 <div class="copy-toast" id="copyToast">Đã sao chép!</div>
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<!-- Page config: override the "Khung viền" (Frames) tab with FF-ready frames,
-     merged over the default Symbols / Minimal / Emoji tabs (see script.js), so
-     the frame wraps the user's typed name live across every generated style.
-     Space-less because Free Fire rejects plain spaces. -->
+<!-- Flair engine + page config: build the "frames" decoration tab from shared
+     packs (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
 <script>
-  window.UTG_DECORATIONS = {
-    frames: [
-      { text: "꧁༒text༒꧂", prefix: "꧁༒", suffix: "༒꧂" },
-      { text: "꧁text꧂", prefix: "꧁", suffix: "꧂" },
-      { text: "꧁•text•꧂", prefix: "꧁•", suffix: "•꧂" },
-      { text: "༺text༻", prefix: "༺", suffix: "༻" },
-      { text: "༺༒text༒༻", prefix: "༺༒", suffix: "༒༻" },
-      { text: "❰text❱", prefix: "❰", suffix: "❱" },
-      { text: "「text」", prefix: "「", suffix: "」" },
-      { text: "『text』", prefix: "『", suffix: "』" },
-      { text: "【text】", prefix: "【", suffix: "】" },
-      { text: "★彡text彡★", prefix: "★彡", suffix: "彡★" },
-      { text: "メtext彡", prefix: "メ", suffix: "彡" },
-      { text: "☬text☬", prefix: "☬", suffix: "☬" },
-      { text: "♛text♛", prefix: "♛", suffix: "♛" },
-      { text: "†text†", prefix: "†", suffix: "†" },
-      { text: "⚔text⚔", prefix: "⚔", suffix: "⚔" },
-      { text: "✿text✿", prefix: "✿", suffix: "✿" },
-      { text: "★text★", prefix: "★", suffix: "★" },
-      { text: "࿐text࿐", prefix: "࿐", suffix: "࿐" },
-      { text: "🔥text🔥", prefix: "🔥", suffix: "🔥" },
-      { text: "👑text♛", prefix: "👑", suffix: "♛" }
-    ]
-  };
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ frames: ["gameFrames", "crowns", "warrior", "spacing"] })
+      : undefined;
 </script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>

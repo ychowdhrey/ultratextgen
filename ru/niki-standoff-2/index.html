@@ -160,6 +160,7 @@
             </svg>
             Добавить символы вокруг ника
           </div>
+          <button class="surprise-btn" id="surpriseBtn" type="button">🎲 Случайно</button>
           <div class="decoration-tabs">
             <button class="decoration-tab active" data-deco-tab="symbols">Символы</button>
             <button class="decoration-tab" data-deco-tab="frames">Рамки</button>
@@ -355,35 +356,16 @@
 
   <div class="copy-toast" id="copyToast">Скопировано!</div>
 
-  <!-- Page config: override the "Рамки" (Frames) tab with Standoff 2 frames,
-       merged over the default Symbols / Minimal / Emoji tabs (see script.js).
-       Applied live to every generated card so the frame wraps the user's typed
-       nick automatically — works with Cyrillic too, where letter styles don't.
-       Space-less so the result stays within the field's charset. -->
+  <!-- Flair engine + page config: build the "frames" decoration tab from shared
+       packs (js/flair/flair-engine.js), merged over the default tabs (script.js).
+       flair-engine.js is non-deferred so compose() is ready before the deferred
+       generator scripts run. -->
+  <script src="/js/flair/flair-engine.js"></script>
   <script>
-  window.UTG_DECORATIONS = {
-    frames: [
-      { text: "꧁༒text༒꧂", prefix: "꧁༒", suffix: "༒꧂" },
-      { text: "꧁text꧂", prefix: "꧁", suffix: "꧂" },
-      { text: "༺text༻", prefix: "༺", suffix: "༻" },
-      { text: "❰text❱", prefix: "❰", suffix: "❱" },
-      { text: "『text』", prefix: "『", suffix: "』" },
-      { text: "【text】", prefix: "【", suffix: "】" },
-      { text: "꧁☠text☠꧂", prefix: "꧁☠", suffix: "☠꧂" },
-      { text: "☠text☠", prefix: "☠", suffix: "☠" },
-      { text: "★彡text彡★", prefix: "★彡", suffix: "彡★" },
-      { text: "メtext彡", prefix: "メ", suffix: "彡" },
-      { text: "亗text亗", prefix: "亗", suffix: "亗" },
-      { text: "⚔text⚔", prefix: "⚔", suffix: "⚔" },
-      { text: "♛text♛", prefix: "♛", suffix: "♛" },
-      { text: "†text†", prefix: "†", suffix: "†" },
-      { text: "⚡text⚡", prefix: "⚡", suffix: "⚡" },
-      { text: "★text★", prefix: "★", suffix: "★" },
-      { text: "࿐text࿐", prefix: "࿐", suffix: "࿐" },
-      { text: "꧁text࿐", prefix: "꧁", suffix: "࿐" },
-      { text: "🔥text🔥", prefix: "🔥", suffix: "🔥" }
-    ]
-  };
+    window.UTG_DECORATIONS =
+      window.UltraTextGen && window.UltraTextGen.flair
+        ? window.UltraTextGen.flair.compose({ frames: ["gameFrames", "warrior", "crowns", "spacing"] })
+        : undefined;
   </script>
 
   <!-- Generator scripts -->
