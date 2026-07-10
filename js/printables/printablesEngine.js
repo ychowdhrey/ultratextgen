@@ -36,6 +36,11 @@
  *   #pt-practice-print   button: print ruled practice sheet
  *   #pt-name-input       name / word field  (+ #pt-name-print, #pt-name-png,
  *                        #pt-name-preview, #pt-name-rows)
+ *   #pt-stroke-toggle    checkbox: overlay a numbered start-dot + direction
+ *                        arrows on traceable letters (off by default). Reads
+ *                        window.UTG_STROKE_DIRECTION_DATA (js/printables/
+ *                        strokeDirectionData.js) — a page must load that
+ *                        script for the toggle to draw anything.
  *   #pt-print-root       hidden print surface (REQUIRED to print)
  */
 (function () {
@@ -77,6 +82,7 @@
     namePng: $("#pt-name-png"),
     namePreview: $("#pt-name-preview"),
     nameRows: $("#pt-name-rows"),
+    strokeToggle: $("#pt-stroke-toggle"),
     // Difficulty generator (handwriting-worksheet-generator)
     genInput: $("#pt-gen-input"),
     genPreview: $("#pt-gen-preview"),
@@ -108,6 +114,14 @@
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
     designPng: $("#pt-design-png"),
+    // Name puzzle maker (optional; gated on its own mounts)
+    puzzleInput: $("#pt-puzzle-input"),
+    puzzleHeading: $("#pt-puzzle-heading"),
+    puzzleBorderGroup: $("#pt-puzzle-border-group"),
+    puzzleFooter: $("#pt-puzzle-footer"),
+    puzzlePreview: $("#pt-puzzle-preview"),
+    puzzlePrint: $("#pt-puzzle-print"),
+    puzzlePng: $("#pt-puzzle-png"),
     printRoot: $("#pt-print-root")
   };
 
@@ -204,6 +218,7 @@
     text.setAttribute("paint-order", "stroke");
     text.textContent = ch;
     svg.appendChild(text);
+    if (o.overlay) addStrokeOverlay(svg, ch);
     return svg;
   }
 
@@ -241,6 +256,7 @@
     }
     text.textContent = word;
     svg.appendChild(text);
+    if (o.overlay) addWordStrokeOverlay(svg, word, fontSize, spacing, 112, "central", w);
     return svg;
   }
 
@@ -257,6 +273,154 @@
     }
     if (RENDER === "dots") return singleDotSVG(ch);
     return outlineSVG(ch);
+  }
+
+  /* ---------------------------------------------------------------
+     Stroke-direction overlay ("Show stroke direction" toggle)
+     ---------------------------------------------------------------
+     Occupational-therapy guidance: tracing without a numbered start-dot and
+     a direction arrow can teach poor motor plans. window.UTG_STROKE_DIRECTION_DATA
+     (js/printables/strokeDirectionData.js) hand-authors, per letter, a
+     numbered start-dot + 1-4 short arrow strokes in the SAME 200x240 /
+     font-size-210 / x=100,y=128 / dominant-baseline:central coordinate
+     space that outlineSVG() already draws letters in — so for a single
+     letter (outlineSVG) the overlay drops straight on top with no math.
+     For a whole traced word/name (wordOutlineSVG, traceWordSVG) the word is
+     still rendered as ONE unbroken <text> node exactly as before — visual
+     output is byte-for-byte unchanged when the toggle is off — and the
+     overlay is added as a separate layer whose per-letter groups are placed
+     using Canvas-measured advance widths (the same "measure with a hidden
+     canvas" technique already used elsewhere in this file, e.g. wordPNG).
+     Off by default; gated entirely on the optional #pt-stroke-toggle mount,
+     so pages that don't add it are completely unaffected. SVG only — PNG
+     downloads intentionally don't include the overlay.
+     --------------------------------------------------------------- */
+
+  const STROKE_COLOR = "#2451c9";     // legible on white, distinct from the ink-black glyph
+  const STROKE_BASELINE_UNIT_Y = 200; // where the type baseline falls inside outlineSVG's own
+                                       // 200x240 / font-size-210 / central-baseline box
+  let strokeOverlayUid = 0;
+  let strokeMeasureCtx = null;
+
+  function strokeOverlayOn() { return !!(el.strokeToggle && el.strokeToggle.checked); }
+
+  function strokeDataFor(ch) {
+    const table = window.UTG_STROKE_DIRECTION_DATA;
+    return (table && table[ch]) ? table[ch] : null;
+  }
+
+  // Numbered start-dot + direction arrow for every stroke of one letter,
+  // drawn directly into `parent`'s own coordinate space (the 200x240 unit
+  // box, or a <g> already transformed into an equivalent local box).
+  function addStrokeOverlay(parent, ch) {
+    const data = strokeDataFor(ch);
+    if (!data || !data.strokes || !data.strokes.length) return;
+    const uid = "ptsd" + (++strokeOverlayUid);
+    const g = svgMake("g", { class: "pt-stroke-overlay", "aria-hidden": "true" }, parent);
+    const defs = svgMake("defs", null, g);
+    const markerId = "ptArrow" + uid;
+    // markerUnits defaults to "strokeWidth", which would silently multiply
+    // markerWidth/Height by the path's stroke-width below (6x) — pin it to
+    // userSpaceOnUse so the arrowhead size stays fixed and predictable.
+    const marker = svgMake("marker", {
+      id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
+      markerWidth: 20, markerHeight: 20, orient: "auto"
+    }, defs);
+    svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+
+    data.strokes.forEach((d, i) => {
+      svgMake("path", {
+        d: d, fill: "none", stroke: STROKE_COLOR,
+        "stroke-width": 6, "stroke-linecap": "round", "stroke-linejoin": "round",
+        "marker-end": "url(#" + markerId + ")", opacity: 0.9
+      }, g);
+      const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
+      if (!m) return;
+      const sx = parseFloat(m[1]), sy = parseFloat(m[2]);
+      svgMake("circle", { cx: sx, cy: sy, r: 11, fill: "#ffffff", stroke: STROKE_COLOR, "stroke-width": 2.5 }, g);
+      const label = svgMake("text", {
+        x: sx, y: sy + 0.5, "text-anchor": "middle", "dominant-baseline": "central",
+        "font-family": "'Plus Jakarta Sans', sans-serif", "font-weight": 700,
+        "font-size": 13, fill: STROKE_COLOR
+      }, g);
+      label.textContent = String(i + 1);
+    });
+  }
+
+  function getStrokeMeasureCtx() {
+    if (!strokeMeasureCtx) strokeMeasureCtx = document.createElement("canvas").getContext("2d");
+    return strokeMeasureCtx;
+  }
+
+  // Per-character center-x offsets (0-based, left edge at 0) for `word` when
+  // rendered at `fontPx`, using the SAME technique wordPNG/genWordPNG already
+  // use to size text on Canvas — real per-glyph advance widths, reconciled
+  // so they sum to the actual measured word width (covers minor
+  // kerning/rounding drift between the per-char and whole-word measurements).
+  function charAdvanceCenters(word, fontPx) {
+    const ctx = getStrokeMeasureCtx();
+    ctx.font = "700 " + fontPx + "px " + FONT;
+    const chars = [...String(word)];
+    const widths = chars.map((c) => ctx.measureText(c).width);
+    const rawTotal = widths.reduce((a, b) => a + b, 0) || 1;
+    const measuredTotal = ctx.measureText(word).width;
+    const scale = measuredTotal / rawTotal;
+    let x = 0;
+    const centers = chars.map((c, i) => {
+      const w = widths[i] * scale;
+      const cx = x + w / 2;
+      x += w; // any letter-spacing gap is added by the caller, not here
+      return { ch: c, cx: cx };
+    });
+    return { centers: centers, total: measuredTotal };
+  }
+
+  // Draws one letter's stroke overlay, scaled + translated from its 200x240
+  // authoring box into a destination slot centered at (cx, anchorY) with an
+  // em-size of `emPx`. `mode` picks which point of the authoring box maps to
+  // (cx, anchorY): "central" (box center, matching wordOutlineSVG's own
+  // dominant-baseline:central text) or "alphabetic" (the type baseline,
+  // matching traceWordSVG's default alphabetic-baseline text).
+  function letterOverlayCell(parent, ch, cx, anchorY, emPx, mode) {
+    if (!strokeDataFor(ch)) return;
+    const scale = emPx / 210;
+    const anchorUnitY = mode === "alphabetic" ? STROKE_BASELINE_UNIT_Y : 128;
+    const tx = cx - 100 * scale;
+    const ty = anchorY - anchorUnitY * scale;
+    const g = svgMake("g", { transform: "translate(" + tx.toFixed(2) + "," + ty.toFixed(2) + ") scale(" + scale.toFixed(4) + ")" }, parent);
+    addStrokeOverlay(g, ch);
+  }
+
+  // Overlays every letter of a word/name rendered as a single centered
+  // <text> (wordOutlineSVG / traceWordSVG) without touching that <text>
+  // node itself. `spacingPx` mirrors the `letter-spacing` attribute those
+  // functions may set so the overlay tracks the same extra gaps.
+  function addWordStrokeOverlay(svg, word, fontPx, spacingPx, anchorY, mode, totalW) {
+    const measured = charAdvanceCenters(word, fontPx);
+    const extra = spacingPx ? spacingPx * (measured.centers.length - 1) : 0;
+    const fullWidth = measured.total + extra;
+    let runningExtra = 0;
+    const leftEdge = totalW / 2 - fullWidth / 2;
+    measured.centers.forEach((c, i) => {
+      const cx = leftEdge + c.cx + runningExtra;
+      if (spacingPx) runningExtra += spacingPx;
+      if (!/[A-Za-z]/.test(c.ch)) return;
+      letterOverlayCell(svg, c.ch, cx, anchorY, fontPx, mode);
+    });
+  }
+
+  const STROKE_TOGGLE_LS_KEY = "utg-pt-stroke-overlay";
+
+  function initStrokeToggle() {
+    if (!el.strokeToggle) return;
+    try {
+      if (localStorage.getItem(STROKE_TOGGLE_LS_KEY) === "1") el.strokeToggle.checked = true;
+    } catch (e) { /* noop — storage unavailable, default unchecked */ }
+    el.strokeToggle.addEventListener("change", () => {
+      try { localStorage.setItem(STROKE_TOGGLE_LS_KEY, el.strokeToggle.checked ? "1" : "0"); } catch (e) { /* noop */ }
+      if (el.nameInput || el.namePreview) renderNamePreview();
+      if (el.genInput || el.genPreview) renderGenPreview();
+    });
   }
 
   /* ---------------------------------------------------------------
@@ -590,8 +754,9 @@
      --------------------------------------------------------------- */
 
   function buildPracticeSheet() {
+    const overlayOn = strokeOverlayOn();
     const sheet = document.createElement("div");
-    sheet.className = "cursive-print-sheet";
+    sheet.className = "cursive-print-sheet" + (overlayOn ? " pt-stroke-on" : "");
     CHARS.forEach((ch) => {
       const row = document.createElement("div");
       row.className = "cursive-print-row";
@@ -603,7 +768,9 @@
         model.textContent = renderGlyph(ch.toUpperCase()) + " " + renderGlyph(ch.toLowerCase());
         trace.textContent = renderGlyph(ch.toUpperCase()) + " " + renderGlyph(ch.toLowerCase());
       } else {
-        model.appendChild(outlineSVG(ch, { small: true }));
+        // Model column only ever shows the uppercase letter (CHARS is A-Z +
+        // 0-9), so the overlay's uppercase coverage lines up exactly here.
+        model.appendChild(outlineSVG(ch, { small: true, overlay: overlayOn }));
         model.classList.add("pt-model-svg");
         trace.textContent = /[0-9]/.test(ch) ? ch : (ch + " " + ch.toLowerCase());
       }
@@ -636,7 +803,7 @@
       p.textContent = renderGlyph(name);
       el.namePreview.appendChild(p);
     } else {
-      el.namePreview.appendChild(wordOutlineSVG(name, { solid: false }));
+      el.namePreview.appendChild(wordOutlineSVG(name, { solid: false, overlay: strokeOverlayOn() }));
     }
   }
 
@@ -666,7 +833,7 @@
       span.textContent = renderGlyph(name);
       row.appendChild(span);
     } else {
-      row.appendChild(wordOutlineSVG(name, { solid: kind === "model" }));
+      row.appendChild(wordOutlineSVG(name, { solid: kind === "model", overlay: strokeOverlayOn() }));
     }
     return row;
   }
@@ -764,6 +931,7 @@
       if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
       t.textContent = word;
       svg.appendChild(t);
+      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, 0, TRACE_BASE, "alphabetic", w);
     }
     return svg;
   }
@@ -823,7 +991,7 @@
   function genRow(word, level) {
     const row = document.createElement("div");
     row.className = "pt-gen-row";
-    row.appendChild(traceWordSVG(word, level, { guides: true }));
+    row.appendChild(traceWordSVG(word, level, { guides: true, overlay: strokeOverlayOn() }));
     return row;
   }
 
@@ -1624,25 +1792,29 @@
   }
 
   // Wire one swatch button group: inject each swatch preview, set the active
-  // state, and re-render on click. `field` is the designState key it drives.
-  function wireSwatchGroup(group, field, swatchFor) {
+  // state, and re-render on click. `state` is the plain object the group
+  // drives (e.g. designState / puzzleState) and `field` is its key; `onChange`
+  // re-renders whatever preview that state feeds. Generalized (rather than
+  // hardcoded to the coloring designer) so other mounts — e.g. the name
+  // puzzle maker's border picker — can reuse the exact same swatch UI.
+  function wireSwatchGroup(group, field, swatchFor, state, onChange) {
     if (!group) return;
     const buttons = $$(".pt-swatch", group);
     const preset = buttons.filter((b) => b.classList.contains("is-active"))[0] || buttons[0];
-    if (preset) designState[field] = preset.dataset.value;
+    if (preset) state[field] = preset.dataset.value;
     buttons.forEach((b) => {
       const slot = b.querySelector(".pt-swatch-art");
       if (slot) slot.appendChild(swatchFor(b.dataset.value));
       b.setAttribute("aria-checked", b === preset ? "true" : "false");
       b.classList.toggle("is-active", b === preset);
       b.addEventListener("click", () => {
-        designState[field] = b.dataset.value;
+        state[field] = b.dataset.value;
         buttons.forEach((o) => {
           const on = o === b;
           o.classList.toggle("is-active", on);
           o.setAttribute("aria-checked", on ? "true" : "false");
         });
-        renderDesignPreview();
+        onChange();
       });
     });
   }
@@ -1684,8 +1856,8 @@
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderDesignPreview, 120); };
     el.designInput.addEventListener("input", schedule);
     if (el.designHeading) el.designHeading.addEventListener("input", schedule);
-    wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG);
-    wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG);
+    wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG, designState, renderDesignPreview);
+    wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG, designState, renderDesignPreview);
     // Dot-to-dot mode toggle + difficulty ladder + hint switch (all optional).
     wireChoiceGroup(el.designModeGroup, "mode", syncDesignMode);
     wireChoiceGroup(el.designDensityGroup, "density");
@@ -1701,14 +1873,259 @@
   }
 
   /* ---------------------------------------------------------------
+     Section: name puzzle maker
+     Type a name -> each letter becomes a big outline "puzzle piece" in a
+     row, with a dashed cut line between every pair of pieces, an optional
+     custom heading, an optional Name/Date footer line, and an optional
+     decorative shape-frame border. The border reuses the exact BORDER_SETS /
+     addBorderRow / borderSwatchSVG primitives the coloring-sheet designer
+     already ships — no second border system. Letters reuse outlineSVG(ch),
+     the same per-character primitive buildAlphabetGrid lays out in a grid,
+     just arranged in a single row here. Gated on #pt-puzzle-input +
+     #pt-puzzle-preview so other pages are untouched.
+     --------------------------------------------------------------- */
+
+  const PUZZLE_DEMO = CFG.puzzleDemo || CFG.nameDemo || "Alex";
+  const puzzleState = { border: "none" };
+
+  function puzzleValue() {
+    const raw = el.puzzleInput ? el.puzzleInput.value : "";
+    return (raw && raw.trim()) ? raw.trim().slice(0, 20) : PUZZLE_DEMO;
+  }
+  function puzzleHeadingText() {
+    return el.puzzleHeading ? el.puzzleHeading.value.trim().slice(0, 48) : "";
+  }
+  function puzzleBorderKey() {
+    return el.puzzleBorderGroup ? puzzleState.border : "none";
+  }
+  function puzzleBorderSym() {
+    return BORDER_SETS[puzzleBorderKey()] || "";
+  }
+  function puzzleFooterOn() {
+    return !!(el.puzzleFooter && el.puzzleFooter.checked);
+  }
+
+  // One row of symbols reusing the coloring designer's own border primitive
+  // (addBorderRow draws across a fixed 0..1000 viewBox, so a dedicated
+  // 1000x60 strip drops straight in).
+  function puzzleBorderStripSVG(symbols) {
+    const svg = svgMake("svg", { viewBox: "0 0 1000 60", class: "pt-puzzle-border-strip", "aria-hidden": "true" });
+    addBorderRow(svg, symbols, 40);
+    return svg;
+  }
+
+  function puzzleFooterRow() {
+    const row = document.createElement("div");
+    row.className = "pt-puzzle-footer-row";
+    const field = (label) => {
+      const f = document.createElement("span");
+      f.className = "pt-puzzle-footer-field";
+      const l = document.createElement("span");
+      l.textContent = label;
+      const line = document.createElement("span");
+      line.className = "pt-puzzle-footer-line";
+      f.appendChild(l); f.appendChild(line);
+      return f;
+    };
+    row.appendChild(field("Name:"));
+    row.appendChild(field("Date:"));
+    return row;
+  }
+
+  // The row of cut-apart letter pieces. Each non-space character becomes an
+  // outlineSVG(ch) piece with a dashed cut line on its trailing edge (pure
+  // CSS border, so it prints identically to the screen preview); spaces
+  // become a narrower gap column with no piece and no cut line. Column
+  // widths are set directly (not via a CSS custom property + repeat()) so
+  // any letter count — 3 or 13 — always fits the sheet width; long names
+  // just render smaller pieces instead of overflowing.
+  function puzzleRowNode(word) {
+    const row = document.createElement("div");
+    row.className = "pt-puzzle-row";
+    const cols = [];
+    [...word].forEach((rawCh) => {
+      if (rawCh === " ") {
+        const gap = document.createElement("div");
+        gap.className = "pt-puzzle-gap";
+        row.appendChild(gap);
+        cols.push("0.6fr");
+        return;
+      }
+      const ch = /[a-z]/i.test(rawCh) ? rawCh.toUpperCase() : rawCh;
+      const piece = document.createElement("div");
+      piece.className = "pt-puzzle-piece";
+      piece.appendChild(outlineSVG(ch));
+      row.appendChild(piece);
+      cols.push("1fr");
+    });
+    row.style.gridTemplateColumns = cols.join(" ");
+    return row;
+  }
+
+  // The whole puzzle as one DOM sheet — the single primitive behind both the
+  // live preview and the printed page, so what's on screen is what prints.
+  function puzzleSheetNode() {
+    const word = puzzleValue();
+    const heading = puzzleHeadingText();
+    const strip = puzzleBorderSym().split(" ").filter(Boolean);
+    const footer = puzzleFooterOn();
+
+    const sheet = document.createElement("div");
+    sheet.className = "pt-puzzle-sheet";
+
+    if (strip.length) sheet.appendChild(puzzleBorderStripSVG(strip));
+
+    const h = document.createElement("h3");
+    h.className = "pt-puzzle-heading-text";
+    h.textContent = heading || (word + "’s Name Puzzle");
+    sheet.appendChild(h);
+
+    sheet.appendChild(puzzleRowNode(word));
+
+    const cap = document.createElement("p");
+    cap.className = "pt-puzzle-caption";
+    cap.textContent = "Cut along the dashed lines to separate each letter piece.";
+    sheet.appendChild(cap);
+
+    if (footer) sheet.appendChild(puzzleFooterRow());
+    if (strip.length) sheet.appendChild(puzzleBorderStripSVG(strip));
+
+    const cred = document.createElement("p");
+    cred.className = "pt-puzzle-credit";
+    cred.textContent = "ultratextgen.com";
+    sheet.appendChild(cred);
+
+    return sheet;
+  }
+
+  function renderPuzzlePreview() {
+    if (!el.puzzlePreview) return;
+    el.puzzlePreview.innerHTML = "";
+    el.puzzlePreview.appendChild(puzzleSheetNode());
+  }
+
+  function printPuzzle() {
+    const holder = document.createElement("div");
+    holder.className = "pt-puzzle-print-holder";
+    holder.appendChild(puzzleSheetNode());
+    printWrap("", holder);
+  }
+
+  // Word -> wide PNG mirroring the sheet: border strips, heading, a row of
+  // outlined letter pieces with dashed cut lines between them, and an
+  // optional Name/Date footer. Canvas has no CSS grid, so column widths and
+  // cut-line x-positions are computed with the same weighting (space = 0.6,
+  // letter = 1) as puzzleRowNode's grid-template-columns.
+  function puzzlePNG() {
+    const word = puzzleValue();
+    const heading = puzzleHeadingText();
+    const strip = puzzleBorderSym().split(" ").filter(Boolean);
+    const footer = puzzleFooterOn();
+    withFont(() => {
+      const chars = [...word];
+      const W = Math.max(1000, chars.length * 140 + 240);
+      const H = 900;
+      const pad = 70;
+      const canvas = document.createElement("canvas");
+      canvas.width = W; canvas.height = H;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, W, H);
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.lineJoin = "round";
+
+      if (strip.length) {
+        const count = 11, gap = (W - 120) / (count - 1);
+        ctx.font = "34px " + FONT; ctx.fillStyle = "#c8ccd6";
+        for (let i = 0; i < count; i++) {
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, 60);
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, H - 40);
+        }
+      }
+
+      ctx.font = "700 48px " + FONT;
+      ctx.fillStyle = INK;
+      ctx.fillText(heading || (word + "’s Name Puzzle"), W / 2, 130);
+
+      const rowTop = 190, rowBottom = 620, rowH = rowBottom - rowTop;
+      const availW = W - pad * 2;
+      const weights = chars.map((c) => (c === " " ? 0.6 : 1));
+      const totalWeight = weights.reduce((a, b) => a + b, 0) || 1;
+      let x = pad;
+      const boundaries = [];
+      chars.forEach((rawCh, i) => {
+        const w = availW * (weights[i] / totalWeight);
+        if (rawCh !== " ") {
+          const ch = /[a-z]/i.test(rawCh) ? rawCh.toUpperCase() : rawCh;
+          const cx = x + w / 2, cy = rowTop + rowH / 2;
+          const fs = Math.min(rowH * 0.8, w * 0.85);
+          ctx.font = "700 " + Math.round(fs) + "px " + FONT;
+          ctx.fillStyle = "#ffffff";
+          ctx.fillText(ch, cx, cy);
+          ctx.lineWidth = Math.max(4, fs * 0.06);
+          ctx.strokeStyle = INK;
+          ctx.strokeText(ch, cx, cy);
+          if (x > pad) boundaries.push(x);
+        }
+        x += w;
+      });
+      ctx.setLineDash([12, 10]);
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 3;
+      boundaries.forEach((bx) => {
+        ctx.beginPath();
+        ctx.moveTo(bx, rowTop); ctx.lineTo(bx, rowBottom); ctx.stroke();
+      });
+      ctx.setLineDash([]);
+
+      if (footer) {
+        ctx.textAlign = "left";
+        ctx.font = "600 30px " + FONT;
+        ctx.fillStyle = INK;
+        const fy = 700;
+        ctx.fillText("Name:", pad, fy);
+        ctx.fillText("Date:", W / 2 + 40, fy);
+        ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(pad + 110, fy + 12); ctx.lineTo(W / 2 - 40, fy + 12);
+        ctx.moveTo(W / 2 + 150, fy + 12); ctx.lineTo(W - pad, fy + 12);
+        ctx.stroke();
+        ctx.textAlign = "center";
+      }
+
+      ctx.font = "22px " + FONT;
+      ctx.fillStyle = "#aeb4c0";
+      ctx.fillText("ultratextgen.com", W / 2, 860);
+
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(word) || "puzzle") + ".png");
+    });
+  }
+
+  function buildPuzzle() {
+    if (!el.puzzleInput || !el.puzzlePreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderPuzzlePreview, 120); };
+    el.puzzleInput.addEventListener("input", schedule);
+    if (el.puzzleHeading) el.puzzleHeading.addEventListener("input", schedule);
+    if (el.puzzleFooter) el.puzzleFooter.addEventListener("change", renderPuzzlePreview);
+    wireSwatchGroup(el.puzzleBorderGroup, "border", borderSwatchSVG, puzzleState, renderPuzzlePreview);
+    if (el.puzzlePrint) el.puzzlePrint.addEventListener("click", printPuzzle);
+    if (el.puzzlePng) el.puzzlePng.addEventListener("click", puzzlePNG);
+    renderPuzzlePreview();
+  }
+
+  /* ---------------------------------------------------------------
      Wiring
      --------------------------------------------------------------- */
 
   function init() {
+    initStrokeToggle();
     buildStrip();
     buildAlphabetGrid();
     initGenerator();
     buildDesigner();
+    buildPuzzle();
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);
 

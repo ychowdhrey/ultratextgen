@@ -167,6 +167,11 @@ const PRINTABLE_PAGES = {
     title: 'Handwriting Worksheet Generator',
     description: 'Make a custom handwriting worksheet and dial the tracing difficulty — dotted, dashed, faded, or blank — with age presets from Pre-K to Grade 2.'
   },
+  'sight-word-tracing': {
+    slug: 'sight-word-tracing',
+    title: 'Sight Word Tracing Worksheets',
+    description: 'Tap a common Dolch-style sight word or type your own, dial the tracing difficulty, and print a free sight word practice sheet — reading-stage presets from Pre-K to Grade 2+.'
+  },
   'alphabet-coloring-pages': {
     slug: 'alphabet-coloring-pages',
     title: 'Alphabet Coloring Pages',
@@ -176,6 +181,11 @@ const PRINTABLE_PAGES = {
     slug: 'coloring-page-maker',
     title: 'Coloring Page Maker',
     description: 'Type any name or word to make your own printable coloring page — heading, name-and-date line, decorative borders, and multi-color fills. Print or PNG, no sign-up.'
+  },
+  'name-puzzle-maker': {
+    slug: 'name-puzzle-maker',
+    title: 'Name Puzzle Maker',
+    description: 'Type any name to make a free printable name puzzle — each letter as a big outline piece with dashed cut lines, plus an optional shape-frame border. Print or PNG, no sign-up.'
   },
   'dot-to-dot-alphabet': {
     slug: 'dot-to-dot-alphabet',
