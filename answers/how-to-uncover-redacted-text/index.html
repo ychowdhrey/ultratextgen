@@ -69,6 +69,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "Question",
       "name": "How do I black out text so it can never be uncovered?",
       "acceptedAnswer": { "@type": "Answer", "text": "Replace the words with block characters before you share, so the original text is gone — for example using a Unicode redacted text generator. For documents, use a real redaction tool that removes the underlying text, then export a flattened copy. Never rely on a black rectangle drawn over selectable text or on blur." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does SCP-style redacted text that reveals on click work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "That's a different technique from permanent Unicode redaction. SCP Wiki entries and Discord/Telegram spoiler tags style text the same color as its background, so it looks blacked out until a reader selects or taps it — designed to be reversible on purpose. Permanent Unicode-block redaction, the kind covered on this page, cannot be reversed by anyone, including the person who made it." }
     }
   ]
 }
@@ -147,8 +152,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li><strong>Black box over live text.</strong> In many PDFs a rectangle is drawn on top, but the selectable text is still there. Copy-pasting underneath, or removing the shape, exposes it.</li>
       <li><strong>Blur and pixelation.</strong> These transform the original rather than remove it. For predictable content, the transformation can sometimes be estimated or reversed.</li>
       <li><strong>Flattened, but low-resolution.</strong> Even a flattened image can leak short, guessable content (a name, a date) through context.</li>
+      <li><strong>Physical paper.</strong> An older, low-tech version of the same mistake: redaction tape or marker ink that isn't fully opaque can let the original text show through when the page is held up to a bright light.</li>
     </ul>
+    <p>A well-documented example: in 2019, journalists covering the Paul Manafort case found that a legal filing meant to redact certain passages had only drawn black highlighting over a live text layer, so the "hidden" paragraphs could be copied straight out of the PDF. It's the same failure mode described above — covering, not removing.</p>
     <p>The takeaway isn't "you can always uncover it" — it's that covering is not the same as removing. If the original data survives anywhere in the file, the redaction is only as strong as someone's willingness to dig.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section">
+  <span class="article-section-label">Case 3 — Spoiler-style reveal</span>
+  <h2>SCP and spoiler tags are a different tool, on purpose</h2>
+  <div class="editorial-block">
+    <p>If you landed here searching for "SCP redacted text" or "reveal on highlight," you may want a third, separate technique — not a way to break someone's redaction, but a way to build your <em>own</em> text that's meant to be revealed. The SCP Wiki's classic black-bar effect, and Discord/Telegram spoiler tags, work by styling text the same color as its background (often via a CSS trick like black-on-black) so it looks blacked out until a reader selects or taps it.</p>
+    <p>That's the opposite of the permanent Unicode-block method in Case 1 above: spoiler tags are designed to be reversible by the reader, on demand. If you want the permanent, un-reveal-able version instead, use the <a href="/category/classified/">Unicode redacted text generator</a>.</p>
   </div>
 </section>
 
@@ -206,6 +224,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </button>
     <div class="faq-answer">
       Replace the words before sharing so the secret never leaves your device intact. The <a href="/category/classified/">Redacted Text Generator</a> does this with Unicode blocks; for files, use a real redaction tool that deletes the underlying text and export a flattened copy.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      How does SCP-style redacted text that reveals on click work?
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div class="faq-answer">
+      That's a different technique from permanent Unicode redaction. SCP Wiki entries and Discord/Telegram spoiler tags style text the same color as its background, so it looks blacked out until a reader selects or taps it — designed to be reversible on purpose. Permanent Unicode-block redaction, the kind covered on this page, cannot be reversed by anyone, including the person who made it.
     </div>
   </div>
 </section>
