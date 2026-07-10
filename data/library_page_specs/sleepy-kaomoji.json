@@ -1,0 +1,129 @@
+{
+  "slug": "sleepy-kaomoji",
+  "title": "Sleepy Kaomoji: Copy & Paste Sleeping & Tired Text Faces",
+  "meta_description": "Browse and copy sleepy kaomoji — also spelled kamoji — drowsy, dozing, and fast-asleep Japanese text faces with zzz. Click any to copy it instantly.",
+  "breadcrumb": "Sleepy Kaomoji",
+  "hero_h1": "Sleepy Kaomoji",
+  "hero_tagline": "Copy and paste sleepy kaomoji — drowsy, dozing, and fast-asleep Japanese text faces. Click any face to copy it instantly.",
+  "intro": "Sleepy kaomoji (also spelled kamoji) are Japanese-style text faces for every stage of tired — heavy eyelids, mid-yawn, and sound asleep with a trail of zzz. A sleepy kaomoji such as (˘ω˘) or (-_-) zzz is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by drowsiness below and click any face to copy it instantly. Whether you search \"sleepy kaomoji,\" \"sleep kaomoji,\" or \"kaomoji sleepy,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "drowsy",
+      "label": "Drowsy",
+      "h2": "Drowsy Kaomoji",
+      "intro": "Heavy-lidded, worn-out faces.",
+      "symbols": [
+        {
+          "char": "(´～`)",
+          "label": "Drowsy"
+        },
+        {
+          "char": "(=____=)",
+          "label": "Bleary"
+        },
+        {
+          "char": "(⇀‸↼‶)",
+          "label": "Half Asleep"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Nodding Off"
+        },
+        {
+          "char": "(ᴗ˳ᴗ)",
+          "label": "Cozy Tired"
+        },
+        {
+          "char": "( ￣o￣)",
+          "label": "Yawning"
+        }
+      ]
+    },
+    {
+      "id": "dozing",
+      "label": "Dozing",
+      "h2": "Dozing Off Kaomoji",
+      "intro": "Slipping into a nap.",
+      "symbols": [
+        {
+          "char": "(￣ρ￣)..zzZ",
+          "label": "Dozing"
+        },
+        {
+          "char": "(-_-) zzz",
+          "label": "Snoozing"
+        },
+        {
+          "char": "( ˘꒳˘)zZ",
+          "label": "Little Nap"
+        },
+        {
+          "char": "(˘ω˘)ｽﾔｧ",
+          "label": "Fast Asleep"
+        },
+        {
+          "char": "(￣o￣) z Z",
+          "label": "Deep Yawn"
+        },
+        {
+          "char": "(๑ᵕ⌓ᵕ̤)",
+          "label": "Sleepy Smile"
+        }
+      ]
+    },
+    {
+      "id": "asleep",
+      "label": "Sound Asleep",
+      "h2": "Sound Asleep Kaomoji",
+      "intro": "Out cold with a trail of zzz.",
+      "symbols": [
+        {
+          "char": "(∪｡∪)｡｡｡zzz",
+          "label": "Sound Asleep"
+        },
+        {
+          "char": "(_ _)。゜zzZ",
+          "label": "Knocked Out"
+        },
+        {
+          "char": "(´-ω-`)~♪",
+          "label": "Peaceful Sleep"
+        },
+        {
+          "char": "(ᴗ_ᴗ)zzz",
+          "label": "Dreaming"
+        },
+        {
+          "char": "(。-ω-)zzz",
+          "label": "Curled Up"
+        }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Kawaii text faces with sparkly eyes and blushing cheeks."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it."
+    },
+    {
+      "href": "/library/cat-kaomoji/",
+      "title": "Cat Kaomoji",
+      "desc": "Cute cat text faces, including sleepy cats."
+    }
+  ]
+}
