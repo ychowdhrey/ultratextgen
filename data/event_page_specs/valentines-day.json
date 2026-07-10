@@ -1,0 +1,172 @@
+{
+  "slug": "valentines-day",
+  "event_name": "Valentine's Day",
+  "aliases": ["Valentine", "Galentine's Day"],
+
+  "title": "Valentine's Day Fonts, Symbols & Kaomoji Generator | UltraTextGen",
+  "meta_description": "Style a Valentine's Day message live, copy hearts, roses, and kiss-mark emoji, kaomoji, curated ASCII art, and ready-made phrases like Be My Valentine — tap to style instantly.",
+
+  "hero_h1": "Valentine's Day Text & Symbol Generator",
+  "hero_tagline": "Type a name or message and style it in elegant cursive fonts, then copy hearts, roses, kiss marks, kaomoji, and ASCII art — or tap a ready-made line to style it instantly.",
+
+  "intro": "Valentine's Day is the biggest romantic-greeting occasion of the year — cards, texts, and captions built around hearts, roses, and a handful of lines everyone reaches for (Be My Valentine, Happy Valentine's Day, You Have My Heart). This page gathers everything for styling that message: elegant cursive and script fonts you can preview on your own text, the heart and rose emoji people actually paste, kaomoji for a flirty chat message, a few original hand-drawn ASCII art pieces, and a phrase bank of ready-made lines that style instantly when you tap them.",
+
+  "date_window": "every year on February 14th",
+
+  "sample_phrase": "Happy Valentine's Day",
+
+  "canonical": "https://ultratextgen.com/events/valentines-day/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Script Sparkle",
+      "Ultra Cute Script",
+      "Ultra Italic Serif",
+      "Ultra Bold Italic Serif",
+      "Ultra Small Caps",
+      "Ultra Cute Bubble"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Hearts, Roses & Kisses",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💕", "💗", "💖", "💘", "🌹", "💌", "💋"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(｡♥‿♥｡)", "label": "Heart Eyes" },
+    { "text": "(♡˃͈ ᵕ ˂͈♡)", "label": "Blushing Love" },
+    { "text": "♡＾▽＾♡", "label": "Cheerful Love" },
+    { "text": "(´ ω `♡)", "label": "Sweet Smile" },
+    { "text": "(´♡‿♡`)", "label": "Adoring" },
+    { "text": "( ˘ ³˘)♥", "label": "Kiss" },
+    { "text": "(づ ◕‿◕ )づ", "label": "Warm Hug" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Heart",
+        "art": " __    __\n/  \\  /  \\\n\\   \\/   /\n \\      /\n  \\    /\n   \\  /\n    \\/"
+      },
+      {
+        "label": "Two Hearts",
+        "art": " __  __     __  __\n/  \\/  \\   /  \\/  \\\n\\      /   \\      /\n \\    /     \\    /\n  \\  /       \\  /\n   \\/         \\/"
+      },
+      {
+        "label": "Rose",
+        "art": "     @\n    /=\\\n   |   |\n     |\n   --+--\n     |\n    /  \\"
+      },
+      {
+        "label": "Cupid's Arrow",
+        "art": "        __    __\n       /  \\  /  \\\n======>\\   \\/   /======>\n        \\      /\n         \\    /\n          \\  /\n           \\/"
+      },
+      {
+        "label": "Love Letter",
+        "art": " _________________\n|\\               /|\n| \\             / |\n|  \\    <3     /  |\n|   \\         /   |\n|    \\       /    |\n|     \\     /     |\n|______\\___/______|"
+      },
+      {
+        "label": "Kiss Mark",
+        "art": "  ,-\"\".,-\"\".\n ( .. )( .. )\n  `-..-'`-..-'\n     `.__.'"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy Valentine's Day",
+      "native_script": "Happy Valentine's Day",
+      "romanization": "Happy Valentine's Day",
+      "translation": "The universal greeting — safe on any card, text, or caption.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Be My Valentine",
+      "native_script": "Be My Valentine",
+      "romanization": "Be My Valentine",
+      "translation": "The classic, direct ask — perfect for a card front or a first message.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "You Have My Heart",
+      "native_script": "You Have My Heart",
+      "romanization": "You Have My Heart",
+      "translation": "A heartfelt declaration for a partner, spouse, or long-term crush.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Will You Be Mine?",
+      "native_script": "Will You Be Mine?",
+      "romanization": "Will You Be Mine?",
+      "translation": "A playful, slightly nervous ask — pairs well with a rose or heart emoji.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "My Heart Beats For You",
+      "native_script": "My Heart Beats For You",
+      "romanization": "My Heart Beats For You",
+      "translation": "A poetic line for a card, love letter, or slow-burn caption.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Forever Yours",
+      "native_script": "Forever Yours",
+      "romanization": "Forever Yours",
+      "translation": "A classic sign-off for the bottom of a card or letter.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "XOXO",
+      "native_script": "XOXO",
+      "romanization": "XOXO",
+      "translation": "Hugs and kisses — the shorthand sign-off for a text or card.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Je t'aime",
+      "native_script": "Je t'aime",
+      "romanization": "juh TEM",
+      "translation": "French for \"I love you\" — the most globally recognized non-English Valentine's line.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "valentines-day-messages-what-to-write",
+
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Browse and copy heart emojis, Unicode heart characters, and love-related symbols in every color and style."
+    },
+    {
+      "href": "/library/love-kaomoji/",
+      "title": "Love & Heart Kaomoji",
+      "desc": "A deeper library of love and heart kaomoji — Japanese text faces for affection, kisses, hugs, and crushes."
+    },
+    {
+      "href": "/library/heart-ascii-art/",
+      "title": "Heart ASCII Art",
+      "desc": "More original heart ASCII art, from a tiny one-line <3 to big solid and outline hearts."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full cursive font family for elegant cards, captions, and signatures."
+    },
+    {
+      "href": "/library/kiss-kaomoji/",
+      "title": "Kiss Kaomoji",
+      "desc": "Kissing text faces for a flirty text or Valentine's message."
+    }
+  ]
+}

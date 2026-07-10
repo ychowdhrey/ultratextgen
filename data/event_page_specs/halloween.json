@@ -1,0 +1,174 @@
+{
+  "slug": "halloween",
+  "event_name": "Halloween",
+  "aliases": [],
+
+  "title": "Halloween Fonts, Emoji & Symbol Generator | UltraTextGen",
+  "meta_description": "Style a Halloween greeting live, copy pumpkin, ghost, and bat emoji, spooky kaomoji, curated ASCII art, and ready-made trick-or-treat phrases and captions.",
+
+  "hero_h1": "Halloween Text & Symbol Generator",
+  "hero_tagline": "Type a name or spooky wish and style it in gothic, script, and playful fonts, then copy pumpkin, ghost, and bat emoji, kaomoji, and ASCII art — or tap a ready-made Halloween phrase to style it instantly.",
+
+  "intro": "Halloween is the biggest costume-and-caption occasion of the fall calendar — pumpkins, costumes, and captions built to feel spooky, playful, or both at once. This page gathers everything for styling that post or card: curated gothic and playful fonts you can preview on your own text, the pumpkin, ghost, and bat emoji people actually paste, kaomoji for a spooky chat message, a few original ASCII art pieces, and a phrase bank of Halloween lines — from a classic \"Happy Halloween\" to \"Trick or Treat\" — that style instantly when you tap them.",
+
+  "date_window": "October 31 every year",
+
+  "sample_phrase": "Happy Halloween",
+
+  "canonical": "https://ultratextgen.com/events/halloween/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Gothic",
+      "Ultra Gothic Bold",
+      "Ultra Gothic Occult",
+      "Ultra Gothic Cross",
+      "Ultra Gothic Script",
+      "Ultra Aesthetic Gothic",
+      "Ultra Script Bold",
+      "Ultra Bold",
+      "Ultra Bubble",
+      "Ultra Small Caps"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Halloween Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🎃", "👻", "🦇", "🕷️", "🕸️", "💀", "☠️", "🧙‍♀️", "🧛", "🐈‍⬛", "🍬", "🌙", "⚰️"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(((( ;°Д°))))", "label": "Shivering in Fright" },
+    { "text": "Σ(ﾟдﾟ;)", "label": "Startled Scream" },
+    { "text": "ヽ(゜Q。)ノ", "label": "Wandering Ghost" },
+    { "text": "눈_눈", "label": "Creepy Stare" },
+    { "text": "(¬‿¬)", "label": "Mischievous Grin" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Jack-o'-Lantern",
+        "art": "   .-'''-.\n  /  o o  \\\n |    >    |\n  \\  ___  /\n   '-...-'"
+      },
+      {
+        "label": "Ghost",
+        "art": "   ___\n  /   \\\n | o o |\n |  -  |\n |     |\n \\/\\/\\/"
+      },
+      {
+        "label": "Bat",
+        "art": "  /\\   /\\\n /  \\_/  \\\n(   ^ ^   )\n \\       /\n  \\/   \\/"
+      },
+      {
+        "label": "Spider",
+        "art": "   \\ | /\n    \\|/\n--(  o  )--\n    /|\\\n   / | \\"
+      },
+      {
+        "label": "Witch Hat",
+        "art": "      /\\\n     /  \\\n    /    \\\n   /______\\\n  /________\\\n ~~~~~~~~~~~~"
+      },
+      {
+        "label": "Tombstone",
+        "art": "  _________\n /   RIP   \\\n|           |\n|     +     |\n|___________|"
+      },
+      {
+        "label": "Spiderweb",
+        "art": "\\   |   /\n \\  |  /\n--- + ---\n /  |  \\\n/   |   \\"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy Halloween",
+      "native_script": "Happy Halloween",
+      "romanization": "Happy Halloween",
+      "translation": "The classic, universal Halloween greeting",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Trick or Treat",
+      "native_script": "Trick or Treat",
+      "romanization": "Trick or Treat",
+      "translation": "The classic door-to-door candy chant",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Boo!",
+      "native_script": "Boo!",
+      "romanization": "Boo!",
+      "translation": "A short, playful scare greeting",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Stay Spooky",
+      "native_script": "Stay Spooky",
+      "romanization": "Stay Spooky",
+      "translation": "A casual sign-off for captions and cards",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Have a Frightfully Good Halloween",
+      "native_script": "Have a Frightfully Good Halloween",
+      "romanization": "Have a Frightfully Good Halloween",
+      "translation": "A playful, card-ready wish",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Creep It Real",
+      "native_script": "Creep It Real",
+      "romanization": "Creep It Real",
+      "translation": "A punny Halloween caption",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Happy Haunting",
+      "native_script": "Happy Haunting",
+      "romanization": "Happy Haunting",
+      "translation": "A festive alternative to Happy Halloween",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Feliz Halloween",
+      "native_script": "Feliz Halloween",
+      "romanization": "feh-LEEZ ha-lo-WEEN",
+      "translation": "Happy Halloween (Spanish — Halloween is widely celebrated as a loanword event across Latin America, especially Mexico)",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "halloween-messages-what-to-write",
+
+  "related": [
+    {
+      "href": "/library/halloween-symbols/",
+      "title": "Halloween Symbols",
+      "desc": "A broader reference library of Halloween Unicode symbols and emoji combos."
+    },
+    {
+      "href": "/library/witchy-occult-symbols/",
+      "title": "Witchy & Occult Symbols",
+      "desc": "Pentagrams, moons, and occult characters for a darker aesthetic."
+    },
+    {
+      "href": "/library/skull-ascii-art/",
+      "title": "Skull ASCII Art",
+      "desc": "More curated skull ASCII art pieces to copy and paste."
+    },
+    {
+      "href": "/category/gothic-fonts/",
+      "title": "Gothic Fonts",
+      "desc": "The full blackletter and fraktur font family for a dark, old-world look."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    }
+  ]
+}

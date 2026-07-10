@@ -1,0 +1,170 @@
+{
+  "slug": "eid-mubarak",
+  "event_name": "Eid Mubarak",
+  "aliases": ["Eid al-Fitr", "Eid al-Adha", "Eid Mubarak"],
+
+  "title": "Eid Mubarak Fonts, Symbols & Kaomoji Generator | UltraTextGen",
+  "meta_description": "Style an Eid Mubarak greeting live, copy crescent moon and mosque emoji, kaomoji, curated ASCII art, and ready-made phrases with native script, romanization, and translation.",
+
+  "hero_h1": "Eid Mubarak Text & Symbol Generator",
+  "hero_tagline": "Type a name or wish and style it in curated fonts, then copy crescent moons, mosque and prayer emoji, kaomoji, and ASCII art — or tap a ready-made greeting to style it instantly.",
+
+  "intro": "Eid Mubarak marks two of the biggest greeting-and-gifting occasions on the Islamic lunar calendar: Eid al-Fitr, celebrated at the end of Ramadan, and Eid al-Adha, marked during the Hajj season a couple of months later. Both are celebrated with prayer, family gatherings, sweets, and messages wishing loved ones a blessed holiday. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the crescent moon and mosque emoji people actually paste, kaomoji for a joyful chat message, a few original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that style instantly when you tap them.",
+
+  "date_window": "twice a year, set by the lunar Islamic (Hijri) calendar — Eid al-Fitr after Ramadan, and Eid al-Adha around two months later",
+
+  "sample_phrase": "Eid Mubarak",
+
+  "canonical": "https://ultratextgen.com/events/eid-mubarak/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Script Sparkle",
+      "Ultra Cute Script",
+      "Ultra Bold Italic Serif",
+      "Ultra Italic Serif",
+      "Ultra Small Caps",
+      "Ultra Bubble"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Eid Emoji & Symbols",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🌙", "🕌", "🤲", "🙏", "✨", "🎉", "🎊", "⭐", "🌟", "🕋", "🍬", "🎁", "💚"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(๑˃̵ᴗ˂̵)ﻭ", "label": "Joyful Cheer" },
+    { "text": "ヽ(´▽`)/", "label": "Warm Wave" },
+    { "text": "(⌒▽⌒)☆", "label": "Sparkling Joy" },
+    { "text": "(◕‿◕)✿", "label": "Happy Blossom" },
+    { "text": "☆⌒(≧▽°)", "label": "Bright Cheer" },
+    { "text": "(づ￣ ³￣)づ", "label": "Warm Hug" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Crescent Moon",
+        "art": "      .--.\n     /    |\n    |     |\n    |     |\n     \\    |\n      `--'"
+      },
+      {
+        "label": "Star",
+        "art": "        *\n       ***\n      *****\n     *******\n    *********\n       * *\n      *   *"
+      },
+      {
+        "label": "Mosque Silhouette",
+        "art": "        _\n      .' '.\n     /  _  \\\n    |  (_)  |\n  __|  `-'  |__\n |__|_______|__|\n |______o______|"
+      },
+      {
+        "label": "Fanous Lantern",
+        "art": "     )\n   .--.\n  /    \\\n |  ()  |\n |      |\n  \\    /\n   '--'\n    ||"
+      },
+      {
+        "label": "Star & Crescent",
+        "art": "     .--.      *\n    /    |\n   |     |\n   |     |\n    \\    |\n     `--'"
+      },
+      {
+        "label": "Night Sky",
+        "art": "   *      .--.        *\n       /    |    *\n  *   |     |\n       |     |   *\n  *     \\    /\n         `--'    *\n   *   *      *"
+      },
+      {
+        "label": "Eid Mubarak Banner",
+        "art": "+----------------------+\n|     EID MUBARAK      |\n+----------------------+"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Eid Mubarak",
+      "native_script": "عيد مبارك",
+      "romanization": "Eid Mubarak",
+      "translation": "Blessed Eid",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Eid Sa'id",
+      "native_script": "عيد سعيد",
+      "romanization": "Eid Sa'id",
+      "translation": "Happy Eid",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Taqabbal Allahu Minna wa Minkum",
+      "native_script": "تقبل الله منا ومنكم",
+      "romanization": "Taqabbal Allahu minna wa minkum",
+      "translation": "May Allah accept [our good deeds] from us and from you — a traditional formal reply to an Eid greeting",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Happy Eid",
+      "native_script": "Happy Eid",
+      "romanization": "Happy Eid",
+      "translation": "A simple, universal English Eid greeting",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Eid Mubarak to You and Your Family",
+      "native_script": "Eid Mubarak to You and Your Family",
+      "romanization": "Eid Mubarak to You and Your Family",
+      "translation": "A warm, family-inclusive Eid greeting",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Wishing You Joy and Blessings This Eid",
+      "native_script": "Wishing You Joy and Blessings This Eid",
+      "romanization": "Wishing You Joy and Blessings This Eid",
+      "translation": "A warm English wish for the holiday",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "May This Eid Bring Peace and Happiness",
+      "native_script": "May This Eid Bring Peace and Happiness",
+      "romanization": "May This Eid Bring Peace and Happiness",
+      "translation": "A reflective English Eid message",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Eid Mubarak to You and Yours",
+      "native_script": "Eid Mubarak to You and Yours",
+      "romanization": "Eid Mubarak to You and Yours",
+      "translation": "A friendly, inclusive way to greet a group or family",
+      "needs_native_speaker_review": false
+    }
+  ],
+
+  "companion_answer_slug": "eid-mubarak-meaning-and-reply",
+
+  "related": [
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Islamic Symbols",
+      "desc": "The star and crescent, Allah and Bismillah ligatures, and mosque and prayer emoji to copy and paste."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Moon & Celestial Symbols",
+      "desc": "Moon phases, stars, and night-sky symbols for a dreamy, celestial aesthetic."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full elegant script font family for greeting cards and captions."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkle emoji and symbols to add a little shimmer to any greeting."
+    }
+  ]
+}
