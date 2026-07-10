@@ -18,7 +18,7 @@
   if (!Banner) return;
 
   var el = {};
-  var currentFont = Banner.fonts.length ? Banner.fonts[0].key : "block";
+  var currentFont = Banner.fonts.length ? Banner.fonts[0].key : "standard";
   var lastArt = "";
 
   function $(sel, root) { return (root || document).querySelector(sel); }
