@@ -112,6 +112,14 @@
 
   <main class="container">
 
+    <div class="pt-stroke-toggle-row">
+      <label class="pt-check" for="pt-stroke-toggle">
+        <input type="checkbox" id="pt-stroke-toggle">
+        Show stroke direction
+      </label>
+      <span class="pt-stroke-toggle-hint">Adds a numbered start dot and arrows to every traced letter, showing which way to draw each stroke — on by choice, since kids at different stages need different guidance.</span>
+    </div>
+
     <!-- Name worksheet (primary) -->
     <section class="bubble-alphabet" aria-labelledby="ptNameHeading">
       <h2 id="ptNameHeading">Make a name tracing worksheet</h2>
@@ -253,6 +261,7 @@
   </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/printables/strokeDirectionData.js" defer></script>
   <script src="/js/printables/printablesEngine.js" defer></script>
 
   <!-- FAQ toggle -->

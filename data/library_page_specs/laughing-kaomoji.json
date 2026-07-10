@@ -1,0 +1,129 @@
+{
+  "slug": "laughing-kaomoji",
+  "title": "Laughing Kaomoji: Copy & Paste LOL Text Faces",
+  "meta_description": "Browse and copy laughing kaomoji — also spelled kamoji — giggling, cackling, and rolling Japanese text faces. Click any to copy it instantly.",
+  "breadcrumb": "Laughing Kaomoji",
+  "hero_h1": "Laughing Kaomoji",
+  "hero_tagline": "Copy and paste laughing kaomoji — giggling and cackling Japanese text faces. Click any face to copy it instantly.",
+  "intro": "Laughing kaomoji (also spelled kamoji) are Japanese-style text faces caught mid-laugh — a small giggle, a big cackle, or rolling on the floor. A laughing kaomoji such as (≧▽≦) or ( ﾟ∀ﾟ)ｱﾊﾊ八八 is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by volume below and click any face to copy it instantly. Whether you search \"laughing kaomoji\" or \"kaomoji laughing,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "giggle",
+      "label": "Giggling",
+      "h2": "Giggling Kaomoji",
+      "intro": "Light, quiet giggles.",
+      "symbols": [
+        {
+          "char": "(≧▽≦)",
+          "label": "Giggle"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Chuckle"
+        },
+        {
+          "char": "( ˆ ▿ ˆ )",
+          "label": "Soft Laugh"
+        },
+        {
+          "char": "(๑˃ᴗ˂)",
+          "label": "Tee Hee"
+        },
+        {
+          "char": "(o´∀`o)ﾟ",
+          "label": "Happy Giggle"
+        },
+        {
+          "char": "ふふ(´∀`)",
+          "label": "Snicker"
+        }
+      ]
+    },
+    {
+      "id": "big",
+      "label": "Big Laugh",
+      "h2": "Big Laugh Kaomoji",
+      "intro": "Loud, full-on laughter.",
+      "symbols": [
+        {
+          "char": "( ﾟ∀ﾟ)ｱﾊﾊ八八",
+          "label": "LOL"
+        },
+        {
+          "char": "(*≧艸≦)",
+          "label": "Cracking Up"
+        },
+        {
+          "char": "٩(ˊᗜˋ*)و",
+          "label": "Howling"
+        },
+        {
+          "char": "ﾟ*｡ヾ(≧▽≦*)ｏ",
+          "label": "Bursting"
+        },
+        {
+          "char": "ハ(＾▽＾)ノ",
+          "label": "Big Laugh"
+        },
+        {
+          "char": "(ノ≧∀≦)ノ",
+          "label": "Cackle"
+        }
+      ]
+    },
+    {
+      "id": "rolling",
+      "label": "Rolling",
+      "h2": "Rolling With Laughter Kaomoji",
+      "intro": "Can't-breathe, floor-rolling laughs.",
+      "symbols": [
+        {
+          "char": "(」・ω・)」",
+          "label": "Losing It"
+        },
+        {
+          "char": "_(:3」∠)_",
+          "label": "Rolling"
+        },
+        {
+          "char": "╰(*´︶`*)╯",
+          "label": "Wheezing"
+        },
+        {
+          "char": "(≧∇≦)ﾉ",
+          "label": "Dying"
+        },
+        {
+          "char": "щ(ﾟДﾟщ)",
+          "label": "Can't Even"
+        }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful Japanese text faces."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it."
+    },
+    {
+      "href": "/library/crying-kaomoji/",
+      "title": "Crying & Sad Kaomoji",
+      "desc": "For crying-laughing, see tears too."
+    }
+  ]
+}
