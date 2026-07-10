@@ -15,6 +15,7 @@
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Popular Tools</span>' +
+        '<a href="/usecase/text-to-emoji/" class="footer-link">Text to Emoji</a>' +
         '<a href="/usecase/linkedin-headline/" class="footer-link">LinkedIn Headline</a>' +
         '<a href="/usecase/comment-font/" class="footer-link">Comment Font</a>' +
         '<a href="/usecase/bio-font/" class="footer-link">Bio Font</a>' +
