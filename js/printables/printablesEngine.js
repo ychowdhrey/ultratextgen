@@ -36,6 +36,8 @@
  *   #pt-practice-print   button: print ruled practice sheet
  *   #pt-name-input       name / word field  (+ #pt-name-print, #pt-name-png,
  *                        #pt-name-preview, #pt-name-rows)
+ *   #pt-banner-input     phrase field for the banner maker (+ #pt-banner-print,
+ *                        #pt-banner-png, #pt-banner-preview, #pt-banner-meta)
  *   #pt-stroke-toggle    checkbox: overlay a numbered start-dot + direction
  *                        arrows on traceable letters (off by default). Reads
  *                        window.UTG_STROKE_DIRECTION_DATA (js/printables/
@@ -114,6 +116,12 @@
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
     designPng: $("#pt-design-png"),
+    // Banner maker (optional; gated on its own mounts)
+    bannerInput: $("#pt-banner-input"),
+    bannerPreview: $("#pt-banner-preview"),
+    bannerMeta: $("#pt-banner-meta"),
+    bannerPrint: $("#pt-banner-print"),
+    bannerPng: $("#pt-banner-png"),
     // Name puzzle maker (optional; gated on its own mounts)
     puzzleInput: $("#pt-puzzle-input"),
     puzzleHeading: $("#pt-puzzle-heading"),
@@ -1873,6 +1881,290 @@
   }
 
   /* ---------------------------------------------------------------
+     Section: banner maker
+     Type a word/phrase -> a printable letter banner: one pennant flag
+     per letter, each with a dashed cut line and two string-hole
+     markers. Long phrases don't fit one sheet, so the flags are laid
+     out into fixed-size pages (BANNER_PER_PAGE each) in strict reading
+     order, and each page break is a real CSS page break — cut and
+     string the flags in page order, left-to-right, top-to-bottom, and
+     they spell the phrase. bannerPagesNode() is the single primitive
+     behind both the live on-screen preview and the printed sheet, and
+     the geometry constants below are shared with the Canvas flag
+     drawer used for the PNG export, so all three stay in sync.
+     Gated on #pt-banner-input + #pt-banner-preview so other pages are
+     untouched.
+     --------------------------------------------------------------- */
+
+  // 3 columns x 2 rows keeps a page's title + instructions + footer + six
+  // flags comfortably inside one US Letter sheet with margin to spare
+  // (measured against actual Chromium print output — a 3x3 grid overflowed
+  // onto a second physical sheet before its own page-break-after fired).
+  const BANNER_COLS = 3, BANNER_ROWS = 2;
+  const BANNER_PER_PAGE = BANNER_COLS * BANNER_ROWS;
+  const BANNER_DEMO = CFG.bannerDemo || CFG.nameDemo || "HAPPY BIRTHDAY";
+
+  // Flag geometry, in SVG viewBox units — the single source of truth for both
+  // the SVG flag (screen + print) and the Canvas flag (PNG export).
+  const FLAG_W = 220, FLAG_H = 260;
+  const FLAG_TOP = 16, FLAG_LEFT = 16, FLAG_RIGHT = 204;
+  const FLAG_APEX_X = 110, FLAG_APEX_Y = 248;
+  const FLAG_HOLE_L = [42, 46], FLAG_HOLE_R = [178, 46], FLAG_HOLE_R_PX = 7;
+  const FLAG_TEXT_Y = 100, FLAG_TEXT_SIZE = 104;
+
+  function bannerValue() {
+    const raw = el.bannerInput ? el.bannerInput.value : "";
+    return (raw && raw.trim()) ? raw.trim().slice(0, 40) : BANNER_DEMO;
+  }
+
+  // A phrase -> an ordered list of "cards": one per non-space character
+  // (a flag to cut) plus one per space (a gap card — no flag, just a visual
+  // placeholder so word breaks stay visible in reading order). Letters are
+  // uppercased to match the classic bunting-banner look; digits and
+  // punctuation are kept as typed.
+  function bannerCards(phraseRaw) {
+    const phrase = String(phraseRaw || "").trim().replace(/\s+/g, " ");
+    const cards = [];
+    let n = 0;
+    [...phrase].forEach((ch) => {
+      if (/\s/.test(ch)) { cards.push({ type: "gap" }); return; }
+      n++;
+      cards.push({ type: "flag", ch: /[a-z]/i.test(ch) ? ch.toUpperCase() : ch, index: n });
+    });
+    return cards;
+  }
+
+  function bannerFlagTotal(cards) {
+    return cards.reduce((sum, c) => sum + (c.type === "flag" ? 1 : 0), 0);
+  }
+
+  // Chunk cards into fixed-size pages, in order — this (not organic CSS
+  // reflow) is what guarantees each printed sheet holds an exact, predictable
+  // run of the phrase, so assembly order is never in doubt.
+  function bannerPages(cards) {
+    const pages = [];
+    for (let i = 0; i < cards.length; i += BANNER_PER_PAGE) pages.push(cards.slice(i, i + BANNER_PER_PAGE));
+    return pages.length ? pages : [[]];
+  }
+
+  // One flag: a dashed-outline pennant with two dashed string-hole markers
+  // near the top corners and the letter set in the wide part of the flag.
+  function flagSVG(ch) {
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("viewBox", "0 0 " + FLAG_W + " " + FLAG_H);
+    svg.setAttribute("class", "pt-banner-flag");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Banner flag — " + ch);
+
+    const shape = document.createElementNS(SVGNS, "polygon");
+    shape.setAttribute("points", FLAG_LEFT + "," + FLAG_TOP + " " + FLAG_RIGHT + "," + FLAG_TOP + " " + FLAG_APEX_X + "," + FLAG_APEX_Y);
+    shape.setAttribute("fill", "#ffffff");
+    shape.setAttribute("stroke", INK);
+    shape.setAttribute("stroke-width", "3");
+    shape.setAttribute("stroke-dasharray", "10 7");
+    shape.setAttribute("stroke-linejoin", "round");
+    svg.appendChild(shape);
+
+    [FLAG_HOLE_L, FLAG_HOLE_R].forEach((pt) => {
+      const hole = document.createElementNS(SVGNS, "circle");
+      hole.setAttribute("cx", String(pt[0]));
+      hole.setAttribute("cy", String(pt[1]));
+      hole.setAttribute("r", String(FLAG_HOLE_R_PX));
+      hole.setAttribute("fill", "none");
+      hole.setAttribute("stroke", INK);
+      hole.setAttribute("stroke-width", "2.5");
+      hole.setAttribute("stroke-dasharray", "3 4");
+      svg.appendChild(hole);
+    });
+
+    const text = document.createElementNS(SVGNS, "text");
+    text.setAttribute("x", String(FLAG_W / 2));
+    text.setAttribute("y", String(FLAG_TEXT_Y));
+    text.setAttribute("text-anchor", "middle");
+    text.setAttribute("dominant-baseline", "central");
+    text.setAttribute("font-family", FONT);
+    text.setAttribute("font-weight", "800");
+    text.setAttribute("font-size", String(FLAG_TEXT_SIZE));
+    text.setAttribute("fill", INK);
+    text.textContent = ch;
+    svg.appendChild(text);
+    return svg;
+  }
+
+  // The whole banner as paginated page nodes — used identically for the live
+  // preview and the printed sheet, so what you see is exactly what prints.
+  function bannerPagesNode(phraseRaw) {
+    const phrase = phraseRaw || BANNER_DEMO;
+    const cards = bannerCards(phrase);
+    const total = bannerFlagTotal(cards);
+    const pages = bannerPages(cards);
+    const root = document.createElement("div");
+    root.className = "pt-banner-pages";
+    pages.forEach((pageCards, pi) => {
+      const page = document.createElement("div");
+      page.className = "pt-banner-page";
+
+      const head = document.createElement("div");
+      head.className = "pt-banner-page-head";
+      const title = document.createElement("p");
+      title.className = "pt-banner-page-title";
+      title.textContent = phrase.toUpperCase() + " — banner flags — page " + (pi + 1) + " of " + pages.length;
+      head.appendChild(title);
+      if (pi === 0) {
+        const instr = document.createElement("p");
+        instr.className = "pt-banner-instructions";
+        instr.textContent = "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.";
+        head.appendChild(instr);
+      }
+      page.appendChild(head);
+
+      const grid = document.createElement("div");
+      grid.className = "pt-banner-grid";
+      pageCards.forEach((card) => {
+        if (card.type === "gap") {
+          const gap = document.createElement("div");
+          gap.className = "pt-banner-gap";
+          const label = document.createElement("span");
+          label.textContent = "space";
+          gap.appendChild(label);
+          grid.appendChild(gap);
+          return;
+        }
+        const cell = document.createElement("div");
+        cell.className = "pt-banner-cell";
+        const idx = document.createElement("span");
+        idx.className = "pt-banner-index";
+        idx.textContent = card.index + " / " + total;
+        cell.appendChild(idx);
+        cell.appendChild(flagSVG(card.ch));
+        grid.appendChild(cell);
+      });
+      page.appendChild(grid);
+
+      const foot = document.createElement("p");
+      foot.className = "pt-banner-page-foot";
+      foot.textContent = "ultratextgen.com";
+      page.appendChild(foot);
+
+      root.appendChild(page);
+    });
+    return root;
+  }
+
+  function renderBannerPreview() {
+    if (!el.bannerPreview) return;
+    const phrase = bannerValue();
+    const cards = bannerCards(phrase);
+    const total = bannerFlagTotal(cards);
+    const pages = bannerPages(cards);
+    el.bannerPreview.innerHTML = "";
+    el.bannerPreview.appendChild(bannerPagesNode(phrase));
+    if (el.bannerMeta) {
+      el.bannerMeta.textContent = total + (total === 1 ? " flag" : " flags") + " · " +
+        pages.length + (pages.length === 1 ? " page" : " pages") + " · US Letter";
+    }
+  }
+
+  function printBanner() {
+    printWrap("", bannerPagesNode(bannerValue()));
+  }
+
+  // Canvas equivalent of flagSVG, scaled from the same geometry constants —
+  // used only for the PNG export (a single continuous strip; PNG has no
+  // concept of pages, so it is not paginated the way print is).
+  function drawFlagCanvas(ctx, x, y, w, ch) {
+    const s = w / FLAG_W;
+    const leftX = x + FLAG_LEFT * s, rightX = x + FLAG_RIGHT * s, apexX = x + FLAG_APEX_X * s;
+    const topY = y + FLAG_TOP * s, apexY = y + FLAG_APEX_Y * s;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(leftX, topY);
+    ctx.lineTo(rightX, topY);
+    ctx.lineTo(apexX, apexY);
+    ctx.closePath();
+    ctx.fillStyle = "#ffffff";
+    ctx.fill();
+    ctx.lineJoin = "round";
+    ctx.lineWidth = Math.max(1.5, 3 * s);
+    ctx.strokeStyle = INK;
+    ctx.setLineDash([10 * s, 7 * s]);
+    ctx.stroke();
+
+    [FLAG_HOLE_L, FLAG_HOLE_R].forEach((pt) => {
+      ctx.beginPath();
+      ctx.setLineDash([3 * s, 4 * s]);
+      ctx.lineWidth = Math.max(1, 2.5 * s);
+      ctx.strokeStyle = INK;
+      ctx.arc(x + pt[0] * s, y + pt[1] * s, FLAG_HOLE_R_PX * s, 0, Math.PI * 2);
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = INK;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.font = "800 " + Math.round(FLAG_TEXT_SIZE * s) + "px " + FONT;
+    ctx.fillText(ch, x + (FLAG_W / 2) * s, y + FLAG_TEXT_Y * s);
+    ctx.restore();
+  }
+
+  function bannerPNG(phraseRaw) {
+    const phrase = phraseRaw || BANNER_DEMO;
+    const cards = bannerCards(phrase);
+    if (!cards.length) return;
+    withFont(() => {
+      const flagW = 260, gapW = 130, gap = 22, pad = 60;
+      const flagH = Math.round(flagW * (FLAG_H / FLAG_W));
+      const widths = cards.map((c) => (c.type === "flag" ? flagW : gapW));
+      const totalW = Math.round(pad * 2 + widths.reduce((a, b) => a + b, 0) + gap * (cards.length - 1));
+      const height = flagH + pad * 2;
+      const canvas = document.createElement("canvas");
+      canvas.width = totalW; canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, totalW, height);
+
+      let x = pad;
+      cards.forEach((card, i) => {
+        const w = widths[i];
+        if (card.type === "flag") {
+          drawFlagCanvas(ctx, x, pad, flagW, card.ch);
+        } else {
+          ctx.save();
+          ctx.strokeStyle = "#c3c9d6";
+          ctx.setLineDash([6, 6]);
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(x + w / 2, pad + flagH * 0.15);
+          ctx.lineTo(x + w / 2, pad + flagH * 0.75);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle = "#94a3b8";
+          ctx.font = "600 20px " + FONT;
+          ctx.textAlign = "center";
+          ctx.fillText("space", x + w / 2, pad + flagH + 30);
+          ctx.restore();
+        }
+        x += w + gap;
+      });
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(phrase) || "banner") + ".png");
+    });
+  }
+
+  function buildBanner() {
+    if (!el.bannerInput || !el.bannerPreview) return;
+    let timer = null;
+    el.bannerInput.addEventListener("input", () => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(renderBannerPreview, 120);
+    });
+    if (el.bannerPrint) el.bannerPrint.addEventListener("click", printBanner);
+    if (el.bannerPng) el.bannerPng.addEventListener("click", () => bannerPNG(bannerValue()));
+    renderBannerPreview();
+  }
+
+  /* ---------------------------------------------------------------
      Section: name puzzle maker
      Type a name -> each letter becomes a big outline "puzzle piece" in a
      row, with a dashed cut line between every pair of pieces, an optional
@@ -2125,6 +2417,7 @@
     buildAlphabetGrid();
     initGenerator();
     buildDesigner();
+    buildBanner();
     buildPuzzle();
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);

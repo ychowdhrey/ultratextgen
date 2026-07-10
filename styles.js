@@ -191,6 +191,11 @@ const PRINTABLE_PAGES = {
     slug: 'dot-to-dot-alphabet',
     title: 'Dot-to-Dot Alphabet',
     description: 'Free printable dot-to-dot letters A–Z — a numbered connect-the-dots puzzle for every letter, plus a page for every letter and a one-click print of the whole alphabet.'
+  },
+  'banner-maker': {
+    slug: 'banner-maker',
+    title: 'Printable Banner Maker',
+    description: 'Type a word or phrase to build a printable letter banner — one cut-out flag per letter with string holes, paginated to print across multiple sheets.'
   }
 };
 
