@@ -146,6 +146,12 @@
           <span class="char-count"><span id="charCount">0</span>/100</span>
         </div>
 
+        <!-- Inline name check -->
+        <div class="decoration-section namecheck-inline" id="name-check">
+          <div class="decoration-label">Проверка ника — обновляется, пока печатаешь</div>
+          <div id="ruNickChecker"></div>
+        </div>
+
         <!-- Decoration Selector -->
         <div class="decoration-section">
           <div class="decoration-label">
@@ -154,6 +160,7 @@
             </svg>
             Добавь символы вокруг ника
           </div>
+          <button class="surprise-btn" id="surpriseBtn" type="button">🎲 Случайно</button>
           <div class="decoration-tabs">
             <button class="decoration-tab active" data-deco-tab="symbols">Символы</button>
             <button class="decoration-tab" data-deco-tab="frames">Рамки</button>
@@ -172,19 +179,6 @@
     <div class="results-grid" id="resultsGrid"></div>
   </main>
 
-<!-- NAME CHECK -->
-<section class="editorial-section" id="name-check">
-  <span class="article-section-label">Проверка ника</span>
-  <h2>Примет ли игра твой ник?</h2>
-  <p class="u-secondary-block">У каждой игры свои правила: где-то ник ограничен по длине, где-то декоративные
-    символы считаются за <strong>два знака</strong>, а где-то разрешена только латиница. Отклонённая вставка —
-    это потраченная карта смены имени, поэтому проверь заранее: выбери игру на вкладках ниже — счётчик
-    обновляется, пока ты печатаешь наверху, а ещё сюда можно вставить любой скопированный ник.</p>
-  <div id="ruNickChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
@@ -198,67 +192,6 @@
       с кириллицей на отлично</strong>: ꧁༒Тень༒꧂ выглядит ничуть не хуже, чем メNova彡. Хочешь стилизованные
       буквы — пиши ник латиницей или транслитом. Ниже есть и <strong>готовые ники</strong> — красивые, для
       парней, для девушек и латиницей — копируются в один клик.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE FRAMES -->
-<section class="mood-explainers" id="nick-frames">
-  <span class="article-section-label">Готовые рамки</span>
-  <h2>Рамки для ника — скопируй и подставь своё имя</h2>
-  <p class="u-secondary-block">Скопируй рамку целиком одним кликом, а потом замени <em>ТвойНик</em> в середине
-    на своё имя прямо в игре или в профиле.</p>
-  <div id="ruNickWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: FRAMES -->
-<section class="mood-explainers" id="frame-symbols">
-  <span class="article-section-label">Символы-рамки</span>
-  <h2>Рамки для ника ꧁꧂</h2>
-  <p class="u-secondary-tight">Знаки, которые обрамляют почти каждый украшенный ник. Нажми, чтобы скопировать, —
-    все они работают и с русскими буквами.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Скопировать левый зонтик ꧁">꧁</button><span class="flag-label">Левый «зонтик» (реренган)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Скопировать правый зонтик ꧂">꧂</button><span class="flag-label">Правый «зонтик» (реренган)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༺" aria-label="Скопировать левый свиток ༺">༺</button><span class="flag-label">Тибетский свиток, левый</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༻" aria-label="Скопировать правый свиток ༻">༻</button><span class="flag-label">Тибетский свиток, правый</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༒" aria-label="Скопировать знак ༒">༒</button><span class="flag-label">Знак ргья-грам</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Скопировать росчерк ࿐">࿐</button><span class="flag-label">Флаг-росчерк</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="『" aria-label="Скопировать скобку 『">『</button><span class="flag-label">Японская скобка, левая</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="』" aria-label="Скопировать скобку 』">』</button><span class="flag-label">Японская скобка, правая</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="【" aria-label="Скопировать скобку 【">【</button><span class="flag-label">Чёрная скобка, левая</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="】" aria-label="Скопировать скобку 】">】</button><span class="flag-label">Чёрная скобка, правая</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❰" aria-label="Скопировать скобку ❰">❰</button><span class="flag-label">Орнаментная скобка, левая</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❱" aria-label="Скопировать скобку ❱">❱</button><span class="flag-label">Орнаментная скобка, правая</span></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: CROWNS / STARS / KATAKANA -->
-<section class="mood-explainers" id="accent-symbols">
-  <span class="article-section-label">Акценты</span>
-  <h2>Короны, звёзды и катакана</h2>
-  <p class="u-secondary-tight">Короны — для топ-1, штрихи катаканы メ 彡 — для скорости, звёзды и искры — для
-    эстетики. Нажми, чтобы скопировать.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♛" aria-label="Скопировать корону ♛">♛</button><span class="flag-label">Корона (ферзь)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♚" aria-label="Скопировать корону ♚">♚</button><span class="flag-label">Корона (король)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="👑" aria-label="Скопировать корону 👑">👑</button><span class="flag-label">Корона-эмодзи</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚜" aria-label="Скопировать лилию ⚜">⚜</button><span class="flag-label">Геральдическая лилия</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Скопировать звезду ★">★</button><span class="flag-label">Чёрная звезда</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✧" aria-label="Скопировать искру ✧">✧</button><span class="flag-label">Белая искра</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⋆" aria-label="Скопировать звёздочку ⋆">⋆</button><span class="flag-label">Звёздочка-оператор</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ツ" aria-label="Скопировать цу ツ">ツ</button><span class="flag-label">Цу — «улыбка»</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="メ" aria-label="Скопировать мэ メ">メ</button><span class="flag-label">Мэ — косой росчерк</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="彡" aria-label="Скопировать сан 彡">彡</button><span class="flag-label">Сан — три штриха</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="〆" aria-label="Скопировать симэ 〆">〆</button><span class="flag-label">Симэ — «закрыто»</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="亗" aria-label="Скопировать знак 亗">亗</button><span class="flag-label">Иероглиф-«трон»</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="☠" aria-label="Скопировать череп ☠">☠</button><span class="flag-label">Череп и кости</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚔" aria-label="Скопировать мечи ⚔">⚔</button><span class="flag-label">Скрещённые мечи</span></div>
   </div>
 </section>
 
@@ -432,12 +365,24 @@
   <div class="copy-toast" id="copyToast">Скопировано!</div>
   <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+  <!-- Flair engine + page config: build the "frames" decoration tab from shared
+       packs (js/flair/flair-engine.js), merged over the default tabs (script.js).
+       flair-engine.js is non-deferred so compose() is ready before the deferred
+       generator scripts run. -->
+  <script src="/js/flair/flair-engine.js"></script>
+  <script>
+    window.UTG_DECORATIONS =
+      window.UltraTextGen && window.UltraTextGen.flair
+        ? window.UltraTextGen.flair.compose({ frames: ["gameFrames", "crowns", "warrior", "spacing"] })
+        : undefined;
+  </script>
+
   <!-- Generator scripts -->
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/script.js" defer></script>
 
-  <!-- Symbol palettes + frames + name checker -->
+  <!-- Symbol explorer + name checker -->
   <script src="/symbol-explorer.js" defer></script>
   <script src="/js/gamename/game-rules.js" defer></script>
   <script>
@@ -450,12 +395,11 @@ document.addEventListener("DOMContentLoaded", function () {
       games: ["pubg", "ff", "roblox", "discord"],
       inputId: "mainInput",
       text: {
-        inputLabel: "Проверь ник, прежде чем тратить карту смены имени",
-        placeholder: "Вставь скопированный ник…",
+        placeholder: "Ник из поля выше — или впиши другой для проверки",
         ok: "Для этой игры — безопасно",
         warn: "На некоторых телефонах могут быть квадраты ▯",
         fail: "Эта игра отклонит такой ник",
-        empty: "Введи или вставь ник для проверки",
+        empty: "Введи ник выше — проверка идёт на лету",
         weightNote: "Free Fire считает декоративные символы за 2 знака.",
         issue: {
           "over-limit": "Слишком длинно — убери символ или сократи имя.",
@@ -468,20 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  if (!ns || !ns.buildGrids) return;
-
-  const GROUPS = [
-    { name: "Классическая рамка", flags: ["꧁༒", "ТвойНик", "༒꧂"], defaultFormat: "inline" },
-    { name: "Про-рамка", flags: ["꧁•ᴾᴿᴼ•", "ТвойНик", "꧂"], defaultFormat: "inline" },
-    { name: "Тибетский свиток", flags: ["༺", "ТвойНик", "༻"], defaultFormat: "inline" },
-    { name: "Огненный баннер", flags: ["🔥", "ТвойНик", "࿐"], defaultFormat: "inline" },
-    { name: "Корона", flags: ["👑", "ТвойНик", "♛"], defaultFormat: "inline" },
-    { name: "Звёздный тег", flags: ["★彡", "ТвойНик", "彡★"], defaultFormat: "inline" },
-    { name: "Японские скобки", flags: ["『", "ТвойНик", "』"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("ruNickWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
   </script>
 

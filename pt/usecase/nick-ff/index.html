@@ -155,7 +155,8 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Digite seu nome ou nick…" maxlength="100">Nobru</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Adicionar enfeites ao resultado</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Símbolos</button><button class="decoration-tab" data-deco-tab="minimal">Minimalista</button><button class="decoration-tab" data-deco-tab="emojis">Emojis</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Verificar o nick — ao vivo enquanto você digita</div><div id="ffNameChecker"></div></div>
+  <div class="decoration-section"><div class="decoration-label">Adicionar enfeites ao resultado</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Nome aleatório</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Símbolos</button><button class="decoration-tab" data-deco-tab="minimal">Minimalista</button><button class="decoration-tab" data-deco-tab="emojis">Emojis</button><button class="decoration-tab" data-deco-tab="ff">FF</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -163,76 +164,11 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
-<!-- VERIFICADOR DE NICK -->
-<section class="editorial-section" id="verificador-de-nick">
-  <span class="article-section-label">Verificador de Nick</span>
-  <h2>O Nick Vai Passar no Free Fire?</h2>
-  <p class="u-secondary-block">O campo de nick do Free Fire aceita <strong>12 caracteres</strong> — e símbolos decorativos como ꧁ ꧂ contam como <strong>2 cada</strong> (então ꧁KING꧂ ocupa 8 dos 12). Nick recusado é Cartão de Troca de Nome jogado fora. Confira antes: o contador acompanha o que você digita acima, ou cole aqui o nick pronto que você copiou.</p>
-  <div id="ffNameChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
     <p>Um nick FF que chama atenção nasce de duas coisas: <strong>letras diferentes</strong> e <strong>símbolos que emolduram o nome</strong>. Digite seu nome no gerador de nick aí em cima — na hora você recebe um nick personalizado em negrito, gótica, cursiva e letra pequena, pronto pra copiar. Depois é só adicionar os ornamentos da paleta logo abaixo: a moldura ꧁ ꧂, os pergaminhos tibetanos ༺ ༻ ༒, a coroa ♛ e os traços katakana メ 彡 que dão aquela cara de pro player. O campo de nick do Free Fire aceita esses caracteres Unicode numa boa, então o nome aparece estiloso no lobby, no feed de abates e na lista da guilda.</p>
     <p>Mais pra baixo tem <strong>nomes para Free Fire prontos para copiar e colar</strong> — masculinos, femininos, de pro player e tags de guilda — é um clique pra copiar. Rolando mais um pouco você encontra o truque do <strong>nick com espaço</strong> (caractere invisível) e o passo a passo honesto de como trocar de nick no jogo.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE WRAPPERS -->
-<section class="mood-explainers" id="molduras-nick">
-  <span class="article-section-label">Molduras Prontas</span>
-  <h2>Molduras prontas para nick FF (꧁꧂ e ornamentos)</h2>
-  <p class="u-secondary-block">Copie a moldura completa em um clique e troque o <em>SeuNick</em> do meio pelo seu nome na tela de troca de nick do Free Fire.</p>
-  <div id="ffNickWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: MOLDURA -->
-<section class="mood-explainers" id="simbolos-moldura">
-  <span class="article-section-label">Símbolos de Moldura</span>
-  <h2>Símbolos para nick FF — moldura ꧁꧂</h2>
-  <p class="u-secondary-tight">Ornamentos javaneses e tibetanos que são a base de quase todo nick FF decorado. Clique para copiar.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Copiar moldura esquerda ꧁">꧁</button><span class="flag-label">Moldura Esquerda (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Copiar moldura direita ꧂">꧂</button><span class="flag-label">Moldura Direita (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧅" aria-label="Copiar ornamento javanês ꧅">꧅</button><span class="flag-label">Ornamento Javanês (Pada Luhur)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༺" aria-label="Copiar pergaminho esquerdo ༺">༺</button><span class="flag-label">Pergaminho Tibetano Esquerdo</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༻" aria-label="Copiar pergaminho direito ༻">༻</button><span class="flag-label">Pergaminho Tibetano Direito</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༒" aria-label="Copiar símbolo tibetano ༒">༒</button><span class="flag-label">Símbolo Tibetano (Rgya Gram)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Copiar bandeirinha ࿐">࿐</button><span class="flag-label">Bandeirinha ࿐</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❰" aria-label="Copiar colchete ornamental esquerdo ❰">❰</button><span class="flag-label">Colchete Ornamental Esquerdo</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❱" aria-label="Copiar colchete ornamental direito ❱">❱</button><span class="flag-label">Colchete Ornamental Direito</span></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: COROA + KATAKANA + ESTRELA -->
-<section class="mood-explainers" id="simbolos-coroa">
-  <span class="article-section-label">Coroa &amp; Acentos</span>
-  <h2>Coroa ♛, katakana 彡 e estrela ★</h2>
-  <p class="u-secondary-tight">Coroa pra quem vive no topo do rank, traços katakana メ 彡 pra passar velocidade, e estrela, flor e adaga pra fechar o visual do nick.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♛" aria-label="Copiar coroa da rainha ♛">♛</button><span class="flag-label">Coroa da Rainha</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♚" aria-label="Copiar coroa do rei ♚">♚</button><span class="flag-label">Coroa do Rei</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚜" aria-label="Copiar flor-de-lis ⚜">⚜</button><span class="flag-label">Flor-de-Lis</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="メ" aria-label="Copiar katakana Me メ">メ</button><span class="flag-label">Katakana Me (Corte)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="彡" aria-label="Copiar San 彡">彡</button><span class="flag-label">San — Três Traços</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ツ" aria-label="Copiar Tsu ツ">ツ</button><span class="flag-label">Tsu (Sorriso)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="乡" aria-label="Copiar traço 乡">乡</button><span class="flag-label">Traço 乡 (Tag de Guilda)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="々" aria-label="Copiar marca de repetição 々">々</button><span class="flag-label">Marca de Repetição 々</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Copiar estrela ★">★</button><span class="flag-label">Estrela Cheia</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✰" aria-label="Copiar estrela ✰">✰</button><span class="flag-label">Estrela Contornada</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✿" aria-label="Copiar flor ✿">✿</button><span class="flag-label">Flor (Florette)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="†" aria-label="Copiar adaga †">†</button><span class="flag-label">Adaga</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚔" aria-label="Copiar espadas cruzadas ⚔">⚔</button><span class="flag-label">Espadas Cruzadas</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="™" aria-label="Copiar marca ™">™</button><span class="flag-label">Marca ™</span></div>
   </div>
 </section>
 
@@ -446,12 +382,24 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: build the decoration tab from shared packs
+     (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ ff: ["gameFrames", "crowns", "warrior", "spacing"] })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers -->
+<!-- Symbol explorer + name checker -->
 <script src="/symbol-explorer.js"></script>
 <script src="/js/gamename/game-rules.js" defer></script>
 <script>
@@ -464,12 +412,11 @@ document.addEventListener("DOMContentLoaded", function () {
     games: ["ff"],
     inputId: "mainInput",
     text: {
-      inputLabel: "Confira o nick antes de gastar o Cartão de Troca de Nome",
-      placeholder: "Cole aqui o nick que você copiou…",
+      placeholder: "Seu nome aparece aqui enquanto você digita — ou edite para testar outro",
       ok: "Seguro para o Free Fire",
       warn: "Pode aparecer quadradinho ▯ em alguns celulares",
       fail: "O Free Fire vai recusar este nick",
-      empty: "Digite ou cole um nick para conferir",
+      empty: "Digite seu nome acima — a verificação é ao vivo",
       weightNote: "O Free Fire conta símbolos decorativos como 2 caracteres cada.",
       issue: {
         "over-limit": "Muito longo — tire um símbolo ou encurte o nome base.",
@@ -485,21 +432,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
   const ns = window.UltraTextGen;
-  if (!ns || !ns.buildGrids) return;
-
-  const GROUPS = [
-    { name: "Moldura ꧁༒꧂ Clássica", flags: ["꧁༒", "SeuNick", "༒꧂"], defaultFormat: "inline" },
-    { name: "Moldura Pro Player", flags: ["꧁•ᴾᴿᴼ•", "SeuNick", "꧂"], defaultFormat: "inline" },
-    { name: "Pergaminho Tibetano ༺༻", flags: ["༺", "SeuNick", "༻"], defaultFormat: "inline" },
-    { name: "Bandeira da Lenda ༒࿐", flags: ["༒", "SeuNick", "࿐"], defaultFormat: "inline" },
-    { name: "Coroa do Booyah ♚♛", flags: ["♚", "SeuNick", "♛"], defaultFormat: "inline" },
-    { name: "Adaga Sombria †", flags: ["꧁†", "SeuNick", "†꧂"], defaultFormat: "inline" },
-    { name: "Tag de Squad ★彡", flags: ["★彡", "SeuNick", "彡★"], defaultFormat: "inline" },
-    { name: "Tag de Guilda 乡", flags: ["乡", "SeuNick", "乡"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("ffNickWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 

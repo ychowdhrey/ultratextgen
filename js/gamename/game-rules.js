@@ -263,14 +263,27 @@
     const notes = el("ul", "gr-notes");
     mount.appendChild(notes);
 
-    // Mirror the main generator input until the user touches the checker,
-    // so the counter feels live without any extra step.
+    // Mirror the main generator input until the user touches the checker, so
+    // the counter feels live without any extra step. We mirror the *flaired*
+    // text (name + selected decoration) when script.js exposes it, so the count
+    // reflects exactly what the player will paste — e.g. a ꧁༒…༒꧂ frame that
+    // pushes a "fits" name over the limit shows up here. Falls back to the raw
+    // value on pages without the generator bridge.
     const mainInput = cfg.inputId ? document.getElementById(cfg.inputId) : null;
+    function mirrorSource() {
+      if (ns.flairedMainInput) return ns.flairedMainInput() || "";
+      return (mainInput ? mainInput.value : "") || "";
+    }
     if (mainInput) {
       mainInput.addEventListener("input", function () {
-        if (!state.dirty) { box.value = mainInput.value; render(); }
+        if (!state.dirty) { box.value = mirrorSource(); render(); }
       });
-      box.value = mainInput.value || "";
+      // The selected flair changed in the generator — re-mirror so the badge
+      // and counter track the decorated name, not just the typed base.
+      document.addEventListener("utg:flairchange", function () {
+        if (!state.dirty) { box.value = mirrorSource(); render(); }
+      });
+      box.value = mirrorSource();
     }
     box.addEventListener("input", function () { state.dirty = true; render(); });
 

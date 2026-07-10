@@ -135,7 +135,8 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Ketik nama atau nickname kamu…" maxlength="100">Naura</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Cek Nama ML — langsung pas kamu ketik</div><div id="mlNameChecker"></div></div>
+  <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Acak nama</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button><button class="decoration-tab" data-deco-tab="ml">ML</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -143,70 +144,11 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
-<!-- CEK NAMA -->
-<section class="editorial-section" id="cek-nama">
-  <span class="article-section-label">Cek Nama</span>
-  <h2>Nama Kamu Lolos di Mobile Legends Nggak?</h2>
-  <p class="u-secondary-block">Nama Mobile Legends harus <strong>4–16 karakter</strong> dan belum dipakai pemain lain. Kartu Ganti Nama harganya sampai 299 diamond — sayang banget kalau kebuang buat nama yang ditolak. Cek dulu di sini: hitungannya jalan otomatis pas kamu ngetik di atas, atau tempel nama jadi yang udah kamu salin.</p>
-  <div id="mlNameChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
     <p>Nama ML aesthetic girl itu resepnya dua bahan: <strong>font kursif atau script yang cantik</strong> plus <strong>hiasan lembut</strong> — bunga ✿ ❀, hati ᥫ᭡ ♡, pita 🎀, dan bintang kecil ⋆ ˚ °. Ketik nama kamu di generator atas, langsung muncul versi kursif, script, dan small caps yang bisa disalin. Terus hias pakai simbol dari palet di bawah. Kolom nama Mobile Legends nerima karakter Unicode ini, jadi nama aesthetic kamu tampil di profil, chat tim, dan papan peringkat.</p>
     <p>Satu catatan: MLBB agak pemilih soal font. Kalau ada gaya yang ditolak atau tampil jadi kotak (▯), pindah ke <strong>Small Caps</strong> — tetap minimal dan clean, tapi paling aman keterima. Di bawah ada <strong>24 nama ML aesthetic siap pakai</strong> buat cewek: dari yang penuh bunga sampai yang simple, plus versi couple buat main bareng bestie. Tinggal klik buat salin.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE WRAPPERS -->
-<section class="mood-explainers" id="bingkai-ml-girl">
-  <span class="article-section-label">Bingkai Siap Pakai</span>
-  <h2>Bingkai Nama ML Aesthetic (Bunga, Pita &amp; Hati)</h2>
-  <p class="u-secondary-block">Salin bingkai lengkap dalam satu klik, lalu ganti <em>NamaKamu</em> di tengah dengan nama kamu sendiri di layar ganti nama Mobile Legends.</p>
-  <div id="mlGirlWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: FRAMES -->
-<section class="mood-explainers" id="bingkai-simbol">
-  <span class="article-section-label">Simbol Bingkai</span>
-  <h2>Simbol Payung &amp; Kurung Hias</h2>
-  <p class="u-secondary-tight">Bingkai klasik yang bikin nama keliatan rapi di lobby. Klik buat nyalin.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Salin payung kiri ꧁">꧁</button><span class="flag-label">Payung Kiri</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Salin payung kanan ꧂">꧂</button><span class="flag-label">Payung Kanan</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༺" aria-label="Salin kurung hias kiri ༺">༺</button><span class="flag-label">Kurung Hias Kiri</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༻" aria-label="Salin kurung hias kanan ༻">༻</button><span class="flag-label">Kurung Hias Kanan</span></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: AESTHETIC -->
-<section class="mood-explainers" id="simbol-aesthetic-girl">
-  <span class="article-section-label">Simbol Aesthetic</span>
-  <h2>Simbol Bunga, Pita &amp; Aksen Cantik</h2>
-  <p class="u-secondary-tight">Hiasan lembut buat nama girl — bunga, hati, pita, dan bintang kecil. Klik buat nyalin.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✿" aria-label="Salin bunga ✿">✿</button><span class="flag-label">Bunga</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❀" aria-label="Salin bunga florette ❀">❀</button><span class="flag-label">Bunga Florette</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♡" aria-label="Salin hati ♡">♡</button><span class="flag-label">Hati</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ᥫ᭡" aria-label="Salin hati aesthetic ᥫ᭡">ᥫ᭡</button><span class="flag-label">Hati Aesthetic</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="🎀" aria-label="Salin pita 🎀">🎀</button><span class="flag-label">Pita</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="౨ৎ" aria-label="Salin kupu-kupu aesthetic ౨ৎ">౨ৎ</button><span class="flag-label">Kupu-Kupu Coquette</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✧" aria-label="Salin bintang berkilau ✧">✧</button><span class="flag-label">Bintang Kilau</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⋆" aria-label="Salin bintang kecil ⋆">⋆</button><span class="flag-label">Bintang Kecil</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="˚" aria-label="Salin titik atas ˚">˚</button><span class="flag-label">Titik Atas</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="°" aria-label="Salin derajat °">°</button><span class="flag-label">Aksen Derajat</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Salin hiasan bendera ࿐">࿐</button><span class="flag-label">Hiasan Bendera</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❦" aria-label="Salin daun hias ❦">❦</button><span class="flag-label">Daun Hias</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ʚɞ" aria-label="Salin kupu-kupu kecil ʚɞ">ʚɞ</button><span class="flag-label">Kupu-Kupu Kecil</span></div>
   </div>
 </section>
 
@@ -312,6 +254,18 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: build the ML decoration tab from shared packs
+     (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ ml: ["gameFrames", "hearts", "crowns", "spacing"] })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
@@ -330,12 +284,11 @@ document.addEventListener("DOMContentLoaded", function () {
       games: ["ml"],
       inputId: "mainInput",
       text: {
-        inputLabel: "Cek nama sebelum Kartu Ganti Nama kepakai",
-        placeholder: "Tempel nama jadi yang udah kamu salin…",
+        placeholder: "Nama kamu dari atas — atau edit buat coba yang lain",
         ok: "Aman buat Mobile Legends",
         warn: "Bisa jadi kotak ▯ di HP lain",
         fail: "Bakal ditolak Mobile Legends",
-        empty: "Ketik atau tempel nama buat dicek",
+        empty: "Ketik nama kamu di atas — langsung dicek",
         issue: {
           "over-limit": "Kepanjangan — maksimal 16 karakter di Mobile Legends.",
           "too-short": "Terlalu pendek — minimal 4 karakter di Mobile Legends.",
@@ -344,20 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  if (!ns || !ns.buildGrids) return;
-
-  var GROUPS = [
-    { name: "Bingkai Bunga", flags: ["꧁✿", "NamaKamu", "✿꧂"], defaultFormat: "inline" },
-    { name: "Kurung Florette", flags: ["༺❀", "NamaKamu", "❀༻"], defaultFormat: "inline" },
-    { name: "Hati Aesthetic", flags: ["ᥫ᭡", "NamaKamu", "ᥫ᭡"], defaultFormat: "inline" },
-    { name: "Pita Manis", flags: ["🎀", "NamaKamu", "🎀"], defaultFormat: "inline" },
-    { name: "Kupu-Kupu Coquette", flags: ["౨ৎ⋆", "NamaKamu", "⋆౨ৎ"], defaultFormat: "inline" },
-    { name: "Kilau Bintang", flags: ["✧˖°", "NamaKamu", "°˖✧"], defaultFormat: "inline" },
-    { name: "Kupu-Kupu Kecil", flags: ["ʚɞ", "NamaKamu", "ʚɞ"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("mlGirlWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 

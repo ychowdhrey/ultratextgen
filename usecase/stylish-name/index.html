@@ -143,7 +143,8 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Type your name or nickname…" maxlength="100">Rahul</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Add flair to the results</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Symbols</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Name check — live as you type</div><div id="styleNameChecker"></div></div>
+  <div class="decoration-section"><div class="decoration-label">Add flair to the results</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Surprise me</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Symbols</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button><button class="decoration-tab" data-deco-tab="frames">Frames</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -151,58 +152,11 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
-<!-- NAME CHECK -->
-<section class="editorial-section" id="name-check">
-  <span class="article-section-label">Name Check</span>
-  <h2>Will Your Stylish Name Survive in the Game?</h2>
-  <p class="u-secondary-block">Every game has its own name rules: <strong>Free Fire allows 12 characters</strong> and counts decorative symbols like ꧁ ꧂ as <strong>2 each</strong>, Mobile Legends allows 16, PUBG/BGMI allows 14 with no spaces, and Discord allows 32. A rejected paste can waste a rename card, so check first — pick your game below. It updates as you type above, or paste any styled name you copied.</p>
-  <div id="styleNameChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
     <p>A stylish name comes down to two things: <strong>a different font</strong> and <strong>a symbol frame around it</strong>. Type your name into the stylish name maker above and you instantly get bold, cursive, gothic, and small-caps versions you can copy. Then add an ornament from the palette below: Javanese umbrellas ꧁ ꧂, Tibetan scrolls ༺ ༻ ༒, a crown 👑 ♛, or katakana strokes メ 彡 that make a gamer name look fast and sharp. Because every letter is a real Unicode character — not an image or a special app font — the same stylish name works in the <strong>Free Fire and BGMI nickname field</strong>, an <strong>Instagram bio</strong>, a <strong>Facebook profile</strong>, and your <strong>WhatsApp name and status</strong>.</p>
     <p>Everything is free and runs in your browser — no sign-up, no app, and nothing you type is sent to a server. Below you'll find <strong>ready-made stylish names</strong> for FF, for boys, for girls, and attitude 👑 names — just click to copy. Scroll down for how to change your ff name style in-game and how to use stylish text on Instagram and Facebook without getting rejected.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE FRAMES -->
-<section class="mood-explainers" id="name-frames">
-  <span class="article-section-label">Ready-Made Frames</span>
-  <h2>Stylish Name Frames (Click to Copy)</h2>
-  <p class="u-secondary-block">Copy a full frame in one click, then replace <em>YourName</em> in the middle with your own name on the rename screen.</p>
-  <div id="stylishNameWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE -->
-<section class="mood-explainers" id="stylish-symbols">
-  <span class="article-section-label">Symbols</span>
-  <h2>Stylish Name Symbols</h2>
-  <p class="u-secondary-tight">The characters that decorate almost every stylish name — umbrellas, crowns, katakana, and stars. Click to copy, then place them before and after your name.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Copy left umbrella ꧁">꧁</button><span class="flag-label">Left Umbrella (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Copy right umbrella ꧂">꧂</button><span class="flag-label">Right Umbrella (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༺" aria-label="Copy left scroll ༺">༺</button><span class="flag-label">Tibetan Scroll Left</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༻" aria-label="Copy right scroll ༻">༻</button><span class="flag-label">Tibetan Scroll Right</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༒" aria-label="Copy Tibetan cross ༒">༒</button><span class="flag-label">Rgya Gram Sign</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Copy Tibetan banner ࿐">࿐</button><span class="flag-label">Banner Flourish ࿐</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♛" aria-label="Copy queen crown ♛">♛</button><span class="flag-label">Queen Crown</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="👑" aria-label="Copy crown emoji 👑">👑</button><span class="flag-label">Crown Emoji</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ツ" aria-label="Copy Tsu ツ">ツ</button><span class="flag-label">Tsu (Smile Face)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="メ" aria-label="Copy katakana Me メ">メ</button><span class="flag-label">Katakana Me (Slash)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="彡" aria-label="Copy San 彡">彡</button><span class="flag-label">San — Three Strokes</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Copy black star ★">★</button><span class="flag-label">Black Star</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✧" aria-label="Copy sparkle star ✧">✧</button><span class="flag-label">Sparkle Star</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚡" aria-label="Copy lightning bolt ⚡">⚡</button><span class="flag-label">Lightning Bolt</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="☬" aria-label="Copy Khanda ☬">☬</button><span class="flag-label">Khanda ☬</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="〆" aria-label="Copy Shime mark 〆">〆</button><span class="flag-label">Shime Mark 〆</span></div>
   </div>
 </section>
 
@@ -318,12 +272,24 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: build the "frames" decoration tab from shared
+     packs (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ frames: ["gameFrames", "crowns", "hearts", "warrior", "spacing"] })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers + name checker -->
+<!-- Symbol explorer + name checker -->
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/gamename/game-rules.js" defer></script>
 <script>
@@ -336,12 +302,11 @@ document.addEventListener("DOMContentLoaded", function () {
       games: ["ff", "ml", "pubg", "discord"],
       inputId: "mainInput",
       text: {
-        inputLabel: "Check a name before you rename",
-        placeholder: "Paste the styled name you copied…",
+        placeholder: "Your name from above — or edit to test another",
         ok: "Looks safe for this game",
         warn: "May show boxes ▯ on some phones",
         fail: "This game will reject it",
-        empty: "Type or paste a name to check it",
+        empty: "Type your name above — it checks live",
         weightNote: "Free Fire counts decorative symbols as 2 characters each.",
         issue: {
           "over-limit": "Too long — drop a symbol or shorten the base name.",
@@ -352,20 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  if (!ns || !ns.buildGrids) return;
-
-  const GROUPS = [
-    { name: "Royal Crown", flags: ["👑", "YourName", "♛"], defaultFormat: "inline" },
-    { name: "Umbrella Classic", flags: ["꧁༒", "YourName", "༒꧂"], defaultFormat: "inline" },
-    { name: "Katakana Speed", flags: ["メ", "YourName", "彡"], defaultFormat: "inline" },
-    { name: "Lightning", flags: ["⚡", "YourName", "⚡"], defaultFormat: "inline" },
-    { name: "Star Frame", flags: ["★彡", "YourName", "彡★"], defaultFormat: "inline" },
-    { name: "TM Pro", flags: ["ᴾᴿᴼ", "YourName", "™"], defaultFormat: "inline" },
-    { name: "Banner", flags: ["YourName", "࿐"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("stylishNameWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 

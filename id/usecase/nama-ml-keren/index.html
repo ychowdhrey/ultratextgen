@@ -135,7 +135,8 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Ketik nama atau nickname kamu…" maxlength="100">Aira</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Cek Nama ML — langsung pas kamu ketik</div><div id="mlNameChecker"></div></div>
+  <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Acak nama</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button><button class="decoration-tab" data-deco-tab="ml">ML</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -143,54 +144,11 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
-<!-- CEK NAMA -->
-<section class="editorial-section" id="cek-nama">
-  <span class="article-section-label">Cek Nama</span>
-  <h2>Nama Kamu Lolos di Mobile Legends Nggak?</h2>
-  <p class="u-secondary-block">Nama Mobile Legends harus <strong>4–16 karakter</strong> dan belum dipakai pemain lain. Kartu Ganti Nama harganya sampai 299 diamond — sayang banget kalau kebuang buat nama yang ditolak. Cek dulu di sini: hitungannya jalan otomatis pas kamu ngetik di atas, atau tempel nama jadi yang udah kamu salin.</p>
-  <div id="mlNameChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
     <p>Nama ML keren itu kombinasi <strong>font aesthetic</strong> dan <strong>ornamen yang ngebingkai</strong>. Ketik nama kamu di generator atas — langsung muncul versi kursif, gotik, dan small caps yang bisa disalin. Lalu hias pakai simbol dari palet di bawah: payung ꧁ ꧂, tanda silang ☬ ༒, bunga ✿ buat nama girl, sampai katakana メ 彡. Kolom nama Mobile Legends nerima karakter Unicode ini, jadi tampil di profil, chat tim, dan papan peringkat.</p>
     <p>Catatan penting: MLBB lebih ketat dari Free Fire soal font. Kalau ada gaya yang ditolak atau jadi kotak, pakai <strong>Small Caps</strong> atau <strong>Bold</strong> — dua gaya itu paling aman keterima. Di bawah ada <strong>kumpulan nama ML keren</strong> buat cowok, cewek (girl), dan squad yang tinggal klik buat salin.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE WRAPPERS -->
-<section class="mood-explainers" id="bingkai-ml">
-  <span class="article-section-label">Bingkai Siap Pakai</span>
-  <h2>Bingkai Nama ML (Aesthetic &amp; Ornamen)</h2>
-  <p class="u-secondary-block">Salin bingkai lengkap dalam satu klik, lalu ganti <em>NamaKamu</em> di tengah dengan nama kamu sendiri di layar ganti nama Mobile Legends.</p>
-  <div id="mlNickWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE -->
-<section class="mood-explainers" id="simbol-ml">
-  <span class="article-section-label">Simbol Nama</span>
-  <h2>Simbol Payung, Ornamen &amp; Aksen Aesthetic</h2>
-  <p class="u-secondary-tight">Ornamen buat nick sangar, plus bunga &amp; bintang buat nama aesthetic. Klik buat nyalin.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Salin payung kiri ꧁">꧁</button><span class="flag-label">Payung Kiri</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Salin payung kanan ꧂">꧂</button><span class="flag-label">Payung Kanan</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༒" aria-label="Salin tanda Tibet ༒">༒</button><span class="flag-label">Tanda Rgya Gram</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="☬" aria-label="Salin Adi Shakti ☬">☬</button><span class="flag-label">Tanda Khanda</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Salin bendera Tibet ࿐">࿐</button><span class="flag-label">Hiasan Bendera</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♛" aria-label="Salin mahkota ♛">♛</button><span class="flag-label">Mahkota</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="メ" aria-label="Salin katakana Me メ">メ</button><span class="flag-label">Katakana Me</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="彡" aria-label="Salin San 彡">彡</button><span class="flag-label">San (Goresan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✿" aria-label="Salin bunga ✿">✿</button><span class="flag-label">Bunga (Girl)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❀" aria-label="Salin bunga ❀">❀</button><span class="flag-label">Bunga Florette</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⋆" aria-label="Salin bintang kecil ⋆">⋆</button><span class="flag-label">Bintang Kecil</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="™" aria-label="Salin tanda TM ™">™</button><span class="flag-label">Tanda ™</span></div>
   </div>
 </section>
 
@@ -285,6 +243,18 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: build the decoration tab from shared packs
+     (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ ml: ["gameFrames", "crowns", "warrior", "spacing"] })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
@@ -303,12 +273,11 @@ document.addEventListener("DOMContentLoaded", function () {
       games: ["ml"],
       inputId: "mainInput",
       text: {
-        inputLabel: "Cek nama sebelum Kartu Ganti Nama kepakai",
-        placeholder: "Tempel nama jadi yang udah kamu salin…",
+        placeholder: "Nama kamu dari atas — atau edit buat coba yang lain",
         ok: "Aman buat Mobile Legends",
         warn: "Bisa jadi kotak ▯ di HP lain",
         fail: "Bakal ditolak Mobile Legends",
-        empty: "Ketik atau tempel nama buat dicek",
+        empty: "Ketik nama kamu di atas — langsung dicek",
         issue: {
           "over-limit": "Kepanjangan — maksimal 16 karakter di Mobile Legends.",
           "too-short": "Terlalu pendek — minimal 4 karakter di Mobile Legends.",
@@ -317,19 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  if (!ns || !ns.buildGrids) return;
-
-  var GROUPS = [
-    { name: "Bingkai Payung Klasik", flags: ["꧁༒", "NamaKamu", "༒꧂"], defaultFormat: "inline" },
-    { name: "Bingkai Khanda", flags: ["꧁☬", "NamaKamu", "☬꧂"], defaultFormat: "inline" },
-    { name: "Aesthetic Bunga (Girl)", flags: ["꧁✿", "NamaKamu", "✿꧂"], defaultFormat: "inline" },
-    { name: "Banner Bendera", flags: ["༒", "NamaKamu", "࿐"], defaultFormat: "inline" },
-    { name: "Mahkota Mythic", flags: ["♛", "NamaKamu", "♛"], defaultFormat: "inline" },
-    { name: "Tag Bintang Kecil", flags: ["⋆˚", "NamaKamu", "˚⋆"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("mlNickWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 
