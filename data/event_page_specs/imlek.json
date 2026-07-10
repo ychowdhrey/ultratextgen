@@ -1,0 +1,184 @@
+{
+  "slug": "imlek",
+  "language": "id",
+  "event_name": "Imlek",
+  "aliases": ["Tahun Baru Imlek", "Tahun Baru Cina", "Chinese New Year", "Sin Cia"],
+
+  "title": "Generator Font, Simbol & Kaomoji Imlek | UltraTextGen",
+  "meta_description": "Percantik ucapan Imlek-mu secara langsung, salin emoji lampion, angpau, dan kembang api, plus kaomoji, ASCII art, dan kumpulan ucapan siap pakai seperti Gong Xi Fa Cai — tinggal tap untuk mengubah gayanya.",
+
+  "hero_h1": "Generator Teks & Simbol Imlek",
+  "hero_tagline": "Ketik nama atau ucapan, lalu ubah jadi font-font meriah pilihan; setelah itu salin lampion, angpau, kaomoji, dan ASCII art — atau tap salah satu ucapan siap pakai untuk langsung mempercantiknya.",
+
+  "intro": "Imlek (Tahun Baru Imlek) adalah momen berbagi dan saling mengucap paling meriah dalam penanggalan lunar — angpau, makan malam keluarga, barongsai, dan pesan-pesan berisi doa kesehatan, keberuntungan, dan rezeki untuk keluarga serta teman di tahun yang baru. Halaman ini mengumpulkan semua yang kamu butuhkan untuk mempercantik ucapan itu: font-font pilihan yang bisa langsung kamu coba dengan teksmu sendiri, emoji lampion dan kembang api yang memang sering dipakai orang, karakter keberuntungan yang terpampang di pintu dan spanduk, kaomoji untuk pesan chat yang ceria, beberapa ASCII art buatan tangan yang orisinal, serta bank frasa berisi ucapan Imlek yang benar-benar dipakai — dari \"Selamat Tahun Baru Imlek\" sampai \"Gong Xi Fa Cai\" — yang langsung berubah gaya begitu kamu menyentuhnya.",
+
+  "date_window": "pada tanggal yang berbeda setiap tahun, antara akhir Januari dan pertengahan Februari, mengikuti penanggalan lunar — rentang bergerak sekitar 29 hari",
+
+  "sample_phrase": "Gong Xi Fa Cai",
+
+  "canonical": "https://ultratextgen.com/id/events/imlek/",
+
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/chinese-new-year/",
+    "id": "https://ultratextgen.com/id/events/imlek/",
+    "x_default": "id"
+  },
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Serif",
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Gothic Bold",
+      "Ultra Bubble",
+      "Ultra Bubble Filled",
+      "Ultra Small Caps",
+      "Ultra Fullwidth"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Emoji Imlek",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🧧", "🏮", "🧨", "🎆", "🎇", "✨", "🐉", "🍊", "🥟", "🦁", "💰", "🪙", "🎊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Karakter Keberuntungan & Rezeki",
+      "presentation_class": "symbol",
+      "copy_pattern": "collection",
+      "flags": ["福", "禧", "喜", "財", "春"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(๑•̀ㅂ•́)و✧", "label": "Semangat Merayakan" },
+    { "text": "ヽ(・∀・)ノ", "label": "Melambai Gembira" },
+    { "text": "(◕‿◕)✿", "label": "Ceria Berseri" },
+    { "text": "\\(^o^)/", "label": "Angkat Tangan Bersorak" },
+    { "text": "∩(・∀・)∩", "label": "Sorak Kegirangan" },
+    { "text": "(*≧▽≦)", "label": "Tawa Bahagia" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Lampion Merah",
+        "art": "     ______\n    /      \\\n   |  ~~~~  |\n   |  ~~~~  |\n    \\______/\n      |  |\n    --+--+--\n      |  |\n     (____)"
+      },
+      {
+        "label": "Rentetan Petasan",
+        "art": "   ||   ||   ||\n  (##) (##) (##)\n   ||   ||   ||\n   ##   ##   ##\n *DOR* *DOR* *DOR*"
+      },
+      {
+        "label": "Angpau",
+        "art": "   .-------------.\n  /  .---------.  \\\n |  |  REZEKI  |   |\n |  |    $$$   |   |\n  \\  '---------'  /\n   '-------------'"
+      },
+      {
+        "label": "Kembang Api",
+        "art": "        \\   |   /\n         \\  |  /\n      --- \\ | / ---\n    *   ---+---   *\n      --- / | \\ ---\n         /  |  \\\n        /   |   \\"
+      },
+      {
+        "label": "Emas Batangan",
+        "art": "     _________\n   /           \\\n  /   ~~~~~~~   \\\n |   (       )   |\n  \\   ~~~~~~~   /\n   \\___________/"
+      },
+      {
+        "label": "Spanduk Keberuntungan",
+        "art": " +----------------------+\n |  SELAMAT  TAHUN BARU |\n |  *** GONG XI ***     |\n +----------------------+"
+      },
+      {
+        "label": "Barongsai",
+        "art": "    ,~~-.__,-~~,\n   (  o     o  )\n    \\   ==^==  /\n     '-.,___,.-'\n      //     \\\\\n     ^^       ^^"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Selamat Tahun Baru Imlek",
+      "native_script": "Selamat Tahun Baru Imlek",
+      "romanization": "Selamat Tahun Baru Imlek",
+      "translation": "Ucapan paling umum dan aman — cocok untuk kartu, pesan, atau status apa pun.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Gong Xi Fa Cai",
+      "native_script": "恭喜发财",
+      "romanization": "Gong Xi Fa Cai",
+      "translation": "Ucapan Imlek paling ikonik di Indonesia — doa semoga makin sejahtera dan banyak rezeki.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Xin Nian Kuai Le",
+      "native_script": "新年快乐",
+      "romanization": "Xin Nian Kuai Le",
+      "translation": "\"Selamat Tahun Baru\" dalam bahasa Mandarin, juga sering dipakai saat perayaan Imlek.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Semoga Hoki Selalu Menyertaimu",
+      "native_script": "Semoga Hoki Selalu Menyertaimu",
+      "romanization": "Semoga Hoki Selalu Menyertaimu",
+      "translation": "\"Hoki\" berarti keberuntungan — ucapan santai buat teman dan orang terdekat.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Semoga Rezeki Melimpah di Tahun Baru Ini",
+      "native_script": "Semoga Rezeki Melimpah di Tahun Baru Ini",
+      "romanization": "Semoga Rezeki Melimpah di Tahun Baru Ini",
+      "translation": "Doa klasik untuk kelancaran rezeki sepanjang tahun yang baru.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Sehat dan Bahagia Selalu",
+      "native_script": "Sehat dan Bahagia Selalu",
+      "romanization": "Sehat dan Bahagia Selalu",
+      "translation": "Ucapan hangat untuk orang tua dan keluarga — menekankan kesehatan.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Semoga Sukses dan Panjang Umur",
+      "native_script": "Semoga Sukses dan Panjang Umur",
+      "romanization": "Semoga Sukses dan Panjang Umur",
+      "translation": "Pas untuk menghormati yang lebih tua saat berkunjung dan bersalaman.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Semoga Tahun Baru Ini Penuh Berkah",
+      "native_script": "Semoga Tahun Baru Ini Penuh Berkah",
+      "romanization": "Semoga Tahun Baru Ini Penuh Berkah",
+      "translation": "Penutup yang manis untuk kartu ucapan atau pesan panjang.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "kata-kata-ucapan-imlek",
+
+  "related": [
+    {
+      "href": "/library/chinese-symbols/",
+      "title": "Simbol Tionghoa",
+      "desc": "Pustaka lebih lengkap berisi simbol dan karakter Unicode Tionghoa untuk dipadukan dengan ucapanmu."
+    },
+    {
+      "href": "/id/tulisan-sambung/",
+      "title": "Tulisan Sambung (Kursif)",
+      "desc": "Keluarga font kursif lengkap untuk kartu ucapan dan caption Imlek yang terlihat elegan."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "Generator ASCII Art",
+      "desc": "Ketik kata atau nama apa pun dan ubah jadi ASCII art huruf balok besar secara langsung."
+    },
+    {
+      "href": "/id/library/happy-kaomoji/",
+      "title": "Kaomoji Ceria",
+      "desc": "Lebih banyak wajah kaomoji ceria untuk pesan dan obrolan yang penuh sukacita."
+    }
+  ]
+}
