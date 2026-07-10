@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Style a Discord Name Without Getting Filtered or Breaking Accessibility | UltraTextGen</title>
+<meta name="description" content="A styled Discord name can still fail three quiet tests: the member list, the @mention, and the impersonation filter. Here's how to keep it tasteful, readable, and safely yours.">
+
+<link rel="canonical" href="https://ultratextgen.com/guide/discord-safe-name-styling/">
+<meta property="og:image" content="https://ultratextgen.com/guide/assets/og/discord-safe-name-styling.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Style a Discord Name Without Getting Filtered or Breaking Accessibility | UltraTextGen">
+<meta name="twitter:description" content="A styled Discord name can still fail three quiet tests: the member list, the @mention, and the impersonation filter. Here's how to keep it tasteful, readable, and safely yours.">
+<meta name="twitter:image" content="https://ultratextgen.com/guide/assets/og/discord-safe-name-styling.png">
+<meta property="og:title" content="Style a Discord Name Without Getting Filtered or Breaking Accessibility">
+<meta property="og:description" content="A styled Discord name can still fail three quiet tests: the member list, the @mention, and the impersonation filter. Here's how to keep it tasteful, readable, and safely yours.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/guide/discord-safe-name-styling/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Style a Discord Name Without Getting Filtered or Breaking Accessibility",
+  "description": "A styled Discord name can still fail three quiet tests: the member list, the @mention, and the impersonation filter. Here's how to keep it tasteful, readable, and safely yours.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/guide/assets/og/discord-safe-name-styling.png",
+  "mainEntityOfPage": "https://ultratextgen.com/guide/discord-safe-name-styling/",
+  "datePublished": "2026-07-10",
+  "dateModified": "2026-07-10"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://ultratextgen.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Style a Discord Name Safely", "item": "https://ultratextgen.com/guide/discord-safe-name-styling/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will Discord ban me for having a fancy name?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Styling your display name or nickname with Unicode characters is normal, allowed usage — millions of members do it, and it's a display-layer choice, not a username. What can get a name actioned is a specific pattern: using lookalike characters to closely imitate another real user, a staff member, or a verified brand. That's an impersonation issue, not a styling one — the fix is to make sure a styled name is still clearly and uniquely yours." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't people @mention me even though my name looks fine?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Discord's @mention autocomplete matches plain characters as you type. If your display name is built from Unicode lookalikes or heavy decoration, typing the word it resembles often won't surface it in the suggestion list. The fix is keeping a recognizable plain-text substring in the name, or making sure your username (which is always plain) is the one people actually type." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my name look weird or misaligned in the member list?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The member list sorts and aligns names based on standard character widths and categories. Names built from combining marks, fullwidth characters, or long decorative strings can throw off sort order, row height, or truncate awkwardly. Keep decoration short and place it at the edges of the name rather than woven through it." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is zalgo text against Discord's rules?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's not banned outright, but heavy zalgo (text stacked with many combining diacritical marks) is one of the most commonly moderated styling choices, because it can visually break chat layout, overlap other messages, and make a name unreadable or screen-reader-hostile. Many servers explicitly restrict it in their own rules even where Discord's platform-wide policy doesn't name it directly." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/guide/">Guides</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Style a Discord Name Safely</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Style a Discord Name Without Getting Filtered</h1>
+    <p class="hero-tagline">Unicode names work almost everywhere on Discord — but "works" isn't the same as "safe." A styled name can still fail the member list, the @mention, or the impersonation filter. Here's how to pass all three.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Platform Mastery — Discord</span>
+      <span class="guide-pill">⏱ 8 min read</span>
+      <span class="guide-pill">The Three Filters</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/guide/assets/discord-safe-name-styling.svg" width="1200" height="340"
+       alt="A styled Discord display name checked against three filters — member list, mention, and impersonation — passing the first two and failing the third.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Styling a display name or nickname is normal and allowed — the risk isn't decoration, it's what the decoration is <em>doing</em>.</li>
+    <li>A safe name passes three quiet tests: it stays legible in the <strong>member list</strong>, it stays <strong>@mentionable</strong>, and it doesn't trip <strong>impersonation</strong> checks against real users or brands.</li>
+    <li>Heavy zalgo (stacked combining marks) is the styling choice most likely to get moderated, because it can break chat layout, not because decoration itself is against the rules.</li>
+    <li>Names get read aloud by screen readers too — the same Plain-Core discipline from the accessibility guide applies to a display name, not just to bios.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Core Idea</span>
+    <h2>"Works" and "Safe" Are Different Questions</h2>
+    <div class="editorial-block">
+      <p><a href="/guide/discord-text-formatting-explained/">Discord's Unicode names work almost everywhere a name appears</a> — display name, server nickname, roles, channels. That's the "does it render" question, and for a styled name the answer is nearly always yes.</p>
+      <p>"Is it safe to use" is a separate question, and it doesn't have a single yes-or-no answer — it depends on whether the specific name you picked still does the three jobs a Discord name has to do: stay readable in a crowded list, stay findable when someone wants to mention you, and stay clearly, uniquely <em>you</em> rather than an accidental (or deliberate) copy of someone else.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: framework -->
+  <section class="editorial-section">
+    <span class="article-section-label">Framework</span>
+    <h2>The Three Filters</h2>
+    <div class="editorial-block">
+      <p>A tasteful styled name clears all three. A risky one usually fails at least one — and it's rarely obvious which, until someone tries to use your name and can't.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">📋</div>
+        <h3>The Member-List Filter</h3>
+        <p>Sort order, row height, and scanability. Long decorative runs, combining marks, and fullwidth characters can misalign or truncate. Keep decoration short and at the edges of the name, not woven through it.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">@</div>
+        <h3>The @Mention Filter</h3>
+        <p>Autocomplete matches plain characters as someone types. If your display name is built entirely from lookalikes, typing the word it resembles may not surface it — this is the same searchability tax that hits styled bios and hashtags.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">🛡️</div>
+        <h3>The Impersonation Filter</h3>
+        <p>Names built from lookalike characters to closely mimic another real user, a staff member, or a verified brand get scrutinized. Decoration around your own identity is fine; decoration that erases the difference between you and someone else isn't.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: zalgo -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Special Case</span>
+    <h2>Why Zalgo Gets Moderated Even When Other Styles Don't</h2>
+    <div class="editorial-block">
+      <p>Most Unicode "fonts" swap one letter for one visually similar character — a bold 𝗔 for a plain A. Zalgo text is different: it stacks dozens of combining diacritical marks on top of ordinary letters, and those marks don't respect line height. A heavily zalgo'd name can visually spill into the message above and below it, break the member list's row height, and become genuinely unreadable rather than just decorative.</p>
+      <p>That's a layout and accessibility problem as much as a taste one, which is why zalgo is the styling choice most commonly restricted by individual server rules even in servers that are otherwise relaxed about fancy names. If you want the aesthetic, use it sparingly — a couple of marks for flavor, not a full stack.</p>
+      <div class="example-pair">
+        <span class="ex-label">Light touch</span>
+        <span class="ex-styled">N̸ova</span>
+        <span class="ex-arrow">vs</span>
+        <span class="ex-label">Heavy zalgo</span>
+        <span class="ex-plain">N̸̢̛̯̥̘͙̻̈́̒̌̕o̶̡̗̳̗͊̈́̀v̴̢̛̜̮̈́̽̕a̸̼̅͐̏͝</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: accessibility -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Honest Part</span>
+    <h2>Names Get Read Aloud Too</h2>
+    <div class="editorial-block">
+      <p>The Plain-Core Rule from the accessibility guide isn't just for bios — it applies to names. A screen reader encountering a styled Discord name reads it the same way it reads styled bio text: character by character, as "mathematical bold capital N," not as the word "Nova." A short, lightly styled name is a minor friction. A long, heavily decorated one can make your name genuinely difficult for a screen-reader user to parse in a busy channel.</p>
+      <p>The same fix applies: keep the load-bearing part of your name — the part people actually recognize you by — in plain or lightly styled characters, and treat heavier decoration as a small accent rather than the whole name.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: cheat sheet -->
+  <section class="editorial-section">
+    <span class="article-section-label">Cheat Sheet</span>
+    <h2>Tasteful vs Risky, at a Glance</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Choice</th><th>Tasteful</th><th>Risky</th></tr></thead>
+        <tbody>
+          <tr><td>Style intensity</td><td>One style applied to a short name</td><td>Mixed styles, combining marks, symbol runs</td></tr>
+          <tr><td>Recognizability</td><td>Plain substring a friend can still type</td><td>100% lookalike characters, unmentionable</td></tr>
+          <tr><td>Relative to real users</td><td>Clearly your own identity</td><td>Near-copy of a staff member or known brand</td></tr>
+          <tr><td>Zalgo</td><td>A mark or two for flavor</td><td>Full-stack combining marks that break layout</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">A styled name isn't risky because it's decorated.<br>It's risky when the decoration stops you from being found, read, or told apart.<br><br>Pass the three filters and style freely.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Style a Discord name that stays yours</h3>
+    <p>Generate a short, tasteful styled name — legible in the member list, still mentionable, still unmistakably you.</p>
+    <a href="/discord/" class="cta-btn">Open the Discord Font Generator →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/discord/">Discord</a>
+    <a class="platform-pill" href="/instagram/">Instagram</a>
+    <a class="platform-pill" href="/tiktok/">TikTok</a>
+    <a class="platform-pill" href="/linkedin/">LinkedIn</a>
+    <a class="platform-pill" href="/x/">X</a>
+    <a class="platform-pill" href="/whatsapp/">WhatsApp</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Will Discord ban me for having a fancy name?</button>
+    <div class="faq-answer">
+      <p>Styling your display name or nickname with Unicode characters is normal, allowed usage — millions of members do it, and it's a display-layer choice, not a username. What can get a name actioned is a specific pattern: using lookalike characters to closely imitate another real user, a staff member, or a verified brand. That's an impersonation issue, not a styling one — the fix is to make sure a styled name is still clearly and uniquely yours.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why can't people @mention me even though my name looks fine?</button>
+    <div class="faq-answer">
+      <p>Discord's @mention autocomplete matches plain characters as you type. If your display name is built from Unicode lookalikes or heavy decoration, typing the word it resembles often won't surface it in the suggestion list. The fix is keeping a recognizable plain-text substring in the name, or making sure your username (which is always plain) is the one people actually type.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why does my name look weird or misaligned in the member list?</button>
+    <div class="faq-answer">
+      <p>The member list sorts and aligns names based on standard character widths and categories. Names built from combining marks, fullwidth characters, or long decorative strings can throw off sort order, row height, or truncate awkwardly. Keep decoration short and place it at the edges of the name rather than woven through it.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Is zalgo text against Discord's rules?</button>
+    <div class="faq-answer">
+      <p>It's not banned outright, but heavy zalgo (text stacked with many combining diacritical marks) is one of the most commonly moderated styling choices, because it can visually break chat layout, overlap other messages, and make a name unreadable or screen-reader-hostile. Many servers explicitly restrict it in their own rules even where Discord's platform-wide policy doesn't name it directly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/guide/discord-text-formatting-explained/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">Discord Formatting Decoded</span>
+      <span class="related-desc">Markdown vs Unicode vs Nitro, untangled.</span>
+    </a>
+    <a class="related-card" href="/guide/discord-where-fonts-work/">
+      <span class="related-tag">🗺️</span>
+      <span class="related-title">Where Fonts Work in Discord</span>
+      <span class="related-desc">The field-by-field permission map.</span>
+    </a>
+    <a class="related-card" href="/guide/fancy-fonts-accessibility-guide/">
+      <span class="related-tag">♿</span>
+      <span class="related-title">Fonts &amp; Accessibility</span>
+      <span class="related-desc">The Plain-Core Rule, explained.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

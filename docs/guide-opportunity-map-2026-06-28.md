@@ -233,6 +233,26 @@ clear tool/library tie-in, and competitor-gap differentiation. **Batch label:
 > Format Design. Remaining from batch-guide-01: the `pending`/`needs_review` rows
 > (0768, 0770, 0774, 0777, 0780, 0782, 0783, 0785–0791, 0793).
 
+> **Update 2026-07-10:** four more of the remaining rows are BUILT — OPP-0768
+> (`boxes-vs-mojibake-vs-question-marks`, framework: The Recovery Triage), OPP-0770
+> (`fonts-and-search-visibility`, framework: The Searchability Tax), OPP-0774
+> (`discord-safe-name-styling`, framework: The Three Filters), and OPP-0788
+> (`bio-formatting-without-spam`, framework: The Restraint Framework). Hub gained
+> two cards in **Unicode, Accessibility & Compatibility**, one in **Platform
+> Mastery — Discord**, and one in **Branding & Identity**; guide count pill now 28.
+>
+> Separately, three "where fonts work" rows were **rerouted**, not built: OPP-0777
+> (instagram-where-fonts-work), OPP-0780 (linkedin-where-fonts-work), and OPP-0782
+> (tiktok-fonts-not-working). Checking the live platform pages found each one
+> already owns its field-by-field/troubleshooting query as an on-page FAQ section
+> (`/instagram/`, `/linkedin/`, `/tiktok/`) — shipping a separate guide would
+> self-cannibalize per `jtbd-principles.md` §7 (one canonical owner per query
+> family). `data/library_opportunities.csv` now marks these `action=improve_existing`
+> with the collision noted; the platform-mastery pattern going forward is: quick
+> "where/why" reference stays on the platform page, only a named-framework /
+> myth-busting / data-backed treatment earns a standalone guide. Remaining
+> `pending`/`needs_review` rows: 0783, 0785–0787, 0789–0791, 0793.
+
 1. **Ship this PR** (3 pages + map + CSV + workflow). Human review per workflow §8.
 2. **Build batch remainder** in priority order (4–12), 5 pages per follow-up PR.
 3. **Resolve the two overlap flags** (0789, 0793) before building them.

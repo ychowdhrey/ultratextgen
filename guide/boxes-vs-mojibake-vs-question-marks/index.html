@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Boxes, Mojibake, or a Question Mark? What Actually Broke Your Text | UltraTextGen</title>
+<meta name="description" content="A box, a garbled 'Ã©', and a lone '?' all look like 'my text broke' — but they're three different failures at three different layers, and only one of them can actually be undone.">
+
+<link rel="canonical" href="https://ultratextgen.com/guide/boxes-vs-mojibake-vs-question-marks/">
+<meta property="og:image" content="https://ultratextgen.com/guide/assets/og/boxes-vs-mojibake-vs-question-marks.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boxes, Mojibake, or a Question Mark? What Actually Broke Your Text | UltraTextGen">
+<meta name="twitter:description" content="A box, a garbled 'Ã©', and a lone '?' all look like 'my text broke' — but they're three different failures at three different layers, and only one of them can actually be undone.">
+<meta name="twitter:image" content="https://ultratextgen.com/guide/assets/og/boxes-vs-mojibake-vs-question-marks.png">
+<meta property="og:title" content="Boxes, Mojibake, or a Question Mark? What Actually Broke Your Text">
+<meta property="og:description" content="A box, a garbled 'Ã©', and a lone '?' all look like 'my text broke' — but they're three different failures at three different layers, and only one of them can actually be undone.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/guide/boxes-vs-mojibake-vs-question-marks/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Boxes, Mojibake, or a Question Mark? What Actually Broke Your Text",
+  "description": "A box, a garbled 'Ã©', and a lone '?' all look like 'my text broke' — but they're three different failures at three different layers, and only one of them can actually be undone.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/guide/assets/og/boxes-vs-mojibake-vs-question-marks.png",
+  "mainEntityOfPage": "https://ultratextgen.com/guide/boxes-vs-mojibake-vs-question-marks/",
+  "datePublished": "2026-07-10",
+  "dateModified": "2026-07-10"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ultratextgen.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://ultratextgen.com/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Boxes, Mojibake, or a Question Mark?", "item": "https://ultratextgen.com/guide/boxes-vs-mojibake-vs-question-marks/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I fix mojibake text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. Mojibake happens when the original bytes are read with the wrong text encoding — the bytes themselves are usually still intact, just misinterpreted. If you can find (or guess) the original encoding, re-decoding the same bytes correctly can restore the text exactly. Once the app has thrown away the original bytes and kept only the garbled letters, though, the round trip is no longer reliable." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a box the same problem as a question mark?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, and the difference matters. A box (tofu, □) means the character survived perfectly — the reader's device simply has no picture to draw it. A question mark or the replacement character (�) means the character itself was destroyed during a lossy conversion. One is a display problem; the other is a data problem." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my styled Unicode text turn into question marks after I saved or emailed it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Somewhere in the pipeline — an old database column, a legacy export, an email gateway, a form field — the text was forced through a narrower character set that doesn't include your styled characters, typically ASCII or Windows-1252. Every character outside that set gets replaced with '?' or U+FFFD. It's a one-way conversion; the original characters aren't recoverable from the result." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a way to detect the correct encoding automatically?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tools like Python's chardet/charset-normalizer, or a browser's 'Repair Text Encoding' extensions, can guess an encoding from byte patterns with decent accuracy on real prose. They work by testing which decoding produces the most statistically plausible text for a given language — useful for mojibake, but powerless once the character has already been replaced by a question mark, because there's no pattern left to analyze." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/guide/">Guides</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Boxes, Mojibake, or a Question Mark?</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Boxes, Mojibake, or a Question Mark?</h1>
+    <p class="hero-tagline">"My text is broken" covers three completely different failures — a missing picture, a misread encoding, and a permanently discarded character. Only one of them can actually be undone.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Unicode Education</span>
+      <span class="guide-pill">⏱ 9 min read</span>
+      <span class="guide-pill">The Recovery Triage</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/guide/assets/boxes-vs-mojibake-vs-question-marks.svg" width="1200" height="340"
+       alt="Three broken outputs of the same character — an empty box, a garbled Ã©, and a question mark — each labeled with how fixable it is.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>A box (□ ▯) is a missing <strong>glyph</strong> — the character is intact, the device just can't draw it. Always fixable by switching style or device.</li>
+    <li>Mojibake (Ã©, â€™) is a wrong <strong>encoding</strong> — the original bytes are usually still there, just misread. Sometimes reversible by re-decoding.</li>
+    <li>A question mark or replacement glyph (�) is a lost <strong>code point</strong> — the character was destroyed during a lossy conversion. Never recoverable from the result alone.</li>
+    <li>Each failure maps to one layer of how Unicode text actually works: character → code point → encoding → glyph.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">The Core Idea</span>
+    <h2>"Broken Text" Is Three Complaints Wearing One Costume</h2>
+    <div class="editorial-block">
+      <p>Someone pastes styled text into a form, saves it, and it comes back wrong. They report it the same way every time: "the text is broken." But open the actual result and it's rarely the same failure twice — sometimes it's a row of empty squares, sometimes it's a string like <code>cafÃ©</code>, sometimes it's just a bare question mark where a letter used to be.</p>
+      <p>These look similar because they all produce visual nonsense where readable text should be. They are not the same problem. Each one happens at a different point in the pipeline that turns a character into pixels on a screen — and where a failure happens determines whether it can be undone.</p>
+      <p>The pipeline, from <a href="/guide/how-unicode-fonts-work/">the pillar guide's Four-Layer Model</a>, is: a <strong>character</strong> you type, assigned a <strong>code point</strong> (a number), stored as <strong>bytes</strong> via an <strong>encoding</strong>, and finally drawn as a <strong>glyph</strong> by a font. Boxes, mojibake, and question marks each break at a different one of those steps.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the framework -->
+  <section class="editorial-section">
+    <span class="article-section-label">Framework</span>
+    <h2>The Recovery Triage</h2>
+    <div class="editorial-block">
+      <p>Before you try to fix broken text, work out which layer failed. That single fact tells you whether there's anything to fix at all.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Looks like</th><th>Layer that failed</th><th>What actually happened</th><th>Fixable?</th></tr></thead>
+        <tbody>
+          <tr><td>□ ▯ empty box</td><td>Glyph</td><td>The character arrived intact; the device has no picture for it</td><td><strong>Always</strong> — pick a safer style or device</td></tr>
+          <tr><td>Ã© â€™ garbled Latin</td><td>Encoding</td><td>The right bytes were decoded with the wrong character set</td><td><strong>Often</strong> — re-decode with the correct encoding</td></tr>
+          <tr><td>? or � replacement</td><td>Code point</td><td>The character was discarded during a narrower, lossy conversion</td><td><strong>Never</strong> — the original identity is gone</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="editorial-block">
+      <p>Notice the direction: failures get <em>less</em> recoverable the earlier in the pipeline they happen. A glyph problem is cosmetic. An encoding problem is a solvable puzzle. A code-point problem is data loss.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: tofu deep link -->
+  <section class="editorial-section">
+    <span class="article-section-label">Break 1 · Glyph</span>
+    <h2>The Box: A Picture the Device Doesn't Have</h2>
+    <div class="editorial-block">
+      <p>A box, often nicknamed "tofu," means the character's identity was never in doubt — the device simply has no font that can draw it. This is the most common failure with styled Unicode "fonts," because those styles borrow rare Unicode blocks that not every device font ships a picture for.</p>
+      <p>It's also the easiest to fix, because nothing was lost: switch to a more universally supported style, or view it on a different device, and the exact same character renders fine. For the full breakdown of which Unicode styles are safest and why, see <a href="/guide/why-fonts-show-as-boxes/">Why Your Fancy Font Turns Into Boxes</a>.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: mojibake deep dive -->
+  <section class="editorial-section">
+    <span class="article-section-label">Break 2 · Encoding</span>
+    <h2>Mojibake: The Right Bytes, the Wrong Instructions</h2>
+    <div class="editorial-block">
+      <p>Every piece of text is stored as bytes, and an <strong>encoding</strong> is the rulebook for turning those bytes back into characters. The most common one today is UTF-8. Mojibake happens when text encoded one way gets decoded with a different rulebook — the bytes never change, but the letters they're read as do.</p>
+      <p>The classic example: the word "café" is stored correctly as UTF-8, where "é" takes two bytes. Somewhere downstream, a system reads those same two bytes as Windows-1252 (a single-byte-per-character encoding) instead of UTF-8. Each byte gets mapped to its own separate character, and "café" comes out as <code>cafÃ©</code>.</p>
+      <div class="example-pair">
+        <span class="ex-label">Stored (UTF-8)</span>
+        <span class="ex-plain">café</span>
+        <span class="ex-arrow">↓ read as Windows-1252</span>
+        <span class="ex-label">Displayed</span>
+        <span class="ex-styled">cafÃ©</span>
+      </div>
+      <p>Because the underlying bytes are usually untouched, this is fixable <em>if</em> you still have access to the original bytes and can identify the correct encoding: decode with Windows-1252 to get back to the byte sequence, then re-decode that sequence as UTF-8. Once a system has "helpfully" saved the garbled version as its own new UTF-8 text, though, the original bytes are gone and the fix stops being reliable — you'd be decoding garbage as garbage.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: question mark / replacement char -->
+  <section class="editorial-section">
+    <span class="article-section-label">Break 3 · Code Point</span>
+    <h2>The Question Mark: A Character That No Longer Exists</h2>
+    <div class="editorial-block">
+      <p>This is the one true data-loss case. It happens when text is forced through a narrower character set than the one it was written in — for example, converting rich Unicode text down to plain ASCII (128 characters) or Windows-1252 (256 characters) for an old database column, a legacy export format, or a strict form field.</p>
+      <p>Every character that doesn't exist in the narrower set has nothing to be mapped to, so the converter substitutes a stand-in: a literal <code>?</code>, or the official Unicode <strong>replacement character</strong>, U+FFFD (�). Either way, the original code point — the character's actual identity — is discarded in that step. There is no byte sequence left to re-decode, because the character was never stored; it was replaced.</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>𝗛𝗲𝗹𝗹𝗼</strong> saved to an ASCII-only field → <strong>?ello</strong> — the styled H is gone for good, not hiding in another encoding.</div>
+      </div>
+      <p>This is why "is there a way to undo this" is the wrong question once you're looking at a question mark. The honest answer is: only if you still have the original source (the message you sent, the file you uploaded) somewhere the lossy conversion hasn't touched yet.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: compare grid -->
+  <section class="editorial-section">
+    <span class="article-section-label">Don't Confuse These</span>
+    <h2>Side by Side</h2>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">□ Box (tofu)</span>
+        <p>Glyph layer. Character intact, no picture to draw it. <strong>Fixable</strong> — change style or device.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">Ã© Mojibake</span>
+        <p>Encoding layer. Right bytes, wrong rulebook. <strong>Often fixable</strong> — re-decode correctly, while the original bytes still exist.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">? or � Loss</span>
+        <p>Code point layer. Character discarded by a narrower conversion. <strong>Not fixable</strong> — nothing left to decode.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: where this shows up -->
+  <section class="editorial-section">
+    <span class="article-section-label">Field Notes</span>
+    <h2>Where Each One Shows Up</h2>
+    <div class="editorial-block">
+      <ul>
+        <li><strong>Boxes</strong> — bios and names with styled Unicode "fonts," viewed on an older Android phone or an app with a limited font. See <a href="/guide/why-fonts-show-as-boxes/">the Style Safety Tiers</a>.</li>
+        <li><strong>Mojibake</strong> — CSV exports opened in the wrong spreadsheet locale, old CMS databases created before UTF-8 was standard, and email clients that guess the wrong charset on a message header.</li>
+        <li><strong>Question marks / replacement characters</strong> — legacy sign-up forms with ASCII-only name fields, SMS gateways with strict character budgets, and old ticketing or CRM systems built long before emoji and styled Unicode existed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="pull-quote">A box is a picture problem.<br>Mojibake is a translation problem.<br>A question mark is a loss.<br><br>Only two of the three have a way back.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Start from clean, safe text</h3>
+    <p>Generate a style from the safest tiers so what you paste survives the trip — no boxes, no surprises downstream.</p>
+    <a href="/" class="cta-btn">Open the Text Generator →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/instagram/">Instagram</a>
+    <a class="platform-pill" href="/tiktok/">TikTok</a>
+    <a class="platform-pill" href="/discord/">Discord</a>
+    <a class="platform-pill" href="/linkedin/">LinkedIn</a>
+    <a class="platform-pill" href="/x/">X</a>
+    <a class="platform-pill" href="/whatsapp/">WhatsApp</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Can I fix mojibake text?</button>
+    <div class="faq-answer">
+      <p>Sometimes. Mojibake happens when the original bytes are read with the wrong text encoding — the bytes themselves are usually still intact, just misinterpreted. If you can find (or guess) the original encoding, re-decoding the same bytes correctly can restore the text exactly. Once the app has thrown away the original bytes and kept only the garbled letters, though, the round trip is no longer reliable.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Is a box the same problem as a question mark?</button>
+    <div class="faq-answer">
+      <p>No, and the difference matters. A box (tofu, □) means the character survived perfectly — the reader's device simply has no picture to draw it. A question mark or the replacement character (�) means the character itself was destroyed during a lossy conversion. One is a display problem; the other is a data problem.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Why did my styled Unicode text turn into question marks after I saved or emailed it?</button>
+    <div class="faq-answer">
+      <p>Somewhere in the pipeline — an old database column, a legacy export, an email gateway, a form field — the text was forced through a narrower character set that doesn't include your styled characters, typically ASCII or Windows-1252. Every character outside that set gets replaced with "?" or U+FFFD. It's a one-way conversion; the original characters aren't recoverable from the result.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Is there a way to detect the correct encoding automatically?</button>
+    <div class="faq-answer">
+      <p>Tools like Python's chardet/charset-normalizer, or a browser's "repair text encoding" extensions, can guess an encoding from byte patterns with decent accuracy on real prose. They work by testing which decoding produces the most statistically plausible text for a given language — useful for mojibake, but powerless once the character has already been replaced by a question mark, because there's no pattern left to analyze.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/guide/how-unicode-fonts-work/">
+      <span class="related-tag">🧬</span>
+      <span class="related-title">How Unicode Fonts Work</span>
+      <span class="related-desc">The Four-Layer Model behind every fancy font.</span>
+    </a>
+    <a class="related-card" href="/guide/why-fonts-show-as-boxes/">
+      <span class="related-tag">⬜</span>
+      <span class="related-title">Why Fonts Show as Boxes</span>
+      <span class="related-desc">The Style Safety Tiers and the 2-device test.</span>
+    </a>
+    <a class="related-card" href="/guide/fonts-and-search-visibility/">
+      <span class="related-tag">🔍</span>
+      <span class="related-title">Will Fancy Text Make You Invisible?</span>
+      <span class="related-desc">The SEO myths vs the real search costs.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

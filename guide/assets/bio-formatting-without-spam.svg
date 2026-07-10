@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gbioforma" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvbioforma" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowbioforma" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsbioforma" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsbioforma)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowbioforma)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvbioforma)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <g transform="translate(40 50)">
+      <rect width="120" height="220" rx="18" fill="#F2F1FB"/>
+      <text x="60" y="34" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#10022;&#9734;&#10023;&#9790;&#9825;</text>
+      <text x="60" y="58" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#9672;&#24417;&#9733;&#24417;&#9672;</text>
+      <rect x="14" y="76" width="92" height="9" rx="4" fill="#64748b" opacity="0.4"/>
+      <rect x="14" y="94" width="92" height="9" rx="4" fill="#64748b" opacity="0.4"/>
+      <text x="60" y="126" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#9601;&#9602;&#9603;&#9604;&#9605;&#9606;&#9607;</text>
+      <rect x="14" y="146" width="92" height="9" rx="4" fill="#64748b" opacity="0.4"/>
+      <text x="60" y="180" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#9760;&#9734;&#24417;&#12641;&#65295;&#12309;</text>
+      <text x="60" y="252" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">reads as spam</text>
+    </g>
+    <g transform="translate(200 50)">
+      <rect width="120" height="220" rx="18" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+      <circle cx="60" cy="34" r="10" fill="url(#gbioforma)"/>
+      <rect x="26" y="60" width="68" height="10" rx="5" fill="#1a1a2e" opacity="0.75"/>
+      <rect x="20" y="82" width="80" height="8" rx="4" fill="#64748b" opacity="0.4"/>
+      <line x1="20" y1="106" x2="100" y2="106" stroke="#64748b" stroke-width="2" opacity="0.3"/>
+      <rect x="20" y="122" width="80" height="8" rx="4" fill="#64748b" opacity="0.4"/>
+      <rect x="20" y="140" width="60" height="8" rx="4" fill="#64748b" opacity="0.4"/>
+      <line x1="20" y1="164" x2="100" y2="164" stroke="#64748b" stroke-width="2" opacity="0.3"/>
+      <rect x="30" y="182" width="60" height="20" rx="10" fill="url(#gbioforma)"/>
+      <text x="60" y="252" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">one anchor, quiet core</text>
+    </g>
+    <text x="180" y="322" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" fill="#64748b"
+          text-anchor="middle">restraint reads as intentional</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <g transform="translate(40 50)">
+      <rect width="120" height="220" rx="18" fill="#F2F1FB"/>
+      <text x="60" y="34" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#10022;&#9734;&#10023;&#9790;&#9825;</text>
+      <text x="60" y="58" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#9672;&#24417;&#9733;&#24417;&#9672;</text>
+      <rect x="14" y="76" width="92" height="9" rx="4" fill="#64748b" opacity="0.4"/>
+      <rect x="14" y="94" width="92" height="9" rx="4" fill="#64748b" opacity="0.4"/>
+      <text x="60" y="126" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#9601;&#9602;&#9603;&#9604;&#9605;&#9606;&#9607;</text>
+      <rect x="14" y="146" width="92" height="9" rx="4" fill="#64748b" opacity="0.4"/>
+      <text x="60" y="180" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">&#9760;&#9734;&#24417;&#12641;&#65295;&#12309;</text>
+      <text x="60" y="252" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">reads as spam</text>
+    </g>
+    <g transform="translate(200 50)">
+      <rect width="120" height="220" rx="18" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+      <circle cx="60" cy="34" r="10" fill="url(#gbioforma)"/>
+      <rect x="26" y="60" width="68" height="10" rx="5" fill="#1a1a2e" opacity="0.75"/>
+      <rect x="20" y="82" width="80" height="8" rx="4" fill="#64748b" opacity="0.4"/>
+      <line x1="20" y1="106" x2="100" y2="106" stroke="#64748b" stroke-width="2" opacity="0.3"/>
+      <rect x="20" y="122" width="80" height="8" rx="4" fill="#64748b" opacity="0.4"/>
+      <rect x="20" y="140" width="60" height="8" rx="4" fill="#64748b" opacity="0.4"/>
+      <line x1="20" y1="164" x2="100" y2="164" stroke="#64748b" stroke-width="2" opacity="0.3"/>
+      <rect x="30" y="182" width="60" height="20" rx="10" fill="url(#gbioforma)"/>
+      <text x="60" y="252" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="14" fill="#64748b"
+            text-anchor="middle">one anchor, quiet core</text>
+    </g>
+    <text x="180" y="322" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" fill="#64748b"
+          text-anchor="middle">restraint reads as intentional</text></g>
+</svg>
