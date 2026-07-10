@@ -541,6 +541,8 @@ def m_game_names(p):
 
 
 GUIDES = {
+    "emoticon-vs-emoji-vs-kaomoji": ("Emoticon vs Emoji vs Kaomoji",
+              "How three kinds of text faces differ", m_comments),
     "index": ("Guides for Expressive Typography",
               "Frameworks & playbooks for Unicode text", m_index),
     "the-rhetoric-of-fonts": ("The Rhetoric of Fonts",

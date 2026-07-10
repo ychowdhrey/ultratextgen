@@ -395,6 +395,307 @@ module.exports = [
     { q: 'How do I use fancy text accessibly?', a: 'Follow the plain-core rule: load-bearing words stay plain, styling is only decoration a listener can miss. Style a word, not a paragraph, and never hide essential meaning inside styled characters.' },
     { q: 'Does fancy text fail WCAG?', a: 'Styled Unicode used for meaning can create WCAG problems because assistive tech may not convey it correctly. Used purely as decoration alongside plain-text content, it is much lower risk. Keep the real information in plain text.' }
   ]
+},
+/* ===================================================================== */
+{
+  slug: 'what-does-uwu-mean',
+  crumb: 'What Does UwU Mean',
+  pageTitle: 'What Does UwU Mean?',
+  metaDesc: 'UwU is an emoticon of a cute, content face — closed happy eyes (u u) and a small mouth (w). It signals warmth, affection or cuteness. Here is what it means and how to use it.',
+  twitterDesc: 'UwU is a cute, happy text face — closed eyes (u u) and a w mouth — that signals warmth and affection. Here is the meaning, the OwO variant, and where it comes from.',
+  h1: 'What Does UwU Mean?',
+  tagline: 'It is a tiny face, not a word — two happy closed eyes and a soft mouth. Here is what people mean when they send it.',
+  shortAnswer: '<strong>UwU</strong> is an emoticon — a little face read upright. The two <strong>u</strong>s are closed, happy eyes and the <strong>w</strong> is a small smiling mouth, so the whole thing reads as a warm, content, slightly bashful expression. People send it to show <strong>affection, cuteness, or cozy happiness</strong> — a text-only way of saying “aww.” It is a <strong>kaomoji</strong> (Japanese-style emoticon), and its close cousin <strong>OwO</strong> swaps in wide, surprised eyes.',
+  oneLiner: '<strong>UwU</strong> = happy &amp; affectionate (closed eyes). <strong>OwO</strong> = surprised &amp; curious (wide eyes).',
+  sections: [
+    {
+      label: 'The face',
+      h2: 'How to read UwU',
+      bodyHtml: `<div class="editorial-block">
+    <p>Read it straight on, letter by letter: <strong>u</strong> and <strong>u</strong> are two eyes closed in a happy squint, and the <strong>w</strong> in the middle is a small, smiling mouth. Because it is built from ordinary letters it works anywhere text does — no emoji support needed.</p>
+    <p class="mood-example">UwU &nbsp; uwu &nbsp; UwU~</p>
+  </div>`
+    },
+    {
+      label: 'How it is used',
+      h2: 'What people mean when they send UwU',
+      bodyHtml: `<div class="editorial-block">
+    <p>UwU carries <strong>softness, affection, and cute contentment</strong>. It shows up when someone thinks a thing is adorable, wants to sound warm and gentle, or is being playfully wholesome. It can also be used ironically — a knowing, over-the-top cuteness. It grew popular in anime, furry, and roleplay communities and spread across the wider internet from there.</p>
+  </div>`
+    },
+    {
+      label: 'UwU vs OwO',
+      h2: 'UwU vs OwO — what is the difference?',
+      bodyHtml: `<div class="editorial-block">
+    <p>Only the eyes change. <strong>UwU</strong> has closed, happy eyes (content, affectionate). <strong>OwO</strong> has wide, round, surprised eyes (curious, alert, sometimes flirty) — as in the meme <em>“OwO what’s this?”</em> See <a href="/answers/what-does-owo-mean/">what does OwO mean</a> for the full breakdown.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Build your own kaomoji',
+    p: 'Mix eyes, mouths, and arms into your own text faces with the kaomoji generator — including UwU-style cuties.',
+    href: '/kaomoji-generator/',
+    label: 'Open the Kaomoji Generator →'
+  },
+  related: 'Related: <a href="/library/cute-kaomoji/">cute kaomoji</a> to copy, <a href="/answers/what-does-owo-mean/">what does OwO mean</a>, and the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>.',
+  faq: [
+    { q: 'What does UwU mean?', a: 'UwU is an emoticon of a happy, affectionate face: the two u letters are closed, smiling eyes and the w is a small mouth. It signals warmth, cuteness, or cozy contentment.' },
+    { q: 'Is UwU flirty?', a: 'It can be, but usually it just means cute or affectionate. The flirtier, more surprised version is OwO, which has wide eyes instead of closed ones.' },
+    { q: 'What is the difference between UwU and OwO?', a: 'Only the eyes. UwU has closed, content eyes; OwO has wide, surprised eyes. UwU reads as happy and affectionate, OwO as curious or alert.' },
+    { q: 'Where did UwU come from?', a: 'UwU is a kaomoji (Japanese-style emoticon) that became popular in anime, furry, and roleplay communities online before spreading to the wider internet.' },
+    { q: 'How do you type UwU?', a: 'Just type the letters u, w, u. It is plain text, so it works in any app, bio, or chat with no special keyboard.' }
+  ]
+},
+/* ===================================================================== */
+{
+  slug: 'what-does-owo-mean',
+  crumb: 'What Does OwO Mean',
+  pageTitle: 'What Does OwO Mean?',
+  metaDesc: 'OwO is an emoticon of a surprised, curious face — wide round eyes (o o) and a small mouth (w). Famous from “OwO what’s this?” Here is what it means and how to use it.',
+  twitterDesc: 'OwO is a wide-eyed, surprised text face (o o eyes, w mouth), famous from “OwO what’s this?” Here is the meaning, the UwU variant, and where it comes from.',
+  h1: 'What Does OwO Mean?',
+  tagline: 'Two wide eyes and a little mouth. Here is what people mean when they send OwO — and the meme behind it.',
+  shortAnswer: '<strong>OwO</strong> is an emoticon read upright: the two <strong>o</strong>s are wide, round, surprised eyes and the <strong>w</strong> is a small mouth. It reads as <strong>curious, alert, or playfully surprised</strong> — often flirty. It is best known from the meme <em>“OwO what’s this?”</em> Its softer cousin <strong>UwU</strong> closes the eyes for a content, affectionate look.',
+  oneLiner: '<strong>OwO</strong> = surprised &amp; curious (wide eyes). <strong>UwU</strong> = happy &amp; affectionate (closed eyes).',
+  sections: [
+    {
+      label: 'The face',
+      h2: 'How to read OwO',
+      bodyHtml: `<div class="editorial-block">
+    <p>Read it straight on: the two <strong>o</strong>s are wide, round eyes and the <strong>w</strong> is a small mouth. The open eyes are what give OwO its surprised, wide-awake feel — the opposite of UwU’s sleepy, closed-eye contentment.</p>
+    <p class="mood-example">OwO &nbsp; owo &nbsp; OwO?</p>
+  </div>`
+    },
+    {
+      label: 'How it is used',
+      h2: '“OwO what’s this?” and other uses',
+      bodyHtml: `<div class="editorial-block">
+    <p>OwO signals <strong>playful surprise or curiosity</strong>, and is often flirty or teasing. The phrase <em>“OwO what’s this?”</em> — reacting with mock innocence to something suggestive — turned it into a widely shared meme. Like UwU, it comes out of anime, furry, and roleplay spaces.</p>
+  </div>`
+    },
+    {
+      label: 'OwO vs UwU',
+      h2: 'OwO vs UwU — what is the difference?',
+      bodyHtml: `<div class="editorial-block">
+    <p>Same mouth, different eyes. <strong>OwO</strong> has wide, surprised eyes; <strong>UwU</strong> has closed, happy eyes. Reach for OwO to sound alert, curious, or flirty, and UwU to sound soft and affectionate. See <a href="/answers/what-does-uwu-mean/">what does UwU mean</a>.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Build your own kaomoji',
+    p: 'Swap eyes and mouths to make your own text faces — from wide-eyed OwO to sleepy UwU — with the kaomoji generator.',
+    href: '/kaomoji-generator/',
+    label: 'Open the Kaomoji Generator →'
+  },
+  related: 'Related: <a href="/answers/what-does-uwu-mean/">what does UwU mean</a>, <a href="/library/cute-kaomoji/">cute kaomoji</a> to copy, and the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>.',
+  faq: [
+    { q: 'What does OwO mean?', a: 'OwO is an emoticon of a surprised, curious face: the two o letters are wide eyes and the w is a small mouth. It reads as playful surprise, curiosity, or flirtation.' },
+    { q: 'What does “OwO what’s this?” mean?', a: 'It is a meme reaction of mock-innocent surprise, usually to something suggestive or unexpected. The wide-eyed OwO face sells the exaggerated “oh, what do we have here” tone.' },
+    { q: 'What is the difference between OwO and UwU?', a: 'The eyes. OwO has wide, surprised eyes; UwU has closed, content eyes. OwO reads as curious or flirty, UwU as soft and affectionate.' },
+    { q: 'Is OwO flirty?', a: 'Often, yes. OwO frequently carries a teasing or flirty tone, especially in the “OwO what’s this?” meme, though it can just mean plain surprise.' },
+    { q: 'Where did OwO come from?', a: 'OwO is a kaomoji (Japanese-style emoticon) popularized in anime, furry, and roleplay communities before spreading across the internet.' }
+  ]
+},
+/* ===================================================================== */
+{
+  slug: 'what-does-xd-mean',
+  crumb: 'What Does XD Mean',
+  pageTitle: 'What Does XD Mean?',
+  metaDesc: 'XD is an emoticon of a face laughing hard — tilt your head left and the X is scrunched-shut eyes, the D a wide open mouth. It means laughing out loud. Here is how to use it.',
+  twitterDesc: 'XD is a laughing text face: tilt your head left and X is squeezed-shut eyes, D is a wide open mouth. It means LOL. Here is the meaning and its variants (xD, XDD).',
+  h1: 'What Does XD Mean?',
+  tagline: 'Tilt your head to the left and it clicks: it is a face laughing so hard its eyes are shut. Here is what it means.',
+  shortAnswer: '<strong>XD</strong> is an emoticon you read with your head tilted to the left. The <strong>X</strong> is a pair of eyes squeezed shut from laughing, and the <strong>D</strong> is a wide open, laughing mouth. It means <strong>laughing out loud</strong> — the text equivalent of “LOL.” The more letters, the harder the laugh: <strong>xD</strong>, <strong>XDD</strong>, <strong>XDDD</strong>.',
+  oneLiner: '<strong>XD</strong> = laughing hard (LOL). More D’s = harder laugh: <strong>xD · XDD · XDDD</strong>.',
+  sections: [
+    {
+      label: 'The face',
+      h2: 'How to read XD',
+      bodyHtml: `<div class="editorial-block">
+    <p>Rotate it 90° to the left in your head. The <strong>X</strong> becomes two tightly shut eyes and the <strong>D</strong> becomes a big open mouth — a face caught mid-laugh. It is a Western-style emoticon (read sideways), unlike upright kaomoji such as <span class="mood-example">(≥▽≤)</span>.</p>
+    <p class="mood-example">XD &nbsp; xD &nbsp; XDD</p>
+  </div>`
+    },
+    {
+      label: 'How it is used',
+      h2: 'What XD means in a message',
+      bodyHtml: `<div class="editorial-block">
+    <p>XD means something is <strong>funny</strong> — it is interchangeable with “lol” or “haha.” Lowercase <strong>xD</strong> is a lighter chuckle; stacking more <strong>D</strong>s (<strong>XDDD</strong>) means you are laughing harder. It dates back to early instant messaging and forums and is still common today, sometimes used ironically.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Want the upright version?',
+    p: 'Kaomoji laugh too — build a laughing text face like (≥▽≤) with the kaomoji generator, or copy ready-made ones.',
+    href: '/kaomoji-generator/',
+    label: 'Open the Kaomoji Generator →'
+  },
+  related: 'Related: <a href="/library/happy-kaomoji/">happy kaomoji</a> to copy, <a href="/answers/what-does-uwu-mean/">what does UwU mean</a>, and the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>.',
+  faq: [
+    { q: 'What does XD mean?', a: 'XD is an emoticon of a face laughing hard. Tilt your head left: the X is eyes squeezed shut and the D is a wide open mouth. It means laughing out loud, like LOL.' },
+    { q: 'What is the difference between XD and xD?', a: 'They mean the same thing. Uppercase XD reads as a bigger, harder laugh; lowercase xD is a softer chuckle. Adding more Ds (XDD, XDDD) means laughing even harder.' },
+    { q: 'Is XD still used?', a: 'Yes. It is older internet slang from the instant-messaging era but is still widely used, sometimes sincerely and sometimes ironically for a retro feel.' },
+    { q: 'How do you read XD?', a: 'Tilt your head 90 degrees to the left. The X turns into scrunched-up eyes and the D turns into an open, laughing mouth.' }
+  ]
+},
+/* ===================================================================== */
+{
+  slug: 'what-does-o7-mean',
+  crumb: 'What Does o7 Mean',
+  pageTitle: 'What Does o7 Mean?',
+  metaDesc: 'o7 is a text emoticon of a person saluting — the o is a head and the 7 is an arm raised in salute. It means respect, farewell, or “I salute you.” Here is how it is used.',
+  twitterDesc: 'o7 is a saluting text face: the o is a head and the 7 is a raised, saluting arm. It means respect or “I salute you,” big in gaming and streaming. Here is the meaning.',
+  h1: 'What Does o7 Mean?',
+  tagline: 'A head and a raised arm: it is a salute you can type. Here is what people mean when they send o7.',
+  shortAnswer: '<strong>o7</strong> is a text emoticon of someone <strong>saluting</strong>: the lowercase <strong>o</strong> is a head and the <strong>7</strong> is an arm bent up in a salute. People send it to show <strong>respect, solidarity, or farewell</strong> — “I salute you” or “o7, legend.” It is especially common in <strong>gaming, streaming, and military-adjacent online communities</strong>.',
+  oneLiner: '<strong>o7</strong> = a salute (respect / farewell). Wave variants: <strong>o/ &nbsp; \\o &nbsp; \\o/</strong>.',
+  sections: [
+    {
+      label: 'The face',
+      h2: 'How to read o7',
+      bodyHtml: `<div class="editorial-block">
+    <p>The <strong>o</strong> is a head seen from the side and the <strong>7</strong> is an arm raised to the brow in a salute. It is a single-figure emoticon, read upright, that turns a gesture into two characters you can type anywhere.</p>
+    <p class="mood-example">o7 &nbsp; o/ &nbsp; \\o</p>
+  </div>`
+    },
+    {
+      label: 'How it is used',
+      h2: 'What o7 means in chat',
+      bodyHtml: `<div class="editorial-block">
+    <p>o7 signals <strong>respect and acknowledgement</strong> — a way to salute a teammate, honor someone leaving, or pay tribute (“o7” as an online version of “pour one out”). It took off in games like EVE Online and is a staple of Twitch chats and gaming Discords. Related waves include <strong>o/</strong> (waving hello) and <strong>\\o/</strong> (arms up, celebrating).</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Explore more text faces',
+    p: 'o7 is one of hundreds of text faces. Browse the kaomoji library or build your own action faces in the generator.',
+    href: '/kaomoji-generator/',
+    label: 'Open the Kaomoji Generator →'
+  },
+  related: 'Related: the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>, <a href="/answers/what-does-xd-mean/">what does XD mean</a>, and <a href="/answers/what-is-kaomoji/">what is a kaomoji</a>.',
+  faq: [
+    { q: 'What does o7 mean?', a: 'o7 is a text emoticon of a person saluting. The o is a head and the 7 is a raised, saluting arm. It means respect, acknowledgement, or farewell.' },
+    { q: 'What does o7 mean in gaming?', a: 'In games and streams o7 is a salute to a teammate or opponent, a sign of respect, or a tribute. It became popular in EVE Online and spread to Twitch chat and gaming Discords.' },
+    { q: 'What is the difference between o7 and o/?', a: 'o7 is a salute (arm bent to the brow). o/ is a wave (arm raised to say hello or goodbye). \\o/ shows both arms up in celebration.' },
+    { q: 'How do you type o7?', a: 'Type a lowercase letter o followed by the number 7. It is plain text and works in any chat or app.' }
+  ]
+},
+/* ===================================================================== */
+{
+  slug: 'what-is-kaomoji',
+  crumb: 'What Is a Kaomoji',
+  pageTitle: 'What Is a Kaomoji?',
+  metaDesc: 'A kaomoji (顔文字, “face characters”) is a Japanese-style emoticon read upright, built from Unicode characters — like (≧▽≦). Here is what it means and how it differs from emoji.',
+  twitterDesc: 'A kaomoji is a Japanese emoticon read upright — like (^_^) or ¯\\_(ツ)_/¯ — built from Unicode, not pictures. Here is what it means and how it differs from emoji and emoticons.',
+  h1: 'What Is a Kaomoji?',
+  tagline: 'Japanese emoticons you read straight on, not sideways. Here is what a kaomoji is and how it differs from an emoji.',
+  shortAnswer: 'A <strong>kaomoji</strong> (Japanese 顔文字, literally “face characters”) is an <strong>emoticon you read upright</strong>, built by combining Unicode letters, punctuation, and symbols into a face — for example <span class="mood-example">(≧▽≦)</span> or <span class="mood-example">¯\\_(ツ)_/¯</span>. Unlike Western emoticons such as <strong>:)</strong> that you read sideways, a kaomoji is already the right way up. And unlike an <strong>emoji</strong> (a single picture-character like 🙂), a kaomoji is <strong>plain text</strong> — so it pastes cleanly and looks the same wherever text works.',
+  oneLiner: '<strong>Kaomoji</strong> = upright, text-built face. <strong>Emoticon</strong> = sideways, e.g. :). <strong>Emoji</strong> = a single picture, e.g. 🙂.',
+  sections: [
+    {
+      label: 'The difference',
+      h2: 'Kaomoji vs emoji vs emoticon',
+      bodyHtml: `<div class="editorial-block">
+    <ul>
+      <li><strong>Kaomoji</strong> — a face read upright, made from many characters: <span class="mood-example">(・∀・)</span></li>
+      <li><strong>Emoticon</strong> — a face read sideways, from a few characters: <span class="mood-example">:) &nbsp; ;-) &nbsp; :D</span></li>
+      <li><strong>Emoji</strong> — one pictograph character: 🙂 👍 ❤️</li>
+    </ul>
+    <p>Kaomoji and emoticons are both plain text; emoji are dedicated picture characters that can render differently on each platform.</p>
+  </div>`
+    },
+    {
+      label: 'How they are built',
+      h2: 'How a kaomoji is made',
+      bodyHtml: `<div class="editorial-block">
+    <p>A kaomoji is assembled from <strong>brackets</strong> for the face outline, <strong>eyes</strong> and a <strong>mouth</strong> in the middle, and optional <strong>arms, cheeks, or decorations</strong> — for example <span class="mood-example">ヽ(•‿•)ノ</span>. Because every piece is a Unicode character, the whole face is just text you can copy, paste, and type anywhere.</p>
+  </div>`
+    },
+    {
+      label: 'Where they came from',
+      h2: 'A short history of kaomoji',
+      bodyHtml: `<div class="editorial-block">
+    <p>Kaomoji emerged on Japanese message boards in the 1980s–1990s as a more expressive, upright alternative to Western emoticons. Japanese character sets offered a huge palette of symbols, which let creators build detailed faces — and the style spread worldwide as Unicode made those characters available everywhere.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Make your own kaomoji',
+    p: 'Combine eyes, mouths, and arms into a custom text face, or copy ready-made ones from the library.',
+    href: '/kaomoji-generator/',
+    label: 'Open the Kaomoji Generator →'
+  },
+  related: 'Related: <a href="/answers/how-to-type-kaomoji/">how to type kaomoji</a>, the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>, and <a href="/answers/what-does-uwu-mean/">what does UwU mean</a>.',
+  faq: [
+    { q: 'What is a kaomoji?', a: 'A kaomoji is a Japanese-style emoticon read upright, built from Unicode letters, punctuation, and symbols to form a face, such as (^_^). Unlike emoji, it is plain text.' },
+    { q: 'What does kaomoji mean?', a: 'Kaomoji comes from the Japanese words kao (face) and moji (character), literally face characters. It refers to emoticons you read the right way up.' },
+    { q: 'What is the difference between a kaomoji and an emoji?', a: 'A kaomoji is a face built from ordinary text characters and always looks the same. An emoji is a single dedicated picture character that can render differently on each device or platform.' },
+    { q: 'Are kaomoji Japanese?', a: 'Yes. Kaomoji originated on Japanese message boards and take advantage of the large set of Japanese symbols, though Unicode now makes them usable worldwide.' },
+    { q: 'How do I make a kaomoji?', a: 'Combine a pair of brackets with eyes and a mouth, and add arms or decorations to taste, or use a kaomoji generator to assemble and copy one instantly.' }
+  ]
+},
+/* ===================================================================== */
+{
+  slug: 'how-to-type-kaomoji',
+  crumb: 'How to Type Kaomoji',
+  pageTitle: 'How to Type Kaomoji',
+  metaDesc: 'The fastest way to type kaomoji is to copy them. To make them natively: Windows uses Win + . , iPhone the Japanese Kana keyboard, Android Gboard. Here is how on every device.',
+  twitterDesc: 'How to type kaomoji on any device: copy from a library, or use Win + . on Windows, the Kana keyboard on iPhone, and Gboard on Android. Full step-by-step here.',
+  h1: 'How to Type Kaomoji',
+  tagline: 'The quickest way is to copy them. But every major device can also insert kaomoji natively — here is how on each one.',
+  shortAnswer: 'The <strong>fastest way to type a kaomoji is to copy it</strong> from a library and paste it wherever you need it. To insert them <strong>natively</strong>: on <strong>Windows</strong> press <strong>Win + .</strong> (or Win + ;) and open the kaomoji tab; on <strong>iPhone/iPad</strong> add the <strong>Japanese Kana keyboard</strong> and tap the <strong>^_^</strong> key; on <strong>Android</strong> open <strong>Gboard’s</strong> emoji panel and pick the <strong>kaomoji</strong> tab; on <strong>Mac</strong>, use <strong>Text Replacement</strong> or copy-paste, since there is no built-in kaomoji panel.',
+  oneLiner: '<strong>Windows:</strong> Win + . &nbsp;·&nbsp; <strong>iPhone:</strong> Kana keyboard → ^_^ &nbsp;·&nbsp; <strong>Android:</strong> Gboard → kaomoji tab &nbsp;·&nbsp; <strong>Fastest:</strong> copy &amp; paste.',
+  sections: [
+    {
+      label: 'The fast way',
+      h2: 'The fastest way: copy and paste',
+      bodyHtml: `<div class="editorial-block">
+    <p>No setup, works on every device: open a kaomoji collection, tap a face to copy it, and paste it into your bio, caption, or chat. Start with the <a href="/library/text-faces-kaomoji/">kaomoji library</a> or build a custom one in the <a href="/kaomoji-generator/">kaomoji generator</a>.</p>
+  </div>`
+    },
+    {
+      label: 'Windows',
+      h2: 'How to type kaomoji on Windows',
+      bodyHtml: `<div class="editorial-block">
+    <p>Press <strong>Windows key + . (period)</strong> or <strong>Windows key + ; (semicolon)</strong> to open the emoji panel, then click the <strong>kaomoji</strong> tab (the <strong>( •_•)</strong> icon). Pick a face to insert it. This works in Windows 10 and 11 in almost any text field.</p>
+  </div>`
+    },
+    {
+      label: 'iPhone & iPad',
+      h2: 'How to type kaomoji on iPhone and iPad',
+      bodyHtml: `<div class="editorial-block">
+    <p>iOS hides a full kaomoji set inside the Japanese keyboard. Go to <strong>Settings › General › Keyboard › Keyboards › Add New Keyboard › Japanese › Kana</strong>. Then, when typing, switch to the Japanese keyboard and tap the <strong>^_^</strong> key to browse and insert kaomoji. Copy-paste from a library also works everywhere.</p>
+  </div>`
+    },
+    {
+      label: 'Android',
+      h2: 'How to type kaomoji on Android (Gboard &amp; Samsung)',
+      bodyHtml: `<div class="editorial-block">
+    <p>On <strong>Gboard</strong>, tap the <strong>emoji</strong> button, then choose the <strong>kaomoji</strong> tab labelled <strong>( ˘ε˘ )</strong> or <strong>^_^</strong> along the bottom. On <strong>Samsung Keyboard</strong>, open the emoji panel and look for the kaomoji / text-emoticon section, or install Gboard for the built-in tab. Copy-paste works on any Android keyboard.</p>
+  </div>`
+    },
+    {
+      label: 'Mac',
+      h2: 'How to type kaomoji on Mac',
+      bodyHtml: `<div class="editorial-block">
+    <p>macOS has no dedicated kaomoji panel (the Character Viewer, <strong>Ctrl + Cmd + Space</strong>, covers emoji and symbols). The easiest options are to <strong>copy-paste</strong> from a library, or to set up <strong>Text Replacement</strong> under <strong>System Settings › Keyboard › Text Replacements</strong> so a shortcut like <em>shrug</em> expands to ¯\\_(ツ)_/¯.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Skip the setup — copy a kaomoji',
+    p: 'Browse hundreds of ready-made faces, or assemble your own in the generator and copy it with one tap.',
+    href: '/kaomoji-generator/',
+    label: 'Open the Kaomoji Generator →'
+  },
+  related: 'Related: <a href="/answers/what-is-kaomoji/">what is a kaomoji</a>, the full <a href="/library/text-faces-kaomoji/">kaomoji library</a>, and the <a href="/kaomoji-generator/">kaomoji generator</a>.',
+  faq: [
+    { q: 'How do I type kaomoji on Windows?', a: 'Press Windows key + . (period) to open the emoji panel, then click the kaomoji tab (the smiley-face icon) and choose a face. It works in Windows 10 and 11.' },
+    { q: 'How do I type kaomoji on iPhone?', a: 'Add the Japanese Kana keyboard in Settings > General > Keyboard > Keyboards > Add New Keyboard > Japanese > Kana. Switch to it while typing and tap the ^_^ key to insert kaomoji.' },
+    { q: 'How do I get the kaomoji keyboard on Android?', a: 'Open Gboard, tap the emoji button, then select the kaomoji tab along the bottom. On Samsung Keyboard, look in the emoji panel for the text-emoticon section, or install Gboard.' },
+    { q: 'How do I add kaomoji to a Samsung keyboard?', a: 'Open the emoji panel in Samsung Keyboard and look for the kaomoji or text-emoticon section. If it is missing, installing Gboard adds a dedicated kaomoji tab.' },
+    { q: 'Is there a faster way than typing kaomoji?', a: 'Yes. Copying a ready-made kaomoji from a library and pasting it is the fastest method and works identically on every device with no setup.' }
+  ]
 }
 
 ];

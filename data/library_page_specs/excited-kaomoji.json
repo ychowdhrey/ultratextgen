@@ -1,0 +1,125 @@
+{
+  "slug": "excited-kaomoji",
+  "title": "Excited Kaomoji: Copy & Paste Hyped Text Faces",
+  "meta_description": "Browse and copy excited kaomoji — also spelled kamoji — hyped, arms-up, can't-wait Japanese text faces. Click any to copy it instantly.",
+  "breadcrumb": "Excited Kaomoji",
+  "hero_h1": "Excited Kaomoji",
+  "hero_tagline": "Copy and paste excited kaomoji — hyped, arms-up Japanese text faces bursting with energy. Click any face to copy it instantly.",
+  "intro": "Excited kaomoji (also spelled kamoji) are high-energy Japanese-style text faces — arms up, eyes sparkling, and ready to burst. An excited kaomoji such as ヽ(>∀<☆)ノ or ٩(◕‿◕)۶ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by style below and click any face to copy it instantly. Whether you search \"excited kaomoji\" or \"kaomoji excited,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "hyped",
+      "label": "Hyped",
+      "h2": "Hyped Kaomoji",
+      "intro": "Arms-up, high-energy excitement.",
+      "symbols": [
+        {
+          "char": "ヽ(>∀<☆)ノ",
+          "label": "So Hyped"
+        },
+        {
+          "char": "٩(◕‿◕)۶",
+          "label": "Yay"
+        },
+        {
+          "char": "＼(≧▽≦)／",
+          "label": "Thrilled"
+        },
+        {
+          "char": "ヽ(・∀・)ﾉ",
+          "label": "Pumped"
+        },
+        {
+          "char": "o(≧∇≦o)",
+          "label": "Bursting"
+        },
+        {
+          "char": "ヽ(＾Д＾)ﾉ",
+          "label": "Cheering"
+        }
+      ]
+    },
+    {
+      "id": "sparkle",
+      "label": "Sparkling",
+      "h2": "Sparkling Excitement Kaomoji",
+      "intro": "Star-eyed, glittering hype.",
+      "symbols": [
+        {
+          "char": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+          "label": "Magic Hype"
+        },
+        {
+          "char": "(☆▽☆)",
+          "label": "Star Eyes"
+        },
+        {
+          "char": "＼(★ω★)／",
+          "label": "Starstruck"
+        },
+        {
+          "char": "٩(｡•́‿•̀｡)۶",
+          "label": "So Excited"
+        },
+        {
+          "char": "ヽ(≧◡≦)八(◕‿◕)ノ",
+          "label": "Excited Together"
+        }
+      ]
+    },
+    {
+      "id": "cantwait",
+      "label": "Can't Wait",
+      "h2": "Can't-Wait Kaomoji",
+      "intro": "Impatient, jittery anticipation.",
+      "symbols": [
+        {
+          "char": "(๑˃ᴗ˂)ﻭ",
+          "label": "Can't Wait"
+        },
+        {
+          "char": "＼(^ω^)／",
+          "label": "Here We Go"
+        },
+        {
+          "char": "ヽ(*・ω・)ﾉ",
+          "label": "Ready"
+        },
+        {
+          "char": "۹(⌤‿⌤)۶",
+          "label": "Buzzing"
+        },
+        {
+          "char": "o(*≧▽≦)ツ",
+          "label": "Let's Go"
+        }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful Japanese text faces."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it."
+    },
+    {
+      "href": "/library/sparkle-kaomoji/",
+      "title": "Sparkle & Star Kaomoji",
+      "desc": "Glitter, sparkles, and starry shine."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "lenny-face",
+  "title": "Lenny Face: Copy & Paste ( ͡° ͜ʖ ͡°) Text Faces",
+  "meta_description": "Copy and paste the Lenny face ( ͡° ͜ʖ ͡°) and dozens of variants — the classic smirking text face for comments, chats, and memes. One click to copy.",
+  "breadcrumb": "Lenny Face",
+  "hero_h1": "Lenny Face",
+  "hero_tagline": "Copy and paste the Lenny face ( ͡° ͜ʖ ͡°) and its many variants — the classic smirking meme text face. Click any to copy it instantly.",
+  "intro": "The Lenny face ( ͡° ͜ʖ ͡°) is a Japanese-style text face — a knowing, suggestive smirk assembled from Unicode characters. It pastes cleanly into comments, chats, and captions anywhere that supports Unicode, no image needed. Browse the original and its many variants below and click any to copy it instantly. Whether you search \"lenny face,\" \"lenny face copy paste,\" or \"lenny face generator,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "The Original",
+      "h2": "The Original Lenny Face",
+      "intro": "The classic smirk and its closest relatives.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Classic Lenny" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Winking Lenny" },
+        { "char": "( ͡ᵔ ͜ʖ ͡ᵔ)", "label": "Happy Lenny" },
+        { "char": "( ͠° ͟ʖ ͡°)", "label": "Sly Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)づ", "label": "Reaching Lenny" }
+      ]
+    },
+    {
+      "id": "buff",
+      "label": "Buff Lenny",
+      "h2": "Buff & Flexing Lenny Face",
+      "intro": "Arms up — flexing, hyped, ready to go.",
+      "symbols": [
+        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Flexing Lenny" },
+        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Marching Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)╭∩╮", "label": "Rude Lenny" },
+        { "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ", "label": "Strong Lenny" }
+      ]
+    },
+    {
+      "id": "reaching",
+      "label": "Reaching",
+      "h2": "Reaching Lenny Face",
+      "intro": "Grabby, pointing, and gimme variants.",
+      "symbols": [
+        { "char": "(づ ͡° ͜ʖ ͡°)づ", "label": "Hugging Lenny" },
+        { "char": "☞ ͡° ͜ʖ ͡°☞", "label": "Pointing Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)੭", "label": "Gimme Lenny" },
+        { "char": "( ͡°Ѡ ͡°)", "label": "Wide Lenny" }
+      ]
+    },
+    {
+      "id": "variants",
+      "label": "Eye Variants",
+      "h2": "Lenny Face Eye Variants",
+      "intro": "Same smirk, swapped-out eyes.",
+      "symbols": [
+        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Round-Eyed Lenny" },
+        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Bold-Eyed Lenny" },
+        { "char": "( ͡• ͜ʖ ͡•)", "label": "Dot-Eyed Lenny" },
+        { "char": "( ͡⊙ ͜ʖ ͡⊙)", "label": "Target-Eyed Lenny" },
+        { "char": "( ͡ↀ ͜ʖ ͡ↀ)", "label": "Coin-Eyed Lenny" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/dongers/", "title": "Dongers", "desc": "Arms-raised, hype-fueled text faces like ヽ༼ຈل͜ຈ༽ﾉ to copy and paste." },
+    { "href": "/library/shrug-kaomoji/", "title": "Shrug Kaomoji", "desc": "The classic ¯\\_(ツ)_/¯ shruggie and its variants." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." }
+  ]
+}

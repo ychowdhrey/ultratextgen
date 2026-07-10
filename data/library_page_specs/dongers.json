@@ -1,0 +1,69 @@
+{
+  "slug": "dongers",
+  "title": "Dongers: Copy & Paste Donger Text Faces ヽ༼ຈل͜ຈ༽ﾉ",
+  "meta_description": "Copy and paste dongers ヽ༼ຈل͜ຈ༽ﾉ — bold, arms-raised text faces for hype, praise, and rage. One click to copy the classic dongers and variants.",
+  "breadcrumb": "Dongers",
+  "hero_h1": "Dongers",
+  "hero_tagline": "Copy and paste dongers — arms-raised, hype-fueled text faces like ヽ༼ຈل͜ຈ༽ﾉ. Click any to copy it instantly.",
+  "intro": "Dongers are a loud, energetic family of Japanese-style text faces — usually arms raised in hype, praise, or rage, built from characters like ຈ and ༽. A donger such as ヽ༼ຈل͜ຈ༽ﾉ (\"raise your dongers\") is plain Unicode text, so it pastes cleanly into chats, comments, and captions. Browse the classics and variants below and click any to copy it instantly. Whether you search \"dongers,\" \"donger,\" or \"raise your dongers,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "raise",
+      "label": "Raise Your Dongers",
+      "h2": "Raise Your Dongers",
+      "intro": "The classic arms-up dongers for a hype moment.",
+      "symbols": [
+        { "char": "ヽ༼ຈل͜ຈ༽ﾉ", "label": "Raise Your Dongers" },
+        { "char": "ヽ༼ຈ‿ຈ༽ﾉ", "label": "Happy Donger" },
+        { "char": "ヽ༼ຈ▬ຈ༽ﾉ", "label": "Focused Donger" },
+        { "char": "ᕕ༼ຈل͜ຈ༽ᕗ", "label": "Charging Donger" },
+        { "char": "ᕦ༼ຈل͜ຈ༽ᕤ", "label": "Flexing Donger" }
+      ]
+    },
+    {
+      "id": "hype",
+      "label": "Hype & Praise",
+      "h2": "Hype & Praise Dongers",
+      "intro": "Bring the energy — praise, cheer, and pure hype.",
+      "symbols": [
+        { "char": "ヽ༼ ຈ ل͜ ຈ༽ﾉ", "label": "Big Hype" },
+        { "char": "ヽ༼◉益◉╮༽ﾉ", "label": "Wild Donger" },
+        { "char": "ヽ༼ ▀̿ Ĺ̯ ▀̿ ༽ﾉ", "label": "Cool Donger" },
+        { "char": "ヽ༼ຈຈ༽ﾉ", "label": "Simple Donger" }
+      ]
+    },
+    {
+      "id": "rage",
+      "label": "Rage Dongers",
+      "h2": "Rage Dongers",
+      "intro": "Furious, fired-up dongers for maximum outrage.",
+      "symbols": [
+        { "char": "୧༼ಠ益ಠ༽୨", "label": "Rage Donger" },
+        { "char": "ヽ༼ಠ益ಠ༽ﾉ", "label": "Angry Donger" },
+        { "char": "୧༼ಠдಠ༽୨", "label": "Furious Donger" },
+        { "char": "༼ ºل͟º ༽", "label": "Standing Donger" }
+      ]
+    },
+    {
+      "id": "flip",
+      "label": "Flip & Chaos",
+      "h2": "Table Flip & Chaos Dongers",
+      "intro": "Dongers meet flying tables — total chaos.",
+      "symbols": [
+        { "char": "┻━┻ ︵ヽ༼ຈل͜ຈ༽ﾉ︵ ┻━┻", "label": "Donger Table Flip" },
+        { "char": "༼ つ ◕_◕ ༽つ", "label": "Give Donger" },
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/lenny-face/", "title": "Lenny Face", "desc": "The classic smirking ( ͡° ͜ʖ ͡°) text face and its variants." },
+    { "href": "/library/shrug-kaomoji/", "title": "Shrug Kaomoji", "desc": "The classic ¯\\_(ツ)_/¯ shruggie and its variants." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling and joyful Japanese text faces for any good mood." }
+  ]
+}
