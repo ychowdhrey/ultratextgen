@@ -1,0 +1,265 @@
+{
+  "slug": "kaomoji",
+  "lang": "vi",
+  "title": "Kaomoji: Sao chép & dán mặt chữ kiểu Nhật (dễ thương, mèo, tình yêu)",
+  "meta_description": "Sao chép và dán kaomoji — mặt chữ cảm xúc kiểu Nhật từ ký tự Unicode. Duyệt theo tâm trạng: dễ thương, vui, buồn, tình yêu và mèo. Nhấp là sao chép ngay.",
+  "breadcrumb": "Kaomoji",
+  "hero_h1": "Kaomoji",
+  "hero_tagline": "Sao chép và dán kaomoji — mặt chữ cảm xúc kiểu Nhật cho mọi tâm trạng. Nhấp vào mặt bất kỳ để sao chép ngay.",
+  "intro": "Kaomoji (còn viết là kamoji) là mặt chữ cảm xúc kiểu Nhật được tạo từ ký tự Unicode thông thường — như (◕‿◕) hay (｡◕‿◕｡) — nên dán gọn gàng vào bio, chú thích, bình luận và tin nhắn ở mọi nơi. Duyệt kaomoji theo tâm trạng bên dưới — dễ thương, vui vẻ, tình yêu, buồn bã và mèo — rồi nhấp vào mặt bất kỳ để sao chép ngay. Cần bộ sưu tập chuyên sâu hơn? Xem các trang kaomoji dễ thương, kaomoji mèo và kaomoji tình yêu.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/vi/library/kaomoji/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Thư viện",
+  "library_url": "https://ultratextgen.com/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-faces-kaomoji/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/kaomoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/kaomoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/kaomoji/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/text-faces-kaomoji/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/kaomoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/kaomoji/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/kaomoji/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/kaomoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/kaomoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/kaomoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-faces-kaomoji/"
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    {
+      "href": "/vi/library/cute-kaomoji/",
+      "title": "Kaomoji dễ thương",
+      "desc": "Mặt chữ kawaii với mắt long lanh và má ửng hồng."
+    },
+    {
+      "href": "/vi/library/cat-kaomoji/",
+      "title": "Kaomoji mèo",
+      "desc": "Mặt chữ mèo dễ thương với ria và chân."
+    },
+    {
+      "href": "/vi/library/love-kaomoji/",
+      "title": "Kaomoji tình yêu",
+      "desc": "Trái tim, nụ hôn và cái ôm ở dạng mặt chữ."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Tự tạo mặt chữ của bạn — kết hợp mắt, miệng và tay rồi sao chép."
+    }
+  ],
+  "sections": [
+    {
+      "id": "cute",
+      "label": "Dễ thương",
+      "h2": "Kaomoji dễ thương",
+      "intro": "Những mặt chữ kawaii mềm mại, đáng yêu ngay từ cái nhìn đầu tiên.",
+      "symbols": [
+        {
+          "char": "(◕‿◕)",
+          "label": "Cười Dễ Thương"
+        },
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Mặt Ngọt Ngào"
+        },
+        {
+          "char": "(◠‿◠✿)",
+          "label": "Cười Hoa"
+        },
+        {
+          "char": "(✿◡‿◡)",
+          "label": "Hoa Vui Vẻ"
+        },
+        {
+          "char": "( ◜‿◝ )♡",
+          "label": "Cưng Đáng Yêu"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Cưng Rạng Rỡ"
+        }
+      ]
+    },
+    {
+      "id": "happy",
+      "label": "Vui vẻ",
+      "h2": "Kaomoji vui vẻ",
+      "intro": "Những nụ cười tươi tắn cho tin nhắn vui vẻ thường ngày.",
+      "symbols": [
+        {
+          "char": "(◠‿◠)",
+          "label": "Cười Nhẹ"
+        },
+        {
+          "char": "(^▽^)",
+          "label": "Cười Tươi"
+        },
+        {
+          "char": "(≧◡≦)",
+          "label": "Mắt Vui"
+        },
+        {
+          "char": "( ´ ▽ ` )",
+          "label": "Cười Thư Thái"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Cười Rạng Rỡ"
+        },
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Cười Ngọt Ngào"
+        }
+      ]
+    },
+    {
+      "id": "love",
+      "label": "Tình yêu",
+      "h2": "Kaomoji tình yêu",
+      "intro": "Trái tim, nụ hôn và cái ôm để bày tỏ tình cảm.",
+      "symbols": [
+        {
+          "char": "(♥ω♥)",
+          "label": "Mắt Trái Tim"
+        },
+        {
+          "char": "(◍•ᴗ•◍)❤",
+          "label": "Đang Yêu"
+        },
+        {
+          "char": "(✿ ♥‿♥)",
+          "label": "Tim Hoa"
+        },
+        {
+          "char": "(｡♥‿♥｡)",
+          "label": "Tim Cười"
+        },
+        {
+          "char": "(♡μ_μ)",
+          "label": "Say Đắm"
+        },
+        {
+          "char": "(◕‿◕)♡",
+          "label": "Tim Ngọt Ngào"
+        }
+      ]
+    },
+    {
+      "id": "sad",
+      "label": "Buồn bã",
+      "h2": "Kaomoji buồn",
+      "intro": "Những mặt chữ ỉu xìu cho tâm trạng chùng xuống.",
+      "symbols": [
+        {
+          "char": "(´･_･`)",
+          "label": "Bồn Chồn"
+        },
+        {
+          "char": "(._.)",
+          "label": "Chán Nản"
+        },
+        {
+          "char": "(ｰ_ｰ)",
+          "label": "Mệt Mỏi"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Xẹp Lép"
+        },
+        {
+          "char": "( ˘･з･)",
+          "label": "Hờ Hững"
+        },
+        {
+          "char": "(´ω`)",
+          "label": "Ủ Rũ"
+        }
+      ]
+    },
+    {
+      "id": "cat",
+      "label": "Mèo",
+      "h2": "Kaomoji mèo",
+      "intro": "Mặt mèo dễ thương với ria và chân, dựng quanh hình =^・ω・^=.",
+      "symbols": [
+        {
+          "char": "(=^・ω・^=)",
+          "label": "Mèo Cổ Điển"
+        },
+        {
+          "char": "(=^‥^=)",
+          "label": "Mắt Mèo"
+        },
+        {
+          "char": "(=｀ω´=)",
+          "label": "Mèo Tự Mãn"
+        },
+        {
+          "char": "(＾• ω •＾)",
+          "label": "Mèo Dịu Dàng"
+        },
+        {
+          "char": "(=ↀωↀ=)",
+          "label": "Mèo Mắt Tròn"
+        },
+        {
+          "char": "(=^◡^=)",
+          "label": "Mèo Cười"
+        }
+      ]
+    }
+  ]
+}
