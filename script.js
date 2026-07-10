@@ -76,7 +76,7 @@
  /* ===================
    DATA: Decorations
    =================== */
-const decorations = window.UTG_DECORATIONS || {
+const DEFAULT_DECORATIONS = {
    symbols: [
     { text: "★ text ★", prefix: "★ ", suffix: " ★" },
     { text: "☆ text ☆", prefix: "☆ ", suffix: " ☆" },
@@ -253,6 +253,17 @@ const decorations = window.UTG_DECORATIONS || {
     { text: "🇵🇸 text 🇵🇸", prefix: "🇵🇸 ", suffix: " 🇵🇸" }
   ]
 };
+
+// Page-specific decorations (window.UTG_DECORATIONS) are MERGED over the
+// defaults rather than replacing them — so a game page can register one extra
+// tab (e.g. `ff`) while keeping the Symbols / Minimal / Emoji defaults, with no
+// duplicated data. Existing override pages are unaffected: their tab keys line
+// up 1:1 with their own buttons, so the added default keys are simply
+// unreachable, and any key they redefine (frames, dividers, minimal…) still
+// wins because it is applied last.
+const decorations = window.UTG_DECORATIONS
+  ? Object.assign({}, DEFAULT_DECORATIONS, window.UTG_DECORATIONS)
+  : DEFAULT_DECORATIONS;
 
   /* ===================
      STATE

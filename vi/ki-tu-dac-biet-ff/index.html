@@ -243,21 +243,12 @@
   <section class="hero"><div class="hero-inner"><div class="hero-card">
     <div class="decoration-label">Ghép thử tên: gõ tên của bạn, chọn font, bọc khung — copy nguyên cụm</div>
     <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Gõ tên FF của bạn…" maxlength="100"></textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
+    <div class="decoration-section namecheck-inline"><div class="decoration-label">Kiểm tra tên FF — trực tiếp khi bạn gõ</div><div id="ffNameChecker"></div></div>
     <div class="decoration-section"><div class="decoration-label">Thêm kí hiệu, khung viền vào kết quả</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Kí hiệu</button><button class="decoration-tab" data-deco-tab="frames">Khung viền</button><button class="decoration-tab" data-deco-tab="minimal">Tối giản</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
   </div></div></section>
 
   <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
   <div class="results-grid" id="resultsGrid"></div>
-
-  <!-- KIỂM TRA TÊN -->
-  <section class="editorial-section" id="kiem-tra-ten">
-    <span class="article-section-label">Kiểm Tra Tên</span>
-    <h2>Tên Của Bạn Có Qua Được Free Fire Không?</h2>
-    <p class="u-secondary-block">Ô nickname Free Fire chỉ nhận <strong>12 kí tự</strong> — và kí tự đặc biệt như ꧁ ꧂ bị tính <strong>2 kí tự</strong> mỗi kí hiệu (nên ꧁KING꧂ chiếm 8 trên 12). Tên bị từ chối là mất luôn Thẻ Đổi Tên. Kiểm tra trước ở đây: bộ đếm chạy tự động khi bạn gõ ở trên, hoặc dán tên đã copy vào ô.</p>
-    <div id="ffNameChecker"></div>
-  </section>
-
-  <div class="section-divider"></div>
 
   <!-- HƯỚNG DẪN -->
   <section class="editorial-section" id="cach-dung">
@@ -344,6 +335,36 @@
 <div class="copy-toast" id="copyToast">Đã sao chép!</div>
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Page config: override the "Khung viền" (Frames) tab with FF-ready frames,
+     merged over the default Symbols / Minimal / Emoji tabs (see script.js), so
+     the frame wraps the user's typed name live across every generated style.
+     Space-less because Free Fire rejects plain spaces. -->
+<script>
+  window.UTG_DECORATIONS = {
+    frames: [
+      { text: "꧁༒text༒꧂", prefix: "꧁༒", suffix: "༒꧂" },
+      { text: "꧁text꧂", prefix: "꧁", suffix: "꧂" },
+      { text: "꧁•text•꧂", prefix: "꧁•", suffix: "•꧂" },
+      { text: "༺text༻", prefix: "༺", suffix: "༻" },
+      { text: "༺༒text༒༻", prefix: "༺༒", suffix: "༒༻" },
+      { text: "❰text❱", prefix: "❰", suffix: "❱" },
+      { text: "「text」", prefix: "「", suffix: "」" },
+      { text: "『text』", prefix: "『", suffix: "』" },
+      { text: "【text】", prefix: "【", suffix: "】" },
+      { text: "★彡text彡★", prefix: "★彡", suffix: "彡★" },
+      { text: "メtext彡", prefix: "メ", suffix: "彡" },
+      { text: "☬text☬", prefix: "☬", suffix: "☬" },
+      { text: "♛text♛", prefix: "♛", suffix: "♛" },
+      { text: "†text†", prefix: "†", suffix: "†" },
+      { text: "⚔text⚔", prefix: "⚔", suffix: "⚔" },
+      { text: "✿text✿", prefix: "✿", suffix: "✿" },
+      { text: "★text★", prefix: "★", suffix: "★" },
+      { text: "࿐text࿐", prefix: "࿐", suffix: "࿐" },
+      { text: "🔥text🔥", prefix: "🔥", suffix: "🔥" },
+      { text: "👑text♛", prefix: "👑", suffix: "♛" }
+    ]
+  };
+</script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer=""></script>
@@ -359,12 +380,11 @@ document.addEventListener("DOMContentLoaded", function () {
       games: ["ff"],
       inputId: "mainInput",
       text: {
-        inputLabel: "Kiểm tra tên trước khi dùng Thẻ Đổi Tên",
-        placeholder: "Dán tên đã copy vào đây…",
+        placeholder: "Tên từ ô trên tự điền vào — hoặc sửa để thử tên khác",
         ok: "An toàn cho Free Fire",
         warn: "Có thể hiện ô vuông ▯ trên máy khác",
         fail: "Free Fire sẽ từ chối tên này",
-        empty: "Gõ hoặc dán tên để kiểm tra",
+        empty: "Gõ tên của bạn ở trên — kiểm tra trực tiếp",
         weightNote: "Free Fire tính kí tự đặc biệt là 2 kí tự mỗi kí hiệu.",
         issue: {
           "over-limit": "Quá dài — bỏ bớt một kí hiệu hoặc rút gọn tên gốc.",

@@ -6077,3 +6077,19 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-note-over-limit, .gr-note-space, .gr-note-charset,
 .gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
 .gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }
+
+/* Inline "name check" callout — the game-rules checker rendered as a compact
+   live readout inside the generator card (between the input and the decoration
+   tabs), instead of a separate stacked section with its own heading. Reuses
+   .decoration-section for the divider + label; flattens the checker's own card
+   chrome so it reads as one control, mirroring discord/index.html's inline
+   context block. */
+.namecheck-inline .gr-checker {
+  padding: 0;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.namecheck-inline .gr-input { font-size: 1rem; }

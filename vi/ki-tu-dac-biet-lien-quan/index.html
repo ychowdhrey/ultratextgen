@@ -123,6 +123,10 @@
         <textarea class="main-input" id="mainInput" placeholder="Gõ tên Liên Quân của bạn..." maxlength="100"></textarea>
         <span class="char-count"><span id="charCount">0</span>/100</span>
       </div>
+      <div class="decoration-section namecheck-inline">
+        <div class="decoration-label">Kiểm tra tên LQ — trực tiếp khi bạn gõ</div>
+        <div id="lqNameChecker"></div>
+      </div>
       <div class="decoration-section">
         <div class="decoration-label">Bọc kí hiệu, khung, viền quanh tên của bạn</div>
         <div class="decoration-tabs">
@@ -237,16 +241,6 @@
 
   <div class="section-divider"></div>
 
-  <!-- KIỂM TRA TÊN -->
-  <section class="editorial-section" id="kiem-tra-ten">
-    <span class="article-section-label">Kiểm Tra Tên</span>
-    <h2>Tên Của Bạn Có Qua Được Liên Quân Không?</h2>
-    <p class="u-secondary-block">Ô đổi tên Liên Quân chỉ nhận <strong>tối đa 12 kí tự</strong> — tính cả kí tự đặc biệt và kí tự trống, nhưng mỗi kí hiệu chỉ đếm là 1 (không nhân đôi như Free Fire). Thẻ Đổi Tên giá <strong>90 quân huy</strong>, đổi lần thứ hai cần <strong>2 thẻ</strong> — tên bị từ chối là phí thẻ oan. Kiểm tra trước ở đây: bộ đếm chạy tự động khi bạn gõ ở ô trên, hoặc dán tên đã copy vào ô.</p>
-    <div id="lqNameChecker"></div>
-  </section>
-
-  <div class="section-divider"></div>
-
   <!-- CÁCH ĐẶT TÊN -->
   <section class="editorial-section" id="cach-dat-ten">
     <h2>Cách đặt tên Liên Quân hay</h2>
@@ -331,6 +325,36 @@
 <div class="copy-toast" id="copyToast">Đã sao chép!</div>
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Page config: override the "Khung viền" (Frames) tab with LQ-ready frames,
+     merged over the default Symbols / Minimal / Emoji tabs (see script.js), so
+     the frame wraps the user's typed name live across every generated style.
+     Space-less because Liên Quân rejects plain spaces. -->
+<script>
+  window.UTG_DECORATIONS = {
+    frames: [
+      { text: "꧁༒text༒꧂", prefix: "꧁༒", suffix: "༒꧂" },
+      { text: "꧁text꧂", prefix: "꧁", suffix: "꧂" },
+      { text: "꧁•text•꧂", prefix: "꧁•", suffix: "•꧂" },
+      { text: "༺text༻", prefix: "༺", suffix: "༻" },
+      { text: "༺༒text༒༻", prefix: "༺༒", suffix: "༒༻" },
+      { text: "❰text❱", prefix: "❰", suffix: "❱" },
+      { text: "「text」", prefix: "「", suffix: "」" },
+      { text: "『text』", prefix: "『", suffix: "』" },
+      { text: "【text】", prefix: "【", suffix: "】" },
+      { text: "★彡text彡★", prefix: "★彡", suffix: "彡★" },
+      { text: "メtext彡", prefix: "メ", suffix: "彡" },
+      { text: "☬text☬", prefix: "☬", suffix: "☬" },
+      { text: "♛text♛", prefix: "♛", suffix: "♛" },
+      { text: "⚔text⚔", prefix: "⚔", suffix: "⚔" },
+      { text: "†text†", prefix: "†", suffix: "†" },
+      { text: "✿text✿", prefix: "✿", suffix: "✿" },
+      { text: "★text★", prefix: "★", suffix: "★" },
+      { text: "࿐text࿐", prefix: "࿐", suffix: "࿐" },
+      { text: "🔥text🔥", prefix: "🔥", suffix: "🔥" },
+      { text: "👑text♛", prefix: "👑", suffix: "♛" }
+    ]
+  };
+</script>
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
 <script src="/script.js" defer></script>
@@ -346,12 +370,11 @@ document.addEventListener("DOMContentLoaded", function () {
     games: ["lienquan"],
     inputId: "mainInput",
     text: {
-      inputLabel: "Kiểm tra tên trước khi dùng Thẻ Đổi Tên",
-      placeholder: "Dán tên đã copy vào đây…",
+      placeholder: "Tên từ ô trên tự điền vào — hoặc sửa để thử tên khác",
       ok: "An toàn cho Liên Quân",
       warn: "Có thể hiện ô vuông ▯ trên máy khác",
       fail: "Liên Quân sẽ từ chối tên này",
-      empty: "Gõ hoặc dán tên để kiểm tra",
+      empty: "Gõ tên của bạn ở trên — kiểm tra trực tiếp",
       issue: {
         "over-limit": "Quá dài — Liên Quân cho tối đa 12 kí tự.",
         "space": "Dấu cách thường dễ bị từ chối — dùng kí tự khoảng trống ẩn.",

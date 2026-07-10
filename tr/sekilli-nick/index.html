@@ -135,6 +135,7 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Adını veya nickini yaz…" maxlength="100">Efe</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Nick kontrol — sen yazdıkça anında</div><div id="trNickChecker"></div></div>
   <div class="decoration-section"><div class="decoration-label">Sonuca süsleme ekle</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Semboller</button><button class="decoration-tab" data-deco-tab="frames">Çerçeveler</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emojiler</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
@@ -143,96 +144,11 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
-<!-- NİCK KONTROL -->
-<section class="editorial-section" id="nick-kontrol">
-  <span class="article-section-label">Nick Kontrol</span>
-  <h2>Nickin Oyunda Geçer mi?</h2>
-  <p class="u-secondary-block">Her oyunun isim kuralı farklı: PUBG Mobile <strong>14 karakter</strong> alır ve Rename Card 180 UC; Free Fire <strong>12 karakter</strong> alır ve süslü semboller <strong>2 karakter</strong> sayılır. Reddedilen bir yapıştırma, isim değiştirme kartını boşa harcar. Oyunu seç, nickini kontrol et — sayaç yukarıda yazdıklarını otomatik takip eder, istersen kopyaladığın hazır nicki de yapıştırabilirsin.</p>
-  <div id="trNickChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
     <p>Akılda kalan bir <strong>şekilli nick</strong> iki şeyden doğar: <strong>şekilli harfler</strong> ve ismi çerçeveleyen <strong>semboller</strong>. Yukarıdaki kutuya adını yaz — <strong>nick yazma</strong> aracı aynı ismi kalın, gotik, el yazısı ve küçük harf stillerinde anında listeler. Sonra alttaki paletten süslemeleri ekle: ꧁ ꧂ çerçevesi, ༺ ༻ ༒ işaretleri, taç ♛ ve pro oyuncu havası veren メ 彡 çizgileri. Oyunların ve sosyal medya uygulamalarının isim alanları bu Unicode karakterleri kabul eder; nickin lobide, sohbette ve profilde aynen böyle görünür.</p>
     <p>Aşağıda ayrıca <strong>kopyala yapıştır hazır nickler</strong> var — erkek, kız, kalpli, kelebekli ve klan tag'i olarak ayrılmış, tek dokunuşla kopyalanır. Biraz daha inince <strong>boşluklu nick</strong> hilesini (görünmez karakter) ve Türkçe karakterlerle ilgili bilmen gereken püf noktasını bulacaksın.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE WRAPPERS -->
-<section class="mood-explainers" id="hazir-cerceveler">
-  <span class="article-section-label">Hazır Çerçeveler</span>
-  <h2>Hazır şekilli nick çerçeveleri (꧁꧂ ve süsler)</h2>
-  <p class="u-secondary-block">Çerçeveyi tek dokunuşla komple kopyala, ortadaki <em>Nickin</em> yazısını kendi adınla değiştir — bitti.</p>
-  <div id="trNickWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: FRAME -->
-<section class="mood-explainers" id="cerceve-sembolleri">
-  <span class="article-section-label">Çerçeve Sembolleri</span>
-  <h2>Nick sembolleri — çerçeve ꧁꧂</h2>
-  <p class="u-secondary-tight">Neredeyse her şekilli nickin temelini oluşturan süsleme işaretleri. Dokun, kopyalansın.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Sol çerçeve ꧁ kopyala">꧁</button><span class="flag-label">Sol Çerçeve</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Sağ çerçeve ꧂ kopyala">꧂</button><span class="flag-label">Sağ Çerçeve</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༺" aria-label="Sol süs parantezi ༺ kopyala">༺</button><span class="flag-label">Sol Süs Parantezi</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༻" aria-label="Sağ süs parantezi ༻ kopyala">༻</button><span class="flag-label">Sağ Süs Parantezi</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༒" aria-label="Tibet işareti ༒ kopyala">༒</button><span class="flag-label">Tibet İşareti (dark tag)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Bayrak süsü ࿐ kopyala">࿐</button><span class="flag-label">Bayrak Süsü ࿐</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❰" aria-label="Sol köşeli süs ❰ kopyala">❰</button><span class="flag-label">Sol Köşeli Süs</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❱" aria-label="Sağ köşeli süs ❱ kopyala">❱</button><span class="flag-label">Sağ Köşeli Süs</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="『』" aria-label="Köşeli parantez çifti 『』 kopyala">『』</button><span class="flag-label">Japon Parantez Çifti</span></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: HEART / BUTTERFLY / STAR -->
-<section class="mood-explainers" id="kalp-kelebek-yildiz">
-  <span class="article-section-label">Kalp, Kelebek &amp; Yıldız</span>
-  <h2>Kalp ♡, kelebek 🦋 ve yıldız ★ nick sembolleri</h2>
-  <p class="u-secondary-tight">Kalpli nick ve şekilli kelebek yazısı için en çok kopyalanan işaretler — adının başına ve sonuna yapıştır.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♡" aria-label="Boş kalp ♡ kopyala">♡</button><span class="flag-label">Boş Kalp</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❤︎" aria-label="Dolu kalp ❤︎ kopyala">❤︎</button><span class="flag-label">Dolu Kalp</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ᥫ᭡" aria-label="Minik kalp ᥫ᭡ kopyala">ᥫ᭡</button><span class="flag-label">Minik Kalp (aesthetic)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❦" aria-label="Süslü kalp yaprağı ❦ kopyala">❦</button><span class="flag-label">Süslü Kalp Yaprağı</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="🦋" aria-label="Kelebek 🦋 kopyala">🦋</button><span class="flag-label">Kelebek</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༄" aria-label="Esinti işareti ༄ kopyala">༄</button><span class="flag-label">Esinti (kelebek kanadı)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Dolu yıldız ★ kopyala">★</button><span class="flag-label">Dolu Yıldız</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✰" aria-label="Çizgili yıldız ✰ kopyala">✰</button><span class="flag-label">Çizgili Yıldız</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⋆˚｡" aria-label="Yıldız tozu ⋆˚｡ kopyala">⋆˚｡</button><span class="flag-label">Yıldız Tozu</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✧" aria-label="Parıltı ✧ kopyala">✧</button><span class="flag-label">Parıltı</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✿" aria-label="Çiçek ✿ kopyala">✿</button><span class="flag-label">Çiçek</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❀" aria-label="Açık çiçek ❀ kopyala">❀</button><span class="flag-label">Açık Çiçek</span></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: CROWN + KATAKANA -->
-<section class="mood-explainers" id="tac-katakana">
-  <span class="article-section-label">Taç &amp; Pro İşaretleri</span>
-  <h2>Taç ♛, katakana 彡 ve savaşçı işaretleri</h2>
-  <p class="u-secondary-tight">Sıralamanın tepesindekiler için taç, hız hissi veren メ 彡 çizgileri ve nickin sonunu bağlayan işaretler.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♛" aria-label="Kraliçe tacı ♛ kopyala">♛</button><span class="flag-label">Kraliçe Tacı</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♚" aria-label="Kral tacı ♚ kopyala">♚</button><span class="flag-label">Kral Tacı</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚜" aria-label="Zambak arması ⚜ kopyala">⚜</button><span class="flag-label">Zambak Arması</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="メ" aria-label="Katakana Me メ kopyala">メ</button><span class="flag-label">Katakana Me (kesik)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="彡" aria-label="Üç çizgi 彡 kopyala">彡</button><span class="flag-label">Üç Çizgi (rüzgar)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ツ" aria-label="Gülümseme ツ kopyala">ツ</button><span class="flag-label">Tsu (gülümseme)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="乡" aria-label="Klan işareti 乡 kopyala">乡</button><span class="flag-label">Klan İşareti 乡</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="†" aria-label="Hançer † kopyala">†</button><span class="flag-label">Hançer</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚔" aria-label="Çapraz kılıçlar ⚔ kopyala">⚔</button><span class="flag-label">Çapraz Kılıçlar</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="☬" aria-label="Kanda işareti ☬ kopyala">☬</button><span class="flag-label">Kanda (kılıç arması)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="™" aria-label="Marka işareti ™ kopyala">™</button><span class="flag-label">Marka İşareti ™</span></div>
   </div>
 </section>
 
@@ -456,6 +372,38 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Page config: override the "Çerçeveler" (Frames) tab with game-ready frames,
+     merged over the default Symbols / Minimal / Emoji tabs (see script.js).
+     Applied live to every generated card so the frame wraps the user's typed
+     nick automatically. Space-less so the result is legal in the strictest
+     game name field. -->
+<script>
+  window.UTG_DECORATIONS = {
+    frames: [
+      { text: "꧁༒text༒꧂", prefix: "꧁༒", suffix: "༒꧂" },
+      { text: "꧁text꧂", prefix: "꧁", suffix: "꧂" },
+      { text: "꧁•text•꧂", prefix: "꧁•", suffix: "•꧂" },
+      { text: "༺text༻", prefix: "༺", suffix: "༻" },
+      { text: "❰text❱", prefix: "❰", suffix: "❱" },
+      { text: "「text」", prefix: "「", suffix: "」" },
+      { text: "★彡text彡★", prefix: "★彡", suffix: "彡★" },
+      { text: "メtext彡", prefix: "メ", suffix: "彡" },
+      { text: "♛text♛", prefix: "♛", suffix: "♛" },
+      { text: "♚text♚", prefix: "♚", suffix: "♚" },
+      { text: "☬text☬", prefix: "☬", suffix: "☬" },
+      { text: "⚔text⚔", prefix: "⚔", suffix: "⚔" },
+      { text: "†text†", prefix: "†", suffix: "†" },
+      { text: "♡text♡", prefix: "♡", suffix: "♡" },
+      { text: "❤︎text❤︎", prefix: "❤︎", suffix: "❤︎" },
+      { text: "✿text✿", prefix: "✿", suffix: "✿" },
+      { text: "❀text❀", prefix: "❀", suffix: "❀" },
+      { text: "★text★", prefix: "★", suffix: "★" },
+      { text: "࿐text࿐", prefix: "࿐", suffix: "࿐" },
+      { text: "🦋text🦋", prefix: "🦋", suffix: "🦋" }
+    ]
+  };
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js"></script>
 <script src="/renderer.js"></script>
@@ -474,12 +422,11 @@ document.addEventListener("DOMContentLoaded", function () {
     games: ["pubg", "ff", "ml", "discord"],
     inputId: "mainInput",
     text: {
-      inputLabel: "İsim değiştirme kartını harcamadan önce nickini kontrol et",
-      placeholder: "Kopyaladığın nicki buraya yapıştır…",
+      placeholder: "Yukarıdaki nickin — ya da başka bir nick yazıp dene",
       ok: "Bu oyun için güvenli",
       warn: "Bazı telefonlarda kutu ▯ görünebilir",
       fail: "Bu oyun nicki reddeder",
-      empty: "Kontrol etmek için nick yaz veya yapıştır",
+      empty: "Yukarıya nickini yaz — anında kontrol edilir",
       weightNote: "Free Fire süslü sembolleri 2 karakter sayar.",
       issue: {
         "over-limit": "Çok uzun — bir sembol çıkar veya ismi kısalt.",
@@ -489,28 +436,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
-  const ns = window.UltraTextGen;
-  if (!ns || !ns.buildGrids) return;
-
-  const GROUPS = [
-    { name: "Klasik Çerçeve ꧁༒꧂", flags: ["꧁༒", "Nickin", "༒꧂"], defaultFormat: "inline" },
-    { name: "Pro Oyuncu Çerçevesi", flags: ["꧁•ᴾᴿᴼ•", "Nickin", "꧂"], defaultFormat: "inline" },
-    { name: "Süs Parantezi ༺༻", flags: ["༺", "Nickin", "༻"], defaultFormat: "inline" },
-    { name: "Efsane Bayrağı ༒࿐", flags: ["༒", "Nickin", "࿐"], defaultFormat: "inline" },
-    { name: "Kral Tacı ♚♛", flags: ["♚", "Nickin", "♛"], defaultFormat: "inline" },
-    { name: "Kalpli Nick ♡", flags: ["♡", "Nickin", "♡"], defaultFormat: "inline" },
-    { name: "Kelebekli Nick ⋆˚🦋", flags: ["⋆˚🦋", "Nickin", "🦋˚⋆"], defaultFormat: "inline" },
-    { name: "Yıldızlı Tag ★彡", flags: ["★彡", "Nickin", "彡★"], defaultFormat: "inline" },
-    { name: "Klan İşareti 乡", flags: ["乡", "Nickin", "乡"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("trNickWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 
