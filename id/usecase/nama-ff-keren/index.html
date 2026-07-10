@@ -157,7 +157,8 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Ketik nama atau nickname kamu…" maxlength="100">Sanz</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Cek Nama FF — langsung pas kamu ketik</div><div id="ffNameChecker"></div></div>
+  <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Acak nama</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button><button class="decoration-tab" data-deco-tab="ff">FF</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -165,74 +166,11 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
-<!-- CEK NAMA -->
-<section class="editorial-section" id="cek-nama">
-  <span class="article-section-label">Cek Nama</span>
-  <h2>Nama Kamu Lolos di Free Fire Nggak?</h2>
-  <p class="u-secondary-block">Kolom nickname Free Fire cuma nerima <strong>12 karakter</strong> — dan simbol hias kayak ꧁ ꧂ dihitung <strong>2 karakter</strong> per simbol (jadi ꧁KING꧂ makan 8 dari 12). Nama yang ditolak berarti Kartu Ganti Nama kebuang sia-sia. Cek dulu di sini: hitungannya jalan otomatis pas kamu ngetik di atas, atau tempel nama jadi yang udah kamu salin.</p>
-  <div id="ffNameChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
     <p>Nama FF keren itu soal dua hal: <strong>font yang beda</strong> dan <strong>simbol yang ngebingkai</strong>. Ketik nama kamu di generator atas — kamu langsung dapet versi bold, gotik, kursif, sampai small caps yang bisa di-salin. Lalu tambahin ornamen dari palet di bawah: payung Jawa ꧁ ꧂, gulungan Tibet ༺ ༻ ༒, mahkota ♛, sampai katakana メ 彡 yang bikin nick kelihatan cepat dan sangar. Kolom nama Free Fire nerima karakter Unicode ini, jadi tampil rapi di lobby, notifikasi kill, dan daftar guild.</p>
     <p>Di bawah juga ada <strong>kumpulan nama FF keren siap pakai</strong> — buat cowok, cewek, gaya old, gaya pro, sampai 4 huruf — tinggal klik buat nyalin. Geser ke bawah buat cara ganti nama dan trik nama pakai spasi.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE WRAPPERS -->
-<section class="mood-explainers" id="bingkai-nama">
-  <span class="article-section-label">Bingkai Siap Pakai</span>
-  <h2>Bingkai Nama FF (Payung &amp; Ornamen)</h2>
-  <p class="u-secondary-block">Salin bingkai lengkap dalam satu klik, lalu ganti tulisan <em>NamaKamu</em> di tengah dengan nama kamu sendiri di layar ganti nickname Free Fire.</p>
-  <div id="ffNickWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: PAYUNG -->
-<section class="mood-explainers" id="simbol-payung">
-  <span class="article-section-label">Simbol Payung</span>
-  <h2>Simbol Payung &amp; Bingkai ꧁꧂</h2>
-  <p class="u-secondary-tight">Ornamen Jawa &amp; Tibet yang jadi pondasi hampir semua nama FF berhias. Klik buat nyalin.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Salin payung kiri ꧁">꧁</button><span class="flag-label">Payung Kiri (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Salin payung kanan ꧂">꧂</button><span class="flag-label">Payung Kanan (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧅" aria-label="Salin Pada Luhur ꧅">꧅</button><span class="flag-label">Pada Luhur</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༺" aria-label="Salin gulungan kiri ༺">༺</button><span class="flag-label">Gulungan Tibet Kiri</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༻" aria-label="Salin gulungan kanan ༻">༻</button><span class="flag-label">Gulungan Tibet Kanan</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༒" aria-label="Salin tanda silang Tibet ༒">༒</button><span class="flag-label">Tanda Rgya Gram</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Salin bendera Tibet ࿐">࿐</button><span class="flag-label">Hiasan Bendera ࿐</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❰" aria-label="Salin kurung ornamen kiri ❱">❰</button><span class="flag-label">Kurung Ornamen Kiri</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❱" aria-label="Salin kurung ornamen kanan ❱">❱</button><span class="flag-label">Kurung Ornamen Kanan</span></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: MAHKOTA + KATAKANA + BINTANG -->
-<section class="mood-explainers" id="simbol-mahkota">
-  <span class="article-section-label">Mahkota &amp; Aksen</span>
-  <h2>Mahkota, Katakana &amp; Bintang</h2>
-  <p class="u-secondary-tight">Mahkota buat nama peringkat atas, goresan katakana メ 彡 buat kesan cepat, plus bintang &amp; bunga buat aksen.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♛" aria-label="Salin ratu catur ♛">♛</button><span class="flag-label">Mahkota Ratu</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♚" aria-label="Salin raja catur ♚">♚</button><span class="flag-label">Mahkota Raja</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚜" aria-label="Salin fleur-de-lis ⚜">⚜</button><span class="flag-label">Fleur-de-Lis</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="メ" aria-label="Salin katakana Me メ">メ</button><span class="flag-label">Katakana Me (Slash)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="彡" aria-label="Salin San 彡">彡</button><span class="flag-label">San — Tiga Goresan</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ツ" aria-label="Salin Tsu ツ">ツ</button><span class="flag-label">Tsu (Senyum)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Salin bintang ★">★</button><span class="flag-label">Bintang Hitam</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✰" aria-label="Salin bintang ✰">✰</button><span class="flag-label">Bintang Garis</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✿" aria-label="Salin bunga ✿">✿</button><span class="flag-label">Bunga Florette</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="†" aria-label="Salin belati †">†</button><span class="flag-label">Belati</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚔" aria-label="Salin pedang silang ⚔">⚔</button><span class="flag-label">Pedang Silang</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="™" aria-label="Salin tanda TM ™">™</button><span class="flag-label">Tanda ™</span></div>
   </div>
 </section>
 
@@ -356,12 +294,24 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: build the FF decoration tab from shared packs
+     (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ ff: ["gameFrames", "crowns", "warrior", "spacing"] })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers + cek nama -->
+<!-- Symbol explorer + cek nama -->
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/gamename/game-rules.js" defer></script>
 <script>
@@ -374,12 +324,11 @@ document.addEventListener("DOMContentLoaded", function () {
       games: ["ff"],
       inputId: "mainInput",
       text: {
-        inputLabel: "Cek nama sebelum Kartu Ganti Nama kepakai",
-        placeholder: "Tempel nama jadi yang udah kamu salin…",
+        placeholder: "Nama dari atas otomatis masuk sini — atau edit buat coba nama lain",
         ok: "Aman buat Free Fire",
         warn: "Bisa jadi kotak ▯ di HP lain",
         fail: "Bakal ditolak Free Fire",
-        empty: "Ketik atau tempel nama buat dicek",
+        empty: "Ketik nama kamu di atas — langsung dicek",
         weightNote: "Free Fire ngitung simbol hias sebagai 2 karakter per simbol.",
         issue: {
           "over-limit": "Kepanjangan — hapus satu simbol atau pendekin nama dasarnya.",
@@ -390,20 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  if (!ns || !ns.buildGrids) return;
-
-  var GROUPS = [
-    { name: "Bingkai Payung Klasik", flags: ["꧁༒", "NamaKamu", "༒꧂"], defaultFormat: "inline" },
-    { name: "Bingkai Pro Player", flags: ["꧁•ᴾᴿᴼ•", "NamaKamu", "꧂"], defaultFormat: "inline" },
-    { name: "Gulungan Tibet", flags: ["༺", "NamaKamu", "༻"], defaultFormat: "inline" },
-    { name: "Banner Api", flags: ["🔥", "NamaKamu", "࿐"], defaultFormat: "inline" },
-    { name: "Mahkota Booyah", flags: ["👑", "NamaKamu", "♛"], defaultFormat: "inline" },
-    { name: "Belati Sangar", flags: ["꧁†", "NamaKamu", "†꧂"], defaultFormat: "inline" },
-    { name: "Tag Bintang Squad", flags: ["★彡", "NamaKamu", "彡★"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("ffNickWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 

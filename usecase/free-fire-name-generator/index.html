@@ -155,7 +155,8 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Type your name or nickname…" maxlength="100">Sanz</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Add flair to the results</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Symbols</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Free Fire name check — live as you type</div><div id="ffNameChecker"></div></div>
+  <div class="decoration-section"><div class="decoration-label">Add flair to the results</div><button class="surprise-btn" id="surpriseBtn" type="button">🎲 Surprise me</button><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Symbols</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button><button class="decoration-tab" data-deco-tab="ff">FF</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -163,74 +164,11 @@
   <div class="results-grid" id="resultsGrid"></div>
 </main>
 
-<!-- NAME CHECK -->
-<section class="editorial-section" id="name-check">
-  <span class="article-section-label">Name Check</span>
-  <h2>Will Your Name Survive in Free Fire?</h2>
-  <p class="u-secondary-block">Free Fire's nickname field allows <strong>12 characters</strong> — and decorative symbols like ꧁ ꧂ count as <strong>2 each</strong> (so ꧁KING꧂ uses 8 of the 12). A rejected paste wastes a Name Change Card, so check before you rename: it updates as you type above, or paste any styled name you copied.</p>
-  <div id="ffNameChecker"></div>
-</section>
-
-<div class="section-divider"></div>
-
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
     <p>A stylish Free Fire name comes down to two things: <strong>a different font</strong> and <strong>a symbol that frames it</strong>. Type your name into the generator above and you instantly get bold, gothic, cursive, and small-caps versions you can copy. Then add an ornament from the palette below: Javanese umbrellas ꧁ ꧂, Tibetan scrolls ༺ ༻ ༒, a crown ♛, or katakana strokes メ 彡 that make a nick look fast and sharp. The Free Fire name field accepts these Unicode characters, so they render cleanly in the lobby, kill feed, and guild list.</p>
     <p>Below you'll also find <strong>ready-made Free Fire names</strong> — for boys, girls, OG, pro, and 4-letter tags — just click to copy. Scroll down for how to change your name and the space trick.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- READY-MADE WRAPPERS -->
-<section class="mood-explainers" id="name-frames">
-  <span class="article-section-label">Ready-Made Frames</span>
-  <h2>Free Fire Name Frames (Umbrella &amp; Ornaments)</h2>
-  <p class="u-secondary-block">Copy a full frame in one click, then replace <em>YourName</em> in the middle with your own name on the Free Fire rename screen.</p>
-  <div id="ffNickWrappersContainer"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: UMBRELLA -->
-<section class="mood-explainers" id="umbrella-symbols">
-  <span class="article-section-label">Umbrella Symbols</span>
-  <h2>Umbrella &amp; Frame Symbols ꧁꧂</h2>
-  <p class="u-secondary-tight">The Javanese &amp; Tibetan ornaments that anchor almost every decorated Free Fire name. Click to copy.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧁" aria-label="Copy left umbrella ꧁">꧁</button><span class="flag-label">Left Umbrella (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧂" aria-label="Copy right umbrella ꧂">꧂</button><span class="flag-label">Right Umbrella (Rerenggan)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="꧅" aria-label="Copy Pada Luhur ꧅">꧅</button><span class="flag-label">Pada Luhur</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༺" aria-label="Copy left scroll ༺">༺</button><span class="flag-label">Tibetan Scroll Left</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༻" aria-label="Copy right scroll ༻">༻</button><span class="flag-label">Tibetan Scroll Right</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="༒" aria-label="Copy Tibetan cross ༒">༒</button><span class="flag-label">Rgya Gram Sign</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="࿐" aria-label="Copy Tibetan banner ࿐">࿐</button><span class="flag-label">Banner Flourish ࿐</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❰" aria-label="Copy ornate bracket left ❰">❰</button><span class="flag-label">Ornate Bracket Left</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="❱" aria-label="Copy ornate bracket right ❱">❱</button><span class="flag-label">Ornate Bracket Right</span></div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SYMBOL PALETTE: CROWN + KATAKANA + STARS -->
-<section class="mood-explainers" id="crown-symbols">
-  <span class="article-section-label">Crowns &amp; Accents</span>
-  <h2>Crowns, Katakana &amp; Stars</h2>
-  <p class="u-secondary-tight">Crowns for top-ranked names, katakana strokes メ 彡 for a fast look, plus stars &amp; flowers for accents.</p>
-  <div class="flag-rows">
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♛" aria-label="Copy queen crown ♛">♛</button><span class="flag-label">Queen Crown</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="♚" aria-label="Copy king crown ♚">♚</button><span class="flag-label">King Crown</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚜" aria-label="Copy fleur-de-lis ⚜">⚜</button><span class="flag-label">Fleur-de-Lis</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="メ" aria-label="Copy katakana Me メ">メ</button><span class="flag-label">Katakana Me (Slash)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="彡" aria-label="Copy San 彡">彡</button><span class="flag-label">San — Three Strokes</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="ツ" aria-label="Copy Tsu ツ">ツ</button><span class="flag-label">Tsu (Smile)</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="★" aria-label="Copy black star ★">★</button><span class="flag-label">Black Star</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✰" aria-label="Copy outline star ✰">✰</button><span class="flag-label">Outline Star</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="✿" aria-label="Copy flower ✿">✿</button><span class="flag-label">Florette Flower</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="†" aria-label="Copy dagger †">†</button><span class="flag-label">Dagger</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⚔" aria-label="Copy crossed swords ⚔">⚔</button><span class="flag-label">Crossed Swords</span></div>
-    <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="™" aria-label="Copy TM sign ™">™</button><span class="flag-label">™ Sign</span></div>
   </div>
 </section>
 
@@ -362,12 +300,30 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine: shared decoration packs (js/flair/flair-engine.js). Loaded
+     before the config so compose() is ready; non-deferred so it runs ahead of
+     the deferred generator scripts. -->
+<script src="/js/flair/flair-engine.js"></script>
+<!-- Page config: build the "FF" decoration tab from the shared frame/warrior/
+     crown packs plus the spacing modes (space-fill for FF's no-space rule, and
+     letter interleave). Merged over the default Symbols / Minimal / Emoji tabs
+     (see script.js) and applied live to every generated style card, so the wrap
+     frames the user's typed name automatically. -->
+<script>
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({
+          ff: ["gameFrames", "crowns", "warrior", "spacing"]
+        })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
-<!-- Symbol explorer + wrappers + name checker -->
+<!-- Symbol explorer + name checker -->
 <script src="/symbol-explorer.js" defer></script>
 <script src="/js/gamename/game-rules.js" defer></script>
 <script>
@@ -380,12 +336,11 @@ document.addEventListener("DOMContentLoaded", function () {
       games: ["ff"],
       inputId: "mainInput",
       text: {
-        inputLabel: "Check a name before you spend a rename card",
-        placeholder: "Paste the styled name you copied…",
-        ok: "Looks safe for Free Fire",
+        placeholder: "Your name from above — or edit to test another",
+        ok: "Fits Free Fire ✓",
         warn: "May show boxes ▯ on some phones",
         fail: "Free Fire will reject this",
-        empty: "Type or paste a name to check it",
+        empty: "Type your name above — it checks live",
         weightNote: "Free Fire counts decorative symbols as 2 characters each.",
         issue: {
           "over-limit": "Too long — drop a symbol or shorten the base name.",
@@ -396,20 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  if (!ns || !ns.buildGrids) return;
-
-  var GROUPS = [
-    { name: "Classic Umbrella Frame", flags: ["꧁༒", "YourName", "༒꧂"], defaultFormat: "inline" },
-    { name: "Pro Player Frame", flags: ["꧁•ᴾᴿᴼ•", "YourName", "꧂"], defaultFormat: "inline" },
-    { name: "Tibetan Scroll", flags: ["༺", "YourName", "༻"], defaultFormat: "inline" },
-    { name: "Fire Banner", flags: ["🔥", "YourName", "࿐"], defaultFormat: "inline" },
-    { name: "Booyah Crown", flags: ["👑", "YourName", "♛"], defaultFormat: "inline" },
-    { name: "Dagger Sweat", flags: ["꧁†", "YourName", "†꧂"], defaultFormat: "inline" },
-    { name: "Squad Star Tag", flags: ["★彡", "YourName", "彡★"], defaultFormat: "inline" }
-  ];
-
-  ns.buildGrids("ffNickWrappersContainer", GROUPS);
-  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 

@@ -6273,6 +6273,48 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
 .gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }
 
+/* Inline "name check" callout — the game-rules checker rendered as a compact
+   live readout inside the generator card (between the input and the decoration
+   tabs), instead of a separate stacked section with its own heading. Reuses
+   .decoration-section for the divider + label; flattens the checker's own card
+   chrome so it reads as one control, mirroring discord/index.html's inline
+   context block. */
+.namecheck-inline .gr-checker {
+  padding: 0;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.namecheck-inline .gr-input { font-size: 1rem; }
+
+/* "Surprise" flair button — one-tap generative name. Sits in the decoration
+   section; styled off existing accent tokens, works in light + dark. */
+.surprise-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 12px;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.15s ease;
+}
+.surprise-btn:hover { box-shadow: var(--shadow-soft); }
+.surprise-btn:active { transform: scale(0.96); }
+/* Brief highlight on the card the Surprise button copied. */
+.style-card.surprise-hit {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+  transition: outline-color 0.3s ease;
+}
+
 /* ==========================================================================
    Kaomoji Generator (/kaomoji-generator/)  —  js/kaomoji/
    ========================================================================== */

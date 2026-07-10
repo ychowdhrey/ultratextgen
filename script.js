@@ -11,6 +11,10 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  // Shared namespace (also owned by game-rules.js / symbol-explorer.js). Used
+  // to bridge the live decoration ("flair") state to the game name-checker.
+  const UTG = (window.UltraTextGen = window.UltraTextGen || {});
+
   const stylesRegistry = window.textStyles || {};
   const Render = window.UltraTextGenRender;
 
@@ -76,7 +80,7 @@
  /* ===================
    DATA: Decorations
    =================== */
-const decorations = window.UTG_DECORATIONS || {
+const DEFAULT_DECORATIONS = {
    symbols: [
     { text: "★ text ★", prefix: "★ ", suffix: " ★" },
     { text: "☆ text ☆", prefix: "☆ ", suffix: " ☆" },
@@ -253,6 +257,17 @@ const decorations = window.UTG_DECORATIONS || {
     { text: "🇵🇸 text 🇵🇸", prefix: "🇵🇸 ", suffix: " 🇵🇸" }
   ]
 };
+
+// Page-specific decorations (window.UTG_DECORATIONS) are MERGED over the
+// defaults rather than replacing them — so a game page can register one extra
+// tab (e.g. `ff`) while keeping the Symbols / Minimal / Emoji defaults, with no
+// duplicated data. Existing override pages are unaffected: their tab keys line
+// up 1:1 with their own buttons, so the added default keys are simply
+// unreachable, and any key they redefine (frames, dividers, minimal…) still
+// wins because it is applied last.
+const decorations = window.UTG_DECORATIONS
+  ? Object.assign({}, DEFAULT_DECORATIONS, window.UTG_DECORATIONS)
+  : DEFAULT_DECORATIONS;
 
   /* ===================
      STATE
@@ -452,9 +467,49 @@ const decorations = window.UTG_DECORATIONS || {
     renderResults();
   }
 
+  // Grapheme splitter (native) keeps a base char and its combining marks
+  // together, so interleave never slices an accent off its letter.
+  const flairSeg =
+    typeof Intl !== "undefined" && Intl.Segmenter
+      ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+      : null;
+  function graphemes(str) {
+    return flairSeg ? Array.from(flairSeg.segment(str), (s) => s.segment) : Array.from(str);
+  }
+
+  // Apply the selected flair to a rendered string.
+  //   mode "wrap"       (default): prefix + text + suffix
+  //   mode "space"      : also replace ASCII spaces with `fill` (an invisible
+  //                       or decorative char) — for games that reject a plain
+  //                       space in the name field (Free Fire, PUBG…)
+  //   mode "interleave" : insert `sep` between graphemes, per line
+  // Output is always paste-safe Unicode — no images, fonts, or dependencies.
   function applyDecoration(text) {
     if (!selectedDecoration || !text) return text;
-    return selectedDecoration.prefix + text + selectedDecoration.suffix;
+    const d = selectedDecoration;
+    let body = text;
+    if (d.mode === "space") {
+      body = body.replace(/ /g, d.fill || "ㅤ"); // U+3164 Hangul filler (invisible)
+    } else if (d.mode === "interleave") {
+      const sep = d.sep || "";
+      body = body.split("\n").map((line) => graphemes(line).join(sep)).join("\n");
+    }
+    return (d.prefix || "") + body + (d.suffix || "");
+  }
+
+  // Bridge for the game name-checker (game-rules.js): the string a player will
+  // actually paste is the typed name plus whatever flair is selected. Expose it
+  // and fire an event on change, so the checker counts what really ships — a
+  // frame like ꧁༒…༒꧂ that pushes a "fits" name over the limit now shows up.
+  UTG.flairedMainInput = function () {
+    return applyDecoration(el.mainInput ? el.mainInput.value : "");
+  };
+  function notifyFlairChange() {
+    try {
+      document.dispatchEvent(new CustomEvent("utg:flairchange"));
+    } catch (e) {
+      /* CustomEvent unsupported — checker falls back to the raw name */
+    }
   }
 
   // Layer combining underline (U+0332) and/or strikethrough (U+0336) onto every
@@ -883,6 +938,7 @@ const decorations = window.UTG_DECORATIONS || {
       selectedDecoration = null;
       $$(".decoration-item").forEach((i) => i.classList.remove("selected"));
       renderResults();
+      notifyFlairChange();
     });
     grid.appendChild(clearBtn);
 
@@ -906,6 +962,7 @@ const decorations = window.UTG_DECORATIONS || {
           item.classList.add("selected");
         }
         renderResults();
+        notifyFlairChange();
       });
       grid.appendChild(item);
     });
@@ -1448,8 +1505,42 @@ const decorations = window.UTG_DECORATIONS || {
         selectedDecoration = null;
         renderDecorations();
         renderResults();
+        notifyFlairChange();
       });
     });
+
+    // "Surprise" — one tap generates a full ready-to-paste name: a random flair
+    // from the active tab applied across the grid, then a random styled card
+    // copied to the clipboard (reusing the normal copy path + toast). Generative
+    // selection, deterministic paste-safe output.
+    const surpriseBtn = $("#surpriseBtn");
+    if (surpriseBtn) {
+      surpriseBtn.addEventListener("click", () => {
+        const list = decorations[currentDecoTab] || [];
+        if (list.length) {
+          selectedDecoration =
+            UTG.flair && UTG.flair.pickRandom
+              ? UTG.flair.pickRandom(list)
+              : list[Math.floor(Math.random() * list.length)];
+          renderDecorations();
+        }
+        renderResults();
+        notifyFlairChange();
+        // Copy a random result so one tap yields a finished name. Falls back
+        // silently when the input is empty (every card is a disabled demo).
+        const copyable = $$("#resultsGrid .copy-btn:not([disabled])");
+        if (copyable.length) {
+          const pick = copyable[Math.floor(Math.random() * copyable.length)];
+          if (pick.scrollIntoView) pick.scrollIntoView({ block: "center", behavior: "smooth" });
+          const card = pick.closest(".style-card");
+          if (card) {
+            card.classList.add("surprise-hit");
+            setTimeout(() => card.classList.remove("surprise-hit"), 1200);
+          }
+          pick.click();
+        }
+      });
+    }
 
 $$(".faq-question").forEach((q) => {
       q.addEventListener("click", () => {
