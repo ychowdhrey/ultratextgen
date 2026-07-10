@@ -6077,3 +6077,176 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-note-over-limit, .gr-note-space, .gr-note-charset,
 .gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
 .gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }
+
+/* ==========================================================================
+   Kaomoji Generator (/kaomoji-generator/)  —  js/kaomoji/
+   ========================================================================== */
+.kao-studio {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.kao-preview-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 1.75rem 1.25rem 1.25rem;
+  text-align: center;
+}
+.kao-preview {
+  font-size: clamp(1.9rem, 6vw, 2.9rem);
+  line-height: 1.4;
+  color: var(--text-primary);
+  min-height: 1.6em;
+  word-break: break-word;
+  padding: 0.4rem 0;
+  font-family: "Segoe UI", "Noto Sans", system-ui, sans-serif;
+}
+.kao-hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  min-height: 1.2em;
+}
+.kao-hint.is-risky { color: var(--accent-purple); }
+.kao-face-input {
+  width: 100%;
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+.kao-face-input:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+}
+.kao-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 0.9rem;
+}
+.kao-btn {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s, background 0.15s;
+}
+.kao-btn:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.kao-btn.is-copied { border-color: var(--accent-purple); }
+.kao-btn-primary {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: #fff;
+  border-color: transparent;
+}
+.kao-btn-primary:hover { color: #fff; }
+
+.kao-block-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1.6rem 0 0.6rem;
+}
+.kao-moods,
+.kao-presets,
+.kao-part-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.kao-mood {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.kao-mood:hover { border-color: var(--accent-purple); color: var(--text-primary); }
+.kao-mood.is-active {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: #fff;
+  border-color: transparent;
+}
+.kao-presets { gap: 0.55rem; }
+.kao-preset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 84px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  border-radius: 12px;
+  padding: 0.6rem 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+}
+.kao-preset:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.kao-preset-face { font-size: 1.15rem; color: var(--text-primary); }
+.kao-preset-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
+
+.kao-part-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.kao-part-row:last-child { border-bottom: none; }
+.kao-part-label {
+  flex: 0 0 3.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.kao-part-options {
+  flex: 1 1 auto;
+  gap: 0.4rem;
+  overflow-x: auto;
+}
+.kao-part-opt {
+  flex: 0 0 auto;
+  min-width: 2.6rem;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border-radius: 9px;
+  padding: 0.4rem 0.55rem;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.kao-part-opt:hover { border-color: var(--accent-purple); }
+.kao-part-opt.is-selected {
+  border-color: var(--accent-purple);
+  background: color-mix(in srgb, var(--accent-purple) 12%, var(--bg-white));
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+.kao-part-opt.is-hidden { display: none; }
+
+@media (max-width: 560px) {
+  .kao-part-row { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+  .kao-part-label { flex-basis: auto; }
+  .kao-part-options { width: 100%; }
+}

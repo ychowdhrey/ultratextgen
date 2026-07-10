@@ -578,6 +578,7 @@ HOME_CARD = "fancy-text-generator-preview"
 
 
 PAGES = {
+  "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
   # ---- site root / overview ----
   "about": ("About UltraTextGen", "The team and the mission behind the tool", m_brand, K_SITE),
   "contact": ("Contact UltraTextGen", "Questions, feedback, and partnerships", m_at, K_SITE),
@@ -830,12 +831,18 @@ PAGES = {
   "answers-do-you-need-nitro-for-discord-fonts": ("Do You Need Nitro for Fonts?", "The honest answer for Discord users", m_qa, K_ANS),
   "answers-how-to-change-roblox-username": ("Change Your Roblox Username", "The steps and the catch", m_qa, K_ANS),
   "answers-how-to-change-tiktok-username": ("Change Your TikTok Username", "How and how often you can", m_qa, K_ANS),
+  "answers-how-to-type-kaomoji": ("How to Type Kaomoji", "On Windows, iPhone, Android & Mac", m_kaomoji, K_ANS),
   "answers-is-linkedin-bold-text-safe": ("Is LinkedIn Bold Text Safe?", "Accessibility and reach, explained", m_qa, K_ANS),
+  "answers-what-does-o7-mean": ("What Does o7 Mean?", "The saluting text face, explained", m_kaomoji, K_ANS),
+  "answers-what-does-owo-mean": ("What Does OwO Mean?", "The wide-eyed text face, explained", m_kaomoji, K_ANS),
+  "answers-what-does-uwu-mean": ("What Does UwU Mean?", "The cute text face, explained", m_kaomoji, K_ANS),
+  "answers-what-does-xd-mean": ("What Does XD Mean?", "The laughing text face, explained", m_kaomoji, K_ANS),
   "answers-what-font-does-discord-use": ("What Font Does Discord Use?", "gg sans, and what it means for you", m_qa, K_ANS),
   "answers-what-font-does-facebook-use": ("What Font Does Facebook Use?", "The system fonts behind the feed", m_qa, K_ANS),
   "answers-what-font-does-linkedin-use": ("What Font Does LinkedIn Use?", "The typeface and your options", m_qa, K_ANS),
   "answers-what-font-does-snapchat-use": ("What Font Does Snapchat Use?", "The app typeface, explained", m_qa, K_ANS),
   "answers-what-is-a-tiktok-handle": ("What Is a TikTok Handle?", "Handle vs name, made simple", m_qa, K_ANS),
+  "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
 
   # ---- embed ----
   "embed-linkedin-headline-generator": ("LinkedIn Headline Generator", "Embeddable headline styler", m_headline, K_USE),
