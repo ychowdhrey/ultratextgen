@@ -94,6 +94,12 @@
     designFillGroup: $("#pt-design-fill-group"),
     designBorderGroup: $("#pt-design-border-group"),
     designFooter: $("#pt-design-footer"),
+    // Dot-to-dot mode (optional; gated on #pt-design-mode-group)
+    designModeGroup: $("#pt-design-mode-group"),
+    designFillField: $("#pt-design-fill-field"),
+    designDotsOptions: $("#pt-design-dots-options"),
+    designDensityGroup: $("#pt-design-density-group"),
+    designHint: $("#pt-design-hint"),
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
     designPng: $("#pt-design-png"),
@@ -979,7 +985,10 @@
   // Selection state for the swatch button groups (fill + border). Buttons are
   // authored in HTML (crawlable) and drive this; falls back to <select> values
   // for any page still shipping selects.
-  const designState = { fill: "plain", border: "none" };
+  //   mode:    "outline" (colorable letters) | "dots" (numbered dot-to-dot)
+  //   density: dot-to-dot difficulty key (see DOT_LEVELS)
+  //   hint:    show the faint guide line through the dots
+  const designState = { fill: "plain", border: "none", mode: "outline", density: "medium", hint: true };
 
   function svgMake(tag, attrs, parent) {
     const node = document.createElementNS(SVGNS, tag);
@@ -1095,6 +1104,323 @@
     field(560, "Date:", 910);
   }
 
+  /* ---------------------------------------------------------------
+     Dot-to-dot engine
+     ---------------------------------------------------------------
+     Type a name -> a numbered connect-the-dots version of it. There is no
+     glyph path data in this project (letters are drawn via SVG/Canvas <text>
+     with a font-family), so "points along the outline" are recovered by
+     RASTERIZING each letter to an offscreen canvas, reading the pixels back
+     with getImageData, and walking the ink boundary with Moore-neighbor
+     contour tracing. The traced boundary is then resampled at even arc-length
+     into the dots. Pure native Canvas — no path library, no server render.
+
+     Design decisions (documented for future maintainers):
+       * Per-LETTER rasterization (not one big word bitmap). Guarantees one
+         clean silhouette per letter regardless of the font's letter-spacing,
+         so adjacent letters never merge into an unreadable blob.
+       * OUTER silhouette only (largest connected component per letter). A
+         name reads fine from letter silhouettes; tracing counters/holes would
+         need extra sub-sequences and hurt legibility. Uppercase is forced in
+         the UI because capital silhouettes (A L E X) are far more iconic than
+         lowercase counters (a e o), but the tracer itself is case-agnostic.
+       * Disconnected accents (the tittle of i / j, or any smaller component)
+         become a SINGLE dot at their centroid, numbered right after the main
+         loop of the same letter — so "i" is a little stem plus one dot on top.
+       * Numbering RESTARTS at 1 for each letter. A single 1..N run across a
+         whole name forces long "pen-up" diagonals between letters and giant
+         numbers on long names; per-letter closed loops render each letter as a
+         self-contained, recognizable connect-the-dots shape — which is exactly
+         how printable name dot-to-dots work.
+       * Dot COUNT is allocated from a difficulty target total, shared across
+         letters by outline perimeter and clamped, so the sheet stays legible
+         whatever the name's length (fewer, bigger-gap dots = easier).
+     --------------------------------------------------------------- */
+
+  // Difficulty ladder: more dots = harder / more detail. `total` is the
+  // whole-name target dot budget, shared out across the letters.
+  const DOT_LEVELS = [
+    { key: "easy",   label: "Easy",   total: 26, hint: "Big gaps, few dots — the youngest kids" },
+    { key: "medium", label: "Medium", total: 42, hint: "A balanced connect-the-dots" },
+    { key: "hard",   label: "Hard",   total: 60, hint: "More dots and finer letter detail" },
+    { key: "expert", label: "Expert", total: 84, hint: "Lots of dots — a real challenge" }
+  ];
+  function dotLevel(key) {
+    for (let i = 0; i < DOT_LEVELS.length; i++) if (DOT_LEVELS[i].key === key) return DOT_LEVELS[i];
+    return DOT_LEVELS[1];
+  }
+
+  // Raster geometry constants (offscreen, per letter). A shared baseline and
+  // height keep every letter's y-coordinates comparable so the word sits on
+  // one line with ascenders/descenders in the right place.
+  const DOT_FS = 240, DOT_BASELINE = 270, DOT_CANVAS_H = 390, DOT_TRACKING = 0.14;
+  const DOT_MIN = 5, DOT_MAX = 22;
+  // 8-neighbourhood in clockwise order (E, SE, S, SW, W, NW, N, NE).
+  const DOT_N8 = [[1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]];
+  function dotDirIndex(dx, dy) { for (let i = 0; i < 8; i++) if (DOT_N8[i][0] === dx && DOT_N8[i][1] === dy) return i; return 4; }
+
+  // Rasterize one character to a black-on-white bitmap and return an ink mask.
+  function dotRasterChar(ch) {
+    const probe = document.createElement("canvas").getContext("2d");
+    probe.font = "700 " + DOT_FS + "px " + FONT;
+    const adv = Math.max(DOT_FS * 0.28, probe.measureText(ch).width);
+    const padX = Math.round(DOT_FS * 0.22);
+    const w = Math.round(adv + padX * 2), h = DOT_CANVAS_H;
+    const canvas = document.createElement("canvas");
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#000000";
+    ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+    ctx.font = "700 " + DOT_FS + "px " + FONT;
+    ctx.fillText(ch, padX, DOT_BASELINE);
+    const data = ctx.getImageData(0, 0, w, h).data;
+    const mask = new Uint8Array(w * h);
+    for (let i = 0; i < w * h; i++) mask[i] = data[i * 4] < 128 ? 1 : 0;
+    return { mask: mask, w: w, h: h, adv: adv };
+  }
+
+  // Label 8-connected ink components (flood fill). Returns labels + per-component
+  // area, bbox and centroid.
+  function dotComponents(mask, w, h) {
+    const labels = new Int32Array(w * h);
+    const comps = [];
+    const stack = [];
+    let cur = 0;
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      const p = y * w + x;
+      if (!mask[p] || labels[p]) continue;
+      cur++;
+      let minx = x, miny = y, maxx = x, maxy = y, area = 0, sx = 0, sy = 0;
+      stack.length = 0; stack.push(p); labels[p] = cur;
+      while (stack.length) {
+        const q = stack.pop();
+        const qx = q % w, qy = (q / w) | 0;
+        area++; sx += qx; sy += qy;
+        if (qx < minx) minx = qx; if (qx > maxx) maxx = qx;
+        if (qy < miny) miny = qy; if (qy > maxy) maxy = qy;
+        for (let k = 0; k < 8; k++) {
+          const nx = qx + DOT_N8[k][0], ny = qy + DOT_N8[k][1];
+          if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
+          const np = ny * w + nx;
+          if (mask[np] && !labels[np]) { labels[np] = cur; stack.push(np); }
+        }
+      }
+      comps.push({ label: cur, area: area, minx: minx, miny: miny, maxx: maxx, maxy: maxy, cx: sx / area, cy: sy / area });
+    }
+    return { labels: labels, comps: comps };
+  }
+
+  // Moore-neighbor boundary tracing (clockwise) with Jacob's stopping
+  // criterion. Returns the ordered outer-boundary pixels of one component.
+  function dotMooreTrace(labels, w, h, label, startX, startY) {
+    const ink = (x, y) => x >= 0 && y >= 0 && x < w && y < h && labels[y * w + x] === label;
+    const boundary = [];
+    let px = startX, py = startY, bx = startX - 1, by = startY;
+    const first = [px, py];
+    let second = null;
+    boundary.push([px, py]);
+    const maxG = w * h * 8;
+    for (let guard = 0; guard < maxG; guard++) {
+      const startIdx = dotDirIndex(bx - px, by - py);
+      let foundIdx = -1;
+      for (let k = 1; k <= 8; k++) {
+        const ni = (startIdx + k) % 8;
+        if (ink(px + DOT_N8[ni][0], py + DOT_N8[ni][1])) { foundIdx = ni; break; }
+      }
+      if (foundIdx === -1) break; // isolated pixel
+      const prevIdx = (foundIdx + 7) % 8;
+      bx = px + DOT_N8[prevIdx][0]; by = py + DOT_N8[prevIdx][1];
+      px = px + DOT_N8[foundIdx][0]; py = py + DOT_N8[foundIdx][1];
+      if (px === first[0] && py === first[1]) {
+        if (second === null) break;
+        const s2 = dotDirIndex(bx - px, by - py);
+        let nxt = null;
+        for (let k = 1; k <= 8; k++) {
+          const ni = (s2 + k) % 8, ax = px + DOT_N8[ni][0], ay = py + DOT_N8[ni][1];
+          if (ink(ax, ay)) { nxt = [ax, ay]; break; }
+        }
+        if (nxt && nxt[0] === second[0] && nxt[1] === second[1]) break;
+      }
+      if (second === null) second = [px, py];
+      boundary.push([px, py]);
+    }
+    return boundary;
+  }
+
+  // Resample a closed polyline into n points evenly spaced by arc length.
+  function dotResampleClosed(pts, n) {
+    const m = pts.length;
+    if (m < 2 || n < 1) return pts.slice(0, Math.max(1, n));
+    const cum = [0];
+    for (let i = 1; i <= m; i++) {
+      const a = pts[(i - 1) % m], b = pts[i % m];
+      cum.push(cum[i - 1] + Math.hypot(b[0] - a[0], b[1] - a[1]));
+    }
+    const total = cum[m] || 1;
+    const out = [];
+    for (let k = 0; k < n; k++) {
+      const t = (k / n) * total;
+      let lo = 0, hi = m;
+      while (lo < hi) { const mid = (lo + hi) >> 1; if (cum[mid] <= t) lo = mid + 1; else hi = mid; }
+      const i = Math.max(1, lo) - 1;
+      const segLen = (cum[i + 1] - cum[i]) || 1;
+      const f = (t - cum[i]) / segLen;
+      const a = pts[i % m], b = pts[(i + 1) % m];
+      out.push([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]);
+    }
+    return out;
+  }
+
+  // Trace a whole word into per-letter dot sets laid out on a shared baseline.
+  // Returns { letters:[{mainPts,accentPts,cx,cy}], bbox } in raster units.
+  function dotWordGeometry(text, total) {
+    const chars = [...String(text)];
+    const raw = [];
+    let xoff = 0;
+    chars.forEach((ch) => {
+      if (ch === " ") { xoff += DOT_FS * 0.34; return; }
+      const R = dotRasterChar(ch);
+      const cc = dotComponents(R.mask, R.w, R.h);
+      const minArea = Math.max(24, R.w * R.h * 0.00035);
+      const kept = cc.comps.filter((c) => c.area >= minArea).sort((a, b) => b.area - a.area);
+      if (!kept.length) { xoff += R.adv * (1 + DOT_TRACKING); return; }
+      const main = kept[0];
+      let sx = -1, sy = -1;
+      for (let y = main.miny; y <= main.maxy && sy < 0; y++) {
+        for (let x = main.minx; x <= main.maxx; x++) { if (cc.labels[y * R.w + x] === main.label) { sx = x; sy = y; break; } }
+      }
+      const boundary = dotMooreTrace(cc.labels, R.w, R.h, main.label, sx, sy);
+      let perim = 0;
+      for (let i = 0; i < boundary.length; i++) {
+        const a = boundary[i], b = boundary[(i + 1) % boundary.length];
+        perim += Math.hypot(b[0] - a[0], b[1] - a[1]);
+      }
+      raw.push({ boundary: boundary, perim: perim, xoff: xoff, main: main, accents: kept.slice(1) });
+      xoff += R.adv * (1 + DOT_TRACKING);
+    });
+    const totalPerim = raw.reduce((s, r) => s + r.perim, 0) || 1;
+    const letters = [];
+    raw.forEach((r) => {
+      let n = Math.round((r.perim / totalPerim) * total);
+      n = Math.max(DOT_MIN, Math.min(DOT_MAX, n));
+      const mainPts = dotResampleClosed(r.boundary, n).map((p) => [p[0] + r.xoff, p[1]]);
+      const accentPts = r.accents.map((c) => [c.cx + r.xoff, c.cy]);
+      letters.push({ mainPts: mainPts, accentPts: accentPts, cx: r.main.cx + r.xoff, cy: r.main.cy });
+    });
+    let minx = 1e9, miny = 1e9, maxx = -1e9, maxy = -1e9;
+    letters.forEach((L) => {
+      L.mainPts.concat(L.accentPts).forEach((p) => {
+        if (p[0] < minx) minx = p[0]; if (p[0] > maxx) maxx = p[0];
+        if (p[1] < miny) miny = p[1]; if (p[1] > maxy) maxy = p[1];
+      });
+    });
+    if (!letters.length) return { letters: letters, bbox: { minx: 0, miny: 0, maxx: 1, maxy: 1 } };
+    return { letters: letters, bbox: { minx: minx, miny: miny, maxx: maxx, maxy: maxy } };
+  }
+
+  // Fit the traced geometry into a target box and produce final, output-ready
+  // dots (with numbers) + closed hint loops. Consumed by both SVG and Canvas
+  // so the preview, print and PNG stay identical.
+  function layoutDotWord(text, level, box) {
+    const geom = dotWordGeometry(text, dotLevel(level).total);
+    const b = geom.bbox;
+    const bw = Math.max(1, b.maxx - b.minx), bh = Math.max(1, b.maxy - b.miny);
+    const scale = Math.min(box.w / bw, box.h / bh);
+    const ox = box.x + (box.w - bw * scale) / 2 - b.minx * scale;
+    const oy = box.y + (box.h - bh * scale) / 2 - b.miny * scale;
+    const tx = (p) => [p[0] * scale + ox, p[1] * scale + oy];
+    const letters = [];
+    const all = [];
+    geom.letters.forEach((L) => {
+      const cpt = tx([L.cx, L.cy]);
+      const loop = L.mainPts.map(tx);
+      const dots = [];
+      let num = 1;
+      loop.forEach((p) => { dots.push({ x: p[0], y: p[1], label: num++, accent: false, cx: cpt[0], cy: cpt[1] }); all.push(p); });
+      L.accentPts.map(tx).forEach((p) => { dots.push({ x: p[0], y: p[1], label: num++, accent: true, cx: cpt[0], cy: cpt[1] }); all.push(p); });
+      letters.push({ loop: loop, dots: dots });
+    });
+    // Adaptive dot / number size from the MEDIAN nearest-neighbour distance
+    // (median, not min, so a single coincident pair doesn't shrink everything).
+    const nn = [];
+    for (let i = 0; i < all.length; i++) {
+      let best = 1e9;
+      for (let j = 0; j < all.length; j++) {
+        if (i === j) continue;
+        const d = Math.hypot(all[i][0] - all[j][0], all[i][1] - all[j][1]);
+        if (d < best) best = d;
+      }
+      if (best < 1e8) nn.push(best);
+    }
+    nn.sort((a, b2) => a - b2);
+    const med = nn.length ? nn[Math.floor(nn.length / 2)] : 40;
+    const dotR = Math.max(3.2, Math.min(11, med * 0.17));
+    const numF = Math.max(12, Math.min(30, med * 0.6));
+    return { letters: letters, dotR: dotR, numF: numF };
+  }
+
+  // Offset a number label radially outward from its letter centroid so it sits
+  // clear of the outline where possible.
+  function dotLabelPos(dot, dotR, numF) {
+    let vx = dot.x - dot.cx, vy = dot.y - dot.cy;
+    const vl = Math.hypot(vx, vy) || 1; vx /= vl; vy /= vl;
+    const off = dotR + numF * 0.62;
+    return { x: dot.x + vx * off, y: dot.y + vy * off + numF * 0.34 };
+  }
+
+  // Render the dot-to-dot word into an SVG within the given box.
+  function addDotWordSVG(svg, text, level, box, hint) {
+    const lay = layoutDotWord(text, level, box);
+    lay.letters.forEach((L) => {
+      if (hint && L.loop.length > 1) {
+        svgMake("polygon", {
+          points: L.loop.map((p) => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" "),
+          fill: "none", stroke: "#c7bdf0", "stroke-width": 2.2, "stroke-dasharray": "5 7", "stroke-linejoin": "round"
+        }, svg);
+      }
+      L.dots.forEach((d) => {
+        svgMake("circle", { cx: d.x.toFixed(1), cy: d.y.toFixed(1), r: (d.accent ? lay.dotR * 0.9 : lay.dotR).toFixed(1), fill: INK }, svg);
+        const lp = dotLabelPos(d, lay.dotR, lay.numF);
+        const t = svgMake("text", {
+          x: lp.x.toFixed(1), y: lp.y.toFixed(1), "text-anchor": "middle",
+          "font-family": FONT, "font-weight": 700, "font-size": lay.numF.toFixed(1),
+          fill: INK, stroke: "#ffffff", "stroke-width": (lay.numF * 0.16).toFixed(1), "paint-order": "stroke"
+        }, svg);
+        t.textContent = String(d.label);
+      });
+    });
+  }
+
+  // Render the dot-to-dot word onto a Canvas within the given box.
+  function drawDotWordCanvas(ctx, text, level, box, hint) {
+    const lay = layoutDotWord(text, level, box);
+    ctx.save();
+    ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
+    lay.letters.forEach((L) => {
+      if (hint && L.loop.length > 1) {
+        ctx.beginPath();
+        L.loop.forEach((p, i) => { if (i === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); });
+        ctx.closePath();
+        ctx.setLineDash([5, 7]); ctx.lineWidth = 2.2; ctx.strokeStyle = "#c7bdf0"; ctx.stroke();
+        ctx.setLineDash([]);
+      }
+      L.dots.forEach((d) => {
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.accent ? lay.dotR * 0.9 : lay.dotR, 0, Math.PI * 2);
+        ctx.fillStyle = INK; ctx.fill();
+        const lp = dotLabelPos(d, lay.dotR, lay.numF);
+        ctx.font = "700 " + lay.numF.toFixed(1) + "px " + FONT;
+        ctx.lineWidth = lay.numF * 0.16; ctx.strokeStyle = "#ffffff"; ctx.lineJoin = "round";
+        ctx.strokeText(String(d.label), lp.x, lp.y);
+        ctx.fillStyle = INK; ctx.fillText(String(d.label), lp.x, lp.y);
+      });
+    });
+    ctx.restore();
+  }
+
+  function designModeIsDots() { return designState.mode === "dots"; }
+
   // The whole designed sheet as one portrait SVG (1000x1400).
   function designSheetSVG() {
     const text = designText();
@@ -1122,25 +1448,34 @@
     }
 
     const availW = W - M * 2;
-    const len = Math.max(1, [...text].length);
-    const fs = Math.max(110, Math.min(360, Math.round(availW * 1.3 / len)));
-    const cy = heading ? 740 : 700;
-    const fontAttrs = {
-      x: W / 2, y: cy, "text-anchor": "middle", "dominant-baseline": "central",
-      "font-family": FONT, "font-weight": 700, "font-size": fs, "stroke-linejoin": "round"
-    };
-    // Guarantee the word fits the width; only compress when it would overflow.
-    if (len * fs * 0.66 > availW) { fontAttrs.textLength = availW; fontAttrs.lengthAdjust = "spacingAndGlyphs"; }
 
-    // Interior: plain white (open to color), or a tiled pattern painted as
-    // the glyph fill. Plain keeps stroke under fill (thin clean edge); a
-    // pattern draws stroke on top so the letter boundary stays crisp.
-    const fillRef = (fill !== "plain") ? addFillPattern(defs, fill, uid) : "#ffffff";
-    const outline = svgMake("text", Object.assign({}, fontAttrs, {
-      fill: fillRef, stroke: INK, "stroke-width": Math.max(4, STROKE),
-      "paint-order": (fill === "plain") ? "stroke" : ""
-    }), svg);
-    outline.textContent = text;
+    if (designModeIsDots()) {
+      // Dot-to-dot: numbered dots along each letter's outline (uppercased for
+      // iconic silhouettes). Sits in the same central band the outline would.
+      const cy = heading ? 720 : 690;
+      const half = Math.min(cy - (heading ? 250 : 200), (footer ? H - 250 : H - 150) - cy);
+      addDotWordSVG(svg, String(text).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: half * 2 }, designState.hint);
+    } else {
+      const len = Math.max(1, [...text].length);
+      const fs = Math.max(110, Math.min(360, Math.round(availW * 1.3 / len)));
+      const cy = heading ? 740 : 700;
+      const fontAttrs = {
+        x: W / 2, y: cy, "text-anchor": "middle", "dominant-baseline": "central",
+        "font-family": FONT, "font-weight": 700, "font-size": fs, "stroke-linejoin": "round"
+      };
+      // Guarantee the word fits the width; only compress when it would overflow.
+      if (len * fs * 0.66 > availW) { fontAttrs.textLength = availW; fontAttrs.lengthAdjust = "spacingAndGlyphs"; }
+
+      // Interior: plain white (open to color), or a tiled pattern painted as
+      // the glyph fill. Plain keeps stroke under fill (thin clean edge); a
+      // pattern draws stroke on top so the letter boundary stays crisp.
+      const fillRef = (fill !== "plain") ? addFillPattern(defs, fill, uid) : "#ffffff";
+      const outline = svgMake("text", Object.assign({}, fontAttrs, {
+        fill: fillRef, stroke: INK, "stroke-width": Math.max(4, STROKE),
+        "paint-order": (fill === "plain") ? "stroke" : ""
+      }), svg);
+      outline.textContent = text;
+    }
 
     if (footer) addFooter(svg, H - 150);
 
@@ -1200,17 +1535,25 @@
         }
       }
 
-      let cy = 700;
-      if (heading) { ctx.font = "700 62px " + FONT; ctx.fillStyle = INK; ctx.fillText(heading, W / 2, 168); cy = 740; }
+      const hasHeading = !!heading;
+      if (hasHeading) { ctx.font = "700 62px " + FONT; ctx.fillStyle = INK; ctx.fillText(heading, W / 2, 168); }
 
-      const len = Math.max(1, [...text].length);
-      let fs = Math.max(110, Math.min(360, Math.round((W - 140) * 1.3 / len)));
-      ctx.font = "700 " + fs + "px " + FONT;
-      const measured = ctx.measureText(text).width;
-      if (measured > W - 140) { fs = Math.floor(fs * (W - 140) / measured); ctx.font = "700 " + fs + "px " + FONT; }
-      ctx.lineJoin = "round";
-      ctx.fillStyle = "#ffffff"; ctx.fillText(text, W / 2, cy);
-      ctx.lineWidth = Math.max(6, STROKE); ctx.strokeStyle = INK; ctx.strokeText(text, W / 2, cy);
+      if (designModeIsDots()) {
+        const footerOn = designFooterOn();
+        const cyD = hasHeading ? 720 : 690;
+        const half = Math.min(cyD - (hasHeading ? 250 : 200), (footerOn ? H - 250 : H - 150) - cyD);
+        drawDotWordCanvas(ctx, String(text).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: half * 2 }, designState.hint);
+      } else {
+        const cy = hasHeading ? 740 : 700;
+        const len = Math.max(1, [...text].length);
+        let fs = Math.max(110, Math.min(360, Math.round((W - 140) * 1.3 / len)));
+        ctx.font = "700 " + fs + "px " + FONT;
+        const measured = ctx.measureText(text).width;
+        if (measured > W - 140) { fs = Math.floor(fs * (W - 140) / measured); ctx.font = "700 " + fs + "px " + FONT; }
+        ctx.lineJoin = "round";
+        ctx.fillStyle = "#ffffff"; ctx.fillText(text, W / 2, cy);
+        ctx.lineWidth = Math.max(6, STROKE); ctx.strokeStyle = INK; ctx.strokeText(text, W / 2, cy);
+      }
 
       if (designFooterOn()) {
         ctx.textAlign = "left"; ctx.font = "600 30px " + FONT; ctx.fillStyle = INK;
@@ -1251,6 +1594,37 @@
     });
   }
 
+  // Wire a plain label-only button radiogroup (.pt-choice) that drives a
+  // designState field. `after` runs after the state changes, before re-render.
+  function wireChoiceGroup(group, field, after) {
+    if (!group) return;
+    const buttons = $$(".pt-choice", group);
+    const preset = buttons.filter((b) => b.classList.contains("is-active"))[0] || buttons[0];
+    if (preset) designState[field] = preset.dataset.value;
+    buttons.forEach((b) => {
+      b.setAttribute("aria-checked", b === preset ? "true" : "false");
+      b.classList.toggle("is-active", b === preset);
+      b.addEventListener("click", () => {
+        designState[field] = b.dataset.value;
+        buttons.forEach((o) => {
+          const on = o === b;
+          o.classList.toggle("is-active", on);
+          o.setAttribute("aria-checked", on ? "true" : "false");
+        });
+        if (after) after();
+        renderDesignPreview();
+      });
+    });
+  }
+
+  // Show the dot-to-dot options and hide the (irrelevant) letter-fill picker
+  // when in dot mode, and vice-versa.
+  function syncDesignMode() {
+    const dots = designModeIsDots();
+    if (el.designDotsOptions) el.designDotsOptions.hidden = !dots;
+    if (el.designFillField) el.designFillField.hidden = dots;
+  }
+
   function buildDesigner() {
     if (!el.designInput || !el.designPreview) return;
     let timer = null;
@@ -1259,9 +1633,17 @@
     if (el.designHeading) el.designHeading.addEventListener("input", schedule);
     wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG);
     wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG);
+    // Dot-to-dot mode toggle + difficulty ladder + hint switch (all optional).
+    wireChoiceGroup(el.designModeGroup, "mode", syncDesignMode);
+    wireChoiceGroup(el.designDensityGroup, "density");
+    if (el.designHint) {
+      designState.hint = el.designHint.checked;
+      el.designHint.addEventListener("change", () => { designState.hint = el.designHint.checked; renderDesignPreview(); });
+    }
     [el.designFill, el.designBorder, el.designFooter].forEach((c) => { if (c) c.addEventListener("change", renderDesignPreview); });
     if (el.designPrint) el.designPrint.addEventListener("click", printDesign);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
+    syncDesignMode();
     renderDesignPreview();
   }
 
