@@ -220,7 +220,12 @@
               <input type="checkbox" id="pt-gen-model" checked>
               Solid model row on top
             </label>
+            <label class="pt-check" for="pt-stroke-toggle">
+              <input type="checkbox" id="pt-stroke-toggle">
+              Show stroke direction
+            </label>
           </div>
+          <p class="pt-stroke-toggle-hint">Stroke direction adds a numbered start dot and arrows to each letter, showing which way to draw it.</p>
         </div>
 
         <!-- Live preview -->
@@ -332,6 +337,7 @@
   </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
+  <script src="/js/printables/strokeDirectionData.js" defer></script>
   <script src="/js/printables/printablesEngine.js" defer></script>
 
   <!-- FAQ toggle -->
