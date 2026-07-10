@@ -293,6 +293,8 @@
       background: var(--surface, #f8f9fa);
       color: var(--text-muted, #64748b);
       transition: border-color 0.15s, color 0.15s, background 0.15s;
+      text-decoration: none;
+      text-align: center;
     }
     .mode-tab:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
     .mode-tab.active {
@@ -461,10 +463,10 @@
         <p class="hero-tagline">Turn any text into emoji — instantly, as you type. Sprinkle emoji into your words, replace them, spell in emoji letters, or decode emoji back to text. Copy and paste anywhere.</p>
 
         <div class="mode-tabs" id="modeTabs" role="tablist" aria-label="Conversion mode">
-          <button class="mode-tab active" type="button" data-mode="emojify" role="tab" aria-selected="true">✨ Emojify</button>
-          <button class="mode-tab" type="button" data-mode="replace" role="tab" aria-selected="false">🔄 Replace</button>
-          <button class="mode-tab" type="button" data-mode="letters" role="tab" aria-selected="false">🔤 Letters</button>
-          <button class="mode-tab" type="button" data-mode="decode" role="tab" aria-selected="false">↩️ Emoji → Text</button>
+          <a class="mode-tab active" href="/usecase/text-to-emoji/" data-mode="emojify" role="tab" aria-selected="true">✨ Emojify</a>
+          <a class="mode-tab" href="/usecase/text-to-emoji/?mode=replace" data-mode="replace" role="tab" aria-selected="false">🔄 Replace</a>
+          <a class="mode-tab" href="/usecase/text-to-emoji/?mode=letters" data-mode="letters" role="tab" aria-selected="false">🔤 Letters</a>
+          <a class="mode-tab" href="/usecase/text-to-emoji/?mode=decode" data-mode="decode" role="tab" aria-selected="false">↩️ Emoji → Text</a>
         </div>
         <p class="mode-hint" id="modeHint"></p>
 
@@ -534,10 +536,10 @@
       </div>
 
       <h2>Turn your name into emoji</h2>
-      <p class="tte-lead">Want a <strong>name to emoji</strong> result for a bio, gamertag, or Discord channel? Switch to <strong>🔤 Letters</strong> mode and type a name to spell it in boxed emoji letters. For example, <strong>SAM</strong> becomes <span class="tte-inline">🇸 🇦 🇲</span> and <strong>MIA</strong> becomes <span class="tte-inline">🇲 🇮 🇦</span>. <button class="tte-linkbtn" type="button" data-example="SAM" data-mode="letters">Try it →</button></p>
+      <p class="tte-lead">Want a <strong>name to emoji</strong> result for a bio, gamertag, or Discord channel? Switch to <strong>🔤 Letters</strong> mode and type a name to spell it in boxed emoji letters. For example, <strong>SAM</strong> becomes <span class="tte-inline">🇸 🇦 🇲</span> and <strong>MIA</strong> becomes <span class="tte-inline">🇲 🇮 🇦</span>. <a class="tte-linkbtn" href="/usecase/text-to-emoji/?mode=letters&amp;q=SAM" data-example="SAM" data-mode="letters">Try it →</a></p>
 
       <h2>Emoji to text: reverse the conversion</h2>
-      <p class="tte-lead">Got a string of emoji you can’t read? Paste it into <strong>↩️ Emoji → Text</strong> mode to decode emoji back into plain English words. For example, <span class="tte-inline">❤️🍕🌙</span> becomes <strong>“love pizza moon”</strong>. <button class="tte-linkbtn" type="button" data-example="❤️🍕🌙" data-mode="decode">Try it →</button></p>
+      <p class="tte-lead">Got a string of emoji you can’t read? Paste it into <strong>↩️ Emoji → Text</strong> mode to decode emoji back into plain English words. For example, <span class="tte-inline">❤️🍕🌙</span> becomes <strong>“love pizza moon”</strong>. <a class="tte-linkbtn" href="/usecase/text-to-emoji/?mode=decode&amp;q=%E2%9D%A4%EF%B8%8F%F0%9F%8D%95%F0%9F%8C%99" data-example="❤️🍕🌙" data-mode="decode">Try it →</a></p>
     </section>
 
     <!-- CTA Cards -->
@@ -1676,6 +1678,29 @@
     let currentMode = 'emojify';
     let lastBreakdown = [];
 
+    // Per-mode SEO metadata (title + description). Each mode is a distinct,
+    // self-canonicalising URL so it can be linked and indexed on its own.
+    const PATH = '/usecase/text-to-emoji/';
+    const ORIGIN = 'https://ultratextgen.com';
+    const MODE_META = {
+      emojify: {
+        title: 'Text to Emoji Converter, Emoji Letters & Emoji to Text | UltraTextGen',
+        desc: 'Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.'
+      },
+      replace: {
+        title: 'Emoji Translator — Replace Words With Emoji | UltraTextGen',
+        desc: 'Translate text to emoji by swapping each recognised word for a matching emoji. Instant, free, and copy-paste ready. No sign-up required.'
+      },
+      letters: {
+        title: 'Text to Emoji Letters — Name to Emoji Generator | UltraTextGen',
+        desc: 'Turn text and names into emoji letters. Type a name to spell it in boxed emoji letters — perfect for bios, gamertags, and Discord channel names. Free and instant.'
+      },
+      decode: {
+        title: 'Emoji to Text — Decode Emoji Back to Words | UltraTextGen',
+        desc: 'Convert emoji to text. Paste a string of emoji and decode it back into plain English words instantly — the reverse emoji translator. Free, no sign-up.'
+      }
+    };
+
     // FAQ accordion (this page only)
     (function () {
       function initFaqAccordion() {
@@ -1691,6 +1716,46 @@
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initFaqAccordion);
       else initFaqAccordion();
     })();
+
+    // ── URL <-> state ────────────────────────────────────────────────────────
+    function setMeta(sel, attr, val) { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); }
+
+    function updateHead(mode) {
+      const m = MODE_META[mode] || MODE_META.emojify;
+      document.title = m.title;
+      const canonical = ORIGIN + PATH + (mode === 'emojify' ? '' : '?mode=' + mode);
+      setMeta('link[rel="canonical"]', 'href', canonical);
+      setMeta('meta[name="description"]', 'content', m.desc);
+      setMeta('meta[property="og:title"]', 'content', m.title);
+      setMeta('meta[property="og:description"]', 'content', m.desc);
+      setMeta('meta[property="og:url"]', 'content', canonical);
+      setMeta('meta[name="twitter:title"]', 'content', m.title);
+      setMeta('meta[name="twitter:description"]', 'content', m.desc);
+    }
+
+    function parseUrl() {
+      const params = new URLSearchParams(location.search);
+      let mode = params.get('mode') || (location.hash || '').replace('#', '') || 'emojify';
+      if (!MODES[mode]) mode = 'emojify';
+      const q = params.get('q') || '';
+      return { mode, q };
+    }
+
+    function buildUrl(mode, q) {
+      const params = new URLSearchParams();
+      if (mode && mode !== 'emojify') params.set('mode', mode);
+      if (q && q.trim()) params.set('q', q);
+      const qs = params.toString();
+      return PATH + (qs ? '?' + qs : '');
+    }
+
+    function syncUrl(push) {
+      const url = buildUrl(currentMode, mainInput.value);
+      try {
+        if (push) history.pushState({ mode: currentMode }, '', url);
+        else history.replaceState({ mode: currentMode }, '', url);
+      } catch (e) { /* history unavailable (e.g. file://) — ignore */ }
+    }
 
     function render() {
       const mode = MODES[currentMode];
@@ -1709,7 +1774,9 @@
       renderBreakdown(result.breakdown);
     }
 
-    function setMode(mode) {
+    // Apply a mode to the UI (no URL write)
+    function applyMode(mode) {
+      if (!MODES[mode]) mode = 'emojify';
       currentMode = mode;
       modeHint.textContent = MODES[mode].hint;
       Array.from(modeTabs.querySelectorAll('.mode-tab')).forEach(t => {
@@ -1720,21 +1787,39 @@
       mainInput.placeholder = mode === 'decode'
         ? 'Paste emoji here to decode…'
         : (mode === 'letters' ? 'Type a name or word…' : 'Type your sentence here…');
+      updateHead(mode);
       render();
     }
 
-    // Live conversion
-    mainInput.addEventListener('input', render);
-    convertBtn.addEventListener('click', render);
+    // Switch mode from a user action → push a history entry so Back works
+    function switchMode(mode) {
+      applyMode(mode);
+      syncUrl(true);
+    }
 
+    // Live conversion
+    mainInput.addEventListener('input', () => { render(); syncUrl(false); });
+    convertBtn.addEventListener('click', () => { render(); syncUrl(false); });
+
+    // Mode tabs are anchors — intercept normal clicks, let modified clicks open a new tab
     modeTabs.addEventListener('click', (e) => {
       const tab = e.target.closest('.mode-tab');
-      if (tab) setMode(tab.dataset.mode);
+      if (!tab) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault();
+      switchMode(tab.dataset.mode);
+    });
+
+    window.addEventListener('popstate', () => {
+      const { mode, q } = parseUrl();
+      mainInput.value = q;
+      applyMode(mode);
     });
 
     clearBtn.addEventListener('click', () => {
       mainInput.value = '';
       render();
+      syncUrl(false);
       breakdownSection.classList.remove('open');
       breakdownToggle.classList.remove('open');
       breakdownToggle.setAttribute('aria-expanded', 'false');
@@ -1784,8 +1869,8 @@
     let surpriseIdx = 0;
     function loadPhrase(text) {
       mainInput.value = text;
-      if (currentMode === 'decode') setMode('emojify');
-      else render();
+      applyMode('emojify');
+      syncUrl(true);
       mainInput.focus();
     }
     (function initChips() {
@@ -1808,16 +1893,19 @@
       phraseChips.appendChild(surprise);
     })();
 
-    // ── Example cards & "Try it" buttons ──────────────────────────────────────
+    // ── Example cards & "Try it" links ────────────────────────────────────────
     (function initExamples() {
-      const nodes = document.querySelectorAll('[data-example]');
-      nodes.forEach(node => {
-        node.addEventListener('click', () => {
+      document.querySelectorAll('[data-example]').forEach(node => {
+        node.addEventListener('click', (e) => {
+          if (node.tagName === 'A') {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
+          }
           const text = node.getAttribute('data-example');
           const wantMode = node.getAttribute('data-mode') || 'emojify';
-          if (wantMode !== currentMode) setMode(wantMode);
           mainInput.value = text;
-          render();
+          applyMode(wantMode);
+          syncUrl(true);
           const card = document.querySelector('.hero-card');
           if (card && card.scrollIntoView) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
           mainInput.focus();
@@ -1825,9 +1913,13 @@
       });
     })();
 
-    // Init
-    modeHint.textContent = MODES.emojify.hint;
-    render();
+    // Init from URL (?mode=…&q=…), then normalise the address bar
+    (function init() {
+      const { mode, q } = parseUrl();
+      if (q) mainInput.value = q;
+      applyMode(mode);
+      syncUrl(false);
+    })();
   </script>
 <script src="/footer.js" defer></script>
 </body>
