@@ -186,6 +186,11 @@ const PRINTABLE_PAGES = {
     slug: 'name-puzzle-maker',
     title: 'Name Puzzle Maker',
     description: 'Type any name to make a free printable name puzzle — each letter as a big outline piece with dashed cut lines, plus an optional shape-frame border. Print or PNG, no sign-up.'
+  },
+  'dot-to-dot-alphabet': {
+    slug: 'dot-to-dot-alphabet',
+    title: 'Dot-to-Dot Alphabet',
+    description: 'Free printable dot-to-dot letters A–Z — a numbered connect-the-dots puzzle for every letter, plus a page for every letter and a one-click print of the whole alphabet.'
   }
 };
 

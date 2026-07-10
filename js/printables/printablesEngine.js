@@ -13,11 +13,16 @@
  *   - a ruled practice sheet (model + trace rows)
  *   - a personalized name / word tracing worksheet
  *
- * Two render modes:
+ * Three render modes:
  *   - "outline": white-fill + rounded dark-stroke shapes (bubble, block) —
  *     traceable / colorable. Needs no font registry.
  *   - "glyph":   Unicode style glyphs from the registry (cursive) via
  *     window.UltraTextGenRender. Copy-paste variants are available in this mode.
+ *   - "dots":    a single character as a numbered dot-to-dot (dot-to-dot-alphabet),
+ *     via singleDotSVG()/addDotWordSVG() — the same tracer the coloring-page-maker
+ *     designer's dot-to-dot mode uses, locked to CFG.dotDifficulty/CFG.dotHint
+ *     instead of exposing a live picker (see the "Single-character dot-to-dot"
+ *     comment near singleDotSVG for why the difficulty picker is skipped).
  *
  * Self-contained IIFE. Document-level .copy-btn / .glyph-copy clipboard
  * delegation from the shared script.js is reused via the data-text contract;
@@ -255,7 +260,8 @@
     return svg;
   }
 
-  // The big figure for the detail panel: outline SVG or a script-glyph pair.
+  // The big figure for the detail panel: outline SVG, a script-glyph pair, or
+  // (RENDER === "dots") a single-character numbered dot-to-dot.
   function figureNode(ch) {
     if (RENDER === "glyph") {
       const p = document.createElement("p");
@@ -265,6 +271,7 @@
       p.textContent = /[0-9]/.test(ch) ? u : (u + " " + l);
       return p;
     }
+    if (RENDER === "dots") return singleDotSVG(ch);
     return outlineSVG(ch);
   }
 
@@ -450,6 +457,14 @@
       const ctx = canvas.getContext("2d");
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, size, size);
+      if (RENDER === "dots") {
+        // Same generous ~9% margin as singleDotSVG so number labels near the
+        // box edges (e.g. a wide M/W) don't clip against the canvas edge.
+        const pad = Math.round(size * 0.0875);
+        drawDotWordCanvas(ctx, ch.toUpperCase(), CFG.dotDifficulty || "medium", { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false);
+        downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png");
+        return;
+      }
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.lineJoin = "round";
@@ -567,7 +582,7 @@
     printBtn.addEventListener("click", () => {
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
-      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : outlineSVG(ch));
+      holder.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
       printWrap(cap(NOUN) + " " + charLabel(ch), holder);
     });
     const pngBtn = document.createElement("button");
@@ -710,7 +725,7 @@
       cell.type = "button";
       cell.className = "bubble-alpha-cell";
       cell.setAttribute("aria-label", cap(NOUN) + " " + charLabel(ch) + " — open");
-      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : outlineSVG(ch, { small: true }));
+      cell.appendChild(RENDER === "glyph" ? smallGlyphCell(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: true }) : outlineSVG(ch, { small: true })));
       cell.addEventListener("click", () => {
         selectChar(ch);
         if (el.panel) el.panel.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -721,7 +736,7 @@
       el.alphaPrint.addEventListener("click", () => {
         const sheet = document.createElement("div");
         sheet.className = "bubble-print-sheet";
-        CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : outlineSVG(ch, { small: true })));
+        CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
         printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
       });
     }
@@ -1585,6 +1600,44 @@
       });
     });
     ctx.restore();
+  }
+
+  /* ---------------------------------------------------------------
+     Single-character dot-to-dot (RENDER === "dots")
+     ---------------------------------------------------------------
+     Static per-letter pages (e.g. /printables/dot-to-dot-alphabet/letter-a/)
+     reuse the exact same addDotWordSVG/drawDotWordCanvas primitives the
+     coloring-page-maker designer uses above — a single letter is just a
+     1-character "word". No second tracer, no duplicated geometry.
+
+     Unlike the designer (which lets a visitor pick Easy/Medium/Hard/Expert
+     for an arbitrary-length name), a static single-letter page locks the
+     difficulty via CFG.dotDifficulty (defaults to "medium") and skips the
+     picker entirely. This isn't just a UI simplification: dotWordGeometry's
+     per-letter dot count is clamped to DOT_MAX (22) before the difficulty
+     total is ever applied, and every level's whole-word budget (26/42/60/84)
+     already exceeds 22 for a single character — so for exactly ONE letter,
+     every difficulty level renders an identical dot count. Exposing a picker
+     here would change nothing visible; it only matters once a name/word has
+     enough letters to spread that budget thin, which is what the
+     coloring-page-maker generator is for. CFG.dotHint (defaults on) mirrors
+     the designer's "Show faint guide lines" default for this same audience.
+     --------------------------------------------------------------- */
+  // viewBox is 4x outlineSVG's 200x240 (same 5:6 aspect; on-screen size is
+  // unchanged since CSS scales the SVG to width:100%). dotR/numF are clamped
+  // to an ABSOLUTE unit range (see layoutDotWord), so a small viewBox makes
+  // the numbers huge relative to the box and clips their labels at the
+  // edges for wide letters (M, W); a bigger internal coordinate space keeps
+  // the same clamp comfortably inside a generous margin instead.
+  function singleDotSVG(ch, opts) {
+    const o = opts || {};
+    const svg = document.createElementNS(SVGNS, "svg");
+    svg.setAttribute("viewBox", "0 0 800 960");
+    svg.setAttribute("class", "bubble-outline" + (o.small ? " is-small" : ""));
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "dot to dot " + charLabel(ch));
+    addDotWordSVG(svg, ch.toUpperCase(), CFG.dotDifficulty || "medium", { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false);
+    return svg;
   }
 
   function designModeIsDots() { return designState.mode === "dots"; }
