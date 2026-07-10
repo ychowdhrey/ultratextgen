@@ -1,0 +1,186 @@
+{
+  "slug": "san-valentin",
+  "language": "es",
+  "event_name": "San Valentín",
+  "aliases": ["Día de los Enamorados", "Día del Amor y la Amistad"],
+
+  "title": "Generador de Fuentes, Símbolos y Kaomoji para San Valentín | UltraTextGen",
+  "meta_description": "Estiliza tu mensaje de San Valentín en vivo, copia corazones, rosas y besos en emoji, kaomoji, arte ASCII original y frases listas como Feliz San Valentín — toca para transformarlas al instante.",
+
+  "hero_h1": "Generador de Texto y Símbolos para San Valentín",
+  "hero_tagline": "Escribe un nombre o mensaje y transfórmalo en fuentes cursivas elegantes; luego copia corazones, rosas, besos, kaomoji y arte ASCII, o toca una frase lista para estilizarla al instante.",
+
+  "intro": "San Valentín es la fecha romántica más importante del año: tarjetas, mensajes y publicaciones que giran en torno a corazones, rosas y un puñado de frases que todos usamos tarde o temprano (Feliz San Valentín, Te quiero, Eres mi persona favorita). Esta página reúne todo lo necesario para darle estilo a ese mensaje: fuentes cursivas y elegantes que puedes previsualizar con tu propio texto, los emojis de corazones y rosas que la gente realmente comparte, kaomoji para un mensaje coqueto, algunas piezas de arte ASCII originales hechas a mano, y un banco de frases listas que se transforman al instante con solo tocarlas.",
+
+  "date_window": "cada año el 14 de febrero",
+
+  "sample_phrase": "Feliz San Valentín",
+
+  "canonical": "https://ultratextgen.com/es/events/san-valentin/",
+
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/valentines-day/",
+    "es": "https://ultratextgen.com/es/events/san-valentin/",
+    "x_default": "es"
+  },
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Script Sparkle",
+      "Ultra Cute Script",
+      "Ultra Italic Serif",
+      "Ultra Bold Italic Serif",
+      "Ultra Small Caps",
+      "Ultra Cute Bubble"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Corazones, Rosas y Besos",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💕", "💗", "💖", "💘", "🌹", "💌", "💋"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(｡♥‿♥｡)", "label": "Ojos de Corazón" },
+    { "text": "(♡˃͈ ᵕ ˂͈♡)", "label": "Enamorado Sonrojado" },
+    { "text": "♡＾▽＾♡", "label": "Amor Alegre" },
+    { "text": "(´ ω `♡)", "label": "Sonrisa Dulce" },
+    { "text": "(´♡‿♡`)", "label": "Adoración" },
+    { "text": "( ˘ ³˘)♥", "label": "Beso" },
+    { "text": "(づ ◕‿◕ )づ", "label": "Abrazo Cálido" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Corazón",
+        "art": " __    __\n/  \\  /  \\\n\\   \\/   /\n \\      /\n  \\    /\n   \\  /\n    \\/"
+      },
+      {
+        "label": "Dos Corazones",
+        "art": " __  __     __  __\n/  \\/  \\   /  \\/  \\\n\\      /   \\      /\n \\    /     \\    /\n  \\  /       \\  /\n   \\/         \\/"
+      },
+      {
+        "label": "Rosa",
+        "art": "     @\n    /=\\\n   |   |\n     |\n   --+--\n     |\n    /  \\"
+      },
+      {
+        "label": "Flecha de Cupido",
+        "art": "        __    __\n       /  \\  /  \\\n======>\\   \\/   /======>\n        \\      /\n         \\    /\n          \\  /\n           \\/"
+      },
+      {
+        "label": "Carta de Amor",
+        "art": " _________________\n|\\               /|\n| \\             / |\n|  \\    <3     /  |\n|   \\         /   |\n|    \\       /    |\n|     \\     /     |\n|______\\___/______|"
+      },
+      {
+        "label": "Marca de Beso",
+        "art": "  ,-\"\".,-\"\".\n ( .. )( .. )\n  `-..-'`-..-'\n     `.__.'"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Feliz San Valentín",
+      "native_script": "Feliz San Valentín",
+      "romanization": "Feliz San Valentín",
+      "translation": "El saludo universal — funciona en cualquier tarjeta, mensaje o historia.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Feliz Día del Amor y la Amistad",
+      "native_script": "Feliz Día del Amor y la Amistad",
+      "romanization": "Feliz Día del Amor y la Amistad",
+      "translation": "El saludo preferido en México y buena parte de Latinoamérica.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Te quiero",
+      "native_script": "Te quiero",
+      "romanization": "Te quiero",
+      "translation": "La declaración clásica y cercana — sirve para pareja, familia o amigos íntimos.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Te amo",
+      "native_script": "Te amo",
+      "romanization": "Te amo",
+      "translation": "Más intensa que 'te quiero' — pensada para una pareja de mucho tiempo.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Eres mi persona favorita",
+      "native_script": "Eres mi persona favorita",
+      "romanization": "Eres mi persona favorita",
+      "translation": "Una línea moderna y cálida, perfecta para una pareja o un mejor amigo.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Mi corazón es tuyo",
+      "native_script": "Mi corazón es tuyo",
+      "romanization": "Mi corazón es tuyo",
+      "translation": "Una frase poética para una tarjeta, una carta de amor o un mensaje nocturno.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "¿Quieres ser mi Valentín?",
+      "native_script": "¿Quieres ser mi Valentín?",
+      "romanization": "¿Quieres ser mi Valentín?",
+      "translation": "La pregunta juguetona y algo nerviosa — combina bien con una rosa o un corazón.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Contigo quiero estar siempre",
+      "native_script": "Contigo quiero estar siempre",
+      "romanization": "Contigo quiero estar siempre",
+      "translation": "Una promesa de largo plazo, ideal para cerrar una tarjeta o una carta.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Con todo mi corazón",
+      "native_script": "Con todo mi corazón",
+      "romanization": "Con todo mi corazón",
+      "translation": "El cierre clásico para el final de una tarjeta o un mensaje.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "que-escribir-en-una-tarjeta-de-san-valentin",
+
+  "related": [
+    {
+      "href": "/es/simbolos-de-corazon/",
+      "title": "Colección de Símbolos de Corazón",
+      "desc": "Explora y copia emojis de corazón, caracteres Unicode de corazón y símbolos románticos en todos los colores y estilos."
+    },
+    {
+      "href": "/library/love-kaomoji/",
+      "title": "Kaomoji de Amor y Corazones",
+      "desc": "Una biblioteca más amplia de kaomoji de amor y corazones — caritas japonesas para el cariño, los besos, los abrazos y los enamoramientos."
+    },
+    {
+      "href": "/library/heart-ascii-art/",
+      "title": "Arte ASCII de Corazones",
+      "desc": "Más arte ASCII de corazones original, desde un pequeño <3 de una línea hasta corazones grandes, sólidos o con contorno."
+    },
+    {
+      "href": "/es/letra-cursiva/",
+      "title": "Letra Cursiva",
+      "desc": "La familia completa de fuentes cursivas para tarjetas, mensajes y firmas elegantes."
+    },
+    {
+      "href": "/library/kiss-kaomoji/",
+      "title": "Kaomoji de Besos",
+      "desc": "Caritas de besos para un mensaje coqueto o una dedicatoria de San Valentín."
+    }
+  ]
+}
