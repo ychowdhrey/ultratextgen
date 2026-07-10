@@ -780,9 +780,14 @@
       return null;
     }
 
-    // Split a token into leading punct / core word / trailing punct
+    // Split a token into leading punct / core word / trailing punct.
+    // Unicode-aware: the "core" keeps letters (\p{L}), numbers (\p{N}) and
+    // combining marks (\p{M}, e.g. Devanagari matras, Arabic diacritics) so
+    // non-Latin and accented words (café, süß, قطة, पिज़्ज़ा) resolve, while
+    // surrounding punctuation is still stripped. ASCII English is unchanged.
+    const TOKEN_RE = /^([^\p{L}\p{N}\p{M}]*)([\p{L}\p{N}\p{M}'’-]*?)([^\p{L}\p{N}\p{M}]*)$/u;
     function splitToken(tok) {
-      const m = tok.match(/^([^A-Za-z0-9]*)([A-Za-z0-9'’-]*?)([^A-Za-z0-9]*)$/);
+      const m = tok.match(TOKEN_RE);
       if (!m) return { lead: '', core: tok, trail: '' };
       return { lead: m[1], core: m[2], trail: m[3] };
     }
