@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gfontsand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvfontsand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowfontsand" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsfontsand" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsfontsand)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowfontsand)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvfontsand)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <g transform="translate(50 46)">
+      <rect width="260" height="50" rx="25" fill="url(#gfontsand)"/>
+      <text x="24" y="33" font-family="Georgia, Liberation Sans, DejaVu Sans, sans-serif" font-size="22" font-style="italic"
+            font-weight="700" fill="#fff">&#119990;&#119942;&#119938;&#119955;&#119940;&#119945;</text>
+    </g>
+        <g transform="translate(50 116)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">Display</text>
+        </g>
+        <g transform="translate(254 116)">
+          <rect width="42" height="42" rx="12" fill="url(#gfontsand)" stroke="none"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#fff" text-anchor="middle">✓</text>
+        </g>
+        <g transform="translate(50 170)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">Google</text>
+        </g>
+        <g transform="translate(254 170)">
+          <rect width="42" height="42" rx="12" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#64748b" text-anchor="middle">✕</text>
+        </g>
+        <g transform="translate(50 224)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">Hashtag</text>
+        </g>
+        <g transform="translate(254 224)">
+          <rect width="42" height="42" rx="12" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#64748b" text-anchor="middle">✕</text>
+        </g>
+        <g transform="translate(50 278)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">@Mention</text>
+        </g>
+        <g transform="translate(254 278)">
+          <rect width="42" height="42" rx="12" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#64748b" text-anchor="middle">✕</text>
+        </g>
+    <text x="180" y="336" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="16" fill="#64748b"
+          text-anchor="middle">renders everywhere, indexed nowhere</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <g transform="translate(50 46)">
+      <rect width="260" height="50" rx="25" fill="url(#gfontsand)"/>
+      <text x="24" y="33" font-family="Georgia, Liberation Sans, DejaVu Sans, sans-serif" font-size="22" font-style="italic"
+            font-weight="700" fill="#fff">&#119990;&#119942;&#119938;&#119955;&#119940;&#119945;</text>
+    </g>
+        <g transform="translate(50 116)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">Display</text>
+        </g>
+        <g transform="translate(254 116)">
+          <rect width="42" height="42" rx="12" fill="url(#gfontsand)" stroke="none"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#fff" text-anchor="middle">✓</text>
+        </g>
+        <g transform="translate(50 170)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">Google</text>
+        </g>
+        <g transform="translate(254 170)">
+          <rect width="42" height="42" rx="12" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#64748b" text-anchor="middle">✕</text>
+        </g>
+        <g transform="translate(50 224)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">Hashtag</text>
+        </g>
+        <g transform="translate(254 224)">
+          <rect width="42" height="42" rx="12" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#64748b" text-anchor="middle">✕</text>
+        </g>
+        <g transform="translate(50 278)">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="#1a1a2e" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="17" font-weight="600"
+                fill="#1a1a2e">@Mention</text>
+        </g>
+        <g transform="translate(254 278)">
+          <rect width="42" height="42" rx="12" fill="#fff" stroke="#1a1a2e"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="700"
+                fill="#64748b" text-anchor="middle">✕</text>
+        </g>
+    <text x="180" y="336" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="16" fill="#64748b"
+          text-anchor="middle">renders everywhere, indexed nowhere</text></g>
+</svg>

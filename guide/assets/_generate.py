@@ -540,6 +540,129 @@ def m_game_names(p):
           text-anchor="middle">handle strict &#183; display name free</text>"""
 
 
+def m_recovery_triage(p):
+    # same broken complaint, three different failures at three layers
+    cols = [(70, "□", "cosmetic", SUB, False),
+            (180, "Ã©", "reversible", PURPLE, False),
+            (290, "?", "permanent", INK, True)]
+    g = ""
+    for cx, ch, note, col, filled in cols:
+        fill = f"url(#g{p})" if filled else "#fff"
+        stroke = "none" if filled else INK
+        ink = "#fff" if filled else col
+        g += f"""
+        <g transform="translate({cx-46} 90)">
+          <rect width="92" height="92" rx="18" fill="{fill}" stroke="{stroke}"
+                stroke-opacity="0.12"/>
+          <text x="46" y="62" font-family="{SANS}" font-size="38" font-weight="700"
+                fill="{ink}" text-anchor="middle">{ch}</text>
+        </g>
+        <text x="{cx}" y="212" font-family="{SANS}" font-size="15" fill="{SUB}"
+              text-anchor="middle">{note}</text>"""
+    g += f"""
+    <text x="180" y="300" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">same complaint, three different breaks</text>"""
+    return g
+
+
+def m_search_tax(p):
+    # a styled search query, checked against four contexts
+    rows = [("Display", True), ("Google", False), ("Hashtag", False), ("@Mention", False)]
+    g = f"""
+    <g transform="translate(50 46)">
+      <rect width="260" height="50" rx="25" fill="url(#g{p})"/>
+      <text x="24" y="33" font-family="Georgia, {SANS}" font-size="22" font-style="italic"
+            font-weight="700" fill="#fff">&#119990;&#119942;&#119938;&#119955;&#119940;&#119945;</text>
+    </g>"""
+    for i, (label, ok) in enumerate(rows):
+        y = 116 + i * 54
+        mark = ("✓", f"url(#g{p})", "#fff") if ok else ("✕", "#fff", SUB)
+        stroke = "none" if ok else INK
+        g += f"""
+        <g transform="translate(50 {y})">
+          <rect width="188" height="42" rx="12" fill="#fff" stroke="{INK}" stroke-opacity="0.12"/>
+          <text x="18" y="28" font-family="{SANS}" font-size="17" font-weight="600"
+                fill="{INK}">{label}</text>
+        </g>
+        <g transform="translate(254 {y})">
+          <rect width="42" height="42" rx="12" fill="{mark[1]}" stroke="{stroke}"
+                stroke-opacity="0.12"/>
+          <text x="21" y="29" font-family="{SANS}" font-size="21" font-weight="700"
+                fill="{mark[2]}" text-anchor="middle">{mark[0]}</text>
+        </g>"""
+    g += f"""
+    <text x="180" y="336" font-family="{SANS}" font-size="16" fill="{SUB}"
+          text-anchor="middle">renders everywhere, indexed nowhere</text>"""
+    return g
+
+
+def m_restraint(p):
+    # a symbol-dump bio card next to a one-anchor, quiet-core bio card
+    return f"""
+    <g transform="translate(40 50)">
+      <rect width="120" height="220" rx="18" fill="{PANEL2}"/>
+      <text x="60" y="34" font-family="{SANS}" font-size="14" fill="{SUB}"
+            text-anchor="middle">&#10022;&#9734;&#10023;&#9790;&#9825;</text>
+      <text x="60" y="58" font-family="{SANS}" font-size="14" fill="{SUB}"
+            text-anchor="middle">&#9672;&#24417;&#9733;&#24417;&#9672;</text>
+      <rect x="14" y="76" width="92" height="9" rx="4" fill="{SUB}" opacity="0.4"/>
+      <rect x="14" y="94" width="92" height="9" rx="4" fill="{SUB}" opacity="0.4"/>
+      <text x="60" y="126" font-family="{SANS}" font-size="14" fill="{SUB}"
+            text-anchor="middle">&#9601;&#9602;&#9603;&#9604;&#9605;&#9606;&#9607;</text>
+      <rect x="14" y="146" width="92" height="9" rx="4" fill="{SUB}" opacity="0.4"/>
+      <text x="60" y="180" font-family="{SANS}" font-size="14" fill="{SUB}"
+            text-anchor="middle">&#9760;&#9734;&#24417;&#12641;&#65295;&#12309;</text>
+      <text x="60" y="252" font-family="{SANS}" font-size="14" fill="{SUB}"
+            text-anchor="middle">reads as spam</text>
+    </g>
+    <g transform="translate(200 50)">
+      <rect width="120" height="220" rx="18" fill="#fff" stroke="{INK}" stroke-opacity="0.12"/>
+      <circle cx="60" cy="34" r="10" fill="url(#g{p})"/>
+      <rect x="26" y="60" width="68" height="10" rx="5" fill="{INK}" opacity="0.75"/>
+      <rect x="20" y="82" width="80" height="8" rx="4" fill="{SUB}" opacity="0.4"/>
+      <line x1="20" y1="106" x2="100" y2="106" stroke="{SUB}" stroke-width="2" opacity="0.3"/>
+      <rect x="20" y="122" width="80" height="8" rx="4" fill="{SUB}" opacity="0.4"/>
+      <rect x="20" y="140" width="60" height="8" rx="4" fill="{SUB}" opacity="0.4"/>
+      <line x1="20" y1="164" x2="100" y2="164" stroke="{SUB}" stroke-width="2" opacity="0.3"/>
+      <rect x="30" y="182" width="60" height="20" rx="10" fill="url(#g{p})"/>
+      <text x="60" y="252" font-family="{SANS}" font-size="14" fill="{SUB}"
+            text-anchor="middle">one anchor, quiet core</text>
+    </g>
+    <text x="180" y="322" font-family="{SANS}" font-size="17" fill="{SUB}"
+          text-anchor="middle">restraint reads as intentional</text>"""
+
+
+def m_discord_safe_name(p):
+    # a styled Discord name checked against three field-specific filters
+    rows = [("Member list", True), ("@Mention", True), ("Impersonation", False)]
+    g = f"""
+    <g transform="translate(60 60)">
+      <rect width="240" height="54" rx="16" fill="url(#g{p})"/>
+      <text x="20" y="36" font-family="Georgia, {SANS}" font-size="25" font-weight="700"
+            fill="#fff">N&#232;va &#9876;</text>
+    </g>"""
+    for i, (label, ok) in enumerate(rows):
+        y = 138 + i * 58
+        mark = ("✓", f"url(#g{p})", "#fff") if ok else ("✕", "#fff", SUB)
+        stroke = "none" if ok else INK
+        g += f"""
+        <g transform="translate(60 {y})">
+          <rect width="190" height="44" rx="12" fill="#fff" stroke="{INK}" stroke-opacity="0.12"/>
+          <text x="18" y="29" font-family="{SANS}" font-size="18" font-weight="600"
+                fill="{INK}">{label}</text>
+        </g>
+        <g transform="translate(266 {y})">
+          <rect width="44" height="44" rx="12" fill="{mark[1]}" stroke="{stroke}"
+                stroke-opacity="0.12"/>
+          <text x="22" y="30" font-family="{SANS}" font-size="22" font-weight="700"
+                fill="{mark[2]}" text-anchor="middle">{mark[0]}</text>
+        </g>"""
+    g += f"""
+    <text x="180" y="336" font-family="{SANS}" font-size="16" fill="{SUB}"
+          text-anchor="middle">tasteful passes all three</text>"""
+    return g
+
+
 GUIDES = {
     "emoticon-vs-emoji-vs-kaomoji": ("Emoticon vs Emoji vs Kaomoji",
               "How three kinds of text faces differ", m_comments),
@@ -589,6 +712,14 @@ GUIDES = {
               "TikTok Sans vs the fonts you control", m_tiktok_font),
     "game-username-allowed-symbols": ("Game Username Character Rules",
               "Roblox, Fortnite, Valorant & COD", m_game_names),
+    "boxes-vs-mojibake-vs-question-marks": ("Boxes, Mojibake, or a Question Mark?",
+              "Which breaks are fixable, which aren't", m_recovery_triage),
+    "fonts-and-search-visibility": ("Will Fancy Text Make You Invisible?",
+              "The SEO myths vs the real search costs", m_search_tax),
+    "bio-formatting-without-spam": ("Format a Bio Without Looking Spammy",
+              "The Restraint Framework for symbols", m_restraint),
+    "discord-safe-name-styling": ("Style a Discord Name Without Getting Filtered",
+              "Member list, mentions & impersonation", m_discord_safe_name),
 }
 
 
