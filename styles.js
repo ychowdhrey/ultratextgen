@@ -167,6 +167,11 @@ const PRINTABLE_PAGES = {
     title: 'Handwriting Worksheet Generator',
     description: 'Make a custom handwriting worksheet and dial the tracing difficulty — dotted, dashed, faded, or blank — with age presets from Pre-K to Grade 2.'
   },
+  'sight-word-tracing': {
+    slug: 'sight-word-tracing',
+    title: 'Sight Word Tracing Worksheets',
+    description: 'Tap a common Dolch-style sight word or type your own, dial the tracing difficulty, and print a free sight word practice sheet — reading-stage presets from Pre-K to Grade 2+.'
+  },
   'alphabet-coloring-pages': {
     slug: 'alphabet-coloring-pages',
     title: 'Alphabet Coloring Pages',
