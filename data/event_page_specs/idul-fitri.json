@@ -1,0 +1,183 @@
+{
+  "slug": "idul-fitri",
+  "language": "id",
+  "event_name": "Idul Fitri",
+  "aliases": ["Lebaran", "Eid al-Fitr"],
+
+  "title": "Generator Font, Simbol & Ucapan Idul Fitri | UltraTextGen",
+  "meta_description": "Percantik ucapan Idul Fitri secara langsung, salin emoji bulan sabit dan masjid, kaomoji, ASCII art, dan frasa siap pakai seperti Mohon Maaf Lahir dan Batin — tinggal tap untuk mengubah gayanya.",
+
+  "hero_h1": "Generator Teks & Simbol Idul Fitri",
+  "hero_tagline": "Ketik nama atau ucapan lalu percantik dengan font pilihan, kemudian salin bulan sabit, masjid, emoji tangan berdoa, kaomoji, dan ASCII art — atau tap frasa siap pakai untuk langsung mengubah gayanya.",
+
+  "intro": "Idul Fitri atau Lebaran adalah puncak perayaan setelah sebulan penuh berpuasa di bulan Ramadan — momen saling memaafkan, berkumpul bersama keluarga, dan memulai lembaran baru dengan hati yang bersih. Halaman ini mengumpulkan semua yang kamu butuhkan untuk mempercantik ucapan itu: font pilihan yang bisa kamu coba langsung dengan teksmu sendiri, emoji bulan sabit, masjid, dan tangan berdoa yang benar-benar orang pakai, kaomoji untuk pesan chat yang ceria, beberapa karya ASCII art buatan tangan, dan bank frasa berisi ucapan sungguhan — mulai dari Mohon Maaf Lahir dan Batin hingga Minal Aidin wal Faizin — yang langsung berubah gaya saat kamu tap.",
+
+  "date_window": "setiap tahun pada tanggal 1 Syawal, mengikuti kalender lunar Islam (Hijriah) dan menandai berakhirnya puasa Ramadan",
+
+  "sample_phrase": "Selamat Idul Fitri",
+
+  "canonical": "https://ultratextgen.com/id/events/idul-fitri/",
+
+  "hreflang": {
+    "id": "https://ultratextgen.com/id/events/idul-fitri/",
+    "x_default": "id"
+  },
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Script Sparkle",
+      "Ultra Cute Script",
+      "Ultra Bold Italic Serif",
+      "Ultra Italic Serif",
+      "Ultra Old English Banner",
+      "Ultra Small Caps",
+      "Ultra Bubble"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Emoji & Simbol Idul Fitri",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🌙", "🕌", "🤲", "🙏", "✨", "🎉", "🎊", "⭐", "🌟", "🕋", "🏮", "🍽️", "🎁", "💚"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(๑˃̵ᴗ˂̵)ﻭ", "label": "Sorak Gembira" },
+    { "text": "ヽ(´▽`)/", "label": "Lambaian Hangat" },
+    { "text": "(⌒▽⌒)☆", "label": "Kegembiraan Berkilau" },
+    { "text": "(◕‿◕)✿", "label": "Bunga Bahagia" },
+    { "text": "(人◕‿◕)", "label": "Memohon Maaf" },
+    { "text": "☆⌒(≧▽°)", "label": "Ceria Cerah" },
+    { "text": "(づ￣ ³￣)づ", "label": "Pelukan Hangat" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Bulan Sabit",
+        "art": "      .--.\n     /    |\n    |     |\n    |     |\n     \\    |\n      `--'"
+      },
+      {
+        "label": "Ketupat",
+        "art": "    /\\\n   /\\/\\\n  /\\/\\/\\\n /\\/\\/\\/\\\n \\/\\/\\/\\/\n  \\/\\/\\/\n   \\/\\/\n    \\/"
+      },
+      {
+        "label": "Masjid",
+        "art": "        .-.\n       /   \\\n      | ( ) |\n   .--'     '--.\n  ||    ___    ||\n  ||   |   |   ||\n  ||___|   |___||"
+      },
+      {
+        "label": "Bedug",
+        "art": "    _______\n   /       \\\n  | (=====) |\n  | (=====) |\n  | (=====) |\n   \\_______/\n    |     |\n   _|     |_"
+      },
+      {
+        "label": "Lentera",
+        "art": "     .-.\n    /   \\\n   |=====|\n   | ((( |\n   | ))) |\n   |=====|\n    \\   /\n     '-'"
+      },
+      {
+        "label": "Bintang & Bulan Sabit",
+        "art": "      .--.    *\n     /    |  * *\n    |     | *   *\n    |     |  * *\n     \\    |   *\n      `--'"
+      },
+      {
+        "label": "Spanduk Idul Fitri",
+        "art": "+--------------------------+\n|   SELAMAT IDUL FITRI     |\n+--------------------------+"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Selamat Idul Fitri",
+      "native_script": "Selamat Idul Fitri",
+      "romanization": "Selamat Idul Fitri",
+      "translation": "Ucapan paling umum dan aman — cocok untuk kartu, status, atau pesan ke siapa saja.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Mohon Maaf Lahir dan Batin",
+      "native_script": "Mohon Maaf Lahir dan Batin",
+      "romanization": "Mohon Maaf Lahir dan Batin",
+      "translation": "Frasa paling ikonik dan wajib saat Lebaran — permohonan maaf atas segala kesalahan, baik yang tampak maupun yang tersimpan di hati.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Minal Aidin wal Faizin",
+      "native_script": "مِنَ الْعَائِدِينَ وَالْفَائِزِينَ",
+      "romanization": "Minal Aidin wal Faizin",
+      "translation": "Ungkapan berbahasa Arab yang khas dipakai di Indonesia — harapan agar kita termasuk orang-orang yang kembali suci dan meraih kemenangan. Sering dirangkai dengan Mohon Maaf Lahir dan Batin.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Taqabbalallahu Minna wa Minkum",
+      "native_script": "تَقَبَّلَ اللّٰهُ مِنَّا وَمِنْكُمْ",
+      "romanization": "Taqabbalallahu Minna wa Minkum",
+      "translation": "Ucapan resmi berbahasa Arab yang juga umum di Indonesia — semoga Allah menerima amal ibadah kami dan kalian. Sering diucapkan usai salat Id.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Semoga Amal Ibadah Kita Diterima",
+      "native_script": "Semoga Amal Ibadah Kita Diterima",
+      "romanization": "Semoga Amal Ibadah Kita Diterima",
+      "translation": "Doa hangat setelah sebulan berpuasa — cocok untuk pesan yang lebih religius dan tulus.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Mari Kita Sambut Hari Kemenangan dengan Hati yang Bersih",
+      "native_script": "Mari Kita Sambut Hari Kemenangan dengan Hati yang Bersih",
+      "romanization": "Mari Kita Sambut Hari Kemenangan dengan Hati yang Bersih",
+      "translation": "Ucapan yang lebih panjang dan puitis, pas untuk kartu atau caption yang menyentuh.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Selamat Hari Raya Idul Fitri 1 Syawal",
+      "native_script": "Selamat Hari Raya Idul Fitri 1 Syawal",
+      "romanization": "Selamat Hari Raya Idul Fitri 1 Syawal",
+      "translation": "Versi lengkap dan formal, sering dipakai pada spanduk, undangan, atau ucapan resmi.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Semoga Kita Kembali Suci dan Fitrah",
+      "native_script": "Semoga Kita Kembali Suci dan Fitrah",
+      "romanization": "Semoga Kita Kembali Suci dan Fitrah",
+      "translation": "Doa penutup yang menekankan makna Idul Fitri — kembali fitrah, bersih seperti awal.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "ucapan-idul-fitri-yang-menyentuh-hati",
+
+  "related": [
+    {
+      "href": "/id/tulisan-sambung/",
+      "title": "Tulisan Sambung",
+      "desc": "Keluarga font sambung yang elegan untuk kartu ucapan, caption, dan pesan Lebaran yang berkesan."
+    },
+    {
+      "href": "/id/library/simbol-bintang/",
+      "title": "Simbol Bintang",
+      "desc": "Kumpulan bintang, kilau, dan simbol langit malam untuk menemani ucapan bernuansa Islami."
+    },
+    {
+      "href": "/id/library/happy-kaomoji/",
+      "title": "Kaomoji Bahagia",
+      "desc": "Koleksi kaomoji ceria yang lebih lengkap untuk pesan chat Lebaran yang penuh suka cita."
+    },
+    {
+      "href": "/id/tulisan-tebal/",
+      "title": "Tulisan Tebal",
+      "desc": "Keluarga font tebal untuk judul, spanduk, dan ucapan yang ingin menonjol."
+    },
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Simbol Islami",
+      "desc": "Bintang dan bulan sabit, ligatur Allah dan Bismillah, serta emoji masjid dan doa untuk disalin (dalam bahasa Inggris)."
+    }
+  ]
+}
