@@ -139,6 +139,20 @@
     },
 
     {
+      key: 'cottagecore', label: 'Cottagecore', icon: '🍄',
+      pairs: [
+        ['🌾', '🌾'],
+        ['🍄', '🍄'],
+        ['🧺 ·', '· 🧺'],
+        ['𓂃', '𓂃'],
+        ['⋆｡🐝', '🐝｡⋆']
+      ],
+      charms: ['🍄', '🌿', '🍯', '🐌', '✦'],
+      sprinkles: ['🌿', '🍄', '·'],
+      lines: ['🌾 ⋆ 🍄 ⋆ 🌾 ⋆ 🍄 ⋆ 🌾', '🐝 · 🌿 · 🐝 · 🌿 · 🐝']
+    },
+
+    {
       key: 'birthday', label: 'Birthday', icon: '🎂',
       pairs: [
         ['🎉', '🎉'],
