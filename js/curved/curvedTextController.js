@@ -62,10 +62,41 @@
     });
   }
 
-  // Slider 0..100 -> radius. Higher slider = more curved = smaller radius.
-  function sliderToRadius(v) {
-    var t = Math.max(0, Math.min(100, num(v, 55))) / 100;
-    return Math.round(420 - t * 380); // 420 (flat) .. 40 (tight)
+  var FAMILY_ORDER = ["circular", "flow", "geometric", "novelty"];
+
+  function populateShapeSelect(select) {
+    if (!select) return;
+    select.innerHTML = "";
+    var shapes = Curved.SHAPES || [];
+    var familyLabels = Curved.FAMILY_LABELS || {};
+    FAMILY_ORDER.forEach(function (familyKey) {
+      var inFamily = shapes.filter(function (shape) { return shape.family === familyKey; });
+      if (!inFamily.length) return;
+      var group = document.createElement("optgroup");
+      group.label = familyLabels[familyKey] || familyKey;
+      inFamily.forEach(function (shape) {
+        var opt = document.createElement("option");
+        opt.value = shape.key;
+        opt.textContent = shape.label;
+        group.appendChild(opt);
+      });
+      select.appendChild(group);
+    });
+  }
+
+  function updateLinesHint() {
+    var hint = el.linesHint;
+    if (!hint) return;
+    var key = el.direction ? el.direction.value : "arch";
+    var shapes = Curved.SHAPES || [];
+    var shape = null;
+    for (var i = 0; i < shapes.length; i++) {
+      if (shapes[i].key === key) { shape = shapes[i]; break; }
+    }
+    var maxLines = shape ? shape.maxLines : 1;
+    hint.textContent = maxLines === 1
+      ? "This shape supports up to 1 line"
+      : "This shape supports up to " + maxLines + " lines";
   }
 
   function num(v, fallback) {
@@ -90,8 +121,8 @@
 
     var result = Curved.build({
       text: text,
-      direction: el.direction ? el.direction.value : "up",
-      radius: sliderToRadius(el.curve ? el.curve.value : 55),
+      shape: el.direction ? el.direction.value : "arch",
+      intensity: num(el.curve ? el.curve.value : 55, 55) / 100,
       fontSize: num(el.size ? el.size.value : 36, 36),
       fontFamily: el.font ? el.font.value : "system-ui, sans-serif",
       fontWeight: el.bold && el.bold.checked ? "bold" : "normal",
@@ -101,6 +132,7 @@
 
     lastSvg = result.svg;
     el.preview.innerHTML = result.svg;
+    updateLinesHint();
   }
 
   function toast(msg) {
@@ -189,9 +221,11 @@
     el.spacing = $("#curvedSpacing");
     el.preview = $("#curvedPreview");
     el.toast = $("#curvedToast");
+    el.linesHint = $("#curvedLinesHint");
 
     fillSelect(el.style, STYLE_CHOICES, true);
     fillSelect(el.font, FONT_CHOICES, false);
+    populateShapeSelect(el.direction);
 
     [el.input, el.style, el.direction, el.curve, el.size, el.bold, el.font, el.color, el.spacing]
       .forEach(function (node) {

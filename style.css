@@ -5990,6 +5990,7 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   padding: 8px 10px;
 }
 .curved-field textarea { resize: vertical; min-height: 64px; }
+.curved-hint { font-size: 0.75rem; color: var(--text-muted); }
 .curved-row { display: flex; gap: 12px; }
 .curved-row .curved-field { flex: 1; }
 .curved-check {

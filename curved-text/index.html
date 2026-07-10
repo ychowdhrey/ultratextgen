@@ -11,10 +11,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curved & Arc Text Generator — Bend Text on a Circle | UltraTextGen</title>
-  <meta name="description" content="Free curved text generator. Bend text into an arch, valley, or full circle and download it as an SVG or PNG. Style it bold, script, or runic, then export for logos, stickers, and social posts.">
+  <meta name="description" content="Free curved text generator. Bend text into 15 shapes — arch, wave, spiral, heart, star, and more — across single or multiple lines, then download it as an SVG or PNG. Style it bold, script, or runic, then export for logos, stickers, and social posts.">
   <link rel="canonical" href="https://ultratextgen.com/curved-text/">
   <meta property="og:title" content="Curved & Arc Text Generator | UltraTextGen">
-  <meta property="og:description" content="Bend text into an arch, valley, or circle and download it as SVG or PNG.">
+  <meta property="og:description" content="Bend text into 15 shapes, including arches, waves, spirals, and hearts, across single or multiple lines, then download as SVG or PNG.">
   <meta property="og:url" content="https://ultratextgen.com/curved-text/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/category.png">
@@ -23,7 +23,7 @@
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Curved & Arc Text Generator | UltraTextGen">
-  <meta name="twitter:description" content="Bend text into an arch, valley, or circle. Download as SVG or PNG.">
+  <meta name="twitter:description" content="Bend text into 15 shapes across single or multiple lines. Download as SVG or PNG.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
   "url": "https://ultratextgen.com/curved-text/",
   "applicationCategory": "DesignApplication",
   "operatingSystem": "Any",
-  "description": "Bend text into an arch, valley, or full circle and export it as SVG or PNG.",
+  "description": "Bend text into 15 shapes across circular, flow, geometric, and novelty families, with multi-line support, and export it as SVG or PNG.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -48,7 +48,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How does the curved text generator work?","acceptedAnswer":{"@type":"Answer","text":"It lays your text along an SVG arc. Choose an arch, valley, or full circle, set the curve amount and size, then copy or download the result as an SVG or PNG image."}},
+    {"@type":"Question","name":"How does the curved text generator work?","acceptedAnswer":{"@type":"Answer","text":"It lays your text along an SVG path. Pick a shape from the picker — circular (arch, valley, circle, oval), flow (wave, ripple, zigzag, spiral), geometric (heart, star, diamond, bulge), or novelty (fan, twist) — set the curve amount and size, then copy or download the result as an SVG or PNG image. On shapes that support it, press Enter in the text box to add another curved line."}},
     {"@type":"Question","name":"Can I copy curved text as plain characters?","acceptedAnswer":{"@type":"Answer","text":"No. A curve is a visual layout, not a Unicode property, so curved text is an image (SVG or PNG). For copy-paste plain text, use one of the Unicode font styles on the homepage instead."}},
     {"@type":"Question","name":"Can I make the curved text bold or script?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick a Unicode style such as Bold, Script, or Runic before curving, and combine it with the SVG bold and font options for extra weight."}},
     {"@type":"Question","name":"Is the curved text generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can create and download curved, arced, and circular text as SVG or PNG with no signup."}}
@@ -83,7 +83,7 @@
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <h1 class="hero-headline">Curved &amp; Arc Text Generator</h1>
-  <p class="hero-sub">Bend text into an arch, valley, or full circle, style it, and download it as an SVG or PNG.</p>
+  <p class="hero-sub">Bend text into 15 shapes — arch, wave, spiral, heart, star, and more — across single or multiple lines, then download it as an SVG or PNG.</p>
 </div></div></section>
 
 <main class="container">
@@ -91,16 +91,13 @@
     <div class="curved-controls">
       <div class="curved-field">
         <label for="curvedInput">Your text</label>
-        <textarea id="curvedInput" maxlength="120" placeholder="Type your text…">UltraTextGen</textarea>
+        <textarea id="curvedInput" maxlength="220" placeholder="Type your text… (press Enter for another line)">UltraTextGen</textarea>
+        <span class="curved-hint" id="curvedLinesHint" aria-live="polite"></span>
       </div>
       <div class="curved-row">
         <div class="curved-field">
           <label for="curvedDirection">Shape</label>
-          <select id="curvedDirection">
-            <option value="up" selected>Arch (∩)</option>
-            <option value="down">Valley (∪)</option>
-            <option value="circle">Circle (○)</option>
-          </select>
+          <select id="curvedDirection"></select>
         </div>
         <div class="curved-field">
           <label for="curvedStyle">Font style</label>
@@ -146,7 +143,7 @@
 
 <footer class="footer"><div class="footer-inner">
   <h2 class="faq-category">Curved Text Tips</h2>
-  <div class="faq-item"><button class="faq-question" type="button">How does the curved text generator work?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">It lays your text along an SVG arc. Choose an arch, valley, or full circle, set the curve amount and size, then copy or download the result as an SVG or PNG image.</div></div>
+  <div class="faq-item"><button class="faq-question" type="button">How does the curved text generator work?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">It lays your text along an SVG path. Pick a shape from the picker — circular (arch, valley, circle, oval), flow (wave, ripple, zigzag, spiral), geometric (heart, star, diamond, bulge), or novelty (fan, twist) — set the curve amount and size, then copy or download the result as an SVG or PNG image. On shapes that support it, press Enter in the text box to add another curved line.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">Can I copy curved text as plain characters?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">No. A curve is a visual layout, not a Unicode property, so curved text is exported as an image. For copy-paste plain text, use one of the Unicode font styles on the homepage instead.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">Can I make the curved text bold or script?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Yes. Pick a Unicode style such as Bold, Script, or Runic before curving, and combine it with the SVG bold and typeface options for extra weight.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">Is the curved text generator free?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Yes. You can create and download curved, arced, and circular text as SVG or PNG with no signup.</div></div>
