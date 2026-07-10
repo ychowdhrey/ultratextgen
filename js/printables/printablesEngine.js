@@ -73,6 +73,57 @@
   const GLYPH_STYLE = CFG.glyphStyle || "";         // primary registry style (glyph mode)
   const INK = "#1a1a2e";
 
+  /* ---------------------------------------------------------------
+     i18n — user-facing strings the engine GENERATES at runtime
+     ---------------------------------------------------------------
+     Page content (headings, intros, HTML buttons, FAQs) is translated in
+     the page's own HTML. The strings below are the ones this engine injects
+     into the DOM / print surface / PNG. English is the default; a localized
+     page overrides any subset via window.UTG_PRINTABLE.i18n = { … }. English
+     pages set nothing, so their output is byte-for-byte unchanged.
+     Placeholders in {braces} are filled by tfmt() at each call site. --------- */
+  const I18N_DEFAULTS = {
+    letter: "letter",
+    number: "number",
+    printThisLetter: "Print this letter",
+    printThisNumber: "Print this number",
+    downloadPng: "Download PNG",
+    copy: "Copy",
+    copied: "Copied!",
+    copyPasteTitle: "Copy-paste {noun} {label}",     // {label} e.g. "letter A"
+    lowerTag: "lower",
+    practiceSheetTitle: "{Noun} practice sheet — ultratextgen.com",
+    alphabetTitle: "{Noun} alphabet — ultratextgen.com",
+    nameWorksheetTitle: "{name} — tracing worksheet · ultratextgen.com",
+    // difficulty generator
+    levelWord: "Level",
+    modelWord: "model",
+    traceWord: "trace",
+    blankWord: "blank",
+    paper: "US Letter",
+    genWorksheetTitle: "{word} — {level} worksheet · ultratextgen.com",
+    // coloring designer / puzzle footer fields
+    nameField: "Name:",
+    dateField: "Date:",
+    // name puzzle
+    puzzleHeading: "{name}’s Name Puzzle",
+    puzzleCaption: "Cut along the dashed lines to separate each letter piece.",
+    // banner maker
+    bannerPageTitle: "{phrase} — banner flags — page {n} of {total}",
+    bannerInstructions: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
+    space: "space",
+    flag: "flag", flags: "flags", page: "page", pages: "pages",
+    // per-level label/hint overrides (arrays, merged by index — see below)
+    traceLevels: null,
+    dotLevels: null
+  };
+  const T = Object.assign({}, I18N_DEFAULTS, CFG.i18n || {});
+  function tfmt(str, map) {
+    return String(str == null ? "" : str).replace(/\{(\w+)\}/g, function (m, k) {
+      return (map && k in map) ? map[k] : m;
+    });
+  }
+
   const el = {
     strip: $("#pt-strip"),
     panel: $("#pt-panel"),
@@ -137,7 +188,7 @@
      Small helpers
      --------------------------------------------------------------- */
 
-  function charLabel(ch) { return /[0-9]/.test(ch) ? ("number " + ch) : ("letter " + ch); }
+  function charLabel(ch) { return /[0-9]/.test(ch) ? (T.number + " " + ch) : (T.letter + " " + ch); }
   function charSlug(ch) { return /[0-9]/.test(ch) ? ("number-" + ch) : ("letter-" + ch.toLowerCase()); }
   function slugify(s) {
     return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -186,7 +237,7 @@
       if (!btn) return;
       const prev = btn.textContent;
       btn.classList.add("is-copied");
-      btn.textContent = "Copied!";
+      btn.textContent = T.copied;
       setTimeout(() => { btn.textContent = prev; btn.classList.remove("is-copied"); }, 1400);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -586,7 +637,7 @@
     const printBtn = document.createElement("button");
     printBtn.type = "button";
     printBtn.className = "bubble-btn bubble-btn-primary";
-    printBtn.textContent = "Print this " + (/[0-9]/.test(ch) ? "number" : "letter");
+    printBtn.textContent = /[0-9]/.test(ch) ? T.printThisNumber : T.printThisLetter;
     printBtn.addEventListener("click", () => {
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
@@ -596,7 +647,7 @@
     const pngBtn = document.createElement("button");
     pngBtn.type = "button";
     pngBtn.className = "bubble-btn";
-    pngBtn.textContent = "Download PNG";
+    pngBtn.textContent = T.downloadPng;
     pngBtn.addEventListener("click", () => letterPNG(ch));
     actions.appendChild(printBtn);
     actions.appendChild(pngBtn);
@@ -610,7 +661,7 @@
     if (variants) {
       const title = document.createElement("h3");
       title.className = "bubble-detail-title";
-      title.textContent = "Copy-paste " + NOUN + " " + charLabel(ch);
+      title.textContent = tfmt(T.copyPasteTitle, { noun: NOUN, label: charLabel(ch) });
       detail.appendChild(title);
       detail.appendChild(variants);
     }
@@ -680,10 +731,10 @@
         glyph.textContent = rendered;
         const meta = document.createElement("span");
         meta.className = "bubble-variant-name";
-        meta.textContent = name.replace(/^Ultra /, "") + (kind === "upper" ? "" : " · lower");
+        meta.textContent = name.replace(/^Ultra /, "") + (kind === "upper" ? "" : " · " + T.lowerTag);
         const cta = document.createElement("span");
         cta.className = "bubble-variant-copy";
-        cta.textContent = "Copy";
+        cta.textContent = T.copy;
         row.appendChild(glyph); row.appendChild(meta); row.appendChild(cta);
         row.addEventListener("click", () => copyText(rendered, cta));
         list.appendChild(row);
@@ -745,7 +796,7 @@
         const sheet = document.createElement("div");
         sheet.className = "bubble-print-sheet";
         CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
-        printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
+        printWrap(tfmt(T.alphabetTitle, { Noun: cap(NOUN) }), sheet);
       });
     }
   }
@@ -787,7 +838,7 @@
       row.appendChild(model); row.appendChild(trace); row.appendChild(line);
       sheet.appendChild(row);
     });
-    printWrap(cap(NOUN) + " practice sheet — ultratextgen.com", sheet);
+    printWrap(tfmt(T.practiceSheetTitle, { Noun: cap(NOUN) }), sheet);
   }
 
   /* ---------------------------------------------------------------
@@ -828,7 +879,7 @@
     // Blank ruled rows for free practice.
     for (let i = 0; i < 2; i++) rows.appendChild(nameRow(name, "blank"));
 
-    printWrap(name + " — tracing worksheet · ultratextgen.com", rows);
+    printWrap(tfmt(T.nameWorksheetTitle, { name: name }), rows);
   }
 
   function nameRow(name, kind) {
@@ -881,6 +932,15 @@
     { key: "blank",    label: "Blank line",   hint: "No guide — write it from memory",
       blank: true }
   ];
+
+  // Localized label/hint per level, merged by index (English pages set nothing).
+  if (Array.isArray(T.traceLevels)) {
+    T.traceLevels.forEach((o, i) => {
+      if (!TRACE_LEVELS[i] || !o) return;
+      if (o.label) TRACE_LEVELS[i].label = o.label;
+      if (o.hint) TRACE_LEVELS[i].hint = o.hint;
+    });
+  }
 
   function levelSpec(level) {
     const i = Math.max(0, Math.min(TRACE_LEVELS.length - 1, (level || 1) - 1));
@@ -1023,7 +1083,7 @@
   function updateGenUI() {
     const level = genLevel();
     const spec = levelSpec(level);
-    if (el.genLevel) el.genLevel.textContent = "Level " + level + " · " + spec.label;
+    if (el.genLevel) el.genLevel.textContent = T.levelWord + " " + level + " · " + spec.label;
     if (el.genHint) el.genHint.textContent = spec.hint;
     // Level ladder buttons.
     $$(".pt-level", el.genLevels || document).forEach((b) => {
@@ -1041,10 +1101,10 @@
     }
     if (el.genPreviewMeta) {
       const parts = [];
-      if (genModelOn() && level !== 1) parts.push("1 model");
-      parts.push(genRowCount() + " trace");
-      if (level !== TRACE_LEVELS.length) parts.push("2 blank");
-      el.genPreviewMeta.textContent = parts.join(" · ") + " · US Letter";
+      if (genModelOn() && level !== 1) parts.push("1 " + T.modelWord);
+      parts.push(genRowCount() + " " + T.traceWord);
+      if (level !== TRACE_LEVELS.length) parts.push("2 " + T.blankWord);
+      el.genPreviewMeta.textContent = parts.join(" · ") + " · " + T.paper;
     }
   }
 
@@ -1057,7 +1117,7 @@
 
   function buildGeneratorSheet() {
     const spec = levelSpec(genLevel());
-    printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode());
+    printWrap(tfmt(T.genWorksheetTitle, { word: genValue(), level: spec.label }), genSheetNode());
   }
 
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
@@ -1291,8 +1351,8 @@
       t.textContent = label;
       svgMake("line", { x1: x + 110, y1: y + 6, x2: lineEnd, y2: y + 6, stroke: "#9aa3b2", "stroke-width": 2 }, svg);
     };
-    field(90, "Name:", 470);
-    field(560, "Date:", 910);
+    field(90, T.nameField, 470);
+    field(560, T.dateField, 910);
   }
 
   /* ---------------------------------------------------------------
@@ -1787,7 +1847,7 @@
       if (designFooterOn()) {
         ctx.textAlign = "left"; ctx.font = "600 30px " + FONT; ctx.fillStyle = INK;
         const fy = H - 150;
-        ctx.fillText("Name:", 90, fy); ctx.fillText("Date:", 560, fy);
+        ctx.fillText(T.nameField, 90, fy); ctx.fillText(T.dateField, 560, fy);
         ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.moveTo(200, fy + 16); ctx.lineTo(470, fy + 16);
         ctx.moveTo(670, fy + 16); ctx.lineTo(910, fy + 16); ctx.stroke();
@@ -2008,12 +2068,12 @@
       head.className = "pt-banner-page-head";
       const title = document.createElement("p");
       title.className = "pt-banner-page-title";
-      title.textContent = phrase.toUpperCase() + " — banner flags — page " + (pi + 1) + " of " + pages.length;
+      title.textContent = tfmt(T.bannerPageTitle, { phrase: phrase.toUpperCase(), n: pi + 1, total: pages.length });
       head.appendChild(title);
       if (pi === 0) {
         const instr = document.createElement("p");
         instr.className = "pt-banner-instructions";
-        instr.textContent = "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.";
+        instr.textContent = T.bannerInstructions;
         head.appendChild(instr);
       }
       page.appendChild(head);
@@ -2025,7 +2085,7 @@
           const gap = document.createElement("div");
           gap.className = "pt-banner-gap";
           const label = document.createElement("span");
-          label.textContent = "space";
+          label.textContent = T.space;
           gap.appendChild(label);
           grid.appendChild(gap);
           return;
@@ -2060,8 +2120,8 @@
     el.bannerPreview.innerHTML = "";
     el.bannerPreview.appendChild(bannerPagesNode(phrase));
     if (el.bannerMeta) {
-      el.bannerMeta.textContent = total + (total === 1 ? " flag" : " flags") + " · " +
-        pages.length + (pages.length === 1 ? " page" : " pages") + " · US Letter";
+      el.bannerMeta.textContent = total + " " + (total === 1 ? T.flag : T.flags) + " · " +
+        pages.length + " " + (pages.length === 1 ? T.page : T.pages) + " · " + T.paper;
     }
   }
 
@@ -2143,7 +2203,7 @@
           ctx.fillStyle = "#94a3b8";
           ctx.font = "600 20px " + FONT;
           ctx.textAlign = "center";
-          ctx.fillText("space", x + w / 2, pad + flagH + 30);
+          ctx.fillText(T.space, x + w / 2, pad + flagH + 30);
           ctx.restore();
         }
         x += w + gap;
@@ -2219,8 +2279,8 @@
       f.appendChild(l); f.appendChild(line);
       return f;
     };
-    row.appendChild(field("Name:"));
-    row.appendChild(field("Date:"));
+    row.appendChild(field(T.nameField));
+    row.appendChild(field(T.dateField));
     return row;
   }
 
@@ -2269,14 +2329,14 @@
 
     const h = document.createElement("h3");
     h.className = "pt-puzzle-heading-text";
-    h.textContent = heading || (word + "’s Name Puzzle");
+    h.textContent = heading || tfmt(T.puzzleHeading, { name: word });
     sheet.appendChild(h);
 
     sheet.appendChild(puzzleRowNode(word));
 
     const cap = document.createElement("p");
     cap.className = "pt-puzzle-caption";
-    cap.textContent = "Cut along the dashed lines to separate each letter piece.";
+    cap.textContent = T.puzzleCaption;
     sheet.appendChild(cap);
 
     if (footer) sheet.appendChild(puzzleFooterRow());
@@ -2338,7 +2398,7 @@
 
       ctx.font = "700 48px " + FONT;
       ctx.fillStyle = INK;
-      ctx.fillText(heading || (word + "’s Name Puzzle"), W / 2, 130);
+      ctx.fillText(heading || tfmt(T.puzzleHeading, { name: word }), W / 2, 130);
 
       const rowTop = 190, rowBottom = 620, rowH = rowBottom - rowTop;
       const availW = W - pad * 2;
@@ -2376,8 +2436,8 @@
         ctx.font = "600 30px " + FONT;
         ctx.fillStyle = INK;
         const fy = 700;
-        ctx.fillText("Name:", pad, fy);
-        ctx.fillText("Date:", W / 2 + 40, fy);
+        ctx.fillText(T.nameField, pad, fy);
+        ctx.fillText(T.dateField, W / 2 + 40, fy);
         ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(pad + 110, fy + 12); ctx.lineTo(W / 2 - 40, fy + 12);
