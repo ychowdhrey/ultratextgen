@@ -6009,6 +6009,13 @@ body.dark-mode .pt-paper { background: #fff; border-color: var(--border-light); 
   font-weight: 600;
   color: var(--text-secondary);
 }
+/* Override the unscoped mobile ".copy-btn { width: 100% }" rule (~line 1049)
+   which was written for full-width style-card buttons; here the button sits
+   in a space-between row next to a label and must stay content-sized or it
+   overflows the panel on narrow viewports. */
+.ascii-output-head .copy-btn {
+  width: auto;
+}
 .ascii-output {
   min-height: 44px;
   border: 1px solid var(--border-light);
@@ -6111,6 +6118,11 @@ body.dark-mode .pt-paper { background: #fff; border-color: var(--border-light); 
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 6px;
+}
+/* Same override as .ascii-output-head .copy-btn above - keep this button
+   content-sized instead of inheriting the unscoped mobile full-width rule. */
+.ascii-art-output-head .copy-btn {
+  width: auto;
 }
 .ascii-art-output-head label {
   font-size: 0.8125rem;

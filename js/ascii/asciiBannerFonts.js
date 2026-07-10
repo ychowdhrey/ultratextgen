@@ -197,8 +197,20 @@
     var lines = [];
     for (var r = 0; r < height; r += 1) {
       var parts = blocks.map(function (block) { return block[r] || ""; });
-      // rstrip trailing spaces so lines don't carry dead width on mobile.
-      lines.push(parts.join(gap).replace(/\s+$/, ""));
+      lines.push(parts.join(gap));
+    }
+
+    // Trim only the trailing whitespace every row shares in common, so
+    // dead width is dropped without leaving rows ragged relative to each
+    // other (a glyph like "I" is narrower than "#####" on some of its own
+    // rows, so per-row rstrip made those rows shorter than their neighbors).
+    var minTrailing = Infinity;
+    for (var i = 0; i < lines.length; i += 1) {
+      var m = lines[i].match(/\s+$/);
+      minTrailing = Math.min(minTrailing, m ? m[0].length : 0);
+    }
+    if (minTrailing > 0 && minTrailing !== Infinity) {
+      lines = lines.map(function (line) { return line.slice(0, line.length - minTrailing); });
     }
     return lines.join("\n");
   }
