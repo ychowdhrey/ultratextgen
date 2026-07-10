@@ -1,0 +1,122 @@
+{
+  "_comment": "TEMPLATE / EXAMPLE spec. Copy to <slug>.json, fill in real researched data, run scripts/generate_event_page_from_spec.py. The leading underscore keeps this from being mistaken for a real spec. Do NOT generate a page from this file. Chinese New Year content is used here as a fully-worked example of every field the generator expects.",
+
+  "slug": "chinese-new-year",
+  "event_name": "Chinese New Year",
+  "aliases": ["Lunar New Year", "Spring Festival"],
+
+  "title": "Chinese New Year Fonts, Symbols & Kaomoji Generator | UltraTextGen",
+  "meta_description": "Style a Chinese New Year greeting live, copy lanterns and firework emoji, kaomoji, curated ASCII art, and ready-made phrases with native script, romanization, and translation.",
+
+  "hero_h1": "Chinese New Year Text & Symbol Generator",
+  "hero_tagline": "Type a name or wish and style it in curated fonts, then copy lanterns, luck characters, kaomoji, and ASCII art — or tap a ready-made greeting to style it instantly.",
+
+  "intro": "Chinese New Year (Lunar New Year) is the biggest gifting-and-greeting occasion on the lunar calendar — red envelopes, reunion dinners, and messages wishing family and friends luck, health, and prosperity for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the lanterns-and-fireworks emoji people actually paste, the luck characters seen on doorways and banners, kaomoji for a celebratory chat message, a few original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that style instantly when you tap them.",
+
+  "date_window": "on a different date each year, between late January and mid-February, set by the lunar calendar",
+
+  "sample_phrase": "Xin Nian Kuai Le",
+
+  "canonical": "https://ultratextgen.com/events/chinese-new-year/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Script Bold",
+      "Ultra Gothic Bold",
+      "Ultra Bubble",
+      "Ultra Italic Serif",
+      "Ultra Small Caps"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Lanterns, Fireworks & Red Envelopes",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🏮", "🧨", "🎆", "✨", "🐉", "🧧", "🍊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Luck & Fortune Characters",
+      "presentation_class": "symbol",
+      "copy_pattern": "collection",
+      "flags": ["福", "禧", "喜", "財", "春"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(๑•̀ㅂ•́)و✧", "label": "Excited Celebration" },
+    { "text": "ヽ(・∀・)ノ", "label": "Joyful Wave" },
+    { "text": "(◕‿◕)✿", "label": "Happy Blossom" },
+    { "text": "\\(^o^)/", "label": "Cheering Arms Up" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Lantern",
+        "art": "  .--.\n /    \\\n|      |\n \\    /\n  '--'\n   ||"
+      },
+      {
+        "label": "Firework Burst",
+        "art": "   \\ | /\n  -- * --\n   / | \\"
+      },
+      {
+        "label": "Fortune Banner",
+        "art": "+--------------+\n|  FU  |  LUCK |\n+--------------+"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Xin Nian Kuai Le",
+      "native_script": "新年快乐",
+      "romanization": "Xīnnián kuàilè",
+      "translation": "Happy New Year",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Gong Xi Fa Cai",
+      "native_script": "恭喜发财",
+      "romanization": "Gōngxǐ fācái",
+      "translation": "Wishing you prosperity",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Nian Nian You Yu",
+      "native_script": "年年有余",
+      "romanization": "Niánnián yǒuyú",
+      "translation": "May there be abundance every year",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "is-fancy-text-bad-for-accessibility",
+
+  "related": [
+    {
+      "href": "/library/chinese-symbols/",
+      "title": "Chinese Symbols",
+      "desc": "A broader reference library of Chinese Unicode symbols and characters."
+    },
+    {
+      "href": "/library/christmas-symbols/",
+      "title": "Christmas Symbols",
+      "desc": "Trees, snowflakes, and festive greeting combos for December."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full cursive font family for elegant greeting cards and captions."
+    }
+  ]
+}
