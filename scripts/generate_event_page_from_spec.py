@@ -63,6 +63,242 @@ REQUIRED_TOP = [
 VALID_PRESENTATION_CLASSES = ("symbol", "emoji", "emoticon", "kaomoji")
 VALID_COPY_PATTERNS = ("single", "combo", "collection", "section", "transform")
 
+DEFAULT_LANGUAGE = "en"
+
+# Languages that already have a localized /<lang>/events/ hub page. Every
+# other language falls back to a 2-item breadcrumb (Home > Event) instead of
+# linking a middle "Events" crumb that doesn't exist yet — same convention
+# the July-2026 library translation batch used for /<lang>/library/. Flip a
+# language on here once its hub page ships.
+LANGS_WITH_EVENTS_HUB = {"en"}
+
+# --------------------------------------------------------------------------
+# i18n strings
+# --------------------------------------------------------------------------
+# Every hardcoded English string the generator bakes into a page, keyed by
+# language code. "en" is both a real table AND the fallback for any key
+# missing under another language, so adding a 3rd language only means adding
+# a (possibly partial) new table here -- never touching the render_*
+# functions below. See tr() for the lookup + .format() behavior.
+STRINGS = {
+    "en": {
+        "breadcrumb_home": "Home",
+        "breadcrumb_events": "Events",
+        "faq_what_is_q": "What is the {event_name} text and symbol generator?",
+        "faq_when_q": "When is {event_name}?",
+        "faq_when_a": "{event_name} falls {date_window}. Check a current calendar for "
+                      "the exact date, then come back and style your greeting for it.",
+        "faq_how_q": "How do I use the {event_name} generator?",
+        "faq_how_a": "Type a name, wish, or greeting into the box at the top. Every "
+                     "{event_name} font style updates live underneath it — tap Copy on any "
+                     "card. Below that, tap any emoji, symbol, kaomoji, or ASCII art piece to "
+                     "copy it on its own, or tap a phrase-bank card to drop a ready-made "
+                     "greeting into the box and see it restyled instantly.",
+        "faq_more_q": "Where can I find more {event_name} phrases and what to write?",
+        "faq_more_a": 'See <a href="{href}">our full answer</a> for more greetings, '
+                      "translations, and message ideas.",
+        "webapp_name": "{event_name} Text & Symbol Generator",
+        "alt_fonts": "{event_name} Fonts",
+        "alt_symbols": "{event_name} Symbols",
+        "alt_textgen": "{event_name} Text Generator",
+        "feature_fonts": "Live {event_name} font styles for any text you type",
+        "feature_emoji": "Curated {event_name} emoji & symbol collection",
+        "feature_kaomoji": "{event_name} kaomoji",
+        "feature_ascii": "Curated {event_name} ASCII art",
+        "feature_phrase": "Click-to-style {event_name} phrase bank (native script, "
+                          "romanization, translation)",
+        "aka_label": "Also known as: ",
+        "textarea_placeholder": "Type a name, wish, or greeting...",
+        "section_fonts_label": "Fonts",
+        "section_fonts_heading": "{event_name} Fonts",
+        "section_fonts_intro": "Type your text above and every style below updates live. "
+                               "Tap Copy on the one you like.",
+        "section_emoji_label": "Emoji &amp; Symbols",
+        "section_emoji_heading": "{event_name} Emoji &amp; Symbols",
+        "section_emoji_intro": "Tap any character to copy it, or copy a whole set at once "
+                               "in your preferred format.",
+        "section_kaomoji_label": "Kaomoji",
+        "section_kaomoji_heading": "{event_name} Kaomoji",
+        "section_kaomoji_intro": "Each tile is a whole kaomoji — tap to copy the full "
+                                 "string in one click.",
+        "section_ascii_label": "ASCII Art",
+        "section_ascii_heading": "{event_name} ASCII Art",
+        "section_ascii_intro": "Curated multi-line pieces — tap Copy to grab one with its "
+                               "line breaks and spacing intact.",
+        "section_ascii_cta": 'Want to type your own name or message into a live '
+                             'block-letter banner instead? Try the <a href="{href}">ASCII '
+                             'Art Generator</a>.',
+        "section_phrase_label": "Phrase Bank",
+        "section_phrase_heading": "{event_name} Phrase Bank",
+        "section_phrase_intro": "Tap a phrase to drop it into the box up top and see every "
+                                "font style above restyle it instantly.",
+        "cta_heading": "Transform text with Unicode fonts",
+        "cta_body": "Use UltraTextGen to convert plain text into bold, italic, cursive, and "
+                    "100+ other Unicode font styles — free and instant.",
+        "cta_button": "Open UltraTextGen →",
+        "related_heading": "Related Resources",
+        "related_more_title": "More {event_name} phrases &amp; wording",
+        "related_more_desc": "Greetings, translations, and message ideas beyond the phrase "
+                             "bank above.",
+        "related_more_fallback_name": "this event",
+        "footer_heading": "{event_name} questions",
+        "copy_toast": "Copied!",
+    },
+    "es": {
+        "breadcrumb_home": "Inicio",
+        "breadcrumb_events": "Eventos",
+        "faq_what_is_q": "¿Qué es el generador de texto y símbolos de {event_name}?",
+        "faq_when_q": "¿Cuándo es {event_name}?",
+        "faq_when_a": "{event_name} cae {date_window}. Consulta un calendario actualizado "
+                      "para la fecha exacta y vuelve para darle estilo a tu mensaje.",
+        "faq_how_q": "¿Cómo uso el generador de {event_name}?",
+        "faq_how_a": "Escribe un nombre, deseo o saludo en el cuadro de arriba. Cada estilo "
+                     "de fuente de {event_name} se actualiza en vivo debajo — toca Copiar en "
+                     "cualquier tarjeta. Más abajo, toca cualquier emoji, símbolo, kaomoji o "
+                     "arte ASCII para copiarlo por separado, o toca una tarjeta del banco de "
+                     "frases para colocarla en el cuadro y verla transformada al instante.",
+        "faq_more_q": "¿Dónde encuentro más frases de {event_name} y qué escribir?",
+        "faq_more_a": 'Consulta <a href="{href}">nuestra respuesta completa</a> para más '
+                      "saludos, traducciones e ideas de mensajes.",
+        "webapp_name": "Generador de Texto y Símbolos de {event_name}",
+        "alt_fonts": "Fuentes de {event_name}",
+        "alt_symbols": "Símbolos de {event_name}",
+        "alt_textgen": "Generador de Texto de {event_name}",
+        "feature_fonts": "Estilos de fuente de {event_name} en vivo para cualquier texto "
+                        "que escribas",
+        "feature_emoji": "Colección seleccionada de emojis y símbolos de {event_name}",
+        "feature_kaomoji": "Kaomoji de {event_name}",
+        "feature_ascii": "Arte ASCII seleccionado de {event_name}",
+        "feature_phrase": "Banco de frases de {event_name} con estilo al toque (escritura "
+                          "nativa, romanización, traducción)",
+        "aka_label": "También conocido como: ",
+        "textarea_placeholder": "Escribe un nombre, deseo o saludo...",
+        "section_fonts_label": "Fuentes",
+        "section_fonts_heading": "Fuentes de {event_name}",
+        "section_fonts_intro": "Escribe tu texto arriba y cada estilo de abajo se actualiza "
+                               "en vivo. Toca Copiar en el que más te guste.",
+        "section_emoji_label": "Emojis y Símbolos",
+        "section_emoji_heading": "Emojis y Símbolos de {event_name}",
+        "section_emoji_intro": "Toca cualquier carácter para copiarlo, o copia todo un "
+                               "conjunto en el formato que prefieras.",
+        "section_kaomoji_label": "Kaomoji",
+        "section_kaomoji_heading": "Kaomoji de {event_name}",
+        "section_kaomoji_intro": "Cada ficha es un kaomoji completo — toca para copiar la "
+                                 "cadena entera en un clic.",
+        "section_ascii_label": "Arte ASCII",
+        "section_ascii_heading": "Arte ASCII de {event_name}",
+        "section_ascii_intro": "Piezas de varias líneas seleccionadas — toca Copiar para "
+                               "llevarte una con sus saltos de línea y espaciado intactos.",
+        "section_ascii_cta": '¿Quieres escribir tu propio nombre o mensaje en un banner de '
+                             'letras en bloque en vivo? Prueba el <a href="{href}">Generador '
+                             'de Arte ASCII</a>.',
+        "section_phrase_label": "Banco de Frases",
+        "section_phrase_heading": "Banco de Frases de {event_name}",
+        "section_phrase_intro": "Toca una frase para colocarla en el cuadro de arriba y "
+                                "verla transformada al instante en cada estilo de fuente.",
+        "cta_heading": "Transforma texto con fuentes Unicode",
+        "cta_body": "Usa UltraTextGen para convertir texto plano en negrita, cursiva y más "
+                    "de 100 estilos de fuente Unicode — gratis e instantáneo.",
+        "cta_button": "Abrir UltraTextGen →",
+        "related_heading": "Recursos Relacionados",
+        "related_more_title": "Más frases y mensajes de {event_name}",
+        "related_more_desc": "Saludos, traducciones e ideas de mensajes más allá del banco "
+                             "de frases de arriba.",
+        "related_more_fallback_name": "este evento",
+        "footer_heading": "Preguntas sobre {event_name}",
+        "copy_toast": "¡Copiado!",
+    },
+}
+
+
+# js/events/eventPageController.js's own small set of hardcoded English
+# strings (see its `ui` doc comment) -- these are NOT part of the HTML
+# STRINGS table above because they're read by the *controller* at runtime,
+# not baked into static HTML. Auto-applied to window.UTG_EVENT_DATA.ui for
+# any language with a table here; a spec's own "ui" field (if authored)
+# always takes precedence -- see render_event_data().
+JS_UI_STRINGS = {
+    "es": {
+        "showingSample": "Mostrando “{sample}” — escribe tu propio nombre, deseo o "
+                          "saludo arriba.",
+        "copyButton": "Copiar",
+        "copyAriaPrefix": "Copiar ",
+        "asciiArtDefaultLabel": "Arte ASCII",
+    },
+}
+
+
+def tr(language, key, **kwargs):
+    """Look up STRINGS[language][key], falling back to STRINGS['en'][key] for
+    any language/key combo that hasn't been translated yet, then .format()
+    it with whatever kwargs were passed (event_name=..., href=..., ...)."""
+    table = STRINGS.get(language) or {}
+    template = table.get(key, STRINGS[DEFAULT_LANGUAGE].get(key, ""))
+    return template.format(**kwargs) if kwargs else template
+
+
+def home_href(language):
+    """Relative path to the site's homepage in this language."""
+    return "/" if language == DEFAULT_LANGUAGE else f"/{language}/"
+
+
+def events_hub_href(language):
+    """Relative path to this language's /events/ hub, or None if that hub
+    doesn't exist yet (see LANGS_WITH_EVENTS_HUB) -- callers should then omit
+    the middle breadcrumb crumb entirely rather than link a 404."""
+    if language not in LANGS_WITH_EVENTS_HUB:
+        return None
+    return "/events/" if language == DEFAULT_LANGUAGE else f"/{language}/events/"
+
+
+def answers_prefix(language):
+    """Relative path prefix for /answers/ pages in this language."""
+    return "/answers/" if language == DEFAULT_LANGUAGE else f"/{language}/answers/"
+
+
+def events_canonical_default(language, slug):
+    """Fallback canonical URL when a spec doesn't set one explicitly."""
+    if language == DEFAULT_LANGUAGE:
+        return f"{SITE}/events/{slug}/"
+    return f"{SITE}/{language}/events/{slug}/"
+
+
+def breadcrumb_chain(spec):
+    """Returns [(name, absolute_url), ...] for Home [> Events] > EventName,
+    skipping the middle crumb when this language has no /events/ hub yet
+    (2-item breadcrumb, per the library-batch precedent)."""
+    language = spec.get("language", DEFAULT_LANGUAGE)
+    slug = spec["slug"]
+    event_name = spec["event_name"]
+    canonical = spec.get("canonical") or events_canonical_default(language, slug)
+
+    chain = [(tr(language, "breadcrumb_home"), f"{SITE}{home_href(language)}")]
+    hub = events_hub_href(language)
+    if hub:
+        chain.append((tr(language, "breadcrumb_events"), f"{SITE}{hub}"))
+    chain.append((event_name, canonical))
+    return chain
+
+
+def render_hreflang(hreflang):
+    """Emit <link rel="alternate" hreflang="..."> tags from the spec's
+    optional 'hreflang' field: {"<lang>": "<url>", ..., "x_default": "<lang>"}.
+    x_default's value is a language KEY into this same dict (e.g. "es"), not
+    a URL -- so the x-default tag always points at a URL already listed
+    above it. Returns "" (no tags) when the spec has no 'hreflang' field, so
+    the 9 already-shipped English specs are completely unaffected."""
+    if not hreflang or not isinstance(hreflang, dict):
+        return ""
+    lines = []
+    for lang_code, url in hreflang.items():
+        if lang_code == "x_default":
+            continue
+        lines.append(f'  <link rel="alternate" hreflang="{esc_attr(lang_code)}" href="{esc_attr(url)}">')
+    x_default_lang = hreflang.get("x_default")
+    if x_default_lang and hreflang.get(x_default_lang):
+        lines.append(f'  <link rel="alternate" hreflang="x-default" href="{esc_attr(hreflang[x_default_lang])}">')
+    return ("\n".join(lines) + "\n") if lines else ""
+
 
 class SpecError(Exception):
     """Raised when a spec fails validation."""
@@ -152,12 +388,32 @@ def validate_spec(spec):
     if aliases is not None and not isinstance(aliases, list):
         raise SpecError("aliases, if present, must be a list of strings")
 
+    language = spec.get("language", DEFAULT_LANGUAGE)
+    if not isinstance(language, str) or not language:
+        raise SpecError("language, if present, must be a non-empty string")
+
+    hreflang = spec.get("hreflang")
+    if hreflang is not None:
+        if not isinstance(hreflang, dict) or not hreflang:
+            raise SpecError("hreflang, if present, must be a non-empty object")
+        for lang_code, url in hreflang.items():
+            if lang_code == "x_default":
+                if url not in hreflang:
+                    raise SpecError(
+                        "hreflang.x_default must name another key in the same "
+                        "hreflang object"
+                    )
+                continue
+            if not isinstance(url, str) or not url:
+                raise SpecError(f"hreflang[{lang_code!r}] must be a non-empty URL string")
+
 
 # --------------------------------------------------------------------------
 # Rendering helpers
 # --------------------------------------------------------------------------
 def render_event_data(spec):
     """Build the inline window.UTG_EVENT_DATA object the controller reads."""
+    language = spec.get("language", DEFAULT_LANGUAGE)
     collections = [
         {
             "name": c["name"],
@@ -192,53 +448,61 @@ def render_event_data(spec):
             for p in spec["phrase_bank"]
         ],
     }
+
+    # An explicit spec["ui"] always wins; otherwise auto-apply this
+    # language's JS_UI_STRINGS table if one exists. Nothing is emitted for
+    # "en" (or any language without a table and no explicit override), so
+    # the 9 already-shipped English pages get no "ui" key at all -- exactly
+    # matching their pre-existing output.
+    ui = spec.get("ui")
+    if ui is None:
+        ui = JS_UI_STRINGS.get(language)
+    if ui:
+        event_data["ui"] = ui
+
     return json.dumps(event_data, indent=2, ensure_ascii=False)
 
 
 def synthesize_faq(spec):
     """Build FAQ Q&A from the spec's own fields — no separate 'faq' field
     needs to be authored; every event page gets a valid, accurate FAQPage."""
+    language = spec.get("language", DEFAULT_LANGUAGE)
     event_name = spec["event_name"]
     faqs = [
         {
-            "q": f"What is the {event_name} text and symbol generator?",
+            "q": tr(language, "faq_what_is_q", event_name=event_name),
             "a": html.unescape(spec["intro"]),
         },
         {
-            "q": f"When is {event_name}?",
-            "a": f"{event_name} falls {spec['date_window']}. Check a current calendar for "
-                 f"the exact date, then come back and style your greeting for it.",
+            "q": tr(language, "faq_when_q", event_name=event_name),
+            "a": tr(language, "faq_when_a", event_name=event_name, date_window=spec["date_window"]),
         },
         {
-            "q": f"How do I use the {event_name} generator?",
-            "a": f"Type a name, wish, or greeting into the box at the top. Every "
-                 f"{event_name} font style updates live underneath it — tap Copy on any "
-                 f"card. Below that, tap any emoji, symbol, kaomoji, or ASCII art piece to "
-                 f"copy it on its own, or tap a phrase-bank card to drop a ready-made "
-                 f"greeting into the box and see it restyled instantly.",
+            "q": tr(language, "faq_how_q", event_name=event_name),
+            "a": tr(language, "faq_how_a", event_name=event_name),
         },
     ]
     if spec.get("companion_answer_slug"):
+        href = f"{SITE}{answers_prefix(language)}{esc_attr(spec['companion_answer_slug'])}/"
         faqs.append({
-            "q": f"Where can I find more {event_name} phrases and what to write?",
-            "a": f"See "
-                 f"<a href=\"{SITE}/answers/{esc_attr(spec['companion_answer_slug'])}/\">"
-                 f"our full answer</a> for more greetings, translations, and message ideas.",
+            "q": tr(language, "faq_more_q", event_name=event_name),
+            "a": tr(language, "faq_more_a", href=href),
         })
     return faqs
 
 
 def render_ld_json(spec, faqs):
+    language = spec.get("language", DEFAULT_LANGUAGE)
     slug = spec["slug"]
     event_name = spec["event_name"]
-    canonical = spec.get("canonical") or f"{SITE}/events/{slug}/"
+    canonical = spec.get("canonical") or events_canonical_default(language, slug)
     aliases = spec.get("aliases") or []
 
     alt_names = []
     for name in list(aliases) + [
-        f"{event_name} Fonts",
-        f"{event_name} Symbols",
-        f"{event_name} Text Generator",
+        tr(language, "alt_fonts", event_name=event_name),
+        tr(language, "alt_symbols", event_name=event_name),
+        tr(language, "alt_textgen", event_name=event_name),
     ]:
         if name and name not in alt_names:
             alt_names.append(name)
@@ -247,19 +511,19 @@ def render_ld_json(spec, faqs):
     ld_webapp = {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": f"{event_name} Text & Symbol Generator",
+        "name": tr(language, "webapp_name", event_name=event_name),
         "alternateName": alt_names,
         "url": canonical,
-        "inLanguage": "en",
+        "inLanguage": language,
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Any",
         "description": html.unescape(spec["hero_tagline"]),
         "featureList": [
-            f"Live {event_name} font styles for any text you type",
-            f"Curated {event_name} emoji & symbol collection",
-            f"{event_name} kaomoji",
-            f"Curated {event_name} ASCII art",
-            f"Click-to-style {event_name} phrase bank (native script, romanization, translation)",
+            tr(language, "feature_fonts", event_name=event_name),
+            tr(language, "feature_emoji", event_name=event_name),
+            tr(language, "feature_kaomoji", event_name=event_name),
+            tr(language, "feature_ascii", event_name=event_name),
+            tr(language, "feature_phrase", event_name=event_name),
         ],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
     }
@@ -267,7 +531,7 @@ def render_ld_json(spec, faqs):
     ld_faq = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "inLanguage": "en",
+        "inLanguage": language,
         "mainEntity": [
             {
                 "@type": "Question",
@@ -278,13 +542,18 @@ def render_ld_json(spec, faqs):
         ],
     }
 
+    chain = breadcrumb_chain(spec)
     ld_breadcrumb = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
-            {"@type": "ListItem", "position": 2, "name": "Events", "item": f"{SITE}/events/"},
-            {"@type": "ListItem", "position": 3, "name": html.unescape(event_name), "item": canonical},
+            {
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": html.unescape(name),
+                "item": url,
+            }
+            for i, (name, url) in enumerate(chain)
         ],
     }
 
@@ -308,7 +577,7 @@ def render_faq_html(faqs):
     return "\n".join(items)
 
 
-def render_related(related, companion_answer_slug, event_name=None):
+def render_related(related, companion_answer_slug, event_name=None, language=DEFAULT_LANGUAGE):
     cards = []
     for rel in related:
         cards.append(
@@ -319,23 +588,25 @@ def render_related(related, companion_answer_slug, event_name=None):
             "    </a>"
         )
     if companion_answer_slug:
-        name = event_name or "this event"
+        name = event_name or tr(language, "related_more_fallback_name")
+        href = f"{answers_prefix(language)}{esc_attr(companion_answer_slug)}/"
         cards.append(
-            f'    <a href="/answers/{esc_attr(companion_answer_slug)}/" '
+            f'    <a href="{href}" '
             'class="compare-card variant-muted u-no-underline">\n'
-            f"      <h4>More {esc(name)} phrases &amp; wording</h4>\n"
-            "      <p>Greetings, translations, and message ideas beyond the phrase bank above.</p>\n"
+            f'      <h4>{tr(language, "related_more_title", event_name=esc(name))}</h4>\n'
+            f'      <p>{tr(language, "related_more_desc")}</p>\n'
             "    </a>"
         )
     return "\n".join(cards)
 
 
 def render_page(spec):
+    language = spec.get("language", DEFAULT_LANGUAGE)
     slug = spec["slug"]
     event_name = spec["event_name"]
     title = spec["title"]
     meta = spec["meta_description"]
-    canonical = spec.get("canonical") or f"{SITE}/events/{slug}/"
+    canonical = spec.get("canonical") or events_canonical_default(language, slug)
     aliases = spec.get("aliases") or []
     companion_answer_slug = spec.get("companion_answer_slug")
 
@@ -343,18 +614,34 @@ def render_page(spec):
     ld_webapp, ld_faq, ld_breadcrumb = render_ld_json(spec, faqs)
     event_data_json = render_event_data(spec)
     faq_html = render_faq_html(faqs)
-    related_html = render_related(spec["related"], companion_answer_slug, event_name)
+    related_html = render_related(spec["related"], companion_answer_slug, event_name, language)
+    hreflang_html = render_hreflang(spec.get("hreflang"))
 
     aka_html = ""
     if aliases:
         aka_html = (
-            '<p class="u-secondary-tight">Also known as: '
+            f'<p class="u-secondary-tight">{tr(language, "aka_label")}'
             + ", ".join(esc(a) for a in aliases)
             + "</p>\n      "
         )
 
+    chain = breadcrumb_chain(spec)
+    crumb_parts = []
+    for i, (name, url) in enumerate(chain):
+        if i:
+            crumb_parts.append('  <span class="breadcrumb-separator">›</span>')
+        if i == len(chain) - 1:
+            crumb_parts.append(f'  <span class="breadcrumb-current">{esc(name)}</span>')
+        else:
+            rel_href = "/" if url == f"{SITE}/" else url.replace(SITE, "", 1)
+            crumb_parts.append(f'  <a href="{esc_attr(rel_href)}">{esc(name)}</a>')
+    breadcrumb_nav_html = "\n".join(crumb_parts)
+
+    cta_href = f"{SITE}{home_href(language)}"
+    ascii_generator_href = "/ascii-art-generator/"
+
     page = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{esc_attr(language)}">
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
@@ -371,7 +658,7 @@ def render_page(spec):
   <title>{esc(title)}</title>
   <meta name="description" content="{esc_attr(meta)}">
   <link rel="canonical" href="{esc_attr(canonical)}">
-  <meta property="og:title" content="{esc_attr(title)}">
+{hreflang_html}  <meta property="og:title" content="{esc_attr(title)}">
   <meta property="og:description" content="{esc_attr(meta)}">
   <meta property="og:url" content="{esc_attr(canonical)}">
   <meta property="og:type" content="website">
@@ -412,11 +699,7 @@ def render_page(spec):
 <script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
-  <a href="/">Home</a>
-  <span class="breadcrumb-separator">›</span>
-  <a href="/events/">Events</a>
-  <span class="breadcrumb-separator">›</span>
-  <span class="breadcrumb-current">{esc(event_name)}</span>
+{breadcrumb_nav_html}
 </nav>
 
 <section class="hero">
@@ -425,7 +708,7 @@ def render_page(spec):
       <h1 class="hero-headline">{esc(spec["hero_h1"])}</h1>
       <p class="hero-tagline">{esc(spec["hero_tagline"])}</p>
       {aka_html}<div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500" autofocus></textarea>
+        <textarea class="main-input" id="mainInput" placeholder="{esc_attr(tr(language, 'textarea_placeholder'))}" maxlength="500" autofocus></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
     </div>
@@ -445,59 +728,59 @@ def render_page(spec):
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="eventFontsSection">
-    <span class="article-section-label">Fonts</span>
-    <h2>{esc(event_name)} Fonts</h2>
-    <p class="editorial-intro">Type your text above and every style below updates live. Tap Copy on the one you like.</p>
+    <span class="article-section-label">{tr(language, "section_fonts_label")}</span>
+    <h2>{tr(language, "section_fonts_heading", event_name=esc(event_name))}</h2>
+    <p class="editorial-intro">{tr(language, "section_fonts_intro")}</p>
     <div class="results-grid" id="eventFontsGrid"></div>
   </section>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="eventEmojiSection">
-    <span class="article-section-label">Emoji &amp; Symbols</span>
-    <h2>{esc(event_name)} Emoji &amp; Symbols</h2>
-    <p class="editorial-intro">Tap any character to copy it, or copy a whole set at once in your preferred format.</p>
+    <span class="article-section-label">{tr(language, "section_emoji_label")}</span>
+    <h2>{tr(language, "section_emoji_heading", event_name=esc(event_name))}</h2>
+    <p class="editorial-intro">{tr(language, "section_emoji_intro")}</p>
     <div id="eventEmojiGrids"></div>
   </section>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="eventKaomojiSection">
-    <span class="article-section-label">Kaomoji</span>
-    <h2>{esc(event_name)} Kaomoji</h2>
-    <p class="editorial-intro">Each tile is a whole kaomoji — tap to copy the full string in one click.</p>
+    <span class="article-section-label">{tr(language, "section_kaomoji_label")}</span>
+    <h2>{tr(language, "section_kaomoji_heading", event_name=esc(event_name))}</h2>
+    <p class="editorial-intro">{tr(language, "section_kaomoji_intro")}</p>
     <div class="glyph-grid" id="eventKaomojiGrid"></div>
   </section>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="eventAsciiSection">
-    <span class="article-section-label">ASCII Art</span>
-    <h2>{esc(event_name)} ASCII Art</h2>
-    <p class="editorial-intro">Curated multi-line pieces — tap Copy to grab one with its line breaks and spacing intact.</p>
+    <span class="article-section-label">{tr(language, "section_ascii_label")}</span>
+    <h2>{tr(language, "section_ascii_heading", event_name=esc(event_name))}</h2>
+    <p class="editorial-intro">{tr(language, "section_ascii_intro")}</p>
     <div class="art-piece-grid" id="eventAsciiGrid"></div>
-    <p class="u-secondary-tight u-mt-15">Want to type your own name or message into a live block-letter banner instead? Try the <a href="/ascii-art-generator/">ASCII Art Generator</a>.</p>
+    <p class="u-secondary-tight u-mt-15">{tr(language, "section_ascii_cta", href=ascii_generator_href)}</p>
   </section>
 
   <div class="section-divider"></div>
 
   <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">Phrase Bank</span>
-    <h2>{esc(event_name)} Phrase Bank</h2>
-    <p class="editorial-intro">Tap a phrase to drop it into the box up top and see every font style above restyle it instantly.</p>
+    <span class="article-section-label">{tr(language, "section_phrase_label")}</span>
+    <h2>{tr(language, "section_phrase_heading", event_name=esc(event_name))}</h2>
+    <p class="editorial-intro">{tr(language, "section_phrase_intro")}</p>
     <div class="compare-grid" id="eventPhraseGrid"></div>
   </section>
 
   <div class="section-divider"></div>
 
   <div class="cta-card">
-    <h3>Transform text with Unicode fonts</h3>
-    <p>Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.</p>
-    <a href="{SITE}/" class="cta-btn">Open UltraTextGen →</a>
+    <h3>{tr(language, "cta_heading")}</h3>
+    <p>{tr(language, "cta_body")}</p>
+    <a href="{cta_href}" class="cta-btn">{tr(language, "cta_button")}</a>
   </div>
 
   <section class="editorial-section">
-    <span class="article-section-label">Related Resources</span>
+    <span class="article-section-label">{tr(language, "related_heading")}</span>
     <div class="compare-grid">
 {related_html}
     </div>
@@ -506,13 +789,13 @@ def render_page(spec):
 
 <footer class="footer">
   <div class="footer-inner">
-    <h2 class="faq-category">{esc(event_name)} questions</h2>
+    <h2 class="faq-category">{tr(language, "footer_heading", event_name=esc(event_name))}</h2>
 {faq_html}
   </div>
 </footer>
 
 <!-- TOAST -->
-<div class="copy-toast" id="copyToast">Copied!</div>
+<div class="copy-toast" id="copyToast">{tr(language, "copy_toast")}</div>
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
 <script>window.UTG_EVENT_MODE = true;</script>

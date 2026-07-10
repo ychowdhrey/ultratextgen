@@ -1,0 +1,210 @@
+{
+  "slug": "navidad",
+  "language": "es",
+  "event_name": "Navidad",
+  "aliases": [
+    "Feliz Navidad"
+  ],
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/christmas/",
+    "es": "https://ultratextgen.com/es/events/navidad/",
+    "x_default": "es"
+  },
+  "title": "Generador de Fuentes, Emojis y Símbolos de Navidad | UltraTextGen",
+  "meta_description": "Dale estilo a tu mensaje de Navidad en vivo, copia emojis de árbol, Papá Noel y copos de nieve, kaomoji festivos, arte ASCII original y frases de Navidad listas para usar.",
+  "hero_h1": "Generador de Texto y Símbolos de Navidad",
+  "hero_tagline": "Escribe un nombre o un deseo y dale estilo con fuentes clásicas en negrita, cursiva y gótica, luego copia emojis de árbol, Papá Noel y copos de nieve, kaomoji y arte ASCII — o toca una frase navideña para transformarla al instante.",
+  "intro": "La Navidad es la fecha más importante del año para tarjetas y mensajes — árboles, calcetines y palabras que desean a familiares y amigos unas fiestas felices. Esta página reúne todo lo necesario para darle estilo a ese saludo: fuentes seleccionadas que puedes previsualizar con tu propio texto, los emojis de árbol, Papá Noel y copo de nieve que la gente realmente usa, kaomoji para un mensaje de chat alegre, algunas piezas de arte ASCII originales y un banco de frases navideñas listas para copiar que se transforman al instante al tocarlas.",
+  "date_window": "diciembre, con el día principal cayendo el 25 de diciembre de cada año",
+  "sample_phrase": "Feliz Navidad",
+  "canonical": "https://ultratextgen.com/es/events/navidad/",
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Serif",
+      "Ultra Italic Serif",
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Gothic",
+      "Ultra Gothic Bold",
+      "Ultra Small Caps",
+      "Ultra Bubble"
+    ]
+  },
+  "emoji_symbol_collections": [
+    {
+      "name": "Emojis de Navidad",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": [
+        "🎄",
+        "🎅",
+        "🤶",
+        "🦌",
+        "🔔",
+        "🎁",
+        "⭐",
+        "❄️",
+        "☃️",
+        "⛄",
+        "🧦",
+        "🕯️",
+        "🍪"
+      ],
+      "defaultFormat": "inline"
+    }
+  ],
+  "kaomoji": [
+    {
+      "text": "(っ◕‿◕)っ❆",
+      "label": "Abrazo Nevado"
+    },
+    {
+      "text": "✧⁺⸜(◕‐◕)⸝⁺✧",
+      "label": "Alegría Brillante"
+    },
+    {
+      "text": "♪┏(・o・)┛♪┗(・o・)┓♪",
+      "label": "Baile de Villancicos"
+    },
+    {
+      "text": "(๑˃ᴗ˂)ﻭ❄",
+      "label": "Emoción por la Nieve"
+    },
+    {
+      "text": "(⋆❛ᴗ❛⋆)",
+      "label": "Calidez Acogedora"
+    }
+  ],
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Árbol de Navidad",
+        "art": "      *\n     ^^^\n    ^^^^^\n   ^^^o^^^\n  ^^^^^^^^^\n    | | |\n    |___|"
+      },
+      {
+        "label": "Muñeco de Nieve",
+        "art": "    .-''-.\n   ( o  o )\n    )  -  (\n   (        )\n  ( o      o )\n   '--------'\n    |      |"
+      },
+      {
+        "label": "Caja de Regalo",
+        "art": " .-----------.\n |     |     |\n |-----+-----|\n |     |     |\n '-----------'"
+      },
+      {
+        "label": "Estrella Brillante",
+        "art": "      *\n   *  *  *\n    * * *\n  *** * ***\n    * * *\n   *  *  *\n      *"
+      },
+      {
+        "label": "Calcetín",
+        "art": "   ______\n  /      |\n /       |\n|        |\n|________|"
+      },
+      {
+        "label": "Campana",
+        "art": "    .-.\n   (   )\n  (     )\n  |     |\n  '-----'\n    (=)"
+      },
+      {
+        "label": "Adorno Navideño",
+        "art": "    .-.\n   (   )\n  ( * )\n   (   )\n    '-'\n     |"
+      },
+      {
+        "label": "Copo de Nieve",
+        "art": "     *\n   * | *\n* --+-- *\n   * | *\n     *"
+      }
+    ]
+  },
+  "phrase_bank": [
+    {
+      "text": "Feliz Navidad",
+      "native_script": "Feliz Navidad",
+      "romanization": "Feliz Navidad",
+      "translation": "El saludo universal y más usado para esta época del año.",
+      "qa_english_gloss": "Merry Christmas",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Feliz Navidad y Próspero Año Nuevo",
+      "native_script": "Feliz Navidad y Próspero Año Nuevo",
+      "romanization": "Feliz Navidad y Próspero Año Nuevo",
+      "translation": "La versión completa, ideal para tarjetas y mensajes formales.",
+      "qa_english_gloss": "Merry Christmas and a Happy/Prosperous New Year",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Que la Navidad te traiga paz y alegría",
+      "native_script": "Que la Navidad te traiga paz y alegría",
+      "romanization": "Que la Navidad te traiga paz y alegría",
+      "translation": "Un deseo cálido, perfecto para tarjetas y dedicatorias largas.",
+      "qa_english_gloss": "May Christmas bring you peace and joy",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Con cariño en esta Navidad",
+      "native_script": "Con cariño en esta Navidad",
+      "romanization": "Con cariño en esta Navidad",
+      "translation": "Una despedida sencilla y afectuosa para cerrar un mensaje.",
+      "qa_english_gloss": "With love this Christmas",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Felices Fiestas",
+      "native_script": "Felices Fiestas",
+      "romanization": "Felices Fiestas",
+      "translation": "Una alternativa inclusiva que abarca toda la temporada navideña.",
+      "qa_english_gloss": "Happy Holidays",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Que el espíritu de la Navidad llene tu hogar de amor",
+      "native_script": "Que el espíritu de la Navidad llene tu hogar de amor",
+      "romanization": "Que el espíritu de la Navidad llene tu hogar de amor",
+      "translation": "Un deseo más poético, ideal para mensajes a la familia.",
+      "qa_english_gloss": "May the spirit of Christmas fill your home with love",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Los mejores deseos para ti y los tuyos en estas fiestas",
+      "native_script": "Los mejores deseos para ti y los tuyos en estas fiestas",
+      "romanization": "Los mejores deseos para ti y los tuyos en estas fiestas",
+      "translation": "Un saludo cordial para compañeros de trabajo o conocidos.",
+      "qa_english_gloss": "Best wishes to you and yours this holiday season",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Abrazos y bendiciones en esta Navidad",
+      "native_script": "Abrazos y bendiciones en esta Navidad",
+      "romanization": "Abrazos y bendiciones en esta Navidad",
+      "translation": "Un cierre cálido y cercano para mensajes a seres queridos.",
+      "qa_english_gloss": "Hugs and blessings this Christmas",
+      "needs_native_speaker_review": true
+    }
+  ],
+  "companion_answer_slug": "que-escribir-en-una-tarjeta-de-navidad",
+  "related": [
+    {
+      "href": "/library/christmas-symbols/",
+      "title": "Símbolos de Navidad",
+      "desc": "Una biblioteca más amplia de símbolos y combinaciones de emoji navideños en Unicode (en inglés)."
+    },
+    {
+      "href": "/es/letra-cursiva/",
+      "title": "Letra Cursiva",
+      "desc": "La familia completa de fuentes cursivas elegantes para tarjetas y mensajes navideños."
+    },
+    {
+      "href": "/es/letras-goticas/",
+      "title": "Letras Góticas",
+      "desc": "Estilos clásicos góticos y de época para un look navideño tradicional."
+    },
+    {
+      "href": "/es/letras-negritas/",
+      "title": "Letras Negritas",
+      "desc": "La familia completa de fuentes en negrita para titulares y mensajes."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "Generador de Arte ASCII",
+      "desc": "Escribe cualquier palabra o nombre y conviértelo en un banner de letras en bloque en vivo (en inglés)."
+    }
+  ]
+}
