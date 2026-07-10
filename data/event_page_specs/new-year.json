@@ -1,0 +1,181 @@
+{
+  "slug": "new-year",
+  "event_name": "New Year's Eve & New Year's Day",
+  "aliases": ["Happy New Year", "NYE"],
+
+  "title": "New Year Fonts, Symbols & Countdown Text Generator | UltraTextGen",
+  "meta_description": "Style a Happy New Year greeting live, copy firework and countdown clock emoji, kaomoji, curated ASCII art, and ready-made New Year phrases to paste anywhere.",
+
+  "hero_h1": "New Year's Eve Text & Symbol Generator",
+  "hero_tagline": "Type a name or wish and style it in celebratory fonts, then copy fireworks, countdown clocks, kaomoji, and ASCII art — or tap a ready-made Happy New Year phrase to style it instantly.",
+
+  "intro": "New Year's Eve and New Year's Day are the biggest secular turn of the calendar — the countdown to midnight, fireworks, champagne toasts, and messages wishing everyone a fresh start for the year ahead. This page gathers everything for styling that message: curated fonts you can preview on your own text, the fireworks-and-clock emoji people actually paste, kaomoji for a celebratory chat message, a few original ASCII art pieces, and a phrase bank of ready-made greetings that style instantly when you tap them.",
+
+  "date_window": "the night of Dec 31 into Jan 1 — the same Gregorian-calendar date every year, worldwide",
+
+  "sample_phrase": "Happy New Year",
+
+  "canonical": "https://ultratextgen.com/events/new-year/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Italic",
+      "Ultra Bold Serif",
+      "Ultra Double-Struck",
+      "Ultra Script Bold",
+      "Ultra Script Sparkle",
+      "Ultra Bubble Filled",
+      "Ultra Bubble",
+      "Ultra Small Caps",
+      "Ultra Fullwidth"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Fireworks & Countdown",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🎆", "🎇", "🕛", "⏰", "✨", "🌟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Party & Toast",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🎉", "🎊", "🥳", "🍾", "🥂", "🎈", "🪩", "🎶"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "\\(^o^)/", "label": "Cheering Arms Up" },
+    { "text": "ヽ(•‿•)ノ", "label": "Party Wave" },
+    { "text": "(ﾉ◕ヮ◕)ﾉ*:・゚✧", "label": "Sparkle Celebration" },
+    { "text": "ۙ(◕‿◕)ۘ", "label": "Excited Cheer" },
+    { "text": "ヽ(´▽｀)/", "label": "Happy Countdown" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Firework Burst",
+        "art": "      \\   |   /\n        \\ | /\n    --  (*)  --\n        / | \\\n      /   |   \\"
+      },
+      {
+        "label": "Champagne Glass",
+        "art": "   .-----------.\n    \\         /\n     \\       /\n      \\     /\n       \\   /\n        \\ /\n         |\n         |\n        /_\\"
+      },
+      {
+        "label": "Clock at Midnight",
+        "art": "      .-\"\"-.\n     /  ||  \\\n    |   ||   |\n    |9--++--3|\n    |        |\n     \\  6   /\n      `----'"
+      },
+      {
+        "label": "Countdown",
+        "art": "   3 . . 2 . . 1 . .\n\n     HAPPY NEW YEAR!"
+      },
+      {
+        "label": "Confetti Shower",
+        "art": "   o   .   *   o   .\n     *   o   .   *\n   .   *   o   .   *\n     o   .   *   o"
+      },
+      {
+        "label": "Party Popper",
+        "art": "          .-'.\n        .'    `.\n       ( o    o )--,\n        `.____.'    \\\n                      \\\n         *   .   o   *\n       .   *   o   ."
+      },
+      {
+        "label": "Cheers Banner",
+        "art": " _________________________\n|                         |\n|         CHEERS!         |\n|_________________________|"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy New Year",
+      "native_script": "Happy New Year",
+      "romanization": "Pronounced as written",
+      "translation": "The classic, all-purpose New Year's greeting.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Cheers to the New Year",
+      "native_script": "Cheers to the New Year",
+      "romanization": "Pronounced as written",
+      "translation": "A toast-ready line for midnight or a card.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "New Year, New Me",
+      "native_script": "New Year, New Me",
+      "romanization": "Pronounced as written",
+      "translation": "The self-improvement / resolution classic.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Ring in the New Year",
+      "native_script": "Ring in the New Year",
+      "romanization": "Pronounced as written",
+      "translation": "A festive way of saying 'celebrate the year's start.'",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Here's to New Beginnings",
+      "native_script": "Here's to New Beginnings",
+      "romanization": "Pronounced as written",
+      "translation": "A toast line for fresh starts and resolutions.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Out with the Old, In with the New",
+      "native_script": "Out with the Old, In with the New",
+      "romanization": "Pronounced as written",
+      "translation": "The classic line for letting go of last year.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Wishing You a Bright New Year",
+      "native_script": "Wishing You a Bright New Year",
+      "romanization": "Pronounced as written",
+      "translation": "A warm, all-purpose greeting-card line.",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Feliz Ano Nuevo",
+      "native_script": "Feliz Año Nuevo",
+      "romanization": "Feh-LEEZ AH-nyo NWEH-vo",
+      "translation": "Happy New Year (Spanish) — one of the most widely recognized New Year's greetings worldwide.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "happy-new-year-wishes-what-to-write",
+
+  "related": [
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emoji",
+      "desc": "A broader reference library of party, confetti, and celebration emoji combos."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Star and sparkle Unicode symbols for framing a bright New Year message."
+    },
+    {
+      "href": "/category/bold-fonts/",
+      "title": "Bold Fonts",
+      "desc": "The full bold font family for a countdown banner or New Year's post."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "Elegant script styles for a New Year's card or toast message."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    }
+  ]
+}

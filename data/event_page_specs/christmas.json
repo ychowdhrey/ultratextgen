@@ -1,0 +1,178 @@
+{
+  "slug": "christmas",
+  "event_name": "Christmas",
+  "aliases": ["Xmas", "Merry Christmas"],
+
+  "title": "Christmas Fonts, Emoji & Symbol Generator | UltraTextGen",
+  "meta_description": "Style a Christmas greeting live, copy tree, Santa, and snowflake emoji, festive kaomoji, curated ASCII art, and ready-made Merry Christmas phrases with translation.",
+
+  "hero_h1": "Christmas Text & Symbol Generator",
+  "hero_tagline": "Type a name or wish and style it in classic bold, script, and gothic fonts, then copy tree, Santa, and snowflake emoji, kaomoji, and ASCII art — or tap a Merry Christmas phrase to style it instantly.",
+
+  "intro": "Christmas is the biggest card-and-caption occasion of the year — trees, stockings, and messages wishing family and friends a merry holiday season. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the tree, Santa, and snowflake emoji people actually paste, kaomoji for a cheerful chat message, a few original ASCII art pieces, and a phrase bank of Merry Christmas greetings in other languages — native form, romanization, and translation — that style instantly when you tap them.",
+
+  "date_window": "December, with the day itself falling on December 25 every year",
+
+  "sample_phrase": "Merry Christmas",
+
+  "canonical": "https://ultratextgen.com/events/christmas/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Serif",
+      "Ultra Italic Serif",
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Gothic",
+      "Ultra Gothic Bold",
+      "Ultra Small Caps",
+      "Ultra Bubble"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Christmas Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🎄", "🎅", "🤶", "🦌", "🔔", "🎁", "⭐", "❄️", "☃️", "⛄", "🧦", "🕯️", "🍪"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(っ◕‿◕)っ❆", "label": "Snowy Hug" },
+    { "text": "✧⁺⸜(◕‐◕)⸝⁺✧", "label": "Sparkly Cheer" },
+    { "text": "♪┏(・o・)┛♪┗(・o・)┓♪", "label": "Carol Dance" },
+    { "text": "(๑˃ᴗ˂)ﻭ❄", "label": "Excited for Snow" },
+    { "text": "(⋆❛ᴗ❛⋆)", "label": "Cozy Warmth" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Christmas Tree",
+        "art": "      *\n     ^^^\n    ^^^^^\n   ^^^o^^^\n  ^^^^^^^^^\n    | | |\n    |___|"
+      },
+      {
+        "label": "Snowman",
+        "art": "    .-''-.\n   ( o  o )\n    )  -  (\n   (        )\n  ( o      o )\n   '--------'\n    |      |"
+      },
+      {
+        "label": "Gift Box",
+        "art": " .-----------.\n |     |     |\n |-----+-----|\n |     |     |\n '-----------'"
+      },
+      {
+        "label": "Sparkle Star",
+        "art": "      *\n   *  *  *\n    * * *\n  *** * ***\n    * * *\n   *  *  *\n      *"
+      },
+      {
+        "label": "Stocking",
+        "art": "   ______\n  /      |\n /       |\n|        |\n|________|"
+      },
+      {
+        "label": "Bell",
+        "art": "    .-.\n   (   )\n  (     )\n  |     |\n  '-----'\n    (=)"
+      },
+      {
+        "label": "Ornament Bauble",
+        "art": "    .-.\n   (   )\n  ( * )\n   (   )\n    '-'\n     |"
+      },
+      {
+        "label": "Snowflake",
+        "art": "     *\n   * | *\n* --+-- *\n   * | *\n     *"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Feliz Navidad",
+      "native_script": "Feliz Navidad",
+      "romanization": "feh-LEEZ nah-vee-DAHD",
+      "translation": "Merry Christmas (Spanish)",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Joyeux Noel",
+      "native_script": "Joyeux Noël",
+      "romanization": "zhwah-YUH no-EL",
+      "translation": "Merry Christmas (French)",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Frohe Weihnachten",
+      "native_script": "Frohe Weihnachten",
+      "romanization": "FRO-uh VY-nahkh-ten",
+      "translation": "Merry Christmas (German)",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Buon Natale",
+      "native_script": "Buon Natale",
+      "romanization": "bwohn nah-TAH-leh",
+      "translation": "Merry Christmas (Italian)",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Feliz Natal",
+      "native_script": "Feliz Natal",
+      "romanization": "feh-LEEZ nah-TAHL",
+      "translation": "Merry Christmas (Portuguese)",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Merii Kurisumasu",
+      "native_script": "メリークリスマス",
+      "romanization": "Merii Kurisumasu",
+      "translation": "Merry Christmas (Japanese, phonetic rendering of the English phrase)",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Merry Christmas and a Happy New Year",
+      "native_script": "Merry Christmas and a Happy New Year",
+      "romanization": "Merry Christmas and a Happy New Year",
+      "translation": "A classic English card greeting covering both holidays",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Wishing You a Cozy Christmas",
+      "native_script": "Wishing You a Cozy Christmas",
+      "romanization": "Wishing You a Cozy Christmas",
+      "translation": "A warm, casual English Christmas wish",
+      "needs_native_speaker_review": false
+    }
+  ],
+
+  "companion_answer_slug": "merry-christmas-in-different-languages",
+
+  "related": [
+    {
+      "href": "/library/christmas-symbols/",
+      "title": "Christmas Symbols",
+      "desc": "A broader reference library of Christmas Unicode symbols and emoji combos."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full elegant script font family for greeting cards and captions."
+    },
+    {
+      "href": "/category/gothic-fonts/",
+      "title": "Gothic Fonts",
+      "desc": "Classic blackletter and fraktur styles for an old-world card look."
+    },
+    {
+      "href": "/category/bold-fonts/",
+      "title": "Bold Fonts",
+      "desc": "The full bold Unicode font family for headlines and captions."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    }
+  ]
+}

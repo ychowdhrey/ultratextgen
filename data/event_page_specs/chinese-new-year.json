@@ -1,0 +1,177 @@
+{
+  "slug": "chinese-new-year",
+  "event_name": "Chinese New Year",
+  "aliases": ["Lunar New Year", "CNY", "Spring Festival"],
+
+  "title": "Chinese New Year Fonts, Symbols & Kaomoji Generator | UltraTextGen",
+  "meta_description": "Style a Chinese New Year greeting live, copy lantern and firework emoji, kaomoji, curated ASCII art, and ready-made phrases with native script, romanization, and translation.",
+
+  "hero_h1": "Chinese New Year Text & Symbol Generator",
+  "hero_tagline": "Type a name or wish and style it in curated festive fonts, then copy lanterns, luck characters, kaomoji, and ASCII art — or tap a ready-made greeting to style it instantly.",
+
+  "intro": "Chinese New Year (Lunar New Year) is the biggest gifting-and-greeting occasion on the lunar calendar — red envelopes, reunion dinners, lion dances, and messages wishing family and friends luck, health, and prosperity for the year ahead. This page gathers everything for styling that greeting: curated fonts you can preview on your own text, the lanterns-and-firecrackers emoji people actually paste, the luck characters seen on doorways and banners, kaomoji for a celebratory chat message, a handful of original ASCII art pieces, and a phrase bank of real greetings — native script, romanization, and translation — that restyle instantly when you tap them.",
+
+  "date_window": "on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days",
+
+  "sample_phrase": "Xin Nian Kuai Le",
+
+  "canonical": "https://ultratextgen.com/events/chinese-new-year/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Serif",
+      "Ultra Script",
+      "Ultra Script Bold",
+      "Ultra Script Elegant",
+      "Ultra Gothic Bold",
+      "Ultra Bubble",
+      "Ultra Bubble Filled",
+      "Ultra Small Caps",
+      "Ultra Fullwidth"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Chinese New Year Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🧧", "🏮", "🧨", "🎆", "🎇", "✨", "🐉", "🍊", "🥟", "🦁", "💰", "🪙", "🎊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Luck & Fortune Characters",
+      "presentation_class": "symbol",
+      "copy_pattern": "collection",
+      "flags": ["福", "禧", "喜", "財", "春"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(๑•̀ㅂ•́)و✧", "label": "Excited Celebration" },
+    { "text": "ヽ(・∀・)ノ", "label": "Joyful Wave" },
+    { "text": "(◕‿◕)✿", "label": "Happy Blossom" },
+    { "text": "\\(^o^)/", "label": "Cheering Arms Up" },
+    { "text": "∩(・∀・)∩", "label": "Banzai Cheer" },
+    { "text": "(*≧▽≦)", "label": "Big Happy Laugh" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Red Lantern",
+        "art": "     ______\n    /      \\\n   |  ~~~~  |\n   |  ~~~~  |\n    \\______/\n      |  |\n    --+--+--\n      |  |\n     (____)"
+      },
+      {
+        "label": "Firecracker String",
+        "art": "   ||   ||   ||\n  (##) (##) (##)\n   ||   ||   ||\n   ##   ##   ##\n *BANG* *BANG* *BANG*"
+      },
+      {
+        "label": "Red Envelope",
+        "art": "   .-------------.\n  /  .---------.  \\\n |  |   LUCK   |   |\n |  |    $$$   |   |\n  \\  '---------'  /\n   '-------------'"
+      },
+      {
+        "label": "Firework Burst",
+        "art": "        \\   |   /\n         \\  |  /\n      --- \\ | / ---\n    *   ---+---   *\n      --- / | \\ ---\n         /  |  \\\n        /   |   \\"
+      },
+      {
+        "label": "Gold Ingot",
+        "art": "     _________\n   /           \\\n  /   ~~~~~~~   \\\n |   (       )   |\n  \\   ~~~~~~~   /\n   \\___________/"
+      },
+      {
+        "label": "Fortune Banner",
+        "art": " +----------------------+\n |   HAPPY  NEW  YEAR   |\n |  *** GOOD LUCK ***   |\n +----------------------+"
+      },
+      {
+        "label": "Dancing Lion",
+        "art": "    ,~~-.__,-~~,\n   (  o     o  )\n    \\   ==^==  /\n     '-.,___,.-'\n      //     \\\\\n     ^^       ^^"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Xin Nian Kuai Le",
+      "native_script": "新年快乐",
+      "romanization": "Xīnnián kuàilè",
+      "translation": "Happy New Year",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Gong Xi Fa Cai",
+      "native_script": "恭喜发财",
+      "romanization": "Gōngxǐ fācái",
+      "translation": "Wishing you prosperity",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Wan Shi Ru Yi",
+      "native_script": "万事如意",
+      "romanization": "Wànshì rúyì",
+      "translation": "May everything go as you wish",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Nian Nian You Yu",
+      "native_script": "年年有余",
+      "romanization": "Niánnián yǒuyú",
+      "translation": "May there be abundance every year",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Shen Ti Jian Kang",
+      "native_script": "身体健康",
+      "romanization": "Shēntǐ jiànkāng",
+      "translation": "Wishing you good health",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "He Jia Huan Le",
+      "native_script": "合家欢乐",
+      "romanization": "Héjiā huānlè",
+      "translation": "Happiness for the whole family",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Jin Yu Man Tang",
+      "native_script": "金玉满堂",
+      "romanization": "Jīnyù mǎntáng",
+      "translation": "May treasures fill your home",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Chu Xi Kuai Le",
+      "native_script": "除夕快乐",
+      "romanization": "Chúxì kuàilè",
+      "translation": "Happy New Year's Eve",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "cny-greetings-what-to-say",
+
+  "related": [
+    {
+      "href": "/library/chinese-symbols/",
+      "title": "Chinese Symbols",
+      "desc": "A broader reference library of Chinese Unicode symbols and characters."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "The full cursive font family for elegant greeting cards and captions."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "More cheerful kaomoji faces for celebratory messages and chats."
+    }
+  ]
+}

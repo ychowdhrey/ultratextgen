@@ -220,11 +220,10 @@ def synthesize_faq(spec):
     ]
     if spec.get("companion_answer_slug"):
         faqs.append({
-            "q": f"Is it safe to use styled {event_name} text everywhere?",
-            "a": f"Usually, but styled Unicode text is not always searchable or "
-                 f"screen-reader friendly. See "
+            "q": f"Where can I find more {event_name} phrases and what to write?",
+            "a": f"See "
                  f"<a href=\"{SITE}/answers/{esc_attr(spec['companion_answer_slug'])}/\">"
-                 f"our full answer</a> for the details and the safe way to use it.",
+                 f"our full answer</a> for more greetings, translations, and message ideas.",
         })
     return faqs
 
