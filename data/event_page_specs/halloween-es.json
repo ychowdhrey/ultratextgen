@@ -1,0 +1,174 @@
+{
+  "slug": "halloween",
+  "language": "es",
+  "event_name": "Halloween",
+  "aliases": ["Noche de Brujas"],
+
+  "title": "Fuentes, Emojis y Símbolos de Halloween | UltraTextGen",
+  "meta_description": "Dale estilo a tu mensaje de Halloween en vivo, copia emojis de calabaza, fantasma y murciélago, kaomoji espeluznantes, arte ASCII original y frases listas como Feliz Halloween o Truco o Trato.",
+
+  "hero_h1": "Generador de Texto y Símbolos de Halloween",
+  "hero_tagline": "Escribe un nombre o un deseo espeluznante y dale estilo con fuentes góticas, cursivas y divertidas; luego copia emojis de calabaza, fantasma y murciélago, kaomoji y arte ASCII — o toca una frase de Halloween ya lista para transformarla al instante.",
+
+  "intro": "Halloween — o la Noche de Brujas, como se le conoce en buena parte de Latinoamérica — es la gran fiesta de disfraces y frases ingeniosas del otoño: calabazas, disfraces y publicaciones pensadas para sonar espeluznantes, divertidas o ambas cosas a la vez. Esta página reúne todo lo necesario para darle estilo a esa publicación o tarjeta: fuentes góticas y divertidas que puedes previsualizar con tu propio texto, los emojis de calabaza, fantasma y murciélago que la gente realmente usa, kaomoji para un mensaje de chat con un toque tenebroso, algunas piezas de arte ASCII originales hechas a mano, y un banco de frases de Halloween — desde el clásico \"Feliz Halloween\" hasta \"Truco o Trato\" — que se transforman al instante en cuanto las tocas.",
+
+  "date_window": "cada año el 31 de octubre",
+
+  "sample_phrase": "Feliz Halloween",
+
+  "canonical": "https://ultratextgen.com/es/events/halloween/",
+
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/halloween/",
+    "es": "https://ultratextgen.com/es/events/halloween/",
+    "x_default": "es"
+  },
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Gothic",
+      "Ultra Gothic Bold",
+      "Ultra Gothic Occult",
+      "Ultra Gothic Cross",
+      "Ultra Gothic Script",
+      "Ultra Aesthetic Gothic",
+      "Ultra Script Bold",
+      "Ultra Bold",
+      "Ultra Bubble",
+      "Ultra Small Caps"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Emojis de Halloween",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🎃", "👻", "🦇", "🕷️", "🕸️", "💀", "☠️", "🧙‍♀️", "🧛", "🐈‍⬛", "🍬", "🌙", "⚰️"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(((( ;°Д°))))", "label": "Temblando de Miedo" },
+    { "text": "Σ(ﾟдﾟ;)", "label": "Grito de Susto" },
+    { "text": "ヽ(゜Q。)ノ", "label": "Fantasma Errante" },
+    { "text": "눈_눈", "label": "Mirada Espeluznante" },
+    { "text": "(¬‿¬)", "label": "Sonrisa Traviesa" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Calabaza de Halloween",
+        "art": "   .-'''-.\n  /  o o  \\\n |    >    |\n  \\  ___  /\n   '-...-'"
+      },
+      {
+        "label": "Fantasma",
+        "art": "   ___\n  /   \\\n | o o |\n |  -  |\n |     |\n \\/\\/\\/"
+      },
+      {
+        "label": "Murciélago",
+        "art": "  /\\   /\\\n /  \\_/  \\\n(   ^ ^   )\n \\       /\n  \\/   \\/"
+      },
+      {
+        "label": "Araña",
+        "art": "   \\ | /\n    \\|/\n--(  o  )--\n    /|\\\n   / | \\"
+      },
+      {
+        "label": "Sombrero de Bruja",
+        "art": "      /\\\n     /  \\\n    /    \\\n   /______\\\n  /________\\\n ~~~~~~~~~~~~"
+      },
+      {
+        "label": "Lápida",
+        "art": "  _________\n /   RIP   \\\n|           |\n|     +     |\n|___________|"
+      },
+      {
+        "label": "Telaraña",
+        "art": "\\   |   /\n \\  |  /\n--- + ---\n /  |  \\\n/   |   \\"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Feliz Halloween",
+      "native_script": "Feliz Halloween",
+      "romanization": "Feliz Halloween",
+      "translation": "El saludo clásico y universal para Halloween.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Truco o Trato",
+      "native_script": "Truco o Trato",
+      "romanization": "Truco o Trato",
+      "translation": "El grito clásico para pedir dulces de puerta en puerta.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Dulce o Truco",
+      "native_script": "Dulce o Truco",
+      "romanization": "Dulce o Truco",
+      "translation": "Una variante regional de \"Truco o Trato\" que también se usa mucho.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "¡Buuu!",
+      "native_script": "¡Buuu!",
+      "romanization": "¡Buuu!",
+      "translation": "Una manera corta y juguetona de asustar a alguien.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Feliz Noche de Brujas",
+      "native_script": "Feliz Noche de Brujas",
+      "romanization": "Feliz Noche de Brujas",
+      "translation": "Una alternativa festiva a \"Feliz Halloween\", muy usada en México y Centroamérica.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Que tengas una Noche de Brujas espeluznante",
+      "native_script": "Que tengas una Noche de Brujas espeluznante",
+      "romanization": "Que tengas una Noche de Brujas espeluznante",
+      "translation": "Un deseo festivo, ideal para tarjetas y mensajes más largos.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Que la pases espeluznante",
+      "native_script": "Que la pases espeluznante",
+      "romanization": "Que la pases espeluznante",
+      "translation": "Una despedida casual para pies de foto y publicaciones.",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "companion_answer_slug": "que-escribir-en-halloween",
+
+  "related": [
+    {
+      "href": "/library/halloween-symbols/",
+      "title": "Símbolos de Halloween",
+      "desc": "Una biblioteca más amplia de símbolos y combinaciones de emoji de Halloween en Unicode."
+    },
+    {
+      "href": "/es/library/simbolos-witchy-occult/",
+      "title": "Símbolos Witchy y Ocultos",
+      "desc": "Pentagramas, lunas y caracteres ocultos para una estética más oscura."
+    },
+    {
+      "href": "/library/skull-ascii-art/",
+      "title": "Arte ASCII de Calaveras",
+      "desc": "Más piezas de arte ASCII de calaveras originales para copiar y pegar."
+    },
+    {
+      "href": "/es/letras-goticas/",
+      "title": "Letras Góticas",
+      "desc": "La familia completa de fuentes blackletter y fraktur para una estética oscura y de otro tiempo."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "Generador de Arte ASCII",
+      "desc": "Escribe cualquier palabra o nombre y conviértelo en arte ASCII de letras en bloque en vivo."
+    }
+  ]
+}
