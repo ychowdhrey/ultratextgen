@@ -1,0 +1,129 @@
+{
+  "slug": "music-kaomoji",
+  "title": "Music Kaomoji: Copy & Paste Singing & Dancing Text Faces",
+  "meta_description": "Browse and copy music kaomoji — also spelled kamoji — singing, dancing, and note-trailing Japanese text faces. Click any to copy it instantly.",
+  "breadcrumb": "Music Kaomoji",
+  "hero_h1": "Music Kaomoji",
+  "hero_tagline": "Copy and paste music kaomoji — singing and dancing Japanese text faces trailing musical notes. Click any face to copy it instantly.",
+  "intro": "Music kaomoji (also spelled kamoji) are Japanese-style text faces humming, singing, and dancing along — usually trailing a ♪ or ♫. A music kaomoji such as ♪(´▽｀) or ♪┏(・o･)┛♪ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by style below and click any face to copy it instantly. Whether you search \"music kaomoji\" or \"kaomoji music,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "singing",
+      "label": "Singing",
+      "h2": "Singing Kaomoji",
+      "intro": "Humming, happy singers.",
+      "symbols": [
+        {
+          "char": "♪(´▽｀)",
+          "label": "Humming"
+        },
+        {
+          "char": "(っ˘ω˘ς )♪",
+          "label": "Softly Singing"
+        },
+        {
+          "char": "♪(๑ᴖ◡ᴖ๑)♪",
+          "label": "La La La"
+        },
+        {
+          "char": "(♫ˆ ⌣ ˆ)",
+          "label": "In Tune"
+        },
+        {
+          "char": "ヽ(o´∀`)ﾉ♪",
+          "label": "Sing Along"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "Whistling"
+        }
+      ]
+    },
+    {
+      "id": "dancing",
+      "label": "Dancing",
+      "h2": "Dancing to Music Kaomoji",
+      "intro": "Grooving, note-following dancers.",
+      "symbols": [
+        {
+          "char": "♪┏(・o･)┛♪",
+          "label": "Dancing"
+        },
+        {
+          "char": "♫٩(ˊᗜˋ*)و♫",
+          "label": "Groovy"
+        },
+        {
+          "char": "┌(ㆆ▿ㆆ)┘♪",
+          "label": "Two Step"
+        },
+        {
+          "char": "ヾ(⌐■_■)ノ♪",
+          "label": "Cool Groove"
+        },
+        {
+          "char": "♬♪(ノ゜∇゜)ノ",
+          "label": "Feeling It"
+        },
+        {
+          "char": "┏(・o･)┛♪┗ ( ･o･) ┓",
+          "label": "Dance Off"
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "label": "Notes",
+      "h2": "Musical Note Kaomoji",
+      "intro": "Faces framed with notes.",
+      "symbols": [
+        {
+          "char": "(￣▽￣)/♫•*¨*•.¸¸♪",
+          "label": "Melody"
+        },
+        {
+          "char": "♪♪♪ ♩(ˊ•ω•ˋ)",
+          "label": "Playlist"
+        },
+        {
+          "char": "ヽ(´▽`)/♫",
+          "label": "On Repeat"
+        },
+        {
+          "char": "♪~ ᕕ(ᐛ)ᕗ",
+          "label": "Bop"
+        },
+        {
+          "char": "(＾▽＾)o自自o(＾▽＾)",
+          "label": "Cheers to Music"
+        }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful Japanese text faces."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it."
+    },
+    {
+      "href": "/library/excited-kaomoji/",
+      "title": "Excited Kaomoji",
+      "desc": "High-energy, hyped-up text faces."
+    }
+  ]
+}

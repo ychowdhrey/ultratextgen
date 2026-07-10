@@ -1,0 +1,129 @@
+{
+  "slug": "wave-kaomoji",
+  "title": "Wave Kaomoji: Copy & Paste Waving Text Faces",
+  "meta_description": "Browse and copy wave kaomoji — also spelled kamoji — Japanese text faces waving hello and goodbye. Click any to copy it instantly.",
+  "breadcrumb": "Wave Kaomoji",
+  "hero_h1": "Wave Kaomoji",
+  "hero_tagline": "Copy and paste wave kaomoji — friendly Japanese text faces waving hello and goodbye. Click any face to copy it instantly.",
+  "intro": "Wave kaomoji (also spelled kamoji) are Japanese-style text faces raising a hand to wave — a cheerful hello or a fond goodbye. A wave kaomoji such as (^-^)/ or ( ﾟ▽ﾟ)/ is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by style below and click any face to copy it instantly. Whether you search \"wave kaomoji\" or \"kaomoji wave,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "hello",
+      "label": "Hello",
+      "h2": "Hello Wave Kaomoji",
+      "intro": "Bright, friendly hellos.",
+      "symbols": [
+        {
+          "char": "(^-^)/",
+          "label": "Hi There"
+        },
+        {
+          "char": "( ﾟ▽ﾟ)/",
+          "label": "Hello"
+        },
+        {
+          "char": "(・ω・)ノ",
+          "label": "Hey"
+        },
+        {
+          "char": "ヾ(^ω^*)",
+          "label": "Waving Hi"
+        },
+        {
+          "char": "(＠^◡^)ノ",
+          "label": "Cheerful Wave"
+        },
+        {
+          "char": "( ´ ▽ ` )ﾉ",
+          "label": "Warm Hello"
+        }
+      ]
+    },
+    {
+      "id": "bye",
+      "label": "Goodbye",
+      "h2": "Goodbye Wave Kaomoji",
+      "intro": "See-you-later farewells.",
+      "symbols": [
+        {
+          "char": "(^_^)/~",
+          "label": "Bye Bye"
+        },
+        {
+          "char": "（ ^_^）／~~~",
+          "label": "See You"
+        },
+        {
+          "char": "ﾉ(・ω・)ﾉ",
+          "label": "Take Care"
+        },
+        {
+          "char": "(；一_一)ﾉ",
+          "label": "Reluctant Bye"
+        },
+        {
+          "char": "(*´╰╯`๓)♬",
+          "label": "Farewell"
+        },
+        {
+          "char": "バイバイ(￣▽￣)ノ",
+          "label": "Wave Off"
+        }
+      ]
+    },
+    {
+      "id": "excited",
+      "label": "Excited Wave",
+      "h2": "Excited Wave Kaomoji",
+      "intro": "Big, both-arms waving.",
+      "symbols": [
+        {
+          "char": "ヾ(・ω・*)ﾉ",
+          "label": "Excited Wave"
+        },
+        {
+          "char": "ヽ(・∀・)ﾉ",
+          "label": "Over Here"
+        },
+        {
+          "char": "ﾉ(*≧▽≦)ﾉ",
+          "label": "Big Wave"
+        },
+        {
+          "char": "＼(^▽^)／",
+          "label": "Both Arms"
+        },
+        {
+          "char": "ヾ(≧▽≦*)o",
+          "label": "So Happy"
+        }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji hub — every mood of Japanese text face in one place."
+    },
+    {
+      "href": "/library/happy-kaomoji/",
+      "title": "Happy Kaomoji",
+      "desc": "Smiling and joyful Japanese text faces."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it."
+    },
+    {
+      "href": "/library/excited-kaomoji/",
+      "title": "Excited Kaomoji",
+      "desc": "High-energy, hyped-up text faces."
+    }
+  ]
+}

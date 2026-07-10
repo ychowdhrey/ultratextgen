@@ -1,0 +1,73 @@
+{
+  "slug": "angry-kaomoji",
+  "title": "Angry Kaomoji: Copy & Paste Angry & Mad Text Faces",
+  "meta_description": "Browse and copy angry kaomoji — also spelled kamoji — Japanese text faces for rage, annoyance, and table flips. Click any to copy it instantly.",
+  "breadcrumb": "Angry Kaomoji",
+  "hero_h1": "Angry Kaomoji",
+  "hero_tagline": "Copy and paste angry kaomoji — mad, annoyed, and table-flipping Japanese text faces. Click any face to copy it instantly.",
+  "intro": "Angry kaomoji (also spelled kamoji) are Japanese-style text faces for every level of mad — mild annoyance, puffed-up rage, and full table flips. An angry kaomoji such as (ノಠ益ಠ)ノ or (¬_¬) is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse by intensity below and click any face to copy it instantly. However you search it — angry kaomoji or kaomoji angry — every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "annoyed",
+      "label": "Annoyed",
+      "h2": "Annoyed Kaomoji",
+      "intro": "Low-grade irritation and side-eye.",
+      "symbols": [
+        { "char": "(¬_¬)", "label": "Side Eye" },
+        { "char": "(￣ヘ￣)", "label": "Unamused" },
+        { "char": "(；¬_¬)", "label": "Suspicious" },
+        { "char": "(ಠ_ಠ)", "label": "Disapproval" },
+        { "char": "(¬､¬)", "label": "Skeptical" },
+        { "char": "(－‸ლ)", "label": "Facepalm" }
+      ]
+    },
+    {
+      "id": "mad",
+      "label": "Mad",
+      "h2": "Mad Kaomoji",
+      "intro": "Genuinely mad faces with steam building.",
+      "symbols": [
+        { "char": "(ノಠ益ಠ)ノ", "label": "Losing It" },
+        { "char": "(＃`Д´)", "label": "Yelling" },
+        { "char": "(҂⌣̀_⌣́)", "label": "Fed Up" },
+        { "char": "٩(╬ʘ益ʘ╬)۶", "label": "Enraged" },
+        { "char": "(◣_◢)", "label": "Menacing" },
+        { "char": "ヽ(≧Д≦)ノ", "label": "Frustrated" }
+      ]
+    },
+    {
+      "id": "fuming",
+      "label": "Fuming",
+      "h2": "Fuming Kaomoji",
+      "intro": "Peak rage — fists up, veins popping.",
+      "symbols": [
+        { "char": "(╬ Ò﹏Ó)", "label": "Furious" },
+        { "char": "(ﾉಥДಥ)ﾉ", "label": "Screaming Rage" },
+        { "char": "(҂` ﾛ ´)凸", "label": "Middle Finger" },
+        { "char": "୧((#Φ益Φ#))୨", "label": "Boiling Over" }
+      ]
+    },
+    {
+      "id": "flip",
+      "label": "Table Flip",
+      "h2": "Table Flip Kaomoji",
+      "intro": "When words fail — flip the table.",
+      "symbols": [
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip" },
+        { "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻", "label": "Double Flip" },
+        { "char": "(ノ`Д´)ノ彡┻━┻", "label": "Angry Flip" },
+        { "char": "┬─┬ ノ( ゜-゜ノ)", "label": "Put It Back" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/angry-emoji/", "title": "Angry Emoji", "desc": "Rage faces, fire combos, and mad emoji to copy and paste." },
+    { "href": "/library/shrug-kaomoji/", "title": "Shrug Kaomoji", "desc": "The classic ¯\\_(ツ)_/¯ shruggie and its variants." },
+    { "href": "/library/crying-kaomoji/", "title": "Crying & Sad Kaomoji", "desc": "Tearful and gloomy text faces for a lower mood." }
+  ]
+}

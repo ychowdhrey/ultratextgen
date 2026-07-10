@@ -1,0 +1,61 @@
+{
+  "slug": "shrug-kaomoji",
+  "title": "Shrug Kaomoji: Copy & Paste ¯\\_(ツ)_/¯ Shrug Text Faces",
+  "meta_description": "Copy and paste the shrug kaomoji ¯\\_(ツ)_/¯ and other shrug text faces — also spelled kamoji. One click to copy the classic shruggie and its variants.",
+  "breadcrumb": "Shrug Kaomoji",
+  "hero_h1": "Shrug Kaomoji",
+  "hero_tagline": "Copy and paste the shrug kaomoji ¯\\_(ツ)_/¯ and its variants — the classic \"I don't know\" text face. Click any to copy it instantly.",
+  "intro": "The shrug kaomoji ¯\\_(ツ)_/¯ — often called the \"shruggie\" — is a Japanese-style text face that says \"I don't know\" or \"whatever\" with raised arms. It is plain Unicode text, so it pastes cleanly into bios, captions, comments, and chats. Browse the classic shrug and its variants below and click any to copy it instantly. Whether you search \"shrug kaomoji,\" \"kaomoji shrug,\" or just \"shrug emoji,\" every face here is free to copy and paste.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "The Shruggie",
+      "h2": "The Classic Shruggie",
+      "intro": "The original ¯\\_(ツ)_/¯ and its close relatives.",
+      "symbols": [
+        { "char": "¯\\_(ツ)_/¯", "label": "Classic Shrug" },
+        { "char": "¯\\_(⊙_ʖ⊙)_/¯", "label": "Confused Shrug" },
+        { "char": "¯\\_(ᵔᵕᵔ)_/¯", "label": "Happy Shrug" },
+        { "char": "¯\\_(◉‿◉)_/¯", "label": "Wide-Eyed Shrug" },
+        { "char": "¯\\_( ͡° ͜ʖ ͡°)_/¯", "label": "Lenny Shrug" },
+        { "char": "¯\\(°_o)/¯", "label": "One-Arm Shrug" }
+      ]
+    },
+    {
+      "id": "kana",
+      "label": "Kana Shrugs",
+      "h2": "Kana Shrug Kaomoji",
+      "intro": "Japanese-bracket shrugs with the same what-can-you-do energy.",
+      "symbols": [
+        { "char": "┐(´～`)┌", "label": "Dunno" },
+        { "char": "┐(´д`)┌", "label": "Beats Me" },
+        { "char": "╮(╯▽╰)╭", "label": "Oh Well" },
+        { "char": "┐(￣ヘ￣)┌", "label": "Whatever" },
+        { "char": "╮(╯_╰)╭", "label": "No Idea" },
+        { "char": "┐(‘～`;)┌", "label": "Awkward Shrug" }
+      ]
+    },
+    {
+      "id": "indifferent",
+      "label": "Indifferent",
+      "h2": "Indifferent & Whatever Kaomoji",
+      "intro": "Cool, unbothered shrugs for a hard pass.",
+      "symbols": [
+        { "char": "╮ (. ❛ ᴗ ❛.) ╭", "label": "Cute Shrug" },
+        { "char": "┐(シ)┌", "label": "Minimal Shrug" },
+        { "char": "╮(╯∀╰)╭", "label": "Grinning Shrug" },
+        { "char": "┐(￣ヮ￣)┌", "label": "Carefree Shrug" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/happy-kaomoji/", "title": "Happy Kaomoji", "desc": "Smiling and joyful Japanese text faces to copy and paste." },
+    { "href": "/library/cute-kaomoji/", "title": "Cute Kaomoji", "desc": "Kawaii text faces with sparkly eyes and blushing cheeks." },
+    { "href": "/library/crying-kaomoji/", "title": "Crying & Sad Kaomoji", "desc": "Tearful and gloomy text faces for a lower mood." }
+  ]
+}
