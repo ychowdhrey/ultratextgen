@@ -13,10 +13,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text to Emoji Converter and Emoji Translator | UltraTextGen</title>
+  <title>Text to Emoji Converter, Emoji Letters &amp; Emoji to Text | UltraTextGen</title>
   <meta name="description" content="Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/text-to-emoji/">
-  <meta property="og:title" content="Text to Emoji Converter and Emoji Translator | UltraTextGen">
+  <meta property="og:title" content="Text to Emoji Converter, Emoji Letters &amp; Emoji to Text | UltraTextGen">
   <meta property="og:description" content="Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.">
   <meta property="og:url" content="https://ultratextgen.com/usecase/text-to-emoji/">
   <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Text to Emoji Converter and Emoji Translator | UltraTextGen">
+  <meta name="twitter:title" content="Text to Emoji Converter, Emoji Letters &amp; Emoji to Text | UltraTextGen">
   <meta name="twitter:description" content="Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/usecase-text-to-emoji.png">
 
@@ -53,6 +53,30 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Type or paste text and it converts instantly as you type — no button needed. Emojify and Replace match each word to an emoji from a built-in dictionary (with plural and tense handling); Letters maps every character to an emoji letter; Emoji → Text reverses the process. Words with no emoji match are kept as plain text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make an emoji sentence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use Emojify mode: type a full sentence and it keeps your words while adding a matching emoji after each recognised one. For example, \"Movie night with popcorn and my dog\" becomes \"Movie 🎬 night 🌙 with popcorn 🍿 and my dog 🐶\". It works as an emoji sentence generator for captions, texts, and social posts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I turn my name into emoji?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Switch to Letters mode and type a name — each letter becomes a boxed emoji letter. For example, SAM becomes 🇸 🇦 🇲. It's ideal for a name to emoji result in bios, gamertags, and Discord channel names."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert emoji back to text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the Emoji → Text mode. Paste a string of emoji and it decodes them into plain English words — for example ❤️🍕🌙 becomes \"love pizza moon\". This is the reverse of the text to emoji converter."
       }
     },
     {
@@ -302,6 +326,49 @@
     }
     .phrase-chip:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
     .phrase-chip.surprise { font-weight: 700; }
+    /* Examples / sub-intent section */
+    .tte-examples { margin-top: 2.75rem; }
+    .tte-examples h2 { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; }
+    .tte-examples h2:first-child { margin-top: 0; }
+    .tte-lead { color: var(--text-muted, #64748b); line-height: 1.6; margin-bottom: 0.75rem; }
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .example-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      text-align: left;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border, #e2e8f0);
+      background: var(--surface, #f8f9fa);
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    .example-card:hover { border-color: var(--accent, #6366f1); transform: translateY(-1px); }
+    .example-in { font-size: 0.85rem; font-weight: 600; color: var(--text, #1e293b); }
+    .example-out { font-size: 1rem; color: var(--text, #1e293b); word-break: break-word; }
+    .tte-inline {
+      display: inline-block;
+      padding: 0.05rem 0.4rem;
+      border-radius: 6px;
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e2e8f0);
+    }
+    .tte-linkbtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--accent, #6366f1);
+      padding: 0;
+    }
+    .tte-linkbtn:hover { text-decoration: underline; }
     .clear-btn {
       padding: 0.75rem 1.25rem;
       border-radius: 8px;
@@ -443,6 +510,36 @@
       <div class="breakdown-note">Words without emoji matches are kept as plain text.</div>
     </div>
 
+    <!-- Examples & sub-intents -->
+    <section class="tte-examples">
+      <h2>Emoji sentence examples</h2>
+      <p class="tte-lead">Not sure where to start? Tap any example to drop it into the converter above — it runs instantly in Emojify mode. This is the fastest way to turn a whole sentence into an emoji sentence.</p>
+      <div class="example-grid" id="exampleGrid">
+        <button class="example-card" type="button" data-example="I love pizza and sunny days at the beach">
+          <span class="example-in">“I love pizza and sunny days at the beach”</span>
+          <span class="example-out">I love ❤️ pizza 🍕 and sunny ☀️ days at the beach 🏖️</span>
+        </button>
+        <button class="example-card" type="button" data-example="Happy birthday to my best friend">
+          <span class="example-in">“Happy birthday to my best friend”</span>
+          <span class="example-out">Happy 😊 birthday 🎂 to my best 🏆 friend 👫</span>
+        </button>
+        <button class="example-card" type="button" data-example="Time to party with the family tonight">
+          <span class="example-in">“Time to party with the family tonight”</span>
+          <span class="example-out">Time ⏰ to party 🎉 with the family 👪 tonight 🌙</span>
+        </button>
+        <button class="example-card" type="button" data-example="Movie night with popcorn and my dog">
+          <span class="example-in">“Movie night with popcorn and my dog”</span>
+          <span class="example-out">Movie 🎬 night 🌙 with popcorn 🍿 and my dog 🐶</span>
+        </button>
+      </div>
+
+      <h2>Turn your name into emoji</h2>
+      <p class="tte-lead">Want a <strong>name to emoji</strong> result for a bio, gamertag, or Discord channel? Switch to <strong>🔤 Letters</strong> mode and type a name to spell it in boxed emoji letters. For example, <strong>SAM</strong> becomes <span class="tte-inline">🇸 🇦 🇲</span> and <strong>MIA</strong> becomes <span class="tte-inline">🇲 🇮 🇦</span>. <button class="tte-linkbtn" type="button" data-example="SAM" data-mode="letters">Try it →</button></p>
+
+      <h2>Emoji to text: reverse the conversion</h2>
+      <p class="tte-lead">Got a string of emoji you can’t read? Paste it into <strong>↩️ Emoji → Text</strong> mode to decode emoji back into plain English words. For example, <span class="tte-inline">❤️🍕🌙</span> becomes <strong>“love pizza moon”</strong>. <button class="tte-linkbtn" type="button" data-example="❤️🍕🌙" data-mode="decode">Try it →</button></p>
+    </section>
+
     <!-- CTA Cards -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 2.5rem;">
       <div class="cta-card">
@@ -493,6 +590,48 @@
     Just type or paste your text — it converts <strong>instantly as you type</strong>, no button required. Emojify and Replace match each word to an emoji from a built-in dictionary (and handle plurals and tenses automatically); Letters maps every character to an emoji letter; Emoji → Text reverses the whole thing. Words with no emoji match stay as plain text so your message stays readable.
     <br><br>
     All emojis follow <strong>Unicode standards</strong>, so they display consistently across devices and platforms.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I make an emoji sentence?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Use <strong>✨ Emojify</strong> mode: type a full sentence and it keeps your words while adding a matching emoji after each recognised one. For example, <strong>"Movie night with popcorn and my dog"</strong> becomes <strong>Movie 🎬 night 🌙 with popcorn 🍿 and my dog 🐶</strong>.
+    <br><br>
+    It works as an <strong>emoji sentence generator</strong> for captions, texts, and social posts — tap one of the examples above to see it in action.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I turn my name into emoji?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Switch to <strong>🔤 Letters</strong> mode and type a name — each letter becomes a boxed emoji letter. For example, <strong>SAM</strong> becomes 🇸 🇦 🇲.
+    <br><br>
+    A <strong>name to emoji</strong> result like this is ideal for bios, gamertags, and Discord channel names.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How do I convert emoji back to text?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  <div class="faq-answer">
+    Use the <strong>↩️ Emoji → Text</strong> mode. Paste a string of emoji and it decodes them into plain English words — for example <strong>❤️🍕🌙</strong> becomes <strong>"love pizza moon"</strong>.
+    <br><br>
+    It's the reverse of the text to emoji converter, handy when someone sends you an emoji-only message.
   </div>
 </div>
 
@@ -1667,6 +1806,23 @@
         loadPhrase(STARTER_PHRASES[surpriseIdx]);
       });
       phraseChips.appendChild(surprise);
+    })();
+
+    // ── Example cards & "Try it" buttons ──────────────────────────────────────
+    (function initExamples() {
+      const nodes = document.querySelectorAll('[data-example]');
+      nodes.forEach(node => {
+        node.addEventListener('click', () => {
+          const text = node.getAttribute('data-example');
+          const wantMode = node.getAttribute('data-mode') || 'emojify';
+          if (wantMode !== currentMode) setMode(wantMode);
+          mainInput.value = text;
+          render();
+          const card = document.querySelector('.hero-card');
+          if (card && card.scrollIntoView) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          mainInput.focus();
+        });
+      });
     })();
 
     // Init
