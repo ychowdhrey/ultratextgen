@@ -97,6 +97,14 @@
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
     designPng: $("#pt-design-png"),
+    // Name puzzle maker (optional; gated on its own mounts)
+    puzzleInput: $("#pt-puzzle-input"),
+    puzzleHeading: $("#pt-puzzle-heading"),
+    puzzleBorderGroup: $("#pt-puzzle-border-group"),
+    puzzleFooter: $("#pt-puzzle-footer"),
+    puzzlePreview: $("#pt-puzzle-preview"),
+    puzzlePrint: $("#pt-puzzle-print"),
+    puzzlePng: $("#pt-puzzle-png"),
     printRoot: $("#pt-print-root")
   };
 
@@ -1228,25 +1236,29 @@
   }
 
   // Wire one swatch button group: inject each swatch preview, set the active
-  // state, and re-render on click. `field` is the designState key it drives.
-  function wireSwatchGroup(group, field, swatchFor) {
+  // state, and re-render on click. `state` is the plain object the group
+  // drives (e.g. designState / puzzleState) and `field` is its key; `onChange`
+  // re-renders whatever preview that state feeds. Generalized (rather than
+  // hardcoded to the coloring designer) so other mounts — e.g. the name
+  // puzzle maker's border picker — can reuse the exact same swatch UI.
+  function wireSwatchGroup(group, field, swatchFor, state, onChange) {
     if (!group) return;
     const buttons = $$(".pt-swatch", group);
     const preset = buttons.filter((b) => b.classList.contains("is-active"))[0] || buttons[0];
-    if (preset) designState[field] = preset.dataset.value;
+    if (preset) state[field] = preset.dataset.value;
     buttons.forEach((b) => {
       const slot = b.querySelector(".pt-swatch-art");
       if (slot) slot.appendChild(swatchFor(b.dataset.value));
       b.setAttribute("aria-checked", b === preset ? "true" : "false");
       b.classList.toggle("is-active", b === preset);
       b.addEventListener("click", () => {
-        designState[field] = b.dataset.value;
+        state[field] = b.dataset.value;
         buttons.forEach((o) => {
           const on = o === b;
           o.classList.toggle("is-active", on);
           o.setAttribute("aria-checked", on ? "true" : "false");
         });
-        renderDesignPreview();
+        onChange();
       });
     });
   }
@@ -1257,12 +1269,255 @@
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderDesignPreview, 120); };
     el.designInput.addEventListener("input", schedule);
     if (el.designHeading) el.designHeading.addEventListener("input", schedule);
-    wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG);
-    wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG);
+    wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG, designState, renderDesignPreview);
+    wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG, designState, renderDesignPreview);
     [el.designFill, el.designBorder, el.designFooter].forEach((c) => { if (c) c.addEventListener("change", renderDesignPreview); });
     if (el.designPrint) el.designPrint.addEventListener("click", printDesign);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
     renderDesignPreview();
+  }
+
+  /* ---------------------------------------------------------------
+     Section: name puzzle maker
+     Type a name -> each letter becomes a big outline "puzzle piece" in a
+     row, with a dashed cut line between every pair of pieces, an optional
+     custom heading, an optional Name/Date footer line, and an optional
+     decorative shape-frame border. The border reuses the exact BORDER_SETS /
+     addBorderRow / borderSwatchSVG primitives the coloring-sheet designer
+     already ships — no second border system. Letters reuse outlineSVG(ch),
+     the same per-character primitive buildAlphabetGrid lays out in a grid,
+     just arranged in a single row here. Gated on #pt-puzzle-input +
+     #pt-puzzle-preview so other pages are untouched.
+     --------------------------------------------------------------- */
+
+  const PUZZLE_DEMO = CFG.puzzleDemo || CFG.nameDemo || "Alex";
+  const puzzleState = { border: "none" };
+
+  function puzzleValue() {
+    const raw = el.puzzleInput ? el.puzzleInput.value : "";
+    return (raw && raw.trim()) ? raw.trim().slice(0, 20) : PUZZLE_DEMO;
+  }
+  function puzzleHeadingText() {
+    return el.puzzleHeading ? el.puzzleHeading.value.trim().slice(0, 48) : "";
+  }
+  function puzzleBorderKey() {
+    return el.puzzleBorderGroup ? puzzleState.border : "none";
+  }
+  function puzzleBorderSym() {
+    return BORDER_SETS[puzzleBorderKey()] || "";
+  }
+  function puzzleFooterOn() {
+    return !!(el.puzzleFooter && el.puzzleFooter.checked);
+  }
+
+  // One row of symbols reusing the coloring designer's own border primitive
+  // (addBorderRow draws across a fixed 0..1000 viewBox, so a dedicated
+  // 1000x60 strip drops straight in).
+  function puzzleBorderStripSVG(symbols) {
+    const svg = svgMake("svg", { viewBox: "0 0 1000 60", class: "pt-puzzle-border-strip", "aria-hidden": "true" });
+    addBorderRow(svg, symbols, 40);
+    return svg;
+  }
+
+  function puzzleFooterRow() {
+    const row = document.createElement("div");
+    row.className = "pt-puzzle-footer-row";
+    const field = (label) => {
+      const f = document.createElement("span");
+      f.className = "pt-puzzle-footer-field";
+      const l = document.createElement("span");
+      l.textContent = label;
+      const line = document.createElement("span");
+      line.className = "pt-puzzle-footer-line";
+      f.appendChild(l); f.appendChild(line);
+      return f;
+    };
+    row.appendChild(field("Name:"));
+    row.appendChild(field("Date:"));
+    return row;
+  }
+
+  // The row of cut-apart letter pieces. Each non-space character becomes an
+  // outlineSVG(ch) piece with a dashed cut line on its trailing edge (pure
+  // CSS border, so it prints identically to the screen preview); spaces
+  // become a narrower gap column with no piece and no cut line. Column
+  // widths are set directly (not via a CSS custom property + repeat()) so
+  // any letter count — 3 or 13 — always fits the sheet width; long names
+  // just render smaller pieces instead of overflowing.
+  function puzzleRowNode(word) {
+    const row = document.createElement("div");
+    row.className = "pt-puzzle-row";
+    const cols = [];
+    [...word].forEach((rawCh) => {
+      if (rawCh === " ") {
+        const gap = document.createElement("div");
+        gap.className = "pt-puzzle-gap";
+        row.appendChild(gap);
+        cols.push("0.6fr");
+        return;
+      }
+      const ch = /[a-z]/i.test(rawCh) ? rawCh.toUpperCase() : rawCh;
+      const piece = document.createElement("div");
+      piece.className = "pt-puzzle-piece";
+      piece.appendChild(outlineSVG(ch));
+      row.appendChild(piece);
+      cols.push("1fr");
+    });
+    row.style.gridTemplateColumns = cols.join(" ");
+    return row;
+  }
+
+  // The whole puzzle as one DOM sheet — the single primitive behind both the
+  // live preview and the printed page, so what's on screen is what prints.
+  function puzzleSheetNode() {
+    const word = puzzleValue();
+    const heading = puzzleHeadingText();
+    const strip = puzzleBorderSym().split(" ").filter(Boolean);
+    const footer = puzzleFooterOn();
+
+    const sheet = document.createElement("div");
+    sheet.className = "pt-puzzle-sheet";
+
+    if (strip.length) sheet.appendChild(puzzleBorderStripSVG(strip));
+
+    const h = document.createElement("h3");
+    h.className = "pt-puzzle-heading-text";
+    h.textContent = heading || (word + "’s Name Puzzle");
+    sheet.appendChild(h);
+
+    sheet.appendChild(puzzleRowNode(word));
+
+    const cap = document.createElement("p");
+    cap.className = "pt-puzzle-caption";
+    cap.textContent = "Cut along the dashed lines to separate each letter piece.";
+    sheet.appendChild(cap);
+
+    if (footer) sheet.appendChild(puzzleFooterRow());
+    if (strip.length) sheet.appendChild(puzzleBorderStripSVG(strip));
+
+    const cred = document.createElement("p");
+    cred.className = "pt-puzzle-credit";
+    cred.textContent = "ultratextgen.com";
+    sheet.appendChild(cred);
+
+    return sheet;
+  }
+
+  function renderPuzzlePreview() {
+    if (!el.puzzlePreview) return;
+    el.puzzlePreview.innerHTML = "";
+    el.puzzlePreview.appendChild(puzzleSheetNode());
+  }
+
+  function printPuzzle() {
+    const holder = document.createElement("div");
+    holder.className = "pt-puzzle-print-holder";
+    holder.appendChild(puzzleSheetNode());
+    printWrap("", holder);
+  }
+
+  // Word -> wide PNG mirroring the sheet: border strips, heading, a row of
+  // outlined letter pieces with dashed cut lines between them, and an
+  // optional Name/Date footer. Canvas has no CSS grid, so column widths and
+  // cut-line x-positions are computed with the same weighting (space = 0.6,
+  // letter = 1) as puzzleRowNode's grid-template-columns.
+  function puzzlePNG() {
+    const word = puzzleValue();
+    const heading = puzzleHeadingText();
+    const strip = puzzleBorderSym().split(" ").filter(Boolean);
+    const footer = puzzleFooterOn();
+    withFont(() => {
+      const chars = [...word];
+      const W = Math.max(1000, chars.length * 140 + 240);
+      const H = 900;
+      const pad = 70;
+      const canvas = document.createElement("canvas");
+      canvas.width = W; canvas.height = H;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, W, H);
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.lineJoin = "round";
+
+      if (strip.length) {
+        const count = 11, gap = (W - 120) / (count - 1);
+        ctx.font = "34px " + FONT; ctx.fillStyle = "#c8ccd6";
+        for (let i = 0; i < count; i++) {
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, 60);
+          ctx.fillText(strip[i % strip.length], 60 + i * gap, H - 40);
+        }
+      }
+
+      ctx.font = "700 48px " + FONT;
+      ctx.fillStyle = INK;
+      ctx.fillText(heading || (word + "’s Name Puzzle"), W / 2, 130);
+
+      const rowTop = 190, rowBottom = 620, rowH = rowBottom - rowTop;
+      const availW = W - pad * 2;
+      const weights = chars.map((c) => (c === " " ? 0.6 : 1));
+      const totalWeight = weights.reduce((a, b) => a + b, 0) || 1;
+      let x = pad;
+      const boundaries = [];
+      chars.forEach((rawCh, i) => {
+        const w = availW * (weights[i] / totalWeight);
+        if (rawCh !== " ") {
+          const ch = /[a-z]/i.test(rawCh) ? rawCh.toUpperCase() : rawCh;
+          const cx = x + w / 2, cy = rowTop + rowH / 2;
+          const fs = Math.min(rowH * 0.8, w * 0.85);
+          ctx.font = "700 " + Math.round(fs) + "px " + FONT;
+          ctx.fillStyle = "#ffffff";
+          ctx.fillText(ch, cx, cy);
+          ctx.lineWidth = Math.max(4, fs * 0.06);
+          ctx.strokeStyle = INK;
+          ctx.strokeText(ch, cx, cy);
+          if (x > pad) boundaries.push(x);
+        }
+        x += w;
+      });
+      ctx.setLineDash([12, 10]);
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 3;
+      boundaries.forEach((bx) => {
+        ctx.beginPath();
+        ctx.moveTo(bx, rowTop); ctx.lineTo(bx, rowBottom); ctx.stroke();
+      });
+      ctx.setLineDash([]);
+
+      if (footer) {
+        ctx.textAlign = "left";
+        ctx.font = "600 30px " + FONT;
+        ctx.fillStyle = INK;
+        const fy = 700;
+        ctx.fillText("Name:", pad, fy);
+        ctx.fillText("Date:", W / 2 + 40, fy);
+        ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(pad + 110, fy + 12); ctx.lineTo(W / 2 - 40, fy + 12);
+        ctx.moveTo(W / 2 + 150, fy + 12); ctx.lineTo(W - pad, fy + 12);
+        ctx.stroke();
+        ctx.textAlign = "center";
+      }
+
+      ctx.font = "22px " + FONT;
+      ctx.fillStyle = "#aeb4c0";
+      ctx.fillText("ultratextgen.com", W / 2, 860);
+
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(word) || "puzzle") + ".png");
+    });
+  }
+
+  function buildPuzzle() {
+    if (!el.puzzleInput || !el.puzzlePreview) return;
+    let timer = null;
+    const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderPuzzlePreview, 120); };
+    el.puzzleInput.addEventListener("input", schedule);
+    if (el.puzzleHeading) el.puzzleHeading.addEventListener("input", schedule);
+    if (el.puzzleFooter) el.puzzleFooter.addEventListener("change", renderPuzzlePreview);
+    wireSwatchGroup(el.puzzleBorderGroup, "border", borderSwatchSVG, puzzleState, renderPuzzlePreview);
+    if (el.puzzlePrint) el.puzzlePrint.addEventListener("click", printPuzzle);
+    if (el.puzzlePng) el.puzzlePng.addEventListener("click", puzzlePNG);
+    renderPuzzlePreview();
   }
 
   /* ---------------------------------------------------------------
@@ -1274,6 +1529,7 @@
     buildAlphabetGrid();
     initGenerator();
     buildDesigner();
+    buildPuzzle();
 
     if (el.practicePrint) el.practicePrint.addEventListener("click", buildPracticeSheet);
 

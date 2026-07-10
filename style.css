@@ -5679,6 +5679,60 @@ body.dark-mode .pt-paper { background: #fff; border-color: var(--border-light); 
 }
 
 /* ============================================================
+   Name puzzle maker — type a name -> per-letter cut-apart outline
+   pieces with dashed cut lines, an optional heading/footer line, and
+   an optional shape-frame border. Powers /printables/name-puzzle-maker/
+   via the shared engine's #pt-puzzle-* mounts. Sits inside the same
+   .pt-studio / .pt-paper / .pt-swatches shell as the coloring-page-maker
+   and reuses its border symbol set — only the puzzle-row layout below
+   is new.
+   ============================================================ */
+.pt-puzzle-input { min-height: auto; height: 54px; resize: none; }
+
+.pt-puzzle-sheet { display: flex; flex-direction: column; gap: 0.9rem; }
+.pt-puzzle-border-strip { display: block; width: 100%; height: auto; max-height: 40px; }
+.pt-puzzle-heading-text {
+  margin: 0;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* Row of cut-apart letter pieces. Column widths are set inline per render
+   (see puzzleRowNode in printablesEngine.js) so any letter count fits the
+   sheet width without overflow — long names just render smaller pieces. */
+.pt-puzzle-row {
+  display: grid;
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pt-puzzle-piece {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.35rem;
+  border-right: 3px dashed #94a3b8;
+}
+.pt-puzzle-piece:last-child { border-right: none; }
+.pt-puzzle-piece .bubble-outline { width: 100%; height: auto; }
+.pt-puzzle-gap { min-width: 0.75rem; }
+
+.pt-puzzle-caption { margin: 0; text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+.pt-puzzle-credit { margin: 0; text-align: center; font-size: 0.75rem; color: #aeb4c0; }
+
+.pt-puzzle-footer-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.pt-puzzle-footer-field { display: inline-flex; align-items: baseline; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; }
+.pt-puzzle-footer-line { display: inline-block; width: 180px; height: 1px; border-bottom: 2px solid #9aa3b2; }
+
+/* Print: the sheet fills the page on its own, like the coloring designer */
+.pt-puzzle-print-holder { text-align: center; }
+.pt-puzzle-print-holder .pt-puzzle-sheet { max-width: 900px; margin: 0 auto; }
+
+/* ============================================================
    Contextual decoration showcase — static, crawlable SEO block
    Injected as the final section of <main> on decorator pages.
    ============================================================ */

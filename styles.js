@@ -176,6 +176,11 @@ const PRINTABLE_PAGES = {
     slug: 'coloring-page-maker',
     title: 'Coloring Page Maker',
     description: 'Type any name or word to make your own printable coloring page — heading, name-and-date line, decorative borders, and multi-color fills. Print or PNG, no sign-up.'
+  },
+  'name-puzzle-maker': {
+    slug: 'name-puzzle-maker',
+    title: 'Name Puzzle Maker',
+    description: 'Type any name to make a free printable name puzzle — each letter as a big outline piece with dashed cut lines, plus an optional shape-frame border. Print or PNG, no sign-up.'
   }
 };
 
