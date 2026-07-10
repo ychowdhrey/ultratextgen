@@ -331,6 +331,21 @@
     if (tile) copySymbol(tile);
   });
 
+  /* ============================
+     Auto-wire: per-piece copy buttons on multi-line ASCII art pages.
+     A .art-piece-copy button copies the whitespace-preserved text of the
+     <pre class="art-piece-pre"> inside the same .art-piece-card.
+     ============================ */
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".art-piece-copy");
+    if (!btn) return;
+    const card = btn.closest(".art-piece-card");
+    const pre = card ? card.querySelector(".art-piece-pre") : null;
+    if (!pre) return;
+    const label = btn.getAttribute("data-label") || "ASCII art";
+    copyText(pre.textContent.replace(/\s+$/, ""), btn, label);
+  });
+
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Enter" && e.key !== " ") return;
     var tile = e.target.closest(".symbol-tile");
