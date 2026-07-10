@@ -346,3 +346,6 @@ Do not add a test framework unless explicitly requested.
   import the brand skin from `scripts/generate-site-art.py`; do not bundle `.ttf`
   font files; do not invent a pin look (no Poppins/pills/saturated colors/green
   CTA — use the off-white panel + dot grid + purple→blue brand skin).
+- Do not commit strategic analysis, competitor research, keyword-opportunity
+  backlogs, or roadmap docs to this repo — it contains shippable product code and
+  content only.
