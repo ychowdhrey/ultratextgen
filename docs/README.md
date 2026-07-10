@@ -36,6 +36,7 @@ workflow that produces it.
 | **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) + `guide-opportunity-map-<date>.md` | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
 | **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | [`coloring-sheet-generator-strategy.md`](./coloring-sheet-generator-strategy.md) (strategy) + `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog + strategy, no generator |
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
+| **Root pages** (homepage, 404, legal) | `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`, `terms/`, site icons | `WebSite` (homepage) | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented |
 
 **Only the Library lane is structurally complete** (discovery → scouting →
 research → volume → score → dedupe → spec → generate → validate → PR). The
@@ -58,7 +59,8 @@ These run across page types rather than producing a type.
 | Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | [`image-backlink-strategy.md`](./image-backlink-strategy.md) (decision doc) | ad hoc |
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
-| i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `pl/`, `pt/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
+| i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `no/`, `pl/`, `pt/`, `sv/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
+| Ads / monetization (Journey ads deployment) | `scripts/check-ads.js` (CI: `ads-check.yml`), `scripts/update-ads-txt.sh` (CI: `update-ads-txt.yml`, daily sync of `ads.txt` from Journey), tag injected site-wide via `header.js` | ❌ none | as needed + daily `ads.txt` sync |
 | ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | `library_opportunities.csv` `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
@@ -78,6 +80,8 @@ These run across page types rather than producing a type.
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `image-assets-check.yml` | on `pull_request` (HTML/`assets/og`/`assets/hero`/`assets/pinterest` paths) | `check-image-assets.py` (PR #315) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
+| `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`scripts/check-ads.js`) | `check-ads.js` (Journey ads tag deployed site-wide, PR #366) |
+| `update-ads-txt.yml` | daily 00:30 UTC + manual | refresh `ads.txt` from Journey (`update-ads-txt.sh`, PR #368) |
 
 ### Scheduled routines (Claude Code on the web)
 
@@ -119,7 +123,11 @@ here so they aren't lost. Update as they're closed or new ones appear.
    received content expansions in PRs #302, #310, and #312, and PR #312
    introduced a localized usecase sub-namespace (`/id/usecase/`) with no
    governing workflow — the i18n governing doc and namespace definition are
-   overdue.
+   overdue. **Update (2026-07-10):** two more locales shipped this week —
+   Swedish `/sv/` (PR #396) and Norwegian `/no/` (PR #397) — and neither
+   prefix was in `LANE_RULES`, so both PRs surfaced as unclassified; both
+   prefixes are now added. The locale count (12+ and growing weekly) makes
+   the missing i18n governing doc the most pressing item in this gap.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
    (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
@@ -132,11 +140,13 @@ here so they aren't lost. Update as they're closed or new ones appear.
    `assets/pinterest/` root rather than a named board subdirectory — these
    should be moved to `assets/pinterest/<board>/` and wired into the upload
    pipeline. Migrate both per `docs/pinterest-pin-generation.md`.
-7. **Homepage (`index.html`, `_root.html`) has no lane or owner.** It isn't a
-   page type in the table above, so edits to it (PRs #310, #330, #331 this
-   week) never resolve to a lane — the digest classifier has no rule for it,
-   and inventing one (e.g. folding it into "Docs" or "Core JS") would misrepresent
-   what changed. Needs a decision: its own row, or explicit non-lane status.
+7. ~~**Homepage (`index.html`, `_root.html`) has no lane or owner.**~~ **Closed
+   (2026-07-10)** — given its own row in the page-type table ("Root pages":
+   `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`,
+   `terms/`, site icons) and matching `LANE_RULES` entries, resolving repeated
+   unclassified signal across PRs #365, #367, #369, #372, #384, #389, #396,
+   #397. It's still hand-built with no generator or governing doc — that
+   remains open, tracked the same as the other undocumented lanes above.
 8. **Visual/printable output mode has principles but no pipeline.** The second
    output mode ([`jtbd-principles.md`](./jtbd-principles.md) §10) is live across
    three surfaces — the curved/arc tool (`/curved-text/`), printable bubble
@@ -150,6 +160,13 @@ here so they aren't lost. Update as they're closed or new ones appear.
    is still absent from the page-type table. Decide: promote to a full lane
    (shared export util + a governing doc) or keep it a principle-governed
    cross-cutting track.
+9. **New this week: Ads / monetization track has no governing doc.** PRs
+   #366–#368 stood up Journey ads as a real operational track — site-wide tag
+   injection via `header.js`, a CI gate (`ads-check.yml` / `check-ads.js`),
+   and a daily `ads.txt` sync (`update-ads-txt.yml` / `update-ads-txt.sh`) —
+   replacing Google AdSense. Added to the operational-tracks table this
+   review; no strategy/decision doc exists yet (e.g. why Journey over
+   AdSense, revenue-share terms, page exclusions). Flagging so it isn't lost.
 
 ---
 
