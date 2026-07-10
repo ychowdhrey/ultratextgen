@@ -1,14 +1,14 @@
 {
   "slug": "ascii-table",
-  "title": "ASCII Table: Copy & Paste ASCII Codes & Characters",
-  "meta_description": "ASCII table with decimal and hex codes for punctuation, digits, letters, and symbols — a quick developer reference chart. Click any character to copy it instantly.",
+  "title": "ASCII Table & Chart: Copy & Paste ASCII Codes & Characters",
+  "meta_description": "ASCII table and chart with decimal and hex codes for punctuation, digits, letters, and symbols — a quick developer reference. Click any character to copy it instantly.",
   "canonical": "https://ultratextgen.com/library/ascii-table/",
   "breadcrumb": "ASCII Table",
   "hero_h1": "ASCII Table",
   "hero_tagline": "Printable ASCII characters 33–126 with their decimal and hexadecimal codes. Click any character to copy it instantly.",
   "intro": "The ASCII table maps the 128 characters of the American Standard Code for Information Interchange to the numbers 0–127 — the foundation of modern text encoding and the first 128 code points of Unicode. This reference covers the printable range (33–126) grouped by type, with each character labeled by its decimal and hex code. Codes 0–31 are non-printing control characters (like 10, the line feed), and 32 is the space.",
   "date_published": "2026-06-12",
-  "date_modified": "2026-06-12",
+  "date_modified": "2026-07-10",
   "copy_pattern": "single",
   "sections": [
     {

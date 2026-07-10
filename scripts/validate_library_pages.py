@@ -41,6 +41,7 @@ REPO = SCRIPT_DIR.parent
 LIBRARY_DIR = REPO / "library"
 
 MIN_SINGLE_BUTTONS = 6
+MIN_ART_PIECES = 6
 MIN_H2 = 3
 
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
@@ -58,6 +59,10 @@ SYMBOL_TILE_RE = re.compile(r"<button[^>]*\bclass=[\"'][^\"']*\bsymbol-tile\b[^\
 # Matches both `UltraTextGen.buildGrids(` and the `ns.buildGrids(` alias used
 # on existing pages (where `var ns = window.UltraTextGen`).
 BUILDGRIDS_RE = re.compile(r"\.buildGrids\s*\(")
+# Multi-line ASCII art pages (e.g. /library/heart-ascii-art/) use per-piece
+# copy buttons that read an adjacent <pre>, not data-symbol tiles.
+ART_COPY_RE = re.compile(r"<button[^>]*\bclass=[\"'][^\"']*\bart-piece-copy\b[^\"']*[\"'][^>]*>",
+                         re.IGNORECASE)
 SYMBOL_TOAST_RE = re.compile(r'id=["\']symbolToast["\']')
 EXPLORER_JS_RE = re.compile(r'src=["\']/symbol-explorer\.js["\']')
 RELATED_RE = re.compile(r'Related Resources|class=["\'][^"\']*compare-card',
@@ -108,8 +113,22 @@ def validate_page(path):
     if h2_count < MIN_H2:
         issues.append(Issue("ERROR", f"expected >= {MIN_H2} <h2>, found {h2_count}"))
 
-    # Collection vs single
+    # Collection vs single vs multi-line art
     is_collection = bool(BUILDGRIDS_RE.search(html))
+    art_buttons = ART_COPY_RE.findall(html)
+    is_art = bool(art_buttons)
+
+    # art-piece copy buttons must have data-label + aria-label
+    art_missing_attr = 0
+    for btn in art_buttons:
+        if "data-label=" not in btn or "aria-label=" not in btn:
+            art_missing_attr += 1
+    if art_missing_attr:
+        issues.append(
+            Issue("ERROR",
+                  f"{art_missing_attr} .art-piece-copy button(s) missing "
+                  "data-label or aria-label")
+        )
 
     # symbol-tile buttons must have data-symbol + aria-label
     tile_buttons = SYMBOL_TILE_RE.findall(html)
@@ -124,8 +143,16 @@ def validate_page(path):
                   "data-symbol or aria-label")
         )
 
+    # Minimum pieces for multi-line art pages
+    if is_art and len(art_buttons) < MIN_ART_PIECES:
+        issues.append(
+            Issue("ERROR",
+                  f"art page has {len(art_buttons)} .art-piece-copy "
+                  f"button(s); need >= {MIN_ART_PIECES}")
+        )
+
     # Minimum buttons for single-copy pages
-    if not is_collection:
+    if not is_collection and not is_art:
         if len(tile_buttons) < MIN_SINGLE_BUTTONS:
             issues.append(
                 Issue("ERROR",
@@ -159,6 +186,7 @@ def validate_page(path):
         "title_norm": normalize_text(title),
         "desc_norm": normalize_text(desc),
         "is_collection": is_collection,
+        "is_art": is_art,
         "issues": issues,
     }
 
@@ -221,7 +249,12 @@ def main(argv=None):
         total_warns += len(warns)
         if result["issues"]:
             pages_with_issues += 1
-            kind = "collection" if result["is_collection"] else "single"
+            if result["is_collection"]:
+                kind = "collection"
+            elif result["is_art"]:
+                kind = "art"
+            else:
+                kind = "single"
             print(f"{rel(path)}  ({kind})")
             for issue in result["issues"]:
                 print(issue)
