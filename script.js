@@ -1509,6 +1509,39 @@ const decorations = window.UTG_DECORATIONS
       });
     });
 
+    // "Surprise" — one tap generates a full ready-to-paste name: a random flair
+    // from the active tab applied across the grid, then a random styled card
+    // copied to the clipboard (reusing the normal copy path + toast). Generative
+    // selection, deterministic paste-safe output.
+    const surpriseBtn = $("#surpriseBtn");
+    if (surpriseBtn) {
+      surpriseBtn.addEventListener("click", () => {
+        const list = decorations[currentDecoTab] || [];
+        if (list.length) {
+          selectedDecoration =
+            UTG.flair && UTG.flair.pickRandom
+              ? UTG.flair.pickRandom(list)
+              : list[Math.floor(Math.random() * list.length)];
+          renderDecorations();
+        }
+        renderResults();
+        notifyFlairChange();
+        // Copy a random result so one tap yields a finished name. Falls back
+        // silently when the input is empty (every card is a disabled demo).
+        const copyable = $$("#resultsGrid .copy-btn:not([disabled])");
+        if (copyable.length) {
+          const pick = copyable[Math.floor(Math.random() * copyable.length)];
+          if (pick.scrollIntoView) pick.scrollIntoView({ block: "center", behavior: "smooth" });
+          const card = pick.closest(".style-card");
+          if (card) {
+            card.classList.add("surprise-hit");
+            setTimeout(() => card.classList.remove("surprise-hit"), 1200);
+          }
+          pick.click();
+        }
+      });
+    }
+
 $$(".faq-question").forEach((q) => {
       q.addEventListener("click", () => {
         q.parentElement.classList.toggle("open");
