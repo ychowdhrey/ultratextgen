@@ -236,6 +236,17 @@ def render_page(spec):
     meta = spec["meta_description"]
     canonical = spec.get("canonical") or f"{SITE}/library/{slug}/"
     breadcrumb = spec.get("breadcrumb") or spec["hero_h1"]
+    # Locale support (all fields default to the English behaviour, so existing
+    # English specs render byte-identically).
+    lang = spec.get("lang", "en")
+    home_url = spec.get("home_url", f"{SITE}/")
+    crumb_home = spec.get("crumb_home", "Home")
+    crumb_library = spec.get("crumb_library", "Library")
+    library_url = spec.get("library_url", f"{SITE}/library/")
+    hreflang_html = "".join(
+        f'\n<link rel="alternate" hreflang="{esc_attr(h["lang"])}" href="{esc_attr(h["href"])}">'
+        for h in spec.get("hreflang", [])
+    )
     date_pub = spec.get("date_published", "2026-01-01")
     date_mod = spec.get("date_modified", date_pub)
     cta = spec.get(
@@ -276,14 +287,14 @@ def render_page(spec):
                 {
                     "@type": "ListItem",
                     "position": 1,
-                    "name": "Home",
-                    "item": f"{SITE}/",
+                    "name": crumb_home,
+                    "item": home_url,
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Library",
-                    "item": f"{SITE}/library/",
+                    "name": crumb_library,
+                    "item": library_url,
                 },
                 {
                     "@type": "ListItem",
@@ -311,7 +322,7 @@ def render_page(spec):
         runtime_scripts = '<script src="/symbol-explorer.js"></script>'
 
     page = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
@@ -328,7 +339,7 @@ def render_page(spec):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc_attr(meta)}">
 
-<link rel="canonical" href="{esc_attr(canonical)}">
+<link rel="canonical" href="{esc_attr(canonical)}">{hreflang_html}
 <meta property="og:image" content="{SITE}/logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc_attr(title)}">
@@ -448,7 +459,9 @@ def main(argv=None):
         return 2
 
     slug = spec["slug"]
-    out_dir = LIBRARY_DIR / slug
+    # Localized specs (lang != "en") render under <lang>/library/<slug>/.
+    lang = spec.get("lang", "en")
+    out_dir = (REPO / lang / "library" / slug) if lang != "en" else (LIBRARY_DIR / slug)
     out_path = out_dir / "index.html"
 
     if out_path.exists() and not args.force and not args.dry_run:

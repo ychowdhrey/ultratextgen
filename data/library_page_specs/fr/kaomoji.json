@@ -1,0 +1,265 @@
+{
+  "slug": "kaomoji",
+  "lang": "fr",
+  "title": "Kaomoji : Copier-coller de visages textuels japonais (mignon, chat, amour)",
+  "meta_description": "Copiez-collez des kaomoji — des visages textuels japonais faits de caractères Unicode. Parcourez par humeur : mignon, joyeux, triste, amour et chat. Cliquez pour copier.",
+  "breadcrumb": "Kaomoji",
+  "hero_h1": "Kaomoji",
+  "hero_tagline": "Copiez et collez des kaomoji — des visages textuels japonais pour chaque humeur. Cliquez sur un visage pour le copier aussitôt.",
+  "intro": "Les kaomoji (aussi écrits kamoji) sont des visages textuels de style japonais composés de caractères Unicode ordinaires — comme (◕‿◕) ou (｡◕‿◕｡) — ils se collent donc proprement dans les bios, légendes, commentaires et messages, partout. Parcourez les kaomoji par humeur ci-dessous — mignon, joyeux, amour, triste et chat — puis cliquez sur un visage pour le copier aussitôt. Besoin d'une collection plus complète ? Consultez les pages kaomoji mignons, kaomoji chats et kaomoji d'amour.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/fr/library/kaomoji/",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Bibliothèque",
+  "library_url": "https://ultratextgen.com/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/text-faces-kaomoji/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/kaomoji/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/kaomoji/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/kaomoji/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/text-faces-kaomoji/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/kaomoji/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/kaomoji/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/kaomoji/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/kaomoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/kaomoji/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/kaomoji/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/text-faces-kaomoji/"
+    }
+  ],
+  "cta": "Utilisez UltraTextGen pour transformer du texte ordinaire en gras, italique, cursive et plus de 100 styles de police Unicode — gratuit et instantané.",
+  "related": [
+    {
+      "href": "/fr/library/cute-kaomoji/",
+      "title": "Kaomoji mignons",
+      "desc": "Visages textuels kawaii aux yeux pétillants et joues rouges."
+    },
+    {
+      "href": "/fr/library/cat-kaomoji/",
+      "title": "Kaomoji chats",
+      "desc": "Visages textuels de chats mignons à moustaches et pattes."
+    },
+    {
+      "href": "/fr/library/love-kaomoji/",
+      "title": "Kaomoji d'amour",
+      "desc": "Cœurs, bisous et câlins sous forme de visages textuels."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Générateur de Kaomoji",
+      "desc": "Crée ton propre visage textuel — combine yeux, bouches et bras, puis copie."
+    }
+  ],
+  "sections": [
+    {
+      "id": "cute",
+      "label": "Mignon",
+      "h2": "Kaomoji mignons",
+      "intro": "Des visages kawaii doux et arrondis, adorables au premier coup d'œil.",
+      "symbols": [
+        {
+          "char": "(◕‿◕)",
+          "label": "Sourire Mignon"
+        },
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Visage Doux"
+        },
+        {
+          "char": "(◠‿◠✿)",
+          "label": "Sourire Fleuri"
+        },
+        {
+          "char": "(✿◡‿◡)",
+          "label": "Fleur Joyeuse"
+        },
+        {
+          "char": "( ◜‿◝ )♡",
+          "label": "Petit Cœur Aimant"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Petit Cœur Radieux"
+        }
+      ]
+    },
+    {
+      "id": "happy",
+      "label": "Joyeux",
+      "h2": "Kaomoji joyeux",
+      "intro": "Des sourires chaleureux pour les messages joyeux du quotidien.",
+      "symbols": [
+        {
+          "char": "(◠‿◠)",
+          "label": "Sourire Doux"
+        },
+        {
+          "char": "(^▽^)",
+          "label": "Grand Sourire"
+        },
+        {
+          "char": "(≧◡≦)",
+          "label": "Yeux Joyeux"
+        },
+        {
+          "char": "( ´ ▽ ` )",
+          "label": "Sourire Détendu"
+        },
+        {
+          "char": "(＾▽＾)",
+          "label": "Sourire Radieux"
+        },
+        {
+          "char": "(｡◕‿◕｡)",
+          "label": "Sourire Tendre"
+        }
+      ]
+    },
+    {
+      "id": "love",
+      "label": "Amour",
+      "h2": "Kaomoji d'amour",
+      "intro": "Des cœurs, des bisous et des câlins pour montrer son affection.",
+      "symbols": [
+        {
+          "char": "(♥ω♥)",
+          "label": "Yeux en Cœur"
+        },
+        {
+          "char": "(◍•ᴗ•◍)❤",
+          "label": "Amoureux"
+        },
+        {
+          "char": "(✿ ♥‿♥)",
+          "label": "Cœur Fleuri"
+        },
+        {
+          "char": "(｡♥‿♥｡)",
+          "label": "Cœur Souriant"
+        },
+        {
+          "char": "(♡μ_μ)",
+          "label": "Éperdu d'Amour"
+        },
+        {
+          "char": "(◕‿◕)♡",
+          "label": "Cœur Tendre"
+        }
+      ]
+    },
+    {
+      "id": "sad",
+      "label": "Triste",
+      "h2": "Kaomoji tristes",
+      "intro": "Des visages abattus pour une humeur en berne.",
+      "symbols": [
+        {
+          "char": "(´･_･`)",
+          "label": "Mal à l'Aise"
+        },
+        {
+          "char": "(._.)",
+          "label": "Abattu"
+        },
+        {
+          "char": "(ｰ_ｰ)",
+          "label": "Las"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Découragé"
+        },
+        {
+          "char": "( ˘･з･)",
+          "label": "Bof"
+        },
+        {
+          "char": "(´ω`)",
+          "label": "Morose"
+        }
+      ]
+    },
+    {
+      "id": "cat",
+      "label": "Chat",
+      "h2": "Kaomoji chats",
+      "intro": "Des visages de chat mignons à moustaches et pattes, autour de la forme =^・ω・^=.",
+      "symbols": [
+        {
+          "char": "(=^・ω・^=)",
+          "label": "Chat Classique"
+        },
+        {
+          "char": "(=^‥^=)",
+          "label": "Yeux de Chat"
+        },
+        {
+          "char": "(=｀ω´=)",
+          "label": "Chat Suffisant"
+        },
+        {
+          "char": "(＾• ω •＾)",
+          "label": "Chat Tout Doux"
+        },
+        {
+          "char": "(=ↀωↀ=)",
+          "label": "Chat aux Yeux Écarquillés"
+        },
+        {
+          "char": "(=^◡^=)",
+          "label": "Chat Souriant"
+        }
+      ]
+    }
+  ]
+}

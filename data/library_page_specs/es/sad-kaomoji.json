@@ -1,0 +1,185 @@
+{
+  "slug": "sad-kaomoji",
+  "lang": "es",
+  "title": "Kaomoji Tristes: Copiar y Pegar Caritas Tristes y Sombrías",
+  "meta_description": "Explora y copia kaomoji tristes — caritas de texto japonesas para la tristeza, la decepción y el mal humor. Haz clic para copiar al instante.",
+  "breadcrumb": "Kaomoji Tristes",
+  "hero_h1": "Kaomoji Tristes",
+  "hero_tagline": "Copia y pega kaomoji tristes — caritas de texto japonesas melancólicas y decepcionadas. Haz clic en cualquier carita para copiarla al instante.",
+  "intro": "Los kaomoji tristes (también escritos kamoji) son caritas de texto japonesas para un ánimo bajo que no llega al llanto — decepción, suspiros, soledad y melancolía. Un kaomoji triste como (´･_･`) o (｡•́︿•̀｡) es texto Unicode normal, así que se pega sin problemas en biografías, subtítulos, comentarios y mensajes. Explora por sentimiento abajo y haz clic en cualquier carita para copiarla. Ya busques \"kaomoji tristes\" o \"kaomoji sombríos\", todas las caritas aquí son gratis para copiar y pegar. Para lágrimas y llanto, mira la página de kaomoji llorando.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/sad-kaomoji/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "crumb_library": "Kaomoji",
+  "library_url": "https://ultratextgen.com/es/library/kaomoji/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/sad-kaomoji/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/sad-kaomoji/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/sad-kaomoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/sad-kaomoji/"
+    }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "related": [
+    {
+      "href": "/es/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "El centro completo de kaomoji — todas las caritas japonesas en un solo lugar."
+    },
+    {
+      "href": "/es/library/cat-kaomoji/",
+      "title": "Kaomoji de Gato",
+      "desc": "Caritas de gatito tierno con bigotes y patitas."
+    },
+    {
+      "href": "/es/library/happy-kaomoji/",
+      "title": "Kaomoji Felices",
+      "desc": "Caritas de texto japonesas que sonríen y celebran."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Kaomoji Generator",
+      "desc": "Crea tu propia carita — combina ojos, bocas y brazos y cópiala."
+    }
+  ],
+  "sections": [
+    {
+      "id": "downcast",
+      "label": "Abatidos",
+      "h2": "Kaomoji Abatidos",
+      "intro": "Caritas tranquilas y de baja energía para un simple mal día.",
+      "symbols": [
+        {
+          "char": "(´･_･`)",
+          "label": "Inquieto"
+        },
+        {
+          "char": "(._.)",
+          "label": "Decaído"
+        },
+        {
+          "char": "(ｰ_ｰ)",
+          "label": "Cansado"
+        },
+        {
+          "char": "(´-ω-`)",
+          "label": "Desinflado"
+        },
+        {
+          "char": "( ˘･з･)",
+          "label": "Bah"
+        },
+        {
+          "char": "(´ω`)",
+          "label": "Sombrío"
+        },
+        {
+          "char": "(－‸ლ)",
+          "label": "Facepalm"
+        }
+      ]
+    },
+    {
+      "id": "disappointed",
+      "label": "Decepcionados",
+      "h2": "Kaomoji Decepcionados y Suspirando",
+      "intro": "Caritas decepcionadas y que suspiran cuando las cosas fallan.",
+      "symbols": [
+        {
+          "char": "(︶︹︶)",
+          "label": "Decepcionado"
+        },
+        {
+          "char": "( ´Д`)",
+          "label": "Gran Suspiro"
+        },
+        {
+          "char": "(=____=)",
+          "label": "Agotado"
+        },
+        {
+          "char": "┐(´～`)┌",
+          "label": "Resignado"
+        },
+        {
+          "char": "(－_－)",
+          "label": "Indiferente"
+        },
+        {
+          "char": "(´ﾟдﾟ`)",
+          "label": "Consternado"
+        }
+      ]
+    },
+    {
+      "id": "lonely",
+      "label": "Solitarios",
+      "h2": "Kaomoji Solitarios y Melancólicos",
+      "intro": "Caritas retraídas y tristes para cuando te sientes solo.",
+      "symbols": [
+        {
+          "char": "(｡•́︿•̀｡)",
+          "label": "Ceño Triste"
+        },
+        {
+          "char": "(っ- ‸ - ς)",
+          "label": "Enfurruñado"
+        },
+        {
+          "char": "(´ᗒ﹏ᗕ`)",
+          "label": "Angustiado"
+        },
+        {
+          "char": "⊙︿⊙",
+          "label": "Melancólico"
+        },
+        {
+          "char": "( ╥﹏╥)",
+          "label": "Ojos Llorosos"
+        }
+      ]
+    },
+    {
+      "id": "hurt",
+      "label": "Heridos",
+      "h2": "Kaomoji Heridos y Doloridos",
+      "intro": "Caritas doloridas y heridas para una tristeza más profunda.",
+      "symbols": [
+        {
+          "char": "(◞‸◟)",
+          "label": "Desanimado"
+        },
+        {
+          "char": "(⌣́_⌣̀)",
+          "label": "Herido"
+        },
+        {
+          "char": "(μ_μ)",
+          "label": "Apenado"
+        },
+        {
+          "char": "(╯︵╰,)",
+          "label": "Roto"
+        },
+        {
+          "char": "(๑◕︵◕๑)",
+          "label": "Dolido"
+        }
+      ]
+    }
+  ]
+}
