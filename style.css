@@ -6250,3 +6250,104 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   .kao-part-label { flex-basis: auto; }
   .kao-part-options { width: 100%; }
 }
+
+/* ==========================================================================
+   Kaomoji Decoder / Dictionary (/kaomoji-dictionary/)  —  js/kaomoji/
+   ========================================================================== */
+.kao-decoder { max-width: 720px; margin: 0 auto; padding: 0 1rem; }
+.kao-dec-input-row { display: flex; gap: 0.6rem; margin-bottom: 0.6rem; }
+.kao-dec-input {
+  flex: 1 1 auto;
+  padding: 0.7rem 0.9rem;
+  font-size: 1.25rem;
+  text-align: center;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+.kao-dec-input:focus { outline: none; border-color: var(--accent-purple); }
+.kao-dec-examples { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem; }
+.kao-dec-eg {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+.kao-dec-eg:hover { border-color: var(--accent-purple); }
+
+.kao-dec-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+.kao-dec-empty { color: var(--text-muted); text-align: center; padding: 1.5rem 0; }
+.kao-dec-face {
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  color: var(--text-primary);
+  word-break: break-word;
+  font-family: "Segoe UI", "Noto Sans", system-ui, sans-serif;
+}
+.kao-dec-name { font-size: 1.5rem; margin: 0.5rem 0 0.25rem; color: var(--text-primary); }
+.kao-dec-meaning { color: var(--text-secondary); margin: 0 auto 0.75rem; max-width: 46ch; }
+.kao-dec-sublabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1.1rem 0 0.5rem;
+}
+.kao-dec-moods, .kao-dec-similar { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+.kao-dec-mood {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.kao-dec-parts { list-style: none; margin: 0; padding: 0; text-align: left; }
+.kao-dec-parts li {
+  display: grid;
+  grid-template-columns: 2.6rem 4.5rem 1fr;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.kao-dec-parts li:last-child { border-bottom: none; }
+.kao-dec-glyph { font-size: 1.15rem; color: var(--text-primary); text-align: center; }
+.kao-dec-role {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-purple);
+}
+.kao-dec-desc { font-size: 0.9rem; color: var(--text-secondary); }
+.kao-dec-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 1.1rem; }
+.kao-dec-sim {
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  border-radius: 9px;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+.kao-dec-sim:hover { border-color: var(--accent-purple); }
+@media (max-width: 480px) {
+  .kao-dec-parts li { grid-template-columns: 2.2rem 1fr; }
+  .kao-dec-role { grid-column: 2; }
+  .kao-dec-glyph { grid-row: span 2; }
+}

@@ -578,6 +578,7 @@ HOME_CARD = "fancy-text-generator-preview"
 
 
 PAGES = {
+  "kaomoji-dictionary": ("Kaomoji Dictionary", "Decode any text face", m_kaomoji, K_SITE),
   "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
   # ---- site root / overview ----
   "about": ("About UltraTextGen", "The team and the mission behind the tool", m_brand, K_SITE),
