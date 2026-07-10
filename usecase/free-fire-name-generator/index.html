@@ -300,35 +300,22 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<!-- Page config: register the FF frame/ornament decoration tab. Merged over the
-     default Symbols / Minimal / Emoji tabs (see script.js), and applied live to
-     every generated style card — so the umbrella ꧁꧂, crown, and katakana wraps
-     now frame the user's typed name automatically. Prefixes/suffixes are
-     space-less because Free Fire rejects plain spaces. -->
+<!-- Flair engine: shared decoration packs (js/flair/flair-engine.js). Loaded
+     before the config so compose() is ready; non-deferred so it runs ahead of
+     the deferred generator scripts. -->
+<script src="/js/flair/flair-engine.js"></script>
+<!-- Page config: build the "FF" decoration tab from the shared frame/warrior/
+     crown packs plus the spacing modes (space-fill for FF's no-space rule, and
+     letter interleave). Merged over the default Symbols / Minimal / Emoji tabs
+     (see script.js) and applied live to every generated style card, so the wrap
+     frames the user's typed name automatically. -->
 <script>
-  window.UTG_DECORATIONS = {
-    ff: [
-      { text: "꧁༒text༒꧂", prefix: "꧁༒", suffix: "༒꧂" },
-      { text: "꧁text꧂", prefix: "꧁", suffix: "꧂" },
-      { text: "꧁•text•꧂", prefix: "꧁•", suffix: "•꧂" },
-      { text: "༺text༻", prefix: "༺", suffix: "༻" },
-      { text: "༺༒text༒༻", prefix: "༺༒", suffix: "༒༻" },
-      { text: "❰text❱", prefix: "❰", suffix: "❱" },
-      { text: "「text」", prefix: "「", suffix: "」" },
-      { text: "★彡text彡★", prefix: "★彡", suffix: "彡★" },
-      { text: "メtext彡", prefix: "メ", suffix: "彡" },
-      { text: "☬text☬", prefix: "☬", suffix: "☬" },
-      { text: "♛text♛", prefix: "♛", suffix: "♛" },
-      { text: "♔text♔", prefix: "♔", suffix: "♔" },
-      { text: "†text†", prefix: "†", suffix: "†" },
-      { text: "⚔text⚔", prefix: "⚔", suffix: "⚔" },
-      { text: "✿text✿", prefix: "✿", suffix: "✿" },
-      { text: "★text★", prefix: "★", suffix: "★" },
-      { text: "࿐text࿐", prefix: "࿐", suffix: "࿐" },
-      { text: "🔥text🔥", prefix: "🔥", suffix: "🔥" },
-      { text: "👑text♛", prefix: "👑", suffix: "♛" }
-    ]
-  };
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({
+          ff: ["gameFrames", "crowns", "warrior", "spacing"]
+        })
+      : undefined;
 </script>
 
 <!-- Generator scripts -->

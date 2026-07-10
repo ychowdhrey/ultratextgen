@@ -14,6 +14,8 @@ Copy-paste Unicode is still the front door and satisfies the job fastest. Visual
 
 **Core philosophy**: Fast > Fancy, Clean > Clever, Useful > Impressive. **Client-side only is a hard line:** visual generation must use native SVG/Canvas in the browser — never a server-side renderer, an image-processing library, or bundled font binaries.
 
+**Flair note (updated):** "Fast > Fancy" governs *complexity*, not *ambition*. On a plain text page (e.g. bold), a random name generator or heavy per-character transform would be scope creep. But on a **game/platform name page, matching that game's aesthetic *is* the copy-paste job, done end to end** — a decorated Free Fire name framed in ꧁༒…꧂, a name that fits the field's limit, a name generated to a theme. There, richer and even **generative flair is in-scope and on-brand** (the hand-authored "Ready-Made Names" lists are proof of the demand; a generator just does it dynamically). What stays a hard line is the *output*, never the ambition: flair is **paste-safe Unicode composed from building blocks client-side via native APIs** (`Intl.Segmenter`, etc.) — never an image, a bundled font, or a dependency, and only the *selection* may be random. The flair layer is a real engine (`js/flair/flair-engine.js` + `applyDecoration`/`window.UTG_DECORATIONS`), meant to expand: packs, modes (`wrap`/`space`/`interleave`), and a checker that counts what the player will actually paste.
+
 ---
 
 ## Tech Stack
@@ -36,10 +38,12 @@ Copy-paste Unicode is still the front door and satisfies the job fastest. Visual
 ultratextgen/
 ├── index.html              # Main homepage (733 lines)
 ├── style.css               # Global stylesheet (1980 lines)
-├── script.js               # UI/DOM logic, main IIFE (825 lines)
+├── script.js               # UI/DOM logic, main IIFE — owns decorations/flair
 ├── styles.js               # Unicode font registry (836 lines)
 ├── renderer.js             # Text rendering engine (459 lines)
 ├── header.js               # Shared header injector (67 lines)
+├── js/flair/flair-engine.js# Flair packs + compose() (shared decoration data)
+├── js/gamename/game-rules.js# Per-game nickname rule engine + name checker
 ├── symbol-explorer.js      # Symbol lookup utility
 ├── symbol-explorer.css     # Symbol explorer styles
 ├── package.json            # npm metadata + build scripts
@@ -157,6 +161,31 @@ Scripts are loaded in a strict order in every HTML page:
 - Style filtering/search (client-side)
 - localStorage for recent selections and dark mode preference
 - Query param `?q=text` for shareable URLs
+- **Owns the flair layer.** `applyDecoration(text)` applies the selected
+  decoration: `mode: "wrap"` (default `prefix+text+suffix`), `"space"` (fill
+  spaces with `fill`), `"interleave"` (`sep` between graphemes, via
+  `Intl.Segmenter`). Exposes `UltraTextGen.flairedMainInput()` and fires
+  `utg:flairchange` so `game-rules.js` can count the *decorated* name.
+- **Decoration tabs**: static `data-deco-tab` buttons read `decorations[key]`.
+  `window.UTG_DECORATIONS` is **merged over** the defaults (`Object.assign`), so
+  a page adds one tab without redeclaring the rest.
+
+#### `js/flair/flair-engine.js`
+- Shared, reusable decoration **data** (the transform lives in `script.js`).
+- `UltraTextGen.flair.PACKS` — named packs (`gameFrames`, `crowns`, `warrior`,
+  `hearts`, `brackets`, `spacing`).
+- `compose({ tabKey: ["packName", …] })` → a `window.UTG_DECORATIONS` map, so
+  pages compose tabs by name instead of copy-pasting arrays. `pickRandom()` is
+  the seed for generative "surprise" flair.
+- Load it **non-deferred, before** the inline `window.UTG_DECORATIONS = …compose(…)`
+  config (which must run before the deferred `script.js`).
+
+#### `js/gamename/game-rules.js`
+- Per-game nickname **rule engine** + inline "name check" widget.
+- `RULES` (per-game limits/weighting/charset), `analyze(str, gameId)`, and
+  `initChecker(cfg)` (mounts a live checker that mirrors the generator input).
+- With the flair bridge, the checker counts the *flaired* name — a frame that
+  pushes a "fits" name over the limit now shows up before a rename card is spent.
 
 #### `js/vertical/`
 - Self-contained module for vertical text generation
