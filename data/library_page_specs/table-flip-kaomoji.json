@@ -1,0 +1,51 @@
+{
+  "slug": "table-flip-kaomoji",
+  "title": "Table Flip Kaomoji: Copy & Paste Table Flip ASCII (╯°□°）╯︵ ┻━┻",
+  "meta_description": "Copy and paste table flip kaomoji and table flip ASCII — (╯°□°）╯︵ ┻━┻ and more rage-quit text faces for when words fail. Click any to copy instantly.",
+  "breadcrumb": "Table Flip Kaomoji",
+  "hero_h1": "Table Flip Kaomoji",
+  "hero_tagline": "Copy and paste table flip kaomoji — also known as table flip ASCII or flip table text — for the moments when you just have to flip the table. Click any face to copy it instantly.",
+  "intro": "Table flip kaomoji (also called table flip ASCII, table flip emoji, or rage quit ASCII) is the (╯°□°）╯︵ ┻━┻ gesture — a person hurling a table, written entirely in Unicode text. It's plain text, not an image, so it pastes cleanly into chats, comments, bios, and captions on any platform. Whatever you call it — table flip kaomoji, table flip ASCII, or flip table text — every piece below is free to copy and paste, plus the calmer ┬─┬ ノ( ゜-゜ノ) for putting the table back.",
+  "date_published": "2026-07-10",
+  "date_modified": "2026-07-10",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "classic",
+      "label": "Classic Flip",
+      "h2": "Classic Table Flip Kaomoji",
+      "intro": "The original rage-quit gesture and its most common variant.",
+      "symbols": [
+        { "char": "(╯°□°）╯︵ ┻━┻", "label": "Table Flip" },
+        { "char": "(ノ°Д°)ノ︵ ┻━┻", "label": "Flip It" }
+      ]
+    },
+    {
+      "id": "angry-flip",
+      "label": "Angry Flip",
+      "h2": "Angry Table Flip Kaomoji",
+      "intro": "More rage in the flip, table and all.",
+      "symbols": [
+        { "char": "(ノ`Д´)ノ彡┻━┻", "label": "Angry Flip" },
+        { "char": "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻", "label": "Double Flip" },
+        { "char": "(╯‵□′)╯︵┻━┻", "label": "Rage Flip" }
+      ]
+    },
+    {
+      "id": "restore",
+      "label": "Put It Back",
+      "h2": "Put the Table Back Kaomoji",
+      "intro": "For once the rage passes and order is restored.",
+      "symbols": [
+        { "char": "┬─┬ ノ( ゜-゜ノ)", "label": "Put It Back" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    { "href": "/library/text-faces-kaomoji/", "title": "Text Faces & Kaomoji", "desc": "The full kaomoji hub — every mood of Japanese text face in one place." },
+    { "href": "/library/angry-kaomoji/", "title": "Angry Kaomoji", "desc": "Mad, annoyed, and fuming Japanese text faces, including these table flips." },
+    { "href": "/kaomoji-generator/", "title": "Kaomoji Generator", "desc": "Build your own text face — mix eyes, mouths, and arms, then copy it." },
+    { "href": "/ascii-art-generator/", "title": "ASCII Art Generator", "desc": "Turn a word or name into big block-letter ASCII art instantly." }
+  ]
+}
