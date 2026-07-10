@@ -35,6 +35,17 @@ LANE_RULES = [
     ("usecase/", "Usecase pages"),
     ("guide/", "Guide pages"),
     ("curved-text/", "Visual & printable assets"),
+    # Root-level site-wide pages (homepage, legal, 404, site icons) — no
+    # dedicated page-type namespace; see docs/README.md Known gaps.
+    ("index.html", "Root pages"),
+    ("_root.html", "Root pages"),
+    ("404.html", "Root pages"),
+    ("about/", "Root pages"),
+    ("contact/", "Root pages"),
+    ("privacy/", "Root pages"),
+    ("terms/", "Root pages"),
+    ("favicon.ico", "Root pages"),
+    ("apple-touch-icon.png", "Root pages"),
     ("discord/", "Platform pages"),
     ("facebook/", "Platform pages"),
     ("instagram/", "Platform pages"),
@@ -55,6 +66,7 @@ LANE_RULES = [
     ("scripts/", "Scripts / tooling"),
     ("docs/", "Docs"),
     ("CLAUDE.md", "Docs"),
+    ("README", "Docs"),  # README.md + locale variants (README.<lang>.md)
     ("style.css", "Styling"),
     ("symbol-explorer", "Symbol explorer"),
     ("renderer.js", "Core JS"),
@@ -62,6 +74,11 @@ LANE_RULES = [
     ("script.js", "Core JS"),
     ("header.js", "Core JS"),
     ("fonts.json", "Core JS"),
+    ("gothic-tools.js", "Core JS"),
+    ("accent-notice.js", "Core JS"),
+    ("i18n.js", "Core JS"),
+    ("ads.txt", "Ads / monetization"),
+    (".gitignore", "CI / automation"),
     # Visual/printable output modules (must precede the generic "js/" rule).
     ("js/curved/", "Visual & printable assets"),
     ("js/bubble/", "Visual & printable assets"),
@@ -83,6 +100,8 @@ LANE_RULES = [
     ("tl/", "i18n"),
     ("tr/", "i18n"),
     ("vi/", "i18n"),
+    ("sv/", "i18n"),
+    ("no/", "i18n"),
 ]
 
 # A lane label used when no rule matched any of a PR's files. These are the
