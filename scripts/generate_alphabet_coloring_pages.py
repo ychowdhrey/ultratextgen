@@ -373,6 +373,18 @@ def render_hub(spec):
     </section>
 
     <div class="cta-card">
+      <h3>Want a name or word coloring page?</h3>
+      <p>Type any name or word and make your own coloring page — with a heading, a name-and-date line, cute borders, and dotted or starry fills to color.</p>
+      <a class="cta-btn" href="/printables/coloring-page-maker/">Open the coloring page maker →</a>
+    </div>
+
+    <div class="cta-card">
+      <h3>Want a puzzle before the coloring?</h3>
+      <p>Every letter also has a numbered dot-to-dot version — connect the dots in order to reveal the letter, then color it in.</p>
+      <a class="cta-btn" href="/printables/dot-to-dot-alphabet/">Open dot-to-dot alphabet →</a>
+    </div>
+
+    <div class="cta-card">
       <h3>Looking for handwriting practice instead?</h3>
       <p>Type any name and print a tracing worksheet with model and trace rows — perfect for preschool and kindergarten.</p>
       <a class="cta-btn" href="/printables/name-tracing/">Open name tracing worksheets →</a>
@@ -590,6 +602,10 @@ def render_spoke(spec, index):
         <a href="/printables/{slug}/" class="related-page-card">
           <span class="related-page-label">Hub</span>
           <h4>All alphabet coloring pages</h4>
+        </a>
+        <a href="/printables/dot-to-dot-alphabet/letter-{low}/" class="related-page-card">
+          <span class="related-page-label">Puzzle</span>
+          <h4>Letter {esc(L)} dot-to-dot</h4>
         </a>
         <a href="/printables/bubble-letters/#letter-{low}" class="related-page-card">
           <span class="related-page-label">Bubble</span>
