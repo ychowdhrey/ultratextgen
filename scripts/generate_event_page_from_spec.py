@@ -308,7 +308,7 @@ def render_faq_html(faqs):
     return "\n".join(items)
 
 
-def render_related(related, companion_answer_slug):
+def render_related(related, companion_answer_slug, event_name=None):
     cards = []
     for rel in related:
         cards.append(
@@ -319,11 +319,12 @@ def render_related(related, companion_answer_slug):
             "    </a>"
         )
     if companion_answer_slug:
+        name = event_name or "this event"
         cards.append(
             f'    <a href="/answers/{esc_attr(companion_answer_slug)}/" '
             'class="compare-card variant-muted u-no-underline">\n'
-            "      <h4>Is styled text safe to use?</h4>\n"
-            "      <p>The honest answer on reach, search visibility, and accessibility.</p>\n"
+            f"      <h4>More {esc(name)} phrases &amp; wording</h4>\n"
+            "      <p>Greetings, translations, and message ideas beyond the phrase bank above.</p>\n"
             "    </a>"
         )
     return "\n".join(cards)
@@ -342,7 +343,7 @@ def render_page(spec):
     ld_webapp, ld_faq, ld_breadcrumb = render_ld_json(spec, faqs)
     event_data_json = render_event_data(spec)
     faq_html = render_faq_html(faqs)
-    related_html = render_related(spec["related"], companion_answer_slug)
+    related_html = render_related(spec["related"], companion_answer_slug, event_name)
 
     aka_html = ""
     if aliases:
