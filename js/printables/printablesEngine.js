@@ -31,6 +31,11 @@
  *   #pt-practice-print   button: print ruled practice sheet
  *   #pt-name-input       name / word field  (+ #pt-name-print, #pt-name-png,
  *                        #pt-name-preview, #pt-name-rows)
+ *   #pt-stroke-toggle    checkbox: overlay a numbered start-dot + direction
+ *                        arrows on traceable letters (off by default). Reads
+ *                        window.UTG_STROKE_DIRECTION_DATA (js/printables/
+ *                        strokeDirectionData.js) — a page must load that
+ *                        script for the toggle to draw anything.
  *   #pt-print-root       hidden print surface (REQUIRED to print)
  */
 (function () {
@@ -72,6 +77,7 @@
     namePng: $("#pt-name-png"),
     namePreview: $("#pt-name-preview"),
     nameRows: $("#pt-name-rows"),
+    strokeToggle: $("#pt-stroke-toggle"),
     // Difficulty generator (handwriting-worksheet-generator)
     genInput: $("#pt-gen-input"),
     genPreview: $("#pt-gen-preview"),
@@ -199,6 +205,7 @@
     text.setAttribute("paint-order", "stroke");
     text.textContent = ch;
     svg.appendChild(text);
+    if (o.overlay) addStrokeOverlay(svg, ch);
     return svg;
   }
 
@@ -236,6 +243,7 @@
     }
     text.textContent = word;
     svg.appendChild(text);
+    if (o.overlay) addWordStrokeOverlay(svg, word, fontSize, spacing, 112, "central", w);
     return svg;
   }
 
@@ -250,6 +258,154 @@
       return p;
     }
     return outlineSVG(ch);
+  }
+
+  /* ---------------------------------------------------------------
+     Stroke-direction overlay ("Show stroke direction" toggle)
+     ---------------------------------------------------------------
+     Occupational-therapy guidance: tracing without a numbered start-dot and
+     a direction arrow can teach poor motor plans. window.UTG_STROKE_DIRECTION_DATA
+     (js/printables/strokeDirectionData.js) hand-authors, per letter, a
+     numbered start-dot + 1-4 short arrow strokes in the SAME 200x240 /
+     font-size-210 / x=100,y=128 / dominant-baseline:central coordinate
+     space that outlineSVG() already draws letters in — so for a single
+     letter (outlineSVG) the overlay drops straight on top with no math.
+     For a whole traced word/name (wordOutlineSVG, traceWordSVG) the word is
+     still rendered as ONE unbroken <text> node exactly as before — visual
+     output is byte-for-byte unchanged when the toggle is off — and the
+     overlay is added as a separate layer whose per-letter groups are placed
+     using Canvas-measured advance widths (the same "measure with a hidden
+     canvas" technique already used elsewhere in this file, e.g. wordPNG).
+     Off by default; gated entirely on the optional #pt-stroke-toggle mount,
+     so pages that don't add it are completely unaffected. SVG only — PNG
+     downloads intentionally don't include the overlay.
+     --------------------------------------------------------------- */
+
+  const STROKE_COLOR = "#2451c9";     // legible on white, distinct from the ink-black glyph
+  const STROKE_BASELINE_UNIT_Y = 200; // where the type baseline falls inside outlineSVG's own
+                                       // 200x240 / font-size-210 / central-baseline box
+  let strokeOverlayUid = 0;
+  let strokeMeasureCtx = null;
+
+  function strokeOverlayOn() { return !!(el.strokeToggle && el.strokeToggle.checked); }
+
+  function strokeDataFor(ch) {
+    const table = window.UTG_STROKE_DIRECTION_DATA;
+    return (table && table[ch]) ? table[ch] : null;
+  }
+
+  // Numbered start-dot + direction arrow for every stroke of one letter,
+  // drawn directly into `parent`'s own coordinate space (the 200x240 unit
+  // box, or a <g> already transformed into an equivalent local box).
+  function addStrokeOverlay(parent, ch) {
+    const data = strokeDataFor(ch);
+    if (!data || !data.strokes || !data.strokes.length) return;
+    const uid = "ptsd" + (++strokeOverlayUid);
+    const g = svgMake("g", { class: "pt-stroke-overlay", "aria-hidden": "true" }, parent);
+    const defs = svgMake("defs", null, g);
+    const markerId = "ptArrow" + uid;
+    // markerUnits defaults to "strokeWidth", which would silently multiply
+    // markerWidth/Height by the path's stroke-width below (6x) — pin it to
+    // userSpaceOnUse so the arrowhead size stays fixed and predictable.
+    const marker = svgMake("marker", {
+      id: markerId, viewBox: "0 0 10 10", refX: 8, refY: 5, markerUnits: "userSpaceOnUse",
+      markerWidth: 20, markerHeight: 20, orient: "auto"
+    }, defs);
+    svgMake("path", { d: "M0,0 L10,5 L0,10 Z", fill: STROKE_COLOR }, marker);
+
+    data.strokes.forEach((d, i) => {
+      svgMake("path", {
+        d: d, fill: "none", stroke: STROKE_COLOR,
+        "stroke-width": 6, "stroke-linecap": "round", "stroke-linejoin": "round",
+        "marker-end": "url(#" + markerId + ")", opacity: 0.9
+      }, g);
+      const m = /M\s*([\d.\-]+)[,\s]+([\d.\-]+)/.exec(d);
+      if (!m) return;
+      const sx = parseFloat(m[1]), sy = parseFloat(m[2]);
+      svgMake("circle", { cx: sx, cy: sy, r: 11, fill: "#ffffff", stroke: STROKE_COLOR, "stroke-width": 2.5 }, g);
+      const label = svgMake("text", {
+        x: sx, y: sy + 0.5, "text-anchor": "middle", "dominant-baseline": "central",
+        "font-family": "'Plus Jakarta Sans', sans-serif", "font-weight": 700,
+        "font-size": 13, fill: STROKE_COLOR
+      }, g);
+      label.textContent = String(i + 1);
+    });
+  }
+
+  function getStrokeMeasureCtx() {
+    if (!strokeMeasureCtx) strokeMeasureCtx = document.createElement("canvas").getContext("2d");
+    return strokeMeasureCtx;
+  }
+
+  // Per-character center-x offsets (0-based, left edge at 0) for `word` when
+  // rendered at `fontPx`, using the SAME technique wordPNG/genWordPNG already
+  // use to size text on Canvas — real per-glyph advance widths, reconciled
+  // so they sum to the actual measured word width (covers minor
+  // kerning/rounding drift between the per-char and whole-word measurements).
+  function charAdvanceCenters(word, fontPx) {
+    const ctx = getStrokeMeasureCtx();
+    ctx.font = "700 " + fontPx + "px " + FONT;
+    const chars = [...String(word)];
+    const widths = chars.map((c) => ctx.measureText(c).width);
+    const rawTotal = widths.reduce((a, b) => a + b, 0) || 1;
+    const measuredTotal = ctx.measureText(word).width;
+    const scale = measuredTotal / rawTotal;
+    let x = 0;
+    const centers = chars.map((c, i) => {
+      const w = widths[i] * scale;
+      const cx = x + w / 2;
+      x += w; // any letter-spacing gap is added by the caller, not here
+      return { ch: c, cx: cx };
+    });
+    return { centers: centers, total: measuredTotal };
+  }
+
+  // Draws one letter's stroke overlay, scaled + translated from its 200x240
+  // authoring box into a destination slot centered at (cx, anchorY) with an
+  // em-size of `emPx`. `mode` picks which point of the authoring box maps to
+  // (cx, anchorY): "central" (box center, matching wordOutlineSVG's own
+  // dominant-baseline:central text) or "alphabetic" (the type baseline,
+  // matching traceWordSVG's default alphabetic-baseline text).
+  function letterOverlayCell(parent, ch, cx, anchorY, emPx, mode) {
+    if (!strokeDataFor(ch)) return;
+    const scale = emPx / 210;
+    const anchorUnitY = mode === "alphabetic" ? STROKE_BASELINE_UNIT_Y : 128;
+    const tx = cx - 100 * scale;
+    const ty = anchorY - anchorUnitY * scale;
+    const g = svgMake("g", { transform: "translate(" + tx.toFixed(2) + "," + ty.toFixed(2) + ") scale(" + scale.toFixed(4) + ")" }, parent);
+    addStrokeOverlay(g, ch);
+  }
+
+  // Overlays every letter of a word/name rendered as a single centered
+  // <text> (wordOutlineSVG / traceWordSVG) without touching that <text>
+  // node itself. `spacingPx` mirrors the `letter-spacing` attribute those
+  // functions may set so the overlay tracks the same extra gaps.
+  function addWordStrokeOverlay(svg, word, fontPx, spacingPx, anchorY, mode, totalW) {
+    const measured = charAdvanceCenters(word, fontPx);
+    const extra = spacingPx ? spacingPx * (measured.centers.length - 1) : 0;
+    const fullWidth = measured.total + extra;
+    let runningExtra = 0;
+    const leftEdge = totalW / 2 - fullWidth / 2;
+    measured.centers.forEach((c, i) => {
+      const cx = leftEdge + c.cx + runningExtra;
+      if (spacingPx) runningExtra += spacingPx;
+      if (!/[A-Za-z]/.test(c.ch)) return;
+      letterOverlayCell(svg, c.ch, cx, anchorY, fontPx, mode);
+    });
+  }
+
+  const STROKE_TOGGLE_LS_KEY = "utg-pt-stroke-overlay";
+
+  function initStrokeToggle() {
+    if (!el.strokeToggle) return;
+    try {
+      if (localStorage.getItem(STROKE_TOGGLE_LS_KEY) === "1") el.strokeToggle.checked = true;
+    } catch (e) { /* noop — storage unavailable, default unchecked */ }
+    el.strokeToggle.addEventListener("change", () => {
+      try { localStorage.setItem(STROKE_TOGGLE_LS_KEY, el.strokeToggle.checked ? "1" : "0"); } catch (e) { /* noop */ }
+      if (el.nameInput || el.namePreview) renderNamePreview();
+      if (el.genInput || el.genPreview) renderGenPreview();
+    });
   }
 
   /* ---------------------------------------------------------------
@@ -575,8 +731,9 @@
      --------------------------------------------------------------- */
 
   function buildPracticeSheet() {
+    const overlayOn = strokeOverlayOn();
     const sheet = document.createElement("div");
-    sheet.className = "cursive-print-sheet";
+    sheet.className = "cursive-print-sheet" + (overlayOn ? " pt-stroke-on" : "");
     CHARS.forEach((ch) => {
       const row = document.createElement("div");
       row.className = "cursive-print-row";
@@ -588,7 +745,9 @@
         model.textContent = renderGlyph(ch.toUpperCase()) + " " + renderGlyph(ch.toLowerCase());
         trace.textContent = renderGlyph(ch.toUpperCase()) + " " + renderGlyph(ch.toLowerCase());
       } else {
-        model.appendChild(outlineSVG(ch, { small: true }));
+        // Model column only ever shows the uppercase letter (CHARS is A-Z +
+        // 0-9), so the overlay's uppercase coverage lines up exactly here.
+        model.appendChild(outlineSVG(ch, { small: true, overlay: overlayOn }));
         model.classList.add("pt-model-svg");
         trace.textContent = /[0-9]/.test(ch) ? ch : (ch + " " + ch.toLowerCase());
       }
@@ -621,7 +780,7 @@
       p.textContent = renderGlyph(name);
       el.namePreview.appendChild(p);
     } else {
-      el.namePreview.appendChild(wordOutlineSVG(name, { solid: false }));
+      el.namePreview.appendChild(wordOutlineSVG(name, { solid: false, overlay: strokeOverlayOn() }));
     }
   }
 
@@ -651,7 +810,7 @@
       span.textContent = renderGlyph(name);
       row.appendChild(span);
     } else {
-      row.appendChild(wordOutlineSVG(name, { solid: kind === "model" }));
+      row.appendChild(wordOutlineSVG(name, { solid: kind === "model", overlay: strokeOverlayOn() }));
     }
     return row;
   }
@@ -749,6 +908,7 @@
       if (spec.opacity != null && spec.opacity !== 1) t.setAttribute("opacity", String(spec.opacity));
       t.textContent = word;
       svg.appendChild(t);
+      if (o.overlay) addWordStrokeOverlay(svg, word, TRACE_FONT_SIZE, 0, TRACE_BASE, "alphabetic", w);
     }
     return svg;
   }
@@ -808,7 +968,7 @@
   function genRow(word, level) {
     const row = document.createElement("div");
     row.className = "pt-gen-row";
-    row.appendChild(traceWordSVG(word, level, { guides: true }));
+    row.appendChild(traceWordSVG(word, level, { guides: true, overlay: strokeOverlayOn() }));
     return row;
   }
 
@@ -1652,6 +1812,7 @@
      --------------------------------------------------------------- */
 
   function init() {
+    initStrokeToggle();
     buildStrip();
     buildAlphabetGrid();
     initGenerator();
