@@ -60,6 +60,21 @@
     return str.split("");
   }
 
+  // Shared text-width estimator for text-length-driven path shapes (wave,
+  // ripple, zigzag, oval). 0.62em/char covers typical proportional glyph
+  // advance; the 1.15x safety margin covers wider styles this page also
+  // offers (e.g. the "Fullwidth" Unicode option renders closer to 1em/char),
+  // so a line doesn't run past the end of its own path.
+  function estimateLongestLineSpan(lines, fontSize, letterSpacing) {
+    let estCharWidth = (fontSize * 0.62 + letterSpacing) * 1.15;
+    let longest = 1;
+    for (let i = 0; i < lines.length; i++) {
+      let w = Math.max(1, lines[i].length) * estCharWidth;
+      if (w > longest) longest = w;
+    }
+    return longest;
+  }
+
   /* ------------------------------------------------------------------------
      Path-mode shapes.
      Each layout(params) receives:
@@ -156,13 +171,17 @@
       let r = Math.max(20, baseRadius - i * lineGap);
       // Same full-circle path as the outward "circle" shape but with both
       // sweep flags flipped (1 -> 0), which reverses the path's direction of
-      // travel and moves the rendered text to the inner side of the ring,
-      // upright, with baselines curving toward the center.
+      // travel. That reversed direction only reads upright with ascenders
+      // toward the center at this path's OWN START point — the bottom of the
+      // ring — not at 50% (the top), where the same reversal instead renders
+      // upside-down and back-to-front. So this anchors text to start right at
+      // the bottom (startOffset "0%" + text-anchor "start", same pattern as
+      // the geometric family) rather than centering it at the top.
       let d =
         "M " + cx + " " + (cy + r) +
         " A " + r + " " + r + " 0 1 0 " + cx + " " + (cy - r) +
         " A " + r + " " + r + " 0 1 0 " + cx + " " + (cy + r) + " Z";
-      return { d: d, startOffset: "50%", textAnchor: "middle" };
+      return { d: d, startOffset: "0%", textAnchor: "start" };
     });
 
     return { paths: paths, width: width, height: height };
@@ -175,15 +194,9 @@
     let intensity = params.intensity;
     let lineGap = params.lineGap;
 
-    let estCharWidth = fontSize * 0.62 + letterSpacing;
-    let longestLineLen = Math.max(1, lines.reduce(function (max, line) {
-      return Math.max(max, line.length);
-    }, 1));
-    let estLineWidth0 = longestLineLen * estCharWidth;
-
     // Outer horizontal radius: sized to comfortably fit the LONGEST line's estimated
     // width (not just line 0) so a longer second/third line never overflows its ring.
-    let rx0 = Math.max(80, estLineWidth0 * 0.55);
+    let rx0 = Math.max(80, estimateLongestLineSpan(lines, fontSize, letterSpacing) * 0.55);
     // Outer vertical radius: intensity 0 -> near-circular arch (ry ~= rx), intensity 1 ->
     // a wide, shallow oval (ry ~= 0.25 * rx).
     let ry0 = Math.max(14, rx0 * (1 - intensity * 0.75));
@@ -221,12 +234,7 @@
 
     function r2(n) { return Math.round(n * 100) / 100; }
 
-    let estCharWidth = fontSize * 0.62 + letterSpacing;
-    let longest = 0;
-    for (let i = 0; i < lines.length; i++) {
-      let w = Math.max(1, lines[i].length) * estCharWidth;
-      if (w > longest) longest = w;
-    }
+    let longest = estimateLongestLineSpan(lines, fontSize, letterSpacing);
 
     let amplitude = 6 + intensity * 34; // single hump-then-dip swing
     let pad = fontSize;
@@ -263,12 +271,7 @@
 
     function r2(n) { return Math.round(n * 100) / 100; }
 
-    let estCharWidth = fontSize * 0.62 + letterSpacing;
-    let longest = 0;
-    for (let i = 0; i < lines.length; i++) {
-      let w = Math.max(1, lines[i].length) * estCharWidth;
-      if (w > longest) longest = w;
-    }
+    let longest = estimateLongestLineSpan(lines, fontSize, letterSpacing);
 
     let periods = 2 + Math.round(intensity * 2); // 2..4 repeated sine periods, more intensity = more/tighter ripples
     let amplitude = 4 + intensity * 22; // shallower swing than "wave"
@@ -310,12 +313,7 @@
 
     function r2(n) { return Math.round(n * 100) / 100; }
 
-    let estCharWidth = fontSize * 0.62 + letterSpacing;
-    let longest = 0;
-    for (let i = 0; i < lines.length; i++) {
-      let w = Math.max(1, lines[i].length) * estCharWidth;
-      if (w > longest) longest = w;
-    }
+    let longest = estimateLongestLineSpan(lines, fontSize, letterSpacing);
 
     let peaks = 3 + Math.round(intensity * 5); // 3..8 sharp up/down repeats
     let amplitude = 8 + intensity * 28;
@@ -403,7 +401,7 @@
     let intensity = params.intensity;
     let s = 24 + intensity * 90;
     let k = s / 50;
-    let pad = fontSize;
+    let pad = fontSize * 2; // extra cushion: these fixed-outline shapes previously matched other shapes' single-fontSize margin, half the safety headroom they need for tall glyphs/emoji/bold weight
     function fx(tx) { return pad + tx * k; }
     function fy(ty) { return pad + (ty + 5) * k; }
     let pathD =
@@ -430,7 +428,7 @@
     let intensity = params.intensity;
     let outerR = 24 + intensity * 90;
     let innerR = outerR * 0.45;
-    let pad = fontSize;
+    let pad = fontSize * 2;
     let cx = pad + outerR;
     let cy = pad + outerR;
     let points = [];
@@ -458,7 +456,7 @@
     let intensity = params.intensity;
     let halfW = 24 + intensity * 90;
     let halfH = halfW * 1.3;
-    let pad = fontSize;
+    let pad = fontSize * 2;
     let cx = pad + halfW;
     let cy = pad + halfH;
     let top = cx + " " + (cy - halfH);
@@ -483,10 +481,10 @@
     let fontSize = params.fontSize;
     let intensity = params.intensity;
     let base = 24 + intensity * 90;
-    let totalWidth = base * 2.4;
+    let totalWidth = base * 2.9; // wide enough that the page's own default text ("UltraTextGen") fits at default settings
     let amp = base * 0.75;
     let h = amp * (4 / 3);
-    let pad = fontSize;
+    let pad = fontSize * 2;
     let x0 = pad;
     let x1 = pad + totalWidth;
     let y0 = pad + amp;

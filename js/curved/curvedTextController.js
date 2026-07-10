@@ -84,6 +84,30 @@
     });
   }
 
+  // Real browser measurement (not an estimate): compares each rendered
+  // <textPath>'s actual advance width against its <path>'s actual length, so
+  // shapes with a fixed, non-text-scaling outline (heart/star/diamond/bulge)
+  // can warn instead of silently dropping characters past the path's end.
+  function hasPathOverflow() {
+    if (!el.preview) return false;
+    var svg = el.preview.querySelector("svg");
+    if (!svg) return false;
+    var textPaths = svg.querySelectorAll("textPath");
+    for (var i = 0; i < textPaths.length; i++) {
+      var textPathEl = textPaths[i];
+      var href = textPathEl.getAttribute("href") || textPathEl.getAttribute("xlink:href");
+      if (!href) continue;
+      var pathEl = svg.querySelector(href);
+      if (!pathEl) continue;
+      try {
+        var textLen = textPathEl.getComputedTextLength();
+        var pathLen = pathEl.getTotalLength();
+        if (textLen > pathLen + 1) return true;
+      } catch (e) { /* pre-layout measurement can throw in rare cases; ignore */ }
+    }
+    return false;
+  }
+
   function updateLinesHint() {
     var hint = el.linesHint;
     if (!hint) return;
@@ -94,9 +118,13 @@
       if (shapes[i].key === key) { shape = shapes[i]; break; }
     }
     var maxLines = shape ? shape.maxLines : 1;
-    hint.textContent = maxLines === 1
+    var lineMsg = maxLines === 1
       ? "This shape supports up to 1 line"
       : "This shape supports up to " + maxLines + " lines";
+    var overflowMsg = hasPathOverflow()
+      ? " — your text is longer than this shape's outline, so some characters may not display. Try a shorter phrase or a higher curve amount."
+      : "";
+    hint.textContent = lineMsg + overflowMsg;
   }
 
   function num(v, fallback) {
