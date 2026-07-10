@@ -208,6 +208,72 @@ STRINGS = {
         "footer_heading": "Preguntas sobre {event_name}",
         "copy_toast": "¡Copiado!",
     },
+    "id": {
+        "breadcrumb_home": "Beranda",
+        "breadcrumb_events": "Acara",
+        "faq_what_is_q": "Apa itu generator teks dan simbol {event_name}?",
+        "faq_when_q": "Kapan {event_name} dirayakan?",
+        "faq_when_a": "{event_name} jatuh {date_window}. Cek kalender terbaru untuk "
+                      "tanggal pastinya, lalu kembali ke sini untuk mempercantik ucapanmu.",
+        "faq_how_q": "Bagaimana cara pakai generator {event_name} ini?",
+        "faq_how_a": "Ketik nama, ucapan, atau salam di kotak paling atas. Setiap gaya "
+                     "font {event_name} langsung berubah di bawahnya — tinggal tap Salin "
+                     "di kartu mana pun. Di bawahnya lagi, tap emoji, simbol, kaomoji, "
+                     "atau ASCII art mana pun untuk menyalinnya sendiri, atau tap kartu "
+                     "bank frasa untuk memasukkan ucapan siap pakai ke kotak dan lihat "
+                     "gayanya langsung berubah.",
+        "faq_more_q": "Di mana saya bisa menemukan lebih banyak ucapan {event_name} dan "
+                      "contoh kata-katanya?",
+        "faq_more_a": 'Lihat <a href="{href}">jawaban lengkap kami</a> untuk lebih banyak '
+                      "ucapan, terjemahan, dan ide pesan.",
+        "webapp_name": "Generator Teks & Simbol {event_name}",
+        "alt_fonts": "Font {event_name}",
+        "alt_symbols": "Simbol {event_name}",
+        "alt_textgen": "Generator Teks {event_name}",
+        "feature_fonts": "Gaya font {event_name} langsung untuk teks apa pun yang kamu "
+                        "ketik",
+        "feature_emoji": "Koleksi emoji & simbol {event_name} pilihan",
+        "feature_kaomoji": "Kaomoji {event_name}",
+        "feature_ascii": "ASCII art {event_name} pilihan",
+        "feature_phrase": "Bank frasa {event_name} yang tinggal diklik untuk bergaya "
+                          "(tulisan asli, romanisasi, terjemahan)",
+        "aka_label": "Juga dikenal sebagai: ",
+        "textarea_placeholder": "Ketik nama, ucapan, atau salam...",
+        "section_fonts_label": "Font",
+        "section_fonts_heading": "Font {event_name}",
+        "section_fonts_intro": "Ketik teksmu di atas dan setiap gaya di bawah langsung "
+                               "berubah. Tap Salin pada yang kamu suka.",
+        "section_emoji_label": "Emoji &amp; Simbol",
+        "section_emoji_heading": "Emoji &amp; Simbol {event_name}",
+        "section_emoji_intro": "Tap karakter mana pun untuk menyalinnya, atau salin satu "
+                               "set penuh sekaligus dalam format favoritmu.",
+        "section_kaomoji_label": "Kaomoji",
+        "section_kaomoji_heading": "Kaomoji {event_name}",
+        "section_kaomoji_intro": "Setiap kotak adalah satu kaomoji utuh — tap untuk "
+                                 "menyalin seluruh rangkaiannya dalam satu klik.",
+        "section_ascii_label": "ASCII Art",
+        "section_ascii_heading": "ASCII Art {event_name}",
+        "section_ascii_intro": "Karya multi-baris pilihan — tap Salin untuk mengambilnya "
+                               "lengkap dengan baris baru dan spasinya.",
+        "section_ascii_cta": 'Mau mengetik nama atau pesanmu sendiri jadi banner huruf '
+                             'balok yang langsung berubah? Coba <a href="{href}">Generator '
+                             'ASCII Art</a>.',
+        "section_phrase_label": "Bank Frasa",
+        "section_phrase_heading": "Bank Frasa {event_name}",
+        "section_phrase_intro": "Tap sebuah frasa untuk memasukkannya ke kotak di atas "
+                                "dan lihat setiap gaya font di atas langsung menyesuaikan.",
+        "cta_heading": "Ubah teks dengan font Unicode",
+        "cta_body": "Gunakan UltraTextGen untuk mengubah teks biasa jadi tebal, miring, "
+                    "kursif, dan 100+ gaya font Unicode lainnya — gratis dan instan.",
+        "cta_button": "Buka UltraTextGen →",
+        "related_heading": "Sumber Terkait",
+        "related_more_title": "Lebih banyak ucapan &amp; kata-kata {event_name}",
+        "related_more_desc": "Ucapan, terjemahan, dan ide pesan selain yang ada di bank "
+                             "frasa di atas.",
+        "related_more_fallback_name": "acara ini",
+        "footer_heading": "Pertanyaan seputar {event_name}",
+        "copy_toast": "Disalin!",
+    },
 }
 
 
@@ -224,6 +290,13 @@ JS_UI_STRINGS = {
         "copyButton": "Copiar",
         "copyAriaPrefix": "Copiar ",
         "asciiArtDefaultLabel": "Arte ASCII",
+    },
+    "id": {
+        "showingSample": "Menampilkan “{sample}” — ketik nama, ucapan, atau salammu "
+                          "sendiri di atas.",
+        "copyButton": "Salin",
+        "copyAriaPrefix": "Salin ",
+        "asciiArtDefaultLabel": "ASCII Art",
     },
 }
 
