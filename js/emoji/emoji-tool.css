@@ -1,0 +1,223 @@
+/* UltraTextGen — Text to Emoji tool styles (shared by hub + spokes) */
+    .emoji-output-block {
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .emoji-output-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted, #64748b);
+      margin-bottom: 0.6rem;
+    }
+    .emoji-output-text {
+      font-family: 'Courier New', monospace;
+      font-size: 1.35rem;
+      line-height: 1.7;
+      color: var(--text, #1e293b);
+      min-height: 2.5rem;
+      word-break: break-word;
+    }
+    .emoji-output-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.75rem;
+    }
+    .breakdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent, #6366f1);
+      padding: 0;
+      margin-top: 1rem;
+    }
+    .breakdown-toggle svg {
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .breakdown-toggle.open svg {
+      transform: rotate(180deg);
+    }
+    .breakdown-section {
+      display: none;
+      margin-top: 0.75rem;
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .breakdown-section.open {
+      display: block;
+    }
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0;
+    }
+    .breakdown-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.9rem;
+      border-bottom: 1px solid var(--border, #e2e8f0);
+      border-right: 1px solid var(--border, #e2e8f0);
+      font-size: 0.85rem;
+    }
+    .breakdown-row:last-child {
+      border-bottom: none;
+    }
+    .breakdown-emoji {
+      font-size: 1.1rem;
+      min-width: 2.5rem;
+      word-break: break-word;
+    }
+    .breakdown-word {
+      color: var(--text-muted, #64748b);
+      font-size: 0.78rem;
+    }
+    .breakdown-note {
+      padding: 0.6rem 0.9rem;
+      font-size: 0.75rem;
+      color: var(--text-muted, #64748b);
+      border-top: 1px solid var(--border, #e2e8f0);
+      font-style: italic;
+    }
+    .hero-convert-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .convert-btn {
+      flex: 1;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      background: var(--accent, #6366f1);
+      color: #fff;
+      transition: opacity 0.15s;
+    }
+    .convert-btn:hover { opacity: 0.88; }
+    /* Mode tabs (segmented control) */
+    .mode-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .mode-tab {
+      flex: 1 1 auto;
+      min-width: 120px;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: 1px solid var(--border, #e2e8f0);
+      background: var(--surface, #f8f9fa);
+      color: var(--text-muted, #64748b);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      text-decoration: none;
+      text-align: center;
+    }
+    .mode-tab:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
+    .mode-tab.active {
+      background: var(--accent, #6366f1);
+      border-color: var(--accent, #6366f1);
+      color: #fff;
+    }
+    .mode-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted, #64748b);
+      margin-top: 0.6rem;
+      min-height: 1.1rem;
+    }
+    /* Starter phrase chips */
+    .phrase-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+    .phrase-chip {
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border, #e2e8f0);
+      background: none;
+      color: var(--text, #1e293b);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .phrase-chip:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
+    .phrase-chip.surprise { font-weight: 700; }
+    /* Examples / sub-intent section */
+    .tte-examples { margin-top: 2.75rem; }
+    .tte-examples h2 { font-size: 1.2rem; margin: 1.75rem 0 0.5rem; }
+    .tte-examples h2:first-child { margin-top: 0; }
+    .tte-lead { color: var(--text-muted, #64748b); line-height: 1.6; margin-bottom: 0.75rem; }
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .example-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      text-align: left;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border, #e2e8f0);
+      background: var(--surface, #f8f9fa);
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    .example-card:hover { border-color: var(--accent, #6366f1); transform: translateY(-1px); }
+    .example-in { font-size: 0.85rem; font-weight: 600; color: var(--text, #1e293b); }
+    .example-out { font-size: 1rem; color: var(--text, #1e293b); word-break: break-word; }
+    .tte-inline {
+      display: inline-block;
+      padding: 0.05rem 0.4rem;
+      border-radius: 6px;
+      background: var(--surface, #f8f9fa);
+      border: 1px solid var(--border, #e2e8f0);
+    }
+    .tte-linkbtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--accent, #6366f1);
+      padding: 0;
+    }
+    .tte-linkbtn:hover { text-decoration: underline; }
+    .clear-btn {
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--border, #e2e8f0);
+      color: var(--text-muted, #64748b);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .clear-btn:hover {
+      border-color: var(--accent, #6366f1);
+      color: var(--accent, #6366f1);
+    }
