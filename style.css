@@ -6699,6 +6699,19 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 }
 .kao-part-opt.is-hidden { display: none; }
 
+.kao-recent { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.kao-recent-face {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+.kao-recent-face:hover { border-color: var(--accent-purple); color: var(--text-primary); }
+
 @media (max-width: 560px) {
   .kao-part-row { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
   .kao-part-label { flex-basis: auto; }

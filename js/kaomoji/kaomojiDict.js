@@ -96,7 +96,16 @@
       "＾":    { role: "Eyes",  meaning: "a happy, closed eye" },
       "•":    { role: "Eyes",  meaning: "a small round eye" },
       ">":    { role: "Eyes",  meaning: "a squinting eye" },
-      "<":    { role: "Eyes",  meaning: "a squinting eye" }
+      "<":    { role: "Eyes",  meaning: "a squinting eye" },
+      "°":    { role: "Eyes",  meaning: "a round, open eye" },
+      "O":    { role: "Eyes",  meaning: "a wide, surprised eye" },
+      "@":    { role: "Eyes",  meaning: "a dizzy, spinning eye" },
+      "x":    { role: "Eyes",  meaning: "an x-shaped, dazed eye" },
+      "-":    { role: "Eyes",  meaning: "a flat, unimpressed eye" },
+      "□":    { role: "Mouth", meaning: "an open, shocked mouth" },
+      "皿":    { role: "Mouth", meaning: "a wide, gritted, angry mouth" },
+      "o":    { role: "Mouth", meaning: "an open, surprised mouth" },
+      "_":    { role: "Mouth", meaning: "a flat, neutral mouth" }
     }
   };
 })();
