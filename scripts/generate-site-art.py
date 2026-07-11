@@ -651,6 +651,27 @@ PAGES = {
   "usecase-vertical-text": ("Vertical & Stacked Text", "Stack your text top to bottom",
         P(m_vertical, letters="TEXT"), K_USE),
   "usecase-zalgo-text": ("Zalgo Text Generator", "Create creepy glitch text", m_zalgo, K_USE),
+
+  # ---- localized emoji-translator / bio-font / emoji-letters cards ----
+  # Native-script titles for ar/hi are intentionally omitted: the bundled
+  # raster fonts (DejaVu/Liberation) don't cover Arabic/Devanagari and cairosvg
+  # does no complex-script shaping, so those locales keep the shared English card.
+  "de-usecase-emoji-uebersetzer": ("Emoji-Übersetzer", "Text in Emojis – und zurück", m_smiley, K_USE),
+  "tr-usecase-emoji-ceviri": ("Emoji Çevirici", "Metni emojiye çevir, geri çöz", m_smiley, K_USE),
+  "vi-usecase-dich-emoji": ("Dịch Emoji", "Chuyển văn bản thành emoji", m_smiley, K_USE),
+  "es-usecase-traductor-de-emojis": ("Traductor de Emojis", "Texto a emojis y al revés", m_smiley, K_USE),
+  "pt-usecase-tradutor-de-emojis": ("Tradutor de Emojis", "Texto em emojis e de volta", m_smiley, K_USE),
+  "fr-usecase-traducteur-emoji": ("Traducteur Emoji", "Texte en emojis, et l'inverse", m_smiley, K_USE),
+  "it-usecase-traduttore-emoji": ("Traduttore Emoji", "Testo in emoji e viceversa", m_smiley, K_USE),
+  "id-usecase-penerjemah-emoji": ("Penerjemah Emoji", "Teks jadi emoji dan sebaliknya", m_smiley, K_USE),
+  "pl-usecase-tlumacz-emoji": ("Tłumacz Emoji", "Tekst na emoji i z powrotem", m_smiley, K_USE),
+  "de-usecase-bio-schriftarten": ("Bio-Schriftarten", "Schriften & Symbole für jede Bio", m_profile, K_USE),
+  "pt-usecase-fonte-para-bio": ("Fontes para Bio", "Fontes e símbolos para sua bio", m_profile, K_USE),
+  "fr-usecase-police-pour-bio": ("Polices pour Bio", "Polices et symboles pour ta bio", m_profile, K_USE),
+  "es-usecase-fuentes-para-bio": ("Fuentes para Bio", "Fuentes y símbolos para tu bio", m_profile, K_USE),
+  "it-usecase-font-per-bio": ("Font per Bio", "Font e simboli per la tua bio", m_profile, K_USE),
+  "de-usecase-emoji-buchstaben": ("Emoji-Buchstaben", "Namen im Emoji-Alphabet", m_flag, K_USE),
+  "tr-usecase-emoji-harfler": ("Emoji Harfleri", "İsmini emoji alfabesiyle yaz", m_flag, K_USE),
   "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
         P(m_typo, sample="@Aa"), K_USE),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
