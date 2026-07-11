@@ -661,6 +661,23 @@ PAGES = {
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
+  "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
+  "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
+
+  # ---- bio-font locale translations ----
+  "de-usecase-bio-schriftart": ("Bio-Schriftart Generator", "Schriften, Symbole und Vorlagen für dein Bio", m_profile, K_USE),
+  "tr-usecase-biyografi-yazi-tipi": ("Biyografi Yazı Tipi", "Instagram biyografin için fontlar ve semboller", m_profile, K_USE),
+  "th-usecase-bio-font-ig": ("ฟอนต์ไบโอไอจี", "ฟอนต์และสัญลักษณ์สำหรับไบโออินสตาแกรม", m_profile, K_USE),
+  "ja-usecase-bio-font": ("プロフィール文字装飾", "インスタプロフィール用のフォントと記号", m_profile, K_USE),
+  "pt-usecase-fontes-para-bio": ("Gerador de Fontes para Bio", "Fontes, símbolos e modelos para sua bio", m_profile, K_USE),
+  "fr-usecase-ecriture-bio": ("Écriture Stylée pour Bio", "Polices et symboles pour votre bio Instagram", m_profile, K_USE),
+  "es-usecase-letras-para-bio": ("Letras para Bio", "Fuentes y símbolos para tu biografía de Instagram", m_profile, K_USE),
+  "it-usecase-font-per-bio": ("Font per la Bio", "Caratteri e simboli per la tua bio Instagram", m_profile, K_USE),
+  "ar-usecase-khat-bio": ("خط للبايو", "خطوط ورموز لبايو انستقرام", m_profile, K_USE),
+  "cs-usecase-pismo-pro-bio": ("Písmo pro Bio", "Fonty a symboly pro tvoje bio na Instagramu", m_profile, K_USE),
+  "sk-usecase-pismo-pre-bio": ("Písmo pre Bio", "Fonty a symboly pre tvoje bio na Instagrame", m_profile, K_USE),
+  "nl-usecase-lettertype-voor-bio": ("Lettertype voor Bio", "Lettertypes en symbolen voor je Instagram bio", m_profile, K_USE),
+  "tl-usecase-bio-font": ("Bio Font Generator", "Fancy fonts at symbols para sa iyong bio", m_profile, K_USE),
   "usecase-comment-font": ("Comment Style Generator", "Make your comment stand out", m_chat, K_USE),
   "usecase-emoji-combinations": ("Emoji Combinations", "Copy-and-paste pairings for social",
         P(m_transform, a="+", b="★"), K_USE),
@@ -1311,9 +1328,29 @@ def hero_svg(slug, title, motif, kicker, a=PURPLE, b=BLUE):
 </svg>"""
 
 
+def script_sans(text):
+    """Pick a font stack covering the text's script, falling back to SANS
+    for Latin. cairosvg (unlike a browser) does not fall back through a
+    font-family list per-glyph, so a title in Thai/Arabic/CJK needs its
+    matching Noto family listed first or it renders as tofu boxes."""
+    for ch in text:
+        cp = ord(ch)
+        if 0x0E00 <= cp <= 0x0E7F:
+            return "Noto Sans Thai, " + SANS
+        if 0x0600 <= cp <= 0x06FF or 0x0750 <= cp <= 0x077F:
+            return "Noto Sans Arabic, " + SANS
+        if (0x3040 <= cp <= 0x30FF or 0x4E00 <= cp <= 0x9FFF
+                or 0xAC00 <= cp <= 0xD7AF):
+            return "Noto Sans CJK JP, Noto Sans CJK KR, " + SANS
+        if 0x0900 <= cp <= 0x097F:
+            return "Noto Sans Devanagari, " + SANS
+    return SANS
+
+
 def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE):
     p = "o" + slug.replace("-", "")[:8]
     t, s = esc(title), esc(sub)
+    body_font = script_sans(title + sub)
     wrapped = textwrap.wrap(t, width=17)[:3]
     tspans = ""
     y0 = 250 - (len(wrapped) - 1) * 33
@@ -1328,8 +1365,8 @@ def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE):
   <rect x="0" y="0" width="14" height="630" fill="url(#gv{p})"/>
   <text x="80" y="96" font-family="{SANS}" font-size="22" font-weight="700"
         letter-spacing="3" fill="{PURPLE}">{esc(kicker)}</text>
-  <text font-family="{SANS}" font-size="60" font-weight="700" fill="{INK}">{tspans}</text>
-  <text x="80" y="{y0 + len(wrapped)*72 + 6}" font-family="{SANS}" font-size="26"
+  <text font-family="{body_font}" font-size="60" font-weight="700" fill="{INK}">{tspans}</text>
+  <text x="80" y="{y0 + len(wrapped)*72 + 6}" font-family="{body_font}" font-size="26"
         fill="{SUB}">{s}</text>
   <g transform="translate(740 150) scale(1.20)">{motif(p)}</g>
 </svg>"""
