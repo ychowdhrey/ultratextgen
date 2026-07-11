@@ -1072,6 +1072,12 @@ PAGES = {
   "zh-tw": ("顏文字大全", "複製貼上可愛表情符號", m_kaomoji, K_SITE),
   "zh-tw-yingwen-ziti": ("英文字體產生器", "花式英文字體，複製貼上", m_typo, K_USE),
   "zh-tw-library-xingzuo-fuhao": ("十二星座符號", "星座與行星符號大全", glyphs("♈", "♋", "♌", "♏", "♐"), K_LIB),
+  "zh-tw-da-xiao-xie-zhuanhuan": ("大小寫轉換", "英文大寫、小寫一鍵轉換",
+        P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
+  "zh-tw-usecase-ciqing-ziti": ("刺青字體產生器", "紋身字體預覽比較",
+        P(m_typo, sample="Love", ff=SERIF, style="italic", weight="400", size=64,
+          label="cursive · gothic · italic"), K_USE),
+  "zh-tw-usecase-youxi-mingzi-fuhao": ("遊戲暱稱特殊符號", "傳說對決・Discord暱稱裝飾", m_gamepad, K_USE),
 
   "kaomoji-dictionary": ("Kaomoji Dictionary", "Decode any text face", m_kaomoji, K_SITE),
   "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
