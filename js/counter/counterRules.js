@@ -24,31 +24,50 @@
      limit (see docs referenced in the character-counter page FAQ).
      Character counting uses Array.from() (Unicode code points), matching
      game-rules.js, so emoji/accents count as platforms actually see them.
+
+     `group` is a stable key, not display text — DEFAULT_GROUPS below holds
+     the English display string, and a page's initChecker() config can pass
+     `groups`/`labels` overrides so one rule table drives every locale
+     (same reasoning as game-rules.js's config.text: numbers live once,
+     translated strings are supplied per page).
      ============================ */
   const LIMITS = [
-    { id: "x-post", label: "X / Twitter post", limit: 280, group: "Posts" },
-    { id: "discord-message", label: "Discord message", limit: 2000, group: "Posts" },
-    { id: "ig-caption", label: "Instagram caption", limit: 2200, group: "Posts" },
-    { id: "tiktok-caption", label: "TikTok caption", limit: 2200, group: "Posts" },
-    { id: "li-post", label: "LinkedIn post", limit: 3000, group: "Posts" },
-    { id: "fb-post", label: "Facebook post", limit: 63206, group: "Posts" },
-    { id: "yt-description", label: "YouTube description", limit: 5000, group: "Posts" },
-    { id: "pinterest-description", label: "Pinterest pin description", limit: 500, group: "Posts" },
+    { id: "x-post", label: "X / Twitter post", limit: 280, group: "posts" },
+    { id: "discord-message", label: "Discord message", limit: 2000, group: "posts" },
+    { id: "ig-caption", label: "Instagram caption", limit: 2200, group: "posts" },
+    { id: "tiktok-caption", label: "TikTok caption", limit: 2200, group: "posts" },
+    { id: "li-post", label: "LinkedIn post", limit: 3000, group: "posts" },
+    { id: "fb-post", label: "Facebook post", limit: 63206, group: "posts" },
+    { id: "yt-description", label: "YouTube description", limit: 5000, group: "posts" },
+    { id: "pinterest-description", label: "Pinterest pin description", limit: 500, group: "posts" },
+    { id: "telegram-message", label: "Telegram message", limit: 4096, group: "posts" },
+    { id: "telegram-caption", label: "Telegram photo/video caption", limit: 1024, group: "posts" },
+    { id: "threads-post", label: "Threads post", limit: 500, group: "posts" },
+    { id: "bluesky-post", label: "Bluesky post", limit: 300, group: "posts" },
+    { id: "zalo-post", label: "Zalo post/status", limit: 2000, group: "posts" },
 
-    { id: "ig-bio", label: "Instagram bio", limit: 150, group: "Bios & profiles" },
-    { id: "tiktok-bio", label: "TikTok bio", limit: 80, group: "Bios & profiles" },
-    { id: "li-headline", label: "LinkedIn headline", limit: 220, group: "Bios & profiles" },
-    { id: "whatsapp-about", label: "WhatsApp About", limit: 139, group: "Bios & profiles" },
+    { id: "ig-bio", label: "Instagram bio", limit: 150, group: "bios" },
+    { id: "tiktok-bio", label: "TikTok bio", limit: 80, group: "bios" },
+    { id: "li-headline", label: "LinkedIn headline", limit: 220, group: "bios" },
+    { id: "whatsapp-about", label: "WhatsApp About", limit: 139, group: "bios" },
+    { id: "telegram-bio", label: "Telegram bio", limit: 70, group: "bios" },
 
-    { id: "discord-nick", label: "Discord nickname", limit: 32, group: "Usernames" },
-    { id: "tiktok-username", label: "TikTok username", limit: 24, group: "Usernames" },
-    { id: "ig-username", label: "Instagram username", limit: 30, group: "Usernames" },
+    { id: "discord-nick", label: "Discord nickname", limit: 32, group: "usernames" },
+    { id: "tiktok-username", label: "TikTok username", limit: 24, group: "usernames" },
+    { id: "ig-username", label: "Instagram username", limit: 30, group: "usernames" },
 
-    { id: "yt-title", label: "YouTube title", limit: 100, group: "Titles & meta" },
-    { id: "meta-title", label: "SEO meta title", limit: 60, group: "Titles & meta" },
-    { id: "meta-description", label: "SEO meta description", limit: 155, group: "Titles & meta" },
-    { id: "sms", label: "SMS (1 segment)", limit: 160, group: "Titles & meta" }
+    { id: "yt-title", label: "YouTube title", limit: 100, group: "titles" },
+    { id: "meta-title", label: "SEO meta title", limit: 60, group: "titles" },
+    { id: "meta-description", label: "SEO meta description", limit: 155, group: "titles" },
+    { id: "sms", label: "SMS (1 segment)", limit: 160, group: "titles" }
   ];
+
+  const DEFAULT_GROUPS = {
+    posts: "Posts",
+    bios: "Bios & profiles",
+    usernames: "Usernames",
+    titles: "Titles & meta"
+  };
 
   /* ============================
      analyze(str, limitId) → report
@@ -72,7 +91,13 @@
        mount:   element id to render into
        inputId: main counter textarea to mirror live
        selected: optional starting limit id (defaults to LIMITS[0])
-       text: { label, ok, fail, remaining, over }
+       text:    { label, ok, fail }
+       labels:  optional { limitId: translatedLabel } — falls back to the
+                English LIMITS[].label so a locale only needs to translate
+                the platforms it wants to relabel (platform proper nouns
+                like "Instagram" usually stay as-is).
+       groups:  optional { groupKey: translatedGroupName } — falls back to
+                DEFAULT_GROUPS.
      }
      ============================ */
   function el(tag, className, text) {
@@ -88,6 +113,8 @@
     if (!mount) return null;
 
     const text = cfg.text || {};
+    const labels = cfg.labels || {};
+    const groupNames = cfg.groups || {};
     const state = { limitId: cfg.selected && LIMITS.some((r) => r.id === cfg.selected) ? cfg.selected : LIMITS[0].id };
 
     mount.innerHTML = "";
@@ -102,12 +129,12 @@
     LIMITS.forEach((rule) => {
       if (!groups[rule.group]) {
         groups[rule.group] = document.createElement("optgroup");
-        groups[rule.group].label = rule.group;
+        groups[rule.group].label = groupNames[rule.group] || DEFAULT_GROUPS[rule.group] || rule.group;
         select.appendChild(groups[rule.group]);
       }
       const opt = document.createElement("option");
       opt.value = rule.id;
-      opt.textContent = rule.label + " (" + rule.limit.toLocaleString() + ")";
+      opt.textContent = (labels[rule.id] || rule.label) + " (" + rule.limit.toLocaleString() + ")";
       if (rule.id === state.limitId) opt.selected = true;
       groups[rule.group].appendChild(opt);
     });
