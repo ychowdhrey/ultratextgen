@@ -1263,6 +1263,11 @@ PAGES = {
   "es-fuentes-para-discord": ("Fuentes para Discord", "Letras para nick, canal y bio — sin Nitro", m_chat, K_PLAT),
   "pl-czcionki-discord": ("Czcionki na Discord", "Czcionki do nicku, kanału i bio — bez Nitro", m_chat, K_PLAT),
   "id-font-discord": ("Font Discord", "Font untuk nama, channel, dan bio — tanpa Nitro", m_chat, K_PLAT),
+
+  # ---- Roblox font pages (demand-validated locales) ----
+  "es-fuentes-para-roblox": ("Fuentes para Roblox", "Letras para el nombre y la bio", m_chat, K_PLAT),
+  "pl-czcionki-na-roblox": ("Czcionki na Roblox", "Generator czcionek do nazwy i bio", m_chat, K_PLAT),
+  "vi-font-roblox": ("Font Chữ Roblox", "Tạo chữ đẹp cho tên và bio", m_chat, K_PLAT),
 }
 
 
