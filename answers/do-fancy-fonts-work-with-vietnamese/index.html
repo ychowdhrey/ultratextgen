@@ -15,10 +15,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Do Fancy Fonts Work With Vietnamese? (Chữ Kiểu Có Dấu) | UltraTextGen</title>
-  <meta name="description" content="Fancy fonts break Vietnamese because most syllables carry stacked marks and đ has no styled form. Here's which styles keep dấu, and how Vietnamese users style names anyway.">
+  <meta name="description" content="Fancy fonts now keep Vietnamese dấu — the generator styles each vowel and reattaches its tone marks. Only đ never converts. Which styles work, and how Vietnamese users style names.">
   <link rel="canonical" href="https://ultratextgen.com/answers/do-fancy-fonts-work-with-vietnamese/">
   <meta property="og:title" content="Do Fancy Fonts Work With Vietnamese? (Chữ Kiểu Có Dấu)">
-  <meta property="og:description" content="Fancy fonts break Vietnamese because most syllables carry stacked marks and đ has no styled form. Here's which styles keep dấu — and how to style Vietnamese names anyway.">
+  <meta property="og:description" content="Fancy fonts now keep Vietnamese dấu — the generator styles each vowel and reattaches its tone marks. Only đ never converts. Which styles work, and how Vietnamese users style names.">
   <meta property="og:url" content="https://ultratextgen.com/answers/do-fancy-fonts-work-with-vietnamese/">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/answers-do-fancy-fonts-work-with-vietnamese.png">
@@ -27,7 +27,7 @@
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Do Fancy Fonts Work With Vietnamese? (Chữ Kiểu Có Dấu)">
-  <meta name="twitter:description" content="Why fancy fonts break Vietnamese có dấu, which styles keep the marks, and how Vietnamese users style names anyway.">
+  <meta name="twitter:description" content="Fancy fonts now keep Vietnamese có dấu — which styles reattach the tone marks, why đ never converts, and how Vietnamese users style names.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/answers-do-fancy-fonts-work-with-vietnamese.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
       "name": "Do fancy fonts work with Vietnamese có dấu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only partly. The letter-swap styles (bold, italic, script) can't handle accented Vietnamese, because almost every syllable stacks a vowel mark and a tone mark and Unicode has no styled version of those letters — so most of the word falls back to plain and you get a half-styled result. The styles that keep dấu are the ones that add a mark or a symbol instead of replacing the letter: strikethrough, underline, slash, and the bracket/symbol wraps. For a bold or script look, Vietnamese users usually remove the tone marks first (bỏ dấu) so the whole word styles evenly."
+        "text": "Yes, now — far better than they used to. Almost every syllable stacks a vowel mark and a tone mark, and Unicode has no styled version of those letters, so the generator splits each vowel apart, styles the base and reattaches every mark. A bold name comes through with its dấu intact — Việt Nam becomes 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. This works in every core typography style (bold, italic, script, gothic) as well as the mark and symbol styles. The one letter that never converts is đ, which becomes a plain styled d. Removing the tone marks first (bỏ dấu) is now a choice for game length caps, not a requirement."
       }
     },
     {
@@ -51,7 +51,7 @@
       "name": "Why does the letter đ never change?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because đ / Đ is its own letter in Unicode (d-with-stroke), not a d carrying a mark. It has no decomposition, so it can't be reduced to d plus an accent, and there is no styled đ glyph to swap in. Every letter-swap style therefore leaves đ exactly as it is — and the same property means đ also survives accent-removal tools, which is why bỏ dấu code has to convert đ→d by hand."
+        "text": "Because đ / Đ is its own letter in Unicode (d-with-stroke), not a d carrying a mark. It has no decomposition, so there's no combining mark to split off and reattach, and there is no styled đ glyph either. So every letter-swap style falls back to its nearest base letter and gives you a plain or styled d — never a đ. The same property means đ also survives accent-removal tools, which is why bỏ dấu code has to convert đ→d by hand."
       }
     },
     {
@@ -59,7 +59,7 @@
       "name": "Which styles keep Vietnamese tone marks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The mark-based and symbol styles: strikethrough, underline, slash, wavy, and the bracket / arrow / symbol word-wraps. They draw over or around your letters instead of replacing them, so ữ, ế, ệ, ơ, ư and đ all survive intact. Bold, italic, script, cursive, fraktur, bubble and small caps cannot keep the marks."
+        "text": "Almost all of them now — around 77 of the 112 styles, including every bold, italic, script, cursive, fraktur and small caps variant, plus the mark and symbol styles (strikethrough, underline, slash, wraps). Each reattaches the tone marks to the styled vowel, so ữ, ế, ệ, ơ and ư come through intact. The exceptions are the upside-down / flip styles and 13 novelty exotic-alphabet styles (bubble circles, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics). And đ is the one letter no letter-swap style can convert — it falls back to a plain styled d, though the mark and wrap styles leave the đ itself untouched."
       }
     },
     {
@@ -112,7 +112,7 @@
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Do Fancy Fonts Work With Vietnamese?</h1>
-    <p class="hero-tagline">Type <strong>chữ kiểu</strong> into a bold generator and most of the word falls apart. Here's why Vietnamese is the hardest language for fancy text — and how to style it anyway.</p>
+    <p class="hero-tagline">Type <strong>chữ kiểu</strong> into a bold generator and it now comes through styled, tone marks and all. Here's how Vietnamese went from the hardest language for fancy text to a mostly solved one — and the one letter, đ, that still won't convert.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -124,10 +124,10 @@
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
   <div class="editorial-block">
-    <p><strong>Only partly.</strong> Vietnamese is the hardest case for fancy text. Nearly every syllable stacks a vowel mark <em>and</em> a tone mark (ữ, ế, ệ, ơ), and Unicode has no styled version of those letters — so a bold or script style leaves most of the word plain, producing a half-styled mess. The letter <strong>đ</strong> never converts at all. The styles that <strong>keep dấu</strong> are the ones that add a mark or symbol instead of swapping the letter — strikethrough, underline, and symbol wraps. For a bold/script look, the Vietnamese fix is to <strong>bỏ dấu</strong> (remove the tone marks) first, or decorate a plain name with <strong>kí tự đặc biệt</strong>.</p>
+    <p><strong>Yes, now — far better than they used to.</strong> Vietnamese is the toughest case, because nearly every syllable stacks a vowel mark <em>and</em> a tone mark (ữ, ế, ệ, ơ). Unicode has no styled version of those letters, so the generator decomposes each vowel, styles the base and reattaches every mark — a bold name comes through with its dấu intact (<strong>Việt Nam</strong> → <strong>𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</strong>). The one letter that <em>never</em> converts is <strong>đ</strong>, which becomes a plain styled "d." Styling with dấu now works in every core typography style; <strong>bỏ dấu</strong> (dropping the tone marks) and <strong>kí tự đặc biệt</strong> (symbol frames) are still handy for game length caps and platform rules.</p>
   </div>
   <div class="block-example">
-    <strong>In one line:</strong> letter-swap styles break có dấu · mark &amp; symbol styles keep it · or bỏ dấu first for a uniform look.
+    <strong>In one line:</strong> core styles now keep có dấu · đ is the one holdout · bỏ dấu or symbol frames stay useful for length caps.
   </div>
 </section>
 
@@ -135,16 +135,16 @@
 
 <section class="editorial-section">
   <span class="article-section-label">Why it breaks</span>
-  <h2>Stacked marks — and the đ that never budges</h2>
+  <h2>How the marks get kept — and the đ that never budges</h2>
   <div class="editorial-block">
-    <p>A "fancy font" swaps each letter for a styled Unicode character, but those styled characters only exist for the plain <strong>A–Z, a–z and 0–9</strong>. Vietnamese vowels are built by stacking a base letter, a vowel-shape mark (â, ă, ơ, ư) and a tone mark — "ế" is really e + circumflex + acute. A letter-swap style can only restyle the bare "e," so it strips the very marks that carry the meaning.</p>
-    <p>And <strong>đ / Đ</strong> is special: it's its own Unicode letter, not a "d" with a mark, so it has no styled twin and no decomposition. It stays plain in <em>every</em> letter-swap style, forever — the one character guaranteed to break.</p>
+    <p>A "fancy font" swaps each letter for a styled Unicode character, but those styled characters only exist for the plain <strong>A–Z, a–z and 0–9</strong>. Vietnamese vowels are built by stacking a base letter, a vowel-shape mark (â, ă, ơ, ư) and a tone mark — "ế" is really e + circumflex + acute. There's no styled "ế" to swap in, so the generator splits it apart (via NFD), styles the bare "e," and re-appends both marks on top — the styled vowel keeps every dấu.</p>
+    <p>But <strong>đ / Đ</strong> is different: it's its own Unicode letter, not a "d" with a mark, so it has no decomposition and no mark to lift off. It converts to a plain styled "d" in <em>every</em> letter-swap style — the one character guaranteed not to carry through as đ.</p>
     <div class="block-example">
       <div class="example-pair">
         <div class="ex-label">Bold "Việt Nam"</div>
-        <div class="ex-styled">𝗩𝗶ệ𝘁 𝗡𝗮𝗺</div>
+        <div class="ex-styled">𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</div>
         <div class="ex-arrow">↓</div>
-        <div class="ex-label">the ệ has no bold form, so it drops to plain</div>
+        <div class="ex-label">the ệ keeps its circumflex and dot-below, styled to match</div>
       </div>
     </div>
   </div>
@@ -157,17 +157,14 @@
   <h2>Two ways to style Vietnamese that actually hold up</h2>
   <div class="compare-grid">
     <div class="compare-card variant-positive">
-      <span class="compare-badge">1 · Keep the dấu</span>
-      <p>Use a style that <strong>marks or wraps</strong> instead of swapping — it never touches the letter, so every tone mark survives:</p>
-      <ul>
-        <li>Strikethrough, Underline, Slash, Wavy</li>
-        <li>Bracket / arrow / symbol word-wraps</li>
-      </ul>
-      <p class="mood-example">V̲i̲ệ̲t̲ ̲N̲a̲m̲ &nbsp;·&nbsp; ❨chữ kiểu❩</p>
+      <span class="compare-badge">1 · Restyle, dấu kept</span>
+      <p>Just style the name. Every core style — bold, italic, script, gothic — now reattaches each tone mark, so the dấu comes through:</p>
+      <p class="mood-example">Việt Nam → 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</p>
+      <p>Mark and wrap styles (strikethrough, underline, symbol frames) keep the dấu too, and never decompose the letter — a safe pick for shaky old devices.</p>
     </div>
     <div class="compare-card variant-muted">
       <span class="compare-badge">2 · Bỏ dấu, then style</span>
-      <p>Remove the tone marks first so the whole word has a styled form, then apply bold/script. This is the standard move for game names:</p>
+      <p>Remove the tone marks first, then apply bold/script — still the standard move where a game caps name length or rejects marks:</p>
       <p class="mood-example">chữ kiểu → chu kieu → 𝗰𝗵𝘂 𝗸𝗶𝗲𝘂</p>
       <p>Or decorate a plain name with <strong>kí tự đặc biệt</strong> (symbol frames), the way Free Fire and Liên Quân players do.</p>
     </div>
@@ -191,7 +188,7 @@
 
 <div class="cta-card">
   <h3>Try your Vietnamese text in every style</h3>
-  <p>Type chữ có dấu once and compare — the mark and symbol styles keep every dấu, and you can see exactly where the letter-swap styles drop them.</p>
+  <p>Type chữ có dấu once and compare — the core styles now keep every dấu, and you can see exactly where đ and the novelty styles don't.</p>
   <a href="/" class="cta-btn">Open the Text Generator →</a>
 </div>
 

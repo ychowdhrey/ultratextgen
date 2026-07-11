@@ -15,10 +15,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Fancy Text With ñ and Accented Letters | UltraTextGen</title>
-  <meta name="description" content="Can you make fancy text with ñ, á, é or ü? The letters style, but the accented ones stay plain because Unicode has no styled version of them. Here's how to keep them.">
+  <meta name="description" content="Can you make fancy text with ñ, á, é or ü? Yes — the vast majority of styles now keep the accented letters styled too, by reattaching the mark. Here's how, and the exceptions.">
   <link rel="canonical" href="https://ultratextgen.com/answers/fancy-text-with-n-and-accented-letters/">
   <meta property="og:title" content="Fancy Text With ñ and Accented Letters">
-  <meta property="og:description" content="Can you make fancy text with ñ, á, é or ü? The letters style, but the accented ones stay plain because Unicode has no styled version of them. Here's how to keep them.">
+  <meta property="og:description" content="Can you make fancy text with ñ, á, é or ü? Yes — the vast majority of styles now keep the accented letters styled too, by reattaching the mark. Here's how, and the exceptions.">
   <meta property="og:url" content="https://ultratextgen.com/answers/fancy-text-with-n-and-accented-letters/">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/answers-fancy-text-with-n-and-accented-letters.png">
@@ -27,7 +27,7 @@
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fancy Text With ñ and Accented Letters">
-  <meta name="twitter:description" content="Can you make fancy text with ñ, á, é or ü? The letters style, but the accented ones stay plain because Unicode has no styled version of them. Here's how to keep them.">
+  <meta name="twitter:description" content="Can you make fancy text with ñ, á, é or ü? Yes — the vast majority of styles now keep the accented letters styled too, by reattaching the mark. Here's how, and the exceptions.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/answers-fancy-text-with-n-and-accented-letters.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
       "name": "Can I make fancy text with ñ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can style the word, but in bold, italic and script styles the ñ itself stays plain, because Unicode has no styled version of ñ. To keep the ñ styled like the rest, use a mark-based or symbol style (strikethrough, underline, wraps) that never replaces the letter."
+        "text": "Yes — and in the vast majority of styles the ñ styles too, not just the rest of the word. Unicode has no bold or italic ñ, so the generator splits ñ into a base n plus a combining tilde, styles the n, and puts the tilde back on top. Bold Señor comes out 𝗦𝗲𝗻̃𝗼𝗿. The styles that leave the ñ plain are the upside-down ones and a set of novelty exotic-alphabet styles (bubble circles, fullwidth, katakana and the like)."
       }
     },
     {
@@ -51,7 +51,7 @@
       "name": "Why is my ñ not bold when the rest of the word is?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because there is no bold ñ in Unicode. Bold styles work by swapping each letter for a bold twin, and accented letters have no twin to swap in, so the ñ is left in its plain form while the plain letters go bold."
+        "text": "In most styles it now is. There's no ready-made bold ñ in Unicode, so the generator makes one by styling the base n and reattaching your original tilde — giving a bold n with the tilde on top. If your ñ still isn't styling, you're using an upside-down style or a novelty exotic-alphabet style (bubble circles, fullwidth, katakana…), which keep the plain ñ."
       }
     },
     {
@@ -59,7 +59,7 @@
       "name": "Do accents work in cursive or script fonts?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The plain letters convert, but accented letters (á, é, ñ, ü, ç) stay plain in cursive/script too, for the same reason — no styled accented glyph exists. Mark and symbol styles are the only ones that keep every accent."
+        "text": "Yes. Cursive and script are letter-swap styles, and they now keep accents the same way the others do — the base letter is styled and the original mark (á, é, ñ, ü, ç) is reattached on top. Every mark-and-symbol style keeps them too. The exceptions are the upside-down styles, a set of novelty exotic-alphabet styles (bubble circles, fullwidth, katakana…), and one-piece letters like đ, ø and ß that have no separate mark."
       }
     },
     {
@@ -67,7 +67,7 @@
       "name": "Which fancy fonts keep á é í ó ú?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The ones that add a mark or wrap the word rather than swapping letters: strikethrough, underline, slash, wavy, and bracket/symbol wraps. Bold, italic, script, fraktur, bubble and small caps cannot."
+        "text": "Almost all the core ones — around 77 of the 112 styles, including bold, italic, script, cursive, fraktur and small caps, plus the mark and symbol styles. Each keeps the accent by styling the base letter and reattaching the mark. The ones that don't are the upside-down / flip styles, 13 novelty exotic-alphabet styles (bubble circles, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters (đ, ø, ß, ł, ı) with no mark to reattach."
       }
     },
     {
@@ -75,7 +75,7 @@
       "name": "Why is my Spanish fancy text half plain?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because the accented letters have no styled version, so they drop to plain while the unaccented letters transform. In Spanish that is usually just one or two letters per word; use a mark/symbol style if you want them all uniform."
+        "text": "It shouldn't be in the core styles — the accented letters (á, é, í, ó, ú, ñ, ü) style right alongside the plain ones, because each mark is reattached to its styled base letter. If a Spanish word still comes out half plain, you're using an upside-down style or a novelty exotic-alphabet style (bubble circles, fullwidth, katakana…), which keep the plain accented letters."
       }
     }
   ]
@@ -127,7 +127,7 @@
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Fancy Text With ñ and Accented Letters</h1>
-    <p class="hero-tagline">Style “Señor” and you get 𝗦𝗲ñ𝗼𝗿 — every letter bold except the ñ. Here’s why, and how to keep your accents.</p>
+    <p class="hero-tagline">Style “Señor” and you now get 𝗦𝗲𝗻̃𝗼𝗿 — the ñ styled right along with the rest. Here’s how the accent gets kept, and the few styles that still can’t.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -139,10 +139,10 @@
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
   <div class="editorial-block">
-    <p>You can style the word, but <strong>bold and script styles leave the accented letters plain</strong> — ñ, á, é, í, ó, ú, ü, ç. Unicode simply has no styled version of an accented letter, so it’s copied through unchanged while the plain letters around it transform. For a light-accent language like Spanish, French or Portuguese that’s often just one or two plain letters — acceptable for a short name. To keep <em>every</em> accent uniform, use a style that adds a mark or symbol instead of swapping the letter.</p>
+    <p>You can style the word, and now <strong>the accented letters style too</strong> — ñ, á, é, í, ó, ú, ü, ç. Unicode has no styled version of an accented letter, so the generator splits each one into a base letter plus its combining mark, styles the base, and reattaches the mark on top. That works in every core typography style, so a Spanish, French or Portuguese name comes out fully styled, accents and all. The styles that still show a plain accent are the upside-down ones and a set of novelty exotic-alphabet styles (bubble circles, fullwidth, katakana…), plus a handful of <strong>one-piece letters</strong> (đ, ø, ß) with no mark to lift off.</p>
   </div>
   <div class="block-example">
-    <strong>In one line:</strong> letter-swap styles drop ñ/á/é to plain · mark &amp; symbol styles keep them all.
+    <strong>In one line:</strong> the core styles now keep ñ/á/é styled · the upside-down and novelty exotic-alphabet styles, plus one-piece letters (đ ø ß ł ı), can’t.
   </div>
 </section>
 
@@ -150,15 +150,15 @@
 
 <section class="editorial-section">
   <span class="article-section-label">Why</span>
-  <h2>Why ñ and á don’t go bold</h2>
+  <h2>How ñ and á go bold now</h2>
   <div class="editorial-block">
-    <p>A fancy font swaps each letter for a styled Unicode character, and those styled characters only exist for the plain <strong>A–Z, a–z and 0–9</strong>. There is no bold ñ or italic é anywhere in Unicode, so a letter-swap style has nothing to swap in — the accented letter falls back to its plain form.</p>
+    <p>A fancy font swaps each letter for a styled Unicode character, and those styled characters only exist for the plain <strong>A–Z, a–z and 0–9</strong> — there’s no ready-made bold ñ or italic é. But Unicode stores ñ as a base “n” plus a combining tilde, so the generator splits them, styles the “n” (which <em>does</em> have a bold twin), and re-appends the tilde. You end up with a bold “n” carrying its tilde — a fully bold ñ.</p>
     <div class="block-example">
       <div class="example-pair">
         <div class="ex-label">Bold “Señor”</div>
-        <div class="ex-styled">𝗦𝗲ñ𝗼𝗿</div>
+        <div class="ex-styled">𝗦𝗲𝗻̃𝗼𝗿</div>
         <div class="ex-arrow">↓</div>
-        <div class="ex-label">every letter bold except ñ</div>
+        <div class="ex-label">every letter bold, ñ included</div>
       </div>
     </div>
   </div>
@@ -168,9 +168,9 @@
 
 <section class="editorial-section">
   <span class="article-section-label">When it’s fine</span>
-  <h2>For Spanish, French &amp; Portuguese it’s often okay</h2>
+  <h2>For Spanish, French &amp; Portuguese it styles cleanly now</h2>
   <div class="editorial-block">
-    <p>These languages use accents lightly — usually one or two per word — so a bold or script style leaves only the odd plain letter. On a short name or headline that can look intentional rather than broken. Judge it per word: “José” loses only the é; a longer accented phrase shows more gaps. (Vietnamese is the opposite extreme — see <a href="/answers/do-fancy-fonts-work-with-vietnamese/">do fancy fonts work with Vietnamese</a>.)</p>
+    <p>These languages use accents lightly — one or two per word — and every one of those marks now rides on its styled letter, so a name like “José” styles in full, é included. Even Vietnamese, which stacks two marks per syllable, comes through styled now (see <a href="/answers/do-fancy-fonts-work-with-vietnamese/">do fancy fonts work with Vietnamese</a>) — the only guaranteed holdout there is đ.</p>
   </div>
 </section>
 
@@ -178,16 +178,16 @@
 
 <section class="editorial-section">
   <span class="article-section-label">The fix</span>
-  <h2>How to keep every accent</h2>
+  <h2>If you want a guaranteed-flat mark</h2>
   <div class="editorial-block">
-    <p>If you need all the accents styled uniformly, use a style that <strong>marks or wraps</strong> rather than swaps — strikethrough, underline, slash, or a symbol/bracket wrap. Because they never replace the letter, ñ, á, é and the rest survive intact. The trade-off is you get that look, not a bold/script one. Full detail in <a href="/answers/why-fancy-text-removes-accents/">why fancy text removes accents</a>.</p>
+    <p>Bold and script already keep your accents, so most of the time there’s nothing extra to do. But if you want to avoid any reattached combining mark — say, for an old device that renders them poorly — a style that <strong>marks or wraps</strong> rather than swaps (strikethrough, underline, slash, or a symbol/bracket wrap) never decomposes the letter at all, so ñ, á, é and the rest are untouched. Full detail in <a href="/answers/why-fancy-text-removes-accents/">why fancy text removes accents</a>.</p>
     <p class="mood-example">S̲e̲ñ̲o̲r̲ &nbsp;·&nbsp; ❨café❩</p>
   </div>
 </section>
 
 <div class="cta-card">
   <h3>Try your accented text in every style</h3>
-  <p>Type your name with its accents and compare — the mark and symbol styles keep ñ, á and é intact.</p>
+  <p>Type your name with its accents and compare — most styles keep ñ, á and é styled, and you can spot the upside-down and novelty styles that don’t.</p>
   <a href="/" class="cta-btn">Open the Text Generator →</a>
 </div>
 
@@ -210,31 +210,31 @@
   <div class="faq-item">
     <button class="faq-question" type="button">Can I make fancy text with ñ?</button>
     <div class="faq-answer">
-      <p>You can style the word, but in bold, italic and script styles the ñ itself stays plain, because Unicode has no styled version of ñ. To keep the ñ styled like the rest, use a mark-based or symbol style (strikethrough, underline, wraps) that never replaces the letter.</p>
+      <p>Yes — and in the vast majority of styles the ñ styles too, not just the rest of the word. Unicode has no bold or italic ñ, so the generator splits ñ into a base n plus a combining tilde, styles the n, and puts the tilde back on top. Bold Señor comes out 𝗦𝗲𝗻̃𝗼𝗿. The styles that leave the ñ plain are the upside-down ones and a set of novelty exotic-alphabet styles (bubble circles, fullwidth, katakana and the like).</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Why is my ñ not bold when the rest of the word is?</button>
     <div class="faq-answer">
-      <p>Because there is no bold ñ in Unicode. Bold styles work by swapping each letter for a bold twin, and accented letters have no twin to swap in, so the ñ is left in its plain form while the plain letters go bold.</p>
+      <p>In most styles it now is. There's no ready-made bold ñ in Unicode, so the generator makes one by styling the base n and reattaching your original tilde — giving a bold n with the tilde on top. If your ñ still isn't styling, you're using an upside-down style or a novelty exotic-alphabet style (bubble circles, fullwidth, katakana…), which keep the plain ñ.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Do accents work in cursive or script fonts?</button>
     <div class="faq-answer">
-      <p>The plain letters convert, but accented letters (á, é, ñ, ü, ç) stay plain in cursive/script too, for the same reason — no styled accented glyph exists. Mark and symbol styles are the only ones that keep every accent.</p>
+      <p>Yes. Cursive and script are letter-swap styles, and they now keep accents the same way the others do — the base letter is styled and the original mark (á, é, ñ, ü, ç) is reattached on top. Every mark-and-symbol style keeps them too. The exceptions are the upside-down styles, a set of novelty exotic-alphabet styles (bubble circles, fullwidth, katakana…), and one-piece letters like đ, ø and ß that have no separate mark.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Which fancy fonts keep á é í ó ú?</button>
     <div class="faq-answer">
-      <p>The ones that add a mark or wrap the word rather than swapping letters: strikethrough, underline, slash, wavy, and bracket/symbol wraps. Bold, italic, script, fraktur, bubble and small caps cannot.</p>
+      <p>Almost all the core ones — around 77 of the 112 styles, including bold, italic, script, cursive, fraktur and small caps, plus the mark and symbol styles. Each keeps the accent by styling the base letter and reattaching the mark. The ones that don't are the upside-down / flip styles, 13 novelty exotic-alphabet styles (bubble circles, fullwidth, katakana, bopomofo, squared, emoji-block, runic, Canadian syllabics), and the one-piece letters (đ, ø, ß, ł, ı) with no mark to reattach.</p>
     </div>
   </div>
   <div class="faq-item">
     <button class="faq-question" type="button">Why is my Spanish fancy text half plain?</button>
     <div class="faq-answer">
-      <p>Because the accented letters have no styled version, so they drop to plain while the unaccented letters transform. In Spanish that is usually just one or two letters per word; use a mark/symbol style if you want them all uniform.</p>
+      <p>It shouldn't be in the core styles — the accented letters (á, é, í, ó, ú, ñ, ü) style right alongside the plain ones, because each mark is reattached to its styled base letter. If a Spanish word still comes out half plain, you're using an upside-down style or a novelty exotic-alphabet style (bubble circles, fullwidth, katakana…), which keep the plain accented letters.</p>
     </div>
   </div>
 </section>
