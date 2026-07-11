@@ -23,7 +23,9 @@
     tiktok:    { label: "TikTok bio",      limit: 80,  note: "TikTok bios render Unicode fonts well. The field is short — only 80 characters — so style a key phrase, not everything." },
     discord:   { label: "Discord About Me", limit: 190, note: "Discord “About Me” supports full Unicode — styled fonts, symbols and emoji all work in bios, nicknames and server names." },
     x:         { label: "X (Twitter) bio", limit: 160, note: "X supports Unicode in both your bio and display name. Bold or script styles help a personal brand stand out." },
-    tinder:    { label: "Tinder About me", limit: 500, note: "Tinder has no native font option, so Unicode is the only way to style your profile. Style your name or one key line so it stays readable." }
+    tinder:    { label: "Tinder About me", limit: 500, note: "Tinder has no native font option, so Unicode is the only way to style your profile. Style your name or one key line so it stays readable." },
+    whatsapp:  { label: "WhatsApp About", limit: 139, note: "WhatsApp's About field supports Unicode fonts and emoji. It's short — 139 characters — so style your name or one short line, not a paragraph." },
+    facebook:  { label: "Facebook bio",   limit: 101, note: "Facebook's personal-profile Intro/bio is tight — 101 characters. Style a short phrase or your name; save longer text for a post instead." }
   };
 
   /* ----------------------------------------------------------------------
@@ -110,8 +112,21 @@
   /* ----------------------------------------------------------------------
      Platform-aware counter + compatibility + preview sync
      ---------------------------------------------------------------------- */
+  function platformData() {
+    // A page can override label/note text per platform (translated locale
+    // pages) before bio-font.js loads via window.UTG_BIO_PLATFORMS — same
+    // merge-over-defaults convention as window.UTG_DECORATIONS. Only limit
+    // numbers live in PLATFORMS; a locale only needs to supply label/note.
+    const overrides = window.UTG_BIO_PLATFORMS || {};
+    const merged = {};
+    Object.keys(PLATFORMS).forEach((key) => {
+      merged[key] = Object.assign({}, PLATFORMS[key], overrides[key]);
+    });
+    return merged;
+  }
+
   function syncPlatform() {
-    const p = PLATFORMS[currentPlatform] || PLATFORMS.all;
+    const p = platformData()[currentPlatform] || platformData().all;
     const len = inputValue().length;
 
     if (el.charLimit) el.charLimit.textContent = String(p.limit);
