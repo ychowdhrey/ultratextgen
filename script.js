@@ -332,6 +332,7 @@ const decorations = window.UTG_DECORATIONS
     mainInput: $("#mainInput"),
     charCount: $("#charCount"),
     charCountWrapper: $("#charCountWrapper"),
+    wordCount: $("#wordCount"),
     inputClearBtn: $("#inputClearBtn"),
     searchInput: $("#searchInput"),
     resultsGrid: $("#resultsGrid"),
@@ -1448,6 +1449,10 @@ const decorations = window.UTG_DECORATIONS
       if (el.charCount) el.charCount.textContent = String(len);
       if (el.charCountWrapper) el.charCountWrapper.hidden = len === 0;
       if (el.inputClearBtn) el.inputClearBtn.hidden = len === 0;
+      if (el.wordCount) {
+        const words = el.mainInput.value.trim().split(/\s+/).filter(Boolean);
+        el.wordCount.textContent = String(words.length);
+      }
     }
     function pushUrlState() {
       const params = new URLSearchParams(window.location.search);
@@ -1667,6 +1672,10 @@ document.addEventListener("copy", () => {
       el.charCount.textContent = String(initLen);
       if (el.charCountWrapper) el.charCountWrapper.hidden = initLen === 0;
       if (el.inputClearBtn) el.inputClearBtn.hidden = initLen === 0;
+      if (el.wordCount) {
+        const initWords = el.mainInput.value.trim().split(/\s+/).filter(Boolean);
+        el.wordCount.textContent = String(initWords.length);
+      }
     }
 
     renderDecorations();
