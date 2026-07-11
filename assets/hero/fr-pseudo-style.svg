@@ -23,21 +23,17 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhfrpseudo)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhfrpseudo)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <rect x="54" y="64" width="252" height="232" rx="26" fill="#fff"
-          stroke="#1a1a2e" stroke-opacity="0.10"/>
-    <circle cx="116" cy="128" r="34" fill="url(#ghfrpseudo)"/>
-    <rect x="166" y="106" width="118" height="16" rx="8" fill="#1a1a2e"/>
-    <rect x="166" y="134" width="86" height="11" rx="5" fill="#64748b" opacity="0.5"/>
-    <rect x="80" y="194" width="200" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="216" width="170" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="252" width="120" height="26" rx="13" fill="url(#gvhfrpseudo)"/></g>
+    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="160"
+          font-weight="700" font-style="normal" fill="url(#ghfrpseudo)"
+          text-anchor="middle" opacity="0.12">@Aa</text>
+    <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghfrpseudo)"/>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="120" font-weight="700" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">@Aa</text></g>
+    </g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <rect x="54" y="64" width="252" height="232" rx="26" fill="#fff"
-          stroke="#1a1a2e" stroke-opacity="0.10"/>
-    <circle cx="116" cy="128" r="34" fill="url(#ghfrpseudo)"/>
-    <rect x="166" y="106" width="118" height="16" rx="8" fill="#1a1a2e"/>
-    <rect x="166" y="134" width="86" height="11" rx="5" fill="#64748b" opacity="0.5"/>
-    <rect x="80" y="194" width="200" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="216" width="170" height="11" rx="5" fill="#64748b" opacity="0.4"/>
-    <rect x="80" y="252" width="120" height="26" rx="13" fill="url(#gvhfrpseudo)"/></g>
+    <text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="160"
+          font-weight="700" font-style="normal" fill="url(#ghfrpseudo)"
+          text-anchor="middle" opacity="0.12">@Aa</text>
+    <rect x="40" y="120" width="280" height="150" rx="28" fill="url(#ghfrpseudo)"/>
+    <g transform="rotate(0 180 195)"><text x="180" y="208" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="120" font-weight="700" font-style="normal" text-decoration="none" letter-spacing="0" fill="#fff" text-anchor="middle">@Aa</text></g>
+    </g>
 </svg>

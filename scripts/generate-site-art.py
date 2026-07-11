@@ -68,6 +68,125 @@ def esc(s):
              .replace("<", "&lt;").replace(">", "&gt;"))
 
 
+# ------------------------------------------------- non-Latin script fallback
+# cairosvg resolves ONE font per <text>/<tspan> run (no per-glyph fallback
+# like a browser) — and picks it by matching the FIRST name in font-family
+# that fontconfig can find, not the first that actually covers the glyph. So
+# a mixed-run title (Korean headline + a "★" someone typed into the SEO
+# title, a Devanagari headline with a Latin brand name in it) needs every
+# run that Liberation Sans can't render pulled into its own
+# <tspan font-family="..."> pointing at a font that can.
+#
+# Rather than hand-list Unicode block ranges per script (fragile — this site's
+# titles routinely carry decorative marks from unrelated blocks: Javanese
+# ꧁꧂ frames, Tibetan ༺༻, misc dingbats), each candidate font's cmap is read
+# directly so ANY character gets routed to a font that actually contains it.
+NATIVE_SCRIPT = {
+    "ar": "Noto Sans Arabic",
+    "hi": "Noto Sans Devanagari",
+    "th": "Noto Sans Thai",
+    "ja": "Noto Sans CJK JP",
+    "ko": "Noto Sans CJK KR",
+}
+
+# (family name written into the SVG, glob patterns to find its file).
+# Checked in order after the locale's own native family; DejaVu Sans alone
+# covers most decorative dingbats already in use across the site.
+_FALLBACK_FONTS = [
+    ("DejaVu Sans", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+    ("Noto Sans Symbols2", "/usr/share/fonts/truetype/noto/NotoSansSymbols2-Regular.ttf"),
+    ("Noto Sans Symbols", "/usr/share/fonts/truetype/noto/NotoSansSymbols-Regular.ttf"),
+    ("Noto Sans Javanese", "/usr/share/fonts/truetype/noto/NotoSansJavanese-Regular.ttf"),
+    ("Noto Serif Tibetan", "/usr/share/fonts/truetype/noto/NotoSerifTibetan-Regular.ttf"),
+    ("Noto Sans CJK JP", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+]
+_NATIVE_FONT_FILE = {
+    "Noto Sans Arabic": "/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf",
+    "Noto Sans Devanagari": "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf",
+    "Noto Sans Thai": "/usr/share/fonts/truetype/noto/NotoSansThai-Regular.ttf",
+    "Noto Sans CJK JP": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "Noto Sans CJK KR": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+}
+
+_cmap_cache = {}
+
+
+def _cmap(path):
+    if path not in _cmap_cache:
+        cps = set()
+        if os.path.exists(path):
+            from fontTools.ttLib import TTFont
+            tt = TTFont(path, fontNumber=0, lazy=True)
+            for table in tt["cmap"].tables:
+                cps.update(table.cmap.keys())
+        _cmap_cache[path] = cps
+    return _cmap_cache[path]
+
+
+_LIBERATION_SANS = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
+
+
+def _resolve_family(ch, native_family):
+    """None -> the default font-family chain already renders this char.
+    A family name -> wrap it in a tspan for that family. False -> no
+    installed font covers it; drop the character rather than show tofu."""
+    cp = ord(ch)
+    if cp in _cmap(_LIBERATION_SANS):
+        return None
+    if native_family and cp in _cmap(_NATIVE_FONT_FILE[native_family]):
+        return native_family
+    for family, path in _FALLBACK_FONTS:
+        if cp in _cmap(path):
+            return family
+    return False
+
+
+def spanned(text, native):
+    """esc(text), wrapping any run the default font can't render in its own
+    <tspan font-family="...">, resolved per-character against installed
+    font cmaps. native is a family name from NATIVE_SCRIPT, or None."""
+    if not text:
+        return ""
+    runs, cur, cur_family = [], "", None
+    first = True
+    for ch in text:
+        fam = _resolve_family(ch, native)
+        if fam is False:
+            continue  # no installed font covers this glyph — drop it
+        if first or fam == cur_family:
+            cur += ch
+        else:
+            runs.append((cur_family, cur))
+            cur = ch
+        cur_family = fam
+        first = False
+    if cur:
+        runs.append((cur_family, cur))
+    out = ""
+    for fam, chunk in runs:
+        out += (f'<tspan font-family="{fam}">{esc(chunk)}</tspan>'
+                if fam else esc(chunk))
+    return out
+
+
+def smart_wrap(text, width):
+    """textwrap.wrap, but falls back to fixed-width character chunking when
+    there are no spaces to break on (Thai and Japanese titles routinely have
+    none — a single 'word' would otherwise blow past the card width)."""
+    words = textwrap.wrap(text, width=width)
+    if len(words) <= 1 and len(text) > width:
+        return [text[i:i + width] for i in range(0, len(text), width)]
+    return words
+
+
+def wrap_width_for(text, native):
+    if native in ("Noto Sans CJK JP", "Noto Sans CJK KR"):
+        return 9  # CJK glyphs render roughly twice as wide as Latin
+    if native:
+        return 14
+    return 17
+
+
 # ---------------------------------------------------------------- motifs
 # Each motif draws inside a 360x360 box (origin top-left) and is translated into
 # place by the caller. Motifs receive the gradient-id prefix `p` and optionally
@@ -1282,14 +1401,14 @@ def hero_svg(slug, title, motif, kicker, a=PURPLE, b=BLUE):
 </svg>"""
 
 
-def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE):
+def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
     p = "o" + slug.replace("-", "")[:8]
-    t, s = esc(title), esc(sub)
-    wrapped = textwrap.wrap(t, width=17)[:3]
+    wrapped = smart_wrap(title, wrap_width_for(title, native))[:3]
     tspans = ""
     y0 = 250 - (len(wrapped) - 1) * 33
     for i, line in enumerate(wrapped):
-        tspans += f'<tspan x="80" y="{y0 + i*72}">{line}</tspan>'
+        tspans += f'<tspan x="80" y="{y0 + i*72}">{spanned(line, native)}</tspan>'
+    s = spanned(sub, native)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"
      width="1200" height="630">
   {defs(p, a, b)}
