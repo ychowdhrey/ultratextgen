@@ -332,7 +332,6 @@ const decorations = window.UTG_DECORATIONS
     mainInput: $("#mainInput"),
     charCount: $("#charCount"),
     charCountWrapper: $("#charCountWrapper"),
-    wordCount: $("#wordCount"),
     inputClearBtn: $("#inputClearBtn"),
     searchInput: $("#searchInput"),
     resultsGrid: $("#resultsGrid"),
@@ -1110,6 +1109,46 @@ const decorations = window.UTG_DECORATIONS
     return control;
   }
 
+  // Live word/character stats under the main input. charCount/charCountWrapper
+  // already show a bare "n/max" limit indicator inside the box (kept as-is);
+  // this adds the word count competitors bundle next to their font tools
+  // (see word-counter / character-counter search demand) as one small line
+  // right under the input, on every page that shares this generator — no
+  // per-page markup needed since it's anchored off #mainInput itself.
+  function ensureTextStats() {
+    if (!el.mainInput) return null;
+    let bar = $("#textStatsBar");
+    if (bar) return bar;
+
+    const anchor = el.mainInput.parentElement;
+    if (!anchor || !anchor.parentNode) return null;
+
+    bar = document.createElement("div");
+    bar.className = "text-stats-bar";
+    bar.id = "textStatsBar";
+    bar.hidden = true;
+    bar.innerHTML =
+      '<span id="textStatsWords">0 words</span>' +
+      '<span class="text-stats-sep" aria-hidden="true">·</span>' +
+      '<span id="textStatsChars">0 characters</span>';
+    anchor.parentNode.insertBefore(bar, anchor.nextSibling);
+
+    el.textStatsBar = bar;
+    el.textStatsWords = $("#textStatsWords", bar);
+    el.textStatsChars = $("#textStatsChars", bar);
+    return bar;
+  }
+
+  function applyTextStats(val) {
+    if (!el.textStatsBar) return;
+    const trimmed = val.trim();
+    const words = trimmed ? trimmed.split(/\s+/).length : 0;
+    const chars = Array.from(val).length;
+    el.textStatsBar.hidden = chars === 0;
+    el.textStatsWords.textContent = words === 1 ? "1 word" : words + " words";
+    el.textStatsChars.textContent = chars === 1 ? "1 character" : chars + " characters";
+  }
+
   /* ===================
      RENDER: Saved styles
      =================== */
@@ -1445,14 +1484,12 @@ const decorations = window.UTG_DECORATIONS
   function bindEvents() {
     let urlSyncTimer = null;
     function syncInputUI() {
-      const len = el.mainInput.value.length;
+      const val = el.mainInput.value;
+      const len = val.length;
       if (el.charCount) el.charCount.textContent = String(len);
       if (el.charCountWrapper) el.charCountWrapper.hidden = len === 0;
       if (el.inputClearBtn) el.inputClearBtn.hidden = len === 0;
-      if (el.wordCount) {
-        const words = el.mainInput.value.trim().split(/\s+/).filter(Boolean);
-        el.wordCount.textContent = String(words.length);
-      }
+      applyTextStats(val);
     }
     function pushUrlState() {
       const params = new URLSearchParams(window.location.search);
@@ -1665,17 +1702,16 @@ document.addEventListener("copy", () => {
       }
     }
 
+    ensureTextStats();
     bindEvents();
 
     if (el.charCount && el.mainInput) {
-      const initLen = el.mainInput.value.length;
+      const initVal = el.mainInput.value;
+      const initLen = initVal.length;
       el.charCount.textContent = String(initLen);
       if (el.charCountWrapper) el.charCountWrapper.hidden = initLen === 0;
       if (el.inputClearBtn) el.inputClearBtn.hidden = initLen === 0;
-      if (el.wordCount) {
-        const initWords = el.mainInput.value.trim().split(/\s+/).filter(Boolean);
-        el.wordCount.textContent = String(initWords.length);
-      }
+      applyTextStats(initVal);
     }
 
     renderDecorations();

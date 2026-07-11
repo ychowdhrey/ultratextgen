@@ -1,0 +1,96 @@
+{
+  "slug": "dark-academia-symbols",
+  "title": "Dark Academia Symbols Copy & Paste — Vintage Books, Candlelight & Scholarly Aesthetic",
+  "meta_description": "Dark academia aesthetic symbols — books, candles, quills, and vintage scholarly decorations. Copy and paste dark academia bio and caption symbols.",
+  "canonical": "https://ultratextgen.com/library/dark-academia-symbols/",
+  "breadcrumb": "Dark Academia Symbols",
+  "hero_h1": "Dark Academia Symbols",
+  "hero_tagline": "Old books, candlelight, quills, and vintage scholarly motifs. Copy and paste dark academia aesthetic symbols for bios, captions, and usernames.",
+  "intro": "Dark academia is a literary, old-world aesthetic built around leather-bound books, candlelight, ink, and the quiet of an old library — tweed and oil lamps rather than neon. These symbols capture that mood: open books 📖, flickering candles 🕯️, quills 🪶, and vintage ornaments for a bio, caption, or username that reads more Oxford reading room than TikTok trend.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "books-ink",
+      "label": "Books & Ink",
+      "h2": "Books & Ink Emojis",
+      "intro": "Leather-bound books, scrolls, and writing tools for a scholarly bio.",
+      "symbols": [
+        { "char": "📖", "label": "Open Book" },
+        { "char": "📚", "label": "Stacked Books" },
+        { "char": "🖋️", "label": "Fountain Pen" },
+        { "char": "🪶", "label": "Feather" },
+        { "char": "📜", "label": "Scroll" },
+        { "char": "🔖", "label": "Bookmark" },
+        { "char": "📓", "label": "Notebook" }
+      ]
+    },
+    {
+      "id": "candlelight-study",
+      "label": "Candlelight & Study",
+      "h2": "Candlelight & Study Emojis",
+      "intro": "Candles, lamps, and objects from a late-night reading session.",
+      "symbols": [
+        { "char": "🕯️", "label": "Candle" },
+        { "char": "🪔", "label": "Oil Lamp" },
+        { "char": "⏳", "label": "Hourglass" },
+        { "char": "🔍", "label": "Magnifying Glass" },
+        { "char": "🗝️", "label": "Old Key" },
+        { "char": "☕", "label": "Coffee" },
+        { "char": "🕰️", "label": "Mantelpiece Clock" }
+      ]
+    },
+    {
+      "id": "scholarly-objects",
+      "label": "Scholarly Objects",
+      "h2": "Scholarly & Vintage Objects",
+      "intro": "Chess, violins, and classical objects that round out the aesthetic.",
+      "symbols": [
+        { "char": "♟️", "label": "Chess Pawn" },
+        { "char": "🎻", "label": "Violin" },
+        { "char": "🦉", "label": "Owl" },
+        { "char": "👓", "label": "Glasses" },
+        { "char": "🏛️", "label": "Classical Building" },
+        { "char": "🍂", "label": "Fallen Leaf" },
+        { "char": "🌰", "label": "Chestnut" }
+      ]
+    },
+    {
+      "id": "ornamental-borders",
+      "label": "Ornamental Borders",
+      "h2": "Vintage Borders & Chapter Dividers",
+      "intro": "Printer's ornaments and manuscript-style marks for headers and bio borders.",
+      "symbols": [
+        { "char": "❦", "label": "Floral Heart Ornament" },
+        { "char": "⁂", "label": "Asterism" },
+        { "char": "§", "label": "Section Sign" },
+        { "char": "⸻", "label": "Three-Em Dash Divider" },
+        { "char": "Ⅰ", "label": "Roman Numeral One" },
+        { "char": "Ⅴ", "label": "Roman Numeral Five" },
+        { "char": "⟪", "label": "Double Angle Bracket" }
+      ]
+    }
+  ],
+  "collection_container_id": "darkAcademiaCollectionsContainer",
+  "collection_section": {
+    "id": "dark-academia-collections",
+    "label": "Dark Academia Collections",
+    "h2": "Dark Academia Bio & Divider Sets",
+    "intro": "Ready-made dark academia combos you can paste straight into a bio, caption, or username — copy the whole arrangement in one click."
+  },
+  "collections": [
+    { "name": "Candlelit Study Combo", "flags": ["📖", "🕯️", "🖋️", "⏳"], "defaultFormat": "inline" },
+    { "name": "Vintage Library Border", "flags": ["❦", "⁂", "❦"], "defaultFormat": "inline" },
+    { "name": "Old Letter Set", "flags": ["🖋️", "📜", "🗝️"], "defaultFormat": "inline" },
+    { "name": "Autumn Scholar Combo", "flags": ["🍂", "☕", "📚", "🦉"], "defaultFormat": "inline" },
+    { "name": "Chapter Divider", "flags": ["⸻", "Ⅰ", "⸻"], "defaultFormat": "inline" }
+  ],
+  "related": [
+    { "href": "/library/witchy-occult-symbols/", "title": "Witchy & Occult Symbols", "desc": "Moons, sigils, and esoteric marks for a mystical bio." },
+    { "href": "/library/goth-grunge-symbols/", "title": "Goth & Grunge Symbols", "desc": "Crosses, skulls, and dark alt-fashion decorations." },
+    { "href": "/library/divider-kaomoji/", "title": "Kaomoji Dividers", "desc": "Cute Japanese-style text dividers and spacers to break up a bio." },
+    { "href": "/category/old-english-fonts/", "title": "Old English Fonts", "desc": "Blackletter Unicode fonts that pair naturally with a dark academia bio." },
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "The full hub of named-aesthetic symbol libraries." }
+  ]
+}
