@@ -354,6 +354,45 @@ function renderMap(text, style) {
   }
 
   /* -----------------------------
+     CASE CONVERSION HELPERS
+     Small-word list + "already intentionally cased" detection (ALL-CAPS
+     acronyms like NASA, internal caps like McDonald/iPhone) so Title/
+     Sentence case don't mangle words a naive lowercase-then-capitalize
+     pass would destroy.
+     ----------------------------- */
+  const CASE_SMALL_WORDS = new Set([
+    'a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'if', 'in', 'nor', 'of',
+    'off', 'on', 'or', 'per', 'so', 'the', 'to', 'up', 'via', 'vs'
+  ]);
+
+  function caseHasIntentionalCasing(token) {
+    const letters = token.replace(/[^\p{L}]/gu, '');
+    if (letters.length < 2) return false;
+    if (letters === letters.toUpperCase()) return true; // acronym: NASA, FBI
+    return /\p{Lu}/u.test(letters.slice(1)); // internal caps: McDonald, iPhone
+  }
+
+  function caseLowerWord(token) {
+    return caseHasIntentionalCasing(token) ? token : token.toLowerCase();
+  }
+
+  function caseCapFirstAlpha(token) {
+    const m = token.match(/\p{L}/u);
+    if (!m) return token;
+    const idx = token.indexOf(m[0]);
+    return token.slice(0, idx) + token[idx].toUpperCase() + token.slice(idx + 1);
+  }
+
+  function caseCapWord(token) {
+    if (caseHasIntentionalCasing(token)) return token;
+    return token.split('-').map(seg => caseCapFirstAlpha(seg.toLowerCase())).join('-');
+  }
+
+  function caseFixPronounI(token) {
+    return /^i(['’](m|ve|ll|d))?$/i.test(token) ? 'I' + token.slice(1) : token;
+  }
+
+  /* -----------------------------
      PROCEDURES
      ----------------------------- */
   const procedures = {
@@ -473,7 +512,57 @@ function renderMap(text, style) {
     'ultra-old-english-banner': text =>
       text.trim()
         ? `꧁༺ ${renderMap(text, textStyles['Ultra Gothic Bold'])} ༻꧂`
-        : text
+        : text,
+
+    // === CASE CONVERTER — plain ASCII case transforms, no Unicode mapping ===
+    'case-upper': text => text.toUpperCase(),
+
+    'case-lower': text => text.toLowerCase(),
+
+    // First letter of every word capitalized, no small-word exceptions.
+    'case-capitalized': text =>
+      text.split(/(\s+)/).map(w => (w.trim() ? caseCapWord(w) : w)).join(''),
+
+    // Title Case: capitalizes major words, lowercases short articles/
+    // conjunctions/prepositions (unless first/last word), always preserves
+    // acronyms and already-intentional internal caps (NASA, iPhone, McDonald).
+    'case-title': text => {
+      const words = text.split(/(\s+)/);
+      const wordIdxs = words.map((w, i) => (w.trim() ? i : -1)).filter(i => i >= 0);
+      const first = wordIdxs[0];
+      const last = wordIdxs[wordIdxs.length - 1];
+      return words.map((w, i) => {
+        if (!w.trim()) return w;
+        const bare = w.replace(/[^\p{L}]/gu, '').toLowerCase();
+        if (i !== first && i !== last && CASE_SMALL_WORDS.has(bare)) {
+          return caseLowerWord(w);
+        }
+        return caseCapWord(w);
+      }).join('');
+    },
+
+    // Sentence case: capitalizes the first word of every sentence, keeps the
+    // rest lowercase (except acronyms/intentional caps), and fixes the
+    // standalone pronoun "i" / "i'm" / "i've" / "i'll" / "i'd".
+    'case-sentence': text => {
+      let capNext = true;
+      return text.split(/(\s+)/).map(w => {
+        if (!w.trim()) return w;
+        let out = caseLowerWord(w);
+        if (capNext && !caseHasIntentionalCasing(w)) out = caseCapFirstAlpha(out);
+        out = caseFixPronounI(out);
+        capNext = /[.!?]['")\]]*$/.test(w);
+        return out;
+      }).join('');
+    },
+
+    // aLtErNaTiNg cAsE — the "mocking SpongeBob" meme case.
+    'case-alternating': text =>
+      [...text].map((c, i) => (i % 2 === 0 ? c.toLowerCase() : c.toUpperCase())).join(''),
+
+    // tOGGLE cASE — inverts whatever case each character already is.
+    'case-toggle': text =>
+      [...text].map(c => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())).join('')
   };
 
   /* -----------------------------

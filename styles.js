@@ -97,6 +97,11 @@ const CATEGORY_PAGES = {
     slug: 'novelty-fonts',
     title: 'Novelty Fonts',
     description: 'Keycap numbers, currency-symbol letters, and other novelty text styles.'
+  },
+  'case-converter': {
+    slug: 'case-converter',
+    title: 'Case Converter',
+    description: 'Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and more.'
   }
 };
 
@@ -1454,6 +1459,82 @@ const textStyles = {
     groupSlug: 'novelty',
     slug: 'ultra-currency',
     platforms: ["instagram","x","discord"]
+  },
+
+  /* =========================
+     CASE CONVERTER
+     Plain ASCII case transforms — type: 'procedure', keyed by slug in
+     renderer.js's `procedures` map. No upper/lower/nums maps needed.
+     ========================= */
+
+  'UPPERCASE': {
+    type: 'procedure',
+    note: 'Convert text to all caps',
+    category: 'case-converter',
+    familySlug: ['case-converter'],
+    groupSlug: 'upper',
+    slug: 'case-upper',
+    platforms: ['all']
+  },
+
+  'lowercase': {
+    type: 'procedure',
+    note: 'Convert text to all lowercase',
+    category: 'case-converter',
+    familySlug: ['case-converter'],
+    groupSlug: 'lower',
+    slug: 'case-lower',
+    platforms: ['all']
+  },
+
+  'Capitalized Case': {
+    type: 'procedure',
+    note: 'Capitalize the first letter of every word',
+    category: 'case-converter',
+    familySlug: ['case-converter'],
+    groupSlug: 'capitalized',
+    slug: 'case-capitalized',
+    platforms: ['all']
+  },
+
+  'Title Case': {
+    type: 'procedure',
+    note: 'Capitalizes major words, lowercases short articles/conjunctions/prepositions, preserves acronyms',
+    category: 'case-converter',
+    familySlug: ['case-converter'],
+    groupSlug: 'title',
+    slug: 'case-title',
+    platforms: ['all']
+  },
+
+  'Sentence case': {
+    type: 'procedure',
+    note: 'Capitalizes the first word of every sentence, keeps the rest lowercase',
+    category: 'case-converter',
+    familySlug: ['case-converter'],
+    groupSlug: 'sentence',
+    slug: 'case-sentence',
+    platforms: ['all']
+  },
+
+  'aLtErNaTiNg CaSe': {
+    type: 'procedure',
+    note: 'Alternating upper/lower case — the mocking SpongeBob meme case',
+    category: 'case-converter',
+    familySlug: ['case-converter'],
+    groupSlug: 'alternating',
+    slug: 'case-alternating',
+    platforms: ['all']
+  },
+
+  'tOGGLE cASE': {
+    type: 'procedure',
+    note: 'Inverts the case of every character',
+    category: 'case-converter',
+    familySlug: ['case-converter'],
+    groupSlug: 'toggle',
+    slug: 'case-toggle',
+    platforms: ['all']
   },
 };
 

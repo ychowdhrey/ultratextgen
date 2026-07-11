@@ -106,6 +106,7 @@
     <input id="kaomojiFaceInput" class="kao-face-input" type="text" spellcheck="false" autocomplete="off" aria-label="Your kaomoji — edit or paste a face here">
     <div class="kao-actions">
       <button id="kaomojiCopyBtn" class="kao-btn kao-btn-primary" type="button">Copy Kaomoji</button>
+      <button id="kaomojiCopyLinkBtn" class="kao-btn" type="button">Copy Link</button>
       <button id="kaomojiSurpriseBtn" class="kao-btn" type="button">Surprise Me</button>
       <button id="kaomojiClearBtn" class="kao-btn" type="button">Reset</button>
     </div>
@@ -116,6 +117,11 @@
 
   <span class="kao-block-label">Start from a preset</span>
   <div id="kaomojiPresets" class="kao-presets" role="group" aria-label="Preset faces"></div>
+
+  <div id="kaomojiRecentWrap" class="u-hidden">
+    <span class="kao-block-label">Recently Made</span>
+    <div id="kaomojiRecent" class="kao-recent" role="group" aria-label="Recently made faces"></div>
+  </div>
 
   <span class="kao-block-label">Build it part by part</span>
   <div id="kaomojiParts" aria-label="Kaomoji parts"></div>

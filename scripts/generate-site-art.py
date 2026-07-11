@@ -1013,7 +1013,8 @@ def glyphs(*g):
 # Localized homepage social cards. Each localized homepage (de/, es/, ...) used
 # to share the English homepage card, leaving English copy on a translated page.
 # Each entry is  locale -> (og_filename, title, subtitle)  and renders with the
-# master brand motif. Filenames are descriptive (keyword-led) for Google Images.
+# master brand motif by default. Filenames are descriptive (keyword-led) for
+# Google Images.
 LOCALIZED_HOME = {
   "de": ("coole-schriftarten-generator-preview",
          "Coole Schriftarten Generator", "Schöne Schriftarten und Symbole kopieren"),
@@ -1035,6 +1036,24 @@ LOCALIZED_HOME = {
          "Generator Font Aesthetic", "Font dan simbol keren untuk disalin"),
   "vi": ("tao-chu-kieu-dep-preview",
          "Tạo Chữ Kiểu Đẹp", "Phông chữ và ký tự đặc biệt để sao chép"),
+}
+
+# Bespoke motifs for the locales with demonstrated organic performance (GSC
+# click share), replacing the master brand motif with a type specimen tuned
+# to that market's actual query intent. Every other locale keeps m_brand —
+# bespoke treatment is gated on demand, same as everywhere else on the site;
+# more locales earn one here as their traffic does.
+LOCALIZED_HOME_MOTIF = {
+  # id: the #1 site-wide query cluster is "huruf aesthetic" / "tulisan
+  # aesthetic" — echo the spaced vaporwave treatment used on
+  # category-aesthetic-fonts instead of the generic brand mark.
+  "id": P(m_typo, sample="a e s", size=72, spacing="6", label="huruf aesthetic"),
+  # es: mirrors the es-letras-bonitas landing page (its top-performing page)
+  # so the homepage card foreshadows the styling searchers land on.
+  "es": P(m_typo, sample="Aa", style="italic", size=88, label="letras bonitas"),
+  # pl: the Ł/ł letterform is uniquely Polish — more locale-authentic than
+  # a generic "Aa" for the "ładne literki" (pretty letters) query set.
+  "pl": P(m_typo, sample="Łł", size=84, label="ładne literki"),
 }
 
 # The homepage card filename (root index.html + the fallback for localized
@@ -1107,6 +1126,23 @@ PAGES = {
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
+  "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
+  "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
+
+  # ---- bio-font locale translations ----
+  "de-usecase-bio-schriftart": ("Bio-Schriftart Generator", "Schriften, Symbole und Vorlagen für dein Bio", m_profile, K_USE),
+  "tr-usecase-biyografi-yazi-tipi": ("Biyografi Yazı Tipi", "Instagram biyografin için fontlar ve semboller", m_profile, K_USE),
+  "th-usecase-bio-font-ig": ("ฟอนต์ไบโอไอจี", "ฟอนต์และสัญลักษณ์สำหรับไบโออินสตาแกรม", m_profile, K_USE),
+  "ja-usecase-bio-font": ("プロフィール文字装飾", "インスタプロフィール用のフォントと記号", m_profile, K_USE),
+  "pt-usecase-fontes-para-bio": ("Gerador de Fontes para Bio", "Fontes, símbolos e modelos para sua bio", m_profile, K_USE),
+  "fr-usecase-ecriture-bio": ("Écriture Stylée pour Bio", "Polices et symboles pour votre bio Instagram", m_profile, K_USE),
+  "es-usecase-letras-para-bio": ("Letras para Bio", "Fuentes y símbolos para tu biografía de Instagram", m_profile, K_USE),
+  "it-usecase-font-per-bio": ("Font per la Bio", "Caratteri e simboli per la tua bio Instagram", m_profile, K_USE),
+  "ar-usecase-khat-bio": ("خط للبايو", "خطوط ورموز لبايو انستقرام", m_profile, K_USE),
+  "cs-usecase-pismo-pro-bio": ("Písmo pro Bio", "Fonty a symboly pro tvoje bio na Instagramu", m_profile, K_USE),
+  "sk-usecase-pismo-pre-bio": ("Písmo pre Bio", "Fonty a symboly pre tvoje bio na Instagrame", m_profile, K_USE),
+  "nl-usecase-lettertype-voor-bio": ("Lettertype voor Bio", "Lettertypes en symbolen voor je Instagram bio", m_profile, K_USE),
+  "tl-usecase-bio-font": ("Bio Font Generator", "Fancy fonts at symbols para sa iyong bio", m_profile, K_USE),
   "usecase-comment-font": ("Comment Style Generator", "Make your comment stand out", m_chat, K_USE),
   "usecase-emoji-combinations": ("Emoji Combinations", "Copy-and-paste pairings for social",
         P(m_transform, a="+", b="★"), K_USE),
@@ -1306,6 +1342,7 @@ PAGES = {
   "answers-what-font-does-discord-use": ("What Font Does Discord Use?", "gg sans, and what it means for you", m_qa, K_ANS),
   "answers-what-font-does-facebook-use": ("What Font Does Facebook Use?", "The system fonts behind the feed", m_qa, K_ANS),
   "answers-what-font-does-linkedin-use": ("What Font Does LinkedIn Use?", "The typeface and your options", m_qa, K_ANS),
+  "answers-what-font-does-roblox-use": ("What Font Does Roblox Use?", "Builder Sans, and the Comic Sans myth", m_qa, K_ANS),
   "answers-what-font-does-snapchat-use": ("What Font Does Snapchat Use?", "The app typeface, explained", m_qa, K_ANS),
   "answers-what-is-a-tiktok-handle": ("What Is a TikTok Handle?", "Handle vs name, made simple", m_qa, K_ANS),
   "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
@@ -1359,6 +1396,8 @@ PAGES = {
   "library-currency-symbols": ("Currency Symbols", "Money marks from around the world",
         m_coin, K_LIB),
   "library-cute-kaomoji": ("Cute Kaomoji", "Kawaii text faces", m_kaomoji, K_LIB),
+  "library-dark-academia-symbols": ("Dark Academia Symbols", "Vintage books, candles and scholarly accents",
+        glyphs("❦", "⁂", "§", "Ⅰ", "⟪"), K_LIB),
   "library-dash-hyphen-symbols": ("Dash & Hyphen Symbols", "Em, en and every dash between",
         glyphs("—", "–", "―", "·", "‐"), K_LIB),
   "library-degree-symbol": ("Degree Symbol", "Temperature, angles and more",
@@ -1380,6 +1419,8 @@ PAGES = {
   "library-food-drink-emojis": ("Food & Drink Emojis", "Snacks, meals and drinks", m_cup, K_LIB),
   "library-fraction-symbols": ("Fraction Symbols", "Halves, thirds and quarters",
         glyphs("½", "⅓", "¼", "¾", "⅔"), K_LIB),
+  "library-gaming-aesthetic-symbols": ("Gaming Aesthetic Symbols", "Clan tag frames, HUD bars and battle icons",
+        glyphs("▰", "▱", "⌖", "━", "▮"), K_LIB),
   "library-geometric-symbols": ("Geometric Symbols", "Circles, squares and triangles",
         glyphs("●", "▲", "■", "◆", "◇"), K_LIB),
   "library-goth-grunge-symbols": ("Goth & Grunge Symbols", "Dark, edgy decorative marks",
@@ -1727,6 +1768,11 @@ PAGES = {
   "es-fuentes-para-discord": ("Fuentes para Discord", "Letras para nick, canal y bio — sin Nitro", m_chat, K_PLAT),
   "pl-czcionki-discord": ("Czcionki na Discord", "Czcionki do nicku, kanału i bio — bez Nitro", m_chat, K_PLAT),
   "id-font-discord": ("Font Discord", "Font untuk nama, channel, dan bio — tanpa Nitro", m_chat, K_PLAT),
+
+  # ---- Roblox font pages (demand-validated locales) ----
+  "es-fuentes-para-roblox": ("Fuentes para Roblox", "Letras para el nombre y la bio", m_chat, K_PLAT),
+  "pl-czcionki-na-roblox": ("Czcionki na Roblox", "Generator czcionek do nazwy i bio", m_chat, K_PLAT),
+  "vi-font-roblox": ("Font Chữ Roblox", "Tạo chữ đẹp cho tên và bio", m_chat, K_PLAT),
 }
 
 
@@ -1918,9 +1964,12 @@ def main():
         output_width=1200, output_height=630)
 
     # Localized homepage cards — translated copy on a translated page.
-    for _loc, (fname, title, sub) in LOCALIZED_HOME.items():
+    # High-demand locales (LOCALIZED_HOME_MOTIF) get a bespoke motif; the
+    # rest still use the master brand motif.
+    for loc, (fname, title, sub) in LOCALIZED_HOME.items():
+        motif = LOCALIZED_HOME_MOTIF.get(loc, m_brand)
         cairosvg.svg2png(
-            bytestring=og_png_svg(fname, title, sub, m_brand, K_SITE).encode(),
+            bytestring=og_png_svg(fname, title, sub, motif, K_SITE).encode(),
             write_to=os.path.join(OG, f"{fname}.png"),
             output_width=1200, output_height=630)
 
