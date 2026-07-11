@@ -230,6 +230,18 @@
       color: var(--text-muted);
     }
 
+    /* Live word/character readout injected by script.js (ensureTextStats)
+       right under the input box, on every page that shares the generator. */
+    .text-stats-bar {
+      margin: 8px 2px 0;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .text-stats-sep {
+      margin: 0 0.4em;
+    }
+
     .input-clear-btn {
       position: absolute;
       top: 10px;
@@ -6490,6 +6502,146 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
 .gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }
 
+/* ==========================================================================
+   CHARACTER & WORD COUNTER  (/character-counter/)
+   Live word/character/sentence/paragraph/reading-time stats, plus a
+   platform character-limit checker (js/counter/counterRules.js — same
+   RULES + analyze() + initChecker() shape as the game-name checker above,
+   generalized to social/SEO limits instead of game nicknames).
+   ========================================================================== */
+.counter-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 8px;
+}
+.counter-field-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.counter-field-head label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.counter-field-actions {
+  display: flex;
+  gap: 8px;
+}
+.counter-clear-btn {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.counter-clear-btn:hover { border-color: var(--accent-purple); color: var(--text-primary); }
+.counter-textarea {
+  width: 100%;
+  min-height: 220px;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+.counter-textarea:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.08);
+}
+.counter-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+.counter-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-base);
+  text-align: center;
+}
+.counter-stat-value {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+.counter-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Platform-limit checker mounted by counterRules.js initChecker() */
+.cc-checker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.cc-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); }
+.cc-select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.cc-select:focus { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.cc-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+.cc-badge {
+  font-weight: 700;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.cc-badge-ok { color: var(--ts-safe); border-color: var(--ts-safe); }
+.cc-badge-fail { color: var(--ts-fail); border-color: var(--ts-fail); }
+.cc-badge-empty { color: var(--text-muted); }
+.cc-count { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.cc-count.is-over { color: var(--ts-fail); font-weight: 700; }
+.cc-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border-light);
+  overflow: hidden;
+}
+.cc-bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--ts-safe);
+  border-radius: 999px;
+  transition: width 0.15s ease;
+}
+.cc-bar-fill.is-over { background: var(--ts-fail); }
+
 /* Inline "name check" callout — the game-rules checker rendered as a compact
    live readout inside the generator card (between the input and the decoration
    tabs), instead of a separate stacked section with its own heading. Reuses
@@ -6698,6 +6850,19 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   box-shadow: inset 0 0 0 1px var(--accent-purple);
 }
 .kao-part-opt.is-hidden { display: none; }
+
+.kao-recent { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.kao-recent-face {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+.kao-recent-face:hover { border-color: var(--accent-purple); color: var(--text-primary); }
 
 @media (max-width: 560px) {
   .kao-part-row { flex-direction: column; align-items: flex-start; gap: 0.35rem; }

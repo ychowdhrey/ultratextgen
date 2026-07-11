@@ -218,3 +218,33 @@ Per-page status (intent, priority, card path) is in `data/image_seo_status.csv`.
   the 11 home/localized cards were rendered in this pass; the 221 existing
   per-page cards were left byte-for-byte unchanged to avoid render churn. Glyph
   coverage for all locales was visually verified.
+
+---
+
+## 8. Bespoke locale motifs — implemented (2026-07-11)
+
+§5 flagged that all 10 localized homepage cards reused the master brand
+motif (`m_brand`) and that giving high-demand locales a bespoke motif was
+optional design polish, gated on demand. `/id/` and `/es/` are now the
+site's clearest-performing localized homepages, with `/pl/` next behind
+them, so those three moved off the generic brand mark:
+
+| Locale | Card | Motif rationale |
+|---|---|---|
+| `id` | `generator-font-aesthetic-preview.png` | Echoes the spaced "aesthetic" type treatment already used on `category-aesthetic-fonts` — the site's single largest query cluster is "huruf aesthetic" / "tulisan aesthetic", so the homepage card now foreshadows that styling instead of a generic brand mark. |
+| `es` | `generador-de-letras-bonitas-preview.png` | Mirrors the `es-letras-bonitas` landing page (its own top performer), so the homepage card and the page searchers land on now match. |
+| `pl` | `generator-ladnych-czcionek-preview.png` | Uses the Polish Ł/ł letterform — more locale-authentic than a generic "Aa" for the "ładne literki" query set. |
+
+No new motif-drawing code was needed — all three reuse the existing
+`m_typo` type-specimen motif (already built for exactly this "sample +
+label" job) via a new `LOCALIZED_HOME_MOTIF` registry in
+`scripts/generate-site-art.py`, which `main()` consults per locale, falling
+back to `m_brand` for the remaining 7. Regeneration only touched these 3
+PNGs — the other 7 locale cards and every other existing card are
+byte-for-byte unchanged, same discipline as the render-churn note above.
+
+The remaining locales stay on `m_brand` by design: bespoke treatment is
+gated on demonstrated demand here the same way it is everywhere else on the
+site (see CLAUDE.md's flair philosophy). As a locale's organic performance
+grows, add it to `LOCALIZED_HOME_MOTIF` — that registry is the whole
+extension point.

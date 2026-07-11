@@ -68,6 +68,125 @@ def esc(s):
              .replace("<", "&lt;").replace(">", "&gt;"))
 
 
+# ------------------------------------------------- non-Latin script fallback
+# cairosvg resolves ONE font per <text>/<tspan> run (no per-glyph fallback
+# like a browser) — and picks it by matching the FIRST name in font-family
+# that fontconfig can find, not the first that actually covers the glyph. So
+# a mixed-run title (Korean headline + a "★" someone typed into the SEO
+# title, a Devanagari headline with a Latin brand name in it) needs every
+# run that Liberation Sans can't render pulled into its own
+# <tspan font-family="..."> pointing at a font that can.
+#
+# Rather than hand-list Unicode block ranges per script (fragile — this site's
+# titles routinely carry decorative marks from unrelated blocks: Javanese
+# ꧁꧂ frames, Tibetan ༺༻, misc dingbats), each candidate font's cmap is read
+# directly so ANY character gets routed to a font that actually contains it.
+NATIVE_SCRIPT = {
+    "ar": "Noto Sans Arabic",
+    "hi": "Noto Sans Devanagari",
+    "th": "Noto Sans Thai",
+    "ja": "Noto Sans CJK JP",
+    "ko": "Noto Sans CJK KR",
+}
+
+# (family name written into the SVG, glob patterns to find its file).
+# Checked in order after the locale's own native family; DejaVu Sans alone
+# covers most decorative dingbats already in use across the site.
+_FALLBACK_FONTS = [
+    ("DejaVu Sans", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+    ("Noto Sans Symbols2", "/usr/share/fonts/truetype/noto/NotoSansSymbols2-Regular.ttf"),
+    ("Noto Sans Symbols", "/usr/share/fonts/truetype/noto/NotoSansSymbols-Regular.ttf"),
+    ("Noto Sans Javanese", "/usr/share/fonts/truetype/noto/NotoSansJavanese-Regular.ttf"),
+    ("Noto Serif Tibetan", "/usr/share/fonts/truetype/noto/NotoSerifTibetan-Regular.ttf"),
+    ("Noto Sans CJK JP", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+]
+_NATIVE_FONT_FILE = {
+    "Noto Sans Arabic": "/usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf",
+    "Noto Sans Devanagari": "/usr/share/fonts/truetype/noto/NotoSansDevanagari-Regular.ttf",
+    "Noto Sans Thai": "/usr/share/fonts/truetype/noto/NotoSansThai-Regular.ttf",
+    "Noto Sans CJK JP": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "Noto Sans CJK KR": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+}
+
+_cmap_cache = {}
+
+
+def _cmap(path):
+    if path not in _cmap_cache:
+        cps = set()
+        if os.path.exists(path):
+            from fontTools.ttLib import TTFont
+            tt = TTFont(path, fontNumber=0, lazy=True)
+            for table in tt["cmap"].tables:
+                cps.update(table.cmap.keys())
+        _cmap_cache[path] = cps
+    return _cmap_cache[path]
+
+
+_LIBERATION_SANS = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
+
+
+def _resolve_family(ch, native_family):
+    """None -> the default font-family chain already renders this char.
+    A family name -> wrap it in a tspan for that family. False -> no
+    installed font covers it; drop the character rather than show tofu."""
+    cp = ord(ch)
+    if cp in _cmap(_LIBERATION_SANS):
+        return None
+    if native_family and cp in _cmap(_NATIVE_FONT_FILE[native_family]):
+        return native_family
+    for family, path in _FALLBACK_FONTS:
+        if cp in _cmap(path):
+            return family
+    return False
+
+
+def spanned(text, native):
+    """esc(text), wrapping any run the default font can't render in its own
+    <tspan font-family="...">, resolved per-character against installed
+    font cmaps. native is a family name from NATIVE_SCRIPT, or None."""
+    if not text:
+        return ""
+    runs, cur, cur_family = [], "", None
+    first = True
+    for ch in text:
+        fam = _resolve_family(ch, native)
+        if fam is False:
+            continue  # no installed font covers this glyph — drop it
+        if first or fam == cur_family:
+            cur += ch
+        else:
+            runs.append((cur_family, cur))
+            cur = ch
+        cur_family = fam
+        first = False
+    if cur:
+        runs.append((cur_family, cur))
+    out = ""
+    for fam, chunk in runs:
+        out += (f'<tspan font-family="{fam}">{esc(chunk)}</tspan>'
+                if fam else esc(chunk))
+    return out
+
+
+def smart_wrap(text, width):
+    """textwrap.wrap, but falls back to fixed-width character chunking when
+    there are no spaces to break on (Thai and Japanese titles routinely have
+    none — a single 'word' would otherwise blow past the card width)."""
+    words = textwrap.wrap(text, width=width)
+    if len(words) <= 1 and len(text) > width:
+        return [text[i:i + width] for i in range(0, len(text), width)]
+    return words
+
+
+def wrap_width_for(text, native):
+    if native in ("Noto Sans CJK JP", "Noto Sans CJK KR"):
+        return 9  # CJK glyphs render roughly twice as wide as Latin
+    if native:
+        return 14
+    return 17
+
+
 # ---------------------------------------------------------------- motifs
 # Each motif draws inside a 360x360 box (origin top-left) and is translated into
 # place by the caller. Motifs receive the gradient-id prefix `p` and optionally
@@ -528,6 +647,351 @@ def m_at(p, accent=PURPLE):
           fill="url(#g{p})" text-anchor="middle">@</text>"""
 
 
+def m_gamepad(p, accent=PURPLE):
+    """A game controller — for gaming-nickname generators and tags."""
+    return f"""
+    <path d="M84 168 q6 -54 66 -54 h60 q60 0 66 54 l12 62 a32 32 0 0 1 -58 26
+             l-18 -30 h-56 l-18 30 a32 32 0 0 1 -58 -26 Z" fill="url(#g{p})"/>
+    <rect x="116" y="152" width="10" height="36" rx="4" fill="#fff"/>
+    <rect x="99" y="164" width="44" height="10" rx="4" fill="#fff"/>
+    <circle cx="258" cy="158" r="11" fill="#fff"/>
+    <circle cx="232" cy="182" r="11" fill="#fff" opacity="0.85"/>
+    <circle cx="284" cy="182" r="11" fill="#fff" opacity="0.7"/>"""
+
+
+def m_plane(p, accent=PURPLE):
+    """A paper-plane dart on a flight path — for travel content."""
+    return f"""
+    <path d="M180 70 L232 220 L182 196 L150 236 L146 190 L60 176 Z" fill="url(#g{p})"/>
+    <path d="M180 70 L182 196" stroke="{PANEL}" stroke-width="4" opacity="0.5"/>
+    <path d="M60 262 q60 -20 120 0 q60 20 120 0" fill="none" stroke="{SUB}"
+          stroke-width="6" stroke-linecap="round" opacity="0.3"/>"""
+
+
+def m_pumpkin(p, accent=PURPLE):
+    """A jack-o'-lantern — for Halloween/spooky content."""
+    return f"""
+    <rect x="168" y="60" width="24" height="46" rx="10" fill="{SUB}"/>
+    <path d="M96 190 q-6 -86 84 -86 q90 0 84 86 q6 76 -84 76 q-90 0 -84 -76 Z" fill="url(#g{p})"/>
+    <path d="M136 130 v120 M180 122 v128 M224 130 v120" stroke="{PURPLE}" stroke-width="6"
+          opacity="0.35" stroke-linecap="round"/>
+    <path d="M144 190 l16 -16 l16 16 M200 190 l16 -16 l16 16" fill="none" stroke="#fff"
+          stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M150 226 q30 20 60 0" fill="none" stroke="#fff" stroke-width="8"
+          stroke-linecap="round"/>"""
+
+
+def m_tree(p, accent=PURPLE):
+    """A tiered, ornamented tree — for Christmas/holiday content."""
+    return f"""
+    <path d="M180 62 L228 146 H204 L246 220 H214 L254 288 H106 L146 220 H114
+             L156 146 H132 Z" fill="url(#gv{p})"/>
+    <rect x="164" y="288" width="32" height="24" rx="6" fill="{SUB}"/>
+    <circle cx="180" cy="90" r="10" fill="#fff"/>
+    <circle cx="150" cy="180" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="212" cy="200" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="170" cy="250" r="8" fill="#fff" opacity="0.7"/>"""
+
+
+def m_note(p, accent=PURPLE):
+    """A beamed pair of eighth notes — for music content."""
+    return f"""
+    <rect x="172" y="70" width="14" height="150" rx="6" fill="url(#gv{p})"/>
+    <rect x="252" y="70" width="14" height="130" rx="6" fill="url(#gv{p})"/>
+    <path d="M172 78 q54 -22 94 0 v34 q-40 -18 -94 0 Z" fill="url(#g{p})"/>
+    <ellipse cx="158" cy="228" rx="34" ry="26" fill="url(#g{p})"/>
+    <ellipse cx="238" cy="208" rx="30" ry="24" fill="url(#g{p})"/>"""
+
+
+def m_gear(p, accent=PURPLE):
+    """A settings gear — for tech/status content."""
+    teeth = "".join(
+        f'<rect x="164" y="92" width="32" height="46" rx="6" fill="url(#g{p})" '
+        f'transform="rotate({i * 45} 180 180)"/>'
+        for i in range(8))
+    return f"""{teeth}
+    <circle cx="180" cy="180" r="72" fill="url(#g{p})"/>
+    <circle cx="180" cy="180" r="32" fill="{PANEL}"/>"""
+
+
+def m_coin(p, accent=PURPLE):
+    """Two stacked coins with a dollar mark — for money/currency content."""
+    return f"""
+    <ellipse cx="180" cy="264" rx="86" ry="20" fill="{SUB}" opacity="0.25"/>
+    <circle cx="180" cy="228" r="70" fill="url(#gv{p})"/>
+    <circle cx="180" cy="158" r="70" fill="url(#g{p})"/>
+    <text x="180" y="182" font-family="{SANS}" font-size="70" font-weight="700"
+          fill="#fff" text-anchor="middle">$</text>"""
+
+
+def m_shield(p, accent=PURPLE):
+    """A shield with an alert mark — for security/warning/hazard content."""
+    return f"""
+    <path d="M180 64 L268 96 V180 q0 82 -88 118 q-88 -36 -88 -118 V96 Z" fill="url(#g{p})"/>
+    <rect x="170" y="112" width="20" height="76" rx="8" fill="#fff"/>
+    <circle cx="180" cy="212" r="12" fill="#fff"/>"""
+
+
+# ----- per-letter printables motifs (parametrized by the page's own letter) -----
+
+
+def m_letter_bubble(p, letter="A"):
+    """A single letter in a rounded bubble-outline chip — bubble-letter printables."""
+    return f"""
+    <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#g{p})"/>
+    <circle cx="180" cy="190" r="76" fill="none" stroke="#fff" stroke-width="8"/>
+    <text x="180" y="212" font-family="{SANS}" font-size="130" font-weight="800"
+          fill="#fff" text-anchor="middle">{esc(letter)}</text>"""
+
+
+def m_letter_dots(p, letter="A"):
+    """A large letter surrounded by numbered-dot scatter — dot-to-dot printables."""
+    spots = [(70, 90), (300, 80), (60, 260), (310, 250), (180, 50),
+             (40, 170), (320, 170), (150, 300), (220, 300)]
+    dots = "".join(f'<circle cx="{x}" cy="{y}" r="6" fill="{PURPLE}" opacity="0.55"/>'
+                    for x, y in spots)
+    return f"""{dots}
+    <text x="180" y="250" font-family="{SANS}" font-size="200" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle" opacity="0.9">{esc(letter)}</text>"""
+
+
+def m_letter_outline(p, letter="A"):
+    """A hollow letter outline with a crayon — alphabet coloring-page printables."""
+    return f"""
+    <text x="180" y="250" font-family="{SANS}" font-size="220" font-weight="800"
+          fill="none" stroke="url(#g{p})" stroke-width="6" text-anchor="middle">{esc(letter)}</text>
+    <g transform="translate(268 244) rotate(28)">
+      <rect x="-10" y="-56" width="20" height="70" rx="8" fill="url(#gv{p})"/>
+      <path d="M-10 -56 L10 -56 L0 -78 Z" fill="{INK}"/>
+    </g>"""
+
+
+# ----- holiday / event motifs -----
+
+
+def m_lantern(p, accent=PURPLE):
+    """A Chinese paper lantern — Chinese New Year content."""
+    return f"""
+    <rect x="160" y="46" width="40" height="16" rx="5" fill="{SUB}"/>
+    <line x1="180" y1="62" x2="180" y2="82" stroke="{SUB}" stroke-width="4"/>
+    <path d="M100 90 Q100 82 180 82 Q260 82 260 90 Q276 170 260 250 Q260 258 180 258
+             Q100 258 100 250 Q84 170 100 90 Z" fill="url(#g{p})"/>
+    <line x1="132" y1="88" x2="132" y2="252" stroke="#fff" stroke-width="4" opacity="0.45"/>
+    <line x1="180" y1="84" x2="180" y2="256" stroke="#fff" stroke-width="4" opacity="0.45"/>
+    <line x1="228" y1="88" x2="228" y2="252" stroke="#fff" stroke-width="4" opacity="0.45"/>
+    <rect x="160" y="252" width="40" height="16" rx="5" fill="{SUB}"/>
+    <line x1="180" y1="268" x2="180" y2="300" stroke="{SUB}" stroke-width="4"/>
+    <circle cx="180" cy="306" r="8" fill="{SUB}"/>"""
+
+
+def m_lamp(p, accent=PURPLE):
+    """A diya oil lamp with a flame — Diwali content."""
+    return f"""
+    <path d="M90 210 Q90 240 180 250 Q270 240 270 210 Q270 195 230 195 L130 195
+             Q90 195 90 210 Z" fill="url(#g{p})"/>
+    <path d="M172 195 Q168 150 180 120 Q192 150 188 195 Z" fill="#fbbf24"/>
+    <path d="M175 195 Q173 165 180 145 Q187 165 185 195 Z" fill="#f97316"/>
+    <circle cx="120" cy="220" r="6" fill="{PURPLE}" opacity="0.5"/>
+    <circle cx="240" cy="220" r="6" fill="{BLUE}" opacity="0.5"/>"""
+
+
+def m_crescent(p, accent=PURPLE):
+    """A crescent moon and star — Eid content."""
+    return f"""
+    <circle cx="170" cy="180" r="95" fill="url(#g{p})"/>
+    <circle cx="215" cy="150" r="80" fill="{PANEL}"/>
+    <path d="M280 110 l10 26 l26 10 l-26 10 l-10 26 l-10 -26 l-26 -10 l26 -10 Z" fill="{PURPLE}"/>"""
+
+
+def m_necktie(p, accent=PURPLE):
+    """A striped necktie — Father's Day content."""
+    return f"""
+    <path d="M160 70 L200 70 L212 100 L180 118 L148 100 Z" fill="url(#g{p})"/>
+    <path d="M164 112 L196 112 L216 220 L180 270 L144 220 Z" fill="url(#gv{p})"/>
+    <line x1="150" y1="150" x2="210" y2="140" stroke="#fff" stroke-width="6" opacity="0.3"/>
+    <line x1="152" y1="180" x2="208" y2="172" stroke="#fff" stroke-width="6" opacity="0.3"/>"""
+
+
+def m_bouquet(p, accent=PURPLE):
+    """A wrapped flower bouquet — Mother's Day content."""
+    return f"""
+    <path d="M120 230 L240 230 L206 300 L154 300 Z" fill="url(#gv{p})"/>
+    <line x1="150" y1="230" x2="150" y2="150" stroke="{SUB}" stroke-width="5"/>
+    <line x1="180" y1="230" x2="180" y2="130" stroke="{SUB}" stroke-width="5"/>
+    <line x1="210" y1="230" x2="210" y2="150" stroke="{SUB}" stroke-width="5"/>
+    <circle cx="150" cy="135" r="26" fill="url(#g{p})"/>
+    <circle cx="180" cy="110" r="34" fill="url(#g{p})"/>
+    <circle cx="210" cy="135" r="26" fill="url(#g{p})"/>"""
+
+
+def m_firework(p, accent=PURPLE):
+    """Two radiating firework bursts — New Year content."""
+    # Rays are solid-color, not gradient: a purely vertical <line> has a
+    # zero-width objectBoundingBox, so a gradient stroke silently fails to
+    # paint (same pitfall documented on m_ankh below).
+    def burst(cx, cy, inner, outer, opacity=1):
+        rays = ""
+        for i in range(8):
+            ang = i * 45
+            rays += (f'<g transform="rotate({ang} {cx} {cy})" opacity="{opacity}">'
+                      f'<line x1="{cx}" y1="{cy-inner}" x2="{cx}" y2="{cy-outer}" '
+                      f'stroke="{PURPLE}" stroke-width="6" stroke-linecap="round"/>'
+                      f'<circle cx="{cx}" cy="{cy-outer}" r="5" fill="{BLUE}"/></g>')
+        return rays
+    return burst(200, 130, 18, 76) + burst(100, 250, 10, 42, 0.55)
+
+
+def m_heart(p, accent=PURPLE):
+    """A single vector heart — Valentine's/heart-themed content."""
+    return f"""
+    <path d="M180 260 C 100 200 100 130 150 110 C 175 100 180 120 180 130
+             C 180 120 185 100 210 110 C 260 130 260 200 180 260 Z" fill="url(#g{p})"/>
+    <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/>"""
+
+
+# ----- printables-tool motifs -----
+
+
+def m_banner(p, accent=PURPLE):
+    """A strung pennant banner — banner-maker printable."""
+    flags = ""
+    for i, x in enumerate([70, 140, 210, 280]):
+        fill = f"url(#g{p})" if i % 2 == 0 else "#fff"
+        stroke = "" if i % 2 == 0 else f'stroke="{PURPLE}" stroke-width="3"'
+        flags += f'<path d="M{x-30} 110 L{x+30} 110 L{x} 180 Z" fill="{fill}" {stroke}/>'
+        flags += (f'<circle cx="{x-22}" cy="116" r="3" fill="{SUB}"/>'
+                   f'<circle cx="{x+22}" cy="116" r="3" fill="{SUB}"/>')
+    return f'<path d="M50 100 Q180 130 310 100" fill="none" stroke="{SUB}" stroke-width="4"/>{flags}'
+
+
+def m_letter_stencil(p, letter="B"):
+    """A bold block letter with a dashed cut-line border — block-letter printables."""
+    return f"""
+    <rect x="50" y="70" width="260" height="220" rx="18" fill="none" stroke="{SUB}"
+          stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="180" y="235" font-family="{SANS}" font-size="200" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle">{esc(letter)}</text>"""
+
+
+def m_crayons(p, accent=PURPLE):
+    """Three fanned crayons over a colorable outline card — coloring-page maker."""
+    def crayon(x, rot, fill):
+        return (f'<g transform="translate({x} 220) rotate({rot})">'
+                f'<rect x="-14" y="-90" width="28" height="100" rx="6" fill="{fill}"/>'
+                f'<path d="M-14 -90 L14 -90 L0 -118 Z" fill="{INK}"/></g>')
+    return (f'<rect x="40" y="80" width="280" height="200" rx="24" fill="none" '
+            f'stroke="{SUB}" stroke-width="3" stroke-dasharray="10 8"/>'
+            + crayon(140, -18, f"url(#g{p})") + crayon(180, 0, PURPLE) + crayon(220, 18, BLUE))
+
+
+def m_pencil_ruled(p, accent=PURPLE):
+    """A pencil writing on ruled lines — handwriting-worksheet generator."""
+    return f"""
+    <line x1="60" y1="150" x2="300" y2="150" stroke="{SUB}" stroke-width="4"/>
+    <line x1="60" y1="200" x2="300" y2="200" stroke="{SUB}" stroke-width="4" stroke-dasharray="8 8"/>
+    <line x1="60" y1="250" x2="300" y2="250" stroke="{SUB}" stroke-width="4"/>
+    <g transform="translate(230 130) rotate(35)">
+      <rect x="-12" y="-70" width="24" height="90" rx="4" fill="url(#gv{p})"/>
+      <path d="M-12 -70 L12 -70 L0 -96 Z" fill="{INK}"/>
+      <rect x="-12" y="18" width="24" height="16" fill="#fbbf24"/>
+    </g>"""
+
+
+def m_trace_rows(p, sample="Emma"):
+    """A solid sample row, a dashed trace-echo row, and a blank rule — name/word tracing."""
+    s = esc(sample)
+    return f"""
+    <text x="180" y="130" font-family="{SANS}" font-size="70" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle">{s}</text>
+    <text x="180" y="195" font-family="{SANS}" font-size="70" font-weight="800"
+          fill="none" stroke="{SUB}" stroke-width="1.5" stroke-dasharray="3 3"
+          text-anchor="middle" opacity="0.6">{s}</text>
+    <line x1="70" y1="250" x2="290" y2="250" stroke="{SUB}" stroke-width="3"/>"""
+
+
+def m_puzzle(p, accent=PURPLE):
+    """Two interlocking jigsaw pieces — name-puzzle maker."""
+    return f"""
+    <rect x="60" y="100" width="110" height="140" rx="16" fill="url(#g{p})"/>
+    <circle cx="170" cy="150" r="20" fill="url(#g{p})"/>
+    <rect x="190" y="100" width="110" height="140" rx="16" fill="#fff" stroke="{PURPLE}" stroke-width="5"/>
+    <circle cx="190" cy="150" r="20" fill="#fff" stroke="{PURPLE}" stroke-width="5"/>"""
+
+
+# ----- misc single-subject motifs -----
+
+
+def m_skull(p, accent=PURPLE):
+    """A skull and crossbones — skull-themed ASCII-art content."""
+    return f"""
+    <path d="M110 130 Q110 70 180 70 Q250 70 250 130 Q250 175 225 195 L225 220
+             L135 220 L135 195 Q110 175 110 130 Z" fill="url(#g{p})"/>
+    <circle cx="150" cy="135" r="18" fill="#fff"/>
+    <circle cx="210" cy="135" r="18" fill="#fff"/>
+    <path d="M170 165 L190 165 L180 185 Z" fill="{PANEL}"/>
+    <rect x="140" y="220" width="80" height="20" rx="6" fill="url(#g{p})"/>
+    <line x1="120" y1="270" x2="160" y2="250" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="270" x2="200" y2="250" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="120" y1="250" x2="160" y2="270" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="250" x2="200" y2="270" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>"""
+
+
+def m_star(p, accent=PURPLE):
+    """A single 5-point star with two sparkle accents — star-themed content."""
+    import math
+    cx, cy, r_out, r_in = 180, 178, 92, 38
+    pts = []
+    for i in range(10):
+        r = r_out if i % 2 == 0 else r_in
+        ang = -math.pi / 2 + i * math.pi / 5
+        pts.append(f"{cx + r * math.cos(ang):.1f},{cy + r * math.sin(ang):.1f}")
+    return f"""
+    <polygon points="{' '.join(pts)}" fill="url(#g{p})"/>
+    <path d="M270 90 l8 20 l20 8 l-20 8 l-8 20 l-8 -20 l-20 -8 l20 -8 Z" fill="{PURPLE}" opacity="0.7"/>
+    <path d="M90 260 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="{BLUE}" opacity="0.6"/>"""
+
+
+def m_arc(p, letters="ARC"):
+    """Letters individually rotated along a circular arc — curved/arc text tool."""
+    import math
+    n = len(letters)
+    # Virtual circle centered above the canvas; letters sit on its lower rim,
+    # each at angle theta from straight-down, giving a downward-bulging arc.
+    cx, cy, r = 180, 130, 150
+    spread = 80
+    step = spread / max(n - 1, 1)
+    start = -spread / 2
+    chars = ""
+    for i, ch in enumerate(letters):
+        theta = start + i * step
+        rad = math.radians(theta)
+        x = cx + r * math.sin(rad)
+        y = cy + r * math.cos(rad)
+        chars += (f'<text x="{x:.1f}" y="{y:.1f}" font-family="{SANS}" font-size="72" '
+                   f'font-weight="800" fill="url(#g{p})" text-anchor="middle" '
+                   f'transform="rotate({theta:.1f} {x:.1f} {y:.1f})">{esc(ch)}</text>')
+    half = math.radians(spread / 2)
+    ex, ey = r * math.sin(half), cy + r * math.cos(half)
+    arc = (f'<path d="M {cx - ex:.1f} {ey:.1f} A {r:.1f} {r:.1f} 0 0 0 {cx + ex:.1f} {ey:.1f}" '
+           f'fill="none" stroke="{SUB}" stroke-width="2" stroke-dasharray="4 6" opacity="0.4"/>')
+    return arc + chars
+
+
+def m_kana_grid(p, accent=PURPLE):
+    """A glyph-free grid of chip tiles with a seal accent — kana reference charts.
+    Deliberately embeds no hiragana/katakana characters: cairosvg has no per-
+    glyph font fallback and the bundled fonts don't cover the kana block."""
+    cells = ""
+    for r in range(2):
+        for c in range(3):
+            x, y = 40 + c * 100, 96 + r * 104
+            hot = (r == 0 and c == 1)
+            fill = f"url(#g{p})" if hot else "#fff"
+            cells += (f'<rect x="{x}" y="{y}" width="84" height="84" rx="18" fill="{fill}" '
+                       f'stroke="{INK}" stroke-opacity="{0 if hot else 0.10}"/>')
+    return f'{cells}<circle cx="272" cy="112" r="20" fill="#dc2626"/>'
+
+
 # ---------------------------------------------------------------- registry
 # slug -> (title, subtitle, motif_callable, kicker)
 # slug matches the page directory with "/" replaced by "-".
@@ -539,6 +1003,7 @@ K_USE = "ULTRATEXTGEN · GENERATOR"
 K_PLAT = "ULTRATEXTGEN · PLATFORM"
 K_ANS = "ULTRATEXTGEN · ANSWERS"
 K_SITE = "ULTRATEXTGEN"
+K_PRINT = "ULTRATEXTGEN · PRINTABLES"
 
 
 def glyphs(*g):
@@ -548,7 +1013,8 @@ def glyphs(*g):
 # Localized homepage social cards. Each localized homepage (de/, es/, ...) used
 # to share the English homepage card, leaving English copy on a translated page.
 # Each entry is  locale -> (og_filename, title, subtitle)  and renders with the
-# master brand motif. Filenames are descriptive (keyword-led) for Google Images.
+# master brand motif by default. Filenames are descriptive (keyword-led) for
+# Google Images.
 LOCALIZED_HOME = {
   "de": ("coole-schriftarten-generator-preview",
          "Coole Schriftarten Generator", "Schöne Schriftarten und Symbole kopieren"),
@@ -570,6 +1036,24 @@ LOCALIZED_HOME = {
          "Generator Font Aesthetic", "Font dan simbol keren untuk disalin"),
   "vi": ("tao-chu-kieu-dep-preview",
          "Tạo Chữ Kiểu Đẹp", "Phông chữ và ký tự đặc biệt để sao chép"),
+}
+
+# Bespoke motifs for the locales with demonstrated organic performance (GSC
+# click share), replacing the master brand motif with a type specimen tuned
+# to that market's actual query intent. Every other locale keeps m_brand —
+# bespoke treatment is gated on demand, same as everywhere else on the site;
+# more locales earn one here as their traffic does.
+LOCALIZED_HOME_MOTIF = {
+  # id: the #1 site-wide query cluster is "huruf aesthetic" / "tulisan
+  # aesthetic" — echo the spaced vaporwave treatment used on
+  # category-aesthetic-fonts instead of the generic brand mark.
+  "id": P(m_typo, sample="a e s", size=72, spacing="6", label="huruf aesthetic"),
+  # es: mirrors the es-letras-bonitas landing page (its top-performing page)
+  # so the homepage card foreshadows the styling searchers land on.
+  "es": P(m_typo, sample="Aa", style="italic", size=88, label="letras bonitas"),
+  # pl: the Ł/ł letterform is uniquely Polish — more locale-authentic than
+  # a generic "Aa" for the "ładne literki" (pretty letters) query set.
+  "pl": P(m_typo, sample="Łł", size=84, label="ładne literki"),
 }
 
 # The homepage card filename (root index.html + the fallback for localized
@@ -642,6 +1126,23 @@ PAGES = {
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
+  "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
+  "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
+
+  # ---- bio-font locale translations ----
+  "de-usecase-bio-schriftart": ("Bio-Schriftart Generator", "Schriften, Symbole und Vorlagen für dein Bio", m_profile, K_USE),
+  "tr-usecase-biyografi-yazi-tipi": ("Biyografi Yazı Tipi", "Instagram biyografin için fontlar ve semboller", m_profile, K_USE),
+  "th-usecase-bio-font-ig": ("ฟอนต์ไบโอไอจี", "ฟอนต์และสัญลักษณ์สำหรับไบโออินสตาแกรม", m_profile, K_USE),
+  "ja-usecase-bio-font": ("プロフィール文字装飾", "インスタプロフィール用のフォントと記号", m_profile, K_USE),
+  "pt-usecase-fontes-para-bio": ("Gerador de Fontes para Bio", "Fontes, símbolos e modelos para sua bio", m_profile, K_USE),
+  "fr-usecase-ecriture-bio": ("Écriture Stylée pour Bio", "Polices et symboles pour votre bio Instagram", m_profile, K_USE),
+  "es-usecase-letras-para-bio": ("Letras para Bio", "Fuentes y símbolos para tu biografía de Instagram", m_profile, K_USE),
+  "it-usecase-font-per-bio": ("Font per la Bio", "Caratteri e simboli per la tua bio Instagram", m_profile, K_USE),
+  "ar-usecase-khat-bio": ("خط للبايو", "خطوط ورموز لبايو انستقرام", m_profile, K_USE),
+  "cs-usecase-pismo-pro-bio": ("Písmo pro Bio", "Fonty a symboly pro tvoje bio na Instagramu", m_profile, K_USE),
+  "sk-usecase-pismo-pre-bio": ("Písmo pre Bio", "Fonty a symboly pre tvoje bio na Instagrame", m_profile, K_USE),
+  "nl-usecase-lettertype-voor-bio": ("Lettertype voor Bio", "Lettertypes en symbolen voor je Instagram bio", m_profile, K_USE),
+  "tl-usecase-bio-font": ("Bio Font Generator", "Fancy fonts at symbols para sa iyong bio", m_profile, K_USE),
   "usecase-comment-font": ("Comment Style Generator", "Make your comment stand out", m_chat, K_USE),
   "usecase-emoji-combinations": ("Emoji Combinations", "Copy-and-paste pairings for social",
         P(m_transform, a="+", b="★"), K_USE),
@@ -652,7 +1153,8 @@ PAGES = {
         P(m_vertical, letters="TEXT"), K_USE),
   "usecase-zalgo-text": ("Zalgo Text Generator", "Create creepy glitch text", m_zalgo, K_USE),
 
-  # ---- localized emoji-translator / bio-font / emoji-letters cards ----
+  # ---- localized emoji-translator + emoji-letters cards ----
+  # (bio-font locale cards are owned by the bio-font localization effort.)
   # Native-script titles for ar/hi are intentionally omitted: the bundled
   # raster fonts (DejaVu/Liberation) don't cover Arabic/Devanagari and cairosvg
   # does no complex-script shaping, so those locales keep the shared English card.
@@ -665,25 +1167,20 @@ PAGES = {
   "it-usecase-traduttore-emoji": ("Traduttore Emoji", "Testo in emoji e viceversa", m_smiley, K_USE),
   "id-usecase-penerjemah-emoji": ("Penerjemah Emoji", "Teks jadi emoji dan sebaliknya", m_smiley, K_USE),
   "pl-usecase-tlumacz-emoji": ("Tłumacz Emoji", "Tekst na emoji i z powrotem", m_smiley, K_USE),
-  "de-usecase-bio-schriftarten": ("Bio-Schriftarten", "Schriften & Symbole für jede Bio", m_profile, K_USE),
-  "pt-usecase-fonte-para-bio": ("Fontes para Bio", "Fontes e símbolos para sua bio", m_profile, K_USE),
-  "fr-usecase-police-pour-bio": ("Polices pour Bio", "Polices et symboles pour ta bio", m_profile, K_USE),
-  "es-usecase-fuentes-para-bio": ("Fuentes para Bio", "Fuentes y símbolos para tu bio", m_profile, K_USE),
-  "it-usecase-font-per-bio": ("Font per Bio", "Font e simboli per la tua bio", m_profile, K_USE),
   "de-usecase-emoji-buchstaben": ("Emoji-Buchstaben", "Namen im Emoji-Alphabet", m_flag, K_USE),
   "tr-usecase-emoji-harfler": ("Emoji Harfleri", "İsmini emoji alfabesiyle yaz", m_flag, K_USE),
   "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
-        P(m_typo, sample="@Aa"), K_USE),
+        m_gamepad, K_USE),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
-        P(m_typo, sample="[T]"), K_USE),
+        m_gamepad, K_USE),
 
   # ---- gaming-name use cases (Indonesian) ----
   "id-usecase-nama-ff-keren": ("Nama FF Keren", "Simbol payung & font keren buat nickname Free Fire",
-        m_profile, K_USE),
+        m_gamepad, K_USE),
   "id-usecase-nama-guild-ff-keren": ("Nama Guild FF Keren", "Tag squad & bingkai nama tim Free Fire",
         m_trophy, K_USE),
   "id-usecase-nama-ml-keren": ("Nama ML Keren", "Font aesthetic & simbol nickname Mobile Legends",
-        m_profile, K_USE),
+        m_gamepad, K_USE),
   "id-usecase-nama-squad-ml-keren": ("Nama Squad ML Keren", "Tag singkatan & font aesthetic squad Mobile Legends",
         m_trophy, K_USE),
 
@@ -699,7 +1196,7 @@ PAGES = {
   "pt-letras-diferentes": ("Letras Diferentes", "Fontes para copiar e colar em qualquer app",
         P(m_typo, sample="Abc", weight="700", size=88, label="copiar e colar"), K_USE),
   "pt-fontes-para-instagram": ("Fontes para Instagram", "Letras para bio, nick e legenda", m_camera, K_PLAT),
-  "pt-usecase-nick-ff": ("Gerador de Nick FF", "Símbolos e fontes para Free Fire", m_profile, K_USE),
+  "pt-usecase-nick-ff": ("Gerador de Nick FF", "Símbolos e fontes para Free Fire", m_gamepad, K_USE),
   "pt-library-simbolos": ("Símbolos para Copiar", "Símbolos para nick, bio e Insta", m_grid, K_LIB),
   "pt-letras-pequenas": ("Letra Pequena", "Texto pequeno para copiar e colar",
         P(m_typo, sample=" small", size=44, label="letra pequena"), K_CAT),
@@ -713,8 +1210,8 @@ PAGES = {
   "tr-usecase-zalgo-text": ("Zalgo Metin Oluşturucu", "Ürkütücü bozuk metin oluşturun", m_zalgo, K_USE),
   "tr-yazi-stilleri": ("Yazı Stilleri", "Değişik yazı tipleri kopyala yapıştır",
         P(m_typo, sample="Abc", weight="700", size=88, label="kopyala yapıştır"), K_USE),
-  "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_profile, K_USE),
-  "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_profile, K_USE),
+  "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_gamepad, K_USE),
+  "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_gamepad, K_USE),
   "tr-library-semboller": ("Şekilli Semboller", "Nick ve bio için semboller", m_grid, K_LIB),
   "tr-kucuk-yazi": ("Küçük Yazı", "Minik harfler kopyala yapıştır",
         P(m_typo, sample=" small", size=44, label="küçük yazı"), K_CAT),
@@ -729,7 +1226,7 @@ PAGES = {
   "fr-ecriture-speciale": ("Écriture Spéciale", "Lettres spéciales à copier-coller",
         P(m_typo, sample="Spécial", size=64, spacing="3", label="lettres spéciales"), K_USE),
   "fr-police-instagram": ("Police Instagram", "Écriture insta pour ta bio", m_camera, K_PLAT),
-  "fr-pseudo-style": ("Pseudo Stylé", "꧁꧂ pseudos à copier-coller", m_profile, K_USE),
+  "fr-pseudo-style": ("Pseudo Stylé", "꧁꧂ pseudos à copier-coller", m_gamepad, K_USE),
   "fr-ecriture-cursive": ("Écriture Cursive", "Alphabet calligraphie à copier",
         P(m_typo, sample="Écrire", ff=SERIF, style="italic", weight="400", size=58,
           label="élégante et fluide"), K_CAT),
@@ -742,7 +1239,7 @@ PAGES = {
         P(m_typo, sample="Goth", ff=SERIF, weight="800", size=80, label="dark et médiévale"), K_CAT),
   "fr-petite-ecriture": ("Petite Écriture", "Petit texte à copier-coller",
         P(m_typo, sample=" small", size=44, label="petite écriture"), K_CAT),
-  "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_profile, K_USE),
+  "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_gamepad, K_USE),
   "fr-ecriture-style": ("Écriture Stylé", "60+ styles d'écriture à copier-coller",
         P(m_typo, sample="Stylé", weight="700", size=80, label="copier-coller"), K_USE),
   "fr-ecriture-aesthetic": ("Écriture Aesthetic", "Lettres et symboles aesthetic à copier",
@@ -862,6 +1359,7 @@ PAGES = {
   "answers-what-font-does-discord-use": ("What Font Does Discord Use?", "gg sans, and what it means for you", m_qa, K_ANS),
   "answers-what-font-does-facebook-use": ("What Font Does Facebook Use?", "The system fonts behind the feed", m_qa, K_ANS),
   "answers-what-font-does-linkedin-use": ("What Font Does LinkedIn Use?", "The typeface and your options", m_qa, K_ANS),
+  "answers-what-font-does-roblox-use": ("What Font Does Roblox Use?", "Builder Sans, and the Comic Sans myth", m_qa, K_ANS),
   "answers-what-font-does-snapchat-use": ("What Font Does Snapchat Use?", "The app typeface, explained", m_qa, K_ANS),
   "answers-what-is-a-tiktok-handle": ("What Is a TikTok Handle?", "Handle vs name, made simple", m_qa, K_ANS),
   "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
@@ -913,8 +1411,10 @@ PAGES = {
         glyphs("♚", "♛", "⚜", "♔", "♕"), K_LIB),
   "library-crying-kaomoji": ("Crying & Sad Kaomoji", "Tearful text faces", m_kaomoji, K_LIB),
   "library-currency-symbols": ("Currency Symbols", "Money marks from around the world",
-        glyphs("€", "£", "¥", "¢", "₿"), K_LIB),
+        m_coin, K_LIB),
   "library-cute-kaomoji": ("Cute Kaomoji", "Kawaii text faces", m_kaomoji, K_LIB),
+  "library-dark-academia-symbols": ("Dark Academia Symbols", "Vintage books, candles and scholarly accents",
+        glyphs("❦", "⁂", "§", "Ⅰ", "⟪"), K_LIB),
   "library-dash-hyphen-symbols": ("Dash & Hyphen Symbols", "Em, en and every dash between",
         glyphs("—", "–", "―", "·", "‐"), K_LIB),
   "library-degree-symbol": ("Degree Symbol", "Temperature, angles and more",
@@ -936,6 +1436,8 @@ PAGES = {
   "library-food-drink-emojis": ("Food & Drink Emojis", "Snacks, meals and drinks", m_cup, K_LIB),
   "library-fraction-symbols": ("Fraction Symbols", "Halves, thirds and quarters",
         glyphs("½", "⅓", "¼", "¾", "⅔"), K_LIB),
+  "library-gaming-aesthetic-symbols": ("Gaming Aesthetic Symbols", "Clan tag frames, HUD bars and battle icons",
+        glyphs("▰", "▱", "⌖", "━", "▮"), K_LIB),
   "library-geometric-symbols": ("Geometric Symbols", "Circles, squares and triangles",
         glyphs("●", "▲", "■", "◆", "◇"), K_LIB),
   "library-goth-grunge-symbols": ("Goth & Grunge Symbols", "Dark, edgy decorative marks",
@@ -964,7 +1466,7 @@ PAGES = {
         glyphs("☽", "☾", "☀", "★", "✦"), K_LIB),
   "library-music-kaomoji": ("Music Kaomoji", "Singing, dancing text faces", m_kaomoji, K_LIB),
   "library-music-symbols": ("Music Note Symbols", "Notes, clefs and rests",
-        glyphs("♪", "♫", "♬", "♩", "♭"), K_LIB),
+        m_note, K_LIB),
   "library-norse-viking-runes": ("Norse & Viking Runes", "Elder Futhark rune styling", m_rune, K_LIB),
   "library-number-symbols": ("Number & Numeral Symbols", "Circled, styled and special numbers",
         glyphs("①", "②", "③", "№", "#"), K_LIB),
@@ -1023,7 +1525,7 @@ PAGES = {
   "library-brainrot-slang-emojis": ("Brainrot & Slang Emojis", "The internet's latest reactions", m_smiley, K_LIB),
   "library-chinese-symbols": ("Chinese Symbols", "Characters and marks for names", m_grid, K_LIB),
   "library-christmas-symbols": ("Christmas Symbols", "Festive snow, stars and cheer",
-        glyphs("❄", "★", "❅", "❆", "✦"), K_LIB),
+        m_tree, K_LIB),
   "library-clock-time-symbols": ("Clock & Time Symbols", "Hourglasses, dials and timers",
         glyphs("⌛", "◷", "◴", "◵", "○"), K_LIB),
   "library-clothing-fashion-emojis": ("Clothing & Fashion Emojis", "Outfits, style and accessories", m_bow, K_LIB),
@@ -1061,10 +1563,10 @@ PAGES = {
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "library-greeting-message-emojis": ("Greeting & Message Emojis", "Open every chat with warmth", m_chat, K_LIB),
   "library-halloween-symbols": ("Halloween Symbols", "Spooky marks for the season",
-        glyphs("☠", "☽", "✝", "★", "✟"), K_LIB),
+        m_pumpkin, K_LIB),
   "library-happy-emoji": ("Happy Emoji Collection", "Smiles for every good mood", m_smiley, K_LIB),
   "library-hazard-warning-symbols": ("Hazard & Warning Symbols", "Caution marks that demand attention",
-        glyphs("⚠", "☢", "☣", "⚡", "☠"), K_LIB),
+        m_shield, K_LIB),
   "library-hindi-symbols": ("Hindi Symbols", "Characters and marks for names", m_grid, K_LIB),
   "library-html-entities": ("HTML Entities", "Named and numeric character codes",
         glyphs("&", "<", ">", "§", "©"), K_LIB),
@@ -1094,10 +1596,10 @@ PAGES = {
   "library-meme-text-art": ("Meme Text Art", "Copy-ready ASCII meme classics", m_kaomoji, K_LIB),
   "library-minecraft-symbols": ("Minecraft Symbols", "Blocky marks for names and chat", m_block, K_LIB),
   "library-ml-name-symbols": ("Mobile Legends Name Symbols", "Stylish marks for your MLBB name",
-        glyphs("⚔", "★", "✦", "♛", "➤"), K_LIB),
+        m_gamepad, K_LIB),
   "library-moai-emoji": ("Moai Emoji", "The stone-faced statue, decoded", m_block, K_LIB),
   "library-money-emojis": ("Money Emojis", "Cash, coins and currency",
-        glyphs("$", "€", "£", "¥", "¢"), K_LIB),
+        m_coin, K_LIB),
   "library-movie-night-emojis": ("Movie Night Emojis", "Films, popcorn and the big screen", m_play, K_LIB),
   "library-nature-emojis": ("Nature Emojis", "Plants, weather and the outdoors",
         glyphs("☘", "❀", "✿", "⚘", "❁"), K_LIB),
@@ -1125,14 +1627,14 @@ PAGES = {
   "library-shocked-emoji": ("Shocked Emoji Collection", "Gasps, surprise and disbelief", m_smiley, K_LIB),
   "library-side-eye-emoji": ("Side-Eye Emoji", "The look that says it all", m_smiley, K_LIB),
   "library-tech-status-symbols": ("Tech & Status Symbols", "Gears, power and signal marks",
-        glyphs("⚙", "⌘", "⚡", "⊗", "✦"), K_LIB),
+        m_gear, K_LIB),
   "library-text-art": ("Text Art Gallery", "ASCII and Unicode art, copy-ready", m_kaomoji, K_LIB),
   "library-thanksgiving-symbols": ("Thanksgiving Symbols", "Harvest, gratitude and autumn",
         glyphs("❀", "❁", "☘", "✿", "✦"), K_LIB),
   "library-therian-symbols": ("Therian Symbols", "Paws and marks for the community", m_paw, K_LIB),
   "library-thumbs-up-emoji": ("Thumbs-Up Emoji", "The universal sign of approval",
         glyphs("☝", "✌", "☞", "☜", "☟"), K_LIB),
-  "library-travel-vacation-emojis": ("Travel & Vacation Emojis", "Planes, maps and getaways", m_car, K_LIB),
+  "library-travel-vacation-emojis": ("Travel & Vacation Emojis", "Planes, maps and getaways", m_plane, K_LIB),
   "library-unit-measurement-symbols": ("Unit & Measurement Symbols", "Degrees, primes and more",
         glyphs("°", "′", "″", "µ", "Ω"), K_LIB),
   "library-vertical-line-symbols": ("Vertical Line Symbols", "Bars and pipes for dividers",
@@ -1283,7 +1785,134 @@ PAGES = {
   "es-fuentes-para-discord": ("Fuentes para Discord", "Letras para nick, canal y bio — sin Nitro", m_chat, K_PLAT),
   "pl-czcionki-discord": ("Czcionki na Discord", "Czcionki do nicku, kanału i bio — bez Nitro", m_chat, K_PLAT),
   "id-font-discord": ("Font Discord", "Font untuk nama, channel, dan bio — tanpa Nitro", m_chat, K_PLAT),
+
+  # ---- Roblox font pages (demand-validated locales) ----
+  "es-fuentes-para-roblox": ("Fuentes para Roblox", "Letras para el nombre y la bio", m_chat, K_PLAT),
+  "pl-czcionki-na-roblox": ("Czcionki na Roblox", "Generator czcionek do nazwy i bio", m_chat, K_PLAT),
+  "vi-font-roblox": ("Font Chữ Roblox", "Tạo chữ đẹp cho tên và bio", m_chat, K_PLAT),
 }
+
+
+# ---- printables letter pages (bubble/dot-to-dot/coloring, A-Z x 3 types) ----
+# Highly templatable — one motif per alphabet type, a title/subtitle pattern per
+# letter — so these are generated in a loop instead of 78 hand-typed dict lines.
+LETTER_WORD = {
+    "a": "Apple", "b": "Ball", "c": "Cat", "d": "Dog", "e": "Elephant",
+    "f": "Fish", "g": "Goat", "h": "Hat", "i": "Igloo", "j": "Jellyfish",
+    "k": "Kite", "l": "Lion", "m": "Monkey", "n": "Nest", "o": "Owl",
+    "p": "Penguin", "q": "Queen", "r": "Rabbit", "s": "Sun", "t": "Tiger",
+    "u": "Umbrella", "v": "Violin", "w": "Whale", "x": "Xylophone", "y": "Yak",
+    "z": "Zebra",
+}
+for _l, _word in LETTER_WORD.items():
+    _L = _l.upper()
+    PAGES[f"printables-bubble-letters-letter-{_l}"] = (
+        f"Bubble Letter {_L}", "Free printable trace, color & print outline",
+        P(m_letter_bubble, letter=_L), K_PRINT)
+    PAGES[f"printables-dot-to-dot-alphabet-letter-{_l}"] = (
+        f"Letter {_L} Dot to Dot", f"{_L} is for {_word} — connect the dots",
+        P(m_letter_dots, letter=_L), K_PRINT)
+    PAGES[f"printables-alphabet-coloring-pages-letter-{_l}"] = (
+        f"Letter {_L} Coloring Page", f"{_L} is for {_word} — color the outline",
+        P(m_letter_outline, letter=_L), K_PRINT)
+
+PAGES["printables-bubble-letters"] = (
+    "Printable Bubble Letters", "Big puffy A-Z outlines to trace, color and print",
+    P(m_letter_bubble, letter="B"), K_PRINT)
+PAGES["printables-dot-to-dot-alphabet"] = (
+    "Dot-to-Dot Alphabet", "Connect the dots to reveal each letter A-Z",
+    P(m_letter_dots, letter="D"), K_PRINT)
+PAGES["printables-alphabet-coloring-pages"] = (
+    "Alphabet Coloring Pages", "Printable ABC letter outlines to color",
+    P(m_letter_outline, letter="C"), K_PRINT)
+
+
+# ---- remaining image-SEO gap: answers / events / printables tools / category /
+# ---- ascii-art library / gaming usecase / misc standalone pages ----
+PAGES.update({
+"answers-can-you-search-fancy-text": ("Can You Search Fancy Text?", "Why stylized Unicode doesn't match plain search", m_qa, K_ANS),
+"answers-cny-greetings-what-to-say": ("Chinese New Year Greetings", "What to say, in Chinese, pinyin & English", m_qa, K_ANS),
+"answers-diwali-wishes-what-to-say": ("Diwali Wishes: What to Say", "Hindi greetings, romanized, plus English lines", m_qa, K_ANS),
+"answers-do-fancy-fonts-work-on-iphone": ("Do Fancy Fonts Work on iPhone?", "Yes, but some styles show as empty boxes", m_qa, K_ANS),
+"answers-do-fancy-fonts-work-with-vietnamese": ("Fancy Fonts With Vietnamese?", "Stacked marks break most styles — here's what works", m_qa, K_ANS),
+"answers-does-zalgo-work-on-roblox": ("Does Zalgo Text Work on Roblox?", "What survives the filter, and what never does", m_zalgo, K_ANS),
+"answers-eid-mubarak-meaning-and-reply": ("What Does Eid Mubarak Mean?", "The meaning, and how to reply", m_qa, K_ANS),
+"answers-fancy-text-with-n-and-accented-letters": ("Fancy Text With ñ and Accents", "Why accented letters often stay plain", m_qa, K_ANS),
+"answers-fathers-day-messages-what-to-write": ("Father's Day Messages: What to Write", "Short, sincere lines for dads and father figures", m_qa, K_ANS),
+"answers-halloween-messages-what-to-write": ("Halloween Messages: What to Write", "Spooky captions and card lines that land", m_qa, K_ANS),
+"answers-happy-new-year-wishes-what-to-write": ("New Year Wishes: What to Write", "Funny, heartfelt & professional message ideas", m_qa, K_ANS),
+"answers-how-to-change-discord-username": ("Change Your Discord Username", "Unique name vs display name, explained", m_qa, K_ANS),
+"answers-how-to-change-instagram-username": ("Change Your Instagram Username", "The rules, the 14-day limit, and fancy fonts", m_qa, K_ANS),
+"answers-how-to-make-bold-text-in-discord": ("Bold Text in Discord", "Markdown for messages, Unicode for names", m_qa, K_ANS),
+"answers-how-to-remove-zalgo-text": ("How to Remove Zalgo Text", "Strip combining marks and recover the original", m_zalgo, K_ANS),
+"answers-how-to-uncover-redacted-text": ("Can You Uncover Redacted Text?", "Unicode blocks are permanent, images sometimes aren't", m_qa, K_ANS),
+"answers-is-fancy-text-bad-for-accessibility": ("Is Fancy Text Bad for Accessibility?", "How screen readers handle styled Unicode", m_qa, K_ANS),
+"answers-is-fancy-text-bad-for-seo": ("Is Fancy Text Bad for SEO?", "Fine as decoration, risky on keywords", m_qa, K_ANS),
+"answers-is-zalgo-text-safe": ("Is Zalgo Text Safe?", "No virus, no hack — the two real caveats", m_zalgo, K_ANS),
+"answers-merry-christmas-in-different-languages": ("Merry Christmas in Other Languages", "Feliz Navidad, Joyeux Noël & more, translated", m_qa, K_ANS),
+"answers-mothers-day-messages-what-to-write": ("Mother's Day Messages: What to Write", "Heartfelt lines for Mom, Grandma & more", m_qa, K_ANS),
+"answers-valentines-day-messages-what-to-write": ("Valentine's Day Messages: What to Write", "Sweet lines for partners, crushes & friends", m_qa, K_ANS),
+"answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
+"answers-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "TikTok Sans, and how it differs from styled text", m_qa, K_ANS),
+"answers-what-font-does-twitter-use": ("What Font Does Twitter/X Use?", "Chirp, the brand font, explained", m_qa, K_ANS),
+"answers-what-font-does-youtube-use": ("What Font Does YouTube Use?", "Roboto and YouTube Sans, explained", m_qa, K_ANS),
+"answers-what-is-ascii": ("What Is ASCII?", "The 128-character code behind plain text", m_qa, K_ANS),
+"answers-why-does-copied-fancy-text-lose-formatting": ("Why Fancy Text Loses Formatting", "It was never formatting — just substitute characters", m_qa, K_ANS),
+"answers-why-fancy-text-looks-different-on-iphone-vs-android": ("Fancy Text: iPhone vs Android", "Same characters, different system fonts", m_qa, K_ANS),
+"answers-why-fancy-text-removes-accents": ("Why Fancy Text Removes Accents", "Unicode has no styled á, ñ or ữ — here's why", m_qa, K_ANS),
+"answers-why-wont-discord-accept-fancy-username": ("Why Won't Discord Accept My Username?", "Usernames are ASCII-only; display names aren't", m_qa, K_ANS),
+"answers-why-wont-instagram-accept-my-fancy-username": ("Why Won't Instagram Accept My Username?", "Handles are ASCII-only — style your Name instead", m_qa, K_ANS),
+"events": ("Holiday & Event Text Generators", "Fonts, emoji, and phrases for every calendar holiday", m_grid, K_USE),
+"events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
+"events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
+"events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
+"events-eid-mubarak": ("Eid Mubarak Text & Symbol Generator", "Crescent moon emoji and ready-made Eid phrases", m_crescent, K_USE),
+"events-fathers-day": ("Father's Day Message Generator", "Bold, rugged fonts for World's Best Dad messages", m_necktie, K_USE),
+"events-halloween": ("Halloween Fonts & Emoji Generator", "Pumpkin, ghost, and bat emoji for spooky greetings", m_pumpkin, K_USE),
+"events-mothers-day": ("Mother's Day Message Generator", "Warm cursive fonts for Happy Mother's Day messages", m_bouquet, K_USE),
+"events-new-year": ("New Year Countdown Text Generator", "Firework emoji and Happy New Year phrases to paste", m_firework, K_USE),
+"events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
+"printables-banner-maker": ("Printable Banner Maker", "One flag per letter, cut and strung to spell any word", m_banner, K_PRINT),
+"printables-block-letters": ("Printable Block Letters & Stencils", "Bold hollow A-Z & 0-9 stencils to trace, cut and use", P(m_letter_stencil, letter="B"), K_PRINT),
+"printables-calligraphy-alphabet": ("Calligraphy Alphabet", "Blackletter and script letters to trace and print", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="blackletter & script"), K_PRINT),
+"printables-coloring-page-maker": ("Coloring Page Maker", "Any name or word becomes a colorable outline to print", m_crayons, K_PRINT),
+"printables-cursive-alphabet": ("Cursive Alphabet", "Cursive A-Z practice sheets to trace and print", P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive practice"), K_PRINT),
+"printables-handwriting-worksheet-generator": ("Handwriting Worksheet Generator", "Dial dotted-to-blank tracing difficulty for any word", m_pencil_ruled, K_PRINT),
+"printables": ("Printable Letters & Alphabets", "Bubble letters, cursive sheets, tracing pages and more", m_grid, K_PRINT),
+"printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
+"printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
+"printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
+"category-ancient-fonts": ("Ancient & Rune Fonts", "Rune, Cherokee & ancient script styling",
+      P(m_typo, sample="Rune", ff=SERIF, weight="800", size=84, label="runic · cherokee · ethiopic"), K_CAT),
+"category-emoji-letter-fonts": ("Emoji Letter Generator", "Block, squared & flag-emoji letter styles",
+      P(m_typo, sample="AB", weight="800", size=88, label="block · squared · flag letters",
+        extra='<rect x="256" y="230" width="50" height="36" rx="6" fill="#fff" opacity="0.9"/>'
+              f'<rect x="256" y="230" width="50" height="12" fill="{PURPLE}"/>'), K_CAT),
+"category-faux-fonts": ("Faux Script Generator", "Faux Cyrillic, Greek & katakana lookalikes",
+      P(m_typo, sample="СОРҮ", size=66, spacing="2", label="cyrillic · greek · katakana"), K_CAT),
+"category-fullwidth-fonts": ("Fullwidth Text Generator", "Wide, spaced-out vaporwave lettering",
+      P(m_typo, sample="A b", size=64, spacing="14", label="vaporwave · full width"), K_CAT),
+"category-novelty-fonts": ("Novelty Font Generator", "Keycap numbers & currency-symbol letters",
+      P(m_typo, sample="₳¥", ff=SYM, weight="700", size=100, label="currency + keycap symbols",
+        extra='<rect x="246" y="228" width="58" height="58" rx="14" fill="#fff"/>'
+              f'<text x="275" y="270" font-family="{SANS}" font-size="34" font-weight="800" fill="{INK}" text-anchor="middle">5</text>'), K_CAT),
+"library-cat-ascii-art": ("Cat ASCII Art", "Cat faces, loafs & long cats in plain text", m_paw, K_LIB),
+"library-dog-ascii-art": ("Dog ASCII Art", "Puppy faces and sitting dogs in plain text", m_paw, K_LIB),
+"library-heart-ascii-art": ("Heart ASCII Art", "Text hearts from tiny <3 to big solid hearts", m_heart, K_LIB),
+"library-skull-ascii-art": ("Skull ASCII Art", "Skulls and crossbones drawn in plain text", m_skull, K_LIB),
+"library-star-ascii-art": ("Star ASCII Art", "Sparkles, shooting stars & big text stars", m_star, K_LIB),
+"usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
+"usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
+"usecase-stylish-name": ("Stylish Name Maker", "Fancy names for FF, Instagram & Facebook", m_gamepad, K_USE),
+"ascii-art-generator": ("ASCII Art Generator", "Turn any word into big block-letter ASCII art",
+      P(m_transform, a="A", b="█"), K_USE),
+"ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
+      P(m_transform, a="A", b="01"), K_USE),
+"curved-text": ("Curved & Arc Text Generator", "Bend text into arcs, waves, spirals & shapes",
+      P(m_arc, letters="ARC"), K_USE),
+"hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+"katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+})
 
 
 # ---------------------------------------------------------------- builders
@@ -1303,14 +1932,14 @@ def hero_svg(slug, title, motif, kicker, a=PURPLE, b=BLUE):
 </svg>"""
 
 
-def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE):
+def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
     p = "o" + slug.replace("-", "")[:8]
-    t, s = esc(title), esc(sub)
-    wrapped = textwrap.wrap(t, width=17)[:3]
+    wrapped = smart_wrap(title, wrap_width_for(title, native))[:3]
     tspans = ""
     y0 = 250 - (len(wrapped) - 1) * 33
     for i, line in enumerate(wrapped):
-        tspans += f'<tspan x="80" y="{y0 + i*72}">{line}</tspan>'
+        tspans += f'<tspan x="80" y="{y0 + i*72}">{spanned(line, native)}</tspan>'
+    s = spanned(sub, native)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"
      width="1200" height="630">
   {defs(p, a, b)}
@@ -1339,7 +1968,10 @@ def main():
             output_width=1200, output_height=630)
         n += 1
 
-    # Homepage social card. The English root index.html references this card.
+    # Homepage social card + hero figure. The English root index.html
+    # references both.
+    with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
+        f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
     cairosvg.svg2png(
         bytestring=og_png_svg(
             HOME_CARD, "Fancy Text Generator",
@@ -1349,9 +1981,12 @@ def main():
         output_width=1200, output_height=630)
 
     # Localized homepage cards — translated copy on a translated page.
-    for _loc, (fname, title, sub) in LOCALIZED_HOME.items():
+    # High-demand locales (LOCALIZED_HOME_MOTIF) get a bespoke motif; the
+    # rest still use the master brand motif.
+    for loc, (fname, title, sub) in LOCALIZED_HOME.items():
+        motif = LOCALIZED_HOME_MOTIF.get(loc, m_brand)
         cairosvg.svg2png(
-            bytestring=og_png_svg(fname, title, sub, m_brand, K_SITE).encode(),
+            bytestring=og_png_svg(fname, title, sub, motif, K_SITE).encode(),
             write_to=os.path.join(OG, f"{fname}.png"),
             output_width=1200, output_height=630)
 

@@ -82,7 +82,8 @@
         { id: "cat",   label: "ᴥ", c: "ᴥ", m: ["cute"] },
         { id: "vv",    label: "v", c: "v", m: ["cute", "silly"] },
         { id: "delta", label: "Δ", c: "Δ", m: ["chaotic", "angry"] },
-        { id: "wave",  label: "〜", c: "〜", m: ["silly", "chaotic"] }
+        { id: "wave",  label: "〜", c: "〜", m: ["silly", "chaotic"] },
+        { id: "sara",  label: "皿", c: "皿", m: ["angry"] }
       ],
 
       cheeks: [
