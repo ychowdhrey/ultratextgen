@@ -1,17 +1,18 @@
 {
   "generated": "run scripts/classify-accent-support.js to regenerate",
   "sample": {
-    "accentChars": "áéíóúàèìòùâêîôûäëïöüãõñçăâđêôơưữứựếệểồộớợằ",
+    "accentChars": "áéíóúàèìòùâêîôûäëïöüãõñçÁÉÍÓÚÇÖÜăâđêôơưữứựếệểồộớợằışğĞİŞ",
     "samples": {
       "es": "Señor",
       "vi": "Việt"
     }
   },
   "counts": {
-    "full": 18,
-    "partial": 48,
+    "full": 27,
+    "partial": 64,
+    "breaks": 7,
     "na": 8,
-    "none": 5
+    "none": 6
   },
   "styles": [
     {
@@ -45,6 +46,16 @@
       "example_vi": "V̶̸i̶̸ệ̶̸t̶̸"
     },
     {
+      "name": "Ultra Double Overline",
+      "slug": "ultra-double-overline",
+      "type": "decorator",
+      "category": "underline",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̿e̿ñ̿o̿r̿",
+      "example_vi": "V̿i̿ệ̿t̿"
+    },
+    {
       "name": "Ultra Double Strike",
       "slug": "ultra-double-strike",
       "type": "decorator",
@@ -53,6 +64,46 @@
       "bucket": "full",
       "example_es": "S̶̵e̶̵ñ̶̵o̶̵r̶̵",
       "example_vi": "V̶̵i̶̵ệ̶̵t̶̵"
+    },
+    {
+      "name": "Ultra Double Underline",
+      "slug": "ultra-double-underline",
+      "type": "decorator",
+      "category": "underline",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̳e̳ñ̳o̳r̳",
+      "example_vi": "V̳i̳ệ̳t̳"
+    },
+    {
+      "name": "Ultra Heavy Strike",
+      "slug": "ultra-heavy-strike",
+      "type": "decorator",
+      "category": "strikethrough",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̶̶e̶̶ñ̶̶o̶̶r̶̶",
+      "example_vi": "V̶̶i̶̶ệ̶̶t̶̶"
+    },
+    {
+      "name": "Ultra Light Slash",
+      "slug": "ultra-light-slash",
+      "type": "decorator",
+      "category": "strikethrough",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̷e̷ñ̷o̷r̷",
+      "example_vi": "V̷i̷ệ̷t̷"
+    },
+    {
+      "name": "Ultra Overline",
+      "slug": "ultra-overline",
+      "type": "decorator",
+      "category": "underline",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̅e̅ñ̅o̅r̅",
+      "example_vi": "V̅i̅ệ̅t̅"
     },
     {
       "name": "Ultra Slash",
@@ -75,6 +126,26 @@
       "example_vi": "V̶i̶ệ̶t̶"
     },
     {
+      "name": "Ultra Strike + Underline",
+      "slug": "ultra-strike-underline",
+      "type": "decorator",
+      "category": "strikethrough",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̶̲e̶̲ñ̶̲o̶̲r̶̲",
+      "example_vi": "V̶̲i̶̲ệ̶̲t̶̲"
+    },
+    {
+      "name": "Ultra Thin Strike",
+      "slug": "ultra-thin-strike",
+      "type": "decorator",
+      "category": "strikethrough",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̵e̵ñ̵o̵r̵",
+      "example_vi": "V̵i̵ệ̵t̵"
+    },
+    {
       "name": "Ultra Underline",
       "slug": "ultra-underline",
       "type": "decorator",
@@ -95,10 +166,30 @@
       "example_vi": "Ṽiệ̃t"
     },
     {
+      "name": "Ultra Wavy Strike",
+      "slug": "ultra-wavy-strike",
+      "type": "decorator",
+      "category": "strikethrough",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̴e̴ñ̴o̴r̴",
+      "example_vi": "V̴i̴ệ̴t̴"
+    },
+    {
+      "name": "Ultra Wavy Underline",
+      "slug": "ultra-wavy-underline",
+      "type": "decorator",
+      "category": "underline",
+      "groupSlug": "lines",
+      "bucket": "full",
+      "example_es": "S̰ḛñ̰o̰r̰",
+      "example_vi": "V̰ḭệ̰t̰"
+    },
+    {
       "name": "Ultra Word Angle Wrap",
       "slug": "ultra_word_angle_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "wrap",
       "bucket": "full",
       "example_es": "⦅Señor⦆",
@@ -108,7 +199,7 @@
       "name": "Ultra Word Arrow Wrap",
       "slug": "ultra_word_arrow_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "arrows",
       "bucket": "full",
       "example_es": "→Señor←",
@@ -118,7 +209,7 @@
       "name": "Ultra Word Backward Arrow Wrap",
       "slug": "ultra_word_backward_arrow_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "arrows",
       "bucket": "full",
       "example_es": "Señor←",
@@ -128,7 +219,7 @@
       "name": "Ultra Word Bar Wrap",
       "slug": "ultra_word_bar_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "bars",
       "bucket": "full",
       "example_es": "|Señor|",
@@ -138,7 +229,7 @@
       "name": "Ultra Word Bracket Wrap",
       "slug": "ultra_word_bracket_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "frames",
       "bucket": "full",
       "example_es": "[Señor]",
@@ -148,7 +239,7 @@
       "name": "Ultra Word Chevron Wrap",
       "slug": "ultra_word_chevron_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "frames",
       "bucket": "full",
       "example_es": "‹Señor›",
@@ -158,7 +249,7 @@
       "name": "Ultra Word Curly Wrap",
       "slug": "ultra_word_curly_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "wrap",
       "bucket": "full",
       "example_es": "❨Señor❩",
@@ -168,7 +259,7 @@
       "name": "Ultra Word Double Bar Wrap",
       "slug": "ultra_word_double_bar_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "bars",
       "bucket": "full",
       "example_es": "‖Señor‖",
@@ -178,7 +269,7 @@
       "name": "Ultra Word Double Wrap",
       "slug": "ultra_word_double_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "wrap",
       "bucket": "full",
       "example_es": "⦅❨Señor❩⦆",
@@ -188,7 +279,7 @@
       "name": "Ultra Word Forward Arrow Wrap",
       "slug": "ultra_word_forward_arrow_wrap",
       "type": "procedure",
-      "category": "word-wrappers",
+      "category": "text-decorator",
       "groupSlug": "arrows",
       "bucket": "full",
       "example_es": "→Señor",
@@ -315,6 +406,16 @@
       "example_vi": "𝐕𝐢ệ𝐭"
     },
     {
+      "name": "Ultra Bopomofo",
+      "slug": "ultra-bopomofo",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "ancient",
+      "bucket": "partial",
+      "example_es": "ㄗㄉñㄓㄖ",
+      "example_vi": "ㄚㄍệㄘ"
+    },
+    {
       "name": "Ultra Bubble",
       "slug": "ultra-bubble",
       "type": "map",
@@ -401,8 +502,8 @@
       "category": "bubble",
       "groupSlug": "bracket",
       "bucket": "partial",
-      "example_es": "(bñ))",
-      "example_vi": "()ệg"
+      "example_es": "( S )( e )ñ( o )( r )",
+      "example_vi": "( V )( i )ệ( t )"
     },
     {
       "name": "Ultra Bubble Spaced",
@@ -435,6 +536,26 @@
       "example_vi": "🅅 🄸 ệ 🅃"
     },
     {
+      "name": "Ultra Canadian Syllabics",
+      "slug": "ultra-canadian-syllabics",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "ancient",
+      "bucket": "partial",
+      "example_es": "ᔕᕾñᗝᗇ",
+      "example_vi": "ᐯᑊệt"
+    },
+    {
+      "name": "Ultra Cherokee",
+      "slug": "ultra-cherokee",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "ancient",
+      "bucket": "partial",
+      "example_es": "ᏪᎼñᏎᎱ",
+      "example_vi": "ᏙᏖệᎲ"
+    },
+    {
       "name": "Ultra Chicano Script",
       "slug": "ultra_cursive_chicano",
       "type": "procedure",
@@ -443,6 +564,16 @@
       "bucket": "partial",
       "example_es": "꧁༺ 𝓢𝓮ñ𝓸𝓻 ༻꧂",
       "example_vi": "꧁༺ 𝓥𝓲ệ𝓽 ༻꧂"
+    },
+    {
+      "name": "Ultra Currency",
+      "slug": "ultra-currency",
+      "type": "map",
+      "category": "novelty",
+      "groupSlug": "novelty",
+      "bucket": "partial",
+      "example_es": "$€ño₹",
+      "example_vi": "Việ₮"
     },
     {
       "name": "Ultra Cute Bubble",
@@ -473,6 +604,56 @@
       "bucket": "partial",
       "example_es": "𝕊𝕖ñ𝕠𝕣",
       "example_vi": "𝕍𝕚ệ𝕥"
+    },
+    {
+      "name": "Ultra Emoji Block",
+      "slug": "ultra-emoji-block",
+      "type": "map",
+      "category": "emoji-letters",
+      "groupSlug": "emoji-letters",
+      "bucket": "partial",
+      "example_es": "🆂🅴ñ🅾🆁",
+      "example_vi": "🆅🅸ệ🆃"
+    },
+    {
+      "name": "Ultra Ethiopic",
+      "slug": "ultra-ethiopic",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "ancient",
+      "bucket": "partial",
+      "example_es": "የሠñከዘ",
+      "example_vi": "ገቀệደ"
+    },
+    {
+      "name": "Ultra Faux Cyrillic",
+      "slug": "ultra-faux-cyrillic",
+      "type": "map",
+      "category": "faux",
+      "groupSlug": "faux",
+      "bucket": "partial",
+      "example_es": "Ѕеñоя",
+      "example_vi": "Ѵіệт"
+    },
+    {
+      "name": "Ultra Faux Greek",
+      "slug": "ultra-faux-greek",
+      "type": "map",
+      "category": "faux",
+      "groupSlug": "faux",
+      "bucket": "partial",
+      "example_es": "Σεñορ",
+      "example_vi": "Vιệτ"
+    },
+    {
+      "name": "Ultra Fullwidth",
+      "slug": "ultra-fullwidth",
+      "type": "map",
+      "category": "fullwidth",
+      "groupSlug": "fullwidth",
+      "bucket": "partial",
+      "example_es": "Ｓｅñｏｒ",
+      "example_vi": "Ｖｉệｔ"
     },
     {
       "name": "Ultra Gothic",
@@ -565,6 +746,16 @@
       "example_vi": "𝑉𝑖ệ𝑡"
     },
     {
+      "name": "Ultra Katakana",
+      "slug": "ultra-katakana",
+      "type": "map",
+      "category": "faux",
+      "groupSlug": "faux",
+      "bucket": "partial",
+      "example_es": "サエñオラ",
+      "example_vi": "ヴイệタ"
+    },
+    {
       "name": "Ultra Old English Banner",
       "slug": "ultra-old-english-banner",
       "type": "procedure",
@@ -573,6 +764,36 @@
       "bucket": "partial",
       "example_es": "꧁༺ 𝕾𝖊ñ𝖔𝖗 ༻꧂",
       "example_vi": "꧁༺ 𝖁𝖎ệ𝖙 ༻꧂"
+    },
+    {
+      "name": "Ultra Old Italic",
+      "slug": "ultra-old-italic",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "ancient",
+      "bucket": "partial",
+      "example_es": "𐌔𐌄ñ𐌏𐌓",
+      "example_vi": "𐌖𐌉ệ𐌕"
+    },
+    {
+      "name": "Ultra Regional Indicator",
+      "slug": "ultra-regional-indicator",
+      "type": "map",
+      "category": "emoji-letters",
+      "groupSlug": "emoji-letters",
+      "bucket": "partial",
+      "example_es": "🇸⁠🇪⁠ñ🇴⁠🇷⁠",
+      "example_vi": "🇻⁠🇮⁠ệ🇹⁠"
+    },
+    {
+      "name": "Ultra Runic",
+      "slug": "ultra-runic",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "runic",
+      "bucket": "partial",
+      "example_es": "ᛊᛖñᛟᚱ",
+      "example_vi": "ᚡᛁệᛏ"
     },
     {
       "name": "Ultra Script",
@@ -645,6 +866,26 @@
       "example_vi": "ⱽᶦệᵗ"
     },
     {
+      "name": "Ultra Squared",
+      "slug": "ultra-squared",
+      "type": "map",
+      "category": "emoji-letters",
+      "groupSlug": "emoji-letters",
+      "bucket": "partial",
+      "example_es": "🅂🄴ñ🄾🅁",
+      "example_vi": "🅅🄸ệ🅃"
+    },
+    {
+      "name": "Ultra Tibetan",
+      "slug": "ultra-tibetan",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "ancient",
+      "bucket": "partial",
+      "example_es": "ཛཅñབཚ",
+      "example_vi": "ཟཏệཝ"
+    },
+    {
       "name": "Ultra Tiny Subscript",
       "slug": "ultra-tiny-subscript",
       "type": "map",
@@ -665,6 +906,16 @@
       "example_vi": "𝚅𝚒ệ𝚝"
     },
     {
+      "name": "Ultra Yi",
+      "slug": "ultra-yi",
+      "type": "map",
+      "category": "ancient",
+      "groupSlug": "ancient",
+      "bucket": "partial",
+      "example_es": "ꀒꀄñꀎꀑ",
+      "example_vi": "ꀕꀈệꀓ"
+    },
+    {
       "name": "Upside Down Micro Text",
       "slug": "upside-down-micro",
       "type": "function",
@@ -673,6 +924,76 @@
       "bucket": "partial",
       "example_es": "ɹoñǝS",
       "example_vi": "ʇệᴉΛ"
+    },
+    {
+      "name": "aLtErNaTiNg CaSe",
+      "slug": "case-alternating",
+      "type": "procedure",
+      "category": "case-converter",
+      "groupSlug": "alternating",
+      "bucket": "breaks",
+      "example_es": "sEñOr",
+      "example_vi": "vIệT"
+    },
+    {
+      "name": "Capitalized Case",
+      "slug": "case-capitalized",
+      "type": "procedure",
+      "category": "case-converter",
+      "groupSlug": "capitalized",
+      "bucket": "breaks",
+      "example_es": "Señor",
+      "example_vi": "Việt"
+    },
+    {
+      "name": "lowercase",
+      "slug": "case-lower",
+      "type": "procedure",
+      "category": "case-converter",
+      "groupSlug": "lower",
+      "bucket": "breaks",
+      "example_es": "señor",
+      "example_vi": "việt"
+    },
+    {
+      "name": "Sentence case",
+      "slug": "case-sentence",
+      "type": "procedure",
+      "category": "case-converter",
+      "groupSlug": "sentence",
+      "bucket": "breaks",
+      "example_es": "Señor",
+      "example_vi": "Việt"
+    },
+    {
+      "name": "Title Case",
+      "slug": "case-title",
+      "type": "procedure",
+      "category": "case-converter",
+      "groupSlug": "title",
+      "bucket": "breaks",
+      "example_es": "Señor",
+      "example_vi": "Việt"
+    },
+    {
+      "name": "tOGGLE cASE",
+      "slug": "case-toggle",
+      "type": "procedure",
+      "category": "case-converter",
+      "groupSlug": "toggle",
+      "bucket": "breaks",
+      "example_es": "sEÑOR",
+      "example_vi": "vIỆT"
+    },
+    {
+      "name": "UPPERCASE",
+      "slug": "case-upper",
+      "type": "procedure",
+      "category": "case-converter",
+      "groupSlug": "upper",
+      "bucket": "breaks",
+      "example_es": "SEÑOR",
+      "example_vi": "VIỆT"
     },
     {
       "name": "Ultra Alternate Redact",
@@ -800,6 +1121,16 @@
       "type": "procedure",
       "category": "italic",
       "groupSlug": "alternating",
+      "bucket": "none",
+      "example_es": "Señor",
+      "example_vi": "Việt"
+    },
+    {
+      "name": "Ultra Keycap Numbers",
+      "slug": "ultra-keycap-numbers",
+      "type": "map",
+      "category": "novelty",
+      "groupSlug": "novelty",
       "bucket": "none",
       "example_es": "Señor",
       "example_vi": "Việt"

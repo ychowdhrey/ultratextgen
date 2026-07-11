@@ -49,11 +49,12 @@ const { renderAny } = global.window.UltraTextGenRender;
 const styles = global.window.textStyles || {};
 
 /* --- Accent sample ------------------------------------------------------- */
-// NFC precomposed accented letters: Western-European + Vietnamese coverage.
+// NFC precomposed accented letters: Western-European + Vietnamese + Turkish coverage.
 const ACCENT_CHARS = Array.from(
-  'áéíóúàèìòùâêîôûäëïöüãõñç' +      // Western European
+  'áéíóúàèìòùâêîôûäëïöüãõñçÁÉÍÓÚÇÖÜ' + // Western European (upper+lower)
   'ăâđêôơư' +                        // Vietnamese base letters
-  'ữứựếệểồộớợằ'                      // Vietnamese vowel + tone stacks
+  'ữứựếệểồộớợằ' +                    // Vietnamese vowel + tone stacks
+  'ışğĞİŞ'                           // Turkish-unique: dotless ı, ş, ğ (+ capitals)
 );
 
 // Display samples for the table (mixed accented + plain).
@@ -101,7 +102,8 @@ function differingCores(a, b) {
 // swapped for a distinct glyph (𝗲, ⦅e⦆, 𝖊, ǝ) while the accent stayed plain.
 function accentConsistency(R) {
   const PAIRS = [['e', 'é'], ['e', 'ê'], ['e', 'ệ'], ['o', 'ô'], ['a', 'ă'],
-                 ['u', 'ư'], ['u', 'ữ'], ['n', 'ñ'], ['c', 'ç'], ['d', 'đ']];
+                 ['u', 'ư'], ['u', 'ữ'], ['n', 'ñ'], ['c', 'ç'], ['d', 'đ'],
+                 ['i', 'ı'], ['s', 'ş'], ['g', 'ğ']];
   let consistent = 0;
   for (const [base, acc] of PAIRS) {
     const [coreBase, coreAcc] = differingCores(R(base), R(acc));

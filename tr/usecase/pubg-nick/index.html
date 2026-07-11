@@ -127,13 +127,14 @@
 </script>
 </head>
 <body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <div id="shared-header"></div>
-  <script src="/header.js"></script>
+  <script src="/header.js" defer></script>
 
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <a href="/tr/">Ana Sayfa</a>
@@ -156,7 +157,8 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Adını veya nickini yaz…" maxlength="100">Kartal</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">Sonuca süsleme ekle</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Semboller</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emojiler</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">PUBG nick kontrolü — sen yazdıkça anında</div><div id="pubgNameChecker"></div></div>
+  <div class="decoration-section"><div class="decoration-label">Sonuca süsleme ekle</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Semboller</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emojiler</button><button class="decoration-tab" data-deco-tab="pubg">PUBG</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -434,13 +436,25 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: build the PUBG decoration tab from shared packs
+     (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ pubg: ["gameFrames", "warrior", "crowns", "spacing"] })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
-<script src="/styles.js"></script>
-<script src="/renderer.js"></script>
+<script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 
 <!-- Symbol explorer + wrappers -->
-<script src="/symbol-explorer.js"></script>
+<script src="/symbol-explorer.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
@@ -463,6 +477,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<script src="/footer.js"></script>
+<script src="/js/gamename/game-rules.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  const ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "pubgNameChecker",
+      games: ["pubg"],
+      inputId: "mainInput",
+      text: {
+        placeholder: "Nickin sen yazdıkça otomatik dolar — istersen değiştirip başka bir isim dene",
+        ok: "PUBG Mobile için güvenli",
+        warn: "Bazı telefonlarda kutu ▯ görünebilir",
+        fail: "PUBG Mobile bunu reddeder",
+        empty: "Yukarıya nickini yaz — anında kontrol edilir",
+        issue: {
+          "over-limit": "Çok uzun — PUBG Mobile'da en fazla 14 karakter.",
+          "space": "Normal boşluk reddedilir — görünmez karakter kullan.",
+          "unknown-chars": "Bu karakterler nadiren desteklenir, kutu olarak görünebilir:",
+          "too-short": "Çok kısa."
+        }
+      }
+    });
+  }
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+
+<script src="/footer.js" defer></script>
 </body>
 </html>

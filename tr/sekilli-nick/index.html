@@ -343,6 +343,10 @@
       <h4>PUBG Şekilli Nick</h4>
       <p>PUBG Mobile için oyuna uygun nickler, isim değiştirme adımları ve semboller.</p>
     </a>
+    <a href="/tr/usecase/coc-nick/" class="compare-card variant-muted u-no-underline">
+      <h4>COC Nick</h4>
+      <p>Clash of Clans için taç ♛ ve ꧁꧂ çerçeveli nickler, isim değiştirme adımları.</p>
+    </a>
     <a href="/tr/library/semboller/" class="compare-card variant-muted u-no-underline">
       <h4>Şekilli Semboller</h4>
       <p>Nick, bio ve durum için yıldız, kalp, çerçeve ve süsleme koleksiyonu.</p>
@@ -399,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!ns || !ns.gameRules) return;
   ns.gameRules.initChecker({
     mount: "trNickChecker",
-    games: ["pubg", "ff", "ml", "discord"],
+    games: ["pubg", "ff", "ml", "discord", "coc"],
     inputId: "mainInput",
     text: {
       placeholder: "Yukarıdaki nickin — ya da başka bir nick yazıp dene",

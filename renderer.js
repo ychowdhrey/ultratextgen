@@ -365,27 +365,46 @@ function renderMap(text, style) {
     'off', 'on', 'or', 'per', 'so', 'the', 'to', 'up', 'via', 'vs'
   ]);
 
+  // Reads the page's declared language (e.g. lang="tr") so case conversion
+  // follows locale casing rules (Turkish i/İ vs ı/I) instead of the default
+  // ASCII-only mapping. Falls back to the locale-unaware default when no
+  // document is available (e.g. classify-accent-support.js's Node shim).
+  function caseLocale() {
+    return (typeof document !== 'undefined' && document.documentElement &&
+      document.documentElement.lang) || undefined;
+  }
+
+  function caseUpper(token) {
+    const locale = caseLocale();
+    return locale ? token.toLocaleUpperCase(locale) : token.toUpperCase();
+  }
+
+  function caseLower(token) {
+    const locale = caseLocale();
+    return locale ? token.toLocaleLowerCase(locale) : token.toLowerCase();
+  }
+
   function caseHasIntentionalCasing(token) {
     const letters = token.replace(/[^\p{L}]/gu, '');
     if (letters.length < 2) return false;
-    if (letters === letters.toUpperCase()) return true; // acronym: NASA, FBI
+    if (letters === caseUpper(letters)) return true; // acronym: NASA, FBI
     return /\p{Lu}/u.test(letters.slice(1)); // internal caps: McDonald, iPhone
   }
 
   function caseLowerWord(token) {
-    return caseHasIntentionalCasing(token) ? token : token.toLowerCase();
+    return caseHasIntentionalCasing(token) ? token : caseLower(token);
   }
 
   function caseCapFirstAlpha(token) {
     const m = token.match(/\p{L}/u);
     if (!m) return token;
     const idx = token.indexOf(m[0]);
-    return token.slice(0, idx) + token[idx].toUpperCase() + token.slice(idx + 1);
+    return token.slice(0, idx) + caseUpper(token[idx]) + token.slice(idx + 1);
   }
 
   function caseCapWord(token) {
     if (caseHasIntentionalCasing(token)) return token;
-    return token.split('-').map(seg => caseCapFirstAlpha(seg.toLowerCase())).join('-');
+    return token.split('-').map(seg => caseCapFirstAlpha(caseLower(seg))).join('-');
   }
 
   function caseFixPronounI(token) {
@@ -515,9 +534,11 @@ function renderMap(text, style) {
         : text,
 
     // === CASE CONVERTER — plain ASCII case transforms, no Unicode mapping ===
-    'case-upper': text => text.toUpperCase(),
+    // Locale-aware (see caseUpper/caseLower) so Turkish-tagged pages get
+    // correct i/İ/ı/I casing instead of JS's default ASCII-only rules.
+    'case-upper': text => caseUpper(text),
 
-    'case-lower': text => text.toLowerCase(),
+    'case-lower': text => caseLower(text),
 
     // First letter of every word capitalized, no small-word exceptions.
     'case-capitalized': text =>
@@ -558,11 +579,11 @@ function renderMap(text, style) {
 
     // aLtErNaTiNg cAsE — the "mocking SpongeBob" meme case.
     'case-alternating': text =>
-      [...text].map((c, i) => (i % 2 === 0 ? c.toLowerCase() : c.toUpperCase())).join(''),
+      [...text].map((c, i) => (i % 2 === 0 ? caseLower(c) : caseUpper(c))).join(''),
 
     // tOGGLE cASE — inverts whatever case each character already is.
     'case-toggle': text =>
-      [...text].map(c => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())).join('')
+      [...text].map(c => (c === caseUpper(c) ? caseLower(c) : caseUpper(c))).join('')
   };
 
   /* -----------------------------
