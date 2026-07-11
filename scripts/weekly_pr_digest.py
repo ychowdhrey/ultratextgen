@@ -34,6 +34,8 @@ LANE_RULES = [
     ("answers/", "Answer pages"),
     ("usecase/", "Usecase pages"),
     ("guide/", "Guide pages"),
+    ("printables/", "Printables"),
+    ("events/", "Events"),
     ("curved-text/", "Visual & printable assets"),
     # Root-level site-wide pages (homepage, legal, 404, site icons) — no
     # dedicated page-type namespace; see docs/README.md Known gaps.
@@ -58,6 +60,13 @@ LANE_RULES = [
     ("x/", "Platform pages"),
     ("youtube/", "Platform pages"),
     ("roblox/", "Platform pages"),
+    # Root-level single-purpose tool pages (WebApplication, same pattern as
+    # /category/ generators, just hosted at the repo root) — added one at a
+    # time as they appear; see docs/README.md Known gaps.
+    ("ascii-art-generator/", "Category pages"),
+    ("ascii-converter/", "Category pages"),
+    ("kaomoji-dictionary/", "Category pages"),
+    ("kaomoji-generator/", "Category pages"),
     ("embed/", "Image backlinks"),
     ("assets/", "Image SEO"),
     ("data/library_opportunities", "Opportunity backlog"),
@@ -73,6 +82,7 @@ LANE_RULES = [
     ("styles.js", "Core JS"),
     ("script.js", "Core JS"),
     ("header.js", "Core JS"),
+    ("footer.js", "Core JS"),
     ("fonts.json", "Core JS"),
     ("gothic-tools.js", "Core JS"),
     ("accent-notice.js", "Core JS"),
@@ -102,6 +112,18 @@ LANE_RULES = [
     ("vi/", "i18n"),
     ("sv/", "i18n"),
     ("no/", "i18n"),
+    ("ar/", "i18n"),
+    ("bs/", "i18n"),
+    ("cs/", "i18n"),
+    ("hi/", "i18n"),
+    ("hr/", "i18n"),
+    ("ja/", "i18n"),
+    ("ko/", "i18n"),
+    ("ro/", "i18n"),
+    ("ru/", "i18n"),
+    ("sk/", "i18n"),
+    ("sr/", "i18n"),
+    ("th/", "i18n"),
 ]
 
 # A lane label used when no rule matched any of a PR's files. These are the

@@ -34,6 +34,7 @@ workflow that produces it.
 | **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) + `guide-opportunity-map-<date>.md` | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
+| **Events** (seasonal/holiday pages) | `/events/` (+ locale variants, e.g. `/es/events/`) | `WebApplication` + `FAQPage` | ❌ undocumented | `data/event_page_specs/*.json` (no CSV backlog row) | `generate_event_page_from_spec.py` (mirrors `generate_library_page_from_spec.py`; validation is built into the generator, no separate validator script) | ⚠️ generator exists, no backlog/governing doc — new this review (PR #457 + Spanish `es/events/` pages) |
 | **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | [`coloring-sheet-generator-strategy.md`](./coloring-sheet-generator-strategy.md) (strategy) + `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog + strategy, no generator |
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Root pages** (homepage, 404, legal) | `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`, `terms/`, site icons | `WebSite` (homepage) | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented |
@@ -128,6 +129,17 @@ here so they aren't lost. Update as they're closed or new ones appear.
    prefix was in `LANE_RULES`, so both PRs surfaced as unclassified; both
    prefixes are now added. The locale count (12+ and growing weekly) makes
    the missing i18n governing doc the most pressing item in this gap.
+   **Update (2026-07-11):** the pace accelerated sharply — twelve more locales
+   landed in a single week (Arabic `/ar/`, Bosnian `/bs/`, Czech `/cs/`, Hindi
+   `/hi/`, Croatian `/hr/`, Japanese `/ja/`, Korean `/ko/`, Romanian `/ro/`,
+   Russian `/ru/`, Slovak `/sk/`, Serbian `/sr/`, Thai `/th/` — PRs #414, #415,
+   #422, #431, #432, #435, #436, #448, #450, #451, #454, #466, #467), none of
+   which were in `LANE_RULES`, so every file under them surfaced as
+   "Unclassified." All twelve are now added. With ~26 locale prefixes now
+   hardcoded one-by-one in `LANE_RULES`, the classifier itself is becoming the
+   symptom: a governing i18n doc that defines the locale-directory convention
+   (so the classifier can match a pattern instead of an enumerated list) is
+   now the single most pressing gap in this file.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
    (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
@@ -159,7 +171,16 @@ here so they aren't lost. Update as they're closed or new ones appear.
    "Visual & printable assets" lane — but the `/curved-text/` top-level namespace
    is still absent from the page-type table. Decide: promote to a full lane
    (shared export util + a governing doc) or keep it a principle-governed
-   cross-cutting track.
+   cross-cutting track. **Update (2026-07-11):** the *other* half of this gap
+   just surfaced hard — the `/printables/` page-type namespace (already a row
+   in the table above) had **no** `LANE_RULES` entry at all, so every
+   printables PR this week classified as "Unclassified" (15 of ~73 merged
+   PRs: #420, #423–#426, #428, #429, #440–#445, #447, #468 — coloring pages,
+   dot-to-dot, tracing, banner/name-puzzle makers, bubble letters, all A–Z
+   variants). Added `("printables/", "Printables")` to `LANE_RULES` to close
+   the classifier gap; the underlying gap (no shared export helper, no
+   generator/validator, no governing doc, still fully hand-built) remains
+   open and is now the highest-volume hand-built lane in the repo.
 9. **New this week: Ads / monetization track has no governing doc.** PRs
    #366–#368 stood up Journey ads as a real operational track — site-wide tag
    injection via `header.js`, a CI gate (`ads-check.yml` / `check-ads.js`),
@@ -167,6 +188,29 @@ here so they aren't lost. Update as they're closed or new ones appear.
    replacing Google AdSense. Added to the operational-tracks table this
    review; no strategy/decision doc exists yet (e.g. why Journey over
    AdSense, revenue-share terms, page exclusions). Flagging so it isn't lost.
+10. **New this week: Events (seasonal/holiday pages) is a genuinely new lane,
+    not just an unclassified PR.** PR #457 added ten English `/events/<slug>/`
+    pages (Christmas, Halloween, Diwali, Eid Mubarak, Lunar New Year, etc.)
+    plus a hub, and companion Spanish pages already exist at `/es/events/`
+    with three matching `/es/answers/` spokes. It runs on real infrastructure
+    — `scripts/generate_event_page_from_spec.py` (mirrors the library
+    generator, validation built in) reading `data/event_page_specs/*.json`,
+    and a dedicated `js/events/eventPageController.js` — but has no page-type
+    row, no governing doc, and no demand-backlog entry (no `page_type=events`
+    rows exist in `library_opportunities.csv`). Added a row to the page-type
+    table above and a `LANE_RULES` entry (`events/` → "Events"); the
+    governing doc and backlog integration are still open.
+11. **New this week: root-level standalone tool pages, no naming
+    convention.** `/ascii-art-generator/`, `/ascii-converter/` (PRs #453,
+    #455) and `/kaomoji-dictionary/`, `/kaomoji-generator/` (PR #438) are four
+    new `WebApplication` tool pages hand-built at the repo root instead of
+    under `/category/` — the same JTBD as a Category page, different URL
+    shape. Added their exact directory names to `LANE_RULES` as "Category
+    pages" (case-by-case, same pattern already used for `roblox/` under
+    Platform pages) so they stop surfacing as unclassified, but the actual
+    question — should root-level tool pages be folded under `/category/`, or
+    is "shorter root slug" an intentional SEO pattern that needs its own
+    naming rule — is undecided. Revisit if more of these appear.
 
 ---
 
