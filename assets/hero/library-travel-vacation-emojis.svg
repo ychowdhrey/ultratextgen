@@ -23,17 +23,13 @@
   <circle cx="1010" cy="60" r="260" fill="url(#glowhlibraryt)"/>
   <rect x="0" y="0" width="8" height="340" fill="url(#gvhlibraryt)"/>
   <g transform="translate(740 -10) scale(1.02)">
-    <path d="M64 210 l24 -56 q8 -18 28 -18 h128 q20 0 28 18 l24 56 v44 h-32
-             a26 26 0 0 1 -52 0 h-64 a26 26 0 0 1 -52 0 h-32 Z" fill="url(#ghlibraryt)"/>
-    <path d="M110 158 h60 v34 h-78 Z" fill="#fff" opacity="0.85"/>
-    <path d="M186 158 h44 l14 34 h-58 Z" fill="#fff" opacity="0.85"/>
-    <circle cx="118" cy="254" r="20" fill="#1a1a2e"/>
-    <circle cx="244" cy="254" r="20" fill="#1a1a2e"/></g>
+    <path d="M180 70 L232 220 L182 196 L150 236 L146 190 L60 176 Z" fill="url(#ghlibraryt)"/>
+    <path d="M180 70 L182 196" stroke="#FBFBFE" stroke-width="4" opacity="0.5"/>
+    <path d="M60 262 q60 -20 120 0 q60 20 120 0" fill="none" stroke="#64748b"
+          stroke-width="6" stroke-linecap="round" opacity="0.3"/></g>
   <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
-    <path d="M64 210 l24 -56 q8 -18 28 -18 h128 q20 0 28 18 l24 56 v44 h-32
-             a26 26 0 0 1 -52 0 h-64 a26 26 0 0 1 -52 0 h-32 Z" fill="url(#ghlibraryt)"/>
-    <path d="M110 158 h60 v34 h-78 Z" fill="#fff" opacity="0.85"/>
-    <path d="M186 158 h44 l14 34 h-58 Z" fill="#fff" opacity="0.85"/>
-    <circle cx="118" cy="254" r="20" fill="#1a1a2e"/>
-    <circle cx="244" cy="254" r="20" fill="#1a1a2e"/></g>
+    <path d="M180 70 L232 220 L182 196 L150 236 L146 190 L60 176 Z" fill="url(#ghlibraryt)"/>
+    <path d="M180 70 L182 196" stroke="#FBFBFE" stroke-width="4" opacity="0.5"/>
+    <path d="M60 262 q60 -20 120 0 q60 20 120 0" fill="none" stroke="#64748b"
+          stroke-width="6" stroke-linecap="round" opacity="0.3"/></g>
 </svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="gheventsmo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvheventsmo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowheventsmo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotsheventsmo" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotsheventsmo)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowheventsmo)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvheventsmo)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <path d="M120 230 L240 230 L206 300 L154 300 Z" fill="url(#gvheventsmo)"/>
+    <line x1="150" y1="230" x2="150" y2="150" stroke="#64748b" stroke-width="5"/>
+    <line x1="180" y1="230" x2="180" y2="130" stroke="#64748b" stroke-width="5"/>
+    <line x1="210" y1="230" x2="210" y2="150" stroke="#64748b" stroke-width="5"/>
+    <circle cx="150" cy="135" r="26" fill="url(#gheventsmo)"/>
+    <circle cx="180" cy="110" r="34" fill="url(#gheventsmo)"/>
+    <circle cx="210" cy="135" r="26" fill="url(#gheventsmo)"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <path d="M120 230 L240 230 L206 300 L154 300 Z" fill="url(#gvheventsmo)"/>
+    <line x1="150" y1="230" x2="150" y2="150" stroke="#64748b" stroke-width="5"/>
+    <line x1="180" y1="230" x2="180" y2="130" stroke="#64748b" stroke-width="5"/>
+    <line x1="210" y1="230" x2="210" y2="150" stroke="#64748b" stroke-width="5"/>
+    <circle cx="150" cy="135" r="26" fill="url(#gheventsmo)"/>
+    <circle cx="180" cy="110" r="34" fill="url(#gheventsmo)"/>
+    <circle cx="210" cy="135" r="26" fill="url(#gheventsmo)"/></g>
+</svg>
