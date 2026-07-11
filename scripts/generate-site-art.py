@@ -1773,14 +1773,19 @@ PAGES = {
   "library-yamal-emoji-combos": ("Yamal Emoji Combos", "Fan emoji sets to copy and paste", m_ball, K_LIB),
 
   # ---- localized expansion: emoji combos / discord / stacked text / symbols ----
+  # German
+  "de-library-emoji-flags": ("Länderflaggen", "Flaggen-Emojis aller Länder", m_flag, K_LIB),
   # Portuguese
   "pt-combos-de-emoji": ("Combos de Emoji", "Combinações de emoji para copiar e colar", m_smiley, K_LIB),
   "pt-fontes-para-discord": ("Fontes para Discord", "Letras para nick, canal e bio — sem Nitro", m_chat, K_PLAT),
+  "pt-library-emoji-flags": ("Emoji de Bandeiras", "Bandeiras de todos os países", m_flag, K_LIB),
   # Vietnamese
   "vi-combo-emoji": ("Combo Emoji", "Bộ emoji để sao chép và dán", m_smiley, K_LIB),
   "vi-font-discord": ("Font Discord", "Chữ kiểu cho nick và bio Discord", m_chat, K_PLAT),
+  "vi-library-emoji-flags": ("Cờ Các Nước", "Emoji lá cờ mọi quốc gia", m_flag, K_LIB),
   # Spanish
   "es-combinaciones-de-emojis": ("Combinaciones de Emojis", "Sets de emoji para copiar y pegar", m_smiley, K_LIB),
+  "es-library-emoji-flags": ("Emoji Bandera", "Banderas de todos los países", m_flag, K_LIB),
   "es-letras-en-otros-idiomas": ("Letras en Otros Idiomas", "Alfabetos y letras del mundo para copiar",
         P(m_typo, sample="Åß", size=88, label="letras del mundo"), K_LIB),
   "es-letras-bonitas": ("Letras Bonitas", "Letras lindas para copiar y pegar",
