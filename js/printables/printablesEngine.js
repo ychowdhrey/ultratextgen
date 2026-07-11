@@ -51,6 +51,124 @@
   const CFG = window.UTG_PRINTABLE;
   if (!CFG) return;
 
+  /* ---------------------------------------------------------------
+     Localization. All engine-injected UI text flows through T, keyed
+     off the page's language (html lang="…", or an explicit CFG.lang).
+     English is the default and its values are the original strings, so
+     existing English pages render byte-for-byte the same. New locales
+     add a block here and only need to set <html lang> + a translated
+     UTG_PRINTABLE config (noun, howto, headings) on the page itself.
+     --------------------------------------------------------------- */
+  const LANG = String(CFG.lang || document.documentElement.getAttribute("lang") || "en")
+    .slice(0, 2).toLowerCase();
+  const I18N = {
+    en: {
+      letterWord: "letter", numberWord: "number",
+      copied: "Copied!",
+      printThisLetter: "Print this letter", printThisNumber: "Print this number",
+      downloadPng: "Download PNG",
+      copyPaste: "Copy-paste", copy: "Copy", howToDraw: "How to draw it", lowerSuffix: " · lower",
+      level: "Level", nameLabel: "Name:", dateLabel: "Date:", space: "space",
+      dotToDot: "dot to dot", bannerFlag: "Banner flag —",
+      bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
+      puzzleCut: "Cut along the dashed lines to separate each letter piece.",
+      trace: {
+        solid:    { label: "Solid model", hint: "Full dark letters — trace right on top" },
+        "bold-dot": { label: "Bold dotted", hint: "Thick, closely-spaced dots to join" },
+        "fine-dot": { label: "Fine dotted", hint: "Thinner dots with a little more space" },
+        dashed:   { label: "Dashed", hint: "Broken dashes — more line to complete" },
+        faded:    { label: "Faded ghost", hint: "Light gray letters to write over" },
+        faint:    { label: "Faint guide", hint: "Barely-there outline — almost solo" },
+        blank:    { label: "Blank line", hint: "No guide — write it from memory" }
+      },
+      dot: {
+        easy:   { label: "Easy", hint: "Big gaps, few dots — the youngest kids" },
+        medium: { label: "Medium", hint: "A balanced connect-the-dots" },
+        hard:   { label: "Hard", hint: "More dots and finer letter detail" },
+        expert: { label: "Expert", hint: "Lots of dots — a real challenge" }
+      }
+    },
+    fr: {
+      letterWord: "lettre", numberWord: "chiffre",
+      copied: "Copié !",
+      printThisLetter: "Imprimer cette lettre", printThisNumber: "Imprimer ce chiffre",
+      downloadPng: "Télécharger le PNG",
+      copyPaste: "Copier-coller", copy: "Copier", howToDraw: "Comment la dessiner", lowerSuffix: " · min.",
+      level: "Niveau", nameLabel: "Prénom :", dateLabel: "Date :", space: "espace",
+      dotToDot: "point à point", bannerFlag: "Fanion —",
+      bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
+      puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
+      trace: {
+        solid:    { label: "Modèle plein", hint: "Lettres pleines et foncées — tracez par-dessus" },
+        "bold-dot": { label: "Pointillé épais", hint: "Points épais et rapprochés à relier" },
+        "fine-dot": { label: "Pointillé fin", hint: "Points plus fins, un peu plus espacés" },
+        dashed:   { label: "Tirets", hint: "Tirets espacés — plus de trait à compléter" },
+        faded:    { label: "Fantôme pâle", hint: "Lettres gris clair à repasser" },
+        faint:    { label: "Guide léger", hint: "Contour à peine visible — presque en autonomie" },
+        blank:    { label: "Ligne vierge", hint: "Aucun guide — à écrire de mémoire" }
+      },
+      dot: {
+        easy:   { label: "Facile", hint: "Grands écarts, peu de points — les plus jeunes" },
+        medium: { label: "Moyen", hint: "Un point à point équilibré" },
+        hard:   { label: "Difficile", hint: "Plus de points et de détails dans la lettre" },
+        expert: { label: "Expert", hint: "Beaucoup de points — un vrai défi" }
+      }
+    },
+    es: {
+      letterWord: "letra", numberWord: "número",
+      copied: "¡Copiado!",
+      printThisLetter: "Imprimir esta letra", printThisNumber: "Imprimir este número",
+      downloadPng: "Descargar PNG",
+      copyPaste: "Copiar y pegar", copy: "Copiar", howToDraw: "Cómo dibujarla", lowerSuffix: " · min.",
+      level: "Nivel", nameLabel: "Nombre:", dateLabel: "Fecha:", space: "espacio",
+      dotToDot: "unir los puntos", bannerFlag: "Banderín —",
+      bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
+      puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
+      trace: {
+        solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
+        "bold-dot": { label: "Punteado grueso", hint: "Puntos gruesos y juntos para unir" },
+        "fine-dot": { label: "Punteado fino", hint: "Puntos más finos con un poco más de espacio" },
+        dashed:   { label: "Discontinuo", hint: "Guiones discontinuos — más línea que completar" },
+        faded:    { label: "Fantasma tenue", hint: "Letras gris claro para repasar" },
+        faint:    { label: "Guía tenue", hint: "Contorno apenas visible — casi solo" },
+        blank:    { label: "Línea en blanco", hint: "Sin guía — escríbela de memoria" }
+      },
+      dot: {
+        easy:   { label: "Fácil", hint: "Huecos grandes, pocos puntos — los más pequeños" },
+        medium: { label: "Medio", hint: "Un unir-los-puntos equilibrado" },
+        hard:   { label: "Difícil", hint: "Más puntos y más detalle en la letra" },
+        expert: { label: "Experto", hint: "Muchos puntos — todo un reto" }
+      }
+    },
+    pt: {
+      letterWord: "letra", numberWord: "número",
+      copied: "Copiado!",
+      printThisLetter: "Imprimir esta letra", printThisNumber: "Imprimir este número",
+      downloadPng: "Baixar PNG",
+      copyPaste: "Copiar e colar", copy: "Copiar", howToDraw: "Como desenhar", lowerSuffix: " · min.",
+      level: "Nível", nameLabel: "Nome:", dateLabel: "Data:", space: "espaço",
+      dotToDot: "ligar os pontos", bannerFlag: "Bandeirinha —",
+      bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
+      puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
+      trace: {
+        solid:    { label: "Modelo cheio", hint: "Letras escuras e cheias — trace por cima" },
+        "bold-dot": { label: "Pontilhado grosso", hint: "Pontos grossos e juntos para ligar" },
+        "fine-dot": { label: "Pontilhado fino", hint: "Pontos mais finos, um pouco mais espaçados" },
+        dashed:   { label: "Tracejado", hint: "Traços interrompidos — mais linha para completar" },
+        faded:    { label: "Fantasma claro", hint: "Letras cinza-claro para cobrir" },
+        faint:    { label: "Guia leve", hint: "Contorno quase invisível — quase sozinho" },
+        blank:    { label: "Linha em branco", hint: "Sem guia — escreva de memória" }
+      },
+      dot: {
+        easy:   { label: "Fácil", hint: "Espaços grandes, poucos pontos — os menores" },
+        medium: { label: "Médio", hint: "Um ligar-os-pontos equilibrado" },
+        hard:   { label: "Difícil", hint: "Mais pontos e mais detalhe na letra" },
+        expert: { label: "Expert", hint: "Muitos pontos — um baita desafio" }
+      }
+    }
+  };
+  const T = I18N[LANG] || I18N.en;
+
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
   const SVGNS = "http://www.w3.org/2000/svg";
@@ -137,7 +255,7 @@
      Small helpers
      --------------------------------------------------------------- */
 
-  function charLabel(ch) { return /[0-9]/.test(ch) ? ("number " + ch) : ("letter " + ch); }
+  function charLabel(ch) { return /[0-9]/.test(ch) ? (T.numberWord + " " + ch) : (T.letterWord + " " + ch); }
   function charSlug(ch) { return /[0-9]/.test(ch) ? ("number-" + ch) : ("letter-" + ch.toLowerCase()); }
   function slugify(s) {
     return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -186,7 +304,7 @@
       if (!btn) return;
       const prev = btn.textContent;
       btn.classList.add("is-copied");
-      btn.textContent = "Copied!";
+      btn.textContent = T.copied;
       setTimeout(() => { btn.textContent = prev; btn.classList.remove("is-copied"); }, 1400);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -586,7 +704,7 @@
     const printBtn = document.createElement("button");
     printBtn.type = "button";
     printBtn.className = "bubble-btn bubble-btn-primary";
-    printBtn.textContent = "Print this " + (/[0-9]/.test(ch) ? "number" : "letter");
+    printBtn.textContent = /[0-9]/.test(ch) ? T.printThisNumber : T.printThisLetter;
     printBtn.addEventListener("click", () => {
       const holder = document.createElement("div");
       holder.className = "bubble-print-single";
@@ -596,7 +714,7 @@
     const pngBtn = document.createElement("button");
     pngBtn.type = "button";
     pngBtn.className = "bubble-btn";
-    pngBtn.textContent = "Download PNG";
+    pngBtn.textContent = T.downloadPng;
     pngBtn.addEventListener("click", () => letterPNG(ch));
     actions.appendChild(printBtn);
     actions.appendChild(pngBtn);
@@ -610,7 +728,7 @@
     if (variants) {
       const title = document.createElement("h3");
       title.className = "bubble-detail-title";
-      title.textContent = "Copy-paste " + NOUN + " " + charLabel(ch);
+      title.textContent = T.copyPaste + " " + NOUN + " " + charLabel(ch);
       detail.appendChild(title);
       detail.appendChild(variants);
     }
@@ -620,7 +738,7 @@
       how.className = "bubble-howto";
       const ht = document.createElement("h3");
       ht.className = "bubble-detail-title";
-      ht.textContent = (CFG.howto.title || "How to draw it").replace("{ch}", charLabel(ch));
+      ht.textContent = (CFG.howto.title || T.howToDraw).replace("{ch}", charLabel(ch));
       how.appendChild(ht);
       const ol = document.createElement("ol");
       ol.className = "bubble-howto-steps";
@@ -674,16 +792,16 @@
         row.type = "button";
         row.className = "bubble-variant glyph-copy";
         row.dataset.text = rendered;
-        row.setAttribute("aria-label", "Copy " + name + " " + NOUN + " " + charLabel(src));
+        row.setAttribute("aria-label", T.copy + " " + name + " " + NOUN + " " + charLabel(src));
         const glyph = document.createElement("span");
         glyph.className = "bubble-variant-glyph";
         glyph.textContent = rendered;
         const meta = document.createElement("span");
         meta.className = "bubble-variant-name";
-        meta.textContent = name.replace(/^Ultra /, "") + (kind === "upper" ? "" : " · lower");
+        meta.textContent = name.replace(/^Ultra /, "") + (kind === "upper" ? "" : T.lowerSuffix);
         const cta = document.createElement("span");
         cta.className = "bubble-variant-copy";
-        cta.textContent = "Copy";
+        cta.textContent = T.copy;
         row.appendChild(glyph); row.appendChild(meta); row.appendChild(cta);
         row.addEventListener("click", () => copyText(rendered, cta));
         list.appendChild(row);
@@ -866,19 +984,19 @@
   // Level 1 (easiest) → 7 (hardest). Round caps + a near-zero dash render
   // the stroke as a row of dots; longer dashes read as a broken guideline.
   const TRACE_LEVELS = [
-    { key: "solid",    label: "Solid model",  hint: "Full dark letters — trace right on top",
+    { key: "solid",    label: T.trace.solid.label,      hint: T.trace.solid.hint,
       fill: INK,   stroke: "none", sw: 0, dash: "",        cap: "round", opacity: 1 },
-    { key: "bold-dot", label: "Bold dotted",  hint: "Thick, closely-spaced dots to join",
+    { key: "bold-dot", label: T.trace["bold-dot"].label, hint: T.trace["bold-dot"].hint,
       fill: "none", stroke: INK,   sw: 8, dash: "0.1 11",  cap: "round", opacity: 1 },
-    { key: "fine-dot", label: "Fine dotted",  hint: "Thinner dots with a little more space",
+    { key: "fine-dot", label: T.trace["fine-dot"].label, hint: T.trace["fine-dot"].hint,
       fill: "none", stroke: INK,   sw: 5, dash: "0.1 16",  cap: "round", opacity: 0.92 },
-    { key: "dashed",   label: "Dashed",       hint: "Broken dashes — more line to complete",
+    { key: "dashed",   label: T.trace.dashed.label,     hint: T.trace.dashed.hint,
       fill: "none", stroke: INK,   sw: 4, dash: "15 15",   cap: "butt",  opacity: 0.85 },
-    { key: "faded",    label: "Faded ghost",  hint: "Light gray letters to write over",
+    { key: "faded",    label: T.trace.faded.label,      hint: T.trace.faded.hint,
       fill: GHOST,  stroke: "none", sw: 0, dash: "",        cap: "round", opacity: 1 },
-    { key: "faint",    label: "Faint guide",  hint: "Barely-there outline — almost solo",
+    { key: "faint",    label: T.trace.faint.label,      hint: T.trace.faint.hint,
       fill: "none", stroke: FAINT, sw: 2, dash: "0.1 22",  cap: "round", opacity: 1 },
-    { key: "blank",    label: "Blank line",   hint: "No guide — write it from memory",
+    { key: "blank",    label: T.trace.blank.label,      hint: T.trace.blank.hint,
       blank: true }
   ];
 
@@ -1023,7 +1141,7 @@
   function updateGenUI() {
     const level = genLevel();
     const spec = levelSpec(level);
-    if (el.genLevel) el.genLevel.textContent = "Level " + level + " · " + spec.label;
+    if (el.genLevel) el.genLevel.textContent = T.level + " " + level + " · " + spec.label;
     if (el.genHint) el.genHint.textContent = spec.hint;
     // Level ladder buttons.
     $$(".pt-level", el.genLevels || document).forEach((b) => {
@@ -1291,8 +1409,8 @@
       t.textContent = label;
       svgMake("line", { x1: x + 110, y1: y + 6, x2: lineEnd, y2: y + 6, stroke: "#9aa3b2", "stroke-width": 2 }, svg);
     };
-    field(90, "Name:", 470);
-    field(560, "Date:", 910);
+    field(90, T.nameLabel, 470);
+    field(560, T.dateLabel, 910);
   }
 
   /* ---------------------------------------------------------------
@@ -1331,10 +1449,10 @@
   // Difficulty ladder: more dots = harder / more detail. `total` is the
   // whole-name target dot budget, shared out across the letters.
   const DOT_LEVELS = [
-    { key: "easy",   label: "Easy",   total: 26, hint: "Big gaps, few dots — the youngest kids" },
-    { key: "medium", label: "Medium", total: 42, hint: "A balanced connect-the-dots" },
-    { key: "hard",   label: "Hard",   total: 60, hint: "More dots and finer letter detail" },
-    { key: "expert", label: "Expert", total: 84, hint: "Lots of dots — a real challenge" }
+    { key: "easy",   label: T.dot.easy.label,   total: 26, hint: T.dot.easy.hint },
+    { key: "medium", label: T.dot.medium.label, total: 42, hint: T.dot.medium.hint },
+    { key: "hard",   label: T.dot.hard.label,   total: 60, hint: T.dot.hard.hint },
+    { key: "expert", label: T.dot.expert.label, total: 84, hint: T.dot.expert.hint }
   ];
   function dotLevel(key) {
     for (let i = 0; i < DOT_LEVELS.length; i++) if (DOT_LEVELS[i].key === key) return DOT_LEVELS[i];
@@ -1643,7 +1761,7 @@
     svg.setAttribute("viewBox", "0 0 800 960");
     svg.setAttribute("class", "bubble-outline" + (o.small ? " is-small" : ""));
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "dot to dot " + charLabel(ch));
+    svg.setAttribute("aria-label", T.dotToDot + " " + charLabel(ch));
     addDotWordSVG(svg, ch.toUpperCase(), CFG.dotDifficulty || "medium", { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false);
     return svg;
   }
@@ -1787,7 +1905,7 @@
       if (designFooterOn()) {
         ctx.textAlign = "left"; ctx.font = "600 30px " + FONT; ctx.fillStyle = INK;
         const fy = H - 150;
-        ctx.fillText("Name:", 90, fy); ctx.fillText("Date:", 560, fy);
+        ctx.fillText(T.nameLabel, 90, fy); ctx.fillText(T.dateLabel, 560, fy);
         ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.moveTo(200, fy + 16); ctx.lineTo(470, fy + 16);
         ctx.moveTo(670, fy + 16); ctx.lineTo(910, fy + 16); ctx.stroke();
@@ -1954,7 +2072,7 @@
     svg.setAttribute("viewBox", "0 0 " + FLAG_W + " " + FLAG_H);
     svg.setAttribute("class", "pt-banner-flag");
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "Banner flag — " + ch);
+    svg.setAttribute("aria-label", T.bannerFlag + " " + ch);
 
     const shape = document.createElementNS(SVGNS, "polygon");
     shape.setAttribute("points", FLAG_LEFT + "," + FLAG_TOP + " " + FLAG_RIGHT + "," + FLAG_TOP + " " + FLAG_APEX_X + "," + FLAG_APEX_Y);
@@ -2013,7 +2131,7 @@
       if (pi === 0) {
         const instr = document.createElement("p");
         instr.className = "pt-banner-instructions";
-        instr.textContent = "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.";
+        instr.textContent = T.bannerInstr;
         head.appendChild(instr);
       }
       page.appendChild(head);
@@ -2025,7 +2143,7 @@
           const gap = document.createElement("div");
           gap.className = "pt-banner-gap";
           const label = document.createElement("span");
-          label.textContent = "space";
+          label.textContent = T.space;
           gap.appendChild(label);
           grid.appendChild(gap);
           return;
@@ -2143,7 +2261,7 @@
           ctx.fillStyle = "#94a3b8";
           ctx.font = "600 20px " + FONT;
           ctx.textAlign = "center";
-          ctx.fillText("space", x + w / 2, pad + flagH + 30);
+          ctx.fillText(T.space, x + w / 2, pad + flagH + 30);
           ctx.restore();
         }
         x += w + gap;
@@ -2219,8 +2337,8 @@
       f.appendChild(l); f.appendChild(line);
       return f;
     };
-    row.appendChild(field("Name:"));
-    row.appendChild(field("Date:"));
+    row.appendChild(field(T.nameLabel));
+    row.appendChild(field(T.dateLabel));
     return row;
   }
 
@@ -2276,7 +2394,7 @@
 
     const cap = document.createElement("p");
     cap.className = "pt-puzzle-caption";
-    cap.textContent = "Cut along the dashed lines to separate each letter piece.";
+    cap.textContent = T.puzzleCut;
     sheet.appendChild(cap);
 
     if (footer) sheet.appendChild(puzzleFooterRow());
@@ -2376,8 +2494,8 @@
         ctx.font = "600 30px " + FONT;
         ctx.fillStyle = INK;
         const fy = 700;
-        ctx.fillText("Name:", pad, fy);
-        ctx.fillText("Date:", W / 2 + 40, fy);
+        ctx.fillText(T.nameLabel, pad, fy);
+        ctx.fillText(T.dateLabel, W / 2 + 40, fy);
         ctx.strokeStyle = "#9aa3b2"; ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(pad + 110, fy + 12); ctx.lineTo(W / 2 - 40, fy + 12);
