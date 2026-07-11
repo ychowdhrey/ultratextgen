@@ -766,6 +766,232 @@ def m_letter_outline(p, letter="A"):
     </g>"""
 
 
+# ----- holiday / event motifs -----
+
+
+def m_lantern(p, accent=PURPLE):
+    """A Chinese paper lantern — Chinese New Year content."""
+    return f"""
+    <rect x="160" y="46" width="40" height="16" rx="5" fill="{SUB}"/>
+    <line x1="180" y1="62" x2="180" y2="82" stroke="{SUB}" stroke-width="4"/>
+    <path d="M100 90 Q100 82 180 82 Q260 82 260 90 Q276 170 260 250 Q260 258 180 258
+             Q100 258 100 250 Q84 170 100 90 Z" fill="url(#g{p})"/>
+    <line x1="132" y1="88" x2="132" y2="252" stroke="#fff" stroke-width="4" opacity="0.45"/>
+    <line x1="180" y1="84" x2="180" y2="256" stroke="#fff" stroke-width="4" opacity="0.45"/>
+    <line x1="228" y1="88" x2="228" y2="252" stroke="#fff" stroke-width="4" opacity="0.45"/>
+    <rect x="160" y="252" width="40" height="16" rx="5" fill="{SUB}"/>
+    <line x1="180" y1="268" x2="180" y2="300" stroke="{SUB}" stroke-width="4"/>
+    <circle cx="180" cy="306" r="8" fill="{SUB}"/>"""
+
+
+def m_lamp(p, accent=PURPLE):
+    """A diya oil lamp with a flame — Diwali content."""
+    return f"""
+    <path d="M90 210 Q90 240 180 250 Q270 240 270 210 Q270 195 230 195 L130 195
+             Q90 195 90 210 Z" fill="url(#g{p})"/>
+    <path d="M172 195 Q168 150 180 120 Q192 150 188 195 Z" fill="#fbbf24"/>
+    <path d="M175 195 Q173 165 180 145 Q187 165 185 195 Z" fill="#f97316"/>
+    <circle cx="120" cy="220" r="6" fill="{PURPLE}" opacity="0.5"/>
+    <circle cx="240" cy="220" r="6" fill="{BLUE}" opacity="0.5"/>"""
+
+
+def m_crescent(p, accent=PURPLE):
+    """A crescent moon and star — Eid content."""
+    return f"""
+    <circle cx="170" cy="180" r="95" fill="url(#g{p})"/>
+    <circle cx="215" cy="150" r="80" fill="{PANEL}"/>
+    <path d="M280 110 l10 26 l26 10 l-26 10 l-10 26 l-10 -26 l-26 -10 l26 -10 Z" fill="{PURPLE}"/>"""
+
+
+def m_necktie(p, accent=PURPLE):
+    """A striped necktie — Father's Day content."""
+    return f"""
+    <path d="M160 70 L200 70 L212 100 L180 118 L148 100 Z" fill="url(#g{p})"/>
+    <path d="M164 112 L196 112 L216 220 L180 270 L144 220 Z" fill="url(#gv{p})"/>
+    <line x1="150" y1="150" x2="210" y2="140" stroke="#fff" stroke-width="6" opacity="0.3"/>
+    <line x1="152" y1="180" x2="208" y2="172" stroke="#fff" stroke-width="6" opacity="0.3"/>"""
+
+
+def m_bouquet(p, accent=PURPLE):
+    """A wrapped flower bouquet — Mother's Day content."""
+    return f"""
+    <path d="M120 230 L240 230 L206 300 L154 300 Z" fill="url(#gv{p})"/>
+    <line x1="150" y1="230" x2="150" y2="150" stroke="{SUB}" stroke-width="5"/>
+    <line x1="180" y1="230" x2="180" y2="130" stroke="{SUB}" stroke-width="5"/>
+    <line x1="210" y1="230" x2="210" y2="150" stroke="{SUB}" stroke-width="5"/>
+    <circle cx="150" cy="135" r="26" fill="url(#g{p})"/>
+    <circle cx="180" cy="110" r="34" fill="url(#g{p})"/>
+    <circle cx="210" cy="135" r="26" fill="url(#g{p})"/>"""
+
+
+def m_firework(p, accent=PURPLE):
+    """Two radiating firework bursts — New Year content."""
+    # Rays are solid-color, not gradient: a purely vertical <line> has a
+    # zero-width objectBoundingBox, so a gradient stroke silently fails to
+    # paint (same pitfall documented on m_ankh below).
+    def burst(cx, cy, inner, outer, opacity=1):
+        rays = ""
+        for i in range(8):
+            ang = i * 45
+            rays += (f'<g transform="rotate({ang} {cx} {cy})" opacity="{opacity}">'
+                      f'<line x1="{cx}" y1="{cy-inner}" x2="{cx}" y2="{cy-outer}" '
+                      f'stroke="{PURPLE}" stroke-width="6" stroke-linecap="round"/>'
+                      f'<circle cx="{cx}" cy="{cy-outer}" r="5" fill="{BLUE}"/></g>')
+        return rays
+    return burst(200, 130, 18, 76) + burst(100, 250, 10, 42, 0.55)
+
+
+def m_heart(p, accent=PURPLE):
+    """A single vector heart — Valentine's/heart-themed content."""
+    return f"""
+    <path d="M180 260 C 100 200 100 130 150 110 C 175 100 180 120 180 130
+             C 180 120 185 100 210 110 C 260 130 260 200 180 260 Z" fill="url(#g{p})"/>
+    <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/>"""
+
+
+# ----- printables-tool motifs -----
+
+
+def m_banner(p, accent=PURPLE):
+    """A strung pennant banner — banner-maker printable."""
+    flags = ""
+    for i, x in enumerate([70, 140, 210, 280]):
+        fill = f"url(#g{p})" if i % 2 == 0 else "#fff"
+        stroke = "" if i % 2 == 0 else f'stroke="{PURPLE}" stroke-width="3"'
+        flags += f'<path d="M{x-30} 110 L{x+30} 110 L{x} 180 Z" fill="{fill}" {stroke}/>'
+        flags += (f'<circle cx="{x-22}" cy="116" r="3" fill="{SUB}"/>'
+                   f'<circle cx="{x+22}" cy="116" r="3" fill="{SUB}"/>')
+    return f'<path d="M50 100 Q180 130 310 100" fill="none" stroke="{SUB}" stroke-width="4"/>{flags}'
+
+
+def m_letter_stencil(p, letter="B"):
+    """A bold block letter with a dashed cut-line border — block-letter printables."""
+    return f"""
+    <rect x="50" y="70" width="260" height="220" rx="18" fill="none" stroke="{SUB}"
+          stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="180" y="235" font-family="{SANS}" font-size="200" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle">{esc(letter)}</text>"""
+
+
+def m_crayons(p, accent=PURPLE):
+    """Three fanned crayons over a colorable outline card — coloring-page maker."""
+    def crayon(x, rot, fill):
+        return (f'<g transform="translate({x} 220) rotate({rot})">'
+                f'<rect x="-14" y="-90" width="28" height="100" rx="6" fill="{fill}"/>'
+                f'<path d="M-14 -90 L14 -90 L0 -118 Z" fill="{INK}"/></g>')
+    return (f'<rect x="40" y="80" width="280" height="200" rx="24" fill="none" '
+            f'stroke="{SUB}" stroke-width="3" stroke-dasharray="10 8"/>'
+            + crayon(140, -18, f"url(#g{p})") + crayon(180, 0, PURPLE) + crayon(220, 18, BLUE))
+
+
+def m_pencil_ruled(p, accent=PURPLE):
+    """A pencil writing on ruled lines — handwriting-worksheet generator."""
+    return f"""
+    <line x1="60" y1="150" x2="300" y2="150" stroke="{SUB}" stroke-width="4"/>
+    <line x1="60" y1="200" x2="300" y2="200" stroke="{SUB}" stroke-width="4" stroke-dasharray="8 8"/>
+    <line x1="60" y1="250" x2="300" y2="250" stroke="{SUB}" stroke-width="4"/>
+    <g transform="translate(230 130) rotate(35)">
+      <rect x="-12" y="-70" width="24" height="90" rx="4" fill="url(#gv{p})"/>
+      <path d="M-12 -70 L12 -70 L0 -96 Z" fill="{INK}"/>
+      <rect x="-12" y="18" width="24" height="16" fill="#fbbf24"/>
+    </g>"""
+
+
+def m_trace_rows(p, sample="Emma"):
+    """A solid sample row, a dashed trace-echo row, and a blank rule — name/word tracing."""
+    s = esc(sample)
+    return f"""
+    <text x="180" y="130" font-family="{SANS}" font-size="70" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle">{s}</text>
+    <text x="180" y="195" font-family="{SANS}" font-size="70" font-weight="800"
+          fill="none" stroke="{SUB}" stroke-width="1.5" stroke-dasharray="3 3"
+          text-anchor="middle" opacity="0.6">{s}</text>
+    <line x1="70" y1="250" x2="290" y2="250" stroke="{SUB}" stroke-width="3"/>"""
+
+
+def m_puzzle(p, accent=PURPLE):
+    """Two interlocking jigsaw pieces — name-puzzle maker."""
+    return f"""
+    <rect x="60" y="100" width="110" height="140" rx="16" fill="url(#g{p})"/>
+    <circle cx="170" cy="150" r="20" fill="url(#g{p})"/>
+    <rect x="190" y="100" width="110" height="140" rx="16" fill="#fff" stroke="{PURPLE}" stroke-width="5"/>
+    <circle cx="190" cy="150" r="20" fill="#fff" stroke="{PURPLE}" stroke-width="5"/>"""
+
+
+# ----- misc single-subject motifs -----
+
+
+def m_skull(p, accent=PURPLE):
+    """A skull and crossbones — skull-themed ASCII-art content."""
+    return f"""
+    <path d="M110 130 Q110 70 180 70 Q250 70 250 130 Q250 175 225 195 L225 220
+             L135 220 L135 195 Q110 175 110 130 Z" fill="url(#g{p})"/>
+    <circle cx="150" cy="135" r="18" fill="#fff"/>
+    <circle cx="210" cy="135" r="18" fill="#fff"/>
+    <path d="M170 165 L190 165 L180 185 Z" fill="{PANEL}"/>
+    <rect x="140" y="220" width="80" height="20" rx="6" fill="url(#g{p})"/>
+    <line x1="120" y1="270" x2="160" y2="250" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="270" x2="200" y2="250" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="120" y1="250" x2="160" y2="270" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="250" x2="200" y2="270" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>"""
+
+
+def m_star(p, accent=PURPLE):
+    """A single 5-point star with two sparkle accents — star-themed content."""
+    import math
+    cx, cy, r_out, r_in = 180, 178, 92, 38
+    pts = []
+    for i in range(10):
+        r = r_out if i % 2 == 0 else r_in
+        ang = -math.pi / 2 + i * math.pi / 5
+        pts.append(f"{cx + r * math.cos(ang):.1f},{cy + r * math.sin(ang):.1f}")
+    return f"""
+    <polygon points="{' '.join(pts)}" fill="url(#g{p})"/>
+    <path d="M270 90 l8 20 l20 8 l-20 8 l-8 20 l-8 -20 l-20 -8 l20 -8 Z" fill="{PURPLE}" opacity="0.7"/>
+    <path d="M90 260 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="{BLUE}" opacity="0.6"/>"""
+
+
+def m_arc(p, letters="ARC"):
+    """Letters individually rotated along a circular arc — curved/arc text tool."""
+    import math
+    n = len(letters)
+    # Virtual circle centered above the canvas; letters sit on its lower rim,
+    # each at angle theta from straight-down, giving a downward-bulging arc.
+    cx, cy, r = 180, 130, 150
+    spread = 80
+    step = spread / max(n - 1, 1)
+    start = -spread / 2
+    chars = ""
+    for i, ch in enumerate(letters):
+        theta = start + i * step
+        rad = math.radians(theta)
+        x = cx + r * math.sin(rad)
+        y = cy + r * math.cos(rad)
+        chars += (f'<text x="{x:.1f}" y="{y:.1f}" font-family="{SANS}" font-size="72" '
+                   f'font-weight="800" fill="url(#g{p})" text-anchor="middle" '
+                   f'transform="rotate({theta:.1f} {x:.1f} {y:.1f})">{esc(ch)}</text>')
+    half = math.radians(spread / 2)
+    ex, ey = r * math.sin(half), cy + r * math.cos(half)
+    arc = (f'<path d="M {cx - ex:.1f} {ey:.1f} A {r:.1f} {r:.1f} 0 0 0 {cx + ex:.1f} {ey:.1f}" '
+           f'fill="none" stroke="{SUB}" stroke-width="2" stroke-dasharray="4 6" opacity="0.4"/>')
+    return arc + chars
+
+
+def m_kana_grid(p, accent=PURPLE):
+    """A glyph-free grid of chip tiles with a seal accent — kana reference charts.
+    Deliberately embeds no hiragana/katakana characters: cairosvg has no per-
+    glyph font fallback and the bundled fonts don't cover the kana block."""
+    cells = ""
+    for r in range(2):
+        for c in range(3):
+            x, y = 40 + c * 100, 96 + r * 104
+            hot = (r == 0 and c == 1)
+            fill = f"url(#g{p})" if hot else "#fff"
+            cells += (f'<rect x="{x}" y="{y}" width="84" height="84" rx="18" fill="{fill}" '
+                       f'stroke="{INK}" stroke-opacity="{0 if hot else 0.10}"/>')
+    return f'{cells}<circle cx="272" cy="112" r="20" fill="#dc2626"/>'
+
+
 # ---------------------------------------------------------------- registry
 # slug -> (title, subtitle, motif_callable, kicker)
 # slug matches the page directory with "/" replaced by "-".
@@ -1538,6 +1764,94 @@ PAGES["printables-alphabet-coloring-pages"] = (
     P(m_letter_outline, letter="C"), K_PRINT)
 
 
+# ---- remaining image-SEO gap: answers / events / printables tools / category /
+# ---- ascii-art library / gaming usecase / misc standalone pages ----
+PAGES.update({
+"answers-can-you-search-fancy-text": ("Can You Search Fancy Text?", "Why stylized Unicode doesn't match plain search", m_qa, K_ANS),
+"answers-cny-greetings-what-to-say": ("Chinese New Year Greetings", "What to say, in Chinese, pinyin & English", m_qa, K_ANS),
+"answers-diwali-wishes-what-to-say": ("Diwali Wishes: What to Say", "Hindi greetings, romanized, plus English lines", m_qa, K_ANS),
+"answers-do-fancy-fonts-work-on-iphone": ("Do Fancy Fonts Work on iPhone?", "Yes, but some styles show as empty boxes", m_qa, K_ANS),
+"answers-do-fancy-fonts-work-with-vietnamese": ("Fancy Fonts With Vietnamese?", "Stacked marks break most styles — here's what works", m_qa, K_ANS),
+"answers-does-zalgo-work-on-roblox": ("Does Zalgo Text Work on Roblox?", "What survives the filter, and what never does", m_zalgo, K_ANS),
+"answers-eid-mubarak-meaning-and-reply": ("What Does Eid Mubarak Mean?", "The meaning, and how to reply", m_qa, K_ANS),
+"answers-fancy-text-with-n-and-accented-letters": ("Fancy Text With ñ and Accents", "Why accented letters often stay plain", m_qa, K_ANS),
+"answers-fathers-day-messages-what-to-write": ("Father's Day Messages: What to Write", "Short, sincere lines for dads and father figures", m_qa, K_ANS),
+"answers-halloween-messages-what-to-write": ("Halloween Messages: What to Write", "Spooky captions and card lines that land", m_qa, K_ANS),
+"answers-happy-new-year-wishes-what-to-write": ("New Year Wishes: What to Write", "Funny, heartfelt & professional message ideas", m_qa, K_ANS),
+"answers-how-to-change-discord-username": ("Change Your Discord Username", "Unique name vs display name, explained", m_qa, K_ANS),
+"answers-how-to-change-instagram-username": ("Change Your Instagram Username", "The rules, the 14-day limit, and fancy fonts", m_qa, K_ANS),
+"answers-how-to-make-bold-text-in-discord": ("Bold Text in Discord", "Markdown for messages, Unicode for names", m_qa, K_ANS),
+"answers-how-to-remove-zalgo-text": ("How to Remove Zalgo Text", "Strip combining marks and recover the original", m_zalgo, K_ANS),
+"answers-how-to-uncover-redacted-text": ("Can You Uncover Redacted Text?", "Unicode blocks are permanent, images sometimes aren't", m_qa, K_ANS),
+"answers-is-fancy-text-bad-for-accessibility": ("Is Fancy Text Bad for Accessibility?", "How screen readers handle styled Unicode", m_qa, K_ANS),
+"answers-is-fancy-text-bad-for-seo": ("Is Fancy Text Bad for SEO?", "Fine as decoration, risky on keywords", m_qa, K_ANS),
+"answers-is-zalgo-text-safe": ("Is Zalgo Text Safe?", "No virus, no hack — the two real caveats", m_zalgo, K_ANS),
+"answers-merry-christmas-in-different-languages": ("Merry Christmas in Other Languages", "Feliz Navidad, Joyeux Noël & more, translated", m_qa, K_ANS),
+"answers-mothers-day-messages-what-to-write": ("Mother's Day Messages: What to Write", "Heartfelt lines for Mom, Grandma & more", m_qa, K_ANS),
+"answers-valentines-day-messages-what-to-write": ("Valentine's Day Messages: What to Write", "Sweet lines for partners, crushes & friends", m_qa, K_ANS),
+"answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
+"answers-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "TikTok Sans, and how it differs from styled text", m_qa, K_ANS),
+"answers-what-font-does-twitter-use": ("What Font Does Twitter/X Use?", "Chirp, the brand font, explained", m_qa, K_ANS),
+"answers-what-font-does-youtube-use": ("What Font Does YouTube Use?", "Roboto and YouTube Sans, explained", m_qa, K_ANS),
+"answers-what-is-ascii": ("What Is ASCII?", "The 128-character code behind plain text", m_qa, K_ANS),
+"answers-why-does-copied-fancy-text-lose-formatting": ("Why Fancy Text Loses Formatting", "It was never formatting — just substitute characters", m_qa, K_ANS),
+"answers-why-fancy-text-looks-different-on-iphone-vs-android": ("Fancy Text: iPhone vs Android", "Same characters, different system fonts", m_qa, K_ANS),
+"answers-why-fancy-text-removes-accents": ("Why Fancy Text Removes Accents", "Unicode has no styled á, ñ or ữ — here's why", m_qa, K_ANS),
+"answers-why-wont-discord-accept-fancy-username": ("Why Won't Discord Accept My Username?", "Usernames are ASCII-only; display names aren't", m_qa, K_ANS),
+"answers-why-wont-instagram-accept-my-fancy-username": ("Why Won't Instagram Accept My Username?", "Handles are ASCII-only — style your Name instead", m_qa, K_ANS),
+"events": ("Holiday & Event Text Generators", "Fonts, emoji, and phrases for every calendar holiday", m_grid, K_USE),
+"events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
+"events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
+"events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
+"events-eid-mubarak": ("Eid Mubarak Text & Symbol Generator", "Crescent moon emoji and ready-made Eid phrases", m_crescent, K_USE),
+"events-fathers-day": ("Father's Day Message Generator", "Bold, rugged fonts for World's Best Dad messages", m_necktie, K_USE),
+"events-halloween": ("Halloween Fonts & Emoji Generator", "Pumpkin, ghost, and bat emoji for spooky greetings", m_pumpkin, K_USE),
+"events-mothers-day": ("Mother's Day Message Generator", "Warm cursive fonts for Happy Mother's Day messages", m_bouquet, K_USE),
+"events-new-year": ("New Year Countdown Text Generator", "Firework emoji and Happy New Year phrases to paste", m_firework, K_USE),
+"events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
+"printables-banner-maker": ("Printable Banner Maker", "One flag per letter, cut and strung to spell any word", m_banner, K_PRINT),
+"printables-block-letters": ("Printable Block Letters & Stencils", "Bold hollow A-Z & 0-9 stencils to trace, cut and use", P(m_letter_stencil, letter="B"), K_PRINT),
+"printables-calligraphy-alphabet": ("Calligraphy Alphabet", "Blackletter and script letters to trace and print", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="blackletter & script"), K_PRINT),
+"printables-coloring-page-maker": ("Coloring Page Maker", "Any name or word becomes a colorable outline to print", m_crayons, K_PRINT),
+"printables-cursive-alphabet": ("Cursive Alphabet", "Cursive A-Z practice sheets to trace and print", P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive practice"), K_PRINT),
+"printables-handwriting-worksheet-generator": ("Handwriting Worksheet Generator", "Dial dotted-to-blank tracing difficulty for any word", m_pencil_ruled, K_PRINT),
+"printables": ("Printable Letters & Alphabets", "Bubble letters, cursive sheets, tracing pages and more", m_grid, K_PRINT),
+"printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
+"printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
+"printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
+"category-ancient-fonts": ("Ancient & Rune Fonts", "Rune, Cherokee & ancient script styling",
+      P(m_typo, sample="Rune", ff=SERIF, weight="800", size=84, label="runic · cherokee · ethiopic"), K_CAT),
+"category-emoji-letter-fonts": ("Emoji Letter Generator", "Block, squared & flag-emoji letter styles",
+      P(m_typo, sample="AB", weight="800", size=88, label="block · squared · flag letters",
+        extra='<rect x="256" y="230" width="50" height="36" rx="6" fill="#fff" opacity="0.9"/>'
+              f'<rect x="256" y="230" width="50" height="12" fill="{PURPLE}"/>'), K_CAT),
+"category-faux-fonts": ("Faux Script Generator", "Faux Cyrillic, Greek & katakana lookalikes",
+      P(m_typo, sample="СОРҮ", size=66, spacing="2", label="cyrillic · greek · katakana"), K_CAT),
+"category-fullwidth-fonts": ("Fullwidth Text Generator", "Wide, spaced-out vaporwave lettering",
+      P(m_typo, sample="A b", size=64, spacing="14", label="vaporwave · full width"), K_CAT),
+"category-novelty-fonts": ("Novelty Font Generator", "Keycap numbers & currency-symbol letters",
+      P(m_typo, sample="₳¥", ff=SYM, weight="700", size=100, label="currency + keycap symbols",
+        extra='<rect x="246" y="228" width="58" height="58" rx="14" fill="#fff"/>'
+              f'<text x="275" y="270" font-family="{SANS}" font-size="34" font-weight="800" fill="{INK}" text-anchor="middle">5</text>'), K_CAT),
+"library-cat-ascii-art": ("Cat ASCII Art", "Cat faces, loafs & long cats in plain text", m_paw, K_LIB),
+"library-dog-ascii-art": ("Dog ASCII Art", "Puppy faces and sitting dogs in plain text", m_paw, K_LIB),
+"library-heart-ascii-art": ("Heart ASCII Art", "Text hearts from tiny <3 to big solid hearts", m_heart, K_LIB),
+"library-skull-ascii-art": ("Skull ASCII Art", "Skulls and crossbones drawn in plain text", m_skull, K_LIB),
+"library-star-ascii-art": ("Star ASCII Art", "Sparkles, shooting stars & big text stars", m_star, K_LIB),
+"usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
+"usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
+"usecase-stylish-name": ("Stylish Name Maker", "Fancy names for FF, Instagram & Facebook", m_gamepad, K_USE),
+"ascii-art-generator": ("ASCII Art Generator", "Turn any word into big block-letter ASCII art",
+      P(m_transform, a="A", b="█"), K_USE),
+"ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
+      P(m_transform, a="A", b="01"), K_USE),
+"curved-text": ("Curved & Arc Text Generator", "Bend text into arcs, waves, spirals & shapes",
+      P(m_arc, letters="ARC"), K_USE),
+"hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+"katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+})
+
+
 # ---------------------------------------------------------------- builders
 
 
@@ -1591,7 +1905,10 @@ def main():
             output_width=1200, output_height=630)
         n += 1
 
-    # Homepage social card. The English root index.html references this card.
+    # Homepage social card + hero figure. The English root index.html
+    # references both.
+    with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
+        f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
     cairosvg.svg2png(
         bytestring=og_png_svg(
             HOME_CARD, "Fancy Text Generator",

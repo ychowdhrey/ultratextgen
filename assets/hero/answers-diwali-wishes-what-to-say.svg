@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghanswersd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhanswersd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhanswersd" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshanswersd" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshanswersd)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhanswersd)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhanswersd)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <circle cx="180" cy="120" r="64" fill="url(#ghanswersd)"/>
+    <text x="180" y="150" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="86" font-weight="700"
+          fill="#fff" text-anchor="middle">?</text>
+    <rect x="60" y="208" width="240" height="92" rx="20" fill="#fff"
+          stroke="#1a1a2e" stroke-opacity="0.10"/>
+    <rect x="84" y="232" width="150" height="11" rx="5" fill="#64748b" opacity="0.5"/>
+    <rect x="84" y="254" width="192" height="11" rx="5" fill="#64748b" opacity="0.35"/>
+    <rect x="84" y="276" width="120" height="11" rx="5" fill="#64748b" opacity="0.35"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <circle cx="180" cy="120" r="64" fill="url(#ghanswersd)"/>
+    <text x="180" y="150" font-family="Liberation Sans, DejaVu Sans, sans-serif" font-size="86" font-weight="700"
+          fill="#fff" text-anchor="middle">?</text>
+    <rect x="60" y="208" width="240" height="92" rx="20" fill="#fff"
+          stroke="#1a1a2e" stroke-opacity="0.10"/>
+    <rect x="84" y="232" width="150" height="11" rx="5" fill="#64748b" opacity="0.5"/>
+    <rect x="84" y="254" width="192" height="11" rx="5" fill="#64748b" opacity="0.35"/>
+    <rect x="84" y="276" width="120" height="11" rx="5" fill="#64748b" opacity="0.35"/></g>
+</svg>
