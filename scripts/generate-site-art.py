@@ -841,6 +841,7 @@ PAGES = {
   "answers-what-font-does-discord-use": ("What Font Does Discord Use?", "gg sans, and what it means for you", m_qa, K_ANS),
   "answers-what-font-does-facebook-use": ("What Font Does Facebook Use?", "The system fonts behind the feed", m_qa, K_ANS),
   "answers-what-font-does-linkedin-use": ("What Font Does LinkedIn Use?", "The typeface and your options", m_qa, K_ANS),
+  "answers-what-font-does-roblox-use": ("What Font Does Roblox Use?", "Builder Sans, and the Comic Sans myth", m_qa, K_ANS),
   "answers-what-font-does-snapchat-use": ("What Font Does Snapchat Use?", "The app typeface, explained", m_qa, K_ANS),
   "answers-what-is-a-tiktok-handle": ("What Is a TikTok Handle?", "Handle vs name, made simple", m_qa, K_ANS),
   "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
@@ -1262,6 +1263,11 @@ PAGES = {
   "es-fuentes-para-discord": ("Fuentes para Discord", "Letras para nick, canal y bio — sin Nitro", m_chat, K_PLAT),
   "pl-czcionki-discord": ("Czcionki na Discord", "Czcionki do nicku, kanału i bio — bez Nitro", m_chat, K_PLAT),
   "id-font-discord": ("Font Discord", "Font untuk nama, channel, dan bio — tanpa Nitro", m_chat, K_PLAT),
+
+  # ---- Roblox font pages (demand-validated locales) ----
+  "es-fuentes-para-roblox": ("Fuentes para Roblox", "Letras para el nombre y la bio", m_chat, K_PLAT),
+  "pl-czcionki-na-roblox": ("Czcionki na Roblox", "Generator czcionek do nazwy i bio", m_chat, K_PLAT),
+  "vi-font-roblox": ("Font Chữ Roblox", "Tạo chữ đẹp cho tên và bio", m_chat, K_PLAT),
 }
 
 
