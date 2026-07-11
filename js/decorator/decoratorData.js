@@ -111,6 +111,20 @@
     },
 
     {
+      key: 'dark-academia', label: 'Dark Academia', icon: '📖',
+      pairs: [
+        ['📖', '📖'],
+        ['🕯️', '🕯️'],
+        ['⟪', '⟫'],
+        ['🖋️', '🖋️'],
+        ['❦', '❦']
+      ],
+      charms: ['🕯️', '🪶', '📜', '⏳', '♟️'],
+      sprinkles: ['·', '❦', '§'],
+      lines: ['📖 ⋆ 🕯️ ⋆ 📖 ⋆ 🕯️ ⋆ 📖', '❦ ⸻ ❦ ⸻ ❦']
+    },
+
+    {
       key: 'celestial', label: 'Celestial', icon: '☾',
       pairs: [
         ['☾', '☽'],

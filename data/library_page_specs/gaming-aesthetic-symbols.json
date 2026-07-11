@@ -1,0 +1,93 @@
+{
+  "slug": "gaming-aesthetic-symbols",
+  "title": "Gaming Aesthetic Symbols Copy & Paste — Clan Tag Frames, HUD Bars & Battle Icons",
+  "meta_description": "Gaming aesthetic symbols — clan tag frames, HUD-style dividers, and battle icons. Copy and paste gamer bio, username, and clan tag decorations.",
+  "canonical": "https://ultratextgen.com/library/gaming-aesthetic-symbols/",
+  "breadcrumb": "Gaming Aesthetic Symbols",
+  "hero_h1": "Gaming Aesthetic Symbols",
+  "hero_tagline": "Clan-tag frames, HUD dividers, and battle icons for gamer bios, usernames, and Discord tags. Copy and paste gaming aesthetic symbols instantly.",
+  "intro": "Gaming aesthetic symbols are the frames, brackets, and battle icons that turn a plain username into a clan tag — the ꧁༒…༒꧂ wraps, HUD-style loading bars, and level-up icons seen on Free Fire, PUBG, and Discord profiles. This library gathers the frame characters, battle icons, and progress-bar dividers that make a gamertag or gaming bio look intentional.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "tag-frames",
+      "label": "Tag Frames",
+      "h2": "Clan Tag Frames & Wraps",
+      "intro": "The wrap characters that turn a plain name into a stylized gamertag.",
+      "symbols": [
+        { "char": "꧁", "label": "Left Fancy Frame" },
+        { "char": "꧂", "label": "Right Fancy Frame" },
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "『", "label": "Left White Corner Bracket" },
+        { "char": "』", "label": "Right White Corner Bracket" },
+        { "char": "彡", "label": "Katakana Sweep" }
+      ]
+    },
+    {
+      "id": "battle-icons",
+      "label": "Battle Icons",
+      "h2": "Battle & Level-Up Emojis",
+      "intro": "Weapons, trophies, and combat emojis for a gamer bio or clan tag.",
+      "symbols": [
+        { "char": "🎮", "label": "Video Game Controller" },
+        { "char": "🏹", "label": "Bow and Arrow" },
+        { "char": "🛡️", "label": "Shield" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🎯", "label": "Direct Hit" },
+        { "char": "👾", "label": "Alien Monster" },
+        { "char": "💥", "label": "Collision" }
+      ]
+    },
+    {
+      "id": "hud-bars",
+      "label": "HUD & Loading Bars",
+      "h2": "HUD Bars & Loading Dividers",
+      "intro": "Progress-bar-style dividers for a bio or clan tag signature.",
+      "symbols": [
+        { "char": "▰", "label": "Filled Bar Block" },
+        { "char": "▱", "label": "Empty Bar Block" },
+        { "char": "━", "label": "Heavy Horizontal Line" },
+        { "char": "▮", "label": "Black Vertical Rectangle" },
+        { "char": "▯", "label": "White Vertical Rectangle" },
+        { "char": "⌖", "label": "Crosshair" }
+      ]
+    },
+    {
+      "id": "energy-fx",
+      "label": "Energy & FX",
+      "h2": "Energy, Fire & Lightning Emojis",
+      "intro": "Impact and energy emoji for combo names and kill-feed style captions.",
+      "symbols": [
+        { "char": "🔥", "label": "Fire" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "⚔️", "label": "Crossed Swords" },
+        { "char": "👑", "label": "Crown" }
+      ]
+    }
+  ],
+  "collection_container_id": "gamingAestheticCollectionsContainer",
+  "collection_section": {
+    "id": "gaming-aesthetic-collections",
+    "label": "Gaming Aesthetic Collections",
+    "h2": "Gamer Tag & Clan Divider Sets",
+    "intro": "Ready-made gaming combos you can paste straight into a username, bio, or clan tag — copy the whole arrangement in one click."
+  },
+  "collections": [
+    { "name": "Clan Tag Frame", "flags": ["꧁", "彡", "꧂"], "defaultFormat": "inline" },
+    { "name": "Level-Up Divider", "flags": ["▰", "▰", "▰", "▱", "▱"], "defaultFormat": "inline" },
+    { "name": "Pro Player Combo", "flags": ["👑", "🎮", "🏆"], "defaultFormat": "inline" },
+    { "name": "Kill Feed FX", "flags": ["🔥", "⚔️", "💯"], "defaultFormat": "inline" },
+    { "name": "HUD Signature", "flags": ["━", "▮", "⌖", "▮", "━"], "defaultFormat": "inline" }
+  ],
+  "related": [
+    { "href": "/library/roblox-symbols/", "title": "Roblox Symbols", "desc": "Symbols that pass the Roblox display name validator." },
+    { "href": "/library/y2k-symbols/", "title": "Y2K Symbols", "desc": "Retro-futuristic cyber symbols that pair well with a gaming profile." },
+    { "href": "/usecase/free-fire-name-generator/", "title": "Free Fire Name Generator", "desc": "Build a stylish Free Fire name with live character-limit checking." },
+    { "href": "/library/divider-kaomoji/", "title": "Kaomoji Dividers", "desc": "Cute text dividers and spacers for bios and posts." },
+    { "href": "/library/aesthetic-symbols/", "title": "Aesthetic Symbols", "desc": "The full hub of named-aesthetic symbol libraries." }
+  ]
+}
