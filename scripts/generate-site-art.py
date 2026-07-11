@@ -841,6 +841,7 @@ PAGES = {
   "answers-what-font-does-discord-use": ("What Font Does Discord Use?", "gg sans, and what it means for you", m_qa, K_ANS),
   "answers-what-font-does-facebook-use": ("What Font Does Facebook Use?", "The system fonts behind the feed", m_qa, K_ANS),
   "answers-what-font-does-linkedin-use": ("What Font Does LinkedIn Use?", "The typeface and your options", m_qa, K_ANS),
+  "answers-what-font-does-roblox-use": ("What Font Does Roblox Use?", "Builder Sans, and the Comic Sans myth", m_qa, K_ANS),
   "answers-what-font-does-snapchat-use": ("What Font Does Snapchat Use?", "The app typeface, explained", m_qa, K_ANS),
   "answers-what-is-a-tiktok-handle": ("What Is a TikTok Handle?", "Handle vs name, made simple", m_qa, K_ANS),
   "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
