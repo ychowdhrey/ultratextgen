@@ -7143,3 +7143,308 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   white-space: pre;
   color: var(--text-primary);
 }
+
+/* ==========================================================================
+   SCROLLING TEXT TOOL  (/usecase/scrolling-text/)
+   Two modes under one page: "bio" (a repeated, divider-separated block that
+   overflows a bio and scrolls — rendered into #resultsGrid via the shared
+   .style-card / .copy-btn contract) and "marquee" (a portable CSS-animation
+   banner with a live preview + embed code). Tokens only; no hardcoded colors.
+   ========================================================================== */
+
+/* Mode tabs — two big pills under the headline */
+.scroll-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 16px 0 4px;
+}
+.scroll-mode-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+}
+.scroll-mode-tab:hover {
+  border-color: var(--accent-purple);
+}
+.scroll-mode-tab.active {
+  border-color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+.scroll-mode-tab-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.scroll-mode-tab-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Panels + tool card */
+.scroll-panel {
+  margin-top: 18px;
+}
+.scroll-tool {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.scroll-tool-marquee {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Control blocks */
+.scroll-control-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.scroll-control-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* Fields (shared by both modes) */
+.scroll-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.scroll-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.scroll-field textarea,
+.scroll-field input[type="text"],
+.scroll-field select,
+.scroll-select {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+}
+.scroll-field textarea { resize: vertical; min-height: 64px; }
+.scroll-field input[type="range"] { width: 100%; accent-color: var(--accent-purple); }
+.scroll-field input[type="color"] {
+  width: 44px; height: 32px; padding: 0;
+  border: 1px solid var(--border-light); border-radius: 8px;
+  background: var(--bg-white); cursor: pointer;
+}
+.scroll-row { display: flex; gap: 12px; }
+.scroll-row .scroll-field { flex: 1; }
+
+/* Preset quick-fill chips */
+.scroll-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scroll-preset-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.scroll-preset-chip:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+/* Divider group tabs */
+.scroll-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scroll-tab {
+  padding: 4px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.scroll-tab:hover { border-color: var(--accent-purple); color: var(--accent-purple); }
+.scroll-tab.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+
+/* Reused chip grid (divider / repeat-mode / join chips use .vertical-chip) */
+.scroll-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scroll-inline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.scroll-inline-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.scroll-range-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 34px;
+}
+.scroll-select { max-width: 260px; cursor: pointer; }
+
+/* Output note + fit badges (bio mode) */
+.scroll-output-note {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.scroll-fit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+.scroll-fit-count {
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-right: 4px;
+}
+.scroll-fit-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+}
+.scroll-fit-badge.scrolls {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.scroll-fit-legend {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Bio result cards — bounded height so a long repeated block stays tidy */
+.scroll-style-card .scroll-card-meta {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 2px 0 6px;
+}
+.scroll-preview {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow-y: auto;
+  line-height: 1.4;
+}
+.scroll-lazy-sentinel { width: 100%; height: 1px; }
+
+/* Marquee stage */
+.scroll-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.marquee-preview {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+.marquee-preview > div { width: 100%; }
+.scroll-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+/* Deliberately NOT .copy-btn: that class is matched by script.js's global
+   document click delegate (keyed off dataset.text), which would immediately
+   overwrite this button's own clipboard write with an empty string. Same
+   look, own click handling (see scrollPageController.js's copyEmbed()). */
+.scroll-copy-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.scroll-copy-btn:hover {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: white;
+}
+.scroll-embed-code {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Space Mono', ui-monospace, 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+@media (max-width: 780px) {
+  .scroll-tool-marquee { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .scroll-mode-tabs { grid-template-columns: 1fr; }
+}
