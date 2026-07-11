@@ -49,6 +49,42 @@
 
   var refs = {};
 
+  /* ---- recently made faces (localStorage, like the site's other "recent"
+     lists) ---------------------------------------------------------------- */
+  var RECENT_KEY = "utg_kaomoji_recent";
+  var RECENT_MAX = 8;
+
+  function loadRecent() {
+    try {
+      var list = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
+      return Array.isArray(list) ? list : [];
+    } catch (e) { return []; }
+  }
+  function pushRecent(face) {
+    if (!face) return;
+    var list = loadRecent().filter(function (f) { return f !== face; });
+    list.unshift(face);
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX))); } catch (e) { /* no-op */ }
+    renderRecent();
+  }
+  function renderRecent() {
+    if (!refs.recent) return;
+    var list = loadRecent();
+    refs.recent.innerHTML = "";
+    if (refs.recentWrap) refs.recentWrap.classList.toggle("u-hidden", !list.length);
+    list.forEach(function (face) {
+      var b = el("button", "kao-recent-face", face);
+      b.type = "button";
+      b.setAttribute("aria-label", t("loadFace", "Load face") + ": " + face);
+      b.addEventListener("click", function () {
+        freeform = face;
+        render();
+        syncUrl(face);
+      });
+      refs.recent.appendChild(b);
+    });
+  }
+
   /* ---- part lookup ------------------------------------------------------- */
   function part(cat, id) {
     var list = DATA.PARTS[cat] || [];
@@ -105,8 +141,10 @@
       var o = opts[i];
       var cat = o.getAttribute("data-cat");
       var id = o.getAttribute("data-id");
-      o.classList.toggle("is-selected", freeform == null && sel[cat] === id);
+      var isSelected = freeform == null && sel[cat] === id;
+      o.classList.toggle("is-selected", isSelected);
       o.classList.toggle("is-hidden", !fitsMood(part(cat, id), activeMood));
+      o.setAttribute("aria-pressed", isSelected ? "true" : "false");
     }
   }
 
@@ -153,7 +191,9 @@
     activeMood = mood;
     var chips = refs.moods.querySelectorAll(".kao-mood");
     for (var i = 0; i < chips.length; i++) {
-      chips[i].classList.toggle("is-active", chips[i].getAttribute("data-mood") === mood);
+      var isActive = chips[i].getAttribute("data-mood") === mood;
+      chips[i].classList.toggle("is-active", isActive);
+      chips[i].setAttribute("aria-pressed", isActive ? "true" : "false");
     }
     // A mood is a dial: reselect a coherent face in that mood (unless "All").
     if (mood !== "all") randomFace(mood); else render();
@@ -173,6 +213,19 @@
       window.UltraTextGen.copyText(face, btn, face);
     }
     syncUrl(face);
+    pushRecent(face);
+  }
+
+  /* Copy the shareable ?q= link (not the face text) so a creation can be
+     handed off/posted, same job as a competitor's "unique URL" callout. */
+  function copyLink(btn) {
+    var face = currentFace();
+    if (!face) return;
+    syncUrl(face);
+    if (window.UltraTextGen && window.UltraTextGen.copyText) {
+      window.UltraTextGen.copyText(window.location.href, btn, t("linkCopied", "link"));
+    }
+    pushRecent(face);
   }
 
   /* ---- UI construction --------------------------------------------------- */
@@ -181,11 +234,13 @@
     var all = el("button", "kao-mood is-active", t("moodAll", "All"));
     all.type = "button";
     all.setAttribute("data-mood", "all");
+    all.setAttribute("aria-pressed", "true");
     frag.appendChild(all);
     DATA.MOODS.forEach(function (m) {
       var b = el("button", "kao-mood", m.label);
       b.type = "button";
       b.setAttribute("data-mood", m.id);
+      b.setAttribute("aria-pressed", "false");
       frag.appendChild(b);
     });
     refs.moods.appendChild(frag);
@@ -248,17 +303,20 @@
 
   /* ---- init -------------------------------------------------------------- */
   function init() {
-    refs.preview   = $("#kaomojiPreview");
-    refs.faceInput = $("#kaomojiFaceInput");
-    refs.parts     = $("#kaomojiParts");
-    refs.moods     = $("#kaomojiMoods");
-    refs.presets   = $("#kaomojiPresets");
-    refs.hint      = $("#kaomojiHint");
+    refs.preview    = $("#kaomojiPreview");
+    refs.faceInput  = $("#kaomojiFaceInput");
+    refs.parts      = $("#kaomojiParts");
+    refs.moods      = $("#kaomojiMoods");
+    refs.presets    = $("#kaomojiPresets");
+    refs.hint       = $("#kaomojiHint");
+    refs.recent     = $("#kaomojiRecent");
+    refs.recentWrap = $("#kaomojiRecentWrap");
     if (!refs.preview || !refs.parts || !refs.moods) return;
 
     buildMoods();
     buildParts();
     buildPresets();
+    renderRecent();
 
     // Deep link / "edit in generator": ?q=<face> preloads the face.
     try {
@@ -268,6 +326,9 @@
 
     var copyBtn = $("#kaomojiCopyBtn");
     if (copyBtn) copyBtn.addEventListener("click", function () { copyFace(copyBtn); });
+
+    var copyLinkBtn = $("#kaomojiCopyLinkBtn");
+    if (copyLinkBtn) copyLinkBtn.addEventListener("click", function () { copyLink(copyLinkBtn); });
 
     var surprise = $("#kaomojiSurpriseBtn");
     if (surprise) surprise.addEventListener("click", function () { randomFace(activeMood); });
