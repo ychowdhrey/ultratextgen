@@ -23,11 +23,12 @@
 
   // True when the text carries a diacritic. Decomposing to NFD turns every
   // precomposed accented Latin/Vietnamese letter into base + a combining mark
-  // (U+0300–U+036F), so one test covers á, ñ, ü, ữ, ế and the rest. đ/Đ has no
-  // decomposition and no combining mark, so it is checked explicitly.
+  // (U+0300–U+036F), so one test covers á, ñ, ü, ữ, ế and the rest (İ included
+  // — it decomposes to I + combining dot above). đ/Đ and Turkish dotless ı
+  // have no decomposition and no combining mark, so they're checked explicitly.
   function hasAccentedText(value) {
     if (!value) return false;
-    if (/[đĐ]/.test(value)) return true;          // đ / Đ
+    if (/[đĐı]/.test(value)) return true;         // đ / Đ / ı
     return /[̀-ͯ]/.test(value.normalize('NFD'));  // combining marks
   }
 
