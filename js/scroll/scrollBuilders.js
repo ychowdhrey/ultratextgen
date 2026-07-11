@@ -15,8 +15,11 @@
   "use strict";
 
   /* Hard cap on repeats so a runaway control can't build megabytes of text,
-     mirroring verticalLayouts.js's maxUnits guard. */
-  const MAX_REPEATS = 40;
+     mirroring verticalLayouts.js's maxUnits guard. Shared with the repeat-text
+     generator (/usecase/repeat-text/), whose whole point is "100 times" (and
+     its "200 times" sibling), so the cap is 200 — read dynamically by both
+     pages, so raising it just gives the scrolling-text slider more headroom. */
+  const MAX_REPEATS = 200;
 
   /* Unicode-aware length (counts code points the way platforms roughly do). */
   function charLen(str) {

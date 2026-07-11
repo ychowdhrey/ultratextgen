@@ -21,6 +21,7 @@
         '<a href="/usecase/bio-font/" class="footer-link">Bio Font</a>' +
         '<a href="/usecase/vertical-text/" class="footer-link">Vertical Text</a>' +
         '<a href="/usecase/scrolling-text/" class="footer-link">Scrolling Text</a>' +
+        '<a href="/usecase/repeat-text/" class="footer-link">Repeat Text</a>' +
         '<a href="/usecase/zalgo-text/" class="footer-link">Zalgo Text</a>' +
         '<a href="/ascii-art-generator/" class="footer-link">ASCII Art Generator</a>' +
       '</div>' +

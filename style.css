@@ -7448,3 +7448,71 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 @media (max-width: 640px) {
   .scroll-mode-tabs { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   REPEAT TEXT GENERATOR (/usecase/repeat-text/)
+   Reuses the .scroll-* field / chip / control-block / card styling; only the
+   arrangement (shape) picker and the shape-preserving preview are page-specific
+   (repeat-* prefix). Tokens only — no hardcoded colors — so dark mode adapts
+   the same way the shared .scroll-* classes do.
+   ========================================================================== */
+
+/* Arrangement picker — visual buttons with a mini preview per shape (mirrors
+   the vertical page's layout picker) */
+.repeat-shape-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+.repeat-shape-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 6px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.repeat-shape-option:hover {
+  border-color: var(--accent-purple);
+}
+.repeat-shape-option.active {
+  border-color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+.repeat-shape-mini {
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  font-family: monospace, monospace;
+  font-size: 0.5rem;
+  line-height: 1.15;
+  white-space: pre;
+  text-align: left;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.repeat-shape-option.active .repeat-shape-mini {
+  color: var(--accent-purple);
+}
+.repeat-shape-name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Shape-preserving preview — monospace + real newlines so pyramids/box grids
+   keep their geometry; wide shapes scroll horizontally instead of wrapping. */
+.repeat-preview {
+  white-space: pre;
+  overflow: auto;
+  max-height: 240px;
+  font-family: monospace, monospace;
+  line-height: 1.4;
+}
