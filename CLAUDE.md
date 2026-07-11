@@ -77,9 +77,10 @@ ultratextgen/
 ├── usecase/                # Use case pages (bio, comment, etc.)
 ├── guide/                  # Educational / authority articles — explore-and-learn intent
 ├── answers/                # Single-question, zero-click answer pages (see "Guide vs Answer")
-├── library/                # Symbol/emoji/emoticon/kaomoji reference libraries
+├── library/                # Symbol/emoji/emoticon/kaomoji reference libraries — BROWSE pillar
 │                           #   (classify each page by presentation_class +
 │                           #    copy_patterns — see docs/emoji-combination-taxonomy.md)
+├── symbol/                 # Single-glyph identity spokes — SEARCH-ONLY pillar (see "Library vs Symbol")
 ├── js/vertical/            # Vertical text feature module
 ├── js/tattoo/              # Tattoo lettering studio module (names, dates→roman, initials, symbols)
 │
@@ -108,6 +109,38 @@ misfiling weakens both the page and the cluster.
 Rule of thumb: if the value is "resolve one question in seconds," it's an **answer**.
 If the value is "understand a topic / build authority," it's a **guide**. A guide may
 bundle many sub-questions; an answer stays tightly scoped to one.
+
+---
+
+## Content Types: Library vs Symbol
+
+`library/` and `symbol/` both hold Unicode reference content, but they own different
+jobs and different discovery paths. Don't conflate them when deciding where a new
+page belongs.
+
+| | `library/` | `symbol/` |
+|---|---|---|
+| **Job** | **Browse** a category — a hub of related glyphs (math symbols, currency symbols, zodiac signs) | **Identify** one specific glyph in full — codepoint, history, alt-input, confusable neighbors, FAQ |
+| **Scope** | `collection` (many peer symbols) or a `single` glyph that's still primarily a copy target | Always `single` — one canonical glyph, per the "resolves to one canonical answer" gate |
+| **Discovery** | **Primary nav** (`header.js` "Library" button) + on-page search/filter UI | **Search only** — no nav entry. Same footing as `guide/`, which also has no nav slot despite being a full pillar; nav real estate tracks browse-intent volume, not content-type existence |
+| **Breadcrumb** | `Library` | `Symbols` |
+| **Cross-linking** | Links out to relevant `symbol/` spokes from its hub pages; its own index (`library/index.html`) points to `/symbol/` for single-glyph lookups, phrased as "see the symbol pages," never "browse" | Every spoke links back to the `library/` hub(s) it relates to; its index (`symbol/index.html`) explicitly routes "want a whole category?" traffic back to `/library/` |
+
+**The decision, and why:** `library/` stays the sole "browse and find" surface — that's
+where the on-page search UI, filters, and primary nav entry live. `symbol/` exists
+purely to give a single high-intent glyph query (e.g. "khanda symbol," "diameter
+symbol") a page that can't be built as a hub section without diluting it, and that
+page is meant to be *landed on* via search, not *browsed to*. Do not add a `symbol/`
+entry to `header.js`'s main nav, and do not build search/filter UI on
+`symbol/index.html` — that would duplicate `library/`'s job and blur the pillar split.
+
+**Adding a `symbol/` page:** write a spec in `data/library_page_specs/` with
+`"page_type": "symbol"` (everything else matches a normal `library/` spec) and run
+`scripts/generate_library_page_from_spec.py` — it routes output to `/symbol/<slug>/`
+and defaults the breadcrumb to "Symbols" automatically. Add reciprocal links: one
+`compare-card` on the closest `library/` hub page(s) pointing to the new spoke, and
+one entry back on `symbol/index.html`. `scripts/validate_library_pages.py` scans
+`symbol/*` by default alongside `library/*`, so no extra step is needed there.
 
 ---
 
