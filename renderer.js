@@ -366,10 +366,10 @@ function renderMap(text, style) {
   ]);
 
   function caseHasIntentionalCasing(token) {
-    const letters = token.replace(/[^a-zA-Z]/g, '');
+    const letters = token.replace(/[^\p{L}]/gu, '');
     if (letters.length < 2) return false;
     if (letters === letters.toUpperCase()) return true; // acronym: NASA, FBI
-    return /[A-Z]/.test(letters.slice(1)); // internal caps: McDonald, iPhone
+    return /\p{Lu}/u.test(letters.slice(1)); // internal caps: McDonald, iPhone
   }
 
   function caseLowerWord(token) {
@@ -377,7 +377,7 @@ function renderMap(text, style) {
   }
 
   function caseCapFirstAlpha(token) {
-    const m = token.match(/[a-zA-Z]/);
+    const m = token.match(/\p{L}/u);
     if (!m) return token;
     const idx = token.indexOf(m[0]);
     return token.slice(0, idx) + token[idx].toUpperCase() + token.slice(idx + 1);
@@ -533,7 +533,7 @@ function renderMap(text, style) {
       const last = wordIdxs[wordIdxs.length - 1];
       return words.map((w, i) => {
         if (!w.trim()) return w;
-        const bare = w.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        const bare = w.replace(/[^\p{L}]/gu, '').toLowerCase();
         if (i !== first && i !== last && CASE_SMALL_WORDS.has(bare)) {
           return caseLowerWord(w);
         }
