@@ -1,0 +1,184 @@
+{
+  "slug": "simbolos-de-confirmacao",
+  "lang": "pt",
+  "title": "Símbolos de Confirmação: Copiar e Colar Check e Ícones de Status",
+  "meta_description": "Navegue e copie símbolos de confirmação (check), marcas de X e indicadores de status para listas, comparações e formatação profissional. Clique em qualquer símbolo para copiar na hora.",
+  "breadcrumb": "Símbolos de Confirmação",
+  "hero_h1": "Símbolos de Confirmação (Check)",
+  "hero_tagline": "Uma coleção de símbolos de confirmação (check), marcas de rejeição e indicadores de status para listas, comparações e formatação profissional. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "Navegue e copie marcas de confirmação, marcas de rejeição, círculos de status, selos de aprovação, ícones de aviso e indicadores numerados de progresso — tudo organizado para acesso rápido e uso prático.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/pt/library/simbolos-de-confirmacao/",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/library/simbolos/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/checkmark-symbols/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-de-confirmacao/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/checkmark-symbols/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "classic-checks",
+      "label": "Confirmações Clássicas",
+      "h2": "Símbolos de Confirmação Clássicos",
+      "intro": "Caracteres de confirmação (check) padrão de conjuntos Unicode e emoji.",
+      "symbols": [
+        { "char": "✓", "label": "Sinal de Confirmação" },
+        { "char": "✔", "label": "Sinal de Confirmação Grosso" },
+        { "char": "☑", "label": "Caixa de Votação com Confirmação" },
+        { "char": "✅", "label": "Sinal de Confirmação Grosso Branco" },
+        { "char": "☐", "label": "Caixa de Votação" },
+        { "char": "▣", "label": "Quadrado Branco com Quadrado Preto Pequeno" },
+        { "char": "✔️", "label": "Sinal de Confirmação Grosso" }
+      ]
+    },
+    {
+      "id": "crosses",
+      "label": "Cruzes e Rejeições",
+      "h2": "Símbolos de Cruz e Rejeição",
+      "intro": "Marcas de X e símbolos de rejeição para não, cancelar e valores falsos.",
+      "symbols": [
+        { "char": "✗", "label": "X de Votação" },
+        { "char": "✘", "label": "X de Votação Grosso" },
+        { "char": "❌", "label": "Marca de X" },
+        { "char": "☒", "label": "Caixa de Votação com X" },
+        { "char": "✕", "label": "X de Multiplicação" },
+        { "char": "❎", "label": "Botão de Marca X" },
+        { "char": "✖", "label": "X de Multiplicação Grosso" }
+      ]
+    },
+    {
+      "id": "status-circles",
+      "label": "Círculos de Status",
+      "h2": "Símbolos de Círculo de Status",
+      "intro": "Círculos com código de cor para sistemas de status, painéis e indicadores de progresso.",
+      "symbols": [
+        { "char": "🟢", "label": "Círculo Verde (Ativo)" },
+        { "char": "🔴", "label": "Círculo Vermelho (Erro)" },
+        { "char": "🟡", "label": "Círculo Amarelo (Aviso)" },
+        { "char": "⚪", "label": "Círculo Branco (Inativo)" },
+        { "char": "⚫", "label": "Círculo Preto (Offline)" },
+        { "char": "⬤", "label": "Círculo Grande" },
+        { "char": "○", "label": "Círculo Contorno" },
+        { "char": "●", "label": "Círculo Sólido" },
+        { "char": "🔵", "label": "Círculo Azul (Info)" },
+        { "char": "🟠", "label": "Círculo Laranja (Cuidado)" },
+        { "char": "🟣", "label": "Círculo Roxo" }
+      ]
+    },
+    {
+      "id": "approval",
+      "label": "Aprovação e Verificação",
+      "h2": "Símbolos de Aprovação e Verificação",
+      "intro": "Símbolos para status verificado, aprovado, certificado e completo.",
+      "symbols": [
+        { "char": "👍", "label": "Joia (Positivo)" },
+        { "char": "👎", "label": "Joia (Negativo)" },
+        { "char": "👌", "label": "Mão com Sinal de OK" },
+        { "char": "💯", "label": "Cem Pontos" },
+        { "char": "⭐", "label": "Estrela" },
+        { "char": "🔰", "label": "Símbolo Japonês de Iniciante" },
+        { "char": "🛡️", "label": "Escudo" },
+        { "char": "🏅", "label": "Medalha Esportiva" }
+      ]
+    },
+    {
+      "id": "warning-info",
+      "label": "Aviso e Informação",
+      "h2": "Símbolos de Aviso e Informação",
+      "intro": "Símbolos de alerta, informação e notificação para mensagens importantes.",
+      "symbols": [
+        { "char": "⚠", "label": "Sinal de Aviso" },
+        { "char": "⚠️", "label": "Emoji de Aviso" },
+        { "char": "ℹ️", "label": "Informação" },
+        { "char": "🔔", "label": "Sino" },
+        { "char": "📢", "label": "Alto-falante" },
+        { "char": "📣", "label": "Megafone" },
+        { "char": "🚨", "label": "Sirene da Polícia" },
+        { "char": "⛔", "label": "Entrada Proibida" },
+        { "char": "🚫", "label": "Proibido" },
+        { "char": "🔺", "label": "Triângulo Vermelho para Cima" },
+        { "char": "🔻", "label": "Triângulo Vermelho para Baixo" },
+        { "char": "‼", "label": "Ponto de Exclamação Duplo" },
+        { "char": "❗", "label": "Ponto de Exclamação" }
+      ]
+    },
+    {
+      "id": "progress",
+      "label": "Indicadores de Progresso",
+      "h2": "Símbolos de Indicador de Progresso",
+      "intro": "Caracteres numerados e circulados para etapas, classificações e listas ordenadas.",
+      "symbols": [
+        { "char": "⏳", "label": "Ampulheta Não Concluída" },
+        { "char": "⌛", "label": "Ampulheta Concluída" },
+        { "char": "🔄", "label": "Setas Anti-horárias" },
+        { "char": "⏺", "label": "Botão de Gravação" },
+        { "char": "⏸", "label": "Botão de Pausa" },
+        { "char": "⏹", "label": "Botão de Parar" },
+        { "char": "①", "label": "Etapa 1" },
+        { "char": "②", "label": "Etapa 2" },
+        { "char": "③", "label": "Etapa 3" },
+        { "char": "④", "label": "Etapa 4" },
+        { "char": "⑤", "label": "Etapa 5" },
+        { "char": "⑥", "label": "Etapa 6" },
+        { "char": "⑦", "label": "Etapa 7" },
+        { "char": "⑧", "label": "Etapa 8" },
+        { "char": "⑨", "label": "Etapa 9" },
+        { "char": "⑩", "label": "Etapa 10" }
+      ]
+    },
+    {
+      "id": "ballot-boxes",
+      "label": "Caixas de Votação",
+      "h2": "Símbolos de Caixa de Votação e Checkbox",
+      "intro": "Caixas vazias, marcadas e riscadas para formulários, pesquisas e listas de tarefas — incluindo as marcas mais grossas para checklists mais decorativos.",
+      "symbols": [
+        { "char": "☐", "label": "Caixa Vazia" },
+        { "char": "☑", "label": "Caixa Marcada" },
+        { "char": "☒", "label": "Caixa Riscada" },
+        { "char": "🗹", "label": "Caixa com Confirmação Grossa" },
+        { "char": "🗸", "label": "Confirmação Leve" },
+        { "char": "🗴", "label": "X Script Leve" },
+        { "char": "▢", "label": "Quadrado com Cantos Arredondados" },
+        { "char": "⊠", "label": "X Quadrado" },
+        { "char": "☑️", "label": "Caixa com Confirmação" }
+      ]
+    },
+    {
+      "id": "checklist-templates",
+      "label": "Checklist",
+      "h2": "Modelos de Checklist e Lista de Tarefas",
+      "intro": "Linhas de checklist prontas para copiar e pares de concluído/pendente para anotações, posts e atualizações de projeto. Clique em um modelo para copiar a marca completa com o rótulo.",
+      "symbols": [
+        { "char": "☑ Feito", "label": "Linha Feito" },
+        { "char": "☐ A fazer", "label": "Linha A Fazer" },
+        { "char": "✔ Concluído · ✘ Pendente", "label": "Par de Status" },
+        { "char": "[✓]", "label": "Confirmação entre Colchetes" },
+        { "char": "[ ]", "label": "Colchete Vazio" },
+        { "char": "✅ Sim  ❌ Não", "label": "Sim / Não" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos-de-marcadores/",
+      "title": "Símbolos de Marcadores",
+      "desc": "Bullet points, marcadores de seta e caixas de checkbox para listas."
+    },
+    {
+      "href": "/pt/library/setas/",
+      "title": "Símbolos de Setas",
+      "desc": "Todos os caracteres Unicode de seta para navegação, direção e listas."
+    },
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria."
+    }
+  ]
+}
