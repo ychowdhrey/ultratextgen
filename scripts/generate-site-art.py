@@ -87,6 +87,7 @@ NATIVE_SCRIPT = {
     "th": "Noto Sans Thai",
     "ja": "Noto Sans CJK JP",
     "ko": "Noto Sans CJK KR",
+    "zh": "WenQuanYi Zen Hei",
 }
 
 # (family name written into the SVG, glob patterns to find its file).
@@ -106,6 +107,7 @@ _NATIVE_FONT_FILE = {
     "Noto Sans Thai": "/usr/share/fonts/truetype/noto/NotoSansThai-Regular.ttf",
     "Noto Sans CJK JP": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "Noto Sans CJK KR": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "WenQuanYi Zen Hei": "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
 }
 
 _cmap_cache = {}
@@ -1062,6 +1064,15 @@ HOME_CARD = "fancy-text-generator-preview"
 
 
 PAGES = {
+  # ---- zh-tw (Traditional Chinese / Taiwan) pilot locale ----
+  # Root gets the highest-opportunity keyword for this market (kaomoji,
+  # per data/tw_piliapp_niche_keywords research: 110K volume, incumbent
+  # only #11) rather than a generic translated homepage — same pattern
+  # as ko/'s root going to "특수문자" instead of the font tool.
+  "zh-tw": ("顏文字大全", "複製貼上可愛表情符號", m_kaomoji, K_SITE),
+  "zh-tw-yingwen-ziti": ("英文字體產生器", "花式英文字體，複製貼上", m_typo, K_USE),
+  "zh-tw-library-xingzuo-fuhao": ("十二星座符號", "星座與行星符號大全", glyphs("♈", "♋", "♌", "♏", "♐"), K_LIB),
+
   "kaomoji-dictionary": ("Kaomoji Dictionary", "Decode any text face", m_kaomoji, K_SITE),
   "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
   # ---- site root / overview ----
@@ -1956,14 +1967,24 @@ def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
 </svg>"""
 
 
+def _native_for_slug(slug):
+    """slug's locale prefix ('zh-tw...' -> 'zh', 'ja-...' -> 'ja') looked up
+    against NATIVE_SCRIPT, or None for slugs with no non-Latin script."""
+    for loc, fam in NATIVE_SCRIPT.items():
+        if slug == loc or slug.startswith(loc + "-"):
+            return fam
+    return None
+
+
 def main():
     import cairosvg
     n = 0
     for slug, (title, sub, motif, kicker) in PAGES.items():
+        native = _native_for_slug(slug)
         with open(os.path.join(HERO, f"{slug}.svg"), "w", encoding="utf-8") as f:
             f.write(hero_svg(slug, title, motif, kicker))
         cairosvg.svg2png(
-            bytestring=og_png_svg(slug, title, sub, motif, kicker).encode(),
+            bytestring=og_png_svg(slug, title, sub, motif, kicker, native=native).encode(),
             write_to=os.path.join(OG, f"{slug}.png"),
             output_width=1200, output_height=630)
         n += 1
