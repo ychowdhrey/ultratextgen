@@ -53,6 +53,20 @@
       copiedBtn: " Copiado!",
       formats: { inline: "Em linha", vertical: "Vertical", comma: "Vírgula", space: "Espaço", bullet: "Lista" }
     },
+    es: {
+      copied: "Copiado: ",
+      copyFormat: "Formato de copia",
+      copyCollection: " Copiar colección",
+      copiedBtn: " ¡Copiado!",
+      formats: { inline: "En línea", vertical: "Vertical", comma: "Coma", space: "Espacio", bullet: "Viñeta" }
+    },
+    de: {
+      copied: "Kopiert: ",
+      copyFormat: "Kopierformat",
+      copyCollection: " Sammlung kopieren",
+      copiedBtn: " Kopiert!",
+      formats: { inline: "Inline", vertical: "Vertikal", comma: "Komma", space: "Leerzeichen", bullet: "Aufzählung" }
+    },
     id: {
       copied: "Disalin: ",
       copyFormat: "Format Salin",
