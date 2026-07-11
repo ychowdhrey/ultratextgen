@@ -256,7 +256,18 @@
   const CHARS = (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
 
   const RENDER = CFG.render || "outline";           // "outline" | "glyph"
-  const FONT = CFG.font || "'Plus Jakarta Sans', 'Segoe UI Symbol', sans-serif";
+  // Mutable (not const): pages that set CFG.scriptOptions let the visitor
+  // switch the active font at runtime (e.g. choosing which German school
+  // handwriting standard to practice). Every render function below reads
+  // FONT fresh on each call, so reassigning it here is enough to repaint
+  // every surface (preview, print sheet, PNG) in the new script — no other
+  // function needs to change. Pages that don't set scriptOptions never call
+  // setGenScript(), so FONT stays exactly as constant as it always was.
+  let FONT = CFG.font || "'Plus Jakarta Sans', 'Segoe UI Symbol', sans-serif";
+  const SCRIPT_OPTIONS = Array.isArray(CFG.scriptOptions) && CFG.scriptOptions.length
+    ? CFG.scriptOptions
+    : null;
+  let genScriptKey = SCRIPT_OPTIONS ? SCRIPT_OPTIONS[0].key : null;
   const STROKE = CFG.strokeWidth || 9;
   const NOUN = CFG.noun || "letter";                // "bubble letter", "block letter"…
   // Extra space between letters in multi-letter (word/name) output, expressed
@@ -295,6 +306,7 @@
     genModel: $("#pt-gen-model"),
     genPrint: $("#pt-gen-print"),
     genPng: $("#pt-gen-png"),
+    genScript: $("#pt-gen-script"),
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
     designHeading: $("#pt-design-heading"),
@@ -1174,6 +1186,24 @@
   }
   function genModelOn() { return !el.genModel || el.genModel.checked; }
 
+  // Script picker (CFG.scriptOptions only, e.g. choosing between real German
+  // school handwriting standards). Reassigns the shared FONT so every render
+  // path — live preview, print sheet, PNG — repaints in the new script.
+  function setGenScript(key) {
+    if (!SCRIPT_OPTIONS) return;
+    const opt = SCRIPT_OPTIONS.find((o) => o.key === key) || SCRIPT_OPTIONS[0];
+    genScriptKey = opt.key;
+    FONT = opt.font;
+    if (el.genScript) {
+      $$(".pt-gen-script-opt", el.genScript).forEach((b) => {
+        const on = b.dataset.script === genScriptKey;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    withFont(renderGenPreview);
+  }
+
   // The full worksheet as a DOM node — the SINGLE primitive behind both the
   // live paper preview and the printed sheet, so what you see is what prints.
   function genSheetNode() {
@@ -1241,6 +1271,11 @@
       parts.push(genRowCount() + " trace");
       if (level !== TRACE_LEVELS.length) parts.push("2 blank");
       el.genPreviewMeta.textContent = parts.join(" · ") + " · US Letter";
+    }
+    if (SCRIPT_OPTIONS) {
+      const active = SCRIPT_OPTIONS.find((o) => o.key === genScriptKey) || SCRIPT_OPTIONS[0];
+      const hintEl = $("#pt-gen-script-hint");
+      if (hintEl) hintEl.textContent = active.hint || "";
     }
   }
 
@@ -1325,6 +1360,12 @@
     if (el.genCase) el.genCase.addEventListener("change", renderGenPreview);
     if (el.genRows) el.genRows.addEventListener("change", renderGenPreview);
     if (el.genModel) el.genModel.addEventListener("change", renderGenPreview);
+    if (el.genScript && SCRIPT_OPTIONS) {
+      $$(".pt-gen-script-opt", el.genScript).forEach((b) => {
+        b.addEventListener("click", () => setGenScript(b.dataset.script));
+      });
+      setGenScript(genScriptKey);
+    }
     // Level ladder — buttons authored in HTML (crawlable); wire + add samples.
     if (el.genLevels) {
       $$(".pt-level", el.genLevels).forEach((b) => {

@@ -1,0 +1,174 @@
+{
+  "slug": "simbolos-musicais",
+  "lang": "pt",
+  "title": "Notas Musicais: Símbolos para Copiar e Colar ♪ ♫ 🎵",
+  "meta_description": "Copie e cole notas musicais, claves, acidentes e símbolos de música — além de emojis de instrumentos e áudio. Clique em qualquer símbolo para copiar na hora.",
+  "breadcrumb": "Notas Musicais",
+  "hero_h1": "Notas Musicais e Símbolos Musicais",
+  "hero_tagline": "Uma coleção de símbolos de notação musical, emojis de instrumentos e caracteres Unicode relacionados a áudio. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "Esta biblioteca reúne notas e símbolos de notação musical, emojis de instrumentos e caracteres Unicode relacionados a áudio. Os símbolos estão organizados por categoria — marcas de notação, tipos de instrumento e controles de reprodução.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/pt/library/simbolos-musicais/",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/library/simbolos/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/music-symbols/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/simbolos-musicais/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/music-symbols/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Notas",
+      "h2": "Notas Musicais",
+      "intro": "Símbolos Unicode padrão de nota e suas representações em emoji.",
+      "symbols": [
+        { "char": "♩", "label": "Semínima" },
+        { "char": "♪", "label": "Colcheia" },
+        { "char": "♫", "label": "Colcheias Ligadas" },
+        { "char": "♬", "label": "Semicolcheias Ligadas" },
+        { "char": "🎵", "label": "Nota Musical" },
+        { "char": "🎶", "label": "Notas Musicais" }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Claves",
+      "h2": "Símbolos de Clave",
+      "intro": "Símbolos de clave musical usados na notação de partituras.",
+      "symbols": [
+        { "char": "𝄞", "label": "Clave de Sol" },
+        { "char": "𝄡", "label": "Clave de Dó" },
+        { "char": "𝄢", "label": "Clave de Fá" }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Acidentes",
+      "h2": "Acidentes Musicais",
+      "intro": "Símbolos de sustenido, bemol, bequadro e acidentes duplos usados para alterar a altura na notação musical.",
+      "symbols": [
+        { "char": "♯", "label": "Sustenido" },
+        { "char": "♭", "label": "Bemol" },
+        { "char": "♮", "label": "Bequadro" },
+        { "char": "𝄪", "label": "Dobrado Sustenido" },
+        { "char": "𝄫", "label": "Dobrado Bemol" }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Dinâmica e Notação",
+      "h2": "Dinâmica e Notação",
+      "intro": "Símbolos de dinâmica de volume e marcas de notação musical.",
+      "symbols": [
+        { "char": "𝆏", "label": "Piano (Suave)" },
+        { "char": "𝆑", "label": "Forte (Alto)" },
+        { "char": "𝄀", "label": "Barra de Compasso Simples" },
+        { "char": "𝄁", "label": "Barra de Compasso Dupla" },
+        { "char": "𝄂", "label": "Barra de Compasso Final" },
+        { "char": "𝄃", "label": "Barra de Compasso Final Invertida" },
+        { "char": "𝄆", "label": "Sinal de Repetição à Esquerda" },
+        { "char": "𝄇", "label": "Sinal de Repetição à Direita" },
+        { "char": "𝄐", "label": "Fermata" },
+        { "char": "𝄑", "label": "Fermata Abaixo" }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Pausas",
+      "h2": "Símbolos de Pausa",
+      "intro": "Notação de pausa musical para indicar silêncio.",
+      "symbols": [
+        { "char": "𝄾", "label": "Pausa de Colcheia" },
+        { "char": "𝄿", "label": "Pausa de Semicolcheia" },
+        { "char": "𝄻", "label": "Pausa de Mínima" },
+        { "char": "𝄼", "label": "Pausa de Semínima" }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Instrumentos Musicais",
+      "h2": "Emojis de Instrumentos Musicais",
+      "intro": "Representações em emoji de instrumentos musicais.",
+      "symbols": [
+        { "char": "🎸", "label": "Violão" },
+        { "char": "🎹", "label": "Piano" },
+        { "char": "🎺", "label": "Trompete" },
+        { "char": "🎻", "label": "Violino" },
+        { "char": "🎷", "label": "Saxofone" },
+        { "char": "🥁", "label": "Tambor" },
+        { "char": "🪕", "label": "Banjo" },
+        { "char": "🪗", "label": "Acordeão" },
+        { "char": "🪘", "label": "Tambor Longo" },
+        { "char": "🪇", "label": "Maracas" }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Áudio e Reprodução",
+      "h2": "Áudio e Reprodução",
+      "intro": "Símbolos relacionados a som, alto-falantes e controles de áudio.",
+      "symbols": [
+        { "char": "🎤", "label": "Microfone" },
+        { "char": "🎧", "label": "Fone de Ouvido" },
+        { "char": "📻", "label": "Rádio" },
+        { "char": "🔊", "label": "Alto-falante Volume Alto" },
+        { "char": "🔇", "label": "Alto-falante Mudo" },
+        { "char": "🎼", "label": "Partitura" }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Decorações para Bio",
+      "h2": "Decorações de Bio com Notas Musicais",
+      "intro": "Conjuntos de notas prontos e bordas musicais para bios, nomes de playlist e legendas aesthetic. Clique em qualquer conjunto para copiar a decoração inteira de uma vez.",
+      "symbols": [
+        { "char": "♪┊♫┊♪", "label": "Divisor de Notas" },
+        { "char": "˚₊‧♫‧₊˚", "label": "Nota Emoldurada" },
+        { "char": "♬•*¨*•.¸¸♪", "label": "Rastro de Notas" },
+        { "char": "⋆｡♪｡⋆", "label": "Nota Suave" },
+        { "char": "˚✧♬✧˚", "label": "Nota Brilhante" },
+        { "char": "♩‿♩", "label": "Notas em Par" },
+        { "char": ".｡.:*♡♬", "label": "Nota com Coração" },
+        { "char": "꒰♬꒱", "label": "Nota entre Colchetes" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "music-collections",
+    "label": "Conjuntos Musicais",
+    "h2": "Conjuntos de Bio e Rastro Musical",
+    "intro": "Combinações prontas de notas musicais para colar direto numa bio, legenda ou nome de playlist — copie o combo inteiro com um clique."
+  },
+  "collection_container_id": "musicCollectionsContainer",
+  "collections": [
+    { "name": "Rastro de Notas para Bio", "flags": ["♪", "˚", "♫", "˚", "♪"], "defaultFormat": "inline" },
+    { "name": "Borda Suave de Melodia", "flags": ["⋆｡˚♬˚｡⋆"], "defaultFormat": "inline" },
+    { "name": "Combo de Notas Ligadas", "flags": ["♩", "♪", "♫", "♬"], "defaultFormat": "inline" },
+    { "name": "Divisor de Notas Brilhante", "flags": ["₊", "˚", "♪", "⋆", "♫", "˚", "₊"], "defaultFormat": "inline" },
+    { "name": "Legenda Tocando Agora", "flags": ["🎶", "˚", "♪", "˚", "🎶"], "defaultFormat": "inline" },
+    { "name": "Toque Mínimo de Notas", "flags": ["·", "♪", "·", "♬", "·"], "defaultFormat": "inline" }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos-de-estrela/",
+      "title": "Símbolos de Estrela",
+      "desc": "Estrelas e brilhos Unicode para avaliações, decorações e destaque no texto."
+    },
+    {
+      "href": "/pt/library/simbolos-de-coracao/",
+      "title": "Símbolos de Coração",
+      "desc": "Emojis e símbolos Unicode de coração em vários estilos e cores."
+    },
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria."
+    }
+  ]
+}
