@@ -250,6 +250,85 @@ function mapToArray(mapStrOrArr, kind) {
   return splitGraphemes(s).filter(x => x !== ' ');
 }
 
+/* -----------------------------
+   ACCENT / DIACRITIC SUPPORT
+
+   Unicode's styled alphabets (Mathematical Alphanumeric Symbols — bold,
+   italic, fraktur, bubble, etc.) only define glyphs for plain A-Z/a-z/0-9,
+   so an accented letter like "é" or "ệ" has no styled twin to map to.
+   Rather than pass it through untouched (the old behaviour — the rest of
+   the word styles, the accented letter doesn't), we decompose it to its
+   base letter + combining accent mark(s), style the base like any other
+   letter, and re-append the original mark(s) so the accent rides on the
+   styled glyph — the same trick the strikethrough/underline styles already
+   use for their marks.
+
+   A handful of Latin-extended letters (ł đ ø ß ı ...) have no Unicode
+   decomposition at all — they're distinct atomic characters, not a base
+   letter plus a mark — so there's no accent to reattach. Those fall back
+   to their nearest plain-ASCII base letter so they still pick up the
+   style, matching the visual weight of the surrounding text instead of
+   sitting out unstyled.
+   ----------------------------- */
+const BASE_LETTER_FALLBACK = {
+  'ł': 'l', 'Ł': 'L',
+  'đ': 'd', 'Đ': 'D',
+  'ı': 'i',
+  'ø': 'o', 'Ø': 'O',
+  'ß': 's', 'ẞ': 'S',
+  'æ': 'a', 'Æ': 'A',
+  'œ': 'o', 'Œ': 'O',
+  'ð': 'd', 'Ð': 'D',
+  'þ': 't', 'Þ': 'T',
+  'ħ': 'h', 'Ħ': 'H'
+};
+
+// Resolves any single character to a { base, marks } pair a style's A-Z/a-z
+// map can use: base is a plain letter (or the char itself if there's
+// nothing to decompose), marks is the combining accent(s) to keep, if any.
+function resolveBaseAndMarks(char) {
+  if (BASE_LETTER_FALLBACK[char]) return { base: BASE_LETTER_FALLBACK[char], marks: '' };
+
+  const nfd = char.normalize('NFD');
+  if (nfd.length > 1 && /[A-Za-z0-9]/.test(nfd[0])) {
+    return { base: nfd[0], marks: nfd.slice(1) };
+  }
+
+  return { base: char, marks: '' };
+}
+
+// Shared per-character lookup used by both renderMap branches below.
+// `accentSafe` gates ONLY the combining-mark-carrying path: a handful of
+// styles substitute into Unicode blocks (Enclosed Alphanumerics, Fullwidth,
+// Katakana, Bopomofo, Squared, Runic, Canadian Syllabics...) where real font
+// stacks either show a tofu box or silently drop a combining mark reattached
+// to them (verified by rendering every style through Chromium, not guessed).
+// Those styles set `accentSafe: false` in styles.js and fall back to the old
+// plain-passthrough behaviour for marked accents. The base-letter-only
+// fallback (ł→l, đ→d, ø→o...) never carries a mark, so it's always safe and
+// still applies regardless of accentSafe.
+function mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe) {
+  const u = normalUpper.indexOf(ch);
+  if (u !== -1) return upperArr[u] || ch;
+
+  const l = normalLower.indexOf(ch);
+  if (l !== -1) return lowerArr[l] || ch;
+
+  const n = normalNums.indexOf(ch);
+  if (n !== -1) return numsArr[n] || ch;
+
+  const { base, marks } = resolveBaseAndMarks(ch);
+  if (base !== ch && (accentSafe || !marks)) {
+    const bu = normalUpper.indexOf(base);
+    if (bu !== -1) return (upperArr[bu] || base) + marks;
+
+    const bl = normalLower.indexOf(base);
+    if (bl !== -1) return (lowerArr[bl] || base) + marks;
+  }
+
+  return ch;
+}
+
    // renderMap logic
 
 function renderMap(text, style) {
@@ -267,6 +346,8 @@ function renderMap(text, style) {
     style.groupSlug === 'spaced' ||
     (style.slug || '').endsWith('-spaced');
 
+  const accentSafe = style.accentSafe !== false;
+
   // Map integrity check — only warn when a debug flag is set, never in production
   if (window.UTG_DEBUG &&
       (upperArr.length !== 26 || lowerArr.length !== 26 || numsArr.length !== 10)) {
@@ -278,18 +359,9 @@ function renderMap(text, style) {
   }
 
   if (!isSpaced) {
-    return Array.from(text).map(char => {
-      const u = normalUpper.indexOf(char);
-      if (u !== -1) return upperArr[u] || char;
-
-      const l = normalLower.indexOf(char);
-      if (l !== -1) return lowerArr[l] || char;
-
-      const n = normalNums.indexOf(char);
-      if (n !== -1) return numsArr[n] || char;
-
-      return char;
-    }).join('');
+    return Array.from(text)
+      .map(char => mapChar(char, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe))
+      .join('');
   }
 
   // Spaced output mode (adds spacing after each mapped glyph)
@@ -307,18 +379,7 @@ function renderMap(text, style) {
       continue;
     }
 
-    let mapped = ch;
-
-    const u = normalUpper.indexOf(ch);
-    if (u !== -1) mapped = upperArr[u] || ch;
-
-    const l = normalLower.indexOf(ch);
-    if (l !== -1) mapped = lowerArr[l] || ch;
-
-    const n = normalNums.indexOf(ch);
-    if (n !== -1) mapped = numsArr[n] || ch;
-
-    out.push(mapped);
+    out.push(mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, numsArr, accentSafe));
     out.push(' ');
   }
 
@@ -329,22 +390,26 @@ function renderMap(text, style) {
   /* -----------------------------
      Strikethrough and Underline
      ----------------------------- */
+  // splitGraphemes (not a raw spread) so a pre-decomposed accented letter \u2014
+  // e.g. Vietnamese/Mac clipboard text pasted as base + separate combining
+  // marks \u2014 is treated as one cluster and gets exactly one decorator mark,
+  // not one wedged between the base letter and its own accent.
   const decorators = {
-    strike:   t => [...t].map(c => c + '\u0336').join(''),
-    shortStrike: t => [...t].map(c => c + '\u0335').join(''),
-    doubleStrike: t => [...t].map(c => c + '\u0336' + '\u0335').join(''),
-    heavyStrike: t => [...t].map(c => c + '\u0336' + '\u0336').join(''),
-    wavyStrike: t => [...t].map(c => c + '\u0334').join(''),
-    crossedOut: t => [...t].map(c => c === ' ' ? c : c + '\u0336' + '\u0338').join(''),
-    underline:t => [...t].map(c => c + '\u0332').join(''),
-    doubleUnderline: t => [...t].map(c => c + '\u0333').join(''),
-    wavyUnderline: t => [...t].map(c => c + '\u0330').join(''),
-    overline: t => [...t].map(c => c + '\u0305').join(''),
-    doubleOverline: t => [...t].map(c => c + '\u033f').join(''),
-    wavy:    t => [...t].map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
-    slash:   t => [...t].map(c => c + '\u0338').join(''),
-    shortSlash: t => [...t].map(c => c + '\u0337').join(''),
-    strikeUnderline: t => [...t].map(c => c + '\u0336' + '\u0332').join('')
+    strike:   t => splitGraphemes(t).map(c => c + '\u0336').join(''),
+    shortStrike: t => splitGraphemes(t).map(c => c + '\u0335').join(''),
+    doubleStrike: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0335').join(''),
+    heavyStrike: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0336').join(''),
+    wavyStrike: t => splitGraphemes(t).map(c => c + '\u0334').join(''),
+    crossedOut: t => splitGraphemes(t).map(c => c === ' ' ? c : c + '\u0336' + '\u0338').join(''),
+    underline:t => splitGraphemes(t).map(c => c + '\u0332').join(''),
+    doubleUnderline: t => splitGraphemes(t).map(c => c + '\u0333').join(''),
+    wavyUnderline: t => splitGraphemes(t).map(c => c + '\u0330').join(''),
+    overline: t => splitGraphemes(t).map(c => c + '\u0305').join(''),
+    doubleOverline: t => splitGraphemes(t).map(c => c + '\u033f').join(''),
+    wavy:    t => splitGraphemes(t).map((c,i)=> c + (i%2===0 ? '\u0303':'' )).join(''),
+    slash:   t => splitGraphemes(t).map(c => c + '\u0338').join(''),
+    shortSlash: t => splitGraphemes(t).map(c => c + '\u0337').join(''),
+    strikeUnderline: t => splitGraphemes(t).map(c => c + '\u0336' + '\u0332').join('')
   };
 
   function renderDecorator(text, style) {
@@ -502,9 +567,12 @@ function renderMap(text, style) {
     // Bold Fraktur maps and adds a combining mark or symbol wrapper.
 
     // Fraktur + combining underline — the "gothic underline" intent.
+    // splitGraphemes (not a raw spread) so an accented letter's styled base
+    // and its reattached combining mark are treated as one cluster and only
+    // get a single underline mark, not one wedged between base and accent.
     'ultra-gothic-underline': text =>
       text.trim()
-        ? [...renderMap(text, textStyles['Ultra Gothic'])]
+        ? splitGraphemes(renderMap(text, textStyles['Ultra Gothic']))
             .map(c => (c === ' ' || c === '\n') ? c : c + '̲').join('')
         : text,
 
@@ -520,10 +588,10 @@ function renderMap(text, style) {
         ? `⛧ ${renderMap(text, textStyles['Ultra Gothic'])} ⛧`
         : text,
 
-    // Fraktur struck through — grunge / edgy intent.
+    // Fraktur struck through — grunge / edgy intent. See splitGraphemes note above.
     'ultra-gothic-strike': text =>
       text.trim()
-        ? [...renderMap(text, textStyles['Ultra Gothic'])]
+        ? splitGraphemes(renderMap(text, textStyles['Ultra Gothic']))
             .map(c => (c === ' ' || c === '\n') ? c : c + '̶').join('')
         : text,
 

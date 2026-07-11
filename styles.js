@@ -543,6 +543,10 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'circle',
   slug: 'ultra-bubble',
+  // Enclosed Alphanumerics (U+24B6 circled letters) show as a tofu box when a
+  // combining accent mark is attached in most font stacks — safer to leave an
+  // accented letter unstyled here than risk an illegible glyph. See renderer.js.
+  accentSafe: false,
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
@@ -567,6 +571,7 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'light',
   slug: 'ultra-bubble-light',
+  accentSafe: false, // see Ultra Bubble — same Enclosed Alphanumerics tofu risk
   platforms: ['all', 'instagram', 'x', 'whatsapp']
 },
 
@@ -579,6 +584,10 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'tiles',
   slug: 'ultra-bubble-tiles',
+  // Squared Latin Capital Letter (U+1F130) silently drops a combining accent
+  // mark instead of rendering it — no visible glitch, but the accent is lost
+  // with no visual cue, so we keep the old plain-passthrough behaviour.
+  accentSafe: false,
   platforms: ['all', 'instagram', 'discord']
 },
 
@@ -629,6 +638,7 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'spaced',
   slug: 'ultra-bubble-spaced',
+  accentSafe: false, // see Ultra Bubble — same Enclosed Alphanumerics tofu risk
   platforms: ['all', 'instagram', 'tiktok', 'x']
 },
 
@@ -653,6 +663,7 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'spaced',
   slug: 'ultra-bubble-tiles-spaced',
+  accentSafe: false, // see Ultra Bubble Tiles — combining marks silently drop
   platforms: ['all', 'instagram']
 },
 
@@ -1101,6 +1112,7 @@ const textStyles = {
   familySlug: ['cute-fonts'],
   groupSlug: 'cute',
   slug: 'ultra-cute-bubble',
+  accentSafe: false, // see Ultra Bubble — same Enclosed Alphanumerics tofu risk
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
@@ -1234,6 +1246,9 @@ const textStyles = {
     familySlug: ['fullwidth'],
     groupSlug: 'fullwidth',
     slug: 'ultra-fullwidth',
+    // Halfwidth/Fullwidth Forms shows a tofu box when a combining accent mark
+    // is attached in most font stacks — leave accented letters unstyled here.
+    accentSafe: false,
     platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
   },
 
@@ -1277,6 +1292,7 @@ const textStyles = {
     familySlug: ['faux'],
     groupSlug: 'faux',
     slug: 'ultra-katakana',
+    accentSafe: false, // Katakana block tofus a reattached combining accent mark
     platforms: ["all","instagram","tiktok","x","discord"]
   },
 
@@ -1295,6 +1311,7 @@ const textStyles = {
     familySlug: ['ancient'],
     groupSlug: 'runic',
     slug: 'ultra-runic',
+    accentSafe: false, // combining accent marks silently don't render on runes
     platforms: ["instagram","x","discord"]
   },
 
@@ -1334,6 +1351,7 @@ const textStyles = {
     familySlug: ['ancient'],
     groupSlug: 'ancient',
     slug: 'ultra-canadian-syllabics',
+    accentSafe: false, // combining accent marks silently don't render here
     platforms: ["discord","x"]
   },
 
@@ -1373,6 +1391,7 @@ const textStyles = {
     familySlug: ['ancient'],
     groupSlug: 'ancient',
     slug: 'ultra-bopomofo',
+    accentSafe: false, // Bopomofo block tofus a reattached combining accent mark
     platforms: ["discord","x"]
   },
 
@@ -1403,6 +1422,9 @@ const textStyles = {
     familySlug: ['emoji-letters'],
     groupSlug: 'emoji-letters',
     slug: 'ultra-emoji-block',
+    // Negative Squared Latin Capital Letter silently drops a combining accent
+    // mark instead of rendering it — keep the old plain-passthrough behaviour.
+    accentSafe: false,
     platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
   },
 
@@ -1416,6 +1438,7 @@ const textStyles = {
     familySlug: ['emoji-letters'],
     groupSlug: 'emoji-letters',
     slug: 'ultra-squared',
+    accentSafe: false, // see Ultra Bubble Tiles — combining marks silently drop
     platforms: ["all","instagram","x","discord"]
   },
 

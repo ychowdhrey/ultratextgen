@@ -3,9 +3,12 @@
 
    Input-aware hint. Watches the generator's input and, only when the user
    has typed accented / diacritic characters (á é ñ ü ç, Vietnamese ữ ế đ …),
-   reveals a small note explaining that most styles leave accented letters
-   plain and pointing to the styles that keep them. Silent for plain ASCII,
-   so English users never see it.
+   reveals a small note explaining that the generator keeps accents styled
+   (renderer.js reattaches the original combining mark to the styled base
+   letter) and flagging the remaining exceptions — upside-down styles, and
+   the handful of Latin-extended letters with no Unicode decomposition to
+   carry a mark on (ł, đ, ø, ß, ı …). Silent for plain ASCII, so English
+   users never see it.
 
    Companion to the guide at /guide/fancy-fonts-and-accents/ and the accent
    classification in data/accent-support.json.

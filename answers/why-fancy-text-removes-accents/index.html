@@ -14,11 +14,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Why Does Fancy Text Remove My Accents? (á, ñ, ữ) | UltraTextGen</title>
-  <meta name="description" content="Fancy fonts leave á, ñ and Vietnamese marks plain because Unicode has no styled version of accented letters. Here's why it happens — and which styles keep every accent.">
+  <title>Does Fancy Text Remove My Accents? (á, ñ, ữ) | UltraTextGen</title>
+  <meta name="description" content="Fancy text used to leave á, ñ and Vietnamese marks plain — now almost every style keeps them, by styling the base letter and reattaching the accent. The exceptions, and how.">
   <link rel="canonical" href="https://ultratextgen.com/answers/why-fancy-text-removes-accents/">
-  <meta property="og:title" content="Why Does Fancy Text Remove My Accents? (á, ñ, ữ)">
-  <meta property="og:description" content="Fancy fonts leave á, ñ and Vietnamese marks plain because Unicode has no styled version of accented letters. Here's why — and which styles keep every accent.">
+  <meta property="og:title" content="Does Fancy Text Remove My Accents? (á, ñ, ữ)">
+  <meta property="og:description" content="Fancy text used to leave á, ñ and Vietnamese marks plain — now almost every style keeps them by reattaching the accent. Here's what changed and which styles still can't.">
   <meta property="og:url" content="https://ultratextgen.com/answers/why-fancy-text-removes-accents/">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/answers-why-fancy-text-removes-accents.png">
@@ -26,8 +26,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Why Does Fancy Text Remove My Accents? (á, ñ, ữ)">
-  <meta name="twitter:description" content="Fancy fonts leave á, ñ and Vietnamese marks plain because Unicode has no styled version of accented letters — here's the fix.">
+  <meta name="twitter:title" content="Does Fancy Text Remove My Accents? (á, ñ, ữ)">
+  <meta name="twitter:description" content="Fancy text used to strip á, ñ and Vietnamese marks — now almost every style keeps them. Here's the fix and the few exceptions.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/answers-why-fancy-text-removes-accents.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
       "name": "Why does fancy text remove my accents?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It doesn't remove them — it just can't restyle them. A fancy font swaps each letter for a styled Unicode character, but those styled characters only exist for the unaccented A–Z, a–z and 0–9. There is no styled version of á, ñ or ữ anywhere in Unicode, so an accented letter is copied through in its plain form while the letters around it change. The accent is still there; only the styling skipped it, which is why the word looks half-styled."
+        "text": "Mostly it doesn't anymore. It never truly deleted the accent — older tools just couldn't restyle it, because Unicode has no styled version of á, ñ or ữ. This generator works around that by splitting each accented letter into a base letter plus its combining mark, styling the base, and reattaching the mark, so bold Señor now comes out 𝗦𝗲𝗻̃𝗼𝗿 with the ñ styled too. Around 90 of the 112 styles keep accents this way. Only the upside-down styles and a few one-piece letters (đ, ø, ß, ł, ı) still can't."
       }
     },
     {
@@ -53,7 +53,7 @@
       "name": "Do accented letters work in any fancy font style?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — the styles that add a mark or a symbol instead of replacing the letter keep every accent. Strikethrough, underline, slash, wavy and the bracket/symbol word-wraps draw over or around your letters, so á, ñ and Vietnamese tone marks all survive. It's only the letter-swap styles (bold, italic, script, cursive, fraktur, bubble, small caps) that can't, because no accented styled glyph exists to swap in."
+        "text": "In almost all of them now — roughly 90 of the 112 styles keep accents, including bold, italic, script, cursive, fraktur, bubble and small caps as well as the mark and symbol styles. The letter-swap styles keep the accent by styling the base letter and reattaching the original mark. The two exceptions are the upside-down / flip styles, which leave an accented letter unflipped, and the one-piece letters (đ, ø, ß, ł, ı) that have no mark to reattach."
       }
     },
     {
@@ -61,7 +61,7 @@
       "name": "Why is only part of my word styled?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because only the unaccented letters have styled versions. In a word like café, the c, a, f and e all have a bold form, but the é does not — so you get 𝗰𝗮𝗳é, three bold letters and one plain one. The more accents your language uses, the more plain letters you'll see; Vietnamese, where nearly every syllable is accented, looks the most broken."
+        "text": "That's mostly fixed — in almost every style the whole word styles now, accents included, because the generator reattaches each mark to its styled base letter. If part of your word still looks plain, you're either using an upside-down style (which flips plain ASCII only and leaves accented letters alone) or your word contains a one-piece letter like đ, ø or ß, which has no mark to reattach and styles as its base shape."
       }
     },
     {
@@ -69,7 +69,7 @@
       "name": "Do fancy fonts work with Vietnamese?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Poorly, in letter-swap styles. Vietnamese vowels stack a vowel mark and a tone mark, so most of a word falls back to plain, and the letter đ never converts at all because it's its own Unicode character with no styled twin. For Vietnamese, use a mark-based or symbol style that keeps diacritics, or remove the accents on purpose (bỏ dấu) so the whole word styles uniformly."
+        "text": "Yes, far better than they used to. Vietnamese vowels stack a vowel mark and a tone mark, and the generator now decomposes each vowel, styles the base and reattaches every mark, so a name styles fully with its dấu intact — bold Việt Nam becomes 𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺. The one letter that never converts is đ, which is its own Unicode character with no decomposition, so it styles as a plain d. Removing the tone marks first (bỏ dấu) is now a choice for game length caps, not a requirement."
       }
     },
     {
@@ -77,7 +77,7 @@
       "name": "How do I keep my accents and still style the text?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pick a style that marks or wraps rather than swaps: strikethrough, underline, slash, or a symbol/bracket wrap. These keep every accent because they never replace the base letter. If you specifically want a bold or script look, accept that accented letters will stay plain, or remove the diacritics first so the styling is uniform."
+        "text": "Just style it — nearly every style now keeps your accents, including bold, italic and script. If you want to be certain no combining mark can drift on an old device, a mark or wrap style (strikethrough, underline, symbol wrap) never decomposes the letter at all. The only accents you can't keep are the one-piece letters (đ, ø, ß, ł, ı), which have no separate mark, and anything run through an upside-down style."
       }
     }
   ]
@@ -115,8 +115,8 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <h1 class="hero-headline">Why Does Fancy Text Remove My Accents?</h1>
-    <p class="hero-tagline">Style <strong>café</strong> and the é goes plain; style <strong>señor</strong> and the ñ won't change. Here's the one reason it happens — and how to keep every accent.</p>
+    <h1 class="hero-headline">Does Fancy Text Remove My Accents?</h1>
+    <p class="hero-tagline">It used to: style <strong>café</strong> and the é went plain. Not anymore — this generator styles the base letter and reattaches your accent, so almost every style keeps <strong>á, ñ and ữ</strong>. Here's what changed, and the few styles that still can't.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -128,10 +128,10 @@
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
   <div class="editorial-block">
-    <p>Fancy text doesn't actually <em>remove</em> your accents — it just can't restyle them. A "fancy font" works by swapping each letter for a styled Unicode character, and those styled characters only exist for the plain <strong>A–Z, a–z and 0–9</strong>. There is no styled version of <strong>á, ñ, ü or ữ</strong> anywhere in Unicode, so an accented letter is passed through unchanged while its neighbours transform. The accent is still there; the styling simply skipped it — which is the half-styled look you're seeing. To keep every accent, use a style that <strong>adds a mark or symbol</strong> instead of swapping the letter.</p>
+    <p><strong>Not anymore, for almost every style.</strong> Fancy text never actually <em>deleted</em> your accents — older tools just couldn't restyle them, because Unicode has no styled version of <strong>á, ñ, ü or ữ</strong>, so the accented letter was passed through plain while its neighbours transformed. This generator gets around that: it splits the accented letter into a base letter plus its combining mark, styles the base, and puts the mark back on top. So bold <strong>Señor</strong> now comes out <strong>𝗦𝗲𝗻̃𝗼𝗿</strong> — the ñ styled too. Roughly 90 of the 112 styles keep every accent this way. The holdouts are the upside-down styles and one-piece letters like <strong>đ, ø, ß</strong> that have no mark to lift off.</p>
   </div>
   <div class="block-example">
-    <strong>In one line:</strong> letter-swap styles (bold, italic, script) drop accents to plain · mark &amp; symbol styles (strikethrough, underline, wraps) keep them all.
+    <strong>In one line:</strong> almost every style now keeps á/ñ/ữ styled · the exceptions are the upside-down styles and one-piece letters (đ ø ß ł ı).
   </div>
 </section>
 
@@ -139,16 +139,16 @@
 
 <section class="editorial-section">
   <span class="article-section-label">What's happening</span>
-  <h2>Styled letters are a separate, accent-free alphabet</h2>
+  <h2>How the accent gets styled anyway</h2>
   <div class="editorial-block">
-    <p>When you choose "bold," you're not applying formatting — you're replacing each letter with a different Unicode character that looks bold. The bold <strong>𝗮</strong> is its own code point, not a normal "a." Those styled characters live in a region of Unicode built for maths, and it only ever defined styled forms of the 26 letters and 10 digits.</p>
-    <p>Accented letters — <strong>á é í ñ ü ç</strong>, and every Vietnamese vowel like <strong>ữ ế ơ</strong> — live in entirely different parts of Unicode that have no styled versions. So when a generator looks for a bold "é," there isn't one to find. The é falls back to plain, and you get a word that's part styled, part not.</p>
+    <p>When you choose "bold," you're not applying formatting — you're replacing each letter with a different Unicode character that looks bold. The bold <strong>𝗮</strong> is its own code point, and that math region of Unicode only ever defined styled forms of the 26 letters and 10 digits. There is no bold <strong>é</strong> or <strong>ñ</strong> to swap in.</p>
+    <p>The trick is that Unicode stores most accented letters as a base letter <em>plus</em> a separate combining mark. Split "ñ" apart (via NFD normalization) and you get a plain "n" and a combining tilde. The generator styles the "n" — which <em>does</em> have a bold twin — and then re-appends your original tilde on top. The result is a bold "n" wearing its tilde: a fully styled ñ.</p>
     <div class="block-example">
       <div class="example-pair">
         <div class="ex-label">Bold "Señor"</div>
-        <div class="ex-styled">𝗦𝗲ñ𝗼𝗿</div>
+        <div class="ex-styled">𝗦𝗲𝗻̃𝗼𝗿</div>
         <div class="ex-arrow">↓</div>
-        <div class="ex-label">Every letter bold except ñ — there is no bold ñ</div>
+        <div class="ex-label">every letter bold, ñ included — a bold "n" with your tilde on top</div>
       </div>
     </div>
   </div>
@@ -158,30 +158,30 @@
 
 <section class="editorial-section">
   <span class="article-section-label">The fix</span>
-  <h2>Which styles keep accents — and which can't</h2>
-  <p class="section-subline">Whether a style keeps your accents depends on how it works, not what it looks like.</p>
+  <h2>Which styles keep accents — and the few that don't</h2>
+  <p class="section-subline">Almost all of them keep your accents now. The exceptions are specific and named.</p>
   <div class="compare-grid">
     <div class="compare-card variant-positive">
-      <span class="compare-badge">Keeps every accent</span>
-      <p>Styles that <strong>add a mark or wrap the word in symbols</strong> — they never replace the letter:</p>
+      <span class="compare-badge">Keeps every accent (~90 styles)</span>
+      <p>Nearly the whole registry — the letter-swap styles now reattach the mark, and the mark/symbol styles never touched the letter to begin with:</p>
       <ul>
-        <li>Strikethrough, Underline, Slash, Wavy</li>
-        <li>Bracket, arrow &amp; symbol word-wraps</li>
+        <li>Bold, Italic, Script/Cursive, Fraktur, Bubble, Small Caps, Monospace, Fullwidth</li>
+        <li>Strikethrough, Underline, Slash, Wavy, and symbol word-wraps</li>
       </ul>
-      <p class="mood-example">V̲i̲ệ̲t̲ ̲N̲a̲m̲ &nbsp;·&nbsp; ❨café❩</p>
+      <p class="mood-example">𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺 &nbsp;·&nbsp; 𝗰𝗮𝗳𝗲́</p>
     </div>
     <div class="compare-card variant-muted">
-      <span class="compare-badge">Drops accents to plain</span>
-      <p>Styles that <strong>swap each letter</strong> for a styled twin that doesn't exist for accents:</p>
+      <span class="compare-badge">The exceptions</span>
+      <p>Two groups still can't fully style an accented letter:</p>
       <ul>
-        <li>Bold, Italic, Script/Cursive, Fraktur</li>
-        <li>Bubble, Small Caps, Monospace, Fullwidth, Upside-down</li>
+        <li><strong>Upside-down / flip styles</strong> — they flip plain ASCII only, so an accented letter rides along unflipped</li>
+        <li><strong>One-piece letters</strong> (đ, ø, ß, ł, ı) — atomic characters with no mark to reattach; they style as their base shape</li>
       </ul>
-      <p class="mood-example">𝑽𝒊ệ𝒕 𝑵𝒂𝒎 &nbsp;·&nbsp; 𝗰𝗮𝗳é</p>
+      <p class="mood-example">ɹoñǝS &nbsp;·&nbsp; đ → 𝗱</p>
     </div>
   </div>
   <div class="editorial-block">
-    <p>Quick test: <strong>if the style puts a line or bracket over/around your letters, it keeps accents. If it turns your letters into fancy new shapes, it doesn't.</strong></p>
+    <p>Quick test: <strong>if you're not using an upside-down style, your accents will style.</strong> The only letters that keep a plain base shape are the one-piece ones — đ, ø, ß and kin — which have no accent to lift off.</p>
   </div>
 </section>
 
@@ -191,14 +191,14 @@
   <span class="article-section-label">The hard case</span>
   <h2>Vietnamese and the letter đ</h2>
   <div class="editorial-block">
-    <p>Vietnamese is the most affected language: nearly every syllable stacks a vowel mark and a tone mark, so a letter-swap style leaves most of the word plain. And the letter <strong>đ / Đ</strong> is special — it's its own Unicode letter, not a "d" with a mark, so it has no styled twin and <em>never</em> converts in any font.</p>
-    <p>That's why the Vietnamese approach is to <strong>decorate a plain name with symbols</strong> ("kí tự đặc biệt") or to <strong>drop the tone marks first</strong> (bỏ dấu) so the whole word styles evenly. For the full breakdown — including how it renders across devices — see the guide on <a href="/guide/fancy-fonts-and-accents/">accents &amp; diacritics in fancy fonts</a>.</p>
+    <p>Vietnamese stacks a vowel mark and a tone mark on nearly every syllable, so it's the toughest test — and it now styles cleanly, every mark reattached (bold <strong>Việt Nam</strong> → <strong>𝗩𝗶𝗲̣̂𝘁 𝗡𝗮𝗺</strong>). The one holdout is <strong>đ / Đ</strong>: it's its own Unicode letter, not a "d" with a mark, so it has no accent to lift off and converts to a plain styled "d" in every style.</p>
+    <p>Vietnamese users still often <strong>decorate a plain name with symbols</strong> ("kí tự đặc biệt") or <strong>drop the tone marks first</strong> (bỏ dấu) — but now that's for game length caps and platform rules, not because the font can't hold the marks. For the full breakdown — including how it renders across devices — see the guide on <a href="/guide/fancy-fonts-and-accents/">accents &amp; diacritics in fancy fonts</a>.</p>
   </div>
 </section>
 
 <div class="cta-card">
   <h3>Compare styles with your own accented text</h3>
-  <p>Type your text once and see every style side by side — the mark and symbol styles keep all your accents.</p>
+  <p>Type your text once and see every style side by side — almost all of them keep your accents, and you can spot the upside-down styles that don't.</p>
   <a href="/" class="cta-btn">Open the Text Generator →</a>
 </div>
 
