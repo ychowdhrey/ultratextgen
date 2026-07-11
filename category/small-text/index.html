@@ -74,6 +74,21 @@
       "@type": "Question",
       "name": "Why does tiny text sometimes show as boxes?",
       "acceptedAnswer": { "@type": "Answer", "text": "Some rare Unicode characters are not available in every system font. If you see boxes, switch to a broader-support small style or test another app/device." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a small caps generator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A small caps generator turns your text into small capital letters — capital shapes drawn at lowercase height — using real Unicode characters. Because the style is built into the characters themselves, it pastes correctly into bios, usernames and posts anywhere Unicode is supported. That is different from typing in Title Case (just normal capitals) or from a website's CSS text-transform effect, which only looks like small caps inside that one styled page and reverts to plain text the moment you copy it elsewhere." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do Q and X look different in small caps text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Unicode's small-caps letters come from its Phonetic Extensions block, and that block never included dedicated small-cap forms for Q and X. Every small-caps generator, including this one, has to fall back to their normal shapes, so those two letters look a little larger than the rest. It is a gap in Unicode itself rather than a bug — no tool can render a true small-cap Q or X because the character simply does not exist yet." }
+    },
+    {
+      "@type": "Question",
+      "name": "Small caps or tiny/superscript text — which should I use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use small caps for headings, short labels, bios and usernames: they sit on the baseline and have the best letter coverage of any small style. Use superscript (tiny raised text) for exponents, ordinals and footnote markers, or a whisper-style aside. Use subscript (tiny lowered text) for chemistry formulas and footnote-below notation. In short: small caps for a clean editorial look, superscript and subscript for math, notation and asides." }
     }
   ]
 }
@@ -154,6 +169,19 @@
       <li class="deco-chip" data-copy="⟡ tiny ⟡"><span class="deco-chip-ex">⟡ tiny ⟡</span><span class="deco-chip-label">Diamond</span></li>
     </ul>
   </section>
+
+  <section class="deco-showcase" id="small-caps" aria-labelledby="small-caps-title">
+    <h2 class="deco-showcase-title" id="small-caps-title">Small Caps: The Clean, Editorial Style</h2>
+    <p class="deco-showcase-intro">Small caps are capital letterforms drawn at roughly lowercase height. They sit right on the baseline — not floating above the line like superscript — so a whole word reads as one calm, even band of type. The effect is clean and considered rather than shouting, which is why editors reach for it in headings, labels and short bylines.</p>
+    <p class="deco-showcase-intro">That understated, professional look makes small caps a favourite for editorial and professional bios, email signatures, product and brand-name treatments, academic-style headings, and short LinkedIn-style taglines. There is a strong gaming angle too: small caps are widely used for Minecraft server names, in-game names and guild branding, where a tidy, uppercase-looking wordmark stands out without extra symbols.</p>
+    <p class="block-example"><strong>An honest note on Q and X.</strong> Unicode's small-caps letters live in its "Phonetic Extensions" block, and that block never added dedicated small-cap forms for <strong>Q</strong> and <strong>X</strong>. Every small-caps generator — this one included — falls back to their normal shapes, so those two letters look slightly larger than their neighbours. That is a limitation of Unicode itself, not something a different tool can fix. We would rather tell you up front than let a stray full-size letter surprise you after you paste.</p>
+    <h3 class="small-caps-compare-title">Small caps vs. tiny text — which should you use?</h3>
+    <ul class="small-caps-compare">
+      <li><strong>Small caps</strong> — sit on the baseline and have the best letter coverage of any small style. Best for headings, short labels, bios and usernames.</li>
+      <li><strong>Superscript (tiny raised text)</strong> — floats above the baseline. Best for exponents, ordinals and footnote markers, or a whisper-style aside.</li>
+      <li><strong>Subscript (tiny lowered text)</strong> — sits below the baseline. Best for chemistry formulas and footnote-below notation.</li>
+    </ul>
+  </section>
 </main>
 
 <footer class="footer">
@@ -163,6 +191,9 @@
     <div class="faq-item"><button class="faq-question" type="button">Where is small text most useful?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Small text is popular for profile bios, signature lines, decorative secondary text, and subtle name styling where full-size bold fonts feel too loud. It is often paired with symbols for a compact aesthetic layout.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Does tiny text affect readability?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Yes if overused. Tiny text works best for short phrases, not whole paragraphs. Keep core information in regular text for accessibility and quick scanning.</div></div>
     <div class="faq-item"><button class="faq-question" type="button">Is this tool free?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Yes. This small text generator is free, runs in-browser, and lets you copy tiny Unicode styles instantly.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">What is a small caps generator?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">A small caps generator turns your text into small capital letters — capital shapes drawn at lowercase height — using real Unicode characters. Because the style is built into the characters themselves, it pastes correctly into bios, usernames and posts anywhere Unicode is supported. That is different from typing in Title Case (which is just normal capitals) or from a website's CSS text-transform effect, which only looks like small caps inside that one styled page and reverts to plain text the moment you copy it elsewhere.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Why do Q and X look different in small caps text?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Unicode's small-caps letters come from its "Phonetic Extensions" block, and that block never included dedicated small-cap forms for Q and X. Every small-caps generator, including this one, has to fall back to their normal shapes, so those two letters look a little larger than the rest. It is a gap in Unicode itself rather than a bug — no tool can render a true small-cap Q or X because the character simply does not exist yet.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Small caps or tiny/superscript text — which should I use?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Use small caps for headings, short labels, bios and usernames: they sit on the baseline and have the best letter coverage of any small style. Use superscript (tiny raised text) for exponents, ordinals and footnote markers, or a whisper-style aside. Use subscript (tiny lowered text) for chemistry formulas and footnote-below notation. In short: small caps for a clean editorial look, superscript and subscript for math, notation and asides.</div></div>
   </div>
 </footer>
 

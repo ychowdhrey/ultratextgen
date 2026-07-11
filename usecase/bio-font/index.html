@@ -127,6 +127,14 @@
     },
     {
       "@type": "Question",
+      "name": "What bio font styles are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The generator offers five style categories optimized for bios: <br><br> ✍️ <strong>Cursive &amp; Script</strong> — Ultra Script and Ultra Script Bold<br> 🖤 <strong>Bold &amp; Italic</strong> — Ultra Bold, Ultra Bold Italic, Ultra Bold Italic Serif, Ultra Italic Serif and Ultra Alternating Bold<br> 🏰 <strong>Gothic</strong> — Ultra Gothic and Ultra Gothic Bold<br> 🫧 <strong>Bubble</strong> — Ultra Bubble, Ultra Bubble Filled and Ultra Bubble Light<br> 🎯 <strong>Clean &amp; Small Caps</strong> — Ultra Small Caps, an editorial, understated look for professional bios and headings (note that Q and X keep their normal shape)."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Are these real fonts or just symbols?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -357,6 +365,7 @@
           <button class="category-tab" data-mood="bold">🖤 Bold &amp; Italic</button>
           <button class="category-tab" data-mood="gothic">🏰 Gothic</button>
           <button class="category-tab" data-mood="bubble">🫧 Bubble</button>
+          <button class="category-tab" data-mood="clean">🎯 Clean &amp; Small Caps</button>
         </div>
       </div>
 
@@ -681,12 +690,13 @@
     </svg>
   </button>
   <div class="faq-answer">
-    The generator offers four style categories optimized for bios:
+    The generator offers five style categories optimized for bios:
     <br><br>
     ✍️ <strong>Cursive &amp; Script</strong> — Ultra Script (lighter cursive, clean and stylish) and Ultra Script Bold (elegant cursive, very popular for bios)<br>
     🖤 <strong>Bold &amp; Italic</strong> — Ultra Bold, Ultra Bold Italic, Ultra Bold Italic Serif, Ultra Italic Serif, and Ultra Alternating Bold<br>
     🏰 <strong>Gothic</strong> — Ultra Gothic (distinctive Fraktur style) and Ultra Gothic Bold (heavier Gothic for emphasis)<br>
-    🫧 <strong>Bubble</strong> — Ultra Bubble (fun and friendly), Ultra Bubble Filled (bold statement), and Ultra Bubble Light (softer variant)
+    🫧 <strong>Bubble</strong> — Ultra Bubble (fun and friendly), Ultra Bubble Filled (bold statement), and Ultra Bubble Light (softer variant)<br>
+    🎯 <strong>Clean &amp; Small Caps</strong> — Ultra Small Caps (editorial, understated look for professional bios and headings; note Q and X keep their normal shape)
   </div>
 </div>
 
@@ -774,12 +784,14 @@
         "ultra-script", "ultra-script-bold",
         "ultra-bold", "ultra-bold-italic", "ultra-bold-italic-serif", "ultra-italic-serif", "ultra-alternating-bold",
         "ultra-gothic", "ultra-gothic-bold",
-        "ultra-bubble", "ultra-bubble-filled", "ultra-bubble-light"
+        "ultra-bubble", "ultra-bubble-filled", "ultra-bubble-light",
+        "ultra-small-caps"
       ],
       "cursive": ["ultra-script", "ultra-script-bold"],
       "bold": ["ultra-bold", "ultra-bold-italic", "ultra-bold-italic-serif", "ultra-italic-serif", "ultra-alternating-bold"],
       "gothic": ["ultra-gothic", "ultra-gothic-bold"],
-      "bubble": ["ultra-bubble", "ultra-bubble-filled", "ultra-bubble-light"]
+      "bubble": ["ultra-bubble", "ultra-bubble-filled", "ultra-bubble-light"],
+      "clean": ["ultra-small-caps"]
     };
 
     // Start with all fonts visible
