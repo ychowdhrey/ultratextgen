@@ -81,6 +81,21 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /library/whisper-subliminal-symbols/                  /library/aesthetic-symbols/ 301
 /library/whisper-subliminal-symbols/index.html        /library/aesthetic-symbols/ 301
 
+# Library → Symbol pillar: single-glyph pages moved to their own top-level namespace
+/library/degree-symbol/            /symbol/degree-symbol/    301
+/library/degree-symbol/index.html  /symbol/degree-symbol/    301
+/library/peace-symbol/             /symbol/peace-sign/       301
+/library/peace-symbol/index.html   /symbol/peace-sign/       301
+/library/yin-yang-symbol/            /symbol/yin-yang/       301
+/library/yin-yang-symbol/index.html  /symbol/yin-yang/       301
+
+# Symbol pillar: slug consolidation (two independent sessions both split this
+# pillar out of library/; peace-sign/yin-yang were the names that stuck)
+/symbol/peace-symbol/             /symbol/peace-sign/  301
+/symbol/peace-symbol/index.html   /symbol/peace-sign/  301
+/symbol/yin-yang-symbol/            /symbol/yin-yang/  301
+/symbol/yin-yang-symbol/index.html  /symbol/yin-yang/  301
+
 # Consolidated localized pages → canonical equivalents (avoid keyword cannibalization)
 /pt/gerador-de-fontes/            /pt/                          301
 /pt/gerador-de-fontes/index.html  /pt/                          301

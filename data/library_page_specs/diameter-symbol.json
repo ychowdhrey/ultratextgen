@@ -1,0 +1,105 @@
+{
+  "slug": "diameter-symbol",
+  "page_type": "symbol",
+  "title": "Diameter Symbol: Copy & Paste ⌀ Engineering Diameter Sign",
+  "meta_description": "Copy and paste the diameter symbol (⌀) used in engineering drawings and machining specs, plus its confusable neighbors Ø and ∅. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/diameter-symbol/",
+  "breadcrumb": "Diameter Symbol",
+  "hero_h1": "Diameter Symbol",
+  "hero_tagline": "The diameter sign (⌀) that precedes circular dimensions on engineering drawings — plus the symbols people mistake for it. Click any symbol to copy it instantly.",
+  "intro": "The diameter symbol (⌀, Unicode U+2300) is the circle-with-a-slash mark that goes in front of a measurement to say \"this is a diameter, not a radius.\" It shows up on machining specs, CAD drawings, and manufacturing callouts — and it's routinely swapped for lookalike characters that mean something else entirely.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "diameter-sign",
+      "label": "Diameter",
+      "h2": "Diameter Sign",
+      "intro": "The correct Unicode diameter sign, ready to paste in front of a measurement.",
+      "symbols": [
+        {
+          "char": "⌀",
+          "label": "Diameter Sign"
+        }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Confusable Neighbors",
+      "h2": "Symbols Often Mistaken for the Diameter Sign",
+      "intro": "These look close enough to ⌀ to get substituted by accident — each one has a different meaning.",
+      "symbols": [
+        {
+          "char": "∅",
+          "label": "Empty Set (Not a Diameter Sign)"
+        },
+        {
+          "char": "Ø",
+          "label": "Latin Capital O With Stroke"
+        },
+        {
+          "char": "ø",
+          "label": "Latin Small O With Stroke"
+        },
+        {
+          "char": "φ",
+          "label": "Greek Small Letter Phi"
+        },
+        {
+          "char": "Φ",
+          "label": "Greek Capital Letter Phi"
+        }
+      ]
+    },
+    {
+      "id": "related-geometry",
+      "label": "Related Geometry Marks",
+      "h2": "Radius, Arc & Related Dimensioning Symbols",
+      "intro": "Other geometric dimensioning and tolerancing (GD&T) marks commonly used alongside the diameter sign.",
+      "symbols": [
+        {
+          "char": "R",
+          "label": "Radius (Plain Letter)"
+        },
+        {
+          "char": "□",
+          "label": "Square (Width Across Flats)"
+        },
+        {
+          "char": "⌒",
+          "label": "Arc"
+        },
+        {
+          "char": "⌓",
+          "label": "Segment"
+        },
+        {
+          "char": "°",
+          "label": "Degree Sign"
+        },
+        {
+          "char": "±",
+          "label": "Plus-Minus Sign"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/degree-symbol/",
+      "title": "Degree Symbol",
+      "desc": "The degree sign plus angle, temperature, and geometry marks that pair with it."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, roots, and infinity signs."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Squares, circles, triangles, and filled vs. outline shape variants."
+    }
+  ]
+}

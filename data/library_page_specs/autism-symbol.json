@@ -1,0 +1,81 @@
+{
+  "slug": "autism-symbol",
+  "page_type": "symbol",
+  "title": "Autism Symbol: Copy & Paste ♾️ Infinity — Not the Puzzle Piece",
+  "meta_description": "Copy and paste the infinity symbol (∞ ♾️) the autistic community uses for autism and neurodiversity, why the puzzle piece 🧩 fell out of use, and what gold vs. rainbow infinity mean. Click to copy instantly.",
+  "canonical": "https://ultratextgen.com/symbol/autism-symbol/",
+  "breadcrumb": "Autism Symbol",
+  "hero_h1": "Autism Symbol",
+  "hero_tagline": "The infinity symbol (∞ ♾️) autistic self-advocates use for autism and neurodiversity — and why it replaced the puzzle piece 🧩. Click any symbol to copy it instantly.",
+  "intro": "There is no single \"official\" autism symbol, and the two most common ones actively disagree with each other. The puzzle piece dates to 1963 and was popularized by Autism Speaks' blue logo from 2005 onward; many autistic adults now call it offensive because it frames autism as a piece missing from a person. The infinity symbol dates to Autistic Pride Day, also 2005, and is the symbol the neurodiversity movement chose instead — gold for autism specifically, rainbow for neurodivergence broadly. The Autism Society of America formally dropped the puzzle piece in 2023.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "infinity-symbol",
+      "label": "Infinity",
+      "h2": "Infinity Symbol",
+      "intro": "The symbol preferred by autistic self-advocates and the neurodiversity movement, representing infinite variation and possibility rather than a deficit to fix.",
+      "symbols": [
+        {
+          "char": "∞",
+          "label": "Infinity"
+        },
+        {
+          "char": "♾️",
+          "label": "Infinity Emoji"
+        }
+      ]
+    },
+    {
+      "id": "color-variants",
+      "label": "Color Variants",
+      "h2": "Gold, Rainbow & Color Meaning",
+      "intro": "Color carries the specific meaning here: gold marks autism specifically (a nod to Au, gold's chemical symbol), rainbow marks neurodiversity broadly (autism, ADHD, dyslexia, and more together). Plain-text ∞ can't carry color on its own, so the rainbow version is typically pasted as a combo.",
+      "symbols": [
+        {
+          "char": "🌈♾️",
+          "label": "Rainbow Infinity (Neurodiversity)"
+        },
+        {
+          "char": "🌈",
+          "label": "Rainbow"
+        }
+      ]
+    },
+    {
+      "id": "legacy-symbol",
+      "label": "Legacy Symbol",
+      "h2": "The Puzzle Piece — Contested Legacy Symbol",
+      "intro": "Still widely recognized and still used by some organizations and families, but no longer the symbol most autistic-led advocacy groups use. Included here for reference, not as a recommendation.",
+      "symbols": [
+        {
+          "char": "🧩",
+          "label": "Puzzle Piece"
+        },
+        {
+          "char": "💙",
+          "label": "Blue Heart (Light It Up Blue)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Awareness Ribbons",
+      "desc": "Cause and awareness ribbon symbols for health, support, and advocacy."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "The mathematical infinity symbol, plus operators, Greek letters, and roots."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Heart emojis and Unicode heart characters in every color and style."
+    }
+  ]
+}

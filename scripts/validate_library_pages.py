@@ -39,6 +39,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
 LIBRARY_DIR = REPO / "library"
+SYMBOL_DIR = REPO / "symbol"
 
 MIN_SINGLE_BUTTONS = 6
 MIN_ART_PIECES = 6
@@ -209,13 +210,13 @@ def gather_paths(args_paths):
             else:
                 paths.append(pp)
         return paths
-    return sorted(LIBRARY_DIR.glob("*/index.html"))
+    return sorted(LIBRARY_DIR.glob("*/index.html")) + sorted(SYMBOL_DIR.glob("*/index.html"))
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("paths", nargs="*",
-                        help="specific page paths or dirs (default: all /library/*)")
+                        help="specific page paths or dirs (default: all /library/* and /symbol/*)")
     parser.add_argument("--strict", action="store_true",
                         help="treat WARN as failure too")
     args = parser.parse_args(argv)
