@@ -1257,6 +1257,7 @@ PAGES = {
   "fr-petite-ecriture": ("Petite Écriture", "Petit texte à copier-coller",
         P(m_typo, sample=" small", size=44, label="petite écriture"), K_CAT),
   "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_gamepad, K_USE),
+  "fr-usecase-pseudo-free-fire": ("Pseudo Free Fire Stylé", "Symboles ombrelle et pseudos 12 caractères", m_gamepad, K_USE),
   "fr-ecriture-style": ("Écriture Stylé", "60+ styles d'écriture à copier-coller",
         P(m_typo, sample="Stylé", weight="700", size=80, label="copier-coller"), K_USE),
   "fr-ecriture-aesthetic": ("Écriture Aesthetic", "Lettres et symboles aesthetic à copier",

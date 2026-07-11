@@ -1,0 +1,93 @@
+{
+  "slug": "lenny-face",
+  "lang": "de",
+  "title": "Lenny Face: ( ͡° ͜ʖ ͡°) kopieren — Text-Gesicht zum Einfügen",
+  "meta_description": "Lenny Face ( ͡° ͜ʖ ͡°) und Dutzende Varianten zum Kopieren und Einfügen — das klassische Grinse-Textgesicht für Kommentare, Chats und Memes. Ein Klick zum Kopieren.",
+  "breadcrumb": "Lenny Face",
+  "hero_h1": "Lenny Face",
+  "hero_tagline": "Lenny Face ( ͡° ͜ʖ ͡°) und seine vielen Varianten kopieren und einfügen — das klassische Grinse-Meme-Textgesicht. Klick auf ein Gesicht, um es sofort zu kopieren.",
+  "intro": "Das Lenny Face ( ͡° ͜ʖ ͡°) ist ein Textgesicht im japanischen Stil — ein wissendes, anzügliches Grinsen aus reinen Unicode-Zeichen. Es lässt sich überall einfügen, wo Unicode unterstützt wird — in Kommentaren, Chats und Bildunterschriften, ganz ohne Bilddatei. Durchstöbere unten das Original und seine vielen Varianten und klick ein Gesicht an, um es sofort zu kopieren. Egal ob du nach \"Lenny Face\", \"Lenny Face kopieren\" oder \"Lenny Face Generator\" suchst — jedes Gesicht hier ist kostenlos zum Kopieren.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/de/library/lenny-face/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/lenny-face/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/lenny-face/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/lenny-face/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "related": [
+    {
+      "href": "/de/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Die komplette Kaomoji-Sammlung — alle japanischen Text-Gesichter an einem Ort."
+    },
+    {
+      "href": "/de/library/cute-kaomoji/",
+      "title": "Süße Kaomoji",
+      "desc": "Kawaii Text-Gesichter mit funkelnden Augen und roten Wangen."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ],
+  "sections": [
+    {
+      "id": "classic",
+      "label": "Das Original",
+      "h2": "Das Original Lenny Face",
+      "intro": "Das klassische Grinsen und seine nächsten Verwandten.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Klassisches Lenny" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Zwinkerndes Lenny" },
+        { "char": "( ͡ᵔ ͜ʖ ͡ᵔ)", "label": "Fröhliches Lenny" },
+        { "char": "( ͠° ͟ʖ ͡°)", "label": "Verschmitztes Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)づ", "label": "Greifendes Lenny" }
+      ]
+    },
+    {
+      "id": "buff",
+      "label": "Muskel-Lenny",
+      "h2": "Muskulöses & posendes Lenny Face",
+      "intro": "Arme hoch — posend, hyped, startklar.",
+      "symbols": [
+        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Posendes Lenny" },
+        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Marschierendes Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)╭∩╮", "label": "Freches Lenny" },
+        { "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ", "label": "Starkes Lenny" }
+      ]
+    },
+    {
+      "id": "reaching",
+      "label": "Greifend",
+      "h2": "Greifendes Lenny Face",
+      "intro": "Grabschende, zeigende und \"gib her\"-Varianten.",
+      "symbols": [
+        { "char": "(づ ͡° ͜ʖ ͡°)づ", "label": "Umarmendes Lenny" },
+        { "char": "☞ ͡° ͜ʖ ͡°☞", "label": "Zeigendes Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)੭", "label": "Verlangendes Lenny" },
+        { "char": "( ͡°Ѡ ͡°)", "label": "Breites Lenny" }
+      ]
+    },
+    {
+      "id": "variants",
+      "label": "Augen-Varianten",
+      "h2": "Lenny Face Augen-Varianten",
+      "intro": "Gleiches Grinsen, andere Augen.",
+      "symbols": [
+        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Rundäugiges Lenny" },
+        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Großäugiges Lenny" },
+        { "char": "( ͡• ͜ʖ ͡•)", "label": "Punktäugiges Lenny" },
+        { "char": "( ͡⊙ ͜ʖ ͡⊙)", "label": "Zielscheiben-Lenny" },
+        { "char": "( ͡ↀ ͜ʖ ͡ↀ)", "label": "Münzäugiges Lenny" }
+      ]
+    }
+  ]
+}
