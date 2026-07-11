@@ -53,8 +53,12 @@
 
   /* ----------------------------------------------------------------------
      DATA: ready-made bio templates ({name} is swapped for the typed text)
+     A page can override this list before bio-font.js loads by setting
+     window.UTG_BIO_TEMPLATES (same merge-over-defaults convention as
+     window.UTG_DECORATIONS) — used by platform-locked spoke pages that
+     want niche-matched examples instead of the generic default set.
      ---------------------------------------------------------------------- */
-  const TEMPLATES = [
+  const DEFAULT_TEMPLATES = [
     "✦ {name} ✦ · dreamer · creator ·",
     "🌙 {name} ✦ just vibes ✦",
     "✧⁕·˙˚ {name} ˚˙·⁕✧",
@@ -67,8 +71,14 @@
 
   /* ----------------------------------------------------------------------
      STATE + ELEMENTS
+     currentPlatform reads whichever .bf-platform-tab already carries
+     .active in the markup, so a spoke page can lock the picker to one
+     platform (e.g. Instagram) just by marking that tab active in HTML —
+     no separate JS config needed. Falls back to "all" (the hub page's
+     default markup) when no tab is pre-marked.
      ---------------------------------------------------------------------- */
-  let currentPlatform = "all";
+  const initialTab = document.querySelector(".bf-platform-tab.active[data-platform]");
+  let currentPlatform = (initialTab && initialTab.dataset.platform) || "all";
 
   const el = {
     mainInput: $("#mainInput"),
@@ -233,7 +243,8 @@
   function renderTemplates() {
     if (!el.templateGrid) return;
     const name = firstName() || "name";
-    el.templateGrid.innerHTML = TEMPLATES.map((tpl) => {
+    const templates = window.UTG_BIO_TEMPLATES || DEFAULT_TEMPLATES;
+    el.templateGrid.innerHTML = templates.map((tpl) => {
       const filled = tpl.replace(/\{name\}/g, name);
       return (
         '<div class="bf-template">' +

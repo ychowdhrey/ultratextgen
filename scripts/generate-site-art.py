@@ -642,6 +642,8 @@ PAGES = {
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
+  "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
+  "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
   "usecase-comment-font": ("Comment Style Generator", "Make your comment stand out", m_chat, K_USE),
   "usecase-emoji-combinations": ("Emoji Combinations", "Copy-and-paste pairings for social",
         P(m_transform, a="+", b="★"), K_USE),
