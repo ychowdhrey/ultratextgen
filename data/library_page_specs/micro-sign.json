@@ -1,0 +1,101 @@
+{
+  "slug": "micro-sign",
+  "page_type": "symbol",
+  "title": "Micro Sign: Copy & Paste µ vs Greek Mu (μ) — Which One to Use",
+  "meta_description": "Copy and paste the micro sign (µ) for microns and micrograms, and see why it's a different Unicode character from the Greek letter mu (μ) it looks identical to. Click to copy instantly.",
+  "canonical": "https://ultratextgen.com/symbol/micro-sign/",
+  "breadcrumb": "Micro Sign",
+  "hero_h1": "Micro Sign (µ)",
+  "hero_tagline": "The micro sign (µ) used for microns, micrograms, and microseconds — and why it's a completely different character from the identical-looking Greek letter mu. Click any symbol to copy it instantly.",
+  "intro": "The micro sign (µ, U+00B5) and the Greek small letter mu (μ, U+03BC) render as the exact same glyph in almost every font, but Unicode treats them as two separate characters. Which one you paste can quietly break search, regex matching, and filenames without ever looking wrong on screen.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "micro-sign",
+      "label": "Micro Sign",
+      "h2": "Micro Sign (U+00B5)",
+      "intro": "The legacy micro sign, retained in Unicode for compatibility with older Latin-1 (ISO/IEC 8859-1) systems. Used for µm (micron), µg (microgram), µs (microsecond).",
+      "symbols": [
+        {
+          "char": "µ",
+          "label": "Micro Sign"
+        },
+        {
+          "char": "µs",
+          "label": "Microsecond Abbreviation"
+        },
+        {
+          "char": "µg",
+          "label": "Microgram Abbreviation"
+        }
+      ]
+    },
+    {
+      "id": "greek-mu",
+      "label": "Greek Mu",
+      "h2": "Greek Small Letter Mu (U+03BC)",
+      "intro": "The actual twelfth letter of the Greek alphabet — visually identical to the micro sign and the character Unicode's own normalization rules prefer.",
+      "symbols": [
+        {
+          "char": "μ",
+          "label": "Greek Small Letter Mu"
+        },
+        {
+          "char": "Μ",
+          "label": "Greek Capital Letter Mu"
+        }
+      ]
+    },
+    {
+      "id": "related-unit-symbols",
+      "label": "Related Unit Symbols",
+      "h2": "Symbols Micro Signs Are Commonly Paired With",
+      "intro": "Other measurement and scientific-notation marks that show up alongside µ in technical text.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Ohm Sign"
+        },
+        {
+          "char": "°",
+          "label": "Degree Sign"
+        },
+        {
+          "char": "±",
+          "label": "Plus-Minus Sign"
+        },
+        {
+          "char": "‰",
+          "label": "Per Mille Sign"
+        },
+        {
+          "char": "∞",
+          "label": "Infinity"
+        },
+        {
+          "char": "≈",
+          "label": "Almost Equal To"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Metric, imperial, and scientific unit marks for technical writing."
+    },
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet in Unicode, upper and lowercase."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Mathematical operators, Greek letters, roots, and infinity signs."
+    }
+  ]
+}
