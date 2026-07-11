@@ -647,6 +647,91 @@ def m_at(p, accent=PURPLE):
           fill="url(#g{p})" text-anchor="middle">@</text>"""
 
 
+def m_gamepad(p, accent=PURPLE):
+    """A game controller — for gaming-nickname generators and tags."""
+    return f"""
+    <path d="M84 168 q6 -54 66 -54 h60 q60 0 66 54 l12 62 a32 32 0 0 1 -58 26
+             l-18 -30 h-56 l-18 30 a32 32 0 0 1 -58 -26 Z" fill="url(#g{p})"/>
+    <rect x="116" y="152" width="10" height="36" rx="4" fill="#fff"/>
+    <rect x="99" y="164" width="44" height="10" rx="4" fill="#fff"/>
+    <circle cx="258" cy="158" r="11" fill="#fff"/>
+    <circle cx="232" cy="182" r="11" fill="#fff" opacity="0.85"/>
+    <circle cx="284" cy="182" r="11" fill="#fff" opacity="0.7"/>"""
+
+
+def m_plane(p, accent=PURPLE):
+    """A paper-plane dart on a flight path — for travel content."""
+    return f"""
+    <path d="M180 70 L232 220 L182 196 L150 236 L146 190 L60 176 Z" fill="url(#g{p})"/>
+    <path d="M180 70 L182 196" stroke="{PANEL}" stroke-width="4" opacity="0.5"/>
+    <path d="M60 262 q60 -20 120 0 q60 20 120 0" fill="none" stroke="{SUB}"
+          stroke-width="6" stroke-linecap="round" opacity="0.3"/>"""
+
+
+def m_pumpkin(p, accent=PURPLE):
+    """A jack-o'-lantern — for Halloween/spooky content."""
+    return f"""
+    <rect x="168" y="60" width="24" height="46" rx="10" fill="{SUB}"/>
+    <path d="M96 190 q-6 -86 84 -86 q90 0 84 86 q6 76 -84 76 q-90 0 -84 -76 Z" fill="url(#g{p})"/>
+    <path d="M136 130 v120 M180 122 v128 M224 130 v120" stroke="{PURPLE}" stroke-width="6"
+          opacity="0.35" stroke-linecap="round"/>
+    <path d="M144 190 l16 -16 l16 16 M200 190 l16 -16 l16 16" fill="none" stroke="#fff"
+          stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M150 226 q30 20 60 0" fill="none" stroke="#fff" stroke-width="8"
+          stroke-linecap="round"/>"""
+
+
+def m_tree(p, accent=PURPLE):
+    """A tiered, ornamented tree — for Christmas/holiday content."""
+    return f"""
+    <path d="M180 62 L228 146 H204 L246 220 H214 L254 288 H106 L146 220 H114
+             L156 146 H132 Z" fill="url(#gv{p})"/>
+    <rect x="164" y="288" width="32" height="24" rx="6" fill="{SUB}"/>
+    <circle cx="180" cy="90" r="10" fill="#fff"/>
+    <circle cx="150" cy="180" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="212" cy="200" r="8" fill="#fff" opacity="0.85"/>
+    <circle cx="170" cy="250" r="8" fill="#fff" opacity="0.7"/>"""
+
+
+def m_note(p, accent=PURPLE):
+    """A beamed pair of eighth notes — for music content."""
+    return f"""
+    <rect x="172" y="70" width="14" height="150" rx="6" fill="url(#gv{p})"/>
+    <rect x="252" y="70" width="14" height="130" rx="6" fill="url(#gv{p})"/>
+    <path d="M172 78 q54 -22 94 0 v34 q-40 -18 -94 0 Z" fill="url(#g{p})"/>
+    <ellipse cx="158" cy="228" rx="34" ry="26" fill="url(#g{p})"/>
+    <ellipse cx="238" cy="208" rx="30" ry="24" fill="url(#g{p})"/>"""
+
+
+def m_gear(p, accent=PURPLE):
+    """A settings gear — for tech/status content."""
+    teeth = "".join(
+        f'<rect x="164" y="92" width="32" height="46" rx="6" fill="url(#g{p})" '
+        f'transform="rotate({i * 45} 180 180)"/>'
+        for i in range(8))
+    return f"""{teeth}
+    <circle cx="180" cy="180" r="72" fill="url(#g{p})"/>
+    <circle cx="180" cy="180" r="32" fill="{PANEL}"/>"""
+
+
+def m_coin(p, accent=PURPLE):
+    """Two stacked coins with a dollar mark — for money/currency content."""
+    return f"""
+    <ellipse cx="180" cy="264" rx="86" ry="20" fill="{SUB}" opacity="0.25"/>
+    <circle cx="180" cy="228" r="70" fill="url(#gv{p})"/>
+    <circle cx="180" cy="158" r="70" fill="url(#g{p})"/>
+    <text x="180" y="182" font-family="{SANS}" font-size="70" font-weight="700"
+          fill="#fff" text-anchor="middle">$</text>"""
+
+
+def m_shield(p, accent=PURPLE):
+    """A shield with an alert mark — for security/warning/hazard content."""
+    return f"""
+    <path d="M180 64 L268 96 V180 q0 82 -88 118 q-88 -36 -88 -118 V96 Z" fill="url(#g{p})"/>
+    <rect x="170" y="112" width="20" height="76" rx="8" fill="#fff"/>
+    <circle cx="180" cy="212" r="12" fill="#fff"/>"""
+
+
 # ---------------------------------------------------------------- registry
 # slug -> (title, subtitle, motif_callable, kicker)
 # slug matches the page directory with "/" replaced by "-".
@@ -771,17 +856,17 @@ PAGES = {
         P(m_vertical, letters="TEXT"), K_USE),
   "usecase-zalgo-text": ("Zalgo Text Generator", "Create creepy glitch text", m_zalgo, K_USE),
   "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
-        P(m_typo, sample="@Aa"), K_USE),
+        m_gamepad, K_USE),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
-        P(m_typo, sample="[T]"), K_USE),
+        m_gamepad, K_USE),
 
   # ---- gaming-name use cases (Indonesian) ----
   "id-usecase-nama-ff-keren": ("Nama FF Keren", "Simbol payung & font keren buat nickname Free Fire",
-        m_profile, K_USE),
+        m_gamepad, K_USE),
   "id-usecase-nama-guild-ff-keren": ("Nama Guild FF Keren", "Tag squad & bingkai nama tim Free Fire",
         m_trophy, K_USE),
   "id-usecase-nama-ml-keren": ("Nama ML Keren", "Font aesthetic & simbol nickname Mobile Legends",
-        m_profile, K_USE),
+        m_gamepad, K_USE),
   "id-usecase-nama-squad-ml-keren": ("Nama Squad ML Keren", "Tag singkatan & font aesthetic squad Mobile Legends",
         m_trophy, K_USE),
 
@@ -797,7 +882,7 @@ PAGES = {
   "pt-letras-diferentes": ("Letras Diferentes", "Fontes para copiar e colar em qualquer app",
         P(m_typo, sample="Abc", weight="700", size=88, label="copiar e colar"), K_USE),
   "pt-fontes-para-instagram": ("Fontes para Instagram", "Letras para bio, nick e legenda", m_camera, K_PLAT),
-  "pt-usecase-nick-ff": ("Gerador de Nick FF", "Símbolos e fontes para Free Fire", m_profile, K_USE),
+  "pt-usecase-nick-ff": ("Gerador de Nick FF", "Símbolos e fontes para Free Fire", m_gamepad, K_USE),
   "pt-library-simbolos": ("Símbolos para Copiar", "Símbolos para nick, bio e Insta", m_grid, K_LIB),
   "pt-letras-pequenas": ("Letra Pequena", "Texto pequeno para copiar e colar",
         P(m_typo, sample=" small", size=44, label="letra pequena"), K_CAT),
@@ -811,8 +896,8 @@ PAGES = {
   "tr-usecase-zalgo-text": ("Zalgo Metin Oluşturucu", "Ürkütücü bozuk metin oluşturun", m_zalgo, K_USE),
   "tr-yazi-stilleri": ("Yazı Stilleri", "Değişik yazı tipleri kopyala yapıştır",
         P(m_typo, sample="Abc", weight="700", size=88, label="kopyala yapıştır"), K_USE),
-  "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_profile, K_USE),
-  "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_profile, K_USE),
+  "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_gamepad, K_USE),
+  "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_gamepad, K_USE),
   "tr-library-semboller": ("Şekilli Semboller", "Nick ve bio için semboller", m_grid, K_LIB),
   "tr-kucuk-yazi": ("Küçük Yazı", "Minik harfler kopyala yapıştır",
         P(m_typo, sample=" small", size=44, label="küçük yazı"), K_CAT),
@@ -827,7 +912,7 @@ PAGES = {
   "fr-ecriture-speciale": ("Écriture Spéciale", "Lettres spéciales à copier-coller",
         P(m_typo, sample="Spécial", size=64, spacing="3", label="lettres spéciales"), K_USE),
   "fr-police-instagram": ("Police Instagram", "Écriture insta pour ta bio", m_camera, K_PLAT),
-  "fr-pseudo-style": ("Pseudo Stylé", "꧁꧂ pseudos à copier-coller", m_profile, K_USE),
+  "fr-pseudo-style": ("Pseudo Stylé", "꧁꧂ pseudos à copier-coller", m_gamepad, K_USE),
   "fr-ecriture-cursive": ("Écriture Cursive", "Alphabet calligraphie à copier",
         P(m_typo, sample="Écrire", ff=SERIF, style="italic", weight="400", size=58,
           label="élégante et fluide"), K_CAT),
@@ -840,7 +925,7 @@ PAGES = {
         P(m_typo, sample="Goth", ff=SERIF, weight="800", size=80, label="dark et médiévale"), K_CAT),
   "fr-petite-ecriture": ("Petite Écriture", "Petit texte à copier-coller",
         P(m_typo, sample=" small", size=44, label="petite écriture"), K_CAT),
-  "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_profile, K_USE),
+  "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_gamepad, K_USE),
   "fr-ecriture-style": ("Écriture Stylé", "60+ styles d'écriture à copier-coller",
         P(m_typo, sample="Stylé", weight="700", size=80, label="copier-coller"), K_USE),
   "fr-ecriture-aesthetic": ("Écriture Aesthetic", "Lettres et symboles aesthetic à copier",
@@ -1011,7 +1096,7 @@ PAGES = {
         glyphs("♚", "♛", "⚜", "♔", "♕"), K_LIB),
   "library-crying-kaomoji": ("Crying & Sad Kaomoji", "Tearful text faces", m_kaomoji, K_LIB),
   "library-currency-symbols": ("Currency Symbols", "Money marks from around the world",
-        glyphs("€", "£", "¥", "¢", "₿"), K_LIB),
+        m_coin, K_LIB),
   "library-cute-kaomoji": ("Cute Kaomoji", "Kawaii text faces", m_kaomoji, K_LIB),
   "library-dash-hyphen-symbols": ("Dash & Hyphen Symbols", "Em, en and every dash between",
         glyphs("—", "–", "―", "·", "‐"), K_LIB),
@@ -1062,7 +1147,7 @@ PAGES = {
         glyphs("☽", "☾", "☀", "★", "✦"), K_LIB),
   "library-music-kaomoji": ("Music Kaomoji", "Singing, dancing text faces", m_kaomoji, K_LIB),
   "library-music-symbols": ("Music Note Symbols", "Notes, clefs and rests",
-        glyphs("♪", "♫", "♬", "♩", "♭"), K_LIB),
+        m_note, K_LIB),
   "library-norse-viking-runes": ("Norse & Viking Runes", "Elder Futhark rune styling", m_rune, K_LIB),
   "library-number-symbols": ("Number & Numeral Symbols", "Circled, styled and special numbers",
         glyphs("①", "②", "③", "№", "#"), K_LIB),
@@ -1121,7 +1206,7 @@ PAGES = {
   "library-brainrot-slang-emojis": ("Brainrot & Slang Emojis", "The internet's latest reactions", m_smiley, K_LIB),
   "library-chinese-symbols": ("Chinese Symbols", "Characters and marks for names", m_grid, K_LIB),
   "library-christmas-symbols": ("Christmas Symbols", "Festive snow, stars and cheer",
-        glyphs("❄", "★", "❅", "❆", "✦"), K_LIB),
+        m_tree, K_LIB),
   "library-clock-time-symbols": ("Clock & Time Symbols", "Hourglasses, dials and timers",
         glyphs("⌛", "◷", "◴", "◵", "○"), K_LIB),
   "library-clothing-fashion-emojis": ("Clothing & Fashion Emojis", "Outfits, style and accessories", m_bow, K_LIB),
@@ -1159,10 +1244,10 @@ PAGES = {
         glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "library-greeting-message-emojis": ("Greeting & Message Emojis", "Open every chat with warmth", m_chat, K_LIB),
   "library-halloween-symbols": ("Halloween Symbols", "Spooky marks for the season",
-        glyphs("☠", "☽", "✝", "★", "✟"), K_LIB),
+        m_pumpkin, K_LIB),
   "library-happy-emoji": ("Happy Emoji Collection", "Smiles for every good mood", m_smiley, K_LIB),
   "library-hazard-warning-symbols": ("Hazard & Warning Symbols", "Caution marks that demand attention",
-        glyphs("⚠", "☢", "☣", "⚡", "☠"), K_LIB),
+        m_shield, K_LIB),
   "library-hindi-symbols": ("Hindi Symbols", "Characters and marks for names", m_grid, K_LIB),
   "library-html-entities": ("HTML Entities", "Named and numeric character codes",
         glyphs("&", "<", ">", "§", "©"), K_LIB),
@@ -1192,10 +1277,10 @@ PAGES = {
   "library-meme-text-art": ("Meme Text Art", "Copy-ready ASCII meme classics", m_kaomoji, K_LIB),
   "library-minecraft-symbols": ("Minecraft Symbols", "Blocky marks for names and chat", m_block, K_LIB),
   "library-ml-name-symbols": ("Mobile Legends Name Symbols", "Stylish marks for your MLBB name",
-        glyphs("⚔", "★", "✦", "♛", "➤"), K_LIB),
+        m_gamepad, K_LIB),
   "library-moai-emoji": ("Moai Emoji", "The stone-faced statue, decoded", m_block, K_LIB),
   "library-money-emojis": ("Money Emojis", "Cash, coins and currency",
-        glyphs("$", "€", "£", "¥", "¢"), K_LIB),
+        m_coin, K_LIB),
   "library-movie-night-emojis": ("Movie Night Emojis", "Films, popcorn and the big screen", m_play, K_LIB),
   "library-nature-emojis": ("Nature Emojis", "Plants, weather and the outdoors",
         glyphs("☘", "❀", "✿", "⚘", "❁"), K_LIB),
@@ -1223,14 +1308,14 @@ PAGES = {
   "library-shocked-emoji": ("Shocked Emoji Collection", "Gasps, surprise and disbelief", m_smiley, K_LIB),
   "library-side-eye-emoji": ("Side-Eye Emoji", "The look that says it all", m_smiley, K_LIB),
   "library-tech-status-symbols": ("Tech & Status Symbols", "Gears, power and signal marks",
-        glyphs("⚙", "⌘", "⚡", "⊗", "✦"), K_LIB),
+        m_gear, K_LIB),
   "library-text-art": ("Text Art Gallery", "ASCII and Unicode art, copy-ready", m_kaomoji, K_LIB),
   "library-thanksgiving-symbols": ("Thanksgiving Symbols", "Harvest, gratitude and autumn",
         glyphs("❀", "❁", "☘", "✿", "✦"), K_LIB),
   "library-therian-symbols": ("Therian Symbols", "Paws and marks for the community", m_paw, K_LIB),
   "library-thumbs-up-emoji": ("Thumbs-Up Emoji", "The universal sign of approval",
         glyphs("☝", "✌", "☞", "☜", "☟"), K_LIB),
-  "library-travel-vacation-emojis": ("Travel & Vacation Emojis", "Planes, maps and getaways", m_car, K_LIB),
+  "library-travel-vacation-emojis": ("Travel & Vacation Emojis", "Planes, maps and getaways", m_plane, K_LIB),
   "library-unit-measurement-symbols": ("Unit & Measurement Symbols", "Degrees, primes and more",
         glyphs("°", "′", "″", "µ", "Ω"), K_LIB),
   "library-vertical-line-symbols": ("Vertical Line Symbols", "Bars and pipes for dividers",
