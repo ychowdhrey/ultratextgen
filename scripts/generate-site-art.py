@@ -548,7 +548,8 @@ def glyphs(*g):
 # Localized homepage social cards. Each localized homepage (de/, es/, ...) used
 # to share the English homepage card, leaving English copy on a translated page.
 # Each entry is  locale -> (og_filename, title, subtitle)  and renders with the
-# master brand motif. Filenames are descriptive (keyword-led) for Google Images.
+# master brand motif by default. Filenames are descriptive (keyword-led) for
+# Google Images.
 LOCALIZED_HOME = {
   "de": ("coole-schriftarten-generator-preview",
          "Coole Schriftarten Generator", "Schöne Schriftarten und Symbole kopieren"),
@@ -570,6 +571,24 @@ LOCALIZED_HOME = {
          "Generator Font Aesthetic", "Font dan simbol keren untuk disalin"),
   "vi": ("tao-chu-kieu-dep-preview",
          "Tạo Chữ Kiểu Đẹp", "Phông chữ và ký tự đặc biệt để sao chép"),
+}
+
+# Bespoke motifs for the locales with demonstrated organic performance (GSC
+# click share), replacing the master brand motif with a type specimen tuned
+# to that market's actual query intent. Every other locale keeps m_brand —
+# bespoke treatment is gated on demand, same as everywhere else on the site;
+# more locales earn one here as their traffic does.
+LOCALIZED_HOME_MOTIF = {
+  # id: the #1 site-wide query cluster is "huruf aesthetic" / "tulisan
+  # aesthetic" — echo the spaced vaporwave treatment used on
+  # category-aesthetic-fonts instead of the generic brand mark.
+  "id": P(m_typo, sample="a e s", size=72, spacing="6", label="huruf aesthetic"),
+  # es: mirrors the es-letras-bonitas landing page (its top-performing page)
+  # so the homepage card foreshadows the styling searchers land on.
+  "es": P(m_typo, sample="Aa", style="italic", size=88, label="letras bonitas"),
+  # pl: the Ł/ł letterform is uniquely Polish — more locale-authentic than
+  # a generic "Aa" for the "ładne literki" (pretty letters) query set.
+  "pl": P(m_typo, sample="Łł", size=84, label="ładne literki"),
 }
 
 # The homepage card filename (root index.html + the fallback for localized
@@ -1338,9 +1357,12 @@ def main():
         output_width=1200, output_height=630)
 
     # Localized homepage cards — translated copy on a translated page.
-    for _loc, (fname, title, sub) in LOCALIZED_HOME.items():
+    # High-demand locales (LOCALIZED_HOME_MOTIF) get a bespoke motif; the
+    # rest still use the master brand motif.
+    for loc, (fname, title, sub) in LOCALIZED_HOME.items():
+        motif = LOCALIZED_HOME_MOTIF.get(loc, m_brand)
         cairosvg.svg2png(
-            bytestring=og_png_svg(fname, title, sub, m_brand, K_SITE).encode(),
+            bytestring=og_png_svg(fname, title, sub, motif, K_SITE).encode(),
             write_to=os.path.join(OG, f"{fname}.png"),
             output_width=1200, output_height=630)
 
