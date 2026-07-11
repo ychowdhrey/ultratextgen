@@ -1762,6 +1762,7 @@ PAGES = {
   # Vietnamese
   "vi-combo-emoji": ("Combo Emoji", "Bộ emoji để sao chép và dán", m_smiley, K_LIB),
   "vi-font-discord": ("Font Discord", "Chữ kiểu cho nick và bio Discord", m_chat, K_PLAT),
+  "vi-library-emoji-flags": ("Cờ Các Nước", "Emoji lá cờ mọi quốc gia", m_flag, K_LIB),
   # Spanish
   "es-combinaciones-de-emojis": ("Combinaciones de Emojis", "Sets de emoji para copiar y pegar", m_smiley, K_LIB),
   "es-letras-en-otros-idiomas": ("Letras en Otros Idiomas", "Alfabetos y letras del mundo para copiar",

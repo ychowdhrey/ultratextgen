@@ -39,6 +39,13 @@
       copiedBtn: " Copied!",
       formats: { inline: "Inline", vertical: "Vertical", comma: "Comma", space: "Space", bullet: "Bullet" }
     },
+    vi: {
+      copied: "Đã sao chép: ",
+      copyFormat: "Kiểu sao chép",
+      copyCollection: " Sao chép cả bộ",
+      copiedBtn: " Đã chép!",
+      formats: { inline: "Một hàng", vertical: "Dọc", comma: "Dấu phẩy", space: "Cách", bullet: "Gạch đầu dòng" }
+    },
     pt: {
       copied: "Copiado: ",
       copyFormat: "Formato de cópia",
