@@ -113,6 +113,58 @@
         hard:   { label: "Difficile", hint: "Plus de points et de détails dans la lettre" },
         expert: { label: "Expert", hint: "Beaucoup de points — un vrai défi" }
       }
+    },
+    es: {
+      letterWord: "letra", numberWord: "número",
+      copied: "¡Copiado!",
+      printThisLetter: "Imprimir esta letra", printThisNumber: "Imprimir este número",
+      downloadPng: "Descargar PNG",
+      copyPaste: "Copiar y pegar", copy: "Copiar", howToDraw: "Cómo dibujarla", lowerSuffix: " · min.",
+      level: "Nivel", nameLabel: "Nombre:", dateLabel: "Fecha:", space: "espacio",
+      dotToDot: "unir los puntos", bannerFlag: "Banderín —",
+      bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
+      puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
+      trace: {
+        solid:    { label: "Modelo sólido", hint: "Letras oscuras y llenas — traza justo encima" },
+        "bold-dot": { label: "Punteado grueso", hint: "Puntos gruesos y juntos para unir" },
+        "fine-dot": { label: "Punteado fino", hint: "Puntos más finos con un poco más de espacio" },
+        dashed:   { label: "Discontinuo", hint: "Guiones discontinuos — más línea que completar" },
+        faded:    { label: "Fantasma tenue", hint: "Letras gris claro para repasar" },
+        faint:    { label: "Guía tenue", hint: "Contorno apenas visible — casi solo" },
+        blank:    { label: "Línea en blanco", hint: "Sin guía — escríbela de memoria" }
+      },
+      dot: {
+        easy:   { label: "Fácil", hint: "Huecos grandes, pocos puntos — los más pequeños" },
+        medium: { label: "Medio", hint: "Un unir-los-puntos equilibrado" },
+        hard:   { label: "Difícil", hint: "Más puntos y más detalle en la letra" },
+        expert: { label: "Experto", hint: "Muchos puntos — todo un reto" }
+      }
+    },
+    pt: {
+      letterWord: "letra", numberWord: "número",
+      copied: "Copiado!",
+      printThisLetter: "Imprimir esta letra", printThisNumber: "Imprimir este número",
+      downloadPng: "Baixar PNG",
+      copyPaste: "Copiar e colar", copy: "Copiar", howToDraw: "Como desenhar", lowerSuffix: " · min.",
+      level: "Nível", nameLabel: "Nome:", dateLabel: "Data:", space: "espaço",
+      dotToDot: "ligar os pontos", bannerFlag: "Bandeirinha —",
+      bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
+      puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
+      trace: {
+        solid:    { label: "Modelo cheio", hint: "Letras escuras e cheias — trace por cima" },
+        "bold-dot": { label: "Pontilhado grosso", hint: "Pontos grossos e juntos para ligar" },
+        "fine-dot": { label: "Pontilhado fino", hint: "Pontos mais finos, um pouco mais espaçados" },
+        dashed:   { label: "Tracejado", hint: "Traços interrompidos — mais linha para completar" },
+        faded:    { label: "Fantasma claro", hint: "Letras cinza-claro para cobrir" },
+        faint:    { label: "Guia leve", hint: "Contorno quase invisível — quase sozinho" },
+        blank:    { label: "Linha em branco", hint: "Sem guia — escreva de memória" }
+      },
+      dot: {
+        easy:   { label: "Fácil", hint: "Espaços grandes, poucos pontos — os menores" },
+        medium: { label: "Médio", hint: "Um ligar-os-pontos equilibrado" },
+        hard:   { label: "Difícil", hint: "Mais pontos e mais detalhe na letra" },
+        expert: { label: "Expert", hint: "Muitos pontos — um baita desafio" }
+      }
     }
   };
   const T = I18N[LANG] || I18N.en;
