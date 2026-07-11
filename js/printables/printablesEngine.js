@@ -165,6 +165,84 @@
         hard:   { label: "Difícil", hint: "Mais pontos e mais detalhe na letra" },
         expert: { label: "Expert", hint: "Muitos pontos — um baita desafio" }
       }
+    },
+    it: {
+      letterWord: "lettera", numberWord: "numero",
+      copied: "Copiato!",
+      printThisLetter: "Stampa questa lettera", printThisNumber: "Stampa questo numero",
+      downloadPng: "Scarica PNG",
+      copyPaste: "Copia e incolla", copy: "Copia", howToDraw: "Come disegnarla", lowerSuffix: " · min.",
+      level: "Livello", nameLabel: "Nome:", dateLabel: "Data:", space: "spazio",
+      dotToDot: "unisci i puntini", bannerFlag: "Bandierina —",
+      bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
+      puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
+      trace: {
+        solid:    { label: "Modello pieno", hint: "Lettere piene e scure — ricalca sopra" },
+        "bold-dot": { label: "Puntinato spesso", hint: "Punti spessi e ravvicinati da unire" },
+        "fine-dot": { label: "Puntinato fine", hint: "Punti più sottili e un po' più distanziati" },
+        dashed:   { label: "Tratteggiato", hint: "Trattini spezzati — più linea da completare" },
+        faded:    { label: "Fantasma chiaro", hint: "Lettere grigio chiaro da ripassare" },
+        faint:    { label: "Guida leggera", hint: "Contorno appena visibile — quasi da solo" },
+        blank:    { label: "Riga vuota", hint: "Nessuna guida — scrivila a memoria" }
+      },
+      dot: {
+        easy:   { label: "Facile", hint: "Spazi ampi, pochi punti — i più piccoli" },
+        medium: { label: "Medio", hint: "Un unisci-i-puntini equilibrato" },
+        hard:   { label: "Difficile", hint: "Più punti e più dettaglio nella lettera" },
+        expert: { label: "Esperto", hint: "Tanti punti — una vera sfida" }
+      }
+    },
+    pl: {
+      letterWord: "litera", numberWord: "cyfra",
+      copied: "Skopiowano!",
+      printThisLetter: "Wydrukuj tę literę", printThisNumber: "Wydrukuj tę cyfrę",
+      downloadPng: "Pobierz PNG",
+      copyPaste: "Kopiuj i wklej", copy: "Kopiuj", howToDraw: "Jak ją narysować", lowerSuffix: " · mała",
+      level: "Poziom", nameLabel: "Imię:", dateLabel: "Data:", space: "spacja",
+      dotToDot: "połącz kropki", bannerFlag: "Chorągiewka —",
+      bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
+      puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      trace: {
+        solid:    { label: "Pełny wzór", hint: "Ciemne, pełne litery — pisz po śladzie" },
+        "bold-dot": { label: "Grube kropki", hint: "Grube, gęsto rozmieszczone kropki do połączenia" },
+        "fine-dot": { label: "Drobne kropki", hint: "Cieńsze kropki z nieco większym odstępem" },
+        dashed:   { label: "Kreski", hint: "Przerywane kreski — więcej linii do uzupełnienia" },
+        faded:    { label: "Blady cień", hint: "Jasnoszare litery do pisania po śladzie" },
+        faint:    { label: "Lekki wzór", hint: "Ledwo widoczny kontur — prawie samodzielnie" },
+        blank:    { label: "Pusta linia", hint: "Bez wzoru — napisz z pamięci" }
+      },
+      dot: {
+        easy:   { label: "Łatwy", hint: "Duże odstępy, mało kropek — dla najmłodszych" },
+        medium: { label: "Średni", hint: "Zrównoważone łączenie kropek" },
+        hard:   { label: "Trudny", hint: "Więcej kropek i drobniejsze szczegóły litery" },
+        expert: { label: "Ekspert", hint: "Mnóstwo kropek — prawdziwe wyzwanie" }
+      }
+    },
+    de: {
+      letterWord: "Buchstabe", numberWord: "Zahl",
+      copied: "Kopiert!",
+      printThisLetter: "Diesen Buchstaben drucken", printThisNumber: "Diese Zahl drucken",
+      downloadPng: "PNG herunterladen",
+      copyPaste: "Kopieren", copy: "Kopieren", howToDraw: "So wird er gezeichnet", lowerSuffix: " · klein",
+      level: "Stufe", nameLabel: "Name:", dateLabel: "Datum:", space: "Leerzeichen",
+      dotToDot: "Punkte verbinden", bannerFlag: "Wimpel —",
+      bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
+      puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
+      trace: {
+        solid:    { label: "Volle Vorlage", hint: "Dunkle, volle Buchstaben — direkt nachfahren" },
+        "bold-dot": { label: "Dick gepunktet", hint: "Dicke, eng gesetzte Punkte zum Verbinden" },
+        "fine-dot": { label: "Fein gepunktet", hint: "Dünnere Punkte mit etwas mehr Abstand" },
+        dashed:   { label: "Gestrichelt", hint: "Unterbrochene Striche — mehr Linie zu ergänzen" },
+        faded:    { label: "Blasser Schatten", hint: "Hellgraue Buchstaben zum Überschreiben" },
+        faint:    { label: "Leichte Hilfe", hint: "Kaum sichtbarer Umriss — fast allein" },
+        blank:    { label: "Leere Linie", hint: "Keine Hilfe — aus dem Gedächtnis schreiben" }
+      },
+      dot: {
+        easy:   { label: "Leicht", hint: "Große Abstände, wenige Punkte — die Jüngsten" },
+        medium: { label: "Mittel", hint: "Ausgewogenes Punkte-Verbinden" },
+        hard:   { label: "Schwer", hint: "Mehr Punkte und feinere Details" },
+        expert: { label: "Experte", hint: "Viele Punkte — eine echte Herausforderung" }
+      }
     }
   };
   const T = I18N[LANG] || I18N.en;
