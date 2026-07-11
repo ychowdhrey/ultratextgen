@@ -1,8 +1,9 @@
 {
   "slug": "diameter-symbol",
+  "page_type": "symbol",
   "title": "Diameter Symbol: Copy & Paste ⌀ Engineering Diameter Sign",
   "meta_description": "Copy and paste the diameter symbol (⌀) used in engineering drawings and machining specs, plus its confusable neighbors Ø and ∅. Click any symbol to copy it instantly.",
-  "canonical": "https://ultratextgen.com/library/diameter-symbol/",
+  "canonical": "https://ultratextgen.com/symbol/diameter-symbol/",
   "breadcrumb": "Diameter Symbol",
   "hero_h1": "Diameter Symbol",
   "hero_tagline": "The diameter sign (⌀) that precedes circular dimensions on engineering drawings — plus the symbols people mistake for it. Click any symbol to copy it instantly.",
@@ -17,7 +18,10 @@
       "h2": "Diameter Sign",
       "intro": "The correct Unicode diameter sign, ready to paste in front of a measurement.",
       "symbols": [
-        { "char": "⌀", "label": "Diameter Sign" }
+        {
+          "char": "⌀",
+          "label": "Diameter Sign"
+        }
       ]
     },
     {
@@ -26,11 +30,26 @@
       "h2": "Symbols Often Mistaken for the Diameter Sign",
       "intro": "These look close enough to ⌀ to get substituted by accident — each one has a different meaning.",
       "symbols": [
-        { "char": "∅", "label": "Empty Set (Not a Diameter Sign)" },
-        { "char": "Ø", "label": "Latin Capital O With Stroke" },
-        { "char": "ø", "label": "Latin Small O With Stroke" },
-        { "char": "φ", "label": "Greek Small Letter Phi" },
-        { "char": "Φ", "label": "Greek Capital Letter Phi" }
+        {
+          "char": "∅",
+          "label": "Empty Set (Not a Diameter Sign)"
+        },
+        {
+          "char": "Ø",
+          "label": "Latin Capital O With Stroke"
+        },
+        {
+          "char": "ø",
+          "label": "Latin Small O With Stroke"
+        },
+        {
+          "char": "φ",
+          "label": "Greek Small Letter Phi"
+        },
+        {
+          "char": "Φ",
+          "label": "Greek Capital Letter Phi"
+        }
       ]
     },
     {
@@ -39,18 +58,36 @@
       "h2": "Radius, Arc & Related Dimensioning Symbols",
       "intro": "Other geometric dimensioning and tolerancing (GD&T) marks commonly used alongside the diameter sign.",
       "symbols": [
-        { "char": "R", "label": "Radius (Plain Letter)" },
-        { "char": "□", "label": "Square (Width Across Flats)" },
-        { "char": "⌒", "label": "Arc" },
-        { "char": "⌓", "label": "Segment" },
-        { "char": "°", "label": "Degree Sign" },
-        { "char": "±", "label": "Plus-Minus Sign" }
+        {
+          "char": "R",
+          "label": "Radius (Plain Letter)"
+        },
+        {
+          "char": "□",
+          "label": "Square (Width Across Flats)"
+        },
+        {
+          "char": "⌒",
+          "label": "Arc"
+        },
+        {
+          "char": "⌓",
+          "label": "Segment"
+        },
+        {
+          "char": "°",
+          "label": "Degree Sign"
+        },
+        {
+          "char": "±",
+          "label": "Plus-Minus Sign"
+        }
       ]
     }
   ],
   "related": [
     {
-      "href": "/library/degree-symbol/",
+      "href": "/symbol/degree-symbol/",
       "title": "Degree Symbol",
       "desc": "The degree sign plus angle, temperature, and geometry marks that pair with it."
     },

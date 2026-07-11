@@ -1,8 +1,9 @@
 {
   "slug": "khanda-symbol",
+  "page_type": "symbol",
   "title": "Khanda Symbol: Copy & Paste ☬ 🪯 Sikh Emblem & Ik Onkar",
   "meta_description": "Copy and paste the Khanda (☬ 🪯), the Sikh emblem of the double-edged sword, chakkar, and two kirpans — and see how it differs from Ik Onkar (ੴ). Click any symbol to copy it instantly.",
-  "canonical": "https://ultratextgen.com/library/khanda-symbol/",
+  "canonical": "https://ultratextgen.com/symbol/khanda-symbol/",
   "breadcrumb": "Khanda Symbol",
   "hero_h1": "Khanda Symbol",
   "hero_tagline": "The Khanda (☬ 🪯) — the Sikh emblem of the double-edged sword, chakkar, and two crossed kirpans — plus Ik Onkar, the separate symbol it's often confused with. Click any symbol to copy it instantly.",
@@ -17,8 +18,14 @@
       "h2": "Khanda Symbol",
       "intro": "Two ways to render the Khanda in Unicode: the plain-text dingbat and the dedicated color emoji added in 2022.",
       "symbols": [
-        { "char": "☬", "label": "Adi Shakti (Plain-Text Khanda)" },
-        { "char": "🪯", "label": "Khanda Emoji" }
+        {
+          "char": "☬",
+          "label": "Adi Shakti (Plain-Text Khanda)"
+        },
+        {
+          "char": "🪯",
+          "label": "Khanda Emoji"
+        }
       ]
     },
     {
@@ -27,7 +34,10 @@
       "h2": "Ik Onkar — Not the Same Symbol",
       "intro": "Ik Onkar (\"One Creator\") is the older, separate Gurmukhi character used on gurdwaras and the opening line of the Guru Granth Sahib. It is never interchanged with the Khanda in religious use.",
       "symbols": [
-        { "char": "ੴ", "label": "Gurmukhi Ek Onkar" }
+        {
+          "char": "ੴ",
+          "label": "Gurmukhi Ek Onkar"
+        }
       ]
     },
     {
@@ -36,12 +46,30 @@
       "h2": "Other Faith & Emblem Symbols",
       "intro": "Symbols from other traditions that pair well with faith and identity content.",
       "symbols": [
-        { "char": "🕉️", "label": "Om" },
-        { "char": "☪️", "label": "Star and Crescent" },
-        { "char": "✡️", "label": "Star of David" },
-        { "char": "☸️", "label": "Dharma Wheel" },
-        { "char": "☯️", "label": "Yin Yang" },
-        { "char": "✝️", "label": "Latin Cross" }
+        {
+          "char": "🕉️",
+          "label": "Om"
+        },
+        {
+          "char": "☪️",
+          "label": "Star and Crescent"
+        },
+        {
+          "char": "✡️",
+          "label": "Star of David"
+        },
+        {
+          "char": "☸️",
+          "label": "Dharma Wheel"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin Yang"
+        },
+        {
+          "char": "✝️",
+          "label": "Latin Cross"
+        }
       ]
     }
   ],
@@ -52,12 +80,12 @@
       "desc": "Faith symbols from every major world religion in one reference."
     },
     {
-      "href": "/library/peace-symbol/",
+      "href": "/symbol/peace-symbol/",
       "title": "Peace Symbol",
       "desc": "The peace sign and the doves, gestures, and nature symbols that share its meaning."
     },
     {
-      "href": "/library/yin-yang-symbol/",
+      "href": "/symbol/yin-yang-symbol/",
       "title": "Yin Yang Symbol",
       "desc": "The yin-yang symbol and related balance and harmony marks."
     }

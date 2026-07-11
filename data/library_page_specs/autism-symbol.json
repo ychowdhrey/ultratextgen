@@ -1,8 +1,9 @@
 {
   "slug": "autism-symbol",
+  "page_type": "symbol",
   "title": "Autism Symbol: Copy & Paste ♾️ Infinity — Not the Puzzle Piece",
   "meta_description": "Copy and paste the infinity symbol (∞ ♾️) the autistic community uses for autism and neurodiversity, why the puzzle piece 🧩 fell out of use, and what gold vs. rainbow infinity mean. Click to copy instantly.",
-  "canonical": "https://ultratextgen.com/library/autism-symbol/",
+  "canonical": "https://ultratextgen.com/symbol/autism-symbol/",
   "breadcrumb": "Autism Symbol",
   "hero_h1": "Autism Symbol",
   "hero_tagline": "The infinity symbol (∞ ♾️) autistic self-advocates use for autism and neurodiversity — and why it replaced the puzzle piece 🧩. Click any symbol to copy it instantly.",
@@ -17,8 +18,14 @@
       "h2": "Infinity Symbol",
       "intro": "The symbol preferred by autistic self-advocates and the neurodiversity movement, representing infinite variation and possibility rather than a deficit to fix.",
       "symbols": [
-        { "char": "∞", "label": "Infinity" },
-        { "char": "♾️", "label": "Infinity Emoji" }
+        {
+          "char": "∞",
+          "label": "Infinity"
+        },
+        {
+          "char": "♾️",
+          "label": "Infinity Emoji"
+        }
       ]
     },
     {
@@ -27,8 +34,14 @@
       "h2": "Gold, Rainbow & Color Meaning",
       "intro": "Color carries the specific meaning here: gold marks autism specifically (a nod to Au, gold's chemical symbol), rainbow marks neurodiversity broadly (autism, ADHD, dyslexia, and more together). Plain-text ∞ can't carry color on its own, so the rainbow version is typically pasted as a combo.",
       "symbols": [
-        { "char": "🌈♾️", "label": "Rainbow Infinity (Neurodiversity)" },
-        { "char": "🌈", "label": "Rainbow" }
+        {
+          "char": "🌈♾️",
+          "label": "Rainbow Infinity (Neurodiversity)"
+        },
+        {
+          "char": "🌈",
+          "label": "Rainbow"
+        }
       ]
     },
     {
@@ -37,8 +50,14 @@
       "h2": "The Puzzle Piece — Contested Legacy Symbol",
       "intro": "Still widely recognized and still used by some organizations and families, but no longer the symbol most autistic-led advocacy groups use. Included here for reference, not as a recommendation.",
       "symbols": [
-        { "char": "🧩", "label": "Puzzle Piece" },
-        { "char": "💙", "label": "Blue Heart (Light It Up Blue)" }
+        {
+          "char": "🧩",
+          "label": "Puzzle Piece"
+        },
+        {
+          "char": "💙",
+          "label": "Blue Heart (Light It Up Blue)"
+        }
       ]
     }
   ],
