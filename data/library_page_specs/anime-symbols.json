@@ -1,0 +1,136 @@
+{
+  "slug": "anime-symbols",
+  "title": "Anime Symbols: Copy & Paste Aesthetic Anime Characters",
+  "meta_description": "Copy and paste anime-style symbols — sparkle and star accents, battle marks, and ready-made fandom name frames for your bio or username. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/anime-symbols/",
+  "breadcrumb": "Anime Symbols",
+  "hero_h1": "Anime Symbols",
+  "hero_tagline": "Sparkle borders, battle marks, and fandom name frames anime fans copy into bios, usernames, and edits. Click any symbol to copy it instantly.",
+  "intro": "Anime symbols are less about a single alphabet and more about a look — the sparkle accents of a shoujo edit, the crossed blades of a shonen opening, the moon-and-star hush of a magical-girl scene. This library collects those decorative building blocks separately from the site's other Japanese-language pages: for kanji, hiragana, and katakana with real meanings, see Japanese Symbols; for emoticon faces like (＾▽＾), see Text Faces & Kaomoji. Here, the focus is purely aesthetic and fandom-facing — accents to dress up a name, plus ready-made frames you can paste your own name into. New anime seasons premiere on a real, recurring quarterly calendar (winter, spring, summer, fall simulcasts), so this page is built to stay evergreen through every one of them, not just whatever show is trending today.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "sparkle-star-accents",
+      "label": "Sparkles & Stars",
+      "h2": "Sparkle & Star Accents",
+      "intro": "The stars and sparkles that frame an aesthetic anime edit, bio, or username.",
+      "symbols": [
+        { "char": "✦", "label": "Black Four Pointed Star" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "⋆", "label": "Star Operator (Small Sparkle)" },
+        { "char": "✩", "label": "Stress Outlined White Star" },
+        { "char": "⁺", "label": "Superscript Plus Sign (Sparkle Accent)" },
+        { "char": "˚", "label": "Ring Above (Dot Sparkle)" }
+      ]
+    },
+    {
+      "id": "blade-battle-marks",
+      "label": "Blade & Battle Marks",
+      "h2": "Blade & Battle Marks",
+      "intro": "Sharp, shonen-style accents for battle-anime usernames and edits.",
+      "symbols": [
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "➤", "label": "Black Rightwards Arrowhead" },
+        { "char": "✝", "label": "Latin Cross (Tokyo Manji Gang-Style Tattoo Motif)" },
+        { "char": "乂", "label": "CJK Ideograph Yi (Crossed-Blade Mark)" },
+        { "char": "力", "label": "Chikara — Power/Strength" }
+      ]
+    },
+    {
+      "id": "moon-sky-accents",
+      "label": "Moon & Sky",
+      "h2": "Moon & Sky Accents",
+      "intro": "Soft celestial marks for shoujo and magical-girl aesthetics.",
+      "symbols": [
+        { "char": "☽", "label": "First Quarter Moon" },
+        { "char": "☾", "label": "Last Quarter Moon" },
+        { "char": "☄", "label": "Comet" },
+        { "char": "✵", "label": "Eight Pointed Pinwheel Star" },
+        { "char": "✯", "label": "Pinwheel Star" }
+      ]
+    },
+    {
+      "id": "anime-vfx-emoji",
+      "label": "VFX Emoji",
+      "h2": "Anime VFX & Impact Emoji",
+      "intro": "Color emoji that read like the motion lines and effect shots anime is known for.",
+      "symbols": [
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💫", "label": "Dizzy (Swirl Effect)" },
+        { "char": "💥", "label": "Collision (Impact Burst)" },
+        { "char": "🌸", "label": "Cherry Blossom" },
+        { "char": "⚡", "label": "High Voltage (Power-Up Flash)" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "fandom-name-frames",
+    "label": "Fandom Frames",
+    "h2": "Anime Fandom Name Frames",
+    "intro": "Paste your own name or handle into the middle of a ready-made frame. These are fan-made symbol combos inspired by anime aesthetics and iconic character motifs — not official logos or artwork."
+  },
+  "collection_container_id": "animeFrameContainer",
+  "collections": [
+    {
+      "name": "Shonen Battle Frame",
+      "flags": ["⚔", "YourName", "⚔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tokyo Manji-Style Cross Tag",
+      "flags": ["✝", "YourName", "✝"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gaara Tribute Frame (愛 — Ai, Love)",
+      "flags": ["愛", "YourName", "愛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sparkle Idol Frame",
+      "flags": ["✧", "YourName", "✧"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dark Villain Frame",
+      "flags": ["☠", "YourName", "☠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Moonlit Magical Frame",
+      "flags": ["☽", "YourName", "☾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "VFX Sparkle Wrap",
+      "flags": ["✨", "YourName", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/japanese-symbols/",
+      "title": "Japanese Symbols",
+      "desc": "Kanji, hiragana, and katakana characters with romaji and meanings."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "Japanese-style emoticon faces for chat and captions."
+    },
+    {
+      "href": "/library/kawaii-cute-symbols/",
+      "title": "Kawaii Cute Symbols",
+      "desc": "Adorable Japanese-inspired symbols for soft aesthetics."
+    },
+    {
+      "href": "/library/gaming-aesthetic-symbols/",
+      "title": "Gaming Aesthetic Symbols",
+      "desc": "Sharp, stylish marks for gamertags and usernames."
+    }
+  ]
+}
