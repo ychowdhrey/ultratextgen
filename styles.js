@@ -1076,6 +1076,7 @@ const textStyles = {
   familySlug: ['small-text', 'aesthetic-fonts'],
   groupSlug: 'small-caps',
   slug: 'ultra-small-caps',
+  note: 'Small caps · Q and X keep their normal shape (Unicode has no small-cap glyph for either)',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
