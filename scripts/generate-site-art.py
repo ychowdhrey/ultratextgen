@@ -732,6 +732,40 @@ def m_shield(p, accent=PURPLE):
     <circle cx="180" cy="212" r="12" fill="#fff"/>"""
 
 
+# ----- per-letter printables motifs (parametrized by the page's own letter) -----
+
+
+def m_letter_bubble(p, letter="A"):
+    """A single letter in a rounded bubble-outline chip — bubble-letter printables."""
+    return f"""
+    <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#g{p})"/>
+    <circle cx="180" cy="190" r="76" fill="none" stroke="#fff" stroke-width="8"/>
+    <text x="180" y="212" font-family="{SANS}" font-size="130" font-weight="800"
+          fill="#fff" text-anchor="middle">{esc(letter)}</text>"""
+
+
+def m_letter_dots(p, letter="A"):
+    """A large letter surrounded by numbered-dot scatter — dot-to-dot printables."""
+    spots = [(70, 90), (300, 80), (60, 260), (310, 250), (180, 50),
+             (40, 170), (320, 170), (150, 300), (220, 300)]
+    dots = "".join(f'<circle cx="{x}" cy="{y}" r="6" fill="{PURPLE}" opacity="0.55"/>'
+                    for x, y in spots)
+    return f"""{dots}
+    <text x="180" y="250" font-family="{SANS}" font-size="200" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle" opacity="0.9">{esc(letter)}</text>"""
+
+
+def m_letter_outline(p, letter="A"):
+    """A hollow letter outline with a crayon — alphabet coloring-page printables."""
+    return f"""
+    <text x="180" y="250" font-family="{SANS}" font-size="220" font-weight="800"
+          fill="none" stroke="url(#g{p})" stroke-width="6" text-anchor="middle">{esc(letter)}</text>
+    <g transform="translate(268 244) rotate(28)">
+      <rect x="-10" y="-56" width="20" height="70" rx="8" fill="url(#gv{p})"/>
+      <path d="M-10 -56 L10 -56 L0 -78 Z" fill="{INK}"/>
+    </g>"""
+
+
 # ---------------------------------------------------------------- registry
 # slug -> (title, subtitle, motif_callable, kicker)
 # slug matches the page directory with "/" replaced by "-".
@@ -743,6 +777,7 @@ K_USE = "ULTRATEXTGEN · GENERATOR"
 K_PLAT = "ULTRATEXTGEN · PLATFORM"
 K_ANS = "ULTRATEXTGEN · ANSWERS"
 K_SITE = "ULTRATEXTGEN"
+K_PRINT = "ULTRATEXTGEN · PRINTABLES"
 
 
 def glyphs(*g):
@@ -1467,6 +1502,40 @@ PAGES = {
   "pl-czcionki-discord": ("Czcionki na Discord", "Czcionki do nicku, kanału i bio — bez Nitro", m_chat, K_PLAT),
   "id-font-discord": ("Font Discord", "Font untuk nama, channel, dan bio — tanpa Nitro", m_chat, K_PLAT),
 }
+
+
+# ---- printables letter pages (bubble/dot-to-dot/coloring, A-Z x 3 types) ----
+# Highly templatable — one motif per alphabet type, a title/subtitle pattern per
+# letter — so these are generated in a loop instead of 78 hand-typed dict lines.
+LETTER_WORD = {
+    "a": "Apple", "b": "Ball", "c": "Cat", "d": "Dog", "e": "Elephant",
+    "f": "Fish", "g": "Goat", "h": "Hat", "i": "Igloo", "j": "Jellyfish",
+    "k": "Kite", "l": "Lion", "m": "Monkey", "n": "Nest", "o": "Owl",
+    "p": "Penguin", "q": "Queen", "r": "Rabbit", "s": "Sun", "t": "Tiger",
+    "u": "Umbrella", "v": "Violin", "w": "Whale", "x": "Xylophone", "y": "Yak",
+    "z": "Zebra",
+}
+for _l, _word in LETTER_WORD.items():
+    _L = _l.upper()
+    PAGES[f"printables-bubble-letters-letter-{_l}"] = (
+        f"Bubble Letter {_L}", "Free printable trace, color & print outline",
+        P(m_letter_bubble, letter=_L), K_PRINT)
+    PAGES[f"printables-dot-to-dot-alphabet-letter-{_l}"] = (
+        f"Letter {_L} Dot to Dot", f"{_L} is for {_word} — connect the dots",
+        P(m_letter_dots, letter=_L), K_PRINT)
+    PAGES[f"printables-alphabet-coloring-pages-letter-{_l}"] = (
+        f"Letter {_L} Coloring Page", f"{_L} is for {_word} — color the outline",
+        P(m_letter_outline, letter=_L), K_PRINT)
+
+PAGES["printables-bubble-letters"] = (
+    "Printable Bubble Letters", "Big puffy A-Z outlines to trace, color and print",
+    P(m_letter_bubble, letter="B"), K_PRINT)
+PAGES["printables-dot-to-dot-alphabet"] = (
+    "Dot-to-Dot Alphabet", "Connect the dots to reveal each letter A-Z",
+    P(m_letter_dots, letter="D"), K_PRINT)
+PAGES["printables-alphabet-coloring-pages"] = (
+    "Alphabet Coloring Pages", "Printable ABC letter outlines to color",
+    P(m_letter_outline, letter="C"), K_PRINT)
 
 
 # ---------------------------------------------------------------- builders
