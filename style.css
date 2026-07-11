@@ -6502,6 +6502,78 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
 .gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }
 
+/* ==========================================================
+   Caesar cipher widget (js/ciphers/caesar-cipher.js)
+   Self-contained adjustable-shift cipher on the
+   /category/codes-and-ciphers/ page.
+   ========================================================== */
+.caesar-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.1rem;
+  max-width: 640px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.caesar-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.caesar-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.caesar-input,
+.caesar-output {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+  resize: vertical;
+  min-height: 64px;
+}
+.caesar-input:focus,
+.caesar-output:focus { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+.caesar-output { color: var(--text-primary); }
+.caesar-range-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.caesar-shift-val {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  font-variant-numeric: tabular-nums;
+}
+.caesar-range { width: 100%; accent-color: var(--accent-purple); }
+.caesar-modes { display: flex; gap: 0.4rem; }
+.caesar-mode-btn {
+  flex: 1;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.caesar-mode-btn.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  border-color: transparent;
+}
+.caesar-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
 /* ==========================================================================
    CHARACTER & WORD COUNTER  (/character-counter/)
    Live word/character/sentence/paragraph/reading-time stats, plus a

@@ -102,6 +102,11 @@ const CATEGORY_PAGES = {
     slug: 'case-converter',
     title: 'Case Converter',
     description: 'Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and more.'
+  },
+  'codes-ciphers': {
+    slug: 'codes-and-ciphers',
+    title: 'Codes & Ciphers',
+    description: 'Morse code, binary, Caesar cipher, leetspeak, and Braille — turn text into real encoding systems and copy the result.'
   }
 };
 
@@ -1388,6 +1393,37 @@ const textStyles = {
     platforms: ["discord","x"]
   },
 
+  // Real Unicode block (U+13000-U+1342E, Unicode 5.2+) — Gardiner sign-list
+  // order, not a transliteration. Same decorative-lookalike pattern as the
+  // rest of this section: letter-for-letter, aesthetics over accuracy.
+  'Ultra Egyptian Hieroglyphs': {
+    upper: '𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙',
+    lower: '𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Egyptian hieroglyph lookalikes · Gardiner sign order',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-egyptian-hieroglyphs',
+    platforms: ["discord","x"]
+  },
+
+  // Real Unicode block (U+12000-U+12399, Unicode 5.0+) — Borger/MesZL sign
+  // order, not a transliteration. Same decorative-lookalike pattern.
+  'Ultra Cuneiform': {
+    upper: '𒀀𒀁𒀂𒀃𒀄𒀅𒀆𒀇𒀈𒀉𒀊𒀋𒀌𒀍𒀎𒀏𒀐𒀑𒀒𒀓𒀔𒀕𒀖𒀗𒀘𒀙',
+    lower: '𒀀𒀁𒀂𒀃𒀄𒀅𒀆𒀇𒀈𒀉𒀊𒀋𒀌𒀍𒀎𒀏𒀐𒀑𒀒𒀓𒀔𒀕𒀖𒀗𒀘𒀙',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Cuneiform sign lookalikes · Mesopotamian style',
+    category: 'ancient',
+    familySlug: ['ancient'],
+    groupSlug: 'ancient',
+    slug: 'ultra-cuneiform',
+    platforms: ["discord","x"]
+  },
+
   /* =========================
      EMOJI LETTERS
      ========================= */
@@ -1459,6 +1495,80 @@ const textStyles = {
     groupSlug: 'novelty',
     slug: 'ultra-currency',
     platforms: ["instagram","x","discord"]
+  },
+
+  /* =========================
+     CODES & CIPHERS
+     Real encoding systems (Morse, binary, ROT13, Braille) plus the classic
+     leetspeak meme substitution — every letter still maps 1:1, same engine
+     as the rest of the registry. Morse/binary use groupSlug 'spaced' so
+     renderMap's spaced branch inserts a separator after every letter
+     (see renderer.js renderMap) — no new rendering code needed.
+     ========================= */
+
+  'Ultra Leetspeak': {
+    upper: '4BCD3F6H1JK1MN0PQR57UVWXY2',
+    lower: '4bcd3f6h1jk1mn0pqr57uvwxy2',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Classic 1337 substitution · unmatched letters kept as-is',
+    category: 'codes-ciphers',
+    familySlug: ['codes-ciphers'],
+    groupSlug: 'cipher',
+    slug: 'ultra-leetspeak',
+    platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
+  },
+
+  'Ultra ROT13': {
+    upper: 'NOPQRSTUVWXYZABCDEFGHIJKLM',
+    lower: 'nopqrstuvwxyzabcdefghijklm',
+    nums: '0123456789',
+    type: 'map',
+    note: 'Caesar cipher, shift 13 — self-inverse, so encode = decode',
+    category: 'codes-ciphers',
+    familySlug: ['codes-ciphers'],
+    groupSlug: 'cipher',
+    slug: 'ultra-rot13',
+    platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
+  },
+
+  'Ultra Morse Code': {
+    upper: ['.-','-...','-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','.--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..'],
+    lower: ['.-','-...','-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','.--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..'],
+    nums: ['-----','.----','..---','...--','....-','.....','-....','--...','---..','----.'],
+    type: 'map',
+    note: 'Letters space-separated automatically; word breaks use a single space (not the traditional "/")',
+    category: 'codes-ciphers',
+    familySlug: ['codes-ciphers'],
+    groupSlug: 'spaced',
+    slug: 'ultra-morse-code',
+    platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
+  },
+
+  'Ultra Binary Code': {
+    upper: ['01000001','01000010','01000011','01000100','01000101','01000110','01000111','01001000','01001001','01001010','01001011','01001100','01001101','01001110','01001111','01010000','01010001','01010010','01010011','01010100','01010101','01010110','01010111','01011000','01011001','01011010'],
+    lower: ['01100001','01100010','01100011','01100100','01100101','01100110','01100111','01101000','01101001','01101010','01101011','01101100','01101101','01101110','01101111','01110000','01110001','01110010','01110011','01110100','01110101','01110110','01110111','01111000','01111001','01111010'],
+    nums: ['00110000','00110001','00110010','00110011','00110100','00110101','00110110','00110111','00111000','00111001'],
+    type: 'map',
+    note: 'Standard 8-bit ASCII binary, one byte per character',
+    category: 'codes-ciphers',
+    familySlug: ['codes-ciphers'],
+    groupSlug: 'spaced',
+    slug: 'ultra-binary-code',
+    platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
+  },
+
+  'Ultra Braille': {
+    upper: '⠁⠃⠉⠙⠑⠋⠛⠓⠊⠚⠅⠇⠍⠝⠕⠏⠟⠗⠎⠞⠥⠧⠺⠭⠽⠵',
+    lower: '⠁⠃⠉⠙⠑⠋⠛⠓⠊⠚⠅⠇⠍⠝⠕⠏⠟⠗⠎⠞⠥⠧⠺⠭⠽⠵',
+    nums: '⠁⠃⠉⠙⠑⠋⠛⠓⠊⠚',
+    type: 'map',
+    note: 'Grade 1 Braille (U+2800 block) — Braille has no separate capital letterforms, so case is not marked; digits reuse the a-j dot patterns, matching most simple online braille translators',
+    category: 'codes-ciphers',
+    familySlug: ['codes-ciphers'],
+    groupSlug: 'braille',
+    slug: 'ultra-braille',
+    platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
   },
 
   /* =========================
