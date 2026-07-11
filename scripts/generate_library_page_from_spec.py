@@ -241,8 +241,13 @@ def render_page(spec):
     lang = spec.get("lang", "en")
     home_url = spec.get("home_url", f"{SITE}/")
     crumb_home = spec.get("crumb_home", "Home")
-    crumb_library = spec.get("crumb_library", "Library")
-    library_url = spec.get("library_url", f"{SITE}/library/")
+    # page_type "symbol" pages sit under /symbol/ instead of /library/ and
+    # carry a "Symbols" breadcrumb crumb by default.
+    page_type = spec.get("page_type", "library")
+    default_crumb_library = "Symbols" if page_type == "symbol" else "Library"
+    default_library_url = f"{SITE}/symbol/" if page_type == "symbol" else f"{SITE}/library/"
+    crumb_library = spec.get("crumb_library", default_crumb_library)
+    library_url = spec.get("library_url", default_library_url)
     hreflang_html = "".join(
         f'\n<link rel="alternate" hreflang="{esc_attr(h["lang"])}" href="{esc_attr(h["href"])}">'
         for h in spec.get("hreflang", [])
@@ -459,9 +464,11 @@ def main(argv=None):
         return 2
 
     slug = spec["slug"]
-    # Localized specs (lang != "en") render under <lang>/library/<slug>/.
+    # Localized specs (lang != "en") render under <lang>/<base>/<slug>/.
+    # page_type "symbol" routes to /symbol/ instead of /library/.
     lang = spec.get("lang", "en")
-    out_dir = (REPO / lang / "library" / slug) if lang != "en" else (LIBRARY_DIR / slug)
+    base_folder = "symbol" if spec.get("page_type", "library") == "symbol" else "library"
+    out_dir = (REPO / lang / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
 
     if out_path.exists() and not args.force and not args.dry_run:

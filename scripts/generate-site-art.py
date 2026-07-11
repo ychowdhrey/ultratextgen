@@ -87,6 +87,7 @@ NATIVE_SCRIPT = {
     "th": "Noto Sans Thai",
     "ja": "Noto Sans CJK JP",
     "ko": "Noto Sans CJK KR",
+    "zh": "WenQuanYi Zen Hei",
 }
 
 # (family name written into the SVG, glob patterns to find its file).
@@ -106,6 +107,7 @@ _NATIVE_FONT_FILE = {
     "Noto Sans Thai": "/usr/share/fonts/truetype/noto/NotoSansThai-Regular.ttf",
     "Noto Sans CJK JP": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "Noto Sans CJK KR": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "WenQuanYi Zen Hei": "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
 }
 
 _cmap_cache = {}
@@ -1062,6 +1064,21 @@ HOME_CARD = "fancy-text-generator-preview"
 
 
 PAGES = {
+  # ---- zh-tw (Traditional Chinese / Taiwan) pilot locale ----
+  # Root gets the highest-opportunity keyword for this market (kaomoji,
+  # per data/tw_piliapp_niche_keywords research: 110K volume, incumbent
+  # only #11) rather than a generic translated homepage — same pattern
+  # as ko/'s root going to "특수문자" instead of the font tool.
+  "zh-tw": ("顏文字大全", "複製貼上可愛表情符號", m_kaomoji, K_SITE),
+  "zh-tw-yingwen-ziti": ("英文字體產生器", "花式英文字體，複製貼上", m_typo, K_USE),
+  "zh-tw-library-xingzuo-fuhao": ("十二星座符號", "星座與行星符號大全", glyphs("♈", "♋", "♌", "♏", "♐"), K_LIB),
+  "zh-tw-da-xiao-xie-zhuanhuan": ("大小寫轉換", "英文大寫、小寫一鍵轉換",
+        P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
+  "zh-tw-usecase-ciqing-ziti": ("刺青字體產生器", "紋身字體預覽比較",
+        P(m_typo, sample="Love", ff=SERIF, style="italic", weight="400", size=64,
+          label="cursive · gothic · italic"), K_USE),
+  "zh-tw-usecase-youxi-mingzi-fuhao": ("遊戲暱稱特殊符號", "傳說對決・Discord暱稱裝飾", m_gamepad, K_USE),
+
   "kaomoji-dictionary": ("Kaomoji Dictionary", "Decode any text face", m_kaomoji, K_SITE),
   "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
   # ---- site root / overview ----
@@ -1760,14 +1777,19 @@ PAGES = {
   "library-yamal-emoji-combos": ("Yamal Emoji Combos", "Fan emoji sets to copy and paste", m_ball, K_LIB),
 
   # ---- localized expansion: emoji combos / discord / stacked text / symbols ----
+  # German
+  "de-library-emoji-flags": ("Länderflaggen", "Flaggen-Emojis aller Länder", m_flag, K_LIB),
   # Portuguese
   "pt-combos-de-emoji": ("Combos de Emoji", "Combinações de emoji para copiar e colar", m_smiley, K_LIB),
   "pt-fontes-para-discord": ("Fontes para Discord", "Letras para nick, canal e bio — sem Nitro", m_chat, K_PLAT),
+  "pt-library-emoji-flags": ("Emoji de Bandeiras", "Bandeiras de todos os países", m_flag, K_LIB),
   # Vietnamese
   "vi-combo-emoji": ("Combo Emoji", "Bộ emoji để sao chép và dán", m_smiley, K_LIB),
   "vi-font-discord": ("Font Discord", "Chữ kiểu cho nick và bio Discord", m_chat, K_PLAT),
+  "vi-library-emoji-flags": ("Cờ Các Nước", "Emoji lá cờ mọi quốc gia", m_flag, K_LIB),
   # Spanish
   "es-combinaciones-de-emojis": ("Combinaciones de Emojis", "Sets de emoji para copiar y pegar", m_smiley, K_LIB),
+  "es-library-emoji-flags": ("Emoji Bandera", "Banderas de todos los países", m_flag, K_LIB),
   "es-letras-en-otros-idiomas": ("Letras en Otros Idiomas", "Alfabetos y letras del mundo para copiar",
         P(m_typo, sample="Åß", size=88, label="letras del mundo"), K_LIB),
   "es-letras-bonitas": ("Letras Bonitas", "Letras lindas para copiar y pegar",
@@ -1961,14 +1983,24 @@ def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
 </svg>"""
 
 
+def _native_for_slug(slug):
+    """slug's locale prefix ('zh-tw...' -> 'zh', 'ja-...' -> 'ja') looked up
+    against NATIVE_SCRIPT, or None for slugs with no non-Latin script."""
+    for loc, fam in NATIVE_SCRIPT.items():
+        if slug == loc or slug.startswith(loc + "-"):
+            return fam
+    return None
+
+
 def main():
     import cairosvg
     n = 0
     for slug, (title, sub, motif, kicker) in PAGES.items():
+        native = _native_for_slug(slug)
         with open(os.path.join(HERO, f"{slug}.svg"), "w", encoding="utf-8") as f:
             f.write(hero_svg(slug, title, motif, kicker))
         cairosvg.svg2png(
-            bytestring=og_png_svg(slug, title, sub, motif, kicker).encode(),
+            bytestring=og_png_svg(slug, title, sub, motif, kicker, native=native).encode(),
             write_to=os.path.join(OG, f"{slug}.png"),
             output_width=1200, output_height=630)
         n += 1
