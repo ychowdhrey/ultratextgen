@@ -1816,6 +1816,10 @@ PAGES = {
   "pl-litery-do-skopiowania": ("Litery do Skopiowania", "Alfabet w różnych stylach do skopiowania",
         P(m_typo, sample="Ab", size=88, label="do skopiowania"), K_CAT),
   "pl-ozdobniki": ("Ozdobniki do Skopiowania", "Symbole i ozdoby do nicku i bio", m_grid, K_LIB),
+  "pl-library": ("Biblioteka Symboli i Emotek", "Kolekcje gotowe do skopiowania", m_grid, K_LIB),
+  "pl-library-emoji-flags": ("Flagi Emoji — Wszystkie Kraje", "Flaga każdego kraju do skopiowania", m_flag, K_LIB),
+  "pl-library-alfabet-grecki": ("Alfabet Grecki", "Alfa do omega, gotowe do skopiowania",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   # Turkish
   "tr-sekilli-yazi": ("Şekilli Yazı", "Şekilli harfler kopyala yapıştır",
         P(m_typo, sample="Şa", size=88, label="şekilli yazı"), K_CAT),

@@ -1509,6 +1509,20 @@ const textStyles = {
     platforms: ["instagram","x","discord"]
   },
 
+  // ギャル文字 (gyaru-moji) — 2002-2005 Japanese schoolgirl kana cipher.
+  // type: 'procedure' since it substitutes kana (not the Latin A-Z/a-z/0-9
+  // renderMap operates on) via a dedicated lookup table in renderer.js.
+  'Ultra Gal Moji': {
+    type: 'procedure',
+    procedureId: 'gal-moji',
+    note: 'ギャル文字 (gyaru-moji) · partial hiragana/katakana cipher',
+    category: 'novelty',
+    familySlug: ['gal-moji'],
+    groupSlug: 'gal-moji',
+    slug: 'gal-moji',
+    platforms: ["all","instagram","tiktok","x","discord"]
+  },
+
   /* =========================
      CASE CONVERTER
      Plain ASCII case transforms — type: 'procedure', keyed by slug in
