@@ -1,0 +1,73 @@
+{
+  "slug": "fahrenheit-symbol",
+  "page_type": "symbol",
+  "title": "Fahrenheit Symbol: Copy & Paste ℉ Degree Fahrenheit Sign",
+  "meta_description": "Copy and paste the degree Fahrenheit sign (℉, U+2109) — the single-character temperature ligature, why Unicode recommends plain °F, and how to type it on Windows and Mac. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/fahrenheit-symbol/",
+  "breadcrumb": "Fahrenheit Symbol",
+  "hero_h1": "Fahrenheit Symbol",
+  "hero_tagline": "℉ folds the degree sign and a capital F into one Unicode character — quick to paste, though most style guides still prefer the two-character °F. Click any symbol to copy it instantly.",
+  "intro": "The degree Fahrenheit sign (℉, Unicode U+2109) is a precomposed character in the Letterlike Symbols block combining the degree sign (°) with a capital F. Like its Celsius counterpart ℃, it was added to Unicode largely for lossless round-tripping of legacy East Asian text, where a temperature reading often filled a single character cell. In everyday writing the recommended form is the degree sign followed by a plain F (°F), but the single ℉ is the fastest glyph to copy when that is all you need.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "fahrenheit-sign",
+      "label": "Fahrenheit",
+      "h2": "Degree Fahrenheit Sign",
+      "intro": "The single-character ℉ and the two-character °F sequence Unicode prefers.",
+      "symbols": [
+        { "char": "℉", "label": "Degree Fahrenheit (Single Character)" },
+        { "char": "°F", "label": "Degree Sign + F (Recommended Form)" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Confusable Neighbors",
+      "h2": "Symbols Often Confused with ℉",
+      "intro": "Marks that get substituted for ℉ — each is a distinct character.",
+      "symbols": [
+        { "char": "°", "label": "Degree Sign (U+00B0)" },
+        { "char": "℃", "label": "Degree Celsius (U+2103)" },
+        { "char": "K", "label": "Kelvin Sign (U+212A)" },
+        { "char": "F", "label": "Latin Capital F" }
+      ]
+    },
+    {
+      "id": "related-measurement",
+      "label": "Related Measurement Marks",
+      "h2": "Other Measurement & Unit Symbols",
+      "intro": "Prime, ratio, and scientific-notation marks that pair with ℉.",
+      "symbols": [
+        { "char": "′", "label": "Prime (Minutes / Feet)" },
+        { "char": "″", "label": "Double Prime (Seconds / Inches)" },
+        { "char": "‰", "label": "Per Mille Sign" },
+        { "char": "µ", "label": "Micro Sign (U+00B5)" },
+        { "char": "Ω", "label": "Ohm Sign (U+2126)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/celsius-symbol/",
+      "title": "Celsius Symbol (℃)",
+      "desc": "The precomposed degree Celsius sign, and the °C Unicode prefers."
+    },
+    {
+      "href": "/symbol/degree-symbol/",
+      "title": "Degree Symbol (°)",
+      "desc": "The standalone degree sign behind ℉, angles, and coordinates."
+    },
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Temperature, SI units, and scientific-notation marks in one reference."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Temperature, sun, cloud, and storm symbols for forecasts."
+    }
+  ]
+}

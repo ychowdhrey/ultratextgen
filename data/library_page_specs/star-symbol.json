@@ -1,0 +1,70 @@
+{
+  "slug": "star-symbol",
+  "page_type": "symbol",
+  "title": "Star Symbol: Copy & Paste ★ ☆ Star Symbols & Star Emoji",
+  "meta_description": "Copy and paste the star symbol (★, U+2605) — the solid and outline stars used for ratings and favorites, decorative multi-pointed stars, the ⭐ star emoji, and why ★ isn't an asterisk. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/star-symbol/",
+  "breadcrumb": "Star Symbol",
+  "hero_h1": "Star Symbol",
+  "hero_tagline": "The star symbol (★ ☆) — the five-pointed star behind ratings, favorites, and bio decoration — plus decorative star variants, the ⭐ emoji, and the asterisk it is not. Click any symbol to copy it instantly.",
+  "intro": "The star symbol (★, Unicode U+2605 BLACK STAR) and its outline twin (☆, U+2606 WHITE STAR) are five-pointed stars in the Miscellaneous Symbols block, used everywhere from ★★★★☆ ratings to favorites, bullet points, and profile decoration. Unicode also encodes a wide family of decorative stars in the Dingbats block, plus the separate ⭐ star emoji. The five-pointed ★ is a different character from the keyboard asterisk (*), which is a typographic mark for footnotes, multiplication, and wildcards.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "star-symbol",
+      "label": "Star",
+      "h2": "Star Symbol",
+      "intro": "The solid and outline five-pointed stars used for ratings and favorites.",
+      "symbols": [
+        { "char": "★", "label": "Black Star (U+2605)" },
+        { "char": "☆", "label": "White Star / Outline (U+2606)" }
+      ]
+    },
+    {
+      "id": "decorative-stars",
+      "label": "Decorative Stars",
+      "h2": "Decorative & Multi-Pointed Stars",
+      "intro": "Ornamental star glyphs from the Dingbats block for bios and captions.",
+      "symbols": [
+        { "char": "✦", "label": "Black Four-Pointed Star (U+2726)" },
+        { "char": "✧", "label": "White Four-Pointed Star (U+2727)" },
+        { "char": "✩", "label": "Stress Outlined White Star (U+2729)" },
+        { "char": "✪", "label": "Circled White Star (U+272A)" },
+        { "char": "✭", "label": "Black Centre White Star (U+272D)" },
+        { "char": "✴", "label": "Eight-Pointed Black Star (U+2734)" }
+      ]
+    },
+    {
+      "id": "star-emoji-confusables",
+      "label": "Emoji & Confusables",
+      "h2": "Star Emoji & Symbols Confused with ★",
+      "intro": "The color star emoji and the marks people reach for instead of ★.",
+      "symbols": [
+        { "char": "⭐", "label": "Star Emoji (U+2B50)" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "*", "label": "Asterisk (U+002A) — Not a Star" },
+        { "char": "✱", "label": "Heavy Asterisk (U+2731)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Every star character, sparkle, and rating star in one hub."
+    },
+    {
+      "href": "/symbol/heart-symbol/",
+      "title": "Heart Symbol (♥)",
+      "desc": "The card-suit heart that became the sign for love."
+    },
+    {
+      "href": "/library/aesthetic-symbols/",
+      "title": "Aesthetic Symbols",
+      "desc": "Stars, sparkles, and decorative marks for bios and usernames."
+    }
+  ]
+}
