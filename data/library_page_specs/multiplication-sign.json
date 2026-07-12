@@ -1,0 +1,68 @@
+{
+  "slug": "multiplication-sign",
+  "page_type": "symbol",
+  "title": "Multiplication Sign: Copy & Paste × Times Symbol",
+  "meta_description": "Copy and paste the multiplication sign (×) — its 1631 origin, how it differs from the letter x and the dot operator, and how to type it. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/multiplication-sign/",
+  "breadcrumb": "Multiplication Sign",
+  "hero_h1": "Multiplication Sign",
+  "hero_tagline": "The × that means \"times\" — not the letter x — plus the dot and X-mark alternatives it's routinely confused with. Click any symbol to copy it instantly.",
+  "intro": "The multiplication sign (×, Unicode U+00D7) is the dedicated \"times\" operator used in arithmetic and algebra — 6 × 7, not 6x7. It looks close enough to the Latin letter x that most people type a lowercase x instead, which is why × has its own confusable-neighbors story worth sorting out.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "multiplication-sign",
+      "label": "Multiplication",
+      "h2": "Multiplication Sign",
+      "intro": "The correct Unicode multiplication sign, distinct from the letter x.",
+      "symbols": [
+        { "char": "×", "label": "Multiplication Sign" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Confusable Neighbors",
+      "h2": "Symbols Often Mistaken for the Multiplication Sign",
+      "intro": "These get substituted for × constantly — each one means something different or renders differently.",
+      "symbols": [
+        { "char": "x", "label": "Latin Small Letter X (Not a Math Symbol)" },
+        { "char": "X", "label": "Latin Capital Letter X" },
+        { "char": "⋅", "label": "Dot Operator — the alternate \"times\" symbol" },
+        { "char": "∙", "label": "Bullet Operator" },
+        { "char": "✕", "label": "Multiplication X (Dingbat)" },
+        { "char": "✖", "label": "Heavy Multiplication X (Dingbat)" }
+      ]
+    },
+    {
+      "id": "related-operators",
+      "label": "Related Operators",
+      "h2": "Related Arithmetic Operators",
+      "intro": "Other basic operators that pair with × in equations.",
+      "symbols": [
+        { "char": "÷", "label": "Division Sign" },
+        { "char": "±", "label": "Plus-Minus Sign" },
+        { "char": "−", "label": "Minus Sign" },
+        { "char": "=", "label": "Equals Sign" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/division-sign/",
+      "title": "Division Sign (÷)",
+      "desc": "The obelus, and why textbooks moved away from it."
+    },
+    {
+      "href": "/symbol/plus-minus/",
+      "title": "Plus-Minus (±)",
+      "desc": "Two possible values in one symbol, and its mirror ∓."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "All Math Symbols",
+      "desc": "Operators, Greek letters, set theory, and calculus notation."
+    }
+  ]
+}

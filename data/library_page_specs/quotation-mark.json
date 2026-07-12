@@ -1,0 +1,69 @@
+{
+  "slug": "quotation-mark",
+  "page_type": "symbol",
+  "title": "Quotation Mark Symbol: Copy & Paste \" ' “ ” Quote Characters",
+  "meta_description": "Copy and paste the quotation mark (\") and apostrophe ('), plus the curly “smart quotes” and guillemets « » they're often confused with. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/quotation-mark/",
+  "breadcrumb": "Quotation Mark",
+  "hero_h1": "Quotation Mark",
+  "hero_tagline": "The straight \" and ' every keyboard types, and the curly, guillemet, and low-quote variants that stand in for them in different software and languages. Click any symbol to copy it instantly.",
+  "intro": "The quotation mark (\", Unicode U+0022) and apostrophe (', U+0027) are the plain, straight characters on every keyboard. They're also the ones code and markup expect — the curly “smart quotes” your word processor substitutes automatically are a different, incompatible character underneath, which is the single most common reason pasted text breaks in code editors.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "straight-quotes",
+      "label": "Straight Quotes",
+      "h2": "Quotation Mark & Apostrophe",
+      "intro": "The plain ASCII quote characters — what a keyboard actually types, and what code expects.",
+      "symbols": [
+        { "char": "\"", "label": "Quotation Mark (Straight Double Quote)" },
+        { "char": "'", "label": "Apostrophe (Straight Single Quote)" }
+      ]
+    },
+    {
+      "id": "curly-quotes",
+      "label": "Curly (Smart) Quotes",
+      "h2": "Curly (Smart) Quotation Marks",
+      "intro": "The typeset-style quotes with distinct opening and closing shapes — what \"autocorrect\" turns straight quotes into.",
+      "symbols": [
+        { "char": "“", "label": "Left Double Quotation Mark" },
+        { "char": "”", "label": "Right Double Quotation Mark" },
+        { "char": "‘", "label": "Left Single Quotation Mark" },
+        { "char": "’", "label": "Right Single Quotation Mark" }
+      ]
+    },
+    {
+      "id": "guillemets-low-quotes",
+      "label": "Guillemets & Low Quotes",
+      "h2": "Guillemets & Low Quotation Marks",
+      "intro": "The quotation styles standard in French, German, and other European typography.",
+      "symbols": [
+        { "char": "«", "label": "Left-Pointing Double Angle Quotation Mark (Guillemet)" },
+        { "char": "»", "label": "Right-Pointing Double Angle Quotation Mark (Guillemet)" },
+        { "char": "‹", "label": "Single Left-Pointing Angle Quotation Mark" },
+        { "char": "›", "label": "Single Right-Pointing Angle Quotation Mark" },
+        { "char": "„", "label": "Double Low-9 Quotation Mark (German Opening Quote)" },
+        { "char": "‚", "label": "Single Low-9 Quotation Mark" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than & Greater Than (< >)",
+      "desc": "Comparison symbols confused with angle-bracket quote marks."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Daggers, pilcrows, asterisms, and other special punctuation marks."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "At signs, ampersands, and other everyday typographic marks."
+    }
+  ]
+}
