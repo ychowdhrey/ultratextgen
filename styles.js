@@ -575,7 +575,10 @@ const textStyles = {
 'Ultra Bubble Light': {
   upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
   lower: '⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵',
-  nums: '⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽',
+  // No parenthesized-zero exists in Unicode, so digit 0 falls back to plain
+  // '0' (like a letter with no equivalent) instead of shifting ⑴-⑽ across
+  // all ten digits, which used to render "9" as "(10)".
+  nums: '0⑴⑵⑶⑷⑸⑹⑺⑻⑼',
   type: 'map',
   category: 'bubble',
   familySlug: 'bubble',

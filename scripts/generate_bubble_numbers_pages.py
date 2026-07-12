@@ -1,38 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-generate_bubble_letters_pages.py
+generate_bubble_numbers_pages.py
 
-Render the 26 per-letter SPOKE pages for the printable "bubble letters" cluster
-from a single data spec (data/printables_bubble_letters.json):
+Render the 10 per-digit SPOKE pages for the printable "bubble letters" cluster
+from a single data spec (data/printables_bubble_numbers.json):
 
-  spoke  /printables/bubble-letters/letter-a/  ...  letter-z/   (×26)
+  spoke  /printables/bubble-letters/number-0/  ...  number-9/   (×10)
 
-The hub (/printables/bubble-letters/) is HAND-WRITTEN and hand-maintained — it
-has bespoke sections (a name -> sheet tool) that a generator should not clobber —
-so this script is deliberately SPOKE-ONLY and never touches the hub index.html.
+Sibling script to generate_bubble_letters_pages.py — same cluster, same hub,
+same printablesEngine.js, same craft-framed (not phonics/maths-worksheet)
+content policy, just keyed by digit instead of letter. The hub
+(/printables/bubble-letters/) is HAND-WRITTEN and hand-maintained, so this
+script is SPOKE-ONLY and never touches the hub index.html.
 
-Each spoke is a static, self-contained document following the repo's printables
-conventions: GTM + ad snippets, canonical/OG/Twitter meta, BreadcrumbList +
-FAQPage JSON-LD, shared header/footer injectors, and the shared
-printablesEngine.js driven by a per-page window.UTG_PRINTABLE config whose
-`initialChar` locks the engine to a single letter on load.
-
-Content is craft-framed (banner / poster / bullet-journal / monogram / classroom
-/ name-tag / scrapbook / gift-tag), NOT phonics — a bubble letter is a
-decoration/identity job, not a "letter of the week" lesson. Each page also shows
-2-3 real copy-paste Unicode bubble variants for its letter as plain static text,
-pulled straight from styles.js so the glyphs are always correct.
-
-Client-side only: the puffy letter outline is rendered by the engine as native
-SVG/Canvas at runtime — no server-side image rendering, no bundled font binaries
-(Fredoka loads from Google Fonts like the other printables pages).
+Each spoke locks the shared printablesEngine.js panel to one digit via
+initialChar (charSlug() in the engine already maps a digit to "number-{d}",
+which is also the URL slug used here and the #hash the engine reads to
+preselect a character on pages like /printables/block-letters/). Content is
+craft-framed (birthday milestones, house numbers, jerseys/lockers,
+bullet-journal trackers, countdown signs) — never a counting/maths lesson,
+per the repo's printables scope boundary. Each page also shows 2-3 real
+copy-paste Unicode bubble digit variants, pulled straight from styles.js.
 
 Usage
 -----
-  python3 scripts/generate_bubble_letters_pages.py            # write all spokes
-  python3 scripts/generate_bubble_letters_pages.py --dry-run  # validate only
-  python3 scripts/generate_bubble_letters_pages.py --no-force # refuse overwrite
+  python3 scripts/generate_bubble_numbers_pages.py            # write all spokes
+  python3 scripts/generate_bubble_numbers_pages.py --dry-run  # validate only
+  python3 scripts/generate_bubble_numbers_pages.py --no-force # refuse overwrite
 """
 
 import argparse
@@ -44,12 +39,12 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
-SPEC_PATH = REPO / "data" / "printables_bubble_letters.json"
+SPEC_PATH = REPO / "data" / "printables_bubble_numbers.json"
 STYLES_PATH = REPO / "styles.js"
 PRINTABLES_DIR = REPO / "printables"
 
 SITE = "https://ultratextgen.com"
-ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+DIGITS = "0123456789"
 
 
 class SpecError(Exception):
@@ -72,33 +67,31 @@ def to_text(a_html):
 
 
 # --------------------------------------------------------------------------
-# Real per-letter Unicode bubble glyphs, read straight from styles.js so they
-# are never hand-transcribed. We index the canonical A-Z strings by position.
+# Real per-digit Unicode bubble glyphs, read straight from styles.js so they
+# are never hand-transcribed. We index the canonical 0-9 strings by position.
 # --------------------------------------------------------------------------
-def extract_glyphs(style_name, field):
+def extract_nums(style_name):
     js = STYLES_PATH.read_text(encoding="utf-8")
     idx = js.find("'%s':" % style_name)
     if idx == -1:
         raise SpecError("style %r not found in styles.js" % style_name)
     seg = js[idx: idx + 900]
-    m = re.search(field + r":\s*'([^']*)'", seg)
+    m = re.search(r"nums:\s*'([^']*)'", seg)
     if not m:
-        raise SpecError("field %r not found for style %r" % (field, style_name))
+        raise SpecError("field 'nums' not found for style %r" % style_name)
     s = m.group(1)
-    if len(s) != 26:
-        raise SpecError(
-            "%s.%s has %d glyphs, expected 26" % (style_name, field, len(s))
-        )
+    if len(s) != 10:
+        raise SpecError("%s.nums has %d glyphs, expected 10" % (style_name, len(s)))
     return s
 
 
-FILLED_UPPER = extract_glyphs("Ultra Bubble Filled", "upper")  # 🅐 (the puffiest)
-CIRCLED_UPPER = extract_glyphs("Ultra Bubble", "upper")        # Ⓐ
-LIGHT_LOWER = extract_glyphs("Ultra Bubble Light", "lower")    # ⒜
+FILLED_NUMS = extract_nums("Ultra Bubble Filled")  # ⓿❶❷❸… (the puffiest)
+CIRCLED_NUMS = extract_nums("Ultra Bubble")        # ⓪①②③…
+LIGHT_NUMS = extract_nums("Ultra Bubble Light")     # ⑴⑵⑶⑷…
 
 
 # --------------------------------------------------------------------------
-# Shared fragments (mirrors scripts/generate_alphabet_coloring_pages.py)
+# Shared fragments (mirrors scripts/generate_bubble_letters_pages.py)
 # --------------------------------------------------------------------------
 GTM_HEAD = """  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -129,9 +122,9 @@ FAQ_TOGGLE_SCRIPT = """  <!-- FAQ toggle -->
   </script>"""
 
 # The window.UTG_PRINTABLE config matches the hand-written hub verbatim (so the
-# locked single-letter panel renders identically), with initialChar appended.
-# __L__ is substituted per page; {ch} is a literal placeholder the engine itself
-# expands at runtime, so it is left untouched here.
+# locked single-digit panel renders identically), with initialChar appended.
+# __D__ is substituted per page; {ch} is a literal placeholder the engine
+# itself expands at runtime, so it is left untouched here.
 CONFIG_TEMPLATE = """  <script>
     window.UTG_PRINTABLE = {
       key: "bubble-letters",
@@ -154,7 +147,7 @@ CONFIG_TEMPLATE = """  <script>
         ],
         tip: "Tip: print the outline above and trace it a few times until the shape feels natural."
       },
-      initialChar: "__L__"
+      initialChar: "__D__"
     };
   </script>"""
 
@@ -231,93 +224,92 @@ def faq_accordion(faqs):
 # --------------------------------------------------------------------------
 def render_spoke(spec, index):
     cfg = spec["cluster"]
-    letters = spec["letters"]
-    e = letters[index]
+    numbers = spec["numbers"]
+    e = numbers[index]
     slug = cfg["slug"]
-    L = e["letter"]
-    low = L.lower()
-    i = ord(L) - ord("A")
+    D = e["digit"]
+    i = int(D)
     craft = e["craft"]
     intro = e["intro"]
     draw = e["draw"]
-    canonical = f"{SITE}/printables/{slug}/letter-{low}/"
+    canonical = f"{SITE}/printables/{slug}/number-{D}/"
 
-    filled, circled, light = FILLED_UPPER[i], CIRCLED_UPPER[i], LIGHT_LOWER[i]
+    filled, circled, light = FILLED_NUMS[i], CIRCLED_NUMS[i], LIGHT_NUMS[i]
 
-    prev_e = letters[index - 1] if index > 0 else None
-    next_e = letters[index + 1] if index < len(letters) - 1 else None
+    prev_e = numbers[index - 1] if index > 0 else None
+    next_e = numbers[index + 1] if index < len(numbers) - 1 else None
 
-    # Compact linked A-Z strip.
+    # Compact linked 0-9 strip.
     strip_links = []
-    for o in letters:
-        oL = o["letter"]
-        cls = ' class="is-current"' if oL == L else ""
-        aria = ' aria-current="page"' if oL == L else ""
+    for o in numbers:
+        oD = o["digit"]
+        cls = ' class="is-current"' if oD == D else ""
+        aria = ' aria-current="page"' if oD == D else ""
         strip_links.append(
-            f'<a href="/printables/{slug}/letter-{oL.lower()}/"{cls}{aria}>{esc(oL)}</a>'
+            f'<a href="/printables/{slug}/number-{oD}/"{cls}{aria}>{esc(oD)}</a>'
         )
-    az_strip = "\n        ".join(strip_links)
+    digit_strip = "\n        ".join(strip_links)
 
     # Prev / next.
     nav_bits = []
     if prev_e:
         nav_bits.append(
-            f'<a href="/printables/{slug}/letter-{prev_e["letter"].lower()}/" rel="prev">'
-            f'← Bubble letter {esc(prev_e["letter"])}</a>'
+            f'<a href="/printables/{slug}/number-{prev_e["digit"]}/" rel="prev">'
+            f'← Bubble number {esc(prev_e["digit"])}</a>'
         )
     else:
         nav_bits.append('<span class="pt-nav-spacer"></span>')
     nav_bits.append('<span class="pt-nav-spacer"></span>')
     if next_e:
         nav_bits.append(
-            f'<a href="/printables/{slug}/letter-{next_e["letter"].lower()}/" rel="next">'
-            f'Bubble letter {esc(next_e["letter"])} →</a>'
+            f'<a href="/printables/{slug}/number-{next_e["digit"]}/" rel="next">'
+            f'Bubble number {esc(next_e["digit"])} →</a>'
         )
-    letter_nav = "\n      ".join(nav_bits)
+    digit_nav = "\n      ".join(nav_bits)
 
     faqs = [
         (
-            f"What is on the bubble letter {L} page?",
-            f"A large capital {esc(L)} and lowercase {esc(low)} shown as a rounded, puffy "
-            f"bubble outline. Use <strong>Print this letter</strong> to print it for tracing "
-            f"or colouring, or <strong>Download PNG</strong> to save it — great for {esc(craft)}.",
+            f"What is on the bubble number {D} page?",
+            f"A large {esc(D)} shown as a rounded, puffy bubble outline. Use "
+            f"<strong>Print this number</strong> to print it for tracing or colouring, "
+            f"or <strong>Download PNG</strong> to save it — great for {esc(craft)}.",
             None,
         ),
         (
-            f"How do I print or download bubble letter {L}?",
-            "Use <strong>Print this letter</strong> to send just this outline to your printer, "
+            f"How do I print or download bubble number {D}?",
+            "Use <strong>Print this number</strong> to send just this outline to your printer, "
             "or <strong>Download PNG</strong> to save a high-resolution image you can print or "
             "reuse. Everything runs in your browser — no app or sign-up.",
             None,
         ),
         (
-            f"How do I draw a bubble letter {L} by hand?",
+            f"How do I draw a bubble number {D} by hand?",
             f"{esc(draw)} Then erase the guide lines, ink the outline, and colour it in. "
             "Printing the outline above and tracing over it a few times is the quickest way to "
             "learn the shape.",
             None,
         ),
         (
-            "Do you have the other letters in bubble writing?",
+            "Do you have the letters in bubble writing too?",
             'Yes — every letter A–Z has its own bubble page. Head back to '
-            f'<a href="/printables/{slug}/">Printable Bubble Letters</a> for the whole alphabet, '
-            "or jump to another letter with the strip above.",
+            f'<a href="/printables/{slug}/">Printable Bubble Letters</a> for the whole alphabet '
+            f'and number set, or start at <a href="/printables/{slug}/letter-a/">bubble letter A</a>.',
             None,
         ),
     ]
     faqs = [(q, a_html, to_text(a_html)) for (q, a_html, _t) in faqs]
 
     title = (
-        f"Bubble Letter {L} — Free Printable Trace, Color & Print Outline | UltraTextGen"
+        f"Bubble Number {D} — Free Printable Trace, Color & Print Outline | UltraTextGen"
     )
     meta = (
-        f"Free printable bubble letter {L} — a big, puffy {L}/{low} outline to trace, "
-        f"color, print, or download as a PNG. No sign-up. Part of our A–Z printable "
-        "bubble letters."
+        f"Free printable bubble number {D} — a big, puffy {D} outline to trace, "
+        f"color, print, or download as a PNG. No sign-up. Part of our A–Z and 0–9 "
+        "printable bubble letters."
     )
     og_desc = (
-        f"Free printable bubble letter {L}. Trace, color, print, or download a big puffy "
-        f"{L}/{low} outline — no sign-up."
+        f"Free printable bubble number {D}. Trace, color, print, or download a big puffy "
+        f"{D} outline — no sign-up."
     )
 
     breadcrumb = breadcrumb_ld(
@@ -325,12 +317,12 @@ def render_spoke(spec, index):
             ("Home", f"{SITE}/"),
             ("Printables", f"{SITE}/printables/"),
             ("Bubble Letters", f"{SITE}/printables/{slug}/"),
-            (f"Bubble Letter {L}", canonical),
+            (f"Bubble Number {D}", canonical),
         ]
     )
     ld = "\n\n".join([ldjson(breadcrumb), ldjson(faqpage_ld(faqs))])
 
-    config = CONFIG_TEMPLATE.replace("__L__", L)
+    config = CONFIG_TEMPLATE.replace("__D__", D)
 
     return f"""<!DOCTYPE html><html lang="en"><head>
 {GTM_HEAD}
@@ -339,7 +331,7 @@ def render_spoke(spec, index):
   <title>{esc(title)}</title>
   <meta name="description" content="{esc_attr(meta)}">
   <link rel="canonical" href="{esc_attr(canonical)}">
-  <meta property="og:title" content="Bubble Letter {esc(L)} — Free Printable Outline | UltraTextGen">
+  <meta property="og:title" content="Bubble Number {esc(D)} — Free Printable Outline | UltraTextGen">
   <meta property="og:description" content="{esc_attr(og_desc)}">
   <meta property="og:url" content="{esc_attr(canonical)}">
   <meta property="og:type" content="website">
@@ -348,7 +340,7 @@ def render_spoke(spec, index):
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bubble Letter {esc(L)} — Free Printable Outline">
+  <meta name="twitter:title" content="Bubble Number {esc(D)} — Free Printable Outline">
   <meta name="twitter:description" content="{esc_attr(og_desc)}">
   <meta name="twitter:image" content="{esc_attr(cfg["og_image"])}">
 {font_head(cfg)}
@@ -368,74 +360,70 @@ def render_spoke(spec, index):
   <span class="breadcrumb-separator">›</span>
   <a href="/printables/{slug}/">Bubble Letters</a>
   <span class="breadcrumb-separator">›</span>
-  <span class="breadcrumb-current">Bubble Letter {esc(L)}</span>
+  <span class="breadcrumb-current">Bubble Number {esc(D)}</span>
 </nav>
 
   <section class="hero">
     <div class="hero-inner" style="max-width:820px;">
-      <h1 class="hero-headline">Bubble Letter {esc(L)}</h1>
+      <h1 class="hero-headline">Bubble Number {esc(D)}</h1>
       <p class="hero-tagline">
-        A big, puffy bubble letter {esc(L)} to trace, color, print, or download as a PNG —
+        A big, puffy bubble number {esc(D)} to trace, color, print, or download as a PNG —
         great for {esc(craft)}. Free, no sign-up.
       </p>
-      <p class="pt-letter-figures" aria-hidden="true">{esc(L)}{esc(low)}</p>
+      <p class="pt-letter-figures" aria-hidden="true">{esc(D)}</p>
     </div>
   </section>
 
   <main class="container">
 
-    <!-- Selected-letter detail (locked to this letter) -->
+    <!-- Selected-digit detail (locked to this digit) -->
     <section class="bubble-az" aria-labelledby="ptLetterHeading">
-      <h2 class="bubble-az-heading" id="ptLetterHeading">Trace and color bubble letter {esc(L)}</h2>
+      <h2 class="bubble-az-heading" id="ptLetterHeading">Trace and color bubble number {esc(D)}</h2>
       <p class="bubble-az-intro">Print this puffy outline to trace or color it in, or download it as a PNG.</p>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
     </section>
 
-    <!-- Unique letter content (craft-framed, not phonics) -->
+    <!-- Unique digit content (craft-framed, not a counting lesson) -->
     <section class="editorial-section">
-      <h2>Bubble letter {esc(L)} for {esc(craft)}</h2>
+      <h2>Bubble number {esc(D)} for {esc(craft)}</h2>
       <p>{esc(intro)}</p>
-      <p class="bubble-az-intro">Prefer to copy and paste instead of print? Here is bubble letter
-        {esc(L)}: <strong>{filled} {circled} {light}</strong>. For a whole word or name in
+      <p class="bubble-az-intro">Prefer to copy and paste instead of print? Here is bubble number
+        {esc(D)}: <strong>{filled} {circled} {light}</strong>. For a whole word or name in
         copy-paste bubble text, use the <a href="/category/bubble-fonts/">bubble fonts generator</a>.</p>
     </section>
 
-    <!-- Sibling letters -->
+    <!-- Sibling numbers -->
     <section class="editorial-section" aria-labelledby="ptStripHeading">
-      <h2 id="ptStripHeading">Jump to another bubble letter</h2>
-      <nav class="pt-az-strip" aria-label="All bubble letters A to Z">
-        {az_strip}
+      <h2 id="ptStripHeading">Jump to another bubble number</h2>
+      <nav class="pt-az-strip" aria-label="All bubble numbers 0 to 9">
+        {digit_strip}
       </nav>
-      <nav class="pt-letter-nav" aria-label="Previous and next letter">
-      {letter_nav}
+      <nav class="pt-letter-nav" aria-label="Previous and next number">
+      {digit_nav}
       </nav>
     </section>
 
-    <!-- Cross-links to the other printable looks of this letter -->
+    <!-- Cross-links to the other printable looks of this digit -->
     <section class="related-pages">
-      <h2>More printable letter {esc(L)} styles</h2>
+      <h2>More printable bubble number {esc(D)} styles</h2>
       <div class="related-pages-grid">
         <a href="/printables/{slug}/" class="related-page-card">
           <span class="related-page-label">Hub</span>
-          <h4>All bubble letters A–Z</h4>
+          <h4>All bubble letters &amp; numbers</h4>
         </a>
-        <a href="/printables/alphabet-coloring-pages/letter-{low}/" class="related-page-card">
-          <span class="related-page-label">Coloring</span>
-          <h4>Letter {esc(L)} coloring page</h4>
-        </a>
-        <a href="/printables/dot-to-dot-alphabet/letter-{low}/" class="related-page-card">
-          <span class="related-page-label">Puzzle</span>
-          <h4>Letter {esc(L)} dot-to-dot</h4>
-        </a>
-        <a href="/printables/block-letters/#letter-{low}" class="related-page-card">
+        <a href="/printables/block-letters/#number-{D}" class="related-page-card">
           <span class="related-page-label">Stencil</span>
-          <h4>Block letter {esc(L)}</h4>
+          <h4>Block number {esc(D)}</h4>
+        </a>
+        <a href="/printables/{slug}/letter-a/" class="related-page-card">
+          <span class="related-page-label">Letters</span>
+          <h4>Bubble letters A–Z</h4>
         </a>
       </div>
     </section>
 
     <div class="cta-card">
-      <h3>Want bubble letter {esc(L)} for a bio or caption?</h3>
+      <h3>Want bubble number {esc(D)} for a bio or caption?</h3>
       <p>These outlines are for paper. For copy-paste Unicode bubble text that pastes anywhere — no image needed — use the bubble fonts generator.</p>
       <a class="cta-btn" href="/category/bubble-fonts/">Open the bubble fonts generator →</a>
     </div>
@@ -444,7 +432,7 @@ def render_spoke(spec, index):
 
   <footer class="footer">
     <div class="footer-inner">
-      <h2 class="faq-category">Bubble Letter {esc(L)} — FAQ</h2>
+      <h2 class="faq-category">Bubble Number {esc(D)} — FAQ</h2>
 
 {faq_accordion(faqs)}
 
@@ -467,24 +455,24 @@ def render_spoke(spec, index):
 # Validation
 # --------------------------------------------------------------------------
 def validate_spec(spec):
-    if "cluster" not in spec or "letters" not in spec:
-        raise SpecError("spec must have 'cluster' and 'letters'")
+    if "cluster" not in spec or "numbers" not in spec:
+        raise SpecError("spec must have 'cluster' and 'numbers'")
     cfg = spec["cluster"]
     for key in ("slug", "font_query", "og_image"):
         if key not in cfg or cfg[key] in (None, ""):
             raise SpecError(f"cluster missing '{key}'")
 
-    letters = spec["letters"]
-    seen = [e.get("letter") for e in letters]
-    if seen != list(ALPHABET):
+    numbers = spec["numbers"]
+    seen = [e.get("digit") for e in numbers]
+    if seen != list(DIGITS):
         raise SpecError(
-            "letters must be exactly A–Z in order; got: "
+            "numbers must be exactly 0-9 in order; got: "
             + "".join(str(s) for s in seen)
         )
-    for i, e in enumerate(letters):
-        for key in ("letter", "usecase", "craft", "intro", "draw"):
+    for i, e in enumerate(numbers):
+        for key in ("digit", "usecase", "craft", "intro", "draw"):
             if key not in e or e[key] in (None, "", []):
-                raise SpecError(f"letters[{i}] ({e.get('letter')}) missing '{key}'")
+                raise SpecError(f"numbers[{i}] ({e.get('digit')}) missing '{key}'")
 
 
 # --------------------------------------------------------------------------
@@ -516,8 +504,8 @@ def main(argv=None):
     hub_dir = PRINTABLES_DIR / slug
 
     targets = []
-    for i, e in enumerate(spec["letters"]):
-        out = hub_dir / f"letter-{e['letter'].lower()}" / "index.html"
+    for i, e in enumerate(spec["numbers"]):
+        out = hub_dir / f"number-{e['digit']}" / "index.html"
         targets.append((out, render_spoke(spec, i)))
 
     if args.dry_run:
@@ -542,7 +530,7 @@ def main(argv=None):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(html_str, encoding="utf-8")
 
-    print(f"Wrote {len(targets)} spoke pages under printables/{slug}/letter-*/")
+    print(f"Wrote {len(targets)} spoke pages under printables/{slug}/number-*/")
     return 0
 
 

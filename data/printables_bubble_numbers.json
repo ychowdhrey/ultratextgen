@@ -1,0 +1,39 @@
+{
+  "cluster": {
+    "slug": "bubble-letters",
+    "font_query": "Fredoka:wght@500;600;700",
+    "og_image": "https://ultratextgen.com/assets/og/category-bubble-fonts.png"
+  },
+  "numbers": [
+    { "digit": "0", "usecase": "milestone", "craft": "milestone birthday and anniversary signs",
+      "intro": "A bubble 0 is the number every big milestone leans on — a 30th, 40th, or 50th birthday banner, or a round-year anniversary sign, needs a plump zero to finish the number. Its full loop gives you the most colourable space of any digit, so it reads well even from across a room. Pair it with the leading digit for the full age, or print it solo for a New Year's Eve countdown.",
+      "draw": "Draw a tall oval, then trace a second oval just inside it to make a ring, and round the ends so the loop looks inflated." },
+    { "digit": "1", "usecase": "birthday", "craft": "first-birthday cake toppers",
+      "intro": "A bubble 1 is the classic first-birthday number — printed big and glittery, it tops a smash cake or leads a ONE banner across the highchair. The single stem keeps it simple to cut out cleanly, even for little hands helping with party prep. Print a few sizes for a cake topper, a highchair sign, and a matching party hat.",
+      "draw": "Draw a short flag stroke at the top, a single straight stem down to a wide foot, then round the corners and puff every edge outward." },
+    { "digit": "2", "usecase": "houseNumber", "craft": "house numbers and door plaques",
+      "intro": "A bubble 2 makes a friendly house-number plaque — the curved top and flat base give it a soft, hand-painted look next to a welcome mat. It also covers a terrific-twos second-birthday banner in the same puffy style. Print it large for an address sign, or small as part of a full house-number set.",
+      "draw": "Draw the top hook curving right, a diagonal cutting down to the left, then a flat base; round every corner and puff the outline." },
+    { "digit": "3", "usecase": "birthday", "craft": "third-birthday party decor",
+      "intro": "A bubble 3 carries a third birthday — the two stacked curves make a cheerful shape for a cake topper, a banner letter, or a party-hat number. Its open front is quick to colour in two contrasting shades, one per curve. Print it big for the party table, or small for a matching favour tag.",
+      "draw": "Draw two stacked half-circles opening to the left, round the middle point, then puff the whole curve outward." },
+    { "digit": "4", "usecase": "jersey", "craft": "sports jerseys and team numbers",
+      "intro": "A bubble 4 reads instantly as a jersey number — the angular diagonal and crossbar keep their shape even puffed up round, which is why it works so well on a locker sign or a fan poster. It also covers a fourth-birthday banner in the same puffy style. Print it large for game day, or smaller for a team roster board.",
+      "draw": "Draw a diagonal stroke down to a horizontal bar, then a vertical stem crossing through both; round the corners and puff every stroke." },
+    { "digit": "5", "usecase": "milestone", "craft": "starting-school and five-year milestones",
+      "intro": "A bubble 5 marks a milestone worth marking — a fifth birthday, the first day of school, or a five-year anniversary all lean on this number. The bold belly gives you a big panel to colour or pattern. Print it large for a classroom door or a milestone photo prop.",
+      "draw": "Draw a top bar, a stem dropping halfway, then a big belly curving out; round the corners and puff the outline." },
+    { "digit": "6", "usecase": "houseNumber", "craft": "house numbers and address signs",
+      "intro": "A bubble 6 is a common digit on a house-number plaque, and its full lower loop gives it real presence on a door or mailbox sign. Puffed up, the hook at the top stays legible even at a distance. Print it alongside its neighbours for a complete street-number set.",
+      "draw": "Draw a hook curving down and around into a full loop at the bottom; round the curve and puff the whole shape outward." },
+    { "digit": "7", "usecase": "jersey", "craft": "lucky-number jerseys and locker tags",
+      "intro": "A bubble 7 is a favourite jersey and locker number — the wide top bar and long diagonal keep their sporty angle even rounded off into a puffy shape. It doubles as a lucky-number decoration for a birthday or a games night. Print it big for a fan sign, or small for a locker tag.",
+      "draw": "Draw a wide top bar, then a long diagonal stroke down to the base; round the corner and puff both strokes outward." },
+    { "digit": "8", "usecase": "bujo", "craft": "bullet-journal trackers and habit counters",
+      "intro": "A bubble 8 is a natural bullet-journal number — used across habit trackers, week counters, and spread headers, its two stacked loops give a soft, rounded look that fits right in with hand-lettered spreads. The pinched middle is a fun spot to add a tiny highlight or shadow line. Print it small for a tracker key, or large as a spread-title number.",
+      "draw": "Draw two stacked circles pinched together in the middle, then puff each loop outward and round every curve." },
+    { "digit": "9", "usecase": "countdown", "craft": "countdown and almost-there milestone signs",
+      "intro": "A bubble 9 shows up on every countdown — nine days to go, a ninth birthday, or the last digit before a big double-digit milestone. The full top loop and long tail give it a friendly, bouncy look even printed large. Print it as part of a countdown chain, or solo for a ninth-birthday banner.",
+      "draw": "Draw a full loop at the top, then a long stem dropping down from its right side; round the loop and puff the outline outward." }
+  ]
+}
