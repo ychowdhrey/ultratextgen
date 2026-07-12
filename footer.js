@@ -12,6 +12,7 @@
         '<a href="/category/" class="footer-link">Categories</a>' +
         '<a href="/library/" class="footer-link">Library</a>' +
         '<a href="/printables/" class="footer-link">Printables</a>' +
+        '<a href="/events/" class="footer-link">Events</a>' +
       '</div>' +
       '<div class="footer-col">' +
         '<span class="footer-col-title">Popular Tools</span>' +

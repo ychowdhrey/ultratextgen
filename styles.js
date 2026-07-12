@@ -63,6 +63,16 @@ const CATEGORY_PAGES = {
     title: 'Small Text',
     description: 'Small and tiny Unicode text styles for names and bios.'
   },
+  'subscript': {
+    slug: 'subscript',
+    title: 'Subscript',
+    description: 'Subscript Unicode text for chemistry formulas, footnotes, and indices.'
+  },
+  'superscript': {
+    slug: 'superscript',
+    title: 'Superscript',
+    description: 'Superscript Unicode text for exponents, ordinals, and tiny asides.'
+  },
   'cute-fonts': {
     slug: 'cute-fonts',
     title: 'Cute Fonts',
@@ -1059,7 +1069,7 @@ const textStyles = {
   nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text', 'aesthetic-fonts'],
+  familySlug: ['small-text', 'aesthetic-fonts', 'superscript'],
   groupSlug: 'tiny',
   slug: 'ultra-small-superscript-style',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -1072,7 +1082,7 @@ const textStyles = {
   nums: '₀₁₂₃₄₅₆₇₈₉',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text'],
+  familySlug: ['small-text', 'subscript'],
   groupSlug: 'tiny',
   slug: 'ultra-tiny-subscript',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
