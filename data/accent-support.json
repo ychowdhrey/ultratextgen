@@ -8,8 +8,8 @@
     }
   },
   "counts": {
-    "full": 77,
-    "partial": 21,
+    "full": 76,
+    "partial": 22,
     "na": 8,
     "none": 6
   },
@@ -151,8 +151,8 @@
       "category": "bubble",
       "groupSlug": "bracket",
       "bucket": "full",
-      "example_es": "⦅S⦆⦅e⦆⦅n⦆̃⦅o⦆⦅r⦆",
-      "example_vi": "⦅V⦆⦅i⦆⦅e⦆̣̂⦅t⦆"
+      "example_es": "⦅S⦆⦅e⦆⦅ñ⦆⦅o⦆⦅r⦆",
+      "example_vi": "⦅V⦆⦅i⦆⦅ệ⦆⦅t⦆"
     },
     {
       "name": "Ultra Bubble Angle Spaced",
@@ -161,8 +161,8 @@
       "category": "bubble",
       "groupSlug": "spaced",
       "bucket": "full",
-      "example_es": "⦅S⦆ ⦅e⦆ ⦅n⦆̃ ⦅o⦆ ⦅r⦆",
-      "example_vi": "⦅V⦆ ⦅i⦆ ⦅e⦆̣̂ ⦅t⦆"
+      "example_es": "⦅S⦆ ⦅e⦆ ⦅ñ⦆ ⦅o⦆ ⦅r⦆",
+      "example_vi": "⦅V⦆ ⦅i⦆ ⦅ệ⦆ ⦅t⦆"
     },
     {
       "name": "Ultra Bubble Curly",
@@ -171,8 +171,8 @@
       "category": "bubble",
       "groupSlug": "bracket",
       "bucket": "full",
-      "example_es": "❨S❩❨e❩❨n❩̃❨o❩❨r❩",
-      "example_vi": "❨V❩❨i❩❨e❩̣̂❨t❩"
+      "example_es": "❨S❩❨e❩❨ñ❩❨o❩❨r❩",
+      "example_vi": "❨V❩❨i❩❨ệ❩❨t❩"
     },
     {
       "name": "Ultra Bubble Curly Spaced",
@@ -181,8 +181,8 @@
       "category": "bubble",
       "groupSlug": "spaced",
       "bucket": "full",
-      "example_es": "❨S❩ ❨e❩ ❨n❩̃ ❨o❩ ❨r❩",
-      "example_vi": "❨V❩ ❨i❩ ❨e❩̣̂ ❨t❩"
+      "example_es": "❨S❩ ❨e❩ ❨ñ❩ ❨o❩ ❨r❩",
+      "example_vi": "❨V❩ ❨i❩ ❨ệ❩ ❨t❩"
     },
     {
       "name": "Ultra Bubble Filled",
@@ -211,8 +211,8 @@
       "category": "bubble",
       "groupSlug": "bracket",
       "bucket": "full",
-      "example_es": "( S )( e )( n )̃( o )( r )",
-      "example_vi": "( V )( i )( e )̣̂( t )"
+      "example_es": "( S )( e )( ñ )( o )( r )",
+      "example_vi": "( V )( i )( ệ )( t )"
     },
     {
       "name": "Ultra Cherokee",
@@ -473,16 +473,6 @@
       "bucket": "full",
       "example_es": "S̅e̅ñ̅o̅r̅",
       "example_vi": "V̅i̅ệ̅t̅"
-    },
-    {
-      "name": "Ultra Regional Indicator",
-      "slug": "ultra-regional-indicator",
-      "type": "map",
-      "category": "emoji-letters",
-      "groupSlug": "emoji-letters",
-      "bucket": "full",
-      "example_es": "🇸⁠🇪⁠🇳⁠̃🇴⁠🇷⁠",
-      "example_vi": "🇻⁠🇮⁠🇪⁠̣̂🇹⁠"
     },
     {
       "name": "Ultra Script",
@@ -963,6 +953,16 @@
       "bucket": "partial",
       "example_es": "サエñオラ",
       "example_vi": "ヴイệタ"
+    },
+    {
+      "name": "Ultra Regional Indicator",
+      "slug": "ultra-regional-indicator",
+      "type": "map",
+      "category": "emoji-letters",
+      "groupSlug": "emoji-letters",
+      "bucket": "partial",
+      "example_es": "🇸⁠🇪⁠ñ🇴⁠🇷⁠",
+      "example_vi": "🇻⁠🇮⁠ệ🇹⁠"
     },
     {
       "name": "Ultra Runic",
