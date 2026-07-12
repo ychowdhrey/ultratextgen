@@ -1,0 +1,66 @@
+{
+  "slug": "star-of-david",
+  "page_type": "symbol",
+  "title": "Star of David: Copy & Paste ✡ — How a Shared Hexagram Became a Jewish Symbol",
+  "meta_description": "Copy and paste the Star of David (✡) and learn its layered history — from an ancient geometric motif shared across cultures to the emblem of Judaism. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/star-of-david/",
+  "breadcrumb": "Star of David",
+  "hero_h1": "Star of David",
+  "hero_tagline": "The six-pointed Star of David (✡ ✡️) — the Magen David, or \"Shield of David\" — whose path to becoming the emblem of Judaism is more recent and more layered than most people assume. Click any symbol to copy it instantly.",
+  "intro": "The Star of David (✡, U+2721) — Magen David, \"Shield of David\" in Hebrew — is the six-pointed star recognized today as the symbol of Judaism and the emblem at the center of the flag of Israel. Yet the hexagram itself is far older and far more widely shared than that role suggests: for most of its history it was a common geometric motif used across many cultures, and its journey to becoming a distinctly Jewish sign is a comparatively recent, well-documented story.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "star-of-david",
+      "label": "Star of David",
+      "h2": "Star of David Symbol",
+      "intro": "The Unicode Star of David, ready to paste anywhere — bios, posts, or profiles. Two forms: the plain glyph and the full-color emoji.",
+      "symbols": [
+        { "char": "✡", "label": "Star of David" },
+        { "char": "✡️", "label": "Star of David Emoji" }
+      ]
+    },
+    {
+      "id": "jewish-symbols",
+      "label": "Jewish Symbols",
+      "h2": "Related Jewish Symbols",
+      "intro": "Other symbols from Jewish tradition that the Star of David often appears alongside.",
+      "symbols": [
+        { "char": "🕎", "label": "Menorah" },
+        { "char": "🕍", "label": "Synagogue" },
+        { "char": "חי", "label": "Chai (Life)" }
+      ]
+    },
+    {
+      "id": "hexagram-variants",
+      "label": "Six-Pointed Stars & Hexagrams",
+      "h2": "Six-Pointed Stars & Hexagram Variants",
+      "intro": "The same six-pointed geometry appears far beyond any one tradition — as decoration, in astronomy and mysticism, and as plain geometric shapes.",
+      "symbols": [
+        { "char": "🔯", "label": "Six-Pointed Star with Dot" },
+        { "char": "✶", "label": "Six-Pointed Black Star" },
+        { "char": "⬡", "label": "White Hexagon" },
+        { "char": "⬢", "label": "Black Hexagon" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith symbols from every major world religion in one reference."
+    },
+    {
+      "href": "/symbol/khanda-symbol/",
+      "title": "Khanda Symbol",
+      "desc": "Another specific religious emblem with a real, traceable history behind it."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Stars of every kind — four-, five-, six-, and eight-pointed — in one copy-paste reference."
+    }
+  ]
+}
