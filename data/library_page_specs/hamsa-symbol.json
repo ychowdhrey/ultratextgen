@@ -1,0 +1,73 @@
+{
+  "slug": "hamsa-symbol",
+  "page_type": "symbol",
+  "title": "Hamsa Symbol: Copy & Paste 🪬 — The Hand of Fatima & Miriam",
+  "meta_description": "Copy and paste the hamsa hand (🪬) — the palm-and-eye amulet known as the Hand of Fatima and the Hand of Miriam, shared as protection against the evil eye across Jewish, Muslim, and Christian traditions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/hamsa-symbol/",
+  "breadcrumb": "Hamsa Symbol",
+  "hero_h1": "Hamsa Symbol",
+  "hero_tagline": "The hamsa hand (🪬) is the open-palm Hand of Fatima and Hand of Miriam — the amulet worn against the evil eye across Jewish, Muslim, and Christian traditions alike. Click any symbol to copy it instantly.",
+  "intro": "The hamsa (🪬, U+1FAAC) is an open-hand amulet, usually shown with an eye set in the palm, believed to protect against the evil eye. The same hand shape is called the Hand of Fatima in Islamic tradition and the Hand of Miriam in Jewish tradition, and it has been worn for centuries across North Africa and the Middle East by Muslim, Jewish, and Christian communities alike — one of the rare symbols that unites rather than divides the traditions that claim it. Its name comes from the Semitic word for \"five,\" for the five fingers of the hand. Though the symbol itself is ancient, it only received its own Unicode emoji in 2021.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "hamsa-hand",
+      "label": "Hamsa",
+      "h2": "Hamsa Hand (Hand of Fatima / Hand of Miriam)",
+      "intro": "The hamsa emoji — an open palm with an eye at its center. There is no older plain-text version of this glyph; it exists only as a color emoji, added to Unicode in 2021.",
+      "symbols": [
+        { "char": "🪬", "label": "Hamsa" }
+      ]
+    },
+    {
+      "id": "evil-eye-nazar",
+      "label": "Not the Same",
+      "h2": "Evil Eye & Nazar — Often Paired, Not the Same",
+      "intro": "The hamsa is a hand; the nazar is a blue glass eye-bead from Turkish tradition. They are frequently worn together and share the same job of deflecting the evil eye, but they are distinct symbols — don't confuse the two.",
+      "symbols": [
+        { "char": "🧿", "label": "Nazar Amulet (Evil Eye)" },
+        { "char": "👁️", "label": "Eye" },
+        { "char": "👀", "label": "Eyes" },
+        { "char": "🔵", "label": "Blue Circle" }
+      ]
+    },
+    {
+      "id": "protective-hands",
+      "label": "Open Palm",
+      "h2": "Open-Palm & Protection Symbols",
+      "intro": "The open right hand is itself an ancient sign of protection and blessing. These hand and charm emoji echo the hamsa's raised palm in bios and captions.",
+      "symbols": [
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🖐", "label": "Hand with Fingers Splayed" },
+        { "char": "🤚", "label": "Raised Back of Hand" },
+        { "char": "🤲", "label": "Palms Up Together" },
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "📿", "label": "Prayer Beads" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/evil-eye-hamsa-symbols/",
+      "title": "Evil Eye & Hamsa Symbols",
+      "desc": "The nazar amulet, hamsa hand, watchful eyes, and the blue-bead palette in one browse-and-copy collection."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith and protection symbols from traditions around the world, gathered in one reference."
+    },
+    {
+      "href": "/symbol/star-of-david/",
+      "title": "Star of David",
+      "desc": "Another identity symbol with deep, cross-cultural history and its own dedicated page."
+    },
+    {
+      "href": "/symbol/khanda-symbol/",
+      "title": "Khanda Symbol",
+      "desc": "A faith emblem that, like the hamsa, waited years for its own dedicated Unicode emoji."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "not-equal-sign",
+  "page_type": "symbol",
+  "title": "Not Equal Sign (≠): Copy, Paste & How to Type the Does-Not-Equal Symbol",
+  "meta_description": "Copy and paste the not equal sign (≠), the does-not-equal symbol with no key on any keyboard. How to type it on Mac and Windows, plus why code uses != and <> instead.",
+  "canonical": "https://ultratextgen.com/symbol/not-equal-sign/",
+  "breadcrumb": "Not Equal Sign",
+  "hero_h1": "Not Equal Sign (≠)",
+  "hero_tagline": "The \"does not equal\" symbol — the one math character with no key on any keyboard, which is why code types it as != or <> instead. Click to copy it, then paste it anywhere.",
+  "intro": "The not equal sign (≠, U+2260) is an equals sign with a slash through it: it means two values are not the same. It sits in Unicode's Mathematical Operators block, and unlike + or =, it has no dedicated key on any physical keyboard — which is exactly why so many people end up searching for it, and why almost every programming language and spreadsheet substitutes a typeable stand-in like != or <> instead.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "not-equal-to-sign",
+      "label": "Not Equal",
+      "h2": "The Not Equal To Sign (≠)",
+      "intro": "The single Unicode character for \"not equal\" — click to copy, then paste it into a document, formula, bio, or chat.",
+      "symbols": [
+        { "char": "≠", "label": "Not Equal To" }
+      ]
+    },
+    {
+      "id": "negation-family",
+      "label": "Negated Operators",
+      "h2": "Other Negated \"Not\" Operators",
+      "intro": "≠ belongs to a whole family of relations that a slash turns into their opposite. Each of these is its own separate Unicode character — not the ≠ sign.",
+      "symbols": [
+        { "char": "≢", "label": "Not Identical To" },
+        { "char": "≉", "label": "Not Almost Equal To" },
+        { "char": "∉", "label": "Not an Element Of" },
+        { "char": "∌", "label": "Does Not Contain as Member" },
+        { "char": "∤", "label": "Does Not Divide" },
+        { "char": "≁", "label": "Not Tilde" }
+      ]
+    },
+    {
+      "id": "confusable-equality",
+      "label": "Similar Equality Signs",
+      "h2": "Equality Signs People Mix Up With ≠",
+      "intro": "The characters most often confused with ≠ at a glance — each one means something different from \"not equal.\"",
+      "symbols": [
+        { "char": "=", "label": "Equals Sign" },
+        { "char": "≈", "label": "Almost Equal To" },
+        { "char": "≡", "label": "Identical To" },
+        { "char": "≅", "label": "Approximately Equal To" },
+        { "char": "≤", "label": "Less-Than or Equal To" },
+        { "char": "≥", "label": "Greater-Than or Equal To" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "All Math Symbols",
+      "desc": "Operators, Greek letters, set theory, and calculus notation in one reference."
+    },
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than & Greater Than (< >)",
+      "desc": "The comparison operators that also stand in for not-equal as <> in SQL, Excel, and Pascal."
+    },
+    {
+      "href": "/symbol/plus-minus/",
+      "title": "Plus-Minus (±)",
+      "desc": "Another Mathematical Operators glyph with no key of its own."
+    }
+  ]
+}
