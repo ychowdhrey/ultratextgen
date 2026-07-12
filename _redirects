@@ -83,6 +83,24 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /library/linkedin-post-formatting-symbols/index.html  /library/linkedin-symbol-library/ 301
 /library/whisper-subliminal-symbols/                  /library/aesthetic-symbols/ 301
 /library/whisper-subliminal-symbols/index.html        /library/aesthetic-symbols/ 301
+/library/youtube-symbols/                             /library/nickname-symbols/ 301
+/library/youtube-symbols/index.html                   /library/nickname-symbols/ 301
+
+# Usecase: dead/renamed slug → live equivalent (GSC 404 cleanup)
+/usecase/bio-text/                    /usecase/bio-font/     301
+/usecase/bio-text/index.html          /usecase/bio-font/     301
+/usecase/social-post-text/            /usecase/comment-font/ 301
+/usecase/social-post-text/index.html  /usecase/comment-font/ 301
+
+# Category: dead slug → hub (GSC 404 cleanup, no single-category equivalent)
+/category/popular/            /category/ 301
+/category/popular/index.html  /category/ 301
+
+# Cloudflare email-obfuscation artifact: if this ever reaches Netlify origin
+# directly (rather than being served at the CF edge), send it somewhere real
+# instead of 404ing (GSC 404 cleanup).
+/cdn-cgi/l/email-protection  /contact/ 301
+/cdn-cgi/*                   /contact/ 301
 
 # Library → Symbol pillar: single-glyph pages moved to their own top-level namespace
 /library/degree-symbol/            /symbol/degree-symbol/    301
