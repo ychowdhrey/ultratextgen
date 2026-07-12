@@ -41,6 +41,9 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /guide/is-linkedin-bold-text-safe/index.html  /answers/is-linkedin-bold-text-safe/ 301
 /usecase/linkedin-bold/                       /linkedin/ 301
 /usecase/linkedin-bold/index.html             /linkedin/ 301
+/usecase/glitch-text/                         /usecase/zalgo-text/ 301
+/usecase/glitch-text/index.html               /usecase/zalgo-text/ 301
+/usecase/glitch-text-generator/               /usecase/zalgo-text/ 301
 
 # Language query-param → path-based (301 permanent)
 /?lang=fr                                   /fr/    301

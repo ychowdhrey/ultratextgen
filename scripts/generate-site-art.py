@@ -1133,6 +1133,8 @@ PAGES = {
         P(m_typo, sample="H₂O", size=76, label="subscript notation"), K_CAT),
   "category-superscript": ("Superscript Generator", "Exponents, ordinals & tiny asides",
         P(m_typo, sample="x²", size=88, label="superscript notation"), K_CAT),
+  "category-small-caps": ("Small Caps Generator", "Capital-shaped small letters for bios & headings",
+        P(m_typo, sample="AaBb", size=68, label="small caps style"), K_CAT),
   "category-strikethrough-text": ("Strikethrough Text Generator", "A line struck through every word",
         P(m_typo, sample="strike", size=64, deco="line-through", label="crossed out"), K_CAT),
   "category-underline-text": ("Underline Text Generator", "Clean underlines under every word",
