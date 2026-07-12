@@ -223,7 +223,7 @@
       "name": "What languages and alphabets work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unicode styled variants only exist for the Latin alphabet (A–Z) and Arabic digits (0–9). That means every language using Latin script works for styling — English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Tagalog, Afrikaans, Swahili, and dozens more. Languages written in Arabic, Hebrew, Devanagari (Hindi, Marathi), Bengali, Tamil, Thai, Chinese, Japanese, Korean, Cyrillic, or Greek will not transform — there are no styled variants of those characters in Unicode. Latin-script words inside non-Latin sentences (brand names, hashtags) will still convert."
+        "text": "Unicode styled variants only exist for the Latin alphabet (A–Z) and Arabic digits (0–9). That means every language using Latin script works for styling — English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Tagalog, Afrikaans, Swahili, and dozens more. Languages written in Arabic, Hebrew, Devanagari (Hindi, Marathi), Bengali, Tamil, Thai, Chinese, Japanese, Korean, Cyrillic, or Greek will not transform — there are no styled variants of those characters in Unicode. Latin-script words inside non-Latin sentences (brand names, hashtags) will still convert. Accented letters (á, é, ñ, ü, ç) style too — the generator reattaches the original accent mark onto the styled base letter across almost every style, so a name like María or Muñoz comes out fully styled instead of half plain."
       }
     },
     {
@@ -795,7 +795,7 @@
   <div class="faq-answer" data-i18n-html="faq.categories.4.items.0.answer">
     Unicode styled variants only exist for the Latin alphabet (A–Z, a–z) and Arabic digits (0–9). So the core letters of every Latin-script language are supported: English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Malay, Tagalog, Afrikaans, Swahili, Hungarian, Czech.
     <br><br>
-    One caveat for accented letters (á, é, ñ, ü, ç, and Vietnamese letters like ữ, ế, đ): Unicode defines no styled variant for them, so in most alphabet styles — bold, italic, script, fraktur — the accented letter stays plain while the letters around it are styled. The accent itself is never lost. Styles that add marks or symbols instead of swapping letters (strikethrough, underline, and decorative wraps) keep accents fully intact, so they&rsquo;re the best pick for heavily-accented languages like Vietnamese.
+    Accented letters (á, é, ñ, ü, ç, and Vietnamese letters like ữ, ế, đ) style too, not just the plain letters around them. Unicode has no bold á, so most fancy-text tools quietly leave accented letters plain &mdash; this one splits the accented letter into its base letter and its accent mark, styles the base, and reattaches the mark on top. That works across almost every style, bold, italic, script and fraktur included. The exceptions are the upside-down/flip styles, which reposition an accent but don&rsquo;t flip it, and a handful of one-piece letters (đ, ø, ß, ł, ı) with no separate mark to lift off.
   </div>
 </div>
 
