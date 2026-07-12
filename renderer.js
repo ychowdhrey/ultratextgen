@@ -297,6 +297,24 @@ function resolveBaseAndMarks(char) {
   return { base: char, marks: '' };
 }
 
+// Reattaches a combining mark right after the base letter inside its mapped
+// token, rather than at the very end of the token. Most styles map a letter
+// to a single styled glyph (e.g. bold 'c' -> "𝗰"), where "end of token" and
+// "right after the letter" are the same position. But the bracket/paren
+// "wrap" styles (Ultra Bubble Curly/Angle/Parentheses, etc.) map a letter to
+// a multi-character token like "❨c❩" — appending a mark at the end used to
+// land the accent on the closing bracket instead of the letter (e.g. Turkish
+// ç coming out as "❨c❩̧" instead of "❨ç❩"). Locating the base letter inside
+// the token and inserting there fixes those styles; for single-glyph tokens
+// the base letter never appears literally (bold's "𝗰" isn't the string "c"),
+// so this falls through to the original append-at-the-end behaviour.
+function attachMarks(token, base, marks) {
+  if (!marks) return token;
+  const idx = token.indexOf(base);
+  if (idx === -1) return token + marks;
+  return token.slice(0, idx + base.length) + marks + token.slice(idx + base.length);
+}
+
 // Shared per-character lookup used by both renderMap branches below.
 // `accentSafe` gates ONLY the combining-mark-carrying path: a handful of
 // styles substitute into Unicode blocks (Enclosed Alphanumerics, Fullwidth,
@@ -320,10 +338,10 @@ function mapChar(ch, normalUpper, normalLower, normalNums, upperArr, lowerArr, n
   const { base, marks } = resolveBaseAndMarks(ch);
   if (base !== ch && (accentSafe || !marks)) {
     const bu = normalUpper.indexOf(base);
-    if (bu !== -1) return (upperArr[bu] || base) + marks;
+    if (bu !== -1) return attachMarks(upperArr[bu] || base, base, marks);
 
     const bl = normalLower.indexOf(base);
-    if (bl !== -1) return (lowerArr[bl] || base) + marks;
+    if (bl !== -1) return attachMarks(lowerArr[bl] || base, base, marks);
   }
 
   return ch;
