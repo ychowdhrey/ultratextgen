@@ -1462,6 +1462,12 @@ const textStyles = {
     familySlug: ['emoji-letters'],
     groupSlug: 'emoji-letters',
     slug: 'ultra-regional-indicator',
+    // Each token is a flag/regional-indicator emoji + word-joiner, not a
+    // literal base letter, so a reattached combining accent has nowhere
+    // correct to land — it ends up floating off the letterform's dashed
+    // fallback box instead of sitting on the letter. Same silent-mangle
+    // risk as Ultra Bubble Tiles/Ultra Squared (verified in Chromium).
+    accentSafe: false,
     platforms: ["all","instagram","x","discord"]
   },
 
