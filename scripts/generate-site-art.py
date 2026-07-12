@@ -1953,6 +1953,16 @@ PAGES.update({
       P(m_arc, letters="ARC"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+
+# ---- tr/library — piliapp-mining individual-symbol pages (2026-07-12) ----
+"tr-library-japon-alfabesi": ("Japon Alfabesi", "Hiragana, katakana ve kanji kopyala yapıştır", m_kana_grid, K_LIB),
+"tr-library-onay-isaretleri": ("Onay İşaretleri", "Tik, çarpı ve durum sembolleri kopyala", glyphs("✓", "✔", "☑", "✗"), K_LIB),
+"tr-library-ok-isaretleri": ("Ok İşaretleri", "Yön, çift ve emoji oklar kopyala yapıştır", glyphs("→", "⇒", "↩", "➤"), K_LIB),
+"tr-library-tirnak-isareti": ("Tırnak İşareti", "Düz, kıvrık tırnak ve dış tırnak kopyala", glyphs("\"", "“", "”", "«"), K_LIB),
+"tr-library-derece-isareti": ("Derece İşareti", "Sıcaklık, açı ve geometri sembolleri kopyala", glyphs("°", "℃", "∠", "′"), K_LIB),
+"tr-library-para-birimi-sembolleri": ("Para Birimi Sembolleri", "Türk Lirası, euro, dolar ve dünya paraları", glyphs("₺", "€", "$", "£"), K_LIB),
+"tr-library-yunan-alfabesi-sembolleri": ("Yunan Alfabesi Sembolleri", "Alfa, beta, pi ve tüm Yunan harfleri kopyala", glyphs("α", "β", "π", "Ω"), K_LIB),
+"tr-library-matematik-sembolleri": ("Matematik Sembolleri", "Artı eksi, eşitsizlik ve küme işaretleri", glyphs("±", "≥", "≠", "∫"), K_LIB),
 })
 
 
