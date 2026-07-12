@@ -25,6 +25,9 @@ Cross-page checks
 -----------------
   - duplicate <title> across library pages
   - duplicate <meta description> across library pages
+  - every /symbol/ spoke is linked from at least one /library/ hub
+    (orphan spokes are only discoverable via the sitemap; fix with
+    scripts/sync_symbol_spoke_links.py --write)
 
 Exit status is non-zero if any ERROR-level issue is found, so the script is
 CI-friendly. WARN-level issues do not fail the run.
@@ -68,6 +71,7 @@ SYMBOL_TOAST_RE = re.compile(r'id=["\']symbolToast["\']')
 EXPLORER_JS_RE = re.compile(r'src=["\']/symbol-explorer\.js["\']')
 RELATED_RE = re.compile(r'Related Resources|class=["\'][^"\']*compare-card',
                         re.IGNORECASE)
+SYM_HREF_RE = re.compile(r'href="/symbol/([a-z0-9-]+)/"')
 
 
 class Issue:
@@ -259,6 +263,29 @@ def main(argv=None):
             print(f"{rel(path)}  ({kind})")
             for issue in result["issues"]:
                 print(issue)
+
+    # Hub→spoke inbound coverage: every /symbol/ spoke in the validated set
+    # must be linked from at least one /library/ hub, or it is an orphan that
+    # only the sitemap can discover. The full library dir is always scanned
+    # for the inbound map, regardless of which pages are being validated.
+    # (spokes live at symbol/<slug>/index.html; symbol/index.html is the
+    # pillar index, not a spoke)
+    symbol_paths = [p for p in paths
+                    if p.exists()
+                    and p.resolve().parent.parent == SYMBOL_DIR.resolve()]
+    if symbol_paths and LIBRARY_DIR.is_dir():
+        linked_spokes = set()
+        for hub_page in LIBRARY_DIR.glob("*/index.html"):
+            hub_html = hub_page.read_text(encoding="utf-8", errors="replace")
+            linked_spokes.update(SYM_HREF_RE.findall(hub_html))
+        orphans = sorted(p.parent.name for p in symbol_paths
+                         if p.parent.name not in linked_spokes)
+        if orphans:
+            print("\nOrphan /symbol/ spokes (no /library/ hub links to them):")
+            for slug in orphans:
+                print(f"  [ERROR] symbol/{slug} — run "
+                      "scripts/sync_symbol_spoke_links.py --write")
+                total_errors += 1
 
     # Cross-page duplicate detection
     dup_titles = {t: s for t, s in titles.items() if len(s) > 1}
