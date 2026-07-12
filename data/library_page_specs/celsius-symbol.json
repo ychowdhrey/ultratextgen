@@ -1,0 +1,73 @@
+{
+  "slug": "celsius-symbol",
+  "page_type": "symbol",
+  "title": "Celsius Symbol: Copy & Paste ℃ Degree Celsius Sign",
+  "meta_description": "Copy and paste the degree Celsius sign (℃, U+2103) — the single-character temperature ligature, why Unicode recommends plain °C instead, and how to type it on Windows and Mac. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/celsius-symbol/",
+  "breadcrumb": "Celsius Symbol",
+  "hero_h1": "Celsius Symbol",
+  "hero_tagline": "℃ is a single Unicode character that packs the degree sign and a capital C into one glyph — handy to paste, though most typographers still reach for plain °C. Click any symbol to copy it instantly.",
+  "intro": "The degree Celsius sign (℃, Unicode U+2103) is a precomposed character in the Letterlike Symbols block that combines the degree sign (°) and a capital C into a single glyph. It exists mainly so that older East Asian text — where a full temperature reading often occupied one character cell — could round-trip through Unicode without changing length. For new text, Unicode and most style guides actually recommend writing the degree sign followed by a plain C (°C) rather than the one-character ℃, but the single glyph remains the fastest thing to copy when you just need the mark.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "celsius-sign",
+      "label": "Celsius",
+      "h2": "Degree Celsius Sign",
+      "intro": "The single-character ℃ and the two-character °C sequence Unicode prefers — copy whichever your context needs.",
+      "symbols": [
+        { "char": "℃", "label": "Degree Celsius (Single Character)" },
+        { "char": "°C", "label": "Degree Sign + C (Recommended Form)" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Confusable Neighbors",
+      "h2": "Symbols Often Confused with ℃",
+      "intro": "Each of these gets swapped in for ℃, and each is a separate character with its own meaning.",
+      "symbols": [
+        { "char": "°", "label": "Degree Sign (U+00B0) — On Its Own" },
+        { "char": "℉", "label": "Degree Fahrenheit (U+2109)" },
+        { "char": "K", "label": "Kelvin Sign (U+212A) — Normalizes to Plain K" },
+        { "char": "C", "label": "Latin Capital C" }
+      ]
+    },
+    {
+      "id": "related-measurement",
+      "label": "Related Measurement Marks",
+      "h2": "Other Measurement & Unit Symbols",
+      "intro": "Marks that share the same measurement and scientific-notation territory as ℃.",
+      "symbols": [
+        { "char": "′", "label": "Prime (Minutes / Feet)" },
+        { "char": "″", "label": "Double Prime (Seconds / Inches)" },
+        { "char": "‰", "label": "Per Mille Sign" },
+        { "char": "µ", "label": "Micro Sign (U+00B5)" },
+        { "char": "Ω", "label": "Ohm Sign (U+2126)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/fahrenheit-symbol/",
+      "title": "Fahrenheit Symbol (℉)",
+      "desc": "The precomposed degree Fahrenheit sign, and the °F most guides prefer."
+    },
+    {
+      "href": "/symbol/degree-symbol/",
+      "title": "Degree Symbol (°)",
+      "desc": "The standalone degree sign behind ℃, angles, and coordinates."
+    },
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Temperature, SI units, and scientific-notation marks in one reference."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Temperature, sun, cloud, and storm symbols for forecasts."
+    }
+  ]
+}

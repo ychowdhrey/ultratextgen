@@ -1,0 +1,72 @@
+{
+  "slug": "em-dash",
+  "page_type": "symbol",
+  "title": "Em Dash (—): Copy & Paste + Why It Became the \"AI Writing\" Tell",
+  "meta_description": "Copy and paste the em dash (—), see how it differs from the en dash (–), hyphen, and minus sign, and why it became known as an AI writing tell. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/em-dash/",
+  "breadcrumb": "Em Dash",
+  "hero_h1": "Em Dash (—)",
+  "hero_tagline": "The em dash (—) that marks a break, an interruption, or an aside — the punctuation mark that sparked the 2025 debate over whether long dashes are a sign of AI writing. Click any symbol to copy it instantly.",
+  "intro": "The em dash (—, Unicode U+2014) is the long dash writers use to set off a sudden break, a dramatic pause, or a parenthetical aside — roughly doing the job of a comma, colon, or pair of parentheses. It's also the character at the center of a running argument about AI-written text, and the one most often mixed up with the shorter en dash and the plain keyboard hyphen.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "em-dash",
+      "label": "Em Dash",
+      "h2": "Em Dash, Two-Em & Three-Em",
+      "intro": "The em dash and its double- and triple-width editorial cousins — the wider ones mark redactions and repeated author names in bibliographies. Ready to paste anywhere.",
+      "symbols": [
+        { "char": "—", "label": "Em Dash" },
+        { "char": "⸺", "label": "Two-Em Dash" },
+        { "char": "⸻", "label": "Three-Em Dash" }
+      ]
+    },
+    {
+      "id": "confusable-dashes",
+      "label": "Confusable Dashes",
+      "h2": "Dashes & Hyphens It's Confused With",
+      "intro": "The shorter marks the em dash gets swapped for by mistake — each one has its own width, code point, and job.",
+      "symbols": [
+        { "char": "–", "label": "En Dash" },
+        { "char": "-", "label": "Hyphen-Minus (Keyboard)" },
+        { "char": "‐", "label": "Hyphen (Typographic)" },
+        { "char": "−", "label": "Minus Sign" },
+        { "char": "‒", "label": "Figure Dash" },
+        { "char": "―", "label": "Horizontal Bar (Quotation Dash)" }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "Related Punctuation",
+      "h2": "Related Punctuation & Pause Marks",
+      "intro": "Marks that do a related job — the comma, colon, and parentheses an em dash often replaces, plus the semicolon and ellipsis it's sometimes grouped with.",
+      "symbols": [
+        { "char": ",", "label": "Comma" },
+        { "char": ":", "label": "Colon" },
+        { "char": "(", "label": "Left Parenthesis" },
+        { "char": ")", "label": "Right Parenthesis" },
+        { "char": ";", "label": "Semicolon" },
+        { "char": "…", "label": "Horizontal Ellipsis" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "Em dashes, en dashes, hyphens, and minus signs compared side by side in one reference."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Quotation marks, dashes, brackets, and other everyday punctuation in Unicode."
+    },
+    {
+      "href": "/symbol/pilcrow/",
+      "title": "Pilcrow (¶)",
+      "desc": "The paragraph mark — another editorial typography symbol with a long print history."
+    }
+  ]
+}
