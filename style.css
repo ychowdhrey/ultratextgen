@@ -2150,6 +2150,162 @@ a:hover {
   font-weight: 700;
 }
 
+/* ============================================================
+   Embed widgets (Loop 3 — distribution). Shared by every
+   /usecase/<slug>/embed/ iframe body and every /embed/<slug>/
+   landing page, so a new embeddable widget never needs its own
+   <style> block — it just uses these classes.
+   ============================================================ */
+
+/* <body> of a /usecase/*/embed/ iframe page — no page chrome, just the widget */
+.embed-widget-body {
+  min-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Compact overrides applied to the <body> of a /usecase/*/embed/ iframe page */
+.embed-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 16px 12px;
+}
+.embed-wrapper .hero-card {
+  padding: 24px 20px;
+  box-shadow: none;
+  border: 1px solid var(--border-light);
+}
+.embed-wrapper .hero-headline {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.embed-wrapper .hero-tagline {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.embed-wrapper .main-input {
+  min-height: 64px;
+  font-size: 1rem;
+  padding: 12px 36px 28px 12px;
+}
+.embed-wrapper .helper-section {
+  margin-top: 1rem;
+}
+.embed-wrapper .style-phrase-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.embed-wrapper .helper-chip {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+}
+.embed-wrapper .decoration-tab {
+  padding: 5px 10px;
+  font-size: 0.7rem;
+}
+.embed-variations {
+  margin-top: 1rem;
+}
+.embed-variations h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.embed-attribution {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.embed-attribution a {
+  color: var(--accent-purple);
+  text-decoration: none;
+  font-weight: 500;
+}
+.embed-attribution a:hover {
+  text-decoration: underline;
+}
+.embed-attribution .embed-sep {
+  margin: 0 0.35rem;
+  color: var(--border-light);
+}
+
+/* /embed/<slug>/ landing pages: live iframe preview + copyable embed code */
+.embed-page-preview {
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 1.5rem 0;
+  background: var(--bg-base);
+}
+.embed-page-preview iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+.embed-code-block {
+  position: relative;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.embed-code-block code {
+  display: block;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.825rem;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.6;
+}
+.embed-code-copy {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.embed-notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.embed-notes-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+.embed-notes-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+.embed-usecases-list {
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.embed-usecases-list dt {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.925rem;
+  margin-top: 0.75rem;
+}
+.embed-usecases-list dd {
+  margin: 0.15rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

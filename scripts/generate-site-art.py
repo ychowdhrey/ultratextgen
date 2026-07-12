@@ -1237,6 +1237,7 @@ PAGES = {
         P(m_typo, sample="Abc", weight="700", size=88, label="kopyala yapıştır"), K_USE),
   "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_gamepad, K_USE),
   "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_gamepad, K_USE),
+  "tr-usecase-free-fire-nick": ("Free Fire Şekilli Nick", "Free Fire isimleri, semboller ve isim kontrolü", m_gamepad, K_USE),
   "tr-library-semboller": ("Şekilli Semboller", "Nick ve bio için semboller", m_grid, K_LIB),
   "tr-kucuk-yazi": ("Küçük Yazı", "Minik harfler kopyala yapıştır",
         P(m_typo, sample=" small", size=44, label="küçük yazı"), K_CAT),
@@ -1391,7 +1392,11 @@ PAGES = {
   "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
 
   # ---- embed ----
+  "embed": ("Embeddable Widgets", "Free tools for your website", m_grid, K_USE),
   "embed-linkedin-headline-generator": ("LinkedIn Headline Generator", "Embeddable headline styler", m_headline, K_USE),
+  "embed-bio-font-generator": ("Bio Font Generator", "Embeddable bio & symbol styler", m_profile, K_USE),
+  "embed-nickname-generator": ("Nickname Generator", "Embeddable name & frame styler", m_gamepad, K_USE),
+  "embed-zalgo-text-generator": ("Zalgo Text Generator", "Embeddable cursed text styler", m_zalgo, K_USE),
 
   # ---- library overview ----
   "library": ("Symbol & Emoji Library", "Copy-and-paste reference collections", m_grid, K_LIB),
@@ -1811,6 +1816,10 @@ PAGES = {
   "pl-litery-do-skopiowania": ("Litery do Skopiowania", "Alfabet w różnych stylach do skopiowania",
         P(m_typo, sample="Ab", size=88, label="do skopiowania"), K_CAT),
   "pl-ozdobniki": ("Ozdobniki do Skopiowania", "Symbole i ozdoby do nicku i bio", m_grid, K_LIB),
+  "pl-library": ("Biblioteka Symboli i Emotek", "Kolekcje gotowe do skopiowania", m_grid, K_LIB),
+  "pl-library-emoji-flags": ("Flagi Emoji — Wszystkie Kraje", "Flaga każdego kraju do skopiowania", m_flag, K_LIB),
+  "pl-library-alfabet-grecki": ("Alfabet Grecki", "Alfa do omega, gotowe do skopiowania",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   # Turkish
   "tr-sekilli-yazi": ("Şekilli Yazı", "Şekilli harfler kopyala yapıştır",
         P(m_typo, sample="Şa", size=88, label="şekilli yazı"), K_CAT),

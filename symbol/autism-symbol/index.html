@@ -240,6 +240,12 @@
   </div>
 </section>
 
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn){
+    btn.addEventListener('click', function(){ this.closest('.faq-item').classList.toggle('open'); });
+  });
+</script>
+
 <div class="section-divider"></div>
 
 <!-- CTA -->
