@@ -1229,6 +1229,7 @@ PAGES = {
         P(m_typo, sample="Abc", weight="700", size=88, label="kopyala yapıştır"), K_USE),
   "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_gamepad, K_USE),
   "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_gamepad, K_USE),
+  "tr-usecase-free-fire-nick": ("Free Fire Şekilli Nick", "Free Fire isimleri, semboller ve isim kontrolü", m_gamepad, K_USE),
   "tr-library-semboller": ("Şekilli Semboller", "Nick ve bio için semboller", m_grid, K_LIB),
   "tr-kucuk-yazi": ("Küçük Yazı", "Minik harfler kopyala yapıştır",
         P(m_typo, sample=" small", size=44, label="küçük yazı"), K_CAT),
