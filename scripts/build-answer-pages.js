@@ -9,8 +9,8 @@
    (Short-answer block, editorial-section bodies, CTA, related, FAQ).
 
    Run:  node scripts/build-answer-pages.js
-   The site build injects the scriptwrapper tag server-side, so it is not
-   emitted here.
+   Ads: pages carry the Google AdSense loader (Auto Ads). The Journey/Grow/
+   Mediavine scripts were removed site-wide in favor of AdSense.
    ========================================================================== */
 
 'use strict';
@@ -73,8 +73,6 @@ function page(cfg) {
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
   <!-- End Google Tag Manager -->
-  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
-  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
        crossorigin="anonymous"></script>
 

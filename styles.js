@@ -63,6 +63,16 @@ const CATEGORY_PAGES = {
     title: 'Small Text',
     description: 'Small and tiny Unicode text styles for names and bios.'
   },
+  'subscript': {
+    slug: 'subscript',
+    title: 'Subscript',
+    description: 'Subscript Unicode text for chemistry formulas, footnotes, and indices.'
+  },
+  'superscript': {
+    slug: 'superscript',
+    title: 'Superscript',
+    description: 'Superscript Unicode text for exponents, ordinals, and tiny asides.'
+  },
   'cute-fonts': {
     slug: 'cute-fonts',
     title: 'Cute Fonts',
@@ -565,7 +575,10 @@ const textStyles = {
 'Ultra Bubble Light': {
   upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
   lower: '⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵',
-  nums: '⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽',
+  // No parenthesized-zero exists in Unicode, so digit 0 falls back to plain
+  // '0' (like a letter with no equivalent) instead of shifting ⑴-⑽ across
+  // all ten digits, which used to render "9" as "(10)".
+  nums: '0⑴⑵⑶⑷⑸⑹⑺⑻⑼',
   type: 'map',
   category: 'bubble',
   familySlug: 'bubble',
@@ -1059,7 +1072,7 @@ const textStyles = {
   nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text', 'aesthetic-fonts'],
+  familySlug: ['small-text', 'aesthetic-fonts', 'superscript'],
   groupSlug: 'tiny',
   slug: 'ultra-small-superscript-style',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -1072,7 +1085,7 @@ const textStyles = {
   nums: '₀₁₂₃₄₅₆₇₈₉',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text'],
+  familySlug: ['small-text', 'subscript'],
   groupSlug: 'tiny',
   slug: 'ultra-tiny-subscript',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -1452,6 +1465,12 @@ const textStyles = {
     familySlug: ['emoji-letters'],
     groupSlug: 'emoji-letters',
     slug: 'ultra-regional-indicator',
+    // Each token is a flag/regional-indicator emoji + word-joiner, not a
+    // literal base letter, so a reattached combining accent has nowhere
+    // correct to land — it ends up floating off the letterform's dashed
+    // fallback box instead of sitting on the letter. Same silent-mangle
+    // risk as Ultra Bubble Tiles/Ultra Squared (verified in Chromium).
+    accentSafe: false,
     platforms: ["all","instagram","x","discord"]
   },
 
