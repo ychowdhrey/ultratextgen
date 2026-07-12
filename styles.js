@@ -73,6 +73,11 @@ const CATEGORY_PAGES = {
     title: 'Superscript',
     description: 'Superscript Unicode text for exponents, ordinals, and tiny asides.'
   },
+  'small-caps': {
+    slug: 'small-caps',
+    title: 'Small Caps',
+    description: 'Small caps Unicode text for bios, headings, and clean editorial styling.'
+  },
   'cute-fonts': {
     slug: 'cute-fonts',
     title: 'Cute Fonts',
@@ -1097,7 +1102,7 @@ const textStyles = {
   nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text', 'aesthetic-fonts'],
+  familySlug: ['small-text', 'aesthetic-fonts', 'small-caps'],
   groupSlug: 'small-caps',
   slug: 'ultra-small-caps',
   note: 'Small caps · Q and X keep their normal shape (Unicode has no small-cap glyph for either)',
