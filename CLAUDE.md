@@ -137,10 +137,14 @@ entry to `header.js`'s main nav, and do not build search/filter UI on
 **Adding a `symbol/` page:** write a spec in `data/library_page_specs/` with
 `"page_type": "symbol"` (everything else matches a normal `library/` spec) and run
 `scripts/generate_library_page_from_spec.py` — it routes output to `/symbol/<slug>/`
-and defaults the breadcrumb to "Symbols" automatically. Add reciprocal links: one
-`compare-card` on the closest `library/` hub page(s) pointing to the new spoke, and
-one entry back on `symbol/index.html`. `scripts/validate_library_pages.py` scans
-`symbol/*` by default alongside `library/*`, so no extra step is needed there.
+and defaults the breadcrumb to "Symbols" automatically. Hub→spoke linking is
+automated: make sure the spoke's `related` block links its `library/` hub(s), then
+run `scripts/sync_symbol_spoke_links.py --write` (add `--reciprocal` to card every
+claimed hub) — it injects the `compare-card`(s) on the hub side in house style and
+is idempotent. Still add one entry back on `symbol/index.html` by hand.
+`scripts/validate_library_pages.py` scans `symbol/*` by default alongside
+`library/*` and **fails on orphan spokes** (a spoke no `library/` hub links to),
+so a forgotten sync run is caught before the PR.
 
 ---
 
