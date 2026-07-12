@@ -27,6 +27,24 @@
     'o': 'o', 'O': 'O', 's': 's', 'S': 'S', 'x': 'x', 'X': 'X', 'z': 'z', 'Z': 'Z'
   };
 
+  // Gyaru-moji (ギャル文字) — the 2002-2005 Japanese schoolgirl cipher that
+  // replaced kana with visually similar symbols/kanji/Greek letters. It
+  // never had one fixed standard (contemporary sources describe it as a
+  // folk cipher with many regional/personal variants), so this is a
+  // deliberately conservative subset of substitutions that are consistently
+  // cited across multiple independent sources (English & Japanese
+  // Wikipedia's "Gyaru-moji"/"ギャル文字" articles, cross-checked against
+  // community reference lists), not an invented "complete" table. Unmapped
+  // kana and all kanji pass through unchanged — itself authentic to the
+  // style, since real usage freely mixed converted and unconverted text.
+  const galMojiMap = {
+    'あ': 'ぁ', 'い': 'ﾚヽ', 'う': 'ぅ', 'え': 'ぇ', 'お': 'ぉ',
+    'か': 'ヵ', 'く': '＜', 'け': 'ヶ', 'こ': '⊇',
+    'し': 'ι', 'す': '£',
+    'ん': 'ω',
+    'セ': '世', 'チ': '干'
+  };
+
   // Reverse a string by code points (emoji-safe)
   function reverseString(str) {
     return Array.from(str).reverse().join('');
@@ -669,7 +687,13 @@ function renderMap(text, style) {
 
     // tOGGLE cASE — inverts whatever case each character already is.
     'case-toggle': text =>
-      [...text].map(c => (c === caseUpper(c) ? caseLower(c) : caseUpper(c))).join('')
+      [...text].map(c => (c === caseUpper(c) ? caseLower(c) : caseUpper(c))).join(''),
+
+    // ギャル文字 (gyaru-moji) — see galMojiMap above for scope/sourcing notes.
+    // splitGraphemes so a base kana + any trailing combining mark is treated
+    // as one unit rather than substituted mid-cluster.
+    'gal-moji': text =>
+      splitGraphemes(text).map(c => galMojiMap[c] || c).join('')
   };
 
   /* -----------------------------
