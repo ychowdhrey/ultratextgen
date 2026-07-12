@@ -1387,7 +1387,11 @@ PAGES = {
   "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
 
   # ---- embed ----
+  "embed": ("Embeddable Widgets", "Free tools for your website", m_grid, K_USE),
   "embed-linkedin-headline-generator": ("LinkedIn Headline Generator", "Embeddable headline styler", m_headline, K_USE),
+  "embed-bio-font-generator": ("Bio Font Generator", "Embeddable bio & symbol styler", m_profile, K_USE),
+  "embed-nickname-generator": ("Nickname Generator", "Embeddable name & frame styler", m_gamepad, K_USE),
+  "embed-zalgo-text-generator": ("Zalgo Text Generator", "Embeddable cursed text styler", m_zalgo, K_USE),
 
   # ---- library overview ----
   "library": ("Symbol & Emoji Library", "Copy-and-paste reference collections", m_grid, K_LIB),
