@@ -248,3 +248,26 @@ gated on demonstrated demand here the same way it is everywhere else on the
 site (see CLAUDE.md's flair philosophy). As a locale's organic performance
 grows, add it to `LOCALIZED_HOME_MOTIF` — that registry is the whole
 extension point.
+
+---
+
+## 9. Arabic card text was garbled — fixed at the source (2026-07-13)
+
+Every AR page carrying its own OG/hero card (30 total: `mutarjim-emoji`,
+`khat-bio`, `zakhrafa`, 24 `library/*` pages, `asmaa-free-fire`,
+`asmaa-pubg`, `vertical-text`) had visibly broken title text on its social
+card — Arabic letters drawn in isolated form, disconnected from their
+neighbours, in reversed reading order. `cairosvg` lays out codepoints in
+logical string order with no shaping or bidi engine of its own, so Arabic —
+whose letters join contextually and read right-to-left — came out wrong
+while every other locale (including Devanagari, which doesn't need
+contextual joining) rendered fine.
+
+Fix: `spanned()` in `generate-site-art.py` now runs Arabic text through
+`arabic_reshaper.reshape()` (contextual joining) then `bidi.get_display()`
+(visual reordering) before the existing per-character font-cmap resolution
+— both are lightweight, build-time-only Python deps, same category as
+`cairosvg`. All 30 affected cards were regenerated; every other card on the
+site is untouched. `hi-usecase-emoji-anuvadak` also gained its own branded
+card in the same pass — it had been left on the generic English fallback
+even though Hindi was never actually affected by this bug.

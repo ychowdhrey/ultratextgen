@@ -61,6 +61,7 @@
     "li-headline": "LinkedIn başlığı",
     "whatsapp-about": "WhatsApp Hakkında yazısı",
     "telegram-bio": "Telegram biyografisi",
+    "vk-status": "VK durumu",
     "discord-nick": "Discord takma adı",
     "tiktok-username": "TikTok kullanıcı adı",
     "ig-username": "Instagram kullanıcı adı",

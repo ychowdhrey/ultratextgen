@@ -1,0 +1,89 @@
+{
+  "slug": "omega-symbol",
+  "page_type": "symbol",
+  "title": "Omega Symbol: Copy & Paste Ω ω — And the Ohm Sign It's Often Confused With",
+  "meta_description": "Copy and paste the Greek letter omega (Ω ω) and learn why the electrical ohm sign (U+2126) looks identical but is a different Unicode character — a real, documented source of bugs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/omega-symbol/",
+  "breadcrumb": "Omega Symbol",
+  "hero_h1": "Omega Symbol",
+  "hero_tagline": "The last letter of the Greek alphabet (Ω, ω) — and the reason the electrical ‘ohm’ sign for resistance looks exactly the same on screen while being a completely different Unicode character underneath. Click any symbol to copy it instantly.",
+  "intro": "Omega (Ω uppercase, ω lowercase) is the 24th and final letter of the Greek alphabet — the source of ‘omega’ meaning ‘the end’ (as in the New Testament's ‘Alpha and Omega,’ Revelation 22:13), and the letter behind angular velocity (ω) and solid angle (Ω) in physics. It's also at the center of a genuine Unicode quirk: the electrical symbol for the ohm (resistance) has its own separate codepoint, U+2126 OHM SIGN, which Unicode's own official character list marks as normalizing to — and ‘preferred’ as — plain Greek omega (U+03A9). The two are supposed to be treated as the same character, but often aren't. Real bugs have followed: a documented Pandoc conversion issue handled the two inconsistently, converting one to LaTeX's \\Omega while failing outright on the other, and electronics forums regularly discuss the two glyphs rendering slightly differently depending on font and OS.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "omega",
+      "label": "Omega",
+      "h2": "Omega — Uppercase & Lowercase",
+      "intro": "The Greek letter itself, in both cases.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "ω",
+          "label": "Greek Small Letter Omega"
+        }
+      ]
+    },
+    {
+      "id": "ohm-sign-disambiguation",
+      "label": "Ohm Sign",
+      "h2": "The Ohm Sign Mix-Up",
+      "intro": "Renders identically to capital omega above, but is encoded as a separate character — plus the electrical unit named by flipping it upside down.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Ohm Sign (Electrical Resistance, U+2126) — Looks Like Omega, Different Codepoint"
+        },
+        {
+          "char": "℧",
+          "label": "Mho Sign (Electrical Conductance) — ‘Ohm’ Spelled Backwards, Flipped Upside Down"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Greek Letters",
+      "h2": "Alpha, Omega & Related Greek Letters",
+      "intro": "Alpha opens the Greek alphabet the way omega closes it — plus two more frequently searched Greek letters.",
+      "symbols": [
+        {
+          "char": "Α",
+          "label": "Greek Capital Letter Alpha"
+        },
+        {
+          "char": "α",
+          "label": "Greek Small Letter Alpha"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        },
+        {
+          "char": "Σ",
+          "label": "Greek Capital Letter Sigma"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet in uppercase, lowercase, and math variant forms."
+    },
+    {
+      "href": "/symbol/sigma-symbol/",
+      "title": "Sigma Symbol",
+      "desc": "The letter behind the ‘sigma male’ meme — and why 🗿 outpastes it."
+    },
+    {
+      "href": "/symbol/micro-sign/",
+      "title": "Micro Sign",
+      "desc": "The same kind of mix-up as ohm vs. omega — identical to Greek mu on screen, a different character underneath."
+    }
+  ]
+}

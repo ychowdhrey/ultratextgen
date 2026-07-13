@@ -12,6 +12,9 @@ For each page it emits:
 
 Run:  python3 scripts/generate-site-art.py
 Requires: cairosvg (PNG rasterization). SVGs are valid standalone assets.
+Arabic titles additionally need arabic-reshaper + python-bidi (cairosvg has
+no shaping/bidi engine of its own — see spanned()) and the fonts-noto-core
+apt package for Noto Sans Arabic/Devanagari glyph coverage.
 
 Visual system (shared with the guide set): soft off-white panel, brand
 purple->blue gradient accents, a faint dot grid, and one focal motif per page
@@ -149,6 +152,17 @@ def spanned(text, native):
     font cmaps. native is a family name from NATIVE_SCRIPT, or None."""
     if not text:
         return ""
+    if native == "Noto Sans Arabic":
+        # cairosvg has no shaping engine — it draws codepoints in logical
+        # order, left to right, which renders Arabic as disconnected
+        # isolated-form letters read in the wrong direction. Reshape into
+        # the correct contextual (joined) presentation forms, then reorder
+        # into visual order, so the plain per-character layout below,
+        # which resolves each *already-correct* glyph against font cmaps,
+        # just works.
+        import arabic_reshaper
+        from bidi.algorithm import get_display
+        text = get_display(arabic_reshaper.reshape(text))
     runs, cur, cur_family = [], "", None
     first = True
     for ch in text:
@@ -1178,11 +1192,15 @@ PAGES = {
 
   # ---- localized emoji-translator + emoji-letters cards ----
   # (bio-font locale cards are owned by the bio-font localization effort.)
-  # Native-script titles for ar/hi are intentionally omitted: the bundled
-  # raster fonts (DejaVu/Liberation) don't cover Arabic/Devanagari and cairosvg
-  # does no complex-script shaping, so those locales keep the shared English card.
+  # Arabic and Devanagari both get their own card: spanned() pre-shapes
+  # Arabic through arabic_reshaper + python-bidi before layout (cairosvg has
+  # no shaping/bidi engine of its own), and Noto Sans Devanagari's
+  # precomposed conjuncts already render correctly with simple mark
+  # placement, so neither needs the shared-English-card fallback.
   "de-usecase-emoji-uebersetzer": ("Emoji-Übersetzer", "Text in Emojis – und zurück", m_smiley, K_USE),
   "tr-usecase-emoji-ceviri": ("Emoji Çevirici", "Metni emojiye çevir, geri çöz", m_smiley, K_USE),
+  "ar-usecase-mutarjim-emoji": ("مترجم إيموجي", "النص إلى إيموجي، وبالعكس", m_smiley, K_USE),
+  "hi-usecase-emoji-anuvadak": ("इमोजी अनुवादक", "टेक्स्ट से इमोजी, और वापस", m_smiley, K_USE),
   "vi-usecase-dich-emoji": ("Dịch Emoji", "Chuyển văn bản thành emoji", m_smiley, K_USE),
   "es-usecase-traductor-de-emojis": ("Traductor de Emojis", "Texto a emojis y al revés", m_smiley, K_USE),
   "pt-usecase-tradutor-de-emojis": ("Tradutor de Emojis", "Texto em emojis e de volta", m_smiley, K_USE),
@@ -1238,6 +1256,7 @@ PAGES = {
   "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_gamepad, K_USE),
   "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_gamepad, K_USE),
   "tr-usecase-free-fire-nick": ("Free Fire Şekilli Nick", "Free Fire isimleri, semboller ve isim kontrolü", m_gamepad, K_USE),
+  "tr-usecase-mobile-legends-nick": ("Mobile Legends Şekilli Nick", "MLBB isimleri, semboller ve isim kontrolü", m_gamepad, K_USE),
   "tr-library-semboller": ("Şekilli Semboller", "Nick ve bio için semboller", m_grid, K_LIB),
   "tr-kucuk-yazi": ("Küçük Yazı", "Minik harfler kopyala yapıştır",
         P(m_typo, sample=" small", size=44, label="küçük yazı"), K_CAT),

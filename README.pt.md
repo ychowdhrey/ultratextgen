@@ -98,16 +98,25 @@ UltraTextGen organiza as transformações de fontes Unicode em categorias estrut
 **Todas as categorias:** https://ultratextgen.com/category/
 
 - https://ultratextgen.com/category/aesthetic-fonts/
+- https://ultratextgen.com/category/ancient-fonts/
 - https://ultratextgen.com/category/bold-fonts/
 - https://ultratextgen.com/category/bubble-fonts/
+- https://ultratextgen.com/category/case-converter/
 - https://ultratextgen.com/category/classified/
 - https://ultratextgen.com/category/cursive-fonts/
 - https://ultratextgen.com/category/cute-fonts/
+- https://ultratextgen.com/category/emoji-letter-fonts/
+- https://ultratextgen.com/category/faux-fonts/
+- https://ultratextgen.com/category/fullwidth-fonts/
 - https://ultratextgen.com/category/gothic-fonts/
 - https://ultratextgen.com/category/italic-fonts/
+- https://ultratextgen.com/category/novelty-fonts/
 - https://ultratextgen.com/category/old-english-fonts/
+- https://ultratextgen.com/category/small-caps/
 - https://ultratextgen.com/category/small-text/
 - https://ultratextgen.com/category/strikethrough-text/
+- https://ultratextgen.com/category/subscript/
+- https://ultratextgen.com/category/superscript/
 - https://ultratextgen.com/category/text-decorator/
 - https://ultratextgen.com/category/underline-text/
 - https://ultratextgen.com/category/upside-down-text/
@@ -125,9 +134,19 @@ Páginas contextuais projetadas em torno de objetivos específicos do usuário, 
 - https://ultratextgen.com/usecase/clan-tag-generator/
 - https://ultratextgen.com/usecase/comment-font/
 - https://ultratextgen.com/usecase/emoji-combinations/
+- https://ultratextgen.com/usecase/emoji-letters/
+- https://ultratextgen.com/usecase/emoji-to-text/
 - https://ultratextgen.com/usecase/football-font/
+- https://ultratextgen.com/usecase/free-fire-guild-name-generator/
+- https://ultratextgen.com/usecase/free-fire-name-generator/
 - https://ultratextgen.com/usecase/linkedin-headline/
 - https://ultratextgen.com/usecase/nickname-generator/
+- https://ultratextgen.com/usecase/old-english-translator/
+- https://ultratextgen.com/usecase/pirate-translator/
+- https://ultratextgen.com/usecase/repeat-text/
+- https://ultratextgen.com/usecase/scrolling-text/
+- https://ultratextgen.com/usecase/stylish-name/
+- https://ultratextgen.com/usecase/tattoo-fonts/
 - https://ultratextgen.com/usecase/text-to-emoji/
 - https://ultratextgen.com/usecase/vertical-text/
 - https://ultratextgen.com/usecase/zalgo-text/
@@ -139,18 +158,24 @@ As fontes não são decoração. São sinais.
 Esses recursos exploram como a tipografia Unicode codifica tom, autoridade, ironia e ênfase nas plataformas online.
 
 <!-- START_GUIDES -->
+- https://ultratextgen.com/guide/bio-formatting-without-spam/
+- https://ultratextgen.com/guide/boxes-vs-mojibake-vs-question-marks/
 - https://ultratextgen.com/guide/branding-with-fonts-for-social-media/
 - https://ultratextgen.com/guide/comments-that-stand-out/
 - https://ultratextgen.com/guide/discord-colored-text-guide/
+- https://ultratextgen.com/guide/discord-safe-name-styling/
 - https://ultratextgen.com/guide/discord-text-formatting-explained/
 - https://ultratextgen.com/guide/discord-where-fonts-work/
 - https://ultratextgen.com/guide/dividers-separators-guide/
+- https://ultratextgen.com/guide/emoticon-vs-emoji-vs-kaomoji/
 - https://ultratextgen.com/guide/fancy-fonts-accessibility-guide/
 - https://ultratextgen.com/guide/fancy-fonts-and-accents/
 - https://ultratextgen.com/guide/font-personality-and-brand/
+- https://ultratextgen.com/guide/fonts-and-search-visibility/
 - https://ultratextgen.com/guide/game-username-allowed-symbols/
 - https://ultratextgen.com/guide/how-unicode-fonts-work/
 - https://ultratextgen.com/guide/instagram-bio-line-breaks/
+- https://ultratextgen.com/guide/instagram-font-ideas/
 - https://ultratextgen.com/guide/instagram-fonts-shadowban-myth/
 - https://ultratextgen.com/guide/linkedin-bold-text-reach/
 - https://ultratextgen.com/guide/linkedin-comments-guide/
@@ -161,6 +186,7 @@ Esses recursos exploram como a tipografia Unicode codifica tom, autoridade, iron
 - https://ultratextgen.com/guide/the-rhetoric-of-fonts/
 - https://ultratextgen.com/guide/tiktok-font-changed/
 - https://ultratextgen.com/guide/vertical-text-guide/
+- https://ultratextgen.com/guide/whatsapp-text-formatting-explained/
 - https://ultratextgen.com/guide/why-fonts-show-as-boxes/
 <!-- END_GUIDES -->
 
@@ -212,7 +238,9 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/algeria-emoji-combos/
 - https://ultratextgen.com/library/alt-codes/
 - https://ultratextgen.com/library/angry-emoji/
+- https://ultratextgen.com/library/angry-kaomoji/
 - https://ultratextgen.com/library/animal-emojis/
+- https://ultratextgen.com/library/anime-symbols/
 - https://ultratextgen.com/library/argentina-emoji-combos/
 - https://ultratextgen.com/library/arrow-symbols/
 - https://ultratextgen.com/library/art-stationery-emojis/
@@ -220,10 +248,12 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/australia-emoji-combos/
 - https://ultratextgen.com/library/austria-emoji-combos/
 - https://ultratextgen.com/library/awareness-ribbons/
+- https://ultratextgen.com/library/bear-kaomoji/
 - https://ultratextgen.com/library/beauty-nails-emojis/
 - https://ultratextgen.com/library/belgium-emoji-combos/
 - https://ultratextgen.com/library/bellingham-emoji-combos/
 - https://ultratextgen.com/library/benzema-emoji-combos/
+- https://ultratextgen.com/library/blushing-kaomoji/
 - https://ultratextgen.com/library/body-language-emojis/
 - https://ultratextgen.com/library/bow-ribbon-symbols/
 - https://ultratextgen.com/library/box-drawing-symbols/
@@ -232,10 +262,12 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/brainrot-slang-emojis/
 - https://ultratextgen.com/library/brazil-emoji-combos/
 - https://ultratextgen.com/library/bullet-point-symbols/
+- https://ultratextgen.com/library/bunny-kaomoji/
 - https://ultratextgen.com/library/cameroon-emoji-combos/
 - https://ultratextgen.com/library/canada-emoji-combos/
 - https://ultratextgen.com/library/card-emoji-soccer/
 - https://ultratextgen.com/library/card-suit-symbols/
+- https://ultratextgen.com/library/cat-ascii-art/
 - https://ultratextgen.com/library/cat-kaomoji/
 - https://ultratextgen.com/library/checkmark-symbols/
 - https://ultratextgen.com/library/chess-symbols/
@@ -258,14 +290,18 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/crying-kaomoji/
 - https://ultratextgen.com/library/currency-symbols/
 - https://ultratextgen.com/library/cute-kaomoji/
+- https://ultratextgen.com/library/dark-academia-symbols/
 - https://ultratextgen.com/library/dash-hyphen-symbols/
 - https://ultratextgen.com/library/de-bruyne-emoji-combos/
-- https://ultratextgen.com/library/degree-symbol/
 - https://ultratextgen.com/library/denmark-emoji-combos/
 - https://ultratextgen.com/library/di-maria-emoji-combos/
 - https://ultratextgen.com/library/dice-domino-symbols/
 - https://ultratextgen.com/library/discord-symbols/
+- https://ultratextgen.com/library/divider-kaomoji/
 - https://ultratextgen.com/library/diwali-symbols/
+- https://ultratextgen.com/library/dog-ascii-art/
+- https://ultratextgen.com/library/dog-kaomoji/
+- https://ultratextgen.com/library/dongers/
 - https://ultratextgen.com/library/dreamcore-weirdcore-symbols/
 - https://ultratextgen.com/library/easter-symbols/
 - https://ultratextgen.com/library/ecuador-emoji-combos/
@@ -278,9 +314,11 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/emoji-meanings-guide/
 - https://ultratextgen.com/library/england-emoji-combos/
 - https://ultratextgen.com/library/evil-eye-hamsa-symbols/
+- https://ultratextgen.com/library/excited-kaomoji/
 - https://ultratextgen.com/library/face-emojis/
 - https://ultratextgen.com/library/fairycore-symbols/
 - https://ultratextgen.com/library/fantasy-mythical-emojis/
+- https://ultratextgen.com/library/flower-kaomoji/
 - https://ultratextgen.com/library/flower-symbols/
 - https://ultratextgen.com/library/foden-emoji-combos/
 - https://ultratextgen.com/library/food-drink-emojis/
@@ -298,6 +336,7 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/free-fire-name-symbols/
 - https://ultratextgen.com/library/friendship-emojis/
 - https://ultratextgen.com/library/funny-emoji-combos/
+- https://ultratextgen.com/library/gaming-aesthetic-symbols/
 - https://ultratextgen.com/library/gavi-emoji-combos/
 - https://ultratextgen.com/library/gender-symbols/
 - https://ultratextgen.com/library/geometric-symbols/
@@ -318,10 +357,13 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/happy-emoji/
 - https://ultratextgen.com/library/happy-kaomoji/
 - https://ultratextgen.com/library/hazard-warning-symbols/
+- https://ultratextgen.com/library/heart-ascii-art/
+- https://ultratextgen.com/library/heart-kaomoji/
 - https://ultratextgen.com/library/heart-symbols/
 - https://ultratextgen.com/library/hindi-symbols/
 - https://ultratextgen.com/library/honduras-emoji-combos/
 - https://ultratextgen.com/library/html-entities/
+- https://ultratextgen.com/library/hug-kaomoji/
 - https://ultratextgen.com/library/india-emoji-combos/
 - https://ultratextgen.com/library/instagram-symbols/
 - https://ultratextgen.com/library/invisible-character/
@@ -339,12 +381,15 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/kane-emoji-combos/
 - https://ultratextgen.com/library/kawaii-cute-symbols/
 - https://ultratextgen.com/library/keyboard-symbols/
+- https://ultratextgen.com/library/kiss-kaomoji/
 - https://ultratextgen.com/library/korean-symbols/
 - https://ultratextgen.com/library/kvaratskhelia-emoji-combos/
 - https://ultratextgen.com/library/latex-symbols/
 - https://ultratextgen.com/library/laughing-emoji/
+- https://ultratextgen.com/library/laughing-kaomoji/
 - https://ultratextgen.com/library/laundry-care-symbols/
 - https://ultratextgen.com/library/lautaro-martinez-emoji-combos/
+- https://ultratextgen.com/library/lenny-face/
 - https://ultratextgen.com/library/lewandowski-emoji-combos/
 - https://ultratextgen.com/library/line-divider-symbols/
 - https://ultratextgen.com/library/linkedin-comment-styling/
@@ -367,6 +412,7 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/morocco-emoji-combos/
 - https://ultratextgen.com/library/movie-night-emojis/
 - https://ultratextgen.com/library/musiala-emoji-combos/
+- https://ultratextgen.com/library/music-kaomoji/
 - https://ultratextgen.com/library/music-symbols/
 - https://ultratextgen.com/library/nature-emojis/
 - https://ultratextgen.com/library/nerd-emoji/
@@ -384,7 +430,6 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/panama-emoji-combos/
 - https://ultratextgen.com/library/paraguay-emoji-combos/
 - https://ultratextgen.com/library/party-celebration-emojis/
-- https://ultratextgen.com/library/peace-symbol/
 - https://ultratextgen.com/library/pedri-emoji-combos/
 - https://ultratextgen.com/library/people-profession-emojis/
 - https://ultratextgen.com/library/peru-emoji-combos/
@@ -392,6 +437,7 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/poop-emoji/
 - https://ultratextgen.com/library/portugal-emoji-combos/
 - https://ultratextgen.com/library/preppy-emoji-combos/
+- https://ultratextgen.com/library/pride-lgbtq-symbols/
 - https://ultratextgen.com/library/punctuation-symbols/
 - https://ultratextgen.com/library/qatar-emoji-combos/
 - https://ultratextgen.com/library/rashford-emoji-combos/
@@ -403,6 +449,7 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/rodrygo-emoji-combos/
 - https://ultratextgen.com/library/ronaldo-emoji-combos/
 - https://ultratextgen.com/library/sad-emoji/
+- https://ultratextgen.com/library/sad-kaomoji/
 - https://ultratextgen.com/library/saka-emoji-combos/
 - https://ultratextgen.com/library/salah-emoji-combos/
 - https://ultratextgen.com/library/saudi-arabia-emoji-combos/
@@ -412,8 +459,12 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/senegal-emoji-combos/
 - https://ultratextgen.com/library/serbia-emoji-combos/
 - https://ultratextgen.com/library/shocked-emoji/
+- https://ultratextgen.com/library/shocked-kaomoji/
+- https://ultratextgen.com/library/shrug-kaomoji/
 - https://ultratextgen.com/library/side-eye-emoji/
+- https://ultratextgen.com/library/skull-ascii-art/
 - https://ultratextgen.com/library/slash-backslash-symbols/
+- https://ultratextgen.com/library/sleepy-kaomoji/
 - https://ultratextgen.com/library/smiley-face-guide/
 - https://ultratextgen.com/library/soccer-emoji-copy-paste/
 - https://ultratextgen.com/library/son-emoji-combos/
@@ -424,16 +475,20 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/sparkle-symbols/
 - https://ultratextgen.com/library/special-characters/
 - https://ultratextgen.com/library/sports-emojis/
+- https://ultratextgen.com/library/star-ascii-art/
+- https://ultratextgen.com/library/star-kaomoji/
 - https://ultratextgen.com/library/star-symbols/
 - https://ultratextgen.com/library/suarez-emoji-combos/
 - https://ultratextgen.com/library/sweden-emoji-combos/
 - https://ultratextgen.com/library/switzerland-emoji-combos/
+- https://ultratextgen.com/library/table-flip-kaomoji/
 - https://ultratextgen.com/library/tech-status-symbols/
 - https://ultratextgen.com/library/text-art/
 - https://ultratextgen.com/library/text-faces-kaomoji/
 - https://ultratextgen.com/library/thanksgiving-symbols/
 - https://ultratextgen.com/library/therian-symbols/
 - https://ultratextgen.com/library/thumbs-up-emoji/
+- https://ultratextgen.com/library/thumbs-up-kaomoji/
 - https://ultratextgen.com/library/tiktok-symbols/
 - https://ultratextgen.com/library/traffic-road-sign-symbols/
 - https://ultratextgen.com/library/transport-symbols/
@@ -448,20 +503,27 @@ Sem frameworks. Sem ferramentas de build necessárias para o frontend. Código p
 - https://ultratextgen.com/library/vertical-line-symbols/
 - https://ultratextgen.com/library/vinicius-emoji-combos/
 - https://ultratextgen.com/library/wales-emoji-combos/
+- https://ultratextgen.com/library/wave-kaomoji/
 - https://ultratextgen.com/library/weapon-tool-emojis/
 - https://ultratextgen.com/library/weather-symbols/
 - https://ultratextgen.com/library/wedding-anniversary-emojis/
 - https://ultratextgen.com/library/whatsapp-symbols/
+- https://ultratextgen.com/library/wink-kaomoji/
 - https://ultratextgen.com/library/wirtz-emoji-combos/
 - https://ultratextgen.com/library/witchy-occult-symbols/
 - https://ultratextgen.com/library/world-cup-emoji-combos/
 - https://ultratextgen.com/library/x-twitter-symbols/
 - https://ultratextgen.com/library/y2k-symbols/
 - https://ultratextgen.com/library/yamal-emoji-combos/
-- https://ultratextgen.com/library/yin-yang-symbol/
 - https://ultratextgen.com/library/zodiac-symbols/
 <!-- END_LIBRARY -->
 
 <!-- START_EMBED -->
+- https://ultratextgen.com/embed/bio-font-generator/
 - https://ultratextgen.com/embed/linkedin-headline-generator/
+- https://ultratextgen.com/embed/nickname-generator/
+- https://ultratextgen.com/embed/zalgo-text-generator/
+- https://ultratextgen.com/usecase/bio-font/embed/
+- https://ultratextgen.com/usecase/nickname-generator/embed/
+- https://ultratextgen.com/usecase/zalgo-text/embed/
 <!-- END_EMBED -->
