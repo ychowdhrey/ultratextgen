@@ -851,6 +851,28 @@ def m_heart(p, accent=PURPLE):
     <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/>"""
 
 
+def m_thumb(p, accent=PURPLE):
+    """A rounded thumbs-up badge — reaction/"Like"-themed content."""
+    return f"""
+    <rect x="66" y="66" width="228" height="228" rx="44" fill="url(#g{p})"/>
+    <g transform="translate(150 96)">
+      <path d="M42 40
+               C 30 20 34 -4 54 -10
+               C 70 -15 84 -4 86 14
+               L 90 46
+               L 118 46
+               C 132 46 142 60 136 74
+               L 116 128
+               C 111 140 99 148 86 148
+               L 30 148
+               C 18 148 8 138 8 126
+               L 8 70
+               C 8 58 14 48 24 42
+               Z" fill="#fff"/>
+      <rect x="-30" y="66" width="34" height="90" rx="14" fill="#fff" opacity="0.92"/>
+    </g>"""
+
+
 # ----- printables-tool motifs -----
 
 
@@ -1461,6 +1483,8 @@ PAGES = {
   "library-emoji-meanings-guide": ("Emoji Meanings Guide", "What each emoji really means", m_smiley, K_LIB),
   "library-excited-kaomoji": ("Excited Kaomoji", "Hyped, arms-up text faces", m_kaomoji, K_LIB),
   "library-face-emojis": ("Face & Emotion Emojis", "Every mood, every expression", m_smiley, K_LIB),
+  "library-facebook-symbols": ("Facebook Symbols", "Reactions, hearts, and dividers for FB",
+        m_thumb, K_LIB),
   "library-flower-kaomoji": ("Flower Kaomoji", "Blossom-framed text faces", m_kaomoji, K_LIB),
   "library-flower-symbols": ("Flower & Nature Symbols", "Blooms and botanical accents",
         glyphs("❀", "✿", "❁", "❃", "⚘"), K_LIB),
