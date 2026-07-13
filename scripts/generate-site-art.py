@@ -12,6 +12,9 @@ For each page it emits:
 
 Run:  python3 scripts/generate-site-art.py
 Requires: cairosvg (PNG rasterization). SVGs are valid standalone assets.
+Arabic titles additionally need arabic-reshaper + python-bidi (cairosvg has
+no shaping/bidi engine of its own — see spanned()) and the fonts-noto-core
+apt package for Noto Sans Arabic/Devanagari glyph coverage.
 
 Visual system (shared with the guide set): soft off-white panel, brand
 purple->blue gradient accents, a faint dot grid, and one focal motif per page
@@ -149,6 +152,17 @@ def spanned(text, native):
     font cmaps. native is a family name from NATIVE_SCRIPT, or None."""
     if not text:
         return ""
+    if native == "Noto Sans Arabic":
+        # cairosvg has no shaping engine — it draws codepoints in logical
+        # order, left to right, which renders Arabic as disconnected
+        # isolated-form letters read in the wrong direction. Reshape into
+        # the correct contextual (joined) presentation forms, then reorder
+        # into visual order, so the plain per-character layout below,
+        # which resolves each *already-correct* glyph against font cmaps,
+        # just works.
+        import arabic_reshaper
+        from bidi.algorithm import get_display
+        text = get_display(arabic_reshaper.reshape(text))
     runs, cur, cur_family = [], "", None
     first = True
     for ch in text:
@@ -1161,9 +1175,7 @@ PAGES = {
   "fr-usecase-ecriture-bio": ("Écriture Stylée pour Bio", "Polices et symboles pour votre bio Instagram", m_profile, K_USE),
   "es-usecase-letras-para-bio": ("Letras para Bio", "Fuentes y símbolos para tu biografía de Instagram", m_profile, K_USE),
   "it-usecase-font-per-bio": ("Font per la Bio", "Caratteri e simboli per la tua bio Instagram", m_profile, K_USE),
-  # ar-usecase-khat-bio intentionally absent — see the ar/hi note below,
-  # in the emoji-translator block (cairosvg can't shape Arabic; the page
-  # keeps the shared English card).
+  "ar-usecase-khat-bio": ("خط للبايو", "خطوط ورموز لبايو انستقرام", m_profile, K_USE),
   "cs-usecase-pismo-pro-bio": ("Písmo pro Bio", "Fonty a symboly pro tvoje bio na Instagramu", m_profile, K_USE),
   "sk-usecase-pismo-pre-bio": ("Písmo pre Bio", "Fonty a symboly pre tvoje bio na Instagrame", m_profile, K_USE),
   "nl-usecase-lettertype-voor-bio": ("Lettertype voor Bio", "Lettertypes en symbolen voor je Instagram bio", m_profile, K_USE),
@@ -1180,14 +1192,14 @@ PAGES = {
 
   # ---- localized emoji-translator + emoji-letters cards ----
   # (bio-font locale cards are owned by the bio-font localization effort.)
-  # Native-script title for ar is intentionally omitted: the bundled raster
-  # fonts don't shape Arabic's contextual joining and cairosvg does no
-  # complex-script shaping, so mutarjim-emoji keeps the shared English card.
-  # Devanagari (hi) has no such problem — Noto Sans Devanagari's precomposed
-  # conjuncts render correctly with cairosvg's simple mark placement — so hi
-  # gets its own card like every other locale here.
+  # Arabic and Devanagari both get their own card: spanned() pre-shapes
+  # Arabic through arabic_reshaper + python-bidi before layout (cairosvg has
+  # no shaping/bidi engine of its own), and Noto Sans Devanagari's
+  # precomposed conjuncts already render correctly with simple mark
+  # placement, so neither needs the shared-English-card fallback.
   "de-usecase-emoji-uebersetzer": ("Emoji-Übersetzer", "Text in Emojis – und zurück", m_smiley, K_USE),
   "tr-usecase-emoji-ceviri": ("Emoji Çevirici", "Metni emojiye çevir, geri çöz", m_smiley, K_USE),
+  "ar-usecase-mutarjim-emoji": ("مترجم إيموجي", "النص إلى إيموجي، وبالعكس", m_smiley, K_USE),
   "hi-usecase-emoji-anuvadak": ("इमोजी अनुवादक", "टेक्स्ट से इमोजी, और वापस", m_smiley, K_USE),
   "vi-usecase-dich-emoji": ("Dịch Emoji", "Chuyển văn bản thành emoji", m_smiley, K_USE),
   "es-usecase-traductor-de-emojis": ("Traductor de Emojis", "Texto a emojis y al revés", m_smiley, K_USE),
