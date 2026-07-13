@@ -124,6 +124,10 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /symbol/yin-yang-symbol/            /symbol/yin-yang/  301
 /symbol/yin-yang-symbol/index.html  /symbol/yin-yang/  301
 
+# Library → Guide pillar: editorial how-to (no copy tiles, Article schema) misfiled under library/
+/library/linkedin-comment-styling/            /guide/linkedin-comment-styling/  301
+/library/linkedin-comment-styling/index.html  /guide/linkedin-comment-styling/  301
+
 # Consolidated localized pages → canonical equivalents (avoid keyword cannibalization)
 /pt/gerador-de-fontes/            /pt/                          301
 /pt/gerador-de-fontes/index.html  /pt/                          301
