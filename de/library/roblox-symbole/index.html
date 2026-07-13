@@ -443,10 +443,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
-  var ns = window.UltraTextGen;
+  const ns = window.UltraTextGen;
   if (!ns || !ns.buildGrids) return;
 
-  var GROUPS = [
+  const GROUPS = [
     { name: "Stern-Namenskombi", flags: ["⋆","★","✦","★","⋆"], defaultFormat: "inline" },
     { name: "Niedliche Schleifen-Namenskombi", flags: ["୨୧","♡","୨୧"], defaultFormat: "inline" },
     { name: "Blumen-Anzeigename", flags: ["❀","✿","❁","✿","❀"], defaultFormat: "inline" },
