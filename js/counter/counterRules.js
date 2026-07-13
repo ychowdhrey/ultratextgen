@@ -51,6 +51,7 @@
     { id: "li-headline", label: "LinkedIn headline", limit: 220, group: "bios" },
     { id: "whatsapp-about", label: "WhatsApp About", limit: 139, group: "bios" },
     { id: "telegram-bio", label: "Telegram bio", limit: 70, group: "bios" },
+    { id: "vk-status", label: "VK status", limit: 140, group: "bios" },
 
     { id: "discord-nick", label: "Discord nickname", limit: 32, group: "usernames" },
     { id: "tiktok-username", label: "TikTok username", limit: 24, group: "usernames" },
