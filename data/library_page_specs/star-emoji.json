@@ -1,0 +1,137 @@
+{
+  "slug": "star-emoji",
+  "title": "Star Emoji & Kaomoji: Copy & Paste ⭐ 🌟 ✨ Starry Combos",
+  "meta_description": "Star emoji ⭐ 🌟 ✨, five-star rating combos, night-sky sets, and star kaomoji for reviews, captions, and cosmic vibes. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/star-emoji/",
+  "breadcrumb": "Star Emoji & Kaomoji",
+  "hero_h1": "Star Emoji & Kaomoji",
+  "hero_tagline": "Rating stars, glowing stars, shooting stars, sparkles, and star-eyed kaomoji — the full picture-emoji star set. Click any symbol to copy it instantly.",
+  "intro": "The star emoji ⭐ is one of the internet's most practical picture emoji — a single tap builds a ⭐⭐⭐⭐⭐ five-star review, rates a product, or crowns a favorite in a caption. This page collects the full picture-emoji star family, from the ⭐ rating star to the 🌟 glowing star, ✨ sparkles, and 🌠 shooting star, plus night-sky companions and star-eyed kaomoji like (☆ω☆). These are full-color emoji that render as little pictures — if you want plain-text Unicode stars like ★ and ☆ that paste anywhere as characters, see the star symbols collection at /library/star-symbols/ (kaomoji and ASCII star art live on their own linked pages too). Copy a single star, a kaomoji, or a ready-made combo set with one click.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-star",
+      "label": "Core Star Emoji",
+      "h2": "Core Star Emoji",
+      "intro": "The essential picture-emoji stars, from the plain rating star to sparkles and shooting stars.",
+      "symbols": [
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💫", "label": "Dizzy" },
+        { "char": "🌠", "label": "Shooting Star" }
+      ]
+    },
+    {
+      "id": "star-ratings",
+      "label": "Ratings & Reviews",
+      "h2": "Star Ratings & Reviews",
+      "intro": "Repeat the ⭐ rating star to build a five-star review, or pair it with a trophy to signal a winner.",
+      "symbols": [
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "🏆", "label": "Trophy" }
+      ]
+    },
+    {
+      "id": "night-sky-sparkle",
+      "label": "Night Sky & Sparkle",
+      "h2": "Night Sky & Sparkle Emoji",
+      "intro": "Cosmic companions that turn a string of stars into a whole starry-night scene.",
+      "symbols": [
+        { "char": "🌌", "label": "Milky Way" },
+        { "char": "🌃", "label": "Night With Stars" },
+        { "char": "☄️", "label": "Comet" },
+        { "char": "🪐", "label": "Ringed Planet" }
+      ]
+    },
+    {
+      "id": "star-kaomoji-section",
+      "label": "Kaomoji",
+      "h2": "Star Kaomoji & Text Faces",
+      "intro": "Star-eyed Japanese text faces you can paste anywhere plain text works.",
+      "symbols": [
+        { "char": "(☆ω☆)", "label": "Starry Eyes Kaomoji" },
+        { "char": "(✯◡✯)", "label": "Sparkling Smile Kaomoji" },
+        { "char": "☆*:.｡.o(≧▽≦)o.｡.:*☆", "label": "Sparkling Joy Kaomoji" },
+        { "char": "★~(◠‿◕✿)", "label": "Starry Wink Kaomoji" },
+        { "char": "(๑>ᴗ<)☆", "label": "Excited Star Kaomoji" },
+        { "char": "✩‿✩", "label": "Twinkle Eyes Kaomoji" },
+        { "char": "(⋆❛ ہ ❛⋆)", "label": "Shimmering Gaze Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Star Emoji Combo Sets",
+    "intro": "Copy a complete star combo in one click — a five-star review, a starry sky, or a sparkle aesthetic."
+  },
+  "collection_container_id": "starSetsContainer",
+  "collections": [
+    {
+      "name": "Five Star Review",
+      "flags": ["⭐", "⭐", "⭐", "⭐", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Shooting Star Wish",
+      "flags": ["🌠", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Starry Night Sky",
+      "flags": ["🌌", "🌃", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sparkle Aesthetic",
+      "flags": ["✨", "💫", "🌟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Award Winning",
+      "flags": ["🏆", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rising Star",
+      "flags": ["🌟", "🚀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cosmic Vibes",
+      "flags": ["🪐", "☄️", "🌌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Shine Bright",
+      "flags": ["✨", "⭐", "🌟"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbol Collection",
+      "desc": "Plain-text ★ ☆ Unicode stars that paste anywhere as characters — no emoji rendering needed."
+    },
+    {
+      "href": "/library/star-kaomoji/",
+      "title": "Star Kaomoji",
+      "desc": "Star-eyed text faces like (☆ω☆) built entirely from full-width characters."
+    },
+    {
+      "href": "/library/star-ascii-art/",
+      "title": "Star ASCII Art",
+      "desc": "Multi-line ASCII star art for banners, headers, and plain-text signatures."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Twinkle and sparkle glyphs for aesthetic captions, bios, and dividers."
+    }
+  ]
+}

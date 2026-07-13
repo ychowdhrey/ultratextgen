@@ -1,0 +1,137 @@
+{
+  "slug": "tired-emoji",
+  "title": "Tired Emoji & Kaomoji: Copy & Paste 😴 🥱 Exhausted Combos",
+  "meta_description": "Copy and paste tired emoji like 😴 🥱 😫, sleepy kaomoji such as (-_-)zzz, and exhausted combo sets for captions and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/tired-emoji/",
+  "breadcrumb": "Tired Emoji & Kaomoji",
+  "hero_h1": "Tired Emoji & Kaomoji",
+  "hero_tagline": "From a drowsy 🥱 yawn to full 😩 burnout — every flavor of tired, plus sleepy kaomoji and ready-made combos. Click any symbol to copy it instantly.",
+  "intro": "Tired means two different things: the pleasant 😴 sleepy-and-ready-for-bed kind, and the 😫 exhausted, burned-out kind where you're running on empty. This page splits them cleanly — drowsy yawns and bedtime symbols on one side, weary and melting-from-exhaustion faces on the other. Around them sit recovery-mode props like ☕ coffee and 🌙 moons, classic sleepy kaomoji such as (-_-)zzz, and one-click combo sets for late-night captions and \"so done\" replies. Grab a single face or copy a whole combo depending on how tired you actually are.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "sleepy-ready-bed",
+      "label": "Sleepy & Ready for Bed",
+      "h2": "Sleepy & Ready-for-Bed Emojis",
+      "intro": "The gentle, winding-down kind of tired — yawns and heavy eyelids at the end of the day.",
+      "symbols": [
+        { "char": "😴", "label": "Sleeping Face" },
+        { "char": "🥱", "label": "Yawning Face" },
+        { "char": "😪", "label": "Sleepy Face" }
+      ]
+    },
+    {
+      "id": "exhausted-weary",
+      "label": "Exhausted & Weary",
+      "h2": "Exhausted & Weary Faces",
+      "intro": "The burned-out, running-on-empty kind of tired — worn down, overwhelmed, and done.",
+      "symbols": [
+        { "char": "😫", "label": "Tired Face" },
+        { "char": "😩", "label": "Weary Face" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "😮‍💨", "label": "Face Exhaling" }
+      ]
+    },
+    {
+      "id": "recovery-mode",
+      "label": "Recovery Mode",
+      "h2": "Recovery & Rest Symbols",
+      "intro": "The props that pair with a tired message — coffee to push through or a bed to give in.",
+      "symbols": [
+        { "char": "☕", "label": "Hot Beverage" },
+        { "char": "💤", "label": "Zzz" },
+        { "char": "🛌", "label": "Person in Bed" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🧸", "label": "Teddy Bear" }
+      ]
+    },
+    {
+      "id": "tired-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Tired Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces that doze off with full-width zzz — paste them anywhere plain text works.",
+      "symbols": [
+        { "char": "(-_-)zzz", "label": "Dozing Off Kaomoji" },
+        { "char": "(=_=)", "label": "Worn Out Kaomoji" },
+        { "char": "( ˘_˘ )", "label": "Drowsy Eyes Kaomoji" },
+        { "char": "(。-ω-)zzz", "label": "Drifting Asleep Kaomoji" },
+        { "char": "(¦3[▓▓]", "label": "Collapsed in Bed Kaomoji" },
+        { "char": "(˘̩̩̩ε˘̩̩̩)", "label": "Exhausted Pout Kaomoji" },
+        { "char": "ヾ(_ _。)ゝ", "label": "Bowing Out Tired Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Tired Emoji Combo Sets",
+    "intro": "Copy a complete tired combo in one click — from a quick yawn to total burnout."
+  },
+  "collection_container_id": "tiredSetsContainer",
+  "collections": [
+    {
+      "name": "So Done Today",
+      "flags": ["😩", "😫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Running On Empty",
+      "flags": ["🥱", "😴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Need Coffee Now",
+      "flags": ["☕", "😩"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sleepy Time",
+      "flags": ["😴", "💤", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Melting From Exhaustion",
+      "flags": ["🫠", "😮‍💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Send Me To Bed",
+      "flags": ["🛌", "💤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Barely Functioning",
+      "flags": ["😪", "☕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cozy Recovery",
+      "flags": ["🧸", "🌙", "💤"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/sleepy-kaomoji/",
+      "title": "Sleepy Kaomoji",
+      "desc": "Drowsy text faces and zzz kaomoji for winding down."
+    },
+    {
+      "href": "/library/crying-emoji/",
+      "title": "Crying Emoji & Kaomoji",
+      "desc": "Tearful faces and sobbing kaomoji for the harder days."
+    },
+    {
+      "href": "/library/sad-emoji/",
+      "title": "Sad Emoji & Kaomoji",
+      "desc": "Melancholy, low-mood faces for when tired tips into down."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    }
+  ]
+}

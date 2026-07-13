@@ -1878,6 +1878,19 @@ PAGES = {
   "es-fuentes-para-roblox": ("Fuentes para Roblox", "Letras para el nombre y la bio", m_chat, K_PLAT),
   "pl-czcionki-na-roblox": ("Czcionki na Roblox", "Generator czcionek do nazwy i bio", m_chat, K_PLAT),
   "vi-font-roblox": ("Font Chữ Roblox", "Tạo chữ đẹp cho tên và bio", m_chat, K_PLAT),
+
+  # ---- single-emoji spokes added 2026-07-13 (broad-match opportunity batch) ----
+  "library-heart-emoji": ("Heart Emoji Collection", "Every heart color and meaning", m_heart, K_LIB),
+  "library-check-mark-emoji": ("Check Mark Emoji", "Done, approved and verified marks",
+        glyphs("✓", "✔", "☑"), K_LIB),
+  "library-eyes-emoji": ("Eyes Emoji Collection", "The watching-this meme, in every form", m_smiley, K_LIB),
+  "library-skull-emoji": ("Skull Emoji Collection", "The internet's favorite way to say I'm dead", m_skull, K_LIB),
+  "library-praying-hands-emoji": ("Praying Hands Emoji", "Prayer, thanks and high-fives", m_smiley, K_LIB),
+  "library-thinking-emoji": ("Thinking Emoji Collection", "Hmm, skeptical and shrug faces", m_smiley, K_LIB),
+  "library-star-emoji": ("Star Emoji Collection", "Ratings, sparkle and shooting stars", m_star, K_LIB),
+  "library-fire-emoji": ("Fire Emoji Collection", "This is fire — hype and heat symbols", m_smiley, K_LIB),
+  "library-sunglasses-emoji": ("Sunglasses Emoji Collection", "Cool, confident and unbothered", m_smiley, K_LIB),
+  "library-tired-emoji": ("Tired Emoji Collection", "Sleepy, exhausted and running on empty", m_smiley, K_LIB),
 }
 
 
