@@ -108,6 +108,20 @@
       copyCollection: " Kopiuj zestaw",
       copiedBtn: " Skopiowano!",
       formats: { inline: "W linii", vertical: "Pionowo", comma: "Przecinki", space: "Spacje", bullet: "Punktory" }
+    },
+    th: {
+      copied: "คัดลอกแล้ว: ",
+      copyFormat: "รูปแบบการคัดลอก",
+      copyCollection: " คัดลอกคอลเลกชัน",
+      copiedBtn: " คัดลอกแล้ว!",
+      formats: { inline: "เรียงบรรทัดเดียว", vertical: "แนวตั้ง", comma: "จุลภาค", space: "เว้นวรรค", bullet: "บุลเล็ต" }
+    },
+    zh: {
+      copied: "已複製：",
+      copyFormat: "複製格式",
+      copyCollection: " 複製整組",
+      copiedBtn: " 已複製！",
+      formats: { inline: "單行", vertical: "直式", comma: "逗號", space: "空格", bullet: "項目符號" }
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
