@@ -1,0 +1,105 @@
+{
+  "slug": "recycling-symbol",
+  "page_type": "symbol",
+  "title": "Recycling Symbol: Copy & Paste ♻ — Designed by a 23-Year-Old Student for a 1970 Earth Day Contest",
+  "meta_description": "Copy and paste the recycling symbol (♻ U+267B), the three-arrow Möbius loop designed in 1970 by USC student Gary Anderson for a Container Corporation of America contest tied to the first Earth Day. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/recycling-symbol/",
+  "breadcrumb": "Recycling Symbol",
+  "hero_h1": "Recycling Symbol",
+  "hero_tagline": "The recycling symbol (♻) — the three-arrow Möbius loop designed in 1970 by Gary Anderson, then a 23-year-old USC student, for a contest tied to the first Earth Day. Click any symbol to copy it instantly.",
+  "intro": "The recycling symbol (♻, U+267B BLACK UNIVERSAL RECYCLING SYMBOL) has an unusually well-documented origin. It was designed in 1970 by Gary Anderson, then a 23-year-old student at the University of Southern California, as an entry in a design competition sponsored by the Container Corporation of America to mark the first Earth Day. The contest drew more than 500 submissions and was judged by leading designers of the day, including Saul Bass; Anderson won a $2,500 scholarship, and his design was placed in the public domain. The three chasing arrows form a Möbius strip — Anderson has said he wanted to evoke paper moving through rollers and the idea of materials cycling endlessly into new products. The popular reading of the three arrows as \"reduce, reuse, recycle\" came later; it was not the design's original stated meaning, which was simply the continuous loop itself. Unicode encoded the filled version at U+267B in version 3.2 (2002); a hollow outline variant, the UNIVERSAL RECYCLING SYMBOL, lives separately at U+2672.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "recycling-glyphs",
+      "label": "Recycling",
+      "h2": "Recycling Symbols",
+      "intro": "Unicode carries several recycling marks: the familiar filled symbol, its hollow outline, and the paper-recycling variant.",
+      "symbols": [
+        {
+          "char": "♻",
+          "label": "Recycling Symbol"
+        },
+        {
+          "char": "♲",
+          "label": "Universal Recycling Symbol (Outline)"
+        },
+        {
+          "char": "♼",
+          "label": "Recycled Paper Symbol"
+        }
+      ]
+    },
+    {
+      "id": "environment-symbols",
+      "label": "Environment & Nature",
+      "h2": "Environment & Nature Symbols",
+      "intro": "Symbols commonly paired with recycling in environmental and sustainability messaging.",
+      "symbols": [
+        {
+          "char": "🌱",
+          "label": "Seedling"
+        },
+        {
+          "char": "🌍",
+          "label": "Globe Showing Europe-Africa"
+        },
+        {
+          "char": "🍃",
+          "label": "Leaf Fluttering in Wind"
+        },
+        {
+          "char": "🌳",
+          "label": "Deciduous Tree"
+        },
+        {
+          "char": "💧",
+          "label": "Droplet"
+        }
+      ]
+    },
+    {
+      "id": "sign-pictograms",
+      "label": "Signs & Pictograms",
+      "h2": "Signs & Standardized Pictograms",
+      "intro": "Other internationally standardized pictograms and warning marks in the same functional family.",
+      "symbols": [
+        {
+          "char": "♿",
+          "label": "Wheelchair Symbol"
+        },
+        {
+          "char": "☣️",
+          "label": "Biohazard"
+        },
+        {
+          "char": "⚠️",
+          "label": "Warning"
+        },
+        {
+          "char": "☢️",
+          "label": "Radioactive"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/recycle-environment-symbols/",
+      "title": "Recycle & Environment Symbols",
+      "desc": "Recycling marks, eco labels, and nature symbols in one reference — this page is the hub's dedicated recycling-symbol spoke."
+    },
+    {
+      "href": "/symbol/biohazard-symbol/",
+      "title": "Biohazard Symbol",
+      "desc": "Another modern pictogram with a documented corporate design origin — created at Dow Chemical in 1966 to be deliberately \"memorable but meaningless.\""
+    },
+    {
+      "href": "/symbol/wheelchair-symbol/",
+      "title": "Wheelchair Symbol",
+      "desc": "Another internationally standardized pictogram with a specific, traceable design history."
+    }
+  ]
+}
