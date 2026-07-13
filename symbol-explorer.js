@@ -122,6 +122,27 @@
       copyCollection: " 複製整組",
       copiedBtn: " 已複製！",
       formats: { inline: "單行", vertical: "直式", comma: "逗號", space: "空格", bullet: "項目符號" }
+    },
+    ko: {
+      copied: "복사됨: ",
+      copyFormat: "복사 형식",
+      copyCollection: " 컬렉션 전체 복사",
+      copiedBtn: " 복사됨!",
+      formats: { inline: "한 줄로", vertical: "세로로", comma: "쉼표로", space: "공백으로", bullet: "불릿으로" }
+    },
+    ar: {
+      copied: "تم النسخ: ",
+      copyFormat: "صيغة النسخ",
+      copyCollection: " نسخ المجموعة",
+      copiedBtn: " تم النسخ!",
+      formats: { inline: "متتالٍ", vertical: "عمودي", comma: "بفواصل", space: "بمسافات", bullet: "نقطي" }
+    },
+    no: {
+      copied: "Kopiert: ",
+      copyFormat: "Kopieringsformat",
+      copyCollection: " Kopier samling",
+      copiedBtn: " Kopiert!",
+      formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
