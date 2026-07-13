@@ -1481,6 +1481,7 @@ PAGES = {
         glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB),
   "library-hug-kaomoji": ("Hug Kaomoji", "Open-armed hugging faces", m_kaomoji, K_LIB),
   "library-instagram-symbols": ("Instagram Symbols", "Symbols that shine in your bio", m_camera, K_LIB),
+  "library-iphone-emojis": ("iPhone Emojis", "Copy Apple's emoji artwork", m_smiley, K_LIB),
   "library-kawaii-cute-symbols": ("Kawaii & Cute Symbols", "Adorable Japanese-style accents",
         glyphs("♡", "❀", "✧", "⊹", "✦"), K_LIB),
   "library-kiss-kaomoji": ("Kiss Kaomoji", "Kiss-blowing text faces", m_kaomoji, K_LIB),

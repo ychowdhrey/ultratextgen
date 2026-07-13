@@ -91,10 +91,17 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /usecase/bio-text/index.html          /usecase/bio-font/     301
 /usecase/social-post-text/            /usecase/comment-font/ 301
 /usecase/social-post-text/index.html  /usecase/comment-font/ 301
+/usecase/comment-text/                /usecase/comment-font/ 301
+/usecase/comment-text/index.html      /usecase/comment-font/ 301
 
 # Category: dead slug → hub (GSC 404 cleanup, no single-category equivalent)
 /category/popular/            /category/ 301
 /category/popular/index.html  /category/ 301
+
+# Root asset: /og.png was renamed to a descriptive, convention-aligned asset
+# (see docs/image-seo-fixes.md). Redirect stale crawled/cached references
+# instead of letting them 404 (GSC 404 cleanup).
+/og.png  /assets/og/fancy-text-generator-preview.png  301
 
 # Cloudflare email-obfuscation artifact: if this ever reaches Netlify origin
 # directly (rather than being served at the CF edge), send it somewhere real

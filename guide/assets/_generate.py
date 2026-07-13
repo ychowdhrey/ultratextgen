@@ -253,6 +253,30 @@ def m_accessibility(p):
           text-anchor="middle">&#8220;mathematical bold capital B&#8230;&#8221;</text>"""
 
 
+def m_accents(p):
+    # a diacritic that survives styling next to one that drops it
+    return f"""
+    <g transform="translate(70 130)">
+      <rect width="110" height="110" rx="20" fill="url(#g{p})"/>
+      <text x="55" y="80" font-family="Georgia, {SANS}" font-size="66"
+            font-weight="700" fill="#fff" text-anchor="middle">&#225;</text>
+    </g>
+    <circle cx="204" cy="122" r="16" fill="{PURPLE}"/>
+    <path d="M196 122 L201 128 L212 114" stroke="#fff" stroke-width="3.5"
+          fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(230 130)">
+      <rect width="110" height="110" rx="20" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.12"/>
+      <text x="55" y="80" font-family="Georgia, {SANS}" font-size="66"
+            font-weight="700" fill="{SUB}" text-anchor="middle" opacity="0.55">a</text>
+    </g>
+    <circle cx="364" cy="122" r="16" fill="{SUB}" opacity="0.55"/>
+    <path d="M357 115 L371 129 M371 115 L357 129" stroke="#fff" stroke-width="3.5"
+          stroke-linecap="round"/>
+    <text x="200" y="288" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">the mark survives here &#8212; drops there</text>"""
+
+
 def m_discord(p):
     # the 3-system model: three stacked chips
     rows = [("MD", "#fff", INK, "message only"),
@@ -720,6 +744,8 @@ GUIDES = {
               "The Restraint Framework for symbols", m_restraint),
     "discord-safe-name-styling": ("Style a Discord Name Without Getting Filtered",
               "Member list, mentions & impersonation", m_discord_safe_name),
+    "fancy-fonts-and-accents": ("Accents, Diacritics & Fancy Fonts",
+              "What keeps its marks and what breaks", m_accents),
 }
 
 
