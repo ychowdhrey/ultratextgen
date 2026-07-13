@@ -94,14 +94,14 @@
       "h2": "Page & Group Name Symbols",
       "intro": "Frame and bracket characters for Page names, Group names, and Business Page usernames — fields with more room for decoration than a personal profile Name.",
       "symbols": [
-        { "char": "꒰", "label": "Ornamental Left Parenthesis" },
-        { "char": "꒱", "label": "Ornamental Right Parenthesis" },
+        { "char": "꒰", "label": "Yi Radical Shy" },
+        { "char": "꒱", "label": "Yi Radical Vep" },
         { "char": "【", "label": "Left Black Lenticular Bracket" },
         { "char": "】", "label": "Right Black Lenticular Bracket" },
         { "char": "「", "label": "Left Corner Bracket" },
         { "char": "」", "label": "Right Corner Bracket" },
         { "char": "⋆", "label": "Star Operator" },
-        { "char": "⊹", "label": "Orthogonal Cross" }
+        { "char": "⊹", "label": "Hermitian Conjugate Matrix" }
       ]
     }
   ],
