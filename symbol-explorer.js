@@ -94,6 +94,20 @@
       copyCollection: " Kopieer collectie",
       copiedBtn: " Gekopieerd!",
       formats: { inline: "Op één regel", vertical: "Verticaal", comma: "Komma's", space: "Spaties", bullet: "Lijst" }
+    },
+    it: {
+      copied: "Copiato: ",
+      copyFormat: "Formato di copia",
+      copyCollection: " Copia collezione",
+      copiedBtn: " Copiato!",
+      formats: { inline: "In linea", vertical: "Verticale", comma: "Virgola", space: "Spazio", bullet: "Elenco puntato" }
+    },
+    pl: {
+      copied: "Skopiowano: ",
+      copyFormat: "Format kopiowania",
+      copyCollection: " Kopiuj zestaw",
+      copiedBtn: " Skopiowano!",
+      formats: { inline: "W linii", vertical: "Pionowo", comma: "Przecinki", space: "Spacje", bullet: "Punktory" }
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
