@@ -1913,6 +1913,26 @@ PAGES = {
   "library-eggplant-emoji": ("Eggplant Emoji Collection", "Literal meaning and internet slang", m_smiley, K_LIB),
   "library-facepalm-emoji": ("Facepalm Emoji Collection", "Exasperated, done-with-it reactions", m_smiley, K_LIB),
   "library-clown-emoji": ("Clown Emoji Collection", "Circus symbols and clown-check memes", m_smiley, K_LIB),
+
+  # ---- single-emoji spokes added 2026-07-13 (broad-match opportunity batch 3) ----
+  "library-pleading-emoji": ("Pleading Emoji Collection", "Puppy eyes and begging faces", m_smiley, K_LIB),
+  "library-embarrassed-emoji": ("Embarrassed Emoji Collection", "Mortified and caught-off-guard faces", m_smiley, K_LIB),
+  "library-annoyed-emoji": ("Annoyed Emoji Collection", "Irritated, fed-up and exasperated faces", m_smiley, K_LIB),
+  "library-cringe-emoji": ("Cringe Emoji Collection", "Secondhand embarrassment and yikes faces", m_smiley, K_LIB),
+  "library-sigh-emoji": ("Sigh Emoji Collection", "Relief, resignation and exhaling faces", m_smiley, K_LIB),
+  "library-choking-emoji": ("Choking Emoji Collection", "Knocked-out and dying-of-laughter faces", m_smiley, K_LIB),
+  "library-halo-emoji": ("Halo Emoji Collection", "Innocent and angelic smiley faces", m_smiley, K_LIB),
+  "library-rocket-emoji": ("Rocket Emoji Collection", "Launch, hype and to-the-moon symbols", m_plane, K_LIB),
+  "library-high-five-emoji": ("High Five Emoji Collection", "Celebration and team-cheer hands", m_thumb, K_LIB),
+  "library-clap-emoji": ("Clap Emoji Collection", "Applause and word-for-word emphasis combos", m_thumb, K_LIB),
+  "library-crown-emoji": ("Crown Emoji Collection", "Royalty, queen and king slang symbols", m_trophy, K_LIB),
+  "library-ghost-emoji": ("Ghost Emoji Collection", "Spooky faces and ghosting slang symbols", m_pumpkin, K_LIB),
+  "library-angel-emoji": ("Angel Emoji Collection", "Guardian angels and in-loving-memory symbols", m_heart, K_LIB),
+  "library-peace-emoji": ("Peace Emoji Collection", "Peace sign, dove and harmony symbols", m_thumb, K_LIB),
+  "library-dancing-emoji": ("Dancing Emoji Collection", "Dancer figures and dance-floor symbols", m_note, K_LIB),
+  "library-cowboy-emoji": ("Cowboy Emoji Collection", "Yeehaw and Wild West symbols", m_smiley, K_LIB),
+  "library-muscle-emoji": ("Muscle Emoji Collection", "Flex, gym and gains symbols", m_thumb, K_LIB),
+  "library-gift-emoji": ("Gift Emoji Collection", "Presents, surprises and celebration symbols", m_firework, K_LIB),
 }
 
 

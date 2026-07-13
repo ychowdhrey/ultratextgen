@@ -1,0 +1,141 @@
+{
+  "slug": "cowboy-emoji",
+  "title": "Cowboy Emoji: Copy & Paste 🤠 Yeehaw & Western Combos",
+  "meta_description": "Copy and paste the 🤠 cowboy hat face emoji, Western/rodeo symbols like 🐴 🌵 🥾, and yeehaw combo sets for captions and bios. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/cowboy-emoji/",
+  "breadcrumb": "Cowboy Emoji",
+  "hero_h1": "Cowboy Emoji",
+  "hero_tagline": "The 🤠 cowboy hat face is the internet's go-to yeehaw emoji — pair it with horses, cacti, and sheriff-star stand-ins for Western-themed captions and memes. Click any symbol to copy it instantly.",
+  "intro": "The 🤠 cowboy hat face has become one of the internet's favorite reaction emoji, riding the 'yeehaw' meme wave that turns any post into a Wild West joke — sung, shouted, or captioned with a drawled 'howdy, partner.' It shows up in TikTok captions, Discord reactions, and X posts whenever something feels a little too rowdy, rural, or delightfully unhinged, often stacked three or four times in a row (🤠🤠🤠) for emphasis. Unicode doesn't have a full cowboy-and-horse emoji story, so this page rounds up the real symbols people reach for instead: the cowboy hat face itself, Western and rodeo staples like 🐴 🌵 🥾 🪢, and the closest star and badge glyphs to a sheriff's star. Every combo set below is ready to paste straight into a caption, bio, or comment — no invented emoji, just the closest real Unicode has to a full Wild West kit.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "cowboy-hat-face",
+      "label": "The Cowboy Hat Face",
+      "h2": "The 🤠 Cowboy Hat Face & Hat Cousins",
+      "intro": "There's only one true cowboy hat face in Unicode, but it usually runs with a posse of other hat and 'too cool' faces in the same joke format.",
+      "symbols": [
+        { "char": "🤠", "label": "Cowboy Hat Face" },
+        { "char": "🎩", "label": "Top Hat" },
+        { "char": "👒", "label": "Woman's Hat" },
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "🥸", "label": "Disguised Face" },
+        { "char": "🫡", "label": "Saluting Face" }
+      ]
+    },
+    {
+      "id": "western-rodeo",
+      "label": "Western & Rodeo",
+      "h2": "Western & Rodeo Emoji",
+      "intro": "The horse, cactus, boot, and rope emoji that build out a Wild West scene without reaching for anything weapon-related.",
+      "symbols": [
+        { "char": "🐴", "label": "Horse Face" },
+        { "char": "🐎", "label": "Horse" },
+        { "char": "🌵", "label": "Cactus" },
+        { "char": "🥾", "label": "Hiking Boot" },
+        { "char": "🪢", "label": "Knot" },
+        { "char": "🏜️", "label": "Desert" },
+        { "char": "🌄", "label": "Sunrise Over Mountains" },
+        { "char": "⛺", "label": "Tent" }
+      ]
+    },
+    {
+      "id": "star-badge",
+      "label": "Star & Badge",
+      "h2": "Star, Badge & Frontier Symbols",
+      "intro": "Unicode has no literal sheriff badge or horseshoe emoji, so these stars, medals, and frontier glyphs are the closest real stand-ins.",
+      "symbols": [
+        { "char": "⭐", "label": "Star" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🏅", "label": "Sports Medal" },
+        { "char": "🧭", "label": "Compass" },
+        { "char": "🧲", "label": "Magnet (Horseshoe Shape)" },
+        { "char": "🦅", "label": "Eagle" }
+      ]
+    },
+    {
+      "id": "howdy-reactions",
+      "label": "Howdy & Yeehaw Reactions",
+      "h2": "Howdy & Yeehaw Meme Reactions",
+      "intro": "The reaction emoji that ride along with 🤠 in yeehaw memes and 'howdy' internet culture — greetings, hype, and the 'I'm dead' laugh.",
+      "symbols": [
+        { "char": "👋", "label": "Waving Hand" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "🤣", "label": "Rolling on the Floor Laughing" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🔥", "label": "Fire" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Cowboy Emoji Combo Sets",
+    "intro": "Ready-made yeehaw and Western combos — copy a full set with one click and paste it straight into a caption, bio, or comment."
+  },
+  "collection_container_id": "cowboySetsContainer",
+  "collections": [
+    {
+      "name": "Howdy Partner",
+      "flags": ["🤠", "👋", "🐴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Yeehaw Mode",
+      "flags": ["🤠", "🔥", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wild West Ride",
+      "flags": ["🐎", "🌵", "🏜️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rodeo Ready",
+      "flags": ["🤠", "🐴", "🥾"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sheriff Star",
+      "flags": ["🤠", "⭐", "🧭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cowboy Core Aesthetic",
+      "flags": ["🤠", "🌵", "🪢"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sunset Trail Ride",
+      "flags": ["🌄", "🐎", "🌵"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every expressive face emoji to pair with your cowboy hat reactions."
+    },
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal & Creature Emojis",
+      "desc": "Horses and every other animal emoji for building out a Wild West scene."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "100+ aesthetic copy-paste combo sets beyond the Western theme."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emoji Combos",
+      "desc": "The internet slang and meme emoji trends that yeehaw culture runs alongside."
+    }
+  ]
+}

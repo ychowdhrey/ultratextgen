@@ -1,0 +1,144 @@
+{
+  "slug": "high-five-emoji",
+  "title": "High Five Emoji: Copy & Paste ✋🙌 Celebration Combos",
+  "meta_description": "High five emoji ✋🙌, raised-hands celebration symbols, and clapping combos for wins, congrats, and team shoutouts. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/high-five-emoji/",
+  "breadcrumb": "High Five Emoji",
+  "hero_h1": "High Five Emoji",
+  "hero_tagline": "The ✋ high-five slap, 🙌 raised-hands cheer, and every clapping, fist-bump, and confetti symbol for celebrating a win. Click any symbol to copy it instantly.",
+  "intro": "There's no single official 'high five' emoji — the moment is built from a small combo of hands: the raised ✋ palm mid-slap, the 🙌 raised hands thrown up in celebration, and the 🤚 back-of-hand wave that reads as an open palm ready to meet another. This page gathers that whole celebratory cluster — the high-five and raised-hands gestures, the clapping 👏 and fist-bump 👊 moves that round out a team win, congratulations faces and confetti, and kaomoji that mimic the gesture in plain text. Grab a single symbol or copy a ready-made combo for a win, a shoutout, or a 'we did it' moment. If you want the broader deal-and-greeting range instead, the handshake emoji page covers agreements and hellos, and the hand symbols hub browses every hand gesture in one grid.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "the-high-five",
+      "label": "The High Five",
+      "h2": "The High Five & Raised Hands",
+      "intro": "The core gesture set — an open palm ready to slap and both hands thrown up in celebration.",
+      "symbols": [
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🖐", "label": "Raised Hand With Fingers Splayed" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "🤚", "label": "Back of Hand" },
+        { "char": "🫱", "label": "Rightwards Hand" },
+        { "char": "🫲", "label": "Leftwards Hand" }
+      ]
+    },
+    {
+      "id": "team-cheer",
+      "label": "Team Cheer",
+      "h2": "Clapping, Fist Bumps & Team Cheer",
+      "intro": "The moves that round out a group celebration — claps, bumps, and flexed pride.",
+      "symbols": [
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "👊", "label": "Oncoming Fist" },
+        { "char": "🤜", "label": "Right-Facing Fist" },
+        { "char": "🤛", "label": "Left-Facing Fist" },
+        { "char": "💪", "label": "Flexed Biceps" },
+        { "char": "🫶", "label": "Heart Hands" }
+      ]
+    },
+    {
+      "id": "win-celebration",
+      "label": "Win & Celebration",
+      "h2": "Congrats, Wins & Confetti",
+      "intro": "The faces and effects that show up right alongside a high five — trophies, confetti, and celebration faces.",
+      "symbols": [
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🎊", "label": "Confetti Ball" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "😁", "label": "Beaming Face With Smiling Eyes" }
+      ]
+    },
+    {
+      "id": "high-five-kaomoji",
+      "label": "Kaomoji",
+      "h2": "High Five & Cheer Kaomoji",
+      "intro": "Japanese-style text faces that throw their hands up or reach in for a slap — paste them anywhere plain text works.",
+      "symbols": [
+        { "char": "\\(^o^)/", "label": "Cheering Arms Up Kaomoji" },
+        { "char": "\\(≧▽≦)/", "label": "Excited Celebration Kaomoji" },
+        { "char": "ヽ(^o^)丿", "label": "Big Cheer Kaomoji" },
+        { "char": "(ノ°ο°)ノ", "label": "Arms Raised Kaomoji" },
+        { "char": "\\(★^O^★)/", "label": "Starry-Eyed Celebration Kaomoji" },
+        { "char": "٩(◕‿◕)۶", "label": "Happy Hands Kaomoji" },
+        { "char": "\\(^▽^)/", "label": "Joyful Cheer Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "High Five Emoji Combo Sets",
+    "intro": "Ready-made high-five and celebration combos — copy a full set with one click and paste it straight into a comment, caption, or team chat."
+  },
+  "collection_container_id": "highFiveSetsContainer",
+  "collections": [
+    {
+      "name": "High Five",
+      "flags": ["✋", "🙌", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "We Did It",
+      "flags": ["🙌", "🎉", "🥳"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Team Win",
+      "flags": ["🙌", "👏", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nice One",
+      "flags": ["✋", "👏", "😁"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Squad Celebration",
+      "flags": ["🙌", "💪", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Congrats",
+      "flags": ["🎉", "🙌", "🏆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fist Bump",
+      "flags": ["👊", "🤜", "🤛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Proud Moment",
+      "flags": ["🙌", "✨", "🫶"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/handshake-emoji/",
+      "title": "Handshake Emoji & Kaomoji",
+      "desc": "The clasped handshake, waves, and deal-making symbols for greetings and agreements."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Every hand gesture and pointing symbol in one browsable grid."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, party poppers, and celebration combos to pair with a high five."
+    },
+    {
+      "href": "/library/thumbs-up-emoji/",
+      "title": "Thumbs Up Emoji",
+      "desc": "Approval and agreement gestures for a quick yes."
+    }
+  ]
+}
