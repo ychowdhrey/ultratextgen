@@ -36,7 +36,7 @@ EXISTING = {
     "emoji-meanings-guide", "face-emojis", "flower-symbols", "food-drink-emojis",
     "geometric-symbols", "goth-grunge-symbols", "hand-symbols", "heart-symbols",
     "instagram-symbols", "kawaii-cute-symbols", "line-divider-symbols",
-    "linkedin-comment-styling", "linkedin-symbol-library", "math-symbols",
+    "linkedin-symbol-library", "math-symbols",
     "moon-celestial-symbols", "music-symbols", "norse-viking-runes", "number-symbols",
     "people-profession-emojis", "religious-symbols", "roblox-symbols",
     "slash-backslash-symbols", "smiley-face-guide", "sparkle-symbols",

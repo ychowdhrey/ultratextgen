@@ -1,0 +1,93 @@
+{
+  "slug": "congruent-symbol",
+  "page_type": "symbol",
+  "title": "Congruent Symbol: Copy & Paste ≅ — The Sign Unicode Doesn't Even Call ‘Congruent’",
+  "meta_description": "Copy and paste the congruent symbol ≅ — the geometry sign for ‘same shape and size’ that Unicode officially names ‘Approximately Equal To’ (U+2245) — and tell it apart from the look-alikes ≈ and ≡. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/congruent-symbol/",
+  "breadcrumb": "Congruent Symbol",
+  "hero_h1": "Congruent Symbol",
+  "hero_tagline": "The ≅ that every geometry class uses for congruent shapes — same shape, same size — even though Unicode's official name for it is ‘Approximately Equal To.’ Plus the look-alikes ≈ and ≡ it's constantly confused with. Click any symbol to copy it instantly.",
+  "intro": "The congruent symbol, ≅, is the one math teachers draw when two shapes are congruent — identical in both shape and size. Here's the quirk: Unicode doesn't call it that. Its official name for the character (U+2245) is ‘APPROXIMATELY EQUAL TO,’ a label that never mentions congruence at all, yet ≅ is exactly the glyph geometry classrooms worldwide reach for. The symbol reads as two ideas stacked — the ≈ of approximation over the = of equality — and it sits in a crowded neighborhood of easily-confused relatives. ≈ (U+2248, ALMOST EQUAL TO) means ‘approximately,’ the one you'd use for π ≈ 3.14. ≡ (U+2261, IDENTICAL TO) means something stronger — identity, and in number theory it's the congruence sign of modular arithmetic, as in ‘17 ≡ 2 (mod 5).’ Three symbols, three jobs, all built from stacked horizontal strokes, and all routinely typed in place of one another. This page keeps them straight and lets you copy the exact one you need.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-congruent-symbol",
+      "label": "The Congruent Symbol",
+      "h2": "The Congruent Symbol — ≅",
+      "intro": "The glyph geometry uses for congruence — same shape and size — even though Unicode's official name for it makes no mention of the word. Its close visual cousin ≃ carries a single tilde instead of a double one.",
+      "symbols": [
+        {
+          "char": "≅",
+          "label": "Congruent To — Officially ‘Approximately Equal To’ (U+2245)"
+        },
+        {
+          "char": "≃",
+          "label": "Asymptotically Equal To (U+2243) — The Single-Tilde Cousin"
+        }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Telling Them Apart",
+      "h2": "≅ vs. ≈ vs. ≡ — The Confusable Neighbors",
+      "intro": "Three stacked-stroke symbols that get swapped constantly, each with its own job. Congruent (same shape and size), approximately equal (a rough estimate), and identical to (true identity and modular congruence).",
+      "symbols": [
+        {
+          "char": "≅",
+          "label": "Approximately Equal To (U+2245) — Used for Geometric Congruence"
+        },
+        {
+          "char": "≈",
+          "label": "Almost Equal To (U+2248) — Approximation, e.g. π ≈ 3.14"
+        },
+        {
+          "char": "≡",
+          "label": "Identical To (U+2261) — Identity & Modular Congruence"
+        }
+      ]
+    },
+    {
+      "id": "more-relation-symbols",
+      "label": "Relation Symbols",
+      "h2": "More Math Relation Symbols",
+      "intro": "The rest of the ‘equals family’ that lives beside the congruent sign in equations and proofs.",
+      "symbols": [
+        {
+          "char": "≠",
+          "label": "Not Equal To (U+2260)"
+        },
+        {
+          "char": "=",
+          "label": "Equals Sign"
+        },
+        {
+          "char": "≤",
+          "label": "Less-Than or Equal To"
+        },
+        {
+          "char": "≥",
+          "label": "Greater-Than or Equal To"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "The full set of relations, operators, and Greek letters that the congruent sign lives among in equations."
+    },
+    {
+      "href": "/symbol/not-equal-sign/",
+      "title": "Not Equal Sign",
+      "desc": "The opposite relation — and a close neighbor in the same ‘equals family’ of math symbols."
+    },
+    {
+      "href": "/symbol/omega-symbol/",
+      "title": "Omega Symbol",
+      "desc": "Another character whose everyday identity — the ohm sign for electrical resistance — isn't the name Unicode officially gives it."
+    }
+  ]
+}

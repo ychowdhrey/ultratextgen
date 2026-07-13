@@ -178,6 +178,7 @@ https://ultratextgen.com
 - https://ultratextgen.com/guide/instagram-font-ideas/
 - https://ultratextgen.com/guide/instagram-fonts-shadowban-myth/
 - https://ultratextgen.com/guide/linkedin-bold-text-reach/
+- https://ultratextgen.com/guide/linkedin-comment-styling/
 - https://ultratextgen.com/guide/linkedin-comments-guide/
 - https://ultratextgen.com/guide/linkedin-fonts-recruiters-ats/
 - https://ultratextgen.com/guide/personal-branding-through-typography/
@@ -392,7 +393,6 @@ ultratextgen/
 - https://ultratextgen.com/library/lenny-face/
 - https://ultratextgen.com/library/lewandowski-emoji-combos/
 - https://ultratextgen.com/library/line-divider-symbols/
-- https://ultratextgen.com/library/linkedin-comment-styling/
 - https://ultratextgen.com/library/linkedin-symbol-library/
 - https://ultratextgen.com/library/loading-text-symbols/
 - https://ultratextgen.com/library/love-kaomoji/
