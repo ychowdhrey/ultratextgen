@@ -1,0 +1,117 @@
+{
+  "slug": "not-equal-sign",
+  "page_type": "symbol",
+  "title": "Not Equal Sign: Copy & Paste ≠ — Math's Negation Mark, and Why Code Uses != Instead",
+  "meta_description": "Copy and paste the not equal sign (≠), see the full ≁ ≉ ≢ ≮ ≯ negation family it belongs to, and learn why programming languages use != or <> instead. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/not-equal-sign/",
+  "breadcrumb": "Not Equal Sign",
+  "hero_h1": "Not Equal Sign",
+  "hero_tagline": "The equals sign with a slash through it (≠) — used in mathematics since at least Euler's era, the source of a whole family of negated-relation symbols, and left out of ASCII, which is why code uses != instead. Click any symbol to copy it instantly.",
+  "intro": "The not equal sign (≠, U+2260) combines the equals sign with a diagonal slash — Unicode's own decomposition shows it as literally “=” plus a combining slash overlay (U+0338), the same mark that produces a whole family of negated relations: ≁, ≉, ≢, ≮, ≯. The slash-negation convention is a distinct, later story from Robert Recorde's 1557 invention of “=” itself — the earliest known written use traces to Leonhard Euler's 18th-century correspondence, though historians of mathematics are careful to say the symbol was used by Euler, not necessarily invented by him. Because ASCII never allocated a slot for ≠, programming languages substituted their own stand-ins — != in C-family languages, <> in SQL and Pascal, ~= in Lua and MATLAB, /= in Fortran and Haskell — which is why the math symbol and the code you actually type are almost never the same character.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "not-equal-sign",
+      "label": "Not Equal",
+      "h2": "Not Equal To, Across Math and Code",
+      "intro": "The math symbol, and the ASCII stand-ins different programming languages adopted since ≠ itself was never part of the character set.",
+      "symbols": [
+        {
+          "char": "≠",
+          "label": "Not Equal To (Math)"
+        },
+        {
+          "char": "!=",
+          "label": "Not Equal (C, Python, JavaScript, Java)"
+        },
+        {
+          "char": "<>",
+          "label": "Not Equal (SQL, Pascal, BASIC)"
+        },
+        {
+          "char": "~=",
+          "label": "Not Equal (Lua, MATLAB)"
+        },
+        {
+          "char": "/=",
+          "label": "Not Equal (Fortran, Haskell)"
+        }
+      ]
+    },
+    {
+      "id": "negated-relation-family",
+      "label": "Negated Relations",
+      "h2": "The Negated Relation Family",
+      "intro": "≠ isn't alone — the same diagonal-slash overlay negates several other relation symbols in Unicode's Mathematical Operators block.",
+      "symbols": [
+        {
+          "char": "≁",
+          "label": "Not Tilde"
+        },
+        {
+          "char": "≉",
+          "label": "Not Almost Equal To"
+        },
+        {
+          "char": "≢",
+          "label": "Not Identical To"
+        },
+        {
+          "char": "≮",
+          "label": "Not Less Than"
+        },
+        {
+          "char": "≯",
+          "label": "Not Greater Than"
+        }
+      ]
+    },
+    {
+      "id": "related-comparison-symbols",
+      "label": "Comparison Symbols",
+      "h2": "Related Comparison Symbols",
+      "intro": "The positive relations ≠ negates — useful when you need the un-slashed version instead.",
+      "symbols": [
+        {
+          "char": "=",
+          "label": "Equals Sign"
+        },
+        {
+          "char": "≈",
+          "label": "Approximately Equal To"
+        },
+        {
+          "char": "≡",
+          "label": "Identical To"
+        },
+        {
+          "char": "<",
+          "label": "Less Than"
+        },
+        {
+          "char": ">",
+          "label": "Greater Than"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Operators, set notation, and mathematical constants in one browsable reference."
+    },
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than & Greater Than",
+      "desc": "The comparison symbols ≠ sits alongside, and why they can break HTML."
+    },
+    {
+      "href": "/symbol/plus-minus/",
+      "title": "Plus-Minus Symbol",
+      "desc": "Another math relation symbol pulled out of the math-symbols library for its own page."
+    }
+  ]
+}
