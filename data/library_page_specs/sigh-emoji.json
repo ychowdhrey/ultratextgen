@@ -1,0 +1,144 @@
+{
+  "slug": "sigh-emoji",
+  "title": "Sigh Emoji & Kaomoji: Copy & Paste 😮‍💨 Relief Combos",
+  "meta_description": "Copy and paste sigh emoji like 😮‍💨 😌 😥, exasperated kaomoji such as (¬_¬), and relief combo sets for captions and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/sigh-emoji/",
+  "breadcrumb": "Sigh Emoji & Kaomoji",
+  "hero_h1": "Sigh Emoji & Kaomoji",
+  "hero_tagline": "From a relieved exhale to a flat 'well, that happened' — every sigh emoji, exasperated kaomoji, and one-click combo for the moment it's finally over. Click any symbol to copy it instantly.",
+  "intro": "The exhaling face 😮‍💨 is the internet's go-to sigh, and it stretches to cover a lot: relief after a close call, exasperation at yet another delay, or the flat resignation of watching something go wrong and not having the energy to react. This page collects that whole range — the relieved exhale of 😌 and 😥, the eye-rolling exasperation of 🙄 and 😒, wind-and-shrug props like 💨 and 🤷, and plain-text sigh kaomoji such as (¬_¬) for anywhere emoji don't render. If you want general exhaustion or sleepiness instead, the tired emoji page covers yawns and burnout; this one stays focused on the exhale itself, not the run-down. Grab a single face or copy a ready-made combo depending on how big the sigh is.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "sigh-relief",
+      "label": "Sigh & Relief",
+      "h2": "Sigh & Relief Emoji",
+      "intro": "The literal exhale — relief after tension breaks, or a shaky laugh once the worst part is over.",
+      "symbols": [
+        { "char": "😮‍💨", "label": "Face Exhaling" },
+        { "char": "😌", "label": "Relieved Face" },
+        { "char": "😥", "label": "Sad but Relieved Face" },
+        { "char": "😅", "label": "Grinning Face with Sweat" },
+        { "char": "😓", "label": "Downcast Face with Sweat" },
+        { "char": "🥲", "label": "Smiling Face with Tear" }
+      ]
+    },
+    {
+      "id": "exasperated-resigned",
+      "label": "Exasperated & Resigned",
+      "h2": "Exasperated & Resigned Faces",
+      "intro": "When the sigh isn't relief but resignation — eye-rolling, flat, or quietly done with whatever just happened.",
+      "symbols": [
+        { "char": "😔", "label": "Pensive Face" },
+        { "char": "🙄", "label": "Face with Rolling Eyes" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "🫤", "label": "Face with Diagonal Mouth" },
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "😤", "label": "Face with Steam From Nose" },
+        { "char": "😞", "label": "Disappointed Face" }
+      ]
+    },
+    {
+      "id": "sigh-props",
+      "label": "Reaction Props",
+      "h2": "Sigh Reaction Props & Gestures",
+      "intro": "The gestures and props that ride along with a sigh — a puff of breath, a shrug, or checking out entirely.",
+      "symbols": [
+        { "char": "💨", "label": "Dashing Away" },
+        { "char": "🌬️", "label": "Wind Face" },
+        { "char": "🤷", "label": "Person Shrugging" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "🫥", "label": "Dotted Line Face" },
+        { "char": "😶‍🌫️", "label": "Face in Clouds" }
+      ]
+    },
+    {
+      "id": "sigh-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Sigh Kaomoji & Text Faces",
+      "intro": "Plain-text sigh faces for anywhere emoji don't render — paste them into comments, forums, or code.",
+      "symbols": [
+        { "char": "(´-ω-`)", "label": "Soft Sigh Kaomoji" },
+        { "char": "(¬_¬)", "label": "Side-Eye Sigh Kaomoji" },
+        { "char": "(￣ー￣;)", "label": "Here We Go Again Kaomoji" },
+        { "char": "(；一_一)", "label": "Exhausted Sigh Kaomoji" },
+        { "char": "¯\\_(ツ)_/¯", "label": "Resigned Shrug Kaomoji" },
+        { "char": "(´д`)", "label": "Defeated Sigh Kaomoji" },
+        { "char": "(-.-;)", "label": "Nervous Sigh Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Sigh Emoji Combo Sets",
+    "intro": "Ready-made sigh combos — copy a full set with one click and paste it straight into a caption, comment, or reply."
+  },
+  "collection_container_id": "sighSetsContainer",
+  "collections": [
+    {
+      "name": "Finally Over",
+      "flags": ["😮‍💨", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Well, That Happened",
+      "flags": ["😑", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deep Breath",
+      "flags": ["😮‍💨", "🌬️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "So Over It",
+      "flags": ["😒", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Barely Held It Together",
+      "flags": ["😅", "😮‍💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Relief Wave",
+      "flags": ["😥", "😌", "💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Exasperated Shrug",
+      "flags": ["🙄", "🤷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Checked Out",
+      "flags": ["😶‍🌫️", "🫥"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/tired-emoji/",
+      "title": "Tired Emoji & Kaomoji",
+      "desc": "Yawns, burnout, and sleepy kaomoji — for exhaustion rather than a single exhale."
+    },
+    {
+      "href": "/library/facepalm-emoji/",
+      "title": "Facepalm Emoji & Kaomoji",
+      "desc": "The exasperated hand-to-face gesture and kaomoji for outright frustration."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    },
+    {
+      "href": "/library/sad-emoji/",
+      "title": "Sad Emoji & Kaomoji",
+      "desc": "Melancholy faces and crying kaomoji for when a sigh tips into something heavier."
+    }
+  ]
+}

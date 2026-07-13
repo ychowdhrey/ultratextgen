@@ -1,0 +1,116 @@
+{
+  "slug": "muscle-emoji",
+  "title": "Muscle Emoji: Copy & Paste 💪 Flex & Gym Combos",
+  "meta_description": "Copy and paste the flexed biceps emoji 💪, its skin-tone variants, and gym, flex, and hype combos for gains posts, bios, and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/muscle-emoji/",
+  "breadcrumb": "Muscle Emoji",
+  "hero_h1": "Muscle Emoji",
+  "hero_tagline": "The flexed biceps emoji for gym progress, gains, and internet-slang flexing — every skin tone plus the gym and hype emoji that pair with it. Click any symbol to copy it instantly.",
+  "intro": "The 💪 flexed biceps emoji is the internet's shorthand for strength, effort, and getting it done — a gym check-in caption, a reply to someone crushing a workout, or a one-emoji reaction to good news. Just as often it's used off the gym floor entirely: 'flex' is internet slang for showing off, so 💪 shows up on brag posts, personal-best announcements, and any moment worth a little humblebrag. This page collects the muscle emoji and its skin-tone variants, the gym and cardio emoji that usually ride along with it, and the motivation and medal emoji people reach for when the flex is earned.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "muscle-flex",
+      "label": "Muscle & Flex",
+      "h2": "Flexed Biceps Emoji & Skin Tones",
+      "intro": "The core 💪 emoji and its five official skin-tone variants — pick the one that matches, or use the default yellow for a neutral flex.",
+      "symbols": [
+        { "char": "💪", "label": "Flexed Biceps" },
+        { "char": "💪🏻", "label": "Flexed Biceps: Light Skin Tone" },
+        { "char": "💪🏼", "label": "Flexed Biceps: Medium-Light Skin Tone" },
+        { "char": "💪🏽", "label": "Flexed Biceps: Medium Skin Tone" },
+        { "char": "💪🏾", "label": "Flexed Biceps: Medium-Dark Skin Tone" },
+        { "char": "💪🏿", "label": "Flexed Biceps: Dark Skin Tone" },
+        { "char": "🦾", "label": "Mechanical Arm" }
+      ]
+    },
+    {
+      "id": "gym-fitness",
+      "label": "Gym & Fitness",
+      "h2": "Gym & Fitness Emoji",
+      "intro": "Weightlifting, running, and the sweat that goes with it — the emoji that show up in workout logs and gains posts.",
+      "symbols": [
+        { "char": "🏋️", "label": "Person Lifting Weights" },
+        { "char": "🏋️‍♀️", "label": "Woman Lifting Weights" },
+        { "char": "🏃", "label": "Person Running" },
+        { "char": "🤸", "label": "Person Cartwheeling" },
+        { "char": "🧗", "label": "Person Climbing" },
+        { "char": "💦", "label": "Sweat Droplets" },
+        { "char": "🥵", "label": "Hot Face" }
+      ]
+    },
+    {
+      "id": "motivation-achievement",
+      "label": "Motivation & Achievement",
+      "h2": "Motivation & Achievement Emoji",
+      "intro": "For when the flex is earned — hype, effort, and the win to back it up.",
+      "symbols": [
+        { "char": "🔥", "label": "Fire" },
+        { "char": "🥇", "label": "1st Place Medal" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "👊", "label": "Oncoming Fist" },
+        { "char": "🎯", "label": "Direct Hit" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Muscle Emoji Combo Sets",
+    "intro": "Ready-made muscle combos — copy a full set with one click and paste it into a gym caption, bio, or comment."
+  },
+  "collection_container_id": "muscleSetsContainer",
+  "collections": [
+    {
+      "name": "Gym Check-In",
+      "flags": ["💪", "🏋️", "💦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Personal Best",
+      "flags": ["💪", "🥇", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "No Days Off",
+      "flags": ["💪", "🏃", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Big Flex",
+      "flags": ["💪", "💯", "👊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Gains Season",
+      "flags": ["💪", "🔥", "🏆"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/sports-emojis/",
+      "title": "Sports & Activity Emojis",
+      "desc": "Ball sports, water sports, fitness, and medals to round out a training post."
+    },
+    {
+      "href": "/library/fire-emoji/",
+      "title": "Fire Emoji & Kaomoji",
+      "desc": "The 🔥 hype emoji and its lit combo sets for captions and comments."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Trophy, Medal & Award Emojis",
+      "desc": "Crowns, trophies, and medals for celebrating a personal best."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Fist bumps, points, and other hand-gesture emoji to pair with a flex."
+    }
+  ]
+}

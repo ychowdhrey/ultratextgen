@@ -1,0 +1,145 @@
+{
+  "slug": "annoyed-emoji",
+  "title": "Annoyed Emoji & Kaomoji: Copy & Paste 😒🙄 Irritated Combos",
+  "meta_description": "Annoyed emoji 😒 🙄 😑 😤, unamused and fed-up combo sets, plus annoyed kaomoji like (￣ヘ￣) for texts and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/annoyed-emoji/",
+  "breadcrumb": "Annoyed Emoji & Kaomoji",
+  "hero_h1": "Annoyed Emoji & Kaomoji",
+  "hero_tagline": "The 😒 unamused stare, the 😤 steam-before-it-boils-over face, and every kaomoji for 'I'm not mad, just annoyed.' Click any symbol to copy it instantly.",
+  "intro": "The unamused face 😒 is the internet's go-to for low-grade irritation — the look you give when something is annoying but not worth a full meltdown. This page rounds up that whole mid-tier range: the flat 😑 expressionless stare, the sarcastic 🙃 upside-down face, and the 😤 steam-from-nose look for when annoyed starts sliding into frustrated. It adds the nonverbal side too — a 🤷 shrug or a 🙅 flat 'no' says 'I'm over it' without a single word, and text-based kaomoji like (￣ヘ￣) round out the set for places emoji don't render. For the specific act of rolling your eyes, see the eye-roll page linked below; for when annoyed boils all the way over into rage, see the angry emoji page.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "annoyed-core",
+      "label": "Core Annoyed Faces",
+      "h2": "The Annoyed Face Emoji",
+      "intro": "The everyday 'I'm not impressed' lineup, led by 😒 — the emoji most people mean when they say 'annoyed emoji.'",
+      "symbols": [
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "🙄", "label": "Face With Rolling Eyes" },
+        { "char": "😤", "label": "Face With Steam From Nose" },
+        { "char": "🤨", "label": "Face With Raised Eyebrow" },
+        { "char": "😾", "label": "Pouting Cat" },
+        { "char": "🙃", "label": "Upside-Down Face" }
+      ]
+    },
+    {
+      "id": "frustration-climbing",
+      "label": "Frustration Climbing",
+      "h2": "When Annoyed Tips Into Frustrated",
+      "intro": "One step past irritated — the strained, fed-up faces for when annoyed keeps building.",
+      "symbols": [
+        { "char": "😖", "label": "Confounded Face" },
+        { "char": "😣", "label": "Persevering Face" },
+        { "char": "🫨", "label": "Shaking Face" },
+        { "char": "🙁", "label": "Slightly Frowning Face" },
+        { "char": "☹️", "label": "Frowning Face" },
+        { "char": "😞", "label": "Disappointed Face" },
+        { "char": "😕", "label": "Confused Face" }
+      ]
+    },
+    {
+      "id": "annoyed-gestures",
+      "label": "Annoyed Gestures",
+      "h2": "Annoyed Gestures & Body Language",
+      "intro": "Sometimes a face isn't enough — a shrug or a flat 'no' hand makes the same point without a single word.",
+      "symbols": [
+        { "char": "🤷", "label": "Person Shrugging" },
+        { "char": "🤷‍♀️", "label": "Woman Shrugging" },
+        { "char": "🤷‍♂️", "label": "Man Shrugging" },
+        { "char": "🙅", "label": "Person Gesturing No" },
+        { "char": "🙅‍♀️", "label": "Woman Gesturing No" },
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🚫", "label": "Prohibited" }
+      ]
+    },
+    {
+      "id": "annoyed-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Annoyed Kaomoji & Text Faces",
+      "intro": "Plain-punctuation text faces for irritation that paste anywhere, no emoji rendering required.",
+      "symbols": [
+        { "char": "( ಠ_ಠ )", "label": "Disapproval Look Kaomoji" },
+        { "char": "(￣ヘ￣)", "label": "Hmph Kaomoji" },
+        { "char": "(-_-)", "label": "Flat Annoyed Kaomoji" },
+        { "char": "(ーー;)", "label": "Awkward Sigh Kaomoji" },
+        { "char": "(´-ω-`)", "label": "Fed-Up Sigh Kaomoji" },
+        { "char": "( `皿´)", "label": "Gritted Teeth Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Annoyed Emoji Combo Sets",
+    "intro": "Ready-made annoyed combos — copy a full set with one click and paste it straight into a text, comment, or caption."
+  },
+  "collection_container_id": "annoyedSetsContainer",
+  "collections": [
+    {
+      "name": "Fed Up",
+      "flags": ["😒", "😤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flat Out Done",
+      "flags": ["😑", "🙃"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Silent Judgment",
+      "flags": ["😒", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Barely Holding It Together",
+      "flags": ["😣", "😖", "🫨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Talk To The Hand",
+      "flags": ["🤷", "🙅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Quietly Fuming",
+      "flags": ["😑", "😤", "🫨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ugh, Fine",
+      "flags": ["🙃", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Not Today",
+      "flags": ["😑", "🚫"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/eye-roll-emoji/",
+      "title": "Eye Roll Emoji & Kaomoji",
+      "desc": "The specific 🙄 rolling-eyes act and every 'seriously?' sigh that follows."
+    },
+    {
+      "href": "/library/angry-emoji/",
+      "title": "Angry Emoji & Kaomoji",
+      "desc": "When annoyed stops being mid-tier and boils all the way over into rage."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    },
+    {
+      "href": "/library/facepalm-emoji/",
+      "title": "Facepalm Emoji & Kaomoji",
+      "desc": "The 🤦 facepalm for when words fail entirely."
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "slug": "middle-finger-emoji",
+  "title": "Middle Finger Emoji & Kaomoji: Copy & Paste 🖕🙄😤 Defiance Combos",
+  "meta_description": "Middle finger emoji 🖕, defiant reactions like 🙄 😒, frustration symbols 😤 💢, and annoyed kaomoji for chats and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/middle-finger-emoji/",
+  "breadcrumb": "Middle Finger Emoji & Kaomoji",
+  "hero_h1": "Middle Finger Emoji & Kaomoji",
+  "hero_tagline": "The 🖕 middle finger emoji, dismissive eye-rolls, steam-from-the-nose frustration, and defiant kaomoji, gathered in one place. Click any symbol to copy it instantly.",
+  "intro": "The middle finger emoji 🖕 (formally 'Reversed Hand With Middle Finger Extended') is a rude hand gesture that renders on most modern platforms, and like other hand emoji it accepts the five Fitzpatrick skin-tone modifiers. This page collects it alongside genuinely related frustration and defiance reactions — the 🙄 eye roll, the 😤 steam-from-the-nose huff, the 💢 anger symbol — plus 🤦 facepalms and a set of annoyed, defiant kaomoji that paste anywhere plain text works. Grab a single symbol, or copy a ready-made combo set for chats, comments, and replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "middle-finger",
+      "label": "The Middle Finger",
+      "h2": "The Middle Finger Emoji",
+      "intro": "One glyph, added in Unicode 7.0, with the full set of skin-tone variants.",
+      "symbols": [
+        { "char": "🖕", "label": "Middle Finger" },
+        { "char": "🖕🏻", "label": "Middle Finger: Light Skin Tone" },
+        { "char": "🖕🏼", "label": "Middle Finger: Medium-Light Skin Tone" },
+        { "char": "🖕🏽", "label": "Middle Finger: Medium Skin Tone" },
+        { "char": "🖕🏾", "label": "Middle Finger: Medium-Dark Skin Tone" },
+        { "char": "🖕🏿", "label": "Middle Finger: Dark Skin Tone" }
+      ]
+    },
+    {
+      "id": "defiant-rebellious",
+      "label": "Defiant & Rebellious",
+      "h2": "Defiant & Rebellious Reactions",
+      "intro": "Dismissive faces and hand signs for brushing something off or pushing back.",
+      "symbols": [
+        { "char": "🙄", "label": "Face With Rolling Eyes" },
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🤘", "label": "Sign of the Horns" }
+      ]
+    },
+    {
+      "id": "frustration-symbols",
+      "label": "Frustration Symbols",
+      "h2": "Frustration & Fed-Up Symbols",
+      "intro": "The steam, the anger mark, and the tired faces that read as 'I've had enough.'",
+      "symbols": [
+        { "char": "😤", "label": "Face With Steam From Nose" },
+        { "char": "💢", "label": "Anger Symbol" },
+        { "char": "🤦", "label": "Person Facepalming" },
+        { "char": "😫", "label": "Tired Face" },
+        { "char": "😩", "label": "Weary Face" },
+        { "char": "😮‍💨", "label": "Face Exhaling" }
+      ]
+    },
+    {
+      "id": "defiant-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Defiant & Annoyed Kaomoji",
+      "intro": "Japanese-style text faces for defiance and irritation in plain text.",
+      "symbols": [
+        { "char": "凸(￣ヘ￣)凸", "label": "Defiant Gesture Kaomoji" },
+        { "char": "╭∩╮( º_º)╭∩╮", "label": "Double Defiance Kaomoji" },
+        { "char": "(￢_￢)", "label": "Unamused Side-Glance Kaomoji" },
+        { "char": "(；￣Д￣)", "label": "Fed-Up Grimace Kaomoji" },
+        { "char": "┐(´～`)┌", "label": "Exasperated Shrug Kaomoji" },
+        { "char": "(￣︿￣)", "label": "Displeased Frown Kaomoji" },
+        { "char": "(¬､¬)", "label": "Smug Sneer Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Middle Finger Combo Sets",
+    "intro": "Copy a complete combo in one click — from a quiet eye roll to a fully fed-up reaction."
+  },
+  "collection_container_id": "middleFingerSetsContainer",
+  "collections": [
+    {
+      "name": "Not Today",
+      "flags": ["🖕", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Talk To The Hand",
+      "flags": ["✋", "😒", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fed Up",
+      "flags": ["😤", "💢", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Facepalm Moment",
+      "flags": ["🤦", "😩", "💢"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "So Over It",
+      "flags": ["🙄", "😒", "😮‍💨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Steam Building",
+      "flags": ["😤", "💢", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rebellious Streak",
+      "flags": ["🤘", "😏", "🖕"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/angry-emoji/",
+      "title": "Angry Emoji & Kaomoji",
+      "desc": "Full-on rage faces, fire, and the legendary table-flip kaomoji."
+    },
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Shrugs, facepalms, crossed arms, and other gesture emoji."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Suspicious glances and unimpressed side-eye reactions."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    }
+  ]
+}

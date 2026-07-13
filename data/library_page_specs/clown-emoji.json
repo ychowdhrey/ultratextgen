@@ -1,0 +1,140 @@
+{
+  "slug": "clown-emoji",
+  "title": "Clown Emoji & Kaomoji: Copy & Paste 🤡🎪 Clownery Combos",
+  "meta_description": "Clown emoji 🤡, circus and jester symbols 🎪🃏🎭, meme reactions, and silly kaomoji like ᕕ( ᐛ )ᕗ for clown-check comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/clown-emoji/",
+  "breadcrumb": "Clown Emoji & Kaomoji",
+  "hero_h1": "Clown Emoji & Kaomoji",
+  "hero_tagline": "The 🤡 clown face, big-top circus symbols, jester cards, and goofy kaomoji — every flavor of clownery and self-aware foolishness. Click any symbol to copy it instantly.",
+  "intro": "The clown emoji 🤡 started as a literal circus clown, but online it is now shorthand for calling yourself — or someone else — a fool: the 'clown check' meme, dropped after a dumb mistake, a naive take, or a plan that fell apart, worn like a self-deprecating badge. This page gathers the whole big top: the 🤡 face and its 🃏 jester kin, the 🎪 circus and fairground symbols, meme-reaction faces for full clownery, and silly text-face kaomoji like ᕕ( ᐛ )ᕗ. Grab a single glyph, or copy a ready-made combo set for chats, comments, and clown-check replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "the-clown-emoji",
+      "label": "Clown Face",
+      "h2": "The Clown Emoji",
+      "intro": "The 🤡 clown face itself, plus the jester card and foolish-self faces it travels with. Literally a circus clown — but online it means 'I clowned myself,' the classic clown-check reaction to your own bad take.",
+      "symbols": [
+        { "char": "🤡", "label": "Clown Face" },
+        { "char": "🃏", "label": "Joker" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "🤪", "label": "Zany Face" }
+      ]
+    },
+    {
+      "id": "circus-performance",
+      "label": "Circus & Performance",
+      "h2": "Circus & Performance Symbols",
+      "intro": "The big top and the fairground — tents, balloons, and rides that set the clownish scene.",
+      "symbols": [
+        { "char": "🎪", "label": "Circus Tent" },
+        { "char": "🎈", "label": "Balloon" },
+        { "char": "🎭", "label": "Performing Arts" },
+        { "char": "🤹", "label": "Person Juggling" },
+        { "char": "🎠", "label": "Carousel Horse" },
+        { "char": "🎡", "label": "Ferris Wheel" },
+        { "char": "🎉", "label": "Party Popper" }
+      ]
+    },
+    {
+      "id": "meme-reactions",
+      "label": "Meme Reactions",
+      "h2": "Related Meme Reactions",
+      "intro": "Foolishness, embarrassment, and deception faces that pair with the clown for full meme energy — the 'I'm the clown here' reactions.",
+      "symbols": [
+        { "char": "🥸", "label": "Disguised Face" },
+        { "char": "🤦", "label": "Person Facepalming" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "🤥", "label": "Lying Face" }
+      ]
+    },
+    {
+      "id": "clown-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Silly & Clownish Kaomoji",
+      "intro": "Japanese-style text faces that strut, grin, and clown around in plain text.",
+      "symbols": [
+        { "char": "ᕕ( ᐛ )ᕗ", "label": "Goofy Strut Kaomoji" },
+        { "char": "(ᗒᗨᗕ)", "label": "Gleeful Grin Kaomoji" },
+        { "char": "(☞ﾟヮﾟ)☞", "label": "Finger Guns Kaomoji" },
+        { "char": "٩(◕‿◕)۶", "label": "Excited Wobble Kaomoji" },
+        { "char": "ヽ(ﾟ▽ﾟ)ノ", "label": "Silly Cheer Kaomoji" },
+        { "char": "(・∀・)", "label": "Cheeky Grin Kaomoji" },
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Sly Lenny Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Clown Emoji Combo Sets",
+    "intro": "Copy a complete clown combo in one click — from a quick clown check to the whole circus."
+  },
+  "collection_container_id": "clownSetsContainer",
+  "collections": [
+    {
+      "name": "Clown Check",
+      "flags": ["🤡", "🙃"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I'm The Clown Here",
+      "flags": ["🤡", "🤦", "🙃"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Certified Clownery",
+      "flags": ["🤡", "🃏", "🎭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Circus Is In Town",
+      "flags": ["🎪", "🎈", "🤹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "This Whole Circus",
+      "flags": ["🤡", "🎪", "🎈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Zany Clown Energy",
+      "flags": ["🤡", "🤪", "🥸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Send In The Clowns",
+      "flags": ["🤡", "🎭", "🎪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Big Top Party",
+      "flags": ["🎪", "🎉", "🎈", "🎠"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Ready-made joke and reaction combos for when the clown needs backup."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot Slang Emojis",
+      "desc": "The clown, skull, and meme emojis behind internet brainrot slang."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji library — goofy, smug, and everything between."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    }
+  ]
+}
