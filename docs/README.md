@@ -61,7 +61,7 @@ These run across page types rather than producing a type.
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `no/`, `pl/`, `pt/`, `sv/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
-| Ads / monetization (Journey ads deployment) | `scripts/check-ads.js` (CI: `ads-check.yml`), `scripts/update-ads-txt.sh` (CI: `update-ads-txt.yml`, daily sync of `ads.txt` from Journey), tag injected site-wide via `header.js` | ❌ none | as needed + daily `ads.txt` sync |
+| Ads / monetization (Google AdSense) | `scripts/check-ads.js` (CI: `ads-check.yml`, enforces the AdSense loader site-wide + guards `ads.txt` against leftover Journey manager/seller lines), AdSense loader injected site-wide via `header.js` | ❌ none | as needed |
 | ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | `library_opportunities.csv` `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
@@ -81,8 +81,7 @@ These run across page types rather than producing a type.
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
 | `image-assets-check.yml` | on `pull_request` (HTML/`assets/og`/`assets/hero`/`assets/pinterest` paths) | `check-image-assets.py` (PR #315) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
-| `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`scripts/check-ads.js`) | `check-ads.js` (Journey ads tag deployed site-wide, PR #366) |
-| `update-ads-txt.yml` | daily 00:30 UTC + manual | refresh `ads.txt` from Journey (`update-ads-txt.sh`, PR #368) |
+| `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
 
 ### Scheduled routines (Claude Code on the web)
 

@@ -17,6 +17,24 @@ const { globSync } = require('glob');
 const AD_CLIENT = 'ca-pub-8242324164413945';
 const ROOT = path.resolve(__dirname, '..');
 
+// Guard ads.txt itself: it must authorize this site's own AdSense pub id and
+// must never carry Journey's managerdomain/seller lines again. Journey ran a
+// daily workflow that overwrote ads.txt from its hosted file every night;
+// that workflow is gone, but this check catches any future reintroduction
+// (manual edit, a resurrected workflow, a copy-pasted snippet) at PR time.
+const adsTxtPath = path.join(ROOT, 'ads.txt');
+const adsTxt = fs.readFileSync(adsTxtPath, 'utf8');
+let adsTxtOk = true;
+
+if (/journeymv\.com|managerdomain=/i.test(adsTxt)) {
+  console.log('  ✗ ads.txt: LEFTOVER Journey manager/seller line found');
+  adsTxtOk = false;
+}
+if (!adsTxt.includes('pub-8242324164413945')) {
+  console.log('  ✗ ads.txt: missing this site\'s AdSense pub id (pub-8242324164413945)');
+  adsTxtOk = false;
+}
+
 // Patterns in the file path that indicate files to skip
 const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
 
@@ -85,9 +103,12 @@ if (errors.length > 0) {
   for (const err of errors) {
     console.log(`  ✗ ${err}`);
   }
+}
+
+if (errors.length > 0 || !adsTxtOk) {
   process.exit(1);
 } else {
   console.log('');
-  console.log('All checked pages have the AdSense loader. ✓');
+  console.log('All checked pages have the AdSense loader, and ads.txt is clean. ✓');
   process.exit(0);
 }
