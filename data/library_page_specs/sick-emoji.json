@@ -1,0 +1,148 @@
+{
+  "slug": "sick-emoji",
+  "title": "Sick Emoji & Kaomoji: Copy & Paste 🤢🤮 Nauseous Combos",
+  "meta_description": "Sick emoji 🤢 🤮 🥴, feverish and nauseous combo sets, plus queasy kaomoji like (×_×) for sick-day texts and chats. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/sick-emoji/",
+  "breadcrumb": "Sick Emoji & Kaomoji",
+  "hero_h1": "Sick Emoji & Kaomoji",
+  "hero_tagline": "Queasy green faces, fevers and cold sweats, mid-vomit reactions, and dizzy woozy kaomoji — every shade of feeling physically gross. Click any symbol to copy it instantly.",
+  "intro": "When you feel sick, one green face says it faster than a paragraph. This page gathers the whole queasy range: the 🤤 drooling and 🥴 woozy faces of a spinning head, the 🤢 nauseated and 🤮 vomiting faces for when it's actually coming up, the 🤒 thermometer, 😷 mask, and 🤧 sneeze of a fever or cold, and the 🥵 hot / 🥶 cold flashes with 💦 sweat. When an emoji won't carry the exact shade of gross, dizzy kaomoji like (×_×) and (@_@) paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for sick-day texts, chats, and comments.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "drooling-queasy",
+      "label": "Drooling & Queasy",
+      "h2": "Drooling & Woozy Face Emojis",
+      "intro": "The spinning-head, about-to-keel-over faces of feeling lightheaded and queasy.",
+      "symbols": [
+        { "char": "🤤", "label": "Drooling Face" },
+        { "char": "🥴", "label": "Woozy Face" },
+        { "char": "😵", "label": "Dizzy Face" },
+        { "char": "😵‍💫", "label": "Face With Spiral Eyes" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "😪", "label": "Sleepy Face" }
+      ]
+    },
+    {
+      "id": "nauseated-vomiting",
+      "label": "Nauseated & Vomiting",
+      "h2": "Nauseated & Vomiting Emojis",
+      "intro": "Green in the face and heading for the bathroom — the full nausea escalation.",
+      "symbols": [
+        { "char": "🤢", "label": "Nauseated Face" },
+        { "char": "🤮", "label": "Face Vomiting" },
+        { "char": "🚽", "label": "Toilet" },
+        { "char": "🧻", "label": "Roll of Paper" },
+        { "char": "🪣", "label": "Bucket" },
+        { "char": "💚", "label": "Green Heart" }
+      ]
+    },
+    {
+      "id": "feverish-contagious",
+      "label": "Feverish & Contagious",
+      "h2": "Sick, Feverish & Contagious Emojis",
+      "intro": "Thermometers, masks, sneezes, and the hot-and-cold flashes of running a fever.",
+      "symbols": [
+        { "char": "🤒", "label": "Face With Thermometer" },
+        { "char": "🌡️", "label": "Thermometer" },
+        { "char": "😷", "label": "Face With Medical Mask" },
+        { "char": "🤧", "label": "Sneezing Face" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "🥶", "label": "Cold Face" },
+        { "char": "😓", "label": "Downcast Face With Sweat" },
+        { "char": "💦", "label": "Sweat Droplets" },
+        { "char": "🤕", "label": "Face With Head-Bandage" },
+        { "char": "💊", "label": "Pill" }
+      ]
+    },
+    {
+      "id": "sick-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Sick & Dizzy Kaomoji",
+      "intro": "Japanese-style text faces that reel, wince, and turn green in plain text.",
+      "symbols": [
+        { "char": "(×_×)", "label": "Dizzy X-Eyes Kaomoji" },
+        { "char": "(@_@)", "label": "Spinning Head Kaomoji" },
+        { "char": "(×﹏×)", "label": "Woozy Collapse Kaomoji" },
+        { "char": "(´～｀)", "label": "Queasy Grimace Kaomoji" },
+        { "char": "(＠_＠;)", "label": "Dizzy Cold Sweat Kaomoji" },
+        { "char": "(>﹏<)", "label": "Nauseous Wince Kaomoji" },
+        { "char": "(⊙﹏⊙)", "label": "Woozy Wide-Eye Kaomoji" },
+        { "char": "( ﾟдﾟ)", "label": "Nauseated Shock Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Sick Emoji Combo Sets",
+    "intro": "Copy a complete sick-day combo in one click — from a first queasy wave to full bed-bound flu."
+  },
+  "collection_container_id": "sickSetsContainer",
+  "collections": [
+    {
+      "name": "Feeling Sick",
+      "flags": ["🤒", "🤧", "😷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "About to Throw Up",
+      "flags": ["🤢", "🤮", "🚽"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Woozy & Dizzy",
+      "flags": ["🥴", "😵", "😵‍💫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fever Dreams",
+      "flags": ["🤒", "🥵", "🥶", "🌡️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bed-Bound Flu",
+      "flags": ["🤒", "🛏️", "💊", "🍵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cold & Flu Season",
+      "flags": ["🤧", "🤒", "🧻", "😷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nauseous Wreck",
+      "flags": ["🤢", "🥴", "💦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Drooling Mess",
+      "flags": ["🤤", "🥴", "💦"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/tired-emoji/",
+      "title": "Tired Emoji & Kaomoji",
+      "desc": "Exhausted, drained, and worn-out faces for low-energy days."
+    },
+    {
+      "href": "/library/crying-emoji/",
+      "title": "Crying Emoji & Kaomoji",
+      "desc": "Teary and sobbing faces for the miserable moments in between."
+    },
+    {
+      "href": "/library/medical-symbols/",
+      "title": "Medical Symbols",
+      "desc": "Pharmacy crosses, caduceus, and health signs to pair with sick faces."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    }
+  ]
+}

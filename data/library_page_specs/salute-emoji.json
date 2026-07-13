@@ -1,0 +1,143 @@
+{
+  "slug": "salute-emoji",
+  "title": "Salute Emoji & Kaomoji: Copy & Paste 🫡🖖 Respect Combos",
+  "meta_description": "Salute emoji 🫡 🖖 ✋, honor and respect combo sets, plus saluting kaomoji like (｀・ω・)ゞ for chats, comments, and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/salute-emoji/",
+  "breadcrumb": "Salute Emoji & Kaomoji",
+  "hero_h1": "Salute Emoji & Kaomoji",
+  "hero_tagline": "The 🫡 saluting face, Vulcan salutes, raised hands, medals of honor, and crisp salute kaomoji — respect and acknowledgment in every form. Click any symbol to copy it instantly.",
+  "intro": "The salute emoji 🫡 is internet shorthand for 'yes sir' — a crisp hand to the brow that reads as respect, acknowledgment, or playful mock-deference when someone asks you to do the impossible. This page gathers the whole respect range: the 🖖 Vulcan salute and ✋ raised hand for formal gestures, medals and ribbons like 🎖️ for honor and recognition, deep 🙇 bows for showing deference, and classic salute kaomoji like (｀・ω・)ゞ that paste anywhere plain text works. Grab a single symbol, or copy a ready-made combo set for chats, comments, and replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "saluting-face",
+      "label": "The Saluting Face",
+      "h2": "The Saluting Face & Bowing Emojis",
+      "intro": "The 🫡 saluting face and the deep bows that show respect and quiet deference.",
+      "symbols": [
+        { "char": "🫡", "label": "Saluting Face" },
+        { "char": "🙇", "label": "Person Bowing" },
+        { "char": "🙇‍♂️", "label": "Man Bowing" },
+        { "char": "🙇‍♀️", "label": "Woman Bowing" },
+        { "char": "😌", "label": "Relieved Face" }
+      ]
+    },
+    {
+      "id": "hand-gestures",
+      "label": "Formal Hand Gestures",
+      "h2": "Formal Hand Gesture Emojis",
+      "intro": "Raised palms and ceremonial hand signs for greetings, oaths, and salutes.",
+      "symbols": [
+        { "char": "🖖", "label": "Vulcan Salute" },
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "👋", "label": "Waving Hand" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "✊", "label": "Raised Fist" }
+      ]
+    },
+    {
+      "id": "honor-symbols",
+      "label": "Honor & Respect Symbols",
+      "h2": "Honor & Respect Symbols",
+      "intro": "Medals, ribbons, and flags for recognition, rank, and paying tribute.",
+      "symbols": [
+        { "char": "🎖️", "label": "Military Medal" },
+        { "char": "🏅", "label": "Sports Medal" },
+        { "char": "🥇", "label": "1st Place Medal" },
+        { "char": "🏆", "label": "Trophy" },
+        { "char": "🎗️", "label": "Reminder Ribbon" },
+        { "char": "🪖", "label": "Military Helmet" },
+        { "char": "🚩", "label": "Triangular Flag" }
+      ]
+    },
+    {
+      "id": "salute-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Salute & Acknowledgment Kaomoji",
+      "intro": "Japanese-style text faces that snap a hand to the brow with the classic ゞ salute mark.",
+      "symbols": [
+        { "char": "(｀・ω・)ゞ", "label": "Firm Salute Kaomoji" },
+        { "char": "( ￣^￣)ゞ", "label": "Standing Salute Kaomoji" },
+        { "char": "(-ω-ゞ", "label": "Casual Salute Kaomoji" },
+        { "char": "(`_´)ゞ", "label": "Sharp Salute Kaomoji" },
+        { "char": "(・∀・)ゞ", "label": "Cheerful Salute Kaomoji" },
+        { "char": "( •̀ᴗ•́ )و", "label": "Fired-Up Acknowledgment Kaomoji" },
+        { "char": "\\(•ᴗ•)/", "label": "At Your Service Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Salute Emoji Combo Sets",
+    "intro": "Copy a complete salute combo in one click — from a crisp yes-sir to a full show of honor."
+  },
+  "collection_container_id": "saluteSetsContainer",
+  "collections": [
+    {
+      "name": "Yes Sir",
+      "flags": ["🫡", "✅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "At Attention",
+      "flags": ["🫡", "🪖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "O7 Salute",
+      "flags": ["🫡", "🖖", "✋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Respect Paid",
+      "flags": ["🫡", "🙇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Medal Of Honor",
+      "flags": ["🎖️", "🏅", "🫡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Vulcan Greeting",
+      "flags": ["🖖", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hats Off",
+      "flags": ["🫡", "🎩"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Full Honors",
+      "flags": ["🫡", "🎖️", "🚩"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Every hand and gesture symbol in one copy-ready grid."
+    },
+    {
+      "href": "/library/praying-hands-emoji/",
+      "title": "Praying Hands Emoji",
+      "desc": "Folded hands for thanks, please, and quiet respect."
+    },
+    {
+      "href": "/library/thumbs-up-emoji/",
+      "title": "Thumbs Up Emoji & Kaomoji",
+      "desc": "Approval and acknowledgment to pair with a salute."
+    },
+    {
+      "href": "/library/achievement-symbols/",
+      "title": "Achievement Symbols",
+      "desc": "Medals, trophies, and stars for honor and recognition."
+    }
+  ]
+}

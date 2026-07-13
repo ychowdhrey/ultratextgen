@@ -1,0 +1,143 @@
+{
+  "slug": "handshake-emoji",
+  "title": "Handshake Emoji & Kaomoji: Copy & Paste 🤝👋🙌 Greeting & Deal Combos",
+  "meta_description": "Handshake emoji 🤝 👋 🙌, business and greeting gestures, plus friendly wave kaomoji like ( ・∇・)ノ for deals and intros. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/handshake-emoji/",
+  "breadcrumb": "Handshake Emoji & Kaomoji",
+  "hero_h1": "Handshake Emoji & Kaomoji",
+  "hero_tagline": "The 🤝 handshake, friendly waves, celebration hands, and deal-making kaomoji — every greeting, agreement, and welcome in one place. Click any symbol to copy it instantly.",
+  "intro": "The handshake emoji 🤝 is the internet's shorthand for a done deal, a warm hello, and 'nice to meet you' all at once — the two hands that seal an agreement or open a conversation. This page gathers the whole greeting-and-agreement range: the clasped 🤝 handshake and its directional 🫱 🫲 hands, waving 👋 and open-palm hellos, the 💼 briefcase and 🙌 celebration hands of a closed deal, and friendly greeting kaomoji like ( ・∇・)ノ for when plain text needs a wave. Grab a single symbol, or copy a ready-made combo set for intros, agreements, and business chats.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "the-handshake",
+      "label": "The Handshake",
+      "h2": "The Handshake Emoji",
+      "intro": "The single 🤝 glyph — and on modern keyboards it supports skin-tone combinations, so each hand can be set to a different tone.",
+      "symbols": [
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "🫱", "label": "Rightwards Hand" },
+        { "char": "🫲", "label": "Leftwards Hand" },
+        { "char": "🤲", "label": "Palms Up Together" },
+        { "char": "👐", "label": "Open Hands" }
+      ]
+    },
+    {
+      "id": "greeting-gestures",
+      "label": "Greeting Gestures",
+      "h2": "Greeting & Hello Gestures",
+      "intro": "Waves, raised palms, and open-arm hellos for a warm first impression.",
+      "symbols": [
+        { "char": "👋", "label": "Waving Hand" },
+        { "char": "✋", "label": "Raised Hand" },
+        { "char": "🖐", "label": "Raised Hand With Fingers Splayed" },
+        { "char": "🤗", "label": "Hugging Face" },
+        { "char": "🫡", "label": "Saluting Face" }
+      ]
+    },
+    {
+      "id": "business-agreement",
+      "label": "Business & Agreement",
+      "h2": "Business & Agreement Symbols",
+      "intro": "The briefcase, celebration hands, and check marks of a deal well done.",
+      "symbols": [
+        { "char": "💼", "label": "Briefcase" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "🤜", "label": "Right-Facing Fist" },
+        { "char": "🤛", "label": "Left-Facing Fist" },
+        { "char": "✅", "label": "Check Mark Button" },
+        { "char": "🤞", "label": "Crossed Fingers" }
+      ]
+    },
+    {
+      "id": "greeting-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Greeting & Deal-Making Kaomoji",
+      "intro": "Japanese-style text faces that wave hello and welcome you in plain text.",
+      "symbols": [
+        { "char": "( ・∇・)ノ", "label": "Friendly Wave Kaomoji" },
+        { "char": "(^-^)/", "label": "Cheerful Wave Kaomoji" },
+        { "char": "ヽ(・∀・)ﾉ", "label": "Excited Greeting Kaomoji" },
+        { "char": "( ﾟ▽ﾟ)/", "label": "Big Hello Kaomoji" },
+        { "char": "( ´ ▽ ` )ﾉ", "label": "Warm Welcome Kaomoji" },
+        { "char": "ヾ(＾∇＾)", "label": "Happy Greeting Kaomoji" },
+        { "char": "m(_ _)m", "label": "Respectful Bow Kaomoji" },
+        { "char": "(￣ー￣)ゞ", "label": "Salute Greeting Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Handshake & Greeting Combo Sets",
+    "intro": "Copy a complete greeting or deal combo in one click — from a warm hello to a closed agreement."
+  },
+  "collection_container_id": "handshakeSetsContainer",
+  "collections": [
+    {
+      "name": "Nice to Meet You",
+      "flags": ["🤝", "👋", "😊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deal Closed",
+      "flags": ["🤝", "💼", "✅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Welcome Aboard",
+      "flags": ["👋", "🙌", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Let's Work Together",
+      "flags": ["🤝", "💼", "💪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Warm Greeting",
+      "flags": ["👋", "🤗", "😄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Team Celebration",
+      "flags": ["🙌", "👏", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Partnership",
+      "flags": ["🤝", "🤲", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Friendly Hello",
+      "flags": ["👋", "✋", "😃"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Every hand gesture and pointing symbol in one browsable grid."
+    },
+    {
+      "href": "/library/praying-hands-emoji/",
+      "title": "Praying Hands Emoji & Kaomoji",
+      "desc": "Thank-you, prayer, and gratitude hands to pair with a handshake."
+    },
+    {
+      "href": "/library/thumbs-up-emoji/",
+      "title": "Thumbs Up Emoji",
+      "desc": "Approval and agreement gestures for sealing a yes."
+    },
+    {
+      "href": "/library/linkedin-symbol-library/",
+      "title": "LinkedIn Symbol Library",
+      "desc": "Professional bullets, arrows, and symbols for business posts."
+    }
+  ]
+}

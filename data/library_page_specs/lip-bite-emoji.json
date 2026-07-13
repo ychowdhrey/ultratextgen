@@ -1,0 +1,142 @@
+{
+  "slug": "lip-bite-emoji",
+  "title": "Lip Bite Emoji & Kaomoji: Copy & Paste 🫦😏👄 Flirty Combos",
+  "meta_description": "Lip bite emoji 🫦 😏 👄, flirty mouth and kiss combo sets, plus teasing kaomoji like (¬‿¬) for playful chats and DMs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/lip-bite-emoji/",
+  "breadcrumb": "Lip Bite Emoji & Kaomoji",
+  "hero_h1": "Lip Bite Emoji & Kaomoji",
+  "hero_tagline": "The 🫦 biting-lip emoji, sly smirks and winks, kiss marks, and teasing kaomoji — flirtation in every flavor. Click any symbol to copy it instantly.",
+  "intro": "The biting lip emoji 🫦 is flirtation shorthand — a bitten lower lip that reads as nervous anticipation, playful teasing, or barely-held tension depending on the chat. This page gathers the whole flirty-mouth range: the sly 😏 smirk and 😉 wink, the 👄 mouth, 💋 kiss mark, and 😘 blown kiss, plus teasing kaomoji like (¬‿¬) that paste anywhere plain text works. Grab a single emoji, or copy a ready-made flirty combo set for DMs, captions, and playful replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "lip-bite",
+      "label": "The Lip Bite Emoji",
+      "h2": "The Lip Bite Emoji",
+      "intro": "The one true lip-bite glyph — flirty, nervous, or full of tension depending on who's reading it.",
+      "symbols": [
+        { "char": "🫦", "label": "Biting Lip" }
+      ]
+    },
+    {
+      "id": "flirty-teasing",
+      "label": "Flirty & Teasing Faces",
+      "h2": "Flirty & Teasing Face Emojis",
+      "intro": "Smirks, winks, and flushed cheeks to pair with the lip bite for extra tease.",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😉", "label": "Winking Face" },
+        { "char": "😜", "label": "Winking Face With Tongue" },
+        { "char": "🤭", "label": "Face With Hand Over Mouth" },
+        { "char": "😳", "label": "Flushed Face" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "🥰", "label": "Smiling Face With Hearts" },
+        { "char": "😍", "label": "Smiling Face With Heart-Eyes" }
+      ]
+    },
+    {
+      "id": "mouths-kisses",
+      "label": "Mouths & Kisses",
+      "h2": "Mouth & Kiss Emojis",
+      "intro": "Lips, tongue, lipstick, and every kissing face to seal the flirt.",
+      "symbols": [
+        { "char": "👄", "label": "Mouth" },
+        { "char": "👅", "label": "Tongue" },
+        { "char": "💋", "label": "Kiss Mark" },
+        { "char": "😘", "label": "Face Blowing a Kiss" },
+        { "char": "😗", "label": "Kissing Face" },
+        { "char": "😙", "label": "Kissing Face With Smiling Eyes" },
+        { "char": "😚", "label": "Kissing Face With Closed Eyes" },
+        { "char": "💄", "label": "Lipstick" }
+      ]
+    },
+    {
+      "id": "flirty-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Flirty & Teasing Kaomoji",
+      "intro": "Japanese-style text faces that smirk, wink, and blow kisses in plain text.",
+      "symbols": [
+        { "char": "(¬‿¬)", "label": "Smug Tease Kaomoji" },
+        { "char": "(˘ ³˘)♥", "label": "Blowing a Kiss Kaomoji" },
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Suggestive Lenny Kaomoji" },
+        { "char": "(｡•̀ᴗ-)✧", "label": "Flirty Wink Kaomoji" },
+        { "char": "(￣ε￣)", "label": "Puckered Lips Kaomoji" },
+        { "char": "٩(♡ε♡ )۶", "label": "Smitten Kiss Kaomoji" },
+        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "label": "Flustered Blush Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Flirty Combo Sets",
+    "intro": "Copy a complete flirty combo in one click — from a shy lip bite to full heart-eyes."
+  },
+  "collection_container_id": "lipBiteSetsContainer",
+  "collections": [
+    {
+      "name": "Flirty Lip Bite",
+      "flags": ["🫦", "😏"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Smirk & Wink",
+      "flags": ["😏", "😉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blowing Kisses",
+      "flags": ["😘", "💋", "👄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Feeling Flushed",
+      "flags": ["🫦", "😳", "🥵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heart Eyes",
+      "flags": ["🥰", "😍", "💋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Teasing You",
+      "flags": ["🫦", "😜", "😏"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kiss Mark",
+      "flags": ["💋", "👄", "💄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Smitten",
+      "flags": ["😍", "🥰", "🫦", "💋"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/kiss-kaomoji/",
+      "title": "Kiss Kaomoji",
+      "desc": "Puckered-up text faces blowing kisses in plain text."
+    },
+    {
+      "href": "/library/wink-kaomoji/",
+      "title": "Wink Kaomoji",
+      "desc": "Cheeky winking text faces for a playful, teasing tone."
+    },
+    {
+      "href": "/library/eyes-emoji/",
+      "title": "Eyes Emoji & Kaomoji",
+      "desc": "The 👀 side-glance and every flirty, curious eye reaction."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    }
+  ]
+}

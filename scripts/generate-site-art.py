@@ -1891,6 +1891,28 @@ PAGES = {
   "library-fire-emoji": ("Fire Emoji Collection", "This is fire — hype and heat symbols", m_smiley, K_LIB),
   "library-sunglasses-emoji": ("Sunglasses Emoji Collection", "Cool, confident and unbothered", m_smiley, K_LIB),
   "library-tired-emoji": ("Tired Emoji Collection", "Sleepy, exhausted and running on empty", m_smiley, K_LIB),
+
+  # ---- single-emoji spokes added 2026-07-13 (broad-match opportunity batch 2) ----
+  "library-sick-emoji": ("Sick Emoji Collection", "Queasy, feverish and woozy faces", m_smiley, K_LIB),
+  "library-seahorse-emoji": ("Seahorse Emoji", "Why it doesn't exist, and the closest alternatives", m_smiley, K_LIB),
+  "library-blush-emoji": ("Blush Emoji Collection", "Bashful, shy and flattered faces", m_smiley, K_LIB),
+  "library-freaky-emoji": ("Freaky Emoji Collection", "Flirty, mischievous and devilish faces", m_smiley, K_LIB),
+  "library-kiss-emoji": ("Kiss Emoji Collection", "Every kissing face and kiss mark", m_smiley, K_LIB),
+  "library-eye-roll-emoji": ("Eye Roll Emoji Collection", "Exasperated, unimpressed reactions", m_smiley, K_LIB),
+  "library-wink-emoji": ("Wink Emoji Collection", "Playful winks and teasing faces", m_smiley, K_LIB),
+  "library-salute-emoji": ("Salute Emoji Collection", "Respect, honor and acknowledgment", m_smiley, K_LIB),
+  "library-lip-bite-emoji": ("Lip Bite Emoji Collection", "Flirty faces and teasing kaomoji", m_smiley, K_LIB),
+  "library-tongue-emoji": ("Tongue Emoji Collection", "Silly, playful tongue-out faces", m_smiley, K_LIB),
+  "library-smirk-emoji": ("Smirk Emoji Collection", "Smug, confident and sly faces", m_smiley, K_LIB),
+  "library-scared-emoji": ("Scared Emoji Collection", "Fearful, panicked and spooky faces", m_smiley, K_LIB),
+  "library-chefs-kiss-emoji": ("Chef's Kiss Emoji Collection", "This is absolutely perfect", m_smiley, K_LIB),
+  "library-handshake-emoji": ("Handshake Emoji Collection", "Greetings, deals and agreements", m_smiley, K_LIB),
+  "library-middle-finger-emoji": ("Middle Finger Emoji Collection", "The rude gesture and its variants", m_smiley, K_LIB),
+  "library-devil-emoji": ("Devil Emoji Collection", "Demons, monsters and villain symbols", m_smiley, K_LIB),
+  "library-confused-emoji": ("Confused Emoji Collection", "Baffled, puzzled and lost faces", m_smiley, K_LIB),
+  "library-eggplant-emoji": ("Eggplant Emoji Collection", "Literal meaning and internet slang", m_smiley, K_LIB),
+  "library-facepalm-emoji": ("Facepalm Emoji Collection", "Exasperated, done-with-it reactions", m_smiley, K_LIB),
+  "library-clown-emoji": ("Clown Emoji Collection", "Circus symbols and clown-check memes", m_smiley, K_LIB),
 }
 
 
