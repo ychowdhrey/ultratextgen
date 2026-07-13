@@ -1161,7 +1161,9 @@ PAGES = {
   "fr-usecase-ecriture-bio": ("Écriture Stylée pour Bio", "Polices et symboles pour votre bio Instagram", m_profile, K_USE),
   "es-usecase-letras-para-bio": ("Letras para Bio", "Fuentes y símbolos para tu biografía de Instagram", m_profile, K_USE),
   "it-usecase-font-per-bio": ("Font per la Bio", "Caratteri e simboli per la tua bio Instagram", m_profile, K_USE),
-  "ar-usecase-khat-bio": ("خط للبايو", "خطوط ورموز لبايو انستقرام", m_profile, K_USE),
+  # ar-usecase-khat-bio intentionally absent — see the ar/hi note below,
+  # in the emoji-translator block (cairosvg can't shape Arabic; the page
+  # keeps the shared English card).
   "cs-usecase-pismo-pro-bio": ("Písmo pro Bio", "Fonty a symboly pro tvoje bio na Instagramu", m_profile, K_USE),
   "sk-usecase-pismo-pre-bio": ("Písmo pre Bio", "Fonty a symboly pre tvoje bio na Instagrame", m_profile, K_USE),
   "nl-usecase-lettertype-voor-bio": ("Lettertype voor Bio", "Lettertypes en symbolen voor je Instagram bio", m_profile, K_USE),
@@ -1178,11 +1180,15 @@ PAGES = {
 
   # ---- localized emoji-translator + emoji-letters cards ----
   # (bio-font locale cards are owned by the bio-font localization effort.)
-  # Native-script titles for ar/hi are intentionally omitted: the bundled
-  # raster fonts (DejaVu/Liberation) don't cover Arabic/Devanagari and cairosvg
-  # does no complex-script shaping, so those locales keep the shared English card.
+  # Native-script title for ar is intentionally omitted: the bundled raster
+  # fonts don't shape Arabic's contextual joining and cairosvg does no
+  # complex-script shaping, so mutarjim-emoji keeps the shared English card.
+  # Devanagari (hi) has no such problem — Noto Sans Devanagari's precomposed
+  # conjuncts render correctly with cairosvg's simple mark placement — so hi
+  # gets its own card like every other locale here.
   "de-usecase-emoji-uebersetzer": ("Emoji-Übersetzer", "Text in Emojis – und zurück", m_smiley, K_USE),
   "tr-usecase-emoji-ceviri": ("Emoji Çevirici", "Metni emojiye çevir, geri çöz", m_smiley, K_USE),
+  "hi-usecase-emoji-anuvadak": ("इमोजी अनुवादक", "टेक्स्ट से इमोजी, और वापस", m_smiley, K_USE),
   "vi-usecase-dich-emoji": ("Dịch Emoji", "Chuyển văn bản thành emoji", m_smiley, K_USE),
   "es-usecase-traductor-de-emojis": ("Traductor de Emojis", "Texto a emojis y al revés", m_smiley, K_USE),
   "pt-usecase-tradutor-de-emojis": ("Tradutor de Emojis", "Texto em emojis e de volta", m_smiley, K_USE),
