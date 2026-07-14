@@ -146,6 +146,17 @@ is idempotent. Still add one entry back on `symbol/index.html` by hand.
 `library/*` and **fails on orphan spokes** (a spoke no `library/` hub links to),
 so a forgotten sync run is caught before the PR.
 
+**Translating a `library/`/`symbol/` page:** the lane is inherited from the
+English source's `page_type` — it is never re-decided per language. A
+translation of a `symbol/<slug>/` page ships to `<lang>/symbol/<slug>/`, even
+if that language has no `symbol/` pillar yet and every prior translation for
+it landed in `<lang>/library/`. `scripts/validate_library_pages.py` scans
+every `<lang>/library/*` and `<lang>/symbol/*` by default and fails on **lane
+mismatch** (a page's own directory vs. its `hreflang="en"` counterpart's
+directory) — run it over your translated batch before opening the PR. Full
+rationale and the recurring failure mode: `docs/unicode-library-workflow.md`
+§7.
+
 ---
 
 ## Core JavaScript Architecture

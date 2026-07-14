@@ -6762,6 +6762,27 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
 .gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }
 
+/* Per-glyph compatibility panel — which characters in THIS name might get
+   boxed or stripped, not just an aggregate badge. Empty (no flagged chars)
+   collapses to nothing via :empty. */
+.gr-chars { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+.gr-chars:empty { display: none; }
+.gr-chars-label { font-size: 0.78rem; color: var(--text-secondary); margin-right: 0.15rem; }
+.gr-char {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0.3rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: help;
+}
+.gr-char-warn { color: var(--ts-risk); border-color: var(--ts-risk); }
+.gr-char-reject { color: var(--ts-fail); border-color: var(--ts-fail); }
+
 /* ==========================================================================
    CHARACTER & WORD COUNTER  (/character-counter/)
    Live word/character/sentence/paragraph/reading-time stats, plus a

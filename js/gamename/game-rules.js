@@ -11,6 +11,11 @@
    Logic:   UltraTextGen.gameRules.analyze(str, gameId)
    UI:      UltraTextGen.gameRules.initChecker(config)
 
+   analyze()'s report includes perChar: a per-grapheme pass/warn/reject
+   verdict (see charVerdict), which initChecker renders as a small
+   glyph-survival panel — which specific characters in THIS name are the
+   ones that might get boxed or stripped, not just an aggregate badge.
+
    Rules are structural (limits, weighting, charset policy) and live
    here so twenty pages share one maintenance point. All UI labels
    are passed in via config.text, so the same engine drives EN, ID,
@@ -123,6 +128,38 @@
     return "unknown";
   }
 
+  // Grapheme-cluster split (a zalgo-style base+combining-marks stack reads
+  // as one glyph, not N). Display-only — analyze()'s counting below stays on
+  // Array.from codepoints, since the per-game limit math is already
+  // calibrated against that and must not shift underneath existing pages.
+  const graphemeSeg =
+    typeof Intl !== "undefined" && Intl.Segmenter
+      ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
+      : null;
+  function graphemes(str) {
+    return graphemeSeg ? Array.from(graphemeSeg.segment(str), function (s) { return s.segment; }) : Array.from(str);
+  }
+
+  // Per-glyph survival verdict for the compatibility panel: will this
+  // specific character clear the target game's field, or is it likely to
+  // get boxed/stripped/rejected? Reuses the exact same classification and
+  // per-game flags analyze() already uses — no separate platform-support
+  // data set, so it never asserts anything beyond what this file already
+  // encodes about a game's charset policy.
+  function charVerdict(ch, rule) {
+    if (rule.asciiPattern) return rule.asciiPattern.test(ch) ? "pass" : "reject";
+    if (ch === " ") return rule.noSpace ? "reject" : "pass";
+    // ch may be a multi-codepoint grapheme (base + combining marks) — classify
+    // by its first codepoint, same base that carries the visible glyph.
+    const base = Array.from(ch)[0] || ch;
+    const cls = classifyChar(base);
+    if (cls === "ascii" || cls === "space") return "pass";
+    if (cls === "unknown") return "warn"; // may render as a box, client-dependent
+    // safe / styled / emoji: fine almost everywhere, but strict-mode games
+    // (Fortnite, Valorant) are known to strip decorative Unicode from names.
+    return rule.strict ? "warn" : "pass";
+  }
+
   /* ============================
      analyze(str, gameId) → report
      ============================ */
@@ -175,6 +212,12 @@
     else if (issues.indexOf("unknown-chars") !== -1 || issues.indexOf("strict-symbols") !== -1) level = "warn";
     if (issues.indexOf("empty") !== -1) level = "empty";
 
+    // Per-glyph breakdown for the compatibility panel — grapheme clusters,
+    // not codepoints, so a combining-mark stack reads as one tile.
+    const perChar = graphemes(str || "").map(function (ch) {
+      return { ch: ch, verdict: charVerdict(ch, rule) };
+    });
+
     return {
       game: gameId,
       rule: rule,
@@ -183,6 +226,7 @@
       limit: rule.limit || 0,
       counts: { plain: plain, safe: safe, styled: styled, emoji: emoji, unknown: unknown, spaces: spaces },
       badChars: badChars,
+      perChar: perChar,
       issues: issues,
       level: level
     };
@@ -264,6 +308,9 @@
     const notes = el("ul", "gr-notes");
     mount.appendChild(notes);
 
+    const charRow = el("div", "gr-chars");
+    mount.appendChild(charRow);
+
     // Mirror the main generator input until the user touches the checker, so
     // the counter feels live without any extra step. We mirror the *flaired*
     // text (name + selected decoration) when script.js exposes it, so the count
@@ -328,10 +375,32 @@
         }
         notes.appendChild(el("li", "gr-note gr-note-" + code, msg));
       });
+
+      // Per-glyph compatibility panel — only the characters worth a second
+      // look (pass is the silent default), capped so a long decorated name
+      // doesn't produce a wall of tiles on mobile.
+      charRow.innerHTML = "";
+      const flagged = report.perChar.filter(function (p) { return p.verdict !== "pass"; }).slice(0, 16);
+      if (flagged.length) {
+        charRow.appendChild(el("span", "gr-chars-label", text.charsToWatch || "Check these characters:"));
+        flagged.forEach(function (p) {
+          const cp = "U+" + p.ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0");
+          const tile = el("span", "gr-char gr-char-" + p.verdict, p.ch);
+          tile.title = cp;
+          charRow.appendChild(tile);
+        });
+      }
     }
 
     render();
   }
 
-  ns.gameRules = { RULES: RULES, analyze: analyze, initChecker: initChecker, classifyChar: classifyChar };
+  ns.gameRules = {
+    RULES: RULES,
+    analyze: analyze,
+    initChecker: initChecker,
+    classifyChar: classifyChar,
+    graphemes: graphemes,
+    charVerdict: charVerdict
+  };
 })();
