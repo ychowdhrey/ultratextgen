@@ -327,6 +327,59 @@ To add a new text style, edit `styles.js`:
 
 ---
 
+## Localization Workflow — the English-Parent Rule
+
+Every non-English page on this site should have a live English parent — the
+same feature, category, symbol, or library page, already shipped at its
+canonical `/…/` (non-locale-prefixed) URL, that the translation is *of*.
+This is not a style preference; it's a structural invariant the rest of the
+site leans on: `hreflang` clusters are built around one `x-default` (always
+the EN URL), the `Translating a library/symbol page` rule above inherits the
+translation's `page_type` from the EN source, and every cross-language demand
+doc in this repo's history (`bio-font i18n`, `alt-codes translation demand`,
+`library translation demand`, etc.) is written as "translate this EN page,"
+never "invent this local page."
+
+**Before creating any `<lang>/…` page (or a locale build of a feature that
+doesn't yet exist in English), stop and check:** does a live English parent
+already exist at the equivalent `/category/`, `/library/`, `/symbol/`,
+`/usecase/`, `/guide/`, or `/answers/` URL?
+
+- **Yes** → proceed as a translation: reuse the EN page's structure/JS
+  wiring, translate the copy, and wire full reciprocal `hreflang` (every
+  locale variant links every other variant, `x-default` points at the EN
+  canonical). Missing reciprocity is a real, recurring bug on this site, not
+  a hypothetical — see the case study below.
+- **No** → do not build the localized page directly. Build the English
+  version first (it usually also captures a bigger, unvalidated EN/global
+  search pool the localized-only page would leave on the table), *then*
+  translate. If the underlying thing is genuinely local-only — no English
+  speaker would ever search for it — that's a legitimate exception, but it
+  is a **discussed, explicit exception**, not a default. Raise it and agree
+  on it before writing the page; don't decide unilaterally that "this one's
+  different."
+
+**Case study (2026-07-14):** the Polish quotation-mark page
+(`pl/library/cudzyslow-polski/`) shipped natively, framed in its own research
+doc as "no EN equivalent exists yet, so this is new content rather than
+translation" — before `symbol/quotation-mark/` existed. The EN page was built
+shortly after and both got cross-linked, but for a window the PL page had no
+English parent and, separately, the eventual EN/ES/PL/TR cluster still
+weren't fully reciprocal with each other or with a later-added Indonesian
+translation (`id/library/simbol-kutip/`) — a live hreflang mesh gap on
+exactly this page family, fixed 2026-07-14. Two failure modes from one
+example: sequencing (locale-first, no parent) and reciprocity (parent exists,
+mesh incomplete). Check both.
+
+**When scoping a translation, also check for cannibalization**, not just
+existence — if a broader page already covers the term, a narrow new page
+can compete with it instead of adding coverage. (E.g.: don't split a
+dedicated German small-caps page off from `de/kleine-schrift/`, which
+already ranks for "Kapitälchen," without checking whether the split adds
+net-new coverage or just fragments an existing ranking.)
+
+---
+
 ## Build & Development
 
 ### Running locally
@@ -398,6 +451,10 @@ Do not add a test framework unless explicitly requested.
 
 ## What NOT to Do
 
+- Do not build a `<lang>/…` page for a feature/category/symbol/library topic
+  that has no live English parent yet, without first raising it as an
+  explicit, discussed exception. See "Localization Workflow — the
+  English-Parent Rule" above.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
