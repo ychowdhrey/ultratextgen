@@ -66,16 +66,22 @@ def english_slug_from_href(href):
 
 
 def current_asset_basenames(html):
-    """Return (og_basename, hero_basename) currently referenced, or None."""
+    """Return (og_basename, og_href, hero_basename) currently referenced.
+    og_href is the raw content="..." value, not just its basename — needed
+    to replace it correctly when it isn't under /assets/og/ at all (the
+    generic fallback card lives at the site root, /logo.png, so a
+    reconstructed "/assets/og/logo.png" search string would never match)."""
     og = None
+    og_href = None
     m = OG_IMAGE.search(html)
     if m:
-        og = os.path.splitext(os.path.basename(m.group(2)))[0]
+        og_href = m.group(2)
+        og = os.path.splitext(os.path.basename(og_href))[0]
     hero = None
     m = re.search(r'/assets/hero/([a-zA-Z0-9\-]+)\.svg', html)
     if m:
         hero = m.group(1)
-    return og, hero
+    return og, og_href, hero
 
 
 LOCALIZED_HOME_FNAMES = {v[0] for v in gsa.LOCALIZED_HOME.values()} | {gsa.HOME_CARD}
@@ -156,7 +162,7 @@ def collect(force=False):
                                       recursive=True)):
             html = open(path, encoding="utf-8").read()
             slug = slug_for(path)
-            og_base, hero_base = current_asset_basenames(html)
+            og_base, og_href, hero_base = current_asset_basenames(html)
             already_ok = (og_base == slug) and (hero_base in (slug, None))
             if already_ok and not force:
                 continue
@@ -167,8 +173,8 @@ def collect(force=False):
             sub = clean_sub(html)
             rows.append({
                 "path": path, "slug": slug, "og_base": og_base,
-                "hero_base": hero_base, "eng_slug": eng_slug,
-                "title": title, "sub": sub,
+                "og_href": og_href, "hero_base": hero_base,
+                "eng_slug": eng_slug, "title": title, "sub": sub,
             })
     return rows
 
@@ -210,9 +216,11 @@ def main():
 
         html = open(r["path"], encoding="utf-8").read()
         new_html = html
-        if r["og_base"]:
-            new_html = new_html.replace(f"/assets/og/{r['og_base']}.png",
-                                         f"/assets/og/{slug}.png")
+        if r["og_href"]:
+            new_og_href = (f"https://ultratextgen.com/assets/og/{slug}.png"
+                           if r["og_href"].startswith("https://ultratextgen.com")
+                           else f"/assets/og/{slug}.png")
+            new_html = new_html.replace(r["og_href"], new_og_href)
         if r["hero_base"]:
             new_html = new_html.replace(f"/assets/hero/{r['hero_base']}.svg",
                                          f"/assets/hero/{slug}.svg")
