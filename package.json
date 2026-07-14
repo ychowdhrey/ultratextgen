@@ -10,6 +10,7 @@
     "audit:css": "node scripts/audit-css.js",
     "check:gtm": "node scripts/check-gtm.js",
     "check:ads": "node scripts/check-ads.js",
+    "check:hreflang": "node scripts/audit-hreflang.js",
     "check:images": "python3 scripts/check-image-assets.py"
   },
   "dependencies": {
