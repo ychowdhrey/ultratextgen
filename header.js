@@ -5,6 +5,26 @@
   // this selector only locates the noscript iframe to position the header.
   const GTM_NOSCRIPT_SELECTOR = 'noscript iframe[src*="googletagmanager.com/ns.html"]';
 
+  // Dedicated ad slots — injected once here so every page that loads
+  // header.js gets them automatically, with no per-page markup to maintain.
+  // Auto ads (Anchor, etc.) still runs from the loader script each page
+  // already ships in <head>; these two are the fixed, hand-placed units.
+  const AD_CLIENT = "ca-pub-8242324164413945";
+
+  const topBannerHTML = '<div class="ad-slot ad-top-banner">' +
+      '<ins class="adsbygoogle" style="display:block" ' +
+        'data-ad-client="' + AD_CLIENT + '" ' +
+        'data-ad-slot="7584734719" ' +
+        'data-ad-format="auto" ' +
+        'data-full-width-responsive="true"></ins>' +
+    '</div>';
+
+  const rightRailHTML = '<aside class="ad-slot ad-rail-right">' +
+      '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" ' +
+        'data-ad-client="' + AD_CLIENT + '" ' +
+        'data-ad-slot="5968968934"></ins>' +
+    '</aside>';
+
   var headerHTML = '<header class="header">' +
     '<div class="header-inner">' +
       '<a href="/" class="logo">' +
@@ -92,6 +112,19 @@
       const header = tmp.firstChild;
       body.insertBefore(header, insertAfter ? insertAfter.nextSibling : body.firstChild);
     }
+
+    // Ad slots: top banner right after the nav, right rail appended to
+    // <body> (it's position:fixed, so its DOM position doesn't matter).
+    const headerEl = document.querySelector("header.header");
+    if (headerEl) {
+      headerEl.insertAdjacentHTML("afterend", topBannerHTML);
+    }
+    document.body.insertAdjacentHTML("beforeend", rightRailHTML);
+    if (window.adsbygoogle === undefined) {
+      window.adsbygoogle = [];
+    }
+    window.adsbygoogle.push({});
+    window.adsbygoogle.push({});
 
     // Dark mode: apply saved preference immediately (before paint)
     if (localStorage.getItem("darkMode") === "true") {
