@@ -7724,3 +7724,50 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
     z-index: 5;
   }
 }
+
+/* ==========================================================
+   Couple / pasangan matching-name generator
+   (js/gamename/couple-generator.js). Layout only — colors use
+   the shared theme tokens so dark mode is inherited.
+   ========================================================== */
+.couple-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.couple-field-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+.couple-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1.05rem;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.couple-input:focus {
+  border-color: var(--accent-purple);
+}
+.couple-output {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 1rem 0 0.5rem;
+}
+.couple-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.couple-card .uname-chip {
+  margin: 0;
+}
