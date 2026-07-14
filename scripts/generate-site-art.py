@@ -1040,6 +1040,7 @@ K_CAT = "ULTRATEXTGEN · FONTS"
 K_USE = "ULTRATEXTGEN · GENERATOR"
 K_PLAT = "ULTRATEXTGEN · PLATFORM"
 K_ANS = "ULTRATEXTGEN · ANSWERS"
+K_SYM = "ULTRATEXTGEN · SYMBOLS"
 K_SITE = "ULTRATEXTGEN"
 K_PRINT = "ULTRATEXTGEN · PRINTABLES"
 
@@ -1448,6 +1449,18 @@ PAGES = {
 
   # ---- library overview ----
   "library": ("Symbol & Emoji Library", "Copy-and-paste reference collections", m_grid, K_LIB),
+
+  # ---- symbol pillar: single-glyph identity pages ----
+  "symbol": ("Symbol Lookup", "Meaning, history & how to type any symbol",
+        glyphs("°", "÷", "∞", "√", "×"), K_SYM),
+  "symbol-degree-symbol": ("Degree Symbol", "° meaning, history & how to type it", glyphs("°"), K_SYM),
+  "symbol-division-sign": ("Division Sign", "÷ meaning, history & how to type it", glyphs("÷"), K_SYM),
+  "symbol-infinity": ("Infinity Symbol", "∞ meaning, history & how to type it", glyphs("∞"), K_SYM),
+  "symbol-square-root": ("Square Root Symbol", "√ meaning, history & how to type it", glyphs("√"), K_SYM),
+  "symbol-multiplication-sign": ("Multiplication Sign", "Copy & paste the × times symbol", glyphs("×"), K_SYM),
+  "symbol-squared-cubed": ("Squared & Cubed", "Copy & paste ² and ³ exponents", glyphs("²", "³"), K_SYM),
+  "symbol-euro-sign": ("Euro Sign", "€ meaning, history & how to type it", glyphs("€"), K_SYM),
+  "symbol-pound-sign": ("Pound Sign", "£ meaning, history & how to type it", glyphs("£"), K_SYM),
 
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",

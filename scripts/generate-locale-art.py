@@ -84,6 +84,29 @@ def current_asset_basenames(html):
     return og, og_href, hero
 
 
+TWITTER_CARD_SUMMARY = re.compile(r'<meta name="twitter:card" content="summary">')
+TWITTER_CARD_LARGE = re.compile(r'<meta name="twitter:card" content="summary_large_image">')
+TWITTER_DESC_TAG = re.compile(r'<meta name="twitter:description" content="[^"]*">')
+
+
+def insert_og_meta(html, url):
+    """Insert a fresh og:image/twitter:image pair into a page that has
+    twitter:card/twitter:description but no image meta at all (the symbol/
+    pillar never got OG-card support). Mirrors the exact tag order already
+    used on every symbol/ page that DOES have one: og:image immediately
+    before twitter:card, twitter:image immediately after twitter:description,
+    twitter:card upgraded to the large-image variant."""
+    html = TWITTER_CARD_SUMMARY.sub(
+        '<meta name="twitter:card" content="summary_large_image">', html, count=1)
+    html = TWITTER_CARD_LARGE.sub(
+        lambda m: f'<meta property="og:image" content="{url}">\n' + m.group(0),
+        html, count=1)
+    html = TWITTER_DESC_TAG.sub(
+        lambda m: m.group(0) + f'\n<meta name="twitter:image" content="{url}">',
+        html, count=1)
+    return html
+
+
 LOCALIZED_HOME_FNAMES = {v[0] for v in gsa.LOCALIZED_HOME.values()} | {gsa.HOME_CARD}
 
 
@@ -221,6 +244,8 @@ def main():
                            if r["og_href"].startswith("https://ultratextgen.com")
                            else f"/assets/og/{slug}.png")
             new_html = new_html.replace(r["og_href"], new_og_href)
+        else:
+            new_html = insert_og_meta(new_html, f"https://ultratextgen.com/assets/og/{slug}.png")
         if r["hero_base"]:
             new_html = new_html.replace(f"/assets/hero/{r['hero_base']}.svg",
                                          f"/assets/hero/{slug}.svg")
