@@ -123,8 +123,14 @@
     if (window.adsbygoogle === undefined) {
       window.adsbygoogle = [];
     }
+    // Top banner always requests — it's visible at every viewport width.
     window.adsbygoogle.push({});
-    window.adsbygoogle.push({});
+    // Right rail is CSS-hidden below 1600px (see .ad-rail-right in style.css);
+    // only request it when it'll actually be seen, so narrow viewports don't
+    // burn an impression on a slot nobody can view.
+    if (window.matchMedia("(min-width: 1600px)").matches) {
+      window.adsbygoogle.push({});
+    }
 
     // Dark mode: apply saved preference immediately (before paint)
     if (localStorage.getItem("darkMode") === "true") {
