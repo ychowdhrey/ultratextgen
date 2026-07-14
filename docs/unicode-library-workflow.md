@@ -355,21 +355,53 @@ overlap/research gap has been consciously resolved).
 Before opening the PR, lint every generated/changed page:
 
 ```bash
-# whole library
+# whole library — English root AND every translated lane (<lang>/library/,
+# <lang>/symbol/) by default
 python3 scripts/validate_library_pages.py
 
 # or just the batch
 python3 scripts/validate_library_pages.py library/<slug>/ library/<slug2>/
+python3 scripts/validate_library_pages.py id/library/<slug>/
 ```
 
 Errors (fail the run): missing title/description/canonical, not exactly one
 `<h1>`, fewer than 3 `<h2>`, single-copy page under the minimum button count,
 `.symbol-tile` buttons missing `data-symbol`/`aria-label`, missing
 `#symbolToast` or `/symbol-explorer.js`, a collections container with no
-`buildGrids` call, and duplicate titles/descriptions across pages.
+`buildGrids` call, duplicate titles/descriptions across pages, and a **lane
+mismatch** — a page under a `library/` directory whose `hreflang="en"`
+counterpart is under `/symbol/`, or vice versa (see below).
 
 Fix all errors before the PR. Warnings (e.g. missing related-links block)
 should be reviewed but don't block.
+
+### Translating a page: the lane is inherited, never re-decided
+
+`library/` vs `symbol/` (CLAUDE.md, "Content Types: Library vs Symbol") is a
+**content-type** decision made once, on the English page, via its spec's
+`page_type`. Translating that page into `<lang>/` does not reopen the
+decision — a translation of a `/symbol/<slug>/` page ships to
+`<lang>/symbol/<slug>/`, full stop, even though `<lang>/library/` is the
+lane most translation batches actually touch and may be the only lane that
+already exists for that language.
+
+This has gone wrong repeatedly in practice — not as one session's mistake,
+but because most languages simply never built a `<lang>/symbol/` pillar, so
+every subsequent translation session defaulted to the one lane that existed
+(`<lang>/library/`) for single-glyph content too. `ar/` is the only language
+that got this right end-to-end (it has its own `ar/symbol/`). Before
+starting a translation batch:
+
+- Check whether the English source page lives under `symbol/` or `library/`
+  and mirror that, not the target language's existing folder layout.
+- If the language has no `<lang>/symbol/` directory yet, create it — "no
+  precedent in this language" is not a reason to fold single-glyph content
+  into `<lang>/library/`.
+- The validator now scans every `<lang>/library/` and `<lang>/symbol/` by
+  default specifically to catch this: it reads each page's own
+  `hreflang="en"` link and flags a mismatch between the page's directory and
+  its English counterpart's directory. Run it over your translated batch,
+  not just against the English pages you touched.
 
 ---
 
