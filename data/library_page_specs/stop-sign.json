@@ -1,0 +1,57 @@
+{
+  "slug": "stop-sign",
+  "page_type": "symbol",
+  "title": "Stop Sign Symbol: Copy & Paste 🛑 — Meaning, Codepoint & the Sign It's Confused With",
+  "meta_description": "Copy and paste the stop sign emoji (🛑), see why it's an octagon, and learn the difference between 🛑 stop and ⛔ no entry — two signs people mix up constantly.",
+  "canonical": "https://ultratextgen.com/symbol/stop-sign/",
+  "breadcrumb": "Stop Sign",
+  "hero_h1": "Stop Sign Symbol",
+  "hero_tagline": "🛑 U+1F6D1 — the octagonal stop sign emoji, the only traffic sign shaped that way on purpose, plus the ⛔ no-entry circle it keeps getting confused with. Click any symbol to copy it instantly.",
+  "intro": "The stop sign emoji (🛑, U+1F6D1, officially named OCTAGONAL SIGN) copies the real-world sign's shape for a real reason: the octagon is the only sign silhouette reserved exclusively for \"stop\" in the US Manual on Uniform Traffic Control Devices, adopted in 1922 specifically so drivers could recognize it from behind, through snow, or in a rearview mirror — no other shape carries that meaning, so the outline alone tells you what to do before you can even read it. Unicode added 🛑 in version 9.0 (2016). It's a red octagon with a white border and no text baked into the glyph, unlike some early carrier emoji that rendered an actual \"STOP\" label — most platforms today show a plain shape.",
+  "date_published": "2026-07-14",
+  "date_modified": "2026-07-14",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "stop-sign",
+      "label": "Stop Sign",
+      "h2": "Stop Sign Emoji",
+      "intro": "The octagon itself, and the two symbols closest in meaning that aren't the same thing.",
+      "symbols": [
+        { "char": "🛑", "label": "Stop Sign" },
+        { "char": "⛔", "label": "No Entry" },
+        { "char": "🚫", "label": "Prohibited" }
+      ]
+    },
+    {
+      "id": "traffic-warning-symbols",
+      "label": "Traffic & Warning",
+      "h2": "Traffic & Warning Symbols",
+      "intro": "Related caution and hazard marks that show up alongside stop signs in signage and messaging.",
+      "symbols": [
+        { "char": "⚠️", "label": "Warning" },
+        { "char": "🚧", "label": "Construction" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "☢️", "label": "Radioactive" },
+        { "char": "☣️", "label": "Biohazard" }
+      ]
+    },
+    {
+      "id": "caution-punctuation",
+      "label": "Caution Marks",
+      "h2": "Caution & Alert Punctuation",
+      "intro": "The punctuation-level equivalents people reach for to add urgency without a full sign glyph.",
+      "symbols": [
+        { "char": "❗", "label": "Exclamation Mark" },
+        { "char": "❕", "label": "White Exclamation Mark" },
+        { "char": "‼️", "label": "Double Exclamation Mark" },
+        { "char": "⁉️", "label": "Exclamation Question Mark" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/hazard-warning-symbols/", "title": "Hazard & Warning Symbols", "desc": "The wider set of caution, radiation, and biohazard marks stop signs usually appear next to." },
+    { "href": "/symbol/biohazard-symbol/", "title": "Biohazard Symbol", "desc": "Another sign whose shape alone is the warning — designed in 1966 to be meaningless until you're taught it, then unforgettable." },
+    { "href": "/symbol/wheelchair-symbol/", "title": "Wheelchair Symbol", "desc": "A different kind of standardized sign glyph, with its own 1968 design history and modern redesign debate." }
+  ]
+}
