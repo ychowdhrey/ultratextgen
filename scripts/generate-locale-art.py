@@ -38,14 +38,19 @@ LOCALES = ["ar", "bs", "cs", "de", "es", "fr", "hi", "hr", "id", "it", "ja",
            "ko", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sr", "sv", "th",
            "tl", "tr", "vi"]
 
+
+# Content is matched with a backreference to its own opening quote (.*?\1 /
+# \2), not a [^"']* class — apostrophes are common inside the attribute
+# value itself (French elisions like "colle l'écriture"), and a quote-class
+# match truncates there instead of at the real closing quote.
 HREFLANG_EN = re.compile(
-    r'<link\s+rel=["\']alternate["\']\s+hreflang=["\']en["\']\s+href=["\']([^"\']+)["\']')
+    r'<link\s+rel=(["\'])alternate\1\s+hreflang=(["\'])en\2\s+href=(["\'])(.*?)\3')
 OG_IMAGE = re.compile(
-    r'<meta[^>]*(?:og:image|twitter:image)[^>]*content=["\']([^"\']+)["\']')
+    r'<meta[^>]*(?:og:image|twitter:image)[^>]*content=(["\'])(.*?)\1')
 OG_TITLE = re.compile(
-    r'<meta\s+property=["\']og:title["\']\s+content=["\']([^"\']*)["\']')
+    r'<meta\s+property=(["\'])og:title\1\s+content=(["\'])(.*?)\2')
 OG_DESC = re.compile(
-    r'<meta\s+property=["\']og:description["\']\s+content=["\']([^"\']*)["\']')
+    r'<meta\s+property=(["\'])og:description\1\s+content=(["\'])(.*?)\2')
 TITLE_TAG = re.compile(r'<title>([^<]*)</title>')
 
 
@@ -65,7 +70,7 @@ def current_asset_basenames(html):
     og = None
     m = OG_IMAGE.search(html)
     if m:
-        og = os.path.splitext(os.path.basename(m.group(1)))[0]
+        og = os.path.splitext(os.path.basename(m.group(2)))[0]
     hero = None
     m = re.search(r'/assets/hero/([a-zA-Z0-9\-]+)\.svg', html)
     if m:
@@ -112,8 +117,8 @@ def motif_kicker_for(english_slug, old_og_base, old_hero_base):
 
 def clean_title(html):
     m = OG_TITLE.search(html)
-    if m and m.group(1).strip():
-        t = m.group(1).strip()
+    if m and m.group(3).strip():
+        t = m.group(3).strip()
     else:
         m = TITLE_TAG.search(html)
         if not m:
@@ -134,8 +139,8 @@ def clean_title(html):
 
 def clean_sub(html):
     m = OG_DESC.search(html)
-    if m and m.group(1).strip():
-        s = m.group(1).strip()
+    if m and m.group(3).strip():
+        s = m.group(3).strip()
         # The subtitle renders as one unwrapped line next to the motif
         # graphic (see og_png_svg) — past ~55 Latin chars it runs under it.
         if len(s) > 55:
@@ -156,7 +161,7 @@ def collect(force=False):
             if already_ok and not force:
                 continue
             m = HREFLANG_EN.search(html)
-            href = m.group(1) if m else None
+            href = m.group(4) if m else None
             eng_slug = english_slug_from_href(href) if href else None
             title = clean_title(html)
             sub = clean_sub(html)
