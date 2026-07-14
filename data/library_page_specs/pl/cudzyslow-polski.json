@@ -1,9 +1,10 @@
 {
   "slug": "cudzyslow-polski",
   "lang": "pl",
+  "page_type": "symbol",
   "title": "Cudzysłów Polski „ \": Jak Wygląda i Jak Go Wpisać",
   "meta_description": "Polski cudzysłów dolny „ i górny \" do skopiowania, plus cudzysłów francuski « » do zdania zagnieżdżonego. Kliknij znak, aby skopiować go od razu.",
-  "canonical": "https://ultratextgen.com/pl/library/cudzyslow-polski/",
+  "canonical": "https://ultratextgen.com/pl/symbol/cudzyslow-polski/",
   "breadcrumb": "Cudzysłów Polski",
   "hero_h1": "Cudzysłów Polski „ \"",
   "hero_tagline": "Polski cudzysłów dolny i górny oraz cudzysłów francuski « » — kliknij, aby skopiować.",
@@ -13,11 +14,11 @@
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
-  "crumb_library": "Biblioteka",
-  "library_url": "https://ultratextgen.com/pl/library/",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
   "hreflang": [
-    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/cudzyslow-polski/" },
-    { "lang": "x-default", "href": "https://ultratextgen.com/pl/library/cudzyslow-polski/" }
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/cudzyslow-polski/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/pl/symbol/cudzyslow-polski/" }
   ],
   "sections": [
     {
@@ -64,7 +65,7 @@
       "desc": "Cały alfabet grecki, wielkie i małe litery, gotowe do skopiowania."
     },
     {
-      "href": "/pl/library/znaki-tm-i-copyright/",
+      "href": "/pl/symbol/znaki-tm-i-copyright/",
       "title": "TM, © i ®",
       "desc": "Znak towarowy, copyright i zastrzeżony znak towarowy do skopiowania."
     },

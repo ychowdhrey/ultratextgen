@@ -19,7 +19,8 @@ Checks per page
   - <link rel="canonical"> present
   - exactly one <h1>
   - at least three <h2>
-  - single-copy pages have at least MIN_SINGLE_BUTTONS `.symbol-tile` buttons
+  - single-copy pages have at least MIN_SINGLE_BUTTONS_LIBRARY (library/) or
+    MIN_SINGLE_BUTTONS_SYMBOL (symbol/) `.symbol-tile` buttons
   - every `.symbol-tile` button carries both data-symbol and aria-label
   - collection pages call UltraTextGen.buildGrids(...)
   - a #symbolToast element exists
@@ -62,7 +63,14 @@ REPO = SCRIPT_DIR.parent
 LIBRARY_DIR = REPO / "library"
 SYMBOL_DIR = REPO / "symbol"
 
-MIN_SINGLE_BUTTONS = 6
+# library/ single-copy pages serve a browse-and-compare job (a small set of
+# peer symbols), so they need enough tiles to be worth a dedicated page.
+# symbol/ pages serve a different job -- one canonical glyph plus its
+# closest variants, per CLAUDE.md's "Content Types: Library vs Symbol" -- so
+# a 2-4 tile spoke is by design, not thin content. Calibrated against the
+# existing symbol/ corpus, whose smallest legitimate pages sit at 2 tiles.
+MIN_SINGLE_BUTTONS_LIBRARY = 6
+MIN_SINGLE_BUTTONS_SYMBOL = 2
 MIN_ART_PIECES = 6
 MIN_H2 = 3
 
@@ -112,6 +120,10 @@ def normalize_text(text):
 def validate_page(path):
     html = path.read_text(encoding="utf-8", errors="replace")
     issues = []
+
+    # Lane is the page's own immediate parent-of-parent dir name: <slug>/index.html
+    # sits inside .../library/<slug>/ or .../symbol/<slug>/, in any language.
+    own_lane = path.resolve().parent.parent.name
 
     # Title
     m_title = TITLE_RE.search(html)
@@ -177,13 +189,17 @@ def validate_page(path):
                   f"button(s); need >= {MIN_ART_PIECES}")
         )
 
-    # Minimum buttons for single-copy pages
+    # Minimum buttons for single-copy pages -- the floor depends on lane
+    # (see MIN_SINGLE_BUTTONS_SYMBOL comment above); unknown/other lanes
+    # fall back to the stricter library/ floor.
     if not is_collection and not is_art:
-        if len(tile_buttons) < MIN_SINGLE_BUTTONS:
+        min_buttons = (MIN_SINGLE_BUTTONS_SYMBOL if own_lane == "symbol"
+                       else MIN_SINGLE_BUTTONS_LIBRARY)
+        if len(tile_buttons) < min_buttons:
             issues.append(
                 Issue("ERROR",
                       f"single-copy page has {len(tile_buttons)} .symbol-tile "
-                      f"button(s); need >= {MIN_SINGLE_BUTTONS}")
+                      f"button(s); need >= {min_buttons}")
             )
 
     # Collection pages must actually call buildGrids (tautological here, but
@@ -212,7 +228,6 @@ def validate_page(path):
     # vs symbol/) must match the lane of its hreflang="en" counterpart. A
     # translation session can pick the wrong lane independently of the
     # English original; this is the only check that would catch it.
-    own_lane = path.resolve().parent.parent.name
     if own_lane in ("library", "symbol"):
         m_en = HREFLANG_EN_RE.search(html)
         if m_en:
