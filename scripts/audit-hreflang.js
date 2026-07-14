@@ -163,14 +163,18 @@ if (FIX) {
   let filesFixed = 0;
   let linksAdded = 0;
 
-  // 1. Non-reciprocal — append into an existing alternate block. Never write
-  // into a homepage: a subpage claiming the homepage as its "EN version"
-  // (a common placeholder when no real translated counterpart exists yet)
-  // must not turn into the homepage linking back to that one arbitrary subpage.
+  // 1. Non-reciprocal — append into an existing alternate block. Only skip
+  // when a SUBPAGE claims a homepage as its "EN version" (a common
+  // placeholder when no real translated counterpart exists yet) — writing
+  // that back would turn the homepage into linking to one arbitrary subpage.
+  // Homepage-to-homepage claims (every locale homepage listing every other
+  // locale homepage) are the normal, legitimate cluster pattern and must
+  // still be fixed reciprocally, e.g. a new locale's homepage needs every
+  // existing locale homepage to link back to it.
   const fixesByFile = new Map(); // filePath -> [{hreflang, href}]
   let skippedHomepageTargets = 0;
   for (const item of nonReciprocal) {
-    if (isHomepage(item.target.canonical)) {
+    if (isHomepage(item.target.canonical) && !isHomepage(item.page.canonical)) {
       skippedHomepageTargets++;
       continue;
     }
