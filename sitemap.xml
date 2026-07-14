@@ -374,14 +374,21 @@
 
   <url>
     <loc>https://ultratextgen.com/ar/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ar/khat-snapchat/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ar/library/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -416,7 +423,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ar/library/cross-x-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -430,21 +437,21 @@
 
   <url>
     <loc>https://ultratextgen.com/ar/library/currency-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/ar/library/discord-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/ar/library/emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -452,6 +459,13 @@
   <url>
     <loc>https://ultratextgen.com/ar/library/emoji-flags/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ar/library/facebook-symbols/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -500,7 +514,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ar/library/math-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -521,7 +535,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ar/library/roblox-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -584,7 +598,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ar/symbol/squared-cubed/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -710,7 +724,7 @@
 
   <url>
     <loc>https://ultratextgen.com/category/ancient-fonts/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -857,7 +871,7 @@
 
   <url>
     <loc>https://ultratextgen.com/category/text-decorator/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -878,7 +892,7 @@
 
   <url>
     <loc>https://ultratextgen.com/character-counter/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -983,7 +997,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/emoji-kombinationen/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1032,14 +1046,14 @@
 
   <url>
     <loc>https://ultratextgen.com/de/library/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/de/library/alt-codes/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1067,7 +1081,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/library/discord-symbole/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1075,6 +1089,20 @@
   <url>
     <loc>https://ultratextgen.com/de/library/emoji-flags/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/de/library/euro-zeichen/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/de/library/facebook-symbole/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1108,6 +1136,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/de/library/haekchen-symbole/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/de/library/herz-symbole/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -1129,6 +1164,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/de/library/kreuz-x-symbole/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/de/library/lenny-face/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -1143,8 +1185,22 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/de/library/mathe-symbole/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/de/library/pfeil-symbole/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/de/library/roblox-symbole/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1158,7 +1214,14 @@
 
   <url>
     <loc>https://ultratextgen.com/de/library/symbole-zum-kopieren/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/de/library/y2k-symbole/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1172,7 +1235,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/schriftarten-fuer-facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1214,7 +1277,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/usecase/bio-schriftart/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1256,7 +1319,7 @@
 
   <url>
     <loc>https://ultratextgen.com/de/woerter-zeichen-zaehlen/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1298,7 +1361,7 @@
 
   <url>
     <loc>https://ultratextgen.com/discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1340,7 +1403,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1368,14 +1431,14 @@
 
   <url>
     <loc>https://ultratextgen.com/es/combinaciones-de-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/es/contador-de-palabras-y-caracteres/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1571,7 +1634,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/letras-para-facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1655,7 +1718,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/simbolo-x/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1690,7 +1753,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/simbolos-de-moneda/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1725,7 +1788,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/simbolos-de-verificacion/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1739,7 +1802,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/simbolos-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1747,6 +1810,13 @@
   <url>
     <loc>https://ultratextgen.com/es/library/simbolos-dreamcore-weirdcore/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/es/library/simbolos-facebook/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1788,14 +1858,14 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/simbolos-matematicos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/es/library/simbolos-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1816,7 +1886,7 @@
 
   <url>
     <loc>https://ultratextgen.com/es/library/simbolos-y2k/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2012,7 +2082,7 @@
 
   <url>
     <loc>https://ultratextgen.com/events/new-year/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2026,7 +2096,7 @@
 
   <url>
     <loc>https://ultratextgen.com/facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2061,14 +2131,14 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/combos-emoji/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/fr/compteur-de-mots-et-de-caracteres/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2082,14 +2152,14 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/ecriture-cursive/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/fr/ecriture-facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2180,7 +2250,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/codes-alt/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2229,7 +2299,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2244,6 +2314,13 @@
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-etoiles/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/fr/library/symboles-facebook/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2278,7 +2355,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-kawaii-cute/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2292,7 +2369,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2306,14 +2383,14 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-witchy-occult/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/fr/library/symboles-y2k/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2368,6 +2445,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/fr/police-snapchat/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/fr/pseudo-style/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -2390,7 +2474,7 @@
 
   <url>
     <loc>https://ultratextgen.com/fr/usecase/ecriture-bio/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2439,7 +2523,7 @@
 
   <url>
     <loc>https://ultratextgen.com/guide/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2467,7 +2551,7 @@
 
   <url>
     <loc>https://ultratextgen.com/guide/comments-that-stand-out/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2585,8 +2669,15 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/guide/linkedin-comment-styling/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/guide/linkedin-comments-guide/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2600,7 +2691,7 @@
 
   <url>
     <loc>https://ultratextgen.com/guide/personal-branding-through-typography/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2663,7 +2754,7 @@
 
   <url>
     <loc>https://ultratextgen.com/hi/usecase/emoji-anuvadak/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2768,7 +2859,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/font-facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2817,7 +2908,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/kombinasi-emoji/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2901,7 +2992,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-centang/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2929,7 +3020,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2937,6 +3028,13 @@
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-dreamcore-weirdcore/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/id/library/simbol-facebook/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2992,7 +3090,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-kawaii-cute/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3013,7 +3111,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-matematika/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3048,14 +3146,14 @@
 
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-salib/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3076,7 +3174,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/library/simbol-y2k/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3097,7 +3195,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/penghitung-kata-dan-karakter/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3230,7 +3328,7 @@
 
   <url>
     <loc>https://ultratextgen.com/id/usecase/nama-ml-keren/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3279,7 +3377,7 @@
 
   <url>
     <loc>https://ultratextgen.com/instagram/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -3307,7 +3405,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/contatore-di-parole-e-caratteri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3356,7 +3454,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/font-facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3419,7 +3517,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/codici-alt/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3454,7 +3552,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/simboli-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3468,7 +3566,14 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/simboli-euro/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/it/library/simboli-facebook/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3517,7 +3622,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/simboli-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3545,7 +3650,7 @@
 
   <url>
     <loc>https://ultratextgen.com/it/library/simboli-y2k/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3719,6 +3824,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/ja/library/alt-codes/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/ja/library/arrow-symbols/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -3734,14 +3846,14 @@
 
   <url>
     <loc>https://ultratextgen.com/ja/library/discord-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/ja/library/emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3776,7 +3888,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ja/library/roblox-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3811,7 +3923,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ja/library/y2k-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3881,7 +3993,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/font-byeonhwan/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3930,7 +4042,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/discord-giho/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3945,6 +4057,13 @@
   <url>
     <loc>https://ultratextgen.com/ko/library/eumak-giho/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/ko/library/facebook-giho/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3979,7 +4098,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/gyocha-giho/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3993,7 +4112,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/hwapye-giho/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4014,7 +4133,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/imoji-johap/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4049,7 +4168,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/roblox-giho/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4063,7 +4182,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/suhak-giho/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4077,7 +4196,7 @@
 
   <url>
     <loc>https://ultratextgen.com/ko/library/y2k-giho/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4112,35 +4231,35 @@
 
   <url>
     <loc>https://ultratextgen.com/library/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/accent-marks-diacritics/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/achievement-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/aesthetic-borders-frames/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/aesthetic-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4154,7 +4273,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/alt-codes/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/angel-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4175,14 +4301,21 @@
 
   <url>
     <loc>https://ultratextgen.com/library/animal-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/anime-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/annoyed-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4196,7 +4329,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/arrow-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4272,6 +4405,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/blush-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/blushing-kaomoji/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4280,14 +4420,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/body-language-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/bow-ribbon-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4301,7 +4441,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/bracket-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4329,7 +4469,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/bullet-point-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4364,7 +4504,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/card-suit-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4384,8 +4524,22 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/check-mark-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/checkmark-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/chefs-kiss-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4419,8 +4573,22 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/choking-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/christmas-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/clap-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4440,6 +4608,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/clown-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/colombia-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4454,6 +4629,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/confused-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/copyright-trademark-symbols/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4462,7 +4644,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/coquette-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4476,7 +4658,21 @@
 
   <url>
     <loc>https://ultratextgen.com/library/cottagecore-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/cowboy-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/cringe-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4496,8 +4692,15 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/crown-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/crown-royalty-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4531,6 +4734,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/dancing-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/dark-academia-symbols/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4539,7 +4749,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/dash-hyphen-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4559,8 +4769,15 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/devil-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/di-maria-emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4574,7 +4791,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/discord-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4636,6 +4853,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/eggplant-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/egypt-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4644,28 +4868,35 @@
 
   <url>
     <loc>https://ultratextgen.com/library/egyptian-hieroglyphs/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/electrical-circuit-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/email-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/embarrassed-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4693,7 +4924,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/evil-eye-hamsa-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4706,8 +4937,36 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/eye-roll-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/eyes-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/face-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/facebook-symbols/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/facepalm-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4721,7 +4980,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/fantasy-mythical-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/fire-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4749,7 +5015,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/food-drink-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4798,7 +5064,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/football-username-ideas/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4826,7 +5092,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/france-emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/freaky-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4847,14 +5120,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/funny-emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/gaming-aesthetic-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4895,6 +5168,20 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/ghost-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/gift-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/goal-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4910,7 +5197,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/goth-grunge-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4924,7 +5211,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/greek-letter-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4966,14 +5253,28 @@
 
   <url>
     <loc>https://ultratextgen.com/library/halloween-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/halo-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/hand-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/handshake-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5007,6 +5308,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/heart-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/heart-kaomoji/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -5015,7 +5323,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/heart-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/high-five-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5057,7 +5372,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/instagram-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5155,7 +5470,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/kawaii-cute-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5163,6 +5478,13 @@
   <url>
     <loc>https://ultratextgen.com/library/keyboard-symbols/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/kiss-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5245,15 +5567,15 @@
   </url>
 
   <url>
-    <loc>https://ultratextgen.com/library/linkedin-comment-styling/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://ultratextgen.com/library/linkedin-symbol-library/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://ultratextgen.com/library/linkedin-symbol-library/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://ultratextgen.com/library/lip-bite-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5267,7 +5589,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/love-kaomoji/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5322,6 +5644,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/middle-finger-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/minecraft-symbols/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -5358,7 +5687,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/moon-celestial-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5373,6 +5702,13 @@
   <url>
     <loc>https://ultratextgen.com/library/movie-night-emojis/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/muscle-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5449,14 +5785,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/nkunku-emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/norse-viking-runes/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5505,7 +5841,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/party-celebration-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/peace-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5532,6 +5875,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/pleading-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/poland-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -5548,6 +5898,13 @@
   <url>
     <loc>https://ultratextgen.com/library/portugal-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/praying-hands-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5589,21 +5946,21 @@
 
   <url>
     <loc>https://ultratextgen.com/library/recycle-environment-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/religious-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/roblox-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5611,6 +5968,13 @@
   <url>
     <loc>https://ultratextgen.com/library/roblox-text-art/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/rocket-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5624,7 +5988,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/rodrygo-emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5665,6 +6029,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/salute-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/saudi-arabia-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -5672,8 +6043,15 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/scared-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/school-education-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5681,6 +6059,13 @@
   <url>
     <loc>https://ultratextgen.com/library/scotland-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/seahorse-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5728,6 +6113,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/sick-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/side-eye-emoji/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -5735,29 +6127,50 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/sigh-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/skull-ascii-art/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/skull-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/slash-backslash-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/sleepy-kaomoji/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/smiley-face-guide/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/smirk-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5806,21 +6219,21 @@
 
   <url>
     <loc>https://ultratextgen.com/library/sparkle-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/special-characters/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/sports-emojis/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5828,6 +6241,13 @@
   <url>
     <loc>https://ultratextgen.com/library/star-ascii-art/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/star-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5841,7 +6261,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/star-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5849,6 +6269,13 @@
   <url>
     <loc>https://ultratextgen.com/library/suarez-emoji-combos/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/sunglasses-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5910,8 +6337,15 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/thinking-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/thumbs-up-emoji/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5925,14 +6359,28 @@
 
   <url>
     <loc>https://ultratextgen.com/library/tiktok-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/tired-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/library/tongue-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/traffic-road-sign-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6057,6 +6505,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/library/wink-emoji/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/library/wink-kaomoji/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -6072,7 +6527,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/witchy-occult-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6086,14 +6541,14 @@
 
   <url>
     <loc>https://ultratextgen.com/library/x-twitter-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/library/y2k-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6107,7 +6562,7 @@
 
   <url>
     <loc>https://ultratextgen.com/library/zodiac-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6170,7 +6625,7 @@
 
   <url>
     <loc>https://ultratextgen.com/nl/library/euroteken/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6198,7 +6653,7 @@
 
   <url>
     <loc>https://ultratextgen.com/nl/library/kruis-symbool/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6226,7 +6681,7 @@
 
   <url>
     <loc>https://ultratextgen.com/nl/library/vinkje/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6240,7 +6695,7 @@
 
   <url>
     <loc>https://ultratextgen.com/nl/library/wiskunde-symbolen/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6268,7 +6723,7 @@
 
   <url>
     <loc>https://ultratextgen.com/nl/usecase/lettertype-voor-bio/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6303,7 +6758,7 @@
 
   <url>
     <loc>https://ultratextgen.com/no/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -6317,14 +6772,21 @@
 
   <url>
     <loc>https://ultratextgen.com/no/library/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/no/library/eurotegn/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/no/library/facebook-symboler/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6345,7 +6807,7 @@
 
   <url>
     <loc>https://ultratextgen.com/no/library/hakesymboler/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6380,7 +6842,7 @@
 
   <url>
     <loc>https://ultratextgen.com/no/library/matematiske-symboler/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6450,7 +6912,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/czcionki-na-facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6520,7 +6982,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/kombinacje-emoji/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6625,7 +7087,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/library/symbole-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6633,6 +7095,13 @@
   <url>
     <loc>https://ultratextgen.com/pl/library/symbole-dreamcore-weirdcore/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/pl/library/symbole-facebook/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6667,7 +7136,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/library/symbole-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6695,14 +7164,14 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/library/symbole-y2k/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/pl/library/znak-euro/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6716,7 +7185,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pl/licznik-slow-i-znakow/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7598,14 +8067,14 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/combos-de-emoji/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/pt/contador-de-palavras-e-caracteres/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7864,7 +8333,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/library/simbolos-de-confirmacao/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7878,7 +8347,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/library/simbolos-de-cruz-e-x/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7899,7 +8368,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/library/simbolos-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7941,7 +8410,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/library/simbolos-matematicos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7955,7 +8424,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/library/simbolos-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -7976,7 +8445,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/library/simbolos-y2k/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8025,7 +8494,7 @@
 
   <url>
     <loc>https://ultratextgen.com/pt/usecase/fontes-para-bio/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8179,14 +8648,14 @@
 
   <url>
     <loc>https://ultratextgen.com/ru/library/alt-kody/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/ru/library/emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8207,14 +8676,14 @@
 
   <url>
     <loc>https://ultratextgen.com/ru/library/simvoly-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/ru/library/simvoly-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8361,7 +8830,7 @@
 
   <url>
     <loc>https://ultratextgen.com/snapchat/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -8458,8 +8927,15 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/symbol/alpha-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/symbol/ampersand/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8472,8 +8948,29 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/symbol/ankh-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/aquarius-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/aries-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/symbol/at-symbol/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8494,14 +8991,28 @@
 
   <url>
     <loc>https://ultratextgen.com/symbol/bitcoin-symbol/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/cancer-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/capricorn-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/symbol/celsius-symbol/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8516,6 +9027,13 @@
   <url>
     <loc>https://ultratextgen.com/symbol/checkmark-symbol/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/congruent-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8542,8 +9060,15 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/symbol/delta-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/symbol/diameter-symbol/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8578,14 +9103,35 @@
 
   <url>
     <loc>https://ultratextgen.com/symbol/euro-sign/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/symbol/fahrenheit-symbol/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/fleur-de-lis-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/gemini-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/hamsa-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8626,15 +9172,29 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/symbol/leo-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/symbol/less-than-greater-than/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/libra-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/symbol/micro-sign/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8647,15 +9207,57 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/symbol/not-equal-sign/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/ohm-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/om-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/omega-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/orthodox-cross/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/symbol/peace-sign/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/symbol/pentagram-symbol/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/pi-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8663,6 +9265,13 @@
   <url>
     <loc>https://ultratextgen.com/symbol/pilcrow/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/pisces-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8689,6 +9298,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/symbol/recycling-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/symbol/right-arrow/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -8698,6 +9314,20 @@
   <url>
     <loc>https://ultratextgen.com/symbol/rupee-sign/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/sagittarius-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/scorpio-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8725,14 +9355,14 @@
 
   <url>
     <loc>https://ultratextgen.com/symbol/squared-cubed/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/symbol/star-of-david/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8740,6 +9370,13 @@
   <url>
     <loc>https://ultratextgen.com/symbol/star-symbol/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/taurus-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8766,8 +9403,22 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/symbol/virgo-symbol/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/symbol/wheelchair-symbol/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/symbol/won-sign/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8788,7 +9439,7 @@
 
   <url>
     <loc>https://ultratextgen.com/telegram/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -8802,7 +9453,7 @@
 
   <url>
     <loc>https://ultratextgen.com/th/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -8830,7 +9481,7 @@
 
   <url>
     <loc>https://ultratextgen.com/th/library/emoji-combos/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8838,6 +9489,13 @@
   <url>
     <loc>https://ultratextgen.com/th/library/emoji-flags/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/th/library/facebook-symbols/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8872,7 +9530,7 @@
 
   <url>
     <loc>https://ultratextgen.com/th/library/roblox-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8886,14 +9544,14 @@
 
   <url>
     <loc>https://ultratextgen.com/th/library/y2k-symbols/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/th/usecase/bio-font-ig/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8942,7 +9600,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -8963,7 +9621,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/emoji-kombinasyonlari/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -8998,7 +9656,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/karakter-sayaci/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9047,7 +9705,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/library/discord-sembolleri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9062,6 +9720,13 @@
   <url>
     <loc>https://ultratextgen.com/tr/library/estetik-semboller/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/tr/library/facebook-sembolleri/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9117,7 +9782,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/library/matematik-sembolleri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9131,21 +9796,21 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/library/onay-isaretleri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/tr/library/para-birimi-sembolleri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/tr/library/roblox-sembolleri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9173,14 +9838,14 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/library/witchy-occult-sembolleri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/tr/library/y2k-sembolleri/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9208,7 +9873,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/sekilli-nick/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9216,6 +9881,13 @@
   <url>
     <loc>https://ultratextgen.com/tr/sekilli-yazi/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/tr/snapchat-yazi-tipi/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9229,7 +9901,7 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/usecase/biyografi-yazi-tipi/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9264,14 +9936,21 @@
 
   <url>
     <loc>https://ultratextgen.com/tr/usecase/free-fire-nick/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/tr/usecase/mobile-legends-nick/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/tr/usecase/pubg-nick/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9327,14 +10006,14 @@
 
   <url>
     <loc>https://ultratextgen.com/usecase/bio-font/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://ultratextgen.com/usecase/bio-font/discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9348,7 +10027,7 @@
 
   <url>
     <loc>https://ultratextgen.com/usecase/bio-font/instagram/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9467,7 +10146,7 @@
 
   <url>
     <loc>https://ultratextgen.com/usecase/stylish-name/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9495,7 +10174,7 @@
 
   <url>
     <loc>https://ultratextgen.com/usecase/zalgo-text/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9579,7 +10258,7 @@
 
   <url>
     <loc>https://ultratextgen.com/vi/dem-tu-dem-ky-tu/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9600,7 +10279,7 @@
 
   <url>
     <loc>https://ultratextgen.com/vi/font-facebook/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9656,7 +10335,14 @@
 
   <url>
     <loc>https://ultratextgen.com/vi/ki-tu-discord/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ultratextgen.com/vi/ki-tu-facebook/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9677,7 +10363,7 @@
 
   <url>
     <loc>https://ultratextgen.com/vi/ki-tu-roblox/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9691,7 +10377,7 @@
 
   <url>
     <loc>https://ultratextgen.com/vi/ki-tu-y2k/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -9844,6 +10530,13 @@
   </url>
 
   <url>
+    <loc>https://ultratextgen.com/zh-tw/library/facebook-fuhao/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://ultratextgen.com/zh-tw/library/xingzuo-fuhao/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -9866,7 +10559,7 @@
 
   <url>
     <loc>https://ultratextgen.com/zh-tw/yingwen-ziti/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
