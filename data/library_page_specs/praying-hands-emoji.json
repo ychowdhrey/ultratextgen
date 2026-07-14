@@ -1,0 +1,136 @@
+{
+  "slug": "praying-hands-emoji",
+  "title": "Praying Hands Emoji & Kaomoji: Copy & Paste 🙏 Prayer & Gratitude Combos",
+  "meta_description": "Copy and paste praying hands emoji 🙏 🤲, bowing kaomoji like m(_ _)m, and combo sets for prayers, thanks, and high-fives. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/praying-hands-emoji/",
+  "breadcrumb": "Praying Hands Emoji & Kaomoji",
+  "hero_h1": "Praying Hands Emoji & Kaomoji",
+  "hero_tagline": "Prayer, gratitude, please, or high-five — the 🙏 emoji somehow means all of them. Grab folded hands, palms up, bowing kaomoji, and ready-made combos. Click any symbol to copy it instantly.",
+  "intro": "The praying hands emoji 🙏 is one of the most argued-over characters on the internet — some read it as prayer, plenty use it to mean thank-you or 'please,' and a stubborn crowd insists it's really two people mid high-five. Unicode officially names it 'Folded Hands,' which conveniently sidesteps the whole debate and lets the emoji carry every meaning at once. This page collects the praying hands emoji and its palms-up cousin 🤲, the faith and reflection symbols that pair with them, classic bowing and pleading kaomoji like m(_ _)m, and one-click combo sets for gratitude, prayer requests, and good-vibes captions. Whichever side of the high-five argument you land on, every symbol below copies with a single tap.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-praying-hands",
+      "label": "Core Praying Hands",
+      "h2": "The Praying Hands Emoji",
+      "intro": "The two hand emoji at the heart of prayer, thanks, and please.",
+      "symbols": [
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "🤲", "label": "Palms Up Together" }
+      ]
+    },
+    {
+      "id": "related-hand-gestures",
+      "label": "Hand Gestures",
+      "h2": "Related Hand Gestures",
+      "intro": "Open, clasped, and clapping hands that share the gratitude-and-praise mood.",
+      "symbols": [
+        { "char": "👐", "label": "Open Hands" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "🤝", "label": "Handshake" },
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "✋", "label": "Raised Hand" }
+      ]
+    },
+    {
+      "id": "faith-reflection",
+      "label": "Faith & Reflection",
+      "h2": "Faith & Reflection Symbols",
+      "intro": "Doves, kneeling, and religious marks for prayer and quiet reflection.",
+      "symbols": [
+        { "char": "🕊️", "label": "Dove" },
+        { "char": "🧎", "label": "Person Kneeling" },
+        { "char": "✝️", "label": "Latin Cross" },
+        { "char": "☪️", "label": "Star and Crescent" },
+        { "char": "🕉️", "label": "Om" }
+      ]
+    },
+    {
+      "id": "gratitude-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Gratitude & Pleading Kaomoji",
+      "intro": "Japanese-style bowing and pleading text faces — paste them anywhere plain text works.",
+      "symbols": [
+        { "char": "m(_ _)m", "label": "Deep Bow Kaomoji" },
+        { "char": "(｡•̀ᴗ-)✧", "label": "Grateful Wink Kaomoji" },
+        { "char": "_(:3」∠)_", "label": "Prostrate Thanks Kaomoji" },
+        { "char": "(≧∇≦)ﾉ", "label": "Joyful Thanks Kaomoji" },
+        { "char": "orz", "label": "Kneeling Bow Kaomoji" },
+        { "char": "( ᵕ人ᵕ)", "label": "Pleading Hands Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Praying Hands Combo Sets",
+    "intro": "Copy a full praying-hands combo in one click — from heartfelt thanks to blessed good vibes."
+  },
+  "collection_container_id": "prayingHandsSetsContainer",
+  "collections": [
+    {
+      "name": "Sending Prayers",
+      "flags": ["🙏", "🕊️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Thank You So Much",
+      "flags": ["🙏", "💕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Please And Thank You",
+      "flags": ["🙏", "🥺"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Good Vibes Only",
+      "flags": ["🙏", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Grateful Heart",
+      "flags": ["🙏", "❤️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "High Five",
+      "flags": ["🙏", "🙌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deep Bow Of Respect",
+      "flags": ["🙏", "🧎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blessed",
+      "flags": ["🙏", "🕊️", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Pointing, waving, and gesturing hands in one browsable grid."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Crosses, crescents, om, and faith marks from every tradition."
+    },
+    {
+      "href": "/library/thumbs-up-emoji/",
+      "title": "Thumbs Up Emoji",
+      "desc": "Approval, agreement, and good-to-go hand reactions."
+    },
+    {
+      "href": "/library/friendship-emojis/",
+      "title": "Friendship Emojis",
+      "desc": "Heart hands, hugs, and best-friend combos to share."
+    }
+  ]
+}

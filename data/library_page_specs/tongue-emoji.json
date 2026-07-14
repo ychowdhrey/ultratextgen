@@ -1,0 +1,107 @@
+{
+  "slug": "tongue-emoji",
+  "title": "Tongue Emoji & Kaomoji: Copy & Paste 😛 😜 😝 Silly Combos",
+  "meta_description": "Tongue emoji 😛 😜 😝 🤪, silly and zany combo sets, plus tongue-out kaomoji like :P and (≧∇≦) for playful chats and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/tongue-emoji/",
+  "breadcrumb": "Tongue Emoji & Kaomoji",
+  "hero_h1": "Tongue Emoji & Kaomoji",
+  "hero_tagline": "Playful tongue-out faces, the zany 🤪, the 👅 tongue itself, and cheeky tongue kaomoji — every flavor of silly and teasing. Click any symbol to copy it instantly.",
+  "intro": "The tongue emoji 😛 is the internet's shorthand for 'just kidding' — a lighthearted, teasing face that softens a joke or a playful jab. This page gathers the whole silly range: the winking 😜, the squinting 😝, the fully unhinged 🤪 zany face, and the 👅 tongue emoji on its own for licks, tastes, and cheeky reactions. When an emoji won't carry the exact vibe, classic tongue-out kaomoji like :P and (≧∇≦) paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for playful chats, comments, and replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-tongue-faces",
+      "label": "Core Tongue-Out Faces",
+      "h2": "Core Tongue-Out Face Emojis",
+      "intro": "The everyday tongue-out faces, from a simple stuck-out tongue to a winking tease.",
+      "symbols": [
+        { "char": "😛", "label": "Face With Tongue" },
+        { "char": "😜", "label": "Winking Face With Tongue" },
+        { "char": "😝", "label": "Squinting Face With Tongue" },
+        { "char": "😋", "label": "Face Savoring Food" }
+      ]
+    },
+    {
+      "id": "silly-zany",
+      "label": "Silly & Zany",
+      "h2": "Silly & Zany Face Emojis",
+      "intro": "Goofy, woozy, and downright unhinged faces for maximum chaos energy.",
+      "symbols": [
+        { "char": "🤪", "label": "Zany Face" },
+        { "char": "🥴", "label": "Woozy Face" },
+        { "char": "🤤", "label": "Drooling Face" },
+        { "char": "😵‍💫", "label": "Face With Spiral Eyes" },
+        { "char": "🙃", "label": "Upside-Down Face" }
+      ]
+    },
+    {
+      "id": "tongue-emoji",
+      "label": "The Tongue Emoji",
+      "h2": "The 👅 Tongue Emoji",
+      "intro": "The tongue itself — the star body-part emoji — plus its closest mouth-region neighbors.",
+      "symbols": [
+        { "char": "👅", "label": "Tongue" },
+        { "char": "👄", "label": "Mouth" },
+        { "char": "🫦", "label": "Biting Lip" },
+        { "char": "💋", "label": "Kiss Mark" }
+      ]
+    },
+    {
+      "id": "tongue-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Tongue-Out & Silly Kaomoji",
+      "intro": "Text faces that stick out a tongue, tease, and grin in plain text.",
+      "symbols": [
+        { "char": ":P", "label": "Sticking Out Tongue" },
+        { "char": ":-P", "label": "Cheeky Tongue" },
+        { "char": "xP", "label": "Laughing Tongue" },
+        { "char": ";P", "label": "Winking Tongue" },
+        { "char": "(≧∇≦)", "label": "Gleeful Squint Kaomoji" },
+        { "char": "(￣ρ￣)", "label": "Drooly Tongue Kaomoji" },
+        { "char": "(・ε・)", "label": "Teasing Pout Kaomoji" },
+        { "char": "ヽ(≧∀≦)ノ", "label": "Excited Silly Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Tongue Emoji Combo Sets",
+    "intro": "Copy a complete silly combo in one click — from a quick tease to full zany chaos."
+  },
+  "collection_container_id": "tongueSetsContainer",
+  "collections": [
+    { "name": "Silly Mood", "flags": ["😛", "😜", "😝"], "defaultFormat": "inline" },
+    { "name": "Just Teasing", "flags": ["😜", "😋", "👅"], "defaultFormat": "inline" },
+    { "name": "Totally Zany", "flags": ["🤪", "🥴", "😵‍💫"], "defaultFormat": "inline" },
+    { "name": "Goofy Squad", "flags": ["😝", "🤪", "🤤"], "defaultFormat": "inline" },
+    { "name": "Nyah Nyah", "flags": ["😛", "👅", "😝"], "defaultFormat": "inline" },
+    { "name": "Playful Wink", "flags": ["😜", "😉", "😛"], "defaultFormat": "inline" },
+    { "name": "Drooling Over It", "flags": ["😋", "🤤", "👅"], "defaultFormat": "inline" },
+    { "name": "Chaos Face", "flags": ["🤪", "😜", "🥴", "😝"], "defaultFormat": "inline" }
+  ],
+  "related": [
+    {
+      "href": "/library/laughing-emoji/",
+      "title": "Laughing Emoji & Kaomoji",
+      "desc": "Crying-laughing faces and giggle combos to pair with a silly tongue."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Ready-made goofy combos for jokes, banter, and meme replies."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "Every kaomoji mood, from playful to pouting and beyond."
+    }
+  ]
+}

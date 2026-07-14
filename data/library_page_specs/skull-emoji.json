@@ -1,0 +1,135 @@
+{
+  "slug": "skull-emoji",
+  "title": "Skull Emoji & Kaomoji: Copy & Paste 💀 ☠️ Dead Combos",
+  "meta_description": "Copy and paste skull emoji like 💀 ☠️ 🦴, the \"I'm dead\" laughing combos, and x_x skull kaomoji for reactions and captions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/skull-emoji/",
+  "breadcrumb": "Skull Emoji & Kaomoji",
+  "hero_h1": "Skull Emoji & Kaomoji",
+  "hero_tagline": "From the plain 💀 skull to the internet's favorite way to say \"I'm dead laughing,\" plus crossbones, danger signs, and skull kaomoji like x_x. Click any symbol to copy it instantly.",
+  "intro": "The skull emoji 💀 is one of the most culturally loaded characters online — it stopped meaning literal death years ago and now mostly means \"I'm dead,\" as in something is so funny you have died laughing, quietly replacing 😂 as the go-to reaction. This page collects the picture-emoji skulls (💀 ☠️), the crossbones and danger symbols they pair with, and single-line skull kaomoji like x_x and (☠‿☠). Copy any glyph on its own, or grab a ready-made combo like 💀😂🤣 for a comment that says \"that is so funny I'm dead.\" Looking for the multi-line ASCII art skull drawn from text characters instead? That version lives on the skull ASCII art page linked below.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-skull",
+      "label": "Core Skull Emoji",
+      "h2": "Core Skull Emoji",
+      "intro": "The two iconic skull picture emoji that start every combo.",
+      "symbols": [
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠️", "label": "Skull and Crossbones" }
+      ]
+    },
+    {
+      "id": "dead-from-laughing",
+      "label": "Dead From Laughing",
+      "h2": "Dead From Laughing Emoji",
+      "intro": "The meme cluster where 💀 stands in for crying-laughing — pair it with these.",
+      "symbols": [
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "🤣", "label": "Rolling on the Floor Laughing" },
+        { "char": "⚰️", "label": "Coffin" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🪦", "label": "Headstone" }
+      ]
+    },
+    {
+      "id": "skeleton-danger",
+      "label": "Skeleton & Danger",
+      "h2": "Skeleton, Bone & Danger Symbols",
+      "intro": "Bones, pirate flags, and hazard signs for the darker, edgier side of skull posts.",
+      "symbols": [
+        { "char": "🦴", "label": "Bone" },
+        { "char": "🏴‍☠️", "label": "Pirate Flag" },
+        { "char": "☣️", "label": "Biohazard" },
+        { "char": "☢️", "label": "Radioactive" }
+      ]
+    },
+    {
+      "id": "skull-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Skull Kaomoji & Text Faces",
+      "intro": "Single-line dead-eyed text faces you can paste anywhere plain text works.",
+      "symbols": [
+        { "char": "x_x", "label": "Dead Eyes Kaomoji" },
+        { "char": "X_X", "label": "Knocked Out Kaomoji" },
+        { "char": "(x_x)", "label": "Dizzy Dead Kaomoji" },
+        { "char": "†（‡＾ᴗ＾）†", "label": "Grave Cross Kaomoji" },
+        { "char": "(☠‿☠)", "label": "Smiling Skull Kaomoji" },
+        { "char": "✖‿✖", "label": "Dead Smile Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Skull Emoji Combo Sets",
+    "intro": "Copy a full skull combo in one click and paste it straight into a comment, caption, or reply."
+  },
+  "collection_container_id": "skullSetsContainer",
+  "collections": [
+    {
+      "name": "Dead From Laughing",
+      "flags": ["💀", "😂", "🤣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Danger Zone",
+      "flags": ["☠️", "☣️", "☢️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pirate Mode",
+      "flags": ["☠️", "🏴‍☠️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Absolutely Deceased",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Halloween Skull",
+      "flags": ["💀", "🎃", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "That's So Funny I'm Dead",
+      "flags": ["💀", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bone Chilling",
+      "flags": ["💀", "🦴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "RIP Me",
+      "flags": ["💀", "⚰️"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/skull-ascii-art/",
+      "title": "Skull ASCII Art",
+      "desc": "Multi-line skulls drawn from text characters — the ASCII version of this page."
+    },
+    {
+      "href": "/library/laughing-emoji/",
+      "title": "Laughing Emoji & Kaomoji",
+      "desc": "LOL faces, crying-laughing reactions, and the skull combos that mean the same thing."
+    },
+    {
+      "href": "/library/halloween-symbols/",
+      "title": "Halloween Symbols",
+      "desc": "Pumpkins, ghosts, bats, and spooky glyphs to pair with your skulls."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable, copy-ready grid."
+    }
+  ]
+}

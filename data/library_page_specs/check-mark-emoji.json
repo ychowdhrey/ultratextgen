@@ -1,0 +1,138 @@
+{
+  "slug": "check-mark-emoji",
+  "title": "Check Mark Emoji & Kaomoji: Copy & Paste ✅ ✔️ Done Combos",
+  "meta_description": "Copy and paste check mark emoji like ✅ ✔️ ☑️, cross X marks like ❌ ✖️, and task-done combo sets for lists and chats. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/check-mark-emoji/",
+  "breadcrumb": "Check Mark Emoji & Kaomoji",
+  "hero_h1": "Check Mark Emoji & Kaomoji",
+  "hero_tagline": "Every check mark from the green ✅ button to a plain ✓ glyph, plus cross marks, approval gestures, and ready-made done combos. Click any symbol to copy it instantly.",
+  "intro": "The check mark emoji ✅ is the colorful, task-done button you tap to mark something complete — distinct from the plain Unicode check ✓, which is a flat black glyph that blends into surrounding text. This page gathers the full ✅ ✔️ ☑️ emoji family, the contrasting cross and X marks (❌ ✖️ 🚫) people search alongside them, approval gestures like 👍 and 💯, and one-click combo sets for to-do lists, chats, and status updates. It also includes a row of plain text check marks (✓ ✗ ☒) for spreadsheets and documents where a simple glyph reads better than an emoji. If you want the bare Unicode checkmark character on its own — codepoints, history, and confusable neighbors — see the checkmark symbols hub and single checkmark symbol page linked below.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-check-marks",
+      "label": "Core Check Marks",
+      "h2": "Core Check Mark Emojis",
+      "intro": "The colorful check mark emoji family, from the green button to a bold ballot box.",
+      "symbols": [
+        { "char": "✅", "label": "Check Mark Button" },
+        { "char": "✔️", "label": "Heavy Check Mark" },
+        { "char": "☑️", "label": "Check Box With Check" },
+        { "char": "🗹", "label": "Ballot Box With Bold Check" }
+      ]
+    },
+    {
+      "id": "cross-x-marks",
+      "label": "Cross & X Marks",
+      "h2": "Cross & X Mark Emojis",
+      "intro": "The contrasting no, wrong, and rejected marks people search right alongside check marks.",
+      "symbols": [
+        { "char": "❌", "label": "Cross Mark" },
+        { "char": "✖️", "label": "Multiplication X" },
+        { "char": "❎", "label": "Cross Mark Button" },
+        { "char": "🚫", "label": "Prohibited" }
+      ]
+    },
+    {
+      "id": "approval-gestures",
+      "label": "Approval Gestures",
+      "h2": "Approval & Task-Done Gestures",
+      "intro": "Hands, hundreds, and memo emoji that stamp a message as done, approved, or nailed it.",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "✍️", "label": "Writing Hand" },
+        { "char": "📝", "label": "Memo" }
+      ]
+    },
+    {
+      "id": "text-check-marks",
+      "label": "Text Check Marks",
+      "h2": "Text Check Marks (Non-Emoji)",
+      "intro": "Plain Unicode checks and crosses that render as flat glyphs — ideal for spreadsheets, documents, and text that should stay monochrome.",
+      "symbols": [
+        { "char": "✓", "label": "Check Mark" },
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "☒", "label": "Ballot Box With X" },
+        { "char": "✕", "label": "Multiplication X" },
+        { "char": "✘", "label": "Heavy Ballot X" },
+        { "char": "⍻", "label": "Not Check Mark" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Check Mark Combo Sets",
+    "intro": "Copy a complete done-and-approved combo in one click and paste it straight into a to-do list, reply, or status update."
+  },
+  "collection_container_id": "checkMarkSetsContainer",
+  "collections": [
+    {
+      "name": "Task Complete",
+      "flags": ["✅", "📝", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "All Done Today",
+      "flags": ["✔️", "☑️", "🙌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Approved",
+      "flags": ["✅", "👍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Not Approved",
+      "flags": ["❌", "🚫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "To-Do List Wins",
+      "flags": ["✅", "✅", "✅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nope Not Happening",
+      "flags": ["❌", "✖️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Double Check",
+      "flags": ["✅", "✔️", "☑️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Verified",
+      "flags": ["✅", "💯", "👏"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "The plain Unicode ✓ ✔ checkmark family — browse and copy the bare text glyphs, no emoji color."
+    },
+    {
+      "href": "/symbol/checkmark-symbol/",
+      "title": "Checkmark Symbol",
+      "desc": "A full breakdown of the single ✓ checkmark character — codepoint, history, and alt-input methods."
+    },
+    {
+      "href": "/library/thumbs-up-emoji/",
+      "title": "Thumbs Up Emoji",
+      "desc": "Approval and agreement 👍 emoji with ready-made positive combo sets."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Mix-and-match emoji combo sets for every mood and message."
+    }
+  ]
+}

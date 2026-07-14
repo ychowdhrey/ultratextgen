@@ -7693,3 +7693,34 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   font-family: monospace, monospace;
   line-height: 1.4;
 }
+
+/* Dedicated ad slots — injected by header.js on every page.
+   Right rail only has room once the viewport clears the 900px container
+   plus its own 300px width on both sides without overlapping content. */
+.ad-slot {
+  display: flex;
+  justify-content: center;
+}
+
+.ad-top-banner {
+  width: 100%;
+  max-width: 900px;
+  margin: 16px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.ad-rail-right {
+  display: none;
+}
+
+@media (min-width: 1600px) {
+  .ad-rail-right {
+    display: flex;
+    position: fixed;
+    top: 96px;
+    right: 24px;
+    width: 300px;
+    z-index: 5;
+  }
+}

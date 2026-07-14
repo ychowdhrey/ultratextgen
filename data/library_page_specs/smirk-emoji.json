@@ -1,0 +1,137 @@
+{
+  "slug": "smirk-emoji",
+  "title": "Smirk Emoji & Kaomoji: Copy & Paste 😏😌 Smug Combos",
+  "meta_description": "Smirk emoji 😏 😌 😼, smug and confident face combos, plus sly kaomoji like (¬‿¬) for flirty replies and knowing reactions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/smirk-emoji/",
+  "breadcrumb": "Smirk Emoji & Kaomoji",
+  "hero_h1": "Smirk Emoji & Kaomoji",
+  "hero_tagline": "The 😏 smirking face, smug and confident grins, sly winks, and knowing kaomoji — every shade of self-satisfied and flirty. Click any symbol to copy it instantly.",
+  "intro": "The smirk emoji 😏 carries two meanings at once — smug, self-satisfied confidence and a flirty, suggestive 'I know something you don't.' This page gathers the whole smug range: the calm 😌 relieved face, the deadpan 🙂 slightly smiling face, the 😼 wry-smiling cat, and sly winks like 😉 and 😜 for a playful reaction. When an emoji won't carry the exact vibe, classic smug kaomoji like (¬‿¬) and ( ͡~ ͜ʖ ͡°) paste anywhere plain text works. The 😎 sunglasses face gets a light nod here — it has its own full page — while this one stays focused on the smirk itself. Grab a single face, or copy a ready-made combo set for flirty replies, confident flexes, and knowing reactions.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-smirk",
+      "label": "Smirking Face",
+      "h2": "The Smirk Emoji",
+      "intro": "One face, two meanings — smug, self-satisfied confidence one moment, a flirty 'I know something' the next. Context decides which the smirk is doing.",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" }
+      ]
+    },
+    {
+      "id": "smug-confident",
+      "label": "Smug & Confident Faces",
+      "h2": "Smug & Confident Faces",
+      "intro": "Calm, self-assured grins for when you're pleased with yourself and not hiding it.",
+      "symbols": [
+        { "char": "😌", "label": "Relieved Face" },
+        { "char": "🙂", "label": "Slightly Smiling Face" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "😼", "label": "Cat With Wry Smile" },
+        { "char": "🤭", "label": "Face With Hand Over Mouth" }
+      ]
+    },
+    {
+      "id": "sly-expressions",
+      "label": "Winking Face",
+      "h2": "Related Sly Expressions",
+      "intro": "Winks, shushes, and a sly fox for the mischievous, in-on-it side of a smirk.",
+      "symbols": [
+        { "char": "😉", "label": "Winking Face" },
+        { "char": "😜", "label": "Winking Face With Tongue" },
+        { "char": "😈", "label": "Smiling Face With Horns" },
+        { "char": "🤫", "label": "Shushing Face" },
+        { "char": "🦊", "label": "Fox" }
+      ]
+    },
+    {
+      "id": "smirk-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Smug & Sly Kaomoji",
+      "intro": "Japanese-style text faces that smirk, wink, and look far too pleased with themselves in plain text.",
+      "symbols": [
+        { "char": "(¬‿¬)", "label": "Smug Grin Kaomoji" },
+        { "char": "(¬ω¬)", "label": "Sly Smirk Kaomoji" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Winking Lenny Kaomoji" },
+        { "char": "(￢‿￢)", "label": "Knowing Smirk Kaomoji" },
+        { "char": "( •̀ ω •́ )✧", "label": "Confident Sparkle Kaomoji" },
+        { "char": "(￣ー￣)", "label": "Satisfied Grin Kaomoji" },
+        { "char": "(｀∀´)", "label": "Devilish Grin Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Smirk Emoji Combo Sets",
+    "intro": "Copy a complete smug combo in one click — from a confident flex to a flirty, knowing reply."
+  },
+  "collection_container_id": "smirkSetsContainer",
+  "collections": [
+    {
+      "name": "Smug Confidence",
+      "flags": ["😏", "😌", "😎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flirty Reply",
+      "flags": ["😏", "😉", "😘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I Know Something",
+      "flags": ["😏", "🤫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Feeling Myself",
+      "flags": ["😌", "💅", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sly Little Grin",
+      "flags": ["😼", "😏", "🦊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deal With It",
+      "flags": ["😎", "😏", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Knowing Smirk",
+      "flags": ["😏", "(¬‿¬)"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Confident Wink",
+      "flags": ["😉", "😏", "😌"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/sunglasses-emoji/",
+      "title": "Sunglasses Emoji & Kaomoji",
+      "desc": "The cool 😎 shades face and its confident, unbothered combos — the full sibling page."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Suspicious side-glances and unimpressed sly looks."
+    },
+    {
+      "href": "/library/thinking-emoji/",
+      "title": "Thinking Emoji & Kaomoji",
+      "desc": "The 🤔 pondering face, skeptical squints, and hmm combos."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    }
+  ]
+}

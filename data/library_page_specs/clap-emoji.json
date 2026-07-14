@@ -1,0 +1,141 @@
+{
+  "slug": "clap-emoji",
+  "title": "Clap Emoji: Copy & Paste 👏 Applause & Emphasis Combos",
+  "meta_description": "Copy and paste the 👏 clap emoji, skin tones, the THIS 👏 IS 👏 IMPORTANT emphasis meme, and applause combos for captions and DMs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/clap-emoji/",
+  "breadcrumb": "Clap Emoji",
+  "hero_h1": "Clap Emoji",
+  "hero_tagline": "The 👏 clapping hands emoji for praise, applause, and the word-by-word emphasis meme, plus skin tone variants and one-click combo sets. Click any symbol to copy it instantly.",
+  "intro": "The clap emoji 👏 is one of the most-used hand gestures on the internet, and it does two very different jobs. Used once at the end of a sentence, it reads as straightforward applause or praise — nice work, well said, congrats. But dropped between every word in a sentence, it becomes the internet's emphasis meme: 'THIS 👏 IS 👏 NOT 👏 OKAY' or 'STOP 👏 TALKING 👏 OVER 👏 ME' turns 👏 into punctuation that mimics someone clapping out each syllable for emphasis. This page covers both uses — the plain applause glyph in every skin tone, ready-made emphasis-format combos you can copy and swap words into, and pairing emoji for captions, comments, and DMs. If you want the full range of hand gestures instead of just clapping, the hand symbols library linked below has the complete set.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "clap-skin-tones",
+      "label": "Skin Tones",
+      "h2": "Clap Emoji in Every Skin Tone",
+      "intro": "The clap emoji supports the standard five Fitzpatrick skin tone modifiers, plus the default yellow. Tap the one that matches how you want it to appear.",
+      "symbols": [
+        { "char": "👏", "label": "Clapping Hands" },
+        { "char": "👏🏻", "label": "Clapping Hands (Light Skin Tone)" },
+        { "char": "👏🏼", "label": "Clapping Hands (Medium-Light Skin Tone)" },
+        { "char": "👏🏽", "label": "Clapping Hands (Medium Skin Tone)" },
+        { "char": "👏🏾", "label": "Clapping Hands (Medium-Dark Skin Tone)" },
+        { "char": "👏🏿", "label": "Clapping Hands (Dark Skin Tone)" }
+      ]
+    },
+    {
+      "id": "clap-cheer-emoji",
+      "label": "Cheering & Celebration",
+      "h2": "Cheering & Celebration Emoji to Pair With Clap",
+      "intro": "Emoji that show up alongside 👏 when the message is a celebration or a full-on cheer, not just polite applause.",
+      "symbols": [
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🎊", "label": "Confetti Ball" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🏆", "label": "Trophy" }
+      ]
+    },
+    {
+      "id": "clap-approval-emoji",
+      "label": "Approval & Hype",
+      "h2": "Approval & Hype Emoji to Pair With Clap",
+      "intro": "Emoji that pair with 👏 when the tone is agreement, hype, or backing someone up rather than pure celebration.",
+      "symbols": [
+        { "char": "👍", "label": "Thumbs Up" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "👌", "label": "OK Hand" }
+      ]
+    },
+    {
+      "id": "clap-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Clapping & Cheering Kaomoji",
+      "intro": "Text-only kaomoji that pair with 👏 for celebration and cheering — handy on platforms or fonts where the emoji itself doesn't render.",
+      "symbols": [
+        { "char": "\\(^o^)/", "label": "Cheering Kaomoji" },
+        { "char": "ヽ(´▽`)/", "label": "Celebrating Kaomoji" },
+        { "char": "\\(≧▽≦)/", "label": "Overjoyed Kaomoji" },
+        { "char": "ᕕ( ᐛ )ᕗ", "label": "Excited Cheer Kaomoji" },
+        { "char": "(ノ°ο°)ノ", "label": "Surprised Cheer Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Clap Emoji Combo Sets",
+    "intro": "Ready-made clap combos — including the word-by-word emphasis format — copy a full set with one click and paste it straight into a caption, comment, or DM."
+  },
+  "collection_container_id": "clapSetsContainer",
+  "collections": [
+    {
+      "name": "Emphasis: This Is Not Okay",
+      "flags": ["THIS", "👏", "IS", "👏", "NOT", "👏", "OKAY"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Emphasis: Stop Talking Over Me",
+      "flags": ["STOP", "👏", "TALKING", "👏", "OVER", "👏", "ME"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Emphasis: Read The Room",
+      "flags": ["READ", "👏", "THE", "👏", "ROOM"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Emphasis: Use Your Words",
+      "flags": ["USE", "👏", "YOUR", "👏", "WORDS"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Standing Ovation",
+      "flags": ["👏", "🙌", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Well Deserved",
+      "flags": ["👏", "💯", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Good Job Team",
+      "flags": ["👏", "🫶", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Praise & Support",
+      "flags": ["👏", "👍", "🙌"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbol Collection",
+      "desc": "The full range of hand gesture emoji and symbols — raising hands, handshake, folded hands, and more."
+    },
+    {
+      "href": "/library/thumbs-up-emoji/",
+      "title": "Thumbs Up Emoji",
+      "desc": "Approval and agreement emoji to pair with a clap in comments and DMs."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Ready-made comedic emoji combos for captions, replies, and reaction posts."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What each emoji really signals in chats and captions, clap included."
+    }
+  ]
+}

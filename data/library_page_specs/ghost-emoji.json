@@ -1,0 +1,160 @@
+{
+  "slug": "ghost-emoji",
+  "title": "Ghost Emoji: Copy & Paste 👻 Halloween & Ghosting Combos",
+  "meta_description": "Copy and paste 👻 ghost emoji, spooky Halloween combos, the 'ghosting' dating slang, playful haunts, and ghost kaomoji. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/ghost-emoji/",
+  "breadcrumb": "Ghost Emoji",
+  "hero_h1": "Ghost Emoji",
+  "hero_tagline": "Every ghost and apparition emoji, the Halloween cast it haunts with, the 'ghosting' dating-slang symbols, and spooky kaomoji. Click any symbol to copy it instantly.",
+  "intro": "The ghost emoji 👻 lives two lives. During spooky season it's a friendly sheet-ghost for Halloween costumes, haunted-house captions, and trick-or-treat posts, right alongside the 🎃 jack-o-lantern and 🦇 bat. The rest of the year, 👻 carries a second, unrelated meaning: ghosting — cutting off contact and disappearing on someone without any explanation, whether that's a match who stopped replying or a friend who went quiet after a plan. The newer 🫥 dotted-line face has picked up that same 'gone invisible' meaning and now shows up in the same texts. This page covers both sides: the literal ghost and its apparition cousins, the Halloween cast 👻 usually appears with, the ghosting-and-disappearing emoji people actually paste to call it out (👋 💨 🚫 📵), playful non-scary ghost moments like costumes and classic arcade ghosts, and spooky kaomoji for plain-text scares. For the wider October lineup — pumpkins, webs, and witchy symbols — see the Halloween symbols library linked below.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-ghost",
+      "label": "Core Ghost",
+      "h2": "Ghost Emoji & Apparitions",
+      "intro": "The ghost itself and the apparition imagery it appears with — a shadowy figure, drifting fog, and the bones underneath.",
+      "symbols": [
+        { "char": "👻", "label": "Ghost" },
+        { "char": "👤", "label": "Bust in Silhouette" },
+        { "char": "🌫️", "label": "Fog" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠️", "label": "Skull and Crossbones" },
+        { "char": "👁️", "label": "Eye" }
+      ]
+    },
+    {
+      "id": "halloween-companions",
+      "label": "Halloween Companions",
+      "h2": "Halloween & Spooky Companions",
+      "intro": "The cast a ghost usually shows up with in October — jack-o-lanterns, webs, bats, and the graveyard it haunts.",
+      "symbols": [
+        { "char": "🎃", "label": "Jack-O-Lantern" },
+        { "char": "🕸️", "label": "Spider Web" },
+        { "char": "🕷️", "label": "Spider" },
+        { "char": "🦇", "label": "Bat" },
+        { "char": "🪦", "label": "Headstone" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🧟", "label": "Zombie" }
+      ]
+    },
+    {
+      "id": "ghosting-slang",
+      "label": "Ghosting Slang",
+      "h2": "Ghosting & Disappearing Slang",
+      "intro": "The distinct, non-Halloween meaning of 👻: cutting contact and vanishing on someone without a word. These are the emoji people actually paste to call it out — on a dating app, in a group chat, or in a caption about a friend who went quiet.",
+      "symbols": [
+        { "char": "🫥", "label": "Dotted Line Face" },
+        { "char": "👋", "label": "Waving Hand" },
+        { "char": "💨", "label": "Dashing Away" },
+        { "char": "🚫", "label": "Prohibited" },
+        { "char": "📵", "label": "No Mobile Phones" },
+        { "char": "🔇", "label": "Muted Speaker" },
+        { "char": "👀", "label": "Eyes" },
+        { "char": "🙈", "label": "See-No-Evil Monkey" }
+      ]
+    },
+    {
+      "id": "playful-ghost",
+      "label": "Playful Ghost",
+      "h2": "Playful & Friendly Ghost Emoji",
+      "intro": "The lighter side of 👻 — costume parties, candy runs, and the classic arcade ghost, no scares required.",
+      "symbols": [
+        { "char": "🎉", "label": "Party Popper" },
+        { "char": "🍬", "label": "Candy" },
+        { "char": "🕹️", "label": "Joystick" },
+        { "char": "🥳", "label": "Partying Face" },
+        { "char": "🙃", "label": "Upside-Down Face" },
+        { "char": "😆", "label": "Grinning Squinting Face" }
+      ]
+    },
+    {
+      "id": "ghost-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Spooky Ghost Kaomoji",
+      "intro": "Japanese-style text faces that gasp, reach, and vanish — paste them anywhere plain text works.",
+      "symbols": [
+        { "char": "ヽ(°〇°)ノ", "label": "Startled Ghost Kaomoji" },
+        { "char": "Σ(ﾟДﾟ)", "label": "Spooked Kaomoji" },
+        { "char": "(」°ロ°)」", "label": "Ghost Arms Kaomoji" },
+        { "char": "щ(゚Д゚щ)", "label": "Scared Kaomoji" },
+        { "char": "(ノ°益°)ノ", "label": "Boo Kaomoji" },
+        { "char": "( ˘_˘)ノ", "label": "Vanishing Wave Kaomoji" },
+        { "char": "(-_-)zzz", "label": "Fading Away Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Ghost Emoji Combo Sets",
+    "intro": "Ready-made ghost combos — copy a full set in one click, from a haunted-house post to a 'you just got ghosted' callout."
+  },
+  "collection_container_id": "ghostSetsContainer",
+  "collections": [
+    {
+      "name": "Boo!",
+      "flags": ["👻", "🎃", "🦇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ghosted",
+      "flags": ["👋", "💨", "🚫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Left on Read",
+      "flags": ["👀", "🔇", "🫥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Haunted House",
+      "flags": ["👻", "🕸️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Spirit World",
+      "flags": ["👻", "🌙", "🌫️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Trick or Treat",
+      "flags": ["🎃", "👻", "🍬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Game Over Ghost",
+      "flags": ["🕹️", "👻", "💀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Spooky Kaomoji",
+      "flags": ["ヽ(°〇°)ノ", "Σ(ﾟДﾟ)", "щ(゚Д゚щ)"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/halloween-symbols/",
+      "title": "Halloween Symbols",
+      "desc": "Pumpkins, bats, and spooky glyphs for the whole haunted season."
+    },
+    {
+      "href": "/library/fantasy-mythical-emojis/",
+      "title": "Fantasy & Mythical Emojis",
+      "desc": "Dragons, wizards, and mythic creatures for a lore-heavy post."
+    },
+    {
+      "href": "/library/devil-emoji/",
+      "title": "Devil Emoji & Kaomoji",
+      "desc": "Horned faces, imps, and villain combos for the darker side of a caption."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What each emoji really signals in chats and captions — ghosting included."
+    }
+  ]
+}

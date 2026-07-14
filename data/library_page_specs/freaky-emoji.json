@@ -1,0 +1,145 @@
+{
+  "slug": "freaky-emoji",
+  "title": "Freaky Emoji & Kaomoji: Copy & Paste 😈😏🫦 Flirty Combos",
+  "meta_description": "Freaky emoji 😈 😏 🫦, flirty and mischievous face combos, plus devil kaomoji like ( ͡° ͜ʖ ͡°) for chats and captions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/freaky-emoji/",
+  "breadcrumb": "Freaky Emoji & Kaomoji",
+  "hero_h1": "Freaky Emoji & Kaomoji",
+  "hero_tagline": "The 😈 devil face, sly smirks, biting-lip flirt faces, and mischievous kaomoji — every shade of the playful 'freaky' vibe. Click any symbol to copy it instantly.",
+  "intro": "'Freaky' is internet slang for a flirty, mischievous, playfully devilish mood — a nickname the 😈 smiling-face-with-horns emoji picked up from years of cheeky captions and DMs. This page gathers the whole freaky range: the 😏 smirk and 🫦 biting-lip flirt faces, the 👅 tongue and 😜 tease, the 💦 sweat and 🔥 fire that crank up the intensity, and mischievous kaomoji like ( ͡° ͜ʖ ͡°) for when an emoji won't carry the exact vibe. Grab a single face, or copy a ready-made combo set for chats, captions, and comments.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "the-freaky-emoji",
+      "label": "Smiling Face With Horns",
+      "h2": "The Freaky Emoji",
+      "intro": "The 😈 devil face at the center of it all — plus the horned and winking cousins that share its cheeky reputation.",
+      "symbols": [
+        { "char": "😈", "label": "Smiling Face With Horns" },
+        { "char": "👿", "label": "Angry Face With Horns" },
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😜", "label": "Winking Face With Tongue" },
+        { "char": "😉", "label": "Winking Face" }
+      ]
+    },
+    {
+      "id": "flirty-mischievous-faces",
+      "label": "Smirking Face",
+      "h2": "Flirty & Mischievous Faces",
+      "intro": "Smirks, biting lips, and tongues-out for a playful, flirty edge.",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "🫦", "label": "Biting Lip" },
+        { "char": "👅", "label": "Tongue" },
+        { "char": "😛", "label": "Face With Tongue" },
+        { "char": "😘", "label": "Face Blowing a Kiss" },
+        { "char": "😗", "label": "Kissing Face" },
+        { "char": "😳", "label": "Flushed Face" },
+        { "char": "👀", "label": "Eyes" }
+      ]
+    },
+    {
+      "id": "heat-intensity-symbols",
+      "label": "Fire",
+      "h2": "Heat & Intensity Symbols",
+      "intro": "Sweat, fire, and sparkle symbols to turn up the temperature on a caption.",
+      "symbols": [
+        { "char": "💦", "label": "Sweat Droplets" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "💜", "label": "Purple Heart" },
+        { "char": "💋", "label": "Kiss Mark" }
+      ]
+    },
+    {
+      "id": "freaky-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Mischievous & Devilish Kaomoji",
+      "intro": "Japanese-style text faces that smirk, wink, and tease in plain text.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Lenny Face Kaomoji" },
+        { "char": "(¬‿¬)", "label": "Smug Smirk Kaomoji" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Winking Lenny Kaomoji" },
+        { "char": "(｡•̀ᴗ-)✧", "label": "Sly Wink Kaomoji" },
+        { "char": "(≖‿≖)", "label": "Knowing Grin Kaomoji" },
+        { "char": "ᕦ(ò_óˇ)ᕤ", "label": "Cheeky Flex Kaomoji" },
+        { "char": "(｀▽´)-σ", "label": "Playful Poke Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Freaky Emoji Combo Sets",
+    "intro": "Copy a complete freaky combo in one click — flirty, mischievous, and turned all the way up."
+  },
+  "collection_container_id": "freakySetsContainer",
+  "collections": [
+    {
+      "name": "Feeling Freaky",
+      "flags": ["😈", "😏", "🫦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Smirk & Wink",
+      "flags": ["😏", "😉", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Turning Up the Heat",
+      "flags": ["🔥", "💦", "🥵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flirty Mode",
+      "flags": ["😘", "😏", "🫦", "💋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Little Devil",
+      "flags": ["😈", "👿", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tongue-Out Tease",
+      "flags": ["👅", "😜", "😛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hot & Bothered",
+      "flags": ["🥵", "💦", "🔥", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Mischief Managed",
+      "flags": ["😈", "😏", "✨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable copy grid."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Suspicious glances and unimpressed side-eye reactions."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji library — smug, playful, and everything between."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What popular emoji really mean, slang uses included."
+    }
+  ]
+}

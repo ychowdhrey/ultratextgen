@@ -1,0 +1,144 @@
+{
+  "slug": "devil-emoji",
+  "title": "Devil Emoji & Kaomoji: Copy & Paste 😈👿 Demon Combos",
+  "meta_description": "Devil emoji 😈 👿 👹 👺, demon and villain combo sets, plus devilish kaomoji like ψ(｀∇´)ψ for chats, captions, and gaming. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/devil-emoji/",
+  "breadcrumb": "Devil Emoji & Kaomoji",
+  "hero_h1": "Devil Emoji & Kaomoji",
+  "hero_tagline": "Horned smirks, angry imps, ogres, goblins, and devilish kaomoji — every shade of villain, demon, and mischief. Click any symbol to copy it instantly.",
+  "intro": "The devil emoji 😈 wears two faces. This page covers the literal side: the grinning 😈 devil and its angrier twin the 👿 imp, folklore monsters like the 👹 ogre and 👺 goblin, and villain marks like the 🔱 trident and 🦹 supervillain that turn a caption into a full evil-genius bit. Note the distinction from the flirty, mischievous 'freaky emoji' meaning of 😈 — that wink-wink usage has its own freaky emoji page (linked below). When an emoji won't carry the menace, devilish kaomoji like ψ(｀∇´)ψ paste anywhere plain text works. Grab a single face, or copy a ready-made demon combo for chats, captions, and gaming names.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-devil-faces",
+      "label": "Core Devil Faces",
+      "h2": "Devil, Imp & Death Emojis",
+      "intro": "The two horned faces at the heart of every devil bit, plus the skulls and fire that set the scene.",
+      "symbols": [
+        { "char": "😈", "label": "Smiling Face With Horns" },
+        { "char": "👿", "label": "Angry Face With Horns" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠️", "label": "Skull and Crossbones" },
+        { "char": "🔥", "label": "Fire" }
+      ]
+    },
+    {
+      "id": "demons-monsters",
+      "label": "Demons & Monsters",
+      "h2": "Demon, Ogre & Monster Emojis",
+      "intro": "Folklore beasts and after-dark monsters — the cast of a horror or villain post.",
+      "symbols": [
+        { "char": "👹", "label": "Ogre" },
+        { "char": "👺", "label": "Goblin" },
+        { "char": "👻", "label": "Ghost" },
+        { "char": "🧟", "label": "Zombie" },
+        { "char": "🧛", "label": "Vampire" },
+        { "char": "🐉", "label": "Dragon" },
+        { "char": "🤡", "label": "Clown Face" }
+      ]
+    },
+    {
+      "id": "villain-mischief-symbols",
+      "label": "Villain & Mischief Symbols",
+      "h2": "Villain, Trident & Mischief Symbols",
+      "intro": "The trident, the supervillain, and the blades that push a caption into full evil-genius territory.",
+      "symbols": [
+        { "char": "🔱", "label": "Trident Emblem" },
+        { "char": "🦹", "label": "Supervillain" },
+        { "char": "🦹‍♂️", "label": "Man Supervillain" },
+        { "char": "🦹‍♀️", "label": "Woman Supervillain" },
+        { "char": "🗡️", "label": "Dagger" },
+        { "char": "⚔️", "label": "Crossed Swords" },
+        { "char": "🐍", "label": "Snake" }
+      ]
+    },
+    {
+      "id": "devil-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Devilish & Villainous Kaomoji",
+      "intro": "Japanese-style text faces that smirk, scheme, and sprout horns in plain text.",
+      "symbols": [
+        { "char": "ψ(｀∇´)ψ", "label": "Devil Horns Grin Kaomoji" },
+        { "char": "Ψ(｀▽´)Ψ", "label": "Gleeful Demon Kaomoji" },
+        { "char": "(｀皿´)凸", "label": "Defiant Villain Kaomoji" },
+        { "char": "( ｀ｰ´)", "label": "Evil Smirk Kaomoji" },
+        { "char": "(◣_◢)", "label": "Menacing Glare Kaomoji" },
+        { "char": "(¬､¬)", "label": "Scheming Side-Eye Kaomoji" },
+        { "char": "(￢‿￢)", "label": "Sly Smirk Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Devil Emoji Combo Sets",
+    "intro": "Copy a complete devil combo in one click — from a little mischief to a full villain arc."
+  },
+  "collection_container_id": "devilSetsContainer",
+  "collections": [
+    {
+      "name": "Devil Mode",
+      "flags": ["😈", "👿", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Demon Summoning",
+      "flags": ["😈", "🔱", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Full Villain Arc",
+      "flags": ["🦹", "😈", "🔥", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Monster Mash",
+      "flags": ["👹", "👺", "👻"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Evil Genius",
+      "flags": ["😈", "🧠", "🦹"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Death & Darkness",
+      "flags": ["💀", "☠️", "🌑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Little Mischief",
+      "flags": ["😈", "😜", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Devilish Kaomoji",
+      "flags": ["ψ(｀∇´)ψ", "(｀皿´)凸", "Ψ(｀▽´)Ψ"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/halloween-symbols/",
+      "title": "Halloween Symbols",
+      "desc": "Pumpkins, bats, and spooky glyphs for the whole haunted season."
+    },
+    {
+      "href": "/library/fantasy-mythical-emojis/",
+      "title": "Fantasy & Mythical Emojis",
+      "desc": "Dragons, wizards, and mythic creatures for a lore-heavy post."
+    },
+    {
+      "href": "/library/freaky-emoji/",
+      "title": "Freaky Emoji & Kaomoji",
+      "desc": "The flirty, mischievous side of 😈 — the wink-wink meaning of the devil face."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    }
+  ]
+}
