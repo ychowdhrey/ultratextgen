@@ -1,6 +1,7 @@
 {
   "slug": "grad-zeichen",
   "lang": "de",
+  "page_type": "symbol",
   "title": "Grad-Zeichen: ° kopieren — Temperatur- & Winkel-Symbole",
   "meta_description": "Das Gradzeichen (°) sowie Celsius-, Fahrenheit-, Kelvin-, Winkel- und Geometriezeichen kopieren und einfügen. Klick auf ein Symbol, um es sofort zu kopieren.",
   "breadcrumb": "Grad-Zeichen",
@@ -10,14 +11,14 @@
   "date_published": "2026-07-11",
   "date_modified": "2026-07-11",
   "copy_pattern": "single",
-  "canonical": "https://ultratextgen.com/de/library/grad-zeichen/",
+  "canonical": "https://ultratextgen.com/de/symbol/grad-zeichen/",
   "home_url": "https://ultratextgen.com/de/",
   "crumb_home": "Startseite",
-  "crumb_library": "Bibliothek",
-  "library_url": "https://ultratextgen.com/de/library/",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/degree-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/grad-zeichen/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/grad-zeichen/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/degree-symbol/" }
   ],
   "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",

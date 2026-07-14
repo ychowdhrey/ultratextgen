@@ -1,9 +1,10 @@
 {
   "slug": "stopnie-i-temperatura",
   "lang": "pl",
+  "page_type": "symbol",
   "title": "Znak Stopnia (°): Stopnie Celsjusza, Fahrenheita i Kąty do Skopiowania",
   "meta_description": "Skopiuj znak stopnia °, stopnie Celsjusza ℃ i Fahrenheita ℉, znaki kątów oraz prim do minut i sekund. Kliknij symbol, aby skopiować go od razu.",
-  "canonical": "https://ultratextgen.com/pl/library/stopnie-i-temperatura/",
+  "canonical": "https://ultratextgen.com/pl/symbol/stopnie-i-temperatura/",
   "breadcrumb": "Stopnie i Temperatura",
   "hero_h1": "Znak Stopnia i Temperatury",
   "hero_tagline": "Stopień, stopnie Celsjusza i Fahrenheita, znaki kątów oraz prim — kliknij, aby skopiować.",
@@ -13,14 +14,14 @@
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
-  "crumb_library": "Biblioteka",
-  "library_url": "https://ultratextgen.com/pl/library/",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/degree-symbol/" },
-    { "lang": "de", "href": "https://ultratextgen.com/de/library/grad-zeichen/" },
-    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolo-de-grado/" },
-    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-derajat/" },
-    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/stopnie-i-temperatura/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/grad-zeichen/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-grado/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-derajat/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/stopnie-i-temperatura/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/degree-symbol/" }
   ],
   "sections": [
@@ -66,12 +67,12 @@
   "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
-      "href": "/pl/library/nieskonczonosc/",
+      "href": "/pl/symbol/nieskonczonosc/",
       "title": "Znak Nieskończoności ∞",
       "desc": "Symbol nieskończoności i pokrewne znaki matematyczne."
     },
     {
-      "href": "/pl/library/znak-euro/",
+      "href": "/pl/symbol/znak-euro/",
       "title": "Znak Euro €",
       "desc": "Symbol euro i inne znaki walut do skopiowania."
     },

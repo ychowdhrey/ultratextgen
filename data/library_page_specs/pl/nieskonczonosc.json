@@ -1,9 +1,10 @@
 {
   "slug": "nieskonczonosc",
   "lang": "pl",
+  "page_type": "symbol",
   "title": "Znak Nieskończoności (∞): Symbol do Skopiowania",
   "meta_description": "Skopiuj znak nieskończoności ∞ oraz pokrewne symbole matematyczne — nierówności, przybliżenia i teorię mnogości. Kliknij symbol, aby skopiować go od razu.",
-  "canonical": "https://ultratextgen.com/pl/library/nieskonczonosc/",
+  "canonical": "https://ultratextgen.com/pl/symbol/nieskonczonosc/",
   "breadcrumb": "Znak Nieskończoności",
   "hero_h1": "Znak Nieskończoności ∞",
   "hero_tagline": "Symbol nieskończoności i pokrewne znaki matematyczne — kliknij, aby skopiować.",
@@ -13,11 +14,11 @@
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
-  "crumb_library": "Biblioteka",
-  "library_url": "https://ultratextgen.com/pl/library/",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/infinity/" },
-    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/nieskonczonosc/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/nieskonczonosc/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/infinity/" }
   ],
   "sections": [
@@ -59,12 +60,12 @@
   "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
-      "href": "/pl/library/znak-euro/",
+      "href": "/pl/symbol/znak-euro/",
       "title": "Znak Euro €",
       "desc": "Symbol euro i inne znaki walut do skopiowania."
     },
     {
-      "href": "/pl/library/stopnie-i-temperatura/",
+      "href": "/pl/symbol/stopnie-i-temperatura/",
       "title": "Znak Stopnia i Temperatury",
       "desc": "Stopnie Celsjusza, Fahrenheita i znaki kątów do skopiowania."
     },

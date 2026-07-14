@@ -1,9 +1,10 @@
 {
   "slug": "znak-euro",
   "lang": "pl",
+  "page_type": "symbol",
   "title": "Znak Euro (€): Symbol Euro i Inne Waluty do Skopiowania",
   "meta_description": "Skopiuj znak euro € oraz symbole innych walut świata — dolar, funt, jen, rubel, hrywna i bitcoin. Kliknij symbol, aby skopiować go od razu.",
-  "canonical": "https://ultratextgen.com/pl/library/znak-euro/",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-euro/",
   "breadcrumb": "Znak Euro",
   "hero_h1": "Znak Euro €",
   "hero_tagline": "Symbol euro i symbole walut z całego świata — kliknij, aby skopiować.",
@@ -13,11 +14,11 @@
   "copy_pattern": "single",
   "home_url": "https://ultratextgen.com/pl/",
   "crumb_home": "Strona główna",
-  "crumb_library": "Biblioteka",
-  "library_url": "https://ultratextgen.com/pl/library/",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
   "hreflang": [
     { "lang": "en", "href": "https://ultratextgen.com/symbol/euro-sign/" },
-    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/znak-euro/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-euro/" },
     { "lang": "x-default", "href": "https://ultratextgen.com/symbol/euro-sign/" }
   ],
   "sections": [
@@ -61,12 +62,12 @@
   "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
   "related": [
     {
-      "href": "/pl/library/nieskonczonosc/",
+      "href": "/pl/symbol/nieskonczonosc/",
       "title": "Znak Nieskończoności ∞",
       "desc": "Symbol nieskończoności i pokrewne znaki matematyczne."
     },
     {
-      "href": "/pl/library/znaki-tm-i-copyright/",
+      "href": "/pl/symbol/znaki-tm-i-copyright/",
       "title": "TM, © i ®",
       "desc": "Znak towarowy, copyright i zastrzeżony znak towarowy do skopiowania."
     },
