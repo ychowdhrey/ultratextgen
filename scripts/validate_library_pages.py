@@ -76,7 +76,7 @@ MIN_H2 = 3
 
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
 META_DESC_RE = re.compile(
-    r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']',
+    r'<meta\s+name=["\']description["\']\s+content=(["\'])(.*?)\1',
     re.IGNORECASE | re.DOTALL,
 )
 CANONICAL_RE = re.compile(
@@ -133,7 +133,7 @@ def validate_page(path):
 
     # Meta description
     m_desc = META_DESC_RE.search(html)
-    desc = m_desc.group(1).strip() if m_desc else ""
+    desc = m_desc.group(2).strip() if m_desc else ""
     if not desc:
         issues.append(Issue("ERROR", 'missing or empty <meta name="description">'))
 
