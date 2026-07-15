@@ -31,7 +31,6 @@ to be reworked — don't be the fourth. The rules below are non-negotiable.
 | Pin images (1000×1500 PNG, 2:3) | `assets/pinterest/<board>/<slug>.png` | `assets/pinterest/vertical-text/copy-paste.png` |
 | Internal inventory CSV | `data/<board>_pinterest_pins.csv` | `data/id_pinterest_pins.csv` |
 | Importer-ready upload CSV | `data/<board>_pinterest_pins_upload.csv` | `data/id_pinterest_pins_upload.csv` |
-| Board doc | `docs/<board>-pinterest-board.md` | `docs/vertical-text-pinterest-board.md` |
 
 **Do NOT** create a top-level `pinterest-kit/`-style folder, put pins or SVGs under
 `docs/`, bundle your own font files, or hand-name a CSV. Those are the exact
@@ -79,7 +78,6 @@ schema fails Pinterest's importer.
 - [ ] Images at `assets/pinterest/<board>/`, all exactly 1000×1500
 - [ ] No bundled fonts, no new top-level folder, no SVGs under `docs/`
 - [ ] Inventory + `_upload.csv` in `data/`, board registered in `build_pinterest_upload.py`
-- [ ] Board doc at `docs/<board>-pinterest-board.md` (mirror the vertical-text one)
 
 > **Known cleanup:** the Spanish `/es/` board still lives in the orphaned
 > top-level `pinterest-kit/` directory with its own generator and a hand-named
