@@ -748,6 +748,90 @@ def m_shield(p, accent=PURPLE):
     <circle cx="180" cy="212" r="12" fill="#fff"/>"""
 
 
+def m_circled_letter(p, letter="A", accent=PURPLE):
+    """A bold letter in a ring — for glyphs that don't rasterize in the
+    bundled fonts (e.g. circled-Latin anarchy symbol Ⓐ)."""
+    return f"""
+    <circle cx="180" cy="180" r="104" fill="none" stroke="url(#g{p})" stroke-width="16"/>
+    <text x="180" y="222" font-family="{SANS}" font-size="140" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle">{esc(letter)}</text>"""
+
+
+def m_burst_angry(p, accent=PURPLE):
+    """A tight comic anger-burst — anger-symbol glyph (💢) is emoji-only
+    tofu in the bundled fonts."""
+    import math
+    cx, cy = 180, 180
+    rays = ""
+    for i in range(6):
+        ang = math.radians(i * 60)
+        x1, y1 = cx + 46 * math.cos(ang), cy + 46 * math.sin(ang)
+        x2, y2 = cx + 118 * math.cos(ang), cy + 118 * math.sin(ang)
+        rays += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                 f'stroke="{PURPLE}" stroke-width="14" stroke-linecap="round"/>')
+    return f"""{rays}
+    <circle cx="{cx}" cy="{cy}" r="44" fill="url(#g{p})"/>"""
+
+
+def m_hamsa(p, accent=PURPLE):
+    """A simplified open-palm hand with a central eye — hamsa-symbol glyph
+    (🪬) is emoji-only tofu in the bundled fonts."""
+    return f"""
+    <path d="M180 92 q-40 0 -50 54 q-4 24 4 44
+             q-38 -8 -50 22 q-10 26 14 44 q22 16 46 4
+             q-6 30 16 48 q20 16 40 0
+             q22 -18 16 -48
+             q24 12 46 -4 q24 -18 14 -44 q-12 -30 -50 -22
+             q8 -20 4 -44 q-10 -54 -50 -54 Z" fill="url(#g{p})"/>
+    <circle cx="180" cy="188" r="24" fill="{PANEL}"/>
+    <circle cx="180" cy="188" r="11" fill="url(#gv{p})"/>"""
+
+
+def m_lotus_om(p, accent=PURPLE):
+    """A lotus-ring badge — om-symbol glyph (ॐ, Devanagari) needs a font
+    this pipeline doesn't bundle."""
+    import math
+    petals = ""
+    for i in range(8):
+        ang = math.radians(i * 45)
+        x, y = 180 + 96 * math.cos(ang), 180 + 96 * math.sin(ang)
+        petals += (f'<ellipse cx="{x:.1f}" cy="{y:.1f}" rx="26" ry="14" '
+                   f'transform="rotate({i * 45} {x:.1f} {y:.1f})" '
+                   f'fill="url(#g{p})" opacity="0.85"/>')
+    return f"""{petals}
+    <circle cx="180" cy="180" r="52" fill="{PANEL}"/>
+    <circle cx="180" cy="180" r="52" fill="none" stroke="url(#gv{p})" stroke-width="8"/>"""
+
+
+def m_pentagram(p, accent=PURPLE):
+    """A 5-point star inside a ring — pentagram-symbol glyph (⛧) is
+    emoji-only tofu in the bundled fonts."""
+    import math
+    cx, cy, r = 180, 180, 96
+    pts = []
+    for i in range(5):
+        ang = -math.pi / 2 + i * 2 * math.pi / 5
+        pts.append(f"{cx + r * math.cos(ang):.1f},{cy + r * math.sin(ang):.1f}")
+    path = f"M{pts[0]} L{pts[2]} L{pts[4]} L{pts[1]} L{pts[3]} Z"
+    return f"""
+    <circle cx="{cx}" cy="{cy}" r="118" fill="none" stroke="url(#g{p})" stroke-width="10"/>
+    <path d="{path}" fill="none" stroke="url(#gv{p})" stroke-width="10"
+          stroke-linejoin="round"/>"""
+
+
+def m_stop_octagon(p, accent=PURPLE):
+    """A regular octagon with a bar — stop-sign glyph (🛑) is emoji-only
+    tofu in the bundled fonts."""
+    import math
+    cx, cy, r = 180, 180, 110
+    pts = [f"{cx + r * math.sin(math.radians(22.5 + i * 45)):.1f},"
+           f"{cy - r * math.cos(math.radians(22.5 + i * 45)):.1f}"
+           for i in range(8)]
+    return f"""
+    <polygon points="{' '.join(pts)}" fill="url(#g{p})"/>
+    <rect x="{cx - 70}" y="{cy - 16}" width="140" height="32" rx="8" fill="#fff"/>"""
+
+
 # ----- per-letter printables motifs (parametrized by the page's own letter) -----
 
 
@@ -1461,6 +1545,74 @@ PAGES = {
   "symbol-squared-cubed": ("Squared & Cubed", "Copy & paste ² and ³ exponents", glyphs("²", "³"), K_SYM),
   "symbol-euro-sign": ("Euro Sign", "€ meaning, history & how to type it", glyphs("€"), K_SYM),
   "symbol-pound-sign": ("Pound Sign", "£ meaning, history & how to type it", glyphs("£"), K_SYM),
+  "symbol-alpha-symbol": ("Alpha Symbol", "Α α meaning, history & how to type it", glyphs("Α", "α"), K_SYM),
+  "symbol-ampersand": ("Ampersand Symbol", "& meaning, history & how to type it", glyphs("&"), K_SYM),
+  "symbol-anarchy-symbol": ("Anarchy Symbol", "Ⓐ meaning, history & how to type it", P(m_circled_letter, letter="A"), K_SYM),
+  "symbol-anger-symbol": ("Anger Symbol", "💢 meaning & how to type it", m_burst_angry, K_SYM),
+  "symbol-ankh-symbol": ("Ankh Symbol", "☥ meaning, history & how to type it", m_ankh, K_SYM),
+  "symbol-aquarius-symbol": ("Aquarius Symbol", "♒ meaning & how to type it", glyphs("♒"), K_SYM),
+  "symbol-aries-symbol": ("Aries Symbol", "♈ meaning & how to type it", glyphs("♈"), K_SYM),
+  "symbol-at-symbol": ("At Symbol", "@ meaning, history & how to type it", glyphs("@"), K_SYM),
+  "symbol-autism-symbol": ("Autism Symbol", "∞ meaning & how to type it", glyphs("∞"), K_SYM),
+  "symbol-backwards-question-mark": ("Backwards Question Mark", "⸮ meaning & how to type it", glyphs("⸮"), K_SYM),
+  "symbol-biohazard-symbol": ("Biohazard Symbol", "☣ meaning, history & how to type it", glyphs("☣"), K_SYM),
+  "symbol-bitcoin-symbol": ("Bitcoin Symbol", "₿ meaning, history & how to type it", m_coin, K_SYM),
+  "symbol-black-moon-lilith": ("Black Moon Lilith", "⚸ meaning & how to type it", glyphs("⚸"), K_SYM),
+  "symbol-cancer-symbol": ("Cancer Symbol", "♋ meaning & how to type it", glyphs("♋"), K_SYM),
+  "symbol-capricorn-symbol": ("Capricorn Symbol", "♑ meaning & how to type it", glyphs("♑"), K_SYM),
+  "symbol-celsius-symbol": ("Celsius Symbol", "℃ meaning & how to type it", glyphs("℃"), K_SYM),
+  "symbol-cent-sign": ("Cent Sign", "¢ meaning, history & how to type it", glyphs("¢"), K_SYM),
+  "symbol-checkmark-symbol": ("Check Mark Symbol", "✓ meaning & how to type it", glyphs("✓", "✔"), K_SYM),
+  "symbol-congruent-symbol": ("Congruent Symbol", "≅ meaning & how to type it", glyphs("≅"), K_SYM),
+  "symbol-copyright-symbol": ("Copyright Symbol", "© meaning, history & how to type it", glyphs("©"), K_SYM),
+  "symbol-cross-symbol": ("Cross Symbol", "✝ meaning, history & how to type it", glyphs("✝"), K_SYM),
+  "symbol-delta-symbol": ("Delta Symbol", "Δ δ meaning & how to type it", glyphs("Δ", "δ"), K_SYM),
+  "symbol-diameter-symbol": ("Diameter Symbol", "⌀ meaning & how to type it", glyphs("⌀"), K_SYM),
+  "symbol-dollar-sign": ("Dollar Sign", "$ meaning, history & how to type it", glyphs("$"), K_SYM),
+  "symbol-down-arrow": ("Down Arrow Symbol", "↓ meaning & how to type it", glyphs("↓"), K_SYM),
+  "symbol-em-dash": ("Em Dash", "— meaning & how to type it", glyphs("—"), K_SYM),
+  "symbol-fahrenheit-symbol": ("Fahrenheit Symbol", "℉ meaning & how to type it", glyphs("℉"), K_SYM),
+  "symbol-fleur-de-lis-symbol": ("Fleur-de-lis Symbol", "⚜ meaning, history & how to type it", glyphs("⚜"), K_SYM),
+  "symbol-gemini-symbol": ("Gemini Symbol", "♊ meaning & how to type it", glyphs("♊"), K_SYM),
+  "symbol-hamsa-symbol": ("Hamsa Symbol", "🪬 meaning, history & how to type it", m_hamsa, K_SYM),
+  "symbol-heart-symbol": ("Heart Symbol", "♥ meaning, history & how to type it", glyphs("♥", "♡"), K_SYM),
+  "symbol-khanda-symbol": ("Khanda Symbol", "☬ meaning, history & how to type it", glyphs("☬"), K_SYM),
+  "symbol-left-arrow": ("Left Arrow Symbol", "← meaning & how to type it", glyphs("←"), K_SYM),
+  "symbol-leo-symbol": ("Leo Symbol", "♌ meaning & how to type it", glyphs("♌"), K_SYM),
+  "symbol-less-than-greater-than": ("Less Than & Greater Than", "< > meaning & how to type them", glyphs("<", ">"), K_SYM),
+  "symbol-libra-symbol": ("Libra Symbol", "♎ meaning & how to type it", glyphs("♎"), K_SYM),
+  "symbol-micro-sign": ("Micro Sign", "µ meaning, history & how to type it", glyphs("µ"), K_SYM),
+  "symbol-not-equal-sign": ("Not Equal Sign", "≠ meaning & how to type it", glyphs("≠"), K_SYM),
+  "symbol-ohm-symbol": ("Ohm Symbol", "Ω meaning & how to type it", glyphs("Ω"), K_SYM),
+  "symbol-om-symbol": ("Om Symbol", "ॐ meaning, history & how to type it", m_lotus_om, K_SYM),
+  "symbol-omega-symbol": ("Omega Symbol", "Ω ω meaning & how to type it", glyphs("Ω", "ω"), K_SYM),
+  "symbol-orthodox-cross": ("Orthodox Cross", "☦ meaning, history & how to type it", glyphs("☦"), K_SYM),
+  "symbol-peace-sign": ("Peace Symbol", "☮ meaning, history & how to type it", glyphs("☮"), K_SYM),
+  "symbol-pentagram-symbol": ("Pentagram Symbol", "⛧ meaning, history & how to type it", m_pentagram, K_SYM),
+  "symbol-pi-symbol": ("Pi Symbol", "π meaning & how to type it", glyphs("π"), K_SYM),
+  "symbol-pilcrow": ("Pilcrow Symbol", "¶ meaning, history & how to type it", glyphs("¶"), K_SYM),
+  "symbol-pisces-symbol": ("Pisces Symbol", "♓ meaning & how to type it", glyphs("♓"), K_SYM),
+  "symbol-plus-minus": ("Plus-Minus Symbol", "± meaning & how to type it", glyphs("±"), K_SYM),
+  "symbol-quotation-mark": ("Quotation Mark", "“ ” meaning & how to type it", glyphs("“", "”"), K_SYM),
+  "symbol-recycling-symbol": ("Recycling Symbol", "♻ meaning, history & how to type it", glyphs("♻"), K_SYM),
+  "symbol-right-arrow": ("Right Arrow Symbol", "→ meaning & how to type it", glyphs("→"), K_SYM),
+  "symbol-rupee-sign": ("Indian Rupee Sign", "₹ meaning, history & how to type it", glyphs("₹"), K_SYM),
+  "symbol-sagittarius-symbol": ("Sagittarius Symbol", "♐ meaning & how to type it", glyphs("♐"), K_SYM),
+  "symbol-scorpio-symbol": ("Scorpio Symbol", "♏ meaning & how to type it", glyphs("♏"), K_SYM),
+  "symbol-section-sign": ("Section Sign", "§ meaning, history & how to type it", glyphs("§"), K_SYM),
+  "symbol-sigma-symbol": ("Sigma Symbol", "Σ σ meaning & how to type it", glyphs("Σ", "σ"), K_SYM),
+  "symbol-star-of-david": ("Star of David", "✡ meaning, history & how to type it", glyphs("✡"), K_SYM),
+  "symbol-star-symbol": ("Star Symbol", "★ meaning & how to type it", glyphs("★"), K_SYM),
+  "symbol-stop-sign": ("Stop Sign", "🛑 meaning & how to type it", m_stop_octagon, K_SYM),
+  "symbol-taurus-symbol": ("Taurus Symbol", "♉ meaning & how to type it", glyphs("♉"), K_SYM),
+  "symbol-trademark-symbol": ("Trademark Symbol", "™ meaning, history & how to type it", glyphs("™"), K_SYM),
+  "symbol-up-arrow": ("Up Arrow Symbol", "↑ meaning & how to type it", glyphs("↑"), K_SYM),
+  "symbol-vertical-line": ("Vertical Line Symbol", "| meaning & how to type it", glyphs("|"), K_SYM),
+  "symbol-virgo-symbol": ("Virgo Symbol", "♍ meaning & how to type it", glyphs("♍"), K_SYM),
+  "symbol-wheelchair-symbol": ("Wheelchair Symbol", "♿ meaning, history & how to type it", glyphs("♿"), K_SYM),
+  "symbol-won-sign": ("Won Sign", "₩ meaning, history & how to type it", glyphs("₩"), K_SYM),
+  "symbol-yen-sign": ("Yen Sign", "¥ meaning, history & how to type it", glyphs("¥"), K_SYM),
+  "symbol-yin-yang": ("Yin Yang Symbol", "☯ meaning, history & how to type it", glyphs("☯"), K_SYM),
 
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",
