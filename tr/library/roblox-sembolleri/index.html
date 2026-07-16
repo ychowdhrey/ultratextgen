@@ -70,7 +70,7 @@
   "mainEntityOfPage": "https://ultratextgen.com/tr/library/roblox-sembolleri/",
   "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
   "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
-  "dateModified": "2026-07-13"
+  "dateModified": "2026-07-16"
 }
 </script>
 
@@ -138,6 +138,30 @@
         "@type": "Answer",
         "text": "Roblox'un isim filtresi tam olarak tutarlı değildir — davranış, hesabın bölgesine, uygulama sürümüne veya sembolün etrafındaki karakterlere göre değişebilir. Bir kombo başarısız olursa, önce tek başına sembolü yapıştırmayı dene, sonra komboyu karakter karakter yeniden oluştur. Roblox Uyumlu Semboller bölümündeki tek karakterli seçimler en güvenilir başlangıç noktasıdır."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Roblox görünen adında gerçekte hangi karakterlere izin veriliyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roblox'un görünen ad alanı geniş bir Unicode yelpazesini destekler — harfler, rakamlar ve birçok sembol — ama bu tamamen açık bir alan değildir, filtrelenir. Resmi olarak yayınlanmış bir izin listesi yok, bu yüzden pratikte 'destekleniyor' demek 'güncel filtreyi geçiyor' demektir ve bu zamanla değişebilir. En güvenli seçim yukarıdaki Roblox Uyumlu Semboller bölümündeki tek karakterli seçimlerdir; çok karakterli kombolar ve daha nadir Unicode blokları reddedilmeye daha yatkındır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Japonca, Çince veya Korece karakterler Roblox görünen adında çalışır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Genellikle evet — こんにちは veya 안녕하세요 gibi tamamen CJK yazı sistemiyle yazılmış isimler, resmi Roblox Geliştirici Forumu'ndaki raporlara göre Roblox'un filtresini genelde geçiyor. Reddedilmeye daha yatkın olan asıl grup, aksan işaretli Latin harfleri (é, ü, ł ve benzeri aksanlı karakterler) — bu da birçok oyuncunun tam tersini beklediği için şaşırtıyor. Türkçe de ç, ğ, ı, ö, ş, ü gibi aksanlı Latin harfleri kullandığından, bu durum yalnızca yabancı bir merak konusu değil: ş veya ğ içeren bir isim de aynı sebepten reddedilebilir. Davranış her hesapta garanti olmadığından, bir isme karar vermeden önce test et."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Roblox görünen adıma nasıl boşluk koyarım?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roblox, görünen adın başındaki ve sonundaki gerçek boşlukları kırpar ve kırpma sonrası boş kalan alanı reddeder, bu yüzden tek başına bir boşluk kaydolmaz. Bunun yerine görünmez bir karakter kullan — Görünmez ve Boş Roblox İsimleri bölümündeki Hangul Filler (ㅤ) veya Braille Pattern Blank (⠀) boşluk karakteri olarak sınıflandırılmadığından, kırpılmadan görsel bir boşluk bırakır."
+      }
     }
   ]
 }
@@ -173,7 +197,7 @@
     <!-- INTRO -->
     <section class="editorial-section">
       <div class="editorial-block">
-        <p>Roblox, görünen adlarda ve biolarda Unicode karakterlerine izin verir, ancak bazı semboller içerik filtresi tarafından engellenir. Bunlar, Roblox'ta doğru görünen en güvenilir estetik semboller: isim doğrulayıcısını geçen yıldızlar, kalpler, çiçekler ve sevimli süsler. Roblox görünen adında, grup açıklamanda veya bionda kullan.</p>
+        <p>Roblox, görünen adlarda ve biolarda Unicode karakterlerine izin verir, ancak bazı semboller içerik filtresi tarafından engellenir. Bunlar, Roblox'ta doğru görünen en güvenilir estetik semboller: isim doğrulayıcısını geçen yıldızlar, kalpler, çiçekler ve sevimli süsler. Klan etiketi için tek bir Roblox sembolü arıyor olsan da tam süslü bir kombo hazırlıyor olsan da, aşağıdaki her karakter güncel filtreye göre kontrol edildi. Roblox görünen adında, grup açıklamanda veya bionda kullan.</p>
       </div>
     </section>
 
@@ -183,7 +207,7 @@
     <section class="mood-explainers" id="roblox-friendly-marks">
       <span class="article-section-label">Roblox Uyumlu İşaretler</span>
       <h2>Roblox Uyumlu Semboller</h2>
-      <p>Bu semboller Roblox isim doğrulayıcısını güvenilir şekilde geçer ve oyun içinde doğru görünür. Roblox'un güncel isim filtresine göre kontrol edildi — son doğrulama Temmuz 2026.</p>
+      <p>Tek bir Roblox sembolü mü arıyorsun, yoksa tam bir kombo mu hazırlıyorsun? Aşağıdaki her karakter Roblox isim doğrulayıcısını güvenilir şekilde geçer ve oyun içinde doğru görünür. Roblox'un güncel isim filtresine göre kontrol edildi — son doğrulama Temmuz 2026.</p>
       <div class="flag-rows">
         <div class="flag-row">
           <button class="flag-emoji symbol-tile" data-symbol="⋆" aria-label="⋆ kopyala">⋆</button>
@@ -405,11 +429,50 @@
 
     <div class="section-divider"></div>
 
+    <!-- SECTION 3D -->
+    <section class="mood-explainers" id="roblox-matching-names">
+      <span class="article-section-label">Eşleşen İsimler</span>
+      <h2>En Yakın Arkadaşlar ve İkililer İçin Eşleşen İsimler</h2>
+      <p>Roblox görünen adlarını "eşleştirmenin" sırrı özel bir sembol değil — aynı komboyu iki isimde de kullanarak görsel olarak birbirine bağlamaktır. Aşağıdaki koleksiyondan Yıldızlı nick kombosu, Taç gösteriş kombosu ve Kalp kanatları kombosu bunun için gayet iyi çalışır. Tam eşleşen değil, birbirini tamamlayan iki isim mi istiyorsun? Bir güneş-ay ikilisini dene — her arkadaşa bir sembol, aynı fikir, farklı görünüm.</p>
+      <div class="flag-rows">
+        <div class="flag-row">
+          <button class="flag-emoji symbol-tile" data-symbol="☀" aria-label="☀ kopyala">☀</button>
+          <span class="flag-label">Güneş (ikilinin bir yarısı)</span>
+        </div>
+        <div class="flag-row">
+          <button class="flag-emoji symbol-tile" data-symbol="☾" aria-label="☾ kopyala">☾</button>
+          <span class="flag-label">Hilal (diğer yarısı)</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
     <!-- SECTION 4 -->
     <section class="mood-explainers" id="roblox-filter-note">
       <span class="article-section-label">Roblox Filtreleri Hakkında</span>
       <h2>Roblox İçerik Filtresi Hakkında</h2>
       <p>Roblox, görünen adlarda ve biolarda bazı Unicode karakterlerini engelleyebilen otomatik bir içerik filtresi kullanır. ★ ♡ ✦ ❀ ⋆ gibi tek karakterli semboller en güvenli olanlardır. Çok karakterli kombolar ve nadir Unicode blokları daha çok engellenir veya kaldırılır. Bir sembol görünen adına kaydolmuyorsa, yukarıdaki Roblox Uyumlu Semboller bölümünden daha basit tek karakterli bir alternatif dene.</p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- SECTION 4B -->
+    <section class="mood-explainers" id="roblox-invisible-name">
+      <span class="article-section-label">Boş Görünen Ad</span>
+      <h2>Görünmez ve Boş Roblox İsimleri</h2>
+      <p>Roblox görünen adının boş görünmesini mi istiyorsun? Gerçek ama görünmez bir Unicode karakteri bunu sağlar — düz bir boşluk kırpılır ve alan boş kaldığı için reddedilir, ama bu iki karakter boşluk karakteri olarak sınıflandırılmadığından kaydolur. Roblox'un filtresi bunlara tutarlı davranmıyor, biri reddedilirse diğerini dene.</p>
+      <div class="flag-rows">
+        <div class="flag-row">
+          <button class="flag-emoji symbol-tile" data-symbol="ㅤ" aria-label="Hangul Filler kopyala — U+3164">ㅤ</button>
+          <span class="flag-label">Hangul Filler (U+3164)</span>
+        </div>
+        <div class="flag-row">
+          <button class="flag-emoji symbol-tile" data-symbol="⠀" aria-label="Braille Pattern Blank kopyala — U+2800">⠀</button>
+          <span class="flag-label">Braille Pattern Blank (U+2800)</span>
+        </div>
+      </div>
+      <p class="u-secondary-block">Gerçek bir boşluk neden işe yaramıyor da bunlar yarıyor — tam açıklaması: <a href="/symbol/invisible-character/">Görünmez Karakter</a> sayfasında ve daha geniş <a href="/tr/gorunmez-karakter/">Görünmez Karakter kütüphanesinde</a>.</p>
     </section>
 
     <div class="section-divider"></div>
@@ -446,6 +509,18 @@
           <h4>Roblox Kullanıcı Adı Üretici</h4>
           <p>Tarza veya uzunluğa göre uygun Roblox @kullanıcı adları üret — canlı müsaitlik kontrolüyle.</p>
         </a>
+        <a href="/roblox/" class="compare-card variant-positive u-no-underline">
+          <h4>Roblox Font Üretici</h4>
+          <p>Herhangi bir ismi Roblox tarzı stilize metne çevir — tarayıcı içinde, indirme yok.</p>
+        </a>
+        <a href="/answers/what-font-does-roblox-use/" class="compare-card variant-muted u-no-underline">
+          <h4>Roblox Hangi Fontu Kullanıyor?</h4>
+          <p>Resmi Roblox logosu ve arayüz fontu, açıklamasıyla.</p>
+        </a>
+        <a href="/answers/how-to-change-roblox-username/" class="compare-card variant-muted u-no-underline">
+          <h4>Roblox Kullanıcı Adı Nasıl Değiştirilir</h4>
+          <p>@kullanıcı adı ile görünen ad arasındaki fark ve her birini nasıl değiştireceğin.</p>
+        </a>
         <a href="/tr/library/estetik-semboller/" class="compare-card variant-muted u-no-underline">
           <h4>Estetik Semboller</h4>
           <p>Bio için özenle seçilmiş estetik Unicode karakterleri.</p>
@@ -480,6 +555,9 @@
       <div class="faq-item"><button class="faq-question" type="button">Bu Roblox sembollerini kullanmak güvenli mi?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Evet. Bunlar süsleme için kullanılan sıradan Unicode karakterleridir; hile veya açık değildir, bu yüzden görünen adında ya da bioda kullanmak Roblox kurallarını ihlal etmez. Yeter ki genel adın uygun olsun — içerik filtresi sembollerin etrafındaki kelimeler için hâlâ geçerlidir.</div></div>
       <div class="faq-item"><button class="faq-question" type="button">Gerçek Robux, Premium veya Doğrulanmış ikonunu kopyalayıp yapıştırabilir misin?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Hayır. Bu ikonlar, Roblox'un kendi istemci ikon fontundaki glif'lere eşlenen ve resmi Roblox Geliştirici Forumu'nda belgelenen özel kullanım alanı (private-use) Unicode kod noktalarıdır (U+E000–U+E003). Yalnızca bir geliştiricinin Roblox Studio'da oluşturduğu bir oyun arayüzü içinde görüntülenirler — görünen adda, biode, sohbette veya platform dışında herhangi bir yerde değil. Başka bir yere yapıştırıldıklarında boş görünürler. Bu sayfadaki taç, onay işareti ve elmas sembolleri, resmi bir rozet olduğunu iddia etmeden en yakın yapıştırmaya uygun görünümü sunar.</div></div>
       <div class="faq-item"><button class="faq-question" type="button">Bir sembol başkası için çalıştı ama bende neden "desteklenmeyen karakterler" hatası veriyor?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Roblox'un isim filtresi tam olarak tutarlı değildir — davranış, hesabın bölgesine, uygulama sürümüne veya sembolün etrafındaki karakterlere göre değişebilir. Bir kombo başarısız olursa, önce tek başına sembolü yapıştırmayı dene, sonra komboyu karakter karakter yeniden oluştur. Roblox Uyumlu Semboller bölümündeki tek karakterli seçimler en güvenilir başlangıç noktasıdır.</div></div>
+      <div class="faq-item"><button class="faq-question" type="button">Roblox görünen adında gerçekte hangi karakterlere izin veriliyor?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Roblox'un görünen ad alanı geniş bir Unicode yelpazesini destekler — harfler, rakamlar ve birçok sembol — ama bu tamamen açık bir alan değildir, filtrelenir. Resmi olarak yayınlanmış bir izin listesi yok, bu yüzden pratikte 'destekleniyor' demek 'güncel filtreyi geçiyor' demektir ve bu zamanla değişebilir. En güvenli seçim yukarıdaki Roblox Uyumlu Semboller bölümündeki tek karakterli seçimlerdir; çok karakterli kombolar ve daha nadir Unicode blokları reddedilmeye daha yatkındır.</div></div>
+      <div class="faq-item"><button class="faq-question" type="button">Japonca, Çince veya Korece karakterler Roblox görünen adında çalışır mı?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Genellikle evet — こんにちは veya 안녕하세요 gibi tamamen CJK yazı sistemiyle yazılmış isimler, resmi Roblox Geliştirici Forumu'ndaki raporlara göre Roblox'un filtresini genelde geçiyor. Reddedilmeye daha yatkın olan asıl grup, aksan işaretli Latin harfleri (é, ü, ł ve benzeri aksanlı karakterler) — bu da birçok oyuncunun tam tersini beklediği için şaşırtıyor. Türkçe de ç, ğ, ı, ö, ş, ü gibi aksanlı Latin harfleri kullandığından, bu durum yalnızca yabancı bir merak konusu değil: ş veya ğ içeren bir isim de aynı sebepten reddedilebilir. Davranış her hesapta garanti olmadığından, bir isme karar vermeden önce test et.</div></div>
+      <div class="faq-item"><button class="faq-question" type="button">Roblox görünen adıma nasıl boşluk koyarım?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Roblox, görünen adın başındaki ve sonundaki gerçek boşlukları kırpar ve kırpma sonrası boş kalan alanı reddeder, bu yüzden tek başına bir boşluk kaydolmaz. Bunun yerine görünmez bir karakter kullan — Görünmez ve Boş Roblox İsimleri bölümündeki Hangul Filler (ㅤ) veya Braille Pattern Blank (⠀) boşluk karakteri olarak sınıflandırılmadığından, kırpılmadan görsel bir boşluk bırakır.</div></div>
       <div class="lang-switcher" role="navigation" aria-label="Dil seçici">
       <a class="lang-option" href="/ar/library/roblox-symbols/" hreflang="ar">AR</a>
       <a class="lang-option" href="/de/library/roblox-symbole/" hreflang="de">DE</a>
