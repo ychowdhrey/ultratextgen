@@ -148,13 +148,17 @@ single-glyph page — including "weird emoji fact" campaign pages — goes into
 
 **Grandfathered exception:** the ~60 single-emoji pages already living in
 `library/` (`moai-emoji`, `clown-emoji`, `sad-emoji`, etc. — one emoji per page)
-are **not** retroactively migrated. A mechanical rename risks live rankings on
-pages that already have real search traffic, for a lane cleanup with no
-user-facing upside. Convert one opportunistically **only** when it gains a
-genuine peer — e.g. if `crying-emoji` and a future `sob-emoji` both warrant a
-page, fold them into one `library/` collection and 301-redirect the old
-single(s) into it, rather than leaving parallel single pages competing with
-each other. Until that trigger fires, leave the single page exactly where it is.
+are **not** retroactively migrated in bulk. A mechanical rename risks live
+rankings on pages that already have real search traffic, for a lane cleanup
+with no user-facing upside. Convert a cluster into a `library/` collection
+once its pages have a genuine peer relationship — that peer relationship can
+already exist **today** among the current 60 (e.g. `crying-emoji` +
+`sad-emoji` may already be close enough), not only once some brand-new page
+is added later. Fold matched clusters into one collection page and
+301-redirect the old singles into it, rather than leaving parallel singles
+competing with each other. Auditing the 60 for existing clusters and
+executing the folds is its own deliberate, scheduled pass — not something to
+do opportunistically as a side effect of unrelated work.
 
 **Kaomoji are out of scope for this rule.** Kaomoji are text-built emoticons,
 not glyph/emoji codepoints — single kaomoji pages (`heart-kaomoji`,
