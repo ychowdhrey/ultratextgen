@@ -1,0 +1,71 @@
+{
+  "slug": "snapchat-heart-colors",
+  "page_type": "symbol",
+  "title": "Snapchat Heart Colors: What Each Heart Emoji Means (💛 ❤️ 💕)",
+  "meta_description": "What the heart emoji next to a Snapchat friend's name means — the classic 💛 to ❤️ to 💕 best-friend progression, plus general heart color meanings. Customizable — check your own Settings.",
+  "canonical": "https://ultratextgen.com/symbol/snapchat-heart-colors/",
+  "breadcrumb": "Snapchat Heart Colors",
+  "hero_h1": "Snapchat Heart Colors",
+  "hero_tagline": "What the heart emoji next to a friend's name on Snapchat actually means — the classic best-friend color progression, explained honestly, plus the general heart color story. Click any symbol to copy it instantly.",
+  "intro": "Snapchat shows a small heart emoji next to some of your friends' names, and the color is not random — it tracks how long you two have been each other's number-one best friend. This page covers that Snapchat-specific meaning as its main focus, plus a short refresher on what each heart color means in general Unicode use (the fuller version of that general story lives on the heart symbol and heart emoji pages linked below). One honest caveat up front: Snapchat lets you customize or turn off Friend Emojis entirely in Settings, so treat the progression below as the long-standing classic default, not a permanently fixed chart, and check Settings > Friend Emojis for your own current set.",
+  "date_published": "2026-07-16",
+  "date_modified": "2026-07-16",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "snapchat-relevant-hearts",
+      "label": "Hearts On Snapchat",
+      "h2": "Heart Colors Snapchat Uses",
+      "intro": "The three heart colors that show up in Snapchat's classic best-friend progression.",
+      "symbols": [
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "❤️", "label": "Red Heart" },
+        { "char": "💕", "label": "Two Hearts (Pink)" }
+      ]
+    },
+    {
+      "id": "other-heart-colors",
+      "label": "Other Heart Colors",
+      "h2": "Other Heart Emoji Colors (General Meaning)",
+      "intro": "The rest of Unicode's heart-color palette — see the full heart emoji hub linked below for the complete list and every meaning.",
+      "symbols": [
+        { "char": "🧡", "label": "Orange Heart" },
+        { "char": "💚", "label": "Green Heart" },
+        { "char": "💙", "label": "Blue Heart" },
+        { "char": "💜", "label": "Purple Heart" }
+      ]
+    },
+    {
+      "id": "heart-symbol-forms",
+      "label": "Heart Symbol Forms",
+      "h2": "Heart Symbol & Text Forms",
+      "intro": "The non-color heart glyphs — the Unicode card-suit heart and the classic text heart.",
+      "symbols": [
+        { "char": "♥", "label": "Black Heart Suit (U+2665)" },
+        { "char": "<3", "label": "ASCII Text Heart" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/snapchat-symbols/",
+      "title": "Snapchat Symbols & Emoji",
+      "desc": "Copy-paste Snapchat bio symbols and the full Friend Emoji explainer."
+    },
+    {
+      "href": "/library/heart-emoji/",
+      "title": "Heart Emoji & Kaomoji",
+      "desc": "Every heart color, meaning, and combo set in one hub."
+    },
+    {
+      "href": "/symbol/heart-symbol/",
+      "title": "Heart Symbol",
+      "desc": "The card-suit heart's origin, codepoints, and how to type it."
+    },
+    {
+      "href": "/symbol/sunglasses-symbol/",
+      "title": "Sunglasses Symbol",
+      "desc": "The 😎 glyph's codepoint and its Snapchat Friend Emoji role."
+    }
+  ]
+}
