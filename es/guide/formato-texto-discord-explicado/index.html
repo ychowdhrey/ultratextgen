@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>El formato de texto en Discord explicado: Markdown, Unicode y Nitro | UltraTextGen</title>
+<meta name="description" content="Por qué la negrita funciona en el chat de Discord pero no en tu nombre — los tres sistemas de texto de Discord (Markdown, fuentes Unicode, Nitro) y cuándo usar cada uno.">
+
+<link rel="canonical" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/formatage-texte-discord-explique/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/discord-textformatierung-erklaert/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/formatacao-de-texto-no-discord/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="UltraTextGen">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="El formato de texto en Discord, descifrado: Markdown, Unicode, Nitro">
+<meta property="og:description" content="Por qué la negrita funciona en el chat pero no en tu nombre — los tres sistemas de texto de Discord y cuándo usar cada uno.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/es-guide-formato-texto-discord-explicado.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El formato de texto en Discord, descifrado: Markdown, Unicode, Nitro">
+<meta name="twitter:description" content="Por qué la negrita funciona en el chat pero no en tu nombre — los tres sistemas de texto de Discord y cuándo usar cada uno.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/es-guide-formato-texto-discord-explicado.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "El formato de texto en Discord, descifrado: Markdown, Unicode, Nitro",
+  "description": "Por qué la negrita funciona en el chat de Discord pero no en tu nombre — los tres sistemas de texto de Discord (Markdown, fuentes Unicode, Nitro) y cuándo usar cada uno.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/es-guide-formato-texto-discord-explicado.png",
+  "inLanguage": "es",
+  "mainEntityOfPage": "https://ultratextgen.com/es/guide/formato-texto-discord-explicado/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ultratextgen.com/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://ultratextgen.com/es/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Formato de texto en Discord", "item": "https://ultratextgen.com/es/guide/formato-texto-discord-explicado/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué la negrita funciona en el chat de Discord pero no en mi nombre de usuario?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Porque usan sistemas distintos. En el chat, **negrita** es Markdown — Discord lo interpreta al mostrar tu mensaje. Los nombres (nombre de usuario, apodo, servidor, canal, rol) no ejecutan Markdown, así que los asteriscos se ven tal cual. Para dar estilo a un nombre necesitas «fuentes» Unicode — caracteres que ya se ven en negrita — pegados directamente en el campo." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Son las fuentes Unicode lo mismo que las fuentes de Discord Nitro?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Las «fuentes» Unicode son caracteres sustitutos gratuitos que puedes pegar en cualquier sitio donde se permita un nombre; funcionan para todo el mundo, pero pueden verse como cuadros en algunos dispositivos y complican los lectores de pantalla. Los Estilos de nombre para mostrar de Nitro son una función de pago que aplica una fuente, un color y efectos reales a tu nombre para mostrar — pero el color y los efectos no se ven dentro de los servidores, donde gana el color de tu rol; solo se conserva la fuente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo hago texto de color en Discord?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Con bloques de código ANSI: envuelve tu texto en un bloque de tres comillas invertidas etiquetado como «ansi» y añade códigos de escape para el color. Está limitado a ocho colores fijos, solo funciona dentro de bloques de código y es poco fiable en el móvil (a menudo se ve como texto plano). Es para mensajes, no para nombres." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué aparecen los asteriscos en vez de la negrita?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dos motivos habituales: hay un espacio entre los asteriscos y la palabra (`** texto **` no pone negrita — `**texto**` sí), o el texto está dentro de un bloque de código (las comillas invertidas apagan el Markdown). Recuerda además que el Markdown solo funciona en mensajes, nunca en nombres." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Ruta de navegación">
+  <a href="/es/">Inicio</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/es/guide/">Guías</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Formato de texto en Discord</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">El formato de texto en Discord, descifrado</h1>
+    <p class="hero-tagline">No tienes un problema de «fuentes» — tienes un problema de tres sistemas. Discord usa Markdown, caracteres Unicode y estilos de Nitro para tareas completamente distintas. En cuanto sepas qué campo usa qué sistema, cada «¿por qué no funciona esto?» se responde solo.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Dominar Discord</span>
+      <span class="guide-pill">⏱ 8 min de lectura</span>
+      <span class="guide-pill">El modelo de 3 sistemas</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/es-guide-formato-texto-discord-explicado.svg" width="1200" height="340"
+       alt="Tres fichas apiladas con las etiquetas Markdown, Unicode y Nitro — los tres sistemas de texto de Discord.">
+</figure>
+
+<!-- PUNTOS CLAVE -->
+<section class="key-takeaways">
+  <h2>Puntos clave</h2>
+  <ul>
+    <li>Discord tiene tres sistemas de texto sin relación entre sí: <strong>Markdown</strong> (mensajes), <strong>«fuentes» Unicode</strong> (nombres, en todas partes) y <strong>Nitro</strong> (estilos de nombre para mostrar de pago).</li>
+    <li>El Markdown como <code>**negrita**</code> solo se aplica en los mensajes — nunca en nombres de usuario, apodos ni nombres de servidor o canal.</li>
+    <li>Las «fuentes» Unicode funcionan en cualquier campo de nombre, pero pueden verse como cuadros en algunos dispositivos y complican los lectores de pantalla.</li>
+    <li>Nitro añade color y efectos reales a tu nombre para mostrar — pero dentro de un servidor gana el color de tu rol y solo se ve la fuente.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- El enfoque -->
+  <section class="editorial-section">
+    <span class="article-section-label">El enfoque</span>
+    <h2>No son fuentes — son tres sistemas distintos</h2>
+    <div class="editorial-block">
+      <p>Casi todas las preguntas de «por qué no funciona mi texto» en Discord vienen de mezclar tres cosas que no tienen nada que ver. Discord te <em>enseña</em> Markdown en el chat, así que supones que el mismo truco servirá para tu nombre. No es así — los nombres funcionan con un sistema totalmente distinto.</p>
+      <p>Aquí tienes todo el panorama en un solo esquema. Aprende qué sistema usa cada campo y no volverás a llevarte una sorpresa.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Sistema</th><th>Qué es</th><th>Dónde funciona</th><th>La pega</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Símbolos que Discord interpreta (<code>**negrita**</code>, <code>*cursiva*</code>, <code>~~tachado~~</code>, color ANSI)</td><td>Solo mensajes</td><td>Muere en cualquier campo de nombre; el color ANSI es solo de escritorio</td></tr>
+          <tr><td><strong>«Fuentes» Unicode</strong></td><td>Caracteres sustitutos que ya se ven con estilo (𝗻𝗲𝗴𝗿𝗶𝘁𝗮, 𝓬𝓾𝓻𝓼𝓲𝓿𝓪)</td><td>Nombre para mostrar, apodo, nombres de servidor/canal/rol, biografía, mensajes</td><td>Puede verse como cuadros; complica los lectores de pantalla; rechazado en el @nombre de usuario</td></tr>
+          <tr><td><strong>Estilos de Nitro</strong></td><td>Estilos de nombre para mostrar de pago: fuente + color + efectos reales</td><td>Tu nombre para mostrar</td><td>El color y los efectos no se ven dentro de los servidores (gana el color del rol); cuesta dinero</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sistema 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">Sistema 1</span>
+    <h2>Markdown — para los mensajes</h2>
+    <div class="editorial-block">
+      <p>El Markdown es el formato que Discord aplica cuando <em>muestra</em> tu mensaje. Escribes símbolos alrededor de tus palabras y Discord los cambia por estilo real.</p>
+      <ul>
+        <li><code>**negrita**</code> → <strong>negrita</strong></li>
+        <li><code>*cursiva*</code> → <em>cursiva</em></li>
+        <li><code>~~tachado~~</code> → tachado</li>
+        <li><code>__subrayado__</code> → subrayado</li>
+        <li><code>||spoiler||</code> → oculto hasta hacer clic</li>
+        <li><code>&gt; cita</code> y <code>`código`</code></li>
+      </ul>
+      <p>Esta es la forma <em>correcta</em> de dar formato a un mensaje — sigue siendo texto real, así que se puede buscar y es accesible. La pega son los dos errores que hacen que «no funcione»:</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">No pone negrita</span>
+          <p><code>** texto **</code> — un espacio dentro de los asteriscos lo cancela. Usa <code>**texto**</code>.</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">No pone negrita</span>
+          <p>Dentro de un <code>`bloque de código`</code>, las comillas invertidas apagan el Markdown. Saca el estilo del bloque.</p>
+        </div>
+      </div>
+      <p><strong>Y lo más importante:</strong> el Markdown no hace nada en un nombre de usuario, un apodo, un nombre de servidor o de canal. No son mensajes, así que Discord nunca les aplica Markdown.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sistema 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">Sistema 2</span>
+    <h2>«Fuentes» Unicode — para los nombres</h2>
+    <div class="editorial-block">
+      <p>Para dar estilo a un <em>nombre</em>, no puedes pedirle a Discord que interprete nada — así que usas caracteres que ya vienen con estilo. Un generador convierte «Nova» en 𝗡𝗼𝘃𝗮 o 𝓝𝓸𝓿𝓪 usando <a href="/es/library/">caracteres Unicode</a> especiales, y pegas el resultado directamente en el campo. No hace falta interpretar nada, así que sobrevive donde el Markdown falla.</p>
+      <p>Esto funciona en tu nombre para mostrar, tu apodo de servidor, los nombres de servidor y canal, los nombres de rol, tu biografía y los mensajes. Hay exactamente un sitio donde está bloqueado:</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>El @nombre de usuario lo rechaza.</strong> Tu identificador único (el que va en minúsculas después de la @) solo admite a–z, 0–9, <code>_</code> y <code>.</code> — para menciones, búsqueda y enrutamiento. Pega ahí una fuente elegante y Discord se niega a guardarla. Da estilo a tu <em>nombre para mostrar</em> en su lugar.</div>
+      </div>
+      <p>Dos advertencias honestas: los nombres Unicode pueden verse como cuadros en algunos dispositivos (sobre todo Android antiguos) y son difíciles de leer para los lectores de pantalla. Elige un estilo seguro (negrita, cursiva, versalitas) y mantenlo sobrio — muchos servidores grandes moderan los nombres ilegibles o con zalgo.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sistema 3 Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">Sistema 3</span>
+    <h2>Estilos de nombre de Nitro — de pago, y más limitados de lo que crees</h2>
+    <div class="editorial-block">
+      <p>El nivel de pago Nitro de Discord ofrece los Estilos de nombre para mostrar, una función añadida a finales de 2025: una fuente real, color e incluso efectos animados aplicados a tu nombre para mostrar. Queda genial en tu tarjeta de perfil. Pero hay una pega que la gente descubre por las malas:</p>
+      <div class="mood-explainer">
+        <div class="mood-example">Dentro de un servidor, el <strong>color de tu rol</strong> anula el color de Nitro, y los efectos desaparecen — así que los demás miembros suelen ver solo la <em>fuente</em>, no el color ni la animación. El efecto completo se ve sobre todo en tu perfil, no en la lista de miembros ni en el chat.</div>
+      </div>
+      <p>Las cuentas gratuitas pueden abrir el menú y <strong>previsualizar</strong> un estilo, pero guardarlo es solo para Nitro — ese «vista previa y luego muro de pago» es justo lo que hace que tanta gente se pregunte si hace falta Nitro para las fuentes. Es una duda razonable sobre esta función concreta; no cambia nada del estilo Unicode, que sigue siendo gratis pase lo que pase.</p>
+      <p>Así que Nitro merece la pena si quieres una tarjeta de perfil cuidada y una fuente de nombre propia en todas partes. <em>No</em> es la manera de meter texto de color en una conversación — eso es otra herramienta (siguiente sección).</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Texto de color -->
+  <section class="editorial-section">
+    <span class="article-section-label">La cuestión del color</span>
+    <h2>¿Y el texto de color en los mensajes?</h2>
+    <div class="editorial-block">
+      <p>El texto de color en un mensaje es un cuarto truco más limitado: los <strong>bloques de código ANSI</strong>. Envuelves tu texto en un bloque de tres comillas invertidas etiquetado como <code>ansi</code> y añades códigos de escape para el color. Ten claras las limitaciones:</p>
+      <ul>
+        <li>Solo <strong>ocho colores fijos</strong> — sin hex personalizado.</li>
+        <li><strong>Solo en bloque de código</strong> — no puede colorear una frase normal en línea.</li>
+        <li><strong>Poco fiable en el móvil</strong> — a menudo se muestra como texto plano para quienes usan teléfono.</li>
+      </ul>
+      <p>Útil para los avisos o los registros de un servidor orientado a escritorio; no es una herramienta de estilo general. Si la mitad de tus miembros están en el móvil, da por hecho que no verán el color.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Decisión -->
+  <section class="editorial-section">
+    <span class="article-section-label">Decide rápido</span>
+    <h2>¿Qué sistema necesitas?</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Quiero…</th><th>Usa</th></tr></thead>
+        <tbody>
+          <tr><td>Poner una palabra en negrita/cursiva en un mensaje</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>Dar estilo a mi nombre para mostrar o apodo</td><td>Fuente Unicode (pégala)</td></tr>
+          <tr><td>Decorar un nombre de servidor o canal</td><td>Fuente Unicode + símbolos</td></tr>
+          <tr><td>Cambiar el aspecto de mi @nombre de usuario único</td><td>Imposible — da estilo al nombre para mostrar</td></tr>
+          <tr><td>Un nombre de perfil con color y animación</td><td>Estilos de nombre de Nitro</td></tr>
+          <tr><td>Texto de color en un mensaje</td><td>Bloque de código ANSI (escritorio, 8 colores)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">Discord no rompió tu negrita.<br>Usaste el sistema del chat en un campo de nombre.<br><br>Empareja el sistema con el campo, y funciona sin más.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Crea un nombre listo para Discord</h3>
+    <p>Genera un estilo Unicode seguro en cualquier dispositivo, cópialo y pégalo en tu nombre para mostrar o tu apodo de servidor — sin Nitro.</p>
+    <a href="/es/fuentes-para-discord/" class="cta-btn">Abrir el generador de fuentes de Discord →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/es/fuentes-para-discord/">Fuentes para Discord</a>
+    <a class="platform-pill" href="/es/fuentes-para-instagram/">Fuentes para Instagram</a>
+    <a class="platform-pill" href="/es/fuentes-para-tiktok/">Fuentes para TikTok</a>
+    <a class="platform-pill" href="/es/letras-negritas/">Letras en negrita</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">¿Por qué la negrita funciona en el chat de Discord pero no en mi nombre de usuario?</button>
+    <div class="faq-answer">
+      <p>Porque usan sistemas distintos. En el chat, <code>**negrita**</code> es Markdown — Discord lo interpreta al mostrar tu mensaje. Los nombres (nombre de usuario, apodo, servidor, canal, rol) no ejecutan Markdown, así que los asteriscos se ven tal cual. Para dar estilo a un nombre necesitas «fuentes» Unicode — caracteres que ya se ven en negrita — pegados directamente en el campo.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">¿Son las fuentes Unicode lo mismo que las fuentes de Discord Nitro?</button>
+    <div class="faq-answer">
+      <p>No. Las «fuentes» Unicode son caracteres sustitutos gratuitos que puedes pegar en cualquier sitio donde se permita un nombre; funcionan para todo el mundo, pero pueden verse como cuadros en algunos dispositivos y complican los lectores de pantalla. Los Estilos de nombre para mostrar de Nitro son una función de pago que aplica una fuente, un color y efectos reales a tu nombre para mostrar — pero el color y los efectos no se ven dentro de los servidores, donde gana el color de tu rol; solo se conserva la fuente.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">¿Cómo hago texto de color en Discord?</button>
+    <div class="faq-answer">
+      <p>Con bloques de código ANSI: envuelve tu texto en un bloque de tres comillas invertidas etiquetado como «ansi» y añade códigos de escape para el color. Está limitado a ocho colores fijos, solo funciona dentro de bloques de código y es poco fiable en el móvil (a menudo se ve como texto plano). Es para mensajes, no para nombres.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">¿Por qué aparecen los asteriscos en vez de la negrita?</button>
+    <div class="faq-answer">
+      <p>Dos motivos habituales: hay un espacio entre los asteriscos y la palabra (<code>** texto **</code> no pone negrita — <code>**texto**</code> sí), o el texto está dentro de un bloque de código (las comillas invertidas apagan el Markdown). Recuerda además que el Markdown solo funciona en mensajes, nunca en nombres.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Sigue leyendo</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/es/fuentes-para-discord/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">Fuentes para Discord</span>
+      <span class="related-desc">El generador: nick, biografía y nombre de servidor en Unicode, para copiar y pegar.</span>
+    </a>
+    <a class="related-card" href="/es/library/simbolos-discord/">
+      <span class="related-tag">✦</span>
+      <span class="related-title">Símbolos de Discord</span>
+      <span class="related-desc">Separadores y símbolos que se pegan limpios en un canal o un rol.</span>
+    </a>
+    <a class="related-card" href="/es/letras-negritas/">
+      <span class="related-tag">𝗕</span>
+      <span class="related-title">Letras en negrita</span>
+      <span class="related-desc">La negrita Unicode que sobrevive en un nombre, donde el Markdown no llega.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
