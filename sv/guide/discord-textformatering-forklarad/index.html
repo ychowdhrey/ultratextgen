@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discord-typsnitt och formatering förklarat: Markdown, Unicode och Nitro | UltraTextGen</title>
+<meta name="description" content="Varför fetstil fungerar i Discord-chatten men inte i ditt användarnamn — de tre olika textsystem Discord använder (Markdown, Unicode-typsnitt, Nitro), och exakt när du ska använda vilket.">
+
+<link rel="canonical" href="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/tanseeq-nusus-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/formatovani-textu-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/discord-tekstformatering-forklaret/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/discord-textformatierung-erklaert/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/formatage-texte-discord-explique/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-text-formatting-samjhein/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/formattazione-testo-discord-spiegata/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/discord-tekstopmaak-uitgelegd/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/discord-tekstformatering-forklart/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/formatacao-de-texto-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/formatare-text-discord-explicat/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/formatirovanie-teksta-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/formatiranje-teksta-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-rupbaep-khokhwam/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/discord-text-formatting-paliwanag/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-metin-bicimlendirme/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/dinh-dang-chu-discord/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/sv-guide-discord-textformatering-forklarad.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discord-typsnitt och formatering förklarat: Markdown, Unicode och Nitro | UltraTextGen">
+<meta name="twitter:description" content="Varför fetstil fungerar i Discord-chatten men inte i ditt användarnamn — de tre olika textsystem Discord använder (Markdown, Unicode-typsnitt, Nitro), och exakt när du ska använda vilket.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/sv-guide-discord-textformatering-forklarad.png">
+<meta property="og:title" content="Discord-typsnitt och formatering förklarat: Markdown, Unicode och Nitro">
+<meta property="og:description" content="Varför fetstil fungerar i Discord-chatten men inte i ditt användarnamn — de tre olika textsystem Discord använder (Markdown, Unicode-typsnitt, Nitro), och exakt när du ska använda vilket.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+<meta property="og:locale" content="sv_SE">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Discord-textformatering, avkodad: Markdown, Unicode-typsnitt och Nitro",
+  "description": "Varför fetstil fungerar i Discord-chatten men inte i ditt användarnamn — de tre olika textsystem Discord använder (Markdown, Unicode-typsnitt, Nitro), och exakt när du ska använda vilket.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/sv-guide-discord-textformatering-forklarad.png",
+  "inLanguage": "sv",
+  "mainEntityOfPage": "https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startsida", "item": "https://ultratextgen.com/sv/" },
+    { "@type": "ListItem", "position": 2, "name": "Guider", "item": "https://ultratextgen.com/sv/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Discord-textformatering", "item": "https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "sv",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Varför fungerar fetstil i Discord-chatten men inte i mitt användarnamn?",
+      "acceptedAnswer": { "@type": "Answer", "text": "För att de använder olika system. I chatten är **fet** Markdown — Discord renderar det när ditt meddelande visas. Namn (användarnamn, smeknamn, server, kanal, roll) kör inte Markdown, så asteriskerna visas bara bokstavligt. För att styla ett namn behöver du Unicode-«typsnitt» — speciella tecken som redan ser feta ut — inklistrade direkt i fältet." }
+    },
+    {
+      "@type": "Question",
+      "name": "Är Unicode-typsnitt samma sak som Discord Nitro-typsnitt?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nej. Unicode-«typsnitt» är gratis ersättningstecken som du kan klistra in var som helst ett namn är tillåtet; de fungerar för alla men kan visas som rutor på vissa enheter och sätta krokben för skärmläsare. Nitros stilar för visningsnamn är en betald funktion som ger ett riktigt typsnitt, färg och effekter till ditt visningsnamn — men färgen och effekterna syns inte inne på servrar, där din rollfärg vinner; bara typsnittet följer med." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur gör jag färgad text i Discord?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Med ANSI-kodblock: omslut texten i ett block med trippel-backticks märkt «ansi» och lägg till escape-koder för färg. Det är begränsat till åtta fasta färger, fungerar bara inuti kodblock och är opålitligt på mobil (det visas ofta som vanlig text). Det är för meddelanden, inte namn." }
+    },
+    {
+      "@type": "Question",
+      "name": "Varför dyker asteriskerna upp i stället för fet text?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Två vanliga orsaker: det finns ett mellanslag mellan asteriskerna och ordet (`** text **` blir inte fett — `**text**` blir det), eller så är texten inuti ett kodblock (backticks stänger av Markdown). Kom också ihåg att Markdown bara fungerar i meddelanden, aldrig i namn." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/sv/">Startsida</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/sv/guide/">Guider</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Discord-textformatering</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Discord-textformatering, avkodad</h1>
+    <p class="hero-tagline">Du har inte ett «typsnittsproblem» — du har ett problem med tre system. Discord använder Markdown, Unicode-tecken och Nitro-stilar för helt olika jobb. När du väl vet vilket fält som använder vilket besvarar varje «varför funkar inte det här?» sig självt.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Plattformskunskap</span>
+      <span class="guide-pill">⏱ 8 min läsning</span>
+      <span class="guide-pill">Modellen med tre system</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/sv-guide-discord-textformatering-forklarad.svg" width="1200" height="340"
+       alt="Tre staplade brickor märkta Markdown, Unicode och Nitro, som visar Discords tre olika textsystem.">
+</figure>
+
+<!-- DET VIKTIGASTE -->
+<section class="key-takeaways">
+  <h2>Det viktigaste</h2>
+  <ul>
+    <li>Discord har tre orelaterade textsystem: <strong>Markdown</strong> (meddelanden), <strong>Unicode-«typsnitt»</strong> (namn överallt) och <strong>Nitro</strong> (betalda stilar för visningsnamn).</li>
+    <li>Markdown som <code>**fet**</code> renderas bara i meddelanden — det fungerar aldrig i användarnamn, smeknamn eller server-/kanalnamn.</li>
+    <li>Unicode-«typsnitt» fungerar i varje namnfält men kan visas som rutor på vissa enheter och sätta krokben för skärmläsare.</li>
+    <li>Nitro lägger till riktig färg och effekter på ditt visningsnamn — men inne på en server vinner din rollfärg och bara typsnittet syns.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Omtaget -->
+  <section class="editorial-section">
+    <span class="article-section-label">Omtaget</span>
+    <h2>Det är inte typsnitt — det är tre olika system</h2>
+    <div class="editorial-block">
+      <p>Nästan varje «varför funkar inte min text»-fråga på Discord kommer från att man blandar ihop tre saker som inte har något med varandra att göra. Discord <em>lär</em> dig Markdown i chatten, så du antar att samma knep borde styla ditt namn. Det gör det inte — namn körs på ett helt annat system.</p>
+      <p>Här är hela terrängen i en enda bild. Lär dig vilket system varje fält använder så blir du aldrig överraskad igen.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>System</th><th>Vad det är</th><th>Var det fungerar</th><th>Haken</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Symboler Discord renderar (<code>**fet**</code>, <code>*kursiv*</code>, <code>~~genomstruken~~</code>, ANSI-färg)</td><td>Endast meddelanden</td><td>Dör i varje namnfält; ANSI-färg finns bara på dator</td></tr>
+          <tr><td><strong>Unicode-«typsnitt»</strong></td><td>Ersättningstecken som redan ser stylade ut (𝗯𝗼𝗹𝗱, 𝓬𝓾𝓻𝓼𝓲𝓿𝓮)</td><td>Visningsnamn, smeknamn, server-/kanal-/rollnamn, bio, meddelanden</td><td>Kan visas som rutor; sätter krokben för skärmläsare; refuseras i @användarnamnet</td></tr>
+          <tr><td><strong>Nitro-stilar</strong></td><td>Betalda stilar för visningsnamn: riktigt typsnitt + färg + effekter</td><td>Ditt visningsnamn</td><td>Färg/effekter syns inte inne på servrar (rollfärgen vinner); kostar pengar</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- System 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 1</span>
+    <h2>Markdown — för meddelanden</h2>
+    <div class="editorial-block">
+      <p>Markdown är den formatering Discord tillämpar när det <em>visar</em> ditt meddelande. Du skriver symboler runt dina ord och Discord byter ut dem mot riktig styling.</p>
+      <ul>
+        <li><code>**fet**</code> → <strong>fet</strong></li>
+        <li><code>*kursiv*</code> → <em>kursiv</em></li>
+        <li><code>~~genomstruken~~</code> → genomstruken</li>
+        <li><code>__understruken__</code> → understruken</li>
+        <li><code>||spoiler||</code> → dold tills man klickar</li>
+        <li><code>&gt; citat</code> och <code>`kod`</code></li>
+      </ul>
+      <p>Det här är det <em>rätta</em> sättet att formatera ett meddelande — det förblir riktig text, så det är sökbart och tillgängligt. Haken är de två misstag som gör att det «inte funkar»:</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Ingen fetstil</span>
+          <p><code>** text **</code> — ett mellanslag inuti asteriskerna stänger av det. Använd <code>**text**</code>.</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Ingen fetstil</span>
+          <p>Inuti ett <code>`kodblock`</code> stänger backticks av Markdown. Flytta stylingen utanför.</p>
+        </div>
+      </div>
+      <p><strong>Och det stora:</strong> Markdown gör ingenting i ett användarnamn, smeknamn, servernamn eller kanalnamn. De är inte meddelanden, så Discord kör aldrig Markdown på dem.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- System 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 2</span>
+    <h2>Unicode-«typsnitt» — för namn</h2>
+    <div class="editorial-block">
+      <p>För att styla ett <em>namn</em> kan du inte be Discord rendera något — så du använder tecken som redan ser stylade ut. En generator gör «Nova» till 𝗡𝗼𝘃𝗮 eller 𝓝𝓸𝓿𝓪 med hjälp av speciella <a href="/sv/library/">Unicode-tecken</a>, och du klistrar in det färdiga resultatet rakt in i fältet. Ingen rendering krävs, så det överlever där Markdown inte kan.</p>
+      <p>Det fungerar i ditt visningsnamn, serversmeknamn, server- och kanalnamn, rollnamn, din bio och meddelanden. Det finns exakt ett ställe där det blockeras:</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>@användarnamnet refuserar det.</strong> Ditt unika handtag (det med små bokstäver efter @) tillåter bara a–z, 0–9, <code>_</code> och <code>.</code> — för omnämnanden, sökning och routing. Klistra in ett snyggt typsnitt där och Discord vägrar spara det. Styla ditt <em>visningsnamn</em> i stället.</div>
+      </div>
+      <p>Två ärliga förbehåll: Unicode-namn kan visas som rutor på vissa enheter (särskilt äldre Android), och de är svåra för skärmläsare. Välj en säker stil (fet, kursiv, kapitäler) och håll den smakfull — många stora servrar modererar svårlästa namn eller zalgo-namn.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- System 3 Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 3</span>
+    <h2>Nitros stilar för visningsnamn — betalda, och smalare än du tror</h2>
+    <div class="editorial-block">
+      <p>Discords betalda Nitro-nivå erbjuder Stilar för visningsnamn, en funktion som lades till i slutet av 2025: ett riktigt typsnitt, färg och till och med animerade effekter på ditt visningsnamn. Det ser snyggt ut på ditt profilkort. Men det finns en hake som folk upptäcker den hårda vägen:</p>
+      <div class="mood-explainer">
+        <div class="mood-example">Inne på en server åsidosätter din <strong>rollfärg</strong> Nitro-färgen, och effekterna tas bort — så andra medlemmar ser oftast bara <em>typsnittet</em>, inte färgen eller animationen. Hela effekten syns främst på din profil, inte i medlemslistan eller chatten.</div>
+      </div>
+      <p>Gratiskonton kan öppna menyn och <strong>förhandsgranska</strong> en stil, men att spara en kräver Nitro — den där «förhandsvisa sedan betalvägg» är precis därför så många nu frågar om Nitro krävs för typsnitt över huvud taget. Det är en rimlig fråga om just den här funktionen; det är ingen förändring av Unicode-styling, som förblir gratis oavsett.</p>
+      <p>Så Nitro är värt det om du vill ha ett polerat profilkort och ett distinkt visningstypsnitt överallt. Det är <em>inte</em> sättet att få färgad text i en konversation — det är ett annat verktyg (nästa avsnitt).</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Färgfrågan -->
+  <section class="editorial-section">
+    <span class="article-section-label">Färgfrågan</span>
+    <h2>Hur är det med färgad text i meddelanden?</h2>
+    <div class="editorial-block">
+      <p>Färgad text i ett meddelande är ett fjärde, smalare knep: <strong>ANSI-kodblock</strong>. Du omsluter texten i ett block med trippel-backticks märkt <code>ansi</code> och lägger till escape-koder för färg. Var klarsynt om begränsningarna:</p>
+      <ul>
+        <li>Bara <strong>åtta fasta färger</strong> — inga egna hex-koder.</li>
+        <li><strong>Endast i kodblock</strong> — det kan inte färga en vanlig mening löpande i texten.</li>
+        <li><strong>Opålitligt på mobil</strong> — det visas ofta som vanlig text för telefonanvändare.</li>
+      </ul>
+      <p>Användbart för varningar eller loggar på en dator-först-server; inget allmänt stylingverktyg. Om hälften av dina medlemmar är på mobil, utgå från att de inte ser färgen.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Beslut -->
+  <section class="editorial-section">
+    <span class="article-section-label">Bestäm snabbt</span>
+    <h2>Vilket system behöver du?</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Jag vill …</th><th>Använd</th></tr></thead>
+        <tbody>
+          <tr><td>Göra ett ord fett/kursivt i ett meddelande</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>Styla mitt visningsnamn eller smeknamn</td><td>Unicode-typsnitt (klistra in det)</td></tr>
+          <tr><td>Dekorera ett server- eller kanalnamn</td><td>Unicode-typsnitt + symboler</td></tr>
+          <tr><td>Ändra utseendet på mitt unika @användarnamn</td><td>Inte möjligt — styla visningsnamnet i stället</td></tr>
+          <tr><td>Ett färgat, animerat profilnamn</td><td>Nitros stilar för visningsnamn</td></tr>
+          <tr><td>Färgad text i ett meddelande</td><td>ANSI-kodblock (dator, 8 färger)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">Discord förstörde inte din fetstil.<br>Du använde chattsystemet på ett namnfält.<br><br>Matcha systemet med fältet, så bara fungerar det.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Skapa ett Discord-redo namn</h3>
+    <p>Skapa en enhetssäker Unicode-stil, kopiera den och klistra in i ditt visningsnamn eller serversmeknamn — inget Nitro krävs.</p>
+    <a href="/sv/" class="cta-btn">Öppna typsnittsgeneratorn →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/sv/">Typsnittsgenerator</a>
+    <a class="platform-pill" href="/sv/instagram-typsnitt/">Instagram</a>
+    <a class="platform-pill" href="/sv/library/">Symbolbibliotek</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Vanliga frågor</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Varför fungerar fetstil i Discord-chatten men inte i mitt användarnamn?</button>
+    <div class="faq-answer">
+      <p>För att de använder olika system. I chatten är <code>**fet**</code> Markdown — Discord renderar det när ditt meddelande visas. Namn (användarnamn, smeknamn, server, kanal, roll) kör inte Markdown, så asteriskerna visas bara bokstavligt. För att styla ett namn behöver du Unicode-«typsnitt» — speciella tecken som redan ser feta ut — inklistrade direkt i fältet.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Är Unicode-typsnitt samma sak som Discord Nitro-typsnitt?</button>
+    <div class="faq-answer">
+      <p>Nej. Unicode-«typsnitt» är gratis ersättningstecken som du kan klistra in var som helst ett namn är tillåtet; de fungerar för alla men kan visas som rutor på vissa enheter och sätta krokben för skärmläsare. Nitros stilar för visningsnamn är en betald funktion som ger ett riktigt typsnitt, färg och effekter till ditt visningsnamn — men färgen och effekterna syns inte inne på servrar, där din rollfärg vinner; bara typsnittet följer med.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Hur gör jag färgad text i Discord?</button>
+    <div class="faq-answer">
+      <p>Med ANSI-kodblock: omslut texten i ett block med trippel-backticks märkt «ansi» och lägg till escape-koder för färg. Det är begränsat till åtta fasta färger, fungerar bara inuti kodblock och är opålitligt på mobil (det visas ofta som vanlig text). Det är för meddelanden, inte namn.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Varför dyker asteriskerna upp i stället för fet text?</button>
+    <div class="faq-answer">
+      <p>Två vanliga orsaker: det finns ett mellanslag mellan asteriskerna och ordet (<code>** text **</code> blir inte fett — <code>**text**</code> blir det), eller så är texten inuti ett kodblock (backticks stänger av Markdown). Kom också ihåg att Markdown bara fungerar i meddelanden, aldrig i namn.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Fortsätt läsa</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/sv/guide/discord-namn-utan-risk/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">Styla ett Discord-namn säkert</span>
+      <span class="related-desc">Klara de tre filtren: medlemslista, omnämnande, identitetskapning.</span>
+    </a>
+    <a class="related-card" href="/sv/guide/var-typsnitt-fungerar-i-discord/">
+      <span class="related-tag">🗺️</span>
+      <span class="related-title">Var typsnitt fungerar i Discord</span>
+      <span class="related-desc">Kartan över vilka fält som accepterar vad.</span>
+    </a>
+    <a class="related-card" href="/sv/">
+      <span class="related-tag">✨</span>
+      <span class="related-title">Öppna typsnittsgeneratorn</span>
+      <span class="related-desc">Skriv, välj en stil och klistra in i Discord.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

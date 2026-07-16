@@ -832,6 +832,24 @@ def m_stop_octagon(p, accent=PURPLE):
     <rect x="{cx - 70}" y="{cy - 16}" width="140" height="32" rx="8" fill="#fff"/>"""
 
 
+def m_braille_blank(p, accent=PURPLE):
+    """An 8-dot Braille cell drawn with every dot unfilled — the
+    invisible-character glyph (⠀, U+2800 BRAILLE PATTERN BLANK) renders as
+    nothing at all, so the motif draws the cell structure itself (the "no
+    dots raised" pattern) instead of the invisible glyph."""
+    cx, cy = 180, 180
+    xs = [cx - 32, cx + 32]
+    ys = [cy - 68, cy - 22, cy + 22, cy + 68]
+    dots = "".join(
+        f'<circle cx="{x}" cy="{y}" r="13" fill="none" stroke="url(#g{p})" stroke-width="5"/>'
+        for x in xs for y in ys)
+    return f"""
+    <rect x="{cx - 92}" y="{cy - 112}" width="184" height="224" rx="26"
+          fill="none" stroke="url(#gv{p})" stroke-width="4"
+          stroke-dasharray="10 8" opacity="0.5"/>
+    {dots}"""
+
+
 # ----- per-letter printables motifs (parametrized by the page's own letter) -----
 
 
@@ -1540,6 +1558,7 @@ PAGES = {
   "symbol-degree-symbol": ("Degree Symbol", "° meaning, history & how to type it", glyphs("°"), K_SYM),
   "symbol-division-sign": ("Division Sign", "÷ meaning, history & how to type it", glyphs("÷"), K_SYM),
   "symbol-infinity": ("Infinity Symbol", "∞ meaning, history & how to type it", glyphs("∞"), K_SYM),
+  "symbol-invisible-character": ("Invisible Character", "⠀ meaning, blank names & how to use it", m_braille_blank, K_SYM),
   "symbol-square-root": ("Square Root Symbol", "√ meaning, history & how to type it", glyphs("√"), K_SYM),
   "symbol-multiplication-sign": ("Multiplication Sign", "Copy & paste the × times symbol", glyphs("×"), K_SYM),
   "symbol-squared-cubed": ("Squared & Cubed", "Copy & paste ² and ³ exponents", glyphs("²", "³"), K_SYM),

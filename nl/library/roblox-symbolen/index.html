@@ -94,6 +94,21 @@
       "@type": "Question",
       "name": "Kun je het echte Robux-, Premium- of Verified-icoon kopiëren en plakken?",
       "acceptedAnswer": { "@type": "Answer", "text": "Nee. Die iconen zijn Private Use Area Unicode-codepunten (U+E000–U+E003) gekoppeld aan glyphs in Roblox's eigen client-icoonlettertype, gedocumenteerd op het officiële Roblox Developer Forum. Ze worden alleen weergegeven in de UI van een spel dat een ontwikkelaar bouwt in Roblox Studio — niet in een display name, bio, chat of ergens buiten het platform. Elders geplakt tonen ze een leeg vakje. De kroon-, vinkje- en diamant-symbolen op deze pagina zijn de dichtstbijzijnde plaksafe look, zonder een officiële badge voor te wenden." }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke tekens ondersteunt Roblox eigenlijk in display names?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Het display name-veld van Roblox ondersteunt een breed scala aan Unicode — letters, cijfers en veel symbolen — maar het is gefilterd, niet volledig open. Er bestaat geen officiële, gepubliceerde lijst met toegestane tekens, dus 'ondersteund' betekent in de praktijk 'komt momenteel door het filter', en dat kan in de loop van de tijd veranderen. De veiligste keuze zijn de symbolen met één teken uit de sectie Roblox-vriendelijke tekens hierboven; combinaties van meerdere tekens en zeldzamere Unicode-blokken worden vaker geweigerd." }
+    },
+    {
+      "@type": "Question",
+      "name": "Werken Japanse, Chinese of Koreaanse tekens in een Roblox display name?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Over het algemeen wel — volledige namen in CJK-schrift zoals こんにちは of 안녕하세요 komen meestal door Roblox's filter, volgens meldingen op het officiële Developer Forum. Het zijn juist Latijnse letters met diakritische tekens (é, ü, ł en vergelijkbare tekens met accent) die vaker worden geweigerd, wat veel spelers verrast die het omgekeerde verwachten. Dit gedrag is niet op elk account gegarandeerd, dus test het voordat je een naam definitief kiest." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe zet ik een spatie in mijn Roblox display name?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Roblox verwijdert echte spaties aan het begin en einde van een display name en weigert een veld dat na het verwijderen leeg overblijft, dus een losse spatie alleen slaat niet op. Gebruik in plaats daarvan een onzichtbaar teken — de Hangul Filler (ㅤ) of de Braille Pattern Blank (⠀) uit de sectie Onzichtbare & lege Roblox-namen worden niet als witruimte geclassificeerd, dus die houden een zichtbare opening zonder verwijderd te worden." }
     }
   ]
 }
@@ -138,7 +153,7 @@
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>Roblox staat Unicode-tekens toe in display names en bio's, maar het contentfilter blokkeert sommige symbolen. Dit zijn de betrouwbaarste esthetische symbolen die wél goed worden weergegeven — sterren, hartjes, bloemen en schattige versieringen die door de naamvalidatie komen. Gebruik ze in je Roblox display name, groepsomschrijving of bio.</p>
+    <p>Roblox staat Unicode-tekens toe in display names en bio's, maar het contentfilter blokkeert sommige symbolen. Dit zijn de betrouwbaarste esthetische symbolen die wél goed worden weergegeven — sterren, hartjes, bloemen en schattige versieringen die door de naamvalidatie komen. Of je nu maar één roblox-symbool nodig hebt voor een clan-tag of een volledig versierde combi, elk teken hieronder is gecontroleerd tegen het huidige filter — gebruik ze in je Roblox display name, groepsomschrijving of bio.</p>
   </div>
 </section>
 
@@ -146,7 +161,7 @@
 <section class="mood-explainers" id="snelle-keuze">
   <span class="article-section-label">Snelle keuze</span>
   <h2>Roblox-vriendelijke tekens</h2>
-  <p class="section-lead is-spaced">Deze symbolen komen betrouwbaar door het Roblox naamfilter en worden in-game correct weergegeven. Laatst gecontroleerd juli 2026.</p>
+  <p class="section-lead is-spaced">Elk roblox-symbool hieronder komt betrouwbaar door het Roblox naamfilter en wordt in-game correct weergegeven. Laatst gecontroleerd juli 2026.</p>
   <div class="flag-rows">
     <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⋆" aria-label="Kopieer ⋆">⋆</button><span class="flag-label">Zeszijdige ster-operator</span></div>
     <div class="flag-row"><button class="flag-emoji symbol-tile" data-symbol="⊹" aria-label="Kopieer ⊹">⊹</button><span class="flag-label">Hermitisch geconjugeerde matrix</span></div>
@@ -238,12 +253,49 @@
 </section>
 
 <div class="section-divider"></div>
+<!-- SECTION 3D -->
+<section class="mood-explainers" id="roblox-matching-names">
+  <span class="article-section-label">Matchende namen</span>
+  <h2>Matchende namen voor besties &amp; duo's</h2>
+  <p>De truc achter "matchende" Roblox display names is geen speciaal symbool — het is dezelfde combi op beide namen gebruiken, zodat ze visueel bij elkaar horen. De Ster-naam-combi, Kroon-flex-combi en Hartvleugels-combi hieronder werken hier goed voor. Liever twee namen die elkaar aanvullen in plaats van precies matchen? Probeer een zon-en-maan-paar — één symbool per vriend(in), zelfde idee, ander uitzicht.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☀" aria-label="Kopieer ☀">☀</button>
+      <span class="flag-label">Zon (helft van een duo)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☾" aria-label="Kopieer ☾">☾</button>
+      <span class="flag-label">Wassende maan (de andere helft)</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
 
 <!-- ABOUT FILTER -->
 <section class="mood-explainers" id="over-het-filter">
   <span class="article-section-label">Over het Roblox contentfilter</span>
   <h2>Over het Roblox contentfilter</h2>
   <p>Roblox gebruikt een automatisch contentfilter dat sommige Unicode-tekens in display names en bio's kan blokkeren. Symbolen met één teken zoals ★ ♡ ✦ ❀ ⋆ zijn het veiligst. Combinaties van meerdere tekens en zeldzame Unicode-blokken worden vaker geblokkeerd of verwijderd. Slaat een symbool niet op in je display name, probeer dan een simpeler alternatief met één teken uit de sectie Roblox-vriendelijke tekens hierboven.</p>
+</section>
+
+<div class="section-divider"></div>
+<!-- SECTION 4B -->
+<section class="mood-explainers" id="roblox-invisible-name">
+  <span class="article-section-label">Lege display name</span>
+  <h2>Onzichtbare &amp; lege Roblox-namen</h2>
+  <p>Wil je dat je Roblox display name leeg lijkt? Een echt (maar onzichtbaar) Unicode-teken doet precies dat — een gewone spatie wordt verwijderd en het veld als leeg geweigerd, maar deze twee tekens worden niet als witruimte geclassificeerd en slaan dus wél op. Roblox's filter behandelt ze niet altijd hetzelfde, dus weigert het ene teken, probeer dan het andere.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ㅤ" aria-label="Kopieer Hangul Filler — U+3164">ㅤ</button>
+      <span class="flag-label">Hangul Filler — U+3164</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⠀" aria-label="Kopieer Braille Pattern Blank — U+2800">⠀</button>
+      <span class="flag-label">Braille Pattern Blank — U+2800</span>
+    </div>
+  </div>
+  <p class="u-secondary-block">Uitgebreide uitleg over waarom deze wél werken en een gewone spatie niet: <a href="/symbol/invisible-character/">Onzichtbaar teken</a> en de bredere <a href="/nl/onzichtbare-tekst/">onzichtbare tekst-bibliotheek</a>.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -267,6 +319,9 @@
   <div class="faq-item"><button class="faq-question" type="button">Hoe voeg ik symbolen toe aan mijn Roblox display name?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Tik op een symbool op deze pagina om het te kopiëren, plak het daarna in Instellingen → Accountgegevens → Display Name (of je groeps-/bioveld). Display name accepteert symbolen; de onderliggende @gebruikersnaam niet — dat veld is alleen letters, cijfers en één underscore.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">Zijn deze Roblox-symbolen veilig om te gebruiken?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Ja. Het zijn gewone Unicode-tekens voor decoratie, geen exploits of omwegen, dus het gebruik ervan in een display name of bio schendt de regels van Roblox niet. Houd je algehele naam wel gepast — het contentfilter blijft gelden voor de woorden rond de symbolen.</div></div>
   <div class="faq-item"><button class="faq-question" type="button">Kun je het echte Robux-, Premium- of Verified-icoon kopiëren en plakken?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Nee. Die iconen zijn Private Use Area Unicode-codepunten (U+E000–U+E003) gekoppeld aan glyphs in Roblox's eigen client-icoonlettertype, gedocumenteerd op het officiële Roblox Developer Forum. Ze worden alleen weergegeven in de UI van een spel dat een ontwikkelaar bouwt in Roblox Studio — niet in een display name, bio, chat of ergens buiten het platform. Elders geplakt tonen ze een leeg vakje. De kroon-, vinkje- en diamant-symbolen hierboven zijn de dichtstbijzijnde plaksafe look, zonder een officiële badge voor te wenden.</div></div>
+  <div class="faq-item"><button class="faq-question" type="button">Welke tekens ondersteunt Roblox eigenlijk in display names?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Het display name-veld van Roblox ondersteunt een breed scala aan Unicode — letters, cijfers en veel symbolen — maar het is gefilterd, niet volledig open. Er bestaat geen officiële, gepubliceerde lijst met toegestane tekens, dus "ondersteund" betekent in de praktijk "komt momenteel door het filter", en dat kan in de loop van de tijd veranderen. De veiligste keuze zijn de symbolen met één teken uit de sectie Roblox-vriendelijke tekens hierboven; combinaties van meerdere tekens en zeldzamere Unicode-blokken worden vaker geweigerd.</div></div>
+  <div class="faq-item"><button class="faq-question" type="button">Werken Japanse, Chinese of Koreaanse tekens in een Roblox display name?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Over het algemeen wel — volledige namen in CJK-schrift zoals こんにちは of 안녕하세요 komen meestal door Roblox's filter, volgens meldingen op het officiële Developer Forum. Het zijn juist Latijnse letters met diakritische tekens (é, ü, ł en vergelijkbare tekens met accent) die vaker worden geweigerd, wat veel spelers verrast die het omgekeerde verwachten. Dit gedrag is niet op elk account gegarandeerd, dus test het voordat je een naam definitief kiest.</div></div>
+  <div class="faq-item"><button class="faq-question" type="button">Hoe zet ik een spatie in mijn Roblox display name?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Roblox verwijdert echte spaties aan het begin en einde van een display name en weigert een veld dat na het verwijderen leeg overblijft, dus een losse spatie alleen slaat niet op. Gebruik in plaats daarvan een onzichtbaar teken — de Hangul Filler (ㅤ) of de Braille Pattern Blank (⠀) uit de sectie Onzichtbare &amp; lege Roblox-namen worden niet als witruimte geclassificeerd, dus die houden een zichtbare opening zonder verwijderd te worden.</div></div>
 </section>
 
 <!-- CTA -->
@@ -280,6 +335,18 @@
 <section class="editorial-section">
   <span class="article-section-label">Gerelateerde pagina's</span>
   <div class="compare-grid">
+    <a href="/roblox/" class="compare-card variant-muted u-no-underline">
+      <h4>Roblox lettertypegenerator</h4>
+      <p>Zet elke naam om in gestileerde tekst in Roblox-stijl — volledig in de browser, geen download nodig.</p>
+    </a>
+    <a href="/answers/what-font-does-roblox-use/" class="compare-card variant-muted u-no-underline">
+      <h4>Welk lettertype gebruikt Roblox?</h4>
+      <p>Het officiële Roblox-logo- en UI-lettertype uitgelegd.</p>
+    </a>
+    <a href="/answers/how-to-change-roblox-username/" class="compare-card variant-muted u-no-underline">
+      <h4>Hoe verander je je Roblox-gebruikersnaam?</h4>
+      <p>Het verschil tussen @gebruikersnaam en display name, en hoe je elk van beide wijzigt.</p>
+    </a>
     <a href="/nl/library/" class="compare-card variant-muted u-no-underline">
       <h4>Symbolen-bibliotheek</h4>
       <p>Alle Nederlandse symbolenpagina's op een rij.</p>
