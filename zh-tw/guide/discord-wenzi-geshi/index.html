@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discord 文字格式全解析：Markdown、Unicode 字體、Nitro 差在哪 | UltraTextGen</title>
+<meta name="description" content="為什麼粗體在 Discord 聊天有效、在使用者名稱卻沒用——Discord 用的三套文字系統（Markdown、Unicode 字體、Nitro），以及每一套到底該用在哪。">
+
+<link rel="canonical" href="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/tanseeq-nusus-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/formatovani-textu-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/discord-tekstformatering-forklaret/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/discord-textformatierung-erklaert/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/formatage-texte-discord-explique/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-text-formatting-samjhein/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/formattazione-testo-discord-spiegata/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/discord-tekstopmaak-uitgelegd/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/discord-tekstformatering-forklart/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/formatacao-de-texto-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/formatare-text-discord-explicat/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/formatirovanie-teksta-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/formatiranje-teksta-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-rupbaep-khokhwam/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/discord-text-formatting-paliwanag/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-metin-bicimlendirme/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/dinh-dang-chu-discord/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/zh-tw-guide-discord-wenzi-geshi.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discord 文字格式全解析：Markdown、Unicode 字體、Nitro 差在哪 | UltraTextGen">
+<meta name="twitter:description" content="為什麼粗體在 Discord 聊天有效、在使用者名稱卻沒用——Discord 用的三套文字系統（Markdown、Unicode 字體、Nitro），以及每一套到底該用在哪。">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/zh-tw-guide-discord-wenzi-geshi.png">
+<meta property="og:title" content="Discord 文字格式全解析：Markdown、Unicode 字體、Nitro">
+<meta property="og:description" content="為什麼粗體在 Discord 聊天有效、在使用者名稱卻沒用——Discord 用的三套文字系統（Markdown、Unicode 字體、Nitro），以及每一套到底該用在哪。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+<meta property="og:locale" content="zh_TW">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Discord 文字格式全解析：Markdown、Unicode 字體、Nitro 差在哪",
+  "description": "為什麼粗體在 Discord 聊天有效、在使用者名稱卻沒用——Discord 用的三套文字系統（Markdown、Unicode 字體、Nitro），以及每一套到底該用在哪。",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/zh-tw-guide-discord-wenzi-geshi.png",
+  "inLanguage": "zh-TW",
+  "mainEntityOfPage": "https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "inLanguage": "zh-TW",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://ultratextgen.com/zh-tw/" },
+    { "@type": "ListItem", "position": 2, "name": "指南", "item": "https://ultratextgen.com/zh-tw/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Discord 文字格式全解析", "item": "https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-TW",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "為什麼粗體在 Discord 聊天有效，在我的使用者名稱卻沒用？",
+      "acceptedAnswer": { "@type": "Answer", "text": "因為它們用的是不同系統。在聊天裡，**粗體** 是 Markdown——Discord 在顯示你的訊息時會把它呈現出來。名字（使用者名稱、暱稱、伺服器、頻道、身分組）不跑 Markdown，所以星號只會照字面顯示。要裝飾名字，你需要 Unicode「字體」——本身就長得像粗體的特殊字元——直接貼進欄位裡。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Unicode 字體跟 Discord Nitro 字體是同一個東西嗎？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不是。Unicode「字體」是免費的替代字元，你可以貼在任何允許名字的地方；它對所有人都有效，但在某些裝置上可能顯示成方框，也會讓螢幕閱讀器出錯。Nitro 顯示名稱樣式是付費功能，會把真正的字體、顏色和特效套到你的顯示名稱上——但顏色和特效在伺服器裡不會顯示，那裡是你的身分組顏色勝出；只有字體會延續過去。" }
+    },
+    {
+      "@type": "Question",
+      "name": "我要怎麼在 Discord 裡打出彩色文字？",
+      "acceptedAnswer": { "@type": "Answer", "text": "用 ANSI 程式碼區塊：把你的文字包在標了「ansi」的三重反引號區塊裡，再加上顏色的跳脫碼。它只有八種固定顏色、只在程式碼區塊裡有效，而且在手機上不可靠（常常顯示成純文字）。它是給訊息用的，不是給名字用的。" }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼顯示出來的是星號，而不是粗體文字？",
+      "acceptedAnswer": { "@type": "Answer", "text": "兩個常見原因：星號和文字之間有空格（`** 文字 **` 不會變粗體——`**文字**` 才會），或者文字在程式碼區塊裡（反引號會關掉 Markdown）。另外也要記得，Markdown 只在訊息裡有效，名字裡永遠沒用。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/zh-tw/">首頁</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/zh-tw/guide/">指南</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Discord 文字格式全解析</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Discord 文字格式，一次解密</h1>
+    <p class="hero-tagline">你遇到的不是「字體」問題——是「三套系統」問題。Discord 用 Markdown、Unicode 字元、Nitro 樣式做完全不同的事。只要搞懂哪個欄位用哪一套，每個「為什麼這樣沒用？」都會自己有答案。</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">平台實戰</span>
+      <span class="guide-pill">⏱ 8 分鐘閱讀</span>
+      <span class="guide-pill">三套系統模型</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/zh-tw-guide-discord-wenzi-geshi.svg" width="1200" height="340"
+       alt="三個堆疊的標籤，分別標示 Markdown、Unicode、Nitro，代表 Discord 的三套不同文字系統。">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>重點整理</h2>
+  <ul>
+    <li>Discord 有三套互不相干的文字系統：<strong>Markdown</strong>（訊息）、<strong>Unicode「字體」</strong>（到處的名字）、<strong>Nitro</strong>（付費的顯示名稱樣式）。</li>
+    <li>像 <code>**粗體**</code> 這種 Markdown 只在訊息裡才會呈現——在使用者名稱、暱稱，或伺服器／頻道名稱裡都沒用。</li>
+    <li>Unicode「字體」在每個名字欄位都能用，但在某些裝置上可能顯示成方框，也會讓螢幕閱讀器出錯。</li>
+    <li>Nitro 會幫你的顯示名稱加上真正的顏色和特效——但在伺服器裡，你的身分組顏色會蓋過去，只剩字體看得到。</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the reframe -->
+  <section class="editorial-section">
+    <span class="article-section-label">重新框架</span>
+    <h2>這不是字體問題——是三套不同的系統</h2>
+    <div class="editorial-block">
+      <p>幾乎每個 Discord「為什麼我的文字沒用」的問題，都來自把三件本來毫無關係的事混在一起。Discord 在聊天裡<em>教</em>你 Markdown，於是你以為同一招也能拿來裝飾名字。它不行——名字跑的是完全不同的系統。</p>
+      <p>這裡用一張圖把整片地盤講清楚。搞懂每個欄位用哪一套系統，你就再也不會被搞得措手不及。</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>系統</th><th>是什麼</th><th>在哪裡有效</th><th>陷阱</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Discord 會呈現的符號（<code>**粗體**</code>、<code>*斜體*</code>、<code>~~刪除線~~</code>、ANSI 顏色）</td><td>只有訊息</td><td>在每個名字欄位都失效；ANSI 顏色只有電腦版有</td></tr>
+          <tr><td><strong>Unicode「字體」</strong></td><td>本身就長得像有樣式的替代字元（𝗯𝗼𝗹𝗱、𝓬𝓾𝓻𝓼𝓲𝓿𝓮）</td><td>顯示名稱、暱稱、伺服器／頻道／身分組名稱、簡介、訊息</td><td>可能顯示成方框；讓螢幕閱讀器出錯；在 @使用者名稱裡被拒絕</td></tr>
+          <tr><td><strong>Nitro 樣式</strong></td><td>付費的顯示名稱樣式：真正的字體＋顏色＋特效</td><td>你的顯示名稱</td><td>顏色／特效在伺服器裡不顯示（身分組顏色勝出）；要花錢</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">系統一</span>
+    <h2>Markdown——給訊息用</h2>
+    <div class="editorial-block">
+      <p>Markdown 是 Discord 在<em>顯示</em>你的訊息時套上的格式。你在文字前後打上符號，Discord 就把它們換成真正的樣式。</p>
+      <ul>
+        <li><code>**粗體**</code> → <strong>粗體</strong></li>
+        <li><code>*斜體*</code> → <em>斜體</em></li>
+        <li><code>~~刪除線~~</code> → 刪除線</li>
+        <li><code>__底線__</code> → 底線</li>
+        <li><code>||防雷||</code> → 點下去才看得到</li>
+        <li><code>&gt; 引用</code> 和 <code>`程式碼`</code></li>
+      </ul>
+      <p>這是格式化訊息的<em>正確</em>方式——它依然是真正的文字，所以能被搜尋、也對無障礙友善。陷阱是兩個會讓它「失效」的錯誤：</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">不會變粗體</span>
+          <p><code>** 文字 **</code>——星號裡面有空格就會取消效果。要用 <code>**文字**</code>。</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">不會變粗體</span>
+          <p>在 <code>`程式碼區塊`</code> 裡，反引號會關掉 Markdown。把樣式移到區塊外面。</p>
+        </div>
+      </div>
+      <p><strong>還有最大的一點：</strong>Markdown 在使用者名稱、暱稱、伺服器名稱或頻道名稱裡完全沒作用。那些不是訊息，所以 Discord 從不會對它們跑 Markdown。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">系統二</span>
+    <h2>Unicode「字體」——給名字用</h2>
+    <div class="editorial-block">
+      <p>要裝飾一個<em>名字</em>，你沒辦法叫 Discord 去呈現任何東西——所以你改用本身就長得像有樣式的字元。產生器把「Nova」變成 𝗡𝗼𝘃𝗮 或 𝓝𝓸𝓿𝓪，用的是特殊的 <a href="/zh-tw/library/facebook-fuhao/">Unicode 字元</a>，你再把做好的結果直接貼進欄位。不需要任何呈現，所以它能撐在 Markdown 撐不住的地方。</p>
+      <p>這在你的顯示名稱、伺服器暱稱、伺服器和頻道名稱、身分組名稱、個人簡介和訊息裡都能用。只有一個地方擋它：</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>@使用者名稱會拒絕它。</strong>你那個獨一無二的帳號代號（@ 後面那個小寫的）只允許 a–z、0–9、<code>_</code> 和 <code>.</code>——為了提及、搜尋和路由。把花式字體貼進那裡，Discord 會拒絕存檔。改去裝飾你的<em>顯示名稱</em>吧。</div>
+      </div>
+      <p>兩個要誠實說的但書：Unicode 名字在某些裝置上（尤其是舊 Android）可能<a href="/zh-tw/guide/discord-ziti-nali-nengyong/">顯示成方框</a>，而且對螢幕閱讀器不友善。挑一個安全的風格（粗體、斜體、小型大寫），保持有品味——許多大型伺服器會嚴格管理難讀或 Zalgo 名字。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 3 Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">系統三</span>
+    <h2>Nitro 顯示名稱樣式——付費，而且比你想的更侷限</h2>
+    <div class="editorial-block">
+      <p>Discord 的付費方案 Nitro 提供「顯示名稱樣式」，這是 2025 年底新增的功能：把真正的字體、顏色，甚至動畫特效套到你的顯示名稱上。它在你的個人資料卡上看起來很棒。但有個很多人踩雷才發現的陷阱：</p>
+      <div class="mood-explainer">
+        <div class="mood-example">在伺服器裡，你的<strong>身分組顏色</strong>會蓋過 Nitro 顏色，特效也會被拿掉——所以其他成員通常只看到<em>字體</em>，看不到顏色或動畫。完整效果主要出現在你的個人資料上，而不是成員名單或聊天裡。</div>
+      </div>
+      <p>免費帳號可以打開選單<strong>預覽</strong>樣式，但要儲存就得有 Nitro——正是這種「先預覽再付費牆」，讓現在這麼多人問是不是一定要 Nitro 才能用字體。針對這個功能，這是合理的疑問；但它並不代表 Unicode 樣式有任何改變，Unicode 不管怎樣都是免費的。</p>
+      <p>所以，如果你想要一張精緻的個人資料卡，還有一個到處都不同的顯示字體，Nitro 值得。但它<em>不是</em>把彩色文字放進對話的方法——那是另一個工具（下一節）。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: colored text bonus -->
+  <section class="editorial-section">
+    <span class="article-section-label">顏色問題</span>
+    <h2>那訊息裡的彩色文字呢？</h2>
+    <div class="editorial-block">
+      <p>訊息裡的彩色文字是第四種、更窄的招式：<strong>ANSI 程式碼區塊</strong>。你把文字包在標了 <code>ansi</code> 的三重反引號區塊裡，再加上顏色的跳脫碼。要清楚它的限制：</p>
+      <ul>
+        <li>只有<strong>八種固定顏色</strong>——不能自訂十六進位色碼。</li>
+        <li><strong>只限程式碼區塊</strong>——沒辦法幫一句普通句子行內上色。</li>
+        <li><strong>手機上不可靠</strong>——對用手機的人常常顯示成純文字。</li>
+      </ul>
+      <p>對以電腦為主的伺服器貼警告或紀錄還算好用；但不是通用的樣式工具。如果你有一半成員用手機，就當作他們看不到顏色。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: decision -->
+  <section class="editorial-section">
+    <span class="article-section-label">快速決定</span>
+    <h2>你到底需要哪一套系統？</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>我想要…</th><th>用這個</th></tr></thead>
+        <tbody>
+          <tr><td>在訊息裡把某個字加粗／斜體</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>裝飾我的顯示名稱或暱稱</td><td>Unicode 字體（貼進去）</td></tr>
+          <tr><td>裝飾伺服器或頻道名稱</td><td>Unicode 字體＋符號</td></tr>
+          <tr><td>改我那個獨一無二 @使用者名稱的外觀</td><td>做不到——改去裝飾顯示名稱</td></tr>
+          <tr><td>有顏色、會動的個人資料名字</td><td>Nitro 顯示名稱樣式</td></tr>
+          <tr><td>訊息裡的彩色文字</td><td>ANSI 程式碼區塊（電腦版，八色）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">Discord 沒有弄壞你的粗體。<br>是你把聊天用的系統用在名字欄位上了。<br><br>讓系統對上欄位，它自然就會動。</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>做一個 Discord 能用的名字</h3>
+    <p>產生一個各裝置都安全的 Unicode 風格，複製起來，貼進你的顯示名稱或伺服器暱稱——不需要 Nitro。</p>
+    <a href="/zh-tw/yingwen-ziti/" class="cta-btn">開啟英文字體產生器 →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/zh-tw/yingwen-ziti/">英文字體</a>
+    <a class="platform-pill" href="/zh-tw/usecase/youxi-mingzi-fuhao/">遊戲名字符號</a>
+    <a class="platform-pill" href="/zh-tw/library/facebook-fuhao/">特殊符號</a>
+    <a class="platform-pill" href="/zh-tw/da-xiao-xie-zhuanhuan/">大小寫轉換</a>
+    <a class="platform-pill" href="/zh-tw/">顏文字</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">常見問題</span>
+  <h2>常見問題</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">為什麼粗體在 Discord 聊天有效，在我的使用者名稱卻沒用？</button>
+    <div class="faq-answer">
+      <p>因為它們用的是不同系統。在聊天裡，<code>**粗體**</code> 是 Markdown——Discord 在顯示你的訊息時會把它呈現出來。名字（使用者名稱、暱稱、伺服器、頻道、身分組）不跑 Markdown，所以星號只會照字面顯示。要裝飾名字，你需要 Unicode「字體」——本身就長得像粗體的特殊字元——直接貼進欄位裡。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Unicode 字體跟 Discord Nitro 字體是同一個東西嗎？</button>
+    <div class="faq-answer">
+      <p>不是。Unicode「字體」是免費的替代字元，你可以貼在任何允許名字的地方；它對所有人都有效，但在某些裝置上可能顯示成方框，也會讓螢幕閱讀器出錯。Nitro 顯示名稱樣式是付費功能，會把真正的字體、顏色和特效套到你的顯示名稱上——但顏色和特效在伺服器裡不會顯示，那裡是你的身分組顏色勝出；只有字體會延續過去。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">我要怎麼在 Discord 裡打出彩色文字？</button>
+    <div class="faq-answer">
+      <p>用 ANSI 程式碼區塊：把你的文字包在標了「ansi」的三重反引號區塊裡，再加上顏色的跳脫碼。它只有八種固定顏色、只在程式碼區塊裡有效，而且在手機上不可靠（常常顯示成純文字）。它是給訊息用的，不是給名字用的。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">為什麼顯示出來的是星號，而不是粗體文字？</button>
+    <div class="faq-answer">
+      <p>兩個常見原因：星號和文字之間有空格（<code>** 文字 **</code> 不會變粗體——<code>**文字**</code> 才會），或者文字在程式碼區塊裡（反引號會關掉 Markdown）。另外也要記得，Markdown 只在訊息裡有效，名字裡永遠沒用。</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>繼續閱讀</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/zh-tw/guide/discord-ziti-nali-nengyong/">
+      <span class="related-tag">🗺️</span>
+      <span class="related-title">Discord 字體能用在哪</span>
+      <span class="related-desc">逐欄位的權限表，一次講清楚。</span>
+    </a>
+    <a class="related-card" href="/zh-tw/guide/discord-anquan-nicheng/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">Discord 暱稱安全命名</span>
+      <span class="related-desc">通過三道關卡：名單、提及、假冒。</span>
+    </a>
+    <a class="related-card" href="/zh-tw/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">動手做：顏文字與花式字體</span>
+      <span class="related-desc">打字、選風格、複製貼上到 Discord。</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

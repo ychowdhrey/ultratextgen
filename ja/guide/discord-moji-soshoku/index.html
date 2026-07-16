@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discordの文字装飾を解説：マークダウン・Unicodeフォント・Nitroの違い | UltraTextGen</title>
+<meta name="description" content="なぜDiscordのチャットでは太字にできるのにユーザー名ではできないのか — Discordが使う3つの異なるテキストの仕組み（マークダウン・Unicodeフォント・Nitro）と、それぞれの使い分けを解説します。">
+
+<link rel="canonical" href="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/tanseeq-nusus-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/formatovani-textu-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/discord-tekstformatering-forklaret/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/discord-textformatierung-erklaert/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/formatage-texte-discord-explique/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-text-formatting-samjhein/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/formattazione-testo-discord-spiegata/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/discord-tekstopmaak-uitgelegd/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/discord-tekstformatering-forklart/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/formatacao-de-texto-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/formatare-text-discord-explicat/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/formatirovanie-teksta-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/formatiranje-teksta-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-rupbaep-khokhwam/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/discord-text-formatting-paliwanag/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-metin-bicimlendirme/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/dinh-dang-chu-discord/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/ja-guide-discord-moji-soshoku.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discordの文字装飾を解説：マークダウン・Unicodeフォント・Nitroの違い | UltraTextGen">
+<meta name="twitter:description" content="なぜDiscordのチャットでは太字にできるのにユーザー名ではできないのか — Discordが使う3つの異なるテキストの仕組み（マークダウン・Unicodeフォント・Nitro）と、それぞれの使い分け。">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/ja-guide-discord-moji-soshoku.png">
+<meta property="og:title" content="Discordの文字装飾を解説：マークダウン vs Unicodeフォント vs Nitro">
+<meta property="og:description" content="なぜDiscordのチャットでは太字にできるのにユーザー名ではできないのか — Discordが使う3つの異なるテキストの仕組み（マークダウン・Unicodeフォント・Nitro）と、それぞれの使い分け。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+<meta property="og:locale" content="ja_JP">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "ja",
+  "headline": "Discordの文字装飾を解読：マークダウン vs Unicodeフォント vs Nitro",
+  "description": "なぜDiscordのチャットでは太字にできるのにユーザー名ではできないのか — Discordが使う3つの異なるテキストの仕組み（マークダウン・Unicodeフォント・Nitro）と、それぞれの使い分け。",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/ja-guide-discord-moji-soshoku.png",
+  "mainEntityOfPage": "https://ultratextgen.com/ja/guide/discord-moji-soshoku/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ultratextgen.com/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "ガイド", "item": "https://ultratextgen.com/ja/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Discordの文字装飾", "item": "https://ultratextgen.com/ja/guide/discord-moji-soshoku/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ja",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "なぜDiscordのチャットでは太字が効くのに、ユーザー名では効かないの？",
+      "acceptedAnswer": { "@type": "Answer", "text": "仕組みが違うからです。チャットでは **bold** はマークダウンで — Discordがメッセージを表示するときに変換します。名前（ユーザー名・ニックネーム・サーバー・チャンネル・ロール）はマークダウンを実行しないので、アスタリスクはそのまま文字として表示されます。名前を装飾するには、Unicode「フォント」— すでに太字に見える特殊文字 — が必要で、それを欄に直接貼り付けます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "UnicodeフォントはDiscord Nitroのフォントと同じもの？",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。Unicode「フォント」は無料の置き換え文字で、名前が使えるところならどこにでも貼り付けられます。誰にでも機能しますが、一部の端末では空白の四角で表示され、スクリーンリーダーを妨げます。Nitroの表示名スタイルは有料の機能で、本物のフォント・色・エフェクトを表示名に適用します — ただし色とエフェクトはサーバー内では表示されず（そこではロールの色が優先されます）、引き継がれるのはフォントだけです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Discordで色付きテキストを作るには？",
+      "acceptedAnswer": { "@type": "Answer", "text": "ANSIコードブロックを使います：テキストを「ansi」とタグ付けしたトリプルバッククォートのブロックで囲み、色のためのエスケープコードを加えます。固定の8色に限られ、コードブロックの中でしか効かず、モバイルでは不安定です（プレーンなテキストとして表示されることがよくあります）。これは名前ではなくメッセージ用です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "太字にならず、アスタリスクがそのまま表示されるのはなぜ？",
+      "acceptedAnswer": { "@type": "Answer", "text": "よくある理由は2つ：アスタリスクと単語の間にスペースがある（** text ** は太字にならず、**text** はなります）か、テキストがコードブロックの中にある（バッククォートがマークダウンをオフにします）かです。それと、マークダウンはメッセージ内でしか効かず、名前では決して効かないことも覚えておきましょう。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/ja/">ホーム</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/ja/guide/">ガイド</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Discordの文字装飾</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Discordの文字装飾、まるごと解読</h1>
+    <p class="hero-tagline">あなたが抱えているのは「フォント」の問題ではなく、「3つの仕組み」の問題です。Discordはマークダウン・Unicode文字・Nitroのスタイルを、まったく別の用途で使い分けています。どの欄がどれを使うのかがわかれば、「なぜこれが効かないの？」はすべて自然に解決します。</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">プラットフォーム攻略</span>
+      <span class="guide-pill">⏱ 8分で読める</span>
+      <span class="guide-pill">3つの仕組みモデル</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/ja-guide-discord-moji-soshoku.svg" width="1200" height="340"
+       alt="マークダウン・Unicode・Nitroとラベル付けされた3枚のチップが重なり、Discordの3つの異なるテキストの仕組みを表している。">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>この記事のポイント</h2>
+  <ul>
+    <li>Discordには互いに無関係な3つのテキストの仕組みがあります：<strong>マークダウン</strong>（メッセージ）、<strong>Unicode「フォント」</strong>（あらゆる名前欄）、<strong>Nitro</strong>（有料の表示名スタイル）。</li>
+    <li><code>**太字**</code> のようなマークダウンはメッセージ内でしか表示されません — ユーザー名・ニックネーム・サーバー名/チャンネル名では一切効きません。</li>
+    <li>Unicode「フォント」はすべての名前欄で使えますが、一部の端末では空白の四角で表示され、スクリーンリーダーの読み上げを妨げます。</li>
+    <li>Nitroは表示名に本物の色やエフェクトを加えます — ただしサーバー内ではロールの色が優先され、表示されるのはフォントだけです。</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the reframe -->
+  <section class="editorial-section">
+    <span class="article-section-label">とらえ直し</span>
+    <h2>「フォント」ではなく、3つの別々の仕組み</h2>
+    <div class="editorial-block">
+      <p>Discordの「なぜ私のテキストが効かないの？」という質問のほとんどは、互いに何の関係もない3つのものを混同することから生まれます。Discordはチャットでマークダウンを<em>教えてくれる</em>ので、同じ手が名前の装飾にも効くはずだと思い込んでしまいます。効きません — 名前はまったく別の仕組みで動いているからです。</p>
+      <p>全体像を1枚の表にまとめました。どの欄がどの仕組みを使うかを覚えれば、もう二度と驚くことはありません。</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>仕組み</th><th>何なのか</th><th>効く場所</th><th>注意点</th></tr></thead>
+        <tbody>
+          <tr><td><strong>マークダウン</strong></td><td>Discordが変換して表示する記号（<code>**bold**</code>、<code>*italic*</code>、<code>~~strike~~</code>、ANSIの色）</td><td>メッセージのみ</td><td>すべての名前欄で無効。ANSIの色はデスクトップ限定</td></tr>
+          <tr><td><strong>Unicode「フォント」</strong></td><td>すでに装飾済みに見える置き換え文字（𝗯𝗼𝗹𝗱、𝓬𝓾𝓻𝓼𝓲𝓿𝓮）</td><td>表示名・ニックネーム・サーバー/チャンネル/ロール名・自己紹介・メッセージ</td><td>空白の四角で表示されることがある。スクリーンリーダーを妨げる。@ユーザー名では拒否される</td></tr>
+          <tr><td><strong>Nitroのスタイル</strong></td><td>有料の表示名スタイル：本物のフォント＋色＋エフェクト</td><td>自分の表示名</td><td>サーバー内では色・エフェクトが表示されない（ロールの色が優先）。有料</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">仕組み1</span>
+    <h2>マークダウン — メッセージ用</h2>
+    <div class="editorial-block">
+      <p>マークダウンは、Discordがメッセージを<em>表示するとき</em>に適用する書式です。言葉の前後に記号を打つと、Discordがそれを本物のスタイルに置き換えます。</p>
+      <ul>
+        <li><code>**太字**</code> → <strong>太字</strong></li>
+        <li><code>*斜体*</code> → <em>斜体</em></li>
+        <li><code>~~取り消し線~~</code> → 取り消し線</li>
+        <li><code>__下線__</code> → 下線</li>
+        <li><code>||スポイラー||</code> → クリックするまで隠れる</li>
+        <li><code>&gt; 引用</code> と <code>`コード`</code></li>
+      </ul>
+      <p>これはメッセージを装飾する<em>正しい</em>方法です — 本物のテキストのままなので、検索でき、アクセシブルです。問題は、これを「効かなく」してしまう2つのミスです：</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">太字にならない</span>
+          <p><code>** text **</code> — アスタリスクの内側にスペースがあると無効になります。<code>**text**</code> と書きましょう。</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">太字にならない</span>
+          <p><code>`コードブロック`</code> の中では、バッククォートがマークダウンをオフにします。装飾は外に出しましょう。</p>
+        </div>
+      </div>
+      <p><strong>そして最大のポイント：</strong>マークダウンはユーザー名・ニックネーム・サーバー名・チャンネル名では何も起きません。これらはメッセージではないので、Discordがマークダウンを実行することは決してありません。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">仕組み2</span>
+    <h2>Unicode「フォント」 — 名前用</h2>
+    <div class="editorial-block">
+      <p><em>名前</em>を装飾するときは、Discordに何かを変換してもらうことはできません — だから、すでに装飾済みに見える文字を使います。ジェネレーターは特殊な<a href="/ja/library/discord-symbols/">Unicode文字</a>を使って「Nova」を𝗡𝗼𝘃𝗮や𝓝𝓸𝓿𝓪に変え、その完成品をそのまま欄に貼り付けます。変換処理が不要なので、マークダウンが効かない場所でも生き残ります。</p>
+      <p>これは、表示名・サーバーニックネーム・サーバー名/チャンネル名・ロール名・自己紹介・メッセージで使えます。ブロックされる場所はただ1つ：</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>@ユーザー名は受け付けません。</strong> 固有のハンドル（@の後ろの小文字のもの）が使えるのは <code>a–z</code>、<code>0–9</code>、<code>_</code>、<code>.</code> だけ — メンション・検索・ルーティングのためです。ここにおしゃれなフォントを貼るとDiscordは保存を拒否します。代わりに<em>表示名</em>を装飾しましょう。</div>
+      </div>
+      <p>正直な注意点が2つあり、どちらも別の記事で詳しく扱っています：Unicodeの名前は一部の端末（特に古いAndroid）で空白の四角として表示されることがあり、スクリーンリーダーには読み取りにくいという点です。安全なスタイル（太字・斜体・スモールキャップス）を選び、上品にとどめましょう — 多くの大規模サーバーは、読みにくい名前やザルゴの名前をモデレーションしています。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: System 3 Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">仕組み3</span>
+    <h2>Nitroの表示名スタイル — 有料で、思ったより範囲は狭い</h2>
+    <div class="editorial-block">
+      <p>Discordの有料プラン「Nitro」には、2025年末に追加された「表示名スタイル」という機能があります：本物のフォント、色、さらにはアニメーションのエフェクトを表示名に適用できます。プロフィールカードでは見栄えがします。でも、多くの人があとで痛感する落とし穴があります：</p>
+      <div class="mood-explainer">
+        <div class="mood-example">サーバー内では、<strong>ロールの色</strong>がNitroの色を上書きし、エフェクトは取り除かれます — なので他のメンバーに見えるのは、たいていフォントだけで、色やアニメーションは見えません。フルの効果が見えるのは主にプロフィールで、メンバーリストやチャットではありません。</div>
+      </div>
+      <p>無料アカウントでもメニューを開いてスタイルを<strong>プレビュー</strong>することはできますが、保存できるのはNitroだけ — この「プレビューさせてから課金の壁」こそ、「フォントを使うのにそもそもNitroは必要なの？」と多くの人が今尋ねる理由です。この特定の機能についてはもっともな疑問ですが、Unicodeでの装飾が変わったわけではなく、そちらは変わらず無料です。</p>
+      <p>つまりNitroは、洗練されたプロフィールカードと、どこでも表示される独自の表示フォントが欲しいなら価値があります。会話に色付きテキストを入れる方法では<em>ありません</em> — それは別のツールです（次のセクション）。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: colored text bonus -->
+  <section class="editorial-section">
+    <span class="article-section-label">色の疑問</span>
+    <h2>メッセージの色付きテキストはどうなの？</h2>
+    <div class="editorial-block">
+      <p>メッセージ内の色付きテキストは、4つ目の、より限定的な手です：<strong>ANSIコードブロック</strong>。テキストを <code>ansi</code> とタグ付けしたトリプルバッククォートのブロックで囲み、色のためのエスケープコードを加えます。ただし限界ははっきり理解しておきましょう：</p>
+      <ul>
+        <li>固定の<strong>8色だけ</strong> — カスタムのカラーコードは使えません。</li>
+        <li><strong>コードブロック内のみ</strong> — 普通の文章をインラインで色付けはできません。</li>
+        <li><strong>モバイルでは不安定</strong> — スマホのユーザーにはプレーンなテキストとして表示されることがよくあります。</li>
+      </ul>
+      <p>デスクトップ中心のサーバーの警告やログには便利ですが、汎用の装飾ツールではありません。メンバーの半分がモバイルなら、その人たちには色は見えないと考えておきましょう。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: decision -->
+  <section class="editorial-section">
+    <span class="article-section-label">すばやく決める</span>
+    <h2>どの仕組みが必要？</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>やりたいこと</th><th>使うもの</th></tr></thead>
+        <tbody>
+          <tr><td>メッセージ内で単語を太字・斜体に</td><td>マークダウン <code>**…**</code></td></tr>
+          <tr><td>表示名やニックネームを装飾する</td><td>Unicodeフォント（貼り付ける）</td></tr>
+          <tr><td>サーバー名やチャンネル名を飾る</td><td>Unicodeフォント＋記号</td></tr>
+          <tr><td>固有の@ユーザー名の見た目を変える</td><td>不可能 — 代わりに表示名を装飾</td></tr>
+          <tr><td>色付き・アニメーションのプロフィール名</td><td>Nitroの表示名スタイル</td></tr>
+          <tr><td>メッセージ内の色付きテキスト</td><td>ANSIコードブロック（デスクトップ・8色）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">Discordがあなたの太字を壊したのではありません。<br>チャット用の仕組みを名前欄に使っただけです。<br><br>仕組みを欄に合わせれば、ちゃんと動きます。</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Discordですぐ使える名前を作ろう</h3>
+    <p>端末で安全なUnicodeスタイルを作ってコピーし、表示名やサーバーニックネームに貼り付けましょう — Nitroは不要です。</p>
+    <a href="/discord/" class="cta-btn">Discordフォントツールを開く →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/discord/">Discordフォント</a>
+    <a class="platform-pill" href="/ja/insta-font/">Instagram</a>
+    <a class="platform-pill" href="/ja/tiktok-font/">TikTok</a>
+    <a class="platform-pill" href="/ja/oshare-moji/">おしゃれ文字</a>
+    <a class="platform-pill" href="/ja/kawaii-moji/">かわいい文字</a>
+    <a class="platform-pill" href="/ja/hikkitai/">筆記体</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">なぜDiscordのチャットでは太字が効くのに、ユーザー名では効かないの？</button>
+    <div class="faq-answer">
+      <p>仕組みが違うからです。チャットでは <code>**bold**</code> はマークダウンで — Discordがメッセージを表示するときに変換します。名前（ユーザー名・ニックネーム・サーバー・チャンネル・ロール）はマークダウンを実行しないので、アスタリスクはそのまま文字として表示されます。名前を装飾するには、Unicode「フォント」— すでに太字に見える特殊文字 — が必要で、それを欄に直接貼り付けます。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">UnicodeフォントはDiscord Nitroのフォントと同じもの？</button>
+    <div class="faq-answer">
+      <p>いいえ。Unicode「フォント」は無料の置き換え文字で、名前が使えるところならどこにでも貼り付けられます。誰にでも機能しますが、一部の端末では空白の四角で表示され、スクリーンリーダーを妨げます。Nitroの表示名スタイルは有料の機能で、本物のフォント・色・エフェクトを表示名に適用します — ただし色とエフェクトはサーバー内では表示されず（そこではロールの色が優先されます）、引き継がれるのはフォントだけです。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Discordで色付きテキストを作るには？</button>
+    <div class="faq-answer">
+      <p>ANSIコードブロックを使います：テキストを「ansi」とタグ付けしたトリプルバッククォートのブロックで囲み、色のためのエスケープコードを加えます。固定の8色に限られ、コードブロックの中でしか効かず、モバイルでは不安定です（プレーンなテキストとして表示されることがよくあります）。これは名前ではなくメッセージ用です。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">太字にならず、アスタリスクがそのまま表示されるのはなぜ？</button>
+    <div class="faq-answer">
+      <p>よくある理由は2つ：アスタリスクと単語の間にスペースがある（<code>** text **</code> は太字にならず、<code>**text**</code> はなります）か、テキストがコードブロックの中にある（バッククォートがマークダウンをオフにします）かです。それと、マークダウンはメッセージ内でしか効かず、名前では決して効かないことも覚えておきましょう。</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>あわせて読みたい</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/ja/guide/discord-font-doko/">
+      <span class="related-tag">🗺️</span>
+      <span class="related-title">Discordでフォントが使える場所</span>
+      <span class="related-desc">どの欄がUnicodeを受け付けるか、欄ごとの早見表。</span>
+    </a>
+    <a class="related-card" href="/ja/guide/discord-anzen-namae/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">Discordの名前を安全に飾る</span>
+      <span class="related-desc">メンション・なりすまし・読みやすさをクリアするコツ。</span>
+    </a>
+    <a class="related-card" href="/ja/library/discord-symbols/">
+      <span class="related-tag">✦</span>
+      <span class="related-title">Discordの記号</span>
+      <span class="related-desc">名前やチャンネルに貼れる区切り線・枠・装飾記号。</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

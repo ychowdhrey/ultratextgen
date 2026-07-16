@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Formátovanie textu na Discorde: Markdown vs Unicode vs Nitro | UltraTextGen</title>
+<meta name="description" content="Prečo tučné funguje na chate Discordu, ale nie v používateľskom mene — tri odlišné textové systémy, ktoré Discord používa (Markdown, písma Unicode, Nitro), a presne kedy použiť ktorý.">
+
+<link rel="canonical" href="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/tanseeq-nusus-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/formatovani-textu-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/discord-tekstformatering-forklaret/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/discord-textformatierung-erklaert/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/formatage-texte-discord-explique/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-text-formatting-samjhein/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/formattazione-testo-discord-spiegata/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/discord-tekstopmaak-uitgelegd/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/discord-tekstformatering-forklart/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/formatacao-de-texto-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/formatare-text-discord-explicat/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/formatirovanie-teksta-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/formatiranje-teksta-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-rupbaep-khokhwam/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/discord-text-formatting-paliwanag/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-metin-bicimlendirme/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/dinh-dang-chu-discord/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/sk-guide-formatovanie-textu-na-discorde.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Formátovanie textu na Discorde: Markdown vs Unicode vs Nitro | UltraTextGen">
+<meta name="twitter:description" content="Prečo tučné funguje na chate Discordu, ale nie v používateľskom mene — tri odlišné textové systémy, ktoré Discord používa (Markdown, písma Unicode, Nitro), a presne kedy použiť ktorý.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/sk-guide-formatovanie-textu-na-discorde.png">
+<meta property="og:title" content="Formátovanie textu na Discorde: Markdown vs Unicode vs Nitro">
+<meta property="og:description" content="Prečo tučné funguje na chate Discordu, ale nie v používateľskom mene — tri odlišné textové systémy, ktoré Discord používa (Markdown, písma Unicode, Nitro), a presne kedy použiť ktorý.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+<meta property="og:locale" content="sk_SK">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Formátovanie textu na Discorde: Markdown vs písma Unicode vs Nitro",
+  "description": "Prečo tučné funguje na chate Discordu, ale nie v používateľskom mene — tri odlišné textové systémy, ktoré Discord používa (Markdown, písma Unicode, Nitro), a presne kedy použiť ktorý.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/sk-guide-formatovanie-textu-na-discorde.png",
+  "inLanguage": "sk",
+  "mainEntityOfPage": "https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Domov", "item": "https://ultratextgen.com/sk/" },
+    { "@type": "ListItem", "position": 2, "name": "Sprievodcovia", "item": "https://ultratextgen.com/sk/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Formátovanie textu na Discorde", "item": "https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "sk",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Prečo tučné funguje na chate Discordu, ale nie v používateľskom mene?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lebo používajú rozdielne systémy. Na chate je **tučné** Markdown — Discord ho vykreslí, keď zobrazuje tvoju správu. Mená (používateľské meno, prezývka, server, kanál, rola) Markdown nespúšťajú, takže hviezdičky sa ukážu doslovne. Na oštýlovanie mena potrebuješ „písma“ Unicode — špeciálne znaky, ktoré už samy vyzerajú tučné — vložené priamo do poľa." }
+    },
+    {
+      "@type": "Question",
+      "name": "Sú písma Unicode to isté ako písma z Discord Nitra?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nie. „Písma“ Unicode sú bezplatné náhradné znaky, ktoré vložíš všade, kde je meno povolené; fungujú pre každého, no na niektorých zariadeniach sa môžu zobraziť ako štvorčeky a mätú čítačky obrazovky. Štýly zobrazovaného mena (Display Name Styles) z Nitra sú platená funkcia, ktorá na tvoje zobrazované meno nasadí skutočné písmo, farbu a efekty — no farba a efekty sa vnútri serverov neukážu, tam vyhráva farba tvojej roly; prenesie sa len samotné písmo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ako spraviť farebný text na Discorde?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cez ANSI bloky kódu: obal text do bloku s trojitými spätnými apostrofmi označeného „ansi“ a doplň únikové kódy pre farbu. Obmedzuje sa na osem pevných farieb, funguje len vnútri blokov kódu a na mobile je nespoľahlivý (často sa ukáže ako obyčajný text). Je to pre správy, nie pre mená." }
+    },
+    {
+      "@type": "Question",
+      "name": "Prečo sa namiesto tučného textu ukazujú hviezdičky?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dva časté dôvody: medzi hviezdičkami a slovom je medzera (`** text **` nestučnie — `**text**` áno), alebo je text vnútri bloku kódu (spätné apostrofy Markdown vypnú). A pamätaj, že Markdown funguje len v správach, nikdy nie v menách." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Navigačná cesta">
+  <a href="/sk/">Domov</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/sk/guide/">Sprievodcovia</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Formátovanie textu na Discorde</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Formátovanie textu na Discorde, rozlúštené</h1>
+    <p class="hero-tagline">Nemáš problém s „písmami“ — máš problém troch systémov. Discord používa Markdown, znaky Unicode a štýly Nitra na úplne odlišné veci. Keď vieš, ktoré pole používa ktorý systém, každé „prečo to nefunguje?“ si odpovie samo.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Zvládni platformu</span>
+      <span class="guide-pill">⏱ 8 min čítania</span>
+      <span class="guide-pill">Model troch systémov</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/sk-guide-formatovanie-textu-na-discorde.svg" width="1200" height="340"
+       alt="Tri naskladané štítky s popismi Markdown, Unicode a Nitro, znázorňujúce tri rôzne textové systémy Discordu.">
+</figure>
+
+<!-- KĽÚČOVÉ POZNATKY -->
+<section class="key-takeaways">
+  <h2>Kľúčové poznatky</h2>
+  <ul>
+    <li>Discord má tri nesúvisiace textové systémy: <strong>Markdown</strong> (správy), <strong>„písma“ Unicode</strong> (mená všade) a <strong>Nitro</strong> (platené štýly zobrazovaného mena).</li>
+    <li>Markdown ako <code>**tučné**</code> sa vykreslí len v správach — nikdy nefunguje v používateľských menách, prezývkach ani v názvoch serverov či kanálov.</li>
+    <li>„Písma“ Unicode fungujú v každom poli s menom, no na niektorých zariadeniach sa môžu zobraziť ako štvorčeky a mätú čítačky obrazovky.</li>
+    <li>Nitro pridá tvojmu zobrazovanému menu skutočnú farbu a efekty — no vnútri servera vyhráva farba tvojej roly a ukáže sa len písmo.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Sekcia: nový pohľad -->
+  <section class="editorial-section">
+    <span class="article-section-label">Nový pohľad</span>
+    <h2>Nie sú to písma — sú to tri rôzne systémy</h2>
+    <div class="editorial-block">
+      <p>Takmer každá otázka typu „prečo mi text na Discorde nefunguje“ pramení zo zmiešania troch vecí, ktoré spolu nemajú nič spoločné. Discord ťa na chate <em>naučí</em> Markdown, tak predpokladáš, že ten istý trik oštýluje aj tvoje meno. Nestane sa — mená bežia na úplne inom systéme.</p>
+      <p>Tu je celé územie v jednom zábere. Nauč sa, ktorý systém používa ktoré pole, a už ťa nič neprekvapí.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Systém</th><th>Čo to je</th><th>Kde funguje</th><th>Háčik</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Symboly, ktoré Discord vykreslí (<code>**tučné**</code>, <code>*kurzíva*</code>, <code>~~prečiarknuté~~</code>, ANSI farba)</td><td>Len správy</td><td>V každom poli s menom odumrie; ANSI farba je len na počítači</td></tr>
+          <tr><td><strong>„Písma“ Unicode</strong></td><td>Náhradné znaky, ktoré už vyzerajú oštýlované (𝗯𝗼𝗹𝗱, 𝓬𝓾𝓻𝓼𝓲𝓿𝓮)</td><td>Zobrazované meno, prezývka, názvy servera/kanála/roly, bio, správy</td><td>Môžu sa zobraziť ako štvorčeky; mätú čítačky obrazovky; v používateľskom mene (@) sú odmietnuté</td></tr>
+          <tr><td><strong>Štýly Nitra</strong></td><td>Platené štýly zobrazovaného mena: skutočné písmo + farba + efekty</td><td>Tvoje zobrazované meno</td><td>Farba/efekty sa vnútri serverov neukážu (vyhráva farba roly); stojí peniaze</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sekcia: Systém 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">Systém 1</span>
+    <h2>Markdown — pre správy</h2>
+    <div class="editorial-block">
+      <p>Markdown je formátovanie, ktoré Discord použije, keď <em>zobrazuje</em> tvoju správu. Okolo slov napíšeš symboly a Discord ich vymení za skutočný štýl.</p>
+      <ul>
+        <li><code>**tučné**</code> → <strong>tučné</strong></li>
+        <li><code>*kurzíva*</code> → <em>kurzíva</em></li>
+        <li><code>~~prečiarknuté~~</code> → prečiarknuté</li>
+        <li><code>__podčiarknuté__</code> → podčiarknuté</li>
+        <li><code>||spojler||</code> → skryté do kliknutia</li>
+        <li><code>&gt; citácia</code> a <code>`kód`</code></li>
+      </ul>
+      <p>Toto je <em>správny</em> spôsob, ako naformátovať správu — zostáva skutočným textom, takže je vyhľadateľný a prístupný. Háčik sú dve chyby, kvôli ktorým to „nefunguje“:</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Nestučnie</span>
+          <p><code>** text **</code> — medzera vnútri hviezdičiek to zruší. Použi <code>**text**</code>.</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Nestučnie</span>
+          <p>Vnútri <code>`bloku kódu`</code> spätné apostrofy Markdown vypnú. Presuň štýl von.</p>
+        </div>
+      </div>
+      <p><strong>A ten hlavný:</strong> Markdown nespraví nič v používateľskom mene, prezývke, názve servera ani kanála. To nie sú správy, takže na nich Discord Markdown nikdy nespustí.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sekcia: Systém 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">Systém 2</span>
+    <h2>„Písma“ Unicode — pre mená</h2>
+    <div class="editorial-block">
+      <p>Na oštýlovanie <em>mena</em> nemôžeš Discord požiadať, aby niečo vykreslil — tak použiješ znaky, ktoré už vyzerajú oštýlované. Generátor premení „Nova“ na 𝗡𝗼𝘃𝗮 alebo 𝓝𝓸𝓿𝓪 pomocou špeciálnych <a href="/library/">znakov Unicode</a> a hotový výsledok vložíš rovno do poľa. Netreba nič vykresľovať, takže to prežije tam, kde Markdown nedokáže.</p>
+      <p>Funguje to v tvojom zobrazovanom mene, v serverovej prezývke, v názvoch servera a kanála, v názvoch rolí, v biu aj v správach. Existuje presne jedno miesto, kde je to zablokované:</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>Používateľské meno (@) to odmieta.</strong> Tvoj unikátny login (ten s malými písmenami za @) povoľuje len a–z, 0–9, <code>_</code> a <code>.</code> — kvôli označeniam, vyhľadávaniu a smerovaniu. Vlož tam ozdobné písmo a Discord ho odmietne uložiť. Namiesto toho oštýluj <em>zobrazované meno</em>.</div>
+      </div>
+      <p>Dve úprimné výhrady: mená z Unicode sa na niektorých zariadeniach (najmä starších Androidoch) môžu zobraziť ako štvorčeky a sú náročné pre čítačky obrazovky. Vyber si bezpečný štýl (tučné, kurzíva, kapitálky) a drž ho vkusný — mnohé veľké servery moderujú ťažko čitateľné alebo zalgo mená.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sekcia: Systém 3 Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">Systém 3</span>
+    <h2>Štýly zobrazovaného mena v Nitre — platené a užšie, než si myslíš</h2>
+    <div class="editorial-block">
+      <p>Platená úroveň Discord Nitro ponúka štýly zobrazovaného mena (Display Name Styles), funkciu pridanú koncom roka 2025: skutočné písmo, farbu a dokonca animované efekty na tvojom zobrazovanom mene. Na profilovej karte vyzerá skvele. Má to však háčik, ktorý ľudia zisťujú tvrdou cestou:</p>
+      <div class="mood-explainer">
+        <div class="mood-example">Vnútri servera farba tvojej roly prebije farbu z Nitra a efekty sa odstránia — takže ostatní členovia obvykle vidia len <em>písmo</em>, nie farbu ani animáciu. Plný efekt sa ukáže hlavne na tvojom profile, nie v zozname členov ani na chate.</div>
+      </div>
+      <p>Bezplatné účty si menu vedia otvoriť a štýl si <strong>predbežne pozrieť</strong>, no uložiť ho vie len Nitro — práve táto ukážka a potom platobná stena je dôvod, prečo sa dnes toľkí pýtajú, či je Nitro na písma vôbec potrebné. Je to oprávnená otázka o tejto konkrétnej funkcii; nie je to zmena štýlovania cez Unicode, ktoré zostáva bezplatné bez ohľadu na to.</p>
+      <p>Nitro sa teda oplatí, ak chceš vyladenú profilovú kartu a osobité písmo mena všade. <em>Nie</em> je to spôsob, ako dostať farebný text do konverzácie — na to slúži iný nástroj (ďalšia sekcia).</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sekcia: farebný text -->
+  <section class="editorial-section">
+    <span class="article-section-label">Otázka farby</span>
+    <h2>Čo farebný text v správach?</h2>
+    <div class="editorial-block">
+      <p>Farebný text v správe je štvrtý, užší trik: <strong>ANSI bloky kódu</strong>. Text obalíš do bloku s trojitými spätnými apostrofmi označeného <code>ansi</code> a doplníš únikové kódy pre farbu. Buď však triezvy k obmedzeniam:</p>
+      <ul>
+        <li>Len <strong>osem pevných farieb</strong> — žiadny vlastný hex.</li>
+        <li><strong>Len v bloku kódu</strong> — bežnú vetu nezafarbí priamo v texte.</li>
+        <li><strong>Nespoľahlivé na mobile</strong> — používateľom telefónov sa často vykreslí ako obyčajný text.</li>
+      </ul>
+      <p>Hodí sa na varovania alebo logy servera zameraného na počítač; nie je to všeobecný nástroj na štýl. Ak je polovica tvojich členov na mobile, počítaj s tým, že farbu neuvidia.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sekcia: rozhodnutie -->
+  <section class="editorial-section">
+    <span class="article-section-label">Rozhodni sa rýchlo</span>
+    <h2>Ktorý systém potrebuješ?</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Chcem…</th><th>Použi</th></tr></thead>
+        <tbody>
+          <tr><td>Stučniť/skurzívovať slovo v správe</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>Oštýlovať zobrazované meno alebo prezývku</td><td>Písmo Unicode (vlož ho)</td></tr>
+          <tr><td>Ozdobiť názov servera alebo kanála</td><td>Písmo Unicode + symboly</td></tr>
+          <tr><td>Zmeniť vzhľad môjho unikátneho používateľského mena (@)</td><td>Nedá sa — oštýluj radšej zobrazované meno</td></tr>
+          <tr><td>Farebné, animované meno na profile</td><td>Štýly zobrazovaného mena v Nitre</td></tr>
+          <tr><td>Farebný text v správe</td><td>ANSI blok kódu (počítač, 8 farieb)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">Discord ti tučné nepokazil.<br>Použil si systém chatu na pole s menom.<br><br>Prirad systém k poľu a jednoducho to funguje.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Vytvor meno pripravené pre Discord</h3>
+    <p>Vygeneruj štýl Unicode bezpečný na zariadeniach, skopíruj ho a vlož do zobrazovaného mena alebo serverovej prezývky — bez Nitra.</p>
+    <a href="/sk/pismo-pre-discord/" class="cta-btn">Otvoriť nástroj na písmo pre Discord →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/sk/pismo-pre-discord/">Písmo pre Discord</a>
+    <a class="platform-pill" href="/sk/goticke-pismo/">Gotické písmo</a>
+    <a class="platform-pill" href="/sk/tucne-pismo/">Tučné písmo</a>
+    <a class="platform-pill" href="/sk/kurziva/">Kurzíva</a>
+    <a class="platform-pill" href="/sk/male-pismo/">Malé písmo</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Najčastejšie otázky</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Prečo tučné funguje na chate Discordu, ale nie v používateľskom mene?</button>
+    <div class="faq-answer">
+      <p>Lebo používajú rozdielne systémy. Na chate je <code>**tučné**</code> Markdown — Discord ho vykreslí, keď zobrazuje tvoju správu. Mená (používateľské meno, prezývka, server, kanál, rola) Markdown nespúšťajú, takže hviezdičky sa ukážu doslovne. Na oštýlovanie mena potrebuješ „písma“ Unicode — špeciálne znaky, ktoré už samy vyzerajú tučné — vložené priamo do poľa.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Sú písma Unicode to isté ako písma z Discord Nitra?</button>
+    <div class="faq-answer">
+      <p>Nie. „Písma“ Unicode sú bezplatné náhradné znaky, ktoré vložíš všade, kde je meno povolené; fungujú pre každého, no na niektorých zariadeniach sa môžu zobraziť ako štvorčeky a mätú čítačky obrazovky. Štýly zobrazovaného mena (Display Name Styles) z Nitra sú platená funkcia, ktorá na tvoje zobrazované meno nasadí skutočné písmo, farbu a efekty — no farba a efekty sa vnútri serverov neukážu, tam vyhráva farba tvojej roly; prenesie sa len samotné písmo.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Ako spraviť farebný text na Discorde?</button>
+    <div class="faq-answer">
+      <p>Cez ANSI bloky kódu: obal text do bloku s trojitými spätnými apostrofmi označeného „ansi“ a doplň únikové kódy pre farbu. Obmedzuje sa na osem pevných farieb, funguje len vnútri blokov kódu a na mobile je nespoľahlivý (často sa ukáže ako obyčajný text). Je to pre správy, nie pre mená.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Prečo sa namiesto tučného textu ukazujú hviezdičky?</button>
+    <div class="faq-answer">
+      <p>Dva časté dôvody: medzi hviezdičkami a slovom je medzera (<code>** text **</code> nestučnie — <code>**text**</code> áno), alebo je text vnútri bloku kódu (spätné apostrofy Markdown vypnú). A pamätaj, že Markdown funguje len v správach, nikdy nie v menách.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Čítaj ďalej</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/sk/guide/kde-funguje-pismo-na-discorde/">
+      <span class="related-tag">🗺️</span>
+      <span class="related-title">Kde funguje písmo na Discorde</span>
+      <span class="related-desc">Mapa oprávnení pole po poli — od používateľského mena po kanály.</span>
+    </a>
+    <a class="related-card" href="/sk/guide/bezpecny-nick-na-discorde/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">Bezpečné meno na Discorde</span>
+      <span class="related-desc">Tri filtre, ktorými by malo prejsť oštýlované meno.</span>
+    </a>
+    <a class="related-card" href="/sk/pismo-pre-discord/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">Generátor písma pre Discord</span>
+      <span class="related-desc">Štýlové písmená do nicku a „O mne“ — bez Nitra.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

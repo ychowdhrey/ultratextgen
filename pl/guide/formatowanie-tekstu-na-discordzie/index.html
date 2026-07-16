@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Formatowanie tekstu na Discordzie: Markdown, Unicode i Nitro | UltraTextGen</title>
+<meta name="description" content="Dlaczego pogrubienie działa na czacie Discorda, ale nie w nicku — trzy systemy tekstu Discorda (Markdown, czcionki Unicode, Nitro) i kiedy używać każdego.">
+
+<link rel="canonical" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/tanseeq-nusus-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/formatovani-textu-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/discord-tekstformatering-forklaret/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/discord-textformatierung-erklaert/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/formatage-texte-discord-explique/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-text-formatting-samjhein/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/formattazione-testo-discord-spiegata/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/discord-tekstopmaak-uitgelegd/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/discord-tekstformatering-forklart/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/formatacao-de-texto-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/formatare-text-discord-explicat/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/formatirovanie-teksta-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/formatiranje-teksta-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-rupbaep-khokhwam/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/discord-text-formatting-paliwanag/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-metin-bicimlendirme/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/dinh-dang-chu-discord/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="UltraTextGen">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Formatowanie tekstu na Discordzie, rozszyfrowane: Markdown, Unicode, Nitro">
+<meta property="og:description" content="Dlaczego pogrubienie działa na czacie, ale nie w nicku — trzy systemy tekstu Discorda i kiedy używać każdego.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/pl-guide-formatowanie-tekstu-na-discordzie.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Formatowanie tekstu na Discordzie, rozszyfrowane: Markdown, Unicode, Nitro">
+<meta name="twitter:description" content="Dlaczego pogrubienie działa na czacie, ale nie w nicku — trzy systemy tekstu Discorda i kiedy używać każdego.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/pl-guide-formatowanie-tekstu-na-discordzie.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Formatowanie tekstu na Discordzie, rozszyfrowane: Markdown, Unicode, Nitro",
+  "description": "Dlaczego pogrubienie działa na czacie Discorda, ale nie w nicku — trzy systemy tekstu Discorda (Markdown, czcionki Unicode, Nitro) i kiedy używać każdego.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/pl-guide-formatowanie-tekstu-na-discordzie.png",
+  "inLanguage": "pl",
+  "mainEntityOfPage": "https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://ultratextgen.com/pl/" },
+    { "@type": "ListItem", "position": 2, "name": "Poradniki", "item": "https://ultratextgen.com/pl/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Formatowanie tekstu na Discordzie", "item": "https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pl",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dlaczego pogrubienie działa na czacie Discorda, ale nie w nazwie użytkownika?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Bo używają różnych systemów. Na czacie **pogrubienie** to Markdown — Discord renderuje je, gdy wyświetla twoją wiadomość. Nazwy (nazwa użytkownika, nick, serwer, kanał, rola) nie uruchamiają Markdownu, więc gwiazdki pokazują się dosłownie. Żeby ostylować nazwę, potrzebujesz «czcionek» Unicode — znaków, które już wyglądają na pogrubione — wklejonych prosto do pola." }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy czcionki Unicode to to samo, co czcionki Discord Nitro?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nie. «Czcionki» Unicode to darmowe znaki zastępcze, które możesz wkleić wszędzie tam, gdzie dozwolona jest nazwa; działają dla wszystkich, ale na niektórych urządzeniach mogą pokazywać się jako kwadraty i utrudniają pracę czytnikom ekranu. Style Wyświetlanej Nazwy Nitro to płatna funkcja, która nadaje twojej wyświetlanej nazwie prawdziwą czcionkę, kolor i efekty — ale kolor i efekty nie pokazują się na serwerach, gdzie wygrywa kolor twojej roli; przenosi się tylko czcionka." }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak zrobić kolorowy tekst na Discordzie?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Za pomocą bloków kodu ANSI: owiń tekst blokiem z potrójnych grawisów oznaczonym «ansi» i dodaj kody ucieczki dla koloru. Ogranicza się to do ośmiu stałych kolorów, działa tylko w blokach kodu i jest zawodne na telefonie (często pokazuje się jako zwykły tekst). Jest do wiadomości, nie do nazw." }
+    },
+    {
+      "@type": "Question",
+      "name": "Dlaczego pokazują się gwiazdki zamiast pogrubionego tekstu?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dwa częste powody: między gwiazdkami a słowem jest spacja (`** tekst **` nie pogrubi — `**tekst**` tak), albo tekst jest w bloku kodu (grawisy wyłączają Markdown). Pamiętaj też, że Markdown działa tylko w wiadomościach, nigdy w nazwach." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Ścieżka nawigacyjna">
+  <a href="/pl/">Strona główna</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/pl/guide/">Poradniki</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Formatowanie tekstu na Discordzie</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Formatowanie tekstu na Discordzie, rozszyfrowane</h1>
+    <p class="hero-tagline">Twój problem to nie «czcionki» — to trzy różne systemy. Discord używa Markdownu, znaków Unicode i stylów Nitro do zupełnie różnych zadań. Gdy już wiesz, które pole korzysta z którego systemu, każde «dlaczego to nie działa?» odpowiada samo.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Opanuj Discorda</span>
+      <span class="guide-pill">⏱ 8 min czytania</span>
+      <span class="guide-pill">Model 3 systemów</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/pl-guide-formatowanie-tekstu-na-discordzie.svg" width="1200" height="340"
+       alt="Trzy nałożone na siebie plakietki z etykietami Markdown, Unicode i Nitro — trzy systemy tekstu Discorda.">
+</figure>
+
+<!-- NAJWAŻNIEJSZE -->
+<section class="key-takeaways">
+  <h2>Najważniejsze wnioski</h2>
+  <ul>
+    <li>Discord ma trzy niezależne systemy tekstu: <strong>Markdown</strong> (wiadomości), <strong>«czcionki» Unicode</strong> (nazwy, wszędzie) i <strong>Nitro</strong> (płatne style wyświetlanej nazwy).</li>
+    <li>Markdown w stylu <code>**pogrubienie**</code> działa tylko w wiadomościach — nigdy w nazwach użytkownika, nickach ani nazwach serwera czy kanału.</li>
+    <li>«Czcionki» Unicode działają w każdym polu nazwy, ale na niektórych urządzeniach mogą pokazywać się jako kwadraty i utrudniają pracę czytnikom ekranu.</li>
+    <li>Nitro dodaje prawdziwy kolor i efekty do twojej wyświetlanej nazwy — ale na serwerze wygrywa kolor twojej roli i widać tylko czcionkę.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Rama -->
+  <section class="editorial-section">
+    <span class="article-section-label">Rama</span>
+    <h2>To nie czcionki — to trzy różne systemy</h2>
+    <div class="editorial-block">
+      <p>Niemal każde discordowe pytanie «dlaczego mój tekst nie działa» bierze się z mylenia trzech rzeczy, które nie mają ze sobą nic wspólnego. Discord <em>uczy</em> cię Markdownu na czacie, więc zakładasz, że ta sama sztuczka ostyluje twoją nazwę. Nie ostyluje — nazwy działają w zupełnie innym systemie.</p>
+      <p>Oto cały teren na jednym schemacie. Naucz się, którego systemu używa każde pole, a już nigdy nic cię nie zaskoczy.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>System</th><th>Co to jest</th><th>Gdzie działa</th><th>Haczyk</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Symbole, które Discord renderuje (<code>**pogrubienie**</code>, <code>*kursywa*</code>, <code>~~przekreślenie~~</code>, kolor ANSI)</td><td>Tylko wiadomości</td><td>Umiera w każdym polu nazwy; kolor ANSI działa tylko na komputerze</td></tr>
+          <tr><td><strong>«Czcionki» Unicode</strong></td><td>Znaki zastępcze, które już wyglądają na ostylowane (𝗽𝗼𝗴𝗿𝘂𝗯𝗶𝗼𝗻𝗲, 𝓴𝓾𝓻𝓼𝔂𝔀𝓪)</td><td>Wyświetlana nazwa, nick, nazwy serwera/kanału/roli, bio, wiadomości</td><td>Może pokazać się jako kwadraty; utrudnia czytniki ekranu; odrzucane w @nazwie użytkownika</td></tr>
+          <tr><td><strong>Style Nitro</strong></td><td>Płatne style wyświetlanej nazwy: prawdziwa czcionka + kolor + efekty</td><td>Twoja wyświetlana nazwa</td><td>Kolor/efekty nie pokazują się na serwerach (wygrywa kolor roli); kosztuje</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- System 1 Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 1</span>
+    <h2>Markdown — do wiadomości</h2>
+    <div class="editorial-block">
+      <p>Markdown to formatowanie, które Discord stosuje, gdy <em>wyświetla</em> twoją wiadomość. Wpisujesz symbole wokół słów, a Discord zamienia je na prawdziwy styl.</p>
+      <ul>
+        <li><code>**pogrubienie**</code> → <strong>pogrubienie</strong></li>
+        <li><code>*kursywa*</code> → <em>kursywa</em></li>
+        <li><code>~~przekreślenie~~</code> → przekreślenie</li>
+        <li><code>__podkreślenie__</code> → podkreślenie</li>
+        <li><code>||spoiler||</code> → ukryte do kliknięcia</li>
+        <li><code>&gt; cytat</code> i <code>`kod`</code></li>
+      </ul>
+      <p>To <em>właściwy</em> sposób formatowania wiadomości — pozostaje prawdziwym tekstem, więc jest wyszukiwalny i dostępny. Haczyk to dwa błędy, przez które «nie działa»:</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Nie pogrubi</span>
+          <p><code>** tekst **</code> — spacja wewnątrz gwiazdek anuluje efekt. Użyj <code>**tekst**</code>.</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Nie pogrubi</span>
+          <p>Wewnątrz <code>`bloku kodu`</code> grawisy wyłączają Markdown. Wyjmij styl poza blok.</p>
+        </div>
+      </div>
+      <p><strong>I najważniejsze:</strong> Markdown nic nie robi w nazwie użytkownika, nicku, nazwie serwera czy kanału. To nie są wiadomości, więc Discord nigdy nie uruchamia na nich Markdownu.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- System 2 Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 2</span>
+    <h2>«Czcionki» Unicode — do nazw</h2>
+    <div class="editorial-block">
+      <p>Żeby ostylować <em>nazwę</em>, nie możesz poprosić Discorda o wyrenderowanie czegokolwiek — więc używasz znaków, które już są ostylowane. Generator zamienia «Nova» w 𝗡𝗼𝘃𝗮 lub 𝓝𝓸𝓿𝓪 przy pomocy specjalnych <a href="/pl/library/">znaków Unicode</a>, a gotowy wynik wklejasz prosto do pola. Nic nie trzeba renderować, więc przetrwa tam, gdzie Markdown zawodzi.</p>
+      <p>Działa to w twojej wyświetlanej nazwie, nicku serwerowym, nazwach serwera i kanału, nazwach ról, bio oraz wiadomościach. Jest dokładnie jedno miejsce, gdzie jest zablokowane:</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>@nazwa użytkownika to odrzuca.</strong> Twój unikalny identyfikator (ten pisany małymi literami po @) przyjmuje tylko a–z, 0–9, <code>_</code> i <code>.</code> — dla wzmianek, wyszukiwania i routingu. Wklej tam ozdobną czcionkę, a Discord odmówi zapisania. Ostyluj zamiast tego swoją <em>wyświetlaną nazwę</em>.</div>
+      </div>
+      <p>Dwa uczciwe zastrzeżenia: nazwy Unicode mogą pokazywać się jako kwadraty na niektórych urządzeniach (zwłaszcza starszych Androidach) i są trudne do odczytania dla czytników ekranu. Wybierz bezpieczny styl (pogrubienie, kursywa, kapitaliki) i zachowaj umiar — wiele dużych serwerów moderuje nieczytelne nazwy albo zalgo.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- System 3 Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">System 3</span>
+    <h2>Style nazwy Nitro — płatne i węższe, niż myślisz</h2>
+    <div class="editorial-block">
+      <p>Płatny poziom Nitro w Discordzie oferuje Style Wyświetlanej Nazwy, funkcję dodaną pod koniec 2025 roku: prawdziwą czcionkę, kolor, a nawet animowane efekty nakładane na twoją wyświetlaną nazwę. Świetnie wygląda na karcie profilu. Ale jest haczyk, który ludzie odkrywają boleśnie:</p>
+      <div class="mood-explainer">
+        <div class="mood-example">Na serwerze <strong>kolor twojej roli</strong> nadpisuje kolor Nitro, a efekty znikają — inni członkowie zwykle widzą więc tylko <em>czcionkę</em>, a nie kolor ani animację. Pełny efekt pokazuje się głównie na twoim profilu, nie na liście członków ani na czacie.</div>
+      </div>
+      <p>Darmowe konta mogą otworzyć menu i <strong>podejrzeć</strong> styl, ale zapisanie go jest tylko dla Nitro — właśnie ten «podgląd, a potem ściana płatności» sprawia, że tylu ludzi pyta, czy do czcionek w ogóle potrzebne jest Nitro. To słuszne pytanie o tę konkretną funkcję; nie zmienia to nic w stylizacji Unicode, która i tak pozostaje darmowa.</p>
+      <p>Nitro opłaca się więc, jeśli chcesz dopracowaną kartę profilu i własną czcionkę wyświetlaną wszędzie. To <em>nie</em> jest sposób na kolorowy tekst w rozmowie — do tego służy inne narzędzie (następna sekcja).</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Kolorowy tekst -->
+  <section class="editorial-section">
+    <span class="article-section-label">Kwestia koloru</span>
+    <h2>A co z kolorowym tekstem w wiadomościach?</h2>
+    <div class="editorial-block">
+      <p>Kolorowy tekst w wiadomości to czwarta, węższa sztuczka: <strong>bloki kodu ANSI</strong>. Owijasz tekst blokiem z potrójnych grawisów oznaczonym <code>ansi</code> i dodajesz kody ucieczki dla koloru. Miej jasność co do ograniczeń:</p>
+      <ul>
+        <li>Tylko <strong>osiem stałych kolorów</strong> — bez własnego hex.</li>
+        <li><strong>Tylko w bloku kodu</strong> — nie pokoloruje zwykłego zdania w linii.</li>
+        <li><strong>Zawodne na telefonie</strong> — u użytkowników mobilnych często pokazuje się jako zwykły tekst.</li>
+      </ul>
+      <p>Przydatne do ostrzeżeń albo logów na serwerze nastawionym na komputery; to nie jest ogólne narzędzie do stylizacji. Jeśli połowa twoich członków jest na telefonie, załóż, że nie zobaczą koloru.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Decyzja -->
+  <section class="editorial-section">
+    <span class="article-section-label">Zdecyduj szybko</span>
+    <h2>Którego systemu potrzebujesz?</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Chcę…</th><th>Użyj</th></tr></thead>
+        <tbody>
+          <tr><td>Pogrubić/pochylić słowo w wiadomości</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>Ostylować wyświetlaną nazwę albo nick</td><td>Czcionka Unicode (wklej)</td></tr>
+          <tr><td>Ozdobić nazwę serwera lub kanału</td><td>Czcionka Unicode + symbole</td></tr>
+          <tr><td>Zmienić wygląd mojej unikalnej @nazwy użytkownika</td><td>Niemożliwe — ostyluj wyświetlaną nazwę</td></tr>
+          <tr><td>Kolorowa, animowana nazwa profilu</td><td>Style Wyświetlanej Nazwy Nitro</td></tr>
+          <tr><td>Kolorowy tekst w wiadomości</td><td>Blok kodu ANSI (komputer, 8 kolorów)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">Discord nie zepsuł twojego pogrubienia.<br>To system z czatu użyty w polu nazwy.<br><br>Dopasuj system do pola, a wszystko zadziała.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Stwórz nazwę gotową na Discorda</h3>
+    <p>Wygeneruj bezpieczny na każdym urządzeniu styl Unicode, skopiuj go i wklej w wyświetlaną nazwę albo nick serwerowy — bez Nitro.</p>
+    <a href="/pl/czcionki-discord/" class="cta-btn">Otwórz generator czcionek Discord →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/pl/czcionki-discord/">Czcionki Discord</a>
+    <a class="platform-pill" href="/pl/czcionki-na-instagram/">Czcionki na Instagram</a>
+    <a class="platform-pill" href="/pl/czcionki-na-tiktok/">Czcionki na TikTok</a>
+    <a class="platform-pill" href="/pl/pogrubiona-czcionka/">Pogrubiona czcionka</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>Najczęściej zadawane pytania</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Dlaczego pogrubienie działa na czacie Discorda, ale nie w nazwie użytkownika?</button>
+    <div class="faq-answer">
+      <p>Bo używają różnych systemów. Na czacie <code>**pogrubienie**</code> to Markdown — Discord renderuje je, gdy wyświetla twoją wiadomość. Nazwy (nazwa użytkownika, nick, serwer, kanał, rola) nie uruchamiają Markdownu, więc gwiazdki pokazują się dosłownie. Żeby ostylować nazwę, potrzebujesz «czcionek» Unicode — znaków, które już wyglądają na pogrubione — wklejonych prosto do pola.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Czy czcionki Unicode to to samo, co czcionki Discord Nitro?</button>
+    <div class="faq-answer">
+      <p>Nie. «Czcionki» Unicode to darmowe znaki zastępcze, które możesz wkleić wszędzie tam, gdzie dozwolona jest nazwa; działają dla wszystkich, ale na niektórych urządzeniach mogą pokazywać się jako kwadraty i utrudniają pracę czytnikom ekranu. Style Wyświetlanej Nazwy Nitro to płatna funkcja, która nadaje twojej wyświetlanej nazwie prawdziwą czcionkę, kolor i efekty — ale kolor i efekty nie pokazują się na serwerach, gdzie wygrywa kolor twojej roli; przenosi się tylko czcionka.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Jak zrobić kolorowy tekst na Discordzie?</button>
+    <div class="faq-answer">
+      <p>Za pomocą bloków kodu ANSI: owiń tekst blokiem z potrójnych grawisów oznaczonym «ansi» i dodaj kody ucieczki dla koloru. Ogranicza się to do ośmiu stałych kolorów, działa tylko w blokach kodu i jest zawodne na telefonie (często pokazuje się jako zwykły tekst). Jest do wiadomości, nie do nazw.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Dlaczego pokazują się gwiazdki zamiast pogrubionego tekstu?</button>
+    <div class="faq-answer">
+      <p>Dwa częste powody: między gwiazdkami a słowem jest spacja (<code>** tekst **</code> nie pogrubi — <code>**tekst**</code> tak), albo tekst jest w bloku kodu (grawisy wyłączają Markdown). Pamiętaj też, że Markdown działa tylko w wiadomościach, nigdy w nazwach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>Czytaj dalej</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/pl/czcionki-discord/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">Czcionki Discord</span>
+      <span class="related-desc">Generator: nick, bio i nazwa serwera w Unicode, do skopiowania.</span>
+    </a>
+    <a class="related-card" href="/pl/guide/gdzie-dzialaja-czcionki-na-discordzie/">
+      <span class="related-tag">🗺️</span>
+      <span class="related-title">Gdzie działają czcionki na Discordzie</span>
+      <span class="related-desc">Pełna mapa uprawnień, pole po polu.</span>
+    </a>
+    <a class="related-card" href="/pl/guide/bezpieczna-nazwa-na-discordzie/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">Bezpieczna nazwa na Discordzie</span>
+      <span class="related-desc">Trzy filtry, które musisz przejść.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
