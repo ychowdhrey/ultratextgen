@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discordでフォントが使える場所：欄ごとの権限マップ | UltraTextGen</title>
+<meta name="description" content="なぜDiscordはユーザー名を「無効」と言うのか、なぜチャンネル名が大文字を失うのか、そしてどの欄がUnicodeフォントを受け付けるのか — 1枚の「欄ごとの権限マトリックス」が、試行錯誤を終わらせます。">
+
+<link rel="canonical" href="https://ultratextgen.com/ja/guide/discord-font-doko/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-where-fonts-work/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/amaken-khutut-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/gdje-rade-fontovi-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/kde-funguje-pismo-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/hvor-virker-skrifttyper-i-discord/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/wo-funktionieren-schriftarten-in-discord/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/donde-funcionan-las-fuentes-en-discord/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/ou-fonctionnent-les-polices-discord/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-font-kahan-kaam-karte-hain/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/gdje-rade-fontovi-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/di-mana-font-discord-bekerja/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/dove-funzionano-i-font-discord/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-font-doko/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/waar-lettertypes-werken-in-discord/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/hvor-fungerer-skrifter-i-discord/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/gdzie-dzialaja-czcionki-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/onde-as-fontes-funcionam-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/unde-functioneaza-fonturile-discord/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/gde-rabotayut-shrifty-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/kde-funguje-pismo-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/gde-fontovi-rade-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/var-typsnitt-fungerar-i-discord/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-font-thamngan-thinai/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/saan-gumagana-ang-font-sa-discord/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-fontlari-nerede-calisir/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/font-discord-dung-o-dau/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-ziti-nali-nengyong/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-where-fonts-work/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/ja-guide-discord-font-doko.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discordでフォントが使える場所：欄ごとの権限マップ | UltraTextGen">
+<meta name="twitter:description" content="なぜDiscordはユーザー名を「無効」と言うのか、なぜチャンネル名が大文字を失うのか、そしてどの欄がUnicodeフォントを受け付けるのか — 1枚の欄ごとの権限マトリックスが、試行錯誤を終わらせます。">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/ja-guide-discord-font-doko.png">
+<meta property="og:title" content="Discordでおしゃれフォントが使える場所：欄ごとの権限マップ">
+<meta property="og:description" content="なぜDiscordはユーザー名を「無効」と言うのか、なぜチャンネル名が大文字を失うのか、そしてどの欄がUnicodeフォントを受け付けるのか — 1枚の欄ごとの権限マトリックスが、試行錯誤を終わらせます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/ja/guide/discord-font-doko/">
+<meta property="og:locale" content="ja_JP">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "inLanguage": "ja",
+  "headline": "Discordでおしゃれフォントが使える場所：欄ごとの権限マップ",
+  "description": "なぜDiscordはユーザー名を「無効」と言うのか、なぜチャンネル名が大文字を失うのか、そしてどの欄がUnicodeフォントを受け付けるのか — 1枚の欄ごとの権限マトリックスが、試行錯誤を終わらせます。",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/ja-guide-discord-font-doko.png",
+  "mainEntityOfPage": "https://ultratextgen.com/ja/guide/discord-font-doko/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://ultratextgen.com/ja/" },
+    { "@type": "ListItem", "position": 2, "name": "ガイド", "item": "https://ultratextgen.com/ja/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Discordでフォントが使える場所", "item": "https://ultratextgen.com/ja/guide/discord-font-doko/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ja",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "なぜDiscordは私のユーザー名を「無効」と言うの？",
+      "acceptedAnswer": { "@type": "Answer", "text": "固有の@ユーザー名は、表示用の欄ではなく識別キーだからです。使えるのは小文字の a–z、0–9、アンダースコア、ピリオドだけ — なのでUnicodeフォントの文字（あるいは普通の大文字でさえ）を貼ると、Discordは保存を拒否します。装飾したバージョンは、代わりに表示名やサーバーニックネームに入れましょう。これらの欄はUnicodeを完全に受け付けます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Discordの表示名におしゃれフォントは使える？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。表示名、サーバーニックネーム、ロール名、サーバー名、チャンネル名、そして自己紹介は、すべてUnicodeフォントの文字と絵文字を受け付けます。装飾したテキストを生成し、完成した文字を欄に貼り付けます — 有効化するものは何もありません。太字・斜体・スモールキャップスのような読みやすいスタイルを選ぶと、古い端末のメンバーやスクリーンリーダーでもあなたを読めます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "チャンネル名の大文字が消えたのはなぜ？",
+      "acceptedAnswer": { "@type": "Answer", "text": "テキストチャンネルの名前は正規化されます：Discordは普通の A–Z を小文字にし、スペースをハイフンに変えるので、「General Chat」は「general-chat」になります。Unicodeフォントの文字は普通の文字ではないので、そのまま通ります — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 が大文字を保つのは、それらが A–Z ではなく数学用太字の文字だからです。ボイスチャンネルとカテゴリーの名前は、この正規化を受けず、スペースと大文字を保ちます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "おしゃれフォントはDiscordのロール名やサーバー名で使える？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。どちらも表示用の欄なので、Unicodeフォント・記号・絵文字は問題なく保存され、装飾された個別表示（ホイスト）のロールはメンバー一覧に表示されます。トレードオフは：検索・メンションのオートコンプリート・多くのモデレーションボットは文字どおりの文字と一致させるので、濃く装飾されたロール名は見つけにくく、打ちにくくなります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "名前を装飾しても、みんなは私を@メンションできる？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい — メンションは装飾された文字ではなく、あなたのアカウントに対して解決されます。プレーンな@ユーザー名を打てば必ずあなたが見つかりますし、名前をクリックしたりメンバー一覧から選んだりしても機能します。壊れるのは、表示名によるオートコンプリートです：「aesthetic」と打っても 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 とは一致しません。別の文字だからです。まさにこれが、Discordがハンドルをプレーンに保つ理由です：それがあなたに確実に連絡を取れる方法だからです。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/ja/">ホーム</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/ja/guide/">ガイド</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Discordでフォントが使える場所</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Discordでフォントが使える場所</h1>
+    <p class="hero-tagline">「無効なユーザー名」。大文字が消えたチャンネル名。問題なく保存できたニックネーム。Discordが一貫していないわけではありません — どの欄にも役割があり、それぞれ違うルールを課しているのです。もう二度と当てずっぽうにしなくて済むよう、権限マップの全体をお見せします。</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">プラットフォーム：Discord</span>
+      <span class="guide-pill">⏱ 9分で読める</span>
+      <span class="guide-pill">欄ごとの権限マトリックス</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/ja-guide-discord-font-doko.svg" width="1200" height="340"
+       alt="Discordの欄名（ユーザー名・表示名・チャンネル・ロール）のグリッド。識別用の欄には錠前、表示用の欄には開いたチェックマークが付いている。">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>この記事のポイント</h2>
+  <ul>
+    <li>固有の <strong>@ユーザー名</strong>が使えるのは、小文字の a–z、0–9、アンダースコア、ピリオドだけ。ここにおしゃれフォントを貼れば「無効なユーザー名」— 毎回、仕様どおりに。</li>
+    <li>すべての<strong>表示用の欄</strong> — 表示名、サーバーニックネーム、ロール、サーバー名とチャンネル名、自己紹介 — は、Unicodeフォントと絵文字を、何の小細工もなしに受け付けます。</li>
+    <li><strong>マークダウンが表示されるのはメッセージ内だけ</strong>（プラス自己紹介の基本的な書式）。どの名前欄でも、アスタリスクはただそこに残るだけです。</li>
+    <li>装飾した名前には実際のコストが伴います：<kbd>Ctrl+K</kbd> は「aesthetic」と打っても 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 を見つけられず、スクリーンリーダーはつまずき、古いAndroidは四角を表示することがあります。</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">核心となる考え方</span>
+    <h2>Discordは一貫していない、のではない — どの欄にも役割がある</h2>
+    <div class="editorial-block">
+      <p>試行錯誤のループはこんな感じです：ジェネレーターで名前を装飾し、Discordのある欄に貼るときれいに保存される。同じテキストを別の欄に貼ると、Discordはにべもなく拒否する。同じ文字、同じアカウントなのに、正反対の結果。<em>気まぐれ</em>に感じられます。</p>
+      <p>そんなことはありません。Discordの欄は、きれいに2つの系統に分かれます。<strong>識別用の欄</strong>は、他のシステムが依存しているもの — メンション、フレンド申請、モデレーションのログ、アカウントの復旧です。それはちょうど1つだけ：固有の@ユーザー名で、なりすまし・打ち間違い・端末ごとの表示のばらつきが決して起きないよう、ごく小さな文字セットにロックされています。<strong>表示用の欄</strong>は、人が<em>見る</em>すべて — 表示名、ニックネーム、ロール名、サーバー名とチャンネル名、自己紹介です。ここは大きく開かれています。重要なものは何一つここを通らないからです。</p>
+      <p>この2つの系統が見えれば、「なぜこれが保存できないの？」はすべて自然に解決します。あなたはバグと戦っているのではありません。表示用の文字を、識別用の欄に貼ろうとしているだけです。対処法はいつも同じ：装飾を1つ隣の欄に移すことです。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the trap -->
+  <section class="editorial-section">
+    <span class="article-section-label">いちばんの落とし穴</span>
+    <h2>ユーザー名 vs 表示名：「無効なユーザー名」が起きる理由</h2>
+    <div class="editorial-block">
+      <p>この1つの混同が、他のすべてを合わせたよりも多くの失敗を生みます。Discordが昔の4桁の識別子（ディスクリミネーター）を廃止して以来、どのアカウントにも<strong>2つ</strong>の名前があり、それらは正反対のルールに従います：</p>
+      <ul>
+        <li><strong>ユーザー名</strong> — あなたの固有のハンドルで、プロフィールに @ 付きで表示されます。使える文字は、小文字の <code>a–z</code>、<code>0–9</code>、<code>_</code>、<code>.</code> — それ以外は不可。大文字も、スペースも、まして 𝓬𝓾𝓻𝓼𝓲𝓿𝓮 もダメ。このセットから外れるものはすべて「無効なユーザー名」エラーを引き起こします。</li>
+        <li><strong>表示名</strong> — チャットやプロフィールに表示される、大きく親しみやすい名前。スペース、大文字、絵文字、そして貼り付けられるUnicodeフォント文字なら何でも受け付けます。</li>
+      </ul>
+      <p>だから、うまくいくパターンは「中身は地味で、外側は装飾」です：</p>
+      <div class="example-pair">
+        <span class="ex-label">拒否される</span>
+        <span class="ex-plain">@𝕹𝖔𝖛𝖆 →「無効なユーザー名」</span>
+        <span class="ex-arrow">↓</span>
+        <span class="ex-label">うまくいく</span>
+        <span class="ex-styled">@nova_riot &nbsp;+&nbsp; 表示名 𝕹𝖔𝖛𝖆 ⚔</span>
+      </div>
+      <p>サーバーの中では3つ目の層、<strong>サーバーニックネーム</strong>が手に入ります。これはそのサーバーだけで表示名を上書きし — 同じくらい寛容です。コミュニティごとに装飾しましょう：読書クラブでは ୨୧ 𝒩𝑜𝓋𝒶 ୨୧、eスポーツのサーバーでは 𝗡𝗢𝗩𝗔。<a href="/discord/">ニックネームジェネレーター</a>が文字の置き換えを代わりにやってくれます。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the framework -->
+  <section class="editorial-section">
+    <span class="article-section-label">フレームワーク</span>
+    <h2>欄ごとの権限マトリックス</h2>
+    <div class="editorial-block">
+      <p>これが全体マップです — Discordのすべてのテキスト欄、それぞれが何を受け付けるか、そして<em>なぜ</em>か。この表をブックマークすれば、当てずっぽうは終わります。</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>欄</th><th>マークダウン？</th><th>Unicodeフォント？</th><th>絵文字？</th><th>この設計になっている理由</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ユーザー名（@ハンドル）</strong></td><td>✗</td><td>✗ 拒否</td><td>✗</td><td>識別キー。<code>a–z 0–9 _ .</code> のみ — メンションやフレンド申請のため、入力でき、固有で、なりすませない必要がある</td></tr>
+          <tr><td><strong>表示名</strong></td><td>✗ そのまま表示</td><td>✓</td><td>✓</td><td>純粋な表示 — チャットに表示され、ルーティングには一切使われない</td></tr>
+          <tr><td><strong>サーバーニックネーム</strong></td><td>✗ そのまま表示</td><td>✓</td><td>✓</td><td>サーバーごとの表示。そのサーバーでは表示名を上書きする</td></tr>
+          <tr><td><strong>ロール名</strong></td><td>✗ そのまま表示</td><td>✓</td><td>✓</td><td>IDではなくラベル — 個別表示（ホイスト）のロールはメンバー一覧に表示される</td></tr>
+          <tr><td><strong>サーバー名</strong></td><td>✗ そのまま表示</td><td>✓</td><td>✓</td><td>ブランドの見せ場。招待や「見つける」ではそのまま表示される</td></tr>
+          <tr><td><strong>チャンネル名（テキスト）</strong></td><td>✗</td><td>✓ そのまま通る</td><td>✓</td><td>URLのような一貫性のため自動で小文字化・ハイフン化 — ただし触れられるのは普通の A–Z だけ</td></tr>
+          <tr><td><strong>チャンネルのトピック</strong></td><td>✗ ほぼそのまま</td><td>✓</td><td>✓</td><td>説明の場。プレーンテキスト＋Unicodeとして扱う</td></tr>
+          <tr><td><strong>自己紹介（About Me）</strong></td><td>✓ 基本のみ（太字・斜体・リンク）</td><td>✓</td><td>✓</td><td>プロフィールカードは軽量のレンダラーを動かしている</td></tr>
+          <tr><td><strong>メッセージ</strong></td><td>✓ フルエンジン</td><td>✓</td><td>✓</td><td>チャットの場 — 完全なマークダウンエンジンが動く唯一の場所</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="editorial-block">
+      <p>列を上から下へ読むと、論理がぱっと浮かびます：<strong>Unicodeを拒否する行はちょうど1つ、完全なマークダウンを動かす行もちょうど1つ。</strong>その間はすべて「開かれた中間」です — 貼り付ける装飾は歓迎、レンダリングする装飾は無視。これがこの仕組みのすべてです。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: channel name quirk -->
+  <section class="editorial-section">
+    <span class="article-section-label">フィールドノート</span>
+    <h2>チャンネル名のクセ：自動で小文字・自動でハイフン</h2>
+    <div class="editorial-block">
+      <p>テキストチャンネルの名前は、保存時にひっそりと書き換えられます：普通の大文字は小文字になり、スペースはハイフンになります。だから <code>General Chat</code> は <code>#general-chat</code> になって出てきます。これを「Discordが装飾を剥ぎ取った」と受け取る人がいます。よく見てください — 触れられたのはプレーンな文字だけです。</p>
+      <div class="mood-explainer">
+        <div class="mood-example">入力：<strong>GENERAL CHAT</strong> → 保存後 <strong>#general-chat</strong> &nbsp;·&nbsp; 入力：<strong>𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ✦ 𝗖𝗛𝗔𝗧</strong> → 保存後 <strong>#𝗚𝗘𝗡𝗘𝗥𝗔𝗟-✦-𝗖𝗛𝗔𝗧</strong></div>
+      </div>
+      <p>数学用太字の 𝗚 は普通の大文字Gではなく — 別のUnicode文字です — なので小文字化のルールはこれを飛ばします。これが、大文字で装飾されたチャンネル一覧を持つサーバーを見かける、その裏にある抜け道です。2つの補足：<strong>ボイスチャンネルとカテゴリーはまったく正規化されません</strong>（スペースと普通の大文字がそこでは残ります）。そしてカテゴリーの見出しは、─── や ╭─ のような記号の区切りが最も映える場所です。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: markdown and color -->
+  <section class="editorial-section">
+    <span class="article-section-label">レンダリングする装飾</span>
+    <h2>マークダウンが効く場所 — そして、ただ残るだけの場所</h2>
+    <div class="editorial-block">
+      <p>マークダウンはもう一方の装飾です：<code>**bold**</code> のような記号を、Discordがメッセージを<em>レンダリングするとき</em>に変換します。マトリックスが示すとおり、その領域はごくわずか — <strong>メッセージと、自己紹介の基本的な書式</strong>です。ニックネーム欄に <code>**Nova**</code> と打つと、アスタリスクはそのまま文字として保存されます。名前欄はそのまま保存・表示され、変換のためのレンダリングの工程が存在しないからです。</p>
+      <p>これが覚えておくべき実用的な分け方です：<strong>レンダリングする装飾（マークダウン）は「言うこと」に、貼り付ける装飾（Unicode）は「呼ばれ方」に。</strong>完全な仕組み — スポイラーのタグ、コードブロック、Nitroの層、そして定番の「なぜアスタリスクが太字にならないの」というミス — は、姉妹記事の<a href="/ja/guide/discord-moji-soshoku/">Discordの文字装飾、まるごと解読</a>にあります。</p>
+      <p>もう1つ触れておく価値のある特殊なケース：<strong>色付きテキスト</strong>。これはメッセージの中だけ、ANSIコードブロックを通じてだけ存在し、固定の8色でモバイルのサポートは不安定です。Discordのどの名前欄も、どこであれ色は受け付けません。</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: honest limits -->
+  <section class="editorial-section">
+    <span class="article-section-label">正直な限界</span>
+    <h2>欄を装飾すべきでないとき（できるとしても）</h2>
+    <div class="editorial-block">
+      <p>「Unicodeを受け付ける」は許可であって、推奨ではありません。装飾した名前には3つのコストが伴い、決める前に天秤にかける価値があります：</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">検索が壊れる</span>
+        <p><kbd>Ctrl+K</kbd>、メンバー検索、メンションのオートコンプリートは、文字どおりの文字と一致させます。「aesthetic」と打っても <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> は決して見つかりません — 共通する文字が1つもないからです。</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">スクリーンリーダーがつまずく</span>
+        <p>支援技術は 𝕹𝖔𝖛𝖆 を「数学用フラクトゥール大文字N…」と読み上げたり、まるごと飛ばしたりすることがあります。</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">古いAndroidでの豆腐</span>
+        <p>凝ったスタイルは、古い端末では □□□□ として表示されることがあります。読みやすさを優先するときはシンプルなスタイルにしましょう。</p>
+      </div>
+    </div>
+    <div class="editorial-block">
+      <p>私のルール：<strong>人が見る欄は装飾し、人が打つ欄はプレーンに保つ。</strong>表示名やカテゴリーの見出し？ どんどん装飾しましょう — 太字・スモールキャップス・軽い記号は、ほぼどこでもきれいに読めます。メンバーが毎日検索する賑やかなテキストチャンネル、モデレーターがひっきりなしにpingするロール、見つけてもらいたいサーバー名？ それらはプレーンか、ほぼプレーンに保ちましょう。そして名前にザルゴを使うのは完全にやめましょう — 多くの大規模サーバーが自動でモデレーションしますし、レンダリングを最も壊しやすいスタイルです。</p>
+    </div>
+  </section>
+
+  <div class="pull-quote">あなたのハンドルは鍵。あなたの表示名は衣装。<br><br>Discordが鍵をロックするのは、衣装を何にでもできるようにするためです。</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>Discordですぐ使える名前を作ろう →</h3>
+    <p>端末で安全なUnicodeの名前を作り、表示名・ニックネーム・チャンネル一覧に貼り付けましょう — マトリックスが「開かれている」と示すすべての欄で。</p>
+    <a href="/discord/" class="cta-btn">Discordフォントツールを開く →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/discord/">Discordフォント</a>
+    <a class="platform-pill" href="/ja/insta-font/">Instagram</a>
+    <a class="platform-pill" href="/ja/tiktok-font/">TikTok</a>
+    <a class="platform-pill" href="/ja/oshare-moji/">おしゃれ文字</a>
+    <a class="platform-pill" href="/ja/kawaii-moji/">かわいい文字</a>
+    <a class="platform-pill" href="/ja/hikkitai/">筆記体</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>よくある質問</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">なぜDiscordは私のユーザー名を「無効」と言うの？</button>
+    <div class="faq-answer">
+      <p>固有の@ユーザー名は、表示用の欄ではなく識別キーだからです。使えるのは小文字の a–z、0–9、アンダースコア、ピリオドだけ — なのでUnicodeフォントの文字（あるいは普通の大文字でさえ）を貼ると、Discordは保存を拒否します。装飾したバージョンは、代わりに表示名やサーバーニックネームに入れましょう。これらの欄はUnicodeを完全に受け付けます。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Discordの表示名におしゃれフォントは使える？</button>
+    <div class="faq-answer">
+      <p>はい。表示名、サーバーニックネーム、ロール名、サーバー名、チャンネル名、そして自己紹介は、すべてUnicodeフォントの文字と絵文字を受け付けます。装飾したテキストを生成し、完成した文字を欄に貼り付けます — 有効化するものは何もありません。太字・斜体・スモールキャップスのような読みやすいスタイルを選ぶと、古い端末のメンバーやスクリーンリーダーでもあなたを読めます。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">チャンネル名の大文字が消えたのはなぜ？</button>
+    <div class="faq-answer">
+      <p>テキストチャンネルの名前は正規化されます：Discordは普通の A–Z を小文字にし、スペースをハイフンに変えるので、「General Chat」は「general-chat」になります。Unicodeフォントの文字は普通の文字ではないので、そのまま通ります — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 が大文字を保つのは、それらが A–Z ではなく数学用太字の文字だからです。ボイスチャンネルとカテゴリーの名前は、この正規化を受けず、スペースと大文字を保ちます。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">おしゃれフォントはDiscordのロール名やサーバー名で使える？</button>
+    <div class="faq-answer">
+      <p>はい。どちらも表示用の欄なので、Unicodeフォント・記号・絵文字は問題なく保存され、装飾された個別表示（ホイスト）のロールはメンバー一覧に表示されます。トレードオフは：検索・メンションのオートコンプリート・多くのモデレーションボットは文字どおりの文字と一致させるので、濃く装飾されたロール名は見つけにくく、打ちにくくなります。</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">名前を装飾しても、みんなは私を@メンションできる？</button>
+    <div class="faq-answer">
+      <p>はい — メンションは装飾された文字ではなく、あなたのアカウントに対して解決されます。プレーンな@ユーザー名を打てば必ずあなたが見つかりますし、名前をクリックしたりメンバー一覧から選んだりしても機能します。壊れるのは、表示名によるオートコンプリートです：「aesthetic」と打っても 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 とは一致しません。別の文字だからです。まさにこれが、Discordがハンドルをプレーンに保つ理由です：それがあなたに確実に連絡を取れる方法だからです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>あわせて読みたい</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/ja/guide/discord-moji-soshoku/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">Discordの文字装飾を解説</span>
+      <span class="related-desc">マークダウン・Unicode・Nitroの違いを整理。</span>
+    </a>
+    <a class="related-card" href="/ja/guide/discord-anzen-namae/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">Discordの名前を安全に飾る</span>
+      <span class="related-desc">メンション・なりすまし・読みやすさをクリアするコツ。</span>
+    </a>
+    <a class="related-card" href="/ja/library/discord-symbols/">
+      <span class="related-tag">✦</span>
+      <span class="related-title">Discordの記号</span>
+      <span class="related-desc">名前やチャンネルに貼れる区切り線・枠・装飾記号。</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
