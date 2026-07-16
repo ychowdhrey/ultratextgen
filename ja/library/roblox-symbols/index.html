@@ -116,6 +116,30 @@
         "@type": "Answer",
         "text": "Robloxの名前フィルターは完全に一定ではなく、アカウントの地域やアプリのバージョン、記号の前後にある文字によって挙動が変わることがあります。コンビがうまくいかないときは、まず記号1つだけを単体で貼り付けてみて、そこから1文字ずつコンビを組み立て直してみてください。「通りやすい定番記号」セクションの1文字記号から選ぶのが、いちばん確実な出発点です。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Robloxの表示名では、実際どんな文字が使える？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Robloxの表示名欄は、文字や数字はもちろん、記号を含む幅広いUnicodeに対応しています。ただし完全に自由というわけではなく、フィルターを通した上での話です。公式に公開された許可リストがあるわけではないので、実際のところ「使える」は「今のフィルターを通る」という意味に近く、これは時間とともに変わることがあります。いちばん堅いのは、上の「通りやすい定番記号」にある1文字の記号です。複数文字のコンビや、めずらしいUnicodeブロックは、はじかれやすくなります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "表示名に日本語を使っても大丈夫？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "基本的には問題ありません。「こんにちは」のような日本語表記の名前は、公式のRoblox Developer Forumでの報告を見る限り、Robloxの名前フィルターを通りやすいことがほとんどです。意外にも引っかかりやすいのは、é・ü・łのようなアクセント記号付きのラテン文字のほう — 「日本語よりアルファベットのほうが無難そう」と思われがちですが、実際は逆になることが多いのです。ただしすべてのアカウントで挙動が保証されているわけではないので、本番の名前にする前に一度試してみることをおすすめします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Robloxの表示名にスペース（空白）を入れるには？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Robloxは表示名の先頭と末尾にある本物のスペースを自動でトリムし、トリムした結果が空になると保存を拒否するため、スペースだけでは保存できません。代わりに使うのが見えない文字です — 「見えない・空白のRoblox表示名」セクションにあるハングルフィラー（ㅤ）や点字パターン空白（⠀）は空白文字として扱われないため、削除されずに見た目のすき間を保ったまま保存できます。"
+      }
     }
   ]
 }
@@ -197,7 +221,7 @@
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>RobloxはUnicodeの文字を表示名（Display Name）やプロフィールに使えますが、コンテンツフィルターに引っかかって保存できない記号もあります。このページでは、Robloxで実際に表示され、名前フィルターを通りやすい定番の記号 — 星・ハート・花・キラキラ — をまとめました。表示名、グループの説明、プロフィールの自己紹介に、コピペするだけで使えます。</p>
+    <p>RobloxはUnicodeの文字を表示名（Display Name）やプロフィールに使えますが、コンテンツフィルターに引っかかって保存できない記号もあります。このページでは、Robloxで実際に表示され、名前フィルターを通りやすい定番の記号 — 星・ハート・花・キラキラ — をまとめました。クランタグに添えるロブロックス シンボルを1つだけ探しているときも、がっつり飾ったコンビにしたいときも、以下の記号はすべて現在のフィルターで確認済みです。表示名、グループの説明、プロフィールの自己紹介に、コピペするだけで使えます。</p>
     <p>ひとつ大切なのが「表示名」と「ユーザー名」のちがいです。記号を入れられるのはゲーム内で見える<strong>表示名</strong>のほう。@から始まる<strong>ユーザー名（ログインID）</strong>は半角英数字とアンダースコア「_」1つだけで、記号や日本語は使えません。飾り記号は表示名・プロフィール側で使ってください。</p>
     <p>アルファベット自体もおしゃれにしたいときは、<a href="/ja/">フォント変換ツール</a>で名前を筆記体や太字に変えて、記号と組み合わせるのがおすすめです。</p>
   </div>
@@ -230,7 +254,7 @@
 <section class="mood-explainers" id="roblox-friendly-marks">
   <span class="article-section-label">通りやすい定番記号</span>
   <h2>Robloxで通りやすい記号</h2>
-  <p class="u-secondary-tight">名前フィルターを通りやすく、ゲーム内でもきちんと表示される定番の1文字記号。まずはここから。Robloxの現在の名前フィルターで確認済み — 2026年7月時点の最新情報です。</p>
+  <p class="u-secondary-tight">ここにある1つ1つのロブロックス シンボルは、名前フィルターを通りやすく、ゲーム内でもきちんと表示される定番の1文字記号です。まずはここから。Robloxの現在の名前フィルターで確認済み — 2026年7月時点の最新情報です。</p>
   <div class="flag-rows">
     <div class="flag-row">
       <button class="flag-emoji symbol-tile" data-symbol="⋆" aria-label="⋆ をコピー">⋆</button>
@@ -450,12 +474,49 @@
 </section>
 
 <div class="section-divider"></div>
+<!-- SECTION 3D -->
+<section class="mood-explainers" id="roblox-matching-names">
+  <span class="article-section-label">お揃いネーム</span>
+  <h2>友達・ペアと合わせるお揃い表示名</h2>
+  <p>「お揃い」の表示名を作るコツは、特別な記号を使うことではなく、同じコンビをふたりの名前にそのまま使って、見た目をリンクさせることです。下の「星の名前コンビ」「王冠アピールコンビ」「ハートの羽コンビ」は、この使い方にぴったり。まったく同じにするのではなく「対（つい）」になる感じにしたいなら、太陽と月のペアもおすすめです — ひとりずつ違う記号を持つだけで、同じ発想を違う見た目で表現できます。</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☀" aria-label="☀ をコピー">☀</button>
+      <span class="flag-label">太陽（ペアの片方）</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☾" aria-label="☾ をコピー">☾</button>
+      <span class="flag-label">三日月（もう片方）</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
 
 <!-- フィルターについて -->
 <section class="mood-explainers" id="roblox-filter-note">
   <span class="article-section-label">名前フィルターについて</span>
   <h2>Robloxの名前フィルターについて</h2>
   <p>Robloxは自動のコンテンツフィルターを使っていて、表示名やプロフィールの一部のUnicode文字がブロックされることがあります。いちばん安全なのは ★ ♡ ✦ ❀ ⋆ のような1文字の記号。複数文字のコンビや、めずらしいUnicodeブロックの文字は、ブロックされたり削除されたりしやすいです。もし記号が保存できないときは、上の「通りやすい定番記号」から、よりシンプルな1文字の記号に替えてみてください。</p>
+</section>
+
+<div class="section-divider"></div>
+<!-- SECTION 4B -->
+<section class="mood-explainers" id="roblox-invisible-name">
+  <span class="article-section-label">空白の表示名</span>
+  <h2>見えない・空白のRoblox表示名</h2>
+  <p>Robloxの表示名を空っぽに見せたいときは、本物だけど見えないUnicode文字を使います — ふつうのスペースは前後がトリムされて、結果が空になると保存を拒否されてしまいますが、この2つの文字は空白文字として扱われないため、削除されずにそのまま保存されます。Robloxのフィルターの判定は文字によって一定ではないので、片方がはじかれたら、もう片方を試してみてください。</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ㅤ" aria-label="ハングルフィラー（U+3164）をコピー">ㅤ</button>
+      <span class="flag-label">ハングルフィラー（U+3164）</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⠀" aria-label="点字パターン空白（U+2800）をコピー">⠀</button>
+      <span class="flag-label">点字パターン空白（U+2800）</span>
+    </div>
+  </div>
+  <p class="u-secondary-block">本物のスペースが使えない理由をもっと詳しく知りたい方は、<a href="/symbol/invisible-character/">見えない文字</a>や、関連記号をまとめた<a href="/library/invisible-character/">見えない文字 一覧</a>をご覧ください。</p>
 </section>
 
 <div class="section-divider"></div>
@@ -502,6 +563,18 @@
     <summary class="faq-question">同じ記号なのに、他の人は使えて自分だけ「サポートされていない文字」と表示されるのはなぜ？</summary>
     <p class="faq-answer">Robloxの名前フィルターは完全に一定ではなく、アカウントの地域やアプリのバージョン、記号の前後にある文字によって挙動が変わることがあります。コンビがうまくいかないときは、まず記号1つだけを単体で貼り付けてみて、そこから1文字ずつコンビを組み立て直してみてください。「通りやすい定番記号」セクションの1文字記号から選ぶのが、いちばん確実な出発点です。</p>
   </details>
+  <details class="faq-item">
+    <summary class="faq-question">Robloxの表示名では、実際どんな文字が使える？</summary>
+    <p class="faq-answer">Robloxの表示名欄は、文字や数字はもちろん、記号を含む幅広いUnicodeに対応しています。ただし完全に自由というわけではなく、フィルターを通した上での話です。公式に公開された許可リストがあるわけではないので、実際のところ「使える」は「今のフィルターを通る」という意味に近く、これは時間とともに変わることがあります。いちばん堅いのは、上の「通りやすい定番記号」にある1文字の記号です。複数文字のコンビや、めずらしいUnicodeブロックは、はじかれやすくなります。</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">表示名に日本語を使っても大丈夫？</summary>
+    <p class="faq-answer">基本的には問題ありません。「こんにちは」のような日本語表記の名前は、公式のRoblox Developer Forumでの報告を見る限り、Robloxの名前フィルターを通りやすいことがほとんどです。意外にも引っかかりやすいのは、é・ü・łのようなアクセント記号付きのラテン文字のほう — 「日本語よりアルファベットのほうが無難そう」と思われがちですが、実際は逆になることが多いのです。ただしすべてのアカウントで挙動が保証されているわけではないので、本番の名前にする前に一度試してみることをおすすめします。</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Robloxの表示名にスペース（空白）を入れるには？</summary>
+    <p class="faq-answer">Robloxは表示名の先頭と末尾にある本物のスペースを自動でトリムし、トリムした結果が空になると保存を拒否するため、スペースだけでは保存できません。代わりに使うのが見えない文字です — 「見えない・空白のRoblox表示名」セクションにあるハングルフィラー（ㅤ）や点字パターン空白（⠀）は空白文字として扱われないため、削除されずに見た目のすき間を保ったまま保存できます。</p>
+  </details>
 </section>
 
 <div class="section-divider"></div>
@@ -522,6 +595,18 @@
 <section class="editorial-section">
   <span class="article-section-label">関連ページ</span>
   <div class="compare-grid">
+    <a href="/roblox/" class="compare-card variant-muted u-no-underline">
+      <h4>Robloxフォント変換</h4>
+      <p>名前をRoblox風のおしゃれなスタイル文字に変換。ブラウザだけで完結し、ダウンロード不要です。</p>
+    </a>
+    <a href="/answers/what-font-does-roblox-use/" class="compare-card variant-muted u-no-underline">
+      <h4>Robloxで使われているフォントは？</h4>
+      <p>公式のRobloxロゴやUIに使われているフォントを解説します。</p>
+    </a>
+    <a href="/answers/how-to-change-roblox-username/" class="compare-card variant-muted u-no-underline">
+      <h4>Robloxのユーザー名を変更する方法</h4>
+      <p>@ユーザー名と表示名のちがい、それぞれの変更方法を解説します。</p>
+    </a>
     <a href="/ja/library/aesthetic-symbols/" class="compare-card variant-muted u-no-underline">
       <h4>おしゃれ記号</h4>
       <p>キラキラ・ハート・花・区切り線まで、名前やプロフィールを飾るおしゃれな特殊文字。</p>
