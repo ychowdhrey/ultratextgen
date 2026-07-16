@@ -6291,6 +6291,9 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   overflow: auto;
 }
 .curved-preview .utg-curved-svg { max-width: 100%; height: auto; }
+/* The old-Roblox-font tool (/roblox/old-roblox-font/) reuses the curved-tool
+   layout; its builder emits its own SVG class. */
+.curved-preview .utg-oldroblox-svg { max-width: 100%; height: auto; }
 .curved-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .curved-toast {
   font-size: 0.8125rem;
