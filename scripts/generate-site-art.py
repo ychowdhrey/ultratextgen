@@ -1520,6 +1520,7 @@ PAGES = {
   "tiktok-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "The app's typeface, explained", m_play, K_ANS),
   "roblox": ("Roblox Username Tools", "Style your Roblox name and display", m_block, K_PLAT),
   "roblox-name-generator": ("Roblox Username Generator", "Generate available-looking names", m_block, K_PLAT),
+  "roblox-old-roblox-font": ("Old Roblox Font Generator", "The 2008-era look as free PNG & SVG", m_block, K_PLAT),
 
   # ---- answers ----
   "answers": ("Quick Answers", "Short, sourced answers to common questions", m_qa, K_ANS),
