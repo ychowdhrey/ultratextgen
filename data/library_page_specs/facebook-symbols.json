@@ -10,7 +10,7 @@
   "date_published": "2026-07-13",
   "date_modified": "2026-07-13",
   "copy_pattern": "single",
-  "notes": "OPP: 7th instance of the proven platform-symbol-library template (instagram-symbols, whatsapp-symbols, discord-symbols, tiktok-symbols, linkedin-symbol-library, x-twitter-symbols). Demand source: ultratextgen-lab docs/fr-piliapp-competitor-mining-2026-07-12.md §4 — piliapp's /facebook-symbols/ page carries 10,589 FR traffic, top keyword “emoji facebook,” 127 ranking keywords, no existing EN or FR equivalent anywhere on the site. English-first per the backlog; localize once translation pipeline reaches this page. The shipped library/facebook-symbols/index.html is hand-finished beyond this spec (hero image, FAQPage JSON-LD, alternateName) to match the current template standard set by discord-symbols/tiktok-symbols; this spec captures the section/symbol content for provenance and possible regeneration.",
+  "notes": "OPP: 7th instance of the proven platform-symbol-library template (instagram-symbols, whatsapp-symbols, discord-symbols, tiktok-symbols, linkedin-symbol-library, x-twitter-symbols). Demand source: competitor gap analysis — piliapp's /facebook-symbols/ page carries 10,589 FR traffic, top keyword “emoji facebook,” 127 ranking keywords, no existing EN or FR equivalent anywhere on the site. English-first per the backlog; localize once translation pipeline reaches this page. The shipped library/facebook-symbols/index.html is hand-finished beyond this spec (hero image, FAQPage JSON-LD, alternateName) to match the current template standard set by discord-symbols/tiktok-symbols; this spec captures the section/symbol content for provenance and possible regeneration.",
   "sections": [
     {
       "id": "reaction-symbols",
