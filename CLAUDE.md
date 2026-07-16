@@ -77,10 +77,11 @@ ultratextgen/
 ├── usecase/                # Use case pages (bio, comment, etc.)
 ├── guide/                  # Educational / authority articles — explore-and-learn intent
 ├── answers/                # Single-question, zero-click answer pages (see "Guide vs Answer")
-├── library/                # Symbol/emoji/emoticon/kaomoji reference libraries — BROWSE pillar
+├── library/                # Symbol/emoji/emoticon/kaomoji COLLECTION pages — BROWSE pillar
 │                           #   (classify each page by presentation_class +
 │                           #    copy_patterns — see docs/emoji-combination-taxonomy.md)
-├── symbol/                 # Single-glyph identity spokes — SEARCH-ONLY pillar (see "Library vs Symbol")
+├── symbol/                 # Single-item identity spokes (glyph OR emoji) — SEARCH-ONLY
+│                           #   discovery, own on-page single-item search (see "Library vs Symbol")
 ├── js/vertical/            # Vertical text feature module
 ├── js/tattoo/              # Tattoo lettering studio module (names, dates→roman, initials, symbols)
 │
@@ -118,24 +119,52 @@ bundle many sub-questions; an answer stays tightly scoped to one.
 jobs and different discovery paths. Don't conflate them when deciding where a new
 page belongs.
 
+**The split is collection vs. single item — not "symbols vs. emoji" (updated
+2026-07-16).** The world doesn't meaningfully distinguish "symbol" from "emoji";
+a single-emoji identity page and a single-glyph identity page (khanda, diameter
+sign) are the same shape of content and belong in the same lane.
+
 | | `library/` | `symbol/` |
 |---|---|---|
-| **Job** | **Browse** a category — a hub of related glyphs (math symbols, currency symbols, zodiac signs) | **Identify** one specific glyph in full — codepoint, history, alt-input, confusable neighbors, FAQ |
-| **Scope** | `collection` (many peer symbols) or a `single` glyph that's still primarily a copy target | Always `single` — one canonical glyph, per the "resolves to one canonical answer" gate |
-| **Discovery** | **Primary nav** (`header.js` "Library" button) + on-page search/filter UI | **Search only** — no nav entry. Same footing as `guide/`, which also has no nav slot despite being a full pillar; nav real estate tracks browse-intent volume, not content-type existence |
+| **Job** | **Browse** a category — a hub of related items (math symbols, currency symbols, zodiac signs, emoji combo sets) | **Identify** one specific item in full — codepoint/meaning, history, alt-input, confusable neighbors, FAQ. Applies equally to a punctuation mark and a single emoji |
+| **Scope** | `collection` — many peer items | Always `single` — one canonical glyph *or* emoji |
+| **Discovery** | **Primary nav** (`header.js` "Library" button) + on-page search/filter UI | **No nav entry** — landed on via search engines/pins, same footing as `guide/`; nav real estate tracks browse-intent volume, not content-type existence. Once there, `symbol/index.html` runs its **own single-item search** — a distinct job from library's browse/filter (searching for one already-known item vs. exploring a category), not a duplicate of it |
 | **Breadcrumb** | `Library` | `Symbols` |
-| **Cross-linking** | Links out to relevant `symbol/` spokes from its hub pages; its own index (`library/index.html`) points to `/symbol/` for single-glyph lookups, phrased as "see the symbol pages," never "browse" | Every spoke links back to the `library/` hub(s) it relates to; its index (`symbol/index.html`) explicitly routes "want a whole category?" traffic back to `/library/` |
+| **Cross-linking** | Links out to relevant `symbol/` spokes from its hub pages; its own index (`library/index.html`) points to `/symbol/` for single-item lookups, phrased as "see the symbol pages," never "browse" | Every spoke links back to the `library/` hub(s) it relates to; its index (`symbol/index.html`) explicitly routes "want a whole category?" traffic back to `/library/` |
 
 **The decision, and why:** `library/` stays the sole "browse and find" surface — that's
-where the on-page search UI, filters, and primary nav entry live. `symbol/` exists
-purely to give a single high-intent glyph query (e.g. "khanda symbol," "diameter
-symbol") a page that can't be built as a hub section without diluting it, and that
-page is meant to be *landed on* via search, not *browsed to*. Do not add a `symbol/`
-entry to `header.js`'s main nav, and do not build search/filter UI on
-`symbol/index.html` — that would duplicate `library/`'s job and blur the pillar split.
+where the on-page filter UI and primary nav entry live. `symbol/` is the single-item
+lane — one canonical glyph *or* emoji, page built to be *landed on* via search, not
+*browsed to*. Do not add a `symbol/` entry to `header.js`'s main nav — discovery there
+stays search/pin-driven by design, even though the page itself now hosts a
+single-item search tool once someone's arrived (this reverses the prior rule against
+any search UI on `symbol/index.html`; that rule was written when `symbol/` had no
+search of its own — it now intentionally does, scoped to single-item lookup, not
+category browsing).
+
+**New single-item pages (rule as of 2026-07-16):** any new single-emoji or
+single-glyph page — including "weird emoji fact" campaign pages — goes into
+`symbol/`, not `library/`. `library/` is reserved for collections going forward.
+
+**Grandfathered exception:** the ~60 single-emoji pages already living in
+`library/` (`moai-emoji`, `clown-emoji`, `sad-emoji`, etc. — one emoji per page)
+are **not** retroactively migrated. A mechanical rename risks live rankings on
+pages that already have real search traffic, for a lane cleanup with no
+user-facing upside. Convert one opportunistically **only** when it gains a
+genuine peer — e.g. if `crying-emoji` and a future `sob-emoji` both warrant a
+page, fold them into one `library/` collection and 301-redirect the old
+single(s) into it, rather than leaving parallel single pages competing with
+each other. Until that trigger fires, leave the single page exactly where it is.
+
+**Kaomoji are out of scope for this rule.** Kaomoji are text-built emoticons,
+not glyph/emoji codepoints — single kaomoji pages (`heart-kaomoji`,
+`hug-kaomoji`, etc.) keep following the old scope (single item that's still
+primarily a copy target, filed under `library/`) until/unless this is
+explicitly revisited.
 
 **Adding a `symbol/` page:** write a spec in `data/library_page_specs/` with
-`"page_type": "symbol"` (everything else matches a normal `library/` spec) and run
+`"page_type": "symbol"` (everything else matches a normal `library/` spec —
+including single-emoji specs) and run
 `scripts/generate_library_page_from_spec.py` — it routes output to `/symbol/<slug>/`
 and defaults the breadcrumb to "Symbols" automatically. Hub→spoke linking is
 automated: make sure the spoke's `related` block links its `library/` hub(s), then
