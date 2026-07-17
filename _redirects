@@ -171,6 +171,8 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /library/linkedin-comment-styling/index.html  /guide/linkedin-comment-styling/  301
 
 # Consolidated localized pages → canonical equivalents (avoid keyword cannibalization)
+/vi/chu-kieu/            /vi/                          301
+/vi/chu-kieu/index.html  /vi/                          301
 /pt/gerador-de-fontes/            /pt/                          301
 /pt/gerador-de-fontes/index.html  /pt/                          301
 /pt/texto-empilhado/              /pt/usecase/vertical-text/    301
