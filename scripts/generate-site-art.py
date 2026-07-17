@@ -1177,6 +1177,8 @@ LOCALIZED_HOME = {
          "Generator Font Aesthetic", "Font dan simbol keren untuk disalin"),
   "vi": ("tao-chu-kieu-dep-preview",
          "Tạo Chữ Kiểu Đẹp", "Phông chữ và ký tự đặc biệt để sao chép"),
+  "hu": ("betu-generator-preview",
+         "Betű Generátor", "Menő betűtípusok és szimbólumok másolása"),
 }
 
 # Bespoke motifs for the locales with demonstrated organic performance (GSC
@@ -1203,6 +1205,19 @@ HOME_CARD = "fancy-text-generator-preview"
 
 
 PAGES = {
+  # ---- localized game-nickname generators & symbol libraries (new markets) ----
+  "pt-usecase-nick-free-fire": ("Nick Free Fire", "Gerador de nomes e símbolos para Free Fire", m_trophy, K_USE),
+  "pt-espaco-invisivel": ("Espaço Invisível", "Caractere em branco para copiar", m_block, K_LIB),
+  "pt-library-simbolos-para-nick": ("Símbolos para Nick", "Símbolos para copiar e colar", m_grid, K_LIB),
+  "ro-nume-pentru-free-fire": ("Nume pentru Free Fire", "Generator de nick-uri și simboluri", m_trophy, K_USE),
+  "ro-caractere-speciale": ("Caractere Speciale", "Simboluri de copiat pentru nume", m_grid, K_LIB),
+  "hu-becenev-generator": ("Becenév Generátor", "Menő nevek és nickek játékokhoz", m_trophy, K_USE),
+  "hu-kulonleges-karakterek": ("Különleges Karakterek", "Szimbólumok másoláshoz", m_grid, K_LIB),
+  "cs-generator-prezdivek": ("Generátor Přezdívek", "Hezké nicky do her", m_trophy, K_USE),
+  "cs-specialni-znaky": ("Speciální Znaky", "Symboly na kopírování", m_grid, K_LIB),
+  "hr-generator-nadimaka": ("Generator Nadimaka", "Fensi nadimci za igre", m_trophy, K_USE),
+  "hr-posebni-znakovi": ("Posebni Znakovi", "Simboli za kopiranje", m_grid, K_LIB),
+
   # ---- zh-tw (Traditional Chinese / Taiwan) pilot locale ----
   # Root gets the highest-opportunity keyword for this market (kaomoji,
   # per data/tw_piliapp_niche_keywords research: 110K volume, incumbent
