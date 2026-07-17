@@ -442,6 +442,60 @@ dedicated German small-caps page off from `de/kleine-schrift/`, which
 already ranks for "Kapitälchen," without checking whether the split adds
 net-new coverage or just fragments an existing ranking.)
 
+### Locale-native internal linking — check every time you touch a locale page
+
+Whenever you create, edit, or otherwise touch a locale page's prose/FAQ
+content or outbound links — the locale **homepage** most of all, since it's
+the highest-authority page in each locale and every rich section on it is a
+candidate to compete with its own spokes — check whether the specific
+sub-topic being discussed or linked already has a **locale-native page**
+(an existing `<lang>/...` page). If it does, the link must point there, not
+to the English `/category/`, `/library/`, `/usecase/`, `/guide/`, or a
+platform root like `/discord/`.
+
+Two failure modes, both real, both need checking before shipping any change
+to a locale page's outbound links:
+1. **Miswired** — a link exists but points to the English page even though a
+   locale-native equivalent already exists (e.g. an Instagram-bio card
+   linking to `/instagram/` while `/ru/shrift-dlya-instagram/` already
+   existed).
+2. **Missing link** — a rich, single-topic prose section or FAQ answer has
+   no outbound link at all to a deeper page, even though a locale-native
+   page on that exact topic already exists (e.g. a full A–Z Gothic/Cursive
+   alphabet table on a homepage never linking to the dedicated
+   `/<lang>/gothic-style-page/`).
+
+Both cause the same GSC failure mode as the "check who already owns it"
+case study above, just in the other direction: instead of a new page
+cannibalizing an existing one, the **existing hub cannibalizes its own
+spoke** because the internal link that should point search engines (and
+users) onward either doesn't exist or points to the wrong page.
+
+**Before shipping any change that touches a locale page's prose/FAQ content
+or its outbound links:**
+1. List every locale-native sub-page that exists for that locale (`ls
+   <lang>/`, or glob `<lang>/**/index.html`).
+2. For every prose section / FAQ answer that discusses one specific
+   style/topic/platform in depth, check whether a locale-native page already
+   covers that exact topic.
+3. If yes, verify — don't assume — that the section/answer links to it, not
+   to the English equivalent or nowhere. Confirm the target file actually
+   exists on disk before citing or linking it.
+4. If it doesn't, fix the link (or add one) as part of the same change —
+   don't defer it to a later cleanup pass.
+
+**Case study (2026-07-17):** PR #586 fixed 3 instances of this in `fr/`,
+`id/`, `it/` homepages, framed as isolated fixes found via one-off GSC
+analysis. A same-day follow-up audit of all 27 locale homepages found the
+identical pattern in 21 more locales — `de/index.html` alone had 13
+locale-native pages with zero inbound links from its own homepage, including
+a whole "Discord-Schriftart" section linking to the English `/discord/`
+instead of the existing `/de/discord-schriftart/`. This should have been
+caught the first time by treating it as a systemic linking check rather than
+a one-off bug — hence this standing rule. Do not treat a discovered instance
+of this pattern as isolated; check the rest of that locale's homepage (and
+other locale homepages) for the same failure mode while you're in there.
+
 ---
 
 ## Build & Development
@@ -524,6 +578,10 @@ Do not add a test framework unless explicitly requested.
   already targets and ranks for it. See "Before building a page for a
   keyword: check who already owns it" above — the `vi/chu-kieu/` case study
   is exactly this mistake.
+- Do not link a locale page's topic section to an English `/category/`,
+  `/library/`, `/usecase/`, `/guide/`, or platform page when a locale-native
+  equivalent already exists — check before adding or editing any locale
+  page's outbound link. See "Locale-native internal linking" above.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
