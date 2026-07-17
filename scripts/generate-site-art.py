@@ -2051,6 +2051,12 @@ PAGES = {
   "vi-combo-emoji": ("Combo Emoji", "Bộ emoji để sao chép và dán", m_smiley, K_LIB),
   "vi-font-discord": ("Font Discord", "Chữ kiểu cho nick và bio Discord", m_chat, K_PLAT),
   "vi-library-emoji-flags": ("Cờ Các Nước", "Emoji lá cờ mọi quốc gia", m_flag, K_LIB),
+  "vi-symbol-checkmark-symbol": ("Dấu Tích", "Ý nghĩa dấu tích & cách gõ", glyphs("✓", "✔"), K_SYM),
+  "vi-symbol-quotation-mark": ("Dấu Ngoặc Kép", "Ý nghĩa & cách gõ dấu ngoặc", glyphs("“", "”"), K_SYM),
+  "vi-library-math-symbols": ("Ký Hiệu Toán Học", "Toán tử, tập hợp và Hy Lạp",
+        glyphs("∑", "∫", "√", "π", "∞"), K_LIB),
+  "vi-library-bullet-point-symbols": ("Ký Hiệu Chấm Tròn", "Dẫn đầu danh sách thật đẹp",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   # Spanish
   "es-combinaciones-de-emojis": ("Combinaciones de Emojis", "Sets de emoji para copiar y pegar", m_smiley, K_LIB),
   "es-library-emoji-flags": ("Emoji Bandera", "Banderas de todos los países", m_flag, K_LIB),
