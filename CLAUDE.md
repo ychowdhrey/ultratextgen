@@ -358,6 +358,37 @@ To add a new text style, edit `styles.js`:
 2. Update `CATEGORY_PAGES` in `styles.js`
 3. Assign matching `familySlug` values in relevant styles
 
+### Before building a page for a keyword: check who already owns it
+
+High search volume alone is not sufficient justification for a new page. Before
+creating a page/spoke targeting a specific keyword or query cluster, check
+whether an existing page in the same locale — including that locale's own
+hub/homepage — already targets and ranks for the same term (search its title,
+H1, and meta for the exact phrase and close variants). If a hub page already
+owns the term, a new spoke competes with it instead of adding coverage, and
+search engines will consolidate onto whichever page has more authority
+(usually the hub) — leaving the new page with near-zero traffic no matter how
+deep its content is.
+
+**Case study (2026-07-06):** `vi/chu-kieu/` was created in a batch of 5 new VN
+pages, justified in the commit message purely by keyword volume — "chữ kiểu /
+tạo chữ kiểu / chữ kiểu đẹp (90.5k/mo)." But the `/vi/` homepage had already
+been deepened around this exact term 9 days earlier (2026-06-27) and was
+already ranking for it — the same commit even cited "ranking pos 4-8 on the
+chữ kiểu cluster" as part of its own rationale, evidence the term was already
+being served, without checking that the homepage was the asset doing the
+serving. The result: `vi/chu-kieu/` shipped as a strictly thinner duplicate of
+the homepage's own "chữ kiểu" section (same H1 pattern, same how-to/A-Z-table/
+diacritic-FAQ structure, none of the homepage's use-case/guide/expanded-FAQ
+depth) and earned ~1 click across a full month of GSC data, while the
+homepage absorbed effectively all of the term's traffic (840+ clicks in the
+same window). Confirmed via the query×landing-page GSC cross-tab, not
+assumed.
+
+Deepen the existing page instead of building a new one, unless the new page
+serves a genuinely different search intent (e.g. an informational/explainer
+job, not another transactional/tool page on the same term).
+
 ---
 
 ## Localization Workflow — the English-Parent Rule
@@ -488,6 +519,11 @@ Do not add a test framework unless explicitly requested.
   that has no live English parent yet, without first raising it as an
   explicit, discussed exception. See "Localization Workflow — the
   English-Parent Rule" above.
+- Do not create a new page for a high-volume keyword without first checking
+  whether an existing page in that locale (especially its own hub/homepage)
+  already targets and ranks for it. See "Before building a page for a
+  keyword: check who already owns it" above — the `vi/chu-kieu/` case study
+  is exactly this mistake.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
