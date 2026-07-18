@@ -344,6 +344,7 @@
     bookPrint: $("#pt-book-print"),
     practicePrint: $("#pt-practice-print"),
     nameInput: $("#pt-name-input"),
+    nameRoster: $("#pt-name-roster"),
     namePrint: $("#pt-name-print"),
     namePng: $("#pt-name-png"),
     namePreview: $("#pt-name-preview"),
@@ -365,6 +366,7 @@
     genPng: $("#pt-gen-png"),
     genScript: $("#pt-gen-script"),
     genRoster: $("#pt-gen-roster"),
+    genLadder: $("#pt-gen-ladder"),
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
     designInput2: $("#pt-design-input2"),
@@ -383,6 +385,7 @@
     designHint: $("#pt-design-hint"),
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
+    designLadder: $("#pt-design-ladder"),
     designPng: $("#pt-design-png"),
     // Banner maker (optional; gated on its own mounts)
     bannerInput: $("#pt-banner-input"),
@@ -392,6 +395,7 @@
     bannerPng: $("#pt-banner-png"),
     // Name puzzle maker (optional; gated on its own mounts)
     puzzleInput: $("#pt-puzzle-input"),
+    puzzleRoster: $("#pt-puzzle-roster"),
     puzzleHeading: $("#pt-puzzle-heading"),
     puzzleBorderGroup: $("#pt-puzzle-border-group"),
     puzzleFooter: $("#pt-puzzle-footer"),
@@ -1132,8 +1136,11 @@
     }
   }
 
-  function buildNameWorksheet() {
-    const name = nameValue();
+  // The full name worksheet as a DOM node — one primitive behind the single
+  // print and the class-set print, so every sheet in a set matches the solo
+  // one. `nameOverride` lets the roster path build one sheet per child.
+  function nameSheetNode(nameOverride) {
+    const name = nameOverride != null ? String(nameOverride).slice(0, 40) : nameValue();
     const rows = document.createElement("div");
     rows.className = "pt-name-sheet";
 
@@ -1144,8 +1151,24 @@
     for (let i = 0; i < traceCount; i++) rows.appendChild(nameRow(name, "trace"));
     // Blank ruled rows for free practice.
     for (let i = 0; i < 2; i++) rows.appendChild(nameRow(name, "blank"));
+    return rows;
+  }
 
-    printWrap(name + " — tracing worksheet · ultratextgen.com", rows);
+  function buildNameWorksheet() {
+    const names = rosterNames(el.nameRoster);
+    if (names.length >= 2) {
+      const set = document.createElement("div");
+      set.className = "pt-class-set";
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(nameSheetNode(n));
+        set.appendChild(page);
+      });
+      printWrap(names.length + " " + T.sheets + " — tracing worksheets · ultratextgen.com", set);
+      return;
+    }
+    printWrap(nameValue() + " — tracing worksheet · ultratextgen.com", nameSheetNode());
   }
 
   function nameRow(name, kind) {
@@ -1315,19 +1338,40 @@
 
   // A pasted class roster (one name per line) turns one print job into one
   // sheet per child — the workflow every teacher-facing worksheet generator
-  // is expected to support. Capped so a stray paste can't build 500 sheets.
+  // is expected to support. Capped so a stray paste can't build 500 sheets;
+  // 60 leaves room for the whole Dolch primer list (52 words) as one packet.
+  const ROSTER_CAP = 60;
   function rosterNames(mount) {
     if (!mount) return [];
-    return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, 35);
+    return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, ROSTER_CAP);
+  }
+
+  // Word-list preset buttons (page-authored, crawlable): a .pt-roster-preset
+  // carries its whole list in data-words ("word|word|…") and one click fills
+  // the roster textarea with it — the "print the whole Dolch list in one job"
+  // path. Wired against whichever roster mount the page ships.
+  function wireRosterPresets(mount, onFill) {
+    if (!mount) return;
+    $$(".pt-roster-preset").forEach((b) => {
+      b.addEventListener("click", () => {
+        const words = String(b.dataset.words || "").split("|").map((s) => s.trim()).filter(Boolean);
+        if (!words.length) return;
+        mount.value = words.join("\n");
+        const field = mount.closest("details");
+        if (field) field.open = true;
+        if (onFill) onFill();
+      });
+    });
   }
 
   // The full worksheet as a DOM node — the SINGLE primitive behind both the
   // live paper preview and the printed sheet, so what you see is what prints.
   // `wordOverride` lets the class-set print path build one sheet per roster
-  // name without touching the input field.
-  function genSheetNode(wordOverride) {
+  // name without touching the input field; `levelOverride` lets the ladder
+  // pack build one sheet per difficulty level the same way.
+  function genSheetNode(wordOverride, levelOverride) {
     const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, 42)) : genValue();
-    const level = genLevel();
+    const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
     sheet.className = "pt-gen-sheet";
     // A solid model row on top so the target is always visible (unless the
@@ -1425,6 +1469,22 @@
     printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode());
   }
 
+  // The whole difficulty ladder as one print job — one sheet per level,
+  // easiest to hardest, same word. The graded progression is the thing the
+  // level engine can batch that a static-PDF sheet never can.
+  function buildGeneratorLadder() {
+    const word = genValue();
+    const set = document.createElement("div");
+    set.className = "pt-class-set";
+    TRACE_LEVELS.forEach((spec, i) => {
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      page.appendChild(genSheetNode(word, i + 1));
+      set.appendChild(page);
+    });
+    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · ultratextgen.com", set);
+  }
+
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
   function genWordPNG(word, level) {
     const spec = levelSpec(level);
@@ -1520,8 +1580,10 @@
         if (rosterTimer) clearTimeout(rosterTimer);
         rosterTimer = setTimeout(updateGenUI, 150);
       });
+      wireRosterPresets(el.genRoster, updateGenUI);
     }
     if (el.genPrint) el.genPrint.addEventListener("click", buildGeneratorSheet);
+    if (el.genLadder) el.genLadder.addEventListener("click", buildGeneratorLadder);
     if (el.genPng) el.genPng.addEventListener("click", () => genWordPNG(genValue(), genLevel()));
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
@@ -2213,6 +2275,24 @@
     printWrap("", holder);
   }
 
+  // Dot-to-dot difficulty ladder as one print job — the same word at every
+  // density, easy to expert. designSheetSVG reads designState.density, so the
+  // loop swaps it per page and restores the picked value afterwards.
+  function printDesignLadder() {
+    const holder = document.createElement("div");
+    holder.className = "pt-design-print-holder pt-class-set";
+    const picked = designState.density;
+    DOT_LEVELS.forEach((lvl) => {
+      designState.density = lvl.key;
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      page.appendChild(designSheetSVG());
+      holder.appendChild(page);
+    });
+    designState.density = picked;
+    printWrap("", holder);
+  }
+
   function roundRectPath(ctx, x, y, w, h, r) {
     ctx.beginPath();
     ctx.moveTo(x + r, y);
@@ -2380,6 +2460,7 @@
     }
     [el.designFill, el.designBorder, el.designFooter].forEach((c) => { if (c) c.addEventListener("change", renderDesignPreview); });
     if (el.designPrint) el.designPrint.addEventListener("click", printDesign);
+    if (el.designLadder) el.designLadder.addEventListener("click", printDesignLadder);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
     syncDesignMode();
     renderDesignPreview();
@@ -2761,8 +2842,11 @@
 
   // The whole puzzle as one DOM sheet — the single primitive behind both the
   // live preview and the printed page, so what's on screen is what prints.
-  function puzzleSheetNode() {
-    const word = puzzleValue();
+  // `wordOverride` lets the class-set print path build one puzzle per roster
+  // name; a typed heading (if any) applies to every sheet, while the default
+  // heading stays per-name.
+  function puzzleSheetNode(wordOverride) {
+    const word = wordOverride != null ? String(wordOverride).slice(0, 20) : puzzleValue();
     const heading = puzzleHeadingText();
     const strip = puzzleBorderSym().split(" ").filter(Boolean);
     const footer = puzzleFooterOn();
@@ -2804,6 +2888,18 @@
   function printPuzzle() {
     const holder = document.createElement("div");
     holder.className = "pt-puzzle-print-holder";
+    const names = rosterNames(el.puzzleRoster);
+    if (names.length >= 2) {
+      holder.classList.add("pt-class-set");
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(puzzleSheetNode(n));
+        holder.appendChild(page);
+      });
+      printWrap("", holder);
+      return;
+    }
     holder.appendChild(puzzleSheetNode());
     printWrap("", holder);
   }

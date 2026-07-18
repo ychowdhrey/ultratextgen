@@ -116,6 +116,14 @@
         "@type": "Answer",
         "text": "Completely free, with no sign-up, no account, and no watermark. Everything is generated in your browser and nothing is uploaded. Make as many puzzles as you like."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I make a dot-to-dot for every child in my class at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Open Class set — one puzzle per name, paste your class list with one name per line (up to 60 names), and Print builds one dot-to-dot per child at the difficulty you picked. In the print dialog choose “Save as PDF” to keep the whole set as one PDF. There is also Print all 4 levels, which prints the same name at easy, medium, hard and expert difficulty in one job."
+      }
     }
   ]
 }
@@ -207,6 +215,8 @@
               <input type="checkbox" id="pt-design-hint" checked>
               Show faint guide lines
             </label>
+            <button type="button" class="bubble-btn pt-ladder-btn" id="pt-design-ladder">Print all 4 levels — easy to expert</button>
+            <p class="pt-roster-hint">One print job, four sheets of the same name — start easy, finish expert. Choose “Save as PDF” in the print dialog to keep the set as one PDF.</p>
           </div>
 
           <div class="pt-field">
@@ -227,6 +237,12 @@
               Add a name &amp; date line
             </label>
           </div>
+
+          <details class="pt-roster-field">
+            <summary>Class set — one puzzle per name</summary>
+            <textarea id="pt-design-roster" class="main-input" rows="5" placeholder="One name per line…&#10;Emma&#10;Noah&#10;Ava" aria-label="Class roster — one name per line"></textarea>
+            <p class="pt-roster-hint">Paste your class list (up to 60 names) and Print builds one dot-to-dot per name at the difficulty picked above — choose “Save as PDF” in the print dialog to get the whole set as one PDF. Download PNG saves the single name typed above.</p>
+          </details>
         </div>
 
         <!-- Live preview -->
@@ -352,6 +368,19 @@
         </button>
         <div class="faq-answer">
           Completely free, with no sign-up, no account, and no watermark. Everything is generated in your browser and nothing is uploaded. Make as many puzzles as you like.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Can I make a dot-to-dot for every child in my class at once?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-answer">
+          Yes. Open <strong>Class set — one puzzle per name</strong>, paste your class list with one name per line (up to 60 names),
+          and <strong>Print</strong> builds one dot-to-dot per child at the difficulty you picked. In the print dialog choose
+          <strong>“Save as PDF”</strong> to keep the whole set as one PDF. There is also <strong>Print all 4 levels</strong>,
+          which prints the same name at easy, medium, hard and expert difficulty in one job.
         </div>
       </div>
 

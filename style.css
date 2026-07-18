@@ -7899,6 +7899,36 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   color: var(--text-secondary);
   margin: 0.35rem 0 0;
 }
+/* One-tap word-list presets inside a roster field (Dolch / Fry lists). */
+.pt-roster-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+.pt-roster-preset {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.pt-roster-preset:hover {
+  border-color: var(--accent-purple);
+  background: var(--bg-white);
+}
+/* Difficulty-ladder pack button when it sits inside a control field
+   (preview-action instances inherit .pt-preview-actions sizing). */
+.pt-ladder-btn {
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.95rem;
+  font-size: 0.88rem;
+}
 .pt-step-title {
   font-size: 0.72rem;
   font-weight: 700;

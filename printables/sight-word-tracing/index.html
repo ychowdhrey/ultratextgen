@@ -92,6 +92,14 @@
         "@type": "Answer",
         "text": "Yes — completely free, with no sign-up, watermark, or limit. Everything is generated in your browser, so you can make as many sight word worksheets as you like."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I print the whole Dolch or Fry list at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Open Whole list — one sheet per word and tap a preset to load the complete Dolch pre-primer list (40 words), Dolch primer list (52 words), or the first 50 Fry words — or paste your own list. Print builds one worksheet per word at your chosen difficulty; choose “Save as PDF” in the print dialog to keep the whole packet as one PDF, free, with no email required."
+      }
     }
   ]
 }
@@ -244,6 +252,17 @@
               Solid model row on top
             </label>
           </div>
+
+          <details class="pt-roster-field">
+            <summary>Whole list — one sheet per word</summary>
+            <div class="pt-roster-presets" role="group" aria-label="Load a whole sight-word list">
+              <button type="button" class="pt-roster-preset" data-words="a|and|away|big|blue|can|come|down|find|for|funny|go|help|here|I|in|is|it|jump|little|look|make|me|my|not|one|play|red|run|said|see|the|three|to|two|up|we|where|yellow|you">Dolch pre-primer · 40 words</button>
+              <button type="button" class="pt-roster-preset" data-words="all|am|are|at|ate|be|black|brown|but|came|did|do|eat|four|get|good|have|he|into|like|must|new|no|now|on|our|out|please|pretty|ran|ride|saw|say|she|so|soon|that|there|they|this|too|under|want|was|well|went|what|white|who|will|with|yes">Dolch primer · 52 words</button>
+              <button type="button" class="pt-roster-preset" data-words="the|of|and|a|to|in|is|you|that|it|he|was|for|on|are|as|with|his|they|I|at|be|this|have|from|or|one|had|by|word|but|not|what|all|were|we|when|your|can|said|there|use|an|each|which|she|do|how|their|if">Fry first 50</button>
+            </div>
+            <textarea id="pt-gen-roster" class="main-input" rows="5" placeholder="One word per line…&#10;the&#10;and&#10;see" aria-label="Word list — one word per line"></textarea>
+            <p class="pt-roster-hint">Load a full Dolch or Fry list with one tap — or paste your own list or class roster (up to 60 lines). Print builds one worksheet per word at the difficulty picked above; choose “Save as PDF” in the print dialog to get the whole packet as one PDF. Download PNG saves the single word typed above.</p>
+          </details>
         </div>
 
         <!-- Live preview -->
@@ -255,6 +274,7 @@
           <div class="pt-paper" id="pt-gen-preview" aria-live="polite"></div>
           <div class="pt-preview-actions">
             <button type="button" class="bubble-btn bubble-btn-primary" id="pt-gen-print">Print worksheet</button>
+            <button type="button" class="bubble-btn" id="pt-gen-ladder">Print all 7 levels</button>
             <button type="button" class="bubble-btn" id="pt-gen-png">Download PNG</button>
           </div>
           <p class="pt-preview-note">Runs entirely in your browser — nothing is uploaded. In the print dialog, choose “Save as PDF” to keep a copy.</p>
@@ -334,6 +354,19 @@
         <div class="faq-answer">
           Yes — completely free, with no sign-up, watermark, or limit. Everything is generated in your
           browser, so you can make as many sight word worksheets as you like.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Can I print the whole Dolch or Fry list at once?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-answer">
+          Yes. Open <strong>Whole list — one sheet per word</strong> and tap a preset to load the complete Dolch pre-primer list
+          (40 words), Dolch primer list (52 words), or the first 50 Fry words — or paste your own list. <strong>Print</strong> builds
+          one worksheet per word at your chosen difficulty; choose <strong>“Save as PDF”</strong> in the print dialog to keep the
+          whole packet as one PDF, free, with no email required.
         </div>
       </div>
 
