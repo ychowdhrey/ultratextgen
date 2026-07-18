@@ -1,0 +1,91 @@
+{
+  "slug": "braille-symbole",
+  "lang": "de",
+  "title": "Braille-Muster-Symbole: ⠿ ⣿ leere & Punkt-Zeichen kopieren",
+  "meta_description": "Braille-Muster-Symbole kopieren und einfügen — das leere Braille-Zeichen (⠀), volle Füllungen (⣿) und jede Punktkombination. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "breadcrumb": "Braille-Muster-Symbole",
+  "hero_h1": "Braille-Muster-Symbole",
+  "hero_tagline": "Jedes Braille-Punktmuster, vom unsichtbaren leeren Zeichen bis zum voll gefüllten Block. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "intro": "Braille-Muster-Zeichen belegen einen kompletten Unicode-Block mit 256 Punktkombinationen. Über ihren ursprünglichen Zweck als Tastschrift hinaus werden sie online vielfach genutzt: Das leere Braille-Muster (⠀) ist ein beliebter unsichtbarer Platzhalter für Benutzernamen und Bios, während dichte Füllungen wie ⣿ kompakte Balken und ASCII-Art ergeben. Diese Bibliothek versammelt die leeren und leichten Muster, die vollen und dichten Füllungen sowie die einzelnen Punktpositionen, die du zu eigenen Formen mischen kannst.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/de/library/braille-symbole/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/braille-pattern-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/braille-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/braille-pattern-symbols/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "blank-light-patterns",
+      "label": "Leer & Leicht",
+      "h2": "Leere & leichte Muster",
+      "intro": "Das unsichtbare leere Braille-Muster und schrittweise gefüllte Punktreihen. Das leere Zeichen wird als leerer Raum dargestellt, zählt aber als sichtbares Glyph — deshalb ist es ein beliebter Platzhalter.",
+      "symbols": [
+        { "char": "⠀", "label": "Leeres Braille-Muster (unsichtbarer Platzhalter)" },
+        { "char": "⠁", "label": "Braille-Muster Punkte-1" },
+        { "char": "⠃", "label": "Braille-Muster Punkte-12" },
+        { "char": "⠇", "label": "Braille-Muster Punkte-123" },
+        { "char": "⠏", "label": "Braille-Muster Punkte-1234" },
+        { "char": "⠟", "label": "Braille-Muster Punkte-12345" },
+        { "char": "⠿", "label": "Braille-Muster Punkte-123456" }
+      ]
+    },
+    {
+      "id": "dense-solid-fills",
+      "label": "Dichte Füllungen",
+      "h2": "Dichte & volle Füllungen",
+      "intro": "Acht-Punkt-Muster, die wie gefüllte Blöcke wirken. Das volle Muster (⣿) ist das dichteste Braille-Glyph und eignet sich gut für Balken und Schattierungen.",
+      "symbols": [
+        { "char": "⣿", "label": "Braille-Muster Punkte-12345678 (Vollblock)" },
+        { "char": "⡿", "label": "Braille-Muster Punkte-1234567" },
+        { "char": "⢿", "label": "Braille-Muster Punkte-1234568" },
+        { "char": "⣟", "label": "Braille-Muster Punkte-1234578" },
+        { "char": "⣯", "label": "Braille-Muster Punkte-1234678" },
+        { "char": "⣷", "label": "Braille-Muster Punkte-1235678" },
+        { "char": "⣾", "label": "Braille-Muster Punkte-2345678" }
+      ]
+    },
+    {
+      "id": "dot-positions-spacers",
+      "label": "Punktpositionen",
+      "h2": "Punktpositionen & Platzhalter",
+      "intro": "Einzelne Punkte und kleine Cluster, die du kombinieren kannst, um eigene Braille-Formen, gepunktete Trenner und Texturen zu zeichnen.",
+      "symbols": [
+        { "char": "⠂", "label": "Braille-Muster Punkte-2" },
+        { "char": "⠄", "label": "Braille-Muster Punkte-3" },
+        { "char": "⠈", "label": "Braille-Muster Punkte-4" },
+        { "char": "⠐", "label": "Braille-Muster Punkte-5" },
+        { "char": "⠠", "label": "Braille-Muster Punkte-6" },
+        { "char": "⡀", "label": "Braille-Muster Punkte-7" },
+        { "char": "⢀", "label": "Braille-Muster Punkte-8" },
+        { "char": "⠒", "label": "Braille-Muster Punkte-25" },
+        { "char": "⠤", "label": "Braille-Muster Punkte-36" },
+        { "char": "⠶", "label": "Braille-Muster Punkte-2356" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/rahmenzeichen/",
+      "title": "Rahmenzeichen & Blocksymbole",
+      "desc": "Linien, Blöcke und Schattierungen für Balken und ASCII-Art."
+    },
+    {
+      "href": "/de/library/aesthetische-symbole/",
+      "title": "Ästhetische Symbole",
+      "desc": "Funkel, Herzen und unsichtbare Platzhalter für ästhetische Bios."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ]
+}
