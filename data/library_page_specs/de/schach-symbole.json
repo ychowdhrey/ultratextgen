@@ -1,0 +1,141 @@
+{
+  "slug": "schach-symbole",
+  "lang": "de",
+  "title": "Schach-Symbole — Unicode-Schachfiguren kopieren & einfügen",
+  "meta_description": "Unicode-Schachfiguren-Symbole kopieren und einfügen — Könige, Damen, Türme, Läufer, Springer und Bauern mit Figurennamen und Notationszeichen. Zum Kopieren anklicken.",
+  "breadcrumb": "Schach-Symbole",
+  "hero_h1": "Schachfiguren-Symbole",
+  "hero_tagline": "Eine Referenzsammlung von Unicode-Schachfiguren-Symbolen — die westlichen Standardfiguren, Brettfelder, Märchenschach-Figuren und Notationszeichen. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "intro": "Diese Bibliothek enthält Unicode-Schachfiguren-Symbole für das westliche Schach (weiße und schwarze Könige, Damen, Türme, Läufer, Springer und Bauern) sowie erweiterte Märchenschach-Figuren und Notationszeichen. Die Symbole sind nach Figurenfarbe und Kategorie geordnet.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/de/library/schach-symbole/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/chess-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/schach-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/chess-symbols/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "Weiße Figuren",
+      "h2": "Weiße Schachfiguren",
+      "intro": "Die sechs weißen (umrandeten) Schachfiguren-Symbole in Unicode: König, Dame, Turm, Läufer, Springer und Bauer.",
+      "symbols": [
+        { "char": "♔", "label": "König" },
+        { "char": "♕", "label": "Dame" },
+        { "char": "♖", "label": "Turm" },
+        { "char": "♗", "label": "Läufer" },
+        { "char": "♘", "label": "Springer" },
+        { "char": "♙", "label": "Bauer" }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "Schwarze Figuren",
+      "h2": "Schwarze Schachfiguren",
+      "intro": "Die sechs schwarzen (gefüllten) Schachfiguren-Symbole in Unicode: König, Dame, Turm, Läufer, Springer und Bauer.",
+      "symbols": [
+        { "char": "♚", "label": "König" },
+        { "char": "♛", "label": "Dame" },
+        { "char": "♜", "label": "Turm" },
+        { "char": "♝", "label": "Läufer" },
+        { "char": "♞", "label": "Springer" },
+        { "char": "♟", "label": "Bauer" }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "Brett & Spiel",
+      "h2": "Brettfelder & Spiel-Symbole",
+      "intro": "Brettfeld-Zeichen in verschiedenen Größen, mit denen sich in Unicode Schachbretter darstellen lassen.",
+      "symbols": [
+        { "char": "⬜", "label": "Weißes Quadrat" },
+        { "char": "⬛", "label": "Schwarzes Quadrat" },
+        { "char": "▪", "label": "Kleines schwarzes Quadrat" },
+        { "char": "▫", "label": "Kleines weißes Quadrat" },
+        { "char": "◻", "label": "Mittleres weißes Quadrat" },
+        { "char": "◼", "label": "Mittleres schwarzes Quadrat" }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "Erweiterte Figuren",
+      "h2": "Erweiterte Schach-Symbole",
+      "intro": "Märchenschach-Figuren und Notationszeichen aus dem Unicode-Block „Chess Symbols“, inklusive neutraler Figuren und gedrehter Varianten.",
+      "symbols": [
+        { "char": "🨀", "label": "Neutraler König" },
+        { "char": "🨁", "label": "Neutrale Dame" },
+        { "char": "🨂", "label": "Neutraler Turm" },
+        { "char": "🨃", "label": "Neutraler Läufer" },
+        { "char": "🨄", "label": "Neutraler Springer" },
+        { "char": "🨅", "label": "Neutraler Bauer" },
+        { "char": "🨆", "label": "Weißer Springer 45°" },
+        { "char": "🨇", "label": "Schwarzer Springer 45°" },
+        { "char": "🨈", "label": "Neutraler Springer 45°" },
+        { "char": "🨉", "label": "Weißer König 90°" },
+        { "char": "🨊", "label": "Weiße Dame 90°" },
+        { "char": "🨋", "label": "Weißer Turm 90°" },
+        { "char": "🨌", "label": "Weißer Läufer 90°" },
+        { "char": "🨍", "label": "Weißer Springer 90°" },
+        { "char": "🨎", "label": "Weißer Bauer 90°" }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "Notation & Kommentar",
+      "h2": "Schach-Notation & Kommentar-Symbole",
+      "intro": "Die Zeichen der Schachnotation zum Festhalten von Schach, Schlagzügen und Zugqualität (PGN/algebraische Kommentar-Glyphen).",
+      "symbols": [
+        { "char": "×", "label": "Schlagzug" },
+        { "char": "+", "label": "Schach" },
+        { "char": "#", "label": "Schachmatt" },
+        { "char": "‡", "label": "Matt (‡)" },
+        { "char": "!", "label": "Guter Zug" },
+        { "char": "!!", "label": "Brillanter Zug" },
+        { "char": "?", "label": "Fehler" },
+        { "char": "??", "label": "Grober Fehler" },
+        { "char": "!?", "label": "Interessanter Zug" },
+        { "char": "?!", "label": "Fragwürdiger Zug" },
+        { "char": "=", "label": "Ausgeglichen" },
+        { "char": "±", "label": "Weiß steht besser" },
+        { "char": "∓", "label": "Schwarz steht besser" },
+        { "char": "⩲", "label": "Leichter Vorteil" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "chess-collections",
+    "label": "Schach-Sammlungen",
+    "h2": "Schachfiguren-Sätze",
+    "intro": "Kopiere eine komplette Seite in der üblichen Notationsreihenfolge (König, Dame, Turm, Läufer, Springer, Bauer)."
+  },
+  "collection_container_id": "chessCollectionsContainer",
+  "collections": [
+    { "name": "Weiße Schachfiguren", "flags": ["♔", "♕", "♖", "♗", "♘", "♙"], "defaultFormat": "inline" },
+    { "name": "Schwarze Schachfiguren", "flags": ["♚", "♛", "♜", "♝", "♞", "♟"], "defaultFormat": "inline" }
+  ],
+  "related": [
+    {
+      "href": "/de/library/spielkarten-symbole/",
+      "title": "Spielkarten-Symbole",
+      "desc": "Pik, Herz, Karo und Kreuz — plus Würfel und weitere spielbezogene Unicode-Zeichen."
+    },
+    {
+      "href": "/de/library/stern-symbole/",
+      "title": "Stern-Symbole",
+      "desc": "Unicode-Sternzeichen in verschiedenen Stilen — gefüllt, umrandet und dekorativ."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ]
+}
