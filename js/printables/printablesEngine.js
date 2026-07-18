@@ -32,9 +32,12 @@
  * any print action):
  *   #pt-strip            character picker
  *   #pt-panel            selected-character detail
- *   #pt-alphabet-grid    printable alphabet grid   (+ button #pt-alphabet-print;
- *                        CFG.alphabetPrint: "book" prints one character per page
- *                        instead of the compact sheet — see printAlphabetBook)
+ *   #pt-alphabet-grid    printable alphabet grid
+ *   #pt-alphabet-print   button: print the full alphabet (works with or without
+ *                        the grid; CFG.alphabetPrint: "book" prints one character
+ *                        per page instead of the compact sheet — see
+ *                        printAlphabetBook. Sheet-mode pages get an auto-added
+ *                        secondary book button beside it)
  *   #pt-book-print       optional extra button (e.g. on a promo card) that
  *                        prints the one-page-per-character alphabet book
  *   #pt-practice-print   button: print ruled practice sheet
@@ -1037,6 +1040,18 @@
 
   function buildAlphabetGrid() {
     if (el.bookPrint) el.bookPrint.addEventListener("click", printAlphabetBook);
+    if (el.alphaPrint) {
+      const bookMode = CFG.alphabetPrint === "book";
+      el.alphaPrint.addEventListener("click", bookMode ? printAlphabetBook : printAlphabetSheet);
+      if (!bookMode) {
+        const bookBtn = document.createElement("button");
+        bookBtn.type = "button";
+        bookBtn.className = "bubble-btn";
+        bookBtn.textContent = T.printBook;
+        bookBtn.addEventListener("click", printAlphabetBook);
+        el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
+      }
+    }
     if (!el.alphaGrid) return;
     CHARS.forEach((ch) => {
       const cell = document.createElement("button");
@@ -1050,18 +1065,6 @@
       });
       el.alphaGrid.appendChild(cell);
     });
-    if (el.alphaPrint) {
-      const bookMode = CFG.alphabetPrint === "book";
-      el.alphaPrint.addEventListener("click", bookMode ? printAlphabetBook : printAlphabetSheet);
-      if (!bookMode) {
-        const bookBtn = document.createElement("button");
-        bookBtn.type = "button";
-        bookBtn.className = "bubble-btn";
-        bookBtn.textContent = T.printBook;
-        bookBtn.addEventListener("click", printAlphabetBook);
-        el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
-      }
-    }
   }
 
   function smallGlyphCell(ch) {
