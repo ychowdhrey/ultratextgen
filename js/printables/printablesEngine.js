@@ -32,7 +32,11 @@
  * any print action):
  *   #pt-strip            character picker
  *   #pt-panel            selected-character detail
- *   #pt-alphabet-grid    printable alphabet grid   (+ button #pt-alphabet-print)
+ *   #pt-alphabet-grid    printable alphabet grid   (+ button #pt-alphabet-print;
+ *                        CFG.alphabetPrint: "book" prints one character per page
+ *                        instead of the compact sheet — see printAlphabetBook)
+ *   #pt-book-print       optional extra button (e.g. on a promo card) that
+ *                        prints the one-page-per-character alphabet book
  *   #pt-practice-print   button: print ruled practice sheet
  *   #pt-name-input       name / word field  (+ #pt-name-print, #pt-name-png,
  *                        #pt-name-preview, #pt-name-rows)
@@ -74,6 +78,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
+      printBook: "Print as a book — one page per letter",
       classSet: "Class set — one sheet per name", sheets: "sheets",
       classSetPngHint: "PNG downloads the current name; use Print for the whole set.",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
@@ -106,6 +111,7 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
+      printBook: "Imprimer en livret — une page par lettre",
       classSet: "Série pour la classe — une feuille par prénom", sheets: "feuilles",
       classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Imprimer pour toute la série.",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
@@ -138,6 +144,7 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
+      printBook: "Imprimir como libro — una página por letra",
       classSet: "Juego para la clase — una hoja por nombre", sheets: "hojas",
       classSetPngHint: "El PNG descarga el nombre actual; usa Imprimir para el juego completo.",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
@@ -170,6 +177,7 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
+      printBook: "Imprimir como livro — uma página por letra",
       classSet: "Conjunto para a turma — uma folha por nome", sheets: "folhas",
       classSetPngHint: "O PNG baixa o nome atual; use Imprimir para o conjunto completo.",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
@@ -202,6 +210,7 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
+      printBook: "Stampa come libretto — una pagina per lettera",
       classSet: "Set per la classe — un foglio per nome", sheets: "fogli",
       classSetPngHint: "Il PNG scarica il nome corrente; usa Stampa per l'intero set.",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
@@ -234,6 +243,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
+      printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
       classSet: "Zestaw dla klasy — jedna karta na imię", sheets: "kart",
       classSetPngHint: "PNG pobiera bieżące imię; użyj Drukuj dla całego zestawu.",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
@@ -266,6 +276,7 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
+      printBook: "Als Heft drucken — eine Seite pro Buchstabe",
       classSet: "Klassensatz — ein Blatt pro Name", sheets: "Blätter",
       classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Drucken verwenden.",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
@@ -327,6 +338,7 @@
     panel: $("#pt-panel"),
     alphaGrid: $("#pt-alphabet-grid"),
     alphaPrint: $("#pt-alphabet-print"),
+    bookPrint: $("#pt-book-print"),
     practicePrint: $("#pt-practice-print"),
     nameInput: $("#pt-name-input"),
     namePrint: $("#pt-name-print"),
@@ -990,7 +1002,41 @@
      Section: printable alphabet grid (outline mode)
      --------------------------------------------------------------- */
 
+  // "Print the alphabet" has two print layouts:
+  //   - "sheet" (default): the original compact grid — the whole set on as
+  //     few pages as possible, for a single-sheet reference/center activity.
+  //   - "book"  (CFG.alphabetPrint === "book"): every character on its own
+  //     full printed page, in order, so the print dialog's "Save as PDF"
+  //     produces a ready-made alphabet workbook.
+  // Book-mode pages print the book from the main #pt-alphabet-print button;
+  // sheet-mode pages keep the sheet there and get an auto-added secondary
+  // book button beside it. An optional #pt-book-print button anywhere else
+  // on the page (e.g. a promo card) triggers the same book print.
+  function printAlphabetBook() {
+    const book = document.createElement("div");
+    book.className = "bubble-print-book";
+    CHARS.forEach((ch) => {
+      const page = document.createElement("div");
+      page.className = "bubble-print-book-page";
+      const t = document.createElement("h3");
+      t.className = "bubble-print-title";
+      t.textContent = cap(NOUN) + " " + charLabel(ch) + " — ultratextgen.com";
+      page.appendChild(t);
+      page.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      book.appendChild(page);
+    });
+    printWrap("", book);
+  }
+
+  function printAlphabetSheet() {
+    const sheet = document.createElement("div");
+    sheet.className = "bubble-print-sheet";
+    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
+    printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
+  }
+
   function buildAlphabetGrid() {
+    if (el.bookPrint) el.bookPrint.addEventListener("click", printAlphabetBook);
     if (!el.alphaGrid) return;
     CHARS.forEach((ch) => {
       const cell = document.createElement("button");
@@ -1005,12 +1051,16 @@
       el.alphaGrid.appendChild(cell);
     });
     if (el.alphaPrint) {
-      el.alphaPrint.addEventListener("click", () => {
-        const sheet = document.createElement("div");
-        sheet.className = "bubble-print-sheet";
-        CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
-        printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
-      });
+      const bookMode = CFG.alphabetPrint === "book";
+      el.alphaPrint.addEventListener("click", bookMode ? printAlphabetBook : printAlphabetSheet);
+      if (!bookMode) {
+        const bookBtn = document.createElement("button");
+        bookBtn.type = "button";
+        bookBtn.className = "bubble-btn";
+        bookBtn.textContent = T.printBook;
+        bookBtn.addEventListener("click", printAlphabetBook);
+        el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
+      }
     }
   }
 
