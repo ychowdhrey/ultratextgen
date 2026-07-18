@@ -1,0 +1,124 @@
+{
+  "slug": "solidaritaetsschleifen",
+  "lang": "de",
+  "title": "Solidaritätsschleifen & Awareness-Symbole kopieren",
+  "meta_description": "Solidaritätsschleifen und Awareness-Symbole durchsuchen und kopieren — Schleifen, Medaillen, Herzen und Barrierefreiheits-Zeichen für jedes Anliegen. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "breadcrumb": "Solidaritätsschleifen & Awareness-Symbole",
+  "hero_h1": "Solidaritätsschleifen & Awareness-Symbole",
+  "hero_tagline": "Schleifen, Medaillen, Herzen und Barrierefreiheits-Zeichen für jedes Anliegen. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "intro": "Solidaritätsschleifen — im Englischen „awareness ribbons“ — stehen für ein Anliegen und machen Kampagnen, Gedenkposts und Profile sichtbar. Diese Bibliothek versammelt die Schleifen-Emojis sowie die Medaillen, Herzen, Sterne und Barrierefreiheits-Zeichen, die man am häufigsten für Awareness-Beiträge, Bios und Statusmeldungen kopiert — nach Thema gruppiert und bereit zum Einfügen.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/de/library/solidaritaetsschleifen/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/awareness-ribbons/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/solidaritaetsschleifen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/awareness-ribbons/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "ribbon-emojis",
+      "label": "Schleifen-Emojis",
+      "h2": "Schleifen-Emojis",
+      "intro": "Gängige Schleifen-Emojis für Awareness und Dekoration.",
+      "symbols": [
+        { "char": "🎀", "label": "Schleife" },
+        { "char": "🎗️", "label": "Erinnerungsschleife" }
+      ]
+    },
+    {
+      "id": "medal-and-badge-symbols",
+      "label": "Medaillen & Abzeichen",
+      "h2": "Medaillen- & Abzeichen-Symbole",
+      "intro": "Medaillen, Abzeichen und Ehrenzeichen rund um Awareness-Anliegen.",
+      "symbols": [
+        { "char": "🏅", "label": "Sportmedaille" },
+        { "char": "🎖️", "label": "Militärmedaille" },
+        { "char": "🥇", "label": "Goldmedaille" },
+        { "char": "🥈", "label": "Silbermedaille" },
+        { "char": "🥉", "label": "Bronzemedaille" },
+        { "char": "🏆", "label": "Pokal" }
+      ]
+    },
+    {
+      "id": "cause-and-awareness-symbols",
+      "label": "Anliegen & Awareness",
+      "h2": "Anliegen- & Awareness-Symbole",
+      "intro": "Symbole, die häufig mit Aufklärungskampagnen, Gesundheit und sozialen Anliegen verbunden sind.",
+      "symbols": [
+        { "char": "⚕", "label": "Medizinisches Symbol" },
+        { "char": "♿", "label": "Rollstuhlsymbol" },
+        { "char": "☮", "label": "Friedenszeichen" },
+        { "char": "☢", "label": "Radioaktiv-Zeichen" },
+        { "char": "☣", "label": "Biogefährdung-Zeichen" },
+        { "char": "💚", "label": "Grünes Herz" },
+        { "char": "💜", "label": "Lila Herz" },
+        { "char": "🧡", "label": "Oranges Herz" }
+      ]
+    },
+    {
+      "id": "heart-and-love-awareness",
+      "label": "Herz & Liebe",
+      "h2": "Herz- & Liebes-Awareness-Symbole",
+      "intro": "Herzförmige Symbole für Awareness- und Liebes-Anliegen.",
+      "symbols": [
+        { "char": "♡", "label": "Weißes Herz (Kartenfarbe)" },
+        { "char": "❤", "label": "Rotes Herz" },
+        { "char": "🩷", "label": "Rosa Herz" },
+        { "char": "💛", "label": "Gelbes Herz" },
+        { "char": "💗", "label": "Rosa (Brustkrebs)" },
+        { "char": "💙", "label": "Blau (Awareness)" },
+        { "char": "❤️", "label": "Rot (HIV/Aids)" }
+      ]
+    },
+    {
+      "id": "star-and-recognition",
+      "label": "Sterne & Anerkennung",
+      "h2": "Stern- & Anerkennungs-Symbole",
+      "intro": "Sterne und Symbole für Anerkennung und Aufmerksamkeit.",
+      "symbols": [
+        { "char": "★", "label": "Schwarzer Stern" },
+        { "char": "☆", "label": "Weißer Stern" },
+        { "char": "⭐", "label": "Weißer mittlerer Stern" },
+        { "char": "🌟", "label": "Leuchtender Stern" }
+      ]
+    },
+    {
+      "id": "accessibility-symbols",
+      "label": "Barrierefreiheit",
+      "h2": "Barrierefreiheits-Symbole",
+      "intro": "Symbole rund um Barrierefreiheit, Inklusion und Hilfsmittel.",
+      "symbols": [
+        { "char": "♿", "label": "Rollstuhlsymbol" },
+        { "char": "⚠", "label": "Warnzeichen" },
+        { "char": "🦽", "label": "Manueller Rollstuhl" },
+        { "char": "🦼", "label": "Elektrorollstuhl" },
+        { "char": "🦯", "label": "Blindenstock" },
+        { "char": "🦻", "label": "Ohr mit Hörgerät" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/herz-symbole/",
+      "title": "Herz-Symbole",
+      "desc": "Herz-Emojis und Unicode-Herzzeichen in jeder Farbe und jedem Stil."
+    },
+    {
+      "href": "/de/library/stern-symbole/",
+      "title": "Stern-Symbole",
+      "desc": "Sterne, Funkel-Zeichen und Sternchen-Varianten aus Unicode."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ]
+}
