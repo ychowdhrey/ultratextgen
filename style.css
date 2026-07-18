@@ -1941,6 +1941,10 @@ a:hover {
   text-decoration: none;
 }
 
+/* .cta-btn is normally an <a>; when a card's action is a print button
+   (e.g. #pt-book-print) strip the native button chrome so it matches. */
+button.cta-btn { border: 0; cursor: pointer; }
+
 /* Mobile responsive additions for new classes */
 @media (max-width: 640px) {
   .compare-grid {
@@ -5566,7 +5570,82 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 /* ---- Print surfaces for the shared engine ---- */
 #pt-print-root { display: none; }
 .bubble-print-single { text-align: center; }
-.bubble-print-single .bubble-outline { width: 60%; max-width: 420px; margin: 0 auto; }
+/* Single-character print: fill the printed page. These nodes only ever render
+   inside the hidden print surface, so the sizes below are print sizes — the
+   fixed height (with the SVG's preserveAspectRatio centering) makes one
+   letter a full-page worksheet on Letter and A4 alike, instead of a small
+   floating figure. */
+.bubble-print-single .bubble-outline {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 8.4in;
+  margin: 0 auto;
+}
+
+/* Glyph-mode (cursive) prints render a text node, not an SVG — scale the
+   type itself so those pages fill the sheet too. */
+.bubble-print-single .pt-glyph-print,
+.bubble-print-book-page .pt-glyph-print {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8.2in;
+  font-size: 2.8in;
+  line-height: 1.2;
+}
+
+/* Alphabet "book" print — one character per printed sheet, in order
+   (printAlphabetBook in printablesEngine.js). */
+.bubble-print-book-page { text-align: center; }
+.bubble-print-book-page .bubble-outline {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 8.2in;
+  margin: 0 auto;
+}
+@media print {
+  .bubble-print-book-page {
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .bubble-print-book-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  /* Fill the printed page: spread name-worksheet rows down the sheet and
+     center the name-puzzle sheet vertically, instead of leaving the bottom
+     third of the page blank. Print-only so on-screen previews are untouched. */
+  .bubble-print-wrap .pt-name-sheet {
+    min-height: 9.2in;
+    justify-content: space-between;
+  }
+  .pt-puzzle-print-holder .pt-puzzle-sheet {
+    min-height: 9.2in;
+    justify-content: center;
+    gap: 1.4rem;
+  }
+
+  /* Never slice a worksheet row across a page boundary on multi-page sheets. */
+  .cursive-print-row,
+  .pt-name-row,
+  .pt-gen-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Cross-stitch chart prints at page width (on screen it renders at its
+   natural stitch-grid size); the max-height keeps a tall single-letter
+   chart on one page with its legend. Only exists inside the print surface. */
+.cs-print-chart svg {
+  width: 100%;
+  max-height: 7.6in;
+}
 
 /* Name tracing worksheet (print) */
 .pt-name-sheet { display: flex; flex-direction: column; gap: 0.4rem; }
