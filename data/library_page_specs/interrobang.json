@@ -1,0 +1,73 @@
+{
+  "slug": "interrobang",
+  "page_type": "symbol",
+  "title": "Interrobang: Copy & Paste ‽ — Coined in 1962, Briefly a Real Typewriter Key",
+  "meta_description": "Copy and paste the interrobang (‽) and inverted interrobang (⸘) — the merged ?-and-! mark coined by ad-man Martin Speckter in 1962. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/interrobang/",
+  "breadcrumb": "Interrobang",
+  "hero_h1": "Interrobang (‽)",
+  "hero_tagline": "The interrobang (‽) that fuses '?' and '!' into one mark for an astonished question — coined by advertising man Martin Speckter in 1962 and briefly sold as a real typewriter key — plus its Spanish-style opening twin, the inverted interrobang (⸘). Click any symbol to copy it instantly.",
+  "intro": "The interrobang (‽, Unicode U+203D) is a single glyph that fuses a question mark with an exclamation point, built to punctuate a sentence that asks and exclaims at once — \"You did what‽\" American advertising executive Martin K. Speckter proposed it in 1962 in an article titled \"Making a New Point, or, How About That…\" in TYPEtalks, the magazine he edited; he built the name from interrogatio (Latin for a rhetorical question) and bang (printers' slang for the exclamation mark), passing over rejected candidates like \"exclamaquest\" and \"exclarotive.\" It briefly became real hardware: Richard Isbell's 1965 Americana typeface included it, some Remington typewriters offered an interrobang key by 1968, and replacement keycaps reached Smith-Corona machines in the 1970s — but it never made it onto the standard keyboard and faded by the late 1970s. Unicode still encodes it, along with its mirror image, the inverted interrobang (⸘, U+2E18, added in Unicode 5.1 in 2008), designed to open a sentence the way ¿ and ¡ open questions and exclamations in Spanish. Don't confuse it with the reversed question mark (⸮), a separate 1575 rhetorical mark with its own page.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-interrobang",
+      "label": "The Interrobang",
+      "h2": "The Interrobang — ‽ & ⸘",
+      "intro": "The mark itself and its mirror image: the standard interrobang that closes an astonished question, and the inverted form built to open one.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang (U+203D) — Question + Exclamation in One Glyph" },
+        { "char": "⸘", "label": "Inverted Interrobang (U+2E18) — The Sentence-Opening Twin" }
+      ]
+    },
+    {
+      "id": "marks-it-merges",
+      "label": "What It Merges",
+      "h2": "The Question Mark and Exclamation Mark It Combines",
+      "intro": "The interrobang compresses these two everyday marks into one. When a keyboard can't produce it, people type the pair — or reach for Unicode's ready-made combined forms.",
+      "symbols": [
+        { "char": "?", "label": "Question Mark (U+003F)" },
+        { "char": "!", "label": "Exclamation Mark (U+0021)" },
+        { "char": "⁉", "label": "Exclamation Question Mark (U+2049)" },
+        { "char": "⁈", "label": "Question Exclamation Mark (U+2048)" },
+        { "char": "⁇", "label": "Double Question Mark (U+2047)" }
+      ]
+    },
+    {
+      "id": "opening-punctuation",
+      "label": "Opening Punctuation",
+      "h2": "Why the Inverted Interrobang Exists",
+      "intro": "Spanish and related languages open a question with ¿ and an exclamation with ¡; the inverted interrobang ⸘ merges that opening pair, mirroring at the start of a sentence what ‽ does at the end. The reversed question mark ⸮ is a separate mark entirely — see its own page.",
+      "symbols": [
+        { "char": "¿", "label": "Inverted Question Mark (U+00BF)" },
+        { "char": "¡", "label": "Inverted Exclamation Mark (U+00A1)" },
+        { "char": "⸘", "label": "Inverted Interrobang (U+2E18)" },
+        { "char": "⸮", "label": "Reversed Question Mark (U+2E2E)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "The full reference set of everyday and specialty punctuation marks in Unicode, from dashes and brackets to novelty marks like the interrobang."
+    },
+    {
+      "href": "/symbol/backwards-question-mark/",
+      "title": "Backwards Question Mark (⸮)",
+      "desc": "A different historical rhetorical mark — the 1575 reversed question mark, not a question-plus-exclamation blend like the interrobang."
+    },
+    {
+      "href": "/symbol/em-dash/",
+      "title": "Em Dash (—)",
+      "desc": "Another punctuation mark with a vivid backstory and a family of look-alikes people constantly mix it up with."
+    },
+    {
+      "href": "/symbol/pilcrow/",
+      "title": "Pilcrow (¶)",
+      "desc": "The paragraph mark — an editorial typography symbol with its own long print history."
+    }
+  ]
+}

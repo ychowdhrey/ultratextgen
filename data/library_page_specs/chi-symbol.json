@@ -1,0 +1,94 @@
+{
+  "slug": "chi-symbol",
+  "page_type": "symbol",
+  "title": "Chi Symbol: Copy & Paste χ Χ — The X in \"Xmas,\" the Chi-Rho & the χ² Test",
+  "meta_description": "Copy and paste chi — lowercase χ and capital Χ — the letter behind the Chi-Rho monogram, the X in Xmas, and the χ² statistical test. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/chi-symbol/",
+  "breadcrumb": "Chi Symbol",
+  "hero_h1": "Chi Symbol",
+  "hero_tagline": "The lowercase χ that powers the χ² statistical test, the capital Χ that opens \"Christ\" in Greek and gave us the Chi-Rho monogram and the \"X\" in Xmas — the one Greek letter forever mistaken for a Latin X. Click any symbol to copy it instantly.",
+  "intro": "Chi is the 22nd letter of the Greek alphabet, written χ in lowercase (U+03C7, GREEK SMALL LETTER CHI) and Χ in uppercase (U+03A7, GREEK CAPITAL LETTER CHI) — a glyph so close to the Latin X that the two are constantly confused. That resemblance is exactly why chi carries so much history. The capital Χ is the first letter of Χριστός (Christós), Greek for \"Christ,\" and scribes have used it as shorthand for the name for over a thousand years — the spelling \"Xres mæsse\" appears in the Anglo-Saxon Chronicle around 1100, and the same habit is why English still writes \"Xmas\" today. Combine chi with the next letter, rho, and you get the Chi-Rho monogram ☧ (U+2627, CHI RHO), the early Christogram that Roman emperor Constantine I adopted as his military standard, the labarum, after a reported vision before the Battle of the Milvian Bridge on 28 October 312 CE — an account that reaches us through the ancient writers Eusebius and Lactantius rather than a neutral record. In modern math and science, lowercase χ is the workhorse of the chi-squared (χ²) test, the goodness-of-fit statistic Karl Pearson introduced in 1900 and now a staple of statistics and data science.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-chi-symbol",
+      "label": "The Chi Symbol",
+      "h2": "The Chi Symbol — Χ & χ",
+      "intro": "The Greek letter itself, in both cases. Uppercase Χ carries chi's religious and abbreviation history; lowercase χ does most of the modern math and science work.",
+      "symbols": [
+        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7)" },
+        { "char": "χ", "label": "Greek Small Letter Chi (U+03C7)" }
+      ]
+    },
+    {
+      "id": "chi-rho-and-xmas",
+      "label": "Chi-Rho & Xmas",
+      "h2": "Chi-Rho, Xmas & the Christian Monogram",
+      "intro": "Because capital Χ opens Χριστός (\"Christ\"), it became a centuries-old shorthand for the name — the source of both the Chi-Rho monogram Constantine flew as a battle standard and the modern \"Xmas.\" Paste the pieces of that story here.",
+      "symbols": [
+        { "char": "☧", "label": "Chi Rho (U+2627) — the ΧΡ Christogram / labarum" },
+        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7) — the Χ that starts Χριστός" },
+        { "char": "X", "label": "Latin Capital Letter X (U+0058) — the X in \"Xmas\"" }
+      ]
+    },
+    {
+      "id": "chi-in-stats-science",
+      "label": "Stats & Science",
+      "h2": "Chi-Squared (χ²) in Statistics & Science",
+      "intro": "Lowercase χ is a scientific workhorse: the χ² goodness-of-fit test Karl Pearson introduced in 1900, plus the Euler characteristic in topology and magnetic susceptibility in physics. Grab the letter and a superscript two to compose χ² yourself.",
+      "symbols": [
+        { "char": "χ", "label": "Greek Small Letter Chi (U+03C7) — the χ² test statistic" },
+        { "char": "²", "label": "Superscript Two (U+00B2) — to compose χ²" },
+        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7) — also names random variables" }
+      ]
+    },
+    {
+      "id": "chi-vs-latin-x",
+      "label": "Chi vs. X",
+      "h2": "Chi vs. the Latin X — the Look-Alikes",
+      "intro": "Chi looks almost identical to the Latin letter X, but each has its own code point — swapping them silently breaks search, code, and equations. Here are all four so you can copy the exact one you mean.",
+      "symbols": [
+        { "char": "χ", "label": "Greek Small Letter Chi (U+03C7)" },
+        { "char": "Χ", "label": "Greek Capital Letter Chi (U+03A7)" },
+        { "char": "x", "label": "Latin Small Letter X (U+0078)" },
+        { "char": "X", "label": "Latin Capital Letter X (U+0058)" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Greek Letters",
+      "h2": "Related Greek Letters",
+      "intro": "Chi is the 22nd letter of the Greek alphabet, sitting between phi and psi. Here are its neighbors and the other Greek letters people copy alongside it.",
+      "symbols": [
+        { "char": "φ", "label": "Greek Small Letter Phi" },
+        { "char": "ψ", "label": "Greek Small Letter Psi" },
+        { "char": "π", "label": "Greek Small Letter Pi" },
+        { "char": "Σ", "label": "Greek Capital Letter Sigma" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet in uppercase, lowercase, and math variant forms to copy and paste."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Chi-squared, superscripts, and the operators and Greek letters that fill out an equation."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "The Chi-Rho, crosses, and other Christian and faith symbols gathered in one reference."
+    },
+    {
+      "href": "/symbol/pi-symbol/",
+      "title": "Pi Symbol",
+      "desc": "Another Greek letter with a double life — the famous math constant π and the capital Π product operator."
+    }
+  ]
+}

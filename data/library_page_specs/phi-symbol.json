@@ -1,0 +1,101 @@
+{
+  "slug": "phi-symbol",
+  "page_type": "symbol",
+  "title": "Phi Symbol: Copy & Paste φ Φ ϕ — The Golden Ratio Letter Named for Phidias",
+  "meta_description": "Copy and paste the phi symbol — lowercase φ (U+03C6), capital Φ, and the closed math variant ϕ — the golden-ratio letter (≈1.618) that Mark Barr named around 1909 for the sculptor Phidias. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/phi-symbol/",
+  "breadcrumb": "Phi Symbol",
+  "hero_h1": "Phi Symbol",
+  "hero_tagline": "The lowercase φ that stands for the golden ratio (≈1.618), the capital Φ physicists use for magnetic flux, and the closed math variant ϕ — the letter Mark Barr named around 1909 after the sculptor Phidias. Click any symbol to copy it instantly.",
+  "intro": "Phi's lowercase glyph, φ (U+03C6, GREEK SMALL LETTER PHI), is the 21st letter of the Greek alphabet, but it's most famous as the symbol for the golden ratio — the irrational number (1 + √5) / 2 ≈ 1.6180339887 that artists and architects have chased for centuries. That naming is surprisingly recent: the ratio was long written with the Greek letter tau (τ) until the American mathematician Mark Barr proposed φ around 1909, picking it as the first letter of Phidias (Φειδίας, c. 490–430 BC), the sculptor tied to the Parthenon's proportions. Phi also carries a quirk no other Greek letter here has — two lowercase glyphs. The everyday letter φ (U+03C6) usually renders as the 'loopy,' open form, while a separately encoded Greek phi symbol, ϕ (U+03D5), is the 'closed,' stroked form — a circle crossed by a vertical line — that Unicode has recommended for mathematics since version 3.0, though which shape a font actually shows varies by typeface. The capital Φ (U+03A6) does heavier lifting in the sciences: it's the standard symbol for magnetic flux in physics, while lowercase φ marks Euler's totient function, φ(n), in number theory.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-phi-symbol",
+      "label": "The Phi Symbol",
+      "h2": "The Phi Symbol — φ, Φ & ϕ",
+      "intro": "The three forms people mean by 'the phi symbol': the everyday lowercase letter, the capital, and the dedicated math variant. Paste whichever one you need.",
+      "symbols": [
+        {
+          "char": "φ",
+          "label": "Greek Small Letter Phi (U+03C6) — The Golden-Ratio Letter, 'Loopy' Open Form"
+        },
+        {
+          "char": "Φ",
+          "label": "Greek Capital Letter Phi (U+03A6) — Magnetic Flux in Physics"
+        },
+        {
+          "char": "ϕ",
+          "label": "Greek Phi Symbol (U+03D5) — The 'Closed,' Stroked Math Variant"
+        }
+      ]
+    },
+    {
+      "id": "phi-golden-ratio-math",
+      "label": "Golden Ratio & Math",
+      "h2": "Phi: The Golden Ratio & Math Uses",
+      "intro": "Phi's most-searched job. Lowercase φ names the golden ratio ≈ 1.618, defined as (1 + √5) / 2; since Unicode 3.0 the closed ϕ (U+03D5) is the glyph recommended for that mathematical use, and capital Φ marks magnetic flux.",
+      "symbols": [
+        {
+          "char": "φ",
+          "label": "Lowercase Phi (U+03C6) — Golden Ratio ≈ 1.6180339887"
+        },
+        {
+          "char": "ϕ",
+          "label": "Greek Phi Symbol (U+03D5) — The Math-Preferred Closed Glyph"
+        },
+        {
+          "char": "Φ",
+          "label": "Capital Phi (U+03A6) — Magnetic Flux"
+        },
+        {
+          "char": "√",
+          "label": "Square Root (U+221A) — Appears in Phi's Formula (1 + √5) / 2"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Greek Letters",
+      "h2": "Related Greek Letters",
+      "intro": "Phi is the 21st letter of the Greek alphabet. Here are the neighbors and famous constants people search for most alongside it.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Greek Capital Letter Sigma"
+        },
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "θ",
+          "label": "Greek Small Letter Theta"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet in uppercase, lowercase, and math variant forms to copy and paste."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "The golden ratio, square root, and the operators and Greek letters that fill out an equation."
+    },
+    {
+      "href": "/symbol/pi-symbol/",
+      "title": "Pi Symbol",
+      "desc": "Phi's fellow famous constant: another Greek letter, π ≈ 3.14159, that stands for a number rather than a sound."
+    }
+  ]
+}

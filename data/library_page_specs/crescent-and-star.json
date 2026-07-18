@@ -1,0 +1,76 @@
+{
+  "slug": "crescent-and-star",
+  "page_type": "symbol",
+  "title": "Star and Crescent: Copy & Paste ☪ — Ottoman Emblem, Not a Quranic Symbol",
+  "meta_description": "Copy and paste the star and crescent (☪, U+262A) — the flag emblem tied to Islam that actually traces to the Ottomans, not the Quran. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/crescent-and-star/",
+  "breadcrumb": "Star and Crescent",
+  "hero_h1": "Star and Crescent (☪)",
+  "hero_tagline": "The star and crescent (☪ ☪️) — the moon-and-star device that flies on the flags of Turkey, Pakistan, Algeria, and Tunisia, and the sign most people read as \"Islam\" even though it descends from Ottoman and pre-Islamic emblems rather than scripture. Click any symbol to copy it instantly.",
+  "intro": "The star and crescent (☪, U+262A) is the crescent-moon-and-five-pointed-star device most people today read as a symbol of Islam — yet it appears nowhere in the Quran or Hadith, and many Muslims reject it as a religious symbol at all. Its roots run far older than Islam: the pairing of a crescent with a star was ancient Near Eastern iconography, associated in Mesopotamia with the moon god Sin and the goddess Ishtar (Venus, the morning star), and it circulated on the coins of the Greek city of Byzantium centuries before the Common Era. The version the world knows descends from the Ottoman Empire, which took it up as a state emblem in the late 18th century — under sultans from Mustafa III (1757–1774) through Selim III (1789–1807) — with the red flag standardized in 1844 becoming the template for the modern flag of Turkey. Only in the 20th century, through the Ottomans' standing as a leading Islamic power, did the mark become broadly associated with Islam itself. Unicode encodes it as U+262A STAR AND CRESCENT, added in version 1.1 in 1993; the emoji form ☪️ adds a variation selector (U+262A U+FE0F). Today it appears on the flags of Turkey, Pakistan, Algeria, Tunisia, and Azerbaijan, among others.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "star-and-crescent",
+      "label": "Star & Crescent",
+      "h2": "Star and Crescent Symbol — ☪ & ☪️",
+      "intro": "The Unicode star and crescent, ready to paste into a bio, post, or profile. Two forms: the plain black glyph and the full-color emoji.",
+      "symbols": [
+        { "char": "☪", "label": "Star and Crescent (U+262A)" },
+        { "char": "☪️", "label": "Star and Crescent Emoji (U+262A U+FE0F)" }
+      ]
+    },
+    {
+      "id": "crescent-and-star-apart",
+      "label": "Crescent & Star Apart",
+      "h2": "Not the Same as a Plain Crescent or Star",
+      "intro": "The star and crescent is one combined glyph. The separate crescent-moon and star characters people often reach for instead each have their own code point and their own job.",
+      "symbols": [
+        { "char": "☾", "label": "Last Quarter Moon (U+263E) — Plain Crescent" },
+        { "char": "☽", "label": "First Quarter Moon (U+263D)" },
+        { "char": "🌙", "label": "Crescent Moon Emoji (U+1F319)" },
+        { "char": "⭐", "label": "White Medium Star (U+2B50)" },
+        { "char": "★", "label": "Black Star (U+2605)" },
+        { "char": "☆", "label": "White Star (U+2606)" }
+      ]
+    },
+    {
+      "id": "related-faith-symbols",
+      "label": "Faith Symbols",
+      "h2": "Other Faith Symbols It's Grouped With",
+      "intro": "The star and crescent is usually searched and displayed alongside the identity symbols of other world religions. Here are the ones it most often sits next to.",
+      "symbols": [
+        { "char": "✡️", "label": "Star of David (U+2721)" },
+        { "char": "✝️", "label": "Latin Cross (U+271D)" },
+        { "char": "☸️", "label": "Wheel of Dharma (U+2638)" },
+        { "char": "🕉️", "label": "Om (U+1F549)" },
+        { "char": "☯️", "label": "Yin and Yang (U+262F)" },
+        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith symbols from every major world religion in one browsable reference."
+    },
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Islamic Symbols",
+      "desc": "The star and crescent alongside the Allah calligraphy, mosque, prayer, and other symbols connected with Islam."
+    },
+    {
+      "href": "/symbol/star-of-david/",
+      "title": "Star of David (✡)",
+      "desc": "Another faith emblem known mainly through a national flag, with a shared geometry far older than the religion it now represents."
+    },
+    {
+      "href": "/symbol/hamsa-symbol/",
+      "title": "Hamsa Symbol",
+      "desc": "The Hand of Fatima — a protective sign shared across Islam and Judaism that, like the star and crescent, isn't scripturally mandated."
+    }
+  ]
+}

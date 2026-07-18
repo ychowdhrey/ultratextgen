@@ -1,0 +1,69 @@
+{
+  "slug": "tilde-symbol",
+  "page_type": "symbol",
+  "title": "Tilde Symbol: Copy & Paste ~ ˜ ∼ ≈ — From the Scribe's ñ to the Unix Home Path",
+  "meta_description": "Copy and paste the tilde (~), the small tilde (˜), the combining ñ diacritic, and the math tildes ∼ and ≈ — plus how a medieval scribe's shorthand became ñ. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/tilde-symbol/",
+  "breadcrumb": "Tilde Symbol",
+  "hero_h1": "Tilde Symbol (~)",
+  "hero_tagline": "The keyboard tilde (~) that marks your Unix home folder and means ‘roughly,’ the small tilde ˜ and the combining mark that sits over ñ, ã, and õ, and the math tildes ∼ and ≈ it's endlessly confused with. Click any symbol to copy it instantly.",
+  "intro": "The tilde (~, U+007E TILDE) is the wavy mark on your keyboard's top-left key, and it carries more jobs than almost any other punctuation character. In a Unix or Linux shell it's shorthand for your home directory (~/) — a convention traced to the 1970s Lear-Siegler ADM-3A terminal, whose keyboard printed ‘~’ and the word ‘Home’ on the same key. In casual chat it means ‘approximately’ or ‘around’ (~5 minutes), and programmers nickname it the ‘twiddle.’ Its name comes from Spanish tilde, from Latin titulus (‘title’ or ‘superscription’), and its story begins with medieval scribes: a small wavy mark written above a letter stood for an omitted ‘n’ or ‘m,’ saving costly vellum and ink. That shortcut is exactly why Spanish has ñ — scribes wrote a single ‘n’ with the mark over it to stand for a doubled ‘nn.’ That diacritic survives today as the combining tilde (◌̃, U+0303), a different character from the standalone small tilde (˜, U+02DC) and from the plain keyboard ~. It's also routinely confused with the math signs it resembles: the tilde operator ∼ (U+223C, ‘similar to’) and almost-equal ≈ (U+2248) are separate Unicode characters, not the ASCII tilde.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-tilde",
+      "label": "The Tilde",
+      "h2": "The Tilde ~ and Its Look-Alikes",
+      "intro": "Three separate Unicode characters people all call ‘the tilde’ — the keyboard key, a standalone spacing modifier, and the combining diacritic that sits over a letter.",
+      "symbols": [
+        { "char": "~", "label": "Tilde (U+007E) — the Keyboard Key" },
+        { "char": "˜", "label": "Small Tilde (U+02DC) — Standalone Spacing Modifier" },
+        { "char": "̃", "label": "Combining Tilde (U+0303) — Sits Over a Letter" }
+      ]
+    },
+    {
+      "id": "tilde-letters",
+      "label": "Tilde Letters",
+      "h2": "Letters That Carry a Tilde",
+      "intro": "The combining tilde in action. Spanish ñ and Portuguese ã and õ are the everyday survivors of the scribe's shorthand for an omitted ‘n.’",
+      "symbols": [
+        { "char": "ñ", "label": "Latin Small Letter N With Tilde (U+00F1)" },
+        { "char": "Ñ", "label": "Latin Capital Letter N With Tilde (U+00D1)" },
+        { "char": "ã", "label": "Latin Small Letter A With Tilde (U+00E3)" },
+        { "char": "õ", "label": "Latin Small Letter O With Tilde (U+00F5)" }
+      ]
+    },
+    {
+      "id": "math-tilde",
+      "label": "Math Tildes",
+      "h2": "Math Tildes: Similar-To and Approximately-Equal",
+      "intro": "In equations the tilde means ‘similar to’ or ‘approximately,’ but the true math signs are their own Unicode characters — not the ASCII ~ people usually type in their place.",
+      "symbols": [
+        { "char": "∼", "label": "Tilde Operator (U+223C) — ‘Similar To’" },
+        { "char": "≈", "label": "Almost Equal To (U+2248) — ‘Approximately Equal’" },
+        { "char": "≅", "label": "Approximately Equal To (U+2245)" },
+        { "char": "≃", "label": "Asymptotically Equal To (U+2243)" },
+        { "char": "~", "label": "Tilde (U+007E) — the ASCII Key Often Typed Instead" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "The tilde, backtick, ampersand, and the rest of the punctuation and sign keys on a standard keyboard, ready to copy."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Approximately-equal, similar-to, and the operators and relations that fill out an equation alongside the tilde."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Accent Marks & Diacritics",
+      "desc": "The combining tilde over ñ and ã, plus acutes, graves, umlauts, and the other marks that sit on a letter."
+    }
+  ]
+}
