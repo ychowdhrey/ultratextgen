@@ -656,6 +656,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="lib-index-note">Cada coleção de símbolos, emojis e kaomoji da Biblioteca UltraTextGen. Explore o diretório completo acima, ou vá direto para uma das páginas abaixo.</p>
     <ul class="lib-index-list">
       <li><a href="/pt/library/alfabeto-grego/">Alfabeto Grego</a></li>
+      <li><a href="/pt/combos-de-emoji/">Combos de Emoji</a></li>
       <li><a href="/pt/library/emoji-flags/">Emoji de Bandeiras</a></li>
       <li><a href="/pt/library/ronaldo-emoji-combos/">Emoji do Cristiano Ronaldo</a></li>
       <li><a href="/pt/library/neymar-emoji-combos/">Emoji do Neymar</a></li>
@@ -716,6 +717,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       type: "Símbolo",
       subject: "Cultura & Idioma",
       alpha: "A"
+    },
+    {
+      title: "Combos de Emoji",
+      slug: "combos-de-emoji",
+      url: "/pt/combos-de-emoji/",
+      description: "Combos de emoji prontos para copiar e colar — fofo, coquette, amor, dark e praia — para deixar a bio, o status e a legenda com uma vibe só.",
+      preview: "🦋 ✨ 🌸",
+      useCases: ["Bio", "Legenda", "Comentário"],
+      platforms: ["Instagram", "TikTok", "Universal"],
+      type: "Combo de Emoji",
+      subject: "Estético & Decorativo",
+      alpha: "C"
     },
     {
       title: "Emoji de Bandeiras",
@@ -1248,7 +1261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         html += '<article class="lib-entry">';
         html += '<h3 class="lib-entry-title" id="' + titleId + '">' +
-          '<a class="lib-entry-title-link" href="/pt/library/' + encodeURIComponent(item.slug) + '/">' +
+          '<a class="lib-entry-title-link" href="' + (item.url || ("/pt/library/" + encodeURIComponent(item.slug) + "/")) + '">' +
           escHtml(item.title) + '</a></h3>';
         html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
         html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
@@ -1407,7 +1420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return {
         "@type": "ListItem",
         "position": idx + 1,
-        "url": "https://ultratextgen.com/pt/library/" + item.slug + "/",
+        "url": "https://ultratextgen.com" + (item.url || ("/pt/library/" + item.slug + "/")),
         "name": item.title
       };
     });
