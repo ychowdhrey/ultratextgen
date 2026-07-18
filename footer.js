@@ -1,6 +1,53 @@
 (function () {
   "use strict";
 
+  // Context-aware footer: printables/learn pages serve parents, teachers and
+  // crafters — the social-fonts columns (Zalgo, LinkedIn Headline, Bold
+  // Fonts…) are the wrong audience there and leak the cluster's internal
+  // link equity into the fonts cluster. Those pages get printables-native
+  // columns plus one bridge line back to the font generator.
+  var path = (window.location && window.location.pathname) || "";
+  var isPrintablesContext = path.indexOf("/printables/") === 0 || path.indexOf("/learn/") === 0;
+
+  var printablesLinksHTML =
+    '<div class="footer-columns">' +
+      '<div class="footer-col">' +
+        '<span class="footer-col-title">Printables</span>' +
+        '<a href="/printables/" class="footer-link">All Printables</a>' +
+        '<a href="/printables/bubble-letters/" class="footer-link">Bubble Letters A–Z</a>' +
+        '<a href="/printables/alphabet-coloring-pages/" class="footer-link">Alphabet Coloring Pages</a>' +
+        '<a href="/printables/dot-to-dot-alphabet/" class="footer-link">Dot-to-Dot Alphabet</a>' +
+        '<a href="/printables/cursive-alphabet/" class="footer-link">Cursive Alphabet</a>' +
+        '<a href="/printables/block-letters/" class="footer-link">Block Letters &amp; Stencils</a>' +
+      '</div>' +
+      '<div class="footer-col">' +
+        '<span class="footer-col-title">Generators</span>' +
+        '<a href="/printables/handwriting-worksheet-generator/" class="footer-link">Handwriting Worksheets</a>' +
+        '<a href="/printables/coloring-page-maker/" class="footer-link">Coloring Page Maker</a>' +
+        '<a href="/printables/name-tracing/" class="footer-link">Name Tracing</a>' +
+        '<a href="/printables/dot-to-dot-name/" class="footer-link">Dot-to-Dot Name</a>' +
+        '<a href="/printables/banner-maker/" class="footer-link">Banner Maker</a>' +
+        '<a href="/printables/monogram-maker/" class="footer-link">Monogram Maker</a>' +
+      '</div>' +
+      '<div class="footer-col">' +
+        '<span class="footer-col-title">Company</span>' +
+        '<a href="/about/" class="footer-link">About</a>' +
+        '<a href="/privacy/" class="footer-link">Privacy Policy</a>' +
+        '<a href="/terms/" class="footer-link">Terms of Service</a>' +
+        '<a href="/contact/" class="footer-link">Contact</a>' +
+      '</div>' +
+    '</div>' +
+    '<div class="footer-bridge">Looking for text fonts for bios and posts? <a href="/" class="footer-link">Try the font generator →</a></div>' +
+    '<div class="footer-social-links">' +
+      '<a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>' +
+      '<a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>' +
+      '<a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
+      '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
+    '</div>' +
+    '<div class="footer-bottom">' +
+      '© 2026 UltraTextGen. Free printable letters, worksheets and generators.' +
+    '</div>';
+
   var footerLinksHTML =
     '<div class="footer-columns">' +
       '<div class="footer-col">' +
@@ -51,6 +98,10 @@
     '<div class="footer-bottom">' +
       '\u00a9 2026 UltraTextGen. Fast text styles that work everywhere.' +
     '</div>';
+
+  if (isPrintablesContext) {
+    footerLinksHTML = printablesLinksHTML;
+  }
 
   // Idempotency guard — do nothing if footer-bottom already exists
   if (document.querySelector(".footer-bottom")) {
