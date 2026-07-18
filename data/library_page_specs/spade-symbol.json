@@ -1,0 +1,73 @@
+{
+  "slug": "spade-symbol",
+  "page_type": "symbol",
+  "title": "Spade Symbol: Copy & Paste ♠ ♤ — the Suit Named After a Sword, Not a Shovel",
+  "meta_description": "Copy and paste the spade symbol — solid ♠ (U+2660) and outline ♤ (U+2664) — and learn how the suit got its sword-derived name and its tax-stamped Ace. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/spade-symbol/",
+  "breadcrumb": "Spade Symbol",
+  "hero_h1": "Spade Symbol",
+  "hero_tagline": "The spade suit in both Unicode forms — solid ♠ (U+2660) and hollow ♤ (U+2664) — the card symbol whose name descends from the sword suit and whose Ace of Spades once carried Britain's official tax stamp. Click any symbol to copy it instantly.",
+  "intro": "The spade — ♠ (U+2660, BLACK SPADE SUIT) in its solid form and ♤ (U+2664, WHITE SPADE SUIT) as the outline — is one of the four suits of the standard French-suited deck, added to Unicode 1.1 in 1993 alongside hearts, diamonds, and clubs, the eight suit glyphs occupying U+2660 through U+2667. Its name is a small history lesson: 'spade' comes not from the digging tool but from the Spanish espada and Italian spada, meaning 'sword,' the suit of the older Latin-suited packs. When French card-makers standardized the four-suit system in the second half of the 15th century, they redrew the sword as the simple black leaf-shape we know — cheap to stencil in two colours, which is why the French deck later flooded Europe and reached England. In Unicode's convention 'black' means filled and 'white' means outline, with the actual colour left to the font, so the same filled/outline pair exists for every suit. The Ace of Spades carries the deck's richest folklore: in England it bore the official duty stamp from 1712 and, after 1765, an ornately engraved design printed by the Stamp Office — the ancestor of today's decorated ace.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "spade-symbol",
+      "label": "Spade Symbol",
+      "h2": "The Spade Symbol — ♠ & ♤",
+      "intro": "The suit itself, in both Unicode forms. The solid ♠ is the default 'black' spade; ♤ is the outline 'white' version, and ♠️ is the emoji-presentation form with a variation selector. Ready to paste anywhere.",
+      "symbols": [
+        { "char": "♠", "label": "Black Spade Suit (U+2660) — Solid / Filled" },
+        { "char": "♤", "label": "White Spade Suit (U+2664) — Outline" },
+        { "char": "♠️", "label": "Spade Suit Emoji (U+2660 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "all-four-suits",
+      "label": "All Four Suits",
+      "h2": "All Four Suits — Filled & Outline",
+      "intro": "Unicode gives every French suit a filled 'black' and an outline 'white' glyph, packed in one run from U+2660 to U+2667. Note the quirk: spades and clubs are filled by default while hearts and diamonds are outlined by default.",
+      "symbols": [
+        { "char": "♠", "label": "Black Spade Suit (U+2660)" },
+        { "char": "♥", "label": "Black Heart Suit (U+2665)" },
+        { "char": "♦", "label": "Black Diamond Suit (U+2666)" },
+        { "char": "♣", "label": "Black Club Suit (U+2663)" },
+        { "char": "♤", "label": "White Spade Suit (U+2664)" },
+        { "char": "♡", "label": "White Heart Suit (U+2661)" },
+        { "char": "♢", "label": "White Diamond Suit (U+2662)" },
+        { "char": "♧", "label": "White Club Suit (U+2667)" }
+      ]
+    },
+    {
+      "id": "ace-and-cards",
+      "label": "Ace & Playing Cards",
+      "h2": "The Ace of Spades & Playing-Card Glyphs",
+      "intro": "The most storied card in the deck: England stamped the Ace of Spades with a duty mark from 1712 and printed its ornate Stamp Office design after 1765, and a widely repeated (and much-debated) wartime story has US troops in Vietnam using it as a 'death card.' Unicode's Playing Cards block gives every card its own glyph — here are the four aces and the card back.",
+      "symbols": [
+        { "char": "🂡", "label": "Playing Card Ace of Spades (U+1F0A1)" },
+        { "char": "🂱", "label": "Playing Card Ace of Hearts (U+1F0B1)" },
+        { "char": "🃁", "label": "Playing Card Ace of Diamonds (U+1F0C1)" },
+        { "char": "🃑", "label": "Playing Card Ace of Clubs (U+1F0D1)" },
+        { "char": "🂠", "label": "Playing Card Back (U+1F0A0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "All four playing-card suits — spades, hearts, diamonds, and clubs — in filled and outline forms to browse and copy."
+    },
+    {
+      "href": "/library/dice-domino-symbols/",
+      "title": "Dice, Domino & Mahjong Symbols",
+      "desc": "The rest of the tabletop set: dice faces, domino tiles, and mahjong Unicode game symbols."
+    },
+    {
+      "href": "/symbol/heart-symbol/",
+      "title": "Heart Symbol (♥)",
+      "desc": "A sibling suit: the heart in its solid ♥ and outline ♡ Unicode forms, from the same U+2660–U+2667 run."
+    }
+  ]
+}

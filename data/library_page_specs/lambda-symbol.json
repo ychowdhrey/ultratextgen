@@ -1,0 +1,122 @@
+{
+  "slug": "lambda-symbol",
+  "page_type": "symbol",
+  "title": "Lambda Symbol: Copy & Paste λ Λ — The Gay-Liberation Sign & Church's Lambda Calculus",
+  "meta_description": "Copy and paste the lambda symbol — lowercase λ (wavelength, the 1970 gay-liberation sign) and capital Λ (the cosmological constant) — plus how it named Python's lambda and AWS Lambda. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/lambda-symbol/",
+  "breadcrumb": "Lambda Symbol",
+  "hero_h1": "Lambda Symbol",
+  "hero_tagline": "The lowercase λ that graphic designer Tom Doerr turned into a gay-liberation emblem in 1970, the same letter behind Alonzo Church's lambda calculus and physics' symbol for wavelength, and the capital Λ that stands for the cosmological constant. Click any symbol to copy it instantly.",
+  "intro": "Lambda's lowercase glyph, λ (U+03BB, GREEK SMALL LETTER LAMDA), is the 11th letter of the Greek alphabet — but it carries two of the heaviest meanings any single character has picked up. In 1970 the graphic designer Tom Doerr, a founding member of the Gay Activists Alliance (formed in New York in December 1969), chose the lowercase λ as the group's emblem — reportedly for its physics sense of 'a complete exchange of energy' — and by December 1974 the International Gay Rights Congress in Edinburgh had declared it the international symbol of gay and lesbian rights; it still names Lambda Legal and the Lambda Literary Foundation. The same letter anchors computing: Alonzo Church built his lambda calculus in the 1930s, the formal system that later gave Python its lambda keyword for anonymous functions (added in 1994) and Amazon its AWS Lambda serverless service. In physics λ is the standard symbol for wavelength, while the capital Λ (U+039B) denotes the cosmological constant — the dark-energy term in the ΛCDM model of the expanding universe. Both forms entered Unicode 1.1 in 1993.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-lambda-letter",
+      "label": "The Letter",
+      "h2": "The Lambda Symbol — λ & Λ",
+      "intro": "The Greek letter itself — the 11th in the alphabet, worth 30 in the Greek numeral system, descended from the Phoenician letter lamed. Lowercase λ does almost all the cultural work; capital Λ is a distinct math and cosmology symbol.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Greek Small Letter Lambda (U+03BB)"
+        },
+        {
+          "char": "Λ",
+          "label": "Greek Capital Letter Lambda (U+039B)"
+        }
+      ]
+    },
+    {
+      "id": "gay-liberation-symbol",
+      "label": "Gay Liberation",
+      "h2": "Lambda as a Gay-Liberation Symbol",
+      "intro": "New York's Gay Activists Alliance adopted the lowercase λ in 1970, and the International Gay Rights Congress declared it an international symbol of gay and lesbian rights in 1974 — one of the movement's earliest emblems. Paste it alongside the pride glyphs it now sits beside.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Greek Small Letter Lambda (U+03BB) — The Gay-Liberation Sign"
+        },
+        {
+          "char": "🏳️‍🌈",
+          "label": "Rainbow Flag"
+        },
+        {
+          "char": "⚧",
+          "label": "Transgender Symbol (U+26A7)"
+        }
+      ]
+    },
+    {
+      "id": "lambda-code-science",
+      "label": "Code & Science",
+      "h2": "Lambda in Code, Math & Physics",
+      "intro": "The letter's technical life. Lowercase λ marks anonymous functions — from Alonzo Church's lambda calculus through to Python's lambda keyword and AWS Lambda — and stands for wavelength in physics; capital Λ is the cosmological constant of the ΛCDM model.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Greek Small Letter Lambda (U+03BB) — Wavelength & Lambda Calculus"
+        },
+        {
+          "char": "Λ",
+          "label": "Greek Capital Letter Lambda (U+039B) — Cosmological Constant"
+        },
+        {
+          "char": "𝜆",
+          "label": "Mathematical Italic Lambda (U+1D706) — The Equation Variant"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Greek Letters",
+      "h2": "Related Greek Letters",
+      "intro": "Lambda is the 11th letter of the Greek alphabet. Here are the neighbors people copy alongside it.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Greek Capital Letter Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        },
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "α",
+          "label": "Greek Small Letter Alpha"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet — alpha, lambda, pi, sigma, omega — in uppercase and lowercase to copy and paste."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Wavelength, the cosmological constant, and the operators and Greek letters that fill out an equation."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Pride & LGBTQ+ Symbols",
+      "desc": "The lambda, the rainbow, the labrys, and the other emblems of LGBTQ+ identity, gathered in one place to copy."
+    },
+    {
+      "href": "/symbol/pi-symbol/",
+      "title": "Pi Symbol",
+      "desc": "Another Greek letter with a life far beyond math — the constant William Jones named in 1706."
+    }
+  ]
+}

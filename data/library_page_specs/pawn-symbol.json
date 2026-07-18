@@ -1,0 +1,81 @@
+{
+  "slug": "pawn-symbol",
+  "page_type": "symbol",
+  "title": "Pawn Symbol: Copy & Paste ♟ ♙ — The Foot Soldier That Can Become a Queen",
+  "meta_description": "Copy and paste the pawn symbol — black ♟ (U+265F) and white ♙ (U+2659) — chess's lowest-value piece, named for a foot soldier, that can promote to a queen. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/pawn-symbol/",
+  "breadcrumb": "Pawn Symbol",
+  "hero_h1": "Pawn Symbol (♟ ♙)",
+  "hero_tagline": "The black ♟ and white ♙ chess pawn — the board's lowest-valued piece and its foot soldier, the one that can march to the far rank and turn into a queen, and the word English borrowed for anyone used in someone else's game. Click any symbol to copy it instantly.",
+  "intro": "The pawn symbol comes in two Unicode forms — the black ♟ (U+265F, BLACK CHESS PAWN) and the white ♙ (U+2659, WHITE CHESS PAWN) — both part of the Miscellaneous Symbols block, alongside the full 12-piece chess set at U+2654 through U+265F. The word \"pawn\" traces to Anglo-French \"poun\" and Old French \"peon,\" from Medieval Latin \"pedonem\" (foot soldier), ultimately from Latin \"pes,\" foot — the pawn was literally the infantry of the board. It is chess's lowest-valued piece, worth 1 point in the standard system where a knight or bishop is 3, a rook 5, and the queen 9. It is also the only piece that moves and captures differently: it advances one square straight forward — or two on its very first move — but captures only diagonally, and it can be taken \"en passant\" by an enemy pawn it tries to slip past. Reach the far rank and a pawn promotes to a queen, rook, bishop, or knight — anything but a king, and it cannot stay a pawn. In notation a pawn is \"P\" (white) or \"p\" (black) in FEN, and carries no letter at all in algebraic moves, just the destination square. By the 1580s \"pawn\" had already become the everyday metaphor for a person used as an expendable tool in someone else's scheme.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "pawn-symbol",
+      "label": "The Pawn Symbol",
+      "h2": "The Pawn Symbol — ♟ & ♙",
+      "intro": "The two pawn glyphs. The solid black ♟ is the one most people paste; the outlined white ♙ is its lighter-side twin. Both are single Unicode characters, ready to drop into any text.",
+      "symbols": [
+        { "char": "♟", "label": "Black Chess Pawn (U+265F)" },
+        { "char": "♙", "label": "White Chess Pawn (U+2659)" }
+      ]
+    },
+    {
+      "id": "black-chess-pieces",
+      "label": "Black Pieces",
+      "h2": "The Black Pawn's Teammates",
+      "intro": "The rest of the black side that lines up behind the pawn — king, queen, rook, bishop, and knight, running from U+265A to U+265E in the same Unicode block.",
+      "symbols": [
+        { "char": "♚", "label": "Black Chess King (U+265A)" },
+        { "char": "♛", "label": "Black Chess Queen (U+265B)" },
+        { "char": "♜", "label": "Black Chess Rook (U+265C)" },
+        { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
+        { "char": "♞", "label": "Black Chess Knight (U+265E)" }
+      ]
+    },
+    {
+      "id": "white-chess-pieces",
+      "label": "White Pieces",
+      "h2": "The White Chess Pieces",
+      "intro": "The outlined white set that faces the black pawn across the board, occupying U+2654 through U+2658 — the queen it may one day have to fear, and the king it can never become.",
+      "symbols": [
+        { "char": "♔", "label": "White Chess King (U+2654)" },
+        { "char": "♕", "label": "White Chess Queen (U+2655)" },
+        { "char": "♖", "label": "White Chess Rook (U+2656)" },
+        { "char": "♗", "label": "White Chess Bishop (U+2657)" },
+        { "char": "♘", "label": "White Chess Knight (U+2658)" }
+      ]
+    },
+    {
+      "id": "pawn-promotion",
+      "label": "Promotion",
+      "h2": "What a Pawn Can Become",
+      "intro": "A pawn that reaches the opposite end of the board must promote — to a queen, rook, bishop, or knight of its own color. It can never become a king, and it cannot stay a pawn. The queen is the usual choice; anything else is an \"underpromotion.\"",
+      "symbols": [
+        { "char": "♛", "label": "Black Chess Queen (U+265B) — the usual promotion" },
+        { "char": "♜", "label": "Black Chess Rook (U+265C)" },
+        { "char": "♝", "label": "Black Chess Bishop (U+265D)" },
+        { "char": "♞", "label": "Black Chess Knight (U+265E) — an underpromotion" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Chess Symbols",
+      "desc": "The full Unicode chess set — kings, queens, rooks, bishops, knights, and both pawns — in one copy-and-paste reference."
+    },
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "Spades, hearts, diamonds, and clubs — the other game glyphs, sitting right beside the chess pieces in Unicode's Miscellaneous Symbols block."
+    },
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Crown & Royalty Symbols",
+      "desc": "Crowns, thrones, and regalia — fitting company for a pawn that dreams of promotion to queen."
+    }
+  ]
+}
