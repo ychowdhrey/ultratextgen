@@ -116,6 +116,22 @@
     },
     {
       "@type": "Question",
+      "name": "Can my coloring page have two lines of text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Type the first line in Name or word and add the optional Second line — for example “Happy Birthday” on the first line and “Emma” on the second. Both lines render as large colorable outlines (or numbered dot-to-dot letters), stacked on one sheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I print a sheet for every child in my class at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Open Class set — one sheet per name, paste your class list with one name per line (up to 35 names), and Print builds one personalized sheet per child using the style, fill and border you picked. In the print dialog choose “Save as PDF” to keep the whole set as a single PDF file."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Is the coloring page maker free?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -178,6 +194,7 @@
       <div class="pt-studio">
         <!-- Controls -->
         <div class="pt-studio-controls">
+          <p class="pt-step-title">Step 1 · Words</p>
           <div class="pt-field">
             <label class="pt-field-label" for="pt-design-input">Name or word</label>
             <div class="input-wrapper">
@@ -186,10 +203,11 @@
           </div>
 
           <div class="pt-field">
-            <label class="pt-field-label" for="pt-design-heading">Heading <span class="pt-field-opt">— optional</span></label>
-            <input type="text" class="main-input pt-design-input" id="pt-design-heading" placeholder="e.g. Emma’s Coloring Page" maxlength="48" autocomplete="off">
+            <label class="pt-field-label" for="pt-design-input2">Second line <span class="pt-field-opt">— optional, e.g. “Happy Birthday” + “Emma”</span></label>
+            <input type="text" class="main-input pt-design-input" id="pt-design-input2" placeholder="Add a second line…" maxlength="24" autocomplete="off">
           </div>
 
+          <p class="pt-step-title">Step 2 · Style</p>
           <div class="pt-field">
             <span class="pt-field-label">Style</span>
             <div class="pt-choice-row" id="pt-design-mode-group" role="radiogroup" aria-label="Sheet style">
@@ -223,6 +241,7 @@
             </label>
           </div>
 
+          <p class="pt-step-title">Step 3 · Decorate</p>
           <div class="pt-field">
             <span class="pt-field-label">Border</span>
             <div class="pt-swatches" id="pt-design-border-group" role="radiogroup" aria-label="Border">
@@ -235,12 +254,24 @@
             </div>
           </div>
 
+          <p class="pt-step-title">Step 4 · Classroom</p>
+          <div class="pt-field">
+            <label class="pt-field-label" for="pt-design-heading">Heading <span class="pt-field-opt">— optional</span></label>
+            <input type="text" class="main-input pt-design-input" id="pt-design-heading" placeholder="e.g. Emma’s Coloring Page" maxlength="48" autocomplete="off">
+          </div>
+
           <div class="pt-field">
             <label class="pt-check" for="pt-design-footer">
               <input type="checkbox" id="pt-design-footer">
               Add a name &amp; date line
             </label>
           </div>
+
+          <details class="pt-roster-field">
+            <summary>Class set — one sheet per name</summary>
+            <textarea id="pt-design-roster" class="main-input" rows="5" placeholder="One name per line…&#10;Emma&#10;Noah&#10;Ava" aria-label="Class roster — one name per line"></textarea>
+            <p class="pt-roster-hint">Paste your class list (up to 35 names) and Print builds one sheet per name with the style, fill and border picked above — choose “Save as PDF” in the print dialog to get the whole set as one PDF. Download PNG saves the sheet shown in the preview.</p>
+          </details>
         </div>
 
         <!-- Live preview -->
@@ -283,6 +314,8 @@
       <ul class="compat-list">
         <li><span class="ts-pill-safe">Name pages</span> A child's name as a big outline for a classroom name tag, cubby label, or first-day welcome sheet.</li>
         <li><span class="ts-pill-safe">Word pages</span> Words like LOVE, SUMMER, or a spelling word — great for themes, holidays, and word practice.</li>
+        <li><span class="ts-pill-safe">Two lines</span> Add the optional second line for sheets like “Happy Birthday” over “Emma” — both lines render big, in the coloring outline or dot-to-dot style.</li>
+        <li><span class="ts-pill-safe">Class sets</span> Paste a class list (one name per line) and print one personalized sheet per child — save the whole set as a single PDF from the print dialog.</li>
         <li><span class="ts-pill-safe">Multi-color</span> Fill the letters with polka dots, stripes, hearts, or stars so kids color many small regions — fine-motor practice, not just one flat shape.</li>
         <li><span class="ts-pill-safe">Dot-to-dot</span> Switch to Dot-to-dot to turn a name into a personalized connect-the-dots. A difficulty control sets the dot density from easy to expert, so it is challenging without being too hard.</li>
         <li><span class="ts-pill-safe">Ready to hand out</span> Add a heading and a name-and-date line so the sheet is finished for a class set — no editing app needed.</li>
@@ -388,6 +421,26 @@
         </button>
         <div class="faq-answer">
           Completely free, with no sign-up, no account, and no watermark. Everything is generated in your browser and nothing is uploaded. Make as many coloring pages as you like.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Can my coloring page have two lines of text?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-answer">
+          Yes. Type the first line in <strong>Name or word</strong> and add the optional <strong>Second line</strong> — for example “Happy Birthday” on the first line and “Emma” on the second. Both lines render as large colorable outlines (or numbered dot-to-dot letters), stacked on one sheet.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          Can I print a sheet for every child in my class at once?
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="faq-answer">
+          Yes. Open <strong>Class set — one sheet per name</strong>, paste your class list with one name per line (up to 35 names), and <strong>Print</strong> builds one personalized sheet per child using the style, fill and border you picked. In the print dialog choose <strong>“Save as PDF”</strong> to keep the whole set as a single PDF file.
         </div>
       </div>
 
