@@ -7784,3 +7784,55 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .couple-card .uname-chip {
   margin: 0;
 }
+
+/* ---------------------------------------------------------------
+   Printables 2.0 — practice ladder, PDF hint, class-set roster,
+   coloring-maker step groups (2026-07)
+   --------------------------------------------------------------- */
+.pt-pdf-hint {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0.55rem 0 0;
+}
+.pt-dot-controls { margin-top: 1rem; }
+.pt-dot-controls .pt-choice-row { margin: 0.4rem 0 0.65rem; }
+.pt-dot-numbers-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0.2rem 0 0.5rem;
+  cursor: pointer;
+}
+.pt-roster-field { margin-top: 0.9rem; }
+.pt-roster-field summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+.pt-roster-field textarea { margin-top: 0.55rem; min-height: 104px; resize: vertical; }
+.pt-roster-hint {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 0.35rem 0 0;
+}
+.pt-step-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin: 1.1rem 0 0.25rem;
+}
+.pt-class-set .pt-sheet-page { break-after: page; page-break-after: always; }
+.pt-class-set .pt-sheet-page:last-child { break-after: auto; page-break-after: auto; }
+.footer-bridge {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 1.4rem 0 0.6rem;
+}
+.footer-bridge .footer-link { display: inline; }
