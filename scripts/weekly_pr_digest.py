@@ -30,6 +30,7 @@ import sys
 # specific prefixes before generic ones. Lanes mirror docs/README.md.
 LANE_RULES = [
     ("library/", "Library pages"),
+    ("symbol/", "Symbol pages"),
     ("category/", "Category pages"),
     ("answers/", "Answer pages"),
     ("usecase/", "Usecase pages"),
@@ -67,6 +68,9 @@ LANE_RULES = [
     ("ascii-converter/", "Category pages"),
     ("kaomoji-dictionary/", "Category pages"),
     ("kaomoji-generator/", "Category pages"),
+    ("character-counter/", "Category pages"),
+    ("hiragana-chart/", "Category pages"),
+    ("katakana-chart/", "Category pages"),
     ("embed/", "Image backlinks"),
     ("assets/", "Image SEO"),
     ("data/library_opportunities", "Opportunity backlog"),
@@ -124,6 +128,9 @@ LANE_RULES = [
     ("sk/", "i18n"),
     ("sr/", "i18n"),
     ("th/", "i18n"),
+    ("da/", "i18n"),
+    ("hu/", "i18n"),
+    ("zh-tw/", "i18n"),
 ]
 
 # A lane label used when no rule matched any of a PR's files. These are the
