@@ -1,0 +1,70 @@
+{
+  "slug": "peso-sign",
+  "page_type": "symbol",
+  "title": "Peso Sign: Copy & Paste ₱ — Only the Philippine Peso Has Its Own; the Rest Use $",
+  "meta_description": "Copy the peso sign ₱ (U+20B1) — the Philippine peso's own symbol, while the Mexican, Argentine, Colombian and other pesos are all written with plain $. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/peso-sign/",
+  "breadcrumb": "Peso Sign",
+  "hero_h1": "Peso Sign (₱)",
+  "hero_tagline": "The ₱ that belongs to the Philippine peso — the one peso in the world with a dedicated symbol, while the Mexican, Argentine and Colombian pesos all make do with the plain dollar sign. Click any symbol to copy it instantly.",
+  "intro": "The peso sign (₱, Unicode U+20B1 PESO SIGN) is the dedicated symbol of the Philippine peso — and, despite the generic name, it is the only peso in the world that has one. Every other currency called a peso — the Mexican (MXN), Argentine (ARS), Colombian (COP), Chilean (CLP), Cuban (CUP), Dominican (DOP) and Uruguayan (UYU) among them — is conventionally written with the plain dollar sign, $ (U+0024), usually disambiguated in practice with a country prefix such as MX$ or COL$. That shared glyph is no coincidence: the dollar sign itself is widely thought to have grown out of an 18th-century handwritten abbreviation of the Spanish peso, which is why one mark still serves both dollars and most pesos today. The Philippines went the other way. Executive Order No. 66, issued by the U.S. colonial government on August 3, 1903, decreed a capital P crossed by two parallel lines specifically to set the Philippine peso apart from the U.S. dollar and the Spanish peseta. Unicode encoded ₱ in version 3.2, released in 2002; the currency's ISO 4217 code is PHP and it is issued by the Bangko Sentral ng Pilipinas.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "peso-sign",
+      "label": "The Peso Sign",
+      "h2": "The Two Symbols Called \"the Peso Sign\" — ₱ and $",
+      "intro": "Both of these get called the peso sign. ₱ is the Philippine peso's own character; $ is what nearly every other peso uses — because the dollar sign itself probably began as shorthand for the Spanish peso. Whether it came from a handwritten \"Ps\" or from the S-wrapped Pillars of Hercules on Spanish dollar coins is still genuinely debated among historians.",
+      "symbols": [
+        { "char": "₱", "label": "Peso Sign (U+20B1) — the Philippine peso's dedicated glyph" },
+        { "char": "$", "label": "Dollar Sign (U+0024) — the mark the Mexican, Argentine and other pesos actually use" }
+      ]
+    },
+    {
+      "id": "struck-letter-currencies",
+      "label": "Built Like the Peso",
+      "h2": "The Struck-Letter Currency Family",
+      "intro": "The peso sign is a capital P crossed by two parallel bars — the same recipe behind a whole generation of modern currency signs, each a national letter struck through with one or two lines. Ready to paste anywhere.",
+      "symbols": [
+        { "char": "₹", "label": "Indian Rupee Sign (U+20B9) — a struck R, officially adopted in 2010" },
+        { "char": "₩", "label": "Won Sign (U+20A9) — a W with two bars" },
+        { "char": "₦", "label": "Naira Sign (U+20A6) — a struck N (Nigeria)" },
+        { "char": "₴", "label": "Hryvnia Sign (U+20B4) — a struck letter for Ukraine" },
+        { "char": "₫", "label": "Dong Sign (U+20AB) — a barred d (Vietnam)" },
+        { "char": "€", "label": "Euro Sign (U+20AC) — a rounded E with two strokes" }
+      ]
+    },
+    {
+      "id": "peso-lookalikes",
+      "label": "Don't Confuse It With",
+      "h2": "Look-Alikes: Glyphs Mistaken for ₱",
+      "intro": "Because ₱ is essentially a barred P, it gets swapped for other P-shaped characters — including one that is a completely different currency. Each is its own Unicode code point, not a stylistic variant.",
+      "symbols": [
+        { "char": "₽", "label": "Ruble Sign (U+20BD) — Russia's currency, also a struck P but a different bar" },
+        { "char": "P", "label": "Latin Capital Letter P (U+0050) — the plain fallback often typed for the peso" },
+        { "char": "Ᵽ", "label": "Latin Capital P with Stroke (U+2C63) — a single-barred P used in linguistics, not currency" },
+        { "char": "Ρ", "label": "Greek Capital Letter Rho (U+03A1) — looks like a P" },
+        { "char": "Р", "label": "Cyrillic Capital Letter Er (U+0420) — another P look-alike" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Browse every world currency symbol — dollar, euro, pound, yen, rupee and the peso — side by side in one grid."
+    },
+    {
+      "href": "/symbol/dollar-sign/",
+      "title": "Dollar Sign ($)",
+      "desc": "The mark nearly every peso actually uses: only the Philippine peso has its own ₱, while the Mexican, Argentine and Colombian pesos are all written with $."
+    },
+    {
+      "href": "/symbol/rupee-sign/",
+      "title": "Rupee Sign (₹)",
+      "desc": "India's ₹ — like ₱, a modern currency sign officially decreed for one nation's money and built by striking a letter with parallel bars."
+    }
+  ]
+}
