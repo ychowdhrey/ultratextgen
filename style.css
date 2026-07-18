@@ -5616,6 +5616,35 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
     break-after: auto;
     page-break-after: auto;
   }
+
+  /* Fill the printed page: spread name-worksheet rows down the sheet and
+     center the name-puzzle sheet vertically, instead of leaving the bottom
+     third of the page blank. Print-only so on-screen previews are untouched. */
+  .bubble-print-wrap .pt-name-sheet {
+    min-height: 9.2in;
+    justify-content: space-between;
+  }
+  .pt-puzzle-print-holder .pt-puzzle-sheet {
+    min-height: 9.2in;
+    justify-content: center;
+    gap: 1.4rem;
+  }
+
+  /* Never slice a worksheet row across a page boundary on multi-page sheets. */
+  .cursive-print-row,
+  .pt-name-row,
+  .pt-gen-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Cross-stitch chart prints at page width (on screen it renders at its
+   natural stitch-grid size); the max-height keeps a tall single-letter
+   chart on one page with its legend. Only exists inside the print surface. */
+.cs-print-chart svg {
+  width: 100%;
+  max-height: 7.6in;
 }
 
 /* Name tracing worksheet (print) */
