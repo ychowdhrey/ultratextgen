@@ -775,14 +775,15 @@ module.exports = [
       label: 'Reason 2',
       h2: 'Styled letters eat the character limit',
       bodyHtml: `<div class="editorial-block">
-    <p>Name fields are short, and a “fancy” letter is often built from more than one underlying character, so a name that <em>looks</em> short can still be over the limit. Rough limits to plan around:</p>
+    <p>Name fields are short, and a “fancy” letter is often built from more than one underlying character, so a name that <em>looks</em> short can still be over the limit. Rough limits to plan around, mobile games first:</p>
     <ul>
       <li><strong>Free Fire</strong> — about 12 characters</li>
       <li><strong>PUBG Mobile</strong> — 14 characters (the PC game allows more)</li>
+      <li><strong>Mobile Legends</strong> — a short limit, and only a few special characters before the name is rejected</li>
       <li><strong>Roblox</strong> — the <em>display name</em> rejects most decorative Unicode (“unsupported characters”); the <em>@username</em> is letters, numbers and a single underscore only</li>
       <li><strong>Valorant / Riot</strong> — a Riot ID is a name plus a short letters-and-numbers tag; heavily-styled text is commonly rejected</li>
     </ul>
-    <p>Treat these as guidance and check in-game — limits and filters change with updates.</p>
+    <p>Treat these as guidance and check in-game — limits and filters change with updates. For the full allowed-character rules on the PC and console games (<strong>Roblox, Fortnite, Valorant and COD</strong>), see the <a href="/guide/game-username-allowed-symbols/">allowed characters in game usernames</a> guide.</p>
   </div>`
     },
     {
@@ -799,7 +800,7 @@ module.exports = [
     href: '/',
     label: 'Open the Name Generator →'
   },
-  related: 'Related: <a href="/answers/why-is-my-name-showing-as-boxes/">why is my name showing as boxes</a>, <a href="/answers/how-to-make-a-blank-name/">how to make a blank name</a>, and <a href="/answers/where-do-fancy-fonts-work-username-vs-display-name/">where fancy fonts work — username vs display name</a>.',
+  related: 'Related: the full <a href="/guide/game-username-allowed-symbols/">allowed characters in game usernames</a> guide, <a href="/answers/why-is-my-name-showing-as-boxes/">why is my name showing as boxes</a>, <a href="/answers/how-to-make-a-blank-name/">how to make a blank name</a>, and <a href="/answers/where-do-fancy-fonts-work-username-vs-display-name/">username vs display name</a>.',
   faq: [
     { q: 'Why won’t my Free Fire / PUBG name save?', a: 'Usually because a character in it is outside the game’s allowed set (so it is rejected or shown as a box), or because the styled characters push the name over the length limit — roughly 12 for Free Fire and 14 for PUBG Mobile. Simplify the styling and keep it short.' },
     { q: 'Why does Roblox say my name has unsupported characters?', a: 'Roblox filters display names through the same checks as usernames and rejects most decorative Unicode with an “unsupported characters” message. The @username is even stricter: letters, numbers and one underscore only. Use plain or lightly-styled text there.' },
@@ -897,6 +898,7 @@ module.exports = [
       <li><strong>WhatsApp</strong> — style the profile <em>name</em> and About (its new @username is plain).</li>
       <li><strong>X / YouTube / Telegram</strong> — handle plain; style the <em>display name</em> / channel name / first name.</li>
     </ul>
+    <p>Game names follow the same split — style the display name and keep any tag plain. For the per-game character rules, see <a href="/guide/game-username-allowed-symbols/">allowed characters in game usernames</a> and <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>.</p>
   </div>`
     },
     {
@@ -918,7 +920,7 @@ module.exports = [
     href: '/',
     label: 'Open the Text Generator →'
   },
-  related: 'Related: <a href="/answers/why-wont-instagram-accept-my-fancy-username/">why won’t Instagram accept my fancy username</a>, <a href="/answers/why-wont-discord-accept-fancy-username/">why won’t Discord accept a fancy username</a>, and <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>.',
+  related: 'Related: <a href="/answers/why-wont-instagram-accept-my-fancy-username/">why won’t Instagram accept my fancy username</a>, <a href="/answers/why-wont-discord-accept-fancy-username/">why won’t Discord accept a fancy username</a>, <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>, and the <a href="/guide/game-username-allowed-symbols/">game username allowed characters</a> guide.',
   faq: [
     { q: 'Why do I get “invalid characters” when I paste a fancy font?', a: 'Because you pasted it into the @username / handle field, which only allows letters, numbers, dots and underscores. Put the styled text in the display name, nickname or bio instead — those accept Unicode.' },
     { q: 'What is the difference between a username and a display name?', a: 'The username (handle) is your unique address, used in your URL and @-mentions, and is restricted to plain ASCII. The display name is a human-readable label shown above your posts, and it accepts styled Unicode, emoji and spaces.' },
