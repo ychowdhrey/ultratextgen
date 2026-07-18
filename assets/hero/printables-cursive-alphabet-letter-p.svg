@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghprintabl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhprintabl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhprintabl" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshprintabl" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshprintabl)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhprintabl)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhprintabl)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#ghprintabl)"/>
+    <line x1="70" y1="252" x2="290" y2="252" stroke="#fff" stroke-width="3" opacity="0.55" stroke-dasharray="2 7"/>
+    <text x="150" y="238" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-style="italic" font-size="132" font-weight="400"
+          fill="#fff" text-anchor="middle">P</text>
+    <text x="252" y="238" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-style="italic" font-size="96" font-weight="400"
+          fill="#fff" text-anchor="middle">p</text></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#ghprintabl)"/>
+    <line x1="70" y1="252" x2="290" y2="252" stroke="#fff" stroke-width="3" opacity="0.55" stroke-dasharray="2 7"/>
+    <text x="150" y="238" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-style="italic" font-size="132" font-weight="400"
+          fill="#fff" text-anchor="middle">P</text>
+    <text x="252" y="238" font-family="Georgia, 'Liberation Serif', 'DejaVu Serif', serif" font-style="italic" font-size="96" font-weight="400"
+          fill="#fff" text-anchor="middle">p</text></g>
+</svg>

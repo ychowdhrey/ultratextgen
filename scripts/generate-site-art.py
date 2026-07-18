@@ -862,6 +862,19 @@ def m_letter_bubble(p, letter="A"):
           fill="#fff" text-anchor="middle">{esc(letter)}</text>"""
 
 
+def m_letter_cursive(p, letter="A"):
+    """Capital + lowercase pair in italic serif — cursive per-letter printables.
+    Italic serif is the raster-safe stand-in for script glyphs (the Unicode
+    Mathematical Script block does not rasterize in the bundled fonts)."""
+    return f"""
+    <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#g{p})"/>
+    <line x1="70" y1="252" x2="290" y2="252" stroke="#fff" stroke-width="3" opacity="0.55" stroke-dasharray="2 7"/>
+    <text x="150" y="238" font-family="{SERIF}" font-style="italic" font-size="132" font-weight="400"
+          fill="#fff" text-anchor="middle">{esc(letter.upper())}</text>
+    <text x="252" y="238" font-family="{SERIF}" font-style="italic" font-size="96" font-weight="400"
+          fill="#fff" text-anchor="middle">{esc(letter.lower())}</text>"""
+
+
 def m_letter_dots(p, letter="A"):
     """A large letter surrounded by numbered-dot scatter — dot-to-dot printables."""
     spots = [(70, 90), (300, 80), (60, 260), (310, 250), (180, 50),
@@ -2171,6 +2184,25 @@ for _l, _word in LETTER_WORD.items():
     PAGES[f"printables-alphabet-coloring-pages-letter-{_l}"] = (
         f"Letter {_L} Coloring Page", f"{_L} is for {_word} — color the outline",
         P(m_letter_outline, letter=_L), K_PRINT)
+    PAGES[f"printables-cursive-alphabet-letter-{_l}"] = (
+        f"Cursive {_L}", f"Capital & lowercase {_L} in cursive — free printable",
+        P(m_letter_cursive, letter=_L), K_PRINT)
+
+# ---- /learn/ education pillar ----
+PAGES.update({
+"learn-hub": ("Learn", "Stage-by-stage guides for handwriting & lettering",
+    P(m_doc), K_PRINT),
+"learn-handwriting": ("Teaching Handwriting", "A practical, stage-by-stage guide — readiness to cursive",
+    P(m_typo, sample="Aa", size=92, label="stage by stage"), K_PRINT),
+"learn-handwriting-when-to-start-handwriting": ("When to Start Handwriting", "Readiness signs that matter more than age",
+    P(m_typo, sample="A?", size=92, label="readiness"), K_PRINT),
+"learn-handwriting-stroke-order-and-start-dots": ("Stroke Order & Start Dots", "Why how you trace matters more than how much",
+    P(m_typo, sample="1→", size=92, label="stroke order"), K_PRINT),
+"learn-handwriting-from-tracing-to-writing": ("From Tracing to Writing", "The 7-step fading ladder",
+    P(m_typo, sample="Aa", size=92, label="7 levels"), K_PRINT),
+"learn-handwriting-cursive-when-and-how": ("Cursive: When & How", "Letter families, lowercase first, joins throughout",
+    P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive"), K_PRINT),
+})
 
 PAGES["printables-bubble-letters"] = (
     "Printable Bubble Letters", "Big puffy A-Z outlines to trace, color and print",
@@ -2334,8 +2366,15 @@ def _native_for_slug(slug):
 
 def main():
     import cairosvg
+    import sys
+    # Optional slug-prefix filter (e.g. `... printables-cursive-alphabet-letter`)
+    # regenerates only the matching pages instead of rewriting the whole set —
+    # keeps incremental additions from churning hundreds of existing assets.
+    only = sys.argv[1] if len(sys.argv) > 1 else None
     n = 0
     for slug, (title, sub, motif, kicker) in PAGES.items():
+        if only and not slug.startswith(only):
+            continue
         native = _native_for_slug(slug)
         with open(os.path.join(HERO, f"{slug}.svg"), "w", encoding="utf-8") as f:
             f.write(hero_svg(slug, title, motif, kicker))
@@ -2346,7 +2385,11 @@ def main():
         n += 1
 
     # Homepage social card + hero figure. The English root index.html
-    # references both.
+    # references both. Skipped when a slug filter is active — a filtered run
+    # is an incremental addition, not a full regeneration.
+    if only:
+        print(f"wrote {n} hero SVGs and OG PNGs (filter: {only})")
+        return
     with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
         f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
     cairosvg.svg2png(
