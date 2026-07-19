@@ -192,6 +192,87 @@ rationale and the recurring failure mode: `docs/unicode-library-workflow.md`
 
 ---
 
+## Hub vs Spoke: preventing self-cannibalization
+
+A **hub** owns a broad head term and a *browse-or-tool* intent (`/discord/` = the
+"discord fonts" generator; `/library/emoji-combos/` = the "emoji combos" browse
+grid). A **spoke** is a page that owns ONE narrower query with a *different* SERP
+intent (a how-to, an answer, a single item, a single aesthetic). Hubs and spokes
+are how the site scales coverage — but when a hub and its own spoke both try to
+rank for the *same* query, they **cannibalize**: Google ranks only one of your
+URLs well, picks the higher-authority hub (often the *worse* answer, so it ranks
+badly), and starves the spoke that would have ranked. This is the same failure as
+"check who already owns it" below, turned inward — the hub eating its own spokes.
+
+**This is distinct from, and stricter than, "check who already owns it."** That
+rule guards a *new* page against an *existing* page. This one governs the standing
+relationship between a hub and the spokes beneath it, in *both* directions.
+
+The rule has four parts. Apply all four — the Discord case below failed only on
+Rule 3, and that was enough to strand five real pages.
+
+1. **One query, one target.** Every query cluster has exactly ONE page designated
+   to rank for it. Name that exact query *before* building anything. Before adding
+   a hub section, confirm no spoke owns the query. Before creating a spoke, confirm
+   the hub is not already page-1 for it.
+
+2. **The spoke test — when to split out vs. keep as a hub section.** Make it a
+   spoke only if **all three** hold:
+   - **(a) Distinct SERP intent** — the query's SERP is a *different type* than the
+     hub's (how-to article + PAA + forums, vs. a tool/collection). If the two SERPs
+     look the same, it is **not** a spoke.
+   - **(b) Self-contained** — fully answerable on its own page, without the hub's
+     tool/collection as the payload.
+   - **(c) Standalone demand** — real independent volume (GSC impressions or
+     Semrush), not a fragment of the hub's head term.
+
+   If **any** fail → it is a **section on the hub**, not a spoke.
+
+3. **De-confliction (the part most often skipped, and the one that bites).** The
+   moment a spoke exists, the hub must **de-target** that query: strip the competing
+   prose down to a one-line pointer link ("to format messages, see the guide"). The
+   hub keeps its head term; the spoke gets a clean run at its query. Symmetric — a
+   spoke must not chase the hub's head term (don't stuff "discord fonts" into a
+   formatting guide). A spoke that exists while the hub still targets its query is a
+   cannibal, not coverage.
+
+4. **Link direction.** Hub → spoke (a contextual link inside the relevant hub
+   section) and spoke → hub (breadcrumb + one back-link). No orphan spokes (no hub
+   links in), no un-pointed hub sections (a section whose spoke it never links to).
+
+**Diagnosing an existing cannibalization:** pull GSC query×page. The signature is a
+spoke sitting at **position 5–8 with thousands of impressions and ~zero clicks**
+(the hub on the same SERP takes the click), or a spoke with **~zero impressions**
+for its target query while the hub ranks that query poorly (the hub is intercepting
+it). Both mean Rule 3 was never applied — fix the hub, don't rebuild the spoke.
+
+**Worked application:**
+- *Emoji aesthetics (baddie, emo, scene, weirdcore, …)* → **hub sections**, not
+  spokes. "baddie emoji combos" has the **same** SERP intent as "emoji combos"
+  (copy-paste collection lists) → fails the spoke test on (a). Building 11 spokes
+  would create 11 cannibals against the hub that already ranks page-2 for the head
+  term. Promotion path: if one aesthetic later shows large standalone volume **and**
+  a distinct SERP, promote it to a spoke **and** de-target it from the hub (Rule 3).
+- *Discord native formatting (bold, underline, big text, color)* → correctly
+  **spokes** (distinct how-to/PAA/forum SERP), which already exist as
+  `guide/discord-text-formatting-explained`, `guide/discord-colored-text-guide`,
+  `answers/how-to-make-bold-text-in-discord`, etc. — but Rule 3 was never applied,
+  so the `/discord/` generator hub still carries the formatting how-to prose and
+  intercepts every "how to X in discord" query. Fix is de-targeting the hub, **not**
+  another page.
+
+**Case study (2026-07-18):** a GSC query×page pull (last 3 months, queries
+containing "discord") showed `/discord/` at 1,247 clicks / 89,848 impressions while
+`/answers/discord-allowed-characters/` had **0 clicks on 3,656 impressions** (pos
+7.85), `/answers/do-you-need-nitro-for-discord-fonts/` **0 clicks on 3,567**
+(7.45), and `/guide/discord-text-formatting-explained/` **0 clicks on 452** at
+position 6.06 — all indexed, all on-SERP, all starved by the hub above them.
+`answers/how-to-make-bold-text-in-discord` drew essentially no impressions because
+the hub intercepts "how to bold" and then ranks ~80 for it. Five purpose-built
+pages, near-zero traffic, because Rule 3 was never applied to the hub.
+
+---
+
 ## Core JavaScript Architecture
 
 Scripts are loaded in a strict order in every HTML page:
