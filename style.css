@@ -7945,3 +7945,82 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   margin: 1.4rem 0 0.6rem;
 }
 .footer-bridge .footer-link { display: inline; }
+
+/* ── Filter pills (shared component — same pattern as library/index.html's
+   inline copy; kept here so new pages can reuse it without inline <style>) ── */
+.lib-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.lib-filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+.lib-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+  user-select: none;
+}
+.lib-pill:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.lib-pill.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.lib-pill .pill-count {
+  opacity: 0.75;
+  font-size: 0.72rem;
+}
+.lib-pill.active .pill-count {
+  opacity: 0.9;
+}
+.lib-pill.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.lib-pill.is-disabled:hover {
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+}
+.lib-clear-btn {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+.lib-clear-btn:hover {
+  color: var(--text-primary);
+}
+.lib-clear-btn.visible {
+  display: inline-flex;
+}

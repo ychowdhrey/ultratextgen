@@ -59,7 +59,7 @@
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Updates</h1>
-    <p class="hero-tagline">What changed, and why it matters for your text. New Unicode symbols, platform formatting rules, and game nickname rules — tracked as they happen, because they're the same events that can make our own Check tools go stale.</p>
+    <p class="hero-tagline">Your source for what's new in Unicode, on the platforms you post to, and in the games you play — tracked here as it happens.</p>
   </div>
 </section>
 <figure class="page-hero-figure" data-uthero aria-hidden="true">
@@ -69,22 +69,22 @@
 
 <section class="editorial-section">
   <span class="article-section-label">What we track</span>
-  <h2>Three Things That Can Break a Working Name Overnight</h2>
+  <h2>One Place for Every Unicode, Platform &amp; Game Rule Change</h2>
   <div class="compare-grid">
     <div class="compare-card variant-muted">
       <span class="compare-badge">Unicode</span>
-      <p>New characters and emoji the Unicode Consortium adds each version — and, just as important, when your platform actually gets them.</p>
+      <p>Every new character and emoji the Unicode Consortium adds — and, just as useful, when your platform actually gets it.</p>
     </div>
     <div class="compare-card variant-muted">
       <span class="compare-badge">Platform rules</span>
-      <p>Formatting and character-support changes on Discord, Instagram, LinkedIn, TikTok, and WhatsApp — the kind that quietly turn a working name into boxes.</p>
+      <p>Formatting and character-support changes on Discord, Instagram, LinkedIn, TikTok, and WhatsApp, as they roll out.</p>
     </div>
     <div class="compare-card variant-muted">
       <span class="compare-badge">Game rules</span>
-      <p>Nickname length limits and allowed-character changes after a game patch — the exact numbers our per-game name checker relies on.</p>
+      <p>Nickname length limits and allowed-character changes after a game patch — the numbers behind our per-game name checker.</p>
     </div>
   </div>
-  <p class="section-subline">Every entry here exists because something on this list changed, and it's the reason to double-check a name you already thought was safe.</p>
+  <p class="section-subline">New entries go up as soon as something changes — check back whenever a name that used to work suddenly doesn't.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -92,9 +92,19 @@
 <section class="editorial-section">
   <span class="article-section-label">Latest</span>
   <h2>Recent Updates</h2>
-  <div class="related-grid">
-    <a class="related-card" href="/updates/unicode-17-new-emoji-rollout/">
-      <span class="related-tag">🗞</span>
+
+  <div class="lib-filter-row" id="updatesFilterRow">
+    <span class="lib-filter-label">Category</span>
+    <button class="lib-pill" type="button" data-category="unicode">Unicode <span class="pill-count"></span></button>
+    <button class="lib-pill" type="button" data-category="platform">Platform rules <span class="pill-count"></span></button>
+    <button class="lib-pill" type="button" data-category="game">Game rules <span class="pill-count"></span></button>
+    <button class="lib-clear-btn" type="button" id="updatesClearFilter">✕ Clear filter</button>
+  </div>
+  <p class="section-subline" id="updatesEmptyState" hidden>No updates in this category yet — check back soon, or <button type="button" class="lib-clear-btn visible" id="updatesEmptyClear">see all updates</button>.</p>
+
+  <div class="related-grid" id="updatesGrid">
+    <a class="related-card" href="/updates/unicode-17-new-emoji-rollout/" data-category="unicode">
+      <span class="related-tag">🔤</span>
       <span class="related-title">Jul 20, 2026 — Unicode 17.0's New Emoji: Rollout Tracker</span>
       <span class="related-desc">8 new emoji, tracked platform by platform — live on Apple devices, still rolling out on Android, Windows, Samsung and WhatsApp.</span>
     </a>
@@ -102,5 +112,55 @@
 </section>
 
 <footer class="footer"><div class="footer-inner"></div></footer>
+<script>
+(function () {
+  "use strict";
+  var row = document.getElementById("updatesFilterRow");
+  if (!row) return;
+  var pills = Array.prototype.slice.call(row.querySelectorAll(".lib-pill"));
+  var clearBtn = document.getElementById("updatesClearFilter");
+  var emptyClearBtn = document.getElementById("updatesEmptyClear");
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#updatesGrid .related-card"));
+  var emptyState = document.getElementById("updatesEmptyState");
+  var active = null;
+
+  // Pill counts + disabled state are derived from the actual cards in the
+  // DOM, not hardcoded, so a category stays accurate as entries are added.
+  pills.forEach(function (pill) {
+    var count = cards.filter(function (c) { return c.dataset.category === pill.dataset.category; }).length;
+    pill.querySelector(".pill-count").textContent = "(" + count + ")";
+    if (count === 0) {
+      pill.classList.add("is-disabled");
+      pill.disabled = true;
+    } else {
+      pill.addEventListener("click", function () {
+        active = active === pill.dataset.category ? null : pill.dataset.category;
+        render();
+      });
+    }
+  });
+
+  function render() {
+    var visible = 0;
+    cards.forEach(function (card) {
+      var show = !active || card.dataset.category === active;
+      card.hidden = !show;
+      if (show) visible++;
+    });
+    pills.forEach(function (pill) {
+      pill.classList.toggle("active", pill.dataset.category === active);
+      pill.setAttribute("aria-pressed", String(pill.dataset.category === active));
+    });
+    clearBtn.classList.toggle("visible", !!active);
+    emptyState.hidden = visible > 0;
+  }
+  clearBtn.addEventListener("click", function () { active = null; render(); });
+  if (emptyClearBtn) {
+    emptyClearBtn.addEventListener("click", function () { active = null; render(); });
+  }
+
+  render();
+})();
+</script>
 <script src="/footer.js" defer></script>
 </body></html>
