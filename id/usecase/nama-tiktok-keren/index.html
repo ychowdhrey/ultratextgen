@@ -142,6 +142,7 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="Ketik nama TikTok kamu…" maxlength="100">Raka</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
+  <div class="decoration-section namecheck-inline"><div class="decoration-label">Cek nama TikTok — otomatis ngikutin yang kamu ketik (pastiin muat sebelum kena jeda 7 hari)</div><div id="tiktokNameChecker"></div></div>
   <div class="decoration-section"><div class="decoration-label">Tambah hiasan ke hasil</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Simbol</button><button class="decoration-tab" data-deco-tab="minimal">Minimal</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
@@ -261,6 +262,7 @@
      3. Ketuk <strong>Edit profil</strong> → pilih kolom <strong>Nama</strong>.<br>
      4. Tempel nama yang sudah disalin, lalu simpan.</p>
   <p>Catatan penting: TikTok cuma ngizinin ganti nama <strong>sekali tiap 7 hari</strong> — jadi pastiin nama yang kamu tempel udah final. Coba beberapa gaya dulu di generator sebelum milih. Username @ beda lagi: cuma bisa diganti tiap 30 hari dan gak nerima font Unicode sama sekali.</p>
+  <p>Soal panjang: kolom nama TikTok muat sampai <strong>30 karakter</strong>, dan boleh pakai spasi, simbol, sampai emoji — jadi font Unicode dari generator di atas aman ditempel. Tapi ada dua hal yang gampang bikin nama gagal: (1) bingkai dan simbol ikut ngitung ke batas 30 karakter, jadi nama panjang yang dihias bisa <strong>kepotong</strong>; (2) beberapa simbol yang sangat langka kadang tampil sebagai kotak ▯ di HP tertentu. Makanya di atas ada <strong>cek nama</strong>: begitu kamu ngetik, kotaknya langsung ngasih tau — <strong>hijau</strong> berarti muat &amp; aman, <strong>kuning</strong> berarti mungkin jadi kotak di sebagian HP (paling aman balik ke small caps atau bold), <strong>merah</strong> berarti kepanjangan (lebih dari 30 karakter). Cek dulu sebelum simpan, apalagi karena namanya baru bisa diganti lagi 7 hari kemudian.</p>
 </section>
 
 <div class="section-divider"></div>
@@ -330,6 +332,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ns.buildGrids("tiktokNickWrappersContainer", GROUPS);
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+
+<script src="/js/gamename/game-rules.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  const ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "tiktokNameChecker",
+      games: ["tiktok"],
+      inputId: "mainInput",
+      text: {
+        placeholder: "Nama kamu otomatis keisi pas ngetik di atas — bisa juga diganti buat coba nama lain",
+        ok: "Aman buat TikTok — muat & bakal tampil",
+        warn: "Beberapa HP mungkin nampilin kotak ▯",
+        fail: "Kepanjangan — TikTok bakal motong nama ini",
+        empty: "Ketik nama kamu di atas — langsung dicek",
+        charsToWatch: "Karakter yang perlu dicek:",
+        issue: {
+          "over-limit": "Kepanjangan — nama TikTok maksimal 30 karakter.",
+          "unknown-chars": "Karakter ini mungkin ditolak TikTok atau tampil kotak:"
+        }
+      }
+    });
+  }
+  if (ns && ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
 
