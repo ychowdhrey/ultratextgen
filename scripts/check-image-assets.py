@@ -68,10 +68,13 @@ def url_to_slug(url):
 
 def pin_eligible(url, ptype):
     """Mirror of generate-pinterest.py:classify — hubs stay in, only
-    legal/info and embed pages are excluded."""
+    legal/info, embed, and updates (dated status log, not visual pin
+    material) pages are excluded."""
     if ptype == "legal/info":
         return False
     if ptype == "embed" or "/embed/" in url:
+        return False
+    if ptype == "updates":
         return False
     return True
 

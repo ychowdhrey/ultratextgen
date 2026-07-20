@@ -1145,6 +1145,7 @@ K_ANS = "ULTRATEXTGEN · ANSWERS"
 K_SYM = "ULTRATEXTGEN · SYMBOLS"
 K_SITE = "ULTRATEXTGEN"
 K_PRINT = "ULTRATEXTGEN · PRINTABLES"
+K_UPDATE = "ULTRATEXTGEN · UPDATES"
 
 
 def glyphs(*g):
@@ -2337,6 +2338,13 @@ def _native_for_slug(slug):
         if slug == loc or slug.startswith(loc + "-"):
             return fam
     return None
+
+
+# ---- /updates/ — dated Unicode/platform/game rule-change log ----
+PAGES.update({
+"updates": ("UltraTextGen Updates", "What changed, and why your Check may too", m_doc, K_UPDATE),
+"updates-unicode-17-new-emoji-rollout": ("Unicode 17.0's New Emoji: Rollout Tracker", "8 new emoji, tracked platform by platform", m_doc, K_UPDATE),
+})
 
 
 def main():
