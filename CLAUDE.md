@@ -51,7 +51,7 @@ ultratextgen/
 ├── package.json            # npm metadata + build scripts
 ├── fonts.json              # Font category mappings
 ├── robots.txt              # Search engine directives
-├── sitemap.xml             # Auto-generated (do not edit manually)
+├── sitemap.xml              # Auto-generated (do not edit manually)
 ├── _redirects              # Netlify redirect rules
 │
 ├── .github/workflows/
@@ -215,12 +215,16 @@ a real external event (a Consortium release, a platform changelog, a game patch)
 This is not manufactured content — it's the maintenance work those Check surfaces
 already require, made visible.
 
-**Template:** `Article` (author, publisher, `datePublished`/`dateModified`) +
-`BreadcrumbList` + `FAQPage`, same schema combo as `guide/`. Hero: decorative
-`page-hero-figure` (like `answers/`), not the visible `guide-hero-figure` guides
-use. Every entry should link to the specific Check surface it affects (the
-relevant `answers/` page, or a mention of the `RULES` table) — an update with no
-downstream link is just a blog post, not evidence of active maintenance.
+**Template:** `NewsArticle` (author, publisher, `datePublished`/`dateModified`) +
+`BreadcrumbList` + `FAQPage` — schema.org markup only (Google treats `Article`,
+`NewsArticle`, and `BlogPosting` identically for Article rich-result and
+Discover/Top Stories eligibility). This is **not** formal Google News Publisher
+Center enrollment — see the case study below for why that specific step stays
+off the table. Hero: decorative `page-hero-figure` (like `answers/`), not the
+visible `guide-hero-figure` guides use. Every entry should link to the specific
+Check surface it affects (the relevant `answers/` page, or a mention of the
+`RULES` table) — an update with no downstream link is just a blog post, not
+evidence of active maintenance.
 
 **Asset pipeline:** entries register in `scripts/generate-site-art.py`'s `PAGES`
 dict like an `answers/` page (title, sub, motif, `K_UPDATE` kicker) to get hero SVG
@@ -242,6 +246,17 @@ inclusion on that basis risked a rejection tied to the domain. The section only
 became legitimate once re-scoped around genuine external events that this site's
 own Check tools already have to track to stay accurate — which is the scope
 above, and the only scope this section should carry.
+
+**Schema refinement (2026-07-20):** the template originally specified `Article`
+to keep clear distance from anything "News"-flavored. Revisited the same day,
+once the section's scope was already locked to genuine external events (see the
+case study immediately above): switched the JSON-LD `@type` to `NewsArticle`.
+This is schema.org markup only — Google's structured-data guidance treats
+`Article`, `NewsArticle`, and `BlogPosting` the same way for the Article rich
+result and for Discover/Top Stories eligibility, and a `NewsArticle` type does
+not enroll a site in Google News. Formal Google News Publisher Center
+submission remains explicitly out of scope, for the same domain-risk reasoning
+as the case study above — this refinement does not reopen that question.
 
 ---
 
