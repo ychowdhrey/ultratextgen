@@ -82,6 +82,7 @@ ultratextgen/
 │                           #    copy_patterns — see docs/emoji-combination-taxonomy.md)
 ├── symbol/                 # Single-item identity spokes (glyph OR emoji) — SEARCH-ONLY
 │                           #   discovery, own on-page single-item search (see "Library vs Symbol")
+├── updates/                # Dated Unicode/platform/game rule-change log (see "Content Type: Updates")
 ├── js/vertical/            # Vertical text feature module
 ├── js/tattoo/              # Tattoo lettering studio module (names, dates→roman, initials, symbols)
 │
@@ -189,6 +190,58 @@ mismatch** (a page's own directory vs. its `hreflang="en"` counterpart's
 directory) — run it over your translated batch before opening the PR. Full
 rationale and the recurring failure mode: `docs/unicode-library-workflow.md`
 §7.
+
+---
+
+## Content Type: Updates
+
+`updates/` is a dated log, distinct from every other content type above — it
+exists to answer *"what changed, and does it affect a Check I already trust?"*,
+not to explore a topic (`guide/`) or resolve a question (`answers/`).
+
+**Scope — three event types only:** new Unicode Consortium versions/emoji, platform
+formatting/character-support rule changes (Discord, Instagram, LinkedIn, TikTok,
+WhatsApp, …), and per-game nickname rule changes (the `RULES` table in
+`js/gamename/game-rules.js`). Do not use `updates/` for product/feature launches on
+this site — that's a different, not-yet-built content type; see the case study
+below for why it was rejected as the seed for this section.
+
+**Why it exists:** the site already has "Check" surfaces whose correctness depends
+on external facts going stale — the per-game `RULES` limits, and the `answers/`
+pages that assert whether Unicode text works on a given platform ("is-linkedin-
+bold-text-safe", "do-you-need-nitro-for-discord-fonts"). An `updates/` entry is the
+dated audit trail for *why* one of those numbers or verdicts changed, sourced from
+a real external event (a Consortium release, a platform changelog, a game patch).
+This is not manufactured content — it's the maintenance work those Check surfaces
+already require, made visible.
+
+**Template:** `Article` (author, publisher, `datePublished`/`dateModified`) +
+`BreadcrumbList` + `FAQPage`, same schema combo as `guide/`. Hero: decorative
+`page-hero-figure` (like `answers/`), not the visible `guide-hero-figure` guides
+use. Every entry should link to the specific Check surface it affects (the
+relevant `answers/` page, or a mention of the `RULES` table) — an update with no
+downstream link is just a blog post, not evidence of active maintenance.
+
+**Asset pipeline:** entries register in `scripts/generate-site-art.py`'s `PAGES`
+dict like an `answers/` page (title, sub, motif, `K_UPDATE` kicker) to get hero SVG
++ OG PNG via the standard pipeline. Individual dated entries are **excluded from
+the Pinterest pin requirement** (`generate-pinterest.py:classify()` and
+`check-image-assets.py:pin_eligible()` both special-case `ptype == "updates"`) —
+a dated status/verification log isn't visual pin material. The `updates/index.html`
+hub is *not* excluded (it classifies as `platform` like other top-level hubs) and
+does get a pin, consistent with `guide/`/`library/`/`answers/` hubs staying
+pin-eligible.
+
+**Case study (2026-07-20):** the section was proposed as a way to get "one more
+SEO feature" activated by posting the site's own feature launches (curved-text,
+tattoo studio, vertical text, printables, etc.) as if they were news. That framing
+was rejected — a font-generator tool site has no content that meets Google News'
+actual bar (timely coverage of external events, not evergreen tool pages or
+self-promotional launch posts), and pursuing formal News/Publisher Center
+inclusion on that basis risked a rejection tied to the domain. The section only
+became legitimate once re-scoped around genuine external events that this site's
+own Check tools already have to track to stay accurate — which is the scope
+above, and the only scope this section should carry.
 
 ---
 

@@ -186,6 +186,8 @@ def classify(row):
                        else "utility page")
     if ptype == "embed" or slug.startswith("embed-") or "/embed/" in row["Page URL"]:
         return False, "embed page"
+    if ptype == "updates":
+        return False, "dated status/verification log, not visual pin material"
     # The overview hubs (/category/, /usecase/, /library/, /answers/, /guide/)
     # are kept: each is a strong topical landing page with real keyword + visual
     # intent, not pure navigation.
