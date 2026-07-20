@@ -1638,6 +1638,51 @@
   line-height: 1.5;
 }
 
+.compare-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Interactive variant: a .compare-card that's also a filter toggle
+   (e.g. /updates/'s "What we track" cards double as its category filter). */
+button.compare-card.is-toggle {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+button.compare-card.is-toggle:hover:not(:disabled) {
+  border-color: var(--accent-purple);
+}
+button.compare-card.is-toggle.active {
+  border-color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.07);
+}
+button.compare-card.is-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.compare-card-meta {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+}
+button.compare-card.is-toggle:disabled .compare-card-meta {
+  color: var(--text-muted);
+}
+
 .compare-badge {
   display: inline-block;
   font-size: 0.65rem;
