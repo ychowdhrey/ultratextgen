@@ -36,7 +36,7 @@ spec.loader.exec_module(gsa)
 
 LOCALES = ["ar", "bs", "cs", "de", "es", "fr", "hi", "hr", "id", "it", "ja",
            "ko", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sr", "sv", "th",
-           "tl", "tr", "vi"]
+           "tl", "tr", "vi", "zh-tw"]
 
 
 # Content is matched with a backreference to its own opening quote (.*?\1 /

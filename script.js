@@ -313,6 +313,15 @@ const decorations = window.UTG_DECORATIONS
   const FORMAT_KEY = "utg_format_marks";
   let formatMarks = loadFormatMarks();
 
+  // Safe mode (F2) — cross-device render-safety. Opt-in per device, default
+  // OFF so the normal experience is untouched and nothing is classified until
+  // a user turns it on. When on, every style card carries a badge saying
+  // whether the style is likely to show as blank boxes (▯) for the *recipient*
+  // — the "blank boxes for other people" frustration, distinct from the
+  // existing device probe (which tests the visitor's OWN device).
+  const SAFE_MODE_KEY = "utg_safe_mode";
+  let safeMode = loadSafeMode();
+
   // Demo text rendered through every style while the input is empty, so the
   // first paint shows the whole catalog styled instead of placeholder rows.
   // Two lines on purpose: the first-line scope and heading use cases read
@@ -407,6 +416,22 @@ const decorations = window.UTG_DECORATIONS
   function persistFormatMarks() {
     try {
       localStorage.setItem(FORMAT_KEY, JSON.stringify(formatMarks));
+    } catch (err) {
+      // Storage may be unavailable — fail silently
+    }
+  }
+
+  function loadSafeMode() {
+    try {
+      return localStorage.getItem(SAFE_MODE_KEY) === "true";
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function persistSafeMode() {
+    try {
+      localStorage.setItem(SAFE_MODE_KEY, safeMode ? "true" : "false");
     } catch (err) {
       // Storage may be unavailable — fail silently
     }
@@ -642,6 +667,147 @@ const decorations = window.UTG_DECORATIONS
     return "";
   }
 
+  /* ===================
+     SAFE MODE (F2) — cross-device render classification
+     ===================
+     "Will this show as blank boxes (▯) for the person I paste it to?" — asked
+     on every style page, so the logic lives here in the shared script and
+     surfaces on all ~350 generator pages (opt-in; only runs when safe mode is
+     on).
+
+     Classification REUSES game-rules.js as the single source of truth for what
+     counts as "safe Unicode": on game / nickname pages, where that engine is
+     loaded, we call its classifyChar() directly (classifyCharSafe below), so
+     there is exactly one active definition. game-rules.js is not on the other
+     ~350 generator pages, so there we fall back to a lean classifier over the
+     SAME styled-Unicode ranges — a deliberate, kept-in-sync mirror of
+     game-rules' STYLED_RANGES, scoped to the characters our styles actually
+     emit (alphabets), NOT a second, rival "what's safe" table. The gaming
+     SAFE_SYMBOLS ornament allow-list is intentionally not mirrored: those
+     glyphs (꧁ ༒ …) genuinely box for a general recipient, so leaving them to
+     classify as risky here is the honest read, and copying that table would be
+     the wasteful duplication we're avoiding. If game-rules is ever refactored,
+     both should read one shared module. */
+
+  // Mirror of game-rules.js STYLED_RANGES — kept identical on purpose. Blocks
+  // whose letters render on essentially all *modern* devices, but can still box
+  // on very old / low-Unicode Android system fonts.
+  const SAFE_MODE_STYLED_RANGES = [
+    [0x1d400, 0x1d7ff], [0x1d100, 0x1d1ff], [0x2460, 0x24ff],
+    [0x1f100, 0x1f1ff], [0xff00, 0xffef], [0x1e00, 0x1eff],
+    [0x0100, 0x024f], [0x0400, 0x04ff], [0x0250, 0x02af],
+    [0x1d00, 0x1d7f], [0x02b0, 0x02ff], [0x1d2c, 0x1d6a],
+    [0x2070, 0x209f], [0x0300, 0x036f], [0x3040, 0x30ff],
+    [0x0e00, 0x0e7f], [0x0600, 0x06ff]
+  ];
+  // Additional widely-supported alphabet blocks that the general style
+  // generator legitimately emits but game nicknames don't, so game-rules'
+  // gaming-tuned list never needed them: Letterlike Symbols (script letters
+  // ℯ ℊ ℬ ℰ …), Latin Extended-D (small-cap ꜰ ꜱ), Greek, and Currency. This is
+  // a deliberate SUPERSET of game-rules' ranges — it only ever adds "safe"
+  // blocks, never re-labels anything game-rules calls safe as risky, so it
+  // cannot contradict game-rules. Without it, mainstream Script and Small Caps
+  // would raise a false "may box" alarm on the very hub this cluster targets.
+  const SAFE_MODE_EXTRA_RANGES = [
+    [0x00a0, 0x00ff], // Latin-1 Supplement (superscript ¹²³, accents, £ ¥, ª º)
+    [0x2100, 0x214f], // Letterlike Symbols (script-letter fallbacks, ™ ℠)
+    [0xa720, 0xa7ff], // Latin Extended-D (small-caps ꜰ ꜱ and more)
+    [0x0370, 0x03ff], // Greek and Coptic
+    [0x20a0, 0x20bf]  // Currency Symbols
+  ];
+  function safeModeWideBlock(cp) {
+    let i;
+    for (i = 0; i < SAFE_MODE_STYLED_RANGES.length; i++) {
+      if (cp >= SAFE_MODE_STYLED_RANGES[i][0] && cp <= SAFE_MODE_STYLED_RANGES[i][1]) return true;
+    }
+    for (i = 0; i < SAFE_MODE_EXTRA_RANGES.length; i++) {
+      if (cp >= SAFE_MODE_EXTRA_RANGES[i][0] && cp <= SAFE_MODE_EXTRA_RANGES[i][1]) return true;
+    }
+    return false;
+  }
+
+  // Lean local classifier — returns the same class vocabulary
+  // game-rules.classifyChar produces ("ascii" | "space" | "safe" | "styled" |
+  // "emoji" | "unknown"), restricted to the branches a style's OUTPUT can hit.
+  // Used only when the game-rules engine isn't on the page.
+  function classifyCharLocal(ch) {
+    const cp = ch.codePointAt(0);
+    // All printable Basic Latin is universal for a *render-safety* question
+    // (broader than game-rules' name-field isAsciiWord, which is a charset
+    // policy, not a rendering one — punctuation like $ or & renders everywhere
+    // even where a game name field would reject it).
+    if (cp >= 0x20 && cp <= 0x7e) return "ascii";
+    if (safeModeWideBlock(cp)) return "styled";
+    if (cp >= 0x1f000 && cp <= 0x1faff) return "emoji";
+    if (cp >= 0x2190 && cp <= 0x2bff) return "safe"; // arrows / geometry / blocks
+    return "unknown";
+  }
+  function classifyCharSafe(ch) {
+    // Reuse game-rules' engine as the shared classifier when it's on the page.
+    if (UTG.gameRules && typeof UTG.gameRules.classifyChar === "function") {
+      const cls = UTG.gameRules.classifyChar(ch);
+      // game-rules' ranges are gaming-tuned and omit a few universally-supported
+      // alphabet blocks the general generator emits (Latin-1 superscript ¹²³,
+      // Letterlike script letters, small-cap ꜰ ꜱ). Rescue only a would-be
+      // "unknown" into "styled" so the badge is calibrated identically on every
+      // page — never downgrading anything game-rules already calls safe.
+      if (cls === "unknown") {
+        const cp = ch.codePointAt(0);
+        if ((cp >= 0x20 && cp <= 0x7e) || safeModeWideBlock(cp)) return "styled";
+      }
+      return cls;
+    }
+    return classifyCharLocal(ch);
+  }
+
+  // Worst render-safety severity of a style's own output, 0..3. Deterministic
+  // per style, so cached — the classification never runs on the default
+  // (safe-mode-off) path. A mixed probe exercises the letter + digit maps.
+  //   0 universal  — plain ASCII only (case converters): renders literally everywhere
+  //   1 wide       — remapped Unicode alphabets: renders on modern devices, may box on very old phones
+  //   2 emoji      — contains emoji: can look different / box on old devices
+  //   3 risk       — contains rare characters that may show as boxes for some people
+  const SAFE_MODE_PROBE = "Sample Text 123";
+  const coverageCache = {};
+  function styleCoverage(name, style) {
+    if (name in coverageCache) return coverageCache[name];
+    let worst = 0;
+    try {
+      const out = (Render && typeof Render.renderAny === "function")
+        ? String(Render.renderAny(SAFE_MODE_PROBE, style) || "")
+        : "";
+      for (const ch of out) {
+        if (ch === " " || ch === "\n" || ch === "\t") continue;
+        const cls = classifyCharSafe(ch);
+        const sev = cls === "unknown" ? 3 : cls === "emoji" ? 2
+          : (cls === "styled" || cls === "safe") ? 1 : 0;
+        if (sev > worst) worst = sev;
+        if (worst === 3) break;
+      }
+    } catch (err) {
+      worst = 1; // couldn't classify → treat as ordinary Unicode, don't cry wolf
+    }
+    coverageCache[name] = worst;
+    return worst;
+  }
+
+  // The safe-mode coverage badge. Quiet, muted states for the common cases
+  // (reusing .ts-pill-safe, borderless on cards) so there's no alarm-fatigue;
+  // the genuine box-risk states keep the prominent boxed .ts-pill-risk.
+  function coverageBadgeHtml(name, style) {
+    const w = styleCoverage(name, style);
+    if (w >= 3) {
+      return `<span class="ts-pill ts-pill-risk" title="This style uses rare Unicode characters that some phones and older devices don't include a glyph for. It can show as boxes (▯) for the person you paste it to. Prefer a plain or wide-support style if your audience may be on older devices.">⚠ May show as boxes for some people</span>`;
+    }
+    if (w === 2) {
+      return `<span class="ts-pill ts-pill-risk" title="This style includes emoji. Emoji render on modern devices but can look different, or show as boxes, on very old phones.">⚠ Uses emoji — may vary on old devices</span>`;
+    }
+    if (w === 1) {
+      return `<span class="ts-pill ts-pill-safe" title="These styled Unicode letters display on all current phones and computers. On very old Android (roughly pre-2016) or minimal system fonts, a few may still show as boxes (▯). Test first if your audience uses older devices.">Renders on modern devices</span>`;
+    }
+    return `<span class="ts-pill ts-pill-safe" title="This style is plain text — it renders everywhere, with no risk of boxes on any device.">✓ Renders everywhere</span>`;
+  }
+
   // Compact per-card trust signal built from the style's own `platforms`
   // data plus the device glyph probe. Tooltips carry the honest caveats no
   // competitor surfaces (platform filters, screen readers, tofu boxes).
@@ -650,6 +816,12 @@ const decorations = window.UTG_DECORATIONS
     const glyph = sampleGlyph(style);
     if (glyph && !deviceRendersGlyph(glyph)) {
       return `<span class="ts-pill ts-pill-risk" title="Your device's fonts can't display this style — it may show as boxes (□). It can still look fine on other devices.">⚠ May not show on your device</span>`;
+    }
+    // Safe mode on → answer the cross-device "will this box for others?"
+    // question with a coverage badge (supersedes the platform hints below,
+    // which it subsumes). Off → nothing changes here.
+    if (safeMode) {
+      return coverageBadgeHtml(name, style);
     }
     const platforms = Array.isArray(style.platforms) ? style.platforms : null;
     // Pages that render the platform chip row already say where a style
@@ -1107,6 +1279,64 @@ const decorations = window.UTG_DECORATIONS
         renderResults();
       });
     });
+
+    return control;
+  }
+
+  // Lazily inject the "Safe mode" toggle (F2) above the results grid. Present
+  // on every standard generator page (same gating as the scope control) via
+  // this JS injection — no per-page HTML edit, the same "build once in the
+  // shared script, appears everywhere" pattern as the scope / format / word
+  // counter rows. Default OFF, so cards render exactly as before until toggled.
+  function ensureSafeModeControl() {
+    if (window.UTG_VERTICAL_MODE || window.UTG_ZALGO_MODE || window.UTG_DECORATOR_MODE || window.UTG_TATTOO_MODE || window.UTG_CURSIVE_MODE || window.UTG_EVENT_MODE || window.UTG_SCROLL_MODE || window.UTG_REPEAT_MODE) return null;
+    if (!el.resultsGrid) return null;
+
+    let control = $("#safeModeControl");
+    if (control) return control;
+
+    const host = el.resultsGrid.parentElement;
+    if (!host) return null;
+
+    control = document.createElement("div");
+    control.className = "safemode-control";
+    control.id = "safeModeControl";
+    control.innerHTML = `
+      <span class="safemode-control-label">Paste safety</span>
+      <div class="safemode-chips" role="group" aria-label="Check which styles render on other people's devices">
+        <button class="safemode-chip${safeMode ? " active" : ""}" type="button" data-safemode aria-pressed="${safeMode}">
+          <span class="safemode-chip-dot" aria-hidden="true"></span>Safe mode
+        </button>
+      </div>
+      <span class="safemode-hint">Flags styles that may show as boxes (▯) on other people's older phones.</span>
+    `;
+    // Sit after the format control if present, else after the scope control,
+    // else straight above the grid.
+    const formatControl = $("#formatControl");
+    const scopeControl = $("#scopeControl");
+    const anchor = (formatControl && formatControl.parentElement === host && formatControl) ||
+      (scopeControl && scopeControl.parentElement === host && scopeControl) || null;
+    if (anchor) {
+      host.insertBefore(control, anchor.nextSibling);
+    } else {
+      host.insertBefore(control, el.resultsGrid);
+    }
+
+    const chip = $(".safemode-chip", control);
+    if (chip) {
+      chip.addEventListener("click", () => {
+        safeMode = !safeMode;
+        persistSafeMode();
+        chip.classList.toggle("active", safeMode);
+        chip.setAttribute("aria-pressed", String(safeMode));
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "set_safe_mode", on: safeMode });
+
+        renderSavedStyles();
+        renderResults();
+      });
+    }
 
     return control;
   }
@@ -1723,6 +1953,7 @@ document.addEventListener("copy", () => {
     renderDecorations();
     ensureScopeControl();
     ensureFormatControl();
+    ensureSafeModeControl();
     renderSavedStyles();
 
     // Show skeleton placeholders while fonts.json loads
