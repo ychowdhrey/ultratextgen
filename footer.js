@@ -9,6 +9,27 @@
   var path = (window.location && window.location.pathname) || "";
   var isPrintablesContext = path.indexOf("/printables/") === 0 || path.indexOf("/learn/") === 0;
 
+  // Locales with their own native printables hub get the SAME printables-
+  // audience treatment as English /printables/ — translated, linking to
+  // their own on-disk sub-pages, not the generic locale footer. tr/id have
+  // no native printables hub yet (their "printables" nav item still points
+  // at the English /printables/), so they correctly fall through to the
+  // plain isPrintablesContext branch below when a tr/id visitor lands there.
+  var PRINTABLES_NATIVE_PREFIX = {
+    pt: "/pt/imprimiveis/",
+    fr: "/fr/imprimables/",
+    de: "/de/zum-ausdrucken/",
+    it: "/it/da-stampare/",
+    es: "/es/imprimibles/"
+  };
+  var nativePrintablesLocale = null;
+  for (var _ppl in PRINTABLES_NATIVE_PREFIX) {
+    if (path.indexOf(PRINTABLES_NATIVE_PREFIX[_ppl]) === 0) {
+      nativePrintablesLocale = _ppl;
+      break;
+    }
+  }
+
   // Locale-aware footer — same Tier-1 locale set and same no-hub fallback
   // rule as header.js (see that file's NAV comment + the roadmap doc in the
   // private lab repo for why Category/Use Cases/Answers/Events still point
@@ -24,8 +45,8 @@
       explore: [
         { label: "Guias", href: "/pt/guide/" },
         { label: "Respostas", href: "/answers/" },
-        { label: "Usos", href: "/usecase/" },
-        { label: "Categorias", href: "/category/" },
+        { label: "Usos", href: "/pt/usecase/" },
+        { label: "Categorias", href: "/pt/category/" },
         { label: "Biblioteca", href: "/pt/library/" },
         { label: "Imprimíveis", href: "/pt/imprimiveis/" },
         { label: "Eventos", href: "/events/" }
@@ -57,8 +78,8 @@
       explore: [
         { label: "Guides", href: "/fr/guide/" },
         { label: "Réponses", href: "/answers/" },
-        { label: "Usages", href: "/usecase/" },
-        { label: "Catégories", href: "/category/" },
+        { label: "Usages", href: "/fr/usecase/" },
+        { label: "Catégories", href: "/fr/category/" },
         { label: "Bibliothèque", href: "/fr/library/" },
         { label: "Imprimables", href: "/fr/imprimables/" },
         { label: "Événements", href: "/events/" }
@@ -90,8 +111,8 @@
       explore: [
         { label: "Ratgeber", href: "/de/guide/" },
         { label: "Antworten", href: "/answers/" },
-        { label: "Anwendungen", href: "/usecase/" },
-        { label: "Kategorien", href: "/category/" },
+        { label: "Anwendungen", href: "/de/usecase/" },
+        { label: "Kategorien", href: "/de/category/" },
         { label: "Bibliothek", href: "/de/library/" },
         { label: "Zum Ausdrucken", href: "/de/zum-ausdrucken/" },
         { label: "Anlässe", href: "/events/" }
@@ -123,8 +144,8 @@
       explore: [
         { label: "Guide", href: "/it/guide/" },
         { label: "Risposte", href: "/answers/" },
-        { label: "Usi", href: "/usecase/" },
-        { label: "Categorie", href: "/category/" },
+        { label: "Usi", href: "/it/usecase/" },
+        { label: "Categorie", href: "/it/category/" },
         { label: "Libreria", href: "/it/library/" },
         { label: "Da Stampare", href: "/it/da-stampare/" },
         { label: "Eventi", href: "/events/" }
@@ -156,8 +177,8 @@
       explore: [
         { label: "Rehberler", href: "/tr/guide/" },
         { label: "Yanıtlar", href: "/answers/" },
-        { label: "Kullanımlar", href: "/usecase/" },
-        { label: "Kategoriler", href: "/category/" },
+        { label: "Kullanımlar", href: "/tr/usecase/" },
+        { label: "Kategoriler", href: "/tr/category/" },
         { label: "Kütüphane", href: "/tr/library/" },
         { label: "Baskılar", href: "/printables/" },
         { label: "Etkinlikler", href: "/events/" }
@@ -189,8 +210,8 @@
       explore: [
         { label: "Guías", href: "/es/guide/" },
         { label: "Respuestas", href: "/answers/" },
-        { label: "Usos", href: "/usecase/" },
-        { label: "Categorías", href: "/category/" },
+        { label: "Usos", href: "/es/usecase/" },
+        { label: "Categorías", href: "/es/category/" },
         { label: "Biblioteca", href: "/es/library/" },
         { label: "Imprimibles", href: "/es/imprimibles/" },
         { label: "Eventos", href: "/events/" }
@@ -222,8 +243,8 @@
       explore: [
         { label: "Panduan", href: "/id/guide/" },
         { label: "Jawaban", href: "/answers/" },
-        { label: "Kegunaan", href: "/usecase/" },
-        { label: "Kategori", href: "/category/" },
+        { label: "Kegunaan", href: "/id/usecase/" },
+        { label: "Kategori", href: "/id/category/" },
         { label: "Perpustakaan", href: "/id/library/" },
         { label: "Cetak", href: "/printables/" },
         { label: "Acara", href: "/events/" }
@@ -291,6 +312,95 @@
         '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
       '</div>' +
       '<div class="footer-bottom">' + f.copyright + '</div>';
+  }
+
+  // Native printables sub-pages, verified on-disk 2026-07-21 — same rule as
+  // the FOOTER "tools"/"categories" links above: real slugs, not translated
+  // guesses. "Company" reuses the exact FOOTER[loc].company entries so the
+  // About/Privacy/Terms/Contact links stay identical everywhere on a locale.
+  var PRINTABLES_LOCALE = {
+    pt: {
+      colTitle: "Imprimíveis",
+      items: [
+        { label: "Todos os Imprimíveis", href: "/pt/imprimiveis/" },
+        { label: "Alfabeto Cursivo", href: "/pt/imprimiveis/alfabeto-cursivo/" },
+        { label: "Alfabeto para Colorir", href: "/pt/imprimiveis/alfabeto-para-colorir/" },
+        { label: "Letras Bolha A–Z", href: "/pt/imprimiveis/letras-bolha/" },
+        { label: "Ficha de Nome para Traçar", href: "/pt/imprimiveis/nome-para-tracar/" }
+      ],
+      bridge: 'Procurando fontes para bio e posts? <a href="/pt/" class="footer-link">Experimente o gerador de fontes →</a>',
+      copyright: "© 2026 UltraTextGen. Letras e alfabetos grátis para imprimir."
+    },
+    fr: {
+      colTitle: "Imprimables",
+      items: [
+        { label: "Tous les Imprimables", href: "/fr/imprimables/" },
+        { label: "Alphabet Cursif", href: "/fr/imprimables/alphabet-cursif/" },
+        { label: "Coloriages Alphabet", href: "/fr/imprimables/coloriage-alphabet/" },
+        { label: "Lettres Bulles A–Z", href: "/fr/imprimables/lettres-bulles/" },
+        { label: "Fiche de Prénom à Tracer", href: "/fr/imprimables/prenom-a-tracer/" }
+      ],
+      bridge: 'Vous cherchez des polices pour bio et posts ? <a href="/fr/" class="footer-link">Essayez le générateur de polices →</a>',
+      copyright: "© 2026 UltraTextGen. Lettres et alphabets gratuits à imprimer."
+    },
+    de: {
+      colTitle: "Zum Ausdrucken",
+      items: [
+        { label: "Alle Schreibvorlagen", href: "/de/zum-ausdrucken/" },
+        { label: "Schreibschrift-Generator", href: "/de/zum-ausdrucken/schreibschrift/" },
+        { label: "Schreibübungen-Generator", href: "/de/zum-ausdrucken/schreibuebungen/" },
+        { label: "Namen Nachspuren", href: "/de/zum-ausdrucken/namen-schreiben/" },
+        { label: "Name-Ausmalbild", href: "/de/zum-ausdrucken/name-ausmalen/" }
+      ],
+      bridge: 'Suchst du Schriftarten für Bio und Beiträge? <a href="/de/" class="footer-link">Schriftgenerator ausprobieren →</a>',
+      copyright: "© 2026 UltraTextGen. Kostenlose Buchstaben und Alphabete zum Ausdrucken."
+    },
+    it: {
+      colTitle: "Da Stampare",
+      items: [
+        { label: "Tutte le Schede da Stampare", href: "/it/da-stampare/" },
+        { label: "Alfabeto Corsivo", href: "/it/da-stampare/alfabeto-corsivo/" },
+        { label: "Nome da Colorare", href: "/it/da-stampare/nome-da-colorare/" },
+        { label: "Nome da Tracciare", href: "/it/da-stampare/tracciare-il-nome/" }
+      ],
+      bridge: 'Cerchi font per bio e post? <a href="/it/" class="footer-link">Prova il generatore di font →</a>',
+      copyright: "© 2026 UltraTextGen. Lettere e alfabeti gratuiti da stampare."
+    },
+    es: {
+      colTitle: "Imprimibles",
+      items: [
+        { label: "Todos los Imprimibles", href: "/es/imprimibles/" },
+        { label: "Alfabeto en Cursiva", href: "/es/imprimibles/alfabeto-cursiva/" },
+        { label: "Abecedario para Colorear", href: "/es/imprimibles/abecedario-para-colorear/" },
+        { label: "Letras Burbuja A–Z", href: "/es/imprimibles/letras-burbuja/" },
+        { label: "Ficha para Trazar el Nombre", href: "/es/imprimibles/nombre-para-trazar/" }
+      ],
+      bridge: '¿Buscas fuentes para bio y publicaciones? <a href="/es/" class="footer-link">Prueba el generador de fuentes →</a>',
+      copyright: "© 2026 UltraTextGen. Letras y alfabetos gratis para imprimir."
+    }
+  };
+
+  function buildLocalePrintablesFooterHTML(locale) {
+    var p = PRINTABLES_LOCALE[locale];
+    var f = FOOTER[locale];
+    return '<div class="footer-columns">' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + p.colTitle + '</span>' +
+          linksHTML(p.items) +
+        '</div>' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + f.colTitles.company + '</span>' +
+          linksHTML(f.company) +
+        '</div>' +
+      '</div>' +
+      '<div class="footer-bridge">' + p.bridge + '</div>' +
+      '<div class="footer-social-links">' +
+        '<a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>' +
+        '<a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>' +
+        '<a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
+        '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
+      '</div>' +
+      '<div class="footer-bottom">' + p.copyright + '</div>';
   }
 
   var printablesLinksHTML =
@@ -385,7 +495,9 @@
 
   var locale = detectLocale();
 
-  if (isPrintablesContext) {
+  if (nativePrintablesLocale) {
+    footerLinksHTML = buildLocalePrintablesFooterHTML(nativePrintablesLocale);
+  } else if (isPrintablesContext) {
     footerLinksHTML = printablesLinksHTML;
   } else if (locale !== "en") {
     footerLinksHTML = buildLocaleFooterHTML(locale);
