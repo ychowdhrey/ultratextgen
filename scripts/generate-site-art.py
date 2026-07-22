@@ -488,6 +488,18 @@ def m_smiley(p, accent=PURPLE):
           stroke-linecap="round"/>"""
 
 
+def m_sunglasses(p, accent=PURPLE):
+    """A pair of flat sunglasses lenses on a bridge — sunglasses emoji is
+    color-only and does not rasterize in the bundled fonts."""
+    return f"""
+    <rect x="76" y="150" width="92" height="66" rx="20" fill="url(#g{p})"/>
+    <rect x="192" y="150" width="92" height="66" rx="20" fill="url(#g{p})"/>
+    <path d="M168 168 q12 -10 24 0" fill="none" stroke="url(#g{p})" stroke-width="9"
+          stroke-linecap="round"/>
+    <line x1="66" y1="164" x2="76" y2="170" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="294" y1="164" x2="284" y2="170" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>"""
+
+
 def m_camera(p, accent=PURPLE):
     return f"""
     <rect x="60" y="116" width="240" height="160" rx="30" fill="url(#g{p})"/>
@@ -1653,6 +1665,26 @@ PAGES = {
   "symbol-yen-sign": ("Yen Sign", "¥ meaning, history & how to type it", glyphs("¥"), K_SYM),
   "symbol-yin-yang": ("Yin Yang Symbol", "☯ meaning, history & how to type it", glyphs("☯"), K_SYM),
 
+  # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
+  "symbol-asterisk-symbol": ("Asterisk Symbol", "* meaning, history & how to type it", glyphs("*", "⁂"), K_SYM),
+  "symbol-chi-symbol": ("Chi Symbol", "Χ χ meaning, history & how to type it", glyphs("Χ", "χ"), K_SYM),
+  "symbol-crescent-and-star": ("Star and Crescent", "☪ meaning, history & how to type it", glyphs("☪"), K_SYM),
+  "symbol-en-dash": ("En Dash", "– meaning & how to type it", glyphs("–"), K_SYM),
+  "symbol-interrobang": ("Interrobang", "‽ meaning, history & how to type it", glyphs("‽"), K_SYM),
+  "symbol-lambda-symbol": ("Lambda Symbol", "Λ λ meaning, history & how to type it", glyphs("Λ", "λ"), K_SYM),
+  "symbol-pawn-symbol": ("Pawn Symbol", "♟ ♙ meaning & how to type it", glyphs("♟", "♙"), K_SYM),
+  "symbol-peso-sign": ("Peso Sign", "₱ meaning, history & how to type it", glyphs("₱"), K_SYM),
+  "symbol-phi-symbol": ("Phi Symbol", "Φ φ meaning, history & how to type it", glyphs("Φ", "φ"), K_SYM),
+  "symbol-psi-symbol": ("Psi Symbol", "Ψ ψ meaning, history & how to type it", glyphs("Ψ", "ψ"), K_SYM),
+  "symbol-ruble-sign": ("Ruble Sign", "₽ meaning, history & how to type it", glyphs("₽"), K_SYM),
+  "symbol-skull-and-crossbones": ("Skull and Crossbones", "☠ meaning, history & how to type it", m_skull, K_SYM),
+  "symbol-snapchat-heart-colors": ("Snapchat Heart Colors", "What each heart emoji color means", m_heart, K_SYM),
+  "symbol-spade-symbol": ("Spade Symbol", "♠ ♤ meaning & how to type it", glyphs("♠", "♤"), K_SYM),
+  "symbol-sunglasses-symbol": ("Sunglasses Symbol", "😎 meaning, codepoint & how to type it", m_sunglasses, K_SYM),
+  "symbol-theta-symbol": ("Theta Symbol", "Θ θ meaning, history & how to type it", glyphs("Θ", "θ"), K_SYM),
+  "symbol-tilde-symbol": ("Tilde Symbol", "~ meaning, history & how to type it", glyphs("~"), K_SYM),
+  "symbol-underscore-symbol": ("Underscore", "_ meaning, history & how to type it", glyphs("_"), K_SYM),
+
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",
         glyphs("é", "ñ", "ü", "á", "ô"), K_LIB),
@@ -1763,6 +1795,10 @@ PAGES = {
   "library-sad-kaomoji": ("Sad Kaomoji", "Downcast text faces", m_kaomoji, K_LIB),
   "library-shocked-kaomoji": ("Shocked Kaomoji", "Wide-eyed, stunned faces", m_kaomoji, K_LIB),
   "library-shrug-kaomoji": ("Shrug Kaomoji", "The shruggie and variants", m_kaomoji, K_LIB),
+  # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
+  "library-snapchat-symbols": ("Snapchat Symbols", "Ghost, sparkle & bio decorations to copy",
+        glyphs("✧", "★", "♡", "✦"), K_LIB),
+  "library-table-flip-kaomoji": ("Table Flip Kaomoji", "Rage-quit text faces to copy", m_kaomoji, K_LIB),
   "library-slash-backslash-symbols": ("Slash & Backslash Symbols", "Dividers and dividing marks",
         glyphs("/", "\\", "⁄", "∕", "｜"), K_LIB),
   "library-sleepy-kaomoji": ("Sleepy Kaomoji", "Drowsy, dozing text faces", m_kaomoji, K_LIB),
@@ -2245,6 +2281,23 @@ PAGES.update({
 "printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
+
+# 2026-07-22 GSC 404 cleanup: these pages shipped without ever being
+# registered here, so they had no og:image/hero art at all.
+"category-case-converter": ("Case Converter", "UPPERCASE, lowercase & Title Case",
+      P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
+"usecase-old-english-translator": ("Old English Translator", "Thee, thou & thy — Shakespearean text",
+      P(m_typo, sample="Thee", ff=SERIF, style="italic", weight="400", size=64, label="ye olde english"), K_USE),
+"usecase-pirate-translator": ("Pirate Translator", "Arrr! Turn any text into pirate speak", m_skull, K_USE),
+"printables-monogram-maker": ("Monogram Maker", "Up to 3 initials, classic or circle-frame", P(m_circled_letter, letter="M"), K_PRINT),
+"printables-cross-stitch-letters": ("Cross-Stitch Letters", "Any word as a charted stitch pattern", m_grid, K_PRINT),
+"printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
+"printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
+"printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
+"printables-happy-birthday-in-cursive": ("Happy Birthday in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Birthday"), K_PRINT),
+"printables-love-in-cursive": ("Love in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Love"), K_PRINT),
+"printables-mom-in-cursive": ("Mom in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Mom"), K_PRINT),
+
 "category-ancient-fonts": ("Ancient & Rune Fonts", "Rune, Cherokee & ancient script styling",
       P(m_typo, sample="Rune", ff=SERIF, weight="800", size=84, label="runic · cherokee · ethiopic"), K_CAT),
 "category-emoji-letter-fonts": ("Emoji Letter Generator", "Block, squared & flag-emoji letter styles",
@@ -2273,6 +2326,9 @@ PAGES.update({
       P(m_transform, a="A", b="01"), K_USE),
 "curved-text": ("Curved & Arc Text Generator", "Bend text into arcs, waves, spirals & shapes",
       P(m_arc, letters="ARC"), K_USE),
+# 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
+"character-counter": ("Character Counter", "Live word & character stats as you type",
+      P(m_typo, sample="123", weight="800", size=88, label="words · characters"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 
