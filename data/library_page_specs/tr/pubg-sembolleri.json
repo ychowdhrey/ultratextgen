@@ -1,0 +1,109 @@
+{
+  "slug": "pubg-sembolleri",
+  "lang": "tr",
+  "title": "PUBG ve BGMI Sembolleri ★ 彡 乂 — Kopyala Yapıştır İsim İçin (2026)",
+  "meta_description": "PUBG Mobile ve BGMI isim sembolleri ★ 彡 乂 ꧁꧂ kopyala yapıştır — oyunun fontuyla test edildi, artı isim değiştirme kartı harcamadan önce hangi sembollerin başarısız olduğunun gerçeği.",
+  "canonical": "https://ultratextgen.com/tr/library/pubg-sembolleri/",
+  "breadcrumb": "PUBG ve BGMI Sembolleri",
+  "hero_h1": "PUBG ve BGMI Sembolleri ★",
+  "hero_tagline": "PUBG Mobile ve BGMI'nin kendi fontunda gerçekten görünen semboller — rastgele bir Unicode listesi değil. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "PUBG Mobile ve BGMI (Battlegrounds Mobile India — aynı oyun, Hindistan sürümü) metni telefonunun tam sistem fontuyla göstermez. Kendi paket fontlarını kullanırlar, bu da 150.000'den fazla Unicode karakterinden sadece birkaç binini kapsar — bu yüzden başka her yerde sorunsuz görünen bir sembol, oyun içi isminde boş bir kutu olarak görünebilir ya da tamamen reddedilebilir. Bu sayfadaki her karakter, oyuncuların gerçekten çalıştığını bildirdiği ailelerden tek karakterlik bir seçimdir: katakana ve CJK işaretleri, Cava çerçeve parantezleri ve basit yıldızlar. İsimler toplam 14 karakterle sınırlıdır, yani bir çerçeve daha tek harf yazmadan sınırından pay alır — ihtiyacın olanı kopyala ve oradan devam et.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "copy_pattern": "collection",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/pubg-symbols/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/pubg-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-pubg/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-pubg/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/pubg-sembolleri/" }
+  ],
+  "sections": [
+    {
+      "id": "pubg-friendly-symbols",
+      "label": "Savaşta Test Edildi",
+      "h2": "PUBG ve BGMI Dostu Semboller",
+      "intro": "PUBG'nin paket fontunun gerçekten gösterdiği küçük kümeden tek karakterlik seçimler — her isim için en güvenli başlangıç noktası.",
+      "symbols": [
+        { "char": "ツ", "label": "Katakana Tsu" },
+        { "char": "ッ", "label": "Küçük Katakana Tsu" },
+        { "char": "彡", "label": "San — Üçlü Çizgi" },
+        { "char": "乂", "label": "Yi — Çapraz Kılıç İşareti" },
+        { "char": "亗", "label": "Sui — Katmanlı Kademe İşareti" },
+        { "char": "々", "label": "İdeografik Tekrar İşareti" },
+        { "char": "ム", "label": "Katakana Mu" },
+        { "char": "王", "label": "Wang — Kral" },
+        { "char": "爪", "label": "CJK Pençe Kökü" },
+        { "char": "★", "label": "Siyah Yıldız" },
+        { "char": "☆", "label": "Beyaz Yıldız" },
+        { "char": "✦", "label": "Siyah Dört Köşeli Yıldız" },
+        { "char": "✧", "label": "Beyaz Dört Köşeli Yıldız" },
+        { "char": "•", "label": "Madde İmi" },
+        { "char": "×", "label": "Çarpma İşareti" }
+      ]
+    },
+    {
+      "id": "pubg-frame-brackets",
+      "label": "Çerçeve ve Klan Tagı",
+      "h2": "Çerçeve ve Klan Tagı Parantezleri",
+      "intro": "꧁ ꧂ Cava çifti, PUBG/BGMI'nin en tanınan isim çerçevesidir — klasik görünüm için herhangi bir ismi bunun içine al. Unutma: bir çerçeve 14 karakterinden 2'sini hemen harcar.",
+      "symbols": [
+        { "char": "꧁", "label": "Cava Sol Rerenggan" },
+        { "char": "꧂", "label": "Cava Sağ Rerenggan" },
+        { "char": "「", "label": "Sol Köşe Parantezi" },
+        { "char": "」", "label": "Sağ Köşe Parantezi" },
+        { "char": "【", "label": "Sol Siyah Mercek Parantezi" },
+        { "char": "】", "label": "Sağ Siyah Mercek Parantezi" },
+        { "char": "《", "label": "Sol Çift Açılı Parantez" },
+        { "char": "》", "label": "Sağ Çift Açılı Parantez" }
+      ]
+    },
+    {
+      "id": "pubg-warrior-symbols",
+      "label": "Savaşçı ve Battle Royale",
+      "h2": "Savaşçı ve Battle Royale İşaretleri",
+      "intro": "Klan tagı ya da agresif bir görünen ad için savaş temalı tek karakterler.",
+      "symbols": [
+        { "char": "⚔", "label": "Çapraz Kılıçlar" },
+        { "char": "☠", "label": "Kuru Kafa ve Çapraz Kemikler" },
+        { "char": "➤", "label": "Siyah Sağ Ok Ucu" },
+        { "char": "⌖", "label": "Konum Göstergesi (Nişangah)" },
+        { "char": "†", "label": "Hançer" }
+      ]
+    },
+    {
+      "id": "pubg-status-symbols",
+      "label": "Statü Gösterisi",
+      "h2": "Taç ve Onay İşareti Sembolleri",
+      "intro": "Oyuncuların isim yakınına eklediği dekoratif \"statü\" sembolleri. Bunlar sıradan Unicode karakterleridir — resmi bir rütbeyi, seviyeyi ya da Krafton rozetini temsil etmezler.",
+      "symbols": [
+        { "char": "♛", "label": "Siyah Satranç Vezir (Taç)" },
+        { "char": "♚", "label": "Siyah Satranç Şah (Taç)" },
+        { "char": "✓", "label": "Onay İşareti" },
+        { "char": "☑", "label": "Onaylı Kutu" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "pubg-collections",
+    "label": "İsim Kombinasyonları",
+    "h2": "Hazır PUBG ve BGMI İsim Kombinasyonları",
+    "intro": "Tam bir düzeni tek tıkla kopyala, sonra İsim yazısını kendi isminle değiştir — toplam 14 karakter sınırını unutma, çerçeve dahil."
+  },
+  "collection_container_id": "pubgCollectionsContainerTR",
+  "collections": [
+    { "name": "Klasik Çerçeve Tag", "flags": ["꧁", "İsim", "꧂"], "defaultFormat": "inline" },
+    { "name": "Terli Gülümseme Çerçevesi", "flags": ["ツ", "İsim", "ツ"], "defaultFormat": "inline" },
+    { "name": "Çapraz Kılıç Sarması", "flags": ["乂•", "İsim", "•乂"], "defaultFormat": "inline" },
+    { "name": "Yıldız Parantez Tag", "flags": ["「★」", "İsim"], "defaultFormat": "inline" },
+    { "name": "Savaşçı Kuru Kafa Tag", "flags": ["☠", "İsim", "☠"], "defaultFormat": "inline" },
+    { "name": "Taç Flex Tag", "flags": ["♛", "İsim"], "defaultFormat": "inline" }
+  ],
+  "cta": "Düz metni 100'den fazla Unicode font stiline dönüştürmek için UltraTextGen'i kullan — kalın, italik, gotik — ücretsiz ve anında.",
+  "related": [
+    { "href": "/tr/usecase/pubg-nick/", "title": "PUBG Nick", "desc": "PUBG için nickname üreteci ve hazır isim kombinasyonları." },
+    { "href": "/tr/usecase/free-fire-nick/", "title": "Free Fire Nick", "desc": "Free Fire nickname üreteci ve süslü isim örnekleri." },
+    { "href": "/tr/library/roblox-sembolleri/", "title": "Roblox Sembolleri", "desc": "Görünen ad ve bio için Roblox sembolleri." },
+    { "href": "/tr/usecase/mobile-legends-nick/", "title": "Mobile Legends Nick", "desc": "ML nickname üreteci ve sembol kombinasyonları." }
+  ]
+}
