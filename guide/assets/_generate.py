@@ -687,6 +687,30 @@ def m_discord_safe_name(p):
     return g
 
 
+def m_encoding_ladder(p):
+    # the proposal pipeline: idea -> proposal -> UTC vote -> code point -> device
+    rows = [("Idea", "spot the gap"), ("Proposal", "L2 doc + evidence"),
+            ("UTC Vote", "quarterly review"), ("Code Point", "U+1FA7B"),
+            ("Your Phone", "vendor ships it")]
+    g = ""
+    for i, (label, note) in enumerate(rows):
+        y = 40 + i * 58
+        fill = f"url(#g{p})" if i == 4 else "#fff"
+        ink = "#fff" if i == 4 else INK
+        g += f"""
+        <g transform="translate(60 {y})">
+          <rect width="240" height="48" rx="14" fill="{fill}" stroke="{INK}"
+                stroke-opacity="0.12"/>
+          <text x="18" y="31" font-family="{SANS}" font-size="19"
+                font-weight="700" fill="{ink}">{label}</text>
+          <text x="222" y="30" font-family="{SANS}" font-size="13" fill="{ink}"
+                opacity="0.7" text-anchor="end">{note}</text>
+        </g>"""
+        if i < 4:
+            g += f'<line x1="180" y1="{y+48}" x2="180" y2="{y+58}" stroke="{PURPLE}" stroke-width="4"/>'
+    return g
+
+
 GUIDES = {
     "emoticon-vs-emoji-vs-kaomoji": ("Emoticon vs Emoji vs Kaomoji",
               "How three kinds of text faces differ", m_comments),
@@ -746,6 +770,8 @@ GUIDES = {
               "Member list, mentions & impersonation", m_discord_safe_name),
     "fancy-fonts-and-accents": ("Accents, Diacritics & Fancy Fonts",
               "What keeps its marks and what breaks", m_accents),
+    "unicode-symbol-approval-process": ("How New Unicode Symbols Get Approved",
+              "The real proposal-to-code-point pipeline", m_encoding_ladder),
 }
 
 
