@@ -116,6 +116,7 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /cdn-cgi/*                   /contact/ 301
 
 # Library → Symbol pillar: single-glyph pages moved to their own top-level namespace
+/library/degree-symbol              /symbol/degree-symbol/    301
 /library/degree-symbol/            /symbol/degree-symbol/    301
 /library/degree-symbol/index.html  /symbol/degree-symbol/    301
 /library/peace-symbol/             /symbol/peace-sign/       301
@@ -155,6 +156,8 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /es/library/simbolo-de-infinito/index.html  /es/symbol/simbolo-de-infinito/            301
 /id/library/simbol-derajat/                 /id/symbol/simbol-derajat/                 301
 /id/library/simbol-derajat/index.html       /id/symbol/simbol-derajat/                 301
+/id/library/simbol-kutip/                   /id/symbol/simbol-kutip/                   301
+/id/library/simbol-kutip/index.html         /id/symbol/simbol-kutip/                   301
 /no/library/eurotegn/                       /no/symbol/eurotegn/                       301
 /no/library/eurotegn/index.html             /no/symbol/eurotegn/                       301
 /no/library/pundtegn/                       /no/symbol/pundtegn/                       301
