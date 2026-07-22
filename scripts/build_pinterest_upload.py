@@ -101,7 +101,8 @@ SOURCES = {
         board="board", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords")
        for loc in ("fr_gaming", "fr_clavier", "fr_imprimables", "fr_tatouage",
-                   "fr_esthetique", "fr_kaomoji")},
+                   "fr_esthetique", "fr_kaomoji", "fr_zodiaque",
+                   "fr_style_reseau", "fr_outils")},
 }
 
 

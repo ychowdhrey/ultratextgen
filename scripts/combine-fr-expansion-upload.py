@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-One-off combined Pinterest upload CSV for the 6 new French topic boards
+One-off combined Pinterest upload CSV for all 10 new French topic boards
 (fr_gaming, fr_clavier, fr_imprimables, fr_tatouage, fr_esthetique,
-fr_kaomoji) — a convenience single-file view of all 72 pins for a single
-bulk-import pass. A mixed-board CSV is not a new pattern: the main
-data/pinterest_pins_upload.csv already carries 12 distinct boards in one
-file (Pinterest's importer keys each row's board off its own "Pinterest
-board" column).
+fr_kaomoji, fr_zodiaque, fr_style_reseau, fr_outils) — a convenience
+single-file view of every pin for a single bulk-import pass. A mixed-board
+CSV is not a new pattern: the main data/pinterest_pins_upload.csv already
+carries 12 distinct boards in one file (Pinterest's importer keys each row's
+board off its own "Pinterest board" column).
 
 This is a snapshot export, not a pipeline source: it is NOT registered in
 build_pinterest_upload.py's SOURCES, so re-running the per-board generators
 won't touch it and it won't be regenerated automatically. Re-run this script
-by hand if any of the 6 per-board upload CSVs change.
+by hand if any of the per-board upload CSVs change.
 
 Run:  python3 scripts/combine-fr-expansion-upload.py
 """
@@ -29,7 +29,8 @@ PC = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(PC)
 
 BOARDS = ["fr_gaming", "fr_clavier", "fr_imprimables", "fr_tatouage",
-          "fr_esthetique", "fr_kaomoji"]
+          "fr_esthetique", "fr_kaomoji", "fr_zodiaque", "fr_style_reseau",
+          "fr_outils"]
 
 
 def main():
