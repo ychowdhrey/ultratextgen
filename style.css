@@ -8139,4 +8139,37 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 }
 .lib-clear-btn.visible {
   display: inline-flex;
+
+/* Cursive hub A-Z chart (crawlable text glyphs, links to letter guides) */
+.cursive-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+.cursive-chart-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.6rem 0.3rem;
+  border: 1px solid var(--border-color, #e2e6ee);
+  border-radius: 12px;
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.cursive-chart-cell:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.cursive-chart-glyphs { font-size: 1.5rem; color: var(--text-primary); }
+.cursive-chart-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+/* Bridge strip — generator + Learn links on every printable page (rule 5) */
+.pt-bridge {
+  border-left: 3px solid var(--accent-purple);
+  padding-left: 1rem;
 }

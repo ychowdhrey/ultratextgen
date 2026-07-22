@@ -424,6 +424,14 @@
         '<a href="/printables/monogram-maker/" class="footer-link">Monogram Maker</a>' +
       '</div>' +
       '<div class="footer-col">' +
+        '<span class="footer-col-title">Learn</span>' +
+        '<a href="/learn/handwriting/" class="footer-link">Teaching Handwriting</a>' +
+        '<a href="/learn/handwriting/when-to-start-handwriting/" class="footer-link">When to Start</a>' +
+        '<a href="/learn/handwriting/stroke-order-and-start-dots/" class="footer-link">Stroke Order &amp; Start Dots</a>' +
+        '<a href="/learn/handwriting/from-tracing-to-writing/" class="footer-link">From Tracing to Writing</a>' +
+        '<a href="/learn/handwriting/cursive-when-and-how/" class="footer-link">Cursive: When &amp; How</a>' +
+      '</div>' +
+      '<div class="footer-col">' +
         '<span class="footer-col-title">Company</span>' +
         '<a href="/about/" class="footer-link">About</a>' +
         '<a href="/privacy/" class="footer-link">Privacy Policy</a>' +
