@@ -1,0 +1,82 @@
+{
+  "slug": "monarch-butterfly-emoji",
+  "page_type": "symbol",
+  "title": "Monarch Butterfly Emoji: Copy & Paste 🫌 — the Unicode 18.0 Candidate Fixing a Species Mix-Up",
+  "meta_description": "Monarch Butterfly (🫌, U+1FACC) is a draft candidate for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. It fixes years of cross-platform Butterfly rendering confusion — not approved yet, and no font renders it today.",
+  "canonical": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/",
+  "breadcrumb": "Monarch Butterfly Emoji",
+  "hero_h1": "Monarch Butterfly Emoji",
+  "hero_tagline": "A specific species, carved out of the generic Butterfly emoji's cross-platform rendering mismatch — drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: not yet approved, and no font renders it yet. Click to copy the codepoint anyway.",
+  "intro": "Monarch Butterfly (🫌, U+1FACC) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. It exists to fix a real fragmentation problem: the existing generic Butterfly emoji (🦋) renders as a blue Morpho on some platforms and as something closer to a Monarch on others, so two people could exchange the identical codepoint and picture two different insects — \"you might have been texting them a Monarch butterfly while they were looking at a Morpho.\" Requests for it go back years on Apple's own community forums, where users have pointed to the Monarch's iconic orange-and-black coloring and its endangered status as reasons it deserves its own slot. Unicode is normally reluctant to approve species-specific variants, but frequency data showing Butterfly as the most-used animal emoji in its subcategory made the case for carving out its most recognizable species. The emoji itself carries the Monarch's migration story — \"generational resilience, endurance, and deep ancestral memory,\" a creature that crosses thousands of miles across lifespans it never completes. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support, likely sometime in 2027.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "monarch-butterfly",
+      "label": "Monarch Butterfly",
+      "h2": "Monarch Butterfly Emoji",
+      "intro": "The draft character itself — copyable today as a codepoint, even though no font can render it yet.",
+      "symbols": [
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (draft, U+1FACC)"
+        }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Distinct From",
+      "h2": "The Emoji It Gets Confused With",
+      "intro": "The already-encoded generic emoji Monarch Butterfly is carved out of, and the neighbor it's most often rendered as by mistake.",
+      "symbols": [
+        {
+          "char": "🦋",
+          "label": "Butterfly — the generic species Monarch Butterfly is carved out of"
+        }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Fellow Draft Candidates",
+      "h2": "Other Emoji 18.0 Draft Candidates",
+      "intro": "Monarch Butterfly isn't the only unapproved character in this release — these are drafted alongside it, equally unrendered until September 2026's decision.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Cracking Face (draft, U+1FAEB) — won the public vote"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (draft, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (draft, U+1FA8B)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Animal & Creature Emojis",
+      "desc": "Every already-encoded creature emoji, including the generic Butterfly, browsable and copy-paste ready today."
+    },
+    {
+      "href": "/symbol/cracking-face-emoji/",
+      "title": "Cracking Face Emoji",
+      "desc": "The Emoji 18.0 draft candidate that won the public vote."
+    },
+    {
+      "href": "/symbol/pickle-emoji/",
+      "title": "Pickle Emoji",
+      "desc": "Another Emoji 18.0 draft candidate — reassigned from a deferred Apple Core proposal."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Unicode 18.0's New Emoji",
+      "desc": "The full draft slate of 9 candidates, ranked by public vote."
+    }
+  ]
+}
