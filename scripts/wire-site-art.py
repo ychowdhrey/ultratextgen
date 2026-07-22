@@ -52,7 +52,7 @@ def figure_block(slug):
     return (
         f'\n<figure class="page-hero-figure" data-uthero aria-hidden="true">\n'
         f'  <img src="/assets/hero/{slug}.svg" width="1200" height="340"\n'
-        f'       loading="lazy" alt="">\n'
+        f'       fetchpriority="high" alt="">\n'
         f'</figure>\n')
 
 
