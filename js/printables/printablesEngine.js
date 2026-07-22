@@ -32,7 +32,14 @@
  * any print action):
  *   #pt-strip            character picker
  *   #pt-panel            selected-character detail
- *   #pt-alphabet-grid    printable alphabet grid   (+ button #pt-alphabet-print)
+ *   #pt-alphabet-grid    printable alphabet grid
+ *   #pt-alphabet-print   button: print the full alphabet (works with or without
+ *                        the grid; CFG.alphabetPrint: "book" prints one character
+ *                        per page instead of the compact sheet — see
+ *                        printAlphabetBook. Sheet-mode pages get an auto-added
+ *                        secondary book button beside it)
+ *   #pt-book-print       optional extra button (e.g. on a promo card) that
+ *                        prints the one-page-per-character alphabet book
  *   #pt-practice-print   button: print ruled practice sheet
  *   #pt-name-input       name / word field  (+ #pt-name-print, #pt-name-png,
  *                        #pt-name-preview, #pt-name-rows)
@@ -74,6 +81,7 @@
       dotLadderTitle: "Practice ladder",
       dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
       pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
+      printBook: "Print as a book — one page per letter",
       classSet: "Class set — one sheet per name", sheets: "sheets",
       classSetPngHint: "PNG downloads the current name; use Print for the whole set.",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
@@ -106,6 +114,7 @@
       dotLadderTitle: "Échelle de difficulté",
       dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
       pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
+      printBook: "Imprimer en livret — une page par lettre",
       classSet: "Série pour la classe — une feuille par prénom", sheets: "feuilles",
       classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Imprimer pour toute la série.",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
@@ -138,6 +147,7 @@
       dotLadderTitle: "Escalera de dificultad",
       dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
       pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
+      printBook: "Imprimir como libro — una página por letra",
       classSet: "Juego para la clase — una hoja por nombre", sheets: "hojas",
       classSetPngHint: "El PNG descarga el nombre actual; usa Imprimir para el juego completo.",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
@@ -170,6 +180,7 @@
       dotLadderTitle: "Escada de dificuldade",
       dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
       pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
+      printBook: "Imprimir como livro — uma página por letra",
       classSet: "Conjunto para a turma — uma folha por nome", sheets: "folhas",
       classSetPngHint: "O PNG baixa o nome atual; use Imprimir para o conjunto completo.",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
@@ -202,6 +213,7 @@
       dotLadderTitle: "Scala di difficoltà",
       dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
       pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
+      printBook: "Stampa come libretto — una pagina per lettera",
       classSet: "Set per la classe — un foglio per nome", sheets: "fogli",
       classSetPngHint: "Il PNG scarica il nome corrente; usa Stampa per l'intero set.",
       bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
@@ -234,6 +246,7 @@
       dotLadderTitle: "Drabinka trudności",
       dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
       pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
+      printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
       classSet: "Zestaw dla klasy — jedna karta na imię", sheets: "kart",
       classSetPngHint: "PNG pobiera bieżące imię; użyj Drukuj dla całego zestawu.",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
@@ -266,6 +279,7 @@
       dotLadderTitle: "Schwierigkeitsleiter",
       dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
       pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
+      printBook: "Als Heft drucken — eine Seite pro Buchstabe",
       classSet: "Klassensatz — ein Blatt pro Name", sheets: "Blätter",
       classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Drucken verwenden.",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
@@ -327,8 +341,10 @@
     panel: $("#pt-panel"),
     alphaGrid: $("#pt-alphabet-grid"),
     alphaPrint: $("#pt-alphabet-print"),
+    bookPrint: $("#pt-book-print"),
     practicePrint: $("#pt-practice-print"),
     nameInput: $("#pt-name-input"),
+    nameRoster: $("#pt-name-roster"),
     namePrint: $("#pt-name-print"),
     namePng: $("#pt-name-png"),
     namePreview: $("#pt-name-preview"),
@@ -350,6 +366,7 @@
     genPng: $("#pt-gen-png"),
     genScript: $("#pt-gen-script"),
     genRoster: $("#pt-gen-roster"),
+    genLadder: $("#pt-gen-ladder"),
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
     designInput2: $("#pt-design-input2"),
@@ -368,6 +385,7 @@
     designHint: $("#pt-design-hint"),
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
+    designLadder: $("#pt-design-ladder"),
     designPng: $("#pt-design-png"),
     // Banner maker (optional; gated on its own mounts)
     bannerInput: $("#pt-banner-input"),
@@ -377,6 +395,7 @@
     bannerPng: $("#pt-banner-png"),
     // Name puzzle maker (optional; gated on its own mounts)
     puzzleInput: $("#pt-puzzle-input"),
+    puzzleRoster: $("#pt-puzzle-roster"),
     puzzleHeading: $("#pt-puzzle-heading"),
     puzzleBorderGroup: $("#pt-puzzle-border-group"),
     puzzleFooter: $("#pt-puzzle-footer"),
@@ -990,7 +1009,53 @@
      Section: printable alphabet grid (outline mode)
      --------------------------------------------------------------- */
 
+  // "Print the alphabet" has two print layouts:
+  //   - "sheet" (default): the original compact grid — the whole set on as
+  //     few pages as possible, for a single-sheet reference/center activity.
+  //   - "book"  (CFG.alphabetPrint === "book"): every character on its own
+  //     full printed page, in order, so the print dialog's "Save as PDF"
+  //     produces a ready-made alphabet workbook.
+  // Book-mode pages print the book from the main #pt-alphabet-print button;
+  // sheet-mode pages keep the sheet there and get an auto-added secondary
+  // book button beside it. An optional #pt-book-print button anywhere else
+  // on the page (e.g. a promo card) triggers the same book print.
+  function printAlphabetBook() {
+    const book = document.createElement("div");
+    book.className = "bubble-print-book";
+    CHARS.forEach((ch) => {
+      const page = document.createElement("div");
+      page.className = "bubble-print-book-page";
+      const t = document.createElement("h3");
+      t.className = "bubble-print-title";
+      t.textContent = cap(NOUN) + " " + charLabel(ch) + " — ultratextgen.com";
+      page.appendChild(t);
+      page.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      book.appendChild(page);
+    });
+    printWrap("", book);
+  }
+
+  function printAlphabetSheet() {
+    const sheet = document.createElement("div");
+    sheet.className = "bubble-print-sheet";
+    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
+    printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
+  }
+
   function buildAlphabetGrid() {
+    if (el.bookPrint) el.bookPrint.addEventListener("click", printAlphabetBook);
+    if (el.alphaPrint) {
+      const bookMode = CFG.alphabetPrint === "book";
+      el.alphaPrint.addEventListener("click", bookMode ? printAlphabetBook : printAlphabetSheet);
+      if (!bookMode) {
+        const bookBtn = document.createElement("button");
+        bookBtn.type = "button";
+        bookBtn.className = "bubble-btn";
+        bookBtn.textContent = T.printBook;
+        bookBtn.addEventListener("click", printAlphabetBook);
+        el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
+      }
+    }
     if (!el.alphaGrid) return;
     CHARS.forEach((ch) => {
       const cell = document.createElement("button");
@@ -1004,14 +1069,6 @@
       });
       el.alphaGrid.appendChild(cell);
     });
-    if (el.alphaPrint) {
-      el.alphaPrint.addEventListener("click", () => {
-        const sheet = document.createElement("div");
-        sheet.className = "bubble-print-sheet";
-        CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
-        printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
-      });
-    }
   }
 
   function smallGlyphCell(ch) {
@@ -1079,8 +1136,11 @@
     }
   }
 
-  function buildNameWorksheet() {
-    const name = nameValue();
+  // The full name worksheet as a DOM node — one primitive behind the single
+  // print and the class-set print, so every sheet in a set matches the solo
+  // one. `nameOverride` lets the roster path build one sheet per child.
+  function nameSheetNode(nameOverride) {
+    const name = nameOverride != null ? String(nameOverride).slice(0, 40) : nameValue();
     const rows = document.createElement("div");
     rows.className = "pt-name-sheet";
 
@@ -1091,8 +1151,24 @@
     for (let i = 0; i < traceCount; i++) rows.appendChild(nameRow(name, "trace"));
     // Blank ruled rows for free practice.
     for (let i = 0; i < 2; i++) rows.appendChild(nameRow(name, "blank"));
+    return rows;
+  }
 
-    printWrap(name + " — tracing worksheet · ultratextgen.com", rows);
+  function buildNameWorksheet() {
+    const names = rosterNames(el.nameRoster);
+    if (names.length >= 2) {
+      const set = document.createElement("div");
+      set.className = "pt-class-set";
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(nameSheetNode(n));
+        set.appendChild(page);
+      });
+      printWrap(names.length + " " + T.sheets + " — tracing worksheets · ultratextgen.com", set);
+      return;
+    }
+    printWrap(nameValue() + " — tracing worksheet · ultratextgen.com", nameSheetNode());
   }
 
   function nameRow(name, kind) {
@@ -1262,19 +1338,40 @@
 
   // A pasted class roster (one name per line) turns one print job into one
   // sheet per child — the workflow every teacher-facing worksheet generator
-  // is expected to support. Capped so a stray paste can't build 500 sheets.
+  // is expected to support. Capped so a stray paste can't build 500 sheets;
+  // 60 leaves room for the whole Dolch primer list (52 words) as one packet.
+  const ROSTER_CAP = 60;
   function rosterNames(mount) {
     if (!mount) return [];
-    return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, 35);
+    return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, ROSTER_CAP);
+  }
+
+  // Word-list preset buttons (page-authored, crawlable): a .pt-roster-preset
+  // carries its whole list in data-words ("word|word|…") and one click fills
+  // the roster textarea with it — the "print the whole Dolch list in one job"
+  // path. Wired against whichever roster mount the page ships.
+  function wireRosterPresets(mount, onFill) {
+    if (!mount) return;
+    $$(".pt-roster-preset").forEach((b) => {
+      b.addEventListener("click", () => {
+        const words = String(b.dataset.words || "").split("|").map((s) => s.trim()).filter(Boolean);
+        if (!words.length) return;
+        mount.value = words.join("\n");
+        const field = mount.closest("details");
+        if (field) field.open = true;
+        if (onFill) onFill();
+      });
+    });
   }
 
   // The full worksheet as a DOM node — the SINGLE primitive behind both the
   // live paper preview and the printed sheet, so what you see is what prints.
   // `wordOverride` lets the class-set print path build one sheet per roster
-  // name without touching the input field.
-  function genSheetNode(wordOverride) {
+  // name without touching the input field; `levelOverride` lets the ladder
+  // pack build one sheet per difficulty level the same way.
+  function genSheetNode(wordOverride, levelOverride) {
     const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, 42)) : genValue();
-    const level = genLevel();
+    const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
     sheet.className = "pt-gen-sheet";
     // A solid model row on top so the target is always visible (unless the
@@ -1372,6 +1469,22 @@
     printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode());
   }
 
+  // The whole difficulty ladder as one print job — one sheet per level,
+  // easiest to hardest, same word. The graded progression is the thing the
+  // level engine can batch that a static-PDF sheet never can.
+  function buildGeneratorLadder() {
+    const word = genValue();
+    const set = document.createElement("div");
+    set.className = "pt-class-set";
+    TRACE_LEVELS.forEach((spec, i) => {
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      page.appendChild(genSheetNode(word, i + 1));
+      set.appendChild(page);
+    });
+    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · ultratextgen.com", set);
+  }
+
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
   function genWordPNG(word, level) {
     const spec = levelSpec(level);
@@ -1467,8 +1580,10 @@
         if (rosterTimer) clearTimeout(rosterTimer);
         rosterTimer = setTimeout(updateGenUI, 150);
       });
+      wireRosterPresets(el.genRoster, updateGenUI);
     }
     if (el.genPrint) el.genPrint.addEventListener("click", buildGeneratorSheet);
+    if (el.genLadder) el.genLadder.addEventListener("click", buildGeneratorLadder);
     if (el.genPng) el.genPng.addEventListener("click", () => genWordPNG(genValue(), genLevel()));
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
@@ -2160,6 +2275,24 @@
     printWrap("", holder);
   }
 
+  // Dot-to-dot difficulty ladder as one print job — the same word at every
+  // density, easy to expert. designSheetSVG reads designState.density, so the
+  // loop swaps it per page and restores the picked value afterwards.
+  function printDesignLadder() {
+    const holder = document.createElement("div");
+    holder.className = "pt-design-print-holder pt-class-set";
+    const picked = designState.density;
+    DOT_LEVELS.forEach((lvl) => {
+      designState.density = lvl.key;
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      page.appendChild(designSheetSVG());
+      holder.appendChild(page);
+    });
+    designState.density = picked;
+    printWrap("", holder);
+  }
+
   function roundRectPath(ctx, x, y, w, h, r) {
     ctx.beginPath();
     ctx.moveTo(x + r, y);
@@ -2327,6 +2460,7 @@
     }
     [el.designFill, el.designBorder, el.designFooter].forEach((c) => { if (c) c.addEventListener("change", renderDesignPreview); });
     if (el.designPrint) el.designPrint.addEventListener("click", printDesign);
+    if (el.designLadder) el.designLadder.addEventListener("click", printDesignLadder);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
     syncDesignMode();
     renderDesignPreview();
@@ -2708,8 +2842,11 @@
 
   // The whole puzzle as one DOM sheet — the single primitive behind both the
   // live preview and the printed page, so what's on screen is what prints.
-  function puzzleSheetNode() {
-    const word = puzzleValue();
+  // `wordOverride` lets the class-set print path build one puzzle per roster
+  // name; a typed heading (if any) applies to every sheet, while the default
+  // heading stays per-name.
+  function puzzleSheetNode(wordOverride) {
+    const word = wordOverride != null ? String(wordOverride).slice(0, 20) : puzzleValue();
     const heading = puzzleHeadingText();
     const strip = puzzleBorderSym().split(" ").filter(Boolean);
     const footer = puzzleFooterOn();
@@ -2751,6 +2888,18 @@
   function printPuzzle() {
     const holder = document.createElement("div");
     holder.className = "pt-puzzle-print-holder";
+    const names = rosterNames(el.puzzleRoster);
+    if (names.length >= 2) {
+      holder.classList.add("pt-class-set");
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(puzzleSheetNode(n));
+        holder.appendChild(page);
+      });
+      printWrap("", holder);
+      return;
+    }
     holder.appendChild(puzzleSheetNode());
     printWrap("", holder);
   }

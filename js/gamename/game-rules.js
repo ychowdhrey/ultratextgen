@@ -44,6 +44,7 @@
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
     discord: { label: "Discord", limit: 32, min: 1, weighted: false, noSpace: false, field: "display" },
+    tiktok: { label: "TikTok", limit: 30, min: 1, weighted: false, noSpace: false, field: "display" },
     fortnite: { label: "Fortnite", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
     valorant: { label: "Valorant (Riot ID)", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
     roblox: { label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true },

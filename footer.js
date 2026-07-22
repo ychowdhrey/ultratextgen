@@ -9,6 +9,400 @@
   var path = (window.location && window.location.pathname) || "";
   var isPrintablesContext = path.indexOf("/printables/") === 0 || path.indexOf("/learn/") === 0;
 
+  // Locales with their own native printables hub get the SAME printables-
+  // audience treatment as English /printables/ — translated, linking to
+  // their own on-disk sub-pages, not the generic locale footer. tr/id have
+  // no native printables hub yet (their "printables" nav item still points
+  // at the English /printables/), so they correctly fall through to the
+  // plain isPrintablesContext branch below when a tr/id visitor lands there.
+  var PRINTABLES_NATIVE_PREFIX = {
+    pt: "/pt/imprimiveis/",
+    fr: "/fr/imprimables/",
+    de: "/de/zum-ausdrucken/",
+    it: "/it/da-stampare/",
+    es: "/es/imprimibles/"
+  };
+  var nativePrintablesLocale = null;
+  for (var _ppl in PRINTABLES_NATIVE_PREFIX) {
+    if (path.indexOf(PRINTABLES_NATIVE_PREFIX[_ppl]) === 0) {
+      nativePrintablesLocale = _ppl;
+      break;
+    }
+  }
+
+  // Locale-aware footer — same Tier-1 locale set and same no-hub fallback
+  // rule as header.js (see that file's NAV comment + the roadmap doc in the
+  // private lab repo for why Category/Use Cases/Answers/Events still point
+  // at the English hub for every locale today). "tools" and "categories"
+  // link to real, on-disk native-slug pages verified 2026-07-20 — not
+  // translated guesses. "company" labels are translated but the About/
+  // Privacy/Terms/Contact pages themselves have no locale versions yet, so
+  // those hrefs stay English (same pattern yaytext.com uses for its own
+  // untranslated Privacy Policy link, verified live 2026-07-20).
+  var FOOTER = {
+    pt: {
+      home: { label: "Início", href: "/pt/" },
+      explore: [
+        { label: "Guias", href: "/pt/guide/" },
+        { label: "Respostas", href: "/answers/" },
+        { label: "Usos", href: "/pt/usecase/" },
+        { label: "Categorias", href: "/pt/category/" },
+        { label: "Biblioteca", href: "/pt/library/" },
+        { label: "Imprimíveis", href: "/pt/imprimiveis/" },
+        { label: "Eventos", href: "/events/" }
+      ],
+      tools: [
+        { label: "Fontes para Bio", href: "/pt/usecase/fontes-para-bio/" },
+        { label: "Letras para Tatuagem", href: "/pt/usecase/letras-para-tatuagem/" },
+        { label: "Tradutor de Emojis", href: "/pt/usecase/tradutor-de-emojis/" },
+        { label: "Texto Vertical", href: "/pt/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Letras Negrito", href: "/pt/letras-negrito/" },
+        { label: "Letra Cursiva", href: "/pt/letra-cursiva/" },
+        { label: "Fonte Gótica", href: "/pt/fonte-gotica/" },
+        { label: "Letras Pequenas", href: "/pt/letras-pequenas/" },
+        { label: "Letra Tachada", href: "/pt/letra-tachada/" }
+      ],
+      company: [
+        { label: "Sobre", href: "/about/" },
+        { label: "Política de Privacidade", href: "/privacy/" },
+        { label: "Termos de Serviço", href: "/terms/" },
+        { label: "Contato", href: "/contact/" }
+      ],
+      colTitles: { explore: "Explorar", tools: "Ferramentas Populares", categories: "Categorias Populares", company: "Empresa" },
+      copyright: "© 2026 UltraTextGen. Letras diferentes pra usar em qualquer canto da internet."
+    },
+    fr: {
+      home: { label: "Accueil", href: "/fr/" },
+      explore: [
+        { label: "Guides", href: "/fr/guide/" },
+        { label: "Réponses", href: "/answers/" },
+        { label: "Usages", href: "/fr/usecase/" },
+        { label: "Catégories", href: "/fr/category/" },
+        { label: "Bibliothèque", href: "/fr/library/" },
+        { label: "Imprimables", href: "/fr/imprimables/" },
+        { label: "Événements", href: "/events/" }
+      ],
+      tools: [
+        { label: "Écriture pour Bio", href: "/fr/usecase/ecriture-bio/" },
+        { label: "Écriture Tatouage", href: "/fr/usecase/ecriture-tatouage/" },
+        { label: "Traducteur Emoji", href: "/fr/usecase/traducteur-emoji/" },
+        { label: "Texte Vertical", href: "/fr/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Texte en Gras", href: "/fr/texte-en-gras/" },
+        { label: "Écriture Cursive", href: "/fr/ecriture-cursive/" },
+        { label: "Écriture Gothique", href: "/fr/ecriture-gothique/" },
+        { label: "Petite Écriture", href: "/fr/petite-ecriture/" },
+        { label: "Écriture Aesthetic", href: "/fr/ecriture-aesthetic/" }
+      ],
+      company: [
+        { label: "À Propos", href: "/about/" },
+        { label: "Politique de Confidentialité", href: "/privacy/" },
+        { label: "Conditions d'Utilisation", href: "/terms/" },
+        { label: "Contact", href: "/contact/" }
+      ],
+      colTitles: { explore: "Explorer", tools: "Outils Populaires", categories: "Catégories Populaires", company: "Entreprise" },
+      copyright: "© 2026 UltraTextGen. Une écriture stylée qui marche partout."
+    },
+    de: {
+      home: { label: "Startseite", href: "/de/" },
+      explore: [
+        { label: "Ratgeber", href: "/de/guide/" },
+        { label: "Antworten", href: "/answers/" },
+        { label: "Anwendungen", href: "/de/usecase/" },
+        { label: "Kategorien", href: "/de/category/" },
+        { label: "Bibliothek", href: "/de/library/" },
+        { label: "Zum Ausdrucken", href: "/de/zum-ausdrucken/" },
+        { label: "Anlässe", href: "/events/" }
+      ],
+      tools: [
+        { label: "Bio-Schriftart", href: "/de/usecase/bio-schriftart/" },
+        { label: "Tattoo-Schrift", href: "/de/usecase/tattoo-schrift/" },
+        { label: "Emoji-Übersetzer", href: "/de/usecase/emoji-uebersetzer/" },
+        { label: "Vertikaler Text", href: "/de/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Fette Schrift", href: "/de/fette-schrift/" },
+        { label: "Schreibschrift", href: "/de/schreibschrift/" },
+        { label: "Gotische Schrift", href: "/de/gotische-schrift/" },
+        { label: "Kleine Schrift", href: "/de/kleine-schrift/" },
+        { label: "Durchgestrichener Text", href: "/de/durchgestrichener-text/" }
+      ],
+      company: [
+        { label: "Über Uns", href: "/about/" },
+        { label: "Datenschutzerklärung", href: "/privacy/" },
+        { label: "Nutzungsbedingungen", href: "/terms/" },
+        { label: "Kontakt", href: "/contact/" }
+      ],
+      colTitles: { explore: "Entdecken", tools: "Beliebte Tools", categories: "Beliebte Kategorien", company: "Unternehmen" },
+      copyright: "© 2026 UltraTextGen. Schnelle Schriftarten, die überall funktionieren."
+    },
+    it: {
+      home: { label: "Home", href: "/it/" },
+      explore: [
+        { label: "Guide", href: "/it/guide/" },
+        { label: "Risposte", href: "/answers/" },
+        { label: "Usi", href: "/it/usecase/" },
+        { label: "Categorie", href: "/it/category/" },
+        { label: "Libreria", href: "/it/library/" },
+        { label: "Da Stampare", href: "/it/da-stampare/" },
+        { label: "Eventi", href: "/events/" }
+      ],
+      tools: [
+        { label: "Font per Bio", href: "/it/usecase/font-per-bio/" },
+        { label: "Font per Tatuaggi", href: "/it/usecase/font-tatuaggi/" },
+        { label: "Traduttore Emoji", href: "/it/usecase/traduttore-emoji/" },
+        { label: "Testo Verticale", href: "/it/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Grassetto", href: "/it/grassetto/" },
+        { label: "Corsivo", href: "/it/lettere-in-corsivo/" },
+        { label: "Gotico", href: "/it/gotico/" },
+        { label: "Testo Piccolo", href: "/it/testo-piccolo/" },
+        { label: "Testo Barrato", href: "/it/testo-barrato/" }
+      ],
+      company: [
+        { label: "Chi Siamo", href: "/about/" },
+        { label: "Informativa sulla Privacy", href: "/privacy/" },
+        { label: "Termini di Servizio", href: "/terms/" },
+        { label: "Contatti", href: "/contact/" }
+      ],
+      colTitles: { explore: "Esplora", tools: "Strumenti Popolari", categories: "Categorie Popolari", company: "Azienda" },
+      copyright: "© 2026 UltraTextGen. Scritte stilizzate che reggono ovunque le incolli."
+    },
+    tr: {
+      home: { label: "Ana Sayfa", href: "/tr/" },
+      explore: [
+        { label: "Rehberler", href: "/tr/guide/" },
+        { label: "Yanıtlar", href: "/answers/" },
+        { label: "Kullanımlar", href: "/tr/usecase/" },
+        { label: "Kategoriler", href: "/tr/category/" },
+        { label: "Kütüphane", href: "/tr/library/" },
+        { label: "Baskılar", href: "/printables/" },
+        { label: "Etkinlikler", href: "/events/" }
+      ],
+      tools: [
+        { label: "Biyografi Yazı Tipi", href: "/tr/usecase/biyografi-yazi-tipi/" },
+        { label: "Dövme Yazı Fontları", href: "/tr/usecase/dovme-yazi-fontlari/" },
+        { label: "Emoji Çevirici", href: "/tr/usecase/emoji-ceviri/" },
+        { label: "Dikey Yazı", href: "/tr/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Kalın Yazı", href: "/tr/kalin-yazi/" },
+        { label: "El Yazısı Fontu", href: "/tr/el-yazisi-fontu/" },
+        { label: "İtalik Yazı", href: "/tr/italik-yazi/" },
+        { label: "Küçük Yazı", href: "/tr/kucuk-yazi/" },
+        { label: "Üstü Çizili Yazı", href: "/tr/ustu-cizili-yazi/" }
+      ],
+      company: [
+        { label: "Hakkımızda", href: "/about/" },
+        { label: "Gizlilik Politikası", href: "/privacy/" },
+        { label: "Kullanım Şartları", href: "/terms/" },
+        { label: "İletişim", href: "/contact/" }
+      ],
+      colTitles: { explore: "Keşfet", tools: "Popüler Araçlar", categories: "Popüler Kategoriler", company: "Şirket" },
+      copyright: "© 2026 UltraTextGen. Her yerde aynı görünen şekilli yazı."
+    },
+    es: {
+      home: { label: "Inicio", href: "/es/" },
+      explore: [
+        { label: "Guías", href: "/es/guide/" },
+        { label: "Respuestas", href: "/answers/" },
+        { label: "Usos", href: "/es/usecase/" },
+        { label: "Categorías", href: "/es/category/" },
+        { label: "Biblioteca", href: "/es/library/" },
+        { label: "Imprimibles", href: "/es/imprimibles/" },
+        { label: "Eventos", href: "/events/" }
+      ],
+      tools: [
+        { label: "Letras para Bio", href: "/es/usecase/letras-para-bio/" },
+        { label: "Letras para Tatuajes", href: "/es/usecase/letras-para-tatuajes/" },
+        { label: "Traductor de Emojis", href: "/es/usecase/traductor-de-emojis/" },
+        { label: "Texto Vertical", href: "/es/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Letras Negritas", href: "/es/letras-negritas/" },
+        { label: "Letra Cursiva", href: "/es/letra-cursiva/" },
+        { label: "Letras Góticas", href: "/es/letras-goticas/" },
+        { label: "Texto Pequeño", href: "/es/texto-pequeno/" },
+        { label: "Letra Tachada", href: "/es/letra-tachada/" }
+      ],
+      company: [
+        { label: "Sobre Nosotros", href: "/about/" },
+        { label: "Política de Privacidad", href: "/privacy/" },
+        { label: "Términos de Servicio", href: "/terms/" },
+        { label: "Contacto", href: "/contact/" }
+      ],
+      colTitles: { explore: "Explorar", tools: "Herramientas Populares", categories: "Categorías Populares", company: "Empresa" },
+      copyright: "© 2026 UltraTextGen. Letras bonitas que funcionan en todas partes."
+    },
+    id: {
+      home: { label: "Beranda", href: "/id/" },
+      explore: [
+        { label: "Panduan", href: "/id/guide/" },
+        { label: "Jawaban", href: "/answers/" },
+        { label: "Kegunaan", href: "/id/usecase/" },
+        { label: "Kategori", href: "/id/category/" },
+        { label: "Perpustakaan", href: "/id/library/" },
+        { label: "Cetak", href: "/printables/" },
+        { label: "Acara", href: "/events/" }
+      ],
+      tools: [
+        { label: "Bio Aesthetic", href: "/id/usecase/bio-ig-aesthetic/" },
+        { label: "Font Tato", href: "/id/usecase/font-tato/" },
+        { label: "Penerjemah Emoji", href: "/id/usecase/penerjemah-emoji/" },
+        { label: "Teks Vertikal", href: "/id/usecase/vertical-text/" }
+      ],
+      categories: [
+        { label: "Tulisan Tebal", href: "/id/tulisan-tebal/" },
+        { label: "Tulisan Sambung", href: "/id/tulisan-sambung/" },
+        { label: "Tulisan Gotik", href: "/id/tulisan-gotik/" },
+        { label: "Tulisan Kecil", href: "/id/tulisan-kecil/" },
+        { label: "Tulisan Coret", href: "/id/tulisan-coret/" }
+      ],
+      company: [
+        { label: "Tentang Kami", href: "/about/" },
+        { label: "Kebijakan Privasi", href: "/privacy/" },
+        { label: "Syarat Layanan", href: "/terms/" },
+        { label: "Kontak", href: "/contact/" }
+      ],
+      colTitles: { explore: "Jelajahi", tools: "Alat Populer", categories: "Kategori Populer", company: "Perusahaan" },
+      copyright: "© 2026 UltraTextGen. Tulisan aesthetic & font keren yang nempel ke mana pun."
+    }
+  };
+
+  function detectLocale() {
+    var m = path.match(/^\/([a-z]{2})\//);
+    return m && FOOTER[m[1]] ? m[1] : "en";
+  }
+
+  function linksHTML(items) {
+    return items.map(function (item) {
+      return '<a href="' + item.href + '" class="footer-link">' + item.label + '</a>';
+    }).join('');
+  }
+
+  function buildLocaleFooterHTML(locale) {
+    var f = FOOTER[locale];
+    return '<div class="footer-columns">' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + f.colTitles.explore + '</span>' +
+          '<a href="' + f.home.href + '" class="footer-link">' + f.home.label + '</a>' +
+          linksHTML(f.explore) +
+        '</div>' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + f.colTitles.tools + '</span>' +
+          linksHTML(f.tools) +
+        '</div>' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + f.colTitles.categories + '</span>' +
+          linksHTML(f.categories) +
+        '</div>' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + f.colTitles.company + '</span>' +
+          linksHTML(f.company) +
+        '</div>' +
+      '</div>' +
+      '<div class="footer-social-links">' +
+        '<a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>' +
+        '<a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>' +
+        '<a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
+        '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
+      '</div>' +
+      '<div class="footer-bottom">' + f.copyright + '</div>';
+  }
+
+  // Native printables sub-pages, verified on-disk 2026-07-21 — same rule as
+  // the FOOTER "tools"/"categories" links above: real slugs, not translated
+  // guesses. "Company" reuses the exact FOOTER[loc].company entries so the
+  // About/Privacy/Terms/Contact links stay identical everywhere on a locale.
+  var PRINTABLES_LOCALE = {
+    pt: {
+      colTitle: "Imprimíveis",
+      items: [
+        { label: "Todos os Imprimíveis", href: "/pt/imprimiveis/" },
+        { label: "Alfabeto Cursivo", href: "/pt/imprimiveis/alfabeto-cursivo/" },
+        { label: "Alfabeto para Colorir", href: "/pt/imprimiveis/alfabeto-para-colorir/" },
+        { label: "Letras Bolha A–Z", href: "/pt/imprimiveis/letras-bolha/" },
+        { label: "Ficha de Nome para Traçar", href: "/pt/imprimiveis/nome-para-tracar/" }
+      ],
+      bridge: 'Procurando fontes para bio e posts? <a href="/pt/" class="footer-link">Experimente o gerador de fontes →</a>',
+      copyright: "© 2026 UltraTextGen. Letras e alfabetos grátis para imprimir."
+    },
+    fr: {
+      colTitle: "Imprimables",
+      items: [
+        { label: "Tous les Imprimables", href: "/fr/imprimables/" },
+        { label: "Alphabet Cursif", href: "/fr/imprimables/alphabet-cursif/" },
+        { label: "Coloriages Alphabet", href: "/fr/imprimables/coloriage-alphabet/" },
+        { label: "Lettres Bulles A–Z", href: "/fr/imprimables/lettres-bulles/" },
+        { label: "Fiche de Prénom à Tracer", href: "/fr/imprimables/prenom-a-tracer/" }
+      ],
+      bridge: 'Vous cherchez des polices pour bio et posts ? <a href="/fr/" class="footer-link">Essayez le générateur de polices →</a>',
+      copyright: "© 2026 UltraTextGen. Lettres et alphabets gratuits à imprimer."
+    },
+    de: {
+      colTitle: "Zum Ausdrucken",
+      items: [
+        { label: "Alle Schreibvorlagen", href: "/de/zum-ausdrucken/" },
+        { label: "Schreibschrift-Generator", href: "/de/zum-ausdrucken/schreibschrift/" },
+        { label: "Schreibübungen-Generator", href: "/de/zum-ausdrucken/schreibuebungen/" },
+        { label: "Namen Nachspuren", href: "/de/zum-ausdrucken/namen-schreiben/" },
+        { label: "Name-Ausmalbild", href: "/de/zum-ausdrucken/name-ausmalen/" }
+      ],
+      bridge: 'Suchst du Schriftarten für Bio und Beiträge? <a href="/de/" class="footer-link">Schriftgenerator ausprobieren →</a>',
+      copyright: "© 2026 UltraTextGen. Kostenlose Buchstaben und Alphabete zum Ausdrucken."
+    },
+    it: {
+      colTitle: "Da Stampare",
+      items: [
+        { label: "Tutte le Schede da Stampare", href: "/it/da-stampare/" },
+        { label: "Alfabeto Corsivo", href: "/it/da-stampare/alfabeto-corsivo/" },
+        { label: "Nome da Colorare", href: "/it/da-stampare/nome-da-colorare/" },
+        { label: "Nome da Tracciare", href: "/it/da-stampare/tracciare-il-nome/" }
+      ],
+      bridge: 'Cerchi font per bio e post? <a href="/it/" class="footer-link">Prova il generatore di font →</a>',
+      copyright: "© 2026 UltraTextGen. Lettere e alfabeti gratuiti da stampare."
+    },
+    es: {
+      colTitle: "Imprimibles",
+      items: [
+        { label: "Todos los Imprimibles", href: "/es/imprimibles/" },
+        { label: "Alfabeto en Cursiva", href: "/es/imprimibles/alfabeto-cursiva/" },
+        { label: "Abecedario para Colorear", href: "/es/imprimibles/abecedario-para-colorear/" },
+        { label: "Letras Burbuja A–Z", href: "/es/imprimibles/letras-burbuja/" },
+        { label: "Ficha para Trazar el Nombre", href: "/es/imprimibles/nombre-para-trazar/" }
+      ],
+      bridge: '¿Buscas fuentes para bio y publicaciones? <a href="/es/" class="footer-link">Prueba el generador de fuentes →</a>',
+      copyright: "© 2026 UltraTextGen. Letras y alfabetos gratis para imprimir."
+    }
+  };
+
+  function buildLocalePrintablesFooterHTML(locale) {
+    var p = PRINTABLES_LOCALE[locale];
+    var f = FOOTER[locale];
+    return '<div class="footer-columns">' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + p.colTitle + '</span>' +
+          linksHTML(p.items) +
+        '</div>' +
+        '<div class="footer-col">' +
+          '<span class="footer-col-title">' + f.colTitles.company + '</span>' +
+          linksHTML(f.company) +
+        '</div>' +
+      '</div>' +
+      '<div class="footer-bridge">' + p.bridge + '</div>' +
+      '<div class="footer-social-links">' +
+        '<a href="https://www.youtube.com/@UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>' +
+        '<a href="https://www.facebook.com/profile.php?id=61588587387596" class="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a>' +
+        '<a href="https://www.linkedin.com/company/71290348/" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
+        '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
+      '</div>' +
+      '<div class="footer-bottom">' + p.copyright + '</div>';
+  }
+
   var printablesLinksHTML =
     '<div class="footer-columns">' +
       '<div class="footer-col">' +
@@ -104,11 +498,17 @@
       '<a href="https://x.com/UltraTextGen" class="footer-link" target="_blank" rel="noopener noreferrer">X</a>' +
     '</div>' +
     '<div class="footer-bottom">' +
-      '\u00a9 2026 UltraTextGen. Fast text styles that work everywhere.' +
+      '© 2026 UltraTextGen. Fast text styles that work everywhere.' +
     '</div>';
 
-  if (isPrintablesContext) {
+  var locale = detectLocale();
+
+  if (nativePrintablesLocale) {
+    footerLinksHTML = buildLocalePrintablesFooterHTML(nativePrintablesLocale);
+  } else if (isPrintablesContext) {
     footerLinksHTML = printablesLinksHTML;
+  } else if (locale !== "en") {
+    footerLinksHTML = buildLocaleFooterHTML(locale);
   }
 
   // Idempotency guard — do nothing if footer-bottom already exists

@@ -51,7 +51,7 @@ ultratextgen/
 ├── package.json            # npm metadata + build scripts
 ├── fonts.json              # Font category mappings
 ├── robots.txt              # Search engine directives
-├── sitemap.xml             # Auto-generated (do not edit manually)
+├── sitemap.xml              # Auto-generated (do not edit manually)
 ├── _redirects              # Netlify redirect rules
 │
 ├── .github/workflows/
@@ -82,6 +82,7 @@ ultratextgen/
 │                           #    copy_patterns — see docs/emoji-combination-taxonomy.md)
 ├── symbol/                 # Single-item identity spokes (glyph OR emoji) — SEARCH-ONLY
 │                           #   discovery, own on-page single-item search (see "Library vs Symbol")
+├── updates/                # Dated Unicode/platform/game rule-change log (see "Content Type: Updates")
 ├── js/vertical/            # Vertical text feature module
 ├── js/tattoo/              # Tattoo lettering studio module (names, dates→roman, initials, symbols)
 │
@@ -110,6 +111,40 @@ misfiling weakens both the page and the cluster.
 Rule of thumb: if the value is "resolve one question in seconds," it's an **answer**.
 If the value is "understand a topic / build authority," it's a **guide**. A guide may
 bundle many sub-questions; an answer stays tightly scoped to one.
+
+### Answer pages live under `answers/` only
+
+If a page's content is answer-shaped (per the table above — a sharp question with a
+direct, zero-click resolution), it goes under `/answers/`. Do not build the same
+answer-shaped content again under a platform directory (`/discord/`, `/tiktok/`,
+`/youtube/`, etc.) or any other section, even when the query is platform-specific
+("what font does TikTok use"). One query, one page, in the section that owns that
+content type — this is the same Rule 1 as the Hub vs Spoke section above, applied to
+content-type placement instead of hub/spoke placement.
+
+This is a **default, not an absolute** — a platform hub page is allowed to *discuss*
+a topic its own answer page covers, as long as it stays a one-line pointer per Hub
+vs Spoke Rule 3 ("to format messages, see the guide"), and a genuinely different
+platform-specific angle (not just the same Q&A restated) can justify its own page.
+Any exception must be **explicit and discussed** — argued and agreed before the page
+ships, the same bar the Localization Workflow's English-Parent Rule sets for locale
+pages — not decided unilaterally because a page "already lives here."
+
+**Case study (2026-07-21):** `tiktok/what-font-does-tiktok-use/` and
+`youtube/what-font-does-youtube-use/` were built as full answer-shaped pages
+(same "what font does X use" question, `QAPage`-style structure, near-identical
+title/meta to their `answers/` counterparts) directly under the platform
+directories, with no discussion or documented exception. Both pairs cannibalized:
+GSC (last 3 months) showed `answers/what-font-does-tiktok-use/` outperforming its
+`tiktok/` twin on the metric that matters (4 clicks vs. 1, on similar impressions),
+while neither `youtube/what-font-does-youtube-use/` page converted at all (0 clicks
+on both). Fix: retired both platform-namespaced pages with a 301 to their
+`answers/` canonical (`_redirects`), first porting the one piece of content unique
+to each (free lookalike-font names — Montserrat/Poppins for TikTok, Inter/Manrope/
+Montserrat for YouTube) into the surviving `answers/` page so it wasn't lost, and
+repointed every internal link (`tiktok/index.html`, `tiktok/name-generator/`,
+`youtube/index.html`, `youtube/name-generator/`) straight at the `answers/` URL
+instead of the now-retired one.
 
 ---
 
@@ -189,6 +224,154 @@ mismatch** (a page's own directory vs. its `hreflang="en"` counterpart's
 directory) — run it over your translated batch before opening the PR. Full
 rationale and the recurring failure mode: `docs/unicode-library-workflow.md`
 §7.
+
+---
+
+## Content Type: Updates
+
+`updates/` is a dated log, distinct from every other content type above — it
+exists to answer *"what changed, and does it affect a Check I already trust?"*,
+not to explore a topic (`guide/`) or resolve a question (`answers/`).
+
+**Scope — three event types only:** new Unicode Consortium versions/emoji, platform
+formatting/character-support rule changes (Discord, Instagram, LinkedIn, TikTok,
+WhatsApp, …), and per-game nickname rule changes (the `RULES` table in
+`js/gamename/game-rules.js`). Do not use `updates/` for product/feature launches on
+this site — that's a different, not-yet-built content type; see the case study
+below for why it was rejected as the seed for this section.
+
+**Why it exists:** the site already has "Check" surfaces whose correctness depends
+on external facts going stale — the per-game `RULES` limits, and the `answers/`
+pages that assert whether Unicode text works on a given platform ("is-linkedin-
+bold-text-safe", "do-you-need-nitro-for-discord-fonts"). An `updates/` entry is the
+dated audit trail for *why* one of those numbers or verdicts changed, sourced from
+a real external event (a Consortium release, a platform changelog, a game patch).
+This is not manufactured content — it's the maintenance work those Check surfaces
+already require, made visible.
+
+**Template:** `NewsArticle` (author, publisher, `datePublished`/`dateModified`) +
+`BreadcrumbList` + `FAQPage` — schema.org markup only (Google treats `Article`,
+`NewsArticle`, and `BlogPosting` identically for Article rich-result and
+Discover/Top Stories eligibility). This is **not** formal Google News Publisher
+Center enrollment — see the case study below for why that specific step stays
+off the table. Hero: decorative `page-hero-figure` (like `answers/`), not the
+visible `guide-hero-figure` guides use. Every entry should link to the specific
+Check surface it affects (the relevant `answers/` page, or a mention of the
+`RULES` table) — an update with no downstream link is just a blog post, not
+evidence of active maintenance.
+
+**Asset pipeline:** entries register in `scripts/generate-site-art.py`'s `PAGES`
+dict like an `answers/` page (title, sub, motif, `K_UPDATE` kicker) to get hero SVG
++ OG PNG via the standard pipeline. Individual dated entries are **excluded from
+the Pinterest pin requirement** (`generate-pinterest.py:classify()` and
+`check-image-assets.py:pin_eligible()` both special-case `ptype == "updates"`) —
+a dated status/verification log isn't visual pin material. The `updates/index.html`
+hub is *not* excluded (it classifies as `platform` like other top-level hubs) and
+does get a pin, consistent with `guide/`/`library/`/`answers/` hubs staying
+pin-eligible.
+
+**Case study (2026-07-20):** the section was proposed as a way to get "one more
+SEO feature" activated by posting the site's own feature launches (curved-text,
+tattoo studio, vertical text, printables, etc.) as if they were news. That framing
+was rejected — a font-generator tool site has no content that meets Google News'
+actual bar (timely coverage of external events, not evergreen tool pages or
+self-promotional launch posts), and pursuing formal News/Publisher Center
+inclusion on that basis risked a rejection tied to the domain. The section only
+became legitimate once re-scoped around genuine external events that this site's
+own Check tools already have to track to stay accurate — which is the scope
+above, and the only scope this section should carry.
+
+**Schema refinement (2026-07-20):** the template originally specified `Article`
+to keep clear distance from anything "News"-flavored. Revisited the same day,
+once the section's scope was already locked to genuine external events (see the
+case study immediately above): switched the JSON-LD `@type` to `NewsArticle`.
+This is schema.org markup only — Google's structured-data guidance treats
+`Article`, `NewsArticle`, and `BlogPosting` the same way for the Article rich
+result and for Discover/Top Stories eligibility, and a `NewsArticle` type does
+not enroll a site in Google News. Formal Google News Publisher Center
+submission remains explicitly out of scope, for the same domain-risk reasoning
+as the case study above — this refinement does not reopen that question.
+
+---
+
+## Hub vs Spoke: preventing self-cannibalization
+
+A **hub** owns a broad head term and a *browse-or-tool* intent (`/discord/` = the
+"discord fonts" generator; `/library/emoji-combos/` = the "emoji combos" browse
+grid). A **spoke** is a page that owns ONE narrower query with a *different* SERP
+intent (a how-to, an answer, a single item, a single aesthetic). Hubs and spokes
+are how the site scales coverage — but when a hub and its own spoke both try to
+rank for the *same* query, they **cannibalize**: Google ranks only one of your
+URLs well, picks the higher-authority hub (often the *worse* answer, so it ranks
+badly), and starves the spoke that would have ranked. This is the same failure as
+"check who already owns it" below, turned inward — the hub eating its own spokes.
+
+**This is distinct from, and stricter than, "check who already owns it."** That
+rule guards a *new* page against an *existing* page. This one governs the standing
+relationship between a hub and the spokes beneath it, in *both* directions.
+
+The rule has four parts. Apply all four — the Discord case below failed only on
+Rule 3, and that was enough to strand five real pages.
+
+1. **One query, one target.** Every query cluster has exactly ONE page designated
+   to rank for it. Name that exact query *before* building anything. Before adding
+   a hub section, confirm no spoke owns the query. Before creating a spoke, confirm
+   the hub is not already page-1 for it.
+
+2. **The spoke test — when to split out vs. keep as a hub section.** Make it a
+   spoke only if **all three** hold:
+   - **(a) Distinct SERP intent** — the query's SERP is a *different type* than the
+     hub's (how-to article + PAA + forums, vs. a tool/collection). If the two SERPs
+     look the same, it is **not** a spoke.
+   - **(b) Self-contained** — fully answerable on its own page, without the hub's
+     tool/collection as the payload.
+   - **(c) Standalone demand** — real independent volume (GSC impressions or
+     Semrush), not a fragment of the hub's head term.
+
+   If **any** fail → it is a **section on the hub**, not a spoke.
+
+3. **De-confliction (the part most often skipped, and the one that bites).** The
+   moment a spoke exists, the hub must **de-target** that query: strip the competing
+   prose down to a one-line pointer link ("to format messages, see the guide"). The
+   hub keeps its head term; the spoke gets a clean run at its query. Symmetric — a
+   spoke must not chase the hub's head term (don't stuff "discord fonts" into a
+   formatting guide). A spoke that exists while the hub still targets its query is a
+   cannibal, not coverage.
+
+4. **Link direction.** Hub → spoke (a contextual link inside the relevant hub
+   section) and spoke → hub (breadcrumb + one back-link). No orphan spokes (no hub
+   links in), no un-pointed hub sections (a section whose spoke it never links to).
+
+**Diagnosing an existing cannibalization:** pull GSC query×page. The signature is a
+spoke sitting at **position 5–8 with thousands of impressions and ~zero clicks**
+(the hub on the same SERP takes the click), or a spoke with **~zero impressions**
+for its target query while the hub ranks that query poorly (the hub is intercepting
+it). Both mean Rule 3 was never applied — fix the hub, don't rebuild the spoke.
+
+**Worked application:**
+- *Emoji aesthetics (baddie, emo, scene, weirdcore, …)* → **hub sections**, not
+  spokes. "baddie emoji combos" has the **same** SERP intent as "emoji combos"
+  (copy-paste collection lists) → fails the spoke test on (a). Building 11 spokes
+  would create 11 cannibals against the hub that already ranks page-2 for the head
+  term. Promotion path: if one aesthetic later shows large standalone volume **and**
+  a distinct SERP, promote it to a spoke **and** de-target it from the hub (Rule 3).
+- *Discord native formatting (bold, underline, big text, color)* → correctly
+  **spokes** (distinct how-to/PAA/forum SERP), which already exist as
+  `guide/discord-text-formatting-explained`, `guide/discord-colored-text-guide`,
+  `answers/how-to-make-bold-text-in-discord`, etc. — but Rule 3 was never applied,
+  so the `/discord/` generator hub still carries the formatting how-to prose and
+  intercepts every "how to X in discord" query. Fix is de-targeting the hub, **not**
+  another page.
+
+**Case study (2026-07-18):** a GSC query×page pull (last 3 months, queries
+containing "discord") showed `/discord/` at 1,247 clicks / 89,848 impressions while
+`/answers/discord-allowed-characters/` had **0 clicks on 3,656 impressions** (pos
+7.85), `/answers/do-you-need-nitro-for-discord-fonts/` **0 clicks on 3,567**
+(7.45), and `/guide/discord-text-formatting-explained/` **0 clicks on 452** at
+position 6.06 — all indexed, all on-SERP, all starved by the hub above them.
+`answers/how-to-make-bold-text-in-discord` drew essentially no impressions because
+the hub intercepts "how to bold" and then ranks ~80 for it. Five purpose-built
+pages, near-zero traffic, because Rule 3 was never applied to the hub.
 
 ---
 
@@ -582,6 +765,11 @@ Do not add a test framework unless explicitly requested.
   `/library/`, `/usecase/`, `/guide/`, or platform page when a locale-native
   equivalent already exists — check before adding or editing any locale
   page's outbound link. See "Locale-native internal linking" above.
+- Do not build an answer-shaped page (a sharp question, zero-click resolution)
+  under a platform directory or any section other than `answers/` without an
+  explicit, discussed exception. See "Answer pages live under `answers/` only"
+  above — the `tiktok/`/`youtube/` "what font does X use" case study is exactly
+  this mistake, and it cannibalized both pairs.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable

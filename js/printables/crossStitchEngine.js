@@ -369,6 +369,7 @@
 
     const label = state.text.trim().replace(/"/g, "”");
     const chartHolder = document.createElement("div");
+    chartHolder.className = "cs-print-chart";
     chartHolder.innerHTML = buildChartSVG(model.rows, state.color, state.style, label);
     wrap.appendChild(chartHolder);
 

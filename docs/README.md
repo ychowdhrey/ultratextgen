@@ -30,6 +30,7 @@ workflow that produces it.
 | Type | Namespace | Schema | Governing workflow | Source of record | Generator + validator | Maturity |
 |---|---|---|---|---|---|---|
 | **Library** (symbol/emoji reference) | `/library/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) (+ [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md)) | `data/library_opportunities.csv` | `generate_library_page_from_spec.py` + `validate_library_pages.py` | ✅ fully systematized |
+| **Symbol** (single glyph/emoji identity) | `/symbol/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) — shares the Library workflow; a spec sets `"page_type": "symbol"` | `data/library_opportunities.csv` (backlog rows stay `page_type=library`; the library/symbol split happens per-spec in `data/library_page_specs/`, not in the backlog CSV) | `generate_library_page_from_spec.py` + `validate_library_pages.py` (shared with Library) + `sync_symbol_spoke_links.py` (hub↔spoke linking) | ✅ fully systematized (shares the Library pipeline end-to-end) |
 | **Category** (style generators) | `/category/` | `WebApplication` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
@@ -39,10 +40,12 @@ workflow that produces it.
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Root pages** (homepage, 404, legal) | `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`, `terms/`, site icons | `WebSite` (homepage) | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented |
 
-**Only the Library lane is structurally complete** (discovery → scouting →
-research → volume → score → dedupe → spec → generate → validate → PR). The
-other lanes have principles and, for category/answers, a strategy spec — but no
-demand backlog or generator. See [Known gaps](#known-gaps).
+**Only the Library and Symbol lanes are structurally complete** (discovery →
+scouting → research → volume → score → dedupe → spec → generate → validate →
+PR) — Symbol shares Library's pipeline end-to-end, split only by the
+per-spec `page_type` field. The other lanes have principles and, for
+category/answers, a strategy spec — but no demand backlog or generator. See
+[Known gaps](#known-gaps).
 
 ---
 
@@ -138,7 +141,18 @@ here so they aren't lost. Update as they're closed or new ones appear.
    hardcoded one-by-one in `LANE_RULES`, the classifier itself is becoming the
    symptom: a governing i18n doc that defines the locale-directory convention
    (so the classifier can match a pattern instead of an enumerated list) is
-   now the single most pressing gap in this file.
+   now the single most pressing gap in this file. **Update (2026-07-18):**
+   three more locales landed this week — Danish `/da/` (PR #559), Traditional
+   Chinese `/zh-tw/` (PR #497), and Hungarian `/hu/` (PR #588) — none in
+   `LANE_RULES`, all now added, bringing the hardcoded list to ~29 prefixes.
+   This is the fourth consecutive review with the same finding (2026-07-10,
+   -11, -18); the enumerated-list classifier is the recurring 3+ week manual
+   fix this doc's own review checklist (§4) says to systematize — a pattern
+   rule (any two-letter, or `zh-xx`-shaped, top-level directory → i18n) would
+   close this permanently instead of one PR-by-PR patch per new locale.
+   Separately, `scripts/audit-hreflang.js` (new this week, wired to
+   `npm run check:hreflang` but no CI workflow yet) is real hreflang-mesh
+   tooling with nowhere to be documented until the i18n governing doc exists.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
    (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
@@ -180,13 +194,19 @@ here so they aren't lost. Update as they're closed or new ones appear.
    the classifier gap; the underlying gap (no shared export helper, no
    generator/validator, no governing doc, still fully hand-built) remains
    open and is now the highest-volume hand-built lane in the repo.
-9. **New this week: Ads / monetization track has no governing doc.** PRs
-   #366–#368 stood up Journey ads as a real operational track — site-wide tag
-   injection via `header.js`, a CI gate (`ads-check.yml` / `check-ads.js`),
-   and a daily `ads.txt` sync (`update-ads-txt.yml` / `update-ads-txt.sh`) —
-   replacing Google AdSense. Added to the operational-tracks table this
-   review; no strategy/decision doc exists yet (e.g. why Journey over
-   AdSense, revenue-share terms, page exclusions). Flagging so it isn't lost.
+9. **Ads / monetization track has no governing doc — and has now fully
+   reversed once.** PRs #366–#368 stood up Journey ads (replacing AdSense);
+   PR #508 (2026-07-12) switched back to Google AdSense; PR #544
+   (2026-07-13) found the leftover daily `update-ads-txt.yml` cron was still
+   pulling Journey's `ads.txt` and force-committing it over the AdSense
+   version every night, undoing the migration silently (`ads.txt` sat
+   Unauthorized). That PR removed the dead Journey cron/script and taught
+   `check-ads.js` to guard `ads.txt` itself against Journey lines
+   reappearing. Two full monetization-provider switches inside two weeks,
+   one of which shipped a live silent-regression bug, is exactly the kind of
+   churn a decision doc (why AdSense over Journey, revenue-share terms, page
+   exclusions) would have made safer to reason about — still doesn't exist.
+   The operational-tracks table row above reflects the current AdSense state.
 10. **New this week: Events (seasonal/holiday pages) is a genuinely new lane,
     not just an unclassified PR.** PR #457 added ten English `/events/<slug>/`
     pages (Christmas, Halloween, Diwali, Eid Mubarak, Lunar New Year, etc.)
@@ -199,17 +219,37 @@ here so they aren't lost. Update as they're closed or new ones appear.
     rows exist in `library_opportunities.csv`). Added a row to the page-type
     table above and a `LANE_RULES` entry (`events/` → "Events"); the
     governing doc and backlog integration are still open.
-11. **New this week: root-level standalone tool pages, no naming
-    convention.** `/ascii-art-generator/`, `/ascii-converter/` (PRs #453,
-    #455) and `/kaomoji-dictionary/`, `/kaomoji-generator/` (PR #438) are four
-    new `WebApplication` tool pages hand-built at the repo root instead of
+11. **Root-level standalone tool pages, no naming convention — still
+    appearing.** `/ascii-art-generator/`, `/ascii-converter/` (PRs #453,
+    #455) and `/kaomoji-dictionary/`, `/kaomoji-generator/` (PR #438) were
+    four `WebApplication` tool pages hand-built at the repo root instead of
     under `/category/` — the same JTBD as a Category page, different URL
-    shape. Added their exact directory names to `LANE_RULES` as "Category
-    pages" (case-by-case, same pattern already used for `roblox/` under
-    Platform pages) so they stop surfacing as unclassified, but the actual
-    question — should root-level tool pages be folded under `/category/`, or
-    is "shorter root slug" an intentional SEO pattern that needs its own
-    naming rule — is undecided. Revisit if more of these appear.
+    shape. **Update (2026-07-18):** three more landed this week —
+    `/character-counter/` (PR #479, later extended to 26 platforms in #541),
+    `/hiragana-chart/` and `/katakana-chart/` (both touched in PR #483; the
+    charts page itself first shipped as PR #434 the *prior* week, already
+    flagged unclassified then too — this is its second consecutive
+    appearance). Added all three directory names to `LANE_RULES` as "Category
+    pages" (same case-by-case pattern used for `roblox/` under Platform
+    pages), bringing the total to seven root-level tool pages. The classifier
+    gap is patched each time; the actual question — fold these under
+    `/category/`, or treat "shorter root slug" as an intentional, now
+    seven-times-repeated pattern that deserves its own naming rule — is still
+    undecided and now the more pressing half of this gap.
+12. ~~**`/symbol/` lane missing from the map and the classifier.**~~ **Closed
+    (2026-07-18)** — `/symbol/` has been documented at length in `CLAUDE.md`
+    (its own "Library vs Symbol" section, own generator routing via
+    `page_type: "symbol"`, own `sync_symbol_spoke_links.py`, own validator
+    coverage) since before this review's window, but never got a page-type
+    table row here, nor a `LANE_RULES` entry in `scripts/weekly_pr_digest.py`.
+    It was the single largest source of this week's classifier noise: 542
+    file touches across 31 of the week's 42 unclassified PRs (symbol pages
+    now exist for 79 English slugs, with heavy localization traffic this
+    week — e.g. PR #582 "close IT and PT /symbol/ pillar gaps to 77/77",
+    PR #576 "Add 60+ German symbol pages", PR #562 "Fix remaining
+    library/symbol lane mismatches"). Added a **Symbol** row to the
+    page-type table above and
+    `("symbol/", "Symbol pages")` to `LANE_RULES`.
 
 ---
 
