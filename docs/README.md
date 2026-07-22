@@ -68,7 +68,9 @@ These run across page types rather than producing a type.
 | ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | `library_opportunities.csv` `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
-| Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`image-assets-check.yml`) |
+| Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`validate.yml`, folded in from the retired `image-assets-check.yml`) |
+| hreflang reciprocity audit | `audit-hreflang.js` (`npm run check:hreflang`) | ❌ none (CI-only) | CI (`validate.yml`) |
+| Library/Symbol structural lint | `validate_library_pages.py` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) | CI (`validate.yml`) |
 
 ---
 
@@ -82,9 +84,9 @@ These run across page types rather than producing a type.
 | `tweet-queue.yml` | daily 09:00 UTC (+ manual) | post qualifying commits (`tweet_queue.py`) |
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
-| `image-assets-check.yml` | on `pull_request` (HTML/`assets/og`/`assets/hero`/`assets/pinterest` paths) | `check-image-assets.py` (PR #315) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 | `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
+| `validate.yml` | on `pull_request` (+ manual) | **required, blocking**: `audit-hreflang.js` (`npm run check:hreflang`), `validate_library_pages.py`, `check-image-assets.py` — each already exited non-zero on failure but none was wired into CI until now. Supersedes the old path-filtered `image-assets-check.yml` (retired; folded in here so the image-asset check now runs unconditionally on every PR instead of only on HTML/asset-path changes). |
 
 ### Scheduled routines (Claude Code on the web)
 
@@ -150,9 +152,15 @@ here so they aren't lost. Update as they're closed or new ones appear.
    fix this doc's own review checklist (§4) says to systematize — a pattern
    rule (any two-letter, or `zh-xx`-shaped, top-level directory → i18n) would
    close this permanently instead of one PR-by-PR patch per new locale.
-   Separately, `scripts/audit-hreflang.js` (new this week, wired to
-   `npm run check:hreflang` but no CI workflow yet) is real hreflang-mesh
-   tooling with nowhere to be documented until the i18n governing doc exists.
+   Separately, `scripts/audit-hreflang.js` (wired to `npm run check:hreflang`)
+   is real hreflang-mesh tooling with nowhere to be documented until the i18n
+   governing doc exists. **Update (2026-07-22):** the "no CI workflow yet"
+   half of this is now closed — `.github/workflows/validate.yml` runs
+   `audit-hreflang.js` (plus `validate_library_pages.py` and
+   `check-image-assets.py`) as a required, blocking check on every PR, and
+   the old path-filtered `image-assets-check.yml` was retired in favor of it.
+   The documentation-home half (an i18n governing doc to hang this on) is
+   still open.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
    (`alternateName`: PR #277; FAQ structured data: PR #290) but have no

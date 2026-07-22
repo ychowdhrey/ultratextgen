@@ -2385,6 +2385,7 @@ PAGES.update({
 "usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
 "usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
 "usecase-stylish-name": ("Stylish Name Maker", "Fancy names for FF, Instagram & Facebook", m_gamepad, K_USE),
+"usecase-valorant-name-generator": ("Valorant Name Generator", "Live Riot ID checker + stylish names", m_gamepad, K_USE),
 "ascii-art-generator": ("ASCII Art Generator", "Turn any word into big block-letter ASCII art",
       P(m_transform, a="A", b="█"), K_USE),
 "ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
