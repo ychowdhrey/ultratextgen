@@ -1,14 +1,3 @@
-// English metadata constants used by HTMLRewriter as a safety net.
-// If _root.html is served correctly these are redundant, but they
-// protect against edge cases where ASSETS still returns localized HTML.
-const EN_TITLE =
-  "Stylish Text Generator — Copy & Paste Fancy Unicode Fonts";
-const EN_DESC =
-  "Turn plain text into stylish Unicode fonts you can copy and paste. " +
-  "Choose bold, cursive, gothic, and decorative styles for bios, " +
-  "usernames, comments, and posts.";
-const EN_URL = "https://ultratextgen.com/";
-
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
@@ -48,65 +37,15 @@ export async function onRequest(context) {
     return response;
   }
 
-  // ── HTMLRewriter: guarantee English head metadata (safety net) ──────
-  // Under normal operation _root.html is already English, so these
-  // rewriters are no-ops.  They remain as defense-in-depth in case
-  // ASSETS ever returns unexpected content.
-  const rewritten = new HTMLRewriter()
-    .on("html", {
-      element(el) {
-        el.setAttribute("lang", "en");
-      },
-    })
-    .on("title", {
-      element(el) {
-        el.setInnerContent(EN_TITLE);
-      },
-    })
-    .on('meta[name="description"]', {
-      element(el) {
-        el.setAttribute("content", EN_DESC);
-      },
-    })
-    .on('link[rel="canonical"]', {
-      element(el) {
-        el.setAttribute("href", EN_URL);
-      },
-    })
-    .on('meta[property="og:title"]', {
-      element(el) {
-        el.setAttribute("content", EN_TITLE);
-      },
-    })
-    .on('meta[property="og:description"]', {
-      element(el) {
-        el.setAttribute("content", EN_DESC);
-      },
-    })
-    .on('meta[property="og:url"]', {
-      element(el) {
-        el.setAttribute("content", EN_URL);
-      },
-    })
-    .on('meta[name="twitter:title"]', {
-      element(el) {
-        el.setAttribute("content", EN_TITLE);
-      },
-    })
-    .on('meta[name="twitter:description"]', {
-      element(el) {
-        el.setAttribute("content", EN_DESC);
-      },
-    })
-    .transform(response);
-
   // ── Build the final response with anti-cache headers ────────────────
-  const outHeaders = new Headers(rewritten.headers);
+  // _root.html is a build-time copy of index.html, so its own title/meta/
+  // canonical/OG/Twitter tags are already correct — no rewriting needed.
+  const outHeaders = new Headers(response.headers);
   outHeaders.set("Cache-Control", "no-store");
   outHeaders.set("Vary", "Accept-Language");
   outHeaders.delete("Location");
 
-  return new Response(rewritten.body, {
+  return new Response(response.body, {
     status: 200,
     headers: outHeaders,
   });
