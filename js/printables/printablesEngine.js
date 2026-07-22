@@ -100,6 +100,12 @@
         medium: { label: "Medium", hint: "A balanced connect-the-dots" },
         hard:   { label: "Hard", hint: "More dots and finer letter detail" },
         expert: { label: "Expert", hint: "Lots of dots — a real challenge" }
+      },
+      size: {
+        label: "Print size",
+        full:   { label: "Full page", hint: "One big letter per sheet — today's default" },
+        medium: { label: "Medium (~4 in)", hint: "Several letters per sheet — good for posters" },
+        small:  { label: "Small (~2 in)", hint: "Many letters per sheet — great for bulletin boards" }
       }
     },
     fr: {
@@ -133,6 +139,12 @@
         medium: { label: "Moyen", hint: "Un point à point équilibré" },
         hard:   { label: "Difficile", hint: "Plus de points et de détails dans la lettre" },
         expert: { label: "Expert", hint: "Beaucoup de points — un vrai défi" }
+      },
+      size: {
+        label: "Taille d'impression",
+        full:   { label: "Pleine page", hint: "Une grande lettre par feuille — le réglage par défaut" },
+        medium: { label: "Moyenne (~10 cm)", hint: "Plusieurs lettres par feuille — pratique pour des affiches" },
+        small:  { label: "Petite (~5 cm)", hint: "Beaucoup de lettres par feuille — idéal pour un panneau d'affichage" }
       }
     },
     es: {
@@ -166,6 +178,12 @@
         medium: { label: "Medio", hint: "Un unir-los-puntos equilibrado" },
         hard:   { label: "Difícil", hint: "Más puntos y más detalle en la letra" },
         expert: { label: "Experto", hint: "Muchos puntos — todo un reto" }
+      },
+      size: {
+        label: "Tamaño de impresión",
+        full:   { label: "Página completa", hint: "Una letra grande por hoja — la opción por defecto" },
+        medium: { label: "Mediano (~10 cm)", hint: "Varias letras por hoja — ideal para pósteres" },
+        small:  { label: "Pequeño (~5 cm)", hint: "Muchas letras por hoja — ideal para un mural" }
       }
     },
     pt: {
@@ -199,6 +217,12 @@
         medium: { label: "Médio", hint: "Um ligar-os-pontos equilibrado" },
         hard:   { label: "Difícil", hint: "Mais pontos e mais detalhe na letra" },
         expert: { label: "Expert", hint: "Muitos pontos — um baita desafio" }
+      },
+      size: {
+        label: "Tamanho de impressão",
+        full:   { label: "Página inteira", hint: "Uma letra grande por folha — o padrão de hoje" },
+        medium: { label: "Médio (~10 cm)", hint: "Várias letras por folha — bom para cartazes" },
+        small:  { label: "Pequeno (~5 cm)", hint: "Muitas letras por folha — ótimo para mural" }
       }
     },
     it: {
@@ -232,6 +256,12 @@
         medium: { label: "Medio", hint: "Un unisci-i-puntini equilibrato" },
         hard:   { label: "Difficile", hint: "Più punti e più dettaglio nella lettera" },
         expert: { label: "Esperto", hint: "Tanti punti — una vera sfida" }
+      },
+      size: {
+        label: "Formato di stampa",
+        full:   { label: "Pagina intera", hint: "Una grande lettera per foglio — l'opzione predefinita" },
+        medium: { label: "Medio (~10 cm)", hint: "Diverse lettere per foglio — comodo per i poster" },
+        small:  { label: "Piccolo (~5 cm)", hint: "Tante lettere per foglio — ideale per una bacheca" }
       }
     },
     pl: {
@@ -265,6 +295,12 @@
         medium: { label: "Średni", hint: "Zrównoważone łączenie kropek" },
         hard:   { label: "Trudny", hint: "Więcej kropek i drobniejsze szczegóły litery" },
         expert: { label: "Ekspert", hint: "Mnóstwo kropek — prawdziwe wyzwanie" }
+      },
+      size: {
+        label: "Rozmiar wydruku",
+        full:   { label: "Cała strona", hint: "Jedna duża litera na kartkę — dzisiejsze ustawienie domyślne" },
+        medium: { label: "Średni (~10 cm)", hint: "Kilka liter na kartkę — dobre na plakaty" },
+        small:  { label: "Mały (~5 cm)", hint: "Wiele liter na kartkę — świetne na tablicę ogłoszeń" }
       }
     },
     de: {
@@ -298,6 +334,12 @@
         medium: { label: "Mittel", hint: "Ausgewogenes Punkte-Verbinden" },
         hard:   { label: "Schwer", hint: "Mehr Punkte und feinere Details" },
         expert: { label: "Experte", hint: "Viele Punkte — eine echte Herausforderung" }
+      },
+      size: {
+        label: "Druckgröße",
+        full:   { label: "Ganze Seite", hint: "Ein großer Buchstabe pro Blatt — die heutige Standardeinstellung" },
+        medium: { label: "Mittel (~10 cm)", hint: "Mehrere Buchstaben pro Blatt — gut für Poster" },
+        small:  { label: "Klein (~5 cm)", hint: "Viele Buchstaben pro Blatt — ideal für eine Pinnwand" }
       }
     }
   };
@@ -342,6 +384,7 @@
     alphaGrid: $("#pt-alphabet-grid"),
     alphaPrint: $("#pt-alphabet-print"),
     bookPrint: $("#pt-book-print"),
+    sizeControl: $("#pt-size-control"),
     practicePrint: $("#pt-practice-print"),
     nameInput: $("#pt-name-input"),
     nameRoster: $("#pt-name-roster"),
@@ -1042,11 +1085,140 @@
     printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
   }
 
+  /* ---------------------------------------------------------------
+     "Print size" — bulletin-board / poster tiling for the full A–Z
+     alphabet print (forum-evidenced pain: "letters for bulletin board!!",
+     large display letters at 2–4in, not one more fixed-size sheet).
+     "full" is the default and pre-selected option and maps straight to the
+     print handler `buildAlphabetGrid` already wires (printAlphabetSheet or
+     printAlphabetBook per CFG.alphabetPrint) — completely unchanged output.
+     Only "medium"/"small" branch into printAlphabetTiled() below, and that
+     branch only exists at all on pages that add the optional
+     #pt-size-control mount (see buildSizeControl). Pages that don't add the
+     mount never build this control and never see the new code path.
+     --------------------------------------------------------------- */
+  const SIZE_PRESETS = [
+    { key: "full",   heightIn: null, label: T.size.full.label,   hint: T.size.full.hint },
+    { key: "medium", heightIn: 4,    label: T.size.medium.label, hint: T.size.medium.hint },
+    { key: "small",  heightIn: 2,    label: T.size.small.label,  hint: T.size.small.hint }
+  ];
+  let alphaSizeKey = "full";
+
+  // Conservative usable print area, safe across both US Letter (8.5x11in)
+  // and A4 (8.27x11.69in) with room left for default browser print margins
+  // plus the page title line — the same portrait budget printAlphabetBook's
+  // own fixed 8.2in single-letter height already assumes.
+  const TILE_PAGE_W_IN = 7.0;
+  const TILE_PAGE_H_IN = 9.3;
+  const TILE_GAP_IN = 0.25;
+
+  // How tall a rendered character is relative to its width, per render mode
+  // — used to size each tile's grid column so a "4 in" letter really is
+  // ~4in tall on paper, not just labeled that way.
+  function tileAspect() {
+    if (RENDER === "glyph") return 1.6; // "A a" pair (glyph mode) is wider than tall
+    return 200 / 240; // outlineSVG / singleDotSVG's own viewBox ratio
+  }
+
+  // How many CHARS fit on one tiled page at a given letter height, and the
+  // grid geometry to lay them out — the floor() below guarantees the tiles
+  // never overflow the safe usable area even when the division isn't exact.
+  function tileLayout(heightIn) {
+    const cellW = heightIn * tileAspect();
+    const cols = Math.max(1, Math.floor((TILE_PAGE_W_IN + TILE_GAP_IN) / (cellW + TILE_GAP_IN)));
+    const rows = Math.max(1, Math.floor((TILE_PAGE_H_IN + TILE_GAP_IN) / (heightIn + TILE_GAP_IN)));
+    return { cols: cols, rows: rows, perPage: cols * rows, cellW: cellW };
+  }
+
+  // The whole A–Z (or A–Z + 0–9) run, tiled several-per-page at a fixed real
+  // letter height, paginated across as many sheets as needed — the
+  // "bulletin board" size option. Reuses the exact same per-character figure
+  // the compact sheet/book prints already draw (outlineSVG / singleDotSVG /
+  // bigGlyphForPrint) and the same printWrap print call as every other
+  // multi-page job in this file — just a new size-driven grid layout, no new
+  // render primitive and no new print mechanism.
+  function printAlphabetTiled(sizeKey) {
+    const preset = SIZE_PRESETS.filter((p) => p.key === sizeKey)[0] || SIZE_PRESETS[1];
+    const heightIn = preset.heightIn || 4;
+    const layout = tileLayout(heightIn);
+    const small = heightIn <= 2;
+    const pages = [];
+    for (let i = 0; i < CHARS.length; i += layout.perPage) pages.push(CHARS.slice(i, i + layout.perPage));
+
+    const root = document.createElement("div");
+    root.className = "pt-tile-set";
+    pages.forEach((chunk, pi) => {
+      const page = document.createElement("div");
+      page.className = "pt-tile-page";
+      const title = document.createElement("h3");
+      title.className = "bubble-print-title";
+      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length + " — ultratextgen.com";
+      page.appendChild(title);
+
+      const grid = document.createElement("div");
+      grid.className = "pt-tile-grid";
+      grid.style.gridTemplateColumns = "repeat(" + layout.cols + ", " + layout.cellW.toFixed(2) + "in)";
+      grid.style.gap = TILE_GAP_IN.toFixed(2) + "in";
+      chunk.forEach((ch) => {
+        const cell = document.createElement("div");
+        cell.className = "pt-tile-cell";
+        cell.style.height = heightIn.toFixed(2) + "in";
+        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small })));
+        grid.appendChild(cell);
+      });
+      page.appendChild(grid);
+      root.appendChild(page);
+    });
+    printWrap("", root);
+  }
+
+  // Optional "print size" radiogroup (#pt-size-control). Entirely opt-in:
+  // pages that don't add the mount never call this and the alphabet-print
+  // button keeps calling exactly the same default handler it always has.
+  // "Full page" is pre-selected, so even a page that DOES add the mount
+  // still defaults to today's unaffected output until the visitor actively
+  // picks Medium or Small.
+  function buildSizeControl() {
+    if (!el.sizeControl) return;
+    const group = document.createElement("div");
+    group.className = "pt-choice-row pt-size-row";
+    group.setAttribute("role", "radiogroup");
+    group.setAttribute("aria-label", T.size.label);
+    SIZE_PRESETS.forEach((preset) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      const on = preset.key === alphaSizeKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.appendChild(document.createTextNode(preset.label));
+      const small = document.createElement("small");
+      small.textContent = preset.hint;
+      b.appendChild(small);
+      b.addEventListener("click", () => {
+        alphaSizeKey = preset.key;
+        $$(".pt-choice", group).forEach((o) => {
+          const isOn = o === b;
+          o.classList.toggle("is-active", isOn);
+          o.setAttribute("aria-checked", isOn ? "true" : "false");
+        });
+      });
+      group.appendChild(b);
+    });
+    el.sizeControl.appendChild(group);
+  }
+
   function buildAlphabetGrid() {
+    buildSizeControl();
     if (el.bookPrint) el.bookPrint.addEventListener("click", printAlphabetBook);
     if (el.alphaPrint) {
       const bookMode = CFG.alphabetPrint === "book";
-      el.alphaPrint.addEventListener("click", bookMode ? printAlphabetBook : printAlphabetSheet);
+      const printDefault = bookMode ? printAlphabetBook : printAlphabetSheet;
+      el.alphaPrint.addEventListener("click", () => {
+        if (el.sizeControl && alphaSizeKey !== "full") { printAlphabetTiled(alphaSizeKey); return; }
+        printDefault();
+      });
       if (!bookMode) {
         const bookBtn = document.createElement("button");
         bookBtn.type = "button";
