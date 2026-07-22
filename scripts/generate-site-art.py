@@ -509,6 +509,24 @@ def m_camera(p, accent=PURPLE):
     <circle cx="262" cy="146" r="10" fill="#fff"/>"""
 
 
+def m_calendar(p, accent=PURPLE):
+    """A calendar page with binder rings and a highlighted date cell — the
+    calendar emoji is color-only and does not rasterize in bundled fonts."""
+    return f"""
+    <rect x="88" y="112" width="184" height="168" rx="24" fill="{PANEL}" stroke="{INK}" stroke-opacity="0.08" stroke-width="2"/>
+    <path d="M88 168 v-32 a24 24 0 0 1 24 -24 h136 a24 24 0 0 1 24 24 v32 Z" fill="url(#g{p})"/>
+    <rect x="124" y="88" width="16" height="40" rx="8" fill="{INK}"/>
+    <rect x="220" y="88" width="16" height="40" rx="8" fill="{INK}"/>
+    <rect x="112" y="192" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="150" y="192" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="188" y="192" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="112" y="228" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="150" y="228" width="30" height="26" rx="6" fill="url(#gv{p})"/>
+    <rect x="188" y="228" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <text x="165" y="248" font-family="{SANS}" font-size="17" font-weight="700"
+          fill="#fff" text-anchor="middle">17</text>"""
+
+
 def m_flag(p, accent=PURPLE):
     return f"""
     <line x1="92" y1="60" x2="92" y2="300" stroke="{INK}" stroke-width="9"
@@ -1684,6 +1702,7 @@ PAGES = {
   "symbol-theta-symbol": ("Theta Symbol", "Θ θ meaning, history & how to type it", glyphs("Θ", "θ"), K_SYM),
   "symbol-tilde-symbol": ("Tilde Symbol", "~ meaning, history & how to type it", glyphs("~"), K_SYM),
   "symbol-underscore-symbol": ("Underscore", "_ meaning, history & how to type it", glyphs("_"), K_SYM),
+  "symbol-calendar-emoji": ("Calendar Emoji", "Why it's always frozen on July 17", m_calendar, K_SYM),
   "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Draft Emoji 18.0 candidate, not live yet", m_smiley, K_SYM),
   "symbol-pickle-emoji": ("Pickle Emoji", "Draft Emoji 18.0 candidate, not live yet", m_cup, K_SYM),
   "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
