@@ -59,6 +59,18 @@
           "label": "Pound Sign"
         }
       ]
+    },
+    {
+      "id": "gulf-currency-a-version-ahead",
+      "label": "A Version Ahead",
+      "h2": "The Gulf Currency Symbol That Shipped a Version Earlier",
+      "intro": "Saudi Arabia's riyal sign cleared this same path a full Unicode version sooner — already final since Unicode 17.0, not just in beta.",
+      "symbols": [
+        {
+          "char": "⃁",
+          "label": "Saudi Riyal Sign (U+20C1, final since Unicode 17.0)"
+        }
+      ]
     }
   ],
   "related": [
@@ -66,6 +78,16 @@
       "href": "/library/currency-symbols/",
       "title": "Currency Symbols",
       "desc": "Every world currency symbol you can already copy and paste today."
+    },
+    {
+      "href": "/symbol/omani-rial-sign/",
+      "title": "Omani Rial Sign",
+      "desc": "Another Gulf currency symbol shipping in the same Unicode 18.0 beta."
+    },
+    {
+      "href": "/symbol/saudi-riyal-sign/",
+      "title": "Saudi Riyal Sign",
+      "desc": "A Gulf currency symbol that's already final, one Unicode version ahead."
     },
     {
       "href": "/symbol/dollar-sign/",
