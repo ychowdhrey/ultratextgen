@@ -2245,6 +2245,23 @@ PAGES.update({
 "printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
+
+# 2026-07-22 GSC 404 cleanup: these pages shipped without ever being
+# registered here, so they had no og:image/hero art at all.
+"category-case-converter": ("Case Converter", "UPPERCASE, lowercase & Title Case",
+      P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
+"usecase-old-english-translator": ("Old English Translator", "Thee, thou & thy — Shakespearean text",
+      P(m_typo, sample="Thee", ff=SERIF, style="italic", weight="400", size=64, label="ye olde english"), K_USE),
+"usecase-pirate-translator": ("Pirate Translator", "Arrr! Turn any text into pirate speak", m_skull, K_USE),
+"printables-monogram-maker": ("Monogram Maker", "Up to 3 initials, classic or circle-frame", P(m_circled_letter, letter="M"), K_PRINT),
+"printables-cross-stitch-letters": ("Cross-Stitch Letters", "Any word as a charted stitch pattern", m_grid, K_PRINT),
+"printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
+"printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
+"printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
+"printables-happy-birthday-in-cursive": ("Happy Birthday in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Birthday"), K_PRINT),
+"printables-love-in-cursive": ("Love in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Love"), K_PRINT),
+"printables-mom-in-cursive": ("Mom in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Mom"), K_PRINT),
+
 "category-ancient-fonts": ("Ancient & Rune Fonts", "Rune, Cherokee & ancient script styling",
       P(m_typo, sample="Rune", ff=SERIF, weight="800", size=84, label="runic · cherokee · ethiopic"), K_CAT),
 "category-emoji-letter-fonts": ("Emoji Letter Generator", "Block, squared & flag-emoji letter styles",
