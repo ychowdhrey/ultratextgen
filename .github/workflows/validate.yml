@@ -1,0 +1,83 @@
+name: Validate Site
+
+# Required, blocking checks for structural correctness that must never merge
+# broken: hreflang reciprocity, /library/ and /symbol/ page structure, and
+# per-page social/Pinterest image assets. Each validator already exits
+# non-zero on failure (see scripts/audit-hreflang.js,
+# scripts/validate_library_pages.py, scripts/check-image-assets.py) — this
+# workflow is what actually wires that into CI so a PR can't merge broken
+# pages.
+#
+# All three run every time (continue-on-error on each step) so a single PR
+# shows every problem at once instead of stopping at the first failure; the
+# final step fails the job if any validator reported an error.
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run hreflang reciprocity audit
+        id: hreflang
+        continue-on-error: true
+        run: npm run check:hreflang | tee hreflang-audit.log
+
+      - name: Run library/symbol page validator
+        id: library
+        continue-on-error: true
+        run: python3 scripts/validate_library_pages.py | tee library-validate.log
+
+      - name: Run image asset check
+        id: images
+        continue-on-error: true
+        run: npm run check:images | tee image-assets.log
+
+      - name: Build step summary
+        if: always()
+        run: |
+          {
+            echo "## Site Validation"
+            echo ""
+            echo "### hreflang reciprocity audit — \`${{ steps.hreflang.outcome }}\`"
+            echo '```'
+            cat hreflang-audit.log
+            echo '```'
+            echo ""
+            echo "### Library/symbol page validator — \`${{ steps.library.outcome }}\`"
+            echo '```'
+            cat library-validate.log
+            echo '```'
+            echo ""
+            echo "### Image asset check — \`${{ steps.images.outcome }}\`"
+            echo '```'
+            cat image-assets.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail the job if any validator reported problems
+        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.images.outcome == 'failure'
+        run: |
+          echo "One or more validators failed — see the Summary tab above for details."
+          exit 1
