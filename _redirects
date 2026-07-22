@@ -18,12 +18,18 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /telegram   /telegram/   301
 /tiktok     /tiktok/     301
 /tiktok/name-generator  /tiktok/name-generator/  301
-/tiktok/what-font-does-tiktok-use  /tiktok/what-font-does-tiktok-use/  301
 /answers/how-to-change-tiktok-username  /answers/how-to-change-tiktok-username/  301
 /answers/what-is-a-tiktok-handle  /answers/what-is-a-tiktok-handle/  301
 /whatsapp   /whatsapp/   301
 /x          /x/          301
 /youtube    /youtube/    301
+
+# Answer content consolidated under /answers/ (2026-07-21) — duplicate
+# "what font does X use" pages under the platform namespace, retired
+/tiktok/what-font-does-tiktok-use    /answers/what-font-does-tiktok-use/   301
+/tiktok/what-font-does-tiktok-use/   /answers/what-font-does-tiktok-use/   301
+/youtube/what-font-does-youtube-use  /answers/what-font-does-youtube-use/  301
+/youtube/what-font-does-youtube-use/ /answers/what-font-does-youtube-use/  301
 
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301

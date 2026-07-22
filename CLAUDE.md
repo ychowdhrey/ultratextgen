@@ -112,6 +112,40 @@ Rule of thumb: if the value is "resolve one question in seconds," it's an **answ
 If the value is "understand a topic / build authority," it's a **guide**. A guide may
 bundle many sub-questions; an answer stays tightly scoped to one.
 
+### Answer pages live under `answers/` only
+
+If a page's content is answer-shaped (per the table above — a sharp question with a
+direct, zero-click resolution), it goes under `/answers/`. Do not build the same
+answer-shaped content again under a platform directory (`/discord/`, `/tiktok/`,
+`/youtube/`, etc.) or any other section, even when the query is platform-specific
+("what font does TikTok use"). One query, one page, in the section that owns that
+content type — this is the same Rule 1 as the Hub vs Spoke section above, applied to
+content-type placement instead of hub/spoke placement.
+
+This is a **default, not an absolute** — a platform hub page is allowed to *discuss*
+a topic its own answer page covers, as long as it stays a one-line pointer per Hub
+vs Spoke Rule 3 ("to format messages, see the guide"), and a genuinely different
+platform-specific angle (not just the same Q&A restated) can justify its own page.
+Any exception must be **explicit and discussed** — argued and agreed before the page
+ships, the same bar the Localization Workflow's English-Parent Rule sets for locale
+pages — not decided unilaterally because a page "already lives here."
+
+**Case study (2026-07-21):** `tiktok/what-font-does-tiktok-use/` and
+`youtube/what-font-does-youtube-use/` were built as full answer-shaped pages
+(same "what font does X use" question, `QAPage`-style structure, near-identical
+title/meta to their `answers/` counterparts) directly under the platform
+directories, with no discussion or documented exception. Both pairs cannibalized:
+GSC (last 3 months) showed `answers/what-font-does-tiktok-use/` outperforming its
+`tiktok/` twin on the metric that matters (4 clicks vs. 1, on similar impressions),
+while neither `youtube/what-font-does-youtube-use/` page converted at all (0 clicks
+on both). Fix: retired both platform-namespaced pages with a 301 to their
+`answers/` canonical (`_redirects`), first porting the one piece of content unique
+to each (free lookalike-font names — Montserrat/Poppins for TikTok, Inter/Manrope/
+Montserrat for YouTube) into the surviving `answers/` page so it wasn't lost, and
+repointed every internal link (`tiktok/index.html`, `tiktok/name-generator/`,
+`youtube/index.html`, `youtube/name-generator/`) straight at the `answers/` URL
+instead of the now-retired one.
+
 ---
 
 ## Content Types: Library vs Symbol
@@ -731,6 +765,11 @@ Do not add a test framework unless explicitly requested.
   `/library/`, `/usecase/`, `/guide/`, or platform page when a locale-native
   equivalent already exists — check before adding or editing any locale
   page's outbound link. See "Locale-native internal linking" above.
+- Do not build an answer-shaped page (a sharp question, zero-click resolution)
+  under a platform directory or any section other than `answers/` without an
+  explicit, discussed exception. See "Answer pages live under `answers/` only"
+  above — the `tiktok/`/`youtube/` "what font does X use" case study is exactly
+  this mistake, and it cannibalized both pairs.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
