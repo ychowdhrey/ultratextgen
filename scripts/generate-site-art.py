@@ -2398,6 +2398,7 @@ def _native_for_slug(slug):
 PAGES.update({
 "updates": ("UltraTextGen Updates", "What changed, and why your Check may too", m_doc, K_UPDATE),
 "updates-unicode-17-new-emoji-rollout": ("Unicode 17.0's New Emoji: Rollout Tracker", "8 new emoji, tracked platform by platform", m_doc, K_UPDATE),
+"updates-uae-dirham-symbol-unicode-18": ("UAE Dirham Symbol Approved for Unicode 18.0", "Approved for encoding, not on keyboards yet", m_doc, K_UPDATE),
 })
 
 
