@@ -51,12 +51,67 @@
 }
 
 .rng-length-tab.active {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   color: #fff;
-  border-color: var(--accent);
+  border-color: var(--accent-purple);
+}
+
+.rng-mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.rng-mode-tab {
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.rng-mode-tab.active {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: #fff;
+  border-color: var(--accent-purple);
+}
+
+.rng-mode-panel {
+  display: none;
+}
+
+.rng-mode-panel.active {
+  display: block;
+}
+
+.rng-scam-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  padding: 12px 14px;
+  margin-top: 14px;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+.rng-scam-note strong {
+  color: var(--text-primary);
 }
 
 .rng-note {
+  margin-top: 14px;
+}
+
+.rng-length-field {
   margin-top: 14px;
 }
 
@@ -128,7 +183,7 @@
 
 .rng-check-link {
   font-size: 0.78rem;
-  color: var(--accent);
+  color: var(--accent-purple);
   text-decoration: none;
   margin-left: auto;
   white-space: nowrap;
@@ -165,4 +220,100 @@
 
 .rng-checker-result {
   margin-top: 12px;
+}
+
+/* ── Duo / Matching mode ─────────────────────────────────────────────────── */
+
+.rng-duo-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.rng-duo-card {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-white);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rng-duo-theme {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-purple);
+}
+
+.rng-duo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 8px;
+}
+
+.rng-duo-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.rng-duo-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* ── Clan Tag Builder ─────────────────────────────────────────────────────── */
+
+.rng-tag-builder {
+  display: grid;
+  gap: 14px;
+}
+
+.rng-tag-style-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rng-tag-style {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.rng-tag-style.active {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  color: #fff;
+  border-color: var(--accent-purple);
+}
+
+.rng-tag-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  background: var(--bg-white);
+  padding: 16px;
+}
+
+.rng-tag-preview-text {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  word-break: break-word;
 }

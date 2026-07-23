@@ -1287,6 +1287,7 @@ PAGES = {
 
   # ---- category overview + pages ----
   "category": ("Unicode Font Categories", "Choose a style by its visual intent", m_grid, K_CAT),
+  "pl-category": ("Kategorie Czcionek Unicode", "Wybierz styl pasujący do klimatu", m_grid, K_CAT),
   "category-aesthetic-fonts": ("Aesthetic Font Generator", "Soft, spaced-out vaporwave styling",
         P(m_typo, sample="a e s", size=72, spacing="6", label="a e s t h e t i c"), K_CAT),
   "category-bold-fonts": ("Bold Fonts Generator", "Heavy weight that commands attention",
@@ -1348,6 +1349,7 @@ PAGES = {
 
   # ---- usecase overview + pages ----
   "usecase": ("Choose What to Create", "Generators grouped by what you need", m_grid, K_USE),
+  "pl-usecase": ("Co Chcesz Stworzyć?", "Generatory pogrupowane według potrzeb", m_grid, K_USE),
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
@@ -1412,6 +1414,8 @@ PAGES = {
         m_gamepad, K_USE),
   "id-usecase-nama-squad-ml-keren": ("Nama Squad ML Keren", "Tag singkatan & font aesthetic squad Mobile Legends",
         m_trophy, K_USE),
+  "id-usecase-nama-roblox-keren": ("Nama Roblox Keren", "Simbol & generator nickname buat display name Roblox",
+        m_gamepad, K_USE),
   "id-huruf-kecil-diatas": ("Huruf Kecil Diatas", "Superscript buat nickname Free Fire & status WA",
         P(m_typo, sample="Sanz", size=76, label="huruf kecil diatas"), K_USE),
 
@@ -1423,6 +1427,8 @@ PAGES = {
   "it-usecase-zalgo-text": ("Generatore di Testo Zalgo", "Crea testo glitch e inquietante", m_zalgo, K_USE),
   "nl-usecase-zalgo-text": ("Zalgo Tekstgenerator", "Maak griezelige glitch tekst", m_zalgo, K_USE),
   "pl-usecase-zalgo-text": ("Generator Tekstu Zalgo", "Twórz przerażający tekst glitch", m_zalgo, K_USE),
+  "pl-usecase-nazwy-do-robloxa": ("Fajne Nazwy do Robloxa", "Symbole i generator nicków na nazwę wyświetlaną",
+        m_gamepad, K_USE),
   "pt-usecase-zalgo-text": ("Gerador de Texto Zalgo", "Crie texto glitch e assustador", m_zalgo, K_USE),
   "pt-letras-diferentes": ("Letras Diferentes", "Fontes para copiar e colar em qualquer app",
         P(m_typo, sample="Abc", weight="700", size=88, label="copiar e colar"), K_USE),

@@ -12,15 +12,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Roblox Name Generator — Available Username Ideas (Not-Taken Check) | UltraTextGen</title>
-  <meta name="description" content="Generate Roblox name ideas by vibe or length, then check instantly if the username is available — cute, funny, cool, aesthetic, OG short names, and more.">
+  <title>Roblox Name Generator — Real Availability Check, Duo Names & Clan Tags | UltraTextGen</title>
+  <meta name="description" content="Generate Roblox names by vibe or length, checked live against Roblox's own validator — plus matching duo names for your bestie and a clan tag builder with live preview.">
   <link rel="canonical" href="https://ultratextgen.com/roblox/name-generator/">
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/roblox/name-generator/">
   <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/usecase/nombres-para-roblox/">
   <link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/usecase/nomes-para-roblox/">
   <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/roblox/name-generator/">
-  <meta property="og:title" content="Roblox Name Generator — Available Username Ideas (Not-Taken Check)">
-  <meta property="og:description" content="Generate Roblox name ideas by vibe or length and see which usernames are actually available.">
+  <meta property="og:title" content="Roblox Name Generator — Real Availability Check, Duo Names & Clan Tags">
+  <meta property="og:description" content="Names by vibe or length, checked live against Roblox — plus matching duo names and a clan tag builder with live preview.">
   <meta property="og:url" content="https://ultratextgen.com/roblox/name-generator/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://ultratextgen.com/assets/og/roblox-name-generator.png">
@@ -28,8 +28,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Roblox Name Generator — Available Username Ideas (Not-Taken Check)">
-  <meta name="twitter:description" content="Generate Roblox names by vibe or length — cute, funny, cool, OG short — with a live username availability check.">
+  <meta name="twitter:title" content="Roblox Name Generator — Real Availability Check, Duo Names & Clan Tags">
+  <meta name="twitter:description" content="Generate Roblox names by vibe or length, live-checked against Roblox — plus duo names and a clan tag builder.">
   <meta name="twitter:image" content="https://ultratextgen.com/assets/og/roblox-name-generator.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,9 +43,9 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Roblox Name Generator",
-  "alternateName": ["Roblox Username Generator", "Roblox Display Name Generator", "Roblox Name Ideas", "Roblox Usernames", "Cool Roblox Names", "Roblox Username Ideas"],
+  "alternateName": ["Roblox Username Generator", "Roblox Display Name Generator", "Roblox Name Ideas", "Roblox Usernames", "Cool Roblox Names", "Roblox Username Ideas", "Roblox Duo Name Generator", "Roblox Clan Tag Generator"],
   "url": "https://ultratextgen.com/roblox/name-generator/",
-  "description": "Generate Roblox name ideas by vibe or length and check username availability instantly.",
+  "description": "Generate Roblox names by vibe or length, live-checked against Roblox's own username validator. Includes a matching duo-names generator and a clan tag builder with live preview.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
   "offers": {
@@ -79,6 +79,14 @@
     },
     {
       "@type": "Question",
+      "name": "Can I use symbols or fancy text in my Roblox username?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — @usernames are ASCII-only (letters, numbers, and at most one underscore). Symbols and Unicode characters belong in the display name, not the @username."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Why do some Roblox usernames appear in different colours in chat?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -99,6 +107,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Changing your Roblox @username costs 1,000 Robux every time — there is no free first change. Your display name, however, is free to change once every 7 days. If you only want people to see a different name, change the display name and pay nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this generate free Robux?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — and neither does anything else. There is no legitimate 'free Robux generator' anywhere; every site, video, or tool promising one is a scam built to steal your password or account, and Roblox's own support pages say exactly that. This tool generates username ideas — which are genuinely free."
       }
     }
   ]
@@ -138,46 +154,114 @@
   <div class="hero-inner">
     <div class="hero-card">
       <h1 class="hero-headline">Roblox Name Generator</h1>
-      <p class="hero-tagline">Generate Roblox username ideas by vibe or length — then see which ones are actually available to claim.</p>
+      <p class="hero-tagline">Names by vibe or length, each one live-checked against Roblox. Available means available right now — not "probably."</p>
 
-      <div class="rng-controls">
-        <div class="rng-field">
-          <label for="rngKeyword">Keyword (optional)</label>
-          <input id="rngKeyword" type="text" placeholder="ninja, star, ghost, luna...">
-        </div>
-        <div class="rng-field">
-          <label for="rngVibe">Vibe / style</label>
-          <select id="rngVibe">
-            <option value="cute">Cute</option>
-            <option value="funny">Funny</option>
-            <option value="cool" selected>Cool</option>
-            <option value="aesthetic">Aesthetic</option>
-            <option value="girl">For girls</option>
-            <option value="boy">For boys</option>
-            <option value="emo">Emo / goth</option>
-            <option value="y2k">Y2K</option>
-            <option value="tuff">Tuff</option>
-            <option value="baddie">Baddie</option>
-            <option value="preppy">Preppy</option>
-            <option value="sweaty">Sweaty / tryhard</option>
-          </select>
-        </div>
-        <button id="rngGenerate" class="cta-btn" type="button">Generate usernames</button>
+      <div class="rng-scam-note">
+        <span aria-hidden="true">⚠️</span>
+        <span>Quick heads-up: this tool generates <strong>usernames</strong>, not Robux. "Free Robux generators" aren't real — every site promising one is a scam, and <a href="https://en.help.roblox.com/hc/en-us/articles/204262550-Free-Robux-or-Subscription-Generators" target="_blank" rel="noopener">Roblox says so themselves</a>.</span>
       </div>
 
-      <div class="rng-field" style="margin-top:14px;">
-        <label>Or generate by length</label>
-        <div class="rng-length-tabs">
-          <button class="rng-length-tab active" type="button" data-length="0">Any length</button>
-          <button class="rng-length-tab" type="button" data-length="3">3 letters</button>
-          <button class="rng-length-tab" type="button" data-length="4">4 letters</button>
-          <button class="rng-length-tab" type="button" data-length="5">5 letters</button>
-          <button class="rng-length-tab" type="button" data-length="6">6 letters</button>
+      <div class="rng-mode-tabs" role="tablist">
+        <button class="rng-mode-tab active" type="button" data-mode="solo" role="tab" aria-selected="true">Solo</button>
+        <button class="rng-mode-tab" type="button" data-mode="duo" role="tab" aria-selected="false">Duo / Matching</button>
+        <button class="rng-mode-tab" type="button" data-mode="tag" role="tab" aria-selected="false">Clan Tag</button>
+      </div>
+
+      <!-- SOLO PANEL -->
+      <div class="rng-mode-panel active" data-mode-panel="solo">
+        <div class="rng-controls">
+          <div class="rng-field">
+            <label for="rngKeyword">Keyword (optional)</label>
+            <input id="rngKeyword" type="text" placeholder="ninja, star, ghost, luna...">
+          </div>
+          <div class="rng-field">
+            <label for="rngVibe">Vibe / style</label>
+            <select id="rngVibe">
+              <option value="cute">Cute</option>
+              <option value="funny">Funny</option>
+              <option value="cool" selected>Cool</option>
+              <option value="aesthetic">Aesthetic</option>
+              <option value="girl">For girls</option>
+              <option value="boy">For boys</option>
+              <option value="emo">Emo / goth</option>
+              <option value="y2k">Y2K</option>
+              <option value="tuff">Tuff</option>
+              <option value="baddie">Baddie</option>
+              <option value="preppy">Preppy</option>
+              <option value="sweaty">Sweaty / tryhard</option>
+            </select>
+          </div>
+          <button id="rngGenerate" class="cta-btn" type="button">Generate usernames</button>
+        </div>
+
+        <div class="rng-field rng-length-field">
+          <label>Or generate by length</label>
+          <div class="rng-length-tabs">
+            <button class="rng-length-tab active" type="button" data-length="0">Any length</button>
+            <button class="rng-length-tab" type="button" data-length="3">3 letters</button>
+            <button class="rng-length-tab" type="button" data-length="4">4 letters</button>
+            <button class="rng-length-tab" type="button" data-length="5">5 letters</button>
+            <button class="rng-length-tab" type="button" data-length="6">6 letters</button>
+          </div>
+        </div>
+
+        <div class="block-example rng-note">
+          <strong>Availability check:</strong> Each name is checked against Roblox's username validation endpoint. Results are labelled <strong>Available</strong>, <strong>Taken</strong>, or link directly to Roblox if the check can't complete. Generated names follow all Roblox rules: 3–20 chars, letters/numbers only, at most one underscore.
         </div>
       </div>
 
-      <div class="block-example rng-note">
-        <strong>Availability check:</strong> Each name is checked against Roblox's username validation endpoint. Results are labelled <strong>Available</strong>, <strong>Taken</strong>, or link directly to Roblox if the check can't complete. Generated names follow all Roblox rules: 3–20 chars, letters/numbers only, at most one underscore.
+      <!-- DUO PANEL -->
+      <div class="rng-mode-panel" data-mode-panel="duo">
+        <div class="rng-controls">
+          <div class="rng-field">
+            <label for="rngDuoTheme">Duo theme</label>
+            <select id="rngDuoTheme">
+              <option value="bestie">Bestie</option>
+              <option value="lovebirds">Lovebirds</option>
+              <option value="sunmoon">Sun &amp; Moon</option>
+              <option value="duoqueue">Duo Queue</option>
+              <option value="royalty">Royalty</option>
+              <option value="darkacademia">Dark Academia</option>
+            </select>
+          </div>
+          <button id="rngDuoGenerate" class="cta-btn" type="button">Generate matching names</button>
+        </div>
+        <div class="block-example rng-note">
+          <strong>Matching, not identical:</strong> each pair shares a theme — a common word, or two names built to complement each other — so you and your bestie/duo get names that visibly go together. Both names are live-checked against Roblox individually.
+        </div>
+      </div>
+
+      <!-- CLAN TAG PANEL -->
+      <div class="rng-mode-panel" data-mode-panel="tag">
+        <p class="rng-note">Build a clan tag like 『RBX』 and preview exactly how it looks in front of your name before you commit. Brackets and symbols aren't allowed in @usernames, so a clan tag lives in your <strong>display name</strong> — free to change once every 7 days. Your @username stays untouched.</p>
+        <div class="rng-controls">
+          <div class="rng-field">
+            <label for="rngTagInput">Clan tag</label>
+            <input id="rngTagInput" type="text" placeholder="RBX" maxlength="8">
+          </div>
+          <div class="rng-field">
+            <label for="rngTagNameInput">Your name</label>
+            <input id="rngTagNameInput" type="text" placeholder="YourName" maxlength="20">
+          </div>
+        </div>
+        <div class="rng-tag-builder">
+          <div class="rng-field">
+            <label>Bracket style</label>
+            <div class="rng-tag-style-grid">
+              <button class="rng-tag-style active" type="button" data-style="square">【 】</button>
+              <button class="rng-tag-style" type="button" data-style="corner">『 』</button>
+              <button class="rng-tag-style" type="button" data-style="ornate">꧁ ꧂</button>
+              <button class="rng-tag-style" type="button" data-style="angle">⟬ ⟭</button>
+              <button class="rng-tag-style" type="button" data-style="blade">◥ ◤</button>
+              <button class="rng-tag-style" type="button" data-style="chevron">≫ ≪</button>
+              <button class="rng-tag-style" type="button" data-style="brackets">[ ]</button>
+            </div>
+          </div>
+          <div class="rng-tag-preview">
+            <div class="rng-tag-preview-text" id="rngTagPreview">【 TAG 】 YourName</div>
+            <button id="rngTagCopy" class="copy-btn" type="button">Copy</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -191,10 +275,16 @@
 
 <main class="container">
 
-  <section class="editorial-section">
+  <section class="editorial-section rng-mode-panel active" data-mode-panel="solo">
     <h2>Roblox username ideas</h2>
     <p class="section-subline">Generated names follow all Roblox username rules and are checked for availability. Click "Copy" and then claim the name on Roblox.</p>
     <div id="rngResults" class="rng-results"></div>
+  </section>
+
+  <section class="editorial-section rng-mode-panel" data-mode-panel="duo">
+    <h2>Matching duo names</h2>
+    <p class="section-subline">Six pairs at a time, each independently checked against Roblox. Available means both halves are genuinely up for grabs right now.</p>
+    <div id="rngDuoResults" class="rng-duo-results"></div>
   </section>
 
   <div class="section-divider"></div>
@@ -345,22 +435,6 @@
   </section>
 
 
-  <section class="deco-showcase" aria-labelledby="deco-showcase-title">
-    <h2 class="deco-showcase-title" id="deco-showcase-title">Decorate Your Roblox Username</h2>
-    <p class="deco-showcase-intro">Decorate a Roblox username idea — copy-paste brackets and symbols to frame any name. Roblox filters some characters, so preview in-game before you set your display name.</p>
-    <ul class="deco-showcase-grid">
-      <li class="deco-chip" data-copy="【 Blox 】"><span class="deco-chip-ex">【 Blox 】</span><span class="deco-chip-label">Bracket</span></li>
-      <li class="deco-chip" data-copy="『 Blox 』"><span class="deco-chip-ex">『 Blox 』</span><span class="deco-chip-label">Corner bracket</span></li>
-      <li class="deco-chip" data-copy="꧁ Blox ꧂"><span class="deco-chip-ex">꧁ Blox ꧂</span><span class="deco-chip-label">Ornate frame</span></li>
-      <li class="deco-chip" data-copy="⟬ Blox ⟭"><span class="deco-chip-ex">⟬ Blox ⟭</span><span class="deco-chip-label">Angle bracket</span></li>
-      <li class="deco-chip" data-copy="◥ Blox ◤"><span class="deco-chip-ex">◥ Blox ◤</span><span class="deco-chip-label">Blade frame</span></li>
-      <li class="deco-chip" data-copy="≫ Blox ≪"><span class="deco-chip-ex">≫ Blox ≪</span><span class="deco-chip-label">Chevrons</span></li>
-      <li class="deco-chip" data-copy="✦ Blox ✦"><span class="deco-chip-ex">✦ Blox ✦</span><span class="deco-chip-label">Star</span></li>
-      <li class="deco-chip" data-copy="⚡ Blox ⚡"><span class="deco-chip-ex">⚡ Blox ⚡</span><span class="deco-chip-label">Bolt</span></li>
-      <li class="deco-chip" data-copy="☆ Blox ☆"><span class="deco-chip-ex">☆ Blox ☆</span><span class="deco-chip-label">Hollow star</span></li>
-      <li class="deco-chip" data-copy="◈ Blox ◈"><span class="deco-chip-ex">◈ Blox ◈</span><span class="deco-chip-label">Diamond</span></li>
-    </ul>
-  </section>
 </main>
 
 <footer class="footer">
@@ -416,10 +490,17 @@
   <div class="faq-answer">3–20 characters, letters and numbers only, at most one underscore (not at the start, end, or in a row), no spaces, no Unicode. The generator above follows all these rules automatically.</div>
 </div>
 
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Does this generate free Robux?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <div class="faq-answer">No — and neither does anything else. There is no legitimate "free Robux generator" anywhere; every site, video, or tool promising one is a scam built to steal your password or account, and <a href="https://en.help.roblox.com/hc/en-us/articles/204262550-Free-Robux-or-Subscription-Generators" target="_blank" rel="noopener">Roblox's own support pages say exactly that</a>. This tool generates username ideas — which are genuinely free.</div>
+</div>
+
   </div>
 </footer>
 
 <script src="roblox-generator.js" defer></script>
 <script src="/footer.js" defer></script>
-  <script src="/decorations-showcase.js"></script>
 </body></html>
