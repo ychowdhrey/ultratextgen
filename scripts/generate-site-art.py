@@ -1412,6 +1412,8 @@ PAGES = {
         m_gamepad, K_USE),
   "id-usecase-nama-squad-ml-keren": ("Nama Squad ML Keren", "Tag singkatan & font aesthetic squad Mobile Legends",
         m_trophy, K_USE),
+  "id-usecase-nama-roblox-keren": ("Nama Roblox Keren", "Simbol & generator nickname buat display name Roblox",
+        m_gamepad, K_USE),
   "id-huruf-kecil-diatas": ("Huruf Kecil Diatas", "Superscript buat nickname Free Fire & status WA",
         P(m_typo, sample="Sanz", size=76, label="huruf kecil diatas"), K_USE),
 
