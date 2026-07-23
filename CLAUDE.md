@@ -681,6 +681,76 @@ other locale homepages) for the same failure mode while you're in there.
 
 ---
 
+## Translation Parity — keeping EN and locale pages in sync after creation
+
+The English-Parent Rule above governs *creation*: does a live EN parent exist
+before a locale page gets built. It says nothing about what happens *after*
+both exist — when the EN page (or a locale page) gets edited later and its
+sibling doesn't. That gap is real and has already shipped drift: a batch of
+Gulf currency `symbol/` pages (`dirham-sign`, `omani-rial-sign`,
+`saudi-riyal-sign`) was added to `library/currency-symbols/` across two PRs
+(2026-07-22) with zero of its 9 locale siblings (including `ar/` — arguably
+the highest-value locale for Gulf currencies) touched in either PR. Nobody
+was watching for it because nothing was watching for it.
+
+**The rule:** when you edit a page that has an hreflang cluster (an EN page
+with locale translations, or a locale page with an EN parent), check whether
+the edit is structural — a new internal link, a new FAQ item, a new section,
+a new symbol tile — not just wording. If it is, either update the sibling(s)
+in the same change, or record why they're allowed to diverge. This runs
+**both directions** — EN changed without the locale catching up, or a locale
+changed without EN (or its other locale siblings) catching up — the tooling
+below does not care which side moved first.
+
+**EN and a locale page are allowed to differ** — translators make real
+editorial calls (a different related-links set, a regionally relevant FAQ)
+and not every EN addition needs a translation the day it ships. But per the
+user's standing requirement, that divergence must be an **explicit, agreed
+decision**, not silence. Record it in
+`data/translation_parity_exceptions.json` (reason + date) rather than just
+leaving the sibling stale — see that file's own `_readme` field for the
+entry shape.
+
+### Tooling
+
+- **`node scripts/audit-translation-parity.js`** (`npm run
+  audit:translation-parity`) — point-in-time sweep of every hreflang cluster
+  site-wide. Diffs a language-independent "structural fingerprint" (internal
+  content links — resolved through the hreflang map so a locale-native link
+  and its EN equivalent count as a match, not a diff — plus FAQ/`<h2>`/
+  `.symbol-tile` counts) between EN and each locale sibling. Default output
+  leads with the highest-signal view: recent EN `feat:` commits whose locale
+  siblings weren't touched afterward — the shape of the currency-symbols
+  case above. Pass `--full` for the complete per-pair dump, `--json <path>`
+  for raw data, `--report <path>.md` to save a snapshot. This is a discovery
+  tool for triage, not a blocking check — the existing site has a real
+  backlog of drift and this will not (and should not) go to zero in one
+  pass.
+- **`node scripts/check-translation-parity.js`** (`npm run
+  check:translation-parity`) — the enforcing half, wired into
+  `.github/workflows/validate.yml` as a required CI check on every PR (same
+  continue-on-error-then-fail pattern as the hreflang/library/image
+  validators). Diffs the PR branch against its base, and for every changed
+  HTML page whose structural fingerprint actually moved, requires at least
+  one sibling in its hreflang cluster to have been touched in the same PR —
+  unless the pair is listed in `data/translation_parity_exceptions.json`.
+  Fails the PR otherwise, with the exact EN/locale file pair and the fix (sync
+  the sibling, or add a ledger entry). Byte-level edits that don't change
+  the fingerprint (typos, meta-description tweaks) never trigger it.
+- Both scripts share `scripts/lib/translation-clusters.js` (hreflang cluster
+  discovery) and `scripts/lib/content-fingerprint.js` (the fingerprint/diff
+  logic) — the audit and the enforcement gate must never define "changed" or
+  "cluster" differently, so that shared logic lives in one place.
+
+**Do not add an entry to `data/translation_parity_exceptions.json`
+unilaterally.** Every entry there is supposed to represent a real,
+discussed decision between you and the user — the same bar the English-
+Parent Rule sets for locale-first exceptions above. If `check-translation-
+parity.js` flags a pair, either sync it or raise the divergence with the
+user before recording it as intentional.
+
+---
+
 ## Build & Development
 
 ### Running locally
@@ -770,6 +840,12 @@ Do not add a test framework unless explicitly requested.
   explicit, discussed exception. See "Answer pages live under `answers/` only"
   above — the `tiktok/`/`youtube/` "what font does X use" case study is exactly
   this mistake, and it cannibalized both pairs.
+- Do not edit a page that's part of an hreflang cluster (EN + locale
+  translations) without checking whether the edit is structural and, if so,
+  syncing the sibling(s) or recording an explicit exception in
+  `data/translation_parity_exceptions.json`. See "Translation Parity" above
+  — this runs both directions (EN changed without locale catching up, or
+  vice versa) and `scripts/check-translation-parity.js` enforces it in CI.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
