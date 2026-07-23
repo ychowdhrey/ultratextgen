@@ -1270,6 +1270,8 @@ PAGES = {
   "zh-tw": ("顏文字大全", "複製貼上可愛表情符號", m_kaomoji, K_SITE),
   "zh-tw-yingwen-ziti": ("英文字體產生器", "花式英文字體，複製貼上", m_typo, K_USE),
   "zh-tw-library-xingzuo-fuhao": ("十二星座符號", "星座與行星符號大全", glyphs("♈", "♋", "♌", "♏", "♐"), K_LIB),
+  "zh-tw-library-kongbai-fuhao": ("空白符號", "隱形字元，貼哪都不留痕跡",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
   "zh-tw-da-xiao-xie-zhuanhuan": ("大小寫轉換", "英文大寫、小寫一鍵轉換",
         P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
   "zh-tw-usecase-ciqing-ziti": ("刺青字體產生器", "紋身字體預覽比較",
