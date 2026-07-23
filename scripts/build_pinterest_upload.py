@@ -92,6 +92,12 @@ SOURCES = {
         title="pin_title", image="image_path",
         board="board", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords"),
+    "nama_ff_keren": dict(
+        inventory="nama_ff_keren_pinterest_pins.csv",
+        out="nama_ff_keren_pinterest_pins_upload.csv",
+        title="pin_title", image="image_path",
+        board="board", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords"),
     # French topic boards (2026-07-20 expansion) — deep FR pages, not the /fr/
     # homepage, so each is its own board key rather than reusing "fr".
     **{loc: dict(
