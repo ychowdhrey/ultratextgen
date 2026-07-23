@@ -27,11 +27,14 @@
 
   // Locale-aware nav — Tier-1 locales only (real guide/library hubs + native
   // category/usecase pages to point at). Everyone else falls through to EN.
-  // Where a locale has no hub page at all yet (category/usecase/answers/events
-  // hubs exist in zero locales; printables only in 5/7), the label is still
-  // translated but the href falls back to the English hub — same pattern
-  // yaytext.com uses for its own untranslated pages (verified live 2026-07-20).
-  // Fallbacks close out as each locale's hub pages get built.
+  // category/usecase now have native hub pages for all 7 Tier-1 locales
+  // (pt/fr/de/it/tr/es/id — added 2026-07-23); printables hubs exist in 5/7
+  // (pt/fr/de/it/es). Where a locale has no hub page at all yet (answers/events
+  // hubs exist in zero locales; printables missing in tr/id), the label is
+  // still translated but the href falls back to the English hub — same
+  // pattern yaytext.com uses for its own untranslated pages (verified live
+  // 2026-07-20). Close remaining fallbacks the same way as each locale's
+  // hub pages get built.
   const NAV = {
     pt: {
       home: "/pt/",

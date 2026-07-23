@@ -30,15 +30,16 @@
     }
   }
 
-  // Locale-aware footer — same Tier-1 locale set and same no-hub fallback
-  // rule as header.js (see that file's NAV comment + the roadmap doc in the
-  // private lab repo for why Category/Use Cases/Answers/Events still point
-  // at the English hub for every locale today). "tools" and "categories"
-  // link to real, on-disk native-slug pages verified 2026-07-20 — not
-  // translated guesses. "company" labels are translated but the About/
-  // Privacy/Terms/Contact pages themselves have no locale versions yet, so
-  // those hrefs stay English (same pattern yaytext.com uses for its own
-  // untranslated Privacy Policy link, verified live 2026-07-20).
+  // Locale-aware footer — same Tier-1 locale set as header.js. "explore"
+  // now points Category/Use Cases at each locale's own native hub (added
+  // 2026-07-23); Answers/Events still fall back to the English hub for
+  // every locale (no native hub pages exist yet for those two pillars).
+  // "tools" and "categories" link to real, on-disk native-slug pages
+  // verified 2026-07-20 — not translated guesses. "company" labels are
+  // translated but the About/Privacy/Terms/Contact pages themselves have
+  // no locale versions yet, so those hrefs stay English (same pattern
+  // yaytext.com uses for its own untranslated Privacy Policy link,
+  // verified live 2026-07-20).
   var FOOTER = {
     pt: {
       home: { label: "Início", href: "/pt/" },
