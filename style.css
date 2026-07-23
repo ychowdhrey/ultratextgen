@@ -3228,6 +3228,10 @@ button.clear-decoration {
   transition: transform .15s, box-shadow .15s, border-color .15s;
 }
 
+.related-card[hidden] {
+  display: none;
+}
+
 .related-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);

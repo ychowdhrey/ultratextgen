@@ -2468,6 +2468,7 @@ PAGES.update({
 "updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols in Unicode: The Scorecard", "5 have their own sign, 3 share one, 7 have none", m_doc, K_UPDATE),
 "updates-unicode-18-beta-review-opens": ("Unicode 18.0 Beta Review Opens: What's Shipping", "13,047 new characters, four scripts, 9 draft emoji", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
+"updates-forza-horizon-6-gamertag-rules": ("Forza Horizon 6: Gamertag and Driver Name Split", "Two name fields, two very different rule sets", m_doc, K_UPDATE),
 })
 
 
