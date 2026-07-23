@@ -351,7 +351,13 @@
 
   const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const DIGITS = "0123456789".split("");
-  const CHARS = (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
+  // CFG.chars lets a page hand the engine an explicit, ordered character set
+  // instead of the default English A-Z (+0-9) — e.g. the 27-letter Spanish
+  // alphabet, which inserts Ñ between N and O. Purely additive: every page
+  // that doesn't set CFG.chars keeps computing CHARS exactly as before.
+  const CHARS = (Array.isArray(CFG.chars) && CFG.chars.length)
+    ? CFG.chars.slice()
+    : (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
 
   const RENDER = CFG.render || "outline";           // "outline" | "glyph"
   // Mutable (not const): pages that set CFG.scriptOptions let the visitor
@@ -453,7 +459,15 @@
      --------------------------------------------------------------- */
 
   function charLabel(ch) { return /[0-9]/.test(ch) ? (T.numberWord + " " + ch) : (T.letterWord + " " + ch); }
-  function charSlug(ch) { return /[0-9]/.test(ch) ? ("number-" + ch) : ("letter-" + ch.toLowerCase()); }
+  // ASCII-safe slug for the one Latin letter in CFG.chars sets with no plain
+  // a-z form (Ñ, from the Spanish alphabet) — keeps PNG filenames and #hash
+  // anchors free of non-ASCII characters. Every other letter is unaffected.
+  function charSlug(ch) {
+    if (/[0-9]/.test(ch)) return "number-" + ch;
+    const lower = ch.toLowerCase();
+    if (lower === "ñ") return "letter-enye";
+    return "letter-" + lower;
+  }
   function slugify(s) {
     return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
@@ -1038,7 +1052,12 @@
     };
     const letterRow = document.createElement("div");
     letterRow.className = "bubble-strip-row";
-    LETTERS.forEach((ch) => letterRow.appendChild(make(ch)));
+    // Read from CHARS (not the fixed LETTERS constant) so a page that sets
+    // CFG.chars — e.g. the 27-letter Spanish alphabet — gets every one of
+    // its letters in the picker too. For every existing page CHARS's letter
+    // portion is exactly LETTERS, so this filter reproduces the prior output
+    // byte-for-byte; digits (alnum charset) still come from the row below.
+    CHARS.filter((ch) => !/[0-9]/.test(ch)).forEach((ch) => letterRow.appendChild(make(ch)));
     el.strip.appendChild(letterRow);
     if (CFG.charset === "alnum") {
       const digitRow = document.createElement("div");

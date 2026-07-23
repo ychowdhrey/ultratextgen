@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discord szövegformázás elmagyarázva: Markdown vs Unicode vs Nitro | UltraTextGen</title>
+<meta name="description" content="Miért működik a félkövér a Discord chatben, de nem a felhasználónévben — a Discord három különböző szövegrendszere (Markdown, Unicode betűtípusok, Nitro) és hogy melyiket mikor használd.">
+
+<link rel="canonical" href="https://ultratextgen.com/hu/guide/discord-szovegformazas/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/tanseeq-nusus-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/formatovani-textu-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/discord-tekstformatering-forklaret/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/discord-textformatierung-erklaert/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/formato-texto-discord-explicado/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/formatage-texte-discord-explique/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-text-formatting-samjhein/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/oblikovanje-teksta-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/formattazione-testo-discord-spiegata/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-moji-soshoku/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-tekseuteu-seosik/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/discord-tekstopmaak-uitgelegd/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/discord-tekstformatering-forklart/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/formatowanie-tekstu-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/formatacao-de-texto-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/formatare-text-discord-explicat/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/formatirovanie-teksta-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/formatovanie-textu-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/formatiranje-teksta-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/discord-textformatering-forklarad/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-rupbaep-khokhwam/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/discord-text-formatting-paliwanag/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-metin-bicimlendirme/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/dinh-dang-chu-discord/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-wenzi-geshi/">
+<link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/guide/discord-szovegformazas/">
+<link rel="alternate" hreflang="ms" href="https://ultratextgen.com/ms/guide/format-teks-discord-dijelaskan/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-text-formatting-explained/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/hu-guide-discord-szovegformazas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discord szövegformázás elmagyarázva: Markdown vs Unicode vs Nitro | UltraTextGen">
+<meta name="twitter:description" content="Miért működik a félkövér a Discord chatben, de nem a felhasználónévben — a Discord három különböző szövegrendszere (Markdown, Unicode betűtípusok, Nitro) és hogy melyiket mikor használd.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/hu-guide-discord-szovegformazas.png">
+<meta property="og:title" content="Discord szövegformázás elmagyarázva: Markdown vs Unicode vs Nitro">
+<meta property="og:description" content="Miért működik a félkövér a Discord chatben, de nem a felhasználónévben — a Discord három különböző szövegrendszere (Markdown, Unicode betűtípusok, Nitro) és hogy melyiket mikor használd.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/hu/guide/discord-szovegformazas/">
+<meta property="og:locale" content="hu_HU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Discord szövegformázás elmagyarázva: Markdown vs Unicode betűtípusok vs Nitro",
+  "description": "Miért működik a félkövér a Discord chatben, de nem a felhasználónévben — a Discord három különböző szövegrendszere (Markdown, Unicode betűtípusok, Nitro) és hogy melyiket mikor használd.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/hu-guide-discord-szovegformazas.png",
+  "inLanguage": "hu",
+  "mainEntityOfPage": "https://ultratextgen.com/hu/guide/discord-szovegformazas/",
+  "datePublished": "2026-07-23",
+  "dateModified": "2026-07-23"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "inLanguage": "hu",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Kezdőlap", "item": "https://ultratextgen.com/hu/" },
+    { "@type": "ListItem", "position": 2, "name": "Útmutatók", "item": "https://ultratextgen.com/hu/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "Discord szövegformázás", "item": "https://ultratextgen.com/hu/guide/discord-szovegformazas/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "hu",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Miért működik a félkövér a Discord chatben, de nem a felhasználónévben?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mert különböző rendszereket használnak. A chatben a **félkövér** Markdown — a Discord megjeleníti, amikor kirajzolja az üzenetedet. A nevek (felhasználónév, becenév, szerver, csatorna, szerep) nem indítják el a Markdownt, ezért a csillagok szó szerint jelennek meg. Ha egy nevet akarsz stilizálni, Unicode „betűtípusokra” van szükséged — speciális karakterekre, amelyek már eleve félkövérnek néznek ki — és ezeket egyenesen a mezőbe illeszted be." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ugyanaz a Unicode betűtípus, mint a Discord Nitro betűtípus?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nem. A Unicode „betűtípusok” ingyenes csereszabatos karakterek, amelyeket bárhová beilleszthetsz, ahol a név engedélyezett; mindenkinél működnek, de néhány eszközön négyzetként jelenhetnek meg, és megzavarhatják a képernyőolvasókat. A Nitro Display Name Styles egy fizetős funkció, ami valódi betűtípust, színt és effektet alkalmaz a megjelenítendő nevedre — de a szín és az effekt nem látszik a szerveren belül, ahol a szereped színe győz; csak a betűtípus jelenik meg." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hogyan csinálok színes szöveget a Discordon?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ANSI kódblokkokkal: a szöveget három fordított aposztróffal jelölt, „ansi”-ként megjelölt blokkba csomagolod, és színekhez escape kódokat adsz hozzá. Nyolc rögzített színre korlátozódik, csak kódblokkokon belül működik, és megbízhatatlan mobilon (gyakran sima szövegként jelenik meg). Ez az üzenetekhez való, nem a nevekhez." }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért jelennek meg csillagok félkövér szöveg helyett?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Két gyakori ok: szóköz van a csillagok és a szó között (`** szöveg **` nem lesz félkövér — a `**szöveg**` igen), vagy a szöveg egy kódblokkon belül van (a fordított aposztrófok kikapcsolják a Markdownt). Ne feledd azt sem, hogy a Markdown csak az üzenetekben működik, a nevekben soha." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/hu/">Kezdőlap</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/hu/guide/">Útmutatók</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Discord szövegformázás</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">Discord szövegformázás, kibogozva</h1>
+    <p class="hero-tagline">Nem a „betűtípusokkal” van bajod — hanem három rendszerrel. A Discord Markdownt, Unicode karaktereket és Nitro stílusokat használ egészen más feladatokra. Ha egyszer tudod, melyik mező melyiket használja, minden „miért nem működik ez?” magától megválaszolódik.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">Platform elsajátítása</span>
+      <span class="guide-pill">⏱ 8 perc olvasás</span>
+      <span class="guide-pill">Három rendszer modellje</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/hu-guide-discord-szovegformazas.svg" width="1200" height="340"
+       alt="Három egymásra rakott lapka Markdown, Unicode és Nitro felirattal, amelyek a Discord három különböző szövegrendszerét mutatják.">
+</figure>
+
+<!-- KLJUČNO -->
+<section class="key-takeaways">
+  <h2>Röviden</h2>
+  <ul>
+    <li>A Discordnak három össze nem kapcsolt szövegrendszere van: a <strong>Markdown</strong> (üzenetek), a <strong>Unicode „betűtípusok”</strong> (nevek mindenhol) és a <strong>Nitro</strong> (fizetős megjelenítendő név stílusok).</li>
+    <li>A Markdown, mint a <code>**félkövér**</code>, csak az üzenetekben jelenik meg — sosem működik a felhasználónévben, a becenévben vagy a szerver-/csatornanévben.</li>
+    <li>A Unicode „betűtípusok” minden névmezőben működnek, de néhány eszközön négyzetként jelenhetnek meg, és megzavarhatják a képernyőolvasókat.</li>
+    <li>A Nitro valódi színt és effektet ad a megjelenítendő nevedhez — de a szerveren belül a szereped színe győz, és csak a betűtípus látszik.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Odjeljak: nova perspektiva -->
+  <section class="editorial-section">
+    <span class="article-section-label">Új nézőpont</span>
+    <h2>Nem betűtípusok — három különböző rendszerről van szó</h2>
+    <div class="editorial-block">
+      <p>A Discorddal kapcsolatos szinte minden „miért nem működik a szövegem” kérdés abból ered, hogy három olyan dolgot keversz össze, aminek semmi köze egymáshoz. A Discord a chatben <em>megtanítja</em> neked a Markdownt, ezért azt feltételezed, hogy ugyanaz a trükk stilizálja majd a neved is. Nem így van — a nevek egy teljesen más rendszer szerint működnek.</p>
+      <p>Íme az egész terület egyetlen képkockában. Tanuld meg, melyik mező melyik rendszert használja, és semmi sem fog többé meglepni.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Rendszer</th><th>Mi ez</th><th>Hol működik</th><th>A csapda</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Markdown</strong></td><td>Szimbólumok, amiket a Discord megjelenít (<code>**félkövér**</code>, <code>*dőlt*</code>, <code>~~áthúzott~~</code>, ANSI szín)</td><td>Csak üzenetek</td><td>Minden névmezőben elhal; az ANSI szín csak asztali gépen működik</td></tr>
+          <tr><td><strong>Unicode „betűtípusok”</strong></td><td>Csereszabatos karakterek, amelyek már eleve stilizáltnak néznek ki (𝗳é𝗹𝗸ö𝘃é𝗿, 𝓭ő𝓵𝓽)</td><td>Megjelenítendő név, becenév, szerver-/csatorna-/szerepnevek, bio, üzenetek</td><td>Négyzetként jelenhet meg; megzavarja a képernyőolvasókat; elutasítva a @felhasználónévben</td></tr>
+          <tr><td><strong>Nitro stílusok</strong></td><td>Fizetős Display Name Styles: valódi betűtípus + szín + effekt</td><td>A megjelenítendő neved</td><td>A szín/effekt nem látszik a szerveren belül (a szerep színe győz); pénzbe kerül</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Odjeljak: 1. sustav Markdown -->
+  <section class="editorial-section">
+    <span class="article-section-label">1. rendszer</span>
+    <h2>Markdown — az üzenetekhez</h2>
+    <div class="editorial-block">
+      <p>A Markdown az a formázás, amit a Discord alkalmaz, amikor <em>megjeleníti</em> az üzenetedet. Szimbólumokat gépelsz be a szó köré, és a Discord lecseréli őket valódi stílusra.</p>
+      <ul>
+        <li><code>**félkövér**</code> → <strong>félkövér</strong></li>
+        <li><code>*dőlt*</code> → <em>dőlt</em></li>
+        <li><code>~~áthúzott~~</code> → áthúzott</li>
+        <li><code>__aláhúzott__</code> → aláhúzott</li>
+        <li><code>||spoiler||</code> → elrejtve kattintásig</li>
+        <li><code>&gt; idézet</code> és <code>`kód`</code></li>
+      </ul>
+      <p>Ez a <em>valódi</em> módja az üzenet formázásának — valódi szöveg marad, tehát kereshető és akadálymentes. A csapda két hiba, amiktől „nem működik”:</p>
+      <div class="compare-grid">
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Nem lesz félkövér</span>
+          <p><code>** szöveg **</code> — a szóköz a csillagokon belül megszünteti a hatást. Használd a <code>**szöveg**</code>-et.</p>
+        </div>
+        <div class="compare-card variant-muted">
+          <span class="compare-badge">Nem lesz félkövér</span>
+          <p>Egy <code>`kódblokkon`</code> belül a fordított aposztrófok kikapcsolják a Markdownt. Mozgasd a stílust a blokkon kívülre.</p>
+        </div>
+      </div>
+      <p><strong>És a lényeg:</strong> a Markdown semmit sem csinál a felhasználónévben, a becenévben, a szerver vagy a csatorna nevében. Ezek nem üzenetek, így a Discord ott sosem indítja el a Markdownt.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Odjeljak: 2. sustav Unicode -->
+  <section class="editorial-section">
+    <span class="article-section-label">2. rendszer</span>
+    <h2>Unicode „betűtípusok” — a nevekhez</h2>
+    <div class="editorial-block">
+      <p>Ha egy <em>nevet</em> akarsz stilizálni, nem kérheted meg a Discordot, hogy bármit megjelenítsen — ezért olyan karaktereket használsz, amik már eleve stilizáltnak néznek ki. A generátor a „Nova”-t 𝗡𝗼𝘃𝗮-vá vagy 𝓝𝓸𝓿𝓪-vá alakítja speciális Unicode karakterekkel, a kész eredményt pedig egyenesen a mezőbe illeszted be. Semmilyen megjelenítésre nincs szükség, ezért ott is túléli, ahol a Markdown nem tud.</p>
+      <p>Ez működik a megjelenítendő nevedben, a szerveren belüli becenévben, a szerver- és csatornanevekben, a szerepek nevében, a bióban és az üzenetekben. Pontosan egy hely van, ahol le van tiltva:</p>
+      <div class="mood-explainer">
+        <div class="mood-example"><strong>A @felhasználónév elutasítja.</strong> Az egyedi azonosítód (a kisbetűs rész a @ után) csak a–z-t, 0–9-et, <code>_</code>-t és <code>.</code>-ot fogad — a megemlítésekhez, a kereséshez és az útválasztáshoz. Ha oda díszes betűtípust illesztesz be, a Discord elutasítja a mentést. Ehelyett stilizáld a <em>megjelenítendő nevet</em>.</div>
+      </div>
+      <p>Két őszinte megjegyzés: a Unicode nevek néhány eszközön négyzetként jelenhetnek meg (különösen régebbi Androidon), és nehezen olvashatók a képernyőolvasók számára. Válassz biztonságos stílust (félkövér, dőlt, kiskapitális), és tartsd ízlésesen — sok nagy szerver moderálja a nehezen olvasható vagy zalgo neveket.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Odjeljak: 3. sustav Nitro -->
+  <section class="editorial-section">
+    <span class="article-section-label">3. rendszer</span>
+    <h2>Nitro Display Name Styles — fizetős, és szűkebb, mint hinnéd</h2>
+    <div class="editorial-block">
+      <p>A Discord fizetős Nitro szolgáltatása kínálja a Display Name Styles-t, ami 2025 végén hozzáadott funkció: valódi betűtípus, szín, sőt animált effektek a megjelenítendő neveden. Csodásan néz ki a profilkártyádon. De van egy csapda, amit az emberek a nehéz úton fedeznek fel:</p>
+      <div class="mood-explainer">
+        <div class="mood-example">A szerveren belül a <strong>szereped</strong> színe felülírja a Nitro színt, az effektek pedig eltűnnek — így a többi tag általában csak a <em>betűtípust</em> látja, nem a színt vagy az animációt. A teljes hatás főleg a profilodon látszik, nem a tagok listáján vagy a chatben.</div>
+      </div>
+      <p>Az ingyenes fiókok megnyithatják a menüt, és <strong>megnézhetik előre</strong> a stílust, de a mentéshez Nitro kell — ez az előnézet-majd-fizetés sorrend pontosan az oka annak, hogy manapság sokan azt kérdezik, kell-e Nitro a betűtípusokhoz egyáltalán. Ez jogos kérdés erről a konkrét funkcióról; nem változtatja meg a Unicode stilizálást, ami mindenképp ingyenes marad.</p>
+      <p>Tehát a Nitro akkor éri meg, ha egy csinos profilkártyát és felismerhető névbetűtípust szeretnél mindenhol. <em>Nem</em> arra való, hogy színes szöveget vigyél a beszélgetésbe — az egy másik eszköz (következő szakasz).</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Odjeljak: bonus o boji -->
+  <section class="editorial-section">
+    <span class="article-section-label">A szín kérdése</span>
+    <h2>És a színes szöveg az üzenetekben?</h2>
+    <div class="editorial-block">
+      <p>A színes szöveg egy üzenetben egy negyedik, szűkebb trükk: az <strong>ANSI kódblokkok</strong>. A szöveget három fordított aposztróffal jelölt, <code>ansi</code>-ként megjelölt blokkba csomagolod, és színekhez escape kódokat adsz hozzá. Legyél tisztában a korlátokkal:</p>
+      <ul>
+        <li>Csak <strong>nyolc rögzített szín</strong> — saját hexakód nélkül.</li>
+        <li><strong>Csak kódblokkon belül</strong> — nem tud kiszínezni egy sima mondatot a szövegben.</li>
+        <li><strong>Megbízhatatlan mobilon</strong> — a telefonos felhasználók gyakran sima szövegként látják.</li>
+      </ul>
+      <p>Hasznos figyelmeztetésekhez vagy naplókhoz egy asztali gépekre orientált szerveren; nem egy általános stilizáló eszköz. Ha a tagjaid fele mobilon van, számíts arra, hogy nem fogják látni a színt.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Odjeljak: odluka -->
+  <section class="editorial-section">
+    <span class="article-section-label">Gyors döntés</span>
+    <h2>Melyik rendszerre van szükséged?</h2>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Szeretnék…</th><th>Használd</th></tr></thead>
+        <tbody>
+          <tr><td>Egy szót félkövérré/dőltté tenni egy üzenetben</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>Stilizálni a megjelenítendő nevet vagy a becenevet</td><td>Unicode betűtípus (beillesztve)</td></tr>
+          <tr><td>Feldíszíteni a szerver vagy a csatorna nevét</td><td>Unicode betűtípus + szimbólumok</td></tr>
+          <tr><td>Megváltoztatni az egyedi @felhasználónév megjelenését</td><td>Nem lehetséges — stilizáld a megjelenítendő nevet</td></tr>
+          <tr><td>Színes, animált nevet a profilon</td><td>Nitro Display Name Styles</td></tr>
+          <tr><td>Színes szöveget egy üzenetben</td><td>ANSI kódblokk (asztali gép, 8 szín)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pull-quote">A Discord nem törte el a félkövéredet.<br>A chat rendszerét használtad egy névmezőben.<br><br>Párosítsd a rendszert a mezővel, és egyszerűen működik.</div>
+
+  <!-- CTA kartica -->
+  <div class="cta-card">
+    <h3>Készíts Discordra kész nevet</h3>
+    <p>Készíts Unicode stílust, ami minden eszközön biztonságos, másold ki, és illeszd be a megjelenítendő névbe vagy a szerveren belüli becenévbe — Nitro nélkül.</p>
+    <a href="/hu/discord-betutipusok/" class="cta-btn">Discord betűtípus generátor megnyitása →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/hu/discord-betutipusok/">Discord</a>
+    <a class="platform-pill" href="/hu/instagram-betutipusok/">Instagram</a>
+    <a class="platform-pill" href="/hu/gotikus-betuk/">Gotikus</a>
+    <a class="platform-pill" href="/hu/dolt-szoveg/">Dőlt</a>
+    <a class="platform-pill" href="/hu/felkover-szoveg/">Félkövér</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">GYIK</span>
+  <h2>Gyakori kérdések</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">Miért működik a félkövér a Discord chatben, de nem a felhasználónévben?</button>
+    <div class="faq-answer">
+      <p>Mert különböző rendszereket használnak. A chatben a <code>**félkövér**</code> Markdown — a Discord megjeleníti, amikor kirajzolja az üzenetedet. A nevek (felhasználónév, becenév, szerver, csatorna, szerep) nem indítják el a Markdownt, ezért a csillagok szó szerint jelennek meg. Ha egy nevet akarsz stilizálni, Unicode „betűtípusokra” van szükséged — speciális karakterekre, amelyek már eleve félkövérnek néznek ki — és ezeket egyenesen a mezőbe illeszted be.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Ugyanaz a Unicode betűtípus, mint a Discord Nitro betűtípus?</button>
+    <div class="faq-answer">
+      <p>Nem. A Unicode „betűtípusok” ingyenes csereszabatos karakterek, amelyeket bárhová beilleszthetsz, ahol a név engedélyezett; mindenkinél működnek, de néhány eszközön négyzetként jelenhetnek meg, és megzavarhatják a képernyőolvasókat. A Nitro Display Name Styles egy fizetős funkció, ami valódi betűtípust, színt és effektet alkalmaz a megjelenítendő nevedre — de a szín és az effekt nem látszik a szerveren belül, ahol a szereped színe győz; csak a betűtípus jelenik meg.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Hogyan csinálok színes szöveget a Discordon?</button>
+    <div class="faq-answer">
+      <p>ANSI kódblokkokkal: a szöveget három fordított aposztróffal jelölt, „ansi”-ként megjelölt blokkba csomagolod, és színekhez escape kódokat adsz hozzá. Nyolc rögzített színre korlátozódik, csak kódblokkokon belül működik, és megbízhatatlan mobilon (gyakran sima szövegként jelenik meg). Ez az üzenetekhez való, nem a nevekhez.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">Miért jelennek meg csillagok félkövér szöveg helyett?</button>
+    <div class="faq-answer">
+      <p>Két gyakori ok: szóköz van a csillagok és a szó között (<code>** szöveg **</code> nem lesz félkövér — a <code>**szöveg**</code> igen), vagy a szöveg egy kódblokkon belül van (a fordított aposztrófok kikapcsolják a Markdownt). Ne feledd azt sem, hogy a Markdown csak az üzenetekben működik, a nevekben soha.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POVEZANO -->
+<section class="related-guides">
+  <h2>Folytasd az olvasást</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/hu/guide/hol-mukodnek-a-discord-fontok/">
+      <span class="related-tag">🗺️</span>
+      <span class="related-title">Hol működnek a Discord betűtípusok</span>
+      <span class="related-desc">Az engedélyezési térkép, mezőnként.</span>
+    </a>
+    <a class="related-card" href="/hu/guide/biztonsagos-discord-becenev/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">Biztonságos Discord becenév</span>
+      <span class="related-desc">Menj át három szűrőn szűrés nélkül.</span>
+    </a>
+    <a class="related-card" href="/hu/discord-betutipusok/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">Discord betűtípus generátor</span>
+      <span class="related-desc">Stílusok a becenévhez és a „Névjegyhez”, beillesztésre készen.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>
