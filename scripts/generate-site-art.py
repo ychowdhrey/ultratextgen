@@ -1578,6 +1578,7 @@ PAGES = {
   "snapchat": ("Snapchat Font Generator", "Style your snaps and display name", m_chat, K_PLAT),
   "ar-khat-snapchat": ("خط سناب شات", "زخرفة الاسم والكابشن بالنسخ واللصق", m_chat, K_PLAT),
   "telegram": ("Telegram Font Generator", "Styles optimised for Telegram", m_chat, K_PLAT),
+  "threads": ("Threads Font Generator", "No bold or italic button — style with copy-paste fonts", m_profile, K_PLAT),
   "whatsapp": ("WhatsApp Font Generator", "Friendly formatting and styles", m_chat, K_PLAT),
   "x": ("X (Twitter) Font Generator", "Stylish text for posts and bio", P(m_profile), K_PLAT),
   "youtube": ("YouTube Font Generator", "Channel name and description styling", m_play, K_PLAT),
