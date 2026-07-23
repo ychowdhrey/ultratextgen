@@ -1425,6 +1425,8 @@ PAGES = {
   "it-usecase-zalgo-text": ("Generatore di Testo Zalgo", "Crea testo glitch e inquietante", m_zalgo, K_USE),
   "nl-usecase-zalgo-text": ("Zalgo Tekstgenerator", "Maak griezelige glitch tekst", m_zalgo, K_USE),
   "pl-usecase-zalgo-text": ("Generator Tekstu Zalgo", "Twórz przerażający tekst glitch", m_zalgo, K_USE),
+  "pl-usecase-nazwy-do-robloxa": ("Fajne Nazwy do Robloxa", "Symbole i generator nicków na nazwę wyświetlaną",
+        m_gamepad, K_USE),
   "pt-usecase-zalgo-text": ("Gerador de Texto Zalgo", "Crie texto glitch e assustador", m_zalgo, K_USE),
   "pt-letras-diferentes": ("Letras Diferentes", "Fontes para copiar e colar em qualquer app",
         P(m_typo, sample="Abc", weight="700", size=88, label="copiar e colar"), K_USE),
