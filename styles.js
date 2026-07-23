@@ -216,6 +216,11 @@ const PRINTABLE_PAGES = {
     slug: 'banner-maker',
     title: 'Printable Banner Maker',
     description: 'Type a word or phrase to build a printable letter banner — one cut-out flag per letter with string holes, paginated to print across multiple sheets.'
+  },
+  'spanish-alphabet-chart': {
+    slug: 'spanish-alphabet-chart',
+    title: 'Printable Spanish Alphabet Chart',
+    description: 'All 27 letters of the Spanish alphabet, A-Z plus Ñ, as a free printable reference chart — pick any single letter or print the whole set.'
   }
 };
 
