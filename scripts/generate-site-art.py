@@ -1287,6 +1287,7 @@ PAGES = {
 
   # ---- category overview + pages ----
   "category": ("Unicode Font Categories", "Choose a style by its visual intent", m_grid, K_CAT),
+  "pl-category": ("Kategorie Czcionek Unicode", "Wybierz styl pasujący do klimatu", m_grid, K_CAT),
   "category-aesthetic-fonts": ("Aesthetic Font Generator", "Soft, spaced-out vaporwave styling",
         P(m_typo, sample="a e s", size=72, spacing="6", label="a e s t h e t i c"), K_CAT),
   "category-bold-fonts": ("Bold Fonts Generator", "Heavy weight that commands attention",
@@ -1348,6 +1349,7 @@ PAGES = {
 
   # ---- usecase overview + pages ----
   "usecase": ("Choose What to Create", "Generators grouped by what you need", m_grid, K_USE),
+  "pl-usecase": ("Co Chcesz Stworzyć?", "Generatory pogrupowane według potrzeb", m_grid, K_USE),
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
