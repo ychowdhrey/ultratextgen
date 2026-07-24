@@ -7,8 +7,7 @@ pages** (`/library/<slug>/`). It is the operating manual; the companion
 the discovery half in depth. The product *why* behind these mechanics lives in
 [`jtbd-principles.md`](./jtbd-principles.md), the page-vs-section call is
 codified in [`page-vs-section-decisions.md`](./page-vs-section-decisions.md),
-and dated approved-scope plans live in build specs like
-[`jtbd-build-spec.md`](./jtbd-build-spec.md).
+and dated approved-scope plans live in per-batch build specs.
 
 > **Golden rule: do not publish directly.** Every page reaches `master`
 > through a reviewed batch PR. Nothing in this system auto-merges or
@@ -71,9 +70,8 @@ research and volume.
 for what UltraTextGen might build — it grows continuously as scope increases.
 Each row is one **candidate page**, captured in user language with evidence and
 scoring attached. Field definitions are documented in the forum-research skill,
-Section 7. (Build specs such as
-[`jtbd-build-spec.md`](./jtbd-build-spec.md) are *dated snapshots* of the
-approved rows; the CSV is the canonical source, not the spec.)
+Section 7. (Build specs are *dated snapshots* of the
+approved rows; the CSV is the canonical source, not any one spec.)
 
 Keep the file append-only during a batch; don't delete rejected rows — set
 `approval_status = rejected` and explain why in `notes` so the same idea isn't

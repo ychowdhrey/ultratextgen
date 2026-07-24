@@ -10,8 +10,7 @@ get its **own page** (a spoke) or fold in as a **section** on the parent
 This doc is the standing answer, so we decide it the same way every time. It
 implements the JTBD principles in
 [`jtbd-principles.md`](./jtbd-principles.md) — in particular *one primary
-intent per page* and *declare canonical ownership* — and concrete applications
-appear in [`jtbd-build-spec.md`](./jtbd-build-spec.md).
+intent per page* and *declare canonical ownership*.
 
 > **One-line rule:** A new **page** needs *both* demand (someone searches the
 > exact query) *and* supply (enough distinct, quality items to not be thin). A

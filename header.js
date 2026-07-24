@@ -31,8 +31,7 @@
   // hubs exist in zero locales; printables only in 5/7), the label is still
   // translated but the href falls back to the English hub — same pattern
   // yaytext.com uses for its own untranslated pages (verified live 2026-07-20).
-  // See ultratextgen-lab-/docs/locale-depth-roadmap-2026-07-20.md for the plan
-  // to close these fallbacks as each locale's hub pages get built.
+  // Fallbacks close out as each locale's hub pages get built.
   const NAV = {
     pt: {
       home: "/pt/",

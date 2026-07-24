@@ -4,7 +4,7 @@
     {
       "enUrl": "https://ultratextgen.com/usecase/stylish-name/",
       "localeUrl": "https://ultratextgen.com/zh-tw/usecase/youxi-mingzi-fuhao/",
-      "reason": "zh-TW page's 2026-07-23 expansion (gendered/role-based ready-made names, deepened rename walkthrough, generic 遊戲名字/遊戲id/暱稱 FAQ coverage) is entirely specific to 傳說對決 (Arena of Valor), a Taiwan/SEA-regional MOBA, driven by TW-specific Semrush + GSC evidence (see ultratextgen-lab- docs/tw-4-competitor-mining-2026-07-23.md and systems-thinking-playbook.md pattern #15). The EN parent (usecase/stylish-name) and its other locale siblings (hi/usecase/stylish-naam-generator, ar/zakhrafa) serve a generic nickname-decoration audience with no independently confirmed Arena-of-Valor demand. Discussed and agreed with the user 2026-07-23 rather than syncing unresearched game-specific content into those markets (same standard as the ML per-locale rollout decision in backlog-delta-2026-07-19.md).",
+      "reason": "zh-TW page's 2026-07-23 expansion (gendered/role-based ready-made names, deepened rename walkthrough, generic 遊戲名字/遊戲id/暱稱 FAQ coverage) is entirely specific to 傳說對決 (Arena of Valor), a Taiwan/SEA-regional MOBA, driven by TW-specific competitor and search-demand research. The EN parent (usecase/stylish-name) and its other locale siblings (hi/usecase/stylish-naam-generator, ar/zakhrafa) serve a generic nickname-decoration audience with no independently confirmed Arena-of-Valor demand. Discussed and agreed with the user 2026-07-23 rather than syncing unresearched game-specific content into those markets (same standard applied to the ML per-locale rollout decision).",
       "agreed": "2026-07-23"
     }
   ]
