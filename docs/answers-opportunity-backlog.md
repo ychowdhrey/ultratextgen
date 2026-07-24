@@ -10,12 +10,12 @@ prioritizing; the clusters below are stable.
 
 Do **not** build these yet. A batch of short Q&A pages during AdSense review
 risks the thin-content / low-value checks. After approval, build them **deep**
-(real framework + ≥4 FAQs + downstream CTA per `docs/jtbd-build-spec.md`), not thin.
+(real framework + ≥4 FAQs + downstream CTA), not thin.
 
 ## Durable signal
 
 The 11 live `/answers/` pages earn strong impressions but almost **zero clicks** —
-the zero-click wall in `docs/direction-audit-2026-06-27.md`. The Discord pages
+a zero-click wall confirmed in GSC. The Discord pages
 dominate demand, and the generic `discord-allowed-characters` page is absorbing
 many distinct per-field intents that each deserve their own verdict-first page.
 
@@ -34,8 +34,8 @@ many distinct per-field intents that each deserve their own verdict-first page.
 | Discord about-me / bio unicode | `/answers/discord-bio-about-me-characters/` |
 
 Also already specced (and parked):
-- `/answers/how-to-make-text-small-on-discord/` — `docs/jtbd-build-spec-small-text-2026-06-27.md`
-- Question-shaped rows OPP-0775/0776/0778/0779/0781 — `docs/guide-opportunity-map-2026-06-28.md`
+- `/answers/how-to-make-text-small-on-discord/`
+- Question-shaped rows OPP-0775/0776/0778/0779/0781
 
 ## Build note
 

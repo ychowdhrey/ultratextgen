@@ -31,12 +31,12 @@ workflow that produces it.
 |---|---|---|---|---|---|---|
 | **Library** (symbol/emoji reference) | `/library/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) (+ [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md)) | `data/library_opportunities.csv` | `generate_library_page_from_spec.py` + `validate_library_pages.py` | ✅ fully systematized |
 | **Symbol** (single glyph/emoji identity) | `/symbol/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) — shares the Library workflow; a spec sets `"page_type": "symbol"` | `data/library_opportunities.csv` (backlog rows stay `page_type=library`; the library/symbol split happens per-spec in `data/library_page_specs/`, not in the backlog CSV) | `generate_library_page_from_spec.py` + `validate_library_pages.py` (shared with Library) + `sync_symbol_spoke_links.py` (hub↔spoke linking) | ✅ fully systematized (shares the Library pipeline end-to-end) |
-| **Category** (style generators) | `/category/` | `WebApplication` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog + strategy, no generator |
-| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
+| **Category** (style generators) | `/category/` | `WebApplication` | ❌ none | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog, no generator |
+| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | ❌ none | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
-| **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) + `guide-opportunity-map-<date>.md` | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
+| **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
 | **Events** (seasonal/holiday pages) | `/events/` (+ locale variants, e.g. `/es/events/`) | `WebApplication` + `FAQPage` | ❌ undocumented | `data/event_page_specs/*.json` (no CSV backlog row) | `generate_event_page_from_spec.py` (mirrors `generate_library_page_from_spec.py`; validation is built into the generator, no separate validator script) | ⚠️ generator exists, no backlog/governing doc — new this review (PR #457 + Spanish `es/events/` pages) |
-| **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | [`coloring-sheet-generator-strategy.md`](./coloring-sheet-generator-strategy.md) (strategy) + `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog + strategy, no generator |
+| **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog, no generator |
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Root pages** (homepage, 404, legal) | `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`, `terms/`, site icons | `WebSite` (homepage) | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented |
 
@@ -55,12 +55,12 @@ These run across page types rather than producing a type.
 
 | Track | Scripts | Doc | Cadence |
 |---|---|---|---|
-| Distribution loops (share/embed/OG, viral & SEO loops) | `script.js` (share/`?q=`/copy), `tweet_queue.py`, `generate-*-pins.py`, embed widgets | [`distribution-loops.md`](./distribution-loops.md) | per batch + quarterly |
-| Retention & engagement (saved styles, prefs, return triggers) | `script.js` (`utg_saved_styles`/`save_style`/`?q=`), `header.js` (dark-mode pref) | [`retention-loops.md`](./retention-loops.md) | per batch + monthly metric |
+| Distribution loops (share/embed/OG, viral & SEO loops) | `script.js` (share/`?q=`/copy), `tweet_queue.py`, `generate-*-pins.py`, embed widgets | ❌ none | per batch + quarterly |
+| Retention & engagement (saved styles, prefs, return triggers) | `script.js` (`utg_saved_styles`/`save_style`/`?q=`), `header.js` (dark-mode pref) | ❌ none | per batch + monthly metric |
 | Image SEO (hero art, OG cards) | `make-hero-decorative.py`, `add-og-dimensions.py`, `build-image-seo-status.py` | [`image-seo-fixes.md`](./image-seo-fixes.md) | per batch |
 | Pinterest pins (+ new boards) | `generate-pinterest.py`, `generate-id-pins.py`, `generate-vertical-text-pins.py` (skin: `generate-site-art.py`); CSV: `pinterest_csv.py` + `build_pinterest_upload.py` | [`pinterest-pin-generation.md`](./pinterest-pin-generation.md) (board conventions) + [`pinterest-csv-format.md`](./pinterest-csv-format.md) | per batch |
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
-| Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | [`image-backlink-strategy.md`](./image-backlink-strategy.md) (decision doc) | ad hoc |
+| Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | ❌ none | ad hoc |
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `no/`, `pl/`, `pt/`, `sv/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
@@ -109,9 +109,9 @@ here so they aren't lost. Update as they're closed or new ones appear.
    carries a `page_type` column (default `library`) and the auditor dedupes
    per-lane, so scouting, the `stage` lifecycle, and the demand gate reach
    `/category/` and `/answers/`. (Still no generator for those lanes — see #2.)
-2. **No production pipeline for category/answers.** Strategy exists
-   (`jtbd-build-spec.md`); there is no generator/validator equivalent of the
-   library lane. These pages are hand-built.
+2. **No production pipeline for category/answers.** Build specs are agreed
+   ad hoc, not published in this repo; there is no generator/validator
+   equivalent of the library lane. These pages are hand-built.
 3. **Usecase and guide lanes are undocumented** — no workflow, no backlog.
    **Newly active (2026-06-27):** PR #312 added 4 new usecase pages hand-built
    across two namespaces: `/usecase/nickname-generator/` (EN) and

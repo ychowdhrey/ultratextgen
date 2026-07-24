@@ -31,8 +31,7 @@ Contextual decorators beat both, and the advantage **compounds**:
    target platform. We show only what renders *there*. We already have the data: the
    `platforms:` field on every style in `styles.js`.
 4. **Pairing intelligence.** Decorators tuned to the font on the page make the output
-   look *designed*, not assembled → more shareable → return visits
-   (see [`retention-loops.md`](./retention-loops.md)).
+   look *designed*, not assembled → more shareable → return visits.
 5. **It's labor + judgment, not a toggle.** A generic multi-font site can't cheaply
    replicate hand-curated, render-verified, persona-matched decorators across every
    page. That's the moat.
