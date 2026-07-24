@@ -27,7 +27,9 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://ultratextgen.com"
 LOGO = f"{BASE}/logo.png"
-LOCALES = ("de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr", "vi")
+LOCALES = ("ar", "bs", "cs", "da", "de", "es", "fr", "hi", "hr", "hu", "id",
+           "it", "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sk",
+           "sr", "sv", "th", "tl", "tr", "vi", "zh-tw")
 
 
 def attr(html, pattern):
