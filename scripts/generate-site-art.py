@@ -1621,6 +1621,10 @@ PAGES = {
   "embed-bio-font-generator": ("Bio Font Generator", "Embeddable bio & symbol styler", m_profile, K_USE),
   "embed-nickname-generator": ("Nickname Generator", "Embeddable name & frame styler", m_gamepad, K_USE),
   "embed-zalgo-text-generator": ("Zalgo Text Generator", "Embeddable cursed text styler", m_zalgo, K_USE),
+  "embed-character-counter": ("Character Counter", "Embeddable word & character counter",
+        P(m_typo, sample="123", weight="800", size=88, label="words · characters"), K_USE),
+  "embed-name-checker": ("Game Name Checker", "Embeddable platform name-fit checker",
+        glyphs("✓", "⚠", "✗"), K_USE),
 
   # ---- library overview ----
   "library": ("Symbol & Emoji Library", "Copy-and-paste reference collections", m_grid, K_LIB),
