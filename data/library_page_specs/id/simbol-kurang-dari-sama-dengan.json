@@ -1,0 +1,79 @@
+{
+  "slug": "simbol-kurang-dari-sama-dengan",
+  "lang": "id",
+  "page_type": "symbol",
+  "title": "Simbol Kurang Dari Sama Dengan: Salin & Tempel ≤ — Arti, Alt Code & LaTeX",
+  "meta_description": "Salin & tempel simbol kurang dari sama dengan ≤ (U+2264) — Alt+243, perintah LaTeX \\leq, entitas HTML-nya, dan simbol serupa ≦ ⩽ ≲ yang sering tertukar. Klik untuk langsung menyalin.",
+  "canonical": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/",
+  "breadcrumb": "Simbol Kurang Dari Sama Dengan",
+  "hero_h1": "Simbol Kurang Dari Sama Dengan (≤)",
+  "hero_tagline": "Simbol ≤ yang dipakai kalau suatu nilai bisa lebih kecil dari, atau persis sama dengan, nilai lain — Alt+243 di Windows, \\leq di LaTeX, dan &le; di HTML. Klik untuk langsung menyalin.",
+  "intro": "Simbol kurang dari sama dengan (≤, U+2264) menggabungkan tanda kurang dari dengan garis mendatar di bawahnya, menunjukkan bahwa suatu nilai bisa lebih kecil dari nilai lain atau persis sama dengannya — relasi yang dipakai mulai dari pertidaksamaan sederhana sampai interval tertutup di kalkulus. Berbeda dengan tanda < dan > yang ketat, yang diperkenalkan matematikawan Inggris Thomas Harriot pada 1631, pasangan ≤/≥ gabungan ini baru muncul belakangan: matematikawan Prancis Pierre Bouguer umumnya dikreditkan sebagai orang yang memperkenalkannya pada 1734, dalam esainya tentang gradasi cahaya. ASCII tidak pernah mengalokasikan slot khusus untuk ≤, itulah sebabnya hampir semua bahasa pemrograman memakai dua karakter <= sebagai gantinya.",
+  "date_published": "2026-07-24",
+  "date_modified": "2026-07-24",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/id/",
+  "crumb_home": "Beranda",
+  "crumb_library": "Simbol",
+  "library_url": "https://ultratextgen.com/id/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "kurang-dari-sama-dengan",
+      "label": "Kurang Dari Sama Dengan",
+      "h2": "Kurang Dari Sama Dengan, di Matematika dan Kode",
+      "intro": "Simbol matematikanya, dan cara penggantinya di berbagai bahasa pemrograman karena ≤ tidak pernah masuk ASCII.",
+      "symbols": [
+        { "char": "≤", "label": "Kurang Dari Sama Dengan (Matematika)" },
+        { "char": "<=", "label": "Kurang Dari Sama Dengan (Kode — C, Python, JavaScript, Java, SQL)" }
+      ]
+    },
+    {
+      "id": "simbol-mirip",
+      "label": "Simbol yang Mirip",
+      "h2": "Simbol yang Sering Tertukar dengan ≤",
+      "intro": "Artinya kurang lebih sama, tapi ini adalah karakter Unicode yang berbeda dari tradisi penulisan yang berbeda.",
+      "symbols": [
+        { "char": "≦", "label": "Kurang Dari di Atas Sama Dengan (U+2266)" },
+        { "char": "⩽", "label": "Kurang Dari atau Sama Dengan Miring (U+2A7D) — bentuk yang disarankan standar ISO 31-11" },
+        { "char": "≲", "label": "Kurang Dari atau Setara (U+2272)" },
+        { "char": "≪", "label": "Jauh Lebih Kecil (U+226A) — relasi yang berbeda, bukan varian ≤" }
+      ]
+    },
+    {
+      "id": "simbol-perbandingan-terkait",
+      "label": "Simbol Perbandingan Terkait",
+      "h2": "Simbol Perbandingan Lainnya",
+      "intro": "Relasi perbandingan lain yang sepadan dengan ≤ dalam pertidaksamaan dan notasi himpunan.",
+      "symbols": [
+        { "char": "≥", "label": "Lebih Dari Sama Dengan (U+2265)" },
+        { "char": "<", "label": "Kurang Dari" },
+        { "char": ">", "label": "Lebih Dari" },
+        { "char": "≠", "label": "Tidak Sama Dengan" },
+        { "char": "=", "label": "Sama Dengan" }
+      ]
+    }
+  ],
+  "cta": "Gunakan UltraTextGen untuk mengubah teks biasa menjadi tebal, miring, tulisan sambung, dan 100+ gaya font Unicode lainnya — gratis dan langsung jadi.",
+  "related": [
+    {
+      "href": "/id/library/simbol-matematika/",
+      "title": "Simbol Matematika",
+      "desc": "Operator, tanda perbandingan, dan notasi kalkulus lain — semua siap disalin-tempel."
+    },
+    {
+      "href": "/id/library/simbol-pecahan/",
+      "title": "Simbol Pecahan",
+      "desc": "Simbol pecahan ½ ⅓ ¼ dan superscript/subscript siap salin-tempel — pelengkap notasi matematika."
+    },
+    {
+      "href": "/id/",
+      "title": "Generator Tulisan Aesthetic",
+      "desc": "Ubah teks biasa menjadi font huruf aesthetic, keren, dan unik — gratis dan langsung jadi."
+    }
+  ]
+}

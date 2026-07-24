@@ -714,6 +714,20 @@ def m_plane(p, accent=PURPLE):
           stroke-width="6" stroke-linecap="round" opacity="0.3"/>"""
 
 
+def m_microphone(p, accent=PURPLE):
+    """A microphone capsule with grille lines and a stand base — the
+    microphone emoji is color-only and does not rasterize in bundled fonts."""
+    return f"""
+    <rect x="140" y="70" width="80" height="140" rx="40" fill="url(#g{p})"/>
+    <line x1="156" y1="100" x2="204" y2="100" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="122" x2="204" y2="122" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="144" x2="204" y2="144" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="166" x2="204" y2="166" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <path d="M110 190 a70 70 0 0 0 140 0" fill="none" stroke="url(#g{p})" stroke-width="12" stroke-linecap="round"/>
+    <line x1="180" y1="260" x2="180" y2="292" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>
+    <line x1="146" y1="300" x2="214" y2="300" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>"""
+
+
 def m_pumpkin(p, accent=PURPLE):
     """A jack-o'-lantern — for Halloween/spooky content."""
     return f"""
@@ -2271,6 +2285,36 @@ PAGES = {
   "library-cowboy-emoji": ("Cowboy Emoji Collection", "Yeehaw and Wild West symbols", m_smiley, K_LIB),
   "library-muscle-emoji": ("Muscle Emoji Collection", "Flex, gym and gains symbols", m_thumb, K_LIB),
   "library-gift-emoji": ("Gift Emoji Collection", "Presents, surprises and celebration symbols", m_firework, K_LIB),
+
+  # ---- 2026-07-24 localization batch ----
+  # Alt-codes: 6 new locales
+  "tr-library-alt-kodlari": ("Alt Kodları", "Türkçe karakterler, para birimi ve tam liste", m_block, K_LIB),
+  "nl-library-alt-codes": ("Alt Codes", "é alt-code en volledige toetsenbordlijst", m_block, K_LIB),
+  "pl-library-kody-alt": ("Kody Alt", "Waluta, matematyka i znaki zachodnie", m_block, K_LIB),
+  "ko-library-alt-kodeu": ("알트 코드", "닉네임 꾸미기 기호와 전체 목록", m_block, K_LIB),
+  "id-library-kode-alt": ("Kode Alt", "Daftar lengkap kode simbol keyboard", m_block, K_LIB),
+  "es-library-codigos-alt": ("Códigos Alt", "Lista completa de símbolos del teclado", m_block, K_LIB),
+  # Library symbol batches: 5 new locale pages
+  "th-library-discord-symbols": ("สัญลักษณ์ Discord", "คัดลอกวางสำหรับชื่อผู้ใช้และไบโอ", m_block, K_LIB),
+  "ms-library-simbol-roblox": ("Simbol Roblox", "Salin & tampal untuk nama paparan", m_block, K_LIB),
+  "ar-library-y2k-symbols": ("رموز Y2K", "زخارف سايبر للنسخ واللصق", m_block, K_LIB),
+  "ru-library-simvoly-y2k": ("Символы Y2K", "Киберэстетика для копирования", m_block, K_LIB),
+  "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # Printables: 5 new locale hub pages
+  "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
+  "pl-do-druku-alfabet-kursywny": ("Alfabet kursywny do druku", "Karty kaligraficzne A–Z do obrysowania", m_grid, K_PRINT),
+  "pl-do-druku-alfabet-do-kolorowania": ("Alfabet do kolorowania", "Darmowe litery A–Z do druku i kolorowania", m_grid, K_PRINT),
+  "de-zum-ausdrucken-blasenbuchstaben": ("Blasenbuchstaben zum Ausdrucken", "Nachfahren, Ausmalen, PNG — A–Z & 0–9", m_grid, K_PRINT),
+  "de-zum-ausdrucken-alphabet-ausmalbilder": ("Alphabet-Ausmalbilder", "Kostenlose Buchstaben A–Z zum Ausdrucken", m_grid, K_PRINT),
+  # New symbol/ EN parents + id/ translations
+  "symbol-microphone-emoji": ("Microphone Emoji", "🎤 meaning, history & every way to type it", m_microphone, K_SYM),
+  "symbol-less-than-or-equal-to-symbol": ("Less Than or Equal To Symbol", "≤ meaning, Alt Code & LaTeX", glyphs("≤"), K_SYM),
+  "id-symbol-mikrofon-emoji": ("Emoji Mikrofon", "🎤 arti, sejarah & kode Unicode-nya", m_microphone, K_SYM),
+  "id-symbol-simbol-kurang-dari-sama-dengan": ("Simbol Kurang Dari Sama Dengan", "≤ arti, Alt Code & LaTeX", glyphs("≤"), K_SYM),
+  # ID usecase pages
+  "id-usecase-nama-kontak-pacar-aesthetic": ("Nama Kontak Pacar Aesthetic", "Kumpulan nama kontak pacar aesthetic buat doi — cewek, cowok, bahasa Inggris", m_heart, K_USE),
+  "id-usecase-nama-grup-keren": ("Nama Grup Keren & Aesthetic", "Nama grup WA aesthetic, circle bestie, dan singkatan keren", m_grid, K_USE),
+  "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Simbol & generator nickname buat nama Stumble Guys", m_gamepad, K_USE),
 }
 
 
