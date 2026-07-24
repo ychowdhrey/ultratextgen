@@ -52,6 +52,13 @@ SOURCES = {
         board="pinterest_board_primary", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords",
         include=lambda r: (r.get("include_in_pinterest") or "").strip().lower() == "yes"),
+    "variants": dict(
+        inventory="pinterest_pins_variants.csv",
+        out="pinterest_pins_variants_upload.csv",
+        title="pin_title", image="pinterest_image_path",
+        board="pinterest_board_primary", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords",
+        include=lambda r: (r.get("include_in_pinterest") or "").strip().lower() == "yes"),
     "collection": dict(
         inventory="collection_pins.csv",
         out="collection_pins_upload.csv",
