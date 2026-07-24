@@ -335,6 +335,13 @@
     ctx.textAlign = "left";
     ctx.fillText(legendText, startX + symSize + gap, legendMidY);
 
+    // Small, low-contrast site credit in the reserved bottom margin —
+    // matches the existing printablesEngine/kanaChart footer convention.
+    ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#aeb4c0";
+    ctx.textAlign = "center";
+    ctx.fillText("ultratextgen.com", canvasW / 2, canvasH - 16);
+
     canvas.toBlob(function (blob) {
       if (!blob) return;
       const url = URL.createObjectURL(blob);

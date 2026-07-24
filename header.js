@@ -31,15 +31,14 @@
   // hubs exist in zero locales; printables only in 5/7), the label is still
   // translated but the href falls back to the English hub — same pattern
   // yaytext.com uses for its own untranslated pages (verified live 2026-07-20).
-  // See ultratextgen-lab-/docs/locale-depth-roadmap-2026-07-20.md for the plan
-  // to close these fallbacks as each locale's hub pages get built.
+  // Fallbacks close out as each locale's hub pages get built.
   const NAV = {
     pt: {
       home: "/pt/",
       guide: { label: "Guias", href: "/pt/guide/" },
       answers: { label: "Respostas", href: "/answers/" },
-      category: { label: "Categorias", href: "/category/" },
-      usecase: { label: "Usos", href: "/usecase/" },
+      category: { label: "Categorias", href: "/pt/category/" },
+      usecase: { label: "Usos", href: "/pt/usecase/" },
       library: { label: "Biblioteca", href: "/pt/library/" },
       printables: { label: "Imprimíveis", href: "/pt/imprimiveis/" },
       events: { label: "Eventos", href: "/events/" },
@@ -50,8 +49,8 @@
       home: "/fr/",
       guide: { label: "Guides", href: "/fr/guide/" },
       answers: { label: "Réponses", href: "/answers/" },
-      category: { label: "Catégories", href: "/category/" },
-      usecase: { label: "Usages", href: "/usecase/" },
+      category: { label: "Catégories", href: "/fr/category/" },
+      usecase: { label: "Usages", href: "/fr/usecase/" },
       library: { label: "Bibliothèque", href: "/fr/library/" },
       printables: { label: "Imprimables", href: "/fr/imprimables/" },
       events: { label: "Événements", href: "/events/" },
@@ -62,8 +61,8 @@
       home: "/de/",
       guide: { label: "Ratgeber", href: "/de/guide/" },
       answers: { label: "Antworten", href: "/answers/" },
-      category: { label: "Kategorien", href: "/category/" },
-      usecase: { label: "Anwendungen", href: "/usecase/" },
+      category: { label: "Kategorien", href: "/de/category/" },
+      usecase: { label: "Anwendungen", href: "/de/usecase/" },
       library: { label: "Bibliothek", href: "/de/library/" },
       printables: { label: "Zum Ausdrucken", href: "/de/zum-ausdrucken/" },
       events: { label: "Anlässe", href: "/events/" },
@@ -74,8 +73,8 @@
       home: "/it/",
       guide: { label: "Guide", href: "/it/guide/" },
       answers: { label: "Risposte", href: "/answers/" },
-      category: { label: "Categorie", href: "/category/" },
-      usecase: { label: "Usi", href: "/usecase/" },
+      category: { label: "Categorie", href: "/it/category/" },
+      usecase: { label: "Usi", href: "/it/usecase/" },
       library: { label: "Libreria", href: "/it/library/" },
       printables: { label: "Da Stampare", href: "/it/da-stampare/" },
       events: { label: "Eventi", href: "/events/" },
@@ -86,8 +85,8 @@
       home: "/tr/",
       guide: { label: "Rehberler", href: "/tr/guide/" },
       answers: { label: "Yanıtlar", href: "/answers/" },
-      category: { label: "Kategoriler", href: "/category/" },
-      usecase: { label: "Kullanımlar", href: "/usecase/" },
+      category: { label: "Kategoriler", href: "/tr/category/" },
+      usecase: { label: "Kullanımlar", href: "/tr/usecase/" },
       library: { label: "Kütüphane", href: "/tr/library/" },
       printables: { label: "Baskılar", href: "/printables/" },
       events: { label: "Etkinlikler", href: "/events/" },
@@ -98,8 +97,8 @@
       home: "/es/",
       guide: { label: "Guías", href: "/es/guide/" },
       answers: { label: "Respuestas", href: "/answers/" },
-      category: { label: "Categorías", href: "/category/" },
-      usecase: { label: "Usos", href: "/usecase/" },
+      category: { label: "Categorías", href: "/es/category/" },
+      usecase: { label: "Usos", href: "/es/usecase/" },
       library: { label: "Biblioteca", href: "/es/library/" },
       printables: { label: "Imprimibles", href: "/es/imprimibles/" },
       events: { label: "Eventos", href: "/events/" },
@@ -110,13 +109,25 @@
       home: "/id/",
       guide: { label: "Panduan", href: "/id/guide/" },
       answers: { label: "Jawaban", href: "/answers/" },
-      category: { label: "Kategori", href: "/category/" },
-      usecase: { label: "Kegunaan", href: "/usecase/" },
+      category: { label: "Kategori", href: "/id/category/" },
+      usecase: { label: "Kegunaan", href: "/id/usecase/" },
       library: { label: "Perpustakaan", href: "/id/library/" },
       printables: { label: "Cetak", href: "/printables/" },
       events: { label: "Acara", href: "/events/" },
       search: "Cari gaya font…",
       darkMode: "Alihkan mode gelap"
+    },
+    pl: {
+      home: "/pl/",
+      guide: { label: "Poradniki", href: "/pl/guide/" },
+      answers: { label: "Odpowiedzi", href: "/answers/" },
+      category: { label: "Kategorie", href: "/pl/category/" },
+      usecase: { label: "Zastosowania", href: "/pl/usecase/" },
+      library: { label: "Biblioteka", href: "/pl/library/" },
+      printables: { label: "Do druku", href: "/pl/do-druku/" },
+      events: { label: "Wydarzenia", href: "/events/" },
+      search: "Szukaj stylów czcionek…",
+      darkMode: "Przełącz tryb ciemny"
     }
   };
 

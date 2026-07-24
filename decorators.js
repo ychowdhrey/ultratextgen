@@ -210,6 +210,16 @@
         { key: "accent",   label: "Accent",   items: [["★ "," ★"],["✦ "," ✦"],["◆ "," ◆"],["▸ "," ◂"],["» "," «"],["❖ "," ❖"],["✧ "," ✧"],["➤ "," ➤"]] }
       ]
     },
+    "threads": {
+      defaultTab: "minimal",
+      tabs: [
+        { key: "minimal",   label: "Minimal",   items: MINIMAL.slice(0, 8) },
+        { key: "aesthetic", label: "Aesthetic", items: SPARKLE.slice(0, 8) },
+        { key: "arrows",    label: "Arrows",    items: ARROWS.slice(0, 8) },
+        { key: "symbols",   label: "Symbols",   items: STARS.slice(0, 8) },
+        { key: "dividers",  label: "Dividers",  items: [["─── "," ───"],["━━ "," ━━"],["· · · ",""],["✦ "," ✦"],["≡ "," ≡"],["|| "," ||"],["— "," —"],["⋆ "," ⋆"]] }
+      ]
+    },
     "snapchat": {
       word: "name",
       defaultTab: "playful",

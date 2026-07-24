@@ -71,39 +71,63 @@
 <section class="editorial-section">
   <span class="article-section-label">What we track</span>
   <h2>One Place for Every Unicode, Platform &amp; Game Rule Change</h2>
-  <div class="compare-grid">
-    <div class="compare-card variant-muted">
+  <p class="section-subline">Tap a category to jump to what's changed.</p>
+  <div class="compare-grid" id="updatesCategoryCards">
+    <button type="button" class="compare-card variant-muted is-toggle" data-category="unicode">
       <span class="compare-badge">Unicode</span>
       <p>Every new character and emoji the Unicode Consortium adds — and, just as useful, when your platform actually gets it.</p>
-    </div>
-    <div class="compare-card variant-muted">
+      <span class="compare-card-meta" data-role="meta"></span>
+    </button>
+    <button type="button" class="compare-card variant-muted is-toggle" data-category="platform">
       <span class="compare-badge">Platform rules</span>
       <p>Formatting and character-support changes on Discord, Instagram, LinkedIn, TikTok, and WhatsApp, as they roll out.</p>
-    </div>
-    <div class="compare-card variant-muted">
+      <span class="compare-card-meta" data-role="meta"></span>
+    </button>
+    <button type="button" class="compare-card variant-muted is-toggle" data-category="game">
       <span class="compare-badge">Game rules</span>
       <p>Nickname length limits and allowed-character changes after a game patch — the numbers behind our per-game name checker.</p>
-    </div>
+      <span class="compare-card-meta" data-role="meta"></span>
+    </button>
   </div>
-  <p class="section-subline">New entries go up as soon as something changes — check back whenever a name that used to work suddenly doesn't.</p>
 </section>
 
 <div class="section-divider"></div>
 
 <section class="editorial-section">
   <span class="article-section-label">Latest</span>
-  <h2>Recent Updates</h2>
-
-  <div class="lib-filter-row" id="updatesFilterRow">
-    <span class="lib-filter-label">Category</span>
-    <button class="lib-pill" type="button" data-category="unicode">Unicode <span class="pill-count"></span></button>
-    <button class="lib-pill" type="button" data-category="platform">Platform rules <span class="pill-count"></span></button>
-    <button class="lib-pill" type="button" data-category="game">Game rules <span class="pill-count"></span></button>
+  <div style="display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
+    <h2 style="margin:0;">Recent Updates</h2>
+    <span id="updatesShowing" class="compare-card-meta" hidden></span>
     <button class="lib-clear-btn" type="button" id="updatesClearFilter">✕ Clear filter</button>
   </div>
   <p class="section-subline" id="updatesEmptyState" hidden>No updates in this category yet — check back soon, or <button type="button" class="lib-clear-btn visible" id="updatesEmptyClear">see all updates</button>.</p>
 
   <div class="related-grid" id="updatesGrid">
+    <a class="related-card" href="/updates/forza-horizon-6-gamertag-rules/" data-category="game">
+      <span class="related-tag">🏎️</span>
+      <span class="related-title">Jul 23, 2026 — Forza Horizon 6: Gamertag and Driver Name Split</span>
+      <span class="related-desc">Your driver name is an editable in-game nickname; your Xbox Gamertag is a locked handle with an unremovable numeric suffix.</span>
+    </a>
+    <a class="related-card" href="/updates/middle-east-currency-symbols-scorecard/" data-category="unicode">
+      <span class="related-tag">📊</span>
+      <span class="related-title">Jul 22, 2026 — Middle East Currency Symbols in Unicode: The Scorecard</span>
+      <span class="related-desc">5 currencies now have their own Unicode symbol, 3 share a generic one, and at least 7 have none at all.</span>
+    </a>
+    <a class="related-card" href="/updates/unicode-18-beta-review-opens/" data-category="unicode">
+      <span class="related-tag">📜</span>
+      <span class="related-title">Jul 22, 2026 — Unicode 18.0 Beta Review Opens: What's Shipping</span>
+      <span class="related-desc">13,047 new characters — four historical scripts, three currency symbols, and a draft slate of 9 new emoji.</span>
+    </a>
+    <a class="related-card" href="/updates/unicode-18-most-anticipated-emoji/" data-category="unicode">
+      <span class="related-tag">🥒</span>
+      <span class="related-title">Jul 22, 2026 — Unicode 18.0's New Emoji: Cracking Face Wins the Vote</span>
+      <span class="related-desc">Cracking Face topped Emojipedia's public vote for Emoji 18.0, ahead of Pickle and Meteor — none are approved yet.</span>
+    </a>
+    <a class="related-card" href="/updates/uae-dirham-symbol-unicode-18/" data-category="unicode">
+      <span class="related-tag">💱</span>
+      <span class="related-title">Jul 22, 2026 — UAE Dirham Symbol Approved for Unicode 18.0</span>
+      <span class="related-desc">Approved for encoding and published in the 18.0 beta — but not on any keyboard yet. Here's exactly where it stands.</span>
+    </a>
     <a class="related-card" href="/updates/unicode-17-new-emoji-rollout/" data-category="unicode">
       <span class="related-tag">🔤</span>
       <span class="related-title">Jul 20, 2026 — Unicode 17.0's New Emoji: Rollout Tracker</span>
@@ -116,26 +140,28 @@
 <script>
 (function () {
   "use strict";
-  var row = document.getElementById("updatesFilterRow");
-  if (!row) return;
-  var pills = Array.prototype.slice.call(row.querySelectorAll(".lib-pill"));
+  var categoryCards = Array.prototype.slice.call(document.querySelectorAll("#updatesCategoryCards .compare-card"));
+  if (!categoryCards.length) return;
   var clearBtn = document.getElementById("updatesClearFilter");
   var emptyClearBtn = document.getElementById("updatesEmptyClear");
-  var cards = Array.prototype.slice.call(document.querySelectorAll("#updatesGrid .related-card"));
+  var showing = document.getElementById("updatesShowing");
+  var entryCards = Array.prototype.slice.call(document.querySelectorAll("#updatesGrid .related-card"));
   var emptyState = document.getElementById("updatesEmptyState");
   var active = null;
 
-  // Pill counts + disabled state are derived from the actual cards in the
+  var LABELS = { unicode: "Unicode", platform: "Platform rules", game: "Game rules" };
+
+  // Counts + disabled state are derived from the actual entry cards in the
   // DOM, not hardcoded, so a category stays accurate as entries are added.
-  pills.forEach(function (pill) {
-    var count = cards.filter(function (c) { return c.dataset.category === pill.dataset.category; }).length;
-    pill.querySelector(".pill-count").textContent = "(" + count + ")";
+  categoryCards.forEach(function (card) {
+    var count = entryCards.filter(function (c) { return c.dataset.category === card.dataset.category; }).length;
+    var meta = card.querySelector('[data-role="meta"]');
+    meta.textContent = count > 0 ? (count + (count === 1 ? " update →" : " updates →")) : "Coming soon";
     if (count === 0) {
-      pill.classList.add("is-disabled");
-      pill.disabled = true;
+      card.disabled = true;
     } else {
-      pill.addEventListener("click", function () {
-        active = active === pill.dataset.category ? null : pill.dataset.category;
+      card.addEventListener("click", function () {
+        active = active === card.dataset.category ? null : card.dataset.category;
         render();
       });
     }
@@ -143,16 +169,19 @@
 
   function render() {
     var visible = 0;
-    cards.forEach(function (card) {
+    entryCards.forEach(function (card) {
       var show = !active || card.dataset.category === active;
       card.hidden = !show;
       if (show) visible++;
     });
-    pills.forEach(function (pill) {
-      pill.classList.toggle("active", pill.dataset.category === active);
-      pill.setAttribute("aria-pressed", String(pill.dataset.category === active));
+    categoryCards.forEach(function (card) {
+      var isActive = card.dataset.category === active;
+      card.classList.toggle("active", isActive);
+      card.setAttribute("aria-pressed", String(isActive));
     });
     clearBtn.classList.toggle("visible", !!active);
+    showing.hidden = !active;
+    if (active) showing.textContent = "Showing: " + LABELS[active];
     emptyState.hidden = visible > 0;
   }
   clearBtn.addEventListener("click", function () { active = null; render(); });

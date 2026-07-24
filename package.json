@@ -11,7 +11,10 @@
     "check:gtm": "node scripts/check-gtm.js",
     "check:ads": "node scripts/check-ads.js",
     "check:hreflang": "node scripts/audit-hreflang.js",
-    "check:images": "python3 scripts/check-image-assets.py"
+    "check:images": "python3 scripts/check-image-assets.py",
+    "check:new-page-images": "python3 scripts/check-new-page-image-assets.py",
+    "audit:translation-parity": "node scripts/audit-translation-parity.js",
+    "check:translation-parity": "node scripts/check-translation-parity.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

@@ -17,8 +17,11 @@
 <meta name="description" content="أداة زخرفة اسماء ونصوص مجانية. اكتب اسمك وزخرفه بإطارات ꧁꧂ ༺༻ وتيجان ♛ ورموز اللاعبين، مع زخرفة عربية بالمدّ (الكشيدة) والتشكيل، وخطوط أنيقة للأسماء الإنجليزية. انسخ والصق مباشرة في ببجي وفري فاير وانستقرام وواتساب وفيسبوك.">
 
 <link rel="canonical" href="https://ultratextgen.com/ar/zakhrafa/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/stylish-name/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/usecase/stylish-naam-generator/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/usecase/youxi-mingzi-fuhao/">
 <link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/zakhrafa/">
-<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/usecase/stylish-name/">
 
 <meta name="robots" content="index, follow">
 
@@ -51,7 +54,13 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "زخرفة اسماء ونصوص — UltraTextGen",
-  "alternateName": ["زخرفة", "زخرفة اسماء", "زخرفة الاسماء", "زخرفة نصوص", "مزخرف الأسماء"],
+  "alternateName": [
+    "زخرفة",
+    "زخرفة اسماء",
+    "زخرفة الاسماء",
+    "زخرفة نصوص",
+    "مزخرف الأسماء"
+  ],
   "url": "https://ultratextgen.com/ar/zakhrafa/",
   "inLanguage": "ar",
   "applicationCategory": "UtilitiesApplication",
@@ -77,7 +86,8 @@
     "@type": "Organization",
     "name": "UltraTextGen",
     "url": "https://ultratextgen.com/"
-  }
+  },
+  "image": "https://ultratextgen.com/assets/og/ar-zakhrafa.png"
 }
 </script>
 
@@ -181,7 +191,7 @@
 
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="اكتب اسمك أو نصك هنا…" maxlength="100">محمد</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">أضف زخرفة حول النتائج — تعمل مع الاسم العربي</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">رموز</button><button class="decoration-tab" data-deco-tab="minimal">بسيط</button><button class="decoration-tab" data-deco-tab="emojis">إيموجي</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section"><div class="decoration-label">أضف زخرفة حول النتائج — تعمل مع الاسم العربي</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="zakhrafa">إطارات وزخرفة</button><button class="decoration-tab" data-deco-tab="symbols">رموز</button><button class="decoration-tab" data-deco-tab="minimal">بسيط</button><button class="decoration-tab" data-deco-tab="emojis">إيموجي</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -336,6 +346,8 @@
     <p>الإطارات والرموز أعلاه هي نفسها التي تراها في أسماء أساطير ببجي وفري فاير، لكن لكل لعبة حدودها: <strong>ببجي موبايل</strong> يسمح بنحو <strong>14 حرفاً</strong> في الاسم، بينما يسمح <strong>فري فاير</strong> بـ <strong>12 حرفاً فقط</strong> — والأهم أن الرموز الزخرفية مثل ꧁ ꧂ تُحسب فيه <strong>بحرفين لكل رمز</strong>، فالإطار ꧁اسم꧂ وحده يستهلك أربعة أحرف من رصيدك.</p>
     <p>القاعدة العملية: اختر إطاراً واحداً قصيراً واترك الباقي للاسم، وجرّب الطول قبل استهلاك بطاقة تغيير الاسم. وقد أعددنا صفحة كاملة لأسماء ببجي المزخرفة بالعربية — رموزاً وأمثلة جاهزة وخطوات تغيير الاسم: <a href="/ar/usecase/asmaa-pubg/">أسماء ببجي مزخرفة</a>.</p>
   </div>
+  <div class="editorial-block"><p><strong>افحص قبل أن تلصق:</strong> اكتب اسمك في الأعلى وسيُحسب طوله المزخرف تلقائياً هنا مقابل حدود فري فاير وببجي — قبل أن تستهلك بطاقة تغيير الاسم.</p></div>
+  <div id="zakhrafaNameChecker"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -404,6 +416,28 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: builds the Arabic "zakhrafa" decoration tab from
+     shared packs (js/flair/flair-engine.js) plus Arabic-specific ornaments, merged
+     over the default tabs (script.js). Non-deferred so compose() runs before the
+     deferred generator scripts. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DEFAULT_DECO_TAB = "zakhrafa";
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({
+          zakhrafa: [
+            "gameFrames", "crowns", "warrior",
+            { text: "﴾ اسم ﴿", prefix: "﴾", suffix: "﴿" },
+            { text: "۞ اسم ۞", prefix: "۞", suffix: "۞" },
+            { text: "❁ اسم ❁", prefix: "❁", suffix: "❁" },
+            { text: "مـدّ الحروف (كشيدة)", mode: "interleave", sep: "ـ" },
+            "spacing"
+          ]
+        })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
@@ -428,6 +462,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ns.buildGrids("frameTemplatesContainer", GROUPS);
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+
+<!-- Name-fit checker: counts the DECORATED Arabic name against Free Fire / PUBG limits -->
+<script src="/js/gamename/game-rules.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  const ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "zakhrafaNameChecker",
+      games: ["ff", "pubg"],
+      inputId: "mainInput",
+      text: {
+        placeholder: "اسمك يظهر تلقائياً وأنت تكتب في الأعلى — أو عدّله لتجربة اسم آخر",
+        ok: "مقبول",
+        warn: "قد يظهر كمربعات ▯ على بعض الأجهزة",
+        fail: "قد يُرفض هذا الاسم (رمز غير صالح)",
+        empty: "اكتب اسمك في الأعلى — يُفحص مباشرة",
+        weightNote: "في فري فاير كل رمز أو حرف مزخرف (بما فيه المدّ والتشكيل) يُحسب بحرفين.",
+        charsToWatch: "راجع هذه الرموز:",
+        issue: {
+          "over-limit": "طويل جداً — فري فاير 12 حرفاً وببجي نحو 14، وكل رمز زخرفي يُحسب بحرفين.",
+          "space": "المسافة العادية قد تُرفض — استخدم الحرف غير المرئي.",
+          "unknown-chars": "قد تُرفض هذه الرموز (رمز غير صالح):",
+          "too-short": "قصير جداً."
+        }
+      }
+    });
+  }
 });
 </script>
 <script src="/footer.js" defer></script>

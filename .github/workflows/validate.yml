@@ -1,0 +1,125 @@
+name: Validate Site
+
+# Required, blocking checks for structural correctness that must never merge
+# broken: hreflang reciprocity, /library/ and /symbol/ page structure,
+# per-page social/Pinterest image assets, new/changed pages' image assets
+# specifically, and translation parity — an EN <-> locale content change
+# introduced by this PR without its sibling being updated. Each validator
+# already exits non-zero on failure (see scripts/audit-hreflang.js,
+# scripts/validate_library_pages.py, scripts/check-image-assets.py,
+# scripts/check-new-page-image-assets.py, scripts/check-translation-parity.js)
+# — this workflow is what actually wires that into CI so a PR can't merge
+# broken pages.
+#
+# scripts/check-image-assets.py is a whole-site audit (also requires a
+# Pinterest pin per page) and the site carries a large, deliberately-paced
+# Pinterest-pin backlog — so its "failure" step below is informational, not
+# gating (see the step's own comment). scripts/check-new-page-image-assets.py
+# is the actual gate for this: diff-scoped to only the pages this PR adds or
+# changes, checking just og:image/twitter:image/hero (not Pinterest pins), so
+# pre-existing site-wide backlog can never make it permanently red. This
+# exists specifically to stop new pages shipping ahead of their hero/OG art —
+# see ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §6.
+#
+# All steps run every time (continue-on-error on each) so a single PR shows
+# every problem at once instead of stopping at the first failure; the final
+# step fails the job if any *gating* validator reported an error.
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # check-translation-parity.js diffs this PR against its base branch,
+          # which needs real history — a shallow (depth-1) checkout has no
+          # merge-base to diff against.
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run hreflang reciprocity audit
+        id: hreflang
+        continue-on-error: true
+        run: npm run check:hreflang | tee hreflang-audit.log
+
+      - name: Run library/symbol page validator
+        id: library
+        continue-on-error: true
+        run: python3 scripts/validate_library_pages.py | tee library-validate.log
+
+      - name: Run image asset check (whole-site audit, informational only)
+        id: images
+        continue-on-error: true
+        run: npm run check:images | tee image-assets.log
+
+      - name: Run new-page image asset check
+        id: new_images
+        continue-on-error: true
+        run: npm run check:new-page-images -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee new-page-images.log
+
+      - name: Run translation parity check
+        id: parity
+        continue-on-error: true
+        run: npm run check:translation-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee translation-parity.log
+
+      - name: Build step summary
+        if: always()
+        run: |
+          {
+            echo "## Site Validation"
+            echo ""
+            echo "### hreflang reciprocity audit — \`${{ steps.hreflang.outcome }}\`"
+            echo '```'
+            cat hreflang-audit.log
+            echo '```'
+            echo ""
+            echo "### Library/symbol page validator — \`${{ steps.library.outcome }}\`"
+            echo '```'
+            cat library-validate.log
+            echo '```'
+            echo ""
+            echo "### Image asset check (whole-site audit, informational) — \`${{ steps.images.outcome }}\`"
+            echo '```'
+            cat image-assets.log
+            echo '```'
+            echo ""
+            echo "### New-page image asset check — \`${{ steps.new_images.outcome }}\`"
+            echo '```'
+            cat new-page-images.log
+            echo '```'
+            echo ""
+            echo "### Translation parity check — \`${{ steps.parity.outcome }}\`"
+            echo '```'
+            cat translation-parity.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail the job if any gating validator reported problems
+        # steps.images (the whole-site audit) is deliberately excluded — see
+        # its step name/comment above: it's permanently informational because
+        # of the accepted Pinterest-pin backlog, not because failures there
+        # don't matter. steps.new_images is the actual gate for image assets.
+        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.parity.outcome == 'failure'
+        run: |
+          echo "One or more gating validators failed — see the Summary tab above for details."
+          exit 1

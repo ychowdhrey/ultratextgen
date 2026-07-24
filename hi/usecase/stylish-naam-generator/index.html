@@ -19,6 +19,7 @@
   <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/stylish-name/">
   <link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/usecase/stylish-naam-generator/">
   <link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/usecase/youxi-mingzi-fuhao/">
+  <link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/zakhrafa/">
   <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/usecase/stylish-name/">
 
   <meta property="og:image" content="https://ultratextgen.com/assets/og/hi-usecase-stylish-naam-generator.png">
@@ -106,14 +107,26 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "स्टाइलिश नाम जनरेटर",
-  "alternateName": ["स्टाइलिश नाम जनरेटर", "फैंसी नाम", "यूनिक नाम", "aesthetic नाम", "अच्छा नाम कैसे बनाएं", "निकनेम जनरेटर"],
+  "alternateName": [
+    "स्टाइलिश नाम जनरेटर",
+    "फैंसी नाम",
+    "यूनिक नाम",
+    "aesthetic नाम",
+    "अच्छा नाम कैसे बनाएं",
+    "निकनेम जनरेटर"
+  ],
   "url": "https://ultratextgen.com/hi/usecase/stylish-naam-generator/",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
   "inLanguage": "hi",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
   "description": "स्टाइलिश नाम, फैंसी नाम और यूनिक निकनेम Unicode फॉन्ट और सिंबल ꧁꧂ ★彡 के साथ बनाएं — गेम, सोशल मीडिया और alias के लिए।",
-  "browserRequirements": "Requires JavaScript. Works in all modern browsers."
+  "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+  "image": "https://ultratextgen.com/assets/og/hi-usecase-stylish-naam-generator.png"
 }
 </script>
 </head>
@@ -148,7 +161,7 @@
 <!-- GENERATOR -->
 <section class="hero"><div class="hero-inner"><div class="hero-card">
   <div class="input-wrapper"><textarea class="main-input" id="mainInput" placeholder="अपना नाम टाइप करें…" maxlength="100">Sher</textarea><span class="char-count"><span id="charCount">0</span>/100</span></div>
-  <div class="decoration-section"><div class="decoration-label">रिजल्ट में सजावट जोड़ें</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">सिंबल</button><button class="decoration-tab" data-deco-tab="minimal">मिनिमल</button><button class="decoration-tab" data-deco-tab="emojis">इमोजी</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
+  <div class="decoration-section"><div class="decoration-label">रिजल्ट में सजावट जोड़ें</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="sajaawat">फ्रेम व सजावट</button><button class="decoration-tab" data-deco-tab="symbols">सिंबल</button><button class="decoration-tab" data-deco-tab="minimal">मिनिमल</button><button class="decoration-tab" data-deco-tab="emojis">इमोजी</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
 <main class="container">
@@ -276,6 +289,8 @@
   <span class="article-section-label">खास पेज</span>
   <h2>गेम &amp; प्लेटफॉर्म के हिसाब से स्टाइलिश नाम</h2>
   <p>हर गेम के अपने नियम और स्टाइल होते हैं — जो सिंबल Free Fire में चलते हैं वो ज़रूरी नहीं BGMI में वैसे ही दिखें। ये पेज एक-एक करके, रेडीमेड नाम और सिंबल के साथ समझाते हैं:</p>
+  <div class="editorial-block"><p><strong>पेस्ट करने से पहले चेक करें:</strong> ऊपर जनरेटर में नाम टाइप करें — सजावट के साथ उसकी लंबाई यहां Free Fire और PUBG/BGMI की लिमिट से तुरंत मिलाई जाती है, नेम चेंज कार्ड खर्च करने से पहले।</p></div>
+  <div id="naamChecker"></div>
   <div class="compare-grid">
     <a href="/hi/usecase/free-fire-naam-stylish/" class="compare-card variant-muted u-no-underline">
       <h4>फ्री फायर स्टाइलिश नाम</h4>
@@ -341,6 +356,19 @@
 <!-- TOAST -->
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
+<!-- Flair engine + page config: build the "sajaawat" decoration tab from shared packs
+     (js/flair/flair-engine.js), merged over the default tabs (script.js).
+     flair-engine.js is non-deferred so compose() is ready before the deferred
+     generator scripts run. -->
+<script src="/js/flair/flair-engine.js"></script>
+<script>
+  window.UTG_DEFAULT_DECO_TAB = "sajaawat";
+  window.UTG_DECORATIONS =
+    window.UltraTextGen && window.UltraTextGen.flair
+      ? window.UltraTextGen.flair.compose({ sajaawat: ["gameFrames", "crowns", "warrior", "hearts", "spacing"] })
+      : undefined;
+</script>
+
 <!-- Generator scripts -->
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
@@ -366,6 +394,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ns.buildGrids("namaKerenWrappersContainer", GROUPS);
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+
+<!-- Name-fit checker: counts the DECORATED name against Free Fire / PUBG-BGMI limits -->
+<script src="/js/gamename/game-rules.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  const ns = window.UltraTextGen;
+  if (ns && ns.gameRules) {
+    ns.gameRules.initChecker({
+      mount: "naamChecker",
+      games: ["ff", "pubg"],
+      inputId: "mainInput",
+      text: {
+        placeholder: "ऊपर का नाम अपने आप यहां आ जाता है — या दूसरा नाम आज़माने के लिए बदलें",
+        ok: "सही ✓",
+        warn: "कुछ फोन पर बॉक्स ▯ दिख सकता है",
+        fail: "गेम इसे रिजेक्ट कर सकता है",
+        empty: "ऊपर अपना नाम टाइप करें — तुरंत चेक होता है",
+        weightNote: "Free Fire सजावटी सिंबल को 2 कैरेक्टर गिनता है।",
+        charsToWatch: "इन कैरेक्टर पर ध्यान दें:",
+        issue: {
+          "over-limit": "बहुत लंबा — एक सिंबल हटाएं या बेस नाम छोटा करें।",
+          "space": "सामान्य स्पेस रिजेक्ट होता है — इनविज़िबल कैरेक्टर ट्रिक इस्तेमाल करें।",
+          "unknown-chars": "ये कैरेक्टर कम सपोर्ट होते हैं और बॉक्स दिख सकते हैं:",
+          "too-short": "बहुत छोटा।"
+        }
+      }
+    });
+  }
 });
 </script>
 

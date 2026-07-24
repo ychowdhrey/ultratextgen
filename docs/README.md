@@ -31,12 +31,12 @@ workflow that produces it.
 |---|---|---|---|---|---|---|
 | **Library** (symbol/emoji reference) | `/library/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) (+ [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md)) | `data/library_opportunities.csv` | `generate_library_page_from_spec.py` + `validate_library_pages.py` | ✅ fully systematized |
 | **Symbol** (single glyph/emoji identity) | `/symbol/` | `Article` + `BreadcrumbList` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) — shares the Library workflow; a spec sets `"page_type": "symbol"` | `data/library_opportunities.csv` (backlog rows stay `page_type=library`; the library/symbol split happens per-spec in `data/library_page_specs/`, not in the backlog CSV) | `generate_library_page_from_spec.py` + `validate_library_pages.py` (shared with Library) + `sync_symbol_spoke_links.py` (hub↔spoke linking) | ✅ fully systematized (shares the Library pipeline end-to-end) |
-| **Category** (style generators) | `/category/` | `WebApplication` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog + strategy, no generator |
-| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | [`jtbd-build-spec.md`](./jtbd-build-spec.md) (strategy) | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog + strategy, no generator |
+| **Category** (style generators) | `/category/` | `WebApplication` | ❌ none | `library_opportunities.csv` (`page_type=category`) | ❌ none | ⚠️ backlog, no generator |
+| **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | ❌ none | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
-| **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) + `guide-opportunity-map-<date>.md` | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
+| **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
 | **Events** (seasonal/holiday pages) | `/events/` (+ locale variants, e.g. `/es/events/`) | `WebApplication` + `FAQPage` | ❌ undocumented | `data/event_page_specs/*.json` (no CSV backlog row) | `generate_event_page_from_spec.py` (mirrors `generate_library_page_from_spec.py`; validation is built into the generator, no separate validator script) | ⚠️ generator exists, no backlog/governing doc — new this review (PR #457 + Spanish `es/events/` pages) |
-| **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | [`coloring-sheet-generator-strategy.md`](./coloring-sheet-generator-strategy.md) (strategy) + `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog + strategy, no generator |
+| **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog, no generator |
 | **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Root pages** (homepage, 404, legal) | `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`, `terms/`, site icons | `WebSite` (homepage) | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented |
 
@@ -55,12 +55,12 @@ These run across page types rather than producing a type.
 
 | Track | Scripts | Doc | Cadence |
 |---|---|---|---|
-| Distribution loops (share/embed/OG, viral & SEO loops) | `script.js` (share/`?q=`/copy), `tweet_queue.py`, `generate-*-pins.py`, embed widgets | [`distribution-loops.md`](./distribution-loops.md) | per batch + quarterly |
-| Retention & engagement (saved styles, prefs, return triggers) | `script.js` (`utg_saved_styles`/`save_style`/`?q=`), `header.js` (dark-mode pref) | [`retention-loops.md`](./retention-loops.md) | per batch + monthly metric |
+| Distribution loops (share/embed/OG, viral & SEO loops) | `script.js` (share/`?q=`/copy), `tweet_queue.py`, `generate-*-pins.py`, embed widgets | ❌ none | per batch + quarterly |
+| Retention & engagement (saved styles, prefs, return triggers) | `script.js` (`utg_saved_styles`/`save_style`/`?q=`), `header.js` (dark-mode pref) | ❌ none | per batch + monthly metric |
 | Image SEO (hero art, OG cards) | `make-hero-decorative.py`, `add-og-dimensions.py`, `build-image-seo-status.py` | [`image-seo-fixes.md`](./image-seo-fixes.md) | per batch |
 | Pinterest pins (+ new boards) | `generate-pinterest.py`, `generate-id-pins.py`, `generate-vertical-text-pins.py` (skin: `generate-site-art.py`); CSV: `pinterest_csv.py` + `build_pinterest_upload.py` | [`pinterest-pin-generation.md`](./pinterest-pin-generation.md) (board conventions) + [`pinterest-csv-format.md`](./pinterest-csv-format.md) | per batch |
 | Schema / alternateName SEO | `validate-alternatenames.py`, `inject-faq-jsonld.js`, `alternatename-seo-report.md` | ⚠️ none | per batch |
-| Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | [`image-backlink-strategy.md`](./image-backlink-strategy.md) (decision doc) | ad hoc |
+| Image backlinks (embeddable images / widgets) | `/embed/` widget pages (no generator yet) | ❌ none | ad hoc |
 | **Visual & printable assets** (in-browser SVG/PNG output mode) | `js/curved/curvedText.js` + `curvedTextController.js` (curved/arc tool → `/curved-text/`); `js/bubble/bubbleExplorer.js` (printable bubble letters, per-letter + A–Z); `js/cursive/cursivePageController.js` + `cursiveData.js` (cursive practice sheets) | [`jtbd-principles.md`](./jtbd-principles.md) §10 (output modes) + `CLAUDE.md` scope note | per feature (demand-gated) |
 | Collection-copy audit | `audit_library_opportunities.py` (+ explorer, see workflow §5) | ⚠️ workflow §5; [`emoji-combination-taxonomy.md`](./emoji-combination-taxonomy.md) for combo taxonomy | per batch |
 | i18n / localization | `prerender-i18n.js` (+ `de/`, `es/`, `fr/`, `id/`, `it/`, `nl/`, `no/`, `pl/`, `pt/`, `sv/`, `tl/`, `tr/`, `vi/`, `locales/`, `README.*.md`) | ❌ none | as needed |
@@ -68,7 +68,9 @@ These run across page types rather than producing a type.
 | ↳ Printables × i18n (not yet wired together) | n/a — `/printables/` pages have no `data-i18n` attributes / locale-JSON keys yet | `library_opportunities.csv` `OPP-0803` (scoping note: German/Spanish/French native-query volume for alphabet printables outweighs the English long-tail) | needs scoping pass |
 | CSS audit | `audit-css.js` | ❌ none (CI-only) | CI (`css-audit.yml`) |
 | GTM check | `check-gtm.js` | ❌ none (CI-only) | CI (`gtm-check.yml`) |
-| Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`image-assets-check.yml`) |
+| Image asset check | `check-image-assets.py` | ❌ none (CI-only) | CI (`validate.yml`, folded in from the retired `image-assets-check.yml`) |
+| hreflang reciprocity audit | `audit-hreflang.js` (`npm run check:hreflang`) | ❌ none (CI-only) | CI (`validate.yml`) |
+| Library/Symbol structural lint | `validate_library_pages.py` | [`unicode-library-workflow.md`](./unicode-library-workflow.md) | CI (`validate.yml`) |
 
 ---
 
@@ -82,9 +84,9 @@ These run across page types rather than producing a type.
 | `tweet-queue.yml` | daily 09:00 UTC (+ manual) | post qualifying commits (`tweet_queue.py`) |
 | `css-audit.yml` | on `pull_request` | `audit-css.js` |
 | `gtm-check.yml` | on `pull_request` | `check-gtm.js` (GTM snippet present) |
-| `image-assets-check.yml` | on `pull_request` (HTML/`assets/og`/`assets/hero`/`assets/pinterest` paths) | `check-image-assets.py` (PR #315) |
 | `schedule-cache-removal.yml` | annual (Apr 10) + manual | cache maintenance |
 | `ads-check.yml` | on `pull_request` (HTML/`header.js`/`package.json`/`ads.txt`/`scripts/check-ads.js`) | `check-ads.js` (AdSense loader deployed site-wide; also guards `ads.txt` against Journey lines reappearing) |
+| `validate.yml` | on `pull_request` (+ manual) | **required, blocking**: `audit-hreflang.js` (`npm run check:hreflang`), `validate_library_pages.py`, `check-image-assets.py` — each already exited non-zero on failure but none was wired into CI until now. Supersedes the old path-filtered `image-assets-check.yml` (retired; folded in here so the image-asset check now runs unconditionally on every PR instead of only on HTML/asset-path changes). |
 
 ### Scheduled routines (Claude Code on the web)
 
@@ -107,9 +109,9 @@ here so they aren't lost. Update as they're closed or new ones appear.
    carries a `page_type` column (default `library`) and the auditor dedupes
    per-lane, so scouting, the `stage` lifecycle, and the demand gate reach
    `/category/` and `/answers/`. (Still no generator for those lanes — see #2.)
-2. **No production pipeline for category/answers.** Strategy exists
-   (`jtbd-build-spec.md`); there is no generator/validator equivalent of the
-   library lane. These pages are hand-built.
+2. **No production pipeline for category/answers.** Build specs are agreed
+   ad hoc, not published in this repo; there is no generator/validator
+   equivalent of the library lane. These pages are hand-built.
 3. **Usecase and guide lanes are undocumented** — no workflow, no backlog.
    **Newly active (2026-06-27):** PR #312 added 4 new usecase pages hand-built
    across two namespaces: `/usecase/nickname-generator/` (EN) and
@@ -150,9 +152,15 @@ here so they aren't lost. Update as they're closed or new ones appear.
    fix this doc's own review checklist (§4) says to systematize — a pattern
    rule (any two-letter, or `zh-xx`-shaped, top-level directory → i18n) would
    close this permanently instead of one PR-by-PR patch per new locale.
-   Separately, `scripts/audit-hreflang.js` (new this week, wired to
-   `npm run check:hreflang` but no CI workflow yet) is real hreflang-mesh
-   tooling with nowhere to be documented until the i18n governing doc exists.
+   Separately, `scripts/audit-hreflang.js` (wired to `npm run check:hreflang`)
+   is real hreflang-mesh tooling with nowhere to be documented until the i18n
+   governing doc exists. **Update (2026-07-22):** the "no CI workflow yet"
+   half of this is now closed — `.github/workflows/validate.yml` runs
+   `audit-hreflang.js` (plus `validate_library_pages.py` and
+   `check-image-assets.py`) as a required, blocking check on every PR, and
+   the old path-filtered `image-assets-check.yml` was retired in favor of it.
+   The documentation-home half (an i18n governing doc to hang this on) is
+   still open.
 5. **Platform pages lane is undocumented** — the eleven social-network generator
    pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
    (`alternateName`: PR #277; FAQ structured data: PR #290) but have no

@@ -1,0 +1,109 @@
+{
+  "slug": "simbolos-pubg",
+  "lang": "es",
+  "title": "Símbolos de PUBG y BGMI ★ 彡 乂 — Copiar y Pegar para el Nombre (2026)",
+  "meta_description": "Símbolos de nombre para PUBG Mobile y BGMI ★ 彡 乂 ꧁꧂ para copiar y pegar — probados con la fuente del juego, más la verdad sobre qué símbolos fallan antes de gastar una tarjeta de cambio de nombre.",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-pubg/",
+  "breadcrumb": "Símbolos de PUBG y BGMI",
+  "hero_h1": "Símbolos de PUBG y BGMI ★",
+  "hero_tagline": "Símbolos que de verdad se muestran en la fuente de PUBG Mobile y BGMI — no solo una lista genérica de Unicode. Toca cualquier símbolo para copiarlo al instante.",
+  "intro": "PUBG Mobile y BGMI (Battlegrounds Mobile India — el mismo juego, versión para India) no muestran el texto con la fuente completa de tu teléfono. Usan una fuente propia muy limitada que cubre solo unos pocos miles de los más de 150.000 caracteres Unicode que existen, por eso un símbolo que se ve bien en cualquier otro sitio puede aparecer como un cuadro vacío — o ser rechazado directamente — en tu nombre dentro del juego. Cada carácter de esta página es una selección de un solo símbolo de las familias que los jugadores reportan que sí funcionan: marcas katakana y CJK, corchetes de marco javanés y estrellas simples. Los nombres tienen un límite de 14 caracteres en total, así que un marco ya gasta parte de tu límite antes de escribir una sola letra — copia lo que necesites y arma tu nombre a partir de ahí.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "copy_pattern": "collection",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/pubg-symbols/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/pubg-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-pubg/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/library/simbolos-pubg/" },
+    { "lang": "tr", "href": "https://ultratextgen.com/tr/library/pubg-sembolleri/" }
+  ],
+  "sections": [
+    {
+      "id": "pubg-friendly-symbols",
+      "label": "A Prueba de Balas",
+      "h2": "Símbolos Compatibles con PUBG y BGMI",
+      "intro": "Selecciones de un solo carácter del pequeño conjunto que la fuente de PUBG realmente muestra — el punto de partida más seguro para cualquier nombre.",
+      "symbols": [
+        { "char": "ツ", "label": "Katakana Tsu" },
+        { "char": "ッ", "label": "Katakana Tsu Pequeña" },
+        { "char": "彡", "label": "San — Triple Trazo" },
+        { "char": "乂", "label": "Yi — Marca de Espadas Cruzadas" },
+        { "char": "亗", "label": "Sui — Marca de Nivel Apilado" },
+        { "char": "々", "label": "Marca de Iteración Ideográfica" },
+        { "char": "ム", "label": "Katakana Mu" },
+        { "char": "王", "label": "Wang — Rey" },
+        { "char": "爪", "label": "Radical CJK Garra" },
+        { "char": "★", "label": "Estrella Negra" },
+        { "char": "☆", "label": "Estrella Blanca" },
+        { "char": "✦", "label": "Estrella Negra de Cuatro Puntas" },
+        { "char": "✧", "label": "Estrella Blanca de Cuatro Puntas" },
+        { "char": "•", "label": "Viñeta" },
+        { "char": "×", "label": "Signo de Multiplicación" }
+      ]
+    },
+    {
+      "id": "pubg-frame-brackets",
+      "label": "Marco y Tag de Clan",
+      "h2": "Marcos y Corchetes para Tag de Clan",
+      "intro": "El par javanés ꧁ ꧂ es el marco de nombre más reconocido de PUBG/BGMI — envuelve cualquier nombre para el look clásico. Recuerda: un marco ya gasta 2 de tus 14 caracteres.",
+      "symbols": [
+        { "char": "꧁", "label": "Rerenggan Izquierdo Javanés" },
+        { "char": "꧂", "label": "Rerenggan Derecho Javanés" },
+        { "char": "「", "label": "Corchete de Esquina Izquierdo" },
+        { "char": "」", "label": "Corchete de Esquina Derecho" },
+        { "char": "【", "label": "Corchete Lenticular Negro Izquierdo" },
+        { "char": "】", "label": "Corchete Lenticular Negro Derecho" },
+        { "char": "《", "label": "Corchete Angular Doble Izquierdo" },
+        { "char": "》", "label": "Corchete Angular Doble Derecho" }
+      ]
+    },
+    {
+      "id": "pubg-warrior-symbols",
+      "label": "Guerrero y Battle Royale",
+      "h2": "Marcas de Guerrero y Battle Royale",
+      "intro": "Caracteres con estilo de combate para un tag de clan o un nombre agresivo.",
+      "symbols": [
+        { "char": "⚔", "label": "Espadas Cruzadas" },
+        { "char": "☠", "label": "Calavera y Huesos Cruzados" },
+        { "char": "➤", "label": "Punta de Flecha Negra Derecha" },
+        { "char": "⌖", "label": "Indicador de Posición (Mira)" },
+        { "char": "†", "label": "Daga" }
+      ]
+    },
+    {
+      "id": "pubg-status-symbols",
+      "label": "Estatus",
+      "h2": "Símbolos de Corona y Verificación",
+      "intro": "Símbolos de \"estatus\" decorativos que los jugadores agregan cerca del nombre. Son caracteres Unicode normales — no representan un rango oficial, nivel o insignia de Krafton.",
+      "symbols": [
+        { "char": "♛", "label": "Reina de Ajedrez Negra (Corona)" },
+        { "char": "♚", "label": "Rey de Ajedrez Negro (Corona)" },
+        { "char": "✓", "label": "Marca de Verificación" },
+        { "char": "☑", "label": "Casilla con Verificación" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "pubg-collections",
+    "label": "Combos de Nombre",
+    "h2": "Combos de Nombre Listos para PUBG y BGMI",
+    "intro": "Copia una plantilla completa con un clic y luego reemplaza Nombre con el tuyo — recuerda el límite total de 14 caracteres, marco incluido."
+  },
+  "collection_container_id": "pubgCollectionsContainerES",
+  "collections": [
+    { "name": "Marco Clásico", "flags": ["꧁", "Nombre", "꧂"], "defaultFormat": "inline" },
+    { "name": "Marco de Sonrisa Sudorosa", "flags": ["ツ", "Nombre", "ツ"], "defaultFormat": "inline" },
+    { "name": "Envoltorio de Espadas Cruzadas", "flags": ["乂•", "Nombre", "•乂"], "defaultFormat": "inline" },
+    { "name": "Tag de Estrella con Corchetes", "flags": ["「★」", "Nombre"], "defaultFormat": "inline" },
+    { "name": "Tag de Calavera Guerrera", "flags": ["☠", "Nombre", "☠"], "defaultFormat": "inline" },
+    { "name": "Tag de Corona Flex", "flags": ["♛", "Nombre"], "defaultFormat": "inline" }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto plano en más de 100 estilos de fuente Unicode — negrita, cursiva, gótica — gratis e instantáneo.",
+  "related": [
+    { "href": "/es/simbolos-para-free-fire/", "title": "Símbolos para Free Fire", "desc": "Marcos, coronas y nombres decorados para nicks de Free Fire." },
+    { "href": "/es/library/simbolos-roblox/", "title": "Símbolos de Roblox", "desc": "Símbolos para el nombre para mostrar y bio de Roblox." },
+    { "href": "/es/usecase/nombres-para-free-fire/", "title": "Nombres para Free Fire", "desc": "Generador de nombres con marcos listos para copiar." },
+    { "href": "/es/usecase/nombres-para-mobile-legends/", "title": "Nombres para Mobile Legends", "desc": "Generador de nombres y símbolos para nicks de ML." }
+  ]
+}

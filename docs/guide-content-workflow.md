@@ -78,12 +78,11 @@ Before researching, read what already exists so you neither duplicate nor contra
 - `data/library_opportunities.csv` — scan for `intent=how-to|meaning` rows that may
   already cover a guide topic (improve the owner page instead of building new).
 - `docs/jtbd-principles.md`, `docs/page-vs-section-decisions.md` — page-type gates.
-- `docs/direction-audit-<date>.md` — **where demand actually is** (the highest-ROI
-  filter). As of 2026-06-27: Discord is under-converted (large impression pool of
-  informational "nitro / allowed-characters / what font" queries), Indonesian
-  aesthetic is the #1 engine, mobile is the business, emoji-combo pages are thin.
-- `docs/retention-loops.md`, `docs/distribution-loops.md` — every guide should feed
-  a loop (rank → some text spreads → SEO re-intercepts; or earn embeds/back-links).
+- Before committing to a topic, sanity-check where demand actually is (GSC
+  impressions/clicks, not just keyword volume) — don't build for a query the
+  data doesn't support.
+- Every guide should feed a loop back to the site (rank → some text spreads →
+  SEO re-intercepts; or earn embeds/back-links) — not just add a page.
 
 ---
 
@@ -244,5 +243,4 @@ shipped rows' `action`/`approval_status` updates. Do **not** edit `sitemap.xml`
 *Companion docs: `docs/unicode-library-workflow.md` (reference lane),
 `docs/unicode-forum-research-skill.md` (discovery method),
 `docs/jtbd-principles.md` (why a page exists),
-`docs/page-vs-section-decisions.md` (page vs section gate),
-`docs/direction-audit-2026-06-27.md` (where demand actually is).*
+`docs/page-vs-section-decisions.md` (page vs section gate).*

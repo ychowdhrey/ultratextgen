@@ -43,11 +43,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@type": "Question",
     "name": "Can you uncover redacted text?",
     "text": "Can blacked-out or redacted text be revealed, decoded, or unredacted?",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://ultratextgen.com/#organization",
+      "name": "UltraTextGen",
+      "url": "https://ultratextgen.com/"
+    },
+    "datePublished": "2026-06-29",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "It depends on how it was redacted. Text redacted with Unicode block characters (like █) cannot be uncovered — the original letters are permanently replaced, so there is nothing hidden underneath to reveal or decode. Image or PDF redaction can sometimes be reversed if the original text or pixels still exist beneath a drawn-on black box, or if blur/pixelation was used instead of deletion. Properly done redaction removes the underlying data, so there is nothing to recover."
+      "text": "It depends on how it was redacted. Text redacted with Unicode block characters (like █) cannot be uncovered — the original letters are permanently replaced, so there is nothing hidden underneath to reveal or decode. Image or PDF redaction can sometimes be reversed if the original text or pixels still exist beneath a drawn-on black box, or if blur/pixelation was used instead of deletion. Properly done redaction removes the underlying data, so there is nothing to recover.",
+      "author": {
+        "@id": "https://ultratextgen.com/#organization"
+      },
+      "datePublished": "2026-06-29"
     }
-  }
+  },
+  "image": "https://ultratextgen.com/assets/og/answers-how-to-uncover-redacted-text.png"
 }
 </script>
 
@@ -59,22 +71,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@type": "Question",
       "name": "Can you uncover text redacted with █ block characters?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Block-character redaction permanently replaces each letter, so there is no hidden layer to highlight, decode, or unredact. The original text is not in the output anymore." }
+      "author": {
+        "@type": "Organization",
+        "@id": "https://ultratextgen.com/#organization",
+        "name": "UltraTextGen",
+        "url": "https://ultratextgen.com/"
+      },
+      "datePublished": "2026-06-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Block-character redaction permanently replaces each letter, so there is no hidden layer to highlight, decode, or unredact. The original text is not in the output anymore.",
+        "author": {
+          "@id": "https://ultratextgen.com/#organization"
+        },
+        "datePublished": "2026-06-29"
+      }
     },
     {
       "@type": "Question",
       "name": "Can redacted text in an image or PDF be revealed?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. If a black box was drawn on top but the original pixels or selectable text remain underneath, the redaction can be reversed. Blur and pixelation are especially weak. Redaction is only safe when the underlying data is actually deleted, not merely covered." }
+      "author": {
+        "@id": "https://ultratextgen.com/#organization"
+      },
+      "datePublished": "2026-06-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes. If a black box was drawn on top but the original pixels or selectable text remain underneath, the redaction can be reversed. Blur and pixelation are especially weak. Redaction is only safe when the underlying data is actually deleted, not merely covered.",
+        "author": {
+          "@id": "https://ultratextgen.com/#organization"
+        },
+        "datePublished": "2026-06-29"
+      }
     },
     {
       "@type": "Question",
       "name": "How do I black out text so it can never be uncovered?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Replace the words with block characters before you share, so the original text is gone — for example using a Unicode redacted text generator. For documents, use a real redaction tool that removes the underlying text, then export a flattened copy. Never rely on a black rectangle drawn over selectable text or on blur." }
+      "author": {
+        "@id": "https://ultratextgen.com/#organization"
+      },
+      "datePublished": "2026-06-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Replace the words with block characters before you share, so the original text is gone — for example using a Unicode redacted text generator. For documents, use a real redaction tool that removes the underlying text, then export a flattened copy. Never rely on a black rectangle drawn over selectable text or on blur.",
+        "author": {
+          "@id": "https://ultratextgen.com/#organization"
+        },
+        "datePublished": "2026-06-29"
+      }
     },
     {
       "@type": "Question",
       "name": "How does SCP-style redacted text that reveals on click work?",
-      "acceptedAnswer": { "@type": "Answer", "text": "That's a different technique from permanent Unicode redaction. SCP Wiki entries and Discord/Telegram spoiler tags style text the same color as its background, so it looks blacked out until a reader selects or taps it — designed to be reversible on purpose. Permanent Unicode-block redaction, the kind covered on this page, cannot be reversed by anyone, including the person who made it." }
+      "author": {
+        "@id": "https://ultratextgen.com/#organization"
+      },
+      "datePublished": "2026-06-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's a different technique from permanent Unicode redaction. SCP Wiki entries and Discord/Telegram spoiler tags style text the same color as its background, so it looks blacked out until a reader selects or taps it — designed to be reversible on purpose. Permanent Unicode-block redaction, the kind covered on this page, cannot be reversed by anyone, including the person who made it.",
+        "author": {
+          "@id": "https://ultratextgen.com/#organization"
+        },
+        "datePublished": "2026-06-29"
+      }
     }
   ]
 }

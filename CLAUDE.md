@@ -112,6 +112,40 @@ Rule of thumb: if the value is "resolve one question in seconds," it's an **answ
 If the value is "understand a topic / build authority," it's a **guide**. A guide may
 bundle many sub-questions; an answer stays tightly scoped to one.
 
+### Answer pages live under `answers/` only
+
+If a page's content is answer-shaped (per the table above — a sharp question with a
+direct, zero-click resolution), it goes under `/answers/`. Do not build the same
+answer-shaped content again under a platform directory (`/discord/`, `/tiktok/`,
+`/youtube/`, etc.) or any other section, even when the query is platform-specific
+("what font does TikTok use"). One query, one page, in the section that owns that
+content type — this is the same Rule 1 as the Hub vs Spoke section above, applied to
+content-type placement instead of hub/spoke placement.
+
+This is a **default, not an absolute** — a platform hub page is allowed to *discuss*
+a topic its own answer page covers, as long as it stays a one-line pointer per Hub
+vs Spoke Rule 3 ("to format messages, see the guide"), and a genuinely different
+platform-specific angle (not just the same Q&A restated) can justify its own page.
+Any exception must be **explicit and discussed** — argued and agreed before the page
+ships, the same bar the Localization Workflow's English-Parent Rule sets for locale
+pages — not decided unilaterally because a page "already lives here."
+
+**Case study (2026-07-21):** `tiktok/what-font-does-tiktok-use/` and
+`youtube/what-font-does-youtube-use/` were built as full answer-shaped pages
+(same "what font does X use" question, `QAPage`-style structure, near-identical
+title/meta to their `answers/` counterparts) directly under the platform
+directories, with no discussion or documented exception. Both pairs cannibalized:
+GSC (last 3 months) showed `answers/what-font-does-tiktok-use/` outperforming its
+`tiktok/` twin on the metric that matters (4 clicks vs. 1, on similar impressions),
+while neither `youtube/what-font-does-youtube-use/` page converted at all (0 clicks
+on both). Fix: retired both platform-namespaced pages with a 301 to their
+`answers/` canonical (`_redirects`), first porting the one piece of content unique
+to each (free lookalike-font names — Montserrat/Poppins for TikTok, Inter/Manrope/
+Montserrat for YouTube) into the surviving `answers/` page so it wasn't lost, and
+repointed every internal link (`tiktok/index.html`, `tiktok/name-generator/`,
+`youtube/index.html`, `youtube/name-generator/`) straight at the `answers/` URL
+instead of the now-retired one.
+
 ---
 
 ## Content Types: Library vs Symbol
@@ -647,6 +681,123 @@ other locale homepages) for the same failure mode while you're in there.
 
 ---
 
+## Translation Parity — keeping EN and locale pages in sync after creation
+
+The English-Parent Rule above governs *creation*: does a live EN parent exist
+before a locale page gets built. It says nothing about what happens *after*
+both exist — when the EN page (or a locale page) gets edited later and its
+sibling doesn't. That gap is real and has already shipped drift: a batch of
+Gulf currency `symbol/` pages (`dirham-sign`, `omani-rial-sign`,
+`saudi-riyal-sign`) was added to `library/currency-symbols/` across two PRs
+(2026-07-22) with zero of its 9 locale siblings (including `ar/` — arguably
+the highest-value locale for Gulf currencies) touched in either PR. Nobody
+was watching for it because nothing was watching for it.
+
+**The rule:** when you edit a page that has an hreflang cluster (an EN page
+with locale translations, or a locale page with an EN parent), check whether
+the edit is structural — a new internal link, a new FAQ item, a new section,
+a new symbol tile — not just wording. If it is, either update the sibling(s)
+in the same change, or record why they're allowed to diverge. This runs
+**both directions** — EN changed without the locale catching up, or a locale
+changed without EN (or its other locale siblings) catching up — the tooling
+below does not care which side moved first.
+
+**EN and a locale page are allowed to differ** — translators make real
+editorial calls (a different related-links set, a regionally relevant FAQ)
+and not every EN addition needs a translation the day it ships. But per the
+user's standing requirement, that divergence must be an **explicit, agreed
+decision**, not silence. Record it in
+`data/translation_parity_exceptions.json` (reason + date) rather than just
+leaving the sibling stale — see that file's own `_readme` field for the
+entry shape.
+
+### Tooling
+
+- **`node scripts/audit-translation-parity.js`** (`npm run
+  audit:translation-parity`) — point-in-time sweep of every hreflang cluster
+  site-wide. Diffs a language-independent "structural fingerprint" (internal
+  content links — resolved through the hreflang map so a locale-native link
+  and its EN equivalent count as a match, not a diff — plus FAQ/`<h2>`/
+  `.symbol-tile` counts) between EN and each locale sibling. Default output
+  leads with the highest-signal view: recent EN `feat:` commits whose locale
+  siblings weren't touched afterward — the shape of the currency-symbols
+  case above. Pass `--full` for the complete per-pair dump, `--json <path>`
+  for raw data, `--report <path>.md` to save a snapshot. This is a discovery
+  tool for triage, not a blocking check — the existing site has a real
+  backlog of drift and this will not (and should not) go to zero in one
+  pass.
+- **`node scripts/check-translation-parity.js`** (`npm run
+  check:translation-parity`) — the enforcing half, wired into
+  `.github/workflows/validate.yml` as a required CI check on every PR (same
+  continue-on-error-then-fail pattern as the hreflang/library/image
+  validators). Diffs the PR branch against its base, and for every changed
+  HTML page whose structural fingerprint actually moved, requires at least
+  one sibling in its hreflang cluster to have been touched in the same PR —
+  unless the pair is listed in `data/translation_parity_exceptions.json`.
+  Fails the PR otherwise, with the exact EN/locale file pair and the fix (sync
+  the sibling, or add a ledger entry). Byte-level edits that don't change
+  the fingerprint (typos, meta-description tweaks) never trigger it.
+- Both scripts share `scripts/lib/translation-clusters.js` (hreflang cluster
+  discovery) and `scripts/lib/content-fingerprint.js` (the fingerprint/diff
+  logic) — the audit and the enforcement gate must never define "changed" or
+  "cluster" differently, so that shared logic lives in one place.
+
+**Do not add an entry to `data/translation_parity_exceptions.json`
+unilaterally.** Every entry there is supposed to represent a real,
+discussed decision between you and the user — the same bar the English-
+Parent Rule sets for locale-first exceptions above. If `check-translation-
+parity.js` flags a pair, either sync it or raise the divergence with the
+user before recording it as intentional.
+
+---
+
+## New pages must ship with their hero/OG/Twitter art in the same change
+
+A new or edited page's `og:image`, `twitter:image`, and (if it declares one)
+hero figure must point at files that exist on disk **in the same commit/PR**
+that ships the page — never a follow-up "generate the missing art" pass.
+Google crawls new pages within hours of the sitemap picking them up (see
+`generate-site-art.py`/`wire-site-art.py`'s standard pipeline); if the art
+isn't there yet, Googlebot's first fetch of that image 404s, and that broken
+first impression is recorded before any later fix lands. This has been a
+real, recurring pattern in this repo's own history (see
+`docs/image-seo-fixes.md` and the several past "GSC 404 cleanup" commits
+that backfilled hero/OG art for pages already shipped) — most recently
+diagnosed from live GSC crawl-stats data in `ultratextgen-lab-`'s
+`gsc-technical-seo-leakage-audit-2026-07-24.md` §6.
+
+### Tooling — why there are two image-asset scripts, not one
+
+- **`scripts/check-image-assets.py`** (`npm run check:images`) — whole-site
+  audit. Requires every indexable page to have `og:image`, `twitter:image`,
+  a real hero file (if declared), **and** a Pinterest pin. The site carries a
+  large, deliberately-paced Pinterest-pin backlog (see
+  `docs/pinterest-pin-generation.md`), so this script is close to always
+  reporting failures site-wide — useful as a dashboard/audit, but it can
+  never function as a per-PR merge gate without being permanently red
+  regardless of what any given PR touches. Its CI step is intentionally
+  informational only (see `.github/workflows/validate.yml`'s comments).
+- **`scripts/check-new-page-image-assets.py`** (`npm run
+  check:new-page-images`) — the actual gate, same architecture as
+  `check-translation-parity.js`: diffs the PR against its base and checks
+  **only** the HTML files this branch actually adds or changes, for
+  `og:image`/`twitter:image`/hero (not Pinterest pins — intentionally out of
+  scope here, see above). Because it's diff-scoped, pre-existing site-wide
+  backlog can never make it fail — only a genuinely new problem this PR
+  introduces can. This is wired into `.github/workflows/validate.yml` as a
+  gating step.
+
+**If this keeps recurring anyway, the gap is branch-protection configuration,
+not the script.** `validate.yml`'s job reports a status per PR, but whether
+GitHub actually blocks merging on it depends on whether "Validate Site" (or
+its individual checks) is configured as a **required status check** under
+Settings → Branches for the target branch — that's a repository setting, not
+something in this repo's tracked files, and it was not verified as part of
+adding this tooling. If new pages are still shipping without their art after
+this, check that setting before assuming the scripts are wrong.
+
+---
+
 ## Build & Development
 
 ### Running locally
@@ -731,6 +882,17 @@ Do not add a test framework unless explicitly requested.
   `/library/`, `/usecase/`, `/guide/`, or platform page when a locale-native
   equivalent already exists — check before adding or editing any locale
   page's outbound link. See "Locale-native internal linking" above.
+- Do not build an answer-shaped page (a sharp question, zero-click resolution)
+  under a platform directory or any section other than `answers/` without an
+  explicit, discussed exception. See "Answer pages live under `answers/` only"
+  above — the `tiktok/`/`youtube/` "what font does X use" case study is exactly
+  this mistake, and it cannibalized both pairs.
+- Do not edit a page that's part of an hreflang cluster (EN + locale
+  translations) without checking whether the edit is structural and, if so,
+  syncing the sibling(s) or recording an explicit exception in
+  `data/translation_parity_exceptions.json`. See "Translation Parity" above
+  — this runs both directions (EN changed without locale catching up, or
+  vice versa) and `scripts/check-translation-parity.js` enforces it in CI.
 - Do not add npm packages that run in the browser
 - Do not introduce a JavaScript framework or bundler
 - Do not generate images server-side or with an image-processing library. Visual/printable
@@ -750,6 +912,11 @@ Do not add a test framework unless explicitly requested.
 - Do not add inline `<style>` blocks to HTML pages — add to `style.css`
 - Do not skip Google Tag Manager snippets when creating new pages
 - Do not skip JSON-LD structured data when creating new pages
+- Do not ship a new or edited page's HTML before its hero/OG/Twitter art is
+  generated and committed in the same change, and don't rely on a later
+  cleanup pass to backfill it — see "New pages must ship with their hero/OG/
+  Twitter art in the same change" above. Run `npm run check:new-page-images`
+  before opening the PR.
 - Do not upload (or hand-author) a pin CSV in any schema other than Pinterest's.
   The internal inventory CSVs (`data/*_pins.csv`) are NOT importable. Only the
   `data/*_upload.csv` files are — generated solely via `scripts/pinterest_csv.py`

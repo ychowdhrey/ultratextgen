@@ -1,0 +1,122 @@
+{
+  "slug": "simbol-minecraft",
+  "lang": "id",
+  "title": "Simbol Minecraft ► ▓ ⚔ — Salin & Tempel untuk Chat & Server (2026)",
+  "meta_description": "Simbol Minecraft buat disalin & tempel ke chat, MOTD, dan nama server — panah, blok shading ░▒▓, garis box-drawing, dan ikon gaya game.",
+  "canonical": "https://ultratextgen.com/id/library/simbol-minecraft/",
+  "breadcrumb": "Simbol Minecraft",
+  "hero_h1": "Simbol Minecraft ►",
+  "hero_tagline": "Kurung chat, blok shading MOTD, garis box-drawing, dan ikon bertema game yang tampil di font bawaan Minecraft. Klik simbol mana pun buat langsung menyalin.",
+  "intro": "Font bawaan Minecraft nampilin lumayan banyak Unicode, makanya server suka menghias MOTD, rank chat, hologram, dan layar kick pakai karakter kayak ►, ▌, dan ☠. Koleksi ini ngumpulin simbol Minecraft yang beneran muncul stabil di chat, entri server list, baris scoreboard, dan config plugin — dari blok shading buat banner MOTD sampai ikon pickaxe dan pedang buat prefix rank. Tempel ke plugin MOTD berbasis server.properties, format chat Essentials, atau item yang di-rename pakai anvil.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/minecraft-symbols/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/minecraft-symbols/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-minecraft/" }
+  ],
+  "sections": [
+    {
+      "id": "chat-rank-brackets",
+      "label": "Kurung Rank",
+      "h2": "Simbol Kurung Chat & Rank",
+      "intro": "Kepala panah dan kurung ornamen buat tag rank gaya [Admin] dan prefix chat.",
+      "symbols": [
+        { "char": "►", "label": "Penunjuk Kanan Hitam" },
+        { "char": "◄", "label": "Penunjuk Kiri Hitam" },
+        { "char": "▶", "label": "Segitiga Kanan Hitam" },
+        { "char": "◀", "label": "Segitiga Kiri Hitam" },
+        { "char": "«", "label": "Tanda Kutip Sudut Ganda Kiri" },
+        { "char": "»", "label": "Tanda Kutip Sudut Ganda Kanan" },
+        { "char": "❰", "label": "Ornamen Kurung Sudut Kiri Tebal" },
+        { "char": "❱", "label": "Ornamen Kurung Sudut Kanan Tebal" },
+        { "char": "〘", "label": "Kurung Cangkang Kura-Kura Putih Kiri" },
+        { "char": "〙", "label": "Kurung Cangkang Kura-Kura Putih Kanan" }
+      ]
+    },
+    {
+      "id": "motd-blocks",
+      "label": "Blok MOTD",
+      "h2": "Blok Shading Server List & MOTD",
+      "intro": "Elemen blok solid dan shading buat banner MOTD, progress bar, dan pembatas gaya pixel.",
+      "symbols": [
+        { "char": "█", "label": "Blok Penuh" },
+        { "char": "▓", "label": "Shading Gelap" },
+        { "char": "▒", "label": "Shading Sedang" },
+        { "char": "░", "label": "Shading Terang" },
+        { "char": "▌", "label": "Setengah Blok Kiri" },
+        { "char": "▐", "label": "Setengah Blok Kanan" },
+        { "char": "■", "label": "Kotak Hitam" },
+        { "char": "□", "label": "Kotak Putih" },
+        { "char": "▪", "label": "Kotak Kecil Hitam" },
+        { "char": "▫", "label": "Kotak Kecil Putih" },
+        { "char": "◆", "label": "Diamond Hitam" },
+        { "char": "◇", "label": "Diamond Putih" }
+      ]
+    },
+    {
+      "id": "box-drawing-ui",
+      "label": "Garis",
+      "h2": "Garis Box-Drawing Buat Chat UI",
+      "intro": "Potongan garis dan sudut buat ngebingkai menu /help, panel hologram, dan border scoreboard.",
+      "symbols": [
+        { "char": "─", "label": "Garis Horizontal Ringan" },
+        { "char": "│", "label": "Garis Vertikal Ringan" },
+        { "char": "┌", "label": "Sudut Kiri Atas Ringan" },
+        { "char": "┐", "label": "Sudut Kanan Atas Ringan" },
+        { "char": "└", "label": "Sudut Kiri Bawah Ringan" },
+        { "char": "┘", "label": "Sudut Kanan Bawah Ringan" },
+        { "char": "╔", "label": "Sudut Kiri Atas Ganda" },
+        { "char": "╗", "label": "Sudut Kanan Atas Ganda" },
+        { "char": "╚", "label": "Sudut Kiri Bawah Ganda" },
+        { "char": "╝", "label": "Sudut Kanan Bawah Ganda" },
+        { "char": "═", "label": "Garis Horizontal Ganda" },
+        { "char": "║", "label": "Garis Vertikal Ganda" }
+      ]
+    },
+    {
+      "id": "game-icons",
+      "label": "Ikon Game",
+      "h2": "Ikon Bertema Game",
+      "intro": "Pickaxe, pedang, hati, dan ramuan — ikon yang matching sama tool dan HUD Minecraft.",
+      "symbols": [
+        { "char": "⛏", "label": "Pick (Pickaxe)" },
+        { "char": "⚒", "label": "Palu & Pick" },
+        { "char": "⚔", "label": "Pedang Bersilang" },
+        { "char": "🏹", "label": "Busur & Panah" },
+        { "char": "🛡", "label": "Perisai" },
+        { "char": "☠", "label": "Tengkorak & Tulang Silang" },
+        { "char": "❤", "label": "Hati Hitam Tebal (Health)" },
+        { "char": "⚗", "label": "Alembic (Brewing Stand)" },
+        { "char": "💎", "label": "Batu Permata (Diamond)" },
+        { "char": "✦", "label": "Bintang Empat Ujung Hitam (XP Sparkle)" },
+        { "char": "🔥", "label": "Api" }
+      ]
+    },
+    {
+      "id": "arrows-markers",
+      "label": "Penanda",
+      "h2": "Panah, Centang & Penanda Peringatan",
+      "intro": "Panah penunjuk dan tanda status buat tutorial, voting, dan broadcast peringatan.",
+      "symbols": [
+        { "char": "➤", "label": "Kepala Panah Kanan Hitam" },
+        { "char": "➜", "label": "Panah Kanan Ujung Bulat Tebal" },
+        { "char": "→", "label": "Panah Kanan" },
+        { "char": "⇨", "label": "Panah Putih Kanan" },
+        { "char": "☛", "label": "Telunjuk Penunjuk Kanan Hitam" },
+        { "char": "✔", "label": "Centang Tebal" },
+        { "char": "✘", "label": "Silang Tebal" },
+        { "char": "⚠", "label": "Tanda Peringatan" }
+      ]
+    }
+  ],
+  "cta": "Pakai UltraTextGen buat ubah nama jadi 100+ gaya font Unicode — bold, kursif, gotik — gratis dan instan.",
+  "related": [
+    { "href": "/id/library/simbol-roblox/", "title": "Simbol Roblox", "desc": "Simbol buat display name dan bio Roblox." },
+    { "href": "/id/library/simbol-pubg/", "title": "Simbol PUBG & BGMI", "desc": "Simbol yang teruji lolos font PUBG Mobile & BGMI." },
+    { "href": "/id/library/simbol-fortnite/", "title": "Simbol Fortnite", "desc": "Senyum sweaty, kanji power, dan bintang clan tag." },
+    { "href": "/id/library/simbol-garis/", "title": "Simbol Garis & Pembatas", "desc": "Garis box-drawing dan pembatas buat teks dan bio." },
+    { "href": "/id/library/simbol-ff/", "title": "Simbol FF (Free Fire)", "desc": "Bingkai payung, mahkota, dan hiasan nickname Free Fire." }
+  ]
+}
