@@ -1,0 +1,9 @@
+# Cloudflare Pages asset-upload exclusions (gitignore-style syntax).
+# These files stay committed to git but are NOT deployed as static assets --
+# keeps the deployment under Cloudflare Pages' file-count limit.
+#
+# Pinterest pin-variant images: generated in bulk (12,000+ files) as a
+# build-only asset pool for the Pinterest bulk-CSV importer, not served by
+# the live site. Not needed live until an actual Pinterest upload pass,
+# which points at a GitHub raw URL instead (see build_pinterest_upload.py).
+assets/pinterest/*--v*.png
