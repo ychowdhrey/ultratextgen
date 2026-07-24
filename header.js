@@ -117,6 +117,18 @@
       events: { label: "Acara", href: "/events/" },
       search: "Cari gaya font…",
       darkMode: "Alihkan mode gelap"
+    },
+    pl: {
+      home: "/pl/",
+      guide: { label: "Poradniki", href: "/pl/guide/" },
+      answers: { label: "Odpowiedzi", href: "/answers/" },
+      category: { label: "Kategorie", href: "/pl/category/" },
+      usecase: { label: "Zastosowania", href: "/pl/usecase/" },
+      library: { label: "Biblioteka", href: "/pl/library/" },
+      printables: { label: "Do druku", href: "/pl/do-druku/" },
+      events: { label: "Wydarzenia", href: "/events/" },
+      search: "Szukaj stylów czcionek…",
+      darkMode: "Przełącz tryb ciemny"
     }
   };
 
