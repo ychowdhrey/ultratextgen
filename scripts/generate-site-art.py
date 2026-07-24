@@ -1010,6 +1010,29 @@ def m_heart(p, accent=PURPLE):
     <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/>"""
 
 
+def m_bunny(p, accent=PURPLE):
+    """A rabbit face with long ears — Easter content."""
+    return f"""
+    <ellipse cx="150" cy="90" rx="20" ry="62" fill="url(#g{p})"/>
+    <ellipse cx="210" cy="90" rx="20" ry="62" fill="url(#g{p})"/>
+    <ellipse cx="150" cy="94" rx="9" ry="42" fill="#fbcfe8" opacity="0.6"/>
+    <ellipse cx="210" cy="94" rx="9" ry="42" fill="#fbcfe8" opacity="0.6"/>
+    <circle cx="180" cy="210" r="78" fill="url(#g{p})"/>
+    <circle cx="155" cy="195" r="9" fill="{PANEL}"/>
+    <circle cx="205" cy="195" r="9" fill="{PANEL}"/>
+    <ellipse cx="180" cy="222" rx="10" ry="7" fill="{PANEL}"/>"""
+
+
+def m_pie(p, accent=PURPLE):
+    """A sliced pie on a plate — Thanksgiving content."""
+    return f"""
+    <circle cx="180" cy="200" r="95" fill="url(#g{p})"/>
+    <circle cx="180" cy="200" r="95" fill="none" stroke="{PANEL}" stroke-width="6" opacity="0.5"/>
+    <path d="M180 200 L180 118 A82 82 0 0 1 251 241 Z" fill="{PANEL}" opacity="0.28"/>
+    <line x1="180" y1="200" x2="180" y2="118" stroke="{PANEL}" stroke-width="4" opacity="0.6"/>
+    <line x1="180" y1="200" x2="251" y2="241" stroke="{PANEL}" stroke-width="4" opacity="0.6"/>"""
+
+
 def m_thumb(p, accent=PURPLE):
     """A rounded thumbs-up badge — reaction/"Like"-themed content."""
     return f"""
@@ -2304,16 +2327,30 @@ for _l, _word in LETTER_WORD.items():
 PAGES.update({
 "learn-hub": ("Learn", "Stage-by-stage guides for handwriting & lettering",
     P(m_doc), K_PRINT),
+"learn-dot-to-dots": ("Dot-to-Dots & Pencil Control", "A progression guide from many dots to freehand",
+    P(m_typo, sample="•••", size=92, label="pencil control"), K_PRINT),
+"learn-coloring-and-fine-motor": ("Coloring Letters", "Fine motor skills through letter-shaped coloring",
+    P(m_typo, sample="Aa", size=92, label="fine motor"), K_PRINT),
 "learn-handwriting": ("Teaching Handwriting", "A practical, stage-by-stage guide — readiness to cursive",
     P(m_typo, sample="Aa", size=92, label="stage by stage"), K_PRINT),
 "learn-handwriting-when-to-start-handwriting": ("When to Start Handwriting", "Readiness signs that matter more than age",
     P(m_typo, sample="A?", size=92, label="readiness"), K_PRINT),
+"learn-handwriting-pre-writing-strokes": ("Pre-Writing Strokes", "The lines every letter is built from",
+    P(m_typo, sample="l○", size=92, label="pre-writing"), K_PRINT),
+"learn-handwriting-first-letters-uppercase": ("First Letters", "Why uppercase usually comes first",
+    P(m_typo, sample="Aa", size=92, label="first letters"), K_PRINT),
+"learn-handwriting-lowercase-and-reversals": ("Lowercase & Reversals", "Fixing b/d/p/q confusion",
+    P(m_typo, sample="bd", size=92, label="reversals"), K_PRINT),
 "learn-handwriting-stroke-order-and-start-dots": ("Stroke Order & Start Dots", "Why how you trace matters more than how much",
     P(m_typo, sample="1→", size=92, label="stroke order"), K_PRINT),
 "learn-handwriting-from-tracing-to-writing": ("From Tracing to Writing", "The 7-step fading ladder",
     P(m_typo, sample="Aa", size=92, label="7 levels"), K_PRINT),
+"learn-handwriting-name-writing": ("Name Writing", "The first word worth practicing",
+    P(m_typo, sample="Aa", size=92, label="name writing"), K_PRINT),
 "learn-handwriting-cursive-when-and-how": ("Cursive: When & How", "Letter families, lowercase first, joins throughout",
     P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive"), K_PRINT),
+"learn-handwriting-how-much-practice": ("How Much Practice?", "How much helps, and how to measure progress",
+    P(m_typo, sample="5m", size=92, label="practice & progress"), K_PRINT),
 })
 
 PAGES["printables-bubble-letters"] = (
@@ -2368,11 +2405,13 @@ PAGES.update({
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
+"events-easter": ("Easter Fonts & Emoji Generator", "Bunny, egg, and chick emoji for spring greetings", m_bunny, K_USE),
 "events-eid-mubarak": ("Eid Mubarak Text & Symbol Generator", "Crescent moon emoji and ready-made Eid phrases", m_crescent, K_USE),
 "events-fathers-day": ("Father's Day Message Generator", "Bold, rugged fonts for World's Best Dad messages", m_necktie, K_USE),
 "events-halloween": ("Halloween Fonts & Emoji Generator", "Pumpkin, ghost, and bat emoji for spooky greetings", m_pumpkin, K_USE),
 "events-mothers-day": ("Mother's Day Message Generator", "Warm cursive fonts for Happy Mother's Day messages", m_bouquet, K_USE),
 "events-new-year": ("New Year Countdown Text Generator", "Firework emoji and Happy New Year phrases to paste", m_firework, K_USE),
+"events-thanksgiving": ("Thanksgiving Fonts & Emoji Generator", "Turkey, pie, and autumn-leaf emoji for gratitude posts", m_pie, K_USE),
 "events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
 "printables-banner-maker": ("Printable Banner Maker", "One flag per letter, cut and strung to spell any word", m_banner, K_PRINT),
 "printables-block-letters": ("Printable Block Letters & Stencils", "Bold hollow A-Z & 0-9 stencils to trace, cut and use", P(m_letter_stencil, letter="B"), K_PRINT),
