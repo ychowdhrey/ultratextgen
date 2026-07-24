@@ -2,17 +2,28 @@ name: Validate Site
 
 # Required, blocking checks for structural correctness that must never merge
 # broken: hreflang reciprocity, /library/ and /symbol/ page structure,
-# per-page social/Pinterest image assets, and (new) translation parity —
-# an EN <-> locale content change introduced by this PR without its
-# sibling being updated. Each validator already exits non-zero on failure
-# (see scripts/audit-hreflang.js, scripts/validate_library_pages.py,
-# scripts/check-image-assets.py, scripts/check-translation-parity.js) —
-# this workflow is what actually wires that into CI so a PR can't merge
+# per-page social/Pinterest image assets, new/changed pages' image assets
+# specifically, and translation parity — an EN <-> locale content change
+# introduced by this PR without its sibling being updated. Each validator
+# already exits non-zero on failure (see scripts/audit-hreflang.js,
+# scripts/validate_library_pages.py, scripts/check-image-assets.py,
+# scripts/check-new-page-image-assets.py, scripts/check-translation-parity.js)
+# — this workflow is what actually wires that into CI so a PR can't merge
 # broken pages.
 #
-# All four run every time (continue-on-error on each step) so a single PR
-# shows every problem at once instead of stopping at the first failure; the
-# final step fails the job if any validator reported an error.
+# scripts/check-image-assets.py is a whole-site audit (also requires a
+# Pinterest pin per page) and the site carries a large, deliberately-paced
+# Pinterest-pin backlog — so its "failure" step below is informational, not
+# gating (see the step's own comment). scripts/check-new-page-image-assets.py
+# is the actual gate for this: diff-scoped to only the pages this PR adds or
+# changes, checking just og:image/twitter:image/hero (not Pinterest pins), so
+# pre-existing site-wide backlog can never make it permanently red. This
+# exists specifically to stop new pages shipping ahead of their hero/OG art —
+# see ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §6.
+#
+# All steps run every time (continue-on-error on each) so a single PR shows
+# every problem at once instead of stopping at the first failure; the final
+# step fails the job if any *gating* validator reported an error.
 
 on:
   pull_request:
@@ -56,10 +67,15 @@ jobs:
         continue-on-error: true
         run: python3 scripts/validate_library_pages.py | tee library-validate.log
 
-      - name: Run image asset check
+      - name: Run image asset check (whole-site audit, informational only)
         id: images
         continue-on-error: true
         run: npm run check:images | tee image-assets.log
+
+      - name: Run new-page image asset check
+        id: new_images
+        continue-on-error: true
+        run: npm run check:new-page-images -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee new-page-images.log
 
       - name: Run translation parity check
         id: parity
@@ -82,9 +98,14 @@ jobs:
             cat library-validate.log
             echo '```'
             echo ""
-            echo "### Image asset check — \`${{ steps.images.outcome }}\`"
+            echo "### Image asset check (whole-site audit, informational) — \`${{ steps.images.outcome }}\`"
             echo '```'
             cat image-assets.log
+            echo '```'
+            echo ""
+            echo "### New-page image asset check — \`${{ steps.new_images.outcome }}\`"
+            echo '```'
+            cat new-page-images.log
             echo '```'
             echo ""
             echo "### Translation parity check — \`${{ steps.parity.outcome }}\`"
@@ -93,8 +114,12 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Fail the job if any validator reported problems
-        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.images.outcome == 'failure' || steps.parity.outcome == 'failure'
+      - name: Fail the job if any gating validator reported problems
+        # steps.images (the whole-site audit) is deliberately excluded — see
+        # its step name/comment above: it's permanently informational because
+        # of the accepted Pinterest-pin backlog, not because failures there
+        # don't matter. steps.new_images is the actual gate for image assets.
+        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.parity.outcome == 'failure'
         run: |
-          echo "One or more validators failed — see the Summary tab above for details."
+          echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
