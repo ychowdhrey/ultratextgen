@@ -751,6 +751,53 @@ user before recording it as intentional.
 
 ---
 
+## New pages must ship with their hero/OG/Twitter art in the same change
+
+A new or edited page's `og:image`, `twitter:image`, and (if it declares one)
+hero figure must point at files that exist on disk **in the same commit/PR**
+that ships the page — never a follow-up "generate the missing art" pass.
+Google crawls new pages within hours of the sitemap picking them up (see
+`generate-site-art.py`/`wire-site-art.py`'s standard pipeline); if the art
+isn't there yet, Googlebot's first fetch of that image 404s, and that broken
+first impression is recorded before any later fix lands. This has been a
+real, recurring pattern in this repo's own history (see
+`docs/image-seo-fixes.md` and the several past "GSC 404 cleanup" commits
+that backfilled hero/OG art for pages already shipped) — most recently
+diagnosed from live GSC crawl-stats data in `ultratextgen-lab-`'s
+`gsc-technical-seo-leakage-audit-2026-07-24.md` §6.
+
+### Tooling — why there are two image-asset scripts, not one
+
+- **`scripts/check-image-assets.py`** (`npm run check:images`) — whole-site
+  audit. Requires every indexable page to have `og:image`, `twitter:image`,
+  a real hero file (if declared), **and** a Pinterest pin. The site carries a
+  large, deliberately-paced Pinterest-pin backlog (see
+  `docs/pinterest-pin-generation.md`), so this script is close to always
+  reporting failures site-wide — useful as a dashboard/audit, but it can
+  never function as a per-PR merge gate without being permanently red
+  regardless of what any given PR touches. Its CI step is intentionally
+  informational only (see `.github/workflows/validate.yml`'s comments).
+- **`scripts/check-new-page-image-assets.py`** (`npm run
+  check:new-page-images`) — the actual gate, same architecture as
+  `check-translation-parity.js`: diffs the PR against its base and checks
+  **only** the HTML files this branch actually adds or changes, for
+  `og:image`/`twitter:image`/hero (not Pinterest pins — intentionally out of
+  scope here, see above). Because it's diff-scoped, pre-existing site-wide
+  backlog can never make it fail — only a genuinely new problem this PR
+  introduces can. This is wired into `.github/workflows/validate.yml` as a
+  gating step.
+
+**If this keeps recurring anyway, the gap is branch-protection configuration,
+not the script.** `validate.yml`'s job reports a status per PR, but whether
+GitHub actually blocks merging on it depends on whether "Validate Site" (or
+its individual checks) is configured as a **required status check** under
+Settings → Branches for the target branch — that's a repository setting, not
+something in this repo's tracked files, and it was not verified as part of
+adding this tooling. If new pages are still shipping without their art after
+this, check that setting before assuming the scripts are wrong.
+
+---
+
 ## Build & Development
 
 ### Running locally
@@ -865,6 +912,11 @@ Do not add a test framework unless explicitly requested.
 - Do not add inline `<style>` blocks to HTML pages — add to `style.css`
 - Do not skip Google Tag Manager snippets when creating new pages
 - Do not skip JSON-LD structured data when creating new pages
+- Do not ship a new or edited page's HTML before its hero/OG/Twitter art is
+  generated and committed in the same change, and don't rely on a later
+  cleanup pass to backfill it — see "New pages must ship with their hero/OG/
+  Twitter art in the same change" above. Run `npm run check:new-page-images`
+  before opening the PR.
 - Do not upload (or hand-author) a pin CSV in any schema other than Pinterest's.
   The internal inventory CSVs (`data/*_pins.csv`) are NOT importable. Only the
   `data/*_upload.csv` files are — generated solely via `scripts/pinterest_csv.py`

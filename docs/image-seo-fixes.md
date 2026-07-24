@@ -271,3 +271,23 @@ Fix: `spanned()` in `generate-site-art.py` now runs Arabic text through
 site is untouched. `hi-usecase-emoji-anuvadak` also gained its own branded
 card in the same pass — it had been left on the generic English fallback
 even though Hindi was never actually affected by this bug.
+
+---
+
+## 10. Per-PR gate added for new pages specifically (2026-07-24)
+
+§1's original problem (duplicate images) was fixed; a different, ongoing one
+surfaced from live GSC Crawl Stats data (`ultratextgen-lab-`'s
+`gsc-technical-seo-leakage-audit-2026-07-24.md` §6): new pages have a
+recurring habit of shipping before their `og:image`/hero art is generated and
+committed, so Google's first crawl of a fresh batch of pages 404s on the
+referenced image before a later cleanup pass lands. `scripts/check-image-
+assets.py` (this doc's original CI guard) can't catch this at PR time — it
+scans the whole site including the accepted, paced Pinterest-pin backlog, so
+it's effectively always red regardless of what any given PR touches.
+
+Added `scripts/check-new-page-image-assets.py`, diff-scoped to only the pages
+a PR actually adds or changes (og:image/twitter:image/hero only, not Pinterest
+pins), wired into `.github/workflows/validate.yml` as the real gate. See
+CLAUDE.md's "New pages must ship with their hero/OG/Twitter art in the same
+change" section for the full rationale and tooling split.
