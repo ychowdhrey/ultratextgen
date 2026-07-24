@@ -156,8 +156,20 @@ for (const rel of changedFiles) {
 
     if (hasException(enUrl, localeUrl)) continue;
 
-    const enRel = enUrl === rec.canonical ? rec.rel : siblingRec.rel;
-    const localeRel = enUrl === rec.canonical ? siblingRec.rel : rec.rel;
+    // Look up each side's file path from its OWN url record — not from
+    // whichever cluster member happened to be first in iteration order.
+    // (Bug fixed 2026-07-24: this used to fall back to `rec`/`siblingRec`
+    // positionally, which only resolved to the real EN file when the EN
+    // entry happened to be the first member visited for a given `rec`;
+    // for any other iteration order it silently compared against the
+    // wrong locale's path and could pass a pair that was never actually
+    // checked. See the library/special-characters (en/ar/ja/ko/ru/th)
+    // cluster for the case that surfaced it.)
+    const enRec = byUrl.get(enUrl);
+    const localeRec = byUrl.get(localeUrl);
+    if (!enRec || !localeRec) continue; // headless/broken — audit-hreflang.js's job
+    const enRel = enRec.rel;
+    const localeRel = localeRec.rel;
 
     if (changedSet.has(enRel) && changedSet.has(localeRel)) continue; // both sides touched — presumed synced
 
