@@ -6,6 +6,18 @@
       "localeUrl": "https://ultratextgen.com/zh-tw/usecase/youxi-mingzi-fuhao/",
       "reason": "zh-TW page's 2026-07-23 expansion (gendered/role-based ready-made names, deepened rename walkthrough, generic 遊戲名字/遊戲id/暱稱 FAQ coverage) is entirely specific to 傳說對決 (Arena of Valor), a Taiwan/SEA-regional MOBA, driven by TW-specific competitor and search-demand research. The EN parent (usecase/stylish-name) and its other locale siblings (hi/usecase/stylish-naam-generator, ar/zakhrafa) serve a generic nickname-decoration audience with no independently confirmed Arena-of-Valor demand. Discussed and agreed with the user 2026-07-23 rather than syncing unresearched game-specific content into those markets (same standard applied to the ML per-locale rollout decision).",
       "agreed": "2026-07-23"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/es/symbol/",
+      "reason": "es/symbol/ and id/symbol/ (see next entry) gained compare-card sections for 143 pages built 2026-07-24 to close the ES/ID symbol/ batch gap (both locales were far behind the de/fr/it/pt/tr 77-page batch). symbol/index.html (EN) already lists all 104 EN symbol pages as compare-cards and needs no change — the locale hubs were catching up to an already-complete EN state, not diverging from it. Flagged to the user for review rather than silently resolved, since CLAUDE.md requires discussion before this file is touched; verified mechanically (EN card count === EN page count, unchanged) rather than assumed.",
+      "agreed": "2026-07-24"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/id/symbol/",
+      "reason": "Same case as the es/symbol/ entry above — id/symbol/ gained compare-cards for the same 143-page batch (75 of them Indonesian). EN needs no change; already complete. Flagged to the user for review rather than silently resolved.",
+      "agreed": "2026-07-24"
     }
   ]
 }
