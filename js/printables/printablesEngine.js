@@ -785,6 +785,20 @@
     }, "image/png");
   }
 
+  // Small, low-contrast site credit near the bottom edge — the same
+  // sheet-like-printable convention used elsewhere in this engine (print
+  // titles, other PNG exports). Not drawn for RENDER === "glyph" (cursive/
+  // calligraphy pages): those are typed-word art the visitor downloads to
+  // use as-is, not a practice/coloring sheet, so they stay clean by design.
+  function drawCredit(ctx, w, h) {
+    ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
+    if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
+    ctx.font = "22px " + FONT;
+    ctx.fillStyle = "#aeb4c0";
+    ctx.fillText("ultratextgen.com", w / 2, h - 24);
+  }
+
   // Single character -> square PNG.
   function letterPNG(ch) {
     withFont(() => {
@@ -799,6 +813,7 @@
         // box edges (e.g. a wide M/W) don't clip against the canvas edge.
         const pad = Math.round(size * 0.0875);
         drawDotWordCanvas(ctx, ch.toUpperCase(), dotPageState.level, { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false, dotPageState.numbers);
+        drawCredit(ctx, size, size);
         downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + "-" + dotPageState.level + (dotPageState.numbers ? "" : "-no-numbers") + ".png");
         return;
       }
@@ -808,17 +823,18 @@
       const glyph = RENDER === "glyph"
         ? (/[0-9]/.test(ch) ? renderGlyph(ch.toUpperCase()) : (renderGlyph(ch.toUpperCase()) + renderGlyph(ch.toLowerCase())))
         : ch;
-      ctx.font = "700 " + Math.round(size * (RENDER === "glyph" ? 0.4 : 0.74)) + "px " + FONT;
+      ctx.font = "700 " + Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66)) + "px " + FONT;
       if (RENDER === "outline") {
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(glyph, size / 2, size * 0.54);
+        ctx.fillText(glyph, size / 2, size * 0.5);
         ctx.lineWidth = Math.round(size * 0.045);
         ctx.strokeStyle = INK;
-        ctx.strokeText(glyph, size / 2, size * 0.54);
+        ctx.strokeText(glyph, size / 2, size * 0.5);
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
       }
+      if (RENDER !== "glyph") drawCredit(ctx, size, size);
       downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png");
     });
   }
@@ -859,6 +875,7 @@
         ctx.fillStyle = INK;
         ctx.fillText(out, width / 2, height * 0.52);
       }
+      if (RENDER !== "glyph") drawCredit(ctx, width, height);
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png");
     });
   }
