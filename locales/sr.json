@@ -21,7 +21,92 @@
   },
   "ui": {
     "placeholder": "Upiši tekst...",
-    "advertisement": "Oglas"
+    "advertisement": "Oglas",
+    "categoryTabs": {
+      "popular": "Popularno",
+      "bold-fonts": "Podebljano",
+      "italic-fonts": "Kurziv",
+      "bubble-fonts": "Mehurići",
+      "cursive-fonts": "Rukopis",
+      "gothic-fonts": "Gotika",
+      "strikethrough-text": "Precrtano",
+      "underline-text": "Podvučeno",
+      "small-text": "Mali tekst",
+      "cute-fonts": "Slatko",
+      "aesthetic-fonts": "Estetsko",
+      "upside-down-text": "Naopako",
+      "text-decorator": "Ukrašavanje teksta",
+      "classified": "Cenzurisano / Tajno",
+      "fullwidth-fonts": "Puna širina",
+      "faux-fonts": "Lažne azbuke",
+      "ancient-fonts": "Drevno i rune",
+      "emoji-letter-fonts": "Emoji slova",
+      "novelty-fonts": "Neobično"
+    },
+    "scopeControl": {
+      "label": "Primeni stil na",
+      "ariaLabel": "Odaberi koliko teksta želiš da stilizuješ",
+      "whole": "Ceo tekst",
+      "wholeTitle": "Stilizuje svaki red tvog teksta.",
+      "firstLine": "Samo prvi red",
+      "firstLineTag": "za objave",
+      "firstLineTitle": "Stilizuje samo prvi red (tvoj naslov ili udicu) i ostatak ostavlja kao običan, čitljiv tekst — idealno za objave na društvenim mrežama.",
+      "share": "Podeli",
+      "shareTitle": "Podeli link koji ponovo otvara ovu stranicu sa već unetim tekstom",
+      "linkCopied": "Link kopiran"
+    },
+    "safeMode": {
+      "label": "Bezbednost lepljenja",
+      "ariaLabel": "Proveri koji se stilovi ispravno prikazuju na tuđim uređajima",
+      "toggleLabel": "Bezbedan režim",
+      "hint": "Označava stilove koji se na starijim telefonima drugih ljudi mogu prikazati kao kvadratići (▯)."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Nekima se može prikazati kao kvadratići",
+      "boxesWarningTitle": "Ovaj stil koristi retke Unicode znakove koje neki telefoni i stariji uređaji nemaju. Osobi kojoj zalepiš tekst može se prikazati kao kvadratići (▯). Ako tvoja publika možda koristi starije uređaje, odaberi jednostavniji ili šire podržan stil.",
+      "emojiWarning": "⚠ Koristi emodžije — može se razlikovati na starijim uređajima",
+      "emojiWarningTitle": "Ovaj stil sadrži emodžije. Emodžiji se ispravno prikazuju na modernim uređajima, ali na vrlo starim telefonima mogu izgledati drugačije ili se prikazati kao kvadratići.",
+      "modernDevices": "Ispravno se prikazuje na modernim uređajima",
+      "modernDevicesTitle": "Ova stilizovana Unicode slova prikazuju se na svim aktuelnim telefonima i računarima. Na vrlo starom Androidu (otprilike pre 2016.) ili sa minimalnim sistemskim fontovima, neki znakovi i dalje se mogu prikazati kao kvadratići (▯). Isprobaj prvo ako tvoja publika možda koristi starije uređaje.",
+      "rendersEverywhere": "✓ Ispravno se prikazuje svuda",
+      "rendersEverywhereTitle": "Ovaj stil je običan tekst — ispravno se prikazuje svuda, bez rizika od kvadratića na bilo kom uređaju.",
+      "deviceWarning": "⚠ Možda se neće prikazati na tvom uređaju",
+      "deviceWarningTitle": "Fontovi tvog uređaja ne mogu da prikažu ovaj stil — može se prikazati kao kvadratići (□). Na drugim uređajima ipak može izgledati ispravno.",
+      "safeAnywhere": "✓ Bezbedno svuda",
+      "safeAnywhereTitle": "Prikazuje se na svim glavnim platformama. Napomena: čitači ekrana mogu izgovoriti stilizovana slova jedno po jedno, pa glavni tekst zadrži običnim.",
+      "worksBestOn": "⚠ Najbolje radi na {platforms}",
+      "worksBestOnTitle": "Najbolje radi na: {platforms}. Druge platforme ga mogu ukloniti ili prikazati pogrešno — isprobaj pre objave."
+    },
+    "savedStyles": {
+      "ariaLabel": "Tvoji sačuvani stilovi",
+      "heading": "Tvoji sačuvani stilovi",
+      "clearAll": "Obriši sve",
+      "hint": "Sačuvano na ovom uređaju — čekaće te ovde kad se vratiš."
+    },
+    "textStats": {
+      "wordSingular": "1 reč",
+      "wordPlural": "{n} reči",
+      "charSingular": "1 znak",
+      "charPlural": "{n} znakova"
+    },
+    "decorationsNone": "Nijedan",
+    "categoryTabsToggle": {
+      "more": "Više",
+      "less": "Manje"
+    },
+    "demoText": "Dobrodošao u UltraTextGen.\nUpiši bilo šta. Pretvori to u ultra.",
+    "copyButtons": {
+      "copy": "Kopiraj",
+      "copied": "✓ Kopirano",
+      "failed": "✗ Neuspelo",
+      "copyTitle": "Kopiraj u privremenu memoriju",
+      "save": "Sačuvaj",
+      "saved": "Sačuvano",
+      "saveTitle": "Sačuvaj ovaj stil",
+      "unsaveTitle": "Ukloni iz sačuvanih stilova",
+      "empty": "Upiši nešto iznad...",
+      "noStyles": "Nema pronađenih stilova. Probaj drugi filter ili pojam za pretragu."
+    }
   },
   "useCases": {
     "title": "Za šta ljudi ovo najčešće koriste",

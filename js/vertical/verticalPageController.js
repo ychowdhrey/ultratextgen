@@ -22,6 +22,15 @@
     return I18N[key] != null ? I18N[key] : fallback;
   }
 
+  /* verticalDecoratorData.js ships ~103 English decoration labels
+     ("• Bullet", "🌟 Star", …) used as picker-chip text/tooltips. Locale
+     pages translate them under 'deco_<id>' keys in their window.verticalI18n
+     block; missing keys (English page, or a locale that hasn't set one)
+     fall back to the built-in deco.label with zero behavior change. */
+  function decoLabel(deco) {
+    return t('deco_' + deco.id, deco.label);
+  }
+
   var RECENT_KEY      = 'utg_vertical_recent_decos';
   var RECENT_MAX      = 6;
   var LAYOUT_PREF_KEY = 'utg_vertical_layout_pref';
@@ -306,10 +315,11 @@
     var selected = selectedDecorator && selectedDecorator.id === deco.id;
     if (selected) item.classList.add('selected');
     item.setAttribute('aria-pressed', String(!!selected));
+    var label = decoLabel(deco);
     item.title = deco.mode === 'prefix'
-      ? deco.label + ' — ' + t('decoBesideTip', 'appears beside each letter')
-      : deco.label + ' — ' + t('decoBetweenTip', 'appears between each letter');
-    item.textContent = deco.label;
+      ? label + ' — ' + t('decoBesideTip', 'appears beside each letter')
+      : label + ' — ' + t('decoBetweenTip', 'appears between each letter');
+    item.textContent = label;
     item.dataset.decoId = deco.id;
     item.addEventListener('click', function () {
       var isSame = selectedDecorator && selectedDecorator.id === deco.id;

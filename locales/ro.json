@@ -21,7 +21,92 @@
   },
   "ui": {
     "placeholder": "Scrie textul...",
-    "advertisement": "Reclamă"
+    "advertisement": "Reclamă",
+    "categoryTabs": {
+      "popular": "Populare",
+      "bold-fonts": "Bold",
+      "italic-fonts": "Italic",
+      "bubble-fonts": "Baloane",
+      "cursive-fonts": "Scris de mână",
+      "gothic-fonts": "Gotic",
+      "strikethrough-text": "Tăiat",
+      "underline-text": "Subliniat",
+      "small-text": "Text mic",
+      "cute-fonts": "Drăguț",
+      "aesthetic-fonts": "Estetic",
+      "upside-down-text": "Cu susul în jos",
+      "text-decorator": "Decorator de text",
+      "classified": "Cenzurat / Confidențial",
+      "fullwidth-fonts": "Lățime completă",
+      "faux-fonts": "Alfabete false",
+      "ancient-fonts": "Antic și rune",
+      "emoji-letter-fonts": "Litere emoji",
+      "novelty-fonts": "Neobișnuite"
+    },
+    "scopeControl": {
+      "label": "Aplică stilul la",
+      "ariaLabel": "Alege cât text vrei să stilizezi",
+      "whole": "Tot textul",
+      "wholeTitle": "Stilizează fiecare linie din textul tău.",
+      "firstLine": "Doar prima linie",
+      "firstLineTag": "pentru postări",
+      "firstLineTitle": "Stilizează doar prima linie (titlul sau fraza de agățare) și lasă restul ca text simplu, ușor de citit — ideal pentru postări pe rețelele sociale.",
+      "share": "Distribuie",
+      "shareTitle": "Distribuie un link care redeschide această pagină cu textul tău deja completat",
+      "linkCopied": "Link copiat"
+    },
+    "safeMode": {
+      "label": "Siguranță la lipire",
+      "ariaLabel": "Verifică ce stiluri se afișează corect pe alte dispozitive",
+      "toggleLabel": "Mod sigur",
+      "hint": "Marchează stilurile care pot apărea ca pătrățele (▯) pe telefoanele vechi ale altor persoane."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Poate apărea ca pătrățele pentru unele persoane",
+      "boxesWarningTitle": "Acest stil folosește caractere Unicode rare pe care unele telefoane și dispozitive vechi nu le au. Poate apărea ca pătrățele (▯) la persoana căreia îi trimiți textul. Alege un stil mai simplu sau mai bine susținut dacă publicul tău ar putea folosi dispozitive vechi.",
+      "emojiWarning": "⚠ Folosește emoji — poate varia pe dispozitive vechi",
+      "emojiWarningTitle": "Acest stil include emoji. Emoji se afișează corect pe dispozitivele moderne, dar pot arăta diferit, sau ca pătrățele, pe telefoane foarte vechi.",
+      "modernDevices": "Se afișează corect pe dispozitivele moderne",
+      "modernDevicesTitle": "Aceste litere Unicode stilizate se afișează pe toate telefoanele și computerele actuale. Pe un Android foarte vechi (aproximativ înainte de 2016) sau cu fonturi de sistem minime, unele pot totuși apărea ca pătrățele (▯). Testează mai întâi dacă publicul tău ar putea folosi dispozitive vechi.",
+      "rendersEverywhere": "✓ Se afișează corect peste tot",
+      "rendersEverywhereTitle": "Acest stil este text simplu — se afișează corect peste tot, fără riscul de pătrățele pe niciun dispozitiv.",
+      "deviceWarning": "⚠ Poate să nu se afișeze pe dispozitivul tău",
+      "deviceWarningTitle": "Fonturile dispozitivului tău nu pot afișa acest stil — poate apărea ca pătrățele (□). Poate arăta totuși bine pe alte dispozitive.",
+      "safeAnywhere": "✓ Sigur peste tot",
+      "safeAnywhereTitle": "Se afișează pe toate platformele majore. De reținut: cititoarele de ecran pot rosti literele stilizate una câte una, așa că păstrează textul principal simplu.",
+      "worksBestOn": "⚠ Funcționează cel mai bine pe {platforms}",
+      "worksBestOnTitle": "Funcționează cel mai bine pe: {platforms}. Alte platforme îl pot elimina sau afișa greșit — testează înainte de a publica."
+    },
+    "savedStyles": {
+      "ariaLabel": "Stilurile tale salvate",
+      "heading": "Stilurile tale salvate",
+      "clearAll": "Șterge tot",
+      "hint": "Salvate pe acest dispozitiv — te vor aștepta aici când revii."
+    },
+    "textStats": {
+      "wordSingular": "1 cuvânt",
+      "wordPlural": "{n} cuvinte",
+      "charSingular": "1 caracter",
+      "charPlural": "{n} caractere"
+    },
+    "decorationsNone": "Niciunul",
+    "categoryTabsToggle": {
+      "more": "Mai mult",
+      "less": "Mai puțin"
+    },
+    "demoText": "Bine ai venit pe UltraTextGen.\nScrie orice. Fă-l ultra.",
+    "copyButtons": {
+      "copy": "Copiază",
+      "copied": "✓ Copiat",
+      "failed": "✗ Eșuat",
+      "copyTitle": "Copiază în clipboard",
+      "save": "Salvează",
+      "saved": "Salvat",
+      "saveTitle": "Salvează acest stil",
+      "unsaveTitle": "Elimină din stilurile salvate",
+      "empty": "Scrie ceva mai sus...",
+      "noStyles": "Niciun stil găsit. Încearcă un alt filtru sau termen de căutare."
+    }
   },
   "useCases": {
     "title": "Pentru ce folosesc oamenii asta cel mai des",

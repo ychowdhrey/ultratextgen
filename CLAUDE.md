@@ -751,6 +751,170 @@ user before recording it as intentional.
 
 ---
 
+## Local Language Intelligence
+
+There is a researched, evidence-backed dictionary of locally-native
+vocabulary for this site's top-opportunity locales, distinct from a plain
+translation memory. It captures, per concept per market: the literal/
+dictionary translation, the grammatically correct translation, the phrase
+locals actually say, the phrase locals actually type into search engines/
+forums/games, and when that phrase is and isn't appropriate. Public,
+approved-only snapshot: `data/local-language/<locale>.json` (one file per
+locale + `index.json`). Full methodology, schema, and every locale's write-up:
+`docs/local-language-intelligence.md`.
+
+**The core rule: use locally natural vocabulary when it fits the user's
+exact intent, platform, audience, and register — never insert a phrase
+merely because it's in the dictionary.** This is a decision aid, not a
+keyword-insertion engine.
+
+1. Before writing or materially editing localized copy for one of the
+   covered locales, check `data/local-language/<locale>.json` for that
+   locale (and its `country_or_market` field if the locale has regional
+   splits — see below).
+2. Use a local phrase only when it naturally fits the exact meaning,
+   platform, game, audience, and register of the sentence you're writing.
+   Do not try to use every available phrase, do not set a keyword-density
+   target, and do not stuff several near-synonym variants into the same
+   title or heading.
+3. Every page keeps **one primary query target** — a local phrase never
+   overrides that. It supports the existing title/H1, it doesn't compete
+   with it. Follow this file's existing Hub vs Spoke, cannibalization, and
+   English-Parent rules first; the local-language dictionary is an input to
+   *how* you word a page, never a reason to restructure or duplicate one.
+4. **A local phrase discovered in research does not, by itself, justify a
+   new page.** "This phrase exists" is not a build brief.
+5. Do not mix vocabulary from neighboring countries/markets without
+   evidence — e.g. Mexican Spanish into an `es_ES`-targeted section,
+   Portugal-Portuguese into `pt_BR` copy, Gulf Arabic into pan-Arabic MSA
+   copy. Each snapshot record's `country_or_market` field tells you which
+   market it's evidenced for; a record's `avoid_when` field tells you the
+   specific situations to skip it in.
+6. Respect `content_surface` and `register` on each record — a phrase
+   flagged for FAQ/generator-example use only should not be promoted into a
+   title or H1, and community/gaming jargon does not belong in legal,
+   accessibility, or technical explanatory copy just because it tested well
+   elsewhere.
+7. **Continuous capture rule:** whenever research (forum reading,
+   competitor research, GSC query analysis, keyword research, social/game/
+   platform research, user feedback, a content audit, an issue/PR
+   discussion, or native-speaker review) surfaces a locally meaningful word,
+   phrase, abbreviation, cultural expression, platform term, gaming term,
+   problem description, or search formulation relevant to UltraTextGen —
+   record it in the private research repo's Local Language Intelligence
+   Library as a new `candidate` record (or add evidence to an existing
+   `phrase_id` if the same phrase already exists — search for a match
+   before creating a new record). Do this even if you don't end up using
+   the phrase on any page this session.
+8. **A newly discovered phrase must never be inserted directly into
+   production copy the same pass it's discovered.** It goes into the
+   research library as `candidate` first. Only `approved` or `limited_use`
+   phrases (the ones that make it into the public snapshot here) are meant
+   for production copy, and even then only per rule 2 above.
+9. This public snapshot is generated, read-only data — regenerated from the
+   private research repo's canonical dataset. Do not hand-edit the JSON
+   files under `data/local-language/`; if a phrase needs a status change or
+   correction, that happens in the private research repo and gets
+   re-synced here.
+10. A local phrase, however well-evidenced, never guarantees ranking — it's
+    a fit signal, not a growth lever on its own.
+
+---
+
+## Locale Parent Governance — Core Parent Set, Locale Qualification Tiers, and the pre-build gap check
+
+The English-Parent Rule (above) governs *does a parent exist*. Translation
+Parity (above) governs *do EN and a locale sibling stay in sync after both
+exist*. Neither one answers *should this parent even be mirrored into this
+locale by default*, and the site went a long time answering that question
+by "wait for a forum thread to surface it" — a mechanism with a proven,
+expensive blind spot: EN `/symbol/` had 77 pages, FR `/symbol/` had 6, and
+nothing flagged it until a one-off manual Semrush pull (2026-07-14) found
+**~49,960 searches/month** of directly-evidenced French demand (euro-sign
+14,800/mo, micro-sign 5,400/mo, not-equal-sign 4,190/mo, delta-symbol
+3,600/mo, +11 more slugs) sitting there undetected the whole time the
+English parents were live.
+
+**The rule:** two data-driven registries replace tribal knowledge about
+which parents/locales get mirrored, and the default only flips to "mirror"
+at their intersection:
+
+- **`data/core_parent_set.json`** — tiers page-pattern prefixes (`symbol/*`,
+  `library/*`, `category/*`, specific `usecase/` carve-outs, pillar hub-index
+  overrides, …) as `core` (mirror by default — burden of proof is on NOT
+  translating), `gated` (translate only on a cleared demand check — burden
+  of proof is on translating), or `never`. Most-specific-pattern wins when
+  more than one entry matches a path.
+- **`data/locale_qualification_tiers.json`** — tiers every one of the 28
+  canonical locale codes as Tier 1 (deepen + mirror Core now), Tier 2
+  (qualify via the existing 7-point gate, then mirror Core), or Tier 3
+  (hold/stub, no spec mirroring). `vi` is Tier 2 but explicitly `hold: true`
+  — its problem is an authority/indexing gap, not a content gap; do not add
+  vi content.
+
+`scripts/lib/locale-parent-registry.js`'s `decide(relPath, localeCode)` walks
+the full 5-step flowchart (Tier-3/held locale → skip; script-incompatible
+Core parent → skip this parent here; Core parent → mirror by default; gated
+tail → gate by default; on ship, mesh is generated automatically) and
+returns a decision object, not a bare string. Run
+`node scripts/check-locale-parent-tier.js <path> <locale>` before starting
+any new locale-page work to see exactly what it returns. Full schema, the
+complete flowchart, and every script's flags/exit codes:
+**`docs/locale-parent-governance.md`**.
+
+### Tooling
+
+- **`node scripts/sync-locale-mesh.js`** (`npm run sync:locale-mesh`) —
+  generates the reciprocal hreflang set (by delegating to the existing
+  `scripts/audit-hreflang.js --fix`, gated on this script's own `--fix` flag)
+  and locale-native internal-link rewrites (via the new
+  `scripts/lib/locale-link-rewrite.js`), scoped to `--files <path...>` or the
+  whole tree by default. Report mode (no `--fix`) is safe/read-only; `--fix`
+  mutates in place. This is the Phase-0 "generated, not audited" mesh
+  automation — `scripts/generate_library_page_from_spec.py` calls it
+  automatically (best-effort, `--fix --files <new page>`) right after writing
+  any non-English page; other generators should get the same hook the next
+  time they're touched.
+- **`node scripts/check-locale-mesh.js`** (`npm run check:locale-mesh`) —
+  the enforcing, diff-scoped PR gate, wired into `.github/workflows/validate.yml`.
+  For every changed locale page: fails if its hreflang cluster has a
+  non-reciprocal or headless member, or if it links an English hub/spoke
+  where a locale-native equivalent already exists and wasn't rewritten. Fix
+  is always `npm run sync:locale-mesh -- --fix`.
+- **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
+  check:locale-parent-tier`) — advisory (always exits 0). Prints the
+  registry's decision for a candidate (parent, locale) pair and, if a
+  pre-build gap check is required, the exact instrument questions to answer.
+  Run this before starting new locale-page work, not after.
+- **`node scripts/audit-locale-parent-gap.js`** (`npm run
+  audit:locale-parent-gap`) — whole-site discovery pass, the systematic
+  version of the FR `/symbol/` find: for every Core parent x qualified
+  locale, flags a cell as an unaudited gap when translation coverage is
+  near-zero and no `data/locale_parent_gap_audit.json` entry exists.
+  Informational only (like `check-image-assets.py`) — the site carries a
+  real, deliberately-paced translation backlog this will not zero out in one
+  pass.
+- **`node scripts/check-locale-parent-gap.js`** (`npm run
+  check:locale-parent-gap`) — the enforcing, diff-scoped PR gate, wired into
+  `.github/workflows/validate.yml`. For every newly-added locale page,
+  requires a passing `data/locale_parent_gap_audit.json` entry whenever the
+  registry's decision needed one (a gated-tail build, a Tier-3/held-locale
+  exception, or a script-incompatible-parent exception) — i.e. the page was
+  built against the registry's default recommendation without a recorded
+  reason.
+
+**Do not add or edit an entry in `data/locale_parent_gap_audit.json`,
+`data/core_parent_set.json`, or `data/locale_qualification_tiers.json`
+unilaterally.** Every entry in all three reflects a discussed decision
+between you and the user — the same bar CLAUDE.md's English-Parent Rule sets
+for locale-first exceptions, and the same bar `data/translation_parity_exceptions.json`
+sets for parity divergences. If one of the gap-check scripts flags a
+missing entry, either raise the divergence with the user or run the actual
+instrument check and record it — don't edit the registry to make a page you
+want to ship pass.
+
+---
+
 ## New pages must ship with their hero/OG/Twitter art in the same change
 
 A new or edited page's `og:image`, `twitter:image`, and (if it declares one)
@@ -929,3 +1093,13 @@ Do not add a test framework unless explicitly requested.
   import the brand skin from `scripts/generate-site-art.py`; do not bundle `.ttf`
   font files; do not invent a pin look (no Poppins/pills/saturated colors/green
   CTA — use the off-white panel + dot grid + purple→blue brand skin).
+- Do not ship a new locale page for a gated-tail parent, or for a Tier-3/held
+  locale, without a recorded, passing entry in
+  `data/locale_parent_gap_audit.json`. See "Locale Parent Governance" above
+  — `scripts/check-locale-parent-gap.js` enforces this in CI, and
+  `scripts/check-locale-parent-tier.js <path> <locale>` tells you the answer
+  before you start building.
+- Do not hand-edit hreflang `<link>` tags or a locale page's internal links
+  to route around a missing sibling or a stale English-hub link — run
+  `npm run sync:locale-mesh -- --fix` instead. See "Locale Parent Governance"
+  above — `scripts/check-locale-mesh.js` enforces the result in CI.

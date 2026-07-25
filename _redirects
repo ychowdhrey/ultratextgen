@@ -196,5 +196,18 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /fr/guide/styliser-pseudo-serveur-discord/            /fr/guide/ou-fonctionnent-les-polices-discord/  301
 /fr/guide/styliser-pseudo-serveur-discord/index.html  /fr/guide/ou-fonctionnent-les-polices-discord/  301
 
+# PT Free Fire symbol spoke: renamed off a slug that collided with the
+# generic /pt/simbolos-para-nick/ hub one level up, to its own dedicated
+# Free Fire slug (mirrors es/simbolos-para-free-fire)
+/pt/library/simbolos-para-nick/            /pt/library/simbolos-para-free-fire/  301
+/pt/library/simbolos-para-nick/index.html  /pt/library/simbolos-para-free-fire/  301
+
+# pt/usecase/nick-free-fire retired: near-duplicate of pt/usecase/nick-ff
+# (same Free Fire nick-generator intent, no distinct EN parent of its own)
+# that was never picking up meaningful traffic of its own (19 impr/26 days
+# vs nick-ff's 1,147, 0 clicks) — consolidated into the established page.
+/pt/usecase/nick-free-fire/            /pt/usecase/nick-ff/  301
+/pt/usecase/nick-free-fire/index.html  /pt/usecase/nick-ff/  301
+
 /404  /404.html  200
 /*    /404.html  404

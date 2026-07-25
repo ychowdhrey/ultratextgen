@@ -18,6 +18,30 @@
       "localeUrl": "https://ultratextgen.com/id/symbol/",
       "reason": "Same case as the es/symbol/ entry above — id/symbol/ gained compare-cards for the same 143-page batch (75 of them Indonesian). EN needs no change; already complete. Flagged to the user for review rather than silently resolved.",
       "agreed": "2026-07-24"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/pt/library/",
+      "reason": "check-translation-parity.js flags this pair (mislabeling the EN side as vi/library/ in its output — a display quirk, not the real comparison) because pt/library/index.html gained a new \"Símbolos para Free Fire\" list entry in this branch, as part of renaming pt/library/simbolos-para-nick -> pt/library/simbolos-para-free-fire. This is not real EN/locale drift: library/index.html (EN) already lists library/free-fire-name-symbols and needed no change — the checker's within-branch commit-delta comparison flags PT as changed without a matching EN commit in this PR, even though EN's content was already correct going in. Verified by direct inspection, not assumed. Discussed with the user 2026-07-25 rather than force an unnecessary cosmetic touch to the EN file just to make the diff-based checker see a matching delta.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/nickname-symbols/",
+      "localeUrl": "https://ultratextgen.com/pt/simbolos-para-nick/",
+      "reason": "check-translation-parity.js flags this pair because pt/simbolos-para-nick/index.html gained a new hub-to-spoke link (to the renamed pt/library/simbolos-para-free-fire/) in this branch. Not real drift: library/nickname-symbols (EN) already links to library/free-fire-name-symbols — the exact same hub-to-spoke pattern PT's edit just replicated — so EN needed no change. Verified by direct inspection. Discussed with the user 2026-07-25.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/id/usecase/",
+      "reason": "check-translation-parity.js flags this pair because id/usecase/index.html was edited late in this branch (removing duplicate compare-cards left over from merging two independent PRs that each added cards for the same 3 new pages — see this repo's PR history around 2026-07-25). After dedup, id/usecase/index.html's net content versus origin/main is unchanged (main's own independent PR #649 had already added equivalent cards for these 3 pages before this branch merged main in), while usecase/index.html (EN) gained its 3 matching cards in an earlier commit in this same branch. Both sides carry the equivalent content; the checker's per-branch commit-delta comparison just can't see that ID's parity was achieved via a different, earlier PR rather than a commit in this one. Verified by direct inspection. Discussed with the user 2026-07-25.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/pt/usecase/",
+      "reason": "check-translation-parity.js flags this pair because pt/usecase/index.html lost a compare-card in this branch — the redundant duplicate \"Nick Free Fire\" card that pointed at pt/usecase/nick-free-fire/, retired in the same change (see the 'fix: retire pt/usecase/nick-free-fire' commit) since it was a near-duplicate of the adjacent nick-ff card one row above. usecase/index.html (EN) never had this duplicate to begin with — it uses a different single-card layout for Free Fire (a usecase-diff/usecase-cta block linking usecase/free-fire-name-generator/), not PT's compare-grid, so there is no equivalent EN card to remove and nothing to sync. Verified by direct inspection of usecase/index.html's Free Fire section. Discussed with the user 2026-07-25.",
+      "agreed": "2026-07-25"
     }
   ]
 }

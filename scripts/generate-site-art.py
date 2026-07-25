@@ -714,6 +714,20 @@ def m_plane(p, accent=PURPLE):
           stroke-width="6" stroke-linecap="round" opacity="0.3"/>"""
 
 
+def m_microphone(p, accent=PURPLE):
+    """A microphone capsule with grille lines and a stand base — the
+    microphone emoji is color-only and does not rasterize in bundled fonts."""
+    return f"""
+    <rect x="140" y="70" width="80" height="140" rx="40" fill="url(#g{p})"/>
+    <line x1="156" y1="100" x2="204" y2="100" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="122" x2="204" y2="122" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="144" x2="204" y2="144" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="166" x2="204" y2="166" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <path d="M110 190 a70 70 0 0 0 140 0" fill="none" stroke="url(#g{p})" stroke-width="12" stroke-linecap="round"/>
+    <line x1="180" y1="260" x2="180" y2="292" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>
+    <line x1="146" y1="300" x2="214" y2="300" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>"""
+
+
 def m_pumpkin(p, accent=PURPLE):
     """A jack-o'-lantern — for Halloween/spooky content."""
     return f"""
@@ -1010,6 +1024,29 @@ def m_heart(p, accent=PURPLE):
     <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/>"""
 
 
+def m_bunny(p, accent=PURPLE):
+    """A rabbit face with long ears — Easter content."""
+    return f"""
+    <ellipse cx="150" cy="90" rx="20" ry="62" fill="url(#g{p})"/>
+    <ellipse cx="210" cy="90" rx="20" ry="62" fill="url(#g{p})"/>
+    <ellipse cx="150" cy="94" rx="9" ry="42" fill="#fbcfe8" opacity="0.6"/>
+    <ellipse cx="210" cy="94" rx="9" ry="42" fill="#fbcfe8" opacity="0.6"/>
+    <circle cx="180" cy="210" r="78" fill="url(#g{p})"/>
+    <circle cx="155" cy="195" r="9" fill="{PANEL}"/>
+    <circle cx="205" cy="195" r="9" fill="{PANEL}"/>
+    <ellipse cx="180" cy="222" rx="10" ry="7" fill="{PANEL}"/>"""
+
+
+def m_pie(p, accent=PURPLE):
+    """A sliced pie on a plate — Thanksgiving content."""
+    return f"""
+    <circle cx="180" cy="200" r="95" fill="url(#g{p})"/>
+    <circle cx="180" cy="200" r="95" fill="none" stroke="{PANEL}" stroke-width="6" opacity="0.5"/>
+    <path d="M180 200 L180 118 A82 82 0 0 1 251 241 Z" fill="{PANEL}" opacity="0.28"/>
+    <line x1="180" y1="200" x2="180" y2="118" stroke="{PANEL}" stroke-width="4" opacity="0.6"/>
+    <line x1="180" y1="200" x2="251" y2="241" stroke="{PANEL}" stroke-width="4" opacity="0.6"/>"""
+
+
 def m_thumb(p, accent=PURPLE):
     """A rounded thumbs-up badge — reaction/"Like"-themed content."""
     return f"""
@@ -1250,9 +1287,8 @@ HOME_CARD = "fancy-text-generator-preview"
 
 PAGES = {
   # ---- localized game-nickname generators & symbol libraries (new markets) ----
-  "pt-usecase-nick-free-fire": ("Nick Free Fire", "Gerador de nomes e símbolos para Free Fire", m_trophy, K_USE),
   "pt-espaco-invisivel": ("Espaço Invisível", "Caractere em branco para copiar", m_block, K_LIB),
-  "pt-library-simbolos-para-nick": ("Símbolos para Nick de Free Fire", "Guarda-chuva, coroas e símbolos para o FF", m_grid, K_LIB),
+  "pt-library-simbolos-para-free-fire": ("Símbolos para Nick de Free Fire", "Guarda-chuva, coroas e símbolos para o FF", m_grid, K_LIB),
   "ro-nume-pentru-free-fire": ("Nume pentru Free Fire", "Generator de nick-uri și simboluri", m_trophy, K_USE),
   "ro-caractere-speciale": ("Caractere Speciale", "Simboluri de copiat pentru nume", m_grid, K_LIB),
   "hu-becenev-generator": ("Becenév Generátor", "Menő nevek és nickek játékokhoz", m_trophy, K_USE),
@@ -1354,6 +1390,40 @@ PAGES = {
   "pl-usecase": ("Co Chcesz Stworzyć?", "Generatory pogrupowane według potrzeb", m_grid, K_USE),
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
+  "usecase-stumble-guys-name-generator": ("Stumble Guys Name Generator", "Funny & stylish nicknames, 4-12 char checker", m_gamepad, K_USE),
+  "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Nickname lucu & aesthetic, cek 4-12 karakter", m_gamepad, K_USE),
+  "usecase-aesthetic-contact-names": ("Aesthetic Contact Names", "Cute names for bae's phone contact", m_heart, K_USE),
+  "id-usecase-nama-kontak-pacar-aesthetic": ("Nama Kontak Pacar Aesthetic", "Nama kontak estetik berhias hati", m_heart, K_USE),
+  "usecase-group-name-generator": ("Group Name Generator", "Cool names for squads, circles & group chats", m_chat, K_USE),
+  "id-usecase-nama-grup-keren": ("Nama Grup Keren", "Nama grup WA & circle aesthetic", m_chat, K_USE),
+
+  # ---- contact-names / group-name / stumble-guys locale expansion ----
+  "tr-usecase-rehber-adi-estetik": ("Rehber Adı Estetik", "Sevgiline özel estetik rehber ismi", m_heart, K_USE),
+  "pt-usecase-nomes-de-contato-aesthetic": ("Nomes de Contato Aesthetic", "Nome de contato estiloso pro crush", m_heart, K_USE),
+  "pl-usecase-nazwy-do-kontaktu": ("Nazwy do Kontaktu", "Estetyczna nazwa kontaktu dla ukochanej osoby", m_heart, K_USE),
+  "it-usecase-nomi-per-contatti-aesthetic": ("Nomi per Contatti Aesthetic", "Nome estetico per il contatto del tuo amore", m_heart, K_USE),
+  "fr-usecase-nom-de-contact-aesthetic": ("Nom de Contact Aesthetic", "Nom de contact stylé pour ton crush", m_heart, K_USE),
+  "es-usecase-nombres-de-contacto-aesthetic": ("Nombres de Contacto Aesthetic", "Nombre de contacto bonito para tu pareja", m_heart, K_USE),
+  "de-usecase-kontaktname-aesthetic": ("Kontaktname Aesthetic", "Süßer Kontaktname für deinen Schatz", m_heart, K_USE),
+  "zh-tw-usecase-tongxunlu-nicheng": ("通訊錄暱稱", "情侶通訊錄暱稱裝飾", m_heart, K_USE),
+  "ja-usecase-renrakusaki-aesthetic": ("連絡先の名前 かわいいジェネレーター", "彼氏彼女の連絡先をおしゃれに", m_heart, K_USE),
+
+  "tr-usecase-grup-ismi": ("Grup İsmi", "WhatsApp grubu ve arkadaş çevresi için isimler", m_chat, K_USE),
+  "pt-usecase-nomes-para-grupo": ("Nomes para Grupo", "Nomes estilosos pro grupo do zap e da galera", m_chat, K_USE),
+  "pl-usecase-nazwy-grupy": ("Nazwy Grupy", "Fajne nazwy dla grupy WhatsApp i paczki znajomych", m_chat, K_USE),
+  "it-usecase-nomi-per-gruppi": ("Nomi per Gruppi", "Nomi per gruppi WhatsApp, cerchie di amici e team", m_chat, K_USE),
+  "fr-usecase-nom-de-groupe": ("Nom de Groupe", "Noms stylés pour groupe WhatsApp et bande de potes", m_chat, K_USE),
+  "es-usecase-nombres-para-grupos": ("Nombres para Grupos", "Nombres bonitos para el grupo de WhatsApp y amigos", m_chat, K_USE),
+  "de-usecase-gruppennamen": ("Gruppennamen", "Coole Namen für WhatsApp-Gruppe und Freundeskreis", m_chat, K_USE),
+
+  "tr-usecase-stumble-guys-nick": ("Stumble Guys Nick", "Komik & şık takma isimler, 4-12 karakter kontrolü", m_gamepad, K_USE),
+  "pt-usecase-nomes-para-stumble-guys": ("Nomes para Stumble Guys", "Nomes engraçados e estilosos, checagem 4-12 caracteres", m_gamepad, K_USE),
+  "pl-usecase-nazwy-do-stumble-guys": ("Nazwy do Stumble Guys", "Zabawne i stylowe nicki, sprawdzenie 4-12 znaków", m_gamepad, K_USE),
+  "it-usecase-nomi-stumble-guys": ("Nomi Stumble Guys", "Nomi buffi e stilosi, controllo 4-12 caratteri", m_gamepad, K_USE),
+  "fr-usecase-pseudo-stumble-guys": ("Pseudo Stumble Guys", "Pseudos drôles et stylés, vérification 4-12 caractères", m_gamepad, K_USE),
+  "es-usecase-nombres-para-stumble-guys": ("Nombres para Stumble Guys", "Nombres divertidos y con estilo, chequeo 4-12 caracteres", m_gamepad, K_USE),
+  "de-usecase-stumble-guys-namensgenerator": ("Stumble Guys Namensgenerator", "Lustige & stylische Nicknames, 4-12-Zeichen-Check", m_gamepad, K_USE),
+
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
   "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
   "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
@@ -2271,6 +2341,32 @@ PAGES = {
   "library-cowboy-emoji": ("Cowboy Emoji Collection", "Yeehaw and Wild West symbols", m_smiley, K_LIB),
   "library-muscle-emoji": ("Muscle Emoji Collection", "Flex, gym and gains symbols", m_thumb, K_LIB),
   "library-gift-emoji": ("Gift Emoji Collection", "Presents, surprises and celebration symbols", m_firework, K_LIB),
+
+  # ---- 2026-07-24 localization batch ----
+  # Alt-codes: 6 new locales
+  "tr-library-alt-kodlari": ("Alt Kodları", "Türkçe karakterler, para birimi ve tam liste", m_block, K_LIB),
+  "nl-library-alt-codes": ("Alt Codes", "é alt-code en volledige toetsenbordlijst", m_block, K_LIB),
+  "pl-library-kody-alt": ("Kody Alt", "Waluta, matematyka i znaki zachodnie", m_block, K_LIB),
+  "ko-library-alt-kodeu": ("알트 코드", "닉네임 꾸미기 기호와 전체 목록", m_block, K_LIB),
+  "id-library-kode-alt": ("Kode Alt", "Daftar lengkap kode simbol keyboard", m_block, K_LIB),
+  "es-library-codigos-alt": ("Códigos Alt", "Lista completa de símbolos del teclado", m_block, K_LIB),
+  # Library symbol batches: 5 new locale pages
+  "th-library-discord-symbols": ("สัญลักษณ์ Discord", "คัดลอกวางสำหรับชื่อผู้ใช้และไบโอ", m_block, K_LIB),
+  "ms-library-simbol-roblox": ("Simbol Roblox", "Salin & tampal untuk nama paparan", m_block, K_LIB),
+  "ar-library-y2k-symbols": ("رموز Y2K", "زخارف سايبر للنسخ واللصق", m_block, K_LIB),
+  "ru-library-simvoly-y2k": ("Символы Y2K", "Киберэстетика для копирования", m_block, K_LIB),
+  "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # Printables: 5 new locale hub pages
+  "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
+  "pl-do-druku-alfabet-kursywny": ("Alfabet kursywny do druku", "Karty kaligraficzne A–Z do obrysowania", m_grid, K_PRINT),
+  "pl-do-druku-alfabet-do-kolorowania": ("Alfabet do kolorowania", "Darmowe litery A–Z do druku i kolorowania", m_grid, K_PRINT),
+  "de-zum-ausdrucken-blasenbuchstaben": ("Blasenbuchstaben zum Ausdrucken", "Nachfahren, Ausmalen, PNG — A–Z & 0–9", m_grid, K_PRINT),
+  "de-zum-ausdrucken-alphabet-ausmalbilder": ("Alphabet-Ausmalbilder", "Kostenlose Buchstaben A–Z zum Ausdrucken", m_grid, K_PRINT),
+  # New symbol/ EN parents + id/ translations
+  "symbol-microphone-emoji": ("Microphone Emoji", "🎤 meaning, history & every way to type it", m_microphone, K_SYM),
+  "symbol-less-than-or-equal-to-symbol": ("Less Than or Equal To Symbol", "≤ meaning, Alt Code & LaTeX", glyphs("≤"), K_SYM),
+  "id-symbol-mikrofon-emoji": ("Emoji Mikrofon", "🎤 arti, sejarah & kode Unicode-nya", m_microphone, K_SYM),
+  "id-symbol-simbol-kurang-dari-sama-dengan": ("Simbol Kurang Dari Sama Dengan", "≤ arti, Alt Code & LaTeX", glyphs("≤"), K_SYM),
 }
 
 
@@ -2304,16 +2400,30 @@ for _l, _word in LETTER_WORD.items():
 PAGES.update({
 "learn-hub": ("Learn", "Stage-by-stage guides for handwriting & lettering",
     P(m_doc), K_PRINT),
+"learn-dot-to-dots": ("Dot-to-Dots & Pencil Control", "A progression guide from many dots to freehand",
+    P(m_typo, sample="•••", size=92, label="pencil control"), K_PRINT),
+"learn-coloring-and-fine-motor": ("Coloring Letters", "Fine motor skills through letter-shaped coloring",
+    P(m_typo, sample="Aa", size=92, label="fine motor"), K_PRINT),
 "learn-handwriting": ("Teaching Handwriting", "A practical, stage-by-stage guide — readiness to cursive",
     P(m_typo, sample="Aa", size=92, label="stage by stage"), K_PRINT),
 "learn-handwriting-when-to-start-handwriting": ("When to Start Handwriting", "Readiness signs that matter more than age",
     P(m_typo, sample="A?", size=92, label="readiness"), K_PRINT),
+"learn-handwriting-pre-writing-strokes": ("Pre-Writing Strokes", "The lines every letter is built from",
+    P(m_typo, sample="l○", size=92, label="pre-writing"), K_PRINT),
+"learn-handwriting-first-letters-uppercase": ("First Letters", "Why uppercase usually comes first",
+    P(m_typo, sample="Aa", size=92, label="first letters"), K_PRINT),
+"learn-handwriting-lowercase-and-reversals": ("Lowercase & Reversals", "Fixing b/d/p/q confusion",
+    P(m_typo, sample="bd", size=92, label="reversals"), K_PRINT),
 "learn-handwriting-stroke-order-and-start-dots": ("Stroke Order & Start Dots", "Why how you trace matters more than how much",
     P(m_typo, sample="1→", size=92, label="stroke order"), K_PRINT),
 "learn-handwriting-from-tracing-to-writing": ("From Tracing to Writing", "The 7-step fading ladder",
     P(m_typo, sample="Aa", size=92, label="7 levels"), K_PRINT),
+"learn-handwriting-name-writing": ("Name Writing", "The first word worth practicing",
+    P(m_typo, sample="Aa", size=92, label="name writing"), K_PRINT),
 "learn-handwriting-cursive-when-and-how": ("Cursive: When & How", "Letter families, lowercase first, joins throughout",
     P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive"), K_PRINT),
+"learn-handwriting-how-much-practice": ("How Much Practice?", "How much helps, and how to measure progress",
+    P(m_typo, sample="5m", size=92, label="practice & progress"), K_PRINT),
 })
 
 PAGES["printables-bubble-letters"] = (
@@ -2368,11 +2478,13 @@ PAGES.update({
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
+"events-easter": ("Easter Fonts & Emoji Generator", "Bunny, egg, and chick emoji for spring greetings", m_bunny, K_USE),
 "events-eid-mubarak": ("Eid Mubarak Text & Symbol Generator", "Crescent moon emoji and ready-made Eid phrases", m_crescent, K_USE),
 "events-fathers-day": ("Father's Day Message Generator", "Bold, rugged fonts for World's Best Dad messages", m_necktie, K_USE),
 "events-halloween": ("Halloween Fonts & Emoji Generator", "Pumpkin, ghost, and bat emoji for spooky greetings", m_pumpkin, K_USE),
 "events-mothers-day": ("Mother's Day Message Generator", "Warm cursive fonts for Happy Mother's Day messages", m_bouquet, K_USE),
 "events-new-year": ("New Year Countdown Text Generator", "Firework emoji and Happy New Year phrases to paste", m_firework, K_USE),
+"events-thanksgiving": ("Thanksgiving Fonts & Emoji Generator", "Turkey, pie, and autumn-leaf emoji for gratitude posts", m_pie, K_USE),
 "events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
 "printables-banner-maker": ("Printable Banner Maker", "One flag per letter, cut and strung to spell any word", m_banner, K_PRINT),
 "printables-block-letters": ("Printable Block Letters & Stencils", "Bold hollow A-Z & 0-9 stencils to trace, cut and use", P(m_letter_stencil, letter="B"), K_PRINT),
@@ -2429,6 +2541,7 @@ PAGES.update({
 "library-skull-ascii-art": ("Skull ASCII Art", "Skulls and crossbones drawn in plain text", m_skull, K_LIB),
 "library-star-ascii-art": ("Star ASCII Art", "Sparkles, shooting stars & big text stars", m_star, K_LIB),
 "usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
+"usecase-mobile-legends-squad-name-generator": ("Mobile Legends Squad Name Generator", "Squad tags & aesthetic fonts, copy & paste", m_trophy, K_USE),
 "usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
 "usecase-stylish-name": ("Stylish Name Maker", "Fancy names for FF, Instagram & Facebook", m_gamepad, K_USE),
 "usecase-valorant-name-generator": ("Valorant Name Generator", "Live Riot ID checker + stylish names", m_gamepad, K_USE),
@@ -2511,10 +2624,50 @@ PAGES.update({
 "updates": ("UltraTextGen Updates", "What changed, and why your Check may too", m_doc, K_UPDATE),
 "updates-unicode-17-new-emoji-rollout": ("Unicode 17.0's New Emoji: Rollout Tracker", "8 new emoji, tracked platform by platform", m_doc, K_UPDATE),
 "updates-uae-dirham-symbol-unicode-18": ("UAE Dirham Symbol Approved for Unicode 18.0", "Approved for encoding, not on keyboards yet", m_doc, K_UPDATE),
+"ar-updates-uae-dirham-symbol-unicode-18": ("رمز الدرهم الإماراتي يُعتمد في يونيكود 18.0", "معتمد للترميز، وليس على لوحات المفاتيح بعد", m_doc, K_UPDATE),
+"de-updates-vae-dirham-symbol-unicode-18": ("VAE-Dirham-Symbol für Unicode 18.0 genehmigt", "Zur Kodierung genehmigt, noch nicht auf Tastaturen", m_doc, K_UPDATE),
+"es-updates-simbolo-dirham-emiratos-unicode-18": ("Símbolo del Dirham de los EAU Aprobado para Unicode 18.0", "Aprobado para codificación, aún no en teclados", m_doc, K_UPDATE),
+"it-updates-simbolo-dirham-unicode-18": ("Simbolo del Dirham degli Emirati Arabi Uniti Approvato per Unicode 18.0", "Approvato per la codifica, non ancora sulle tastiere", m_doc, K_UPDATE),
+"ko-updates-dirham-giho-unicode-18": ("UAE 디르함 기호, 유니코드 18.0 인코딩 승인", "인코딩 승인, 아직 키보드엔 없음", m_doc, K_UPDATE),
+"nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool goedgekeurd voor Unicode 18.0", "Goedgekeurd voor codering, nog niet op toetsenborden", m_doc, K_UPDATE),
+"sv-updates-dirham-symbol-unicode-18": ("Förenade Arabemiratens dirhamsymbol godkänd för Unicode 18.0", "Godkänd för kodning, ännu inte på tangentbord", m_doc, K_UPDATE),
+"tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü Unicode 18.0 İçin Onaylandı", "Kodlama için onaylandı, henüz klavyelerde değil", m_doc, K_UPDATE),
 "updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols in Unicode: The Scorecard", "5 have their own sign, 3 share one, 7 have none", m_doc, K_UPDATE),
+"ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط في يونيكود: البطاقة التقييمية بعد إصدار 18.0", "5 عملات لها رمزها الخاص. 3 تتشارك رمزاً عاماً. 7 على الأقل بلا رمز.", m_doc, K_UPDATE),
+"de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten in Unicode: Die Bilanz nach 18.0", "5 Währungen haben ein eigenes Zeichen. 3 teilen sich eins. Mindestens 7 haben keins.", m_doc, K_UPDATE),
+"es-updates-simbolos-moneda-oriente-medio-unicode-18": ("Símbolos de Moneda de Oriente Medio en Unicode: El Marcador Tras la 18.0", "5 monedas tienen su propio signo. 3 comparten uno genérico. Al menos 7 no tienen ninguno.", m_doc, K_UPDATE),
+"it-updates-simboli-valuta-medio-oriente-unicode-18": ("I Simboli di Valuta del Medio Oriente in Unicode: Il Bilancio Dopo Unicode 18.0", "5 valute hanno un proprio segno. 3 ne condividono uno. Almeno 7 non ne hanno nessuno.", m_doc, K_UPDATE),
+"ko-updates-jungdong-hwapye-giho-unicode-18": ("유니코드 속 중동 화폐 기호: 18.0 이후 현황표", "5개 통화는 전용 기호를 갖췄습니다. 3개는 공용 기호를 씁니다. 최소 7개는 기호가 없습니다.", m_doc, K_UPDATE),
+"nl-updates-valutasymbolen-midden-oosten-unicode-18": ("Valutasymbolen Midden-Oosten in Unicode: het scorebord na versie 18.0", "5 valuta's hebben een eigen teken. 3 delen er een. Minstens 7 hebben er geen.", m_doc, K_UPDATE),
+"sv-updates-valutasymboler-mellanostern-unicode-18": ("Mellanösterns valutasymboler i Unicode: Lägesrapporten efter 18.0", "5 valutor har ett eget tecken. 3 delar ett. Minst 7 saknar helt.", m_doc, K_UPDATE),
+"tr-updates-orta-dogu-para-birimi-sembolleri-unicode-18": ("Unicode'da Orta Doğu Para Birimi Sembolleri: 18.0 Sonrası Karne", "5 para birimi kendi sembolüne sahip. 3'ü ortak sembol kullanıyor. En az 7'sinde sembol yok.", m_doc, K_UPDATE),
 "updates-unicode-18-beta-review-opens": ("Unicode 18.0 Beta Review Opens: What's Shipping", "13,047 new characters, four scripts, 9 draft emoji", m_doc, K_UPDATE),
+"ar-updates-unicode-18-beta-review-opens": ("انطلاق المراجعة التجريبية ليونيكود 18.0: ما الجديد", "13,047 حرفاً جديداً، أربع كتابات، 9 إيموجي أولية", m_doc, K_UPDATE),
+"de-updates-unicode-18-beta-startet": ("Unicode 18.0 Beta startet: Was jetzt kommt", "13.047 neue Zeichen, vier Schriftsysteme, 9 Entwurfs-Emojis", m_doc, K_UPDATE),
+"es-updates-unicode-18-beta-comienza-revision": ("Se Abre la Revisión Beta de Unicode 18.0: Qué Trae", "13.047 caracteres nuevos, cuatro escrituras, 9 emojis provisionales", m_doc, K_UPDATE),
+"it-updates-revisione-beta-unicode-18": ("Revisione Beta di Unicode 18.0 al Via: Cosa Sta Arrivando", "13.047 nuovi caratteri, quattro scritture, 9 emoji provvisorie", m_doc, K_UPDATE),
+"ko-updates-unicode-18-beta-sijak": ("유니코드 18.0 베타 심사 시작: 이번에 추가되는 것들", "새 문자 13,047개, 4종 문자 체계, 초안 이모지 9종", m_doc, K_UPDATE),
+"nl-updates-unicode-18-beta-van-start": ("Unicode 18.0-bèta van start: wat erin zit", "13.047 nieuwe tekens, vier schriftsystemen, 9 concept-emoji", m_doc, K_UPDATE),
+"sv-updates-unicode-18-betagranskning-oppnar": ("Unicode 18.0:s betagranskning öppnar: Det här ingår", "13 047 nya tecken, fyra skriftsystem, 9 utkastemoji", m_doc, K_UPDATE),
+"tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0 Beta İncelemesi Başlıyor: Neler Geliyor", "13.047 yeni karakter, dört yazı sistemi, 9 taslak emoji", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
+"ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة: الوجه المتصدّع يفوز بالتصويت العام", "مخلل وشهاب يكملان المراكز الثلاثة الأولى", m_doc, K_UPDATE),
+"de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Neue Emojis – Berstendes Gesicht gewinnt die Abstimmung", "Essiggurke und Meteor komplettieren die Top 3", m_doc, K_UPDATE),
+"es-updates-unicode-18-nuevos-emojis-votacion": ("Los Nuevos Emojis de Unicode 18.0: Cara Agrietada Gana la Votación", "Pepinillo y Meteoro completan el top 3", m_doc, K_UPDATE),
+"fr-updates-unicode-18-nouveaux-emojis-vote": ("Nouveaux Emoji Unicode 18.0 : Visage Fissuré Remporte le Vote", "Cornichon et Météore complètent le top 3", m_doc, K_UPDATE),
+"id-updates-unicode-18-emoji-baru-voting": ("Emoji Baru Unicode 18.0: Cracking Face Menang Voting", "Pickle dan Meteor melengkapi 3 besar", m_doc, K_UPDATE),
+"ja-updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0の新絵文字：「ひび割れ顔」が投票で1位に", "ピクルスと流れ星が続く", m_doc, K_UPDATE),
+"ko-updates-unicode-18-imoji-tupyo": ("유니코드 18.0 신규 이모지: 공개 투표 1위는 Cracking Face", "Pickle과 Meteor가 2, 3위", m_doc, K_UPDATE),
+"nl-updates-unicode-18-nieuwe-emoji-stemming": ("Nieuwe emoji in Unicode 18.0: Cracking Face wint de stemming", "Pickle en Meteor maken de top 3 compleet", m_doc, K_UPDATE),
+"pl-updates-unicode-18-nowe-emoji-glosowanie": ("Nowe Emoji Unicode 18.0: Pękająca Twarz Wygrywa Głosowanie", "Kiszony Ogórek i Meteor uzupełniają podium", m_doc, K_UPDATE),
+"pt-updates-unicode-18-novos-emojis-votacao": ("Novos Emojis do Unicode 18.0: Rosto Rachando Vence a Votação", "Picles e Meteoro completam o top 3", m_doc, K_UPDATE),
+"ru-updates-unicode-18-most-anticipated-emoji": ("Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании", "Солёный огурец и Метеор замыкают тройку лидеров", m_doc, K_UPDATE),
+"th-updates-unicode-18-most-anticipated-emoji": ("อีโมจิใหม่ Unicode 18.0: ใบหน้าแตกร้าวคว้าอันดับ 1 โหวต", "แตงกวาดองและดาวตกครองอันดับ 2-3", m_doc, K_UPDATE),
+"tr-updates-unicode-18-yeni-emoji-oylama": ("Unicode 18.0'ın Yeni Emojileri: Oylamayı Cracking Face Kazandı", "Pickle ve Meteor ilk 3'ü tamamlıyor", m_doc, K_UPDATE),
 "updates-forza-horizon-6-gamertag-rules": ("Forza Horizon 6: Gamertag and Driver Name Split", "Two name fields, two very different rule sets", m_doc, K_UPDATE),
+"updates-whatsapp-usernames-rollout": ("WhatsApp Usernames: The New @Handle Rules, Explained", "3-35 characters, lowercase only, no styled Unicode", m_doc, K_UPDATE),
+"updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
+"updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
 })
 
 

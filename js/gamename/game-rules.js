@@ -49,7 +49,14 @@
     valorant: { label: "Valorant (Riot ID)", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
     roblox: { label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true },
     robloxDisplay: { label: "Roblox (display name)", limit: 20, min: 3, weighted: false, noSpace: false, field: "display" },
-    minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ }
+    minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ },
+    // Stumble Guys' rename screen enforces 4-12 characters (Stumble Guys Help
+    // Center) and its official UI form-validates against symbol characters —
+    // but players widely report styled Unicode letters (Cyrillic/Greek/small
+    // caps look-alikes) and common decorative symbols (crowns, stars, arrows)
+    // surviving in practice, the same "may not always stick" profile as
+    // Fortnite/Valorant, hence strict rather than an outright block.
+    stumbleguys: { label: "Stumble Guys", limit: 12, min: 4, weighted: false, noSpace: false, field: "display", strict: true }
   };
 
   /* ============================

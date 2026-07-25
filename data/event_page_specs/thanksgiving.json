@@ -1,0 +1,157 @@
+{
+  "slug": "thanksgiving",
+  "event_name": "Thanksgiving",
+  "aliases": [],
+
+  "title": "Thanksgiving Fonts, Emoji & Symbol Generator | UltraTextGen",
+  "meta_description": "Style a Thanksgiving message live, copy turkey, pie, and autumn-leaf emoji, cozy kaomoji, curated ASCII art, and ready-made gratitude phrases and captions.",
+
+  "hero_h1": "Thanksgiving Text & Symbol Generator",
+  "hero_tagline": "Type a name or gratitude message and style it in bold, serif, and script fonts, then copy turkey, pie, and autumn-leaf emoji, kaomoji, and ASCII art — or tap a ready-made Thanksgiving phrase to style it instantly.",
+
+  "intro": "Thanksgiving is the harvest-table holiday — turkey, pie, and a season of gratitude captured in a caption or a place-card. This page gathers everything for styling that post or card: curated bold, serif, and script fonts you can preview on your own text, the turkey, pie, and autumn-leaf emoji people actually paste, cozy kaomoji for a family group chat, a few original ASCII art pieces, and a phrase bank of Thanksgiving lines — from a classic \"Happy Thanksgiving\" to \"Give Thanks\" — that style instantly when you tap them.",
+
+  "date_window": "on the fourth Thursday of November in the United States (Canada celebrates Thanksgiving on the second Monday of October)",
+
+  "sample_phrase": "Happy Thanksgiving",
+
+  "canonical": "https://ultratextgen.com/events/thanksgiving/",
+
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold Serif",
+      "Ultra Italic Serif",
+      "Ultra Bold Italic Serif",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Typewriter Document",
+      "Ultra Old English Banner",
+      "Ultra Small Caps",
+      "Ultra Bold",
+      "Ultra Script"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Thanksgiving Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🦃", "🥧", "🌽", "🍂", "🍁", "🙏", "🍽️", "🌰", "🧡", "🕯️"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "٩(◕‿◕)۶", "label": "Grateful Hooray" },
+    { "text": "(づ｡◕‿‿◕｡)づ", "label": "Warm Family Hug" },
+    { "text": "ヽ(•‿•)ノ", "label": "Grateful Cheer" },
+    { "text": "(っ◔◡◔)っ", "label": "Cozy Hug" },
+    { "text": "＼(^o^)／", "label": "Big Family Gathering" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Turkey",
+        "art": "    ,_    ,\n   / \\`--'/\n  {  o o  }\n   \\  ~  /\n   /`----'\\"
+      },
+      {
+        "label": "Pumpkin Pie",
+        "art": "   ______\n  /      \\\n |  ~~~~  |\n |________|\n '--------'"
+      },
+      {
+        "label": "Corn",
+        "art": "   .-\"-.\n  /|Y|Y|\\\n | |Y|Y| |\n  \\|_|_|/\n    | |\n    | |"
+      },
+      {
+        "label": "Autumn Leaf",
+        "art": "    /\\\n   /  \\\n  / /\\ \\\n /_/  \\_\\\n    ||"
+      },
+      {
+        "label": "Table Setting",
+        "art": " ___________\n|  o     o  |\n|    ___    |\n|___________|"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy Thanksgiving",
+      "native_script": "Happy Thanksgiving",
+      "romanization": "Happy Thanksgiving",
+      "translation": "The classic, universal Thanksgiving greeting",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Give Thanks",
+      "native_script": "Give Thanks",
+      "romanization": "Give Thanks",
+      "translation": "A short caption for the gratitude side of the holiday",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Gather. Give Thanks. Feast.",
+      "native_script": "Gather. Give Thanks. Feast.",
+      "romanization": "Gather. Give Thanks. Feast.",
+      "translation": "A three-beat caption for photos of the table",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Grateful and Thankful",
+      "native_script": "Grateful and Thankful",
+      "romanization": "Grateful and Thankful",
+      "translation": "A warm, simple caption for a family photo",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Stuffed with Gratitude",
+      "native_script": "Stuffed with Gratitude",
+      "romanization": "Stuffed with Gratitude",
+      "translation": "A playful post-meal pun caption",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Wishing You a Blessed Thanksgiving",
+      "native_script": "Wishing You a Blessed Thanksgiving",
+      "romanization": "Wishing You a Blessed Thanksgiving",
+      "translation": "A warmer, card-length wish",
+      "needs_native_speaker_review": false
+    },
+    {
+      "text": "Feliz Día de Acción de Gracias",
+      "native_script": "Feliz Día de Acción de Gracias",
+      "romanization": "feh-LEEZ DEE-ah deh ahk-see-OHN deh GRAH-see-ahs",
+      "translation": "Happy Thanksgiving (Spanish)",
+      "needs_native_speaker_review": true
+    }
+  ],
+
+  "related": [
+    {
+      "href": "/library/thanksgiving-symbols/",
+      "title": "Thanksgiving Symbols",
+      "desc": "A broader reference library of Thanksgiving Unicode symbols and emoji combos."
+    },
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Every food and drink emoji from snacks to feasts."
+    },
+    {
+      "href": "/library/seasonal-emoji-combos/",
+      "title": "Seasonal Emoji Combos",
+      "desc": "Summer, fall, spring, and winter emoji combinations."
+    },
+    {
+      "href": "/category/bold-fonts/",
+      "title": "Bold Fonts",
+      "desc": "The full bold Unicode font family for a strong, table-card look."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    }
+  ]
+}
