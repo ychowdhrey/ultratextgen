@@ -1,0 +1,18 @@
+{
+  "_readme": "Ledger of recorded pre-build competitor+keyword gap checks for (Core-parent-pattern, locale) cells and gated-tail-pattern build exceptions — the instrument that replaces incidental discovery (the FR /symbol/ blind spot: EN had 77 symbol pages, FR had 6, and nothing flagged the ~49,960/mo of French demand until a manual Semrush pull found it) with a standing, recorded pass. Read/written by scripts/audit-locale-parent-gap.js (whole-site discovery) and scripts/check-locale-parent-gap.js (per-PR gate). Do NOT add or edit an entry here unilaterally — every entry must reflect a real, run instrument check, discussed with the user the same way data/translation_parity_exceptions.json entries are (see CLAUDE.md, 'Locale Parent Governance'). Entry shape: { pattern (a data/core_parent_set.json pattern string, e.g. \"symbol/*\"), locale (locale code), checkedDate (YYYY-MM-DD), instruments: { competitorFootprintInLocale: bool|null, keywordVolumeInLocaleMonthly: number|null, enGscImpressionsFromLocale: number|null } — null means that instrument was not run/available, not zero, evidence (short citation of where the numbers came from), recordedBy }. verdict: \"mirror\" (Core parent, demand confirms the default — informational, not required for the check to pass), \"veto\" (Core parent, pre-build check showed genuinely negligible demand — overrides the default-mirror), \"gate-pass\" (gated-tail parent, pre-build check cleared threshold — authorizes the build), \"gate-fail\" (gated-tail parent, pre-build check did not clear threshold — build not authorized). scripts/check-locale-parent-gap.js treats \"mirror\" and \"gate-pass\" as passing verdicts for a newly-shipped locale page; \"veto\" and \"gate-fail\" record that a page was deliberately NOT built. Do not invent additional entries with fabricated numbers — every cell without a real entry here is genuinely unaudited right now, which is exactly the gap this tooling exists to surface, not paper over.",
+  "entries": [
+    {
+      "pattern": "symbol/*",
+      "locale": "fr",
+      "checkedDate": "2026-07-14",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 49960,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "euro-sign 14,800/mo, micro-sign 5,400/mo, not-equal-sign 4,190/mo, delta-symbol 3,600/mo + 11 more evidence-backed symbol slugs, ~49,960/mo total French demand found via a manual Semrush pull against 15 missing symbol/ pages",
+      "recordedBy": "governance-tooling-audit"
+    }
+  ]
+}

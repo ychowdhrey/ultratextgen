@@ -1,0 +1,33 @@
+{
+  "_readme": "Locale Qualification Tier registry (data-driven, not tribal knowledge) — the second of the two new registries governing which locales are eligible for the Core Parent Set's default-mirror (see data/core_parent_set.json and CLAUDE.md's 'Locale Parent Governance' section). Read by scripts/lib/locale-parent-registry.js's classifyLocale(code) and decide(). `locales` is keyed by the canonical 28-locale-code list this repo's locale tooling agrees on (mirrors scripts/check-image-assets.py's LOCALES tuple) — every code must appear here so no locale tooling has to guess a default for a code it doesn't recognize. `tier`: 1 = deepen + mirror the Core Parent Set now; 2 = qualify via the existing 7-point language gate, then mirror Core on pass; 3 = hold/stub — no spec mirroring until promoted. `action` is a short human-readable label for the tier. `hold` (only ever true for \"vi\" today) marks a locale that would otherwise be Tier-2-eligible but is explicitly on hold for a non-content reason recorded in `holdReason` — do not add content there even though the tier number alone would allow it. `notes` is optional free text. Do NOT edit any locale's tier/hold flag unilaterally — every entry here reflects a discussed strategy decision, the same bar CLAUDE.md sets for data/translation_parity_exceptions.json. If a locale's tier looks wrong (or a locale needs promoting after passing the 7-point gate), raise it with the user first rather than editing this file to unblock a page you want to ship.",
+  "locales": {
+    "id": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false, "notes": "Retains the standing 60% near-term allocation; already the deepest/highest-yield locale (30 /id/ pages -> 417,877 impressions / 18,913 clicks / 4.5% CTR per the strategy doc's appendix)." },
+    "pt": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false },
+    "de": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false },
+    "fr": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false },
+    "tr": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false },
+    "it": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false },
+    "es": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false },
+    "pl": { "tier": 2, "action": "qualify-then-mirror-core", "hold": false },
+    "nl": { "tier": 2, "action": "qualify-then-mirror-core", "hold": false },
+    "ar": { "tier": 2, "action": "qualify-then-mirror-core", "hold": false },
+    "ko": { "tier": 2, "action": "qualify-then-mirror-core", "hold": false },
+    "ja": { "tier": 2, "action": "qualify-then-mirror-core", "hold": false },
+    "ru": { "tier": 2, "action": "qualify-then-mirror-core", "hold": false },
+    "th": { "tier": 2, "action": "qualify-then-mirror-core", "hold": false },
+    "vi": { "tier": 2, "action": "qualify-then-mirror-core", "hold": true, "holdReason": "Authority/indexing gap — not a content gap. Do not add vi content; it needs backlinks, not translations." },
+    "hi": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Named individually as Tier 3 in the strategy doc (9 pages at time of writing). No spec mirroring. Consolidate the switcher, validate head-term demand, then promote via the 7-point gate." },
+    "tl": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Named individually as Tier 3 in the strategy doc (6 pages at time of writing)." },
+    "hu": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Named individually as Tier 3 in the strategy doc (3 pages at time of writing)." },
+    "bs": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "cs": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "da": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "hr": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "no": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "ro": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "sk": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "sr": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "sv": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." },
+    "zh-tw": { "tier": 3, "action": "hold-stub", "hold": false, "notes": "Not individually qualified in the strategy doc — default conservative tier for the 'shadow/duplicate locales' bucket." }
+  }
+}
