@@ -202,5 +202,15 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /pt/library/simbolos-para-nick/            /pt/library/simbolos-para-free-fire/  301
 /pt/library/simbolos-para-nick/index.html  /pt/library/simbolos-para-free-fire/  301
 
+# id/es/pt emoji-combos: moved from orphaned top-level slugs into the
+# /library/ pillar (correct Core Parent Set lane), expanded toward EN's
+# 25-mood-section parity in the same change.
+/id/kombinasi-emoji/                     /id/library/emoji-combos/  301
+/id/kombinasi-emoji/index.html           /id/library/emoji-combos/  301
+/es/combinaciones-de-emojis/             /es/library/emoji-combos/  301
+/es/combinaciones-de-emojis/index.html   /es/library/emoji-combos/  301
+/pt/combos-de-emoji/                     /pt/library/emoji-combos/  301
+/pt/combos-de-emoji/index.html           /pt/library/emoji-combos/  301
+
 /404  /404.html  200
 /*    /404.html  404

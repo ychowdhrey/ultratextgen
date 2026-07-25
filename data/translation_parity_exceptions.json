@@ -24,6 +24,30 @@
       "localeUrl": "https://ultratextgen.com/id/usecase/",
       "reason": "check-translation-parity.js flags this pair because id/usecase/index.html was edited late in this branch (removing duplicate compare-cards left over from merging two independent PRs that each added cards for the same 3 new pages — see this repo's PR history around 2026-07-25). After dedup, id/usecase/index.html's net content versus origin/main is unchanged (main's own independent PR #649 had already added equivalent cards for these 3 pages before this branch merged main in), while usecase/index.html (EN) gained its 3 matching cards in an earlier commit in this same branch. Both sides carry the equivalent content; the checker's per-branch commit-delta comparison just can't see that ID's parity was achieved via a different, earlier PR rather than a commit in this one. Verified by direct inspection. Discussed with the user 2026-07-25.",
       "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/text-faces-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/es/library/kaomoji/",
+      "reason": "check-translation-parity.js flags this pair (mislabeling the EN side as zh-tw/library/kaomoji/ in its output — the same display quirk already noted on the pt/library/ entry above, not the real comparison) because es/library/kaomoji/index.html had one related-card href repointed from the now-retired /es/combinaciones-de-emojis/ to its new home at /es/library/emoji-combos/ (part of this branch's id/es/pt emoji-combos library-lane move — see the library/emoji-combos/ entries below). The related-card itself is a pre-existing ES-only editorial addition that EN's text-faces-kaomoji parent never carried, so this is a URL-only mechanical fix, not new translatable content — EN needed no corresponding change. Verified by direct inspection (git diff shows only the href value changed). Discussed with the user 2026-07-25 as part of the same authorized emoji-combos build.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/id/library/emoji-combos/",
+      "reason": "check-translation-parity.js flags this pair because id/library/emoji-combos/index.html (moved this branch from the orphaned /id/kombinasi-emoji/ into the /library/ pillar, per the Core Parent Set governance rule) gained 15 new sections (11 subculture mood combos — baddie/emo/scene/weirdcore/dreamcore/cybercore/mermaidcore/kidcore/clowncore/goblincore/lovecore — plus 4 base-emoji collection sections) this branch, while library/emoji-combos/index.html (EN) itself was not edited in this branch. This is not drift: EN already had all 15 of these sections live before this branch started (they are literally where the id page's new content was translated FROM — verified by direct inspection, section-by-section, against library/emoji-combos/index.html's existing Baddie/Emo/Scene/.../Accents sections). ID was catching up to already-live EN content, not diverging from it. Discussed with the user 2026-07-25 as part of the authorized emoji-combos library-lane fix (id/es/pt).",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/es/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the id/library/emoji-combos/ entry immediately above: es/library/emoji-combos/index.html (moved this branch from /es/combinaciones-de-emojis/ into /library/) gained the same 15 sections (11 subculture moods + 4 base-emoji collections) translated directly from content already live on library/emoji-combos/index.html (EN) before this branch started — verified section-by-section by direct inspection, not assumed. EN was not edited in this branch because it needed no change; ES was catching up, not diverging. Discussed with the user 2026-07-25.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/pt/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the id/library/emoji-combos/ and es/library/emoji-combos/ entries above: pt/library/emoji-combos/index.html (moved this branch from /pt/combos-de-emoji/ into /library/) gained the 11 missing subculture-mood sections (baddie/emo/scene/weirdcore/dreamcore/cybercore/mermaidcore/kidcore/clowncore/goblincore/lovecore) translated directly from content already live on library/emoji-combos/index.html (EN) before this branch started — PT already carried equivalents of the other 4 EN collection sections (emojis-base/fofos/vibrantes/enfeite) plus a PT-only football-player-combos section pre-existing this branch, so the EN–PT gap was narrower than EN–ID/ES. Verified section-by-section by direct inspection. EN was not edited in this branch because it needed no change. Discussed with the user 2026-07-25.",
+      "agreed": "2026-07-25"
     }
   ]
 }
