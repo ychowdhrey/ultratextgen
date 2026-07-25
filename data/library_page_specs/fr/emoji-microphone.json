@@ -1,0 +1,67 @@
+{
+  "slug": "emoji-microphone",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Emoji Microphone : Copier-Coller 🎤 — Signification, Histoire & Code Unicode",
+  "meta_description": "Copie et colle l'emoji microphone 🎤 (U+1F3A4) — sa signification, son bref historique depuis Unicode 6.0, et sa différence avec le microphone de studio 🎙️. Clique pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/emoji-microphone/",
+  "breadcrumb": "Emoji Microphone",
+  "hero_h1": "Emoji Microphone (🎤)",
+  "hero_tagline": "Le micro à main qu'on dégaine pour parler chant, karaoké, animation de soirée, interviews et moments « mic drop » — à ne pas confondre avec le microphone de studio sur pied 🎙️. Clique pour le copier instantanément.",
+  "intro": "L'emoji microphone (🎤, U+1F3A4 MICROPHONE) représente un micro à main dont la tête est inclinée vers la bouche — la forme utilisée pour le chant, le karaoké, l'animation de soirée, les interviews, le stand-up et les moments « mic drop ». Il fait partie du jeu d'emoji standard depuis Unicode 6.0 en 2010, dans la première vague d'emoji intégrés à partir des polices des opérateurs mobiles japonais, et s'affiche en pleine couleur sur toutes les plateformes majeures sans avoir besoin de sélecteur de variation. Clique dessus ci-dessous pour le copier instantanément.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-microphone/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "emoji-microphone",
+      "label": "Microphone",
+      "h2": "L'Emoji Microphone",
+      "intro": "Le micro à main lui-même — prêt à coller partout où les emoji sont pris en charge.",
+      "symbols": [
+        { "char": "🎤", "label": "Microphone (U+1F3A4)" }
+      ]
+    },
+    {
+      "id": "microphones-confondus",
+      "label": "Voisins Confondus",
+      "h2": "Emoji Auxquels on le Confond",
+      "intro": "Des symboles que l'on cherche en s'attendant au micro à main, mais qui sont en réalité des emoji distincts, à un code différent.",
+      "symbols": [
+        { "char": "🎙️", "label": "Microphone de Studio (U+1F399) — le micro de diffusion/podcast sur pied" },
+        { "char": "🔊", "label": "Haut-Parleur Volume Fort (U+1F50A)" },
+        { "char": "🗣️", "label": "Tête qui Parle (U+1F5E3 FE0F)" },
+        { "char": "📢", "label": "Haut-Parleur Public (U+1F4E2)" }
+      ]
+    },
+    {
+      "id": "emoji-musique-associes",
+      "label": "Emoji Musique Associés",
+      "h2": "Emoji Musique & Performance qui l'Accompagnent",
+      "intro": "Des emoji qui apparaissent aux côtés du microphone dans les légendes de chant, de concert et de podcast.",
+      "symbols": [
+        { "char": "🎧", "label": "Casque Audio (U+1F3A7)" },
+        { "char": "🎵", "label": "Note de Musique (U+1F3B5)" },
+        { "char": "🎶", "label": "Notes de Musique (U+1F3B6)" },
+        { "char": "🎸", "label": "Guitare (U+1F3B8)" },
+        { "char": "🥁", "label": "Tambour (U+1F941)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/object-emojis/", "title": "Object Emojis", "desc": "Chaque emoji d'objet du quotidien — technologie, maison et bureau, dont le microphone — à parcourir dans une même grille (en anglais)." },
+    { "href": "/library/emoji-combos/", "title": "Emoji Combos", "desc": "Des associations d'emoji toutes prêtes pour bios et légendes, y compris sur les thèmes musique et performance (en anglais)." },
+    { "href": "/library/music-symbols/", "title": "Music Symbols", "desc": "La notation musicale Unicode — ♪ ♫ ♬ — la cousine en texte de la famille des emoji de musique (en anglais)." }
+  ]
+}

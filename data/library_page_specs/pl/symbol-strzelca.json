@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-strzelca",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Strzelca: Skopiuj ♐ — Łucznik Wskazujący Centrum Galaktyki",
+  "meta_description": "Skopiuj symbol zodiakalnego Strzelca (♐) i mit o centaurze stojący za tym znakiem, a także prawdziwy astronomiczny fakt, że gwiazdozbiór „Czajnika” wskazuje wprost centrum Drogi Mlecznej. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-strzelca/",
+  "breadcrumb": "Symbol Strzelca",
+  "hero_h1": "Symbol Strzelca",
+  "hero_tagline": "Glif Strzelca (♐) to strzała naciągnięta na łuk — zwykle wiązana z centaurem Chironem, a jego gwiazdozbiór w kształcie „Czajnika” wskazuje niemal dokładnie na czarną dziurę w centrum naszej galaktyki. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Strzelca (♐, U+2650) to strzała przecinająca łuk. Najpopularniejszy mit stojący za tym znakiem dotyczy centaura Chirona — nauczyciela herosa Achillesa, który oddał swoją nieśmiertelność, by uwolnić Prometeusza, i został umieszczony wśród gwiazd przez wdzięcznego Zeusa (konkurencyjna wersja starożytnego astronoma Eratostenesa wskazuje zamiast tego na satyra Krotosa, uznawanego za wynalazcę łucznictwa). Niezależnie od mitologii, gwiazdozbiór ma realne astronomiczne znaczenie: jego asteryzm „Czajnik” wskazuje niemal dokładnie centrum Drogi Mlecznej, czyli miejsce, w którym znajduje się supermasywna czarna dziura Sagittarius A*. Strzelec trwa od 22 listopada do 21 grudnia, jest rządzony przez Jowisza i jest znakiem Ognia o modalności zmiennej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/sagittarius-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-strzelca/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sagittarius-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-strzelca",
+      "label": "Strzelec",
+      "h2": "Symbol Strzelca",
+      "intro": "Unicode'owy glif zodiakalnego Strzelca, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♐", "label": "Symbol Strzelca" },
+        { "char": "♐️", "label": "Symbol Strzelca (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Strzelcowi.",
+      "symbols": [
+        { "char": "♃", "label": "Jowisz (Planeta Rządząca)" },
+        { "char": "🜂", "label": "Ogień (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Strzelca (Bliźnięta).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♊", "label": "Bliźnięta (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/symbol/gemini-symbol/",
+      "title": "Gemini Symbol",
+      "desc": "Astrologiczne przeciwieństwo Strzelca, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/symbol/aquarius-symbol/",
+      "title": "Aquarius Symbol",
+      "desc": "Wodnik, który mimo nazwy jest znakiem Powietrza, a nie Wody."
+    }
+  ]
+}

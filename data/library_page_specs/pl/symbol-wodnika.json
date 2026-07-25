@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-wodnika",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Wodnika: Skopiuj ♒ — Znak Wody, Który Jest Znakiem Powietrza",
+  "meta_description": "Skopiuj symbol zodiakalnego Wodnika (♒) i prawdziwy powód, dla którego znak nazwany od wody, z falistym glifem wody, jest jednak zaklasyfikowany jako znak Powietrza. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-wodnika/",
+  "breadcrumb": "Symbol Wodnika",
+  "hero_h1": "Symbol Wodnika",
+  "hero_tagline": "Glif Wodnika (♒) to dwie faliste linie płynącej wody — a mimo to, wbrew nazwie i symbolice, Wodnik jest zaklasyfikowany jako znak Powietrza, co jest unikatowym w całym zodiaku niedopasowaniem. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Wodnika (♒, U+2652) rysowany jest jako dwie równoległe faliste linie przedstawiające płynącą wodę. Jego mit to Ganimedes, młodzieniec porwany przez Zeusa (pod postacią orła), by służyć bogom na Olimpie jako podczaszy — postać, której korzenie sięgają jeszcze dalej, do Enki (Ea), mezopotamskiego boga wody i mądrości. Mimo nazwy „wodnik” i falistego glifu wody, Wodnik jest w rzeczywistości zaklasyfikowany jako znak Powietrza, a nie Wody — prawdziwe niedopasowanie, unikatowe wśród wszystkich dwunastu znaków. Wodnik trwa od 20 stycznia do 18 lutego, we współczesnej astrologii rządzony jest przez Urana (tradycyjnie przez Saturna) i ma modalność stałą.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/aquarius-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-wodnika/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/aquarius-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-wodnika",
+      "label": "Wodnik",
+      "h2": "Symbol Wodnika",
+      "intro": "Unicode'owy glif zodiakalnego Wodnika, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♒", "label": "Symbol Wodnika" },
+        { "char": "♒️", "label": "Symbol Wodnika (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Wodnikowi.",
+      "symbols": [
+        { "char": "♅", "label": "Uran (Planeta Rządząca)" },
+        { "char": "🜁", "label": "Powietrze (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Wodnika (Lew).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♌", "label": "Lew (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/symbol/leo-symbol/",
+      "title": "Leo Symbol",
+      "desc": "Astrologiczne przeciwieństwo Wodnika, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/pl/symbol/symbol-wagi/",
+      "title": "Symbol Wagi",
+      "desc": "Jedyny symbol zodiaku przedstawiający przedmiot, a nie zwierzę czy osobę."
+    }
+  ]
+}

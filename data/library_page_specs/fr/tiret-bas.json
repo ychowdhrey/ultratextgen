@@ -1,0 +1,65 @@
+{
+  "slug": "tiret-bas",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Tiret Bas : Copier-Coller _ ＿ ‾ — De l'Astuce du Soulignement à la Machine à Écrire au snake_case",
+  "meta_description": "Copie et colle le tiret bas (_, U+005F LOW LINE), sa variante pleine chasse ＿ et son cousin la barre suscrite ‾ — et découvre comment une astuce de machine à écrire est devenue le snake_case. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/tiret-bas/",
+  "breadcrumb": "Tiret Bas",
+  "hero_h1": "Tiret Bas (_)",
+  "hero_tagline": "Le tiret bas du clavier (_), né d'une astuce de soulignement à la machine à écrire et devenu le snake_case — le seul caractère « sans espace » toléré dans les noms d'utilisateur, les e-mails et les noms de fichiers — présenté ici avec sa variante pleine chasse ＿, sa version doublée ‗ et la barre suscrite ‾. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le tiret bas, ou underscore (_, U+005F LOW LINE), est le trait horizontal posé sur la ligne de base, dans le bloc Unicode Basic Latin, où il porte la catégorie générale « ponctuation de connexion ». Il vient d'une astuce purement mécanique : sur une machine à écrire, on soulignait un mot en le tapant, en ramenant le chariot à son point de départ, puis en retapant la même portion avec la touche underscore — une touche dédiée déjà présente sur des machines comme la Caligraph de 1881. Le caractère est entré dans l'ASCII en 1967, prenant le code 95 (0x5F) à la place de la flèche gauche (←) qu'il a remplacée, après que l'EBCDIC d'IBM l'ait déjà ajouté en 1964 comme « caractère de rupture ». Les programmeurs s'en sont ensuite emparés comme séparateur de mots — le style « underscores en guise d'espaces » remonte au langage C de la fin des années 1960 et à l'ouvrage The C Programming Language (1978), même si le nom « snake_case » n'a été inventé que vers 2004 par la communauté Ruby (le PEP 8 de Python parle encore de « lower_case_with_underscores »). Aujourd'hui, c'est le seul caractère « sans espace » accepté dans les noms d'utilisateur, la partie locale des adresses e-mail, les noms de fichiers et les slugs d'URL, et Markdown lit _un seul underscore_ comme de l'italique et __un double__ comme du gras. On le confond sans cesse avec le trait d'union (-, U+002D) et avec ses cousins plus larges, le tiret bas pleine chasse ＿ (U+FF3F) et le double tiret bas ‗ (U+2017).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/tiret-bas/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "le-tiret-bas",
+      "label": "Le Tiret Bas",
+      "h2": "Le Tiret Bas, Pleine Chasse & Doublé",
+      "intro": "Le simple tiret bas du clavier et ses deux variantes de largeur — la forme pleine chasse utilisée en typographie est-asiatique et le tiret bas doublé, plus espacé. Prêts à coller n'importe où.",
+      "symbols": [
+        { "char": "_", "label": "Tiret Bas / Low Line (U+005F)" },
+        { "char": "＿", "label": "Tiret Bas Pleine Chasse (U+FF3F)" },
+        { "char": "‗", "label": "Double Tiret Bas (U+2017)" }
+      ]
+    },
+    {
+      "id": "barre-suscrite",
+      "label": "La Barre Suscrite",
+      "h2": "La Barre Suscrite : le Même Trait, au-Dessus du Texte",
+      "intro": "La barre suscrite est l'image miroir du tiret bas — le même trait horizontal placé au-dessus du texte plutôt qu'en dessous, ce qui explique pourquoi on les confond au point de les croire opposés. Le macron est le petit trait que l'on tape souvent par erreur quand on veut une barre suscrite.",
+      "symbols": [
+        { "char": "‾", "label": "Barre Suscrite / Overscore (U+203E)" },
+        { "char": "¯", "label": "Macron (U+00AF)" }
+      ]
+    },
+    {
+      "id": "face-au-trait-union",
+      "label": "Vs. Trait d'Union & Tiret",
+      "h2": "Tiret Bas vs. la Famille des Traits d'Union & Tirets",
+      "intro": "Dans les URL, les noms d'utilisateur et les noms de fichiers, tiret bas et trait d'union sont constamment permutés l'un pour l'autre — pourtant ils n'ont ni la même hauteur ni le même point de code, et chacun remplit un rôle différent.",
+      "symbols": [
+        { "char": "-", "label": "Trait d'Union-Signe Moins / Trait du Clavier (U+002D)" },
+        { "char": "‐", "label": "Trait d'Union (U+2010)" },
+        { "char": "–", "label": "Tiret Demi-Cadratin (U+2013)" },
+        { "char": "−", "label": "Signe Moins (U+2212)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/keyboard-symbols/", "title": "Keyboard Symbols", "desc": "Le tiret bas, le trait d'union, l'astérisque et le reste des signes de ponctuation d'un clavier standard, prêts à copier (en anglais)." },
+    { "href": "/library/punctuation-symbols/", "title": "Punctuation Symbols", "desc": "Tirets, crochets, guillemets et toute la ponctuation courante d'Unicode réunie dans une même référence (en anglais)." },
+    { "href": "/fr/symbol/symbole-arobase/", "title": "Symbole Arobase (@)", "desc": "L'autre caractère spécial au cœur des adresses e-mail et des pseudos, là où le tiret bas est le séparateur sans espace." }
+  ]
+}

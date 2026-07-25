@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-raka",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Raka: Skopiuj ♋ — Jedyny Znak Zodiaku Rządzony Przez Księżyc",
+  "meta_description": "Skopiuj symbol zodiakalnego Raka (♋) i mit o krabie stojący za tym znakiem — olbrzymim krabie, którego Hera wysłała przeciw Heraklesowi, oraz dlaczego Rak to jedyny znak zodiaku rządzony przez Księżyc. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-raka/",
+  "breadcrumb": "Symbol Raka",
+  "hero_h1": "Symbol Raka",
+  "hero_tagline": "Glif Raka (♋) to para zawiniętych krabich szczypiec — a Rak jest jedynym znakiem zodiaku rządzonym przez Księżyc (☽), co razem ze Słońcem rządzącym Lwem czyni je jedynymi dwoma znakami sterowanymi przez ciało niebieskie, a nie planetę. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Raka (♋, U+264B) rysowany jest jako dwie zawinięte krabie szczypce — glif na tyle stylizowany, że wiele osób odczytuje go jako odwróconą „69” albo parę splecionych przecinków. Jego mit pochodzi z Dwunastu Prac Heraklesa: podczas drugiej próby, walki z wielogłową Hydrą lernejską, bogini Hera — która nienawidziła Heraklesa — zesłała przeciw niemu olbrzymiego kraba. Kraba uszczypnął go w stopę, a Herakles zmiażdżył go pod nogą. W podzięce za jego wysiłek Hera umieściła kraba wśród gwiazd jako Raka, w wyjątkowo słabo widocznym fragmencie nieba. Rak jest też jedynym znakiem zodiaku rządzonym przez Księżyc (☽) — obok rządzonego przez Słońce Lwa to jedyne dwa znaki sterowane przez ciało niebieskie, a nie planetę. Trwa od 21 czerwca do 22 lipca, jest znakiem Wody o modalności kardynalnej i zaczyna się w przesilenie czerwcowe, od którego wzięła nazwę Zwrotnik Raka.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/cancer-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-raka/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cancer-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-raka",
+      "label": "Rak",
+      "h2": "Symbol Raka",
+      "intro": "Unicode'owy glif zodiakalnego Raka, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♋", "label": "Symbol Raka" },
+        { "char": "♋️", "label": "Symbol Raka (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Rakowi.",
+      "symbols": [
+        { "char": "☽", "label": "Księżyc (Planeta Rządząca)" },
+        { "char": "🜄", "label": "Woda (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Raka (Koziorożec).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♑", "label": "Koziorożec (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/symbol/capricorn-symbol/",
+      "title": "Capricorn Symbol",
+      "desc": "Astrologiczne przeciwieństwo Raka, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/symbol/leo-symbol/",
+      "title": "Leo Symbol",
+      "desc": "Jedyny znak zodiaku rządzony przez Słońce — odpowiednik rządzonego przez Księżyc Raka."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "emoji-de-microfone",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Emoji de Microfone: Copiar e Colar 🎤 — Significado, História e Toda Forma de Digitar",
+  "meta_description": "Copie e cole o emoji de microfone 🎤 (U+1F3A4) — o que significa, sua história no Unicode desde 2010, e como ele difere do microfone de estúdio 🎙️. Clique para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/emoji-de-microfone/",
+  "breadcrumb": "Emoji de Microfone",
+  "hero_h1": "Emoji de Microfone (🎤)",
+  "hero_tagline": "O microfone de mão que você usa para falar de canto, karaokê, apresentações, entrevistas e o clássico mic drop — não confunda com o microfone de estúdio montado em tripé 🎙️. Clique para copiar na hora.",
+  "intro": "O emoji de microfone (🎤, U+1F3A4 MICROPHONE) retrata um microfone de mão com a cápsula inclinada em direção à boca — a forma usada para canto, karaokê, apresentações, entrevistas, stand-up e momentos de mic drop. Faz parte do conjunto padrão de emojis desde o Unicode 6.0, em 2010, entre a primeira leva de emojis incorporados das fontes de operadoras móveis japonesas, e é renderizado em cores completas em todas as principais plataformas sem precisar de seletor de variação. Clique nele abaixo para copiar na hora.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-microfone/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "microphone-emoji",
+      "label": "Microfone",
+      "h2": "O Emoji de Microfone",
+      "intro": "O microfone de mão em si — pronto para colar em qualquer lugar que aceite emoji.",
+      "symbols": [
+        { "char": "🎤", "label": "Microfone (U+1F3A4)" }
+      ]
+    },
+    {
+      "id": "microphone-confusables",
+      "label": "Vizinhos Confundíveis",
+      "h2": "Emojis com que É Confundido",
+      "intro": "Símbolos que as pessoas usam esperando o microfone de mão, mas que na verdade são emojis separados, com códigos diferentes.",
+      "symbols": [
+        { "char": "🎙️", "label": "Microfone de Estúdio (U+1F399) — o microfone de transmissão/podcast montado em tripé" },
+        { "char": "🔊", "label": "Alto-Falante com Volume Alto (U+1F50A)" },
+        { "char": "🗣️", "label": "Cabeça Falando (U+1F5E3 FE0F)" },
+        { "char": "📢", "label": "Alto-Falante de Anúncio Público (U+1F4E2)" }
+      ]
+    },
+    {
+      "id": "related-music-emoji",
+      "label": "Emojis de Música Relacionados",
+      "h2": "Emojis de Música e Performance que Combinam com Ele",
+      "intro": "Emojis que aparecem junto com o microfone em legendas de canto, show e podcast.",
+      "symbols": [
+        { "char": "🎧", "label": "Fone de Ouvido (U+1F3A7)" },
+        { "char": "🎵", "label": "Nota Musical (U+1F3B5)" },
+        { "char": "🎶", "label": "Notas Musicais (U+1F3B6)" },
+        { "char": "🎸", "label": "Violão (U+1F3B8)" },
+        { "char": "🥁", "label": "Tambor (U+1F941)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria — inclui o microfone e outros emojis de objeto."
+    },
+    {
+      "href": "/pt/library/emoji-combos/",
+      "title": "Combos de Emoji",
+      "desc": "Combinações prontas de emoji para bios e legendas, incluindo temas de música e performance."
+    },
+    {
+      "href": "/pt/library/simbolos-musicais/",
+      "title": "Símbolos Musicais",
+      "desc": "Notação musical em Unicode — ♪ ♫ ♬ — a prima em texto da família de emoji musical."
+    }
+  ]
+}

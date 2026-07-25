@@ -1,0 +1,78 @@
+{
+  "slug": "lambda-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Lambda: Sao Chép & Dán λ Λ — Biểu Tượng Giải Phóng Đồng Tính & Phép Tính Lambda Của Church",
+  "meta_description": "Sao chép ký hiệu lambda — chữ thường λ (bước sóng, biểu tượng phong trào giải phóng đồng tính năm 1970) và chữ hoa Λ (hằng số vũ trụ học) — cùng câu chuyện nó đặt tên cho lambda trong Python và AWS Lambda. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/lambda-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Lambda",
+  "hero_h1": "Ký Hiệu Lambda",
+  "hero_tagline": "Chữ thường λ mà nhà thiết kế đồ họa Tom Doerr biến thành biểu tượng giải phóng đồng tính năm 1970, cùng chữ cái đứng sau phép tính lambda của Alonzo Church và ký hiệu bước sóng trong vật lý, và chữ hoa Λ đại diện cho hằng số vũ trụ học. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Glyph viết thường của lambda, λ (U+03BB, GREEK SMALL LETTER LAMDA), là chữ cái thứ 11 trong bảng chữ cái Hy Lạp — nhưng nó mang hai trong số những ý nghĩa nặng ký nhất mà bất kỳ ký tự đơn lẻ nào từng có. Năm 1970, nhà thiết kế đồ họa Tom Doerr, một thành viên sáng lập của Liên Minh Hoạt Động Vì Người Đồng Tính (thành lập tại New York vào tháng 12 năm 1969), đã chọn chữ thường λ làm biểu tượng của tổ chức — theo nhiều ghi nhận là vì ý nghĩa vật lý của nó, «sự trao đổi năng lượng trọn vẹn» — và đến tháng 12 năm 1974, Đại Hội Quyền Đồng Tính Quốc Tế tại Edinburgh đã tuyên bố đây là biểu tượng quốc tế cho quyền của người đồng tính nam và nữ; nó vẫn đặt tên cho Lambda Legal và Quỹ Văn Học Lambda cho đến ngày nay. Cùng một chữ cái đó cũng là nền tảng của khoa học máy tính: Alonzo Church xây dựng phép tính lambda vào thập niên 1930, hệ thống hình thức sau này cho ra đời từ khóa lambda của Python dành cho hàm ẩn danh (thêm vào năm 1994) và dịch vụ điện toán không máy chủ AWS Lambda của Amazon. Trong vật lý, λ là ký hiệu chuẩn cho bước sóng, trong khi chữ hoa Λ (U+039B) ký hiệu hằng số vũ trụ học — số hạng năng lượng tối trong mô hình vũ trụ giãn nở ΛCDM. Cả hai dạng đều gia nhập Unicode 1.1 năm 1993.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/lambda-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/lambda-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-lambda-letter",
+      "label": "Chữ Cái",
+      "h2": "Ký Hiệu Lambda — λ & Λ",
+      "intro": "Chính chữ cái Hy Lạp — chữ thứ 11 trong bảng chữ cái, mang giá trị 30 trong hệ số đếm Hy Lạp, có gốc từ chữ lamed của Phoenicia. Chữ thường λ đảm nhận gần hết vai trò văn hóa; chữ hoa Λ là một ký hiệu toán học và vũ trụ học riêng biệt.",
+      "symbols": [
+        { "char": "λ", "label": "Chữ Thường Hy Lạp Lambda (U+03BB)" },
+        { "char": "Λ", "label": "Chữ Hoa Hy Lạp Lambda (U+039B)" }
+      ]
+    },
+    {
+      "id": "gay-liberation-symbol",
+      "label": "Giải Phóng Đồng Tính",
+      "h2": "Lambda Là Biểu Tượng Giải Phóng Đồng Tính",
+      "intro": "Liên Minh Hoạt Động Vì Người Đồng Tính tại New York chọn dùng chữ thường λ năm 1970, và Đại Hội Quyền Đồng Tính Quốc Tế tuyên bố đây là biểu tượng quốc tế cho quyền của người đồng tính nam và nữ năm 1974 — một trong những biểu tượng sớm nhất của phong trào. Dán nó cạnh những biểu tượng tự hào mà nó hiện đang đồng hành.",
+      "symbols": [
+        { "char": "λ", "label": "Chữ Thường Hy Lạp Lambda (U+03BB) — Biểu Tượng Giải Phóng Đồng Tính" },
+        { "char": "🏳️‍🌈", "label": "Cờ Cầu Vồng" },
+        { "char": "⚧", "label": "Ký Hiệu Chuyển Giới (U+26A7)" }
+      ]
+    },
+    {
+      "id": "lambda-code-science",
+      "label": "Mã Nguồn & Khoa Học",
+      "h2": "Lambda Trong Lập Trình, Toán Học & Vật Lý",
+      "intro": "Đời sống kỹ thuật của chữ cái này. Chữ thường λ ký hiệu hàm ẩn danh — từ phép tính lambda của Alonzo Church cho đến từ khóa lambda của Python và AWS Lambda — và đại diện cho bước sóng trong vật lý; chữ hoa Λ là hằng số vũ trụ học của mô hình ΛCDM.",
+      "symbols": [
+        { "char": "λ", "label": "Chữ Thường Hy Lạp Lambda (U+03BB) — Bước Sóng & Phép Tính Lambda" },
+        { "char": "Λ", "label": "Chữ Hoa Hy Lạp Lambda (U+039B) — Hằng Số Vũ Trụ Học" },
+        { "char": "𝜆", "label": "Lambda In Nghiêng Toán Học (U+1D706) — Biến Thể Dùng Trong Phương Trình" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Chữ Cái Hy Lạp",
+      "h2": "Chữ Cái Hy Lạp Liên Quan",
+      "intro": "Lambda là chữ cái thứ 11 trong bảng chữ cái Hy Lạp. Đây là những chữ cái lân cận được sao chép nhiều nhất cùng nó.",
+      "symbols": [
+        { "char": "π", "label": "Chữ Thường Hy Lạp Pi" },
+        { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" },
+        { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta" },
+        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega" },
+        { "char": "α", "label": "Chữ Thường Hy Lạp Alpha" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp — alpha, lambda, pi, sigma, omega — ở dạng hoa và thường để sao chép và dán." },
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Bước sóng, hằng số vũ trụ học, và các toán tử cùng chữ cái Hy Lạp lấp đầy một phương trình." },
+    { "href": "/library/pride-lgbtq-symbols/", "title": "Ký Hiệu Cầu Vồng & LGBTQ+", "desc": "Lambda, cầu vồng, labrys và các biểu tượng khác của bản dạng LGBTQ+, tập hợp trong một trang để sao chép." },
+    { "href": "/vi/symbol/pi-symbol/", "title": "Ký Hiệu Pi", "desc": "Một chữ cái Hy Lạp khác có đời sống vượt xa toán học — hằng số mà William Jones đặt tên năm 1706." }
+  ]
+}

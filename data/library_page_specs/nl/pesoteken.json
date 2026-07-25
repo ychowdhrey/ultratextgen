@@ -1,0 +1,129 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "pesoteken",
+  "title": "Pesoteken: Kopieer en Plak ₱ — Alleen de Filipijnse Peso Heeft Er Een; de Rest Gebruikt $",
+  "meta_description": "Kopieer het pesoteken ₱ (U+20B1) — het eigen teken van de Filipijnse peso, terwijl de Mexicaanse, Argentijnse, Colombiaanse en andere peso's allemaal met gewoon $ worden geschreven. Klik om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/pesoteken/",
+  "breadcrumb": "Pesoteken",
+  "hero_h1": "Pesoteken (₱)",
+  "hero_tagline": "Het ₱ dat bij de Filipijnse peso hoort — de enige peso ter wereld met een eigen teken, terwijl de Mexicaanse, Argentijnse en Colombiaanse peso het allemaal moeten doen met het gewone dollarteken. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het pesoteken (₱, Unicode U+20B1 PESO SIGN) is het eigen teken van de Filipijnse peso — en ondanks de generieke naam is het de enige peso ter wereld die er een heeft. Elke andere munt die peso heet — de Mexicaanse (MXN), Argentijnse (ARS), Colombiaanse (COP), Chileense (CLP), Cubaanse (CUP), Dominicaanse (DOP) en Uruguayaanse (UYU) peso onder meer — wordt gewoonlijk geschreven met het platte dollarteken, $ (U+0024), in de praktijk meestal ondubbelzinnig gemaakt met een landvoorvoegsel zoals MX$ of COL$. Dat gedeelde glyph is geen toeval: het dollarteken zelf wordt algemeen verondersteld te zijn ontstaan uit een achttiende-eeuwse handgeschreven afkorting van de Spaanse peso, en dat is waarom één teken vandaag nog steeds zowel dollars als de meeste peso's bedient. De Filipijnen kozen een andere weg. Executive Order No. 66, uitgevaardigd door de Amerikaanse koloniale overheid op 3 augustus 1903, decreteerde een hoofdletter P doorkruist door twee evenwijdige lijnen, specifiek om de Filipijnse peso te onderscheiden van de Amerikaanse dollar en de Spaanse peseta. Unicode codeerde ₱ in versie 3.2, uitgebracht in 2002; de ISO-4217-code van de munt is PHP en ze wordt uitgegeven door de Bangko Sentral ng Pilipinas.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/pesoteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "pesoteken",
+      "label": "Het Pesoteken",
+      "h2": "De Twee Tekens die 'het Pesoteken' Worden Genoemd — ₱ en $",
+      "intro": "Beide worden het pesoteken genoemd. ₱ is het eigen teken van de Filipijnse peso; $ is wat vrijwel elke andere peso gebruikt — omdat het dollarteken zelf waarschijnlijk begon als afkorting voor de Spaanse peso. Of het van een handgeschreven 'Ps' komt of van de met een S omwikkelde Zuilen van Hercules op Spaanse dollarmunten, is onder historici nog steeds een echt discussiepunt.",
+      "symbols": [
+        {
+          "char": "₱",
+          "label": "Pesoteken (U+20B1) — het eigen glyph van de Filipijnse peso"
+        },
+        {
+          "char": "$",
+          "label": "Dollarteken (U+0024) — het teken dat de Mexicaanse, Argentijnse en andere peso's daadwerkelijk gebruiken"
+        }
+      ]
+    },
+    {
+      "id": "doorkruiste-letter-valuta",
+      "label": "Gebouwd zoals de Peso",
+      "h2": "De Familie van Doorkruiste-letter-valutatekens",
+      "intro": "Het pesoteken is een hoofdletter P doorkruist door twee evenwijdige balken — hetzelfde recept achter een hele generatie moderne valutatekens, elk een nationale letter doorkruist met één of twee lijnen. Overal direct te plakken.",
+      "symbols": [
+        {
+          "char": "₹",
+          "label": "Indiase Roepieteken (U+20B9) — een doorkruiste R, officieel aangenomen in 2010"
+        },
+        {
+          "char": "₩",
+          "label": "Wonteken (U+20A9) — een W met twee balken"
+        },
+        {
+          "char": "₦",
+          "label": "Nairateken (U+20A6) — een doorkruiste N (Nigeria)"
+        },
+        {
+          "char": "₴",
+          "label": "Hryvniateken (U+20B4) — een doorkruiste letter voor Oekraïne"
+        },
+        {
+          "char": "₫",
+          "label": "Dongteken (U+20AB) — een doorstreepte d (Vietnam)"
+        },
+        {
+          "char": "€",
+          "label": "Euroteken (U+20AC) — een afgeronde E met twee strepen"
+        }
+      ]
+    },
+    {
+      "id": "peso-lookalikes",
+      "label": "Verwar het Niet Met",
+      "h2": "Look-alikes: Glyphs die voor ₱ worden Aangezien",
+      "intro": "Omdat ₱ in essentie een doorstreepte P is, wordt het verward met andere P-vormige tekens — waaronder één die een compleet andere munt is. Elk is een eigen Unicode-codepunt, geen stijlvariant.",
+      "symbols": [
+        {
+          "char": "₽",
+          "label": "Roebelteken (U+20BD) — Ruslands munt, ook een doorstreepte P maar met een andere streep"
+        },
+        {
+          "char": "P",
+          "label": "Latijnse Hoofdletter P (U+0050) — de platte vervanger die vaak voor de peso wordt getypt"
+        },
+        {
+          "char": "Ᵽ",
+          "label": "Latijnse Hoofdletter P met Streep (U+2C63) — een enkel doorstreepte P gebruikt in taalkunde, niet in valuta"
+        },
+        {
+          "char": "Ρ",
+          "label": "Griekse Hoofdletter Rho (U+03A1) — ziet eruit als een P"
+        },
+        {
+          "char": "Р",
+          "label": "Cyrillische Hoofdletter Er (U+0420) — nog een P-look-alike"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Blader door elk wereldvalutateken — dollar, euro, pond, yen, roepie en peso — naast elkaar in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/dollarteken/",
+      "title": "Dollarteken ($)",
+      "desc": "Het teken dat vrijwel elke peso daadwerkelijk gebruikt: alleen de Filipijnse peso heeft zijn eigen ₱, terwijl de Mexicaanse, Argentijnse en Colombiaanse peso allemaal met $ worden geschreven."
+    },
+    {
+      "href": "/nl/symbol/roepieteken/",
+      "title": "Indiase Roepieteken (₹)",
+      "desc": "India's ₹ — net als ₱ een modern valutateken, officieel voor één land vastgelegd en gebouwd door een letter met evenwijdige balken te doorkruisen."
+    }
+  ]
+}

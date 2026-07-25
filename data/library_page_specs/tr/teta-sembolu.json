@@ -1,0 +1,129 @@
+{
+  "slug": "teta-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Teta Sembolü: Kopyala Yapıştır θ Θ ϑ — Antik Yunan'ın \"Ölüm Harfi\"",
+  "meta_description": "Teta sembolünü kopyala yapıştır — küçük θ, büyük Θ ve açık halkalı matematik varyantı ϑ — antik Atinalıların idam oyu için oy pusulasına kazıdığı harf. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/teta-sembolu/",
+  "breadcrumb": "Teta Sembolü",
+  "hero_h1": "Teta Sembolü",
+  "hero_tagline": "Trigonometride bir açıyı gösteren küçük θ, Büyük-Teta karmaşıklık gösteriminin büyük Θ'sı ve açık halkalı matematik varyantı ϑ — klasik dönem Atinalılarının bir zamanlar idam oyu için oy pusulasına kazıdığı aynı harf. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Teta, Yunan alfabesinin sekizinci harfidir; küçük harf glifi θ (U+03B8, GREEK SMALL LETTER THETA) — yatay bir çizgiyle kesişen bir daire — herhangi bir harfin taşıdığı en karanlık geçmişlerden birine sahiptir. Klasik antik çağda teta \"ölüm harfi\"ydi: θάνατος (thánatos, \"ölüm\") sözcüğünü simgeliyordu ve Atinalı jüri üyeleri bir sanığın mahkûmiyeti ya da idamı için oy kullanmak amacıyla teta harfini bir oy pusulasına ya da çömlek parçasına kazıyabiliyordu — öyle kötü bir ünü vardı ki Roma şairi Ennius'un tetayı tüm harflerin en uğursuzu diye andığı söylenir. Büyük harf biçimi Θ (U+0398) ve ayrı, açık halkalı bir varyant olan ϑ (U+03D1, GREEK THETA SYMBOL) aileyi tamamlar — ϑ bazı fizik ve matematik dizgisinde kullanılan el yazısı tarzı bir glif olup ayrı bir harf değildir. Bugün tetanın işi çok daha sakin: küçük θ trigonometri ve geometride bilinmeyen ya da ölçülen bir açı için standart semboldür, büyük Θ ise Donald Knuth'un 1976 tarihli \"Big Omicron and Big Omega and Big Theta\" makalesinde biçimselleştirdiği algoritma analizinin \"sıkı sınırı\" olan Büyük-Teta gösterimini adlandırır. Yunan sayı sisteminde teta ayrıca 9 değerini taşır.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-theta-symbol",
+      "label": "Teta Sembolü",
+      "h2": "Teta Sembolü — θ, Θ ve ϑ",
+      "intro": "İnsanların gerçekten kopyaladığı üç teta glifi: gündelik küçük θ, büyük Θ ve matematik ile fiziğe ayrılan açık halkalı ϑ varyantı. Dördüncü, çizgili büyük harf biçimi ise yalnızca bir matematik sembolü olarak var olur.",
+      "symbols": [
+        {
+          "char": "θ",
+          "label": "Greek Small Letter Theta (U+03B8) — Açı Sembolü"
+        },
+        {
+          "char": "Θ",
+          "label": "Greek Capital Letter Theta (U+0398) — Büyük-Teta Gösterimi"
+        },
+        {
+          "char": "ϑ",
+          "label": "Greek Theta Symbol (U+03D1) — Açık Halkalı Matematik Varyantı"
+        },
+        {
+          "char": "ϴ",
+          "label": "Greek Capital Theta Symbol (U+03F4) — Çizgili Varyant"
+        }
+      ]
+    },
+    {
+      "id": "theta-in-math",
+      "label": "Matematik ve Bilim",
+      "h2": "Matematik ve Bilgisayar Biliminde Teta",
+      "intro": "Aynı harf iki çok farklı işi yürütür. Küçük θ bir açıyı adlandırmanın standart yoludur; büyük Θ ise karmaşıklık analizinde Büyük-O'nun (üst sınır) ve Büyük-Omega'nın (alt sınır) arasına oturan sıkı sınırdır.",
+      "symbols": [
+        {
+          "char": "θ",
+          "label": "Small Theta (U+03B8) — Trigonometri ve Geometride Açı"
+        },
+        {
+          "char": "Θ",
+          "label": "Capital Theta (U+0398) — Büyük-Teta, Sıkı Sınır"
+        },
+        {
+          "char": "Ω",
+          "label": "Capital Omega (U+03A9) — Büyük-Omega, Alt Sınır Kardeşi"
+        },
+        {
+          "char": "ϑ",
+          "label": "Theta Symbol (U+03D1) — Fizik Dizgisi Varyantı"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Yunan Harfleri",
+      "h2": "İlgili Yunan Harfleri",
+      "intro": "Teta, Yunan alfabesinin 8. harfidir. İşte insanların onun yanında en sık aradığı ve kopyaladığı komşu harfler.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        },
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "α",
+          "label": "Greek Small Letter Alpha"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/yunan-alfabesi-sembolleri/",
+      "title": "Yunan Alfabesi Sembolleri",
+      "desc": "Tam Yunan alfabesi — büyük, küçük ve matematik varyant biçimleriyle kopyala yapıştıra hazır."
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri",
+      "desc": "Açılar, işleçler ve bir denklemi tamamlayan teta gibi Yunan harfleri."
+    },
+    {
+      "href": "/tr/symbol/omega-sembolu/",
+      "title": "Omega Sembolü",
+      "desc": "Tetanın karmaşıklık gösterimindeki kardeşi: Θ sıkı sınır, Ω ise algoritma analizinde alt sınır."
+    },
+    {
+      "href": "/tr/symbol/delta-sembolu/",
+      "title": "Delta Sembolü",
+      "desc": "Matematikte derin bir hayatı olan bir başka tek Yunan harfi — değişim, fark ve diskriminant."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/teta-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

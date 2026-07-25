@@ -1,0 +1,114 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "deelteken",
+  "title": "Deelteken: Kopieer en Plak ÷ (Obelus)",
+  "meta_description": "Wat het deelteken ÷ betekent, waar de obelus vandaan komt (1659) en hoe je het typt — plus de verwarrende buurtekens ∕ en ⁄. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/deelteken/",
+  "breadcrumb": "Deelteken",
+  "hero_h1": "Deelteken (÷)",
+  "hero_tagline": "Wat ÷ betekent, waar de obelus vandaan komt en hoe je het typt. Klik om te kopiëren.",
+  "intro": "Het deelteken (÷, U+00F7) heet een obelus, een naam die is geleend van het Griekse woord voor een puntige spies of paal. Lang voordat het deling betekende, gebruikten oude en middeleeuwse schrijvers hetzelfde teken (als dolk of kort streepje) om twijfelachtige of onechte passages in een manuscript te markeren. Het gebruik voor deling specifiek dateert van 1659, toen de Zwitserse wiskundige Johann Rahn het publiceerde in zijn algebraboek Teutsche Algebra, mogelijk met hulp van de Engelse wiskundige John Pell, die een Engelse vertaling redigeerde. Het teken verspreidde zich via het Verenigd Koninkrijk en later de Verenigde Staten, maar werd nooit universeel — de Franse en andere continentale tradities gebruikten liever de dubbele punt (:) voor deling. Tegenwoordig zie je ÷ vooral in het vroege rekenonderwijs en op rekenmachines; in de hogere wiskunde krijgt een breuk (a/b) meestal de voorkeur zodra uitdrukkingen complexer worden.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/division-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/deelteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/division-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "deelteken",
+      "label": "Deling",
+      "h2": "Deelteken",
+      "intro": "Het teken zelf, klaar om te plakken.",
+      "symbols": [
+        {
+          "char": "÷",
+          "label": "Deelteken (Obelus)"
+        }
+      ]
+    },
+    {
+      "id": "verwarrende-tekens",
+      "label": "Verwarrende Tekens",
+      "h2": "Tekens die vaak worden Aangezien voor het Deelteken",
+      "intro": "Deze zien er vergelijkbaar uit, maar horen bij andere wiskundige notatie.",
+      "symbols": [
+        {
+          "char": "∕",
+          "label": "Deelschuine Streep (U+2215) — apart teken in sommige wiskundige notatie"
+        },
+        {
+          "char": "⁄",
+          "label": "Breukstreep (U+2044) — bouwt inline breuken zoals 1⁄2"
+        },
+        {
+          "char": "/",
+          "label": "Gewone Schuine Streep (U+002F) — de gewone toetsenbordslash"
+        }
+      ]
+    },
+    {
+      "id": "verwante-operatoren",
+      "label": "Verwante Operatoren",
+      "h2": "Verwante Rekenkundige Operatoren",
+      "intro": "Andere basisoperatoren die je samen met ÷ tegenkomt.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "Vermenigvuldigingsteken"
+        },
+        {
+          "char": "±",
+          "label": "Plusminusteken"
+        },
+        {
+          "char": "−",
+          "label": "Minteken"
+        },
+        {
+          "char": "=",
+          "label": "Isgelijkteken"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/symbol/vermenigvuldigingsteken/",
+      "title": "Vermenigvuldigingsteken (×)",
+      "desc": "Het ‘keer’-teken uit 1631, en waarom het voor de letter x wordt aangezien."
+    },
+    {
+      "href": "/nl/symbol/vierkantswortel/",
+      "title": "Vierkantswortel (√)",
+      "desc": "Een oorsprong uit 1525 en de taak van de vinculumstreep."
+    },
+    {
+      "href": "/nl/symbol/oneindigheidsteken/",
+      "title": "Oneindigheidsteken (∞)",
+      "desc": "Waar de lemniscaat vandaan komt."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Alle Wiskunde-symbolen",
+      "desc": "Operatoren, Griekse letters, verzamelingenleer en calculus-notatie."
+    }
+  ]
+}

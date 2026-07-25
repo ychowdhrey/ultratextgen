@@ -1,0 +1,80 @@
+{
+  "slug": "emoji-meteora",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Emoji Meteora: Copia e Incolla 🪋 — la Candidata di Unicode 18.0 che si Separa da Comet",
+  "meta_description": "Meteor (🪋, U+1FA8B) è una candidata in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Risolve una divisione di rendering pluriennale di Comet — non ancora approvata, nessun font la renderizza oggi. Ecco il suo retroscena, il significato e lo stato attuale.",
+  "canonical": "https://ultratextgen.com/it/symbol/emoji-meteora/",
+  "breadcrumb": "Emoji Meteora",
+  "hero_h1": "Emoji Meteora",
+  "hero_tagline": "Una meteora che sfreccia, separata dalla crisi d'identità decennale di Comet — in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Solo bozza: non ancora approvata, nessun font la renderizza. Tocca comunque per copiare il codepoint.",
+  "intro": "Meteor (🪋, U+1FA8B) è un'emoji candidata in bozza per Emoji 18.0, la componente emoji di Unicode 18.0, attesa in versione definitiva a settembre 2026. Raffigura una palla di fuoco che sfreccia entrando nell'atmosfera — e nasce apposta per risolvere una divisione di rendering tra le piattaforme che perseguita l'emoji Comet (☄️) fin dal suo debutto: alcune piattaforme disegnavano Comet come una palla di ghiaccio blu e scintillante, altre l'hanno ridisegnata come una roccia rovente nel bel mezzo di un impatto — due concetti genuinamente diversi che condividono un unico codepoint. L'annuncio ufficiale di Unicode lo ha messo in chiaro: \"esprimere un desiderio guardando una stella ed essere testimoni di un evento di estinzione di massa sono due energie completamente diverse\". Meteor eredita il significato della palla di fuoco, così Comet può tornare a un design blu e ghiacciato coerente ovunque. Trattandosi ancora di una bozza, nessun sistema operativo, tastiera o font la renderizza attualmente; aspettati un riquadro vuoto o un glifo segnaposto finché Emoji 18.0 non sarà approvata e le piattaforme non avranno implementato il supporto, probabilmente nel 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/meteor-emoji/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-meteora/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/meteor-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "meteor",
+      "label": "Meteora",
+      "h2": "Emoji Meteora",
+      "intro": "Il carattere in bozza in sé — copiabile già oggi come codepoint, anche se nessun font può ancora renderizzarlo.",
+      "symbols": [
+        { "char": "🪋", "label": "Meteor (bozza, U+1FA8B)" }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Da Non Confondere Con",
+      "h2": "Le Emoji con Cui Viene Confusa",
+      "intro": "Emoji celesti già codificate a cui Meteor viene più spesso paragonata, o di cui viene accusata di sovrapporsi.",
+      "symbols": [
+        { "char": "☄️", "label": "Comet — il design da cui Meteor si separa" },
+        { "char": "🌠", "label": "Stella Cadente" },
+        { "char": "⭐", "label": "Stella" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Altre Candidate in Bozza",
+      "h2": "Altre Candidate in Bozza di Emoji 18.0",
+      "intro": "Meteor non è l'unico carattere non approvato di questa release — questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB) — ha vinto il voto pubblico" },
+        { "char": "🫝", "label": "Pickle (bozza, U+1FADD)" },
+        { "char": "🫌", "label": "Monarch Butterfly (bozza, U+1FACC)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Sole, pioggia, neve e ogni carattere celeste già codificato, incluso Comet."
+    },
+    {
+      "href": "/it/symbol/emoji-volto-incrinato/",
+      "title": "Emoji Volto Incrinato",
+      "desc": "La candidata in bozza di Emoji 18.0 che ha vinto il voto pubblico."
+    },
+    {
+      "href": "/it/symbol/emoji-cetriolino/",
+      "title": "Emoji Cetriolino",
+      "desc": "Un'altra candidata in bozza di Emoji 18.0 — riassegnata da una proposta Apple Core rinviata."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Unicode 18.0's New Emoji",
+      "desc": "L'intero elenco delle 9 candidate in bozza, classificate per voto pubblico."
+    }
+  ]
+}

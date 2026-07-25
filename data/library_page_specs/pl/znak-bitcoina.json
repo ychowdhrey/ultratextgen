@@ -1,0 +1,80 @@
+{
+  "slug": "znak-bitcoina",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Bitcoina: Skopiuj ₿ — Znak Waluty Dodany do Unicode w 2017 Roku",
+  "meta_description": "Skopiuj symbol Bitcoina (₿, U+20BF) i dowiedz się, czym różni się od tajskiego bahta ฿ i skrótu giełdowego BTC. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-bitcoina/",
+  "breadcrumb": "Symbol Bitcoina",
+  "hero_h1": "Symbol Bitcoina",
+  "hero_tagline": "Znak waluty Bitcoin (₿), dodany do Unicode w 2017 roku w odpowiedzi na realne zapotrzebowanie — nie mylić z tajskim bahtem ฿ ani skrótem giełdowym BTC. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Bitcoina (₿, U+20BF) oznacza kwotę wyrażoną w Bitcoinach — cenę, słoik na napiwki, linijkę z darowizną. Ale w przeciwieństwie do starszych znaków walut, które Unicode wchłonął rutynowo jako element formatowania, ₿ dodano w 2017 roku w bezpośredniej odpowiedzi na organiczne zapotrzebowanie szybko rosnącej społeczności użytkowników, i noszony jest jako odznaka tożsamości w bio niemal równie często, jak używany jest do zapisu liczby.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/bitcoin-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-bitcoina/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/bitcoin-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-bitcoina",
+      "label": "Bitcoin",
+      "h2": "Znak Bitcoina",
+      "intro": "Unicode'owy znak Bitcoina, gotowy do wklejenia w bio, nazwie wyświetlanej, cenie albo linijce z darowizną.",
+      "symbols": [
+        { "char": "₿", "label": "Znak Bitcoina (U+20BF)" },
+        { "char": "Ƀ", "label": "Wielkie B z Przekreśleniem" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki do Odróżnienia",
+      "h2": "Znaki Podobne i Mylone",
+      "intro": "Znaki, w które regularnie zamienia się ₿ przez pomyłkę — ta sama sylwetka B z pionową kreską, ale zupełnie inne znaki i punkty kodowe.",
+      "symbols": [
+        { "char": "฿", "label": "Znak Bahta Tajskiego (U+0E3F)" },
+        { "char": "Ƀ", "label": "Wielkie B z Przekreśleniem (U+0243)" },
+        { "char": "B", "label": "Zwykła Litera B" }
+      ]
+    },
+    {
+      "id": "inne-symbole-walut",
+      "label": "Inne Symbole Walut",
+      "h2": "Inne Symbole Walut Świata",
+      "intro": "Reszta światowych znaków pieniądza — sąsiedzi, obok których ₿ stoi w bloku Currency Symbols i w większości pól z ceną.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara" },
+        { "char": "¢", "label": "Znak Centa" },
+        { "char": "€", "label": "Znak Euro" },
+        { "char": "£", "label": "Znak Funta" },
+        { "char": "¥", "label": "Znak Jena" },
+        { "char": "₹", "label": "Znak Rupii Indyjskiej" },
+        { "char": "₩", "label": "Znak Wona" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Dolar, euro, funt, jen, rupia i inne światowe znaki walut w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro",
+      "desc": "Kolejny znak waluty zaprojektowany na zamówienie we współczesnej erze, w 1996 roku."
+    },
+    {
+      "href": "/symbol/rupee-sign/",
+      "title": "Rupee Sign",
+      "desc": "Niedawny, celowo stworzony znak waluty — wybrany w konkursie publicznym w 2010 roku."
+    }
+  ]
+}

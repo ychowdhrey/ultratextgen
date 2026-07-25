@@ -1,0 +1,76 @@
+{
+  "slug": "pusty-znak-brajla",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Niewidzialny Znak (⠀): Pusty Wzór Brajla i Jak Go Użyć",
+  "meta_description": "Niewidzialny znak ⠀ (U+2800) wyjaśniony — dlaczego przetrwa walidację „pustej” nazwy tam, gdzie inne niewidzialne znaki są usuwane, i jak go wpisać.",
+  "canonical": "https://ultratextgen.com/pl/symbol/pusty-znak-brajla/",
+  "breadcrumb": "Niewidzialny Znak",
+  "hero_h1": "Niewidzialny Znak (⠀)",
+  "hero_tagline": "Pozornie pusty znak stojący za niewidzialnymi nazwami użytkowników i nickami — kliknij, aby skopiować.",
+  "intro": "Znak U+2800 to nie znak białej spacji — pochodzi z bloku Unicode Braille Patterns, kodującego wszystkie 256 możliwych kombinacji 8-punktowej komórki brajlowskiej. Jedną z tych 256 kombinacji jest „żaden punkt nie podniesiony” — czyli wzór pusty. Ponieważ jest klasyfikowany jako zwykły, drukowalny symbol, a nie biały znak, zachowuje się zupełnie inaczej niż znaki faktycznie zaprojektowane jako niewidzialne, jak spacja zerowej szerokości: większość aplikacji automatycznie przycina spacje na początku i końcu pola i odrzuca pole, które po przycięciu okazuje się puste — prawdziwa spacja, tabulator czy spacja zerowej szerokości (U+200B) zwykle wpada w tę pułapkę. U+2800 się przez nią prześlizguje, bo kod walidujący widzi „jakiś znak”, a nie „puste miejsce”, mimo że na ekranie nie widać żadnego śladu. Dzięki temu działa w większości miejsc, gdzie liczy się nazwa wyświetlana — na Instagramie, Discordzie i w WhatsAppie — choć w nazwach użytkownika ograniczonych do liter i cyfr (Roblox, PlayStation, Xbox) nie zadziała, a na TikToku bywa różnie w zależności od wersji aplikacji.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/invisible-character/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/pusty-znak-brajla/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/invisible-character/" }
+  ],
+  "sections": [
+    {
+      "id": "niewidzialny-znak",
+      "label": "Niewidzialny Znak",
+      "h2": "Niewidzialny Znak — Pusty Wzór Brajla",
+      "intro": "Sam znak: U+2800, oficjalna nazwa Unicode BRAILLE PATTERN BLANK, z bloku Braille Patterns. Wygląda na pusty, ale to prawdziwy znak drukowalny, nie biały znak.",
+      "symbols": [
+        { "char": "⠀", "label": "Pusty Wzór Brajla (U+2800)" }
+      ]
+    },
+    {
+      "id": "nie-mylic-z",
+      "label": "Nie Mylić z",
+      "h2": "Inne „Niewidzialne” Znaki — i Dlaczego Wybór Ma Znaczenie",
+      "intro": "Te znaki wyglądają równie pusto, ale technicznie są zupełnie inne — a to, który z nich wybierzesz, decyduje o tym, czy walidacja pola je zaakceptuje, czy odrzuci.",
+      "symbols": [
+        { "char": "​", "label": "Spacja Zerowej Szerokości (U+200B) — prawdziwie zerowej szerokości; wiele walidatorów usuwa ją jak biały znak, więc często zawodzi tam, gdzie U+2800 się udaje" },
+        { "char": " ", "label": "Spacja Nierozdzielająca (U+00A0) — prawdziwy znak spacji; niemal zawsze przycinana lub odrzucana od razu" },
+        { "char": "ㅤ", "label": "Wypełniacz Hangul (U+3164) — kolejna popularna alternatywa dla pustej nazwy, działająca na niektórych platformach tam, gdzie U+2800 zawodzi, i odwrotnie" }
+      ]
+    },
+    {
+      "id": "powiazane-znaki-niewidzialne",
+      "label": "Więcej Znaków",
+      "h2": "Więcej Niewidzialnych i Pustych Znaków",
+      "intro": "Kolejne prawdziwe znaki Unicode o zerowej szerokości, które warto znać przy pracy z niewidzialnym tekstem.",
+      "symbols": [
+        { "char": "‌", "label": "Łącznik Zerowej Szerokości Nie-Łączący (U+200C)" },
+        { "char": "‍", "label": "Łącznik Zerowej Szerokości (U+200D)" },
+        { "char": "⁠", "label": "Łącznik Wyrazów (U+2060)" },
+        { "char": "­", "label": "Miękki Łącznik (U+00AD)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/pionowa-kreska/",
+      "title": "Pionowa Kreska",
+      "desc": "Od separatora ASCII po uniksowy „pipe”."
+    },
+    {
+      "href": "/pl/symbol/stopnie-i-temperatura/",
+      "title": "Znak Stopnia i Temperatury",
+      "desc": "Wieki astronomii, kątów i skal temperatury."
+    },
+    {
+      "href": "/pl/niewidzialny-znak/",
+      "title": "Wszystkie Niewidzialne Znaki",
+      "desc": "Spacje zerowej szerokości, wypełniacze i pusty brajl w jednym miejscu."
+    }
+  ]
+}

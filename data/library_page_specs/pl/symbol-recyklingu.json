@@ -1,0 +1,80 @@
+{
+  "slug": "symbol-recyklingu",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Recyklingu: Skopiuj ♻ — Zaprojektowany przez 23-Letniego Studenta na Konkurs z Okazji Dnia Ziemi 1970",
+  "meta_description": "Skopiuj symbol recyklingu (♻ U+267B), pętlę Möbiusa z trzema strzałkami zaprojektowaną w 1970 roku przez studenta USC Gary'ego Andersona na konkurs Container Corporation of America z okazji pierwszego Dnia Ziemi. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-recyklingu/",
+  "breadcrumb": "Symbol Recyklingu",
+  "hero_h1": "Symbol Recyklingu",
+  "hero_tagline": "Symbol recyklingu (♻) — pętla Möbiusa z trzema strzałkami, zaprojektowana w 1970 roku przez Gary'ego Andersona, wówczas 23-letniego studenta USC, na konkurs związany z pierwszym Dniem Ziemi. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol recyklingu (♻, U+267B BLACK UNIVERSAL RECYCLING SYMBOL) ma niezwykle dobrze udokumentowane pochodzenie. Zaprojektował go w 1970 roku Gary Anderson, wówczas 23-letni student Uniwersytetu Południowej Kalifornii, jako zgłoszenie na konkurs projektowy sponsorowany przez Container Corporation of America z okazji pierwszego Dnia Ziemi. Konkurs przyciągnął ponad 500 zgłoszeń, a oceniali je czołowi projektanci epoki, w tym Saul Bass; Anderson wygrał stypendium w wysokości 2500 dolarów, a jego projekt trafił do domeny publicznej. Trzy goniące się strzałki tworzą wstęgę Möbiusa — Anderson mówił, że chciał oddać obraz papieru przechodzącego przez wałki oraz ideę materiałów krążących bez końca w nowe produkty. Popularna interpretacja trzech strzałek jako „ogranicz, użyj ponownie, przetwórz” pojawiła się później; nie była pierwotnym, deklarowanym znaczeniem projektu, którym była po prostu sama nieprzerwana pętla. Unicode zakodował wypełnioną wersję pod U+267B w wersji 3.2 (2002 rok); osobno, pod U+2672, istnieje wariant konturowy, UNIVERSAL RECYCLING SYMBOL.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/recycling-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-recyklingu/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/recycling-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "glify-recyklingu",
+      "label": "Recykling",
+      "h2": "Symbole Recyklingu",
+      "intro": "Unicode zawiera kilka znaków recyklingu: znajomy wypełniony symbol, jego konturowy wariant oraz wariant dla recyklingu papieru.",
+      "symbols": [
+        { "char": "♻", "label": "Symbol Recyklingu" },
+        { "char": "♲", "label": "Uniwersalny Symbol Recyklingu (Kontur)" },
+        { "char": "♼", "label": "Symbol Papieru z Recyklingu" }
+      ]
+    },
+    {
+      "id": "srodowisko-i-natura",
+      "label": "Środowisko i Natura",
+      "h2": "Symbole Środowiska i Natury",
+      "intro": "Symbole często łączone z recyklingiem w komunikatach o środowisku i zrównoważonym rozwoju.",
+      "symbols": [
+        { "char": "🌱", "label": "Sadzonka" },
+        { "char": "🌍", "label": "Globus — Europa i Afryka" },
+        { "char": "🍃", "label": "Liść na Wietrze" },
+        { "char": "🌳", "label": "Drzewo Liściaste" },
+        { "char": "💧", "label": "Kropla" }
+      ]
+    },
+    {
+      "id": "znaki-i-piktogramy",
+      "label": "Znaki i Piktogramy",
+      "h2": "Znaki i Standaryzowane Piktogramy",
+      "intro": "Inne, umiędzynarodowione piktogramy i znaki ostrzegawcze z tej samej funkcjonalnej rodziny.",
+      "symbols": [
+        { "char": "♿", "label": "Symbol Niepełnosprawności" },
+        { "char": "☣️", "label": "Zagrożenie Biologiczne" },
+        { "char": "⚠️", "label": "Ostrzeżenie" },
+        { "char": "☢️", "label": "Promieniotwórczość" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/recycle-environment-symbols/",
+      "title": "Recycle & Environment Symbols",
+      "desc": "Znaki recyklingu, ekoetykiety i symbole natury w jednym miejscu — ta strona jest dedykowaną odnogą tego huba."
+    },
+    {
+      "href": "/symbol/biohazard-symbol/",
+      "title": "Biohazard Symbol",
+      "desc": "Kolejny nowoczesny piktogram z udokumentowanym firmowym rodowodem — zaprojektowany w Dow Chemical w 1966 roku tak, by być celowo „zapadającym w pamięć, ale pozbawionym znaczenia”."
+    },
+    {
+      "href": "/pl/symbol/symbol-niepelnosprawnosci/",
+      "title": "Symbol Niepełnosprawności",
+      "desc": "Kolejny umiędzynarodowiony piktogram z konkretną, udokumentowaną historią projektu."
+    }
+  ]
+}

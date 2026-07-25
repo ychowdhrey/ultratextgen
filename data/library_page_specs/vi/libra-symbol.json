@@ -1,0 +1,64 @@
+{
+  "slug": "libra-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Thiên Bình: Sao Chép & Dán ♎ — Cung Hoàng Đạo Duy Nhất Không Phải Người Hay Con Vật",
+  "meta_description": "Sao chép ký hiệu cung Thiên Bình (♎) — hình chiếc cân thăng bằng, cung duy nhất trong toàn bộ hoàng đạo tượng trưng cho một vật thể thay vì con vật hay con người. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/libra-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Thiên Bình",
+  "hero_h1": "Ký Hiệu Thiên Bình",
+  "hero_tagline": "Ký hiệu của Thiên Bình (♎) là hình chiếc cân thăng bằng — cung duy nhất trong cả mười hai cung hoàng đạo mô tả một vật thể, thay vì con vật, con người, hay sinh vật lai. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu Thiên Bình (♎, U+264E) được vẽ như một chiếc cân thăng bằng, và điều này thực sự độc nhất trong cả vòng hoàng đạo: mọi cung khác đều tượng trưng cho một con vật, một con người, hoặc một sinh vật lai thần thoại — chỉ riêng Thiên Bình đại diện cho một vật vô tri. Chiếc cân bắt nguồn từ Themis, nữ thần luật lệ và trật tự thiêng liêng của Hy Lạp (hoặc trong một số dị bản, con gái của bà là Astraea) — chính chiếc cân đứng sau hình ảnh «Cán Cân Công Lý» hiện đại vẫn được dùng trong phòng xử án và biểu tượng ngành luật ngày nay. Thiên Bình kéo dài từ 23/9 đến 22/10, do Sao Kim cai quản, thuộc nhóm Khí với tính chất Khai Triển (Cardinal).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/libra-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/libra-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/libra-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "libra-symbol",
+      "label": "Thiên Bình",
+      "h2": "Ký Hiệu Thiên Bình",
+      "intro": "Ký hiệu Unicode của cung Thiên Bình, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "♎", "label": "Ký Hiệu Thiên Bình" },
+        { "char": "♎️", "label": "Ký Hiệu Thiên Bình (Dạng Emoji)" }
+      ]
+    },
+    {
+      "id": "ruling-planet-element",
+      "label": "Hành Tinh & Nguyên Tố",
+      "h2": "Hành Tinh Chủ Quản & Nguyên Tố",
+      "intro": "Hành tinh và nguyên tố cổ điển gắn liền với Thiên Bình theo truyền thống chiêm tinh.",
+      "symbols": [
+        { "char": "♀", "label": "Sao Kim (Hành Tinh Chủ Quản)" },
+        { "char": "🜁", "label": "Khí (Nguyên Tố, Ký Hiệu Giả Kim)" }
+      ]
+    },
+    {
+      "id": "related-zodiac-celestial",
+      "label": "Cung Hoàng Đạo & Thiên Thể",
+      "h2": "Thêm Ký Hiệu Cung Hoàng Đạo & Thiên Thể",
+      "intro": "Các thiên thể khác và cung đối diện của Thiên Bình trên vòng hoàng đạo (Bạch Dương).",
+      "symbols": [
+        { "char": "☉", "label": "Mặt Trời" },
+        { "char": "☽", "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)" },
+        { "char": "⛎", "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)" },
+        { "char": "♈", "label": "Bạch Dương (Cung Đối Diện)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/zodiac-symbols/", "title": "Ký Hiệu Cung Hoàng Đạo", "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu." },
+    { "href": "/vi/symbol/aries-symbol/", "title": "Ký Hiệu Bạch Dương", "desc": "Cung đối diện của Thiên Bình, nằm thẳng phía bên kia vòng hoàng đạo." },
+    { "href": "/vi/symbol/sagittarius-symbol/", "title": "Ký Hiệu Nhân Mã", "desc": "Cung xạ thủ có chòm sao chỉ thẳng về tâm Dải Ngân Hà." }
+  ]
+}

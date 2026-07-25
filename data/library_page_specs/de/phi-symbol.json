@@ -1,0 +1,84 @@
+{
+  "slug": "phi-symbol",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Phi-Symbol: φ Φ ϕ kopieren & einfügen — der Goldene-Schnitt-Buchstabe, benannt nach Phidias",
+  "meta_description": "Das Phi-Symbol kopieren und einfügen — das kleine φ (U+03C6), das große Φ und die geschlossene Mathe-Variante ϕ. Der Goldene-Schnitt-Buchstabe (≈1,618), den Mark Barr um 1909 nach dem Bildhauer Phidias benannte. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/phi-symbol/",
+  "breadcrumb": "Phi-Symbol",
+  "hero_h1": "Phi-Symbol",
+  "hero_tagline": "Das kleine φ, das für den Goldenen Schnitt (≈1,618) steht, das große Φ, das Physiker für den magnetischen Fluss verwenden, und die geschlossene Mathe-Variante ϕ — der Buchstabe, den Mark Barr um 1909 nach dem Bildhauer Phidias benannte. Ein Klick genügt zum Kopieren.",
+  "intro": "Phis Kleinbuchstabe φ (U+03C6, GREEK SMALL LETTER PHI) ist der 21. Buchstabe des griechischen Alphabets, aber am bekanntesten ist er als Symbol für den Goldenen Schnitt — jene irrationale Zahl (1 + √5) / 2 ≈ 1,6180339887, der Künstler und Architekten seit Jahrhunderten nachjagen. Diese Benennung ist überraschend jung: Das Verhältnis wurde lange mit dem griechischen Buchstaben Tau (τ) geschrieben, bis der amerikanische Mathematiker Mark Barr um 1909 φ vorschlug — gewählt als Anfangsbuchstabe von Phidias (Φειδίας, ca. 490–430 v. Chr.), dem Bildhauer, dem man die Proportionen des Parthenon zuschreibt. Phi trägt außerdem eine Eigenheit, die kein anderer griechischer Buchstabe hier hat — zwei Kleinbuchstaben-Glyphen. Der alltägliche Buchstabe φ (U+03C6) erscheint meist in der „geschwungenen“, offenen Form, während ein separat kodiertes griechisches Phi-Symbol, ϕ (U+03D5), die „geschlossene“, durchstrichene Form ist — ein von einer senkrechten Linie durchkreuzter Kreis —, die Unicode seit Version 3.0 für die Mathematik empfiehlt, wobei die tatsächlich angezeigte Form von der jeweiligen Schriftart abhängt. Das große Φ (U+03A6) übernimmt in den Naturwissenschaften eine gewichtigere Aufgabe: Es ist das Standardzeichen für den magnetischen Fluss in der Physik, während das kleine φ in der Zahlentheorie Eulers Phi-Funktion, φ(n), bezeichnet.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/phi-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "das-phi-symbol",
+      "label": "Das Phi-Symbol",
+      "h2": "Das Phi-Symbol — φ, Φ & ϕ",
+      "intro": "Die drei Formen, die mit „dem Phi-Symbol“ gemeint sind: der alltägliche Kleinbuchstabe, der Großbuchstabe und die eigene Mathe-Variante. Kopiere, welche du gerade brauchst.",
+      "symbols": [
+        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi (U+03C6) — der Goldene-Schnitt-Buchstabe, offene „geschwungene“ Form" },
+        { "char": "Φ", "label": "Griechischer Großbuchstabe Phi (U+03A6) — magnetischer Fluss in der Physik" },
+        { "char": "ϕ", "label": "Griechisches Phi-Symbol (U+03D5) — die „geschlossene“, durchstrichene Mathe-Variante" }
+      ]
+    },
+    {
+      "id": "goldener-schnitt-und-mathematik",
+      "label": "Goldener Schnitt & Mathematik",
+      "h2": "Phi: Goldener Schnitt & Mathematik",
+      "intro": "Phis meistgesuchte Rolle. Das kleine φ bezeichnet den Goldenen Schnitt ≈ 1,618, definiert als (1 + √5) / 2; seit Unicode 3.0 ist das geschlossene ϕ (U+03D5) die für diese mathematische Verwendung empfohlene Glyphe, und das große Φ steht für den magnetischen Fluss.",
+      "symbols": [
+        { "char": "φ", "label": "Kleines Phi (U+03C6) — Goldener Schnitt ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Griechisches Phi-Symbol (U+03D5) — die für Mathematik empfohlene geschlossene Glyphe" },
+        { "char": "Φ", "label": "Großes Phi (U+03A6) — magnetischer Fluss" },
+        { "char": "√", "label": "Quadratwurzelzeichen (U+221A) — Teil von Phis Formel (1 + √5) / 2" }
+      ]
+    },
+    {
+      "id": "verwandte-griechische-buchstaben",
+      "label": "Griechische Buchstaben",
+      "h2": "Verwandte griechische Buchstaben",
+      "intro": "Phi ist der 21. Buchstabe des griechischen Alphabets. Hier sind die Nachbarn und berühmten Konstanten, nach denen am häufigsten gemeinsam gesucht wird.",
+      "symbols": [
+        { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
+        { "char": "Σ", "label": "Griechischer Großbuchstabe Sigma" },
+        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega" },
+        { "char": "θ", "label": "Griechischer Kleinbuchstabe Theta" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/griechische-symbole/",
+      "title": "Griechische Symbole",
+      "desc": "Das komplette griechische Alphabet in Groß-, Kleinschreibung und mathematischen Sonderformen zum Kopieren."
+    },
+    {
+      "href": "/de/library/mathe-symbole/",
+      "title": "Mathe-Symbole",
+      "desc": "Der Goldene Schnitt, die Quadratwurzel und die Operatoren und griechischen Buchstaben, die eine Gleichung vervollständigen."
+    },
+    {
+      "href": "/de/symbol/pi-symbol/",
+      "title": "Pi-Symbol",
+      "desc": "Phis Partner unter den berühmten Konstanten: ein weiterer griechischer Buchstabe, π ≈ 3,14159, der für eine Zahl statt einen Laut steht."
+    },
+    {
+      "href": "/de/symbol/theta-symbol/",
+      "title": "Theta-Symbol",
+      "desc": "Ein weiterer griechischer Buchstabe mit doppeltem Leben — Winkel in der Trigonometrie und die Big-Theta-Notation der Informatik."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "slug": "peso-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Peso İşareti: Kopyala Yapıştır ₱ — Yalnızca Filipin Pezosunun Kendi İşareti Var, Diğerleri $ Kullanıyor",
+  "meta_description": "Peso işaretini ₱ (U+20B1) kopyala — Filipin pezosunun kendi işareti, Meksika, Arjantin, Kolombiya ve diğer pezolar ise düz $ ile yazılıyor. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/peso-isareti/",
+  "breadcrumb": "Peso İşareti",
+  "hero_h1": "Peso İşareti (₱)",
+  "hero_tagline": "Filipin pezosuna ait ₱ — dünyada kendi işareti olan tek peso, Meksika, Arjantin ve Kolombiya pezolarının tamamı ise düz dolar işaretiyle idare ediyor. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Peso işareti (₱, Unicode U+20B1 PESO SIGN), Filipin pezosunun kendine özgü işaretidir — ve, genel adına rağmen, kendi işareti olan dünyadaki tek pezodur. Peso adını taşıyan diğer her para birimi — Meksika (MXN), Arjantin (ARS), Kolombiya (COP), Şili (CLP), Küba (CUP), Dominik (DOP) ve Uruguay (UYU) pezoları dâhil — geleneksel olarak düz dolar işaretiyle, $ (U+0024), yazılır; pratikte genellikle MX$ ya da COL$ gibi bir ülke öneki ile ayırt edilir. Bu paylaşılan glif tesadüf değildir: dolar işaretinin kendisinin, İspanyol pezosunun 18. yüzyıla ait el yazısı bir kısaltmasından türediği geniş çapta düşünülür — bu yüzden bir işaret bugün hem dolarlara hem de çoğu pezoya hizmet eder. Filipinler ise başka bir yol izledi. ABD sömürge yönetiminin 3 Ağustos 1903'te yayımladığı 66 Sayılı Yürütme Kararnamesi, Filipin pezosunu ABD dolarından ve İspanyol pesetasından ayırmak amacıyla özel olarak iki paralel çizgiyle kesilmiş büyük bir P belirledi. Unicode ₱'yi 2002'de yayımlanan sürüm 3.2'de kodladı; para biriminin ISO 4217 kodu PHP'dir ve Bangko Sentral ng Pilipinas tarafından basılır.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "peso-sign",
+      "label": "Peso İşareti",
+      "h2": "\"Peso İşareti\" Denen İki Sembol — ₱ ve $",
+      "intro": "İkisi de peso işareti olarak anılır. ₱, Filipin pezosunun kendi karakteridir; $ ise neredeyse her diğer pezonun kullandığı işarettir — çünkü dolar işaretinin kendisi büyük olasılıkla İspanyol pezosunun bir kısaltması olarak başlamıştır. El yazısı bir \"Ps\"den mi, yoksa İspanyol dolar sikkelerindeki S ile sarılmış Herkül Sütunları'ndan mı geldiği tarihçiler arasında hâlâ gerçek anlamda tartışılıyor.",
+      "symbols": [
+        {
+          "char": "₱",
+          "label": "Peso Sign (U+20B1) — Filipin pezosunun kendi glifi"
+        },
+        {
+          "char": "$",
+          "label": "Dollar Sign (U+0024) — Meksika, Arjantin ve diğer pezoların gerçekte kullandığı işaret"
+        }
+      ]
+    },
+    {
+      "id": "struck-letter-currencies",
+      "label": "Peso Gibi İnşa Edilenler",
+      "h2": "Çizgili Harf Para Birimi Ailesi",
+      "intro": "Peso işareti, iki paralel çizgiyle kesilmiş büyük bir P'dir — bu, her biri bir ya da iki çizgiyle kesilmiş bir ulusal harften oluşan tüm bir modern para birimi işareti kuşağının aynı tarifidir. Nereye istersen kopyalayabilirsin.",
+      "symbols": [
+        {
+          "char": "₹",
+          "label": "Indian Rupee Sign (U+20B9) — Çizgili bir R, 2010'da resmen benimsendi"
+        },
+        {
+          "char": "₩",
+          "label": "Won Sign (U+20A9) — İki çizgili bir W"
+        },
+        {
+          "char": "₦",
+          "label": "Naira Sign (U+20A6) — Çizgili bir N (Nijerya)"
+        },
+        {
+          "char": "₴",
+          "label": "Hryvnia Sign (U+20B4) — Ukrayna için çizgili bir harf"
+        },
+        {
+          "char": "₫",
+          "label": "Dong Sign (U+20AB) — Çizgili bir d (Vietnam)"
+        },
+        {
+          "char": "€",
+          "label": "Euro Sign (U+20AC) — İki çizgili yuvarlatılmış bir E"
+        }
+      ]
+    },
+    {
+      "id": "peso-lookalikes",
+      "label": "Bunlarla Karıştırma",
+      "h2": "Benzeyenler: ₱ Yerine Yanlış Kullanılan Glifler",
+      "intro": "₱ esasen çizgili bir P olduğu için, aralarında tamamen farklı bir para birimi de bulunan diğer P biçimli karakterlerle sık sık değiştirilir. Her biri kendi Unicode kod noktasıdır, üslupsal bir varyant değil.",
+      "symbols": [
+        {
+          "char": "₽",
+          "label": "Ruble Sign (U+20BD) — Rusya'nın para birimi, o da çizgili bir P ama farklı bir çizgiyle"
+        },
+        {
+          "char": "P",
+          "label": "Latin Capital Letter P (U+0050) — peso için sık sık yazılan düz yedek"
+        },
+        {
+          "char": "Ᵽ",
+          "label": "Latin Capital P with Stroke (U+2C63) — dilbilimde kullanılan tek çizgili bir P, para birimi değil"
+        },
+        {
+          "char": "Ρ",
+          "label": "Greek Capital Letter Rho (U+03A1) — P'ye benzer"
+        },
+        {
+          "char": "Р",
+          "label": "Cyrillic Capital Letter Er (U+0420) — bir başka P benzeri"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/para-birimi-sembolleri/",
+      "title": "Para Birimi Sembolleri",
+      "desc": "Dolar, euro, sterlin, yen, rupi ve peso — dünyanın her para birimi işaretine tek bir ızgarada göz at."
+    },
+    {
+      "href": "/tr/symbol/dolar-isareti/",
+      "title": "Dolar İşareti ($)",
+      "desc": "Neredeyse her pezonun gerçekte kullandığı işaret: yalnızca Filipin pezosunun kendi ₱'si var, Meksika, Arjantin ve Kolombiya pezoları $ ile yazılıyor."
+    },
+    {
+      "href": "/tr/symbol/rupi-isareti/",
+      "title": "Rupi İşareti (₹)",
+      "desc": "Hindistan'ın ₹'si — ₱ gibi, tek bir ulusun parası için resmen kararlaştırılmış ve paralel çizgilerle bir harfin kesilmesiyle inşa edilmiş modern bir para birimi işareti."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/peso-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "tursu-emojisi",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Turşu Emojisi: Kopyala Yapıştır 🫝 — Ertelenen Bir Apple Core Slotunu Devralan Unicode 18.0 Adayı",
+  "meta_description": "Turşu (🫝, U+1FADD), Eylül 2026'da beklenen Unicode 18.0 ile birlikte gelecek Emoji 18.0 için bir taslak aday. Kod noktası başlangıçta Apple Core'a ayrılmıştı, sonra ertelenip yeniden atandı. Henüz onaylanmadı ve bugün hiçbir yazı tipi göstermiyor.",
+  "canonical": "https://ultratextgen.com/tr/symbol/tursu-emojisi/",
+  "breadcrumb": "Turşu Emojisi",
+  "hero_h1": "Turşu Emojisi",
+  "hero_tagline": "Salatalıktan ve patlıcandan ayrı, tam bir turşu (kornişon) — Eylül 2026'da beklenen Unicode 18.0 ile gelecek Emoji 18.0 için taslak. Yalnızca taslak: hiçbir yazı tipi henüz göstermiyor. Yine de kod noktasını kopyalayabilirsin.",
+  "intro": "Turşu (🫝, U+1FADD), Eylül 2026'da kesinleşmesi beklenen Unicode 18.0'ın emoji karşılığı Emoji 18.0 için taslak hâline getirilmiş bir aday emojidir. Kod noktasının sıra dışı bir geçmişi var: U+1FADD başlangıçta Emoji 17.0 taslak döngüsünde önerilen bir \"Elma Kabuğu\" (Apple Core) emojisi için ayrılmıştı; bu öneri ertelendi ve Unicode, boşalan yeri 18.0 döngüsü için Turşu'ya yeniden atadı. Tam bir turşuyu (turşu kornişonu) betimler, en sık şakayla birlikte anıldığı mevcut Salatalık ve Patlıcan emojilerinden ayrı bir karakterdir — teknoloji basınının yorum bölümleri \"o turşu interneti çökertecek\"ten \"Patlıcan'dan çok iş çalacak\" spekülasyonlarına kadar her şeyi öne sürdü. Hâlâ bir taslak olduğu için hiçbir işletim sistemi, klavye ya da yazı tipi şu anda bunu göstermiyor; Emoji 18.0 onaylanıp platformlar desteği yayınlayana kadar boş bir kutu ya da yer tutucu bir glif bekle.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "pickle",
+      "label": "Turşu",
+      "h2": "Turşu Emojisi",
+      "intro": "Taslak karakterin kendisi — hiçbir yazı tipi henüz gösteremese de bugün kod noktası olarak kopyalanabilir.",
+      "symbols": [
+        {
+          "char": "🫝",
+          "label": "Pickle (taslak, U+1FADD)"
+        }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Farklı Olduğu Emojiler",
+      "h2": "En Çok Karıştırıldığı Emojiler",
+      "intro": "Turşu'nun en sık kıyaslandığı ya da onunla örtüştüğü söylenen, zaten kodlanmış sebze/meyve emojileri.",
+      "symbols": [
+        {
+          "char": "🥒",
+          "label": "Cucumber"
+        },
+        {
+          "char": "🍆",
+          "label": "Eggplant"
+        },
+        {
+          "char": "🫑",
+          "label": "Bell Pepper"
+        }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Diğer Taslak Adaylar",
+      "h2": "Diğer Emoji 18.0 Taslak Adayları",
+      "intro": "Turşu, bu sürümde onaylanmamış tek karakter değil — bunlar da onunla birlikte taslak hâline getirildi ve Eylül 2026'daki karara kadar aynı şekilde görüntülenemiyor.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Cracking Face (taslak, U+1FAEB)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (taslak, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Lighthouse (taslak, U+1F6D9)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Yiyecek ve İçecek Emojileri",
+      "desc": "Zaten kodlanmış her atıştırmalık, yemek ve sebze/meyve emojisi, bugün kopyala yapıştıra hazır."
+    },
+    {
+      "href": "/tr/symbol/catlayan-yuz-emojisi/",
+      "title": "Çatlayan Yüz Emojisi",
+      "desc": "Halk oylamasını kazanan bir başka Emoji 18.0 taslak adayı."
+    },
+    {
+      "href": "/tr/symbol/meteor-emojisi/",
+      "title": "Meteor Emojisi",
+      "desc": "Comet'in uzun süredir devam eden görüntüleme ayrışmasından ayrılan bir başka Emoji 18.0 taslak adayı."
+    },
+    {
+      "href": "/tr/symbol/monark-kelebegi-emojisi/",
+      "title": "Monark Kelebeği Emojisi",
+      "desc": "Platformlar arası bir Kelebek karışıklığını düzelten bir başka Emoji 18.0 taslak adayı."
+    },
+    {
+      "href": "/tr/symbol/basparmak-isareti-emojisi/",
+      "title": "Baş Parmak İşareti Emojisi",
+      "desc": "Onay değil, yön göstermek için tasarlanmış bir başka Emoji 18.0 taslak çifti."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/tursu-emojisi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pickle-emoji/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

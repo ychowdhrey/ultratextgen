@@ -1,0 +1,65 @@
+{
+  "slug": "emoji-cornichon",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Emoji Cornichon : Copier-Coller 🫝 — le Candidat d'Unicode 18.0 qui a Récupéré une Case Apple Core en Attente",
+  "meta_description": "Cornichon (🫝, U+1FADD) est un candidat provisoire pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Son code était à l'origine réservé à un emoji « Apple Core » avant d'être mis en attente. Pas encore approuvé, et aucune police ne l'affiche à ce jour.",
+  "canonical": "https://ultratextgen.com/fr/symbol/emoji-cornichon/",
+  "breadcrumb": "Emoji Cornichon",
+  "hero_h1": "Emoji Cornichon",
+  "hero_tagline": "Un cornichon entier, distinct du concombre et de l'aubergine — provisoirement retenu pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Encore à l'état de brouillon : aucune police ne l'affiche pour l'instant. Clique pour copier le code malgré tout.",
+  "intro": "Cornichon (🫝, U+1FADD) est un emoji candidat provisoirement retenu pour Emoji 18.0, le volet emoji d'Unicode 18.0, dont la finalisation est attendue en septembre 2026. Son point de code a une histoire inhabituelle : U+1FADD était à l'origine réservé à un emoji « Apple Core » (trognon de pomme) proposé lors du cycle de brouillons d'Emoji 17.0 ; cette proposition a été mise en attente, et Unicode a réaffecté la case ainsi libérée à Cornichon pour le cycle 18.0. Il représente un cornichon entier (un petit concombre mariné), distinct des emoji Concombre et Aubergine déjà existants auxquels on l'associe le plus souvent en plaisanterie — la presse tech a spéculé aussi bien sur « ce cornichon va faire exploser Internet » que sur le fait qu'il « va piquer beaucoup d'affaires » à Aubergine. Comme il s'agit encore d'un brouillon, aucun système d'exploitation, clavier ou police ne l'affiche aujourd'hui ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce qu'Emoji 18.0 soit approuvé et que les plateformes déploient leur support.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-cornichon/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "cornichon",
+      "label": "Cornichon",
+      "h2": "Emoji Cornichon",
+      "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
+      "symbols": [
+        { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" }
+      ]
+    },
+    {
+      "id": "a-distinguer-de",
+      "label": "À Distinguer de",
+      "h2": "Les Emoji Auxquels on le Confond",
+      "intro": "Des emoji de légumes déjà encodés auxquels on compare le plus souvent Cornichon, ou dont on l'accuse de faire doublon.",
+      "symbols": [
+        { "char": "🥒", "label": "Concombre" },
+        { "char": "🍆", "label": "Aubergine" },
+        { "char": "🫑", "label": "Poivron" }
+      ]
+    },
+    {
+      "id": "autres-candidats",
+      "label": "Autres Candidats Provisoires",
+      "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
+      "intro": "Cornichon n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB)" },
+        { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" },
+        { "char": "🛙", "label": "Phare (brouillon, U+1F6D9)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/food-drink-emojis/", "title": "Food & Drink Emojis", "desc": "Tous les emoji de snacks, de repas et de produits déjà encodés, prêts à copier-coller dès aujourd'hui (en anglais)." },
+    { "href": "/fr/symbol/emoji-visage-fissure/", "title": "Emoji Visage Fissuré", "desc": "Un autre candidat provisoire d'Emoji 18.0 — et celui qui a remporté le vote public." },
+    { "href": "/fr/symbol/emoji-meteore/", "title": "Emoji Météore", "desc": "Un autre candidat provisoire d'Emoji 18.0 — issu de la longue scission de rendu de Comète." },
+    { "href": "/fr/symbol/emoji-papillon-monarque/", "title": "Emoji Papillon Monarque", "desc": "Un autre candidat provisoire d'Emoji 18.0 — corrige une confusion multiplateforme sur l'emoji Papillon." },
+    { "href": "/fr/symbol/emoji-signe-du-pouce/", "title": "Emoji Signe du Pouce", "desc": "Une autre paire candidate d'Emoji 18.0 — un geste directionnel, pas une approbation." }
+  ]
+}

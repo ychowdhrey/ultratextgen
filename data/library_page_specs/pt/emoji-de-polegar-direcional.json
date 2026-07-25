@@ -1,0 +1,78 @@
+{
+  "slug": "emoji-de-polegar-direcional",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Emoji de Polegar Direcional: Copiar e Colar 🫹 🫺 — o Par Direcional do Unicode 18.0",
+  "meta_description": "Leftwards e Rightwards Thumb Sign (🫹 U+1FAF9, 🫺 U+1FAFA) são candidatos rascunho para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026 — gestos de apontar direção, diferentes de Joinha/Não Curti. Ainda não aprovados, e nenhuma fonte os renderiza hoje.",
+  "canonical": "https://ultratextgen.com/pt/symbol/emoji-de-polegar-direcional/",
+  "breadcrumb": "Emoji de Polegar Direcional",
+  "hero_h1": "Emoji de Polegar Direcional (Esquerda e Direita)",
+  "hero_tagline": "Um par de gestos apontando direção, não mais um sinal de aprovação — propostos para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026. Ainda são só rascunhos: não aprovados, e nenhuma fonte os renderiza ainda. Clique para copiar qualquer um dos códigos mesmo assim.",
+  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) e Rightwards Thumb Sign (🫺, U+1FAFA) formam um par de emojis candidatos propostos para o Emoji 18.0, o complemento de emoji do Unicode 18.0, com finalização prevista para setembro de 2026. Apesar do nome, eles não são mais um gesto de aprovação ao lado do Joinha e do Não Curti — são sinais horizontais, de apontar, mais próximos em função dos já existentes emojis de Mão Apontando para a Esquerda/Direita do que de um polegar vertical. O par responde a uma reclamação antiga da comunidade: o conjunto de gestos do Unicode sempre pendeu para sinais de aprovação verticais e destros, sem uma forma limpa de apontar um polegar «para este aqui» versus «para aquele ali» numa resposta ou comparação. Há precedente real para a categoria — a proposta de 2021 do Pushing Hand já estabeleceu gestos de mão direcionais como uma linha legítima de emoji, além do simples polegar para cima de aprovação. Entre os dois conceitos, o par carrega 10 variantes de tom de pele quando aprovado (cinco para cada um). Como ainda são rascunhos, nenhum sistema operacional, teclado ou fonte os renderiza atualmente; espere uma caixa em branco ou um glifo substituto até o Emoji 18.0 ser aprovado e as plataformas lançarem suporte, provavelmente em algum momento de 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-polegar-direcional/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "thumb-sign",
+      "label": "Polegar Direcional",
+      "h2": "Polegar Direcional para a Esquerda e para a Direita",
+      "intro": "Os dois caracteres rascunho em si — já copiáveis hoje como códigos, mesmo que nenhuma fonte consiga renderizá-los ainda.",
+      "symbols": [
+        { "char": "🫹", "label": "Leftwards Thumb Sign (rascunho, U+1FAF9)" },
+        { "char": "🫺", "label": "Rightwards Thumb Sign (rascunho, U+1FAFA)" }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Diferente de",
+      "h2": "Os Emojis com que É Confundido",
+      "intro": "Gestos já codificados com que o Thumb Sign é mais comumente comparado, ou acusado de duplicar.",
+      "symbols": [
+        { "char": "👍", "label": "Joinha — aprovação vertical, não apontamento direcional" },
+        { "char": "👎", "label": "Não Curti — reprovação vertical, não apontamento direcional" },
+        { "char": "👈", "label": "Mão Apontando para a Esquerda" },
+        { "char": "👉", "label": "Mão Apontando para a Direita" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Outros Candidatos Rascunho",
+      "h2": "Outros Candidatos Rascunho do Emoji 18.0",
+      "intro": "Thumb Sign não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ele, igualmente sem renderização até a decisão de setembro de 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB) — venceu a votação pública" },
+        { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" },
+        { "char": "🪋", "label": "Meteor (rascunho, U+1FA8B)" },
+        { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/symbol/emoji-de-rosto-rachado/",
+      "title": "Emoji de Rosto Rachado",
+      "desc": "O candidato rascunho do Emoji 18.0 que venceu a votação pública."
+    },
+    {
+      "href": "/pt/symbol/emoji-de-picles/",
+      "title": "Emoji de Picles",
+      "desc": "Outro candidato rascunho do Emoji 18.0 — reatribuído de uma proposta adiada de Apple Core."
+    },
+    {
+      "href": "/pt/symbol/",
+      "title": "Símbolos",
+      "desc": "Todas as páginas individuais de símbolos do site, para procurar um item específico já conhecido."
+    }
+  ]
+}
