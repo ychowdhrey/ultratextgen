@@ -14,7 +14,12 @@
     "check:images": "python3 scripts/check-image-assets.py",
     "check:new-page-images": "python3 scripts/check-new-page-image-assets.py",
     "audit:translation-parity": "node scripts/audit-translation-parity.js",
-    "check:translation-parity": "node scripts/check-translation-parity.js"
+    "check:translation-parity": "node scripts/check-translation-parity.js",
+    "sync:locale-mesh": "node scripts/sync-locale-mesh.js",
+    "check:locale-mesh": "node scripts/check-locale-mesh.js",
+    "check:locale-parent-tier": "node scripts/check-locale-parent-tier.js",
+    "audit:locale-parent-gap": "node scripts/audit-locale-parent-gap.js",
+    "check:locale-parent-gap": "node scripts/check-locale-parent-gap.js"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
