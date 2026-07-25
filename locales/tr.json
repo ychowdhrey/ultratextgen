@@ -21,7 +21,80 @@
   },
   "ui": {
     "placeholder": "Yazını buraya yaz...",
-    "advertisement": "Reklam"
+    "advertisement": "Reklam",
+    "categoryTabs": {
+      "popular": "Popüler",
+      "bold-fonts": "Kalın",
+      "italic-fonts": "İtalik",
+      "bubble-fonts": "Baloncuk",
+      "cursive-fonts": "El Yazısı",
+      "gothic-fonts": "Gotik",
+      "strikethrough-text": "Üstü Çizili",
+      "underline-text": "Altı Çizili",
+      "small-text": "Küçük Yazı",
+      "cute-fonts": "Sevimli",
+      "aesthetic-fonts": "Estetik",
+      "upside-down-text": "Ters",
+      "text-decorator": "Metin Süsleyici",
+      "classified": "Gizli / Sansürlü",
+      "fullwidth-fonts": "Tam Genişlik",
+      "faux-fonts": "Sahte Alfabeler",
+      "ancient-fonts": "Antik & Runik",
+      "emoji-letter-fonts": "Emoji Harfler",
+      "novelty-fonts": "İlginç"
+    },
+    "scopeControl": {
+      "label": "Stili uygula:",
+      "ariaLabel": "Ne kadar metnin stillendirileceğini seç",
+      "whole": "Tüm metin",
+      "wholeTitle": "Metninin her satırını stillendirir.",
+      "firstLine": "Sadece ilk satır",
+      "firstLineTag": "gönderiler için",
+      "firstLineTitle": "Sadece ilk satırı (başlığını veya dikkat çekici cümleni) stillendirir, geri kalanını sade ve okunabilir metin olarak bırakır — sosyal medya gönderileri için ideal.",
+      "share": "Paylaş",
+      "shareTitle": "Metnin dolu şekilde bu sayfayı yeniden açan bir bağlantı paylaş",
+      "linkCopied": "Bağlantı kopyalandı"
+    },
+    "safeMode": {
+      "label": "Yapıştırma güvenliği",
+      "ariaLabel": "Hangi stillerin başkalarının cihazlarında düzgün göründüğünü kontrol et",
+      "toggleLabel": "Güvenli mod",
+      "hint": "Başkalarının eski telefonlarında kutucuk (▯) olarak görünebilecek stilleri işaretler."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Bazı kişilerde kutucuk olarak görünebilir",
+      "boxesWarningTitle": "Bu stil, bazı telefon ve eski cihazlarda karşılığı olmayan nadir Unicode karakterleri kullanır. Yapıştırdığın kişide kutucuk (▯) olarak görünebilir. Kitlen eski cihaz kullanıyor olabilirse daha sade veya daha geniş desteklenen bir stil tercih et.",
+      "emojiWarning": "⚠ Emoji içeriyor — eski cihazlarda farklı görünebilir",
+      "emojiWarningTitle": "Bu stil emoji içerir. Emoji modern cihazlarda düzgün görünür ama çok eski telefonlarda farklı görünebilir veya kutucuk olarak çıkabilir.",
+      "modernDevices": "Modern cihazlarda düzgün görünür",
+      "modernDevicesTitle": "Bu stillendirilmiş Unicode harfler tüm güncel telefon ve bilgisayarlarda görünür. Çok eski Android'lerde (yaklaşık 2016 öncesi) veya minimal sistem yazı tiplerinde bazıları yine de kutucuk (▯) olarak görünebilir. Kitlen eski cihaz kullanıyor olabilirse önce test et.",
+      "rendersEverywhere": "✓ Her yerde düzgün görünür",
+      "rendersEverywhereTitle": "Bu stil sade metindir — hiçbir cihazda kutucuk riski olmadan her yerde düzgün görünür.",
+      "deviceWarning": "⚠ Cihazında görünmeyebilir",
+      "deviceWarningTitle": "Cihazının yazı tipleri bu stili gösteremiyor — kutucuk (□) olarak görünebilir. Yine de başka cihazlarda düzgün görünebilir.",
+      "safeAnywhere": "✓ Her yerde güvenli",
+      "safeAnywhereTitle": "Tüm büyük platformlarda düzgün görünür. Not: ekran okuyucular stillendirilmiş harfleri tek tek hecelemiş gibi okuyabilir, bu yüzden gövde metnini sade tut.",
+      "worksBestOn": "⚠ En iyi {platforms} üzerinde çalışır",
+      "worksBestOnTitle": "En iyi şurada çalışır: {platforms}. Diğer platformlar kaldırabilir veya bozuk gösterebilir — paylaşmadan önce test et."
+    },
+    "savedStyles": {
+      "ariaLabel": "Kaydettiğin stiller",
+      "heading": "Kaydettiğin stiller",
+      "clearAll": "Tümünü temizle",
+      "hint": "Bu cihazda kaydedildi — geri döndüğünde burada seni bekliyor olacaklar."
+    },
+    "textStats": {
+      "wordSingular": "1 kelime",
+      "wordPlural": "{n} kelime",
+      "charSingular": "1 karakter",
+      "charPlural": "{n} karakter"
+    },
+    "decorationsNone": "Yok",
+    "categoryTabsToggle": {
+      "more": "Daha fazla",
+      "less": "Daha az"
+    },
+    "demoText": "UltraTextGen'e hoş geldin.\nBir şeyler yaz. Ultra hâle getir."
   },
   "useCases": {
     "title": "Nerelerde Kullanabilirsin?",

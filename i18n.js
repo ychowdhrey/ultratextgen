@@ -151,6 +151,12 @@
       })
       .then(function (t) {
         applyTranslations(lang, t);
+        // Expose the fetched translation object so other already-loaded
+        // scripts (e.g. script.js's category-tab renderer) can read it
+        // after the fact, plus a ready event for scripts that want to react
+        // the moment it lands instead of polling.
+        window.UTG_I18N = t;
+        document.dispatchEvent(new CustomEvent("utg:i18nready", { detail: t }));
       })
       .catch(function () {
         // Fall back to English (default HTML content stays unchanged)

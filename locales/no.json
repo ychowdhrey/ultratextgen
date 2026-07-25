@@ -21,7 +21,92 @@
   },
   "ui": {
     "placeholder": "Skriv teksten din her...",
-    "advertisement": "Annonse"
+    "advertisement": "Annonse",
+    "categoryTabs": {
+      "popular": "Populær",
+      "bold-fonts": "Fet",
+      "italic-fonts": "Kursiv",
+      "bubble-fonts": "Boble",
+      "cursive-fonts": "Håndskrift",
+      "gothic-fonts": "Gotisk",
+      "strikethrough-text": "Gjennomstreket",
+      "underline-text": "Understreket",
+      "small-text": "Liten tekst",
+      "cute-fonts": "Søt",
+      "aesthetic-fonts": "Estetisk",
+      "upside-down-text": "Opp ned",
+      "text-decorator": "Tekstdekoratør",
+      "classified": "Sensurert",
+      "fullwidth-fonts": "Full bredde",
+      "faux-fonts": "Falske alfabeter",
+      "ancient-fonts": "Antikk & runer",
+      "emoji-letter-fonts": "Emoji-bokstaver",
+      "novelty-fonts": "Morsomme"
+    },
+    "scopeControl": {
+      "label": "Bruk stil på",
+      "ariaLabel": "Velg hvor mye tekst som skal stiliseres",
+      "whole": "Hele teksten",
+      "wholeTitle": "Stiliserer hver linje i teksten din.",
+      "firstLine": "Bare første linje",
+      "firstLineTag": "for innlegg",
+      "firstLineTitle": "Stiliserer bare den første linjen (overskriften eller kroken din) og lar resten være vanlig, lesbar tekst — perfekt for innlegg på sosiale medier.",
+      "share": "Del",
+      "shareTitle": "Del en lenke som åpner denne siden igjen med teksten din allerede fylt ut",
+      "linkCopied": "Lenke kopiert"
+    },
+    "safeMode": {
+      "label": "Limesikkerhet",
+      "ariaLabel": "Se hvilke stiler som vises riktig på andres enheter",
+      "toggleLabel": "Sikker modus",
+      "hint": "Merker stiler som kan vises som firkanter (▯) på andres eldre telefoner."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Kan vises som firkanter for enkelte",
+      "boxesWarningTitle": "Denne stilen bruker sjeldne Unicode-tegn som noen telefoner og eldre enheter mangler. Den kan vises som firkanter (▯) hos personen du sender den til. Velg en enklere eller bredere støttet stil hvis publikummet ditt kan bruke eldre enheter.",
+      "emojiWarning": "⚠ Bruker emoji — kan variere på eldre enheter",
+      "emojiWarningTitle": "Denne stilen inneholder emoji. Emoji vises riktig på moderne enheter, men kan se annerledes ut, eller vises som firkanter, på svært gamle telefoner.",
+      "modernDevices": "Vises riktig på moderne enheter",
+      "modernDevicesTitle": "Disse stiliserte Unicode-bokstavene vises på alle dagens telefoner og datamaskiner. På svært gammel Android (omtrent før 2016) eller med minimale systemskrifter kan enkelte tegn fortsatt vises som firkanter (▯). Test det først hvis publikummet ditt kan bruke eldre enheter.",
+      "rendersEverywhere": "✓ Vises riktig overalt",
+      "rendersEverywhereTitle": "Denne stilen er ren tekst — den vises riktig overalt, uten risiko for firkanter på noen enhet.",
+      "deviceWarning": "⚠ Vises kanskje ikke på enheten din",
+      "deviceWarningTitle": "Skriftene på enheten din kan ikke vise denne stilen — den kan vises som firkanter (□). Den kan likevel se riktig ut på andre enheter.",
+      "safeAnywhere": "✓ Trygg overalt",
+      "safeAnywhereTitle": "Vises på alle store plattformer. Merk: skjermlesere kan stave stiliserte bokstaver én om gangen, så hold selve teksten vanlig.",
+      "worksBestOn": "⚠ Fungerer best på {platforms}",
+      "worksBestOnTitle": "Fungerer best på: {platforms}. Andre plattformer kan fjerne den eller vise den feil — test den før du publiserer."
+    },
+    "savedStyles": {
+      "ariaLabel": "Dine lagrede stiler",
+      "heading": "Dine lagrede stiler",
+      "clearAll": "Fjern alle",
+      "hint": "Lagret på denne enheten — de venter her når du kommer tilbake."
+    },
+    "textStats": {
+      "wordSingular": "1 ord",
+      "wordPlural": "{n} ord",
+      "charSingular": "1 tegn",
+      "charPlural": "{n} tegn"
+    },
+    "decorationsNone": "Ingen",
+    "categoryTabsToggle": {
+      "more": "Mer",
+      "less": "Mindre"
+    },
+    "demoText": "Velkommen til UltraTextGen.\nSkriv hva som helst. Gjør det ultra.",
+    "copyButtons": {
+      "copy": "Kopier",
+      "copied": "✓ Kopiert",
+      "failed": "✗ Mislyktes",
+      "copyTitle": "Kopier til utklippstavle",
+      "save": "Lagre",
+      "saved": "Lagret",
+      "saveTitle": "Lagre denne stilen",
+      "unsaveTitle": "Fjern fra lagrede stiler",
+      "empty": "Skriv noe ovenfor...",
+      "noStyles": "Ingen stiler funnet. Prøv et annet filter eller søkeord."
+    }
   },
   "useCases": {
     "title": "Hva folk bruker kul tekst til",

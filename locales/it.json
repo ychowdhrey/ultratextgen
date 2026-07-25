@@ -21,7 +21,80 @@
   },
   "ui": {
     "placeholder": "Scrivi qui la tua frase…",
-    "advertisement": "Pubblicità"
+    "advertisement": "Pubblicità",
+    "categoryTabs": {
+      "popular": "Popolari",
+      "bold-fonts": "Grassetto",
+      "italic-fonts": "Corsivo",
+      "bubble-fonts": "Bolla",
+      "cursive-fonts": "Script",
+      "gothic-fonts": "Gotico",
+      "strikethrough-text": "Barrato",
+      "underline-text": "Sottolineato",
+      "small-text": "Testo piccolo",
+      "cute-fonts": "Carino",
+      "aesthetic-fonts": "Estetico",
+      "upside-down-text": "Capovolto",
+      "text-decorator": "Decoratore di testo",
+      "classified": "Censurato",
+      "fullwidth-fonts": "Larghezza piena",
+      "faux-fonts": "Alfabeti finti",
+      "ancient-fonts": "Antico & rune",
+      "emoji-letter-fonts": "Lettere emoji",
+      "novelty-fonts": "Originali"
+    },
+    "scopeControl": {
+      "label": "Applica stile a",
+      "ariaLabel": "Scegli quanto testo stilizzare",
+      "whole": "Tutto il testo",
+      "wholeTitle": "Applica lo stile a ogni riga del tuo testo.",
+      "firstLine": "Solo prima riga",
+      "firstLineTag": "per i post",
+      "firstLineTitle": "Stilizza solo la prima riga (il tuo titolo o aggancio) e lascia il resto come testo normale e leggibile — ideale per i post sui social.",
+      "share": "Condividi",
+      "shareTitle": "Condividi un link che riapre questa pagina con il tuo testo già inserito",
+      "linkCopied": "Link copiato"
+    },
+    "safeMode": {
+      "label": "Sicurezza incolla",
+      "ariaLabel": "Controlla quali stili si vedono bene su altri dispositivi",
+      "toggleLabel": "Modalità sicura",
+      "hint": "Segnala gli stili che potrebbero apparire come quadratini (▯) sui telefoni vecchi di altre persone."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Può apparire come quadratini per alcune persone",
+      "boxesWarningTitle": "Questo stile usa caratteri Unicode rari che alcuni telefoni e dispositivi vecchi non hanno. Può apparire come quadratini (▯) a chi lo riceve. Scegli uno stile più semplice o più supportato se il tuo pubblico potrebbe usare dispositivi vecchi.",
+      "emojiWarning": "⚠ Usa emoji — può variare su dispositivi vecchi",
+      "emojiWarningTitle": "Questo stile include emoji. Le emoji si vedono bene sui dispositivi moderni, ma possono apparire diverse, o come quadratini, sui telefoni molto vecchi.",
+      "modernDevices": "Si vede bene sui dispositivi moderni",
+      "modernDevicesTitle": "Queste lettere Unicode stilizzate compaiono su tutti i telefoni e computer attuali. Su Android molto vecchi (circa prima del 2016) o con font di sistema minimi, alcune potrebbero comunque apparire come quadratini (▯). Prova prima se il tuo pubblico potrebbe usare dispositivi vecchi.",
+      "rendersEverywhere": "✓ Si vede bene ovunque",
+      "rendersEverywhereTitle": "Questo stile è testo semplice: si vede bene ovunque, senza rischio di quadratini su nessun dispositivo.",
+      "deviceWarning": "⚠ Potrebbe non essere visibile sul tuo dispositivo",
+      "deviceWarningTitle": "I font del tuo dispositivo non possono mostrare questo stile — potrebbe apparire come quadratini (□). Su altri dispositivi potrebbe comunque risultare corretto.",
+      "safeAnywhere": "✓ Sicuro ovunque",
+      "safeAnywhereTitle": "Si vede bene su tutte le principali piattaforme. Attenzione: gli screen reader possono leggere le lettere stilizzate una per una, quindi mantieni il testo del corpo normale.",
+      "worksBestOn": "⚠ Funziona meglio su {platforms}",
+      "worksBestOnTitle": "Funziona meglio su: {platforms}. Altre piattaforme potrebbero rimuoverlo o mostrarlo male — fai una prova prima di pubblicare."
+    },
+    "savedStyles": {
+      "ariaLabel": "I tuoi stili salvati",
+      "heading": "I tuoi stili salvati",
+      "clearAll": "Cancella tutto",
+      "hint": "Salvati su questo dispositivo — saranno qui ad aspettarti quando torni."
+    },
+    "textStats": {
+      "wordSingular": "1 parola",
+      "wordPlural": "{n} parole",
+      "charSingular": "1 carattere",
+      "charPlural": "{n} caratteri"
+    },
+    "decorationsNone": "Nessuno",
+    "categoryTabsToggle": {
+      "more": "Altro",
+      "less": "Meno"
+    },
+    "demoText": "Benvenuto su UltraTextGen.\nScrivi quello che vuoi. Rendilo ultra."
   },
   "useCases": {
     "title": "Idee per usare le scritte",
