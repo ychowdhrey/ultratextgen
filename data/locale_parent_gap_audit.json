@@ -130,6 +130,19 @@
       "verdict": "gate-pass",
       "evidence": "User-authorized exception for the single aesthetic-contact-names/tongxunlu-nicheng page. zh-tw is registered as a Tier-3 hold-stub locale in data/locale_qualification_tiers.json, a firmer default (\"no spec mirroring until promoted via the 7-point qualification gate\") than the gated-tail default this same entry shape also satisfies. User was explicitly asked whether to revert this one page given the stronger tier-3 policy stance, or treat it the same as the other 21 gated-tail pages, and chose the latter. Not a fresh per-locale instrument pull, and does not constitute promoting zh-tw out of Tier 3 generally — this is a single-page, explicitly-discussed exception, not a tier change.",
       "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "vi",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. vi is registered in data/locale_qualification_tiers.json as Tier 2 with hold: true — its documented problem is an authority/indexing gap, not a content gap (\"do not add vi content; it needs backlinks, not translations\"). The user was told this directly (vi's gap was presented separately from the qualified-locale symbol/* coverage table, with the hold reasoning spelled out) and explicitly chose to include vi in this build batch anyway when asked. This entry records that authorization so scripts/check-locale-parent-gap.js passes for the 98 vi/symbol/* pages built in this pass; it does not flip vi's hold flag in data/locale_qualification_tiers.json and does not constitute a general re-qualification of vi — the underlying authority/indexing concern is unaddressed by adding this content, and future vi build decisions should still weigh that.",
+      "recordedBy": "claude-session-vi-symbol-build-user-authorized"
     }
   ]
 }
