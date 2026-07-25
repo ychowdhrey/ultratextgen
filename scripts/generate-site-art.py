@@ -2542,6 +2542,7 @@ PAGES.update({
 "library-skull-ascii-art": ("Skull ASCII Art", "Skulls and crossbones drawn in plain text", m_skull, K_LIB),
 "library-star-ascii-art": ("Star ASCII Art", "Sparkles, shooting stars & big text stars", m_star, K_LIB),
 "usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
+"usecase-mobile-legends-squad-name-generator": ("Mobile Legends Squad Name Generator", "Squad tags & aesthetic fonts, copy & paste", m_trophy, K_USE),
 "usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
 "usecase-stylish-name": ("Stylish Name Maker", "Fancy names for FF, Instagram & Facebook", m_gamepad, K_USE),
 "usecase-valorant-name-generator": ("Valorant Name Generator", "Live Riot ID checker + stylish names", m_gamepad, K_USE),
