@@ -18,6 +18,14 @@ gradients and card layout), using:
 Run:
   python3 scripts/generate-locale-art.py --dry-run   # report only, no writes
   python3 scripts/generate-locale-art.py              # generate + rewire
+  python3 scripts/generate-locale-art.py --only ar/symbol/   # scope to a path prefix
+
+--only <prefix> restricts collect() to pages whose path starts with <prefix>
+(repeatable). Without it, a run touches every not-yet-correctly-wired page
+sitewide, not just the ones a given session just built — confirmed to have
+swept 31 unrelated pre-existing pages into a single batch's diff before this
+flag existed (see ultratextgen-lab-'s GOLD-ANALYSIS-2026-07-25.md, symbol/*
+backlog section). Always scope a translation batch with --only.
 """
 import glob
 import importlib.util
@@ -178,11 +186,13 @@ def clean_sub(html):
     return ""
 
 
-def collect(force=False):
+def collect(force=False, only=None):
     rows = []
     for loc in LOCALES:
         for path in sorted(glob.glob(os.path.join(loc, "**", "index.html"),
                                       recursive=True)):
+            if only and not any(path.startswith(p) for p in only):
+                continue
             html = open(path, encoding="utf-8").read()
             slug = slug_for(path)
             og_base, og_href, hero_base = current_asset_basenames(html)
@@ -205,8 +215,13 @@ def collect(force=False):
 def main():
     dry = "--dry-run" in sys.argv
     force = "--force" in sys.argv
-    rows = collect(force=force)
-    print(f"pages needing locale art: {len(rows)}")
+    only = []
+    for i, arg in enumerate(sys.argv):
+        if arg == "--only" and i + 1 < len(sys.argv):
+            only.append(sys.argv[i + 1])
+    rows = collect(force=force, only=(only or None))
+    print(f"pages needing locale art: {len(rows)}" +
+          (f" (scoped to {only})" if only else ""))
 
     no_hreflang = [r for r in rows if r["eng_slug"] is None]
     fallback = []
