@@ -1,0 +1,142 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "lambda-symbool",
+  "title": "Lambda-symbool: Kopieer en Plak λ Λ — het Homobevrijdingsteken & Churchs Lambda-calculus",
+  "meta_description": "Kopieer en plak het lambda-symbool — kleine letter λ (golflengte, het homobevrijdingsteken uit 1970) en hoofdletter Λ (de kosmologische constante) — plus hoe het Pythons lambda en AWS Lambda hun naam gaf. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/lambda-symbool/",
+  "breadcrumb": "Lambda-symbool",
+  "hero_h1": "Lambda-symbool",
+  "hero_tagline": "De kleine letter λ die grafisch ontwerper Tom Doerr in 1970 tot homobevrijdingsembleem maakte, dezelfde letter achter Alonzo Churchs lambda-calculus en de natuurkundige golflengte, en de hoofdletter Λ die de kosmologische constante voorstelt. Klik op een teken om het direct te kopiëren.",
+  "intro": "Lambda's kleine letter, λ (U+03BB, GREEK SMALL LETTER LAMDA), is de elfde letter van het Griekse alfabet — maar draagt twee van de zwaarste betekenissen die één teken ooit heeft opgepikt. In 1970 koos grafisch ontwerper Tom Doerr, een oprichtend lid van de Gay Activists Alliance (opgericht in New York in december 1969), de kleine letter λ als embleem van de groep — naar verluidt vanwege de natuurkundige betekenis van 'een volledige energie-uitwisseling' — en in december 1974 had het International Gay Rights Congress in Edinburgh het uitgeroepen tot internationaal symbool van homo- en lesbierrechten; het geeft nog steeds zijn naam aan Lambda Legal en de Lambda Literary Foundation. Dezelfde letter verankert ook de informatica: Alonzo Church bouwde in de jaren 30 zijn lambda-calculus, het formele systeem dat later Python zijn lambda-sleutelwoord voor anonieme functies gaf (toegevoegd in 1994) en Amazon zijn serverloze dienst AWS Lambda. In de natuurkunde is λ het standaardteken voor golflengte, terwijl de hoofdletter Λ (U+039B) de kosmologische constante aanduidt — de donkere-energieterm in het ΛCDM-model van het uitdijende heelal. Beide vormen kwamen in 1993 in Unicode 1.1 terecht.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/lambda-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/lambda-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "de-lambda-letter",
+      "label": "De Letter",
+      "h2": "Het Lambda-symbool — λ & Λ",
+      "intro": "De Griekse letter zelf — de elfde in het alfabet, met de waarde 30 in het Griekse cijfersysteem, afstammend van de Fenicische letter lamed. Kleine letter λ doet vrijwel al het culturele werk; hoofdletter Λ is een apart wiskundig en kosmologisch teken.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Griekse Kleine Letter Lambda (U+03BB)"
+        },
+        {
+          "char": "Λ",
+          "label": "Griekse Hoofdletter Lambda (U+039B)"
+        }
+      ]
+    },
+    {
+      "id": "homobevrijding",
+      "label": "Homobevrijding",
+      "h2": "Lambda als Homobevrijdingsteken",
+      "intro": "New Yorks Gay Activists Alliance nam de kleine letter λ in 1970 aan, en het International Gay Rights Congress riep het in 1974 uit tot internationaal symbool van homo- en lesbierrechten — een van de vroegste emblemen van de beweging. Plak het naast de pride-tekens waar het tegenwoordig naast staat.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Griekse Kleine Letter Lambda (U+03BB) — Het Homobevrijdingsteken"
+        },
+        {
+          "char": "🏳️‍🌈",
+          "label": "Regenboogvlag"
+        },
+        {
+          "char": "⚧",
+          "label": "Transgenderteken (U+26A7)"
+        }
+      ]
+    },
+    {
+      "id": "lambda-code-wetenschap",
+      "label": "Code & Wetenschap",
+      "h2": "Lambda in Code, Wiskunde & Natuurkunde",
+      "intro": "Het technische leven van de letter. Kleine letter λ markeert anonieme functies — van Alonzo Churchs lambda-calculus tot Pythons lambda-sleutelwoord en AWS Lambda — en staat voor golflengte in de natuurkunde; hoofdletter Λ is de kosmologische constante van het ΛCDM-model.",
+      "symbols": [
+        {
+          "char": "λ",
+          "label": "Griekse Kleine Letter Lambda (U+03BB) — Golflengte & Lambda-calculus"
+        },
+        {
+          "char": "Λ",
+          "label": "Griekse Hoofdletter Lambda (U+039B) — Kosmologische Constante"
+        },
+        {
+          "char": "𝜆",
+          "label": "Wiskundig Cursieve Lambda (U+1D706) — De Variant voor Vergelijkingen"
+        }
+      ]
+    },
+    {
+      "id": "verwante-griekse-letters",
+      "label": "Griekse Letters",
+      "h2": "Verwante Griekse Letters",
+      "intro": "Lambda is de elfde letter van het Griekse alfabet. Dit zijn de buren die mensen er meestal naast kopiëren.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Griekse Kleine Letter Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Griekse Hoofdletter Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Griekse Hoofdletter Delta"
+        },
+        {
+          "char": "Ω",
+          "label": "Griekse Hoofdletter Omega"
+        },
+        {
+          "char": "α",
+          "label": "Griekse Kleine Letter Alfa"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/griekse-letters/",
+      "title": "Griekse Letters",
+      "desc": "Het volledige Griekse alfabet — alfa, lambda, pi, sigma, omega — in hoofdletters en kleine letters om te kopiëren en te plakken."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "Golflengte, de kosmologische constante en de operatoren en Griekse letters die een vergelijking compleet maken."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Pride & LGBTQ+ Symbols",
+      "desc": "De lambda, de regenboog, de labrys en de andere emblemen van LGBTQ+-identiteit, op één plek om te kopiëren (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/pi-symbool/",
+      "title": "Pi-symbool",
+      "desc": "Nog een Griekse letter met een leven ver voorbij de wiskunde — de constante die William Jones in 1706 een naam gaf."
+    }
+  ]
+}

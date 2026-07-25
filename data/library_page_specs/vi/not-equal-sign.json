@@ -1,0 +1,71 @@
+{
+  "slug": "not-equal-sign",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Không Bằng: Sao Chép & Dán ≠ — Dấu Phủ Định Trong Toán Học, Và Vì Sao Mã Nguồn Dùng != Thay Thế",
+  "meta_description": "Sao chép ký hiệu không bằng (≠), xem trọn họ dấu phủ định ≁ ≉ ≢ ≮ ≯ mà nó thuộc về, và tìm hiểu vì sao ngôn ngữ lập trình dùng != hay <> thay vì nó. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/not-equal-sign/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Không Bằng",
+  "hero_h1": "Ký Hiệu Không Bằng",
+  "hero_tagline": "Dấu bằng bị một vạch chéo cắt ngang (≠) — được dùng trong toán học ít nhất từ thời Euler, nguồn gốc của cả một họ quan hệ bị phủ định, và bị bỏ ra khỏi ASCII, chính là lý do mã nguồn dùng != thay thế. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu không bằng (≠, U+2260) kết hợp dấu bằng với một vạch chéo — chính bảng phân rã của Unicode thể hiện nó như đúng nghĩa đen là «=» cộng với một lớp gạch chéo kết hợp phủ lên (U+0338), cùng dấu tạo ra cả một họ quan hệ bị phủ định: ≁, ≉, ≢, ≮, ≯. Quy ước phủ định bằng gạch chéo là một câu chuyện riêng biệt, muộn hơn so với việc Robert Recorde phát minh ra «=» năm 1557 — cách dùng viết tay được biết đến sớm nhất có thể truy về thư từ của Leonhard Euler ở thế kỷ 18, dù các sử gia toán học cẩn thận nói rằng ký hiệu này được Euler sử dụng, không hẳn do ông phát minh ra. Vì ASCII chưa bao giờ dành một vị trí cho ≠, các ngôn ngữ lập trình đã thay thế bằng ký hiệu riêng của mình — != trong các ngôn ngữ họ C, <> trong SQL và Pascal, ~= trong Lua và MATLAB, /= trong Fortran và Haskell — đó là lý do vì sao ký hiệu toán học và thứ bạn thực sự gõ trong mã nguồn gần như không bao giờ là cùng một ký tự.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/not-equal-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/not-equal-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/not-equal-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "not-equal-sign",
+      "label": "Không Bằng",
+      "h2": "Không Bằng, Trong Toán Học Và Mã Nguồn",
+      "intro": "Ký hiệu toán học, và các ký hiệu ASCII thay thế mà những ngôn ngữ lập trình khác nhau đã dùng vì ≠ chưa bao giờ là một phần của bộ ký tự.",
+      "symbols": [
+        { "char": "≠", "label": "Không Bằng (Toán Học)" },
+        { "char": "!=", "label": "Không Bằng (C, Python, JavaScript, Java)" },
+        { "char": "<>", "label": "Không Bằng (SQL, Pascal, BASIC)" },
+        { "char": "~=", "label": "Không Bằng (Lua, MATLAB)" },
+        { "char": "/=", "label": "Không Bằng (Fortran, Haskell)" }
+      ]
+    },
+    {
+      "id": "negated-relation-family",
+      "label": "Họ Quan Hệ Phủ Định",
+      "h2": "Họ Quan Hệ Phủ Định",
+      "intro": "≠ không đơn độc — cùng lớp gạch chéo phủ lên đó cũng phủ định một số ký hiệu quan hệ khác trong khối Mathematical Operators của Unicode.",
+      "symbols": [
+        { "char": "≁", "label": "Không Giống" },
+        { "char": "≉", "label": "Không Gần Bằng" },
+        { "char": "≢", "label": "Không Đồng Nhất" },
+        { "char": "≮", "label": "Không Nhỏ Hơn" },
+        { "char": "≯", "label": "Không Lớn Hơn" }
+      ]
+    },
+    {
+      "id": "related-comparison-symbols",
+      "label": "Ký Hiệu So Sánh",
+      "h2": "Các Ký Hiệu So Sánh Liên Quan",
+      "intro": "Các quan hệ khẳng định mà ≠ phủ định — hữu ích khi bạn cần dạng chưa gạch chéo thay thế.",
+      "symbols": [
+        { "char": "=", "label": "Dấu Bằng" },
+        { "char": "≈", "label": "Xấp Xỉ Bằng" },
+        { "char": "≡", "label": "Đồng Nhất" },
+        { "char": "<", "label": "Nhỏ Hơn" },
+        { "char": ">", "label": "Lớn Hơn" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Toán tử, ký hiệu tập hợp và hằng số toán học trong một trang tra cứu." },
+    { "href": "/vi/symbol/less-than-greater-than/", "title": "Nhỏ Hơn & Lớn Hơn", "desc": "Các ký hiệu so sánh mà ≠ đứng cạnh, và vì sao chúng có thể làm hỏng mã HTML." },
+    { "href": "/vi/symbol/plus-minus/", "title": "Ký Hiệu Cộng Trừ", "desc": "Một ký hiệu quan hệ toán học khác được tách riêng từ thư viện ký hiệu toán học thành trang của riêng nó." }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "polpauza",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Półpauza (–): Skopiuj + Kreska Zakresu, Którą Wszyscy Wpisują Jako Łącznik",
+  "meta_description": "Skopiuj półpauzę (–) dla zakresów jak 1939–1945 i zestawień jak Warszawa–Kraków — kreskę zakresu bez własnego klawisza. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/polpauza/",
+  "breadcrumb": "Półpauza",
+  "hero_h1": "Półpauza (–)",
+  "hero_tagline": "Półpauza (–) łącząca zakresy liczb i dat — 1939–1945, strony 10–20, 9:00–17:00 — i spinająca dwuczłonowe zestawienia jak trasa Warszawa–Kraków. Dłuższa od łącznika, krótsza od pauzy, i jedyny z tych znaków bez własnego klawisza. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Półpauza (–, Unicode U+2013) to kreska średniej długości, leżąca między zwykłym łącznikiem a dłuższą pauzą — nazwana tak, bo jest mniej więcej o połowę węższa od pauzy, z grubsza szerokości wielkiej litery N. W polskiej typografii to właśnie półpauza — nie pauza — pełni funkcję głównego myślnika zdaniowego: oddziela dygresje, otwiera kwestie w dialogach i pełni w praktyce rolę, którą w angielskim tekście przejmuje dłuższa pauza. Poza tym wykonuje dwa główne zadania uniwersalne dla obu języków: oznacza przedziały i zakresy (1939–1945, strony 10–20, 9:00–17:00, numer maj–wrzesień) oraz łączy dwuczłonowe zestawienia i zrosty otwarte, w których łącznik byłby zbyt słaby (trasa Warszawa–Kraków, mecz Polska–Niemcy). Ponieważ żadna klawiatura nie ma dedykowanego klawisza półpauzy, jest nieustannie mylnie wpisywana jako zwykły łącznik-minus (-, U+002D); by wpisać ją poprawnie, naciśnij Option+Łącznik na Macu albo Alt+0150 na klawiaturze numerycznej Windows, a autoformatowanie Microsoft Word automatycznie zamienia łącznik otoczony spacjami (słowo - słowo) na właściwy znak. Bywa też często mylona z typograficznym łącznikiem (‐, U+2010), znakiem minus (−, U+2212) i pauzą (—, U+2014).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/polpauza/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+  ],
+  "sections": [
+    {
+      "id": "polpauza",
+      "label": "Półpauza",
+      "h2": "Półpauza i Kreska Cyfrowa",
+      "intro": "Półpauza do zakresów i zestawień, plus kreska cyfrowa — ta sama szerokość, zarezerwowana dla cyfr, by równo się układały w tabelach i numerach telefonów. Gotowe do wklejenia gdziekolwiek.",
+      "symbols": [
+        { "char": "–", "label": "Półpauza (U+2013)" },
+        { "char": "‒", "label": "Kreska Cyfrowa (U+2012)" }
+      ]
+    },
+    {
+      "id": "kreski-mylone",
+      "label": "Kreski Mylone",
+      "h2": "Kreski i Łączniki, z Którymi Bywa Mylona",
+      "intro": "Znaki, którymi zastępuje się półpauzę — każdy ma inną szerokość, punkt kodowy i zadanie, od zwykłego klawiaturowego łącznika po pauzę i prawdziwy znak minus.",
+      "symbols": [
+        { "char": "—", "label": "Pauza (U+2014)" },
+        { "char": "-", "label": "Łącznik-Minus (Klawiaturowy)" },
+        { "char": "‐", "label": "Łącznik (Typograficzny, U+2010)" },
+        { "char": "−", "label": "Znak Minus (U+2212)" },
+        { "char": "―", "label": "Kreska Pozioma (U+2015)" }
+      ]
+    },
+    {
+      "id": "znaki-dygresyjne",
+      "label": "Znaki Dygresyjne",
+      "h2": "Znaki, Które Zastępuje Półpauza z Dygresją",
+      "intro": "W angielszczyźnie brytyjskiej, australijskiej i kanadyjskiej otoczona spacjami półpauza – tak jak ta – wydziela dygresję tam, gdzie amerykański angielski stosuje zamkniętą pauzę; to znaki, obok których działa albo które zastępuje.",
+      "symbols": [
+        { "char": ",", "label": "Przecinek" },
+        { "char": ":", "label": "Dwukropek" },
+        { "char": ";", "label": "Średnik" },
+        { "char": "(", "label": "Nawias Lewy" },
+        { "char": ")", "label": "Nawias Prawy" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    { "href": "/library/dash-hyphen-symbols/", "title": "Dash & Hyphen Symbols", "desc": "Półpauzy, pauzy, łączniki i znaki minus zestawione obok siebie z ich punktami kodowymi w jednym miejscu." },
+    { "href": "/pl/library/symbole-punktowania/", "title": "Symbole Punktowania", "desc": "Kreski, cudzysłowy, nawiasy i reszta codziennej interpunkcji Unicode, gotowe do skopiowania." },
+    { "href": "/pl/symbol/pauza/", "title": "Pauza (—)", "desc": "Szerszy krewniak półpauzy: długa kreska do przerwań i dygresji, mniej więcej dwa razy szersza i o innym zadaniu w polskiej typografii." }
+  ]
+}

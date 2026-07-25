@@ -1,0 +1,80 @@
+{
+  "slug": "symbol-srednicy",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Średnicy: Skopiuj ⌀ Inżynierski Znak Średnicy",
+  "meta_description": "Skopiuj symbol średnicy (⌀) używany na rysunkach technicznych i w specyfikacjach obróbczych, plus znaki mylące Ø i ∅. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-srednicy/",
+  "breadcrumb": "Symbol Średnicy",
+  "hero_h1": "Symbol Średnicy",
+  "hero_tagline": "Znak średnicy (⌀), który poprzedza wymiary kołowe na rysunkach technicznych — plus symbole, z którymi bywa mylony. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol średnicy (⌀, Unicode U+2300) to znaczek okręgu przekreślonego ukośną kreską, umieszczany przed wymiarem, by powiedzieć „to jest średnica, nie promień”. Pojawia się w specyfikacjach obróbczych, na rysunkach CAD i w oznaczeniach produkcyjnych — i regularnie bywa zastępowany podobnie wyglądającymi znakami, które oznaczają coś zupełnie innego.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/diameter-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-srednicy/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/diameter-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-srednicy",
+      "label": "Średnica",
+      "h2": "Znak Średnicy",
+      "intro": "Właściwy, unicode'owy znak średnicy, gotowy do wklejenia przed wymiarem.",
+      "symbols": [
+        { "char": "⌀", "label": "Znak Średnicy" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Mylone",
+      "h2": "Symbole Często Mylone ze Znakiem Średnicy",
+      "intro": "Te znaki wyglądają na tyle podobnie do ⌀, że bywają podstawiane przez pomyłkę — każdy z nich ma inne znaczenie.",
+      "symbols": [
+        { "char": "∅", "label": "Zbiór Pusty (To Nie Znak Średnicy)" },
+        { "char": "Ø", "label": "Wielka Litera O z Przekreśleniem" },
+        { "char": "ø", "label": "Mała Litera O z Przekreśleniem" },
+        { "char": "φ", "label": "Mała Grecka Litera Fi" },
+        { "char": "Φ", "label": "Wielka Grecka Litera Fi" }
+      ]
+    },
+    {
+      "id": "powiazane-znaki-geometryczne",
+      "label": "Powiązane Znaki Geometryczne",
+      "h2": "Promień, Łuk i Powiązane Symbole Wymiarowania",
+      "intro": "Inne znaki wymiarowania i tolerowania geometrycznego (GD&T), używane powszechnie obok znaku średnicy.",
+      "symbols": [
+        { "char": "R", "label": "Promień (Zwykła Litera)" },
+        { "char": "□", "label": "Kwadrat (Rozstaw Płaszczyzn)" },
+        { "char": "⌒", "label": "Łuk" },
+        { "char": "⌓", "label": "Odcinek" },
+        { "char": "°", "label": "Znak Stopnia" },
+        { "char": "±", "label": "Znak Plus-Minus" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/stopnie-i-temperatura/",
+      "title": "Znak Stopnia i Temperatury",
+      "desc": "Znak stopnia oraz znaki kątów i skal temperatury, które łączy się ze znakiem średnicy."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Operatory matematyczne, litery greckie, pierwiastki i znaki nieskończoności."
+    },
+    {
+      "href": "/library/geometric-symbols/",
+      "title": "Geometric Symbols",
+      "desc": "Kwadraty, okręgi, trójkąty oraz warianty wypełnione i konturowe kształtów."
+    }
+  ]
+}

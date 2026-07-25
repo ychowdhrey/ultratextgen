@@ -1,0 +1,68 @@
+{
+  "slug": "interrobang",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Interrobang: Sao Chép & Dán ‽ — Ra Đời Năm 1962, Từng Là Một Phím Bàn Phím Đánh Chữ Thật Sự",
+  "meta_description": "Sao chép interrobang (‽) và interrobang ngược (⸘) — dấu kết hợp ?-và-! do người làm quảng cáo Martin Speckter đặt ra năm 1962. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/interrobang/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Interrobang",
+  "hero_h1": "Interrobang (‽)",
+  "hero_tagline": "Interrobang (‽) hợp nhất «?» và «!» thành một dấu duy nhất cho một câu vừa hỏi vừa cảm thán — do người làm quảng cáo Martin Speckter đặt ra năm 1962 và từng được bán như một phím đánh chữ thật sự — cùng người anh em mở đầu kiểu Tây Ban Nha của nó, interrobang ngược (⸘). Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Interrobang (‽, Unicode U+203D) là một glyph duy nhất hợp nhất dấu chấm hỏi với dấu chấm than, được tạo ra để đánh dấu một câu vừa hỏi vừa cảm thán cùng lúc — «Bạn đã làm gì cơ?!» Giám đốc quảng cáo người Mỹ Martin K. Speckter đề xuất nó năm 1962 trong một bài báo có tiêu đề «Making a New Point, or, How About That…» trên tạp chí TYPEtalks mà ông làm biên tập; ông ghép tên từ interrogatio (tiếng Latin cho câu hỏi tu từ) và bang (tiếng lóng ngành in cho dấu chấm than), bỏ qua những cái tên từng bị loại như «exclamaquest» hay «exclarotive». Nó từng biến thành phần cứng thật sự: bộ chữ Americana năm 1965 của Richard Isbell có bao gồm nó, một số máy đánh chữ Remington cung cấp phím interrobang riêng vào năm 1968, và các nắp phím thay thế đến tay máy Smith-Corona vào thập niên 1970 — nhưng nó chưa bao giờ lọt vào bàn phím tiêu chuẩn và phai nhạt dần vào cuối thập niên 1970. Unicode vẫn mã hóa nó, cùng với hình ảnh gương của nó, interrobang ngược (⸘, U+2E18, thêm vào Unicode 5.1 năm 2008), được thiết kế để mở đầu một câu theo cách ¿ và ¡ mở đầu câu hỏi và câu cảm thán trong tiếng Tây Ban Nha. Đừng nhầm nó với dấu chấm hỏi ngược (⸮), một dấu tu từ riêng biệt từ năm 1575 có trang riêng của mình.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/interrobang/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+  ],
+  "sections": [
+    {
+      "id": "the-interrobang",
+      "label": "Interrobang",
+      "h2": "Interrobang — ‽ & ⸘",
+      "intro": "Chính dấu này và hình ảnh gương của nó: interrobang chuẩn đóng lại một câu hỏi kinh ngạc, và dạng ngược được xây để mở đầu một câu như vậy.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang (U+203D) — Câu Hỏi + Cảm Thán Trong Một Glyph" },
+        { "char": "⸘", "label": "Interrobang Ngược (U+2E18) — «Người Anh Em» Mở Đầu Câu" }
+      ]
+    },
+    {
+      "id": "marks-it-merges",
+      "label": "Những Gì Nó Hợp Nhất",
+      "h2": "Dấu Chấm Hỏi Và Dấu Chấm Than Mà Nó Kết Hợp",
+      "intro": "Interrobang nén hai dấu câu hằng ngày này thành một. Khi bàn phím không tạo được nó, người ta gõ cả cặp — hoặc dùng các dạng kết hợp sẵn của Unicode.",
+      "symbols": [
+        { "char": "?", "label": "Dấu Chấm Hỏi (U+003F)" },
+        { "char": "!", "label": "Dấu Chấm Than (U+0021)" },
+        { "char": "⁉", "label": "Dấu Chấm Than Hỏi (U+2049)" },
+        { "char": "⁈", "label": "Dấu Chấm Hỏi Chấm Than (U+2048)" },
+        { "char": "⁇", "label": "Dấu Chấm Hỏi Đôi (U+2047)" }
+      ]
+    },
+    {
+      "id": "opening-punctuation",
+      "label": "Dấu Câu Mở Đầu",
+      "h2": "Vì Sao Interrobang Ngược Tồn Tại",
+      "intro": "Tiếng Tây Ban Nha và các ngôn ngữ liên quan mở đầu một câu hỏi bằng ¿ và một câu cảm thán bằng ¡; interrobang ngược ⸘ hợp nhất cặp mở đầu đó, phản chiếu ở đầu câu điều mà ‽ làm ở cuối câu. Dấu chấm hỏi ngược ⸮ là một dấu hoàn toàn khác — xem trang riêng của nó.",
+      "symbols": [
+        { "char": "¿", "label": "Dấu Chấm Hỏi Xoay Ngược (U+00BF)" },
+        { "char": "¡", "label": "Dấu Chấm Than Xoay Ngược (U+00A1)" },
+        { "char": "⸘", "label": "Interrobang Ngược (U+2E18)" },
+        { "char": "⸮", "label": "Dấu Chấm Hỏi Soi Gương (U+2E2E)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Bộ tra cứu đầy đủ dấu câu thông thường và chuyên biệt trong Unicode, từ dấu gạch ngang và ngoặc đến các dấu mới lạ như interrobang." },
+    { "href": "/vi/symbol/backwards-question-mark/", "title": "Dấu Chấm Hỏi Ngược (⸮)", "desc": "Một dấu tu từ lịch sử khác — dấu chấm hỏi soi gương năm 1575, không phải kết hợp câu hỏi-cảm thán như interrobang." },
+    { "href": "/vi/symbol/em-dash/", "title": "Dấu Gạch Ngang Dài (—)", "desc": "Một dấu câu khác với câu chuyện sống động và một họ hình ảnh giống nhau mà mọi người liên tục nhầm lẫn." },
+    { "href": "/vi/symbol/pilcrow/", "title": "Pilcrow (¶)", "desc": "Dấu đoạn văn — một ký hiệu kiểu chữ biên tập với lịch sử in ấn lâu đời của riêng nó." }
+  ]
+}

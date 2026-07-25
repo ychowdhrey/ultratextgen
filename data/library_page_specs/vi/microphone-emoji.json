@@ -1,0 +1,67 @@
+{
+  "slug": "microphone-emoji",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Emoji Micro: Sao Chép & Dán 🎤 — Ý Nghĩa, Lịch Sử & Mọi Cách Gõ",
+  "meta_description": "Sao chép và dán emoji micro 🎤 (U+1F3A4) — ý nghĩa của nó, lịch sử Unicode năm 2010, và cách nó khác với micro thu âm phòng thu 🎙️. Nhấp để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/microphone-emoji/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Emoji Micro",
+  "hero_h1": "Emoji Micro (🎤)",
+  "hero_tagline": "Chiếc micro cầm tay bạn nghĩ đến khi nói về ca hát, karaoke, dẫn chương trình, phỏng vấn, và khoảnh khắc «thả micro» — đừng nhầm với micro thu âm phòng thu gắn chân đế 🎙️. Nhấp để sao chép ngay.",
+  "intro": "Emoji micro (🎤, U+1F3A4 MICROPHONE) khắc họa một chiếc micro cầm tay với đầu nghiêng về phía miệng — hình dạng dùng cho ca hát, karaoke, dẫn chương trình, phỏng vấn, hài độc thoại, và khoảnh khắc thả micro. Nó đã thuộc bộ emoji tiêu chuẩn từ Unicode 6.0 năm 2010, nằm trong làn sóng emoji đầu tiên được đưa vào từ phông chữ nhà mạng di động Nhật Bản, và hiển thị đầy đủ màu sắc trên mọi nền tảng lớn mà không cần bộ chọn biến thể. Nhấp vào bên dưới để sao chép ngay.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/mikrofon-emoji/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/microphone-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "microphone-emoji",
+      "label": "Micro",
+      "h2": "Emoji Micro",
+      "intro": "Chính chiếc micro cầm tay — sẵn sàng để dán ở bất cứ đâu emoji được hỗ trợ.",
+      "symbols": [
+        { "char": "🎤", "label": "Micro (U+1F3A4)" }
+      ]
+    },
+    {
+      "id": "microphone-confusables",
+      "label": "Dễ Nhầm Lẫn",
+      "h2": "Các Emoji Thường Bị Nhầm Lẫn",
+      "intro": "Các ký hiệu người ta tìm với kỳ vọng là micro cầm tay, nhưng thực ra là emoji riêng biệt, mã hóa khác.",
+      "symbols": [
+        { "char": "🎙️", "label": "Micro Phòng Thu (U+1F399) — micro phát thanh/podcast gắn chân đế" },
+        { "char": "🔊", "label": "Loa Âm Lượng Cao (U+1F50A)" },
+        { "char": "🗣️", "label": "Đầu Đang Nói (U+1F5E3 FE0F)" },
+        { "char": "📢", "label": "Loa Phóng Thanh Công Cộng (U+1F4E2)" }
+      ]
+    },
+    {
+      "id": "related-music-emoji",
+      "label": "Emoji Âm Nhạc Liên Quan",
+      "h2": "Các Emoji Âm Nhạc & Biểu Diễn Đi Kèm",
+      "intro": "Các emoji thường xuất hiện cạnh micro trong chú thích về ca hát, buổi hòa nhạc và podcast.",
+      "symbols": [
+        { "char": "🎧", "label": "Tai Nghe (U+1F3A7)" },
+        { "char": "🎵", "label": "Nốt Nhạc (U+1F3B5)" },
+        { "char": "🎶", "label": "Các Nốt Nhạc (U+1F3B6)" },
+        { "char": "🎸", "label": "Guitar (U+1F3B8)" },
+        { "char": "🥁", "label": "Trống (U+1F941)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/object-emojis/", "title": "Ký Hiệu Đồ Vật", "desc": "Mọi emoji vật dụng hằng ngày — công nghệ, gia dụng và văn phòng — bao gồm cả micro, duyệt trong một lưới." },
+    { "href": "/library/emoji-combos/", "title": "Tổ Hợp Emoji", "desc": "Các cặp emoji dựng sẵn cho tiểu sử và chú thích, bao gồm chủ đề âm nhạc và biểu diễn." },
+    { "href": "/library/music-symbols/", "title": "Ký Hiệu Âm Nhạc", "desc": "Ký hiệu nhạc Unicode dạng chữ — ♪ ♫ ♬ — người anh em văn bản của họ nhà emoji âm nhạc." }
+  ]
+}

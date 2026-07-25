@@ -1,0 +1,109 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "vredesteken",
+  "title": "Vredesteken: Kopieer en Plak ☮ — Ontwerpverhaal uit 1958 & Hoe Je Het Typt",
+  "meta_description": "Wat het vredesteken ☮ betekent, het ontwerpverhaal uit 1958 en hoe je het typt. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/vredesteken/",
+  "breadcrumb": "Vredesteken",
+  "hero_h1": "Vredesteken (☮)",
+  "hero_tagline": "Wat ☮ betekent, het ontwerpverhaal uit 1958 en hoe je het typt. Klik om te kopiëren.",
+  "intro": "Het vredesteken werd in 1958 ontworpen door de Britse kunstenaar Gerald Holtom, in opdracht voor de allereerste Aldermaston-mars — een Britse antikernwapendemonstratie georganiseerd door de Campaign for Nuclear Disarmament (CND). In plaats van een abstracte vorm te verzinnen, bouwde Holtom het op uit een bestaand communicatiesysteem: semafoor, de vlagseincode die door matrozen wordt gebruikt. De semafoor-letter N wordt geseind met beide vlaggen schuin omlaag in een V-vorm; de letter D wordt geseind met één vlag recht omhoog en één recht omlaag. Holtom legde de twee lettervormen — voor Nuclear Disarmament — over elkaar heen binnen een cirkel, wat het driestrepenontwerp opleverde dat vandaag meteen herkenbaar is. Wat begon als een protestsymbool voor één specifieke zaak, werd al snel overgenomen door de bredere anti-oorlogs- en tegencultuurbewegingen van de jaren 60, en groeide uit tot een van de meest herkende symbolen van de twintigste eeuw.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peace-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/vredesteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peace-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "vredesteken",
+      "label": "Vrede",
+      "h2": "Vredesteken",
+      "intro": "Het teken zelf, ontworpen in 1958.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Vredesteken (U+262E)"
+        }
+      ]
+    },
+    {
+      "id": "vredesverwante-tekens",
+      "label": "Andere Vredesverwante Tekens",
+      "h2": "Verwar het Niet Met",
+      "intro": "Deze worden soms verward met of gecombineerd met het vredesteken, maar zijn losse tekens met een eigen betekenis.",
+      "symbols": [
+        {
+          "char": "✌",
+          "label": "Overwinningsteken / Victory Hand (U+270C) — een handgebaar, niet het ronde vredesteken"
+        },
+        {
+          "char": "🕊",
+          "label": "Duif (U+1F54A) — een apart, met vrede geassocieerd emoji"
+        },
+        {
+          "char": "☯",
+          "label": "Yin en Yang (U+262F) — een ander symbool, soms samen met vredesbeeldtaal gebruikt"
+        }
+      ]
+    },
+    {
+      "id": "geloofssymbolen",
+      "label": "Geloofssymbolen",
+      "h2": "Verwante Religieuze & Spirituele Symbolen",
+      "intro": "Andere geloofssymbolen die vaak samen met het vredesteken worden gezocht en getoond.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "Latijns Kruis"
+        },
+        {
+          "char": "✡",
+          "label": "Davidster"
+        },
+        {
+          "char": "☪",
+          "label": "Halvemaan en Ster"
+        },
+        {
+          "char": "☬",
+          "label": "Khanda"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/symbol/yin-yang-symbool/",
+      "title": "Yin-Yang-symbool",
+      "desc": "De oude Chinese filosofie achter de zwier."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Vrede, gebaren, duiven en symbolen van goede wil in de volledige bibliotheek (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/library/speciale-tekens/",
+      "title": "Speciale Tekens",
+      "desc": "Interpunctie, typografie en zeldzame Unicode-curiositeiten."
+    }
+  ]
+}

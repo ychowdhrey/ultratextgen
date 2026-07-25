@@ -1,0 +1,80 @@
+{
+  "slug": "znak-mniejsze-lub-rowne",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Mniejsze lub Równe: Skopiuj ≤ — Znaczenie, Kod Alt i LaTeX",
+  "meta_description": "Skopiuj znak mniejsze-lub-równe ≤ (U+2264) — Alt+243, polecenie LaTeX \\leq, jego encję HTML oraz znaki mylone ≦ ⩽ ≲. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-mniejsze-lub-rowne/",
+  "breadcrumb": "Znak Mniejsze lub Równe",
+  "hero_h1": "Znak Mniejsze lub Równe (≤)",
+  "hero_tagline": "≤, po które sięgasz, gdy jedna wartość może być mniejsza od drugiej albo dokładnie jej równa — Alt+243 na Windows, \\leq w LaTeX i &le; w HTML. Kliknij, aby skopiować go od razu.",
+  "intro": "Znak mniejsze-lub-równe (≤, U+2264) łączy znak mniejszości z poziomą kreską pod spodem, pokazując, że wartość może być mniejsza od innej wartości albo dokładnie jej równa — relacja stojąca za wszystkim, od prostych nierówności po przedziały domknięte w rachunku różniczkowym. W przeciwieństwie do ścisłych znaków < i >, które angielski matematyk Thomas Harriot wprowadził w 1631 roku, połączona para ≤/≥ to późniejsze udoskonalenie: za jej wprowadzenie w 1734 roku, w eseju o gradacji światła, powszechnie uznaje się francuskiego matematyka Pierre'a Bouguera. ASCII nigdy nie przydzielił ≤ własnego miejsca, dlatego niemal każdy język programowania sięga zamiast tego po dwuznakowe <=, a nie po pojedynczy glif Unicode.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-mniejsze-lub-rowne/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "mniejsze-lub-rowne",
+      "label": "Mniejsze lub Równe",
+      "h2": "Mniejsze lub Równe, w Matematyce i Kodzie",
+      "intro": "Znak matematyczny oraz dwuznakowy zamiennik, którego używa większość języków programowania, ponieważ samo ≤ nigdy nie znalazło się w ASCII.",
+      "symbols": [
+        { "char": "≤", "label": "Mniejsze lub Równe (Matematyka)" },
+        { "char": "<=", "label": "Mniejsze lub Równe (Kod — C, Python, JavaScript, Java, SQL)" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Mylone",
+      "h2": "Symbole Często Mylone z ≤",
+      "intro": "Wszystkie oznaczają w przybliżeniu to samo, ale to osobne znaki Unicode z różnych tradycji składu.",
+      "symbols": [
+        { "char": "≦", "label": "Mniejsze Nad Równe (U+2266)" },
+        { "char": "⩽", "label": "Mniejsze lub Ukośnie Równe (U+2A7D) — forma preferowana przez ISO 31-11" },
+        { "char": "≲", "label": "Mniejsze lub Równoważne (U+2272)" },
+        { "char": "≪", "label": "Znacznie Mniejsze Niż (U+226A) — inna relacja, nie wariant ≤" }
+      ]
+    },
+    {
+      "id": "powiazane-znaki-porownania",
+      "label": "Powiązane Znaki Porównania",
+      "h2": "Powiązane Symbole Porównania",
+      "intro": "Inne znaki relacji, z którymi ≤ łączy się w nierównościach i notacji teorii mnogości.",
+      "symbols": [
+        { "char": "≥", "label": "Większe lub Równe (U+2265)" },
+        { "char": "<", "label": "Mniejsze Niż" },
+        { "char": ">", "label": "Większe Niż" },
+        { "char": "≠", "label": "Różne Od" },
+        { "char": "=", "label": "Znak Równości" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Operatory, notacja teorii mnogości i stałe matematyczne w jednym przeglądalnym zestawie."
+    },
+    {
+      "href": "/pl/symbol/znak-rozne-od/",
+      "title": "Znak Różne Od (≠)",
+      "desc": "Znak używany już przez Eulera, pominięty w ASCII, i dlaczego kod używa zamiast niego !=."
+    },
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than & Greater Than",
+      "desc": "Ścisłe znaki porównania, z których zbudowane są ≤ i ≥, i dlaczego mogą zepsuć kod HTML."
+    }
+  ]
+}

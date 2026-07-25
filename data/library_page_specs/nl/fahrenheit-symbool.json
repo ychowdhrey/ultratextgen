@@ -1,0 +1,126 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "fahrenheit-symbool",
+  "title": "Fahrenheit-symbool: Kopieer en Plak ℉ Graden-Fahrenheit-teken",
+  "meta_description": "Kopieer en plak het graden-Fahrenheit-teken (℉, U+2109) — de ligatuur van één teken voor temperatuur, waarom Unicode toch gewoon °F aanbeveelt, en hoe je het typt op Windows en Mac. Klik op een teken om het te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/fahrenheit-symbool/",
+  "breadcrumb": "Fahrenheit-symbool",
+  "hero_h1": "Fahrenheit-symbool",
+  "hero_tagline": "℉ vouwt het gradenteken en een hoofdletter F samen tot één Unicode-teken — snel te plakken, al geven de meeste stijlgidsen nog altijd de voorkeur aan het tweetekenige °F. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het graden-Fahrenheit-teken (℉, Unicode U+2109) is een vooraf samengesteld teken in het Letterlike-Symbols-blok dat het gradenteken (°) met een hoofdletter F combineert. Net als zijn Celsius-tegenhanger ℃ werd het grotendeels aan Unicode toegevoegd voor verliesvrije doorvoer van oudere Oost-Aziatische tekst, waarin een temperatuuraanduiding vaak één tekencel vulde. In alledaags schrijven is de aanbevolen vorm het gradenteken gevolgd door een gewone F (°F), maar het losse ℉ is de snelste glyph om te kopiëren als dat alles is wat je nodig hebt.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/fahrenheit-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/fahrenheit-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "fahrenheit-teken",
+      "label": "Fahrenheit",
+      "h2": "Graden-Fahrenheit-teken",
+      "intro": "Het teken van één teken ℉ en de tweetekenige reeks °F die Unicode prefereert.",
+      "symbols": [
+        {
+          "char": "℉",
+          "label": "Graden Fahrenheit (Eén Teken)"
+        },
+        {
+          "char": "°F",
+          "label": "Gradenteken + F (Aanbevolen Vorm)"
+        }
+      ]
+    },
+    {
+      "id": "verwarrende-tekens",
+      "label": "Verwarrende Tekens",
+      "h2": "Tekens die vaak met ℉ Worden Verward",
+      "intro": "Tekens die voor ℉ worden ingewisseld — elk is een apart teken.",
+      "symbols": [
+        {
+          "char": "°",
+          "label": "Gradenteken (U+00B0)"
+        },
+        {
+          "char": "℃",
+          "label": "Graden Celsius (U+2103)"
+        },
+        {
+          "char": "K",
+          "label": "Kelvinteken (U+212A)"
+        },
+        {
+          "char": "F",
+          "label": "Latijnse Hoofdletter F"
+        }
+      ]
+    },
+    {
+      "id": "verwante-meettekens",
+      "label": "Verwante Meettekens",
+      "h2": "Andere Meet- & Eenheidstekens",
+      "intro": "Prime-, verhoudings- en wetenschappelijke-notatietekens die met ℉ samengaan.",
+      "symbols": [
+        {
+          "char": "′",
+          "label": "Prime (Minuten / Voet)"
+        },
+        {
+          "char": "″",
+          "label": "Dubbele Prime (Seconden / Inch)"
+        },
+        {
+          "char": "‰",
+          "label": "Promilleteken"
+        },
+        {
+          "char": "µ",
+          "label": "Microteken (U+00B5)"
+        },
+        {
+          "char": "Ω",
+          "label": "Ohm-teken (U+2126)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/symbol/celsius-symbool/",
+      "title": "Celsius-symbool (℃)",
+      "desc": "Het vooraf samengestelde graden-Celsius-teken, en het °C dat Unicode prefereert."
+    },
+    {
+      "href": "/nl/symbol/graden-symbool/",
+      "title": "Gradenteken (°)",
+      "desc": "Het losstaande gradenteken achter ℉, hoeken en coördinaten."
+    },
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Temperatuur, SI-eenheden en wetenschappelijke-notatietekens in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "Temperatuur-, zon-, wolk- en stormsymbolen voor weersverwachtingen (Engelstalige bibliotheek)."
+    }
+  ]
+}

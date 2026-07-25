@@ -1,0 +1,134 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "latijns-kruis",
+  "title": "Latijns Kruis: Kopieer en Plak ✝ — Het Kruissymbool van het Christendom",
+  "meta_description": "Kopieer en plak het Latijnse kruis (✝, U+271D), het hoofdsymbool van het christendom — plus het orthodoxe, Maltezer en andere kruizen, en het verschil met het dolkteken † en het X-teken ✗. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/latijns-kruis/",
+  "breadcrumb": "Latijns Kruis",
+  "hero_h1": "Latijns Kruis (✝)",
+  "hero_tagline": "Het Latijnse kruis (✝) — het centrale symbool van het christendom — samen met de orthodoxe, schaduw- en Maltezer kruizen waarmee het wordt gegroepeerd, en het dolkteken † en de X-tekens waar het vaak mee wordt verward. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het kruissymbool (✝, Unicode U+271D LATIN CROSS) is het bekendste symbool van het christendom: een rechtopstaand kruis met een langere onderste arm, de vorm die traditioneel met de kruisiging wordt geassocieerd. Unicode plaatst het in het Dingbats-blok, samen met een familie van verwante kruizen, en met een emoji-variatieselector rendert het als de ✝️-kruisemoji. Het is een ander teken dan de vermenigvuldigings- en annuleringstekens X (✕ ✗) en dan het typografische dolkteken (†), ook al worden de vier voortdurend voor elkaar verwisseld.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/cross-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/latijns-kruis/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/cross-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "latijns-kruis",
+      "label": "Latijns Kruis",
+      "h2": "Latijns Kruis-symbool",
+      "intro": "Het platte-tekst-Latijnse-kruis en de gekleurde emoji-versie ervan.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "Latijns Kruis (U+271D)"
+        },
+        {
+          "char": "✝️",
+          "label": "Latijns Kruis-emoji"
+        }
+      ]
+    },
+    {
+      "id": "christelijke-kruizen",
+      "label": "Christelijke Kruizen",
+      "h2": "Andere Christelijke & Liturgische Kruizen",
+      "intro": "Kruisvarianten die in verschillende christelijke tradities worden gebruikt, elk een apart Unicode-teken.",
+      "symbols": [
+        {
+          "char": "☦",
+          "label": "Orthodox Kruis (U+2626)"
+        },
+        {
+          "char": "✞",
+          "label": "Schaduw-Latijns Kruis, Wit (U+271E)"
+        },
+        {
+          "char": "✟",
+          "label": "Latijns Kruis, Omlijnd (U+271F)"
+        },
+        {
+          "char": "✠",
+          "label": "Maltezer Kruis (U+2720)"
+        },
+        {
+          "char": "♰",
+          "label": "West-Syrisch Kruis (U+2670)"
+        },
+        {
+          "char": "♱",
+          "label": "Oost-Syrisch Kruis (U+2671)"
+        }
+      ]
+    },
+    {
+      "id": "niet-het-kruis",
+      "label": "Niet het Latijnse Kruis",
+      "h2": "Tekens waarmee het Kruis Verward Wordt",
+      "intro": "Deze zien er kruisachtig uit maar hebben een onverwante betekenis — geen ervan is het christelijke kruis.",
+      "symbols": [
+        {
+          "char": "†",
+          "label": "Dolkteken (U+2020) — Voetnoten & de Overledene"
+        },
+        {
+          "char": "‡",
+          "label": "Dubbel Dolkteken (U+2021)"
+        },
+        {
+          "char": "✕",
+          "label": "Vermenigvuldigings-X (U+2715)"
+        },
+        {
+          "char": "✗",
+          "label": "Stembiljet-X (U+2717) — Afwijzing"
+        },
+        {
+          "char": "⛨",
+          "label": "Zwart Kruis op Schild (U+26E8)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/symbol/vredesteken/",
+      "title": "Vredesteken (☮)",
+      "desc": "Gerald Holtoms ontwerp uit 1958, en verwante symbolen van goede wil."
+    },
+    {
+      "href": "/nl/symbol/khanda-symbool/",
+      "title": "Khanda-symbool (☬)",
+      "desc": "Het Sikh-embleem, uit dezelfde religieuze bibliotheek."
+    },
+    {
+      "href": "/nl/library/kruis-symbool/",
+      "title": "Kruis-symbool (bibliotheek)",
+      "desc": "Kruisjes, X-tekens en het overlijdensteken † om te doorbladeren en te kopiëren."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Geloofssymbolen uit elke grote wereldreligie in één overzicht (Engelstalige bibliotheek)."
+    }
+  ]
+}
