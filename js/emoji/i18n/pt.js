@@ -743,6 +743,9 @@
     stopWords: PALAVRAS_DE_PARADA,
     strings: {
       resultPlaceholder: "Sua tradução em emojis aparece aqui.",
+      copied: "Copiado!",
+      copy: "Copiar",
+      surpriseMe: "🎲 Me surpreenda",
       inputPlaceholders: {
         default: "Digite sua frase aqui…",
         decode: "Cole os emojis aqui para decodificar…",

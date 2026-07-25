@@ -625,6 +625,24 @@ dedicated German small-caps page off from `de/kleine-schrift/`, which
 already ranks for "Kapitälchen," without checking whether the split adds
 net-new coverage or just fragments an existing ranking.)
 
+**Ratified local-only exceptions (2026-07-25):** a site-wide hreflang-mesh
+audit surfaced `ja/gal-moji/` (a Japanese hiragana/katakana lookalike-glyph
+cipher, registered in `styles.js` as a Japanese-script-only `procedureId`)
+and the `ko/font-byeonhwan/` + `zh-tw/yingwen-ziti/` pair (a CJK-script-user
+tool for decorating Latin/English text, distinct in H1/framing from each
+locale's own homepage) as pages with no live English parent. Both were
+discussed and explicitly ratified as genuinely local-only — no English
+speaker would search "gal moji converter" or "English font generator" as
+a distinct query from the plain homepage generator. `x-default` on all
+three falls back to the bare EN homepage as a generic default only, per
+CLAUDE.md's own distinction — this is *not* a translation-equivalence claim,
+so it does not need to be (and should not be) auto-propagated as a real
+sibling relationship. A same-day sibling, `ja/font-henkan/`, was reviewed
+in the same pass and found to be a different case — cannibalization, not a
+legitimate local-only exception (identical title/H1 to `ja/index.html`,
+thinner content, zero cross-links) — and was 301-redirected to `ja/index.html`
+instead of ratified.
+
 ### Locale-native internal linking — check every time you touch a locale page
 
 Whenever you create, edit, or otherwise touch a locale page's prose/FAQ

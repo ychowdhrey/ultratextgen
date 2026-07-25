@@ -86,6 +86,13 @@
       classSetPngHint: "PNG downloads the current name; use Print for the whole set.",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "banner flags", ofWord: "of",
+      flagCount: { one: "flag", other: "flags" },
+      pageCount: { one: "page", other: "pages" },
+      modelCount: { one: "model", other: "model" },
+      traceCount: { one: "trace", other: "trace" },
+      blankCount: { one: "blank", other: "blank" },
       trace: {
         solid:    { label: "Solid model", hint: "Full dark letters — trace right on top" },
         "bold-dot": { label: "Bold dotted", hint: "Thick, closely-spaced dots to join" },
@@ -281,6 +288,10 @@
       classSetPngHint: "PNG pobiera bieżące imię; użyj Drukuj dla całego zestawu.",
       bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
       puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "chorągiewki", ofWord: "z",
+      flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
+      pageCount: { one: "strona", few: "strony", many: "stron" },
       trace: {
         solid:    { label: "Pełny wzór", hint: "Ciemne, pełne litery — pisz po śladzie" },
         "bold-dot": { label: "Grube kropki", hint: "Grube, gęsto rozmieszczone kropki do połączenia" },
@@ -320,6 +331,10 @@
       classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Drucken verwenden.",
       bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
       puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
+      usLetter: "US Letter",
+      modelCount: { one: "Vorlagenzeile", other: "Vorlagenzeilen" },
+      traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
+      blankCount: { one: "Leerzeile", other: "Leerzeilen" },
       trace: {
         solid:    { label: "Volle Vorlage", hint: "Dunkle, volle Buchstaben — direkt nachfahren" },
         "bold-dot": { label: "Dick gepunktet", hint: "Dicke, eng gesetzte Punkte zum Verbinden" },
@@ -344,6 +359,23 @@
     }
   };
   const T = I18N[LANG] || I18N.en;
+
+  // Locale-aware pluralizer for the small count labels below (banner flags/
+  // pages, handwriting model/trace/blank rows). English deliberately keeps
+  // its labels invariant ("3 trace", not "3 traces" — a byte-for-byte-
+  // preserved stylistic choice, not an oversight), so its `forms` objects
+  // just repeat the same word for `one` and `other`. German only needs a
+  // one/other split. Polish needs a real one/few(2-4)/many(5+, excluding
+  // 12-14) split, per standard Polish cardinal-number agreement.
+  function plural(n, forms) {
+    if (LANG === "pl") {
+      if (n === 1) return forms.one;
+      const mod10 = n % 10, mod100 = n % 100;
+      if (forms.few && mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) return forms.few;
+      return forms.many || forms.other || forms.one;
+    }
+    return n === 1 ? forms.one : (forms.other || forms.one);
+  }
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -1638,12 +1670,12 @@
     }
     if (el.genPreviewMeta) {
       const parts = [];
-      if (genModelOn() && level !== 1) parts.push("1 model");
-      parts.push(genRowCount() + " trace");
-      if (level !== TRACE_LEVELS.length) parts.push("2 blank");
+      if (genModelOn() && level !== 1) parts.push("1 " + plural(1, T.modelCount));
+      parts.push(genRowCount() + " " + plural(genRowCount(), T.traceCount));
+      if (level !== TRACE_LEVELS.length) parts.push("2 " + plural(2, T.blankCount));
       const rosterN = rosterNames(el.genRoster).length;
       if (rosterN >= 2) parts.push(rosterN + " " + T.sheets);
-      el.genPreviewMeta.textContent = parts.join(" · ") + " · US Letter";
+      el.genPreviewMeta.textContent = parts.join(" · ") + " · " + T.usLetter;
     }
     if (SCRIPT_OPTIONS) {
       const active = SCRIPT_OPTIONS.find((o) => o.key === genScriptKey) || SCRIPT_OPTIONS[0];
@@ -2802,7 +2834,8 @@
       head.className = "pt-banner-page-head";
       const title = document.createElement("p");
       title.className = "pt-banner-page-title";
-      title.textContent = phrase.toUpperCase() + " — banner flags — page " + (pi + 1) + " of " + pages.length;
+      title.textContent = phrase.toUpperCase() + " — " + T.bannerFlagsLabel + " — " +
+        T.pageCount.one + " " + (pi + 1) + " " + T.ofWord + " " + pages.length;
       head.appendChild(title);
       if (pi === 0) {
         const instr = document.createElement("p");
@@ -2854,8 +2887,8 @@
     el.bannerPreview.innerHTML = "";
     el.bannerPreview.appendChild(bannerPagesNode(phrase));
     if (el.bannerMeta) {
-      el.bannerMeta.textContent = total + (total === 1 ? " flag" : " flags") + " · " +
-        pages.length + (pages.length === 1 ? " page" : " pages") + " · US Letter";
+      el.bannerMeta.textContent = total + " " + plural(total, T.flagCount) + " · " +
+        pages.length + " " + plural(pages.length, T.pageCount) + " · " + T.usLetter;
     }
   }
 

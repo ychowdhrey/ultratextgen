@@ -32,6 +32,13 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /youtube/what-font-does-youtube-use  /answers/what-font-does-youtube-use/  301
 /youtube/what-font-does-youtube-use/ /answers/what-font-does-youtube-use/  301
 
+# English-Parent Rule audit fixes (2026-07-25) — in-locale duplicates
+# retired in favor of the correctly-meshed EN-parented sibling
+/pt/usecase/nick-free-fire   /pt/usecase/nick-ff/  301
+/pt/usecase/nick-free-fire/  /pt/usecase/nick-ff/  301
+/ja/font-henkan              /ja/                   301
+/ja/font-henkan/             /ja/                   301
+
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
 /category/special-fonts/lines/              /category/strikethrough-text/ 301
@@ -211,6 +218,13 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /es/combinaciones-de-emojis/index.html   /es/library/emoji-combos/  301
 /pt/combos-de-emoji/                     /pt/library/emoji-combos/  301
 /pt/combos-de-emoji/index.html           /pt/library/emoji-combos/  301
+
+# pt/usecase/nick-free-fire retired: near-duplicate of pt/usecase/nick-ff
+# (same Free Fire nick-generator intent, no distinct EN parent of its own)
+# that was never picking up meaningful traffic of its own (19 impr/26 days
+# vs nick-ff's 1,147, 0 clicks) — consolidated into the established page.
+/pt/usecase/nick-free-fire/            /pt/usecase/nick-ff/  301
+/pt/usecase/nick-free-fire/index.html  /pt/usecase/nick-ff/  301
 
 /404  /404.html  200
 /*    /404.html  404

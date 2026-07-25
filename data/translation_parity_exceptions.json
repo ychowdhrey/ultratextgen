@@ -48,6 +48,12 @@
       "localeUrl": "https://ultratextgen.com/pt/library/emoji-combos/",
       "reason": "Same situation and same authorization as the id/library/emoji-combos/ and es/library/emoji-combos/ entries above: pt/library/emoji-combos/index.html (moved this branch from /pt/combos-de-emoji/ into /library/) gained the 11 missing subculture-mood sections (baddie/emo/scene/weirdcore/dreamcore/cybercore/mermaidcore/kidcore/clowncore/goblincore/lovecore) translated directly from content already live on library/emoji-combos/index.html (EN) before this branch started — PT already carried equivalents of the other 4 EN collection sections (emojis-base/fofos/vibrantes/enfeite) plus a PT-only football-player-combos section pre-existing this branch, so the EN–PT gap was narrower than EN–ID/ES. Verified section-by-section by direct inspection. EN was not edited in this branch because it needed no change. Discussed with the user 2026-07-25.",
       "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/pt/usecase/",
+      "reason": "check-translation-parity.js flags this pair because pt/usecase/index.html lost a compare-card in this branch — the redundant duplicate \"Nick Free Fire\" card that pointed at pt/usecase/nick-free-fire/, retired in the same change (see the 'fix: retire pt/usecase/nick-free-fire' commit) since it was a near-duplicate of the adjacent nick-ff card one row above. usecase/index.html (EN) never had this duplicate to begin with — it uses a different single-card layout for Free Fire (a usecase-diff/usecase-cta block linking usecase/free-fire-name-generator/), not PT's compare-grid, so there is no equivalent EN card to remove and nothing to sync. Verified by direct inspection of usecase/index.html's Free Fire section. Discussed with the user 2026-07-25.",
+      "agreed": "2026-07-25"
     }
   ]
 }
