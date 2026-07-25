@@ -272,7 +272,229 @@
 <div class="copy-toast" id="copyToast">已複製！</div>
 <div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
 
-<script>window.UTG_TATTOO_MODE = true;</script>
+<!-- Page configuration: tattoo mode flag + i18n -->
+<script>
+window.UTG_TATTOO_MODE = true;
+window.tattooI18n = {
+  "sampleName": "Sofia",
+  "modeNamesLabel": "名字與字句",
+  "modeNamesHint": "輸入名字、字句或引言",
+  "modeDateLabel": "日期 → 羅馬數字",
+  "modeDateHint": "把日期或數字轉換成羅馬數字",
+  "modeLettersLabel": "字母與縮寫",
+  "modeLettersHint": "單一字母與姓名縮寫組合",
+  "modeSymbolsLabel": "符號",
+  "modeSymbolsHint": "附含義的小符號",
+  "sizeClose": "特寫",
+  "sizeArm": "一臂之遙",
+  "sizeRoom": "遠觀",
+  "inkTest": "墨水測試",
+  "yourDate": "你的日期",
+  "day": "日",
+  "month": "月",
+  "yearOrNumber": "年份或數字",
+  "order": "順序",
+  "separator": "分隔符號",
+  "yourLetter": "你的字母",
+  "secondInitial": "第二個字母",
+  "secondNone": "無 — 單一字母",
+  "joinedBy": "連接方式",
+  "symbolsNote": "點一下任何符號即可複製——可以搭配名字或日期，也可以單獨使用。",
+  "sampleHintName": "目前顯示「{text}」——在上方輸入你的名字、字句或引言。",
+  "sampleHintDate": "目前顯示範例日期（12 · 6 · 2020）——在上方輸入你的日期或數字。",
+  "romanRange": "羅馬數字僅支援 1 至 3999——請檢查上方輸入的數值。",
+  "headingRoman": "羅馬數字",
+  "headingFigures": "一般數字",
+  "badgeSafe": "縮小也清楚",
+  "badgeRoomy": "需要空間",
+  "copy": "複製",
+  "copyAria": "複製{name}",
+  "families": {
+    "Script": "花體",
+    "Gothic": "哥德",
+    "Italic": "斜體",
+    "Minimal": "簡約",
+    "Roman": "羅馬數字",
+    "Figures": "數字"
+  },
+  "orders": {
+    "dmy": "日 · 月 · 年",
+    "mdy": "月 · 日 · 年",
+    "y": "僅年份"
+  },
+  "seps": {
+    "space": "空格",
+    "stack": "堆疊"
+  },
+  "joiners": {
+    "none": "無"
+  },
+  "lettering": {
+    "Ultra Script Bold": {
+      "label": "粗花體",
+      "note": "經典的名字刺青字體——連筆流暢又溫暖，尺寸小也能維持清晰的輪廓。"
+    },
+    "Ultra Script": {
+      "label": "細花體",
+      "note": "纖細飄逸，中等尺寸最好看；細緻的迴圈需要足夠空間，時間久了才不會糊。"
+    },
+    "Ultra Chicano Script": {
+      "label": "Chicano 名牌花體",
+      "note": "粗花體被裝飾性緞帶環繞——經典的名牌式外框。"
+    },
+    "Ultra Gothic": {
+      "label": "哥德 Blackletter",
+      "note": "Fraktur 風格黑體字——濃密剛勁，撐得起一個有份量的單字。"
+    },
+    "Ultra Gothic Bold": {
+      "label": "厚重 Old English",
+      "note": "厚重的 Old English 風格——老派與 Chicano 刺青字體的代表之一。"
+    },
+    "Ultra Old English Banner": {
+      "label": "Old English 橫幅",
+      "note": "厚重黑體字搭配裝飾橫幅——存在感最強的名牌字體。"
+    },
+    "Ultra Italic": {
+      "label": "細斜體",
+      "note": "低調的斜角——安靜地順著肋骨、手腕或鎖骨流動。"
+    },
+    "Ultra Italic Serif": {
+      "label": "襯線斜體",
+      "note": "帶襯線的斜體，書卷氣十足——讀起來像從小說裡摘出的一行字。"
+    },
+    "Ultra Typewriter Document": {
+      "label": "打字機體",
+      "note": "質樸、帶點文學感的等寬字體——最適合日期或一小段短句。"
+    },
+    "Ultra Small Caps": {
+      "label": "小型大寫字母",
+      "note": "細緻均勻的迷你大寫字母——細線極簡風格的首選。"
+    }
+  },
+  "roman": {
+    "Classic": {
+      "label": "經典",
+      "note": "簡單的大寫字母——多數刺青師最常刺的款式。"
+    },
+    "Serif Italic": {
+      "label": "襯線斜體",
+      "note": "碑刻紀念風格，帶著斜角。"
+    },
+    "Script": {
+      "label": "花體",
+      "note": "以流暢花體呈現的羅馬數字。"
+    },
+    "Blackletter": {
+      "label": "哥德 Blackletter",
+      "note": "Fraktur 風格數字——深沉又華麗。"
+    },
+    "Heavy Old English": {
+      "label": "厚重 Old English",
+      "note": "份量最重的黑體風格數字。"
+    },
+    "Typewriter": {
+      "label": "打字機體",
+      "note": "等寬數字——乾淨、有紀實感。"
+    }
+  },
+  "digits": {
+    "Typewriter": {
+      "label": "打字機體",
+      "note": "等寬數字——經典的日期刺青風格。"
+    },
+    "Bold Serif": {
+      "label": "粗襯線體",
+      "note": "厚重的書籍印刷風數字——適合搭配哥德 Blackletter。"
+    },
+    "Bold Sans": {
+      "label": "粗黑體",
+      "note": "現代感十足的粗體數字——適合搭配粗花體。"
+    },
+    "Fine Sans": {
+      "label": "細黑體",
+      "note": "輕盈的數字——適合搭配細花體與細斜體。"
+    },
+    "Double-Struck": {
+      "label": "空心體",
+      "note": "外框數字——出人意料的細線刺青選擇。"
+    },
+    "Wide Spaced": {
+      "label": "寬字距體",
+      "note": "全形寬體數字——輕盈、帶編輯感的間距。"
+    },
+    "Tiny": {
+      "label": "迷你體",
+      "note": "袖珍數字——耳後刺青的尺寸。"
+    }
+  },
+  "groups": {
+    "minimal": "細線與簡約",
+    "celestial": "天象",
+    "love": "愛與紀念",
+    "faith": "信仰與守護",
+    "journey": "力量與旅程",
+    "music": "音樂與藝術",
+    "zodiac": "星座"
+  },
+  "symbols": {
+    ";": "分號 — 故事仍在繼續",
+    "∞": "無限符號 — 無窮無盡",
+    "·": "單點 — 一個停頓",
+    "—": "破折號 — 一條線，一段路",
+    "~": "波浪 — 平靜，流動",
+    "✕": "叉號 — 交會之處",
+    "°": "小圓圈 — 圓滿",
+    "⋮": "三個點 — mi vida loca（瘋狂人生）／未完待續",
+    "☾": "新月 — 改變，循環",
+    "☽": "盈月 — 成長",
+    "☼": "太陽 — 生命力",
+    "✦": "四角星 — 指引",
+    "✧": "空心星 — 希望",
+    "⋆": "小星星 — 一點微光",
+    "★": "實心星 — 抱負",
+    "✵": "放射星 — 能量",
+    "♡": "空心愛心 — 輕輕捧著的愛",
+    "❥": "傾斜愛心 — 奉獻",
+    "❦": "花飾愛心 — 追憶",
+    "➳": "箭頭 — 情箭穿心",
+    "✿": "花朵 — 盛開",
+    "❀": "花卉 — 思念一個人",
+    "✝": "拉丁十字 — 信仰",
+    "†": "短劍十字 — 犧牲",
+    "☦": "東正教十字",
+    "☯": "陰陽 — 平衡",
+    "ॐ": "唵（Om）— 最初的聲音",
+    "✡": "大衛之星",
+    "☪": "新月與星",
+    "ᛉ": "Algiz 符文 — 守護",
+    "⚓": "錨 — 穩固堅定",
+    "✈": "飛機 — 離開與歸來",
+    "➵": "箭頭 — 只能向前",
+    "→": "右箭頭 — 繼續前進",
+    "⚔": "交叉劍 — 奮戰到底",
+    "♆": "三叉戟 — 海洋",
+    "Δ": "Δ 符號 — 改變",
+    "Ω": "Ω 符號 — 終結，堅忍不拔",
+    "♪": "八分音符",
+    "♫": "連音符",
+    "♬": "雙連音符",
+    "𝄞": "高音譜號",
+    "✎": "鉛筆 — 創作者的印記",
+    "♈": "牡羊座",
+    "♉": "金牛座",
+    "♊": "雙子座",
+    "♋": "巨蟹座",
+    "♌": "獅子座",
+    "♍": "處女座",
+    "♎": "天秤座",
+    "♏": "天蠍座",
+    "♐": "射手座",
+    "♑": "摩羯座",
+    "♒": "水瓶座",
+    "♓": "雙魚座"
+  }
+};
+</script>
 <script src="/styles.js" defer></script>
 <script src="/renderer.js" defer></script>
 <script src="/js/tattoo/tattooData.js" defer></script>
