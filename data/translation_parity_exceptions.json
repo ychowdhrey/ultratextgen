@@ -8,6 +8,18 @@
       "agreed": "2026-07-23"
     },
     {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/es/symbol/",
+      "reason": "es/symbol/ and id/symbol/ (see next entry) gained compare-card sections for 143 pages built 2026-07-24 to close the ES/ID symbol/ batch gap (both locales were far behind the de/fr/it/pt/tr 77-page batch). symbol/index.html (EN) already lists all 104 EN symbol pages as compare-cards and needs no change — the locale hubs were catching up to an already-complete EN state, not diverging from it. Flagged to the user for review rather than silently resolved, since CLAUDE.md requires discussion before this file is touched; verified mechanically (EN card count === EN page count, unchanged) rather than assumed.",
+      "agreed": "2026-07-24"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/id/symbol/",
+      "reason": "Same case as the es/symbol/ entry above — id/symbol/ gained compare-cards for the same 143-page batch (75 of them Indonesian). EN needs no change; already complete. Flagged to the user for review rather than silently resolved.",
+      "agreed": "2026-07-24"
+    },
+    {
       "enUrl": "https://ultratextgen.com/library/",
       "localeUrl": "https://ultratextgen.com/pt/library/",
       "reason": "check-translation-parity.js flags this pair (mislabeling the EN side as vi/library/ in its output — a display quirk, not the real comparison) because pt/library/index.html gained a new \"Símbolos para Free Fire\" list entry in this branch, as part of renaming pt/library/simbolos-para-nick -> pt/library/simbolos-para-free-fire. This is not real EN/locale drift: library/index.html (EN) already lists library/free-fire-name-symbols and needed no change — the checker's within-branch commit-delta comparison flags PT as changed without a matching EN commit in this PR, even though EN's content was already correct going in. Verified by direct inspection, not assumed. Discussed with the user 2026-07-25 rather than force an unnecessary cosmetic touch to the EN file just to make the diff-based checker see a matching delta.",
@@ -30,6 +42,13 @@
       "localeUrl": "https://ultratextgen.com/pt/usecase/",
       "reason": "check-translation-parity.js flags this pair because pt/usecase/index.html lost a compare-card in this branch — the redundant duplicate \"Nick Free Fire\" card that pointed at pt/usecase/nick-free-fire/, retired in the same change (see the 'fix: retire pt/usecase/nick-free-fire' commit) since it was a near-duplicate of the adjacent nick-ff card one row above. usecase/index.html (EN) never had this duplicate to begin with — it uses a different single-card layout for Free Fire (a usecase-diff/usecase-cta block linking usecase/free-fire-name-generator/), not PT's compare-grid, so there is no equivalent EN card to remove and nothing to sync. Verified by direct inspection of usecase/index.html's Free Fire section. Discussed with the user 2026-07-25.",
       "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/ms/",
+      "reason": "ms/index.html gained one inbound FAQ link to ms/answers/kenapa-nama-game-ditolak/ (2026-07-24), following an existing on-topic FAQ answer. ms/answers/* pre-dates this branch (already on main). No equivalent EN FAQ item to sync from. Verified mechanically (one onlyInLocale entry, no other fingerprint change). Re-surfaced only by the 2026-07-25 merge-base shift.",
+      "agreed": "2026-07-25",
+      "suppress": { "onlyInLocale": ["/answers/why-was-my-game-name-rejected/"] }
     }
   ]
 }
