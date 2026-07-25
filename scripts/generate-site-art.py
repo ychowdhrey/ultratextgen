@@ -2368,10 +2368,6 @@ PAGES = {
   "symbol-less-than-or-equal-to-symbol": ("Less Than or Equal To Symbol", "≤ meaning, Alt Code & LaTeX", glyphs("≤"), K_SYM),
   "id-symbol-mikrofon-emoji": ("Emoji Mikrofon", "🎤 arti, sejarah & kode Unicode-nya", m_microphone, K_SYM),
   "id-symbol-simbol-kurang-dari-sama-dengan": ("Simbol Kurang Dari Sama Dengan", "≤ arti, Alt Code & LaTeX", glyphs("≤"), K_SYM),
-  # ID usecase pages
-  "id-usecase-nama-kontak-pacar-aesthetic": ("Nama Kontak Pacar Aesthetic", "Kumpulan nama kontak pacar aesthetic buat doi — cewek, cowok, bahasa Inggris", m_heart, K_USE),
-  "id-usecase-nama-grup-keren": ("Nama Grup Keren & Aesthetic", "Nama grup WA aesthetic, circle bestie, dan singkatan keren", m_grid, K_USE),
-  "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Simbol & generator nickname buat nama Stumble Guys", m_gamepad, K_USE),
 }
 
 
