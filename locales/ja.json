@@ -21,7 +21,168 @@
   },
   "ui": {
     "placeholder": "ここに文字を入力...",
-    "advertisement": "広告"
+    "advertisement": "広告",
+    "categoryTabs": {
+      "popular": "人気",
+      "bold-fonts": "太字",
+      "italic-fonts": "イタリック",
+      "bubble-fonts": "丸文字",
+      "cursive-fonts": "筆記体",
+      "gothic-fonts": "ゴシック体",
+      "strikethrough-text": "取り消し線",
+      "underline-text": "下線",
+      "small-text": "小さい文字",
+      "cute-fonts": "かわいい",
+      "aesthetic-fonts": "映え文字",
+      "upside-down-text": "逆さ文字",
+      "text-decorator": "文字装飾",
+      "classified": "検閲・伏字",
+      "fullwidth-fonts": "全角",
+      "faux-fonts": "偽アルファベット",
+      "ancient-fonts": "古代文字・ルーン文字",
+      "emoji-letter-fonts": "絵文字風文字",
+      "novelty-fonts": "ユニーク"
+    },
+    "scopeControl": {
+      "label": "スタイルを適用する範囲",
+      "ariaLabel": "スタイルを適用するテキストの範囲を選択",
+      "whole": "全文",
+      "wholeTitle": "テキストのすべての行にスタイルを適用します。",
+      "firstLine": "1行目のみ",
+      "firstLineTag": "投稿向け",
+      "firstLineTitle": "1行目（見出しやフック）だけにスタイルを適用し、残りは読みやすい通常のテキストのままにします — SNS投稿に最適です。",
+      "share": "共有",
+      "shareTitle": "入力したテキストが入った状態でこのページを再度開けるリンクを共有します",
+      "linkCopied": "リンクをコピーしました"
+    },
+    "safeMode": {
+      "label": "貼り付け安全性",
+      "ariaLabel": "他の人の端末でどのスタイルが正しく表示されるか確認",
+      "toggleLabel": "セーフモード",
+      "hint": "相手の古いスマホで文字化け（▯）として表示される可能性のあるスタイルにマークを付けます。"
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ 一部の人には文字化けして見える可能性があります",
+      "boxesWarningTitle": "このスタイルは、一部のスマホや古い端末にはないUnicode文字を使用しています。貼り付けた相手には文字化け（▯）として表示される可能性があります。相手が古い端末を使っている可能性がある場合は、よりシンプルで対応範囲の広いスタイルを選んでください。",
+      "emojiWarning": "⚠ 絵文字を使用 — 古い端末では表示が異なる場合があります",
+      "emojiWarningTitle": "このスタイルには絵文字が含まれています。絵文字は最新の端末では問題なく表示されますが、非常に古いスマホでは見た目が異なったり、文字化けして表示されたりすることがあります。",
+      "modernDevices": "最新の端末で問題なく表示されます",
+      "modernDevicesTitle": "この装飾されたUnicode文字は、現在のスマホやパソコンでは問題なく表示されます。非常に古いAndroid（おおよそ2016年以前）や最小限のシステムフォントでは、一部が文字化け（▯）として表示されることがあります。相手が古い端末を使っている可能性がある場合は、事前にテストしてください。",
+      "rendersEverywhere": "✓ どこでも問題なく表示されます",
+      "rendersEverywhereTitle": "このスタイルは通常のテキストです — どの端末でも文字化けの心配なく、どこでも問題なく表示されます。",
+      "deviceWarning": "⚠ お使いの端末で表示されない可能性があります",
+      "deviceWarningTitle": "お使いの端末のフォントではこのスタイルを表示できません — 文字化け（□）として表示される可能性があります。他の端末では問題なく表示されることがあります。",
+      "safeAnywhere": "✓ どこでも安全",
+      "safeAnywhereTitle": "主要なすべてのプラットフォームで表示されます。注意：スクリーンリーダーは装飾された文字を一文字ずつ読み上げることがあるため、本文は通常のテキストのままにしてください。",
+      "worksBestOn": "⚠ {platforms}で最も効果的です",
+      "worksBestOnTitle": "最も効果的：{platforms}。他のプラットフォームでは削除されたり崩れて表示されたりすることがあります — 投稿前にテストしてください。"
+    },
+    "savedStyles": {
+      "ariaLabel": "保存したスタイル",
+      "heading": "保存したスタイル",
+      "clearAll": "すべて削除",
+      "hint": "この端末に保存されています — 戻ってきたときにここに残っています。"
+    },
+    "textStats": {
+      "wordSingular": "1語",
+      "wordPlural": "{n}語",
+      "charSingular": "1文字",
+      "charPlural": "{n}文字"
+    },
+    "decorationsNone": "なし",
+    "categoryTabsToggle": {
+      "more": "もっと見る",
+      "less": "閉じる"
+    },
+    "demoText": "UltraTextGenへようこそ。\n何か入力してみてください。ウルトラにしましょう。",
+    "copyButtons": {
+      "copy": "コピー",
+      "copied": "✓ コピーしました",
+      "failed": "✗ 失敗しました",
+      "copyTitle": "クリップボードにコピー",
+      "save": "保存",
+      "saved": "保存済み",
+      "saveTitle": "このスタイルを保存",
+      "unsaveTitle": "保存したスタイルから削除",
+      "empty": "上に何か入力してください...",
+      "noStyles": "スタイルが見つかりません。別のフィルターや検索語を試してください。"
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "名前",
+        "tabs": {
+          "playful": "遊び心",
+          "hearts": "ハート",
+          "sparkle": "キラキラ",
+          "faces": "顔",
+          "stars": "星"
+        }
+      },
+      "bio": {
+        "word": "名前",
+        "tabs": {
+          "gaming": "ゲーミング",
+          "aesthetic": "映え",
+          "edgy": "ダーク",
+          "royal": "ロイヤル",
+          "cute": "かわいい",
+          "bold": "太字",
+          "clean": "クリーン",
+          "mystical": "神秘的",
+          "retro": "レトロ",
+          "nature": "自然"
+        }
+      },
+      "small-text": {
+        "word": "テキスト",
+        "tabs": {
+          "subtle": "さりげない",
+          "tiny": "極小",
+          "brackets": "かっこ",
+          "minimal": "シンプル"
+        }
+      },
+      "bubble": {
+        "word": "名前",
+        "tabs": {
+          "rounded": "丸み",
+          "soft": "ふんわり",
+          "stars": "星",
+          "hearts": "ハート",
+          "minimal": "シンプル"
+        }
+      },
+      "cute": {
+        "word": "名前",
+        "tabs": {
+          "kawaii": "かわいい",
+          "faces": "顔",
+          "hearts": "ハート",
+          "sparkle": "キラキラ",
+          "pastel": "パステル"
+        }
+      },
+      "aesthetic": {
+        "word": "テキスト",
+        "tabs": {
+          "celestial": "星空",
+          "sparkle": "キラキラ",
+          "y2k": "Y2K",
+          "soft": "ふんわり",
+          "minimal": "シンプル"
+        }
+      },
+      "nickname": {
+        "word": "名前",
+        "tabs": {
+          "gaming": "ゲーミング",
+          "aesthetic": "映え",
+          "symbols": "記号",
+          "hearts": "ハート",
+          "faces": "顔文字"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "よく使われるシーン",
