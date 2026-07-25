@@ -1391,6 +1391,9 @@ PAGES = {
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-stumble-guys-name-generator": ("Stumble Guys Name Generator", "Funny & stylish nicknames, 4-12 char checker", m_gamepad, K_USE),
+  "usecase-clash-of-clans-name-generator": ("Clash of Clans Name Generator", "Stylish COC nicknames, 2-15 char checker", m_gamepad, K_USE),
+  "usecase-fortnite-name-generator": ("Fortnite Name Generator", "Stylish Epic Games names, 3-16 char checker", m_gamepad, K_USE),
+  "usecase-aesthetic-instagram-names": ("Aesthetic Instagram Names", "Cute username & display name ideas", m_heart, K_USE),
   "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Nickname lucu & aesthetic, cek 4-12 karakter", m_gamepad, K_USE),
   "usecase-aesthetic-contact-names": ("Aesthetic Contact Names", "Cute names for bae's phone contact", m_heart, K_USE),
   "id-usecase-nama-kontak-pacar-aesthetic": ("Nama Kontak Pacar Aesthetic", "Nama kontak estetik berhias hati", m_heart, K_USE),
@@ -1427,6 +1430,8 @@ PAGES = {
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
   "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
   "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
+  "usecase-bio-font-whatsapp": ("WhatsApp Bio Font Generator", "Style your About — 139-char limit", m_chat, K_USE),
+  "usecase-bio-font-tiktok": ("TikTok Bio Font Generator", "Fonts and aesthetic bio ideas, 80-char limit", m_camera, K_USE),
 
   # ---- bio-font locale translations ----
   "de-usecase-bio-schriftart": ("Bio-Schriftart Generator", "Schriften, Symbole und Vorlagen für dein Bio", m_profile, K_USE),
@@ -2462,6 +2467,7 @@ PAGES.update({
 "answers-is-fancy-text-bad-for-seo": ("Is Fancy Text Bad for SEO?", "Fine as decoration, risky on keywords", m_qa, K_ANS),
 "answers-is-zalgo-text-safe": ("Is Zalgo Text Safe?", "No virus, no hack — the two real caveats", m_zalgo, K_ANS),
 "answers-merry-christmas-in-different-languages": ("Merry Christmas in Other Languages", "Feliz Navidad, Joyeux Noël & more, translated", m_qa, K_ANS),
+"answers-christmas-card-what-to-write": ("What to Write in a Christmas Card", "Lines by relationship, family to boss", m_qa, K_ANS),
 "answers-mothers-day-messages-what-to-write": ("Mother's Day Messages: What to Write", "Heartfelt lines for Mom, Grandma & more", m_qa, K_ANS),
 "answers-valentines-day-messages-what-to-write": ("Valentine's Day Messages: What to Write", "Sweet lines for partners, crushes & friends", m_qa, K_ANS),
 "answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
