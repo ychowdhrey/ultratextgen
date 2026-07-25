@@ -35,9 +35,11 @@ workflow that produces it.
 | **Answers** (Q&A) | `/answers/` | `QAPage` / `FAQPage` | ❌ none | `library_opportunities.csv` (`page_type=answers`) | ❌ none | ⚠️ backlog, no generator |
 | **Usecase** | `/usecase/` | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Guide** (articles) | `/guide/` | `Article` | [`guide-content-workflow.md`](./guide-content-workflow.md) | `data/library_opportunities.csv` (`page_type=guide`) | ❌ none (hand-built) | ⚠️ workflow + backlog, no generator |
+| **Learn** (education pillar — handwriting/pre-writing/tracing articles) | `/learn/` | `Article` + `BreadcrumbList` + `FAQPage` | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented — new this review (PRs #625, #650: handwriting hub + 9 articles, `dot-to-dots`, `coloring-and-fine-motor`). Content is *about* handwriting/tracing/coloring rather than a printable itself, but sits close enough to the Printables scope boundary in `CLAUDE.md` (shape-only/pre-writing content is out of scope there) to be worth an explicit look |
 | **Events** (seasonal/holiday pages) | `/events/` (+ locale variants, e.g. `/es/events/`) | `WebApplication` + `FAQPage` | ❌ undocumented | `data/event_page_specs/*.json` (no CSV backlog row) | `generate_event_page_from_spec.py` (mirrors `generate_library_page_from_spec.py`; validation is built into the generator, no separate validator script) | ⚠️ generator exists, no backlog/governing doc — new this review (PR #457 + Spanish `es/events/` pages) |
+| **Updates** (dated Unicode/platform/game rule-change log) | `/updates/` | `NewsArticle` + `BreadcrumbList` + `FAQPage` | `CLAUDE.md` "Content Type: Updates" section (documented there in depth; no dedicated file under `docs/`) | ❌ none (entries register directly in `scripts/generate-site-art.py`'s `PAGES` dict; no CSV backlog row) | ❌ none (hand-built) | ⚠️ actively shipping — 10 PRs this week alone (#607, #608, #610, #615, #616, #619, #620, #628, #634, #646) — but this map and the digest classifier had no row/rule for it until now |
 | **Printables** (bubble/cursive/block/tracing/coloring sheets) | `/printables/` | `WebApplication` (+ `CollectionPage` hub) | `CLAUDE.md` scope note | `library_opportunities.csv` (`page_type=printables`, added 2026-07-09 — other-language/other-script backlog) | ❌ none (hand-built, on `js/printables/printablesEngine.js`) | ⚠️ backlog, no generator |
-| **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
+| **Platform** (social-network generators) | `/discord/`, `/instagram/`, `/x/`, `/threads/`, … | `WebApplication` | ❌ undocumented | ❌ none | ❌ none | ❌ undocumented |
 | **Root pages** (homepage, 404, legal) | `index.html`, `_root.html`, `404.html`, `about/`, `contact/`, `privacy/`, `terms/`, site icons | `WebSite` (homepage) | ❌ undocumented | ❌ none | ❌ none (hand-built) | ❌ undocumented |
 
 **Only the Library and Symbol lanes are structurally complete** (discovery →
@@ -160,12 +162,25 @@ here so they aren't lost. Update as they're closed or new ones appear.
    `check-image-assets.py`) as a required, blocking check on every PR, and
    the old path-filtered `image-assets-check.yml` was retired in favor of it.
    The documentation-home half (an i18n governing doc to hang this on) is
-   still open.
-5. **Platform pages lane is undocumented** — the eleven social-network generator
-   pages (`/discord/`, `/instagram/`, `/x/`, …) receive active SEO updates
-   (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
-   governing workflow, backlog, or generator. The classifier correctly routes
-   them to "Platform pages" via path rules in `LANE_RULES`.
+   still open. **Update (2026-07-25):** a new locale launched again this
+   week — Malay `/ms/` (PR #635, commit message: "launch ms/ locale") —
+   again absent from `LANE_RULES`, again patched one-by-one (now ~30
+   prefixes). This is the **fifth** consecutive review flagging the exact
+   same recurring cost; the pattern-rule fix this entry has recommended
+   since 2026-07-11 still hasn't been picked up. Flagging again rather than
+   unilaterally implementing it here — the classifier logic is out of scope
+   for this review's additive-map-update mandate — but the fix itself
+   (`^[a-z]{2}(-[a-z]{2})?/` → i18n, checked before the more specific rules)
+   is small and has been fully specified for three weeks running.
+5. **Platform pages lane is undocumented** — the twelve social-network generator
+   pages (`/discord/`, `/instagram/`, `/x/`, `/threads/`, …) receive active SEO
+   updates (`alternateName`: PR #277; FAQ structured data: PR #290) but have no
+   governing workflow, backlog, or generator. **Update (2026-07-25):** Threads
+   joined the lane this week (PR #622, `threads/index.html`) but `threads/`
+   was missing from `LANE_RULES`'s explicit platform-directory list, so the
+   PR surfaced as partially Unclassified — added now. The classifier
+   otherwise correctly routes established platform directories to "Platform
+   pages" via path rules in `LANE_RULES`.
 6. **Pinterest off-system patterns (two).** (a) The Spanish `/es/` board lives
    in `pinterest-kit/` (own generator, bundled fonts, hand-named CSV) instead
    of the `assets/pinterest/<board>/` + `data/*_upload.csv` pipeline. (b) ~334
@@ -258,6 +273,37 @@ here so they aren't lost. Update as they're closed or new ones appear.
     library/symbol lane mismatches"). Added a **Symbol** row to the
     page-type table above and
     `("symbol/", "Symbol pages")` to `LANE_RULES`.
+13. ~~**`/updates/` lane missing from the map and the classifier.**~~ **Closed
+    (2026-07-25)** — same shape of gap as #12: `updates/` (the dated
+    Unicode/platform/game rule-change log) is already documented at length
+    in `CLAUDE.md`'s "Content Type: Updates" section — including a same-day
+    schema revision (`Article` → `NewsArticle`) — but never got a page-type
+    table row here, nor a `LANE_RULES` entry. It was this week's single
+    largest source of classifier noise: 10 of the week's 59 merged PRs
+    (#607, #608, #610, #615, #616, #619, #620, #628, #634, #646) touch
+    `updates/`. Added an **Updates** row to the page-type table above and
+    `("updates/", "Updates")` to `LANE_RULES`. The governing-doc gap is only
+    half-closed — the content-type rules live in `CLAUDE.md`, not in a
+    `docs/` file this map can link to; consider porting/cross-linking it.
+14. **New this week: `/learn/` is a genuinely new, wholly undocumented
+    lane.** PRs #625 and #650 shipped a "Learn" education pillar —
+    `learn/index.html` hub, `learn/handwriting/` sub-hub + 9 articles,
+    `learn/dot-to-dots/`, `learn/coloring-and-fine-motor/` — on `Article` +
+    `BreadcrumbList` + `FAQPage` schema, hand-built with its own hero/OG
+    assets but no generator, no backlog row, and no mention anywhere in
+    `CLAUDE.md` or this map. Added a **Learn** row to the page-type table
+    above and `("learn/", "Learn")` to `LANE_RULES` to close the classifier
+    gap; the governing-doc and backlog-integration halves are still open,
+    same as the `Events` gap was the week it launched. Also worth an
+    explicit look (not resolved here): the content is *about*
+    handwriting/tracing/pre-writing/coloring rather than a printable
+    itself, which sits close to — arguably on the wrong side of — the
+    "Printables scope boundary" in `CLAUDE.md` (shape-only tracing,
+    pre-writing motor-skill strokes, and coloring pages with no letterform
+    are explicitly called out there as out of scope for this repo). Whether
+    `/learn/` content stays within the typography-native line the
+    boundary draws is an editorial call for a human, not something this
+    review resolves.
 
 ---
 
