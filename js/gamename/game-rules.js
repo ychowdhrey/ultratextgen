@@ -49,7 +49,16 @@
     valorant: { label: "Valorant (Riot ID)", limit: 16, min: 3, weighted: false, noSpace: false, field: "display", strict: true },
     roblox: { label: "Roblox (username)", limit: 20, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/, singleUnderscore: true },
     robloxDisplay: { label: "Roblox (display name)", limit: 20, min: 3, weighted: false, noSpace: false, field: "display" },
-    minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ }
+    minecraft: { label: "Minecraft", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z0-9_]+$/ },
+    // limit/min are primary-sourced (Stumble Guys Help Center FAQ "Is it
+    // possible to change your in-game name?", corroborated by an independent
+    // guide site and live player reports on Steam Community: names run 4-12
+    // characters, rename screen enforces both bounds). weighted/noSpace are
+    // reasonable defaults (no confirmed rejection of spaces or double-counted
+    // decorative Unicode found) — same shape as ml/coc, the closest verified
+    // mobile display-name analogs; no asciiPattern lock since the community
+    // routinely uses small-caps/Cyrillic/katakana-decorated names.
+    stumbleGuys: { label: "Stumble Guys", limit: 12, min: 4, weighted: false, noSpace: false, field: "display" }
   };
 
   /* ============================

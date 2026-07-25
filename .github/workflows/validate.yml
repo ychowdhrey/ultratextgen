@@ -3,13 +3,16 @@ name: Validate Site
 # Required, blocking checks for structural correctness that must never merge
 # broken: hreflang reciprocity, /library/ and /symbol/ page structure,
 # per-page social/Pinterest image assets, new/changed pages' image assets
-# specifically, and translation parity — an EN <-> locale content change
-# introduced by this PR without its sibling being updated. Each validator
-# already exits non-zero on failure (see scripts/audit-hreflang.js,
-# scripts/validate_library_pages.py, scripts/check-image-assets.py,
-# scripts/check-new-page-image-assets.py, scripts/check-translation-parity.js)
-# — this workflow is what actually wires that into CI so a PR can't merge
-# broken pages.
+# specifically, translation parity — an EN <-> locale content change
+# introduced by this PR without its sibling being updated — locale mesh
+# health (hreflang reciprocity + locale-native internal links on any locale
+# page this PR touches), and the locale-parent-gap pre-build check on any
+# new locale page. Each validator already exits non-zero on failure (see
+# scripts/audit-hreflang.js, scripts/validate_library_pages.py,
+# scripts/check-image-assets.py, scripts/check-new-page-image-assets.py,
+# scripts/check-translation-parity.js, scripts/check-locale-mesh.js,
+# scripts/check-locale-parent-gap.js) — this workflow is what actually wires
+# that into CI so a PR can't merge broken pages.
 #
 # scripts/check-image-assets.py is a whole-site audit (also requires a
 # Pinterest pin per page) and the site carries a large, deliberately-paced
@@ -20,6 +23,16 @@ name: Validate Site
 # pre-existing site-wide backlog can never make it permanently red. This
 # exists specifically to stop new pages shipping ahead of their hero/OG art —
 # see ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §6.
+#
+# scripts/audit-locale-parent-gap.js is likewise a whole-site discovery pass
+# (which Core-parent x qualified-locale cells have near-zero translation
+# coverage and no recorded pre-build gap check) and stays informational for
+# the same reason check-image-assets.py does: the site carries a real,
+# deliberately-paced locale-translation backlog, so this can't be a per-PR
+# gate without being permanently red. scripts/check-locale-mesh.js and
+# scripts/check-locale-parent-gap.js are the diff-scoped gates that actually
+# enforce mesh health and the pre-build gap check on what a PR adds/changes —
+# see CLAUDE.md, "Locale Parent Governance", and docs/locale-parent-governance.md.
 #
 # All steps run every time (continue-on-error on each) so a single PR shows
 # every problem at once instead of stopping at the first failure; the final
@@ -82,6 +95,21 @@ jobs:
         continue-on-error: true
         run: npm run check:translation-parity -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee translation-parity.log
 
+      - name: Run locale mesh check
+        id: locale_mesh
+        continue-on-error: true
+        run: npm run check:locale-mesh -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-mesh.log
+
+      - name: Run locale parent gap check
+        id: locale_parent_gap
+        continue-on-error: true
+        run: npm run check:locale-parent-gap -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-parent-gap.log
+
+      - name: Run locale parent gap audit (whole-site, informational)
+        id: locale_parent_gap_audit
+        continue-on-error: true
+        run: npm run audit:locale-parent-gap | tee locale-parent-gap-audit.log
+
       - name: Build step summary
         if: always()
         run: |
@@ -112,14 +140,33 @@ jobs:
             echo '```'
             cat translation-parity.log
             echo '```'
+            echo ""
+            echo "### Locale mesh check — \`${{ steps.locale_mesh.outcome }}\`"
+            echo '```'
+            cat locale-mesh.log
+            echo '```'
+            echo ""
+            echo "### Locale parent gap check — \`${{ steps.locale_parent_gap.outcome }}\`"
+            echo '```'
+            cat locale-parent-gap.log
+            echo '```'
+            echo ""
+            echo "### Locale parent gap audit (whole-site, informational) — \`${{ steps.locale_parent_gap_audit.outcome }}\`"
+            echo '```'
+            cat locale-parent-gap-audit.log
+            echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail the job if any gating validator reported problems
-        # steps.images (the whole-site audit) is deliberately excluded — see
-        # its step name/comment above: it's permanently informational because
-        # of the accepted Pinterest-pin backlog, not because failures there
-        # don't matter. steps.new_images is the actual gate for image assets.
-        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.parity.outcome == 'failure'
+        # steps.images and steps.locale_parent_gap_audit (both whole-site
+        # audits) are deliberately excluded — see their step names/comments
+        # above: informational by design (the Pinterest-pin backlog for
+        # images; the site-wide, deliberately-unfinished locale-parent
+        # translation backlog for the gap audit), not because failures there
+        # don't matter. steps.new_images, steps.locale_mesh, and
+        # steps.locale_parent_gap are the diff-scoped gates that actually
+        # enforce these two systems on new/changed pages.
+        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

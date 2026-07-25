@@ -33,6 +33,7 @@ The script refuses to overwrite an existing page unless --force is given.
 import argparse
 import html
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -490,7 +491,59 @@ def main(argv=None):
     print(f"Wrote {out_path.relative_to(REPO)} "
           f"(pattern={spec['copy_pattern']}, "
           f"sections={len(spec['sections'])})")
+
+    if lang != "en":
+        _sync_locale_mesh(out_path)
+
     return 0
+
+
+def _sync_locale_mesh(out_path):
+    """Phase-0 mesh-automation hook: best-effort, in-place hreflang +
+    locale-native-link rewrite for the page just written, via
+    scripts/sync-locale-mesh.js --fix --files <path> (see CLAUDE.md, "Locale
+    Parent Governance" and docs/locale-parent-governance.md).
+
+    This is the first generator wired to the mesh-automation hook — the
+    flagship Core, script-independent pillar (library/symbol pages are
+    literally the FR /symbol/ lane the gap-check tooling exists to catch).
+    Other generators (answers, events, printables) should get the same hook
+    the next time they're touched; this pass only wires this one.
+
+    Deliberately best-effort: a missing `node` binary or a failing sync
+    script must never break page generation itself, so any failure here is
+    reported as a warning and swallowed rather than raised.
+    """
+    rel_path = out_path.relative_to(REPO).as_posix()
+    try:
+        result = subprocess.run(
+            ["node", "scripts/sync-locale-mesh.js", "--fix", "--files", rel_path],
+            cwd=REPO, capture_output=True, text=True, timeout=120,
+        )
+        if result.returncode != 0:
+            sys.stderr.write(
+                f"[warn] scripts/sync-locale-mesh.js --fix --files {rel_path} "
+                f"exited {result.returncode}; continuing without mesh sync.\n"
+            )
+            if result.stderr:
+                sys.stderr.write(result.stderr)
+        else:
+            print(f"Synced locale mesh for {rel_path} (scripts/sync-locale-mesh.js --fix).")
+    except FileNotFoundError:
+        sys.stderr.write(
+            "[warn] `node` not found on PATH; skipped scripts/sync-locale-mesh.js "
+            f"--fix --files {rel_path}. Run it by hand before opening the PR.\n"
+        )
+    except subprocess.TimeoutExpired:
+        sys.stderr.write(
+            f"[warn] scripts/sync-locale-mesh.js --fix --files {rel_path} timed out; "
+            "continuing without mesh sync. Run it by hand before opening the PR.\n"
+        )
+    except Exception as exc:  # noqa: BLE001 - best-effort by design, never break generation
+        sys.stderr.write(
+            f"[warn] scripts/sync-locale-mesh.js hook failed ({exc}); "
+            "continuing without mesh sync. Run it by hand before opening the PR.\n"
+        )
 
 
 if __name__ == "__main__":
