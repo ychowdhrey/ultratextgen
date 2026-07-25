@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Escribe aquí tu texto...",
-    "advertisement": "Publicidad"
+    "advertisement": "Publicidad",
+    "categoryTabs": {
+      "popular": "Populares",
+      "bold-fonts": "Negrita",
+      "italic-fonts": "Cursiva",
+      "bubble-fonts": "Burbuja",
+      "cursive-fonts": "Manuscrita",
+      "gothic-fonts": "Gótica",
+      "strikethrough-text": "Tachado",
+      "underline-text": "Subrayado",
+      "small-text": "Texto pequeño",
+      "cute-fonts": "Tierna",
+      "aesthetic-fonts": "Estética",
+      "upside-down-text": "Al revés",
+      "text-decorator": "Decorador de texto",
+      "classified": "Clasificado / Censurado",
+      "fullwidth-fonts": "Ancho completo",
+      "faux-fonts": "Alfabetos falsos",
+      "ancient-fonts": "Antiguas y rúnicas",
+      "emoji-letter-fonts": "Letras emoji",
+      "novelty-fonts": "Curiosidades"
+    },
+    "scopeControl": {
+      "label": "Aplicar estilo a",
+      "ariaLabel": "Elige cuánto texto quieres estilizar",
+      "whole": "Todo el texto",
+      "wholeTitle": "Aplica el estilo a cada línea de tu texto.",
+      "firstLine": "Solo la primera línea",
+      "firstLineTag": "para publicaciones",
+      "firstLineTitle": "Estiliza solo la primera línea (tu titular o gancho) y deja el resto como texto normal y legible — ideal para publicaciones en redes sociales.",
+      "share": "Compartir",
+      "shareTitle": "Comparte un enlace que reabre esta página con tu texto ya escrito",
+      "linkCopied": "Enlace copiado"
+    },
+    "safeMode": {
+      "label": "Seguridad al pegar",
+      "ariaLabel": "Comprueba qué estilos se ven bien en otros dispositivos",
+      "toggleLabel": "Modo seguro",
+      "hint": "Marca los estilos que pueden verse como cuadros (▯) en teléfonos antiguos de otras personas."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Puede verse como cuadros para algunas personas",
+      "boxesWarningTitle": "Este estilo usa caracteres Unicode poco comunes que algunos teléfonos y dispositivos antiguos no tienen. Puede aparecer como cuadros (▯) para la persona a la que se lo envíes. Si tu público puede usar dispositivos antiguos, prueba un estilo más simple o de mayor compatibilidad.",
+      "emojiWarning": "⚠ Usa emoji — puede variar en dispositivos antiguos",
+      "emojiWarningTitle": "Este estilo incluye emoji. Los emoji se ven bien en dispositivos modernos, pero pueden verse distintos, o como cuadros, en teléfonos muy antiguos.",
+      "modernDevices": "Se ve bien en dispositivos modernos",
+      "modernDevicesTitle": "Estas letras Unicode estilizadas se muestran en todos los teléfonos y computadoras actuales. En Android muy antiguo (aproximadamente anterior a 2016) o con fuentes de sistema mínimas, algunas podrían seguir viéndose como cuadros (▯). Pruébalo primero si tu público puede usar dispositivos antiguos.",
+      "rendersEverywhere": "✓ Se ve bien en todas partes",
+      "rendersEverywhereTitle": "Este estilo es texto plano: se ve bien en todas partes, sin riesgo de cuadros en ningún dispositivo.",
+      "deviceWarning": "⚠ Puede que no se vea en tu dispositivo",
+      "deviceWarningTitle": "Las fuentes de tu dispositivo no pueden mostrar este estilo — puede aparecer como cuadros (□). Aun así, puede verse bien en otros dispositivos.",
+      "safeAnywhere": "✓ Seguro en cualquier lugar",
+      "safeAnywhereTitle": "Se ve bien en todas las plataformas principales. Ten en cuenta que los lectores de pantalla pueden deletrear las letras estilizadas una por una, así que mantén el texto normal en el cuerpo del mensaje.",
+      "worksBestOn": "⚠ Funciona mejor en {platforms}",
+      "worksBestOnTitle": "Funciona mejor en: {platforms}. Otras plataformas pueden eliminarlo o mostrarlo mal — prueba antes de publicar."
+    },
+    "savedStyles": {
+      "ariaLabel": "Tus estilos guardados",
+      "heading": "Tus estilos guardados",
+      "clearAll": "Borrar todo",
+      "hint": "Guardados en este dispositivo — estarán aquí cuando vuelvas."
+    },
+    "textStats": {
+      "wordSingular": "1 palabra",
+      "wordPlural": "{n} palabras",
+      "charSingular": "1 carácter",
+      "charPlural": "{n} caracteres"
+    },
+    "decorationsNone": "Ninguno",
+    "categoryTabsToggle": {
+      "more": "Más",
+      "less": "Menos"
+    },
+    "demoText": "Bienvenido a UltraTextGen.\nEscribe lo que sea. Hazlo ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nombre",
+        "tabs": {
+          "playful": "Divertido",
+          "hearts": "Corazones",
+          "sparkle": "Brillo",
+          "faces": "Caras",
+          "stars": "Estrellas"
+        }
+      },
+      "bio": {
+        "word": "nombre",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "edgy": "Oscuro",
+          "royal": "Real",
+          "cute": "Tierna",
+          "bold": "Negrita",
+          "clean": "Limpio",
+          "mystical": "Místico",
+          "retro": "Retro",
+          "nature": "Naturaleza"
+        }
+      },
+      "small-text": {
+        "word": "texto",
+        "tabs": {
+          "subtle": "Sutil",
+          "tiny": "Diminuto",
+          "brackets": "Corchetes",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "nombre",
+        "tabs": {
+          "rounded": "Redondo",
+          "soft": "Suave",
+          "stars": "Estrellas",
+          "hearts": "Corazones",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "nombre",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Caras",
+          "hearts": "Corazones",
+          "sparkle": "Brillo",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "texto",
+        "tabs": {
+          "celestial": "Celestial",
+          "sparkle": "Brillo",
+          "y2k": "Y2K",
+          "soft": "Suave",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "nombre",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "symbols": "Símbolos",
+          "hearts": "Corazones",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Para qué se usan más",

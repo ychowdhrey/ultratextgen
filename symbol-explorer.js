@@ -143,6 +143,97 @@
       copyCollection: " Kopier samling",
       copiedBtn: " Kopiert!",
       formats: { inline: "På linje", vertical: "Vertikalt", comma: "Komma", space: "Mellomrom", bullet: "Punktliste" }
+    },
+    ja: {
+      copied: "コピーしました: ",
+      copyFormat: "コピー形式",
+      copyCollection: " コレクションをコピー",
+      copiedBtn: " コピーしました！",
+      formats: { inline: "1行", vertical: "縦並び", comma: "カンマ区切り", space: "スペース区切り", bullet: "箇条書き" }
+    },
+    ru: {
+      copied: "Скопировано: ",
+      copyFormat: "Формат копирования",
+      copyCollection: " Копировать всё",
+      copiedBtn: " Скопировано!",
+      formats: { inline: "В строку", vertical: "Столбиком", comma: "Через запятую", space: "Через пробел", bullet: "Список" }
+    },
+    da: {
+      copied: "Kopieret: ",
+      copyFormat: "Kopieringsformat",
+      copyCollection: " Kopiér samling",
+      copiedBtn: " Kopieret!",
+      formats: { inline: "På linje", vertical: "Lodret", comma: "Komma", space: "Mellemrum", bullet: "Punktopstilling" }
+    },
+    sv: {
+      copied: "Kopierat: ",
+      copyFormat: "Kopieringsformat",
+      copyCollection: " Kopiera samling",
+      copiedBtn: " Kopierat!",
+      formats: { inline: "På rad", vertical: "Vertikalt", comma: "Kommatecken", space: "Mellanslag", bullet: "Punktlista" }
+    },
+    cs: {
+      copied: "Zkopírováno: ",
+      copyFormat: "Formát kopírování",
+      copyCollection: " Kopírovat kolekci",
+      copiedBtn: " Zkopírováno!",
+      formats: { inline: "Na řádek", vertical: "Svisle", comma: "Čárky", space: "Mezery", bullet: "Odrážky" }
+    },
+    sk: {
+      copied: "Skopírované: ",
+      copyFormat: "Formát kopírovania",
+      copyCollection: " Kopírovať kolekciu",
+      copiedBtn: " Skopírované!",
+      formats: { inline: "Na riadok", vertical: "Zvisle", comma: "Čiarky", space: "Medzery", bullet: "Odrážky" }
+    },
+    hr: {
+      copied: "Kopirano: ",
+      copyFormat: "Format kopiranja",
+      copyCollection: " Kopiraj zbirku",
+      copiedBtn: " Kopirano!",
+      formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Popis" }
+    },
+    bs: {
+      copied: "Kopirano: ",
+      copyFormat: "Format kopiranja",
+      copyCollection: " Kopiraj zbirku",
+      copiedBtn: " Kopirano!",
+      formats: { inline: "U nizu", vertical: "Okomito", comma: "Zarezi", space: "Razmaci", bullet: "Spisak" }
+    },
+    sr: {
+      copied: "Копирано: ",
+      copyFormat: "Формат копирања",
+      copyCollection: " Копирај збирку",
+      copiedBtn: " Копирано!",
+      formats: { inline: "У низу", vertical: "Усправно", comma: "Зарези", space: "Размаци", bullet: "Списак" }
+    },
+    ro: {
+      copied: "Copiat: ",
+      copyFormat: "Format de copiere",
+      copyCollection: " Copiază colecția",
+      copiedBtn: " Copiat!",
+      formats: { inline: "Pe un rând", vertical: "Vertical", comma: "Cu virgulă", space: "Cu spațiu", bullet: "Listă" }
+    },
+    hu: {
+      copied: "Másolva: ",
+      copyFormat: "Másolási formátum",
+      copyCollection: " Gyűjtemény másolása",
+      copiedBtn: " Másolva!",
+      formats: { inline: "Egy sorban", vertical: "Függőlegesen", comma: "Vesszővel", space: "Szóközzel", bullet: "Felsorolás" }
+    },
+    hi: {
+      copied: "कॉपी हुआ: ",
+      copyFormat: "कॉपी फ़ॉर्मैट",
+      copyCollection: " पूरा कलेक्शन कॉपी करें",
+      copiedBtn: " कॉपी हो गया!",
+      formats: { inline: "एक लाइन में", vertical: "ऊपर-नीचे", comma: "कॉमा से", space: "स्पेस से", bullet: "बुलेट में" }
+    },
+    tl: {
+      copied: "Kinopya: ",
+      copyFormat: "Format ng Pagkopya",
+      copyCollection: " Kopyahin ang Koleksyon",
+      copiedBtn: " Nakopya!",
+      formats: { inline: "Isang linya", vertical: "Patayo", comma: "Kuwit", space: "Espasyo", bullet: "Bullet" }
     }
   };
   const PAGE_LANG = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();

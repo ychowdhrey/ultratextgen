@@ -154,7 +154,7 @@
   function render() {
     if (!el.preview) return;
     var raw = el.input ? el.input.value : "";
-    var text = transform(raw || "Curved text");
+    var text = transform(raw || I18N.demoText || "Curved text");
 
     var result = Curved.build({
       text: text,
