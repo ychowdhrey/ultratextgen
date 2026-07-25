@@ -106,6 +106,82 @@
       "unsaveTitle": "Alisin sa mga na-save na istilo",
       "empty": "Mag-type ng kahit ano sa itaas...",
       "noStyles": "Walang nahanap na istilo. Subukan ang ibang filter o search term."
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "pangalan",
+        "tabs": {
+          "playful": "Masaya",
+          "hearts": "Puso",
+          "sparkle": "Kislap",
+          "faces": "Mukha",
+          "stars": "Bituin"
+        }
+      },
+      "bio": {
+        "word": "pangalan",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "edgy": "Edgy",
+          "royal": "Royal",
+          "cute": "Cute",
+          "bold": "Bold",
+          "clean": "Malinis",
+          "mystical": "Mistikal",
+          "retro": "Retro",
+          "nature": "Kalikasan"
+        }
+      },
+      "small-text": {
+        "word": "teksto",
+        "tabs": {
+          "subtle": "Banayad",
+          "tiny": "Munti",
+          "brackets": "Panaklong",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "pangalan",
+        "tabs": {
+          "rounded": "Bilog",
+          "soft": "Malambot",
+          "stars": "Bituin",
+          "hearts": "Puso",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "pangalan",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Mukha",
+          "hearts": "Puso",
+          "sparkle": "Kislap",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "teksto",
+        "tabs": {
+          "celestial": "Makalangit",
+          "sparkle": "Kislap",
+          "y2k": "Y2K",
+          "soft": "Malambot",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "pangalan",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "symbols": "Simbolo",
+          "hearts": "Puso",
+          "faces": "Kaomoji"
+        }
+      }
     }
   },
   "useCases": {

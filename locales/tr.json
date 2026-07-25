@@ -94,7 +94,83 @@
       "more": "Daha fazla",
       "less": "Daha az"
     },
-    "demoText": "UltraTextGen'e hoş geldin.\nBir şeyler yaz. Ultra hâle getir."
+    "demoText": "UltraTextGen'e hoş geldin.\nBir şeyler yaz. Ultra hâle getir.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "isim",
+        "tabs": {
+          "playful": "Eğlenceli",
+          "hearts": "Kalpler",
+          "sparkle": "Parıltı",
+          "faces": "Yüzler",
+          "stars": "Yıldızlar"
+        }
+      },
+      "bio": {
+        "word": "isim",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "edgy": "Edgy",
+          "royal": "Kraliyet",
+          "cute": "Sevimli",
+          "bold": "Kalın",
+          "clean": "Sade",
+          "mystical": "Mistik",
+          "retro": "Retro",
+          "nature": "Doğa"
+        }
+      },
+      "small-text": {
+        "word": "metin",
+        "tabs": {
+          "subtle": "İnce",
+          "tiny": "Minik",
+          "brackets": "Parantez",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "isim",
+        "tabs": {
+          "rounded": "Yuvarlak",
+          "soft": "Yumuşak",
+          "stars": "Yıldızlar",
+          "hearts": "Kalpler",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "isim",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Yüzler",
+          "hearts": "Kalpler",
+          "sparkle": "Parıltı",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "metin",
+        "tabs": {
+          "celestial": "Göksel",
+          "sparkle": "Parıltı",
+          "y2k": "Y2K",
+          "soft": "Yumuşak",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "isim",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "symbols": "Semboller",
+          "hearts": "Kalpler",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Nerelerde Kullanabilirsin?",

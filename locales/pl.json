@@ -94,7 +94,83 @@
       "more": "Więcej",
       "less": "Mniej"
     },
-    "demoText": "Witaj w UltraTextGen.\nWpisz cokolwiek. Zrób z tego ultra."
+    "demoText": "Witaj w UltraTextGen.\nWpisz cokolwiek. Zrób z tego ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "imię",
+        "tabs": {
+          "playful": "Zabawne",
+          "hearts": "Serduszka",
+          "sparkle": "Brokat",
+          "faces": "Buźki",
+          "stars": "Gwiazdki"
+        }
+      },
+      "bio": {
+        "word": "imię",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetyczne",
+          "edgy": "Mroczne",
+          "royal": "Królewskie",
+          "cute": "Słodkie",
+          "bold": "Pogrubione",
+          "clean": "Czyste",
+          "mystical": "Mistyczne",
+          "retro": "Retro",
+          "nature": "Natura"
+        }
+      },
+      "small-text": {
+        "word": "tekst",
+        "tabs": {
+          "subtle": "Subtelne",
+          "tiny": "Malutkie",
+          "brackets": "Nawiasy",
+          "minimal": "Minimalne"
+        }
+      },
+      "bubble": {
+        "word": "imię",
+        "tabs": {
+          "rounded": "Okrągłe",
+          "soft": "Delikatne",
+          "stars": "Gwiazdki",
+          "hearts": "Serduszka",
+          "minimal": "Minimalne"
+        }
+      },
+      "cute": {
+        "word": "imię",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Buźki",
+          "hearts": "Serduszka",
+          "sparkle": "Brokat",
+          "pastel": "Pastelowe"
+        }
+      },
+      "aesthetic": {
+        "word": "tekst",
+        "tabs": {
+          "celestial": "Niebiańskie",
+          "sparkle": "Brokat",
+          "y2k": "Y2K",
+          "soft": "Delikatne",
+          "minimal": "Minimalne"
+        }
+      },
+      "nickname": {
+        "word": "imię",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetyczne",
+          "symbols": "Symbole",
+          "hearts": "Serduszka",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Do czego ludzie tego najczęściej używają",

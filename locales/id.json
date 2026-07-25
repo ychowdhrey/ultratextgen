@@ -94,7 +94,83 @@
       "more": "Lainnya",
       "less": "Lebih sedikit"
     },
-    "demoText": "Selamat datang di UltraTextGen.\nKetik apa saja. Buat jadi ultra."
+    "demoText": "Selamat datang di UltraTextGen.\nKetik apa saja. Buat jadi ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nama",
+        "tabs": {
+          "playful": "Ceria",
+          "hearts": "Hati",
+          "sparkle": "Kilau",
+          "faces": "Wajah",
+          "stars": "Bintang"
+        }
+      },
+      "bio": {
+        "word": "nama",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "edgy": "Edgy",
+          "royal": "Kerajaan",
+          "cute": "Lucu",
+          "bold": "Tebal",
+          "clean": "Bersih",
+          "mystical": "Mistis",
+          "retro": "Retro",
+          "nature": "Alam"
+        }
+      },
+      "small-text": {
+        "word": "teks",
+        "tabs": {
+          "subtle": "Halus",
+          "tiny": "Mungil",
+          "brackets": "Kurung",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "nama",
+        "tabs": {
+          "rounded": "Bulat",
+          "soft": "Lembut",
+          "stars": "Bintang",
+          "hearts": "Hati",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "nama",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Wajah",
+          "hearts": "Hati",
+          "sparkle": "Kilau",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "teks",
+        "tabs": {
+          "celestial": "Angkasa",
+          "sparkle": "Kilau",
+          "y2k": "Y2K",
+          "soft": "Lembut",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "nama",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "symbols": "Simbol",
+          "hearts": "Hati",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Paling Sering Dipakai Buat",

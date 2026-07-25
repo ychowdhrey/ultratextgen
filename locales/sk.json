@@ -106,6 +106,82 @@
       "unsaveTitle": "Odstrániť z uložených štýlov",
       "empty": "Napíš niečo vyššie...",
       "noStyles": "Nenašli sa žiadne štýly. Skús iný filter alebo hľadaný výraz."
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "meno",
+        "tabs": {
+          "playful": "Hravé",
+          "hearts": "Srdiečka",
+          "sparkle": "Trblietky",
+          "faces": "Tváričky",
+          "stars": "Hviezdičky"
+        }
+      },
+      "bio": {
+        "word": "meno",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetické",
+          "edgy": "Temné",
+          "royal": "Kráľovské",
+          "cute": "Roztomilé",
+          "bold": "Tučné",
+          "clean": "Čisté",
+          "mystical": "Mystické",
+          "retro": "Retro",
+          "nature": "Príroda"
+        }
+      },
+      "small-text": {
+        "word": "text",
+        "tabs": {
+          "subtle": "Jemné",
+          "tiny": "Drobné",
+          "brackets": "Zátvorky",
+          "minimal": "Minimalistické"
+        }
+      },
+      "bubble": {
+        "word": "meno",
+        "tabs": {
+          "rounded": "Guľaté",
+          "soft": "Mäkké",
+          "stars": "Hviezdičky",
+          "hearts": "Srdiečka",
+          "minimal": "Minimalistické"
+        }
+      },
+      "cute": {
+        "word": "meno",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Tváričky",
+          "hearts": "Srdiečka",
+          "sparkle": "Trblietky",
+          "pastel": "Pastelové"
+        }
+      },
+      "aesthetic": {
+        "word": "text",
+        "tabs": {
+          "celestial": "Nebeské",
+          "sparkle": "Trblietky",
+          "y2k": "Y2K",
+          "soft": "Mäkké",
+          "minimal": "Minimalistické"
+        }
+      },
+      "nickname": {
+        "word": "meno",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetické",
+          "symbols": "Symboly",
+          "hearts": "Srdiečka",
+          "faces": "Kaomoji"
+        }
+      }
     }
   },
   "useCases": {

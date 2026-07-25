@@ -94,7 +94,83 @@
       "more": "Meer",
       "less": "Minder"
     },
-    "demoText": "Welkom bij UltraTextGen.\nTyp iets. Maak het ultra."
+    "demoText": "Welkom bij UltraTextGen.\nTyp iets. Maak het ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "naam",
+        "tabs": {
+          "playful": "Speels",
+          "hearts": "Hartjes",
+          "sparkle": "Glitter",
+          "faces": "Gezichten",
+          "stars": "Sterren"
+        }
+      },
+      "bio": {
+        "word": "naam",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "edgy": "Stoer",
+          "royal": "Koninklijk",
+          "cute": "Schattig",
+          "bold": "Vet",
+          "clean": "Strak",
+          "mystical": "Mystiek",
+          "retro": "Retro",
+          "nature": "Natuur"
+        }
+      },
+      "small-text": {
+        "word": "tekst",
+        "tabs": {
+          "subtle": "Subtiel",
+          "tiny": "Piepklein",
+          "brackets": "Haakjes",
+          "minimal": "Minimaal"
+        }
+      },
+      "bubble": {
+        "word": "naam",
+        "tabs": {
+          "rounded": "Rond",
+          "soft": "Zacht",
+          "stars": "Sterren",
+          "hearts": "Hartjes",
+          "minimal": "Minimaal"
+        }
+      },
+      "cute": {
+        "word": "naam",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Gezichten",
+          "hearts": "Hartjes",
+          "sparkle": "Glitter",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "tekst",
+        "tabs": {
+          "celestial": "Hemels",
+          "sparkle": "Glitter",
+          "y2k": "Y2K",
+          "soft": "Zacht",
+          "minimal": "Minimaal"
+        }
+      },
+      "nickname": {
+        "word": "naam",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "symbols": "Symbolen",
+          "hearts": "Hartjes",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Waar mensen onze letters voor gebruiken",

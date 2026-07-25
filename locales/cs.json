@@ -106,6 +106,82 @@
       "unsaveTitle": "Odebrat z uložených stylů",
       "empty": "Napiš něco výše...",
       "noStyles": "Nenalezeny žádné styly. Zkus jiný filtr nebo hledaný výraz."
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "jméno",
+        "tabs": {
+          "playful": "Hravé",
+          "hearts": "Srdce",
+          "sparkle": "Třpytky",
+          "faces": "Obličeje",
+          "stars": "Hvězdy"
+        }
+      },
+      "bio": {
+        "word": "jméno",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetické",
+          "edgy": "Temné",
+          "royal": "Královské",
+          "cute": "Roztomilé",
+          "bold": "Tučné",
+          "clean": "Čisté",
+          "mystical": "Mystické",
+          "retro": "Retro",
+          "nature": "Příroda"
+        }
+      },
+      "small-text": {
+        "word": "text",
+        "tabs": {
+          "subtle": "Jemné",
+          "tiny": "Drobné",
+          "brackets": "Závorky",
+          "minimal": "Minimalistické"
+        }
+      },
+      "bubble": {
+        "word": "jméno",
+        "tabs": {
+          "rounded": "Kulaté",
+          "soft": "Měkké",
+          "stars": "Hvězdy",
+          "hearts": "Srdce",
+          "minimal": "Minimalistické"
+        }
+      },
+      "cute": {
+        "word": "jméno",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Obličeje",
+          "hearts": "Srdce",
+          "sparkle": "Třpytky",
+          "pastel": "Pastelové"
+        }
+      },
+      "aesthetic": {
+        "word": "text",
+        "tabs": {
+          "celestial": "Nebeské",
+          "sparkle": "Třpytky",
+          "y2k": "Y2K",
+          "soft": "Měkké",
+          "minimal": "Minimalistické"
+        }
+      },
+      "nickname": {
+        "word": "jméno",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetické",
+          "symbols": "Symboly",
+          "hearts": "Srdce",
+          "faces": "Kaomoji"
+        }
+      }
     }
   },
   "useCases": {

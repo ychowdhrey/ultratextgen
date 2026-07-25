@@ -106,6 +106,82 @@
       "unsaveTitle": "保存したスタイルから削除",
       "empty": "上に何か入力してください...",
       "noStyles": "スタイルが見つかりません。別のフィルターや検索語を試してください。"
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "名前",
+        "tabs": {
+          "playful": "遊び心",
+          "hearts": "ハート",
+          "sparkle": "キラキラ",
+          "faces": "顔",
+          "stars": "星"
+        }
+      },
+      "bio": {
+        "word": "名前",
+        "tabs": {
+          "gaming": "ゲーミング",
+          "aesthetic": "映え",
+          "edgy": "ダーク",
+          "royal": "ロイヤル",
+          "cute": "かわいい",
+          "bold": "太字",
+          "clean": "クリーン",
+          "mystical": "神秘的",
+          "retro": "レトロ",
+          "nature": "自然"
+        }
+      },
+      "small-text": {
+        "word": "テキスト",
+        "tabs": {
+          "subtle": "さりげない",
+          "tiny": "極小",
+          "brackets": "かっこ",
+          "minimal": "シンプル"
+        }
+      },
+      "bubble": {
+        "word": "名前",
+        "tabs": {
+          "rounded": "丸み",
+          "soft": "ふんわり",
+          "stars": "星",
+          "hearts": "ハート",
+          "minimal": "シンプル"
+        }
+      },
+      "cute": {
+        "word": "名前",
+        "tabs": {
+          "kawaii": "かわいい",
+          "faces": "顔",
+          "hearts": "ハート",
+          "sparkle": "キラキラ",
+          "pastel": "パステル"
+        }
+      },
+      "aesthetic": {
+        "word": "テキスト",
+        "tabs": {
+          "celestial": "星空",
+          "sparkle": "キラキラ",
+          "y2k": "Y2K",
+          "soft": "ふんわり",
+          "minimal": "シンプル"
+        }
+      },
+      "nickname": {
+        "word": "名前",
+        "tabs": {
+          "gaming": "ゲーミング",
+          "aesthetic": "映え",
+          "symbols": "記号",
+          "hearts": "ハート",
+          "faces": "顔文字"
+        }
+      }
     }
   },
   "useCases": {

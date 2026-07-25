@@ -94,7 +94,83 @@
       "more": "Mais",
       "less": "Menos"
     },
-    "demoText": "Bem-vindo ao UltraTextGen.\nDigite qualquer coisa. Deixe ultra."
+    "demoText": "Bem-vindo ao UltraTextGen.\nDigite qualquer coisa. Deixe ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nome",
+        "tabs": {
+          "playful": "Divertido",
+          "hearts": "Corações",
+          "sparkle": "Brilho",
+          "faces": "Carinhas",
+          "stars": "Estrelas"
+        }
+      },
+      "bio": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "edgy": "Sombrio",
+          "royal": "Real",
+          "cute": "Fofa",
+          "bold": "Negrito",
+          "clean": "Limpo",
+          "mystical": "Místico",
+          "retro": "Retrô",
+          "nature": "Natureza"
+        }
+      },
+      "small-text": {
+        "word": "texto",
+        "tabs": {
+          "subtle": "Sutil",
+          "tiny": "Minúsculo",
+          "brackets": "Colchetes",
+          "minimal": "Minimalista"
+        }
+      },
+      "bubble": {
+        "word": "nome",
+        "tabs": {
+          "rounded": "Arredondado",
+          "soft": "Suave",
+          "stars": "Estrelas",
+          "hearts": "Corações",
+          "minimal": "Minimalista"
+        }
+      },
+      "cute": {
+        "word": "nome",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Carinhas",
+          "hearts": "Corações",
+          "sparkle": "Brilho",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "texto",
+        "tabs": {
+          "celestial": "Celestial",
+          "sparkle": "Brilho",
+          "y2k": "Y2K",
+          "soft": "Suave",
+          "minimal": "Minimalista"
+        }
+      },
+      "nickname": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "symbols": "Símbolos",
+          "hearts": "Corações",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Pra onde a galera mais usa",

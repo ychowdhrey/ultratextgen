@@ -94,7 +94,83 @@
       "more": "Altro",
       "less": "Meno"
     },
-    "demoText": "Benvenuto su UltraTextGen.\nScrivi quello che vuoi. Rendilo ultra."
+    "demoText": "Benvenuto su UltraTextGen.\nScrivi quello che vuoi. Rendilo ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nome",
+        "tabs": {
+          "playful": "Giocoso",
+          "hearts": "Cuori",
+          "sparkle": "Scintillio",
+          "faces": "Faccine",
+          "stars": "Stelle"
+        }
+      },
+      "bio": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetico",
+          "edgy": "Edgy",
+          "royal": "Reale",
+          "cute": "Carino",
+          "bold": "Grassetto",
+          "clean": "Pulito",
+          "mystical": "Mistico",
+          "retro": "Retro",
+          "nature": "Natura"
+        }
+      },
+      "small-text": {
+        "word": "testo",
+        "tabs": {
+          "subtle": "Sottile",
+          "tiny": "Minuscolo",
+          "brackets": "Parentesi",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "nome",
+        "tabs": {
+          "rounded": "Tondo",
+          "soft": "Morbido",
+          "stars": "Stelle",
+          "hearts": "Cuori",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "nome",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Faccine",
+          "hearts": "Cuori",
+          "sparkle": "Scintillio",
+          "pastel": "Pastello"
+        }
+      },
+      "aesthetic": {
+        "word": "testo",
+        "tabs": {
+          "celestial": "Celeste",
+          "sparkle": "Scintillio",
+          "y2k": "Y2K",
+          "soft": "Morbido",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "nome",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetico",
+          "symbols": "Simboli",
+          "hearts": "Cuori",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Idee per usare le scritte",

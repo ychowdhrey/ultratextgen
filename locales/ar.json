@@ -106,6 +106,82 @@
       "unsaveTitle": "إزالة من الأنماط المحفوظة",
       "empty": "اكتب شيئًا أعلاه...",
       "noStyles": "لم يتم العثور على أنماط. جرّب عامل تصفية أو كلمة بحث مختلفة."
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "اسم",
+        "tabs": {
+          "playful": "مرح",
+          "hearts": "قلوب",
+          "sparkle": "بريق",
+          "faces": "وجوه",
+          "stars": "نجوم"
+        }
+      },
+      "bio": {
+        "word": "اسم",
+        "tabs": {
+          "gaming": "ألعاب",
+          "aesthetic": "جمالي",
+          "edgy": "قاتم",
+          "royal": "ملكي",
+          "cute": "لطيف",
+          "bold": "عريض",
+          "clean": "أنيق",
+          "mystical": "سحري",
+          "retro": "ريترو",
+          "nature": "طبيعة"
+        }
+      },
+      "small-text": {
+        "word": "نص",
+        "tabs": {
+          "subtle": "خفيف",
+          "tiny": "مصغّر",
+          "brackets": "أقواس",
+          "minimal": "بسيطة"
+        }
+      },
+      "bubble": {
+        "word": "اسم",
+        "tabs": {
+          "rounded": "مستدير",
+          "soft": "ناعم",
+          "stars": "نجوم",
+          "hearts": "قلوب",
+          "minimal": "بسيطة"
+        }
+      },
+      "cute": {
+        "word": "اسم",
+        "tabs": {
+          "kawaii": "كاواي",
+          "faces": "وجوه",
+          "hearts": "قلوب",
+          "sparkle": "بريق",
+          "pastel": "باستيل"
+        }
+      },
+      "aesthetic": {
+        "word": "نص",
+        "tabs": {
+          "celestial": "سماوي",
+          "sparkle": "بريق",
+          "y2k": "Y2K",
+          "soft": "ناعم",
+          "minimal": "بسيطة"
+        }
+      },
+      "nickname": {
+        "word": "اسم",
+        "tabs": {
+          "gaming": "ألعاب",
+          "aesthetic": "جمالي",
+          "symbols": "رموز",
+          "hearts": "قلوب",
+          "faces": "وجوه تعبيرية"
+        }
+      }
     }
   },
   "useCases": {

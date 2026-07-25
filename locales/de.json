@@ -94,7 +94,83 @@
       "more": "Mehr",
       "less": "Weniger"
     },
-    "demoText": "Willkommen bei UltraTextGen.\nTipp einfach etwas ein. Mach es ultra."
+    "demoText": "Willkommen bei UltraTextGen.\nTipp einfach etwas ein. Mach es ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "Name",
+        "tabs": {
+          "playful": "Verspielt",
+          "hearts": "Herzen",
+          "sparkle": "Glitzer",
+          "faces": "Gesichter",
+          "stars": "Sterne"
+        }
+      },
+      "bio": {
+        "word": "Name",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Ästhetisch",
+          "edgy": "Düster",
+          "royal": "Königlich",
+          "cute": "Niedlich",
+          "bold": "Fett",
+          "clean": "Klar",
+          "mystical": "Mystisch",
+          "retro": "Retro",
+          "nature": "Natur"
+        }
+      },
+      "small-text": {
+        "word": "Text",
+        "tabs": {
+          "subtle": "Dezent",
+          "tiny": "Winzig",
+          "brackets": "Klammern",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "Name",
+        "tabs": {
+          "rounded": "Rund",
+          "soft": "Sanft",
+          "stars": "Sterne",
+          "hearts": "Herzen",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "Name",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Gesichter",
+          "hearts": "Herzen",
+          "sparkle": "Glitzer",
+          "pastel": "Pastell"
+        }
+      },
+      "aesthetic": {
+        "word": "Text",
+        "tabs": {
+          "celestial": "Himmlisch",
+          "sparkle": "Glitzer",
+          "y2k": "Y2K",
+          "soft": "Sanft",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "Name",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Ästhetisch",
+          "symbols": "Symbole",
+          "hearts": "Herzen",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Wofür Leute UltraTextGen am liebsten nutzen",

@@ -106,6 +106,82 @@
       "unsaveTitle": "ลบออกจากสไตล์ที่บันทึกไว้",
       "empty": "พิมพ์อะไรบางอย่างด้านบน...",
       "noStyles": "ไม่พบสไตล์ ลองใช้ตัวกรองหรือคำค้นหาอื่น"
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "ชื่อ",
+        "tabs": {
+          "playful": "สนุกสนาน",
+          "hearts": "หัวใจ",
+          "sparkle": "ประกาย",
+          "faces": "หน้าตา",
+          "stars": "ดาว"
+        }
+      },
+      "bio": {
+        "word": "ชื่อ",
+        "tabs": {
+          "gaming": "เกมมิ่ง",
+          "aesthetic": "เอสเทติก",
+          "edgy": "ดาร์ก",
+          "royal": "รอยัล",
+          "cute": "น่ารัก",
+          "bold": "ตัวหนา",
+          "clean": "เรียบง่าย",
+          "mystical": "ลึกลับ",
+          "retro": "เรโทร",
+          "nature": "ธรรมชาติ"
+        }
+      },
+      "small-text": {
+        "word": "ข้อความ",
+        "tabs": {
+          "subtle": "แผ่วเบา",
+          "tiny": "จิ๋ว",
+          "brackets": "วงเล็บ",
+          "minimal": "มินิมอล"
+        }
+      },
+      "bubble": {
+        "word": "ชื่อ",
+        "tabs": {
+          "rounded": "กลม",
+          "soft": "นุ่มนวล",
+          "stars": "ดาว",
+          "hearts": "หัวใจ",
+          "minimal": "มินิมอล"
+        }
+      },
+      "cute": {
+        "word": "ชื่อ",
+        "tabs": {
+          "kawaii": "คาวาอี้",
+          "faces": "หน้าตา",
+          "hearts": "หัวใจ",
+          "sparkle": "ประกาย",
+          "pastel": "พาสเทล"
+        }
+      },
+      "aesthetic": {
+        "word": "ข้อความ",
+        "tabs": {
+          "celestial": "จักรวาล",
+          "sparkle": "ประกาย",
+          "y2k": "Y2K",
+          "soft": "นุ่มนวล",
+          "minimal": "มินิมอล"
+        }
+      },
+      "nickname": {
+        "word": "ชื่อ",
+        "tabs": {
+          "gaming": "เกมมิ่ง",
+          "aesthetic": "เอสเทติก",
+          "symbols": "สัญลักษณ์",
+          "hearts": "หัวใจ",
+          "faces": "คาโอโมจิ"
+        }
+      }
     }
   },
   "useCases": {

@@ -94,7 +94,83 @@
       "more": "Plus",
       "less": "Moins"
     },
-    "demoText": "Bienvenue sur UltraTextGen.\nTape n'importe quoi. Rends-le ultra."
+    "demoText": "Bienvenue sur UltraTextGen.\nTape n'importe quoi. Rends-le ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nom",
+        "tabs": {
+          "playful": "Ludique",
+          "hearts": "Cœurs",
+          "sparkle": "Paillettes",
+          "faces": "Visages",
+          "stars": "Étoiles"
+        }
+      },
+      "bio": {
+        "word": "nom",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Esthétique",
+          "edgy": "Sombre",
+          "royal": "Royal",
+          "cute": "Mignon",
+          "bold": "Gras",
+          "clean": "Épuré",
+          "mystical": "Mystique",
+          "retro": "Rétro",
+          "nature": "Nature"
+        }
+      },
+      "small-text": {
+        "word": "texte",
+        "tabs": {
+          "subtle": "Subtil",
+          "tiny": "Minuscule",
+          "brackets": "Crochets",
+          "minimal": "Minimaliste"
+        }
+      },
+      "bubble": {
+        "word": "nom",
+        "tabs": {
+          "rounded": "Arrondi",
+          "soft": "Doux",
+          "stars": "Étoiles",
+          "hearts": "Cœurs",
+          "minimal": "Minimaliste"
+        }
+      },
+      "cute": {
+        "word": "nom",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Visages",
+          "hearts": "Cœurs",
+          "sparkle": "Paillettes",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "texte",
+        "tabs": {
+          "celestial": "Céleste",
+          "sparkle": "Paillettes",
+          "y2k": "Y2K",
+          "soft": "Doux",
+          "minimal": "Minimaliste"
+        }
+      },
+      "nickname": {
+        "word": "nom",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Esthétique",
+          "symbols": "Symboles",
+          "hearts": "Cœurs",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Là où l'écriture stylée fait la différence",

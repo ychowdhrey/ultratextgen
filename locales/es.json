@@ -94,7 +94,83 @@
       "more": "Más",
       "less": "Menos"
     },
-    "demoText": "Bienvenido a UltraTextGen.\nEscribe lo que sea. Hazlo ultra."
+    "demoText": "Bienvenido a UltraTextGen.\nEscribe lo que sea. Hazlo ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nombre",
+        "tabs": {
+          "playful": "Divertido",
+          "hearts": "Corazones",
+          "sparkle": "Brillo",
+          "faces": "Caras",
+          "stars": "Estrellas"
+        }
+      },
+      "bio": {
+        "word": "nombre",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "edgy": "Oscuro",
+          "royal": "Real",
+          "cute": "Tierna",
+          "bold": "Negrita",
+          "clean": "Limpio",
+          "mystical": "Místico",
+          "retro": "Retro",
+          "nature": "Naturaleza"
+        }
+      },
+      "small-text": {
+        "word": "texto",
+        "tabs": {
+          "subtle": "Sutil",
+          "tiny": "Diminuto",
+          "brackets": "Corchetes",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "nombre",
+        "tabs": {
+          "rounded": "Redondo",
+          "soft": "Suave",
+          "stars": "Estrellas",
+          "hearts": "Corazones",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "nombre",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Caras",
+          "hearts": "Corazones",
+          "sparkle": "Brillo",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "texto",
+        "tabs": {
+          "celestial": "Celestial",
+          "sparkle": "Brillo",
+          "y2k": "Y2K",
+          "soft": "Suave",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "nombre",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "symbols": "Símbolos",
+          "hearts": "Corazones",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Para qué se usan más",
