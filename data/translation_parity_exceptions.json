@@ -26,6 +26,12 @@
       "agreed": "2026-07-25"
     },
     {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/ru/symbol/",
+      "reason": "Same mechanical shape as the ko/symbol/ entry immediately above: ru/symbol/index.html gained compare-cards for 30 pages built as part of the 5-locale (ar/ko/ja/ru/th) symbol/* translation build. symbol/index.html (EN) already lists all 106 EN symbol pages as compare-cards and needed no change in this branch (verified: diff against merge-base is empty). The locale hub is catching up to an already-complete EN state, not diverging from it. Flagged to the user for review rather than silently resolved.",
+      "agreed": "2026-07-25"
+    },
+    {
       "enUrl": "https://ultratextgen.com/library/",
       "localeUrl": "https://ultratextgen.com/pt/library/",
       "reason": "check-translation-parity.js flags this pair (mislabeling the EN side as vi/library/ in its output — a display quirk, not the real comparison) because pt/library/index.html gained a new \"Símbolos para Free Fire\" list entry in this branch, as part of renaming pt/library/simbolos-para-nick -> pt/library/simbolos-para-free-fire. This is not real EN/locale drift: library/index.html (EN) already lists library/free-fire-name-symbols and needed no change — the checker's within-branch commit-delta comparison flags PT as changed without a matching EN commit in this PR, even though EN's content was already correct going in. Verified by direct inspection, not assumed. Discussed with the user 2026-07-25 rather than force an unnecessary cosmetic touch to the EN file just to make the diff-based checker see a matching delta.",

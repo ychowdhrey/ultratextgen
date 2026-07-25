@@ -28,6 +28,7 @@ flag existed (see ultratextgen-lab-'s GOLD-ANALYSIS-2026-07-25.md, symbol/*
 backlog section). Always scope a translation batch with --only.
 """
 import glob
+import html as html_entities
 import importlib.util
 import os
 import re
@@ -153,14 +154,18 @@ def motif_kicker_for(english_slug, old_og_base, old_hero_base):
 
 
 def clean_title(html):
+    # meta/title content is HTML-escaped in the source page (a literal '"'
+    # or '&' is correctly written as &quot;/&amp;) - unescape here so the
+    # SVG builder's own esc() doesn't double-escape it into a literal
+    # "&amp;quot;" visible in the rendered PNG.
     m = OG_TITLE.search(html)
     if m and m.group(3).strip():
-        t = m.group(3).strip()
+        t = html_entities.unescape(m.group(3).strip())
     else:
         m = TITLE_TAG.search(html)
         if not m:
             return ""
-        t = re.split(r'\s*[|–—]\s*UltraTextGen', m.group(1).strip())[0].strip()
+        t = re.split(r'\s*[|–—]\s*UltraTextGen', html_entities.unescape(m.group(1).strip()))[0].strip()
     # Full SEO titles run 50-90 chars; the card wants a short headline, so
     # prefer the clause before the first delimiter (mirrors how the
     # hand-authored PAGES entries keep titles to 2-4 words).
@@ -177,7 +182,7 @@ def clean_title(html):
 def clean_sub(html):
     m = OG_DESC.search(html)
     if m and m.group(3).strip():
-        s = m.group(3).strip()
+        s = html_entities.unescape(m.group(3).strip())
         # The subtitle renders as one unwrapped line next to the motif
         # graphic (see og_png_svg) — past ~55 Latin chars it runs under it.
         if len(s) > 55:
