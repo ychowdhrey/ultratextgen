@@ -24,6 +24,12 @@
       "localeUrl": "https://ultratextgen.com/id/usecase/",
       "reason": "check-translation-parity.js flags this pair because id/usecase/index.html was edited late in this branch (removing duplicate compare-cards left over from merging two independent PRs that each added cards for the same 3 new pages — see this repo's PR history around 2026-07-25). After dedup, id/usecase/index.html's net content versus origin/main is unchanged (main's own independent PR #649 had already added equivalent cards for these 3 pages before this branch merged main in), while usecase/index.html (EN) gained its 3 matching cards in an earlier commit in this same branch. Both sides carry the equivalent content; the checker's per-branch commit-delta comparison just can't see that ID's parity was achieved via a different, earlier PR rather than a commit in this one. Verified by direct inspection. Discussed with the user 2026-07-25.",
       "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/pt/usecase/",
+      "reason": "check-translation-parity.js flags this pair because pt/usecase/index.html lost a compare-card in this branch — the redundant duplicate \"Nick Free Fire\" card that pointed at pt/usecase/nick-free-fire/, retired in the same change (see the 'fix: retire pt/usecase/nick-free-fire' commit) since it was a near-duplicate of the adjacent nick-ff card one row above. usecase/index.html (EN) never had this duplicate to begin with — it uses a different single-card layout for Free Fire (a usecase-diff/usecase-cta block linking usecase/free-fire-name-generator/), not PT's compare-grid, so there is no equivalent EN card to remove and nothing to sync. Verified by direct inspection of usecase/index.html's Free Fire section. Discussed with the user 2026-07-25.",
+      "agreed": "2026-07-25"
     }
   ]
 }
