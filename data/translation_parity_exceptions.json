@@ -42,6 +42,13 @@
       "localeUrl": "https://ultratextgen.com/pt/usecase/",
       "reason": "check-translation-parity.js flags this pair because pt/usecase/index.html lost a compare-card in this branch — the redundant duplicate \"Nick Free Fire\" card that pointed at pt/usecase/nick-free-fire/, retired in the same change (see the 'fix: retire pt/usecase/nick-free-fire' commit) since it was a near-duplicate of the adjacent nick-ff card one row above. usecase/index.html (EN) never had this duplicate to begin with — it uses a different single-card layout for Free Fire (a usecase-diff/usecase-cta block linking usecase/free-fire-name-generator/), not PT's compare-grid, so there is no equivalent EN card to remove and nothing to sync. Verified by direct inspection of usecase/index.html's Free Fire section. Discussed with the user 2026-07-25.",
       "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/ms/",
+      "reason": "ms/index.html gained one inbound FAQ link to ms/answers/kenapa-nama-game-ditolak/ (2026-07-24), following an existing on-topic FAQ answer. ms/answers/* pre-dates this branch (already on main). No equivalent EN FAQ item to sync from. Verified mechanically (one onlyInLocale entry, no other fingerprint change). Re-surfaced only by the 2026-07-25 merge-base shift.",
+      "agreed": "2026-07-25",
+      "suppress": { "onlyInLocale": ["/answers/why-was-my-game-name-rejected/"] }
     }
   ]
 }
