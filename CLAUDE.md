@@ -751,6 +751,76 @@ user before recording it as intentional.
 
 ---
 
+## Local Language Intelligence
+
+There is a researched, evidence-backed dictionary of locally-native
+vocabulary for this site's top-opportunity locales, distinct from a plain
+translation memory. It captures, per concept per market: the literal/
+dictionary translation, the grammatically correct translation, the phrase
+locals actually say, the phrase locals actually type into search engines/
+forums/games, and when that phrase is and isn't appropriate. Public,
+approved-only snapshot: `data/local-language/<locale>.json` (one file per
+locale + `index.json`). Full methodology, schema, and every locale's write-up:
+`docs/local-language-intelligence.md`.
+
+**The core rule: use locally natural vocabulary when it fits the user's
+exact intent, platform, audience, and register — never insert a phrase
+merely because it's in the dictionary.** This is a decision aid, not a
+keyword-insertion engine.
+
+1. Before writing or materially editing localized copy for one of the
+   covered locales, check `data/local-language/<locale>.json` for that
+   locale (and its `country_or_market` field if the locale has regional
+   splits — see below).
+2. Use a local phrase only when it naturally fits the exact meaning,
+   platform, game, audience, and register of the sentence you're writing.
+   Do not try to use every available phrase, do not set a keyword-density
+   target, and do not stuff several near-synonym variants into the same
+   title or heading.
+3. Every page keeps **one primary query target** — a local phrase never
+   overrides that. It supports the existing title/H1, it doesn't compete
+   with it. Follow this file's existing Hub vs Spoke, cannibalization, and
+   English-Parent rules first; the local-language dictionary is an input to
+   *how* you word a page, never a reason to restructure or duplicate one.
+4. **A local phrase discovered in research does not, by itself, justify a
+   new page.** "This phrase exists" is not a build brief.
+5. Do not mix vocabulary from neighboring countries/markets without
+   evidence — e.g. Mexican Spanish into an `es_ES`-targeted section,
+   Portugal-Portuguese into `pt_BR` copy, Gulf Arabic into pan-Arabic MSA
+   copy. Each snapshot record's `country_or_market` field tells you which
+   market it's evidenced for; a record's `avoid_when` field tells you the
+   specific situations to skip it in.
+6. Respect `content_surface` and `register` on each record — a phrase
+   flagged for FAQ/generator-example use only should not be promoted into a
+   title or H1, and community/gaming jargon does not belong in legal,
+   accessibility, or technical explanatory copy just because it tested well
+   elsewhere.
+7. **Continuous capture rule:** whenever research (forum reading,
+   competitor research, GSC query analysis, keyword research, social/game/
+   platform research, user feedback, a content audit, an issue/PR
+   discussion, or native-speaker review) surfaces a locally meaningful word,
+   phrase, abbreviation, cultural expression, platform term, gaming term,
+   problem description, or search formulation relevant to UltraTextGen —
+   record it in the private research repo's Local Language Intelligence
+   Library as a new `candidate` record (or add evidence to an existing
+   `phrase_id` if the same phrase already exists — search for a match
+   before creating a new record). Do this even if you don't end up using
+   the phrase on any page this session.
+8. **A newly discovered phrase must never be inserted directly into
+   production copy the same pass it's discovered.** It goes into the
+   research library as `candidate` first. Only `approved` or `limited_use`
+   phrases (the ones that make it into the public snapshot here) are meant
+   for production copy, and even then only per rule 2 above.
+9. This public snapshot is generated, read-only data — regenerated from the
+   private research repo's canonical dataset. Do not hand-edit the JSON
+   files under `data/local-language/`; if a phrase needs a status change or
+   correction, that happens in the private research repo and gets
+   re-synced here.
+10. A local phrase, however well-evidenced, never guarantees ranking — it's
+    a fit signal, not a growth lever on its own.
+
+---
+
 ## New pages must ship with their hero/OG/Twitter art in the same change
 
 A new or edited page's `og:image`, `twitter:image`, and (if it declares one)
