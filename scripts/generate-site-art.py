@@ -1289,7 +1289,7 @@ PAGES = {
   # ---- localized game-nickname generators & symbol libraries (new markets) ----
   "pt-usecase-nick-free-fire": ("Nick Free Fire", "Gerador de nomes e símbolos para Free Fire", m_trophy, K_USE),
   "pt-espaco-invisivel": ("Espaço Invisível", "Caractere em branco para copiar", m_block, K_LIB),
-  "pt-library-simbolos-para-nick": ("Símbolos para Nick de Free Fire", "Guarda-chuva, coroas e símbolos para o FF", m_grid, K_LIB),
+  "pt-library-simbolos-para-free-fire": ("Símbolos para Nick de Free Fire", "Guarda-chuva, coroas e símbolos para o FF", m_grid, K_LIB),
   "ro-nume-pentru-free-fire": ("Nume pentru Free Fire", "Generator de nick-uri și simboluri", m_trophy, K_USE),
   "ro-caractere-speciale": ("Caractere Speciale", "Simboluri de copiat pentru nume", m_grid, K_LIB),
   "hu-becenev-generator": ("Becenév Generátor", "Menő nevek és nickek játékokhoz", m_trophy, K_USE),
@@ -1391,6 +1391,40 @@ PAGES = {
   "pl-usecase": ("Co Chcesz Stworzyć?", "Generatory pogrupowane według potrzeb", m_grid, K_USE),
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
+  "usecase-stumble-guys-name-generator": ("Stumble Guys Name Generator", "Funny & stylish nicknames, 4-12 char checker", m_gamepad, K_USE),
+  "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Nickname lucu & aesthetic, cek 4-12 karakter", m_gamepad, K_USE),
+  "usecase-aesthetic-contact-names": ("Aesthetic Contact Names", "Cute names for bae's phone contact", m_heart, K_USE),
+  "id-usecase-nama-kontak-pacar-aesthetic": ("Nama Kontak Pacar Aesthetic", "Nama kontak estetik berhias hati", m_heart, K_USE),
+  "usecase-group-name-generator": ("Group Name Generator", "Cool names for squads, circles & group chats", m_chat, K_USE),
+  "id-usecase-nama-grup-keren": ("Nama Grup Keren", "Nama grup WA & circle aesthetic", m_chat, K_USE),
+
+  # ---- contact-names / group-name / stumble-guys locale expansion ----
+  "tr-usecase-rehber-adi-estetik": ("Rehber Adı Estetik", "Sevgiline özel estetik rehber ismi", m_heart, K_USE),
+  "pt-usecase-nomes-de-contato-aesthetic": ("Nomes de Contato Aesthetic", "Nome de contato estiloso pro crush", m_heart, K_USE),
+  "pl-usecase-nazwy-do-kontaktu": ("Nazwy do Kontaktu", "Estetyczna nazwa kontaktu dla ukochanej osoby", m_heart, K_USE),
+  "it-usecase-nomi-per-contatti-aesthetic": ("Nomi per Contatti Aesthetic", "Nome estetico per il contatto del tuo amore", m_heart, K_USE),
+  "fr-usecase-nom-de-contact-aesthetic": ("Nom de Contact Aesthetic", "Nom de contact stylé pour ton crush", m_heart, K_USE),
+  "es-usecase-nombres-de-contacto-aesthetic": ("Nombres de Contacto Aesthetic", "Nombre de contacto bonito para tu pareja", m_heart, K_USE),
+  "de-usecase-kontaktname-aesthetic": ("Kontaktname Aesthetic", "Süßer Kontaktname für deinen Schatz", m_heart, K_USE),
+  "zh-tw-usecase-tongxunlu-nicheng": ("通訊錄暱稱", "情侶通訊錄暱稱裝飾", m_heart, K_USE),
+  "ja-usecase-renrakusaki-aesthetic": ("連絡先の名前 かわいいジェネレーター", "彼氏彼女の連絡先をおしゃれに", m_heart, K_USE),
+
+  "tr-usecase-grup-ismi": ("Grup İsmi", "WhatsApp grubu ve arkadaş çevresi için isimler", m_chat, K_USE),
+  "pt-usecase-nomes-para-grupo": ("Nomes para Grupo", "Nomes estilosos pro grupo do zap e da galera", m_chat, K_USE),
+  "pl-usecase-nazwy-grupy": ("Nazwy Grupy", "Fajne nazwy dla grupy WhatsApp i paczki znajomych", m_chat, K_USE),
+  "it-usecase-nomi-per-gruppi": ("Nomi per Gruppi", "Nomi per gruppi WhatsApp, cerchie di amici e team", m_chat, K_USE),
+  "fr-usecase-nom-de-groupe": ("Nom de Groupe", "Noms stylés pour groupe WhatsApp et bande de potes", m_chat, K_USE),
+  "es-usecase-nombres-para-grupos": ("Nombres para Grupos", "Nombres bonitos para el grupo de WhatsApp y amigos", m_chat, K_USE),
+  "de-usecase-gruppennamen": ("Gruppennamen", "Coole Namen für WhatsApp-Gruppe und Freundeskreis", m_chat, K_USE),
+
+  "tr-usecase-stumble-guys-nick": ("Stumble Guys Nick", "Komik & şık takma isimler, 4-12 karakter kontrolü", m_gamepad, K_USE),
+  "pt-usecase-nomes-para-stumble-guys": ("Nomes para Stumble Guys", "Nomes engraçados e estilosos, checagem 4-12 caracteres", m_gamepad, K_USE),
+  "pl-usecase-nazwy-do-stumble-guys": ("Nazwy do Stumble Guys", "Zabawne i stylowe nicki, sprawdzenie 4-12 znaków", m_gamepad, K_USE),
+  "it-usecase-nomi-stumble-guys": ("Nomi Stumble Guys", "Nomi buffi e stilosi, controllo 4-12 caratteri", m_gamepad, K_USE),
+  "fr-usecase-pseudo-stumble-guys": ("Pseudo Stumble Guys", "Pseudos drôles et stylés, vérification 4-12 caractères", m_gamepad, K_USE),
+  "es-usecase-nombres-para-stumble-guys": ("Nombres para Stumble Guys", "Nombres divertidos y con estilo, chequeo 4-12 caracteres", m_gamepad, K_USE),
+  "de-usecase-stumble-guys-namensgenerator": ("Stumble Guys Namensgenerator", "Lustige & stylische Nicknames, 4-12-Zeichen-Check", m_gamepad, K_USE),
+
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
   "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
   "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
@@ -2334,10 +2368,6 @@ PAGES = {
   "symbol-less-than-or-equal-to-symbol": ("Less Than or Equal To Symbol", "≤ meaning, Alt Code & LaTeX", glyphs("≤"), K_SYM),
   "id-symbol-mikrofon-emoji": ("Emoji Mikrofon", "🎤 arti, sejarah & kode Unicode-nya", m_microphone, K_SYM),
   "id-symbol-simbol-kurang-dari-sama-dengan": ("Simbol Kurang Dari Sama Dengan", "≤ arti, Alt Code & LaTeX", glyphs("≤"), K_SYM),
-  # ID usecase pages
-  "id-usecase-nama-kontak-pacar-aesthetic": ("Nama Kontak Pacar Aesthetic", "Kumpulan nama kontak pacar aesthetic buat doi — cewek, cowok, bahasa Inggris", m_heart, K_USE),
-  "id-usecase-nama-grup-keren": ("Nama Grup Keren & Aesthetic", "Nama grup WA aesthetic, circle bestie, dan singkatan keren", m_grid, K_USE),
-  "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Simbol & generator nickname buat nama Stumble Guys", m_gamepad, K_USE),
 }
 
 

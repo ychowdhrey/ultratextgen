@@ -13,6 +13,123 @@
       "verdict": "mirror",
       "evidence": "euro-sign 14,800/mo, micro-sign 5,400/mo, not-equal-sign 4,190/mo, delta-symbol 3,600/mo + 11 more evidence-backed symbol slugs, ~49,960/mo total French demand found via a manual Semrush pull against 15 missing symbol/ pages",
       "recordedBy": "governance-tooling-audit"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "de",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull (no live Semrush/GSC check run for this locale specifically). EN parents (aesthetic-contact-names, group-name-generator, stumble-guys-name-generator) were themselves built off a real opportunity analysis in the private ultratextgen-lab- repo (nama-indonesia-utg-scope-2026-07-23.md: nama kontak pacar aesthetic ~124,400/mo, nama grup keren ~121,500/mo, nama stumble guys keren 19,950/mo, ID/global broad-match) plus the game-symbol-collection-opportunity-2026-07-22.md pass. That research targeted Indonesian/global demand, not this locale specifically, so this entry is an explicit ledger note that the mirror decision here rests on user sign-off, not this locale's own cleared instrument thresholds. This governance system landed on main after these 21 pages (7 locales x 3 concepts) were already built; user was asked directly whether to run real per-locale checks, self-authorize, or hold the pages back, and chose to authorize now.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "es",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "fr",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "it",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "pl",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "pt",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "tr",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ja",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception for the single aesthetic-contact-names/renrakusaki-aesthetic page (ja has no group-name/stumble-guys translation). Not a fresh per-locale instrument pull — see the \"de\"/usecase/* entry above for full context on this batch's authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception for the single aesthetic-contact-names/tongxunlu-nicheng page. zh-tw is registered as a Tier-3 hold-stub locale in data/locale_qualification_tiers.json, a firmer default (\"no spec mirroring until promoted via the 7-point qualification gate\") than the gated-tail default this same entry shape also satisfies. User was explicitly asked whether to revert this one page given the stronger tier-3 policy stance, or treat it the same as the other 21 gated-tail pages, and chose the latter. Not a fresh per-locale instrument pull, and does not constitute promoting zh-tw out of Tier 3 generally — this is a single-page, explicitly-discussed exception, not a tier change.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
     }
   ]
 }
