@@ -1,0 +1,124 @@
+{
+  "slug": "kucuktur-esittir-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Küçüktür veya Eşittir İşareti: Kopyala Yapıştır ≤ — Anlamı, Alt Kodu ve LaTeX",
+  "meta_description": "Küçüktür-veya-eşittir işaretini ≤ (U+2264) kopyala yapıştır — Alt+243, LaTeX'in \\leq komutu, HTML varlığı ve karıştırılan komşuları ≦ ⩽ ≲. Kopyalamak için dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/kucuktur-esittir-isareti/",
+  "breadcrumb": "Küçüktür veya Eşittir İşareti",
+  "hero_h1": "Küçüktür veya Eşittir İşareti (≤)",
+  "hero_tagline": "Bir değerin başka bir değerden küçük olabileceğini ya da tam olarak ona eşit olabileceğini gösteren ≤ — Windows'ta Alt+243, LaTeX'te \\leq ve HTML'de &le;. Kopyalamak için dokun.",
+  "intro": "Küçüktür-veya-eşittir işareti (≤, U+2264), küçüktür işaretini altındaki yatay bir çizgiyle birleştirir; bir değerin başka bir değerden küçük olabileceğini ya da tam olarak ona eşit olabileceğini gösterir — basit eşitsizliklerden kalkülüsün kapalı aralıklarına kadar her şeyin ardındaki bağıntı. İngiliz matematikçi Thomas Harriot'ın 1631'de tanıttığı kesin < ve > işaretlerinin aksine, birleşik ≤/≥ çifti daha sonraki bir incelmedir: Fransız matematikçi Pierre Bouguer, 1734'te ışığın derecelendirilmesi üzerine yazdığı denemede bunu tanıtmasıyla genellikle anılır. ASCII hiçbir zaman ≤'ye kendi yerini ayırmadı, bu yüzden neredeyse her programlama dili tek Unicode glifi yerine iki karakterli <= ifadesine başvurur.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "less-than-or-equal-to",
+      "label": "Küçüktür veya Eşittir",
+      "h2": "Matematikte ve Kodda Küçüktür veya Eşittir",
+      "intro": "Matematik sembolü ve ≤'nin kendisi hiçbir zaman ASCII'nin parçası olmadığından çoğu programlama dilinin yerine kullandığı iki karakterli yedek.",
+      "symbols": [
+        {
+          "char": "≤",
+          "label": "Less-Than or Equal To (Matematik)"
+        },
+        {
+          "char": "<=",
+          "label": "Less Than or Equal To (Kod — C, Python, JavaScript, Java, SQL)"
+        }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Karıştırılan Komşular",
+      "h2": "≤ Yerine Sıkça Yanlış Kullanılan Semboller",
+      "intro": "Bunların hepsi aşağı yukarı aynı anlama gelir ama farklı dizgi geleneklerinden gelen ayrı Unicode karakterleridir.",
+      "symbols": [
+        {
+          "char": "≦",
+          "label": "Less-Than Over Equal To (U+2266)"
+        },
+        {
+          "char": "⩽",
+          "label": "Less-Than or Slanted Equal To (U+2A7D) — ISO 31-11'in tercih ettiği biçim"
+        },
+        {
+          "char": "≲",
+          "label": "Less-Than or Equivalent To (U+2272)"
+        },
+        {
+          "char": "≪",
+          "label": "Much Less Than (U+226A) — farklı bir bağıntı, ≤'nin bir varyantı değil"
+        }
+      ]
+    },
+    {
+      "id": "related-comparison-symbols",
+      "label": "İlgili Karşılaştırma Sembolleri",
+      "h2": "İlgili Karşılaştırma Sembolleri",
+      "intro": "≤'nin eşitsizliklerde ve küme notasyonunda eşleştiği diğer bağıntı sembolleri.",
+      "symbols": [
+        {
+          "char": "≥",
+          "label": "Greater-Than or Equal To (U+2265)"
+        },
+        {
+          "char": "<",
+          "label": "Less Than"
+        },
+        {
+          "char": ">",
+          "label": "Greater Than"
+        },
+        {
+          "char": "≠",
+          "label": "Not Equal To"
+        },
+        {
+          "char": "=",
+          "label": "Equals Sign"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri",
+      "desc": "İşleçler, küme notasyonu ve matematik sabitleri tek bir gözden geçirilebilir referansta."
+    },
+    {
+      "href": "/tr/symbol/esit-degil-isareti/",
+      "title": "Eşit Değil İşareti (≠)",
+      "desc": "Euler'in kullandığı, ASCII'de yer verilmeyen ve kodun neden != kullandığını anlatan işaret."
+    },
+    {
+      "href": "/tr/symbol/kucuktur-buyuktur-isareti/",
+      "title": "Küçüktür ve Büyüktür İşaretleri",
+      "desc": "≤ ve ≥'nin inşa edildiği kesin karşılaştırma sembolleri ve HTML'i neden bozabildikleri."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/kucuktur-esittir-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

@@ -1,0 +1,81 @@
+{
+  "lang": "es",
+  "slug": "asterisco",
+  "page_type": "symbol",
+  "title": "Asterisco: Copiar y Pegar * ⁂ ✱ — la Marca de Nota al Pie que se Volvió Comodín y Estrella de Censura",
+  "meta_description": "Copia y pega el asterisco (*), el asterismo ⁂ y el ✱ grueso — la marca de nota al pie que también gobierna la búsqueda con comodines y censura las palabrotas. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/asterisco/",
+  "breadcrumb": "Asterisco",
+  "hero_h1": "Asterisco (*)",
+  "hero_tagline": "El asterisco (*) que usas para notas al pie, el comodín * que en búsquedas y código significa «cualquier cosa», y la estrella de censura en «m***a» — junto a sus primos tipográficos como el asterismo ⁂, tres asteriscos en triángulo. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El asterisco (*, Unicode U+002A) es la marca en forma de estrella que comparte la tecla del número 8 del teclado, y su nombre viene directamente del griego antiguo asteriskos, «estrellita» — un diminutivo de astēr, «estrella». Es una de las marcas editoriales más antiguas de la tradición occidental: el erudito alejandrino Aristarco de Samotracia (c. 220–143 a. C.) usó el asteriskos en sus ediciones de Homero para señalar versos que consideraba duplicados en otro lugar, y más tarde el teólogo Orígenes lo colocó en su Hexapla para marcar texto presente en el hebreo pero ausente del griego. Hoy ese mismo glifo hace tres trabajos muy distintos: es la clásica marca de nota al pie que envía al lector a una anotación al final de la página, es el comodín que en la búsqueda de archivos, los patrones glob y el SELECT * de SQL significa «cualquier cosa», y es el sustituto de censura por defecto para las letras que uno preferiría tapar, como en «m***a». La tipografía mantiene toda una familia de parientes a su alrededor — el ASTERISMO ⁂ (U+2042) apila tres asteriscos en triángulo como separador de sección, el ASTERISCO GRUESO ✱ (U+2731) y el ASTERISCO DE OCHO PUNTAS ✳ (U+2733) son formas de visualización más marcadas, y el OPERADOR ASTERISCO ∗ (U+2217) es el glifo específico de multiplicación en matemáticas. Ninguno de ellos es la forma decorativa de estrella — la estrella negra ★ (U+2605) o el emoji de estrella amarilla ⭐ (U+2B50) — que pertenecen a un registro distinto, puramente ornamental.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/asterisco/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "el-asterisco",
+      "label": "El Asterisco",
+      "h2": "El Asterisco y sus Variantes de Visualización",
+      "intro": "El asterisco normal del teclado junto a las formas de visualización más marcadas y el operador específico de matemáticas. Todos listos para pegar.",
+      "symbols": [
+        { "char": "*", "label": "Asterisco (U+002A) — Nota al Pie, Comodín y Marca de Censura" },
+        { "char": "✱", "label": "Asterisco Grueso (U+2731)" },
+        { "char": "✳", "label": "Asterisco de Ocho Puntas (U+2733)" },
+        { "char": "∗", "label": "Operador Asterisco (U+2217) — el Glifo Matemático de Multiplicación" },
+        { "char": "＊", "label": "Asterisco de Ancho Completo (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asterismo-y-marcas-editoriales",
+      "label": "Asterismo y Marcas Editoriales",
+      "h2": "Asterismo y Marcas de Separación de Sección",
+      "intro": "Marcas editoriales construidas a partir del asterisco — el asterismo de tres en triángulo que separa secciones, más sus primos apilado y rebajado.",
+      "symbols": [
+        { "char": "⁂", "label": "Asterismo (U+2042) — Tres Asteriscos en Triángulo" },
+        { "char": "⁑", "label": "Dos Asteriscos Alineados Verticalmente (U+2051)" },
+        { "char": "⁎", "label": "Asterisco Bajo (U+204E)" }
+      ]
+    },
+    {
+      "id": "estrellas-con-las-que-se-confunde",
+      "label": "Estrellas con las que se Confunde",
+      "h2": "Formas de Estrella con las que se Confunde",
+      "intro": "Glifos en forma de estrella a los que la gente recurre cuando en realidad quiere decir un asterisco. Son estrellas decorativas — un registro ornamental, no una herramienta de nota al pie o puntuación.",
+      "symbols": [
+        { "char": "★", "label": "Estrella Negra (U+2605)" },
+        { "char": "☆", "label": "Estrella Blanca (U+2606)" },
+        { "char": "⭐", "label": "Estrella Blanca Mediana (U+2B50) — el Emoji de Estrella Amarilla" },
+        { "char": "✦", "label": "Estrella Negra de Cuatro Puntas (U+2726)" },
+        { "char": "✧", "label": "Estrella Blanca de Cuatro Puntas (U+2727)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-puntuacion/",
+      "title": "Símbolos de Puntuación",
+      "desc": "Rayas, corchetes, comillas y la familia de puntuación cotidiana a la que pertenece el asterisco."
+    },
+    {
+      "href": "/es/library/simbolos-de-teclado/",
+      "title": "Símbolos de Teclado",
+      "desc": "El asterisco, el ampersand, la almohadilla y el resto de símbolos impresos en las filas de un teclado."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-estrella/",
+      "title": "Símbolo de Estrella (★)",
+      "desc": "La estrella decorativa ★ y el emoji de estrella amarilla ⭐ — los primos ornamentales con los que la gente confunde el asterisco."
+    },
+    {
+      "href": "/es/symbol/signo-de-seccion/",
+      "title": "Signo de Sección (§)",
+      "desc": "El signo § de sección — otro símbolo editorial y cercano a la nota al pie, procedente del mundo de la imprenta."
+    }
+  ]
+}

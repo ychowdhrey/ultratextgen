@@ -27,7 +27,7 @@ Copy-paste Unicode is still the front door and satisfies the job fastest. Visual
 | Frontend | Pure HTML5, CSS3, Vanilla JavaScript (ES6+) |
 | Build tools | Node.js (sitemap gen only), Python (tweet queue only) |
 | CI/CD | GitHub Actions |
-| Hosting | Static site (Netlify, inferred from `_redirects`) |
+| Hosting | Cloudflare Pages (static assets + `functions/` middleware) |
 | Analytics | Google Tag Manager (GTM-P55HXK8Q) |
 
 **There are no frontend frameworks** (no React, Vue, Angular, etc.) and no bundlers (no Webpack, Vite, Rollup). Do not introduce them.
@@ -52,7 +52,10 @@ ultratextgen/
 ├── fonts.json              # Font category mappings
 ├── robots.txt              # Search engine directives
 ├── sitemap.xml              # Auto-generated (do not edit manually)
-├── _redirects              # Netlify redirect rules
+├── _redirects              # Cloudflare Pages redirect rules — PATH ONLY,
+│                           #   query strings are silently ignored (see below)
+├── _headers                # Cloudflare Pages response headers
+├── functions/_middleware.js# Pages Function: owns `/` (English homepage + ?lang=)
 │
 ├── .github/workflows/
 │   ├── tweet-queue.yml     # Daily social queue (09:00 UTC)
@@ -373,6 +376,24 @@ position 6.06 — all indexed, all on-SERP, all starved by the hub above them.
 the hub intercepts "how to bold" and then ranks ~80 for it. Five purpose-built
 pages, near-zero traffic, because Rule 3 was never applied to the hub.
 
+**These four rules apply within each locale independently (clarified
+2026-07-26).** A translated spoke batch can collide with that locale's own
+existing hubs even when the EN side is clean — the batch mirrors EN's
+hub/spoke split, but the locale's hubs may have grown their own extra prose
+in the meantime. When the collision surfaces on pages too new to have any
+GSC signal (zero impressions, nothing to adjudicate a demand-based split
+with), do not invent a locale-specific judgment call: resolve structurally
+by mirroring what the live EN parent hub already does — same de-targeting,
+same reciprocal `compare-card` links, no more and no less. **Case study
+(2026-07-26):** a 452-page `symbol/*` translation batch produced four
+`nl/symbol/*` spokes overlapping two existing NL library hubs;
+`nl/library/vraagteken/` carried FAQ content its EN parent
+(`library/punctuation-symbols`) never had — a real Rule 3 violation — while
+`nl/library/kruis-symbool/` already matched its parent and only needed its
+Rule 4 links. Both fixed by mirroring the EN parent's shape (`1c6e9bbb`),
+per explicit user direction, because no NL demand data existed to support
+anything else.
+
 ---
 
 ## Core JavaScript Architecture
@@ -596,7 +617,16 @@ already exist at the equivalent `/category/`, `/library/`, `/symbol/`,
   wiring, translate the copy, and wire full reciprocal `hreflang` (every
   locale variant links every other variant, `x-default` points at the EN
   canonical). Missing reciprocity is a real, recurring bug on this site, not
-  a hypothetical — see the case study below.
+  a hypothetical — see the case study below. **"Reciprocal" includes the
+  page itself (clarified 2026-07-26):** every page's hreflang block must
+  contain a self-referencing entry for its own URL, and `x-default` must
+  never point at the page itself on a non-EN page. The missing
+  self-reference has been the single most-repeated mesh bug on this site —
+  fixed on 26 `symbol/` pages (`43690ed8`), then 356 EN pages site-wide
+  (`c3ead3d8`), then 12 more (`f749fe3c`), plus a third variant where
+  the self-reference existed but pointed at a subtly wrong URL. When adding
+  or auditing a cluster, check self-reference and `x-default` direction
+  explicitly, not just cross-links between siblings.
 - **No** → do not build the localized page directly. Build the English
   version first (it usually also captures a bigger, unvalidated EN/global
   search pool the localized-only page would leave on the table), *then*
@@ -642,6 +672,77 @@ in the same pass and found to be a different case — cannibalization, not a
 legitimate local-only exception (identical title/H1 to `ja/index.html`,
 thinner content, zero cross-links) — and was 301-redirected to `ja/index.html`
 instead of ratified.
+
+**Ratified local-only exception (2026-07-26): `id/tulisan-cuping/`.** "Cuping"
+(cute typing) is an Indonesian RP/Telegram trend that respells *Indonesian*
+words phonetically to sound cuter (r→l, s→c, drop final h — `sering`→`celing`,
+`jangan`→`janan`), with a few community-fixed forms the general rule doesn't
+derive (`marah`→`mayah`). The transform operates on Indonesian phonemes, so an
+English parent would not be a translation of this feature — English cute-speak
+/uwu-typing is a different algorithm on different phonetics — and would sit at
+zero demand by construction, since "cuping" isn't a term English speakers
+search. Same shape of argument as `ja/gal-moji/` above, and it takes the same
+structural form: no hreflang cluster at all, `id/`-only marketing page, with
+the transform itself living in the shared global `renderer.js`/`styles.js`
+registry like every other style (the *code* is never locale-partitioned; only
+the page presenting it is). Demand evidence: "font cuping"/"cuping font"
+≈33,000/mo combined in the ID market at KD 19–20 with weak incumbents.
+
+Note this is a **precedent, not a template** — it does not license
+speculatively building other locales' internet-slang transforms. Each future
+case needs its own demand evidence and its own discussion, exactly as this one
+did.
+
+**Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
+`fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
+`fr/` near-duplicate pages `ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md` §2c
+flagged as no-EN-parent with no discussed exception. A query-level GSC pull
+(France, 26 days) settled the other three (`fr/ecriture-style/`,
+`fr/generateur-de-texte/` retired via 301 to `fr/`; `fr/ecriture-speciale/`
+left as-is, negligible volume either way — see commit for the full
+per-page breakdown) but confirmed these three pass the site's own
+Hub-vs-Spoke spoke test on the *French* evidence: `changeur-de-police`
+(100% of impressions on queries `fr/index.html` never ranks for at all —
+"change police"/"changeur de police"), `calligraphie` (76%, "calligraphie
+copier coller"), and `police-d-ecriture` (54%, largest and still-growing
+volume of the six — "police d'écriture"/"police ecriture", where the
+homepage barely shows: 4 impressions at position 24 vs. this page's 188 at
+position 9.6 on the exact same query).
+
+**Important distinction from the `ja`/`ko`/`zh-tw` trio above: this is
+*not* a "no English speaker would search this" claim** — "font" and
+"calligraphy" are high-volume English concepts too. The actual reason no
+EN parent exists is a **market-specific SERP-consolidation difference**:
+the already-resolved "font converter" EN-parent question (`AUDIT-ACTIONS.md`
+row 17, closed by `GOLD-ANALYSIS-2026-07-25.md`/`LOCALE-OPPORTUNITY-HUNT-
+2026-07-25.md` §1c) found English/Spanish/Italian SERPs for that concept
+pull the *same* competitor set as "font generator" — Google treats them as
+synonyms there, so a standalone EN page would cannibalize the EN homepage.
+The French GSC data above shows the opposite holds in the French market:
+`fr/index.html` doesn't compete on these queries at all. This EN-side
+synonym-consolidation read is inferred from the row-17 close-out, not
+independently verified against EN GSC for "font"/"calligraphy" specifically
+— worth a direct check before treating it as settled, but it's the reason
+these three stay unbuilt in EN rather than a claim that the underlying
+concept lacks English demand. `x-default` on all three (plus their live
+non-English siblings, `it/font-copia-e-incolla/` and `it/caratteri-
+speciali/` on the `changeur-de-police` cluster) falls back to the bare EN
+homepage as a generic default only, same as the trio above — not a
+translation-equivalence claim.
+
+**Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
+picked up new content the same day (a "changer un texte déjà écrit" FAQ, a
+changeur-vs-générateur distinction FAQ, a before/after example) matched to
+its GSC query cluster. Its live IT siblings, `it/font-copia-e-incolla/` and
+`it/caratteri-speciali/`, were **not** updated — `check-translation-parity.js`
+confirmed this is outside its own scope (it diffs EN↔locale pairs only; this
+is an IT-FR-only cluster with no EN member), so nothing enforced a sync, and
+none was done. This is a real gap: the site's tooling has no mechanism for
+locale↔locale parity when neither side is EN. Needs a decision — port the
+same content to the two IT pages, or record the divergence deliberately
+(and if the latter, decide where: `data/translation_parity_exceptions.json`
+requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
+by default.
 
 ### Locale-native internal linking — check every time you touch a locale page
 
@@ -863,7 +964,7 @@ at their intersection:
   translating), `gated` (translate only on a cleared demand check — burden
   of proof is on translating), or `never`. Most-specific-pattern wins when
   more than one entry matches a path.
-- **`data/locale_qualification_tiers.json`** — tiers every one of the 28
+- **`data/locale_qualification_tiers.json`** — tiers every one of the 29
   canonical locale codes as Tier 1 (deepen + mirror Core now), Tier 2
   (qualify via the existing 7-point gate, then mirror Core), or Tier 3
   (hold/stub, no spec mirroring). `vi` is Tier 2 but explicitly `hold: true`
@@ -892,7 +993,25 @@ complete flowchart, and every script's flags/exit codes:
   automation — `scripts/generate_library_page_from_spec.py` calls it
   automatically (best-effort, `--fix --files <new page>`) right after writing
   any non-English page; other generators should get the same hook the next
-  time they're touched.
+  time they're touched. **Scoping (fixed 2026-07-26, same day the caveat
+  was written):** `--files` now scopes BOTH passes — the hreflang `--fix`
+  is forwarded as `--scope-files`, which still scans the whole tree
+  (reciprocity can't be judged from a subset) but only writes to the named
+  files plus members of their own hreflang clusters. Before this fix the
+  hreflang pass was unscoped and could mutate files far outside the paths
+  you named (case: `148fcd59`, where a scoped run stamped a duplicate
+  `zh-TW` alternate onto `ja/font-henkan` and `ko/font-byeonhwan` — two
+  ratified local-only exception pages in a completely unrelated cluster).
+  The fixer also now refuses to insert an entry for an hreflang code the
+  file already declares with a different href — that's a conflict flagged
+  for manual review, never auto-stacked. A site-wide (no `--files`) `--fix`
+  run remains intentionally unscoped: still review its diff before
+  committing, and revert out-of-scope edits rather than shipping them as
+  drive-by fixes. Related hazard: the ratified local-only pages (see
+  "Ratified local-only exceptions" above) intentionally do NOT form a full
+  translation-sibling mesh — automated mesh tooling doesn't know that, so
+  treat any tool-made hreflang change to those pages as a bug to revert,
+  not a fix.
 - **`node scripts/check-locale-mesh.js`** (`npm run check:locale-mesh`) —
   the enforcing, diff-scoped PR gate, wired into `.github/workflows/validate.yml`.
   For every changed locale page: fails if its hreflang cluster has a
@@ -930,6 +1049,47 @@ sets for parity divergences. If one of the gap-check scripts flags a
 missing entry, either raise the divergence with the user or run the actual
 instrument check and record it — don't edit the registry to make a page you
 want to ship pass.
+
+### What passes a gate — and what doesn't (clarified 2026-07-26)
+
+Three recurring points of confusion, each resolved by a real case:
+
+1. **"Sibling precedent" is never a gate pass.** "Other locales already have
+   this cluster" is not demand evidence for *this* locale — it's exactly the
+   heuristic the governance registries replaced. **Case:** the Wave-1
+   `answers/*` cluster (44 pages, 11 locales) was built under sibling
+   precedent before the gate existed; when merging main brought the gate in,
+   the pages were pulled back out of the branch (`4eeb80a2`) rather than
+   grandfathered, because no per-locale demand check had ever been run.
+2. **Instruments unavailable → hold, don't improvise.** If Semrush is out of
+   API units (or GSC has no data for pages too new to index), the demand
+   check cannot be run — so the build waits, or the user explicitly
+   authorizes. Never fabricate a gap-audit entry, and never downgrade to a
+   weaker proxy without saying so. Same case as above: the revert was chosen
+   specifically over "force an undocumented pass."
+3. **A locale hold is a default the user can override — explicitly,
+   per-batch, without flipping the flag.** `vi` is Tier 2 `hold: true`
+   ("needs backlinks, not translations"). The user, told this directly,
+   still chose to include vi in a `symbol/*` build; the authorization was
+   recorded as a `data/locale_parent_gap_audit.json` entry with `null`
+   instruments and evidence text naming it a user authorization
+   (`f09d35b5`) — vi's hold flag and tier were left untouched. That's the
+   template: the override lives in the ledger as a dated, attributed
+   decision; the registry keeps stating the standing default. Presenting the
+   hold reasoning to the user *before* they decide is part of the override
+   being legitimate — a hold silently ignored is a violation, a hold
+   knowingly overridden is a decision.
+
+### Governance arrives mid-flight: merged-in rules bind unshipped work
+
+When merging main into a long-running branch brings in a new gate, registry,
+or rule, that rule applies to everything the branch has built but not yet
+merged — "it was allowed when I built it" holds only for work already on
+main. Re-run all four PR gates (`check-translation-parity`,
+`check-locale-mesh`, `check-locale-parent-gap`,
+`check-new-page-image-assets`) after every merge of main, and re-validate
+in-flight pages against any governance the merge introduced (the `4eeb80a2`
+revert above is this rule applied honestly).
 
 ---
 
@@ -1027,6 +1187,66 @@ Every page includes JSON-LD for:
 
 When editing page content, preserve and update the JSON-LD structured data to match. Use schema.org vocabulary.
 
+### FAQ schema must mirror visible page content
+
+`FAQPage`/`QAPage` JSON-LD may only contain questions and answers the reader
+can actually see on the page. Google's structured-data policy is explicit
+that FAQ markup has to mirror on-page content; a page that ships a
+`FAQPage` block describing Q&A it never renders is invisible-content markup
+— it forfeits the rich result and is spammy-structured-markup territory for
+a manual action. Content inside an accordion/disclosure widget **is**
+visible for this purpose; content that exists only in the JSON-LD is not.
+
+The rule cuts both ways, and both halves have failed here before:
+
+- **Never add FAQ schema for Q&A the page doesn't render.** If the copy is
+  worth marking up, put it on the page.
+- **Never edit or trim a visible FAQ without updating the JSON-LD.** The
+  stale-schema half is the more common failure: the visible FAQ gets
+  rewritten, the JSON-LD keeps the old wording, and the questions silently
+  stop matching. Paraphrase is not a match — Google compares the actual
+  strings.
+
+House markup for a rendered FAQ is either the JS-bound accordion
+(`<div class="faq-item"><button class="faq-question">` + `.faq-answer`, which
+`script.js` wires up) or the JS-free disclosure variant
+(`<details class="faq-item"><summary class="faq-question">` + `.faq-answer`).
+Prefer the `<details>` variant on any page that does not load `/script.js` —
+it needs no binding and cannot double-bind against `script.js`'s own
+`.faq-question` handler.
+
+**Case study (2026-07-26):** a 2026-07-12 structural audit found two pages
+(`usecase/stylish-name`, `usecase/zalgo-text`) shipping FAQ schema with no
+visible FAQ and recorded it as a two-page defect. A site-wide scan found the
+real number was **214 pages** — 155 with FAQ schema and no FAQ section at
+all, plus 59 whose visible FAQ had drifted out of sync with its own JSON-LD
+(212 orphan questions). Nothing had been watching for it because nothing
+could: the audit was a manual read, so the count it produced was the count
+someone happened to open. Fixed in one pass, and the reason it can't
+silently return is the tooling below, not vigilance.
+
+#### Tooling
+
+- **`npm run audit:faq-schema`** (`scripts/audit-faq-schema.js`) — whole-site
+  dashboard. Reports per page whether every FAQ-schema question is visible,
+  broken down by locale, with `--full` for the individual questions and
+  `--json`/`--report` to save a snapshot. Discovery tool; not wired into CI.
+- **`npm run check:faq-schema`** (`scripts/check-faq-schema.js`) — the
+  enforcing half, wired into `.github/workflows/validate.yml` as a gating
+  check. Diff-scoped like `check-translation-parity.js`: it only inspects
+  HTML this PR adds or changes, so pre-existing backlog elsewhere can never
+  make it permanently red. Fails the PR listing the exact unmatched
+  questions.
+- **`node scripts/fix-faq-schema-visibility.js`** — the repair pass, kept
+  because the same two repairs apply every time this recurs. `--dry-run`
+  reports; `--write` applies; a file list scopes it. It renders the schema's
+  own Q&A into a house-style section when the page has no FAQ at all, and
+  prunes-then-backfills the JSON-LD against the visible FAQ when the page
+  does. It never invents copy: rendered text is the schema's own, backfilled
+  text is the page's own.
+- All three share `scripts/lib/faq-schema-audit.js`, so the audit, the gate
+  and the fixer can never disagree about what counts as "visible."
+
 ---
 
 ## Testing
@@ -1046,6 +1266,37 @@ Do not add a test framework unless explicitly requested.
 - **Branch naming**: `claude/<description>-<session-id>` for AI-generated branches
 - **CI tags**: Use `[skip ci]` in auto-generated commit messages to prevent circular workflows
 - **`sitemap.xml`**: Never manually edit — always auto-generated
+- **"Shipped" means merged to master through a PR** — nothing else. A commit
+  pushed to a branch is not shipped, and a commit pushed to a branch whose
+  PR already merged is invisible (no open PR tracks it; it will never reach
+  master). Before recording anything as shipped, confirm the PR shows
+  merged, or that `git branch -r --contains <commit>` includes
+  `origin/master`.
+
+### Parallel sessions build the same thing under different names
+
+Multiple AI sessions often work this repo concurrently, and translation
+work is where they collide: two sessions closing the same locale gap can
+pick **different locale slugs for the same EN parent** (e.g.
+`id/symbol/yin-yang/` vs `id/symbol/simbol-yin-yang/`). Git's path-based
+conflict detection cannot catch this — both directories merge cleanly and
+silently coexist as duplicates. **Case (2026-07-25):** 26 such duplicate
+pairs survived a merge of main; caught only because
+`validate_library_pages.py` flagged one duplicate meta description, then
+confirmed by checking every `id/symbol/` page's `hreflang="en"` back-link
+for multiple claimants of the same EN parent (`4164fc6f`).
+
+Standing protocol:
+1. **Before starting a translation batch**, fetch and merge main, then list
+   what already exists for that locale/lane — main may have grown pages your
+   branch's plan assumes are missing.
+2. **After every merge of main into a branch that adds locale pages**, check
+   for duplicate claimants: no two pages in one locale may declare the same
+   `hreflang="en"` parent. That check, not path conflicts, is the collision
+   detector.
+3. **When duplicates are found**, keep the set that's more deeply integrated
+   (better meshed, more inbound links — usually main's), remove the other,
+   and repoint every reference to the removed slug at the survivor.
 
 ---
 
@@ -1086,6 +1337,15 @@ Do not add a test framework unless explicitly requested.
   tracing, mazes, word searches, math worksheets, pre-writing motor strokes with no letterform.
   See "Printables scope boundary" above. This demand is real but tracked for a possible future,
   separate property — not this repo.
+- Do not put a query string in a `_redirects` source path. This is Cloudflare
+  Pages, not Netlify: Pages matches the **path only** and silently drops the
+  query, so `/?lang=fr  /fr/  301` is read as `/  /fr/  301` and 301s the
+  English homepage to French for every visitor and crawler — and because a
+  static redirect short-circuits before Pages Functions, it also bypasses
+  `functions/_middleware.js`, which exists specifically to keep `/` English.
+  That shipped in PR #566 and sat live from 2026-07-15 to 2026-07-26. Query
+  matching belongs in `functions/_middleware.js` (`LANG_REDIRECTS`), which can
+  actually read `url.searchParams`.
 - Do not edit `sitemap.xml` directly
 - Do not add `var` declarations — use `const`/`let`
 - Do not use `import`/`export` ES module syntax in frontend scripts
@@ -1094,6 +1354,11 @@ Do not add a test framework unless explicitly requested.
 - Do not add inline `<style>` blocks to HTML pages — add to `style.css`
 - Do not skip Google Tag Manager snippets when creating new pages
 - Do not skip JSON-LD structured data when creating new pages
+- Do not ship `FAQPage`/`QAPage` JSON-LD whose questions aren't rendered on
+  the page, and do not edit a visible FAQ without updating its JSON-LD to
+  match — see "FAQ schema must mirror visible page content" above.
+  `npm run check:faq-schema` enforces this in CI on every page a PR touches;
+  `npm run audit:faq-schema` gives the whole-site picture.
 - Do not ship a new or edited page's HTML before its hero/OG/Twitter art is
   generated and committed in the same change, and don't rely on a later
   cleanup pass to backfill it — see "New pages must ship with their hero/OG/

@@ -1,0 +1,113 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "doodshoofd-symbool",
+  "title": "Doodshoofd-symbool: Kopieer en Plak ☠ — Vergiftpictogram, Jolly Roger & Niet 💀",
+  "meta_description": "Kopieer en plak het doodshoofd met gekruiste beenderen (☠, U+2620) — het GHS-vergiftpictogram en de piraten-Jolly-Roger, niet de 💀-schedel-emoji. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/doodshoofd-symbool/",
+  "breadcrumb": "Doodshoofd-symbool",
+  "hero_h1": "Doodshoofd-symbool (☠)",
+  "hero_tagline": "Het doodshoofd met gekruiste beenderen (☠) dat vergif markeert en op de Jolly Roger wappert — het U+2620-gevarenteken dat voortdurend wordt verward met de 💀-schedel-emoji. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het doodshoofd met gekruiste beenderen (☠, Unicode U+2620) is een menselijke schedel boven twee gekruiste botten — een memento mori dat al eeuwenlang dood en gevaar signaleert. Unicode voegde het in 1993 toe in versie 1.1, ondergebracht in het Miscellaneous-Symbols-blok (U+2600–U+26FF) naast zijn gevarenburen ☢ radioactief (U+2622) en ☣ biohazard (U+2623). Het heeft twee heel verschillende taken. Als gevarenteken is het nog altijd actueel en officieel: het doodshoofd met gekruiste beenderen is een van de negen GHS-pictogrammen voor acute toxiciteit, opgenomen in de Amerikaanse wet via OSHA's Hazard Communication Standard — niet met pensioen, al wordt het op huishoudelijke producten aangevuld met de vriendelijkere 'Mr. Yuk'-sticker (in 1971 gemaakt door het Pittsburgh Poison Center, nadat kinderen de schedel eerder aan piraten dan aan gevaar bleken te koppelen). Als piratenfolklore is het de Jolly Roger, de zwarte vlag die in de jaren 1710–1720 is gedocumenteerd voor kapiteins als Samuel 'Black Sam' Bellamy, Edward England en John Taylor — al voerden veel bemanningen andere ontwerpen, dus het was nooit hét ene universele piratenvlagontwerp. Eén waarschuwing: ☠ is niet de gewone schedel-emoji 💀 (U+1F480), het teken dat mensen plakken voor 'ik lig dood'-lachreacties — ander codepunt, ander register, eindeloos verward.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/doodshoofd-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "doodshoofd",
+      "label": "Het Symbool",
+      "h2": "Het Doodshoofd met Gekruiste Beenderen — ☠",
+      "intro": "Het symbool zelf, zowel in platte-tekst-vorm als in emoji-weergave. Het is hetzelfde codepunt, U+2620 — een volgende variatieselector is het enige verschil tussen een zwart-witte glyph en een gekleurde emoji.",
+      "symbols": [
+        {
+          "char": "☠",
+          "label": "Doodshoofd met Gekruiste Beenderen (U+2620)"
+        },
+        {
+          "char": "☠️",
+          "label": "Doodshoofd met Gekruiste Beenderen, Emoji-stijl (U+2620 U+FE0F)"
+        }
+      ]
+    },
+    {
+      "id": "vs-schedel-emoji",
+      "label": "vs. de Schedel-emoji",
+      "h2": "☠ vs. de 💀-Schedel-emoji",
+      "intro": "De verwarring die het waard is om recht te zetten: ☠ (doodshoofd met gekruiste beenderen) en 💀 (gewone schedel) zijn verschillende Unicode-tekens. 💀 is degene die mensen plakken voor 'ik lig dood'- of kapot-van-het-lachen-reacties; ☠ is het gevaar-en-piraten-symbool. Toepasselijk genoeg is de piratenvlag-emoji 🏴‍☠️ opgebouwd door een zwarte vlag te combineren met U+2620 zelf.",
+      "symbols": [
+        {
+          "char": "☠️",
+          "label": "Doodshoofd met Gekruiste Beenderen (U+2620)"
+        },
+        {
+          "char": "💀",
+          "label": "Schedel (U+1F480)"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Piratenvlag (U+1F3F4 U+200D U+2620)"
+        }
+      ]
+    },
+    {
+      "id": "gevarensymbolen",
+      "label": "Gevarensymbolen",
+      "h2": "Verwante Gevaren- & Waarschuwingssymbolen",
+      "intro": "Het doodshoofd met gekruiste beenderen staat in Unicodes Miscellaneous-Symbols-blok vlak naast de andere waarschuwingstekens waar het mee wordt gegroepeerd — elk een apart codepunt met een eigen gevarenbetekenis.",
+      "symbols": [
+        {
+          "char": "☠",
+          "label": "Doodshoofd met Gekruiste Beenderen (U+2620)"
+        },
+        {
+          "char": "☢",
+          "label": "Radioactief-teken (U+2622)"
+        },
+        {
+          "char": "☣",
+          "label": "Biohazard-teken (U+2623)"
+        },
+        {
+          "char": "⚠",
+          "label": "Waarschuwingsteken (U+26A0)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Radioactieve, biohazard-, hoogspannings- en andere waarschuwingspictogrammen om te kopiëren in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Skull Emoji & Kaomoji",
+      "desc": "De 💀-schedel-emoji en zijn tekstgezicht-neven — de meme-reactiekant van de schedel, verzameld in één hub (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/biohazard-symbool/",
+      "title": "Biohazard-symbool (☣)",
+      "desc": "Het ☣-biohazard-teken — een naburige gevarenglyph in Unicodes Miscellaneous-Symbols-blok, volledig behandeld."
+    }
+  ]
+}

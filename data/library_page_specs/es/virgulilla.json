@@ -1,0 +1,75 @@
+{
+  "lang": "es",
+  "slug": "virgulilla",
+  "page_type": "symbol",
+  "title": "Virgulilla: Copiar y Pegar ~ ˜ ∼ ≈ — De la Abreviatura del Escriba a la Carpeta de Inicio en Unix",
+  "meta_description": "Copia y pega la virgulilla (~), la tilde pequeña independiente (˜), el diacrítico combinante de la ñ y las tildes matemáticas ∼ y ≈ — y cómo la abreviatura de un escriba medieval terminó dando la ñ española. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/virgulilla/",
+  "breadcrumb": "Virgulilla",
+  "hero_h1": "Virgulilla (~)",
+  "hero_tagline": "La virgulilla del teclado (~) que marca tu carpeta de inicio en Unix y significa «más o menos», la tilde pequeña independiente ˜, el diacrítico que se posa sobre la ñ, la ã y la õ, y las tildes matemáticas ∼ y ≈ con las que se confunde sin parar. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La virgulilla (~, U+007E TILDE) es el trazo ondulado de la tecla superior izquierda del teclado, y desempeña más funciones que casi cualquier otro signo de puntuación. En una terminal Unix o Linux es la abreviatura de tu carpeta de inicio (~/) — una convención que se remonta al terminal Lear-Siegler ADM-3A de los años setenta, cuyo teclado imprimía «~» y la palabra «Home» en la misma tecla. En el chat informal significa «aproximadamente» o «alrededor de» (~5 minutos). Su nombre en inglés, tilde, viene precisamente del español tilde, y este a su vez del latín titulus («título» o «añadido sobre la línea»); la historia empieza con los escribas medievales, que trazaban una pequeña marca ondulada sobre una letra para indicar una «n» o una «m» omitida, ahorrando así el costoso pergamino y la tinta. Ese atajo es exactamente el origen de la ñ española — los escribas escribían una sola «n» con la marca encima para representar una «nn» doble. Ese diacrítico sobrevive hoy como la virgulilla combinante (◌̃, U+0303), un carácter distinto de la tilde pequeña independiente (˜, U+02DC) y de la ~ normal del teclado. Un matiz que vale la pena aclarar: en el español actual, «tilde» se usa casi siempre para el acento agudo (á, é, í...), mientras que a este trazo ondulado se le llama con más precisión virgulilla — aunque en el habla cotidiana mucha gente diga igualmente «la tilde de la eñe». También se confunde sin parar con los signos matemáticos a los que se parece: el operador tilde ∼ (U+223C, «semejante a») y el signo de aproximadamente igual ≈ (U+2248) son caracteres Unicode distintos, no la ~ del teclado.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/virgulilla/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "la-virgulilla",
+      "label": "La Virgulilla",
+      "h2": "La Virgulilla ~ y sus Parecidos",
+      "intro": "Tres caracteres Unicode distintos a los que todo el mundo llama «la virgulilla»: la tecla del teclado, un modificador de espaciado independiente y el diacrítico combinante que se posa sobre una letra.",
+      "symbols": [
+        { "char": "~", "label": "Virgulilla (U+007E) — la Tecla del Teclado" },
+        { "char": "˜", "label": "Tilde Pequeña (U+02DC) — Modificador de Espaciado Independiente" },
+        { "char": "̃", "label": "Virgulilla Combinante (U+0303) — se Posa sobre una Letra" }
+      ]
+    },
+    {
+      "id": "letras-con-virgulilla",
+      "label": "Letras con Virgulilla",
+      "h2": "Letras que Llevan Virgulilla",
+      "intro": "La virgulilla combinante en acción. La ñ española y la ã y õ portuguesas son las supervivientes cotidianas de la abreviatura del escriba para una «n» omitida.",
+      "symbols": [
+        { "char": "ñ", "label": "Letra Latina N con Virgulilla, Minúscula (U+00F1)" },
+        { "char": "Ñ", "label": "Letra Latina N con Virgulilla, Mayúscula (U+00D1)" },
+        { "char": "ã", "label": "Letra Latina A con Virgulilla, Minúscula (U+00E3)" },
+        { "char": "õ", "label": "Letra Latina O con Virgulilla, Minúscula (U+00F5)" }
+      ]
+    },
+    {
+      "id": "tildes-matematicas",
+      "label": "Tildes Matemáticas",
+      "h2": "Tildes Matemáticas: Semejante A y Aproximadamente Igual",
+      "intro": "En las ecuaciones la virgulilla significa «semejante a» o «aproximadamente», pero los signos matemáticos reales son caracteres Unicode propios — no la ~ del ASCII que la gente suele teclear en su lugar.",
+      "symbols": [
+        { "char": "∼", "label": "Operador Tilde (U+223C) — «Semejante A»" },
+        { "char": "≈", "label": "Aproximadamente Igual (U+2248) — «Aproximadamente Igual»" },
+        { "char": "≅", "label": "Aproximadamente Igual A (U+2245)" },
+        { "char": "≃", "label": "Asintóticamente Igual A (U+2243)" },
+        { "char": "~", "label": "Virgulilla (U+007E) — la Tecla ASCII que se Teclea en su Lugar" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-teclado/",
+      "title": "Símbolos de Teclado",
+      "desc": "La virgulilla, el acento grave, el símbolo & y el resto de teclas de puntuación y signos de un teclado estándar, listas para copiar."
+    },
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Aproximadamente igual, semejante a, y los operadores y relaciones que completan una ecuación junto a la virgulilla."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Acentos y Diacríticos",
+      "desc": "La virgulilla combinante sobre la ñ y la ã, más los acentos agudos, graves, diéresis y otras marcas que se posan sobre una letra."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "psi-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Psi: Sao Chép & Dán ψ Ψ — Hàm Sóng Lượng Tử Của Schrödinger & Biểu Tượng Đinh Ba Của Tâm Lý Học",
+  "meta_description": "Sao chép ký hiệu psi — chữ thường ψ (U+03C8) và chữ hoa Ψ (U+03A8), hàm sóng lượng tử mà Schrödinger chọn năm 1926 và biểu tượng hình đinh ba mà tâm lý học lấy từ từ «psyche». Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/psi-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Psi",
+  "hero_h1": "Ký Hiệu Psi",
+  "hero_tagline": "Chữ thường ψ và chữ hoa Ψ — chữ cái Erwin Schrödinger chọn để đặt tên cho hàm sóng lượng tử, và ký hiệu hình đinh ba mà cả thế giới dùng làm biểu tượng cho tâm lý học và tâm thần học. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Chữ thường của psi, ψ (U+03C8, GREEK SMALL LETTER PSI), cùng chữ hoa Ψ (U+03A8), tạo thành chữ cái thứ 23, áp chót trong bảng chữ cái Hy Lạp — đứng ngay trước omega, phát âm như /ps/ trong từ «lapse», và mang giá trị 700 trong hệ số đếm Hy Lạp cổ. Cả hai mã điểm đều gia nhập Unicode từ phiên bản 1.1, tức năm 1993. Điều khiến psi nổi bật hơn các chữ cái Hy Lạp khác chính là vị trí của nó trong khoa học hiện đại: đầu năm 1926, Erwin Schrödinger chọn ψ để ký hiệu hàm sóng trong cơ học sóng mới của mình, và cái tên đó đã ở lại — ngày nay chữ hoa Ψ thường đặt tên cho hàm sóng phụ thuộc thời gian đầy đủ của một hệ, còn chữ thường ψ ký hiệu một hàm sóng dừng hoặc theo không gian. Psi cũng gần như là biểu tượng phổ quát cho tâm lý học và tâm thần học, và có một lý do được ghi nhận rõ ràng cho điều đó: từ Hy Lạp «psyche» (ψυχή, «tâm trí» hay «linh hồn») bắt đầu bằng chính chữ cái này. Câu chuyện thường được kể lại rằng hình đinh ba của nó bắt nguồn từ cây chĩa ba của quỷ dữ chỉ là một huyền thoại — hình dáng ba nhánh giống nĩa âm thoa đơn giản chỉ là hình dạng tự nhiên của chữ cái này, cùng hình dạng mà Đại học Indiana đăng ký làm logo đinh ba của trường.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/psi-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/psi-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/psi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-psi-symbol",
+      "label": "Ký Hiệu Psi",
+      "h2": "Ký Hiệu Psi — ψ & Ψ",
+      "intro": "Chính chữ cái Hy Lạp, ở cả hai dạng viết. Chữ thường ψ và chữ hoa Ψ là hai dạng mà ai cũng dùng đến — dán dạng nào tùy phương trình hay logo của bạn cần.",
+      "symbols": [
+        { "char": "ψ", "label": "Chữ Thường Hy Lạp Psi (U+03C8)" },
+        { "char": "Ψ", "label": "Chữ Hoa Hy Lạp Psi (U+03A8)" }
+      ]
+    },
+    {
+      "id": "psi-in-quantum-mechanics",
+      "label": "Lượng Tử & Khoa Học",
+      "h2": "Psi Trong Cơ Học Lượng Tử",
+      "intro": "Vai trò đặc trưng của psi: hàm sóng của Schrödinger. Theo quy ước, chữ hoa Ψ là hàm sóng phụ thuộc thời gian đầy đủ của một hệ, còn chữ thường ψ là hàm sóng dừng, không phụ thuộc thời gian — thường đi kèm với φ (phi) làm trạng thái đồng hành.",
+      "symbols": [
+        { "char": "Ψ", "label": "Psi Hoa (U+03A8) — Hàm Sóng Phụ Thuộc Thời Gian" },
+        { "char": "ψ", "label": "Psi Thường (U+03C8) — Hàm Sóng Dừng" },
+        { "char": "φ", "label": "Chữ Thường Hy Lạp Phi (U+03C6) — Trạng Thái Đồng Hành Thường Đi Kèm ψ" }
+      ]
+    },
+    {
+      "id": "psi-psychology-trident",
+      "label": "Tâm Lý Học & Đinh Ba",
+      "h2": "Psi Trong Tâm Lý Học & Hình Dạng Đinh Ba",
+      "intro": "Chữ hoa Ψ là biểu tượng toàn cầu của tâm lý học, tâm thần học và cận tâm lý học — được chọn vì «psyche» bắt đầu bằng psi, chứ không phải vì truyền thuyết cây chĩa của quỷ dữ. Hình dạng ba nhánh của nó là lý do người ta hay ví nó với cây đinh ba, vũ khí của thần Poseidon.",
+      "symbols": [
+        { "char": "Ψ", "label": "Psi Hoa (U+03A8) — Biểu Tượng Tâm Lý Học & Tâm Thần Học" },
+        { "char": "ψ", "label": "Psi Thường (U+03C8) — Chữ Cái Của «Psyche»" },
+        { "char": "🔱", "label": "Biểu Tượng Đinh Ba (U+1F531) — Đinh Ba Của Poseidon, Hình Dạng Mà Psi Gợi Nhớ" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Chữ Cái Hy Lạp",
+      "h2": "Chữ Cái Hy Lạp Liên Quan",
+      "intro": "Psi là chữ cái Hy Lạp thứ 23, nằm ngay trước khi omega khép lại bảng chữ cái. Đây là những chữ cái lân cận được tìm kiếm nhiều nhất cùng nó.",
+      "symbols": [
+        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega — Chữ Cái Ngay Sau Psi" },
+        { "char": "π", "label": "Chữ Thường Hy Lạp Pi" },
+        { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" },
+        { "char": "Δ", "label": "Chữ Hoa Hy Lạp Delta" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Hàm sóng, toán tử, và các chữ cái Hy Lạp lấp đầy một phương trình vật lý hay toán học." },
+    { "href": "/vi/symbol/omega-symbol/", "title": "Ký Hiệu Omega", "desc": "Chữ cái lân cận của psi — chữ Hy Lạp cuối cùng, và ký hiệu chuẩn cho điện trở tính bằng ohm." },
+    { "href": "/vi/symbol/pi-symbol/", "title": "Ký Hiệu Pi", "desc": "Một chữ cái Hy Lạp khác cũng trở thành trụ cột của khoa học: hằng số vòng tròn π và toán tử tích Π." }
+  ]
+}

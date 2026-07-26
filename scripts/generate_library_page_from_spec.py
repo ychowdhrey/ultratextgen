@@ -33,6 +33,7 @@ The script refuses to overwrite an existing page unless --force is given.
 import argparse
 import html
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -134,7 +135,26 @@ def validate_spec(spec):
 # --------------------------------------------------------------------------
 # Rendering
 # --------------------------------------------------------------------------
-def render_symbol_section(sec):
+# Per-locale UI-string defaults for pages built via this pipeline. Every
+# field falls back to the existing English wording when a locale is absent,
+# so English specs (and any locale not yet listed here) render exactly as
+# before. Values were sourced from already-shipped, real pages in each
+# locale (not invented) wherever a generator-built precedent existed, and
+# a plain natural translation of the English default otherwise.
+LOCALE_UI_STRINGS = {
+    "pt": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforme texto com fontes Unicode", "cta_btn": "Abrir o UltraTextGen →", "home": "Início", "symbols": "Símbolos", "library": "Biblioteca"},
+    "de": {"copy": "Kopieren", "related": "Verwandte Ressourcen", "cta_h3": "Text mit Unicode-Schriftarten verwandeln", "cta_btn": "UltraTextGen öffnen →", "home": "Startseite", "symbols": "Symbole", "library": "Bibliothek"},
+    "fr": {"copy": "Copier", "related": "Ressources liées", "cta_h3": "Transformez votre texte avec des polices Unicode", "cta_btn": "Ouvrir UltraTextGen →", "home": "Accueil", "symbols": "Symboles", "library": "Bibliothèque"},
+    "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
+    "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
+    "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
+    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
+    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open UltraTextGen →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
+    "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
+}
+
+
+def render_symbol_section(sec, copy_label="Copy"):
     rows = []
     for sym in sec["symbols"]:
         ch = sym["char"]
@@ -143,7 +163,7 @@ def render_symbol_section(sec):
             '    <div class="flag-row">\n'
             f'      <button class="flag-emoji symbol-tile" '
             f'data-symbol="{esc_attr(ch)}" '
-            f'aria-label="Copy {esc_attr(label)}">{esc(ch)}</button>\n'
+            f'aria-label="{esc_attr(copy_label)} {esc_attr(label)}">{esc(ch)}</button>\n'
             f'      <span class="flag-label">{esc(label)}</span>\n'
             '    </div>'
         )
@@ -240,15 +260,24 @@ def render_page(spec):
     # Locale support (all fields default to the English behaviour, so existing
     # English specs render byte-identically).
     lang = spec.get("lang", "en")
-    home_url = spec.get("home_url", f"{SITE}/")
-    crumb_home = spec.get("crumb_home", "Home")
+    ui = LOCALE_UI_STRINGS.get(lang, {})
+    default_home_url = f"{SITE}/" if lang == "en" else f"{SITE}/{lang}/"
+    home_url = spec.get("home_url", default_home_url)
+    crumb_home = spec.get("crumb_home", ui.get("home", "Home"))
     # page_type "symbol" pages sit under /symbol/ instead of /library/ and
     # carry a "Symbols" breadcrumb crumb by default.
     page_type = spec.get("page_type", "library")
-    default_crumb_library = "Symbols" if page_type == "symbol" else "Library"
-    default_library_url = f"{SITE}/symbol/" if page_type == "symbol" else f"{SITE}/library/"
+    default_crumb_library = ui.get("symbols", "Symbols") if page_type == "symbol" else ui.get("library", "Library")
+    default_library_url = (
+        f"{default_home_url}symbol/" if page_type == "symbol" else f"{default_home_url}library/"
+    )
     crumb_library = spec.get("crumb_library", default_crumb_library)
     library_url = spec.get("library_url", default_library_url)
+    copy_label = spec.get("copy_label", ui.get("copy", "Copy"))
+    related_label = spec.get("related_label", ui.get("related", "Related Resources"))
+    cta_h3 = spec.get("cta_h3", ui.get("cta_h3", "Transform text with Unicode fonts"))
+    cta_button_text = spec.get("cta_button_text", ui.get("cta_btn", "Open UltraTextGen →"))
+    cta_button_href = spec.get("cta_button_href", home_url)
     hreflang_html = "".join(
         f'\n<link rel="alternate" hreflang="{esc_attr(h["lang"])}" href="{esc_attr(h["href"])}">'
         for h in spec.get("hreflang", [])
@@ -315,7 +344,7 @@ def render_page(spec):
     )
 
     # Section bodies
-    section_blocks = [render_symbol_section(s) for s in spec["sections"]]
+    section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))
     body_sections = "\n\n<div class=\"section-divider\"></div>\n\n".join(section_blocks)
@@ -398,14 +427,14 @@ def render_page(spec):
 
 <!-- CTA -->
 <div class="cta-card">
-  <h3>Transform text with Unicode fonts</h3>
+  <h3>{esc(cta_h3)}</h3>
   <p>{esc(cta)}</p>
-  <a href="{SITE}/" class="cta-btn">Open UltraTextGen →</a>
+  <a href="{esc_attr(cta_button_href)}" class="cta-btn">{esc(cta_button_text)}</a>
 </div>
 
 <!-- RELATED -->
 <section class="editorial-section">
-  <span class="article-section-label">Related Resources</span>
+  <span class="article-section-label">{esc(related_label)}</span>
   <div class="compare-grid">
 {related_html}
   </div>
@@ -492,7 +521,7 @@ def main(argv=None):
           f"(pattern={spec['copy_pattern']}, "
           f"sections={len(spec['sections'])})")
 
-    if lang != "en":
+    if lang != "en" and not os.environ.get("SKIP_LOCALE_MESH_HOOK"):
         _sync_locale_mesh(out_path)
 
     return 0

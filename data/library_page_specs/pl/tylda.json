@@ -1,0 +1,80 @@
+{
+  "slug": "tylda",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Tyldy: Skopiuj ~ ˜ ∼ ≈ — Od Skryby po Ścieżkę Domową w Uniksie",
+  "meta_description": "Skopiuj tyldę (~), małą tyldę (˜), łączący znak diakrytyczny nad ñ oraz matematyczne tyldy ∼ i ≈ — a także dowiedz się, jak skrót średniowiecznego skryby stał się literą ñ. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/tylda/",
+  "breadcrumb": "Tylda",
+  "hero_h1": "Symbol Tyldy (~)",
+  "hero_tagline": "Klawiaturowa tylda (~), która w Uniksie oznacza Twój katalog domowy, a w luźnej rozmowie znaczy „w przybliżeniu” — plus mała tylda ˜, łączący znak diakrytyczny nad ñ, ã i õ oraz matematyczne tyldy ∼ i ≈, z którymi jest bez końca mylona. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Tylda (~, U+007E TILDE) to falisty znaczek w lewym górnym rogu klawiatury, i wykonuje więcej zadań niż niemal jakikolwiek inny znak interpunkcyjny. W powłoce Unix czy Linux to skrót do katalogu domowego (~/) — konwencja sięgająca terminala Lear-Siegler ADM-3A z lat 70. XX wieku, którego klawiatura drukowała „~” i słowo „Home” na tym samym klawiszu. W luźnej rozmowie oznacza „w przybliżeniu” albo „mniej więcej” (~5 minut), a programiści nazywają ją pieszczotliwie „twiddle”. Jej nazwa pochodzi od hiszpańskiego tilde, z łacińskiego titulus („tytuł” albo „nadpisanie”), a jej historia zaczyna się od średniowiecznych skrybów: mała falista kreska napisana nad literą oznaczała pominięte „n” albo „m”, oszczędzając kosztowny pergamin i atrament. Ten skrót to dokładnie powód, dla którego w hiszpańskim istnieje ñ — skrybowie pisali pojedyncze „n” ze znaczkiem nad nim, by oznaczyć podwojone „nn”. Ten znak diakrytyczny przetrwał do dziś jako łącząca tylda (◌̃, U+0303), inny znak niż samodzielna mała tylda (˜, U+02DC) i niż zwykła klawiaturowa ~. Bywa też regularnie mylona ze znakami matematycznymi, do których jest podobna: operator tyldy ∼ (U+223C, „podobne do”) i znak prawie równości ≈ (U+2248) to osobne znaki Unicode, a nie zwykła tylda ASCII.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/tylda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "tylda",
+      "label": "Tylda",
+      "h2": "Tylda ~ i Jej Podobizny",
+      "intro": "Trzy osobne znaki Unicode, które ludzie nazywają „tyldą” — klawisz na klawiaturze, samodzielny modyfikator odstępu oraz łączący znak diakrytyczny osadzony nad literą.",
+      "symbols": [
+        { "char": "~", "label": "Tylda (U+007E) — Klawisz Klawiaturowy" },
+        { "char": "˜", "label": "Mała Tylda (U+02DC) — Samodzielny Modyfikator Odstępu" },
+        { "char": "̃", "label": "Łącząca Tylda (U+0303) — Osadzona nad Literą" }
+      ]
+    },
+    {
+      "id": "litery-z-tylda",
+      "label": "Litery z Tyldą",
+      "h2": "Litery Niosące Tyldę",
+      "intro": "Łącząca tylda w akcji. Hiszpańskie ñ oraz portugalskie ã i õ to codzienni spadkobiercy skróconego zapisu pominiętego „n” przez skrybów.",
+      "symbols": [
+        { "char": "ñ", "label": "Mała Litera N z Tyldą (U+00F1)" },
+        { "char": "Ñ", "label": "Wielka Litera N z Tyldą (U+00D1)" },
+        { "char": "ã", "label": "Mała Litera A z Tyldą (U+00E3)" },
+        { "char": "õ", "label": "Mała Litera O z Tyldą (U+00F5)" }
+      ]
+    },
+    {
+      "id": "tyldy-matematyczne",
+      "label": "Tyldy Matematyczne",
+      "h2": "Tyldy Matematyczne: Podobne Do i Prawie Równe",
+      "intro": "W równaniach tylda oznacza „podobne do” albo „w przybliżeniu”, ale prawdziwe znaki matematyczne to własne znaki Unicode — nie ta sama tylda ASCII, którą ludzie zwykle wpisują zamiast nich.",
+      "symbols": [
+        { "char": "∼", "label": "Operator Tyldy (U+223C) — „Podobne Do”" },
+        { "char": "≈", "label": "Prawie Równe (U+2248) — „W Przybliżeniu Równe”" },
+        { "char": "≅", "label": "W Przybliżeniu Równe (U+2245)" },
+        { "char": "≃", "label": "Asymptotycznie Równe (U+2243)" },
+        { "char": "~", "label": "Tylda (U+007E) — Znak ASCII Wpisywany Zamiast Nich" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "Tylda, grawis, ampersand i reszta znaków interpunkcyjnych na standardowej klawiaturze, gotowe do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Prawie równe, podobne do i operatory oraz relacje wypełniające równanie obok tyldy."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Accent Marks & Diacritics",
+      "desc": "Łącząca tylda nad ñ i ã, plus akuty, grawisy, umlauty i inne znaki osadzane nad literą."
+    }
+  ]
+}

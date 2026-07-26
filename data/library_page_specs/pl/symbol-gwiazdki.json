@@ -1,0 +1,86 @@
+{
+  "slug": "symbol-gwiazdki",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Gwiazdki: Skopiuj * ⁂ ✱ — Znak Przypisu, Który Stał się Symbolem Wieloznacznym i Cenzurą",
+  "meta_description": "Skopiuj gwiazdkę (*), asteryzm ⁂ i pogrubioną ✱ — znak przypisu, który obsługuje też wyszukiwanie wieloznaczne i cenzuruje przekleństwa. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-gwiazdki/",
+  "breadcrumb": "Symbol Gwiazdki",
+  "hero_h1": "Symbol Gwiazdki (*)",
+  "hero_tagline": "Gwiazdka (*) używana do przypisów, znak wieloznaczny * dopasowujący cokolwiek w wyszukiwaniu i kodzie, oraz cenzurująca gwiazdka w k***a — plus jej typograficzni kuzyni, jak trójkątny asteryzm ⁂. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Gwiazdka (*, Unicode U+002A) to znaczek w kształcie gwiazdy dzielący klawisz z cyfrą 8, a jej nazwa pochodzi wprost ze starogreckiego asteriskos, „mała gwiazda” — zdrobnienia od astēr, „gwiazda”. To jeden z najstarszych znaków redakcyjnych w tradycji zachodniej: aleksandryjski uczony Arystarch z Samotraki (ok. 220–143 p.n.e.) używał asteriskosu w swoich wydaniach Homera, by oznaczyć wersy, które uważał za powtórzone gdzie indziej, a teolog Orygenes umieszczał go później w swojej Hexapli, by zaznaczyć tekst obecny w hebrajskim, a nieobecny w greckim. Dziś ten sam glif wykonuje trzy bardzo różne zadania: to klasyczny znak przypisu, kierujący czytelnika do notatki u dołu strony, to znak wieloznaczny dopasowujący cokolwiek w wyszukiwaniu plików, wzorcach glob i SQL-owym SELECT *, oraz domyślny zamiennik cenzurujący litery, które ktoś woli zagwiazdkować, jak w k***a. Typografia trzyma wokół niej całą rodzinę krewnych — ASTERISM ⁂ (U+2042) układa trzy gwiazdki w trójkąt jako znak podziału sekcji, HEAVY ASTERISK ✱ (U+2731) i EIGHT SPOKED ASTERISK ✳ (U+2733) to śmielsze formy wyświetlania, a ASTERISK OPERATOR ∗ (U+2217) to matematyczny glif mnożenia. Żaden z nich nie jest ozdobnym kształtem gwiazdy — czarną gwiazdą ★ (U+2605) ani żółtym emoji gwiazdy ⭐ (U+2B50) — które należą do innego, ozdobnego rejestru.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-gwiazdki/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "gwiazdka",
+      "label": "Gwiazdka",
+      "h2": "Gwiazdka i Jej Warianty Wyświetlania",
+      "intro": "Zwykła klawiaturowa gwiazdka plus śmielsze formy wyświetlania i operator matematyczny. Każda gotowa do wklejenia.",
+      "symbols": [
+        { "char": "*", "label": "Gwiazdka (U+002A) — Przypis, Znak Wieloznaczny i Cenzura" },
+        { "char": "✱", "label": "Pogrubiona Gwiazdka (U+2731)" },
+        { "char": "✳", "label": "Gwiazdka Ośmioramienna (U+2733)" },
+        { "char": "∗", "label": "Operator Gwiazdki (U+2217) — Matematyczny Glif Mnożenia" },
+        { "char": "＊", "label": "Gwiazdka Pełnej Szerokości (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asteryzm-i-znaki-redakcyjne",
+      "label": "Asteryzm i Znaki Redakcyjne",
+      "h2": "Asteryzm i Znaki Podziału Sekcji",
+      "intro": "Znaki redakcyjne zbudowane z gwiazdki — trójkątny asteryzm dzielący sekcje, plus jego skumulowani i obniżeni kuzyni.",
+      "symbols": [
+        { "char": "⁂", "label": "Asteryzm (U+2042) — Trzy Gwiazdki w Trójkącie" },
+        { "char": "⁑", "label": "Dwie Gwiazdki Ułożone Pionowo (U+2051)" },
+        { "char": "⁎", "label": "Niska Gwiazdka (U+204E)" }
+      ]
+    },
+    {
+      "id": "gwiazdy-mylone",
+      "label": "Gwiazdy Mylone z Gwiazdką",
+      "h2": "Kształty Gwiazd Mylone z Gwiazdką",
+      "intro": "Glify w kształcie gwiazdy, po które ludzie sięgają, mając na myśli gwiazdkę. To ozdobne gwiazdy — rejestr dekoracyjny, a nie narzędzie przypisu czy interpunkcji.",
+      "symbols": [
+        { "char": "★", "label": "Czarna Gwiazda (U+2605)" },
+        { "char": "☆", "label": "Biała Gwiazda (U+2606)" },
+        { "char": "⭐", "label": "Biała Gwiazda Średnia (U+2B50) — Żółte Emoji Gwiazdy" },
+        { "char": "✦", "label": "Czarna Gwiazdka Czteroramienna (U+2726)" },
+        { "char": "✧", "label": "Biała Gwiazdka Czteroramienna (U+2727)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-punktowania/",
+      "title": "Symbole Punktowania",
+      "desc": "Kreski, nawiasy, cudzysłowy i codzienna rodzina interpunkcyjna, do której należy gwiazdka."
+    },
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "Gwiazdka, ampersand, hasz i reszta symboli wydrukowanych na rzędach Twojej klawiatury."
+    },
+    {
+      "href": "/pl/symbol/symbol-gwiazdy/",
+      "title": "Symbol Gwiazdy (★)",
+      "desc": "Ozdobna gwiazda ★ i żółte emoji gwiazdy ⭐ — dekoracyjni kuzyni, z którymi ludzie mylą gwiazdkę."
+    },
+    {
+      "href": "/pl/symbol/znak-paragrafu/",
+      "title": "Znak Paragrafu (§)",
+      "desc": "Znak paragrafu — kolejny redakcyjny symbol bliski przypisom, ze świata druku."
+    }
+  ]
+}

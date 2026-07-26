@@ -1,0 +1,93 @@
+{
+  "slug": "znak-dolara",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Dolara ($): Skopiuj — Najbardziej Rozpoznawalny Symbol Waluty na Ziemi",
+  "meta_description": "Skopiuj znak dolara ($, U+0024) — najbardziej rozpoznawalny symbol waluty na świecie, jego sporne pochodzenie od hiszpańskiego peso i wariant cifrão. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-dolara/",
+  "breadcrumb": "Znak Dolara",
+  "hero_h1": "Znak Dolara ($)",
+  "hero_tagline": "Najbardziej rozpoznawalny symbol waluty na Ziemi — a historycy wciąż nie potrafią się w pełni zgodzić, skąd się wziął. Kliknij, aby skopiować od razu.",
+  "intro": "$ to jedyny większy symbol waluty, który od razu siedzi na każdej standardowej klawiaturze — Shift+4 w układzie US, bez kodu Alt czy klawisza Option. To też czyni go tu wyjątkiem: każdy inny walutowy znak na tej stronie (€, £, ¥, ₹, ¢) istnieje częściowo po to, by wyjaśnić, jak wpisać znak, którego nie ma na klawiaturze. Historia dolara jest inna — i można powiedzieć, że dziwniejsza. Mimo że jest wpisywany miliardy razy dziennie, dokładnie to, skąd wziął się kształt tego glifu, wciąż jest, jak pisze Britannica, „przedmiotem sporu”.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/dollar-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-dolara/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/dollar-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-dolara",
+      "label": "Dolar",
+      "h2": "Znak Dolara",
+      "intro": "Sam znak, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara (U+0024)" }
+      ]
+    },
+    {
+      "id": "sporna-historia",
+      "label": "Sporna Historia",
+      "h2": "Skąd Naprawdę Pochodzi Znak Dolara",
+      "intro": "Popularny mit głosi, że $ to „U” nałożone na „S”, skrót od „United States” — dobra historia, którą Ayn Rand wpisała nawet do „Atlasa Zbuntowanego” w 1957 roku, ale nieprawdziwa. Historyk matematyki Florian Cajori obalił ją w 1929 roku w „A History of Mathematical Notations”, po przejrzeniu XVIII-wiecznych rękopisów, w których znak $ był już w regularnym użyciu na lata przed powstaniem Stanów Zjednoczonych. Wiodąca alternatywa, popierana przez amerykańskie Biuro Grawerowania i Druku, wywodzi $ od „Ps” — odręcznego skrótu, którego handlowcy używali dla hiszpańskiego peso (słynnego „piece of eight”, dominującego w XVIII-wiecznym handlu amerykańskim i karaibskim). Urzędnicy pisali wielkie P z małym S unoszącym się nad nim; pisane wystarczająco szybko i wielokrotnie, pętla P zapada się na S, zostawiając jedną lub dwie pionowe kreski przez literę. Najwcześniejsze potwierdzone użycie w rękopisie datuje się na lata 70. XVIII wieku, w księgach angielsko-amerykańskich kupców handlujących z hiszpańską Ameryką. Jeden szczególnie czysty przykład: dziennik nowojorskiego pamiętnikarza z 1776 roku, zbadany przez Cajoriego, wypisuje słowo „dollar” w pełnym brzmieniu każdego dnia od 10 czerwca do 20 sierpnia — po czym 21 sierpnia 1776 roku przechodzi na znak $ i już do słowa nie wraca. Drugą, słabszą teorię wiąże się z dwoma Słupami Herkulesa wybitymi na hiszpańskich monetach „pillar dollar”, każdy owinięty wstęgą w kształcie S z napisem Plus Ultra. To realna, uznawana przez historyków teoria — ale Britannica wprost stwierdza, że „istnieje niewiele dowodów” na to, że stąd rzeczywiście wziął się symbol, poza przelotnym podobieństwem wizualnym. Pisany znak trafił do druku zaskakująco późno względem swojego użycia w rękopisach: najwcześniejszy znany drukowany znak dolara datuje się na 1797 rok, odlany czcionką przez filadelfijskiego odlewnika Archibalda Binny'ego, a znak nie stał się powszechny w druku przed 1800 rokiem.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara — Rękopisy od Lat 70. XVIII Wieku, Druk od 1797 Roku" }
+      ]
+    },
+    {
+      "id": "cifrao",
+      "label": "Jedna Kreska czy Dwie?",
+      "h2": "Cifrão — Prawdziwy Wariant, Nie Osobny Znak",
+      "intro": "Przyjrzyj się starym dokumentom walutowym, a znajdziesz dwie formy: jedną pionową kreskę przez S i podwójną kreskę. Obie są oryginalne — ten sam dziennik z 1776 roku zbadany przez Cajoriego pokazuje 11 znaków jednokreskowych obok 3 dwukreskowych, zapisanych tą samą ręką w tym samym roku. Forma dwukreskowa zyskała z czasem własną nazwę i drugie życie: po portugalsku nazywa się cifrão i ma własną historię w walucie brazylijskiej i portugalskiej. Unicode nie nadaje jednak cifrão osobnego punktu kodowego — obie formy dzielą U+0024, a to, którą zobaczysz, zależy wyłącznie od wyboru stylistycznego czcionki.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara — Forma Jednokreskowa lub Dwukreskowa (Cifrão), Ten Sam U+0024" }
+      ]
+    },
+    {
+      "id": "poza-waluta",
+      "label": "Poza Walutą",
+      "h2": "Dlaczego $ Pojawia się Poza Cenami",
+      "intro": "$ to jeden z najbardziej przeciążonych znaków w informatyce, właśnie dlatego, że to zwykły ASCII: PHP i Bash używają go jako prefiksu każdej zmiennej ($nazwa, $HOME), wyrażenia regularne używają go jako kotwicy końca linii, a jQuery uczyniło $ swoim globalnym aliasem funkcji. Nic z tego nie ma związku z walutą — to po prostu wyrazisty, łatwy do wpisania symbol, po który projektanci języków chętnie sięgali. Ten sam odruch widać w brandingu: stylizowanie nazwy znakiem $ zamiast litery S to celowy, rozpoznawalny zabieg — Ke$ha, A$AP Rocky i Ty Dolla $ign przyjęli go jako sygnaturę pseudonimu, świadomie wykorzystując skojarzenie z walutą.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara — Prefiks Zmiennej w PHP i Bash" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Mylone",
+      "h2": "Symbole w Pobliżu Znaku Dolara",
+      "intro": "Osobne znaki Unicode, które wyglądają na powiązane z $ albo dzielą jego walutowy kontekst — każdy to własny punkt kodowy, nie wariant stylistyczny.",
+      "symbols": [
+        { "char": "¢", "label": "Znak Centa (U+00A2) — jedna setna dolara" },
+        { "char": "¤", "label": "Ogólny Znak Waluty (U+00A4) — placeholder, nie konkretna waluta" },
+        { "char": "₱", "label": "Znak Peso Filipińskiego (U+20B1) — współczesna waluta wywodząca się z tego samego „peso”, które dało nazwę $" },
+        { "char": "＄", "label": "Znak Dolara Pełnej Szerokości (U+FF04) — szeroka forma używana w składzie japońskim/chińskim/koreańskim" },
+        { "char": "💲", "label": "Emoji Ciężkiego Znaku Dolara (U+1F4B2) — kolorowe emoji, nie zwykły tekstowy znak $" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro (€)",
+      "desc": "Symbol waluty zaprojektowany celowo w 1996 roku."
+    },
+    {
+      "href": "/pl/symbol/znak-funta/",
+      "title": "Znak Funta (£)",
+      "desc": "Ponad tysiąc lat historii, wywodzący się z łacińskiego libra."
+    },
+    {
+      "href": "/pl/symbol/znak-centa/",
+      "title": "Znak Centa (¢)",
+      "desc": "Jeden z popularnych symboli walut bez dedykowanego klawisza na klawiaturze."
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "maca-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Maça Sembolü: Kopyala Yapıştır ♠ ♤ — Kürekten Değil Kılıçtan Adını Alan Takım",
+  "meta_description": "Maça sembolünü kopyala yapıştır — dolu ♠ (U+2660) ve anahat ♤ (U+2664) — takımın kılıçtan gelen adını ve vergi damgalı Maça Ası'nı öğren. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/maca-sembolu/",
+  "breadcrumb": "Maça Sembolü",
+  "hero_h1": "Maça Sembolü",
+  "hero_tagline": "Her iki Unicode biçiminde maça takımı — dolu ♠ (U+2660) ve içi boş ♤ (U+2664) — adı kılıç takımından gelen ve Maça Ası'nın bir zamanlar Britanya'nın resmi vergi damgasını taşıdığı iskambil sembolü. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Maça — dolu hâlde ♠ (U+2660, BLACK SPADE SUIT), anahat hâlinde ♤ (U+2664, WHITE SPADE SUIT) — standart Fransız takımlı destenin dört takımından biridir; 1993'te Unicode 1.1'e kupa, karo ve sinekle birlikte eklenmiştir, sekiz takım glifi U+2660'tan U+2667'ye kadar yer kaplar. Adı küçük bir tarih dersidir: \"maça\" (spade), kazma aletinden değil, daha eski Latin takımlı destelerin takımı olan \"kılıç\" anlamındaki İspanyolca espada ve İtalyanca spada'dan gelir. Fransız kart yapımcıları 15. yüzyılın ikinci yarısında dört takımlı sistemi standartlaştırdığında, kılıcı bildiğimiz sade siyah yaprak biçimine yeniden çizdiler — iki renkle ucuza şablonlanabilen bir tasarım, bu yüzden Fransız deste daha sonra Avrupa'yı sel gibi kapladı ve İngiltere'ye ulaştı. Unicode'un kuralında \"siyah\" dolu, \"beyaz\" ise anahat demektir, gerçek renk yazı tipine bırakılır, bu yüzden her takım için aynı dolu/anahat çifti vardır. Maça Ası, destenin en zengin folklorunu taşır: İngiltere'de 1712'den itibaren resmi vergi damgasını, 1765'ten sonra ise Damga Ofisi'nin bastığı süslü işlemeli bir tasarımı taşıdı — bugünün süslü asının atası.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "spade-symbol",
+      "label": "Maça Sembolü",
+      "h2": "Maça Sembolü — ♠ ve ♤",
+      "intro": "Takımın kendisi, her iki Unicode biçiminde. Dolu ♠ varsayılan \"siyah\" maçadır; ♤ anahat \"beyaz\" biçimdir, ♠️ ise bir varyant seçiciyle emoji-sunum biçimidir. Her yere yapıştırılmaya hazır.",
+      "symbols": [
+        {
+          "char": "♠",
+          "label": "Black Spade Suit (U+2660) — Dolu / Katı"
+        },
+        {
+          "char": "♤",
+          "label": "White Spade Suit (U+2664) — Anahat"
+        },
+        {
+          "char": "♠️",
+          "label": "Spade Suit Emoji (U+2660 U+FE0F)"
+        }
+      ]
+    },
+    {
+      "id": "all-four-suits",
+      "label": "Dört Takımın Tamamı",
+      "h2": "Dört Takımın Tamamı — Dolu ve Anahat",
+      "intro": "Unicode, her Fransız takıma dolu bir \"siyah\" ve anahat bir \"beyaz\" glif verir; U+2660'tan U+2667'ye tek bir dizide sıkışmıştır. Bir tuhaflığa dikkat: maça ve sinek varsayılan olarak doludur, kupa ve karo ise varsayılan olarak anahattır.",
+      "symbols": [
+        {
+          "char": "♠",
+          "label": "Black Spade Suit (U+2660)"
+        },
+        {
+          "char": "♥",
+          "label": "Black Heart Suit (U+2665)"
+        },
+        {
+          "char": "♦",
+          "label": "Black Diamond Suit (U+2666)"
+        },
+        {
+          "char": "♣",
+          "label": "Black Club Suit (U+2663)"
+        },
+        {
+          "char": "♤",
+          "label": "White Spade Suit (U+2664)"
+        },
+        {
+          "char": "♡",
+          "label": "White Heart Suit (U+2661)"
+        },
+        {
+          "char": "♢",
+          "label": "White Diamond Suit (U+2662)"
+        },
+        {
+          "char": "♧",
+          "label": "White Club Suit (U+2667)"
+        }
+      ]
+    },
+    {
+      "id": "ace-and-cards",
+      "label": "As ve İskambil Kağıtları",
+      "h2": "Maça Ası ve İskambil Kağıdı Glifleri",
+      "intro": "Destenin en efsanevi kağıdı: İngiltere, Maça Ası'nı 1712'den itibaren bir vergi damgasıyla damgaladı, 1765'ten sonra süslü Damga Ofisi tasarımını bastı, geniş çapta tekrarlanan (ve çokça tartışılan) bir savaş dönemi hikâyesine göre de ABD birlikleri Vietnam'da bunu bir \"ölüm kartı\" olarak kullandı. Unicode'un Playing Cards bloğu her kağıda kendi glifini verir — işte dört as ve kağıdın arkası.",
+      "symbols": [
+        {
+          "char": "🂡",
+          "label": "Playing Card Ace of Spades (U+1F0A1)"
+        },
+        {
+          "char": "🂱",
+          "label": "Playing Card Ace of Hearts (U+1F0B1)"
+        },
+        {
+          "char": "🃁",
+          "label": "Playing Card Ace of Diamonds (U+1F0C1)"
+        },
+        {
+          "char": "🃑",
+          "label": "Playing Card Ace of Clubs (U+1F0D1)"
+        },
+        {
+          "char": "🂠",
+          "label": "Playing Card Back (U+1F0A0)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "İskambil Takım Sembolleri",
+      "desc": "Dört iskambil takımının tamamı — maça, kupa, karo ve sinek — dolu ve anahat biçimlerinde, göz atılabilir ve kopyalanabilir."
+    },
+    {
+      "href": "/library/dice-domino-symbols/",
+      "title": "Zar, Domino ve Mahjong Sembolleri",
+      "desc": "Masa oyunu setinin geri kalanı: zar yüzleri, domino taşları ve mahjong Unicode oyun sembolleri."
+    },
+    {
+      "href": "/tr/symbol/kalp-sembolu/",
+      "title": "Kalp Sembolü (♥)",
+      "desc": "Bir kardeş takım: aynı U+2660–U+2667 dizisinden, dolu ♥ ve anahat ♡ Unicode biçimlerinde kalp."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/maca-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/spade-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

@@ -1,0 +1,74 @@
+{
+  "lang": "es",
+  "slug": "signo-de-menor-o-igual-que",
+  "page_type": "symbol",
+  "title": "Signo de Menor o Igual Que: Copiar y Pegar ≤ — Significado, Código Alt y LaTeX",
+  "meta_description": "Copia y pega el signo de menor o igual que ≤ (U+2264) — Alt+243, el comando \\leq de LaTeX, su entidad HTML y los parecidos confundibles ≦ ⩽ ≲. Haz clic para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/signo-de-menor-o-igual-que/",
+  "breadcrumb": "Signo de Menor o Igual Que",
+  "hero_h1": "Signo de Menor o Igual Que (≤)",
+  "hero_tagline": "El ≤ al que recurres cuando un valor puede ser menor que otro o exactamente igual a él — Alt+243 en Windows, \\leq en LaTeX y &le; en HTML. Haz clic para copiarlo al instante.",
+  "intro": "El signo de menor o igual que (≤, U+2264) combina el signo de menor que con una barra horizontal debajo, mostrando que un valor puede ser menor que otro o exactamente igual a él — la relación detrás de todo, desde las desigualdades más simples hasta los intervalos cerrados del cálculo. A diferencia de los signos estrictos < y >, que el matemático inglés Thomas Harriot introdujo en 1631, el par combinado ≤/≥ es un refinamiento posterior: al matemático francés Pierre Bouguer se le atribuye generalmente haberlo introducido en 1734, en su ensayo sobre la gradación de la luz. El ASCII nunca reservó una casilla propia para ≤, razón por la que casi cualquier lenguaje de programación recurre en su lugar a los dos caracteres <= en vez del glifo Unicode único.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/signo-de-menor-o-igual-que/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "menor-o-igual-que",
+      "label": "Menor o Igual Que",
+      "h2": "Menor o Igual Que, en Matemáticas y en Código",
+      "intro": "El símbolo matemático, y el sustituto de dos caracteres que usan la mayoría de los lenguajes de programación en su lugar, ya que ≤ nunca formó parte del ASCII.",
+      "symbols": [
+        { "char": "≤", "label": "Menor o Igual Que (Matemáticas)" },
+        { "char": "<=", "label": "Menor o Igual Que (Código — C, Python, JavaScript, Java, SQL)" }
+      ]
+    },
+    {
+      "id": "parecidos-confundibles",
+      "label": "Parecidos Confundibles",
+      "h2": "Símbolos que se Confunden con ≤",
+      "intro": "Todos significan aproximadamente lo mismo, pero son caracteres Unicode distintos de tradiciones tipográficas diferentes.",
+      "symbols": [
+        { "char": "≦", "label": "Menor Que sobre Igual A (U+2266)" },
+        { "char": "⩽", "label": "Menor o Igual Que Inclinado (U+2A7D) — la forma preferida por la norma ISO 31-11" },
+        { "char": "≲", "label": "Menor o Equivalente A (U+2272)" },
+        { "char": "≪", "label": "Mucho Menor Que (U+226A) — una relación distinta, no una variante de ≤" }
+      ]
+    },
+    {
+      "id": "simbolos-de-comparacion-relacionados",
+      "label": "Símbolos de Comparación Relacionados",
+      "h2": "Símbolos de Comparación Relacionados",
+      "intro": "El resto de símbolos de relación con los que ≤ se combina en desigualdades y notación de conjuntos.",
+      "symbols": [
+        { "char": "≥", "label": "Mayor o Igual Que (U+2265)" },
+        { "char": "<", "label": "Menor Que" },
+        { "char": ">", "label": "Mayor Que" },
+        { "char": "≠", "label": "Signo de Diferente" },
+        { "char": "=", "label": "Signo Igual" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Operadores, notación de conjuntos y constantes matemáticas en una sola referencia explorable."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-diferente/",
+      "title": "Signo de Diferente (≠)",
+      "desc": "Usado por Euler, dejado fuera del ASCII, y por qué el código usa != en su lugar."
+    },
+    {
+      "href": "/es/symbol/signos-de-menor-y-mayor/",
+      "title": "Menor Que y Mayor Que",
+      "desc": "Los símbolos de comparación estrictos con los que se construyen ≤ y ≥, y por qué pueden romper el HTML."
+    }
+  ]
+}

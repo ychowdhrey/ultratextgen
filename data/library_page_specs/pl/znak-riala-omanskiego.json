@@ -1,0 +1,72 @@
+{
+  "slug": "znak-riala-omanskiego",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Riala Omańskiego: Skopiuj ⃄ — Nowy Symbol Waluty Omanu, Zamrożony do Publikacji w Unicode 18.0",
+  "meta_description": "Znak riala omańskiego (⃄, U+20C4) przedstawił Bank Centralny Omanu w listopadzie 2025 roku i jest zamrożony do publikacji w Unicode 18.0, spodziewanej we wrześniu 2026 roku — wciąż bez żadnej klawiatury. Oto jego projekt, historia i status.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-riala-omanskiego/",
+  "breadcrumb": "Znak Riala Omańskiego",
+  "hero_h1": "Znak Riala Omańskiego",
+  "hero_tagline": "Oficjalny symbol waluty Omanu, zaprezentowany w Narodowe Święto 2025 roku i zamrożony do publikacji w Unicode 18.0 — zatwierdzony, ale wciąż przed jakąkolwiek klawiaturą czy czcionką.",
+  "intro": "Znak riala omańskiego (⃄, U+20C4) to oficjalny symbol waluty Banku Centralnego Omanu, przedstawiony publicznie 19 listopada 2025 roku, w terminie zbieżnym z Narodowym Świętem Omanu. Jego projekt zbudowano ze stylizowanych liter arabskich — ʿajn (ع) i rāʾ (ر), pierwszej i trzeciej litery słowa „rial” — przekreślonych dwiema liniami, w stylu wspólnym dla wielu współczesnych znaków walut. Gubernator Banku Centralnego, Ahmed bin Jafar Al-Musallami, przedstawił to przyjęcie jako strategiczny krok wzmacniający pozycję Omanu jako regionalnego centrum finansowego oraz ułatwiający rozpoznawanie riala na platformach międzynarodowych, handlowych i cyfrowych. Znak zgłoszono do zakodowania w Unicode razem ze znakami dirhama ZEA i rufiji malediwskiej, a w chwili pisania tego tekstu nosi w dokumentacji potoku prac Unicode status „white” — zamrożony do publikacji, oczekujący już tylko na zatwierdzenie ISO, z finalną publikacją spodziewaną razem z resztą Unicode 18.0 we wrześniu 2026 roku. Żaden system operacyjny, czcionka ani klawiatura nie oferuje obecnie natywnego wsparcia. Jedyną praktyczną opcją dostępną już dziś jest moduł oprogramowania biznesowego (aplikacja Odoo ERP), który osadza czcionkę renderującą ten znak dla firm potrzebujących go już teraz — węższy, bardziej utylitarny odpowiednik narzędzi open source zbudowanych już wokół znaku dirhama ZEA.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-riala-omanskiego/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-riala-omanskiego",
+      "label": "Znak Riala Omańskiego",
+      "h2": "Znak Riala Omańskiego",
+      "intro": "Sam potwierdzony znak — możliwy do skopiowania już dziś jako punkt kodowy, mimo że żadna czcionka jeszcze go natywnie nie wyświetla.",
+      "symbols": [
+        { "char": "⃄", "label": "Znak Riala Omańskiego (U+20C4, zamrożony do publikacji)" }
+      ]
+    },
+    {
+      "id": "inne-nowe-symbole-walut-zatoki",
+      "label": "Inne Nowe Symbole Zatoki",
+      "h2": "Inne Nowe Symbole Walut w Tej Edycji",
+      "intro": "Rial omański to nie jedyny nowy symbol waluty wydawany w Unicode 18.0 — dwie kolejne waluty otrzymały własne znaki w tej samej becie.",
+      "symbols": [
+        { "char": "⃃", "label": "Znak Dirhama ZEA (U+20C3)" },
+        { "char": "⃂", "label": "Znak Rufiji Malediwskiej (U+20C2)" }
+      ]
+    },
+    {
+      "id": "wersja-do-przodu",
+      "label": "Wersję Wcześniej",
+      "h2": "Symbol Waluty Zatoki, Który Wyszedł Wersję Wcześniej",
+      "intro": "Znak riala saudyjskiego przeszedł tę samą drogę całą wersję Unicode wcześniej — już finalny od Unicode 17.0, a nie tylko w becie.",
+      "symbols": [
+        { "char": "⃁", "label": "Znak Riala Saudyjskiego (U+20C1, finalny od Unicode 17.0)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Każdy światowy symbol waluty, który możesz już dziś skopiować i wkleić."
+    },
+    {
+      "href": "/pl/symbol/znak-dirhama/",
+      "title": "Znak Dirhama",
+      "desc": "Nowy symbol waluty ZEA, wydawany w tej samej becie Unicode 18.0."
+    },
+    {
+      "href": "/pl/symbol/znak-riala-saudyjskiego/",
+      "title": "Znak Riala Saudyjskiego",
+      "desc": "Symbol waluty Zatoki, który jest już finalny, jedną wersję Unicode wcześniej."
+    }
+  ]
+}

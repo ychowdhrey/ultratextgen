@@ -1,0 +1,64 @@
+{
+  "lang": "es",
+  "slug": "emoji-de-calendario",
+  "page_type": "symbol",
+  "title": "Emoji de Calendario (📅): Copiar y Pegar, Código y Por Qué Siempre Marca el 17 de Julio",
+  "meta_description": "El emoji de calendario 📅 (U+1F4C5) — código, cómo escribirlo y la verdadera razón por la que su fecha está congelada en el 17 de julio en Apple, Samsung, Google y la mayoría de plataformas.",
+  "canonical": "https://ultratextgen.com/es/symbol/emoji-de-calendario/",
+  "breadcrumb": "Emoji de Calendario",
+  "hero_h1": "Emoji de Calendario",
+  "hero_tagline": "La hoja de calendario 📅 — código, atajos alternativos de escritura, y la historia concreta de Apple detrás de que su fecha esté congelada en el 17 de julio en casi todas partes. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "📅 CALENDARIO (U+1F4C5) es la abreviatura de Unicode para fechas, plazos y planificación — una hoja de calendario arrancada, fijada por arriba. Si te fijas bien en la mayoría de plataformas, la fecha que muestra nunca cambia: está fijada en el 17 de julio, una decisión de diseño que se remonta a un anuncio de producto concreto de Apple y que más tarde dio origen a toda una festividad no oficial. Esta página identifica el glifo en sí — significado, código y cómo escribirlo — y después cubre la historia completa del 17 de julio, incluidas las plataformas que no la siguen.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/emoji-de-calendario/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "emoji-de-calendario-nucleo",
+      "label": "El Glifo",
+      "h2": "Emoji de Calendario",
+      "intro": "El glifo Unicode principal — una sola hoja de calendario arrancada.",
+      "symbols": [
+        { "char": "📅", "label": "Calendario (U+1F4C5)" }
+      ]
+    },
+    {
+      "id": "emoji-de-calendario-relacionados",
+      "label": "Emoji de Calendario Relacionados",
+      "h2": "Otros Emoji de Calendario con los que se Confunde",
+      "intro": "Dos glifos de calendario Unicode contiguos, cada uno representando un estilo distinto de calendario físico.",
+      "symbols": [
+        { "char": "📆", "label": "Calendario de Hojas (U+1F4C6)" },
+        { "char": "🗓️", "label": "Calendario de Espiral (U+1F5D3)" }
+      ]
+    },
+    {
+      "id": "grupo-de-planificacion-y-tiempo",
+      "label": "Grupo de Planificación y Tiempo",
+      "h2": "Emoji de Planificación y Tiempo Relacionados",
+      "intro": "Emoji que suelen aparecer junto a un calendario en contextos de programación y recordatorios.",
+      "symbols": [
+        { "char": "⏰", "label": "Despertador" },
+        { "char": "📌", "label": "Chincheta" },
+        { "char": "✅", "label": "Botón de Marca de Verificación" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Emoji de Objetos",
+      "desc": "Todo emoji de objeto ya codificado, incluido el conjunto completo de calendario y planificación."
+    },
+    {
+      "href": "/library/clock-time-symbols/",
+      "title": "Símbolos de Reloj y Tiempo",
+      "desc": "Esfera de reloj, alarma y emoji relacionados con el tiempo, explorables y listos para copiar y pegar."
+    }
+  ]
+}

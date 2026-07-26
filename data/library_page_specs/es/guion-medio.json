@@ -1,0 +1,75 @@
+{
+  "lang": "es",
+  "slug": "guion-medio",
+  "page_type": "symbol",
+  "title": "Guion Medio (–): Copiar y Pegar + el Guion de Rangos que Todos Escriben como un Guion Normal",
+  "meta_description": "Copia y pega el guion medio (–) para rangos como 1939–1945 y compuestos como el vuelo Nueva York–Londres — el guion de rangos sin tecla propia. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/guion-medio/",
+  "breadcrumb": "Guion Medio",
+  "hero_h1": "Guion Medio (–)",
+  "hero_tagline": "El guion medio (–) que une rangos de números y fechas — 1939–1945, páginas 10–20, de 9 a 17 h — y enlaces de dos partes como el vuelo Nueva York–Londres. Más largo que un guion, más corto que una raya, y el único signo sin tecla propia. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El guion medio (–, Unicode U+2013) es el guion de longitud intermedia que se sitúa entre el guion normal y la raya más larga — llamado «en dash» en inglés porque mide aproximadamente la mitad de una raya, más o menos el ancho de una N mayúscula. Cumple dos funciones principales: marca tramos y rangos (1939–1945, páginas 10–20, de 9 a 17 h, el número de mayo–septiembre) y une relaciones de dos partes y compuestos abiertos donde un guion normal se quedaría corto (el vuelo Nueva York–Londres, la fórmula «pre–Segunda Guerra Mundial» en textos en inglés). Como ningún teclado tiene una tecla dedicada al guion medio, se teclea constantemente por error como el guion normal (-, U+002D); para escribirlo correctamente se pulsa Opción+Guion en Mac o Alt+0150 en el teclado numérico de Windows, y el Autoformato de Microsoft Word convierte automáticamente un guion con espacios (palabra - palabra) en uno. Las guías de estilo no se ponen de acuerdo: el Chicago Manual of Style usa el guion medio para rangos (páginas 3–11), mientras que el Associated Press Stylebook no usa guiones medios en absoluto y compone los rangos con un guion normal. En español, esta marca se usa sobre todo en rangos numéricos y de fechas — la Real Academia Española no le reserva un papel editorial tan amplio como el que tiene la raya —, y se confunde igualmente con el guion tipográfico (‐, U+2010), el signo menos (−, U+2212) y la raya (—, U+2014).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/guion-medio/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+  ],
+  "sections": [
+    {
+      "id": "guion-medio",
+      "label": "Guion Medio",
+      "h2": "El Guion Medio y el Guion de Cifra",
+      "intro": "El guion medio para rangos y compuestos, más el guion de cifra — del mismo ancho, reservado para dígitos, para que las cifras se alineen bien en tablas y números de teléfono. Listo para pegar donde sea.",
+      "symbols": [
+        { "char": "–", "label": "Guion Medio (U+2013)" },
+        { "char": "‒", "label": "Guion de Cifra (U+2012)" }
+      ]
+    },
+    {
+      "id": "guiones-confundibles",
+      "label": "Guiones Confundibles",
+      "h2": "Guiones y Rayas con los que se Confunde",
+      "intro": "Las marcas por las que se intercambia el guion medio — cada una con su propio ancho, punto de código y función, desde el guion normal del teclado hasta la raya y el verdadero signo menos.",
+      "symbols": [
+        { "char": "—", "label": "Raya (U+2014)" },
+        { "char": "-", "label": "Guion (Teclado)" },
+        { "char": "‐", "label": "Guion (Tipográfico, U+2010)" },
+        { "char": "−", "label": "Signo Menos (U+2212)" },
+        { "char": "―", "label": "Barra Horizontal (U+2015)" }
+      ]
+    },
+    {
+      "id": "puntuacion-relacionada",
+      "label": "Marcas de Inciso",
+      "h2": "Marcas que un Guion Medio con Espacios Sustituye",
+      "intro": "En el uso británico, australiano y canadiense, un guion medio con espacios – como este – marca un inciso donde el inglés estadounidense cierra con una raya sin espacios; estas son las marcas junto a las que trabaja o a las que sustituye.",
+      "symbols": [
+        { "char": ",", "label": "Coma" },
+        { "char": ":", "label": "Dos Puntos" },
+        { "char": ";", "label": "Punto y Coma" },
+        { "char": "(", "label": "Paréntesis Izquierdo" },
+        { "char": ")", "label": "Paréntesis Derecho" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Símbolos de Raya y Guion",
+      "desc": "Guiones medios, rayas, guiones y signos menos alineados uno junto a otro con sus códigos en una sola referencia."
+    },
+    {
+      "href": "/es/library/simbolos-de-puntuacion/",
+      "title": "Símbolos de Puntuación",
+      "desc": "Rayas, comillas, corchetes y el resto de la puntuación cotidiana de Unicode, lista para copiar."
+    },
+    {
+      "href": "/es/symbol/raya/",
+      "title": "Raya (—)",
+      "desc": "La hermana más ancha del guion medio: la raya larga para pausas e incisos, con casi el doble de ancho y una función distinta."
+    }
+  ]
+}

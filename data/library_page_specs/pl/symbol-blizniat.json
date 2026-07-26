@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-blizniat",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Bliźniąt: Skopiuj ♊ — Bliźniacy, Którzy Nie Byli Sobie Równi",
+  "meta_description": "Skopiuj symbol zodiakalnych Bliźniąt (♊) i prawdziwy mit stojący za tym znakiem — Kastor i Polluks, bliźniaczy synowie Ledy, ale spłodzeni przez dwóch różnych ojców, jednego śmiertelnego i jednego nie. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-blizniat/",
+  "breadcrumb": "Symbol Bliźniąt",
+  "hero_h1": "Symbol Bliźniąt",
+  "hero_tagline": "Glif Bliźniąt (♊) to prosty kształt dwóch belek oznaczający „bliźniaków” — ale mit Kastora i Polluksa stojący za nim opowiada o bliźniakach, którzy wcale nie byli sobie równi: jeden był nieśmiertelny, drugi nie. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Bliźniąt (♊, U+264A) to dwie równoległe pionowe belki połączone u góry i u dołu — kształt przypominający rzymską cyfrę II, symbolizujący parę bliźniaków. Mit stojący za tym znakiem to Kastor i Polluks, Dioskurowie: bliźniaczy synowie Ledy, ale spłodzeni przez dwóch różnych ojców, co czyniło ich nierównymi w sposób, o którym większość opowieści milczy. Polluks, syn Zeusa, był nieśmiertelny; Kastor, syn śmiertelnego męża Ledy, nie był. Gdy Kastor zginął, Zeus pozwolił braciom dzielić się jego własną nieśmiertelnością, dzieląc ich czas między Olimp a podziemia, tak by żaden z nich nie musiał być trwale rozdzielony z drugim. Bliźnięta trwają od 21 maja do 20 czerwca, są rządzone przez Merkurego i są znakiem Powietrza o modalności zmiennej — znakiem kojarzonym z elastycznością i dwoistością.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/gemini-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-blizniat/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/gemini-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-blizniat",
+      "label": "Bliźnięta",
+      "h2": "Symbol Bliźniąt",
+      "intro": "Unicode'owy glif zodiakalnych Bliźniąt, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♊", "label": "Symbol Bliźniąt" },
+        { "char": "♊️", "label": "Symbol Bliźniąt (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Bliźniętom.",
+      "symbols": [
+        { "char": "☿", "label": "Merkury (Planeta Rządząca)" },
+        { "char": "🜁", "label": "Powietrze (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Bliźniąt (Strzelec).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♐", "label": "Strzelec (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-strzelca/",
+      "title": "Symbol Strzelca",
+      "desc": "Astrologiczne przeciwieństwo Bliźniąt, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/symbol/leo-symbol/",
+      "title": "Leo Symbol",
+      "desc": "Kolejny indywidualny znak zodiaku, z mitem o Lwie Nemejskim za jego glifem."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-omega",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Omega: Skopiuj Ω ω — i Znak Oma, z Którym Bywa Mylony",
+  "meta_description": "Skopiuj grecką literę omega (Ω ω) i dowiedz się, dlaczego elektryczny znak oma (U+2126) wygląda identycznie, ale to inny znak Unicode — realne, udokumentowane źródło błędów. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-omega/",
+  "breadcrumb": "Symbol Omega",
+  "hero_h1": "Symbol Omega",
+  "hero_tagline": "Ostatnia litera greckiego alfabetu (Ω, ω) — i powód, dla którego elektryczny znak „oma” dla rezystancji wygląda na ekranie dokładnie tak samo, będąc pod spodem zupełnie innym znakiem Unicode. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Omega (wielka Ω, mała ω) to 24. i ostatnia litera greckiego alfabetu — źródło znaczenia „koniec” (jak w noworocznym „Jam jest Alfa i Omega” z Apokalipsy, Ap 22:13) oraz litera stojąca za prędkością kątową (ω) i kątem bryłowym (Ω) w fizyce. To także sedno prawdziwej unikodowej osobliwości: elektryczny symbol oma (jednostki rezystancji) ma własny, osobny punkt kodowy, U+2126 OHM SIGN, który oficjalna baza znaków Unicode oznacza jako normalizujący się do — i „preferowany” jako — zwykła grecka omega (U+03A9). Te dwa znaki teoretycznie powinny być traktowane jak ten sam znak, ale często tak nie jest. Wynikły z tego realne błędy: udokumentowany problem konwersji w Pandoc obsługiwał oba znaki niespójnie, konwertując jeden do LaTeX-owego \\Omega, a na drugim zawodząc całkowicie, a na forach elektronicznych regularnie dyskutuje się o tym, że oba glify wyświetlają się nieco inaczej w zależności od czcionki i systemu.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/omega-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-omega/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omega-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "omega",
+      "label": "Omega",
+      "h2": "Omega — Wielka i Mała Litera",
+      "intro": "Sama grecka litera, w obu wersjach.",
+      "symbols": [
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega" },
+        { "char": "ω", "label": "Mała Grecka Litera Omega" }
+      ]
+    },
+    {
+      "id": "pomylka-ze-znakiem-oma",
+      "label": "Znak Oma",
+      "h2": "Pomyłka ze Znakiem Oma",
+      "intro": "Wyświetla się identycznie jak wielka omega powyżej, ale jest zakodowany jako osobny znak — plus jednostka elektryczna nazwana przez odwrócenie go do góry nogami.",
+      "symbols": [
+        { "char": "Ω", "label": "Znak Oma (Rezystancja Elektryczna, U+2126) — Wygląda jak Omega, Inny Punkt Kodowy" },
+        { "char": "℧", "label": "Znak Mho (Konduktancja Elektryczna) — „Ohm” Zapisany od Tyłu, Odwrócony do Góry Nogami" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Alfa, Omega i Powiązane Litery Greckie",
+      "intro": "Alfa otwiera grecki alfabet tak, jak omega go zamyka — plus dwie kolejne często wyszukiwane litery greckie.",
+      "symbols": [
+        { "char": "Α", "label": "Wielka Grecka Litera Alfa" },
+        { "char": "α", "label": "Mała Grecka Litera Alfa" },
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta" },
+        { "char": "Σ", "label": "Wielka Grecka Litera Sigma" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach."
+    },
+    {
+      "href": "/pl/symbol/symbol-sigma/",
+      "title": "Symbol Sigma",
+      "desc": "Litera stojąca za memem „sigma male” — i dlaczego wyprzedza ją pod względem popularności 🗿."
+    },
+    {
+      "href": "/symbol/micro-sign/",
+      "title": "Micro Sign",
+      "desc": "Ta sama pomyłka co oma z omegą — identyczna z grecką literą mu na ekranie, a jednak pod spodem to inny znak."
+    }
+  ]
+}

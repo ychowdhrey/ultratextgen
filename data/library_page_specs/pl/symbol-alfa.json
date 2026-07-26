@@ -1,0 +1,78 @@
+{
+  "slug": "symbol-alfa",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Alfa: Skopiuj Α α — Początek Sięgający Aż do Końca, Którym Jest Omega",
+  "meta_description": "Skopiuj symbol alfa — grecką literę Α α, która otwiera alfabet, „Alfę” z biblijnego „Ja Jestem Alfa i Omega” oraz znak cząstek alfa i alfy inwestycyjnej. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-alfa/",
+  "breadcrumb": "Symbol Alfa",
+  "hero_h1": "Symbol Alfa",
+  "hero_tagline": "Pierwsza litera greckiego alfabetu — wielkie Α i małe α — „Alfa” z frazy „Alfa i Omega”, oraz symbol stojący za cząstkami alfa, alfą inwestycyjną i nie tylko. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Alfa to pierwsza litera greckiego alfabetu — wielkie Α (U+0391) i małe α (U+03B1) — a tam, gdzie omega znaczy „koniec”, alfa zawsze oznaczała „początek”. Ten podwójny obraz jest starożytny i znany: w Nowym Testamencie Apokalipsa 22:13 głosi „Jam jest Alfa i Omega, Początek i Koniec, Pierwszy i Ostatni”, wykorzystując skrajne litery alfabetu jako metaforę pełni. Poza pismem świętym małe α wykonuje ciężką pracę naukową: „cząstka alfa” to jądro atomu helu — dwa protony i dwa neutrony — wyrzucane podczas rozpadu alfa, a α oznacza też stałą struktury subtelnej w fizyce i kąty w geometrii. W finansach „alfa” to zwrot, jaki inwestycja osiąga ponad swój benchmark, sformalizowany jako alfa Jensena przez ekonomistę Michaela Jensena w latach 60. XX wieku. Słowo przeniknęło nawet do kultury popularnej jako „samiec alfa” — zwrot zakorzeniony w połowie XX wieku w badaniach nad wilkami żyjącymi w niewoli, które badacz najściślej z nim kojarzony, David Mech, później publicznie odrzucił jako błędną interpretację tego, jak naprawdę żyją dzikie wilki.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/alpha-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-alfa/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/alpha-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-alfa",
+      "label": "Symbol Alfa",
+      "h2": "Symbol Alfa — Α i α",
+      "intro": "Sama grecka litera, w obu wersjach. Małe α to ta, o którą chodzi większości osób; niesie też wartość jeden w starożytnym greckim systemie liczbowym.",
+      "symbols": [
+        { "char": "Α", "label": "Wielka Grecka Litera Alfa (U+0391)" },
+        { "char": "α", "label": "Mała Grecka Litera Alfa (U+03B1)" }
+      ]
+    },
+    {
+      "id": "alfa-i-omega",
+      "label": "Alfa i Omega",
+      "h2": "Alfa i Omega — Początek i Koniec",
+      "intro": "Najsłynniejsze użycie tej litery: w parze z omegą, jako pierwsza i ostatnia litera greckiego alfabetu, metafora „wszystkiego od początku do końca” (Apokalipsa 22:13). Skopiuj tę parę skrajnych liter.",
+      "symbols": [
+        { "char": "α", "label": "Małe Alfa — „Początek”" },
+        { "char": "Ω", "label": "Wielka Omega — „Koniec”" },
+        { "char": "Α", "label": "Wielkie Alfa" },
+        { "char": "ω", "label": "Małe Omega" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Alfa otwiera alfabet; beta jest po niej kolejna, a to pozostałe litery greckie wyszukiwane najczęściej.",
+      "symbols": [
+        { "char": "β", "label": "Mała Grecka Litera Beta" },
+        { "char": "Σ", "label": "Wielka Grecka Litera Sigma" },
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta" },
+        { "char": "π", "label": "Mała Grecka Litera Pi" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/symbol-omega/",
+      "title": "Symbol Omega",
+      "desc": "Druga połowa alfy: „Jam jest Alfa i Omega, Początek i Koniec”. Ostatnia litera alfabetu i znak oma, z którym bywa mylona."
+    },
+    {
+      "href": "/pl/symbol/symbol-sigma/",
+      "title": "Symbol Sigma",
+      "desc": "Kolejna pojedyncza grecka litera, której sława wykroczyła poza alfabet — znak sumowania w matematyce, mem „sigma male” w internecie."
+    }
+  ]
+}

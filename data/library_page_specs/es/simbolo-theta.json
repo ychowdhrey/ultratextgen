@@ -1,0 +1,80 @@
+{
+  "lang": "es",
+  "slug": "simbolo-theta",
+  "page_type": "symbol",
+  "title": "Símbolo Theta: Copiar y Pegar θ Θ ϑ — la «Letra de la Muerte» de la Antigua Grecia",
+  "meta_description": "Copia y pega el símbolo theta — la θ minúscula, la Θ mayúscula y la variante matemática de bucle abierto ϑ — la letra que los antiguos griegos marcaban en las papeletas para votar una sentencia de muerte. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/simbolo-theta/",
+  "breadcrumb": "Símbolo Theta",
+  "hero_h1": "Símbolo Theta",
+  "hero_tagline": "La θ minúscula que marca un ángulo en trigonometría, la Θ mayúscula de la notación Theta grande en complejidad algorítmica, y la variante matemática de bucle abierto ϑ — la misma letra que los atenienses clásicos grababan en una papeleta para votar la muerte. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Theta es la octava letra del alfabeto griego, y su glifo minúsculo θ (U+03B8, GREEK SMALL LETTER THETA) — un círculo atravesado por una barra horizontal — carga con una de las historias más oscuras de cualquier letra. En la Antigüedad clásica, theta era la «letra de la muerte»: representaba θάνατος (thánatos, «muerte»), y los jurados atenienses podían grabarla en una papeleta o un óstrakon para votar la condena o ejecución de un acusado, un uso tan tristemente célebre que se dice que el poeta romano Enio llamó a theta la letra más aciaga de todas. La forma mayúscula Θ (U+0398) y una variante distinta de bucle abierto, ϑ (U+03D1, GREEK THETA SYMBOL), completan la familia — ϑ es un glifo de estilo cursivo usado en parte de la composición tipográfica de física y matemáticas, no una letra aparte. Hoy el trabajo de theta es mucho más tranquilo: la θ minúscula es el símbolo estándar para un ángulo desconocido o medido en trigonometría y geometría, mientras que la Θ mayúscula da nombre a la notación Theta grande, la «cota ajustada» del análisis de algoritmos que Donald Knuth formalizó en su artículo de 1976 «Big Omicron and Big Omega and Big Theta». En el sistema numeral griego, theta también representa el número 9.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-theta/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "el-simbolo-theta",
+      "label": "El Símbolo Theta",
+      "h2": "El Símbolo Theta — θ, Θ y ϑ",
+      "intro": "Theta llega en tres glifos que la gente realmente pega: la θ minúscula cotidiana, la Θ mayúscula y la variante de bucle abierto ϑ reservada para matemáticas y física. Existe además una cuarta forma, mayúscula y barrada, puramente como símbolo matemático.",
+      "symbols": [
+        { "char": "θ", "label": "Letra Griega Theta Minúscula (U+03B8) — el Símbolo del Ángulo" },
+        { "char": "Θ", "label": "Letra Griega Theta Mayúscula (U+0398) — Notación Theta Grande" },
+        { "char": "ϑ", "label": "Símbolo Griego Theta (U+03D1) — la Variante Matemática de Bucle Abierto" },
+        { "char": "ϴ", "label": "Símbolo Griego Theta Mayúscula Barrada (U+03F4) — la Variante Barrada" }
+      ]
+    },
+    {
+      "id": "theta-en-matematicas",
+      "label": "Matemáticas y Ciencia",
+      "h2": "Theta en Matemáticas e Informática",
+      "intro": "Dos trabajos muy distintos comparten la letra. La θ minúscula es la opción habitual para nombrar un ángulo; la Θ mayúscula es la cota ajustada en el análisis de complejidad, situada entre la Big-O (cota superior) y la Big-Omega (cota inferior).",
+      "symbols": [
+        { "char": "θ", "label": "Theta Minúscula (U+03B8) — Ángulo en Trigonometría y Geometría" },
+        { "char": "Θ", "label": "Theta Mayúscula (U+0398) — Theta Grande, la Cota Ajustada" },
+        { "char": "Ω", "label": "Omega Mayúscula (U+03A9) — Omega Grande, la Hermana de Cota Inferior" },
+        { "char": "ϑ", "label": "Símbolo Theta (U+03D1) — la Variante Tipográfica de Física" }
+      ]
+    },
+    {
+      "id": "letras-griegas-relacionadas",
+      "label": "Letras Griegas",
+      "h2": "Letras Griegas Relacionadas",
+      "intro": "Theta es la octava letra del alfabeto griego. Estas son las vecinas que más se buscan y se copian junto a ella.",
+      "symbols": [
+        { "char": "Ω", "label": "Letra Griega Omega Mayúscula" },
+        { "char": "Δ", "label": "Letra Griega Delta Mayúscula" },
+        { "char": "π", "label": "Letra Griega Pi Minúscula" },
+        { "char": "α", "label": "Letra Griega Alfa Minúscula" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Símbolos de Letras Griegas",
+      "desc": "El alfabeto griego completo en mayúsculas, minúsculas y variantes matemáticas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Ángulos, operadores y las letras griegas como theta que completan una ecuación."
+    },
+    {
+      "href": "/es/symbol/simbolo-omega/",
+      "title": "Símbolo Omega",
+      "desc": "La hermana de theta en notación de complejidad: Θ es la cota ajustada, Ω la cota inferior en el análisis de algoritmos."
+    },
+    {
+      "href": "/es/symbol/simbolo-delta/",
+      "title": "Símbolo Delta",
+      "desc": "Otra letra griega con una intensa vida matemática propia: el cambio, la diferencia y el discriminante."
+    }
+  ]
+}

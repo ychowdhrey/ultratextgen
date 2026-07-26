@@ -1,0 +1,63 @@
+{
+  "slug": "plus-minus",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Cộng Trừ (±): Ý Nghĩa, Lịch Sử Và Cách Gõ",
+  "meta_description": "Ký hiệu cộng trừ ± (U+00B1) được giải thích — ý nghĩa của nó, cách gõ trên Windows/Mac, và sự khác biệt giữa ± và ảnh gương ∓.",
+  "canonical": "https://ultratextgen.com/vi/symbol/plus-minus/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Cộng Trừ",
+  "hero_h1": "Ký Hiệu Cộng Trừ (±)",
+  "hero_tagline": "± nghĩa là gì, cách gõ ra nó, và cách nó khác với ∓ — nhấp để sao chép ngay.",
+  "intro": "Ký hiệu ± bước vào ký hiệu toán học từ thế kỷ 16 và 17 như một cách gọn gàng để diễn đạt rằng một đại lượng có thể nhận một trong hai giá trị mà không cần viết ra cả hai trường hợp riêng biệt. Nó trở nên không thể thiếu một khi công thức nghiệm phương trình bậc hai được chuẩn hóa ở dạng hiện đại — x = (-b ± √(b² - 4ac)) / 2a — nơi một dấu ± duy nhất truyền đạt rằng có đúng hai nghiệm. Không giống hầu hết các toán tử toán học khác, vốn nằm trong khối Mathematical Operators chuyên dụng của Unicode, ± được mã hóa từ rất sớm (trong bộ ký tự Latin-1 có trước cả Unicode đầy đủ) đến mức nó nằm trong khối Latin-1 Supplement cạnh các chữ cái có dấu thông thường — phản ánh việc nó được cần đến phổ biến như thế nào trong in ấn nói chung, không chỉ trong các văn bản toán học chuyên sâu.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/plus-minus/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/plus-minus/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/plus-minus/" }
+  ],
+  "sections": [
+    {
+      "id": "plus-minus",
+      "label": "Cộng Trừ",
+      "h2": "Ký Hiệu Cộng Trừ",
+      "intro": "Ký hiệu cộng trừ và ảnh gương của nó, ký hiệu trừ cộng.",
+      "symbols": [
+        { "char": "±", "label": "Ký Hiệu Cộng Trừ (U+00B1)" },
+        { "char": "∓", "label": "Ký Hiệu Trừ Cộng (U+2213) — Dạng Ảnh Gương, Dùng Trong Các Biểu Thức Đi Cặp" }
+      ]
+    },
+    {
+      "id": "confusable",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Đừng Nhầm Lẫn Với",
+      "intro": "Ký hiệu này không thể thay thế cho ±.",
+      "symbols": [
+        { "char": "+", "label": "Dấu Cộng (U+002B) — không phải một cách thay thế; ± là một ký tự duy nhất, không phải + và - gõ cạnh nhau" }
+      ]
+    },
+    {
+      "id": "related",
+      "label": "Ký Hiệu Toán Học Liên Quan",
+      "h2": "Các Ký Hiệu Toán Học Khác",
+      "intro": "Các ký hiệu toán học khác thường xuất hiện cùng ± trong biểu thức và phương trình.",
+      "symbols": [
+        { "char": "√", "label": "Căn Bậc Hai" },
+        { "char": "÷", "label": "Dấu Chia" },
+        { "char": "∞", "label": "Vô Cực" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/square-root/", "title": "Căn Bậc Hai (√)", "desc": "Nguồn gốc năm 1525 và vai trò của đường vinculum." },
+    { "href": "/vi/symbol/division-sign/", "title": "Dấu Chia (÷)", "desc": "Dấu obelus, và vì sao sách nâng cao rời bỏ nó." },
+    { "href": "/vi/symbol/infinity/", "title": "Vô Cực (∞)", "desc": "Nguồn gốc của hình lemniscate." },
+    { "href": "/vi/library/math-symbols/", "title": "Tất Cả Ký Hiệu Toán Học", "desc": "Toán tử, chữ cái Hy Lạp, lý thuyết tập hợp và ký hiệu giải tích." }
+  ]
+}

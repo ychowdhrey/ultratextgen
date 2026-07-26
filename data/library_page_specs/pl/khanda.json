@@ -1,0 +1,77 @@
+{
+  "slug": "khanda",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Khanda: Skopiuj ☬ 🪯 Emblemat Sikhijski i Ik Onkar",
+  "meta_description": "Skopiuj Khandę (☬ 🪯), sikhijski emblemat obosiecznego miecza, czakkaru i dwóch kirpanów — i zobacz, czym różni się od Ik Onkar (ੴ). Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/khanda/",
+  "breadcrumb": "Khanda",
+  "hero_h1": "Symbol Khanda",
+  "hero_tagline": "Khanda (☬ 🪯) — sikhijski emblemat obosiecznego miecza, czakkaru i dwóch skrzyżowanych kirpanów — plus Ik Onkar, odrębny symbol, z którym bywa mylona. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Khanda to emblemat współczesnego sikhizmu: obosieczny miecz (również nazywany khandą) w centrum, otoczony okrągłym czakkarem, z dwoma zakrzywionymi kirpanami skrzyżowanymi u dołu, przedstawiającymi miri-piri — jedność władzy duchowej i doczesnej. To nie ten sam symbol co Ik Onkar (ੴ), fraza oznaczająca „Jeden Stwórca”, która pojawia się na gurdwarach i w Guru Granth Sahib — a Unicode nadaje im dwa różne punkty kodowe, w zależności od tego, czy chcesz zwykły znak dingbat, czy pełnokolorowe emoji.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/khanda-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/khanda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/khanda-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "glify-khanda",
+      "label": "Khanda",
+      "h2": "Symbol Khanda",
+      "intro": "Dwa sposoby zapisania Khandy w Unicode: zwykły znak dingbat oraz dedykowane, kolorowe emoji dodane w 2022 roku.",
+      "symbols": [
+        { "char": "☬", "label": "Adi Shakti (Khanda w Zwykłym Tekście)" },
+        { "char": "🪯", "label": "Emoji Khanda" }
+      ]
+    },
+    {
+      "id": "ik-onkar",
+      "label": "Ik Onkar",
+      "h2": "Ik Onkar — To Nie Ten Sam Symbol",
+      "intro": "Ik Onkar („Jeden Stwórca”) to starszy, odrębny znak w piśmie gurmukhi, używany na gurdwarach i jako pierwszy wers Guru Granth Sahib. W użyciu religijnym nigdy nie zamienia się go z Khandą.",
+      "symbols": [
+        { "char": "ੴ", "label": "Gurmukhi Ek Onkar" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole",
+      "label": "Powiązane Symbole",
+      "h2": "Inne Symbole Wiary i Tożsamości",
+      "intro": "Symbole innych tradycji, które dobrze łączą się z treściami o wierze i tożsamości.",
+      "symbols": [
+        { "char": "🕉️", "label": "Om" },
+        { "char": "☪️", "label": "Gwiazda i Półksiężyc" },
+        { "char": "✡️", "label": "Gwiazda Dawida" },
+        { "char": "☸️", "label": "Koło Dharmy" },
+        { "char": "☯️", "label": "Yin Yang" },
+        { "char": "✝️", "label": "Krzyż Łaciński" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Symbole wiary z każdej większej światowej religii w jednym miejscu."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol",
+      "desc": "Symbol pokoju oraz gołębie, gesty i symbole natury o podobnym znaczeniu."
+    },
+    {
+      "href": "/symbol/yin-yang/",
+      "title": "Yin Yang Symbol",
+      "desc": "Symbol yin-yang oraz powiązane znaki równowagi i harmonii."
+    }
+  ]
+}

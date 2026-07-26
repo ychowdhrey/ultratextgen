@@ -1,0 +1,68 @@
+{
+  "slug": "znak-stop",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Znaku Stop: Skopiuj 🛑 — Znaczenie, Punkt Kodowy i Znak, z Którym Bywa Mylony",
+  "meta_description": "Skopiuj emoji znaku stop (🛑), dowiedz się, dlaczego to ośmiokąt, i poznaj różnicę między 🛑 stop a ⛔ zakazem wjazdu — dwoma znakami, które ludzie nieustannie mylą.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-stop/",
+  "breadcrumb": "Znak Stop",
+  "hero_h1": "Symbol Znaku Stop",
+  "hero_tagline": "🛑 U+1F6D1 — ośmiokątny emoji znaku stop, jedyny znak drogowy o takim kształcie nadanym mu celowo, plus okrągły znak ⛔ zakazu wjazdu, z którym wciąż bywa mylony. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Emoji znaku stop (🛑, U+1F6D1, oficjalnie OCTAGONAL SIGN) kopiuje kształt prawdziwego znaku drogowego z konkretnego powodu: ośmiokąt to jedyny kształt znaku zarezerwowany wyłącznie dla „stop” w amerykańskim podręczniku Manual on Uniform Traffic Control Devices, przyjętym w 1922 roku właśnie po to, by kierowcy rozpoznawali go od tyłu, przez śnieg albo w lusterku wstecznym — żaden inny kształt nie niesie tego znaczenia, więc sam kontur mówi, co zrobić, zanim jeszcze zdążysz go przeczytać. Unicode dodał 🛑 w wersji 9.0 (2016 rok). To czerwony ośmiokąt z białą obwódką, bez wpisanego w glif tekstu — w przeciwieństwie do niektórych wczesnych, operatorskich emoji, które wyświetlały prawdziwy napis „STOP”; większość dzisiejszych platform pokazuje zwykły kształt.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/stop-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-stop/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/stop-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-stop",
+      "label": "Znak Stop",
+      "h2": "Emoji Znaku Stop",
+      "intro": "Sam ośmiokąt oraz dwa symbole najbliższe mu znaczeniowo, które jednak nie są tym samym.",
+      "symbols": [
+        { "char": "🛑", "label": "Znak Stop" },
+        { "char": "⛔", "label": "Zakaz Wjazdu" },
+        { "char": "🚫", "label": "Zakazane" }
+      ]
+    },
+    {
+      "id": "znaki-drogowe-i-ostrzegawcze",
+      "label": "Ruch Drogowy i Ostrzeżenia",
+      "h2": "Symbole Ruchu Drogowego i Ostrzegawcze",
+      "intro": "Powiązane znaki ostrzegawcze i zagrożenia, które pojawiają się obok znaków stop na oznakowaniu i w komunikatach.",
+      "symbols": [
+        { "char": "⚠️", "label": "Ostrzeżenie" },
+        { "char": "🚧", "label": "Roboty Drogowe" },
+        { "char": "⚡", "label": "Wysokie Napięcie" },
+        { "char": "☢️", "label": "Promieniotwórczość" },
+        { "char": "☣️", "label": "Zagrożenie Biologiczne" }
+      ]
+    },
+    {
+      "id": "znaki-ostrzegawcze-interpunkcyjne",
+      "label": "Znaki Ostrzegawcze",
+      "h2": "Interpunkcja Ostrzegawcza i Alarmowa",
+      "intro": "Odpowiedniki na poziomie interpunkcji, po które sięga się, by dodać pilności bez pełnego znaczka znaku.",
+      "symbols": [
+        { "char": "❗", "label": "Wykrzyknik" },
+        { "char": "❕", "label": "Biały Wykrzyknik" },
+        { "char": "‼️", "label": "Podwójny Wykrzyknik" },
+        { "char": "⁉️", "label": "Wykrzyknik z Pytajnikiem" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    { "href": "/library/hazard-warning-symbols/", "title": "Hazard & Warning Symbols", "desc": "Szerszy zestaw znaków ostrzegawczych, promieniotwórczości i zagrożenia biologicznego, obok których zwykle pojawia się znak stop." },
+    { "href": "/symbol/biohazard-symbol/", "title": "Biohazard Symbol", "desc": "Kolejny znak, w którym ostrzeżeniem jest sam kształt — zaprojektowany w 1966 roku tak, by był pozbawiony znaczenia, dopóki go nie poznasz, a potem niezapomniany." },
+    { "href": "/pl/symbol/symbol-niepelnosprawnosci/", "title": "Symbol Niepełnosprawności", "desc": "Inny rodzaj standaryzowanego glifu znaku, z własną historią projektu z 1968 roku i współczesną debatą o redesignie." }
+  ]
+}

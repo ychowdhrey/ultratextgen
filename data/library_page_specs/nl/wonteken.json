@@ -1,0 +1,105 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "wonteken",
+  "title": "Wonteken: Kopieer en Plak ₩ — Eén Teken voor Twee Rivaliserende Korea's",
+  "meta_description": "Kopieer en plak het wonteken (₩) — het ene valutateken dat zowel de Zuid-Koreaanse won (KRW) als de Noord-Koreaanse won (KPW) gebruiken, en een taalkundige neef van de yen en yuan. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/wonteken/",
+  "breadcrumb": "Wonteken",
+  "hero_h1": "Wonteken",
+  "hero_tagline": "Het ₩-valutateken dat zowel de Zuid-Koreaanse won (KRW) als de Noord-Koreaanse won (KPW) delen — één Unicode-teken voor twee staten die niet met elkaar spreken. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het wonteken (₩) is een zeldzaam soort valutateken: één Unicode-teken — U+20A9, al toegevoegd in Unicode 1.1 in 1993 — dat officieel voor twee aparte nationale munten tegelijk staat. Zowel de Zuid-Koreaanse won (code KRW) als de Noord-Koreaanse won (KPW) worden geschreven met exact hetzelfde ₩-teken, een hoofdletter 'W' doorkruist door een horizontale streep, ook al zijn de twee regeringen sinds 1948 gescheiden en verhandelen hun wons tegen wildweg uiteenlopende waarden. De naam is oud: de won werd in 1902 ingevoerd onder het Koreaanse Keizerrijk, ter vervanging van de yang, en komt van het hanja-teken 圓 (원), dat 'rond' betekent — dezelfde wortel als achter Japans yen en Chinees yuan, alle drie afstammend van de ronde Spaans-Amerikaanse zilveren dollar die generaties lang de Oost-Aziatische handel domineerde. Eén teken, twee landen, en een gedeelde etymologie die over de hele regio reikt.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/won-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/wonteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/won-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "wonteken",
+      "label": "Wonteken",
+      "h2": "Het Wonteken (₩)",
+      "intro": "Het teken zelf: een hoofdletter W met een horizontale streep door het midden. U+20A9 is het standaardteken in vrijwel elke context; de volle-breedte-versie is een compatibiliteitsteken dat aansluit op het vaste raster van Koreaanse en andere CJK-tekst.",
+      "symbols": [
+        {
+          "char": "₩",
+          "label": "Wonteken (U+20A9)"
+        },
+        {
+          "char": "￦",
+          "label": "Wonteken Volle Breedte (U+FFE6)"
+        }
+      ]
+    },
+    {
+      "id": "twee-koreas",
+      "label": "Twee Korea's",
+      "h2": "Eén Teken, Twee Rivaliserende Munten",
+      "intro": "Hetzelfde ₩ duidt zowel de Zuid-Koreaanse won (KRW) als de Noord-Koreaanse won (KPW) aan — twee munten van twee staten die sinds 1948 gesplitst zijn en technisch nog altijd in oorlog verkeren. In het Koreaans wordt de eenheid geschreven als 원 in Hangul. Niets aan het teken zelf onderscheidt de twee; alleen de drieletterige valutacode doet dat.",
+      "symbols": [
+        {
+          "char": "₩",
+          "label": "Wonteken (U+20A9) — Gedeeld door KRW (Zuid) en KPW (Noord)"
+        },
+        {
+          "char": "원",
+          "label": "Won Geschreven in Hangul (원)"
+        }
+      ]
+    },
+    {
+      "id": "won-yen-yuan",
+      "label": "Yen- & Yuan-familie",
+      "h2": "De Won-, Yen- & Yuan-familie",
+      "intro": "Won, yen en yuan zijn taalkundige neven — alle drie gaan terug op het teken 圓 (vereenvoudigd tot 元 in het moderne Chinees), dat 'rond' betekent, naar de ronde zilveren munten die ooit door heel Azië circuleerden. Japans yen en Chinees yuan delen zelfs één teken, ¥, wat mede verklaart waarom niet-moedertaalsprekers ₩ en ¥ soms door elkaar halen.",
+      "symbols": [
+        {
+          "char": "¥",
+          "label": "Yen- en Yuanteken (U+00A5)"
+        },
+        {
+          "char": "圓",
+          "label": "Hanja 圓 — 'Rond', de Gedeelde Wortel"
+        },
+        {
+          "char": "元",
+          "label": "Yuan (元)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Een doorbladerbare set wereldvalutatekens, van dollar en euro tot roepie en bitcoin (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/yenteken/",
+      "title": "Yenteken (¥)",
+      "desc": "De Oost-Aziatische neef van de won — dezelfde 'rond'-etymologie, en het ¥-teken waarmee ₩ soms wordt verward."
+    },
+    {
+      "href": "/nl/symbol/dollarteken/",
+      "title": "Dollarteken ($)",
+      "desc": "De Spaans-Amerikaanse zilveren dollar die won, yen en yuan voortbracht, krijgt ook vaak de eer voor de herkomst van het $-teken zelf."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "podkreslenie",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Podkreślenie: Skopiuj _ ＿ ‾ — Od Podkreślania na Maszynie do Pisania po snake_case",
+  "meta_description": "Skopiuj podkreślenie (_, U+005F LOW LINE) oraz jego kuzynów — pełnej szerokości ＿ i nadkreślenie ‾ — i zobacz, jak sztuczka z maszyny do pisania stała się snake_case i bezpiecznym znakiem w nazwach użytkowników. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/podkreslenie/",
+  "breadcrumb": "Podkreślenie",
+  "hero_h1": "Podkreślenie (_)",
+  "hero_tagline": "Zwykłe klawiaturowe podkreślenie (_), które zaczęło jako sztuczka do podkreślania tekstu na maszynie do pisania, a stało się snake_case — jedynym bezpiecznym „zamiast spacji” znakiem dozwolonym w nazwach użytkowników, e-mailach i nazwach plików — pokazane obok pełnej szerokości ＿, podwojonego ‗ i nadkreślenia ‾. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Podkreślenie, czyli dolna linia (_, U+005F LOW LINE), to pozioma kreska leżąca na linii bazowej w bloku Unicode Basic Latin, gdzie należy do ogólnej kategorii Connector Punctuation. Zaczęło jako czysto mechaniczna sztuczka: na maszynie do pisania podkreślało się słowo, wpisując je, cofając wózek do początku i nadpisując ten sam fragment klawiszem podkreślenia — dedykowanym klawiszem obecnym już na maszynach takich jak Caligraph z 1881 roku. Znak trafił do ASCII w 1967 roku, przejmując punkt kodowy 95 (0x5F) po strzałce w lewo (←), którą zastąpił, a IBM dodał go wcześniej, w 1964 roku, w kodowaniu EBCDIC jako „znak przerwania”. Programiści przeznaczyli go potem na separator wyrazów — styl „podkreślenia zamiast spacji” sięga języka C z końca lat 60. i książki „The C Programming Language” (1978), choć samej nazwy „snake_case” użyto po raz pierwszy dopiero w społeczności Ruby około 2004 roku (dokument Pythona PEP 8 wciąż nazywa go „lower_case_with_underscores”). Dziś to jedyny bezpieczny „zamiast spacji” znak dozwolony w nazwach użytkowników, częściach lokalnych adresów e-mail, nazwach plików i slugach URL, a Markdown odczytuje _pojedyncze podkreślenia_ jako kursywę, a __podwójne__ jako pogrubienie. Bywa nieustannie mylone z łącznikiem (-, U+002D) oraz ze swoimi szerszymi kuzynami — pełnej szerokości ＿ (U+FF3F) i podwójną dolną linią ‗ (U+2017).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/podkreslenie/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "podkreslenie",
+      "label": "Podkreślenie",
+      "h2": "Podkreślenie, Pełna Szerokość i Podwójna Linia",
+      "intro": "Zwykła klawiaturowa dolna linia i jej dwa warianty szerokości — forma pełnej szerokości używana w składzie wschodnioazjatyckim oraz podwojona linia odstępu. Gotowe do wklejenia gdziekolwiek.",
+      "symbols": [
+        { "char": "_", "label": "Podkreślenie / Dolna Linia (U+005F)" },
+        { "char": "＿", "label": "Dolna Linia Pełnej Szerokości (U+FF3F)" },
+        { "char": "‗", "label": "Podwójna Dolna Linia (U+2017)" }
+      ]
+    },
+    {
+      "id": "nadkreslenie",
+      "label": "Nadkreślenie",
+      "h2": "Nadkreślenie: Ta Sama Kreska, Nad Tekstem",
+      "intro": "Nadkreślenie to lustrzane odbicie podkreślenia — identyczna pozioma kreska umieszczona nad tekstem zamiast pod nim, dlatego oba znaki bywają mylone jako swoje przeciwieństwa. Makron to krótka kreska, którą ludzie często wpisują, mając na myśli nadkreślenie.",
+      "symbols": [
+        { "char": "‾", "label": "Nadkreślenie / Overscore Odstępu (U+203E)" },
+        { "char": "¯", "label": "Makron (U+00AF)" }
+      ]
+    },
+    {
+      "id": "podkreslenie-a-lacznik",
+      "label": "Kontra Łącznik i Kreska",
+      "h2": "Podkreślenie kontra Rodzina Łącznika i Kreski",
+      "intro": "W adresach URL, nazwach użytkowników i nazwach plików podkreślenie i łącznik są nieustannie zamieniane miejscami — ale siedzą na różnej wysokości, mają różne punkty kodowe i pełnią różne zadania.",
+      "symbols": [
+        { "char": "-", "label": "Łącznik-Minus / Klawiaturowy Łącznik (U+002D)" },
+        { "char": "‐", "label": "Łącznik (U+2010)" },
+        { "char": "–", "label": "Półpauza (U+2013)" },
+        { "char": "−", "label": "Znak Minus (U+2212)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "Podkreślenie, łącznik, gwiazdka i reszta znaków interpunkcyjnych oraz klawiszy Shift na standardowej klawiaturze."
+    },
+    {
+      "href": "/pl/library/symbole-punktowania/",
+      "title": "Symbole Punktowania",
+      "desc": "Kreski, nawiasy, cudzysłowy i codzienna interpunkcja Unicode w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/malpa/",
+      "title": "Znak Małpy (@)",
+      "desc": "Kolejny znak specjalny w sercu adresów e-mail i nazw w social mediach, gdzie podkreślenie jest bezpiecznym separatorem."
+    }
+  ]
+}

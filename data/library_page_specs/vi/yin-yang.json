@@ -1,0 +1,64 @@
+{
+  "slug": "yin-yang",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Âm Dương (☯): Ý Nghĩa, Lịch Sử Và Cách Gõ",
+  "meta_description": "Ký hiệu âm dương ☯ (U+262F) được giải thích — nguồn gốc từ triết học Trung Hoa cổ đại, và cách gõ trên Windows/Mac.",
+  "canonical": "https://ultratextgen.com/vi/symbol/yin-yang/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Âm Dương",
+  "hero_h1": "Ký Hiệu Âm Dương (☯)",
+  "hero_tagline": "☯ nghĩa là gì, nguồn gốc cổ xưa của nó, và cách gõ ra nó — nhấp để sao chép ngay.",
+  "intro": "Khái niệm âm dương bắt nguồn từ vũ trụ luận Trung Hoa cổ đại và trở thành trung tâm của triết học Đạo giáo: ý tưởng rằng những thế lực tưởng chừng đối lập — tối và sáng, tĩnh và động, âm và dương — thực ra không hề xung khắc, mà là hai nửa bổ sung cho nhau của một thể thống nhất, mỗi nửa đều mang trong mình một «hạt giống» của nửa kia. Hạt giống đó được thể hiện bằng chấm nhỏ màu đối lập nằm bên trong mỗi nửa của ký hiệu. Hình xoáy tròn cổ điển, tên chính thức là thái cực đồ (taijitu), đạt đến hình dạng quen thuộc ngày nay vào thời nhà Tống, tức khoảng thế kỷ 11–12, dù khái niệm triết học mà nó minh họa đã có từ lâu hơn nhiều. Đây vẫn là một trong những biểu tượng được công nhận rộng rãi nhất từ triết học Trung Hoa trên toàn thế giới hiện nay.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/yin-yang/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/yin-yang/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/yin-yang/" }
+  ],
+  "sections": [
+    {
+      "id": "yin-yang-symbol",
+      "label": "Âm Dương",
+      "h2": "Ký Hiệu Âm Dương",
+      "intro": "Ký hiệu âm dương và một hệ thống biểu tượng liên quan nhưng khác biệt được xây từ các vạch âm/dương.",
+      "symbols": [
+        { "char": "☯", "label": "Ký Hiệu Âm Dương" },
+        { "char": "☰", "label": "Quẻ Càn (Trời) Trong Kinh Dịch — một hệ thống biểu tượng liên quan nhưng khác biệt, được xây từ các vạch âm/dương" }
+      ]
+    },
+    {
+      "id": "confusable",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Ký Hiệu Đôi Khi Bị Nhầm Với Âm Dương",
+      "intro": "Những ký hiệu này có hình dáng bề ngoài gần giống ☯ nhưng mang ý nghĩa hoàn toàn khác.",
+      "symbols": [
+        { "char": "🌗", "label": "Trăng Hạ Huyền (U+1F317) — hình ảnh sáng/tối chia đôi trông tương tự, nhưng không liên quan về ý nghĩa" },
+        { "char": "☮", "label": "Ký Hiệu Hòa Bình (U+262E) — một ký hiệu khác, đôi khi được đặt cùng hình ảnh âm dương" }
+      ]
+    },
+    {
+      "id": "related-spiritual",
+      "label": "Ký Hiệu Tâm Linh Liên Quan",
+      "h2": "Các Ký Hiệu Tôn Giáo & Tâm Linh Khác",
+      "intro": "Những ký hiệu khác thường được tìm kiếm và hiển thị cùng ký hiệu âm dương.",
+      "symbols": [
+        { "char": "☪", "label": "Ngôi Sao Và Trăng Lưỡi Liềm" },
+        { "char": "✡", "label": "Ngôi Sao David" },
+        { "char": "🕉️", "label": "Om" },
+        { "char": "☸️", "label": "Bánh Xe Pháp Luân" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/peace-sign/", "title": "Ký Hiệu Hòa Bình (☮)", "desc": "Thiết kế bán kỳ hiệu năm 1958 của Gerald Holtom." },
+    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo & Tâm Linh", "desc": "Các quẻ, vạch âm dương và ký hiệu tôn giáo trong thư viện đầy đủ." },
+    { "href": "/library/special-characters/", "title": "Tất Cả Ký Tự Đặc Biệt", "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác." }
+  ]
+}

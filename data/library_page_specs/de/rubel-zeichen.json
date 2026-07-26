@@ -1,0 +1,81 @@
+{
+  "slug": "rubel-zeichen",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Rubel-Zeichen: ₽ kopieren & einfügen — das Währungssymbol, das Russland per Volksabstimmung wählte",
+  "meta_description": "Das Rubel-Zeichen (₽, U+20BD) kopieren und einfügen — eines der jüngsten Währungssymbole der Welt, 2013 durch eine öffentliche Abstimmung von über 284.000 Russen gewählt. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/rubel-zeichen/",
+  "breadcrumb": "Rubel-Zeichen",
+  "hero_h1": "Rubel-Zeichen",
+  "hero_tagline": "Das ₽-Rubelzeichen — das mit einem Balken durchkreuzte kyrillische „Р“, das Russland 2013 nach einer landesweiten öffentlichen Abstimmung übernahm und das damit zu einem der jüngsten nationalen Währungssymbole in Unicode wurde. Ein Klick genügt zum Kopieren.",
+  "intro": "Das Rubel-Zeichen (₽) ist eines der jüngsten nationalen Währungssymbole der Welt — kodiert als U+20BD RUBLE SIGN in Unicodes Block der Währungssymbole (U+20A0–U+20CF) und erst mit Version 7.0 im Juni 2014 in den Standard aufgenommen. Seine Entstehung ist ungewöhnlich gut dokumentiert. Anders als beim Dollar- oder Pfundzeichen, deren genaue Geburt bis heute umstritten ist, wurde ₽ bewusst und öffentlich ausgewählt: Die russische Zentralbank verengte Tausende Einreichungen auf fünf Finalisten-Designs und führte vom 5. November bis zum 5. Dezember 2013 eine Online-Volksabstimmung durch. Die siegreiche Glyphe — ein kyrillisches großes „Р“ (der Buchstabe Er) mit einem einzelnen waagerechten Balken unterhalb der Rundung — erhielt 61 % von mehr als 284.000 Stimmen, und die Zentralbank bestätigte sie formal am 11. Dezember 2013. Zuvor hatten Russen kein eigenes Zeichen und schrieben die Währung mit Abkürzungen wie „руб.“ oder einem bloßen „р.“. Der Rubel selbst ist die Währung Russlands (ISO-Code RUB) und einer der ältesten noch gebräuchlichen Währungsnamen — er geht bis ins mittelalterliche Nowgorod zurück; denselben Namen tragen auch der belarussische und der transnistrische Rubel. Dass eine jahrhundertealte Währung erst 2013 ihr eigenes Zeichen erhielt, macht ₽ zu einer echten Rarität.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ruble-sign/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/rubel-zeichen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ruble-sign/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "das-rubel-zeichen",
+      "label": "Rubel-Zeichen",
+      "h2": "Das Rubel-Zeichen (₽)",
+      "intro": "Das Zeichen selbst und der kyrillische Buchstabe, aus dem es entstand. Das siegreiche Design ist das große Er (Р) mit einem zusätzlichen waagerechten Balken unterhalb der Rundung — das kleine р ist jenes, das in der alten „р.“-Abkürzung erschien.",
+      "symbols": [
+        { "char": "₽", "label": "Rubel-Zeichen (U+20BD)" },
+        { "char": "Р", "label": "Kyrillischer Großbuchstabe Er (U+0420) — die Grundlage des Zeichens" },
+        { "char": "р", "label": "Kyrillischer Kleinbuchstabe Er (U+0440) — genutzt in der alten „р.“-Abkürzung" }
+      ]
+    },
+    {
+      "id": "kuerzlich-eingefuehrte-waehrungszeichen",
+      "label": "Kürzlich eingeführt",
+      "h2": "Weitere kürzlich eingeführte Währungszeichen",
+      "intro": "Das Rubel-Zeichen hat enge Nachbarn in Unicodes Block der Währungssymbole — ein Cluster von Zeichen, die erst in den 2010er-Jahren kodiert wurden, als post-sowjetische und andere Staaten ihrer Währung eine eigene Glyphe gaben. Indiens Rupienzeichen wurde, wie das Rubelzeichen, durch einen öffentlichen Designwettbewerb ausgewählt.",
+      "symbols": [
+        { "char": "₹", "label": "Indisches Rupienzeichen (U+20B9) — 2010 durch öffentlichen Wettbewerb gewählt" },
+        { "char": "₺", "label": "Türkisches Lira-Zeichen (U+20BA) — eingeführt 2012" },
+        { "char": "₸", "label": "Tenge-Zeichen (U+20B8) — kasachischer Tenge" },
+        { "char": "₼", "label": "Manat-Zeichen (U+20BC) — aserbaidschanischer Manat" },
+        { "char": "₾", "label": "Lari-Zeichen (U+20BE) — georgischer Lari" }
+      ]
+    },
+    {
+      "id": "klassische-waehrungssymbole-im-vergleich",
+      "label": "Klassische Symbole",
+      "h2": "Klassische Währungssymbole im Vergleich",
+      "intro": "Der klaren, gut dokumentierten Entstehung des Rubels 2013 stehen die weltweit bekanntesten Währungszeichen gegenüber, die Jahrhunderte älter und deutlich unklarer sind — über die genauen Geschichten hinter Dollar- und Pfundzeichen wird bis heute gestritten.",
+      "symbols": [
+        { "char": "$", "label": "Dollarzeichen (U+0024)" },
+        { "char": "£", "label": "Pfundzeichen (U+00A3)" },
+        { "char": "€", "label": "Eurozeichen (U+20AC)" },
+        { "char": "¥", "label": "Yenzeichen (U+00A5)" },
+        { "char": "¢", "label": "Centzeichen (U+00A2)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/waehrungssymbole/",
+      "title": "Währungssymbole",
+      "desc": "Eine durchstöberbare Sammlung der Weltwährungszeichen, vom Dollar und Euro bis zur Rupie, dem Rubel und Bitcoin."
+    },
+    {
+      "href": "/de/symbol/rupien-zeichen/",
+      "title": "Rupien-Zeichen",
+      "desc": "Der engste Verwandte des Rubels: Indiens ₹ wurde ebenfalls durch einen öffentlichen Designwettbewerb gewählt, nur drei Jahre früher, 2010."
+    },
+    {
+      "href": "/de/symbol/dollar-zeichen/",
+      "title": "Dollar-Zeichen",
+      "desc": "Die gegenteilige Geschichte — das $-Zeichen ist Jahrhunderte alt mit umstrittener Herkunft, während die Geburt des Rubels 2013 lückenlos dokumentiert ist."
+    }
+  ]
+}

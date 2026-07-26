@@ -1,0 +1,77 @@
+{
+  "slug": "gwiazda-dawida",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Gwiazda Dawida: Skopiuj ✡ — Jak Wspólny Heksagram Stał się Symbolem Żydowskim",
+  "meta_description": "Skopiuj Gwiazdę Dawida (✡) i poznaj jej wielowarstwową historię — od starożytnego, geometrycznego motywu dzielonego przez wiele kultur po emblemat judaizmu. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/gwiazda-dawida/",
+  "breadcrumb": "Gwiazda Dawida",
+  "hero_h1": "Gwiazda Dawida",
+  "hero_tagline": "Sześcioramienna Gwiazda Dawida (✡ ✡️) — Magen David, czyli „Tarcza Dawida” — której droga do stania się emblematem judaizmu jest bardziej niedawna i bardziej złożona, niż większość osób zakłada. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Gwiazda Dawida (✡, U+2721) — po hebrajsku Magen David, „Tarcza Dawida” — to sześcioramienna gwiazda uznawana dziś za symbol judaizmu i emblemat w centrum flagi Izraela. A jednak sam heksagram jest znacznie starszy i znacznie szerzej dzielony, niż sugeruje ta rola: przez większość swojej historii był popularnym motywem geometrycznym używanym w wielu kulturach, a jego droga do stania się znakiem wyraźnie żydowskim to stosunkowo niedawna i dobrze udokumentowana historia.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/star-of-david/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/gwiazda-dawida/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/star-of-david/" }
+  ],
+  "sections": [
+    {
+      "id": "gwiazda-dawida",
+      "label": "Gwiazda Dawida",
+      "h2": "Symbol Gwiazdy Dawida",
+      "intro": "Unicode'owa Gwiazda Dawida, gotowa do wklejenia gdziekolwiek — w bio, postach czy na profilach. Dwie formy: zwykły glif i pełnokolorowe emoji.",
+      "symbols": [
+        { "char": "✡", "label": "Gwiazda Dawida" },
+        { "char": "✡️", "label": "Emoji Gwiazdy Dawida" }
+      ]
+    },
+    {
+      "id": "symbole-zydowskie",
+      "label": "Symbole Żydowskie",
+      "h2": "Powiązane Symbole Żydowskie",
+      "intro": "Inne symbole tradycji żydowskiej, obok których często pojawia się Gwiazda Dawida.",
+      "symbols": [
+        { "char": "🕎", "label": "Menora" },
+        { "char": "🕍", "label": "Synagoga" },
+        { "char": "חי", "label": "Chai (Życie)" }
+      ]
+    },
+    {
+      "id": "heksagramy-i-warianty",
+      "label": "Sześcioramienne Gwiazdy",
+      "h2": "Sześcioramienne Gwiazdy i Warianty Heksagramu",
+      "intro": "Ta sama sześcioramienna geometria pojawia się daleko poza jedną tradycją — jako dekoracja, w astronomii i mistyce oraz jako zwykłe kształty geometryczne.",
+      "symbols": [
+        { "char": "🔯", "label": "Sześcioramienna Gwiazda z Kropką" },
+        { "char": "✶", "label": "Czarna Gwiazda Sześcioramienna" },
+        { "char": "⬡", "label": "Biały Sześciokąt" },
+        { "char": "⬢", "label": "Czarny Sześciokąt" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Symbole wiary z każdej większej światowej religii w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/khanda/",
+      "title": "Symbol Khanda",
+      "desc": "Kolejny konkretny emblemat religijny z realną, możliwą do prześledzenia historią."
+    },
+    {
+      "href": "/pl/symbol/symbol-gwiazdy/",
+      "title": "Symbol Gwiazdy",
+      "desc": "Gwiazdy każdego rodzaju — cztero-, pięcio-, sześcio- i ośmioramienne — w jednym zestawie do kopiowania."
+    }
+  ]
+}

@@ -1,11 +1,16 @@
 # Canonical host: enforce non-www
 https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 
-# Fallback rewrite: serve the English homepage for the root path.
-# The primary fix lives in functions/_middleware.js, which requests
-# /_root.html from ASSETS — a build-generated copy of index.html
-# with no locale variants, so i18n content negotiation cannot activate.
-# This rule acts as a safety net if the middleware is not deployed.
+# Serve the English homepage for the root path.
+#
+# This rule is what actually keeps / on English. It was previously
+# described as a "safety net if the middleware is not deployed", with
+# functions/_middleware.js as the primary fix — but the middleware does
+# not execute on this Pages project at all. Verified on the PR #674
+# preview: with this rule REMOVED (so nothing in _redirects matched /),
+# /?lang=de still returned 200 rather than the 301 the middleware issues
+# from its very first branch. Functions are inert here; this is primary,
+# not a fallback. Do not remove it expecting the middleware to cover /.
 /  /index.html  200
 
 # Canonical path: enforce trailing slash on platform root pages
@@ -39,6 +44,16 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /ja/font-henkan              /ja/                   301
 /ja/font-henkan/             /ja/                   301
 
+# retired 2026-07-26: near-duplicate of fr/index.html's own head term
+# ("écriture stylée" / "générateur de texte stylé" both restate the
+# homepage's own pitch), confirmed via query-level GSC — see
+# ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md §2c and the fr/ six-page
+# GSC follow-up analysis
+/fr/ecriture-style/          /fr/                   301
+/fr/ecriture-style          /fr/                   301
+/fr/generateur-de-texte/     /fr/                   301
+/fr/generateur-de-texte     /fr/                   301
+
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
 /category/special-fonts/lines/              /category/strikethrough-text/ 301
@@ -60,20 +75,19 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /usecase/glitch-text-generator/               /usecase/zalgo-text/ 301
 
 # Language query-param → path-based (301 permanent)
-/?lang=fr                                   /fr/    301
-/?lang=de                                   /de/    301
-/?lang=pt                                   /pt/    301
-/?lang=es                                   /es/    301
-/?lang=en                                   /       301
-/?lang=id                                   /id/    301
-/?lang=it                                   /it/    301
-/?lang=nl                                   /nl/    301
-/?lang=tr                                   /tr/    301
-/?lang=pl                                   /pl/    301
-/?lang=vi                                   /vi/    301
-/?lang=tl                                   /tl/    301
-/?lang=sv                                   /sv/    301
-/?lang=no                                   /no/    301
+#
+# DO NOT re-add these as `_redirects` rules. Cloudflare Pages matches
+# `_redirects` sources on the URL *path only* and ignores the query
+# string, so `/?lang=fr  /fr/  301` is parsed as `/  /fr/  301` — an
+# unconditional 301 of the English homepage to /fr/, for every visitor
+# and every crawler. That is exactly what happened between 2026-07-15
+# (PR #566, which added this block) and 2026-07-26: ultratextgen.com/
+# 301'd to /fr/ regardless of Accept-Language, and because a static
+# redirect short-circuits before Pages Functions, it also bypassed the
+# functions/_middleware.js fix that exists to keep / on English.
+#
+# Query-string matching now lives in functions/_middleware.js, which can
+# actually read url.searchParams. See LANG_REDIRECTS there.
 
 # Bold: thin/duplicate group pages folded into the parent family page (301)
 /category/bold-fonts/bold/                     /category/bold-fonts/ 301
@@ -208,6 +222,29 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # Free Fire slug (mirrors es/simbolos-para-free-fire)
 /pt/library/simbolos-para-nick/            /pt/library/simbolos-para-free-fire/  301
 /pt/library/simbolos-para-nick/index.html  /pt/library/simbolos-para-free-fire/  301
+
+# id/es/pt emoji-combos: moved from orphaned top-level slugs into the
+# /library/ pillar (correct Core Parent Set lane), expanded toward EN's
+# 25-mood-section parity in the same change.
+/id/kombinasi-emoji/                     /id/library/emoji-combos/  301
+/id/kombinasi-emoji/index.html           /id/library/emoji-combos/  301
+/es/combinaciones-de-emojis/             /es/library/emoji-combos/  301
+/es/combinaciones-de-emojis/index.html   /es/library/emoji-combos/  301
+/pt/combos-de-emoji/                     /pt/library/emoji-combos/  301
+/pt/combos-de-emoji/index.html           /pt/library/emoji-combos/  301
+
+# fr/de/pl/tr/nl emoji-combos: same orphaned-slug-to-/library/-pillar move,
+# completing the batch above (id/es/pt were done first).
+/fr/combos-emoji/                        /fr/library/emoji-combos/  301
+/fr/combos-emoji/index.html              /fr/library/emoji-combos/  301
+/de/emoji-kombinationen/                 /de/library/emoji-combos/  301
+/de/emoji-kombinationen/index.html       /de/library/emoji-combos/  301
+/pl/kombinacje-emoji/                    /pl/library/emoji-combos/  301
+/pl/kombinacje-emoji/index.html          /pl/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/               /tr/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/index.html     /tr/library/emoji-combos/  301
+/nl/emoji-combinaties/                   /nl/library/emoji-combos/  301
+/nl/emoji-combinaties/index.html         /nl/library/emoji-combos/  301
 
 # pt/usecase/nick-free-fire retired: near-duplicate of pt/usecase/nick-ff
 # (same Free Fire nick-generator intent, no distinct EN parent of its own)

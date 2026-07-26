@@ -1,0 +1,78 @@
+{
+  "slug": "mikrofon-emoji",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Mikrofon-Emoji (🎤): kopieren & einfügen — Bedeutung, Geschichte & jede Eingabemöglichkeit",
+  "meta_description": "Das Mikrofon-Emoji 🎤 (U+1F3A4) kopieren und einfügen — seine Bedeutung, seine Unicode-Geschichte seit 2010 und wie es sich vom Studiomikrofon 🎙️ unterscheidet. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/mikrofon-emoji/",
+  "breadcrumb": "Mikrofon-Emoji",
+  "hero_h1": "Mikrofon-Emoji (🎤)",
+  "hero_tagline": "Das Handmikrofon, zu dem alle greifen, wenn es um Singen, Karaoke, Moderation, Interviews und Mic-Drop-Momente geht — nicht zu verwechseln mit dem auf einem Stativ montierten Studiomikrofon 🎙️. Ein Klick genügt zum Kopieren.",
+  "intro": "Das Mikrofon-Emoji (🎤, U+1F3A4 MICROPHONE) zeigt ein Handmikrofon mit zum Mund geneigtem Kopf — die Form, die für Singen, Karaoke, Moderation, Interviews, Stand-up und Mic-Drop-Momente steht. Es ist seit Unicode 6.0 im Jahr 2010 Teil des Standard-Emoji-Sets, eines der ersten Emojis, die aus japanischen Mobilfunk-Schriftarten in den Standard übernommen wurden, und es wird auf jeder großen Plattform vollfarbig dargestellt, ganz ohne Variationsselektor. Ein Klick unten genügt, um es sofort zu kopieren.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/microphone-emoji/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/mikrofon-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/microphone-emoji/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "mikrofon-emoji",
+      "label": "Mikrofon",
+      "h2": "Das Mikrofon-Emoji",
+      "intro": "Das Handmikrofon selbst — bereit zum Einfügen, überall wo Emojis unterstützt werden.",
+      "symbols": [
+        { "char": "🎤", "label": "Mikrofon (U+1F3A4)" }
+      ]
+    },
+    {
+      "id": "verwechselbare-nachbarn",
+      "label": "Verwechselbare Nachbarn",
+      "h2": "Emojis, mit denen es verwechselt wird",
+      "intro": "Zeichen, zu denen viele in Erwartung des Handmikrofons greifen, die aber eigenständige, anders kodierte Emojis sind.",
+      "symbols": [
+        { "char": "🎙️", "label": "Studiomikrofon (U+1F399) — das stativmontierte Broadcast-/Podcast-Mikrofon" },
+        { "char": "🔊", "label": "Lautsprecher, hohe Lautstärke (U+1F50A)" },
+        { "char": "🗣️", "label": "Sprechender Kopf (U+1F5E3 FE0F)" },
+        { "char": "📢", "label": "Megafon (U+1F4E2)" }
+      ]
+    },
+    {
+      "id": "verwandte-musik-emojis",
+      "label": "Verwandte Musik-Emojis",
+      "h2": "Musik- & Auftritts-Emojis, die dazu passen",
+      "intro": "Emojis, die häufig neben dem Mikrofon in Gesangs-, Konzert- und Podcast-Beschriftungen auftauchen.",
+      "symbols": [
+        { "char": "🎧", "label": "Kopfhörer (U+1F3A7)" },
+        { "char": "🎵", "label": "Musiknote (U+1F3B5)" },
+        { "char": "🎶", "label": "Mehrere Musiknoten (U+1F3B6)" },
+        { "char": "🎸", "label": "Gitarre (U+1F3B8)" },
+        { "char": "🥁", "label": "Trommel (U+1F941)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Jedes Alltagsgegenstands-Emoji — Technik, Haushalt und Büro, einschließlich des Mikrofons — durchstöberbar in einem Raster."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Fertige Emoji-Kombinationen für Bio und Beschriftung, einschließlich Musik- und Auftritts-Themen."
+    },
+    {
+      "href": "/de/library/musik-symbole/",
+      "title": "Musik-Symbole",
+      "desc": "Unicode-Musiknotation — ♪ ♫ ♬ — das textbasierte Gegenstück zur Musik-Emoji-Familie."
+    }
+  ]
+}

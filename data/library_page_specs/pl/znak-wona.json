@@ -1,0 +1,75 @@
+{
+  "slug": "znak-wona",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Wona: Skopiuj ₩ — Jeden Symbol Dwóch Skłóconych Korei",
+  "meta_description": "Skopiuj znak wona (₩) — jedyny symbol waluty używany zarówno przez południowokoreański won (KRW), jak i północnokoreański won (KPW), spokrewniony etymologicznie z jenem i juanem. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-wona/",
+  "breadcrumb": "Znak Wona",
+  "hero_h1": "Znak Wona ₩",
+  "hero_tagline": "Znak ₩ dzielą ze sobą południowokoreański won (KRW) i północnokoreański won (KPW) — jeden znak Unicode dla dwóch państw, które od dekad nie utrzymują ze sobą normalnych relacji. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak wona (₩) to rzadki przypadek symbolu waluty: pojedynczy znak Unicode — U+20A9, dodany już w Unicode 1.1 w 1993 roku — oficjalnie oznacza jednocześnie dwie osobne waluty narodowe. Zarówno południowokoreański won (kod KRW), jak i północnokoreański won (KPW) zapisuje się identycznym glifem ₩, czyli wielką literą „W” przekreśloną poziomą kreską — mimo że oba rządy są podzielone od 1948 roku, a ich wony mają diametralnie różną wartość. Nazwa jest stara: won wprowadzono za czasów Cesarstwa Koreańskiego w 1902 roku, zastępując walutę yang, a jego nazwa pochodzi od hanja 圓 (원), oznaczającego „okrągły” — dokładnie tego samego rdzenia, z którego wywodzą się japoński jen i chiński juan, wszystkie trzy wywodzące się od okrągłego hiszpańsko-amerykańskiego dolara w srebrze, który przez pokolenia dominował w handlu w Azji Wschodniej. Jeden symbol, dwa państwa i wspólna etymologia rozciągnięta na cały region.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/won-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-wona/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/won-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-wona",
+      "label": "Znak Wona",
+      "h2": "Symbol Wona (₩)",
+      "intro": "Sam znak: wielka litera W z poziomą kreską pośrodku. U+20A9 to standardowy zapis w niemal każdym kontekście; wersja pełnej szerokości to znak kompatybilności dopasowany do siatki tekstu koreańskiego i innych pism CJK.",
+      "symbols": [
+        { "char": "₩", "label": "Znak Wona (U+20A9)" },
+        { "char": "￦", "label": "Znak Wona Pełnej Szerokości (U+FFE6)" }
+      ]
+    },
+    {
+      "id": "dwie-koree",
+      "label": "Dwie Koree",
+      "h2": "Jeden Znak, Dwie Skłócone Waluty",
+      "intro": "Ten sam znak ₩ oznacza zarówno południowokoreański won (KRW), jak i północnokoreański won (KPW) — dwie waluty dwóch państw, które rozdzieliły się w 1948 roku i formalnie wciąż są w stanie wojny. Po koreańsku jednostkę zapisuje się w alfabecie hangul jako 원. Nic w samym symbolu nie odróżnia obu walut — robi to wyłącznie trzyliterowy kod waluty.",
+      "symbols": [
+        { "char": "₩", "label": "Znak Wona (U+20A9) — Wspólny dla KRW (Południe) i KPW (Północ)" },
+        { "char": "원", "label": "Won Zapisany w Hangul (원)" }
+      ]
+    },
+    {
+      "id": "rodzina-wona-jena-i-juana",
+      "label": "Rodzina Jena i Juana",
+      "h2": "Won, Jen i Juan — Wspólna Rodzina",
+      "intro": "Won, jen i juan to językowi kuzyni — wszystkie trzy wywodzą się od znaku 圓 (uproszczonego do 元 we współczesnych Chinach), oznaczającego „okrągły”, od okrągłych srebrnych dolarów krążących niegdyś po całej Azji. Japoński jen i chiński juan mają nawet wspólny symbol, ¥, co po części tłumaczy, dlaczego osoby niebędące rodzimymi użytkownikami czasem mylą ₩ z ¥ na pierwszy rzut oka.",
+      "symbols": [
+        { "char": "¥", "label": "Znak Jena i Juana (U+00A5)" },
+        { "char": "圓", "label": "Hanja 圓 — „Okrągły”, Wspólny Rdzeń" },
+        { "char": "元", "label": "Juan (元)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro (€)",
+      "desc": "Symbol euro i symbole innych popularnych walut świata do skopiowania."
+    },
+    {
+      "href": "/symbol/yen-sign/",
+      "title": "Yen Sign",
+      "desc": "Wschodnioazjatycki kuzyn wona — ta sama etymologia „okrągłego” i glif ¥, z którym bywa mylony."
+    },
+    {
+      "href": "/symbol/dollar-sign/",
+      "title": "Dollar Sign",
+      "desc": "Hiszpańsko-amerykański dolar w srebrze, który zapoczątkował wona, jena i juana, jest też walutą najczęściej wiązaną z pochodzeniem znaku $."
+    }
+  ]
+}

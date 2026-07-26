@@ -1,0 +1,80 @@
+{
+  "slug": "simbolo-minore-o-uguale",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Simbolo Minore o Uguale: Copia e Incolla ≤ — Significato, Codice Alt e LaTeX",
+  "meta_description": "Copia e incolla il simbolo minore o uguale ≤ (U+2264) — Alt+243, il comando LaTeX \\leq, la sua entità HTML e i vicini facilmente confusi ≦ ⩽ ≲. Tocca per copiarlo all'istante.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-minore-o-uguale/",
+  "breadcrumb": "Simbolo Minore o Uguale",
+  "hero_h1": "Simbolo Minore o Uguale (≤)",
+  "hero_tagline": "Il ≤ a cui ricorri quando un valore può essere più piccolo di un altro o esattamente uguale — Alt+243 su Windows, \\leq in LaTeX e &le; in HTML. Tocca per copiarlo all'istante.",
+  "intro": "Il simbolo minore o uguale (≤, U+2264) combina il segno di minore con una barra orizzontale sottostante, per indicare che un valore può essere più piccolo di un altro o esattamente uguale a esso — la relazione dietro tutto, dalle semplici disuguaglianze agli intervalli chiusi del calcolo infinitesimale. A differenza dei segni stretti < e >, introdotti dal matematico inglese Thomas Harriot nel 1631, la coppia combinata ≤/≥ è un raffinamento più tardo: al matematico francese Pierre Bouguer viene generalmente attribuita la sua introduzione nel 1734, in un saggio sulla gradazione della luce. L'ASCII non ha mai assegnato a ≤ una posizione propria, motivo per cui quasi ogni linguaggio di programmazione ripiega sui due caratteri <= invece del singolo glifo Unicode.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-minore-o-uguale/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "less-than-or-equal-to",
+      "label": "Minore o Uguale",
+      "h2": "Minore o Uguale, in Matematica e nel Codice",
+      "intro": "Il simbolo matematico, e i due caratteri usati al suo posto da quasi ogni linguaggio di programmazione, dato che ≤ non è mai stato parte dell'ASCII.",
+      "symbols": [
+        { "char": "≤", "label": "Minore o Uguale (Matematica)" },
+        { "char": "<=", "label": "Minore o Uguale (Codice — C, Python, JavaScript, Java, SQL)" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Vicini Facilmente Confusi",
+      "h2": "Simboli Spesso Scambiati per ≤",
+      "intro": "Significano tutti più o meno la stessa cosa ma sono caratteri Unicode distinti, nati da tradizioni tipografiche diverse.",
+      "symbols": [
+        { "char": "≦", "label": "Less-Than Over Equal To (U+2266)" },
+        { "char": "⩽", "label": "Less-Than or Slanted Equal To (U+2A7D) — la forma preferita dallo standard ISO 31-11" },
+        { "char": "≲", "label": "Less-Than or Equivalent To (U+2272)" },
+        { "char": "≪", "label": "Molto Minore Di (U+226A) — una relazione diversa, non una variante di ≤" }
+      ]
+    },
+    {
+      "id": "related-comparison-symbols",
+      "label": "Simboli di Confronto Correlati",
+      "h2": "Simboli di Confronto Correlati",
+      "intro": "Gli altri simboli di relazione con cui ≤ si accoppia nelle disuguaglianze e nella notazione degli insiemi.",
+      "symbols": [
+        { "char": "≥", "label": "Maggiore o Uguale (U+2265)" },
+        { "char": "<", "label": "Minore Di" },
+        { "char": ">", "label": "Maggiore Di" },
+        { "char": "≠", "label": "Diverso Da" },
+        { "char": "=", "label": "Segno di Uguale" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Operatori, notazione degli insiemi e costanti matematiche in un unico riferimento sfogliabile."
+    },
+    {
+      "href": "/it/symbol/simbolo-diverso/",
+      "title": "Simbolo Diverso (≠)",
+      "desc": "Usato da Eulero, escluso dall'ASCII, e perché il codice usa != al suo posto."
+    },
+    {
+      "href": "/it/symbol/simboli-minore-maggiore/",
+      "title": "Minore e Maggiore",
+      "desc": "I simboli di confronto stretti da cui derivano ≤ e ≥, e perché possono rompere l'HTML."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "won-sign",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Won: Sao Chép & Dán ₩ — Ký Hiệu Duy Nhất Mà Hai Miền Triều Tiên Đối Nghịch Cùng Chia Sẻ",
+  "meta_description": "Sao chép ký hiệu won (₩) — ký hiệu tiền tệ duy nhất dùng chung cho cả đồng won Hàn Quốc (KRW) và won Triều Tiên (KPW), một «người họ hàng» ngôn ngữ của yên và nhân dân tệ. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/won-sign/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Won",
+  "hero_h1": "Ký Hiệu Won",
+  "hero_tagline": "Ký hiệu tiền tệ ₩ mà cả đồng won Hàn Quốc (KRW) lẫn won Triều Tiên (KPW) cùng dùng chung — một ký tự Unicode cho hai nhà nước vốn không nói chuyện với nhau. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu won (₩) là một kiểu ký hiệu tiền tệ hiếm gặp: một ký tự Unicode duy nhất — U+20A9, được thêm vào từ Unicode 1.1 năm 1993 — chính thức đại diện cho hai đồng tiền quốc gia riêng biệt cùng lúc. Cả đồng won Hàn Quốc (mã KRW) và won Triều Tiên (KPW) đều được viết bằng cùng một glyph ₩, một chữ «W» hoa bị gạch ngang, dù hai chính phủ đã chia cắt từ năm 1948 và hai đồng won giao dịch ở những mức giá trị chênh lệch rất lớn. Cái tên này đã có từ lâu: đồng won được đưa vào sử dụng dưới thời Đế quốc Đại Hàn năm 1902, thay thế đồng yang, và bắt nguồn từ chữ Hán 圓 (원), nghĩa là «tròn» — chính gốc từ đứng sau đồng yên của Nhật Bản và nhân dân tệ của Trung Quốc, cả ba đều bắt nguồn từ đồng đô la bạc Tây Ban Nha-Mỹ hình tròn từng thống trị thương mại Đông Á suốt nhiều thế hệ. Một ký hiệu, hai quốc gia, và một gốc từ nguyên chung trải khắp khu vực.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/won-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/won-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/won-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "won-sign",
+      "label": "Ký Hiệu Won",
+      "h2": "Ký Hiệu Won (₩)",
+      "intro": "Chính ký hiệu này: chữ W hoa có một vạch ngang xuyên giữa. U+20A9 là ký hiệu chuẩn dùng trong hầu hết mọi ngữ cảnh; phiên bản chiều rộng đầy đủ là ký tự tương thích, dùng để thẳng hàng với lưới cố định của chữ Hàn và các chữ Đông Á khác.",
+      "symbols": [
+        { "char": "₩", "label": "Ký Hiệu Won (U+20A9)" },
+        { "char": "￦", "label": "Ký Hiệu Won Chiều Rộng Đầy Đủ (U+FFE6)" }
+      ]
+    },
+    {
+      "id": "two-koreas",
+      "label": "Hai Miền Triều Tiên",
+      "h2": "Một Ký Hiệu, Hai Đồng Tiền Đối Nghịch",
+      "intro": "Cùng một ký hiệu ₩ đại diện cho cả đồng won Hàn Quốc (KRW) lẫn won Triều Tiên (KPW) — hai đồng tiền của hai nhà nước đã chia cắt từ năm 1948 và về mặt kỹ thuật vẫn đang trong tình trạng chiến tranh. Trong tiếng Hàn, đơn vị này được viết là 원 bằng chữ Hangul. Không có gì trong ký hiệu phân biệt hai đồng tiền này — chỉ có mã ba chữ cái mới làm được điều đó.",
+      "symbols": [
+        { "char": "₩", "label": "Ký Hiệu Won (U+20A9) — Dùng Chung Cho KRW (Nam) Và KPW (Bắc)" },
+        { "char": "원", "label": "Won Viết Bằng Chữ Hangul (원)" }
+      ]
+    },
+    {
+      "id": "won-yen-yuan",
+      "label": "Họ Yên & Nhân Dân Tệ",
+      "h2": "Won, Yên & Nhân Dân Tệ — Cùng Một Gốc Từ",
+      "intro": "Won, yên và nhân dân tệ là những «người họ hàng» ngôn ngữ — cả ba đều bắt nguồn từ chữ 圓 (giản thể thành 元 trong tiếng Trung hiện đại), nghĩa là «tròn», gợi nhớ những đồng bạc tròn từng lưu hành khắp châu Á. Yên Nhật và nhân dân tệ Trung Quốc thậm chí còn dùng chung một ký hiệu, ¥ — một phần lý do vì sao người đọc không phải bản ngữ đôi khi nhầm lẫn giữa ₩ và ¥ khi nhìn thoáng qua.",
+      "symbols": [
+        { "char": "¥", "label": "Ký Hiệu Yên & Nhân Dân Tệ (U+00A5)" },
+        { "char": "圓", "label": "Chữ Hán 圓 — «Tròn», Gốc Từ Chung" },
+        { "char": "元", "label": "Nhân Dân Tệ (元)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Bộ sưu tập các ký hiệu tiền tệ thế giới, từ đô la, euro cho đến rupee và bitcoin." },
+    { "href": "/vi/symbol/yen-sign/", "title": "Ký Hiệu Yên", "desc": "«Người họ hàng» Đông Á của won — cùng gốc từ «tròn», và ký hiệu ¥ mà người đọc không phải bản ngữ đôi khi nhầm với ₩." },
+    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La", "desc": "Đồng đô la bạc Tây Ban Nha-Mỹ từng gieo mầm cho won, yên và nhân dân tệ cũng là đồng xu được cho là có công lớn nhất trong việc tạo ra ký hiệu $." }
+  ]
+}

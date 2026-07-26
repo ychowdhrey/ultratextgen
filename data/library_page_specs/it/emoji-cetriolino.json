@@ -1,0 +1,90 @@
+{
+  "slug": "emoji-cetriolino",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Emoji Cetriolino: Copia e Incolla 🫝 — la Candidata di Unicode 18.0 che Ha Ereditato uno Slot Rinviato di Apple Core",
+  "meta_description": "Pickle (🫝, U+1FADD) è una candidata in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Il suo codepoint era originariamente riservato a un'emoji \"Apple Core\" prima di essere rinviato e riassegnato. Non ancora approvata, nessun font la renderizza oggi.",
+  "canonical": "https://ultratextgen.com/it/symbol/emoji-cetriolino/",
+  "breadcrumb": "Emoji Cetriolino",
+  "hero_h1": "Emoji Cetriolino",
+  "hero_tagline": "Un cetriolino sott'aceto intero, distinto dal cetriolo e dalla melanzana — in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Solo bozza: nessun font la renderizza ancora. Tocca comunque per copiare il codepoint.",
+  "intro": "Pickle (🫝, U+1FADD) è un'emoji candidata in bozza per Emoji 18.0, la componente emoji di Unicode 18.0, attesa in versione definitiva a settembre 2026. Il suo codepoint ha un retroscena insolito: U+1FADD era originariamente riservato a una proposta \"Apple Core\" (torsolo di mela) nel ciclo di bozze di Emoji 17.0; quella proposta è stata rinviata, e Unicode ha riassegnato lo slot liberato a Pickle per il ciclo 18.0. Raffigura un cetriolino sott'aceto intero, distinto dalle già esistenti emoji Cetriolo e Melanzana a cui viene più spesso accostata per scherzo — la stampa tech ha ipotizzato di tutto, da \"quel cetriolino spaccherà internet\" a previsioni secondo cui \"toglierà molto business\" alla Melanzana. Trattandosi ancora di una bozza, nessun sistema operativo, tastiera o font la renderizza attualmente; aspettati un riquadro vuoto o un glifo segnaposto finché Emoji 18.0 non sarà approvata e le piattaforme non avranno implementato il supporto.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-cetriolino/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "pickle",
+      "label": "Cetriolino",
+      "h2": "Emoji Cetriolino",
+      "intro": "Il carattere in bozza in sé — copiabile già oggi come codepoint, anche se nessun font può ancora renderizzarlo.",
+      "symbols": [
+        { "char": "🫝", "label": "Pickle (bozza, U+1FADD)" }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Da Non Confondere Con",
+      "h2": "Le Emoji con Cui Viene Confusa",
+      "intro": "Emoji di prodotti ortofrutticoli già codificate a cui Pickle viene più spesso paragonata, o di cui viene accusata di sovrapporsi.",
+      "symbols": [
+        { "char": "🥒", "label": "Cetriolo" },
+        { "char": "🍆", "label": "Melanzana" },
+        { "char": "🫑", "label": "Peperone" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Altre Candidate in Bozza",
+      "h2": "Altre Candidate in Bozza di Emoji 18.0",
+      "intro": "Pickle non è l'unico carattere non approvato di questa release — questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB)" },
+        { "char": "🫌", "label": "Monarch Butterfly (bozza, U+1FACC)" },
+        { "char": "🛙", "label": "Lighthouse (bozza, U+1F6D9)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Ogni emoji di snack, pasto e prodotto ortofrutticolo già codificata, pronta da copiare e incollare."
+    },
+    {
+      "href": "/it/symbol/emoji-volto-incrinato/",
+      "title": "Emoji Volto Incrinato",
+      "desc": "Un'altra candidata in bozza di Emoji 18.0 — e quella che ha vinto il voto pubblico."
+    },
+    {
+      "href": "/it/symbol/emoji-meteora/",
+      "title": "Emoji Meteora",
+      "desc": "Un'altra candidata in bozza di Emoji 18.0 — si separa dalla lunga divisione di rendering di Comet."
+    },
+    {
+      "href": "/it/symbol/emoji-farfalla-monarca/",
+      "title": "Emoji Farfalla Monarca",
+      "desc": "Un'altra candidata in bozza di Emoji 18.0 — risolve una confusione multipiattaforma sulla Farfalla."
+    },
+    {
+      "href": "/it/symbol/emoji-pollice-direzionale/",
+      "title": "Emoji Pollice Direzionale",
+      "desc": "Un'altra coppia candidata in bozza di Emoji 18.0 — puntamento direzionale, non approvazione."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Unicode 18.0's New Emoji",
+      "desc": "L'intero elenco delle 9 candidate in bozza, classificate per voto pubblico."
+    }
+  ]
+}

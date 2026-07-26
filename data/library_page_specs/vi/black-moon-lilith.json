@@ -1,0 +1,71 @@
+{
+  "slug": "black-moon-lilith",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Black Moon Lilith: Sao Chép & Dán ⚸ — Ý Nghĩa Trong Chiêm Tinh Học",
+  "meta_description": "Sao chép ký hiệu Black Moon Lilith (⚸), một điểm trong quỹ đạo Mặt Trăng chứ không phải một thiên thể — cùng các ký hiệu Mặt Trăng và điểm nút khác mà bản đồ chiêm tinh dùng cùng nó.",
+  "canonical": "https://ultratextgen.com/vi/symbol/black-moon-lilith/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Black Moon Lilith",
+  "hero_h1": "Ký Hiệu Black Moon Lilith",
+  "hero_tagline": "⚸ U+26B8 — ký hiệu chiêm tinh cho một điểm toán học trong quỹ đạo Mặt Trăng, không phải một hành tinh, mặt trăng hay tiểu hành tinh. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Black Moon Lilith (⚸, U+26B8, tên chính thức BLACK MOON LILITH) hoàn toàn không đánh dấu một thiên thể vật lý — nó đánh dấu điểm xa nhất trong quỹ đạo hình elip của Mặt Trăng quanh Trái Đất, nơi Mặt Trăng nằm xa nhất, được gọi trong cơ học quỹ đạo là điểm viễn địa của Mặt Trăng. Vì bản thân quỹ đạo Mặt Trăng tự xoay chậm rãi, điểm đó trôi qua vòng hoàng đạo trong khoảng chín năm, và các nhà chiêm tinh học theo dõi nó như một vị trí trên bản đồ sao, giống hệt cách họ theo dõi một hành tinh. Cái tên này mượn từ Lilith, nhân vật trong văn hóa dân gian Lưỡng Hà và sau này là Do Thái, gắn với sự độc lập và cái tôi bị kìm nén hay bóng tối bên trong — một chủ đề mà các nhà chiêm tinh học đã mang theo vào ý nghĩa được cho là của vị trí này. Đây là một thứ tách biệt với tiểu hành tinh 1181 Lilith, một hành tinh nhỏ thật sự với ký hiệu chiêm tinh riêng (không thuộc Unicode); Unicode thêm ⚸ vào phiên bản 7.0 (2014) như một phần của lô ký hiệu chiêm tinh học rộng hơn.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/black-moon-lilith/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/black-moon-lilith/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/black-moon-lilith/" }
+  ],
+  "sections": [
+    {
+      "id": "black-moon-lilith",
+      "label": "Black Moon Lilith",
+      "h2": "Black Moon Lilith & Các Điểm Nút Mặt Trăng",
+      "intro": "Các ký hiệu điểm quỹ đạo mà bản đồ chiêm tinh vẽ theo cùng cách vẽ các hành tinh.",
+      "symbols": [
+        { "char": "⚸", "label": "Black Moon Lilith" },
+        { "char": "☊", "label": "Điểm Nút Bắc (Đi Lên)" },
+        { "char": "☋", "label": "Điểm Nút Nam (Đi Xuống)" }
+      ]
+    },
+    {
+      "id": "moon-phase-symbols",
+      "label": "Pha Mặt Trăng",
+      "h2": "Ký Hiệu Pha Mặt Trăng",
+      "intro": "Các ký hiệu Mặt Trăng mà ký hiệu của Lilith thường được đặt cùng trong bản đồ sao và chú thích.",
+      "symbols": [
+        { "char": "🌑", "label": "Trăng Non" },
+        { "char": "🌓", "label": "Trăng Thượng Huyền" },
+        { "char": "🌕", "label": "Trăng Tròn" },
+        { "char": "🌗", "label": "Trăng Hạ Huyền" },
+        { "char": "☽", "label": "Thượng Huyền (Ký Hiệu Chiêm Tinh)" },
+        { "char": "☾", "label": "Hạ Huyền (Ký Hiệu Chiêm Tinh)" }
+      ]
+    },
+    {
+      "id": "astrology-planet-symbols",
+      "label": "Ký Hiệu Chiêm Tinh",
+      "h2": "Ký Hiệu Hành Tinh Chiêm Tinh Học",
+      "intro": "Các ký hiệu hành tinh chuẩn mà một bản đồ sao cá nhân vẽ cùng Lilith và các điểm nút.",
+      "symbols": [
+        { "char": "☉", "label": "Mặt Trời" },
+        { "char": "☿", "label": "Sao Thủy" },
+        { "char": "♀", "label": "Sao Kim" },
+        { "char": "♂", "label": "Sao Hỏa" },
+        { "char": "♃", "label": "Sao Mộc" },
+        { "char": "♄", "label": "Sao Thổ" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/zodiac-symbols/", "title": "Ký Hiệu Cung Hoàng Đạo", "desc": "Mười hai ký hiệu cung mà một vị trí Black Moon Lilith được đối chiếu để luận giải." },
+    { "href": "/vi/symbol/star-of-david/", "title": "Ngôi Sao David", "desc": "Một ký hiệu khác có lịch sử thật sự lặng lẽ và muộn hơn nhiều so với ý nghĩa được gắn cho nó ngày nay." },
+    { "href": "/vi/symbol/pentagram-symbol/", "title": "Ký Hiệu Ngôi Sao Năm Cánh", "desc": "Một ngôi sao năm cánh với lịch sử biểu tượng lâu dài, gây tranh cãi riêng, được trình bày không thiên vị bên nào." }
+  ]
+}

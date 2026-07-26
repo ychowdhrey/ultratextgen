@@ -1,0 +1,65 @@
+{
+  "slug": "tete-de-mort",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Tête de Mort : Copier-Coller ☠ — Pictogramme Poison, Jolly Roger & pas 💀",
+  "meta_description": "Copie et colle la tête de mort (☠, U+2620) — le pictogramme SGH de toxicité aiguë et le pavillon pirate Jolly Roger, à ne pas confondre avec l'emoji crâne 💀. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/tete-de-mort/",
+  "breadcrumb": "Tête de Mort",
+  "hero_h1": "Tête de Mort (☠)",
+  "hero_tagline": "La tête de mort (☠) qui signale le poison et flotte sur le Jolly Roger — le symbole de danger U+2620 que l'on confond sans cesse avec l'emoji crâne 💀. Clique sur un symbole pour le copier instantanément.",
+  "intro": "La tête de mort (☠, Unicode U+2620) représente un crâne humain surmontant deux tibias croisés — un memento mori qui signale la mort et le danger depuis des siècles. Unicode l'a ajoutée dans la version 1.1 en 1993, la classant dans le bloc Miscellaneous Symbols (U+2600–U+26FF) aux côtés de ses voisins de danger ☢ radioactivité (U+2622) et ☣ danger biologique (U+2623). Elle remplit deux fonctions bien distinctes. Comme marque de danger, elle reste actuelle et officielle : la tête de mort est l'un des neuf pictogrammes SGH de toxicité aiguë, intégré au droit américain via la norme OSHA Hazard Communication Standard — elle n'est pas retirée, même si l'autocollant plus amical « Mr. Yuk » (créé en 1971 par le Pittsburgh Poison Center, après que des enfants aient associé le crâne aux pirates plutôt qu'au danger) vient la compléter sur les produits ménagers. Côté folklore pirate, c'est le Jolly Roger, le pavillon noir documenté dans les années 1710-1720 pour des capitaines comme Samuel « Black Sam » Bellamy, Edward England et John Taylor — même si de nombreux équipages arboraient d'autres motifs, ce ne fut donc jamais l'unique pavillon pirate universel. Une mise en garde : ☠ n'est pas le simple emoji crâne 💀 (U+1F480), le caractère qu'on colle pour les réactions « je suis mort de rire » — code de point différent, registre différent, confusion constante.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/tete-de-mort/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+  ],
+  "sections": [
+    {
+      "id": "le-symbole",
+      "label": "Le Symbole",
+      "h2": "La Tête de Mort — ☠",
+      "intro": "Le symbole lui-même, sous sa forme texte pleine et sa présentation emoji. C'est le même point de code, U+2620 — seul un sélecteur de variation final le fait basculer entre glyphe noir et blanc et emoji en couleur.",
+      "symbols": [
+        { "char": "☠", "label": "Tête de Mort (U+2620)" },
+        { "char": "☠️", "label": "Tête de Mort, Style Emoji (U+2620 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "tete-de-mort-vs-crane",
+      "label": "vs. l'Emoji Crâne",
+      "h2": "☠ vs. l'Emoji Crâne 💀",
+      "intro": "La confusion à dissiper : ☠ (tête de mort) et 💀 (crâne simple) sont des caractères Unicode différents. 💀 est celui qu'on colle pour « je suis mort » ou les réactions de fou rire ; ☠ est le symbole de danger et de piraterie. D'ailleurs, l'emoji pavillon pirate 🏴‍☠️ se construit justement en associant un drapeau noir à U+2620 lui-même.",
+      "symbols": [
+        { "char": "☠️", "label": "Tête de Mort (U+2620)" },
+        { "char": "💀", "label": "Crâne (U+1F480)" },
+        { "char": "🏴‍☠️", "label": "Pavillon Pirate (U+1F3F4 U+200D U+2620)" }
+      ]
+    },
+    {
+      "id": "symboles-de-danger",
+      "label": "Symboles de Danger",
+      "h2": "Autres Symboles de Danger & d'Avertissement",
+      "intro": "La tête de mort se trouve dans le bloc Miscellaneous Symbols d'Unicode, juste à côté des autres marques d'avertissement avec lesquelles on la regroupe — chacune un point de code distinct avec sa propre signification de danger.",
+      "symbols": [
+        { "char": "☠", "label": "Tête de Mort (U+2620)" },
+        { "char": "☢", "label": "Symbole de Radioactivité (U+2622)" },
+        { "char": "☣", "label": "Symbole de Danger Biologique (U+2623)" },
+        { "char": "⚠", "label": "Symbole d'Avertissement (U+26A0)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/hazard-warning-symbols/", "title": "Hazard & Warning Symbols", "desc": "Radioactivité, danger biologique, haute tension et les autres pictogrammes d'avertissement à copier dans une même référence (en anglais)." },
+    { "href": "/library/skull-emoji/", "title": "Skull Emoji & Kaomoji", "desc": "L'emoji crâne 💀 et ses cousins en visage-texte — le côté meme-réaction du crâne, réunis dans un même hub (en anglais)." },
+    { "href": "/fr/symbol/symbole-danger-biologique/", "title": "Symbole Danger Biologique (☣)", "desc": "Le signe ☣ danger biologique — un glyphe de danger voisin dans le bloc Miscellaneous Symbols d'Unicode, couvert en détail." }
+  ]
+}

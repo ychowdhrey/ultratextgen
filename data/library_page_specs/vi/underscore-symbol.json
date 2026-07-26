@@ -1,0 +1,65 @@
+{
+  "slug": "underscore-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Dấu Gạch Dưới: Sao Chép & Dán _ ＿ ‾ — Từ Kỹ Thuật Gạch Chân Máy Đánh Chữ Đến snake_case",
+  "meta_description": "Sao chép dấu gạch dưới (_, U+005F LOW LINE), cùng «họ hàng» chiều rộng đầy đủ ＿ và gạch trên ‾ — và xem cách một mẹo gạch chân trên máy đánh chữ trở thành snake_case và ký tự an toàn khoảng trắng cho tên người dùng. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/underscore-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Dấu Gạch Dưới",
+  "hero_h1": "Dấu Gạch Dưới (_)",
+  "hero_tagline": "Dấu gạch dưới bàn phím thông thường (_) khởi đầu là một mẹo gạch chân trên máy đánh chữ và trở thành snake_case — ký tự an toàn khoảng trắng duy nhất mà tên người dùng, thư điện tử và tên tệp cho phép — hiển thị cạnh những «họ hàng» chiều rộng đầy đủ ＿, gạch đôi ‗ và gạch trên ‾ của nó. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Dấu gạch dưới, hay low line (_, U+005F LOW LINE), là nét gạch ngang nằm trên đường cơ sở trong khối Basic Latin của Unicode, nơi nó mang danh mục tổng quát Connector Punctuation. Nó khởi đầu như một mẹo cơ khí thuần túy: trên máy đánh chữ, bạn gạch chân một từ bằng cách gõ nó, lùi giá đỡ về đầu, rồi gõ đè lại cùng đoạn đó bằng phím gạch dưới — một phím chuyên dụng có mặt trên các máy như Caligraph năm 1881. Ký tự này gia nhập ASCII năm 1967, chiếm mã điểm 95 (0x5F) từ mũi tên trái (←) mà nó thay thế, sau khi EBCDIC của IBM đã thêm nó từ năm 1964 như «ký tự ngắt». Sau đó lập trình viên tái sử dụng nó làm ký tự phân cách từ — phong cách dùng dấu gạch dưới thay khoảng trắng có gốc từ C vào cuối thập niên 1960 và từ cuốn The C Programming Language (1978), dù cái tên «snake_case» mãi đến khoảng năm 2004 mới được đặt ra khi cộng đồng Ruby sử dụng (PEP 8 của Python vẫn gọi nó là «lower_case_with_underscores»). Ngày nay đây là ký tự an toàn khoảng trắng duy nhất được phép trong tên người dùng, phần đầu địa chỉ thư điện tử, tên tệp và slug URL, và Markdown đọc _một gạch dưới đơn_ là in nghiêng còn __gạch dưới đôi__ là in đậm. Nó thường xuyên bị lẫn với dấu gạch nối (-, U+002D) và bị nhầm với những «người họ hàng» rộng hơn của nó, dấu gạch dưới chiều rộng đầy đủ ＿ (U+FF3F) và gạch dưới đôi ‗ (U+2017).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/underscore-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-underscore",
+      "label": "Dấu Gạch Dưới",
+      "h2": "Dấu Gạch Dưới, Chiều Rộng Đầy Đủ & Gạch Đôi",
+      "intro": "Dấu gạch dưới bàn phím thông thường cùng hai biến thể chiều rộng của nó — dạng chiều rộng đầy đủ dùng trong dàn trang chữ Đông Á và dấu gạch dưới khoảng cách kép. Sẵn sàng để dán ở bất cứ đâu.",
+      "symbols": [
+        { "char": "_", "label": "Dấu Gạch Dưới / Low Line (U+005F)" },
+        { "char": "＿", "label": "Dấu Gạch Dưới Chiều Rộng Đầy Đủ (U+FF3F)" },
+        { "char": "‗", "label": "Dấu Gạch Dưới Đôi (U+2017)" }
+      ]
+    },
+    {
+      "id": "overline",
+      "label": "Dấu Gạch Trên",
+      "h2": "Dấu Gạch Trên: Cùng Nét Gạch, Nhưng Ở Phía Trên",
+      "intro": "Dấu gạch trên là ảnh gương của dấu gạch dưới — cùng nét gạch ngang nhưng đặt phía trên văn bản thay vì bên dưới, đó là lý do hai dấu này hay bị nhầm là đối lập nhau. Dấu vĩ tuyến là dấu gạch ngắn mà mọi người thường gõ khi ý họ là dấu gạch trên.",
+      "symbols": [
+        { "char": "‾", "label": "Dấu Gạch Trên / Spacing Overscore (U+203E)" },
+        { "char": "¯", "label": "Dấu Vĩ Tuyến (U+00AF)" }
+      ]
+    },
+    {
+      "id": "confused-hyphen",
+      "label": "So Với Gạch Nối & Gạch Ngang",
+      "h2": "Dấu Gạch Dưới So Với Họ Gạch Nối & Gạch Ngang",
+      "intro": "Trong URL, tên người dùng và tên tệp, dấu gạch dưới và dấu gạch nối liên tục bị hoán đổi cho nhau — nhưng chúng nằm ở độ cao khác nhau, mã điểm khác nhau, và mỗi dấu đảm nhận một công việc khác nhau.",
+      "symbols": [
+        { "char": "-", "label": "Dấu Gạch Nối-Trừ / Gạch Nối Bàn Phím (U+002D)" },
+        { "char": "‐", "label": "Dấu Gạch Nối (U+2010)" },
+        { "char": "–", "label": "Dấu Gạch Ngang Ngắn (U+2013)" },
+        { "char": "−", "label": "Dấu Trừ (U+2212)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/keyboard-symbols/", "title": "Ký Hiệu Bàn Phím", "desc": "Dấu gạch dưới, gạch nối, dấu sao và phần còn lại của các ký tự dấu câu, phím Shift trên bàn phím tiêu chuẩn." },
+    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Dấu gạch ngang, dấu ngoặc, dấu ngoặc kép và dấu câu thông thường của Unicode trong một trang tra cứu." },
+    { "href": "/vi/symbol/at-symbol/", "title": "Ký Hiệu At (@)", "desc": "Ký tự đặc biệt khác nằm ở trung tâm địa chỉ thư điện tử và tên người dùng mạng xã hội, nơi dấu gạch dưới là ký tự phân cách an toàn khoảng trắng." }
+  ]
+}

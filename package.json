@@ -14,6 +14,8 @@
     "check:hreflang": "node scripts/audit-hreflang.js",
     "check:images": "python3 scripts/check-image-assets.py",
     "check:new-page-images": "python3 scripts/check-new-page-image-assets.py",
+    "audit:faq-schema": "node scripts/audit-faq-schema.js",
+    "check:faq-schema": "node scripts/check-faq-schema.js",
     "audit:translation-parity": "node scripts/audit-translation-parity.js",
     "check:translation-parity": "node scripts/check-translation-parity.js",
     "sync:locale-mesh": "node scripts/sync-locale-mesh.js",

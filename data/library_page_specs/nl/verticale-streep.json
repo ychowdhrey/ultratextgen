@@ -1,0 +1,105 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "verticale-streep",
+  "title": "Verticale Streep: Kopieer en Plak | — Betekenis, Unix-pipe-geschiedenis & Hoe Je Het Typt",
+  "meta_description": "Wat | betekent, de Unix-pipe-geschiedenis en hoe je het typt — klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/verticale-streep/",
+  "breadcrumb": "Verticale Streep",
+  "hero_h1": "Verticale Streep (|)",
+  "hero_tagline": "Wat | betekent, de Unix-pipe-geschiedenis en hoe je het typt. Klik om te kopiëren.",
+  "intro": "| maakt al sinds de jaren 60 deel uit van de ASCII-standaard, oorspronkelijk gewoon een plat scheidingsteken. De beroemdste betekenis komt uit de informatica: in 1973 introduceerde Doug McIlroy bij Bell Labs de 'pipe'-operator voor de Unix-shell, waarmee opdracht1 | opdracht2 de uitvoer van het ene programma rechtstreeks als invoer voor het andere kon gebruiken. Dat simpele idee — kleine programma's aan elkaar geschakeld in plaats van één reusachtig programma dat alles doet — werd een van de invloedrijkste concepten in softwareontwerp, en dat is waarom | decennia later nog altijd de bijnaam 'pipe' draagt, centraal in shellscripting en command-line-tools op elk modern besturingssysteem. Buiten de informatica doet | ook dienst als wiskundige notatie — een getal omwikkelen om absolute waarde te betekenen (|-5| = 5), een voorwaarde scheiden in verzamelingsbouwer-notatie ({x | x > 0}), en deelbaarheid aanduiden (a | b, 'a deelt b') — en als platte visuele scheiding in menu's, taglines en lijsten (Naam | Functie | Locatie).",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/vertical-line/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/verticale-streep/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/vertical-line/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "verticale-streep",
+      "label": "Verticale Streep",
+      "h2": "Het Teken Zelf",
+      "intro": "Het teken, klaar om te plakken.",
+      "symbols": [
+        {
+          "char": "|",
+          "label": "Verticale Streep (U+007C) — ook wel 'Pipe' Genoemd"
+        }
+      ]
+    },
+    {
+      "id": "vergelijkbare-tekens",
+      "label": "Vergelijkbare Tekens",
+      "h2": "Tekens die op | Lijken",
+      "intro": "Deze zien er vergelijkbaar uit maar hebben een andere functie of betekenis.",
+      "symbols": [
+        {
+          "char": "¦",
+          "label": "Gebroken Streep (U+00A6) — een oudere, minder gangbare variant die op sommige internationale toetsenborden voorkomt"
+        },
+        {
+          "char": "‖",
+          "label": "Dubbele Verticale Streep (U+2016) — gebruikt in de wiskunde voor normen, bv. ‖v‖"
+        },
+        {
+          "char": "ǀ",
+          "label": "Latijnse Letter Tandklik (U+01C0) — gebruikt in de taalkunde, visueel bijna identiek"
+        }
+      ]
+    },
+    {
+      "id": "verwante-tekens",
+      "label": "Verwante Tekens",
+      "h2": "Verwante Balken & Lijnen",
+      "intro": "Andere tekens die vaak samen met de verticale streep worden gebruikt als scheidingsteken.",
+      "symbols": [
+        {
+          "char": "⠀",
+          "label": "Onzichtbaar Teken (U+2800)"
+        },
+        {
+          "char": "-",
+          "label": "Koppelteken"
+        },
+        {
+          "char": "_",
+          "label": "Underscore"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/symbol/graden-symbool/",
+      "title": "Gradenteken",
+      "desc": "Eeuwen astronomie, hoeken en temperatuurschalen."
+    },
+    {
+      "href": "/nl/symbol/onzichtbaar-teken/",
+      "title": "Onzichtbaar Teken",
+      "desc": "De truc achter lege gebruikersnamen en weergavenamen."
+    },
+    {
+      "href": "/library/vertical-line-symbols/",
+      "title": "All Vertical Line Symbols",
+      "desc": "Elke pipe, balk en verticale lijn die Unicode biedt (Engelstalige bibliotheek)."
+    }
+  ]
+}

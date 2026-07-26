@@ -1,0 +1,74 @@
+{
+  "slug": "symbol-autyzmu",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Autyzmu: Skopiuj ♾️ Nieskończoność — To Nie Puzzle",
+  "meta_description": "Skopiuj symbol nieskończoności (∞ ♾️), którego społeczność autystyczna używa dla autyzmu i neuroróżnorodności, dowiedz się, dlaczego puzzel 🧩 wyszedł z użycia, i co oznacza złota a co tęczowa nieskończoność. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-autyzmu/",
+  "breadcrumb": "Symbol Autyzmu",
+  "hero_h1": "Symbol Autyzmu",
+  "hero_tagline": "Symbol nieskończoności (∞ ♾️), którego autystyczni samorzecznicy używają dla autyzmu i neuroróżnorodności — i dlaczego zastąpił on puzzel 🧩. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Nie istnieje jeden „oficjalny” symbol autyzmu, a dwa najpopularniejsze aktywnie sobie przeczą. Puzzel pochodzi z 1963 roku i został spopularyzowany przez niebieskie logo organizacji Autism Speaks od 2005 roku; wielu dorosłych w spektrum autyzmu nazywa go dziś obraźliwym, bo sugeruje, że autyzmowi brakuje jakiegoś elementu, tak jak układance. Symbol nieskończoności pochodzi z Dnia Dumy Autystycznej, również z 2005 roku, i to jego wybrał ruch neuroróżnorodności — złoty konkretnie dla autyzmu, tęczowy dla neuroróżnorodności w ogóle. Amerykańskie Autism Society of America formalnie odeszło od symbolu puzzla w 2023 roku.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/autism-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-autyzmu/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/autism-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-nieskonczonosci",
+      "label": "Nieskończoność",
+      "h2": "Symbol Nieskończoności",
+      "intro": "Symbol preferowany przez autystycznych samorzeczników i ruch neuroróżnorodności, przedstawiający nieskończoną różnorodność i możliwości, a nie brak, który trzeba naprawić.",
+      "symbols": [
+        { "char": "∞", "label": "Nieskończoność" },
+        { "char": "♾️", "label": "Emoji Nieskończoności" }
+      ]
+    },
+    {
+      "id": "warianty-kolorystyczne",
+      "label": "Warianty Kolorystyczne",
+      "h2": "Złoty, Tęczowy i Znaczenie Koloru",
+      "intro": "Kolor niesie tu konkretne znaczenie: złoty oznacza konkretnie autyzm (nawiązanie do Au, chemicznego symbolu złota), tęczowy oznacza neuroróżnorodność szerzej (razem autyzm, ADHD, dysleksję i inne). Sam tekstowy znak ∞ nie może nieść koloru, dlatego wersję tęczową wkleja się zwykle jako kombinację z emoji.",
+      "symbols": [
+        { "char": "🌈♾️", "label": "Tęczowa Nieskończoność (Neuroróżnorodność)" },
+        { "char": "🌈", "label": "Tęcza" }
+      ]
+    },
+    {
+      "id": "dawny-symbol",
+      "label": "Dawny Symbol",
+      "h2": "Puzzel — Sporny, Dawny Symbol",
+      "intro": "Wciąż powszechnie rozpoznawany i wciąż używany przez niektóre organizacje i rodziny, ale już nie symbol, którego używa większość grup rzeczniczych prowadzonych przez osoby autystyczne. Zamieszczony tu dla pełnego obrazu, nie jako rekomendacja.",
+      "symbols": [
+        { "char": "🧩", "label": "Puzzel" },
+        { "char": "💙", "label": "Niebieskie Serce (Light It Up Blue)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/awareness-ribbons/",
+      "title": "Awareness Ribbons",
+      "desc": "Symbole wstążek dla zdrowia, wsparcia i rzecznictwa różnych spraw."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Matematyczny symbol nieskończoności oraz operatory, litery greckie i pierwiastki."
+    },
+    {
+      "href": "/pl/library/symbole-serca/",
+      "title": "Symbole Serca",
+      "desc": "Emotki i unicode'owe znaki serca w każdym kolorze i stylu."
+    }
+  ]
+}
