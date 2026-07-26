@@ -103,6 +103,12 @@
       "localeUrl": "https://ultratextgen.com/nl/library/emoji-combos/",
       "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry above: nl/library/emoji-combos/index.html moved this branch from the orphaned /nl/emoji-combinaties/ into /library/, plus gained one new compare-card entry on nl/library/index.html (it previously had zero inbound hub link at all, a stricter case than fr/de/pl/tr which already had one). Body content of the page itself unchanged by the move (still 8 of EN's 32 h2 sections, a pre-existing gap). Verified by direct inspection. Discussed with the user 2026-07-26.",
       "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/sv/library/emoji-combos/",
+      "reason": "check-translation-parity.js flags this pair because library/emoji-combos/index.html (EN) picked up new hreflang entries this branch (see the fr/de/pl/tr/nl emoji-combos entries above — the same file's hreflang block was touched twice in this branch, once for that relink batch and again here for the new sv sibling), while sv/library/emoji-combos/index.html is a brand-new page built as part of the user-authorized sv library/* cluster (see data/locale_parent_gap_audit.json's sv/library/* gate-pass entry). It's a curated ~625-line subset of EN's 32 mood sections (6 sections, verified programmatically to use only real EN combo strings, zero invented content), the same scope precedent as the existing ar/ru/es/pt/id sv-sibling builds of this same page. Not real drift — EN's delta here is link-target-only (hreflang), not new translatable content. Discussed with the user 2026-07-26 as part of the same authorized sv build.",
+      "agreed": "2026-07-26"
     }
   ]
 }
