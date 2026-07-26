@@ -1135,6 +1135,26 @@ something in this repo's tracked files, and it was not verified as part of
 adding this tooling. If new pages are still shipping without their art after
 this, check that setting before assuming the scripts are wrong.
 
+> **Resolved 2026-07-26 — it was not branch protection (that may still need
+> checking, but it was not the cause).** `validate.yml` ran every validator
+> as `<validator> | tee <name>.log`, and GitHub's default `run:` shell is
+> `bash -e {0}` — **no `pipefail`**. A pipeline's exit code is its *last*
+> command's, i.e. `tee`, i.e. always 0. So from the day the workflow was
+> written, every validator step recorded `outcome: success` regardless of
+> what the validator returned, and the "fail the job if any gating validator
+> reported problems" step could never fire. The whole gate was inert —
+> including the previously-added ones this section describes.
+>
+> Caught when a PR whose `check-translation-parity.js` exits 1 locally was
+> reported green by CI. Fixed by setting `defaults.run.shell: bash` on the
+> job, which makes Actions use `bash --noprofile --norc -eo pipefail {0}`.
+>
+> **The general rule, for any validator added here in future:** a CI step of
+> the form `cmd | tee log` does not gate anything unless the job sets
+> `shell: bash` (or the step sets `set -o pipefail` itself). When adding a
+> gating check, verify it actually goes red — a green check that cannot go
+> red is worse than no check, because it reads as evidence.
+
 ---
 
 ## Build & Development
