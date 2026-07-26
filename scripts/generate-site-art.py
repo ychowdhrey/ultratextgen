@@ -1393,6 +1393,8 @@ PAGES = {
   "usecase-stumble-guys-name-generator": ("Stumble Guys Name Generator", "Funny & stylish nicknames, 4-12 char checker", m_gamepad, K_USE),
   "usecase-clash-of-clans-name-generator": ("Clash of Clans Name Generator", "Stylish COC nicknames, 2-15 char checker", m_gamepad, K_USE),
   "usecase-fortnite-name-generator": ("Fortnite Name Generator", "Stylish Epic Games names, 3-16 char checker", m_gamepad, K_USE),
+  "usecase-pubg-name-generator": ("PUBG Name Generator", "Stylish PUBG & BGMI names, 14 char checker", m_gamepad, K_USE),
+  "usecase-mobile-legends-name-generator": ("Mobile Legends Name Generator", "Stylish MLBB names, 4-16 char checker", m_gamepad, K_USE),
   "usecase-aesthetic-instagram-names": ("Aesthetic Instagram Names", "Cute username & display name ideas", m_heart, K_USE),
   "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Nickname lucu & aesthetic, cek 4-12 karakter", m_gamepad, K_USE),
   "usecase-aesthetic-contact-names": ("Aesthetic Contact Names", "Cute names for bae's phone contact", m_heart, K_USE),
