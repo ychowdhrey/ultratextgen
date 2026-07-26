@@ -156,6 +156,32 @@
       "verdict": "gate-pass",
       "evidence": "User-authorized exception, not a fresh per-locale instrument pull (no Semrush credits available this session). sv is registered in data/locale_qualification_tiers.json as Tier 3 (hold-stub, \"no spec mirroring until promoted\") — a firmer default than a gated-tail parent's normal per-check gate, same class of override as the zh-tw/tongxunlu-nicheng entry above. The gap was surfaced by the private ultratextgen-lab- repo's translation-opportunities-2026-07-24.md (Tier A4: sv missing all of the site's top-4-traffic library/ cluster — discord-symbols, roblox-symbols, y2k-symbols, emoji-combos — while it already carries real content elsewhere, i.e. this is a partially-built locale, not a bootstrap-from-zero). The user was told sv is Tier 3 directly and asked to build this specific 4-page cluster anyway, and confirmed. This entry authorizes sv/library/discord-symboler, sv/library/roblox-symboler, sv/library/y2k-symboler, and sv/library/emoji-combos; it does not change sv's tier in data/locale_qualification_tiers.json and does not constitute general re-qualification of sv — future sv build decisions should still go through the Tier-3 default (raise with the user first) unless/until sv is promoted via the 7-point gate.",
       "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized new-locale launch, not a fresh per-locale Semrush pull (no API access this session). fi is a brand-new locale, added to data/locale_qualification_tiers.json as Tier 3 (hold-stub) in this same change, matching the hr/hu/da precedent of starting new Latin-script European locales at Tier 3 regardless of build depth. Real competitor-footprint evidence found via web search in place of Semrush: fi.piliapp.com (a dedicated Finnish subdomain of an existing multi-locale competitor already tracked elsewhere in this repo's research), cooltextmaker.com/fi/, urwatools.com/fi/, and adamfaliq.com/fi/bold-text-generator-suomi/ all independently serve Finnish-language \"fonttigeneraattori\"/\"tekstigeneraattori\" (font/text generator) content today. The private ultratextgen-lab- repo's research/language-expansion-opportunities.md separately scored Finnish as a Phase-1 candidate (5.5M speakers, very high purchasing power, low competition, excellent Latin-script compatibility) alongside ms/da/hu, all three already live. User explicitly asked for a full Finnish locale launch. This entry authorizes the category/* pages built in this launch (bold-fonts, italic-fonts, gothic-fonts, small-text Finnish translations).",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "guide/*",
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry immediately above. Covers the standard 3-guide Discord trio (discord-text-formatting-explained, discord-where-fonts-work, discord-safe-name-styling) that every prior minimal-locale launch (hr, hu, da) has shipped alongside its core category/platform pages.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
     }
   ]
 }
