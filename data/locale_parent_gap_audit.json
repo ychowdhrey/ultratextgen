@@ -286,6 +286,58 @@
       "verdict": "gate-fail",
       "evidence": "Vietnamese forum evidence is genuinely strong (VOZ, boxcongnghe.com, kituvui.com, Lemon8, powerpoint.com.vn — multiple strong fetched rows across blank-name, tofu and name-rejection), so this is NOT a demand failure. Not built because vi carries an explicit locale-level hold in data/locale_qualification_tiers.json (hold: true — the gap is authority/indexing, not content). The hold overrides a passing demand signal. Revisit if and when the vi hold is lifted; the demand side is already cleared. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
       "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "sv",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull (no Semrush credits available this session). sv is registered in data/locale_qualification_tiers.json as Tier 3 (hold-stub, \"no spec mirroring until promoted\") — a firmer default than a gated-tail parent's normal per-check gate, same class of override as the zh-tw/tongxunlu-nicheng entry above. The gap was surfaced by the private ultratextgen-lab- repo's translation-opportunities-2026-07-24.md (Tier A4: sv missing all of the site's top-4-traffic library/ cluster — discord-symbols, roblox-symbols, y2k-symbols, emoji-combos — while it already carries real content elsewhere, i.e. this is a partially-built locale, not a bootstrap-from-zero). The user was told sv is Tier 3 directly and asked to build this specific 4-page cluster anyway, and confirmed. This entry authorizes sv/library/discord-symboler, sv/library/roblox-symboler, sv/library/y2k-symboler, and sv/library/emoji-combos; it does not change sv's tier in data/locale_qualification_tiers.json and does not constitute general re-qualification of sv — future sv build decisions should still go through the Tier-3 default (raise with the user first) unless/until sv is promoted via the 7-point gate.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized new-locale launch, not a fresh per-locale Semrush pull (no API access this session). fi is a brand-new locale, added to data/locale_qualification_tiers.json as Tier 3 (hold-stub) in this same change, matching the hr/hu/da precedent of starting new Latin-script European locales at Tier 3 regardless of build depth. Real competitor-footprint evidence found via web search in place of Semrush: fi.piliapp.com (a dedicated Finnish subdomain of an existing multi-locale competitor already tracked elsewhere in this repo's research), cooltextmaker.com/fi/, urwatools.com/fi/, and adamfaliq.com/fi/bold-text-generator-suomi/ all independently serve Finnish-language \"fonttigeneraattori\"/\"tekstigeneraattori\" (font/text generator) content today. The private ultratextgen-lab- repo's research/language-expansion-opportunities.md separately scored Finnish as a Phase-1 candidate (5.5M speakers, very high purchasing power, low competition, excellent Latin-script compatibility) alongside ms/da/hu, all three already live. User explicitly asked for a full Finnish locale launch. This entry authorizes the category/* pages built in this launch (bold-fonts, italic-fonts, gothic-fonts, small-text Finnish translations).",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "guide/*",
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry immediately above. Covers the standard 3-guide Discord trio (discord-text-formatting-explained, discord-where-fonts-work, discord-safe-name-styling) that every prior minimal-locale launch (hr, hu, da) has shipped alongside its core category/platform pages.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
     }
   ]
 }

@@ -229,6 +229,19 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /pt/combos-de-emoji/                     /pt/library/emoji-combos/  301
 /pt/combos-de-emoji/index.html           /pt/library/emoji-combos/  301
 
+# fr/de/pl/tr/nl emoji-combos: same orphaned-slug-to-/library/-pillar move,
+# completing the batch above (id/es/pt were done first).
+/fr/combos-emoji/                        /fr/library/emoji-combos/  301
+/fr/combos-emoji/index.html              /fr/library/emoji-combos/  301
+/de/emoji-kombinationen/                 /de/library/emoji-combos/  301
+/de/emoji-kombinationen/index.html       /de/library/emoji-combos/  301
+/pl/kombinacje-emoji/                    /pl/library/emoji-combos/  301
+/pl/kombinacje-emoji/index.html          /pl/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/               /tr/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/index.html     /tr/library/emoji-combos/  301
+/nl/emoji-combinaties/                   /nl/library/emoji-combos/  301
+/nl/emoji-combinaties/index.html         /nl/library/emoji-combos/  301
+
 # pt/usecase/nick-free-fire retired: near-duplicate of pt/usecase/nick-ff
 # (same Free Fire nick-generator intent, no distinct EN parent of its own)
 # that was never picking up meaningful traffic of its own (19 impr/26 days

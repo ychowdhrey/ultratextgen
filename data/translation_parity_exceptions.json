@@ -155,6 +155,186 @@
       "localeUrl": "https://ultratextgen.com/th/",
       "reason": "Locale homepage gained exactly one contextual link to a locale-native answers/ page that cleared the 2026-07-26 forum-evidence demand gate (or, for it/nl/ru, restored the link that commit 4eeb80a2 removed when it pulled those pages). Required by CLAUDE.md's Hub-vs-Spoke Rule 4 — without it the rebuilt page is an orphan spoke with no inbound internal link. There is no corresponding change to make on the EN homepage: it has never linked these four answers/ pages, and adding EN answer links to the site's highest-authority page is a separate, unrequested editorial decision, not a parity sync. Same shape of divergence as the usecase-hub entries agreed with the user on 2026-07-26, and applied here on that agreed principle.",
       "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/fr/library/emoji-combos/",
+      "reason": "check-translation-parity.js flags this pair (and the de/pl/tr/nl siblings below) because fr/library/emoji-combos/index.html was moved this branch from the orphaned /fr/combos-emoji/ into the /library/ pillar (completing the same relink the id/es/pt entries above already cover, per user request 2026-07-26), and library/emoji-combos/index.html (EN) itself was edited in this branch to fix its hreflang block and visible lang-switcher links for these 5 locales (they previously pointed at the dead orphan URLs). Unlike the id/es/pt moves, this batch did NOT expand body content to EN's 32-h2-section depth — fr/nl remain at 8 sections, de at 23, pl at 22, tr at 20, all pre-existing gaps unchanged by this move, not new drift introduced by it. Both sides' fingerprint deltas are URL-target-only (fixing links that pointed at a now-dead orphan path), not new translatable content on either side. Verified by direct inspection (h2 counts unchanged pre/post-move; only href values changed). Discussed with the user 2026-07-26 as the explicit ask that authorized this relink batch.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/de/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry immediately above: de/library/emoji-combos/index.html moved this branch from the orphaned /de/emoji-kombinationen/ into /library/. Body content unchanged by the move (still 23 of EN's 32 h2 sections, a pre-existing gap, not new drift); only link targets (hreflang, lang-switcher, canonical, OG/hero asset filenames) were fixed. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/pl/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry above: pl/library/emoji-combos/index.html moved this branch from the orphaned /pl/kombinacje-emoji/ into /library/ (it already carried a compare-card on pl/library/index.html pointing at the old orphan URL, now repointed). Body content unchanged by the move (still 22 of EN's 32 h2 sections, a pre-existing gap); only link targets were fixed. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/tr/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry above: tr/library/emoji-combos/index.html moved this branch from the orphaned /tr/emoji-kombinasyonlari/ into /library/. Body content unchanged by the move (still 20 of EN's 32 h2 sections, a pre-existing gap); only link targets were fixed, including tr/index.html's homepage tip-card which pointed at the old orphan URL. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/nl/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry above: nl/library/emoji-combos/index.html moved this branch from the orphaned /nl/emoji-combinaties/ into /library/, plus gained one new compare-card entry on nl/library/index.html (it previously had zero inbound hub link at all, a stricter case than fr/de/pl/tr which already had one). Body content of the page itself unchanged by the move (still 8 of EN's 32 h2 sections, a pre-existing gap). Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/sv/library/emoji-combos/",
+      "reason": "check-translation-parity.js flags this pair because library/emoji-combos/index.html (EN) picked up new hreflang entries this branch (see the fr/de/pl/tr/nl emoji-combos entries above — the same file's hreflang block was touched twice in this branch, once for that relink batch and again here for the new sv sibling), while sv/library/emoji-combos/index.html is a brand-new page built as part of the user-authorized sv library/* cluster (see data/locale_parent_gap_audit.json's sv/library/* gate-pass entry). It's a curated ~625-line subset of EN's 32 mood sections (6 sections, verified programmatically to use only real EN combo strings, zero invented content), the same scope precedent as the existing ar/ru/es/pt/id sv-sibling builds of this same page. Not real drift — EN's delta here is link-target-only (hreflang), not new translatable content. Discussed with the user 2026-07-26 as part of the same authorized sv build.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/tr/library/",
+      "reason": "check-translation-parity.js flags this pair because tr/library/index.html gained one new A-Z static-index list entry (\"Emoji Kombinasyonları\" -> /tr/library/emoji-combos/) as part of the tr/emoji-kombinasyonlari relink into /library/ (see the tr/library/emoji-combos entry above). library/index.html (EN) was not touched in this branch and needed no change — it already lists library/emoji-combos. Verified by direct inspection (git diff shows only the one new list-item insertion, no other content change). Discussed with the user 2026-07-26 as part of the same authorized relink batch.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/microphone-emoji/",
+      "localeUrl": "https://ultratextgen.com/tr/symbol/mikrofon-emojisi/",
+      "reason": "check-translation-parity.js flags this pair because tr/symbol/mikrofon-emojisi/index.html had one related-card href repointed from the now-retired /tr/emoji-kombinasyonlari/ to its new home at /tr/library/emoji-combos/ (same sitewide URL-rewrite pass as the tr/library/index.html entry above). symbol/microphone-emoji/index.html (EN) was not touched in this branch and needed no change — URL-only mechanical fix, not new translatable content. Verified by direct inspection (git diff shows only the href value changed). Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/updates/unicode-18-most-anticipated-emoji/",
+      "localeUrl": "https://ultratextgen.com/tr/updates/unicode-18-yeni-emoji-oylama/",
+      "reason": "check-translation-parity.js flags this pair because tr/updates/unicode-18-yeni-emoji-oylama/index.html had two body-prose hrefs repointed from the now-retired /tr/emoji-kombinasyonlari/ to its new home at /tr/library/emoji-combos/ (same sitewide URL-rewrite pass as the two entries above). updates/unicode-18-most-anticipated-emoji/index.html (EN) was not touched in this branch and needed no change — URL-only mechanical fix, not new translatable content. Verified by direct inspection (git diff shows only the two href values changed, prose text unchanged). Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/de/library/",
+      "reason": "check-translation-parity.js flags this pair (re-surfaced once the branch's merge-base moved forward past origin/main) because de/library/index.html gained one A-Z static-index entry pointing at /de/library/emoji-combos/ as part of the de/emoji-kombinationen relink into /library/. library/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26, same authorized relink batch as the tr/library/ entry above.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/special-characters/",
+      "localeUrl": "https://ultratextgen.com/de/library/symbole-zum-kopieren/",
+      "reason": "check-translation-parity.js flags this pair because de/library/symbole-zum-kopieren/index.html had one related-card href repointed from the now-retired /de/emoji-kombinationen/ to its new home at /de/library/emoji-combos/. library/special-characters/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/microphone-emoji/",
+      "localeUrl": "https://ultratextgen.com/de/symbol/mikrofon-emoji/",
+      "reason": "check-translation-parity.js flags this pair because de/symbol/mikrofon-emoji/index.html had one related-card href repointed from /de/emoji-kombinationen/ to /de/library/emoji-combos/. symbol/microphone-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/updates/unicode-18-most-anticipated-emoji/",
+      "localeUrl": "https://ultratextgen.com/de/updates/unicode-18-emoji-abstimmung/",
+      "reason": "check-translation-parity.js flags this pair because de/updates/unicode-18-emoji-abstimmung/index.html had two body-prose hrefs repointed from /de/emoji-kombinationen/ to /de/library/emoji-combos/. updates/unicode-18-most-anticipated-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix, prose text unchanged. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/fr/library/",
+      "reason": "check-translation-parity.js flags this pair (re-surfaced once the branch's merge-base moved forward) because fr/library/index.html gained one A-Z static-index entry pointing at /fr/library/emoji-combos/ as part of the fr/combos-emoji relink into /library/. library/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26, same authorized relink batch.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/coquette-symbols/",
+      "localeUrl": "https://ultratextgen.com/fr/library/symboles-coquette/",
+      "reason": "check-translation-parity.js flags this pair because fr/library/symboles-coquette/index.html had one related-card href repointed from /fr/combos-emoji/ to /fr/library/emoji-combos/. library/coquette-symbols/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/microphone-emoji/",
+      "localeUrl": "https://ultratextgen.com/fr/symbol/emoji-microphone/",
+      "reason": "check-translation-parity.js flags this pair because fr/symbol/emoji-microphone/index.html had one related-card href repointed from /fr/combos-emoji/ to /fr/library/emoji-combos/. symbol/microphone-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/anger-symbol/",
+      "localeUrl": "https://ultratextgen.com/fr/symbol/symbole-colere/",
+      "reason": "check-translation-parity.js flags this pair because fr/symbol/symbole-colere/index.html had one related-card href repointed from /fr/combos-emoji/ to /fr/library/emoji-combos/. symbol/anger-symbol/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/updates/unicode-18-most-anticipated-emoji/",
+      "localeUrl": "https://ultratextgen.com/fr/updates/unicode-18-nouveaux-emojis-vote/",
+      "reason": "check-translation-parity.js flags this pair because fr/updates/unicode-18-nouveaux-emojis-vote/index.html had two body-prose hrefs repointed from /fr/combos-emoji/ to /fr/library/emoji-combos/. updates/unicode-18-most-anticipated-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix, prose text unchanged. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/nl/library/hartjes/",
+      "reason": "check-translation-parity.js flags this pair because nl/library/hartjes/index.html had one related-card href repointed from /nl/emoji-combinaties/ to /nl/library/emoji-combos/. library/heart-symbols/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/nl/library/",
+      "reason": "check-translation-parity.js flags this pair (re-surfaced once the branch's merge-base moved forward) because nl/library/index.html gained one compare-card pointing at /nl/library/emoji-combos/ as part of the nl/emoji-combinaties relink into /library/ (nl previously had zero inbound hub link at all, unlike fr/de/pl/tr). library/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26, same authorized relink batch.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/text-faces-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/nl/library/tekstgezichten-kaomoji/",
+      "reason": "check-translation-parity.js flags this pair because nl/library/tekstgezichten-kaomoji/index.html had one related-card href repointed from /nl/emoji-combinaties/ to /nl/library/emoji-combos/. library/text-faces-kaomoji/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/microphone-emoji/",
+      "localeUrl": "https://ultratextgen.com/nl/symbol/microfoon-emoji/",
+      "reason": "check-translation-parity.js flags this pair because nl/symbol/microfoon-emoji/index.html had one related-card href repointed from /nl/emoji-combinaties/ to /nl/library/emoji-combos/. symbol/microphone-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/anger-symbol/",
+      "localeUrl": "https://ultratextgen.com/nl/symbol/woede-symbool/",
+      "reason": "check-translation-parity.js flags this pair because nl/symbol/woede-symbool/index.html had one related-card href repointed from /nl/emoji-combinaties/ to /nl/library/emoji-combos/. symbol/anger-symbol/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/updates/unicode-18-most-anticipated-emoji/",
+      "localeUrl": "https://ultratextgen.com/nl/updates/unicode-18-nieuwe-emoji-stemming/",
+      "reason": "check-translation-parity.js flags this pair because nl/updates/unicode-18-nieuwe-emoji-stemming/index.html had two body-prose hrefs repointed from /nl/emoji-combinaties/ to /nl/library/emoji-combos/. updates/unicode-18-most-anticipated-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix, prose text unchanged. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/pl/library/",
+      "reason": "check-translation-parity.js flags this pair (re-surfaced once the branch's merge-base moved forward) because pl/library/index.html's existing emoji-combos compare-card href was repointed from /pl/kombinacje-emoji/ to /pl/library/emoji-combos/ as part of the pl relink into /library/ (pl already had an inbound hub link, unlike nl). library/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26, same authorized relink batch.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/pl/library/symbole-serca/",
+      "reason": "check-translation-parity.js flags this pair because pl/library/symbole-serca/index.html had one related-card href repointed from /pl/kombinacje-emoji/ to /pl/library/emoji-combos/. library/heart-symbols/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/microphone-emoji/",
+      "localeUrl": "https://ultratextgen.com/pl/symbol/emoji-mikrofonu/",
+      "reason": "check-translation-parity.js flags this pair because pl/symbol/emoji-mikrofonu/index.html had one related-card href repointed from /pl/kombinacje-emoji/ to /pl/library/emoji-combos/. symbol/microphone-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/anger-symbol/",
+      "localeUrl": "https://ultratextgen.com/pl/symbol/symbol-zlosci/",
+      "reason": "check-translation-parity.js flags this pair because pl/symbol/symbol-zlosci/index.html had one related-card href repointed from /pl/kombinacje-emoji/ to /pl/library/emoji-combos/. symbol/anger-symbol/index.html (EN) was not touched in this branch — URL-only mechanical fix. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/updates/unicode-18-most-anticipated-emoji/",
+      "localeUrl": "https://ultratextgen.com/pl/updates/unicode-18-nowe-emoji-glosowanie/",
+      "reason": "check-translation-parity.js flags this pair because pl/updates/unicode-18-nowe-emoji-glosowanie/index.html had two body-prose hrefs repointed from /pl/kombinacje-emoji/ to /pl/library/emoji-combos/. updates/unicode-18-most-anticipated-emoji/index.html (EN) was not touched in this branch — URL-only mechanical fix, prose text unchanged. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/",
+      "localeUrl": "https://ultratextgen.com/sv/library/",
+      "reason": "check-translation-parity.js flags this pair (re-surfaced once the branch's merge-base moved forward) because sv/library/index.html gained 4 new compare-cards (Discord-symboler, Roblox-symboler, Y2K-symboler, Emoji-kombinationer) as part of the user-authorized sv library/* cluster build (see data/locale_parent_gap_audit.json's library/*-locale-sv gate-pass entry). library/index.html (EN) was not touched in this branch and needed no change — these are hub links to genuinely new sv content, not EN drift. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
     }
   ]
 }
