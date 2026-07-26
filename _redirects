@@ -1,15 +1,17 @@
 # Canonical host: enforce non-www
 https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 
-# NOTE: there used to be a `/  /index.html  200` rewrite here, described
-# as a safety net for functions/_middleware.js. It was not a safety net —
-# a static rule short-circuits before Pages Functions, so it *replaced*
-# the middleware, which meant the middleware's ?lang= handling never ran.
-# Verified on the PR #674 preview deploy: with the rule present /?lang=de
-# returned 200 instead of the 301 the middleware issues.
+# Serve the English homepage for the root path.
 #
-# `/` now falls through to functions/_middleware.js, which serves the
-# English /_root copy explicitly (see that file for why).
+# This rule is what actually keeps / on English. It was previously
+# described as a "safety net if the middleware is not deployed", with
+# functions/_middleware.js as the primary fix — but the middleware does
+# not execute on this Pages project at all. Verified on the PR #674
+# preview: with this rule REMOVED (so nothing in _redirects matched /),
+# /?lang=de still returned 200 rather than the 301 the middleware issues
+# from its very first branch. Functions are inert here; this is primary,
+# not a fallback. Do not remove it expecting the middleware to cover /.
+/  /index.html  200
 
 # Canonical path: enforce trailing slash on platform root pages
 /discord    /discord/    301

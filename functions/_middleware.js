@@ -1,3 +1,17 @@
+// ⚠️  THIS MIDDLEWARE DOES NOT CURRENTLY RUN.
+//
+// Pages Functions are not executing on this project. Verified on the
+// PR #674 preview deploy (2026-07-26): with every _redirects rule that
+// matched `/` removed, `/?lang=de` still returned 200 instead of the
+// 301 the LANG_REDIRECTS branch below issues before touching anything
+// else. `/` is served by the `/  /index.html  200` rule in _redirects,
+// and the `_root.html` copy this file fetches is unused.
+//
+// The code below is correct and will take effect if Functions are ever
+// enabled (check the Pages project's build config in the Cloudflare
+// dashboard) — but do not rely on it for anything today, and do not
+// delete a _redirects rule on the assumption that it covers you.
+//
 // Legacy ?lang= query-param URLs → path-based locale homepages.
 //
 // This lives here, not in _redirects, because Cloudflare Pages matches
