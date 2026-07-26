@@ -1184,6 +1184,66 @@ Every page includes JSON-LD for:
 
 When editing page content, preserve and update the JSON-LD structured data to match. Use schema.org vocabulary.
 
+### FAQ schema must mirror visible page content
+
+`FAQPage`/`QAPage` JSON-LD may only contain questions and answers the reader
+can actually see on the page. Google's structured-data policy is explicit
+that FAQ markup has to mirror on-page content; a page that ships a
+`FAQPage` block describing Q&A it never renders is invisible-content markup
+— it forfeits the rich result and is spammy-structured-markup territory for
+a manual action. Content inside an accordion/disclosure widget **is**
+visible for this purpose; content that exists only in the JSON-LD is not.
+
+The rule cuts both ways, and both halves have failed here before:
+
+- **Never add FAQ schema for Q&A the page doesn't render.** If the copy is
+  worth marking up, put it on the page.
+- **Never edit or trim a visible FAQ without updating the JSON-LD.** The
+  stale-schema half is the more common failure: the visible FAQ gets
+  rewritten, the JSON-LD keeps the old wording, and the questions silently
+  stop matching. Paraphrase is not a match — Google compares the actual
+  strings.
+
+House markup for a rendered FAQ is either the JS-bound accordion
+(`<div class="faq-item"><button class="faq-question">` + `.faq-answer`, which
+`script.js` wires up) or the JS-free disclosure variant
+(`<details class="faq-item"><summary class="faq-question">` + `.faq-answer`).
+Prefer the `<details>` variant on any page that does not load `/script.js` —
+it needs no binding and cannot double-bind against `script.js`'s own
+`.faq-question` handler.
+
+**Case study (2026-07-26):** a 2026-07-12 structural audit found two pages
+(`usecase/stylish-name`, `usecase/zalgo-text`) shipping FAQ schema with no
+visible FAQ and recorded it as a two-page defect. A site-wide scan found the
+real number was **214 pages** — 155 with FAQ schema and no FAQ section at
+all, plus 59 whose visible FAQ had drifted out of sync with its own JSON-LD
+(212 orphan questions). Nothing had been watching for it because nothing
+could: the audit was a manual read, so the count it produced was the count
+someone happened to open. Fixed in one pass, and the reason it can't
+silently return is the tooling below, not vigilance.
+
+#### Tooling
+
+- **`npm run audit:faq-schema`** (`scripts/audit-faq-schema.js`) — whole-site
+  dashboard. Reports per page whether every FAQ-schema question is visible,
+  broken down by locale, with `--full` for the individual questions and
+  `--json`/`--report` to save a snapshot. Discovery tool; not wired into CI.
+- **`npm run check:faq-schema`** (`scripts/check-faq-schema.js`) — the
+  enforcing half, wired into `.github/workflows/validate.yml` as a gating
+  check. Diff-scoped like `check-translation-parity.js`: it only inspects
+  HTML this PR adds or changes, so pre-existing backlog elsewhere can never
+  make it permanently red. Fails the PR listing the exact unmatched
+  questions.
+- **`node scripts/fix-faq-schema-visibility.js`** — the repair pass, kept
+  because the same two repairs apply every time this recurs. `--dry-run`
+  reports; `--write` applies; a file list scopes it. It renders the schema's
+  own Q&A into a house-style section when the page has no FAQ at all, and
+  prunes-then-backfills the JSON-LD against the visible FAQ when the page
+  does. It never invents copy: rendered text is the schema's own, backfilled
+  text is the page's own.
+- All three share `scripts/lib/faq-schema-audit.js`, so the audit, the gate
+  and the fixer can never disagree about what counts as "visible."
+
 ---
 
 ## Testing
@@ -1282,6 +1342,11 @@ Standing protocol:
 - Do not add inline `<style>` blocks to HTML pages — add to `style.css`
 - Do not skip Google Tag Manager snippets when creating new pages
 - Do not skip JSON-LD structured data when creating new pages
+- Do not ship `FAQPage`/`QAPage` JSON-LD whose questions aren't rendered on
+  the page, and do not edit a visible FAQ without updating its JSON-LD to
+  match — see "FAQ schema must mirror visible page content" above.
+  `npm run check:faq-schema` enforces this in CI on every page a PR touches;
+  `npm run audit:faq-schema` gives the whole-site picture.
 - Do not ship a new or edited page's HTML before its hero/OG/Twitter art is
   generated and committed in the same change, and don't rely on a later
   cleanup pass to backfill it — see "New pages must ship with their hero/OG/

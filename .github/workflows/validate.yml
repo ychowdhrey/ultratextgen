@@ -6,13 +6,16 @@ name: Validate Site
 # specifically, translation parity — an EN <-> locale content change
 # introduced by this PR without its sibling being updated — locale mesh
 # health (hreflang reciprocity + locale-native internal links on any locale
-# page this PR touches), and the locale-parent-gap pre-build check on any
-# new locale page. Each validator already exits non-zero on failure (see
-# scripts/audit-hreflang.js, scripts/validate_library_pages.py,
-# scripts/check-image-assets.py, scripts/check-new-page-image-assets.py,
+# page this PR touches), the locale-parent-gap pre-build check on any new
+# locale page, and FAQ schema visibility (FAQPage/QAPage JSON-LD whose
+# questions aren't actually on the page). Each validator already exits
+# non-zero on failure (see scripts/audit-hreflang.js,
+# scripts/validate_library_pages.py, scripts/check-image-assets.py,
+# scripts/check-new-page-image-assets.py,
 # scripts/check-translation-parity.js, scripts/check-locale-mesh.js,
-# scripts/check-locale-parent-gap.js) — this workflow is what actually wires
-# that into CI so a PR can't merge broken pages.
+# scripts/check-locale-parent-gap.js, scripts/check-faq-schema.js) — this
+# workflow is what actually wires that into CI so a PR can't merge broken
+# pages.
 #
 # scripts/check-image-assets.py is a whole-site audit (also requires a
 # Pinterest pin per page) and the site carries a large, deliberately-paced
@@ -100,6 +103,11 @@ jobs:
         continue-on-error: true
         run: npm run check:locale-mesh -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee locale-mesh.log
 
+      - name: Run FAQ schema visibility check
+        id: faq_schema
+        continue-on-error: true
+        run: npm run check:faq-schema -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee faq-schema.log
+
       - name: Run locale parent gap check
         id: locale_parent_gap
         continue-on-error: true
@@ -146,6 +154,11 @@ jobs:
             cat locale-mesh.log
             echo '```'
             echo ""
+            echo "### FAQ schema visibility check — \`${{ steps.faq_schema.outcome }}\`"
+            echo '```'
+            cat faq-schema.log
+            echo '```'
+            echo ""
             echo "### Locale parent gap check — \`${{ steps.locale_parent_gap.outcome }}\`"
             echo '```'
             cat locale-parent-gap.log
@@ -166,7 +179,7 @@ jobs:
         # don't matter. steps.new_images, steps.locale_mesh, and
         # steps.locale_parent_gap are the diff-scoped gates that actually
         # enforce these two systems on new/changed pages.
-        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure'
+        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1

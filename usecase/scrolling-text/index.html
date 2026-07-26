@@ -120,37 +120,58 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     {
       "@type": "Question",
       "name": "What is scrolling text?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scrolling text means two different things, and this generator does both. The first is the bio-scroll trick: you repeat a short message many times, separated by dividers, and paste that block into a profile bio. Because the block is taller than the fixed-height bio box, the box has to scroll to show it all. The second is a moving marquee (or ticker) — text that literally slides across the screen — which is an animation, not plain characters, so this tool gives you a portable CSS snippet to embed on a website, forum signature, or OBS overlay." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scrolling text means two different things, and this generator does both. The first is the bio-scroll trick: you repeat a short message many times, separated by dividers, and paste that block into a profile bio. Because the block is taller than the fixed-height bio box, the box has to scroll to show it all. The second is a moving marquee (or ticker) — text that literally slides across the screen — which is an animation, not plain characters, so this tool gives you a portable CSS snippet to embed on a website, forum signature, or OBS overlay."
+      }
     },
     {
       "@type": "Question",
       "name": "How do I make my Instagram or TikTok bio scroll?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use Bio Scroll Text mode. Type your message (for example \"I love you\"), pick a divider, and set the repeat count high enough that the output is longer than the bio's character limit — Instagram is about 150 characters, TikTok about 80. Use \"Fill to platform\" to have the tool pick the repeats for you. Copy the result and paste it into your bio. Because the pasted block overflows the fixed-height bio box, the box scrolls. Tip: keep the message short, and edit your bio on the desktop site, which preserves line breaks more reliably than the app." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use Bio Scroll Text mode. Type your message (for example \"I love you\"), pick a divider, and set the repeat count high enough that the output is longer than the bio's character limit — Instagram is about 150 characters, TikTok about 80. Use \"Fill to platform\" to have the tool pick the repeats for you. Copy the result and paste it into your bio. Because the pasted block overflows the fixed-height bio box, the box scrolls. Tip: keep the message short, and edit your bio on the desktop site, which preserves line breaks more reliably than the app."
+      }
     },
     {
       "@type": "Question",
       "name": "How do I add a scrolling marquee or ticker to a website or OBS overlay?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Switch to Marquee Banner mode, set the text, speed, direction, gap and colors, then press \"Copy embed code\". You get one self-contained snippet — a small block of CSS plus HTML — that you paste into your own page. For a website, drop it into your HTML. For a forum signature, paste it wherever raw HTML is allowed. For OBS, save the snippet as an .html file and add it as a Browser source. The snippet uses uniquely-named classes and its own keyframes, so it will not clash with the rest of your page, and it needs no external files or fonts." }
-    },
-    {
-      "@type": "Question",
-      "name": "Does this still work like the old HTML marquee tag?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It replaces it. The old <marquee> tag is deprecated and non-standard — browsers still tend to honor it, but it was never part of a modern HTML standard and can stop working at any time. This generator produces the modern, portable equivalent instead: a CSS animation that scrolls a doubled track for a seamless loop. It pauses on hover and automatically stops for visitors who have reduced-motion turned on, which the old tag never did." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Switch to Marquee Banner mode, set the text, speed, direction, gap and colors, then press \"Copy embed code\". You get one self-contained snippet — a small block of CSS plus HTML — that you paste into your own page. For a website, drop it into your HTML. For a forum signature, paste it wherever raw HTML is allowed. For OBS, save the snippet as an .html file and add it as a Browser source. The snippet uses uniquely-named classes and its own keyframes, so it will not clash with the rest of your page, and it needs no external files or fonts."
+      }
     },
     {
       "@type": "Question",
       "name": "Can I copy scrolling text as plain characters?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The bio-scroll block is plain, copy-paste text — real Unicode characters and line breaks — so it works anywhere you can paste text, and you can style it in any of the Unicode fonts on this page first. Actual motion (a marquee that slides across the screen) is an animation, not a text property, so it cannot be copied as characters. That is why marquee mode gives you an embeddable code snippet rather than copy-paste text." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The bio-scroll block is plain, copy-paste text — real Unicode characters and line breaks — so it works anywhere you can paste text, and you can style it in any of the Unicode fonts on this page first. Actual motion (a marquee that slides across the screen) is an animation, not a text property, so it cannot be copied as characters. That is why marquee mode gives you an embeddable code snippet rather than copy-paste text."
+      }
     },
     {
       "@type": "Question",
       "name": "Why does my scrolling bio collapse into one line?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Some apps strip blank lines and trailing spaces when you save a bio. If you used the plain \"None\" or \"Blank gap\" divider and the lines collapsed, switch to a visible divider (a line, dot, or star row) so every line has a real character on it and survives saving. Editing your bio on the platform's desktop website, and pasting straight from this tool rather than from a rich-text editor, also helps the line breaks stick." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some apps strip blank lines and trailing spaces when you save a bio. If you used the plain \"None\" or \"Blank gap\" divider and the lines collapsed, switch to a visible divider (a line, dot, or star row) so every line has a real character on it and survives saving. Editing your bio on the platform's desktop website, and pasting straight from this tool rather than from a rich-text editor, also helps the line breaks stick."
+      }
     },
     {
       "@type": "Question",
       "name": "Is the scrolling text generator free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Completely free. No sign-up, no watermark, no limits. Everything runs in your browser — nothing is uploaded to a server — whether you are copying a bio-scroll block or an embeddable marquee snippet." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Completely free. No sign-up, no watermark, no limits. Everything runs in your browser — nothing is uploaded to a server — whether you are copying a bio-scroll block or an embeddable marquee snippet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this still work like the old HTML <marquee> tag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It replaces it. The old <marquee> tag is deprecated and non-standard — browsers still tend to honor it, but it was never part of a modern HTML standard and can stop working at any time. This generator produces the modern, portable equivalent instead: a CSS animation that scrolls a doubled track for a seamless loop. It pauses on hover and automatically stops for visitors who have reduced-motion turned on, which the old tag never did."
+      }
     }
   ]
 }
