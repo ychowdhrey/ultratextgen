@@ -890,7 +890,7 @@ at their intersection:
   translating), `gated` (translate only on a cleared demand check — burden
   of proof is on translating), or `never`. Most-specific-pattern wins when
   more than one entry matches a path.
-- **`data/locale_qualification_tiers.json`** — tiers every one of the 28
+- **`data/locale_qualification_tiers.json`** — tiers every one of the 29
   canonical locale codes as Tier 1 (deepen + mirror Core now), Tier 2
   (qualify via the existing 7-point gate, then mirror Core), or Tier 3
   (hold/stub, no spec mirroring). `vi` is Tier 2 but explicitly `hold: true`
