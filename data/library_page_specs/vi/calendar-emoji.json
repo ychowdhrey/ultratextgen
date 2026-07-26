@@ -1,0 +1,61 @@
+{
+  "slug": "calendar-emoji",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Emoji Lịch (📅): Sao Chép & Dán, Mã Điểm & Vì Sao Luôn Hiện Ngày 17/7",
+  "meta_description": "Emoji lịch 📅 (U+1F4C5) — mã điểm, cách gõ, và lý do thực sự khiến ngày trên đó bị đóng băng ở 17/7 trên Apple, Samsung, Google và hầu hết các nền tảng khác.",
+  "canonical": "https://ultratextgen.com/vi/symbol/calendar-emoji/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Emoji Lịch",
+  "hero_h1": "Emoji Lịch",
+  "hero_tagline": "Trang lịch 📅 — mã điểm, cách gõ thay thế, và lịch sử cụ thể của Apple đằng sau việc ngày trên đó bị đóng băng ở 17/7 gần như ở khắp mọi nơi. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "📅 CALENDAR (U+1F4C5) là cách viết tắt của Unicode cho ngày tháng, hạn chót và lịch trình — một trang lịch bị xé, được ghim ở trên cùng. Nhìn kỹ trên hầu hết các nền tảng, ngày trên đó không bao giờ thay đổi: nó cố định ở 17/7, một lựa chọn thiết kế bắt nguồn từ một sự kiện công bố sản phẩm cụ thể của Apple và sau đó trở thành lý do cho sự tồn tại của cả một ngày lễ không chính thức. Trang này nhận diện chính glyph — ý nghĩa, mã điểm, và cách gõ nó — sau đó trình bày đầy đủ câu chuyện về ngày 17/7, bao gồm cả những nền tảng không theo quy ước này.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/calendar-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "calendar-emoji-core",
+      "label": "Glyph Chính",
+      "h2": "Emoji Lịch",
+      "intro": "Glyph Unicode cốt lõi — một trang lịch bị xé duy nhất.",
+      "symbols": [
+        { "char": "📅", "label": "Lịch (U+1F4C5)" }
+      ]
+    },
+    {
+      "id": "related-calendar-emoji",
+      "label": "Emoji Lịch Liên Quan",
+      "h2": "Các Emoji Lịch Khác Thường Bị Nhầm Lẫn",
+      "intro": "Hai glyph lịch Unicode liền kề, mỗi cái khắc họa một kiểu lịch vật lý khác nhau.",
+      "symbols": [
+        { "char": "📆", "label": "Lịch Xé Từng Tờ (U+1F4C6)" },
+        { "char": "🗓️", "label": "Lịch Xoắn Ốc (U+1F5D3)" }
+      ]
+    },
+    {
+      "id": "planning-cluster",
+      "label": "Nhóm Lập Kế Hoạch & Thời Gian",
+      "h2": "Các Emoji Lập Kế Hoạch & Thời Gian Liên Quan",
+      "intro": "Các emoji thường xuất hiện cạnh lịch trong ngữ cảnh lên lịch và nhắc nhở.",
+      "symbols": [
+        { "char": "⏰", "label": "Đồng Hồ Báo Thức" },
+        { "char": "📌", "label": "Ghim Bấm" },
+        { "char": "✅", "label": "Nút Dấu Kiểm" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/object-emojis/", "title": "Ký Hiệu Đồ Vật", "desc": "Mọi emoji đồ vật đã được mã hóa, bao gồm trọn bộ lịch và lập kế hoạch." },
+    { "href": "/library/clock-time-symbols/", "title": "Ký Hiệu Đồng Hồ & Thời Gian", "desc": "Mặt đồng hồ, báo thức và các emoji liên quan đến thời gian, duyệt và sao chép sẵn sàng." }
+  ]
+}

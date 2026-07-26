@@ -1,0 +1,82 @@
+{
+  "slug": "snapchat-herzfarben",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Snapchat-Herzfarben: Was jedes Herz-Emoji bedeutet (💛 ❤️ 💕)",
+  "meta_description": "Was das Herz-Emoji neben dem Namen eines Snapchat-Freundes bedeutet — die klassische Stufenfolge von 💛 über ❤️ bis 💕 für beste Freunde, plus allgemeine Herzfarben-Bedeutungen. Anpassbar — sieh in deinen eigenen Einstellungen nach.",
+  "canonical": "https://ultratextgen.com/de/symbol/snapchat-herzfarben/",
+  "breadcrumb": "Snapchat-Herzfarben",
+  "hero_h1": "Snapchat-Herzfarben",
+  "hero_tagline": "Was das Herz-Emoji neben dem Namen eines Freundes auf Snapchat tatsächlich bedeutet — die klassische Farbstufenfolge für beste Freunde, ehrlich erklärt, plus ein kurzer Überblick über die allgemeine Bedeutung von Herzfarben. Ein Klick genügt zum Kopieren.",
+  "intro": "Snapchat zeigt neben manchen deiner Freunde ein kleines Herz-Emoji an, und die Farbe ist nicht zufällig — sie zeigt an, wie lange ihr beide schon gegenseitig eure Nummer-eins-beste-Freundschaft seid. Diese Seite behandelt vor allem diese Snapchat-spezifische Bedeutung, dazu einen kurzen Überblick über die allgemeine Bedeutung jeder Herzfarbe in Unicode (die ausführlichere Version dieser allgemeinen Geschichte steht auf den unten verlinkten Seiten zum Herz-Symbol und zu Herz-Emojis). Ein ehrlicher Hinweis vorweg: Snapchat lässt dich die Friend-Emojis in den Einstellungen anpassen oder ganz abschalten — behandle die folgende Stufenfolge also als den seit Langem klassischen Standard, nicht als dauerhaft fixierte Tabelle, und sieh unter Einstellungen > Friend-Emojis nach, welche Version du selbst gerade hast.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/snapchat-herzfarben/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "herzen-auf-snapchat",
+      "label": "Herzen auf Snapchat",
+      "h2": "Herzfarben, die Snapchat verwendet",
+      "intro": "Die drei Herzfarben, die in Snapchats klassischer Bestefreunde-Stufenfolge vorkommen.",
+      "symbols": [
+        { "char": "💛", "label": "Gelbes Herz" },
+        { "char": "❤️", "label": "Rotes Herz" },
+        { "char": "💕", "label": "Zwei Herzen (pink)" }
+      ]
+    },
+    {
+      "id": "weitere-herzfarben",
+      "label": "Weitere Herzfarben",
+      "h2": "Weitere Herz-Emoji-Farben (allgemeine Bedeutung)",
+      "intro": "Die übrige Herzfarben-Palette von Unicode — die vollständige Liste mit jeder Bedeutung findest du im unten verlinkten Herz-Emoji-Hub.",
+      "symbols": [
+        { "char": "🧡", "label": "Oranges Herz" },
+        { "char": "💚", "label": "Grünes Herz" },
+        { "char": "💙", "label": "Blaues Herz" },
+        { "char": "💜", "label": "Lilanes Herz" }
+      ]
+    },
+    {
+      "id": "herz-symbol-formen",
+      "label": "Herz-Symbol-Formen",
+      "h2": "Herz-Symbol & Textformen",
+      "intro": "Die farblosen Herz-Glyphen — das Unicode-Kartenfarben-Herz und das klassische Text-Herz.",
+      "symbols": [
+        { "char": "♥", "label": "Schwarze Herz-Farbe (U+2665)" },
+        { "char": "<3", "label": "ASCII-Text-Herz" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/snapchat-symbols/",
+      "title": "Snapchat Symbols & Emoji",
+      "desc": "Snapchat-Bio-Symbole zum Kopieren und der vollständige Friend-Emoji-Guide."
+    },
+    {
+      "href": "/library/heart-emoji/",
+      "title": "Heart Emoji & Kaomoji",
+      "desc": "Jede Herzfarbe, Bedeutung und jedes Kombi-Set an einem Ort."
+    },
+    {
+      "href": "/de/symbol/herz-symbol/",
+      "title": "Herz-Symbol",
+      "desc": "Die Herkunft, die Codepoints und die Eingabemöglichkeiten des Karten-Herzens."
+    },
+    {
+      "href": "/de/symbol/sonnenbrille-symbol/",
+      "title": "Sonnenbrille-Symbol",
+      "desc": "Der Codepoint des 😎-Zeichens und seine Rolle im Friend-Emoji-System von Snapchat."
+    }
+  ]
+}

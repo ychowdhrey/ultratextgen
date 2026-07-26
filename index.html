@@ -59,6 +59,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/">
 <link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/">
 <link rel="alternate" hreflang="ms" href="https://ultratextgen.com/ms/">
+<link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/">
 <link rel="alternate" hreflang="en" href="https://ultratextgen.com/">
 <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/">
@@ -238,34 +239,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "Why does some of my styled text show up as boxes (□) or question marks?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Boxes or tofu (□ ▯ �) appear when the device viewing the text has no installed font that contains a glyph for that specific Unicode code point. It's a rendering gap on the viewer's side, not a problem with your copied text. To get the widest compatibility, stick to bold (sans and serif), italic, monospace, small caps, fullwidth, and circled — these are covered by the default system fonts on iOS, Android, Windows, macOS, and Chrome OS. Cursive script and bubble variants render on most phones from 2018 onwards. Zalgo can look clipped or misaligned in apps with tight line spacing — that's by design."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are these Unicode fonts safe to use for screen readers and accessibility?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mostly no — and this is the honest answer most generators won't give you. Screen readers like VoiceOver, TalkBack, and JAWS read each Unicode code point literally. The character 𝐀 is announced as \"Mathematical Bold Capital A,\" not as \"A.\" That makes styled text a poor choice for body content, captions someone might rely on, and anything in a professional or accessibility-sensitive setting. Use it sparingly: a couple of styled words in a headline are fine, a whole bio in Zalgo is not. Keep your @username or handle in plain text whenever the platform shows a separate display name."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "What is Zalgo (glitch) text and where do people actually use it?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Zalgo text is the cursed, glitched, dripping look made by stacking dozens of combining diacritic marks above and below each character — for example h̷̢̛e̴̜͝l̸̼͝l̷͔͠o̵̗͝. It's a meme aesthetic that originated on 4chan around 2009 and stuck around through r/creepypasta, horror TikTok edits, dark academia tumblrs, and edgy Discord display names. Avoid it in usernames most platforms will reject the combining marks and in LinkedIn headlines unless your brand actively benefits from looking unhinged."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I stack multiple styles together (e.g., bubble + small caps)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — style mixing is one of the things you can't do with a normal font. Type your text, apply a base style like Ultra Bubble, then layer Small Caps or Underline on top, and add a frame or divider on either side. Example: hello → apply Gothic → wrap in a star frame → ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★. The combinations that look cleanest are Bold + Underline, Italic + Small Caps, and Bubble + Spaced for aesthetic posts."
       }
     },
     {
@@ -278,18 +255,42 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "Is the text I type stored, logged, or shared?",
+      "name": "Is it free, and what’s the catch?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. All transformation happens in your browser using JavaScript — nothing you type is sent to a server. There are no hidden tracking characters or zero-width spaces added to the output. What you copy is clean Unicode and nothing else. The site uses Google Tag Manager for anonymous usage analytics (page views, which styles get used) but it never sees the contents of your input."
+        "text": "Free, no account, no daily limit, no watermark, no email capture, no paid tier. The site is funded by Google AdSense — that’s the catch. We don’t charge per copy, we don’t gate styles behind a sign-up, and we don’t insert affiliate links or zero-width tracking characters into the text you paste. Read more about the project on the About page."
       }
     },
     {
       "@type": "Question",
-      "name": "Is UltraTextGen free, and is there a catch?",
+      "name": "What styles are in the library?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Free, no account, no daily limit, no watermark, no email capture, no paid tiers. The site is funded by Google AdSense — that's the catch. We do not charge per copy, we do not gate styles behind a sign-up, and we do not insert affiliate links into the styled text you paste. See the About page for more on how the project works."
+        "text": "Around 65 styles, organised into twelve families: Bold — sans, serif, italic-bold (6 variants). Italic — 4 variants including monospace italic. Cursive / script — regular and bold script. Gothic / fraktur — Old English and bold fraktur. Bubble — 12 variants (filled, light, tiles, curly, angle, spaced, and more). Strikethrough — slash, tilde, short, long. Underline — solid and double. Special — small caps, superscript / tiny, fullwidth, squared, parenthesized. Cool / aesthetic — spaced styles for Y2K and Tumblr energy. Fancy — double-struck and outlined. Text decorator — 10 styles that auto-bracket each word (★彡[ word ]彡★, ╭─▸ word ╰─▸, etc.). Classified — upside-down, mirror, backwards, Zalgo (glitch), plus 8 more transforms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I stack multiple styles together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — style mixing is one of the things you can’t do with a normal font. Apply a base style, then layer another on top, then wrap the whole thing in a frame, divider, arrow, emoji or flag. Combos that look clean: — Bold + Underline → 𝗯𝗼𝗹𝗱 u̳n̳d̳e̳r̳l̳i̳n̳e̳ — Italic + Small Caps → ɪᴛᴀʟɪᴄ-ish, great for LinkedIn section breaks — Bubble + Spaced → 🅑 🅤 🅑 🅑 🅛 🅔, aesthetic Pinterest/TikTok vibe — Gothic + Star frame → ★彡[ 𝔥𝔢𝔩𝔩𝔬 ]彡★, for gaming clan tags Avoid stacking Zalgo with bubble — the diacritics collide and the result is unreadable on most phones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my styled text show up as boxes (□) or question marks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Boxes or \"tofu\" (□ ▯ �) appear when the device viewing the text has no installed font with a glyph for that Unicode code point. It’s a rendering gap on the viewer’s side, not a problem with your copied text. Widest compatibility: bold (sans & serif), italic, monospace, small caps, fullwidth, circled. Covered by default system fonts on iOS, Android, Windows, macOS and Chrome OS. Usually fine: cursive script, bubble, gothic — render on most phones from 2018 onwards. Occasionally clipped: Zalgo can look misaligned in apps with tight line spacing — that’s by design, not a bug."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these fonts in usernames and display names?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mostly yes, with caveats per platform: Display names (Discord, Instagram, TikTok, Roblox, Steam, Telegram): almost any style works. 𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣, ⒹⓐⓡⓚⓌⓞⓛⓕ, 𝓓𝓪𝓻𝓴𝓦𝓸𝓵𝓯 — all fine. @usernames / handles: stricter. Instagram’s @ field only accepts Latin letters, digits, dots and underscores; Unicode goes in your display name instead. Discord usernames (lowercase, post-2023) reject most styled characters. X (Twitter) handles are ASCII-only. Rule of thumb: if a platform shows a separate \"display name\" or \"nickname\" field, that’s where Unicode goes. Leave the @ handle plain."
       }
     }
   ]

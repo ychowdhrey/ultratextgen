@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-koziorozca",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Koziorożca: Skopiuj ♑ — Kozioroksa, Pół Kozła i Pół Ryby",
+  "meta_description": "Skopiuj symbol zodiakalnego Koziorożca (♑) i mit o kozłorybie stojący za tym znakiem — niedokończoną ucieczkę boga Pana przed potworem Tyfonem, po której został pół kozłem, pół rybą. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-koziorozca/",
+  "breadcrumb": "Symbol Koziorożca",
+  "hero_h1": "Symbol Koziorożca",
+  "hero_tagline": "Glif Koziorożca (♑) to stylizowany monogram kozłoryby — mitycznej hybrydy z głową i rogami kozła połączonymi z rybim ogonem, powstałej z niedokończonej ucieczki boga. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Koziorożca (♑, U+2651) to stylizowany monogram kozłoryby — stworzenia o głowie i rogach kozła połączonych z zawiniętym rybim ogonem. Ta dziwna hybryda pochodzi wprost z mitu greckiego: gdy potwór Tyfon zaatakował bogów, Pan — kozłonogi bóg dzikiej przyrody — uciekł na brzeg Nilu i skoczył do wody, próbując przemienić się w rybę, by uciec. Przemiana udała się tylko w połowie: górna część ciała pozostała kozia, a dolna zmieniła się w rybi ogon. Zeus umieścił tę pół-kozią, pół-rybią postać wśród gwiazd jako Koziorożca. Trwa od 22 grudnia do 19 stycznia, jest znakiem Ziemi o modalności kardynalnej i jest rządzony przez Saturna (♄). Koziorożec zaczyna się w przesilenie grudniowe — stąd nazwa południowej linii szerokości geograficznej Ziemi, Zwrotnik Koziorożca.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/capricorn-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-koziorozca/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/capricorn-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-koziorozca",
+      "label": "Koziorożec",
+      "h2": "Symbol Koziorożca",
+      "intro": "Unicode'owy glif zodiakalnego Koziorożca, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♑", "label": "Symbol Koziorożca" },
+        { "char": "♑️", "label": "Symbol Koziorożca (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Koziorożcowi.",
+      "symbols": [
+        { "char": "♄", "label": "Saturn (Planeta Rządząca)" },
+        { "char": "🜃", "label": "Ziemia (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Koziorożca (Rak).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♋", "label": "Rak (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-raka/",
+      "title": "Symbol Raka",
+      "desc": "Astrologiczne przeciwieństwo Koziorożca, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/symbol/taurus-symbol/",
+      "title": "Taurus Symbol",
+      "desc": "Kolejny znak Ziemi i prawdopodobnie najstarszy nieprzerwanie obserwowany gwiazdozbiór w zodiaku."
+    }
+  ]
+}

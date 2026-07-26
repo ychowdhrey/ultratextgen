@@ -1,0 +1,65 @@
+{
+  "slug": "right-arrow",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Mũi Tên Phải: Sao Chép & Dán → — Mã Alt Và Cách Gõ",
+  "meta_description": "Nhấp để sao chép ngay ký hiệu mũi tên phải → — cùng Alt+26 trên Windows và mọi cách khác để gõ ký hiệu này.",
+  "canonical": "https://ultratextgen.com/vi/symbol/right-arrow/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Mũi Tên Phải",
+  "hero_h1": "Ký Hiệu Mũi Tên Phải (→)",
+  "hero_tagline": "→ nghĩa là gì và cách gõ ra nó — nhấp để sao chép ngay.",
+  "intro": "Các mũi tên chỉ hướng trở thành ký hiệu toán học chuẩn mực vào thế kỷ 19 và 20 — cách viết như f: A → B (hàm số ánh xạ tập A sang tập B) hay x → ∞ (một biến số tiến dần đến vô cực) đã khiến mũi tên trở nên thiết yếu trong giải tích, lý thuyết tập hợp và logic học từ trước cả khi máy tính ra đời. Khối Unicode Arrows dành riêng cho mũi tên (U+2190–U+21FF) đã có mặt từ chính phiên bản đầu tiên của chuẩn Unicode năm 1991, phản ánh mức độ mũi tên đã ăn sâu vào ngành in ấn kỹ thuật từ trước đó rất lâu. Ngoài các ký hiệu học thuật, → ngày nay còn phổ biến không kém trong đời sống thường ngày — mang nghĩa «tiếp theo», «dẫn đến» hay «xem thêm» trong chú thích, tiểu sử và lời kêu gọi hành động.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/right-arrow/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/right-arrow/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/right-arrow/" }
+  ],
+  "sections": [
+    {
+      "id": "right-arrow-symbol",
+      "label": "Mũi Tên Phải",
+      "h2": "Ký Hiệu Mũi Tên Phải",
+      "intro": "Ký hiệu mũi tên phải cùng biến thể trang trí thường bị nhầm lẫn với nó.",
+      "symbols": [
+        { "char": "→", "label": "Mũi Tên Phải (U+2192)" },
+        { "char": "▶", "label": "Tam Giác Đen Trỏ Phải (U+25B6) — thường thay cho → mang tính trang trí, kiểu «phát»" }
+      ]
+    },
+    {
+      "id": "related-arrows",
+      "label": "Mũi Tên Khác",
+      "h2": "Các Hướng Mũi Tên Khác",
+      "intro": "Ba hướng còn lại trong bộ bốn mũi tên cơ bản của Unicode.",
+      "symbols": [
+        { "char": "←", "label": "Mũi Tên Trái" },
+        { "char": "↑", "label": "Mũi Tên Lên" },
+        { "char": "↓", "label": "Mũi Tên Xuống" }
+      ]
+    },
+    {
+      "id": "double-and-white-arrows",
+      "label": "Biến Thể Khác",
+      "h2": "Mũi Tên Đôi & Mũi Tên Trắng",
+      "intro": "Các biến thể khác của mũi tên phải trong Unicode.",
+      "symbols": [
+        { "char": "⇒", "label": "Mũi Tên Đôi Hướng Phải (U+21D2) — cũng dùng cho «suy ra» trong logic học" },
+        { "char": "⇨", "label": "Mũi Tên Trắng Hướng Phải (U+21E8)" },
+        { "char": "↠", "label": "Mũi Tên Hai Đầu Hướng Phải (U+21A0)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/left-arrow/", "title": "Mũi Tên Trái (←)", "desc": "«Quay lại», «trước đó» và hệ quả đảo chiều." },
+    { "href": "/vi/symbol/up-arrow/", "title": "Mũi Tên Lên (↑)", "desc": "Tín hiệu tăng, hướng bắc và các dãy số đi lên." },
+    { "href": "/vi/symbol/down-arrow/", "title": "Mũi Tên Xuống (↓)", "desc": "Tín hiệu giảm, hướng nam và cuộn xuống." },
+    { "href": "/library/arrow-symbols/", "title": "Tất Cả Ký Hiệu Mũi Tên", "desc": "Mọi ký tự mũi tên định hướng và trang trí." }
+  ]
+}

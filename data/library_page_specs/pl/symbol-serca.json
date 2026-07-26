@@ -1,0 +1,81 @@
+{
+  "slug": "symbol-serca",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Serca: Skopiuj ♥ ❤ Symbole Serca i Serduszka Tekstowe",
+  "meta_description": "Skopiuj symbol serca (♥, U+2665) — karcianego pika kier, pogrubione ❤, kolorowe emoji serc i tekstowe serduszka jak <3, a także jak je wpisać na Windows i Mac. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-serca/",
+  "breadcrumb": "Symbol Serca",
+  "hero_h1": "Symbol Serca",
+  "hero_tagline": "Symbol serca (♥ ❤) — karciany znaczek, który stał się uniwersalnym znakiem miłości — plus jego wersje emoji i tekstowe serduszko <3. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol serca (♥, Unicode U+2665 BLACK HEART SUIT) zaczynał jako oznaczenie koloru w kartach do gry, a dziś jest jednym z najczęściej kopiowanych znaków w internecie. Unicode ma właściwie kilka serc: monochromatyczne karciane ♥, cięższe ❤ (U+2764), które z selektorem wariantu staje się czerwonym emoji serca ❤️, konturowe ♡ oraz pełną paletę kolorowych emoji serc. Ten stylizowany kształt nigdy nie odpowiadał prawdziwemu anatomicznemu sercu — jego pochodzenie jest sporne — ale w sztuce zachodniej oznacza miłość i uczucie już od średniowiecza.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/heart-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-serca/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/heart-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-serca",
+      "label": "Serce",
+      "h2": "Symbol Serca",
+      "intro": "Podstawowe glify serca: karciane serce, cięższe czarne serce, na którym opiera się emoji, oraz kontur.",
+      "symbols": [
+        { "char": "♥", "label": "Czarne Serce Karciane (U+2665)" },
+        { "char": "❤", "label": "Ciężkie Czarne Serce (U+2764)" },
+        { "char": "♡", "label": "Białe Serce Karciane / Kontur (U+2661)" }
+      ]
+    },
+    {
+      "id": "emoji-serca",
+      "label": "Emoji Serca",
+      "h2": "Kolorowe Emoji Serc",
+      "intro": "Wersje emoji z selektorem wariantu w popularnych kolorach.",
+      "symbols": [
+        { "char": "❤️", "label": "Czerwone Serce" },
+        { "char": "🖤", "label": "Czarne Serce (U+1F5A4)" },
+        { "char": "💙", "label": "Niebieskie Serce" },
+        { "char": "💜", "label": "Fioletowe Serce" },
+        { "char": "💚", "label": "Zielone Serce" }
+      ]
+    },
+    {
+      "id": "serduszka-tekstowe",
+      "label": "Serca Tekstowe i Ozdobne",
+      "h2": "Serduszka Tekstowe i Serca Ozdobne",
+      "intro": "Wpisywane na skróty i ozdobne serca używane w bio i podpisach.",
+      "symbols": [
+        { "char": "<3", "label": "Tekstowe Serduszko ASCII" },
+        { "char": "❣", "label": "Ciężki Wykrzyknik-Serce (U+2763)" },
+        { "char": "❥", "label": "Obrócony Punktor z Ciężkim Czarnym Sercem (U+2765)" },
+        { "char": "❦", "label": "Kwiatowe Serce (U+2766)" },
+        { "char": "💔", "label": "Złamane Serce" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/symbol-gwiazdy/",
+      "title": "Symbol Gwiazdy (★)",
+      "desc": "Pięcioramienna gwiazda do ocen, ulubionych i ozdób w bio."
+    },
+    {
+      "href": "/pl/library/symbole-serca/",
+      "title": "Symbole Serca",
+      "desc": "Każdy znak serca i kolorowe emoji serca w jednym miejscu."
+    },
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "♥ ♦ ♣ ♠ — cztery kolory kart, z których wywodzi się serce."
+    }
+  ]
+}

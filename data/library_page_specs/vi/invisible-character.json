@@ -1,0 +1,64 @@
+{
+  "slug": "invisible-character",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Tự Vô Hình (⠀): Tên Trống, Ý Nghĩa & Cách Dùng",
+  "meta_description": "Ký tự vô hình ⠀ (U+2800) được giải thích — vì sao nó vượt qua kiểm tra tên trống trong khi các ký hiệu vô hình khác bị loại bỏ, và cách gõ nó.",
+  "canonical": "https://ultratextgen.com/vi/symbol/invisible-character/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Tự Vô Hình",
+  "hero_h1": "Ký Tự Vô Hình (⠀)",
+  "hero_tagline": "Ký tự trông trống rỗng đứng sau các tên người dùng và biệt danh trống — nhấp để sao chép ngay.",
+  "intro": "⠀ (U+2800) không phải là một ký tự khoảng trắng — nó đến từ khối Braille Patterns của Unicode, mã hóa toàn bộ 256 tổ hợp có thể có của một ô chữ nổi Braille 8 chấm. Một trong 256 tổ hợp đó là «không có chấm nào nổi lên»: mẫu trống. Vì được phân loại là một ký hiệu in được thông thường thay vì khoảng trắng, nó hoạt động hoàn toàn khác với các ký tự thực sự được thiết kế để vô hình, như khoảng trắng độ rộng bằng không (zero-width space). Sự khác biệt đó chính là lý do nó trở thành mẹo phổ biến để đặt tên trống trên Instagram, Discord và các trò chơi: hầu hết ứng dụng cắt bỏ khoảng trắng ở đầu và cuối, rồi từ chối một trường trở nên trống rỗng sau khi cắt — một dấu cách thật, tab, hay khoảng trắng độ rộng bằng không (U+200B) thường bị bắt bởi kiểm tra đó. U+2800 lách qua được vì mã kiểm tra thấy «một ký tự», không phải «khoảng trống», dù nó hiển thị không có dấu vết nào nhìn thấy được. Kỹ thuật này lan truyền qua các mẹo mạng xã hội chứ không phải từ bất kỳ chủ đích thiết kế chính thức nào, nhưng nó vẫn đáng tin cậy chính vì điểm kỹ thuật Unicode này. Về khả năng tương thích nền tảng: nó hoạt động trên tên/tiểu sử Instagram, biệt danh Discord và tên/trạng thái WhatsApp; trên TikTok thì tùy phiên bản ứng dụng — một số vẫn cắt bỏ nó; còn tên người dùng Roblox, PlayStation hay Xbox thì không được vì các nền tảng này giới hạn tên chỉ gồm ký tự chữ và số.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/invisible-character/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/invisible-character/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/invisible-character/" }
+  ],
+  "sections": [
+    {
+      "id": "invisible-character",
+      "label": "Ký Tự Vô Hình",
+      "h2": "Ký Tự Vô Hình (Braille Pattern Blank)",
+      "intro": "Ký tự chính nó — trông trống rỗng nhưng là một ký tự Unicode thật sự, sao chép được ngay.",
+      "symbols": [
+        { "char": "⠀", "label": "Braille Pattern Blank (U+2800)" }
+      ]
+    },
+    {
+      "id": "other-invisible-characters",
+      "label": "Đừng Nhầm Lẫn Với",
+      "h2": "Các Ký Tự «Vô Hình» Khác — & Vì Sao Lựa Chọn Quan Trọng",
+      "intro": "Những ký tự này cũng trông trống, nhưng mỗi cái hoạt động khác nhau trước bộ kiểm tra xác thực của các nền tảng.",
+      "symbols": [
+        { "char": "​", "label": "Khoảng Trắng Độ Rộng Bằng Không (U+200B) — độ rộng thực sự bằng không; nhiều bộ kiểm tra loại bỏ nó như khoảng trắng, nên thường thất bại ở nơi U+2800 thành công" },
+        { "char": " ", "label": "Khoảng Trắng Không Ngắt Dòng (U+00A0) — một ký tự khoảng trắng thật sự; hầu như luôn bị cắt bỏ hoặc từ chối thẳng" },
+        { "char": "ㅤ", "label": "Hangul Filler (U+3164) — một lựa chọn tên trống phổ biến khác, hoạt động trên một số nền tảng mà U+2800 không hoạt động, và ngược lại" }
+      ]
+    },
+    {
+      "id": "zero-width-format-characters",
+      "label": "Ký Tự Định Dạng Độ Rộng Bằng Không",
+      "h2": "Các Ký Tự Định Dạng Độ Rộng Bằng Không Khác",
+      "intro": "Cùng họ với khoảng trắng độ rộng bằng không — những ký tự Unicode hợp lệ này không hiển thị gì nhưng phục vụ vai trò định dạng văn bản riêng, không phải để lách kiểm tra tên trống.",
+      "symbols": [
+        { "char": "‌", "label": "Zero Width Non-Joiner (U+200C)" },
+        { "char": "‍", "label": "Zero Width Joiner (U+200D)" },
+        { "char": "⁠", "label": "Word Joiner (U+2060)" },
+        { "char": "­", "label": "Soft Hyphen (U+00AD)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/vertical-line/", "title": "Ký Hiệu Vạch Đứng", "desc": "Từ dấu phân cách ASCII đến «pipe» trong Unix." },
+    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ", "desc": "Nhiều thế kỷ thiên văn học, góc độ và thang nhiệt độ." },
+    { "href": "/library/invisible-character/", "title": "Mọi Ký Tự Vô Hình", "desc": "Khoảng trắng độ rộng bằng không, ký tự lấp đầy và chữ nổi Braille trống." }
+  ]
+}

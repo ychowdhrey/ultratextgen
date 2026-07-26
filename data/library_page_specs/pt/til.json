@@ -1,0 +1,80 @@
+{
+  "slug": "til",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Til: Copiar e Colar ~ ˜ ∼ ≈ — do Escriba Medieval ao Diretório Home do Unix",
+  "meta_description": "Copie e cole o til (~), o til pequeno (˜), o til combinável de ñ/ã/õ e os tils matemáticos ∼ e ≈ — e veja como uma abreviação de escriba medieval virou o ñ. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/til/",
+  "breadcrumb": "Til",
+  "hero_h1": "Til (~)",
+  "hero_tagline": "O til (~) do teclado que marca seu diretório home no Unix e significa «mais ou menos», o til pequeno ˜ e a marca combinável que fica sobre ñ, ã e õ, além dos tils matemáticos ∼ e ≈ com que ele é constantemente confundido. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O til (~, U+007E TILDE) é o traço ondulado no canto superior esquerdo do teclado, e acumula mais funções do que quase qualquer outro sinal de pontuação. Num terminal Unix ou Linux, é a abreviação do seu diretório home (~/) — uma convenção que remonta ao terminal Lear-Siegler ADM-3A dos anos 1970, cujo teclado imprimia «~» e a palavra «Home» na mesma tecla. Em conversas informais significa «aproximadamente» ou «cerca de» (~5 minutos), e programadores o apelidam de «til» mesmo (em inglês, «twiddle»). Seu nome vem do espanhol tilde, do latim titulus («título» ou «superscrição»), e sua história começa com escribas medievais: um pequeno traço ondulado escrito acima de uma letra indicava um «n» ou «m» omitido, economizando o caro pergaminho e a tinta. Esse atalho é exatamente a razão de o português e o espanhol terem o ñ/til nasal — escribas escreviam um único «n» com o traço por cima para representar um «nn» duplicado, e no português esse mesmo princípio deu origem ao til nasal em ã e õ. Esse diacrítico sobrevive hoje como o til combinável (◌̃, U+0303), um caractere diferente do til pequeno independente (˜, U+02DC) e do til comum do teclado ~. Também é rotineiramente confundido com os sinais matemáticos parecidos: o operador til ∼ (U+223C, «similar a») e o quase-igual ≈ (U+2248) são caracteres Unicode separados, não o til ASCII.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/til/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "the-tilde",
+      "label": "O Til",
+      "h2": "O Til ~ e Seus Parecidos",
+      "intro": "Três caracteres Unicode diferentes que todo mundo chama de «til» — a tecla do teclado, um modificador de espaçamento independente e o diacrítico combinável que fica sobre uma letra.",
+      "symbols": [
+        { "char": "~", "label": "Til (U+007E) — a Tecla do Teclado" },
+        { "char": "˜", "label": "Til Pequeno (U+02DC) — Modificador de Espaçamento Independente" },
+        { "char": "̃", "label": "Til Combinável (U+0303) — Fica Sobre uma Letra" }
+      ]
+    },
+    {
+      "id": "tilde-letters",
+      "label": "Letras com Til",
+      "h2": "Letras Que Carregam um Til",
+      "intro": "O til combinável em ação. O ñ do espanhol e o ã e õ do português são os sobreviventes cotidianos da abreviação do escriba para um «n» omitido.",
+      "symbols": [
+        { "char": "ñ", "label": "Letra Latina Minúscula N com Til (U+00F1)" },
+        { "char": "Ñ", "label": "Letra Latina Maiúscula N com Til (U+00D1)" },
+        { "char": "ã", "label": "Letra Latina Minúscula A com Til (U+00E3)" },
+        { "char": "õ", "label": "Letra Latina Minúscula O com Til (U+00F5)" }
+      ]
+    },
+    {
+      "id": "math-tilde",
+      "label": "Tils Matemáticos",
+      "h2": "Tils Matemáticos: Similar a e Aproximadamente Igual",
+      "intro": "Em equações, o til significa «similar a» ou «aproximadamente», mas os verdadeiros sinais matemáticos são caracteres Unicode próprios — não o ~ do ASCII que as pessoas costumam digitar no lugar.",
+      "symbols": [
+        { "char": "∼", "label": "Operador Til (U+223C) — «Similar a»" },
+        { "char": "≈", "label": "Quase Igual a (U+2248) — «Aproximadamente Igual»" },
+        { "char": "≅", "label": "Aproximadamente Igual a (U+2245)" },
+        { "char": "≃", "label": "Assintoticamente Igual a (U+2243)" },
+        { "char": "~", "label": "Til (U+007E) — a Tecla ASCII Digitada no Lugar" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/symbol/e-comercial/",
+      "title": "E Comercial (&)",
+      "desc": "Outro caractere especial de teclado, com sua própria origem em ligadura latina."
+    },
+    {
+      "href": "/pt/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Operadores, sinais de comparação e as constantes que completam uma equação ao lado do til."
+    },
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria."
+    }
+  ]
+}

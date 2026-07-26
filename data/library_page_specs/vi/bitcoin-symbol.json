@@ -1,0 +1,68 @@
+{
+  "slug": "bitcoin-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Bitcoin: Sao Chép & Dán ₿ — Ký Hiệu Tiền Tệ Unicode Thêm Vào Năm 2017",
+  "meta_description": "Sao chép ký hiệu Bitcoin (₿, U+20BF) và tìm hiểu nó khác gì với đồng baht Thái ฿ và mã ticker BTC. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/bitcoin-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Bitcoin",
+  "hero_h1": "Ký Hiệu Bitcoin",
+  "hero_tagline": "Ký hiệu tiền tệ cho Bitcoin (₿), được thêm vào Unicode năm 2017 sau nhu cầu thực tế — đừng nhầm với đồng baht Thái ฿ hay mã ticker BTC. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu Bitcoin (₿, U+20BF) đánh dấu một khoản tiền tính bằng Bitcoin — một mức giá, một hòm tiền boa, một dòng quyên góp. Nhưng khác với các ký hiệu tiền tệ cũ hơn mà Unicode đưa vào như một phần định dạng thông thường, ₿ được thêm vào năm 2017 để đáp lại trực tiếp nhu cầu tự phát từ một cộng đồng người dùng đang tăng trưởng nhanh, và nó được dùng như một huy hiệu thể hiện bản sắc trong tiểu sử gần như thường xuyên như dùng để viết một con số.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/bitcoin-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/bitcoin-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/bitcoin-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "bitcoin-sign",
+      "label": "Bitcoin",
+      "h2": "Ký Hiệu Bitcoin",
+      "intro": "Ký hiệu Bitcoin trong Unicode, sẵn sàng để dán vào tiểu sử, tên hiển thị, giá tiền hay dòng quyên góp.",
+      "symbols": [
+        { "char": "₿", "label": "Ký Hiệu Bitcoin (U+20BF)" },
+        { "char": "Ƀ", "label": "Chữ B Hoa Có Gạch Ngang" }
+      ]
+    },
+    {
+      "id": "lookalikes",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Ký Hiệu Dễ Nhầm Lẫn",
+      "intro": "Những ký tự thường bị gõ nhầm thay cho ₿ — cùng hình dáng chữ B có vạch dọc, nhưng lại là các ký tự và mã điểm hoàn toàn khác nhau.",
+      "symbols": [
+        { "char": "฿", "label": "Ký Hiệu Baht Thái (U+0E3F)" },
+        { "char": "Ƀ", "label": "Chữ B Hoa Có Gạch Ngang (U+0243)" },
+        { "char": "B", "label": "Chữ Latin Hoa B" }
+      ]
+    },
+    {
+      "id": "currency-symbols",
+      "label": "Ký Hiệu Tiền Tệ Khác",
+      "h2": "Các Ký Hiệu Tiền Tệ Khác",
+      "intro": "Các ký hiệu tiền tệ khác của thế giới — «hàng xóm» của ₿ trong khối Currency Symbols và trong hầu hết các ô nhập giá.",
+      "symbols": [
+        { "char": "$", "label": "Ký Hiệu Đô La" },
+        { "char": "¢", "label": "Ký Hiệu Cent" },
+        { "char": "€", "label": "Ký Hiệu Euro" },
+        { "char": "£", "label": "Ký Hiệu Bảng Anh" },
+        { "char": "¥", "label": "Ký Hiệu Yên" },
+        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ" },
+        { "char": "₩", "label": "Ký Hiệu Won" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Đô la, euro, bảng Anh, yên, rupee và các ký hiệu tiền tệ khác trên thế giới." },
+    { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro", "desc": "Một ký hiệu tiền tệ khác được thiết kế có chủ đích trong thời hiện đại, vào năm 1996." },
+    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee", "desc": "Một ký hiệu tiền tệ hiện đại, được chọn qua cuộc thi công khai năm 2010." }
+  ]
+}

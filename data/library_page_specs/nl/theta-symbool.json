@@ -1,0 +1,130 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "theta-symbool",
+  "title": "Theta-symbool: Kopieer en Plak θ Θ ϑ — de Oude Griekse 'Letter van de Dood'",
+  "meta_description": "Kopieer en plak het theta-symbool — kleine letter θ, hoofdletter Θ en de open wiskundige variant ϑ — de letter die oude Grieken op stembriefjes krasten om voor een doodvonnis te stemmen. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/theta-symbool/",
+  "breadcrumb": "Theta-symbool",
+  "hero_h1": "Theta-symbool",
+  "hero_tagline": "De kleine letter θ die een hoek markeert in de trigonometrie, de hoofdletter Θ van de Big-Theta-complexiteitsnotatie, en de open wiskundige variant ϑ — dezelfde letter die klassieke Atheners ooit op een stembriefje krasten om voor de dood te stemmen. Klik op een teken om het direct te kopiëren.",
+  "intro": "Theta is de achtste letter van het Griekse alfabet, en de kleine letter θ (U+03B8, GREEK SMALL LETTER THETA) — een cirkel doorkruist door een horizontale streep — draagt een van de duisterste achtergrondverhalen van elke letter. In de klassieke oudheid was theta de 'letter van de dood': het stond voor θάνατος (thánatos, 'dood'), en Atheense juryleden konden het op een stembriefje of scherf krassen om te stemmen voor de veroordeling of executie van een verdachte — een gebruik zo berucht dat de Romeinse dichter Ennius theta naar verluidt de meest ongeluksbrengende letter van allemaal noemde. De hoofdlettervorm Θ (U+0398) en een aparte open variant ϑ (U+03D1, GREEK THETA SYMBOL) maken de familie compleet — ϑ is een schrijfletterachtig teken dat in sommige natuurkundige en wiskundige zetwerk wordt gebruikt, geen aparte letter. Vandaag is theta's werk veel onschuldiger: kleine letter θ is het standaardteken voor een onbekende of gemeten hoek in trigonometrie en meetkunde, terwijl hoofdletter Θ de Big-Theta-notatie een naam geeft, de 'strakke grens' uit de algoritmeanalyse die Donald Knuth in zijn paper 'Big Omicron and Big Omega and Big Theta' uit 1976 formaliseerde. In het Griekse cijfersysteem draagt theta ook de waarde 9.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/theta-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/theta-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "het-theta-symbool",
+      "label": "Het Theta-symbool",
+      "h2": "Het Theta-symbool — θ, Θ & ϑ",
+      "intro": "Theta komt in drie tekens die mensen daadwerkelijk plakken: de alledaagse kleine letter θ, de hoofdletter Θ, en de open variant ϑ die is voorbehouden aan wiskunde en natuurkunde. Een vierde, doorgestreepte hoofdlettervorm bestaat puur als wiskundig teken.",
+      "symbols": [
+        {
+          "char": "θ",
+          "label": "Griekse Kleine Letter Theta (U+03B8) — Het Hoekteken"
+        },
+        {
+          "char": "Θ",
+          "label": "Griekse Hoofdletter Theta (U+0398) — Big-Theta-notatie"
+        },
+        {
+          "char": "ϑ",
+          "label": "Grieks Theta-teken (U+03D1) — De Open Wiskundige Variant"
+        },
+        {
+          "char": "ϴ",
+          "label": "Griekse Hoofdletter Theta-teken (U+03F4) — De Doorgestreepte Variant"
+        }
+      ]
+    },
+    {
+      "id": "theta-in-wiskunde",
+      "label": "Wiskunde & Wetenschap",
+      "h2": "Theta in Wiskunde & Informatica",
+      "intro": "Twee heel verschillende taken delen de letter. Kleine letter θ is de gangbare naam voor een hoek; hoofdletter Θ is de strakke grens in complexiteitsanalyse, tussen Big-O (bovengrens) en Big-Omega (ondergrens) in.",
+      "symbols": [
+        {
+          "char": "θ",
+          "label": "Kleine Theta (U+03B8) — Hoek in Trigonometrie & Meetkunde"
+        },
+        {
+          "char": "Θ",
+          "label": "Hoofdletter Theta (U+0398) — Big-Theta, de Strakke Grens"
+        },
+        {
+          "char": "Ω",
+          "label": "Hoofdletter Omega (U+03A9) — Big-Omega, de Ondergrens-tegenhanger"
+        },
+        {
+          "char": "ϑ",
+          "label": "Theta-teken (U+03D1) — De Natuurkundige Zetwerkvariant"
+        }
+      ]
+    },
+    {
+      "id": "verwante-griekse-letters",
+      "label": "Griekse Letters",
+      "h2": "Verwante Griekse Letters",
+      "intro": "Theta is de achtste letter van het Griekse alfabet. Dit zijn de buren waar het meest naar wordt gezocht en die het meest samen worden gekopieerd.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Griekse Hoofdletter Omega"
+        },
+        {
+          "char": "Δ",
+          "label": "Griekse Hoofdletter Delta"
+        },
+        {
+          "char": "π",
+          "label": "Griekse Kleine Letter Pi"
+        },
+        {
+          "char": "α",
+          "label": "Griekse Kleine Letter Alfa"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/griekse-letters/",
+      "title": "Griekse Letters",
+      "desc": "Het volledige Griekse alfabet in hoofdletters, kleine letters en wiskundige variantvormen om te kopiëren en te plakken."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "Hoeken, operatoren en de Griekse letters zoals theta die een vergelijking compleet maken."
+    },
+    {
+      "href": "/nl/symbol/omega-symbool/",
+      "title": "Omega-symbool",
+      "desc": "Theta's zusje in complexiteitsnotatie: Θ is de strakke grens, Ω de ondergrens in algoritmeanalyse."
+    },
+    {
+      "href": "/nl/symbol/delta-symbool/",
+      "title": "Delta-symbool",
+      "desc": "Nog een enkele Griekse letter met een diep wiskundig leven — verandering, verschil en de discriminant."
+    }
+  ]
+}

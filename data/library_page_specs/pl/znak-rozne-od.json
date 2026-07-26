@@ -1,0 +1,83 @@
+{
+  "slug": "znak-rozne-od",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Różne Od: Skopiuj ≠ — Matematyczna Negacja i Dlaczego Kod Używa != Zamiast Niej",
+  "meta_description": "Skopiuj znak różne od (≠), zobacz pełną rodzinę negacji ≁ ≉ ≢ ≮ ≯, do której należy, i dowiedz się, dlaczego języki programowania używają zamiast niego != albo <>. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-rozne-od/",
+  "breadcrumb": "Znak Różne Od",
+  "hero_h1": "Znak Różne Od",
+  "hero_tagline": "Znak równości przekreślony ukośną kreską (≠) — używany w matematyce co najmniej od czasów Eulera, źródło całej rodziny symboli zanegowanych relacji, i znak nieobecny w ASCII, dlatego kod używa zamiast niego !=. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak różne od (≠, U+2260) łączy znak równości z ukośną kreską — własna dekompozycja Unicode pokazuje go dosłownie jako „=” plus nakładkę łączącej ukośnej kreski (U+0338), ten sam znak, który tworzy całą rodzinę zanegowanych relacji: ≁, ≉, ≢, ≮, ≯. Konwencja negacji przez przekreślenie to osobna, późniejsza historia niż wynalezienie samego „=” przez Roberta Recorde'a w 1557 roku — najwcześniejsze znane pisemne użycie sięga XVIII-wiecznej korespondencji Leonharda Eulera, choć historycy matematyki starannie zaznaczają, że znak był przez Eulera używany, niekoniecznie przez niego wynaleziony. Ponieważ ASCII nigdy nie przydzielił miejsca dla ≠, języki programowania wprowadziły własne zamienniki — != w językach z rodziny C, <> w SQL i Pascalu, ~= w Lua i MATLAB-ie, /= we Fortranie i Haskellu — dlatego znak matematyczny i to, co faktycznie wpisujesz w kodzie, niemal nigdy nie są tym samym znakiem.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/not-equal-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-rozne-od/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/not-equal-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-rozne-od",
+      "label": "Różne Od",
+      "h2": "Różne Od — w Matematyce i w Kodzie",
+      "intro": "Znak matematyczny oraz zamienniki ASCII przyjęte przez różne języki programowania, odkąd samo ≠ nigdy nie znalazło się w zestawie znaków ASCII.",
+      "symbols": [
+        { "char": "≠", "label": "Różne Od (Matematyka)" },
+        { "char": "!=", "label": "Różne Od (C, Python, JavaScript, Java)" },
+        { "char": "<>", "label": "Różne Od (SQL, Pascal, BASIC)" },
+        { "char": "~=", "label": "Różne Od (Lua, MATLAB)" },
+        { "char": "/=", "label": "Różne Od (Fortran, Haskell)" }
+      ]
+    },
+    {
+      "id": "rodzina-negacji",
+      "label": "Zanegowane Relacje",
+      "h2": "Rodzina Zanegowanych Relacji",
+      "intro": "≠ nie jest samo — ta sama nakładka ukośnej kreski neguje kilka innych symboli relacji w bloku Mathematical Operators Unicode.",
+      "symbols": [
+        { "char": "≁", "label": "Nie-Tylda" },
+        { "char": "≉", "label": "Nie Prawie Równe" },
+        { "char": "≢", "label": "Nie Identyczne" },
+        { "char": "≮", "label": "Nie Mniejsze Niż" },
+        { "char": "≯", "label": "Nie Większe Niż" }
+      ]
+    },
+    {
+      "id": "powiazane-znaki-porownania",
+      "label": "Znaki Porównania",
+      "h2": "Powiązane Symbole Porównania",
+      "intro": "Pozytywne relacje, które neguje ≠ — przydatne, gdy potrzebujesz zamiast tego wersji bez przekreślenia.",
+      "symbols": [
+        { "char": "=", "label": "Znak Równości" },
+        { "char": "≈", "label": "W Przybliżeniu Równe" },
+        { "char": "≡", "label": "Identyczne" },
+        { "char": "<", "label": "Mniejsze Niż" },
+        { "char": ">", "label": "Większe Niż" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Operatory, notacja teorii mnogości i stałe matematyczne w jednym przeglądalnym zestawie."
+    },
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than & Greater Than",
+      "desc": "Znaki porównania, obok których stoi ≠, i dlaczego mogą zepsuć kod HTML."
+    },
+    {
+      "href": "/pl/symbol/znak-plus-minus/",
+      "title": "Znak Plus-Minus",
+      "desc": "Kolejny matematyczny znak relacji wyodrębniony do własnej, dedykowanej strony."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "znak-funta",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Funta: Skopiuj £ — Znaczenie, Łacińskie Pochodzenie i Jak Go Wpisać",
+  "meta_description": "Skopiuj znak funta (£, U+00A3) — co oznacza, jego łacińskie pochodzenie od słowa libra oraz jak go wpisać na Windows i Mac. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-funta/",
+  "breadcrumb": "Znak Funta",
+  "hero_h1": "Znak Funta (£)",
+  "hero_tagline": "Co oznacza £, jego łacińskie pochodzenie i jak go wpisać — kliknij, aby skopiować.",
+  "intro": "Znak funta (£, U+00A3) wywodzi się z łacińskiego słowa libra, rzymskiej jednostki wagi — tego samego rdzenia, z którego angielski wziął skrót „lb” dla funtów. Średniowieczni angielscy księgowi skracali libra stylizowaną wielką literą L, a przez wieki odręcznego pisma ta litera zyskała poziomą poprzeczkę, ustalając się w dzisiejszym kształcie £. Sam funt szterling to jedna z najstarszych wciąż używanych walut, z korzeniami sięgającymi ponad tysiąca lat wstecz do anglosaskiej Anglii, co czyni £ jednym z najstarszych symboli walut wciąż codziennie używanych na świecie. Znak działa na Instagramie, Discordzie, TikToku i WhatsAppie, ale nie w nazwach użytkownika Roblox, PlayStation czy Xbox, które dopuszczają wyłącznie znaki alfanumeryczne. Wpisuje się go kombinacją Alt+0163 na Windows albo Option+3 na Macu, a w HTML encją &pound; lub &#163;. Nie myl go z krzyżykiem # — mimo że w amerykańskim angielskim bywa potocznie nazywany „pound sign” (od dawnego skracania „lb”, jak w zapisie „5#” oznaczającym pięć funtów wagi), to zupełnie inny, niepowiązany znak Unicode.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pound-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-funta/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pound-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-funta",
+      "label": "Funt",
+      "h2": "Znak Funta",
+      "intro": "Właściwy unicode'owy znak funta, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "£", "label": "Znak Funta (U+00A3)" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Mylone",
+      "h2": "Znaki o Podobnej Nazwie",
+      "intro": "Znaki, z którymi bywa mylony znak funta — każdy to osobny, niepowiązany symbol.",
+      "symbols": [
+        { "char": "#", "label": "Krzyżyk (U+0023) — potocznie też zwany „pound sign” w amerykańskim angielskim, ale zupełnie inny znak" },
+        { "char": "€", "label": "Znak Euro (U+20AC) — celowo zaprojektowany symbol waluty z 1996 roku, w przeciwieństwie do organicznej ewolucji £" }
+      ]
+    },
+    {
+      "id": "inne-symbole-walut",
+      "label": "Inne Waluty",
+      "h2": "Inne Symbole Walut Świata",
+      "intro": "Pozostałe światowe znaki walut, obok których £ pojawia się najczęściej.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara" },
+        { "char": "¥", "label": "Znak Jena" },
+        { "char": "₹", "label": "Znak Rupii Indyjskiej" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-dolara/",
+      "title": "Znak Dolara ($)",
+      "desc": "Najbardziej rozpoznawalny symbol waluty na świecie — i jego sporne pochodzenie."
+    },
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro (€)",
+      "desc": "Symbol waluty zaprojektowany celowo w 1996 roku."
+    },
+    {
+      "href": "/pl/symbol/znak-jena/",
+      "title": "Znak Jena (¥)",
+      "desc": "Wspólny znak japońskiego jena i chińskiego juana."
+    }
+  ]
+}

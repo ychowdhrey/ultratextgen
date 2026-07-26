@@ -1,0 +1,125 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "bitcoin-teken",
+  "title": "Bitcoin-teken: Kopieer en Plak ₿ — Het Valutateken dat Unicode in 2017 Toevoegde",
+  "meta_description": "Kopieer en plak het Bitcoin-teken (₿, U+20BF) en ontdek hoe het verschilt van de Thaise baht ฿ en de tickercode BTC. Klik om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/bitcoin-teken/",
+  "breadcrumb": "Bitcoin-teken",
+  "hero_h1": "Bitcoin-teken",
+  "hero_tagline": "Het valutateken voor Bitcoin (₿), in 2017 aan Unicode toegevoegd na echte vraag — niet te verwarren met de Thaise baht ฿ of de tickercode BTC. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het Bitcoin-teken (₿, U+20BF) markeert een bedrag in Bitcoin — een prijs, een fooienpot, een donatieregel. Maar anders dan de oudere valutatekens die Unicode als routine-opmaak overnam, werd ₿ in 2017 toegevoegd als directe reactie op organische vraag van een snelgroeiende gebruikersgroep, en het wordt in bio's zowat even vaak als identiteitsbadge gedragen als daadwerkelijk gebruikt om een bedrag te schrijven.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/bitcoin-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/bitcoin-teken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/bitcoin-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "bitcoin-teken",
+      "label": "Bitcoin",
+      "h2": "Bitcoin-teken",
+      "intro": "Het Unicode-Bitcoin-teken, klaar om te plakken in een bio, weergavenaam, prijs of donatieregel.",
+      "symbols": [
+        {
+          "char": "₿",
+          "label": "Bitcoin-teken (U+20BF)"
+        },
+        {
+          "char": "Ƀ",
+          "label": "Hoofdletter B met Streep"
+        }
+      ]
+    },
+    {
+      "id": "look-alikes",
+      "label": "Look-alikes om te Vermijden",
+      "h2": "Look-alikes & Verwarrende Tekens",
+      "intro": "Tekens waar ₿ regelmatig voor wordt aangezien — hetzelfde B-met-verticale-streep-silhouet, maar volledig andere tekens en codepunten.",
+      "symbols": [
+        {
+          "char": "฿",
+          "label": "Thaise Bahtteken (U+0E3F)"
+        },
+        {
+          "char": "Ƀ",
+          "label": "Hoofdletter B met Streep (U+0243)"
+        },
+        {
+          "char": "B",
+          "label": "Latijnse Hoofdletter B"
+        }
+      ]
+    },
+    {
+      "id": "andere-valuta",
+      "label": "Andere Valutatekens",
+      "h2": "Andere Valutatekens",
+      "intro": "De rest van de valutatekens van de wereld — de buren van ₿ in het Currency Symbols-blok en in de meeste prijsvelden.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Dollarteken"
+        },
+        {
+          "char": "¢",
+          "label": "Centteken"
+        },
+        {
+          "char": "€",
+          "label": "Euroteken"
+        },
+        {
+          "char": "£",
+          "label": "Pondteken"
+        },
+        {
+          "char": "¥",
+          "label": "Yenteken"
+        },
+        {
+          "char": "₹",
+          "label": "Indiase Roepieteken"
+        },
+        {
+          "char": "₩",
+          "label": "Wonteken"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Dollar, euro, pond, yen, roepie en andere wereldvalutatekens in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/euro-symbool/",
+      "title": "Euroteken (€)",
+      "desc": "Nog een valutateken dat in de moderne tijd op bestelling is ontworpen, in 1996."
+    },
+    {
+      "href": "/nl/symbol/roepieteken/",
+      "title": "Indiase Roepieteken (₹)",
+      "desc": "Een recent, bewust gecreëerd valutateken — gekozen via een publieke wedstrijd in 2010."
+    }
+  ]
+}

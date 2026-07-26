@@ -1,0 +1,84 @@
+{
+  "slug": "simbolo-de-espadas",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Símbolo de Espadas: Copiar e Colar ♠ ♤ — o Naipe Batizado por uma Espada, Não uma Pá",
+  "meta_description": "Copie e cole o símbolo de espadas — o preenchido ♠ (U+2660) e o contornado ♤ (U+2664) — e veja como o naipe ganhou seu nome derivado de espada e seu Ás com selo de imposto. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/simbolo-de-espadas/",
+  "breadcrumb": "Símbolo de Espadas",
+  "hero_h1": "Símbolo de Espadas",
+  "hero_tagline": "O naipe de espadas nas duas formas do Unicode — preenchida ♠ (U+2660) e contornada ♤ (U+2664) — o símbolo de carta cujo nome descende do naipe de espada e cujo Ás de Espadas já carregou o selo oficial de imposto britânico. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "A espada — ♠ (U+2660, BLACK SPADE SUIT) em sua forma preenchida e ♤ (U+2664, WHITE SPADE SUIT) como contorno — é um dos quatro naipes do baralho padrão de origem francesa, adicionado ao Unicode 1.1 em 1993 junto com copas, ouros e paus, os oito glifos de naipe ocupando de U+2660 a U+2667. Seu nome é uma pequena lição de história: em inglês, «spade» não vem da ferramenta de cavar, mas do espanhol espada e do italiano spada, que significam «espada», o naipe dos baralhos latinos mais antigos. Quando os fabricantes de cartas franceses padronizaram o sistema de quatro naipes na segunda metade do século 15, redesenharam a espada como a simples forma de folha preta que conhecemos hoje — barata de estampar em duas cores, o que é a razão de o baralho francês ter depois inundado a Europa e chegado à Inglaterra. Na convenção do Unicode, «black» (preto) significa preenchido e «white» (branco) significa contorno, com a cor real deixada a cargo da fonte — por isso o mesmo par preenchido/contorno existe para cada naipe. O Ás de Espadas carrega o folclore mais rico do baralho: na Inglaterra, ele trouxe o selo oficial de imposto a partir de 1712 e, depois de 1765, um design ricamente gravado impresso pela Repartição de Selos — o ancestral do ás decorado de hoje.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-de-espadas/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "spade-symbol",
+      "label": "Símbolo de Espadas",
+      "h2": "O Símbolo de Espadas — ♠ e ♤",
+      "intro": "O naipe em si, nas duas formas do Unicode. O ♠ preenchido é o espadas «preto» padrão; ♤ é a versão contornada «branca», e ♠️ é a forma de apresentação emoji, com um seletor de variação. Pronto para colar em qualquer lugar.",
+      "symbols": [
+        { "char": "♠", "label": "Naipe de Espadas Preto (U+2660) — Sólido / Preenchido" },
+        { "char": "♤", "label": "Naipe de Espadas Branco (U+2664) — Contornado" },
+        { "char": "♠️", "label": "Emoji de Naipe de Espadas (U+2660 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "all-four-suits",
+      "label": "Os Quatro Naipes",
+      "h2": "Os Quatro Naipes — Preenchidos e Contornados",
+      "intro": "O Unicode dá a cada naipe francês um glifo preenchido «preto» e um contornado «branco», reunidos numa sequência de U+2660 a U+2667. Repare na curiosidade: espadas e paus vêm preenchidos por padrão, enquanto copas e ouros vêm contornados por padrão.",
+      "symbols": [
+        { "char": "♠", "label": "Naipe de Espadas Preto (U+2660)" },
+        { "char": "♥", "label": "Naipe de Copas Preto (U+2665)" },
+        { "char": "♦", "label": "Naipe de Ouros Preto (U+2666)" },
+        { "char": "♣", "label": "Naipe de Paus Preto (U+2663)" },
+        { "char": "♤", "label": "Naipe de Espadas Branco (U+2664)" },
+        { "char": "♡", "label": "Naipe de Copas Branco (U+2661)" },
+        { "char": "♢", "label": "Naipe de Ouros Branco (U+2662)" },
+        { "char": "♧", "label": "Naipe de Paus Branco (U+2667)" }
+      ]
+    },
+    {
+      "id": "ace-and-cards",
+      "label": "Ás e Cartas de Baralho",
+      "h2": "O Ás de Espadas e os Glifos de Carta de Baralho",
+      "intro": "A carta mais lendária do baralho: a Inglaterra estampou o Ás de Espadas com uma marca de imposto a partir de 1712 e imprimiu seu design ornamentado da Repartição de Selos depois de 1765, e uma história de guerra amplamente repetida (e muito debatida) conta que tropas dos EUA no Vietnã a usavam como «carta da morte». O bloco Playing Cards do Unicode dá a cada carta seu próprio glifo — aqui estão os quatro áses e o verso da carta.",
+      "symbols": [
+        { "char": "🂡", "label": "Carta de Baralho: Ás de Espadas (U+1F0A1)" },
+        { "char": "🂱", "label": "Carta de Baralho: Ás de Copas (U+1F0B1)" },
+        { "char": "🃁", "label": "Carta de Baralho: Ás de Ouros (U+1F0C1)" },
+        { "char": "🃑", "label": "Carta de Baralho: Ás de Paus (U+1F0D1)" },
+        { "char": "🂠", "label": "Verso de Carta de Baralho (U+1F0A0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/naipes-de-baralho/",
+      "title": "Naipes de Baralho",
+      "desc": "Os quatro naipes de baralho — espadas, copas, ouros e paus — nas formas preenchida e contornada, para navegar e copiar."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-peao/",
+      "title": "Símbolo de Peão",
+      "desc": "Outro glifo de jogo do mesmo bloco Miscellaneous Symbols — a peça de menor valor do xadrez."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-coracao/",
+      "title": "Símbolo de Coração (♥)",
+      "desc": "Um naipe irmão: o coração nas formas preenchida ♥ e contornada ♡ do Unicode, da mesma sequência U+2660–U+2667."
+    }
+  ]
+}

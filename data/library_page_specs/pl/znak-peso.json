@@ -1,0 +1,81 @@
+{
+  "slug": "znak-peso",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Peso: Skopiuj ₱ — Tylko Peso Filipińskie Ma Własny, Reszta Używa $",
+  "meta_description": "Skopiuj znak peso ₱ (U+20B1) — własny symbol peso filipińskiego, podczas gdy meksykańskie, argentyńskie, kolumbijskie i inne peso zapisuje się zwykłym $. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-peso/",
+  "breadcrumb": "Znak Peso",
+  "hero_h1": "Znak Peso (₱)",
+  "hero_tagline": "₱ należy do peso filipińskiego — jedynego peso na świecie z dedykowanym symbolem, podczas gdy meksykańskie, argentyńskie i kolumbijskie peso radzą sobie zwykłym znakiem dolara. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak peso (₱, Unicode U+20B1 PESO SIGN) to dedykowany symbol peso filipińskiego — i, mimo ogólnej nazwy, to jedyne peso na świecie, które taki symbol posiada. Każda inna waluta nazywana peso — meksykańska (MXN), argentyńska (ARS), kolumbijska (COP), chilijska (CLP), kubańska (CUP), dominikańska (DOP) i urugwajska (UYU) między innymi — zapisywana jest zwyczajowo zwykłym znakiem dolara, $ (U+0024), zwykle odróżnianym w praktyce prefiksem kraju, jak MX$ czy COL$. Ten wspólny glif to nie przypadek: sam znak dolara powszechnie uważa się za wywodzący się z XVIII-wiecznego, odręcznego skrótu hiszpańskiego peso, dlatego jeden znak wciąż służy dziś zarówno dolarom, jak i większości peso. Filipiny poszły inną drogą. Rozporządzenie wykonawcze nr 66, wydane przez amerykański rząd kolonialny 3 sierpnia 1903 roku, nakazało wielką literę P przekreśloną dwiema równoległymi liniami specjalnie po to, by odróżnić peso filipińskie od dolara amerykańskiego i hiszpańskiej pesety. Unicode zakodował ₱ w wersji 3.2, wydanej w 2002 roku; kod ISO 4217 tej waluty to PHP, a emitentem jest Bangko Sentral ng Pilipinas.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-peso/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-peso",
+      "label": "Znak Peso",
+      "h2": "Dwa Znaki Zwane „Znakiem Peso” — ₱ i $",
+      "intro": "Oba te znaki nazywa się znakiem peso. ₱ to własny znak peso filipińskiego; $ to symbol używany przez niemal każde inne peso — bo sam znak dolara prawdopodobnie zaczynał jako skrót hiszpańskiego peso. Czy wywodzi się z odręcznego „Ps”, czy z owiniętych literą S Słupów Herkulesa na hiszpańskich monetach dolarowych, wciąż jest przedmiotem sporu historyków.",
+      "symbols": [
+        { "char": "₱", "label": "Znak Peso (U+20B1) — dedykowany glif peso filipińskiego" },
+        { "char": "$", "label": "Znak Dolara (U+0024) — znak, którego naprawdę używa niemal każde inne peso" }
+      ]
+    },
+    {
+      "id": "rodzina-znakow-przekreslonych",
+      "label": "Zbudowane Jak Peso",
+      "h2": "Rodzina Walut z Przekreśloną Literą",
+      "intro": "Znak peso to wielka litera P przekreślona dwiema równoległymi kreskami — ten sam przepis stoi za całym pokoleniem nowoczesnych znaków walut, z których każdy to krajowa litera przekreślona jedną lub dwiema liniami. Gotowe do wklejenia gdziekolwiek.",
+      "symbols": [
+        { "char": "₹", "label": "Znak Rupii Indyjskiej (U+20B9) — przekreślone R, oficjalnie przyjęte w 2010 roku" },
+        { "char": "₩", "label": "Znak Wona (U+20A9) — W z dwiema kreskami" },
+        { "char": "₦", "label": "Znak Nairy (U+20A6) — przekreślone N (Nigeria)" },
+        { "char": "₴", "label": "Znak Hrywny (U+20B4) — przekreślona litera dla Ukrainy" },
+        { "char": "₫", "label": "Znak Donga (U+20AB) — przekreślone d (Wietnam)" },
+        { "char": "€", "label": "Znak Euro (U+20AC) — zaokrąglone E z dwiema kreskami" }
+      ]
+    },
+    {
+      "id": "znaki-mylone-z-peso",
+      "label": "Nie Mylić z",
+      "h2": "Znaki Podobne, Mylone z ₱",
+      "intro": "Ponieważ ₱ to zasadniczo przekreślone P, bywa zastępowane innymi znakami w kształcie P — w tym jednym, który jest zupełnie inną walutą. Każdy z nich to osobny punkt kodowy Unicode, nie stylistyczny wariant.",
+      "symbols": [
+        { "char": "₽", "label": "Znak Rubla (U+20BD) — waluta Rosji, też przekreślone P, ale inną kreską" },
+        { "char": "P", "label": "Zwykła Wielka Litera P (U+0050) — prosty zamiennik często wpisywany zamiast peso" },
+        { "char": "Ᵽ", "label": "Wielka Litera P z Przekreśleniem (U+2C63) — używana w lingwistyce, nie w walutach" },
+        { "char": "Ρ", "label": "Wielka Grecka Litera Ro (U+03A1) — wygląda jak P" },
+        { "char": "Р", "label": "Cyrylicka Wielka Litera Er (U+0420) — kolejny sobowtór P" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Przeglądaj każdy światowy symbol waluty — dolar, euro, funt, jen, rupię i peso — obok siebie w jednej siatce."
+    },
+    {
+      "href": "/symbol/dollar-sign/",
+      "title": "Dollar Sign ($)",
+      "desc": "Znak, którego naprawdę używa niemal każde peso: tylko peso filipińskie ma własny ₱, a meksykańskie, argentyńskie i kolumbijskie zapisuje się $."
+    },
+    {
+      "href": "/symbol/rupee-sign/",
+      "title": "Rupee Sign (₹)",
+      "desc": "Indyjskie ₹ — podobnie jak ₱, nowoczesny znak waluty formalnie ustanowiony dla pieniądza jednego kraju, zbudowany przez przekreślenie litery równoległymi kreskami."
+    }
+  ]
+}

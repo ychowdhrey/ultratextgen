@@ -1,0 +1,69 @@
+{
+  "slug": "symbole-asterisque",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Astérisque : Copier-Coller * ⁂ ✱ — La Marque de Note de Bas de Page Devenue Joker & Étoile de Censure",
+  "meta_description": "Copie et colle l'astérisque (*), l'astérisme ⁂, et le ✱ épais — la marque de note de bas de page qui gère aussi la recherche par joker et censure les gros mots. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-asterisque/",
+  "breadcrumb": "Symbole Astérisque",
+  "hero_h1": "Symbole Astérisque (*)",
+  "hero_tagline": "L'astérisque (*) des notes de bas de page, le joker * qui correspond à n'importe quoi en recherche et en code, et l'étoile de censure dans « m**de » — plus ses cousins typographiques comme l'astérisme à trois branches ⁂. Clique sur un symbole pour le copier instantanément.",
+  "intro": "L'astérisque (*, Unicode U+002A) est le signe en forme d'étoile qui partage la touche 8 du clavier, et son nom vient tout droit du grec ancien asteriskos, « petite étoile » — un diminutif d'astēr, « étoile ». C'est l'une des plus anciennes marques éditoriales de la tradition occidentale : l'érudit alexandrin Aristarque de Samothrace (v. 220-143 av. J.-C.) utilisait déjà l'asteriskos dans ses éditions d'Homère pour signaler des vers qu'il jugeait dupliqués ailleurs, et le théologien Origène l'a plus tard placé dans son Hexaples pour marquer un texte présent en hébreu mais absent du grec. Aujourd'hui, ce même glyphe remplit trois fonctions bien différentes : c'est la marque de note de bas de page classique qui renvoie le lecteur à une note en pied de page, c'est le joker qui correspond à n'importe quoi dans la recherche de fichiers, les motifs glob et le SELECT * de SQL, et c'est le substitut de censure par défaut pour les lettres que l'on préfère étoiler, comme dans m**de. La typographie garde toute une famille de cousins autour de lui — l'ASTÉRISME ⁂ (U+2042) empile trois astérisques en triangle comme séparateur de section, l'ASTÉRISQUE ÉPAIS ✱ (U+2731) et l'ASTÉRISQUE À HUIT BRANCHES ✳ (U+2733) sont des formes d'affichage plus marquées, et l'OPÉRATEUR ASTÉRISQUE ∗ (U+2217) est le glyphe mathématique dédié à la multiplication. Aucune de ces formes n'est la forme décorative en étoile — l'étoile noire ★ (U+2605) ou l'emoji étoile jaune ⭐ (U+2B50) — qui appartient à un registre différent, purement ornemental.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-asterisque/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "l-asterisque",
+      "label": "L'Astérisque",
+      "h2": "L'Astérisque & Ses Variantes d'Affichage",
+      "intro": "Le simple astérisque du clavier plus les formes d'affichage plus marquées et l'opérateur spécifiquement mathématique. Chacun est prêt à être collé.",
+      "symbols": [
+        { "char": "*", "label": "Astérisque (U+002A) — Note de Bas de Page, Joker & Marque de Censure" },
+        { "char": "✱", "label": "Astérisque Épais (U+2731)" },
+        { "char": "✳", "label": "Astérisque à Huit Branches (U+2733)" },
+        { "char": "∗", "label": "Opérateur Astérisque (U+2217) — le Glyphe Mathématique de Multiplication" },
+        { "char": "＊", "label": "Astérisque Pleine Chasse (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asterisme-marques-editoriales",
+      "label": "Astérisme & Marques Éditoriales",
+      "h2": "Astérisme & Marques de Séparation de Section",
+      "intro": "Des marques éditoriales construites à partir de l'astérisque — l'astérisme à trois branches en triangle qui sépare des sections, plus ses cousins empilés et abaissés.",
+      "symbols": [
+        { "char": "⁂", "label": "Astérisme (U+2042) — Trois Astérisques en Triangle" },
+        { "char": "⁑", "label": "Deux Astérisques Alignés Verticalement (U+2051)" },
+        { "char": "⁎", "label": "Astérisque Bas (U+204E)" }
+      ]
+    },
+    {
+      "id": "etoiles-confondues",
+      "label": "Étoiles Confondues avec Lui",
+      "h2": "Formes d'Étoile avec Lesquelles on le Confond",
+      "intro": "Des glyphes en forme d'étoile que l'on va chercher en pensant à un astérisque. Ce sont des étoiles décoratives — un registre ornemental, pas un outil de note de bas de page ou de ponctuation.",
+      "symbols": [
+        { "char": "★", "label": "Étoile Noire (U+2605)" },
+        { "char": "☆", "label": "Étoile Blanche (U+2606)" },
+        { "char": "⭐", "label": "Étoile Blanche Moyenne (U+2B50) — l'Emoji Étoile Jaune" },
+        { "char": "✦", "label": "Étoile Noire à Quatre Branches (U+2726)" },
+        { "char": "✧", "label": "Étoile Blanche à Quatre Branches (U+2727)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/punctuation-symbols/", "title": "Punctuation Symbols", "desc": "Tirets, crochets, guillemets et toute la famille de ponctuation courante à laquelle appartient l'astérisque (en anglais)." },
+    { "href": "/library/keyboard-symbols/", "title": "Keyboard Symbols", "desc": "L'astérisque, l'esperluette, le dièse et le reste des symboles imprimés sur les rangées de ton clavier (en anglais)." },
+    { "href": "/fr/symbol/symbole-etoile/", "title": "Symbole Étoile (★)", "desc": "L'étoile décorative ★ et l'emoji étoile jaune ⭐ — les cousines ornementales que l'on confond avec l'astérisque." }
+  ]
+}

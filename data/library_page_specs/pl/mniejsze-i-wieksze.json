@@ -1,0 +1,76 @@
+{
+  "slug": "mniejsze-i-wieksze",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znaki Mniejszości (<) i Większości (>): Skopiuj — Dlaczego Mogą Zepsuć HTML",
+  "meta_description": "Skopiuj znaki mniejszości < i większości > — co oznaczają, dlaczego mogą zepsuć kod HTML i czym różnią się od cudzysłowów kątowych. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/mniejsze-i-wieksze/",
+  "breadcrumb": "Mniejszości i Większości",
+  "hero_h1": "Znaki Mniejsze (<) i Większe (>)",
+  "hero_tagline": "Co oznaczają, dlaczego mogą zepsuć HTML i czym różnią się od cudzysłowów kątowych — kliknij, aby skopiować.",
+  "intro": "< i > to operatory nierówności: a < b oznacza, że a jest mniejsze od b, a a > b oznacza, że a jest większe od b. Są częścią standardowej notacji matematycznej od XVII wieku i trafiły wprost do pierwotnego zestawu znaków ASCII, dlatego znajdują się w bloku Basic Latin, a nie w dedykowanym bloku Mathematical Operators, do którego trafiły symbole takie jak ≠ czy ∞, dodane wraz z Unicode. To umiejscowienie z ery ASCII to też powód, dla którego < i > wykonują drugie zadanie, na które trafia niemal każdy użytkownik klawiatury: w HTML i XML znak < otwiera każdy tag. Przypadkowo wpisany < jako zwykły tekst może sprawić, że przeglądarka zacznie analizować tag, który nigdy nie miał istnieć — dlatego HTML wymaga zapisywania ich jako &lt; i &gt; wszędzie tam, gdzie występują jako zwykły tekst, a nie znaczniki. Oba znaki działają na Instagramie, Discordzie, TikToku i WhatsAppie, ale platformy takie jak Roblox, PlayStation i Xbox blokują < i > w nazwach wyświetlanych, bo mogą zostać wzięte za znaczniki albo kod. Na klawiaturze w układzie US wpisuje się je Shift+przecinek dla < i Shift+kropka dla >.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/mniejsze-i-wieksze/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" }
+  ],
+  "sections": [
+    {
+      "id": "mniejsze-i-wieksze",
+      "label": "Mniejsze i Większe",
+      "h2": "Znaki Mniejszości i Większości",
+      "intro": "Same, zwykłe znaki ASCII, gotowe do wklejenia — działające w matematyce, kodzie i codziennym tekście.",
+      "symbols": [
+        { "char": "<", "label": "Znak Mniejszości (U+003C)" },
+        { "char": ">", "label": "Znak Większości (U+003E)" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Mylone",
+      "h2": "Podobnie Wyglądające Symbole",
+      "intro": "Te znaki wyglądają podobnie, ale to cudzysłowy kątowe albo notacja matematyczna, nie porównania.",
+      "symbols": [
+        { "char": "‹", "label": "Pojedynczy Cudzysłów Kątowy Lewy (U+2039) — znak interpunkcyjny, nie porównanie" },
+        { "char": "«", "label": "Podwójny Cudzysłów Kątowy Lewy (U+00AB) — cudzysłowy francuskie/niemieckie" },
+        { "char": "⟨", "label": "Lewy Nawias Kątowy (U+27E8) — używany w notacji bra-ket i wektorach, nie w porównaniach" }
+      ]
+    },
+    {
+      "id": "powiazane-znaki-porownania",
+      "label": "Powiązane Znaki",
+      "h2": "Powiązane Znaki Porównania",
+      "intro": "Warianty „lub równe” zbudowane z tych samych podstawowych znaków porównania.",
+      "symbols": [
+        { "char": "≤", "label": "Mniejsze lub Równe (U+2264) — kuzyn „lub-równy”" },
+        { "char": "≥", "label": "Większe lub Równe (U+2265)" },
+        { "char": "≠", "label": "Różne Od (U+2260)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-plus-minus/",
+      "title": "Znak Plus-Minus (±)",
+      "desc": "Dwie możliwe wartości w jednym wyrażeniu."
+    },
+    {
+      "href": "/pl/symbol/znak-dzielenia/",
+      "title": "Znak Dzielenia (÷)",
+      "desc": "Obelus i dlaczego podręczniki od niego odeszły."
+    },
+    {
+      "href": "/pl/symbol/znak-mniejsze-lub-rowne/",
+      "title": "Znak Mniejsze lub Równe (≤)",
+      "desc": "Dedykowany znak Unicode łączący porównanie z równością."
+    }
+  ]
+}

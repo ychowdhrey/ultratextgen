@@ -1,0 +1,148 @@
+{
+  "slug": "piyon-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Piyon Sembolü: Kopyala Yapıştır ♟ ♙ — Vezir Olabilen Piyade",
+  "meta_description": "Piyon sembolünü kopyala yapıştır — siyah ♟ (U+265F) ve beyaz ♙ (U+2659) — satrancın en düşük değerli, piyade adını taşıyan ve vezire terfi edebilen taşı. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/piyon-sembolu/",
+  "breadcrumb": "Piyon Sembolü",
+  "hero_h1": "Piyon Sembolü (♟ ♙)",
+  "hero_tagline": "Siyah ♟ ve beyaz ♙ satranç piyonu — tahtanın en düşük değerli taşı ve piyadesi, karşı kenara ulaşıp vezire dönüşebilen taş, ve İngilizcenin başkasının oyununda kullanılan biri için ödünç aldığı sözcük. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Piyon sembolü iki Unicode biçiminde gelir — siyah ♟ (U+265F, BLACK CHESS PAWN) ve beyaz ♙ (U+2659, WHITE CHESS PAWN) — ikisi de U+2654 ile U+265F arasındaki tam 12 taşlık satranç setiyle birlikte Miscellaneous Symbols bloğunun bir parçasıdır. \"Piyon\" sözcüğü Anglo-Fransızca \"poun\"a ve Eski Fransızca \"peon\"a, oradan da Orta Çağ Latincesi \"pedonem\"e (piyade), en nihayetinde Latince \"pes\" (ayak) sözcüğüne uzanır — piyon tahtanın gerçek anlamda piyadesiydi. Satrancın en düşük değerli taşıdır, standart sistemde 1 puan değerindedir; bir at ya da fil 3, kale 5, vezir ise 9'dur. Ayrıca hareket ve alışında farklılık gösteren tek taştır: ilk hamlesinde iki, sonrasında bir kare düz ileri gider, ama yalnızca çapraz alır ve yanından geçmeye çalıştığı düşman bir piyon tarafından \"geçerken\" (en passant) alınabilir. Karşı kenara ulaşan bir piyon vezire, kaleye, file ya da ata terfi eder — şah hariç her şeye, ve piyon olarak kalamaz. Notasyonda bir piyon FEN'de \"P\" (beyaz) ya da \"p\" (siyah) harfini taşır, cebirsel hamlelerde ise hiçbir harf taşımaz, yalnızca hedef karesi yazılır. 1580'lere gelindiğinde \"piyon\" çoktan başkasının planında feda edilebilir bir araç olarak kullanılan kişi için gündelik bir mecaz hâline gelmişti.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "pawn-symbol",
+      "label": "Piyon Sembolü",
+      "h2": "Piyon Sembolü — ♟ ve ♙",
+      "intro": "İki piyon glifi. Dolu siyah ♟, çoğu insanın yapıştırdığı biçimdir; anahat beyaz ♙ ise onun açık taraf ikizidir. İkisi de tek Unicode karakteridir, herhangi bir metne bırakılmaya hazır.",
+      "symbols": [
+        {
+          "char": "♟",
+          "label": "Black Chess Pawn (U+265F)"
+        },
+        {
+          "char": "♙",
+          "label": "White Chess Pawn (U+2659)"
+        }
+      ]
+    },
+    {
+      "id": "black-chess-pieces",
+      "label": "Siyah Taşlar",
+      "h2": "Siyah Piyonun Takım Arkadaşları",
+      "intro": "Aynı Unicode bloğunda U+265A'dan U+265E'ye uzanan, piyonun arkasında dizilen siyah tarafın geri kalanı — şah, vezir, kale, fil ve at.",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "Black Chess King (U+265A)"
+        },
+        {
+          "char": "♛",
+          "label": "Black Chess Queen (U+265B)"
+        },
+        {
+          "char": "♜",
+          "label": "Black Chess Rook (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Black Chess Bishop (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Black Chess Knight (U+265E)"
+        }
+      ]
+    },
+    {
+      "id": "white-chess-pieces",
+      "label": "Beyaz Taşlar",
+      "h2": "Beyaz Satranç Taşları",
+      "intro": "Siyah piyonu tahtanın karşısından karşılayan, U+2654'ten U+2658'e kadar yer kaplayan anahat beyaz set — piyonun bir gün korkabileceği vezir ve asla olamayacağı şah.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "White Chess King (U+2654)"
+        },
+        {
+          "char": "♕",
+          "label": "White Chess Queen (U+2655)"
+        },
+        {
+          "char": "♖",
+          "label": "White Chess Rook (U+2656)"
+        },
+        {
+          "char": "♗",
+          "label": "White Chess Bishop (U+2657)"
+        },
+        {
+          "char": "♘",
+          "label": "White Chess Knight (U+2658)"
+        }
+      ]
+    },
+    {
+      "id": "pawn-promotion",
+      "label": "Terfi",
+      "h2": "Bir Piyon Neye Dönüşebilir",
+      "intro": "Tahtanın karşı ucuna ulaşan bir piyon terfi etmelidir — kendi renginden bir vezir, kale, fil ya da ata. Asla şah olamaz ve piyon olarak kalamaz. Vezir olağan seçimdir; başka her şey bir \"alt terfi\"dir.",
+      "symbols": [
+        {
+          "char": "♛",
+          "label": "Black Chess Queen (U+265B) — olağan terfi"
+        },
+        {
+          "char": "♜",
+          "label": "Black Chess Rook (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Black Chess Bishop (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Black Chess Knight (U+265E) — bir alt terfi"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Satranç Sembolleri",
+      "desc": "Tam Unicode satranç seti — şahlar, vezirler, kaleler, filler, atlar ve her iki piyon — tek bir kopyala yapıştır referansında."
+    },
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "İskambil Takım Sembolleri",
+      "desc": "Maça, kupa, karo ve sinek — Unicode'un Miscellaneous Symbols bloğunda satranç taşlarının tam yanında oturan diğer oyun glifleri."
+    },
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Taç ve Kraliyet Sembolleri",
+      "desc": "Taçlar, tahtlar ve regalia — vezirliğe terfi hayali kuran bir piyona uygun eşlik."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/piyon-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

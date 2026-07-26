@@ -1,0 +1,61 @@
+{
+  "slug": "vertical-line",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Vạch Dọc (|): Ý Nghĩa, Lịch Sử Và Cách Gõ",
+  "meta_description": "Ký hiệu vạch dọc | (U+007C) được giải thích — lịch sử «pipe» trong hệ điều hành Unix, cách dùng trong ký hiệu toán học, và cách gõ trên Windows/Mac.",
+  "canonical": "https://ultratextgen.com/vi/symbol/vertical-line/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Vạch Dọc",
+  "hero_h1": "Ký Hiệu Vạch Dọc (|)",
+  "hero_tagline": "| nghĩa là gì, lịch sử «pipe» trong Unix của nó, và cách gõ ra nó — nhấp để sao chép ngay.",
+  "intro": "| đã là một phần của chuẩn ASCII từ thập niên 1960, ban đầu chỉ là một ký tự phân cách đơn thuần. Ý nghĩa nổi tiếng nhất của nó đến từ ngành điện toán: năm 1973, Doug McIlroy tại Bell Labs giới thiệu toán tử «pipe» cho shell Unix, cho phép command1 | command2 đưa trực tiếp đầu ra của một chương trình vào đầu vào của chương trình khác. Ý tưởng đơn giản đó — nhiều chương trình nhỏ được nối chuỗi với nhau thay vì một chương trình khổng lồ làm mọi thứ — trở thành một trong những khái niệm có ảnh hưởng nhất trong thiết kế phần mềm, và đó là lý do vì sao | vẫn mang biệt danh «pipe» hàng chục năm sau, trung tâm của lập trình shell và các công cụ dòng lệnh trên mọi hệ điều hành hiện đại. Ngoài lĩnh vực điện toán, | còn đảm nhận thêm vai trò kép trong ký hiệu toán học — bao quanh một con số để chỉ giá trị tuyệt đối (|-5| = 5), phân tách một điều kiện trong ký hiệu xây dựng tập hợp ({x | x > 0}), và biểu thị tính chia hết (a | b, «a chia hết b») — cùng vai trò một dấu phân cách trực quan đơn thuần trong menu, khẩu hiệu và danh sách (Tên | Chức Vụ | Địa Điểm).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/vertical-line/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/vertical-line/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/vertical-line/" }
+  ],
+  "sections": [
+    {
+      "id": "vertical-line",
+      "label": "Vạch Dọc",
+      "h2": "Ký Hiệu Vạch Dọc",
+      "intro": "Ký hiệu vạch dọc, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "|", "label": "Ký Hiệu Vạch Dọc (U+007C)" }
+      ]
+    },
+    {
+      "id": "confusable",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Ký Hiệu Trông Giống Vạch Dọc",
+      "intro": "Những ký hiệu này có hình dáng gần giống | nhưng mang ý nghĩa khác.",
+      "symbols": [
+        { "char": "‖", "label": "Vạch Dọc Kép (U+2016) — dùng trong toán học cho chuẩn, ví dụ ‖v‖" },
+        { "char": "¦", "label": "Vạch Đứt Đoạn (U+00A6) — một biến thể cũ hơn, ít gặp hơn, có trên một số bàn phím quốc tế" }
+      ]
+    },
+    {
+      "id": "related",
+      "label": "Ký Hiệu Liên Quan",
+      "h2": "Các Ký Hiệu Liên Quan Khác",
+      "intro": "Những ký hiệu khác thường xuất hiện cùng | trong nội dung về dấu chuẩn và ký tự ẩn.",
+      "symbols": [
+        { "char": "°", "label": "Ký Hiệu Độ" },
+        { "char": "⠀", "label": "Ký Tự Vô Hình" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ (°)", "desc": "Nhiều thế kỷ dùng trong thiên văn học, góc và các thang nhiệt độ." },
+    { "href": "/vi/symbol/invisible-character/", "title": "Ký Tự Vô Hình", "desc": "Bí quyết đứng sau tên người dùng và tên hiển thị trống." },
+    { "href": "/library/vertical-line-symbols/", "title": "Tất Cả Ký Hiệu Vạch Dọc", "desc": "Mọi ký tự pipe, vạch và đường kẻ dọc mà Unicode cung cấp." }
+  ]
+}

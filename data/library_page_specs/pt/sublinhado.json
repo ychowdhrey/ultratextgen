@@ -1,0 +1,77 @@
+{
+  "slug": "sublinhado",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Sublinhado: Copiar e Colar _ ＿ ‾ — do Truque da Máquina de Escrever ao snake_case",
+  "meta_description": "Copie e cole o sublinhado (_, U+005F LOW LINE) e seus primos — o de largura total ＿ e o traço superior ‾ — e veja como um truque de sublinhar na máquina de escrever virou o snake_case e o caractere seguro para espaços em nomes de usuário. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/sublinhado/",
+  "breadcrumb": "Sublinhado",
+  "hero_h1": "Sublinhado (_)",
+  "hero_tagline": "O sublinhado (_) comum do teclado, que começou como um truque de sublinhar na máquina de escrever e virou o snake_case — o único caractere seguro para espaços que nomes de usuário, e-mails e nomes de arquivo aceitam — ao lado dos parentes largura total ＿, duplo ‗ e traço superior ‾. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O sublinhado, ou low line (_, U+005F LOW LINE), é o traço horizontal que fica na linha de base do bloco Basic Latin do Unicode, onde carrega a categoria geral Connector Punctuation (pontuação conectora). Ele nasceu como um truque puramente mecânico: numa máquina de escrever, sublinhar uma palavra significava digitá-la, recuar o carro até o início e digitar por cima o mesmo trecho usando a tecla de sublinhado — uma tecla dedicada presente em máquinas como a Caligraph de 1881. O caractere entrou no ASCII em 1967, herdando o código 95 (0x5F) da seta para a esquerda (←) que substituiu, depois que o EBCDIC da IBM já o havia adicionado em 1964 como o «break character». Programadores então o reaproveitaram como separador de palavras — o estilo de usar sublinhados no lugar de espaços remonta ao C do fim dos anos 1960 e ao livro The C Programming Language (1978), embora o nome «snake_case» só tenha surgido quando a comunidade Ruby passou a usá-lo por volta de 2004 (o PEP 8 do Python ainda o chama de «lower_case_with_underscores»). Hoje é o único caractere seguro para espaços aceito em nomes de usuário, na parte local de e-mails, em nomes de arquivo e em slugs de URL, e o Markdown lê _um sublinhado_ como itálico e __dois__ como negrito. É constantemente confundido com o hífen (-, U+002D) e com seus primos mais largos, o sublinhado de largura total ＿ (U+FF3F) e o duplo low line ‗ (U+2017) — os caracteres especiais vizinhos que ocupam a mesma função de traço horizontal.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sublinhado/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "the-underscore",
+      "label": "O Sublinhado",
+      "h2": "O Sublinhado, Largura Total e Duplo",
+      "intro": "O low line comum do teclado e suas duas variantes de largura — a forma de largura total usada na tipografia do Leste Asiático e o sublinhado duplo de espaçamento. Pronto para colar em qualquer lugar.",
+      "symbols": [
+        { "char": "_", "label": "Sublinhado / Low Line (U+005F)" },
+        { "char": "＿", "label": "Low Line de Largura Total (U+FF3F)" },
+        { "char": "‗", "label": "Duplo Low Line (U+2017)" }
+      ]
+    },
+    {
+      "id": "overline",
+      "label": "O Traço Superior",
+      "h2": "O Traço Superior: o Mesmo Traço, Acima do Texto",
+      "intro": "O traço superior é a imagem espelhada do sublinhado — o mesmo traço horizontal colocado acima do texto em vez de abaixo, e é por isso que os dois acabam confundidos como opostos. O mácron é a barra curta que as pessoas costumam digitar quando querem dizer traço superior.",
+      "symbols": [
+        { "char": "‾", "label": "Traço Superior / Overscore de Espaçamento (U+203E)" },
+        { "char": "¯", "label": "Mácron (U+00AF)" }
+      ]
+    },
+    {
+      "id": "confused-hyphen",
+      "label": "Vs. Hífen e Travessão",
+      "h2": "Sublinhado vs. a Família do Hífen e do Travessão",
+      "intro": "Em URLs, nomes de usuário e nomes de arquivo, sublinhado e hífen são trocados o tempo todo — mas ficam em alturas diferentes, têm códigos diferentes e cada um cumpre uma função distinta.",
+      "symbols": [
+        { "char": "-", "label": "Hífen-Menos / Hífen do Teclado (U+002D)" },
+        { "char": "‐", "label": "Hífen (U+2010)" },
+        { "char": "–", "label": "Travessão Curto / En Dash (U+2013)" },
+        { "char": "−", "label": "Sinal de Menos (U+2212)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria."
+    },
+    {
+      "href": "/pt/symbol/arroba/",
+      "title": "Arroba (@)",
+      "desc": "O outro caractere especial no centro de endereços de e-mail e nomes de usuário — onde o sublinhado é o separador seguro para espaços."
+    },
+    {
+      "href": "/pt/symbol/travessao-curto/",
+      "title": "Travessão Curto (En Dash)",
+      "desc": "O parente de traço do sublinhado — mais curto que o travessão longo, sem tecla própria no teclado."
+    }
+  ]
+}

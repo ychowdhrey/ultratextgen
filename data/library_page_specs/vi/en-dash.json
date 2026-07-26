@@ -1,0 +1,68 @@
+{
+  "slug": "en-dash",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Dấu Gạch Ngang Ngắn (–): Sao Chép & Dán + Dấu Gạch Khoảng Ai Cũng Gõ Nhầm Thành Gạch Nối",
+  "meta_description": "Sao chép dấu gạch ngang ngắn (–) cho khoảng như 1939–1945 và các cụm ghép như New York–London — dấu gạch khoảng không có phím riêng trên bàn phím. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/en-dash/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Dấu Gạch Ngang Ngắn",
+  "hero_h1": "Dấu Gạch Ngang Ngắn (–)",
+  "hero_tagline": "Dấu gạch ngang ngắn (–) nối các khoảng số và ngày tháng — 1939–1945, trang 10–20, 9 giờ sáng–5 giờ chiều — và liên kết các mối quan hệ hai phần như chuyến bay New York–London hay cụm pre–World War II. Dài hơn dấu gạch nối, ngắn hơn dấu gạch ngang dài, và là dấu duy nhất không có phím riêng. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Dấu gạch ngang ngắn (–, Unicode U+2013) là dấu gạch có độ dài trung bình, nằm giữa dấu gạch nối thông thường và dấu gạch ngang dài hơn — được đặt tên vì nó rộng bằng khoảng một nửa dấu gạch ngang dài, xấp xỉ chiều rộng của chữ N hoa. Nó đảm nhận hai công việc chính: đánh dấu khoảng và phạm vi (1939–1945, trang 10–20, 9 giờ sáng–5 giờ chiều, số báo tháng Năm–tháng Chín), và liên kết các mối quan hệ hai phần cùng các từ ghép mở mà dấu gạch nối sẽ quá yếu để diễn đạt (chuyến bay New York–London, liên danh Clinton–Gore, cụm pre–World War II). Vì không bàn phím nào có phím riêng cho dấu gạch ngang ngắn, nó liên tục bị gõ nhầm thành dấu gạch nối-trừ (-, U+002D); để gõ đúng, bạn nhấn Option+Gạch Nối trên Mac hoặc Alt+0150 trên bàn phím số Windows, và tính năng AutoFormat của Microsoft Word tự động chuyển một dấu gạch nối có khoảng trắng (word - word) thành dấu này. Các cẩm nang biên tập cũng không thống nhất về nó: Chicago Manual of Style dùng dấu gạch ngang ngắn cho khoảng (trang 3–11), trong khi Associated Press Stylebook hoàn toàn không dùng dấu gạch ngang ngắn, thay vào đó dùng dấu gạch nối thông thường cho khoảng. Nó cũng thường bị nhầm với dấu gạch nối kiểu chữ (‐, U+2010), dấu trừ (−, U+2212), và dấu gạch ngang dài (—, U+2014).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/en-dash/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+  ],
+  "sections": [
+    {
+      "id": "en-dash",
+      "label": "Dấu Gạch Ngang Ngắn",
+      "h2": "Dấu Gạch Ngang Ngắn & Dấu Gạch Số",
+      "intro": "Dấu gạch ngang ngắn cho khoảng và cụm ghép, cùng dấu gạch số — cùng chiều rộng nhưng dành riêng cho chữ số để các con số thẳng hàng gọn gàng trong bảng và số điện thoại. Sẵn sàng để dán ở bất cứ đâu.",
+      "symbols": [
+        { "char": "–", "label": "Dấu Gạch Ngang Ngắn (U+2013)" },
+        { "char": "‒", "label": "Dấu Gạch Số (U+2012)" }
+      ]
+    },
+    {
+      "id": "confusable-dashes",
+      "label": "Dấu Gạch Dễ Nhầm",
+      "h2": "Các Dấu Gạch & Gạch Nối Dễ Bị Nhầm Với Nó",
+      "intro": "Những dấu mà dấu gạch ngang ngắn thường bị gõ nhầm thay thế — mỗi dấu có chiều rộng, mã điểm và công việc riêng, từ dấu gạch nối bàn phím thông thường đến dấu gạch ngang dài và dấu trừ thật sự.",
+      "symbols": [
+        { "char": "—", "label": "Dấu Gạch Ngang Dài (U+2014)" },
+        { "char": "-", "label": "Dấu Gạch Nối-Trừ (Bàn Phím)" },
+        { "char": "‐", "label": "Dấu Gạch Nối (Kiểu Chữ, U+2010)" },
+        { "char": "−", "label": "Dấu Trừ (U+2212)" },
+        { "char": "―", "label": "Vạch Ngang (U+2015)" }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "Dấu Ngoặc Đơn Liên Quan",
+      "h2": "Dấu Câu Mà Một Dấu Gạch Ngang Ngắn Có Khoảng Trắng Thay Thế",
+      "intro": "Trong cách dùng tiếng Anh Anh, Úc và Canada, một dấu gạch ngang ngắn có khoảng trắng – như dấu này – được dùng để chen một ý phụ, trong khi tiếng Anh Mỹ dùng dấu gạch ngang dài liền kề; đây là những dấu mà nó thường thay thế hoặc đồng hành.",
+      "symbols": [
+        { "char": ",", "label": "Dấu Phẩy" },
+        { "char": ":", "label": "Dấu Hai Chấm" },
+        { "char": ";", "label": "Dấu Chấm Phẩy" },
+        { "char": "(", "label": "Ngoặc Đơn Trái" },
+        { "char": ")", "label": "Ngoặc Đơn Phải" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/dash-hyphen-symbols/", "title": "Ký Hiệu Gạch Ngang & Gạch Nối", "desc": "Dấu gạch ngang ngắn, gạch ngang dài, gạch nối và dấu trừ so sánh cạnh nhau cùng mã điểm trong một trang tra cứu." },
+    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Dấu gạch ngang, dấu ngoặc kép, dấu ngoặc và phần còn lại của dấu câu thông thường trong Unicode, sẵn sàng để sao chép." },
+    { "href": "/vi/symbol/em-dash/", "title": "Dấu Gạch Ngang Dài (—)", "desc": "«Người anh em» rộng hơn của dấu gạch ngang ngắn: dấu gạch dài cho chỗ ngắt và ý chen ngang, rộng gấp đôi và mang công việc khác." }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "lang": "es",
+  "slug": "simbolo-lambda",
+  "page_type": "symbol",
+  "title": "Símbolo Lambda: Copiar y Pegar λ Λ — el Emblema de la Liberación Gay y el Cálculo Lambda de Church",
+  "meta_description": "Copia y pega el símbolo lambda — la λ minúscula (longitud de onda, el signo de liberación gay de 1970) y la Λ mayúscula (la constante cosmológica) — y cómo dio nombre al lambda de Python y a AWS Lambda. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/simbolo-lambda/",
+  "breadcrumb": "Símbolo Lambda",
+  "hero_h1": "Símbolo Lambda",
+  "hero_tagline": "La λ minúscula que el diseñador gráfico Tom Doerr convirtió en emblema de la liberación gay en 1970, la misma letra detrás del cálculo lambda de Alonzo Church y del símbolo de longitud de onda en física, y la Λ mayúscula que representa la constante cosmológica. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El glifo minúsculo de lambda, λ (U+03BB, GREEK SMALL LETTER LAMDA), es la undécima letra del alfabeto griego — pero carga con dos de los significados más importantes que ha adquirido nunca un solo carácter. En 1970, el diseñador gráfico Tom Doerr, miembro fundador de la Gay Activists Alliance (formada en Nueva York en diciembre de 1969), eligió la λ minúscula como emblema del grupo — según se cuenta, por su sentido en física de «un intercambio completo de energía» — y en diciembre de 1974 el Congreso Internacional por los Derechos Gais celebrado en Edimburgo ya la había declarado símbolo internacional de los derechos gais y lésbicos; todavía da nombre a Lambda Legal y a la Lambda Literary Foundation. La misma letra sostiene buena parte de la informática: Alonzo Church construyó su cálculo lambda en la década de 1930, el sistema formal que más tarde le daría a Python su palabra clave lambda para funciones anónimas (añadida en 1994) y a Amazon su servicio sin servidor AWS Lambda. En física, λ es el símbolo estándar de la longitud de onda, mientras que la Λ mayúscula (U+039B) denota la constante cosmológica — el término de energía oscura del modelo ΛCDM del universo en expansión. Ambas formas entraron en Unicode 1.1 en 1993.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-lambda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/lambda-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "la-letra-lambda",
+      "label": "La Letra",
+      "h2": "El Símbolo Lambda — λ y Λ",
+      "intro": "La letra griega en sí — la undécima del alfabeto, con un valor de 30 en el sistema numeral griego, descendiente de la letra fenicia lamed. La λ minúscula hace casi todo el trabajo cultural; la Λ mayúscula es un símbolo aparte, de matemáticas y cosmología.",
+      "symbols": [
+        { "char": "λ", "label": "Letra Griega Lambda Minúscula (U+03BB)" },
+        { "char": "Λ", "label": "Letra Griega Lambda Mayúscula (U+039B)" }
+      ]
+    },
+    {
+      "id": "simbolo-de-liberacion-gay",
+      "label": "Liberación Gay",
+      "h2": "Lambda como Símbolo de la Liberación Gay",
+      "intro": "La Gay Activists Alliance de Nueva York adoptó la λ minúscula en 1970, y el Congreso Internacional por los Derechos Gais la declaró símbolo internacional de los derechos gais y lésbicos en 1974 — uno de los primeros emblemas del movimiento. Pégala junto a los glifos del orgullo con los que hoy convive.",
+      "symbols": [
+        { "char": "λ", "label": "Letra Griega Lambda Minúscula (U+03BB) — el Signo de la Liberación Gay" },
+        { "char": "🏳️‍🌈", "label": "Bandera Arcoíris" },
+        { "char": "⚧", "label": "Símbolo Transgénero (U+26A7)" }
+      ]
+    },
+    {
+      "id": "lambda-en-codigo-y-ciencia",
+      "label": "Código y Ciencia",
+      "h2": "Lambda en Código, Matemáticas y Física",
+      "intro": "La vida técnica de la letra. La λ minúscula marca las funciones anónimas — desde el cálculo lambda de Alonzo Church hasta la palabra clave lambda de Python y AWS Lambda — y representa la longitud de onda en física; la Λ mayúscula es la constante cosmológica del modelo ΛCDM.",
+      "symbols": [
+        { "char": "λ", "label": "Letra Griega Lambda Minúscula (U+03BB) — Longitud de Onda y Cálculo Lambda" },
+        { "char": "Λ", "label": "Letra Griega Lambda Mayúscula (U+039B) — Constante Cosmológica" },
+        { "char": "𝜆", "label": "Lambda Itálica Matemática (U+1D706) — la Variante para Ecuaciones" }
+      ]
+    },
+    {
+      "id": "letras-griegas-relacionadas",
+      "label": "Letras Griegas",
+      "h2": "Letras Griegas Relacionadas",
+      "intro": "Lambda es la undécima letra del alfabeto griego. Estas son las vecinas que la gente copia junto a ella.",
+      "symbols": [
+        { "char": "π", "label": "Letra Griega Pi Minúscula" },
+        { "char": "Σ", "label": "Letra Griega Sigma Mayúscula" },
+        { "char": "Δ", "label": "Letra Griega Delta Mayúscula" },
+        { "char": "Ω", "label": "Letra Griega Omega Mayúscula" },
+        { "char": "α", "label": "Letra Griega Alfa Minúscula" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Símbolos de Letras Griegas",
+      "desc": "El alfabeto griego completo — alfa, lambda, pi, sigma, omega — en mayúsculas y minúsculas para copiar y pegar."
+    },
+    {
+      "href": "/es/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Longitud de onda, la constante cosmológica y los operadores y letras griegas que completan una ecuación."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Símbolos del Orgullo y LGBTQ+",
+      "desc": "La lambda, el arcoíris, la labrys y otros emblemas de la identidad LGBTQ+, reunidos en un solo lugar para copiar."
+    },
+    {
+      "href": "/es/symbol/simbolo-pi/",
+      "title": "Símbolo Pi",
+      "desc": "Otra letra griega con una vida más allá de las matemáticas — la constante que William Jones nombró en 1706."
+    }
+  ]
+}

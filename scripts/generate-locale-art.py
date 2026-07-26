@@ -43,9 +43,9 @@ spec = importlib.util.spec_from_file_location(
 gsa = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gsa)
 
-LOCALES = ["ar", "bs", "cs", "de", "es", "fr", "hi", "hr", "hu", "id", "it",
-           "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sr",
-           "sv", "th", "tl", "tr", "vi", "zh-tw"]
+LOCALES = ["ar", "bs", "cs", "de", "es", "fi", "fr", "hi", "hr", "hu", "id",
+           "it", "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru", "sk",
+           "sr", "sv", "th", "tl", "tr", "vi", "zh-tw"]
 
 
 # Content is matched with a backreference to its own opening quote (.*?\1 /

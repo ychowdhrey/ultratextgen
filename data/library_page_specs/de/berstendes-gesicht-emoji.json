@@ -1,0 +1,91 @@
+{
+  "slug": "berstendes-gesicht-emoji",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Berstendes Gesicht Emoji: 🫫 kopieren & einfügen — der Emoji-18.0-Entwurf, der „Zusammengekniffene Augen“ ersetzt",
+  "meta_description": "Berstendes Gesicht (🫫, U+1FAEB) ist ein Entwurfs-Kandidat für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026 — noch nicht genehmigt und von keiner Schriftart darstellbar. Hier erfährst du Vorgeschichte, Bedeutung und Status.",
+  "canonical": "https://ultratextgen.com/de/symbol/berstendes-gesicht-emoji/",
+  "breadcrumb": "Berstendes Gesicht Emoji",
+  "hero_h1": "Berstendes Gesicht Emoji",
+  "hero_tagline": "Ein Gesicht mitten im Ausdruck, das unter Anspannung birst — im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: noch nicht genehmigt, von keiner Schriftart darstellbar. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
+  "intro": "Berstendes Gesicht (🫫, U+1FAEB) ist ein Kandidaten-Emoji im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Es zeigt ein Gesicht mitten im Ausdruck mit einem sichtbaren Riss, von den meisten Berichten als emotionale Anspannung oder ein „Zerbrechen“ bei gleichzeitigem Lächeln gedeutet — passend zum Gen-Z-„Mir geht's gut“-Meme, bei dem jemand nach außen gefasst wirkt, während innen längst alles zu viel ist. Sein Codepoint hat eine besondere Vorgeschichte: U+1FAEB war ursprünglich für ein anderes vorgeschlagenes Emoji reserviert, „Gesicht mit zusammengekniffenen Augen“, bevor die Unicode Emoji Standard & Research Working Group im Januar 2026 empfahl, es durch Berstendes Gesicht zu ersetzen. Zum Zeitpunkt dieses Textes führt Unicodes eigene Pipeline-Dokumentation diesen Codepoint noch unter dem ursprünglichen Namen, markiert als ausstehende Namensänderung — selbst der Name „Berstendes Gesicht“ ist also trotz breiter Presseberichterstattung noch nicht endgültig festgeschrieben. Weil es noch ein Entwurf ist, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart es dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe, voraussichtlich bis irgendwann 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/berstendes-gesicht-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "berstendes-gesicht",
+      "label": "Berstendes Gesicht",
+      "h2": "Berstendes Gesicht Emoji",
+      "intro": "Das Entwurfszeichen selbst — schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
+      "symbols": [
+        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB)" }
+      ]
+    },
+    {
+      "id": "verwandte-gesichts-emojis",
+      "label": "Verwandte Gesichts-Emojis",
+      "h2": "Bereits vorhandene Emojis, mit denen es verglichen wird",
+      "intro": "Bereits kodierte, vollständig unterstützte Gesichts-Emojis mit ähnlich „angespanntem“ oder „überfordertem“ Ausdruck — nützliche Übergangslösungen, bis Berstendes Gesicht tatsächlich verfügbar ist.",
+      "symbols": [
+        { "char": "😬", "label": "Grimassierendes Gesicht" },
+        { "char": "🫠", "label": "Schmelzendes Gesicht" },
+        { "char": "🥴", "label": "Schwindeliges Gesicht" },
+        { "char": "🫪", "label": "Verzerrtes Gesicht (das beliebteste neue Emoji aus Unicode 17.0)" }
+      ]
+    },
+    {
+      "id": "weitere-entwurfs-emojis",
+      "label": "Weitere Entwurfs-Kandidaten",
+      "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
+      "intro": "Berstendes Gesicht ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
+      "symbols": [
+        { "char": "🫝", "label": "Essiggurke (Entwurf, U+1FADD)" },
+        { "char": "🫌", "label": "Monarchfalter (Entwurf, U+1FACC)" },
+        { "char": "🛙", "label": "Leuchtturm (Entwurf, U+1F6D9)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Jedes bereits kodierte Gesichts-Emoji, durchsuchbar und sofort einsatzbereit."
+    },
+    {
+      "href": "/de/symbol/essiggurke-emoji/",
+      "title": "Essiggurke Emoji",
+      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 — übernahm einen Codepoint-Platz, der ursprünglich für einen zurückgestellten Vorschlag reserviert war."
+    },
+    {
+      "href": "/de/symbol/meteor-emoji/",
+      "title": "Meteor Emoji",
+      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 — löst Komets jahrelange Darstellungs-Spaltung auf."
+    },
+    {
+      "href": "/de/symbol/monarchfalter-emoji/",
+      "title": "Monarchfalter Emoji",
+      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 — behebt eine plattformübergreifende Verwechslung beim Schmetterling-Emoji."
+    },
+    {
+      "href": "/de/symbol/daumenzeichen-emoji/",
+      "title": "Daumenzeichen Emoji",
+      "desc": "Ein weiteres Entwurfs-Paar für Emoji 18.0 — richtungsweisendes Zeigen, keine Zustimmungsgeste."
+    },
+    {
+      "href": "/de/updates/unicode-18-emoji-abstimmung/",
+      "title": "Unicode 18.0: Neue Emojis",
+      "desc": "Die vollständige Entwurfsliste aller 9 Kandidaten, sortiert nach öffentlicher Abstimmung."
+    }
+  ]
+}

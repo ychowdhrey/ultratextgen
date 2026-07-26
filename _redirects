@@ -39,6 +39,16 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /ja/font-henkan              /ja/                   301
 /ja/font-henkan/             /ja/                   301
 
+# retired 2026-07-26: near-duplicate of fr/index.html's own head term
+# ("écriture stylée" / "générateur de texte stylé" both restate the
+# homepage's own pitch), confirmed via query-level GSC — see
+# ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md §2c and the fr/ six-page
+# GSC follow-up analysis
+/fr/ecriture-style/          /fr/                   301
+/fr/ecriture-style          /fr/                   301
+/fr/generateur-de-texte/     /fr/                   301
+/fr/generateur-de-texte     /fr/                   301
+
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
 /category/special-fonts/lines/              /category/strikethrough-text/ 301
@@ -208,6 +218,29 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # Free Fire slug (mirrors es/simbolos-para-free-fire)
 /pt/library/simbolos-para-nick/            /pt/library/simbolos-para-free-fire/  301
 /pt/library/simbolos-para-nick/index.html  /pt/library/simbolos-para-free-fire/  301
+
+# id/es/pt emoji-combos: moved from orphaned top-level slugs into the
+# /library/ pillar (correct Core Parent Set lane), expanded toward EN's
+# 25-mood-section parity in the same change.
+/id/kombinasi-emoji/                     /id/library/emoji-combos/  301
+/id/kombinasi-emoji/index.html           /id/library/emoji-combos/  301
+/es/combinaciones-de-emojis/             /es/library/emoji-combos/  301
+/es/combinaciones-de-emojis/index.html   /es/library/emoji-combos/  301
+/pt/combos-de-emoji/                     /pt/library/emoji-combos/  301
+/pt/combos-de-emoji/index.html           /pt/library/emoji-combos/  301
+
+# fr/de/pl/tr/nl emoji-combos: same orphaned-slug-to-/library/-pillar move,
+# completing the batch above (id/es/pt were done first).
+/fr/combos-emoji/                        /fr/library/emoji-combos/  301
+/fr/combos-emoji/index.html              /fr/library/emoji-combos/  301
+/de/emoji-kombinationen/                 /de/library/emoji-combos/  301
+/de/emoji-kombinationen/index.html       /de/library/emoji-combos/  301
+/pl/kombinacje-emoji/                    /pl/library/emoji-combos/  301
+/pl/kombinacje-emoji/index.html          /pl/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/               /tr/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/index.html     /tr/library/emoji-combos/  301
+/nl/emoji-combinaties/                   /nl/library/emoji-combos/  301
+/nl/emoji-combinaties/index.html         /nl/library/emoji-combos/  301
 
 # pt/usecase/nick-free-fire retired: near-duplicate of pt/usecase/nick-ff
 # (same Free Fire nick-generator intent, no distinct EN parent of its own)

@@ -1,0 +1,79 @@
+{
+  "slug": "znak-mikro",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Mikro: Skopiuj µ kontra Grecka Litera Mu (μ) — Którego Użyć",
+  "meta_description": "Skopiuj znak mikro (µ) dla mikronów i mikrogramów i dowiedz się, dlaczego to inny znak Unicode niż grecka litera mu (μ), z którą wygląda identycznie. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-mikro/",
+  "breadcrumb": "Znak Mikro",
+  "hero_h1": "Znak Mikro (µ)",
+  "hero_tagline": "Znak mikro (µ) używany dla mikronów, mikrogramów i mikrosekund — i dlaczego to zupełnie inny znak niż identycznie wyglądająca grecka litera mu. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak mikro (µ, U+00B5) i mała grecka litera mu (μ, U+03BC) wyświetlają się jako dokładnie ten sam glif w niemal każdej czcionce, ale Unicode traktuje je jako dwa osobne znaki. To, którego z nich użyjesz, może po cichu zepsuć wyszukiwanie, dopasowywanie wyrażeń regularnych i nazwy plików, nigdy nie wyglądając na ekranie na coś nie tak.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/micro-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-mikro/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/micro-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-mikro",
+      "label": "Znak Mikro",
+      "h2": "Znak Mikro (U+00B5)",
+      "intro": "Dawny znak mikro, zachowany w Unicode dla zgodności ze starszymi systemami Latin-1 (ISO/IEC 8859-1). Używany w zapisach µm (mikrometr), µg (mikrogram), µs (mikrosekunda).",
+      "symbols": [
+        { "char": "µ", "label": "Znak Mikro" },
+        { "char": "µs", "label": "Skrót Mikrosekundy" },
+        { "char": "µg", "label": "Skrót Mikrograma" }
+      ]
+    },
+    {
+      "id": "grecka-litera-mu",
+      "label": "Grecka Litera Mu",
+      "h2": "Mała Grecka Litera Mu (U+03BC)",
+      "intro": "Prawdziwa dwunasta litera greckiego alfabetu — wizualnie identyczna ze znakiem mikro, i to ją preferują własne reguły normalizacji Unicode.",
+      "symbols": [
+        { "char": "μ", "label": "Mała Grecka Litera Mu" },
+        { "char": "Μ", "label": "Wielka Grecka Litera Mu" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-jednostek",
+      "label": "Powiązane Symbole Jednostek",
+      "h2": "Symbole Często Łączone ze Znakiem Mikro",
+      "intro": "Inne znaki miar i notacji naukowej, które pojawiają się obok µ w tekstach technicznych.",
+      "symbols": [
+        { "char": "Ω", "label": "Znak Oma" },
+        { "char": "°", "label": "Znak Stopnia" },
+        { "char": "±", "label": "Znak Plus-Minus" },
+        { "char": "‰", "label": "Znak Promila" },
+        { "char": "∞", "label": "Nieskończoność" },
+        { "char": "≈", "label": "Znak Prawie Równości" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Znaki jednostek metrycznych, anglosaskich i naukowych do tekstów technicznych."
+    },
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w Unicode, wielkie i małe litery."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Operatory matematyczne, litery greckie, pierwiastki i znaki nieskończoności."
+    }
+  ]
+}

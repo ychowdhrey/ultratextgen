@@ -1,0 +1,78 @@
+{
+  "slug": "symbol-sigma",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Sigma: Skopiuj Σ σ 🗿 — Mem, Moai i Grecka Litera",
+  "meta_description": "Skopiuj symbol sigma — grecką literę Σ σ, emoji moai 🗿, którego naprawdę używa się w memie „sigma male”, oraz jej znaczenia w matematyce i statystyce. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-sigma/",
+  "breadcrumb": "Symbol Sigma",
+  "hero_h1": "Symbol Sigma",
+  "hero_tagline": "Grecka litera Σ σ, emoji moai 🗿, które w praktyce wkleja się do memu „sigma male”, oraz prawdziwe matematyczne znaczenie sigmy — wszystko w jednym miejscu. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Sigma (wielka litera Σ, mała σ, a na końcu wyrazu ς) to 18. litera greckiego alfabetu — ale od mniej więcej 2021 roku większość osób szukających „symbolu sigma” ma na myśli internetowy mem „sigma male”. Jest w tym pewien haczyk: znakiem, którego naprawdę używa się do tego memu, jest zwykle emoji moai 🗿, a nie grecka litera. Ta strona omawia wszystkie trzy warianty — prawdziwą literę Σ/σ, moai używane w memie oraz poważne matematyczne i naukowe znaczenia sigmy.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/sigma-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-sigma/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/sigma-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "litera-sigma",
+      "label": "Litera",
+      "h2": "Grecka Litera Sigma",
+      "intro": "Sigma to 18. litera greckiego alfabetu. Ma jedną formę wielkiej litery i dwie formy małej — σ w środku lub na początku wyrazu oraz ς wyłącznie na jego końcu. Wklej tę, której potrzebujesz.",
+      "symbols": [
+        { "char": "Σ", "label": "Wielka Sigma" },
+        { "char": "σ", "label": "Mała Sigma" },
+        { "char": "ς", "label": "Sigma Końcowa" }
+      ]
+    },
+    {
+      "id": "glif-memowy",
+      "label": "Znak z Memu",
+      "h2": "Symbol Memu Sigma Male",
+      "intro": "Mimo nazwy, znakiem, którego ludzie naprawdę używają w memie „sigma male”, jest zwykle moai 🗿 — jego pusta, kamienna twarz oddaje obojętne „spojrzenie sigmy” lepiej niż jakakolwiek litera. To stoickie, bezemocjonalne twarze niosące ten żart.",
+      "symbols": [
+        { "char": "🗿", "label": "Moai (glif sigmy)" },
+        { "char": "😐", "label": "Twarz Neutralna" },
+        { "char": "😑", "label": "Twarz Bez Wyrazu" }
+      ]
+    },
+    {
+      "id": "sigma-w-matematyce",
+      "label": "Matematyka i Nauka",
+      "h2": "Sigma w Matematyce, Statystyce i Nauce",
+      "intro": "Pierwotna rola tej litery. Wielka Σ to operator sumowania, a dedykowany glif matematyczny ∑ jest jej niemal identycznym odpowiednikiem. Mała σ oznacza odchylenie standardowe w statystyce i pojawia się w wielu stałych fizycznych.",
+      "symbols": [
+        { "char": "∑", "label": "Sumowanie N-arne" },
+        { "char": "Σ", "label": "Wielka Sigma (Sumowanie)" },
+        { "char": "σ", "label": "Odchylenie Standardowe" },
+        { "char": "μ", "label": "Mu (Średnia)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet — alfa, beta, delta, sigma, omega, pi — w wielkich i małych literach do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/symbol-autyzmu/",
+      "title": "Symbol Autyzmu",
+      "desc": "Kolejny symbol, przy którym znaczenie memowe albo społecznościowe liczy się bardziej niż słownikowa definicja."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Sumowanie, odchylenie standardowe i operatory oraz litery greckie towarzyszące sigmie w równaniach."
+    }
+  ]
+}

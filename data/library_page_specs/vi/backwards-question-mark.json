@@ -1,0 +1,68 @@
+{
+  "slug": "backwards-question-mark",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Dấu Chấm Hỏi Ngược: Sao Chép & Dán ⸮ — Không Giống Với ¿",
+  "meta_description": "Sao chép dấu chấm hỏi ngược (⸮), một dấu câu thế kỷ 16 dành cho câu hỏi tu từ — và xem vì sao nó khác với ¿, vốn bị lật ngược 180°, không phải soi gương. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/backwards-question-mark/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Dấu Chấm Hỏi Ngược",
+  "hero_h1": "Dấu Chấm Hỏi Ngược",
+  "hero_tagline": "⸮ U+2E2E REVERSED QUESTION MARK — soi gương trái-phải, khác hẳn phép biến đổi của ¿, vốn xoay 180°. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "«Dấu chấm hỏi ngược» thường có nghĩa là ⸮ (U+2E2E, REVERSED QUESTION MARK) — một dấu «?» thông thường bị soi gương trái-phải. Nhà in người Anh Henry Denham đề xuất nó vào khoảng năm 1575 với tên gọi punctus percontativus, một dấu dùng để đóng một câu hỏi tu từ và phân biệt nó với một câu hỏi thật sự; nó chưa bao giờ được chấp nhận rộng rãi và ngày nay chủ yếu tồn tại như một điều tò mò và trong ký hiệu ngôn ngữ học để chỉ một câu có vẻ đáng ngờ về ngữ pháp hơn là một câu hỏi thật. Nó dễ bị nhầm với hai dấu khác trông giống nhưng lại là những phép biến đổi khác nhau: ¿ (U+00BF, INVERTED QUESTION MARK) bị xoay 180°, không phải soi gương — đó là dấu mà tiếng Tây Ban Nha và Catalan đặt ở đầu một câu hỏi, không liên quan đến đề xuất của Denham. Và ؟ (U+061F, ARABIC QUESTION MARK) bị soi gương giống ⸮, nhưng nó hoàn toàn không phải một điều mới lạ — đó đơn giản là dấu chấm hỏi thông thường trong tiếng Ả Rập, Ba Tư và Urdu, được tạo hình để khớp với hướng viết phải-sang-trái của những hệ chữ đó.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/backwards-question-mark/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/backwards-question-mark/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/backwards-question-mark/" }
+  ],
+  "sections": [
+    {
+      "id": "backwards-question-mark",
+      "label": "Dấu Chấm Hỏi Ngược",
+      "h2": "Dấu Chấm Hỏi Soi Gương So Với Xoay Ngược",
+      "intro": "Ba dấu thường bị gộp chung là «ngược», và phép biến đổi khác nhau thực sự đứng sau mỗi dấu.",
+      "symbols": [
+        { "char": "⸮", "label": "Dấu Chấm Hỏi Soi Gương" },
+        { "char": "؟", "label": "Dấu Chấm Hỏi Ả Rập" },
+        { "char": "¿", "label": "Dấu Chấm Hỏi Xoay Ngược" },
+        { "char": "?", "label": "Dấu Chấm Hỏi" }
+      ]
+    },
+    {
+      "id": "rhetorical-punctuation",
+      "label": "Dấu Câu Tu Từ",
+      "h2": "Các Dấu Câu Tu Từ Lịch Sử Khác",
+      "intro": "⸮ thuộc về một nhóm nhỏ các dấu câu được đề xuất nhưng phần lớn bị bỏ quên, dành cho những sắc thái mà dấu câu chuẩn không nắm bắt được.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang" },
+        { "char": "⸘", "label": "Interrobang Ngược" },
+        { "char": "⁇", "label": "Dấu Chấm Hỏi Đôi" },
+        { "char": "⁈", "label": "Dấu Chấm Hỏi Chấm Than" }
+      ]
+    },
+    {
+      "id": "punctuation-symbols",
+      "label": "Dấu Câu",
+      "h2": "Ký Hiệu Dấu Câu Thông Thường",
+      "intro": "Bộ dấu câu hằng ngày mà ⸮ đứng cạnh một khi đã qua khỏi những dấu mới lạ.",
+      "symbols": [
+        { "char": "!", "label": "Dấu Chấm Than" },
+        { "char": "‥", "label": "Hai Chấm Dẫn" },
+        { "char": "…", "label": "Dấu Ba Chấm Ngang" },
+        { "char": "‽", "label": "Interrobang" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Bộ tra cứu đầy đủ các ký tự dấu ngoặc kép, dấu ba chấm và dấu lược bỏ." },
+    { "href": "/vi/symbol/quotation-mark/", "title": "Dấu Ngoặc Kép", "desc": "Một ký tự dấu câu khác với nhiều biến thể vùng miền hơn bàn phím thể hiện." },
+    { "href": "/category/upside-down-text/", "title": "Công Cụ Tạo Chữ Ngược", "desc": "Để lật ngược cả một câu, không chỉ một dấu — xoay, không phải soi gương, cùng phép biến đổi như ¿ so với ⸮." }
+  ]
+}

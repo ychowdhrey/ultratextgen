@@ -1,0 +1,78 @@
+{
+  "slug": "zagrozenie-biologiczne",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Zagrożenia Biologicznego: Skopiuj ☣ — Projekt z 1966 Roku, „Zapadający w Pamięć, ale Bez Znaczenia”",
+  "meta_description": "Skopiuj symbol zagrożenia biologicznego (☣) i dowiedz się, dlaczego w 1966 roku zaprojektowano go celowo tak, by sam z siebie nic nie znaczył. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/zagrozenie-biologiczne/",
+  "breadcrumb": "Symbol Zagrożenia Biologicznego",
+  "hero_h1": "Symbol Zagrożenia Biologicznego",
+  "hero_tagline": "Znak trójlistka z okręgami (☣), zaprojektowany w 1966 roku w laboratorium Dow Chemical tak, by był natychmiast zapadający w pamięć i zupełnie pozbawiony znaczenia sam w sobie. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol zagrożenia biologicznego (☣, U+2623) oznacza wszystko, co biologicznie niebezpieczne — skażone odpady, zakaźne próbki, strefy kwarantanny. W przeciwieństwie do większości znaków zagrożenia, które powoli ewoluowały ze starszych piktogramów, ten powstał od zera w ramach jednego projektu z 1966 roku, z niecodziennym zadaniem: sprawić, by zapadł w pamięć, zanim jeszcze ktoś pozna jego znaczenie.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/biohazard-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/zagrozenie-biologiczne/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/biohazard-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-zagrozenia-biologicznego",
+      "label": "Zagrożenie Biologiczne",
+      "h2": "Znak Zagrożenia Biologicznego",
+      "intro": "Unicode'owy znak zagrożenia biologicznego, gotowy do wklejenia gdziekolwiek — w bio, nickach w grach albo w prawdziwym zastosowaniu.",
+      "symbols": [
+        { "char": "☣", "label": "Znak Zagrożenia Biologicznego" },
+        { "char": "☣️", "label": "Emoji Zagrożenia Biologicznego" }
+      ]
+    },
+    {
+      "id": "symbole-radiologiczne-i-laboratoryjne",
+      "label": "Radiologia i Laboratorium",
+      "h2": "Symbole Zagrożeń Radiologicznych i Laboratoryjnych",
+      "intro": "Najbliżsi krewni znaku zagrożenia biologicznego — te, z którymi bywa najczęściej mylony albo obok których pojawia się na prawdziwych oznakowaniach.",
+      "symbols": [
+        { "char": "☢", "label": "Znak Promieniotwórczości" },
+        { "char": "⚡", "label": "Wysokie Napięcie" },
+        { "char": "🧫", "label": "Szalka Petriego" },
+        { "char": "🧪", "label": "Probówka" }
+      ]
+    },
+    {
+      "id": "znaki-ostrzegawcze-i-zakazu",
+      "label": "Ostrzeżenia i Zakazy",
+      "h2": "Znaki Ostrzegawcze i Zakazu",
+      "intro": "Ogólne oznakowanie niebezpieczeństwa i zakazu, obok którego zwykle pojawia się znak zagrożenia biologicznego.",
+      "symbols": [
+        { "char": "⚠", "label": "Znak Ostrzegawczy" },
+        { "char": "☠", "label": "Czaszka ze Skrzyżowanymi Piszczelami" },
+        { "char": "⛔", "label": "Zakaz Wjazdu" },
+        { "char": "🚫", "label": "Zakazane" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Znaki toksyczności, promieniotwórczości, zagrożenia elektrycznego i ostrzegawcze w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-autyzmu/",
+      "title": "Symbol Autyzmu",
+      "desc": "Kolejny symbol z realną, udokumentowaną historią projektu i znaczenia."
+    },
+    {
+      "href": "/pl/library/symbole-witchy-occult/",
+      "title": "Symbole Witchy i Okultystyczne",
+      "desc": "Pentagramy, znaki alchemiczne i inne symbole często używane w tym samym mrocznym stylu bio."
+    }
+  ]
+}

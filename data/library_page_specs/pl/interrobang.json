@@ -1,0 +1,84 @@
+{
+  "slug": "interrobang",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Interrobang: Skopiuj ‽ — Wymyślony w 1962 Roku, Przez Chwilę Prawdziwy Klawisz Maszyny do Pisania",
+  "meta_description": "Skopiuj interrobang (‽) i odwrócony interrobang (⸘) — połączony znak „?” i „!”, wymyślony przez reklamiarza Martina Speckera w 1962 roku. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/interrobang/",
+  "breadcrumb": "Interrobang",
+  "hero_h1": "Interrobang (‽)",
+  "hero_tagline": "Interrobang (‽), który łączy „?” i „!” w jeden znak dla zdania jednocześnie pytającego i zdumionego — wymyślony przez amerykańskiego reklamiarza Martina K. Speckera w 1962 roku i przez chwilę sprzedawany jako prawdziwy klawisz maszyny do pisania — plus jego bliźniak otwierający zdanie w stylu hiszpańskim, odwrócony interrobang (⸘). Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Interrobang (‽, Unicode U+203D) to pojedynczy glif łączący znak zapytania z wykrzyknikiem, stworzony do przestankowania zdania, które jednocześnie pyta i wykrzykuje — „Zrobiłeś co‽”. Amerykański dyrektor reklamowy Martin K. Specker zaproponował go w 1962 roku w artykule „Making a New Point, or, How About That…” w magazynie TYPEtalks, który redagował; zbudował nazwę z interrogatio (łacińskie określenie pytania retorycznego) i bang (drukarski żargon na wykrzyknik), odrzucając po drodze kandydatów takich jak „exclamaquest” i „exclarotive”. Na chwilę stał się prawdziwym sprzętem: krój Americana Richarda Isbella z 1965 roku go zawierał, niektóre maszyny do pisania Remington oferowały klawisz interrobangu już w 1968 roku, a zamienne czcionki dotarły do maszyn Smith-Corona w latach 70. — ale nigdy nie trafił na standardową klawiaturę i zniknął pod koniec lat 70. Unicode wciąż go koduje, razem z jego lustrzanym odbiciem, odwróconym interrobangiem (⸘, U+2E18, dodanym w Unicode 5.1 w 2008 roku), zaprojektowanym, by otwierać zdanie tak, jak ¿ i ¡ otwierają pytania i wykrzyknienia w hiszpańskim. Nie myl go z odwróconym lustrzanie znakiem zapytania (⸮), osobnym znakiem retorycznym z 1575 roku, opisanym na własnej stronie.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/interrobang/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+  ],
+  "sections": [
+    {
+      "id": "interrobang",
+      "label": "Interrobang",
+      "h2": "Interrobang — ‽ i ⸘",
+      "intro": "Sam znak i jego lustrzane odbicie: standardowy interrobang zamykający zdumione pytanie oraz odwrócona forma zaprojektowana, by je otwierać.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang (U+203D) — Pytanie i Wykrzyknienie w Jednym Glifie" },
+        { "char": "⸘", "label": "Odwrócony Interrobang (U+2E18) — Bliźniak Otwierający Zdanie" }
+      ]
+    },
+    {
+      "id": "znaki-ktore-laczy",
+      "label": "Co Łączy",
+      "h2": "Znak Zapytania i Wykrzyknik, Które Łączy",
+      "intro": "Interrobang kompresuje te dwa codzienne znaki w jeden. Gdy klawiatura nie może go wygenerować, ludzie wpisują parę — albo sięgają po gotowe, połączone formy Unicode.",
+      "symbols": [
+        { "char": "?", "label": "Znak Zapytania (U+003F)" },
+        { "char": "!", "label": "Wykrzyknik (U+0021)" },
+        { "char": "⁉", "label": "Wykrzyknik z Pytajnikiem (U+2049)" },
+        { "char": "⁈", "label": "Znak Zapytania z Wykrzyknikiem (U+2048)" },
+        { "char": "⁇", "label": "Podwójny Znak Zapytania (U+2047)" }
+      ]
+    },
+    {
+      "id": "interpunkcja-otwierajaca",
+      "label": "Interpunkcja Otwierająca",
+      "h2": "Dlaczego Istnieje Odwrócony Interrobang",
+      "intro": "Hiszpański i języki pokrewne otwierają pytanie znakiem ¿, a wykrzyknienie znakiem ¡; odwrócony interrobang ⸘ łączy tę otwierającą parę, odzwierciedlając na początku zdania to, co ‽ robi na jego końcu. Odwrócony lustrzanie znak zapytania ⸮ to zupełnie osobny znak — zobacz jego własną stronę.",
+      "symbols": [
+        { "char": "¿", "label": "Odwrócony (Hiszpański) Znak Zapytania (U+00BF)" },
+        { "char": "¡", "label": "Odwrócony Wykrzyknik (U+00A1)" },
+        { "char": "⸘", "label": "Odwrócony Interrobang (U+2E18)" },
+        { "char": "⸮", "label": "Lustrzany Znak Zapytania (U+2E2E)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-punktowania/",
+      "title": "Symbole Punktowania",
+      "desc": "Pełny zestaw codziennej i specjalistycznej interpunkcji Unicode, od kresek i nawiasów po znaki-ciekawostki, takie jak interrobang."
+    },
+    {
+      "href": "/pl/symbol/lustrzany-znak-zapytania/",
+      "title": "Lustrzany Znak Zapytania (⸮)",
+      "desc": "Inny, historyczny znak retoryczny — odwrócony lustrzanie znak zapytania z 1575 roku, a nie połączenie pytania z wykrzyknieniem jak interrobang."
+    },
+    {
+      "href": "/pl/symbol/pauza/",
+      "title": "Pauza (—)",
+      "desc": "Kolejny znak interpunkcyjny z barwną historią i rodziną sobowtórów, z którymi wciąż bywa mylony."
+    },
+    {
+      "href": "/pl/symbol/znak-akapitu/",
+      "title": "Znak Akapitu (¶)",
+      "desc": "Znacznik akapitu — edytorski symbol typograficzny z własną, długą historią w druku."
+    }
+  ]
+}

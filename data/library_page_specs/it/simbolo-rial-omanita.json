@@ -1,0 +1,77 @@
+{
+  "slug": "simbolo-rial-omanita",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Simbolo del Rial Omanita: Copia e Incolla ⃄ — Il Nuovo Segno Valutario dell'Oman, Bloccato per la Pubblicazione in Unicode 18.0",
+  "meta_description": "Il simbolo del rial omanita (⃄, U+20C4) è stato presentato dalla Banca Centrale dell'Oman nel novembre 2025 ed è bloccato per la pubblicazione in Unicode 18.0, attesa a settembre 2026 — non ancora su nessuna tastiera. Ecco il suo design, la storia e lo stato attuale.",
+  "canonical": "https://ultratextgen.com/it/symbol/simbolo-rial-omanita/",
+  "breadcrumb": "Simbolo del Rial Omanita",
+  "hero_h1": "Simbolo del Rial Omanita",
+  "hero_tagline": "Il simbolo ufficiale della valuta dell'Oman, svelato nel Giorno Nazionale 2025 e bloccato per la pubblicazione in Unicode 18.0 — approvato, ma ancora in anticipo su qualsiasi tastiera o font.",
+  "intro": "Il simbolo del rial omanita (⃄, U+20C4) è il simbolo ufficiale della valuta della Banca Centrale dell'Oman, presentato al pubblico il 19 novembre 2025, in concomitanza con il Giorno Nazionale dell'Oman. Il suo design nasce da lettere arabe stilizzate — ʿayn (ع) e rāʾ (ر), la prima e la terza lettera della parola \"rial\" — attraversate da due linee nello stile condiviso da molti segni valutari moderni. Il governatore della Banca Centrale, Ahmed bin Jafar Al-Musallami, ha presentato l'adozione come una mossa strategica per rafforzare il ruolo dell'Oman come hub finanziario regionale e rendere il rial più riconoscibile sulle piattaforme internazionali, commerciali e digitali. Il simbolo è stato sottoposto per la codifica Unicode insieme al dirham degli Emirati Arabi Uniti e al segno della rufiyaa delle Maldive, e al momento della stesura porta lo stato \"white\" nella documentazione della pipeline di Unicode — bloccato per la pubblicazione, in attesa della sola approvazione ISO, con pubblicazione definitiva prevista insieme al resto di Unicode 18.0 a settembre 2026. Nessun sistema operativo, font o tastiera offre attualmente supporto nativo. L'unica opzione pratica esistente oggi è un modulo software gestionale (un'app ERP di Odoo) che incorpora un font per renderizzare il simbolo per le aziende che ne hanno bisogno subito — un equivalente più utilitario e ristretto rispetto agli strumenti open-source per sviluppatori già costruiti attorno al segno del dirham degli Emirati.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/simbolo-rial-omanita/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "omani-rial-sign",
+      "label": "Simbolo del Rial Omanita",
+      "h2": "Simbolo del Rial Omanita",
+      "intro": "Il carattere confermato in sé — copiabile già oggi tramite codepoint, anche se nessun font lo renderizza ancora in modo nativo.",
+      "symbols": [
+        { "char": "⃄", "label": "Simbolo del Rial Omanita (U+20C4, bloccato per la pubblicazione)" }
+      ]
+    },
+    {
+      "id": "other-new-gulf-currency-symbols",
+      "label": "Altri Nuovi Simboli Valutari del Golfo",
+      "h2": "Altri Nuovi Simboli Valutari in Questa Release",
+      "intro": "Il rial omanita non è l'unico nuovo simbolo valutario in arrivo con Unicode 18.0 — altre due valute hanno ottenuto un proprio segno nella stessa beta.",
+      "symbols": [
+        { "char": "⃃", "label": "Simbolo del Dirham degli EAU (U+20C3)" },
+        { "char": "⃂", "label": "Simbolo della Rufiyaa delle Maldive (U+20C2)" }
+      ]
+    },
+    {
+      "id": "gulf-currency-a-version-ahead",
+      "label": "Una Versione in Anticipo",
+      "h2": "Il Simbolo Valutario del Golfo Pubblicato una Versione Prima",
+      "intro": "Il segno del riyal saudita ha percorso lo stesso cammino un'intera versione Unicode prima — già definitivo da Unicode 17.0, non solo in beta.",
+      "symbols": [
+        { "char": "⃁", "label": "Simbolo del Riyal Saudita (U+20C1, definitivo da Unicode 17.0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/it/library/simboli-euro/",
+      "title": "Simboli delle Valute",
+      "desc": "Ogni simbolo valutario mondiale già copiabile e incollabile oggi."
+    },
+    {
+      "href": "/it/symbol/simbolo-dirham/",
+      "title": "Simbolo del Dirham",
+      "desc": "Il nuovo simbolo valutario degli Emirati Arabi Uniti, in arrivo nella stessa beta di Unicode 18.0."
+    },
+    {
+      "href": "/it/symbol/simbolo-riyal-saudita/",
+      "title": "Simbolo del Riyal Saudita",
+      "desc": "Un simbolo valutario del Golfo già definitivo, una versione Unicode in anticipo."
+    },
+    {
+      "href": "/updates/unicode-18-beta-review-opens/",
+      "title": "Unicode 18.0 Beta Review Opens",
+      "desc": "L'intera release di cui questo simbolo fa parte."
+    }
+  ]
+}

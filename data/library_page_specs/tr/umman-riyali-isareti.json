@@ -1,0 +1,92 @@
+{
+  "slug": "umman-riyali-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Umman Riyali İşareti: Kopyala Yapıştır ⃄ — Umman'ın Yeni Para Birimi İşareti, Unicode 18.0 İçin Yayına Hazır",
+  "meta_description": "Umman riyali işareti (⃄, U+20C4) Kasım 2025'te Umman Merkez Bankası tarafından tanıtıldı ve Eylül 2026'da beklenen Unicode 18.0 yayını için hazır — henüz hiçbir klavyede yok. Tasarımı, tarihi ve durumu.",
+  "canonical": "https://ultratextgen.com/tr/symbol/umman-riyali-isareti/",
+  "breadcrumb": "Umman Riyali İşareti",
+  "hero_h1": "Umman Riyali İşareti",
+  "hero_tagline": "Umman Ulusal Günü'nde tanıtılan ve Unicode 18.0 yayını için hazırlanan Umman'ın resmi para birimi işareti — onaylandı, ama henüz hiçbir klavyede ya da yazı tipinde değil.",
+  "intro": "Umman riyali işareti (⃄, U+20C4), Umman Merkez Bankası'nın Umman Ulusal Günü'ne denk getirilerek 19 Kasım 2025'te kamuoyuna sunduğu resmi para birimi işaretidir. Tasarımı stilize Arapça harflerden oluşur — \"riyal\" sözcüğünün birinci ve üçüncü harfleri olan ʿayn (ع) ve rāʾ (ر), birçok modern para birimi işaretinin paylaştığı tarzda iki çizgiyle kesilerek. Merkez Bankası Başkanı Ahmed bin Cafer El-Musallami, bu benimsemeyi Umman'ın bölgesel bir finans merkezi olarak konumunu güçlendirmek ve riyali uluslararası, ticari ve dijital platformlarda tanınır kılmak için stratejik bir adım olarak sundu. BAE dirhemi ve Maldiv rufiyası işaretleriyle birlikte Unicode kodlaması için başvuruldu ve bu yazının kaleme alındığı sırada Unicode'un kendi süreç belgelerinde \"beyaz\" statüsünü taşıyor — yayına hazır, yalnızca ISO onayını bekliyor, nihai yayının Eylül 2026'da Unicode 18.0'ın geri kalanıyla birlikte gerçekleşmesi bekleniyor. Şu anda hiçbir işletim sistemi, yazı tipi ya da klavye yerel destek sunmuyor. Bugün var olan tek pratik seçenek, şimdi buna ihtiyaç duyan şirketler için sembolü gösterecek bir yazı tipini gömen bir iş yazılımı modülü (bir Odoo ERP uygulaması) — BAE dirhem işareti etrafında hâlihazırda inşa edilmiş açık kaynaklı geliştirici araçlarının daha dar, daha pratik bir dengi.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "omani-rial-sign",
+      "label": "Umman Riyali İşareti",
+      "h2": "Umman Riyali İşareti",
+      "intro": "Onaylanmış karakterin kendisi — hiçbir yazı tipi henüz yerel olarak göstermese de bugün kod noktasıyla kopyalanabilir.",
+      "symbols": [
+        {
+          "char": "⃄",
+          "label": "Omani Rial Sign (U+20C4, yayına hazır)"
+        }
+      ]
+    },
+    {
+      "id": "other-new-gulf-currency-symbols",
+      "label": "Diğer Yeni Körfez Para Birimi İşaretleri",
+      "h2": "Bu Sürümdeki Diğer Yeni Para Birimi İşaretleri",
+      "intro": "Umman riyali, Unicode 18.0'da yayına giren tek yeni para birimi işareti değil — aynı betada iki para birimi daha kendi işaretine kavuştu.",
+      "symbols": [
+        {
+          "char": "⃃",
+          "label": "UAE Dirham Sign (U+20C3)"
+        },
+        {
+          "char": "⃂",
+          "label": "Maldivian Rufiyaa Sign (U+20C2)"
+        }
+      ]
+    },
+    {
+      "id": "gulf-currency-a-version-ahead",
+      "label": "Bir Sürüm Önde",
+      "h2": "Bir Sürüm Önce Yayına Giren Körfez Para Birimi İşareti",
+      "intro": "Suudi Arabistan'ın riyal işareti aynı yolu bir tam Unicode sürümü önce kat etti — sadece betada değil, Unicode 17.0'dan beri zaten kesinleşmiş durumda.",
+      "symbols": [
+        {
+          "char": "⃁",
+          "label": "Saudi Riyal Sign (U+20C1, Unicode 17.0'dan beri kesinleşti)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/para-birimi-sembolleri/",
+      "title": "Para Birimi Sembolleri",
+      "desc": "Bugün zaten kopyalayıp yapıştırabileceğin her dünya para birimi işareti."
+    },
+    {
+      "href": "/tr/symbol/dirhem-isareti/",
+      "title": "Dirhem İşareti",
+      "desc": "BAE'nin yeni para birimi işareti — aynı Unicode 18.0 betasında yayında."
+    },
+    {
+      "href": "/tr/symbol/suudi-riyali-isareti/",
+      "title": "Suudi Riyali İşareti",
+      "desc": "Bir Unicode sürümü önde, çoktan kesinleşmiş bir Körfez para birimi işareti."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/umman-riyali-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

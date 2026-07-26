@@ -1,0 +1,69 @@
+{
+  "slug": "emoji-kalendarza",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Emoji Kalendarza (📅): Skopiuj, Punkt Kodowy i Dlaczego Zawsze Pokazuje 17 Lipca",
+  "meta_description": "Emoji kalendarza 📅 (U+1F4C5) — punkt kodowy, jak je wpisać, i prawdziwy powód, dla którego jego data jest zamrożona na 17 lipca na Apple, Samsungu, Google i większości innych platform.",
+  "canonical": "https://ultratextgen.com/pl/symbol/emoji-kalendarza/",
+  "breadcrumb": "Emoji Kalendarza",
+  "hero_h1": "Emoji Kalendarza",
+  "hero_tagline": "Kartka kalendarza 📅 — punkt kodowy, skróty do wpisania i konkretna historia Apple stojąca za tym, dlaczego jego data jest niemal wszędzie zamrożona na 17 lipca. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "📅 CALENDAR (U+1F4C5) to unikodowy skrót na terminy, deadline'y i planowanie — oderwana kartka kalendarza przypięta u góry. Przyjrzyj się bliżej na większości platform, a zobaczysz, że data na niej nigdy się nie zmienia: jest ustalona na 17 lipca, co jest decyzją projektową sięgającą konkretnej zapowiedzi produktu Apple i która później stała się powodem istnienia całego nieoficjalnego święta. Ta strona identyfikuje sam glif — znaczenie, punkt kodowy i jak go wpisać — a następnie w pełni omawia historię 17 lipca, łącznie z platformami, które się jej nie trzymają.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/emoji-kalendarza/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "emoji-kalendarza-podstawowe",
+      "label": "Glif",
+      "h2": "Emoji Kalendarza",
+      "intro": "Podstawowy glif Unicode — pojedyncza, oderwana kartka kalendarza.",
+      "symbols": [
+        { "char": "📅", "label": "Kalendarz (U+1F4C5)" }
+      ]
+    },
+    {
+      "id": "powiazane-emoji-kalendarza",
+      "label": "Powiązane Emoji Kalendarza",
+      "h2": "Inne Emoji Kalendarza, z Którymi Bywa Mylony",
+      "intro": "Dwa sąsiednie unikodowe glify kalendarza, każdy przedstawiający inny fizyczny styl kalendarza.",
+      "symbols": [
+        { "char": "📆", "label": "Kalendarz Zrywany (U+1F4C6)" },
+        { "char": "🗓️", "label": "Kalendarz Spiralny (U+1F5D3)" }
+      ]
+    },
+    {
+      "id": "grupa-planowania",
+      "label": "Planowanie i Czas",
+      "h2": "Powiązane Emoji Planowania i Czasu",
+      "intro": "Emoji, które często pojawiają się obok kalendarza w kontekście planowania i przypomnień.",
+      "symbols": [
+        { "char": "⏰", "label": "Budzik" },
+        { "char": "📌", "label": "Pinezka" },
+        { "char": "✅", "label": "Przycisk Znacznika Wyboru" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Każde już zakodowane emoji przedmiotu, w tym pełny zestaw kalendarzy i planowania."
+    },
+    {
+      "href": "/library/clock-time-symbols/",
+      "title": "Clock & Time Symbols",
+      "desc": "Tarcza zegara, budzik i inne emoji związane z czasem, przeglądalne i gotowe do skopiowania."
+    }
+  ]
+}

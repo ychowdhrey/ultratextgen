@@ -1,0 +1,117 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "microfoon-emoji",
+  "title": "Microfoon-emoji: Kopieer en Plak 🎤 — Betekenis, Geschiedenis & Elke Typmethode",
+  "meta_description": "Kopieer en plak de microfoon-emoji 🎤 (U+1F3A4) — wat het betekent, de Unicode-geschiedenis uit 2010, en hoe het verschilt van de studiomicrofoon 🎙️. Klik om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/microfoon-emoji/",
+  "breadcrumb": "Microfoon-emoji",
+  "hero_h1": "Microfoon-emoji (🎤)",
+  "hero_tagline": "De handmicrofoon waar je naar grijpt om te praten over zingen, karaoke, presenteren, interviews en mic-drop-momenten — niet te verwarren met de op een statief gemonteerde studiomicrofoon 🎙️. Klik om het direct te kopiëren.",
+  "intro": "De microfoon-emoji (🎤, U+1F3A4 MICROPHONE) beeldt een handmicrofoon af met de kop richting de mond gekanteld — de vorm die wordt gebruikt voor zingen, karaoke, presenteren, interviews, stand-up en mic-drop-momenten. Het maakt al sinds Unicode 6.0 in 2010 deel uit van de standaard emoji-set, onder de eerste golf emoji die werd overgenomen uit Japanse mobiele-provider-lettertypes, en het rendert op elk groot platform in volledige kleur, zonder dat er een variatieselector nodig is. Klik hieronder om het direct te kopiëren.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/microfoon-emoji/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/microphone-emoji/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "microfoon-emoji",
+      "label": "Microfoon",
+      "h2": "De Microfoon-emoji",
+      "intro": "De handmicrofoon zelf — overal klaar om te plakken waar emoji worden ondersteund.",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "Microfoon (U+1F3A4)"
+        }
+      ]
+    },
+    {
+      "id": "microfoon-verwarring",
+      "label": "Verwarrende Buurtekens",
+      "h2": "Emoji waarmee het Wordt Verward",
+      "intro": "Tekens waar mensen naar grijpen in de verwachting de handmicrofoon te krijgen, maar die eigenlijk aparte, anders gecodeerde emoji zijn.",
+      "symbols": [
+        {
+          "char": "🎙️",
+          "label": "Studiomicrofoon (U+1F399) — de op een statief gemonteerde uitzendings-/podcastmicrofoon"
+        },
+        {
+          "char": "🔊",
+          "label": "Luidspreker Hoog Volume (U+1F50A)"
+        },
+        {
+          "char": "🗣️",
+          "label": "Sprekend Hoofd (U+1F5E3 FE0F)"
+        },
+        {
+          "char": "📢",
+          "label": "Omroepluidspreker (U+1F4E2)"
+        }
+      ]
+    },
+    {
+      "id": "verwante-muziek-emoji",
+      "label": "Verwante Muziek-emoji",
+      "h2": "Muziek- & Optreden-emoji die Ermee Samengaan",
+      "intro": "Emoji die vaak samen met de microfoon voorkomen in bijschriften over zingen, concerten en podcasts.",
+      "symbols": [
+        {
+          "char": "🎧",
+          "label": "Koptelefoon (U+1F3A7)"
+        },
+        {
+          "char": "🎵",
+          "label": "Muzieknoot (U+1F3B5)"
+        },
+        {
+          "char": "🎶",
+          "label": "Muzieknoten (U+1F3B6)"
+        },
+        {
+          "char": "🎸",
+          "label": "Gitaar (U+1F3B8)"
+        },
+        {
+          "char": "🥁",
+          "label": "Trommel (U+1F941)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Elke alledaagse-voorwerp-emoji — tech, huishoudelijk en kantoor — inclusief de microfoon, doorbladerbaar in één raster (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Kant-en-klare emoji-combinaties voor bio's en bijschriften, waaronder muziek- en optreden-thema's (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/library/music-symbols/",
+      "title": "Music Symbols",
+      "desc": "Unicode-muzieknotatie — ♪ ♫ ♬ — de tekstgebaseerde neef van de muziek-emoji-familie (Engelstalige bibliotheek)."
+    }
+  ]
+}

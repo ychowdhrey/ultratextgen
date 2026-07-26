@@ -1,0 +1,87 @@
+{
+  "slug": "bauer-symbol",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Bauer-Symbol: ♟ ♙ kopieren & einfügen — der Fußsoldat, der zur Dame werden kann",
+  "meta_description": "Das Bauer-Symbol kopieren und einfügen — schwarz ♟ (U+265F) und weiß ♙ (U+2659) — die wertärmste Schachfigur, benannt nach dem Fußsoldaten, die zur Dame aufsteigen kann. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/bauer-symbol/",
+  "breadcrumb": "Bauer-Symbol",
+  "hero_h1": "Bauer-Symbol (♟ ♙)",
+  "hero_tagline": "Der schwarze ♟ und der weiße ♙ Schachbauer — die wertärmste Figur auf dem Brett und sein Fußsoldat, derjenige, der bis zur letzten Reihe marschieren und sich in eine Dame verwandeln kann, und das Wort, das im Deutschen auch für jeden steht, der im fremden Spiel benutzt wird. Ein Klick genügt zum Kopieren.",
+  "intro": "Das Bauer-Symbol liegt in zwei Unicode-Formen vor — der schwarze ♟ (U+265F, BLACK CHESS PAWN) und der weiße ♙ (U+2659, WHITE CHESS PAWN) —, beide Teil des Blocks Miscellaneous Symbols, zusammen mit dem vollständigen 12-teiligen Schachsatz von U+2654 bis U+265F. Der Bauer ist wertmäßig die niedrigste Figur des Schachspiels, im Standardsystem einen Punkt wert, während Springer oder Läufer 3, ein Turm 5 und die Dame 9 Punkte zählen. Er ist außerdem die einzige Figur, die anders zieht als sie schlägt: Er rückt eine Reihe geradeaus vor — oder zwei bei seinem allerersten Zug —, schlägt aber nur diagonal, und er kann von einem gegnerischen Bauern, an dem er vorbeizuziehen versucht, „en passant“ geschlagen werden. Erreicht er die gegnerische Grundreihe, verwandelt sich ein Bauer in eine Dame, einen Turm, einen Läufer oder einen Springer — alles außer einem König, und Bauer bleiben kann er nicht. In der Notation steht ein Bauer für „P“ (Weiß) oder „p“ (Schwarz) in FEN, in der algebraischen Zugnotation trägt er gar keinen Buchstaben, nur das Zielfeld. Schon in den 1580er-Jahren war „Bauer“ zur gängigen Metapher für eine Person geworden, die als entbehrliches Werkzeug im fremden Spiel eingesetzt wird.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/bauer-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "das-bauer-symbol",
+      "label": "Bauer-Symbol",
+      "h2": "Das Bauer-Symbol — ♟ & ♙",
+      "intro": "Die beiden Bauer-Glyphen. Der gefüllte schwarze ♟ ist derjenige, den die meisten kopieren; der umrissene weiße ♙ ist sein Gegenstück auf der hellen Seite. Beide sind einzelne Unicode-Zeichen, bereit für jeden Text.",
+      "symbols": [
+        { "char": "♟", "label": "Schwarzer Schachbauer (U+265F)" },
+        { "char": "♙", "label": "Weißer Schachbauer (U+2659)" }
+      ]
+    },
+    {
+      "id": "schwarze-figuren",
+      "label": "Schwarze Figuren",
+      "h2": "Die Mannschaft des schwarzen Bauern",
+      "intro": "Der Rest der schwarzen Seite, die sich hinter dem Bauern aufstellt — König, Dame, Turm, Läufer und Springer, von U+265A bis U+265E im selben Unicode-Block.",
+      "symbols": [
+        { "char": "♚", "label": "Schwarzer Schachkönig (U+265A)" },
+        { "char": "♛", "label": "Schwarze Schachdame (U+265B)" },
+        { "char": "♜", "label": "Schwarzer Schachturm (U+265C)" },
+        { "char": "♝", "label": "Schwarzer Schachläufer (U+265D)" },
+        { "char": "♞", "label": "Schwarzer Schachspringer (U+265E)" }
+      ]
+    },
+    {
+      "id": "weisse-figuren",
+      "label": "Weiße Figuren",
+      "h2": "Die weißen Schachfiguren",
+      "intro": "Der umrissene weiße Satz, der dem schwarzen Bauern über das Brett hinweg gegenübersteht, von U+2654 bis U+2658 — die Dame, die er eines Tages fürchten muss, und der König, der er nie werden kann.",
+      "symbols": [
+        { "char": "♔", "label": "Weißer Schachkönig (U+2654)" },
+        { "char": "♕", "label": "Weiße Schachdame (U+2655)" },
+        { "char": "♖", "label": "Weißer Schachturm (U+2656)" },
+        { "char": "♗", "label": "Weißer Schachläufer (U+2657)" },
+        { "char": "♘", "label": "Weißer Schachspringer (U+2658)" }
+      ]
+    },
+    {
+      "id": "bauernumwandlung",
+      "label": "Umwandlung",
+      "h2": "Was aus einem Bauern werden kann",
+      "intro": "Ein Bauer, der die gegnerische Grundreihe erreicht, muss sich verwandeln — in eine Dame, einen Turm, einen Läufer oder einen Springer der eigenen Farbe. Ein König kann er nie werden, und Bauer bleiben kann er nicht. Die Dame ist die übliche Wahl; alles andere gilt als „Unterverwandlung“.",
+      "symbols": [
+        { "char": "♛", "label": "Schwarze Schachdame (U+265B) — die übliche Umwandlung" },
+        { "char": "♜", "label": "Schwarzer Schachturm (U+265C)" },
+        { "char": "♝", "label": "Schwarzer Schachläufer (U+265D)" },
+        { "char": "♞", "label": "Schwarzer Schachspringer (U+265E) — eine Unterverwandlung" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/schach-symbole/",
+      "title": "Schach-Symbole",
+      "desc": "Der vollständige Unicode-Schachsatz — Könige, Damen, Türme, Läufer, Springer und beide Bauern — in einer Kopiervorlage."
+    },
+    {
+      "href": "/de/library/spielkarten-symbole/",
+      "title": "Spielkarten-Symbole",
+      "desc": "Pik, Herz, Karo und Kreuz — die übrigen Spielsymbole, direkt neben den Schachfiguren in Unicodes Block Miscellaneous Symbols."
+    }
+  ]
+}
