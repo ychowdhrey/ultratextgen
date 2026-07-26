@@ -680,6 +680,20 @@ speciali/` on the `changeur-de-police` cluster) falls back to the bare EN
 homepage as a generic default only, same as the trio above — not a
 translation-equivalence claim.
 
+**Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
+picked up new content the same day (a "changer un texte déjà écrit" FAQ, a
+changeur-vs-générateur distinction FAQ, a before/after example) matched to
+its GSC query cluster. Its live IT siblings, `it/font-copia-e-incolla/` and
+`it/caratteri-speciali/`, were **not** updated — `check-translation-parity.js`
+confirmed this is outside its own scope (it diffs EN↔locale pairs only; this
+is an IT-FR-only cluster with no EN member), so nothing enforced a sync, and
+none was done. This is a real gap: the site's tooling has no mechanism for
+locale↔locale parity when neither side is EN. Needs a decision — port the
+same content to the two IT pages, or record the divergence deliberately
+(and if the latter, decide where: `data/translation_parity_exceptions.json`
+requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
+by default.
+
 ### Locale-native internal linking — check every time you touch a locale page
 
 Whenever you create, edit, or otherwise touch a locale page's prose/FAQ
