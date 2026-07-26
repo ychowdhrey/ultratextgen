@@ -1,0 +1,81 @@
+{
+  "slug": "sinal-de-peso",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Sinal de Peso: Copiar e Colar ₱ — Só o Peso Filipino Tem o Seu Próprio; o Resto Usa $",
+  "meta_description": "Copie o sinal de peso ₱ (U+20B1) — o símbolo próprio do peso filipino, enquanto o peso mexicano, argentino, colombiano e os demais são todos escritos com o $ comum. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/sinal-de-peso/",
+  "breadcrumb": "Sinal de Peso",
+  "hero_h1": "Sinal de Peso (₱)",
+  "hero_tagline": "O ₱ pertence ao peso filipino — o único peso do mundo com um símbolo dedicado, enquanto o peso mexicano, o argentino e o colombiano se viram todos com o cifrão comum do dólar. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O sinal de peso (₱, Unicode U+20B1 PESO SIGN) é o símbolo dedicado do peso filipino — e, apesar do nome genérico, é o único peso do mundo que tem um. Toda outra moeda chamada peso — o mexicano (MXN), o argentino (ARS), o colombiano (COP), o chileno (CLP), o cubano (CUP), o dominicano (DOP) e o uruguaio (UYU), entre outros — é escrito convencionalmente com o cifrão comum, $ (U+0024), geralmente desambiguado na prática com um prefixo de país, como MX$ ou COL$. Esse glifo compartilhado não é coincidência: acredita-se amplamente que o próprio símbolo de dólar tenha surgido de uma abreviação manuscrita do século 18 do peso espanhol, e é por isso que uma única marca ainda serve tanto ao dólar quanto à maioria dos pesos hoje. As Filipinas seguiram outro caminho. A Ordem Executiva nº 66, emitida pelo governo colonial dos EUA em 3 de agosto de 1903, decretou um P maiúsculo cruzado por duas linhas paralelas especificamente para diferenciar o peso filipino do dólar americano e da peseta espanhola. O Unicode codificou o ₱ na versão 3.2, lançada em 2002; o código ISO 4217 da moeda é PHP, e ela é emitida pelo Bangko Sentral ng Pilipinas.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinal-de-peso/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "peso-sign",
+      "label": "O Sinal de Peso",
+      "h2": "Os Dois Símbolos Chamados de \"Sinal de Peso\" — ₱ e $",
+      "intro": "Os dois são chamados de sinal de peso. O ₱ é o caractere próprio do peso filipino; o $ é o que praticamente todo outro peso usa — porque o próprio símbolo de dólar provavelmente começou como abreviação do peso espanhol. Se veio de um «Ps» manuscrito ou das Colunas de Hércules envolvidas por um S nas moedas espanholas de oito reales ainda é genuinamente debatido entre historiadores.",
+      "symbols": [
+        { "char": "₱", "label": "Sinal de Peso (U+20B1) — o glifo dedicado do peso filipino" },
+        { "char": "$", "label": "Símbolo de Dólar (U+0024) — a marca que o peso mexicano, argentino e outros realmente usam" }
+      ]
+    },
+    {
+      "id": "struck-letter-currencies",
+      "label": "Construídos como o Peso",
+      "h2": "A Família de Moedas com Letra Cruzada",
+      "intro": "O sinal de peso é um P maiúsculo cruzado por duas barras paralelas — a mesma receita por trás de toda uma geração de símbolos monetários modernos, cada um uma letra nacional cortada por uma ou duas linhas. Pronto para colar em qualquer lugar.",
+      "symbols": [
+        { "char": "₹", "label": "Sinal de Rupia Indiana (U+20B9) — um R cruzado, adotado oficialmente em 2010" },
+        { "char": "₩", "label": "Sinal de Won (U+20A9) — um W com duas barras" },
+        { "char": "₦", "label": "Sinal de Naira (U+20A6) — um N cruzado (Nigéria)" },
+        { "char": "₴", "label": "Sinal de Hryvnia (U+20B4) — uma letra cruzada para a Ucrânia" },
+        { "char": "₫", "label": "Sinal de Dong (U+20AB) — um d com barra (Vietnã)" },
+        { "char": "€", "label": "Sinal de Euro (U+20AC) — um E arredondado com dois traços" }
+      ]
+    },
+    {
+      "id": "peso-lookalikes",
+      "label": "Não Confunda com",
+      "h2": "Parecidos: Glifos Confundidos com ₱",
+      "intro": "Como o ₱ é essencialmente um P com barra, ele é trocado por outros caracteres em forma de P — incluindo um que é uma moeda completamente diferente. Cada um é um código Unicode próprio, não uma variante estilística.",
+      "symbols": [
+        { "char": "₽", "label": "Sinal de Rublo (U+20BD) — a moeda da Rússia, também um P cruzado, mas com barra diferente" },
+        { "char": "P", "label": "Letra Latina Maiúscula P (U+0050) — o substituto simples que muita gente digita no lugar do peso" },
+        { "char": "Ᵽ", "label": "P Latino Maiúsculo com Traço (U+2C63) — um P de barra única usado em linguística, não em moeda" },
+        { "char": "Ρ", "label": "Letra Grega Maiúscula Rô (U+03A1) — parece um P" },
+        { "char": "Р", "label": "Letra Cirílica Maiúscula Er (U+0420) — outro parecido com o P" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "Navegue por todos os símbolos monetários do mundo — dólar, euro, libra, iene, rupia e o peso — lado a lado em uma única grade."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-dolar/",
+      "title": "Símbolo de Dólar ($)",
+      "desc": "A marca que quase todo peso realmente usa: só o peso filipino tem seu próprio ₱, enquanto o mexicano, o argentino e o colombiano são todos escritos com $."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-rupia/",
+      "title": "Símbolo de Rupia (₹)",
+      "desc": "A rupia indiana ₹ — assim como o ₱, um símbolo monetário moderno decretado oficialmente para uma única nação e construído cruzando uma letra com barras paralelas."
+    }
+  ]
+}

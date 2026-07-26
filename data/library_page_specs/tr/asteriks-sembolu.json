@@ -1,0 +1,133 @@
+{
+  "slug": "asteriks-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Asteriks Sembolü: Kopyala Yapıştır * ⁂ ✱ — Dipnot İşaretinden Joker Karaktere ve Sansüre",
+  "meta_description": "Asteriksi (*) kopyala yapıştır, ayrıca asterizm ⁂ ve kalın ✱ — dipnot işaretiyken aramada joker karakter olan ve küfür sansüründe de kullanılan yıldız işareti. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/asteriks-sembolu/",
+  "breadcrumb": "Asteriks Sembolü",
+  "hero_h1": "Asteriks Sembolü (*)",
+  "hero_tagline": "Dipnotlar için kullandığın asteriks (*), arama ve kodda her şeyle eşleşen joker karakter *, ve k*fa gibi sansürde harflerin yerine geçen yıldız — üç asteriksi üçgen dizen asterizm ⁂ gibi tipografik kuzenleriyle birlikte. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Asteriks (*, Unicode U+002A), klavyenin 8 rakamı tuşuyla aynı yeri paylaşan yıldız biçimli işarettir; adı doğrudan Antik Yunanca asteriskos'tan gelir — astēr'in (\"yıldız\") küçültme biçimi, \"küçük yıldız\". Batı geleneğindeki en eski editöryal işaretlerden biridir: İskenderiyeli bilgin Aristarchus (MÖ y. 220–143), Homeros baskılarında başka bir yerde yinelendiğini düşündüğü dizeleri işaretlemek için asteriskos'u kullandı; teolog Origenes de daha sonra Hexapla'sında İbranicede bulunan ama Yunancada eksik olan metni işaretlemek için bunu kullandı. Bugün aynı glif üç çok farklı iş görüyor: okuru sayfanın altındaki bir nota yönlendiren klasik dipnot işareti, dosya aramasında, glob desenlerinde ve SQL'in SELECT * ifadesinde her şeyle eşleşen joker karakter, ve insanların yıldızla kapatmayı tercih ettiği harfler için varsayılan sansür yer tutucusu (k*fa gibi). Tipografi çevresinde bir aile barındırır — ASTERİZM ⁂ (U+2042) üç asteriksi bir bölüm sonu olarak üçgen biçiminde istifler, KALIN ASTERİKS ✱ (U+2731) ve SEKİZ KOLLU ASTERİKS ✳ (U+2733) daha kalın görüntüleme biçimleridir, ASTERİKS İŞLECİ ∗ (U+2217) ise matematiğe özgü çarpma glifidir. Bunların hiçbiri dekoratif yıldız şekilleri değildir — siyah yıldız ★ (U+2605) ya da sarı yıldız emojisi ⭐ (U+2B50) — bunlar tamamen farklı, süsleyici bir kategoriye aittir.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-asterisk",
+      "label": "Asteriks",
+      "h2": "Asteriks ve Görüntüleme Varyantları",
+      "intro": "Sade klavye asteriksi, artı daha kalın görüntüleme biçimleri ve matematiğe özgü işleç. Her biri yapıştırılmaya hazır.",
+      "symbols": [
+        {
+          "char": "*",
+          "label": "Asterisk (U+002A) — Dipnot, Joker Karakter ve Sansür İşareti"
+        },
+        {
+          "char": "✱",
+          "label": "Heavy Asterisk (U+2731)"
+        },
+        {
+          "char": "✳",
+          "label": "Eight-Spoked Asterisk (U+2733)"
+        },
+        {
+          "char": "∗",
+          "label": "Asterisk Operator (U+2217) — Matematikte Çarpma Glifi"
+        },
+        {
+          "char": "＊",
+          "label": "Fullwidth Asterisk (U+FF0A)"
+        }
+      ]
+    },
+    {
+      "id": "asterism-editorial",
+      "label": "Asterizm ve Editöryal İşaretler",
+      "h2": "Asterizm ve Bölüm Sonu İşaretleri",
+      "intro": "Asteriksten inşa edilen editöryal işaretler — bölümleri ayıran üç-asteriks-üçgeni asterizm, artı üst üste dizilmiş ve alçaltılmış kuzenleri.",
+      "symbols": [
+        {
+          "char": "⁂",
+          "label": "Asterism (U+2042) — Üçgen Biçiminde Üç Asteriks"
+        },
+        {
+          "char": "⁑",
+          "label": "Two Asterisks Aligned Vertically (U+2051)"
+        },
+        {
+          "char": "⁎",
+          "label": "Low Asterisk (U+204E)"
+        }
+      ]
+    },
+    {
+      "id": "stars-confused-with",
+      "label": "Karıştırıldığı Yıldızlar",
+      "h2": "Karıştırıldığı Yıldız Şekilleri",
+      "intro": "İnsanların asteriks demek isterken uzandığı yıldız biçimli glifler. Bunlar dekoratif yıldızlardır — bir dipnot ya da noktalama aracı değil, süsleyici bir kategoridir.",
+      "symbols": [
+        {
+          "char": "★",
+          "label": "Black Star (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "White Star (U+2606)"
+        },
+        {
+          "char": "⭐",
+          "label": "White Medium Star (U+2B50) — Sarı Yıldız Emojisi"
+        },
+        {
+          "char": "✦",
+          "label": "Black Four-Pointed Star (U+2726)"
+        },
+        {
+          "char": "✧",
+          "label": "White Four-Pointed Star (U+2727)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Noktalama Sembolleri",
+      "desc": "Tireler, parantezler, tırnak işaretleri ve asteriksin ait olduğu gündelik noktalama ailesi."
+    },
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Klavye Sembolleri",
+      "desc": "Asteriks, ve işareti, diyez ve klavyenin sıralarına dizilmiş diğer semboller."
+    },
+    {
+      "href": "/tr/symbol/yildiz-sembolu/",
+      "title": "Yıldız Sembolü (★)",
+      "desc": "İnsanların asteriksle karıştırdığı dekoratif yıldız ★ ve sarı yıldız emojisi ⭐."
+    },
+    {
+      "href": "/tr/symbol/bolum-isareti/",
+      "title": "Bölüm İşareti (§)",
+      "desc": "Basılı metin dünyasından bir başka editöryal ve dipnota yakın sembol §."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/asteriks-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

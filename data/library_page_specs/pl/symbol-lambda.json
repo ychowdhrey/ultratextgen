@@ -1,0 +1,94 @@
+{
+  "slug": "symbol-lambda",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Lambda: Skopiuj λ Λ — Znak Wyzwolenia Gejowskiego i Rachunek Lambda Churcha",
+  "meta_description": "Skopiuj symbol lambda — małe λ (długość fali, znak wyzwolenia gejowskiego z 1970 roku) i wielkie Λ (stała kosmologiczna) — plus jak nazwała lambdę w Pythonie i AWS Lambda. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-lambda/",
+  "breadcrumb": "Symbol Lambda",
+  "hero_h1": "Symbol Lambda",
+  "hero_tagline": "Małe λ, które projektant graficzny Tom Doerr przekształcił w 1970 roku w emblemat wyzwolenia gejowskiego, ta sama litera stojąca za rachunkiem lambda Alonzo Churcha i fizycznym symbolem długości fali, oraz wielkie Λ oznaczające stałą kosmologiczną. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Mały glif lambdy, λ (U+03BB, GREEK SMALL LETTER LAMDA), to 11. litera greckiego alfabetu — ale niesie dwa z najcięższych znaczeń, jakie kiedykolwiek przypadły pojedynczemu znakowi. W 1970 roku projektant graficzny Tom Doerr, członek założyciel Gay Activists Alliance (powstałego w Nowym Jorku w grudniu 1969 roku), wybrał małe λ jako emblemat tej grupy — podobno ze względu na jego fizyczne znaczenie „pełnej wymiany energii” — a do grudnia 1974 roku Międzynarodowy Kongres Praw Gejowskich w Edynburgu ogłosił ją międzynarodowym symbolem praw gejów i lesbijek; do dziś nosi ją w nazwie Lambda Legal i Lambda Literary Foundation. Ta sama litera zakotwiczyła się też w informatyce: Alonzo Church zbudował swój rachunek lambda w latach 30. XX wieku, formalny system, który później dał Pythonowi słowo kluczowe lambda dla funkcji anonimowych (dodane w 1994 roku) i Amazonowi bezserwerową usługę AWS Lambda. W fizyce λ to standardowy symbol długości fali, podczas gdy wielkie Λ (U+039B) oznacza stałą kosmologiczną — człon ciemnej energii w modelu ΛCDM rozszerzającego się wszechświata. Obie formy trafiły do Unicode 1.1 w 1993 roku.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-lambda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/lambda-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "litera-lambda",
+      "label": "Litera",
+      "h2": "Symbol Lambda — λ i Λ",
+      "intro": "Sama grecka litera — 11. w alfabecie, warta 30 w greckim systemie liczbowym, wywodząca się od fenickiej litery lamed. Małe λ wykonuje niemal całą kulturową pracę; wielkie Λ to odrębny symbol matematyczny i kosmologiczny.",
+      "symbols": [
+        { "char": "λ", "label": "Mała Grecka Litera Lambda (U+03BB)" },
+        { "char": "Λ", "label": "Wielka Grecka Litera Lambda (U+039B)" }
+      ]
+    },
+    {
+      "id": "wyzwolenie-gejowskie",
+      "label": "Wyzwolenie Gejowskie",
+      "h2": "Lambda jako Symbol Wyzwolenia Gejowskiego",
+      "intro": "Nowojorski Gay Activists Alliance przyjął małe λ w 1970 roku, a Międzynarodowy Kongres Praw Gejowskich ogłosił ją w 1974 roku międzynarodowym symbolem praw gejów i lesbijek — jeden z najwcześniejszych emblematów tego ruchu. Wklej ją obok symboli dumy, obok których dziś stoi.",
+      "symbols": [
+        { "char": "λ", "label": "Mała Grecka Litera Lambda (U+03BB) — Znak Wyzwolenia Gejowskiego" },
+        { "char": "🏳️‍🌈", "label": "Flaga Tęczowa" },
+        { "char": "⚧", "label": "Symbol Transgender (U+26A7)" }
+      ]
+    },
+    {
+      "id": "kod-i-nauka",
+      "label": "Kod i Nauka",
+      "h2": "Lambda w Kodzie, Matematyce i Fizyce",
+      "intro": "Techniczne życie tej litery. Małe λ oznacza funkcje anonimowe — od rachunku lambda Alonzo Churcha, przez słowo kluczowe lambda w Pythonie, aż po AWS Lambda — i oznacza długość fali w fizyce; wielkie Λ to stała kosmologiczna modelu ΛCDM.",
+      "symbols": [
+        { "char": "λ", "label": "Mała Grecka Litera Lambda (U+03BB) — Długość Fali i Rachunek Lambda" },
+        { "char": "Λ", "label": "Wielka Grecka Litera Lambda (U+039B) — Stała Kosmologiczna" },
+        { "char": "𝜆", "label": "Matematyczna Kursywna Lambda (U+1D706) — Wariant Równaniowy" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Lambda to 11. litera greckiego alfabetu. Oto sąsiedzi, których kopiuje się razem z nią najczęściej.",
+      "symbols": [
+        { "char": "π", "label": "Mała Grecka Litera Pi" },
+        { "char": "Σ", "label": "Wielka Grecka Litera Sigma" },
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta" },
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega" },
+        { "char": "α", "label": "Mała Grecka Litera Alfa" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet — alfa, lambda, pi, sigma, omega — w wielkich i małych literach do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Długość fali, stała kosmologiczna oraz operatory i litery greckie wypełniające równanie."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Pride & LGBTQ+ Symbols",
+      "desc": "Lambda, tęcza, labrys i inne emblematy tożsamości LGBTQ+ zebrane w jednym miejscu do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/symbol-pi/",
+      "title": "Symbol Pi",
+      "desc": "Kolejna grecka litera z życiem dalece wykraczającym poza matematykę — stała, którą William Jones nazwał w 1706 roku."
+    }
+  ]
+}

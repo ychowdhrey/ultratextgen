@@ -1,0 +1,64 @@
+{
+  "slug": "gemini-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Song Tử: Sao Chép & Dán ♊ — Cặp Song Sinh Vốn Không Ngang Hàng",
+  "meta_description": "Sao chép ký hiệu cung Song Tử (♊) và truyền thuyết thật sự đằng sau nó — Castor và Pollux, hai con trai song sinh của Leda nhưng lại có hai người cha khác nhau, một người phàm trần và một vị bất tử. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/gemini-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Song Tử",
+  "hero_h1": "Ký Hiệu Song Tử",
+  "hero_tagline": "Ký hiệu của Song Tử (♊) là hai vạch dọc song song nối nhau — hình ảnh đơn giản cho «cặp song sinh» — nhưng truyền thuyết Castor và Pollux đằng sau nó lại là chuyện về cặp song sinh vốn không hề ngang hàng: một người bất tử, một người không. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu Song Tử (♊, U+264A) là hai vạch dọc song song nối với nhau ở đầu và cuối — giống chữ số La Mã II, tượng trưng cho một cặp song sinh. Truyền thuyết đằng sau nó là Castor và Pollux, hay Dioscuri: hai con trai song sinh của Leda, nhưng lại có hai người cha khác nhau — điều mà hầu hết các bản kể thường bỏ qua. Pollux, con của thần Zeus, là bất tử; còn Castor, con của người chồng phàm trần của Leda, thì không. Khi Castor qua đời, Zeus đã cho phép hai anh em chia sẻ sự bất tử của chính mình, luân phiên giữa đỉnh Olympus và âm phủ để họ không phải xa nhau vĩnh viễn. Song Tử kéo dài từ 21/5 đến 20/6, do Sao Thủy cai quản, thuộc nhóm Khí với tính chất Biến Đổi (Mutable) — cung gắn liền với sự thích nghi và tính hai mặt.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/gemini-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/gemini-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/gemini-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "gemini-symbol",
+      "label": "Song Tử",
+      "h2": "Ký Hiệu Song Tử",
+      "intro": "Ký hiệu Unicode của cung Song Tử, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "♊", "label": "Ký Hiệu Song Tử" },
+        { "char": "♊️", "label": "Ký Hiệu Song Tử (Dạng Emoji)" }
+      ]
+    },
+    {
+      "id": "ruling-planet-element",
+      "label": "Hành Tinh & Nguyên Tố",
+      "h2": "Hành Tinh Chủ Quản & Nguyên Tố",
+      "intro": "Hành tinh và nguyên tố cổ điển gắn liền với Song Tử theo truyền thống chiêm tinh.",
+      "symbols": [
+        { "char": "☿", "label": "Sao Thủy (Hành Tinh Chủ Quản)" },
+        { "char": "🜁", "label": "Khí (Nguyên Tố, Ký Hiệu Giả Kim)" }
+      ]
+    },
+    {
+      "id": "related-zodiac-celestial",
+      "label": "Cung Hoàng Đạo & Thiên Thể",
+      "h2": "Thêm Ký Hiệu Cung Hoàng Đạo & Thiên Thể",
+      "intro": "Các thiên thể khác và cung đối diện của Song Tử trên vòng hoàng đạo (Nhân Mã).",
+      "symbols": [
+        { "char": "☉", "label": "Mặt Trời" },
+        { "char": "☽", "label": "Mặt Trăng (Ký Hiệu Chiêm Tinh)" },
+        { "char": "⛎", "label": "Xà Phu (Cung Hoàng Đạo Thứ 13 Không Chính Thức)" },
+        { "char": "♐", "label": "Nhân Mã (Cung Đối Diện)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/zodiac-symbols/", "title": "Ký Hiệu Cung Hoàng Đạo", "desc": "Các cung hoàng đạo phương Tây, ký hiệu hành tinh và 12 con giáp Trung Hoa trong một trang tra cứu." },
+    { "href": "/vi/symbol/sagittarius-symbol/", "title": "Ký Hiệu Nhân Mã", "desc": "Cung đối diện của Song Tử, nằm thẳng phía bên kia vòng hoàng đạo." },
+    { "href": "/vi/symbol/leo-symbol/", "title": "Ký Hiệu Sư Tử", "desc": "Một trang ký hiệu cung hoàng đạo khác, với truyền thuyết Sư Tử Nemea đằng sau nó." }
+  ]
+}

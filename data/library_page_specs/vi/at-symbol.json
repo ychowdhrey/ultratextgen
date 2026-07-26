@@ -1,0 +1,63 @@
+{
+  "slug": "at-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu At (@): Ý Nghĩa, Lịch Sử Và Cách Gõ",
+  "meta_description": "Ký hiệu at @ (U+0040) được giải thích — nguồn gốc sổ sách 500 năm tuổi, cách Ray Tomlinson dùng nó cho thư điện tử năm 1971, cách nó kích hoạt lượt nhắc tên, và cách gõ ra nó.",
+  "canonical": "https://ultratextgen.com/vi/symbol/at-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu At",
+  "hero_h1": "Ký Hiệu At (@)",
+  "hero_tagline": "@ nghĩa là gì, từ đâu mà có, và cách gõ ra nó — nhấp để sao chép ngay.",
+  "intro": "@ xuất hiện trong sổ sách thương nhân Ý và Tây Ban Nha từ tận thế kỷ 14–16, được dùng như chữ viết tắt thương mại cho «với đơn giá» — viết «10 @ $5» thay vì viết đầy đủ «10 đơn vị với giá 5 đô la mỗi đơn vị». Hình dạng của nó có lẽ bắt nguồn từ một chữ ghép của thầy dòng cho từ Latin ad (hướng về/tại), được uốn cong thành một nét viết liền để tiết kiệm thời gian và mực. Ký hiệu này gần như «ngủ yên» suốt nhiều thế kỷ, chỉ dùng trong hóa đơn và bảng giá, cho đến năm 1971, khi kỹ sư người Mỹ Ray Tomlinson cần một cách để tách biệt tên người dùng khỏi tên máy tính họ đang dùng trên ARPANET, mạng lưới của chính phủ Mỹ về sau trở thành nền tảng của Internet. Ông chọn @ cụ thể vì nó hầu như không xuất hiện trong tên riêng, đã có sẵn nhưng không dùng trên mọi bàn phím, và đọc lên nghe tự nhiên như «người dùng tại máy» — một lựa chọn đã biến @ thành ký tự định danh của mọi địa chỉ thư điện tử kể từ đó.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/at-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/at-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/at-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "at-sign",
+      "label": "At",
+      "h2": "Ký Hiệu At",
+      "intro": "Ký hiệu at, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "@", "label": "Ký Hiệu At (U+0040)" }
+      ]
+    },
+    {
+      "id": "confusable",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Ký Hiệu Trông Giống @",
+      "intro": "Những ký hiệu này có hình dáng gần giống @ nhưng mang ý nghĩa khác.",
+      "symbols": [
+        { "char": "Ⓐ", "label": "Chữ A Latin Hoa Trong Vòng Tròn (U+24B6) — ký hiệu vô chính phủ, không liên quan đến @" },
+        { "char": "&", "label": "Ampersand — một ký hiệu viết tắt thương mại khác, nhưng mang ý nghĩa hoàn toàn khác" }
+      ]
+    },
+    {
+      "id": "related",
+      "label": "Ký Hiệu Liên Quan",
+      "h2": "Các Ký Tự Đặc Biệt Khác",
+      "intro": "Những ký tự đặc biệt khác thường xuất hiện cùng @ trong nội dung về lịch sử ký hiệu.",
+      "symbols": [
+        { "char": "&", "label": "Ampersand" },
+        { "char": "§", "label": "Ký Hiệu Điều Khoản" },
+        { "char": "¶", "label": "Pilcrow" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/ampersand/", "title": "Ampersand (&)", "desc": "Một chữ ghép La Mã cho «et», và tên gọi của nó từ đâu mà có." },
+    { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể." },
+    { "href": "/vi/symbol/pilcrow/", "title": "Pilcrow (¶)", "desc": "Dấu đoạn văn ẩn mình trong trình xử lý văn bản của bạn." },
+    { "href": "/library/special-characters/", "title": "Tất Cả Ký Tự Đặc Biệt", "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác." }
+  ]
+}

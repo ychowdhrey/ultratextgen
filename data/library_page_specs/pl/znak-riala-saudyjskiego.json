@@ -1,0 +1,74 @@
+{
+  "slug": "znak-riala-saudyjskiego",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Riala Saudyjskiego: Skopiuj ⃁ — Zatwierdzony Dekretem Królewskim, Aktywny w Unicode 17.0",
+  "meta_description": "Znak riala saudyjskiego (⃁, U+20C1) zatwierdził król Salman w lutym 2025 roku, a zakodowano go w Unicode 17.0 we wrześniu 2025 roku — już finalny, choć większość czcionek wciąż go nie wyświetla. Oto jego projekt, historia i jak używać go już dziś.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-riala-saudyjskiego/",
+  "breadcrumb": "Znak Riala Saudyjskiego",
+  "hero_h1": "Znak Riala Saudyjskiego",
+  "hero_tagline": "Oficjalny symbol waluty Arabii Saudyjskiej, zatwierdzony dekretem królewskim i zakodowany w Unicode 17.0 — już finalny, choć większość czcionek i klawiatur wciąż nie nadążyła.",
+  "intro": "Znak riala saudyjskiego (⃁, U+20C1) to oficjalny symbol waluty Arabii Saudyjskiej, opracowany na mocy dekretu królewskiego przez komitet obejmujący Saudi Central Bank (SAMA), Ministerstwo Kultury, Ministerstwo Mediów i saudyjską organizację normalizacyjną. Jego projekt czerpie z kaligrafii arabskiej, układając arabskie litery słowa „ريال” (rial), przy czym kreska litery rāʾ (ر) pełni jednocześnie rolę poprzeczki — w tej samej wizualnej rodzinie co inne znaki walut oparte na poprzeczce, takie jak dolar i funt. Król Salman oficjalnie zatwierdził projekt 20 lutego 2025 roku, a SAMA wkrótce potem zgłosiła go do zakodowania w Unicode (propozycja L2/25-075 z 7 marca 2025 roku). Komitet Techniczny Unicode zatwierdził go bez zmian na swoim 183. posiedzeniu, 22–24 kwietnia 2025 roku, a znak trafił jako finalny, ratyfikowany znak do Unicode 17.0 9 września 2025 roku — całą wersję przed znakami dirhama ZEA, riala omańskiego i rufiji malediwskiej, które w chwili pisania tego tekstu wciąż znajdują się w wersji beta Unicode 18.0. Status finalny nie znaczy jednak, że znak jest już wszędzie: otwarte zgłoszenie na GitHubie dla Inter, jednego z najpowszechniej używanych krojów open source, prosi o dodanie tego glifu — dowód, że pokrycie przez główne czcionki wciąż nadrabia zaległości nawet całą wersję Unicode po ratyfikacji. W międzyczasie istnieje już czcionka open source zbudowana specjalnie dla tego znaku oraz społecznościowe poradniki, jak używać go w Wordzie, Excelu i w sieci.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-riala-saudyjskiego/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/saudi-riyal-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-riala-saudyjskiego",
+      "label": "Znak Riala Saudyjskiego",
+      "h2": "Znak Riala Saudyjskiego",
+      "intro": "Potwierdzony, finalny znak — zakodowany w Unicode 17.0, możliwy do skopiowania już dziś, choć większość czcionek wciąż nie wyświetla go natywnie.",
+      "symbols": [
+        { "char": "⃁", "label": "Znak Riala Saudyjskiego (U+20C1, finalny od Unicode 17.0)" }
+      ]
+    },
+    {
+      "id": "inne-nowe-symbole-walut-zatoki",
+      "label": "Inne Waluty Zatoki",
+      "h2": "Inne Nowe Symbole Walut Regionu Zatoki",
+      "intro": "Trzy kolejne waluty regionu otrzymały własne znaki Unicode w następnej wersji, Unicode 18.0 — w chwili pisania tego tekstu wciąż w wersji beta.",
+      "symbols": [
+        { "char": "⃃", "label": "Znak Dirhama ZEA (U+20C3, beta Unicode 18.0)" },
+        { "char": "⃄", "label": "Znak Riala Omańskiego (U+20C4, beta Unicode 18.0)" },
+        { "char": "⃂", "label": "Znak Rufiji Malediwskiej (U+20C2, beta Unicode 18.0)" }
+      ]
+    },
+    {
+      "id": "istniejace-symbole-walut-bliskiego-wschodu",
+      "label": "Istniejące Symbole Walut",
+      "h2": "Symbole Walut Bliskiego Wschodu, Które Już Działają Wszędzie",
+      "intro": "Dla kontrastu — regionalne symbole walut, które pokonały lukę między standardem a czcionkami już lata temu i dziś wyświetlają się na praktycznie każdym urządzeniu.",
+      "symbols": [
+        { "char": "₪", "label": "Znak Nowego Szekla Izraelskiego" },
+        { "char": "₺", "label": "Znak Liry Tureckiej" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Każdy światowy symbol waluty, który możesz już dziś skopiować i wkleić."
+    },
+    {
+      "href": "/pl/symbol/znak-dirhama/",
+      "title": "Znak Dirhama",
+      "desc": "Nowy symbol waluty ZEA — jedną wersję Unicode w tyle, wciąż w becie."
+    },
+    {
+      "href": "/pl/symbol/znak-riala-omanskiego/",
+      "title": "Znak Riala Omańskiego",
+      "desc": "Kolejny symbol waluty Zatoki wydawany w tej samej becie Unicode 18.0."
+    }
+  ]
+}

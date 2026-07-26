@@ -1,0 +1,72 @@
+{
+  "lang": "es",
+  "slug": "calavera-y-huesos-cruzados",
+  "page_type": "symbol",
+  "title": "Calavera y Huesos Cruzados: Copiar y Pegar ☠ — Pictograma de Veneno, Jolly Roger y no es 💀",
+  "meta_description": "Copia y pega la calavera y huesos cruzados (☠, U+2620) — el pictograma de veneno del SGA y la bandera pirata Jolly Roger, que no es el emoji de calavera 💀. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/calavera-y-huesos-cruzados/",
+  "breadcrumb": "Calavera y Huesos Cruzados",
+  "hero_h1": "Calavera y Huesos Cruzados (☠)",
+  "hero_tagline": "La calavera y huesos cruzados (☠) que marca el veneno y ondea en el Jolly Roger — el símbolo de peligro U+2620 que la gente confunde sin parar con el emoji de calavera 💀. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La calavera y huesos cruzados (☠, Unicode U+2620) es una calavera humana sobre dos huesos cruzados — un memento mori que lleva siglos señalando la muerte y el peligro. Unicode la añadió en la versión 1.1, en 1993, dentro del bloque Miscellaneous Symbols (U+2600–U+26FF), junto a sus vecinos de peligro ☢ radiactivo (U+2622) y ☣ biopeligro (U+2623). Cumple dos funciones muy distintas. Como marca de peligro sigue vigente y es oficial: la calavera y huesos cruzados es uno de los nueve pictogramas del Sistema Globalmente Armonizado (SGA) para la toxicidad aguda, incorporado a la legislación estadounidense a través de la Hazard Communication Standard de la OSHA — no está retirada, aunque la pegatina más amigable de «Mr. Yuk» (creada en 1971 por el Pittsburgh Poison Center, después de que los niños asociaran la calavera con los piratas en lugar de con el peligro) la complementa en productos domésticos. Como iconografía pirata es el Jolly Roger, la bandera negra documentada entre las décadas de 1710 y 1720 para capitanes como Samuel «Black Sam» Bellamy, Edward England y John Taylor — aunque muchas tripulaciones enarbolaban otros diseños, así que nunca fue la única bandera pirata universal. Una advertencia: ☠ no es el emoji de calavera lisa 💀 (U+1F480), el carácter que la gente pega para reacciones de «me muero» de risa — distinto punto de código, distinto registro, confundidos sin parar.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/calavera-y-huesos-cruzados/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+  ],
+  "sections": [
+    {
+      "id": "calavera-y-huesos-cruzados",
+      "label": "El Símbolo",
+      "h2": "La Calavera y Huesos Cruzados — ☠",
+      "intro": "El símbolo en sí, en su forma de texto plano y en su presentación emoji. Es el mismo punto de código, U+2620 — un selector de variación final es lo único que cambia entre un glifo en blanco y negro y un emoji a color.",
+      "symbols": [
+        { "char": "☠", "label": "Calavera y Huesos Cruzados (U+2620)" },
+        { "char": "☠️", "label": "Calavera y Huesos Cruzados, Estilo Emoji (U+2620 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "calavera-vs-emoji-de-calavera",
+      "label": "vs. el Emoji de Calavera",
+      "h2": "☠ vs. el Emoji de Calavera 💀",
+      "intro": "La confusión que vale la pena aclarar: ☠ (calavera y huesos cruzados) y 💀 (calavera lisa) son caracteres Unicode distintos. 💀 es el que la gente pega para reacciones de «me muero» o de risa incontenible; ☠ es el símbolo de peligro y piratería. Como anécdota, el propio emoji de bandera pirata 🏴‍☠️ se construye uniendo una bandera negra a este mismo U+2620.",
+      "symbols": [
+        { "char": "☠️", "label": "Calavera y Huesos Cruzados (U+2620)" },
+        { "char": "💀", "label": "Calavera (U+1F480)" },
+        { "char": "🏴‍☠️", "label": "Bandera Pirata (U+1F3F4 U+200D U+2620)" }
+      ]
+    },
+    {
+      "id": "simbolos-de-peligro",
+      "label": "Símbolos de Peligro",
+      "h2": "Símbolos de Peligro y Advertencia Relacionados",
+      "intro": "La calavera y huesos cruzados se sitúa en el bloque Miscellaneous Symbols de Unicode justo al lado de las otras marcas de advertencia con las que se agrupa — cada una es un punto de código aparte, con su propio significado de peligro.",
+      "symbols": [
+        { "char": "☠", "label": "Calavera y Huesos Cruzados (U+2620)" },
+        { "char": "☢", "label": "Símbolo Radiactivo (U+2622)" },
+        { "char": "☣", "label": "Símbolo de Biopeligro (U+2623)" },
+        { "char": "⚠", "label": "Señal de Advertencia (U+26A0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Símbolos de Peligro y Advertencia",
+      "desc": "Radiactivo, biopeligro, alto voltaje y otros pictogramas de advertencia para copiar en una sola referencia."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Emoji y Kaomoji de Calavera",
+      "desc": "El emoji de calavera 💀 y sus primos de cara en texto — el lado de reacción-meme de la calavera, reunido en un solo centro."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-peligro-biologico/",
+      "title": "Símbolo de Peligro Biológico (☣)",
+      "desc": "El signo de biopeligro ☣ — un glifo de peligro vecino en el bloque Miscellaneous Symbols de Unicode, explicado a fondo."
+    }
+  ]
+}

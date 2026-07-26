@@ -1,0 +1,68 @@
+{
+  "slug": "tilde-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Dấu Ngã: Sao Chép & Dán ~ ˜ ∼ ≈ — Từ Ký Hiệu Viết Tay Của Thầy Dòng Đến Đường Dẫn Thư Mục Cá Nhân Trên Unix",
+  "meta_description": "Sao chép dấu ngã (~), dấu ngã nhỏ (˜), dấu phụ kết hợp trên chữ ñ, và các dấu ngã toán học ∼ và ≈ — cùng cách một ký hiệu viết tắt thời Trung Cổ trở thành chữ ñ. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/tilde-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Dấu Ngã",
+  "hero_h1": "Ký Hiệu Dấu Ngã (~)",
+  "hero_tagline": "Dấu ngã bàn phím (~) đánh dấu thư mục cá nhân của bạn trên Unix (~/) và mang nghĩa «xấp xỉ», dấu ngã nhỏ ˜ cùng dấu phụ kết hợp nằm trên ñ, ã và õ, và các dấu ngã toán học ∼ và ≈ mà nó thường bị nhầm lẫn. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Dấu ngã (~, U+007E TILDE) là dấu hình sóng ở phím trên-trái của bàn phím, và nó đảm nhận nhiều công việc hơn hầu như bất kỳ dấu câu nào khác. Trong shell Unix hoặc Linux, đây là chữ viết tắt cho thư mục cá nhân của bạn (~/) — một quy ước có thể truy về màn hình cuối Lear-Siegler ADM-3A thập niên 1970, có bàn phím in cả «~» và chữ «Home» trên cùng một phím. Trong trò chuyện thông thường, nó mang nghĩa «khoảng chừng» hay «xấp xỉ» (~5 phút), và lập trình viên đặt biệt danh cho nó là «twiddle». Tên gọi của nó đến từ tiếng Tây Ban Nha tilde, từ tiếng Latin titulus («tiêu đề» hay «lời ghi trên»), và câu chuyện của nó bắt đầu với các thầy dòng thời Trung Cổ: một dấu sóng nhỏ viết phía trên một chữ cái đại diện cho một chữ «n» hay «m» bị lược bỏ, giúp tiết kiệm tấm da đắt tiền và mực viết. Chính thủ thuật đó lý giải vì sao tiếng Tây Ban Nha có chữ ñ — các thầy dòng viết một chữ «n» đơn kèm dấu này phía trên để thay cho một cặp «nn» đôi. Dấu phụ đó còn tồn tại đến ngày nay dưới dạng dấu ngã kết hợp (◌̃, U+0303), một ký tự khác với dấu ngã nhỏ độc lập (˜, U+02DC) và với dấu ~ bàn phím thông thường. Nó cũng thường xuyên bị nhầm với các dấu toán học có hình dáng tương tự: toán tử dấu ngã ∼ (U+223C, «tương tự với») và gần bằng ≈ (U+2248) là những ký tự Unicode riêng biệt, không phải dấu ngã ASCII.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/tilde-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-tilde",
+      "label": "Dấu Ngã",
+      "h2": "Dấu Ngã ~ Và Những Người «Anh Em Song Sinh»",
+      "intro": "Ba ký tự Unicode riêng biệt mà mọi người đều gọi là «dấu ngã» — phím bàn phím, dấu phụ điều chỉnh khoảng cách độc lập, và dấu phụ kết hợp nằm trên một chữ cái.",
+      "symbols": [
+        { "char": "~", "label": "Dấu Ngã (U+007E) — Phím Bàn Phím" },
+        { "char": "˜", "label": "Dấu Ngã Nhỏ (U+02DC) — Dấu Phụ Điều Chỉnh Khoảng Cách Độc Lập" },
+        { "char": "̃", "label": "Dấu Ngã Kết Hợp (U+0303) — Nằm Trên Một Chữ Cái" }
+      ]
+    },
+    {
+      "id": "tilde-letters",
+      "label": "Chữ Có Dấu Ngã",
+      "h2": "Các Chữ Cái Mang Dấu Ngã",
+      "intro": "Dấu ngã kết hợp trong thực tế. Chữ ñ tiếng Tây Ban Nha và ã, õ tiếng Bồ Đào Nha là những «hậu duệ» hằng ngày của ký hiệu viết tắt thầy dòng cho một chữ «n» bị lược bỏ.",
+      "symbols": [
+        { "char": "ñ", "label": "Chữ Thường Latin N Có Dấu Ngã (U+00F1)" },
+        { "char": "Ñ", "label": "Chữ Hoa Latin N Có Dấu Ngã (U+00D1)" },
+        { "char": "ã", "label": "Chữ Thường Latin A Có Dấu Ngã (U+00E3)" },
+        { "char": "õ", "label": "Chữ Thường Latin O Có Dấu Ngã (U+00F5)" }
+      ]
+    },
+    {
+      "id": "math-tilde",
+      "label": "Dấu Ngã Toán Học",
+      "h2": "Dấu Ngã Toán Học: Tương Tự Và Gần Bằng",
+      "intro": "Trong phương trình, dấu ngã mang nghĩa «tương tự» hoặc «xấp xỉ», nhưng các dấu toán học thật sự lại là những ký tự Unicode riêng của chúng — không phải dấu ~ ASCII mà mọi người thường gõ thay thế.",
+      "symbols": [
+        { "char": "∼", "label": "Toán Tử Dấu Ngã (U+223C) — «Tương Tự Với»" },
+        { "char": "≈", "label": "Gần Bằng (U+2248) — «Xấp Xỉ Bằng»" },
+        { "char": "≅", "label": "Xấp Xỉ Bằng (U+2245)" },
+        { "char": "≃", "label": "Tiệm Cận Bằng (U+2243)" },
+        { "char": "~", "label": "Dấu Ngã (U+007E) — Phím ASCII Thường Được Gõ Thay Thế" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/keyboard-symbols/", "title": "Ký Hiệu Bàn Phím", "desc": "Dấu ngã, dấu huyền, ampersand và phần còn lại của các phím dấu câu, ký hiệu trên bàn phím tiêu chuẩn, sẵn sàng để sao chép." },
+    { "href": "/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Gần bằng, tương tự với, và các toán tử cùng quan hệ lấp đầy một phương trình bên cạnh dấu ngã." },
+    { "href": "/library/accent-marks-diacritics/", "title": "Dấu Phụ & Dấu Trọng Âm", "desc": "Dấu ngã kết hợp trên ñ và ã, cùng dấu sắc, dấu huyền, dấu hai chấm trên và các dấu khác nằm trên một chữ cái." }
+  ]
+}

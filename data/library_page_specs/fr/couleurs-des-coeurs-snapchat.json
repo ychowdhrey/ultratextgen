@@ -1,0 +1,66 @@
+{
+  "slug": "couleurs-des-coeurs-snapchat",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Couleurs des Cœurs Snapchat : Ce que Signifie Chaque Emoji Cœur (💛 ❤️ 💕)",
+  "meta_description": "Ce que signifie l'emoji cœur à côté du nom d'un ami sur Snapchat — la progression classique 💛 puis ❤️ puis 💕 des meilleurs amis, et les significations générales des couleurs de cœur. Personnalisable — vérifie tes propres Réglages.",
+  "canonical": "https://ultratextgen.com/fr/symbol/couleurs-des-coeurs-snapchat/",
+  "breadcrumb": "Couleurs des Cœurs Snapchat",
+  "hero_h1": "Couleurs des Cœurs Snapchat",
+  "hero_tagline": "Ce que signifie vraiment l'emoji cœur à côté du nom d'un ami sur Snapchat — la progression classique de couleurs des meilleurs amis, expliquée honnêtement, plus un rappel sur la signification générale des couleurs de cœur. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Snapchat affiche un petit emoji cœur à côté du nom de certains de tes amis, et la couleur n'a rien d'aléatoire — elle suit depuis combien de temps vous êtes, tous les deux, le meilleur ami numéro un l'un de l'autre. Cette page traite cette signification propre à Snapchat en priorité, avec un court rappel de ce que signifie chaque couleur de cœur en usage Unicode général (la version complète de cette histoire générale vit sur les pages symbole cœur et emoji cœur liées ci-dessous). Une mise en garde honnête d'entrée de jeu : Snapchat te permet de personnaliser, voire de désactiver entièrement les Friend Emojis dans les Réglages — considère donc la progression ci-dessous comme le classique de longue date par défaut, pas un tableau figé à jamais, et vérifie Réglages > Friend Emojis pour connaître ta propre configuration actuelle.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/couleurs-des-coeurs-snapchat/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/snapchat-heart-colors/" }
+  ],
+  "sections": [
+    {
+      "id": "coeurs-snapchat",
+      "label": "Cœurs sur Snapchat",
+      "h2": "Les Couleurs de Cœur Utilisées par Snapchat",
+      "intro": "Les trois couleurs de cœur qui apparaissent dans la progression classique des meilleurs amis sur Snapchat.",
+      "symbols": [
+        { "char": "💛", "label": "Cœur Jaune" },
+        { "char": "❤️", "label": "Cœur Rouge" },
+        { "char": "💕", "label": "Deux Cœurs (Rose)" }
+      ]
+    },
+    {
+      "id": "autres-couleurs-de-coeur",
+      "label": "Autres Couleurs de Cœur",
+      "h2": "Les Autres Couleurs d'Emoji Cœur (Signification Générale)",
+      "intro": "Le reste de la palette de couleurs de cœur d'Unicode — voir le hub complet emoji cœur ci-dessous pour la liste intégrale et chaque signification.",
+      "symbols": [
+        { "char": "🧡", "label": "Cœur Orange" },
+        { "char": "💚", "label": "Cœur Vert" },
+        { "char": "💙", "label": "Cœur Bleu" },
+        { "char": "💜", "label": "Cœur Violet" }
+      ]
+    },
+    {
+      "id": "formes-symbole-coeur",
+      "label": "Formes du Symbole Cœur",
+      "h2": "Symbole Cœur & Formes Textuelles",
+      "intro": "Les glyphes de cœur hors-couleur — le cœur Unicode de couleur de carte et le cœur texte classique.",
+      "symbols": [
+        { "char": "♥", "label": "Cœur Noir, Couleur de Carte (U+2665)" },
+        { "char": "<3", "label": "Cœur Texte ASCII" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/snapchat-symbols/", "title": "Snapchat Symbols & Emoji", "desc": "Symboles de bio Snapchat à copier-coller et l'explication complète du système Friend Emoji (en anglais)." },
+    { "href": "/library/heart-emoji/", "title": "Heart Emoji & Kaomoji", "desc": "Toutes les couleurs de cœur, leurs significations et les combos, réunis dans un même hub (en anglais)." },
+    { "href": "/fr/symbol/symbole-coeur/", "title": "Symbole Cœur", "desc": "L'origine, les codes Unicode et la façon de taper le cœur de couleur de carte." },
+    { "href": "/fr/symbol/emoji-lunettes-de-soleil/", "title": "Emoji Lunettes de Soleil", "desc": "Le code Unicode du glyphe 😎 et son rôle dans le Friend Emoji de Snapchat." }
+  ]
+}

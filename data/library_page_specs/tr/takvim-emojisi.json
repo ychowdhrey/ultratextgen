@@ -1,0 +1,95 @@
+{
+  "slug": "takvim-emojisi",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Takvim Emojisi (📅): Kopyala Yapıştır, Kod Noktası ve Neden Her Zaman 17 Temmuz'u Gösterir",
+  "meta_description": "Takvim emojisi 📅 (U+1F4C5) — kod noktası, nasıl yazılır ve tarihinin Apple, Samsung, Google ve çoğu diğer platformda neden 17 Temmuz'da dondurulduğunun gerçek nedeni.",
+  "canonical": "https://ultratextgen.com/tr/symbol/takvim-emojisi/",
+  "breadcrumb": "Takvim Emojisi",
+  "hero_h1": "Takvim Emojisi",
+  "hero_tagline": "Takvim yaprağı 📅 — kod noktası, alternatif yazma kısayolları ve tarihinin neredeyse her yerde neden 17 Temmuz'da donduğunun ardındaki belirli Apple hikâyesi. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "📅 TAKVİM (U+1F4C5), Unicode'un tarihler, son tarihler ve planlama için kısayoludur — üstte iğnelenmiş, koparılmış bir takvim yaprağı. Çoğu platformda yakından bak, üzerindeki tarih hiç değişmez: 17 Temmuz'da sabitlenmiştir; bu tasarım seçimi belirli bir Apple ürün duyurusuna dayanır ve daha sonra resmi olmayan bir bayramın var olma nedeni hâline gelmiştir. Bu sayfa önce glifin kendisini tanımlar — anlamı, kod noktası ve nasıl yazılacağı — sonra 17 Temmuz hikâyesini, buna uymayan platformlar dâhil, baştan sona ele alır.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "calendar-emoji-core",
+      "label": "Glif",
+      "h2": "Takvim Emojisi",
+      "intro": "Temel Unicode glifi — tek bir koparılmış takvim yaprağı.",
+      "symbols": [
+        {
+          "char": "📅",
+          "label": "Calendar (U+1F4C5)"
+        }
+      ]
+    },
+    {
+      "id": "related-calendar-emoji",
+      "label": "İlgili Takvim Emojileri",
+      "h2": "Karıştırıldığı Diğer Takvim Emojileri",
+      "intro": "Her biri farklı bir fiziksel takvim stilini betimleyen iki komşu Unicode takvim glifi.",
+      "symbols": [
+        {
+          "char": "📆",
+          "label": "Tear-Off Calendar (U+1F4C6)"
+        },
+        {
+          "char": "🗓️",
+          "label": "Spiral Calendar (U+1F5D3)"
+        }
+      ]
+    },
+    {
+      "id": "planning-cluster",
+      "label": "Planlama ve Zaman Kümesi",
+      "h2": "İlgili Planlama ve Zaman Emojileri",
+      "intro": "Planlama ve hatırlatıcı bağlamlarında sık sık bir takvimle birlikte görünen emojiler.",
+      "symbols": [
+        {
+          "char": "⏰",
+          "label": "Alarm Clock"
+        },
+        {
+          "char": "📌",
+          "label": "Pushpin"
+        },
+        {
+          "char": "✅",
+          "label": "Check Mark Button"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Nesne Emojileri",
+      "desc": "Tam takvim ve planlama seti dâhil, zaten kodlanmış her nesne emojisi."
+    },
+    {
+      "href": "/library/clock-time-symbols/",
+      "title": "Saat ve Zaman Sembolleri",
+      "desc": "Saat kadranı, alarm ve zamanla ilgili emojiler, göz atılabilir ve kopyala yapıştıra hazır."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/takvim-emojisi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/calendar-emoji/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

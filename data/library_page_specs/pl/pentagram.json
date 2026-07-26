@@ -1,0 +1,82 @@
+{
+  "slug": "pentagram",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Pentagram: Skopiuj ⛤ — Wiccańska Gwiazda w Górę kontra Satanistyczny Symbol w Dół",
+  "meta_description": "Skopiuj pentagram (⛤) i odwrócony pentagram (⛧) oraz poznaj historię tego, jak gwiazda skierowana w górę stała się symbolem wiccańskim, a skierowana w dół — symbolem satanistycznym, co sięga konkretnie 1966 roku. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/pentagram/",
+  "breadcrumb": "Pentagram",
+  "hero_h1": "Pentagram",
+  "hero_tagline": "Pięcioramienna gwiazda (⛤) — święty symbol w wicce, gdy skierowana jest wierzchołkiem w górę, i podstawa oficjalnego symbolu Kościoła Szatana, gdy skierowana jest wierzchołkiem w dół, od 1966 roku. Jedna gwiazda, dwie społeczności, dwie orientacje. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Pentagram (⛤, U+26E4) to pięcioramienna gwiazda narysowana jedną nieprzerwaną linią. Skierowany wierzchołkiem w górę jest świętym symbolem w wicce i współczesnym paganizmie, oznaczającym pięć klasycznych żywiołów. Skierowany wierzchołkiem w dół — odwrócony pentagram (⛧, U+26E7) — jest najbardziej znany jako podstawa oficjalnego symbolu Kościoła Szatana, a to skojarzenie wcale nie jest starożytne, lecz sięga konkretnej, datowanej decyzji z 1966 roku. Ta sama gwiazda, używana przez dwie różne, zorganizowane społeczności do naprawdę różnych celów.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pentagram-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/pentagram/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pentagram-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "pentagram-w-gore-i-w-dol",
+      "label": "Pentagram",
+      "h2": "Pentagram — Wierzchołkiem w Górę i w Dół",
+      "intro": "Pięcioramienna gwiazda w swoich głównych unicode'owych orientacjach. Wierzchołkiem w górę (⛤) to standardowa forma wiccańska i pogańska; odwrócona, skierowana wierzchołkiem w dół gwiazda (⛧) kojarzona jest z symbolem Kościoła Szatana.",
+      "symbols": [
+        { "char": "⛤", "label": "Pentagram (Wierzchołkiem w Górę)" },
+        { "char": "⛧", "label": "Odwrócony Pentagram (Wierzchołkiem w Dół)" },
+        { "char": "⛥", "label": "Pentagram Przeplatany Prawoskrętny" },
+        { "char": "⛦", "label": "Pentagram Przeplatany Lewoskrętny" }
+      ]
+    },
+    {
+      "id": "symbole-okultystyczne",
+      "label": "Symbole Okultystyczne",
+      "h2": "Symbole Okultystyczne i Ezoteryczne",
+      "intro": "Symbole, obok których pentagram najczęściej pojawia się w kontekście wiccańskim, pogańskim i szerzej ezoterycznym — fazy księżyca, znaki alchemiczne i inne duchowe glify.",
+      "symbols": [
+        { "char": "☽", "label": "Pierwsza Kwadra Księżyca" },
+        { "char": "☾", "label": "Ostatnia Kwadra Księżyca" },
+        { "char": "☿", "label": "Merkury (Alchemiczny)" },
+        { "char": "☥", "label": "Anch" },
+        { "char": "☯", "label": "Yin Yang" }
+      ]
+    },
+    {
+      "id": "rodzina-gwiazd-pieciopromiennych",
+      "label": "Rodzina Gwiazd",
+      "h2": "Rodzina Gwiazd Pięcioramiennych",
+      "intro": "Zwyczajne gwiazdy pięcioramienne — codzienni, nieezoteryczni kuzyni pentagramu, przydatni do bio, ocen i ozdobnego tekstu.",
+      "symbols": [
+        { "char": "★", "label": "Czarna Gwiazda" },
+        { "char": "☆", "label": "Biała Gwiazda" },
+        { "char": "⭐", "label": "Biała Gwiazda Średnia" },
+        { "char": "✰", "label": "Biała Gwiazda z Cieniem" },
+        { "char": "✮", "label": "Pogrubiona Gwiazda z Konturem" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-witchy-occult/",
+      "title": "Symbole Witchy i Okultystyczne",
+      "desc": "Pentagramy, fazy księżyca, znaki alchemiczne i inne symbole w jednym przeglądalnym zestawie."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Symbole wiary i duchowości z głównych światowych tradycji, w tym żywej praktyki pogańskiej i wiccańskiej."
+    },
+    {
+      "href": "/pl/symbol/symbol-autyzmu/",
+      "title": "Symbol Autyzmu",
+      "desc": "Kolejny symbol z realną, udokumentowaną historią znaczenia, opisaną bez stawania po żadnej ze stron."
+    }
+  ]
+}

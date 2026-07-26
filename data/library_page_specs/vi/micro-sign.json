@@ -1,0 +1,67 @@
+{
+  "slug": "micro-sign",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Micro: Sao Chép & Dán µ So Với Chữ Mu Hy Lạp (μ) — Nên Dùng Ký Hiệu Nào",
+  "meta_description": "Sao chép ký hiệu micro (µ) dùng cho micron, microgram — và tìm hiểu vì sao nó là một ký tự Unicode khác với chữ Hy Lạp mu (μ) mà nó trông giống hệt. Nhấp để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/micro-sign/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Micro",
+  "hero_h1": "Ký Hiệu Micro (µ)",
+  "hero_tagline": "Ký hiệu micro (µ) dùng cho micron, microgram và micro giây — và vì sao nó là một ký tự hoàn toàn khác với chữ cái Hy Lạp mu trông giống hệt nó. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu micro (µ, U+00B5) và chữ thường Hy Lạp mu (μ, U+03BC) hiển thị thành cùng một glyph hệt nhau trong hầu hết mọi phông chữ, nhưng Unicode coi chúng là hai ký tự riêng biệt. Việc bạn dán ký tự nào có thể âm thầm phá vỡ tìm kiếm, khớp mẫu regex và tên tệp mà không hề trông sai trên màn hình.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/micro-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/micro-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/micro-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "micro-sign",
+      "label": "Ký Hiệu Micro",
+      "h2": "Ký Hiệu Micro (U+00B5)",
+      "intro": "Ký hiệu micro cũ, được giữ lại trong Unicode để tương thích với các hệ thống Latin-1 (ISO/IEC 8859-1) đời trước. Dùng cho µm (micron), µg (microgram), µs (micro giây).",
+      "symbols": [
+        { "char": "µ", "label": "Ký Hiệu Micro" },
+        { "char": "µs", "label": "Viết Tắt Micro Giây" },
+        { "char": "µg", "label": "Viết Tắt Microgram" }
+      ]
+    },
+    {
+      "id": "greek-mu",
+      "label": "Mu Hy Lạp",
+      "h2": "Chữ Thường Hy Lạp Mu (U+03BC)",
+      "intro": "Chữ cái thứ mười hai thật sự trong bảng chữ cái Hy Lạp — trông giống hệt ký hiệu micro và là ký tự mà chính quy tắc chuẩn hóa của Unicode ưu tiên.",
+      "symbols": [
+        { "char": "μ", "label": "Chữ Thường Hy Lạp Mu" },
+        { "char": "Μ", "label": "Chữ Hoa Hy Lạp Mu" }
+      ]
+    },
+    {
+      "id": "related-unit-symbols",
+      "label": "Ký Hiệu Đơn Vị Liên Quan",
+      "h2": "Ký Hiệu Thường Đi Kèm Với Ký Hiệu Micro",
+      "intro": "Các ký hiệu đo lường và ký hiệu khoa học khác thường xuất hiện cùng µ trong văn bản kỹ thuật.",
+      "symbols": [
+        { "char": "Ω", "label": "Ký Hiệu Ohm" },
+        { "char": "°", "label": "Ký Hiệu Độ" },
+        { "char": "±", "label": "Ký Hiệu Cộng Trừ" },
+        { "char": "‰", "label": "Ký Hiệu Phần Nghìn" },
+        { "char": "∞", "label": "Vô Cực" },
+        { "char": "≈", "label": "Gần Bằng" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/unit-measurement-symbols/", "title": "Ký Hiệu Đơn Vị & Đo Lường", "desc": "Các ký hiệu đo lường hệ mét, hệ Anh và khoa học dùng cho văn bản kỹ thuật." },
+    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp trong Unicode, dạng hoa và thường." },
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Các toán tử toán học, chữ cái Hy Lạp, căn số và ký hiệu vô cực." }
+  ]
+}

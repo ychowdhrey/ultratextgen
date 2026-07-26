@@ -1,0 +1,81 @@
+{
+  "slug": "sinal-de-rublo",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Sinal de Rublo: Copiar e Colar ₽ — o Símbolo Monetário Que a Rússia Escolheu por Votação Popular",
+  "meta_description": "Copie e cole o sinal de rublo (₽, U+20BD) — um dos símbolos monetários mais recentes do mundo, escolhido por votação popular em 2013 com mais de 284 mil russos. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/sinal-de-rublo/",
+  "breadcrumb": "Sinal de Rublo",
+  "hero_h1": "Sinal de Rublo (₽)",
+  "hero_tagline": "O ₽, o «Р» cirílico cruzado por uma barra que a Rússia adotou em 2013 depois de uma votação popular nacional — tornando-se um dos símbolos monetários nacionais mais jovens do Unicode. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O sinal de rublo (₽) é um dos símbolos monetários nacionais mais jovens do mundo — codificado como U+20BD RUBLE SIGN no bloco Currency Symbols do Unicode (U+20A0–U+20CF), e adicionado ao padrão apenas na versão 7.0, lançada em junho de 2014. Sua origem é documentada de forma incomum. Diferente do símbolo de dólar ou de libra, cujo nascimento exato ainda é debatido, o ₽ foi escolhido de forma deliberada e pública: o Banco Central da Rússia reduziu milhares de propostas a cinco designs finalistas e depois promoveu uma votação popular on-line entre 5 de novembro e 5 de dezembro de 2013. O glifo vencedor — um «Р» cirílico maiúsculo (a letra Er) com uma única barra horizontal adicionada abaixo da curva — recebeu 61% de mais de 284 mil votos, e o banco central o aprovou formalmente em 11 de dezembro de 2013. Antes disso, os russos não tinham um sinal dedicado e escreviam a moeda com abreviações como «руб.» ou um simples «р.». O próprio rublo é a moeda da Rússia (código ISO RUB) e um dos nomes de moeda mais antigos ainda em uso, remontando à Novogárdia medieval; o mesmo nome também é usado pelo rublo bielorrusso e pelo rublo transnístrio. Uma moeda com séculos de idade finalmente ganhando seu próprio símbolo em 2013 faz do ₽ uma raridade genuína.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ruble-sign/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/sinal-de-rublo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ruble-sign/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "ruble-sign",
+      "label": "Sinal de Rublo",
+      "h2": "O Sinal de Rublo (₽)",
+      "intro": "A marca em si e a letra cirílica que a originou. O design vencedor é o Er maiúsculo (Р) com uma barra horizontal extra abaixo da curva — o р minúsculo é o que aparecia na antiga abreviação «р.».",
+      "symbols": [
+        { "char": "₽", "label": "Sinal de Rublo (U+20BD)" },
+        { "char": "Р", "label": "Letra Cirílica Maiúscula Er (U+0420) — a Base do Sinal" },
+        { "char": "р", "label": "Letra Cirílica Minúscula Er (U+0440) — Usada na Antiga Abreviação «р.»" }
+      ]
+    },
+    {
+      "id": "newest-currency-signs",
+      "label": "Adotados Recentemente",
+      "h2": "Outros Sinais Monetários Adotados Recentemente",
+      "intro": "O sinal de rublo tem vizinhos próximos no bloco Currency Symbols do Unicode — um grupo de marcas codificadas só nos anos 2010, quando países pós-soviéticos e outros deram um glifo próprio às suas moedas. O sinal de rupia indiana, como o rublo, foi escolhido por concurso público de design.",
+      "symbols": [
+        { "char": "₹", "label": "Sinal de Rupia Indiana (U+20B9) — Escolhido por Concurso Público em 2010" },
+        { "char": "₺", "label": "Sinal de Lira Turca (U+20BA) — Adotado em 2012" },
+        { "char": "₸", "label": "Sinal de Tenge (U+20B8) — Tenge Cazaque" },
+        { "char": "₼", "label": "Sinal de Manat (U+20BC) — Manat Azerbaijano" },
+        { "char": "₾", "label": "Sinal de Lari (U+20BE) — Lari Georgiano" }
+      ]
+    },
+    {
+      "id": "classic-currency-symbols",
+      "label": "Símbolos Clássicos",
+      "h2": "Símbolos Monetários Clássicos para Contraste",
+      "intro": "Diante da origem nítida e documentada do rublo em 2013, as marcas monetárias mais conhecidas do mundo são séculos mais antigas e mais nebulosas — as histórias exatas por trás dos símbolos de dólar e de libra ainda são discutidas.",
+      "symbols": [
+        { "char": "$", "label": "Símbolo de Dólar (U+0024)" },
+        { "char": "£", "label": "Símbolo de Libra Esterlina (U+00A3)" },
+        { "char": "€", "label": "Símbolo de Euro (U+20AC)" },
+        { "char": "¥", "label": "Símbolo de Iene (U+00A5)" },
+        { "char": "¢", "label": "Símbolo de Centavo (U+00A2)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "Um conjunto navegável de marcas monetárias do mundo, do dólar e do euro à rupia, ao rublo e ao bitcoin."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-rupia/",
+      "title": "Símbolo de Rupia",
+      "desc": "O primo mais próximo do rublo: o ₹ da Índia também foi escolhido por concurso público de design, só três anos antes, em 2010."
+    },
+    {
+      "href": "/pt/symbol/simbolo-de-dolar/",
+      "title": "Símbolo de Dólar",
+      "desc": "A história oposta — o símbolo $ tem séculos de idade e origem disputada, enquanto o nascimento do rublo em 2013 está totalmente documentado."
+    }
+  ]
+}

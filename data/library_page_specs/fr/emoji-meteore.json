@@ -1,0 +1,63 @@
+{
+  "slug": "emoji-meteore",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Emoji Météore : Copier-Coller 🪋 — le Candidat d'Unicode 18.0 qui se Détache de Comète",
+  "meta_description": "Météore (🪋, U+1FA8B) est un candidat provisoire pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Il résout une scission de rendu vieille de plusieurs années sur l'emoji Comète — pas encore approuvé, et aucune police ne l'affiche à ce jour. Voici son histoire, sa signification et son statut.",
+  "canonical": "https://ultratextgen.com/fr/symbol/emoji-meteore/",
+  "breadcrumb": "Emoji Météore",
+  "hero_h1": "Emoji Météore",
+  "hero_tagline": "Un météore filant, détaché de la crise d'identité que traîne Comète depuis dix ans — provisoirement retenu pour Emoji 18.0, attendu avec Unicode 18.0 en septembre 2026. Encore à l'état de brouillon : pas encore approuvé, et aucune police ne l'affiche pour l'instant. Clique pour copier le code malgré tout.",
+  "intro": "Météore (🪋, U+1FA8B) est un emoji candidat provisoirement retenu pour Emoji 18.0, le volet emoji d'Unicode 18.0, dont la finalisation est attendue en septembre 2026. Il représente une boule de feu filante entrant dans l'atmosphère — et il existe précisément pour corriger une scission de rendu entre fournisseurs qui poursuit l'emoji Comète (☄️) existant depuis ses débuts : certaines plateformes dessinaient Comète comme une boule de glace bleue et scintillante, d'autres l'ont redessinée comme une roche brûlante en plein impact — deux concepts réellement différents partageant un seul code. L'annonce d'Unicode le formule sans détour : « faire un vœu devant une étoile filante et assister à un événement d'extinction, ce sont deux énergies totalement différentes ». Météore reprend le sens « boule de feu » pour que Comète puisse retrouver un dessin bleu-glace cohérent partout. Comme il s'agit encore d'un brouillon, aucun système d'exploitation, clavier ou police ne l'affiche aujourd'hui ; attends-toi à un carré vide ou à un glyphe de repli jusqu'à ce qu'Emoji 18.0 soit approuvé et que les plateformes déploient leur support, probablement courant 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/meteor-emoji/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/emoji-meteore/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/meteor-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "meteore",
+      "label": "Météore",
+      "h2": "Emoji Météore",
+      "intro": "Le caractère provisoire lui-même — copiable dès aujourd'hui en tant que code, même si aucune police ne peut encore l'afficher.",
+      "symbols": [
+        { "char": "🪋", "label": "Météore (brouillon, U+1FA8B)" }
+      ]
+    },
+    {
+      "id": "a-distinguer-de",
+      "label": "À Distinguer de",
+      "h2": "Les Emoji Auxquels on le Confond",
+      "intro": "Des emoji célestes déjà encodés auxquels on compare le plus souvent Météore, ou dont on l'accuse de faire doublon.",
+      "symbols": [
+        { "char": "☄️", "label": "Comète — le dessin dont Météore se détache" },
+        { "char": "🌠", "label": "Étoile Filante" },
+        { "char": "⭐", "label": "Étoile" }
+      ]
+    },
+    {
+      "id": "autres-candidats",
+      "label": "Autres Candidats Provisoires",
+      "h2": "Les Autres Candidats Provisoires d'Emoji 18.0",
+      "intro": "Météore n'est pas le seul caractère non approuvé de cette édition — ceux-ci sont retenus en même temps que lui, tout aussi invisibles jusqu'à la décision de septembre 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Visage Fissuré (brouillon, U+1FAEB) — grand gagnant du vote public" },
+        { "char": "🫝", "label": "Cornichon (brouillon, U+1FADD)" },
+        { "char": "🫌", "label": "Papillon Monarque (brouillon, U+1FACC)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/weather-symbols/", "title": "Weather Symbols", "desc": "Soleil, pluie, neige et tous les caractères célestes déjà encodés, dont Comète (en anglais)." },
+    { "href": "/fr/symbol/emoji-visage-fissure/", "title": "Emoji Visage Fissuré", "desc": "Le candidat provisoire d'Emoji 18.0 qui a remporté le vote public." },
+    { "href": "/fr/symbol/emoji-cornichon/", "title": "Emoji Cornichon", "desc": "Un autre candidat provisoire d'Emoji 18.0 — repêché d'une proposition Apple Core mise en attente." }
+  ]
+}

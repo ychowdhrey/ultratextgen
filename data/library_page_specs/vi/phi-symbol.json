@@ -1,0 +1,67 @@
+{
+  "slug": "phi-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Phi: Sao Chép & Dán φ Φ ϕ — Chữ Cái Tỉ Lệ Vàng Đặt Theo Tên Phidias",
+  "meta_description": "Sao chép ký hiệu phi — chữ thường φ (U+03C6), chữ hoa Φ, và biến thể toán học vòng kín ϕ — chữ cái tỉ lệ vàng (≈1,618) mà Mark Barr đặt tên vào khoảng năm 1909 theo tên nhà điêu khắc Phidias. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/phi-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Phi",
+  "hero_h1": "Ký Hiệu Phi",
+  "hero_tagline": "Chữ thường φ đại diện cho tỉ lệ vàng (≈1,618), chữ hoa Φ mà các nhà vật lý dùng cho từ thông, và biến thể toán học vòng kín ϕ — chữ cái mà Mark Barr đặt tên vào khoảng năm 1909 theo tên nhà điêu khắc Phidias. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Chữ thường của phi, φ (U+03C6, GREEK SMALL LETTER PHI), là chữ cái thứ 21 trong bảng chữ cái Hy Lạp, nhưng nó nổi tiếng nhất với vai trò ký hiệu cho tỉ lệ vàng — số vô tỉ (1 + √5) / 2 ≈ 1,6180339887 mà các nghệ sĩ và kiến trúc sư theo đuổi suốt nhiều thế kỷ. Việc đặt tên này thực ra khá gần đây: tỉ lệ này từng được viết bằng chữ Hy Lạp tau (τ) rất lâu, cho đến khi nhà toán học người Mỹ Mark Barr đề xuất φ vào khoảng năm 1909, chọn nó vì đây là chữ cái đầu của Phidias (Φειδίας, khoảng 490–430 TCN), nhà điêu khắc gắn liền với tỉ lệ của đền Parthenon. Phi cũng mang một điểm đặc biệt mà không chữ cái Hy Lạp nào khác ở đây có — hai glyph viết thường. Chữ cái quen thuộc φ (U+03C6) thường hiển thị ở dạng «vòng» mở, trong khi một ký hiệu phi Hy Lạp được mã hóa riêng biệt, ϕ (U+03D5), là dạng «đóng», có nét gạch — một vòng tròn bị cắt ngang bởi một đường thẳng đứng — mà Unicode khuyến nghị dùng cho toán học từ phiên bản 3.0, dù hình dạng thực tế hiển thị tùy thuộc vào từng phông chữ. Chữ hoa Φ (U+03A6) đảm nhận công việc nặng hơn trong khoa học: đây là ký hiệu chuẩn cho từ thông trong vật lý, còn chữ thường φ ký hiệu hàm số ơle phi, φ(n), trong lý thuyết số.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/phi-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/phi-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/phi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-phi-symbol",
+      "label": "Ký Hiệu Phi",
+      "h2": "Ký Hiệu Phi — φ, Φ & ϕ",
+      "intro": "Ba dạng mà mọi người nghĩ đến khi nói «ký hiệu phi»: chữ thường quen thuộc, chữ hoa, và biến thể toán học chuyên dụng. Dán dạng nào tùy bạn cần.",
+      "symbols": [
+        { "char": "φ", "label": "Chữ Thường Hy Lạp Phi (U+03C6) — Chữ Cái Tỉ Lệ Vàng, Dạng Vòng Mở" },
+        { "char": "Φ", "label": "Chữ Hoa Hy Lạp Phi (U+03A6) — Từ Thông Trong Vật Lý" },
+        { "char": "ϕ", "label": "Ký Hiệu Phi Hy Lạp (U+03D5) — Biến Thể Toán Học Vòng Đóng, Có Nét Gạch" }
+      ]
+    },
+    {
+      "id": "phi-golden-ratio-math",
+      "label": "Tỉ Lệ Vàng & Toán Học",
+      "h2": "Phi: Tỉ Lệ Vàng & Ứng Dụng Toán Học",
+      "intro": "Vai trò được tìm kiếm nhiều nhất của phi. Chữ thường φ đặt tên cho tỉ lệ vàng ≈ 1,618, định nghĩa bằng (1 + √5) / 2; từ Unicode 3.0, dạng đóng ϕ (U+03D5) là glyph được khuyến nghị cho cách dùng toán học đó, còn chữ hoa Φ ký hiệu từ thông.",
+      "symbols": [
+        { "char": "φ", "label": "Phi Thường (U+03C6) — Tỉ Lệ Vàng ≈ 1,6180339887" },
+        { "char": "ϕ", "label": "Ký Hiệu Phi Hy Lạp (U+03D5) — Glyph Đóng Được Ưu Tiên Trong Toán Học" },
+        { "char": "Φ", "label": "Phi Hoa (U+03A6) — Từ Thông" },
+        { "char": "√", "label": "Căn Bậc Hai (U+221A) — Xuất Hiện Trong Công Thức (1 + √5) / 2 Của Phi" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Chữ Cái Hy Lạp",
+      "h2": "Chữ Cái Hy Lạp Liên Quan",
+      "intro": "Phi là chữ cái thứ 21 trong bảng chữ cái Hy Lạp. Đây là những chữ cái lân cận và hằng số nổi tiếng được tìm kiếm nhiều nhất cùng nó.",
+      "symbols": [
+        { "char": "π", "label": "Chữ Thường Hy Lạp Pi" },
+        { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" },
+        { "char": "Ω", "label": "Chữ Hoa Hy Lạp Omega" },
+        { "char": "θ", "label": "Chữ Thường Hy Lạp Theta" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Tỉ lệ vàng, căn bậc hai, và các toán tử cùng chữ cái Hy Lạp lấp đầy một phương trình." },
+    { "href": "/vi/symbol/pi-symbol/", "title": "Ký Hiệu Pi", "desc": "Hằng số nổi tiếng đồng hành cùng phi: một chữ cái Hy Lạp khác, π ≈ 3,14159, đại diện cho một con số thay vì một âm thanh." }
+  ]
+}

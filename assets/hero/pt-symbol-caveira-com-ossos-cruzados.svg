@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghptsymbol" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhptsymbol" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhptsymbol" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshptsymbol" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshptsymbol)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhptsymbol)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhptsymbol)"/>
+  <g transform="translate(740 -10) scale(1.02)">
+    <path d="M110 130 Q110 70 180 70 Q250 70 250 130 Q250 175 225 195 L225 220
+             L135 220 L135 195 Q110 175 110 130 Z" fill="url(#ghptsymbol)"/>
+    <circle cx="150" cy="135" r="18" fill="#fff"/>
+    <circle cx="210" cy="135" r="18" fill="#fff"/>
+    <path d="M170 165 L190 165 L180 185 Z" fill="#FBFBFE"/>
+    <rect x="140" y="220" width="80" height="20" rx="6" fill="url(#ghptsymbol)"/>
+    <line x1="120" y1="270" x2="160" y2="250" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="270" x2="200" y2="250" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="120" y1="250" x2="160" y2="270" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="250" x2="200" y2="270" stroke="#64748b" stroke-width="8" stroke-linecap="round"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10">
+    <path d="M110 130 Q110 70 180 70 Q250 70 250 130 Q250 175 225 195 L225 220
+             L135 220 L135 195 Q110 175 110 130 Z" fill="url(#ghptsymbol)"/>
+    <circle cx="150" cy="135" r="18" fill="#fff"/>
+    <circle cx="210" cy="135" r="18" fill="#fff"/>
+    <path d="M170 165 L190 165 L180 185 Z" fill="#FBFBFE"/>
+    <rect x="140" y="220" width="80" height="20" rx="6" fill="url(#ghptsymbol)"/>
+    <line x1="120" y1="270" x2="160" y2="250" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="270" x2="200" y2="250" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="120" y1="250" x2="160" y2="270" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="240" y1="250" x2="200" y2="270" stroke="#64748b" stroke-width="8" stroke-linecap="round"/></g>
+</svg>

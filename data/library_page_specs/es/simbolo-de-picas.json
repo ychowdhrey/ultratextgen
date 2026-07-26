@@ -1,0 +1,79 @@
+{
+  "lang": "es",
+  "slug": "simbolo-de-picas",
+  "page_type": "symbol",
+  "title": "Símbolo de Picas: Copiar y Pegar ♠ ♤ — el Palo que Debe su Nombre a una Espada, no a una Pala",
+  "meta_description": "Copia y pega el símbolo de picas — sólido ♠ (U+2660) y contorno ♤ (U+2664) — y descubre cómo el palo tomó su nombre de una espada y cómo su As llevó el sello fiscal de la Corona británica. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/simbolo-de-picas/",
+  "breadcrumb": "Símbolo de Picas",
+  "hero_h1": "Símbolo de Picas",
+  "hero_tagline": "El palo de picas en sus dos formas Unicode — sólida ♠ (U+2660) y hueca ♤ (U+2664) — el símbolo de la baraja cuyo nombre desciende del palo de espadas y cuyo As de Picas llegó a llevar el sello fiscal oficial de Gran Bretaña. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La pica — ♠ (U+2660, BLACK SPADE SUIT) en su forma sólida y ♤ (U+2664, WHITE SPADE SUIT) como contorno — es uno de los cuatro palos de la baraja estándar de tipo francés, añadida a Unicode 1.1 en 1993 junto a corazones, diamantes y tréboles, los ocho glifos de palo ocupando de U+2660 a U+2667. Su nombre encierra una pequeña lección de historia: en inglés, «spade» no viene de la herramienta de cavar, sino de un parentesco con el palo de espadas de las barajas de origen latino — la palabra procede del español «espada» y del italiano «spada». Cuando los fabricantes de naipes franceses estandarizaron el sistema de cuatro palos en la segunda mitad del siglo XV, redibujaron la espada como la sencilla forma de hoja negra que conocemos hoy — barata de estarcir en dos colores, razón por la que la baraja francesa acabó inundando Europa y llegando hasta Inglaterra. En la convención de Unicode, «black» (negro) significa relleno y «white» (blanco) significa contorno, dejando el color real en manos de la fuente tipográfica — por eso existe el mismo par relleno/contorno para cada uno de los cuatro palos. El As de Picas guarda el folclore más rico de toda la baraja: en Inglaterra llevó el sello fiscal oficial desde 1712 y, a partir de 1765, un diseño grabado con esmero que imprimía la Stamp Office — el antecesor del as decorado que todavía vemos hoy.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-picas/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "simbolo-de-picas",
+      "label": "Símbolo de Picas",
+      "h2": "El Símbolo de Picas — ♠ y ♤",
+      "intro": "El palo en sí, en sus dos formas Unicode. La ♠ sólida es la pica «negra» por defecto; ♤ es la versión «blanca» de contorno, y ♠️ es la forma de presentación emoji con selector de variación. Lista para pegar donde sea.",
+      "symbols": [
+        { "char": "♠", "label": "Palo de Picas Negro (U+2660) — Sólido / Relleno" },
+        { "char": "♤", "label": "Palo de Picas Blanco (U+2664) — Contorno" },
+        { "char": "♠️", "label": "Emoji de Palo de Picas (U+2660 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "los-cuatro-palos",
+      "label": "Los Cuatro Palos",
+      "h2": "Los Cuatro Palos — Rellenos y de Contorno",
+      "intro": "Unicode le da a cada palo francés un glifo relleno «negro» y uno de contorno «blanco», agrupados en una sola serie de U+2660 a U+2667. Fíjate en la rareza: picas y tréboles son rellenos por defecto, mientras que corazones y diamantes son de contorno por defecto.",
+      "symbols": [
+        { "char": "♠", "label": "Palo de Picas Negro (U+2660)" },
+        { "char": "♥", "label": "Palo de Corazones Negro (U+2665)" },
+        { "char": "♦", "label": "Palo de Diamantes Negro (U+2666)" },
+        { "char": "♣", "label": "Palo de Tréboles Negro (U+2663)" },
+        { "char": "♤", "label": "Palo de Picas Blanco (U+2664)" },
+        { "char": "♡", "label": "Palo de Corazones Blanco (U+2661)" },
+        { "char": "♢", "label": "Palo de Diamantes Blanco (U+2662)" },
+        { "char": "♧", "label": "Palo de Tréboles Blanco (U+2667)" }
+      ]
+    },
+    {
+      "id": "el-as-y-las-cartas",
+      "label": "El As y los Naipes",
+      "h2": "El As de Picas y los Glifos de Naipes",
+      "intro": "La carta con más historia de toda la baraja: Inglaterra selló el As de Picas con una marca fiscal desde 1712 e imprimió su diseño ornamentado de la Stamp Office a partir de 1765, y una historia bélica muy repetida (y muy debatida) sitúa a las tropas estadounidenses en Vietnam usándolo como una especie de «carta de la muerte». El bloque Unicode de naipes le da a cada carta su propio glifo — aquí tienes los cuatro ases y el reverso de la carta.",
+      "symbols": [
+        { "char": "🂡", "label": "Naipe As de Picas (U+1F0A1)" },
+        { "char": "🂱", "label": "Naipe As de Corazones (U+1F0B1)" },
+        { "char": "🃁", "label": "Naipe As de Diamantes (U+1F0C1)" },
+        { "char": "🃑", "label": "Naipe As de Tréboles (U+1F0D1)" },
+        { "char": "🂠", "label": "Reverso de Naipe (U+1F0A0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Símbolos de Palos de Baraja",
+      "desc": "Los cuatro palos de la baraja — picas, corazones, diamantes y tréboles — en sus formas rellenas y de contorno para explorar y copiar."
+    },
+    {
+      "href": "/library/dice-domino-symbols/",
+      "title": "Símbolos de Dados, Dominó y Mahjong",
+      "desc": "El resto del set de mesa: caras de dados, fichas de dominó y símbolos Unicode de mahjong."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-corazon/",
+      "title": "Símbolo de Corazón (♥)",
+      "desc": "Un palo hermano: el corazón en sus formas Unicode sólida ♥ y de contorno ♡, de la misma serie U+2660–U+2667."
+    }
+  ]
+}

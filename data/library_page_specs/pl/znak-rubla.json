@@ -1,0 +1,81 @@
+{
+  "slug": "znak-rubla",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Rubla: Skopiuj ₽ — Symbol Waluty Wybrany przez Rosję w Publicznym Głosowaniu",
+  "meta_description": "Skopiuj znak rubla (₽, U+20BD) — jeden z najmłodszych symboli walut, wybrany w głosowaniu publicznym z 2013 roku przez ponad 284 000 Rosjan. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-rubla/",
+  "breadcrumb": "Znak Rubla",
+  "hero_h1": "Znak Rubla",
+  "hero_tagline": "Znak rubla ₽ — cyrylickie „Р” przekreślone poziomą kreską, które Rosja przyjęła w 2013 roku po ogólnokrajowym głosowaniu publicznym, co czyni go jednym z najmłodszych narodowych symboli walut w Unicode. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak rubla (₽) to jeden z najmłodszych narodowych symboli walut na świecie — zakodowany jako U+20BD RUBLE SIGN w unikodowym bloku Currency Symbols (U+20A0–U+20CF) i dodany do standardu dopiero w wersji 7.0, wydanej w czerwcu 2014 roku. Jego rodowód jest niezwykle dobrze udokumentowany. W przeciwieństwie do znaku dolara czy funta, których dokładne narodziny wciąż budzą spory, ₽ wybrano celowo i publicznie: Bank Rosji zawęził tysiące zgłoszeń do pięciu finałowych projektów, a następnie przeprowadził internetowe głosowanie publiczne od 5 listopada do 5 grudnia 2013 roku. Zwycięski glif — cyrylicka wielka litera „Р” (litera Er) z jedną poziomą kreską dodaną pod brzuszkiem litery — zdobył 61% z ponad 284 000 głosów, a bank centralny formalnie zatwierdził go 11 grudnia 2013 roku. Wcześniej Rosjanie nie mieli dedykowanego znaku i zapisywali walutę skrótami takimi jak „руб.” albo samym „р.”. Sam rubel to waluta Rosji (kod ISO RUB) i jedna z najstarszych wciąż używanych nazw walut, sięgająca średniowiecznego Nowogrodu; tę samą nazwę nosi też rubel białoruski i naddniestrzański. Wielowiekowy pieniądz, który dopiero w 2013 roku otrzymał własny symbol, czyni ₽ prawdziwą rzadkością.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ruble-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-rubla/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ruble-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-rubla",
+      "label": "Znak Rubla",
+      "h2": "Znak Rubla (₽)",
+      "intro": "Sam znak i cyrylicka litera, z której go zbudowano. Zwycięski projekt to wielkie Er (Р) z dodatkową poziomą kreską pod brzuszkiem litery — mała litera р to ta, która pojawiała się w dawnym skrócie „р.”.",
+      "symbols": [
+        { "char": "₽", "label": "Znak Rubla (U+20BD)" },
+        { "char": "Р", "label": "Cyrylicka Wielka Litera Er (U+0420) — Podstawa Znaku" },
+        { "char": "р", "label": "Cyrylicka Mała Litera Er (U+0440) — Użyta w Dawnym Skrócie „р.”" }
+      ]
+    },
+    {
+      "id": "niedawno-przyjete-znaki-walut",
+      "label": "Niedawno Przyjęte",
+      "h2": "Inne Niedawno Przyjęte Znaki Walut",
+      "intro": "Znak rubla ma bliskich sąsiadów w unikodowym bloku Currency Symbols — grupę znaków zakodowanych dopiero w latach 2010., gdy państwa postsowieckie i inne nadawały swoim walutom dedykowany glif. Indyjski znak rupii, podobnie jak rubel, wybrano w publicznym konkursie projektowym.",
+      "symbols": [
+        { "char": "₹", "label": "Znak Rupii Indyjskiej (U+20B9) — Wybrany w Publicznym Konkursie w 2010 Roku" },
+        { "char": "₺", "label": "Znak Liry Tureckiej (U+20BA) — Przyjęty w 2012 Roku" },
+        { "char": "₸", "label": "Znak Tenge (U+20B8) — Tenge Kazachstański" },
+        { "char": "₼", "label": "Znak Manata (U+20BC) — Manat Azerbejdżański" },
+        { "char": "₾", "label": "Znak Lari (U+20BE) — Lari Gruzińskie" }
+      ]
+    },
+    {
+      "id": "klasyczne-symbole-walut",
+      "label": "Klasyczne Symbole",
+      "h2": "Klasyczne Symbole Walut dla Porównania",
+      "intro": "W zestawieniu z klarownym, udokumentowanym rodowodem rubla z 2013 roku, najbardziej znane na świecie znaki walut są o wieki starsze i o wiele bardziej mętne — dokładne historie stojące za znakami dolara i funta wciąż są przedmiotem sporów.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara (U+0024)" },
+        { "char": "£", "label": "Znak Funta (U+00A3)" },
+        { "char": "€", "label": "Znak Euro (U+20AC)" },
+        { "char": "¥", "label": "Znak Jena (U+00A5)" },
+        { "char": "¢", "label": "Znak Centa (U+00A2)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro",
+      "desc": "Symbol euro i symbole innych popularnych walut świata do skopiowania."
+    },
+    {
+      "href": "/symbol/rupee-sign/",
+      "title": "Rupee Sign",
+      "desc": "Najbliższy kuzyn rubla: indyjskie ₹ też wybrano w publicznym konkursie projektowym, zaledwie trzy lata wcześniej, w 2010 roku."
+    },
+    {
+      "href": "/symbol/dollar-sign/",
+      "title": "Dollar Sign",
+      "desc": "Odwrotna historia — znak $ liczy sobie wieki i ma sporne pochodzenie, podczas gdy narodziny rubla z 2013 roku są w pełni udokumentowane."
+    }
+  ]
+}

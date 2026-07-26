@@ -1,0 +1,89 @@
+{
+  "slug": "chi-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Chi: Sao Chép & Dán χ Χ — Chữ X Trong «Xmas», Chi-Rho & Kiểm Định χ²",
+  "meta_description": "Sao chép chi — chữ thường χ và chữ hoa Χ — chữ cái đứng sau biểu tượng Chi-Rho, chữ «X» trong «Xmas», và kiểm định thống kê χ². Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/chi-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Chi",
+  "hero_h1": "Ký Hiệu Chi",
+  "hero_tagline": "Chữ thường χ chạy phép kiểm định thống kê χ², chữ hoa Χ mở đầu từ «Christ» trong tiếng Hy Lạp và cho ra đời biểu tượng Chi-Rho cùng chữ «X» trong «Xmas» — chữ cái Hy Lạp duy nhất luôn bị nhầm với chữ X Latin. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Chi là chữ cái thứ 22 trong bảng chữ cái Hy Lạp, viết là χ ở dạng thường (U+03C7, GREEK SMALL LETTER CHI) và Χ ở dạng hoa (U+03A7, GREEK CAPITAL LETTER CHI) — một glyph giống chữ X Latin đến mức hai chữ cái này liên tục bị nhầm lẫn với nhau. Chính sự giống nhau đó là lý do chi mang theo nhiều lịch sử đến vậy. Chữ hoa Χ là chữ cái đầu tiên của Χριστός (Christós), tiếng Hy Lạp nghĩa là «Christ» (Đấng Ki-tô), và các thầy dòng đã dùng nó làm chữ viết tắt cho cái tên này hơn một nghìn năm — cách viết «Xres mæsse» xuất hiện trong Biên Niên Sử Anglo-Saxon vào khoảng năm 1100, và chính thói quen đó là lý do tiếng Anh ngày nay vẫn viết «Xmas». Kết hợp chi với chữ cái tiếp theo, rho, ta có biểu tượng Chi-Rho ☧ (U+2627, CHI RHO), Christogram (biểu tượng lồng ghép tên Chúa) thời kỳ đầu Ki-tô giáo mà hoàng đế La Mã Constantine I lấy làm quân kỳ, gọi là labarum, sau một thị kiến được cho là ông nhìn thấy trước trận Cầu Milvian ngày 28 tháng 10 năm 312 — một câu chuyện đến với chúng ta qua các sử gia cổ đại Eusebius và Lactantius chứ không phải một ghi chép trung lập. Trong toán học và khoa học hiện đại, chữ thường χ là công cụ chủ lực của kiểm định chi bình phương (χ²), thước đo độ phù hợp mà Karl Pearson giới thiệu năm 1900 và nay là công cụ nền tảng của thống kê học và khoa học dữ liệu.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/chi-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/chi-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/chi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-chi-symbol",
+      "label": "Ký Hiệu Chi",
+      "h2": "Ký Hiệu Chi — Χ & χ",
+      "intro": "Chính chữ cái Hy Lạp, ở cả hai dạng viết. Chữ hoa Χ mang theo lịch sử tôn giáo và chữ viết tắt của chi; chữ thường χ đảm nhận phần lớn công việc toán học và khoa học hiện đại.",
+      "symbols": [
+        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7)" },
+        { "char": "χ", "label": "Chữ Thường Hy Lạp Chi (U+03C7)" }
+      ]
+    },
+    {
+      "id": "chi-rho-and-xmas",
+      "label": "Chi-Rho & Xmas",
+      "h2": "Chi-Rho, Xmas & Biểu Tượng Ki-tô Giáo",
+      "intro": "Vì chữ hoa Χ mở đầu Χριστός («Christ»), nó trở thành chữ viết tắt hàng thế kỷ cho cái tên này — nguồn gốc của cả biểu tượng Chi-Rho mà Constantine mang theo làm quân kỳ lẫn «Xmas» hiện đại. Dán từng mảnh của câu chuyện đó tại đây.",
+      "symbols": [
+        { "char": "☧", "label": "Chi Rho (U+2627) — Christogram ΧΡ / labarum" },
+        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7) — Chữ Χ Mở Đầu Χριστός" },
+        { "char": "X", "label": "Chữ Hoa Latin X (U+0058) — Chữ X Trong «Xmas»" }
+      ]
+    },
+    {
+      "id": "chi-in-stats-science",
+      "label": "Thống Kê & Khoa Học",
+      "h2": "Chi Bình Phương (χ²) Trong Thống Kê & Khoa Học",
+      "intro": "Chữ thường χ là công cụ khoa học chủ lực: kiểm định độ phù hợp χ² mà Karl Pearson giới thiệu năm 1900, cộng với đặc trưng Euler trong tô pô học và độ cảm từ trong vật lý. Ghép chữ cái này với số hai bên trên để tự tạo ra χ².",
+      "symbols": [
+        { "char": "χ", "label": "Chữ Thường Hy Lạp Chi (U+03C7) — Đại Lượng Thống Kê Kiểm Định χ²" },
+        { "char": "²", "label": "Số Mũ Hai (U+00B2) — Để Ghép Thành χ²" },
+        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7) — Cũng Dùng Đặt Tên Biến Ngẫu Nhiên" }
+      ]
+    },
+    {
+      "id": "chi-vs-latin-x",
+      "label": "Chi So Với X",
+      "h2": "Chi So Với Chữ X Latin — Cặp Song Sinh Dễ Nhầm",
+      "intro": "Chi trông gần như y hệt chữ X Latin, nhưng mỗi ký tự lại có mã điểm riêng — hoán đổi chúng cho nhau sẽ âm thầm phá vỡ tìm kiếm, mã nguồn và phương trình. Đây là cả bốn dạng để bạn sao chép đúng ký tự mình cần.",
+      "symbols": [
+        { "char": "χ", "label": "Chữ Thường Hy Lạp Chi (U+03C7)" },
+        { "char": "Χ", "label": "Chữ Hoa Hy Lạp Chi (U+03A7)" },
+        { "char": "x", "label": "Chữ Thường Latin X (U+0078)" },
+        { "char": "X", "label": "Chữ Hoa Latin X (U+0058)" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Chữ Cái Hy Lạp",
+      "h2": "Chữ Cái Hy Lạp Liên Quan",
+      "intro": "Chi là chữ cái thứ 22 trong bảng chữ cái Hy Lạp, nằm giữa phi và psi. Đây là các chữ cái lân cận và những chữ cái Hy Lạp khác được sao chép nhiều nhất cùng nó.",
+      "symbols": [
+        { "char": "φ", "label": "Chữ Thường Hy Lạp Phi" },
+        { "char": "ψ", "label": "Chữ Thường Hy Lạp Psi" },
+        { "char": "π", "label": "Chữ Thường Hy Lạp Pi" },
+        { "char": "Σ", "label": "Chữ Hoa Hy Lạp Sigma" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/greek-letter-symbols/", "title": "Ký Hiệu Chữ Cái Hy Lạp", "desc": "Trọn bộ bảng chữ cái Hy Lạp ở dạng hoa, thường và biến thể toán học để sao chép và dán." },
+    { "href": "/vi/library/math-symbols/", "title": "Ký Hiệu Toán Học", "desc": "Chi bình phương, số mũ, và các toán tử cùng chữ cái Hy Lạp lấp đầy một phương trình." },
+    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Chi-Rho, thánh giá, và các biểu tượng Ki-tô giáo cùng tôn giáo khác được tập hợp trong một trang tra cứu." },
+    { "href": "/vi/symbol/pi-symbol/", "title": "Ký Hiệu Pi", "desc": "Một chữ cái Hy Lạp khác có đời sống kép — hằng số toán học nổi tiếng π và toán tử tích Π." }
+  ]
+}

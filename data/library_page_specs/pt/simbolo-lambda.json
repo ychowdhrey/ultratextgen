@@ -1,0 +1,89 @@
+{
+  "slug": "simbolo-lambda",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Símbolo Lambda: Copiar e Colar λ Λ — o Sinal da Libertação Gay e o Cálculo Lambda de Church",
+  "meta_description": "Copie e cole o símbolo lambda — o λ minúsculo (comprimento de onda, sinal da libertação gay de 1970) e o Λ maiúsculo (a constante cosmológica) — e veja como ele batizou o lambda do Python e o AWS Lambda. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/simbolo-lambda/",
+  "breadcrumb": "Símbolo Lambda",
+  "hero_h1": "Símbolo Lambda",
+  "hero_tagline": "O λ minúsculo que o designer gráfico Tom Doerr transformou num emblema da libertação gay em 1970, a mesma letra por trás do cálculo lambda de Alonzo Church e do símbolo de comprimento de onda da física, e o Λ maiúsculo que representa a constante cosmológica. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "O glifo minúsculo de lambda, λ (U+03BB, GREEK SMALL LETTER LAMDA), é a 11ª letra do alfabeto grego — mas carrega dois dos significados mais pesados que qualquer caractere já acumulou. Em 1970, o designer gráfico Tom Doerr, membro fundador da Gay Activists Alliance (formada em Nova York em dezembro de 1969), escolheu o λ minúsculo como emblema do grupo — segundo relatos, por seu sentido na física de «uma troca completa de energia» — e, em dezembro de 1974, o Congresso Internacional pelos Direitos Gays, em Edimburgo, o declarou símbolo internacional dos direitos de gays e lésbicas; ele ainda nomeia a Lambda Legal e a Lambda Literary Foundation. A mesma letra ancora a computação: Alonzo Church construiu seu cálculo lambda nos anos 1930, o sistema formal que mais tarde deu ao Python sua palavra-chave lambda para funções anônimas (adicionada em 1994) e à Amazon seu serviço serverless AWS Lambda. Na física, λ é o símbolo padrão de comprimento de onda, enquanto o Λ maiúsculo (U+039B) denota a constante cosmológica — o termo de energia escura no modelo ΛCDM do universo em expansão. As duas formas entraram no Unicode 1.1 em 1993.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-lambda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/lambda-symbol/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "the-lambda-letter",
+      "label": "A Letra",
+      "h2": "O Símbolo Lambda — λ e Λ",
+      "intro": "A letra grega em si — a 11ª do alfabeto, valendo 30 no sistema de numerais gregos, descendente da letra fenícia lamed. O λ minúsculo faz quase todo o trabalho cultural; o Λ maiúsculo é um símbolo distinto de matemática e cosmologia.",
+      "symbols": [
+        { "char": "λ", "label": "Letra Grega Minúscula Lambda (U+03BB)" },
+        { "char": "Λ", "label": "Letra Grega Maiúscula Lambda (U+039B)" }
+      ]
+    },
+    {
+      "id": "gay-liberation-symbol",
+      "label": "Libertação Gay",
+      "h2": "Lambda como Símbolo da Libertação Gay",
+      "intro": "A Gay Activists Alliance de Nova York adotou o λ minúsculo em 1970, e o Congresso Internacional pelos Direitos Gays o declarou símbolo internacional dos direitos de gays e lésbicas em 1974 — um dos primeiros emblemas do movimento. Cole-o ao lado dos glifos do orgulho com que hoje divide espaço.",
+      "symbols": [
+        { "char": "λ", "label": "Letra Grega Minúscula Lambda (U+03BB) — o Sinal da Libertação Gay" },
+        { "char": "🏳️‍🌈", "label": "Bandeira do Arco-Íris" },
+        { "char": "⚧", "label": "Símbolo Transgênero (U+26A7)" }
+      ]
+    },
+    {
+      "id": "lambda-code-science",
+      "label": "Código e Ciência",
+      "h2": "Lambda no Código, na Matemática e na Física",
+      "intro": "A vida técnica da letra. O λ minúsculo marca funções anônimas — do cálculo lambda de Alonzo Church até a palavra-chave lambda do Python e o AWS Lambda — e representa comprimento de onda na física; o Λ maiúsculo é a constante cosmológica do modelo ΛCDM.",
+      "symbols": [
+        { "char": "λ", "label": "Letra Grega Minúscula Lambda (U+03BB) — Comprimento de Onda e Cálculo Lambda" },
+        { "char": "Λ", "label": "Letra Grega Maiúscula Lambda (U+039B) — Constante Cosmológica" },
+        { "char": "𝜆", "label": "Lambda Itálico Matemático (U+1D706) — a Variante de Equação" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Letras Gregas",
+      "h2": "Letras Gregas Relacionadas",
+      "intro": "Lambda é a 11ª letra do alfabeto grego. Aqui estão as vizinhas que as pessoas copiam junto com ela.",
+      "symbols": [
+        { "char": "π", "label": "Letra Grega Minúscula Pi" },
+        { "char": "Σ", "label": "Letra Grega Maiúscula Sigma" },
+        { "char": "Δ", "label": "Letra Grega Maiúscula Delta" },
+        { "char": "Ω", "label": "Letra Grega Maiúscula Ômega" },
+        { "char": "α", "label": "Letra Grega Minúscula Alfa" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/alfabeto-grego/",
+      "title": "Alfabeto Grego",
+      "desc": "O alfabeto grego completo — alfa, lambda, pi, sigma, ômega — em maiúsculas e minúsculas, para copiar e colar."
+    },
+    {
+      "href": "/pt/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Comprimento de onda, a constante cosmológica e os operadores e letras gregas que completam uma equação."
+    },
+    {
+      "href": "/pt/symbol/simbolo-pi/",
+      "title": "Símbolo Pi",
+      "desc": "Outra letra grega com uma vida muito além da matemática — a constante que William Jones batizou em 1706."
+    }
+  ]
+}

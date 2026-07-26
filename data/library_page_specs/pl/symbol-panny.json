@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-panny",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Panny: Skopiuj ♍ — Jedyny Znak Zodiaku Uosabiany przez Kobietę",
+  "meta_description": "Skopiuj symbol zodiakalnej Panny (♍) i prawdziwy mit stojący za tym znakiem — Astreę, dziewiczą boginię sprawiedliwości i jedyny znak uosabiany przez kobietę, ostatnie bóstwo, które opuściło ziemię. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-panny/",
+  "breadcrumb": "Symbol Panny",
+  "hero_h1": "Symbol Panny",
+  "hero_tagline": "Glif Panny (♍) to zapętlone „M”, odczytywane jako dziewica trzymająca snop pszenicy — a Panna to jedyny spośród dwunastu znaków uosabiany przez kobietę, boginię Astreę, która jako ostatnia z bóstw opuściła świat śmiertelników. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Panny (♍, U+264D) to stylizowana litera M z zapętlonym ogonkiem, najczęściej odczytywana jako dziewica trzymająca snop pszenicy — a Panna to jedyny z dwunastu znaków uosabiany przez kobietę. Postać najczęściej utożsamiana jest z Astreą, dziewiczą boginią sprawiedliwości i córką Zeusa i Temidy (bogini boskiego porządku). Astrea żyła wśród śmiertelników w Złotym Wieku, ale gdy ludzkość zepsuła się w Srebrnym i Brązowym Wieku, bogowie opuszczali ziemię jeden po drugim; Astrea odeszła jako ostatnia, wstępując do nieba jako gwiazdozbiór Panny — wciąż trzymając wagę, która stała się sąsiadującą Wagą. Niektóre tradycje utożsamiają Pannę zamiast tego z Demeter albo Persefoną. Panna trwa od 23 sierpnia do 22 września, jest rządzona przez Merkurego i jest znakiem Ziemi o modalności zmiennej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/virgo-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-panny/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/virgo-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-panny",
+      "label": "Panna",
+      "h2": "Symbol Panny",
+      "intro": "Unicode'owy glif zodiakalnej Panny, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♍", "label": "Symbol Panny" },
+        { "char": "♍️", "label": "Symbol Panny (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Pannie.",
+      "symbols": [
+        { "char": "☿", "label": "Merkury (Planeta Rządząca)" },
+        { "char": "🜃", "label": "Ziemia (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Panny (Ryby).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♓", "label": "Ryby (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-ryb/",
+      "title": "Symbol Ryb",
+      "desc": "Astrologiczne przeciwieństwo Panny, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/pl/symbol/symbol-blizniat/",
+      "title": "Symbol Bliźniąt",
+      "desc": "Drugi znak rządzony przez Merkurego, z mitem o bliźniakach Kastorze i Polluksie."
+    }
+  ]
+}

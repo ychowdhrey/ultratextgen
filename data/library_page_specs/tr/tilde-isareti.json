@@ -1,0 +1,124 @@
+{
+  "slug": "tilde-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Tilde İşareti: Kopyala Yapıştır ~ ˜ ∼ ≈ — Yazıcı Keşişinin ñ'sinden Unix Ev Dizinine",
+  "meta_description": "Tildeyi (~) kopyala yapıştır — küçük tilde (˜), birleşen ñ aksanı ve matematik tildeleri ∼ ile ≈ — ayrıca ortaçağ bir yazıcının kısaltmasının nasıl ñ'ye dönüştüğü. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/tilde-isareti/",
+  "breadcrumb": "Tilde İşareti",
+  "hero_h1": "Tilde İşareti (~)",
+  "hero_tagline": "Unix ev dizinini işaretleyen ve \"yaklaşık\" anlamına gelen klavye tildesi (~), ñ, ã ve õ'nun üzerinde oturan küçük tilde ˜ ve birleşen işaret, ve sonsuza dek karıştırıldığı matematik tildeleri ∼ ile ≈. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Tilde (~, U+007E TILDE), klavyenin sol üst tuşundaki dalgalı işarettir ve neredeyse başka hiçbir noktalama karakterinin taşımadığı kadar çok iş yürütür. Bir Unix ya da Linux kabuğunda ev dizinin için bir kısaltmadır (~/) — bu gelenek, klavyesinde '~' ile \"Home\" sözcüğünün aynı tuşta basılı olduğu 1970'lerin Lear-Siegler ADM-3A terminaline dayanır. Gündelik sohbette \"yaklaşık\" ya da \"civarında\" anlamına gelir (~5 dakika), programcılar ona \"twiddle\" lakabını takar. Adı İspanyolca tilde'den, o da Latince titulus'tan (\"başlık\" ya da \"üst yazı\") gelir; hikâyesi ortaçağ yazıcı keşişleriyle başlar: bir harfin üzerine çizilen küçük dalgalı bir işaret, atlanmış bir \"n\" ya da \"m\"yi temsil ederdi, böylece pahalı tirşe ve mürekkepten tasarruf edilirdi. İspanyolcada ñ'nin var olmasının nedeni tam olarak bu kısayoldur — keşişler, çift bir \"nn\"yi temsil etmek için üzerinde işaret bulunan tek bir \"n\" yazardı. Bu aksan bugün birleşen tilde (◌̃, U+0303) olarak hayatta kalır; bu, bağımsız küçük tildeden (˜, U+02DC) ve düz klavye ~ işaretinden farklı bir karakterdir. Ayrıca benzediği matematik işaretleriyle de düzenli olarak karıştırılır: tilde işleci ∼ (U+223C, \"benzer\") ve yaklaşık eşittir ≈ (U+2248) ayrı Unicode karakterleridir, ASCII tildesi değildir.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-tilde",
+      "label": "Tilde",
+      "h2": "Tilde ~ ve Benzerleri",
+      "intro": "İnsanların hepsine \"tilde\" dediği üç ayrı Unicode karakteri — klavye tuşu, bağımsız bir aralık düzenleyici ve bir harfin üzerinde oturan birleşen aksan.",
+      "symbols": [
+        {
+          "char": "~",
+          "label": "Tilde (U+007E) — Klavye Tuşu"
+        },
+        {
+          "char": "˜",
+          "label": "Small Tilde (U+02DC) — Bağımsız Aralık Düzenleyici"
+        },
+        {
+          "char": "̃",
+          "label": "Combining Tilde (U+0303) — Bir Harfin Üzerinde Oturur"
+        }
+      ]
+    },
+    {
+      "id": "tilde-letters",
+      "label": "Tilde Taşıyan Harfler",
+      "h2": "Tilde Taşıyan Harfler",
+      "intro": "Birleşen tilde iş başında. İspanyolca ñ ile Portekizce ã ve õ, atlanmış bir \"n\"nin yazıcı kısaltmasının bugüne kalan gündelik örnekleridir.",
+      "symbols": [
+        {
+          "char": "ñ",
+          "label": "Latin Small Letter N With Tilde (U+00F1)"
+        },
+        {
+          "char": "Ñ",
+          "label": "Latin Capital Letter N With Tilde (U+00D1)"
+        },
+        {
+          "char": "ã",
+          "label": "Latin Small Letter A With Tilde (U+00E3)"
+        },
+        {
+          "char": "õ",
+          "label": "Latin Small Letter O With Tilde (U+00F5)"
+        }
+      ]
+    },
+    {
+      "id": "math-tilde",
+      "label": "Matematik Tildeleri",
+      "h2": "Matematik Tildeleri: Benzer-Bu ve Yaklaşık-Eşittir",
+      "intro": "Denklemlerde tilde \"benzer\" ya da \"yaklaşık\" anlamına gelir, ama gerçek matematik işaretleri kendi Unicode karakterleridir — insanların çoğunlukla yerine yazdığı ASCII ~ değil.",
+      "symbols": [
+        {
+          "char": "∼",
+          "label": "Tilde Operator (U+223C) — 'Benzer'"
+        },
+        {
+          "char": "≈",
+          "label": "Almost Equal To (U+2248) — 'Yaklaşık Eşit'"
+        },
+        {
+          "char": "≅",
+          "label": "Approximately Equal To (U+2245)"
+        },
+        {
+          "char": "≃",
+          "label": "Asymptotically Equal To (U+2243)"
+        },
+        {
+          "char": "~",
+          "label": "Tilde (U+007E) — Yerine Sık Yazılan ASCII Tuşu"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Klavye Sembolleri",
+      "desc": "Tilde, ters tırnak, ve işareti ve standart bir klavyenin geri kalan noktalama ile işaret tuşları, kopyalamaya hazır."
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri",
+      "desc": "Yaklaşık eşittir, benzer-bu ve tildeyle birlikte bir denklemi tamamlayan işleçler ile bağıntılar."
+    },
+    {
+      "href": "/library/accent-marks-diacritics/",
+      "title": "Aksan İşaretleri ve Diyakritikler",
+      "desc": "ñ ve ã'nın üzerindeki birleşen tilde, artı akut, grav, umlaut ve bir harfin üzerinde oturan diğer işaretler."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/tilde-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/tilde-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

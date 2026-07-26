@@ -1,0 +1,66 @@
+{
+  "slug": "less-than-greater-than",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Nhỏ Hơn & Lớn Hơn (< >): Ý Nghĩa Và Cách Gõ",
+  "meta_description": "Ký hiệu < và > được giải thích — ý nghĩa so sánh, vì sao chúng làm hỏng mã HTML nếu không thoát ký tự, cách gõ chúng, và cách chúng khác với « » và ⟨ ⟩.",
+  "canonical": "https://ultratextgen.com/vi/symbol/less-than-greater-than/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Nhỏ Hơn & Lớn Hơn",
+  "hero_h1": "Ký Hiệu Nhỏ Hơn (<) & Lớn Hơn (>)",
+  "hero_tagline": "Chúng mang nghĩa gì, vì sao có thể làm hỏng mã HTML, và cách chúng khác với dấu ngoặc kép kép — nhấp để sao chép ngay.",
+  "intro": "< và > là các toán tử bất đẳng thức: a < b nghĩa là a nhỏ hơn b, và a > b nghĩa là a lớn hơn b. Chúng đã là một phần của ký hiệu toán học chuẩn từ những năm 1600 và được đưa thẳng vào bộ ký tự ASCII gốc, đó là lý do vì sao chúng nằm trong khối Basic Latin thay vì khối Mathematical Operators chuyên dụng nơi các ký hiệu như ≠ hay ∞ (vốn xuất hiện cùng Unicode) cư trú. Vị trí có từ thời ASCII đó cũng là lý do < và > đảm nhận thêm một công việc thứ hai mà hầu như ai dùng bàn phím cũng từng gặp: trong HTML và XML, < là ký tự mở đầu mọi thẻ. Một dấu < lạc gõ dưới dạng văn bản thuần có thể khiến trình duyệt bắt đầu phân tích một thẻ chưa từng được định trước, đó là lý do HTML yêu cầu thoát chúng thành &lt; và &gt; ở bất cứ nơi nào chúng xuất hiện như văn bản thuần chứ không phải mã đánh dấu.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/less-than-greater-than/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-greater-than/" }
+  ],
+  "sections": [
+    {
+      "id": "less-greater-than",
+      "label": "Nhỏ Hơn & Lớn Hơn",
+      "h2": "Ký Hiệu Nhỏ Hơn & Lớn Hơn",
+      "intro": "Hai ký hiệu so sánh, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "<", "label": "Ký Hiệu Nhỏ Hơn (U+003C)" },
+        { "char": ">", "label": "Ký Hiệu Lớn Hơn (U+003E)" }
+      ]
+    },
+    {
+      "id": "confusable",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Ký Hiệu Trông Giống < >",
+      "intro": "Những ký hiệu này có hình dáng gần giống < > nhưng mang ý nghĩa hoàn toàn khác, chủ yếu là các dạng dấu ngoặc kép.",
+      "symbols": [
+        { "char": "‹", "label": "Dấu Ngoặc Kép Đơn Trái (U+2039) — một dấu trích dẫn, không phải phép so sánh" },
+        { "char": "«", "label": "Dấu Ngoặc Kép Đôi Trái (U+00AB) — dấu ngoặc kép tiếng Pháp/Đức" },
+        { "char": "⟨", "label": "Dấu Ngoặc Nhọn Trái (U+27E8) — dùng trong ký hiệu bra-ket và vectơ, không phải phép so sánh" },
+        { "char": "≤", "label": "Nhỏ Hơn Hoặc Bằng (U+2264) — «người anh em» có thêm phần bằng" }
+      ]
+    },
+    {
+      "id": "related",
+      "label": "Ký Hiệu Toán Học Liên Quan",
+      "h2": "Các Ký Hiệu Toán Học Khác",
+      "intro": "Các ký hiệu toán học khác thường xuất hiện cùng < và > trong biểu thức và phương trình.",
+      "symbols": [
+        { "char": "±", "label": "Cộng Trừ" },
+        { "char": "÷", "label": "Dấu Chia" },
+        { "char": "√", "label": "Căn Bậc Hai" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/plus-minus/", "title": "Ký Hiệu Cộng Trừ (±)", "desc": "Hai giá trị khả dĩ trong một biểu thức duy nhất." },
+    { "href": "/vi/symbol/division-sign/", "title": "Dấu Chia (÷)", "desc": "Dấu obelus, và vì sao sách nâng cao rời bỏ nó." },
+    { "href": "/vi/symbol/square-root/", "title": "Căn Bậc Hai (√)", "desc": "Nguồn gốc năm 1525 và vai trò của đường vinculum." },
+    { "href": "/vi/library/math-symbols/", "title": "Tất Cả Ký Hiệu Toán Học", "desc": "Toán tử, chữ cái Hy Lạp, lý thuyết tập hợp và ký hiệu giải tích." }
+  ]
+}

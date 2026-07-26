@@ -1,0 +1,129 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "sterretje-teken",
+  "title": "Sterretje (*): Kopieer en Plak * ⁂ ✱ — Van Voetnootteken tot Wildcard en Censuur-ster",
+  "meta_description": "Kopieer en plak het sterretje (*), het asterisme ⁂ en het dikke ✱ — het voetnootteken dat ook wildcards laat werken en scheldwoorden censureert. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/sterretje-teken/",
+  "breadcrumb": "Sterretje",
+  "hero_h1": "Sterretje / Asterisk (*)",
+  "hero_tagline": "Het sterretje (*) voor voetnoten, de wildcard * die in zoekopdrachten en code alles matcht, en de censurerende ster in f**k — plus typografische neven zoals het asterisme ⁂, drie sterretjes in een driehoek. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het sterretje (*, Unicode U+002A) is het stervormige teken dat de toets met het cijfer 8 deelt, en de naam komt rechtstreeks van het Oudgriekse asteriskos, ‘sterretje’ — een verkleinwoord van astēr, ‘ster’. Het is een van de oudste redactionele tekens uit de westerse traditie: de Alexandrijnse geleerde Aristarchus van Samothrace (ca. 220–143 v.Chr.) gebruikte de asteriskos in zijn edities van Homerus om regels te markeren die hij elders als dubbel beschouwde, en de theoloog Origenes plaatste het later in zijn Hexapla om tekst aan te duiden die wel in het Hebreeuws stond maar niet in het Grieks. Vandaag doet hetzelfde teken drie heel verschillende dingen: het is het klassieke voetnootteken dat een lezer naar een noot onderaan de pagina stuurt, het is de wildcard die in bestandszoekopdrachten, glob-patronen en SQL's SELECT * voor ‘alles’ staat, en het is de standaardvervanger om letters te censureren, zoals in f**k. Typografie houdt er een familie verwanten op na — het ASTERISME ⁂ (U+2042) stapelt drie sterretjes in een driehoek als sectiescheiding, het DIKKE STERRETJE ✱ (U+2731) en het ACHTPUNTIGE STERRETJE ✳ (U+2733) zijn dikkere weergavevormen, en de ASTERISK-OPERATOR ∗ (U+2217) is het wiskundige vermenigvuldigingsteken. Geen van deze is de decoratieve stervorm — de zwarte ster ★ (U+2605) of de gele ster-emoji ⭐ (U+2B50) — die tot een ander, sierlijk register horen.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/sterretje-teken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/asterisk-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "het-sterretje",
+      "label": "Het Sterretje",
+      "h2": "Het Sterretje & zijn Weergavevarianten",
+      "intro": "Het gewone toetsenbord-sterretje plus de dikkere weergavevormen en de wiskundige operator. Allemaal direct te plakken.",
+      "symbols": [
+        {
+          "char": "*",
+          "label": "Sterretje (U+002A) — Voetnoot-, Wildcard- en Censuurteken"
+        },
+        {
+          "char": "✱",
+          "label": "Dik Sterretje (U+2731)"
+        },
+        {
+          "char": "✳",
+          "label": "Achtpuntig Sterretje (U+2733)"
+        },
+        {
+          "char": "∗",
+          "label": "Asterisk-Operator (U+2217) — Het Wiskundige Vermenigvuldigingsglyph"
+        },
+        {
+          "char": "＊",
+          "label": "Sterretje Volle Breedte (U+FF0A)"
+        }
+      ]
+    },
+    {
+      "id": "asterisme-redactioneel",
+      "label": "Asterisme & Redactionele Tekens",
+      "h2": "Asterisme & Sectiescheidingstekens",
+      "intro": "Redactionele tekens opgebouwd uit het sterretje — het asterisme van drie sterretjes in een driehoek dat secties scheidt, plus zijn gestapelde en verlaagde neven.",
+      "symbols": [
+        {
+          "char": "⁂",
+          "label": "Asterisme (U+2042) — Drie Sterretjes in een Driehoek"
+        },
+        {
+          "char": "⁑",
+          "label": "Twee Verticaal Uitgelijnde Sterretjes (U+2051)"
+        },
+        {
+          "char": "⁎",
+          "label": "Laag Sterretje (U+204E)"
+        }
+      ]
+    },
+    {
+      "id": "sterren-verward-mee",
+      "label": "Sterren waarmee het Verward Wordt",
+      "h2": "Stervormen waarmee het Sterretje Verward Wordt",
+      "intro": "Stervormige tekens die mensen pakken als ze een sterretje bedoelen. Dit zijn decoratieve sterren — een sierlijk register, geen voetnoot- of interpunctieteken.",
+      "symbols": [
+        {
+          "char": "★",
+          "label": "Zwarte Ster (U+2605)"
+        },
+        {
+          "char": "☆",
+          "label": "Witte Ster (U+2606)"
+        },
+        {
+          "char": "⭐",
+          "label": "Middelgrote Witte Ster (U+2B50) — De Gele Ster-emoji"
+        },
+        {
+          "char": "✦",
+          "label": "Zwarte Vierpuntige Ster (U+2726)"
+        },
+        {
+          "char": "✧",
+          "label": "Witte Vierpuntige Ster (U+2727)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Streepjes, haakjes, aanhalingstekens en de familie alledaagse interpunctie waar het sterretje bij hoort (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/library/ster-symbolen/",
+      "title": "Ster-Symbolen",
+      "desc": "Sterretjes voor bio, naam en reviews — de decoratieve sterren waarmee het sterretje wordt verward."
+    },
+    {
+      "href": "/nl/library/speciale-tekens/",
+      "title": "Speciale Tekens",
+      "desc": "Hartjes, sterretjes, kaders en de andere klassiekers — één tik om te kopiëren."
+    }
+  ]
+}

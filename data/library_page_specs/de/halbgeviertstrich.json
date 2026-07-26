@@ -1,0 +1,80 @@
+{
+  "slug": "halbgeviertstrich",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Halbgeviertstrich (–): kopieren & einfügen + der Bereichsstrich, den fast alle als Bindestrich tippen",
+  "meta_description": "Den Halbgeviertstrich (–) kopieren und einfügen — für Bereiche wie 1939–1945 und Verbindungen wie New York–London. Der Bereichsstrich ohne eigene Taste. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/halbgeviertstrich/",
+  "breadcrumb": "Halbgeviertstrich",
+  "hero_h1": "Halbgeviertstrich (–)",
+  "hero_tagline": "Der Halbgeviertstrich (–), der Zahlen- und Datumsbereiche verbindet — 1939–1945, Seiten 10–20, 9–17 Uhr — und Zweierbeziehungen verknüpft wie die Strecke New York–London oder die Zeit vor dem Zweiten Weltkrieg. Länger als ein Bindestrich, kürzer als ein Geviertstrich, und im Deutschen zugleich der eigentliche Gedankenstrich. Ein Klick genügt zum Kopieren.",
+  "intro": "Der Halbgeviertstrich (–, Unicode U+2013) ist der mittellange Strich zwischen dem schlichten Bindestrich und dem längeren Geviertstrich — benannt danach, dass er ungefähr halb so breit ist wie ein Geviertstrich, etwa so breit wie ein großes N. Er übernimmt vor allem zwei Aufgaben: Er markiert Spannen und Bereiche (1939–1945, Seiten 10–20, 9–17 Uhr, die Ausgabe Mai–September) und verbindet Zweierbeziehungen und offene Komposita, bei denen ein Bindestrich zu schwach wäre (die Strecke New York–London, das Duo Clinton–Gore, vor dem Zweiten Weltkrieg). Weil keine Tastatur eine eigene Halbgeviertstrich-Taste besitzt, wird er ständig fälschlich als Bindestrich-Minus (-, U+002D) getippt; korrekt gibt man ihn auf dem Mac mit Option+Bindestrich ein, unter Windows mit Alt+0150 über den Ziffernblock, und Microsoft Words Autoformat wandelt einen mit Leerzeichen umgebenen Bindestrich (Wort - Wort) automatisch in einen Halbgeviertstrich um. Im deutschsprachigen Raum ist der Halbgeviertstrich zugleich der klassische Gedankenstrich — anders als im Englischen, wo diese Rolle meist der breitere Geviertstrich übernimmt. Stilrichtlinien gehen international auseinander: Der Chicago Manual of Style verwendet den Halbgeviertstrich für Bereiche (Seiten 3–11), während das Associated Press Stylebook überhaupt keine Halbgeviertstriche nutzt und Bereiche stattdessen mit einem schlichten Bindestrich setzt. Er wird zudem häufig mit dem typografischen Bindestrich (‐, U+2010), dem Minuszeichen (−, U+2212) und dem Geviertstrich (—, U+2014) verwechselt.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/halbgeviertstrich/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "halbgeviertstrich",
+      "label": "Halbgeviertstrich",
+      "h2": "Der Halbgeviertstrich & der Zifferngeviertstrich",
+      "intro": "Der Halbgeviertstrich für Bereiche und Verbindungen, dazu der Zifferngeviertstrich — gleiche Breite, aber Ziffern vorbehalten, damit Zahlen in Tabellen und Telefonnummern sauber untereinanderstehen. Bereit zum Einfügen, überall.",
+      "symbols": [
+        { "char": "–", "label": "Halbgeviertstrich (U+2013)" },
+        { "char": "‒", "label": "Zifferngeviertstrich (U+2012)" }
+      ]
+    },
+    {
+      "id": "verwechselbare-striche",
+      "label": "Verwechselbare Striche",
+      "h2": "Striche & Bindestriche, mit denen er verwechselt wird",
+      "intro": "Die Zeichen, gegen die der Halbgeviertstrich ausgetauscht wird — jedes mit eigener Breite, eigenem Codepoint und eigener Aufgabe, vom schlichten Tastatur-Bindestrich bis zum Geviertstrich und dem echten Minuszeichen.",
+      "symbols": [
+        { "char": "—", "label": "Geviertstrich (U+2014)" },
+        { "char": "-", "label": "Bindestrich-Minus (Tastatur)" },
+        { "char": "‐", "label": "Bindestrich, typografisch (U+2010)" },
+        { "char": "−", "label": "Minuszeichen (U+2212)" },
+        { "char": "―", "label": "Waagerechter Strich (U+2015)" }
+      ]
+    },
+    {
+      "id": "eingeschlossene-satzzeichen",
+      "label": "Einschub-Zeichen",
+      "h2": "Zeichen, die ein Halbgeviertstrich als Einschub ersetzt",
+      "intro": "Im britischen, australischen und kanadischen Englisch setzt ein mit Leerzeichen umgebener Halbgeviertstrich – wie hier – einen Einschub, wo das amerikanische Englisch einen eng gesetzten Geviertstrich verwendet; dies sind die Zeichen, mit denen er zusammenarbeitet oder die er ersetzt.",
+      "symbols": [
+        { "char": ",", "label": "Komma" },
+        { "char": ":", "label": "Doppelpunkt" },
+        { "char": ";", "label": "Semikolon" },
+        { "char": "(", "label": "Runde Klammer auf" },
+        { "char": ")", "label": "Runde Klammer zu" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/dash-hyphen-symbols/",
+      "title": "Dash & Hyphen Symbols",
+      "desc": "Halbgeviertstriche, Geviertstriche, Bindestriche und Minuszeichen nebeneinander mit ihren Codepoints in einer Referenz."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Gedankenstriche, Anführungszeichen, Klammern und die übrige alltägliche Interpunktion in Unicode, bereit zum Kopieren."
+    },
+    {
+      "href": "/de/symbol/geviertstrich/",
+      "title": "Geviertstrich (—)",
+      "desc": "Der breitere Verwandte des Halbgeviertstrichs: der lange Strich für Brüche und Einschübe im Englischen, etwa doppelt so breit und mit anderer Aufgabe."
+    }
+  ]
+}

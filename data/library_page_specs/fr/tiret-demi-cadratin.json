@@ -1,0 +1,68 @@
+{
+  "slug": "tiret-demi-cadratin",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Tiret Demi-Cadratin (–) : Copier-Coller + le Tiret des Plages que Tout le Monde Tape comme un Trait d'Union",
+  "meta_description": "Copie et colle le tiret demi-cadratin (–) pour les plages comme 1939–1945 et les composés comme New York–Londres — le tiret des intervalles sans touche dédiée. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/tiret-demi-cadratin/",
+  "breadcrumb": "Tiret Demi-Cadratin",
+  "hero_h1": "Tiret Demi-Cadratin (–)",
+  "hero_tagline": "Le tiret demi-cadratin (–) qui relie les plages de chiffres et de dates — 1939–1945, pages 10–20, 9h–17h — et les relations à deux membres comme le vol New York–Londres ou l'avant–Seconde Guerre mondiale. Plus long qu'un trait d'union, plus court qu'un tiret cadratin, et le seul signe sans touche qui lui soit propre. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le tiret demi-cadratin (–, Unicode U+2013) est le tiret de longueur moyenne qui se place entre le simple trait d'union et le tiret cadratin plus long — nommé ainsi parce qu'il fait environ la moitié de la largeur d'un tiret cadratin, à peu près la largeur d'un N majuscule. Il remplit deux fonctions principales : il marque des étendues et des plages (1939–1945, pages 10–20, 9h–17h, le numéro de mai–septembre), et il relie des relations à deux membres et des composés ouverts là où un trait d'union serait trop faible (le vol New York–Londres, le ticket Clinton–Gore, l'avant–Seconde Guerre mondiale). Comme aucun clavier ne propose de touche dédiée au tiret demi-cadratin, on le tape constamment par erreur avec le trait d'union du clavier (-, U+002D) ; pour le saisir correctement, on appuie sur Option+Trait d'union sur Mac ou Alt+0150 sur le pavé numérique de Windows, et la correction automatique de Microsoft Word convertit un trait d'union espacé (mot - mot) en tiret demi-cadratin. Les guides de style divergent sur ce point : le Chicago Manual of Style utilise le tiret demi-cadratin pour les plages (pages 3–11), tandis que l'Associated Press Stylebook n'utilise pas du tout de tiret demi-cadratin, préférant le simple trait d'union pour les plages. On le confond aussi fréquemment avec le trait d'union typographique (‐, U+2010), le signe moins (−, U+2212) et le tiret cadratin (—, U+2014).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/en-dash/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/tiret-demi-cadratin/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/en-dash/" }
+  ],
+  "sections": [
+    {
+      "id": "tiret-demi-cadratin",
+      "label": "Tiret Demi-Cadratin",
+      "h2": "Le Tiret Demi-Cadratin & le Tiret Chiffré",
+      "intro": "Le tiret demi-cadratin pour les plages et les composés, plus le tiret chiffré — la même largeur, réservée aux chiffres pour que les colonnes s'alignent proprement dans les tableaux et les numéros de téléphone. Prêt à coller n'importe où.",
+      "symbols": [
+        { "char": "–", "label": "Tiret Demi-Cadratin (U+2013)" },
+        { "char": "‒", "label": "Tiret Chiffré (U+2012)" }
+      ]
+    },
+    {
+      "id": "tirets-confondus",
+      "label": "Tirets Confondus",
+      "h2": "Tirets & Traits d'Union avec Lesquels on le Confond",
+      "intro": "Les signes avec lesquels le tiret demi-cadratin se fait constamment échanger — chacun avec sa propre largeur, son propre point de code, et son propre rôle, du simple trait d'union du clavier jusqu'au tiret cadratin et au véritable signe moins.",
+      "symbols": [
+        { "char": "—", "label": "Tiret Cadratin (U+2014)" },
+        { "char": "-", "label": "Trait d'Union-Signe Moins (Clavier)" },
+        { "char": "‐", "label": "Trait d'Union (Typographique, U+2010)" },
+        { "char": "−", "label": "Signe Moins (U+2212)" },
+        { "char": "―", "label": "Barre Horizontale (U+2015)" }
+      ]
+    },
+    {
+      "id": "ponctuation-associee",
+      "label": "Marques d'Incise",
+      "h2": "Signes Qu'un Tiret Demi-Cadratin Espacé Remplace",
+      "intro": "Dans l'usage britannique, australien et canadien, un tiret demi-cadratin espacé – comme celui-ci – encadre une incise là où l'usage américain referme un tiret cadratin ; voici les signes avec lesquels il travaille ou qu'il remplace.",
+      "symbols": [
+        { "char": ",", "label": "Virgule" },
+        { "char": ":", "label": "Deux-Points" },
+        { "char": ";", "label": "Point-Virgule" },
+        { "char": "(", "label": "Parenthèse Gauche" },
+        { "char": ")", "label": "Parenthèse Droite" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/dash-hyphen-symbols/", "title": "Dash & Hyphen Symbols", "desc": "Tirets demi-cadratins, tirets cadratins, traits d'union et signes moins alignés côte à côte avec leurs codes dans une même référence (en anglais)." },
+    { "href": "/library/punctuation-symbols/", "title": "Punctuation Symbols", "desc": "Tirets, guillemets, crochets et le reste de la ponctuation courante d'Unicode, prête à copier (en anglais)." },
+    { "href": "/fr/symbol/tiret-cadratin/", "title": "Tiret Cadratin (—)", "desc": "Le grand frère du tiret demi-cadratin : le long tiret des ruptures et des incises, environ deux fois plus large et pour un usage différent." }
+  ]
+}

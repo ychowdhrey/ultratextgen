@@ -1,0 +1,125 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "omgekeerd-vraagteken",
+  "title": "Omgekeerd Vraagteken: Kopieer en Plak ⸮ — Niet Hetzelfde als ¿",
+  "meta_description": "Kopieer en plak het omgekeerde vraagteken (⸮), een zestiende-eeuws teken voor retorische vragen — en ontdek waarom het iets anders is dan ¿, dat op zijn kop staat, niet gespiegeld is.",
+  "canonical": "https://ultratextgen.com/nl/symbol/omgekeerd-vraagteken/",
+  "breadcrumb": "Omgekeerd Vraagteken",
+  "hero_h1": "Omgekeerd Vraagteken",
+  "hero_tagline": "⸮ U+2E2E REVERSED QUESTION MARK — horizontaal gespiegeld, niet dezelfde bewerking als ¿, dat 180° gedraaid is. Klik op een teken om het direct te kopiëren.",
+  "intro": "‘Omgekeerd vraagteken’ betekent meestal ⸮ (U+2E2E, REVERSED QUESTION MARK) — een gewoon ‘?’ dat horizontaal gespiegeld is, als in een spiegelbeeld. De Engelse drukker Henry Denham stelde het rond 1575 voor als de punctus percontativus, een teken bedoeld om een retorische vraag af te sluiten en te onderscheiden van een echte vraag; het sloeg nooit aan en overleeft vandaag vooral als curiositeit en in taalkundige notatie voor een zin die grammaticaal twijfelachtig is in plaats van een echte vraag. Het wordt makkelijk verward met twee andere tekens die er hetzelfde uitzien maar een andere bewerking zijn: ¿ (U+00BF, INVERTED QUESTION MARK) is 180° gedraaid, niet gespiegeld — dat is het teken waarmee het Spaans en Catalaans een vraag beginnen, los van Denhams voorstel. En ؟ (U+061F, ARABIC QUESTION MARK) is gespiegeld zoals ⸮, maar is helemaal geen nieuwigheid — het is gewoon het normale vraagteken in het Arabisch, Perzisch en Urdu, gevormd naar de rechts-naar-linksrichting van die schriften.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/backwards-question-mark/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/omgekeerd-vraagteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/backwards-question-mark/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "omgekeerd-vraagteken",
+      "label": "Omgekeerd Vraagteken",
+      "h2": "Gespiegeld vs. Op de Kop Gezet Vraagteken",
+      "intro": "Drie tekens die allemaal ‘omgekeerd’ worden genoemd, en de andere bewerking die elk teken eigenlijk is.",
+      "symbols": [
+        {
+          "char": "⸮",
+          "label": "Gespiegeld Vraagteken (Reversed Question Mark)"
+        },
+        {
+          "char": "؟",
+          "label": "Arabisch Vraagteken"
+        },
+        {
+          "char": "¿",
+          "label": "Op de Kop Gezet Vraagteken (Inverted Question Mark)"
+        },
+        {
+          "char": "?",
+          "label": "Vraagteken"
+        }
+      ]
+    },
+    {
+      "id": "retorische-interpunctie",
+      "label": "Retorische Interpunctie",
+      "h2": "Andere Historische Retorische Tekens",
+      "intro": "⸮ hoort bij een klein groepje voorgestelde, maar grotendeels verlaten interpunctie voor een toon die de standaardtekens niet vastleggen.",
+      "symbols": [
+        {
+          "char": "‽",
+          "label": "Interrobang"
+        },
+        {
+          "char": "⸘",
+          "label": "Omgekeerde Interrobang"
+        },
+        {
+          "char": "⁇",
+          "label": "Dubbel Vraagteken"
+        },
+        {
+          "char": "⁈",
+          "label": "Vraagteken + Uitroepteken"
+        }
+      ]
+    },
+    {
+      "id": "leestekens",
+      "label": "Leestekens",
+      "h2": "Algemene Leestekens",
+      "intro": "De alledaagse interpunctie waar ⸮ tussen staat, voorbij de nieuwigheidstekens.",
+      "symbols": [
+        {
+          "char": "!",
+          "label": "Uitroepteken"
+        },
+        {
+          "char": "‥",
+          "label": "Dubbele Punt-leader (Two Dot Leader)"
+        },
+        {
+          "char": "…",
+          "label": "Beletselteken"
+        },
+        {
+          "char": "‽",
+          "label": "Interrobang"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/vraagteken/",
+      "title": "Vraagteken & Leestekens",
+      "desc": "Alle vraagteken-varianten, uitroeptekens en bijzondere leestekens in één overzicht om te doorbladeren."
+    },
+    {
+      "href": "/nl/symbol/aanhalingsteken/",
+      "title": "Aanhalingsteken",
+      "desc": "Nog een leesteken met meer regionale varianten dan je toetsenbord laat zien."
+    },
+    {
+      "href": "/category/upside-down-text/",
+      "title": "Upside Down Text Generator",
+      "desc": "Voor het omdraaien van een hele zin, niet één teken — gedraaid, niet gespiegeld, hetzelfde onderscheid als ¿ vs. ⸮ (Engelstalige tool)."
+    }
+  ]
+}

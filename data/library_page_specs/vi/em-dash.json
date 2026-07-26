@@ -1,0 +1,71 @@
+{
+  "slug": "em-dash",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Dấu Gạch Ngang Dài (—): Sao Chép & Dán + Vì Sao Nó Trở Thành Dấu Hiệu Của Văn Bản AI",
+  "meta_description": "Sao chép dấu gạch ngang dài (—), xem nó khác gì với dấu gạch ngang ngắn (–), dấu gạch nối và dấu trừ, và vì sao nó trở thành dấu hiệu bị nghi ngờ của văn bản AI. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/em-dash/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Dấu Gạch Ngang Dài",
+  "hero_h1": "Dấu Gạch Ngang Dài (—)",
+  "hero_tagline": "Dấu gạch ngang dài (—) đánh dấu một chỗ ngắt, một sự gián đoạn, hoặc một ý chen ngang — dấu câu đã châm ngòi cuộc tranh luận năm 2025 về việc liệu những dấu gạch dài có phải là dấu hiệu của văn bản do AI viết hay không. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Dấu gạch ngang dài (—, Unicode U+2014) là dấu gạch dài mà người viết dùng để đánh dấu một chỗ ngắt đột ngột, một khoảng dừng kịch tính, hoặc một ý chen ngang — làm công việc gần giống dấu phẩy, dấu hai chấm, hay một cặp ngoặc đơn. Đây cũng là ký tự đang ở trung tâm một cuộc tranh luận đang diễn ra về văn bản do AI viết, và là ký tự thường bị nhầm lẫn nhất với dấu gạch ngang ngắn và dấu gạch nối thông thường trên bàn phím.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/em-dash/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/em-dash/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/em-dash/" }
+  ],
+  "sections": [
+    {
+      "id": "em-dash",
+      "label": "Dấu Gạch Ngang Dài",
+      "h2": "Gạch Ngang Dài, Gạch Đôi & Gạch Ba",
+      "intro": "Dấu gạch ngang dài cùng những «người anh em» rộng gấp đôi và gấp ba trong biên tập — bản rộng hơn dùng để đánh dấu chỗ bị lược bỏ và tên tác giả lặp lại trong thư mục tham khảo. Sẵn sàng để dán ở bất cứ đâu.",
+      "symbols": [
+        { "char": "—", "label": "Dấu Gạch Ngang Dài" },
+        { "char": "⸺", "label": "Dấu Gạch Ngang Đôi" },
+        { "char": "⸻", "label": "Dấu Gạch Ngang Ba" }
+      ]
+    },
+    {
+      "id": "confusable-dashes",
+      "label": "Dấu Gạch Dễ Nhầm",
+      "h2": "Các Dấu Gạch & Gạch Nối Dễ Bị Nhầm Với Nó",
+      "intro": "Những dấu ngắn hơn mà dấu gạch ngang dài thường bị gõ nhầm thay thế — mỗi dấu có chiều rộng, mã điểm và công việc riêng.",
+      "symbols": [
+        { "char": "–", "label": "Dấu Gạch Ngang Ngắn" },
+        { "char": "-", "label": "Dấu Gạch Nối-Trừ (Bàn Phím)" },
+        { "char": "‐", "label": "Dấu Gạch Nối (Kiểu Chữ)" },
+        { "char": "−", "label": "Dấu Trừ" },
+        { "char": "‒", "label": "Dấu Gạch Con Số" },
+        { "char": "―", "label": "Vạch Ngang (Dấu Gạch Trích Dẫn)" }
+      ]
+    },
+    {
+      "id": "related-punctuation",
+      "label": "Dấu Câu Liên Quan",
+      "h2": "Dấu Câu Liên Quan & Dấu Ngắt Nghỉ",
+      "intro": "Các dấu câu làm công việc liên quan — dấu phẩy, dấu hai chấm và ngoặc đơn mà dấu gạch ngang dài thường thay thế, cùng dấu chấm phẩy và dấu ba chấm mà nó đôi khi được xếp cùng.",
+      "symbols": [
+        { "char": ",", "label": "Dấu Phẩy" },
+        { "char": ":", "label": "Dấu Hai Chấm" },
+        { "char": "(", "label": "Ngoặc Đơn Trái" },
+        { "char": ")", "label": "Ngoặc Đơn Phải" },
+        { "char": ";", "label": "Dấu Chấm Phẩy" },
+        { "char": "…", "label": "Dấu Ba Chấm" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/dash-hyphen-symbols/", "title": "Ký Hiệu Gạch Ngang & Gạch Nối", "desc": "Dấu gạch ngang dài, gạch ngang ngắn, gạch nối và dấu trừ so sánh cạnh nhau trong một trang tra cứu." },
+    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Dấu ngoặc kép, dấu gạch ngang, dấu ngoặc và các dấu câu thông thường khác trong Unicode." },
+    { "href": "/vi/symbol/pilcrow/", "title": "Pilcrow (¶)", "desc": "Dấu đoạn văn — một ký hiệu kiểu chữ biên tập khác với lịch sử in ấn lâu đời." }
+  ]
+}

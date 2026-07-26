@@ -1,0 +1,149 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "pion-symbool",
+  "title": "Pion-symbool: Kopieer en Plak ♟ ♙ — het Voetvolk dat Koningin kan Worden",
+  "meta_description": "Kopieer en plak het pion-symbool — zwart ♟ (U+265F) en wit ♙ (U+2659) — het minst waardevolle schaakstuk, genoemd naar een voetsoldaat, dat kan promoveren tot koningin. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/pion-symbool/",
+  "breadcrumb": "Pion-symbool",
+  "hero_h1": "Pion-symbool (♟ ♙)",
+  "hero_tagline": "De zwarte ♟ en witte ♙ schaakpion — het minst waardevolle stuk op het bord en zijn voetsoldaat, degene die naar de verste rij kan marcheren en in een koningin veranderen, en het woord dat het Nederlands leende voor iemand die in andermans spel wordt gebruikt. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het pion-symbool bestaat in twee Unicode-vormen — de zwarte ♟ (U+265F, BLACK CHESS PAWN) en de witte ♙ (U+2659, WHITE CHESS PAWN) — beide onderdeel van het Miscellaneous Symbols-blok, samen met de volledige set van 12 schaakstukken van U+2654 tot en met U+265F. Het Engelse woord 'pawn' gaat terug op het Anglo-Frans 'poun' en het Oudfrans 'peon', uit het Middeleeuws Latijn 'pedonem' (voetsoldaat), uiteindelijk uit het Latijnse 'pes', voet — de pion was letterlijk de infanterie van het bord. Het is het minst waardevolle stuk in het schaken, 1 punt waard in het standaardsysteem waarin een paard of loper 3 is, een toren 5, en de koningin 9. Het is ook het enige stuk dat anders beweegt dan het slaat: het gaat één veld recht vooruit — of twee bij de allereerste zet — maar slaat alleen diagonaal, en kan 'en passant' worden geslagen door een vijandelijke pion die het probeert te passeren. Bereikt een pion de verste rij, dan promoveert hij tot koningin, toren, loper of paard — alles behalve een koning, en hij kan geen pion blijven. In notatie is een pion 'P' (wit) of 'p' (zwart) in FEN, en draagt hij helemaal geen letter in algebraïsche zetten, alleen het doelveld. Al in de jaren 1580 was 'pawn' (pion) de alledaagse metafoor geworden voor iemand die als wegwerpmiddel in andermans plan wordt gebruikt.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/pion-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pawn-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "pion-symbool",
+      "label": "Het Pion-symbool",
+      "h2": "Het Pion-symbool — ♟ & ♙",
+      "intro": "De twee pion-glyphs. De gevulde zwarte ♟ is degene die de meeste mensen plakken; de omlijnde witte ♙ is zijn lichtzijdige tweeling. Beide zijn losse Unicode-tekens, klaar om overal in te voegen.",
+      "symbols": [
+        {
+          "char": "♟",
+          "label": "Zwarte Schaakpion (U+265F)"
+        },
+        {
+          "char": "♙",
+          "label": "Witte Schaakpion (U+2659)"
+        }
+      ]
+    },
+    {
+      "id": "zwarte-schaakstukken",
+      "label": "Zwarte Stukken",
+      "h2": "De Teamgenoten van de Zwarte Pion",
+      "intro": "De rest van de zwarte zijde die achter de pion staat opgesteld — koning, koningin, toren, loper en paard, lopend van U+265A tot U+265E in hetzelfde Unicode-blok.",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "Zwarte Schaakkoning (U+265A)"
+        },
+        {
+          "char": "♛",
+          "label": "Zwarte Schaakkoningin (U+265B)"
+        },
+        {
+          "char": "♜",
+          "label": "Zwarte Schaaktoren (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Zwarte Schaakloper (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Zwart Schaakpaard (U+265E)"
+        }
+      ]
+    },
+    {
+      "id": "witte-schaakstukken",
+      "label": "Witte Stukken",
+      "h2": "De Witte Schaakstukken",
+      "intro": "De omlijnde witte set die de zwarte pion op het bord tegenover zich vindt, van U+2654 tot en met U+2658 — de koningin die hij ooit misschien moet vrezen, en de koning die hij nooit kan worden.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "Witte Schaakkoning (U+2654)"
+        },
+        {
+          "char": "♕",
+          "label": "Witte Schaakkoningin (U+2655)"
+        },
+        {
+          "char": "♖",
+          "label": "Witte Schaaktoren (U+2656)"
+        },
+        {
+          "char": "♗",
+          "label": "Witte Schaakloper (U+2657)"
+        },
+        {
+          "char": "♘",
+          "label": "Wit Schaakpaard (U+2658)"
+        }
+      ]
+    },
+    {
+      "id": "pion-promotie",
+      "label": "Promotie",
+      "h2": "Wat een Pion Kan Worden",
+      "intro": "Een pion die de overkant van het bord bereikt, moet promoveren — tot een koningin, toren, loper of paard van zijn eigen kleur. Hij kan nooit een koning worden, en kan geen pion blijven. De koningin is de gebruikelijke keuze; al het andere heet een 'onderpromotie'.",
+      "symbols": [
+        {
+          "char": "♛",
+          "label": "Zwarte Schaakkoningin (U+265B) — de gebruikelijke promotie"
+        },
+        {
+          "char": "♜",
+          "label": "Zwarte Schaaktoren (U+265C)"
+        },
+        {
+          "char": "♝",
+          "label": "Zwarte Schaakloper (U+265D)"
+        },
+        {
+          "char": "♞",
+          "label": "Zwart Schaakpaard (U+265E) — een onderpromotie"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/chess-symbols/",
+      "title": "Chess Symbols",
+      "desc": "De volledige Unicode-schaakset — koningen, koninginnen, torens, lopers, paarden en beide pionnen — in één kopieer-en-plak-overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/schoppen-symbool/",
+      "title": "Schoppen-symbool",
+      "desc": "Schoppen, harten, ruiten en klaveren — de andere speltekens, die vlak naast de schaakstukken in Unicodes Miscellaneous-Symbols-blok staan."
+    },
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Crown & Royalty Symbols",
+      "desc": "Kronen, tronen en insignes — passend gezelschap voor een pion die droomt van promotie tot koningin (Engelstalige bibliotheek)."
+    }
+  ]
+}

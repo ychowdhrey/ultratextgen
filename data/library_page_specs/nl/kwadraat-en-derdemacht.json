@@ -1,0 +1,145 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "kwadraat-en-derdemacht",
+  "title": "Kwadraat (²) & Derde Macht (³): Kopieer en Plak Exponenten",
+  "meta_description": "Kopieer en plak de tekens voor kwadraat (²) en derde macht (³), gebruikt voor exponenten en eenheden zoals m² en cm³ — en waarom ze bijna overal werken. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/kwadraat-en-derdemacht/",
+  "breadcrumb": "Kwadraat & Derde Macht",
+  "hero_h1": "Kwadraat (²) & Derde Macht (³)",
+  "hero_tagline": "De twee superscript-cijfers die ouder zijn dan de rest van de superscript-set — voor exponenten, eenheidsafkortingen en de notatie ‘x in het kwadraat’. Klik op een teken om het direct te kopiëren.",
+  "intro": "² en ³ (superscript twee en drie, U+00B2 en U+00B3) zijn de exponenttekens achter x², E=mc² en eenheidsafkortingen zoals m² en cm³. In tegenstelling tot de rest van de superscript-cijfers maken ze al sinds de jaren 80 deel uit van de standaard Latin-1-tekenset — daarom worden ze op veel meer plekken correct weergegeven dan ⁰, ¹ of ⁴–⁹.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/squared-cubed/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/kwadraat-en-derdemacht/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/squared-cubed/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "kwadraat-en-derdemacht",
+      "label": "Kwadraat & Derde Macht",
+      "h2": "Kwadraat- & Derdemacht-tekens",
+      "intro": "De twee klassieke superscript-cijfers, klaar om achter een getal of eenheid te plakken.",
+      "symbols": [
+        {
+          "char": "²",
+          "label": "Superscript Twee (Kwadraat)"
+        },
+        {
+          "char": "³",
+          "label": "Superscript Drie (Derde Macht)"
+        }
+      ]
+    },
+    {
+      "id": "overige-superscript-cijfers",
+      "label": "Overige Superscript-cijfers",
+      "h2": "De Rest van de Superscript-cijfers",
+      "intro": "De overige superscript-cijfers — pas veel later aan Unicode toegevoegd, in een ander blok dan ² en ³.",
+      "symbols": [
+        {
+          "char": "⁰",
+          "label": "Superscript Nul"
+        },
+        {
+          "char": "¹",
+          "label": "Superscript Een"
+        },
+        {
+          "char": "⁴",
+          "label": "Superscript Vier"
+        },
+        {
+          "char": "⁵",
+          "label": "Superscript Vijf"
+        },
+        {
+          "char": "⁶",
+          "label": "Superscript Zes"
+        },
+        {
+          "char": "⁷",
+          "label": "Superscript Zeven"
+        },
+        {
+          "char": "⁸",
+          "label": "Superscript Acht"
+        },
+        {
+          "char": "⁹",
+          "label": "Superscript Negen"
+        }
+      ]
+    },
+    {
+      "id": "eenheidsafkortingen",
+      "label": "Veelgebruikte Eenheidsafkortingen",
+      "h2": "Veelgebruikte Kwadraat- & Derdemacht-eenheden",
+      "intro": "De meest gekopieerde praktijktoepassingen van ² en ³ — oppervlakte- en volume-eenheden.",
+      "symbols": [
+        {
+          "char": "m²",
+          "label": "Vierkante Meter"
+        },
+        {
+          "char": "cm²",
+          "label": "Vierkante Centimeter"
+        },
+        {
+          "char": "km²",
+          "label": "Vierkante Kilometer"
+        },
+        {
+          "char": "ft²",
+          "label": "Vierkante Voet"
+        },
+        {
+          "char": "m³",
+          "label": "Kubieke Meter"
+        },
+        {
+          "char": "cm³",
+          "label": "Kubieke Centimeter"
+        },
+        {
+          "char": "ft³",
+          "label": "Kubieke Voet"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/symbol/vermenigvuldigingsteken/",
+      "title": "Vermenigvuldigingsteken (×)",
+      "desc": "De ‘keer’-operator, en hoe die verschilt van de letter x."
+    },
+    {
+      "href": "/nl/symbol/vierkantswortel/",
+      "title": "Vierkantswortel (√)",
+      "desc": "Een oorsprong uit 1525 en de taak van de vinculumstreep."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Alle Wiskunde-symbolen",
+      "desc": "Operatoren, Griekse letters, verzamelingenleer en calculus-notatie."
+    }
+  ]
+}

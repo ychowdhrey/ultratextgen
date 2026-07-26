@@ -1,0 +1,73 @@
+{
+  "slug": "emoji-de-borboleta-monarca",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Emoji de Borboleta Monarca: Copiar e Colar 🫌 — o Candidato do Unicode 18.0 que Corrige uma Confusão de Espécie",
+  "meta_description": "Monarch Butterfly (🫌, U+1FACC) é um candidato rascunho para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026. Ele corrige anos de confusão na renderização do emoji Butterfly entre plataformas — ainda não aprovado, e nenhuma fonte o renderiza hoje.",
+  "canonical": "https://ultratextgen.com/pt/symbol/emoji-de-borboleta-monarca/",
+  "breadcrumb": "Emoji de Borboleta Monarca",
+  "hero_h1": "Emoji de Borboleta Monarca",
+  "hero_tagline": "Uma espécie específica, separada do desencontro de renderização entre plataformas do emoji genérico Butterfly — proposta para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026. Ainda é só rascunho: não aprovado, e nenhuma fonte a renderiza ainda. Clique para copiar o código mesmo assim.",
+  "intro": "Monarch Butterfly (🫌, U+1FACC) é um emoji candidato proposto para o Emoji 18.0, o complemento de emoji do Unicode 18.0, com finalização prevista para setembro de 2026. Ele existe para corrigir um problema real de fragmentação: o emoji genérico Butterfly (🦋) já existente é renderizado como uma borboleta-morfo azul em algumas plataformas e como algo mais próximo de uma monarca em outras, então duas pessoas podem trocar o mesmo código e imaginar dois insetos diferentes — «você pode ter mandado uma borboleta monarca enquanto a outra pessoa via uma morfo». Pedidos por essa borboleta específica remontam a anos nos próprios fóruns da comunidade Apple, onde usuários apontam a coloração icônica laranja e preta da monarca e seu status de espécie ameaçada como razões para merecer uma vaga própria. O Unicode costuma relutar em aprovar variantes específicas de espécie, mas dados de frequência mostrando o Butterfly como o emoji de animal mais usado em sua subcategoria justificaram separar sua espécie mais reconhecível. O próprio emoji carrega a história de migração da monarca — «resiliência geracional, resistência e memória ancestral profunda», uma criatura que atravessa milhares de quilômetros ao longo de gerações que ela nunca completa sozinha. Como ainda é um rascunho, nenhum sistema operacional, teclado ou fonte o renderiza atualmente; espere uma caixa em branco ou um glifo substituto até o Emoji 18.0 ser aprovado e as plataformas lançarem suporte, provavelmente em algum momento de 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-borboleta-monarca/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "monarch-butterfly",
+      "label": "Borboleta Monarca",
+      "h2": "Emoji de Borboleta Monarca",
+      "intro": "O caractere rascunho em si — já copiável hoje como código, mesmo que nenhuma fonte consiga renderizá-lo ainda.",
+      "symbols": [
+        { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Diferente de",
+      "h2": "O Emoji com que É Confundido",
+      "intro": "O emoji genérico já codificado do qual a Monarch Butterfly foi separada, e o vizinho com que costuma ser renderizada por engano.",
+      "symbols": [
+        { "char": "🦋", "label": "Butterfly — a espécie genérica da qual a Monarch Butterfly foi separada" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Outros Candidatos Rascunho",
+      "h2": "Outros Candidatos Rascunho do Emoji 18.0",
+      "intro": "Monarch Butterfly não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ela, igualmente sem renderização até a decisão de setembro de 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB) — venceu a votação pública" },
+        { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" },
+        { "char": "🪋", "label": "Meteor (rascunho, U+1FA8B)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/symbol/emoji-de-rosto-rachado/",
+      "title": "Emoji de Rosto Rachado",
+      "desc": "O candidato rascunho do Emoji 18.0 que venceu a votação pública."
+    },
+    {
+      "href": "/pt/symbol/emoji-de-picles/",
+      "title": "Emoji de Picles",
+      "desc": "Outro candidato rascunho do Emoji 18.0 — reatribuído de uma proposta adiada de Apple Core."
+    },
+    {
+      "href": "/pt/symbol/",
+      "title": "Símbolos",
+      "desc": "Todas as páginas individuais de símbolos do site, para procurar um item específico já conhecido."
+    }
+  ]
+}

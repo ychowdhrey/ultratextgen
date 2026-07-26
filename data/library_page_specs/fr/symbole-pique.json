@@ -1,0 +1,72 @@
+{
+  "slug": "symbole-pique",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Pique : Copier-Coller ♠ ♤ — la Couleur Nommée d'après une Épée, pas une Bêche",
+  "meta_description": "Copie et colle le symbole pique — plein ♠ (U+2660) et contour ♤ (U+2664) — et découvre comment cette couleur a hérité de son nom de l'épée et comment son As a longtemps porté le timbre fiscal britannique. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-pique/",
+  "breadcrumb": "Symbole Pique",
+  "hero_h1": "Symbole Pique",
+  "hero_tagline": "La couleur pique sous ses deux formes Unicode — pleine ♠ (U+2660) et creuse ♤ (U+2664) — le symbole de carte dont le nom descend de la couleur épée, et dont l'As portait autrefois le timbre fiscal officiel de la Grande-Bretagne. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le pique — ♠ (U+2660, BLACK SPADE SUIT) sous sa forme pleine et ♤ (U+2664, WHITE SPADE SUIT) sous sa forme contour — est l'une des quatre couleurs du jeu de cartes français standard, ajoutée à Unicode 1.1 en 1993 aux côtés des cœurs, carreaux et trèfles, les huit glyphes de couleurs occupant la plage U+2660 à U+2667. Son nom raconte une petite leçon d'histoire : « pique » (en anglais spade) vient non pas de l'outil de jardin mais de l'espagnol espada et de l'italien spada, qui signifient « épée » — la couleur des jeux plus anciens à l'espagnole. Quand les cartiers français ont normalisé le système à quatre couleurs dans la seconde moitié du XVe siècle, ils ont redessiné l'épée en la simple forme de feuille noire que l'on connaît — bon marché à pochoirer en deux couleurs, ce qui explique pourquoi le jeu français a ensuite envahi l'Europe et atteint l'Angleterre. Dans la convention Unicode, « black » (noir) signifie rempli et « white » (blanc) signifie contour, la couleur réelle étant laissée à la police — c'est pourquoi la même paire pleine/contour existe pour chaque couleur. L'As de Pique porte le folklore le plus riche du jeu : en Angleterre, il affichait le timbre fiscal officiel dès 1712 puis, après 1765, un motif richement gravé imprimé par le Stamp Office — l'ancêtre de l'as décoré d'aujourd'hui.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-pique/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbole-pique",
+      "label": "Symbole Pique",
+      "h2": "Le Symbole Pique — ♠ & ♤",
+      "intro": "La couleur elle-même, sous ses deux formes Unicode. Le ♠ plein est le pique « noir » par défaut ; ♤ est la version contour « blanche », et ♠️ est la forme de présentation emoji avec sélecteur de variation. Prêts à coller n'importe où.",
+      "symbols": [
+        { "char": "♠", "label": "Pique Noir (U+2660) — Plein / Rempli" },
+        { "char": "♤", "label": "Pique Blanc (U+2664) — Contour" },
+        { "char": "♠️", "label": "Emoji Pique (U+2660 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "les-quatre-couleurs",
+      "label": "Les Quatre Couleurs",
+      "h2": "Les Quatre Couleurs — Pleines & Contour",
+      "intro": "Unicode donne à chaque couleur française un glyphe plein « noir » et un glyphe contour « blanc », regroupés dans une même plage de U+2660 à U+2667. Petite bizarrerie à noter : piques et trèfles sont pleins par défaut, tandis que cœurs et carreaux sont en contour par défaut.",
+      "symbols": [
+        { "char": "♠", "label": "Pique Noir (U+2660)" },
+        { "char": "♥", "label": "Cœur Noir (U+2665)" },
+        { "char": "♦", "label": "Carreau Noir (U+2666)" },
+        { "char": "♣", "label": "Trèfle Noir (U+2663)" },
+        { "char": "♤", "label": "Pique Blanc (U+2664)" },
+        { "char": "♡", "label": "Cœur Blanc (U+2661)" },
+        { "char": "♢", "label": "Carreau Blanc (U+2662)" },
+        { "char": "♧", "label": "Trèfle Blanc (U+2667)" }
+      ]
+    },
+    {
+      "id": "as-et-cartes",
+      "label": "As & Cartes à Jouer",
+      "h2": "L'As de Pique & les Glyphes de Cartes à Jouer",
+      "intro": "La carte la plus chargée d'histoire du jeu : l'Angleterre a frappé l'As de Pique d'un timbre fiscal dès 1712 et imprimé son motif ornemental du Stamp Office après 1765, et une légende de guerre largement répétée (et très débattue) veut que les troupes américaines au Vietnam s'en soient servi comme « carte de la mort ». Le bloc Unicode Playing Cards donne à chaque carte son propre glyphe — voici les quatre as et le dos de carte.",
+      "symbols": [
+        { "char": "🂡", "label": "As de Pique, Carte à Jouer (U+1F0A1)" },
+        { "char": "🂱", "label": "As de Cœur, Carte à Jouer (U+1F0B1)" },
+        { "char": "🃁", "label": "As de Carreau, Carte à Jouer (U+1F0C1)" },
+        { "char": "🃑", "label": "As de Trèfle, Carte à Jouer (U+1F0D1)" },
+        { "char": "🂠", "label": "Dos de Carte à Jouer (U+1F0A0)" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/card-suit-symbols/", "title": "Card Suit Symbols", "desc": "Les quatre couleurs de cartes à jouer — piques, cœurs, carreaux et trèfles — pleines et en contour, à parcourir et copier (en anglais)." },
+    { "href": "/library/dice-domino-symbols/", "title": "Dice, Domino & Mahjong Symbols", "desc": "Le reste du jeu de table Unicode : faces de dés, tuiles de dominos et symboles de mahjong (en anglais)." },
+    { "href": "/fr/symbol/symbole-coeur/", "title": "Symbole Cœur (♥)", "desc": "Une couleur sœur : le cœur sous ses formes Unicode pleine ♥ et contour ♡, issues de la même plage U+2660–U+2667." }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-barana",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Barana: Skopiuj ♈ — Baran, Którego Runo Stało Się Złotym Runem Jazona",
+  "meta_description": "Skopiuj symbol zodiakalnego Barana (♈) i mit o Złotym Runie stojący za tym znakiem — skrzydlaty baran, który przeniósł Fryksosa do Kolchidy, i którego runo stało się później nagrodą Jazona i Argonautów. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-barana/",
+  "breadcrumb": "Symbol Barana",
+  "hero_h1": "Symbol Barana",
+  "hero_tagline": "Glif Barana (♈) to para zakrzywionych baranich rogów — pierwszy znak zodiaku, związany ze złotorunym baranem, którego runo stało się później nagrodą, po którą popłynęli na wschód Jazon i Argonauci. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Barana (♈, U+2648) rysowany jest jako para zakrzywionych baranich rogów, a Baran jest pierwszym znakiem zodiaku. Mit stojący za nim to początek historii Złotego Runa: skrzydlaty baran o złotym runie — po grecku Chrysomallos — został zesłany, by ocalić Fryksosa i jego siostrę Helle, dwoje dzieci, które ich macocha spiskowała złożyć w ofierze. Gdy baran przenosił ich przez morze, Helle straciła uchwyt i spadła, tonąc w cieśninie do dziś noszącej ku jej pamięci nazwę Hellespont („Morze Helle”). Fryksos dotarł bezpiecznie do Kolchidy, złożył barana w ofierze z wdzięczności i zawiesił tam jego złote runo — to samo runo, które pokolenia później stało się nagrodą, po którą Jazon i Argonauci popłynęli na wschód. Sam baran został umieszczony wśród gwiazd jako gwiazdozbiór Barana. Baran trwa od 21 marca do 19 kwietnia, jest rządzony przez Marsa i jest znakiem Ognia o modalności kardynalnej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/aries-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-barana/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/aries-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-barana",
+      "label": "Baran",
+      "h2": "Symbol Barana",
+      "intro": "Unicode'owy glif zodiakalnego Barana, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♈", "label": "Symbol Barana" },
+        { "char": "♈️", "label": "Symbol Barana (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Baranowi.",
+      "symbols": [
+        { "char": "♂", "label": "Mars (Planeta Rządząca)" },
+        { "char": "🜂", "label": "Ogień (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Barana (Waga).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♎", "label": "Waga (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-wagi/",
+      "title": "Symbol Wagi",
+      "desc": "Astrologiczne przeciwieństwo Barana, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/symbol/leo-symbol/",
+      "title": "Leo Symbol",
+      "desc": "Kolejny znak Ognia, z mitem o Lwie Nemejskim stojącym za jego glifem."
+    }
+  ]
+}

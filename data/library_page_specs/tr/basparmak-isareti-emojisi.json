@@ -1,0 +1,116 @@
+{
+  "slug": "basparmak-isareti-emojisi",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Baş Parmak İşareti Emojisi: Kopyala Yapıştır 🫹 🫺 — Unicode 18.0'ın Yönlü Jest Çifti",
+  "meta_description": "Sola ve Sağa Baş Parmak İşareti (🫹 U+1FAF9, 🫺 U+1FAFA), Eylül 2026'da beklenen Unicode 18.0 ile birlikte gelecek Emoji 18.0 için taslak adaylar — Beğeni/Beğenmeme'den farklı, yönlü işaret jestleri. Henüz onaylanmadı, bugün hiçbir yazı tipi göstermiyor.",
+  "canonical": "https://ultratextgen.com/tr/symbol/basparmak-isareti-emojisi/",
+  "breadcrumb": "Baş Parmak İşareti Emojisi",
+  "hero_h1": "Sola ve Sağa Baş Parmak İşareti Emojisi",
+  "hero_tagline": "Bir başka onay jesti değil, yönlü bir işaret çifti — Eylül 2026'da beklenen Unicode 18.0 ile gelecek Emoji 18.0 için taslak. Yalnızca taslak: henüz onaylanmadı, hiçbir yazı tipi göstermiyor. Yine de her iki kod noktasını da kopyalayabilirsin.",
+  "intro": "Sola Baş Parmak İşareti (🫹, U+1FAF9) ve Sağa Baş Parmak İşareti (🫺, U+1FAFA), Eylül 2026'da kesinleşmesi beklenen Unicode 18.0'ın emoji karşılığı Emoji 18.0 için taslak hâline getirilmiş eşleştirilmiş bir aday emoji setidir. Adına rağmen, Beğeni ve Beğenmeme'nin yanında bir başka onay jesti değiller — dikey bir baş parmaktan çok, iş olarak mevcut Sol/Sağ İşaret Eden Ters El emojilerine daha yakın, yatay, işaret eden bir işaretler. Çift, uzun süredir devam eden bir topluluk şikâyetine yanıt veriyor: Unicode'un jest kümesi her zaman sağ elini kullanan, dikey onay işaretlerine kaymıştır ve bir yanıt ya da karşılaştırmada baş parmağı \"buna\" karşı \"şuna\" doğru işaret etmenin temiz bir yolu olmamıştır. Kategori için gerçek bir emsal var — 2021'deki İten El önerisi, basit bir beğeni onayının ötesinde yönlü el jestlerini zaten meşru bir emoji alanı olarak kurmuştu. İki kavram arasında çift, onaylandığında 10 ten rengi varyantı taşıyacak (her biri için beş). Hâlâ birer taslak oldukları için hiçbir işletim sistemi, klavye ya da yazı tipi şu anda ikisini de göstermiyor; Emoji 18.0 onaylanıp platformlar desteği yayınlayana kadar, muhtemelen 2027 civarında, boş bir kutu ya da yer tutucu bir glif bekle.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "thumb-sign",
+      "label": "Baş Parmak İşareti",
+      "h2": "Sola ve Sağa Baş Parmak İşareti",
+      "intro": "İki taslak karakterin kendisi — hiçbir yazı tipi henüz gösteremese de bugün kod noktası olarak kopyalanabilir.",
+      "symbols": [
+        {
+          "char": "🫹",
+          "label": "Leftwards Thumb Sign (taslak, U+1FAF9)"
+        },
+        {
+          "char": "🫺",
+          "label": "Rightwards Thumb Sign (taslak, U+1FAFA)"
+        }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Farklı Olduğu Emoji",
+      "h2": "En Çok Karıştırıldığı Emoji",
+      "intro": "Baş Parmak İşareti'nin en sık kıyaslandığı ya da onu kopyalamakla suçlandığı, zaten kodlanmış jestler.",
+      "symbols": [
+        {
+          "char": "👍",
+          "label": "Thumbs Up — dikey onay, yönlü işaret değil"
+        },
+        {
+          "char": "👎",
+          "label": "Thumbs Down — dikey onaylamama, yönlü işaret değil"
+        },
+        {
+          "char": "👈",
+          "label": "Backhand Index Pointing Left"
+        },
+        {
+          "char": "👉",
+          "label": "Backhand Index Pointing Right"
+        }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Diğer Taslak Adaylar",
+      "h2": "Diğer Emoji 18.0 Taslak Adayları",
+      "intro": "Baş Parmak İşareti, bu sürümde onaylanmamış tek karakter değil — bunlar da onunla birlikte taslak hâline getirildi ve Eylül 2026'daki karara kadar aynı şekilde görüntülenemiyor.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Cracking Face (taslak, U+1FAEB) — halk oylamasını kazandı"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (taslak, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (taslak, U+1FA8B)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (taslak, U+1FACC)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "El Jesti Sembolleri",
+      "desc": "İşaret eden eller, onay jestleri ve zaten kodlanmış her el karakteri."
+    },
+    {
+      "href": "/tr/symbol/catlayan-yuz-emojisi/",
+      "title": "Çatlayan Yüz Emojisi",
+      "desc": "Halk oylamasını kazanan Emoji 18.0 taslak adayı."
+    },
+    {
+      "href": "/tr/symbol/tursu-emojisi/",
+      "title": "Turşu Emojisi",
+      "desc": "Ertelenen bir Apple Core önerisinden devralınmış bir başka Emoji 18.0 taslak adayı."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/basparmak-isareti-emojisi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}
