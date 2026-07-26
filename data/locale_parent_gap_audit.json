@@ -145,6 +145,149 @@
       "recordedBy": "claude-session-vi-symbol-build-user-authorized"
     },
     {
+      "pattern": "answers/*",
+      "locale": "fr",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name, username-vs-display. jeuxvideo.com Fortnite thread \"Faut mettre quoi pour avoir des caracteres invisibles dans son pseudo svp?\" (strong, fetched) + jeuxvideo.com \"Pseudo avec caracteres invisibles\" + cs-hackers.com \"Avoir un pseudo invisible en jeu\" (strong, fetched); Ikariam official FR forum readable-username ruling (strong, fetched) + Vossey.com CS 1.6 special-characters thread (medium, fetched) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "id",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name. Kaskus thread on blank Free Fire nicknames with multiple confirming replies (\"udah ane coba... work 90%\", \"its work gan\") (strong, fetched) + koransakti.co.id on empty nicknames used to hide identity (medium, fetched) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "it",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name, boxes. Multiplayer.it \"come avere un nome invisibile... copiare il carattere speciale\" (strong) + SERP-consensus Italian tofu explanation \"se vedi quadratini o punti interrogativi... il device non supporta quei caratteri\" (strong/medium-high) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "nl",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: boxes, username-vs-display. helpmij.nl \"speciale tekens niet herkend... wordt een ? weergegeven\" (strong, fetched) + a second fetched helpmij.nl alt-codes thread (medium); bokt.nl \"Tekentjes voor in je msn naam\" (medium-high) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "pl",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name. Three independent strong, fetched Polish threads: Wykop \"niewidzialny nick na steamie\", cshacked.pl \"jak zrobic niewidzialny nick w CS:GO\", cshacked.pl \"jakis inny bardzo maly znak\" Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "pt",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: name-rejected. Riot Games official pt-BR announcement thread on Riot ID rejection (strong, fetched) + Riot Comunidades \"NICK COM CARACTERE ESPECIAL\" and Adrenaline Forum \"colocar o nick com esses caracteres... pode dificultar na hora de tu logar\" (medium x2) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "ru",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name, boxes, name-rejected. Strongest evidence set in the library: 5 strong fetched blank-name threads (otvet.mail.ru x2, Pikabu Telegram empty-name, Steam Community x2 incl. the 32-byte limit discussion); forum.fw-free.com nickname-symbol rejection thread (strong, fetched); otvet.mail.ru \"я вижу квадратики\" tofu thread (strong, fetched) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "th",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name. Pantip \"ตัวอักษรล่องหนในเกมfreefire\" (strong) + Pantip LINE blank-name thread (medium) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "de",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "No answer-topic cleared the rule. Only 3 German rows exist in the corpus and none reach strong/medium-high on these topics: two snippet-only gutefrage.net blank-name references and one gutefrage.net thread that is actually about Instagram script fonts, not name rejection. Zero rows on tofu/boxes and zero on username-vs-display. Not a claim that German demand is absent — it is genuinely unaudited at the required strength, which is what this ledger is meant to surface rather than paper over. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "ko",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "No Korean rows exist anywhere in the 248-row forum corpus — not weak rows, zero rows. The demand check cannot be run at all for this locale on the current instrument, so no build is authorised. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "vi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "Vietnamese forum evidence is genuinely strong (VOZ, boxcongnghe.com, kituvui.com, Lemon8, powerpoint.com.vn — multiple strong fetched rows across blank-name, tofu and name-rejection), so this is NOT a demand failure. Not built because vi carries an explicit locale-level hold in data/locale_qualification_tiers.json (hold: true — the gap is authority/indexing, not content). The hold overrides a passing demand signal. Revisit if and when the vi hold is lifted; the demand side is already cleared. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
       "pattern": "library/*",
       "locale": "sv",
       "checkedDate": "2026-07-26",
