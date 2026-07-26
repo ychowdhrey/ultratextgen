@@ -1,12 +1,15 @@
 # Canonical host: enforce non-www
 https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 
-# Fallback rewrite: serve the English homepage for the root path.
-# The primary fix lives in functions/_middleware.js, which requests
-# /_root.html from ASSETS — a build-generated copy of index.html
-# with no locale variants, so i18n content negotiation cannot activate.
-# This rule acts as a safety net if the middleware is not deployed.
-/  /index.html  200
+# NOTE: there used to be a `/  /index.html  200` rewrite here, described
+# as a safety net for functions/_middleware.js. It was not a safety net —
+# a static rule short-circuits before Pages Functions, so it *replaced*
+# the middleware, which meant the middleware's ?lang= handling never ran.
+# Verified on the PR #674 preview deploy: with the rule present /?lang=de
+# returned 200 instead of the 301 the middleware issues.
+#
+# `/` now falls through to functions/_middleware.js, which serves the
+# English /_root copy explicitly (see that file for why).
 
 # Canonical path: enforce trailing slash on platform root pages
 /discord    /discord/    301
