@@ -72,7 +72,47 @@
       "localeUrl": "https://ultratextgen.com/ms/",
       "reason": "ms/index.html gained one inbound FAQ link to ms/answers/kenapa-nama-game-ditolak/ (2026-07-24), following an existing on-topic FAQ answer. ms/answers/* pre-dates this branch (already on main). No equivalent EN FAQ item to sync from. Verified mechanically (one onlyInLocale entry, no other fingerprint change). Re-surfaced only by the 2026-07-25 merge-base shift.",
       "agreed": "2026-07-25",
-      "suppress": { "onlyInLocale": ["/answers/why-was-my-game-name-rejected/"] }
+      "suppress": {
+        "onlyInLocale": [
+          "/answers/why-was-my-game-name-rejected/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/de/usecase/",
+      "reason": "EN usecase hub gained two cards for two newly-created EN-only pages (usecase/pubg-name-generator, usecase/mobile-legends-name-generator), built to give the previously parentless PUBG and Mobile Legends locale clusters a real English parent per CLAUDE.md's English-Parent Rule. There is nothing to sync into this locale hub: every locale that has a native PUBG or ML page already links it from its own usecase hub (tr/usecase/pubg-nick + tr/usecase/mobile-legends-nick, es + pt nombres/nomes-para-mobile-legends, id/usecase/nama-pubg-keren + nama-ml-keren), and de/fr/it/pl have no game-name pages at all. Adding cards here pointing at the English generators would create exactly the 'miswired locale link' failure mode CLAUDE.md's locale-native internal linking rule exists to prevent. Raised with the user and agreed 2026-07-26 rather than recorded unilaterally.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/es/usecase/",
+      "reason": "EN usecase hub gained two cards for two newly-created EN-only pages (usecase/pubg-name-generator, usecase/mobile-legends-name-generator), built to give the previously parentless PUBG and Mobile Legends locale clusters a real English parent per CLAUDE.md's English-Parent Rule. There is nothing to sync into this locale hub: every locale that has a native PUBG or ML page already links it from its own usecase hub (tr/usecase/pubg-nick + tr/usecase/mobile-legends-nick, es + pt nombres/nomes-para-mobile-legends, id/usecase/nama-pubg-keren + nama-ml-keren), and de/fr/it/pl have no game-name pages at all. Adding cards here pointing at the English generators would create exactly the 'miswired locale link' failure mode CLAUDE.md's locale-native internal linking rule exists to prevent. Raised with the user and agreed 2026-07-26 rather than recorded unilaterally.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/fr/usecase/",
+      "reason": "EN usecase hub gained two cards for two newly-created EN-only pages (usecase/pubg-name-generator, usecase/mobile-legends-name-generator), built to give the previously parentless PUBG and Mobile Legends locale clusters a real English parent per CLAUDE.md's English-Parent Rule. There is nothing to sync into this locale hub: every locale that has a native PUBG or ML page already links it from its own usecase hub (tr/usecase/pubg-nick + tr/usecase/mobile-legends-nick, es + pt nombres/nomes-para-mobile-legends, id/usecase/nama-pubg-keren + nama-ml-keren), and de/fr/it/pl have no game-name pages at all. Adding cards here pointing at the English generators would create exactly the 'miswired locale link' failure mode CLAUDE.md's locale-native internal linking rule exists to prevent. Raised with the user and agreed 2026-07-26 rather than recorded unilaterally.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/it/usecase/",
+      "reason": "EN usecase hub gained two cards for two newly-created EN-only pages (usecase/pubg-name-generator, usecase/mobile-legends-name-generator), built to give the previously parentless PUBG and Mobile Legends locale clusters a real English parent per CLAUDE.md's English-Parent Rule. There is nothing to sync into this locale hub: every locale that has a native PUBG or ML page already links it from its own usecase hub (tr/usecase/pubg-nick + tr/usecase/mobile-legends-nick, es + pt nombres/nomes-para-mobile-legends, id/usecase/nama-pubg-keren + nama-ml-keren), and de/fr/it/pl have no game-name pages at all. Adding cards here pointing at the English generators would create exactly the 'miswired locale link' failure mode CLAUDE.md's locale-native internal linking rule exists to prevent. Raised with the user and agreed 2026-07-26 rather than recorded unilaterally.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/pl/usecase/",
+      "reason": "EN usecase hub gained two cards for two newly-created EN-only pages (usecase/pubg-name-generator, usecase/mobile-legends-name-generator), built to give the previously parentless PUBG and Mobile Legends locale clusters a real English parent per CLAUDE.md's English-Parent Rule. There is nothing to sync into this locale hub: every locale that has a native PUBG or ML page already links it from its own usecase hub (tr/usecase/pubg-nick + tr/usecase/mobile-legends-nick, es + pt nombres/nomes-para-mobile-legends, id/usecase/nama-pubg-keren + nama-ml-keren), and de/fr/it/pl have no game-name pages at all. Adding cards here pointing at the English generators would create exactly the 'miswired locale link' failure mode CLAUDE.md's locale-native internal linking rule exists to prevent. Raised with the user and agreed 2026-07-26 rather than recorded unilaterally.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/usecase/",
+      "localeUrl": "https://ultratextgen.com/tr/usecase/",
+      "reason": "EN usecase hub gained two cards for two newly-created EN-only pages (usecase/pubg-name-generator, usecase/mobile-legends-name-generator), built to give the previously parentless PUBG and Mobile Legends locale clusters a real English parent per CLAUDE.md's English-Parent Rule. There is nothing to sync into this locale hub: every locale that has a native PUBG or ML page already links it from its own usecase hub (tr/usecase/pubg-nick + tr/usecase/mobile-legends-nick, es + pt nombres/nomes-para-mobile-legends, id/usecase/nama-pubg-keren + nama-ml-keren), and de/fr/it/pl have no game-name pages at all. Adding cards here pointing at the English generators would create exactly the 'miswired locale link' failure mode CLAUDE.md's locale-native internal linking rule exists to prevent. Raised with the user and agreed 2026-07-26 rather than recorded unilaterally.",
+      "agreed": "2026-07-26"
     }
   ]
 }
