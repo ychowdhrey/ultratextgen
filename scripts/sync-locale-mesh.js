@@ -14,11 +14,17 @@
  *   1. hreflang reciprocity + headless targets — delegated entirely to the
  *      existing scripts/audit-hreflang.js (never reimplemented here). In
  *      --fix mode, this runs `node scripts/audit-hreflang.js --fix` first,
- *      site-wide, before touching internal links, so link-rewriting always
- *      sees an accurate, reciprocal cluster map. In report mode (the
- *      default — no --fix), it instead runs audit-hreflang.js WITHOUT --fix,
- *      to surface hreflang health as read-only context alongside the link
- *      candidates below, without mutating anything.
+ *      before touching internal links, so link-rewriting always sees an
+ *      accurate, reciprocal cluster map. When --files is given, the fix is
+ *      forwarded as --scope-files: the audit still SCANS the whole tree
+ *      (reciprocity can't be judged from a subset) but only WRITES to the
+ *      named files and members of their own hreflang clusters — a scoped
+ *      run must never mutate unrelated clusters (that unscoped behavior
+ *      once edited two ratified local-only pages in an unrelated PR,
+ *      `148fcd59`). Without --files, --fix remains site-wide. In report
+ *      mode (the default — no --fix), it instead runs audit-hreflang.js
+ *      WITHOUT --fix, to surface hreflang health as read-only context
+ *      alongside the link candidates below, without mutating anything.
  *
  *      (Design note: hreflang repair is gated on THIS script's own --fix
  *      flag, not unconditional, specifically so a bare
@@ -73,10 +79,21 @@ console.log('');
 console.log(`── Step 1: hreflang reciprocity (scripts/audit-hreflang.js${FIX ? ' --fix' : ''}) ──`);
 console.log('');
 try {
-  execFileSync('node', ['scripts/audit-hreflang.js', ...(FIX ? ['--fix'] : [])], {
-    cwd: ROOT,
-    stdio: 'inherit',
-  });
+  execFileSync(
+    'node',
+    [
+      'scripts/audit-hreflang.js',
+      ...(FIX ? ['--fix'] : []),
+      // Scope the fix pass to the named files + their own cluster members,
+      // so a scoped run can never mutate unrelated clusters (the `148fcd59`
+      // failure). Report mode ignores this — it never writes anyway.
+      ...(FIX && explicitFiles.length ? ['--scope-files', ...explicitFiles] : []),
+    ],
+    {
+      cwd: ROOT,
+      stdio: 'inherit',
+    }
+  );
 } catch {
   // audit-hreflang.js exits 1 when it finds (or, in report mode, still has)
   // unresolved issues — that's expected, informational output, not a reason

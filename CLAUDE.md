@@ -919,18 +919,25 @@ complete flowchart, and every script's flags/exit codes:
   automation — `scripts/generate_library_page_from_spec.py` calls it
   automatically (best-effort, `--fix --files <new page>`) right after writing
   any non-English page; other generators should get the same hook the next
-  time they're touched. **Scoping caveat (2026-07-26): `--files` scopes only
-  the internal-link-rewrite pass — the delegated hreflang-audit `--fix` pass
-  is unscoped and can mutate files far outside the paths you named.** Always
-  review the diff for touched files you didn't intend before committing, and
-  revert out-of-scope edits rather than shipping them as drive-by fixes
-  (case: `148fcd59`, where an unscoped run stamped a duplicate `zh-TW`
-  alternate onto `ja/font-henkan` and `ko/font-byeonhwan` — two ratified
-  local-only exception pages in a completely unrelated cluster). Related
-  hazard: the ratified local-only pages (see "Ratified local-only
-  exceptions" above) intentionally do NOT form a full translation-sibling
-  mesh — automated mesh tooling doesn't know that, so treat any tool-made
-  hreflang change to those pages as a bug to revert, not a fix.
+  time they're touched. **Scoping (fixed 2026-07-26, same day the caveat
+  was written):** `--files` now scopes BOTH passes — the hreflang `--fix`
+  is forwarded as `--scope-files`, which still scans the whole tree
+  (reciprocity can't be judged from a subset) but only writes to the named
+  files plus members of their own hreflang clusters. Before this fix the
+  hreflang pass was unscoped and could mutate files far outside the paths
+  you named (case: `148fcd59`, where a scoped run stamped a duplicate
+  `zh-TW` alternate onto `ja/font-henkan` and `ko/font-byeonhwan` — two
+  ratified local-only exception pages in a completely unrelated cluster).
+  The fixer also now refuses to insert an entry for an hreflang code the
+  file already declares with a different href — that's a conflict flagged
+  for manual review, never auto-stacked. A site-wide (no `--files`) `--fix`
+  run remains intentionally unscoped: still review its diff before
+  committing, and revert out-of-scope edits rather than shipping them as
+  drive-by fixes. Related hazard: the ratified local-only pages (see
+  "Ratified local-only exceptions" above) intentionally do NOT form a full
+  translation-sibling mesh — automated mesh tooling doesn't know that, so
+  treat any tool-made hreflang change to those pages as a bug to revert,
+  not a fix.
 - **`node scripts/check-locale-mesh.js`** (`npm run check:locale-mesh`) —
   the enforcing, diff-scoped PR gate, wired into `.github/workflows/validate.yml`.
   For every changed locale page: fails if its hreflang cluster has a
