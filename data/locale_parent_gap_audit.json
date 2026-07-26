@@ -143,6 +143,19 @@
       "verdict": "gate-pass",
       "evidence": "User-authorized exception, not a fresh per-locale instrument pull. vi is registered in data/locale_qualification_tiers.json as Tier 2 with hold: true — its documented problem is an authority/indexing gap, not a content gap (\"do not add vi content; it needs backlinks, not translations\"). The user was told this directly (vi's gap was presented separately from the qualified-locale symbol/* coverage table, with the hold reasoning spelled out) and explicitly chose to include vi in this build batch anyway when asked. This entry records that authorization so scripts/check-locale-parent-gap.js passes for the 98 vi/symbol/* pages built in this pass; it does not flip vi's hold flag in data/locale_qualification_tiers.json and does not constitute a general re-qualification of vi — the underlying authority/indexing concern is unaddressed by adding this content, and future vi build decisions should still weigh that.",
       "recordedBy": "claude-session-vi-symbol-build-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "sv",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull (no Semrush credits available this session). sv is registered in data/locale_qualification_tiers.json as Tier 3 (hold-stub, \"no spec mirroring until promoted\") — a firmer default than a gated-tail parent's normal per-check gate, same class of override as the zh-tw/tongxunlu-nicheng entry above. The gap was surfaced by the private ultratextgen-lab- repo's translation-opportunities-2026-07-24.md (Tier A4: sv missing all of the site's top-4-traffic library/ cluster — discord-symbols, roblox-symbols, y2k-symbols, emoji-combos — while it already carries real content elsewhere, i.e. this is a partially-built locale, not a bootstrap-from-zero). The user was told sv is Tier 3 directly and asked to build this specific 4-page cluster anyway, and confirmed. This entry authorizes sv/library/discord-symboler, sv/library/roblox-symboler, sv/library/y2k-symboler, and sv/library/emoji-combos; it does not change sv's tier in data/locale_qualification_tiers.json and does not constitute general re-qualification of sv — future sv build decisions should still go through the Tier-3 default (raise with the user first) unless/until sv is promoted via the 7-point gate.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
     }
   ]
 }
