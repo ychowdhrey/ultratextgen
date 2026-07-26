@@ -214,22 +214,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main class="container" style="max-width:900px;">
 
-  <!-- Odjeljak: nova perspektiva -->
+  <!-- Osio: uusi näkökulma -->
   <section class="editorial-section">
-    <span class="article-section-label">Nova perspektiva</span>
-    <h2>Nisu fontovi — riječ je o tri različita sustava</h2>
+    <span class="article-section-label">Uusi näkökulma</span>
+    <h2>Kyse ei ole fonteista — kyse on kolmesta eri järjestelmästä</h2>
     <div class="editorial-block">
-      <p>Gotovo svako Discordovo pitanje „zašto mi tekst ne radi” dolazi od brkanja triju stvari koje jedna s drugom nemaju veze. Discord te u chatu <em>nauči</em> Markdown, pa pretpostaviš da bi isti trik trebao stilizirati i tvoje ime. Ne stilizira — imena rade po posve drugom sustavu.</p>
-      <p>Evo cijelog područja u jednom kadru. Nauči koji sustav koristi svako polje i više te ništa neće iznenaditi.</p>
+      <p>Lähes jokainen Discordin ”miksi tekstini ei toimi” -kysymys johtuu kolmen keskenään täysin erillisen asian sekoittamisesta. Discord <em>opettaa</em> sinulle Markdownia chatissa, joten oletat saman tempun tyylittelevän myös nimesi. Ei tyylittele — nimet toimivat aivan eri järjestelmällä.</p>
+      <p>Tässä koko kenttä yhdessä kuvassa. Opi, mitä järjestelmää mikäkin kenttä käyttää, eikä mikään enää yllätä sinua.</p>
     </div>
 
     <div class="data-table-wrap">
       <table class="data-table">
-        <thead><tr><th>Sustav</th><th>Što je to</th><th>Gdje radi</th><th>Kvaka</th></tr></thead>
+        <thead><tr><th>Järjestelmä</th><th>Mikä se on</th><th>Missä se toimii</th><th>Kompastuskivi</th></tr></thead>
         <tbody>
-          <tr><td><strong>Markdown</strong></td><td>Simboli koje Discord iscrtava (<code>**podebljanje**</code>, <code>*kurziv*</code>, <code>~~precrtano~~</code>, ANSI boja)</td><td>Samo poruke</td><td>Umire u svakom polju za ime; ANSI boja radi samo na računalu</td></tr>
-          <tr><td><strong>Unicode „fontovi”</strong></td><td>Zamjenski znakovi koji već izgledaju stilizirano (𝗽𝗼𝗱𝗲𝗯𝗹𝗷𝗮𝗻𝗼, 𝓴𝓾𝓻𝔃𝓲𝓿)</td><td>Prikazano ime, nadimak, nazivi servera/kanala/uloga, bio, poruke</td><td>Može se prikazati kao kvadratići; zbunjuje čitače zaslona; odbijeno u @korisničkom imenu</td></tr>
-          <tr><td><strong>Nitro stilovi</strong></td><td>Plaćeni Display Name Styles: pravi font + boja + efekti</td><td>Tvoje prikazano ime</td><td>Boja/efekti se ne vide unutar servera (pobjeđuje boja uloge); košta</td></tr>
+          <tr><td><strong>Markdown</strong></td><td>Symbolit, jotka Discord piirtää (<code>**lihavointi**</code>, <code>*kursiivi*</code>, <code>~~yliviivaus~~</code>, ANSI-väri)</td><td>Vain viestit</td><td>Ei toimi missään nimikentässä; ANSI-väri toimii vain tietokoneella</td></tr>
+          <tr><td><strong>Unicode-”fontit”</strong></td><td>Korvaavat merkit, jotka näyttävät jo tyylitellyiltä (𝗯𝗼𝗹𝗱, 𝓬𝓾𝓻𝓼𝓲𝓿𝓮)</td><td>Näyttönimi, nimimerkki, palvelimen/kanavan/roolin nimet, bio, viestit</td><td>Voi näkyä neliöinä; hämmentää ruudunlukijoita; hylätään @käyttäjänimessä</td></tr>
+          <tr><td><strong>Nitro-tyylit</strong></td><td>Maksullinen Display Name Styles: oikea fontti + väri + efektit</td><td>Näyttönimesi</td><td>Väri/efektit eivät näy palvelimien sisällä (roolin väri voittaa); maksaa</td></tr>
         </tbody>
       </table>
     </div>
@@ -237,121 +237,118 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="section-divider"></div>
 
-  <!-- Odjeljak: 1. sustav Markdown -->
+  <!-- Osio: 1. järjestelmä Markdown -->
   <section class="editorial-section">
-    <span class="article-section-label">1. sustav</span>
-    <h2>Markdown — za poruke</h2>
+    <span class="article-section-label">1. järjestelmä</span>
+    <h2>Markdown — viesteille</h2>
     <div class="editorial-block">
-      <p>Markdown je oblikovanje koje Discord primijeni kad <em>prikaže</em> tvoju poruku. Utipkaš simbole oko riječi, a Discord ih zamijeni pravim stilom.</p>
+      <p>Markdown on muotoilu, jonka Discord ottaa käyttöön <em>näyttäessään</em> viestisi. Kirjoitat symboleja sanojen ympärille, ja Discord vaihtaa ne oikeaksi tyyliksi.</p>
       <ul>
-        <li><code>**podebljanje**</code> → <strong>podebljanje</strong></li>
-        <li><code>*kurziv*</code> → <em>kurziv</em></li>
-        <li><code>~~precrtano~~</code> → precrtano</li>
-        <li><code>__podcrtano__</code> → podcrtano</li>
-        <li><code>||spojler||</code> → skriveno do klika</li>
-        <li><code>&gt; citat</code> i <code>`kod`</code></li>
+        <li><code>**lihavointi**</code> → <strong>lihavointi</strong></li>
+        <li><code>*kursiivi*</code> → <em>kursiivi</em></li>
+        <li><code>~~yliviivaus~~</code> → yliviivaus</li>
+        <li><code>__alleviivaus__</code> → alleviivaus</li>
+        <li><code>||spoiler||</code> → piilossa kunnes klikataan</li>
+        <li><code>&gt; lainaus</code> ja <code>`koodi`</code></li>
       </ul>
-      <p>To je <em>pravi</em> način za oblikovanje poruke — ostaje pravi tekst, pa je pretraživ i pristupačan. Kvaka su dvije pogreške zbog kojih „ne radi”:</p>
+      <p>Tämä on <em>oikea</em> tapa muotoilla viesti — se pysyy oikeana tekstinä, joten se on haettavissa ja saavutettava. Kompastuskivenä ovat kaksi virhettä, joiden vuoksi se ”ei toimi”:</p>
       <div class="compare-grid">
         <div class="compare-card variant-muted">
-          <span class="compare-badge">Neće podebljati</span>
-          <p><code>** tekst **</code> — razmak unutar zvjezdica poništava efekt. Koristi <code>**tekst**</code>.</p>
+          <span class="compare-badge">Ei lihavoi</span>
+          <p><code>** teksti **</code> — tähtien sisällä oleva välilyönti kumoaa efektin. Käytä <code>**teksti**</code>.</p>
         </div>
         <div class="compare-card variant-muted">
-          <span class="compare-badge">Neće podebljati</span>
-          <p>Unutar <code>`bloka koda`</code> obrnuti navodnici gase Markdown. Premjesti stil izvan njega.</p>
+          <span class="compare-badge">Ei lihavoi</span>
+          <p><code>`koodilohkon`</code> sisällä takakenot sammuttavat Markdownin. Siirrä tyylittely sen ulkopuolelle.</p>
         </div>
       </div>
-      <p><strong>I ono glavno:</strong> Markdown ne radi ništa u korisničkom imenu, nadimku, nazivu servera ni kanala. To nisu poruke, pa Discord na njima nikad ne pokreće Markdown.</p>
+      <p><strong>Ja se tärkein:</strong> Markdown ei tee mitään käyttäjänimessä, nimimerkissä, palvelimen nimessä eikä kanavan nimessä. Ne eivät ole viestejä, joten Discord ei koskaan suorita niissä Markdownia.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Odjeljak: 2. sustav Unicode -->
+  <!-- Osio: 2. järjestelmä Unicode -->
   <section class="editorial-section">
-    <span class="article-section-label">2. sustav</span>
-    <h2>Unicode „fontovi” — za imena</h2>
+    <span class="article-section-label">2. järjestelmä</span>
+    <h2>Unicode-”fontit” — nimille</h2>
     <div class="editorial-block">
-      <p>Da stiliziraš <em>ime</em>, ne možeš tražiti od Discorda da išta iscrta — pa koristiš znakove koji već izgledaju stilizirano. Generator pretvara „Nova” u 𝗡𝗼𝘃𝗮 ili 𝓝𝓸𝓿𝓪 pomoću posebnih Unicode znakova, a gotov rezultat zalijepiš ravno u polje. Nikakvo iscrtavanje nije potrebno, pa preživljava ondje gdje Markdown ne može.</p>
-      <p>To radi u tvom prikazanom imenu, u nadimku na serveru, u nazivima servera i kanala, u nazivima uloga, u tvom biju i u porukama. Postoji točno jedno mjesto gdje je blokirano:</p>
+      <p><em>Nimen</em> tyylittelyyn et voi pyytää Discordia piirtämään mitään — joten käytät merkkejä, jotka näyttävät jo tyylitellyiltä. Generaattori muuttaa sanan „Nova” muotoon 𝗡𝗼𝘃𝗮 tai 𝓝𝓸𝓿𝓪 erikoisten Unicode-merkkien avulla, ja liität valmiin tuloksen suoraan kenttään. Mitään piirtämistä ei tarvita, joten se selviää siellä, missä Markdown ei selviä.</p>
+      <p>Tämä toimii näyttönimessäsi, palvelimen nimimerkissäsi, palvelimen ja kanavien nimissä, roolien nimissä, biossasi ja viesteissä. On tasan yksi paikka, jossa se on estetty:</p>
       <div class="mood-explainer">
-        <div class="mood-example"><strong>@korisničko ime ga odbija.</strong> Tvoj jedinstveni identifikator (onaj s malim slovima iza @) dopušta samo a–z, 0–9, <code>_</code> i <code>.</code> — za spominjanja, pretraživanje i usmjeravanje. Zalijepiš li ondje kićeni font, Discord ga odbija spremiti. Umjesto toga stiliziraj <em>prikazano ime</em>.</div>
+        <div class="mood-example"><strong>@käyttäjänimi hylkää sen.</strong> Ainutlaatuinen tunnuksesi (se pienillä kirjaimilla @-merkin jälkeen) sallii vain a–z, 0–9, <code>_</code> ja <code>.</code> — mainintoja, hakua ja reititystä varten. Jos liität sinne koristeellisen fontin, Discord kieltäytyy tallentamasta sitä. Tyylittele sen sijaan <em>näyttönimesi</em>.</div>
       </div>
-      <p>Dvije iskrene napomene: Unicode imena mogu se na nekim uređajima prikazati kao kvadratići (osobito na starijem Androidu) i teška su za čitače zaslona. Odaberi siguran stil (podebljano, kurziv, kapitalke) i drži ga ukusnim — mnogi veliki serveri moderiraju teško čitljiva ili zalgo imena.</p>
+      <p>Kaksi rehellistä huomiota: Unicode-nimet voivat näkyä joissakin laitteissa neliöinä (etenkin vanhemmassa Androidissa) ja ne ovat vaikeita ruudunlukijoille. Valitse turvallinen tyyli (lihavoitu, kursiivi, pienet suuraakkoset) ja pidä se tyylikkäänä — moni suuri palvelin moderoi vaikealukuisia tai zalgo-nimiä.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Odjeljak: 3. sustav Nitro -->
+  <!-- Osio: 3. järjestelmä Nitro -->
   <section class="editorial-section">
-    <span class="article-section-label">3. sustav</span>
-    <h2>Nitro Display Name Styles — plaćeni i uži nego što misliš</h2>
+    <span class="article-section-label">3. järjestelmä</span>
+    <h2>Nitron Display Name Styles — maksullinen ja suppeampi kuin luulet</h2>
     <div class="editorial-block">
-      <p>Discordov plaćeni Nitro nudi Display Name Styles, značajku dodanu krajem 2025.: pravi font, boju pa čak i animirane efekte na tvom prikazanom imenu. Odlično izgleda na tvojoj profilnoj kartici. Ali postoji kvaka koju ljudi otkriju na teži način:</p>
+      <p>Discordin maksullinen Nitro tarjoaa Display Name Stylesin, vuoden 2025 lopulla lisätyn ominaisuuden: oikean fontin, värin ja jopa animoituja efektejä näyttönimeesi. Se näyttää upealta profiilikortillasi. Mutta mukana tulee kompastuskivi, jonka ihmiset huomaavat kantapään kautta:</p>
       <div class="mood-explainer">
-        <div class="mood-example">Unutar servera boja tvoje <strong>uloge</strong> nadjačava Nitro boju, a efekti se uklanjaju — pa drugi članovi obično vide samo <em>font</em>, ne i boju ni animaciju. Puni efekt vidi se uglavnom na tvom profilu, a ne na popisu članova ni u chatu.</div>
+        <div class="mood-example">Palvelimen sisällä <strong>roolisi</strong> väri ohittaa Nitro-värin, ja efektit poistetaan — joten muut jäsenet näkevät yleensä vain <em>fontin</em>, eivät väriä eivätkä animaatiota. Koko efekti näkyy lähinnä profiilissasi, ei jäsenlistalla eikä chatissa.</div>
       </div>
-      <p>Besplatni računi mogu otvoriti izbornik i <strong>pregledati</strong> stil, ali spremanje je samo uz Nitro — taj slijed pregled-pa-naplata upravo je razlog zašto toliko ljudi sad pita treba li Nitro uopće za fontove. To je pošteno pitanje o ovoj konkretnoj značajki; nije promjena Unicode stiliziranja, koje ostaje besplatno bez obzira na sve.</p>
-      <p>Dakle, Nitro se isplati ako želiš dotjeranu profilnu karticu i prepoznatljiv font imena posvuda. <em>Nije</em> način da uneseš obojani tekst u razgovor — to je drugi alat (sljedeći odjeljak).</p>
+      <p>Ilmaiset tilit voivat avata valikon ja <strong>esikatsella</strong> tyyliä, mutta tallentaminen vaatii Nitron — juuri tuo esikatsele-ja-maksa-järjestys on syy siihen, miksi niin moni nyt kysyy, tarvitaanko Nitroa fontteihin ylipäätään. Se on aiheellinen kysymys tästä nimenomaisesta ominaisuudesta; se ei ole muutos Unicode-tyylittelyyn, joka pysyy ilmaisena joka tapauksessa.</p>
+      <p>Nitro siis kannattaa, jos haluat siistin profiilikortin ja tunnistettavan nimifontin kaikkialle. Se <em>ei ole</em> tapa saada väritettyä tekstiä keskusteluun — siihen on toinen työkalu (seuraava osio).</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Odjeljak: bonus o boji -->
+  <!-- Osio: väribonus -->
   <section class="editorial-section">
-    <span class="article-section-label">Pitanje boje</span>
-    <h2>A obojani tekst u porukama?</h2>
+    <span class="article-section-label">Värikysymys</span>
+    <h2>Entä väritetty teksti viesteissä?</h2>
     <div class="editorial-block">
-      <p>Obojani tekst u poruci četvrti je, uži trik: <strong>ANSI blokovi koda</strong>. Tekst omotaš u blok s tri obrnuta navodnika označen <code>ansi</code> i dodaš escape kodove za boju. Budi svjestan ograničenja:</p>
+      <p>Väritetty teksti viestissä on neljäs, kapeampi temppu: <strong>ANSI-koodilohkot</strong>. Kääräiset tekstin kolmen takakenon lohkoon, jonka tunniste on <code>ansi</code>, ja lisäät väreille pakoetumerkit. Ole tietoinen rajoituksista:</p>
       <ul>
-        <li>Samo <strong>osam fiksnih boja</strong> — bez vlastitog heksa.</li>
-        <li><strong>Samo u bloku koda</strong> — ne može obojati običnu rečenicu u tekstu.</li>
-        <li><strong>Nepouzdano na mobitelu</strong> — korisnicima telefona često se prikaže kao običan tekst.</li>
+        <li>Vain <strong>kahdeksan kiinteää väriä</strong> — ei omaa heksaväriä.</li>
+        <li><strong>Vain koodilohkon sisällä</strong> — ei voi väriä tavallista lausetta rivin sisällä.</li>
+        <li><strong>Epäluotettava mobiilissa</strong> — puhelimen käyttäjille näkyy usein pelkkänä tekstinä.</li>
       </ul>
-      <p>Korisno za upozorenja ili zapise na serveru okrenutom računalima; nije opći alat za stiliziranje. Ako je pola tvojih članova na mobitelu, računaj da neće vidjeti boju.</p>
+      <p>Hyödyllinen tietokonekeskeisen palvelimen varoituksiin tai lokeihin; ei yleinen tyylittelytyökalu. Jos puolet jäsenistäsi on mobiilissa, oleta ettei he näe väriä.</p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Odjeljak: odluka -->
+  <!-- Osio: päätös -->
   <section class="editorial-section">
-    <span class="article-section-label">Brza odluka</span>
-    <h2>Koji sustav trebaš?</h2>
+    <span class="article-section-label">Nopea päätös</span>
+    <h2>Minkä järjestelmän tarvitset?</h2>
     <div class="data-table-wrap">
       <table class="data-table">
-        <thead><tr><th>Želim…</th><th>Koristi</th></tr></thead>
+        <thead><tr><th>Haluan…</th><th>Käytä</th></tr></thead>
         <tbody>
-          <tr><td>Podebljati/nakriviti riječ u poruci</td><td>Markdown <code>**…**</code></td></tr>
-          <tr><td>Stilizirati prikazano ime ili nadimak</td><td>Unicode font (zalijepiš ga)</td></tr>
-          <tr><td>Ukrasiti naziv servera ili kanala</td><td>Unicode font + simboli</td></tr>
-          <tr><td>Promijeniti izgled jedinstvenog @korisničkog imena</td><td>Nije moguće — stiliziraj prikazano ime</td></tr>
-          <tr><td>Obojano, animirano ime na profilu</td><td>Nitro Display Name Styles</td></tr>
-          <tr><td>Obojani tekst u poruci</td><td>ANSI blok koda (računalo, 8 boja)</td></tr>
+          <tr><td>Lihavoida/kursivoida sanan viestissä</td><td>Markdown <code>**…**</code></td></tr>
+          <tr><td>Tyylitellä näyttönimeni tai nimimerkkini</td><td>Unicode-fontti (liitä se)</td></tr>
+          <tr><td>Koristella palvelimen tai kanavan nimeä</td><td>Unicode-fontti + symbolit</td></tr>
+          <tr><td>Muuttaa ainutlaatuisen @käyttäjänimeni ulkoasua</td><td>Ei mahdollista — tyylittele sen sijaan näyttönimi</td></tr>
+          <tr><td>Väritetty, animoitu profiilinimi</td><td>Nitron Display Name Styles</td></tr>
+          <tr><td>Väritetty teksti viestissä</td><td>ANSI-koodilohko (tietokone, 8 väriä)</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <div class="pull-quote">Discord ti nije pokvario podebljanje.<br>Upotrijebio si sustav chata na polju za ime.<br><br>Poveži sustav s poljem i jednostavno radi.</div>
+  <div class="pull-quote">Discord ei rikkonut lihavointiasi.<br>Käytit chatin järjestelmää nimikentässä.<br><br>Yhdistä järjestelmä kenttään, ja se toimii yksinkertaisesti.</div>
 
-  <!-- CTA kartica -->
+  <!-- CTA-kortti -->
   <div class="cta-card">
-    <h3>Napravi ime spremno za Discord</h3>
-    <p>Napravi Unicode stil siguran na svim uređajima, kopiraj ga i zalijepi u prikazano ime ili u nadimak na serveru — bez Nitra.</p>
-    <a href="/hr/fontovi-za-discord/" class="cta-btn">Otvori alat za fontove za Discord →</a>
+    <h3>Tee Discord-valmis nimi</h3>
+    <p>Luo laitteille turvallinen Unicode-tyyli, kopioi se ja liitä se näyttönimeen tai palvelimen nimimerkkiin — ilman Nitroa.</p>
+    <a href="/fi/discord-fontit/" class="cta-btn">Avaa Discord-fonttityökalu →</a>
   </div>
 
   <!-- Platform pills -->
   <div class="platform-pills">
-    <a class="platform-pill" href="/hr/fontovi-za-discord/">Discord</a>
-    <a class="platform-pill" href="/hr/fontovi-za-instagram/">Instagram</a>
-    <a class="platform-pill" href="/hr/goticka-slova/">Gotica</a>
-    <a class="platform-pill" href="/hr/kurziv/">Kurziv</a>
-    <a class="platform-pill" href="/hr/podebljana-slova/">Podebljano</a>
+    <a class="platform-pill" href="/fi/discord-fontit/">Discord</a>
+    <a class="platform-pill" href="/fi/instagram-fontit/">Instagram</a>
   </div>
 
 </main>
@@ -365,52 +362,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- FAQ -->
 <section class="editorial-section">
   <span class="article-section-label">FAQ</span>
-  <h2>Najčešća pitanja</h2>
+  <h2>Usein kysytyt kysymykset</h2>
 
   <div class="faq-item">
-    <button class="faq-question" type="button">Zašto podebljanje radi u Discord chatu, a ne u korisničkom imenu?</button>
+    <button class="faq-question" type="button">Miksi lihavointi toimii Discordin chatissa mutta ei käyttäjänimessäni?</button>
     <div class="faq-answer">
-      <p>Zato što koriste različite sustave. U chatu je <code>**podebljanje**</code> Markdown — Discord ga iscrta kad prikaže tvoju poruku. Imena (korisničko ime, nadimak, server, kanal, uloga) ne pokreću Markdown, pa se zvjezdice prikažu doslovno. Da stiliziraš ime, trebaš Unicode „fontove” — posebne znakove koji već izgledaju podebljano — zalijepljene ravno u polje.</p>
+      <p>Koska ne käyttävät eri järjestelmiä. Chatissa <code>**lihavointi**</code> on Markdownia — Discord piirtää sen näkyviin, kun se näyttää viestisi. Nimet (käyttäjänimi, nimimerkki, palvelin, kanava, rooli) eivät suorita Markdownia, joten tähdet näkyvät sellaisenaan. Nimen tyylittelyyn tarvitset Unicode-”fontteja” — erikoismerkkejä, jotka näyttävät jo lihavoiduilta — liitettynä suoraan kenttään.</p>
     </div>
   </div>
   <div class="faq-item">
-    <button class="faq-question" type="button">Jesu li Unicode fontovi isto što i Discord Nitro fontovi?</button>
+    <button class="faq-question" type="button">Ovatko Unicode-fontit samoja kuin Discord Nitro -fontit?</button>
     <div class="faq-answer">
-      <p>Ne. Unicode „fontovi” besplatni su zamjenski znakovi koje možeš zalijepiti svugdje gdje je ime dopušteno; rade za svakoga, ali se na nekim uređajima mogu prikazati kao kvadratići i zbunjuju čitače zaslona. Nitro Display Name Styles plaćena je značajka koja na tvoje prikazano ime primjenjuje pravi font, boju i efekte — ali boja i efekti ne vide se unutar servera, gdje pobjeđuje boja tvoje uloge; prenosi se samo font.</p>
+      <p>Ei. Unicode-”fontit” ovat ilmaisia korvaavia merkkejä, jotka voit liittää mihin tahansa nimikenttään; ne toimivat kaikilla, mutta voivat näkyä neliöinä joissakin laitteissa ja hämmentävät ruudunlukijoita. Nitron Display Name Styles on maksullinen ominaisuus, joka lisää näyttönimeesi oikean fontin, värin ja efektit — mutta väri ja efektit eivät näy palvelimien sisällä, joissa roolisi väri voittaa; vain fontti siirtyy mukana.</p>
     </div>
   </div>
   <div class="faq-item">
-    <button class="faq-question" type="button">Kako napraviti obojani tekst na Discordu?</button>
+    <button class="faq-question" type="button">Miten teen väritettyä tekstiä Discordissa?</button>
     <div class="faq-answer">
-      <p>Pomoću ANSI blokova koda: tekst omotaš u blok s tri obrnuta navodnika označen „ansi” i dodaš escape kodove za boju. Ograničeno je na osam fiksnih boja, radi samo unutar blokova koda i nepouzdano je na mobitelu (često se prikaže kao običan tekst). To je za poruke, ne za imena.</p>
+      <p>ANSI-koodilohkoilla: kääri teksti kolmen takakenon merkitsemään lohkoon, jonka tunniste on ”ansi”, ja lisää väreille pakoetumerkit. Käytössä on vain kahdeksan kiinteää väriä, se toimii vain koodilohkojen sisällä ja on epäluotettava mobiilissa (näkyy usein pelkkänä tekstinä). Se on tarkoitettu viesteihin, ei nimiin.</p>
     </div>
   </div>
   <div class="faq-item">
-    <button class="faq-question" type="button">Zašto se pojavljuju zvjezdice umjesto podebljanog teksta?</button>
+    <button class="faq-question" type="button">Miksi tähdet näkyvät lihavoinnin sijaan?</button>
     <div class="faq-answer">
-      <p>Dva česta razloga: postoji razmak između zvjezdica i riječi (<code>** tekst **</code> neće podebljati — <code>**tekst**</code> hoće) ili je tekst unutar bloka koda (obrnuti navodnici gase Markdown). Zapamti i da Markdown radi samo u porukama, nikad u imenima.</p>
+      <p>Kaksi yleistä syytä: tähtien ja sanan välissä on välilyönti (<code>** teksti **</code> ei lihavoi — <code>**teksti**</code> lihavoi) tai teksti on koodilohkon sisällä (takakenot sammuttavat Markdownin). Muista myös, että Markdown toimii vain viesteissä, ei koskaan nimissä.</p>
     </div>
   </div>
 </section>
 
-<!-- POVEZANO -->
+<!-- LIITTYVÄT -->
 <section class="related-guides">
-  <h2>Nastavi čitati</h2>
+  <h2>Jatka lukemista</h2>
   <div class="related-grid">
-    <a class="related-card" href="/hr/guide/gdje-rade-fontovi-na-discordu/">
+    <a class="related-card" href="/fi/guide/missa-discord-fontit-toimivat/">
       <span class="related-tag">🗺️</span>
-      <span class="related-title">Gdje rade fontovi na Discordu</span>
-      <span class="related-desc">Karta dopuštenja, polje po polje.</span>
+      <span class="related-title">Missä Discord-fontit toimivat</span>
+      <span class="related-desc">Käyttöoikeuskartta, kenttä kerrallaan.</span>
     </a>
-    <a class="related-card" href="/hr/guide/siguran-nadimak-na-discordu/">
+    <a class="related-card" href="/fi/guide/turvallinen-discord-nimimerkki/">
       <span class="related-tag">🛡️</span>
-      <span class="related-title">Siguran nadimak na Discordu</span>
-      <span class="related-desc">Prođi tri filtra bez filtriranja.</span>
+      <span class="related-title">Turvallinen Discord-nimimerkki</span>
+      <span class="related-desc">Läpäise kolme suodatinta ilman suodatusta.</span>
     </a>
-    <a class="related-card" href="/hr/fontovi-za-discord/">
+    <a class="related-card" href="/fi/discord-fontit/">
       <span class="related-tag">🎮</span>
-      <span class="related-title">Generator fontova za Discord</span>
-      <span class="related-desc">Stilovi za nadimak i „O meni”, spremni za lijepljenje.</span>
+      <span class="related-title">Discord-fonttigeneraattori</span>
+      <span class="related-desc">Tyylit nimimerkkiin ja ”Tietoja minusta” -osioon, valmiina liitettäväksi.</span>
     </a>
   </div>
 </section>
