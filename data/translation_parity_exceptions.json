@@ -20,6 +20,36 @@
       "agreed": "2026-07-24"
     },
     {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/ko/symbol/",
+      "reason": "Same shape as the es/symbol/ and id/symbol/ entries above, one round later: ko/symbol/index.html gained compare-cards for 18 pages built as part of the 5-locale (ar/ko/ja/ru/th) symbol/* translation build. symbol/index.html (EN) already lists all 106 EN symbol pages as compare-cards and needed no change in this branch (verified: card count 106 === EN page count 106, diff empty) — the locale hub was catching up to an already-complete EN state, not diverging from it. Expect matching entries for ar/ko(further batches)/ja/ru/th/symbol/ as the rest of this build lands, for the identical mechanical reason. Flagged to the user for review rather than silently resolved.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/ru/symbol/",
+      "reason": "Same mechanical shape as the ko/symbol/ entry immediately above: ru/symbol/index.html gained compare-cards for 30 pages built as part of the 5-locale (ar/ko/ja/ru/th) symbol/* translation build. symbol/index.html (EN) already lists all 106 EN symbol pages as compare-cards and needed no change in this branch (verified: diff against merge-base is empty). The locale hub is catching up to an already-complete EN state, not diverging from it. Flagged to the user for review rather than silently resolved.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/ja/symbol/",
+      "reason": "Same mechanical shape as the ko/symbol/ and ru/symbol/ entries above: ja/symbol/index.html gained compare-cards for 40 pages built as part of the 5-locale (ar/ko/ja/ru/th) symbol/* translation build. symbol/index.html (EN) already lists all 106 EN symbol pages as compare-cards and needed no change in this branch (verified: diff against merge-base is empty). The locale hub is catching up to an already-complete EN state, not diverging from it. Flagged to the user for review rather than silently resolved.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/ar/symbol/",
+      "reason": "Same mechanical shape as the ko/ru/ja symbol/ entries above: ar/symbol/index.html gained compare-cards for 30 pages built as part of the 5-locale (ar/ko/ja/ru/th) symbol/* translation build. symbol/index.html (EN) already lists all 106 EN symbol pages as compare-cards and needed no change in this branch (verified: diff against merge-base is empty). The locale hub is catching up to an already-complete EN state, not diverging from it. Flagged to the user for review rather than silently resolved.",
+      "agreed": "2026-07-25"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/symbol/",
+      "localeUrl": "https://ultratextgen.com/th/symbol/",
+      "reason": "Same mechanical shape as the ko/ru/ja/ar symbol/ entries above: th/symbol/index.html gained compare-cards for 49 pages built as part of the 5-locale (ar/ko/ja/ru/th) symbol/* translation build. symbol/index.html (EN) already lists all 106 EN symbol pages as compare-cards and needed no change in this branch (verified: diff against merge-base is empty). The locale hub is catching up to an already-complete EN state, not diverging from it. Flagged to the user for review rather than silently resolved. This is the fifth and final locale of this build's parity exceptions - all five follow the identical mechanical pattern.",
+      "agreed": "2026-07-25"
+    },
+    {
       "enUrl": "https://ultratextgen.com/library/",
       "localeUrl": "https://ultratextgen.com/pt/library/",
       "reason": "check-translation-parity.js flags this pair (mislabeling the EN side as vi/library/ in its output — a display quirk, not the real comparison) because pt/library/index.html gained a new \"Símbolos para Free Fire\" list entry in this branch, as part of renaming pt/library/simbolos-para-nick -> pt/library/simbolos-para-free-fire. This is not real EN/locale drift: library/index.html (EN) already lists library/free-fire-name-symbols and needed no change — the checker's within-branch commit-delta comparison flags PT as changed without a matching EN commit in this PR, even though EN's content was already correct going in. Verified by direct inspection, not assumed. Discussed with the user 2026-07-25 rather than force an unnecessary cosmetic touch to the EN file just to make the diff-based checker see a matching delta.",
