@@ -132,7 +132,7 @@ Diff-scoped PR gate, built on the same git-diff/merge-base structure as
 [--base <ref>]` (default `origin/main`).
 
 For every HTML file **added or changed** in the branch whose path starts
-with one of the 28 canonical locale codes and is part of an hreflang
+with one of the 29 canonical locale codes and is part of an hreflang
 cluster:
 
 - **(a)** fails if that file's cluster has any non-reciprocal or headless
@@ -252,15 +252,21 @@ default-mirror?*
 }
 ```
 
-Every one of the 28 canonical locale codes (the same list
+Every one of the 29 canonical locale codes (the same list
 `scripts/check-image-assets.py` uses) has an entry, so no locale tool has to
-guess a default for a code it doesn't recognize.
+guess a default for a code it doesn't recognize. (`ms` was missing from the
+registry until 2026-07-26 — live with 21 pages but silently classified by the
+unclassified-locale fallback; its entry now codifies that Tier-3 default
+explicitly. The formerly-uniform "shadow/duplicate locales" notes were
+replaced the same day with individual, evidence-backed classifications — see
+each locale's `notes` field for its specific status and promotion
+prerequisites.)
 
 | Tier | Locales | Action |
 |---|---|---|
 | **1** — deepen + mirror Core now | id, pt, de, fr, tr, it, es | `deepen-then-mirror-core` |
 | **2** — qualify via the 7-point gate, then mirror Core | pl, nl, ar, ko, ja, ru, th, **vi** (HOLD) | `qualify-then-mirror-core` |
-| **3** — hold/stub, no spec mirroring | hi, tl, hu, bs, cs, da, hr, no, ro, sk, sr, sv, zh-tw | `hold-stub` |
+| **3** — hold/stub, no spec mirroring | hi, tl, hu, bs, cs, da, hr, ms, no, ro, sk, sr, sv, zh-tw | `hold-stub` |
 
 **`vi` is Tier 2 but `hold: true`.** Per the strategy that authorized this
 registry: vi's problem is an **authority/indexing gap, not a content gap** —

@@ -373,6 +373,24 @@ position 6.06 — all indexed, all on-SERP, all starved by the hub above them.
 the hub intercepts "how to bold" and then ranks ~80 for it. Five purpose-built
 pages, near-zero traffic, because Rule 3 was never applied to the hub.
 
+**These four rules apply within each locale independently (clarified
+2026-07-26).** A translated spoke batch can collide with that locale's own
+existing hubs even when the EN side is clean — the batch mirrors EN's
+hub/spoke split, but the locale's hubs may have grown their own extra prose
+in the meantime. When the collision surfaces on pages too new to have any
+GSC signal (zero impressions, nothing to adjudicate a demand-based split
+with), do not invent a locale-specific judgment call: resolve structurally
+by mirroring what the live EN parent hub already does — same de-targeting,
+same reciprocal `compare-card` links, no more and no less. **Case study
+(2026-07-26):** a 452-page `symbol/*` translation batch produced four
+`nl/symbol/*` spokes overlapping two existing NL library hubs;
+`nl/library/vraagteken/` carried FAQ content its EN parent
+(`library/punctuation-symbols`) never had — a real Rule 3 violation — while
+`nl/library/kruis-symbool/` already matched its parent and only needed its
+Rule 4 links. Both fixed by mirroring the EN parent's shape (`1c6e9bbb`),
+per explicit user direction, because no NL demand data existed to support
+anything else.
+
 ---
 
 ## Core JavaScript Architecture
@@ -596,7 +614,16 @@ already exist at the equivalent `/category/`, `/library/`, `/symbol/`,
   wiring, translate the copy, and wire full reciprocal `hreflang` (every
   locale variant links every other variant, `x-default` points at the EN
   canonical). Missing reciprocity is a real, recurring bug on this site, not
-  a hypothetical — see the case study below.
+  a hypothetical — see the case study below. **"Reciprocal" includes the
+  page itself (clarified 2026-07-26):** every page's hreflang block must
+  contain a self-referencing entry for its own URL, and `x-default` must
+  never point at the page itself on a non-EN page. The missing
+  self-reference has been the single most-repeated mesh bug on this site —
+  fixed on 26 `symbol/` pages (`43690ed8`), then 356 EN pages site-wide
+  (`c3ead3d8`), then 12 more (`f749fe3c`), plus a third variant where
+  the self-reference existed but pointed at a subtly wrong URL. When adding
+  or auditing a cluster, check self-reference and `x-default` direction
+  explicitly, not just cross-links between siblings.
 - **No** → do not build the localized page directly. Build the English
   version first (it usually also captures a bigger, unvalidated EN/global
   search pool the localized-only page would leave on the table), *then*
@@ -662,6 +689,57 @@ Note this is a **precedent, not a template** — it does not license
 speculatively building other locales' internet-slang transforms. Each future
 case needs its own demand evidence and its own discussion, exactly as this one
 did.
+
+**Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
+`fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
+`fr/` near-duplicate pages `ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md` §2c
+flagged as no-EN-parent with no discussed exception. A query-level GSC pull
+(France, 26 days) settled the other three (`fr/ecriture-style/`,
+`fr/generateur-de-texte/` retired via 301 to `fr/`; `fr/ecriture-speciale/`
+left as-is, negligible volume either way — see commit for the full
+per-page breakdown) but confirmed these three pass the site's own
+Hub-vs-Spoke spoke test on the *French* evidence: `changeur-de-police`
+(100% of impressions on queries `fr/index.html` never ranks for at all —
+"change police"/"changeur de police"), `calligraphie` (76%, "calligraphie
+copier coller"), and `police-d-ecriture` (54%, largest and still-growing
+volume of the six — "police d'écriture"/"police ecriture", where the
+homepage barely shows: 4 impressions at position 24 vs. this page's 188 at
+position 9.6 on the exact same query).
+
+**Important distinction from the `ja`/`ko`/`zh-tw` trio above: this is
+*not* a "no English speaker would search this" claim** — "font" and
+"calligraphy" are high-volume English concepts too. The actual reason no
+EN parent exists is a **market-specific SERP-consolidation difference**:
+the already-resolved "font converter" EN-parent question (`AUDIT-ACTIONS.md`
+row 17, closed by `GOLD-ANALYSIS-2026-07-25.md`/`LOCALE-OPPORTUNITY-HUNT-
+2026-07-25.md` §1c) found English/Spanish/Italian SERPs for that concept
+pull the *same* competitor set as "font generator" — Google treats them as
+synonyms there, so a standalone EN page would cannibalize the EN homepage.
+The French GSC data above shows the opposite holds in the French market:
+`fr/index.html` doesn't compete on these queries at all. This EN-side
+synonym-consolidation read is inferred from the row-17 close-out, not
+independently verified against EN GSC for "font"/"calligraphy" specifically
+— worth a direct check before treating it as settled, but it's the reason
+these three stay unbuilt in EN rather than a claim that the underlying
+concept lacks English demand. `x-default` on all three (plus their live
+non-English siblings, `it/font-copia-e-incolla/` and `it/caratteri-
+speciali/` on the `changeur-de-police` cluster) falls back to the bare EN
+homepage as a generic default only, same as the trio above — not a
+translation-equivalence claim.
+
+**Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
+picked up new content the same day (a "changer un texte déjà écrit" FAQ, a
+changeur-vs-générateur distinction FAQ, a before/after example) matched to
+its GSC query cluster. Its live IT siblings, `it/font-copia-e-incolla/` and
+`it/caratteri-speciali/`, were **not** updated — `check-translation-parity.js`
+confirmed this is outside its own scope (it diffs EN↔locale pairs only; this
+is an IT-FR-only cluster with no EN member), so nothing enforced a sync, and
+none was done. This is a real gap: the site's tooling has no mechanism for
+locale↔locale parity when neither side is EN. Needs a decision — port the
+same content to the two IT pages, or record the divergence deliberately
+(and if the latter, decide where: `data/translation_parity_exceptions.json`
+requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
+by default.
 
 ### Locale-native internal linking — check every time you touch a locale page
 
@@ -883,7 +961,7 @@ at their intersection:
   translating), `gated` (translate only on a cleared demand check — burden
   of proof is on translating), or `never`. Most-specific-pattern wins when
   more than one entry matches a path.
-- **`data/locale_qualification_tiers.json`** — tiers every one of the 28
+- **`data/locale_qualification_tiers.json`** — tiers every one of the 29
   canonical locale codes as Tier 1 (deepen + mirror Core now), Tier 2
   (qualify via the existing 7-point gate, then mirror Core), or Tier 3
   (hold/stub, no spec mirroring). `vi` is Tier 2 but explicitly `hold: true`
@@ -912,7 +990,25 @@ complete flowchart, and every script's flags/exit codes:
   automation — `scripts/generate_library_page_from_spec.py` calls it
   automatically (best-effort, `--fix --files <new page>`) right after writing
   any non-English page; other generators should get the same hook the next
-  time they're touched.
+  time they're touched. **Scoping (fixed 2026-07-26, same day the caveat
+  was written):** `--files` now scopes BOTH passes — the hreflang `--fix`
+  is forwarded as `--scope-files`, which still scans the whole tree
+  (reciprocity can't be judged from a subset) but only writes to the named
+  files plus members of their own hreflang clusters. Before this fix the
+  hreflang pass was unscoped and could mutate files far outside the paths
+  you named (case: `148fcd59`, where a scoped run stamped a duplicate
+  `zh-TW` alternate onto `ja/font-henkan` and `ko/font-byeonhwan` — two
+  ratified local-only exception pages in a completely unrelated cluster).
+  The fixer also now refuses to insert an entry for an hreflang code the
+  file already declares with a different href — that's a conflict flagged
+  for manual review, never auto-stacked. A site-wide (no `--files`) `--fix`
+  run remains intentionally unscoped: still review its diff before
+  committing, and revert out-of-scope edits rather than shipping them as
+  drive-by fixes. Related hazard: the ratified local-only pages (see
+  "Ratified local-only exceptions" above) intentionally do NOT form a full
+  translation-sibling mesh — automated mesh tooling doesn't know that, so
+  treat any tool-made hreflang change to those pages as a bug to revert,
+  not a fix.
 - **`node scripts/check-locale-mesh.js`** (`npm run check:locale-mesh`) —
   the enforcing, diff-scoped PR gate, wired into `.github/workflows/validate.yml`.
   For every changed locale page: fails if its hreflang cluster has a
@@ -950,6 +1046,47 @@ sets for parity divergences. If one of the gap-check scripts flags a
 missing entry, either raise the divergence with the user or run the actual
 instrument check and record it — don't edit the registry to make a page you
 want to ship pass.
+
+### What passes a gate — and what doesn't (clarified 2026-07-26)
+
+Three recurring points of confusion, each resolved by a real case:
+
+1. **"Sibling precedent" is never a gate pass.** "Other locales already have
+   this cluster" is not demand evidence for *this* locale — it's exactly the
+   heuristic the governance registries replaced. **Case:** the Wave-1
+   `answers/*` cluster (44 pages, 11 locales) was built under sibling
+   precedent before the gate existed; when merging main brought the gate in,
+   the pages were pulled back out of the branch (`4eeb80a2`) rather than
+   grandfathered, because no per-locale demand check had ever been run.
+2. **Instruments unavailable → hold, don't improvise.** If Semrush is out of
+   API units (or GSC has no data for pages too new to index), the demand
+   check cannot be run — so the build waits, or the user explicitly
+   authorizes. Never fabricate a gap-audit entry, and never downgrade to a
+   weaker proxy without saying so. Same case as above: the revert was chosen
+   specifically over "force an undocumented pass."
+3. **A locale hold is a default the user can override — explicitly,
+   per-batch, without flipping the flag.** `vi` is Tier 2 `hold: true`
+   ("needs backlinks, not translations"). The user, told this directly,
+   still chose to include vi in a `symbol/*` build; the authorization was
+   recorded as a `data/locale_parent_gap_audit.json` entry with `null`
+   instruments and evidence text naming it a user authorization
+   (`f09d35b5`) — vi's hold flag and tier were left untouched. That's the
+   template: the override lives in the ledger as a dated, attributed
+   decision; the registry keeps stating the standing default. Presenting the
+   hold reasoning to the user *before* they decide is part of the override
+   being legitimate — a hold silently ignored is a violation, a hold
+   knowingly overridden is a decision.
+
+### Governance arrives mid-flight: merged-in rules bind unshipped work
+
+When merging main into a long-running branch brings in a new gate, registry,
+or rule, that rule applies to everything the branch has built but not yet
+merged — "it was allowed when I built it" holds only for work already on
+main. Re-run all four PR gates (`check-translation-parity`,
+`check-locale-mesh`, `check-locale-parent-gap`,
+`check-new-page-image-assets`) after every merge of main, and re-validate
+in-flight pages against any governance the merge introduced (the `4eeb80a2`
+revert above is this rule applied honestly).
 
 ---
 
@@ -1066,6 +1203,37 @@ Do not add a test framework unless explicitly requested.
 - **Branch naming**: `claude/<description>-<session-id>` for AI-generated branches
 - **CI tags**: Use `[skip ci]` in auto-generated commit messages to prevent circular workflows
 - **`sitemap.xml`**: Never manually edit — always auto-generated
+- **"Shipped" means merged to master through a PR** — nothing else. A commit
+  pushed to a branch is not shipped, and a commit pushed to a branch whose
+  PR already merged is invisible (no open PR tracks it; it will never reach
+  master). Before recording anything as shipped, confirm the PR shows
+  merged, or that `git branch -r --contains <commit>` includes
+  `origin/master`.
+
+### Parallel sessions build the same thing under different names
+
+Multiple AI sessions often work this repo concurrently, and translation
+work is where they collide: two sessions closing the same locale gap can
+pick **different locale slugs for the same EN parent** (e.g.
+`id/symbol/yin-yang/` vs `id/symbol/simbol-yin-yang/`). Git's path-based
+conflict detection cannot catch this — both directories merge cleanly and
+silently coexist as duplicates. **Case (2026-07-25):** 26 such duplicate
+pairs survived a merge of main; caught only because
+`validate_library_pages.py` flagged one duplicate meta description, then
+confirmed by checking every `id/symbol/` page's `hreflang="en"` back-link
+for multiple claimants of the same EN parent (`4164fc6f`).
+
+Standing protocol:
+1. **Before starting a translation batch**, fetch and merge main, then list
+   what already exists for that locale/lane — main may have grown pages your
+   branch's plan assumes are missing.
+2. **After every merge of main into a branch that adds locale pages**, check
+   for duplicate claimants: no two pages in one locale may declare the same
+   `hreflang="en"` parent. That check, not path conflicts, is the collision
+   detector.
+3. **When duplicates are found**, keep the set that's more deeply integrated
+   (better meshed, more inbound links — usually main's), remove the other,
+   and repoint every reference to the removed slug at the survivor.
 
 ---
 

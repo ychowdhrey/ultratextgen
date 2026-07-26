@@ -8,6 +8,21 @@ const { globSync } = require('glob');
 const ROOT = path.resolve(__dirname, '..');
 const FIX = process.argv.includes('--fix');
 
+// --scope-files <path...> (only meaningful with --fix): the audit always
+// scans the WHOLE tree — reciprocity can't be judged from a subset — but
+// writes are restricted to the named files plus the members of their own
+// hreflang clusters. Siblings must stay writable (adding a page means its
+// cluster gains back-links), but pages in unrelated clusters must never be
+// mutated by a scoped run. This exists because an unscoped fix pass once
+// edited two ratified local-only pages in a cluster the invoking PR never
+// touched (`148fcd59`).
+const argvTail = process.argv.slice(2);
+const scopeIdx = argvTail.indexOf('--scope-files');
+const scopeFiles = [];
+if (scopeIdx !== -1) {
+  for (let i = scopeIdx + 1; i < argvTail.length && !argvTail[i].startsWith('--'); i++) scopeFiles.push(argvTail[i]);
+}
+
 // Same skip pattern as check-gtm.js — embeds/widgets/tests don't carry a real hreflang cluster.
 const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
 const SKIP_DIRS = ['node_modules', 'reports', 'data', 'functions', 'fonts'];
@@ -149,6 +164,9 @@ if (brokenList.length) {
   for (const line of brokenList) console.log(`  ✗ ${line}`);
 }
 
+let skippedOutOfScope = 0;
+const conflictWarnings = [];
+
 // ─── --fix ─────────────────────────────────────────────────────────────────
 //
 // Two repair modes:
@@ -163,6 +181,31 @@ if (FIX) {
   let filesFixed = 0;
   let linksAdded = 0;
 
+  // Build the write-allowed set when --scope-files was given: each named
+  // file, every page its alternates point at, and every page that points an
+  // alternate at it (both directions, so a stale one-way link still keeps
+  // the pair in scope). null = unscoped, whole tree writable.
+  let allowedFiles = null;
+  if (scopeFiles.length) {
+    allowedFiles = new Set();
+    const scopeRels = new Set(
+      scopeFiles.map((f) => path.relative(ROOT, path.resolve(ROOT, f)).replace(/\\/g, '/'))
+    );
+    const scopeRecs = [...byUrl.values()].filter((r) => scopeRels.has(r.rel));
+    for (const rec of scopeRecs) {
+      allowedFiles.add(rec.filePath);
+      for (const a of rec.alternates) {
+        const t = byUrl.get(a.href);
+        if (t) allowedFiles.add(t.filePath);
+      }
+      for (const p of byUrl.values()) {
+        if (p.alternates.some((a) => a.href === rec.canonical)) allowedFiles.add(p.filePath);
+      }
+    }
+    console.log('');
+    console.log(`  fix scope: ${scopeFiles.length} named file(s) -> ${allowedFiles.size} writable file(s) (named files + their cluster members)`);
+  }
+
   // 1. Non-reciprocal — append into an existing alternate block. Only skip
   // when a SUBPAGE claims a homepage as its "EN version" (a common
   // placeholder when no real translated counterpart exists yet) — writing
@@ -176,6 +219,10 @@ if (FIX) {
   for (const item of nonReciprocal) {
     if (isHomepage(item.target.canonical) && !isHomepage(item.page.canonical)) {
       skippedHomepageTargets++;
+      continue;
+    }
+    if (allowedFiles && !allowedFiles.has(item.target.filePath)) {
+      skippedOutOfScope++;
       continue;
     }
     const arr = fixesByFile.get(item.target.filePath) || [];
@@ -203,10 +250,38 @@ if (FIX) {
     if (insertAt < 0) continue;
 
     const existing = new Set(lines.map((l) => l.trim()));
+
+    // Conflict guard: never insert a second entry for an hreflang code the
+    // file already declares with a DIFFERENT href. Two entries for one code
+    // is always wrong (the duplicate-`zh-TW` failure in `148fcd59`); which
+    // href is correct is a judgment call, so flag it for manual review
+    // instead of stacking a duplicate.
+    const existingByLang = new Map(); // lang(lower) -> Set of normalized hrefs
+    for (const line of lines) {
+      if (!/<link\b[^>]*rel\s*=\s*["']alternate["']/i.test(line)) continue;
+      const lang = getAttr(line, 'hreflang');
+      const href = getAttr(line, 'href');
+      if (!lang || !href) continue;
+      const key = lang.toLowerCase();
+      if (!existingByLang.has(key)) existingByLang.set(key, new Set());
+      existingByLang.get(key).add(normalize(href));
+    }
+
     const deduped = links.filter(
       (l, idx, arr) => arr.findIndex((x) => x.hreflang === l.hreflang && x.href === l.href) === idx
     );
-    const newLines = deduped
+    const rel = path.relative(ROOT, filePath).replace(/\\/g, '/');
+    const nonConflicting = deduped.filter((l) => {
+      const have = existingByLang.get(l.hreflang.toLowerCase());
+      if (have && !have.has(normalize(l.href))) {
+        conflictWarnings.push(
+          `${rel}: already declares hreflang="${l.hreflang}" with a different href — wanted to add ${l.href}; resolve by hand`
+        );
+        return false;
+      }
+      return true;
+    });
+    const newLines = nonConflicting
       .map((l) => `${indent}<link rel="alternate" hreflang="${l.hreflang}" href="${l.href}">`)
       .filter((line) => !existing.has(line.trim()));
 
@@ -219,6 +294,10 @@ if (FIX) {
 
   // 2. Headless — build a brand-new block from every source that references it.
   for (const [target, sources] of headless) {
+    if (allowedFiles && !allowedFiles.has(target.filePath)) {
+      skippedOutOfScope++;
+      continue;
+    }
     const cluster = new Map(); // hreflang -> href
     let xDefaultHref = null;
 
@@ -270,6 +349,13 @@ if (FIX) {
   if (skippedHomepageTargets) {
     console.log(`⚠️  Skipped ${skippedHomepageTargets} pair(s) whose target is a homepage — a subpage claims the homepage as its placeholder translation; fix the subpage's own claim by hand instead.`);
   }
+  if (skippedOutOfScope) {
+    console.log(`⚠️  Skipped ${skippedOutOfScope} fix(es) outside --scope-files (named files + their cluster members). Run unscoped to apply site-wide.`);
+  }
+  if (conflictWarnings.length) {
+    console.log(`⚠️  ${conflictWarnings.length} conflicting hreflang entr${conflictWarnings.length === 1 ? 'y' : 'ies'} left unfixed (same code, different href — never auto-stacked):`);
+    for (const w of conflictWarnings) console.log(`    ${w}`);
+  }
 }
 
 const totalIssues = nonReciprocal.length + headless.size + brokenList.length;
@@ -281,6 +367,10 @@ if (totalIssues && !FIX) {
   console.log('');
   console.log(`❌ ${brokenList.length} broken hreflang target(s) remain (no matching page anywhere — verify the URL/slug by hand).`);
   process.exit(1);
+} else if (FIX && (skippedOutOfScope || conflictWarnings.length)) {
+  console.log('');
+  console.log('✅ In-scope clusters repaired. Issues outside --scope-files, or flagged conflicts, remain — see warnings above; run unscoped (or resolve conflicts by hand) to clear them.');
+  process.exit(0);
 } else {
   console.log('');
   console.log('✅ All hreflang clusters are fully reciprocal (or the sole remaining gaps are homepage-placeholder claims, left for manual review).');
