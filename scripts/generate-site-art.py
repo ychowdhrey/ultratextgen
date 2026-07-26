@@ -1495,6 +1495,8 @@ PAGES = {
         m_gamepad, K_USE),
   "id-huruf-kecil-diatas": ("Huruf Kecil Diatas", "Superscript buat nickname Free Fire & status WA",
         P(m_typo, sample="Sanz", size=76, label="huruf kecil diatas"), K_USE),
+  "id-tulisan-cuping": ("Font Cuping", "Generator cute typing ala RP buat WA & Telegram",
+        m_kaomoji, K_CAT),
 
   # ---- localized zalgo ----
   "de-usecase-zalgo-text": ("Zalgo-Textgenerator", "Erstelle gruseligen Glitch-Text", m_zalgo, K_USE),

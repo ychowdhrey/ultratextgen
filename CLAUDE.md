@@ -643,6 +643,26 @@ legitimate local-only exception (identical title/H1 to `ja/index.html`,
 thinner content, zero cross-links) — and was 301-redirected to `ja/index.html`
 instead of ratified.
 
+**Ratified local-only exception (2026-07-26): `id/tulisan-cuping/`.** "Cuping"
+(cute typing) is an Indonesian RP/Telegram trend that respells *Indonesian*
+words phonetically to sound cuter (r→l, s→c, drop final h — `sering`→`celing`,
+`jangan`→`janan`), with a few community-fixed forms the general rule doesn't
+derive (`marah`→`mayah`). The transform operates on Indonesian phonemes, so an
+English parent would not be a translation of this feature — English cute-speak
+/uwu-typing is a different algorithm on different phonetics — and would sit at
+zero demand by construction, since "cuping" isn't a term English speakers
+search. Same shape of argument as `ja/gal-moji/` above, and it takes the same
+structural form: no hreflang cluster at all, `id/`-only marketing page, with
+the transform itself living in the shared global `renderer.js`/`styles.js`
+registry like every other style (the *code* is never locale-partitioned; only
+the page presenting it is). Demand evidence: "font cuping"/"cuping font"
+≈33,000/mo combined in the ID market at KD 19–20 with weak incumbents.
+
+Note this is a **precedent, not a template** — it does not license
+speculatively building other locales' internet-slang transforms. Each future
+case needs its own demand evidence and its own discussion, exactly as this one
+did.
+
 ### Locale-native internal linking — check every time you touch a locale page
 
 Whenever you create, edit, or otherwise touch a locale page's prose/FAQ
