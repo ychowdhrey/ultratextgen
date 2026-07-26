@@ -670,6 +670,57 @@ legitimate local-only exception (identical title/H1 to `ja/index.html`,
 thinner content, zero cross-links) — and was 301-redirected to `ja/index.html`
 instead of ratified.
 
+**Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
+`fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
+`fr/` near-duplicate pages `ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md` §2c
+flagged as no-EN-parent with no discussed exception. A query-level GSC pull
+(France, 26 days) settled the other three (`fr/ecriture-style/`,
+`fr/generateur-de-texte/` retired via 301 to `fr/`; `fr/ecriture-speciale/`
+left as-is, negligible volume either way — see commit for the full
+per-page breakdown) but confirmed these three pass the site's own
+Hub-vs-Spoke spoke test on the *French* evidence: `changeur-de-police`
+(100% of impressions on queries `fr/index.html` never ranks for at all —
+"change police"/"changeur de police"), `calligraphie` (76%, "calligraphie
+copier coller"), and `police-d-ecriture` (54%, largest and still-growing
+volume of the six — "police d'écriture"/"police ecriture", where the
+homepage barely shows: 4 impressions at position 24 vs. this page's 188 at
+position 9.6 on the exact same query).
+
+**Important distinction from the `ja`/`ko`/`zh-tw` trio above: this is
+*not* a "no English speaker would search this" claim** — "font" and
+"calligraphy" are high-volume English concepts too. The actual reason no
+EN parent exists is a **market-specific SERP-consolidation difference**:
+the already-resolved "font converter" EN-parent question (`AUDIT-ACTIONS.md`
+row 17, closed by `GOLD-ANALYSIS-2026-07-25.md`/`LOCALE-OPPORTUNITY-HUNT-
+2026-07-25.md` §1c) found English/Spanish/Italian SERPs for that concept
+pull the *same* competitor set as "font generator" — Google treats them as
+synonyms there, so a standalone EN page would cannibalize the EN homepage.
+The French GSC data above shows the opposite holds in the French market:
+`fr/index.html` doesn't compete on these queries at all. This EN-side
+synonym-consolidation read is inferred from the row-17 close-out, not
+independently verified against EN GSC for "font"/"calligraphy" specifically
+— worth a direct check before treating it as settled, but it's the reason
+these three stay unbuilt in EN rather than a claim that the underlying
+concept lacks English demand. `x-default` on all three (plus their live
+non-English siblings, `it/font-copia-e-incolla/` and `it/caratteri-
+speciali/` on the `changeur-de-police` cluster) falls back to the bare EN
+homepage as a generic default only, same as the trio above — not a
+translation-equivalence claim.
+
+**Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
+picked up new content the same day (a "changer un texte déjà écrit" FAQ, a
+changeur-vs-générateur distinction FAQ, a before/after example) matched to
+its GSC query cluster. Its live IT siblings, `it/font-copia-e-incolla/` and
+`it/caratteri-speciali/`, were **not** updated — `check-translation-parity.js`
+confirmed this is outside its own scope (it diffs EN↔locale pairs only; this
+is an IT-FR-only cluster with no EN member), so nothing enforced a sync, and
+none was done. This is a real gap: the site's tooling has no mechanism for
+locale↔locale parity when neither side is EN. Needs a decision — port the
+same content to the two IT pages, or record the divergence deliberately
+(and if the latter, decide where: `data/translation_parity_exceptions.json`
+requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
+by default.
+
 ### Locale-native internal linking — check every time you touch a locale page
 
 Whenever you create, edit, or otherwise touch a locale page's prose/FAQ
