@@ -128,38 +128,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     {
       "@type": "Question",
-      "name": "Can redacted text in an image or PDF be revealed?",
-      "author": {
-        "@id": "https://ultratextgen.com/#organization"
-      },
-      "datePublished": "2026-06-29",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sometimes. If a black box was drawn on top but the original pixels or selectable text remain underneath, the redaction can be reversed. Blur and pixelation are especially weak. Redaction is only safe when the underlying data is actually deleted, not merely covered.",
-        "author": {
-          "@id": "https://ultratextgen.com/#organization"
-        },
-        "datePublished": "2026-06-29"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I black out text so it can never be uncovered?",
-      "author": {
-        "@id": "https://ultratextgen.com/#organization"
-      },
-      "datePublished": "2026-06-29",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Replace the words with block characters before you share, so the original text is gone — for example using a Unicode redacted text generator. For documents, use a real redaction tool that removes the underlying text, then export a flattened copy. Never rely on a black rectangle drawn over selectable text or on blur.",
-        "author": {
-          "@id": "https://ultratextgen.com/#organization"
-        },
-        "datePublished": "2026-06-29"
-      }
-    },
-    {
-      "@type": "Question",
       "name": "How does SCP-style redacted text that reveals on click work?",
       "author": {
         "@id": "https://ultratextgen.com/#organization"
@@ -172,6 +140,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "@id": "https://ultratextgen.com/#organization"
         },
         "datePublished": "2026-06-29"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do some redactions get \"revealed\" in the news?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the underlying text was never removed. A black box was drawn over a still-present text layer, or the content was blurred rather than deleted, so the original could be copied out or reconstructed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the safest way to redact text I'm about to post?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Replace the words before sharing so the secret never leaves your device intact. The Redacted Text Generator does this with Unicode blocks; for files, use a real redaction tool that deletes the underlying text and export a flattened copy."
       }
     }
   ]
