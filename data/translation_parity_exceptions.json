@@ -73,6 +73,36 @@
       "reason": "ms/index.html gained one inbound FAQ link to ms/answers/kenapa-nama-game-ditolak/ (2026-07-24), following an existing on-topic FAQ answer. ms/answers/* pre-dates this branch (already on main). No equivalent EN FAQ item to sync from. Verified mechanically (one onlyInLocale entry, no other fingerprint change). Re-surfaced only by the 2026-07-25 merge-base shift.",
       "agreed": "2026-07-25",
       "suppress": { "onlyInLocale": ["/answers/why-was-my-game-name-rejected/"] }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/fr/library/emoji-combos/",
+      "reason": "check-translation-parity.js flags this pair (and the de/pl/tr/nl siblings below) because fr/library/emoji-combos/index.html was moved this branch from the orphaned /fr/combos-emoji/ into the /library/ pillar (completing the same relink the id/es/pt entries above already cover, per user request 2026-07-26), and library/emoji-combos/index.html (EN) itself was edited in this branch to fix its hreflang block and visible lang-switcher links for these 5 locales (they previously pointed at the dead orphan URLs). Unlike the id/es/pt moves, this batch did NOT expand body content to EN's 32-h2-section depth — fr/nl remain at 8 sections, de at 23, pl at 22, tr at 20, all pre-existing gaps unchanged by this move, not new drift introduced by it. Both sides' fingerprint deltas are URL-target-only (fixing links that pointed at a now-dead orphan path), not new translatable content on either side. Verified by direct inspection (h2 counts unchanged pre/post-move; only href values changed). Discussed with the user 2026-07-26 as the explicit ask that authorized this relink batch.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/de/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry immediately above: de/library/emoji-combos/index.html moved this branch from the orphaned /de/emoji-kombinationen/ into /library/. Body content unchanged by the move (still 23 of EN's 32 h2 sections, a pre-existing gap, not new drift); only link targets (hreflang, lang-switcher, canonical, OG/hero asset filenames) were fixed. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/pl/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry above: pl/library/emoji-combos/index.html moved this branch from the orphaned /pl/kombinacje-emoji/ into /library/ (it already carried a compare-card on pl/library/index.html pointing at the old orphan URL, now repointed). Body content unchanged by the move (still 22 of EN's 32 h2 sections, a pre-existing gap); only link targets were fixed. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/tr/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry above: tr/library/emoji-combos/index.html moved this branch from the orphaned /tr/emoji-kombinasyonlari/ into /library/. Body content unchanged by the move (still 20 of EN's 32 h2 sections, a pre-existing gap); only link targets were fixed, including tr/index.html's homepage tip-card which pointed at the old orphan URL. Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-combos/",
+      "localeUrl": "https://ultratextgen.com/nl/library/emoji-combos/",
+      "reason": "Same situation and same authorization as the fr/library/emoji-combos/ entry above: nl/library/emoji-combos/index.html moved this branch from the orphaned /nl/emoji-combinaties/ into /library/, plus gained one new compare-card entry on nl/library/index.html (it previously had zero inbound hub link at all, a stricter case than fr/de/pl/tr which already had one). Body content of the page itself unchanged by the move (still 8 of EN's 32 h2 sections, a pre-existing gap). Verified by direct inspection. Discussed with the user 2026-07-26.",
+      "agreed": "2026-07-26"
     }
   ]
 }
