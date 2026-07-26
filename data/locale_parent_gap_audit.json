@@ -184,7 +184,7 @@
       "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
     },
     {
-      "pattern": "(unclassified)",
+      "pattern": null,
       "locale": "fi",
       "checkedDate": "2026-07-26",
       "instruments": {
@@ -193,7 +193,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/discord-fontit/ and fi/instagram-fontit/, whose EN parents (discord/index.html, instagram/index.html) are bare top-level platform pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js reports them as tier \"unclassified\" rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent top-level Discord/Instagram platform page the same way.",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way.",
       "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
     }
   ]
