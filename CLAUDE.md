@@ -27,7 +27,7 @@ Copy-paste Unicode is still the front door and satisfies the job fastest. Visual
 | Frontend | Pure HTML5, CSS3, Vanilla JavaScript (ES6+) |
 | Build tools | Node.js (sitemap gen only), Python (tweet queue only) |
 | CI/CD | GitHub Actions |
-| Hosting | Static site (Netlify, inferred from `_redirects`) |
+| Hosting | Cloudflare Pages (static assets + `functions/` middleware) |
 | Analytics | Google Tag Manager (GTM-P55HXK8Q) |
 
 **There are no frontend frameworks** (no React, Vue, Angular, etc.) and no bundlers (no Webpack, Vite, Rollup). Do not introduce them.
@@ -52,7 +52,10 @@ ultratextgen/
 ├── fonts.json              # Font category mappings
 ├── robots.txt              # Search engine directives
 ├── sitemap.xml              # Auto-generated (do not edit manually)
-├── _redirects              # Netlify redirect rules
+├── _redirects              # Cloudflare Pages redirect rules — PATH ONLY,
+│                           #   query strings are silently ignored (see below)
+├── _headers                # Cloudflare Pages response headers
+├── functions/_middleware.js# Pages Function: owns `/` (English homepage + ?lang=)
 │
 ├── .github/workflows/
 │   ├── tweet-queue.yml     # Daily social queue (09:00 UTC)
@@ -1334,6 +1337,15 @@ Standing protocol:
   tracing, mazes, word searches, math worksheets, pre-writing motor strokes with no letterform.
   See "Printables scope boundary" above. This demand is real but tracked for a possible future,
   separate property — not this repo.
+- Do not put a query string in a `_redirects` source path. This is Cloudflare
+  Pages, not Netlify: Pages matches the **path only** and silently drops the
+  query, so `/?lang=fr  /fr/  301` is read as `/  /fr/  301` and 301s the
+  English homepage to French for every visitor and crawler — and because a
+  static redirect short-circuits before Pages Functions, it also bypasses
+  `functions/_middleware.js`, which exists specifically to keep `/` English.
+  That shipped in PR #566 and sat live from 2026-07-15 to 2026-07-26. Query
+  matching belongs in `functions/_middleware.js` (`LANG_REDIRECTS`), which can
+  actually read `url.searchParams`.
 - Do not edit `sitemap.xml` directly
 - Do not add `var` declarations — use `const`/`let`
 - Do not use `import`/`export` ES module syntax in frontend scripts
