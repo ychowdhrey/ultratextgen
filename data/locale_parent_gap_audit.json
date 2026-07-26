@@ -182,6 +182,19 @@
       "verdict": "gate-pass",
       "evidence": "Same authorization and evidence as the category/*-locale-fi entry immediately above. Covers the standard 3-guide Discord trio (discord-text-formatting-explained, discord-where-fonts-work, discord-safe-name-styling) that every prior minimal-locale launch (hr, hu, da) has shipped alongside its core category/platform pages.",
       "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "(unclassified)",
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/discord-fontit/ and fi/instagram-fontit/, whose EN parents (discord/index.html, instagram/index.html) are bare top-level platform pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js reports them as tier \"unclassified\" rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent top-level Discord/Instagram platform page the same way.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
     }
   ]
 }

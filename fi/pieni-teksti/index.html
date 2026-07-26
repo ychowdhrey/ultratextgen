@@ -131,6 +131,14 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
+      "name": "Mitä kieliä pienen tekstin generaattori tukee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generaattori tukee mitä tahansa latinalaisin aakkosin kirjoitettua kieltä, kuten suomea, englantia, ruotsia, saksaa ja espanjaa. Kielet, joissa käytetään muuta kuin latinalaista kirjoitusjärjestelmää (esimerkiksi arabia, kiina tai venäjä), eivät voi hyödyntää näitä pieniä Unicode-muunnoksia, joten teksti pysyy niissä muuttumattomana. Tämä on Unicode-rajoitus, ei UltraTextGenin rajoitus."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Voinko kirjoittaa suomen ä-, ö- ja å-kirjaimia pienellä tekstillä?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -147,10 +155,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
+      "name": "Voinko käyttää pientä tekstiä kaupallisiin tarkoituksiin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UltraTextGenillä luotu teksti on ilmainen henkilökohtaiseen käyttöön. Kaupallisiin sovelluksiin, kuten mainoksiin tai brändättyyn sisältöön, tarkista aina kyseisen alustan käyttöehdot."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Miksi jotkin pienet kirjaimet näkyvät neliöinä, ja vaikuttaako se luettavuuteen?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Tyhjä neliö (▯) tarkoittaa, että laitteesta puuttuu kyseisen pienen merkin näyttävä fontti — tämä koskee yleensä vanhempia järjestelmiä. Valitse tällöin yksinkertaisempi tyyli (esim. kapiteelit) tai päivitä laite; lue lisää artikkelista siitä, miksi fontit näkyvät neliöinä. Muista myös, että hyvin pientä tekstiä on vaikeampi lukea — käytä sitä lyhyisiin ilmauksiin ja jätä tärkein tieto tavalliseen tekstiin saavutettavuuden vuoksi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Toimiiko pienen tekstin generaattori Androidilla ja iPhonella?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. UltraTextGen on selainpohjainen työkalu, joka toimii millä tahansa laitteella — Android-puhelimissa, iPhoneissa, tableteissa ja tietokoneissa. Sovelluksen asentamista ei tarvita. Avaa se mobiiliselaimessasi, kirjoita tekstisi, kopioi pieni tulos ja liitä se mihin tahansa sovellukseen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onko pieni Unicode-teksti sama asia kuin verkkosivun CSS-pienennys?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. Verkkosivun CSS-tyyli (esim. font-size: small) muuttaa vain sen, miten teksti näyttää yhdellä tietyllä sivulla — kopioituna muualle se palautuu tavalliseksi tekstiksi. Tämän generaattorin tuottama pieni teksti taas on itsessään erilaisia Unicode-merkkejä, jotka pysyvät pieninä kopioituna mihin tahansa tekstikenttään, mutta eivät toimi sivuston omana semanttisena muotoiluna."
       }
     }
   ]
@@ -263,6 +295,17 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         yllä, klikkaa <strong>Kopioi</strong> ja liitä pieni teksti minne tahansa haluat.</p>
     </section>
 
+    <section class="editorial-section">
+      <span class="article-section-label">Käyttökohteet</span>
+      <h2>Milloin kannattaa käyttää pientä tekstiä</h2>
+      <div class="editorial-grid">
+        <div class="style-card"><h3>Bio-kuvaus</h3><p>Hienovarainen, hillitty rivi käyttäjänimen tai pääbiotekstin alla.</p></div>
+        <div class="style-card"><h3>Allekirjoitus</h3><p>Tyylikäs kapiteeleilla kirjoitettu nimi viestien tai sähköpostin lopussa.</p></div>
+        <div class="style-card"><h3>Koristeellinen korostus</h3><p>Lyhyt yläindeksisana tai -ilmaus otsikon tai kuvatekstin vieressä.</p></div>
+        <div class="style-card"><h3>Pelinimimerkki</h3><p>Siisti, isokirjaimiselta näyttävä kapiteelinimi Minecraft-palvelimille ja peliprofiileihin.</p></div>
+      </div>
+    </section>
+
     <!-- Category Tabs (populated by script.js) -->
     <div class="category-section">
       <div class="category-tabs" id="categoryTabs"></div>
@@ -299,13 +342,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         <li><strong><a href="/category/superscript/">Yläindeksi</a></strong> (pieni, ylös nostettu teksti) — leijuu perusviivan yläpuolella. Parhaita eksponentteihin, järjestyslukuihin ja alaviitemerkkeihin tai kuiskaustyyliseen sivuhuomautukseen.</li>
         <li><strong><a href="/category/subscript/">Alaindeksi</a></strong> (pieni, alas laskettu teksti) — sijaitsee perusviivan alapuolella. Parhaita kemian kaavoihin kuten H₂O sekä alaviitemerkintöihin.</li>
       </ul>
+      <p class="block-example">Kaikki kolme tyyliä ovat todellisia Unicode-merkkejä, ei fontteja eikä kuvia — ne
+        säilyttävät ulkonäkönsä kopioituna somebioihin, käyttäjänimiin, viesteihin ja lähes mihin tahansa
+        tekstikenttään, joka hyväksyy Unicode-merkistön.</p>
     </section>
 
     <section class="deco-showcase" aria-labelledby="native-first-title">
       <h2 class="deco-showcase-title" id="native-first-title">Ensin tarkista: tekeekö sovellus pienen tekstin puolestasi?</h2>
       <p class="deco-showcase-intro">Pienet Unicode-merkit toimivat lähes missä tahansa, mutta ne ovat silti eräänlainen kiertotie — ja muutamassa sovelluksessa on oma, sisäänrakennettu pienen tekstin työkalu, joka on siistimpi eikä voi näkyä toisille neliöinä (▯). Käytä sisäänrakennettua vaihtoehtoa aina kun sellainen on saatavilla; käytä yllä olevia kopiointityylejä niissä lukuisissa paikoissa, joissa sitä ei ole.</p>
       <ul class="small-caps-compare">
-        <li><strong>Discord-viestit</strong> — aloita rivi merkeillä <code>-#</code> ja välilyönti, niin saat Discordin oman pienen "alatekstin". Se toimii kuitenkin vain viesteissä — näyttönimeen, käyttäjänimeen tai bioon liitä yllä olevat Unicode-kapiteelit. <a href="/discord/">Lisää Discordin pienestä tekstistä →</a></li>
+        <li><strong>Discord-viestit</strong> — aloita rivi merkeillä <code>-#</code> ja välilyönti, niin saat Discordin oman pienen "alatekstin". Se toimii kuitenkin vain viesteissä — näyttönimeen, käyttäjänimeen tai bioon liitä yllä olevat Unicode-kapiteelit. <a href="/fi/discord-fontit/">Lisää Discordin pienestä tekstistä →</a></li>
         <li><strong>Reddit-kommentit</strong> — Redditin Markdown-editori tekee ylös nostettua pientä tekstiä kattomerkillä: <code>^(text)</code>. Kätevä sivuhuomautuksiin ja alaviitteisiin. Katso <a href="/category/superscript/">yläindeksigeneraattori</a> kopioitavaa versiota varten.</li>
         <li><strong>Tumblr &amp; AO3 -julkaisut ja ficit</strong> — nämä editorit hyväksyvät <code>&lt;small&gt;…&lt;/small&gt;</code>-HTML-tagin tekstin pienentämiseen (uudemmissa Tumblr-editoreissa on myös sisäänrakennettu pienen tekstin asetus). Parempi vaihtoehto kuin Unicode-merkkien liittäminen pitkän julkaisun runkotekstiin.</li>
       </ul>
@@ -313,8 +359,34 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </section>
 
     <section class="editorial-section">
+      <span class="article-section-label">Yksityisyys</span>
+      <h2>Turvallinen ja yksityinen käyttää</h2>
+      <p>Tekstisi käsitellään kokonaan selaimessasi — mitään syöttämääsi tekstiä ei tallenneta palvelimelle eikä
+        jaeta eteenpäin. Käytössä on vain perusluontoista, anonyymia analytiikkaa sivuston kehittämiseksi. Generaattori
+        on täysin ilmainen eikä vaadi tiliä tai rekisteröitymistä.</p>
+    </section>
+
+    <section class="editorial-section">
       <span class="article-section-label">Liittyvää</span>
-      <p>Yhdistä pieni teksti <a href="/category/small-caps/">kapiteeleihin</a>, <a href="/category/superscript/">yläindeksiin</a> tai <a href="/category/subscript/">alaindeksiin</a> tyylikkään kokonaisuuden luomiseksi. Katso myös valmis <a href="/usecase/bio-font/">bio-fontti</a>, joka on suunniteltu suoraan profiilikuvauksia varten.</p>
+      <p>Yhdistä pieni teksti <a href="/category/small-caps/">kapiteeleihin</a>, <a href="/category/superscript/">yläindeksiin</a> tai <a href="/category/subscript/">alaindeksiin</a> tyylikkään kokonaisuuden luomiseksi. Katso myös valmis <a href="/usecase/bio-font/">bio-fontti</a>, joka on suunniteltu suoraan profiilikuvauksia varten. Jos etsit muita Unicode-tyylejä, tutustu myös <a href="/fi/lihavoitu-teksti/">lihavoituun tekstiin</a> ja <a href="/fi/kursivoitu-teksti/">kursivoituun tekstiin</a>.</p>
+      <div class="compare-grid">
+        <a href="/category/small-caps/" class="compare-card variant-muted u-no-underline">
+          <h4>Kapiteelit</h4>
+          <p>Pienet versaalikirjaimet.</p>
+        </a>
+        <a href="/category/superscript/" class="compare-card variant-muted u-no-underline">
+          <h4>Yläindeksi</h4>
+          <p>Ylös nostetut pienet merkit.</p>
+        </a>
+        <a href="/category/subscript/" class="compare-card variant-muted u-no-underline">
+          <h4>Alaindeksi</h4>
+          <p>Alas lasketut pienet merkit.</p>
+        </a>
+        <a href="/usecase/bio-font/" class="compare-card variant-muted u-no-underline">
+          <h4>Bio-fonttigeneraattori</h4>
+          <p>Pieni teksti valmiina bioon.</p>
+        </a>
+      </div>
     </section>
   </main>
 
@@ -367,6 +439,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="faq-item">
   <button class="faq-question" type="button">
+    Mitä kieliä pienen tekstin generaattori tukee?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <div class="faq-answer">
+    Generaattori tukee mitä tahansa latinalaisin aakkosin kirjoitettua kieltä, kuten suomea, englantia, ruotsia, saksaa ja espanjaa.
+    <br><br>
+    Kielet, joissa käytetään muuta kuin latinalaista kirjoitusjärjestelmää (esimerkiksi arabia, kiina tai venäjä), eivät voi hyödyntää näitä pieniä Unicode-muunnoksia, joten teksti pysyy niissä muuttumattomana. Tämä on Unicode-rajoitus, ei UltraTextGenin rajoitus.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
     Voinko kirjoittaa suomen ä-, ö- ja å-kirjaimia pienellä tekstillä?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
@@ -387,11 +471,45 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="faq-item">
   <button class="faq-question" type="button">
+    Voinko käyttää pientä tekstiä kaupallisiin tarkoituksiin?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <div class="faq-answer">
+    UltraTextGenillä luotu teksti on ilmainen henkilökohtaiseen käyttöön. Kaupallisiin sovelluksiin, kuten mainoksiin tai brändättyyn sisältöön, tarkista aina kyseisen alustan käyttöehdot.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
     Miksi jotkin pienet kirjaimet näkyvät neliöinä, ja vaikuttaako se luettavuuteen?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
   <div class="faq-answer">
     Tyhjä neliö (▯) tarkoittaa, että laitteesta puuttuu kyseisen pienen merkin näyttävä fontti — tämä koskee yleensä vanhempia järjestelmiä. Valitse tällöin yksinkertaisempi tyyli (esim. kapiteelit) tai päivitä laite; lue lisää artikkelista siitä, <a href="/guide/why-fonts-show-as-boxes/">miksi fontit näkyvät neliöinä</a>. Muista myös, että hyvin pientä tekstiä on vaikeampi lukea — käytä sitä lyhyisiin ilmauksiin ja jätä tärkein tieto tavalliseen tekstiin <a href="/guide/fancy-fonts-accessibility-guide/">saavutettavuuden</a> vuoksi.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Toimiiko pienen tekstin generaattori Androidilla ja iPhonella?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <div class="faq-answer">
+    Kyllä. UltraTextGen on selainpohjainen työkalu, joka toimii millä tahansa laitteella — Android-puhelimissa, iPhoneissa, tableteissa ja tietokoneissa. Sovelluksen asentamista ei tarvita.
+    <br><br>
+    Avaa se mobiiliselaimessasi, kirjoita tekstisi, kopioi pieni tulos ja liitä se mihin tahansa sovellukseen.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Onko pieni Unicode-teksti sama asia kuin verkkosivun CSS-pienennys?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <div class="faq-answer">
+    Ei. Verkkosivun CSS-tyyli (esim. <strong>font-size: small</strong>) muuttaa vain sen, miten teksti näyttää yhdellä tietyllä sivulla — kopioituna muualle se palautuu tavalliseksi tekstiksi.
+    <br><br>
+    Tämän generaattorin tuottama pieni teksti taas on itsessään erilaisia Unicode-merkkejä, jotka pysyvät pieninä kopioituna mihin tahansa tekstikenttään, mutta eivät toimi sivuston omana semanttisena muotoiluna.
   </div>
 </div>
 
