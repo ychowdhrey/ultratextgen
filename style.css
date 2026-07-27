@@ -7963,30 +7963,12 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   line-height: 1.4;
 }
 
-/* Dedicated ad slots — injected by header.js on every page.
+/* Dedicated ad slot — injected by header.js on every page.
    Right rail only has room once the viewport clears the 900px container
    plus its own 300px width on both sides without overlapping content. */
 .ad-slot {
   display: flex;
   justify-content: center;
-}
-
-.ad-top-banner {
-  width: 100%;
-  max-width: 900px;
-  margin: 16px auto;
-  padding: 0 24px;
-  box-sizing: border-box;
-  /* Reserve space before the AdSense creative loads so it doesn't push
-     section.hero down once it fills in — this was measured as a real CLS
-     regression (Cloudflare Web Analytics, section.hero up to 0.615). */
-  min-height: 100px;
-}
-
-@media (min-width: 768px) {
-  .ad-top-banner {
-    min-height: 250px;
-  }
 }
 
 .ad-rail-right {

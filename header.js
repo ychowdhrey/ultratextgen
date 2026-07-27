@@ -5,19 +5,16 @@
   // this selector only locates the noscript iframe to position the header.
   const GTM_NOSCRIPT_SELECTOR = 'noscript iframe[src*="googletagmanager.com/ns.html"]';
 
-  // Dedicated ad slots — injected once here so every page that loads
-  // header.js gets them automatically, with no per-page markup to maintain.
+  // Dedicated ad slot — injected once here so every page that loads
+  // header.js gets it automatically, with no per-page markup to maintain.
   // Auto ads (Anchor, etc.) still runs from the loader script each page
-  // already ships in <head>; these two are the fixed, hand-placed units.
+  // already ships in <head>; this is the one remaining fixed, hand-placed unit.
+  // A top-banner unit (slot 7584734719) used to live here too — removed
+  // 2026-07-27 after a 7-day AdSense pull showed 3 impressions / SGD0.00
+  // sitewide while permanently reserving 100-250px under the nav on every
+  // pageview. See ultratextgen-lab- docs/adsense-coverage-and-monetization-
+  // diversification-2026-07-16.md §11 for the full analysis.
   const AD_CLIENT = "ca-pub-8242324164413945";
-
-  const topBannerHTML = '<div class="ad-slot ad-top-banner">' +
-      '<ins class="adsbygoogle" style="display:block" ' +
-        'data-ad-client="' + AD_CLIENT + '" ' +
-        'data-ad-slot="7584734719" ' +
-        'data-ad-format="auto" ' +
-        'data-full-width-responsive="true"></ins>' +
-    '</div>';
 
   const rightRailHTML = '<aside class="ad-slot ad-rail-right">' +
       '<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" ' +
@@ -460,18 +457,12 @@
       body.insertBefore(header, insertAfter ? insertAfter.nextSibling : body.firstChild);
     }
 
-    // Ad slots: top banner right after the nav, right rail appended to
-    // <body> (it's position:fixed, so its DOM position doesn't matter).
-    const headerEl = document.querySelector("header.header");
-    if (headerEl) {
-      headerEl.insertAdjacentHTML("afterend", topBannerHTML);
-    }
+    // Ad slot: right rail appended to <body> (it's position:fixed, so its
+    // DOM position doesn't matter).
     document.body.insertAdjacentHTML("beforeend", rightRailHTML);
     if (window.adsbygoogle === undefined) {
       window.adsbygoogle = [];
     }
-    // Top banner always requests — it's visible at every viewport width.
-    window.adsbygoogle.push({});
     // Right rail is CSS-hidden below 1600px (see .ad-rail-right in style.css);
     // only request it when it'll actually be seen, so narrow viewports don't
     // burn an impression on a slot nobody can view.
