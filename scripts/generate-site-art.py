@@ -1874,6 +1874,8 @@ PAGES = {
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   "ja-library-bullet-point-symbols": ("箇条書き記号", "リストにスタイルを",
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "ru-library-markery-spiska": ("Маркеры для списка", "Стиль для каждого списка",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   "library-bunny-kaomoji": ("Bunny Kaomoji", "Cute rabbit text faces", m_kaomoji, K_LIB),
   "library-card-suit-symbols": ("Card Suit Symbols", "Spades, hearts, diamonds, clubs",
         glyphs("♠", "♥", "♦", "♣", "♤"), K_LIB),
@@ -2081,6 +2083,8 @@ PAGES = {
   "ja-kuuhaku-moji": ("空白文字", "どこにでも貼り付けられる空白",
         glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
   "ru-nevidimyy-tekst": ("Невидимый Текст", "Пустое место, которое вставляется где угодно",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "th-khokhwam-long-hon": ("ข้อความล่องหน", "ช่องว่างที่วางได้ทุกที่",
         glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
   "library-ipa-phonetic-symbols": ("IPA Phonetic Symbols", "Sounds of every language",
         glyphs("ə", "ʃ", "θ", "ʒ", "ŋ"), K_LIB),
@@ -2736,6 +2740,20 @@ PAGES["ru-library-matematicheskie-simvoly"] = (
 PAGES["th-library-math-symbols"] = (
     "สัญลักษณ์คณิตศาสตร์", "ตัวดำเนินการ เซต และอักษรกรีก",
     glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+
+# ---- 2026-07-30: library/arrow-symbols translations (it, pl, ru, th) ----
+PAGES["it-library-simboli-freccia"] = (
+    "Simboli Freccia", "Frecce dritte, doppie e curve",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["pl-library-symbole-strzalek"] = (
+    "Symbole Strzałek", "Strzałki proste, podwójne i zakrzywione",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["ru-library-strelki"] = (
+    "Стрелки", "Простые, двойные и изогнутые стрелки",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["th-library-arrow-symbols"] = (
+    "สัญลักษณ์ลูกศร", "ลูกศรตรง คู่ และโค้งทุกแบบ",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
 
 
 def main():
