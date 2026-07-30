@@ -1876,6 +1876,8 @@ PAGES = {
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   "ru-library-markery-spiska": ("Маркеры для списка", "Стиль для каждого списка",
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "th-library-bullet-point-symbols": ("สัญลักษณ์จุดหัวข้อ", "เพิ่มสไตล์ให้ทุกลิสต์",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   "library-bunny-kaomoji": ("Bunny Kaomoji", "Cute rabbit text faces", m_kaomoji, K_LIB),
   "library-card-suit-symbols": ("Card Suit Symbols", "Spades, hearts, diamonds, clubs",
         glyphs("♠", "♥", "♦", "♣", "♤"), K_LIB),
