@@ -1828,6 +1828,14 @@ PAGES = {
         glyphs("❖", "⟦", "⟧", "✦", "❝"), K_LIB),
   "library-aesthetic-symbols": ("Aesthetic Symbols", "Soft, decorative Unicode accents",
         glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "ar-library-aesthetic-symbols": ("رموز جمالية", "لمسات يونيكود ناعمة وزخرفية",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "pl-library-symbole-estetyczne": ("Symbole estetyczne", "Delikatne ozdobniki Unicode",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "ru-library-esteticheskie-simvoly": ("Эстетические символы", "Мягкие декоративные знаки Unicode",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "th-library-aesthetic-symbols": ("สัญลักษณ์ Aesthetic", "ตัวตกแต่ง Unicode แนวนุ่มนวล",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
   "library-angry-kaomoji": ("Angry Kaomoji", "Mad, raging text faces", m_kaomoji, K_LIB),
   "zh-tw-library-cat-kaomoji": ("貓咪顏文字", "可愛貓咪臉文字", m_kaomoji, K_LIB),
   "zh-tw-library-crying-kaomoji": ("哭泣顏文字", "傷心流淚臉文字", m_kaomoji, K_LIB),
@@ -1859,6 +1867,10 @@ PAGES = {
   "library-bracket-symbols": ("Brackets, Braces & Parentheses", "Every enclosing pair",
         glyphs("⟦", "⟧", "⟨", "⟩", "❲"), K_LIB),
   "library-bullet-point-symbols": ("Bullet Point Symbols", "Lead every list with style",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "tr-library-madde-imi-sembolleri": ("Madde İmi Sembolleri", "Listelerine tarz kat",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "it-library-simboli-punto-elenco": ("Simboli Punto Elenco", "Dai stile a ogni lista",
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   "library-bunny-kaomoji": ("Bunny Kaomoji", "Cute rabbit text faces", m_kaomoji, K_LIB),
   "library-card-suit-symbols": ("Card Suit Symbols", "Spades, hearts, diamonds, clubs",
@@ -2056,6 +2068,13 @@ PAGES = {
   "library-html-entities": ("HTML Entities", "Named and numeric character codes",
         glyphs("&", "<", ">", "§", "©"), K_LIB),
   "library-invisible-character": ("Invisible Character", "Blank space that pastes anywhere",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  # root-level invisible-character/blank-space cluster translations (ar/ko/ja/ru/th, 2026-07-30)
+  # — no "-library-" segment since these pages live at locale root, matching
+  # slug_for(path)'s directory-path convention (e.g. it-testo-invisibile above).
+  "ar-nas-ghayr-marii": ("نص غير مرئي", "مسافة فارغة تُلصق في أي مكان",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "ko-bin-kan-munja": ("빈칸 문자", "어디에든 붙여넣는 투명 공백",
         glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
   "library-ipa-phonetic-symbols": ("IPA Phonetic Symbols", "Sounds of every language",
         glyphs("ə", "ʃ", "θ", "ʒ", "ŋ"), K_LIB),
@@ -2359,11 +2378,19 @@ PAGES = {
   "ko-library-alt-kodeu": ("알트 코드", "닉네임 꾸미기 기호와 전체 목록", m_block, K_LIB),
   "id-library-kode-alt": ("Kode Alt", "Daftar lengkap kode simbol keyboard", m_block, K_LIB),
   "es-library-codigos-alt": ("Códigos Alt", "Lista completa de símbolos del teclado", m_block, K_LIB),
+
+  # ---- 2026-07-30: ar + th alt-codes ----
+  "ar-library-alt-codes": ("أكواد Alt", "القائمة الكاملة لرموز لوحة المفاتيح", m_block, K_LIB),
+  "th-library-alt-codes": ("Alt Code ครบชุด", "พิมพ์สัญลักษณ์ด้วยรหัสตัวเลข", m_block, K_LIB),
   # Library symbol batches: 5 new locale pages
   "th-library-discord-symbols": ("สัญลักษณ์ Discord", "คัดลอกวางสำหรับชื่อผู้ใช้และไบโอ", m_block, K_LIB),
+  "th-library-heart-symbols": ("สัญลักษณ์หัวใจ", "อิโมจิหัวใจทุกสี คัดลอกวางได้เลย",
+        glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB),
   "ms-library-simbol-roblox": ("Simbol Roblox", "Salin & tampal untuk nama paparan", m_block, K_LIB),
   "ar-library-y2k-symbols": ("رموز Y2K", "زخارف سايبر للنسخ واللصق", m_block, K_LIB),
   "ru-library-simvoly-y2k": ("Символы Y2K", "Киберэстетика для копирования", m_block, K_LIB),
+  "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
   # Printables: 5 new locale hub pages
   "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
@@ -2679,6 +2706,28 @@ PAGES.update({
 "updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
 })
+
+# ---- 2026-07-30: th/library/star-symbols translation ----
+PAGES["th-library-star-symbols"] = (
+    "สัญลักษณ์ดาว ★ ☆ ✦", "รวมดาว ดอกจัน และอีโมจิดาวทุกแบบ",
+    glyphs("★", "☆", "✦", "✧", "✩"), K_LIB)
+
+# ---- 2026-07-30: library/math-symbols translations (fr, it, ja, ru, th) ----
+PAGES["fr-library-symboles-mathematiques"] = (
+    "Symboles Mathématiques", "Opérateurs, ensembles et grec",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["it-library-simboli-matematici"] = (
+    "Simboli Matematici", "Operatori, insiemi e greco",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["ja-library-math-symbols"] = (
+    "数学記号", "演算子・集合・ギリシャ文字",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["ru-library-matematicheskie-simvoly"] = (
+    "Математические символы", "Операторы, множества и греческий алфавит",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["th-library-math-symbols"] = (
+    "สัญลักษณ์คณิตศาสตร์", "ตัวดำเนินการ เซต และอักษรกรีก",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
 
 
 def main():
