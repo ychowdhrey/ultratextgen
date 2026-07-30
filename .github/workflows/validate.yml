@@ -3,7 +3,8 @@ name: Validate Site
 # Required, blocking checks for structural correctness that must never merge
 # broken: hreflang reciprocity, /library/ and /symbol/ page structure,
 # per-page social/Pinterest image assets, new/changed pages' image assets
-# specifically, translation parity — an EN <-> locale content change
+# specifically, new/changed /symbol/ pages' Related-Symbols peer-link
+# reciprocity, translation parity — an EN <-> locale content change
 # introduced by this PR without its sibling being updated — locale mesh
 # health (hreflang reciprocity + locale-native internal links on any locale
 # page this PR touches), the locale-parent-gap pre-build check on any new
@@ -12,6 +13,7 @@ name: Validate Site
 # non-zero on failure (see scripts/audit-hreflang.js,
 # scripts/validate_library_pages.py, scripts/check-image-assets.py,
 # scripts/check-new-page-image-assets.py,
+# scripts/check-new-symbol-peer-links.py,
 # scripts/check-translation-parity.js, scripts/check-locale-mesh.js,
 # scripts/check-locale-parent-gap.js, scripts/check-faq-schema.js) — this
 # workflow is what actually wires that into CI so a PR can't merge broken
@@ -26,6 +28,20 @@ name: Validate Site
 # pre-existing site-wide backlog can never make it permanently red. This
 # exists specifically to stop new pages shipping ahead of their hero/OG art —
 # see ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §6.
+#
+# scripts/sync_symbol_spoke_links.py --check (no --write) is likewise a
+# whole-site audit — it reports every /symbol/ page whose declared "Related
+# Symbols" peer relation isn't reciprocated, alongside the existing hub-orphan
+# check — so its step below is informational only; hub-orphans are already
+# gated separately by scripts/validate_library_pages.py, and peer-link
+# backlog (real at the time this was added, since fixed in the same PR — see
+# ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §7) is a
+# dashboard, not a per-PR blocker on its own. scripts/check-new-symbol-peer-
+# links.py is the actual gate: diff-scoped to only /symbol/ pages this PR
+# adds or changes, so a newly-introduced one-directional peer relation can't
+# merge silently, without pre-existing backlog elsewhere ever contributing to
+# a failure. Fix is always scripts/sync_symbol_spoke_links.py --write
+# --reciprocal (also npm run sync:symbol-peer-links).
 #
 # scripts/audit-locale-parent-gap.js is likewise a whole-site discovery pass
 # (which Core-parent x qualified-locale cells have near-zero translation
@@ -93,6 +109,16 @@ jobs:
         continue-on-error: true
         run: npm run check:new-page-images -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee new-page-images.log
 
+      - name: Run symbol peer-link check (whole-site, informational)
+        id: symbol_peer_links_audit
+        continue-on-error: true
+        run: npm run check:symbol-peer-links | tee symbol-peer-links-audit.log
+
+      - name: Run new-page symbol peer-link check
+        id: new_symbol_peer_links
+        continue-on-error: true
+        run: npm run check:new-symbol-peer-links -- --base origin/${{ github.event.pull_request.base.ref || 'main' }} | tee new-symbol-peer-links.log
+
       - name: Run translation parity check
         id: parity
         continue-on-error: true
@@ -144,6 +170,16 @@ jobs:
             cat new-page-images.log
             echo '```'
             echo ""
+            echo "### Symbol peer-link check (whole-site, informational) — \`${{ steps.symbol_peer_links_audit.outcome }}\`"
+            echo '```'
+            cat symbol-peer-links-audit.log
+            echo '```'
+            echo ""
+            echo "### New-page symbol peer-link check — \`${{ steps.new_symbol_peer_links.outcome }}\`"
+            echo '```'
+            cat new-symbol-peer-links.log
+            echo '```'
+            echo ""
             echo "### Translation parity check — \`${{ steps.parity.outcome }}\`"
             echo '```'
             cat translation-parity.log
@@ -171,15 +207,18 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail the job if any gating validator reported problems
-        # steps.images and steps.locale_parent_gap_audit (both whole-site
-        # audits) are deliberately excluded — see their step names/comments
-        # above: informational by design (the Pinterest-pin backlog for
-        # images; the site-wide, deliberately-unfinished locale-parent
-        # translation backlog for the gap audit), not because failures there
-        # don't matter. steps.new_images, steps.locale_mesh, and
+        # steps.images, steps.symbol_peer_links_audit, and
+        # steps.locale_parent_gap_audit (all whole-site audits) are
+        # deliberately excluded — see their step names/comments above:
+        # informational by design (the Pinterest-pin backlog for images; the
+        # peer-link dashboard for symbol pages, whose hub-orphan half is
+        # already gated by steps.library; the site-wide, deliberately-
+        # unfinished locale-parent translation backlog for the gap audit),
+        # not because failures there don't matter. steps.new_images,
+        # steps.new_symbol_peer_links, steps.locale_mesh, and
         # steps.locale_parent_gap are the diff-scoped gates that actually
-        # enforce these two systems on new/changed pages.
-        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
+        # enforce these systems on new/changed pages.
+        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
