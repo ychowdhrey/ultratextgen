@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/easter/",
 
+  "occurrence": {"type": "easter"},
   "fonts": {
     "curated_keys": [
       "Ultra Cute Script",

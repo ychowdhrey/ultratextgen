@@ -126,7 +126,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "When is Chinese New Year?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chinese New Year falls on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days. Check a current calendar for the exact date, then come back and style your greeting for it."
+        "text": "Chinese New Year moves each year against the Gregorian calendar because it follows the Chinese lunisolar calendar, so it lands about 11 days earlier than the year before. The date shown at the top of this page is calculated for the current year; because the start of the month is confirmed locally by moon sighting, some countries observe it a day either side."
       }
     },
     {
@@ -198,6 +198,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="hero-card">
       <h1 class="hero-headline">Chinese New Year Text &amp; Symbol Generator</h1>
       <p class="hero-tagline">Type a name or wish and style it in curated festive fonts, then copy lanterns, luck characters, kaomoji, and ASCII art — or tap a ready-made greeting to style it instantly.</p>
+      <p class="event-next-date" id="eventNextDate" data-occurrence="{&quot;type&quot;: &quot;chinese&quot;, &quot;month&quot;: 1, &quot;day&quot;: 1, &quot;calendar_name&quot;: &quot;the Chinese lunisolar calendar&quot;}" data-template="Next Chinese New Year: {date}" hidden></p>
       <p class="u-secondary-tight">Also known as: Lunar New Year, CNY, Spring Festival</p>
       <div class="input-wrapper" id="eventTextWrap">
         <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500"></textarea>
@@ -312,7 +313,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">When is Chinese New Year?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <div class="faq-answer">Chinese New Year falls on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days. Check a current calendar for the exact date, then come back and style your greeting for it.</div>
+      <div class="faq-answer">Chinese New Year moves each year against the Gregorian calendar because it follows the Chinese lunisolar calendar, so it lands about 11 days earlier than the year before. The date shown at the top of this page is calculated for the current year; because the start of the month is confirmed locally by moon sighting, some countries observe it a day either side.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">How do I use the Chinese New Year generator?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -499,6 +500,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
+<script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/footer.js"></script>
 </body>

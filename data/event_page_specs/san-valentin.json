@@ -27,6 +27,7 @@
     "x_default": "en"
   },
 
+  "occurrence": {"type": "fixed", "month": 2, "day": 14},
   "fonts": {
     "curated_keys": [
       "Ultra Script",

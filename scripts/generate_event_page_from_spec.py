@@ -36,6 +36,13 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+from event_occurrence import (  # noqa: E402
+    format_date,
+    is_lunar,
+    next_occurrences,
+)
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
 EVENTS_DIR = REPO / "events"
@@ -86,8 +93,18 @@ STRINGS = {
         "breadcrumb_events": "Events",
         "faq_what_is_q": "What is the {event_name} text and symbol generator?",
         "faq_when_q": "When is {event_name}?",
-        "faq_when_a": "{event_name} falls {date_window}. Check a current calendar for "
-                      "the exact date, then come back and style your greeting for it.",
+        "faq_when_a_dated": "The next {event_name} is {next_date}. After that it falls on "
+                            "{later_dates}.",
+        "faq_when_a_lunar": "{event_name} moves each year against the Gregorian calendar "
+                            "because it follows {calendar_name}, so it lands about 11 days "
+                            "earlier than the year before. The date shown at the top of this "
+                            "page is calculated for the current year; because the start of "
+                            "the month is confirmed locally by moon sighting, some countries "
+                            "observe it a day either side.",
+        "faq_when_a": "{event_name} falls {date_window}.",
+        "next_date_prefix": "Next {event_name}: ",
+        "calendar_lunar_generic": "a lunar calendar",
+        "date_join": ", then ",
         "faq_how_q": "How do I use the {event_name} generator?",
         "faq_how_a": "Type a name, wish, or greeting into the box at the top. Every "
                      "{event_name} font style updates live underneath it — tap Copy on any "
@@ -150,8 +167,21 @@ STRINGS = {
         "breadcrumb_events": "Eventos",
         "faq_what_is_q": "¿Qué es el generador de texto y símbolos de {event_name}?",
         "faq_when_q": "¿Cuándo es {event_name}?",
-        "faq_when_a": "{event_name} cae {date_window}. Consulta un calendario actualizado "
-                      "para la fecha exacta y vuelve para darle estilo a tu mensaje.",
+        "faq_when_a_dated": "El próximo {event_name} es el {next_date}. Después cae el "
+                            "{later_dates}.",
+        "faq_when_a_lunar": "{event_name} cambia cada año respecto al calendario gregoriano "
+                            "porque sigue {calendar_name}, así que se adelanta unos 11 días "
+                            "cada año. La fecha que aparece arriba está calculada para el año "
+                            "actual; como el inicio del mes se confirma localmente por "
+                            "observación de la luna, en algunos países se celebra un día antes "
+                            "o después.",
+        "faq_when_a": "{event_name} cae {date_window}.",
+        "next_date_prefix": "Próximo {event_name}: ",
+        "next_date_prefix_f": "Próxima {event_name}: ",
+        "faq_when_a_dated_f": "La próxima {event_name} es el {next_date}. Después cae el "
+                              "{later_dates}.",
+        "calendar_lunar_generic": "un calendario lunar",
+        "date_join": ", y luego el ",
         "faq_how_q": "¿Cómo uso el generador de {event_name}?",
         "faq_how_a": "Escribe un nombre, deseo o saludo en el cuadro de arriba. Cada estilo "
                      "de fuente de {event_name} se actualiza en vivo debajo — toca Copiar en "
@@ -507,6 +537,57 @@ def render_event_data(spec):
     return json.dumps(event_data, indent=2, ensure_ascii=False)
 
 
+def gendered(spec, key):
+    """Pick a grammatically-agreeing string variant.
+
+    Spanish (and most non-English targets) inflect the article and adjective
+    with the event noun's gender: "el próximo Halloween" but "la próxima
+    Navidad". A spec sets "gender": "f" and the "_f" variant is used where one
+    exists; everything falls back to the masculine/default form.
+    """
+    if spec.get("gender") == "f":
+        return key + "_f"
+    return key
+
+
+def when_answer(spec, language, event_name):
+    """The "When is X?" answer.
+
+    This used to end with "Check a current calendar for the exact date, then
+    come back and style your greeting for it" — on every event page, against
+    the single biggest query cluster these pages touch (calendar/date intent).
+    Telling the reader to go look somewhere else is the one thing a page
+    answering "when is X" must not do.
+
+    Three shapes, by what can honestly be asserted:
+      - deterministic rule  -> the real next date, plus the two after it
+      - lunar/observed rule -> how the date moves and why it varies locally;
+        the concrete date is filled in by js/events/eventDates.js from ICU
+      - no rule             -> the spec's own date_window prose, minus the
+        instruction to leave
+    """
+    occurrence = spec.get("occurrence")
+    dates = next_occurrences(occurrence) if occurrence else []
+    if dates:
+        later = [format_date(d, language) for d in dates[1:3]]
+        return tr(
+            language, gendered(spec, "faq_when_a_dated"),
+            event_name=event_name,
+            next_date=format_date(dates[0], language),
+            later_dates=(tr(language, "date_join").join(later) if later else format_date(dates[0], language)),
+        )
+    if is_lunar(occurrence):
+        return tr(
+            language, "faq_when_a_lunar",
+            event_name=event_name,
+            calendar_name=occurrence.get(
+                "calendar_name",
+                tr(language, "calendar_lunar_generic"),
+            ),
+        )
+    return tr(language, "faq_when_a", event_name=event_name, date_window=spec["date_window"])
+
+
 def synthesize_faq(spec):
     """Build FAQ Q&A from the spec's own fields — no separate 'faq' field
     needs to be authored; every event page gets a valid, accurate FAQPage."""
@@ -519,7 +600,7 @@ def synthesize_faq(spec):
         },
         {
             "q": tr(language, "faq_when_q", event_name=event_name),
-            "a": tr(language, "faq_when_a", event_name=event_name, date_window=spec["date_window"]),
+            "a": when_answer(spec, language, event_name),
         },
         {
             "q": tr(language, "faq_how_q", event_name=event_name),
@@ -727,6 +808,29 @@ def render_page(spec):
     fc_path = SCRIPT_DIR / "data" / "funding-choices-tag.html"
     funding_choices = fc_path.read_text(encoding="utf-8").strip() + "\n" if fc_path.exists() else ""
 
+    # Next-occurrence line under the hero tagline. Deterministic events get
+    # their real dates baked in (crawlable, and correct with JS off); lunar
+    # ones ship the rule and are filled in at runtime from ICU by
+    # js/events/eventDates.js, which is the only place those dates can be
+    # sourced honestly. An event with no rule renders no line at all.
+    occurrence = spec.get("occurrence")
+    upcoming = next_occurrences(occurrence) if occurrence else []
+    next_date_html = ""
+    if upcoming or is_lunar(occurrence):
+        prefix = tr(language, gendered(spec, "next_date_prefix"), event_name=esc(event_name))
+        if upcoming:
+            attr = f' data-event-dates="{esc_attr(json.dumps([d.isoformat() for d in upcoming]))}"'
+            body = prefix + format_date(upcoming[0], language)
+            hidden = ""
+        else:
+            attr = f' data-occurrence="{esc_attr(json.dumps(occurrence))}"'
+            body = ""
+            hidden = " hidden"
+        next_date_html = (
+            f'\n      <p class="event-next-date" id="eventNextDate"{attr}'
+            f' data-template="{esc_attr(prefix)}{{date}}"{hidden}>{body}</p>'
+        )
+
     hero_figure = ""
     if hero_svg:
         hero_figure = (
@@ -803,7 +907,7 @@ def render_page(spec):
   <div class="hero-inner">
     <div class="hero-card">
       <h1 class="hero-headline">{esc(spec["hero_h1"])}</h1>
-      <p class="hero-tagline">{esc(spec["hero_tagline"])}</p>
+      <p class="hero-tagline">{esc(spec["hero_tagline"])}</p>{next_date_html}
       {aka_html}<div class="input-wrapper" id="eventTextWrap">
         <textarea class="main-input" id="mainInput" placeholder="{esc_attr(tr(language, 'textarea_placeholder'))}" maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
@@ -901,6 +1005,7 @@ def render_page(spec):
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
+<script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/footer.js"></script>
 </body>

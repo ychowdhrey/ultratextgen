@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/chinese-new-year/",
 
+  "occurrence": {"type": "chinese", "month": 1, "day": 1, "calendar_name": "the Chinese lunisolar calendar"},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",

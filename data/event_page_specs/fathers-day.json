@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/fathers-day/",
 
+  "occurrence": {"type": "nth_weekday", "month": 6, "weekday": "sunday", "n": 3},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",

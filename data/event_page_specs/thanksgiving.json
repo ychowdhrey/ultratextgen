@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/thanksgiving/",
 
+  "occurrence": {"type": "nth_weekday", "month": 11, "weekday": "thursday", "n": 4},
   "fonts": {
     "curated_keys": [
       "Ultra Bold Serif",

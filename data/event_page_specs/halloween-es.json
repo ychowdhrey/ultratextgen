@@ -26,6 +26,7 @@
     "x_default": "en"
   },
 
+  "occurrence": {"type": "fixed", "month": 10, "day": 31},
   "fonts": {
     "curated_keys": [
       "Ultra Gothic",

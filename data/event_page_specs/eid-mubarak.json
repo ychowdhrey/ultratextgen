@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/eid-mubarak/",
 
+  "occurrence": {"type": "islamic", "month": 10, "day": 1, "calendar_name": "the Hijri (Islamic lunar) calendar"},
   "fonts": {
     "curated_keys": [
       "Ultra Script",

@@ -8247,3 +8247,12 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .event-phrase-group:first-child .event-phrase-group-title {
   margin-top: 0;
 }
+
+/* Next-occurrence line under an event page's hero tagline. Static for
+   fixed-date events, filled in at runtime for lunar ones (js/events/eventDates.js). */
+.event-next-date {
+  margin: .5rem 0 0;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+}

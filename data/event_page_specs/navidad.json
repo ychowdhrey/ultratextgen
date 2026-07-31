@@ -20,6 +20,8 @@
   "date_window": "diciembre, con el día principal cayendo el 25 de diciembre de cada año",
   "sample_phrase": "Feliz Navidad",
   "canonical": "https://ultratextgen.com/es/events/navidad/",
+  "gender": "f",
+  "occurrence": {"type": "fixed", "month": 12, "day": 25},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",

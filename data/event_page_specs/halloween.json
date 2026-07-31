@@ -22,6 +22,7 @@
 
   "canonical": "https://ultratextgen.com/events/halloween/",
 
+  "occurrence": {"type": "fixed", "month": 10, "day": 31},
   "fonts": {
     "curated_keys": [
       "Ultra Gothic",

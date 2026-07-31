@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/new-year/",
 
+  "occurrence": {"type": "fixed", "month": 1, "day": 1},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",
