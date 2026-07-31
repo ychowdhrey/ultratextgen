@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Şekilli Yazı, Havalı Nick ve Güzel Fontlar — Kopyala Yapıştır",
-    "description": "Şekilli yazı, font ve nick oluşturucu — Instagram bio, oyun nicki, WhatsApp ve Discord için kalın, italik, el yazısı, gotik, balon font ve şekilli rakam. Kopyala yapıştır, anında kullan."
+    "title": "Şekilli Yazı, Şekilli Harf ve Güzel Fontlar — Kopyala Yapıştır",
+    "description": "Şekilli yazı, şekilli harf ve font oluşturucu — Instagram bio, oyun nicki, WhatsApp ve Discord için kalın, italik, el yazısı, gotik, balon font ve şekilli rakam. Kopyala yapıştır, anında kullan."
   },
   "hero": {
-    "title": "Şekilli Yazı ve Havalı Nick Oluşturucu",
-    "subtitle": "Yazını yaz, kalın, italik, el yazısı, gotik veya balon stil seç, tek tıkla kopyala. Instagram bio, oyun nicki, WhatsApp durumu ve Discord — hepsinde aynen görünür."
+    "title": "Şekilli Yazı, Şekilli Harf ve Font Oluşturucu",
+    "subtitle": "Yazını yaz, kalın, italik, el yazısı, gotik veya balon stil seç, tek tıkla kopyala. Instagram bio, WhatsApp durumu ve Discord — hepsinde aynen görünür."
   },
   "decorations": {
     "label": "Yazını sembollerle süsle",
@@ -182,7 +182,7 @@
       },
       {
         "title": "Oyun Nicki ve Discord İsmi",
-        "description": "PUBG, Free Fire, Mobile Legends ve Discord için havalı nick yaz — ★彡, ︻デ═══ gibi sembollerle süsle, tek tıkla kopyala."
+        "description": "Oyun ve Discord isimleri için hazır çerçeveli örnekler şekilli nick sayfasında."
       },
       {
         "title": "Emoji Çevirici",
@@ -266,11 +266,11 @@
         ]
       },
       {
-        "title": "Oyun Nicki, Discord ve PUBG için Havalı Nick",
+        "title": "Oyun ve Discord'da Karakter Uyumluluğu",
         "items": [
           {
-            "question": "PUBG, Free Fire ve Mobile Legends için havalı nick nasıl yazılır?",
-            "answer": "Oyun nicki yazarken iki şeye dikkat: stil okunaklı kalmalı, oyun da bu karakterleri kabul etmeli.\n    <br><br>\n    <strong>PUBG için yaygın kombinasyonlar</strong><br>\n    — ︻デ═══一 𝓚𝓪𝓮𝓼𝓪𝓻 一═══デ︻<br>\n    — ★彡[𝕊𝕒𝕧𝕒𝕤̧]彡★<br>\n    — ꧁༒𝓢𝓱𝓪𝓭𝓸𝔀༒꧂\n    <br><br>\n    <strong>Free Fire için sade ama dikkat çekici</strong><br>\n    — 『MK』•𝗞𝗮𝗻𝘀𝘂𝘇<br>\n    — ▄︻デEFEデ═══一\n    <br><br>\n    <strong>Mobile Legends</strong><br>\n    Oyun bazı sembolleri kabul etmez — kalın, gotik ve italik genelde sorunsuz. Süsleme eklemek için yıldız, kalp ve karakter çerçeveleri en güvenli seçim.\n    <br><br>\n    Yazını yaz, stili seç, sembolleri ekle, kopyala yapıştır — bitti."
+            "question": "Oyunlar hangi karakterleri kabul ediyor?",
+            "answer": "Oyunlar Unicode karakterleri farklı destekliyor: kalın, gotik ve italik stiller neredeyse her yerde sorunsuz geçer; çok katmanlı süslemeler bazı oyunlarda reddedilebilir.\n    <br><br>\n    Stili seç, oyuna yapıştırmadan önce test et — reddedilirse daha sade bir stile geç.\n    <br><br>\n    Hazır çerçeveli oyun isimleri (kopyala yapıştır) <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında."
           },
           {
             "question": "Discord'da nick ve görünen isim için kullanılır mı?",
@@ -281,8 +281,8 @@
             "answer": "Platforma göre kısıtlamalar değişiyor. Bir karakter reddedilirse çözüm basit: <strong>başka bir stile geç</strong>.\n    <br><br>\n    En geniş uyumlu olanlar — neredeyse her yerde geçen güvenli stiller:<br>\n    — Kalın (Ultra Bold)<br>\n    — İtalik (Ultra Italic)<br>\n    — Küçük büyük harf (Small Caps)<br>\n    — Balon (Bubble)\n    <br><br>\n    Karmaşık süslemeli stiller (Zalgo, çok katmanlı gotik) bazı oyun ve uygulamalar tarafından bloklanabilir. Sadeden başla, fazlasını yavaş yavaş ekle."
           },
           {
-            "question": "Kalpli, kelebekli ve kılıçlı şekilli isim nasıl yapılır?",
-            "answer": "İsmini yaz, etrafına tek tıkla sembol sar — kalp, kelebek, kılıç veya yıldız.\n    <br><br>\n    — <strong>Kalpli:</strong> ♡ 𝓜𝓮𝓵𝓲𝓼𝓪 ♡<br>\n    — <strong>Kelebekli:</strong> ƸӜƷ 𝓔𝓯𝓮 ƸӜƷ\n    <br><br>\n    Stilini seç (gotik ve el yazısı en çok tutuyor), sonra <em>Çerçeveler</em> veya <em>Semboller</em> sekmesinden süslemeyi ekle. Hazır kalpli ve kelebekli nick örnekleri (kopyala yapıştır) <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında."
+            "question": "Yazının etrafına sembol nasıl eklenir?",
+            "answer": "Yazını yaz, <em>Çerçeveler</em> veya <em>Semboller</em> sekmesinden süslemeyi seç — sembol otomatik olarak metnin etrafına sarılır.\n    <br><br>\n    Hazır kalpli ve kelebekli isim örnekleri (kopyala yapıştır) <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında."
           }
         ]
       },
@@ -294,8 +294,8 @@
             "answer": "Yıldız, kalp, ok, çiçek, kılıç, taç — bunlar klavyede yok ama Unicode'da var. UltraTextGen'in <em>Sembol</em> sekmesine girip istediğine tıklayınca anında kopyalanıyor.\n    <br><br>\n    En çok kullanılan semboller:<br>\n    ★ ✦ ✧ ✩ ✯ — yıldızlar<br>\n    ♥ ❤ ღ ♡ — kalpler<br>\n    ➤ → ↣ ⟶ — oklar<br>\n    ✿ ❀ ❁ ✾ — çiçekler<br>\n    ☾ ☽ ✨ ⋆ — gece ve parıltı<br>\n    ︻デ═══一 ╾━╤デ╦︻ — silah / oyun süslemeleri\n    <br><br>\n    Hepsini tek tıkla kopyala yapıştır."
           },
           {
-            "question": "Nick için süslemeli sembol nereden bulunur?",
-            "answer": "Oyun nicki, Discord ismi ve Instagram bio'su için sevilen sembol kombinasyonları:\n    <br><br>\n    — ꧁༒ ✦ ꧂ — kraliyet / VIP tarzı<br>\n    — ︻デ═══一 — silah / PUBG için klasik<br>\n    — ★彡 …彡★ — kuyruklu yıldız çerçevesi<br>\n    — ƸӜƷ — kelebek\n    <br><br>\n    Yazını yaz, çerçeveyi seç, etrafını otomatik sarsın. Bu kombinasyonlarla hazır kopyala-yapıştır nickler <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında."
+            "question": "Yazıyı süslemek için hangi semboller kullanılıyor?",
+            "answer": "Bio ve açıklamalarda en çok kullanılan sembol kombinasyonları:\n    <br><br>\n    — ꧁༒ ✦ ꧂ — kraliyet / VIP tarzı<br>\n    — ★彡 …彡★ — kuyruklu yıldız çerçevesi<br>\n    — ƸӜƷ — kelebek\n    <br><br>\n    Yazını yaz, çerçeveyi seç, etrafını otomatik sarsın. Sembollerin tamamı <a href=\"/tr/library/semboller/\">semboller</a> sayfasında; hazır kopyala-yapıştır isimler ise <a href=\"/tr/sekilli-nick/\">şekilli nick</a> sayfasında."
           },
           {
             "question": "Şekilli kalp, emoji ve süslü harf nasıl yapılır?",
