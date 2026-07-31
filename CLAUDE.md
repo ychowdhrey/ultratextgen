@@ -149,6 +149,33 @@ repointed every internal link (`tiktok/index.html`, `tiktok/name-generator/`,
 `youtube/index.html`, `youtube/name-generator/`) straight at the `answers/` URL
 instead of the now-retired one.
 
+### `answers/` is deliberately not linked from any homepage (recorded 2026-07-31)
+
+The EN homepage links `/library/`, `/guide/`, `/usecase/` and `/category/`
+but **not** `/answers/`, and no locale homepage links its own
+`<lang>/answers/` hub either. **This is intentional, not the "missing link"
+bug described under "Locale-native internal linking" below.**
+
+The `answers/` pillar exists for **AEO** — it is built to be landed on
+directly from a search engine or an AI answer surface, resolve one question,
+and stop. Funnelling homepage visitors into it works against that: someone
+who arrived to use the generator does not need a 59-page Q&A index, and
+sending them there loses them.
+
+So the pillar's discovery is search-driven by design, the same standing
+decision `symbol/` carries (see "Content Types: Library vs Symbol" —
+"**No nav entry** — landed on via search engines/pins"). The difference is
+that `answers/` *does* keep its `header.js` nav entry; what it does not get
+is homepage body links.
+
+**Do not "fix" this.** A homepage→pillar link audit will flag it every time,
+because it is structurally identical to the real bug — a pillar with no
+inbound homepage link. It was flagged and corrected on exactly that basis on
+2026-07-31, during the pass that added the 13 missing homepage→`library/`
+links. `library/` genuinely needed those (it is the only route into each
+locale's `symbol/` cluster); `answers/` does not, and should be left alone
+unless this decision is explicitly revisited.
+
 ---
 
 ## Content Types: Library vs Symbol
