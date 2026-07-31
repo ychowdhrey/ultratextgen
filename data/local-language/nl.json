@@ -32,12 +32,12 @@
       "register": "neutral, slightly aspirational/aesthetic",
       "phrase_type": "standard_everyday_term",
       "content_surface": "title/H1/FAQ",
-      "usage_guidance": "Correct, natural Dutch term for calligraphic/script-style Unicode letters. On the homepage FAQ this is explicitly distinguished from 'schuine letters (cursief/italic)' — keep that separation intact when writing copy that discusses both.",
+      "usage_guidance": "Correct, natural Dutch term for calligraphic/script-style Unicode letters. On the homepage FAQ this is explicitly distinguished from 'schuine letters (cursief/italic)' — keep that separation intact when writing copy that discusses both. || REVISED 2026-07-26: lead with the CLOSED COMPOUND 'sierletters', not the adjectival 'sierlijke letters' -- GSC shows the compound outperforming the adjectival ~3:1 on impressions (441 vs 145). Keep both in the title; the compound goes first. The sierletters/schuine-letters disambiguation above still stands.",
       "good_example": "Sierletters voor namen en quotes (𝓁𝒾𝑒𝓋𝑒 𝓋𝒾𝒷𝑒𝓈)",
       "avoid_when": "when italic/slanted text (not script/calligraphic) is meant — use 'schuine letters' instead",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-07-26"
     },
     {
       "phrase_id": "NL-003",

@@ -1,0 +1,27 @@
+{
+  "_generated": true,
+  "_generated_by": "private research tooling — see internal docs/local-language-intelligence.md",
+  "_do_not_hand_edit": true,
+  "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
+  "locale": "zh-tw",
+  "language": "Chinese (Traditional)",
+  "phrase_count": 1,
+  "phrases": [
+    {
+      "phrase_id": "ZHTW-013",
+      "native_phrase": "FB",
+      "transliteration": "",
+      "english_concept": "Facebook (abbreviated)",
+      "country_or_market": "TW",
+      "register": "neutral-casual, mainstream",
+      "phrase_type": "platform_shorthand",
+      "content_surface": "title/meta/H2/FAQ",
+      "usage_guidance": "User-authorized fast-track promotion (2026-07-31), overriding the standard same-pass-insertion hold given the strength of the volume evidence. Pair with 'Facebook' rather than replace it (e.g. 'Facebook（FB）符號') -- do not use 'FB' as a standalone primary title/H1 term; the hreflang cluster is keyed to the full Facebook concept.",
+      "good_example": "Facebook（FB）符號大全 — 反應・愛心符號複製貼上",
+      "avoid_when": "formal/legal copy needing the full brand name; do not use as a standalone term without the Facebook pairing since FB is ambiguous out of context",
+      "confidence": "high",
+      "status": "limited_use",
+      "last_verified": "2026-07-31"
+    }
+  ]
+}
