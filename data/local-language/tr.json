@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "tr",
   "language": "Turkish",
-  "phrase_count": 18,
+  "phrase_count": 19,
   "phrases": [
     {
       "phrase_id": "TR-001",
@@ -294,6 +294,22 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-25"
+    },
+    {
+      "phrase_id": "TR-033",
+      "native_phrase": "papçı",
+      "transliteration": "",
+      "english_concept": "PUBG (the game) — Turkish colloquial pronunciation/nickname",
+      "country_or_market": "TR",
+      "register": "informal, gaming slang",
+      "phrase_type": "gaming_terminology",
+      "content_surface": "candidate secondary H2/FAQ term on tr/usecase/pubg-nick/ — not title/H1 (\"PUBG\" itself stays primary; this is a colloquial variant, not the dominant search term)",
+      "usage_guidance": "Confirmed 2026-07-31: \"papçı\"/\"papci\" refers to the GAME ITSELF (a Turkish phonetic respelling of \"PUBG\"), not to a player of it — corrects this record's original guess. Directly-fetched evidence: a Cenuta blog post states \"Papci olarak okunan PUBG'yi oynayabilmek için...\" (\"To be able to play PUBG, read as Papci...\"), and a complaints-site page titles itself \"PUBG (Pubgmobile.com) Papçi Oyunu Zararları\" (\"the Papçi game\"), both using it as a name for the game, not the player. Safe as a secondary/FAQ synonym for \"PUBG\" on pubg-nick (e.g. \"...also written 'papçı' by some players\"), not as a replacement for \"PUBG\" in title/H1.",
+      "good_example": "",
+      "avoid_when": "Do not use as the primary term in title/H1/meta — \"PUBG\" is the dominant, SEO-correct term; \"papçı\" is a colloquial variant worth a secondary mention only.",
+      "confidence": "medium",
+      "status": "limited_use",
+      "last_verified": "2026-07-31"
     }
   ]
 }

@@ -365,6 +365,12 @@
       "localeUrl": "https://ultratextgen.com/sv/library/",
       "reason": "check-translation-parity.js flags this pair (re-surfaced once the branch's merge-base moved forward) because sv/library/index.html gained 4 new compare-cards (Discord-symboler, Roblox-symboler, Y2K-symboler, Emoji-kombinationer) as part of the user-authorized sv library/* cluster build (see data/locale_parent_gap_audit.json's library/*-locale-sv gate-pass entry). library/index.html (EN) was not touched in this branch and needed no change — these are hub links to genuinely new sv content, not EN drift. Verified by direct inspection. Discussed with the user 2026-07-26.",
       "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/category/strikethrough-text/",
+      "localeUrl": "https://ultratextgen.com/tr/ustu-cizili-yazi/",
+      "reason": "tr/ustu-cizili-yazi/ swapped one related-card (Kalin Yazi -> Alti Cizili Yazi) to cross-link the newly-built tr/alti-cizili-yazi/ (underline) sibling page, as part of shipping that new page. This is a TR-only structural change with no EN-side equivalent action: category/strikethrough-text/ already links to category/underline-text/ in its own related-cards (has for a while, unrelated to this change) and needed no edit -- EN and TR related-card sets were never a 1:1 mirror of each other (EN carries classified/comment-font; TR carries yazi-stilleri/instagram-yazi-tipi), so forcing a matching EN edit would be cosmetic, not a real content improvement. Discussed and agreed with the user 2026-07-31.",
+      "agreed": "2026-07-31"
     }
   ]
 }
