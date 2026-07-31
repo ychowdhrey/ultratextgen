@@ -400,6 +400,18 @@ def validate_spec(spec):
     keys = fonts.get("curated_keys")
     if not isinstance(keys, list) or not keys or not all(isinstance(k, str) and k for k in keys):
         raise SpecError("fonts.curated_keys must be a non-empty list of non-empty strings")
+    # eventPageController.js silently skips a key that isn't in window.textStyles,
+    # so a typo (or an invented name) ships a page with a visibly empty fonts
+    # section and no error anywhere. Check the names against styles.js instead.
+    # An empty registry means the parse failed (styles.js changed shape); skip
+    # the check rather than block every build on a broken heuristic.
+    style_keys = known_style_keys()
+    unknown = [k for k in keys if k not in style_keys] if style_keys else []
+    if unknown:
+        raise SpecError(
+            "fonts.curated_keys names style(s) that don't exist in styles.js: "
+            + ", ".join(repr(k) for k in unknown)
+        )
 
     collections = spec["emoji_symbol_collections"]
     if not isinstance(collections, list) or not collections:
@@ -582,6 +594,30 @@ def gendered(spec, key):
     if spec.get("gender") == "f":
         return key + "_f"
     return key
+
+
+_STYLE_KEYS = None
+
+
+def known_style_keys():
+    """Every key in window.textStyles, read straight out of styles.js.
+
+    Parsed rather than executed: styles.js is a browser file with no module
+    exports, and the registry's keys are all quoted top-level properties of the
+    one object literal. Returns an empty set if the shape ever changes, so a
+    parse failure degrades to "skip the check" rather than blocking every build.
+    """
+    global _STYLE_KEYS
+    if _STYLE_KEYS is None:
+        try:
+            source = (REPO / "styles.js").read_text(encoding="utf-8")
+            import re as _re
+            _STYLE_KEYS = set(
+                _re.findall(r"""^\s*['"]([^'"]+)['"]\s*:\s*\{""", source, _re.M)
+            )
+        except OSError:
+            _STYLE_KEYS = set()
+    return _STYLE_KEYS
 
 
 def when_answer(spec, language, event_name):
