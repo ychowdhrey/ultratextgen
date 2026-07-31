@@ -36,6 +36,13 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+from event_occurrence import (  # noqa: E402
+    format_date,
+    is_lunar,
+    next_occurrences,
+)
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
 EVENTS_DIR = REPO / "events"
@@ -86,8 +93,18 @@ STRINGS = {
         "breadcrumb_events": "Events",
         "faq_what_is_q": "What is the {event_name} text and symbol generator?",
         "faq_when_q": "When is {event_name}?",
-        "faq_when_a": "{event_name} falls {date_window}. Check a current calendar for "
-                      "the exact date, then come back and style your greeting for it.",
+        "faq_when_a_dated": "The next {event_name} is {next_date}. After that it falls on "
+                            "{later_dates}.",
+        "faq_when_a_lunar": "{event_name} moves each year against the Gregorian calendar "
+                            "because it follows {calendar_name}, so it lands about 11 days "
+                            "earlier than the year before. The date shown at the top of this "
+                            "page is calculated for the current year; because the start of "
+                            "the month is confirmed locally by moon sighting, some countries "
+                            "observe it a day either side.",
+        "faq_when_a": "{event_name} falls {date_window}.",
+        "next_date_prefix": "Next {event_name}: ",
+        "calendar_lunar_generic": "a lunar calendar",
+        "date_join": ", then ",
         "faq_how_q": "How do I use the {event_name} generator?",
         "faq_how_a": "Type a name, wish, or greeting into the box at the top. Every "
                      "{event_name} font style updates live underneath it — tap Copy on any "
@@ -128,10 +145,16 @@ STRINGS = {
         "section_ascii_cta": 'Want to type your own name or message into a live '
                              'block-letter banner instead? Try the <a href="{href}">ASCII '
                              'Art Generator</a>.',
-        "section_phrase_label": "Phrase Bank",
-        "section_phrase_heading": "{event_name} Phrase Bank",
-        "section_phrase_intro": "Tap a phrase to drop it into the box up top and see every "
-                                "font style above restyle it instantly.",
+        "section_native_label": "In {script_language}",
+        "section_native_heading": "{event_name} in {script_language}",
+        "section_native_intro": "Tap any line to copy it in {script_language}. These are the "
+                                "native-script forms of the greetings above — paste them "
+                                "straight into a message, card, or bio.",
+        "section_phrase_label": "Wishes &amp; Messages",
+        "section_phrase_heading": "{event_name} Wishes &amp; Messages",
+        "section_phrase_intro": "Tap any wish to drop it into the box above — every font "
+                                "below then restyles it instantly, so you can copy it "
+                                "decorated in one step.",
         "cta_heading": "Transform text with Unicode fonts",
         "cta_body": "Use UltraTextGen to convert plain text into bold, italic, cursive, and "
                     "100+ other Unicode font styles — free and instant.",
@@ -149,8 +172,21 @@ STRINGS = {
         "breadcrumb_events": "Eventos",
         "faq_what_is_q": "¿Qué es el generador de texto y símbolos de {event_name}?",
         "faq_when_q": "¿Cuándo es {event_name}?",
-        "faq_when_a": "{event_name} cae {date_window}. Consulta un calendario actualizado "
-                      "para la fecha exacta y vuelve para darle estilo a tu mensaje.",
+        "faq_when_a_dated": "El próximo {event_name} es el {next_date}. Después cae el "
+                            "{later_dates}.",
+        "faq_when_a_lunar": "{event_name} cambia cada año respecto al calendario gregoriano "
+                            "porque sigue {calendar_name}, así que se adelanta unos 11 días "
+                            "cada año. La fecha que aparece arriba está calculada para el año "
+                            "actual; como el inicio del mes se confirma localmente por "
+                            "observación de la luna, en algunos países se celebra un día antes "
+                            "o después.",
+        "faq_when_a": "{event_name} cae {date_window}.",
+        "next_date_prefix": "Próximo {event_name}: ",
+        "next_date_prefix_f": "Próxima {event_name}: ",
+        "faq_when_a_dated_f": "La próxima {event_name} es el {next_date}. Después cae el "
+                              "{later_dates}.",
+        "calendar_lunar_generic": "un calendario lunar",
+        "date_join": ", y luego el ",
         "faq_how_q": "¿Cómo uso el generador de {event_name}?",
         "faq_how_a": "Escribe un nombre, deseo o saludo en el cuadro de arriba. Cada estilo "
                      "de fuente de {event_name} se actualiza en vivo debajo — toca Copiar en "
@@ -192,10 +228,16 @@ STRINGS = {
         "section_ascii_cta": '¿Quieres escribir tu propio nombre o mensaje en un banner de '
                              'letras en bloque en vivo? Prueba el <a href="{href}">Generador '
                              'de Arte ASCII</a>.',
-        "section_phrase_label": "Banco de Frases",
-        "section_phrase_heading": "Banco de Frases de {event_name}",
-        "section_phrase_intro": "Toca una frase para colocarla en el cuadro de arriba y "
-                                "verla transformada al instante en cada estilo de fuente.",
+        "section_native_label": "En {script_language}",
+        "section_native_heading": "{event_name} en {script_language}",
+        "section_native_intro": "Toca cualquier línea para copiarla en {script_language}. "
+                                "Son las formas en escritura original de los saludos de "
+                                "arriba — pégalas en un mensaje, tarjeta o biografía.",
+        "section_phrase_label": "Mensajes y Felicitaciones",
+        "section_phrase_heading": "Mensajes y Felicitaciones de {event_name}",
+        "section_phrase_intro": "Toca cualquier mensaje para colocarlo en el cuadro de "
+                                "arriba — cada fuente de abajo lo transforma al instante, "
+                                "listo para copiar.",
         "cta_heading": "Transforma texto con fuentes Unicode",
         "cta_body": "Usa UltraTextGen para convertir texto plano en negrita, cursiva y más "
                     "de 100 estilos de fuente Unicode — gratis e instantáneo.",
@@ -224,6 +266,9 @@ JS_UI_STRINGS = {
         "copyButton": "Copiar",
         "copyAriaPrefix": "Copiar ",
         "asciiArtDefaultLabel": "Arte ASCII",
+        # Heading for phrases whose spec entry carries no `group`, used only
+        # when at least one other phrase in the bank does.
+        "phraseGroupOther": "Más",
     },
 }
 
@@ -254,6 +299,33 @@ def events_hub_href(language):
 def answers_prefix(language):
     """Relative path prefix for /answers/ pages in this language."""
     return "/answers/" if language == DEFAULT_LANGUAGE else f"/{language}/answers/"
+
+
+def art_slug(language, slug):
+    """Asset basename for this page's hero/OG art, matching the naming that
+    scripts/generate-site-art.py already produces: `events-halloween`,
+    `es-events-navidad`."""
+    base = f"events-{slug}"
+    return base if language == DEFAULT_LANGUAGE else f"{language}-{base}"
+
+
+def page_art(language, slug):
+    """(og_image_url, hero_svg_path_or_None) for this page.
+
+    The generator used to hardcode /assets/og/category.png and emit no hero
+    figure, leaving wire-site-art.py to patch both in afterwards. That made
+    regeneration destructive: re-running the generator on a live page silently
+    downgraded its OG image to the generic one and dropped its hero. Resolving
+    the art here — from files that must already exist per CLAUDE.md's
+    "new pages ship with their art" rule — makes a regenerated page complete
+    on its own.
+    """
+    stem = art_slug(language, slug)
+    og_file = REPO / "assets" / "og" / f"{stem}.png"
+    hero_file = REPO / "assets" / "hero" / f"{stem}.svg"
+    og_url = f"{SITE}/assets/og/{stem}.png" if og_file.exists() else f"{SITE}/assets/og/category.png"
+    hero = f"/assets/hero/{stem}.svg" if hero_file.exists() else None
+    return og_url, hero
 
 
 def events_canonical_default(language, slug):
@@ -328,6 +400,18 @@ def validate_spec(spec):
     keys = fonts.get("curated_keys")
     if not isinstance(keys, list) or not keys or not all(isinstance(k, str) and k for k in keys):
         raise SpecError("fonts.curated_keys must be a non-empty list of non-empty strings")
+    # eventPageController.js silently skips a key that isn't in window.textStyles,
+    # so a typo (or an invented name) ships a page with a visibly empty fonts
+    # section and no error anywhere. Check the names against styles.js instead.
+    # An empty registry means the parse failed (styles.js changed shape); skip
+    # the check rather than block every build on a broken heuristic.
+    style_keys = known_style_keys()
+    unknown = [k for k in keys if k not in style_keys] if style_keys else []
+    if unknown:
+        raise SpecError(
+            "fonts.curated_keys names style(s) that don't exist in styles.js: "
+            + ", ".join(repr(k) for k in unknown)
+        )
 
     collections = spec["emoji_symbol_collections"]
     if not isinstance(collections, list) or not collections:
@@ -372,9 +456,24 @@ def validate_spec(spec):
     if not isinstance(phrase_bank, list) or not phrase_bank:
         raise SpecError("phrase_bank must be a non-empty list")
     for i, p in enumerate(phrase_bank):
-        for key in ("text", "native_script", "romanization", "translation"):
-            if key not in p or not p[key]:
-                raise SpecError(f"phrase_bank[{i}] missing '{key}'")
+        if not p.get("text"):
+            raise SpecError(f"phrase_bank[{i}] missing 'text'")
+        # native_script / romanization / translation are OPTIONAL. They used to
+        # be required, which is why the original banks padded them with copies
+        # of `text` on every English-only phrase — a card that repeated itself
+        # three times. A phrase in the page's own language legitimately has
+        # none of them.
+        if p.get("native_script") and not p.get("romanization"):
+            raise SpecError(
+                f"phrase_bank[{i}] has 'native_script' but no 'romanization' — "
+                "a non-Latin phrase needs one so the reader can say it"
+            )
+        if p.get("native_script") and not p.get("needs_native_speaker_review") is True:
+            if "needs_native_speaker_review" not in p:
+                raise SpecError(
+                    f"phrase_bank[{i}] has 'native_script' but no "
+                    "'needs_native_speaker_review' flag — set it explicitly"
+                )
 
     related = spec["related"]
     if not isinstance(related, list) or not related:
@@ -402,6 +501,18 @@ def validate_spec(spec):
                     raise SpecError(
                         "hreflang.x_default must name another key in the same "
                         "hreflang object"
+                    )
+                # CLAUDE.md: x-default is ALWAYS the English canonical. A locale
+                # spec pointing it at its own URL is the single most-repeated
+                # hreflang bug on this site, and it propagates: the mesh fixer
+                # copies whatever x-default it finds onto the EN sibling too, so
+                # one bad spec silently mis-points the whole cluster. Refuse it
+                # here rather than generate it and rely on an audit to catch it.
+                if "en" in hreflang and url != "en":
+                    raise SpecError(
+                        "hreflang.x_default must be 'en' when the cluster has an "
+                        f"'en' member (got {url!r}) — x-default always points at "
+                        "the English canonical, never at a locale URL"
                     )
                 continue
             if not isinstance(url, str) or not url:
@@ -438,12 +549,21 @@ def render_event_data(spec):
         "asciiArt": [
             {"art": a["art"], "label": a["label"]} for a in spec["ascii_art"]["items"]
         ],
+        # Only emit the optional keys a phrase actually has. Entries that are
+        # English-only carry no native_script/romanization, and shipping them
+        # as copies of `text` (which the original 8-entry banks did) is what
+        # made every card render the same words three times.
         "phraseBank": [
             {
-                "text": p["text"],
-                "nativeScript": p["native_script"],
-                "romanization": p["romanization"],
-                "translation": p["translation"],
+                k: v
+                for k, v in (
+                    ("text", p["text"]),
+                    ("nativeScript", p.get("native_script")),
+                    ("romanization", p.get("romanization")),
+                    ("translation", p.get("translation")),
+                    ("group", p.get("group")),
+                )
+                if v
             }
             for p in spec["phrase_bank"]
         ],
@@ -463,6 +583,81 @@ def render_event_data(spec):
     return json.dumps(event_data, indent=2, ensure_ascii=False)
 
 
+def gendered(spec, key):
+    """Pick a grammatically-agreeing string variant.
+
+    Spanish (and most non-English targets) inflect the article and adjective
+    with the event noun's gender: "el próximo Halloween" but "la próxima
+    Navidad". A spec sets "gender": "f" and the "_f" variant is used where one
+    exists; everything falls back to the masculine/default form.
+    """
+    if spec.get("gender") == "f":
+        return key + "_f"
+    return key
+
+
+_STYLE_KEYS = None
+
+
+def known_style_keys():
+    """Every key in window.textStyles, read straight out of styles.js.
+
+    Parsed rather than executed: styles.js is a browser file with no module
+    exports, and the registry's keys are all quoted top-level properties of the
+    one object literal. Returns an empty set if the shape ever changes, so a
+    parse failure degrades to "skip the check" rather than blocking every build.
+    """
+    global _STYLE_KEYS
+    if _STYLE_KEYS is None:
+        try:
+            source = (REPO / "styles.js").read_text(encoding="utf-8")
+            import re as _re
+            _STYLE_KEYS = set(
+                _re.findall(r"""^\s*['"]([^'"]+)['"]\s*:\s*\{""", source, _re.M)
+            )
+        except OSError:
+            _STYLE_KEYS = set()
+    return _STYLE_KEYS
+
+
+def when_answer(spec, language, event_name):
+    """The "When is X?" answer.
+
+    This used to end with "Check a current calendar for the exact date, then
+    come back and style your greeting for it" — on every event page, against
+    the single biggest query cluster these pages touch (calendar/date intent).
+    Telling the reader to go look somewhere else is the one thing a page
+    answering "when is X" must not do.
+
+    Three shapes, by what can honestly be asserted:
+      - deterministic rule  -> the real next date, plus the two after it
+      - lunar/observed rule -> how the date moves and why it varies locally;
+        the concrete date is filled in by js/events/eventDates.js from ICU
+      - no rule             -> the spec's own date_window prose, minus the
+        instruction to leave
+    """
+    occurrence = spec.get("occurrence")
+    dates = next_occurrences(occurrence) if occurrence else []
+    if dates:
+        later = [format_date(d, language) for d in dates[1:3]]
+        return tr(
+            language, gendered(spec, "faq_when_a_dated"),
+            event_name=event_name,
+            next_date=format_date(dates[0], language),
+            later_dates=(tr(language, "date_join").join(later) if later else format_date(dates[0], language)),
+        )
+    if is_lunar(occurrence):
+        return tr(
+            language, "faq_when_a_lunar",
+            event_name=event_name,
+            calendar_name=occurrence.get(
+                "calendar_name",
+                tr(language, "calendar_lunar_generic"),
+            ),
+        )
+    return tr(language, "faq_when_a", event_name=event_name, date_window=spec["date_window"])
+
+
 def synthesize_faq(spec):
     """Build FAQ Q&A from the spec's own fields — no separate 'faq' field
     needs to be authored; every event page gets a valid, accurate FAQPage."""
@@ -475,7 +670,7 @@ def synthesize_faq(spec):
         },
         {
             "q": tr(language, "faq_when_q", event_name=event_name),
-            "a": tr(language, "faq_when_a", event_name=event_name, date_window=spec["date_window"]),
+            "a": when_answer(spec, language, event_name),
         },
         {
             "q": tr(language, "faq_how_q", event_name=event_name),
@@ -484,9 +679,17 @@ def synthesize_faq(spec):
     ]
     if spec.get("companion_answer_slug"):
         href = f"{SITE}{answers_prefix(language)}{esc_attr(spec['companion_answer_slug'])}/"
+        # A spec may phrase this one itself. The generated version ("Where can I
+        # find more X phrases…") is a serviceable default, but some events have
+        # a sharper question worth keeping — New Year's is "What should I
+        # actually write in a New Year's message?" — and regenerating used to
+        # overwrite it with the default, in the visible FAQ and the JSON-LD
+        # together.
         faqs.append({
-            "q": tr(language, "faq_more_q", event_name=event_name),
-            "a": tr(language, "faq_more_a", href=href),
+            "q": spec.get("faq_more_q") or tr(language, "faq_more_q", event_name=event_name),
+            "a": (spec["faq_more_a"].replace("{href}", href)
+                  if spec.get("faq_more_a")
+                  else tr(language, "faq_more_a", href=href)),
         })
     return faqs
 
@@ -526,6 +729,7 @@ def render_ld_json(spec, faqs):
             tr(language, "feature_phrase", event_name=event_name),
         ],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "image": page_art(language, slug)[0],
     }
 
     ld_faq = {
@@ -577,7 +781,8 @@ def render_faq_html(faqs):
     return "\n".join(items)
 
 
-def render_related(related, companion_answer_slug, event_name=None, language=DEFAULT_LANGUAGE):
+def render_related(related, companion_answer_slug, event_name=None, language=DEFAULT_LANGUAGE,
+                   companion_title=None, companion_desc=None):
     cards = []
     for rel in related:
         cards.append(
@@ -590,11 +795,19 @@ def render_related(related, companion_answer_slug, event_name=None, language=DEF
     if companion_answer_slug:
         name = event_name or tr(language, "related_more_fallback_name")
         href = f"{answers_prefix(language)}{esc_attr(companion_answer_slug)}/"
+        # A spec may name the companion answer explicitly. The generic
+        # "More <event> phrases & wording" fallback is fine for a card whose
+        # answer page has no distinct angle, but several answers do (Christmas's
+        # is about saying it in other languages, New Year's is about what to
+        # write) — and regenerating those pages used to overwrite the specific
+        # copy with the generic line.
+        title = companion_title or tr(language, "related_more_title", event_name=esc(name))
+        desc = companion_desc or tr(language, "related_more_desc")
         cards.append(
             f'    <a href="{href}" '
             'class="compare-card variant-muted u-no-underline">\n'
-            f'      <h4>{tr(language, "related_more_title", event_name=esc(name))}</h4>\n'
-            f'      <p>{tr(language, "related_more_desc")}</p>\n'
+            f'      <h4>{title}</h4>\n'
+            f'      <p>{desc}</p>\n'
             "    </a>"
         )
     return "\n".join(cards)
@@ -614,7 +827,24 @@ def render_page(spec):
     ld_webapp, ld_faq, ld_breadcrumb = render_ld_json(spec, faqs)
     event_data_json = render_event_data(spec)
     faq_html = render_faq_html(faqs)
-    related_html = render_related(spec["related"], companion_answer_slug, event_name, language)
+    related_html = render_related(
+        spec["related"], companion_answer_slug, event_name, language,
+        spec.get("companion_answer_title"), spec.get("companion_answer_desc"),
+    )
+
+    # Optional per-event pointer at the companion answer, rendered under the
+    # wishes section. Stored in the spec (with a {href} placeholder) rather
+    # than composed here, because the useful version of this sentence is
+    # event-specific — "what to say for Diwali", "what Eid Mubarak means and
+    # how to reply".
+    phrase_cta_html = ""
+    if spec.get("phrase_cta") and companion_answer_slug:
+        href = f"{answers_prefix(language)}{esc_attr(companion_answer_slug)}/"
+        phrase_cta_html = (
+            '\n    <p class="u-secondary-tight u-mt-15">'
+            + spec["phrase_cta"].replace("{href}", href)
+            + "</p>"
+        )
     hreflang_html = render_hreflang(spec.get("hreflang"))
 
     aka_html = ""
@@ -640,10 +870,74 @@ def render_page(spec):
     cta_href = f"{SITE}{home_href(language)}"
     ascii_generator_href = "/ascii-art-generator/"
 
+    og_image, hero_svg = page_art(language, slug)
+
+    # Emitted here rather than left to scripts/inject-funding-choices-tag.js,
+    # for the same reason as the OG art above: a regenerated page has to be
+    # complete, or regeneration silently strips the consent tag off a live page.
+    fc_path = SCRIPT_DIR / "data" / "funding-choices-tag.html"
+    funding_choices = fc_path.read_text(encoding="utf-8").strip() + "\n" if fc_path.exists() else ""
+
+    # Next-occurrence line under the hero tagline. Deterministic events get
+    # their real dates baked in (crawlable, and correct with JS off); lunar
+    # ones ship the rule and are filled in at runtime from ICU by
+    # js/events/eventDates.js, which is the only place those dates can be
+    # sourced honestly. An event with no rule renders no line at all.
+    occurrence = spec.get("occurrence")
+    upcoming = next_occurrences(occurrence) if occurrence else []
+    next_date_html = ""
+    if upcoming or is_lunar(occurrence):
+        prefix = tr(language, gendered(spec, "next_date_prefix"), event_name=esc(event_name))
+        if upcoming:
+            attr = f' data-event-dates="{esc_attr(json.dumps([d.isoformat() for d in upcoming]))}"'
+            body = prefix + format_date(upcoming[0], language)
+            hidden = ""
+        else:
+            attr = f' data-occurrence="{esc_attr(json.dumps(occurrence))}"'
+            body = ""
+            hidden = " hidden"
+        next_date_html = (
+            f'\n      <p class="event-next-date" id="eventNextDate"{attr}'
+            f' data-template="{esc_attr(prefix)}{{date}}"{hidden}>{body}</p>'
+        )
+
+    # "<Event> in <script>" — its own section, because "eid mubarak in arabic"
+    # (and its Hindi/Chinese equivalents) is a distinct copy-the-script job,
+    # not the style-my-text job the rest of the page serves. Built from the
+    # phrase bank's own native_script entries, so it needs no extra spec data
+    # beyond naming the script.
+    native_section_html = ""
+    script_language = spec.get("native_script_language")
+    # "Chinese New Year in Chinese" reads badly; a spec can supply its own H2.
+    native_heading = spec.get("native_section_heading") or tr(
+        language, "section_native_heading",
+        event_name=esc(event_name), script_language=esc(script_language or ""),
+    )
+    if script_language and any(ph.get("native_script") for ph in spec["phrase_bank"]):
+        native_section_html = f"""
+  <section class="editorial-section" id="eventNativeSection">
+    <span class="article-section-label">{tr(language, "section_native_label", script_language=esc(script_language))}</span>
+    <h2>{native_heading}</h2>
+    <p class="editorial-intro">{tr(language, "section_native_intro", script_language=esc(script_language))}</p>
+    <div class="glyph-grid" id="eventNativeGrid"></div>
+  </section>
+
+  <div class="section-divider"></div>
+"""
+
+    hero_figure = ""
+    if hero_svg:
+        hero_figure = (
+            '<figure class="page-hero-figure" data-uthero aria-hidden="true">\n'
+            f'  <img src="{esc_attr(hero_svg)}" width="1200" height="340"\n'
+            '       fetchpriority="high" alt="">\n'
+            "</figure>\n"
+        )
+
     page = f"""<!DOCTYPE html>
 <html lang="{esc_attr(language)}">
 <head>
-  <!-- Google Tag Manager -->
+{funding_choices}  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
   new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -662,14 +956,15 @@ def render_page(spec):
   <meta property="og:description" content="{esc_attr(meta)}">
   <meta property="og:url" content="{esc_attr(canonical)}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="{SITE}/assets/og/category.png">
+  <meta property="og:image" content="{og_image}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="{esc_attr(title)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc_attr(title)}">
   <meta name="twitter:description" content="{esc_attr(meta)}">
-  <meta name="twitter:image" content="{SITE}/assets/og/category.png">
+  <meta name="twitter:image" content="{og_image}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -706,15 +1001,15 @@ def render_page(spec):
   <div class="hero-inner">
     <div class="hero-card">
       <h1 class="hero-headline">{esc(spec["hero_h1"])}</h1>
-      <p class="hero-tagline">{esc(spec["hero_tagline"])}</p>
+      <p class="hero-tagline">{esc(spec["hero_tagline"])}</p>{next_date_html}
       {aka_html}<div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="{esc_attr(tr(language, 'textarea_placeholder'))}" maxlength="500" autofocus></textarea>
+        <textarea class="main-input" id="mainInput" placeholder="{esc_attr(tr(language, 'textarea_placeholder'))}" maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
     </div>
   </div>
 </section>
-
+{hero_figure}
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
@@ -727,6 +1022,15 @@ def render_page(spec):
 
   <div class="section-divider"></div>
 
+  <section class="editorial-section" id="eventPhraseSection">
+    <span class="article-section-label">{tr(language, "section_phrase_label")}</span>
+    <h2>{tr(language, "section_phrase_heading", event_name=esc(event_name))}</h2>
+    <p class="editorial-intro">{tr(language, "section_phrase_intro")}</p>
+    <div class="compare-grid" id="eventPhraseGrid"></div>{phrase_cta_html}
+  </section>
+
+  <div class="section-divider"></div>
+{native_section_html}
   <section class="editorial-section" id="eventFontsSection">
     <span class="article-section-label">{tr(language, "section_fonts_label")}</span>
     <h2>{tr(language, "section_fonts_heading", event_name=esc(event_name))}</h2>
@@ -764,15 +1068,6 @@ def render_page(spec):
 
   <div class="section-divider"></div>
 
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">{tr(language, "section_phrase_label")}</span>
-    <h2>{tr(language, "section_phrase_heading", event_name=esc(event_name))}</h2>
-    <p class="editorial-intro">{tr(language, "section_phrase_intro")}</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>
-  </section>
-
-  <div class="section-divider"></div>
-
   <div class="cta-card">
     <h3>{tr(language, "cta_heading")}</h3>
     <p>{tr(language, "cta_body")}</p>
@@ -804,6 +1099,7 @@ def render_page(spec):
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
+<script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/footer.js"></script>
 </body>
@@ -849,7 +1145,16 @@ def main(argv=None):
         return 2
 
     slug = spec["slug"]
-    out_dir = EVENTS_DIR / slug
+    # Mirror events_canonical_default(): a non-English spec belongs under
+    # /<lang>/events/<slug>/, not /events/<slug>/. Deriving this from the
+    # spec's own `language` keeps the file's location and its canonical/
+    # hreflang URLs from ever disagreeing — writing an es/ page to the EN
+    # path produces a page whose canonical points at a URL it doesn't occupy.
+    language = spec.get("language", DEFAULT_LANGUAGE)
+    if language == DEFAULT_LANGUAGE:
+        out_dir = EVENTS_DIR / slug
+    else:
+        out_dir = REPO / language / "events" / slug
     out_path = out_dir / "index.html"
 
     if out_path.exists() and not args.force and not args.dry_run:

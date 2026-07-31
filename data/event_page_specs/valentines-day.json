@@ -3,6 +3,11 @@
   "event_name": "Valentine's Day",
   "aliases": ["Valentine", "Galentine's Day"],
 
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/valentines-day/",
+    "es": "https://ultratextgen.com/es/events/san-valentin/",
+    "x_default": "en"
+  },
   "title": "Valentine's Day Fonts, Symbols & Kaomoji Generator | UltraTextGen",
   "meta_description": "Style a Valentine's Day message live, copy hearts, roses, and kiss-mark emoji, kaomoji, curated ASCII art, and ready-made phrases like Be My Valentine — tap to style instantly.",
 
@@ -17,6 +22,7 @@
 
   "canonical": "https://ultratextgen.com/events/valentines-day/",
 
+  "occurrence": {"type": "fixed", "month": 2, "day": 14},
   "fonts": {
     "curated_keys": [
       "Ultra Script",
@@ -84,59 +90,133 @@
   "phrase_bank": [
     {
       "text": "Happy Valentine's Day",
-      "native_script": "Happy Valentine's Day",
-      "romanization": "Happy Valentine's Day",
-      "translation": "The universal greeting — safe on any card, text, or caption.",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The one that always works."
     },
     {
-      "text": "Be My Valentine",
-      "native_script": "Be My Valentine",
-      "romanization": "Be My Valentine",
-      "translation": "The classic, direct ask — perfect for a card front or a first message.",
-      "needs_native_speaker_review": false
+      "text": "Be Mine",
+      "group": "Classic greetings",
+      "translation": "The shortest classic — fits any card."
     },
     {
-      "text": "You Have My Heart",
-      "native_script": "You Have My Heart",
-      "romanization": "You Have My Heart",
-      "translation": "A heartfelt declaration for a partner, spouse, or long-term crush.",
-      "needs_native_speaker_review": false
+      "text": "I Love You",
+      "group": "Classic greetings",
+      "translation": "Three words that need no decoration, but take it well."
     },
     {
-      "text": "Will You Be Mine?",
-      "native_script": "Will You Be Mine?",
-      "romanization": "Will You Be Mine?",
-      "translation": "A playful, slightly nervous ask — pairs well with a rose or heart emoji.",
-      "needs_native_speaker_review": false
+      "text": "Will You Be My Valentine?",
+      "group": "Classic greetings",
+      "translation": "The traditional ask."
     },
     {
-      "text": "My Heart Beats For You",
-      "native_script": "My Heart Beats For You",
-      "romanization": "My Heart Beats For You",
-      "translation": "A poetic line for a card, love letter, or slow-burn caption.",
-      "needs_native_speaker_review": false
+      "text": "With All My Love",
+      "group": "Classic greetings",
+      "translation": "Card sign-off."
     },
     {
-      "text": "Forever Yours",
-      "native_script": "Forever Yours",
-      "romanization": "Forever Yours",
-      "translation": "A classic sign-off for the bottom of a card or letter.",
-      "needs_native_speaker_review": false
+      "text": "Happy Valentine's Day to you too",
+      "group": "Replies",
+      "translation": "Plain reply."
     },
     {
-      "text": "XOXO",
-      "native_script": "XOXO",
-      "romanization": "XOXO",
-      "translation": "Hugs and kisses — the shorthand sign-off for a text or card.",
-      "needs_native_speaker_review": false
+      "text": "I love you more",
+      "group": "Replies",
+      "translation": "The reply that starts an argument worth having."
     },
     {
-      "text": "Je t'aime",
-      "native_script": "Je t'aime",
-      "romanization": "juh TEM",
-      "translation": "French for \"I love you\" — the most globally recognized non-English Valentine's line.",
-      "needs_native_speaker_review": true
+      "text": "You're my favourite person",
+      "group": "For a partner",
+      "translation": "Warm and specific without being over the top."
+    },
+    {
+      "text": "Still choosing you",
+      "group": "For a partner",
+      "translation": "Good for a long-term relationship."
+    },
+    {
+      "text": "Every day with you is the good kind of ordinary",
+      "group": "For a partner",
+      "translation": "Card-length message."
+    },
+    {
+      "text": "Thank you for being my calm",
+      "group": "For a partner",
+      "translation": "Quieter, sincere wording."
+    },
+    {
+      "text": "You had me at hello, and you still do",
+      "group": "For a partner",
+      "translation": "Playful and affectionate."
+    },
+    {
+      "text": "Here's to us",
+      "group": "For a partner",
+      "translation": "Short toast-style line."
+    },
+    {
+      "text": "Happy Galentine's Day",
+      "group": "For friends",
+      "translation": "For the friends-first version of the day."
+    },
+    {
+      "text": "Love you, platonically and aggressively",
+      "group": "For friends",
+      "translation": "Funny line for a best friend."
+    },
+    {
+      "text": "You're the friend I'd choose again",
+      "group": "For friends",
+      "translation": "Warm, sincere friend message."
+    },
+    {
+      "text": "Roses are red, this text is free",
+      "group": "For friends",
+      "translation": "Deliberately bad poem — that's the joke."
+    },
+    {
+      "text": "Happy Valentine's Day, my love",
+      "group": "For family",
+      "translation": "Works for a partner or a child."
+    },
+    {
+      "text": "Love you always",
+      "group": "For family",
+      "translation": "Safe for anyone in the family."
+    },
+    {
+      "text": "You are so loved",
+      "group": "For family",
+      "translation": "Good for a child's card."
+    },
+    {
+      "text": "Happy Valentine's Day",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Love wins",
+      "group": "Short for a caption",
+      "translation": "Two words, works in any bio."
+    },
+    {
+      "text": "My valentine",
+      "group": "Short for a caption",
+      "translation": "For a couple photo."
+    },
+    {
+      "text": "Taken, obviously",
+      "group": "Short for a caption",
+      "translation": "Playful couple caption."
+    },
+    {
+      "text": "Self-love counts too",
+      "group": "Short for a caption",
+      "translation": "For the single-and-fine post."
+    },
+    {
+      "text": "All the hearts",
+      "group": "Short for a caption",
+      "translation": "Short and sweet."
     }
   ],
 

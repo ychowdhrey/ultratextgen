@@ -1,0 +1,283 @@
+{
+  "slug": "graduation",
+  "event_name": "Graduation",
+  "aliases": [
+    "Grad",
+    "Commencement",
+    "Class of"
+  ],
+  "title": "Graduation Fonts, Symbols & Congratulations Messages | UltraTextGen",
+  "meta_description": "Style a graduation caption live, copy cap, scroll, and star emoji, kaomoji, ASCII art, and ready-made congratulations messages for cards, captions, and announcements.",
+  "hero_h1": "Graduation Text & Symbol Generator",
+  "hero_tagline": "Type a name or class year and style it in elegant script and bold fonts, then copy graduation cap, scroll, and star emoji, kaomoji, and ASCII art — or tap a ready-made congratulations message to style it instantly.",
+  "intro": "Graduation is the one occasion here that isn't a date on a calendar — it happens when it happens, and the words have to carry a name, a year, and a degree. That shapes what this page is for: styling \"Class of 2027\", a full name for an announcement, or a congratulations message for a card. It gathers curated script and bold fonts you can preview on your own text, the cap, scroll, and star emoji people actually paste, kaomoji, a few original ASCII art pieces, and a bank of congratulations messages — for your own child, a friend, a student, or a colleague.",
+  "date_window": "in spring and early summer in most countries, though ceremonies run year-round",
+  "hub_card_desc": "Style a graduation caption or name live, then copy matching fonts, emoji, kaomoji, and ready-made congratulations.",
+  "sample_phrase": "Class of 2027",
+  "canonical": "https://ultratextgen.com/events/graduation/",
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script Bold Elegant",
+      "Ultra Script Elegant",
+      "Ultra Bold Serif",
+      "Ultra Italic Serif",
+      "Ultra Small Caps",
+      "Ultra Double-Struck",
+      "Ultra Old English Banner",
+      "Ultra Bold",
+      "Ultra Script Sparkle",
+      "Ultra Typewriter Document"
+    ],
+    "min_count": 8
+  },
+  "emoji_symbol_collections": [
+    {
+      "name": "Graduation Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": [
+        "🎓",
+        "📜",
+        "🎉",
+        "🎊",
+        "⭐",
+        "✨",
+        "📚",
+        "🏆",
+        "🥇",
+        "👩‍🎓",
+        "👨‍🎓",
+        "🖋️",
+        "🌟",
+        "🥂"
+      ]
+    },
+    {
+      "name": "Star & Award Symbols",
+      "presentation_class": "symbol",
+      "copy_pattern": "collection",
+      "flags": [
+        "★",
+        "☆",
+        "✦",
+        "✧",
+        "✩",
+        "❋",
+        "✓",
+        "❖",
+        "❥",
+        "✵",
+        "♛",
+        "✰"
+      ]
+    }
+  ],
+  "kaomoji": [
+    {
+      "text": "٩(◕‿◕)۶",
+      "label": "celebrating"
+    },
+    {
+      "text": "\\(^ヮ^)/",
+      "label": "cheering"
+    },
+    {
+      "text": "(★‿★)",
+      "label": "proud"
+    },
+    {
+      "text": "( ˶ˆ ᗜ ˆ˵ )",
+      "label": "delighted"
+    },
+    {
+      "text": "ヽ(•‿•)ノ",
+      "label": "party"
+    },
+    {
+      "text": "( •̀ ᴗ •́ )و",
+      "label": "made it"
+    }
+  ],
+  "ascii_art": {
+    "items": [
+      {
+        "art": "  _______\n /       \\\n|  ▔▔▔▔▔  |\n \\_______/\n     |",
+        "label": "Graduation cap"
+      },
+      {
+        "art": "★ ═══════════ ★\n   CONGRATS\n★ ═══════════ ★",
+        "label": "Congrats banner"
+      },
+      {
+        "art": "╔══════════════╗\n║   CLASS OF   ║\n║     2027     ║\n╚══════════════╝",
+        "label": "Class of banner"
+      },
+      {
+        "art": "   .-~~~-.\n  (  ___  )\n   \\_____/\n  ~~~~~~~~~",
+        "label": "Diploma scroll"
+      },
+      {
+        "art": "  \\o/\n   |\n  / \\",
+        "label": "Celebration"
+      },
+      {
+        "art": "✧･ﾟ: *✧ CONGRATULATIONS ✧* :･ﾟ✧",
+        "label": "Sparkle line"
+      }
+    ]
+  },
+  "phrase_bank": [
+    {
+      "text": "Congratulations",
+      "group": "Classic greetings",
+      "translation": "The one that always works."
+    },
+    {
+      "text": "Congratulations, Graduate",
+      "group": "Classic greetings",
+      "translation": "Standard card wording."
+    },
+    {
+      "text": "Class of 2027",
+      "group": "Classic greetings",
+      "translation": "Swap the year — the generator restyles it either way."
+    },
+    {
+      "text": "You did it!",
+      "group": "Classic greetings",
+      "translation": "Short and warm."
+    },
+    {
+      "text": "Happy Graduation Day",
+      "group": "Classic greetings",
+      "translation": "For the day itself."
+    },
+    {
+      "text": "Thank you so much!",
+      "group": "Replies",
+      "translation": "Plain reply from the graduate."
+    },
+    {
+      "text": "Couldn't have done it without you",
+      "group": "Replies",
+      "translation": "Warmer reply that returns the credit."
+    },
+    {
+      "text": "We are so proud of you",
+      "group": "For your child",
+      "translation": "The most-used parent card line."
+    },
+    {
+      "text": "Watching you get here has been the best part",
+      "group": "For your child",
+      "translation": "Warm and specific."
+    },
+    {
+      "text": "You worked for this — every bit of it",
+      "group": "For your child",
+      "translation": "Credits the effort, not the luck."
+    },
+    {
+      "text": "Wherever you go next, we're behind you",
+      "group": "For your child",
+      "translation": "Forward-looking card close."
+    },
+    {
+      "text": "Our graduate. Still can't believe it",
+      "group": "For your child",
+      "translation": "Affectionate and informal."
+    },
+    {
+      "text": "Congrats! Now the fun part starts",
+      "group": "For friends",
+      "translation": "Light, casual message."
+    },
+    {
+      "text": "Degree acquired, sleep pending",
+      "group": "For friends",
+      "translation": "Funny caption-style line."
+    },
+    {
+      "text": "Knew you'd make it — never doubted it",
+      "group": "For friends",
+      "translation": "Warm friend message."
+    },
+    {
+      "text": "From all-nighters to all done",
+      "group": "For friends",
+      "translation": "Playful before-and-after line."
+    },
+    {
+      "text": "Congratulations on your graduation",
+      "group": "Formal & work",
+      "translation": "Safe formal card wording."
+    },
+    {
+      "text": "Wishing you every success in what comes next",
+      "group": "Formal & work",
+      "translation": "Formal close for a card or email."
+    },
+    {
+      "text": "Congratulations from all of us",
+      "group": "Formal & work",
+      "translation": "Team or department message."
+    },
+    {
+      "text": "A well-earned achievement — congratulations",
+      "group": "Formal & work",
+      "translation": "For a colleague or student."
+    },
+    {
+      "text": "Class of 2027",
+      "group": "Short for a caption",
+      "translation": "The announcement caption."
+    },
+    {
+      "text": "Graduated",
+      "group": "Short for a caption",
+      "translation": "One word, says everything."
+    },
+    {
+      "text": "Cap off",
+      "group": "Short for a caption",
+      "translation": "For the cap-toss photo."
+    },
+    {
+      "text": "Degree unlocked",
+      "group": "Short for a caption",
+      "translation": "Playful caption."
+    },
+    {
+      "text": "Done and dusted",
+      "group": "Short for a caption",
+      "translation": "Short and satisfied."
+    },
+    {
+      "text": "Next chapter",
+      "group": "Short for a caption",
+      "translation": "Forward-looking caption."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Every star and sparkle character to copy and paste."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emoji",
+      "desc": "Confetti, balloons, and celebration emoji."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "Flowing script styles for a name or announcement."
+    },
+    {
+      "href": "/usecase/stylish-name/",
+      "title": "Stylish Name Generator",
+      "desc": "Style any name in dozens of Unicode fonts."
+    }
+  ]
+}

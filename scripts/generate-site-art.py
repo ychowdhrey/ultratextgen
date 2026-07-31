@@ -1171,6 +1171,30 @@ def m_star(p, accent=PURPLE):
     <path d="M90 260 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="{BLUE}" opacity="0.6"/>"""
 
 
+def m_clover(p, accent=PURPLE):
+    """A four-leaf clover on a stem — St Patrick's Day."""
+    return f"""
+    <circle cx="150" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="150" cy="210" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="210" r="46" fill="url(#g{p})"/>
+    <path d="M181 214 q6 48 -22 76" stroke="{PURPLE}" stroke-width="10"
+          fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M276 96 l7 17 l17 7 l-17 7 l-7 17 l-7 -17 l-17 -7 l17 -7 Z"
+          fill="{BLUE}" opacity="0.6"/>"""
+
+
+def m_gradcap(p, accent=PURPLE):
+    """A mortarboard with a tassel — graduation."""
+    return f"""
+    <path d="M180 108 L296 156 L180 204 L64 156 Z" fill="url(#g{p})"/>
+    <path d="M108 176 L108 232 q72 40 144 0 L252 176" stroke="{PURPLE}"
+          stroke-width="12" fill="none" stroke-linejoin="round" opacity="0.85"/>
+    <path d="M290 158 L290 224" stroke="{BLUE}" stroke-width="8"
+          fill="none" stroke-linecap="round"/>
+    <circle cx="290" cy="232" r="12" fill="{BLUE}"/>"""
+
+
 def m_arc(p, letters="ARC"):
     """Letters individually rotated along a circular arc — curved/arc text tool."""
     import math
@@ -2532,6 +2556,10 @@ PAGES.update({
 "answers-why-wont-discord-accept-fancy-username": ("Why Won't Discord Accept My Username?", "Usernames are ASCII-only; display names aren't", m_qa, K_ANS),
 "answers-why-wont-instagram-accept-my-fancy-username": ("Why Won't Instagram Accept My Username?", "Handles are ASCII-only — style your Name instead", m_qa, K_ANS),
 "events": ("Holiday & Event Text Generators", "Fonts, emoji, and phrases for every calendar holiday", m_grid, K_USE),
+"events-ramadan": ("Ramadan Text & Symbol Generator", "Crescent, lantern, and Ramadan Kareem greetings", m_crescent, K_USE),
+"events-st-patricks-day": ("St Patrick's Day Fonts & Symbols", "Shamrock, clover, and Irish blessing phrases", m_clover, K_USE),
+"events-july-4th": ("4th of July Fonts & Emoji Generator", "Fireworks, flags, and Independence Day captions", m_firework, K_USE),
+"events-graduation": ("Graduation Text & Symbol Generator", "Cap, scroll, and congratulations messages", m_gradcap, K_USE),
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
