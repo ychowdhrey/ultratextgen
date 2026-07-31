@@ -1314,6 +1314,9 @@ PAGES = {
         P(m_typo, sample="Love", ff=SERIF, style="italic", weight="400", size=64,
           label="cursive · gothic · italic"), K_USE),
   "zh-tw-usecase-youxi-mingzi-fuhao": ("遊戲暱稱特殊符號", "傳說對決・Discord暱稱裝飾", m_gamepad, K_USE),
+  "zh-tw-library-jiantou-fuhao": ("箭頭符號大全", "各種方向箭頭，複製貼上", glyphs("→", "⇒", "↑", "➜", "↩"), K_LIB),
+  "zh-tw-library-shuzi-fuhao": ("數字符號大全", "圈形、上標、羅馬數字", glyphs("①", "⁵", "Ⅹ", "₂", "⑽"), K_LIB),
+  "zh-tw-library-xingxing-fuhao": ("星星符號大全", "星星、閃光與評分符號", glyphs("★", "✦", "⭐", "✧", "✩"), K_LIB),
 
   "kaomoji-dictionary": ("Kaomoji Dictionary", "Decode any text face", m_kaomoji, K_SITE),
   "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
