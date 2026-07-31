@@ -45,18 +45,24 @@ COMPARE_GRID_RE = re.compile(r'<div\s+class="compare-grid"[^>]*>')
 CARD_CLASS_RE = re.compile(r'<a\s+href="[^"]*"\s+class="([^"]+)"')
 
 
-def card_desc(spec):
-    """Short, COMPLETE sentence for the hub card.
+def card_desc(spec, lang):
+    """Short, COMPLETE sentence for the hub card, or None if we can't write one.
 
     Deliberately not a truncation of hero_tagline/intro: those run long, and
     clipping them mid-clause ("...then copy tree, Santa, and…") reads as broken
     next to the hubs' own hand-written one-liners ("Pumpkins, ghosts, and spooky
-    characters for October."). A spec can override with `hub_card_desc`;
-    otherwise we compose a clean sentence from the event's own name.
+    characters for October.").
+
+    The composed fallback is English, so it is only used on English specs. A
+    non-English spec must supply `hub_card_desc` in its own language — writing
+    English marketing copy onto a Spanish collection page is worse than leaving
+    the link out, so this returns None and the caller warns instead.
     """
     override = (spec.get("hub_card_desc") or "").strip()
     if override:
         return override
+    if lang != DEFAULT_LANGUAGE:
+        return None
     name = spec.get("event_name", spec["slug"])
     return (
         f"Style a {name} greeting live, then copy matching fonts, emoji, "
@@ -71,36 +77,67 @@ def load_events():
         if path.name.startswith("_"):
             continue
         spec = json.loads(path.read_text(encoding="utf-8"))
-        if spec.get("language", DEFAULT_LANGUAGE) != DEFAULT_LANGUAGE:
-            continue
+        lang = spec.get("language", DEFAULT_LANGUAGE)
+        slug = spec["slug"]
+        event_url = f"/events/{slug}/" if lang == DEFAULT_LANGUAGE else f"/{lang}/events/{slug}/"
+
+        # A spec may name its hub backlink targets explicitly. Needed where a
+        # locale's collection page doesn't live under <lang>/library/ (e.g. the
+        # Spanish heart-symbols page is /es/simbolos-de-corazon/), which the
+        # path pattern below can't recognise on its own.
+        hrefs = spec.get("hub_backlinks")
+        if hrefs is None:
+            hrefs = [r.get("href", "") for r in spec.get("related", [])]
+
         hubs = []
-        for rel in spec.get("related", []):
-            href = rel.get("href", "")
-            # /library/ only — see the module docstring on why /category/ is skipped.
-            m = re.fullmatch(r"/library/([a-z0-9-]+)/", href)
-            if m:
-                hubs.append(m.group(1))
-        events[spec["slug"]] = {
-            "name": spec.get("event_name", spec["slug"]),
-            "desc": card_desc(spec),
+        for href in hrefs:
+            # Only /library/ collections — see the module docstring on why the
+            # broad /category/ font hubs are skipped.
+            if spec.get("hub_backlinks") is not None:
+                # Explicit list: trust it, but still resolve the language from
+                # the path so the same-language guard below still applies.
+                m = re.match(r"/(?:([a-z]{2}(?:-[a-z]{2})?)/)", href)
+                hub_lang = m.group(1) if m and m.group(1) != "library" else DEFAULT_LANGUAGE
+            else:
+                m = re.fullmatch(r"/(?:([a-z]{2}(?:-[a-z]{2})?)/)?library/([a-z0-9-]+)/", href)
+                if not m:
+                    continue
+                hub_lang = m.group(1) or DEFAULT_LANGUAGE
+            # Same-language only. An English hub must not card a Spanish event
+            # page (and vice versa): that is precisely the locale-native
+            # internal-linking failure CLAUDE.md warns about, and it would send
+            # a reader from an EN collection into an ES tool page.
+            if hub_lang != lang:
+                continue
+            hub_path = (REPO / href.strip("/")) / "index.html"
+            hubs.append((href, hub_path))
+
+        name = spec.get("event_name", slug)
+        events[event_url] = {
+            "name": name,
+            "lang": lang,
+            # hero_h1 is the page's own localized name; fall back to an English
+            # composition only for English specs.
+            "title": spec.get("hub_card_title")
+            or (f"{name} Text &amp; Symbol Generator" if lang == DEFAULT_LANGUAGE else spec.get("hero_h1", name)),
+            "desc": card_desc(spec, lang),
             "hubs": hubs,
         }
     return events
 
 
-def build_card(slug, event, card_class, indent):
+def build_card(event_url, event, card_class, indent):
     pad = " " * indent
     inner = " " * (indent + 2)
-    desc = event["desc"]
     return (
-        f'{pad}<a href="/events/{slug}/" class="{card_class}">\n'
-        f"{inner}<h4>{event['name']} Text &amp; Symbol Generator</h4>\n"
-        f"{inner}<p>{desc}</p>\n"
+        f'{pad}<a href="{event_url}" class="{card_class}">\n'
+        f"{inner}<h4>{event['title']}</h4>\n"
+        f"{inner}<p>{event['desc']}</p>\n"
         f"{pad}</a>\n"
     )
 
 
-def inject_card(hub_path, slug, event):
+def inject_card(hub_path, event_url, event):
     """Insert a compare-card for the event into the hub's compare-grid.
     Returns True on success, False if the hub has no usable compare-grid."""
     html = hub_path.read_text(encoding="utf-8")
@@ -121,7 +158,7 @@ def inject_card(hub_path, slug, event):
     m_indent = re.search(r"\n( *)<a ", grid_body)
     indent = len(m_indent.group(1)) if m_indent else 4
 
-    card = build_card(slug, event, card_class, indent)
+    card = build_card(event_url, event, card_class, indent)
     insertion = grid_body.rstrip() + "\n" + card + " " * max(indent - 2, 0)
     html = html[:grid_start] + insertion + html[grid_end:]
     hub_path.write_text(html, encoding="utf-8")
@@ -138,31 +175,50 @@ def main(argv=None):
     problems = []
     orphans = []
 
-    for slug, event in sorted(events.items()):
+    for event_url, event in sorted(events.items()):
         linked_from = []
-        for hub in event["hubs"]:
-            hub_path = REPO / "library" / hub / "index.html"
+        if event["desc"] is None:
+            problems.append(
+                f"[WARN] {event_url}: non-English spec has no `hub_card_desc`; "
+                "add one in that language to wire its hub backlinks"
+            )
+            orphans.append(event_url)
+            continue
+        for href, hub_path in event["hubs"]:
             if not hub_path.exists():
-                problems.append(f"[WARN] events/{slug}: /library/{hub}/ does not exist")
+                problems.append(f"[WARN] {event_url}: {href} does not exist")
                 continue
             html = hub_path.read_text(encoding="utf-8", errors="replace")
-            if f'/events/{slug}/' in html:
-                linked_from.append(hub)
+            # Quote-agnostic: some older pages are minified with single-quoted
+            # attributes, and a double-quote-only check would re-inject a link
+            # that is already there.
+            if re.search(r'href=[\'"]' + re.escape(event_url) + r'[\'"]', html):
+                linked_from.append(href)
                 skipped += 1
                 continue
             if not args.write:
-                print(f"  + library/{hub:32} -> /events/{slug}/")
+                print(f"  + {href:42} -> {event_url}")
                 injected += 1
-                linked_from.append(hub)
+                linked_from.append(href)
                 continue
-            if inject_card(hub_path, slug, event):
-                print(f"  ✓ library/{hub:32} -> /events/{slug}/")
+            if inject_card(hub_path, event_url, event):
+                print(f"  ✓ {href:42} -> {event_url}")
                 injected += 1
-                linked_from.append(hub)
+                linked_from.append(href)
             else:
-                problems.append(f"[WARN] library/{hub}: no compare-grid; add the /events/{slug}/ link by hand")
+                problems.append(f"[WARN] {href}: no compare-grid; add the {event_url} link by hand")
         if not linked_from:
-            orphans.append(slug)
+            # A homepage link satisfies Rule 4's "no orphan spokes" just as a
+            # topical hub does — it's an inbound link from a hub page. Some
+            # locales have an event page but no locale-native collection to
+            # card it from, and the locale homepage is the correct owner there.
+            home = REPO / ("index.html" if event["lang"] == DEFAULT_LANGUAGE
+                           else f"{event['lang']}/index.html")
+            if home.exists() and re.search(
+                r'href=[\'"]' + re.escape(event_url) + r'[\'"]',
+                home.read_text(encoding="utf-8", errors="replace")):
+                continue
+            orphans.append(event_url)
 
     print("")
     verb = "Injected" if args.write else "Would inject"
@@ -172,7 +228,7 @@ def main(argv=None):
     if orphans:
         print("")
         for slug in orphans:
-            print(f"[ERROR] events/{slug}: ORPHAN — no library hub links to it (Hub vs Spoke Rule 4)")
+            print(f"[ERROR] {slug}: ORPHAN — no library hub links to it (Hub vs Spoke Rule 4)")
         return 1
     if not args.write and injected:
         print("Run with --write to apply.")
