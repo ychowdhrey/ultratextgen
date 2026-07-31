@@ -338,6 +338,19 @@
       "verdict": "gate-pass",
       "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way.",
       "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of library/*'s own Core tier regardless — this entry is a user-authorized override of that hold for a specific, scoped slice of library/*, not a change to zh-tw's tier or hold flag. User was told directly that zh-tw is Tier 3/hold-stub and that its one proven first-party win is narrowly the game-name vertical (per the existing zh-tw entry in this ledger and data/locale_qualification_tiers.json's zh-tw notes) before authorizing this build. Competitor-footprint instrument (piliapp.com organic positions export, db=tw, pulled 2026-07-31) cleared for three specific library/* collection pages: tw.piliapp.com/symbol/arrow/ (~27,908/mo modeled traffic, 115 ranking keywords), tw.piliapp.com/symbol/number/ (~20,376/mo, 214 keywords), tw.piliapp.com/symbol/star/ (~16,577/mo, 88 keywords) — mapping to EN parents library/arrow-symbols/, library/number-symbols/, library/star-symbols/. No direct TW keyword-volume pull was run against the arrow/number/star terms specifically (the broad-match exports supplied this session were seeded on \"emoji\", \"字體\"/font, \"fb\", and \"表情符號\", not \"箭頭\"/\"數字\"/\"星星\"), so keywordVolumeInLocaleMonthly is left null rather than estimated — the competitor-footprint instrument alone is what's clearing the gated-tail threshold here. Scope is limited to these three library/* collection slugs; this is not a blanket library/* mirror decision for zh-tw (the existing zh-tw entry's \"deepen the game-name vertical, not blanket Core mirroring\" guidance still stands for the rest of library/* and all of symbol/*).",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
     }
   ]
 }
