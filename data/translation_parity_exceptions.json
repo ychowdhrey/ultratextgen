@@ -1405,6 +1405,287 @@
           "/events/halloween/"
         ]
       }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/vi/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/th/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/pt/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/pl/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/es/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/de/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/ar/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/vi/ki-tu-ngoi-sao/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/tr/library/yildiz-sembolleri/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/th/library/star-symbols/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/sv/library/stjarna-symboler/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ru/library/zvyozdochki/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/pt/library/simbolos-de-estrela/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/pl/library/symbole-gwiazdek/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/no/library/stjernesymboler/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/nl/library/ster-symbolen/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ko/library/byeol-giho/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ja/library/star-symbols/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/it/library/simboli-stella/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-bintang/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/fr/library/symboles-etoiles/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/es/simbolos-de-estrella/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/de/library/stern-symbole/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ar/library/star-symbols/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
     }
   ]
 }
