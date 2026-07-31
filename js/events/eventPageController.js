@@ -346,7 +346,38 @@
     renderTimer = setTimeout(renderLive, 120);
   }
 
+  /* --------------------------------------------------------------------------
+     6. Native-script section — one copy tile per phrase that has one. This is
+     a different job from the wishes bank above it: there the card *styles* the
+     Latin phrase in the input, here a tap copies the native-script string
+     itself, which is what "eid mubarak in arabic" is actually asking for.
+     Same .glyph-copy contract, so script.js's delegated handler does the copy.
+     -------------------------------------------------------------------------- */
+  function renderNativeScript() {
+    const grid = $("#eventNativeGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    const seen = new Set();
+    (DATA.phraseBank || []).forEach(function (phrase) {
+      if (!phrase || !phrase.nativeScript) return;
+      if (seen.has(phrase.nativeScript)) return; // banks repeat a form for captions
+      seen.add(phrase.nativeScript);
+
+      const tile = el("button", "glyph-copy event-native-tile");
+      tile.type = "button";
+      tile.dataset.text = phrase.nativeScript;
+      tile.appendChild(el("span", "event-native-script", phrase.nativeScript));
+      if (phrase.romanization) {
+        tile.appendChild(el("span", "event-native-roman", phrase.romanization));
+      }
+      tile.setAttribute("aria-label", t("copyAriaPrefix", "Copy ") + phrase.nativeScript);
+      grid.appendChild(tile);
+    });
+  }
+
   function renderStatic() {
+    renderNativeScript();
     renderEmojiCollections();
     renderKaomoji();
     renderAsciiArt();

@@ -145,6 +145,11 @@ STRINGS = {
         "section_ascii_cta": 'Want to type your own name or message into a live '
                              'block-letter banner instead? Try the <a href="{href}">ASCII '
                              'Art Generator</a>.',
+        "section_native_label": "In {script_language}",
+        "section_native_heading": "{event_name} in {script_language}",
+        "section_native_intro": "Tap any line to copy it in {script_language}. These are the "
+                                "native-script forms of the greetings above — paste them "
+                                "straight into a message, card, or bio.",
         "section_phrase_label": "Wishes &amp; Messages",
         "section_phrase_heading": "{event_name} Wishes &amp; Messages",
         "section_phrase_intro": "Tap any wish to drop it into the box above — every font "
@@ -223,6 +228,11 @@ STRINGS = {
         "section_ascii_cta": '¿Quieres escribir tu propio nombre o mensaje en un banner de '
                              'letras en bloque en vivo? Prueba el <a href="{href}">Generador '
                              'de Arte ASCII</a>.',
+        "section_native_label": "En {script_language}",
+        "section_native_heading": "{event_name} en {script_language}",
+        "section_native_intro": "Toca cualquier línea para copiarla en {script_language}. "
+                                "Son las formas en escritura original de los saludos de "
+                                "arriba — pégalas en un mensaje, tarjeta o biografía.",
         "section_phrase_label": "Mensajes y Felicitaciones",
         "section_phrase_heading": "Mensajes y Felicitaciones de {event_name}",
         "section_phrase_intro": "Toca cualquier mensaje para colocarlo en el cuadro de "
@@ -434,9 +444,24 @@ def validate_spec(spec):
     if not isinstance(phrase_bank, list) or not phrase_bank:
         raise SpecError("phrase_bank must be a non-empty list")
     for i, p in enumerate(phrase_bank):
-        for key in ("text", "native_script", "romanization", "translation"):
-            if key not in p or not p[key]:
-                raise SpecError(f"phrase_bank[{i}] missing '{key}'")
+        if not p.get("text"):
+            raise SpecError(f"phrase_bank[{i}] missing 'text'")
+        # native_script / romanization / translation are OPTIONAL. They used to
+        # be required, which is why the original banks padded them with copies
+        # of `text` on every English-only phrase — a card that repeated itself
+        # three times. A phrase in the page's own language legitimately has
+        # none of them.
+        if p.get("native_script") and not p.get("romanization"):
+            raise SpecError(
+                f"phrase_bank[{i}] has 'native_script' but no 'romanization' — "
+                "a non-Latin phrase needs one so the reader can say it"
+            )
+        if p.get("native_script") and not p.get("needs_native_speaker_review") is True:
+            if "needs_native_speaker_review" not in p:
+                raise SpecError(
+                    f"phrase_bank[{i}] has 'native_script' but no "
+                    "'needs_native_speaker_review' flag — set it explicitly"
+                )
 
     related = spec["related"]
     if not isinstance(related, list) or not related:
@@ -512,12 +537,21 @@ def render_event_data(spec):
         "asciiArt": [
             {"art": a["art"], "label": a["label"]} for a in spec["ascii_art"]["items"]
         ],
+        # Only emit the optional keys a phrase actually has. Entries that are
+        # English-only carry no native_script/romanization, and shipping them
+        # as copies of `text` (which the original 8-entry banks did) is what
+        # made every card render the same words three times.
         "phraseBank": [
             {
-                "text": p["text"],
-                "nativeScript": p["native_script"],
-                "romanization": p["romanization"],
-                "translation": p["translation"],
+                k: v
+                for k, v in (
+                    ("text", p["text"]),
+                    ("nativeScript", p.get("native_script")),
+                    ("romanization", p.get("romanization")),
+                    ("translation", p.get("translation")),
+                    ("group", p.get("group")),
+                )
+                if v
             }
             for p in spec["phrase_bank"]
         ],
@@ -831,6 +865,30 @@ def render_page(spec):
             f' data-template="{esc_attr(prefix)}{{date}}"{hidden}>{body}</p>'
         )
 
+    # "<Event> in <script>" — its own section, because "eid mubarak in arabic"
+    # (and its Hindi/Chinese equivalents) is a distinct copy-the-script job,
+    # not the style-my-text job the rest of the page serves. Built from the
+    # phrase bank's own native_script entries, so it needs no extra spec data
+    # beyond naming the script.
+    native_section_html = ""
+    script_language = spec.get("native_script_language")
+    # "Chinese New Year in Chinese" reads badly; a spec can supply its own H2.
+    native_heading = spec.get("native_section_heading") or tr(
+        language, "section_native_heading",
+        event_name=esc(event_name), script_language=esc(script_language or ""),
+    )
+    if script_language and any(ph.get("native_script") for ph in spec["phrase_bank"]):
+        native_section_html = f"""
+  <section class="editorial-section" id="eventNativeSection">
+    <span class="article-section-label">{tr(language, "section_native_label", script_language=esc(script_language))}</span>
+    <h2>{native_heading}</h2>
+    <p class="editorial-intro">{tr(language, "section_native_intro", script_language=esc(script_language))}</p>
+    <div class="glyph-grid" id="eventNativeGrid"></div>
+  </section>
+
+  <div class="section-divider"></div>
+"""
+
     hero_figure = ""
     if hero_svg:
         hero_figure = (
@@ -936,7 +994,7 @@ def render_page(spec):
   </section>
 
   <div class="section-divider"></div>
-
+{native_section_html}
   <section class="editorial-section" id="eventFontsSection">
     <span class="article-section-label">{tr(language, "section_fonts_label")}</span>
     <h2>{tr(language, "section_fonts_heading", event_name=esc(event_name))}</h2>

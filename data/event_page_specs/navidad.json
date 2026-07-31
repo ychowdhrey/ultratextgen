@@ -120,67 +120,133 @@
   "phrase_bank": [
     {
       "text": "Feliz Navidad",
-      "native_script": "Feliz Navidad",
-      "romanization": "Feliz Navidad",
-      "translation": "El saludo universal y más usado para esta época del año.",
-      "qa_english_gloss": "Merry Christmas",
-      "needs_native_speaker_review": true
+      "group": "Saludos clásicos",
+      "translation": "El saludo que siempre funciona."
     },
     {
-      "text": "Feliz Navidad y Próspero Año Nuevo",
-      "native_script": "Feliz Navidad y Próspero Año Nuevo",
-      "romanization": "Feliz Navidad y Próspero Año Nuevo",
-      "translation": "La versión completa, ideal para tarjetas y mensajes formales.",
-      "qa_english_gloss": "Merry Christmas and a Happy/Prosperous New Year",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Que la Navidad te traiga paz y alegría",
-      "native_script": "Que la Navidad te traiga paz y alegría",
-      "romanization": "Que la Navidad te traiga paz y alegría",
-      "translation": "Un deseo cálido, perfecto para tarjetas y dedicatorias largas.",
-      "qa_english_gloss": "May Christmas bring you peace and joy",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Con cariño en esta Navidad",
-      "native_script": "Con cariño en esta Navidad",
-      "romanization": "Con cariño en esta Navidad",
-      "translation": "Una despedida sencilla y afectuosa para cerrar un mensaje.",
-      "qa_english_gloss": "With love this Christmas",
-      "needs_native_speaker_review": true
+      "text": "Feliz Navidad y próspero Año Nuevo",
+      "group": "Saludos clásicos",
+      "translation": "La fórmula clásica de tarjeta."
     },
     {
       "text": "Felices Fiestas",
-      "native_script": "Felices Fiestas",
-      "romanization": "Felices Fiestas",
-      "translation": "Una alternativa inclusiva que abarca toda la temporada navideña.",
-      "qa_english_gloss": "Happy Holidays",
-      "needs_native_speaker_review": true
+      "group": "Saludos clásicos",
+      "translation": "Opción inclusiva cuando no sabes qué celebra la otra persona."
     },
     {
-      "text": "Que el espíritu de la Navidad llene tu hogar de amor",
-      "native_script": "Que el espíritu de la Navidad llene tu hogar de amor",
-      "romanization": "Que el espíritu de la Navidad llene tu hogar de amor",
-      "translation": "Un deseo más poético, ideal para mensajes a la familia.",
-      "qa_english_gloss": "May the spirit of Christmas fill your home with love",
-      "needs_native_speaker_review": true
+      "text": "Te deseo una Navidad muy feliz",
+      "group": "Saludos clásicos",
+      "translation": "Un poco más cálido que el saludo simple."
     },
     {
-      "text": "Los mejores deseos para ti y los tuyos en estas fiestas",
-      "native_script": "Los mejores deseos para ti y los tuyos en estas fiestas",
-      "romanization": "Los mejores deseos para ti y los tuyos en estas fiestas",
-      "translation": "Un saludo cordial para compañeros de trabajo o conocidos.",
-      "qa_english_gloss": "Best wishes to you and yours this holiday season",
-      "needs_native_speaker_review": true
+      "text": "Felices Pascuas",
+      "group": "Saludos clásicos",
+      "translation": "Uso navideño en Argentina, Uruguay y parte del Cono Sur."
     },
     {
-      "text": "Abrazos y bendiciones en esta Navidad",
-      "native_script": "Abrazos y bendiciones en esta Navidad",
-      "romanization": "Abrazos y bendiciones en esta Navidad",
-      "translation": "Un cierre cálido y cercano para mensajes a seres queridos.",
-      "qa_english_gloss": "Hugs and blessings this Christmas",
-      "needs_native_speaker_review": true
+      "text": "¡Feliz Navidad para ti también!",
+      "group": "Respuestas",
+      "translation": "Respuesta directa."
+    },
+    {
+      "text": "Gracias, igualmente — feliz Navidad para toda tu familia",
+      "group": "Respuestas",
+      "translation": "Respuesta más cálida que devuelve el deseo."
+    },
+    {
+      "text": "Feliz Navidad a ti y a toda tu familia",
+      "group": "Para la familia",
+      "translation": "La fórmula más usada en tarjetas."
+    },
+    {
+      "text": "Que esta Navidad llene tu casa de salud y alegría",
+      "group": "Para la familia",
+      "translation": "Deseo familiar de tarjeta."
+    },
+    {
+      "text": "Feliz Navidad, mamá y papá",
+      "group": "Para la familia",
+      "translation": "Cambia las palabras por las tuyas."
+    },
+    {
+      "text": "Te extraño en la mesa esta Navidad",
+      "group": "Para la familia",
+      "translation": "Para la familia que no puede venir."
+    },
+    {
+      "text": "Feliz primera Navidad, pequeño",
+      "group": "Para la familia",
+      "translation": "Para la primera Navidad de un bebé."
+    },
+    {
+      "text": "Feliz Navidad de nuestra casa a la tuya",
+      "group": "Para la familia",
+      "translation": "De familia a familia."
+    },
+    {
+      "text": "¡Feliz Navidad! Espero que Papá Noel se haya portado bien",
+      "group": "Para amigos",
+      "translation": "Ligero y casual."
+    },
+    {
+      "text": "Feliz Navidad — nos vemos cuando pase el coma navideño",
+      "group": "Para amigos",
+      "translation": "Mensaje divertido para el grupo."
+    },
+    {
+      "text": "Feliz Navidad a mi persona favorita",
+      "group": "Para amigos",
+      "translation": "Cálido, para alguien cercano."
+    },
+    {
+      "text": "Que no falte la comida ni la buena compañía",
+      "group": "Para amigos",
+      "translation": "Brindis corto entre amigos."
+    },
+    {
+      "text": "Le deseamos una feliz Navidad y un próspero año nuevo",
+      "group": "Formal y trabajo",
+      "translation": "La fórmula estándar para clientes."
+    },
+    {
+      "text": "Felices fiestas de parte de todo el equipo",
+      "group": "Formal y trabajo",
+      "translation": "Mensaje inclusivo de equipo."
+    },
+    {
+      "text": "Gracias por este año — feliz Navidad",
+      "group": "Formal y trabajo",
+      "translation": "Para clientes y colegas."
+    },
+    {
+      "text": "Que disfrutes de un merecido descanso estas fiestas",
+      "group": "Formal y trabajo",
+      "translation": "Bueno para una respuesta automática."
+    },
+    {
+      "text": "Feliz Navidad",
+      "group": "Frases cortas",
+      "translation": "La frase que siempre funciona."
+    },
+    {
+      "text": "Modo Navidad activado",
+      "group": "Frases cortas",
+      "translation": "Corta y actual."
+    },
+    {
+      "text": "Luces, comida y familia",
+      "group": "Frases cortas",
+      "translation": "Para una foto de la mesa."
+    },
+    {
+      "text": "Todo listo para la Navidad",
+      "group": "Frases cortas",
+      "translation": "Para una foto del árbol."
+    },
+    {
+      "text": "Que empiece la Navidad",
+      "group": "Frases cortas",
+      "translation": "Corta y con energía."
     }
   ],
   "companion_answer_slug": "que-escribir-en-una-tarjeta-de-navidad",

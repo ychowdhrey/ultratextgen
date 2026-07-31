@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/eid-mubarak/",
 
+  "native_script_language": "Arabic",
   "occurrence": {"type": "islamic", "month": 10, "day": 1, "calendar_name": "the Hijri (Islamic lunar) calendar"},
   "fonts": {
     "curated_keys": [
@@ -88,59 +89,164 @@
   "phrase_bank": [
     {
       "text": "Eid Mubarak",
+      "group": "Classic greetings",
       "native_script": "عيد مبارك",
-      "romanization": "Eid Mubarak",
-      "translation": "Blessed Eid",
+      "romanization": "ʿĪd Mubārak",
+      "translation": "Blessed Eid — the standard greeting, used for both Eid al-Fitr and Eid al-Adha.",
       "needs_native_speaker_review": true
     },
     {
       "text": "Eid Sa'id",
+      "group": "Classic greetings",
       "native_script": "عيد سعيد",
-      "romanization": "Eid Sa'id",
-      "translation": "Happy Eid",
+      "romanization": "ʿĪd Saʿīd",
+      "translation": "Happy Eid — slightly warmer and less formal than Eid Mubarak.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "Taqabbal Allahu Minna wa Minkum",
-      "native_script": "تقبل الله منا ومنكم",
-      "romanization": "Taqabbal Allahu minna wa minkum",
-      "translation": "May Allah accept [our good deeds] from us and from you — a traditional formal reply to an Eid greeting",
+      "text": "Kul aam wa antum bikhair",
+      "group": "Classic greetings",
+      "native_script": "كل عام وأنتم بخير",
+      "romanization": "Kull ʿām wa antum bi-khayr",
+      "translation": "May you be well every year — said at Eid and other yearly occasions.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Eid Adha Mubarak",
+      "group": "Classic greetings",
+      "native_script": "عيد أضحى مبارك",
+      "romanization": "ʿĪd Aḍḥā Mubārak",
+      "translation": "Specifically for Eid al-Adha, the festival of sacrifice.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Eid al-Fitr Mubarak",
+      "group": "Classic greetings",
+      "native_script": "عيد الفطر مبارك",
+      "romanization": "ʿĪd al-Fiṭr Mubārak",
+      "translation": "Specifically for Eid al-Fitr, at the end of Ramadan.",
       "needs_native_speaker_review": true
     },
     {
       "text": "Happy Eid",
-      "native_script": "Happy Eid",
-      "romanization": "Happy Eid",
-      "translation": "A simple, universal English Eid greeting",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The simplest English version — safe for any recipient."
     },
     {
-      "text": "Eid Mubarak to You and Your Family",
-      "native_script": "Eid Mubarak to You and Your Family",
-      "romanization": "Eid Mubarak to You and Your Family",
-      "translation": "A warm, family-inclusive Eid greeting",
-      "needs_native_speaker_review": false
+      "text": "Taqabbal Allahu minna wa minkum",
+      "group": "Replies",
+      "native_script": "تقبل الله منا ومنكم",
+      "romanization": "Taqabbal Allāhu minnā wa minkum",
+      "translation": "May Allah accept from us and from you — the traditional reply to an Eid greeting.",
+      "needs_native_speaker_review": true
     },
     {
-      "text": "Wishing You Joy and Blessings This Eid",
-      "native_script": "Wishing You Joy and Blessings This Eid",
-      "romanization": "Wishing You Joy and Blessings This Eid",
-      "translation": "A warm English wish for the holiday",
-      "needs_native_speaker_review": false
+      "text": "Wa antum bikhair",
+      "group": "Replies",
+      "native_script": "وأنتم بخير",
+      "romanization": "Wa antum bi-khayr",
+      "translation": "And you too, be well — the natural reply to Kul aam wa antum bikhair.",
+      "needs_native_speaker_review": true
     },
     {
-      "text": "May This Eid Bring Peace and Happiness",
-      "native_script": "May This Eid Bring Peace and Happiness",
-      "romanization": "May This Eid Bring Peace and Happiness",
-      "translation": "A reflective English Eid message",
-      "needs_native_speaker_review": false
+      "text": "Eid Mubarak to you too",
+      "group": "Replies",
+      "translation": "Plain English reply when someone greets you first."
     },
     {
-      "text": "Eid Mubarak to You and Yours",
-      "native_script": "Eid Mubarak to You and Yours",
-      "romanization": "Eid Mubarak to You and Yours",
-      "translation": "A friendly, inclusive way to greet a group or family",
-      "needs_native_speaker_review": false
+      "text": "Ameen, and to you and your family",
+      "group": "Replies",
+      "translation": "Warm English reply to a blessing-style greeting."
+    },
+    {
+      "text": "Eid Mubarak to you and your family",
+      "group": "For family",
+      "translation": "Includes the whole household — the most common card wording."
+    },
+    {
+      "text": "May this Eid bring peace and happiness to your home",
+      "group": "For family",
+      "translation": "Warmer, card-length family wish."
+    },
+    {
+      "text": "Wishing you a joyful Eid with the people you love",
+      "group": "For family",
+      "translation": "Works for relatives you won't see in person."
+    },
+    {
+      "text": "Eid Mubarak, Mama and Baba",
+      "group": "For family",
+      "translation": "Swap in your own words for parents."
+    },
+    {
+      "text": "Missing you this Eid — Eid Mubarak",
+      "group": "For family",
+      "translation": "For family abroad or away."
+    },
+    {
+      "text": "Eid Mubarak! May your day be full of good food and better company",
+      "group": "For friends",
+      "translation": "Light, informal, good for a group chat."
+    },
+    {
+      "text": "Eid Mubarak — save me some sheer khurma",
+      "group": "For friends",
+      "translation": "Playful, food-first message between friends."
+    },
+    {
+      "text": "Happy Eid! Hope you got the good outfit this year",
+      "group": "For friends",
+      "translation": "Casual and funny for close friends."
+    },
+    {
+      "text": "Eid Mubarak from me to you",
+      "group": "For friends",
+      "translation": "Short and friendly, no formality."
+    },
+    {
+      "text": "Wishing you and your family a blessed Eid",
+      "group": "Formal & work",
+      "translation": "Safe for colleagues, clients, and managers."
+    },
+    {
+      "text": "Eid Mubarak — wishing you peace, health, and prosperity",
+      "group": "Formal & work",
+      "translation": "Formal card or email wording."
+    },
+    {
+      "text": "On behalf of the whole team, Eid Mubarak",
+      "group": "Formal & work",
+      "translation": "For a company message or team-wide note."
+    },
+    {
+      "text": "May the blessings of Eid be with you and your loved ones",
+      "group": "Formal & work",
+      "translation": "Formal without being stiff."
+    },
+    {
+      "text": "Eid Mubarak",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Blessed Eid",
+      "group": "Short for a caption",
+      "translation": "Two words, fits any bio or story."
+    },
+    {
+      "text": "Eid vibes",
+      "group": "Short for a caption",
+      "translation": "Casual social-post caption."
+    },
+    {
+      "text": "Eid, but make it fancy",
+      "group": "Short for a caption",
+      "translation": "Playful caption for an outfit photo."
+    },
+    {
+      "text": "Family, food, Eid",
+      "group": "Short for a caption",
+      "translation": "Short caption for a group photo."
     }
   ],
 

@@ -95,66 +95,118 @@
   "phrase_bank": [
     {
       "text": "Feliz San Valentín",
-      "native_script": "Feliz San Valentín",
-      "romanization": "Feliz San Valentín",
-      "translation": "El saludo universal — funciona en cualquier tarjeta, mensaje o historia.",
-      "needs_native_speaker_review": true
+      "group": "Saludos clásicos",
+      "translation": "El saludo que siempre funciona."
     },
     {
-      "text": "Feliz Día del Amor y la Amistad",
-      "native_script": "Feliz Día del Amor y la Amistad",
-      "romanization": "Feliz Día del Amor y la Amistad",
-      "translation": "El saludo preferido en México y buena parte de Latinoamérica.",
-      "needs_native_speaker_review": true
+      "text": "Feliz Día de los Enamorados",
+      "group": "Saludos clásicos",
+      "translation": "La forma más usada en varios países de Latinoamérica."
     },
     {
       "text": "Te quiero",
-      "native_script": "Te quiero",
-      "romanization": "Te quiero",
-      "translation": "La declaración clásica y cercana — sirve para pareja, familia o amigos íntimos.",
-      "needs_native_speaker_review": true
+      "group": "Saludos clásicos",
+      "translation": "Dos palabras que no necesitan adorno, pero lo aceptan."
     },
     {
       "text": "Te amo",
-      "native_script": "Te amo",
-      "romanization": "Te amo",
-      "translation": "Más intensa que 'te quiero' — pensada para una pareja de mucho tiempo.",
-      "needs_native_speaker_review": true
+      "group": "Saludos clásicos",
+      "translation": "Más fuerte que 'te quiero' — úsalo a propósito."
+    },
+    {
+      "text": "¿Quieres ser mi San Valentín?",
+      "group": "Saludos clásicos",
+      "translation": "La pregunta tradicional."
+    },
+    {
+      "text": "Feliz San Valentín para ti también",
+      "group": "Respuestas",
+      "translation": "Respuesta directa."
+    },
+    {
+      "text": "Yo te quiero más",
+      "group": "Respuestas",
+      "translation": "La respuesta que empieza una buena discusión."
     },
     {
       "text": "Eres mi persona favorita",
-      "native_script": "Eres mi persona favorita",
-      "romanization": "Eres mi persona favorita",
-      "translation": "Una línea moderna y cálida, perfecta para una pareja o un mejor amigo.",
-      "needs_native_speaker_review": true
+      "group": "Para tu pareja",
+      "translation": "Cálido y concreto, sin exagerar."
     },
     {
-      "text": "Mi corazón es tuyo",
-      "native_script": "Mi corazón es tuyo",
-      "romanization": "Mi corazón es tuyo",
-      "translation": "Una frase poética para una tarjeta, una carta de amor o un mensaje nocturno.",
-      "needs_native_speaker_review": true
+      "text": "Te sigo eligiendo",
+      "group": "Para tu pareja",
+      "translation": "Bueno para una relación de años."
     },
     {
-      "text": "¿Quieres ser mi Valentín?",
-      "native_script": "¿Quieres ser mi Valentín?",
-      "romanization": "¿Quieres ser mi Valentín?",
-      "translation": "La pregunta juguetona y algo nerviosa — combina bien con una rosa o un corazón.",
-      "needs_native_speaker_review": true
+      "text": "Contigo hasta lo ordinario es bonito",
+      "group": "Para tu pareja",
+      "translation": "Frase larga de tarjeta."
     },
     {
-      "text": "Contigo quiero estar siempre",
-      "native_script": "Contigo quiero estar siempre",
-      "romanization": "Contigo quiero estar siempre",
-      "translation": "Una promesa de largo plazo, ideal para cerrar una tarjeta o una carta.",
-      "needs_native_speaker_review": true
+      "text": "Gracias por ser mi calma",
+      "group": "Para tu pareja",
+      "translation": "Sincero y tranquilo."
     },
     {
-      "text": "Con todo mi corazón",
-      "native_script": "Con todo mi corazón",
-      "romanization": "Con todo mi corazón",
-      "translation": "El cierre clásico para el final de una tarjeta o un mensaje.",
-      "needs_native_speaker_review": true
+      "text": "Brindo por nosotros",
+      "group": "Para tu pareja",
+      "translation": "Frase corta de brindis."
+    },
+    {
+      "text": "Feliz San Valentín a mis amigas",
+      "group": "Para amigos",
+      "translation": "Para la versión entre amigas del día."
+    },
+    {
+      "text": "Te quiero, platónica pero intensamente",
+      "group": "Para amigos",
+      "translation": "Frase divertida para el mejor amigo."
+    },
+    {
+      "text": "Eres la amistad que volvería a elegir",
+      "group": "Para amigos",
+      "translation": "Mensaje sincero de amistad."
+    },
+    {
+      "text": "Feliz San Valentín, mi amor",
+      "group": "Para la familia",
+      "translation": "Sirve para la pareja o para un hijo."
+    },
+    {
+      "text": "Te quiero siempre",
+      "group": "Para la familia",
+      "translation": "Seguro para cualquiera de la familia."
+    },
+    {
+      "text": "Eres muy querido",
+      "group": "Para la familia",
+      "translation": "Bueno para la tarjeta de un niño."
+    },
+    {
+      "text": "Feliz San Valentín",
+      "group": "Frases cortas",
+      "translation": "La frase que siempre funciona."
+    },
+    {
+      "text": "Mi San Valentín",
+      "group": "Frases cortas",
+      "translation": "Para una foto en pareja."
+    },
+    {
+      "text": "Ocupada, obviamente",
+      "group": "Frases cortas",
+      "translation": "Frase juguetona de pareja."
+    },
+    {
+      "text": "Quererse a uno mismo también cuenta",
+      "group": "Frases cortas",
+      "translation": "Para la publicación de quien está soltero y bien."
+    },
+    {
+      "text": "Puro corazón",
+      "group": "Frases cortas",
+      "translation": "Corta y dulce."
     }
   ],
 

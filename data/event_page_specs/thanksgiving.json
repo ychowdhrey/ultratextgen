@@ -79,52 +79,123 @@
   "phrase_bank": [
     {
       "text": "Happy Thanksgiving",
-      "native_script": "Happy Thanksgiving",
-      "romanization": "Happy Thanksgiving",
-      "translation": "The classic, universal Thanksgiving greeting",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The one that always works."
     },
     {
-      "text": "Give Thanks",
-      "native_script": "Give Thanks",
-      "romanization": "Give Thanks",
-      "translation": "A short caption for the gratitude side of the holiday",
-      "needs_native_speaker_review": false
+      "text": "Wishing you a warm and happy Thanksgiving",
+      "group": "Classic greetings",
+      "translation": "Card-length version."
     },
     {
-      "text": "Gather. Give Thanks. Feast.",
-      "native_script": "Gather. Give Thanks. Feast.",
-      "romanization": "Gather. Give Thanks. Feast.",
-      "translation": "A three-beat caption for photos of the table",
-      "needs_native_speaker_review": false
+      "text": "Grateful for you this Thanksgiving",
+      "group": "Classic greetings",
+      "translation": "Puts the gratitude on the person you're writing to."
     },
     {
-      "text": "Grateful and Thankful",
-      "native_script": "Grateful and Thankful",
-      "romanization": "Grateful and Thankful",
-      "translation": "A warm, simple caption for a family photo",
-      "needs_native_speaker_review": false
+      "text": "Give thanks",
+      "group": "Classic greetings",
+      "translation": "Two words, works everywhere."
     },
     {
-      "text": "Stuffed with Gratitude",
-      "native_script": "Stuffed with Gratitude",
-      "romanization": "Stuffed with Gratitude",
-      "translation": "A playful post-meal pun caption",
-      "needs_native_speaker_review": false
+      "text": "Happy Thanksgiving to you too!",
+      "group": "Replies",
+      "translation": "Plain reply."
     },
     {
-      "text": "Wishing You a Blessed Thanksgiving",
-      "native_script": "Wishing You a Blessed Thanksgiving",
-      "romanization": "Wishing You a Blessed Thanksgiving",
-      "translation": "A warmer, card-length wish",
-      "needs_native_speaker_review": false
+      "text": "Thank you — enjoy your day with the family",
+      "group": "Replies",
+      "translation": "Warmer reply that returns the wish."
     },
     {
-      "text": "Feliz Día de Acción de Gracias",
-      "native_script": "Feliz Día de Acción de Gracias",
-      "romanization": "feh-LEEZ DEE-ah deh ahk-see-OHN deh GRAH-see-ahs",
-      "translation": "Happy Thanksgiving (Spanish)",
-      "needs_native_speaker_review": true
+      "text": "Happy Thanksgiving to you and your family",
+      "group": "For family",
+      "translation": "Standard family card wording."
+    },
+    {
+      "text": "Grateful for this family, today and every day",
+      "group": "For family",
+      "translation": "For the family group chat."
+    },
+    {
+      "text": "Wishing I was at your table this year",
+      "group": "For family",
+      "translation": "For family you can't travel to."
+    },
+    {
+      "text": "Thank you for everything you do for us",
+      "group": "For family",
+      "translation": "For parents or grandparents."
+    },
+    {
+      "text": "Happy Thanksgiving — save me the leftovers",
+      "group": "For family",
+      "translation": "Light family message."
+    },
+    {
+      "text": "Happy Thanksgiving! Here for the sides, not the turkey",
+      "group": "For friends",
+      "translation": "Playful, food-first line."
+    },
+    {
+      "text": "Grateful for friends who feel like family",
+      "group": "For friends",
+      "translation": "Warm Friendsgiving message."
+    },
+    {
+      "text": "Happy Friendsgiving",
+      "group": "For friends",
+      "translation": "For the friends-only version of the holiday."
+    },
+    {
+      "text": "Eat well, nap harder",
+      "group": "For friends",
+      "translation": "Short and funny."
+    },
+    {
+      "text": "Wishing you and yours a happy Thanksgiving",
+      "group": "Formal & work",
+      "translation": "Safe for clients and colleagues."
+    },
+    {
+      "text": "Grateful for your work this year — Happy Thanksgiving",
+      "group": "Formal & work",
+      "translation": "For a team message."
+    },
+    {
+      "text": "Happy Thanksgiving from all of us",
+      "group": "Formal & work",
+      "translation": "Company-wide message."
+    },
+    {
+      "text": "Happy Thanksgiving",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Grateful",
+      "group": "Short for a caption",
+      "translation": "One word, fits any bio."
+    },
+    {
+      "text": "Gather round",
+      "group": "Short for a caption",
+      "translation": "For a table or group photo."
+    },
+    {
+      "text": "Thankful, grateful, full",
+      "group": "Short for a caption",
+      "translation": "The three-word classic."
+    },
+    {
+      "text": "Pie first",
+      "group": "Short for a caption",
+      "translation": "Playful dessert caption."
+    },
+    {
+      "text": "Feast mode",
+      "group": "Short for a caption",
+      "translation": "Short and current."
     }
   ],
 

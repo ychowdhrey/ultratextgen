@@ -8256,3 +8256,48 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   font-weight: 600;
   color: var(--accent-purple);
 }
+
+/* Native-script copy tiles on event pages ("<Event> in Arabic/Hindi/Chinese").
+   Wider than a normal .glyph-copy tile because the payload is a phrase, not a
+   single glyph, and it carries its romanization underneath. */
+.event-native-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+  min-width: 0;
+  padding: .75rem 1rem;
+  height: auto;
+  line-height: 1.4;
+}
+
+.event-native-script {
+  font-size: 1.25rem;
+}
+
+.event-native-roman {
+  font-size: .75rem;
+  color: var(--text-secondary);
+}
+
+/* /events/ hub cards — emoji marker plus the next-occurrence chip.
+   Order and the lunar chips are set at runtime by js/events/eventDates.js. */
+.event-hub-emoji {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+
+.event-hub-when {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin: 0 0 .35rem;
+}
+
+.event-hub-when:empty {
+  display: none;
+}

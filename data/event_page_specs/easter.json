@@ -83,52 +83,118 @@
   "phrase_bank": [
     {
       "text": "Happy Easter",
-      "native_script": "Happy Easter",
-      "romanization": "Happy Easter",
-      "translation": "The classic, universal Easter greeting",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The one that always works."
+    },
+    {
+      "text": "Happy Easter to you and your family",
+      "group": "Classic greetings",
+      "translation": "Standard card wording."
+    },
+    {
+      "text": "Wishing you a joyful Easter",
+      "group": "Classic greetings",
+      "translation": "Slightly warmer."
     },
     {
       "text": "He Is Risen",
-      "native_script": "He Is Risen",
-      "romanization": "He Is Risen",
-      "translation": "The traditional Christian Easter greeting",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The traditional religious greeting."
     },
     {
-      "text": "Hoppy Easter",
-      "native_script": "Hoppy Easter",
-      "romanization": "Hoppy Easter",
-      "translation": "A playful bunny-themed pun on \"Happy Easter\"",
-      "needs_native_speaker_review": false
+      "text": "Blessed Easter",
+      "group": "Classic greetings",
+      "translation": "Religious but understated."
     },
     {
-      "text": "Some Bunny Loves You",
-      "native_script": "Some Bunny Loves You",
-      "romanization": "Some Bunny Loves You",
-      "translation": "A card-ready pun greeting for family and kids",
-      "needs_native_speaker_review": false
+      "text": "Happy Easter to you too!",
+      "group": "Replies",
+      "translation": "Plain reply."
     },
     {
-      "text": "Egg-cellent Easter",
-      "native_script": "Egg-cellent Easter",
-      "romanization": "Egg-cellent Easter",
-      "translation": "A playful pun caption for photos and captions",
-      "needs_native_speaker_review": false
+      "text": "Thank you — enjoy the long weekend",
+      "group": "Replies",
+      "translation": "Reply that works where Easter is a holiday weekend."
     },
     {
-      "text": "Wishing You a Joyful Easter",
-      "native_script": "Wishing You a Joyful Easter",
-      "romanization": "Wishing You a Joyful Easter",
-      "translation": "A warmer, card-length wish",
-      "needs_native_speaker_review": false
+      "text": "Happy Easter to my favourite egg hunters",
+      "group": "For family",
+      "translation": "For kids in the family."
     },
     {
-      "text": "Feliz Pascua",
-      "native_script": "Feliz Pascua",
-      "romanization": "feh-LEEZ PAHS-kwah",
-      "translation": "Happy Easter (Spanish)",
-      "needs_native_speaker_review": true
+      "text": "Wishing your family a bright and happy Easter",
+      "group": "For family",
+      "translation": "Family card wording."
+    },
+    {
+      "text": "Hope your Easter is full of chocolate and sunshine",
+      "group": "For family",
+      "translation": "Light family message."
+    },
+    {
+      "text": "Happy first Easter, little one",
+      "group": "For family",
+      "translation": "For a baby's first Easter."
+    },
+    {
+      "text": "Missing you this Easter",
+      "group": "For family",
+      "translation": "For family you're apart from."
+    },
+    {
+      "text": "Happy Easter! May your chocolate outnumber your steps",
+      "group": "For friends",
+      "translation": "Playful message."
+    },
+    {
+      "text": "Hopping by to say Happy Easter",
+      "group": "For friends",
+      "translation": "Pun greeting that suits a story."
+    },
+    {
+      "text": "Somebunny loves you",
+      "group": "For friends",
+      "translation": "The classic Easter pun."
+    },
+    {
+      "text": "Wishing you a happy and restful Easter",
+      "group": "Formal & work",
+      "translation": "Safe for colleagues and clients."
+    },
+    {
+      "text": "Happy Easter from all of us",
+      "group": "Formal & work",
+      "translation": "Team or company message."
+    },
+    {
+      "text": "Enjoy the long weekend — Happy Easter",
+      "group": "Formal & work",
+      "translation": "Good for an out-of-office note."
+    },
+    {
+      "text": "Happy Easter",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Egg hunt champion",
+      "group": "Short for a caption",
+      "translation": "For a kids' photo."
+    },
+    {
+      "text": "Chocolate for breakfast",
+      "group": "Short for a caption",
+      "translation": "Playful caption."
+    },
+    {
+      "text": "Pastels and sunshine",
+      "group": "Short for a caption",
+      "translation": "Spring-leaning caption."
+    },
+    {
+      "text": "Hop to it",
+      "group": "Short for a caption",
+      "translation": "Three words, works anywhere."
     }
   ],
 

@@ -96,52 +96,113 @@
   "phrase_bank": [
     {
       "text": "Feliz Halloween",
-      "native_script": "Feliz Halloween",
-      "romanization": "Feliz Halloween",
-      "translation": "El saludo clásico y universal para Halloween.",
-      "needs_native_speaker_review": true
+      "group": "Saludos clásicos",
+      "translation": "El saludo que siempre funciona."
     },
     {
-      "text": "Truco o Trato",
-      "native_script": "Truco o Trato",
-      "romanization": "Truco o Trato",
-      "translation": "El grito clásico para pedir dulces de puerta en puerta.",
-      "needs_native_speaker_review": true
+      "text": "Dulce o truco",
+      "group": "Saludos clásicos",
+      "translation": "El clásico de puerta en puerta."
     },
     {
-      "text": "Dulce o Truco",
-      "native_script": "Dulce o Truco",
-      "romanization": "Dulce o Truco",
-      "translation": "Una variante regional de \"Truco o Trato\" que también se usa mucho.",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "¡Buuu!",
-      "native_script": "¡Buuu!",
-      "romanization": "¡Buuu!",
-      "translation": "Una manera corta y juguetona de asustar a alguien.",
-      "needs_native_speaker_review": true
+      "text": "¡Buu!",
+      "group": "Saludos clásicos",
+      "translation": "Corto y reutilizable."
     },
     {
       "text": "Feliz Noche de Brujas",
-      "native_script": "Feliz Noche de Brujas",
-      "romanization": "Feliz Noche de Brujas",
-      "translation": "Una alternativa festiva a \"Feliz Halloween\", muy usada en México y Centroamérica.",
-      "needs_native_speaker_review": true
+      "group": "Saludos clásicos",
+      "translation": "La versión en español que se usa en gran parte de Latinoamérica."
     },
     {
-      "text": "Que tengas una Noche de Brujas espeluznante",
-      "native_script": "Que tengas una Noche de Brujas espeluznante",
-      "romanization": "Que tengas una Noche de Brujas espeluznante",
-      "translation": "Un deseo festivo, ideal para tarjetas y mensajes más largos.",
-      "needs_native_speaker_review": true
+      "text": "Que empiece el terror",
+      "group": "Saludos clásicos",
+      "translation": "Para abrir la noche."
     },
     {
-      "text": "Que la pases espeluznante",
-      "native_script": "Que la pases espeluznante",
-      "romanization": "Que la pases espeluznante",
-      "translation": "Una despedida casual para pies de foto y publicaciones.",
-      "needs_native_speaker_review": true
+      "text": "¡Feliz Halloween para ti también!",
+      "group": "Respuestas",
+      "translation": "Respuesta directa."
+    },
+    {
+      "text": "Igualmente — que la noche te dé miedo del bueno",
+      "group": "Respuestas",
+      "translation": "Respuesta juguetona."
+    },
+    {
+      "text": "Feliz Halloween para toda la familia",
+      "group": "Para la familia",
+      "translation": "Sirve para niños y adultos."
+    },
+    {
+      "text": "Que tu noche sea de dulces y no de sustos",
+      "group": "Para la familia",
+      "translation": "Mensaje cálido de familia."
+    },
+    {
+      "text": "Feliz primer Halloween, pequeño",
+      "group": "Para la familia",
+      "translation": "Para el primer Halloween de un bebé."
+    },
+    {
+      "text": "Ven por los disfraces, quédate por los dulces",
+      "group": "Para amigos",
+      "translation": "Para invitar al grupo."
+    },
+    {
+      "text": "Si lo tienes, asústalo",
+      "group": "Para amigos",
+      "translation": "Frase divertida para una foto de disfraz."
+    },
+    {
+      "text": "Vengo por los dulces, no por los sustos",
+      "group": "Para amigos",
+      "translation": "Para quien odia el terror."
+    },
+    {
+      "text": "Esta noche mando yo, soy la bruja",
+      "group": "Para amigos",
+      "translation": "Frase juguetona de disfraz."
+    },
+    {
+      "text": "Feliz Halloween de parte de todo el equipo",
+      "group": "Formal y trabajo",
+      "translation": "Seguro para un mensaje de empresa."
+    },
+    {
+      "text": "Que tengas un Halloween divertido y seguro",
+      "group": "Formal y trabajo",
+      "translation": "La versión apta para el trabajo."
+    },
+    {
+      "text": "Feliz Halloween",
+      "group": "Frases cortas",
+      "translation": "La frase que siempre funciona."
+    },
+    {
+      "text": "Temporada de sustos",
+      "group": "Frases cortas",
+      "translation": "La frase de octubre por defecto."
+    },
+    {
+      "text": "Demasiado lindo para dar miedo",
+      "group": "Frases cortas",
+      "translation": "Para disfraces de niños y mascotas."
+    },
+    {
+      "text": "Modo brujita",
+      "group": "Frases cortas",
+      "translation": "Para una foto de disfraz."
+    },
+    {
+      "text": "Noche de brujas",
+      "group": "Frases cortas",
+      "translation": "Corta y clásica."
+    },
+    {
+      "text": "Solo vine por los dulces",
+      "group": "Frases cortas",
+      "translation": "Para una foto con dulces."
     }
   ],
 

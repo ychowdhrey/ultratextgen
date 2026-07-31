@@ -133,7 +133,18 @@
     }
   }
 
-  function init() {
+  function shortDate(date, locale) {
+    try {
+      return new Intl.DateTimeFormat(locale || document.documentElement.lang || "en", {
+        year: "numeric", month: "long", day: "numeric",
+      }).format(date);
+    } catch (e) {
+      return date.toDateString();
+    }
+  }
+
+  /* The per-page hero line. */
+  function initPageLine() {
     const el = document.getElementById("eventNextDate");
     if (!el) return;
 
@@ -145,6 +156,36 @@
     const template = el.getAttribute("data-template") || "{date}";
     el.textContent = template.replace("{date}", formatDate(date));
     el.hidden = false;
+  }
+
+  /* The /events/ hub grid. scripts/sync_events_hub.py orders the cards by the
+     dates it can compute and parks the lunar ones at the end; here we fill in
+     their chips from ICU and re-sort so the grid genuinely reads
+     next-up-first. Cards whose date can't be resolved keep their place at the
+     end rather than being hidden. */
+  function initHubGrid() {
+    const cards = document.querySelectorAll(".event-hub-card");
+    if (!cards.length) return;
+
+    const rows = [];
+    cards.forEach(function (card) {
+      const date = resolve(card);
+      if (date) {
+        const chip = card.querySelector("[data-event-chip]");
+        if (chip && !chip.textContent.trim()) chip.textContent = shortDate(date);
+      }
+      rows.push({ card: card, key: date ? date.getTime() : Infinity });
+    });
+
+    const parent = cards[0].parentNode;
+    if (!parent) return;
+    rows.sort(function (a, b) { return a.key - b.key; });
+    rows.forEach(function (row) { parent.appendChild(row.card); });
+  }
+
+  function init() {
+    initPageLine();
+    initHubGrid();
   }
 
   if (document.readyState === "loading") {
