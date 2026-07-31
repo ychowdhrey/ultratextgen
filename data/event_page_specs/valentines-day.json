@@ -3,6 +3,11 @@
   "event_name": "Valentine's Day",
   "aliases": ["Valentine", "Galentine's Day"],
 
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/valentines-day/",
+    "es": "https://ultratextgen.com/es/events/san-valentin/",
+    "x_default": "en"
+  },
   "title": "Valentine's Day Fonts, Symbols & Kaomoji Generator | UltraTextGen",
   "meta_description": "Style a Valentine's Day message live, copy hearts, roses, and kiss-mark emoji, kaomoji, curated ASCII art, and ready-made phrases like Be My Valentine — tap to style instantly.",
 

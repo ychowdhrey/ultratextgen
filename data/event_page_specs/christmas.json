@@ -3,6 +3,11 @@
   "event_name": "Christmas",
   "aliases": ["Xmas", "Merry Christmas"],
 
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/christmas/",
+    "es": "https://ultratextgen.com/es/events/navidad/",
+    "x_default": "en"
+  },
   "title": "Christmas Fonts, Emoji & Symbol Generator | UltraTextGen",
   "meta_description": "Style a Christmas greeting live, copy tree, Santa, and snowflake emoji, festive kaomoji, curated ASCII art, and ready-made Merry Christmas phrases with translation.",
 

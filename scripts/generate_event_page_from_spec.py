@@ -403,6 +403,18 @@ def validate_spec(spec):
                         "hreflang.x_default must name another key in the same "
                         "hreflang object"
                     )
+                # CLAUDE.md: x-default is ALWAYS the English canonical. A locale
+                # spec pointing it at its own URL is the single most-repeated
+                # hreflang bug on this site, and it propagates: the mesh fixer
+                # copies whatever x-default it finds onto the EN sibling too, so
+                # one bad spec silently mis-points the whole cluster. Refuse it
+                # here rather than generate it and rely on an audit to catch it.
+                if "en" in hreflang and url != "en":
+                    raise SpecError(
+                        "hreflang.x_default must be 'en' when the cluster has an "
+                        f"'en' member (got {url!r}) — x-default always points at "
+                        "the English canonical, never at a locale URL"
+                    )
                 continue
             if not isinstance(url, str) or not url:
                 raise SpecError(f"hreflang[{lang_code!r}] must be a non-empty URL string")
@@ -849,7 +861,16 @@ def main(argv=None):
         return 2
 
     slug = spec["slug"]
-    out_dir = EVENTS_DIR / slug
+    # Mirror events_canonical_default(): a non-English spec belongs under
+    # /<lang>/events/<slug>/, not /events/<slug>/. Deriving this from the
+    # spec's own `language` keeps the file's location and its canonical/
+    # hreflang URLs from ever disagreeing — writing an es/ page to the EN
+    # path produces a page whose canonical points at a URL it doesn't occupy.
+    language = spec.get("language", DEFAULT_LANGUAGE)
+    if language == DEFAULT_LANGUAGE:
+        out_dir = EVENTS_DIR / slug
+    else:
+        out_dir = REPO / language / "events" / slug
     out_path = out_dir / "index.html"
 
     if out_path.exists() and not args.force and not args.dry_run:
