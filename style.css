@@ -8226,3 +8226,24 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   border-left: 3px solid var(--accent-purple);
   padding-left: 1rem;
 }
+
+/* Event phrase bank — optional grouped layout.
+   The bank's container is a .compare-grid; when the spec gives its phrases a
+   `group`, eventPageController.js emits one labelled block per group. Each
+   block spans the full row so its own nested grid controls the columns. */
+.event-phrase-group {
+  grid-column: 1 / -1;
+}
+
+.event-phrase-group-title {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 1rem 0 0;
+}
+
+.event-phrase-group:first-child .event-phrase-group-title {
+  margin-top: 0;
+}

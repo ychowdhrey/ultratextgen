@@ -128,10 +128,11 @@ STRINGS = {
         "section_ascii_cta": 'Want to type your own name or message into a live '
                              'block-letter banner instead? Try the <a href="{href}">ASCII '
                              'Art Generator</a>.',
-        "section_phrase_label": "Phrase Bank",
-        "section_phrase_heading": "{event_name} Phrase Bank",
-        "section_phrase_intro": "Tap a phrase to drop it into the box up top and see every "
-                                "font style above restyle it instantly.",
+        "section_phrase_label": "Wishes &amp; Messages",
+        "section_phrase_heading": "{event_name} Wishes &amp; Messages",
+        "section_phrase_intro": "Tap any wish to drop it into the box above — every font "
+                                "below then restyles it instantly, so you can copy it "
+                                "decorated in one step.",
         "cta_heading": "Transform text with Unicode fonts",
         "cta_body": "Use UltraTextGen to convert plain text into bold, italic, cursive, and "
                     "100+ other Unicode font styles — free and instant.",
@@ -192,10 +193,11 @@ STRINGS = {
         "section_ascii_cta": '¿Quieres escribir tu propio nombre o mensaje en un banner de '
                              'letras en bloque en vivo? Prueba el <a href="{href}">Generador '
                              'de Arte ASCII</a>.',
-        "section_phrase_label": "Banco de Frases",
-        "section_phrase_heading": "Banco de Frases de {event_name}",
-        "section_phrase_intro": "Toca una frase para colocarla en el cuadro de arriba y "
-                                "verla transformada al instante en cada estilo de fuente.",
+        "section_phrase_label": "Mensajes y Felicitaciones",
+        "section_phrase_heading": "Mensajes y Felicitaciones de {event_name}",
+        "section_phrase_intro": "Toca cualquier mensaje para colocarlo en el cuadro de "
+                                "arriba — cada fuente de abajo lo transforma al instante, "
+                                "listo para copiar.",
         "cta_heading": "Transforma texto con fuentes Unicode",
         "cta_body": "Usa UltraTextGen para convertir texto plano en negrita, cursiva y más "
                     "de 100 estilos de fuente Unicode — gratis e instantáneo.",
@@ -224,6 +226,9 @@ JS_UI_STRINGS = {
         "copyButton": "Copiar",
         "copyAriaPrefix": "Copiar ",
         "asciiArtDefaultLabel": "Arte ASCII",
+        # Heading for phrases whose spec entry carries no `group`, used only
+        # when at least one other phrase in the bank does.
+        "phraseGroupOther": "Más",
     },
 }
 
@@ -254,6 +259,33 @@ def events_hub_href(language):
 def answers_prefix(language):
     """Relative path prefix for /answers/ pages in this language."""
     return "/answers/" if language == DEFAULT_LANGUAGE else f"/{language}/answers/"
+
+
+def art_slug(language, slug):
+    """Asset basename for this page's hero/OG art, matching the naming that
+    scripts/generate-site-art.py already produces: `events-halloween`,
+    `es-events-navidad`."""
+    base = f"events-{slug}"
+    return base if language == DEFAULT_LANGUAGE else f"{language}-{base}"
+
+
+def page_art(language, slug):
+    """(og_image_url, hero_svg_path_or_None) for this page.
+
+    The generator used to hardcode /assets/og/category.png and emit no hero
+    figure, leaving wire-site-art.py to patch both in afterwards. That made
+    regeneration destructive: re-running the generator on a live page silently
+    downgraded its OG image to the generic one and dropped its hero. Resolving
+    the art here — from files that must already exist per CLAUDE.md's
+    "new pages ship with their art" rule — makes a regenerated page complete
+    on its own.
+    """
+    stem = art_slug(language, slug)
+    og_file = REPO / "assets" / "og" / f"{stem}.png"
+    hero_file = REPO / "assets" / "hero" / f"{stem}.svg"
+    og_url = f"{SITE}/assets/og/{stem}.png" if og_file.exists() else f"{SITE}/assets/og/category.png"
+    hero = f"/assets/hero/{stem}.svg" if hero_file.exists() else None
+    return og_url, hero
 
 
 def events_canonical_default(language, slug):
@@ -496,9 +528,17 @@ def synthesize_faq(spec):
     ]
     if spec.get("companion_answer_slug"):
         href = f"{SITE}{answers_prefix(language)}{esc_attr(spec['companion_answer_slug'])}/"
+        # A spec may phrase this one itself. The generated version ("Where can I
+        # find more X phrases…") is a serviceable default, but some events have
+        # a sharper question worth keeping — New Year's is "What should I
+        # actually write in a New Year's message?" — and regenerating used to
+        # overwrite it with the default, in the visible FAQ and the JSON-LD
+        # together.
         faqs.append({
-            "q": tr(language, "faq_more_q", event_name=event_name),
-            "a": tr(language, "faq_more_a", href=href),
+            "q": spec.get("faq_more_q") or tr(language, "faq_more_q", event_name=event_name),
+            "a": (spec["faq_more_a"].replace("{href}", href)
+                  if spec.get("faq_more_a")
+                  else tr(language, "faq_more_a", href=href)),
         })
     return faqs
 
@@ -538,6 +578,7 @@ def render_ld_json(spec, faqs):
             tr(language, "feature_phrase", event_name=event_name),
         ],
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "image": page_art(language, slug)[0],
     }
 
     ld_faq = {
@@ -589,7 +630,8 @@ def render_faq_html(faqs):
     return "\n".join(items)
 
 
-def render_related(related, companion_answer_slug, event_name=None, language=DEFAULT_LANGUAGE):
+def render_related(related, companion_answer_slug, event_name=None, language=DEFAULT_LANGUAGE,
+                   companion_title=None, companion_desc=None):
     cards = []
     for rel in related:
         cards.append(
@@ -602,11 +644,19 @@ def render_related(related, companion_answer_slug, event_name=None, language=DEF
     if companion_answer_slug:
         name = event_name or tr(language, "related_more_fallback_name")
         href = f"{answers_prefix(language)}{esc_attr(companion_answer_slug)}/"
+        # A spec may name the companion answer explicitly. The generic
+        # "More <event> phrases & wording" fallback is fine for a card whose
+        # answer page has no distinct angle, but several answers do (Christmas's
+        # is about saying it in other languages, New Year's is about what to
+        # write) — and regenerating those pages used to overwrite the specific
+        # copy with the generic line.
+        title = companion_title or tr(language, "related_more_title", event_name=esc(name))
+        desc = companion_desc or tr(language, "related_more_desc")
         cards.append(
             f'    <a href="{href}" '
             'class="compare-card variant-muted u-no-underline">\n'
-            f'      <h4>{tr(language, "related_more_title", event_name=esc(name))}</h4>\n'
-            f'      <p>{tr(language, "related_more_desc")}</p>\n'
+            f'      <h4>{title}</h4>\n'
+            f'      <p>{desc}</p>\n'
             "    </a>"
         )
     return "\n".join(cards)
@@ -626,7 +676,24 @@ def render_page(spec):
     ld_webapp, ld_faq, ld_breadcrumb = render_ld_json(spec, faqs)
     event_data_json = render_event_data(spec)
     faq_html = render_faq_html(faqs)
-    related_html = render_related(spec["related"], companion_answer_slug, event_name, language)
+    related_html = render_related(
+        spec["related"], companion_answer_slug, event_name, language,
+        spec.get("companion_answer_title"), spec.get("companion_answer_desc"),
+    )
+
+    # Optional per-event pointer at the companion answer, rendered under the
+    # wishes section. Stored in the spec (with a {href} placeholder) rather
+    # than composed here, because the useful version of this sentence is
+    # event-specific — "what to say for Diwali", "what Eid Mubarak means and
+    # how to reply".
+    phrase_cta_html = ""
+    if spec.get("phrase_cta") and companion_answer_slug:
+        href = f"{answers_prefix(language)}{esc_attr(companion_answer_slug)}/"
+        phrase_cta_html = (
+            '\n    <p class="u-secondary-tight u-mt-15">'
+            + spec["phrase_cta"].replace("{href}", href)
+            + "</p>"
+        )
     hreflang_html = render_hreflang(spec.get("hreflang"))
 
     aka_html = ""
@@ -652,10 +719,27 @@ def render_page(spec):
     cta_href = f"{SITE}{home_href(language)}"
     ascii_generator_href = "/ascii-art-generator/"
 
+    og_image, hero_svg = page_art(language, slug)
+
+    # Emitted here rather than left to scripts/inject-funding-choices-tag.js,
+    # for the same reason as the OG art above: a regenerated page has to be
+    # complete, or regeneration silently strips the consent tag off a live page.
+    fc_path = SCRIPT_DIR / "data" / "funding-choices-tag.html"
+    funding_choices = fc_path.read_text(encoding="utf-8").strip() + "\n" if fc_path.exists() else ""
+
+    hero_figure = ""
+    if hero_svg:
+        hero_figure = (
+            '<figure class="page-hero-figure" data-uthero aria-hidden="true">\n'
+            f'  <img src="{esc_attr(hero_svg)}" width="1200" height="340"\n'
+            '       fetchpriority="high" alt="">\n'
+            "</figure>\n"
+        )
+
     page = f"""<!DOCTYPE html>
 <html lang="{esc_attr(language)}">
 <head>
-  <!-- Google Tag Manager -->
+{funding_choices}  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
   new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -674,14 +758,15 @@ def render_page(spec):
   <meta property="og:description" content="{esc_attr(meta)}">
   <meta property="og:url" content="{esc_attr(canonical)}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="{SITE}/assets/og/category.png">
+  <meta property="og:image" content="{og_image}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="{esc_attr(title)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc_attr(title)}">
   <meta name="twitter:description" content="{esc_attr(meta)}">
-  <meta name="twitter:image" content="{SITE}/assets/og/category.png">
+  <meta name="twitter:image" content="{og_image}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -720,13 +805,13 @@ def render_page(spec):
       <h1 class="hero-headline">{esc(spec["hero_h1"])}</h1>
       <p class="hero-tagline">{esc(spec["hero_tagline"])}</p>
       {aka_html}<div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="{esc_attr(tr(language, 'textarea_placeholder'))}" maxlength="500" autofocus></textarea>
+        <textarea class="main-input" id="mainInput" placeholder="{esc_attr(tr(language, 'textarea_placeholder'))}" maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
     </div>
   </div>
 </section>
-
+{hero_figure}
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
@@ -735,6 +820,15 @@ def render_page(spec):
     <div class="block-example">
       <strong>{esc(event_name)}:</strong> {esc(spec["date_window"])}
     </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventPhraseSection">
+    <span class="article-section-label">{tr(language, "section_phrase_label")}</span>
+    <h2>{tr(language, "section_phrase_heading", event_name=esc(event_name))}</h2>
+    <p class="editorial-intro">{tr(language, "section_phrase_intro")}</p>
+    <div class="compare-grid" id="eventPhraseGrid"></div>{phrase_cta_html}
   </section>
 
   <div class="section-divider"></div>
@@ -772,15 +866,6 @@ def render_page(spec):
     <p class="editorial-intro">{tr(language, "section_ascii_intro")}</p>
     <div class="art-piece-grid" id="eventAsciiGrid"></div>
     <p class="u-secondary-tight u-mt-15">{tr(language, "section_ascii_cta", href=ascii_generator_href)}</p>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">{tr(language, "section_phrase_label")}</span>
-    <h2>{tr(language, "section_phrase_heading", event_name=esc(event_name))}</h2>
-    <p class="editorial-intro">{tr(language, "section_phrase_intro")}</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>
   </section>
 
   <div class="section-divider"></div>

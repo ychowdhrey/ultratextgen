@@ -186,10 +186,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <span class="breadcrumb-current">Navidad</span>
 </nav>
 
-<figure class="page-hero-figure" data-uthero aria-hidden="true">
-  <img src="/assets/hero/es-events-navidad.svg" width="1200" height="340"
-       fetchpriority="high" alt="">
-</figure>
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-card">
@@ -197,12 +193,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="hero-tagline">Escribe un nombre o un deseo y dale estilo con fuentes clásicas en negrita, cursiva y gótica, luego copia emojis de árbol, Papá Noel y copos de nieve, kaomoji y arte ASCII — o toca una frase navideña para transformarla al instante.</p>
       <p class="u-secondary-tight">También conocido como: Feliz Navidad</p>
       <div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="Escribe un nombre, deseo o saludo..." maxlength="500" autofocus></textarea>
+        <textarea class="main-input" id="mainInput" placeholder="Escribe un nombre, deseo o saludo..." maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
     </div>
   </div>
 </section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/es-events-navidad.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
 
 <main class="container">
   <section class="editorial-section">
@@ -212,6 +212,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="block-example">
       <strong>Navidad:</strong> diciembre, con el día principal cayendo el 25 de diciembre de cada año
     </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventPhraseSection">
+    <span class="article-section-label">Mensajes y Felicitaciones</span>
+    <h2>Mensajes y Felicitaciones de Navidad</h2>
+    <p class="editorial-intro">Toca cualquier mensaje para colocarlo en el cuadro de arriba — cada fuente de abajo lo transforma al instante, listo para copiar.</p>
+    <div class="compare-grid" id="eventPhraseGrid"></div>
   </section>
 
   <div class="section-divider"></div>
@@ -249,15 +258,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p class="editorial-intro">Piezas de varias líneas seleccionadas — toca Copiar para llevarte una con sus saltos de línea y espaciado intactos.</p>
     <div class="art-piece-grid" id="eventAsciiGrid"></div>
     <p class="u-secondary-tight u-mt-15">¿Quieres escribir tu propio nombre o mensaje en un banner de letras en bloque en vivo? Prueba el <a href="/ascii-art-generator/">Generador de Arte ASCII</a>.</p>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">Banco de Frases</span>
-    <h2>Banco de Frases de Navidad</h2>
-    <p class="editorial-intro">Toca una frase para colocarla en el cuadro de arriba y verla transformada al instante en cada estilo de fuente.</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>
   </section>
 
   <div class="section-divider"></div>
@@ -481,7 +481,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     "showingSample": "Mostrando “{sample}” — escribe tu propio nombre, deseo o saludo arriba.",
     "copyButton": "Copiar",
     "copyAriaPrefix": "Copiar ",
-    "asciiArtDefaultLabel": "Arte ASCII"
+    "asciiArtDefaultLabel": "Arte ASCII",
+    "phraseGroupOther": "Más"
   }
 };</script>
 <script src="/styles.js" defer></script>
