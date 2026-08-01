@@ -152,7 +152,7 @@
     codm: { label: "Call of Duty (Warzone / MW / Mobile)", kind: "unknown" },
     // Free Fire guilds have a guild NAME; members are not given a tag prefix,
     // so players who want one fold it into their own nickname instead.
-    ff: { label: "Free Fire", kind: "guild", cost: "500 diamonds (guild rename)" },
+    ff: { label: "Free Fire", kind: "guild" },
     // MLBB squads carry a shortname, but the only length rule we could find
     // describes a UTF-8 BYTE budget, not a character count, from a secondary
     // source. Not enough to publish a number against.
