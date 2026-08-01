@@ -31,6 +31,14 @@
      limit        max glyphs the name field accepts
      min          min glyphs
      weighted     true = decorative Unicode counts as 2 glyphs (Free Fire)
+     weightUncertain
+                  true = the field is BELIEVED to count something other than
+                  glyphs, but the rule is not sourced. `effective` stays at 1x
+                  (we never assert an unverified limit), and instead a name that
+                  fits at 1x but would NOT fit counting UTF-16 code units raises
+                  a "weight-uncertain" warning. Use this instead of guessing at
+                  `weighted` when the evidence is a pile of player reports rather
+                  than a document.
      asciiPattern set = the field only accepts this charset (username-locked
                   games); everything else is rejected outright
      noSpace      true = a plain space is rejected (invisible chars instead)
@@ -39,7 +47,28 @@
   const RULES = {
     ff: { label: "Free Fire", limit: 12, min: 1, weighted: true, noSpace: true, field: "display" },
     ml: { label: "Mobile Legends", limit: 16, min: 4, weighted: false, noSpace: false, field: "display" },
-    pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, noSpace: true, field: "display" },
+    // Krafton publishes NO name rules for PUBG Mobile. The help centre article
+    // ("How do I change my in-game nickname?", unchanged since at least 2022)
+    // documents only the Rename Card flow — level-10 Growth Mission, Shop ->
+    // Cards, one use per day — and says nothing about length, minimum, charset,
+    // price, or what happens when a name is rejected. The 14 here comes from the
+    // client's own error string, "Name cannot exceed 14 characters", quoted with
+    // identical wording across independent community sources and with its own
+    // troubleshooting-video genre. That is strong evidence of a real client
+    // string, but it is not a document — treat it as such.
+    // Beware: the "4-16 characters, letters/digits/hyphen/underscore only" rule
+    // circulating for this game is Krafton's PUBG: BATTLEGROUNDS (PC) policy,
+    // laundered into mobile articles. It is wrong here.
+    // weightUncertain: players repeatedly report the 14-character error firing
+    // on names that LOOK shorter than 14. That is consistent with the field
+    // counting UTF-16 code units rather than glyphs — every classic decoration
+    // (꧁ ꧂ ༒ 彡 乡 ★ ツ) and every small-caps letter is 1 unit, but every
+    // mathematical-alphanumeric letter (bold/script/fraktur) is 2, so a fully
+    // bold name would cap at 7 visible letters rather than 14. Nobody documents
+    // the counting behaviour, so we do NOT assert it: `effective` stays at 1x
+    // and we only warn inside the ambiguous band. One controlled in-client test
+    // would settle it.
+    pubg: { label: "PUBG Mobile", limit: 14, min: 1, weighted: false, weightUncertain: true, noSpace: true, field: "display" },
     coc: { label: "Clash of Clans", limit: 15, min: 2, weighted: false, noSpace: false, field: "display" },
     lienquan: { label: "Liên Quân Mobile", limit: 12, min: 1, weighted: false, noSpace: true, field: "display" },
     standoff2: { label: "Standoff 2", limit: 16, min: 2, weighted: false, noSpace: false, field: "display" },
@@ -215,6 +244,10 @@
 
     const glyphs = chars.length;
     const effective = rule.weighted ? weightedLen : glyphs;
+    // JS strings are UTF-16, so str.length IS the code-unit count — the thing a
+    // field counts when it counts "characters" the naive way. Only used by
+    // weightUncertain; never fed into `effective`.
+    const utf16 = (str || "").length;
     const issues = [];
 
     if (!glyphs) issues.push("empty");
@@ -225,6 +258,11 @@
     if (rule.singleUnderscore && glyphs) {
       const u = str.split("_").length - 1;
       if (u > 1 || /^_|_$/.test(str)) issues.push("underscore");
+    }
+    // Fits counting glyphs, would not fit counting UTF-16 units. We cannot say
+    // which the game does, so we say exactly that rather than picking one.
+    if (rule.weightUncertain && rule.limit && effective <= rule.limit && utf16 > rule.limit) {
+      issues.push("weight-uncertain");
     }
     if (!rule.asciiPattern && unknown > 0) issues.push("unknown-chars");
     if (rule.strict && (safe + styled + emoji + unknown) > 0) issues.push("strict-symbols");
@@ -239,7 +277,11 @@
       issues.indexOf("space") !== -1 ||
       issues.indexOf("too-short") !== -1
     ) level = "fail";
-    else if (issues.indexOf("unknown-chars") !== -1 || issues.indexOf("strict-symbols") !== -1) level = "warn";
+    else if (
+      issues.indexOf("unknown-chars") !== -1 ||
+      issues.indexOf("strict-symbols") !== -1 ||
+      issues.indexOf("weight-uncertain") !== -1
+    ) level = "warn";
     if (issues.indexOf("empty") !== -1) level = "empty";
 
     // Per-glyph breakdown for the compatibility panel — grapheme clusters,
@@ -253,6 +295,7 @@
       rule: rule,
       glyphs: glyphs,
       effective: effective,
+      utf16: utf16,
       limit: rule.limit || 0,
       counts: { plain: plain, safe: safe, styled: styled, emoji: emoji, unknown: unknown, spaces: spaces },
       badChars: badChars,
@@ -273,7 +316,8 @@
          inputLabel, placeholder, counterOver,
          ok, warn, fail, empty,               // badge labels
          issue: { 'over-limit': …, space: …, charset: …, underscore: …,
-                  'unknown-chars': …, 'strict-symbols': …, 'too-short': … },
+                  'unknown-chars': …, 'strict-symbols': …, 'too-short': …,
+                  'weight-uncertain': … },
          weightNote                            // e.g. "symbols count as 2"
        }
      }
