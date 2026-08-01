@@ -3,6 +3,11 @@
   "event_name": "Christmas",
   "aliases": ["Xmas", "Merry Christmas"],
 
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/christmas/",
+    "es": "https://ultratextgen.com/es/events/navidad/",
+    "x_default": "en"
+  },
   "title": "Christmas Fonts, Emoji & Symbol Generator | UltraTextGen",
   "meta_description": "Style a Christmas greeting live, copy tree, Santa, and snowflake emoji, festive kaomoji, curated ASCII art, and ready-made Merry Christmas phrases with translation.",
 
@@ -17,6 +22,7 @@
 
   "canonical": "https://ultratextgen.com/events/christmas/",
 
+  "occurrence": {"type": "fixed", "month": 12, "day": 25},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",
@@ -89,65 +95,147 @@
 
   "phrase_bank": [
     {
-      "text": "Feliz Navidad",
-      "native_script": "Feliz Navidad",
-      "romanization": "feh-LEEZ nah-vee-DAHD",
-      "translation": "Merry Christmas (Spanish)",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Joyeux Noel",
-      "native_script": "Joyeux Noël",
-      "romanization": "zhwah-YUH no-EL",
-      "translation": "Merry Christmas (French)",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Frohe Weihnachten",
-      "native_script": "Frohe Weihnachten",
-      "romanization": "FRO-uh VY-nahkh-ten",
-      "translation": "Merry Christmas (German)",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Buon Natale",
-      "native_script": "Buon Natale",
-      "romanization": "bwohn nah-TAH-leh",
-      "translation": "Merry Christmas (Italian)",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Feliz Natal",
-      "native_script": "Feliz Natal",
-      "romanization": "feh-LEEZ nah-TAHL",
-      "translation": "Merry Christmas (Portuguese)",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Merii Kurisumasu",
-      "native_script": "メリークリスマス",
-      "romanization": "Merii Kurisumasu",
-      "translation": "Merry Christmas (Japanese, phonetic rendering of the English phrase)",
-      "needs_native_speaker_review": true
+      "text": "Merry Christmas",
+      "group": "Classic greetings",
+      "translation": "The one that always works."
     },
     {
       "text": "Merry Christmas and a Happy New Year",
-      "native_script": "Merry Christmas and a Happy New Year",
-      "romanization": "Merry Christmas and a Happy New Year",
-      "translation": "A classic English card greeting covering both holidays",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The standard card line."
     },
     {
-      "text": "Wishing You a Cozy Christmas",
-      "native_script": "Wishing You a Cozy Christmas",
-      "romanization": "Wishing You a Cozy Christmas",
-      "translation": "A warm, casual English Christmas wish",
-      "needs_native_speaker_review": false
+      "text": "Season's Greetings",
+      "group": "Classic greetings",
+      "translation": "For when you don't know what the recipient celebrates."
+    },
+    {
+      "text": "Happy Holidays",
+      "group": "Classic greetings",
+      "translation": "Inclusive alternative, common in the US."
+    },
+    {
+      "text": "Wishing you a very Merry Christmas",
+      "group": "Classic greetings",
+      "translation": "Slightly warmer than the plain greeting."
+    },
+    {
+      "text": "Merry Christmas to you too!",
+      "group": "Replies",
+      "translation": "Plain reply."
+    },
+    {
+      "text": "Thank you — and a very Merry Christmas to you and yours",
+      "group": "Replies",
+      "translation": "Warmer reply that returns the wish."
+    },
+    {
+      "text": "Merry Christmas to you and your family",
+      "group": "For family",
+      "translation": "The most-used card wording."
+    },
+    {
+      "text": "Wishing you a Christmas full of warmth and good food",
+      "group": "For family",
+      "translation": "Homely family card line."
+    },
+    {
+      "text": "Merry Christmas, Mum and Dad",
+      "group": "For family",
+      "translation": "Swap in your own words for parents."
+    },
+    {
+      "text": "Missing you at the table this Christmas",
+      "group": "For family",
+      "translation": "For family who can't make it home."
+    },
+    {
+      "text": "Happy first Christmas, little one",
+      "group": "For family",
+      "translation": "For a baby's first Christmas."
+    },
+    {
+      "text": "Merry Christmas from our house to yours",
+      "group": "For family",
+      "translation": "Family-to-family card wording."
+    },
+    {
+      "text": "Merry Christmas! Hope Santa was generous",
+      "group": "For friends",
+      "translation": "Light and casual."
+    },
+    {
+      "text": "Merry Christmas — see you when the food coma wears off",
+      "group": "For friends",
+      "translation": "Playful group-chat line."
+    },
+    {
+      "text": "Sleigh all day",
+      "group": "For friends",
+      "translation": "Short pun for a story."
+    },
+    {
+      "text": "Merry Christmas to my favourite trouble",
+      "group": "For friends",
+      "translation": "Teasing message for a close friend."
+    },
+    {
+      "text": "Wishing you a Merry Christmas and a prosperous New Year",
+      "group": "Formal & work",
+      "translation": "The standard business card line."
+    },
+    {
+      "text": "Season's greetings from all of us",
+      "group": "Formal & work",
+      "translation": "Inclusive team or company message."
+    },
+    {
+      "text": "Thank you for a great year — Merry Christmas",
+      "group": "Formal & work",
+      "translation": "For clients and colleagues."
+    },
+    {
+      "text": "Wishing you a restful break and a happy new year",
+      "group": "Formal & work",
+      "translation": "Good for an out-of-office or sign-off."
+    },
+    {
+      "text": "Merry Christmas",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Christmas mode: on",
+      "group": "Short for a caption",
+      "translation": "Short and current."
+    },
+    {
+      "text": "Sleigh bells and sweater weather",
+      "group": "Short for a caption",
+      "translation": "Cosy caption for a winter photo."
+    },
+    {
+      "text": "All wrapped up",
+      "group": "Short for a caption",
+      "translation": "Caption for a gift or outfit photo."
+    },
+    {
+      "text": "Ho ho ho",
+      "group": "Short for a caption",
+      "translation": "Three syllables, endlessly reusable."
+    },
+    {
+      "text": "Merry and bright",
+      "group": "Short for a caption",
+      "translation": "Classic short caption."
     }
   ],
 
   "companion_answer_slug": "merry-christmas-in-different-languages",
 
+  "phrase_cta": "Want more Merry Christmas phrases, with pronunciation and what they mean? See <a href=\"{href}\">how to say Merry Christmas in different languages</a>.",
+  "companion_answer_title": "Merry Christmas in different languages",
+  "companion_answer_desc": "How to say it in Spanish, French, German, Italian, Portuguese, and Japanese — with pronunciation.",
   "related": [
     {
       "href": "/library/christmas-symbols/",

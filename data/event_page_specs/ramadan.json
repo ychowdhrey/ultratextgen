@@ -1,0 +1,303 @@
+{
+  "slug": "ramadan",
+  "event_name": "Ramadan",
+  "aliases": [
+    "Ramadan Kareem",
+    "Ramzan",
+    "Ramadhan"
+  ],
+  "title": "Ramadan Fonts, Symbols & Ramadan Kareem Greetings | UltraTextGen",
+  "meta_description": "Style a Ramadan greeting live, copy crescent, lantern, and star symbols, kaomoji, ASCII art, and ready-made Ramadan Kareem and Ramadan Mubarak messages in Arabic with romanization.",
+  "hero_h1": "Ramadan Text & Symbol Generator",
+  "hero_tagline": "Type a name or greeting and style it in elegant script and bold fonts, then copy crescent, lantern, and star symbols, kaomoji, and ASCII art — or tap a ready-made Ramadan greeting in Arabic to style it instantly.",
+  "intro": "Ramadan is a month, not a day — nine hundred hours of fasting, night prayers, iftar tables, and messages that mark the start, the middle, and the last ten nights. That makes its greetings different from Eid's: \"Ramadan Kareem\" opens the month, \"Ramadan Mubarak\" carries through it, and the wording shifts again for suhoor check-ins, iftar invitations, and Laylat al-Qadr. This page gathers everything for styling those messages: curated script and geometric fonts you can preview on your own text, the crescent, lantern, and star symbols people actually paste, kaomoji for a warm chat message, curated ASCII art, and a bank of Ramadan greetings in Arabic with romanization and meaning.",
+  "date_window": "the ninth month of the Hijri calendar, moving about 11 days earlier each year",
+  "hub_card_desc": "Style a Ramadan greeting live, then copy matching fonts, symbols, kaomoji, and ready-made messages.",
+  "sample_phrase": "Ramadan Kareem",
+  "canonical": "https://ultratextgen.com/events/ramadan/",
+  "native_script_language": "Arabic",
+  "occurrence": {
+    "type": "islamic",
+    "month": 9,
+    "day": 1,
+    "calendar_name": "the Hijri (Islamic lunar) calendar"
+  },
+  "fonts": {
+    "curated_keys": [
+      "Ultra Script Bold Elegant",
+      "Ultra Script Elegant",
+      "Ultra Bold Serif",
+      "Ultra Italic Serif",
+      "Ultra Script Sparkle",
+      "Ultra Small Caps",
+      "Ultra Double-Struck",
+      "Ultra Bold",
+      "Ultra Typewriter Document",
+      "Ultra Fullwidth"
+    ],
+    "min_count": 8
+  },
+  "emoji_symbol_collections": [
+    {
+      "name": "Ramadan Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": [
+        "🌙",
+        "🕌",
+        "🕋",
+        "🪔",
+        "⭐",
+        "✨",
+        "📿",
+        "🤲",
+        "🌟",
+        "🍽️",
+        "🥘",
+        "🌛",
+        "☪️",
+        "🫖"
+      ]
+    },
+    {
+      "name": "Crescent & Star Symbols",
+      "presentation_class": "symbol",
+      "copy_pattern": "collection",
+      "flags": [
+        "☪",
+        "☾",
+        "☽",
+        "✦",
+        "✧",
+        "★",
+        "☆",
+        "✩",
+        "❋",
+        "๑",
+        "۞",
+        "﷽"
+      ]
+    }
+  ],
+  "kaomoji": [
+    {
+      "text": "(っ˘ω˘ς )",
+      "label": "peaceful"
+    },
+    {
+      "text": "( ˘ ³˘)♡",
+      "label": "warm wish"
+    },
+    {
+      "text": "٩(◕‿◕)۶",
+      "label": "celebrating"
+    },
+    {
+      "text": "( ˶ˆ ᗜ ˆ˵ )",
+      "label": "happy"
+    },
+    {
+      "text": "(¬‿¬ )",
+      "label": "waiting for iftar"
+    },
+    {
+      "text": "( ｡•́‿•̀｡ )",
+      "label": "gentle"
+    }
+  ],
+  "ascii_art": {
+    "items": [
+      {
+        "art": "     *\n    /|\\\n   ( o )\n    \\|/\n     *",
+        "label": "Lantern"
+      },
+      {
+        "art": "   .-.\n  /   \\\n |     |\n  \\   /\n   `-'",
+        "label": "Crescent arch"
+      },
+      {
+        "art": "  ✦  ☾  ✦\n ✧  ☪  ✧\n  ✦  ☾  ✦",
+        "label": "Crescent row"
+      },
+      {
+        "art": "╔═══════════╗\n║  RAMADAN  ║\n║   KAREEM  ║\n╚═══════════╝",
+        "label": "Ramadan Kareem banner"
+      },
+      {
+        "art": " ___________\n|  .-\"\"\"-.  |\n| /       \\ |\n| \\       / |\n|  '-...-'  |\n|___________|",
+        "label": "Lantern frame"
+      },
+      {
+        "art": "✧･ﾟ: *✧･ﾟ:* RAMADAN *:･ﾟ✧*:･ﾟ✧",
+        "label": "Sparkle line"
+      }
+    ]
+  },
+  "phrase_bank": [
+    {
+      "text": "Ramadan Kareem",
+      "group": "Classic greetings",
+      "native_script": "رمضان كريم",
+      "romanization": "Ramaḍān Karīm",
+      "translation": "Generous Ramadan — the standard greeting at the start of the month.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Ramadan Mubarak",
+      "group": "Classic greetings",
+      "native_script": "رمضان مبارك",
+      "romanization": "Ramaḍān Mubārak",
+      "translation": "Blessed Ramadan — used throughout the month.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Kul aam wa antum bikhair",
+      "group": "Classic greetings",
+      "native_script": "كل عام وأنتم بخير",
+      "romanization": "Kull ʿām wa antum bi-khayr",
+      "translation": "May you be well every year.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Happy Ramadan",
+      "group": "Classic greetings",
+      "translation": "The simplest English version."
+    },
+    {
+      "text": "Wishing you a blessed Ramadan",
+      "group": "Classic greetings",
+      "translation": "Warm, all-purpose card wording."
+    },
+    {
+      "text": "Allahu Akram",
+      "group": "Replies",
+      "native_script": "الله أكرم",
+      "romanization": "Allāhu Akram",
+      "translation": "God is more generous — the traditional reply to Ramadan Kareem.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Wa antum bikhair",
+      "group": "Replies",
+      "native_script": "وأنتم بخير",
+      "romanization": "Wa antum bi-khayr",
+      "translation": "And you too, be well.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Ramadan Mubarak to you too",
+      "group": "Replies",
+      "translation": "Plain English reply."
+    },
+    {
+      "text": "Ramadan Mubarak to you and your family",
+      "group": "For family",
+      "translation": "The most common card wording."
+    },
+    {
+      "text": "May this Ramadan bring peace to our home",
+      "group": "For family",
+      "translation": "Family-focused wish."
+    },
+    {
+      "text": "Missing our iftar table this year",
+      "group": "For family",
+      "translation": "For family you're apart from."
+    },
+    {
+      "text": "May your fasts be easy and your duas accepted",
+      "group": "For family",
+      "translation": "Warm, specific blessing."
+    },
+    {
+      "text": "First Ramadan fasting — so proud of you",
+      "group": "For family",
+      "translation": "For a child's first fast."
+    },
+    {
+      "text": "Ramadan Kareem! See you at iftar",
+      "group": "For friends",
+      "translation": "Casual invitation."
+    },
+    {
+      "text": "Wishing you an easy first fast",
+      "group": "For friends",
+      "translation": "For the first day of the month."
+    },
+    {
+      "text": "Suhoor squad, assemble",
+      "group": "For friends",
+      "translation": "Playful group-chat line."
+    },
+    {
+      "text": "May your coffee withdrawal be brief",
+      "group": "For friends",
+      "translation": "Light and funny between friends."
+    },
+    {
+      "text": "Wishing you and your family a blessed Ramadan",
+      "group": "Formal & work",
+      "translation": "Safe for colleagues and clients."
+    },
+    {
+      "text": "Ramadan Mubarak from all of us",
+      "group": "Formal & work",
+      "translation": "Team or company-wide message."
+    },
+    {
+      "text": "Wishing our fasting colleagues an easy month",
+      "group": "Formal & work",
+      "translation": "Considerate workplace message."
+    },
+    {
+      "text": "Ramadan Kareem",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Blessed month",
+      "group": "Short for a caption",
+      "translation": "Two words, fits any bio."
+    },
+    {
+      "text": "Fasting and grateful",
+      "group": "Short for a caption",
+      "translation": "Reflective caption."
+    },
+    {
+      "text": "Iftar o'clock",
+      "group": "Short for a caption",
+      "translation": "For a food photo at sunset."
+    },
+    {
+      "text": "رمضان كريم",
+      "group": "Short for a caption",
+      "native_script": "رمضان كريم",
+      "romanization": "Ramaḍān Karīm",
+      "translation": "Native-script caption — pastes anywhere.",
+      "needs_native_speaker_review": true
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Islamic Symbols",
+      "desc": "Crescents, stars, and calligraphic symbols to copy and paste."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Moon & Celestial Symbols",
+      "desc": "Every moon phase, star, and celestial character."
+    },
+    {
+      "href": "/events/eid-mubarak/",
+      "title": "Eid Mubarak Generator",
+      "desc": "The festival that closes Ramadan — greetings, symbols, and fonts."
+    },
+    {
+      "href": "/category/cursive-fonts/",
+      "title": "Cursive Fonts",
+      "desc": "Flowing script styles for any name or greeting."
+    }
+  ]
+}

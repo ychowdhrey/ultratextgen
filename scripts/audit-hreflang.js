@@ -139,9 +139,46 @@ for (const page of pages) {
   }
 }
 
+// x-default direction. CLAUDE.md: x-default ALWAYS points at the English
+// canonical, and must never point at a non-EN page (least of all at itself).
+// Reciprocity alone can't catch this — a cluster can be perfectly reciprocal
+// while every member's x-default points at the Spanish URL — so it needs its
+// own pass. This has been the single most-repeated hreflang bug on the site.
+const badXDefault = []; // { page, current, expected }
+const conflictedBlocks = []; // pages whose own block declares a code twice
+for (const page of pages) {
+  const xd = page.alternates.find((a) => a.hreflang === 'x-default');
+  if (!xd) continue;
+
+  // A block that declares the same hreflang code twice with different hrefs is
+  // two clusters stacked into one page. Which cluster owns the page is an
+  // editorial call, so retargeting its x-default would be picking a side.
+  // Same policy the --fix pass already applies to conflicting codes: flag for
+  // manual review, never auto-resolve.
+  const seen = new Map();
+  let conflicted = false;
+  for (const a of page.alternates) {
+    if (a.hreflang === 'x-default') continue;
+    if (seen.has(a.hreflang) && seen.get(a.hreflang) !== a.href) conflicted = true;
+    seen.set(a.hreflang, a.href);
+  }
+  if (conflicted) {
+    conflictedBlocks.push(page);
+    continue;
+  }
+
+  // The cluster's English member, as this page itself declares it.
+  const enAlt = page.alternates.find((a) => a.hreflang === 'en');
+  if (!enAlt) continue; // no EN member declared — nothing to assert against
+  if (xd.href !== enAlt.href) {
+    badXDefault.push({ page, current: xd.href, expected: enAlt.href });
+  }
+}
+
 console.log(`  Non-reciprocal pairs:            ${nonReciprocal.length}`);
 console.log(`  Headless targets (no hreflang):  ${headless.size}`);
 console.log(`  Broken hreflang targets:         ${brokenList.length}`);
+console.log(`  x-default not pointing at EN:    ${badXDefault.length}`);
 
 if (nonReciprocal.length) {
   console.log('');
@@ -162,6 +199,18 @@ if (brokenList.length) {
   console.log('');
   console.log('Broken targets (declared href matches no page anywhere in the repo):');
   for (const line of brokenList) console.log(`  ✗ ${line}`);
+}
+if (badXDefault.length) {
+  console.log('');
+  console.log('x-default pointing somewhere other than the cluster\'s EN member:');
+  for (const item of badXDefault) {
+    console.log(`  ✗ ${item.page.rel}  x-default -> ${item.current}  (should be ${item.expected})`);
+  }
+}
+if (conflictedBlocks.length) {
+  console.log('');
+  console.log('Conflicted hreflang blocks (same code declared twice with different hrefs — two clusters stacked on one page). x-default left untouched; resolve cluster membership by hand:');
+  for (const page of conflictedBlocks) console.log(`  ⚠ ${page.rel}`);
 }
 
 let skippedOutOfScope = 0;
@@ -345,7 +394,30 @@ if (FIX) {
   }
 
   console.log('');
+  // 3. x-default direction — rewrite the href in place. This is a pure
+  // retarget of an existing tag (no insertion, no cluster reconstruction), so
+  // it runs independently of the two repairs above and can apply to a file
+  // they never touched.
+  let xDefaultFixed = 0;
+  for (const item of badXDefault) {
+    if (allowedFiles && !allowedFiles.has(item.page.filePath)) {
+      skippedOutOfScope++;
+      continue;
+    }
+    const html = fs.readFileSync(item.page.filePath, 'utf8');
+    const patched = html.replace(
+      /(<link\s+rel="alternate"\s+hreflang="x-default"\s+href=")([^"]*)(")/i,
+      `$1${item.expected}$3`
+    );
+    if (patched === html) continue; // tag shape didn't match — leave for manual review
+    fs.writeFileSync(item.page.filePath, patched);
+    xDefaultFixed++;
+  }
+
   console.log(`🔧 Fixed ${filesFixed} file(s), added ${linksAdded} hreflang link(s).`);
+  if (xDefaultFixed) {
+    console.log(`🔧 Repointed ${xDefaultFixed} x-default tag(s) at their cluster's EN canonical.`);
+  }
   if (skippedHomepageTargets) {
     console.log(`⚠️  Skipped ${skippedHomepageTargets} pair(s) whose target is a homepage — a subpage claims the homepage as its placeholder translation; fix the subpage's own claim by hand instead.`);
   }
@@ -358,10 +430,10 @@ if (FIX) {
   }
 }
 
-const totalIssues = nonReciprocal.length + headless.size + brokenList.length;
+const totalIssues = nonReciprocal.length + headless.size + brokenList.length + badXDefault.length;
 if (totalIssues && !FIX) {
   console.log('');
-  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs and headless targets.`);
+  console.log(`❌ ${totalIssues} hreflang issue(s) found. Run with --fix to auto-repair non-reciprocal pairs, headless targets, and misdirected x-default tags.`);
   process.exit(1);
 } else if (brokenList.length) {
   console.log('');

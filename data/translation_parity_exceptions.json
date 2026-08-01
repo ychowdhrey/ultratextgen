@@ -365,6 +365,1333 @@
       "localeUrl": "https://ultratextgen.com/sv/library/",
       "reason": "check-translation-parity.js flags this pair (re-surfaced once the branch's merge-base moved forward) because sv/library/index.html gained 4 new compare-cards (Discord-symboler, Roblox-symboler, Y2K-symboler, Emoji-kombinationer) as part of the user-authorized sv library/* cluster build (see data/locale_parent_gap_audit.json's library/*-locale-sv gate-pass entry). library/index.html (EN) was not touched in this branch and needed no change — these are hub links to genuinely new sv content, not EN drift. Verified by direct inspection. Discussed with the user 2026-07-26.",
       "agreed": "2026-07-26"
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/zh-tw/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/vi/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/tr/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/tl/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/sv/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/sr/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/sk/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/ro/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/no/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/ko/font-byeonhwan/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/ja/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/hu/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/hr/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/hi/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/fr/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/fi/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/de/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/da/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/cs/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/bs/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/",
+      "localeUrl": "https://ultratextgen.com/ar/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/",
+          "/events/christmas/",
+          "/events/diwali/",
+          "/events/easter/",
+          "/events/eid-mubarak/",
+          "/events/fathers-day/",
+          "/events/halloween/",
+          "/events/mothers-day/",
+          "/events/new-year/",
+          "/events/thanksgiving/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/christmas-symbols/",
+      "localeUrl": "https://ultratextgen.com/pt/library/simbolos-de-natal/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/christmas/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/christmas-symbols/",
+      "localeUrl": "https://ultratextgen.com/no/library/julesymboler/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/christmas/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/christmas-symbols/",
+      "localeUrl": "https://ultratextgen.com/de/library/weihnachtssymbole/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/christmas/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/flower-symbols/",
+      "localeUrl": "https://ultratextgen.com/th/library/flower-symbols/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/easter/",
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/flower-symbols/",
+      "localeUrl": "https://ultratextgen.com/ko/library/kkot-giho/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/easter/",
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/flower-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-bunga/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/easter/",
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/flower-symbols/",
+      "localeUrl": "https://ultratextgen.com/fr/library/symboles-fleurs/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/easter/",
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/flower-symbols/",
+      "localeUrl": "https://ultratextgen.com/es/library/simbolos-de-flor/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/easter/",
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/flower-symbols/",
+      "localeUrl": "https://ultratextgen.com/de/library/blumen-symbole/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/easter/",
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/flower-symbols/",
+      "localeUrl": "https://ultratextgen.com/ar/library/flower-symbols/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/easter/",
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/food-drink-emojis/",
+      "localeUrl": "https://ultratextgen.com/th/library/food-drink-emojis/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/thanksgiving/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/happy-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/zh-tw/library/happy-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/happy-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/pt/library/happy-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/happy-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/ja/library/happy-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/happy-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/id/library/happy-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/happy-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/es/library/happy-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/chinese-new-year/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/vi/ki-tu-trai-tim/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/tr/library/kalp-sembolleri/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/th/library/heart-symbols/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/sv/library/hjarta-symboler/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/ru/library/serdechki/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/pt/library/simbolos-de-coracao/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/no/library/hjertesymboler/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/ko/library/hateu-giho/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/ja/library/heart-symbols/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/it/library/simboli-cuore/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-love/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/fr/library/symboles-coeur/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/de/library/herz-symbole/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/da/library/hjerte-symboler/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/heart-symbols/",
+      "localeUrl": "https://ultratextgen.com/ar/library/heart-symbols/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/fathers-day/",
+          "/events/mothers-day/",
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/hug-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/ja/library/hug-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/mothers-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/islamic-symbols/",
+      "localeUrl": "https://ultratextgen.com/ar/library/islamic-symbols/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/eid-mubarak/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/zh-tw/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/vi/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/tr/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/th/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/pt/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/pl/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/ja/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/id/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/fr/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/es/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/love-kaomoji/",
+      "localeUrl": "https://ultratextgen.com/de/library/love-kaomoji/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/valentines-day/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/sparkle-symbols/",
+      "localeUrl": "https://ultratextgen.com/ja/library/sparkle-symbols/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/eid-mubarak/",
+          "/events/new-year/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/witchy-occult-symbols/",
+      "localeUrl": "https://ultratextgen.com/tr/library/witchy-occult-sembolleri/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/halloween/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/witchy-occult-symbols/",
+      "localeUrl": "https://ultratextgen.com/pt/library/simbolos-witchy-occult/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/halloween/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/witchy-occult-symbols/",
+      "localeUrl": "https://ultratextgen.com/pl/library/symbole-witchy-occult/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/halloween/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/witchy-occult-symbols/",
+      "localeUrl": "https://ultratextgen.com/it/library/simboli-witchy-occult/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/halloween/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/witchy-occult-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-witchy-occult/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/halloween/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/witchy-occult-symbols/",
+      "localeUrl": "https://ultratextgen.com/fr/library/symboles-witchy-occult/",
+      "reason": "EN hub gained an inbound link to its /events/ spoke (Hub vs Spoke Rule 4 — every event page was an orphan, linked out to by 31 library/category pages and linked back by none). The locale sibling has no locale-native event page to point at: only Spanish has event pages so far (es/events/halloween, navidad, san-valentin), and those are wired to their own Spanish hubs in the same change. Linking the locale page at the English event URL instead is exactly the locale-native internal-linking failure CLAUDE.md warns against, so the link is deliberately left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Discussed and approved with the user 2026-07-31 as part of the events-section audit execution plan.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/halloween/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/vi/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/th/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/pt/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/pl/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/es/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/de/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/emoji-flags/",
+      "localeUrl": "https://ultratextgen.com/ar/library/emoji-flags/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/vi/ki-tu-ngoi-sao/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/tr/library/yildiz-sembolleri/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/th/library/star-symbols/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/sv/library/stjarna-symboler/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ru/library/zvyozdochki/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/pt/library/simbolos-de-estrela/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/pl/library/symbole-gwiazdek/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/no/library/stjernesymboler/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/nl/library/ster-symbolen/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ko/library/byeol-giho/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ja/library/star-symbols/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/it/library/simboli-stella/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/id/library/simbol-bintang/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/fr/library/symboles-etoiles/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/es/simbolos-de-estrella/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/de/library/stern-symbole/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/library/star-symbols/",
+      "localeUrl": "https://ultratextgen.com/ar/library/star-symbols/",
+      "reason": "EN hub gained an inbound link to a newly-built /events/ spoke (Ramadan, St Patrick's Day, 4th of July, Graduation — Hub vs Spoke Rule 4: no orphan spokes). The locale sibling has no locale-native event page to point at; only Spanish has event pages, and those are wired to their own Spanish hubs. Linking the locale page at the English event URL instead is the locale-native internal-linking failure CLAUDE.md warns against, so the link is left out until that locale has its own event page. Scoped to the event href only, so any other drift on this pair still fails the gate. Same standing approval as the 2026-07-31 batch.",
+      "agreed": "2026-07-31",
+      "suppress": {
+        "onlyInEN": [
+          "/events/graduation/",
+          "/events/july-4th/"
+        ]
+      }
+    },
+    {
+      "enUrl": "https://ultratextgen.com/category/strikethrough-text/",
+      "localeUrl": "https://ultratextgen.com/tr/ustu-cizili-yazi/",
+      "reason": "tr/ustu-cizili-yazi/ swapped one related-card (Kalin Yazi -> Alti Cizili Yazi) to cross-link the newly-built tr/alti-cizili-yazi/ (underline) sibling page, as part of shipping that new page. This is a TR-only structural change with no EN-side equivalent action: category/strikethrough-text/ already links to category/underline-text/ in its own related-cards (has for a while, unrelated to this change) and needed no edit -- EN and TR related-card sets were never a 1:1 mirror of each other (EN carries classified/comment-font; TR carries yazi-stilleri/instagram-yazi-tipi), so forcing a matching EN edit would be cosmetic, not a real content improvement. Discussed and agreed with the user 2026-07-31.",
+      "agreed": "2026-07-31"
     }
   ]
 }

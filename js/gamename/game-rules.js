@@ -56,7 +56,27 @@
     // caps look-alikes) and common decorative symbols (crowns, stars, arrows)
     // surviving in practice, the same "may not always stick" profile as
     // Fortnite/Valorant, hence strict rather than an outright block.
-    stumbleguys: { label: "Stumble Guys", limit: 12, min: 4, weighted: false, noSpace: false, field: "display", strict: true }
+    stumbleguys: { label: "Stumble Guys", limit: 12, min: 4, weighted: false, noSpace: false, field: "display", strict: true },
+    // Xbox Gamertags are plain text only — styled Unicode has never been
+    // accepted here, at any character count. As of Microsoft's July 2026
+    // console update, a gamertag that is unique, available, and Latin-only
+    // can run up to 15 characters, but any name needing the auto-assigned
+    // #1234 suffix (i.e. not unique) or written in a non-Latin script stays
+    // capped at the old 12-character limit. We validate against the
+    // guaranteed 12-char floor rather than the conditional 15, since
+    // uniqueness can't be known until the player actually tries to claim
+    // the name — see /updates/xbox-gamertag-15-character-limit/.
+    xbox: { label: "Xbox Gamertag", limit: 12, min: 1, weighted: false, noSpace: false, field: "username", asciiPattern: /^[A-Za-z][A-Za-z0-9]*(?: [A-Za-z0-9]+)*$/ },
+    // PSN Online IDs are plain ASCII only (no styled Unicode, ever): 3-16
+    // characters, must start with a letter, then letters/numbers/hyphens/
+    // underscores only (Sony's own account-signup documentation).
+    psn: { label: "PSN Online ID", limit: 16, min: 3, weighted: false, noSpace: true, field: "username", asciiPattern: /^[A-Za-z][A-Za-z0-9_-]*$/ },
+    // Clash Royale names: 2-15 characters (Supercell Support). Unlike Free
+    // Fire/Clash of Clans, Supercell's own article warns that symbols and
+    // non-Latin characters "may not be displayed properly" and can make a
+    // name appear invisible to other players — so we flag decorative
+    // Unicode as a warning here (strict) rather than treating it as safe.
+    clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true }
   };
 
   /* ============================

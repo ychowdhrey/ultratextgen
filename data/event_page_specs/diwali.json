@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/diwali/",
 
+  "native_script_language": "Hindi",
   "fonts": {
     "curated_keys": [
       "Ultra Bold",
@@ -86,65 +87,155 @@
 
   "phrase_bank": [
     {
-      "text": "Shubh Deepavali",
-      "native_script": "शुभ दीपावली",
-      "romanization": "Shubh Dīpāvalī",
-      "translation": "Happy / Auspicious Diwali",
-      "needs_native_speaker_review": true
-    },
-    {
-      "text": "Deepavali ki Shubhkamnaayein",
-      "native_script": "दीपावली की शुभकामनाएं",
-      "romanization": "Dīpāvalī kī shubhkāmnāeṁ",
-      "translation": "Best wishes for Diwali",
-      "needs_native_speaker_review": true
-    },
-    {
       "text": "Happy Diwali",
-      "native_script": "Happy Diwali",
-      "romanization": "—",
-      "translation": "The safest, most universal Diwali greeting — works for any audience.",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The standard English greeting."
     },
     {
-      "text": "Wishing You Light and Prosperity",
-      "native_script": "Wishing You Light and Prosperity",
-      "romanization": "—",
-      "translation": "A warmer, wish-style line for family or close friends.",
-      "needs_native_speaker_review": false
+      "text": "Shubh Deepavali",
+      "group": "Classic greetings",
+      "native_script": "शुभ दीपावली",
+      "romanization": "Śubh Dīpāvalī",
+      "translation": "Auspicious Deepavali — the most common Hindi greeting.",
+      "needs_native_speaker_review": true
     },
     {
-      "text": "Happy Diwali to You and Your Family",
-      "native_script": "Happy Diwali to You and Your Family",
-      "romanization": "—",
-      "translation": "A whole-household greeting, not just an individual one.",
-      "needs_native_speaker_review": false
+      "text": "Diwali ki hardik shubhkamnayein",
+      "group": "Classic greetings",
+      "native_script": "दिवाली की हार्दिक शुभकामनाएं",
+      "romanization": "Dīvālī kī hārdik śubhkāmnāyeṁ",
+      "translation": "Heartfelt Diwali wishes — warm and widely used.",
+      "needs_native_speaker_review": true
     },
     {
-      "text": "May Your Diwali Sparkle and Shine",
-      "native_script": "May Your Diwali Sparkle and Shine",
-      "romanization": "—",
-      "translation": "A festive line that leans into the fireworks-and-lights theme.",
-      "needs_native_speaker_review": false
-    },
-    {
-      "text": "Wishing You a Diwali Full of Joy",
-      "native_script": "Wishing You a Diwali Full of Joy",
-      "romanization": "—",
-      "translation": "A simple, upbeat alternative to the standard greeting.",
-      "needs_native_speaker_review": false
+      "text": "Shubh Diwali",
+      "group": "Classic greetings",
+      "native_script": "शुभ दिवाली",
+      "romanization": "Śubh Dīvālī",
+      "translation": "Auspicious Diwali — the short, everyday form.",
+      "needs_native_speaker_review": true
     },
     {
       "text": "Happy Deepavali",
-      "native_script": "Happy Deepavali",
-      "romanization": "—",
-      "translation": "The Deepavali spelling, common across Southeast Asia and South India.",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "Common in South India, Malaysia, and Singapore."
+    },
+    {
+      "text": "Aapko bhi Diwali ki shubhkamnayein",
+      "group": "Replies",
+      "native_script": "आपको भी दिवाली की शुभकामनाएं",
+      "romanization": "Āpko bhī Dīvālī kī śubhkāmnāyeṁ",
+      "translation": "Diwali wishes to you too — the natural reply.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Same to you — Happy Diwali!",
+      "group": "Replies",
+      "translation": "Plain English reply."
+    },
+    {
+      "text": "Thank you, and a very Happy Diwali to your family",
+      "group": "Replies",
+      "translation": "Warmer reply that returns the wish."
+    },
+    {
+      "text": "May this Diwali fill your home with light and happiness",
+      "group": "For family",
+      "translation": "The classic card wording."
+    },
+    {
+      "text": "Wishing you and your family a bright and prosperous Diwali",
+      "group": "For family",
+      "translation": "Formal enough for elders, warm enough for family."
+    },
+    {
+      "text": "Happy Diwali to my favourite people",
+      "group": "For family",
+      "translation": "For the immediate family group chat."
+    },
+    {
+      "text": "Missing home this Diwali — Happy Diwali to all of you",
+      "group": "For family",
+      "translation": "For family you can't be with."
+    },
+    {
+      "text": "May Lakshmi bless your home this Diwali",
+      "group": "For family",
+      "translation": "Traditional blessing wording."
+    },
+    {
+      "text": "Happy Diwali! Let's light it up",
+      "group": "For friends",
+      "translation": "Casual and upbeat."
+    },
+    {
+      "text": "Diwali means sweets first, everything else later",
+      "group": "For friends",
+      "translation": "Playful, food-first message."
+    },
+    {
+      "text": "Happy Diwali — go easy on the patakhe",
+      "group": "For friends",
+      "translation": "Light, teasing message about fireworks."
+    },
+    {
+      "text": "Wishing you a Diwali as bright as your smile",
+      "group": "For friends",
+      "translation": "Warm message for a close friend."
+    },
+    {
+      "text": "Wishing you a safe and prosperous Diwali",
+      "group": "Formal & work",
+      "translation": "Safe for colleagues and clients."
+    },
+    {
+      "text": "May this Diwali bring success and prosperity to your work",
+      "group": "Formal & work",
+      "translation": "Business-appropriate wording."
+    },
+    {
+      "text": "Season's greetings and a very Happy Diwali from all of us",
+      "group": "Formal & work",
+      "translation": "Team or company-wide message."
+    },
+    {
+      "text": "Wishing you light, health, and prosperity this Diwali",
+      "group": "Formal & work",
+      "translation": "Formal card wording."
+    },
+    {
+      "text": "Happy Diwali",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Festival of Lights",
+      "group": "Short for a caption",
+      "translation": "Short and evocative."
+    },
+    {
+      "text": "Lights on",
+      "group": "Short for a caption",
+      "translation": "Two words for a story or bio."
+    },
+    {
+      "text": "Diyas and dessert",
+      "group": "Short for a caption",
+      "translation": "Playful caption for a food photo."
+    },
+    {
+      "text": "Shubh Deepavali",
+      "group": "Short for a caption",
+      "native_script": "शुभ दीपावली",
+      "romanization": "Śubh Dīpāvalī",
+      "translation": "Native-script caption — pastes anywhere.",
+      "needs_native_speaker_review": true
     }
   ],
 
   "companion_answer_slug": "diwali-wishes-what-to-say",
 
+  "phrase_cta": "Not sure which greeting fits? Read <a href=\"{href}\">what to say for Diwali</a> for the full breakdown of native script, romanization, and meaning.",
   "related": [
     {
       "href": "/library/diwali-symbols/",

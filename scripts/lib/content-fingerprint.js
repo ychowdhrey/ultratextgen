@@ -15,7 +15,12 @@
 const cheerio = require('cheerio');
 const { normalizeUrl } = require('./translation-clusters');
 
-const CONTENT_LINK_RE = /^\/(category|library|symbol|guide|answers|usecase|updates)\//;
+// `events` was missing until 2026-07-31: the section shipped after this regex
+// was written, so every /events/ link was invisible to the fingerprint. A PR
+// adding event links across 26 library hubs reported "0 pairs with unsynced
+// content change" — a blind pass, not a clean one. Any new content type has to
+// be added here or the parity gate silently stops covering it.
+const CONTENT_LINK_RE = /^\/(category|library|symbol|guide|answers|usecase|updates|events)\//;
 
 /**
  * @param {Map} byUrl - from discoverClusters(): normalized canonical -> record

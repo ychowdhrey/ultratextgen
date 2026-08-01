@@ -1171,6 +1171,30 @@ def m_star(p, accent=PURPLE):
     <path d="M90 260 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="{BLUE}" opacity="0.6"/>"""
 
 
+def m_clover(p, accent=PURPLE):
+    """A four-leaf clover on a stem — St Patrick's Day."""
+    return f"""
+    <circle cx="150" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="150" cy="210" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="210" r="46" fill="url(#g{p})"/>
+    <path d="M181 214 q6 48 -22 76" stroke="{PURPLE}" stroke-width="10"
+          fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M276 96 l7 17 l17 7 l-17 7 l-7 17 l-7 -17 l-17 -7 l17 -7 Z"
+          fill="{BLUE}" opacity="0.6"/>"""
+
+
+def m_gradcap(p, accent=PURPLE):
+    """A mortarboard with a tassel — graduation."""
+    return f"""
+    <path d="M180 108 L296 156 L180 204 L64 156 Z" fill="url(#g{p})"/>
+    <path d="M108 176 L108 232 q72 40 144 0 L252 176" stroke="{PURPLE}"
+          stroke-width="12" fill="none" stroke-linejoin="round" opacity="0.85"/>
+    <path d="M290 158 L290 224" stroke="{BLUE}" stroke-width="8"
+          fill="none" stroke-linecap="round"/>
+    <circle cx="290" cy="232" r="12" fill="{BLUE}"/>"""
+
+
 def m_arc(p, letters="ARC"):
     """Letters individually rotated along a circular arc — curved/arc text tool."""
     import math
@@ -1402,6 +1426,9 @@ PAGES = {
         P(m_transform, a="A", b="★"), K_USE),
   "usecase-stumble-guys-name-generator": ("Stumble Guys Name Generator", "Funny & stylish nicknames, 4-12 char checker", m_gamepad, K_USE),
   "usecase-clash-of-clans-name-generator": ("Clash of Clans Name Generator", "Stylish COC nicknames, 2-15 char checker", m_gamepad, K_USE),
+  "usecase-clash-royale-name-generator": ("Clash Royale Name Generator", "Stylish CR names, 2-15 char checker", m_gamepad, K_USE),
+  "usecase-xbox-name-generator": ("Xbox Gamertag Generator", "Cool, funny & sweaty name ideas", m_gamepad, K_USE),
+  "usecase-playstation-name-generator": ("PlayStation Name Generator", "PSN Online ID ideas & checker", m_gamepad, K_USE),
   "usecase-fortnite-name-generator": ("Fortnite Name Generator", "Stylish Epic Games names, 3-16 char checker", m_gamepad, K_USE),
   "usecase-pubg-name-generator": ("PUBG Name Generator", "Stylish PUBG & BGMI names, 14 char checker", m_gamepad, K_USE),
   "usecase-mobile-legends-name-generator": ("Mobile Legends Name Generator", "Stylish MLBB names, 4-16 char checker", m_gamepad, K_USE),
@@ -1551,6 +1578,8 @@ PAGES = {
           label="zarif ve akıcı"), K_CAT),
   "tr-kalin-yazi": ("Kalın Yazı", "Kalın font kopyala yapıştır",
         P(m_typo, sample="Bold", weight="800", size=80, label="kalın ve net"), K_CAT),
+  "tr-alti-cizili-yazi": ("Altı Çizili Yazı", "Altı çizili font kopyala yapıştır",
+        P(m_typo, sample="Çizili", size=64, deco="underline", label="vurgulu ve net"), K_CAT),
   "tr-instagram-yazi-tipi": ("Instagram Yazı Tipi", "Bio için şekilli yazı ve semboller", m_camera, K_PLAT),
   "tr-snapchat-yazi-tipi": ("Snapchat Yazı Tipi", "Snap ve görünen ad için şekilli yazı", m_chat, K_PLAT),
   "fr-police-d-ecriture": ("Police d'Écriture", "Polices à copier-coller",
@@ -1690,6 +1719,7 @@ PAGES = {
   "answers-do-you-need-nitro-for-discord-fonts": ("Do You Need Nitro for Fonts?", "The honest answer for Discord users", m_qa, K_ANS),
   "answers-how-to-change-roblox-username": ("Change Your Roblox Username", "The steps and the catch", m_qa, K_ANS),
   "answers-how-to-change-tiktok-username": ("Change Your TikTok Username", "How and how often you can", m_qa, K_ANS),
+  "answers-how-to-change-minecraft-username": ("Change Your Minecraft Username", "Java vs. Bedrock, free vs. paid", m_qa, K_ANS),
   "answers-how-to-type-kaomoji": ("How to Type Kaomoji", "On Windows, iPhone, Android & Mac", m_kaomoji, K_ANS),
   "answers-is-linkedin-bold-text-safe": ("Is LinkedIn Bold Text Safe?", "Accessibility and reach, explained", m_qa, K_ANS),
   "answers-what-does-o7-mean": ("What Does o7 Mean?", "The saluting text face, explained", m_kaomoji, K_ANS),
@@ -1838,6 +1868,14 @@ PAGES = {
         glyphs("❖", "⟦", "⟧", "✦", "❝"), K_LIB),
   "library-aesthetic-symbols": ("Aesthetic Symbols", "Soft, decorative Unicode accents",
         glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "ar-library-aesthetic-symbols": ("رموز جمالية", "لمسات يونيكود ناعمة وزخرفية",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "pl-library-symbole-estetyczne": ("Symbole estetyczne", "Delikatne ozdobniki Unicode",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "ru-library-esteticheskie-simvoly": ("Эстетические символы", "Мягкие декоративные знаки Unicode",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "th-library-aesthetic-symbols": ("สัญลักษณ์ Aesthetic", "ตัวตกแต่ง Unicode แนวนุ่มนวล",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
   "library-angry-kaomoji": ("Angry Kaomoji", "Mad, raging text faces", m_kaomoji, K_LIB),
   "zh-tw-library-cat-kaomoji": ("貓咪顏文字", "可愛貓咪臉文字", m_kaomoji, K_LIB),
   "zh-tw-library-crying-kaomoji": ("哭泣顏文字", "傷心流淚臉文字", m_kaomoji, K_LIB),
@@ -1869,6 +1907,16 @@ PAGES = {
   "library-bracket-symbols": ("Brackets, Braces & Parentheses", "Every enclosing pair",
         glyphs("⟦", "⟧", "⟨", "⟩", "❲"), K_LIB),
   "library-bullet-point-symbols": ("Bullet Point Symbols", "Lead every list with style",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "tr-library-madde-imi-sembolleri": ("Madde İmi Sembolleri", "Listelerine tarz kat",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "it-library-simboli-punto-elenco": ("Simboli Punto Elenco", "Dai stile a ogni lista",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "ja-library-bullet-point-symbols": ("箇条書き記号", "リストにスタイルを",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "ru-library-markery-spiska": ("Маркеры для списка", "Стиль для каждого списка",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "th-library-bullet-point-symbols": ("สัญลักษณ์จุดหัวข้อ", "เพิ่มสไตล์ให้ทุกลิสต์",
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   "library-bunny-kaomoji": ("Bunny Kaomoji", "Cute rabbit text faces", m_kaomoji, K_LIB),
   "library-card-suit-symbols": ("Card Suit Symbols", "Spades, hearts, diamonds, clubs",
@@ -2066,6 +2114,19 @@ PAGES = {
   "library-html-entities": ("HTML Entities", "Named and numeric character codes",
         glyphs("&", "<", ">", "§", "©"), K_LIB),
   "library-invisible-character": ("Invisible Character", "Blank space that pastes anywhere",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  # root-level invisible-character/blank-space cluster translations (ar/ko/ja/ru/th, 2026-07-30)
+  # — no "-library-" segment since these pages live at locale root, matching
+  # slug_for(path)'s directory-path convention (e.g. it-testo-invisibile above).
+  "ar-nas-ghayr-marii": ("نص غير مرئي", "مسافة فارغة تُلصق في أي مكان",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "ko-bin-kan-munja": ("빈칸 문자", "어디에든 붙여넣는 투명 공백",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "ja-kuuhaku-moji": ("空白文字", "どこにでも貼り付けられる空白",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "ru-nevidimyy-tekst": ("Невидимый Текст", "Пустое место, которое вставляется где угодно",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "th-khokhwam-long-hon": ("ข้อความล่องหน", "ช่องว่างที่วางได้ทุกที่",
         glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
   "library-ipa-phonetic-symbols": ("IPA Phonetic Symbols", "Sounds of every language",
         glyphs("ə", "ʃ", "θ", "ʒ", "ŋ"), K_LIB),
@@ -2369,11 +2430,21 @@ PAGES = {
   "ko-library-alt-kodeu": ("알트 코드", "닉네임 꾸미기 기호와 전체 목록", m_block, K_LIB),
   "id-library-kode-alt": ("Kode Alt", "Daftar lengkap kode simbol keyboard", m_block, K_LIB),
   "es-library-codigos-alt": ("Códigos Alt", "Lista completa de símbolos del teclado", m_block, K_LIB),
+
+  # ---- 2026-07-30: ar + th alt-codes ----
+  "ar-library-alt-codes": ("أكواد Alt", "القائمة الكاملة لرموز لوحة المفاتيح", m_block, K_LIB),
+  "th-library-alt-codes": ("Alt Code ครบชุด", "พิมพ์สัญลักษณ์ด้วยรหัสตัวเลข", m_block, K_LIB),
   # Library symbol batches: 5 new locale pages
   "th-library-discord-symbols": ("สัญลักษณ์ Discord", "คัดลอกวางสำหรับชื่อผู้ใช้และไบโอ", m_block, K_LIB),
+  "th-library-greek-letter-symbols": ("รวมอักษรกรีก", "ตั้งแต่อัลฟาถึงโอเมกา คัดลอกได้ทันที",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
+  "th-library-heart-symbols": ("สัญลักษณ์หัวใจ", "อิโมจิหัวใจทุกสี คัดลอกวางได้เลย",
+        glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB),
   "ms-library-simbol-roblox": ("Simbol Roblox", "Salin & tampal untuk nama paparan", m_block, K_LIB),
   "ar-library-y2k-symbols": ("رموز Y2K", "زخارف سايبر للنسخ واللصق", m_block, K_LIB),
   "ru-library-simvoly-y2k": ("Символы Y2K", "Киберэстетика для копирования", m_block, K_LIB),
+  "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
   # Printables: 5 new locale hub pages
   "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
@@ -2495,6 +2566,10 @@ PAGES.update({
 "answers-why-wont-discord-accept-fancy-username": ("Why Won't Discord Accept My Username?", "Usernames are ASCII-only; display names aren't", m_qa, K_ANS),
 "answers-why-wont-instagram-accept-my-fancy-username": ("Why Won't Instagram Accept My Username?", "Handles are ASCII-only — style your Name instead", m_qa, K_ANS),
 "events": ("Holiday & Event Text Generators", "Fonts, emoji, and phrases for every calendar holiday", m_grid, K_USE),
+"events-ramadan": ("Ramadan Text & Symbol Generator", "Crescent, lantern, and Ramadan Kareem greetings", m_crescent, K_USE),
+"events-st-patricks-day": ("St Patrick's Day Fonts & Symbols", "Shamrock, clover, and Irish blessing phrases", m_clover, K_USE),
+"events-july-4th": ("4th of July Fonts & Emoji Generator", "Fireworks, flags, and Independence Day captions", m_firework, K_USE),
+"events-graduation": ("Graduation Text & Symbol Generator", "Cap, scroll, and congratulations messages", m_gradcap, K_USE),
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
@@ -2689,6 +2764,42 @@ PAGES.update({
 "updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
 })
+
+# ---- 2026-07-30: th/library/star-symbols translation ----
+PAGES["th-library-star-symbols"] = (
+    "สัญลักษณ์ดาว ★ ☆ ✦", "รวมดาว ดอกจัน และอีโมจิดาวทุกแบบ",
+    glyphs("★", "☆", "✦", "✧", "✩"), K_LIB)
+
+# ---- 2026-07-30: library/math-symbols translations (fr, it, ja, ru, th) ----
+PAGES["fr-library-symboles-mathematiques"] = (
+    "Symboles Mathématiques", "Opérateurs, ensembles et grec",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["it-library-simboli-matematici"] = (
+    "Simboli Matematici", "Operatori, insiemi e greco",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["ja-library-math-symbols"] = (
+    "数学記号", "演算子・集合・ギリシャ文字",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["ru-library-matematicheskie-simvoly"] = (
+    "Математические символы", "Операторы, множества и греческий алфавит",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["th-library-math-symbols"] = (
+    "สัญลักษณ์คณิตศาสตร์", "ตัวดำเนินการ เซต และอักษรกรีก",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+
+# ---- 2026-07-30: library/arrow-symbols translations (it, pl, ru, th) ----
+PAGES["it-library-simboli-freccia"] = (
+    "Simboli Freccia", "Frecce dritte, doppie e curve",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["pl-library-symbole-strzalek"] = (
+    "Symbole Strzałek", "Strzałki proste, podwójne i zakrzywione",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["ru-library-strelki"] = (
+    "Стрелки", "Простые, двойные и изогнутые стрелки",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["th-library-arrow-symbols"] = (
+    "สัญลักษณ์ลูกศร", "ลูกศรตรง คู่ และโค้งทุกแบบ",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
 
 
 def main():
