@@ -1,0 +1,336 @@
+{
+  "slug": "simboli-scacchi",
+  "lang": "it",
+  "title": "Simboli degli Scacchi: Copia e Incolla i Pezzi ♔ ♛",
+  "meta_description": "Sfoglia e copia i simboli Unicode dei pezzi degli scacchi, delle caselle e della notazione. Clicca un simbolo per copiarlo subito.",
+  "breadcrumb": "Simboli degli Scacchi",
+  "hero_h1": "Simboli degli Scacchi",
+  "hero_tagline": "Una raccolta di riferimento dei simboli Unicode dei pezzi degli scacchi, delle caselle e della notazione. Clicca un simbolo per copiarlo subito.",
+  "intro": "Questa raccolta contiene i simboli Unicode dei pezzi degli scacchi — re, donna, torre, alfiere, cavallo e pedone, sia bianchi sia neri — insieme alle caselle della scacchiera e ai segni della notazione algebrica. I simboli sono organizzati per colore del pezzo e per tipo d'uso.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/it/library/simboli-scacchi/",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "library_url": "https://ultratextgen.com/it/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/schach-symbole/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-xadrez/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/chess-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-ajedrez/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-echecs/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-catur/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-scacchi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/chess-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chess-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/schaaksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-szachowe/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/chess-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/satranc-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "Pezzi bianchi",
+      "h2": "Pezzi Bianchi",
+      "intro": "I sei pezzi bianchi standard in Unicode: re, donna, torre, alfiere, cavallo e pedone.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "Re bianco"
+        },
+        {
+          "char": "♕",
+          "label": "Donna bianca"
+        },
+        {
+          "char": "♖",
+          "label": "Torre bianca"
+        },
+        {
+          "char": "♗",
+          "label": "Alfiere bianco"
+        },
+        {
+          "char": "♘",
+          "label": "Cavallo bianco"
+        },
+        {
+          "char": "♙",
+          "label": "Pedone bianco"
+        }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "Pezzi neri",
+      "h2": "Pezzi Neri",
+      "intro": "I sei pezzi neri standard in Unicode, nello stesso ordine.",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "Re nero"
+        },
+        {
+          "char": "♛",
+          "label": "Donna nera"
+        },
+        {
+          "char": "♜",
+          "label": "Torre nera"
+        },
+        {
+          "char": "♝",
+          "label": "Alfiere nero"
+        },
+        {
+          "char": "♞",
+          "label": "Cavallo nero"
+        },
+        {
+          "char": "♟",
+          "label": "Pedone nero"
+        }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "Scacchiera",
+      "h2": "Caselle della Scacchiera e Simboli di Gioco",
+      "intro": "Caratteri di casella in varie dimensioni per rappresentare una scacchiera.",
+      "symbols": [
+        {
+          "char": "⬜",
+          "label": "Casella bianca"
+        },
+        {
+          "char": "⬛",
+          "label": "Casella nera"
+        },
+        {
+          "char": "▪",
+          "label": "Casella nera piccola"
+        },
+        {
+          "char": "▫",
+          "label": "Casella bianca piccola"
+        },
+        {
+          "char": "◻",
+          "label": "Casella bianca media"
+        },
+        {
+          "char": "◼",
+          "label": "Casella nera media"
+        }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "Pezzi estesi",
+      "h2": "Simboli Estesi degli Scacchi",
+      "intro": "Pezzi di scacchi eterodossi e simboli di notazione dal blocco Unicode degli scacchi, inclusi i pezzi neutri e le varianti ruotate.",
+      "symbols": [
+        {
+          "char": "🨀",
+          "label": "Re neutro"
+        },
+        {
+          "char": "🨁",
+          "label": "Donna neutra"
+        },
+        {
+          "char": "🨂",
+          "label": "Torre neutra"
+        },
+        {
+          "char": "🨃",
+          "label": "Alfiere neutro"
+        },
+        {
+          "char": "🨄",
+          "label": "Cavallo neutro"
+        },
+        {
+          "char": "🨅",
+          "label": "Pedone neutro"
+        },
+        {
+          "char": "🨆",
+          "label": "Cavallo bianco ruotato di 45°"
+        },
+        {
+          "char": "🨇",
+          "label": "Cavallo nero ruotato di 45°"
+        },
+        {
+          "char": "🨈",
+          "label": "Cavallo neutro ruotato di 45°"
+        },
+        {
+          "char": "🨉",
+          "label": "Re bianco ruotato di 90°"
+        },
+        {
+          "char": "🨊",
+          "label": "Donna bianca ruotata di 90°"
+        },
+        {
+          "char": "🨋",
+          "label": "Torre bianca ruotata di 90°"
+        },
+        {
+          "char": "🨌",
+          "label": "Alfiere bianco ruotato di 90°"
+        },
+        {
+          "char": "🨍",
+          "label": "Cavallo bianco ruotato di 90°"
+        },
+        {
+          "char": "🨎",
+          "label": "Pedone bianco ruotato di 90°"
+        }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "Notazione",
+      "h2": "Simboli di Notazione e Annotazione",
+      "intro": "I segni usati nella notazione per registrare scacchi, catture e la qualità di una mossa.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "Cattura"
+        },
+        {
+          "char": "+",
+          "label": "Scacco"
+        },
+        {
+          "char": "#",
+          "label": "Scacco matto"
+        },
+        {
+          "char": "‡",
+          "label": "Matto"
+        },
+        {
+          "char": "!",
+          "label": "Buona mossa"
+        },
+        {
+          "char": "!!",
+          "label": "Mossa brillante"
+        },
+        {
+          "char": "?",
+          "label": "Errore"
+        },
+        {
+          "char": "??",
+          "label": "Errore grave"
+        },
+        {
+          "char": "!?",
+          "label": "Mossa interessante"
+        },
+        {
+          "char": "?!",
+          "label": "Mossa dubbia"
+        },
+        {
+          "char": "=",
+          "label": "Posizione pari"
+        },
+        {
+          "char": "±",
+          "label": "Vantaggio del bianco"
+        },
+        {
+          "char": "∓",
+          "label": "Vantaggio del nero"
+        },
+        {
+          "char": "⩲",
+          "label": "Lieve vantaggio"
+        }
+      ]
+    }
+  ],
+  "cta": "Usa UltraTextGen per convertire il testo normale in grassetto, corsivo, calligrafico e oltre 100 altri stili di font Unicode — gratis e immediato.",
+  "related": [
+    {
+      "href": "/it/library/simboli-stella/",
+      "title": "Simboli Stella",
+      "desc": "Stelle, asterischi e scintillii da copiare."
+    },
+    {
+      "href": "/it/symbol/simbolo-pedone/",
+      "title": "Simbolo del Pedone (♟)",
+      "desc": "Origine, significato e uso del simbolo del pedone."
+    },
+    {
+      "href": "/it/library/simboli/",
+      "title": "Simboli Estetici",
+      "desc": "Caratteri Unicode estetici per bio e didascalie."
+    },
+    {
+      "href": "/it/library/simboli-matematici/",
+      "title": "Simboli Matematici",
+      "desc": "Più-meno, moltiplicazione, divisione, radice e infinito."
+    }
+  ]
+}

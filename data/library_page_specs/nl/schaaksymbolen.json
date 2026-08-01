@@ -1,0 +1,336 @@
+{
+  "slug": "schaaksymbolen",
+  "lang": "nl",
+  "title": "Schaaksymbolen: Kopiëren en Plakken Schaakstukken ♔ ♛",
+  "meta_description": "Blader door Unicode-symbolen voor schaakstukken, bordvakjes en notatie en kopieer ze. Klik op een symbool om het meteen te kopiëren.",
+  "breadcrumb": "Schaaksymbolen",
+  "hero_h1": "Schaaksymbolen",
+  "hero_tagline": "Een naslagverzameling van Unicode-symbolen voor schaakstukken, bordvakjes en notatie. Klik op een symbool om het meteen te kopiëren.",
+  "intro": "Deze bibliotheek bevat de Unicode-symbolen voor schaakstukken — koning, dame, toren, loper, paard en pion, in wit en zwart — plus de vakjes van het bord en de tekens uit de algebraïsche notatie. De symbolen zijn geordend op kleur van het stuk en op gebruik.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/nl/library/schaaksymbolen/",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/schach-symbole/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-xadrez/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/chess-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-ajedrez/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-echecs/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-catur/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-scacchi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/chess-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chess-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/schaaksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-szachowe/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/chess-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/satranc-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "Witte stukken",
+      "h2": "Witte Schaakstukken",
+      "intro": "De zes standaard witte (open) schaakstukken in Unicode: koning, dame, toren, loper, paard en pion.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "Witte koning"
+        },
+        {
+          "char": "♕",
+          "label": "Witte dame"
+        },
+        {
+          "char": "♖",
+          "label": "Witte toren"
+        },
+        {
+          "char": "♗",
+          "label": "Witte loper"
+        },
+        {
+          "char": "♘",
+          "label": "Witte paard"
+        },
+        {
+          "char": "♙",
+          "label": "Witte pion"
+        }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "Zwarte stukken",
+      "h2": "Zwarte Schaakstukken",
+      "intro": "De zes standaard zwarte (gevulde) schaakstukken in Unicode, in dezelfde volgorde.",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "Zwarte koning"
+        },
+        {
+          "char": "♛",
+          "label": "Zwarte dame"
+        },
+        {
+          "char": "♜",
+          "label": "Zwarte toren"
+        },
+        {
+          "char": "♝",
+          "label": "Zwarte loper"
+        },
+        {
+          "char": "♞",
+          "label": "Zwarte paard"
+        },
+        {
+          "char": "♟",
+          "label": "Zwarte pion"
+        }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "Bord",
+      "h2": "Bordvakjes en Speltekens",
+      "intro": "Vakjestekens in verschillende formaten om een schaakbord weer te geven.",
+      "symbols": [
+        {
+          "char": "⬜",
+          "label": "Wit vakje"
+        },
+        {
+          "char": "⬛",
+          "label": "Zwart vakje"
+        },
+        {
+          "char": "▪",
+          "label": "Klein zwart vakje"
+        },
+        {
+          "char": "▫",
+          "label": "Klein wit vakje"
+        },
+        {
+          "char": "◻",
+          "label": "Middelgroot wit vakje"
+        },
+        {
+          "char": "◼",
+          "label": "Middelgroot zwart vakje"
+        }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "Uitgebreide stukken",
+      "h2": "Uitgebreide Schaaksymbolen",
+      "intro": "Sprookjesschaakstukken en notatietekens uit het Unicode-blok voor schaken, inclusief neutrale stukken en gedraaide varianten.",
+      "symbols": [
+        {
+          "char": "🨀",
+          "label": "Neutrale koning"
+        },
+        {
+          "char": "🨁",
+          "label": "Neutrale dame"
+        },
+        {
+          "char": "🨂",
+          "label": "Neutrale toren"
+        },
+        {
+          "char": "🨃",
+          "label": "Neutrale loper"
+        },
+        {
+          "char": "🨄",
+          "label": "Neutrale paard"
+        },
+        {
+          "char": "🨅",
+          "label": "Neutrale pion"
+        },
+        {
+          "char": "🨆",
+          "label": "Witte paard 45° gedraaid"
+        },
+        {
+          "char": "🨇",
+          "label": "Zwarte paard 45° gedraaid"
+        },
+        {
+          "char": "🨈",
+          "label": "Neutrale paard 45° gedraaid"
+        },
+        {
+          "char": "🨉",
+          "label": "Witte koning 90° gedraaid"
+        },
+        {
+          "char": "🨊",
+          "label": "Witte dame 90° gedraaid"
+        },
+        {
+          "char": "🨋",
+          "label": "Witte toren 90° gedraaid"
+        },
+        {
+          "char": "🨌",
+          "label": "Witte loper 90° gedraaid"
+        },
+        {
+          "char": "🨍",
+          "label": "Witte paard 90° gedraaid"
+        },
+        {
+          "char": "🨎",
+          "label": "Witte pion 90° gedraaid"
+        }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "Notatie",
+      "h2": "Notatie- en Annotatietekens",
+      "intro": "De tekens die in de notatie worden gebruikt voor schaak, slaan en de kwaliteit van een zet.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "Slaan"
+        },
+        {
+          "char": "+",
+          "label": "Schaak"
+        },
+        {
+          "char": "#",
+          "label": "Schaakmat"
+        },
+        {
+          "char": "‡",
+          "label": "Mat"
+        },
+        {
+          "char": "!",
+          "label": "Goede zet"
+        },
+        {
+          "char": "!!",
+          "label": "Briljante zet"
+        },
+        {
+          "char": "?",
+          "label": "Fout"
+        },
+        {
+          "char": "??",
+          "label": "Blunder"
+        },
+        {
+          "char": "!?",
+          "label": "Interessante zet"
+        },
+        {
+          "char": "?!",
+          "label": "Twijfelachtige zet"
+        },
+        {
+          "char": "=",
+          "label": "Gelijk spel"
+        },
+        {
+          "char": "±",
+          "label": "Wit staat beter"
+        },
+        {
+          "char": "∓",
+          "label": "Zwart staat beter"
+        },
+        {
+          "char": "⩲",
+          "label": "Klein voordeel"
+        }
+      ]
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om gewone tekst om te zetten naar vet, cursief, schuinschrift en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "related": [
+    {
+      "href": "/nl/library/ster-symbolen/",
+      "title": "Stersymbolen",
+      "desc": "Sterren, sterretjes en fonkeltekens om te kopiëren."
+    },
+    {
+      "href": "/nl/symbol/pion-symbool/",
+      "title": "Pionsymbool (♟)",
+      "desc": "Herkomst, betekenis en gebruik van het pionsymbool."
+    },
+    {
+      "href": "/library/aesthetic-symbols/",
+      "title": "Aesthetic Symbolen",
+      "desc": "Aesthetic Unicode-tekens voor bio's en bijschriften."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskundige Symbolen",
+      "desc": "Plus-minus, maal, gedeeld door, wortel en oneindig."
+    }
+  ]
+}

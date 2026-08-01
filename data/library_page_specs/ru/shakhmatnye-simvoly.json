@@ -1,0 +1,336 @@
+{
+  "slug": "shakhmatnye-simvoly",
+  "lang": "ru",
+  "title": "Шахматные символы: скопировать фигуры ♔ ♛",
+  "meta_description": "Смотрите и копируйте символы Unicode шахматных фигур, полей доски и знаков нотации. Нажмите на любой символ, чтобы скопировать его мгновенно.",
+  "breadcrumb": "Шахматные символы",
+  "hero_h1": "Шахматные символы",
+  "hero_tagline": "Справочная коллекция символов Unicode шахматных фигур, полей доски и нотации. Нажмите на любой символ, чтобы сразу его скопировать.",
+  "intro": "В этой библиотеке собраны символы Unicode шахматных фигур — король, ферзь, ладья, слон, конь и пешка, белые и чёрные — а также поля доски и знаки алгебраической нотации. Символы сгруппированы по цвету фигуры и назначению.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/",
+  "home_url": "https://ultratextgen.com/ru/",
+  "crumb_home": "Главная",
+  "library_url": "https://ultratextgen.com/ru/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/schach-symbole/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-xadrez/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/chess-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-ajedrez/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-echecs/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-catur/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-scacchi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/chess-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chess-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/schaaksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-szachowe/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/chess-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/satranc-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "Белые фигуры",
+      "h2": "Белые шахматные фигуры",
+      "intro": "Шесть стандартных белых (контурных) фигур в Unicode: король, ферзь, ладья, слон, конь и пешка.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "Белый король"
+        },
+        {
+          "char": "♕",
+          "label": "Белый ферзь"
+        },
+        {
+          "char": "♖",
+          "label": "Белая ладья"
+        },
+        {
+          "char": "♗",
+          "label": "Белый слон"
+        },
+        {
+          "char": "♘",
+          "label": "Белый конь"
+        },
+        {
+          "char": "♙",
+          "label": "Белая пешка"
+        }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "Чёрные фигуры",
+      "h2": "Чёрные шахматные фигуры",
+      "intro": "Шесть стандартных чёрных (закрашенных) фигур в Unicode, в том же порядке.",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "Чёрный король"
+        },
+        {
+          "char": "♛",
+          "label": "Чёрный ферзь"
+        },
+        {
+          "char": "♜",
+          "label": "Чёрная ладья"
+        },
+        {
+          "char": "♝",
+          "label": "Чёрный слон"
+        },
+        {
+          "char": "♞",
+          "label": "Чёрный конь"
+        },
+        {
+          "char": "♟",
+          "label": "Чёрная пешка"
+        }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "Доска",
+      "h2": "Поля доски и игровые символы",
+      "intro": "Символы полей разного размера для изображения шахматной доски.",
+      "symbols": [
+        {
+          "char": "⬜",
+          "label": "Белое поле"
+        },
+        {
+          "char": "⬛",
+          "label": "Чёрное поле"
+        },
+        {
+          "char": "▪",
+          "label": "Маленькое чёрное поле"
+        },
+        {
+          "char": "▫",
+          "label": "Маленькое белое поле"
+        },
+        {
+          "char": "◻",
+          "label": "Среднее белое поле"
+        },
+        {
+          "char": "◼",
+          "label": "Среднее чёрное поле"
+        }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "Расширенные фигуры",
+      "h2": "Расширенные шахматные символы",
+      "intro": "Фигуры сказочных шахмат и знаки нотации из блока шахматных символов Unicode, включая нейтральные фигуры и повёрнутые варианты.",
+      "symbols": [
+        {
+          "char": "🨀",
+          "label": "Нейтральный король"
+        },
+        {
+          "char": "🨁",
+          "label": "Нейтральный ферзь"
+        },
+        {
+          "char": "🨂",
+          "label": "Нейтральная ладья"
+        },
+        {
+          "char": "🨃",
+          "label": "Нейтральный слон"
+        },
+        {
+          "char": "🨄",
+          "label": "Нейтральный конь"
+        },
+        {
+          "char": "🨅",
+          "label": "Нейтральная пешка"
+        },
+        {
+          "char": "🨆",
+          "label": "Белый конь, поворот 45°"
+        },
+        {
+          "char": "🨇",
+          "label": "Чёрный конь, поворот 45°"
+        },
+        {
+          "char": "🨈",
+          "label": "Нейтральный конь, поворот 45°"
+        },
+        {
+          "char": "🨉",
+          "label": "Белый король, поворот 90°"
+        },
+        {
+          "char": "🨊",
+          "label": "Белый ферзь, поворот 90°"
+        },
+        {
+          "char": "🨋",
+          "label": "Белая ладья, поворот 90°"
+        },
+        {
+          "char": "🨌",
+          "label": "Белый слон, поворот 90°"
+        },
+        {
+          "char": "🨍",
+          "label": "Белый конь, поворот 90°"
+        },
+        {
+          "char": "🨎",
+          "label": "Белая пешка, поворот 90°"
+        }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "Нотация",
+      "h2": "Символы нотации и комментария",
+      "intro": "Знаки, которыми в нотации записывают шахи, взятия и оценку хода.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "Взятие"
+        },
+        {
+          "char": "+",
+          "label": "Шах"
+        },
+        {
+          "char": "#",
+          "label": "Мат"
+        },
+        {
+          "char": "‡",
+          "label": "Мат (‡)"
+        },
+        {
+          "char": "!",
+          "label": "Хороший ход"
+        },
+        {
+          "char": "!!",
+          "label": "Блестящий ход"
+        },
+        {
+          "char": "?",
+          "label": "Ошибка"
+        },
+        {
+          "char": "??",
+          "label": "Грубая ошибка"
+        },
+        {
+          "char": "!?",
+          "label": "Интересный ход"
+        },
+        {
+          "char": "?!",
+          "label": "Сомнительный ход"
+        },
+        {
+          "char": "=",
+          "label": "Равная позиция"
+        },
+        {
+          "char": "±",
+          "label": "Перевес белых"
+        },
+        {
+          "char": "∓",
+          "label": "Перевес чёрных"
+        },
+        {
+          "char": "⩲",
+          "label": "Небольшой перевес"
+        }
+      ]
+    }
+  ],
+  "cta": "Используйте UltraTextGen, чтобы превратить обычный текст в жирный, курсивный, рукописный и более 100 других стилей Unicode-шрифтов — бесплатно и мгновенно.",
+  "related": [
+    {
+      "href": "/ru/library/zvyozdochki/",
+      "title": "Символы звёзд",
+      "desc": "Звёзды, астериски и блёстки для копирования."
+    },
+    {
+      "href": "/ru/symbol/znak-peshki/",
+      "title": "Символ пешки (♟)",
+      "desc": "Происхождение, значение и использование символа пешки."
+    },
+    {
+      "href": "/ru/library/esteticheskie-simvoly/",
+      "title": "Эстетичные символы",
+      "desc": "Эстетичные символы Unicode для профиля и подписей."
+    },
+    {
+      "href": "/ru/library/matematicheskie-simvoly/",
+      "title": "Математические символы",
+      "desc": "Плюс-минус, умножение, деление, корень и бесконечность."
+    }
+  ]
+}
