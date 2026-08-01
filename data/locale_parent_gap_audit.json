@@ -351,6 +351,32 @@
       "verdict": "gate-pass",
       "evidence": "zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of library/*'s own Core tier regardless — this entry is a user-authorized override of that hold for a specific, scoped slice of library/*, not a change to zh-tw's tier or hold flag. User was told directly that zh-tw is Tier 3/hold-stub and that its one proven first-party win is narrowly the game-name vertical (per the existing zh-tw entry in this ledger and data/locale_qualification_tiers.json's zh-tw notes) before authorizing this build. Competitor-footprint instrument (piliapp.com organic positions export, db=tw, pulled 2026-07-31) cleared for three specific library/* collection pages: tw.piliapp.com/symbol/arrow/ (~27,908/mo modeled traffic, 115 ranking keywords), tw.piliapp.com/symbol/number/ (~20,376/mo, 214 keywords), tw.piliapp.com/symbol/star/ (~16,577/mo, 88 keywords) — mapping to EN parents library/arrow-symbols/, library/number-symbols/, library/star-symbols/. No direct TW keyword-volume pull was run against the arrow/number/star terms specifically (the broad-match exports supplied this session were seeded on \"emoji\", \"字體\"/font, \"fb\", and \"表情符號\", not \"箭頭\"/\"數字\"/\"星星\"), so keywordVolumeInLocaleMonthly is left null rather than estimated — the competitor-footprint instrument alone is what's clearing the gated-tail threshold here. Scope is limited to these three library/* collection slugs; this is not a blanket library/* mirror decision for zh-tw (the existing zh-tw entry's \"deepen the game-name vertical, not blanket Core mirroring\" guidance still stands for the rest of library/* and all of symbol/*).",
       "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 105480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers zh-tw/ig-ziti/, the translation of the EN instagram/ platform page (a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null / tier \"unclassified\"; the Tier-3-locale check still fires, hence this entry). User-authorized override of zh-tw's Tier 3 hold-stub default, presented before the decision, per the vi-override template — zh-tw's tier and hold flag left untouched. Keyword instrument: Semrush db=tw broad-match export (pulled 2026-07-31, seed \"字體\"), IG/Instagram cluster = 105,480/mo normalized, led by \"ig 字體\" 74,000/mo KD 31 — larger than \"英文字體\" 27,100/mo, the term the existing zh-tw/yingwen-ziti/ page targets. Competitor instrument: tw.piliapp.com/instagram/fonts/ = ~173,913/mo modeled traffic across 360 ranking keywords, its 2nd-highest-traffic page site-wide, top keyword \"ig 字體\". zh-tw had no Instagram page of any kind before this build. Also records the Rule 3 de-confliction applied in the same change: zh-tw/yingwen-ziti/ had an IG-targeting FAQ answer, now reduced to a pointer link at the new page.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 46570,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers zh-tw/shufa-ziti/ (translation of category/cursive-fonts/) and zh-tw/keai-ziti/ (translation of category/cute-fonts/). TWO overrides recorded together, both user-authorized after being presented: (1) zh-tw is Tier 3 hold-stub, same override shape as the entries above; (2) category/* is scriptIndependent:false — the registry's standing guidance is that Latin-transform category pages do NOT mirror into CJK locales, and that a script-appropriate Core subset be substituted instead. That second default is overridden here on direct evidence that the TW demand IS for Latin-script transforms, not Chinese-script ones: the top TW keyword on tw.piliapp.com/cool-text/cursive/ is \"英文草寫\" — literally \"English cursive\" — and that page draws ~19,390/mo modeled traffic across 162 keywords. The same reasoning already underpins the ratified zh-tw/yingwen-ziti/ local-only page (a CJK-script-user tool for decorating Latin text). Both new pages state the Latin-only scope explicitly in their own copy rather than implying Chinese glyphs transform. Keyword instrument (Semrush db=tw broad-match, 2026-07-31): cursive cluster 書法 19,350/mo + 手寫 17,500/mo (head terms 書法字體 8,100 KD 23, 手寫字體 6,600 KD 32); cute cluster 9,720/mo (head term 可愛字體 3,600 KD 24) — 46,570/mo combined. Competitor instrument for the cute page is weaker and recorded as such: piliapp has no dedicated cute-font page, ranking its IG page #1 for 可愛字體 instead.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
     }
   ]
 }
