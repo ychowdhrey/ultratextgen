@@ -1,0 +1,182 @@
+{
+  "slug": "micro-sign",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "微符號 µ：複製貼上、微米微克與輸入方式 | UltraTextGen",
+  "meta_description": "點一下複製微符號 µ，附 Alt 代碼、HTML 寫法，以及微米 µm、微克 µg 的正確用法。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/micro-sign/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "微符號",
+  "hero_h1": "微符號（µ）",
+  "hero_tagline": "µ 代表百萬分之一——點一下就複製。",
+  "intro": "µ（U+00B5，MICRO SIGN）是 SI 詞頭「微」，代表百萬分之一（10⁻⁶）：µm 是微米、µg 是微克、µs 是微秒。這裡有一個常見陷阱——µ（MICRO SIGN，U+00B5）和希臘小寫字母 μ（GREEK SMALL LETTER MU，U+03BC）外形幾乎一樣但碼位不同。多數情況兩者都能顯示，但在需要精確比對或程式處理時務必分清楚。輸入方式：Windows 按住 Alt 再輸入 0181，Mac 用 Option+M。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/micro-sign/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-mikro/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-mikro/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-micro/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/mikrozeichen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/mikro-isareti/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-micro/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-de-micro/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/signo-de-micro/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/maikuro-kigou/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/sanyalak-maikhro/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/znak-mikro/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/microteken/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/micro-sign/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/maikeuro-giho/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-almikro/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/micro-sign/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/micro-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/micro-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "micro-sign-symbol",
+      "label": "微符號",
+      "h2": "微符號",
+      "intro": "微符號與外形相同的希臘字母 mu。",
+      "symbols": [
+        {
+          "char": "µ",
+          "label": "微符號（U+00B5）"
+        },
+        {
+          "char": "μ",
+          "label": "希臘小寫 mu（U+03BC）——外形相同、碼位不同"
+        }
+      ]
+    },
+    {
+      "id": "si-prefixes",
+      "label": "其他 SI 詞頭",
+      "h2": "其他 SI 詞頭",
+      "intro": "常與微並用的量級詞頭。",
+      "symbols": [
+        {
+          "char": "n",
+          "label": "奈（10⁻⁹）"
+        },
+        {
+          "char": "m",
+          "label": "毫（10⁻³）"
+        },
+        {
+          "char": "k",
+          "label": "千（10³）"
+        },
+        {
+          "char": "Ω",
+          "label": "歐姆"
+        }
+      ]
+    },
+    {
+      "id": "units",
+      "label": "常見單位寫法",
+      "h2": "常見單位寫法",
+      "intro": "微符號最常出現的單位組合。",
+      "symbols": [
+        {
+          "char": "µm",
+          "label": "微米"
+        },
+        {
+          "char": "µg",
+          "label": "微克"
+        },
+        {
+          "char": "µs",
+          "label": "微秒"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/omega-symbol/",
+      "title": "歐米加符號（Ω）",
+      "desc": "歐姆與希臘字母 omega。"
+    },
+    {
+      "href": "/zh-tw/symbol/delta-symbol/",
+      "title": "德爾塔符號（Δ）",
+      "desc": "變化量與希臘字母 delta。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    },
+    {
+      "href": "/zh-tw/library/facebook-fuhao/",
+      "title": "Facebook（FB）符號大全",
+      "desc": "貼文與個人簡介可用的符號整理。"
+    }
+  ]
+}

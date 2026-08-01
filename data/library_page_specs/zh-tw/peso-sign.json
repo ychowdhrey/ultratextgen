@@ -1,0 +1,182 @@
+{
+  "slug": "peso-sign",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "披索符號 ₱：複製貼上與輸入方式 | UltraTextGen",
+  "meta_description": "點一下複製菲律賓披索符號 ₱，附 HTML 寫法與其他常見貨幣符號。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/peso-sign/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "披索符號",
+  "hero_h1": "披索符號（₱）",
+  "hero_tagline": "₱ 代表什麼、怎麼打出來——點一下就複製。",
+  "intro": "₱（U+20B1，PESO SIGN）是菲律賓披索的符號，字形是大寫 P 加上兩條橫線。要注意的是：拉丁美洲多數國家的披索（墨西哥、阿根廷、智利等）習慣直接用 $ 或 MX$ 表示，並不使用 ₱——這個字元實務上幾乎專屬於菲律賓。台灣使用者最常在菲律賓旅遊、遊學和外派記帳時需要它。HTML 寫成 &#8369;。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-bizo/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-peso/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-peso/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/peso-kigou/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/khreuangmai-peso/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-de-peso/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/peso-isareti/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-peso/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/peso-zeichen/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/signo-de-peso/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-peso/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/pesoteken/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/peso-sign/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/znak-peso/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/peso-giho/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/peso-sign/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/peso-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/peso-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "peso-sign-symbol",
+      "label": "披索符號",
+      "h2": "披索符號",
+      "intro": "菲律賓披索符號本體。",
+      "symbols": [
+        {
+          "char": "₱",
+          "label": "披索符號（U+20B1）"
+        },
+        {
+          "char": "$",
+          "label": "披索（拉美慣用寫法）"
+        }
+      ]
+    },
+    {
+      "id": "other-currencies",
+      "label": "其他常見貨幣符號",
+      "h2": "其他常見貨幣符號",
+      "intro": "東南亞旅遊比價常見的貨幣符號。",
+      "symbols": [
+        {
+          "char": "¥",
+          "label": "日圓／人民幣"
+        },
+        {
+          "char": "₩",
+          "label": "韓元"
+        },
+        {
+          "char": "€",
+          "label": "歐元"
+        },
+        {
+          "char": "$",
+          "label": "美元"
+        }
+      ]
+    },
+    {
+      "id": "currency-marks",
+      "label": "貨幣相關標記",
+      "h2": "貨幣相關標記",
+      "intro": "與金額並用的其他符號。",
+      "symbols": [
+        {
+          "char": "¢",
+          "label": "分（cent）"
+        },
+        {
+          "char": "₿",
+          "label": "比特幣"
+        },
+        {
+          "char": "₹",
+          "label": "印度盧比"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/euro-sign/",
+      "title": "歐元符號（€）",
+      "desc": "歐盟歐元的貨幣符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/won-sign/",
+      "title": "韓元符號（₩）",
+      "desc": "韓國韓元的貨幣符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/yen-sign/",
+      "title": "日圓符號（¥）",
+      "desc": "日圓與人民幣共用的貨幣符號。"
+    },
+    {
+      "href": "/zh-tw/library/facebook-fuhao/",
+      "title": "Facebook（FB）符號大全",
+      "desc": "貼文與個人簡介可用的符號整理。"
+    }
+  ]
+}

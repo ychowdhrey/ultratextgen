@@ -377,6 +377,19 @@
       "verdict": "gate-pass",
       "evidence": "Covers zh-tw/shufa-ziti/ (translation of category/cursive-fonts/) and zh-tw/keai-ziti/ (translation of category/cute-fonts/). TWO overrides recorded together, both user-authorized after being presented: (1) zh-tw is Tier 3 hold-stub, same override shape as the entries above; (2) category/* is scriptIndependent:false — the registry's standing guidance is that Latin-transform category pages do NOT mirror into CJK locales, and that a script-appropriate Core subset be substituted instead. That second default is overridden here on direct evidence that the TW demand IS for Latin-script transforms, not Chinese-script ones: the top TW keyword on tw.piliapp.com/cool-text/cursive/ is \"英文草寫\" — literally \"English cursive\" — and that page draws ~19,390/mo modeled traffic across 162 keywords. The same reasoning already underpins the ratified zh-tw/yingwen-ziti/ local-only page (a CJK-script-user tool for decorating Latin text). Both new pages state the Latin-only scope explicitly in their own copy rather than implying Chinese glyphs transform. Keyword instrument (Semrush db=tw broad-match, 2026-07-31): cursive cluster 書法 19,350/mo + 手寫 17,500/mo (head terms 書法字體 8,100 KD 23, 手寫字體 6,600 KD 32); cute cluster 9,720/mo (head term 可愛字體 3,600 KD 24) — 46,570/mo combined. Competitor instrument for the cute page is weaker and recorded as such: piliapp has no dedicated cute-font page, ranking its IG page #1 for 可愛字體 instead.",
       "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-08-01",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 238540,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 27 zh-tw/symbol/* translations (currency 7, temperature/measurement 5, math 5, Greek 7, legal/editorial 3) plus the zh-tw/symbol/ pillar index that carries their breadcrumbs. zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of symbol/*'s own Core tier; this is a user-authorized override of that hold for this specific batch, not a change to zh-tw's tier or hold flag (both left untouched), same shape as the vi override template and as the three earlier zh-tw entries above. The hold reasoning and the standing Tier-3 default were presented to the user before they authorized the build. Competitor instrument (piliapp.com organic-positions export, db=tw, pulled 2026-07-31): 82 tw.piliapp.com/symbols/<x>/ single-item pages were mapped against UltraTextGen's 106 EN symbol/ parents; 27 matched a live EN parent and together draw ~37,965/mo modeled TW traffic — led by celsius 6,095/mo, plus-minus 4,311, degree 3,985, infinity 3,363, alpha 3,241, multiplication 2,772, not-equal 2,251, yen 1,973, omega 1,627, euro 1,211. Keyword instrument: 238,540/mo is the SUM of each matched page's single top TW keyword volume (度 c 14,800; alpha 18,100; 正負 符號 12,100; 日 幣 符號 12,100; 歐元 符號 12,100; 乘法 符號 8,100; 無限 6,600; 不 等於 符號 6,600; 歐姆 符號 5,400; +18 more). Recorded as a sum of per-slug head terms, NOT a modeled cluster total and NOT a full broad-match pull for each slug — it is an under-count of the clusters and an over-count of any single page's realistic ceiling; treat it as an order-of-magnitude floor on demand, not a forecast. zh-tw had 0 of 106 symbol/ parents translated before this build. The remaining 55 piliapp single-item pages (~15,845/mo TW traffic) have no EN parent and are deliberately NOT built here — they are recorded as an opportunity backlog in the private research repo instead, per CLAUDE.md's English-Parent Rule.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
     }
   ]
 }
