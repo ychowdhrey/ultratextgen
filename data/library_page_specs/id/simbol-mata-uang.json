@@ -1,0 +1,439 @@
+{
+  "slug": "simbol-mata-uang",
+  "lang": "id",
+  "title": "Simbol Mata Uang: Salin & Tempel Lambang Uang Dunia",
+  "meta_description": "Salin dan tempel simbol mata uang, lambang uang, dan karakter finansial Unicode dari seluruh dunia. Klik simbol mana pun untuk menyalinnya seketika.",
+  "breadcrumb": "Simbol Mata Uang",
+  "hero_h1": "Simbol Mata Uang",
+  "hero_tagline": "Koleksi rujukan lambang mata uang, simbol uang, dan karakter finansial Unicode. Klik simbol mana pun untuk langsung menyalinnya.",
+  "intro": "Pustaka ini berisi simbol mata uang dunia, lambang uang regional, tanda mata uang bersejarah, dan karakter finansial Unicode terkait. Simbol dikelompokkan menurut wilayah geografis dan penggunaannya. Semuanya teks Unicode biasa, jadi bisa ditempel rapi di bio, katalog produk, spreadsheet, dan unggahan media sosial. Rupiah sendiri lazim ditulis \"Rp\" — dua huruf biasa, bukan satu karakter Unicode khusus — jadi tidak ada tombol Rp di halaman ini; cukup ketik langsung. Untuk kisah lengkap satu simbol tertentu — asal-usul, kode Alt, dan cara mengetiknya — empat di antaranya punya halaman sendiri: dolar ($), euro (€), sen (¢), dan bitcoin (₿).",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/id/library/simbol-mata-uang/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/currency-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/currency-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-moneda/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-euro/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/hwapye-giho/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/euroteken/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/para-birimi-sembolleri/"
+    },
+    {
+      "lang": "sv",
+      "href": "https://ultratextgen.com/sv/library/valuta-symboler/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/waehrungssymbole/"
+    },
+    {
+      "lang": "da",
+      "href": "https://ultratextgen.com/da/library/valuta-symboler/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-monetaires/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-mata-uang/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/currency-symbols/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-walut/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-moeda/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/simvoly-valyut/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/currency-symbols/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/currency-symbols/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/id/",
+  "crumb_home": "Beranda",
+  "library_url": "https://ultratextgen.com/id/library/",
+  "sections": [
+    {
+      "id": "major-currencies",
+      "label": "Mata Uang Utama",
+      "h2": "Mata Uang Utama Dunia",
+      "intro": "Simbol mata uang yang paling banyak diperdagangkan dan paling dikenal di dunia.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Dolar"
+        },
+        {
+          "char": "€",
+          "label": "Euro"
+        },
+        {
+          "char": "£",
+          "label": "Pound"
+        },
+        {
+          "char": "¥",
+          "label": "Yen / Yuan"
+        },
+        {
+          "char": "₹",
+          "label": "Rupee India"
+        },
+        {
+          "char": "₽",
+          "label": "Rubel"
+        },
+        {
+          "char": "₩",
+          "label": "Won"
+        },
+        {
+          "char": "₿",
+          "label": "Bitcoin"
+        }
+      ]
+    },
+    {
+      "id": "european-currencies",
+      "label": "Eropa",
+      "h2": "Simbol Mata Uang Eropa",
+      "intro": "Lambang mata uang negara-negara Eropa, baik yang berlaku maupun bersejarah.",
+      "symbols": [
+        {
+          "char": "€",
+          "label": "Euro"
+        },
+        {
+          "char": "£",
+          "label": "Pound"
+        },
+        {
+          "char": "₴",
+          "label": "Hryvnia"
+        },
+        {
+          "char": "₾",
+          "label": "Lari"
+        },
+        {
+          "char": "₺",
+          "label": "Lira Turki"
+        },
+        {
+          "char": "ƒ",
+          "label": "Florin"
+        },
+        {
+          "char": "₣",
+          "label": "Franc Prancis"
+        },
+        {
+          "char": "₤",
+          "label": "Lira"
+        },
+        {
+          "char": "₯",
+          "label": "Drachma"
+        },
+        {
+          "char": "₼",
+          "label": "Manat"
+        }
+      ]
+    },
+    {
+      "id": "african-currencies",
+      "label": "Afrika",
+      "h2": "Simbol Mata Uang Afrika",
+      "intro": "Lambang mata uang yang digunakan di negara-negara Afrika.",
+      "symbols": [
+        {
+          "char": "₦",
+          "label": "Naira"
+        },
+        {
+          "char": "₵",
+          "label": "Cedi"
+        }
+      ]
+    },
+    {
+      "id": "asian-currencies",
+      "label": "Asia",
+      "h2": "Simbol Mata Uang Asia",
+      "intro": "Lambang mata uang dari Asia Timur, Asia Selatan, Asia Tengah, dan Timur Tengah.",
+      "symbols": [
+        {
+          "char": "¥",
+          "label": "Yen / Yuan"
+        },
+        {
+          "char": "₹",
+          "label": "Rupee India"
+        },
+        {
+          "char": "₩",
+          "label": "Won"
+        },
+        {
+          "char": "₭",
+          "label": "Kip"
+        },
+        {
+          "char": "₮",
+          "label": "Tugrik"
+        },
+        {
+          "char": "₸",
+          "label": "Tenge"
+        },
+        {
+          "char": "₪",
+          "label": "Syekel"
+        },
+        {
+          "char": "﷼",
+          "label": "Riyal"
+        },
+        {
+          "char": "₨",
+          "label": "Lambang Rupee"
+        },
+        {
+          "char": "₫",
+          "label": "Dong"
+        },
+        {
+          "char": "৳",
+          "label": "Taka"
+        },
+        {
+          "char": "௹",
+          "label": "Rupee Tamil"
+        }
+      ]
+    },
+    {
+      "id": "americas-currencies",
+      "label": "Amerika",
+      "h2": "Simbol Mata Uang Amerika",
+      "intro": "Lambang mata uang dari Amerika Utara, Tengah, dan Selatan.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Dolar"
+        },
+        {
+          "char": "¢",
+          "label": "Sen"
+        },
+        {
+          "char": "₡",
+          "label": "Colón"
+        },
+        {
+          "char": "₲",
+          "label": "Guaraní"
+        },
+        {
+          "char": "₱",
+          "label": "Peso"
+        }
+      ]
+    },
+    {
+      "id": "historic-currencies",
+      "label": "Bersejarah",
+      "h2": "Simbol Mata Uang Bersejarah",
+      "intro": "Simbol mata uang yang sudah tidak umum dipakai atau bernilai sejarah.",
+      "symbols": [
+        {
+          "char": "₧",
+          "label": "Peseta"
+        },
+        {
+          "char": "₰",
+          "label": "Pfennig Jerman"
+        },
+        {
+          "char": "₳",
+          "label": "Austral"
+        },
+        {
+          "char": "₶",
+          "label": "Livre Tournois"
+        },
+        {
+          "char": "₷",
+          "label": "Spesmilo"
+        }
+      ]
+    },
+    {
+      "id": "financial-symbols",
+      "label": "Finansial",
+      "h2": "Simbol Finansial & Lainnya",
+      "intro": "Simbol finansial umum, tanda per mil, dan lambang kripto.",
+      "symbols": [
+        {
+          "char": "¤",
+          "label": "Lambang Mata Uang"
+        },
+        {
+          "char": "‰",
+          "label": "Per Mil"
+        },
+        {
+          "char": "‱",
+          "label": "Per Sepuluh Ribu"
+        },
+        {
+          "char": "Ξ",
+          "label": "Ethereum"
+        },
+        {
+          "char": "₠",
+          "label": "Euro-Currency"
+        }
+      ]
+    },
+    {
+      "id": "additional-currency-symbols",
+      "label": "Blok Unicode Lengkap",
+      "h2": "Sisa Blok Simbol Mata Uang Unicode",
+      "intro": "Titik kode tersisa dari blok Unicode Currency Symbols (U+20A0–U+20CF) yang belum tercantum di atas.",
+      "symbols": [
+        {
+          "char": "₢",
+          "label": "Cruzeiro"
+        },
+        {
+          "char": "₥",
+          "label": "Mill"
+        },
+        {
+          "char": "₻",
+          "label": "Mark Nordik"
+        },
+        {
+          "char": "⃀",
+          "label": "Som"
+        }
+      ]
+    },
+    {
+      "id": "cryptocurrency",
+      "label": "Kripto",
+      "h2": "Simbol Kripto & Uang Digital",
+      "intro": "Lambang yang dipakai untuk mata uang kripto utama.",
+      "symbols": [
+        {
+          "char": "₿",
+          "label": "Bitcoin"
+        },
+        {
+          "char": "Ξ",
+          "label": "Ethereum"
+        },
+        {
+          "char": "Ł",
+          "label": "Litecoin"
+        },
+        {
+          "char": "Ð",
+          "label": "Dogecoin"
+        },
+        {
+          "char": "Ɱ",
+          "label": "Monero"
+        },
+        {
+          "char": "฿",
+          "label": "Baht / Bitcoin"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Apa simbol Unicode untuk rupiah?",
+      "a": "Tidak ada. Rupiah ditulis \"Rp\" memakai huruf R dan p biasa — Unicode tidak pernah memberi rupiah satu karakter khusus seperti ₹ untuk rupee India atau ₩ untuk won. Jadi cukup ketik Rp langsung; tidak perlu disalin dari mana pun, dan tampil benar di semua perangkat."
+    },
+    {
+      "q": "Kenapa sebagian simbol mata uang tampil sebagai kotak kosong?",
+      "a": "Kotak kosong (disebut tofu) berarti font di perangkatmu tidak memuat karakter itu. Ini paling sering terjadi pada lambang yang jarang atau baru, seperti som Kirgizstan (⃀) atau mark Nordik (₻). Simbol umum seperti $, €, £, dan ¥ didukung di mana-mana dan aman dipakai."
+    },
+    {
+      "q": "Simbol mata uang ditulis sebelum atau sesudah angka?",
+      "a": "Dalam bahasa Indonesia, lambang ditulis sebelum angka dan biasanya tanpa spasi untuk rupiah: Rp25.000. Untuk mata uang asing, penulisan mengikuti kebiasaan masing-masing, misalnya US$50 atau €12,50. Karakter Unicode-nya sama; yang berbeda hanya konvensi penulisan."
+    },
+    {
+      "q": "Apa beda ₨ dan ₹?",
+      "a": "₨ adalah lambang rupee umum yang dipakai beberapa negara (Pakistan, Sri Lanka, Nepal, Mauritius). ₹ adalah lambang khusus rupee India yang diresmikan pada 2010 dan masuk Unicode di tahun yang sama. Untuk nilai dalam rupee India, gunakan ₹."
+    }
+  ],
+  "cta": "Gunakan UltraTextGen untuk mengubah teks biasa menjadi tebal, miring, sambung, dan 100+ gaya font Unicode lainnya — gratis dan seketika.",
+  "related": [
+    {
+      "href": "/id/symbol/simbol-dolar/",
+      "title": "Simbol Dolar ($)",
+      "desc": "Asal-usul lambang dolar, kode Alt, dan cara mengetiknya."
+    },
+    {
+      "href": "/id/symbol/simbol-euro/",
+      "title": "Simbol Euro (€)",
+      "desc": "Sejarah lambang euro dan semua cara memasukkannya."
+    },
+    {
+      "href": "/id/symbol/simbol-bitcoin/",
+      "title": "Simbol Bitcoin (₿)",
+      "desc": "Lambang bitcoin, titik kode Unicode, dan dukungannya."
+    },
+    {
+      "href": "/id/symbol/simbol-sen/",
+      "title": "Simbol Sen (¢)",
+      "desc": "Lambang sen, kode Alt, dan penggunaannya."
+    },
+    {
+      "href": "/id/library/simbol-matematika/",
+      "title": "Simbol Matematika",
+      "desc": "Tanda plus-minus, kali, bagi, akar, dan tak hingga."
+    }
+  ]
+}
