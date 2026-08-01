@@ -1,0 +1,380 @@
+{
+  "slug": "music-symbols",
+  "lang": "th",
+  "title": "สัญลักษณ์ดนตรี: คัดลอกตัวโน้ตและเครื่องหมายเพลง ♪ ♫",
+  "meta_description": "เลือกและคัดลอกสัญลักษณ์โน้ตดนตรี อีโมจิเครื่องดนตรี และอักขระ Unicode ที่เกี่ยวกับเสียง คลิกที่สัญลักษณ์ใดก็ได้เพื่อคัดลอกทันที",
+  "breadcrumb": "สัญลักษณ์ดนตรี",
+  "hero_h1": "สัญลักษณ์ดนตรี",
+  "hero_tagline": "คลังอ้างอิงสัญลักษณ์โน้ตดนตรี อีโมจิเครื่องดนตรี และอักขระ Unicode ที่เกี่ยวกับเสียง คลิกที่สัญลักษณ์ใดก็ได้เพื่อคัดลอกทันที",
+  "intro": "คลังนี้รวบรวมตัวโน้ตและสัญลักษณ์ทางดนตรี อีโมจิเครื่องดนตรี และอักขระ Unicode ที่เกี่ยวกับเสียง จัดกลุ่มตามหมวดหมู่ ทั้งเครื่องหมายบันทึกโน้ต เครื่องดนตรี และปุ่มควบคุมการเล่น",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/th/library/music-symbols/",
+  "home_url": "https://ultratextgen.com/th/",
+  "crumb_home": "หน้าแรก",
+  "library_url": "https://ultratextgen.com/th/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "ตัวโน้ต",
+      "h2": "ตัวโน้ตดนตรี",
+      "intro": "สัญลักษณ์ตัวโน้ตใน Unicode และอีโมจิที่แทนตัวโน้ต",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "ตัวดำ"
+        },
+        {
+          "char": "♪",
+          "label": "ตัวเขบ็ตหนึ่งชั้น"
+        },
+        {
+          "char": "♫",
+          "label": "ตัวเขบ็ตมีคาน"
+        },
+        {
+          "char": "♬",
+          "label": "ตัวเขบ็ตสองชั้น"
+        },
+        {
+          "char": "🎵",
+          "label": "ตัวโน้ต"
+        },
+        {
+          "char": "🎶",
+          "label": "กลุ่มตัวโน้ต"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "กุญแจประจำหลัก",
+      "h2": "กุญแจประจำหลัก",
+      "intro": "กุญแจประจำหลักที่ใช้ในการบันทึกโน้ตเพลง",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "กุญแจซอล"
+        },
+        {
+          "char": "𝄡",
+          "label": "กุญแจโด"
+        },
+        {
+          "char": "𝄢",
+          "label": "กุญแจฟา"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "เครื่องหมายแปลงเสียง",
+      "h2": "เครื่องหมายแปลงเสียง",
+      "intro": "ชาร์ป แฟลต เนเชอรัล และเครื่องหมายคู่ ใช้เปลี่ยนระดับเสียงของโน้ต",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "ชาร์ป"
+        },
+        {
+          "char": "♭",
+          "label": "แฟลต"
+        },
+        {
+          "char": "♮",
+          "label": "เนเชอรัล"
+        },
+        {
+          "char": "𝄪",
+          "label": "ดับเบิลชาร์ป"
+        },
+        {
+          "char": "𝄫",
+          "label": "ดับเบิลแฟลต"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "ความดังและเครื่องหมาย",
+      "h2": "ความดังและเครื่องหมายบันทึกโน้ต",
+      "intro": "เครื่องหมายบอกความดังเบาและเครื่องหมายในการบันทึกโน้ต",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "เปียโน (เบา)"
+        },
+        {
+          "char": "𝆑",
+          "label": "ฟอร์เต (ดัง)"
+        },
+        {
+          "char": "𝄀",
+          "label": "เส้นกั้นห้อง"
+        },
+        {
+          "char": "𝄁",
+          "label": "เส้นกั้นห้องคู่"
+        },
+        {
+          "char": "𝄂",
+          "label": "เส้นจบเพลง"
+        },
+        {
+          "char": "𝄃",
+          "label": "เส้นจบเพลงกลับด้าน"
+        },
+        {
+          "char": "𝄆",
+          "label": "เครื่องหมายย้อน (เปิด)"
+        },
+        {
+          "char": "𝄇",
+          "label": "เครื่องหมายย้อน (ปิด)"
+        },
+        {
+          "char": "𝄐",
+          "label": "เฟอร์มาตา"
+        },
+        {
+          "char": "𝄑",
+          "label": "เฟอร์มาตาด้านล่าง"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "ตัวหยุด",
+      "h2": "สัญลักษณ์ตัวหยุด",
+      "intro": "เครื่องหมายตัวหยุดที่บอกช่วงเงียบในบทเพลง",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "ตัวหยุดเขบ็ตหนึ่งชั้น"
+        },
+        {
+          "char": "𝄿",
+          "label": "ตัวหยุดเขบ็ตสองชั้น"
+        },
+        {
+          "char": "𝄻",
+          "label": "ตัวหยุดขาว"
+        },
+        {
+          "char": "𝄼",
+          "label": "ตัวหยุดดำ"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "เครื่องดนตรี",
+      "h2": "อีโมจิเครื่องดนตรี",
+      "intro": "อีโมจิที่แทนเครื่องดนตรีชนิดต่าง ๆ",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "กีตาร์"
+        },
+        {
+          "char": "🎹",
+          "label": "เปียโน"
+        },
+        {
+          "char": "🎺",
+          "label": "ทรัมเป็ต"
+        },
+        {
+          "char": "🎻",
+          "label": "ไวโอลิน"
+        },
+        {
+          "char": "🎷",
+          "label": "แซกโซโฟน"
+        },
+        {
+          "char": "🥁",
+          "label": "กลอง"
+        },
+        {
+          "char": "🪕",
+          "label": "แบนโจ"
+        },
+        {
+          "char": "🪗",
+          "label": "หีบเพลงชัก"
+        },
+        {
+          "char": "🪘",
+          "label": "กลองยาว"
+        },
+        {
+          "char": "🪇",
+          "label": "มารากัส"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "เสียงและการเล่น",
+      "h2": "เสียงและการเล่น",
+      "intro": "สัญลักษณ์ที่เกี่ยวกับเสียง ลำโพง และการควบคุมเสียง",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "ไมโครโฟน"
+        },
+        {
+          "char": "🎧",
+          "label": "หูฟัง"
+        },
+        {
+          "char": "📻",
+          "label": "วิทยุ"
+        },
+        {
+          "char": "🔊",
+          "label": "ลำโพงเสียงดัง"
+        },
+        {
+          "char": "🔇",
+          "label": "ลำโพงปิดเสียง"
+        },
+        {
+          "char": "🎼",
+          "label": "โน้ตเพลง"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "ตัวแต่งไบโอ",
+      "h2": "ตัวแต่งไบโอด้วยตัวโน้ต",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "เส้นคั่นตัวโน้ต"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "ตัวโน้ตในกรอบ"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "สายตัวโน้ต"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "ตัวโน้ตนุ่มนวล"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "ตัวโน้ตประกาย"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "ตัวโน้ตคู่"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "ตัวโน้ตหัวใจ"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "ตัวโน้ตในวงเล็บ"
+        }
+      ]
+    }
+  ],
+  "cta": "ใช้ UltraTextGen แปลงข้อความธรรมดาให้เป็นตัวหนา ตัวเอียง ตัวเขียน และฟอนต์ Unicode อีกกว่า 100 แบบ — ฟรีและทันที",
+  "related": [
+    {
+      "href": "/th/library/star-symbols/",
+      "title": "สัญลักษณ์ดาว",
+      "desc": "ดาว ดอกจัน และประกายวิบวับสำหรับคัดลอก"
+    },
+    {
+      "href": "/th/library/heart-symbols/",
+      "title": "สัญลักษณ์หัวใจ",
+      "desc": "หัวใจ ♥ ♡ ❤ ทุกรูปทรงและทุกสไตล์"
+    },
+    {
+      "href": "/th/symbol/imoji-maikhrofon/",
+      "title": "อีโมจิไมโครโฟน (🎤)",
+      "desc": "ที่มาและวิธีใช้อีโมจิไมโครโฟน"
+    },
+    {
+      "href": "/th/library/aesthetic-symbols/",
+      "title": "สัญลักษณ์ Aesthetic",
+      "desc": "สัญลักษณ์ Unicode สไตล์ aesthetic สำหรับไบโอและแคปชัน"
+    }
+  ]
+}

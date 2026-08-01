@@ -1,0 +1,380 @@
+{
+  "slug": "muzieksymbolen",
+  "lang": "nl",
+  "title": "Muzieksymbolen Kopiëren — Muzieknoten & Tekens ♪ ♫",
+  "meta_description": "Blader door muzieknotatiesymbolen, instrument-emoji en audiogerelateerde Unicode-tekens en kopieer ze. Klik op een symbool om het meteen te kopiëren.",
+  "breadcrumb": "Muzieksymbolen",
+  "hero_h1": "Muzieksymbolen",
+  "hero_tagline": "Een naslagverzameling van muzieknotatiesymbolen, instrument-emoji en audiogerelateerde Unicode-tekens. Klik op een symbool om het meteen te kopiëren.",
+  "intro": "Deze bibliotheek bevat muzieknoten en notatiesymbolen, instrument-emoji en audiogerelateerde Unicode-tekens. De symbolen zijn geordend per categorie: notatietekens, instrumenten en afspeelknoppen.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/nl/library/muzieksymbolen/",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Noten",
+      "h2": "Muzieknoten",
+      "intro": "Unicode-notensymbolen en emoji die muzieknoten voorstellen.",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "Kwartnoot"
+        },
+        {
+          "char": "♪",
+          "label": "Achtste noot"
+        },
+        {
+          "char": "♫",
+          "label": "Verbonden achtste noten"
+        },
+        {
+          "char": "♬",
+          "label": "Zestiende noten"
+        },
+        {
+          "char": "🎵",
+          "label": "Muzieknoot"
+        },
+        {
+          "char": "🎶",
+          "label": "Muzieknoten"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Sleutels",
+      "h2": "Sleutelsymbolen",
+      "intro": "Muzieksleutels zoals gebruikt in bladmuziek.",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "Vioolsleutel"
+        },
+        {
+          "char": "𝄡",
+          "label": "C-sleutel"
+        },
+        {
+          "char": "𝄢",
+          "label": "Bassleutel"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Voortekens",
+      "h2": "Voortekens",
+      "intro": "Kruis, mol, herstellingsteken en dubbele voortekens om de toonhoogte te wijzigen.",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "Kruis"
+        },
+        {
+          "char": "♭",
+          "label": "Mol"
+        },
+        {
+          "char": "♮",
+          "label": "Herstellingsteken"
+        },
+        {
+          "char": "𝄪",
+          "label": "Dubbelkruis"
+        },
+        {
+          "char": "𝄫",
+          "label": "Dubbelmol"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Dynamiek & Notatie",
+      "h2": "Dynamiek en Notatietekens",
+      "intro": "Dynamiektekens voor volume en notatiesymbolen.",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "Piano (zacht)"
+        },
+        {
+          "char": "𝆑",
+          "label": "Forte (luid)"
+        },
+        {
+          "char": "𝄀",
+          "label": "Maatstreep"
+        },
+        {
+          "char": "𝄁",
+          "label": "Dubbele maatstreep"
+        },
+        {
+          "char": "𝄂",
+          "label": "Eindstreep"
+        },
+        {
+          "char": "𝄃",
+          "label": "Omgekeerde eindstreep"
+        },
+        {
+          "char": "𝄆",
+          "label": "Herhalingsteken (begin)"
+        },
+        {
+          "char": "𝄇",
+          "label": "Herhalingsteken (einde)"
+        },
+        {
+          "char": "𝄐",
+          "label": "Fermate"
+        },
+        {
+          "char": "𝄑",
+          "label": "Fermate onder"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Rusten",
+      "h2": "Rustsymbolen",
+      "intro": "Rusttekens die stilte aangeven in de notatie.",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "Achtste rust"
+        },
+        {
+          "char": "𝄿",
+          "label": "Zestiende rust"
+        },
+        {
+          "char": "𝄻",
+          "label": "Halve rust"
+        },
+        {
+          "char": "𝄼",
+          "label": "Kwartrust"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Instrumenten",
+      "h2": "Emoji van Muziekinstrumenten",
+      "intro": "Emoji die muziekinstrumenten voorstellen.",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "Gitaar"
+        },
+        {
+          "char": "🎹",
+          "label": "Piano"
+        },
+        {
+          "char": "🎺",
+          "label": "Trompet"
+        },
+        {
+          "char": "🎻",
+          "label": "Viool"
+        },
+        {
+          "char": "🎷",
+          "label": "Saxofoon"
+        },
+        {
+          "char": "🥁",
+          "label": "Drumstel"
+        },
+        {
+          "char": "🪕",
+          "label": "Banjo"
+        },
+        {
+          "char": "🪗",
+          "label": "Accordeon"
+        },
+        {
+          "char": "🪘",
+          "label": "Lange trom"
+        },
+        {
+          "char": "🪇",
+          "label": "Maracas"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Audio & Afspelen",
+      "h2": "Audio en Afspelen",
+      "intro": "Symbolen voor geluid, luidsprekers en audiobediening.",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "Microfoon"
+        },
+        {
+          "char": "🎧",
+          "label": "Koptelefoon"
+        },
+        {
+          "char": "📻",
+          "label": "Radio"
+        },
+        {
+          "char": "🔊",
+          "label": "Luidspreker hard"
+        },
+        {
+          "char": "🔇",
+          "label": "Luidspreker gedempt"
+        },
+        {
+          "char": "🎼",
+          "label": "Bladmuziek"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Bio-versiering",
+      "h2": "Bio-versiering met Muzieknoten",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "Notenscheiding"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "Omlijste noot"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "Notenspoor"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "Zachte noot"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "Fonkelende noot"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "Gepaarde noten"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "Hartnoot"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "Noot tussen haakjes"
+        }
+      ]
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om gewone tekst om te zetten naar vet, cursief, schuinschrift en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "related": [
+    {
+      "href": "/nl/library/ster-symbolen/",
+      "title": "Stersymbolen",
+      "desc": "Sterren, sterretjes en fonkeltekens om te kopiëren."
+    },
+    {
+      "href": "/nl/library/hartjes/",
+      "title": "Hartsymbolen",
+      "desc": "Hartjes ♥ ♡ ❤ in alle vormen en stijlen."
+    },
+    {
+      "href": "/nl/symbol/microfoon-emoji/",
+      "title": "Microfoon-emoji (🎤)",
+      "desc": "Herkomst en gebruik van de microfoon-emoji."
+    },
+    {
+      "href": "/nl/library/speciale-tekens/",
+      "title": "Aesthetic Symbolen",
+      "desc": "Aesthetic Unicode-tekens voor bio's en bijschriften."
+    }
+  ]
+}

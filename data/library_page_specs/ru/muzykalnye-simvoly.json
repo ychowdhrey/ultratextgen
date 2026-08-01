@@ -1,0 +1,380 @@
+{
+  "slug": "muzykalnye-simvoly",
+  "lang": "ru",
+  "title": "Музыкальные символы: скопировать ноты и знаки ♪ ♫",
+  "meta_description": "Смотрите и копируйте символы нотной записи, эмодзи инструментов и связанные со звуком символы Unicode. Нажмите на любой символ, чтобы скопировать его мгновенно.",
+  "breadcrumb": "Музыкальные символы",
+  "hero_h1": "Музыкальные символы",
+  "hero_tagline": "Справочная коллекция символов нотной записи, эмодзи музыкальных инструментов и связанных со звуком символов Unicode. Нажмите на любой символ, чтобы сразу его скопировать.",
+  "intro": "В этой библиотеке собраны ноты и символы нотной записи, эмодзи музыкальных инструментов и связанные со звуком символы Unicode. Символы сгруппированы по категориям: знаки нотации, инструменты и элементы управления воспроизведением.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/",
+  "home_url": "https://ultratextgen.com/ru/",
+  "crumb_home": "Главная",
+  "library_url": "https://ultratextgen.com/ru/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Ноты",
+      "h2": "Ноты",
+      "intro": "Символы нот в Unicode и эмодзи, изображающие ноты.",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "Четвертная нота"
+        },
+        {
+          "char": "♪",
+          "label": "Восьмая нота"
+        },
+        {
+          "char": "♫",
+          "label": "Восьмые с вязкой"
+        },
+        {
+          "char": "♬",
+          "label": "Шестнадцатые"
+        },
+        {
+          "char": "🎵",
+          "label": "Нота"
+        },
+        {
+          "char": "🎶",
+          "label": "Ноты"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Ключи",
+      "h2": "Нотные ключи",
+      "intro": "Музыкальные ключи, используемые в нотной записи.",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "Скрипичный ключ"
+        },
+        {
+          "char": "𝄡",
+          "label": "Ключ до"
+        },
+        {
+          "char": "𝄢",
+          "label": "Басовый ключ"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Знаки альтерации",
+      "h2": "Знаки альтерации",
+      "intro": "Диез, бемоль, бекар и дубль-знаки, изменяющие высоту звука.",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "Диез"
+        },
+        {
+          "char": "♭",
+          "label": "Бемоль"
+        },
+        {
+          "char": "♮",
+          "label": "Бекар"
+        },
+        {
+          "char": "𝄪",
+          "label": "Дубль-диез"
+        },
+        {
+          "char": "𝄫",
+          "label": "Дубль-бемоль"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Динамика и нотация",
+      "h2": "Динамика и знаки нотации",
+      "intro": "Обозначения громкости и знаки нотной записи.",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "Пиано (тихо)"
+        },
+        {
+          "char": "𝆑",
+          "label": "Форте (громко)"
+        },
+        {
+          "char": "𝄀",
+          "label": "Тактовая черта"
+        },
+        {
+          "char": "𝄁",
+          "label": "Двойная тактовая черта"
+        },
+        {
+          "char": "𝄂",
+          "label": "Заключительная черта"
+        },
+        {
+          "char": "𝄃",
+          "label": "Обратная заключительная черта"
+        },
+        {
+          "char": "𝄆",
+          "label": "Знак репризы (начало)"
+        },
+        {
+          "char": "𝄇",
+          "label": "Знак репризы (конец)"
+        },
+        {
+          "char": "𝄐",
+          "label": "Фермата"
+        },
+        {
+          "char": "𝄑",
+          "label": "Фермата снизу"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Паузы",
+      "h2": "Символы пауз",
+      "intro": "Знаки пауз, обозначающие тишину в нотной записи.",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "Восьмая пауза"
+        },
+        {
+          "char": "𝄿",
+          "label": "Шестнадцатая пауза"
+        },
+        {
+          "char": "𝄻",
+          "label": "Половинная пауза"
+        },
+        {
+          "char": "𝄼",
+          "label": "Четвертная пауза"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Инструменты",
+      "h2": "Эмодзи музыкальных инструментов",
+      "intro": "Эмодзи, изображающие музыкальные инструменты.",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "Гитара"
+        },
+        {
+          "char": "🎹",
+          "label": "Пианино"
+        },
+        {
+          "char": "🎺",
+          "label": "Труба"
+        },
+        {
+          "char": "🎻",
+          "label": "Скрипка"
+        },
+        {
+          "char": "🎷",
+          "label": "Саксофон"
+        },
+        {
+          "char": "🥁",
+          "label": "Барабан"
+        },
+        {
+          "char": "🪕",
+          "label": "Банджо"
+        },
+        {
+          "char": "🪗",
+          "label": "Аккордеон"
+        },
+        {
+          "char": "🪘",
+          "label": "Длинный барабан"
+        },
+        {
+          "char": "🪇",
+          "label": "Маракасы"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Звук и воспроизведение",
+      "h2": "Звук и воспроизведение",
+      "intro": "Символы, связанные со звуком, динамиками и управлением воспроизведением.",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "Микрофон"
+        },
+        {
+          "char": "🎧",
+          "label": "Наушники"
+        },
+        {
+          "char": "📻",
+          "label": "Радио"
+        },
+        {
+          "char": "🔊",
+          "label": "Динамик — громкий звук"
+        },
+        {
+          "char": "🔇",
+          "label": "Динамик выключен"
+        },
+        {
+          "char": "🎼",
+          "label": "Нотный стан"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Украшения для профиля",
+      "h2": "Украшения для профиля с нотами",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "Разделитель из нот"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "Нота в рамке"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "След из нот"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "Нежная нота"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "Сверкающая нота"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "Парные ноты"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "Нота с сердечком"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "Нота в скобках"
+        }
+      ]
+    }
+  ],
+  "cta": "Используйте UltraTextGen, чтобы превратить обычный текст в жирный, курсивный, рукописный и более 100 других стилей Unicode-шрифтов — бесплатно и мгновенно.",
+  "related": [
+    {
+      "href": "/ru/library/zvyozdochki/",
+      "title": "Символы звёзд",
+      "desc": "Звёзды, астериски и блёстки для копирования."
+    },
+    {
+      "href": "/ru/library/serdechki/",
+      "title": "Сердечки",
+      "desc": "Сердца ♥ ♡ ❤ всех форм и стилей."
+    },
+    {
+      "href": "/ru/symbol/emodzi-mikrofon/",
+      "title": "Эмодзи микрофона (🎤)",
+      "desc": "Происхождение и использование эмодзи микрофона."
+    },
+    {
+      "href": "/ru/library/esteticheskie-simvoly/",
+      "title": "Эстетичные символы",
+      "desc": "Эстетичные символы Unicode для профиля и подписей."
+    }
+  ]
+}

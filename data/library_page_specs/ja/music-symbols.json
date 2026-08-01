@@ -1,0 +1,380 @@
+{
+  "slug": "music-symbols",
+  "lang": "ja",
+  "title": "音楽記号コピペ — 音符・ト音記号・楽器絵文字一覧 ♪ ♫",
+  "meta_description": "音楽記号、楽器の絵文字、音声関連のUnicode文字をコピペで。記号をクリックするとすぐにコピーできます。",
+  "breadcrumb": "音楽記号",
+  "hero_h1": "音楽記号",
+  "hero_tagline": "音符や楽譜記号、楽器の絵文字、音声関連のUnicode文字をまとめたリファレンス。記号をクリックするとすぐにコピーできます。",
+  "intro": "このページには、音符や楽譜の記号、楽器の絵文字、音声に関わるUnicode文字をまとめています。記譜記号、楽器、再生コントロールのカテゴリごとに分類しています。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ja/library/music-symbols/",
+  "home_url": "https://ultratextgen.com/ja/",
+  "crumb_home": "ホーム",
+  "library_url": "https://ultratextgen.com/ja/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "音符",
+      "h2": "音符の記号",
+      "intro": "Unicodeの音符記号と、音符を表す絵文字。",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "四分音符"
+        },
+        {
+          "char": "♪",
+          "label": "八分音符"
+        },
+        {
+          "char": "♫",
+          "label": "連桁付き八分音符"
+        },
+        {
+          "char": "♬",
+          "label": "十六分音符"
+        },
+        {
+          "char": "🎵",
+          "label": "音符"
+        },
+        {
+          "char": "🎶",
+          "label": "複数の音符"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "音部記号",
+      "h2": "音部記号",
+      "intro": "楽譜で使われる音部記号（クレフ）。",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "ト音記号"
+        },
+        {
+          "char": "𝄡",
+          "label": "ハ音記号"
+        },
+        {
+          "char": "𝄢",
+          "label": "ヘ音記号"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "臨時記号",
+      "h2": "臨時記号",
+      "intro": "音の高さを変えるシャープ、フラット、ナチュラル、重変化記号。",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "シャープ"
+        },
+        {
+          "char": "♭",
+          "label": "フラット"
+        },
+        {
+          "char": "♮",
+          "label": "ナチュラル"
+        },
+        {
+          "char": "𝄪",
+          "label": "ダブルシャープ"
+        },
+        {
+          "char": "𝄫",
+          "label": "ダブルフラット"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "強弱・記譜記号",
+      "h2": "強弱記号と記譜記号",
+      "intro": "音量を示す強弱記号と、楽譜で使う記譜記号。",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "ピアノ（弱く）"
+        },
+        {
+          "char": "𝆑",
+          "label": "フォルテ（強く）"
+        },
+        {
+          "char": "𝄀",
+          "label": "小節線"
+        },
+        {
+          "char": "𝄁",
+          "label": "複縦線"
+        },
+        {
+          "char": "𝄂",
+          "label": "終止線"
+        },
+        {
+          "char": "𝄃",
+          "label": "逆向きの終止線"
+        },
+        {
+          "char": "𝄆",
+          "label": "リピート記号（開始）"
+        },
+        {
+          "char": "𝄇",
+          "label": "リピート記号（終了）"
+        },
+        {
+          "char": "𝄐",
+          "label": "フェルマータ"
+        },
+        {
+          "char": "𝄑",
+          "label": "下向きフェルマータ"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "休符",
+      "h2": "休符の記号",
+      "intro": "楽譜で無音を示す休符記号。",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "八分休符"
+        },
+        {
+          "char": "𝄿",
+          "label": "十六分休符"
+        },
+        {
+          "char": "𝄻",
+          "label": "二分休符"
+        },
+        {
+          "char": "𝄼",
+          "label": "四分休符"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "楽器",
+      "h2": "楽器の絵文字",
+      "intro": "楽器を表す絵文字。",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "ギター"
+        },
+        {
+          "char": "🎹",
+          "label": "ピアノ"
+        },
+        {
+          "char": "🎺",
+          "label": "トランペット"
+        },
+        {
+          "char": "🎻",
+          "label": "バイオリン"
+        },
+        {
+          "char": "🎷",
+          "label": "サックス"
+        },
+        {
+          "char": "🥁",
+          "label": "ドラム"
+        },
+        {
+          "char": "🪕",
+          "label": "バンジョー"
+        },
+        {
+          "char": "🪗",
+          "label": "アコーディオン"
+        },
+        {
+          "char": "🪘",
+          "label": "ロングドラム"
+        },
+        {
+          "char": "🪇",
+          "label": "マラカス"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "オーディオ・再生",
+      "h2": "オーディオと再生",
+      "intro": "音、スピーカー、再生操作に関する記号。",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "マイク"
+        },
+        {
+          "char": "🎧",
+          "label": "ヘッドホン"
+        },
+        {
+          "char": "📻",
+          "label": "ラジオ"
+        },
+        {
+          "char": "🔊",
+          "label": "スピーカー（大音量）"
+        },
+        {
+          "char": "🔇",
+          "label": "ミュート"
+        },
+        {
+          "char": "🎼",
+          "label": "楽譜"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "プロフィール装飾",
+      "h2": "音符を使ったプロフィール装飾",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "音符の区切り"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "囲み音符"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "音符の流れ"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "やさしい音符"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "キラキラ音符"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "並んだ音符"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "ハート音符"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "括弧つき音符"
+        }
+      ]
+    }
+  ],
+  "cta": "UltraTextGenを使えば、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントに変換できます。無料ですぐに使えます。",
+  "related": [
+    {
+      "href": "/ja/library/star-symbols/",
+      "title": "星の記号",
+      "desc": "星、アスタリスク、キラキラ記号のコピペ集。"
+    },
+    {
+      "href": "/ja/library/heart-symbols/",
+      "title": "ハート記号",
+      "desc": "♥ ♡ ❤ など、あらゆる形と色のハート。"
+    },
+    {
+      "href": "/ja/symbol/maiku-emoji/",
+      "title": "マイク絵文字（🎤）",
+      "desc": "マイク絵文字の由来と使い方。"
+    },
+    {
+      "href": "/ja/library/aesthetic-symbols/",
+      "title": "おしゃれ記号",
+      "desc": "プロフィールやキャプション向けのおしゃれなUnicode記号。"
+    }
+  ]
+}
