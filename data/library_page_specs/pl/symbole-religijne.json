@@ -1,0 +1,420 @@
+{
+  "slug": "symbole-religijne",
+  "lang": "pl",
+  "title": "Symbole Religijne: Kopiuj i Wklej ✝ ☪ ✡ ☸",
+  "meta_description": "Przeglądaj i kopiuj religijne, duchowe i związane z wiarą symbole Unicode z wielkich tradycji świata. Kliknij dowolny symbol, aby go natychmiast skopiować.",
+  "breadcrumb": "Symbole Religijne i Duchowe",
+  "hero_h1": "Symbole Religijne i Duchowe",
+  "hero_tagline": "Zbiór referencyjny religijnych, duchowych i związanych z wiarą symboli Unicode z wielkich tradycji świata. Kliknij dowolny symbol, aby go od razu skopiować.",
+  "intro": "Ta biblioteka zawiera symbole chrześcijaństwa, islamu, judaizmu, hinduizmu, buddyzmu i innych tradycji świata, a także uniwersalne symbole duchowe i pokojowe. Uporządkowano je według tradycji religijnej i kategorii.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/pl/library/symbole-religijne/",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "library_url": "https://ultratextgen.com/pl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/korssymboler/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/religious-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/religioese-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-religieux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-keagamaan/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-religiosi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/religious-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jonggyo-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/religieuze-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-religijne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/religioznye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/religious-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/dini-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "christian",
+      "label": "Chrześcijańskie",
+      "h2": "Krzyże i Symbole Chrześcijańskie",
+      "intro": "Warianty krzyża w Unicode i znaki związane z kościołem w tradycjach chrześcijańskich.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "Krzyż łaciński"
+        },
+        {
+          "char": "☦",
+          "label": "Krzyż prawosławny"
+        },
+        {
+          "char": "✞",
+          "label": "Krzyż cieniowany"
+        },
+        {
+          "char": "✟",
+          "label": "Krzyż konturowy"
+        },
+        {
+          "char": "♰",
+          "label": "Krzyż zachodniosyryjski"
+        },
+        {
+          "char": "♱",
+          "label": "Krzyż wschodniosyryjski"
+        },
+        {
+          "char": "⛪",
+          "label": "Kościół"
+        },
+        {
+          "char": "✠",
+          "label": "Krzyż maltański"
+        }
+      ]
+    },
+    {
+      "id": "islamic",
+      "label": "Islamskie",
+      "h2": "Symbole Islamskie",
+      "intro": "Półksiężyc, meczet i inne znaki związane z tradycją islamu.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "Półksiężyc z gwiazdą"
+        },
+        {
+          "char": "🕌",
+          "label": "Meczet"
+        },
+        {
+          "char": "🕋",
+          "label": "Kaaba"
+        },
+        {
+          "char": "📿",
+          "label": "Różaniec modlitewny"
+        },
+        {
+          "char": "﷽",
+          "label": "Ligatura basmali"
+        }
+      ]
+    },
+    {
+      "id": "jewish",
+      "label": "Żydowskie",
+      "h2": "Symbole Żydowskie",
+      "intro": "Gwiazda Dawida, menora i inne znaki tradycji żydowskiej.",
+      "symbols": [
+        {
+          "char": "✡",
+          "label": "Gwiazda Dawida"
+        },
+        {
+          "char": "🕍",
+          "label": "Synagoga"
+        },
+        {
+          "char": "🕎",
+          "label": "Menora"
+        }
+      ]
+    },
+    {
+      "id": "dharmic",
+      "label": "Dharmiczne",
+      "h2": "Symbole Religii Dharmicznych",
+      "intro": "Znaki hinduizmu, buddyzmu, dżinizmu i sikhizmu.",
+      "symbols": [
+        {
+          "char": "☸",
+          "label": "Koło Dharmy"
+        },
+        {
+          "char": "🕉",
+          "label": "Om (emoji)"
+        },
+        {
+          "char": "卍",
+          "label": "Mandzi (buddyjski znak pomyślności, zwrócony w lewo)"
+        },
+        {
+          "char": "☬",
+          "label": "Adi Shakti (khanda)"
+        },
+        {
+          "char": "🛕",
+          "label": "Świątynia hinduistyczna"
+        },
+        {
+          "char": "🪯",
+          "label": "Khanda (emoji)"
+        },
+        {
+          "char": "🔱",
+          "label": "Triśula (trójząb)"
+        },
+        {
+          "char": "ॐ",
+          "label": "Om (dewanagari)"
+        },
+        {
+          "char": "🦚",
+          "label": "Paw"
+        },
+        {
+          "char": "🪶",
+          "label": "Pióro pawia"
+        },
+        {
+          "char": "🪈",
+          "label": "Flet"
+        },
+        {
+          "char": "🪷",
+          "label": "Lotos"
+        },
+        {
+          "char": "🪔",
+          "label": "Lampka diya"
+        },
+        {
+          "char": "🙏",
+          "label": "Złożone dłonie"
+        },
+        {
+          "char": "🧘",
+          "label": "Osoba w pozycji lotosu (medytacja)"
+        }
+      ]
+    },
+    {
+      "id": "east-asian",
+      "label": "Azja Wschodnia",
+      "h2": "Wschodnioazjatyckie Symbole Duchowe",
+      "intro": "Znaki taoizmu, shintoizmu i innych tradycji Azji Wschodniej.",
+      "symbols": [
+        {
+          "char": "☯",
+          "label": "Yin yang"
+        },
+        {
+          "char": "☰",
+          "label": "Trigram nieba"
+        },
+        {
+          "char": "☱",
+          "label": "Trigram jeziora"
+        },
+        {
+          "char": "☲",
+          "label": "Trigram ognia"
+        },
+        {
+          "char": "☳",
+          "label": "Trigram gromu"
+        },
+        {
+          "char": "☴",
+          "label": "Trigram wiatru"
+        },
+        {
+          "char": "☵",
+          "label": "Trigram wody"
+        },
+        {
+          "char": "☶",
+          "label": "Trigram góry"
+        },
+        {
+          "char": "☷",
+          "label": "Trigram ziemi"
+        },
+        {
+          "char": "⛩",
+          "label": "Chram shintoistyczny"
+        },
+        {
+          "char": "卐",
+          "label": "Wschodnioazjatycka swastyka pomyślności (zwrócona w prawo)"
+        }
+      ]
+    },
+    {
+      "id": "yin-yang-lines",
+      "label": "Linie",
+      "h2": "Linie Yin i Yang",
+      "intro": "Monogramy i digramy, z których zbudowane są powyższe trigramy I Ching.",
+      "symbols": [
+        {
+          "char": "⚊",
+          "label": "Monogram yang"
+        },
+        {
+          "char": "⚋",
+          "label": "Monogram yin"
+        },
+        {
+          "char": "⚌",
+          "label": "Digram wielkiego yang"
+        },
+        {
+          "char": "⚍",
+          "label": "Digram małego yin"
+        },
+        {
+          "char": "⚎",
+          "label": "Digram małego yang"
+        },
+        {
+          "char": "⚏",
+          "label": "Digram wielkiego yin"
+        }
+      ]
+    },
+    {
+      "id": "spiritual",
+      "label": "Uniwersalne duchowe",
+      "h2": "Uniwersalne Symbole Duchowe",
+      "intro": "Znaki używane w wielu tradycjach lub rozpoznawane powszechnie.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Symbol pokoju"
+        },
+        {
+          "char": "⚛",
+          "label": "Symbol atomu"
+        },
+        {
+          "char": "🔯",
+          "label": "Sześcioramienna gwiazda z kropką"
+        },
+        {
+          "char": "⚕",
+          "label": "Laska Eskulapa"
+        },
+        {
+          "char": "☥",
+          "label": "Anch"
+        }
+      ]
+    },
+    {
+      "id": "peace-gestures-goodwill",
+      "label": "Pokój i życzliwość",
+      "h2": "Pokój, Gesty i Życzliwość",
+      "intro": "Gesty, gołębie i znaki życzliwości towarzyszące symbolowi pokoju powyżej.",
+      "symbols": [
+        {
+          "char": "✌️",
+          "label": "Znak zwycięstwa"
+        },
+        {
+          "char": "🙏",
+          "label": "Złożone dłonie"
+        },
+        {
+          "char": "🕊️",
+          "label": "Gołąb"
+        },
+        {
+          "char": "🫒",
+          "label": "Oliwka"
+        },
+        {
+          "char": "🌿",
+          "label": "Gałązka oliwna"
+        },
+        {
+          "char": "🤝",
+          "label": "Uścisk dłoni"
+        },
+        {
+          "char": "🫶",
+          "label": "Serce z dłoni"
+        },
+        {
+          "char": "👐",
+          "label": "Otwarte dłonie"
+        }
+      ]
+    }
+  ],
+  "cta": "Użyj UltraTextGen, aby zamienić zwykły tekst na pogrubienie, kursywę, pismo odręczne i ponad 100 innych stylów czcionek Unicode — za darmo i od razu.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-islamskie/",
+      "title": "Symbole Islamskie",
+      "desc": "Półksiężyc z gwiazdą, ligatury arabskie i życzenia na Id."
+    },
+    {
+      "href": "/pl/library/symbole-serca/",
+      "title": "Symbole Serc",
+      "desc": "Serca ♥ ♡ ❤ we wszystkich kształtach i stylach."
+    },
+    {
+      "href": "/pl/symbol/symbol-pokoju/",
+      "title": "Symbol Pokoju (☮)",
+      "desc": "Historia i zastosowanie symbolu pokoju."
+    },
+    {
+      "href": "/pl/symbol/yin-yang/",
+      "title": "Symbol Yin Yang (☯)",
+      "desc": "Znaczenie i pochodzenie symbolu yin yang."
+    }
+  ]
+}

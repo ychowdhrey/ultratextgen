@@ -1,0 +1,280 @@
+{
+  "slug": "simbolos-islamicos",
+  "lang": "es",
+  "title": "Símbolos Islámicos: Copiar y Pegar ☪ ﷲ ﷺ",
+  "meta_description": "Símbolos islámicos para copiar y pegar: la estrella y media luna, las ligaduras de Alá y la Basmala, emojis de mezquita y oración, y saludos de Eid. Haz clic para copiar.",
+  "breadcrumb": "Símbolos Islámicos",
+  "hero_h1": "Símbolos Islámicos",
+  "hero_tagline": "La estrella y media luna, las ligaduras honoríficas árabes, los caracteres de mezquita y oración, y los saludos de Ramadán. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "Los símbolos islámicos en Unicode van mucho más allá de la conocida estrella y media luna ☪. El bloque de Formas de Presentación Árabes incluye ligaduras honoríficas completas: caracteres únicos que representan la palabra Alá (ﷲ), la bendición que se recita tras el nombre del Profeta (ﷺ) y la Basmala entera (﷽). Esta página reúne esas ligaduras junto con emojis de mezquita, la Kaaba y la oración, presentados con respeto para su uso en felicitaciones de Ramadán y Eid, biografías y publicaciones de temática religiosa. Usa las ligaduras honoríficas con la reverencia que merecen.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/es/library/simbolos-islamicos/",
+  "home_url": "https://ultratextgen.com/es/",
+  "crumb_home": "Inicio",
+  "library_url": "https://ultratextgen.com/es/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/islamic-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/islamische-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-islamiques/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-islami/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-islamici/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/islamic-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/islam-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/islamitische-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-islamskie/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/islamskie-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/islamic-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/islami-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "star-crescent",
+      "label": "Estrella y media luna",
+      "h2": "Símbolos de Estrella y Media Luna",
+      "intro": "La media luna y la estrella, el emblema más reconocido asociado al islam.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "Estrella y media luna"
+        },
+        {
+          "char": "☪️",
+          "label": "Estrella y media luna (emoji)"
+        },
+        {
+          "char": "☫",
+          "label": "Símbolo farsi (emblema de Irán)"
+        },
+        {
+          "char": "🌙",
+          "label": "Luna creciente"
+        },
+        {
+          "char": "☽",
+          "label": "Cuarto creciente"
+        },
+        {
+          "char": "☾",
+          "label": "Cuarto menguante"
+        },
+        {
+          "char": "⭐",
+          "label": "Estrella"
+        },
+        {
+          "char": "✨",
+          "label": "Destellos"
+        }
+      ]
+    },
+    {
+      "id": "arabic-ligatures",
+      "label": "Ligaduras",
+      "h2": "Ligaduras Honoríficas Árabes",
+      "intro": "Caracteres Unicode únicos que representan palabras sagradas y fórmulas honoríficas completas: trátalos con cuidado.",
+      "symbols": [
+        {
+          "char": "ﷲ",
+          "label": "Ligadura de Alá"
+        },
+        {
+          "char": "ﷺ",
+          "label": "Ligadura Sallallahu alayhi wa-sallam"
+        },
+        {
+          "char": "﷽",
+          "label": "Ligadura Bismillah ar-Rahman ar-Rahim"
+        },
+        {
+          "char": "ﷻ",
+          "label": "Ligadura Yalla Yalaluhu"
+        },
+        {
+          "char": "ﷴ",
+          "label": "Ligadura de Mahoma"
+        },
+        {
+          "char": "۞",
+          "label": "Inicio de Rub el Hizb"
+        },
+        {
+          "char": "۝",
+          "label": "Fin de aleya"
+        }
+      ]
+    },
+    {
+      "id": "mosque-worship",
+      "label": "Lugares de culto",
+      "h2": "Mezquita y Kaaba",
+      "intro": "Emojis de la mezquita, la Kaaba de La Meca y el culto en general.",
+      "symbols": [
+        {
+          "char": "🕌",
+          "label": "Mezquita"
+        },
+        {
+          "char": "🕋",
+          "label": "Kaaba"
+        },
+        {
+          "char": "🛐",
+          "label": "Lugar de culto"
+        }
+      ]
+    },
+    {
+      "id": "prayer-devotion",
+      "label": "Oración",
+      "h2": "Oración y Devoción",
+      "intro": "Caracteres para el salat, el dua y la devoción diaria.",
+      "symbols": [
+        {
+          "char": "📿",
+          "label": "Rosario de oración"
+        },
+        {
+          "char": "🤲",
+          "label": "Palmas hacia arriba"
+        },
+        {
+          "char": "🧎",
+          "label": "Persona arrodillada"
+        },
+        {
+          "char": "🧕",
+          "label": "Mujer con pañuelo"
+        }
+      ]
+    },
+    {
+      "id": "ramadan-eid",
+      "label": "Ramadán y Eid",
+      "h2": "Celebración de Ramadán y Eid",
+      "intro": "Caracteres festivos para invitaciones al iftar, publicaciones de Eid y felicitaciones familiares.",
+      "symbols": [
+        {
+          "char": "🎊",
+          "label": "Bola de confeti"
+        },
+        {
+          "char": "🎉",
+          "label": "Matasuegras"
+        },
+        {
+          "char": "🍬",
+          "label": "Caramelo"
+        },
+        {
+          "char": "🐑",
+          "label": "Oveja"
+        },
+        {
+          "char": "🌴",
+          "label": "Palmera"
+        },
+        {
+          "char": "🫖",
+          "label": "Tetera"
+        }
+      ]
+    },
+    {
+      "id": "islamic-greetings",
+      "label": "Saludos",
+      "h2": "Combinaciones de Saludo de Ramadán y Eid",
+      "intro": "Saludos respetuosos ya preparados: cada botón copia la combinación completa de una sola vez.",
+      "symbols": [
+        {
+          "char": "☪️🌙 Ramadan Mubarak 🌙☪️",
+          "label": "Saludo «Ramadan Mubarak»"
+        },
+        {
+          "char": "🕌✨ Eid Mubarak ✨🕌",
+          "label": "Saludo «Eid Mubarak»"
+        },
+        {
+          "char": "🤲📿 Jumma Mubarak 📿🤲",
+          "label": "Saludo «Jumma Mubarak»"
+        }
+      ]
+    }
+  ],
+  "cta": "Usa UltraTextGen para convertir texto normal en negrita, cursiva, caligrafía y más de 100 estilos de fuente Unicode — gratis y al instante.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Símbolos Religiosos",
+      "desc": "Símbolos de fe y espiritualidad de tradiciones de todo el mundo."
+    },
+    {
+      "href": "/es/simbolos-de-estrella/",
+      "title": "Símbolos de Estrella",
+      "desc": "Estrellas, asteriscos y destellos para copiar."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Luna y Símbolos Celestes",
+      "desc": "Fases lunares, estrellas y cuerpos celestes."
+    },
+    {
+      "href": "/es/symbol/simbolo-de-la-paz/",
+      "title": "Símbolo de la Paz (☮)",
+      "desc": "Historia y uso del símbolo de la paz."
+    }
+  ]
+}
