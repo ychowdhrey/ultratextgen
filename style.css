@@ -3583,6 +3583,66 @@ button.clear-decoration {
   text-align: center;
 }
 
+/* Game selector — the first decision, because it decides whether decoration is
+   even legal in the field the player is filling. */
+.ts-game-row {
+  max-width: 720px;
+  margin: 0 auto 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ts-game-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ts-game-select {
+  flex: 1 1 220px;
+  padding: 0.55rem 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+
+.ts-game-select:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+
+/* Verdict panel — empty and invisible until a game is picked. */
+.ts-verdict:empty { display: none; }
+
+.ts-verdict {
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-light);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  font-size: 0.95rem;
+}
+
+.ts-verdict.is-ok { border-left-color: var(--ts-safe); }
+.ts-verdict.is-fail { border-left-color: var(--ts-fail); }
+.ts-verdict.is-info { border-left-color: var(--accent-blue); }
+
+.ts-verdict-head { font-weight: 600; color: var(--text-primary); }
+.ts-verdict-line { margin-top: 0.4rem; color: var(--text-primary); }
+.ts-verdict.is-ok .ts-verdict-line { color: var(--ts-safe); font-weight: 600; }
+.ts-verdict.is-fail .ts-verdict-line { color: var(--ts-fail); font-weight: 600; }
+.ts-verdict-line.is-over { color: var(--ts-fail); font-weight: 700; }
+
+.ts-verdict-note {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
 .ts-studio {
   display: flex;
   flex-direction: column;

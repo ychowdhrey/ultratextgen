@@ -51,7 +51,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clan Tag Generator: Stylish [TAG] Maker for COD, Warzone &amp; More</title>
-  <meta name="description" content="Free clan tag generator — type a 2–5 letter tag and style it with fonts, brackets, and symbols for COD, Warzone, PUBG, and more. Share one team-template link so the whole squad matches. Copy &amp; paste, no sign-up.">
+  <meta name="description" content="Ready-made clan tags to copy, plus a [TAG] maker with fonts, brackets and symbols — and a check on whether your tag actually fits your game's clan tag field. Free, copy &amp; paste, no sign-up.">
   <link rel="canonical" href="https://ultratextgen.com/usecase/clan-tag-generator/">
 <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/clan-tag-generator/">
 <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/usecase/clan-tag-generator/">
@@ -109,10 +109,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     },
     {
       "@type": "Question",
-      "name": "Will these clan tags work in Call of Duty, Warzone, and PUBG?",
+      "name": "Will a styled clan tag work in Call of Duty, Warzone, or PUBG?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most accept Unicode in the display name, so styled tags work in many games. Activision filters heavily, so for Call of Duty and Warzone stick to Bold or Small Caps — they have the highest acceptance rate. COD Mobile only allows plain ASCII for the base name. If a tag shows as boxes or is rejected, switch to a safer font and remove extra symbols."
+        "text": "It depends on which field you are filling. PUBG: BATTLEGROUNDS has a dedicated clan tag field that accepts only English letters, numbers, hyphen and underscore, up to 4 characters — a styled or bracketed tag is rejected there. Display names are far more permissive, so a styled tag pasted into your own name usually works: for Call of Duty and Warzone stick to Bold or Small Caps, which have the highest acceptance rate, and note that COD Mobile allows only plain ASCII for the base name. Pick your game in the studio above and it tells you which case you are in."
       }
     },
     {
@@ -121,6 +121,38 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes — completely free, no sign-up, no app. Everything runs in your browser and nothing you type is sent to a server. The output is plain Unicode text, so it is safe to copy and paste anywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my game have a clan tag field, or do I put the tag in my name?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both exist and they behave differently. Games like PUBG: BATTLEGROUNDS store the clan tag separately and prefix it onto your name, with their own short, plain-text rules. Fortnite, Valorant and Roblox have no tag field at all, so the tag goes inside your display name and shares that name's character limit. Free Fire has a guild name but no automatic per-player tag. The section above breaks all four cases down."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many characters will I have left for my own name?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only relevant when the tag goes inside your display name. Subtract the full framed tag — brackets and separators included, not just the letters — from the game's name limit. A 6-character tag like ꧁ᴛᴀɢ꧂ in a 16-character field leaves 10. Select your game in the studio and it does the subtraction live as you type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I check whether a clan tag is already taken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not from here, and be sceptical of any site that claims otherwise — no game exposes a public API for clan tag availability, so it cannot be checked from a web page. The only reliable way is to search the tag in your game's own clan browser before you commit. Note that some games, including PUBG, allow the same clan tag to be used by more than one clan, so a match is not always a blocker."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost if I get the clan tag wrong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enough to be worth checking first. A PUBG clan name or tag change costs 990 G-COIN, and a Free Fire guild rename costs 500 diamonds. That cost is the whole reason this page validates the tag against the field's rules instead of just styling it and wishing you luck."
       }
     }
   ]
@@ -190,7 +222,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="hero">
   <div class="hero-inner">
     <h1 class="hero-headline">Clan Tag Generator</h1>
-    <p class="hero-tagline">Type a 2–5 letter tag and style it with fonts, brackets, and symbols for COD, Warzone, PUBG, and more — then share one link so your whole squad matches. Free, copy &amp; paste, no sign-up.</p>
+    <p class="hero-tagline">Copy a ready-made tag, or build your own with fonts, brackets and symbols — then check whether it fits your game's clan tag field <em>before</em> you pay to change it. Share one link so your whole squad matches.</p>
   </div>
 </section>
 
@@ -205,39 +237,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <!-- INTRO -->
 <section class="editorial-section">
   <div class="editorial-block">
-    <p>A clan tag is the short identifier — usually <strong>2 to 5 letters</strong> — that sits in front of every member's name to show who you roll with. Type yours into the generator above and the <strong>Tag Studio</strong> below styles it instantly: pick a font, wrap it in <em>[ ]</em>, <em>꧁꧂</em>, or angle brackets, and add a separator. Because every character is real Unicode, the style sticks when you paste it into your in-game name.</p>
+    <p>A clan tag is the short identifier — usually <strong>2 to 5 letters</strong> — that sits in front of every member's name to show who you roll with. Copy one of the ready-made tags below, or type your own letters into the field above and let the <a href="#tag-studio"><strong>Tag Studio</strong></a> style them: pick a font, wrap it in <em>[ ]</em>, <em>꧁꧂</em>, or angle brackets, and add a separator. Because every character is real Unicode, the style sticks when you paste it into your in-game name.</p>
     <p>The one thing only this page does: build the tag once and <strong>share a team-template link</strong>. The link carries the <em>recipe</em> — font, bracket, separator — not a finished string, so each teammate opens it, types their own name, and gets the exact same styling automatically. No more pasting glyphs in Discord and hoping everyone matches.</p>
   </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- TAG STUDIO (live builder) -->
-<section class="mood-explainers" id="tag-studio">
-  <span class="article-section-label">Build Your Tag</span>
-  <h2>Clan Tag Studio</h2>
-  <p class="u-secondary-block">Type your tag in the field at the top, then pick a font, bracket, and separator — the tag builds live and copies in one click. Use <em>Share Team Template</em> so your whole squad gets the same look.</p>
-  <div id="tagStudioMount" class="ts-studio"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- LIVE READY-MADE FRAMES -->
-<section class="mood-explainers" id="tag-frames">
-  <span class="article-section-label">Ready-Made Frames</span>
-  <h2>Clan Tag Frames</h2>
-  <p class="u-secondary-tight">Every frame follows the tag you type above. Click to copy.</p>
-  <div id="clanTagFramesMount" class="ts-frames"></div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- KOMBINASI LANGKA (rare / uncommon) -->
-<section class="mood-explainers" id="rare-combos">
-  <span class="article-section-label">Stand Out</span>
-  <h2>Rare Combinations (Less Likely to Be Taken)</h2>
-  <p class="u-secondary-tight">Uncommon font + symbol mixes of your tag so it isn't a copy of everyone else's. Click <em>Shuffle</em> for new variants, click a tag to copy.</p>
-  <div id="rareCombosMount" class="ts-rare"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -246,6 +248,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <section class="editorial-section" id="tag-ideas">
   <span class="article-section-label">Tag Ideas</span>
   <h2>Ready-Made Clan Tags (Click to Copy)</h2>
+  <p class="section-lead is-spaced">Tags you can take as-is — tap one to copy, then paste it in front of your name in-game. Every one is plain Unicode, so the styling survives the paste. Want your own letters in these frames instead? <a href="#tag-studio">Build it in the Tag Studio</a> below.</p>
 
   <h3>3 &amp; 4 Letter Tags</h3>
   <p class="uname-note">Short, sharp, and readable in any kill feed.</p>
@@ -279,6 +282,77 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <button class="uname-chip symbol-tile" data-symbol="「ᴇɢ」" aria-label="Copy tag">「ᴇɢ」</button>
     <button class="uname-chip symbol-tile" data-symbol="𝐍𝐑𝐆" aria-label="Copy tag">𝐍𝐑𝐆</button>
   </div>
+</section>
+
+
+<div class="section-divider"></div>
+
+<!-- TAG FIELD SEGMENTATION -->
+<section class="editorial-section" id="tag-fields">
+  <span class="article-section-label">Before you style it</span>
+  <h2>Does Your Game Even Have a Clan Tag Field?</h2>
+  <p class="section-lead is-spaced">This decides whether a decorated tag is legal at all, and almost every clan tag guide skips it. There are four different situations, and only one of them lets you paste <em>꧁ᴛᴀɢ꧂</em>.</p>
+
+  <h3>1. A separate clan tag field, with its own stricter rules</h3>
+  <p>The game stores the tag apart from your name and prefixes it automatically. These fields are typically short and plain-text only. <strong>PUBG: BATTLEGROUNDS</strong> is the clearest documented case: the clan tag is <strong>up to 4 characters</strong>, accepts only <strong>English letters, numbers, hyphen and underscore</strong>, must start with a letter or number, allows no spaces, and needs at least two letters/numbers. Changing it costs <strong>990 G-COIN</strong>. A styled tag is rejected outright here — put the plain letters in the tag field and save the styling for your own display name.</p>
+
+  <h3>2. No tag field — the tag goes inside your display name</h3>
+  <p>Fortnite, Valorant and Roblox have no clan tag field, so players type the tag into their own name: <em>[TAG] Name</em>. This is where decoration works, because the display name accepts Unicode — but the tag and your name now share <strong>one character budget</strong>. A 6-character framed tag in a 16-character field leaves you 10. Pick your game in the studio above and it does that subtraction for you.</p>
+  <p class="u-secondary-block">Worth separating: the <em>#TAG</em> on the end of a Riot ID is an account discriminator, not a clan tag — you can't share it with your team.</p>
+
+  <h3>3. A clan or guild name, but no per-player tag</h3>
+  <p>Free Fire guilds have a guild <em>name</em>; members' nicknames aren't prefixed with a tag automatically. Players who want the look add it to their own nickname, so the same shared budget applies as in case 2. Renaming a Free Fire guild costs 500 diamonds.</p>
+
+  <h3>4. "Clan tag" means an ID code you can't choose</h3>
+  <p>In Clash of Clans and Clash Royale, a clan tag is an auto-generated code like <strong>#ABC123</strong> used to find a clan or contact support. You can't pick or style it. What you <em>can</em> style is the clan name and your own player name — see the <a href="/usecase/clash-of-clans-name-generator/">Clash of Clans name generator</a> and <a href="/usecase/clash-royale-name-generator/">Clash Royale name generator</a>.</p>
+
+  <p class="u-secondary-block">Where a game's tag rules aren't published by the developer, the studio says so rather than inventing a number. Call of Duty is the common example — secondary sources give 4, 5 and 6 characters, and there's no first-party document to settle it.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TAG STUDIO (live builder) -->
+<section class="mood-explainers" id="tag-studio">
+  <span class="article-section-label">Build Your Tag</span>
+  <h2>Clan Tag Studio</h2>
+  <p class="u-secondary-block">Type your tag in the field at the top, then pick a font, bracket, and separator — the tag builds live and copies in one click. Use <em>Share Team Template</em> so your whole squad gets the same look.</p>
+  <p class="ts-game-row"><label class="ts-game-label" for="tagGame">Where are you putting it?</label>
+    <select id="tagGame" class="ts-game-select">
+      <option value="">Any game / not sure</option>
+      <option value="pubgPc">PUBG: BATTLEGROUNDS (PC/console)</option>
+      <option value="pubgMobile">PUBG Mobile</option>
+      <option value="codm">Call of Duty / Warzone</option>
+      <option value="ff">Free Fire</option>
+      <option value="ml">Mobile Legends</option>
+      <option value="fortnite">Fortnite</option>
+      <option value="valorant">Valorant</option>
+      <option value="roblox">Roblox</option>
+      <option value="discord">Discord</option>
+      <option value="coc">Clash of Clans</option>
+      <option value="clashroyale">Clash Royale</option>
+    </select></p>
+  <div id="tagVerdict" class="ts-verdict" aria-live="polite"></div>
+  <div id="tagStudioMount" class="ts-studio"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- LIVE READY-MADE FRAMES -->
+<section class="mood-explainers" id="tag-frames">
+  <span class="article-section-label">Ready-Made Frames</span>
+  <h2>Clan Tag Frames</h2>
+  <p class="u-secondary-tight">Every frame follows the tag you type above. Click to copy.</p>
+  <div id="clanTagFramesMount" class="ts-frames"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- KOMBINASI LANGKA (rare / uncommon) -->
+<section class="mood-explainers" id="rare-combos">
+  <span class="article-section-label">Stand Out</span>
+  <h2>Rare Combinations (Less Likely to Be Taken)</h2>
+  <p class="u-secondary-tight">Uncommon font + symbol mixes of your tag so it isn't a copy of everyone else's. Click <em>Shuffle</em> for new variants, click a tag to copy.</p>
+  <div id="rareCombosMount" class="ts-rare"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -338,6 +412,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <!-- Symbol explorer + live tag studio -->
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/gamename/game-rules.js"></script>
 <script src="/js/tag-studio.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -345,20 +420,126 @@ document.addEventListener("DOMContentLoaded", function () {
   var ns = window.UltraTextGen;
   if (!ns || !ns.tagStudio) return;
 
-  ns.tagStudio.init({
+  /* ---- Game-aware verdict -------------------------------------------------
+     The thing no other clan-tag tool does: answer "will this actually go in
+     that field?" before the player spends a rename currency on finding out.
+     All rules come from game-rules.js, which publishes a number only where a
+     first-party or wiki-grade source exists and says "unknown" otherwise. */
+  const gr = ns.gameRules;
+  const gameSel = document.getElementById("tagGame");
+  const verdictEl = document.getElementById("tagVerdict");
+  const GAMES = gr ? Object.keys(gr.TAG_FIELDS) : [];
+
+  const ISSUE_TEXT = {
+    "too-long": "too long for the tag field",
+    "too-short": "too short",
+    "space": "spaces aren't allowed",
+    "charset": "this field only accepts A–Z, 0–9, hyphen and underscore — styled letters and symbols are rejected",
+    "min-alnum": "needs at least 2 letters or numbers"
+  };
+
+  function line(cls, str) {
+    const p = document.createElement("p");
+    p.className = cls;
+    p.textContent = str;
+    return p;
+  }
+
+  function renderVerdict(ctx) {
+    if (!verdictEl || !gr) return;
+    const id = gameSel ? gameSel.value : "";
+    verdictEl.innerHTML = "";
+    if (!id) {
+      verdictEl.className = "ts-verdict";
+      return;
+    }
+    const t = gr.analyzeTag(ctx.out, id);
+    const f = gr.TAG_FIELDS[id] || {};
+
+    if (t.kind === "dedicated") {
+      const head = t.limit
+        ? f.label + " has its own clan tag field: up to " + t.limit +
+          " characters, letters and numbers only."
+        : f.label + " has its own clan tag field.";
+      verdictEl.appendChild(line("ts-verdict-head", head));
+      if (!ctx.out) {
+        verdictEl.className = "ts-verdict is-info";
+      } else if (t.ok) {
+        verdictEl.className = "ts-verdict is-ok";
+        verdictEl.appendChild(line("ts-verdict-line", "✓ “" + ctx.out + "” fits — " + t.glyphs + "/" + t.limit + "."));
+      } else {
+        verdictEl.className = "ts-verdict is-fail";
+        verdictEl.appendChild(line("ts-verdict-line",
+          "✕ “" + ctx.out + "” will be rejected: " +
+          t.issues.map(function (i) { return ISSUE_TEXT[i] || i; }).join("; ") + "."));
+        const fix = [];
+        if (t.issues.indexOf("charset") !== -1) fix.push("set the font to Plain and the frame to None");
+        if (t.issues.indexOf("too-long") !== -1) fix.push("shorten it to " + t.limit + " characters");
+        if (t.issues.indexOf("space") !== -1) fix.push("remove the space");
+        verdictEl.appendChild(line("ts-verdict-note",
+          (fix.length ? "To fit this field, " + fix.join(" and ") + ". " : "") +
+          (t.issues.indexOf("charset") !== -1
+            ? "The styled version still works in your own display name, which does accept it."
+            : "")));
+      }
+      if (t.cost) verdictEl.appendChild(line("ts-verdict-note", "Changing it costs " + t.cost + "."));
+    } else if (t.kind === "folded") {
+      verdictEl.className = "ts-verdict is-info";
+      verdictEl.appendChild(line("ts-verdict-head",
+        f.label + " has no clan tag field — the tag goes inside your own display name, so it spends that budget."));
+      if (f.note) verdictEl.appendChild(line("ts-verdict-note", f.note));
+      const b = gr.tagBudget(ctx.out, id, "");
+      if (b && ctx.out) {
+        verdictEl.appendChild(line(b.left < 1 ? "ts-verdict-line is-over" : "ts-verdict-line",
+          b.left < 1
+            ? "This tag alone fills the " + b.limit + "-character limit — no room left for your name."
+            : b.left + " of " + b.limit + " characters left for your name."));
+      }
+    } else if (t.kind === "guild") {
+      verdictEl.className = "ts-verdict is-info";
+      verdictEl.appendChild(line("ts-verdict-head",
+        f.label + " has a guild NAME, not a per-player tag — members' names aren't prefixed automatically. Players who want a tag put it in their own nickname."));
+      if (t.cost) verdictEl.appendChild(line("ts-verdict-note", "Renaming the guild costs " + t.cost + "."));
+    } else if (t.kind === "identifier") {
+      verdictEl.className = "ts-verdict is-info";
+      verdictEl.appendChild(line("ts-verdict-head",
+        "In " + f.label + ", a “clan tag” is an auto-generated code like #ABC123 used to find a clan — you can't choose or style it. What you can style is the clan name."));
+    } else {
+      verdictEl.className = "ts-verdict is-info";
+      verdictEl.appendChild(line("ts-verdict-head",
+        "We don't have a sourced rule for " + (f.label || "this game") + "'s tag field, so we won't guess a limit. Keep the tag short and plain, and check in-game before paying to change it."));
+    }
+  }
+
+  const studio = ns.tagStudio.init({
     inputId: "mainInput",
     studioMount: "tagStudioMount",
     framesMount: "clanTagFramesMount",
     rareMount: "rareCombosMount",
     bannerMount: "tagStudioBanner",
-    charLimit: 5,
+    // 5 is the convention for the TAG ITSELF (2-5 letters), not for the framed
+    // string — passing it as charLimit made every decorated tag read "over".
+    rawLimit: 5,
+    onRender: renderVerdict,
+    shareExtra: function () { return { g: gameSel ? gameSel.value : "" }; },
+    onRecipe: function (params) {
+      const g = params.get("g");
+      if (g && gameSel && GAMES.indexOf(g) !== -1) gameSel.value = g;
+    },
     fonts: [
       { key: "Ultra Bold", label: "Bold", safe: true },
       { key: "Ultra Small Caps", label: "Small Caps", safe: true },
       { key: "Ultra Bold Serif", label: "Bold Serif", safe: true },
       { key: "Ultra Gothic", label: "Gothic", safe: false },
-      { key: "Ultra Script", label: "Cursive", safe: false }
+      { key: "Ultra Script", label: "Cursive", safe: false },
+      // "plain" matches no entry in window.textStyles, so styleText() returns the
+      // input unchanged. Needed as a real option: games with a dedicated clan tag
+      // field (PUBG) accept ASCII only, so without this the page could tell a
+      // player their tag would be rejected while offering no way to fix it.
+      { key: "plain", label: "Plain", safe: true }
     ],
+    // Rare combos stay decorative — an unstyled "rare combination" is a nonsense.
+    rareFonts: ["Ultra Bold", "Ultra Small Caps", "Ultra Bold Serif", "Ultra Gothic", "Ultra Script"],
     brackets: [
       { id: "square", l: "[", r: "]", label: "[ ]" },
       { id: "umbrella", l: "꧁", r: "꧂", label: "꧁ ꧂" },
@@ -405,6 +586,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  if (gameSel && studio) {
+    gameSel.addEventListener("change", studio.refresh);
+  }
+
   if (ns.parseTwemoji) ns.parseTwemoji(document.body);
 });
 </script>
@@ -412,7 +597,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <section class="deco-showcase" aria-labelledby="deco-showcase-title">
     <h2 class="deco-showcase-title" id="deco-showcase-title">Popular Clan Tag Decorations</h2>
-    <p class="deco-showcase-intro">Clan tag decorations to copy and paste — brackets, chevrons and symbols for COD, Warzone, Free Fire and more. Use the studio above to style live, or grab a ready-made wrap here.</p>
+    <p class="deco-showcase-intro">Clan tag decorations to copy and paste — brackets, chevrons and symbols. These go in a <strong>display name</strong>; games with a separate clan tag field are usually stricter, so check yours in the studio above.</p>
     <ul class="deco-showcase-grid">
       <li class="deco-chip" data-copy="[ CLAN ]"><span class="deco-chip-ex">[ CLAN ]</span><span class="deco-chip-label">Square tag</span></li>
       <li class="deco-chip" data-copy="【 CLAN 】"><span class="deco-chip-ex">【 CLAN 】</span><span class="deco-chip-label">Bold bracket</span></li>
@@ -444,12 +629,28 @@ document.addEventListener("DOMContentLoaded", function () {
     <p class="faq-answer">Most games and esports teams use 2 to 5 characters. Three and four-letter tags are the most popular because they stay readable in kill feeds and on scoreboards. Keep symbols to one or two so the tag does not get cut off or rejected by the game's character limit.</p>
   </details>
   <details class="faq-item">
-    <summary class="faq-question">Will these clan tags work in Call of Duty, Warzone, and PUBG?</summary>
-    <p class="faq-answer">Most accept Unicode in the display name, so styled tags work in many games. Activision filters heavily, so for Call of Duty and Warzone stick to Bold or Small Caps — they have the highest acceptance rate. COD Mobile only allows plain ASCII for the base name. If a tag shows as boxes or is rejected, switch to a safer font and remove extra symbols.</p>
+    <summary class="faq-question">Will a styled clan tag work in Call of Duty, Warzone, or PUBG?</summary>
+    <p class="faq-answer">It depends on which field you are filling. PUBG: BATTLEGROUNDS has a dedicated clan tag field that accepts only English letters, numbers, hyphen and underscore, up to 4 characters — a styled or bracketed tag is rejected there. Display names are far more permissive, so a styled tag pasted into your own name usually works: for Call of Duty and Warzone stick to Bold or Small Caps, which have the highest acceptance rate, and note that COD Mobile allows only plain ASCII for the base name. Pick your game in the studio above and it tells you which case you are in.</p>
   </details>
   <details class="faq-item">
     <summary class="faq-question">Is the clan tag generator free?</summary>
     <p class="faq-answer">Yes — completely free, no sign-up, no app. Everything runs in your browser and nothing you type is sent to a server. The output is plain Unicode text, so it is safe to copy and paste anywhere.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Does my game have a clan tag field, or do I put the tag in my name?</summary>
+    <p class="faq-answer">Both exist and they behave differently. Games like PUBG: BATTLEGROUNDS store the clan tag separately and prefix it onto your name, with their own short, plain-text rules. Fortnite, Valorant and Roblox have no tag field at all, so the tag goes inside your display name and shares that name's character limit. Free Fire has a guild name but no automatic per-player tag. The section above breaks all four cases down.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">How many characters will I have left for my own name?</summary>
+    <p class="faq-answer">Only relevant when the tag goes inside your display name. Subtract the full framed tag — brackets and separators included, not just the letters — from the game's name limit. A 6-character tag like ꧁ᴛᴀɢ꧂ in a 16-character field leaves 10. Select your game in the studio and it does the subtraction live as you type.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Can I check whether a clan tag is already taken?</summary>
+    <p class="faq-answer">Not from here, and be sceptical of any site that claims otherwise — no game exposes a public API for clan tag availability, so it cannot be checked from a web page. The only reliable way is to search the tag in your game's own clan browser before you commit. Note that some games, including PUBG, allow the same clan tag to be used by more than one clan, so a match is not always a blocker.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">What does it cost if I get the clan tag wrong?</summary>
+    <p class="faq-answer">Enough to be worth checking first. A PUBG clan name or tag change costs 990 G-COIN, and a Free Fire guild rename costs 500 diamonds. That cost is the whole reason this page validates the tag against the field's rules instead of just styling it and wishing you luck.</p>
   </details>
 </section>
 

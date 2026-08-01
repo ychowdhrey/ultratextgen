@@ -109,6 +109,130 @@
   };
 
   /* ============================
+     Clan/guild TAG fields
+
+     A clan tag field is NOT the name field, and treating them as one is the
+     single most common error in this space — every competing generator we
+     looked at offers decorated `꧁TAG꧂` output "for PUBG", where the actual
+     clan tag field is ASCII-only and four characters long.
+
+     kind tells the player which situation they are in, because it decides
+     whether decoration is even legal:
+       "dedicated"  the game has its own tag field with its own rules; the tag
+                    is stored separately and prefixed onto your name by the game
+       "folded"     no tag field exists; players put the tag inside their own
+                    display name, so it spends the display-name budget
+       "guild"      there is a clan/guild NAME but member names are not prefixed
+                    with a tag, so there is nothing to budget against
+       "identifier" "clan tag" here means an auto-generated #ABC123 code used to
+                    FIND a clan — you cannot choose it (Supercell games)
+       "unknown"    the field exists but we have no source we trust. We say so
+                    rather than publishing a number.
+
+     Only entries with a first-party or wiki-grade `source` carry a `limit`.
+     Where sources disagree (Call of Duty: 4 vs 5 vs 6 across secondary
+     articles, with the authoritative wiki Cloudflare-blocked) we ship
+     kind:"unknown" and no number. Being confidently wrong is worse than being
+     silent on a page whose entire pitch is "check before you spend 990
+     G-COIN".
+     ============================ */
+  const TAG_FIELDS = {
+    pubgPc: {
+      label: "PUBG: BATTLEGROUNDS (PC/Console)", kind: "dedicated",
+      limit: 4, min: 2, noSpace: true,
+      asciiPattern: /^[A-Za-z0-9][A-Za-z0-9_-]*$/,
+      minAlnum: 2, cost: "990 G-COIN",
+      source: "PUBG Wiki — Clan System"
+    },
+    // PUBG MOBILE is a different product with a different clan system, and
+    // Krafton documents neither its tag length nor its charset. Do NOT copy
+    // the PC numbers above into it — that laundering is exactly the error
+    // warned about on RULES.pubg.
+    pubgMobile: { label: "PUBG Mobile", kind: "unknown" },
+    codm: { label: "Call of Duty (Warzone / MW / Mobile)", kind: "unknown" },
+    // Free Fire guilds have a guild NAME; members are not given a tag prefix,
+    // so players who want one fold it into their own nickname instead.
+    ff: { label: "Free Fire", kind: "guild", cost: "500 diamonds (guild rename)" },
+    // MLBB squads carry a shortname, but the only length rule we could find
+    // describes a UTF-8 BYTE budget, not a character count, from a secondary
+    // source. Not enough to publish a number against.
+    ml: { label: "Mobile Legends", kind: "unknown" },
+    fortnite: { label: "Fortnite", kind: "folded", nameRule: "fortnite" },
+    // Valorant's Riot ID does end in #TAG, but that tagline is an account
+    // discriminator, not a clan tag — you cannot share it with your team.
+    valorant: {
+      label: "Valorant", kind: "folded", nameRule: "valorant",
+      note: "The #TAG in a Riot ID is an account discriminator, not a clan tag."
+    },
+    roblox: { label: "Roblox", kind: "folded", nameRule: "robloxDisplay" },
+    coc: { label: "Clash of Clans", kind: "identifier" },
+    clashroyale: { label: "Clash Royale", kind: "identifier" },
+    discord: { label: "Discord", kind: "folded", nameRule: "discord" }
+  };
+
+  /* Validate a clan tag against a game's TAG field.
+     Returns { kind, label, ok, level, issues, limit, glyphs, ... } — level is
+     "ok" | "warn" | "fail" | "n/a", where "n/a" means the question does not
+     apply to that game (identifier/guild) or we have no sourced rule. */
+  function analyzeTag(str, gameId) {
+    const f = TAG_FIELDS[gameId];
+    const tag = str || "";
+    const chars = Array.from(tag);
+    const out = {
+      gameId: gameId, label: f ? f.label : "", kind: f ? f.kind : "unknown",
+      glyphs: chars.length, issues: [], limit: null,
+      cost: (f && f.cost) || null, note: (f && f.note) || null,
+      source: (f && f.source) || null
+    };
+    if (!f || f.kind === "unknown" || f.kind === "identifier" || f.kind === "guild") {
+      out.level = "n/a";
+      out.ok = null;
+      return out;
+    }
+
+    if (f.kind === "folded") {
+      // No tag field: the tag is spent out of the display-name budget, so the
+      // real question is how much of the name is left. analyze() owns that.
+      const nameRule = RULES[f.nameRule];
+      out.limit = nameRule ? nameRule.limit : null;
+      out.level = "n/a";
+      out.ok = null;
+      return out;
+    }
+
+    // kind === "dedicated": a real, sourced ruleset.
+    out.limit = f.limit || null;
+    if (f.limit && chars.length > f.limit) out.issues.push("too-long");
+    if (f.min && chars.length && chars.length < f.min) out.issues.push("too-short");
+    if (f.noSpace && /\s/.test(tag)) out.issues.push("space");
+    if (f.asciiPattern && tag && !f.asciiPattern.test(tag)) out.issues.push("charset");
+    if (f.minAlnum) {
+      const alnum = (tag.match(/[A-Za-z0-9]/g) || []).length;
+      if (tag && alnum < f.minAlnum) out.issues.push("min-alnum");
+    }
+    out.level = out.issues.length ? "fail" : "ok";
+    out.ok = !out.issues.length;
+    return out;
+  }
+
+  /* How many characters are left for the player's own name once the tag is
+     folded in. Only meaningful for kind:"folded" (and for anyone who prefixes
+     a tag by hand). Returns null when we have no sourced name limit. */
+  function tagBudget(composedTag, gameId, separator) {
+    const f = TAG_FIELDS[gameId];
+    const ruleId = (f && f.nameRule) || gameId;
+    const rule = RULES[ruleId];
+    if (!rule || !rule.limit) return null;
+    const spent = Array.from(composedTag || "").length
+      + Array.from(separator || "").length;
+    return {
+      label: rule.label, limit: rule.limit, spent: spent,
+      left: rule.limit - spent, noSpace: !!rule.noSpace,
+      asciiOnly: !!rule.asciiPattern
+    };
+  }
+
+  /* ============================
      Character classification
      ============================ */
 
@@ -471,7 +595,10 @@
 
   ns.gameRules = {
     RULES: RULES,
+    TAG_FIELDS: TAG_FIELDS,
     analyze: analyze,
+    analyzeTag: analyzeTag,
+    tagBudget: tagBudget,
     initChecker: initChecker,
     classifyChar: classifyChar,
     graphemes: graphemes,
