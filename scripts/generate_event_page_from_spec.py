@@ -845,6 +845,28 @@ def render_page(spec):
             + spec["phrase_cta"].replace("{href}", href)
             + "</p>"
         )
+    # Emoji/symbol section overrides. Both exist for Hub-vs-Spoke Rule 3
+    # de-confliction (CLAUDE.md): when a /library/ collection page owns the
+    # "<event> symbols" query, this section must stop contesting it — its H2
+    # gets re-scoped to the generator job, and it points at the collection
+    # instead. The default heading stays "{event_name} Emoji & Symbols" for
+    # every event whose symbols query no /library/ page owns.
+    emoji_heading = spec.get("emoji_section_heading") or tr(
+        language, "section_emoji_heading", event_name=esc(event_name),
+    )
+    # Carries its own anchor rather than a {href} placeholder (unlike
+    # phrase_cta, whose target is derived from companion_answer_slug): the
+    # target is a hand-picked page and must be the LOCALE-NATIVE one per
+    # CLAUDE.md's locale-native internal linking rule, so the choice belongs
+    # in each language's spec, visible to review.
+    emoji_cta_html = ""
+    if spec.get("emoji_section_cta"):
+        emoji_cta_html = (
+            '\n    <p class="u-secondary-tight u-mt-15">'
+            + spec["emoji_section_cta"]
+            + "</p>"
+        )
+
     hreflang_html = render_hreflang(spec.get("hreflang"))
 
     aka_html = ""
@@ -1042,9 +1064,9 @@ def render_page(spec):
 
   <section class="editorial-section" id="eventEmojiSection">
     <span class="article-section-label">{tr(language, "section_emoji_label")}</span>
-    <h2>{tr(language, "section_emoji_heading", event_name=esc(event_name))}</h2>
+    <h2>{emoji_heading}</h2>
     <p class="editorial-intro">{tr(language, "section_emoji_intro")}</p>
-    <div id="eventEmojiGrids"></div>
+    <div id="eventEmojiGrids"></div>{emoji_cta_html}
   </section>
 
   <div class="section-divider"></div>

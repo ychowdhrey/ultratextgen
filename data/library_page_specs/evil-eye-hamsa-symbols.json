@@ -6,64 +6,73 @@
   "breadcrumb": "Evil Eye & Hamsa Symbols",
   "hero_h1": "Evil Eye & Hamsa Symbols",
   "hero_tagline": "The nazar amulet 🧿, the hamsa hand 🪬, and the eye and charm symbols that ward off bad luck. Click any symbol to copy it instantly.",
-  "intro": "The evil eye 🧿 and the hamsa 🪬 are two different amulets from two different traditions, and this page keeps them apart. The nazar is a blue-and-white glass bead from the Turkish and Greek Mediterranean — the name comes from Arabic نظر (naẓar), meaning \"sight\" or \"gazing\" — and it guards against one specific thing: envy, the harmful look of a jealous eye. The hamsa is an open right hand from the Middle East and North Africa, named for Arabic خمسة (khamsah), \"five,\" and it offers general protection rather than envy-specific protection. Many modern hamsa designs place an eye in the palm, which is why the two are so often treated as one charm — but they have separate origins and separate meanings. Below you'll find both emoji plus the watchful eyes, open palms, blue bead colorway, and luck charms people pair with them in Instagram bios, jewelry shop listings, and good-luck captions.",
+  "intro": "The evil eye symbol — the nazar of Turkish, Greek, and Middle Eastern tradition — is a blue-and-white glass bead believed to deflect envy. The hamsa 🪬 (the Hand of Fatima, Hand of Miriam, or Hand of Mary) is a separate amulet with its own older lineage, worn for general protection rather than against envy specifically. The two are constantly conflated, largely because many modern hamsa designs have an eye set into the palm. This page collects the nazar amulet emoji, the hamsa emoji, watchful eye characters, and the blue bead palette people use in Instagram bios, jewelry shop listings, and good-luck captions. Note that the hamsa 🪬 was added in Unicode 14, so it may show as a blank box on older devices.",
   "date_published": "2026-06-12",
   "date_modified": "2026-08-01",
   "copy_pattern": "single",
   "sections": [
     {
-      "id": "nazar-amulet",
-      "label": "Nazar",
-      "h2": "Nazar Amulet & Evil Eye Emoji",
-      "intro": "The blue bead itself, plus the watching-eye characters that carry the same meaning. In Turkish the bead is the nazar boncuğu — literally the \"evil eye bead.\"",
+      "id": "nazar-amulets",
+      "label": "Nazar & Hamsa",
+      "h2": "Nazar Amulet & Hamsa Emoji",
+      "intro": "The two core protection emoji: the blue evil eye bead and the hamsa hand.",
       "symbols": [
-        { "char": "🧿", "label": "Nazar Amulet" },
-        { "char": "👁", "label": "Eye" },
-        { "char": "👁️", "label": "Eye (Emoji Style)" },
-        { "char": "👀", "label": "Eyes" },
-        { "char": "🔵", "label": "Blue Circle" },
-        { "char": "👁️‍🗨️", "label": "Eye in Speech Bubble" }
-      ]
-    },
-    {
-      "id": "hamsa-hand",
-      "label": "Hamsa",
-      "h2": "Hamsa Hand Symbols",
-      "intro": "The hamsa emoji and the open-palm hands that echo it. Known as the Hand of Fatima, the Hand of Miriam, and the Hand of Mary across three faiths.",
-      "symbols": [
-        { "char": "🪬", "label": "Hamsa" },
-        { "char": "✋", "label": "Raised Hand" },
-        { "char": "🤚", "label": "Raised Back of Hand" },
-        { "char": "🖐", "label": "Hand with Fingers Splayed" },
-        { "char": "🤲", "label": "Palms Up Together" },
-        { "char": "🫴", "label": "Palm Up Hand" }
+        {
+          "char": "🧿",
+          "label": "Nazar Amulet"
+        },
+        {
+          "char": "🪬",
+          "label": "Hamsa"
+        },
+        {
+          "char": "👁",
+          "label": "Eye"
+        },
+        {
+          "char": "👁️",
+          "label": "Eye (Emoji Style)"
+        },
+        {
+          "char": "👀",
+          "label": "Eyes"
+        },
+        {
+          "char": "🔵",
+          "label": "Blue Circle"
+        }
       ]
     },
     {
       "id": "watchful-eyes",
       "label": "Watchful Eyes",
       "h2": "Watchful Eye Symbols",
-      "intro": "Eye characters from Unicode, including the ancient Egyptian Eye of Horus — a protective-eye tradition older than either the nazar or the hamsa.",
+      "intro": "Eye characters from Unicode, including the ancient Egyptian Eye of Horus.",
       "symbols": [
-        { "char": "𓂀", "label": "Eye of Horus (Egyptian Hieroglyph)" },
-        { "char": "𓁹", "label": "Egyptian Hieroglyph Eye" },
-        { "char": "◉", "label": "Fisheye" },
-        { "char": "⊙", "label": "Circled Dot Operator" },
-        { "char": "◎", "label": "Bullseye" }
-      ]
-    },
-    {
-      "id": "blue-bead-palette",
-      "label": "Blue & White",
-      "h2": "Blue & White Bead Palette",
-      "intro": "The classic nazar colorway — cobalt blue and white — as circles, squares, and hearts.",
-      "symbols": [
-        { "char": "🟦", "label": "Blue Square" },
-        { "char": "💙", "label": "Blue Heart" },
-        { "char": "🩵", "label": "Light Blue Heart" },
-        { "char": "🤍", "label": "White Heart" },
-        { "char": "⚪", "label": "White Circle" },
-        { "char": "🌀", "label": "Cyclone" }
+        {
+          "char": "𓂀",
+          "label": "Eye of Horus (Egyptian Hieroglyph)"
+        },
+        {
+          "char": "𓁹",
+          "label": "Egyptian Hieroglyph Eye"
+        },
+        {
+          "char": "◉",
+          "label": "Fisheye"
+        },
+        {
+          "char": "⊙",
+          "label": "Circled Dot Operator"
+        },
+        {
+          "char": "◎",
+          "label": "Bullseye"
+        },
+        {
+          "char": "👁️‍🗨️",
+          "label": "Eye in Speech Bubble"
+        }
       ]
     },
     {
@@ -72,36 +81,95 @@
       "h2": "Luck & Protection Charms",
       "intro": "Good-luck companions that pair naturally with the evil eye in bios and captions.",
       "symbols": [
-        { "char": "🍀", "label": "Four Leaf Clover" },
-        { "char": "☘", "label": "Shamrock" },
-        { "char": "📿", "label": "Prayer Beads" },
-        { "char": "🔮", "label": "Crystal Ball" },
-        { "char": "🐘", "label": "Elephant" },
-        { "char": "🌟", "label": "Glowing Star" },
-        { "char": "🙏", "label": "Folded Hands" }
+        {
+          "char": "🍀",
+          "label": "Four Leaf Clover"
+        },
+        {
+          "char": "☘",
+          "label": "Shamrock"
+        },
+        {
+          "char": "📿",
+          "label": "Prayer Beads"
+        },
+        {
+          "char": "🔮",
+          "label": "Crystal Ball"
+        },
+        {
+          "char": "🐘",
+          "label": "Elephant"
+        },
+        {
+          "char": "🌟",
+          "label": "Glowing Star"
+        }
       ]
-    }
-  ],
-  "faq": [
-    {
-      "q": "What is the difference between the evil eye 🧿 and the hamsa 🪬?",
-      "a": "They are two separate amulets. The nazar (🧿) is a blue glass bead from the Turkish and Greek Mediterranean that protects specifically against envy — the harmful gaze of a jealous person. The hamsa (🪬) is an open right hand from the Middle East and North Africa that offers general protection. They are often confused because many hamsa designs include an eye in the palm, but they come from different traditions and mean different things."
     },
     {
-      "q": "What does the nazar amulet emoji 🧿 mean?",
-      "a": "🧿 is the Unicode Nazar Amulet, added in 2018. It depicts the blue-and-white glass bead — concentric rings of dark blue, light blue, white, and black — worn or hung to deflect the evil eye. The name comes from Arabic نظر (naẓar), meaning sight or gazing; in Turkish the bead is called nazar boncuğu. People use it in bios and captions as shorthand for protection and warding off bad energy."
+      "id": "blue-bead-palette",
+      "label": "Blue & White",
+      "h2": "Blue & White Bead Palette",
+      "intro": "The classic nazar colorway — cobalt blue and white — as circles, squares, and hearts.",
+      "symbols": [
+        {
+          "char": "🟦",
+          "label": "Blue Square"
+        },
+        {
+          "char": "💙",
+          "label": "Blue Heart"
+        },
+        {
+          "char": "🩵",
+          "label": "Light Blue Heart"
+        },
+        {
+          "char": "🤍",
+          "label": "White Heart"
+        },
+        {
+          "char": "⚪",
+          "label": "White Circle"
+        },
+        {
+          "char": "🌀",
+          "label": "Cyclone"
+        }
+      ]
     },
     {
-      "q": "Why does the hamsa emoji 🪬 show as an empty box?",
-      "a": "The hamsa was added in Unicode 14.0 in 2021, which makes it one of the newer emoji. Devices and apps that have not updated their emoji fonts since then render it as a blank rectangle, often called tofu. The nazar amulet 🧿 is three years older and much more widely supported, so it is the safer choice when the symbol has to display everywhere."
-    },
-    {
-      "q": "What is the hamsa called in different traditions?",
-      "a": "The name hamsa comes from Arabic خمسة (khamsah), meaning five, for the five fingers. In Islamic tradition it is the Hand of Fatima, after the daughter of the Prophet Muhammad. In Jewish tradition it is the Hand of Miriam, after the sister of Moses. In some Christian communities it is the Hand of Mary. The symbol predates all three and is often traced back to the Punic goddess Tanit of ancient Carthage."
-    },
-    {
-      "q": "Is the evil eye emoji good luck or bad luck?",
-      "a": "The emoji is the protective charm, not the curse. The evil eye itself is the harmful look; the nazar bead is the object that absorbs and deflects it. So sending 🧿 reads as wishing protection on someone, not wishing harm. In Turkish and Greek custom a bead that cracks is said to have done its job by taking a look meant for its owner."
+      "id": "hamsa-hands",
+      "label": "Hand Gestures",
+      "h2": "Hamsa Hand Gestures",
+      "intro": "Open-palm hand emoji that echo the protective raised hand of the hamsa.",
+      "symbols": [
+        {
+          "char": "✋",
+          "label": "Raised Hand"
+        },
+        {
+          "char": "🤚",
+          "label": "Raised Back of Hand"
+        },
+        {
+          "char": "🖐",
+          "label": "Hand with Fingers Splayed"
+        },
+        {
+          "char": "🤲",
+          "label": "Palms Up Together"
+        },
+        {
+          "char": "🙏",
+          "label": "Folded Hands"
+        },
+        {
+          "char": "🫴",
+          "label": "Palm Up Hand"
+        }
+      ]
     }
   ],
   "related": [
@@ -125,5 +193,6 @@
       "title": "Moon & Celestial Symbols",
       "desc": "Moon phases, stars, and celestial characters to copy and paste."
     }
-  ]
+  ],
+  "_hand_edited_note": "The live page carries hand-added sections the generator does not emit: an Origins section (id=nazar-vs-hamsa) separating nazar from hamsa, and a 4-question FAQ with matching FAQPage JSON-LD. Regenerating from this spec alone WILL drop them. Re-apply from git history before regenerating."
 }
