@@ -771,6 +771,28 @@ same content to the two IT pages, or record the divergence deliberately
 requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
 by default.
 
+**Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
+consolidation** case, the same shape as the `fr/calligraphie` trio and
+explicitly *not* a "no English speaker would search this" claim. The page
+targets `süslü yazı` / `süslü harf` (fancy writing / fancy letters), which
+obviously has English demand — but **the EN homepage already *is* that page**:
+its H1 is literally "Fancy Text Generator", it uses "fancy text" 14 times, and
+no standalone EN fancy-text page exists anywhere in the repo (only `answers/*`
+spokes *about* fancy text, a different content type). Building an EN parent
+would cannibalise the site's own homepage.
+
+On the Turkish side the two do not compete, which is what makes the page worth
+keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **479 of its
+505 impressions on `süslü` queries** (`süslü harf kopyala` 288 imp @ pos 7.9,
+`süslü yazı kopyala yapıştır` 166 @ 9.1) while sitting at **position 44.8** on
+the `şekilli yaz*` family that `/tr/` owns at 4.5–6.3. The page was retargeted
+onto `süslü` on 2026-08-01 for exactly that reason.
+
+**What is not verified:** the cannibalisation premise rests on this repo's own
+structure, not on an EN SERP or EN GSC pull — Semrush has been out of API units
+since 2026-07-30. The first reverse-demand sweep must check it, same caveat the
+`fr/calligraphie` entry carries.
+
 **Ratified exceptions are ledgered state, not just prose (2026-08-01):**
 every ratified local-only exception above is also recorded in
 **`data/english_parent_exceptions.json`** — the machine-readable ledger

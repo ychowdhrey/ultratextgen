@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "tr",
   "language": "Turkish",
-  "phrase_count": 21,
+  "phrase_count": 22,
   "phrases": [
     {
       "phrase_id": "TR-001",
@@ -310,6 +310,22 @@
       "confidence": "high",
       "status": "approved",
       "last_verified": "2026-07-31"
+    },
+    {
+      "phrase_id": "TR-037",
+      "native_phrase": "nazar boncuğu",
+      "transliteration": "nazar boncugu",
+      "english_concept": "evil eye protective amulet/bead",
+      "country_or_market": "TR",
+      "register": "neutral, mainstream",
+      "phrase_type": "standard_everyday_term",
+      "content_surface": "title/H1/meta on a nazar/evil-eye symbol page",
+      "usage_guidance": "Lead with the full head-term 'nazar boncuğu' in the title/H1/meta of a Turkish evil-eye page, and keep 'nazar sembolleri' alongside it — both are correct and each has its own demand. First-party GSC confirms Turks type the full phrase: the only nazar query drawing impressions for this site is 'nazar boncuğu emoji kombinasyonları', never bare 'nazar'. Bare 'nazar' stays the right word inside running prose, where repeating the full phrase reads unnatural.",
+      "good_example": "Nazar Boncuğu Sembolü 🧿 Kopyala Yapıştır",
+      "avoid_when": "Do not replace every occurrence of 'nazar' with 'nazar boncuğu' — 'nazar' alone is the correct word for the CONCEPT (the evil eye / the gaze itself), while 'nazar boncuğu' names the physical bead/amulet. Body prose discussing the belief should keep 'nazar'; the targeting layer and the sections about the object should use 'nazar boncuğu'.",
+      "confidence": "high",
+      "status": "approved",
+      "last_verified": "2026-08-02"
     },
     {
       "phrase_id": "TR-038",
