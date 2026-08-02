@@ -1,0 +1,380 @@
+{
+  "slug": "symbole-muzyczne",
+  "lang": "pl",
+  "title": "Symbole Muzyczne: Kopiuj i Wklej Nuty ♪ ♫",
+  "meta_description": "Przeglądaj i kopiuj symbole notacji muzycznej, emoji instrumentów i znaki Unicode związane z dźwiękiem. Kliknij dowolny symbol, aby go natychmiast skopiować.",
+  "breadcrumb": "Symbole Muzyczne",
+  "hero_h1": "Symbole Muzyczne",
+  "hero_tagline": "Zbiór referencyjny symboli notacji muzycznej, emoji instrumentów i znaków Unicode związanych z dźwiękiem. Kliknij dowolny symbol, aby go od razu skopiować.",
+  "intro": "Ta biblioteka zawiera nuty i symbole notacji muzycznej, emoji instrumentów oraz znaki Unicode związane z dźwiękiem. Symbole pogrupowano według kategorii: znaki notacji, instrumenty i sterowanie odtwarzaniem.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/pl/library/symbole-muzyczne/",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "library_url": "https://ultratextgen.com/pl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Nuty",
+      "h2": "Nuty",
+      "intro": "Symbole nut w Unicode oraz emoji przedstawiające nuty.",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "Ćwierćnuta"
+        },
+        {
+          "char": "♪",
+          "label": "Ósemka"
+        },
+        {
+          "char": "♫",
+          "label": "Ósemki z belką"
+        },
+        {
+          "char": "♬",
+          "label": "Szesnastki"
+        },
+        {
+          "char": "🎵",
+          "label": "Nuta"
+        },
+        {
+          "char": "🎶",
+          "label": "Nuty"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Klucze",
+      "h2": "Symbole Kluczy",
+      "intro": "Klucze muzyczne używane w zapisie nutowym.",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "Klucz wiolinowy"
+        },
+        {
+          "char": "𝄡",
+          "label": "Klucz C"
+        },
+        {
+          "char": "𝄢",
+          "label": "Klucz basowy"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Znaki chromatyczne",
+      "h2": "Znaki Chromatyczne",
+      "intro": "Krzyżyk, bemol, kasownik i znaki podwójne, zmieniające wysokość dźwięku.",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "Krzyżyk"
+        },
+        {
+          "char": "♭",
+          "label": "Bemol"
+        },
+        {
+          "char": "♮",
+          "label": "Kasownik"
+        },
+        {
+          "char": "𝄪",
+          "label": "Podwójny krzyżyk"
+        },
+        {
+          "char": "𝄫",
+          "label": "Podwójny bemol"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Dynamika i notacja",
+      "h2": "Dynamika i Znaki Notacji",
+      "intro": "Oznaczenia dynamiki oraz znaki notacji muzycznej.",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "Piano (cicho)"
+        },
+        {
+          "char": "𝆑",
+          "label": "Forte (głośno)"
+        },
+        {
+          "char": "𝄀",
+          "label": "Kreska taktowa"
+        },
+        {
+          "char": "𝄁",
+          "label": "Podwójna kreska taktowa"
+        },
+        {
+          "char": "𝄂",
+          "label": "Kreska końcowa"
+        },
+        {
+          "char": "𝄃",
+          "label": "Odwrócona kreska końcowa"
+        },
+        {
+          "char": "𝄆",
+          "label": "Znak repetycji (początek)"
+        },
+        {
+          "char": "𝄇",
+          "label": "Znak repetycji (koniec)"
+        },
+        {
+          "char": "𝄐",
+          "label": "Fermata"
+        },
+        {
+          "char": "𝄑",
+          "label": "Fermata pod pięciolinią"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Pauzy",
+      "h2": "Symbole Pauz",
+      "intro": "Znaki pauz oznaczające ciszę w zapisie nutowym.",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "Pauza ósemkowa"
+        },
+        {
+          "char": "𝄿",
+          "label": "Pauza szesnastkowa"
+        },
+        {
+          "char": "𝄻",
+          "label": "Pauza półnutowa"
+        },
+        {
+          "char": "𝄼",
+          "label": "Pauza ćwierćnutowa"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Instrumenty",
+      "h2": "Emoji Instrumentów Muzycznych",
+      "intro": "Emoji przedstawiające instrumenty muzyczne.",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "Gitara"
+        },
+        {
+          "char": "🎹",
+          "label": "Fortepian"
+        },
+        {
+          "char": "🎺",
+          "label": "Trąbka"
+        },
+        {
+          "char": "🎻",
+          "label": "Skrzypce"
+        },
+        {
+          "char": "🎷",
+          "label": "Saksofon"
+        },
+        {
+          "char": "🥁",
+          "label": "Perkusja"
+        },
+        {
+          "char": "🪕",
+          "label": "Banjo"
+        },
+        {
+          "char": "🪗",
+          "label": "Akordeon"
+        },
+        {
+          "char": "🪘",
+          "label": "Bęben podłużny"
+        },
+        {
+          "char": "🪇",
+          "label": "Marakasy"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Dźwięk i odtwarzanie",
+      "h2": "Dźwięk i Odtwarzanie",
+      "intro": "Symbole związane z dźwiękiem, głośnikami i sterowaniem audio.",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "Mikrofon"
+        },
+        {
+          "char": "🎧",
+          "label": "Słuchawki"
+        },
+        {
+          "char": "📻",
+          "label": "Radio"
+        },
+        {
+          "char": "🔊",
+          "label": "Głośnik — duża głośność"
+        },
+        {
+          "char": "🔇",
+          "label": "Głośnik wyciszony"
+        },
+        {
+          "char": "🎼",
+          "label": "Partytura"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Ozdoby do bio",
+      "h2": "Ozdoby do Bio z Nutami",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "Separator z nut"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "Nuta w ramce"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "Smuga nut"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "Delikatna nuta"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "Migocząca nuta"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "Nuty w parze"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "Nuta z serduszkiem"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "Nuta w nawiasach"
+        }
+      ]
+    }
+  ],
+  "cta": "Użyj UltraTextGen, aby zamienić zwykły tekst na pogrubienie, kursywę, pismo odręczne i ponad 100 innych stylów czcionek Unicode — za darmo i od razu.",
+  "related": [
+    {
+      "href": "/pl/library/symbole-gwiazdek/",
+      "title": "Symbole Gwiazdek",
+      "desc": "Gwiazdki, asteryski i błyski do kopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-serca/",
+      "title": "Symbole Serc",
+      "desc": "Serca ♥ ♡ ❤ we wszystkich kształtach i stylach."
+    },
+    {
+      "href": "/pl/symbol/emoji-mikrofonu/",
+      "title": "Emoji Mikrofonu (🎤)",
+      "desc": "Pochodzenie i zastosowanie emoji mikrofonu."
+    },
+    {
+      "href": "/pl/library/symbole-estetyczne/",
+      "title": "Symbole Estetyczne",
+      "desc": "Estetyczne znaki Unicode do bio i podpisów."
+    }
+  ]
+}

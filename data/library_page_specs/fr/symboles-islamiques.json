@@ -1,0 +1,280 @@
+{
+  "slug": "symboles-islamiques",
+  "lang": "fr",
+  "title": "Symboles Islamiques : Copier-Coller ☪ ﷲ ﷺ",
+  "meta_description": "Symboles islamiques à copier-coller : étoile et croissant, ligatures d'Allah et de la Basmala, emojis de mosquée et de prière, vœux de l'Aïd. Cliquez pour copier.",
+  "breadcrumb": "Symboles Islamiques",
+  "hero_h1": "Symboles Islamiques",
+  "hero_tagline": "L'étoile et le croissant, les ligatures honorifiques arabes, les caractères de mosquée et de prière, et les vœux du Ramadan. Cliquez sur un symbole pour le copier instantanément.",
+  "intro": "Les symboles islamiques d'Unicode vont bien au-delà du célèbre croissant et étoile ☪. Le bloc des formes de présentation arabes contient des ligatures honorifiques complètes : des caractères uniques qui rendent le mot Allah (ﷲ), la formule de bénédiction récitée après le nom du Prophète (ﷺ) et la Basmala entière (﷽). Cette page réunit ces ligatures avec les emojis de mosquée, de la Kaaba et de la prière, présentés avec respect pour les vœux de Ramadan et de l'Aïd, les bios et les publications à caractère religieux. Merci d'employer les ligatures honorifiques avec la déférence qu'elles appellent.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/fr/library/symboles-islamiques/",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "library_url": "https://ultratextgen.com/fr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/islamic-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/islamische-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-islamiques/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-islami/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-islamici/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/islamic-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/islam-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/islamitische-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-islamskie/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/islamskie-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/islamic-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/islami-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "star-crescent",
+      "label": "Étoile et croissant",
+      "h2": "Symboles Étoile et Croissant",
+      "intro": "Le croissant de lune et l'étoile, l'emblème le plus largement associé à l'islam.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "Étoile et croissant"
+        },
+        {
+          "char": "☪️",
+          "label": "Étoile et croissant (style emoji)"
+        },
+        {
+          "char": "☫",
+          "label": "Symbole farsi (emblème de l'Iran)"
+        },
+        {
+          "char": "🌙",
+          "label": "Croissant de lune"
+        },
+        {
+          "char": "☽",
+          "label": "Premier quartier"
+        },
+        {
+          "char": "☾",
+          "label": "Dernier quartier"
+        },
+        {
+          "char": "⭐",
+          "label": "Étoile"
+        },
+        {
+          "char": "✨",
+          "label": "Étincelles"
+        }
+      ]
+    },
+    {
+      "id": "arabic-ligatures",
+      "label": "Ligatures",
+      "h2": "Ligatures Honorifiques Arabes",
+      "intro": "Des caractères Unicode uniques qui rendent des mots sacrés et des formules honorifiques entières — à manier avec soin.",
+      "symbols": [
+        {
+          "char": "ﷲ",
+          "label": "Ligature Allah"
+        },
+        {
+          "char": "ﷺ",
+          "label": "Ligature Sallallahou alayhi wa-sallam"
+        },
+        {
+          "char": "﷽",
+          "label": "Ligature Bismillah ar-Rahman ar-Rahim"
+        },
+        {
+          "char": "ﷻ",
+          "label": "Ligature Djalla Djalalouhou"
+        },
+        {
+          "char": "ﷴ",
+          "label": "Ligature Mohammad"
+        },
+        {
+          "char": "۞",
+          "label": "Début de Rub el Hizb"
+        },
+        {
+          "char": "۝",
+          "label": "Fin de verset (aya)"
+        }
+      ]
+    },
+    {
+      "id": "mosque-worship",
+      "label": "Lieux de culte",
+      "h2": "Mosquée et Kaaba",
+      "intro": "Emojis de la mosquée, de la Kaaba à La Mecque et du culte en général.",
+      "symbols": [
+        {
+          "char": "🕌",
+          "label": "Mosquée"
+        },
+        {
+          "char": "🕋",
+          "label": "Kaaba"
+        },
+        {
+          "char": "🛐",
+          "label": "Lieu de culte"
+        }
+      ]
+    },
+    {
+      "id": "prayer-devotion",
+      "label": "Prière",
+      "h2": "Prière et Dévotion",
+      "intro": "Caractères pour la salât, la du'â et la dévotion quotidienne.",
+      "symbols": [
+        {
+          "char": "📿",
+          "label": "Chapelet de prière"
+        },
+        {
+          "char": "🤲",
+          "label": "Paumes tournées vers le haut"
+        },
+        {
+          "char": "🧎",
+          "label": "Personne agenouillée"
+        },
+        {
+          "char": "🧕",
+          "label": "Femme avec foulard"
+        }
+      ]
+    },
+    {
+      "id": "ramadan-eid",
+      "label": "Ramadan et Aïd",
+      "h2": "Fêtes du Ramadan et de l'Aïd",
+      "intro": "Caractères festifs pour les invitations à l'iftar, les publications de l'Aïd et les vœux en famille.",
+      "symbols": [
+        {
+          "char": "🎊",
+          "label": "Boule de confettis"
+        },
+        {
+          "char": "🎉",
+          "label": "Cotillon"
+        },
+        {
+          "char": "🍬",
+          "label": "Bonbon"
+        },
+        {
+          "char": "🐑",
+          "label": "Brebis"
+        },
+        {
+          "char": "🌴",
+          "label": "Palmier"
+        },
+        {
+          "char": "🫖",
+          "label": "Théière"
+        }
+      ]
+    },
+    {
+      "id": "islamic-greetings",
+      "label": "Vœux",
+      "h2": "Combinaisons de Vœux Ramadan et Aïd",
+      "intro": "Des vœux respectueux prêts à l'emploi : chaque bouton copie la combinaison complète en un clic.",
+      "symbols": [
+        {
+          "char": "☪️🌙 Ramadan Mubarak 🌙☪️",
+          "label": "Vœu « Ramadan Mubarak »"
+        },
+        {
+          "char": "🕌✨ Eid Mubarak ✨🕌",
+          "label": "Vœu « Eid Mubarak »"
+        },
+        {
+          "char": "🤲📿 Jumma Mubarak 📿🤲",
+          "label": "Vœu « Jumma Mubarak »"
+        }
+      ]
+    }
+  ],
+  "cta": "Utilisez UltraTextGen pour convertir du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Symboles Religieux",
+      "desc": "Symboles de foi et de spiritualité de traditions du monde entier."
+    },
+    {
+      "href": "/fr/library/symboles-etoiles/",
+      "title": "Symboles Étoile",
+      "desc": "Étoiles, astérisques et scintillements à copier."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "Lune et Symboles Célestes",
+      "desc": "Phases de la lune, étoiles et corps célestes."
+    },
+    {
+      "href": "/fr/symbol/symbole-paix/",
+      "title": "Symbole de la Paix (☮)",
+      "desc": "L'histoire et l'usage du symbole de la paix."
+    }
+  ]
+}

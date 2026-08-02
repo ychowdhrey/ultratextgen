@@ -1,0 +1,420 @@
+{
+  "slug": "jonggyo-gihou",
+  "lang": "ko",
+  "title": "종교 기호 복사 ✝ ☪ ✡ ☸ 세계 신앙 상징 모음",
+  "meta_description": "세계 주요 전통의 종교·영성·신앙 관련 유니코드 기호를 찾아 복사하세요. 아무 기호나 눌러 바로 복사할 수 있습니다.",
+  "breadcrumb": "종교·영성 기호",
+  "hero_h1": "종교·영성 기호",
+  "hero_tagline": "세계 주요 전통에서 온 종교·영성·신앙 관련 유니코드 기호 모음. 아무 기호나 눌러 바로 복사하세요.",
+  "intro": "이 페이지에는 기독교, 이슬람교, 유대교, 힌두교, 불교를 비롯한 세계 여러 전통의 기호와, 전통을 가리지 않고 쓰이는 영성·평화 기호를 모았습니다. 신앙 전통과 갈래별로 분류했습니다.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ko/library/jonggyo-gihou/",
+  "home_url": "https://ultratextgen.com/ko/",
+  "crumb_home": "홈",
+  "library_url": "https://ultratextgen.com/ko/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/korssymboler/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/religious-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/religioese-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-religieux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-keagamaan/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-religiosi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/religious-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jonggyo-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/religieuze-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-religijne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/religioznye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/religious-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/dini-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "christian",
+      "label": "기독교",
+      "h2": "십자가와 기독교 기호",
+      "intro": "유니코드의 여러 십자가 형태와 교회 관련 기호.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "라틴 십자가"
+        },
+        {
+          "char": "☦",
+          "label": "정교회 십자가"
+        },
+        {
+          "char": "✞",
+          "label": "그림자 십자가"
+        },
+        {
+          "char": "✟",
+          "label": "윤곽 십자가"
+        },
+        {
+          "char": "♰",
+          "label": "서시리아 십자가"
+        },
+        {
+          "char": "♱",
+          "label": "동시리아 십자가"
+        },
+        {
+          "char": "⛪",
+          "label": "교회"
+        },
+        {
+          "char": "✠",
+          "label": "몰타 십자가"
+        }
+      ]
+    },
+    {
+      "id": "islamic",
+      "label": "이슬람교",
+      "h2": "이슬람 기호",
+      "intro": "초승달, 모스크 등 이슬람 전통과 관련된 기호.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "초승달과 별"
+        },
+        {
+          "char": "🕌",
+          "label": "모스크"
+        },
+        {
+          "char": "🕋",
+          "label": "카바"
+        },
+        {
+          "char": "📿",
+          "label": "기도 묵주"
+        },
+        {
+          "char": "﷽",
+          "label": "바스말라 합자"
+        }
+      ]
+    },
+    {
+      "id": "jewish",
+      "label": "유대교",
+      "h2": "유대교 기호",
+      "intro": "다윗의 별, 메노라 등 유대 전통의 기호.",
+      "symbols": [
+        {
+          "char": "✡",
+          "label": "다윗의 별"
+        },
+        {
+          "char": "🕍",
+          "label": "시나고그"
+        },
+        {
+          "char": "🕎",
+          "label": "메노라"
+        }
+      ]
+    },
+    {
+      "id": "dharmic",
+      "label": "인도 계열 종교",
+      "h2": "인도 계열 종교 기호",
+      "intro": "힌두교, 불교, 자이나교, 시크교의 기호.",
+      "symbols": [
+        {
+          "char": "☸",
+          "label": "법륜"
+        },
+        {
+          "char": "🕉",
+          "label": "옴 (이모지)"
+        },
+        {
+          "char": "卍",
+          "label": "만자 卍 (불교의 길상 표시, 왼쪽 방향)"
+        },
+        {
+          "char": "☬",
+          "label": "아디 샤크티 (칸다)"
+        },
+        {
+          "char": "🛕",
+          "label": "힌두 사원"
+        },
+        {
+          "char": "🪯",
+          "label": "칸다 (이모지)"
+        },
+        {
+          "char": "🔱",
+          "label": "트리슐라 (삼지창)"
+        },
+        {
+          "char": "ॐ",
+          "label": "옴 (데바나가리)"
+        },
+        {
+          "char": "🦚",
+          "label": "공작"
+        },
+        {
+          "char": "🪶",
+          "label": "공작 깃털"
+        },
+        {
+          "char": "🪈",
+          "label": "피리"
+        },
+        {
+          "char": "🪷",
+          "label": "연꽃"
+        },
+        {
+          "char": "🪔",
+          "label": "디야 등불"
+        },
+        {
+          "char": "🙏",
+          "label": "합장한 손"
+        },
+        {
+          "char": "🧘",
+          "label": "연꽃 자세의 사람 (명상)"
+        }
+      ]
+    },
+    {
+      "id": "east-asian",
+      "label": "동아시아",
+      "h2": "동아시아 영성 기호",
+      "intro": "도교, 신토 등 동아시아 전통의 기호.",
+      "symbols": [
+        {
+          "char": "☯",
+          "label": "음양 (태극)"
+        },
+        {
+          "char": "☰",
+          "label": "건(하늘) 괘"
+        },
+        {
+          "char": "☱",
+          "label": "태(못) 괘"
+        },
+        {
+          "char": "☲",
+          "label": "이(불) 괘"
+        },
+        {
+          "char": "☳",
+          "label": "진(우레) 괘"
+        },
+        {
+          "char": "☴",
+          "label": "손(바람) 괘"
+        },
+        {
+          "char": "☵",
+          "label": "감(물) 괘"
+        },
+        {
+          "char": "☶",
+          "label": "간(산) 괘"
+        },
+        {
+          "char": "☷",
+          "label": "곤(땅) 괘"
+        },
+        {
+          "char": "⛩",
+          "label": "신토 신사 (도리이)"
+        },
+        {
+          "char": "卐",
+          "label": "만자 卐 (동아시아의 길상 표시, 오른쪽 방향)"
+        }
+      ]
+    },
+    {
+      "id": "yin-yang-lines",
+      "label": "효(爻)",
+      "h2": "음과 양의 선",
+      "intro": "위의 팔괘를 이루는 한 줄(효)과 두 줄 기호.",
+      "symbols": [
+        {
+          "char": "⚊",
+          "label": "양효 (한 줄)"
+        },
+        {
+          "char": "⚋",
+          "label": "음효 (한 줄)"
+        },
+        {
+          "char": "⚌",
+          "label": "태양 (두 줄)"
+        },
+        {
+          "char": "⚍",
+          "label": "소음 (두 줄)"
+        },
+        {
+          "char": "⚎",
+          "label": "소양 (두 줄)"
+        },
+        {
+          "char": "⚏",
+          "label": "태음 (두 줄)"
+        }
+      ]
+    },
+    {
+      "id": "spiritual",
+      "label": "보편적 영성",
+      "h2": "보편적 영성 기호",
+      "intro": "여러 전통에 걸쳐 쓰이거나 널리 알려진 기호.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "평화 기호"
+        },
+        {
+          "char": "⚛",
+          "label": "원자 기호"
+        },
+        {
+          "char": "🔯",
+          "label": "가운데 점이 있는 육각별"
+        },
+        {
+          "char": "⚕",
+          "label": "아스클레피오스의 지팡이"
+        },
+        {
+          "char": "☥",
+          "label": "앙크"
+        }
+      ]
+    },
+    {
+      "id": "peace-gestures-goodwill",
+      "label": "평화와 선의",
+      "h2": "평화·손짓·선의",
+      "intro": "위의 평화 기호와 함께 쓰이는 손짓, 비둘기, 선의의 기호.",
+      "symbols": [
+        {
+          "char": "✌️",
+          "label": "브이 손 모양"
+        },
+        {
+          "char": "🙏",
+          "label": "합장한 손"
+        },
+        {
+          "char": "🕊️",
+          "label": "비둘기"
+        },
+        {
+          "char": "🫒",
+          "label": "올리브"
+        },
+        {
+          "char": "🌿",
+          "label": "올리브 가지"
+        },
+        {
+          "char": "🤝",
+          "label": "악수"
+        },
+        {
+          "char": "🫶",
+          "label": "손하트"
+        },
+        {
+          "char": "👐",
+          "label": "벌린 두 손"
+        }
+      ]
+    }
+  ],
+  "cta": "UltraTextGen으로 일반 텍스트를 굵게, 기울임, 필기체 등 100가지가 넘는 유니코드 폰트로 바꿔보세요 — 무료로 바로.",
+  "related": [
+    {
+      "href": "/ko/library/islam-gihou/",
+      "title": "이슬람 기호",
+      "desc": "초승달과 별, 아랍어 합자, 이드 인사말."
+    },
+    {
+      "href": "/ko/library/hateu-giho/",
+      "title": "하트 기호",
+      "desc": "♥ ♡ ❤ 등 모든 모양과 색의 하트."
+    },
+    {
+      "href": "/ko/symbol/pyeonghwa-giho/",
+      "title": "평화 기호 (☮)",
+      "desc": "평화 기호의 유래와 쓰임새."
+    },
+    {
+      "href": "/ko/symbol/eumyang-giho/",
+      "title": "음양 기호 (☯)",
+      "desc": "음양(태극) 기호의 의미와 유래."
+    }
+  ]
+}
