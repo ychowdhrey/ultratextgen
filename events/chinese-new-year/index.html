@@ -126,7 +126,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "When is Chinese New Year?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Chinese New Year falls on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days. Check a current calendar for the exact date, then come back and style your greeting for it."
+        "text": "Chinese New Year moves each year against the Gregorian calendar because it follows the Chinese lunisolar calendar, so it lands about 11 days earlier than the year before. The date shown at the top of this page is calculated for the current year; because the start of the month is confirmed locally by moon sighting, some countries observe it a day either side."
       }
     },
     {
@@ -198,9 +198,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="hero-card">
       <h1 class="hero-headline">Chinese New Year Text &amp; Symbol Generator</h1>
       <p class="hero-tagline">Type a name or wish and style it in curated festive fonts, then copy lanterns, luck characters, kaomoji, and ASCII art — or tap a ready-made greeting to style it instantly.</p>
+      <p class="event-next-date" id="eventNextDate" data-occurrence="{&quot;type&quot;: &quot;chinese&quot;, &quot;month&quot;: 1, &quot;day&quot;: 1, &quot;calendar_name&quot;: &quot;the Chinese lunisolar calendar&quot;}" data-template="Next Chinese New Year: {date}" hidden></p>
       <p class="u-secondary-tight">Also known as: Lunar New Year, CNY, Spring Festival</p>
       <div class="input-wrapper" id="eventTextWrap">
-        <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500" autofocus></textarea>
+        <textarea class="main-input" id="mainInput" placeholder="Type a name, wish, or greeting..." maxlength="500"></textarea>
         <span class="char-count"><span id="charCount">0</span>/500</span>
       </div>
     </div>
@@ -211,7 +212,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
        fetchpriority="high" alt="">
 </figure>
 
-
 <main class="container">
   <section class="editorial-section">
     <div class="editorial-block">
@@ -220,6 +220,25 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="block-example">
       <strong>Chinese New Year:</strong> on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days
     </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventPhraseSection">
+    <span class="article-section-label">Wishes &amp; Messages</span>
+    <h2>Chinese New Year Wishes &amp; Messages</h2>
+    <p class="editorial-intro">Tap any wish to drop it into the box above — every font below then restyles it instantly, so you can copy it decorated in one step.</p>
+    <div class="compare-grid" id="eventPhraseGrid"></div>
+    <p class="u-secondary-tight u-mt-15">Not sure which greeting fits? Read <a href="/answers/cny-greetings-what-to-say/">what to say for Chinese New Year</a> for the full breakdown of native script, romanization, and meaning.</p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="editorial-section" id="eventNativeSection">
+    <span class="article-section-label">In Chinese</span>
+    <h2>Chinese New Year Greetings in Chinese Characters</h2>
+    <p class="editorial-intro">Tap any line to copy it in Chinese. These are the native-script forms of the greetings above — paste them straight into a message, card, or bio.</p>
+    <div class="glyph-grid" id="eventNativeGrid"></div>
   </section>
 
   <div class="section-divider"></div>
@@ -257,16 +276,6 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <p class="editorial-intro">Curated multi-line pieces — tap Copy to grab one with its line breaks and spacing intact.</p>
     <div class="art-piece-grid" id="eventAsciiGrid"></div>
     <p class="u-secondary-tight u-mt-15">Want to type your own name or message into a live block-letter banner instead? Try the <a href="/ascii-art-generator/">ASCII Art Generator</a>.</p>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <section class="editorial-section" id="eventPhraseSection">
-    <span class="article-section-label">Phrase Bank</span>
-    <h2>Chinese New Year Phrase Bank</h2>
-    <p class="editorial-intro">Tap a phrase to drop it into the box up top and see every font style above restyle it instantly.</p>
-    <div class="compare-grid" id="eventPhraseGrid"></div>
-    <p class="u-secondary-tight u-mt-15">Not sure which greeting fits? Read <a href="/answers/cny-greetings-what-to-say/">what to say for Chinese New Year</a> for the full breakdown of native script, romanization, and meaning.</p>
   </section>
 
   <div class="section-divider"></div>
@@ -313,7 +322,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">When is Chinese New Year?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-      <div class="faq-answer">Chinese New Year falls on a different date each year, between late January and mid-February, set by the lunar calendar — a movable window of about 29 days. Check a current calendar for the exact date, then come back and style your greeting for it.</div>
+      <div class="faq-answer">Chinese New Year moves each year against the Gregorian calendar because it follows the Chinese lunisolar calendar, so it lands about 11 days earlier than the year before. The date shown at the top of this page is calculated for the current year; because the start of the month is confirmed locally by moon sighting, some countries observe it a day either side.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button">How do I use the Chinese New Year generator?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
@@ -447,52 +456,160 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   ],
   "phraseBank": [
     {
-      "text": "Xin Nian Kuai Le",
-      "nativeScript": "新年快乐",
-      "romanization": "Xīnnián kuàilè",
-      "translation": "Happy New Year"
-    },
-    {
       "text": "Gong Xi Fa Cai",
       "nativeScript": "恭喜发财",
       "romanization": "Gōngxǐ fācái",
-      "translation": "Wishing you prosperity"
+      "translation": "Wishing you prosperity — the most recognised CNY greeting.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Xin Nian Kuai Le",
+      "nativeScript": "新年快乐",
+      "romanization": "Xīnnián kuàilè",
+      "translation": "Happy New Year — the direct, all-purpose greeting.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Gong Hey Fat Choy",
+      "nativeScript": "恭喜發財",
+      "romanization": "Gung hei fat choi",
+      "translation": "The Cantonese pronunciation of Gong Xi Fa Cai, in traditional characters.",
+      "group": "Classic greetings"
     },
     {
       "text": "Wan Shi Ru Yi",
       "nativeScript": "万事如意",
       "romanization": "Wànshì rúyì",
-      "translation": "May everything go as you wish"
+      "translation": "May everything go as you wish.",
+      "group": "Classic greetings"
     },
     {
       "text": "Nian Nian You Yu",
       "nativeScript": "年年有余",
       "romanization": "Niánnián yǒuyú",
-      "translation": "May there be abundance every year"
+      "translation": "May you have abundance every year — the greeting behind the fish dish.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Happy Lunar New Year",
+      "translation": "Inclusive English version, used across East and Southeast Asia.",
+      "group": "Classic greetings"
+    },
+    {
+      "text": "Tong Xi Tong Xi",
+      "nativeScript": "同喜同喜",
+      "romanization": "Tóngxǐ tóngxǐ",
+      "translation": "The same to you — the classic reply to Gong Xi Fa Cai.",
+      "group": "Replies"
+    },
+    {
+      "text": "Ni Ye Yi Yang",
+      "nativeScript": "你也一样",
+      "romanization": "Nǐ yě yīyàng",
+      "translation": "You too — a simple, casual reply.",
+      "group": "Replies"
+    },
+    {
+      "text": "Happy New Year to you too!",
+      "translation": "Plain English reply.",
+      "group": "Replies"
     },
     {
       "text": "Shen Ti Jian Kang",
       "nativeScript": "身体健康",
       "romanization": "Shēntǐ jiànkāng",
-      "translation": "Wishing you good health"
+      "translation": "Wishing you good health — the standard wish for elders.",
+      "group": "For family"
     },
     {
-      "text": "He Jia Huan Le",
-      "nativeScript": "合家欢乐",
-      "romanization": "Héjiā huānlè",
-      "translation": "Happiness for the whole family"
+      "text": "Wishing you health and happiness in the new year",
+      "translation": "Warm family card wording.",
+      "group": "For family"
     },
     {
-      "text": "Jin Yu Man Tang",
-      "nativeScript": "金玉满堂",
-      "romanization": "Jīnyù mǎntáng",
-      "translation": "May treasures fill your home"
+      "text": "Happy New Year to the whole family",
+      "translation": "For the family group chat.",
+      "group": "For family"
     },
     {
-      "text": "Chu Xi Kuai Le",
-      "nativeScript": "除夕快乐",
-      "romanization": "Chúxì kuàilè",
-      "translation": "Happy New Year's Eve"
+      "text": "Xue Ye Jin Bu",
+      "nativeScript": "学业进步",
+      "romanization": "Xuéyè jìnbù",
+      "translation": "Progress in your studies — said to students and children.",
+      "group": "For family"
+    },
+    {
+      "text": "Missing the reunion dinner this year — Happy New Year",
+      "translation": "For family you can't travel to.",
+      "group": "For family"
+    },
+    {
+      "text": "Happy New Year! Red packets please",
+      "translation": "Playful nod to hongbao.",
+      "group": "For friends"
+    },
+    {
+      "text": "Gong Xi Fa Cai — hongbao na lai",
+      "nativeScript": "恭喜发财，红包拿来",
+      "romanization": "Gōngxǐ fācái, hóngbāo ná lái",
+      "translation": "Wishing you prosperity, now hand over the red packet — the classic joke version.",
+      "group": "For friends"
+    },
+    {
+      "text": "New year, same me, better snacks",
+      "translation": "Light, casual caption-style message.",
+      "group": "For friends"
+    },
+    {
+      "text": "Happy Lunar New Year, friend",
+      "translation": "Simple and warm.",
+      "group": "For friends"
+    },
+    {
+      "text": "Sheng Yi Xing Long",
+      "nativeScript": "生意兴隆",
+      "romanization": "Shēngyì xīnglóng",
+      "translation": "May your business flourish — the standard wish to a business owner.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Bu Bu Gao Sheng",
+      "nativeScript": "步步高升",
+      "romanization": "Bùbù gāoshēng",
+      "translation": "May you rise step by step — a career wish for colleagues.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Wishing you a prosperous and successful new year",
+      "translation": "Safe for clients and colleagues.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Happy Lunar New Year from all of us",
+      "translation": "Team or company-wide message.",
+      "group": "Formal & work"
+    },
+    {
+      "text": "Gong Xi Fa Cai",
+      "translation": "The caption that always works.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "新年快乐",
+      "nativeScript": "新年快乐",
+      "romanization": "Xīnnián kuàilè",
+      "translation": "Native-script caption — pastes anywhere.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Year of good fortune",
+      "translation": "Short and evergreen.",
+      "group": "Short for a caption"
+    },
+    {
+      "text": "Red and gold season",
+      "translation": "Playful caption for outfit or decor photos.",
+      "group": "Short for a caption"
     }
   ]
 };</script>
@@ -500,6 +617,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 <script src="/js/events/eventPageController.js" defer></script>
+<script src="/js/events/eventDates.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
 <script src="/footer.js"></script>
 </body>

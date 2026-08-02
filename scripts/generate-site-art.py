@@ -1171,6 +1171,30 @@ def m_star(p, accent=PURPLE):
     <path d="M90 260 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="{BLUE}" opacity="0.6"/>"""
 
 
+def m_clover(p, accent=PURPLE):
+    """A four-leaf clover on a stem — St Patrick's Day."""
+    return f"""
+    <circle cx="150" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="150" cy="210" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="210" r="46" fill="url(#g{p})"/>
+    <path d="M181 214 q6 48 -22 76" stroke="{PURPLE}" stroke-width="10"
+          fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M276 96 l7 17 l17 7 l-17 7 l-7 17 l-7 -17 l-17 -7 l17 -7 Z"
+          fill="{BLUE}" opacity="0.6"/>"""
+
+
+def m_gradcap(p, accent=PURPLE):
+    """A mortarboard with a tassel — graduation."""
+    return f"""
+    <path d="M180 108 L296 156 L180 204 L64 156 Z" fill="url(#g{p})"/>
+    <path d="M108 176 L108 232 q72 40 144 0 L252 176" stroke="{PURPLE}"
+          stroke-width="12" fill="none" stroke-linejoin="round" opacity="0.85"/>
+    <path d="M290 158 L290 224" stroke="{BLUE}" stroke-width="8"
+          fill="none" stroke-linecap="round"/>
+    <circle cx="290" cy="232" r="12" fill="{BLUE}"/>"""
+
+
 def m_arc(p, letters="ARC"):
     """Letters individually rotated along a circular arc — curved/arc text tool."""
     import math
@@ -1544,6 +1568,8 @@ PAGES = {
           label="zarif ve akıcı"), K_CAT),
   "tr-kalin-yazi": ("Kalın Yazı", "Kalın font kopyala yapıştır",
         P(m_typo, sample="Bold", weight="800", size=80, label="kalın ve net"), K_CAT),
+  "tr-alti-cizili-yazi": ("Altı Çizili Yazı", "Altı çizili font kopyala yapıştır",
+        P(m_typo, sample="Çizili", size=64, deco="underline", label="vurgulu ve net"), K_CAT),
   "tr-instagram-yazi-tipi": ("Instagram Yazı Tipi", "Bio için şekilli yazı ve semboller", m_camera, K_PLAT),
   "tr-snapchat-yazi-tipi": ("Snapchat Yazı Tipi", "Snap ve görünen ad için şekilli yazı", m_chat, K_PLAT),
   "fr-police-d-ecriture": ("Police d'Écriture", "Polices à copier-coller",
@@ -1814,6 +1840,7 @@ PAGES = {
   "symbol-underscore-symbol": ("Underscore", "_ meaning, history & how to type it", glyphs("_"), K_SYM),
   "symbol-calendar-emoji": ("Calendar Emoji", "Why it's always frozen on July 17", m_calendar, K_SYM),
   "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Draft Emoji 18.0 candidate, not live yet", m_smiley, K_SYM),
+  "symbol-distorted-face-emoji": ("Distorted Face Emoji", "U+1FAEA — meaning, codepoint & origin", m_smiley, K_SYM),
   "symbol-pickle-emoji": ("Pickle Emoji", "Draft Emoji 18.0 candidate, not live yet", m_cup, K_SYM),
   "symbol-meteor-emoji": ("Meteor Emoji", "Draft Emoji 18.0 candidate, not live yet",
         glyphs("☄", "✦", "★", "☆", "✧"), K_SYM),
@@ -2046,6 +2073,9 @@ PAGES = {
         glyphs("⚡", "⊕", "⊖", "Ω", "~"), K_LIB),
   "library-emoji-combos": ("Emoji Combos", "Copy-and-paste emoji pairings", m_smiley, K_LIB),
   "library-evil-eye-hamsa-symbols": ("Evil Eye & Hamsa Symbols", "Protective marks and charms",
+        glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
+  # ar/library translation (2026-08-01) — same motif as the EN parent above.
+  "ar-library-evil-eye-hamsa-symbols": ("رموز العين الزرقاء والخمسة", "تميمة النظرة وكف الخمسة",
         glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
   "library-fairycore-symbols": ("Fairycore Symbols", "Whimsical, magical accents",
         glyphs("✦", "✧", "❀", "✿", "❁"), K_LIB),
@@ -2530,6 +2560,10 @@ PAGES.update({
 "answers-why-wont-discord-accept-fancy-username": ("Why Won't Discord Accept My Username?", "Usernames are ASCII-only; display names aren't", m_qa, K_ANS),
 "answers-why-wont-instagram-accept-my-fancy-username": ("Why Won't Instagram Accept My Username?", "Handles are ASCII-only — style your Name instead", m_qa, K_ANS),
 "events": ("Holiday & Event Text Generators", "Fonts, emoji, and phrases for every calendar holiday", m_grid, K_USE),
+"events-ramadan": ("Ramadan Text & Symbol Generator", "Crescent, lantern, and Ramadan Kareem greetings", m_crescent, K_USE),
+"events-st-patricks-day": ("St Patrick's Day Fonts & Symbols", "Shamrock, clover, and Irish blessing phrases", m_clover, K_USE),
+"events-july-4th": ("4th of July Fonts & Emoji Generator", "Fireworks, flags, and Independence Day captions", m_firework, K_USE),
+"events-graduation": ("Graduation Text & Symbol Generator", "Cap, scroll, and congratulations messages", m_gradcap, K_USE),
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
@@ -2621,6 +2655,8 @@ PAGES.update({
 "tr-library-para-birimi-sembolleri": ("Para Birimi Sembolleri", "Türk Lirası, euro, dolar ve dünya paraları", glyphs("₺", "€", "$", "£"), K_LIB),
 "tr-library-yunan-alfabesi-sembolleri": ("Yunan Alfabesi Sembolleri", "Alfa, beta, pi ve tüm Yunan harfleri kopyala", glyphs("α", "β", "π", "Ω"), K_LIB),
 "tr-library-matematik-sembolleri": ("Matematik Sembolleri", "Artı eksi, eşitsizlik ve küme işaretleri", glyphs("±", "≥", "≠", "∫"), K_LIB),
+"tr-library-nazar-sembolleri": ("Nazar Sembolleri", "Nazar, hamsa ve göz işaretleri kopyala yapıştır",
+      glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
 })
 
 

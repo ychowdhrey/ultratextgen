@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/mothers-day/",
 
+  "occurrence": {"type": "nth_weekday", "month": 5, "weekday": "sunday", "n": 2},
   "fonts": {
     "curated_keys": [
       "Ultra Script",
@@ -74,45 +75,118 @@
   "phrase_bank": [
     {
       "text": "Happy Mother's Day",
-      "native_script": "Happy Mother's Day",
-      "romanization": "Happy Mother's Day",
-      "translation": "The universal greeting — safe on any card, text, or caption.",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The one that always works."
     },
     {
-      "text": "Love You Mom",
-      "native_script": "Love You Mom",
-      "romanization": "Love You Mom",
-      "translation": "Short and personal — good for a text or a gift tag.",
-      "needs_native_speaker_review": false
+      "text": "Happy Mother's Day, Mum",
+      "group": "Classic greetings",
+      "translation": "Swap Mum for Mom, Ma, Amma — whatever you call her."
     },
     {
-      "text": "World's Best Mom",
-      "native_script": "World's Best Mom",
-      "romanization": "World's Best Mom",
-      "translation": "The classic mug-and-card superlative.",
-      "needs_native_speaker_review": false
+      "text": "Wishing you a wonderful Mother's Day",
+      "group": "Classic greetings",
+      "translation": "Card-length version."
     },
     {
-      "text": "Thank You for Everything",
-      "native_script": "Thank You for Everything",
-      "romanization": "Thank You for Everything",
-      "translation": "A gratitude-first line for a longer card message.",
-      "needs_native_speaker_review": false
+      "text": "Thank you for everything, always",
+      "group": "Classic greetings",
+      "translation": "Gratitude-first wording."
     },
     {
-      "text": "To the Best Mom Ever",
-      "native_script": "To the Best Mom Ever",
-      "romanization": "To the Best Mom Ever",
-      "translation": "A warm, direct card-opener.",
-      "needs_native_speaker_review": false
+      "text": "Happy Mother's Day to you too",
+      "group": "Replies",
+      "translation": "Plain reply between mothers."
     },
     {
-      "text": "Feliz Dia de la Madre",
-      "native_script": "Feliz Día de la Madre",
-      "romanization": "feh-LEEZ DEE-ah deh lah MAH-dreh",
-      "translation": "Spanish for \"Happy Mother's Day\" — a globally recognized Mother's Day phrase.",
-      "needs_native_speaker_review": true
+      "text": "Thank you — that means a lot",
+      "group": "Replies",
+      "translation": "Sincere reply to a Mother's Day wish."
+    },
+    {
+      "text": "You made everything feel possible",
+      "group": "For your mother",
+      "translation": "Sincere, card-length line."
+    },
+    {
+      "text": "Thank you for the patience I only understand now",
+      "group": "For your mother",
+      "translation": "For an adult writing to a parent."
+    },
+    {
+      "text": "Everything good in me started with you",
+      "group": "For your mother",
+      "translation": "Warm and specific."
+    },
+    {
+      "text": "You're still the first person I call",
+      "group": "For your mother",
+      "translation": "Quietly affectionate."
+    },
+    {
+      "text": "I don't say it enough — thank you",
+      "group": "For your mother",
+      "translation": "For people who find this hard to write."
+    },
+    {
+      "text": "Happy Mother's Day to the woman who does it all",
+      "group": "For a partner",
+      "translation": "From a partner about their own children's mother."
+    },
+    {
+      "text": "Watching you be their mum is my favourite thing",
+      "group": "For a partner",
+      "translation": "Warm and specific."
+    },
+    {
+      "text": "Thank you for how you love them",
+      "group": "For a partner",
+      "translation": "Short and sincere."
+    },
+    {
+      "text": "Happy Mother's Day to all the mums in my life",
+      "group": "For friends & others",
+      "translation": "Inclusive group message."
+    },
+    {
+      "text": "Happy Mother's Day to the grandmothers too",
+      "group": "For friends & others",
+      "translation": "Includes grandmothers."
+    },
+    {
+      "text": "Thinking of you today",
+      "group": "For friends & others",
+      "translation": "For someone whose Mother's Day is hard."
+    },
+    {
+      "text": "Happy Mother's Day to the friends raising them right",
+      "group": "For friends & others",
+      "translation": "For friends who are parents."
+    },
+    {
+      "text": "Happy Mother's Day",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Mum, always",
+      "group": "Short for a caption",
+      "translation": "Short and warm."
+    },
+    {
+      "text": "Her, always",
+      "group": "Short for a caption",
+      "translation": "For a photo of your mother."
+    },
+    {
+      "text": "Raised right",
+      "group": "Short for a caption",
+      "translation": "Playful caption for an old photo."
+    },
+    {
+      "text": "Number one",
+      "group": "Short for a caption",
+      "translation": "Two words, works anywhere."
     }
   ],
 
