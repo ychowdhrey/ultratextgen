@@ -744,6 +744,35 @@ same content to the two IT pages, or record the divergence deliberately
 requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
 by default.
 
+**Ratified exceptions are ledgered state, not just prose (2026-08-01):**
+every ratified local-only exception above is also recorded in
+**`data/english_parent_exceptions.json`** — the machine-readable ledger
+`scripts/check-locale-parent-gap.js` consults, so a listed page passes the
+gate's `no-en-parent` check and an unlisted one fails it. The prose above
+stays the reasoning of record; the ledger is the state. Same bar as every
+other ledger in this repo: entries are discussed decisions, never added
+unilaterally to make a page pass. Each entry carries a `nextRecheck` date —
+exceptions are standing claims about EN demand, and claims get re-verified,
+not grandfathered.
+
+**When EN demand appears later — ownership check before build (2026-08-01):**
+if EN-side demand evidence surfaces for a page holding a local-only
+exception, do **not** build the EN parent directly. Run the "check who
+already owns it" test (see "Before building a page for a keyword" above) on
+the **English** SERP/GSC first. Two outcomes only:
+
+- **Build** — the EN SERP for the concept is distinct and no existing EN
+  page owns it → build the EN parent, wire the hreflang cluster, and remove
+  the page's `data/english_parent_exceptions.json` entry (it's now a normal
+  translation).
+- **Veto** — the EN SERP consolidates the term onto an existing page (the
+  `fr/calligraphie` trio's situation: real EN "font"/"calligraphy" volume,
+  but building a parent would cannibalize the EN homepage) → record a dated
+  `veto` in the entry's `verdict` and push out `nextRecheck`.
+
+Demand alone never auto-triggers the build — that shortcut is how the
+`vi/chu-kieu/` class of cannibalization happens on the EN side.
+
 ### Locale-native internal linking — check every time you touch a locale page
 
 Whenever you create, edit, or otherwise touch a locale page's prose/FAQ
@@ -1041,8 +1070,8 @@ complete flowchart, and every script's flags/exit codes:
   reason.
 
 **Do not add or edit an entry in `data/locale_parent_gap_audit.json`,
-`data/core_parent_set.json`, or `data/locale_qualification_tiers.json`
-unilaterally.** Every entry in all three reflects a discussed decision
+`data/core_parent_set.json`, `data/locale_qualification_tiers.json`, or
+`data/english_parent_exceptions.json` unilaterally.** Every entry in all three reflects a discussed decision
 between you and the user — the same bar CLAUDE.md's English-Parent Rule sets
 for locale-first exceptions, and the same bar `data/translation_parity_exceptions.json`
 sets for parity divergences. If one of the gap-check scripts flags a
@@ -1079,6 +1108,15 @@ Three recurring points of confusion, each resolved by a real case:
    hold reasoning to the user *before* they decide is part of the override
    being legitimate — a hold silently ignored is a violation, a hold
    knowingly overridden is a decision.
+4. **An all-instruments-null authorization is a bridge, not a pass
+   (2026-08-01).** A `data/locale_parent_gap_audit.json` entry recorded with
+   every instrument `null` (a user authorization in lieu of a real pull) must
+   name a scheduled re-check date in the ops review register, and the entry
+   is complete only when its instruments are backfilled with real numbers or
+   a dated veto is recorded. If a later backfill contradicts the recorded
+   verdict, do not silently flip it — the pages are live by then, so the
+   call (fold/de-index/keep) is a discussion with the user, flagged with the
+   data.
 
 ### Governance arrives mid-flight: merged-in rules bind unshipped work
 
