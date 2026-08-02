@@ -32,7 +32,9 @@
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
-const { discoverClusters } = require('./lib/translation-clusters');
+const { discoverClusters, normalizeUrl } = require('./lib/translation-clusters');
+
+const SITE = 'https://ultratextgen.com';
 const { createFingerprinter } = require('./lib/content-fingerprint');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -123,6 +125,28 @@ function hasException(enUrl, localeUrl) {
   return exceptions.some((ex) => ex.enUrl === enUrl && ex.localeUrl === localeUrl);
 }
 
+/**
+ * Does every one of these link targets lack a translation in `lang`?
+ *
+ * Link paths arrive already normalized to their EN-canonical, locale-stripped
+ * identity by the fingerprinter (e.g. "/library/vrchat-symbols/"). A target is
+ * "reachable" for a locale when the EN page declares an hreflang alternate in
+ * that language — i.e. a native equivalent exists and the sibling could link it.
+ *
+ * Conservative by design: if the target can't be resolved to a known page at
+ * all, it counts as reachable, so an unknown link never silently suppresses a
+ * flag. Returns false for an empty list for the same reason.
+ */
+function linksUnreachableFor(linkPaths, lang) {
+  if (!lang || lang === 'en') return false;
+  if (!linkPaths.length) return false;
+  return linkPaths.every((p) => {
+    const targetRec = byUrl.get(normalizeUrl(`${SITE}${p}`));
+    if (!targetRec) return false; // unknown target — assume reachable, stay strict
+    return !targetRec.alternates.some((a) => a.hreflang === lang);
+  });
+}
+
 // ─── Check every changed page that belongs to a cluster ────────────────────
 
 const flagged = []; // { enUrl, localeUrl, changedRel, unsyncedSiblingRels: [] }
@@ -140,8 +164,29 @@ for (const rel of changedFiles) {
   if (!enAnchor) continue; // no cluster info — not this check's job (see audit-hreflang.js)
 
   const before = oldContent(rel);
-  const changedFingerprint = before === null || score(diff(fingerprint(before), fingerprint(newHtml))) > 0;
+  // Pass relPath so a pillar catalogue index is fingerprinted without its
+  // inventory link set — adding a new EN page to library/index.html is not
+  // translation drift, it is that locale not having the page yet. Sections,
+  // FAQs and tiles on the same page are still compared. See
+  // content-fingerprint.js and data/parity_catalogue_pages.json.
+  const fpOpts = { relPath: rel };
+  const structuralDiff = before === null ? null : diff(fingerprint(before, fpOpts), fingerprint(newHtml, fpOpts));
+  const changedFingerprint = structuralDiff === null || score(structuralDiff) > 0;
   if (!changedFingerprint) continue; // byte-level edit only (typo, meta tweak) — nothing structural moved
+
+  // Was the ONLY structural change the addition of outbound links? If so, the
+  // question of whether a sibling must be touched depends on that sibling's
+  // locale — see linksUnreachableFor() below. Anything else that moved (a
+  // section, an FAQ, symbol tiles, or a removed link) is translatable content
+  // and always requires the sibling to be synced or excepted.
+  const addedLinks = structuralDiff ? structuralDiff.onlyInLocale : [];
+  const onlyAddedLinks =
+    structuralDiff !== null &&
+    addedLinks.length > 0 &&
+    structuralDiff.onlyInEN.length === 0 &&
+    structuralDiff.h2Delta === 0 &&
+    structuralDiff.faqDelta === 0 &&
+    structuralDiff.symbolTilesDelta === 0;
 
   const members = [...clusters.get(enAnchor)].filter((u) => u !== rec.canonical);
   for (const siblingUrl of members) {
@@ -172,6 +217,18 @@ for (const rel of changedFiles) {
     const localeRel = localeRec.rel;
 
     if (changedSet.has(enRel) && changedSet.has(localeRel)) continue; // both sides touched — presumed synced
+
+    // EN is the source locale: a new EN page gets linked from existing EN
+    // pages long before (or instead of) being translated. When the only thing
+    // that moved is links whose targets have NO counterpart in this sibling's
+    // language, there is nothing the sibling could legitimately do — linking
+    // the English page from a locale page is exactly what CLAUDE.md's
+    // "Locale-native internal linking" rule forbids. Flagging it would force
+    // either a wrong link or a per-page exception on essentially every new EN
+    // page, so the pair is skipped. The moment a translation of the target
+    // exists, this stops applying and the sibling is flagged again — which is
+    // the correct trigger, because now it CAN link its native equivalent.
+    if (onlyAddedLinks && linksUnreachableFor(addedLinks, localeRec.ownLang)) continue;
 
     flagged.push({ enUrl, localeUrl, enRel, localeRel, changedRel: rel });
   }
