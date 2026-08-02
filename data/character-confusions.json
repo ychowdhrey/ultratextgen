@@ -1,0 +1,152 @@
+{
+  "_readme": "Registry of Unicode characters this site's users demonstrably mix up, plus the characters people search for that DO NOT EXIST. Two jobs: (1) a checklist — before shipping a page that contains a listed character, confirm the page addresses its confusion rather than silently rendering an ambiguous tile; (2) a content backlog — these are the site's highest-signal 'wait, really?' facts, the same shape as the already-live checkmark and star name-vs-render notes. Each entry records the verified codepoints (checked against Python's unicodedata, not asserted from memory), what the confusion actually is, and which live pages address it. 'addressedOn' listing a page means that page states the distinction in prose or FAQ, not merely that it renders the character. An entry with an empty 'addressedOn' is an open gap. Do not add an entry without verifying the codepoint and official Unicode name first — the whole value of this file is that its facts are checkable. Kinds: 'lookalike' (two real characters confused for each other), 'name-vs-render' (official Unicode name contradicts how it draws), 'borrowed' (a character widely used for something other than its official meaning), 'nonexistent' (users search for a character that was never encoded).",
+  "_lastUpdated": "2026-08-01",
+  "entries": [
+    {
+      "id": "baht-vs-bitcoin",
+      "kind": "lookalike",
+      "characters": [
+        { "char": "฿", "codepoint": "U+0E3F", "unicodeName": "THAI CURRENCY SYMBOL BAHT" },
+        { "char": "₿", "codepoint": "U+20BF", "unicodeName": "BITCOIN SIGN" }
+      ],
+      "confusion": "฿ is the Thai baht, in the Thai block. ₿ is the official bitcoin sign. Crypto writing sometimes borrows ฿ for bitcoin, which reads as baht to any Thai reader.",
+      "whyItMatters": "The EN page files ฿ under 'Cryptocurrency' labelled 'Baht / Bitcoin' — defensible in English, misleading on a Thai page.",
+      "addressedOn": ["th/library/currency-symbols/"],
+      "openGap": "The EN library/currency-symbols page still labels ฿ as 'Baht / Bitcoin' with no note that they are different characters."
+    },
+    {
+      "id": "halfwidth-vs-fullwidth-yen",
+      "kind": "lookalike",
+      "characters": [
+        { "char": "¥", "codepoint": "U+00A5", "unicodeName": "YEN SIGN" },
+        { "char": "￥", "codepoint": "U+FFE5", "unicodeName": "FULLWIDTH YEN SIGN" }
+      ],
+      "confusion": "Two distinct codepoints for the same currency mark. The full-width form exists to align with other full-width characters in Japanese text; the half-width form is the standard one for web and social. They are not interchangeable where byte width matters (code, form fields).",
+      "whyItMatters": "A distinction with no English equivalent — invisible to anyone authoring only in English. ¥ also serves the Chinese yuan.",
+      "addressedOn": ["ja/library/currency-symbols/"],
+      "openGap": ""
+    },
+    {
+      "id": "generic-vs-indian-rupee",
+      "kind": "lookalike",
+      "characters": [
+        { "char": "₨", "codepoint": "U+20A8", "unicodeName": "RUPEE SIGN" },
+        { "char": "₹", "codepoint": "U+20B9", "unicodeName": "INDIAN RUPEE SIGN" }
+      ],
+      "confusion": "₨ is the generic rupee mark used by Pakistan, Sri Lanka, Nepal and Mauritius. ₹ is specific to the Indian rupee, adopted by India in 2010 and encoded the same year.",
+      "whyItMatters": "Using ₨ for Indian amounts reads as dated or wrong-country.",
+      "addressedOn": [
+        "fr/library/symboles-monetaires/",
+        "id/library/simbol-mata-uang/",
+        "ja/library/currency-symbols/",
+        "pl/library/symbole-walut/",
+        "pt/library/simbolos-de-moeda/",
+        "ru/library/simvoly-valyut/",
+        "th/library/currency-symbols/",
+        "vi/library/ky-hieu-tien-te/"
+      ],
+      "openGap": "Stated on eight locale pages but not on the EN parent."
+    },
+    {
+      "id": "dong-sign-vs-d-with-stroke",
+      "kind": "lookalike",
+      "characters": [
+        { "char": "₫", "codepoint": "U+20AB", "unicodeName": "DONG SIGN" },
+        { "char": "đ", "codepoint": "U+0111", "unicodeName": "LATIN SMALL LETTER D WITH STROKE" }
+      ],
+      "confusion": "₫ is the Vietnamese dong currency sign. đ is an ordinary letter of the Vietnamese alphabet. They look similar at small sizes and are routinely substituted for each other.",
+      "whyItMatters": "Vietnamese writing most often uses 'VNĐ' or the word 'đồng' after the amount, so users searching for a dong symbol may not realise a dedicated one exists.",
+      "addressedOn": ["vi/library/ky-hieu-tien-te/"],
+      "openGap": ""
+    },
+    {
+      "id": "currencies-with-no-unicode-character",
+      "kind": "nonexistent",
+      "characters": [
+        { "char": "Rp", "codepoint": null, "unicodeName": null, "note": "Indonesian rupiah — plain letters R and p" },
+        { "char": "zł", "codepoint": null, "unicodeName": null, "note": "Polish zloty — the l is U+0142, an ordinary letter" },
+        { "char": "R$", "codepoint": null, "unicodeName": null, "note": "Brazilian real — R plus the ordinary dollar sign U+0024" }
+      ],
+      "confusion": "Three major currencies were never given a dedicated Unicode codepoint, unlike the rupee (₹) or won (₩). Users search for a copyable symbol that does not exist.",
+      "whyItMatters": "The useful answer is 'there isn't one, just type it' — a query that resolves in one sentence and is otherwise a dead end.",
+      "addressedOn": [
+        "id/library/simbol-mata-uang/",
+        "pl/library/symbole-walut/",
+        "pt/library/simbolos-de-moeda/"
+      ],
+      "openGap": ""
+    },
+    {
+      "id": "cruzeiro-vs-real",
+      "kind": "lookalike",
+      "characters": [
+        { "char": "₢", "codepoint": "U+20A2", "unicodeName": "CRUZEIRO SIGN" }
+      ],
+      "confusion": "₢ is encoded and Brazilian, so it looks like the obvious pick for Brazilian money — but it is the cruzeiro, a historical currency. The current real has no codepoint at all (see currencies-with-no-unicode-character).",
+      "whyItMatters": "The encoded-but-wrong character is a more dangerous trap than a missing one, because it renders fine.",
+      "addressedOn": ["pt/library/simbolos-de-moeda/"],
+      "openGap": ""
+    },
+    {
+      "id": "nazar-vs-hamsa",
+      "kind": "lookalike",
+      "characters": [
+        { "char": "🧿", "codepoint": "U+1F9FF", "unicodeName": "NAZAR AMULET" },
+        { "char": "🪬", "codepoint": "U+1FAAC", "unicodeName": "HAMSA" }
+      ],
+      "confusion": "Two different amulets from two different traditions. The nazar is a Turkish/Greek Mediterranean glass bead guarding specifically against envy; the hamsa is a MENA open right hand offering general protection, with an older and separate lineage. Many modern hamsa designs set an eye in the palm, which is where the conflation comes from.",
+      "whyItMatters": "This site's own EN page asserted they 'carry the same protective meaning' until it was corrected on 2026-08-01.",
+      "addressedOn": [
+        "library/evil-eye-hamsa-symbols/",
+        "ar/library/evil-eye-hamsa-symbols/",
+        "tr/library/nazar-sembolleri/"
+      ],
+      "openGap": ""
+    },
+    {
+      "id": "manji-vs-swastika",
+      "kind": "lookalike",
+      "characters": [
+        { "char": "卍", "codepoint": "U+534D", "unicodeName": "CJK UNIFIED IDEOGRAPH-534D" },
+        { "char": "卐", "codepoint": "U+5350", "unicodeName": "CJK UNIFIED IDEOGRAPH-5350" }
+      ],
+      "confusion": "Both are CJK ideographs, not symbols in a symbol block. 卍 is the Buddhist manji (facing left); 卐 is the auspicious East Asian form (facing right). Both predate and are distinct from the Nazi symbol, which is a separate design at a different angle.",
+      "whyItMatters": "The most sensitive pair on the site. A bare transliteration or an unlabelled tile is not acceptable — every locale page states the tradition and the facing direction.",
+      "addressedOn": ["library/religious-symbols/"],
+      "openGap": "Stated on all 14 locale religious-symbols pages; the EN parent labels them but could state the facing direction as explicitly as the translations do."
+    },
+    {
+      "id": "checkmark-name-vs-render",
+      "kind": "name-vs-render",
+      "characters": [
+        { "char": "✅", "codepoint": "U+2705", "unicodeName": "WHITE HEAVY CHECK MARK" }
+      ],
+      "confusion": "Officially named 'white', renders green on every major platform. The name refers to the outline in the original reference glyph, not the fill colour vendors chose.",
+      "whyItMatters": "Long-standing site precedent for this genre of fact; already used as a content angle.",
+      "addressedOn": ["symbol/checkmark-symbol/", "library/check-mark-emoji/"],
+      "openGap": ""
+    },
+    {
+      "id": "star-name-vs-render",
+      "kind": "name-vs-render",
+      "characters": [
+        { "char": "⭐", "codepoint": "U+2B50", "unicodeName": "WHITE MEDIUM STAR" }
+      ],
+      "confusion": "Officially 'white', renders gold everywhere. Same mechanism as the check mark.",
+      "whyItMatters": "Pairs naturally with the check mark as a two-fact set.",
+      "addressedOn": ["symbol/star-symbol/"],
+      "openGap": ""
+    },
+    {
+      "id": "prescription-take-as-retrograde",
+      "kind": "borrowed",
+      "characters": [
+        { "char": "℞", "codepoint": "U+211E", "unicodeName": "PRESCRIPTION TAKE" }
+      ],
+      "confusion": "Astrologers use ℞ for 'retrograde', but Unicode has no retrograde character — ℞ is the medieval pharmacy Rx abbreviation, encoded in 1993 in the Letterlike Symbols block, borrowed purely for its resemblance to a stylised R.",
+      "whyItMatters": "Surfaced in the 2026-07-31 symbol/library research pass as the strongest framing for a possible retrograde page. Must be presented as a borrowed symbol, never as an official astrology character.",
+      "addressedOn": [],
+      "openGap": "No symbol/retrograde-symbol page exists yet. ℞ appears as an unlabelled-for-this tile in library/special-characters and its six new locale translations."
+    }
+  ]
+}

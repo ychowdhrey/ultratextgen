@@ -338,6 +338,18 @@
       "verdict": "gate-pass",
       "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way.",
       "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-01",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized override of vi's Tier-2 hold, for the seven mid-head library/* pages built 2026-08-01 (ky-hieu-tien-te, ky-tu-dac-biet-unicode, ky-hieu-am-nhac, ky-hieu-co-vua, ky-hieu-ton-giao, ky-hieu-hoi-giao, ky-tu-kawaii-de-thuong). Same shape as the 2026-07-25 symbol/* entry, with one difference worth recording: this time the hold's own premise was checked against data rather than simply overridden. vi is held because of an \"authority/indexing gap - not a content gap\", but the sitewide GSC pull of 2026-08-01 (ultratextgen-lab-, GSC-QUERY-LEVEL-PULL-2026-08-01.md sec 1b, window Jul 4-29) measures /vi/* at 163,411 impressions, 4,704 clicks, 2.88% CTR across 114 pages and 1,765 queries - indexed, ranked and converting, and 100x the 47-click figure the hold was originally reasoned from. The FF/gaming query family alone went from 19 impressions/2 clicks to 714/32 on the same aggregation method. The user was shown the hold and its reasoning before deciding, and chose to include vi. Instruments are null: this is an authorization plus a contradicted-premise finding, NOT a fresh Semrush/GSC per-cell pull. Per the 2026-08-01 CLAUDE.md rule, an all-null entry is a bridge, not a pass - it is complete only once instruments are backfilled or a dated veto is recorded. Re-check is logged in the lab repo's docs/review-register.md. vi's tier and hold flag in data/locale_qualification_tiers.json are deliberately left untouched: the registry keeps stating the standing default, and this ledger carries the dated, attributed exception. If the hold's premise is now simply wrong, that is a separate registry decision to raise on its own evidence, not something to change as a side effect of shipping pages."
     }
   ]
 }
