@@ -1,0 +1,151 @@
+{
+  "slug": "vrchat-symbols",
+  "page_type": "library",
+  "title": "VRChat Symbols ✦ ⚡ ♡ — Copy & Paste for Display Names (15-Character Limit)",
+  "meta_description": "Copy-paste symbols for VRChat display names, with the rule nobody else states: 4–15 characters, and you only get one change every 90 days (30 with VRC+). Check your name fits before you spend the cooldown.",
+  "canonical": "https://ultratextgen.com/library/vrchat-symbols/",
+  "breadcrumb": "VRChat Symbols",
+  "hero_h1": "VRChat symbols for display names",
+  "hero_tagline": "Frames, stars, dividers and accents that survive a VRChat display name — plus a live checker, because you only get to change that name once every 90 days.",
+  "intro": "VRChat display names accept far more than plain letters, which is why so many names in a popular world are wrapped in stars, brackets and dividers. Two rules shape every one of them. First, the field is short: VRChat's own help documentation puts display names at 4 to 15 characters, so a decorative frame costs you two of the fifteen before you have typed a single letter. Second, and far more consequential, you can only change a display name once every 90 days — 30 days with an active VRC+ subscription. That is the longest rename cooldown of any platform on this site, longer than any game's rename card, and it is the reason this page leads with a checker rather than a wall of glyphs. VRChat publishes no official list of allowed characters — a request for one has sat open on its own community forum since 2024 — and users there report that while most Unicode works, not all of it does. So treat every symbol below as very likely to work rather than guaranteed, paste your name into the checker first, and prefer the widely-supported glyphs at the top of each section over the unusual ones.",
+  "date_published": "2026-08-02",
+  "date_modified": "2026-08-02",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "vrchat-name-frames",
+      "label": "Name Frames",
+      "h2": "Frames & Brackets",
+      "intro": "A matched pair wraps your name. Remember both halves count toward the 15-character limit — a pair plus a 6-letter name is already 8.",
+      "symbols": [
+        { "char": "✦", "label": "Black Four Pointed Star" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "❖", "label": "Black Diamond Minus White X" },
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "『", "label": "Left White Corner Bracket" },
+        { "char": "』", "label": "Right White Corner Bracket" },
+        { "char": "【", "label": "Left Black Lenticular Bracket" },
+        { "char": "】", "label": "Right Black Lenticular Bracket" },
+        { "char": "꒰", "label": "Left Curly Bracket Ornament" },
+        { "char": "꒱", "label": "Right Curly Bracket Ornament" },
+        { "char": "༺", "label": "Tibetan Mark Gug Rtags Gyon" },
+        { "char": "༻", "label": "Tibetan Mark Gug Rtags Gyas" }
+      ]
+    },
+    {
+      "id": "vrchat-single-accents",
+      "label": "Single Accents",
+      "h2": "Single-Character Accents",
+      "intro": "The most economical choice in a 15-character field: one glyph, placed before or after the name, costs you exactly one character.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "♥", "label": "Black Heart Suit" },
+        { "char": "☾", "label": "Last Quarter Moon" },
+        { "char": "✿", "label": "Black Florette" },
+        { "char": "❀", "label": "White Florette" },
+        { "char": "♪", "label": "Eighth Note" },
+        { "char": "✧", "label": "White Four Pointed Star" },
+        { "char": "☁", "label": "Cloud" },
+        { "char": "❥", "label": "Rotated Heavy Black Heart Bullet" }
+      ]
+    },
+    {
+      "id": "vrchat-dividers",
+      "label": "Dividers",
+      "h2": "Dividers & Separators",
+      "intro": "Thin marks that separate two words without spending a full space. Useful when a name has to read as two parts inside 15 characters.",
+      "symbols": [
+        { "char": "・", "label": "Katakana Middle Dot" },
+        { "char": "·", "label": "Middle Dot" },
+        { "char": "•", "label": "Bullet" },
+        { "char": "˚", "label": "Ring Above" },
+        { "char": "°", "label": "Degree Sign" },
+        { "char": "⋆", "label": "Star Operator" },
+        { "char": "｡", "label": "Halfwidth Ideographic Full Stop" },
+        { "char": "~", "label": "Tilde" },
+        { "char": "―", "label": "Horizontal Bar" },
+        { "char": "|", "label": "Vertical Line" }
+      ]
+    },
+    {
+      "id": "vrchat-avatar-accents",
+      "label": "Themed Accents",
+      "h2": "Themed Accents",
+      "intro": "Glyphs that read as an identity rather than decoration — common on avatar-themed and roleplay names.",
+      "symbols": [
+        { "char": "ᨒ", "label": "Lisu Letter Ha" },
+        { "char": "ꨄ", "label": "Cham Letter Final Ng" },
+        { "char": "ミ", "label": "Katakana Letter Mi" },
+        { "char": "彡", "label": "CJK Unified Ideograph-5F61" },
+        { "char": "ツ", "label": "Katakana Letter Tu" },
+        { "char": "シ", "label": "Katakana Letter Si" },
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "⚔", "label": "Crossed Swords" },
+        { "char": "♛", "label": "Black Chess Queen" },
+        { "char": "✞", "label": "Latin Cross" }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the VRChat display name character limit?",
+      "a": "VRChat's own help documentation states that display names must be between 4 and 15 characters. Decorative symbols count toward that total, so a matched frame pair plus a six-letter name already uses eight of the fifteen."
+    },
+    {
+      "q": "How often can I change my VRChat display name?",
+      "a": "Once every 90 days by default, or once every 30 days with an active VRC+ subscription. VRChat states this restriction cannot be bypassed and that its support team cannot change a display name for you, which is why it is worth checking a name renders and fits before you commit it."
+    },
+    {
+      "q": "Which symbols work in a VRChat display name?",
+      "a": "VRChat publishes no official list of allowed characters, and a request for one has been open on its own community forum since 2024 without a staff answer. Community reports are that most Unicode works but not all of it does. Widely-supported glyphs — stars, hearts, corner brackets, katakana, middle dots — are the safest choices; obscure or very new characters are the ones most likely to fail or show as an empty box."
+    },
+    {
+      "q": "Is the VRChat display name the same as the username?",
+      "a": "No. The username is the login credential and is not what other players see. The display name is the visible one, and it is the field these symbols go in. Changing the display name does not change the username."
+    },
+    {
+      "q": "Why does my VRChat name show as boxes to other people?",
+      "a": "Because the box is drawn by the viewer's device, not yours. If their headset or PC has no font covering a character in your name, it draws an empty box instead. Rare and decorative characters are the usual cause, and it is the same missing-glyph behaviour that affects styled text everywhere."
+    },
+    {
+      "q": "Can I use a space in a VRChat display name?",
+      "a": "Spaces are generally accepted in display names, but each one costs a character from the 15 available. Where a name needs visual separation on a tight budget, a thin divider such as the katakana middle dot ・ does the same job in one character and reads more cleanly at distance."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/gaming-aesthetic-symbols/",
+      "title": "Gaming Aesthetic Symbols",
+      "desc": "Clan-tag frames, HUD bars and battle icons for any game name."
+    },
+    {
+      "href": "/library/discord-symbols/",
+      "title": "Discord Symbols",
+      "desc": "The same job for Discord, where the display-name field is far more forgiving."
+    },
+    {
+      "href": "/usecase/name-checker/",
+      "title": "Name Checker",
+      "desc": "Check a styled name against every game's limits and charset rules."
+    },
+    {
+      "href": "/guide/game-username-allowed-symbols/",
+      "title": "Game Username Allowed Symbols",
+      "desc": "Which characters each platform's name field actually accepts."
+    },
+    {
+      "href": "/answers/why-is-my-name-showing-as-boxes/",
+      "title": "Why Is My Name Showing as Boxes?",
+      "desc": "Why a name that looks fine to you renders as ▯ for someone else."
+    },
+    {
+      "href": "/answers/why-was-my-game-name-rejected/",
+      "title": "Why Was My Game Name Rejected?",
+      "desc": "The filter and length rules behind a refused rename."
+    }
+  ]
+}
