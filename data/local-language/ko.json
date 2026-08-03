@@ -21,7 +21,7 @@
       "avoid_when": "Do not substitute a narrower synonym (기호, 이모티콘) where '특수문자' is already the established head term — would fragment ranking.",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-01"
     },
     {
       "phrase_id": "KO-002",
@@ -37,7 +37,7 @@
       "avoid_when": "Do not use for the strictly @-prefixed handle field, which the same pages call '아이디' or '사용자 이름' instead.",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-01"
     },
     {
       "phrase_id": "KO-003",
@@ -229,7 +229,7 @@
       "avoid_when": "n/a",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-01"
     },
     {
       "phrase_id": "KO-015",
@@ -245,7 +245,7 @@
       "avoid_when": "n/a",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-01"
     },
     {
       "phrase_id": "KO-016",
@@ -277,7 +277,7 @@
       "avoid_when": "Avoid using only the abbreviation in a page's very first platform mention (title/meta) — pair with the full form there.",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-01"
     },
     {
       "phrase_id": "KO-019",

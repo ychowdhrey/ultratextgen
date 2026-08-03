@@ -5,7 +5,7 @@
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "tr",
   "language": "Turkish",
-  "phrase_count": 19,
+  "phrase_count": 22,
   "phrases": [
     {
       "phrase_id": "TR-001",
@@ -293,7 +293,39 @@
       "avoid_when": "",
       "confidence": "high",
       "status": "approved",
-      "last_verified": "2026-07-25"
+      "last_verified": "2026-08-01"
+    },
+    {
+      "phrase_id": "TR-035",
+      "native_phrase": "ay yıldız",
+      "transliteration": "",
+      "english_concept": "crescent moon and star symbol",
+      "country_or_market": "TR",
+      "register": "neutral, everyday/colloquial",
+      "phrase_type": "colloquial_term",
+      "content_surface": "title, H1, meta_description",
+      "usage_guidance": "'Ay yıldız' is the colloquial term Turkish speakers actually use and search for this symbol; the more formal 'hilal ve yıldız' is understood but is not the phrase people type. Lead with 'ay yıldız' in the title/H1/meta and keep 'hilal ve yıldız' alongside it rather than deleting it — both are correct and the page should read naturally for both. Register note, confirmed against two independent native sources: 'ay yıldız' is framed around the flag and national identity, while 'hilal' is the word natives use for the religious/Islamic reading of the crescent.",
+      "good_example": "Ay Yıldız Sembolü: Kopyala Yapıştır ☪",
+      "avoid_when": "Do not swap 'ay yıldız' in where the copy is specifically discussing the crescent as a religious/Islamic symbol (e.g. the page's own 'not a symbol found in the Quran' section) — 'hilal' is the correct word there, and native forum usage keeps the two distinct ('hilal islamiyet, yıldız da türklüğü simgeliyor'). Keep both words on the page, each in its own context.",
+      "confidence": "high",
+      "status": "approved",
+      "last_verified": "2026-07-31"
+    },
+    {
+      "phrase_id": "TR-037",
+      "native_phrase": "nazar boncuğu",
+      "transliteration": "nazar boncugu",
+      "english_concept": "evil eye protective amulet/bead",
+      "country_or_market": "TR",
+      "register": "neutral, mainstream",
+      "phrase_type": "standard_everyday_term",
+      "content_surface": "title/H1/meta on a nazar/evil-eye symbol page",
+      "usage_guidance": "Lead with the full head-term 'nazar boncuğu' in the title/H1/meta of a Turkish evil-eye page, and keep 'nazar sembolleri' alongside it — both are correct and each has its own demand. First-party GSC confirms Turks type the full phrase: the only nazar query drawing impressions for this site is 'nazar boncuğu emoji kombinasyonları', never bare 'nazar'. Bare 'nazar' stays the right word inside running prose, where repeating the full phrase reads unnatural.",
+      "good_example": "Nazar Boncuğu Sembolü 🧿 Kopyala Yapıştır",
+      "avoid_when": "Do not replace every occurrence of 'nazar' with 'nazar boncuğu' — 'nazar' alone is the correct word for the CONCEPT (the evil eye / the gaze itself), while 'nazar boncuğu' names the physical bead/amulet. Body prose discussing the belief should keep 'nazar'; the targeting layer and the sections about the object should use 'nazar boncuğu'.",
+      "confidence": "high",
+      "status": "approved",
+      "last_verified": "2026-08-02"
     },
     {
       "phrase_id": "TR-038",
@@ -309,6 +341,22 @@
       "avoid_when": "Do not use as the primary term in title/H1/meta — \"PUBG\" is the dominant, SEO-correct term; \"papçı\" is a colloquial variant worth a secondary mention only.",
       "confidence": "medium",
       "status": "limited_use",
+      "last_verified": "2026-07-31"
+    },
+    {
+      "phrase_id": "TR-063",
+      "native_phrase": "tik işareti",
+      "transliteration": "",
+      "english_concept": "check mark / tick symbol",
+      "country_or_market": "TR",
+      "register": "neutral, everyday — the unmarked spoken/typed word",
+      "phrase_type": "colloquial_term",
+      "content_surface": "title, H1, meta_description, intro_copy",
+      "usage_guidance": "'Tik işareti' is the colloquial term Turkish speakers actually search for the ✓/✔/☑ glyph; 'onay işareti' is the formal register. Lead with 'tik işareti' in the title/H1 and keep 'onay işareti' as a secondary/synonym term on the same page — do not delete it, it has its own real demand and is the right word in approval/confirmation contexts.",
+      "good_example": "Tik İşareti ✓ Kopyala Yapıştır — Onay İşareti ve Çarpı Sembolleri",
+      "avoid_when": "Do not replace 'onay işareti' wholesale. Where the copy means approval/confirmation as an act (a form being approved, a verified badge), 'onay işareti' is the more precise word; 'tik işareti' names the glyph shape.",
+      "confidence": "high",
+      "status": "approved",
       "last_verified": "2026-07-31"
     }
   ]
