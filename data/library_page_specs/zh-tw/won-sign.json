@@ -3,7 +3,7 @@
   "lang": "zh-tw",
   "page_type": "symbol",
   "title": "韓元符號 ₩：複製貼上與輸入方式 | UltraTextGen",
-  "meta_description": "點一下複製韓元符號 ₩，附 Alt 代碼、HTML 寫法，以及日圓、歐元等其他貨幣符號。",
+  "meta_description": "點一下複製韓元符號 ₩，附 Alt 代碼、HTML 寫法，以及日幣、歐元等其他貨幣符號。",
   "canonical": "https://ultratextgen.com/zh-tw/symbol/won-sign/",
   "home_url": "https://ultratextgen.com/zh-tw/",
   "crumb_home": "首頁",
@@ -12,7 +12,7 @@
   "breadcrumb": "韓元符號",
   "hero_h1": "韓元符號（₩）",
   "hero_tagline": "₩ 代表什麼、怎麼打出來——點一下就複製。",
-  "intro": "₩（U+20A9，WON SIGN）是韓國貨幣韓元的符號，字形是拉丁字母 W 加上兩條橫線——和日圓 ¥、歐元 € 一樣，用橫線標示貨幣的視覺慣例。南韓（KRW）和北韓（KPW）都使用這個符號。台灣使用者最常在韓國旅遊記帳、代購比價和韓網購物時需要它。HTML 寫成 &#8361;。",
+  "intro": "₩（U+20A9，WON SIGN）是韓國貨幣韓元的符號，字形是拉丁字母 W 加上兩條橫線——和日幣 ¥、歐元 € 一樣，用橫線標示貨幣的視覺慣例。南韓（KRW）和北韓（KPW）都使用這個符號。台灣使用者最常在韓國旅遊記帳、代購比價和韓網購物時需要它。HTML 寫成 &#8361;。",
   "date_published": "2026-08-01",
   "date_modified": "2026-08-01",
   "copy_pattern": "single",
@@ -119,7 +119,7 @@
       "symbols": [
         {
           "char": "¥",
-          "label": "日圓／人民幣"
+          "label": "日幣／人民幣"
         },
         {
           "char": "€",
@@ -160,8 +160,8 @@
   "related": [
     {
       "href": "/zh-tw/symbol/yen-sign/",
-      "title": "日圓符號（¥）",
-      "desc": "日圓與人民幣共用的貨幣符號。"
+      "title": "日幣符號（¥）",
+      "desc": "日幣（日圓）與人民幣共用的貨幣符號。"
     },
     {
       "href": "/zh-tw/symbol/euro-sign/",

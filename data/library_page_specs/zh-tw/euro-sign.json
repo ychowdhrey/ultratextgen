@@ -3,7 +3,7 @@
   "lang": "zh-tw",
   "page_type": "symbol",
   "title": "歐元符號 €：複製貼上、Alt 代碼與輸入方式 | UltraTextGen",
-  "meta_description": "點一下複製歐元符號 €，附 Windows Alt+0128、Mac 快捷鍵與 HTML 代碼，以及英鎊、日圓等其他貨幣符號。",
+  "meta_description": "點一下複製歐元符號 €，附 Windows Alt+0128、Mac 快捷鍵與 HTML 代碼，以及英鎊、日幣等其他貨幣符號。",
   "canonical": "https://ultratextgen.com/zh-tw/symbol/euro-sign/",
   "home_url": "https://ultratextgen.com/zh-tw/",
   "crumb_home": "首頁",
@@ -127,7 +127,7 @@
         },
         {
           "char": "¥",
-          "label": "日圓／人民幣"
+          "label": "日幣／人民幣"
         },
         {
           "char": "₩",
@@ -169,8 +169,8 @@
     },
     {
       "href": "/zh-tw/symbol/yen-sign/",
-      "title": "日圓符號（¥）",
-      "desc": "日圓與人民幣共用的貨幣符號。"
+      "title": "日幣符號（¥）",
+      "desc": "日幣（日圓）與人民幣共用的貨幣符號。"
     },
     {
       "href": "/zh-tw/symbol/won-sign/",
