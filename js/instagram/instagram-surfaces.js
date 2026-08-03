@@ -76,6 +76,26 @@
   const DEFAULT_SURFACE = "bio";
   const HANDLE_OK = /^[a-z0-9._]*$/;
 
+  /* The dynamic messages — the ones assembled from the user's own text —
+     cannot live in SURFACES because they interpolate. Locale pages override
+     them via window.UTG_IG_STRINGS using the same merge-over-defaults rule.
+     {chars} {len} {limit} {units} are substituted. */
+  const STRINGS = {
+    uBad: "Instagram will reject this handle. These characters are not allowed: {chars}. Put the styled version in your display name instead — that field accepts it.",
+    uOk: "These characters are all legal in a handle. If Instagram still says “not available”, the name is genuinely taken.",
+    tooLong: "Too long for this field — {len} of {limit} characters. ",
+    detail: "Heads up: this is {len} visible characters but {units} code units. Some fields count the larger number — paste-test before you rely on it."
+  };
+
+  function str(key, vars) {
+    const all = Object.assign({}, STRINGS, window.UTG_IG_STRINGS || {});
+    let out = all[key] || STRINGS[key];
+    Object.keys(vars || {}).forEach((k) => {
+      out = out.split("{" + k + "}").join(vars[k]);
+    });
+    return out;
+  }
+
   function surfaceData() {
     const overrides = window.UTG_IG_SURFACES || {};
     const merged = {};
@@ -152,20 +172,18 @@
       const bad = badHandleChars(raw);
       if (bad.length) {
         status = "blocked";
-        text =
-          "Instagram will reject this handle. These characters are not allowed: " +
-          bad.slice(0, 8).map((c) => "“" + c + "”").join(" ") +
-          (bad.length > 8 ? " …" : "") +
-          ". Put the styled version in your display name instead — that field accepts it.";
+        text = str("uBad", {
+          chars: bad.slice(0, 8).map((c) => "“" + c + "”").join(" ") + (bad.length > 8 ? " …" : "")
+        });
       } else {
         status = "safe";
-        text = "These characters are all legal in a handle. If Instagram still says “not available”, the name is genuinely taken.";
+        text = str("uOk", {});
       }
     }
 
     if (over) {
       status = "blocked";
-      text = "Too long for this field — " + len + " of " + s.limit + " characters. " + text;
+      text = str("tooLong", { len: len, limit: s.limit }) + text;
     }
 
     if (el.verdictText) el.verdictText.textContent = text;
@@ -181,9 +199,7 @@
     if (el.detail) {
       const units = raw.length;
       if (units !== len && len > 0) {
-        el.detail.textContent =
-          "Heads up: this is " + len + " visible characters but " + units +
-          " code units. Some fields count the larger number — paste-test before you rely on it.";
+        el.detail.textContent = str("detail", { len: len, units: units });
         el.detail.hidden = false;
       } else {
         el.detail.hidden = true;
