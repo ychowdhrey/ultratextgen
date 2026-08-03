@@ -751,11 +751,16 @@ synonym-consolidation read is inferred from the row-17 close-out, not
 independently verified against EN GSC for "font"/"calligraphy" specifically
 — worth a direct check before treating it as settled, but it's the reason
 these three stay unbuilt in EN rather than a claim that the underlying
-concept lacks English demand. `x-default` on all three (plus their live
-non-English siblings, `it/font-copia-e-incolla/` and `it/caratteri-
-speciali/` on the `changeur-de-police` cluster) falls back to the bare EN
-homepage as a generic default only, same as the trio above — not a
-translation-equivalence claim.
+concept lacks English demand. `x-default` on all three (plus the live
+non-English sibling `it/font-copia-e-incolla/` on the `changeur-de-police`
+cluster) falls back to the bare EN homepage as a generic default only, same
+as the trio above — not a translation-equivalence claim. *(Correction
+2026-08-02: `it/caratteri-speciali/` was previously also listed on this
+cluster, making two `it` claimants on one hreflang cluster — invalid, and
+flagged by `audit-hreflang.js` as a stacked-cluster conflict.
+`it/font-copia-e-incolla/` keeps the slot as the concept-equivalent of
+"changeur de police"; `it/caratteri-speciali/` now stands alone with only a
+self-reference + homepage `x-default`, same ratified no-EN-parent shape.)*
 
 **Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
 picked up new content the same day (a "changer un texte déjà écrit" FAQ, a

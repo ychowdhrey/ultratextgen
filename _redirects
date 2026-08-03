@@ -275,5 +275,13 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /tr/yazi-stilleri/            /tr/  301
 /tr/yazi-stilleri/index.html  /tr/  301
 
+# 2026-08-02 duplicate-claimant folds (parallel-session hreflang collision
+# cleanup): each pair had two same-locale pages claiming one hreflang
+# cluster slot; the less-integrated page folds into the survivor.
+/es/symbol/signo-de-grado/            /es/symbol/simbolo-de-grado/  301
+/es/symbol/signo-de-grado/index.html  /es/symbol/simbolo-de-grado/  301
+/ja/library/text-faces-kaomoji/            /ja/library/kaomoji/  301
+/ja/library/text-faces-kaomoji/index.html  /ja/library/kaomoji/  301
+
 /404  /404.html  200
 /*    /404.html  404

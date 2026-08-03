@@ -1,0 +1,420 @@
+{
+  "slug": "religieuze-symbolen",
+  "lang": "nl",
+  "title": "Religieuze Symbolen Kopiëren ✝ ☪ ✡ ☸ Geloofstekens",
+  "meta_description": "Blader door religieuze, spirituele en geloofsgerelateerde Unicode-symbolen uit grote wereldtradities en kopieer ze. Klik op een symbool om het meteen te kopiëren.",
+  "breadcrumb": "Religieuze & Spirituele Symbolen",
+  "hero_h1": "Religieuze & Spirituele Symbolen",
+  "hero_tagline": "Een naslagverzameling van religieuze, spirituele en geloofsgerelateerde Unicode-symbolen uit grote wereldtradities. Klik op een symbool om het meteen te kopiëren.",
+  "intro": "Deze bibliotheek bevat symbolen uit het christendom, de islam, het jodendom, het hindoeïsme, het boeddhisme en andere wereldtradities, samen met universele spirituele en vredessymbolen. Geordend per geloofstraditie en categorie.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/nl/library/religieuze-symbolen/",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "library_url": "https://ultratextgen.com/nl/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/korssymboler/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/religious-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/religioese-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-religieux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-keagamaan/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-religiosi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/religious-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jonggyo-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/religieuze-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-religijne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/religioznye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/religious-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/dini-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "christian",
+      "label": "Christelijk",
+      "h2": "Kruisen & Christelijke Symbolen",
+      "intro": "Unicode-kruisvarianten en kerkgerelateerde tekens uit christelijke tradities.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "Latijns kruis"
+        },
+        {
+          "char": "☦",
+          "label": "Orthodox kruis"
+        },
+        {
+          "char": "✞",
+          "label": "Kruis met schaduw"
+        },
+        {
+          "char": "✟",
+          "label": "Omlijnd kruis"
+        },
+        {
+          "char": "♰",
+          "label": "West-Syrisch kruis"
+        },
+        {
+          "char": "♱",
+          "label": "Oost-Syrisch kruis"
+        },
+        {
+          "char": "⛪",
+          "label": "Kerk"
+        },
+        {
+          "char": "✠",
+          "label": "Maltezer kruis"
+        }
+      ]
+    },
+    {
+      "id": "islamic",
+      "label": "Islamitisch",
+      "h2": "Islamitische Symbolen",
+      "intro": "Halve maan, moskee en andere tekens die met de islamitische traditie worden verbonden.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "Ster en halve maan"
+        },
+        {
+          "char": "🕌",
+          "label": "Moskee"
+        },
+        {
+          "char": "🕋",
+          "label": "Kaäba"
+        },
+        {
+          "char": "📿",
+          "label": "Gebedskralen"
+        },
+        {
+          "char": "﷽",
+          "label": "Bismillah-ligatuur"
+        }
+      ]
+    },
+    {
+      "id": "jewish",
+      "label": "Joods",
+      "h2": "Joodse Symbolen",
+      "intro": "Davidster, menora en andere tekens uit de joodse traditie.",
+      "symbols": [
+        {
+          "char": "✡",
+          "label": "Davidster"
+        },
+        {
+          "char": "🕍",
+          "label": "Synagoge"
+        },
+        {
+          "char": "🕎",
+          "label": "Menora"
+        }
+      ]
+    },
+    {
+      "id": "dharmic",
+      "label": "Dharmisch",
+      "h2": "Symbolen van Dharmische Religies",
+      "intro": "Tekens uit het hindoeïsme, boeddhisme, jainisme en sikhisme.",
+      "symbols": [
+        {
+          "char": "☸",
+          "label": "Rad van Dharma"
+        },
+        {
+          "char": "🕉",
+          "label": "Om (emoji)"
+        },
+        {
+          "char": "卍",
+          "label": "Manji (boeddhistisch gelukssymbool, naar links gericht)"
+        },
+        {
+          "char": "☬",
+          "label": "Adi Shakti (khanda)"
+        },
+        {
+          "char": "🛕",
+          "label": "Hindoetempel"
+        },
+        {
+          "char": "🪯",
+          "label": "Khanda (emoji)"
+        },
+        {
+          "char": "🔱",
+          "label": "Trishula (drietand)"
+        },
+        {
+          "char": "ॐ",
+          "label": "Om (devanagari)"
+        },
+        {
+          "char": "🦚",
+          "label": "Pauw"
+        },
+        {
+          "char": "🪶",
+          "label": "Pauwenveer"
+        },
+        {
+          "char": "🪈",
+          "label": "Fluit"
+        },
+        {
+          "char": "🪷",
+          "label": "Lotus"
+        },
+        {
+          "char": "🪔",
+          "label": "Diya-olielamp"
+        },
+        {
+          "char": "🙏",
+          "label": "Gevouwen handen"
+        },
+        {
+          "char": "🧘",
+          "label": "Persoon in lotushouding (meditatie)"
+        }
+      ]
+    },
+    {
+      "id": "east-asian",
+      "label": "Oost-Azië",
+      "h2": "Oost-Aziatische Spirituele Symbolen",
+      "intro": "Tekens uit het taoïsme, shintoïsme en andere Oost-Aziatische tradities.",
+      "symbols": [
+        {
+          "char": "☯",
+          "label": "Yin yang"
+        },
+        {
+          "char": "☰",
+          "label": "Trigram hemel"
+        },
+        {
+          "char": "☱",
+          "label": "Trigram meer"
+        },
+        {
+          "char": "☲",
+          "label": "Trigram vuur"
+        },
+        {
+          "char": "☳",
+          "label": "Trigram donder"
+        },
+        {
+          "char": "☴",
+          "label": "Trigram wind"
+        },
+        {
+          "char": "☵",
+          "label": "Trigram water"
+        },
+        {
+          "char": "☶",
+          "label": "Trigram berg"
+        },
+        {
+          "char": "☷",
+          "label": "Trigram aarde"
+        },
+        {
+          "char": "⛩",
+          "label": "Shinto-schrijn"
+        },
+        {
+          "char": "卐",
+          "label": "Oost-Aziatische gelukssymbool-swastika (naar rechts gericht)"
+        }
+      ]
+    },
+    {
+      "id": "yin-yang-lines",
+      "label": "Lijnen",
+      "h2": "Yin- en Yanglijnen",
+      "intro": "De monogram- en digramlijnen waaruit de I Tjing-trigrammen hierboven zijn opgebouwd.",
+      "symbols": [
+        {
+          "char": "⚊",
+          "label": "Monogram yang"
+        },
+        {
+          "char": "⚋",
+          "label": "Monogram yin"
+        },
+        {
+          "char": "⚌",
+          "label": "Digram groot yang"
+        },
+        {
+          "char": "⚍",
+          "label": "Digram klein yin"
+        },
+        {
+          "char": "⚎",
+          "label": "Digram klein yang"
+        },
+        {
+          "char": "⚏",
+          "label": "Digram groot yin"
+        }
+      ]
+    },
+    {
+      "id": "spiritual",
+      "label": "Universeel spiritueel",
+      "h2": "Universele Spirituele Symbolen",
+      "intro": "Tekens die in meerdere tradities voorkomen of algemeen herkend worden.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Vredessymbool"
+        },
+        {
+          "char": "⚛",
+          "label": "Atoomsymbool"
+        },
+        {
+          "char": "🔯",
+          "label": "Zespuntige ster met punt"
+        },
+        {
+          "char": "⚕",
+          "label": "Esculaapstaf"
+        },
+        {
+          "char": "☥",
+          "label": "Ankh"
+        }
+      ]
+    },
+    {
+      "id": "peace-gestures-goodwill",
+      "label": "Vrede & goede wil",
+      "h2": "Vrede, Gebaren & Goede Wil",
+      "intro": "De gebaren, duiven en tekens van goede wil die bij het vredesteken hierboven horen.",
+      "symbols": [
+        {
+          "char": "✌️",
+          "label": "Victorieteken"
+        },
+        {
+          "char": "🙏",
+          "label": "Gevouwen handen"
+        },
+        {
+          "char": "🕊️",
+          "label": "Duif"
+        },
+        {
+          "char": "🫒",
+          "label": "Olijf"
+        },
+        {
+          "char": "🌿",
+          "label": "Olijftak"
+        },
+        {
+          "char": "🤝",
+          "label": "Handdruk"
+        },
+        {
+          "char": "🫶",
+          "label": "Handen in hartvorm"
+        },
+        {
+          "char": "👐",
+          "label": "Open handen"
+        }
+      ]
+    }
+  ],
+  "cta": "Gebruik UltraTextGen om gewone tekst om te zetten naar vet, cursief, schuinschrift en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "related": [
+    {
+      "href": "/nl/library/islamitische-symbolen/",
+      "title": "Islamitische Symbolen",
+      "desc": "Ster en halve maan, Arabische ligaturen en Eid-wensen."
+    },
+    {
+      "href": "/nl/library/hartjes/",
+      "title": "Hartsymbolen",
+      "desc": "Hartjes ♥ ♡ ❤ in alle vormen en stijlen."
+    },
+    {
+      "href": "/nl/symbol/vredesteken/",
+      "title": "Vredessymbool (☮)",
+      "desc": "Geschiedenis en gebruik van het vredesteken."
+    },
+    {
+      "href": "/nl/symbol/yin-yang-symbool/",
+      "title": "Yin-yangsymbool (☯)",
+      "desc": "Betekenis en herkomst van het yin-yangteken."
+    }
+  ]
+}

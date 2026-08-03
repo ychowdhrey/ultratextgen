@@ -151,7 +151,68 @@ LOCALE_UI_STRINGS = {
     "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
     "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open UltraTextGen →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
     "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
+    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
+    # Values below match the chrome already used by these locales' hand-authored
+    # library pages (breadcrumbs, "related" label, copy aria-label, CTA button),
+    # so generated and hand-authored pages read the same inside one locale.
+    "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
+    "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
+    "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
+    "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
+    "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
+    "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
 }
+
+# Section label for the optional FAQ block, per locale. Falls back to English.
+LOCALE_FAQ_LABEL = {
+    "pt": "Perguntas Frequentes",
+    "de": "Häufige Fragen",
+    "fr": "Questions fréquentes",
+    "tr": "Sıkça Sorulan Sorular",
+    "it": "Domande Frequenti",
+    "es": "Preguntas Frecuentes",
+    "pl": "Często Zadawane Pytania",
+    "nl": "Veelgestelde Vragen",
+    "vi": "Câu Hỏi Thường Gặp",
+    "fi": "Usein kysytyt kysymykset",
+    "ar": "الأسئلة الشائعة",
+    "ru": "Частые вопросы",
+    "ja": "よくある質問",
+    "ko": "자주 묻는 질문",
+    "th": "คำถามที่พบบ่อย",
+    "id": "Pertanyaan Umum",
+}
+
+
+def render_faq(faq, label):
+    """Render the optional FAQ block.
+
+    Uses the JS-free <details> disclosure variant deliberately: library pages
+    load /symbol-explorer.js, never /script.js, so there is nothing to bind the
+    accordion buttons — and nothing that could double-bind them later.
+    The FAQPage JSON-LD is built from this same list in render_page(), so the
+    visible copy and the markup cannot drift apart.
+    """
+    items = []
+    for entry in faq:
+        items.append(
+            '  <details class="faq-item">\n'
+            f'    <summary class="faq-question">{esc(entry["q"])}</summary>\n'
+            f'    <div class="faq-answer"><p>{esc(entry["a"])}</p></div>\n'
+            "  </details>"
+        )
+    return (
+        '<!-- FAQ -->\n'
+        '<section class="editorial-section" id="faq">\n'
+        f'  <span class="article-section-label">{esc(label)}</span>\n'
+        + "\n".join(items)
+        + "\n</section>"
+    )
+
+
+# Locales written right-to-left. The site's own RTL content locale is Arabic;
+# fa/ur/he are declared RTL in i18n.js but are not content locales today.
+RTL_LANGS = {"ar", "fa", "ur", "he"}
 
 
 def render_symbol_section(sec, copy_label="Copy"):
@@ -260,6 +321,7 @@ def render_page(spec):
     # Locale support (all fields default to the English behaviour, so existing
     # English specs render byte-identically).
     lang = spec.get("lang", "en")
+    dir_attr = ' dir="rtl"' if lang in RTL_LANGS else ""
     ui = LOCALE_UI_STRINGS.get(lang, {})
     default_home_url = f"{SITE}/" if lang == "en" else f"{SITE}/{lang}/"
     home_url = spec.get("home_url", default_home_url)
@@ -343,6 +405,34 @@ def render_page(spec):
         ensure_ascii=False,
     )
 
+    # Optional FAQ — visible block and FAQPage JSON-LD are built from the same
+    # spec list, so a page can never ship schema for Q&A it doesn't render.
+    faq = spec.get("faq") or []
+    faq_label = spec.get("faq_label", LOCALE_FAQ_LABEL.get(lang, "Frequently Asked Questions"))
+    faq_html = f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label)}" if faq else ""
+    ld_faq_html = ""
+    if faq:
+        ld_faq = json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": html.unescape(entry["q"]),
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": html.unescape(entry["a"]),
+                        },
+                    }
+                    for entry in faq
+                ],
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+        ld_faq_html = f'\n\n<script type="application/ld+json">\n{ld_faq}\n</script>'
+
     # Section bodies
     section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
@@ -357,7 +447,7 @@ def render_page(spec):
         runtime_scripts = '<script src="/symbol-explorer.js"></script>'
 
     page = f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}"{dir_attr}>
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
@@ -397,7 +487,7 @@ def render_page(spec):
 
 <script type="application/ld+json">
 {ld_breadcrumb}
-</script>
+</script>{ld_faq_html}
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -423,7 +513,7 @@ def render_page(spec):
 
 <div class="section-divider"></div>
 
-{body_sections}
+{body_sections}{faq_html}
 
 <!-- CTA -->
 <div class="cta-card">
