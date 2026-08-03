@@ -1707,6 +1707,7 @@ PAGES = {
   "answers-where-do-fancy-fonts-work-username-vs-display-name": ("Username vs Display Name", "Where fancy fonts actually work", m_qa, K_ANS),
   "answers-do-fancy-fonts-work-with-arabic": ("Do Fancy Fonts Work With Arabic?", "Why not — and what does work", m_qa, K_ANS),
   "answers-do-you-need-nitro-for-discord-fonts": ("Do You Need Nitro for Fonts?", "The honest answer for Discord users", m_qa, K_ANS),
+  "answers-what-are-discord-display-name-styles": ("Discord Display Name Styles", "What Nitro styles do, and where they stop", m_qa, K_ANS),
   "answers-how-to-change-roblox-username": ("Change Your Roblox Username", "The steps and the catch", m_qa, K_ANS),
   "answers-how-to-change-tiktok-username": ("Change Your TikTok Username", "How and how often you can", m_qa, K_ANS),
   "answers-how-to-change-minecraft-username": ("Change Your Minecraft Username", "Java vs. Bedrock, free vs. paid", m_qa, K_ANS),
@@ -1851,6 +1852,7 @@ PAGES = {
   "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
+  "symbol-rufiyaa-sign": ("Rufiyaa Sign", "Accepted for Unicode 18.0 publication", m_coin, K_SYM),
 
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",
@@ -1959,6 +1961,8 @@ PAGES = {
         glyphs("½", "⅓", "¼", "¾", "⅔"), K_LIB),
   "library-gaming-aesthetic-symbols": ("Gaming Aesthetic Symbols", "Clan tag frames, HUD bars and battle icons",
         glyphs("▰", "▱", "⌖", "━", "▮"), K_LIB),
+  "library-vrchat-symbols": ("VRChat Symbols", "Name symbols that fit the 16-character limit",
+        glyphs("✦", "⚡", "♡", "❖", "･"), K_LIB),
   "library-geometric-symbols": ("Geometric Symbols", "Circles, squares and triangles",
         glyphs("●", "▲", "■", "◆", "◇"), K_LIB),
   "library-goth-grunge-symbols": ("Goth & Grunge Symbols", "Dark, edgy decorative marks",

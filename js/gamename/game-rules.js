@@ -105,7 +105,19 @@
     // non-Latin characters "may not be displayed properly" and can make a
     // name appear invisible to other players — so we flag decorative
     // Unicode as a warning here (strict) rather than treating it as safe.
-    clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true }
+    clashroyale: { label: "Clash Royale", limit: 15, min: 2, weighted: false, noSpace: false, field: "display", strict: true },
+    // VRChat Display Names are 4-15 characters and can only be changed once
+    // every 90 days (30 days with VRC+), per VRChat's own "I'd like to change
+    // my name" help article — by far the longest rename cooldown of any rule
+    // in this table, which is exactly why checking before pasting matters here.
+    // Charset: VRChat publishes no allowed-character list, and its own
+    // community forum has an open, unanswered request for one; users there
+    // report that most Unicode works but "not all unicodes do". So this is
+    // strict (decorative Unicode flagged as a warning) rather than safe or
+    // blocked. Deliberately NOT weighted: the widely-repeated claim that some
+    // Unicode counts as two characters here could not be verified against
+    // VRChat documentation or any staff response, so it is not encoded.
+    vrchat: { label: "VRChat (display name)", limit: 15, min: 4, weighted: false, noSpace: false, field: "display", strict: true }
   };
 
   /* ============================

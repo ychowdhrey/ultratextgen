@@ -944,6 +944,56 @@ entry shape.
   logic) — the audit and the enforcement gate must never define "changed" or
   "cluster" differently, so that shared logic lives in one place.
 
+### EN is the source locale — two structural carve-outs (added 2026-08-02)
+
+The rule above was written as if EN and a locale page were peers that drift
+apart. They aren't: **EN is where pages are born.** A new EN page gets linked
+from existing EN pages immediately, and translated later or never. Without
+allowing for that, the gate fires on essentially *every* new EN page, and a
+gate that fires on everything trains people to ignore it. Two carve-outs, both
+in the shared fingerprint logic so the audit and the gate can't disagree:
+
+**1. Catalogue indexes don't diff their inventory links.** A pillar index lists
+the pages that exist *in its own locale*. EN `library/index.html` carries ~306
+content links; its locale siblings carry 7–50, and every locale
+`category/index.html` carries **0**. That gap is correct — a Danish catalogue
+must not link an English-only page (see "Locale-native internal linking"). So
+for the eight pillar indexes in **`data/parity_catalogue_pages.json`** (and
+their locale equivalents), the internal-link set is dropped from the
+fingerprint. **`<h2>` count, FAQ-schema question count and `.symbol-tile` count
+are still compared**, so adding a real section or FAQ to an index still fires.
+A hub that merely links many spokes (`library/currency-symbols`) is *not* a
+catalogue — its links are editorial and keep full coverage.
+
+**2. Adding a link to a page that doesn't exist in the sibling's locale
+doesn't require that sibling to be touched.** When the *only* structural change
+to a page is added outbound links, the gate now resolves each new target
+against the sibling's language: if none of them has a translation in that
+language, the pair is skipped, because linking the English page from a locale
+page is precisely what the locale-native rule forbids. The moment a translation
+of the target exists, the pair is flagged again — which is the right trigger,
+since the sibling can now link its native equivalent.
+
+Deliberately still flagged, in both carve-outs: a **removed** link, a changed
+`<h2>`/FAQ/tile count, and a new link to a page that **does** have a sibling in
+that locale (verified: adding a `/library/currency-symbols/` link to
+`/discord/` flags exactly `fr` and `id` — the two of its eleven siblings that
+have that translation). `linksUnreachableFor()` is conservative by
+construction: an unresolvable link target counts as reachable, so an unknown
+link can never silently suppress a flag.
+
+**This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
+exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
+classifies a *page type* whose link list is an inventory. Adding a pattern to
+it is a structural claim about the template and should be raised like any other
+registry change — but it is not a per-page permission and must never be used as
+one.
+
+**Watch out when running the gate locally:** it diffs `merge-base..HEAD`, so
+**uncommitted work is invisible to it**. Running it with changes still in the
+working tree reports on an unrelated delta and can read as a false green —
+commit first, then run.
+
 **Do not add an entry to `data/translation_parity_exceptions.json`
 unilaterally.** Every entry there is supposed to represent a real,
 discussed decision between you and the user — the same bar the English-

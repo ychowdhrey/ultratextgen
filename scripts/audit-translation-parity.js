@@ -51,7 +51,10 @@ const { fingerprint: fingerprintHtml, diff: diffFingerprints, score: scoreDiff }
   byUrl,
   localeCodes
 );
-const fingerprint = (rec) => fingerprintHtml(rec.html);
+// relPath is what tells the fingerprinter whether this is a pillar catalogue
+// index (inventory links, expected to diverge) — the audit and the PR gate must
+// classify pages identically, so both pass it. See content-fingerprint.js.
+const fingerprint = (rec) => fingerprintHtml(rec.html, { relPath: rec.rel });
 
 function lastCommit(rel) {
   try {
