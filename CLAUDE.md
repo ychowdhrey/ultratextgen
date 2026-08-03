@@ -394,11 +394,12 @@ it). Both mean Rule 3 was never applied — fix the hub, don't rebuild the spoke
   another page.
 
 **Case study (2026-07-18):** a GSC query×page pull (last 3 months, queries
-containing "discord") showed `/discord/` at 1,247 clicks / 89,848 impressions while
-`/answers/discord-allowed-characters/` had **0 clicks on 3,656 impressions** (pos
-7.85), `/answers/do-you-need-nitro-for-discord-fonts/` **0 clicks on 3,567**
-(7.45), and `/guide/discord-text-formatting-explained/` **0 clicks on 452** at
-position 6.06 — all indexed, all on-SERP, all starved by the hub above them.
+containing "discord") showed `/discord/` taking effectively all of the cluster's
+clicks, while `/answers/discord-allowed-characters/`,
+`/answers/do-you-need-nitro-for-discord-fonts/` and
+`/guide/discord-text-formatting-explained/` each drew **zero clicks despite real
+impressions at first-page positions** — all indexed, all on-SERP, all starved by
+the hub above them.
 `answers/how-to-make-bold-text-in-discord` drew essentially no impressions because
 the hub intercepts "how to bold" and then ranks ~80 for it. Five purpose-built
 pages, near-zero traffic, because Rule 3 was never applied to the hub.
@@ -713,7 +714,7 @@ structural form: no hreflang cluster at all, `id/`-only marketing page, with
 the transform itself living in the shared global `renderer.js`/`styles.js`
 registry like every other style (the *code* is never locale-partitioned; only
 the page presenting it is). Demand evidence: "font cuping"/"cuping font"
-≈33,000/mo combined in the ID market at KD 19–20 with weak incumbents.
+substantial combined ID-market demand at low difficulty with weak incumbents.
 
 Note this is a **precedent, not a template** — it does not license
 speculatively building other locales' internet-slang transforms. Each future
@@ -765,8 +766,8 @@ Hub-vs-Spoke spoke test on the *French* evidence: `changeur-de-police`
 "change police"/"changeur de police"), `calligraphie` (76%, "calligraphie
 copier coller"), and `police-d-ecriture` (54%, largest and still-growing
 volume of the six — "police d'écriture"/"police ecriture", where the
-homepage barely shows: 4 impressions at position 24 vs. this page's 188 at
-position 9.6 on the exact same query).
+homepage barely shows while this page holds a strong first-page position on
+the exact same query).
 
 **Important distinction from the `ja`/`ko`/`zh-tw` trio above: this is
 *not* a "no English speaker would search this" claim** — "font" and
@@ -844,10 +845,10 @@ spokes *about* fancy text, a different content type). Building an EN parent
 would cannibalise the site's own homepage.
 
 On the Turkish side the two do not compete, which is what makes the page worth
-keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **479 of its
-505 impressions on `süslü` queries** (`süslü harf kopyala` 288 imp @ pos 7.9,
-`süslü yazı kopyala yapıştır` 166 @ 9.1) while sitting at **position 44.8** on
-the `şekilli yaz*` family that `/tr/` owns at 4.5–6.3. The page was retargeted
+keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **the
+overwhelming majority of its impressions on `süslü` queries**, at first-page
+positions, while sitting far down the SERP on the `şekilli yaz*` family that
+`/tr/` owns. The page was retargeted
 onto `süslü` on 2026-08-01 for exactly that reason.
 
 **What is not verified:** the cannibalisation premise rests on this repo's own
@@ -1110,7 +1111,7 @@ keyword-insertion engine.
    discussion, or native-speaker review) surfaces a locally meaningful word,
    phrase, abbreviation, cultural expression, platform term, gaming term,
    problem description, or search formulation relevant to UltraTextGen —
-   record it in the private research repo's Local Language Intelligence
+   record it in the internal Local Language Intelligence
    Library as a new `candidate` record (or add evidence to an existing
    `phrase_id` if the same phrase already exists — search for a match
    before creating a new record). Do this even if you don't end up using
@@ -1121,10 +1122,9 @@ keyword-insertion engine.
    phrases (the ones that make it into the public snapshot here) are meant
    for production copy, and even then only per rule 2 above.
 9. This public snapshot is generated, read-only data — regenerated from the
-   private research repo's canonical dataset. Do not hand-edit the JSON
-   files under `data/local-language/`; if a phrase needs a status change or
-   correction, that happens in the private research repo and gets
-   re-synced here.
+   canonical research dataset maintained internally. Do not hand-edit the
+   JSON files under `data/local-language/`; if a phrase needs a status change
+   or correction, that happens internally and gets re-synced here.
 10. A local phrase, however well-evidenced, never guarantees ranking — it's
     a fit signal, not a growth lever on its own.
 
@@ -1139,9 +1139,8 @@ locale by default*, and the site went a long time answering that question
 by "wait for a forum thread to surface it" — a mechanism with a proven,
 expensive blind spot: EN `/symbol/` had 77 pages, FR `/symbol/` had 6, and
 nothing flagged it until a one-off manual Semrush pull (2026-07-14) found
-**~49,960 searches/month** of directly-evidenced French demand (euro-sign
-14,800/mo, micro-sign 5,400/mo, not-equal-sign 4,190/mo, delta-symbol
-3,600/mo, +11 more slugs) sitting there undetected the whole time the
+**~49,960 searches/month** of directly-evidenced French demand (euro-sign,
+micro-sign, not-equal-sign, delta-symbol, +11 more slugs) sitting there undetected the whole time the
 English parents were live.
 
 **The rule:** two data-driven registries replace tribal knowledge about
@@ -1304,8 +1303,7 @@ first impression is recorded before any later fix lands. This has been a
 real, recurring pattern in this repo's own history (see
 `docs/image-seo-fixes.md` and the several past "GSC 404 cleanup" commits
 that backfilled hero/OG art for pages already shipped) — most recently
-diagnosed from live GSC crawl-stats data in `ultratextgen-lab-`'s
-`gsc-technical-seo-leakage-audit-2026-07-24.md` §6.
+diagnosed from live GSC crawl-stats data in an internal audit (2026-07-24).
 
 ### Tooling — why there are two image-asset scripts, not one
 

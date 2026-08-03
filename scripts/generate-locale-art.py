@@ -24,8 +24,8 @@ Run:
 (repeatable). Without it, a run touches every not-yet-correctly-wired page
 sitewide, not just the ones a given session just built — confirmed to have
 swept 31 unrelated pre-existing pages into a single batch's diff before this
-flag existed (see ultratextgen-lab-'s GOLD-ANALYSIS-2026-07-25.md, symbol/*
-backlog section). Always scope a translation batch with --only.
+flag existed (confirmed by an internal analysis pass over the symbol/*
+backlog). Always scope a translation batch with --only.
 """
 import glob
 import html as html_entities

@@ -25,7 +25,7 @@ name: Validate Site
 # changes, checking just og:image/twitter:image/hero (not Pinterest pins), so
 # pre-existing site-wide backlog can never make it permanently red. This
 # exists specifically to stop new pages shipping ahead of their hero/OG art —
-# see ultratextgen-lab-'s gsc-technical-seo-leakage-audit-2026-07-24.md §6.
+# see the internal GSC crawl-stats investigation that found this recurring.
 #
 # scripts/audit-locale-parent-gap.js is likewise a whole-site discovery pass
 # (which Core-parent x qualified-locale cells have near-zero translation

@@ -268,8 +268,8 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 # All 49 internal links were repointed to /tr/ in the same change; most carried
 # the anchor text "yazı stilleri", which now points at the surviving page.
 # SCHEDULED FOR RE-EVALUATION 2026-08-16 against query-level volume, not page
-# metrics — "yazı stilleri" is a 450,000/mo term whose SERP position was never
-# pulled for either URL. If /tr/ is not absorbing it, revert this block and
+# metrics — "yazı stilleri" is a very high-volume term whose SERP position was
+# never pulled for either URL. If /tr/ is not absorbing it, revert this block and
 # restore the directory from git history.
 /tr/yazi-stilleri             /tr/  301
 /tr/yazi-stilleri/            /tr/  301

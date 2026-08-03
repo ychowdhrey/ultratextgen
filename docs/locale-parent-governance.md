@@ -30,9 +30,8 @@ two things: an English-Parent Rule (does a parent exist at all) and a
 surfacing. That combination has a proven blind spot: EN `/symbol/` had 77
 pages, FR `/symbol/` had 6, and nobody ran a systematic check on that gap —
 it sat there until a one-off manual Semrush pull (2026-07-14) found
-**~49,960 searches/month** of directly-evidenced French demand (euro-sign
-14,800/mo, micro-sign 5,400/mo, not-equal-sign 4,190/mo, delta-symbol
-3,600/mo, +11 more slugs) that had simply never been looked for.
+**~49,960 searches/month** of directly-evidenced French demand (euro-sign,
+micro-sign, not-equal-sign, delta-symbol, +11 more slugs) that had simply never been looked for.
 
 The fix isn't "translate everything" (the site's own per-page GSC yield data
 argues strongly against a blanket mirror — 30 focused `/id/` pages
@@ -353,7 +352,7 @@ The ledger — same `_readme` + array shape as
     "enGscImpressionsFromLocale": null
   },
   "verdict": "mirror",
-  "evidence": "euro-sign 14,800/mo, micro-sign 5,400/mo, ...",
+  "evidence": "euro-sign, micro-sign, ... (figures held internally)",
   "recordedBy": "governance-tooling-audit"
 }
 ```

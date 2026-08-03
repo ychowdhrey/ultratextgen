@@ -2777,8 +2777,8 @@ PAGES.update({
 })
 
 # ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull
-# ---- evidenced (horoskooppimerkit 12,100/mo, kaunokirjoitus 5,400,
-# ---- asteen merkki 3,600, merkkilaskuri 2,400, euron merkki 1,300).
+# ---- evidenced (horoskooppimerkit, kaunokirjoitus, asteen merkki,
+# ---- merkkilaskuri, euron merkki).
 PAGES.update({
   "fi-library-horoskooppimerkit": (
       "Horoskooppimerkit",
