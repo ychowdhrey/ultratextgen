@@ -151,6 +151,7 @@ LOCALE_UI_STRINGS = {
     "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
     "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open UltraTextGen →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
     "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
+    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
     # Values below match the chrome already used by these locales' hand-authored
     # library pages (breadcrumbs, "related" label, copy aria-label, CTA button),
     # so generated and hand-authored pages read the same inside one locale.
@@ -173,6 +174,7 @@ LOCALE_FAQ_LABEL = {
     "pl": "Często Zadawane Pytania",
     "nl": "Veelgestelde Vragen",
     "vi": "Câu Hỏi Thường Gặp",
+    "fi": "Usein kysytyt kysymykset",
     "ar": "الأسئلة الشائعة",
     "ru": "Частые вопросы",
     "ja": "よくある質問",

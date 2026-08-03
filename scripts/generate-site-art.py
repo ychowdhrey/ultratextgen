@@ -2762,6 +2762,28 @@ PAGES.update({
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
 })
 
+# ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull
+# ---- evidenced (horoskooppimerkit 12,100/mo, kaunokirjoitus 5,400,
+# ---- asteen merkki 3,600, merkkilaskuri 2,400, euron merkki 1,300).
+PAGES.update({
+  "fi-library-horoskooppimerkit": (
+      "Horoskooppimerkit",
+      "Tähtimerkit ja planeetat kopioitavaksi", m_star, K_LIB),
+  "fi-kaunokirjoitus": (
+      "Kaunokirjoitus",
+      "Kaunokirjaimet A–Z, sanat ja nimet", m_letter_cursive, K_CAT),
+  "fi-symbol-asteen-merkki": (
+      "Asteen merkki °",
+      "Lämpötila- ja kulmamerkit", m_circled_letter, K_SYM),
+  "fi-symbol-euron-merkki": (
+      "Euron merkki €",
+      "Valuuttamerkit kopioitavaksi", m_coin, K_SYM),
+  "fi-merkkilaskuri": (
+      "Merkkilaskuri",
+      "Sanat, merkit ja palvelujen rajat", m_doc, K_USE),
+})
+
+
 # ---- 2026-07-30: th/library/star-symbols translation ----
 PAGES["th-library-star-symbols"] = (
     "สัญลักษณ์ดาว ★ ☆ ✦", "รวมดาว ดอกจัน และอีโมจิดาวทุกแบบ",
