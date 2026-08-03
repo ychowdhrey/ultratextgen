@@ -1,0 +1,186 @@
+{
+  "slug": "division-sign",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "除號 ÷：複製貼上與輸入方式 | UltraTextGen",
+  "meta_description": "點一下複製除號 ÷，附 Alt 代碼、HTML 寫法，以及斜線與分數線的用法差別。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/division-sign/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "除號",
+  "hero_h1": "除號（÷）",
+  "hero_tagline": "÷ 是除法運算符——點一下就複製。",
+  "intro": "÷（U+00F7，DIVISION SIGN）是除法運算符，字形是一條橫線上下各一點，源自 17 世紀的數學排版。實務上除法有三種寫法：÷ 常見於教學與基礎算式、斜線 / 常見於程式與行內書寫、分數線則用於正式數學排版。國際標準（ISO 80000-2）其實建議避免使用 ÷，改用分數或斜線，因為在複雜算式裡容易產生運算順序的歧義。輸入方式：Windows 按住 Alt 再輸入 0247，HTML 寫成 &divide;。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/division-sign/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/tanda-bagi/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/division-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/division-sign/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/bolme-isareti/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/division-sign/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-deleniya/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-de-divisao/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/nanugi-giho/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/division-sign/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-divisione/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-division/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/signo-de-division/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/divisionszeichen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/znak-dzielenia/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/deelteken/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/division-sign/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/division-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/division-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "division-symbol",
+      "label": "除號",
+      "h2": "除號",
+      "intro": "除法的幾種寫法。",
+      "symbols": [
+        {
+          "char": "÷",
+          "label": "除號（U+00F7）"
+        },
+        {
+          "char": "/",
+          "label": "斜線（程式與行內書寫）"
+        },
+        {
+          "char": "∕",
+          "label": "除法斜線（U+2215）"
+        }
+      ]
+    },
+    {
+      "id": "math-operators",
+      "label": "其他運算符號",
+      "h2": "其他運算符號",
+      "intro": "四則運算的完整符號。",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "乘號"
+        },
+        {
+          "char": "+",
+          "label": "加號"
+        },
+        {
+          "char": "−",
+          "label": "減號（U+2212）"
+        },
+        {
+          "char": "±",
+          "label": "正負"
+        }
+      ]
+    },
+    {
+      "id": "math-relations",
+      "label": "比較與關係",
+      "h2": "比較與關係",
+      "intro": "算式裡的關係符號。",
+      "symbols": [
+        {
+          "char": "≠",
+          "label": "不等於"
+        },
+        {
+          "char": "≈",
+          "label": "約等於"
+        },
+        {
+          "char": "=",
+          "label": "等於"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/multiplication-sign/",
+      "title": "乘號（×）",
+      "desc": "乘法運算符號與尺寸寫法。"
+    },
+    {
+      "href": "/zh-tw/symbol/not-equal-sign/",
+      "title": "不等於符號（≠）",
+      "desc": "不等於與其他比較符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/plus-minus/",
+      "title": "正負符號（±）",
+      "desc": "誤差範圍與公差標示。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    }
+  ]
+}

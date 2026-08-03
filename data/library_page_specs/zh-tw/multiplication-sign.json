@@ -1,0 +1,186 @@
+{
+  "slug": "multiplication-sign",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "乘號 ×：複製貼上、尺寸寫法與輸入方式 | UltraTextGen",
+  "meta_description": "點一下複製乘號 ×，附 Alt 代碼、HTML 寫法，以及尺寸標示與字母 x 的差別。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/multiplication-sign/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "乘號",
+  "hero_h1": "乘號（×）",
+  "hero_tagline": "× 是真正的乘號，不是字母 x——點一下就複製。",
+  "intro": "×（U+00D7，MULTIPLICATION SIGN）是數學乘法運算符，也用在尺寸標示（1920×1080）和比例（3×3）。常見錯誤是用小寫字母 x 代替——外形接近但在排版上高度與間距都不對，也會影響搜尋與朗讀。另外要和 ✕（U+2715，叉號）區分：後者是「錯誤／關閉」的標記，不是運算符。輸入方式：Windows 按住 Alt 再輸入 0215，HTML 寫成 &times;。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/multiplication-sign/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/tanda-kali/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/multiplication-sign/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/multiplication-sign/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/carpma-isareti/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/multiplication-sign/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-umnozheniya/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-de-multiplicacao/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/gophagi-giho/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/multiplication-sign/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-moltiplicazione/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-multiplication/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/signo-de-multiplicacion/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/multiplikationszeichen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/znak-mnozenia/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/vermenigvuldigingsteken/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/multiplication-sign/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/multiplication-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/multiplication-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "multiplication-symbol",
+      "label": "乘號",
+      "h2": "乘號",
+      "intro": "乘號與容易誤用的相似字元。",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "乘號（U+00D7）"
+        },
+        {
+          "char": "x",
+          "label": "小寫字母 x——常見誤用"
+        },
+        {
+          "char": "✕",
+          "label": "叉號（U+2715）——表示錯誤，不是乘"
+        }
+      ]
+    },
+    {
+      "id": "math-operators",
+      "label": "其他運算符號",
+      "h2": "其他運算符號",
+      "intro": "四則運算的完整符號。",
+      "symbols": [
+        {
+          "char": "÷",
+          "label": "除號"
+        },
+        {
+          "char": "+",
+          "label": "加號"
+        },
+        {
+          "char": "−",
+          "label": "減號（U+2212）"
+        },
+        {
+          "char": "±",
+          "label": "正負"
+        }
+      ]
+    },
+    {
+      "id": "math-relations",
+      "label": "比較與關係",
+      "h2": "比較與關係",
+      "intro": "算式裡的關係符號。",
+      "symbols": [
+        {
+          "char": "≠",
+          "label": "不等於"
+        },
+        {
+          "char": "≈",
+          "label": "約等於"
+        },
+        {
+          "char": "=",
+          "label": "等於"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/division-sign/",
+      "title": "除號（÷）",
+      "desc": "除法運算符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/not-equal-sign/",
+      "title": "不等於符號（≠）",
+      "desc": "不等於與其他比較符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/plus-minus/",
+      "title": "正負符號（±）",
+      "desc": "誤差範圍與公差標示。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    }
+  ]
+}

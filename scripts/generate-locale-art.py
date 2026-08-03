@@ -169,7 +169,10 @@ def clean_title(html):
     # Full SEO titles run 50-90 chars; the card wants a short headline, so
     # prefer the clause before the first delimiter (mirrors how the
     # hand-authored PAGES entries keep titles to 2-4 words).
-    head = re.split(r'\s*[:\|–—(]\s*', t)[0].strip()
+    # U+FF1A FULLWIDTH COLON is the title/subtitle delimiter CJK titles
+    # actually use — without it every zh/ja/ko title counted as one clause
+    # and rendered the whole SEO title onto the card, overrunning the motif.
+    head = re.split(r'\s*[:：\|–—(]\s*', t)[0].strip()
     # CJK/Thai titles pack a complete concept into very few characters, so
     # the Latin-tuned "is this head substantial enough" bar needs to be low.
     if len(head) >= 3:
@@ -241,7 +244,16 @@ def main():
         slug = r["slug"]
         native = gsa.NATIVE_SCRIPT.get(r["slug"].split("-", 1)[0])
         if native:
-            cap = 26 if native.startswith("Noto Sans CJK") or native == "Noto Sans Thai" else 46
+            # The cap is about GLYPH WIDTH, not which font file we picked:
+            # CJK and Thai glyphs are ~2x a Latin character, so the same
+            # character count runs under the motif graphic. Testing the
+            # family name missed zh — its family is "WenQuanYi Zen Hei",
+            # which neither starts with "Noto Sans CJK" nor is Thai, so
+            # Traditional Chinese subtitles were capped at the Latin 46 and
+            # overran the card.
+            wide = native in ("Noto Sans Thai", "WenQuanYi Zen Hei") or \
+                native.startswith("Noto Sans CJK")
+            cap = 26 if wide else 46
             if len(sub) > cap:
                 sub = sub[:cap].rsplit(" ", 1)[0].rstrip() + "..."
 
