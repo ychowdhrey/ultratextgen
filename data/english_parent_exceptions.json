@@ -81,6 +81,24 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/vi/usecase/ten-lien-quan-dep/",
+      "reason": "Nickname/special-character generator for Liên Quân Mobile, Tencent's MOBA (the Vietnam localization of Arena of Valor) — no meaningful English-market presence and no EN name-generator page for it anywhere in usecase/ (checked: no arena-of-valor-name-generator exists). no-EN-demand-by-construction claim. Discovered mis-parented onto the generic usecase/nickname-generator/ hub alongside its true sibling zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/ (Taiwan's name for the same game); paired into their own isolated 2-locale cluster instead, mirroring the ko/font-byeonhwan/zh-tw/yingwen-ziti precedent.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "Asserted at ratification, not instrument-checked — Semrush was out of API units at the time. Rests on the structural/linguistic argument (specific regional game, no EN equivalent to translate) rather than confirmed search volume.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/",
+      "reason": "Same ratification and claim shape as vi/usecase/ten-lien-quan-dep/ (same 2026-08-03 pass) — Taiwan's name for the same game (傳說對決 / Arena of Valor), paired with it into an isolated 2-locale cluster.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "Asserted at ratification, not instrument-checked — Semrush was out of API units at the time.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
     }
   ]
 }

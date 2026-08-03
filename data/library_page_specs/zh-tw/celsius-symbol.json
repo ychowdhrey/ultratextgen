@@ -1,0 +1,182 @@
+{
+  "slug": "celsius-symbol",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "攝氏符號 ℃：複製貼上、Alt 代碼與正確寫法 | UltraTextGen",
+  "meta_description": "點一下複製攝氏度符號 ℃ 與 °C，附 Alt 代碼、輸入方式，以及華氏、度數符號的正確用法。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/celsius-symbol/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "攝氏度符號",
+  "hero_h1": "攝氏度符號（℃）",
+  "hero_tagline": "℃ 和 °C 差在哪、怎麼打出來——點一下就複製。",
+  "intro": "攝氏溫度有兩種寫法：單一字元的 ℃（U+2103，DEGREE CELSIUS）和「度數符號＋大寫 C」組成的 °C。國際標準（SI）建議使用後者 °C，因為它在任何字型裡都能正確顯示，也比較好排版；℃ 是為了 CJK 直排和舊有編碼相容而保留的相容字元。實務建議：內文寫 °C，需要節省寬度的表格或直排再用 ℃。輸入方式：° 在 Windows 是 Alt+0176，Mac 是 Option+Shift+8。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/celsius-symbol/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-tselsiya/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/sesshi-kigou/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-celsius/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-celsius/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/celsius-zeichen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/celsius-isareti/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-celsius/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-celsius/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/simbolo-de-grados-celsius/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-selsius/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/seopssi-giho/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/sanyalak-celsius/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/symbol-celsjusza/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/celsius-symbool/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/celsius-symbol/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/celsius-symbol/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/celsius-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/celsius-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "celsius-symbol-symbol",
+      "label": "攝氏符號",
+      "h2": "攝氏符號",
+      "intro": "兩種寫法都通用，建議優先用 °C。",
+      "symbols": [
+        {
+          "char": "℃",
+          "label": "攝氏度（U+2103，相容字元）"
+        },
+        {
+          "char": "°C",
+          "label": "度數符號＋C（SI 建議寫法）"
+        },
+        {
+          "char": "°",
+          "label": "度數符號（U+00B0）"
+        }
+      ]
+    },
+    {
+      "id": "fahrenheit-and-kelvin",
+      "label": "華氏與克氏",
+      "h2": "華氏與克氏",
+      "intro": "其他溫標的符號寫法。",
+      "symbols": [
+        {
+          "char": "℉",
+          "label": "華氏度（U+2109）"
+        },
+        {
+          "char": "°F",
+          "label": "度數符號＋F"
+        },
+        {
+          "char": "K",
+          "label": "克耳文（不加度數符號）"
+        }
+      ]
+    },
+    {
+      "id": "degree-uses",
+      "label": "度數符號的其他用途",
+      "h2": "度數符號的其他用途",
+      "intro": "同一個 ° 也用在角度和座標。",
+      "symbols": [
+        {
+          "char": "°",
+          "label": "度數符號"
+        },
+        {
+          "char": "′",
+          "label": "角分"
+        },
+        {
+          "char": "″",
+          "label": "角秒"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/degree-symbol/",
+      "title": "度數符號（°）",
+      "desc": "溫度、角度與座標共用的度數符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/fahrenheit-symbol/",
+      "title": "華氏度符號（℉）",
+      "desc": "華氏溫標的符號與換算。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    },
+    {
+      "href": "/zh-tw/library/facebook-fuhao/",
+      "title": "Facebook（FB）符號大全",
+      "desc": "貼文與個人簡介可用的符號整理。"
+    }
+  ]
+}

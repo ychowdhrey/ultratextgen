@@ -721,6 +721,38 @@ speculatively building other locales' internet-slang transforms. Each future
 case needs its own demand evidence and its own discussion, exactly as this one
 did.
 
+**Ratified exceptions, `id/usecase/nama-discord-keren/` and
+`nl/sierlijke-letters/` (2026-08-03).** Both surfaced from a site-wide
+duplicate-claimant scan (see "Parallel sessions build the same thing under
+different names" below): each was a second page in its locale declaring an EN
+parent another page already claimed. In both cases the pages are **not**
+duplicates of each other — they serve different queries — so the fix was to
+drop the wrong parent claim, not to merge. Both now carry a locale-only
+hreflang block with `x-default` on the bare EN homepage as a generic default,
+and their visible language switchers were trimmed to match (a switcher that
+still lists a cluster the page has left is the same bug in the visible layer).
+
+- **`id/usecase/nama-discord-keren/`** claimed `usecase/nickname-generator/`,
+  which `id/usecase/nama-panggilan/` already owns. GSC (Jul 2–28) shows no
+  query overlap at all: nama-discord-keren draws 118 impressions led by "nama
+  discord keren" (63) and "nama role discord keren" (13), while nama-panggilan
+  draws 28 led by "buat nama panggilan keren" (5). It is a Discord-name page,
+  and **this site has no EN Discord-name parent** — `/discord/` is the
+  generator hub and `usecase/nickname-generator/` is the general nickname
+  page. Ratified as local-only rather than force-fitted to either.
+- **`nl/sierlijke-letters/`** claimed `category/cursive-fonts/`, which
+  `nl/cursieve-letters/` already owns — and in Dutch those are two different
+  concepts: *cursief* is italic/slanted (what the Word button does), while
+  *sierletters* are ornamental/calligraphic. GSC confirms the split, decisively
+  and in the surprising direction: sierlijke-letters draws **1,768 imp / 45
+  clicks** ("sierletters" alone 795/29) against cursieve-letters' 200 imp / 1
+  click, despite being the smaller, less-linked page. Merging would have 301'd
+  away the best-performing NL asset on the site. No EN "sierletters" parent
+  exists; ratified as local-only. Rule 3 was applied in the same change —
+  `nl/cursieve-letters/` had "sierlijke letters A–Z" in its own `<title>` and
+  meta description, i.e. the hub was targeting the spoke's head term; that is
+  now "cursief schrift A–Z".
+
 **Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
 `fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
 `fr/` near-duplicate pages `ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md` §2c
@@ -776,6 +808,31 @@ same content to the two IT pages, or record the divergence deliberately
 (and if the latter, decide where: `data/translation_parity_exceptions.json`
 requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
 by default.
+
+**Ratified local-only exception pair, `vi/usecase/ten-lien-quan-dep/` +
+`zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/` (2026-08-03):** both are
+nickname/special-character generators for the *same* specific game — Liên
+Quân Mobile in Vietnam, 傳說對決 (Arena of Valor) in Taiwan — Tencent's MOBA
+with no meaningful English-market presence and no EN name-generator page for
+it anywhere in `usecase/` (checked: no `arena-of-valor-name-generator`
+exists). Discovered as a byproduct of an unrelated hreflang audit: both pages
+were mis-parented onto the generic `usecase/nickname-generator/` hub, which
+only has room for one `vi` and one `zh-TW` claimant — but `nickname-
+generator` is genuinely generic (any game/platform), while these two are
+narrowly game-specific, so neither was a good match for that hub's `x-default`
+identity in the first place. Resolved by pairing them into their own isolated
+2-locale cluster, exactly mirroring the existing `ko/font-byeonhwan/` +
+`zh-tw/yingwen-ziti/` precedent above: `en`/`x-default` both fall back to the
+bare homepage as a placeholder, not a translation-equivalence claim (per this
+section's own established distinction). `usecase/nickname-generator/`'s `vi`
+slot was reassigned to `vi/usecase/ten-game-hay/` (generic "cool game name,"
+not tied to one game), which is the page that actually matches that hub's
+intent. No Semrush/GSC demand check was run for this pair specifically —
+Semrush was out of API units at the time — so unlike the `id/tulisan-cuping/`
+or `fr/calligraphie` precedents, this exception rests on the structural/
+linguistic argument (specific regional game, no EN equivalent exists to
+translate) rather than confirmed search volume. Revisit with real numbers
+if either page's ranking ever becomes a live question.
 
 **Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
 consolidation** case, the same shape as the `fr/calligraphie` trio and
@@ -1054,7 +1111,7 @@ keyword-insertion engine.
    discussion, or native-speaker review) surfaces a locally meaningful word,
    phrase, abbreviation, cultural expression, platform term, gaming term,
    problem description, or search formulation relevant to UltraTextGen —
-   record it in the private research repo's Local Language Intelligence
+   record it in the internal Local Language Intelligence
    Library as a new `candidate` record (or add evidence to an existing
    `phrase_id` if the same phrase already exists — search for a match
    before creating a new record). Do this even if you don't end up using
@@ -1065,10 +1122,9 @@ keyword-insertion engine.
    phrases (the ones that make it into the public snapshot here) are meant
    for production copy, and even then only per rule 2 above.
 9. This public snapshot is generated, read-only data — regenerated from the
-   private research repo's canonical dataset. Do not hand-edit the JSON
-   files under `data/local-language/`; if a phrase needs a status change or
-   correction, that happens in the private research repo and gets
-   re-synced here.
+   canonical research dataset maintained internally. Do not hand-edit the
+   JSON files under `data/local-language/`; if a phrase needs a status change
+   or correction, that happens internally and gets re-synced here.
 10. A local phrase, however well-evidenced, never guarantees ranking — it's
     a fit signal, not a growth lever on its own.
 

@@ -352,7 +352,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "mirror",
-      "evidence": "library/zodiac-symbols -> fi/library/horoskooppimerkit. 'horoskooppimerkit', Informational intent (FI keyword pull, 2026-08-02); broad-match adds 'horoskooppi symbolit' and 'horoskooppimerkit symbolit'. Highest-volume term in the entire 100-keyword FI request set. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "evidence": "library/zodiac-symbols -> fi/library/horoskooppimerkit. 'horoskooppimerkit', Informational intent (FI keyword pull, 2026-08-02); broad-match adds 'horoskooppi symbolit' and 'horoskooppimerkit symbolit'. Highest-volume term in the entire 100-keyword FI request set. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
       "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
     },
     {
@@ -365,7 +365,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "mirror",
-      "evidence": "category/cursive-fonts -> fi/kaunokirjoitus. 'kaunokirjoitus' plus its full cluster (kaunokirjaimet, kauno, kaunokirjoitus fontti). Resolves the FI-013 intent split: both terms return Informational intent on the same SERP type, so they are one cluster. Largest font-side opportunity in the locale; fi/kursivoitu-teksti correctly parents to category/italic-fonts, so cursive was genuinely unbuilt. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "evidence": "category/cursive-fonts -> fi/kaunokirjoitus. 'kaunokirjoitus' plus its full cluster (kaunokirjaimet, kauno, kaunokirjoitus fontti). Resolves the FI-013 intent split: both terms return Informational intent on the same SERP type, so they are one cluster. Largest font-side opportunity in the locale; fi/kursivoitu-teksti correctly parents to category/italic-fonts, so cursive was genuinely unbuilt. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
       "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
     },
     {
@@ -378,7 +378,7 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "mirror",
-      "evidence": "symbol/degree-symbol -> fi/symbol/asteen-merkki and symbol/euro-sign -> fi/symbol/euron-merkki, both evidenced by the FI keyword pull 2026-08-02. This is the FR /symbol/ blind spot repeating in Finnish, found by the instrument this ledger exists to require rather than by accident. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "evidence": "symbol/degree-symbol -> fi/symbol/asteen-merkki and symbol/euro-sign -> fi/symbol/euron-merkki, both evidenced by the FI keyword pull 2026-08-02. This is the FR /symbol/ blind spot repeating in Finnish, found by the instrument this ledger exists to require rather than by accident. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
       "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
     },
     {
@@ -391,8 +391,73 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "mirror",
-      "evidence": "character-counter -> fi/merkkilaskuri. 'merkkilaskuri' shows Commercial intent on a Related-searches-only SERP at low difficulty — the best effort-adjusted opportunity in the FI set. Note the invisible-character half of this parent ('nakymaton merkki', 'tyhja merkki') returned no volume data, so the FI page should lead on counting, not on the blank-character job. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "evidence": "character-counter -> fi/merkkilaskuri. 'merkkilaskuri' shows Commercial intent on a Related-searches-only SERP at low difficulty — the best effort-adjusted opportunity in the FI set. Note the invisible-character half of this parent ('nakymaton merkki', 'tyhja merkki') returned no volume data, so the FI page should lead on counting, not on the blank-character job. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
       "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1900,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of library/*'s own Core tier regardless — this entry is a user-authorized override of that hold for a specific, scoped slice of library/*, not a change to zh-tw's tier or hold flag. User was told directly that zh-tw is Tier 3/hold-stub and that its one proven first-party win is narrowly the game-name vertical (per the existing zh-tw entry in this ledger and data/locale_qualification_tiers.json's zh-tw notes) before authorizing this build. Competitor-footprint instrument (piliapp.com organic positions export, db=tw, pulled 2026-07-31) cleared for three specific library/* collection pages: the competitor's arrow, number and star symbol pages (each drawing substantial modeled TW traffic across many ranking keywords) — mapping to EN parents library/arrow-symbols/, library/number-symbols/, library/star-symbols/. No direct TW keyword-volume pull was run against the arrow/number/star terms specifically (the broad-match exports supplied this session were seeded on \"emoji\", \"字體\"/font, \"fb\", and \"表情符號\", not \"箭頭\"/\"數字\"/\"星星\"), so keywordVolumeInLocaleMonthly is left null rather than estimated — the competitor-footprint instrument alone is what's clearing the gated-tail threshold here. Scope is limited to these three library/* collection slugs; this is not a blanket library/* mirror decision for zh-tw (the existing zh-tw entry's \"deepen the game-name vertical, not blanket Core mirroring\" guidance still stands for the rest of library/* and all of symbol/*).",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 105480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers zh-tw/ig-ziti/, the translation of the EN instagram/ platform page (a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null / tier \"unclassified\"; the Tier-3-locale check still fires, hence this entry). User-authorized override of zh-tw's Tier 3 hold-stub default, presented before the decision, per the vi-override template — zh-tw's tier and hold flag left untouched. Keyword instrument: Semrush db=tw broad-match export (pulled 2026-07-31, seed \"字體\"), the IG/Instagram cluster is led by \"ig 字體\" — materially larger than \"英文字體\", the term the existing zh-tw/yingwen-ziti/ page targets. Competitor instrument: the competitor's Instagram fonts page is its 2nd-highest-traffic page site-wide, top keyword \"ig 字體\". zh-tw had no Instagram page of any kind before this build. Also records the Rule 3 de-confliction applied in the same change: zh-tw/yingwen-ziti/ had an IG-targeting FAQ answer, now reduced to a pointer link at the new page.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 46570,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers zh-tw/shufa-ziti/ (translation of category/cursive-fonts/) and zh-tw/keai-ziti/ (translation of category/cute-fonts/). TWO overrides recorded together, both user-authorized after being presented: (1) zh-tw is Tier 3 hold-stub, same override shape as the entries above; (2) category/* is scriptIndependent:false — the registry's standing guidance is that Latin-transform category pages do NOT mirror into CJK locales, and that a script-appropriate Core subset be substituted instead. That second default is overridden here on direct evidence that the TW demand IS for Latin-script transforms, not Chinese-script ones: the top TW keyword on tw.piliapp.com/cool-text/cursive/ is \"英文草寫\" — literally \"English cursive\" — and that page draws substantial modeled traffic across many keywords. The same reasoning already underpins the ratified zh-tw/yingwen-ziti/ local-only page (a CJK-script-user tool for decorating Latin text). Both new pages state the Latin-only scope explicitly in their own copy rather than implying Chinese glyphs transform. Keyword instrument (Semrush db=tw broad-match, 2026-07-31): cursive cluster 書法 + 手寫 (head terms 書法字體, 手寫字體); cute cluster (head term 可愛字體) — a substantial combined opportunity. Competitor instrument for the cute page is weaker and recorded as such: piliapp has no dedicated cute-font page, ranking its IG page #1 for 可愛字體 instead.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-08-01",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 238540,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 27 zh-tw/symbol/* translations (currency 7, temperature/measurement 5, math 5, Greek 7, legal/editorial 3) plus the zh-tw/symbol/ pillar index that carries their breadcrumbs. zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of symbol/*'s own Core tier; this is a user-authorized override of that hold for this specific batch, not a change to zh-tw's tier or hold flag (both left untouched), same shape as the vi override template and as the three earlier zh-tw entries above. The hold reasoning and the standing Tier-3 default were presented to the user before they authorized the build. Competitor instrument (piliapp.com organic-positions export, db=tw, pulled 2026-07-31): 82 tw.piliapp.com/symbols/<x>/ single-item pages were mapped against UltraTextGen's 106 EN symbol/ parents; 27 matched a live EN parent and together draw substantial modeled TW traffic — led by celsius, plus-minus, degree, infinity, alpha, multiplication, not-equal, yen, omega and euro. Keyword instrument: the recorded figure is the SUM of each matched page's single top TW keyword volume. Recorded as a sum of per-slug head terms, NOT a modeled cluster total and NOT a full broad-match pull for each slug — it is an under-count of the clusters and an over-count of any single page's realistic ceiling; treat it as an order-of-magnitude floor on demand, not a forecast. zh-tw had 0 of 106 symbol/ parents translated before this build. The remaining 55 competitor single-item pages have no EN parent and are deliberately NOT built here — they are recorded in an internal opportunity backlog instead, per CLAUDE.md's English-Parent Rule.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
     }
   ]
 }
