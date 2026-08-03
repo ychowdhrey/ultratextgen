@@ -9,10 +9,10 @@ combos-emoji, generateur-de-texte, compteur-de-mots-et-de-caracteres). None of
 these have ever had a dedicated pin — the existing 14-pin board sends its
 "gras"/generic pins to the /fr/ homepage instead.
 
-Strongest leftover opportunity by real GSC evidence: police-d-ecriture alone
-gets 1,228 impressions this window — the 3rd-highest of any French page on
-the site after the homepage and ecriture-aesthetic. ecriture-style (697 impr,
-5.6% CTR) and petite-ecriture (735 impr) are similarly real and unpinned.
+Strongest leftover opportunity by real GSC evidence: police-d-ecriture is the
+3rd-highest-impression French page on the site after the homepage and
+ecriture-aesthetic. ecriture-style and petite-ecriture are similarly real and
+unpinned.
 Uses the shared scripts/_locale_pin_kit.py renderer with per-pin destinations.
 
 Run:  python3 scripts/generate-fr-style-reseau-pins.py

@@ -77,7 +77,6 @@ LANE_RULES = [
     ("katakana-chart/", "Category pages"),
     ("embed/", "Image backlinks"),
     ("assets/", "Image SEO"),
-    ("data/library_opportunities", "Opportunity backlog"),
     ("data/", "Data / backlog"),
     (".github/workflows/", "CI / automation"),
     ("scripts/", "Scripts / tooling"),

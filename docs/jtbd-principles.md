@@ -142,7 +142,7 @@ The repeatable method that produced the small-text differentiator list
 (2026-06), to run **every** time we scope a cluster:
 
 1. **Read the same forum signal twice.** The forum sweep
-   ([`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md))
+   (the internal forum-research skill doc)
    surfaces both *intents* (→ JTBD/pages) and *frustrations* (→ features).
    Don't stop at intent. Harvest the complaints: "missing letters," "shows as
    boxes on Android," "Hypixel says invalid characters," "Reddit stopped

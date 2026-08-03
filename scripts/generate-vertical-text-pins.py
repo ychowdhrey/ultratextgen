@@ -9,8 +9,8 @@ Why a dedicated set (vs scripts/generate-pinterest.py):
     marketing set: 18 pins across 6 angles (bios, comments, hooks, the
     psychology, tattoo lettering, copy-paste/how-to), each a self-explaining
     graphic that *demonstrates* stacked text. Grounded in real demand from the
-    supplied Search Console + Semrush data (e.g. "stacked letters tattoo
-    generator" 140/mo $0.85 CPC; "vertical font generator" 260/mo).
+    supplied first-party and keyword data (e.g. "stacked letters tattoo
+    generator", "vertical font generator").
 
 Outputs (mirrors scripts/generate-id-pins.py):
   - assets/pinterest/vertical-text/<slug>.png       1000x1500 vertical pins

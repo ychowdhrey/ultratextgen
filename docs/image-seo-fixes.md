@@ -135,10 +135,10 @@ organic-positions export, then page type where no volume exists:
 | Medium | 203 | category, guide, answer, remaining library + localized pages |
 | Lower / Low | 10 | utility, legal, about/privacy/terms |
 
-GSC overview (Feb–Jun 2026) confirms impressions are scaling (≈530 impressions
-and 6 clicks/day by mid-June, up from near-zero in February), and the SEMrush
-PagesV3 export shows `/discord/` carrying ~98% of organic traffic — so the
-highest-traffic pages were verified first.
+GSC overview (Feb–Jun 2026) confirms impressions are scaling steadily from
+near-zero in February, and an organic-pages export shows `/discord/` carrying
+the large majority of organic traffic — so the highest-traffic pages were
+verified first.
 
 ---
 

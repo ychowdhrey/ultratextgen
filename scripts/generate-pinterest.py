@@ -555,7 +555,7 @@ def utm_url(page_url, slug):
 # ---------------------------------------------------------------- main
 COLUMNS = [
     "page_url", "page_path", "page_type", "primary_intent", "priority",
-    "search_volume", "include_in_pinterest", "exclusion_reason",
+    "include_in_pinterest", "exclusion_reason",
     "og_image_path", "pinterest_image_path", "pinterest_image_width",
     "pinterest_image_height", "pinterest_board_primary",
     "pinterest_board_secondary", "pin_title", "pin_description",
@@ -587,7 +587,6 @@ def main():
         if intent == "/" or not intent:
             intent = slug.replace("-", " ")
         priority = (row.get("Priority") or "").strip()
-        svol = (row.get("Search volume") or "").strip()
         og = (row.get("OG image path") or "").strip()
 
         rec = {c: "" for c in COLUMNS}
@@ -597,7 +596,6 @@ def main():
             "page_type": ptype,
             "primary_intent": intent,
             "priority": priority,
-            "search_volume": svol,
             "og_image_path": og,
             "pin_status": "pending",
         })

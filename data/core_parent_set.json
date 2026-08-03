@@ -22,7 +22,7 @@
       "pattern": "symbol/*",
       "tier": "core",
       "scriptIndependent": true,
-      "rationale": "Flagship script-independent single-item Unicode/emoji identity pages — a euro sign is a euro sign in any language. This is literally the FR /symbol/ lane where ~49,960/mo of French demand (euro-sign 14,800, micro-sign 5,400, not-equal-sign 4,190, delta 3,600, +more) sat undetected: EN had 77 symbol pages, FR had 6, and nothing flagged the gap until a manual Semrush pull found it."
+      "rationale": "Flagship script-independent single-item Unicode/emoji identity pages — a euro sign is a euro sign in any language. This is literally the FR /symbol/ lane where substantial French demand (euro-sign, micro-sign, not-equal-sign, delta, +more) sat undetected: EN had 77 symbol pages, FR had 6, and nothing flagged the gap until a manual keyword pull found it."
     },
     {
       "pattern": "library/*",
