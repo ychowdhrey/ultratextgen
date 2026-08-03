@@ -149,6 +149,33 @@ repointed every internal link (`tiktok/index.html`, `tiktok/name-generator/`,
 `youtube/index.html`, `youtube/name-generator/`) straight at the `answers/` URL
 instead of the now-retired one.
 
+### `answers/` is deliberately not linked from any homepage (recorded 2026-07-31)
+
+The EN homepage links `/library/`, `/guide/`, `/usecase/` and `/category/`
+but **not** `/answers/`, and no locale homepage links its own
+`<lang>/answers/` hub either. **This is intentional, not the "missing link"
+bug described under "Locale-native internal linking" below.**
+
+The `answers/` pillar exists for **AEO** — it is built to be landed on
+directly from a search engine or an AI answer surface, resolve one question,
+and stop. Funnelling homepage visitors into it works against that: someone
+who arrived to use the generator does not need a 59-page Q&A index, and
+sending them there loses them.
+
+So the pillar's discovery is search-driven by design, the same standing
+decision `symbol/` carries (see "Content Types: Library vs Symbol" —
+"**No nav entry** — landed on via search engines/pins"). The difference is
+that `answers/` *does* keep its `header.js` nav entry; what it does not get
+is homepage body links.
+
+**Do not "fix" this.** A homepage→pillar link audit will flag it every time,
+because it is structurally identical to the real bug — a pillar with no
+inbound homepage link. It was flagged and corrected on exactly that basis on
+2026-07-31, during the pass that added the 13 missing homepage→`library/`
+links. `library/` genuinely needed those (it is the only route into each
+locale's `symbol/` cluster); `answers/` does not, and should be left alone
+unless this decision is explicitly revisited.
+
 ---
 
 ## Content Types: Library vs Symbol
@@ -756,11 +783,16 @@ synonym-consolidation read is inferred from the row-17 close-out, not
 independently verified against EN GSC for "font"/"calligraphy" specifically
 — worth a direct check before treating it as settled, but it's the reason
 these three stay unbuilt in EN rather than a claim that the underlying
-concept lacks English demand. `x-default` on all three (plus their live
-non-English siblings, `it/font-copia-e-incolla/` and `it/caratteri-
-speciali/` on the `changeur-de-police` cluster) falls back to the bare EN
-homepage as a generic default only, same as the trio above — not a
-translation-equivalence claim.
+concept lacks English demand. `x-default` on all three (plus the live
+non-English sibling `it/font-copia-e-incolla/` on the `changeur-de-police`
+cluster) falls back to the bare EN homepage as a generic default only, same
+as the trio above — not a translation-equivalence claim. *(Correction
+2026-08-02: `it/caratteri-speciali/` was previously also listed on this
+cluster, making two `it` claimants on one hreflang cluster — invalid, and
+flagged by `audit-hreflang.js` as a stacked-cluster conflict.
+`it/font-copia-e-incolla/` keeps the slot as the concept-equivalent of
+"changeur de police"; `it/caratteri-speciali/` now stands alone with only a
+self-reference + homepage `x-default`, same ratified no-EN-parent shape.)*
 
 **Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
 picked up new content the same day (a "changer un texte déjà écrit" FAQ, a
@@ -775,6 +807,82 @@ same content to the two IT pages, or record the divergence deliberately
 (and if the latter, decide where: `data/translation_parity_exceptions.json`
 requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
 by default.
+
+**Ratified local-only exception pair, `vi/usecase/ten-lien-quan-dep/` +
+`zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/` (2026-08-03):** both are
+nickname/special-character generators for the *same* specific game — Liên
+Quân Mobile in Vietnam, 傳說對決 (Arena of Valor) in Taiwan — Tencent's MOBA
+with no meaningful English-market presence and no EN name-generator page for
+it anywhere in `usecase/` (checked: no `arena-of-valor-name-generator`
+exists). Discovered as a byproduct of an unrelated hreflang audit: both pages
+were mis-parented onto the generic `usecase/nickname-generator/` hub, which
+only has room for one `vi` and one `zh-TW` claimant — but `nickname-
+generator` is genuinely generic (any game/platform), while these two are
+narrowly game-specific, so neither was a good match for that hub's `x-default`
+identity in the first place. Resolved by pairing them into their own isolated
+2-locale cluster, exactly mirroring the existing `ko/font-byeonhwan/` +
+`zh-tw/yingwen-ziti/` precedent above: `en`/`x-default` both fall back to the
+bare homepage as a placeholder, not a translation-equivalence claim (per this
+section's own established distinction). `usecase/nickname-generator/`'s `vi`
+slot was reassigned to `vi/usecase/ten-game-hay/` (generic "cool game name,"
+not tied to one game), which is the page that actually matches that hub's
+intent. No Semrush/GSC demand check was run for this pair specifically —
+Semrush was out of API units at the time — so unlike the `id/tulisan-cuping/`
+or `fr/calligraphie` precedents, this exception rests on the structural/
+linguistic argument (specific regional game, no EN equivalent exists to
+translate) rather than confirmed search volume. Revisit with real numbers
+if either page's ranking ever becomes a live question.
+
+**Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
+consolidation** case, the same shape as the `fr/calligraphie` trio and
+explicitly *not* a "no English speaker would search this" claim. The page
+targets `süslü yazı` / `süslü harf` (fancy writing / fancy letters), which
+obviously has English demand — but **the EN homepage already *is* that page**:
+its H1 is literally "Fancy Text Generator", it uses "fancy text" 14 times, and
+no standalone EN fancy-text page exists anywhere in the repo (only `answers/*`
+spokes *about* fancy text, a different content type). Building an EN parent
+would cannibalise the site's own homepage.
+
+On the Turkish side the two do not compete, which is what makes the page worth
+keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **479 of its
+505 impressions on `süslü` queries** (`süslü harf kopyala` 288 imp @ pos 7.9,
+`süslü yazı kopyala yapıştır` 166 @ 9.1) while sitting at **position 44.8** on
+the `şekilli yaz*` family that `/tr/` owns at 4.5–6.3. The page was retargeted
+onto `süslü` on 2026-08-01 for exactly that reason.
+
+**What is not verified:** the cannibalisation premise rests on this repo's own
+structure, not on an EN SERP or EN GSC pull — Semrush has been out of API units
+since 2026-07-30. The first reverse-demand sweep must check it, same caveat the
+`fr/calligraphie` entry carries.
+
+**Ratified exceptions are ledgered state, not just prose (2026-08-01):**
+every ratified local-only exception above is also recorded in
+**`data/english_parent_exceptions.json`** — the machine-readable ledger
+`scripts/check-locale-parent-gap.js` consults, so a listed page passes the
+gate's `no-en-parent` check and an unlisted one fails it. The prose above
+stays the reasoning of record; the ledger is the state. Same bar as every
+other ledger in this repo: entries are discussed decisions, never added
+unilaterally to make a page pass. Each entry carries a `nextRecheck` date —
+exceptions are standing claims about EN demand, and claims get re-verified,
+not grandfathered.
+
+**When EN demand appears later — ownership check before build (2026-08-01):**
+if EN-side demand evidence surfaces for a page holding a local-only
+exception, do **not** build the EN parent directly. Run the "check who
+already owns it" test (see "Before building a page for a keyword" above) on
+the **English** SERP/GSC first. Two outcomes only:
+
+- **Build** — the EN SERP for the concept is distinct and no existing EN
+  page owns it → build the EN parent, wire the hreflang cluster, and remove
+  the page's `data/english_parent_exceptions.json` entry (it's now a normal
+  translation).
+- **Veto** — the EN SERP consolidates the term onto an existing page (the
+  `fr/calligraphie` trio's situation: real EN "font"/"calligraphy" volume,
+  but building a parent would cannibalize the EN homepage) → record a dated
+  `veto` in the entry's `verdict` and push out `nextRecheck`.
+
+Demand alone never auto-triggers the build — that shortcut is how the
+`vi/chu-kieu/` class of cannibalization happens on the EN side.
 
 ### Locale-native internal linking — check every time you touch a locale page
 
@@ -892,6 +1000,56 @@ entry shape.
   discovery) and `scripts/lib/content-fingerprint.js` (the fingerprint/diff
   logic) — the audit and the enforcement gate must never define "changed" or
   "cluster" differently, so that shared logic lives in one place.
+
+### EN is the source locale — two structural carve-outs (added 2026-08-02)
+
+The rule above was written as if EN and a locale page were peers that drift
+apart. They aren't: **EN is where pages are born.** A new EN page gets linked
+from existing EN pages immediately, and translated later or never. Without
+allowing for that, the gate fires on essentially *every* new EN page, and a
+gate that fires on everything trains people to ignore it. Two carve-outs, both
+in the shared fingerprint logic so the audit and the gate can't disagree:
+
+**1. Catalogue indexes don't diff their inventory links.** A pillar index lists
+the pages that exist *in its own locale*. EN `library/index.html` carries ~306
+content links; its locale siblings carry 7–50, and every locale
+`category/index.html` carries **0**. That gap is correct — a Danish catalogue
+must not link an English-only page (see "Locale-native internal linking"). So
+for the eight pillar indexes in **`data/parity_catalogue_pages.json`** (and
+their locale equivalents), the internal-link set is dropped from the
+fingerprint. **`<h2>` count, FAQ-schema question count and `.symbol-tile` count
+are still compared**, so adding a real section or FAQ to an index still fires.
+A hub that merely links many spokes (`library/currency-symbols`) is *not* a
+catalogue — its links are editorial and keep full coverage.
+
+**2. Adding a link to a page that doesn't exist in the sibling's locale
+doesn't require that sibling to be touched.** When the *only* structural change
+to a page is added outbound links, the gate now resolves each new target
+against the sibling's language: if none of them has a translation in that
+language, the pair is skipped, because linking the English page from a locale
+page is precisely what the locale-native rule forbids. The moment a translation
+of the target exists, the pair is flagged again — which is the right trigger,
+since the sibling can now link its native equivalent.
+
+Deliberately still flagged, in both carve-outs: a **removed** link, a changed
+`<h2>`/FAQ/tile count, and a new link to a page that **does** have a sibling in
+that locale (verified: adding a `/library/currency-symbols/` link to
+`/discord/` flags exactly `fr` and `id` — the two of its eleven siblings that
+have that translation). `linksUnreachableFor()` is conservative by
+construction: an unresolvable link target counts as reachable, so an unknown
+link can never silently suppress a flag.
+
+**This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
+exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
+classifies a *page type* whose link list is an inventory. Adding a pattern to
+it is a structural claim about the template and should be raised like any other
+registry change — but it is not a per-page permission and must never be used as
+one.
+
+**Watch out when running the gate locally:** it diffs `merge-base..HEAD`, so
+**uncommitted work is invisible to it**. Running it with changes still in the
+working tree reports on an unrelated delta and can read as a false green —
+commit first, then run.
 
 **Do not add an entry to `data/translation_parity_exceptions.json`
 unilaterally.** Every entry there is supposed to represent a real,
@@ -1073,8 +1231,8 @@ complete flowchart, and every script's flags/exit codes:
   reason.
 
 **Do not add or edit an entry in `data/locale_parent_gap_audit.json`,
-`data/core_parent_set.json`, or `data/locale_qualification_tiers.json`
-unilaterally.** Every entry in all three reflects a discussed decision
+`data/core_parent_set.json`, `data/locale_qualification_tiers.json`, or
+`data/english_parent_exceptions.json` unilaterally.** Every entry in all three reflects a discussed decision
 between you and the user — the same bar CLAUDE.md's English-Parent Rule sets
 for locale-first exceptions, and the same bar `data/translation_parity_exceptions.json`
 sets for parity divergences. If one of the gap-check scripts flags a
@@ -1111,6 +1269,15 @@ Three recurring points of confusion, each resolved by a real case:
    hold reasoning to the user *before* they decide is part of the override
    being legitimate — a hold silently ignored is a violation, a hold
    knowingly overridden is a decision.
+4. **An all-instruments-null authorization is a bridge, not a pass
+   (2026-08-01).** A `data/locale_parent_gap_audit.json` entry recorded with
+   every instrument `null` (a user authorization in lieu of a real pull) must
+   name a scheduled re-check date in the ops review register, and the entry
+   is complete only when its instruments are backfilled with real numbers or
+   a dated veto is recorded. If a later backfill contradicts the recorded
+   verdict, do not silently flip it — the pages are live by then, so the
+   call (fold/de-index/keep) is a discussion with the user, flagged with the
+   data.
 
 ### Governance arrives mid-flight: merged-in rules bind unshipped work
 

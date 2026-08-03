@@ -30,11 +30,13 @@
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
-const { discoverClusters } = require('./lib/translation-clusters');
+const { discoverClusters, normalizeUrl } = require('./lib/translation-clusters');
 const { decide, LOCALES } = require('./lib/locale-parent-registry');
 
 const ROOT = path.resolve(__dirname, '..');
 const GAP_LEDGER_PATH = path.join(ROOT, 'data', 'locale_parent_gap_audit.json');
+const EN_PARENT_EXCEPTIONS_PATH = path.join(ROOT, 'data', 'english_parent_exceptions.json');
+const SITE_ORIGIN = 'https://ultratextgen.com';
 
 const args = process.argv.slice(2);
 const baseIdx = args.indexOf('--base');
@@ -109,6 +111,22 @@ function passingLedgerEntry(pattern, locale) {
   );
 }
 
+// Ratified English-Parent-Rule exceptions — locale pages explicitly agreed to
+// exist with no EN parent (see data/english_parent_exceptions.json's _readme
+// and CLAUDE.md's "Localization Workflow" ratifications). Keyed by normalized
+// canonical URL.
+let enParentExceptionUrls = new Set();
+if (fs.existsSync(EN_PARENT_EXCEPTIONS_PATH)) {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(EN_PARENT_EXCEPTIONS_PATH, 'utf8'));
+    enParentExceptionUrls = new Set(
+      (parsed.exceptions || []).map((e) => normalizeUrl(e.localeUrl)).filter(Boolean)
+    );
+  } catch (e) {
+    console.error(`WARNING: could not parse ${path.relative(ROOT, EN_PARENT_EXCEPTIONS_PATH)}: ${e.message}`);
+  }
+}
+
 // ─── Check every newly-added locale page ───────────────────────────────────
 
 const flagged = [];
@@ -120,16 +138,51 @@ for (const rel of addedFiles) {
   if (!fs.existsSync(filePath)) continue; // deleted later in the same branch
 
   const rec = [...byUrl.values()].find((r) => r.rel === rel);
-  if (!rec) continue; // no canonical tag at all — not part of the hreflang system
-  if (!rec.ownLang || rec.ownLang === 'en') continue;
+  if (!rec) {
+    // No canonical tag at all. A real page always carries one (see CLAUDE.md,
+    // "HTML Page Conventions") — a new locale index.html without it would
+    // otherwise slip past this gate entirely, since it can't join the
+    // hreflang system it's supposed to be checked against.
+    if (!rel.endsWith('/index.html')) continue; // fragments/partials — not pages
+    const impliedUrl = normalizeUrl(`${SITE_ORIGIN}/${rel.replace(/index\.html$/, '')}`);
+    if (enParentExceptionUrls.has(impliedUrl)) continue; // ratified local-only page
+    checked++;
+    flagged.push({
+      rel,
+      localeCode: (rel.match(LOCALE_PREFIX_RE) || [])[1] || '?',
+      problem: 'no-en-parent',
+      detail:
+        'This new locale page has no <link rel="canonical"> tag at all, so it cannot join the hreflang ' +
+        'system and its EN parent can\'t be classified. Add the canonical + hreflang block (see CLAUDE.md, ' +
+        '"HTML Page Conventions" and "Localization Workflow — the English-Parent Rule"), or — if this is a ' +
+        'genuinely local-only page — ratify it with the user and record it in data/english_parent_exceptions.json.',
+    });
+    continue;
+  }
+  if (rec.ownLang === 'en') continue;
+  if (!rec.ownLang) {
+    // No self-referencing hreflang entry (typically no hreflang block at
+    // all). These used to be skipped silently — exactly how a local-only
+    // page could ship ungated. A ratified exception passes here; anything
+    // else falls through and is judged by the no-en-parent branch below.
+    if (enParentExceptionUrls.has(rec.canonical)) continue;
+  }
 
   checked++;
-  const localeCode = rec.ownLang.toLowerCase();
+  const localeCode = rec.ownLang
+    ? rec.ownLang.toLowerCase()
+    : (rel.match(LOCALE_PREFIX_RE) || [])[1] || '?';
 
   const enAlt = rec.alternates.find((a) => a.hreflang === 'en');
   const enRec = enAlt ? byUrl.get(enAlt.href) : null;
 
   if (!enRec) {
+    if (enParentExceptionUrls.has(rec.canonical)) {
+      // Ratified English-Parent-Rule exception — passes by explicit,
+      // recorded decision (data/english_parent_exceptions.json).
+      console.log(`  ratified local-only exception (passes): ${rel}`);
+      continue;
+    }
     flagged.push({
       rel,
       localeCode,
@@ -137,8 +190,10 @@ for (const rel of addedFiles) {
       detail:
         'This new locale page declares no resolvable hreflang="en" alternate, so its EN parent ' +
         "(and therefore its Core Parent Set pattern) can't be classified. Add the hreflang link " +
-        '(see CLAUDE.md, "Localization Workflow — the English-Parent Rule") or run ' +
-        '`npm run sync:locale-mesh -- --fix` if the EN parent already exists.',
+        '(see CLAUDE.md, "Localization Workflow — the English-Parent Rule"), run ' +
+        '`npm run sync:locale-mesh -- --fix` if the EN parent already exists, or — if this is a ' +
+        'genuinely local-only page — ratify it with the user and record it in ' +
+        'data/english_parent_exceptions.json.',
     });
     continue;
   }

@@ -24,6 +24,7 @@ Usage:
 import argparse
 import datetime as dt
 import json
+import re
 import sys
 
 # Path-prefix → lane. Ordered: the FIRST matching rule wins, so put the more
@@ -108,36 +109,19 @@ LANE_RULES = [
     ("_redirects", "Routing"),
     ("functions/", "Routing"),
     ("locales/", "i18n"),
-    ("es/", "i18n"),
-    ("de/", "i18n"),
-    ("fr/", "i18n"),
-    ("id/", "i18n"),
-    ("it/", "i18n"),
-    ("ms/", "i18n"),
-    ("nl/", "i18n"),
-    ("pl/", "i18n"),
-    ("pt/", "i18n"),
-    ("tl/", "i18n"),
-    ("tr/", "i18n"),
-    ("vi/", "i18n"),
-    ("sv/", "i18n"),
-    ("no/", "i18n"),
-    ("ar/", "i18n"),
-    ("bs/", "i18n"),
-    ("cs/", "i18n"),
-    ("hi/", "i18n"),
-    ("hr/", "i18n"),
-    ("ja/", "i18n"),
-    ("ko/", "i18n"),
-    ("ro/", "i18n"),
-    ("ru/", "i18n"),
-    ("sk/", "i18n"),
-    ("sr/", "i18n"),
-    ("th/", "i18n"),
-    ("da/", "i18n"),
-    ("hu/", "i18n"),
-    ("zh-tw/", "i18n"),
 ]
+
+# Locale directories (`fr/`, `zh-tw/`, ...) used to be enumerated here one at
+# a time, and a new locale launch reliably showed up as Unclassified until
+# someone patched this list by hand — five consecutive weekly reviews
+# (2026-07-10, -11, -18, -22, -25) flagged the exact same recurring cost
+# before this pattern rule replaced the enumeration (2026-08-01). Any
+# two-letter or `xx-xx` top-level directory is treated as a locale UNLESS a
+# more specific rule above already claimed it — `classify_paths` only
+# consults this after the LANE_RULES loop finds no match, so a real
+# non-locale two-letter directory (currently just `js/`, claimed by the
+# "Core JS" rule above) is never miscaptured.
+LOCALE_DIR_RE = re.compile(r"^[a-z]{2}(-[a-z]{2})?/")
 
 # A lane label used when no rule matched any of a PR's files. These are the
 # signal the review is looking for: work that doesn't fit a known lane.
@@ -153,6 +137,8 @@ def classify_paths(paths):
             if p.startswith(prefix) or ("/" not in prefix and p == prefix):
                 matched = lane
                 break
+        if not matched and LOCALE_DIR_RE.match(p):
+            matched = "i18n"
         lanes.add(matched if matched else UNCLASSIFIED)
     # If a PR touched real lanes *and* something unclassified, keep both — the
     # unclassified part is still a signal worth surfacing.

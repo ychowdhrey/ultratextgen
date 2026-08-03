@@ -1717,6 +1717,7 @@ PAGES = {
   "answers-where-do-fancy-fonts-work-username-vs-display-name": ("Username vs Display Name", "Where fancy fonts actually work", m_qa, K_ANS),
   "answers-do-fancy-fonts-work-with-arabic": ("Do Fancy Fonts Work With Arabic?", "Why not — and what does work", m_qa, K_ANS),
   "answers-do-you-need-nitro-for-discord-fonts": ("Do You Need Nitro for Fonts?", "The honest answer for Discord users", m_qa, K_ANS),
+  "answers-what-are-discord-display-name-styles": ("Discord Display Name Styles", "What Nitro styles do, and where they stop", m_qa, K_ANS),
   "answers-how-to-change-roblox-username": ("Change Your Roblox Username", "The steps and the catch", m_qa, K_ANS),
   "answers-how-to-change-tiktok-username": ("Change Your TikTok Username", "How and how often you can", m_qa, K_ANS),
   "answers-how-to-change-minecraft-username": ("Change Your Minecraft Username", "Java vs. Bedrock, free vs. paid", m_qa, K_ANS),
@@ -1850,6 +1851,8 @@ PAGES = {
   "symbol-underscore-symbol": ("Underscore", "_ meaning, history & how to type it", glyphs("_"), K_SYM),
   "symbol-calendar-emoji": ("Calendar Emoji", "Why it's always frozen on July 17", m_calendar, K_SYM),
   "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Draft Emoji 18.0 candidate, not live yet", m_smiley, K_SYM),
+  "symbol-distorted-face-emoji": ("Distorted Face Emoji", "U+1FAEA — meaning, codepoint & origin", m_smiley, K_SYM),
+  "symbol-melting-face-emoji": ("Melting Face Emoji", "U+1FAE0 — meaning, sarcasm reading & origin", m_smiley, K_SYM),
   "symbol-pickle-emoji": ("Pickle Emoji", "Draft Emoji 18.0 candidate, not live yet", m_cup, K_SYM),
   "symbol-meteor-emoji": ("Meteor Emoji", "Draft Emoji 18.0 candidate, not live yet",
         glyphs("☄", "✦", "★", "☆", "✧"), K_SYM),
@@ -1859,6 +1862,7 @@ PAGES = {
   "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
+  "symbol-rufiyaa-sign": ("Rufiyaa Sign", "Accepted for Unicode 18.0 publication", m_coin, K_SYM),
 
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",
@@ -1967,6 +1971,8 @@ PAGES = {
         glyphs("½", "⅓", "¼", "¾", "⅔"), K_LIB),
   "library-gaming-aesthetic-symbols": ("Gaming Aesthetic Symbols", "Clan tag frames, HUD bars and battle icons",
         glyphs("▰", "▱", "⌖", "━", "▮"), K_LIB),
+  "library-vrchat-symbols": ("VRChat Symbols", "Name symbols that fit the 16-character limit",
+        glyphs("✦", "⚡", "♡", "❖", "･"), K_LIB),
   "library-geometric-symbols": ("Geometric Symbols", "Circles, squares and triangles",
         glyphs("●", "▲", "■", "◆", "◇"), K_LIB),
   "library-goth-grunge-symbols": ("Goth & Grunge Symbols", "Dark, edgy decorative marks",
@@ -2082,6 +2088,9 @@ PAGES = {
         glyphs("⚡", "⊕", "⊖", "Ω", "~"), K_LIB),
   "library-emoji-combos": ("Emoji Combos", "Copy-and-paste emoji pairings", m_smiley, K_LIB),
   "library-evil-eye-hamsa-symbols": ("Evil Eye & Hamsa Symbols", "Protective marks and charms",
+        glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
+  # ar/library translation (2026-08-01) — same motif as the EN parent above.
+  "ar-library-evil-eye-hamsa-symbols": ("رموز العين الزرقاء والخمسة", "تميمة النظرة وكف الخمسة",
         glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
   "library-fairycore-symbols": ("Fairycore Symbols", "Whimsical, magical accents",
         glyphs("✦", "✧", "❀", "✿", "❁"), K_LIB),
@@ -2661,6 +2670,8 @@ PAGES.update({
 "tr-library-para-birimi-sembolleri": ("Para Birimi Sembolleri", "Türk Lirası, euro, dolar ve dünya paraları", glyphs("₺", "€", "$", "£"), K_LIB),
 "tr-library-yunan-alfabesi-sembolleri": ("Yunan Alfabesi Sembolleri", "Alfa, beta, pi ve tüm Yunan harfleri kopyala", glyphs("α", "β", "π", "Ω"), K_LIB),
 "tr-library-matematik-sembolleri": ("Matematik Sembolleri", "Artı eksi, eşitsizlik ve küme işaretleri", glyphs("±", "≥", "≠", "∫"), K_LIB),
+"tr-library-nazar-sembolleri": ("Nazar Sembolleri", "Nazar, hamsa ve göz işaretleri kopyala yapıştır",
+      glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
 })
 
 
@@ -2764,6 +2775,28 @@ PAGES.update({
 "updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
 })
+
+# ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull
+# ---- evidenced (horoskooppimerkit 12,100/mo, kaunokirjoitus 5,400,
+# ---- asteen merkki 3,600, merkkilaskuri 2,400, euron merkki 1,300).
+PAGES.update({
+  "fi-library-horoskooppimerkit": (
+      "Horoskooppimerkit",
+      "Tähtimerkit ja planeetat kopioitavaksi", m_star, K_LIB),
+  "fi-kaunokirjoitus": (
+      "Kaunokirjoitus",
+      "Kaunokirjaimet A–Z, sanat ja nimet", m_letter_cursive, K_CAT),
+  "fi-symbol-asteen-merkki": (
+      "Asteen merkki °",
+      "Lämpötila- ja kulmamerkit", m_circled_letter, K_SYM),
+  "fi-symbol-euron-merkki": (
+      "Euron merkki €",
+      "Valuuttamerkit kopioitavaksi", m_coin, K_SYM),
+  "fi-merkkilaskuri": (
+      "Merkkilaskuri",
+      "Sanat, merkit ja palvelujen rajat", m_doc, K_USE),
+})
+
 
 # ---- 2026-07-30: th/library/star-symbols translation ----
 PAGES["th-library-star-symbols"] = (

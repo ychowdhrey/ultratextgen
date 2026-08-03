@@ -306,12 +306,13 @@
       "checkedDate": "2026-07-26",
       "instruments": {
         "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": null,
+        "keywordVolumeInLocaleMonthly": 140,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "User-authorized new-locale launch, not a fresh per-locale Semrush pull (no API access this session). fi is a brand-new locale, added to data/locale_qualification_tiers.json as Tier 3 (hold-stub) in this same change, matching the hr/hu/da precedent of starting new Latin-script European locales at Tier 3 regardless of build depth. Real competitor-footprint evidence found via web search in place of Semrush: fi.piliapp.com (a dedicated Finnish subdomain of an existing multi-locale competitor already tracked elsewhere in this repo's research), cooltextmaker.com/fi/, urwatools.com/fi/, and adamfaliq.com/fi/bold-text-generator-suomi/ all independently serve Finnish-language \"fonttigeneraattori\"/\"tekstigeneraattori\" (font/text generator) content today. The private ultratextgen-lab- repo's research/language-expansion-opportunities.md separately scored Finnish as a Phase-1 candidate (5.5M speakers, very high purchasing power, low competition, excellent Latin-script compatibility) alongside ms/da/hu, all three already live. User explicitly asked for a full Finnish locale launch. This entry authorizes the category/* pages built in this launch (bold-fonts, italic-fonts, gothic-fonts, small-text Finnish translations).",
-      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+      "evidence": "User-authorized new-locale launch, not a fresh per-locale Semrush pull (no API access this session). fi is a brand-new locale, added to data/locale_qualification_tiers.json as Tier 3 (hold-stub) in this same change, matching the hr/hu/da precedent of starting new Latin-script European locales at Tier 3 regardless of build depth. Real competitor-footprint evidence found via web search in place of Semrush: fi.piliapp.com (a dedicated Finnish subdomain of an existing multi-locale competitor already tracked elsewhere in this repo's research), cooltextmaker.com/fi/, urwatools.com/fi/, and adamfaliq.com/fi/bold-text-generator-suomi/ all independently serve Finnish-language \"fonttigeneraattori\"/\"tekstigeneraattori\" (font/text generator) content today. The private ultratextgen-lab- repo's research/language-expansion-opportunities.md separately scored Finnish as a Phase-1 candidate (5.5M speakers, very high purchasing power, low competition, excellent Latin-script compatibility) alongside ms/da/hu, all three already live. User explicitly asked for a full Finnish locale launch. This entry authorizes the category/* pages built in this launch (bold-fonts, italic-fonts, gothic-fonts, small-text Finnish translations). || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (Semrush FI, 100-keyword pull). The category terms this entry authorized measure at or below 140/mo: kursivoitu teksti 140, lihavoitu teksti 20, goottilaiset kirjaimet 20, pienet kirjaimet 20, pieni teksti 10, and 'paksu fontti' / 'pienet suuraakkoset' / 'vanha englantilainen fontti' a measured 0. Recorded value is the highest of them. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged in the private repo's FI-BUILD-LIST-2026-08-02.md; awaiting that decision.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
+      "backfilledDate": "2026-08-02"
     },
     {
       "pattern": "guide/*",
@@ -323,8 +324,9 @@
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",
-      "evidence": "Same authorization and evidence as the category/*-locale-fi entry immediately above. Covers the standard 3-guide Discord trio (discord-text-formatting-explained, discord-where-fonts-work, discord-safe-name-styling) that every prior minimal-locale launch (hr, hu, da) has shipped alongside its core category/platform pages.",
-      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry immediately above. Covers the standard 3-guide Discord trio (discord-text-formatting-explained, discord-where-fonts-work, discord-safe-name-styling) that every prior minimal-locale launch (hr, hu, da) has shipped alongside its core category/platform pages. || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (Semrush FI, 100-keyword pull). Every Discord term returned NO volume data at all (discord fontit KD 31, discord lihavoitu teksti KD 24, discord nimimerkki KD 26, discord kayttajatunnus KD 15, discord varillinen teksti KD 19) — i.e. below the ~10/mo reporting threshold, distinct from the explicit zeros this export returns elsewhere. keywordVolumeInLocaleMonthly stays null because no volume was measurable, NOT because the instrument was skipped; the instrument ran and found none. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged in the private repo's FI-BUILD-LIST-2026-08-02.md; awaiting that decision.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
+      "backfilledDate": "2026-08-02"
     },
     {
       "pattern": null,
@@ -332,7 +334,73 @@
       "checkedDate": "2026-07-26",
       "instruments": {
         "competitorFootprintInLocale": true,
-        "keywordVolumeInLocaleMonthly": null,
+        "keywordVolumeInLocaleMonthly": 1900,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way. || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (Semrush FI, 100-keyword pull). Split result. The homepage's own head terms are dead — tekstigeneraattori 20/mo, fonttigeneraattori a measured 0 — but 'fontti muunnin' measures 1,900/mo at KD 15, so fi/index.html has a live retarget available and is NOT a candidate for retirement. The two platform pages this entry also covered do not: 'instagram fontit' and 'instagram bio fontti' both measure a hard 0. Recorded value is the surviving homepage term. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged in the private repo's FI-BUILD-LIST-2026-08-02.md; awaiting that decision.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
+      "backfilledDate": "2026-08-02"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "library/zodiac-symbols -> fi/library/horoskooppimerkit. 'horoskooppimerkit' 12,100/mo, KD 25, Informational (Semrush FI, 2026-08-02). Broad-match adds 'horoskooppi symbolit' 390/mo KD 14 and 'horoskooppimerkit symbolit' 390/mo KD 21. Highest-volume term in the entire 100-keyword FI request set. INSTRUMENT: Semrush FI database bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 5400,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "category/cursive-fonts -> fi/kaunokirjoitus. 'kaunokirjoitus' 5,400/mo KD 28; full cluster ~8,630/mo (kaunokirjaimet 1,900 KD 21, kauno 720 KD 25, kaunokirjoitus fontti 590 KD 16). Resolves the FI-013 intent split: both terms return Informational intent on the same SERP type, so they are one cluster. Largest font-side opportunity in the locale; fi/kursivoitu-teksti correctly parents to category/italic-fonts, so cursive was genuinely unbuilt. INSTRUMENT: Semrush FI database bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 3600,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "symbol/degree-symbol -> fi/symbol/asteen-merkki (3,600/mo KD 18) and symbol/euro-sign -> fi/symbol/euron-merkki (1,300/mo KD 30), both Semrush FI 2026-08-02. This is the FR /symbol/ blind spot repeating in Finnish, found by the instrument this ledger exists to require rather than by accident. INSTRUMENT: Semrush FI database bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": "character-counter/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 2400,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "character-counter -> fi/merkkilaskuri. 'merkkilaskuri' 2,400/mo at KD 7 with Commercial intent and a Related-searches-only SERP — the best effort-adjusted opportunity in the FI set. Note the invisible-character half of this parent ('nakymaton merkki', 'tyhja merkki') returned no volume data, so the FI page should lead on counting, not on the blank-character job. INSTRUMENT: Semrush FI database bulk keyword overview, 100-keyword request list (data/fi_keyword_volume_request_2026-08-02.csv in the private research repo), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1900,
         "enGscImpressionsFromLocale": null
       },
       "verdict": "gate-pass",

@@ -1,0 +1,336 @@
+{
+  "slug": "chess-symbols",
+  "lang": "ja",
+  "title": "チェス記号コピペ — 駒・盤・棋譜記号の一覧 ♔ ♛",
+  "meta_description": "チェスの駒、盤のマス、棋譜記号のUnicode文字をコピペで。記号をクリックするとすぐにコピーできます。",
+  "breadcrumb": "チェスの記号",
+  "hero_h1": "チェスの記号",
+  "hero_tagline": "チェスの駒、盤のマス、棋譜記号のUnicode文字をまとめたリファレンス。記号をクリックするとすぐにコピーできます。",
+  "intro": "このページには、チェスの駒（キング、クイーン、ルーク、ビショップ、ナイト、ポーン。白黒両方）のUnicode記号に加えて、盤のマスや棋譜で使う記号をまとめています。駒の色と用途ごとに分類しています。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ja/library/chess-symbols/",
+  "home_url": "https://ultratextgen.com/ja/",
+  "crumb_home": "ホーム",
+  "library_url": "https://ultratextgen.com/ja/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/schach-symbole/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-xadrez/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/chess-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-ajedrez/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-echecs/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-catur/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-scacchi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/chess-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chess-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/schaaksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-szachowe/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/chess-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/satranc-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "白の駒",
+      "h2": "白のチェス駒",
+      "intro": "Unicodeの標準的な白（白抜き）の駒6種：キング、クイーン、ルーク、ビショップ、ナイト、ポーン。",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "白キング"
+        },
+        {
+          "char": "♕",
+          "label": "白クイーン"
+        },
+        {
+          "char": "♖",
+          "label": "白ルーク"
+        },
+        {
+          "char": "♗",
+          "label": "白ビショップ"
+        },
+        {
+          "char": "♘",
+          "label": "白ナイト"
+        },
+        {
+          "char": "♙",
+          "label": "白ポーン"
+        }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "黒の駒",
+      "h2": "黒のチェス駒",
+      "intro": "Unicodeの標準的な黒（塗りつぶし）の駒6種、同じ並び順。",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "黒キング"
+        },
+        {
+          "char": "♛",
+          "label": "黒クイーン"
+        },
+        {
+          "char": "♜",
+          "label": "黒ルーク"
+        },
+        {
+          "char": "♝",
+          "label": "黒ビショップ"
+        },
+        {
+          "char": "♞",
+          "label": "黒ナイト"
+        },
+        {
+          "char": "♟",
+          "label": "黒ポーン"
+        }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "盤とマス",
+      "h2": "盤のマスとゲーム記号",
+      "intro": "チェス盤を表すための、さまざまな大きさのマス記号。",
+      "symbols": [
+        {
+          "char": "⬜",
+          "label": "白いマス"
+        },
+        {
+          "char": "⬛",
+          "label": "黒いマス"
+        },
+        {
+          "char": "▪",
+          "label": "小さい黒マス"
+        },
+        {
+          "char": "▫",
+          "label": "小さい白マス"
+        },
+        {
+          "char": "◻",
+          "label": "中くらいの白マス"
+        },
+        {
+          "char": "◼",
+          "label": "中くらいの黒マス"
+        }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "拡張の駒",
+      "h2": "拡張チェス記号",
+      "intro": "Unicodeのチェス記号ブロックにある妖精チェスの駒と記譜記号。中立の駒や回転させた変種を含みます。",
+      "symbols": [
+        {
+          "char": "🨀",
+          "label": "中立キング"
+        },
+        {
+          "char": "🨁",
+          "label": "中立クイーン"
+        },
+        {
+          "char": "🨂",
+          "label": "中立ルーク"
+        },
+        {
+          "char": "🨃",
+          "label": "中立ビショップ"
+        },
+        {
+          "char": "🨄",
+          "label": "中立ナイト"
+        },
+        {
+          "char": "🨅",
+          "label": "中立ポーン"
+        },
+        {
+          "char": "🨆",
+          "label": "白ナイト（45度回転）"
+        },
+        {
+          "char": "🨇",
+          "label": "黒ナイト（45度回転）"
+        },
+        {
+          "char": "🨈",
+          "label": "中立ナイト（45度回転）"
+        },
+        {
+          "char": "🨉",
+          "label": "白キング（90度回転）"
+        },
+        {
+          "char": "🨊",
+          "label": "白クイーン（90度回転）"
+        },
+        {
+          "char": "🨋",
+          "label": "白ルーク（90度回転）"
+        },
+        {
+          "char": "🨌",
+          "label": "白ビショップ（90度回転）"
+        },
+        {
+          "char": "🨍",
+          "label": "白ナイト（90度回転）"
+        },
+        {
+          "char": "🨎",
+          "label": "白ポーン（90度回転）"
+        }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "棋譜記号",
+      "h2": "棋譜と評価の記号",
+      "intro": "チェック、駒取り、手の評価を記録するために棋譜で使う記号。",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "駒を取る"
+        },
+        {
+          "char": "+",
+          "label": "チェック"
+        },
+        {
+          "char": "#",
+          "label": "チェックメイト"
+        },
+        {
+          "char": "‡",
+          "label": "詰み"
+        },
+        {
+          "char": "!",
+          "label": "good手（好手）"
+        },
+        {
+          "char": "!!",
+          "label": "妙手"
+        },
+        {
+          "char": "?",
+          "label": "悪手"
+        },
+        {
+          "char": "??",
+          "label": "大悪手"
+        },
+        {
+          "char": "!?",
+          "label": "興味深い手"
+        },
+        {
+          "char": "?!",
+          "label": "疑問手"
+        },
+        {
+          "char": "=",
+          "label": "互角"
+        },
+        {
+          "char": "±",
+          "label": "白がやや優勢"
+        },
+        {
+          "char": "∓",
+          "label": "黒がやや優勢"
+        },
+        {
+          "char": "⩲",
+          "label": "わずかに優勢"
+        }
+      ]
+    }
+  ],
+  "cta": "UltraTextGenを使えば、普通のテキストを太字・斜体・筆記体など100種類以上のUnicodeフォントに変換できます。無料ですぐに使えます。",
+  "related": [
+    {
+      "href": "/ja/library/star-symbols/",
+      "title": "星の記号",
+      "desc": "星、アスタリスク、キラキラ記号のコピペ集。"
+    },
+    {
+      "href": "/ja/symbol/poon-kigou/",
+      "title": "ポーンの記号（♟）",
+      "desc": "ポーン記号の由来と意味、使い方。"
+    },
+    {
+      "href": "/ja/library/aesthetic-symbols/",
+      "title": "おしゃれ記号",
+      "desc": "プロフィールや投稿に使えるおしゃれなUnicode記号。"
+    },
+    {
+      "href": "/ja/library/math-symbols/",
+      "title": "数学記号",
+      "desc": "プラスマイナス、掛ける、割る、ルート、無限大。"
+    }
+  ]
+}

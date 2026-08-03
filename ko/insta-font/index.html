@@ -193,8 +193,8 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <p class="hero-tagline">텍스트를 입력하면 수십 가지 인스타 폰트가 바로 나타납니다 — 볼드·이탤릭·필기체·고딕·감성체·작은 대문자. 복사해서 프로필·이름·바이오·캡션·댓글·스토리에 붙여넣기만 하면 됩니다. 모두 무료, <strong>앱 설치 없이</strong>.</p>
       <div class="input-wrapper">
         <textarea class="main-input" id="mainInput" placeholder="프로필이나 캡션을 여기에 입력…" maxlength="500" autofocus=""></textarea>
-        <span class="char-count"><span id="charCount">0</span>/500</span>
-      </div>
+        
+      </div><div class="ig-surface"><div class="ig-surface-label" id="igSurfaceLabel"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>어디에 붙여 넣나요?</div><div class="ig-surface-row" id="igSurfaceRow" role="tablist" aria-labelledby="igSurfaceLabel"><button class="ig-surface-tab" data-surface="display-name" type="button" role="tab" aria-selected="false">표시 이름</button><button class="ig-surface-tab active" data-surface="bio" type="button" role="tab" aria-selected="true">소개</button><button class="ig-surface-tab" data-surface="caption" type="button" role="tab" aria-selected="false">캡션</button><button class="ig-surface-tab" data-surface="story" type="button" role="tab" aria-selected="false">스토리</button><button class="ig-surface-tab" data-surface="comment" type="button" role="tab" aria-selected="false">댓글</button><button class="ig-surface-tab" data-surface="username" type="button" role="tab" aria-selected="false">@사용자 이름</button></div><span class="ig-counter" id="igCounter"><span id="igCount">0</span>/<span id="igLimit">150</span> 자</span><p class="ig-verdict" id="igVerdict" data-status="safe" aria-live="polite"><span id="igVerdictText">됩니다. 줄바꿈과 보이지 않는 공백을 포함해 모든 글자가 제한에 포함됩니다.</span></p><p class="ig-verdict-detail" id="igVerdictDetail" hidden></p></div>
       <div class="decoration-section">
         <div class="decoration-label">결과에 기호나 꾸밈틀 추가</div>
         <div class="decoration-tabs">
@@ -342,6 +342,21 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       </a>
     </div>
   </section>
+
+<section class="editorial-section" aria-labelledby="ig-story-title">
+<h2 id="ig-story-title">인스타그램 스토리 글꼴은 이 글꼴이 아닙니다</h2>
+<p>스토리 편집기에는 자체 글꼴 선택기가 있습니다 — <em>Classic, Modern, Neon, Typewriter</em>, <em>Strong</em>. 모두 앱에 내장된 것입니다. 유니코드가 아니어서 인스타그램 밖으로 복사할 수 없고 내려받을 수도 없습니다. 글꼴 관련 게시판에서는 그 뒤에 있는 실제 서체를 알아내려는 시도가 몇 년째 이어지고 있지만 확실한 답은 나오지 않았습니다.</p>
+<p>그러니 서로 다른 두 가지 일입니다. <em>내 글</em>을 꾸며서 어디에 복사해 붙여도 그대로 남게 하고 싶다면 — 소개, 캡션, 댓글, 또는 스토리 텍스트 상자에 입력하는 경우 — 위의 생성기가 하는 일이 바로 그것입니다. 반면 인스타그램 자체 스토리 글자를 다른 곳에서 쓰고 싶었다면 어떤 도구도 그것을 줄 수 없으며, 준다고 하는 사이트는 비슷하게 만든 것을 팔고 있는 것입니다.</p>
+</section>
+<section class="editorial-section" aria-labelledby="ig-a11y-title">
+<h2 id="ig-a11y-title">솔직한 단서 하나: 스크린 리더</h2>
+<p>꾸민 유니코드는 보이는 대로 읽히지 않습니다. 스크린 리더는 𝗕𝗢𝗟𝗗 같은 글자를 글자 이름의 나열로 읽거나 아예 건너뜁니다. 위에서 아래까지 꾸민 소개글은 보조 기술을 쓰는 사람에게 사실상 읽을 수 없는 글입니다. 그렇다고 쓰지 말라는 뜻은 아니고, 값어치 있는 곳에 쓰라는 뜻입니다. 이름이나 제목 한 줄만 꾸미고 나머지는 일반 텍스트로 두세요. 보기에도 좋고 소개글도 읽힙니다.</p>
+</section>
+<section class="editorial-section" aria-labelledby="ig-routes-title">
+<h2 id="ig-routes-title">더 알아보기</h2>
+<p>이 페이지는 일반 생성기입니다. 다음 페이지들은 한 가지 일을 더 깊이 다룹니다:</p>
+<div class="ig-routes"><a class="ig-route" href="/usecase/bio-font/instagram/"><span class="ig-route-title">인스타그램 소개글 폰트 생성기</span><span class="ig-route-desc">실시간 150자 카운터, 프로필 미리보기, 바로 쓰는 소개글 템플릿.</span></a><a class="ig-route" href="/usecase/aesthetic-instagram-names/"><span class="ig-route-title">감성적인 인스타그램 이름</span><span class="ig-route-desc">사용자 이름과 표시 이름 아이디어. 단순한 글자 변환이 아닙니다.</span></a><a class="ig-route" href="/library/instagram-symbols/"><span class="ig-route-title">인스타그램 특수문자</span><span class="ig-route-desc">반짝임, 하트, 구분선, 소개글 장식을 복사하세요.</span></a><a class="ig-route" href="/answers/what-font-does-instagram-use/"><span class="ig-route-title">인스타그램은 어떤 폰트를 쓰나요?</span><span class="ig-route-desc">캡션 뒤의 시스템 글꼴과 Instagram Sans의 정체.</span></a><a class="ig-route" href="/answers/where-do-fancy-fonts-work-username-vs-display-name/"><span class="ig-route-title">사용자 이름과 표시 이름</span><span class="ig-route-desc">왜 한쪽 칸은 꾸민 글씨를 받고 다른 쪽은 거부하는지.</span></a><a class="ig-route" href="/answers/why-wont-instagram-accept-my-fancy-username/"><span class="ig-route-title">인스타그램이 꾸민 사용자 이름을 거부해요</span><span class="ig-route-desc">„사용할 수 없음“ 메시지의 진짜 의미.</span></a><a class="ig-route" href="/answers/how-to-change-instagram-username/"><span class="ig-route-title">인스타그램 사용자 이름 바꾸는 법</span><span class="ig-route-desc">절차, 제한, 그리고 바꾸면 무엇이 깨지는지.</span></a><a class="ig-route" href="/guide/instagram-bio-line-breaks/"><span class="ig-route-title">소개글 줄바꿈</span><span class="ig-route-desc">저장한 뒤에도 줄 간격이 유지되는 여러 줄 소개글.</span></a><a class="ig-route" href="/guide/instagram-fonts-shadowban-myth/"><span class="ig-route-title">예쁜 폰트가 섀도우밴을 부르나요?</span><span class="ig-route-desc">그 속설과 실제 증거가 보여 주는 것.</span></a><a class="ig-route" href="/guide/instagram-font-ideas/"><span class="ig-route-title">인스타그램 폰트 아이디어</span><span class="ig-route-desc">따라 하고 싶은 감성 소개글과 이름 조합.</span></a></div>
+</section>
 </main>
 
 <footer class="footer">
@@ -383,4 +398,4 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/script.js" defer=""></script>
 <script src="/symbol-explorer.js"></script>
 <script src="/footer.js" defer></script>
-</body></html>
+<script>window.UTG_IG_SURFACES={"display-name": {"label": "표시 이름", "limit": 64, "status": "safe", "note": "됩니다. @ 위에 보이는 이름은 꾸민 유니코드를 받아들입니다. 프로필에서 꾸민 글씨가 있어야 할 자리가 바로 여기입니다."}, "bio": {"label": "소개", "limit": 150, "status": "safe", "note": "됩니다. 줄바꿈과 보이지 않는 공백을 포함해 모든 글자가 제한에 포함됩니다."}, "caption": {"label": "캡션", "limit": 2200, "status": "safe", "note": "됩니다. „더 보기“ 앞에는 처음 약 125자만 보이므로 꾸민 글씨를 앞쪽에 두세요."}, "story": {"label": "스토리", "limit": 2200, "status": "partial", "note": "일부만. 스토리 텍스트 상자에 꾸민 글씨를 붙여 넣을 수는 있지만, 인스타그램 자체 스토리 글꼴(Classic, Modern, Neon, Typewriter, Strong)은 앱 안의 별도 기능입니다. 유니코드가 아니고 밖으로 복사할 수 없습니다."}, "comment": {"label": "댓글", "limit": 2200, "status": "safe", "note": "됩니다. 캡션과 같은 꾸민 글씨, 같은 제한입니다."}, "username": {"label": "@사용자 이름", "limit": 30, "status": "blocked", "note": "안 됩니다. 사용자 이름에는 소문자, 숫자, 마침표, 밑줄만 들어갑니다. 꾸민 글자는 거부되고, 인스타그램은 이를 „사용할 수 없음“으로 알려 주기 때문에 이름이 이미 사용 중인 것처럼 들립니다."}};window.UTG_IG_STRINGS={"uBad": "인스타그램이 이 사용자 이름을 거부합니다. 다음 글자는 허용되지 않습니다: {chars}. 꾸민 버전은 표시 이름에 넣으세요. 그 칸은 받아들입니다.", "uOk": "이 글자들은 모두 사용자 이름에 쓸 수 있습니다. 그래도 인스타그램이 „사용할 수 없음“이라고 한다면 그 이름은 정말로 사용 중입니다.", "tooLong": "이 칸에는 너무 깁니다 — {limit}자 중 {len}자. ", "detail": "참고: 보이는 글자는 {len}자지만 코드 단위로는 {units}입니다. 어떤 칸은 더 큰 숫자로 셉니다. 믿기 전에 붙여 넣어 확인해 보세요."};</script><script src="/js/instagram/instagram-surfaces.js" defer></script></body></html>

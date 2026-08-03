@@ -984,6 +984,131 @@ module.exports = [
     { q: 'Why does my decorated Arabic name show as boxes?', a: 'Because the viewing device lacks a glyph for one of the decorative characters, so it draws a box. It is the same missing-font issue as any other script — use simpler, widely-supported symbols and it renders reliably.' },
     { q: 'Do these decorated Arabic names work in games like PUBG and Free Fire?', a: 'Frames and common symbols around an Arabic name usually work, but each game filters characters and limits length, and rare glyphs can be rejected or boxed. Keep the decoration light and test in the field before spending a rename card.' }
   ]
+},
+
+/* ===================================================================== */
+{
+  slug: 'what-are-discord-display-name-styles',
+  crumb: 'What Are Discord Display Name Styles',
+  pageTitle: 'What Are Discord Display Name Styles?',
+  metaDesc: "Display Name Styles are a paid Nitro feature that gives your Discord display name a font, a colour and an animated effect. Here's exactly where each part shows up, why servers strip the colour, and the free Unicode alternative.",
+  h1: 'What Are Discord Display Name Styles?',
+  tagline: 'A Nitro feature with three parts — font, colour, effect — and each part survives in a different set of places. That mismatch is why your styled name never looks the same in a server as it does on your profile.',
+  shortAnswer: '<strong>Display Name Styles</strong> are a <strong>paid Discord Nitro feature</strong> that restyles your display name with a built-in <strong>font</strong>, a <strong>colour</strong> and an <strong>animated effect</strong>. The three parts do <em>not</em> travel together: inside a server, your <strong>role colour takes precedence</strong>, so the font carries over but the colour and effect generally do not. On mobile, everything renders <strong>static</strong> — no animation. If you don\'t have Nitro, <strong>Unicode fonts</strong> are the free alternative: they aren\'t a Discord feature at all, so they work on every account and in fields Nitro styles never reach.',
+  oneLiner: '<strong>Nitro Display Name Styles:</strong> font + colour + effect, display name only, animation on desktop. <strong>Free Unicode fonts:</strong> letterform only, but every account and nearly every field.',
+  sections: [
+    {
+      label: 'What it is',
+      h2: 'Display Name Styles, in one paragraph',
+      bodyHtml: `<div class="editorial-block">
+    <p>Discord launched Display Name Styles as a <strong>Nitro perk in late October 2025</strong>, reaching all Nitro subscribers by early December, and has kept adding options since — a rounded, comic-style <strong>Playpen Sans</strong> font and a <strong>“Gummy” effect</strong> that alternates colour letter by letter were both announced during 2026.</p>
+    <p>A style is made of three separate pieces:</p>
+    <ul>
+      <li><strong>Font</strong> — a different letterform for your display name, drawn by Discord.</li>
+      <li><strong>Colour</strong> — a colour or gradient applied to the name.</li>
+      <li><strong>Effect</strong> — motion or per-letter treatment layered on top.</li>
+    </ul>
+    <p>It applies to your <strong>display name only</strong> — never your <code>@username</code>, which stays lowercase Latin, digits, underscores and periods. You can also set a <strong>different style per server</strong> through your per-server profile.</p>
+    <p class="mood-example">Display name → styled &nbsp;·&nbsp; @username → never styled</p>
+  </div>`
+    },
+    {
+      label: 'Where it shows',
+      h2: 'Where each part of the style actually survives',
+      bodyHtml: `<div class="editorial-block">
+    <p>This is the part almost nobody explains, and it is the whole reason a style looks different depending on where you see it. The <strong>font</strong> is the durable piece; the <strong>colour and effect</strong> are the fragile ones.</p>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th scope="col">Where</th><th scope="col">Font</th><th scope="col">Colour &amp; effect</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Your profile / profile panel</td><td>Yes</td><td>Yes — the full style</td></tr>
+          <tr><td>DM and group-chat member lists</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>DM list (sidebar)</td><td>Yes</td><td>Hover to see it</td></tr>
+          <tr><td>Message author names</td><td>Yes</td><td>Hover to see it</td></tr>
+          <tr><td>Inside a server</td><td>Yes</td><td><strong>No — your role colour wins</strong></td></tr>
+          <tr><td>Your <code>@username</code></td><td>No</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>So if you bought Nitro mainly to have a coloured, animated name in the servers you're active in, that is the one place the colour and effect are most likely to be overridden — the server's role styling takes priority there.</p>
+  </div>`
+    },
+    {
+      label: 'Desktop vs mobile',
+      h2: 'Why the animation disappears on your phone',
+      bodyHtml: `<div class="editorial-block">
+    <p>Animated effects play on <strong>desktop</strong>. On <strong>mobile</strong>, the font, colour and effect still appear, but they render <strong>static</strong> — the motion is dropped.</p>
+    <p>That matters more than it sounds: most people read Discord on a phone. A style chosen for how it moves on desktop is, for a large share of the people looking at it, just a colour.</p>
+  </div>`
+    },
+    {
+      label: 'Compared',
+      h2: 'Display Name Styles vs. Unicode fonts',
+      bodyHtml: `<div class="editorial-block">
+    <p>These are two different mechanisms, not two versions of the same thing. Nitro styles are <strong>rendered by Discord</strong>. Unicode fonts are <strong>real characters</strong> you paste — the letters themselves are different codepoints, so no app has to support anything.</p>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">Paid — Nitro Display Name Styles</span>
+        <h4>Rendered by Discord</h4>
+        <ul>
+          <li>Requires an active Nitro subscription</li>
+          <li>Font <em>plus</em> colour and animated effect</li>
+          <li>Display name only, and can differ per server</li>
+          <li>Colour and effect overridden by role colour in servers</li>
+          <li>Static on mobile — no animation</li>
+          <li>Stops working if Nitro lapses</li>
+          <li>Discord only</li>
+        </ul>
+      </div>
+      <div class="compare-card variant-positive">
+        <span class="compare-badge">Free — Unicode fonts</span>
+        <h4>Real characters you paste</h4>
+        <ul>
+          <li>Free, and works on every account</li>
+          <li>Letterform only — no colour, no animation</li>
+          <li>Works in display names, server nicknames, About Me, messages and channel names</li>
+          <li>Not affected by role colour</li>
+          <li>Identical on desktop and mobile</li>
+          <li>Yours permanently once pasted</li>
+          <li>Pastes into Instagram, TikTok, games and anywhere else too</li>
+        </ul>
+      </div>
+    </div>
+    <p>The honest trade: Nitro buys you <strong>colour and motion</strong>, which Unicode genuinely cannot do. Unicode buys you <strong>reach</strong> — more fields, every account, every device, and no subscription to keep paying. Plenty of people use both: a Unicode letterform inside a Nitro colour.</p>
+  </div>`
+    },
+    {
+      label: 'No Nitro',
+      h2: 'What to do if you don’t have Nitro',
+      bodyHtml: `<div class="editorial-block">
+    <p>Paste a Unicode font into your display name. Nothing needs to be enabled, and it works on free, Classic and Nitro accounts alike:</p>
+    <ol>
+      <li>Generate the style you want and copy it.</li>
+      <li><strong>User Settings → Profile</strong>, paste it into <strong>Display Name</strong>, save.</li>
+      <li>For one server only, use <strong>Edit Server Profile</strong> and paste it into the nickname field instead.</li>
+    </ol>
+    <p class="mood-example">𝗔𝗹𝗲𝘅 · 𝘈𝘭𝘦𝘹 · 𝒜𝓁𝑒𝓍 · ᴀʟᴇx · 𝔄𝔩𝔢𝔵</p>
+    <p>Two cautions worth knowing before you commit a name to it. Rarer styles such as fraktur and double-struck can render as empty boxes on devices missing those glyphs — see <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>. And screen readers announce these characters awkwardly, which is covered in the <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a>.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Style your Discord name for free',
+    p: 'Generate a Unicode display name that works on any account, in any server, on desktop and mobile — no Nitro, no subscription.',
+    href: '/discord/',
+    label: 'Open the Discord Font Generator →'
+  },
+  related: 'Related: <a href="/answers/do-you-need-nitro-for-discord-fonts/">do you need Nitro for Discord fonts</a>, <a href="/answers/discord-allowed-characters/">Discord allowed characters</a>, <a href="/guide/discord-text-formatting-explained/">Discord text formatting explained</a>, and <a href="/guide/discord-safe-name-styling/">Discord-safe name styling</a>.',
+  faq: [
+    { q: 'What are Discord Display Name Styles?', a: 'They are a paid Discord Nitro feature that restyles your display name with a built-in font, a colour and an animated effect. They apply to the display name only, never to your @username, and you can set a different style for each server through your per-server profile.' },
+    { q: 'Do you need Nitro for Discord Display Name Styles?', a: 'Yes. Display Name Styles are a Nitro feature and stop applying if the subscription lapses. Unicode fonts are the free alternative — they are ordinary characters you paste rather than a Discord feature, so they work on free, Classic and Nitro accounts alike.' },
+    { q: 'Why does my Display Name Style not show its colour in a server?', a: 'Because your role colour takes precedence inside servers. The font carries over, but the style colour and effect are generally overridden by the server role colour or enhanced role styling. The full style shows on your profile and in DM and group-chat member lists.' },
+    { q: 'Why is my Display Name Style not animated on mobile?', a: 'Animation plays on desktop only. On mobile the font, colour and effect still appear, but they render static. Nothing is broken — that is how the feature behaves on phones.' },
+    { q: 'Can Display Name Styles change my Discord username?', a: 'No. Only the display name can be styled. The @username stays restricted to lowercase letters, numbers, underscores and periods, and no Nitro feature or Unicode font changes that.' },
+    { q: 'Are Unicode fonts better than Nitro Display Name Styles?', a: 'Neither is strictly better — they do different things. Nitro adds colour and animation, which Unicode cannot do at all. Unicode fonts are free, work on every account and device, keep working in server nicknames, About Me, messages and channel names, and paste into other platforms. Many people combine the two.' }
+  ]
 }
 
 ];

@@ -1,0 +1,380 @@
+{
+  "slug": "simboli-musicali",
+  "lang": "it",
+  "title": "Simboli Musicali: Copia e Incolla Note Musicali ♪ ♫",
+  "meta_description": "Sfoglia e copia i simboli di notazione musicale, le emoji degli strumenti e i caratteri Unicode legati all'audio. Clicca un simbolo per copiarlo subito.",
+  "breadcrumb": "Simboli Musicali",
+  "hero_h1": "Simboli Musicali",
+  "hero_tagline": "Una raccolta di riferimento di simboli di notazione musicale, emoji di strumenti e caratteri Unicode legati all'audio. Clicca un simbolo per copiarlo subito.",
+  "intro": "Questa raccolta contiene note e simboli di notazione musicale, emoji di strumenti e caratteri Unicode legati all'audio. I simboli sono organizzati per categoria: segni di notazione, strumenti e comandi di riproduzione. Molti dei termini qui — forte, piano, fermata — sono italiani in origine e usati identici in tutto il mondo.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/it/library/simboli-musicali/",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "library_url": "https://ultratextgen.com/it/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Note",
+      "h2": "Note Musicali",
+      "intro": "Simboli di note Unicode ed emoji che rappresentano note musicali.",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "Semiminima"
+        },
+        {
+          "char": "♪",
+          "label": "Croma"
+        },
+        {
+          "char": "♫",
+          "label": "Crome unite"
+        },
+        {
+          "char": "♬",
+          "label": "Semicrome"
+        },
+        {
+          "char": "🎵",
+          "label": "Nota musicale"
+        },
+        {
+          "char": "🎶",
+          "label": "Note musicali"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Chiavi",
+      "h2": "Simboli delle Chiavi",
+      "intro": "Le chiavi musicali usate nella notazione degli spartiti.",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "Chiave di violino"
+        },
+        {
+          "char": "𝄡",
+          "label": "Chiave di do"
+        },
+        {
+          "char": "𝄢",
+          "label": "Chiave di basso"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Alterazioni",
+      "h2": "Alterazioni",
+      "intro": "Diesis, bemolle, bequadro e doppie alterazioni, usati per modificare l'altezza di una nota.",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "Diesis"
+        },
+        {
+          "char": "♭",
+          "label": "Bemolle"
+        },
+        {
+          "char": "♮",
+          "label": "Bequadro"
+        },
+        {
+          "char": "𝄪",
+          "label": "Doppio diesis"
+        },
+        {
+          "char": "𝄫",
+          "label": "Doppio bemolle"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Dinamiche e Notazione",
+      "h2": "Dinamiche e Segni di Notazione",
+      "intro": "Segni di dinamica e simboli di notazione musicale.",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "Piano (dolce)"
+        },
+        {
+          "char": "𝆑",
+          "label": "Forte"
+        },
+        {
+          "char": "𝄀",
+          "label": "Stanghetta"
+        },
+        {
+          "char": "𝄁",
+          "label": "Doppia stanghetta"
+        },
+        {
+          "char": "𝄂",
+          "label": "Stanghetta finale"
+        },
+        {
+          "char": "𝄃",
+          "label": "Stanghetta finale inversa"
+        },
+        {
+          "char": "𝄆",
+          "label": "Segno di ritornello (apertura)"
+        },
+        {
+          "char": "𝄇",
+          "label": "Segno di ritornello (chiusura)"
+        },
+        {
+          "char": "𝄐",
+          "label": "Corona"
+        },
+        {
+          "char": "𝄑",
+          "label": "Corona rovesciata"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Pause",
+      "h2": "Simboli di Pausa",
+      "intro": "Segni di pausa che indicano il silenzio nella notazione musicale.",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "Pausa di croma"
+        },
+        {
+          "char": "𝄿",
+          "label": "Pausa di semicroma"
+        },
+        {
+          "char": "𝄻",
+          "label": "Pausa di minima"
+        },
+        {
+          "char": "𝄼",
+          "label": "Pausa di semiminima"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Strumenti",
+      "h2": "Emoji di Strumenti Musicali",
+      "intro": "Emoji che rappresentano strumenti musicali.",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "Chitarra"
+        },
+        {
+          "char": "🎹",
+          "label": "Pianoforte"
+        },
+        {
+          "char": "🎺",
+          "label": "Tromba"
+        },
+        {
+          "char": "🎻",
+          "label": "Violino"
+        },
+        {
+          "char": "🎷",
+          "label": "Sassofono"
+        },
+        {
+          "char": "🥁",
+          "label": "Batteria"
+        },
+        {
+          "char": "🪕",
+          "label": "Banjo"
+        },
+        {
+          "char": "🪗",
+          "label": "Fisarmonica"
+        },
+        {
+          "char": "🪘",
+          "label": "Tamburo lungo"
+        },
+        {
+          "char": "🪇",
+          "label": "Maracas"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Audio e Riproduzione",
+      "h2": "Audio e Riproduzione",
+      "intro": "Simboli legati al suono, agli altoparlanti e ai controlli audio.",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "Microfono"
+        },
+        {
+          "char": "🎧",
+          "label": "Cuffie"
+        },
+        {
+          "char": "📻",
+          "label": "Radio"
+        },
+        {
+          "char": "🔊",
+          "label": "Altoparlante a volume alto"
+        },
+        {
+          "char": "🔇",
+          "label": "Altoparlante muto"
+        },
+        {
+          "char": "🎼",
+          "label": "Spartito"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Decorazioni per Bio",
+      "h2": "Decorazioni per Bio con Note Musicali",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "Separatore di note"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "Nota incorniciata"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "Scia di note"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "Nota delicata"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "Nota scintillante"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "Note appaiate"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "Nota con cuore"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "Nota tra parentesi"
+        }
+      ]
+    }
+  ],
+  "cta": "Usa UltraTextGen per convertire il testo normale in grassetto, corsivo, calligrafico e oltre 100 altri stili di font Unicode — gratis e immediato.",
+  "related": [
+    {
+      "href": "/it/library/simboli-stella/",
+      "title": "Simboli Stella",
+      "desc": "Stelle, asterischi e scintillii da copiare e incollare."
+    },
+    {
+      "href": "/it/library/simboli-cuore/",
+      "title": "Simboli Cuore",
+      "desc": "Cuori ♥ ♡ ❤ di ogni forma e stile."
+    },
+    {
+      "href": "/it/symbol/emoji-microfono/",
+      "title": "Emoji Microfono (🎤)",
+      "desc": "Origine e uso dell'emoji microfono."
+    },
+    {
+      "href": "/it/library/simboli/",
+      "title": "Simboli Estetici",
+      "desc": "Caratteri Unicode estetici per bio e didascalie."
+    }
+  ]
+}

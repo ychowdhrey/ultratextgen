@@ -81,7 +81,15 @@
     const frames = cfg.frames || [];
     const rareSymbols = cfg.rareSymbols || [];
     const rareFonts = cfg.rareFonts || fonts.map(function (f) { return f.key; });
+    // charLimit = limit on the WHOLE pasted string (guild/squad name fields, where
+    // the decorated string is what goes in the box).
+    // rawLimit  = limit on the letters the user TYPES, before any frame is added
+    // (clan-tag fields, where "2-5 letters" is a convention about the tag itself
+    // and the frame is extra). Passing charLimit where rawLimit was meant is what
+    // made a 4-letter tag inside ꧁꧂ read "6 / 5" in red — it counted the
+    // decoration this page exists to sell against a limit for the letters alone.
     const charLimit = cfg.charLimit || 0; // 0 = no warning
+    const rawLimit = cfg.rawLimit || 0;   // 0 = not shown
 
     // ---- State (defaults to first option, overridable by URL recipe) ----
     const state = {
@@ -125,6 +133,8 @@
         input.value = t;
         if (input.dispatchEvent) input.dispatchEvent(new Event("input", { bubbles: true }));
       }
+      // Hand the raw params to the page so it can restore its own recipe keys.
+      if (typeof cfg.onRecipe === "function") cfg.onRecipe(params);
     })();
 
     /* ----------------------------------------------------------
@@ -235,11 +245,30 @@
       previewEl.textContent = out || (text.previewPlaceholder || "");
       previewEl.classList.toggle("is-empty", !out);
 
-      // Counter
+      // Counter. Two different numbers, because they answer two different
+      // questions: how many letters is the tag (rawLimit), and how long is the
+      // string you actually paste (charLimit). A page passes whichever it means.
       if (countEl) {
-        const n = glyphLength(out);
-        countEl.textContent = charLimit ? n + " / " + charLimit : String(n);
-        countEl.classList.toggle("is-over", !!charLimit && n > charLimit);
+        const total = glyphLength(out);
+        const typed = glyphLength(raw);
+        if (!rawLimit) {
+          // Unchanged legacy behaviour: pages that only set charLimit (the
+          // guild/squad pages, in five languages) keep the bare "n / limit" they
+          // already ship. No English label is introduced into a localised UI.
+          countEl.textContent = charLimit ? total + " / " + charLimit : String(total);
+          countEl.classList.toggle("is-over", !!charLimit && total > charLimit);
+        } else {
+          const parts = [(text.countTag || "tag") + " " + typed + "/" + rawLimit];
+          let over = typed > rawLimit;
+          if (charLimit) {
+            parts.push((text.countPasted || "pasted") + " " + total + "/" + charLimit);
+            if (total > charLimit) over = true;
+          } else {
+            parts.push((text.countPasted || "pasted") + " " + total);
+          }
+          countEl.textContent = parts.join(" · ");
+          countEl.classList.toggle("is-over", over);
+        }
       }
       // Safety note for the selected font
       if (safetyEl) {
@@ -248,6 +277,13 @@
         safetyEl.classList.toggle("is-risk", !f.safe);
       }
       refreshActiveTabs();
+
+      // Let the host page react to the composed tag (e.g. run it through
+      // game-rules.js and render a per-game verdict). Kept as a hook rather than
+      // built in, so the engine stays generic for the guild/squad pages.
+      if (typeof cfg.onRender === "function") {
+        cfg.onRender({ raw: raw, styled: styled, out: out, fontKey: state.fontKey });
+      }
     }
 
     /* ----------------------------------------------------------
@@ -362,6 +398,14 @@
       params.set("sep", state.sepId);
       const raw = rawInput();
       if (raw) params.set("tag", raw);
+      // Pages may add their own recipe keys (the clan page adds the game, so the
+      // member who opens the link lands on the same verdict, not just the styling).
+      if (typeof cfg.shareExtra === "function") {
+        const extra = cfg.shareExtra() || {};
+        Object.keys(extra).forEach(function (k) {
+          if (extra[k] != null && extra[k] !== "") params.set(k, String(extra[k]));
+        });
+      }
       return base + "?" + params.toString();
     }
 
@@ -391,7 +435,8 @@
 
     // Expose minimal handle for debugging / future pages.
     ns.tagStudio._instances = ns.tagStudio._instances || [];
-    ns.tagStudio._instances.push({ state: state, buildShareUrl: buildShareUrl });
+    ns.tagStudio._instances.push({ state: state, buildShareUrl: buildShareUrl, refresh: renderAll });
+    return { state: state, buildShareUrl: buildShareUrl, refresh: renderAll };
   }
 
   /* ============================
