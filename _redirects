@@ -255,12 +255,25 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 
 # de/gotische-schrift retargeted to de/altdeutsche-schrift: 26-day GSC data
 # showed the German blackletter cluster earning ~0 clicks at avg. position
-# 15 while competitors rank dedicated Altdeutsch/Fraktur slugs (see
-# WESTERN-LANGUAGE-GAP-ANALYSIS-2026-07-26.md / local-language phrase DE-008)
-# — "altdeutsche Schrift" is the term Germans actually search, not the
-# literal rendering of English "gothic font".
+# 15 while competitors rank dedicated Altdeutsch/Fraktur slugs — "altdeutsche
+# Schrift" is the term Germans actually search, not the literal rendering of
+# English "gothic font". See local-language phrase DE-008 in
+# data/local-language/de.json.
 /de/gotische-schrift/            /de/altdeutsche-schrift/  301
 /de/gotische-schrift/index.html  /de/altdeutsche-schrift/  301
+
+# tr/yazi-stilleri retired -> /tr/ (2026-08-01). Query-level GSC showed the
+# page owning no query of its own while the TR homepage already covered the
+# same ground, so it was consolidating nothing and competing for attention.
+# All 49 internal links were repointed to /tr/ in the same change; most carried
+# the anchor text "yazı stilleri", which now points at the surviving page.
+# SCHEDULED FOR RE-EVALUATION 2026-08-16 against query-level volume, not page
+# metrics — "yazı stilleri" is a 450,000/mo term whose SERP position was never
+# pulled for either URL. If /tr/ is not absorbing it, revert this block and
+# restore the directory from git history.
+/tr/yazi-stilleri             /tr/  301
+/tr/yazi-stilleri/            /tr/  301
+/tr/yazi-stilleri/index.html  /tr/  301
 
 # 2026-08-02 duplicate-claimant folds (parallel-session hreflang collision
 # cleanup): each pair had two same-locale pages claiming one hreflang

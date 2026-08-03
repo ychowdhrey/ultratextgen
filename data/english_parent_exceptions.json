@@ -72,6 +72,15 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/tr/sekilli-yazi/",
+      "reason": "EN-SERP-consolidation claim — NOT a no-EN-demand claim. This page targets 'süslü yazı / süslü harf' (fancy writing / fancy letters), a concept with obvious English demand. The reason no EN parent exists is that the EN homepage IS that page: its H1 is literally 'Fancy Text Generator' and it uses 'fancy text' 14 times, with no standalone EN fancy-text page anywhere in the repo. Building one would cannibalise the site's own homepage — the same shape as the fr/calligraphie trio. On the TR side the two do not compete: first-party GSC (27d to 2026-08-02) shows this page drawing 479 of its 505 impressions on 'süslü' queries (süslü harf kopyala 288 imp @ pos 7.9, süslü yazı kopyala yapıştır 166 @ 9.1) while sitting at position 44.8 on the 'şekilli yaz*' family that /tr/ owns at 4.5-6.3.",
+      "agreed": "2026-08-02",
+      "enDemandBasis": "Verified directly against this repo on 2026-08-02: EN homepage H1 = 'Fancy Text Generator', 14 uses of 'fancy text', and no standalone EN fancy-text/fancy-letters page exists (only answers/* spokes about fancy text, which are a different content type). NOT verified: EN SERP or EN GSC for 'fancy text'/'fancy letters' specifically — Semrush has been out of API units since 2026-07-30, so the cannibalisation premise rests on our own site structure rather than on an EN demand pull. The first reverse-demand sweep must verify it.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
     }
   ]
 }
