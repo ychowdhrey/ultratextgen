@@ -102,6 +102,18 @@ for (const [enUrl, members] of clusters) {
 
 // ─── (a) reciprocity/headless — same logic as audit-hreflang.js, scoped to one cluster ──
 
+// A bare site root or bare `/xx/` locale homepage. Mirrors audit-hreflang.js's
+// own isHomepage() exactly: some pages (the ratified local-only exceptions —
+// ja/gal-moji, ko/font-byeonhwan + zh-tw/yingwen-ziti, the fr/calligraphie
+// trio, and any future pair built the same way) legitimately claim the bare
+// homepage as a placeholder "EN version" instead of a real translation. That
+// claim is permanently, correctly non-reciprocal — the homepage must never
+// link back to one arbitrary subpage — so it must never fail this gate.
+// Without this guard, touching any such page in a PR would false-positive.
+function isHomepage(url) {
+  return /^https:\/\/ultratextgen\.com\/([a-z]{2}(-[a-z]+)?\/)?$/.test(url);
+}
+
 function reciprocityIssuesForCluster(enUrl) {
   const members = clusters.get(enUrl);
   if (!members) return [];
@@ -123,6 +135,7 @@ function reciprocityIssuesForCluster(enUrl) {
       }
       const linksBack = target.alternates.some((a) => a.href === rec.canonical);
       if (!linksBack) {
+        if (isHomepage(target.canonical) && !isHomepage(rec.canonical)) continue;
         issues.push({ type: 'non-reciprocal', from: rec.rel, to: target.rel, hreflang: alt.hreflang });
       }
     }

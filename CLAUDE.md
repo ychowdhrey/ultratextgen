@@ -776,6 +776,31 @@ same content to the two IT pages, or record the divergence deliberately
 requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
 by default.
 
+**Ratified local-only exception pair, `vi/usecase/ten-lien-quan-dep/` +
+`zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/` (2026-08-03):** both are
+nickname/special-character generators for the *same* specific game — Liên
+Quân Mobile in Vietnam, 傳說對決 (Arena of Valor) in Taiwan — Tencent's MOBA
+with no meaningful English-market presence and no EN name-generator page for
+it anywhere in `usecase/` (checked: no `arena-of-valor-name-generator`
+exists). Discovered as a byproduct of an unrelated hreflang audit: both pages
+were mis-parented onto the generic `usecase/nickname-generator/` hub, which
+only has room for one `vi` and one `zh-TW` claimant — but `nickname-
+generator` is genuinely generic (any game/platform), while these two are
+narrowly game-specific, so neither was a good match for that hub's `x-default`
+identity in the first place. Resolved by pairing them into their own isolated
+2-locale cluster, exactly mirroring the existing `ko/font-byeonhwan/` +
+`zh-tw/yingwen-ziti/` precedent above: `en`/`x-default` both fall back to the
+bare homepage as a placeholder, not a translation-equivalence claim (per this
+section's own established distinction). `usecase/nickname-generator/`'s `vi`
+slot was reassigned to `vi/usecase/ten-game-hay/` (generic "cool game name,"
+not tied to one game), which is the page that actually matches that hub's
+intent. No Semrush/GSC demand check was run for this pair specifically —
+Semrush was out of API units at the time — so unlike the `id/tulisan-cuping/`
+or `fr/calligraphie` precedents, this exception rests on the structural/
+linguistic argument (specific regional game, no EN equivalent exists to
+translate) rather than confirmed search volume. Revisit with real numbers
+if either page's ranking ever becomes a live question.
+
 **Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
 consolidation** case, the same shape as the `fr/calligraphie` trio and
 explicitly *not* a "no English speaker would search this" claim. The page
