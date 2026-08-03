@@ -277,8 +277,7 @@ even though Hindi was never actually affected by this bug.
 ## 10. Per-PR gate added for new pages specifically (2026-07-24)
 
 §1's original problem (duplicate images) was fixed; a different, ongoing one
-surfaced from live GSC Crawl Stats data (`ultratextgen-lab-`'s
-`gsc-technical-seo-leakage-audit-2026-07-24.md` §6): new pages have a
+surfaced from live GSC Crawl Stats data (internal audit, 2026-07-24): new pages have a
 recurring habit of shipping before their `og:image`/hero art is generated and
 committed, so Google's first crawl of a fresh batch of pages 404s on the
 referenced image before a later cleanup pass lands. `scripts/check-image-

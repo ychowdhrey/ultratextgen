@@ -12,8 +12,7 @@
   // A top-banner unit (slot 7584734719) used to live here too — removed
   // 2026-07-27 after a 7-day AdSense pull showed 3 impressions / SGD0.00
   // sitewide while permanently reserving 100-250px under the nav on every
-  // pageview. See ultratextgen-lab- docs/adsense-coverage-and-monetization-
-  // diversification-2026-07-16.md §11 for the full analysis.
+  // pageview. Full earnings analysis recorded internally.
   const AD_CLIENT = "ca-pub-8242324164413945";
 
   const rightRailHTML = '<aside class="ad-slot ad-rail-right">' +

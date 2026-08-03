@@ -1247,8 +1247,7 @@ first impression is recorded before any later fix lands. This has been a
 real, recurring pattern in this repo's own history (see
 `docs/image-seo-fixes.md` and the several past "GSC 404 cleanup" commits
 that backfilled hero/OG art for pages already shipped) — most recently
-diagnosed from live GSC crawl-stats data in `ultratextgen-lab-`'s
-`gsc-technical-seo-leakage-audit-2026-07-24.md` §6.
+diagnosed from live GSC crawl-stats data in an internal audit (2026-07-24).
 
 ### Tooling — why there are two image-asset scripts, not one
 
