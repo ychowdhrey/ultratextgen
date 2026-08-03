@@ -189,48 +189,58 @@ for (const rel of changedFiles) {
     structuralDiff.symbolTilesDelta === 0;
 
   const members = [...clusters.get(enAnchor)].filter((u) => u !== rec.canonical);
-  for (const siblingUrl of members) {
-    const siblingRec = byUrl.get(siblingUrl);
-    if (!siblingRec) continue; // headless/broken — audit-hreflang.js's job
 
-    const enUrl = rec.canonical === enAnchor ? rec.canonical : enAnchor;
-    const localeUrl = rec.canonical === enAnchor ? siblingUrl : rec.canonical;
-    const pairKey = `${enUrl}|${localeUrl}`;
+  // Per this file's header (and CLAUDE.md "Translation Parity"): a
+  // structural change passes when AT LEAST ONE sibling in the cluster was
+  // also touched in this branch — the EN parent for a locale-page change,
+  // any sibling for an EN-parent change. (Bug fixed 2026-08-02: the loop
+  // below used to flag every untouched (EN, locale) pair individually, so
+  // an EN edit with one synced locale sibling still failed on the other
+  // N-1 locales — a requirement neither the spec comment nor CLAUDE.md
+  // states, and one that made any EN structural edit on a wide cluster
+  // unshippable without touching every locale.)
+  if (rec.canonical !== enAnchor) {
+    // locale page changed — the sibling that must move with it is the EN parent
+    const enRec = byUrl.get(enAnchor);
+    if (!enRec) continue; // headless/broken — audit-hreflang.js's job
+    const pairKey = `${enAnchor}|${rec.canonical}`;
     if (checkedPairs.has(pairKey)) continue;
     checkedPairs.add(pairKey);
-
-    if (hasException(enUrl, localeUrl)) continue;
-
-    // Look up each side's file path from its OWN url record — not from
-    // whichever cluster member happened to be first in iteration order.
-    // (Bug fixed 2026-07-24: this used to fall back to `rec`/`siblingRec`
-    // positionally, which only resolved to the real EN file when the EN
-    // entry happened to be the first member visited for a given `rec`;
-    // for any other iteration order it silently compared against the
-    // wrong locale's path and could pass a pair that was never actually
-    // checked. See the library/special-characters (en/ar/ja/ko/ru/th)
-    // cluster for the case that surfaced it.)
-    const enRec = byUrl.get(enUrl);
-    const localeRec = byUrl.get(localeUrl);
-    if (!enRec || !localeRec) continue; // headless/broken — audit-hreflang.js's job
-    const enRel = enRec.rel;
-    const localeRel = localeRec.rel;
-
-    if (changedSet.has(enRel) && changedSet.has(localeRel)) continue; // both sides touched — presumed synced
+    if (hasException(enAnchor, rec.canonical)) continue;
+    if (changedSet.has(enRec.rel)) continue; // EN parent touched — presumed synced
+    // No linksUnreachableFor() suppression on this branch by design: the
+    // sibling here is the EN parent, and an EN page can always link another
+    // EN page, so there is never "nothing it could do".
+    flagged.push({ enUrl: enAnchor, localeUrl: rec.canonical, enRel: enRec.rel, localeRel: rec.rel, changedRel: rel });
+  } else {
+    // EN parent changed — any touched locale sibling counts as the sync
+    const siblingRecs = members.map((u) => ({ url: u, rec: byUrl.get(u) })).filter((s) => s.rec);
+    if (siblingRecs.length === 0) continue;
+    const nonExcepted = siblingRecs.filter((s) => !hasException(rec.canonical, s.url));
+    if (nonExcepted.length === 0) continue; // every pair individually excepted
 
     // EN is the source locale: a new EN page gets linked from existing EN
-    // pages long before (or instead of) being translated. When the only thing
-    // that moved is links whose targets have NO counterpart in this sibling's
-    // language, there is nothing the sibling could legitimately do — linking
-    // the English page from a locale page is exactly what CLAUDE.md's
-    // "Locale-native internal linking" rule forbids. Flagging it would force
-    // either a wrong link or a per-page exception on essentially every new EN
-    // page, so the pair is skipped. The moment a translation of the target
-    // exists, this stops applying and the sibling is flagged again — which is
-    // the correct trigger, because now it CAN link its native equivalent.
-    if (onlyAddedLinks && linksUnreachableFor(addedLinks, localeRec.ownLang)) continue;
+    // pages long before (or instead of) being translated. Drop the siblings
+    // that could not legitimately act on this change — where the only thing
+    // that moved is links whose targets have NO counterpart in that sibling's
+    // language, linking the English page from a locale page is exactly what
+    // CLAUDE.md's "Locale-native internal linking" rule forbids. Flagging
+    // those would force either a wrong link or a per-page exception on
+    // essentially every new EN page. The moment a translation of the target
+    // exists the sibling becomes actionable again — the correct trigger,
+    // because now it CAN link its native equivalent.
+    const actionable = nonExcepted.filter(
+      (s) => !(onlyAddedLinks && linksUnreachableFor(addedLinks, s.rec.ownLang))
+    );
+    if (actionable.length === 0) continue; // no sibling could act on this change
 
-    flagged.push({ enUrl, localeUrl, enRel, localeRel, changedRel: rel });
+    if (actionable.some((s) => changedSet.has(s.rec.rel))) continue; // at least one sibling synced
+    for (const s of actionable) {
+      const pairKey = `${rec.canonical}|${s.url}`;
+      if (checkedPairs.has(pairKey)) continue;
+      checkedPairs.add(pairKey);
+      flagged.push({ enUrl: rec.canonical, localeUrl: s.url, enRel: rec.rel, localeRel: s.rec.rel, changedRel: rel });
+    }
   }
 }
 
