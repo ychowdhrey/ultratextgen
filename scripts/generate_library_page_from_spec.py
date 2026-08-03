@@ -62,6 +62,26 @@ class SpecError(Exception):
     """Raised when a spec fails validation."""
 
 
+def funding_choices_tag():
+    """Google Funding Choices (ad-blocking recovery) tag.
+
+    Read from scripts/data/funding-choices-tag.html — the single source of
+    truth shared with scripts/inject-funding-choices-tag.js, so the generator
+    and the injector can never emit different snippets. Every page on the site
+    is required to carry it (scripts/check-funding-choices.js enforces this);
+    omitting it here is what produced the 66-page locale-library backlog that
+    the injector then had to sweep up after the fact.
+    """
+    snippet_path = SCRIPT_DIR / "data" / "funding-choices-tag.html"
+    try:
+        return snippet_path.read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        raise SpecError(
+            f"cannot read the Funding Choices tag at {snippet_path}: {exc}. "
+            "Generated pages would fail scripts/check-funding-choices.js."
+        ) from exc
+
+
 def esc(text):
     """HTML-escape text content."""
     return html.escape(str(text), quote=False)
@@ -447,6 +467,7 @@ def render_page(spec):
     page = f"""<!DOCTYPE html>
 <html lang="{lang}"{dir_attr}>
 <head>
+{funding_choices_tag()}
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
   new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
