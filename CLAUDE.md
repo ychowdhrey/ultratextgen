@@ -693,6 +693,38 @@ speculatively building other locales' internet-slang transforms. Each future
 case needs its own demand evidence and its own discussion, exactly as this one
 did.
 
+**Ratified exceptions, `id/usecase/nama-discord-keren/` and
+`nl/sierlijke-letters/` (2026-08-03).** Both surfaced from a site-wide
+duplicate-claimant scan (see "Parallel sessions build the same thing under
+different names" below): each was a second page in its locale declaring an EN
+parent another page already claimed. In both cases the pages are **not**
+duplicates of each other — they serve different queries — so the fix was to
+drop the wrong parent claim, not to merge. Both now carry a locale-only
+hreflang block with `x-default` on the bare EN homepage as a generic default,
+and their visible language switchers were trimmed to match (a switcher that
+still lists a cluster the page has left is the same bug in the visible layer).
+
+- **`id/usecase/nama-discord-keren/`** claimed `usecase/nickname-generator/`,
+  which `id/usecase/nama-panggilan/` already owns. GSC (Jul 2–28) shows no
+  query overlap at all: nama-discord-keren draws 118 impressions led by "nama
+  discord keren" (63) and "nama role discord keren" (13), while nama-panggilan
+  draws 28 led by "buat nama panggilan keren" (5). It is a Discord-name page,
+  and **this site has no EN Discord-name parent** — `/discord/` is the
+  generator hub and `usecase/nickname-generator/` is the general nickname
+  page. Ratified as local-only rather than force-fitted to either.
+- **`nl/sierlijke-letters/`** claimed `category/cursive-fonts/`, which
+  `nl/cursieve-letters/` already owns — and in Dutch those are two different
+  concepts: *cursief* is italic/slanted (what the Word button does), while
+  *sierletters* are ornamental/calligraphic. GSC confirms the split, decisively
+  and in the surprising direction: sierlijke-letters draws **1,768 imp / 45
+  clicks** ("sierletters" alone 795/29) against cursieve-letters' 200 imp / 1
+  click, despite being the smaller, less-linked page. Merging would have 301'd
+  away the best-performing NL asset on the site. No EN "sierletters" parent
+  exists; ratified as local-only. Rule 3 was applied in the same change —
+  `nl/cursieve-letters/` had "sierlijke letters A–Z" in its own `<title>` and
+  meta description, i.e. the hub was targeting the spoke's head term; that is
+  now "cursief schrift A–Z".
+
 **Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
 `fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
 `fr/` near-duplicate pages `ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md` §2c
