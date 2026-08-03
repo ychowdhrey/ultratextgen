@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/fathers-day/",
 
+  "occurrence": {"type": "nth_weekday", "month": 6, "weekday": "sunday", "n": 3},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",
@@ -74,57 +75,124 @@
   "phrase_bank": [
     {
       "text": "Happy Father's Day",
-      "native_script": "Happy Father's Day",
-      "romanization": "Happy Father's Day",
-      "translation": "The universal greeting — safe on any card, text, or caption.",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The one that always works."
     },
     {
-      "text": "World's Best Dad",
-      "native_script": "World's Best Dad",
-      "romanization": "World's Best Dad",
-      "translation": "The classic line for a mug, card, or banner.",
-      "needs_native_speaker_review": false
+      "text": "Happy Father's Day, Dad",
+      "group": "Classic greetings",
+      "translation": "Swap Dad for Papa, Baba, Abba — whatever you call him."
     },
     {
-      "text": "Love You Dad",
-      "native_script": "Love You Dad",
-      "romanization": "Love You Dad",
-      "translation": "Short and sincere — works for a text or a card sign-off.",
-      "needs_native_speaker_review": false
+      "text": "Wishing you a great Father's Day",
+      "group": "Classic greetings",
+      "translation": "Card-length version."
     },
     {
-      "text": "Thanks for Always Being There",
-      "native_script": "Thanks for Always Being There",
-      "romanization": "Thanks for Always Being There",
-      "translation": "A heartfelt line for a dad who's shown up consistently.",
-      "needs_native_speaker_review": false
+      "text": "Thanks for everything, Dad",
+      "group": "Classic greetings",
+      "translation": "Plain gratitude, no fuss."
     },
     {
-      "text": "To the Best Dad Ever",
-      "native_script": "To the Best Dad Ever",
-      "romanization": "To the Best Dad Ever",
-      "translation": "A warm, simple card-front line.",
-      "needs_native_speaker_review": false
+      "text": "Happy Father's Day to you too",
+      "group": "Replies",
+      "translation": "Plain reply between fathers."
     },
     {
-      "text": "My Hero, My Dad",
-      "native_script": "My Hero, My Dad",
-      "romanization": "My Hero, My Dad",
-      "translation": "A proud, admiring line for a card or caption.",
-      "needs_native_speaker_review": false
+      "text": "Thanks — appreciate it",
+      "group": "Replies",
+      "translation": "Understated reply."
     },
     {
-      "text": "Feliz Dia del Padre",
-      "native_script": "Feliz Día del Padre",
-      "romanization": "Feliz Día del Padre",
-      "translation": "Spanish for \"Happy Father's Day\" — a globally recognized greeting.",
-      "needs_native_speaker_review": true
+      "text": "You made it look easy. It wasn't",
+      "group": "For your father",
+      "translation": "Sincere, card-length line."
+    },
+    {
+      "text": "Everything I know about showing up, I learnt from you",
+      "group": "For your father",
+      "translation": "Warm and specific."
+    },
+    {
+      "text": "Thanks for the bad jokes and the good advice",
+      "group": "For your father",
+      "translation": "Affectionate and light."
+    },
+    {
+      "text": "Still trying to be as steady as you",
+      "group": "For your father",
+      "translation": "Quiet, sincere wording."
+    },
+    {
+      "text": "You never made a fuss. I noticed anyway",
+      "group": "For your father",
+      "translation": "For understated fathers."
+    },
+    {
+      "text": "Happy Father's Day to the best one they could've got",
+      "group": "For a partner",
+      "translation": "From a partner about their children's father."
+    },
+    {
+      "text": "Watching you be their dad is the best thing",
+      "group": "For a partner",
+      "translation": "Warm and specific."
+    },
+    {
+      "text": "Thank you for how you show up for them",
+      "group": "For a partner",
+      "translation": "Short and sincere."
+    },
+    {
+      "text": "Happy Father's Day to all the dads out there",
+      "group": "For friends & others",
+      "translation": "Inclusive group message."
+    },
+    {
+      "text": "Happy Father's Day to the grandads too",
+      "group": "For friends & others",
+      "translation": "Includes grandfathers."
+    },
+    {
+      "text": "Thinking of you today",
+      "group": "For friends & others",
+      "translation": "For someone whose Father's Day is hard."
+    },
+    {
+      "text": "Happy Father's Day to the friends doing it right",
+      "group": "For friends & others",
+      "translation": "For friends who are parents."
+    },
+    {
+      "text": "Happy Father's Day",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Dad, always",
+      "group": "Short for a caption",
+      "translation": "Short and warm."
+    },
+    {
+      "text": "The original legend",
+      "group": "Short for a caption",
+      "translation": "Playful caption for an old photo."
+    },
+    {
+      "text": "Like father, like me",
+      "group": "Short for a caption",
+      "translation": "For a side-by-side photo."
+    },
+    {
+      "text": "Best in the business",
+      "group": "Short for a caption",
+      "translation": "Light and affectionate."
     }
   ],
 
   "companion_answer_slug": "fathers-day-messages-what-to-write",
 
+  "phrase_cta": "Not sure what to write yet? See <a href=\"{href}\">what to write in a Father's Day card or message</a> for more lines and how to pick one.",
   "related": [
     {
       "href": "/category/gothic-fonts/",

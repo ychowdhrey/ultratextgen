@@ -1,0 +1,280 @@
+{
+  "slug": "islam-gihou",
+  "lang": "ko",
+  "title": "이슬람 기호 복사 ☪ ﷲ ﷺ 초승달과 별·아랍어 합자",
+  "meta_description": "이슬람 관련 기호 복사 모음 — 초승달과 별, 알라와 바스말라 합자, 모스크와 기도 이모지, 이드 인사말. 눌러서 바로 복사하세요.",
+  "breadcrumb": "이슬람 기호",
+  "hero_h1": "이슬람 기호",
+  "hero_tagline": "초승달과 별, 아랍어 경칭 합자, 모스크와 기도 문자, 라마단 인사말. 아무 기호나 눌러 바로 복사하세요.",
+  "intro": "유니코드의 이슬람 관련 기호는 널리 알려진 초승달과 별 ☪ 하나로 끝나지 않습니다. 아랍 문자 표현형 블록에는 완전한 경칭 합자가 들어 있습니다. 한 글자로 '알라'(ﷲ), 예언자의 이름 뒤에 붙이는 축복문(ﷺ), 바스말라 전체(﷽)를 나타내는 문자들입니다. 이 페이지는 그 합자들을 모스크, 카바, 기도 이모지와 함께 모았습니다. 라마단과 이드 인사말, 프로필, 신앙을 담은 게시물에 쓰이도록 정중하게 정리했습니다. 경칭 합자는 그 무게에 걸맞은 존중을 담아 사용해 주세요.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ko/library/islam-gihou/",
+  "home_url": "https://ultratextgen.com/ko/",
+  "crumb_home": "홈",
+  "library_url": "https://ultratextgen.com/ko/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/islamic-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/islamische-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-islamiques/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-islami/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-islamici/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/islamic-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/islam-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/islamitische-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-islamskie/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-islamicos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/islamskie-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/islamic-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/islami-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/islamic-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "star-crescent",
+      "label": "초승달과 별",
+      "h2": "초승달과 별 기호",
+      "intro": "초승달과 별 — 이슬람과 가장 널리 연결되어 알려진 상징입니다.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "초승달과 별"
+        },
+        {
+          "char": "☪️",
+          "label": "초승달과 별 (이모지)"
+        },
+        {
+          "char": "☫",
+          "label": "파르시 기호 (이란 상징)"
+        },
+        {
+          "char": "🌙",
+          "label": "초승달"
+        },
+        {
+          "char": "☽",
+          "label": "상현달"
+        },
+        {
+          "char": "☾",
+          "label": "하현달"
+        },
+        {
+          "char": "⭐",
+          "label": "별"
+        },
+        {
+          "char": "✨",
+          "label": "반짝임"
+        }
+      ]
+    },
+    {
+      "id": "arabic-ligatures",
+      "label": "합자",
+      "h2": "아랍어 경칭 합자",
+      "intro": "한 글자로 신성한 낱말과 경칭 전체를 나타내는 유니코드 문자입니다. 신중하게 사용해 주세요.",
+      "symbols": [
+        {
+          "char": "ﷲ",
+          "label": "알라 합자"
+        },
+        {
+          "char": "ﷺ",
+          "label": "살랄라후 알라이히 와살람 합자"
+        },
+        {
+          "char": "﷽",
+          "label": "비스밀라히 라흐마니 라힘 합자"
+        },
+        {
+          "char": "ﷻ",
+          "label": "잘라 잘랄루후 합자"
+        },
+        {
+          "char": "ﷴ",
+          "label": "무함마드 합자"
+        },
+        {
+          "char": "۞",
+          "label": "루브 알히즈브 시작 표시"
+        },
+        {
+          "char": "۝",
+          "label": "아야(절) 끝 표시"
+        }
+      ]
+    },
+    {
+      "id": "mosque-worship",
+      "label": "예배 장소",
+      "h2": "모스크와 카바",
+      "intro": "모스크, 메카의 카바, 예배 전반을 나타내는 이모지.",
+      "symbols": [
+        {
+          "char": "🕌",
+          "label": "모스크"
+        },
+        {
+          "char": "🕋",
+          "label": "카바"
+        },
+        {
+          "char": "🛐",
+          "label": "예배 장소"
+        }
+      ]
+    },
+    {
+      "id": "prayer-devotion",
+      "label": "기도",
+      "h2": "기도와 신앙",
+      "intro": "살라트, 두아, 일상의 신앙 생활을 나타내는 문자.",
+      "symbols": [
+        {
+          "char": "📿",
+          "label": "기도 묵주"
+        },
+        {
+          "char": "🤲",
+          "label": "두 손바닥 위로"
+        },
+        {
+          "char": "🧎",
+          "label": "무릎 꿇은 사람"
+        },
+        {
+          "char": "🧕",
+          "label": "히잡 쓴 여성"
+        }
+      ]
+    },
+    {
+      "id": "ramadan-eid",
+      "label": "라마단과 이드",
+      "h2": "라마단과 이드 축하",
+      "intro": "이프타르 초대, 이드 게시물, 가족 인사에 쓰는 축하 문자.",
+      "symbols": [
+        {
+          "char": "🎊",
+          "label": "색종이 공"
+        },
+        {
+          "char": "🎉",
+          "label": "파티 크래커"
+        },
+        {
+          "char": "🍬",
+          "label": "사탕"
+        },
+        {
+          "char": "🐑",
+          "label": "양"
+        },
+        {
+          "char": "🌴",
+          "label": "야자나무"
+        },
+        {
+          "char": "🫖",
+          "label": "찻주전자"
+        }
+      ]
+    },
+    {
+      "id": "islamic-greetings",
+      "label": "인사말",
+      "h2": "라마단·이드 인사말 조합",
+      "intro": "바로 쓸 수 있는 정중한 인사말 — 버튼을 누르면 전체 조합이 한 번에 복사됩니다.",
+      "symbols": [
+        {
+          "char": "☪️🌙 Ramadan Mubarak 🌙☪️",
+          "label": "'Ramadan Mubarak' 인사말"
+        },
+        {
+          "char": "🕌✨ Eid Mubarak ✨🕌",
+          "label": "'Eid Mubarak' 인사말"
+        },
+        {
+          "char": "🤲📿 Jumma Mubarak 📿🤲",
+          "label": "'Jumma Mubarak' 인사말"
+        }
+      ]
+    }
+  ],
+  "cta": "UltraTextGen으로 일반 텍스트를 굵게, 기울임, 필기체 등 100가지가 넘는 유니코드 폰트로 바꿔보세요 — 무료로 바로.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "종교 기호",
+      "desc": "세계 여러 전통의 신앙과 영성 기호."
+    },
+    {
+      "href": "/ko/library/byeol-giho/",
+      "title": "별 기호",
+      "desc": "별, 별표, 반짝임 기호 모음."
+    },
+    {
+      "href": "/library/moon-celestial-symbols/",
+      "title": "달·천체 기호",
+      "desc": "달의 위상, 별, 천체 기호."
+    },
+    {
+      "href": "/ko/symbol/pyeonghwa-giho/",
+      "title": "평화 기호 (☮)",
+      "desc": "평화 기호의 유래와 쓰임새."
+    }
+  ]
+}

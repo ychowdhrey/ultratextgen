@@ -17,6 +17,9 @@
 
   "canonical": "https://ultratextgen.com/events/chinese-new-year/",
 
+  "native_section_heading": "Chinese New Year Greetings in Chinese Characters",
+  "native_script_language": "Chinese",
+  "occurrence": {"type": "chinese", "month": 1, "day": 1, "calendar_name": "the Chinese lunisolar calendar"},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",
@@ -93,65 +96,179 @@
 
   "phrase_bank": [
     {
-      "text": "Xin Nian Kuai Le",
-      "native_script": "新年快乐",
-      "romanization": "Xīnnián kuàilè",
-      "translation": "Happy New Year",
+      "text": "Gong Xi Fa Cai",
+      "group": "Classic greetings",
+      "native_script": "恭喜发财",
+      "romanization": "Gōngxǐ fācái",
+      "translation": "Wishing you prosperity — the most recognised CNY greeting.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "Gong Xi Fa Cai",
-      "native_script": "恭喜发财",
-      "romanization": "Gōngxǐ fācái",
-      "translation": "Wishing you prosperity",
+      "text": "Xin Nian Kuai Le",
+      "group": "Classic greetings",
+      "native_script": "新年快乐",
+      "romanization": "Xīnnián kuàilè",
+      "translation": "Happy New Year — the direct, all-purpose greeting.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Gong Hey Fat Choy",
+      "group": "Classic greetings",
+      "native_script": "恭喜發財",
+      "romanization": "Gung hei fat choi",
+      "translation": "The Cantonese pronunciation of Gong Xi Fa Cai, in traditional characters.",
       "needs_native_speaker_review": true
     },
     {
       "text": "Wan Shi Ru Yi",
+      "group": "Classic greetings",
       "native_script": "万事如意",
       "romanization": "Wànshì rúyì",
-      "translation": "May everything go as you wish",
+      "translation": "May everything go as you wish.",
       "needs_native_speaker_review": true
     },
     {
       "text": "Nian Nian You Yu",
+      "group": "Classic greetings",
       "native_script": "年年有余",
       "romanization": "Niánnián yǒuyú",
-      "translation": "May there be abundance every year",
+      "translation": "May you have abundance every year — the greeting behind the fish dish.",
       "needs_native_speaker_review": true
+    },
+    {
+      "text": "Happy Lunar New Year",
+      "group": "Classic greetings",
+      "translation": "Inclusive English version, used across East and Southeast Asia."
+    },
+    {
+      "text": "Tong Xi Tong Xi",
+      "group": "Replies",
+      "native_script": "同喜同喜",
+      "romanization": "Tóngxǐ tóngxǐ",
+      "translation": "The same to you — the classic reply to Gong Xi Fa Cai.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Ni Ye Yi Yang",
+      "group": "Replies",
+      "native_script": "你也一样",
+      "romanization": "Nǐ yě yīyàng",
+      "translation": "You too — a simple, casual reply.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Happy New Year to you too!",
+      "group": "Replies",
+      "translation": "Plain English reply."
     },
     {
       "text": "Shen Ti Jian Kang",
+      "group": "For family",
       "native_script": "身体健康",
       "romanization": "Shēntǐ jiànkāng",
-      "translation": "Wishing you good health",
+      "translation": "Wishing you good health — the standard wish for elders.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "He Jia Huan Le",
-      "native_script": "合家欢乐",
-      "romanization": "Héjiā huānlè",
-      "translation": "Happiness for the whole family",
+      "text": "Wishing you health and happiness in the new year",
+      "group": "For family",
+      "translation": "Warm family card wording."
+    },
+    {
+      "text": "Happy New Year to the whole family",
+      "group": "For family",
+      "translation": "For the family group chat."
+    },
+    {
+      "text": "Xue Ye Jin Bu",
+      "group": "For family",
+      "native_script": "学业进步",
+      "romanization": "Xuéyè jìnbù",
+      "translation": "Progress in your studies — said to students and children.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "Jin Yu Man Tang",
-      "native_script": "金玉满堂",
-      "romanization": "Jīnyù mǎntáng",
-      "translation": "May treasures fill your home",
+      "text": "Missing the reunion dinner this year — Happy New Year",
+      "group": "For family",
+      "translation": "For family you can't travel to."
+    },
+    {
+      "text": "Happy New Year! Red packets please",
+      "group": "For friends",
+      "translation": "Playful nod to hongbao."
+    },
+    {
+      "text": "Gong Xi Fa Cai — hongbao na lai",
+      "group": "For friends",
+      "native_script": "恭喜发财，红包拿来",
+      "romanization": "Gōngxǐ fācái, hóngbāo ná lái",
+      "translation": "Wishing you prosperity, now hand over the red packet — the classic joke version.",
       "needs_native_speaker_review": true
     },
     {
-      "text": "Chu Xi Kuai Le",
-      "native_script": "除夕快乐",
-      "romanization": "Chúxì kuàilè",
-      "translation": "Happy New Year's Eve",
+      "text": "New year, same me, better snacks",
+      "group": "For friends",
+      "translation": "Light, casual caption-style message."
+    },
+    {
+      "text": "Happy Lunar New Year, friend",
+      "group": "For friends",
+      "translation": "Simple and warm."
+    },
+    {
+      "text": "Sheng Yi Xing Long",
+      "group": "Formal & work",
+      "native_script": "生意兴隆",
+      "romanization": "Shēngyì xīnglóng",
+      "translation": "May your business flourish — the standard wish to a business owner.",
       "needs_native_speaker_review": true
+    },
+    {
+      "text": "Bu Bu Gao Sheng",
+      "group": "Formal & work",
+      "native_script": "步步高升",
+      "romanization": "Bùbù gāoshēng",
+      "translation": "May you rise step by step — a career wish for colleagues.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Wishing you a prosperous and successful new year",
+      "group": "Formal & work",
+      "translation": "Safe for clients and colleagues."
+    },
+    {
+      "text": "Happy Lunar New Year from all of us",
+      "group": "Formal & work",
+      "translation": "Team or company-wide message."
+    },
+    {
+      "text": "Gong Xi Fa Cai",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "新年快乐",
+      "group": "Short for a caption",
+      "native_script": "新年快乐",
+      "romanization": "Xīnnián kuàilè",
+      "translation": "Native-script caption — pastes anywhere.",
+      "needs_native_speaker_review": true
+    },
+    {
+      "text": "Year of good fortune",
+      "group": "Short for a caption",
+      "translation": "Short and evergreen."
+    },
+    {
+      "text": "Red and gold season",
+      "group": "Short for a caption",
+      "translation": "Playful caption for outfit or decor photos."
     }
   ],
 
   "companion_answer_slug": "cny-greetings-what-to-say",
 
+  "phrase_cta": "Not sure which greeting fits? Read <a href=\"{href}\">what to say for Chinese New Year</a> for the full breakdown of native script, romanization, and meaning.",
   "related": [
     {
       "href": "/library/chinese-symbols/",

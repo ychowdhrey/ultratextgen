@@ -1,0 +1,420 @@
+{
+  "slug": "religioznye-simvoly",
+  "lang": "ru",
+  "title": "Религиозные символы: скопировать ✝ ☪ ✡ ☸",
+  "meta_description": "Смотрите и копируйте религиозные, духовные и связанные с верой символы Unicode из крупнейших мировых традиций. Нажмите на любой символ, чтобы скопировать его мгновенно.",
+  "breadcrumb": "Религиозные и духовные символы",
+  "hero_h1": "Религиозные и духовные символы",
+  "hero_tagline": "Справочная коллекция религиозных, духовных и связанных с верой символов Unicode из крупнейших мировых традиций. Нажмите на любой символ, чтобы сразу его скопировать.",
+  "intro": "В этой библиотеке собраны символы христианства, ислама, иудаизма, индуизма, буддизма и других мировых традиций, а также универсальные духовные символы и знаки мира. Всё сгруппировано по религиозной традиции и категории.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/ru/library/religioznye-simvoly/",
+  "home_url": "https://ultratextgen.com/ru/",
+  "crumb_home": "Главная",
+  "library_url": "https://ultratextgen.com/ru/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    },
+    {
+      "lang": "no",
+      "href": "https://ultratextgen.com/no/library/korssymboler/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/religious-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/religioese-symbole/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-religieux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-keagamaan/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-religiosi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/religious-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/jonggyo-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/religieuze-symbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-religijne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-religiosos/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/religioznye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/religious-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/dini-semboller/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/religious-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "christian",
+      "label": "Христианские",
+      "h2": "Кресты и христианские символы",
+      "intro": "Варианты креста в Unicode и знаки, связанные с церковью, в христианских традициях.",
+      "symbols": [
+        {
+          "char": "✝",
+          "label": "Латинский крест"
+        },
+        {
+          "char": "☦",
+          "label": "Православный крест"
+        },
+        {
+          "char": "✞",
+          "label": "Крест с тенью"
+        },
+        {
+          "char": "✟",
+          "label": "Контурный крест"
+        },
+        {
+          "char": "♰",
+          "label": "Западносирийский крест"
+        },
+        {
+          "char": "♱",
+          "label": "Восточносирийский крест"
+        },
+        {
+          "char": "⛪",
+          "label": "Церковь"
+        },
+        {
+          "char": "✠",
+          "label": "Мальтийский крест"
+        }
+      ]
+    },
+    {
+      "id": "islamic",
+      "label": "Исламские",
+      "h2": "Исламские символы",
+      "intro": "Полумесяц, мечеть и другие знаки, связанные с исламской традицией.",
+      "symbols": [
+        {
+          "char": "☪",
+          "label": "Звезда и полумесяц"
+        },
+        {
+          "char": "🕌",
+          "label": "Мечеть"
+        },
+        {
+          "char": "🕋",
+          "label": "Кааба"
+        },
+        {
+          "char": "📿",
+          "label": "Чётки"
+        },
+        {
+          "char": "﷽",
+          "label": "Лигатура басмалы"
+        }
+      ]
+    },
+    {
+      "id": "jewish",
+      "label": "Иудейские",
+      "h2": "Иудейские символы",
+      "intro": "Звезда Давида, менора и другие знаки иудейской традиции.",
+      "symbols": [
+        {
+          "char": "✡",
+          "label": "Звезда Давида"
+        },
+        {
+          "char": "🕍",
+          "label": "Синагога"
+        },
+        {
+          "char": "🕎",
+          "label": "Менора"
+        }
+      ]
+    },
+    {
+      "id": "dharmic",
+      "label": "Дхармические",
+      "h2": "Символы дхармических религий",
+      "intro": "Знаки индуизма, буддизма, джайнизма и сикхизма.",
+      "symbols": [
+        {
+          "char": "☸",
+          "label": "Колесо Дхармы"
+        },
+        {
+          "char": "🕉",
+          "label": "Ом (эмодзи)"
+        },
+        {
+          "char": "卍",
+          "label": "Мандзи (буддийский знак благополучия, повёрнут влево)"
+        },
+        {
+          "char": "☬",
+          "label": "Ади Шакти (кханда)"
+        },
+        {
+          "char": "🛕",
+          "label": "Индуистский храм"
+        },
+        {
+          "char": "🪯",
+          "label": "Кханда (эмодзи)"
+        },
+        {
+          "char": "🔱",
+          "label": "Тришула (трезубец)"
+        },
+        {
+          "char": "ॐ",
+          "label": "Ом (деванагари)"
+        },
+        {
+          "char": "🦚",
+          "label": "Павлин"
+        },
+        {
+          "char": "🪶",
+          "label": "Перо павлина"
+        },
+        {
+          "char": "🪈",
+          "label": "Флейта"
+        },
+        {
+          "char": "🪷",
+          "label": "Лотос"
+        },
+        {
+          "char": "🪔",
+          "label": "Светильник дия"
+        },
+        {
+          "char": "🙏",
+          "label": "Сложенные ладони"
+        },
+        {
+          "char": "🧘",
+          "label": "Человек в позе лотоса (медитация)"
+        }
+      ]
+    },
+    {
+      "id": "east-asian",
+      "label": "Восточная Азия",
+      "h2": "Восточноазиатские духовные символы",
+      "intro": "Знаки даосизма, синтоизма и других традиций Восточной Азии.",
+      "symbols": [
+        {
+          "char": "☯",
+          "label": "Инь-ян"
+        },
+        {
+          "char": "☰",
+          "label": "Триграмма неба"
+        },
+        {
+          "char": "☱",
+          "label": "Триграмма озера"
+        },
+        {
+          "char": "☲",
+          "label": "Триграмма огня"
+        },
+        {
+          "char": "☳",
+          "label": "Триграмма грома"
+        },
+        {
+          "char": "☴",
+          "label": "Триграмма ветра"
+        },
+        {
+          "char": "☵",
+          "label": "Триграмма воды"
+        },
+        {
+          "char": "☶",
+          "label": "Триграмма горы"
+        },
+        {
+          "char": "☷",
+          "label": "Триграмма земли"
+        },
+        {
+          "char": "⛩",
+          "label": "Синтоистское святилище (тории)"
+        },
+        {
+          "char": "卐",
+          "label": "Восточноазиатская свастика благополучия (повёрнута вправо)"
+        }
+      ]
+    },
+    {
+      "id": "yin-yang-lines",
+      "label": "Черты",
+      "h2": "Черты инь и ян",
+      "intro": "Одиночные и двойные черты, из которых складываются приведённые выше триграммы «И цзин».",
+      "symbols": [
+        {
+          "char": "⚊",
+          "label": "Черта ян"
+        },
+        {
+          "char": "⚋",
+          "label": "Черта инь"
+        },
+        {
+          "char": "⚌",
+          "label": "Двойная черта — старший ян"
+        },
+        {
+          "char": "⚍",
+          "label": "Двойная черта — младшая инь"
+        },
+        {
+          "char": "⚎",
+          "label": "Двойная черта — младший ян"
+        },
+        {
+          "char": "⚏",
+          "label": "Двойная черта — старшая инь"
+        }
+      ]
+    },
+    {
+      "id": "spiritual",
+      "label": "Универсальные духовные",
+      "h2": "Универсальные духовные символы",
+      "intro": "Знаки, используемые в нескольких традициях или признанные повсеместно.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Символ мира"
+        },
+        {
+          "char": "⚛",
+          "label": "Символ атома"
+        },
+        {
+          "char": "🔯",
+          "label": "Шестиконечная звезда с точкой"
+        },
+        {
+          "char": "⚕",
+          "label": "Жезл Асклепия"
+        },
+        {
+          "char": "☥",
+          "label": "Анкх"
+        }
+      ]
+    },
+    {
+      "id": "peace-gestures-goodwill",
+      "label": "Мир и доброжелательность",
+      "h2": "Мир, жесты и доброжелательность",
+      "intro": "Жесты, голуби и знаки доброй воли, дополняющие символ мира выше.",
+      "symbols": [
+        {
+          "char": "✌️",
+          "label": "Знак «виктория»"
+        },
+        {
+          "char": "🙏",
+          "label": "Сложенные ладони"
+        },
+        {
+          "char": "🕊️",
+          "label": "Голубь"
+        },
+        {
+          "char": "🫒",
+          "label": "Олива"
+        },
+        {
+          "char": "🌿",
+          "label": "Оливковая ветвь"
+        },
+        {
+          "char": "🤝",
+          "label": "Рукопожатие"
+        },
+        {
+          "char": "🫶",
+          "label": "Сердечко из рук"
+        },
+        {
+          "char": "👐",
+          "label": "Раскрытые ладони"
+        }
+      ]
+    }
+  ],
+  "cta": "Используйте UltraTextGen, чтобы превратить обычный текст в жирный, курсивный, рукописный и более 100 других стилей Unicode-шрифтов — бесплатно и мгновенно.",
+  "related": [
+    {
+      "href": "/ru/library/islamskie-simvoly/",
+      "title": "Исламские символы",
+      "desc": "Звезда и полумесяц, арабские лигатуры и поздравления с Ид."
+    },
+    {
+      "href": "/ru/library/serdechki/",
+      "title": "Сердечки",
+      "desc": "Сердца ♥ ♡ ❤ всех форм и стилей."
+    },
+    {
+      "href": "/ru/symbol/znak-mira/",
+      "title": "Символ мира (☮)",
+      "desc": "История и использование символа мира."
+    },
+    {
+      "href": "/ru/symbol/in-yan/",
+      "title": "Символ инь-ян (☯)",
+      "desc": "Значение и происхождение символа инь и ян."
+    }
+  ]
+}

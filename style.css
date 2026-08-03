@@ -3583,6 +3583,66 @@ button.clear-decoration {
   text-align: center;
 }
 
+/* Game selector — the first decision, because it decides whether decoration is
+   even legal in the field the player is filling. */
+.ts-game-row {
+  max-width: 720px;
+  margin: 0 auto 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ts-game-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ts-game-select {
+  flex: 1 1 220px;
+  padding: 0.55rem 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+
+.ts-game-select:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+
+/* Verdict panel — empty and invisible until a game is picked. */
+.ts-verdict:empty { display: none; }
+
+.ts-verdict {
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-light);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  font-size: 0.95rem;
+}
+
+.ts-verdict.is-ok { border-left-color: var(--ts-safe); }
+.ts-verdict.is-fail { border-left-color: var(--ts-fail); }
+.ts-verdict.is-info { border-left-color: var(--accent-blue); }
+
+.ts-verdict-head { font-weight: 600; color: var(--text-primary); }
+.ts-verdict-line { margin-top: 0.4rem; color: var(--text-primary); }
+.ts-verdict.is-ok .ts-verdict-line { color: var(--ts-safe); font-weight: 600; }
+.ts-verdict.is-fail .ts-verdict-line { color: var(--ts-fail); font-weight: 600; }
+.ts-verdict-line.is-over { color: var(--ts-fail); font-weight: 700; }
+
+.ts-verdict-note {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
 .ts-studio {
   display: flex;
   flex-direction: column;
@@ -8225,4 +8285,242 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .pt-bridge {
   border-left: 3px solid var(--accent-purple);
   padding-left: 1rem;
+}
+
+/* Event phrase bank — optional grouped layout.
+   The bank's container is a .compare-grid; when the spec gives its phrases a
+   `group`, eventPageController.js emits one labelled block per group. Each
+   block spans the full row so its own nested grid controls the columns. */
+.event-phrase-group {
+  grid-column: 1 / -1;
+}
+
+.event-phrase-group-title {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 1rem 0 0;
+}
+
+.event-phrase-group:first-child .event-phrase-group-title {
+  margin-top: 0;
+}
+
+/* Next-occurrence line under an event page's hero tagline. Static for
+   fixed-date events, filled in at runtime for lunar ones (js/events/eventDates.js). */
+.event-next-date {
+  margin: .5rem 0 0;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+}
+
+/* Native-script copy tiles on event pages ("<Event> in Arabic/Hindi/Chinese").
+   Wider than a normal .glyph-copy tile because the payload is a phrase, not a
+   single glyph, and it carries its romanization underneath. */
+.event-native-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+  min-width: 0;
+  padding: .75rem 1rem;
+  height: auto;
+  line-height: 1.4;
+}
+
+.event-native-script {
+  font-size: 1.25rem;
+}
+
+.event-native-roman {
+  font-size: .75rem;
+  color: var(--text-secondary);
+}
+
+/* /events/ hub cards — emoji marker plus the next-occurrence chip.
+   Order and the lunar chips are set at runtime by js/events/eventDates.js. */
+.event-hub-emoji {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+
+.event-hub-when {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin: 0 0 .35rem;
+}
+
+.event-hub-when:empty {
+  display: none;
+}
+
+/* ============================================================
+   Instagram surface router (/instagram/ and its locale siblings)
+   Pick the field the text is going into; the counter rebinds to
+   that field's real limit and the verdict states whether styled
+   text survives there. Uses the shared --ts-* safety tokens.
+   ============================================================ */
+.ig-surface {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.ig-surface-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.ig-surface-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ig-surface-tab {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ig-surface-tab:hover,
+.ig-surface-tab.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.ig-counter {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ig-counter.over {
+  color: var(--ts-fail);
+  font-weight: 600;
+}
+
+.ig-verdict {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.ig-verdict::before {
+  content: "●";
+  font-size: 0.7rem;
+  line-height: 1.9;
+  flex-shrink: 0;
+}
+
+.ig-verdict[data-status="safe"] { border-color: var(--ts-safe); }
+.ig-verdict[data-status="safe"]::before { color: var(--ts-safe); }
+.ig-verdict[data-status="partial"] { border-color: var(--ts-risk); }
+.ig-verdict[data-status="partial"]::before { color: var(--ts-risk); }
+.ig-verdict[data-status="blocked"] { border-color: var(--ts-fail); }
+.ig-verdict[data-status="blocked"]::before { color: var(--ts-fail); }
+
+.ig-verdict-detail {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Where-it-works matrix ---------------------------------------- */
+.ig-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.92rem;
+}
+
+.ig-matrix th,
+.ig-matrix td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ig-matrix th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ig-matrix td:first-child { font-weight: 600; }
+
+.ig-yes { color: var(--ts-safe); font-weight: 600; }
+.ig-partial { color: var(--ts-risk); font-weight: 600; }
+.ig-no { color: var(--ts-fail); font-weight: 600; }
+
+.ig-matrix-wrap { overflow-x: auto; }
+
+/* Spoke routing cards ------------------------------------------ */
+.ig-routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.ig-route {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ig-route:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+
+.ig-route-title {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.ig-route-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
 }

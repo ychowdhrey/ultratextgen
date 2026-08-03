@@ -1,0 +1,380 @@
+{
+  "slug": "muzik-sembolleri",
+  "lang": "tr",
+  "title": "Müzik Sembolleri: Kopyala Yapıştır Nota İşaretleri ♪ ♫",
+  "meta_description": "Müzik notası sembollerine, enstrüman emojilerine ve sesle ilgili Unicode karakterlerine göz at ve kopyala. Herhangi bir sembole tıkla, anında kopyalansın.",
+  "breadcrumb": "Müzik Sembolleri",
+  "hero_h1": "Müzik Sembolleri",
+  "hero_tagline": "Müzik notası sembolleri, enstrüman emojileri ve sesle ilgili Unicode karakterlerinden oluşan bir başvuru koleksiyonu. Anında kopyalamak için herhangi bir sembole tıkla.",
+  "intro": "Bu kütüphanede nota ve müzik yazım sembolleri, enstrüman emojileri ve sesle ilgili Unicode karakterleri yer alıyor. Semboller kategoriye göre gruplandı: nota yazım işaretleri, enstrümanlar ve oynatma kontrolleri.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/tr/library/muzik-sembolleri/",
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "library_url": "https://ultratextgen.com/tr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Notalar",
+      "h2": "Müzik Notaları",
+      "intro": "Unicode nota sembolleri ve notaları temsil eden emojiler.",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "Dörtlük nota"
+        },
+        {
+          "char": "♪",
+          "label": "Sekizlik nota"
+        },
+        {
+          "char": "♫",
+          "label": "Bağlı sekizlik notalar"
+        },
+        {
+          "char": "♬",
+          "label": "On altılık notalar"
+        },
+        {
+          "char": "🎵",
+          "label": "Nota"
+        },
+        {
+          "char": "🎶",
+          "label": "Notalar"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Anahtarlar",
+      "h2": "Anahtar Sembolleri",
+      "intro": "Nota yazımında kullanılan müzik anahtarları.",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "Sol anahtarı"
+        },
+        {
+          "char": "𝄡",
+          "label": "Do anahtarı"
+        },
+        {
+          "char": "𝄢",
+          "label": "Fa anahtarı"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Değiştirme İşaretleri",
+      "h2": "Değiştirme İşaretleri",
+      "intro": "Sesin perdesini değiştiren diyez, bemol, natürel ve çift işaretler.",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "Diyez"
+        },
+        {
+          "char": "♭",
+          "label": "Bemol"
+        },
+        {
+          "char": "♮",
+          "label": "Natürel"
+        },
+        {
+          "char": "𝄪",
+          "label": "Çift diyez"
+        },
+        {
+          "char": "𝄫",
+          "label": "Çift bemol"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Nüans ve Yazım",
+      "h2": "Nüans ve Yazım İşaretleri",
+      "intro": "Ses şiddetini gösteren nüans işaretleri ve nota yazım sembolleri.",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "Piano (hafif)"
+        },
+        {
+          "char": "𝆑",
+          "label": "Forte (kuvvetli)"
+        },
+        {
+          "char": "𝄀",
+          "label": "Ölçü çizgisi"
+        },
+        {
+          "char": "𝄁",
+          "label": "Çift ölçü çizgisi"
+        },
+        {
+          "char": "𝄂",
+          "label": "Bitiş çizgisi"
+        },
+        {
+          "char": "𝄃",
+          "label": "Ters bitiş çizgisi"
+        },
+        {
+          "char": "𝄆",
+          "label": "Tekrar işareti (başlangıç)"
+        },
+        {
+          "char": "𝄇",
+          "label": "Tekrar işareti (bitiş)"
+        },
+        {
+          "char": "𝄐",
+          "label": "Uzatma işareti"
+        },
+        {
+          "char": "𝄑",
+          "label": "Alttan uzatma işareti"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Suslar",
+      "h2": "Sus Sembolleri",
+      "intro": "Nota yazımında sessizliği gösteren sus işaretleri.",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "Sekizlik sus"
+        },
+        {
+          "char": "𝄿",
+          "label": "On altılık sus"
+        },
+        {
+          "char": "𝄻",
+          "label": "İkilik sus"
+        },
+        {
+          "char": "𝄼",
+          "label": "Dörtlük sus"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Enstrümanlar",
+      "h2": "Müzik Enstrümanı Emojileri",
+      "intro": "Müzik enstrümanlarını temsil eden emojiler.",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "Gitar"
+        },
+        {
+          "char": "🎹",
+          "label": "Piyano"
+        },
+        {
+          "char": "🎺",
+          "label": "Trompet"
+        },
+        {
+          "char": "🎻",
+          "label": "Keman"
+        },
+        {
+          "char": "🎷",
+          "label": "Saksofon"
+        },
+        {
+          "char": "🥁",
+          "label": "Davul"
+        },
+        {
+          "char": "🪕",
+          "label": "Banjo"
+        },
+        {
+          "char": "🪗",
+          "label": "Akordeon"
+        },
+        {
+          "char": "🪘",
+          "label": "Uzun davul"
+        },
+        {
+          "char": "🪇",
+          "label": "Marakas"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Ses ve Oynatma",
+      "h2": "Ses ve Oynatma",
+      "intro": "Sesle, hoparlörlerle ve ses kontrolleriyle ilgili semboller.",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "Mikrofon"
+        },
+        {
+          "char": "🎧",
+          "label": "Kulaklık"
+        },
+        {
+          "char": "📻",
+          "label": "Radyo"
+        },
+        {
+          "char": "🔊",
+          "label": "Yüksek sesli hoparlör"
+        },
+        {
+          "char": "🔇",
+          "label": "Sesi kapalı hoparlör"
+        },
+        {
+          "char": "🎼",
+          "label": "Nota portresi"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Biyografi Süsleri",
+      "h2": "Nota ile Biyografi Süsleri",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "Nota ayıracı"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "Çerçeveli nota"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "Nota izi"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "Yumuşak nota"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "Parıltılı nota"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "İkili nota"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "Kalpli nota"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "Parantezli nota"
+        }
+      ]
+    }
+  ],
+  "cta": "Düz metni kalın, italik, el yazısı ve 100'den fazla Unicode font stiline dönüştürmek için UltraTextGen'i kullan — ücretsiz ve anında.",
+  "related": [
+    {
+      "href": "/tr/library/yildiz-sembolleri/",
+      "title": "Yıldız Sembolleri",
+      "desc": "Yıldızlar, yıldız işaretleri ve parıltılar."
+    },
+    {
+      "href": "/tr/library/kalp-sembolleri/",
+      "title": "Kalp Sembolleri",
+      "desc": "Her şekil ve stilde kalpler ♥ ♡ ❤."
+    },
+    {
+      "href": "/tr/symbol/mikrofon-emojisi/",
+      "title": "Mikrofon Emojisi (🎤)",
+      "desc": "Mikrofon emojisinin kökeni ve kullanımı."
+    },
+    {
+      "href": "/tr/library/estetik-semboller/",
+      "title": "Estetik Semboller",
+      "desc": "Biyografi ve açıklamalar için estetik Unicode sembolleri."
+    }
+  ]
+}

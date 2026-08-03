@@ -1,0 +1,529 @@
+{
+  "slug": "caracteres-speciaux",
+  "lang": "fr",
+  "title": "Caractères Spéciaux : Copier-Coller Symboles Unicode",
+  "meta_description": "Parcourez et copiez des caractères spéciaux uniques : infini, paix, science, marques légales, décorations esthétiques et curiosités Unicode. Cliquez sur un symbole pour le copier instantanément.",
+  "breadcrumb": "Caractères Spéciaux",
+  "hero_h1": "Caractères Spéciaux",
+  "hero_tagline": "Une collection de référence de symboles Unicode uniques : infini, paix, science, marques légales, décorations esthétiques et curiosités rares. Cliquez sur un symbole pour le copier instantanément.",
+  "intro": "Parcourez et copiez des caractères spéciaux classés par signification : des symboles d'infini et d'éternité aux signes de paix, en passant par la notation scientifique, les marques légales, les ornements esthétiques et les curiosités rares d'Unicode.\n\nLes « caractères spéciaux » sont tous les symboles qui ne sont ni des lettres ni des chiffres ordinaires : ∞, ©, ™, †, ★ ou encore °. Ils font partie du standard Unicode au même titre que le texte ordinaire, ce qui veut dire que vous pouvez les copier-coller partout où du texte est accepté.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/fr/library/caracteres-speciaux/",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "library_url": "https://ultratextgen.com/fr/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/special-characters/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/symbole-zum-kopieren/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/special-characters/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/special-characters/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/special-characters/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/specialni-znaky/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/posebni-znakovi/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/kulonleges-karakterek/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/caractere-speciale/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/semboller/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/caracteres-especiales/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/caracteres-speciaux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/karakter-spesial/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/caratteri-speciali-unicode/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/speciale-tekens/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/znaki-specjalne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/caracteres-especiais/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "infinity",
+      "label": "Infini et Éternité",
+      "h2": "Symboles d'Infini et d'Éternité",
+      "intro": "Symboles évoquant l'illimité, les boucles et les concepts éternels.",
+      "symbols": [
+        {
+          "char": "∞",
+          "label": "Infini"
+        },
+        {
+          "char": "♾️",
+          "label": "Emoji infini"
+        },
+        {
+          "char": "⧜",
+          "label": "Infini incomplet"
+        },
+        {
+          "char": "⧝",
+          "label": "Liaison sur infini"
+        },
+        {
+          "char": "⧞",
+          "label": "Infini barré verticalement"
+        },
+        {
+          "char": "🔁",
+          "label": "Bouton répéter"
+        },
+        {
+          "char": "🔂",
+          "label": "Répéter une fois"
+        },
+        {
+          "char": "⟳",
+          "label": "Flèche circulaire horaire"
+        }
+      ]
+    },
+    {
+      "id": "peace-harmony",
+      "label": "Paix et Harmonie",
+      "h2": "Symboles de Paix et d'Harmonie",
+      "intro": "Symboles de paix, d'unité et d'harmonie universelle issus de différentes cultures.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Symbole de la paix"
+        },
+        {
+          "char": "☯",
+          "label": "Yin yang"
+        },
+        {
+          "char": "✌",
+          "label": "Main de la victoire"
+        },
+        {
+          "char": "🕊",
+          "label": "Colombe"
+        },
+        {
+          "char": "🤍",
+          "label": "Cœur blanc"
+        },
+        {
+          "char": "🫶",
+          "label": "Mains en cœur"
+        },
+        {
+          "char": "🌍",
+          "label": "Terre (Europe-Afrique)"
+        },
+        {
+          "char": "⚖",
+          "label": "Balance"
+        },
+        {
+          "char": "🕉",
+          "label": "Om"
+        }
+      ]
+    },
+    {
+      "id": "science-knowledge",
+      "label": "Science et Savoir",
+      "h2": "Symboles de Science et de Savoir",
+      "intro": "Symboles scientifiques, médicaux et éducatifs pour les contenus pédagogiques.",
+      "symbols": [
+        {
+          "char": "⚛",
+          "label": "Symbole de l'atome"
+        },
+        {
+          "char": "⚕",
+          "label": "Symbole médical"
+        },
+        {
+          "char": "♻",
+          "label": "Symbole du recyclage"
+        },
+        {
+          "char": "🔬",
+          "label": "Microscope"
+        },
+        {
+          "char": "🔭",
+          "label": "Télescope"
+        },
+        {
+          "char": "🧪",
+          "label": "Tube à essai"
+        },
+        {
+          "char": "⚗",
+          "label": "Alambic"
+        },
+        {
+          "char": "🧬",
+          "label": "ADN"
+        },
+        {
+          "char": "🧫",
+          "label": "Boîte de Petri"
+        },
+        {
+          "char": "💡",
+          "label": "Ampoule"
+        },
+        {
+          "char": "⚙",
+          "label": "Engrenage"
+        }
+      ]
+    },
+    {
+      "id": "legal-office",
+      "label": "Juridique et Bureau",
+      "h2": "Symboles Juridiques et de Bureau",
+      "intro": "Marques de copyright, de dépôt et signes typographiques pour documents professionnels.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "Copyright"
+        },
+        {
+          "char": "®",
+          "label": "Marque déposée"
+        },
+        {
+          "char": "™",
+          "label": "Marque commerciale"
+        },
+        {
+          "char": "§",
+          "label": "Signe de section"
+        },
+        {
+          "char": "¶",
+          "label": "Pied-de-mouche (paragraphe)"
+        },
+        {
+          "char": "†",
+          "label": "Obèle (croix)"
+        },
+        {
+          "char": "‡",
+          "label": "Double obèle"
+        },
+        {
+          "char": "№",
+          "label": "Signe numéro"
+        },
+        {
+          "char": "℗",
+          "label": "Copyright phonographique"
+        },
+        {
+          "char": "℠",
+          "label": "Marque de service"
+        }
+      ]
+    },
+    {
+      "id": "punctuation-marks",
+      "label": "Ponctuation et Typographie",
+      "h2": "Signes de Ponctuation et de Typographie",
+      "intro": "L'arobase, l'esperluette et les autres signes typographiques du quotidien, avec leurs variantes pleine chasse, petite forme et historiques.",
+      "symbols": [
+        {
+          "char": "@",
+          "label": "Arobase"
+        },
+        {
+          "char": "＠",
+          "label": "Arobase pleine chasse"
+        },
+        {
+          "char": "﹫",
+          "label": "Petite arobase"
+        },
+        {
+          "char": "&",
+          "label": "Esperluette"
+        },
+        {
+          "char": "＆",
+          "label": "Esperluette pleine chasse"
+        },
+        {
+          "char": "⅋",
+          "label": "Esperluette renversée"
+        },
+        {
+          "char": "⁊",
+          "label": "Et tironien (et)"
+        },
+        {
+          "char": "※",
+          "label": "Marque de référence"
+        },
+        {
+          "char": "‰",
+          "label": "Pour mille"
+        },
+        {
+          "char": "‱",
+          "label": "Pour dix mille"
+        },
+        {
+          "char": "＊",
+          "label": "Astérisque pleine chasse"
+        },
+        {
+          "char": "＃",
+          "label": "Croisillon pleine chasse"
+        },
+        {
+          "char": "#",
+          "label": "Croisillon (hashtag)"
+        },
+        {
+          "char": "﹟",
+          "label": "Petit croisillon"
+        },
+        {
+          "char": "#️⃣",
+          "label": "Croisillon en touche"
+        },
+        {
+          "char": "♯",
+          "label": "Dièse musical"
+        }
+      ]
+    },
+    {
+      "id": "aesthetic-standalone",
+      "label": "Esthétiques Isolés",
+      "h2": "Symboles Esthétiques Isolés",
+      "intro": "Caractères Unicode esthétiques et décoratifs, très utilisés dans les bios, les pseudos et le texte artistique.",
+      "symbols": [
+        {
+          "char": "✿",
+          "label": "Fleur pleine"
+        },
+        {
+          "char": "❦",
+          "label": "Cœur floral"
+        },
+        {
+          "char": "❧",
+          "label": "Cœur floral pivoté"
+        },
+        {
+          "char": "♡",
+          "label": "Cœur blanc"
+        },
+        {
+          "char": "☾",
+          "label": "Lune décroissante"
+        },
+        {
+          "char": "☽",
+          "label": "Lune croissante"
+        },
+        {
+          "char": "⊹",
+          "label": "Marque scintillante"
+        },
+        {
+          "char": "₊",
+          "label": "Plus en indice"
+        },
+        {
+          "char": "༄",
+          "label": "Ornement tibétain"
+        },
+        {
+          "char": "⋆",
+          "label": "Petite étoile"
+        },
+        {
+          "char": "✧",
+          "label": "Étoile à quatre branches"
+        },
+        {
+          "char": "❂",
+          "label": "Étoile à huit branches cerclée"
+        },
+        {
+          "char": "˚",
+          "label": "Rond en chef"
+        },
+        {
+          "char": "Ɛ",
+          "label": "3 inversé (E ouvert)"
+        },
+        {
+          "char": "Є",
+          "label": "3 inversé (Ie cyrillique)"
+        },
+        {
+          "char": "Я",
+          "label": "R inversé (Ya)"
+        },
+        {
+          "char": "ↄ",
+          "label": "C inversé"
+        },
+        {
+          "char": "и",
+          "label": "N inversé (I cyrillique)"
+        },
+        {
+          "char": "ƨ",
+          "label": "S inversé"
+        }
+      ]
+    },
+    {
+      "id": "rare-unicode",
+      "label": "Curiosités Unicode",
+      "h2": "Symboles Unicode Rares",
+      "intro": "Caractères Unicode inhabituels et peu utilisés, issus de blocs techniques et symboliques.",
+      "symbols": [
+        {
+          "char": "℞",
+          "label": "Signe d'ordonnance"
+        },
+        {
+          "char": "⚜",
+          "label": "Fleur de lys"
+        },
+        {
+          "char": "⎈",
+          "label": "Symbole de barre"
+        },
+        {
+          "char": "⌘",
+          "label": "Touche Commande"
+        },
+        {
+          "char": "⏏",
+          "label": "Éjecter"
+        },
+        {
+          "char": "⌥",
+          "label": "Touche Option"
+        },
+        {
+          "char": "⇧",
+          "label": "Touche Majuscule"
+        },
+        {
+          "char": "⏎",
+          "label": "Retour"
+        },
+        {
+          "char": "⌫",
+          "label": "Retour arrière"
+        },
+        {
+          "char": "⏻",
+          "label": "Alimentation"
+        },
+        {
+          "char": "☙",
+          "label": "Cœur floral inversé"
+        },
+        {
+          "char": "☤",
+          "label": "Caducée"
+        },
+        {
+          "char": "⚚",
+          "label": "Bâton d'Hermès"
+        }
+      ]
+    }
+  ],
+  "cta": "Utilisez UltraTextGen pour convertir du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    {
+      "href": "/fr/library/symboles-mathematiques/",
+      "title": "Symboles Mathématiques",
+      "desc": "Plus-moins, multiplication, division, racine et infini."
+    },
+    {
+      "href": "/fr/library/symboles-monetaires/",
+      "title": "Symboles Monétaires",
+      "desc": "Signes de devises mondiales et de cryptomonnaies."
+    },
+    {
+      "href": "/fr/symbol/symbole-copyright/",
+      "title": "Symbole Copyright (©)",
+      "desc": "L'origine du symbole ©, ses codes Alt et comment le taper."
+    },
+    {
+      "href": "/fr/symbol/symbole-paix/",
+      "title": "Symbole de la Paix (☮)",
+      "desc": "L'histoire et l'usage du symbole de la paix."
+    },
+    {
+      "href": "/fr/library/symboles/",
+      "title": "Symboles Esthétiques",
+      "desc": "Caractères Unicode esthétiques pour bios et légendes."
+    }
+  ]
+}
