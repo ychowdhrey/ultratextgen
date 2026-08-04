@@ -1,0 +1,384 @@
+{
+  "slug": "ky-hieu-am-nhac",
+  "lang": "vi",
+  "title": "Ký Hiệu Âm Nhạc: Copy Paste Nốt Nhạc ♪ ♫",
+  "meta_description": "Xem và sao chép ký hiệu nốt nhạc, emoji nhạc cụ và ký tự Unicode liên quan đến âm thanh. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "breadcrumb": "Ký Hiệu Âm Nhạc",
+  "hero_h1": "Ký Hiệu Âm Nhạc",
+  "hero_tagline": "Bộ sưu tập tham khảo ký hiệu ghi nhạc, emoji nhạc cụ và ký tự Unicode liên quan đến âm thanh. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "intro": "Thư viện này gồm các nốt nhạc và ký hiệu ghi nhạc, emoji nhạc cụ và ký tự Unicode liên quan đến âm thanh. Ký hiệu được chia theo nhóm: dấu ghi nhạc, nhạc cụ và các nút điều khiển phát nhạc.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/vi/library/ky-hieu-am-nhac/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "library_url": "https://ultratextgen.com/vi/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/music-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-musica/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-musik/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/eumak-giho/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-musicais/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/musik-symbole/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-musicaux/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-musicali/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/music-symbols/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/muzieksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-muzyczne/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/muzykalnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/music-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/muzik-sembolleri/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-am-nhac/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/music-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "notes",
+      "label": "Nốt nhạc",
+      "h2": "Nốt Nhạc",
+      "intro": "Ký hiệu nốt nhạc trong Unicode và emoji thể hiện nốt nhạc.",
+      "symbols": [
+        {
+          "char": "♩",
+          "label": "Nốt đen"
+        },
+        {
+          "char": "♪",
+          "label": "Nốt móc đơn"
+        },
+        {
+          "char": "♫",
+          "label": "Hai nốt móc đơn nối"
+        },
+        {
+          "char": "♬",
+          "label": "Nốt móc kép"
+        },
+        {
+          "char": "🎵",
+          "label": "Nốt nhạc"
+        },
+        {
+          "char": "🎶",
+          "label": "Nhiều nốt nhạc"
+        }
+      ]
+    },
+    {
+      "id": "clefs",
+      "label": "Khóa nhạc",
+      "h2": "Ký Hiệu Khóa Nhạc",
+      "intro": "Các khóa nhạc dùng trong bản nhạc.",
+      "symbols": [
+        {
+          "char": "𝄞",
+          "label": "Khóa Sol"
+        },
+        {
+          "char": "𝄡",
+          "label": "Khóa Đô"
+        },
+        {
+          "char": "𝄢",
+          "label": "Khóa Fa"
+        }
+      ]
+    },
+    {
+      "id": "accidentals",
+      "label": "Dấu hóa",
+      "h2": "Dấu Hóa",
+      "intro": "Dấu thăng, giáng, bình và dấu hóa kép, dùng để thay đổi cao độ.",
+      "symbols": [
+        {
+          "char": "♯",
+          "label": "Dấu thăng"
+        },
+        {
+          "char": "♭",
+          "label": "Dấu giáng"
+        },
+        {
+          "char": "♮",
+          "label": "Dấu bình"
+        },
+        {
+          "char": "𝄪",
+          "label": "Dấu thăng kép"
+        },
+        {
+          "char": "𝄫",
+          "label": "Dấu giáng kép"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-notation",
+      "label": "Sắc thái & ký hiệu",
+      "h2": "Sắc Thái và Ký Hiệu Ghi Nhạc",
+      "intro": "Ký hiệu cường độ âm thanh và các dấu ghi nhạc.",
+      "symbols": [
+        {
+          "char": "𝆏",
+          "label": "Piano (nhẹ)"
+        },
+        {
+          "char": "𝆑",
+          "label": "Forte (mạnh)"
+        },
+        {
+          "char": "𝄀",
+          "label": "Vạch nhịp"
+        },
+        {
+          "char": "𝄁",
+          "label": "Vạch nhịp đôi"
+        },
+        {
+          "char": "𝄂",
+          "label": "Vạch kết thúc"
+        },
+        {
+          "char": "𝄃",
+          "label": "Vạch kết thúc đảo"
+        },
+        {
+          "char": "𝄆",
+          "label": "Dấu hồi (mở)"
+        },
+        {
+          "char": "𝄇",
+          "label": "Dấu hồi (đóng)"
+        },
+        {
+          "char": "𝄐",
+          "label": "Dấu ngân tự do"
+        },
+        {
+          "char": "𝄑",
+          "label": "Dấu ngân tự do phía dưới"
+        }
+      ]
+    },
+    {
+      "id": "rests",
+      "label": "Dấu lặng",
+      "h2": "Ký Hiệu Dấu Lặng",
+      "intro": "Các dấu lặng biểu thị khoảng im lặng trong bản nhạc.",
+      "symbols": [
+        {
+          "char": "𝄾",
+          "label": "Lặng móc đơn"
+        },
+        {
+          "char": "𝄿",
+          "label": "Lặng móc kép"
+        },
+        {
+          "char": "𝄻",
+          "label": "Lặng trắng"
+        },
+        {
+          "char": "𝄼",
+          "label": "Lặng đen"
+        }
+      ]
+    },
+    {
+      "id": "instruments",
+      "label": "Nhạc cụ",
+      "h2": "Emoji Nhạc Cụ",
+      "intro": "Emoji thể hiện các loại nhạc cụ.",
+      "symbols": [
+        {
+          "char": "🎸",
+          "label": "Đàn ghi-ta"
+        },
+        {
+          "char": "🎹",
+          "label": "Đàn piano"
+        },
+        {
+          "char": "🎺",
+          "label": "Kèn trumpet"
+        },
+        {
+          "char": "🎻",
+          "label": "Đàn violin"
+        },
+        {
+          "char": "🎷",
+          "label": "Kèn saxophone"
+        },
+        {
+          "char": "🥁",
+          "label": "Trống"
+        },
+        {
+          "char": "🪕",
+          "label": "Đàn banjo"
+        },
+        {
+          "char": "🪗",
+          "label": "Đàn accordion"
+        },
+        {
+          "char": "🪘",
+          "label": "Trống dài"
+        },
+        {
+          "char": "🪇",
+          "label": "Lục lạc maracas"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "Âm thanh & phát nhạc",
+      "h2": "Âm Thanh và Phát Nhạc",
+      "intro": "Ký hiệu liên quan đến âm thanh, loa và điều khiển phát nhạc.",
+      "symbols": [
+        {
+          "char": "🎤",
+          "label": "Micro"
+        },
+        {
+          "char": "🎧",
+          "label": "Tai nghe"
+        },
+        {
+          "char": "📻",
+          "label": "Radio"
+        },
+        {
+          "char": "🔊",
+          "label": "Loa âm lượng lớn"
+        },
+        {
+          "char": "🔇",
+          "label": "Loa tắt tiếng"
+        },
+        {
+          "char": "🎼",
+          "label": "Khuông nhạc"
+        }
+      ]
+    },
+    {
+      "id": "bio-decorations",
+      "label": "Trang trí bio",
+      "h2": "Trang Trí Bio Bằng Nốt Nhạc",
+      "intro": "",
+      "symbols": [
+        {
+          "char": "♪┊♫┊♪",
+          "label": "Dải phân cách nốt nhạc"
+        },
+        {
+          "char": "˚₊‧♫‧₊˚",
+          "label": "Nốt nhạc trong khung"
+        },
+        {
+          "char": "♬•*¨*•.¸¸♪",
+          "label": "Chuỗi nốt nhạc"
+        },
+        {
+          "char": "⋆｡♪｡⋆",
+          "label": "Nốt nhạc nhẹ nhàng"
+        },
+        {
+          "char": "˚✧♬✧˚",
+          "label": "Nốt nhạc lấp lánh"
+        },
+        {
+          "char": "♩‿♩",
+          "label": "Cặp nốt nhạc"
+        },
+        {
+          "char": ".｡.:*♡♬",
+          "label": "Nốt nhạc kèm trái tim"
+        },
+        {
+          "char": "꒰♬꒱",
+          "label": "Nốt nhạc trong ngoặc"
+        }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để chuyển văn bản thường thành chữ đậm, nghiêng, viết tay và hơn 100 kiểu phông Unicode khác — miễn phí và tức thì.",
+  "related": [
+    {
+      "href": "/vi/ki-tu-ngoi-sao/",
+      "title": "Ký Hiệu Ngôi Sao",
+      "desc": "Ngôi sao, dấu hoa thị và ánh lấp lánh để sao chép."
+    },
+    {
+      "href": "/vi/ki-tu-trai-tim/",
+      "title": "Ký Hiệu Trái Tim",
+      "desc": "Trái tim ♥ ♡ ❤ đủ hình dáng và kiểu."
+    },
+    {
+      "href": "/vi/symbol/microphone-emoji/",
+      "title": "Emoji Micro (🎤)",
+      "desc": "Nguồn gốc và cách dùng emoji micro."
+    },
+    {
+      "href": "/vi/ki-tu-dac-biet/",
+      "title": "Ký Tự Aesthetic",
+      "desc": "Ký tự Unicode aesthetic cho bio và chú thích."
+    }
+  ]
+}
