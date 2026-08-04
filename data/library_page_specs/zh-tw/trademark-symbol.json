@@ -1,0 +1,182 @@
+{
+  "slug": "trademark-symbol",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "商標符號 ™ 與 ®：複製貼上、差別與正確用法 | UltraTextGen",
+  "meta_description": "點一下複製商標符號 ™ 和註冊商標 ®，附 Alt 代碼、HTML 寫法，以及兩者的法律差別。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/trademark-symbol/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "商標符號",
+  "hero_h1": "商標符號（™ / ®）",
+  "hero_tagline": "™ 和 ® 差在哪、怎麼打出來——點一下就複製。",
+  "intro": "™（U+2122，TRADE MARK SIGN）表示某個名稱或標誌被當作商標使用，但不一定已經註冊；®（U+00AE，REGISTERED SIGN）則只能用在已經正式註冊的商標上。這個差別有法律意義——在台灣，對未註冊的商標使用 ® 可能違反商標法。實務慣例：申請中或未註冊用 ™，取得註冊後才改用 ®。輸入方式：Windows 分別是 Alt+0153 與 Alt+0174，HTML 寫成 &trade; 與 &reg;。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/trademark-symbol/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-tovarnogo-znaka/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-merek-dagang/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/znaki-tm-i-copyright/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-marque-deposee/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/markenzeichen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/ticari-marka-isareti/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-marchio/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-marca-registrada/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/handelsmerk-symbool/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/simbolo-de-marca-comercial/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-alama-tijariya/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/shouhyou-kigou/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/khreuangmai-kanka/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/trademark-symbol/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/sangpyo-giho/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/trademark-symbol/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/trademark-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/trademark-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "trademark-symbol-symbol",
+      "label": "商標符號",
+      "h2": "商標符號",
+      "intro": "兩種商標標記與服務標章。",
+      "symbols": [
+        {
+          "char": "™",
+          "label": "商標（未必註冊）"
+        },
+        {
+          "char": "®",
+          "label": "註冊商標"
+        },
+        {
+          "char": "℠",
+          "label": "服務標章（U+2120）"
+        }
+      ]
+    },
+    {
+      "id": "legal-marks",
+      "label": "其他法律標記",
+      "h2": "其他法律標記",
+      "intro": "文件與網站頁尾常見的標記。",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "版權"
+        },
+        {
+          "char": "℗",
+          "label": "錄音著作權"
+        },
+        {
+          "char": "§",
+          "label": "法條"
+        }
+      ]
+    },
+    {
+      "id": "editorial-marks",
+      "label": "編輯標記",
+      "h2": "編輯標記",
+      "intro": "正式文件常並用的符號。",
+      "symbols": [
+        {
+          "char": "†",
+          "label": "劍標"
+        },
+        {
+          "char": "‡",
+          "label": "雙劍標"
+        },
+        {
+          "char": "¶",
+          "label": "段落標記"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/copyright-symbol/",
+      "title": "版權符號（©）",
+      "desc": "著作權標示與正確寫法。"
+    },
+    {
+      "href": "/zh-tw/symbol/section-sign/",
+      "title": "章節符號（§）",
+      "desc": "法條與章節引用標記。"
+    },
+    {
+      "href": "/zh-tw/library/facebook-fuhao/",
+      "title": "Facebook（FB）符號大全",
+      "desc": "貼文與個人簡介可用的符號整理。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    }
+  ]
+}

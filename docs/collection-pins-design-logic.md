@@ -92,7 +92,7 @@ keywords. Destinations carry `utm_campaign=collections`.
 ## Production workflow
 
 1. Source of truth is the KEEP rows in
-   [`data/collection_copy_audit.csv`](../data/collection_copy_audit.csv) (~164).
+   `data/collection_pin_targets.csv` (~164).
 2. Content is extracted per page:
    - spec pages → `collections[]` in `data/library_page_specs/<slug>.json`;
    - legacy pages → inline `var GROUPS` via

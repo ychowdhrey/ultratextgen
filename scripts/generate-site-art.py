@@ -1338,6 +1338,16 @@ PAGES = {
         P(m_typo, sample="Love", ff=SERIF, style="italic", weight="400", size=64,
           label="cursive · gothic · italic"), K_USE),
   "zh-tw-usecase-youxi-mingzi-fuhao": ("遊戲暱稱特殊符號", "傳說對決・Discord暱稱裝飾", m_gamepad, K_USE),
+  "zh-tw-ig-ziti": ("IG 字體產生器", "個人簡介・名稱特殊字體",
+        P(m_typo, sample="ig", weight="700", size=88, label="bold · script · caps"), K_USE),
+  "zh-tw-shufa-ziti": ("書法字體產生器", "英文花體字，複製貼上",
+        P(m_typo, sample="Sofia", ff=SERIF, style="italic", weight="400", size=64,
+          label="cursive · script"), K_CAT),
+  "zh-tw-keai-ziti": ("可愛字體產生器", "圈圈字、泡泡字與可愛符號",
+        glyphs("♡", "✧", "❀", "✿", "❥"), K_CAT),
+  "zh-tw-library-jiantou-fuhao": ("箭頭符號大全", "各種方向箭頭，複製貼上", glyphs("→", "⇒", "↑", "➜", "↩"), K_LIB),
+  "zh-tw-library-shuzi-fuhao": ("數字符號大全", "圈形、上標、羅馬數字", glyphs("①", "⁵", "Ⅹ", "₂", "❶"), K_LIB),
+  "zh-tw-library-xingxing-fuhao": ("星星符號大全", "星星、閃光與評分符號", glyphs("★", "✦", "✰", "✧", "✩"), K_LIB),
 
   "kaomoji-dictionary": ("Kaomoji Dictionary", "Decode any text face", m_kaomoji, K_SITE),
   "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
@@ -1707,6 +1717,7 @@ PAGES = {
   "answers-where-do-fancy-fonts-work-username-vs-display-name": ("Username vs Display Name", "Where fancy fonts actually work", m_qa, K_ANS),
   "answers-do-fancy-fonts-work-with-arabic": ("Do Fancy Fonts Work With Arabic?", "Why not — and what does work", m_qa, K_ANS),
   "answers-do-you-need-nitro-for-discord-fonts": ("Do You Need Nitro for Fonts?", "The honest answer for Discord users", m_qa, K_ANS),
+  "answers-what-are-discord-display-name-styles": ("Discord Display Name Styles", "What Nitro styles do, and where they stop", m_qa, K_ANS),
   "answers-how-to-change-roblox-username": ("Change Your Roblox Username", "The steps and the catch", m_qa, K_ANS),
   "answers-how-to-change-tiktok-username": ("Change Your TikTok Username", "How and how often you can", m_qa, K_ANS),
   "answers-how-to-change-minecraft-username": ("Change Your Minecraft Username", "Java vs. Bedrock, free vs. paid", m_qa, K_ANS),
@@ -1841,6 +1852,7 @@ PAGES = {
   "symbol-calendar-emoji": ("Calendar Emoji", "Why it's always frozen on July 17", m_calendar, K_SYM),
   "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Draft Emoji 18.0 candidate, not live yet", m_smiley, K_SYM),
   "symbol-distorted-face-emoji": ("Distorted Face Emoji", "U+1FAEA — meaning, codepoint & origin", m_smiley, K_SYM),
+  "symbol-melting-face-emoji": ("Melting Face Emoji", "U+1FAE0 — meaning, sarcasm reading & origin", m_smiley, K_SYM),
   "symbol-pickle-emoji": ("Pickle Emoji", "Draft Emoji 18.0 candidate, not live yet", m_cup, K_SYM),
   "symbol-meteor-emoji": ("Meteor Emoji", "Draft Emoji 18.0 candidate, not live yet",
         glyphs("☄", "✦", "★", "☆", "✧"), K_SYM),
@@ -1850,6 +1862,7 @@ PAGES = {
   "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
   "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
+  "symbol-rufiyaa-sign": ("Rufiyaa Sign", "Accepted for Unicode 18.0 publication", m_coin, K_SYM),
 
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",
@@ -1958,6 +1971,8 @@ PAGES = {
         glyphs("½", "⅓", "¼", "¾", "⅔"), K_LIB),
   "library-gaming-aesthetic-symbols": ("Gaming Aesthetic Symbols", "Clan tag frames, HUD bars and battle icons",
         glyphs("▰", "▱", "⌖", "━", "▮"), K_LIB),
+  "library-vrchat-symbols": ("VRChat Symbols", "Name symbols that fit the 16-character limit",
+        glyphs("✦", "⚡", "♡", "❖", "･"), K_LIB),
   "library-geometric-symbols": ("Geometric Symbols", "Circles, squares and triangles",
         glyphs("●", "▲", "■", "◆", "◇"), K_LIB),
   "library-goth-grunge-symbols": ("Goth & Grunge Symbols", "Dark, edgy decorative marks",
@@ -2760,6 +2775,28 @@ PAGES.update({
 "updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
 "updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
 })
+
+# ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull
+# ---- evidenced (horoskooppimerkit, kaunokirjoitus, asteen merkki,
+# ---- merkkilaskuri, euron merkki).
+PAGES.update({
+  "fi-library-horoskooppimerkit": (
+      "Horoskooppimerkit",
+      "Tähtimerkit ja planeetat kopioitavaksi", m_star, K_LIB),
+  "fi-kaunokirjoitus": (
+      "Kaunokirjoitus",
+      "Kaunokirjaimet A–Z, sanat ja nimet", m_letter_cursive, K_CAT),
+  "fi-symbol-asteen-merkki": (
+      "Asteen merkki °",
+      "Lämpötila- ja kulmamerkit", m_circled_letter, K_SYM),
+  "fi-symbol-euron-merkki": (
+      "Euron merkki €",
+      "Valuuttamerkit kopioitavaksi", m_coin, K_SYM),
+  "fi-merkkilaskuri": (
+      "Merkkilaskuri",
+      "Sanat, merkit ja palvelujen rajat", m_doc, K_USE),
+})
+
 
 # ---- 2026-07-30: th/library/star-symbols translation ----
 PAGES["th-library-star-symbols"] = (

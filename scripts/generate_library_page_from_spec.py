@@ -62,6 +62,26 @@ class SpecError(Exception):
     """Raised when a spec fails validation."""
 
 
+def funding_choices_tag():
+    """Google Funding Choices (ad-blocking recovery) tag.
+
+    Read from scripts/data/funding-choices-tag.html — the single source of
+    truth shared with scripts/inject-funding-choices-tag.js, so the generator
+    and the injector can never emit different snippets. Every page on the site
+    is required to carry it (scripts/check-funding-choices.js enforces this);
+    omitting it here is what produced the 66-page locale-library backlog that
+    the injector then had to sweep up after the fact.
+    """
+    snippet_path = SCRIPT_DIR / "data" / "funding-choices-tag.html"
+    try:
+        return snippet_path.read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        raise SpecError(
+            f"cannot read the Funding Choices tag at {snippet_path}: {exc}. "
+            "Generated pages would fail scripts/check-funding-choices.js."
+        ) from exc
+
+
 def esc(text):
     """HTML-escape text content."""
     return html.escape(str(text), quote=False)
@@ -151,6 +171,7 @@ LOCALE_UI_STRINGS = {
     "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
     "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open UltraTextGen →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
     "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
+    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
     # Values below match the chrome already used by these locales' hand-authored
     # library pages (breadcrumbs, "related" label, copy aria-label, CTA button),
     # so generated and hand-authored pages read the same inside one locale.
@@ -173,6 +194,7 @@ LOCALE_FAQ_LABEL = {
     "pl": "Często Zadawane Pytania",
     "nl": "Veelgestelde Vragen",
     "vi": "Câu Hỏi Thường Gặp",
+    "fi": "Usein kysytyt kysymykset",
     "ar": "الأسئلة الشائعة",
     "ru": "Частые вопросы",
     "ja": "よくある質問",
@@ -447,6 +469,7 @@ def render_page(spec):
     page = f"""<!DOCTYPE html>
 <html lang="{lang}"{dir_attr}>
 <head>
+{funding_choices_tag()}
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
   new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],

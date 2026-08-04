@@ -3,7 +3,7 @@
 This document describes the end-to-end system for proposing, vetting,
 generating, validating, and shipping batches of Unicode symbol **library
 pages** (`/library/<slug>/`). It is the operating manual; the companion
-[`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md) covers
+the internal forum-research skill doc covers
 the discovery half in depth. The product *why* behind these mechanics lives in
 [`jtbd-principles.md`](./jtbd-principles.md), the page-vs-section call is
 codified in [`page-vs-section-decisions.md`](./page-vs-section-decisions.md),
@@ -27,18 +27,18 @@ to capture a raw idea the moment it appears, before it has earned any evidence.
 0. scouting        (raw idea → opportunity row, stage = scout)
         │            "this format/topic exists" — captured the moment we learn it
         ▼
-1. forum research  (data/forum_research_queries.csv → forum_evidence)
+1. forum research  (the internal forum-research query set → forum_evidence)
         │            qualitative demand + user language, captured FIRST
         ▼
 2. search volume   (keyword tooling → search_volume, demand_confidence)
         │            quantitative demand, captured SECOND
         ▼
 3. priority + dedupe
-data/library_opportunities.csv          ← one row per candidate page
+the internal opportunity backlog          ← one row per candidate page
         │
         ▼
-scripts/audit_library_opportunities.py  ← dedupe / overlap / block coverage
-        │   → data/library_opportunities_audit.csv   + research-gap flags
+the internal opportunity-audit tool  ← dedupe / overlap / block coverage
+        │   → the internal opportunity audit output   + research-gap flags
         ▼
 approve rows (approval_status = approved)
         │
@@ -66,7 +66,7 @@ research and volume.
 
 ## 1. The opportunity file
 
-`data/library_opportunities.csv` is the **living backlog and system of record**
+`the internal opportunity backlog` is the **living backlog and system of record**
 for what UltraTextGen might build — it grows continuously as scope increases.
 Each row is one **candidate page**, captured in user language with evidence and
 scoring attached. Field definitions are documented in the forum-research skill,
@@ -132,10 +132,10 @@ page-vs-section call once demand is known).
 
 ## 2. Forum research process
 
-See [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md).
+See the internal forum-research skill doc.
 In short:
 
-1. Run the seed queries in `data/forum_research_queries.csv` (Reddit, Quora,
+1. Run the seed queries in `the internal forum-research query set` (Reddit, Quora,
    StackExchange site searches).
 2. For each qualifying thread, extract head noun, modifier, constraints, and
    use case in the user's own words.
@@ -190,7 +190,7 @@ priority_score = search_volume_score
 
 `forum_evidence_score` is computed by the auditor from the `forum_evidence`
 label using the scale above (single source of truth:
-`FORUM_EVIDENCE_SCORE` in `scripts/audit_library_opportunities.py`). The other
+`FORUM_EVIDENCE_SCORE` in `the internal opportunity-audit tool`). The other
 four components are graded by the researcher; record the breakdown in `notes`
 so the total is auditable. Rank the batch by `priority_score` descending and
 spec the top rows first.
@@ -304,8 +304,8 @@ Two links to keep intact:
 Run the auditor before approving any batch:
 
 ```bash
-python3 scripts/audit_library_opportunities.py
-# → data/library_opportunities_audit.csv
+python3 the internal opportunity-audit tool
+# → the internal opportunity audit output
 ```
 
 It cross-references each opportunity against the published `/library/` pages

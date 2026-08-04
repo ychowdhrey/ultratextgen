@@ -1,6 +1,6 @@
 {
   "_generated": true,
-  "_generated_by": "private research tooling — see internal docs/local-language-intelligence.md",
+  "_generated_by": "generated — see docs/local-language-intelligence.md",
   "_do_not_hand_edit": true,
   "_note": "Approved/limited_use snapshot only. Not the full research dataset. A phrase here is a candidate to consider when it fits the exact meaning, platform, audience and register of the copy you're writing — never insert it just because it's listed.",
   "locale": "id",
@@ -128,7 +128,7 @@
       "register": "gamer casual",
       "phrase_type": "gaming_terminology",
       "content_surface": "dedicated tool page, FAQ, gaming blogs",
-      "usage_guidance": "Primary term for the invisible-name goal; pair with a risk note (cheater-suspicion/report risk in squad play) per JTBD-34 in the lab research rather than presenting it as a pure cosmetic trick.",
+      "usage_guidance": "Primary term for the invisible-name goal; pair with a risk note (cheater-suspicion/report risk in squad play) per internal research rather than presenting it as a pure cosmetic trick.",
       "good_example": "\"Gimana cara bikin nama kosong di Free Fire atau Mobile Legends?\" (id/spasi-kosong/index.html FAQ)",
       "avoid_when": "n/a",
       "confidence": "high",

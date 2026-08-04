@@ -149,6 +149,33 @@ repointed every internal link (`tiktok/index.html`, `tiktok/name-generator/`,
 `youtube/index.html`, `youtube/name-generator/`) straight at the `answers/` URL
 instead of the now-retired one.
 
+### `answers/` is deliberately not linked from any homepage (recorded 2026-07-31)
+
+The EN homepage links `/library/`, `/guide/`, `/usecase/` and `/category/`
+but **not** `/answers/`, and no locale homepage links its own
+`<lang>/answers/` hub either. **This is intentional, not the "missing link"
+bug described under "Locale-native internal linking" below.**
+
+The `answers/` pillar exists for **AEO** — it is built to be landed on
+directly from a search engine or an AI answer surface, resolve one question,
+and stop. Funnelling homepage visitors into it works against that: someone
+who arrived to use the generator does not need a 59-page Q&A index, and
+sending them there loses them.
+
+So the pillar's discovery is search-driven by design, the same standing
+decision `symbol/` carries (see "Content Types: Library vs Symbol" —
+"**No nav entry** — landed on via search engines/pins"). The difference is
+that `answers/` *does* keep its `header.js` nav entry; what it does not get
+is homepage body links.
+
+**Do not "fix" this.** A homepage→pillar link audit will flag it every time,
+because it is structurally identical to the real bug — a pillar with no
+inbound homepage link. It was flagged and corrected on exactly that basis on
+2026-07-31, during the pass that added the 13 missing homepage→`library/`
+links. `library/` genuinely needed those (it is the only route into each
+locale's `symbol/` cluster); `answers/` does not, and should be left alone
+unless this decision is explicitly revisited.
+
 ---
 
 ## Content Types: Library vs Symbol
@@ -367,11 +394,12 @@ it). Both mean Rule 3 was never applied — fix the hub, don't rebuild the spoke
   another page.
 
 **Case study (2026-07-18):** a GSC query×page pull (last 3 months, queries
-containing "discord") showed `/discord/` at 1,247 clicks / 89,848 impressions while
-`/answers/discord-allowed-characters/` had **0 clicks on 3,656 impressions** (pos
-7.85), `/answers/do-you-need-nitro-for-discord-fonts/` **0 clicks on 3,567**
-(7.45), and `/guide/discord-text-formatting-explained/` **0 clicks on 452** at
-position 6.06 — all indexed, all on-SERP, all starved by the hub above them.
+containing "discord") showed `/discord/` taking effectively all of the cluster's
+clicks, while `/answers/discord-allowed-characters/`,
+`/answers/do-you-need-nitro-for-discord-fonts/` and
+`/guide/discord-text-formatting-explained/` each drew **zero clicks despite real
+impressions at first-page positions** — all indexed, all on-SERP, all starved by
+the hub above them.
 `answers/how-to-make-bold-text-in-discord` drew essentially no impressions because
 the hub intercepts "how to bold" and then ranks ~80 for it. Five purpose-built
 pages, near-zero traffic, because Rule 3 was never applied to the hub.
@@ -686,12 +714,44 @@ structural form: no hreflang cluster at all, `id/`-only marketing page, with
 the transform itself living in the shared global `renderer.js`/`styles.js`
 registry like every other style (the *code* is never locale-partitioned; only
 the page presenting it is). Demand evidence: "font cuping"/"cuping font"
-≈33,000/mo combined in the ID market at KD 19–20 with weak incumbents.
+substantial combined ID-market demand at low difficulty with weak incumbents.
 
 Note this is a **precedent, not a template** — it does not license
 speculatively building other locales' internet-slang transforms. Each future
 case needs its own demand evidence and its own discussion, exactly as this one
 did.
+
+**Ratified exceptions, `id/usecase/nama-discord-keren/` and
+`nl/sierlijke-letters/` (2026-08-03).** Both surfaced from a site-wide
+duplicate-claimant scan (see "Parallel sessions build the same thing under
+different names" below): each was a second page in its locale declaring an EN
+parent another page already claimed. In both cases the pages are **not**
+duplicates of each other — they serve different queries — so the fix was to
+drop the wrong parent claim, not to merge. Both now carry a locale-only
+hreflang block with `x-default` on the bare EN homepage as a generic default,
+and their visible language switchers were trimmed to match (a switcher that
+still lists a cluster the page has left is the same bug in the visible layer).
+
+- **`id/usecase/nama-discord-keren/`** claimed `usecase/nickname-generator/`,
+  which `id/usecase/nama-panggilan/` already owns. GSC (Jul 2–28) shows no
+  query overlap at all: nama-discord-keren draws 118 impressions led by "nama
+  discord keren" (63) and "nama role discord keren" (13), while nama-panggilan
+  draws 28 led by "buat nama panggilan keren" (5). It is a Discord-name page,
+  and **this site has no EN Discord-name parent** — `/discord/` is the
+  generator hub and `usecase/nickname-generator/` is the general nickname
+  page. Ratified as local-only rather than force-fitted to either.
+- **`nl/sierlijke-letters/`** claimed `category/cursive-fonts/`, which
+  `nl/cursieve-letters/` already owns — and in Dutch those are two different
+  concepts: *cursief* is italic/slanted (what the Word button does), while
+  *sierletters* are ornamental/calligraphic. GSC confirms the split, decisively
+  and in the surprising direction: sierlijke-letters draws **1,768 imp / 45
+  clicks** ("sierletters" alone 795/29) against cursieve-letters' 200 imp / 1
+  click, despite being the smaller, less-linked page. Merging would have 301'd
+  away the best-performing NL asset on the site. No EN "sierletters" parent
+  exists; ratified as local-only. Rule 3 was applied in the same change —
+  `nl/cursieve-letters/` had "sierlijke letters A–Z" in its own `<title>` and
+  meta description, i.e. the hub was targeting the spoke's head term; that is
+  now "cursief schrift A–Z".
 
 **Ratified exception, `fr/calligraphie/`, `fr/changeur-de-police/`,
 `fr/police-d-ecriture/` (2026-07-26):** these three are three of the six
@@ -706,8 +766,8 @@ Hub-vs-Spoke spoke test on the *French* evidence: `changeur-de-police`
 "change police"/"changeur de police"), `calligraphie` (76%, "calligraphie
 copier coller"), and `police-d-ecriture` (54%, largest and still-growing
 volume of the six — "police d'écriture"/"police ecriture", where the
-homepage barely shows: 4 impressions at position 24 vs. this page's 188 at
-position 9.6 on the exact same query).
+homepage barely shows while this page holds a strong first-page position on
+the exact same query).
 
 **Important distinction from the `ja`/`ko`/`zh-tw` trio above: this is
 *not* a "no English speaker would search this" claim** — "font" and
@@ -724,11 +784,16 @@ synonym-consolidation read is inferred from the row-17 close-out, not
 independently verified against EN GSC for "font"/"calligraphy" specifically
 — worth a direct check before treating it as settled, but it's the reason
 these three stay unbuilt in EN rather than a claim that the underlying
-concept lacks English demand. `x-default` on all three (plus their live
-non-English siblings, `it/font-copia-e-incolla/` and `it/caratteri-
-speciali/` on the `changeur-de-police` cluster) falls back to the bare EN
-homepage as a generic default only, same as the trio above — not a
-translation-equivalence claim.
+concept lacks English demand. `x-default` on all three (plus the live
+non-English sibling `it/font-copia-e-incolla/` on the `changeur-de-police`
+cluster) falls back to the bare EN homepage as a generic default only, same
+as the trio above — not a translation-equivalence claim. *(Correction
+2026-08-02: `it/caratteri-speciali/` was previously also listed on this
+cluster, making two `it` claimants on one hreflang cluster — invalid, and
+flagged by `audit-hreflang.js` as a stacked-cluster conflict.
+`it/font-copia-e-incolla/` keeps the slot as the concept-equivalent of
+"changeur de police"; `it/caratteri-speciali/` now stands alone with only a
+self-reference + homepage `x-default`, same ratified no-EN-parent shape.)*
 
 **Open follow-up, not yet decided (2026-07-26):** `fr/changeur-de-police/`
 picked up new content the same day (a "changer un texte déjà écrit" FAQ, a
@@ -743,6 +808,53 @@ same content to the two IT pages, or record the divergence deliberately
 (and if the latter, decide where: `data/translation_parity_exceptions.json`
 requires an `enUrl`, so it doesn't fit this pair as-is) — not left to drift
 by default.
+
+**Ratified local-only exception pair, `vi/usecase/ten-lien-quan-dep/` +
+`zh-tw/usecase/chuanshuo-duijue-mingzi-fuhao/` (2026-08-03):** both are
+nickname/special-character generators for the *same* specific game — Liên
+Quân Mobile in Vietnam, 傳說對決 (Arena of Valor) in Taiwan — Tencent's MOBA
+with no meaningful English-market presence and no EN name-generator page for
+it anywhere in `usecase/` (checked: no `arena-of-valor-name-generator`
+exists). Discovered as a byproduct of an unrelated hreflang audit: both pages
+were mis-parented onto the generic `usecase/nickname-generator/` hub, which
+only has room for one `vi` and one `zh-TW` claimant — but `nickname-
+generator` is genuinely generic (any game/platform), while these two are
+narrowly game-specific, so neither was a good match for that hub's `x-default`
+identity in the first place. Resolved by pairing them into their own isolated
+2-locale cluster, exactly mirroring the existing `ko/font-byeonhwan/` +
+`zh-tw/yingwen-ziti/` precedent above: `en`/`x-default` both fall back to the
+bare homepage as a placeholder, not a translation-equivalence claim (per this
+section's own established distinction). `usecase/nickname-generator/`'s `vi`
+slot was reassigned to `vi/usecase/ten-game-hay/` (generic "cool game name,"
+not tied to one game), which is the page that actually matches that hub's
+intent. No Semrush/GSC demand check was run for this pair specifically —
+Semrush was out of API units at the time — so unlike the `id/tulisan-cuping/`
+or `fr/calligraphie` precedents, this exception rests on the structural/
+linguistic argument (specific regional game, no EN equivalent exists to
+translate) rather than confirmed search volume. Revisit with real numbers
+if either page's ranking ever becomes a live question.
+
+**Ratified exception, `tr/sekilli-yazi/` (2026-08-02):** an **EN-SERP-
+consolidation** case, the same shape as the `fr/calligraphie` trio and
+explicitly *not* a "no English speaker would search this" claim. The page
+targets `süslü yazı` / `süslü harf` (fancy writing / fancy letters), which
+obviously has English demand — but **the EN homepage already *is* that page**:
+its H1 is literally "Fancy Text Generator", it uses "fancy text" 14 times, and
+no standalone EN fancy-text page exists anywhere in the repo (only `answers/*`
+spokes *about* fancy text, a different content type). Building an EN parent
+would cannibalise the site's own homepage.
+
+On the Turkish side the two do not compete, which is what makes the page worth
+keeping: first-party GSC (27 days to 2026-08-02) shows it drawing **the
+overwhelming majority of its impressions on `süslü` queries**, at first-page
+positions, while sitting far down the SERP on the `şekilli yaz*` family that
+`/tr/` owns. The page was retargeted
+onto `süslü` on 2026-08-01 for exactly that reason.
+
+**What is not verified:** the cannibalisation premise rests on this repo's own
+structure, not on an EN SERP or EN GSC pull — Semrush has been out of API units
+since 2026-07-30. The first reverse-demand sweep must check it, same caveat the
+`fr/calligraphie` entry carries.
 
 **Ratified exceptions are ledgered state, not just prose (2026-08-01):**
 every ratified local-only exception above is also recorded in
@@ -890,6 +1002,56 @@ entry shape.
   logic) — the audit and the enforcement gate must never define "changed" or
   "cluster" differently, so that shared logic lives in one place.
 
+### EN is the source locale — two structural carve-outs (added 2026-08-02)
+
+The rule above was written as if EN and a locale page were peers that drift
+apart. They aren't: **EN is where pages are born.** A new EN page gets linked
+from existing EN pages immediately, and translated later or never. Without
+allowing for that, the gate fires on essentially *every* new EN page, and a
+gate that fires on everything trains people to ignore it. Two carve-outs, both
+in the shared fingerprint logic so the audit and the gate can't disagree:
+
+**1. Catalogue indexes don't diff their inventory links.** A pillar index lists
+the pages that exist *in its own locale*. EN `library/index.html` carries ~306
+content links; its locale siblings carry 7–50, and every locale
+`category/index.html` carries **0**. That gap is correct — a Danish catalogue
+must not link an English-only page (see "Locale-native internal linking"). So
+for the eight pillar indexes in **`data/parity_catalogue_pages.json`** (and
+their locale equivalents), the internal-link set is dropped from the
+fingerprint. **`<h2>` count, FAQ-schema question count and `.symbol-tile` count
+are still compared**, so adding a real section or FAQ to an index still fires.
+A hub that merely links many spokes (`library/currency-symbols`) is *not* a
+catalogue — its links are editorial and keep full coverage.
+
+**2. Adding a link to a page that doesn't exist in the sibling's locale
+doesn't require that sibling to be touched.** When the *only* structural change
+to a page is added outbound links, the gate now resolves each new target
+against the sibling's language: if none of them has a translation in that
+language, the pair is skipped, because linking the English page from a locale
+page is precisely what the locale-native rule forbids. The moment a translation
+of the target exists, the pair is flagged again — which is the right trigger,
+since the sibling can now link its native equivalent.
+
+Deliberately still flagged, in both carve-outs: a **removed** link, a changed
+`<h2>`/FAQ/tile count, and a new link to a page that **does** have a sibling in
+that locale (verified: adding a `/library/currency-symbols/` link to
+`/discord/` flags exactly `fr` and `id` — the two of its eleven siblings that
+have that translation). `linksUnreachableFor()` is conservative by
+construction: an unresolvable link target counts as reachable, so an unknown
+link can never silently suppress a flag.
+
+**This is not an exceptions ledger.** `data/translation_parity_exceptions.json`
+exempts one discussed EN/locale *pair*; `data/parity_catalogue_pages.json`
+classifies a *page type* whose link list is an inventory. Adding a pattern to
+it is a structural claim about the template and should be raised like any other
+registry change — but it is not a per-page permission and must never be used as
+one.
+
+**Watch out when running the gate locally:** it diffs `merge-base..HEAD`, so
+**uncommitted work is invisible to it**. Running it with changes still in the
+working tree reports on an unrelated delta and can read as a false green —
+commit first, then run.
+
 **Do not add an entry to `data/translation_parity_exceptions.json`
 unilaterally.** Every entry there is supposed to represent a real,
 discussed decision between you and the user — the same bar the English-
@@ -949,7 +1111,7 @@ keyword-insertion engine.
    discussion, or native-speaker review) surfaces a locally meaningful word,
    phrase, abbreviation, cultural expression, platform term, gaming term,
    problem description, or search formulation relevant to UltraTextGen —
-   record it in the private research repo's Local Language Intelligence
+   record it in the internal Local Language Intelligence
    Library as a new `candidate` record (or add evidence to an existing
    `phrase_id` if the same phrase already exists — search for a match
    before creating a new record). Do this even if you don't end up using
@@ -960,10 +1122,9 @@ keyword-insertion engine.
    phrases (the ones that make it into the public snapshot here) are meant
    for production copy, and even then only per rule 2 above.
 9. This public snapshot is generated, read-only data — regenerated from the
-   private research repo's canonical dataset. Do not hand-edit the JSON
-   files under `data/local-language/`; if a phrase needs a status change or
-   correction, that happens in the private research repo and gets
-   re-synced here.
+   canonical research dataset maintained internally. Do not hand-edit the
+   JSON files under `data/local-language/`; if a phrase needs a status change
+   or correction, that happens internally and gets re-synced here.
 10. A local phrase, however well-evidenced, never guarantees ranking — it's
     a fit signal, not a growth lever on its own.
 
@@ -978,9 +1139,8 @@ locale by default*, and the site went a long time answering that question
 by "wait for a forum thread to surface it" — a mechanism with a proven,
 expensive blind spot: EN `/symbol/` had 77 pages, FR `/symbol/` had 6, and
 nothing flagged it until a one-off manual Semrush pull (2026-07-14) found
-**~49,960 searches/month** of directly-evidenced French demand (euro-sign
-14,800/mo, micro-sign 5,400/mo, not-equal-sign 4,190/mo, delta-symbol
-3,600/mo, +11 more slugs) sitting there undetected the whole time the
+**~49,960 searches/month** of directly-evidenced French demand (euro-sign,
+micro-sign, not-equal-sign, delta-symbol, +11 more slugs) sitting there undetected the whole time the
 English parents were live.
 
 **The rule:** two data-driven registries replace tribal knowledge about
@@ -1143,8 +1303,7 @@ first impression is recorded before any later fix lands. This has been a
 real, recurring pattern in this repo's own history (see
 `docs/image-seo-fixes.md` and the several past "GSC 404 cleanup" commits
 that backfilled hero/OG art for pages already shipped) — most recently
-diagnosed from live GSC crawl-stats data in `ultratextgen-lab-`'s
-`gsc-technical-seo-leakage-audit-2026-07-24.md` §6.
+diagnosed from live GSC crawl-stats data in an internal audit (2026-07-24).
 
 ### Tooling — why there are two image-asset scripts, not one
 

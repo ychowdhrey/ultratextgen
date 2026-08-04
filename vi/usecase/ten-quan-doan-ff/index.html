@@ -216,6 +216,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="decoration-section"><div class="decoration-label">Thêm trang trí vào kết quả</div><div class="decoration-tabs"><button class="decoration-tab active" data-deco-tab="symbols">Kí hiệu</button><button class="decoration-tab" data-deco-tab="frames">Khung viền</button><button class="decoration-tab" data-deco-tab="dividers">Đường kẻ</button><button class="decoration-tab" data-deco-tab="arrows">Mũi tên</button><button class="decoration-tab" data-deco-tab="minimal">Tối giản</button><button class="decoration-tab" data-deco-tab="emojis">Emoji</button></div><div class="decoration-grid" id="decorationGrid"></div></div>
 </div></div></section>
 
+<!-- SHARED TEMPLATE BANNER (hiện khi mở bằng link mẫu của đội) -->
+<p class="ts-banner" id="tagStudioBanner" hidden></p>
+
 <main class="container">
   <div class="category-section"><div class="category-tabs" id="categoryTabs"></div></div>
   <div class="results-grid" id="resultsGrid"></div>
@@ -271,6 +274,37 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <button class="uname-chip symbol-tile" data-symbol="꧁✧𝓐𝓾𝓻𝓸𝓻𝓪✧꧂" aria-label="Sao chép tên">꧁✧𝓐𝓾𝓻𝓸𝓻𝓪✧꧂</button>
     <button class="uname-chip symbol-tile" data-symbol="メ𝐋𝐄𝐆𝐄𝐍𝐃彡" aria-label="Sao chép tên">メ𝐋𝐄𝐆𝐄𝐍𝐃彡</button>
   </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TAG STUDIO -->
+<section class="mood-explainers" id="xuong-tag">
+  <span class="article-section-label">Tự tạo tag</span>
+  <h2>Xưởng Tag &amp; Tên Viết Tắt Quân Đoàn</h2>
+  <p class="u-secondary-block">Gõ tên viết tắt của quân đoàn vào ô phía trên (kiểu RRQ, EVOS, BTR), rồi chọn font, khung viền và dấu ngăn — tag hiện ngay và copy bằng một lần bấm. Dùng <em>Chia sẻ mẫu cho cả đội</em> để mọi thành viên có cùng một kiểu.</p>
+  <p class="u-secondary-block">Cần biết trước khi làm: Free Fire cho quân đoàn một cái <em>tên</em>, không phải tag riêng cho từng người — tên đó không tự động hiện trước nick của mỗi thành viên. Nên tag bạn tạo ở đây sẽ nằm trong nick của từng người, và đó là lý do ai cũng phải tự đặt thì cả đội mới đồng bộ.</p>
+  <div id="tagStudioMount" class="ts-studio"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- LIVE FRAMES -->
+<section class="mood-explainers" id="khung-tag">
+  <span class="article-section-label">Khung viền có sẵn</span>
+  <h2>Khung Viền Tag Quân Đoàn</h2>
+  <p class="u-secondary-tight">Mỗi khung viền chạy theo tên bạn gõ ở trên. Bấm để copy.</p>
+  <div id="guildTagFramesMount" class="ts-frames"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RARE COMBINATIONS -->
+<section class="mood-explainers" id="to-hop-hiem">
+  <span class="article-section-label">Khác biệt</span>
+  <h2>Tổ Hợp Hiếm (Ít Bị Trùng)</h2>
+  <p class="u-secondary-tight">Những cách phối font và kí hiệu ít gặp, để tên quân đoàn của bạn không giống hệt đội khác. Bấm <em>Đổi mẫu</em> để xem biến thể mới, bấm vào tag để copy.</p>
+  <div id="rareCombosMount" class="ts-rare"></div>
 </section>
 
 <div class="section-divider"></div>
@@ -379,6 +413,77 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 <script src="/renderer.js" defer></script>
 <script src="/script.js" defer></script>
 <script src="/symbol-explorer.js" defer></script>
+<script src="/js/tag-studio.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var ns = window.UltraTextGen;
+  if (!ns || !ns.tagStudio) return;
+
+  ns.tagStudio.init({
+    inputId: "mainInput",
+    studioMount: "tagStudioMount",
+    framesMount: "guildTagFramesMount",
+    rareMount: "rareCombosMount",
+    bannerMount: "tagStudioBanner",
+    charLimit: 12,
+    fonts: [
+      { key: "Ultra Small Caps", label: "Small Caps", safe: true },
+      { key: "Ultra Bold", label: "Đậm", safe: true },
+      { key: "Ultra Bold Serif", label: "Đậm Serif", safe: true },
+      { key: "Ultra Gothic", label: "Gothic", safe: false },
+      { key: "Ultra Script", label: "Viết tay", safe: false }
+    ],
+    brackets: [
+      { id: "umbrella", l: "꧁", r: "꧂", label: "꧁ ꧂" },
+      { id: "lantern", l: "【", r: "】", label: "【 】" },
+      { id: "scroll", l: "༺", r: "༻", label: "༺ ༻" },
+      { id: "star", l: "★彡", r: "彡★", label: "★彡 彡★" },
+      { id: "square", l: "[", r: "]", label: "[ ]" },
+      { id: "none", l: "", r: "", label: "Không" }
+    ],
+    separators: [
+      { id: "none", value: "", label: "Liền" },
+      { id: "dot", value: "•", label: "•" },
+      { id: "space", value: " ", label: "Cách" }
+    ],
+    frames: [
+      { name: "Khung Ô Dù", l: "꧁", r: "꧂" },
+      { name: "Ngoặc Lồng Đèn", l: "【", r: "】" },
+      { name: "Cuộn Tây Tạng", l: "༺", r: "༻" },
+      { name: "Tag Ngôi Sao", l: "★彡", r: "彡★" },
+      { name: "Tag Kiếm", l: "⚔", r: "⚔" },
+      { name: "Tag Thương Hiệu ™", l: "•", r: "•™" }
+    ],
+    rareSymbols: [
+      { l: "࿐", r: "࿐" }, { l: "᪥", r: "᪥" }, { l: "⚜", r: "⚜" },
+      { l: "༒", r: "༒" }, { l: "⫷", r: "⫸" }, { l: "꙰", r: "꙰" },
+      { l: "᯽", r: "᯽" }, { l: "⩩", r: "⩨" }, { l: "❪", r: "❫" }
+    ],
+    text: {
+      fontLabel: "Font",
+      bracketLabel: "Khung viền",
+      sepLabel: "Dấu ngăn",
+      copyTag: "Copy Tag",
+      copy: "Copy",
+      shareTemplate: "Chia sẻ mẫu cho cả đội",
+      shareCopied: "Đã copy link mẫu!",
+      safeBadge: "An toàn",
+      riskBadge: "Có thể lỗi ô",
+      safeNote: "Font này hiển thị ổn định nhất trong game.",
+      riskNote: "Font này đôi khi hiện thành ô vuông ▯ trên một số máy.",
+      previewPlaceholder: "Gõ tên viết tắt quân đoàn ở trên…",
+      framePlaceholder: "—",
+      rareShuffle: "Đổi mẫu",
+      rarePlaceholder: "…",
+      sharedBanner: "Bạn vừa mở mẫu của đội — gõ tên của bạn ở trên để cả quân đoàn có cùng một kiểu."
+    }
+  });
+
+  if (ns.parseTwemoji) ns.parseTwemoji(document.body);
+});
+</script>
+
 <script src="/footer.js" defer></script>
 </body>
 </html>

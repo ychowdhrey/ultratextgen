@@ -31,9 +31,9 @@
   }
 
   // Locale-aware footer — same Tier-1 locale set and same no-hub fallback
-  // rule as header.js (see that file's NAV comment + the roadmap doc in the
-  // private lab repo for why Category/Use Cases/Answers/Events still point
-  // at the English hub for every locale today). "tools" and "categories"
+  // rule as header.js (see that file's NAV comment for why Category/Use
+  // Cases/Answers/Events still point at the English hub for every locale
+  // today). "tools" and "categories"
   // link to real, on-disk native-slug pages verified 2026-07-20 — not
   // translated guesses. "company" labels are translated but the About/
   // Privacy/Terms/Contact pages themselves have no locale versions yet, so
