@@ -244,6 +244,39 @@ is idempotent. Still add one entry back on `symbol/index.html` by hand.
 `library/*` and **fails on orphan spokes** (a spoke no `library/` hub links to),
 so a forgotten sync run is caught before the PR.
 
+**Peer linking between `symbol/` spokes (the page's own "Related Symbols"
+section) is automated too, separately from hub↔spoke linking above.** When a
+spoke's `related` block names another `/symbol/` page (not a `/library/`
+hub), that's a declared peer relation, and it should be reciprocal — the
+named peer's own Related Symbols grid should link back. This doesn't happen
+by default: a page's compare-grid is static HTML written once at creation
+time, so a peer added weeks or months later never gets woven back into
+older, already-shipped siblings' grids unless something does it explicitly.
+Real case: `symbol/euro-sign/`, `symbol/pound-sign/`, `symbol/yen-sign/`,
+and `symbol/rupee-sign/` (all shipped 2026-07-11/12) cross-linked each
+other, but `symbol/ruble-sign/` (07-18), `symbol/dirham-sign/`, and
+`symbol/saudi-riyal-sign/` (both 07-22) — which claimed those older pages as
+peers — were never added back in, leaving three real pages with only 1–2
+inbound editorial links each. Root-cause analysis:
+`ultratextgen-lab-`'s `gsc-technical-seo-leakage-audit-2026-07-24.md` §7.
+
+`scripts/sync_symbol_spoke_links.py --write --reciprocal` fixes both
+directions in one pass — hub reciprocity (as before) and peer reciprocity
+(new): for every spoke, it now also checks whether its declared `/symbol/`
+peers link back, and injects a `compare-card` into the peer's own grid if
+not (`npm run sync:symbol-peer-links`). Read-only mode
+(`npm run check:symbol-peer-links`, i.e. the script with no `--write`) is
+the whole-site audit — unlike hub-orphans, a spoke with **zero** declared
+peers is not an error (not every symbol has a natural sibling); only a
+**one-directional** declared relation is flagged.
+`scripts/check-new-symbol-peer-links.py` (`npm run
+check:new-symbol-peer-links`) is the diff-scoped PR gate, wired into
+`.github/workflows/validate.yml`: for every `/symbol/` page a PR adds or
+changes, its declared peers must currently link back, or the PR fails with
+the exact pair and the fix (run the generator, commit the result). Scope
+note: both scripts, like the hub-linking tooling above, only walk EN
+`symbol/*` — they do not check locale-prefixed `<lang>/symbol/*` pages.
+
 **Translating a `library/`/`symbol/` page:** the lane is inherited from the
 English source's `page_type` — it is never re-decided per language. A
 translation of a `symbol/<slug>/` page ships to `<lang>/symbol/<slug>/`, even
@@ -1583,3 +1616,10 @@ Standing protocol:
   to route around a missing sibling or a stale English-hub link — run
   `npm run sync:locale-mesh -- --fix` instead. See "Locale Parent Governance"
   above — `scripts/check-locale-mesh.js` enforces the result in CI.
+- Do not hand-add a `symbol/` page's "Related Symbols" `compare-card` (or
+  edit an existing one) without also running `npm run sync:symbol-peer-links`
+  — a peer relation you declare on one page must be reciprocated on the
+  named peer's own page, and the generator is what keeps that mechanical
+  instead of manual. See "Content Types: Library vs Symbol" above —
+  `scripts/check-new-symbol-peer-links.py` enforces this in CI for any
+  `symbol/` page a PR touches.
