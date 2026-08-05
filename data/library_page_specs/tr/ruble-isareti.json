@@ -1,0 +1,128 @@
+{
+  "slug": "ruble-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Ruble İşareti: Kopyala Yapıştır ₽ — Rusya'nın Halk Oylamasıyla Seçtiği Para Birimi İşareti",
+  "meta_description": "Ruble işaretini (₽, U+20BD) kopyala yapıştır — 2013'te 284.000'den fazla Rus'un katıldığı halk oylamasıyla seçilen, en yeni para birimi işaretlerinden biri. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/ruble-isareti/",
+  "breadcrumb": "Ruble İşareti",
+  "hero_h1": "Ruble İşareti",
+  "hero_tagline": "₽ ruble işareti — Rusya'nın 2013'te ülke çapında bir halk oylamasının ardından benimsediği, altına bir çizgi eklenmiş Kiril harfi 'Р' — Unicode'daki en genç ulusal para birimi işaretlerinden biri. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Ruble işareti (₽), dünyanın en genç ulusal para birimi işaretlerinden biridir — Unicode'un Currency Symbols bloğunda (U+20A0–U+20CF) U+20BD RUBLE SIGN olarak kodlanmıştır ve standarda ancak Haziran 2014'te yayımlanan sürüm 7.0 ile eklenmiştir. Kökeni alışılmadık derecede iyi belgelenmiştir. Doğuşu hâlâ tartışılan dolar işareti ya da sterlin işaretinin aksine, ₽ bilinçli ve kamuya açık bir şekilde seçildi: Rusya Merkez Bankası binlerce başvuruyu beş finalist tasarıma indirdi, ardından 5 Kasım - 5 Aralık 2013 tarihleri arasında çevrimiçi bir halk oylaması yürüttü. Kazanan glif — kabarcığın altına tek bir yatay çizgi eklenmiş büyük Kiril harfi 'Р' (Er harfi) — 284.000'den fazla oyun yüzde 61'ini aldı ve merkez bankası tasarımı 11 Aralık 2013'te resmen onayladı. Bundan önce Rusların özel bir işareti yoktu ve para birimini 'руб.' gibi kısaltmalar ya da yalın bir 'р.' ile yazıyorlardı. Rublenin kendisi Rusya'nın para birimidir (ISO kodu RUB) ve hâlâ kullanılan en eski para birimi adlarından biridir, kökeni ortaçağ Novgorod'una dayanır; aynı ad Belarus rublesi ve Transdinyester rublesi tarafından da taşınır. Yüzyıllardır var olan bir paranın nihayet 2013'te kendi sembolüne kavuşması ₽'yi gerçek bir nadirlik yapar.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ruble-sign",
+      "label": "Ruble İşareti",
+      "h2": "Ruble İşareti (₽)",
+      "intro": "İşaretin kendisi ve inşa edildiği Kiril harfi. Kazanan tasarım, kabarcığın altına ekstra bir yatay çizgi eklenmiş büyük Er (Р) harfidir — eski 'р.' kısaltmasında görünen ise küçük harf р'dir.",
+      "symbols": [
+        {
+          "char": "₽",
+          "label": "Ruble Sign (U+20BD)"
+        },
+        {
+          "char": "Р",
+          "label": "Cyrillic Capital Letter Er (U+0420) — İşaretin Temeli"
+        },
+        {
+          "char": "р",
+          "label": "Cyrillic Small Letter Er (U+0440) — Eski 'р.' Kısaltmasında Kullanılır"
+        }
+      ]
+    },
+    {
+      "id": "newest-currency-signs",
+      "label": "Son Zamanlarda Benimsenenler",
+      "h2": "Yakın Zamanda Benimsenmiş Diğer Para Birimi İşaretleri",
+      "intro": "Ruble işaretinin Unicode'un Currency Symbols bloğunda yakın komşuları vardır — post-Sovyet ve diğer devletlerin para birimlerine kendi glifini verdiği, ancak 2010'larda kodlanmış bir küme. Hindistan'ın rupi işareti de, ruble gibi, bir halk tasarım yarışmasıyla seçildi.",
+      "symbols": [
+        {
+          "char": "₹",
+          "label": "Indian Rupee Sign (U+20B9) — 2010'da Halk Yarışmasıyla Seçildi"
+        },
+        {
+          "char": "₺",
+          "label": "Turkish Lira Sign (U+20BA) — 2012'de Kabul Edildi"
+        },
+        {
+          "char": "₸",
+          "label": "Tenge Sign (U+20B8) — Kazakistan Tengesi"
+        },
+        {
+          "char": "₼",
+          "label": "Manat Sign (U+20BC) — Azerbaycan Manatı"
+        },
+        {
+          "char": "₾",
+          "label": "Lari Sign (U+20BE) — Gürcistan Larisi"
+        }
+      ]
+    },
+    {
+      "id": "classic-currency-symbols",
+      "label": "Klasik Semboller",
+      "h2": "Karşılaştırma İçin Klasik Para Birimi Sembolleri",
+      "intro": "Rublenin net, kayda geçmiş 2013 kökeninin karşısında, dünyanın en tanınan para birimi işaretleri yüzyıllarca daha eski ve daha bulanıktır — dolar ve sterlin işaretinin ardındaki tam hikâye hâlâ tartışılmaktadır.",
+      "symbols": [
+        {
+          "char": "$",
+          "label": "Dollar Sign (U+0024)"
+        },
+        {
+          "char": "£",
+          "label": "Pound Sign (U+00A3)"
+        },
+        {
+          "char": "€",
+          "label": "Euro Sign (U+20AC)"
+        },
+        {
+          "char": "¥",
+          "label": "Yen Sign (U+00A5)"
+        },
+        {
+          "char": "¢",
+          "label": "Cent Sign (U+00A2)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/para-birimi-sembolleri/",
+      "title": "Para Birimi Sembolleri",
+      "desc": "Dolar ve euro'dan rupi, ruble ve bitcoin'e kadar dünya para birimi işaretlerinin gözden geçirilebilir bir kümesi."
+    },
+    {
+      "href": "/tr/symbol/rupi-isareti/",
+      "title": "Rupi İşareti",
+      "desc": "Rublenin en yakın kuzeni: Hindistan'ın ₹'si de, sadece üç yıl önce 2010'da, bir halk tasarım yarışmasıyla seçildi."
+    },
+    {
+      "href": "/tr/symbol/dolar-isareti/",
+      "title": "Dolar İşareti",
+      "desc": "Tam tersi bir hikâye — $ işareti tartışmalı bir kökene sahip yüzyıllık bir işaret, rublenin 2013 doğuşu ise tamamen kayıtlı."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/ruble-sign/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/ruble-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/ruble-sign/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

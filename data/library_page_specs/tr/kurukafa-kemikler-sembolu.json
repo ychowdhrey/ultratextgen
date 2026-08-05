@@ -1,0 +1,112 @@
+{
+  "slug": "kurukafa-kemikler-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Kurukafa ve Çapraz Kemikler: Kopyala Yapıştır ☠ — Zehir Piktogramı, Jolly Roger ve 💀 Değil",
+  "meta_description": "Kurukafa ve çapraz kemikleri (☠, U+2620) kopyala yapıştır — GHS zehir piktogramı ve korsan bayrağı Jolly Roger, 💀 kurukafa emojisi değil. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/kurukafa-kemikler-sembolu/",
+  "breadcrumb": "Kurukafa ve Çapraz Kemikler",
+  "hero_h1": "Kurukafa ve Çapraz Kemikler (☠)",
+  "hero_tagline": "Zehri işaretleyen ve Jolly Roger'da dalgalanan kurukafa ve çapraz kemikler (☠) — insanların sürekli 💀 kurukafa emojisiyle karıştırdığı U+2620 tehlike sembolü. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Kurukafa ve çapraz kemikler (☠, Unicode U+2620), iki çapraz kemiğin üzerinde bir insan kafatasıdır — yüzyıllardır ölümü ve tehlikeyi işaretleyen bir memento mori. Unicode onu 1993'te sürüm 1.1'de ekledi ve Miscellaneous Symbols bloğuna (U+2600–U+26FF), tehlike komşuları ☢ radyoaktif (U+2622) ile ☣ biyolojik tehlike (U+2623) yanına yerleştirdi. İki çok farklı iş görür. Bir tehlike işareti olarak hâlâ güncel ve resmidir: kurukafa ve çapraz kemikler, ABD hukukuna OSHA'nın Tehlike İletişimi Standardı aracılığıyla giren, akut toksisite için dokuz GHS piktogramından biridir — emekliye ayrılmamıştır, gerçi çocukların kurukafayı tehlikeden çok korsanlarla ilişkilendirdiğini fark eden Pittsburgh Zehir Merkezi'nin 1971'de yarattığı daha dostane \"Bay Yuk\" çıkartması ev ürünlerinde onu tamamlar. Korsan folklorunda ise Jolly Roger'dır — Samuel \"Kara Sam\" Bellamy, Edward England ve John Taylor gibi kaptanlar için 1710'lar-1720'lerde belgelenen siyah bayrak — gerçi birçok tayfa başka tasarımlar dalgalandırdı, o yüzden hiçbir zaman tek evrensel korsan bayrağı olmadı. Bir uyarı: ☠, \"öldüm\" gülme tepkileri için insanların yapıştırdığı karakter olan düz kurukafa emojisi 💀 (U+1F480) değildir — farklı kod noktası, farklı ton, sonsuza dek karıştırılıyor.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "skull-and-crossbones",
+      "label": "Sembol",
+      "h2": "Kurukafa ve Çapraz Kemikler — ☠",
+      "intro": "Sembolün kendisi, hem düz metin biçiminde hem de emoji sunumunda. Aynı kod noktasıdır, U+2620 — bir siyah-beyaz glif ile renkli bir emoji arasında geçiş yapan tek şey, sondaki bir varyant seçicidir.",
+      "symbols": [
+        {
+          "char": "☠",
+          "label": "Skull and Crossbones (U+2620)"
+        },
+        {
+          "char": "☠️",
+          "label": "Skull and Crossbones, Emoji Stili (U+2620 U+FE0F)"
+        }
+      ]
+    },
+    {
+      "id": "skull-vs-skull-emoji",
+      "label": "Kurukafa Emojisiyle Karşılaştırma",
+      "h2": "☠ ile 💀 Kurukafa Emojisi",
+      "intro": "Netleştirmeye değer karışıklık: ☠ (kurukafa ve çapraz kemikler) ile 💀 (düz kurukafa) farklı Unicode karakterleridir. 💀 insanların \"öldüm\" ya da çok gülme tepkileri için yapıştırdığı karakterdir; ☠ ise tehlike-ve-korsan sembolüdür. Uygun biçimde, korsan bayrağı emojisi 🏴‍☠️ tam olarak U+2620'nin kendisiyle bir siyah bayrağı birleştirerek inşa edilir.",
+      "symbols": [
+        {
+          "char": "☠️",
+          "label": "Skull and Crossbones (U+2620)"
+        },
+        {
+          "char": "💀",
+          "label": "Skull (U+1F480)"
+        },
+        {
+          "char": "🏴‍☠️",
+          "label": "Pirate Flag (U+1F3F4 U+200D U+2620)"
+        }
+      ]
+    },
+    {
+      "id": "hazard-symbols",
+      "label": "Tehlike Sembolleri",
+      "h2": "İlgili Tehlike ve Uyarı Sembolleri",
+      "intro": "Kurukafa ve çapraz kemikler, Unicode'un Miscellaneous Symbols bloğunda birlikte gruplandığı diğer uyarı işaretlerinin tam yanında oturur — her biri kendi tehlike anlamına sahip ayrı bir kod noktasıdır.",
+      "symbols": [
+        {
+          "char": "☠",
+          "label": "Skull and Crossbones (U+2620)"
+        },
+        {
+          "char": "☢",
+          "label": "Radioactive Sign (U+2622)"
+        },
+        {
+          "char": "☣",
+          "label": "Biohazard Sign (U+2623)"
+        },
+        {
+          "char": "⚠",
+          "label": "Warning Sign (U+26A0)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Tehlike ve Uyarı Sembolleri",
+      "desc": "Radyoaktif, biyolojik tehlike, yüksek gerilim ve diğer uyarı piktogramları, tek referansta kopyalamaya hazır."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Kurukafa Emojisi ve Kaomoji",
+      "desc": "💀 kurukafa emojisi ve metin-yüz kuzenleri — kurukafanın mim-tepki tarafı, tek merkezde."
+    },
+    {
+      "href": "/tr/symbol/biyolojik-tehlike-sembolu/",
+      "title": "Biyolojik Tehlike Sembolü (☣)",
+      "desc": "Unicode'un Miscellaneous Symbols bloğunda komşu bir tehlike glifi, ☣ biyolojik tehlike işareti, tam olarak ele alınıyor."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/kurukafa-kemikler-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/skull-and-crossbones/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

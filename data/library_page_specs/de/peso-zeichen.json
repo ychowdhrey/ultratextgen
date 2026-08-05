@@ -1,0 +1,81 @@
+{
+  "slug": "peso-zeichen",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Peso-Zeichen: ₱ kopieren & einfügen — nur der philippinische Peso hat ein eigenes, alle anderen nutzen $",
+  "meta_description": "Das Pesozeichen ₱ (U+20B1) kopieren — das eigene Zeichen des philippinischen Peso, während der mexikanische, argentinische, kolumbianische und andere Pesos alle mit dem schlichten $ geschrieben werden. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/peso-zeichen/",
+  "breadcrumb": "Peso-Zeichen",
+  "hero_h1": "Peso-Zeichen (₱)",
+  "hero_tagline": "Das ₱, das dem philippinischen Peso gehört — der einzige Peso der Welt mit einem eigenen Symbol, während der mexikanische, argentinische und kolumbianische Peso alle mit dem schlichten Dollarzeichen auskommen müssen. Ein Klick genügt zum Kopieren.",
+  "intro": "Das Pesozeichen (₱, Unicode U+20B1 PESO SIGN) ist das eigene Symbol des philippinischen Peso — und trotz des generischen Namens ist es der einzige Peso der Welt, der überhaupt eines besitzt. Jede andere Währung namens Peso — der mexikanische (MXN), argentinische (ARS), kolumbianische (COP), chilenische (CLP), kubanische (CUP), dominikanische (DOP) und uruguayische (UYU) darunter — wird konventionell mit dem schlichten Dollarzeichen $ (U+0024) geschrieben, in der Praxis meist mit einem Länderpräfix wie MX$ oder COL$ unterschieden. Diese gemeinsame Glyphe ist kein Zufall: Man geht weithin davon aus, dass das Dollarzeichen selbst aus einer handschriftlichen Abkürzung des spanischen Peso im 18. Jahrhundert hervorging — weshalb bis heute ein einziges Zeichen sowohl Dollar als auch die meisten Pesos bedient. Die Philippinen gingen einen anderen Weg. Die von der US-Kolonialregierung erlassene Executive Order No. 66 vom 3. August 1903 verordnete ein großes P, gekreuzt von zwei parallelen Linien, eigens um den philippinischen Peso vom US-Dollar und der spanischen Peseta abzugrenzen. Unicode kodierte ₱ mit Version 3.2, veröffentlicht 2002; der ISO-4217-Code der Währung ist PHP, ausgegeben von der Bangko Sentral ng Pilipinas.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/peso-sign/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/peso-zeichen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peso-sign/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "das-pesozeichen",
+      "label": "Das Pesozeichen",
+      "h2": "Die zwei Zeichen, die man „das Pesozeichen“ nennt — ₱ und $",
+      "intro": "Beide werden Pesozeichen genannt. ₱ ist das eigene Zeichen des philippinischen Peso; $ ist, was fast jeder andere Peso verwendet — weil das Dollarzeichen selbst vermutlich als Kürzel für den spanischen Peso begann. Ob es aus einem handschriftlichen „Ps“ oder aus den S-umschlungenen Säulen des Herkules auf spanischen Dollarmünzen entstand, ist unter Historikern bis heute umstritten.",
+      "symbols": [
+        { "char": "₱", "label": "Pesozeichen (U+20B1) — die eigene Glyphe des philippinischen Peso" },
+        { "char": "$", "label": "Dollarzeichen (U+0024) — das Zeichen, das der mexikanische, argentinische und andere Pesos tatsächlich verwenden" }
+      ]
+    },
+    {
+      "id": "durchgestrichene-buchstaben-waehrungen",
+      "label": "Gleiche Bauweise",
+      "h2": "Die Familie durchgestrichener Buchstaben-Währungszeichen",
+      "intro": "Das Pesozeichen ist ein großes P, gekreuzt von zwei parallelen Balken — dasselbe Rezept hinter einer ganzen Generation moderner Währungszeichen, jeweils ein nationaler Buchstabe mit einem oder zwei Strichen versehen. Zum Kopieren, überall einsetzbar.",
+      "symbols": [
+        { "char": "₹", "label": "Indisches Rupienzeichen (U+20B9) — ein durchgestrichenes R, offiziell 2010 eingeführt" },
+        { "char": "₩", "label": "Wonzeichen (U+20A9) — ein W mit zwei Balken" },
+        { "char": "₦", "label": "Nairazeichen (U+20A6) — ein durchgestrichenes N (Nigeria)" },
+        { "char": "₴", "label": "Hrywnja-Zeichen (U+20B4) — ein durchgestrichener Buchstabe für die Ukraine" },
+        { "char": "₫", "label": "Dong-Zeichen (U+20AB) — ein durchgestrichenes d (Vietnam)" },
+        { "char": "€", "label": "Eurozeichen (U+20AC) — ein abgerundetes E mit zwei Strichen" }
+      ]
+    },
+    {
+      "id": "peso-doppelgaenger",
+      "label": "Nicht zu verwechseln mit",
+      "h2": "Doppelgänger: Glyphen, die man mit ₱ verwechselt",
+      "intro": "Weil ₱ im Grunde ein durchgestrichenes P ist, wird es mit anderen P-förmigen Zeichen vertauscht — darunter eines, das eine völlig andere Währung ist. Jedes davon ist ein eigener Unicode-Codepoint, keine Stilvariante.",
+      "symbols": [
+        { "char": "₽", "label": "Rubelzeichen (U+20BD) — Russlands Währung, ebenfalls ein durchgestrichenes P, aber mit anderem Balken" },
+        { "char": "P", "label": "Lateinischer Großbuchstabe P (U+0050) — der schlichte Ersatz, oft für den Peso getippt" },
+        { "char": "Ᵽ", "label": "Lateinisches Großbuchstabe P mit Strich (U+2C63) — ein einfach durchgestrichenes P aus der Linguistik, keine Währung" },
+        { "char": "Ρ", "label": "Griechischer Großbuchstabe Rho (U+03A1) — sieht aus wie ein P" },
+        { "char": "Р", "label": "Kyrillischer Großbuchstabe Er (U+0420) — ein weiterer P-Doppelgänger" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/waehrungssymbole/",
+      "title": "Währungssymbole",
+      "desc": "Jedes Weltwährungszeichen — Dollar, Euro, Pfund, Yen, Rupie und den Peso — nebeneinander in einem Raster durchstöbern."
+    },
+    {
+      "href": "/de/symbol/dollar-zeichen/",
+      "title": "Dollar-Zeichen ($)",
+      "desc": "Das Zeichen, das fast jeder Peso tatsächlich benutzt: Nur der philippinische Peso hat sein eigenes ₱, während der mexikanische, argentinische und kolumbianische Peso alle mit $ geschrieben werden."
+    },
+    {
+      "href": "/de/symbol/rupien-zeichen/",
+      "title": "Rupien-Zeichen (₹)",
+      "desc": "Indiens ₹ — wie ₱ ein modernes Währungszeichen, offiziell für eine Nation festgelegt und durch einen mit parallelen Balken durchgestrichenen Buchstaben gebildet."
+    }
+  ]
+}

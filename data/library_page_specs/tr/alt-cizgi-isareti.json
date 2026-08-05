@@ -1,0 +1,112 @@
+{
+  "slug": "alt-cizgi-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Alt Çizgi: Kopyala Yapıştır _ ＿ ‾ — Daktilo Altını Çizmekten snake_case'e",
+  "meta_description": "Alt çizgiyi (_, U+005F LOW LINE) ve tam genişlikli ＿ ile üst çizgi ‾ kuzenlerini kopyala yapıştır; bir daktilo altını çizme hilesinin nasıl snake_case'e ve boşluk sorunsuz kullanıcı adı karakterine dönüştüğünü gör. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/alt-cizgi-isareti/",
+  "breadcrumb": "Alt Çizgi",
+  "hero_h1": "Alt Çizgi (_)",
+  "hero_tagline": "Bir daktilo altını çizme hilesi olarak başlayıp snake_case'e dönüşen sade klavye alt çizgisi (_) — kullanıcı adlarının, e-postaların ve dosya adlarının izin verdiği tek boşluk-güvenli karakter — burada tam genişlikli ＿, çift ‗ ve üst çizgi ‾ akrabalarıyla birlikte gösteriliyor. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Alt çizgi, ya da düz çizgi (_, U+005F LOW LINE), Unicode'un Basic Latin bloğunda taban çizgisi üzerinde oturan yatay çizgidir; genel kategorisi Connector Punctuation'dır (Bağlayıcı Noktalama). Tamamen mekanik bir hile olarak başladı: bir daktiloda bir sözcüğün altını çizmek için önce onu yazar, arabayı başa geri sarar (backspace) ve aynı alanı alt çizgi tuşuyla yeniden yazardın — 1881 tarihli Caligraph gibi makinelerde bulunan özel bir tuş. Karakter, sol-ok'un (←) yerini alarak 1967'de 95 (0x5F) kod noktasıyla ASCII'ye geçti; bundan önce IBM'in EBCDIC'i onu 1964'te \"kesme karakteri\" olarak zaten eklemişti. Programcılar sonra onu bir sözcük ayırıcı olarak yeniden kullandılar — alt çizgilerin boşluk yerine geçtiği stil, 1960'ların sonundaki C diline ve The C Programming Language (1978) kitabına dayanır, ama \"snake_case\" adı ancak Ruby topluluğunun bunu 2004 civarında kullanmasıyla ortaya çıktı (Python'un PEP 8'i hâlâ ona \"lower_case_with_underscores\" der). Bugün kullanıcı adlarında, e-posta yerel bölümlerinde, dosya adlarında ve URL slug'larında izin verilen tek boşluk-güvenli karakterdir, Markdown ise _tek alt çizgileri_ italik, __çiftleri__ ise kalın olarak okur. Sık sık tireyle (-, U+002D) karıştırılır ve daha geniş kuzenleri olan tam genişlikli ＿ (U+FF3F) ile çift düz çizgi ‗ (U+2017) ile de sık sık karıştırılır.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-underscore",
+      "label": "Alt Çizgi",
+      "h2": "Alt Çizgi, Tam Genişlikli ve Çift",
+      "intro": "Sade klavye düz çizgisi ve iki genişlik varyantı — Doğu Asya dizgisinde kullanılan tam genişlikli biçim ve çift aralıklı alt çizgi. Her yere yapıştırılmaya hazır.",
+      "symbols": [
+        {
+          "char": "_",
+          "label": "Underscore / Low Line (U+005F)"
+        },
+        {
+          "char": "＿",
+          "label": "Fullwidth Low Line (U+FF3F)"
+        },
+        {
+          "char": "‗",
+          "label": "Double Low Line (U+2017)"
+        }
+      ]
+    },
+    {
+      "id": "overline",
+      "label": "Üst Çizgi",
+      "h2": "Üst Çizgi: Aynı Çizgi, Metnin Üzerinde",
+      "intro": "Üst çizgi, alt çizginin ayna görüntüsüdür — aynı yatay çizgi, altına değil metnin üzerine yerleştirilir; bu yüzden ikisi zıt sanılıp karıştırılır. Makron ise insanların üst çizgi kastederken sık yazdığı kısa çubuktur.",
+      "symbols": [
+        {
+          "char": "‾",
+          "label": "Overline / Spacing Overscore (U+203E)"
+        },
+        {
+          "char": "¯",
+          "label": "Macron (U+00AF)"
+        }
+      ]
+    },
+    {
+      "id": "confused-hyphen",
+      "label": "Tire ve Çizgiyle Karşılaştırma",
+      "h2": "Alt Çizgi ile Tire ve Çizgi Ailesi",
+      "intro": "URL'lerde, kullanıcı adlarında ve dosya adlarında alt çizgi ile tire durmadan birbirinin yerine yazılır — ama farklı yüksekliklerde ve farklı kod noktalarında dururlar, her biri farklı bir iş görür.",
+      "symbols": [
+        {
+          "char": "-",
+          "label": "Hyphen-Minus / Keyboard Hyphen (U+002D)"
+        },
+        {
+          "char": "‐",
+          "label": "Hyphen (U+2010)"
+        },
+        {
+          "char": "–",
+          "label": "En Dash (U+2013)"
+        },
+        {
+          "char": "−",
+          "label": "Minus Sign (U+2212)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Klavye Sembolleri",
+      "desc": "Alt çizgi, tire, asteriks ve standart bir klavyedeki noktalama ile shift-tuşu karakterlerinin geri kalanı."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Noktalama Sembolleri",
+      "desc": "Tireler, parantezler, tırnak işaretleri ve Unicode'un gündelik noktalaması tek referansta."
+    },
+    {
+      "href": "/tr/symbol/at-isareti/",
+      "title": "At İşareti (@)",
+      "desc": "E-posta adreslerinin ve sosyal medya kullanıcı adlarının kalbindeki bir başka özel karakter — alt çizginin boşluk-güvenli ayırıcı olduğu yer."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/alt-cizgi-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/underscore-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

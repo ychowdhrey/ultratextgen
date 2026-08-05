@@ -1,0 +1,145 @@
+{
+  "slug": "eggplant-emoji",
+  "title": "Eggplant Emoji & Kaomoji: Copy & Paste 🍆 Produce Combos",
+  "meta_description": "Eggplant emoji 🍆 with its literal and slang meanings, plus double-meaning produce like 🍑 🌽 🥒 🍌 and cooking combos. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/eggplant-emoji/",
+  "breadcrumb": "Eggplant Emoji & Kaomoji",
+  "hero_h1": "Eggplant Emoji & Kaomoji",
+  "hero_tagline": "The 🍆 eggplant — a plain kitchen vegetable and one of the internet's best-known innuendos — plus the other produce with a double meaning, cooking sets, and hungry kaomoji. Click any symbol to copy it instantly.",
+  "intro": "The eggplant emoji 🍆 has two lives: it is the literal aubergine you cook with, and it is also long-standing internet slang, widely used as an innuendo for male anatomy. This page covers both plainly — the vegetable and its reputation — then gathers the other fruits and vegetables that picked up similar double meanings online (🍑 peach, 🌽 corn, 🥒 cucumber, 🍌 banana), the plates and pans for eggplant's everyday culinary use, and food kaomoji for when you're just hungry. Grab a single glyph, or copy a ready-made produce combo set.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "eggplant-emoji",
+      "label": "The Eggplant",
+      "h2": "The Eggplant Emoji & Garden Vegetables",
+      "intro": "🍆 is both a literal aubergine and, online, a well-known innuendo for male anatomy — here it sits with the garden vegetables it is cooked alongside.",
+      "symbols": [
+        { "char": "🍆", "label": "Eggplant" },
+        { "char": "🫑", "label": "Bell Pepper" },
+        { "char": "🌶️", "label": "Hot Pepper" },
+        { "char": "🥔", "label": "Potato" },
+        { "char": "🧅", "label": "Onion" },
+        { "char": "🧄", "label": "Garlic" },
+        { "char": "🍅", "label": "Tomato" },
+        { "char": "🥕", "label": "Carrot" }
+      ]
+    },
+    {
+      "id": "double-meaning-produce",
+      "label": "Double Meanings",
+      "h2": "Other Produce With Double Meanings",
+      "intro": "A handful of fruits and vegetables have picked up suggestive reputations online — the peach for the backside, plus banana, cucumber, corn, and cherries.",
+      "symbols": [
+        { "char": "🍑", "label": "Peach" },
+        { "char": "🌽", "label": "Ear of Corn" },
+        { "char": "🥒", "label": "Cucumber" },
+        { "char": "🍌", "label": "Banana" },
+        { "char": "🍒", "label": "Cherries" }
+      ]
+    },
+    {
+      "id": "eggplant-in-cooking",
+      "label": "In the Kitchen",
+      "h2": "Eggplant in Cooking",
+      "intro": "The same 🍆 in its everyday role — a kitchen staple in ratatouille, moussaka, and stir-fries, with the plates, pans, and sides it is served from.",
+      "symbols": [
+        { "char": "🍆", "label": "Eggplant" },
+        { "char": "🍽️", "label": "Fork and Knife With Plate" },
+        { "char": "🥘", "label": "Shallow Pan of Food" },
+        { "char": "🍲", "label": "Pot of Food" },
+        { "char": "🥗", "label": "Green Salad" },
+        { "char": "🫒", "label": "Olive" },
+        { "char": "🧀", "label": "Cheese Wedge" },
+        { "char": "🔪", "label": "Kitchen Knife" }
+      ]
+    },
+    {
+      "id": "food-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Food & Eating Kaomoji",
+      "intro": "Japanese-style text faces for being hungry, drooling, and digging in — they paste anywhere plain text works.",
+      "symbols": [
+        { "char": "(っ˘ڡ˘ς)", "label": "Drooling Yum Kaomoji" },
+        { "char": "( ˘﹃˘)", "label": "Hungry Drool Kaomoji" },
+        { "char": "(๑´ڡ`๑)", "label": "Yummy Face Kaomoji" },
+        { "char": "(´～`)ﾓｸﾞﾓｸﾞ", "label": "Munching Kaomoji" },
+        { "char": "( ˘▽˘)っ♨", "label": "Warm Meal Kaomoji" },
+        { "char": "(*´ڡ`*)", "label": "Blushing Tasty Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Eggplant & Produce Combo Sets",
+    "intro": "Copy a complete produce combo in one click — from a garden haul to a plated meal."
+  },
+  "collection_container_id": "eggplantSetsContainer",
+  "collections": [
+    {
+      "name": "Garden Vegetables",
+      "flags": ["🍆", "🥕", "🌽", "🍅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cooking Prep",
+      "flags": ["🍆", "🔪", "🥘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Ratatouille",
+      "flags": ["🍆", "🍅", "🫑", "🧅"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fresh Produce",
+      "flags": ["🍑", "🍌", "🍒", "🍇"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Salad Bowl",
+      "flags": ["🥗", "🥒", "🍅", "🫑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fruit Basket",
+      "flags": ["🍓", "🍇", "🥭", "🍍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Grill Night",
+      "flags": ["🌽", "🍆", "🥘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Veggie Medley",
+      "flags": ["🥦", "🥕", "🥔", "🧅"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "The full grid of fruit, vegetable, meal, and drink emoji to copy."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What common emoji actually mean, including the ones with a second sense."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emojis",
+      "desc": "The emoji behind internet slang and their coded, online-only meanings."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and reaction face to pair with a produce combo."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "ruble-sign",
+  "page_type": "symbol",
+  "title": "Ruble Sign: Copy & Paste ₽ — The Currency Symbol Russia Chose by Public Vote",
+  "meta_description": "Copy and paste the ruble sign (₽, U+20BD) — one of the newest currency symbols, chosen by a 2013 public vote of 284,000+ Russians. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/ruble-sign/",
+  "breadcrumb": "Ruble Sign",
+  "hero_h1": "Ruble Sign",
+  "hero_tagline": "The ₽ ruble sign — the Cyrillic ‘Р’ crossed by a bar that Russia adopted in 2013 after a nationwide public vote, making it one of the youngest national currency symbols in Unicode. Click any symbol to copy it instantly.",
+  "intro": "The ruble sign (₽) is one of the youngest national currency symbols in the world — encoded as U+20BD RUBLE SIGN in Unicode’s Currency Symbols block (U+20A0–U+20CF), and added to the standard only in version 7.0, released in June 2014. Its origin is unusually well documented. Unlike the dollar sign or pound sign, whose exact births are still debated, ₽ was chosen deliberately and publicly: the Bank of Russia narrowed thousands of submissions down to five finalist designs, then ran an online public vote from 5 November to 5 December 2013. The winning glyph — a Cyrillic capital ‘Р’ (the letter Er) with a single horizontal bar added beneath the bowl — took 61% of more than 284,000 votes, and the central bank formally approved it on 11 December 2013. Before that, Russians had no dedicated mark and wrote the currency with abbreviations such as ‘руб.’ or a bare ‘р.’ The ruble itself is the currency of Russia (ISO code RUB) and one of the oldest currency names still in use, dating back to medieval Novgorod; the same name is also carried by the Belarusian and Transnistrian rubles. A centuries-old money finally getting its own symbol in 2013 makes ₽ a genuine rarity.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ruble-sign",
+      "label": "Ruble Sign",
+      "h2": "The Ruble Sign (₽)",
+      "intro": "The mark itself and the Cyrillic letter it was built from. The winning design is the capital Er (Р) with an extra horizontal bar below the bowl — the small letter р is the one that appeared in the old ‘р.’ abbreviation.",
+      "symbols": [
+        { "char": "₽", "label": "Ruble Sign (U+20BD)" },
+        { "char": "Р", "label": "Cyrillic Capital Letter Er (U+0420) — The Base of the Sign" },
+        { "char": "р", "label": "Cyrillic Small Letter Er (U+0440) — Used in the Old ‘р.’ Abbreviation" }
+      ]
+    },
+    {
+      "id": "newest-currency-signs",
+      "label": "Recently Adopted",
+      "h2": "Other Newly Adopted Currency Signs",
+      "intro": "The ruble sign has close neighbors in Unicode’s Currency Symbols block — a cluster of marks encoded only in the 2010s as post-Soviet and other states gave their currencies a dedicated glyph. India’s rupee sign, like the ruble, was picked through a public design contest.",
+      "symbols": [
+        { "char": "₹", "label": "Indian Rupee Sign (U+20B9) — Chosen by Public Contest in 2010" },
+        { "char": "₺", "label": "Turkish Lira Sign (U+20BA) — Adopted 2012" },
+        { "char": "₸", "label": "Tenge Sign (U+20B8) — Kazakhstani Tenge" },
+        { "char": "₼", "label": "Manat Sign (U+20BC) — Azerbaijani Manat" },
+        { "char": "₾", "label": "Lari Sign (U+20BE) — Georgian Lari" }
+      ]
+    },
+    {
+      "id": "classic-currency-symbols",
+      "label": "Classic Symbols",
+      "h2": "Classic Currency Symbols for Contrast",
+      "intro": "Set against the ruble’s crisp, on-the-record 2013 origin, the world’s best-known currency marks are centuries older and murkier — the exact stories behind the dollar and pound signs are still argued over.",
+      "symbols": [
+        { "char": "$", "label": "Dollar Sign (U+0024)" },
+        { "char": "£", "label": "Pound Sign (U+00A3)" },
+        { "char": "€", "label": "Euro Sign (U+20AC)" },
+        { "char": "¥", "label": "Yen Sign (U+00A5)" },
+        { "char": "¢", "label": "Cent Sign (U+00A2)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "A browsable set of world currency marks, from the dollar and euro to the rupee, ruble, and bitcoin."
+    },
+    {
+      "href": "/symbol/rupee-sign/",
+      "title": "Rupee Sign",
+      "desc": "The ruble’s closest cousin: India’s ₹ was also chosen through a public design contest, just three years earlier in 2010."
+    },
+    {
+      "href": "/symbol/dollar-sign/",
+      "title": "Dollar Sign",
+      "desc": "The opposite story — the $ sign is centuries old with a disputed origin, where the ruble’s 2013 birth is fully on the record."
+    }
+  ]
+}

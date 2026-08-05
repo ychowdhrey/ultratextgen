@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="en"><head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nickname Generator Widget | UltraTextGen</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ultratextgen.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Use Cases",
+      "item": "https://ultratextgen.com/usecase/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Nickname Generator",
+      "item": "https://ultratextgen.com/usecase/nickname-generator/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Embed",
+      "item": "https://ultratextgen.com/usecase/nickname-generator/embed/"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="embed-widget-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="embed-wrapper">
+    <div class="hero-card">
+      <h1 class="hero-headline">Nickname Generator</h1>
+      <p class="hero-tagline">Style a name, wrap it in a frame — copy and paste anywhere.</p>
+
+      <div class="input-wrapper">
+        <textarea class="main-input" id="mainInput" placeholder="Type your name or nickname..." maxlength="100">Shadow</textarea>
+        <span class="char-count"><span id="charCount">0</span>/32</span>
+      </div>
+
+      <!-- Fonts -->
+      <div class="style-phrase-section">
+        <div class="style-phrase-title">Fonts — highlight text above, then apply</div>
+        <div class="decoration-tabs" id="fontTabs">
+          <button class="decoration-tab active" data-font="Ultra Bold">𝗕 Bold</button>
+          <button class="decoration-tab" data-font="Ultra Bold Italic">𝘽 Bold Italic</button>
+          <button class="decoration-tab" data-font="Ultra Script Bold">𝓑 Script Bold</button>
+          <button class="decoration-tab" data-font="Ultra Cute Script">ℬ Cute Script</button>
+          <button class="decoration-tab" data-font="Ultra Gothic">𝔅 Gothic</button>
+          <button class="decoration-tab" data-font="Ultra Small Caps">ʙ Small Caps</button>
+        </div>
+        <div class="selection-indicator" id="selectionIndicator">Highlight a phrase in your name to style it</div>
+        <button class="apply-btn" id="applyFontBtn" disabled>Apply to selection</button>
+      </div>
+
+      <!-- Frames -->
+      <div class="helper-section">
+        <div class="helper-section-title">Frames — click to wrap your name</div>
+        <div class="decoration-tabs" id="frameTabs">
+          <button class="decoration-tab active" data-frame-tab="gameFrames">Game Frames</button>
+          <button class="decoration-tab" data-frame-tab="crowns">Crowns</button>
+          <button class="decoration-tab" data-frame-tab="warrior">Warrior</button>
+          <button class="decoration-tab" data-frame-tab="hearts">Hearts</button>
+          <button class="decoration-tab" data-frame-tab="brackets">Brackets</button>
+        </div>
+        <div class="helper-chip-grid" id="frameGrid"></div>
+      </div>
+    </div>
+
+    <!-- Variations -->
+    <div class="embed-variations">
+      <h2>Nickname Ideas</h2>
+      <div id="variationsGrid">
+        <div class="variations-placeholder">Type a name above to see nickname ideas</div>
+      </div>
+    </div>
+
+    <!-- Attribution -->
+    <div class="embed-attribution">
+      <a href="https://ultratextgen.com/usecase/nickname-generator/?utm_source=embed&utm_medium=widget&utm_campaign=nickname_generator" target="_blank" rel="noopener nofollow">Nickname Generator</a> by <a href="https://ultratextgen.com/?utm_source=embed&utm_medium=widget&utm_campaign=nickname_generator" target="_blank" rel="noopener nofollow">UltraTextGen</a>
+      <span class="embed-sep">·</span>
+      <a href="https://ultratextgen.com/usecase/clan-tag-generator/?utm_source=embed&utm_medium=widget&utm_campaign=nickname_generator" target="_blank" rel="noopener nofollow">Make a Clan Tag →</a>
+    </div>
+  </div>
+
+  <script src="/js/flair/flair-engine.js"></script>
+  <script src="/styles.js" defer></script>
+  <script src="/renderer.js" defer></script>
+
+  <script>
+    // ── Shared flair packs (loaded non-deferred above) ─────────────────────────
+    const PACKS = (window.UltraTextGen && window.UltraTextGen.flair && window.UltraTextGen.flair.PACKS) || {};
+    const MAX = 32; // common game-username cap — a soft warning, not a hard block
+
+    // ── Curated font + frame combos for the variations grid ────────────────────
+    // Each pairs a textStyles font transform with a flair PACKS wrap entry.
+    const CURATED = [
+      { label: 'Bold · Gaming Frame',   fontKey: 'Ultra Bold',        frame: PACKS.gameFrames && PACKS.gameFrames[0] },
+      { label: 'Script · Brackets',     fontKey: 'Ultra Script Bold', frame: PACKS.brackets && PACKS.brackets[0] },
+      { label: 'Cute · Hearts',         fontKey: 'Ultra Cute Script', frame: PACKS.hearts && PACKS.hearts[0] },
+      { label: 'Gothic · Warrior',      fontKey: 'Ultra Gothic',      frame: PACKS.warrior && PACKS.warrior[0] },
+      { label: 'Small Caps · Crown',    fontKey: 'Ultra Small Caps',  frame: PACKS.crowns && PACKS.crowns[0] },
+      { label: 'Bold Italic · Frame',   fontKey: 'Ultra Bold Italic', frame: PACKS.gameFrames && PACKS.gameFrames[2] },
+      { label: 'Cute · Flower',         fontKey: 'Ultra Cute Script', frame: PACKS.hearts && PACKS.hearts[2] },
+      { label: 'Bold · Royal Crown',    fontKey: 'Ultra Bold',        frame: PACKS.crowns && PACKS.crowns[4] }
+    ];
+
+    // ── Elements ───────────────────────────────────────────────────────────────
+    const mainInput = document.getElementById('mainInput');
+    const charCount = document.getElementById('charCount');
+    const applyFontBtn = document.getElementById('applyFontBtn');
+    const selectionIndicator = document.getElementById('selectionIndicator');
+    const variationsGrid = document.getElementById('variationsGrid');
+    const frameGrid = document.getElementById('frameGrid');
+
+    let activeFont = 'Ultra Bold';
+    let activeFrame = null;      // a PACKS entry { prefix, suffix } or null
+    let activeFrameTab = 'gameFrames';
+    let selStart = 0, selEnd = 0;
+
+    // ── Char count ─────────────────────────────────────────────────────────────
+    function updateCharCount() {
+      const len = mainInput.value.length;
+      charCount.textContent = len;
+      if (len > MAX) {
+        charCount.parentElement.classList.add('char-warning');
+      } else {
+        charCount.parentElement.classList.remove('char-warning');
+      }
+    }
+
+    // ── Render a name through a font style ─────────────────────────────────────
+    function styleName(text, fontKey) {
+      const style = window.textStyles && window.textStyles[fontKey];
+      if (!style || !window.UltraTextGenRender) return text;
+      return UltraTextGenRender.renderAny(text, style);
+    }
+
+    // ── Escape for the selection indicator ─────────────────────────────────────
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // ── Build a single variation card ──────────────────────────────────────────
+    function makeCard(label, result, featured) {
+      const len = result.length;
+      const isOver = len > MAX;
+
+      const card = document.createElement('div');
+      card.className = 'style-card' + (featured ? ' surprise-hit' : '');
+
+      const info = document.createElement('div');
+      info.className = 'style-info';
+
+      const name = document.createElement('div');
+      name.className = 'style-name';
+      name.textContent = label;
+
+      const preview = document.createElement('div');
+      preview.className = 'style-preview';
+      preview.textContent = result;
+
+      const charInfo = document.createElement('div');
+      charInfo.className = 'variation-char-count' + (isOver ? ' variation-char-over' : '');
+      charInfo.textContent = len + '/' + MAX + (isOver ? ' ⚠ over limit' : '');
+
+      info.appendChild(name);
+      info.appendChild(preview);
+      info.appendChild(charInfo);
+
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'copy-btn';
+      copyBtn.textContent = 'Copy';
+      copyBtn.type = 'button';
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(result).then(() => {
+          copyBtn.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyBtn.textContent = 'Copy';
+            copyBtn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+
+      card.appendChild(info);
+      card.appendChild(copyBtn);
+      return card;
+    }
+
+    // ── Render the variations grid ─────────────────────────────────────────────
+    function renderVariations() {
+      const text = mainInput.value.trim();
+      if (!text) {
+        variationsGrid.innerHTML = '<div class="variations-placeholder">Type a name above to see nickname ideas</div>';
+        return;
+      }
+
+      variationsGrid.innerHTML = '';
+
+      // Featured "Your Pick" card from a clicked frame chip, applied to the
+      // currently selected font (defaults to Ultra Bold).
+      if (activeFrame && activeFrame.prefix != null) {
+        const picked = activeFrame.prefix + styleName(text, activeFont) + activeFrame.suffix;
+        variationsGrid.appendChild(makeCard('Your Pick', picked, true));
+      }
+
+      CURATED.forEach(combo => {
+        const styled = styleName(text, combo.fontKey);
+        const frame = combo.frame;
+        const result = frame ? (frame.prefix + styled + frame.suffix) : styled;
+        variationsGrid.appendChild(makeCard(combo.label, result, false));
+      });
+    }
+
+    // ── Frame chips ────────────────────────────────────────────────────────────
+    function renderFrameGrid() {
+      frameGrid.innerHTML = '';
+      const entries = PACKS[activeFrameTab] || [];
+      entries.forEach(entry => {
+        const btn = document.createElement('button');
+        btn.className = 'helper-chip';
+        btn.type = 'button';
+        btn.textContent = entry.prefix + '·' + entry.suffix;
+        if (activeFrame === entry) btn.classList.add('active');
+        btn.addEventListener('click', () => {
+          if (activeFrame === entry) {
+            // toggle off
+            activeFrame = null;
+            btn.classList.remove('active');
+          } else {
+            activeFrame = entry;
+            frameGrid.querySelectorAll('.helper-chip').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+          }
+          renderVariations();
+        });
+        frameGrid.appendChild(btn);
+      });
+    }
+
+    // ── Frame tabs ─────────────────────────────────────────────────────────────
+    const frameTabs = document.querySelectorAll('#frameTabs [data-frame-tab]');
+    frameTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        frameTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeFrameTab = tab.dataset.frameTab;
+        renderFrameGrid();
+      });
+    });
+
+    // ── Font tabs ──────────────────────────────────────────────────────────────
+    const fontTabs = document.querySelectorAll('#fontTabs [data-font]');
+    fontTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        fontTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeFont = tab.dataset.font;
+        renderVariations(); // keep the "Your Pick" card in sync with the chosen font
+      });
+    });
+
+    // ── Selection tracking ─────────────────────────────────────────────────────
+    function updateSelection() {
+      selStart = mainInput.selectionStart;
+      selEnd = mainInput.selectionEnd;
+      if (selStart !== selEnd) {
+        const selected = mainInput.value.substring(selStart, selEnd);
+        selectionIndicator.innerHTML = 'Selected: <em>' + escapeHtml(selected) + '</em>';
+        applyFontBtn.disabled = false;
+      } else {
+        selectionIndicator.textContent = 'Highlight a phrase in your name to style it';
+        applyFontBtn.disabled = true;
+      }
+    }
+
+    mainInput.addEventListener('select', updateSelection);
+    mainInput.addEventListener('mouseup', updateSelection);
+    mainInput.addEventListener('keyup', updateSelection);
+
+    // ── Apply font to selection ────────────────────────────────────────────────
+    applyFontBtn.addEventListener('click', () => {
+      if (selStart === selEnd) return;
+      const val = mainInput.value;
+      const selectedText = val.substring(selStart, selEnd);
+      const transformed = styleName(selectedText, activeFont);
+      const newVal = val.substring(0, selStart) + transformed + val.substring(selEnd);
+      mainInput.value = newVal;
+      const newCursor = selStart + transformed.length;
+      mainInput.selectionStart = mainInput.selectionEnd = newCursor;
+      mainInput.focus();
+      selStart = selEnd = newCursor;
+      selectionIndicator.textContent = 'Highlight a phrase in your name to style it';
+      applyFontBtn.disabled = true;
+      updateCharCount();
+      renderVariations();
+    });
+
+    // ── Input change ───────────────────────────────────────────────────────────
+    mainInput.addEventListener('input', () => {
+      updateCharCount();
+      renderVariations();
+    });
+
+    // ── Init (styles.js + renderer.js are deferred, so wait for them) ───────────
+    renderFrameGrid();
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCharCount();
+      renderVariations();
+    });
+  </script>
+</body></html>

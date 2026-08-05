@@ -1,0 +1,96 @@
+{
+  "slug": "monark-kelebegi-emojisi",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Monark Kelebeği Emojisi: Kopyala Yapıştır 🫌 — Bir Tür Karışıklığını Düzelten Unicode 18.0 Adayı",
+  "meta_description": "Monark Kelebeği (🫌, U+1FACC), Eylül 2026'da beklenen Unicode 18.0 ile birlikte gelecek Emoji 18.0 için bir taslak aday. Yıllardır süren platformlar arası Kelebek görüntüleme karışıklığını düzeltiyor — henüz onaylanmadı ve bugün hiçbir yazı tipi göstermiyor.",
+  "canonical": "https://ultratextgen.com/tr/symbol/monark-kelebegi-emojisi/",
+  "breadcrumb": "Monark Kelebeği Emojisi",
+  "hero_h1": "Monark Kelebeği Emojisi",
+  "hero_tagline": "Genel Kelebek emojisinin platformlar arası görüntüleme uyuşmazlığından ayrılan belirli bir tür — Eylül 2026'da beklenen Unicode 18.0 ile gelecek Emoji 18.0 için taslak. Yalnızca taslak: henüz onaylanmadı, hiçbir yazı tipi göstermiyor. Yine de kod noktasını kopyalayabilirsin.",
+  "intro": "Monark Kelebeği (🫌, U+1FACC), Eylül 2026'da kesinleşmesi beklenen Unicode 18.0'ın emoji karşılığı Emoji 18.0 için taslak hâline getirilmiş bir aday emojidir. Gerçek bir parçalanma sorununu düzeltmek için var: mevcut genel Kelebek emojisi (🦋) bazı platformlarda mavi bir Morpho olarak, bazılarında ise Monark'a daha yakın bir şey olarak görüntüleniyor — yani iki kişi tıpatıp aynı kod noktasını paylaşıp iki farklı böcek görebiliyor, \"onlara bir Monark kelebeği yazdığını sanırken, karşı taraf bir Morpho'ya bakıyor olabilir.\" Bu emoji için istekler Apple'ın kendi topluluk forumlarında yıllar öncesine dayanıyor; kullanıcılar Monark'ın ikonik turuncu-siyah renklerini ve nesli tükenmekte olan statüsünü kendi yuvasını hak ettiğinin gerekçeleri olarak gösteriyor. Unicode normalde türe özgü varyantları onaylamaya isteksizdir, ama Kelebek'i kendi alt kategorisinde en çok kullanılan hayvan emojisi olarak gösteren sıklık verileri, en tanınabilir türünü ayrı bir slota çıkarmayı haklı çıkardı. Emojinin kendisi Monark'ın göç hikâyesini taşıyor — \"nesiller boyu direnç, dayanıklılık ve derin atalara ait bellek\", hiçbir bireyinin tamamlayamadığı ömürler boyunca binlerce kilometre kat eden bir yaratık. Hâlâ bir taslak olduğu için hiçbir işletim sistemi, klavye ya da yazı tipi şu anda bunu göstermiyor; Emoji 18.0 onaylanıp platformlar desteği yayınlayana kadar, muhtemelen 2027 civarında, boş bir kutu ya da yer tutucu bir glif bekle.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "monarch-butterfly",
+      "label": "Monark Kelebeği",
+      "h2": "Monark Kelebeği Emojisi",
+      "intro": "Taslak karakterin kendisi — hiçbir yazı tipi henüz gösteremese de bugün kod noktası olarak kopyalanabilir.",
+      "symbols": [
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (taslak, U+1FACC)"
+        }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Farklı Olduğu Emoji",
+      "h2": "En Çok Karıştırıldığı Emoji",
+      "intro": "Monark Kelebeği'nin içinden ayrıldığı zaten kodlanmış genel emoji ve yanlışlıkla en sık yerine görüntülendiği komşusu.",
+      "symbols": [
+        {
+          "char": "🦋",
+          "label": "Butterfly — Monark Kelebeği'nin içinden ayrıldığı genel tür"
+        }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Diğer Taslak Adaylar",
+      "h2": "Diğer Emoji 18.0 Taslak Adayları",
+      "intro": "Monark Kelebeği, bu sürümde onaylanmamış tek karakter değil — bunlar da onunla birlikte taslak hâline getirildi ve Eylül 2026'daki karara kadar aynı şekilde görüntülenemiyor.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Cracking Face (taslak, U+1FAEB) — halk oylamasını kazandı"
+        },
+        {
+          "char": "🫝",
+          "label": "Pickle (taslak, U+1FADD)"
+        },
+        {
+          "char": "🪋",
+          "label": "Meteor (taslak, U+1FA8B)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/animal-emojis/",
+      "title": "Hayvan ve Yaratık Emojileri",
+      "desc": "Genel Kelebek de dâhil, zaten kodlanmış her yaratık emojisi, bugün göz atılabilir ve kopyala yapıştıra hazır."
+    },
+    {
+      "href": "/tr/symbol/catlayan-yuz-emojisi/",
+      "title": "Çatlayan Yüz Emojisi",
+      "desc": "Halk oylamasını kazanan Emoji 18.0 taslak adayı."
+    },
+    {
+      "href": "/tr/symbol/tursu-emojisi/",
+      "title": "Turşu Emojisi",
+      "desc": "Ertelenen bir Apple Core önerisinden devralınmış bir başka Emoji 18.0 taslak adayı."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/monark-kelebegi-emojisi/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/monarch-butterfly-emoji/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

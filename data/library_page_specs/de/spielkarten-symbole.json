@@ -1,0 +1,139 @@
+{
+  "slug": "spielkarten-symbole",
+  "lang": "de",
+  "title": "Spielkarten-Symbole ♠ ♥ ♦ ♣ — Kartenfarben kopieren & einfügen",
+  "meta_description": "Spielkarten-Symbole, Kartenfarben, Würfel und spielbezogene Unicode-Zeichen durchsuchen und kopieren. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "breadcrumb": "Spielkarten-Symbole",
+  "hero_h1": "Spielkarten-Symbole ♠ ♥ ♦ ♣",
+  "hero_tagline": "Eine Referenzsammlung von Kartenfarben, Würfeln, Kartenzeichen und spielbezogenen Unicode-Zeichen. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "intro": "Diese Bibliothek enthält Unicode-Symbole für Spielkartenfarben (Herz, Karo, Kreuz, Pik), einzelne Kartenzeichen, Würfelaugen und weitere spielbezogene Marken. Die Symbole sind nach Spielart und Kategorie gruppiert.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/de/library/spielkarten-symbole/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/card-suit-symbols/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/naipes-de-baralho/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/spielkarten-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/card-suit-symbols/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "standard-suits",
+      "label": "Standard-Kartenfarben",
+      "h2": "Standard-Kartenfarben",
+      "intro": "Die vier gefüllten Farbsymbole der meisten westlichen Spielkartendecks.",
+      "symbols": [
+        { "char": "♠", "label": "Pik" },
+        { "char": "♥", "label": "Herz" },
+        { "char": "♦", "label": "Karo" },
+        { "char": "♣", "label": "Kreuz" }
+      ]
+    },
+    {
+      "id": "outlined-suits",
+      "label": "Umrandete Kartenfarben",
+      "h2": "Umrandete Kartenfarben",
+      "intro": "Umrandete (weiße) Varianten der vier Standard-Kartenfarben.",
+      "symbols": [
+        { "char": "♤", "label": "Weißes Pik" },
+        { "char": "♡", "label": "Weißes Herz" },
+        { "char": "♢", "label": "Weißes Karo" },
+        { "char": "♧", "label": "Weißes Kreuz" }
+      ]
+    },
+    {
+      "id": "card-suits-combined",
+      "label": "Kartenfarben — gefüllt & umrandet",
+      "h2": "Kartenfarben — gefüllt & umrandet (8)",
+      "intro": "Alle acht Unicode-Kartenfarben zusammen — gefüllt (♠ ♥ ♦ ♣) und umrandet (♤ ♡ ♢ ♧) — der kanonische „Namens-Satz“ für Spielkarten-Deko.",
+      "symbols": [
+        { "char": "♠", "label": "Pik" },
+        { "char": "♥", "label": "Herz" },
+        { "char": "♦", "label": "Karo" },
+        { "char": "♣", "label": "Kreuz" },
+        { "char": "♤", "label": "Weißes Pik" },
+        { "char": "♡", "label": "Weißes Herz" },
+        { "char": "♢", "label": "Weißes Karo" },
+        { "char": "♧", "label": "Weißes Kreuz" }
+      ]
+    },
+    {
+      "id": "dice",
+      "label": "Würfel",
+      "h2": "Würfelaugen",
+      "intro": "Unicode-Zeichen für jede Seite eines Standard-Sechsseiters.",
+      "symbols": [
+        { "char": "⚀", "label": "Würfelseite 1" },
+        { "char": "⚁", "label": "Würfelseite 2" },
+        { "char": "⚂", "label": "Würfelseite 3" },
+        { "char": "⚃", "label": "Würfelseite 4" },
+        { "char": "⚄", "label": "Würfelseite 5" },
+        { "char": "⚅", "label": "Würfelseite 6" }
+      ]
+    },
+    {
+      "id": "playing-card-emojis",
+      "label": "Spielkarten-Emojis",
+      "h2": "Spielkarten-Emojis",
+      "intro": "Emoji-Varianten von Spielkarten und Spielsymbolen.",
+      "symbols": [
+        { "char": "🃏", "label": "Joker" },
+        { "char": "🎴", "label": "Blumen-Spielkarten (Hanafuda)" },
+        { "char": "🀄", "label": "Mahjong Roter Drache" }
+      ]
+    },
+    {
+      "id": "trump-and-special-cards",
+      "label": "Trumpf & Sonderkarten",
+      "h2": "Trumpf- & Sonderkarten-Symbole",
+      "intro": "Unicode-Spielkarten aus dem Playing-Cards-Block.",
+      "symbols": [
+        { "char": "🂠", "label": "Kartenrückseite" },
+        { "char": "🂡", "label": "Pik-Ass" },
+        { "char": "🂢", "label": "Pik-Zwei" },
+        { "char": "🂮", "label": "Pik-König" },
+        { "char": "🂱", "label": "Herz-Ass" },
+        { "char": "🂾", "label": "Herz-König" },
+        { "char": "🃁", "label": "Karo-Ass" },
+        { "char": "🃎", "label": "Karo-König" },
+        { "char": "🃑", "label": "Kreuz-Ass" },
+        { "char": "🃞", "label": "Kreuz-König" }
+      ]
+    },
+    {
+      "id": "game-symbols",
+      "label": "Spiele",
+      "h2": "Spiel-Symbole",
+      "intro": "Weitere Spiel- und Freizeitsymbole.",
+      "symbols": [
+        { "char": "🎰", "label": "Spielautomat" },
+        { "char": "🎲", "label": "Spielwürfel" },
+        { "char": "🎯", "label": "Zielscheibe (Bullseye)" },
+        { "char": "🎱", "label": "Billard-8er-Kugel" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/schach-symbole/",
+      "title": "Schach-Symbole",
+      "desc": "Unicode-Schachfiguren — weiße und schwarze Könige, Damen, Türme, Läufer, Springer und Bauern."
+    },
+    {
+      "href": "/de/library/herz-symbole/",
+      "title": "Herz-Symbole",
+      "desc": "Herz-Emojis und Unicode-Herzzeichen, inklusive der klassischen Kartenfarbe Herz."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ]
+}

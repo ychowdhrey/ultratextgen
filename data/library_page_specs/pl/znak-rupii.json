@@ -1,0 +1,74 @@
+{
+  "slug": "znak-rupii",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Rupii Indyjskiej: Skopiuj ₹ — Historia Projektu z 2010 Roku i Jak Go Wpisać",
+  "meta_description": "Skopiuj znak rupii indyjskiej (₹, U+20B9) — co oznacza, historię jego projektu z 2010 roku i jak go wpisać. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-rupii/",
+  "breadcrumb": "Znak Rupii",
+  "hero_h1": "Znak Rupii Indyjskiej (₹)",
+  "hero_tagline": "Co oznacza ₹, historia jego projektu z 2010 roku i jak go wpisać — kliknij, aby skopiować.",
+  "intro": "W przeciwieństwie do znaków walut, które ewoluowały stopniowo przez wieki odręcznego pisma, ₹ ma niezwykle dobrze udokumentowane, celowe pochodzenie. Rząd Indii zorganizował w latach 2009–2010 otwarty publiczny konkurs projektowy specjalnie po to, by nadać rupii własny, dedykowany symbol, odróżniający się od zwykłego skrótu „Rs.” używanego do tej pory. D. Udaya Kumar, absolwent studiów podyplomowych IIT Guwahati, wygrał konkurs, a projekt oficjalnie przyjął rząd Indii w 2010 roku. Zwycięski projekt łączy literę dewanagari „र” (ra, pierwszą głoskę słowa „rupia”) z łacińską wielką literą R, zwieńczoną dwiema równoległymi poziomymi liniami. Te linie powszechnie odczytuje się jako nawiązanie do indyjskiej flagi narodowej oraz — zgodnie z powszechną konwencją znaków walut — jako echo znaku równości, mające sugerować gospodarczą równość i równowagę. Znak działa na Instagramie, Discordzie, TikToku i WhatsAppie, ale nie w nazwach użytkownika Roblox, PlayStation czy Xbox, ograniczonych do znaków alfanumerycznych. Wykracza poza prosty, czterocyfrowy zakres kodów Alt na Windows, więc najłatwiej wpisać go metodą Alt+X w Wordzie (wpisz 20B9, a potem naciśnij Alt+X) albo skopiować bezpośrednio ze strony referencyjnej. W HTML używa się encji &#8377; — nie ma krótkiej nazwanej encji jak &euro;.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/rupee-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-rupii/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/rupee-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-rupii",
+      "label": "Rupia",
+      "h2": "Znak Rupii Indyjskiej",
+      "intro": "Właściwy unicode'owy znak rupii, przyjęty w 2010 roku, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "₹", "label": "Znak Rupii Indyjskiej (U+20B9)" }
+      ]
+    },
+    {
+      "id": "inne-symbole-walut",
+      "label": "Inne Symbole Walut",
+      "h2": "Inne Symbole Walut do Odróżnienia",
+      "intro": "Inne znaki walut, obok których pojawia się rupia w treściach finansowych.",
+      "symbols": [
+        { "char": "€", "label": "Znak Euro (U+20AC) — kolejny celowo zaprojektowany, współczesny symbol waluty" },
+        { "char": "£", "label": "Znak Funta (U+00A3) — liczący sobie ponad 1000 lat, wywodzący się z łaciny libra" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-walut",
+      "label": "Powiązane Waluty",
+      "h2": "Więcej Symboli Walut Świata",
+      "intro": "Pozostałe główne światowe znaki walut, z którymi łączy się rupia w cenach i finansach.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara" },
+        { "char": "¥", "label": "Znak Jena" },
+        { "char": "₩", "label": "Znak Wona" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-dolara/",
+      "title": "Znak Dolara ($)",
+      "desc": "Najbardziej rozpoznawalny symbol waluty na świecie — i jego sporne pochodzenie."
+    },
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro (€)",
+      "desc": "Symbol waluty zaprojektowany celowo w 1996 roku."
+    },
+    {
+      "href": "/pl/symbol/znak-funta/",
+      "title": "Znak Funta (£)",
+      "desc": "Ponad tysiąc lat historii, wywodzący się z łacińskiego libra."
+    }
+  ]
+}

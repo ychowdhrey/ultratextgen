@@ -1,0 +1,66 @@
+{
+  "slug": "skull-and-crossbones",
+  "page_type": "symbol",
+  "title": "Skull and Crossbones: Copy & Paste ☠ — Poison Pictogram, Jolly Roger & Not 💀",
+  "meta_description": "Copy and paste the skull and crossbones (☠, U+2620) — the GHS poison pictogram and pirate Jolly Roger flag, not the 💀 skull emoji. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/skull-and-crossbones/",
+  "breadcrumb": "Skull and Crossbones",
+  "hero_h1": "Skull and Crossbones (☠)",
+  "hero_tagline": "The skull and crossbones (☠) that marks poison and flies on the Jolly Roger — the U+2620 hazard symbol people constantly mix up with the 💀 skull emoji. Click any symbol to copy it instantly.",
+  "intro": "The skull and crossbones (☠, Unicode U+2620) is a human skull above two crossed bones — a memento mori that has signaled death and danger for centuries. Unicode added it in version 1.1 in 1993, filing it in the Miscellaneous Symbols block (U+2600–U+26FF) alongside its hazard neighbors ☢ radioactive (U+2622) and ☣ biohazard (U+2623). It carries two very different jobs. As a hazard mark it is still current and official: the skull and crossbones is one of the nine GHS pictograms for acute toxicity, adopted into U.S. law through OSHA's Hazard Communication Standard — not retired, though the friendlier \"Mr. Yuk\" sticker (created in 1971 by the Pittsburgh Poison Center, after children linked the skull to pirates rather than to danger) supplements it on household products. As pirate lore it is the Jolly Roger, the black flag documented in the 1710s–1720s for captains such as Samuel \"Black Sam\" Bellamy, Edward England, and John Taylor — though many crews flew other designs, so it was never the one universal pirate flag. One caution: ☠ is not the plain skull emoji 💀 (U+1F480), the character people paste for \"I'm dead\" laughing reactions — different code point, different register, endlessly confused.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "skull-and-crossbones",
+      "label": "The Symbol",
+      "h2": "The Skull and Crossbones — ☠",
+      "intro": "The symbol itself, in both its plain-text form and its emoji presentation. It's the same code point, U+2620 — a trailing variation selector is all that switches it between a black-and-white glyph and a colored emoji.",
+      "symbols": [
+        { "char": "☠", "label": "Skull and Crossbones (U+2620)" },
+        { "char": "☠️", "label": "Skull and Crossbones, Emoji Style (U+2620 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "skull-vs-skull-emoji",
+      "label": "vs. the Skull Emoji",
+      "h2": "☠ vs. the 💀 Skull Emoji",
+      "intro": "The mix-up worth clearing up: ☠ (skull and crossbones) and 💀 (plain skull) are different Unicode characters. 💀 is the one people paste for \"I'm dead\" or laughing-so-hard reactions; ☠ is the hazard-and-pirate symbol. Fittingly, the pirate-flag emoji 🏴‍☠️ is built by joining a black flag to U+2620 itself.",
+      "symbols": [
+        { "char": "☠️", "label": "Skull and Crossbones (U+2620)" },
+        { "char": "💀", "label": "Skull (U+1F480)" },
+        { "char": "🏴‍☠️", "label": "Pirate Flag (U+1F3F4 U+200D U+2620)" }
+      ]
+    },
+    {
+      "id": "hazard-symbols",
+      "label": "Hazard Symbols",
+      "h2": "Related Hazard & Warning Symbols",
+      "intro": "The skull and crossbones sits in Unicode's Miscellaneous Symbols block right beside the other warning marks it gets grouped with — each a separate code point with its own hazard meaning.",
+      "symbols": [
+        { "char": "☠", "label": "Skull and Crossbones (U+2620)" },
+        { "char": "☢", "label": "Radioactive Sign (U+2622)" },
+        { "char": "☣", "label": "Biohazard Sign (U+2623)" },
+        { "char": "⚠", "label": "Warning Sign (U+26A0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Radioactive, biohazard, high-voltage, and other warning pictograms to copy in one reference."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Skull Emoji & Kaomoji",
+      "desc": "The 💀 skull emoji and its text-face cousins — the meme-reaction side of the skull, collected in one hub."
+    },
+    {
+      "href": "/symbol/biohazard-symbol/",
+      "title": "Biohazard Symbol (☣)",
+      "desc": "The ☣ biohazard sign — a neighboring hazard glyph in Unicode's Miscellaneous Symbols block, covered in full."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "symbol-celsjusza",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Celsjusza: Skopiuj ℃ Znak Stopnia Celsjusza",
+  "meta_description": "Skopiuj znak stopnia Celsjusza (℃, U+2103) — jednoznakową ligaturę temperatury, dlaczego Unicode zaleca zamiast niej zwykłe °C, oraz jak go wpisać na Windows i Mac. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-celsjusza/",
+  "breadcrumb": "Symbol Celsjusza",
+  "hero_h1": "Symbol Celsjusza",
+  "hero_tagline": "℃ to jeden znak Unicode, który mieści w sobie znak stopnia i wielką literę C — wygodny do wklejenia, choć większość typografów wciąż sięga po zwykłe °C. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak stopnia Celsjusza (℃, Unicode U+2103) to złożony znak z bloku Letterlike Symbols, łączący znak stopnia (°) i wielką literę C w jeden glif. Istnieje głównie po to, by starsze teksty wschodnioazjatyckie — gdzie pełny odczyt temperatury często zajmował jedną komórkę znaku — mogły być bezstratnie konwertowane przez Unicode bez zmiany długości. Dla nowego tekstu Unicode i większość poradników stylistycznych zalecają w praktyce zapis znaku stopnia, po którym następuje zwykłe C (°C), a nie jednoznakowe ℃, ale pojedynczy glif pozostaje najszybszą rzeczą do skopiowania, gdy potrzebujesz po prostu tego znaku.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/celsius-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-celsjusza/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/celsius-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-celsjusza",
+      "label": "Celsjusz",
+      "h2": "Znak Stopnia Celsjusza",
+      "intro": "Jednoznakowy ℃ oraz dwuznakowa sekwencja °C, którą preferuje Unicode — skopiuj tę formę, jakiej potrzebujesz.",
+      "symbols": [
+        { "char": "℃", "label": "Stopień Celsjusza (Jeden Znak)" },
+        { "char": "°C", "label": "Znak Stopnia + C (Forma Zalecana)" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Mylone",
+      "h2": "Symbole Często Mylone z ℃",
+      "intro": "Każdy z tych znaków bywa podstawiany zamiast ℃, a każdy to osobny znak z własnym znaczeniem.",
+      "symbols": [
+        { "char": "°", "label": "Znak Stopnia (U+00B0) — Samodzielny" },
+        { "char": "℉", "label": "Stopień Fahrenheita (U+2109)" },
+        { "char": "K", "label": "Znak Kelwina (U+212A) — Normalizuje się do Zwykłego K" },
+        { "char": "C", "label": "Zwykła Litera C" }
+      ]
+    },
+    {
+      "id": "powiazane-znaki-miar",
+      "label": "Powiązane Znaki Miar",
+      "h2": "Inne Symbole Miar i Jednostek",
+      "intro": "Znaki, które dzielą ze ℃ to samo terytorium miar i notacji naukowej.",
+      "symbols": [
+        { "char": "′", "label": "Prim (Minuty / Stopy)" },
+        { "char": "″", "label": "Bis (Sekundy / Cale)" },
+        { "char": "‰", "label": "Znak Promila" },
+        { "char": "µ", "label": "Znak Mikro (U+00B5)" },
+        { "char": "Ω", "label": "Znak Oma (U+2126)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/symbol-fahrenheita/",
+      "title": "Symbol Fahrenheita (℉)",
+      "desc": "Złożony znak stopnia Fahrenheita i preferowane przez większość poradników °F."
+    },
+    {
+      "href": "/pl/symbol/stopnie-i-temperatura/",
+      "title": "Znak Stopnia i Temperatury",
+      "desc": "Samodzielny znak stopnia stojący za ℃, kątami i współrzędnymi."
+    },
+    {
+      "href": "/library/unit-measurement-symbols/",
+      "title": "Unit & Measurement Symbols",
+      "desc": "Temperatura, jednostki SI i znaki notacji naukowej w jednym miejscu."
+    }
+  ]
+}

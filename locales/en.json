@@ -78,7 +78,7 @@
           },
           {
             "question": "Is it free, and what's the catch?",
-            "answer": "Free, no account, no daily limit, no watermark, no email capture, no paid tier. The site is funded by Google AdSense — that's the catch. We don't charge per copy, we don't gate styles behind a sign-up, and we don't insert affiliate links or zero-width tracking characters into the text you paste."
+            "answer": "Free, no account, no daily limit, no watermark, no email capture, no paid tier. The site is funded by Google AdSense — that's the catch. We don't charge per copy, we don't gate styles behind a sign-up, and we don't insert affiliate links or zero-width tracking characters into the text you paste. Read more about the project on the <a href=\"/about/\">About page</a>."
           }
         ]
       },
@@ -146,7 +146,7 @@
         "items": [
           {
             "question": "What languages and alphabets work?",
-            "answer": "Unicode styled variants only exist for the Latin alphabet (A–Z, a–z) and Arabic digits (0–9). So the core letters of every Latin-script language are supported: English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Malay, Tagalog, Afrikaans, Swahili, Hungarian, Czech.<br><br>One caveat for accented letters (á, é, ñ, ü, ç, and Vietnamese letters like ữ, ế, đ): Unicode defines no styled variant for them, so in most alphabet styles — bold, italic, script, fraktur — the accented letter stays plain while the letters around it are styled. The accent itself is never lost. Styles that add marks or symbols instead of swapping letters (strikethrough, underline, and decorative wraps) keep accents fully intact, so they're the best pick for heavily-accented languages like Vietnamese."
+            "answer": "Unicode styled variants only exist for the Latin alphabet (A–Z, a–z) and Arabic digits (0–9). So the core letters of every Latin-script language are supported: English, Spanish, French, Portuguese, German, Italian, Dutch, Polish, Vietnamese, Turkish, Indonesian, Malay, Tagalog, Afrikaans, Swahili, Hungarian, Czech.<br><br>Accented letters (á, é, ñ, ü, ç, and Vietnamese letters like ữ, ế, đ) style too, not just the plain letters around them. Unicode has no bold á, so most fancy-text tools quietly leave accented letters plain — this one splits the accented letter into its base letter and its accent mark, styles the base, and reattaches the mark on top. That works across almost every style, bold, italic, script and fraktur included. The exceptions are the upside-down/flip styles, which reposition an accent but don't flip it, and a handful of one-piece letters (đ, ø, ß, ł, ı) with no separate mark to lift off."
           },
           {
             "question": "Why doesn't Arabic, Cyrillic, Hindi, Chinese, or Japanese text transform?",

@@ -253,6 +253,30 @@ def m_accessibility(p):
           text-anchor="middle">&#8220;mathematical bold capital B&#8230;&#8221;</text>"""
 
 
+def m_accents(p):
+    # a diacritic that survives styling next to one that drops it
+    return f"""
+    <g transform="translate(70 130)">
+      <rect width="110" height="110" rx="20" fill="url(#g{p})"/>
+      <text x="55" y="80" font-family="Georgia, {SANS}" font-size="66"
+            font-weight="700" fill="#fff" text-anchor="middle">&#225;</text>
+    </g>
+    <circle cx="204" cy="122" r="16" fill="{PURPLE}"/>
+    <path d="M196 122 L201 128 L212 114" stroke="#fff" stroke-width="3.5"
+          fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(230 130)">
+      <rect width="110" height="110" rx="20" fill="#fff" stroke="{INK}"
+            stroke-opacity="0.12"/>
+      <text x="55" y="80" font-family="Georgia, {SANS}" font-size="66"
+            font-weight="700" fill="{SUB}" text-anchor="middle" opacity="0.55">a</text>
+    </g>
+    <circle cx="364" cy="122" r="16" fill="{SUB}" opacity="0.55"/>
+    <path d="M357 115 L371 129 M371 115 L357 129" stroke="#fff" stroke-width="3.5"
+          stroke-linecap="round"/>
+    <text x="200" y="288" font-family="{SANS}" font-size="18" fill="{SUB}"
+          text-anchor="middle">the mark survives here &#8212; drops there</text>"""
+
+
 def m_discord(p):
     # the 3-system model: three stacked chips
     rows = [("MD", "#fff", INK, "message only"),
@@ -663,6 +687,30 @@ def m_discord_safe_name(p):
     return g
 
 
+def m_encoding_ladder(p):
+    # the proposal pipeline: idea -> proposal -> UTC vote -> code point -> device
+    rows = [("Idea", "spot the gap"), ("Proposal", "L2 doc + evidence"),
+            ("UTC Vote", "quarterly review"), ("Code Point", "U+1FA7B"),
+            ("Your Phone", "vendor ships it")]
+    g = ""
+    for i, (label, note) in enumerate(rows):
+        y = 40 + i * 58
+        fill = f"url(#g{p})" if i == 4 else "#fff"
+        ink = "#fff" if i == 4 else INK
+        g += f"""
+        <g transform="translate(60 {y})">
+          <rect width="240" height="48" rx="14" fill="{fill}" stroke="{INK}"
+                stroke-opacity="0.12"/>
+          <text x="18" y="31" font-family="{SANS}" font-size="19"
+                font-weight="700" fill="{ink}">{label}</text>
+          <text x="222" y="30" font-family="{SANS}" font-size="13" fill="{ink}"
+                opacity="0.7" text-anchor="end">{note}</text>
+        </g>"""
+        if i < 4:
+            g += f'<line x1="180" y1="{y+48}" x2="180" y2="{y+58}" stroke="{PURPLE}" stroke-width="4"/>'
+    return g
+
+
 GUIDES = {
     "emoticon-vs-emoji-vs-kaomoji": ("Emoticon vs Emoji vs Kaomoji",
               "How three kinds of text faces differ", m_comments),
@@ -720,6 +768,10 @@ GUIDES = {
               "The Restraint Framework for symbols", m_restraint),
     "discord-safe-name-styling": ("Style a Discord Name Without Getting Filtered",
               "Member list, mentions & impersonation", m_discord_safe_name),
+    "fancy-fonts-and-accents": ("Accents, Diacritics & Fancy Fonts",
+              "What keeps its marks and what breaks", m_accents),
+    "unicode-symbol-approval-process": ("How New Unicode Symbols Get Approved",
+              "The real proposal-to-code-point pipeline", m_encoding_ladder),
 }
 
 

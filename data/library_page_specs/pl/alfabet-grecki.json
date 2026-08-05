@@ -1,0 +1,136 @@
+{
+  "slug": "alfabet-grecki",
+  "lang": "pl",
+  "title": "Alfabet Grecki: Litery Greckie α β Δ Ω do Skopiowania",
+  "meta_description": "Cały alfabet grecki do skopiowania — wielkie i małe litery, od alfa do omega, plus warianty matematyczne π Σ φ. Kliknij literę, aby ją skopiować.",
+  "canonical": "https://ultratextgen.com/pl/library/alfabet-grecki/",
+  "breadcrumb": "Alfabet Grecki",
+  "hero_h1": "Alfabet Grecki",
+  "hero_tagline": "Cały alfabet grecki — wielkie i małe litery oraz warianty matematyczne — gotowy do skopiowania.",
+  "intro": "Litery greckie służą nie tylko do pisania po grecku — alfa, beta i pi są wszędzie w matematyce, fizyce i nazwach bractw studenckich, a delta i omega pojawiają się w bio i nickach. Ta strona zawiera kompletny alfabet grecki: 24 wielkie litery, 24 małe litery (plus końcową formę sigmy ς) oraz warianty matematyczne takie jak 𝜋, ∑ i φ. Kliknij dowolną literę, aby skopiować ją do schowka.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Biblioteka",
+  "library_url": "https://ultratextgen.com/pl/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/greek-letter-symbols/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/letras-griegas/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/library/simbol-yunani/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/library/simboli-greci/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/alfabeto-grego/" },
+    { "lang": "nl", "href": "https://ultratextgen.com/nl/library/griekse-letters/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/alfabet-grecki/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/greek-letter-symbols/" }
+  ],
+  "sections": [
+    {
+      "id": "wielkie-litery",
+      "label": "Wielkie litery",
+      "h2": "Wielkie Litery Greckie",
+      "intro": "Wszystkie 24 wielkie litery alfabetu greckiego.",
+      "symbols": [
+        { "char": "Α", "label": "Grecka wielka litera Alfa" },
+        { "char": "Β", "label": "Grecka wielka litera Beta" },
+        { "char": "Γ", "label": "Grecka wielka litera Gamma" },
+        { "char": "Δ", "label": "Grecka wielka litera Delta" },
+        { "char": "Ε", "label": "Grecka wielka litera Epsilon" },
+        { "char": "Ζ", "label": "Grecka wielka litera Zeta" },
+        { "char": "Η", "label": "Grecka wielka litera Eta" },
+        { "char": "Θ", "label": "Grecka wielka litera Theta" },
+        { "char": "Ι", "label": "Grecka wielka litera Jota" },
+        { "char": "Κ", "label": "Grecka wielka litera Kappa" },
+        { "char": "Λ", "label": "Grecka wielka litera Lambda" },
+        { "char": "Μ", "label": "Grecka wielka litera Mi" },
+        { "char": "Ν", "label": "Grecka wielka litera Ni" },
+        { "char": "Ξ", "label": "Grecka wielka litera Ksi" },
+        { "char": "Ο", "label": "Grecka wielka litera Omikron" },
+        { "char": "Π", "label": "Grecka wielka litera Pi" },
+        { "char": "Ρ", "label": "Grecka wielka litera Ro" },
+        { "char": "Σ", "label": "Grecka wielka litera Sigma" },
+        { "char": "Τ", "label": "Grecka wielka litera Tau" },
+        { "char": "Υ", "label": "Grecka wielka litera Ypsilon" },
+        { "char": "Φ", "label": "Grecka wielka litera Fi" },
+        { "char": "Χ", "label": "Grecka wielka litera Chi" },
+        { "char": "Ψ", "label": "Grecka wielka litera Psi" },
+        { "char": "Ω", "label": "Grecka wielka litera Omega" }
+      ]
+    },
+    {
+      "id": "male-litery",
+      "label": "Małe litery",
+      "h2": "Małe Litery Greckie",
+      "intro": "Wszystkie 24 małe litery, plus końcowa forma sigmy (ς), używana na końcu wyrazu.",
+      "symbols": [
+        { "char": "α", "label": "Grecka mała litera Alfa" },
+        { "char": "β", "label": "Grecka mała litera Beta" },
+        { "char": "γ", "label": "Grecka mała litera Gamma" },
+        { "char": "δ", "label": "Grecka mała litera Delta" },
+        { "char": "ε", "label": "Grecka mała litera Epsilon" },
+        { "char": "ζ", "label": "Grecka mała litera Zeta" },
+        { "char": "η", "label": "Grecka mała litera Eta" },
+        { "char": "θ", "label": "Grecka mała litera Theta" },
+        { "char": "ι", "label": "Grecka mała litera Jota" },
+        { "char": "κ", "label": "Grecka mała litera Kappa" },
+        { "char": "λ", "label": "Grecka mała litera Lambda" },
+        { "char": "μ", "label": "Grecka mała litera Mi" },
+        { "char": "ν", "label": "Grecka mała litera Ni" },
+        { "char": "ξ", "label": "Grecka mała litera Ksi" },
+        { "char": "ο", "label": "Grecka mała litera Omikron" },
+        { "char": "π", "label": "Grecka mała litera Pi" },
+        { "char": "ρ", "label": "Grecka mała litera Ro" },
+        { "char": "σ", "label": "Grecka mała litera Sigma" },
+        { "char": "ς", "label": "Grecka mała litera Sigma końcowa" },
+        { "char": "τ", "label": "Grecka mała litera Tau" },
+        { "char": "υ", "label": "Grecka mała litera Ypsilon" },
+        { "char": "φ", "label": "Grecka mała litera Fi" },
+        { "char": "χ", "label": "Grecka mała litera Chi" },
+        { "char": "ψ", "label": "Grecka mała litera Psi" },
+        { "char": "ω", "label": "Grecka mała litera Omega" }
+      ]
+    },
+    {
+      "id": "warianty",
+      "label": "Warianty",
+      "h2": "Warianty Matematyczne",
+      "intro": "Alternatywne kształty liter używane w matematyce i fizyce.",
+      "symbols": [
+        { "char": "ϑ", "label": "Wariant litery Theta" },
+        { "char": "ϕ", "label": "Wariant litery Fi" },
+        { "char": "ϖ", "label": "Wariant litery Pi" },
+        { "char": "ϱ", "label": "Wariant litery Ro" },
+        { "char": "ϵ", "label": "Epsilon lunarny" },
+        { "char": "ϐ", "label": "Wariant litery Beta" },
+        { "char": "ϰ", "label": "Wariant litery Kappa" },
+        { "char": "𝜋", "label": "Pi kursywą (matematyczne)" },
+        { "char": "∏", "label": "Iloczyn (Produkt)" },
+        { "char": "∑", "label": "Suma" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro €",
+      "desc": "Symbol euro i inne znaki walut do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/nieskonczonosc/",
+      "title": "Znak Nieskończoności ∞",
+      "desc": "Symbol nieskończoności i pokrewne znaki matematyczne."
+    },
+    {
+      "href": "/pl/library/",
+      "title": "Biblioteka Symboli",
+      "desc": "Wszystkie kolekcje symboli i emotek do skopiowania w jednym miejscu."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Pełna kolekcja symboli matematycznych (po angielsku)."
+    }
+  ]
+}

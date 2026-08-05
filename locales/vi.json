@@ -21,7 +21,80 @@
   },
   "ui": {
     "placeholder": "Nhập chữ bạn muốn đổi font...",
-    "advertisement": "Quảng cáo"
+    "advertisement": "Quảng cáo",
+    "categoryTabs": {
+      "popular": "Phổ biến",
+      "bold-fonts": "Chữ đậm",
+      "italic-fonts": "Chữ nghiêng",
+      "bubble-fonts": "Chữ bong bóng",
+      "cursive-fonts": "Chữ viết tay",
+      "gothic-fonts": "Chữ Gothic",
+      "strikethrough-text": "Gạch ngang",
+      "underline-text": "Gạch chân",
+      "small-text": "Chữ nhỏ",
+      "cute-fonts": "Dễ thương",
+      "aesthetic-fonts": "Chữ aesthetic",
+      "upside-down-text": "Chữ ngược",
+      "text-decorator": "Trang trí chữ",
+      "classified": "Kiểm duyệt / Che mật",
+      "fullwidth-fonts": "Chữ rộng",
+      "faux-fonts": "Chữ giả cổ",
+      "ancient-fonts": "Cổ đại & Rune",
+      "emoji-letter-fonts": "Chữ emoji",
+      "novelty-fonts": "Độc lạ"
+    },
+    "scopeControl": {
+      "label": "Áp dụng kiểu chữ cho",
+      "ariaLabel": "Chọn phần văn bản muốn tạo kiểu",
+      "whole": "Toàn bộ văn bản",
+      "wholeTitle": "Tạo kiểu cho mọi dòng trong văn bản của bạn.",
+      "firstLine": "Chỉ dòng đầu",
+      "firstLineTag": "cho bài đăng",
+      "firstLineTitle": "Chỉ tạo kiểu cho dòng đầu tiên (tiêu đề hoặc câu mở đầu) và giữ nguyên phần còn lại là văn bản thường, dễ đọc — lý tưởng cho bài đăng mạng xã hội.",
+      "share": "Chia sẻ",
+      "shareTitle": "Chia sẻ liên kết mở lại trang này với văn bản của bạn đã được điền sẵn",
+      "linkCopied": "Đã sao chép liên kết"
+    },
+    "safeMode": {
+      "label": "An toàn khi dán",
+      "ariaLabel": "Kiểm tra kiểu chữ nào hiển thị tốt trên thiết bị của người khác",
+      "toggleLabel": "Chế độ an toàn",
+      "hint": "Đánh dấu các kiểu chữ có thể hiển thị thành ô vuông (▯) trên điện thoại đời cũ của người khác."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Có thể hiển thị thành ô vuông với một số người",
+      "boxesWarningTitle": "Kiểu chữ này dùng các ký tự Unicode hiếm mà một số điện thoại và thiết bị cũ không có. Nó có thể hiển thị thành ô vuông (▯) với người bạn dán văn bản đến. Hãy chọn kiểu đơn giản hơn hoặc được hỗ trợ rộng rãi hơn nếu người xem có thể dùng thiết bị cũ.",
+      "emojiWarning": "⚠ Dùng emoji — có thể khác nhau trên thiết bị cũ",
+      "emojiWarningTitle": "Kiểu chữ này có emoji. Emoji hiển thị tốt trên thiết bị hiện đại, nhưng có thể trông khác, hoặc hiển thị thành ô vuông, trên điện thoại rất cũ.",
+      "modernDevices": "Hiển thị tốt trên thiết bị hiện đại",
+      "modernDevicesTitle": "Những chữ cái Unicode được tạo kiểu này hiển thị trên hầu hết điện thoại và máy tính hiện nay. Trên Android rất cũ (khoảng trước năm 2016) hoặc phông chữ hệ thống tối giản, một vài ký tự vẫn có thể hiển thị thành ô vuông (▯). Hãy thử trước nếu người xem có thể dùng thiết bị cũ.",
+      "rendersEverywhere": "✓ Hiển thị tốt ở mọi nơi",
+      "rendersEverywhereTitle": "Kiểu chữ này là văn bản thường — hiển thị tốt ở mọi nơi, không có nguy cơ thành ô vuông trên bất kỳ thiết bị nào.",
+      "deviceWarning": "⚠ Có thể không hiển thị trên thiết bị của bạn",
+      "deviceWarningTitle": "Phông chữ trên thiết bị của bạn không hiển thị được kiểu chữ này — nó có thể thành ô vuông (□). Nó vẫn có thể hiển thị bình thường trên thiết bị khác.",
+      "safeAnywhere": "✓ An toàn ở mọi nơi",
+      "safeAnywhereTitle": "Hiển thị tốt trên mọi nền tảng lớn. Lưu ý: trình đọc màn hình có thể đọc từng chữ cái được tạo kiểu một cách rời rạc, vì vậy hãy giữ phần nội dung chính là văn bản thường.",
+      "worksBestOn": "⚠ Hoạt động tốt nhất trên {platforms}",
+      "worksBestOnTitle": "Hoạt động tốt nhất trên: {platforms}. Các nền tảng khác có thể loại bỏ hoặc hiển thị sai — hãy thử trước khi đăng."
+    },
+    "savedStyles": {
+      "ariaLabel": "Kiểu chữ đã lưu của bạn",
+      "heading": "Kiểu chữ đã lưu của bạn",
+      "clearAll": "Xóa tất cả",
+      "hint": "Đã lưu trên thiết bị này — sẽ chờ sẵn ở đây khi bạn quay lại."
+    },
+    "textStats": {
+      "wordSingular": "1 từ",
+      "wordPlural": "{n} từ",
+      "charSingular": "1 ký tự",
+      "charPlural": "{n} ký tự"
+    },
+    "decorationsNone": "Không có",
+    "categoryTabsToggle": {
+      "more": "Thêm",
+      "less": "Thu gọn"
+    },
+    "demoText": "Chào mừng đến với UltraTextGen.\nGõ bất cứ điều gì. Biến nó thành ultra."
   },
   "useCases": {
     "title": "Người Việt thường dùng để làm gì?",
@@ -129,7 +202,7 @@
           },
           {
             "question": "Paste vào Facebook, Zalo mà ra ô vuông hoặc dấu hỏi thì sao?",
-            "answer": "Bị vậy là do thiết bị đang xem không có font hiển thị cho kí tự Unicode đó - không phải lỗi chữ. Trên điện thoại và trình duyệt mới hiện giờ, đa số kiểu hiển thị bình thường.\n    <br><br>\n    <strong>Cách xử lý nhanh</strong><br>\n    — Đổi sang kiểu phổ thông hơn: Ultra Bold, Ultra Italic, Ultra Bubble - đây là 3 kiểu hiển thị rộng nhất.<br>\n    — Tránh các kiểu hiếm như Double Struck, Fullwidth nếu chỉ một số người xem được.<br>\n    — Với tên game, vào trang Free Fire / Liên Quân riêng của UltraTextGen - kiểu đã được test cho ứng dụng đó.<br>\n    — Cập nhật điện thoại / trình duyệt lên bản mới nếu lâu chưa update."
+            "answer": "Bị vậy là do thiết bị đang xem không có font hiển thị cho kí tự Unicode đó - không phải lỗi chữ. Trên điện thoại và trình duyệt mới hiện giờ, đa số kiểu hiển thị bình thường.\n    <br><br>\n    <strong>Cách xử lý nhanh</strong><br>\n    — Đổi sang kiểu phổ thông hơn: Ultra Bold, Ultra Italic, Ultra Bubble - đây là 3 kiểu hiển thị rộng nhất.<br>\n    — Tránh các kiểu hiếm như Double Struck, Fullwidth nếu chỉ một số người xem được.<br>\n    — Với tên game, vào trang Free Fire / Liên Quân riêng của UltraTextGen - kiểu đã được test cho ứng dụng đó.<br>\n    — Cập nhật điện thoại / trình duyệt lên bản mới nếu lâu chưa update.\n    <br><br>\n    Xem thêm cơ chế đầy đủ và cách chọn kiểu an toàn ở bài vì sao tên hiện ô vuông."
           }
         ]
       },
@@ -146,7 +219,7 @@
           },
           {
             "question": "Kí tự khoảng trống là gì, có gì hay?",
-            "answer": "Kí tự khoảng trống (còn gọi kí tự rỗng, kí tự vô hình) là kí hiệu Unicode trông như khoảng trắng nhưng không phải dấu cách thường. Game thủ Việt hay xài để:\n    <br><br>\n    — Đặt tên Free Fire không có dấu cách mà vẫn thấy như có dấu cách.<br>\n    — Vượt qua ô tên \"không cho phép khoảng trắng\" của Liên Quân.<br>\n    — Tạo bio Instagram có dòng trống ngắt khoảng, nhìn thoáng hơn.<br>\n    — Gửi tin nhắn \"trống\" troll bạn (Messenger, Zalo).\n    <br><br>\n    Phần trang trí của UltraTextGen có nhóm đường kẻ và tối giản, trong đó có sẵn kí tự khoảng trống - bấm copy là dùng được luôn."
+            "answer": "Kí tự khoảng trống (còn gọi kí tự rỗng, kí tự vô hình) là kí hiệu Unicode trông như khoảng trắng nhưng không phải dấu cách thường. Game thủ Việt hay xài để:\n    <br><br>\n    — Đặt tên Free Fire không có dấu cách mà vẫn thấy như có dấu cách.<br>\n    — Vượt qua ô tên \"không cho phép khoảng trắng\" của Liên Quân.<br>\n    — Tạo bio Instagram có dòng trống ngắt khoảng, nhìn thoáng hơn.<br>\n    — Gửi tin nhắn \"trống\" troll bạn (Messenger, Zalo).\n    <br><br>\n    Phần trang trí của UltraTextGen có nhóm đường kẻ và tối giản, trong đó có sẵn kí tự khoảng trống - bấm copy là dùng được luôn. Muốn dùng mẹo này để tạo hẳn một cái tên trống? Xem hướng dẫn cách tạo tên trống (vô hình)."
           }
         ]
       },

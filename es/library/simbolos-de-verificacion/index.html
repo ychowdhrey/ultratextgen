@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Símbolos de verificación → Copiar y pegar marcas de check (✓ ✔ ☑ ✅)</title>
+<meta name="description" content="Explora y copia símbolos de verificación: marca de verificación ✓, check ✔, casilla marcada ☑ y tick emoji ✅, además de cruces ✗ ❌. Haz clic en cualquier símbolo para copiarlo y pegarlo al instante.">
+
+<link rel="canonical" href="https://ultratextgen.com/es/library/simbolos-de-verificacion/">
+  <link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/checkmark-symbols/">
+  <link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/haekchen-symbole/">
+  <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/simbolos-de-verificacion/">
+  <link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/simbol-centang/">
+  <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/onay-isaretleri/">
+  <link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/vinkje/">
+  <link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/library/bock-symboler/">
+  <link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/library/flueben-symboler/">
+  <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/checkmark-symbols/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/es-library-simbolos-de-verificacion.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Símbolos de verificación → Copiar y pegar marcas de check (✓ ✔ ☑ ✅)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Símbolos de verificación → Copiar y pegar marcas de check (✓ ✔ ☑ ✅)">
+<meta name="twitter:description" content="Explora y copia símbolos de verificación: marca de verificación ✓, check ✔, casilla marcada ☑ y tick emoji ✅, además de cruces ✗ ❌. Haz clic en cualquier símbolo para copiarlo y pegarlo al instante.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/es-library-simbolos-de-verificacion.png">
+<meta property="og:title" content="Símbolos de verificación → Copiar y pegar marcas de check (✓ ✔ ☑ ✅)">
+<meta property="og:description" content="Explora y copia símbolos de verificación: marca de verificación ✓, check ✔, casilla marcada ☑ y tick emoji ✅, además de cruces ✗ ❌. Haz clic en cualquier símbolo para copiarlo y pegarlo al instante.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/es/library/simbolos-de-verificacion/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué son los símbolos de verificación o check?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Son caracteres Unicode como ✓ ✔ ☑ y la versión emoji ✅ que sirven para marcar algo como correcto, hecho o aprobado. La marca de verificación (también llamada check o tick) se usa en listas de tareas, encuestas y para dar el visto bueno. Como son caracteres de texto y no imágenes, basta con copiarlos y pegarlos en cualquier sitio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo copio y pego una marca de verificación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Haz clic en cualquier símbolo de esta página y se copiará automáticamente al portapapeles. Después pégalo (Ctrl+V o mantén pulsado y «Pegar» en el móvil) en WhatsApp, Instagram, TikTok, Word o donde quieras. No hace falta instalar nada ni usar un teclado especial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo escribo el símbolo de verificación ✓ con el teclado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En Word puedes escribir el código Unicode 2713 y pulsar Alt+X, y aparecerá ✓ (U+2713). En Windows también funciona Alt+0252 con la fuente Wingdings, que muestra una marca de verificación. En el móvil no hay una tecla directa, así que lo más rápido es copiar el ✓ o el ✔ de esta página y pegarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia el check de texto ✔ del check emoji ✅?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "✔ es un carácter de texto Unicode monocromo: toma el mismo color del texto que lo rodea y se ve fino y sobrio. ✅ es un emoji, por lo que se muestra como un recuadro verde a color en casi todas las plataformas. Usa ✓ o ✔ para un acabado formal y limpio, y ✅ cuando quieras que la marca destaque en publicaciones o estados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde puedo usar el símbolo de check o tick?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En casi cualquier sitio que admita texto Unicode: WhatsApp, Instagram, TikTok, Telegram, Discord, X (antes Twitter), correos, Word y Google Docs. Los usos más habituales son las listas de tareas, marcar opciones de una encuesta con ✅ y ❌, señalar pasos completados y añadir un visto bueno a comentarios o biografías."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "El símbolo se ve como □ (tofu) o «?»",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Algunos dispositivos o aplicaciones antiguos no incluyen la fuente con ese carácter y lo muestran como un cuadro □ (tofu). Las marcas más comunes como ✓ ✔ ☑ ✅ ✗ ❌ se ven bien casi en todas partes, así que si vas a usar un símbolo poco frecuente conviene comprobar cómo se ve en el móvil antes de publicar. Todos estos símbolos son estándar de Unicode y su uso es totalmente gratis."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://ultratextgen.com/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Símbolos de verificación",
+      "item": "https://ultratextgen.com/es/library/simbolos-de-verificacion/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Símbolos de verificación para copiar y pegar",
+  "alternateName": [
+    "Símbolos de verificación",
+    "Símbolo check",
+    "Marca de verificación",
+    "Tick símbolo",
+    "Check mark símbolo",
+    "Símbolo de verificación copiar y pegar",
+    "Símbolo de visto bueno",
+    "✓ copiar y pegar"
+  ],
+  "url": "https://ultratextgen.com/es/library/simbolos-de-verificacion/",
+  "inLanguage": "es",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Explora y copia símbolos de verificación gratis: marca de verificación ✓, check ✔, casilla marcada ☑, tick emoji ✅ y cruces ✗ ❌, ordenados por estilo. Haz clic en cualquier símbolo para copiarlo y pegarlo en tus listas, encuestas y publicaciones.",
+  "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+  "image": "https://ultratextgen.com/assets/og/es-library-simbolos-de-verificacion.png"
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/es/">Inicio</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Símbolos de verificación</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Símbolos de verificación</h1>
+    <p class="hero-tagline">Una colección de referencia con marcas de verificación, cruces e indicadores de estado: check ✓, tick ☑, cruces ✗ y círculos de estado para listas, comparativas y formato profesional. Haz clic en cualquier símbolo para copiarlo al instante.</p>
+  </div>
+</section>
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/es-library-simbolos-de-verificacion.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Explora y copia marcas de verificación, cruces, círculos de estado, insignias de aprobación, iconos de aviso e indicadores de progreso numerados, todos organizados para copiarlos rápido y usarlos en cualquier sitio.</p>
+    <p>El uso es sencillo: coloca un ✓ al final de una tarea completada, marca las opciones de una encuesta con ✅ y ❌, o antepón un ☑ a cada punto de tu lista de tareas. Todos son caracteres Unicode, así que se pegan en cualquier lugar donde puedas escribir: WhatsApp, Instagram, Word o Google Docs.</p>
+    <p>Si además quieres dar estilo a las letras de tu lista, combina estos símbolos con la <a href="/es/">herramienta de fuentes</a>.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CLASSIC CHECKMARKS -->
+<section class="mood-explainers" id="classic-checks">
+  <span class="article-section-label">Marcas clásicas</span>
+  <h2>Símbolos de verificación clásicos</h2>
+  <p class="u-secondary-tight">Caracteres de marca de verificación estándar de los conjuntos Unicode y emoji.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✓" aria-label="Copiar ✓">✓</button>
+      <span class="flag-label">Marca de verificación</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✔" aria-label="Copiar ✔">✔</button>
+      <span class="flag-label">Verificación gruesa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☑" aria-label="Copiar ☑">☑</button>
+      <span class="flag-label">Casilla marcada</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✅" aria-label="Copiar ✅">✅</button>
+      <span class="flag-label">Check verde (emoji)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☐" aria-label="Copiar ☐">☐</button>
+      <span class="flag-label">Casilla vacía</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▣" aria-label="Copiar ▣">▣</button>
+      <span class="flag-label">Cuadrado con relleno pequeño</span>
+    </div>
+      <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✔️" aria-label="Copiar ✔️">✔️</button>
+      <span class="flag-label">Check grueso (emoji)</span>
+    </div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CROSSES & REJECTIONS -->
+<section class="mood-explainers" id="crosses">
+  <span class="article-section-label">Cruces y rechazos</span>
+  <h2>Símbolos de cruz y rechazo</h2>
+  <p class="u-secondary-tight">Cruces y símbolos de rechazo para «no», cancelar y valores falsos.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✗" aria-label="Copiar ✗">✗</button>
+      <span class="flag-label">Cruz de rechazo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✘" aria-label="Copiar ✘">✘</button>
+      <span class="flag-label">Cruz gruesa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❌" aria-label="Copiar ❌">❌</button>
+      <span class="flag-label">Cruz roja (emoji)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☒" aria-label="Copiar ☒">☒</button>
+      <span class="flag-label">Casilla con cruz</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✕" aria-label="Copiar ✕">✕</button>
+      <span class="flag-label">Equis de multiplicación</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❎" aria-label="Copiar ❎">❎</button>
+      <span class="flag-label">Botón de cruz (emoji)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✖" aria-label="Copiar ✖">✖</button>
+      <span class="flag-label">Equis de multiplicación gruesa</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- STATUS CIRCLES -->
+<section class="mood-explainers" id="status-circles">
+  <span class="article-section-label">Círculos de estado</span>
+  <h2>Símbolos de círculo de estado</h2>
+  <p class="u-secondary-tight">Círculos con código de color para sistemas de estado, paneles e indicadores de progreso.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🟢" aria-label="Copiar 🟢">🟢</button>
+      <span class="flag-label">Círculo verde (activo)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔴" aria-label="Copiar 🔴">🔴</button>
+      <span class="flag-label">Círculo rojo (error)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🟡" aria-label="Copiar 🟡">🟡</button>
+      <span class="flag-label">Círculo amarillo (aviso)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚪" aria-label="Copiar ⚪">⚪</button>
+      <span class="flag-label">Círculo blanco (inactivo)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚫" aria-label="Copiar ⚫">⚫</button>
+      <span class="flag-label">Círculo negro (desconectado)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⬤" aria-label="Copiar ⬤">⬤</button>
+      <span class="flag-label">Círculo grande</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="○" aria-label="Copiar ○">○</button>
+      <span class="flag-label">Círculo de contorno</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="●" aria-label="Copiar ●">●</button>
+      <span class="flag-label">Círculo relleno</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔵" aria-label="Copiar 🔵">🔵</button>
+      <span class="flag-label">Círculo azul (info)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🟠" aria-label="Copiar 🟠">🟠</button>
+      <span class="flag-label">Círculo naranja (precaución)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🟣" aria-label="Copiar 🟣">🟣</button>
+      <span class="flag-label">Círculo morado</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- APPROVAL & VERIFICATION -->
+<section class="mood-explainers" id="approval">
+  <span class="article-section-label">Aprobación y verificación</span>
+  <h2>Símbolos de aprobación y verificación</h2>
+  <p class="u-secondary-tight">Símbolos para verificado, aprobado, certificado y completado.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👍" aria-label="Copiar 👍">👍</button>
+      <span class="flag-label">Pulgar arriba</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👎" aria-label="Copiar 👎">👎</button>
+      <span class="flag-label">Pulgar abajo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="👌" aria-label="Copiar 👌">👌</button>
+      <span class="flag-label">Gesto OK</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="💯" aria-label="Copiar 💯">💯</button>
+      <span class="flag-label">Cien puntos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⭐" aria-label="Copiar ⭐">⭐</button>
+      <span class="flag-label">Estrella</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔰" aria-label="Copiar 🔰">🔰</button>
+      <span class="flag-label">Símbolo de principiante</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🛡️" aria-label="Copiar 🛡️">🛡️</button>
+      <span class="flag-label">Escudo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏅" aria-label="Copiar 🏅">🏅</button>
+      <span class="flag-label">Medalla deportiva</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WARNING & INFO -->
+<section class="mood-explainers" id="warning-info">
+  <span class="article-section-label">Aviso e información</span>
+  <h2>Símbolos de aviso e información</h2>
+  <p class="u-secondary-tight">Símbolos de alerta, información y notificación para mensajes importantes.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚠" aria-label="Copiar ⚠">⚠</button>
+      <span class="flag-label">Señal de advertencia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⚠️" aria-label="Copiar ⚠️">⚠️</button>
+      <span class="flag-label">Advertencia (emoji)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="ℹ️" aria-label="Copiar ℹ️">ℹ️</button>
+      <span class="flag-label">Información</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔔" aria-label="Copiar 🔔">🔔</button>
+      <span class="flag-label">Campana</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="📢" aria-label="Copiar 📢">📢</button>
+      <span class="flag-label">Altavoz</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="📣" aria-label="Copiar 📣">📣</button>
+      <span class="flag-label">Megáfono</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🚨" aria-label="Copiar 🚨">🚨</button>
+      <span class="flag-label">Sirena</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⛔" aria-label="Copiar ⛔">⛔</button>
+      <span class="flag-label">Prohibido el paso</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🚫" aria-label="Copiar 🚫">🚫</button>
+      <span class="flag-label">Prohibido</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔺" aria-label="Copiar 🔺">🔺</button>
+      <span class="flag-label">Triángulo rojo hacia arriba</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔻" aria-label="Copiar 🔻">🔻</button>
+      <span class="flag-label">Triángulo rojo hacia abajo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="‼" aria-label="Copiar ‼">‼</button>
+      <span class="flag-label">Doble exclamación</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="❗" aria-label="Copiar ❗">❗</button>
+      <span class="flag-label">Signo de exclamación</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROGRESS INDICATORS -->
+<section class="mood-explainers" id="progress">
+  <span class="article-section-label">Indicadores de progreso</span>
+  <h2>Símbolos de indicadores de progreso</h2>
+  <p class="u-secondary-tight">Caracteres numerados y en círculo para pasos, clasificaciones y listas ordenadas.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏳" aria-label="Copiar ⏳">⏳</button>
+      <span class="flag-label">Reloj de arena (en curso)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⌛" aria-label="Copiar ⌛">⌛</button>
+      <span class="flag-label">Reloj de arena (terminado)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🔄" aria-label="Copiar 🔄">🔄</button>
+      <span class="flag-label">Flechas de recarga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏺" aria-label="Copiar ⏺">⏺</button>
+      <span class="flag-label">Botón de grabar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏸" aria-label="Copiar ⏸">⏸</button>
+      <span class="flag-label">Botón de pausa</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⏹" aria-label="Copiar ⏹">⏹</button>
+      <span class="flag-label">Botón de detener</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="①" aria-label="Copiar ①">①</button>
+      <span class="flag-label">Paso 1</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="②" aria-label="Copiar ②">②</button>
+      <span class="flag-label">Paso 2</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="③" aria-label="Copiar ③">③</button>
+      <span class="flag-label">Paso 3</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="④" aria-label="Copiar ④">④</button>
+      <span class="flag-label">Paso 4</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑤" aria-label="Copiar ⑤">⑤</button>
+      <span class="flag-label">Paso 5</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑥" aria-label="Copiar ⑥">⑥</button>
+      <span class="flag-label">Paso 6</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑦" aria-label="Copiar ⑦">⑦</button>
+      <span class="flag-label">Paso 7</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑧" aria-label="Copiar ⑧">⑧</button>
+      <span class="flag-label">Paso 8</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑨" aria-label="Copiar ⑨">⑨</button>
+      <span class="flag-label">Paso 9</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⑩" aria-label="Copiar ⑩">⑩</button>
+      <span class="flag-label">Paso 10</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BALLOT BOXES & CHECKBOXES -->
+<section class="mood-explainers" id="ballot-boxes">
+  <span class="article-section-label">Casillas de verificación</span>
+  <h2>Símbolos de casilla de verificación (checkbox)</h2>
+  <p>Casillas vacías, marcadas y tachadas para formularios, encuestas y listas de tareas, incluidas las marcas manuscritas más decorativas para checklists con estilo.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☐" aria-label="Copiar ☐">☐</button>
+      <span class="flag-label">Casilla vacía</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☑" aria-label="Copiar ☑">☑</button>
+      <span class="flag-label">Casilla marcada</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☒" aria-label="Copiar ☒">☒</button>
+      <span class="flag-label">Casilla tachada</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🗹" aria-label="Copiar 🗹">🗹</button>
+      <span class="flag-label">Casilla con check grueso</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🗸" aria-label="Copiar 🗸">🗸</button>
+      <span class="flag-label">Check fino</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🗴" aria-label="Copiar 🗴">🗴</button>
+      <span class="flag-label">Equis manuscrita</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="▢" aria-label="Copiar ▢">▢</button>
+      <span class="flag-label">Casilla redondeada</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="⊠" aria-label="Copiar ⊠">⊠</button>
+      <span class="flag-label">Cuadrado con equis</span>
+    </div>
+      <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☑️" aria-label="Copiar ☑️">☑️</button>
+      <span class="flag-label">Casilla marcada (emoji)</span>
+    </div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CHECKLIST TEMPLATES -->
+<section class="mood-explainers" id="checklist-templates">
+  <span class="article-section-label">Plantillas</span>
+  <h2>Plantillas de checklist y lista de tareas</h2>
+  <p>Líneas de checklist y pares hecho/pendiente listos para copiar en notas, publicaciones y actualizaciones de proyecto. Haz clic en una plantilla para copiar el marcador completo junto con su etiqueta.</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☑ Hecho" aria-label="Copiar ☑ Hecho">☑ Hecho</button>
+      <span class="flag-label">Línea Hecho</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="☐ Pendiente" aria-label="Copiar ☐ Pendiente">☐ Pendiente</button>
+      <span class="flag-label">Línea Pendiente</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✔ Completado · ✘ Pendiente" aria-label="Copiar ✔ Completado · ✘ Pendiente">✔ Completado · ✘ Pendiente</button>
+      <span class="flag-label">Par de estado</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="[✓]" aria-label="Copiar [✓]">[✓]</button>
+      <span class="flag-label">Corchete marcado</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="[ ]" aria-label="Copiar [ ]">[ ]</button>
+      <span class="flag-label">Corchete vacío</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="✅ Sí  ❌ No" aria-label="Copiar ✅ Sí ❌ No">✅ Sí  ❌ No</button>
+      <span class="flag-label">Sí / No</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="editorial-section" id="faq">
+  <span class="article-section-label">Preguntas frecuentes</span>
+  <h2>Preguntas frecuentes sobre los símbolos de verificación</h2>
+  <details class="faq-item">
+    <summary class="faq-question">¿Qué son los símbolos de verificación o check?</summary>
+    <p class="faq-answer">Son caracteres Unicode como ✓ ✔ ☑ y la versión emoji ✅ que sirven para marcar algo como correcto, hecho o aprobado. La marca de verificación (también llamada check o tick) se usa en listas de tareas, encuestas y para dar el visto bueno. Como son caracteres de texto y no imágenes, basta con copiarlos y pegarlos en cualquier sitio.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">¿Cómo copio y pego una marca de verificación?</summary>
+    <p class="faq-answer">Haz clic en cualquier símbolo de esta página y se copiará automáticamente al portapapeles. Después pégalo (Ctrl+V o mantén pulsado y «Pegar» en el móvil) en WhatsApp, Instagram, TikTok, Word o donde quieras. No hace falta instalar nada ni usar un teclado especial.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">¿Cómo escribo el símbolo de verificación ✓ con el teclado?</summary>
+    <p class="faq-answer">En Word puedes escribir el código Unicode 2713 y pulsar Alt+X, y aparecerá ✓ (U+2713). En Windows también funciona Alt+0252 con la fuente Wingdings, que muestra una marca de verificación. En el móvil no hay una tecla directa, así que lo más rápido es copiar el ✓ o el ✔ de esta página y pegarlo.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">¿En qué se diferencia el check de texto ✔ del check emoji ✅?</summary>
+    <p class="faq-answer">✔ es un carácter de texto Unicode monocromo: toma el mismo color del texto que lo rodea y se ve fino y sobrio. ✅ es un emoji, por lo que se muestra como un recuadro verde a color en casi todas las plataformas. Usa ✓ o ✔ para un acabado formal y limpio, y ✅ cuando quieras que la marca destaque en publicaciones o estados.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">¿Dónde puedo usar el símbolo de check o tick?</summary>
+    <p class="faq-answer">En casi cualquier sitio que admita texto Unicode: WhatsApp, Instagram, TikTok, Telegram, Discord, X (antes Twitter), correos, Word y Google Docs. Los usos más habituales son las listas de tareas, marcar opciones de una encuesta con ✅ y ❌, señalar pasos completados y añadir un visto bueno a comentarios o biografías.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">El símbolo se ve como □ (tofu) o «?»</summary>
+    <p class="faq-answer">Algunos dispositivos o aplicaciones antiguos no incluyen la fuente con ese carácter y lo muestran como un cuadro □ (tofu). Las marcas más comunes como ✓ ✔ ☑ ✅ ✗ ❌ se ven bien casi en todas partes, así que si vas a usar un símbolo poco frecuente conviene comprobar cómo se ve en el móvil antes de publicar. Todos estos símbolos son estándar de Unicode y su uso es totalmente gratis.</p>
+  </details>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>Transforma tu texto con fuentes Unicode</h3>
+  <p>Usa UltraTextGen para convertir texto normal en más de 100 estilos de fuentes Unicode: negrita, cursiva, letra elegante y muchos más, gratis y al instante.</p>
+  <a href="/es/" class="cta-btn">Abrir UltraTextGen →</a>
+</div>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">Recursos relacionados</span>
+  <div class="compare-grid">
+    <a href="/es/library/simbolo-x/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de X</h4>
+      <p>La marca ✗ para listas y correcciones.</p>
+    </a>
+    <a href="/es/library/simbolos-de-vineta/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de viñeta</h4>
+      <p>Marcadores para listas de tareas.</p>
+    </a>
+    <a href="/es/simbolos-de-estrella/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de estrella</h4>
+      <p>Estrellas Unicode para valoraciones y decoración.</p>
+    </a>
+    <a href="/es/decorador-de-texto/" class="compare-card variant-muted u-no-underline">
+      <h4>Decorador de texto</h4>
+      <p>Combina símbolos con tu propio texto.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/symbol-explorer.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

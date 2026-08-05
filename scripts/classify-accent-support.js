@@ -12,13 +12,25 @@
 
    Buckets:
      full    - accented letters keep their accent AND receive the style's
-               effect, exactly like the plain letters around them
-               (mark-based decorators, symbol word-wraps)
+               effect, exactly like the plain letters around them. Covers
+               both the mark-based/symbol-wrap styles (which never touch the
+               letter) and the majority of letter-swap styles, which now
+               reattach the original combining accent to the styled base
+               letter (renderer.js resolveBaseAndMarks/mapChar).
      partial - plain letters are styled, but accented letters fall back to
-               their plain form (accent intact, just not restyled)
-               (the Mathematical-Alphanumeric alphabet fonts, most of them)
+               their plain form (accent intact, just not restyled). Two
+               distinct reasons land here: (a) upside-down/flip styles,
+               whose flip map was never extended to accented letters, and
+               (b) styles explicitly marked `accentSafe: false` in styles.js
+               — verified by actually rendering them (Chromium, not just
+               codepoint diffing) to show a tofu box or silently drop the
+               mark when one is reattached to their glyph block (Enclosed
+               Alphanumerics, Fullwidth Forms, Katakana, Bopomofo...), so
+               renderer.js deliberately skips the reattachment for them.
      breaks  - accented letters lose their accent or the mark detaches /
-               mis-attaches (accent not preserved in output)
+               mis-attaches (accent not preserved in output). Should be
+               empty in normal operation — a non-empty result here means an
+               actual regression, not an accepted style limitation.
      na      - the style replaces/destroys the input regardless of accents
                (redact blackout, pattern fill)
 
@@ -49,11 +61,12 @@ const { renderAny } = global.window.UltraTextGenRender;
 const styles = global.window.textStyles || {};
 
 /* --- Accent sample ------------------------------------------------------- */
-// NFC precomposed accented letters: Western-European + Vietnamese coverage.
+// NFC precomposed accented letters: Western-European + Vietnamese + Turkish coverage.
 const ACCENT_CHARS = Array.from(
-  'áéíóúàèìòùâêîôûäëïöüãõñç' +      // Western European
+  'áéíóúàèìòùâêîôûäëïöüãõñçÁÉÍÓÚÇÖÜ' + // Western European (upper+lower)
   'ăâđêôơư' +                        // Vietnamese base letters
-  'ữứựếệểồộớợằ'                      // Vietnamese vowel + tone stacks
+  'ữứựếệểồộớợằ' +                    // Vietnamese vowel + tone stacks
+  'ışğĞİŞ'                           // Turkish-unique: dotless ı, ş, ğ (+ capitals)
 );
 
 // Display samples for the table (mixed accented + plain).
@@ -67,12 +80,20 @@ function codepointCounts(s) {
   return m;
 }
 
-// True if every codepoint of the accented cluster `c` still appears in `out`
-// at least as often. Multiset-based, so it is robust to (a) canonical
-// re-ordering of combining marks when a decorator appends its own mark, and
-// (b) extra marks being added around the original accent.
+// True if every COMBINING MARK codepoint of the accented cluster `c` still
+// appears in `out` at least as often. Only the marks are required — the
+// base letter is allowed (expected) to be re-encoded as the style's own
+// styled twin (bold "e" + U+0301, not literal ASCII "e" + U+0301), since
+// that substitution is exactly how a letter-swap style keeps an accent.
+// Atomic letters with no combining-mark decomposition (đ, ø, ß, ł, ı...)
+// have nothing to check here — accentConsistency() below judges those.
+// Multiset-based, so it is robust to (a) canonical re-ordering when a
+// decorator appends its own mark, and (b) extra marks added around the
+// original accent.
 function accentPreserved(c, out) {
-  const need = codepointCounts(NFD(c));
+  const marks = Array.from(NFD(c)).filter(ch => /\p{Mn}/u.test(ch));
+  if (marks.length === 0) return true;
+  const need = codepointCounts(marks.join(''));
   const have = codepointCounts(NFD(out));
   for (const [cp, n] of need) {
     if ((have.get(cp) || 0) < n) return false;
@@ -101,7 +122,8 @@ function differingCores(a, b) {
 // swapped for a distinct glyph (𝗲, ⦅e⦆, 𝖊, ǝ) while the accent stayed plain.
 function accentConsistency(R) {
   const PAIRS = [['e', 'é'], ['e', 'ê'], ['e', 'ệ'], ['o', 'ô'], ['a', 'ă'],
-                 ['u', 'ư'], ['u', 'ữ'], ['n', 'ñ'], ['c', 'ç'], ['d', 'đ']];
+                 ['u', 'ư'], ['u', 'ữ'], ['n', 'ñ'], ['c', 'ç'], ['d', 'đ'],
+                 ['i', 'ı'], ['s', 'ş'], ['g', 'ğ']];
   let consistent = 0;
   for (const [base, acc] of PAIRS) {
     const [coreBase, coreAcc] = differingCores(R(base), R(acc));

@@ -1,0 +1,83 @@
+{
+  "slug": "emoji-pollice-direzionale",
+  "lang": "it",
+  "page_type": "symbol",
+  "title": "Emoji Pollice Direzionale: Copia e Incolla 🫹 🫺 — la Coppia Gestuale Bozza di Unicode 18.0",
+  "meta_description": "Leftwards e Rightwards Thumb Sign (🫹 U+1FAF9, 🫺 U+1FAFA) sono candidate in bozza per Emoji 18.0, attese insieme a Unicode 18.0 a settembre 2026 — gesti direzionali, distinti da Pollice in Su/Giù. Non ancora approvate, nessun font le renderizza oggi.",
+  "canonical": "https://ultratextgen.com/it/symbol/emoji-pollice-direzionale/",
+  "breadcrumb": "Emoji Pollice Direzionale",
+  "hero_h1": "Emoji Pollice Direzionale (Sinistra e Destra)",
+  "hero_tagline": "Una coppia di gesti direzionali, non un altro segno di approvazione — in bozza per Emoji 18.0, attesa insieme a Unicode 18.0 a settembre 2026. Solo bozza: non ancora approvata, nessun font la renderizza. Tocca comunque per copiare ciascun codepoint.",
+  "intro": "Leftwards Thumb Sign (🫹, U+1FAF9) e Rightwards Thumb Sign (🫺, U+1FAFA) sono una coppia di emoji candidate in bozza per Emoji 18.0, la componente emoji di Unicode 18.0, attesa in versione definitiva a settembre 2026. Nonostante il nome, non si tratta di un altro gesto di approvazione accanto a Pollice in Su e Pollice in Giù — sono segni orizzontali, di puntamento, più vicini per funzione alle emoji Backhand Index Pointing Left/Right già esistenti che a un pollice verticale. La coppia risponde a una lamentela di lunga data della community: il repertorio gestuale di Unicode ha sempre favorito segni di approvazione verticali e orientati verso destra, senza un modo pulito per puntare un pollice \"verso questo\" contro \"verso quello\" in una risposta o in un confronto. Esiste un vero precedente per questa categoria — la proposta Pushing Hand del 2021 aveva già stabilito i gesti direzionali della mano come filone legittimo oltre il semplice pollice-in-su di approvazione. Tra i due concetti, la coppia porterà 10 varianti di tono della pelle una volta approvata (cinque per ciascuna). Trattandosi ancora di bozze, nessun sistema operativo, tastiera o font le renderizza attualmente; aspettati un riquadro vuoto o un glifo segnaposto finché Emoji 18.0 non sarà approvata e le piattaforme non avranno implementato il supporto, probabilmente nel 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/it/",
+  "crumb_home": "Home",
+  "crumb_library": "Simboli",
+  "library_url": "https://ultratextgen.com/it/symbol/",
+  "cta": "Con UltraTextGen trasformi il testo normale in grassetto, corsivo, scrittura corsiva e oltre 100 altri stili di font Unicode — gratis e all'istante.",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" },
+    { "lang": "it", "href": "https://ultratextgen.com/it/symbol/emoji-pollice-direzionale/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/thumb-sign-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "thumb-sign",
+      "label": "Pollice Direzionale",
+      "h2": "Pollice Direzionale Sinistra e Destra",
+      "intro": "I due caratteri in bozza: copiabili già oggi come codepoint, anche se nessun font può ancora renderizzarli.",
+      "symbols": [
+        { "char": "🫹", "label": "Leftwards Thumb Sign (bozza, U+1FAF9)" },
+        { "char": "🫺", "label": "Rightwards Thumb Sign (bozza, U+1FAFA)" }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Da Non Confondere Con",
+      "h2": "Le Emoji con Cui Viene Confusa",
+      "intro": "Gesti già codificati con cui Thumb Sign viene più spesso confrontata, o di cui viene accusata di essere un doppione.",
+      "symbols": [
+        { "char": "👍", "label": "Pollice in Su — approvazione verticale, non puntamento direzionale" },
+        { "char": "👎", "label": "Pollice in Giù — disapprovazione verticale, non puntamento direzionale" },
+        { "char": "👈", "label": "Dorso della Mano che Indica a Sinistra" },
+        { "char": "👉", "label": "Dorso della Mano che Indica a Destra" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Altre Candidate in Bozza",
+      "h2": "Altre Candidate in Bozza di Emoji 18.0",
+      "intro": "Thumb Sign non è l'unico carattere non approvato di questa release — questi sono in bozza insieme a lei, ugualmente non renderizzati fino alla decisione di settembre 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (bozza, U+1FAEB) — ha vinto il voto pubblico" },
+        { "char": "🫝", "label": "Pickle (bozza, U+1FADD)" },
+        { "char": "🪋", "label": "Meteor (bozza, U+1FA8B)" },
+        { "char": "🫌", "label": "Monarch Butterfly (bozza, U+1FACC)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Gesture Symbols",
+      "desc": "Mani che puntano, gesti di approvazione e ogni carattere di mano già codificato."
+    },
+    {
+      "href": "/it/symbol/emoji-volto-incrinato/",
+      "title": "Emoji Volto Incrinato",
+      "desc": "La candidata in bozza di Emoji 18.0 che ha vinto il voto pubblico."
+    },
+    {
+      "href": "/it/symbol/emoji-cetriolino/",
+      "title": "Emoji Cetriolino",
+      "desc": "Un'altra candidata in bozza di Emoji 18.0 — riassegnata da una proposta Apple Core rinviata."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Unicode 18.0's New Emoji",
+      "desc": "L'intero elenco delle 9 candidate in bozza, classificate per voto pubblico."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "slug": "pride-lgbtq-symbols",
+  "title": "Pride & LGBTQ Symbols: Copy & Paste Flags & Identity Colors",
+  "meta_description": "Copy and paste the Rainbow and Transgender Pride flags, the transgender symbol, and color-coded heart combos for bisexual, pansexual, lesbian, non-binary, and more. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/pride-lgbtq-symbols/",
+  "breadcrumb": "Pride & LGBTQ Symbols",
+  "hero_h1": "Pride & LGBTQ Symbols",
+  "hero_tagline": "The Rainbow and Transgender Pride flags, core identity signs, and heart-color combos for the flags Unicode hasn't given their own emoji yet. Click any symbol to copy it instantly.",
+  "intro": "Unicode has only ever standardized two dedicated Pride flag emoji: the Rainbow flag and the Transgender flag. Every other flag in the wider LGBTQ community — bisexual, pansexual, lesbian, non-binary, genderfluid, asexual, and more — has no single official character, so people represent them the way text always improvises around a gap: with a run of color-matched heart emoji standing in for each flag's stripes. That workaround is common enough that it helped motivate Unicode 15.0 adding the pink, light blue, and grey hearts in 2023. This page collects the two real flag emoji, the core gender and orientation signs, and a full set of heart-color combos for the flags that still need one. Demand for this page peaks every June for Pride Month, so it is built and live well ahead of that — not scrambled together during it.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "official-pride-flags",
+      "label": "Official Flags",
+      "h2": "Official Pride Flag Emoji",
+      "intro": "The only two Pride flags with a dedicated, single-character Unicode emoji. Every other flag below is built from color combos instead.",
+      "symbols": [
+        { "char": "🏳️‍🌈", "label": "Rainbow Pride Flag" },
+        { "char": "🏳️‍⚧️", "label": "Transgender Pride Flag" }
+      ]
+    },
+    {
+      "id": "core-identity-signs",
+      "label": "Identity Signs",
+      "h2": "Core Identity Signs",
+      "intro": "Foundational Unicode signs used for gender and orientation. See the full set, including marriage and partnership marks, on Gender Symbols.",
+      "symbols": [
+        { "char": "⚧", "label": "Transgender Symbol" },
+        { "char": "⚢", "label": "Doubled Female Sign — Sapphic / Lesbian Pride" },
+        { "char": "⚣", "label": "Doubled Male Sign — Gay Pride" }
+      ]
+    },
+    {
+      "id": "rainbow-visibility",
+      "label": "Rainbow & Visibility",
+      "h2": "Rainbow & Everyday Pride Marks",
+      "intro": "The rainbow is the single most recognized Pride symbol — see the full rainbow and atmospheric set on Weather Symbols. Pair it with these everyday solidarity marks.",
+      "symbols": [
+        { "char": "🌈", "label": "Rainbow" },
+        { "char": "🫶", "label": "Heart Hands — Solidarity & Love" },
+        { "char": "🤝", "label": "Handshake — Unity & Ally" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "flag-color-combos",
+    "label": "Flag Color Combos",
+    "h2": "Pride Flag Color Combos (Heart Stand-Ins)",
+    "intro": "Unicode hasn't given most Pride flags their own single character, so copy a color-matched heart combo instead — each set follows that flag's real stripe order, top to bottom."
+  },
+  "collection_container_id": "prideFlagCombosContainer",
+  "collections": [
+    {
+      "name": "Rainbow Pride (6-Stripe)",
+      "flags": ["❤️", "🧡", "💛", "💚", "💙", "💜"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Transgender Pride",
+      "flags": ["🩵", "🩷", "🤍", "🩷", "🩵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bisexual Pride",
+      "flags": ["🩷", "💜", "💙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Pansexual Pride",
+      "flags": ["🩷", "💛", "🩵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lesbian Pride (Sunset Tones)",
+      "flags": ["🧡", "🩷", "🤍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Non-Binary Pride",
+      "flags": ["💛", "🤍", "💜", "🖤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Genderfluid Pride",
+      "flags": ["🩷", "🤍", "💜", "🖤", "💙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Asexual Pride",
+      "flags": ["🖤", "🩶", "🤍", "💜"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Progress Pride (Rainbow + Inclusive Tones)",
+      "flags": ["🏳️‍🌈", "🤎", "🖤", "🩵", "🩷", "🤍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Intersex Pride",
+      "flags": ["💛", "💜"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/gender-symbols/",
+      "title": "Gender Symbols",
+      "desc": "Male, female, transgender, and every combined gender and orientation sign."
+    },
+    {
+      "href": "/library/weather-symbols/",
+      "title": "Weather Symbols",
+      "desc": "The rainbow emoji plus every atmospheric symbol, sun to snow."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Emoji Flag Explorer",
+      "desc": "Every country and territory flag emoji in one place."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Every heart emoji and Unicode heart character, in every color."
+    }
+  ]
+}

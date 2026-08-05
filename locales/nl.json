@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Mooie letters & stijlvolle tekst — kopiëren en plakken voor je bio, naam en captions",
-    "description": "Mooie letters, sierletters, aesthetic fonts en coole symbolen om te kopiëren en plakken. Werkt direct in je Instagram bio, TikTok caption, WhatsApp-status, Discord-naam en op gamertags."
+    "title": "Lettertype Generator — Mooie Letters & Stijlvolle Tekst, Kopiëren en Plakken",
+    "description": "Gratis lettertype generator: mooie letters, sierletters, aesthetic fonts en coole symbolen om te kopiëren en plakken. Werkt direct in je Instagram bio, TikTok caption, WhatsApp-status, Discord-naam en op gamertags."
   },
   "hero": {
-    "title": "Mooie letters & stijlvolle tekst — even kopiëren, overal plakken",
+    "title": "Lettertype Generator — vet, cursief, sierlijk & meer",
     "subtitle": "Typ wat je wilt en kies een vibe: sierletters, vette tekst, aesthetic fonts, bubbel-letters, gotisch, omgekeerd en meer. Klaar om in je bio, caption, naam of WhatsApp-status te plakken."
   },
   "decorations": {
@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Typ je tekst hier — bv. je naam, je bio of een caption",
-    "advertisement": "Advertentie"
+    "advertisement": "Advertentie",
+    "categoryTabs": {
+      "popular": "Populair",
+      "bold-fonts": "Vet",
+      "italic-fonts": "Cursief",
+      "bubble-fonts": "Bubbel",
+      "cursive-fonts": "Schrijfletters",
+      "gothic-fonts": "Gotisch",
+      "strikethrough-text": "Doorstreept",
+      "underline-text": "Onderstreept",
+      "small-text": "Kleine tekst",
+      "cute-fonts": "Schattig",
+      "aesthetic-fonts": "Aesthetic",
+      "upside-down-text": "Ondersteboven",
+      "text-decorator": "Tekstversiering",
+      "classified": "Gecensureerd",
+      "fullwidth-fonts": "Volle breedte",
+      "faux-fonts": "Nep-alfabetten",
+      "ancient-fonts": "Oud & runen",
+      "emoji-letter-fonts": "Emoji-letters",
+      "novelty-fonts": "Grappig"
+    },
+    "scopeControl": {
+      "label": "Stijl toepassen op",
+      "ariaLabel": "Kies hoeveel tekst je wilt stylen",
+      "whole": "Hele tekst",
+      "wholeTitle": "Stylt elke regel van je tekst.",
+      "firstLine": "Alleen eerste regel",
+      "firstLineTag": "voor posts",
+      "firstLineTitle": "Stylt alleen de eerste regel (je titel of pakkende zin) en laat de rest als gewone, leesbare tekst staan — ideaal voor social media posts.",
+      "share": "Delen",
+      "shareTitle": "Deel een link die deze pagina opnieuw opent met je tekst al ingevuld",
+      "linkCopied": "Link gekopieerd"
+    },
+    "safeMode": {
+      "label": "Plakveiligheid",
+      "ariaLabel": "Controleer welke stijlen goed weergeven op andermans apparaten",
+      "toggleLabel": "Veilige modus",
+      "hint": "Markeert stijlen die op oudere telefoons van anderen als blokjes (▯) kunnen worden weergegeven."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Kan bij sommige mensen als blokjes verschijnen",
+      "boxesWarningTitle": "Deze stijl gebruikt zeldzame Unicode-tekens die sommige telefoons en oudere apparaten niet hebben. Het kan als blokjes (▯) verschijnen bij degene naar wie je het plakt. Kies een eenvoudigere of breder ondersteunde stijl als je publiek mogelijk oudere apparaten gebruikt.",
+      "emojiWarning": "⚠ Gebruikt emoji — kan variëren op oudere apparaten",
+      "emojiWarningTitle": "Deze stijl bevat emoji. Emoji worden goed weergegeven op moderne apparaten, maar kunnen er anders uitzien, of als blokjes verschijnen, op zeer oude telefoons.",
+      "modernDevices": "Wordt goed weergegeven op moderne apparaten",
+      "modernDevicesTitle": "Deze gestylde Unicode-letters worden weergegeven op alle huidige telefoons en computers. Op zeer oude Android-toestellen (ongeveer van vóór 2016) of met minimale systeemlettertypen kunnen sommige nog als blokjes (▯) verschijnen. Test het eerst als je publiek mogelijk oudere apparaten gebruikt.",
+      "rendersEverywhere": "✓ Wordt overal goed weergegeven",
+      "rendersEverywhereTitle": "Deze stijl is platte tekst — wordt overal goed weergegeven, zonder risico op blokjes op welk apparaat dan ook.",
+      "deviceWarning": "⚠ Wordt mogelijk niet weergegeven op jouw apparaat",
+      "deviceWarningTitle": "De lettertypen van jouw apparaat kunnen deze stijl niet weergeven — het kan als blokjes (□) verschijnen. Op andere apparaten kan het er nog steeds goed uitzien.",
+      "safeAnywhere": "✓ Overal veilig",
+      "safeAnywhereTitle": "Wordt weergegeven op alle grote platforms. Let op: schermlezers kunnen gestylde letters één voor één uitspreken, houd de hoofdtekst daarom gewoon.",
+      "worksBestOn": "⚠ Werkt het beste op {platforms}",
+      "worksBestOnTitle": "Werkt het beste op: {platforms}. Andere platforms kunnen het verwijderen of verkeerd weergeven — test het eerst voor je het plaatst."
+    },
+    "savedStyles": {
+      "ariaLabel": "Je bewaarde stijlen",
+      "heading": "Je bewaarde stijlen",
+      "clearAll": "Alles wissen",
+      "hint": "Bewaard op dit apparaat — ze staan hier klaar als je terugkomt."
+    },
+    "textStats": {
+      "wordSingular": "1 woord",
+      "wordPlural": "{n} woorden",
+      "charSingular": "1 teken",
+      "charPlural": "{n} tekens"
+    },
+    "decorationsNone": "Geen",
+    "categoryTabsToggle": {
+      "more": "Meer",
+      "less": "Minder"
+    },
+    "demoText": "Welkom bij UltraTextGen.\nTyp iets. Maak het ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "naam",
+        "tabs": {
+          "playful": "Speels",
+          "hearts": "Hartjes",
+          "sparkle": "Glitter",
+          "faces": "Gezichten",
+          "stars": "Sterren"
+        }
+      },
+      "bio": {
+        "word": "naam",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "edgy": "Stoer",
+          "royal": "Koninklijk",
+          "cute": "Schattig",
+          "bold": "Vet",
+          "clean": "Strak",
+          "mystical": "Mystiek",
+          "retro": "Retro",
+          "nature": "Natuur"
+        }
+      },
+      "small-text": {
+        "word": "tekst",
+        "tabs": {
+          "subtle": "Subtiel",
+          "tiny": "Piepklein",
+          "brackets": "Haakjes",
+          "minimal": "Minimaal"
+        }
+      },
+      "bubble": {
+        "word": "naam",
+        "tabs": {
+          "rounded": "Rond",
+          "soft": "Zacht",
+          "stars": "Sterren",
+          "hearts": "Hartjes",
+          "minimal": "Minimaal"
+        }
+      },
+      "cute": {
+        "word": "naam",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Gezichten",
+          "hearts": "Hartjes",
+          "sparkle": "Glitter",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "tekst",
+        "tabs": {
+          "celestial": "Hemels",
+          "sparkle": "Glitter",
+          "y2k": "Y2K",
+          "soft": "Zacht",
+          "minimal": "Minimaal"
+        }
+      },
+      "nickname": {
+        "word": "naam",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "symbols": "Symbolen",
+          "hearts": "Hartjes",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Waar mensen onze letters voor gebruiken",
@@ -125,7 +274,7 @@
         "items": [
           {
             "question": "Waarom zie ik soms blokjes of vraagtekens in plaats van letters?",
-            "answer": "Dat ligt niet aan jou en ook niet aan de letters zelf — het apparaat van de lezer mist gewoon dat specifieke teken in z'n systeemfont. Komt vooral voor bij hele exotische stijlen op oudere telefoons.\n    <br><br>\n    Wil je dat iedereen het ziet zoals jij het ziet? Kies dan een van de breed ondersteunde stijlen: vette tekst, schuine sierletters, small caps en bubbel-letters worden vrijwel overal correct getoond."
+            "answer": "Dat ligt niet aan jou en ook niet aan de letters zelf — het apparaat van de lezer mist gewoon dat specifieke teken in z'n systeemfont. Komt vooral voor bij hele exotische stijlen op oudere telefoons.\n    <br><br>\n    Wil je dat iedereen het ziet zoals jij het ziet? Kies dan een van de breed ondersteunde stijlen: vette tekst, schuine sierletters, small caps en bubbel-letters worden vrijwel overal correct getoond.\n    <br><br>\n    Meer weten over waarom dit gebeurt en hoe je het oplost? Lees waarom mijn naam blokjes toont."
           },
           {
             "question": "Werkt het met é, ï, ç en andere accenten? En in het Vlaams?",

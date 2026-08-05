@@ -1,0 +1,83 @@
+{
+  "slug": "pauza",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Pauza (—): Symbol do Skopiowania i Znak, Który Zdradza Tekst od AI",
+  "meta_description": "Skopiuj pauzę (—), zobacz czym różni się od półpauzy (–), dywizu i znaku minus, oraz dlaczego długa kreska stała się w 2025 roku znakiem rozpoznawczym tekstów pisanych przez AI. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/pauza/",
+  "breadcrumb": "Pauza",
+  "hero_h1": "Pauza (—)",
+  "hero_tagline": "Długa pauza (—) oznaczająca przerwanie, dygresję lub pauzę dramatyczną — znak interpunkcyjny, który w 2025 roku rozpętał debatę o tym, czy długie kreski zdradzają teksty pisane przez AI. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Pauza (—, Unicode U+2014, po angielsku „em dash”) to najdłuższa z kresek interpunkcyjnych, używana w tekstach anglojęzycznych do zaznaczenia nagłego przerwania, dramatycznej pauzy albo dygresji — pełni tam mniej więcej rolę przecinka, dwukropka albo pary nawiasów. W polskiej typografii tę samą pracę — myślnik oddzielający dygresję czy wypowiedź w dialogu — wykonuje zwykle krótsza od niej półpauza (–), a nie pauza; sama pauza pojawia się w polskich tekstach rzadziej, głównie w składzie zapożyczonym z typografii angielskiej albo w kontekstach edytorskich. To też znak, wokół którego toczy się głośny spór o teksty pisane przez sztuczną inteligencję, i ten, który najczęściej myli się z krótszą półpauzą oraz zwykłym łącznikiem z klawiatury.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/em-dash/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/pauza/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/em-dash/" }
+  ],
+  "sections": [
+    {
+      "id": "pauza-i-warianty",
+      "label": "Pauza",
+      "h2": "Pauza, Podwójna i Potrójna Pauza",
+      "intro": "Pauza oraz jej dwu- i trzykrotnie szersze, edytorskie odmiany — te szersze oznaczają w tekstach anglojęzycznych skreślenia i powtórzone nazwiska autorów w bibliografiach. Gotowe do wklejenia wszędzie.",
+      "symbols": [
+        { "char": "—", "label": "Pauza" },
+        { "char": "⸺", "label": "Podwójna Pauza" },
+        { "char": "⸻", "label": "Potrójna Pauza" }
+      ]
+    },
+    {
+      "id": "kreski-mylone-z-pauza",
+      "label": "Kreski Mylone z Pauzą",
+      "h2": "Kreski i Łączniki, z Którymi Bywa Mylona",
+      "intro": "Krótsze znaki, którymi przez pomyłkę zastępuje się pauzę — każdy z nich ma inną szerokość, inny punkt kodowy i inne zadanie.",
+      "symbols": [
+        { "char": "–", "label": "Półpauza" },
+        { "char": "-", "label": "Łącznik-Minus (Klawiaturowy)" },
+        { "char": "‐", "label": "Dywiz (Typograficzny)" },
+        { "char": "−", "label": "Znak Minus" },
+        { "char": "‒", "label": "Kreska Cyfrowa" },
+        { "char": "―", "label": "Kreska Pozioma (Kreska Dialogowa)" }
+      ]
+    },
+    {
+      "id": "powiazana-interpunkcja",
+      "label": "Powiązana Interpunkcja",
+      "h2": "Powiązana Interpunkcja i Znaki Pauzy",
+      "intro": "Znaki pełniące pokrewną rolę — przecinek, dwukropek i nawiasy, które pauza często zastępuje, a także średnik i wielokropek, z którymi bywa grupowana.",
+      "symbols": [
+        { "char": ",", "label": "Przecinek" },
+        { "char": ":", "label": "Dwukropek" },
+        { "char": "(", "label": "Nawias Lewy" },
+        { "char": ")", "label": "Nawias Prawy" },
+        { "char": ";", "label": "Średnik" },
+        { "char": "…", "label": "Wielokropek Poziomy" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/symbol/en-dash/",
+      "title": "En Dash",
+      "desc": "Krótsza od pauzy półpauza — kreska, którą polska typografia stosuje jako właściwy myślnik zdaniowy."
+    },
+    {
+      "href": "/pl/symbol/znak-akapitu/",
+      "title": "Znak Akapitu (¶)",
+      "desc": "Znacznik akapitu ukryty w Twoim edytorze tekstu — kolejny znak typograficzny z długą historią w druku."
+    },
+    {
+      "href": "/pl/library/symbole-punktowania/",
+      "title": "Symbole Punktowania",
+      "desc": "Punktory do list i inne znaki porządkujące tekst, do skopiowania."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "asterisk-symbol",
+  "page_type": "symbol",
+  "title": "Asterisk Symbol: Copy & Paste * ⁂ ✱ — The Footnote Mark That Became the Wildcard & Censorship Star",
+  "meta_description": "Copy and paste the asterisk (*), the asterism ⁂, and the heavy ✱ — the footnote mark that also runs wildcard search and censors profanity. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/asterisk-symbol/",
+  "breadcrumb": "Asterisk Symbol",
+  "hero_h1": "Asterisk Symbol (*)",
+  "hero_tagline": "The asterisk (*) you use for footnotes, the wildcard * that matches anything in search and code, and the censoring star in f**k — plus its typographic cousins like the three-in-a-triangle asterism ⁂. Click any symbol to copy it instantly.",
+  "intro": "The asterisk (*, Unicode U+002A) is the star-shaped mark sharing the keyboard's number-8 key, and its name comes straight from the Ancient Greek asteriskos, 'little star' — a diminutive of astēr, 'star.' It is one of the oldest editorial marks in the Western tradition: the Alexandrian scholar Aristarchus of Samothrace (c. 220–143 BC) used the asteriskos in his editions of Homer to flag lines he judged to be duplicated elsewhere, and the theologian Origen later placed it in his Hexapla to mark text present in the Hebrew but missing from the Greek. Today the same glyph does three very different jobs: it is the classic footnote marker that sends a reader to a note at the foot of the page, it is the wildcard that matches anything in file search, glob patterns, and SQL's SELECT *, and it is the default censoring stand-in for the letters people would rather star out, as in f**k. Typography keeps a family of relatives around it — the ASTERISM ⁂ (U+2042) stacks three asterisks into a triangle as a section break, the HEAVY ASTERISK ✱ (U+2731) and EIGHT SPOKED ASTERISK ✳ (U+2733) are bolder display forms, and the ASTERISK OPERATOR ∗ (U+2217) is the math-specific multiplication glyph. None of these are the decorative star shapes — the black star ★ (U+2605) or the yellow star emoji ⭐ (U+2B50) — which belong to a different, ornamental register.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-asterisk",
+      "label": "The Asterisk",
+      "h2": "The Asterisk & Its Display Variants",
+      "intro": "The plain keyboard asterisk plus the bolder display forms and the math-specific operator. Every one is ready to paste.",
+      "symbols": [
+        { "char": "*", "label": "Asterisk (U+002A) — Footnote, Wildcard & Censor Mark" },
+        { "char": "✱", "label": "Heavy Asterisk (U+2731)" },
+        { "char": "✳", "label": "Eight-Spoked Asterisk (U+2733)" },
+        { "char": "∗", "label": "Asterisk Operator (U+2217) — The Math Multiplication Glyph" },
+        { "char": "＊", "label": "Fullwidth Asterisk (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asterism-editorial",
+      "label": "Asterism & Editorial Marks",
+      "h2": "Asterism & Section-Break Marks",
+      "intro": "Editorial marks built from the asterisk — the three-in-a-triangle asterism that breaks sections, plus its stacked and lowered cousins.",
+      "symbols": [
+        { "char": "⁂", "label": "Asterism (U+2042) — Three Asterisks in a Triangle" },
+        { "char": "⁑", "label": "Two Asterisks Aligned Vertically (U+2051)" },
+        { "char": "⁎", "label": "Low Asterisk (U+204E)" }
+      ]
+    },
+    {
+      "id": "stars-confused-with",
+      "label": "Stars It's Confused With",
+      "h2": "Star Shapes It Gets Confused With",
+      "intro": "Star-shaped glyphs people reach for when they mean an asterisk. These are decorative stars — an ornamental register, not a footnote or punctuation tool.",
+      "symbols": [
+        { "char": "★", "label": "Black Star (U+2605)" },
+        { "char": "☆", "label": "White Star (U+2606)" },
+        { "char": "⭐", "label": "White Medium Star (U+2B50) — The Yellow Star Emoji" },
+        { "char": "✦", "label": "Black Four-Pointed Star (U+2726)" },
+        { "char": "✧", "label": "White Four-Pointed Star (U+2727)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Dashes, brackets, quotation marks, and the everyday punctuation family the asterisk belongs to."
+    },
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "The asterisk, ampersand, hash, and the rest of the symbols printed across your keyboard's rows."
+    },
+    {
+      "href": "/symbol/star-symbol/",
+      "title": "Star Symbol (★)",
+      "desc": "The decorative star ★ and the yellow star emoji ⭐ — the ornamental cousins people confuse with the asterisk."
+    },
+    {
+      "href": "/symbol/section-sign/",
+      "title": "Section Sign (§)",
+      "desc": "The § section mark — another editorial and footnote-adjacent symbol from the world of print."
+    }
+  ]
+}

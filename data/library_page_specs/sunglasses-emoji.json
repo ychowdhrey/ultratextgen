@@ -1,0 +1,137 @@
+{
+  "slug": "sunglasses-emoji",
+  "title": "Sunglasses Emoji & Kaomoji: Copy & Paste 😎 Cool Combos",
+  "meta_description": "Sunglasses emoji 😎 🕶️, smug confident faces, summer vibe combos, and cool kaomoji like (⌐■_■) for chats and captions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/sunglasses-emoji/",
+  "breadcrumb": "Sunglasses Emoji & Kaomoji",
+  "hero_h1": "Sunglasses Emoji & Kaomoji",
+  "hero_tagline": "Cool, confident, and unbothered — the sunglasses emoji, smug faces, summer vibes, and deal-with-it kaomoji in every shade. Click any symbol to copy it instantly.",
+  "intro": "The sunglasses emoji 😎 is internet shorthand for cool, confident, and completely unbothered — the face you drop when something just worked out or when you want to look effortlessly in control. This page gathers the two core shades emoji (😎 and 🕶️), the smug and confident faces that pair with them, summer-and-vacation symbols like ☀️ 🏖️ 🌴 that set the poolside mood, and old-school cool kaomoji such as (⌐■_■) and the classic put-on-the-shades animation. Below those, one-click combo sets bundle it all — Deal With It, Summer Vacation Mode, Chilling Poolside — ready to paste into a caption, comment, or group chat. Whether you're flexing a small win or just radiating unbothered energy, there's a cool face here to match.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-cool",
+      "label": "The Cool Emoji",
+      "h2": "Sunglasses Emoji Variants",
+      "intro": "The two core shades emoji — the cool face and the sunglasses themselves.",
+      "symbols": [
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "🕶️", "label": "Sunglasses" }
+      ]
+    },
+    {
+      "id": "confident-smug",
+      "label": "Confident & Smug",
+      "h2": "Confident & Smug Faces",
+      "intro": "The smirks, flexes, and hand signs that pair with a cool, self-assured vibe.",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "🤙", "label": "Call Me Hand" },
+        { "char": "🆒", "label": "Cool Button" },
+        { "char": "💪", "label": "Flexed Biceps" },
+        { "char": "🤘", "label": "Sign of the Horns" }
+      ]
+    },
+    {
+      "id": "summer-vacation",
+      "label": "Summer Vibes",
+      "h2": "Summer & Vacation Vibes",
+      "intro": "Sun, beach, and poolside symbols that sunglasses pair with naturally.",
+      "symbols": [
+        { "char": "☀️", "label": "Sun" },
+        { "char": "🏖️", "label": "Beach With Umbrella" },
+        { "char": "🌴", "label": "Palm Tree" },
+        { "char": "🍹", "label": "Tropical Drink" },
+        { "char": "🚗", "label": "Automobile" }
+      ]
+    },
+    {
+      "id": "cool-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Cool Kaomoji & Text Faces",
+      "intro": "Shades-wearing text faces, from the classic deal-with-it to finger guns — paste them anywhere plain text works.",
+      "symbols": [
+        { "char": "(⌐■_■)", "label": "Deal With It Kaomoji" },
+        { "char": "B-)", "label": "Sunglasses Smiley Kaomoji" },
+        { "char": "(•_•) ( •_•)>⌐■-■ (•_•)", "label": "Putting On Sunglasses Kaomoji" },
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Lenny Face Kaomoji" },
+        { "char": "ᕙ(⇀‸↼‶)ᕗ", "label": "Flexing Muscles Kaomoji" },
+        { "char": "(☞ﾟヮﾟ)☞", "label": "Finger Guns Kaomoji" },
+        { "char": "( ๑>ᴗ<)。*'✧", "label": "Sparkly Cool Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Sunglasses Emoji Combo Sets",
+    "intro": "Copy a full cool combo in one click and paste it straight into a caption, comment, or reply."
+  },
+  "collection_container_id": "sunglassesSetsContainer",
+  "collections": [
+    {
+      "name": "Too Cool For This",
+      "flags": ["😎", "🕶️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deal With It",
+      "flags": ["😎", "👍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Summer Vacation Mode",
+      "flags": ["😎", "🏖️", "☀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Chilling Poolside",
+      "flags": ["😎", "🍹", "🌴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Confidence Level Max",
+      "flags": ["😎", "💪"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Smooth Operator",
+      "flags": ["😏", "😎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Road Trip Ready",
+      "flags": ["😎", "🚗", "🌴"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Squad Cool",
+      "flags": ["😎", "😎", "😎"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    },
+    {
+      "href": "/library/happy-emoji/",
+      "title": "Happy Emoji & Kaomoji",
+      "desc": "Grinning, beaming, and joyful faces for good-mood posts."
+    },
+    {
+      "href": "/library/nerd-emoji/",
+      "title": "Nerd Emoji & Kaomoji",
+      "desc": "Glasses-wearing nerd faces and smart-and-proud combos."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Ready-made emoji combo sets for every mood and moment."
+    }
+  ]
+}

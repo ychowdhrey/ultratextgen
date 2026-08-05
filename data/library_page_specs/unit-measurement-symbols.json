@@ -17,13 +17,34 @@
       "h2": "Electrical & Physics Units",
       "intro": "Dedicated single-character signs for resistance, conductance, and atomic-scale measurement.",
       "symbols": [
-        { "char": "Ω", "label": "Ohm Sign" },
-        { "char": "µ", "label": "Micro Sign" },
-        { "char": "℧", "label": "Inverted Ohm Sign (mho / siemens)" },
-        { "char": "Å", "label": "Angstrom Sign" },
-        { "char": "ℏ", "label": "Planck Constant Over Two Pi" },
-        { "char": "ℓ", "label": "Script Small L (litre)" },
-        { "char": "℮", "label": "Estimated Sign" }
+        {
+          "char": "Ω",
+          "label": "Ohm Sign"
+        },
+        {
+          "char": "µ",
+          "label": "Micro Sign"
+        },
+        {
+          "char": "℧",
+          "label": "Inverted Ohm Sign (mho / siemens)"
+        },
+        {
+          "char": "Å",
+          "label": "Angstrom Sign"
+        },
+        {
+          "char": "ℏ",
+          "label": "Planck Constant Over Two Pi"
+        },
+        {
+          "char": "ℓ",
+          "label": "Script Small L (litre)"
+        },
+        {
+          "char": "℮",
+          "label": "Estimated Sign"
+        }
       ]
     },
     {
@@ -32,15 +53,42 @@
       "h2": "SI Metric Unit Squares",
       "intro": "Pre-composed metric units from the CJK Compatibility block that fit a single character cell.",
       "symbols": [
-        { "char": "㎏", "label": "Square Kg (kilogram)" },
-        { "char": "㎜", "label": "Square Mm (millimetre)" },
-        { "char": "㎝", "label": "Square Cm (centimetre)" },
-        { "char": "㎞", "label": "Square Km (kilometre)" },
-        { "char": "㎡", "label": "Square M Squared (square metre)" },
-        { "char": "㎥", "label": "Square M Cubed (cubic metre)" },
-        { "char": "㎒", "label": "Square Mhz (megahertz)" },
-        { "char": "㎓", "label": "Square Ghz (gigahertz)" },
-        { "char": "㏄", "label": "Square Cc (cubic centimetre)" }
+        {
+          "char": "㎏",
+          "label": "Square Kg (kilogram)"
+        },
+        {
+          "char": "㎜",
+          "label": "Square Mm (millimetre)"
+        },
+        {
+          "char": "㎝",
+          "label": "Square Cm (centimetre)"
+        },
+        {
+          "char": "㎞",
+          "label": "Square Km (kilometre)"
+        },
+        {
+          "char": "㎡",
+          "label": "Square M Squared (square metre)"
+        },
+        {
+          "char": "㎥",
+          "label": "Square M Cubed (cubic metre)"
+        },
+        {
+          "char": "㎒",
+          "label": "Square Mhz (megahertz)"
+        },
+        {
+          "char": "㎓",
+          "label": "Square Ghz (gigahertz)"
+        },
+        {
+          "char": "㏄",
+          "label": "Square Cc (cubic centimetre)"
+        }
       ]
     },
     {
@@ -49,13 +97,34 @@
       "h2": "Temperature & Ratio Marks",
       "intro": "Temperature-scale signs and the prime and ratio characters used in measurement notation.",
       "symbols": [
-        { "char": "℃", "label": "Degree Celsius" },
-        { "char": "℉", "label": "Degree Fahrenheit" },
-        { "char": "K", "label": "Kelvin Sign" },
-        { "char": "′", "label": "Prime (feet / arcminutes)" },
-        { "char": "″", "label": "Double Prime (inches / arcseconds)" },
-        { "char": "‰", "label": "Per Mille Sign" },
-        { "char": "‱", "label": "Per Ten Thousand Sign" }
+        {
+          "char": "℃",
+          "label": "Degree Celsius"
+        },
+        {
+          "char": "℉",
+          "label": "Degree Fahrenheit"
+        },
+        {
+          "char": "K",
+          "label": "Kelvin Sign"
+        },
+        {
+          "char": "′",
+          "label": "Prime (feet / arcminutes)"
+        },
+        {
+          "char": "″",
+          "label": "Double Prime (inches / arcseconds)"
+        },
+        {
+          "char": "‰",
+          "label": "Per Mille Sign"
+        },
+        {
+          "char": "‱",
+          "label": "Per Ten Thousand Sign"
+        }
       ]
     }
   ],
@@ -66,7 +135,7 @@
       "desc": "Mathematical operators, Greek letters, roots, and infinity signs."
     },
     {
-      "href": "/library/degree-symbol/",
+      "href": "/symbol/degree-symbol/",
       "title": "Degree Symbol",
       "desc": "The degree sign with temperature, angle, and prime characters."
     },

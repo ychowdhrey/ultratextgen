@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Símbolos: busca un solo carácter Unicode a fondo</title>
+<meta name="description" content="Busca un símbolo concreto — su significado, historia, cómo escribirlo y dónde funciona. Cada página cubre un único carácter Unicode. ¿Quieres una categoría entera para explorar? Ve a la biblioteca.">
+
+<link rel="canonical" href="https://ultratextgen.com/es/symbol/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/symbol/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/symbol/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/symbol/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/symbol/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/symbol/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/symbol/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/symbol/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/symbol/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/symbol/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/symbol/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/symbol/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/symbol/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/symbol/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/symbol/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/symbol/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/symbol/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/symbol/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/symbol/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/symbol/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/es-symbol.png">
+<meta property="og:image:alt" content="Símbolos: busca un solo carácter Unicode a fondo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Símbolos: busca un solo carácter Unicode a fondo">
+<meta name="twitter:description" content="Busca un símbolo concreto — significado, historia, cómo escribirlo y dónde funciona.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/es-symbol.png">
+<meta property="og:title" content="Símbolos: busca un solo carácter Unicode a fondo">
+<meta property="og:description" content="Busca un símbolo concreto — significado, historia, cómo escribirlo y dónde funciona.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ultratextgen.com/es/symbol/">
+<meta property="og:locale" content="es_ES">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Símbolos: busca un solo carácter Unicode a fondo",
+  "description": "Busca un símbolo concreto — significado, historia, cómo escribirlo y dónde funciona.",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "mainEntityOfPage": "https://ultratextgen.com/es/symbol/",
+  "inLanguage": "es",
+  "datePublished": "2026-07-14",
+  "dateModified": "2026-07-14",
+  "image": "https://ultratextgen.com/assets/og/es-symbol.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://ultratextgen.com/es/" },
+    { "@type": "ListItem", "position": 2, "name": "Símbolos", "item": "https://ultratextgen.com/es/symbol/" }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Ruta de navegación">
+  <a href="/es/">Inicio</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Símbolos</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Símbolos</h1>
+    <p class="hero-tagline">¿Buscas un símbolo concreto? Cada página de abajo cubre un solo carácter a fondo — significado, historia, cómo escribirlo y dónde funciona. ¿Quieres una categoría entera para explorar y copiar? Ve mejor a la <a href="/es/library/">biblioteca completa</a>.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>La <a href="/es/library/">biblioteca</a> está pensada para explorar — rejillas de símbolos relacionados que recorres y de las que copias de una pasada. Esta sección está pensada para lo contrario: ya sabes exactamente qué símbolo buscas y quieres la historia completa de ese único carácter — su identidad Unicode, de dónde viene, si es seguro usarlo en un nombre de usuario y cómo escribirlo sin tener que copiarlo de una página como esta cada vez.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MATH SYMBOLS -->
+<section class="mood-explainers" id="simbolos-matematicos">
+  <span class="article-section-label">Símbolos matemáticos</span>
+  <h2>Páginas de símbolos matemáticos individuales</h2>
+  <p class="u-secondary-tight">Sacados de la <a href="/es/library/simbolos-matematicos/">biblioteca de símbolos matemáticos</a> para tener su propia página dedicada.</p>
+  <div class="compare-grid">
+    <a href="/es/symbol/signo-de-division/" class="compare-card variant-muted u-no-underline">
+      <h4>÷ Signo de división</h4>
+      <p>El óbelo, y su origen en 1659.</p>
+    </a>
+    <a href="/es/symbol/signo-de-multiplicacion/" class="compare-card variant-muted u-no-underline">
+      <h4>× Signo de multiplicación</h4>
+      <p>Una marca de 1631 pensada para no confundirse con la letra x.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-infinito/" class="compare-card variant-muted u-no-underline">
+      <h4>∞ Infinito</h4>
+      <p>La lemniscata de John Wallis, de 1655, explicada.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-raiz-cuadrada/" class="compare-card variant-muted u-no-underline">
+      <h4>√ Raíz cuadrada</h4>
+      <p>Significado, origen en 1525 y cómo escribirla.</p>
+    </a>
+    <a href="/es/symbol/cuadrado-y-cubo/" class="compare-card variant-muted u-no-underline">
+      <h4>² ³ Cuadrado y cubo</h4>
+      <p>Los dos superíndices más antiguos que el resto del conjunto.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-grado/" class="compare-card variant-muted u-no-underline">
+      <h4>° Símbolo de grado</h4>
+      <p>Siglos de astronomía, ángulos y escalas de temperatura — y el º ordinal.</p>
+    </a>
+  </div>
+</section>
+
+<!-- SIGNOS DEL ZODIACO -->
+<section class="mood-explainers" id="signos-del-zodiaco">
+  <span class="article-section-label">Signos del zodiaco</span>
+  <h2>Signos del zodiaco</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/simbolo-de-aries/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Aries (♈): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Aries ♈ (U+2648) explicado — el mito del Vellocino de Oro, sus fechas, planeta regente y elemento, y cómo escribirlo en...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-tauro/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Tauro (♉): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Tauro ♉ (U+2649) explicado — por qué es probablemente la constelación zodiacal más antigua, sus fechas, planeta regente y...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-geminis/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Géminis (♊): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Géminis ♊ (U+264A) explicado — el mito de Cástor y Pólux, sus fechas, planeta regente y elemento, y cómo escribirlo en...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-cancer/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Cáncer (♋): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Cáncer ♋ (U+264B) explicado — el mito del cangrejo de Hera, por qué es el único signo regido por la Luna, y cómo...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-leo/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Leo (♌): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Leo ♌ (U+264C) explicado — el mito del León de Nemea, por qué es uno de los dos únicos signos regidos por un astro, y cómo...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-virgo/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Virgo (♍): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Virgo ♍ (U+264D) explicado — el mito de Astrea, el único signo personificado como una mujer, y cómo escribirlo en Windows...</p>
+    </a>
+    <a href="/es/symbol/signo-zodiacal-libra/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo zodiacal de Libra (♎): significado, historia y cómo escribirlo</h4>
+      <p>El signo zodiacal de Libra ♎ (U+264E) explicado — el único símbolo del zodiaco que representa un objeto y no un animal o persona, su...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-escorpio/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Escorpio (♏): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Escorpio ♏ (U+264F) explicado — el mito del escorpión que mató a Orión y por qué sus constelaciones nunca comparten el...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-sagitario/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Sagitario (♐): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Sagitario ♐ (U+2650) explicado — el mito del centauro Quirón, el dato astronómico de que su constelación apunta al centro...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-capricornio/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Capricornio (♑): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Capricornio ♑ (U+2651) explicado — el mito de la cabra-pez, la huida a medio terminar del dios Pan del monstruo Tifón, su...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-acuario/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Acuario (♒): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Acuario ♒ (U+2652) explicado — por qué el aguador, con nombre y glifo de agua, es en realidad un signo de Aire, su origen...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-piscis/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Piscis (♓): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de Piscis ♓ (U+2653) explicado — los dos peces atados por la cola, el único glifo del zodiaco que une a dos criaturas, el...</p>
+    </a>
+  </div>
+</section>
+
+<!-- LETRAS GRIEGAS -->
+<section class="mood-explainers" id="letras-griegas">
+  <span class="article-section-label">Letras griegas</span>
+  <h2>Letras griegas</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/simbolo-alfa/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo alfa (Α α): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo alfa para copiar y pegar — la letra griega Α α que abre el alfabeto, el «alfa» de «alfa y omega» y el signo de las partículas...</p>
+    </a>
+    <a href="/es/symbol/simbolo-delta/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo delta (Δ δ): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo delta para copiar y pegar — la Δ mayúscula (el signo universal de «variación de») y la δ minúscula — con sus significados...</p>
+    </a>
+    <a href="/es/symbol/simbolo-omega/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo omega (Ω ω): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo omega para copiar y pegar — la letra griega Ω ω y por qué el signo eléctrico de ohmio (U+2126) se ve idéntico pero es un...</p>
+    </a>
+    <a href="/es/symbol/simbolo-pi/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo pi (π Π ∏): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo pi para copiar y pegar — la π minúscula (la constante matemática), la Π mayúscula (el operador de producto) y el signo...</p>
+    </a>
+    <a href="/es/symbol/simbolo-sigma/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo sigma (Σ σ 🗿): significado, meme y la letra griega</h4>
+      <p>El símbolo sigma para copiar y pegar — la letra griega Σ σ, el emoji 🗿 de moái que la gente usa de verdad para el meme «sigma male» y...</p>
+    </a>
+    <a href="/es/symbol/simbolo-lambda/" class="compare-card variant-muted u-no-underline">
+      <h4>λ Λ Símbolo Lambda</h4>
+      <p>Un símbolo de la liberación gay de 1970, y la letra detrás del cálculo lambda.</p>
+    </a>
+    <a href="/es/symbol/simbolo-theta/" class="compare-card variant-muted u-no-underline">
+      <h4>θ Θ Símbolo Theta</h4>
+      <p>La marca de los jurados de la antigua Grecia para votar una sentencia de muerte.</p>
+    </a>
+    <a href="/es/symbol/simbolo-phi/" class="compare-card variant-muted u-no-underline">
+      <h4>φ Φ Símbolo Phi</h4>
+      <p>La letra de la proporción áurea, nombrada en honor al escultor Fidias.</p>
+    </a>
+    <a href="/es/symbol/simbolo-psi/" class="compare-card variant-muted u-no-underline">
+      <h4>ψ Ψ Símbolo Psi</h4>
+      <p>La función de onda cuántica de Schrödinger — y el icono tridente de la psicología.</p>
+    </a>
+    <a href="/es/symbol/simbolo-chi/" class="compare-card variant-muted u-no-underline">
+      <h4>χ Χ Símbolo Chi</h4>
+      <p>La X de «Xmas», el monograma Chi-Ro y la prueba χ².</p>
+    </a>
+  </div>
+</section>
+
+<!-- SÍMBOLOS DE MONEDA -->
+<section class="mood-explainers" id="simbolos-de-moneda">
+  <span class="article-section-label">Símbolos de moneda</span>
+  <h2>Símbolos de moneda</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/simbolo-de-bitcoin/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Bitcoin: Copiar y Pegar ₿ — El Signo que Unicode Añadió en 2017</h4>
+      <p>Copia y pega el símbolo de Bitcoin (₿, U+20BF) y descubre en qué se diferencia del baht tailandés ฿ y del ticker BTC.</p>
+    </a>
+    <a href="/es/symbol/signo-de-dolar/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo de Dólar ($): Origen Disputado, Historia y Cómo Escribirlo</h4>
+      <p>El signo de dólar ($, U+0024) explicado — su disputado origen de la década de 1770 a partir de una abreviatura del peso, el mito...</p>
+    </a>
+    <a href="/es/symbol/signo-de-euro/" class="compare-card variant-muted u-no-underline">
+      <h4>€ Signo de euro</h4>
+      <p>Un símbolo monetario diseñado a propósito en 1996.</p>
+    </a>
+    <a href="/es/symbol/signo-de-libra/" class="compare-card variant-muted u-no-underline">
+      <h4>£ Signo de libra</h4>
+      <p>Su origen en la libra latina, una unidad de peso — y en qué se diferencia del signo #.</p>
+    </a>
+    <a href="/es/symbol/signo-de-centavo/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo de Centavo: Copiar y Pegar el Símbolo de Moneda ¢</h4>
+      <p>Copia y pega el signo de centavo (¢) — por qué falta en la mayoría de los teclados, sus vecinos confundibles y cómo escribirlo en...</p>
+    </a>
+    <a href="/es/symbol/signo-de-micro/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo Micro: Copiar y Pegar µ frente a la Mu Griega (μ) — Cuál Usar</h4>
+      <p>Copia y pega el signo micro (µ) para micras y microgramos, y descubre por qué es un carácter Unicode distinto de la letra griega mu (μ),...</p>
+    </a>
+    <a href="/es/symbol/signo-de-rupia-india/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo de rupia india (₹) → Copiar y pegar, origen y teclado</h4>
+      <p>Copia y pega el signo de la rupia india ₹ (U+20B9) — el concurso público de diseño de 2010 que lo creó, y cómo escribirlo en Windows y Mac.</p>
+    </a>
+    <a href="/es/symbol/signo-de-won/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo de won (₩) → Copiar y pegar, el símbolo de las dos Coreas</h4>
+      <p>Copia y pega el signo de won (₩) — el único símbolo monetario que comparten el won surcoreano (KRW) y el won norcoreano (KPW), primo...</p>
+    </a>
+    <a href="/es/symbol/signo-de-yen/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo de yen (¥) → Copiar y pegar, origen y teclado</h4>
+      <p>Copia y pega el signo de yen ¥ (U+00A5) — su origen de 1871, por qué lo comparte con el yuan chino, y cómo escribirlo en Windows y Mac.</p>
+    </a>
+    <a href="/es/symbol/signo-de-rublo/" class="compare-card variant-muted u-no-underline">
+      <h4>₽ Signo del Rublo</h4>
+      <p>Decidido por una votación pública de más de 284.000 rusos en 2013.</p>
+    </a>
+    <a href="/es/symbol/signo-de-peso/" class="compare-card variant-muted u-no-underline">
+      <h4>₱ Signo de Peso</h4>
+      <p>Solo el peso filipino tiene el suyo propio — el resto usa $.</p>
+    </a>
+    <a href="/es/symbol/signo-de-dirham/" class="compare-card variant-muted u-no-underline">
+      <h4>⃃ Signo del Dirham</h4>
+      <p>El nuevo símbolo de los Emiratos — congelado para publicarse en Unicode 18.0, todavía en ningún teclado.</p>
+    </a>
+    <a href="/es/symbol/signo-de-rial-omani/" class="compare-card variant-muted u-no-underline">
+      <h4>⃄ Signo del Rial Omaní</h4>
+      <p>El nuevo símbolo de Omán — también congelado para publicarse en Unicode 18.0.</p>
+    </a>
+    <a href="/es/symbol/signo-de-rufiyaa/" class="compare-card variant-muted u-no-underline">
+      <h4>⃂ Signo del Rufiyaa</h4>
+      <p>El nuevo símbolo de Maldivas, formado a partir de la letra thaana ރ — aceptado para Unicode 18.0.</p>
+    </a>
+    <a href="/es/symbol/signo-de-rial-saudi/" class="compare-card variant-muted u-no-underline">
+      <h4>⃁ Signo del Rial Saudí</h4>
+      <p>Ya definitivo desde Unicode 17.0 — una versión por delante del resto del Golfo.</p>
+    </a>
+  </div>
+</section>
+
+<!-- MÁS SÍMBOLOS MATEMÁTICOS -->
+<section class="mood-explainers" id="mas-matematicos">
+  <span class="article-section-label">Más símbolos matemáticos</span>
+  <h2>Más símbolos matemáticos</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/simbolo-ampersand/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Ampersand (&amp;): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo & (U+0026) explicado — su origen como ligadura latina, de dónde viene el nombre «ampersand» y cómo escribirlo.</p>
+    </a>
+    <a href="/es/symbol/simbolo-congruente/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Congruente (≅): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo congruente ≅ (U+2245) explicado — el signo que la geometría usa para «misma forma y tamaño», aunque Unicode lo llama...</p>
+    </a>
+    <a href="/es/symbol/signos-de-menor-y-mayor/" class="compare-card variant-muted u-no-underline">
+      <h4>Signos de Menor (&lt;) y Mayor (&gt;): significado y cómo escribirlos</h4>
+      <p>Los signos < y > explicados — su significado de comparación, por qué rompen el HTML sin escapar, cómo escribirlos, y en qué se...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-diferente/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Diferente (≠): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de diferente ≠ (U+2260) explicado — copia y pega el signo de negación matemático, la familia ≁ ≉ ≢ ≮ ≯ a la que pertenece, y...</p>
+    </a>
+    <a href="/es/symbol/signo-de-mas-menos/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo Más-Menos (±): significado, historia y cómo escribirlo</h4>
+      <p>El signo más-menos ± (U+00B1) explicado — qué significa, cómo escribirlo en Windows/Mac, y la diferencia entre ± y su espejo ∓.</p>
+    </a>
+    <a href="/es/symbol/linea-vertical/" class="compare-card variant-muted u-no-underline">
+      <h4>Línea vertical (|): significado, historia y cómo escribirla</h4>
+      <p>El símbolo de línea vertical | (U+007C) explicado — su historia como pipe de Unix, sus usos en notación matemática, y cómo escribirlo en...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-grados-celsius/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Grados Celsius (℃): significado, historia y cómo escribirlo</h4>
+      <p>Copia y pega el signo de grados Celsius (℃, U+2103) — el carácter único que combina el signo de grado y la C, por qué Unicode recomienda...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-grados-fahrenheit/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Grados Fahrenheit (℉): significado, historia y cómo escribirlo</h4>
+      <p>Copia y pega el signo de grados Fahrenheit (℉, U+2109) — el carácter único que combina el signo de grado y la F, por qué Unicode...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-diametro/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Diámetro (⌀): copiar y pegar el signo de planos técnicos</h4>
+      <p>Copia y pega el símbolo de diámetro (⌀) usado en planos de ingeniería y especificaciones de mecanizado, más sus vecinos confundibles Ø y ∅.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-ohmio/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Ohmio: copiar y pegar Ω ℧ — el físico detrás de V = IR</h4>
+      <p>Copia y pega el símbolo de ohmio (Ω) para la resistencia eléctrica — llamado así por el físico Georg Simon Ohm y su ley de 1827, V = IR...</p>
+    </a>
+    <a href="/es/symbol/signo-de-menor-o-igual-que/" class="compare-card variant-muted u-no-underline">
+      <h4>≤ Signo de Menor o Igual Que</h4>
+      <p>El refinamiento de 1734 de Bouguer sobre los &lt; y &gt; estrictos de Harriot, y por qué el código usa &lt;= en su lugar.</p>
+    </a>
+  </div>
+</section>
+
+<!-- PUNTUACIÓN Y TIPOGRAFÍA -->
+<section class="mood-explainers" id="puntuacion">
+  <span class="article-section-label">Puntuación y tipografía</span>
+  <h2>Puntuación y tipografía</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/comillas/" class="compare-card variant-muted u-no-underline">
+      <h4>« » Comillas</h4>
+      <p>Comillas rectas frente a las tipográficas “ ” y las angulares « » — y por qué las pegadas rompen el código.</p>
+    </a>
+    <a href="/es/symbol/arroba/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Arroba (@): Significado, Historia y Cómo Escribirlo</h4>
+      <p>El símbolo arroba @ (U+0040) explicado — su origen de 500 años en los libros de cuentas, el uso de Ray Tomlinson en el correo de 1971,...</p>
+    </a>
+    <a href="/es/symbol/interrogacion-reflexa/" class="compare-card variant-muted u-no-underline">
+      <h4>Interrogación Reflexa: Copiar y Pegar ⸮ — No Es lo Mismo que ¿</h4>
+      <p>Copia y pega la interrogación reflexa (⸮), una marca del siglo XVI para preguntas retóricas — y descubre por qué no es el signo de...</p>
+    </a>
+    <a href="/es/symbol/raya/" class="compare-card variant-muted u-no-underline">
+      <h4>Raya (—): Copiar y Pegar + Por Qué Se Volvió la Marca de la "Escritura con IA"</h4>
+      <p>Copia y pega la raya (—), descubre en qué se diferencia del guion medio (–), el guion y el signo menos, y por qué se convirtió en señal...</p>
+    </a>
+    <a href="/es/symbol/calderon/" class="compare-card variant-muted u-no-underline">
+      <h4>Calderón (¶): Significado, Historia y Cómo Escribirlo</h4>
+      <p>El calderón ¶ (U+00B6) explicado — la marca medieval de párrafo detrás del botón Mostrar/Ocultar de Word, y cómo escribirlo en Windows/Mac.</p>
+    </a>
+    <a href="/es/symbol/signo-de-seccion/" class="compare-card variant-muted u-no-underline">
+      <h4>Signo de Sección (§): Significado, Historia y Cómo Escribirlo</h4>
+      <p>El signo de sección § (U+00A7) explicado — su origen legal medieval, cómo se usa para citar leyes, y cómo escribirlo en Windows/Mac.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-marca-comercial/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Marca Comercial (™): Significado, Historia y Cómo Escribirlo</h4>
+      <p>El símbolo de marca comercial ™ (U+2122) explicado — qué significa legalmente, en qué se diferencia de ®, y cómo escribirlo en Windows/Mac.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-copyright/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Copyright (©): Significado, Historia y Cómo Escribirlo</h4>
+      <p>El símbolo de copyright © (U+00A9) explicado — su origen legal de 1909, si todavía es necesario, y cómo escribirlo en Windows/Mac.</p>
+    </a>
+    <a href="/es/symbol/interrobang/" class="compare-card variant-muted u-no-underline">
+      <h4>‽ Interrobang</h4>
+      <p>La mezcla de ? y ! que ideó un publicista en 1962 — brevemente una tecla real de máquina de escribir.</p>
+    </a>
+    <a href="/es/symbol/asterisco/" class="compare-card variant-muted u-no-underline">
+      <h4>* Asterisco</h4>
+      <p>Una antigua marca de nota al pie que se volvió comodín y estrella de censura.</p>
+    </a>
+    <a href="/es/symbol/virgulilla/" class="compare-card variant-muted u-no-underline">
+      <h4>~ Virgulilla</h4>
+      <p>La abreviatura de un escriba que dio la ñ — y el atajo de la carpeta de inicio en Unix.</p>
+    </a>
+    <a href="/es/symbol/guion-bajo/" class="compare-card variant-muted u-no-underline">
+      <h4>_ Guion Bajo</h4>
+      <p>El descendiente del subrayado a máquina, hoy la columna vertebral del snake_case.</p>
+    </a>
+    <a href="/es/symbol/guion-medio/" class="compare-card variant-muted u-no-underline">
+      <h4>– Guion Medio</h4>
+      <p>El guion de rangos sin tecla propia, tecleado constantemente como un guion normal.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FLECHAS -->
+<section class="mood-explainers" id="flechas">
+  <span class="article-section-label">Flechas</span>
+  <h2>Flechas</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/flecha-abajo/" class="compare-card variant-muted u-no-underline">
+      <h4>Flecha abajo (↓ ▼): copiar y pegar, código Alt y cómo escribirla</h4>
+      <p>Haz clic para copiar la flecha abajo ↓ y ▼ al instante — más el código Alt+25 en Windows y todas las demás formas de escribirla.</p>
+    </a>
+    <a href="/es/symbol/flecha-izquierda/" class="compare-card variant-muted u-no-underline">
+      <h4>Flecha izquierda (←): copiar y pegar, código Alt y cómo escribirla</h4>
+      <p>Haz clic para copiar la flecha izquierda ← al instante — más el código Alt+27 en Windows y todas las demás formas de escribirla.</p>
+    </a>
+    <a href="/es/symbol/flecha-derecha/" class="compare-card variant-muted u-no-underline">
+      <h4>Flecha derecha (→): copiar y pegar, código Alt y cómo escribirla</h4>
+      <p>Haz clic para copiar la flecha derecha → al instante — más el código Alt+26 en Windows y todas las demás formas de escribirla.</p>
+    </a>
+    <a href="/es/symbol/flecha-arriba/" class="compare-card variant-muted u-no-underline">
+      <h4>Flecha arriba (↑ ▲): copiar y pegar, código Alt y cómo escribirla</h4>
+      <p>Haz clic para copiar la flecha arriba ↑ y ▲ al instante — más el código Alt+24 en Windows y todas las demás formas de escribirla.</p>
+    </a>
+  </div>
+</section>
+
+<!-- SÍMBOLOS RELIGIOSOS Y CULTURALES -->
+<section class="mood-explainers" id="religiosos">
+  <span class="article-section-label">Símbolos religiosos y culturales</span>
+  <h2>Símbolos religiosos y culturales</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/simbolo-ankh/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Ankh: Copiar y Pegar ☥ — el Jeroglífico Egipcio de «Vida» que los Coptos Convirtieron en Cruz</h4>
+      <p>Copia y pega el ankh (☥ U+2625), el jeroglífico egipcio para «vida» sostenido por dioses y faraones — y la cruz con asa, la crux ansata,...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-la-flor-de-lis/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de la Flor de Lis: Copiar y Pegar ⚜ — De la Realeza Francesa al Emblema Scout y los New Orleans Saints</h4>
+      <p>Copia y pega la flor de lis (⚜ U+269C), el lirio estilizado de la realeza francesa — hoy la Insignia Mundial del Escultismo, el logo de...</p>
+    </a>
+    <a href="/es/symbol/simbolo-hamsa/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Hamsa: Copiar y Pegar 🪬 — Compartido en las Tradiciones Judía e Islámica</h4>
+      <p>Copia y pega la mano de hamsa (🪬), añadida a Unicode en 2021, y descubre cómo un amuleto protector preabrahámico se usa hoy como la Mano...</p>
+    </a>
+    <a href="/es/symbol/simbolo-khanda/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Khanda: Copiar y Pegar ☬ 🪯 Emblema Sij e Ik Onkar</h4>
+      <p>Copia y pega el Khanda (☬ 🪯), el emblema sij de la espada de doble filo, el chakkar y los dos kirpans — y descubre en qué se diferencia...</p>
+    </a>
+    <a href="/es/symbol/simbolo-om/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Om: Copiar y Pegar ॐ 🕉️ — Un Sonido Sagrado, Tres Significados</h4>
+      <p>Copia y pega Om / Aum (ॐ U+0950, 🕉️ U+1F549) — la sílaba sagrada leída como el sonido cósmico primordial en el hinduismo, la apertura de...</p>
+    </a>
+    <a href="/es/symbol/cruz-ortodoxa/" class="compare-card variant-muted u-no-underline">
+      <h4>Cruz Ortodoxa: Copiar y Pegar ☦ — Qué Significan Realmente Sus Tres Barras</h4>
+      <p>Copia y pega la cruz ortodoxa (☦) y descubre qué representan sus tres barras — el titulus, el travesaño y el reposapiés inclinado...</p>
+    </a>
+    <a href="/es/symbol/simbolo-del-pentagrama/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo del Pentagrama: Copiar y Pegar ⛤ — Estrella Wiccana vs. Sigilo Satánico</h4>
+      <p>Copia y pega el pentagrama (⛤) y el pentagrama invertido (⛧), y descubre cómo la estrella wiccana en punta hacia arriba y el sigilo...</p>
+    </a>
+    <a href="/es/symbol/estrella-de-david/" class="compare-card variant-muted u-no-underline">
+      <h4>Estrella de David: Copiar y Pegar ✡ — Cómo un Hexagrama se Volvió Símbolo Judío</h4>
+      <p>Copia y pega la Estrella de David (✡) y descubre su historia en capas — desde un motivo geométrico antiguo compartido entre culturas...</p>
+    </a>
+    <a href="/es/symbol/yin-yang/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo Yin Yang (☯): Significado, Historia y Cómo Escribirlo</h4>
+      <p>El símbolo yin yang ☯ (U+262F) explicado — sus raíces en la filosofía china antigua y cómo escribirlo en Windows y Mac.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-la-cruz/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de la Cruz: Copiar y Pegar ✝ la Cruz Latina (Cruz Cristiana)</h4>
+      <p>Copia y pega la cruz latina (✝, U+271D), el símbolo principal del cristianismo — además de la cruz ortodoxa, la maltesa y otras cruces,...</p>
+    </a>
+    <a href="/es/symbol/media-luna-y-estrella/" class="compare-card variant-muted u-no-underline">
+      <h4>☪ Media Luna y Estrella</h4>
+      <p>Un emblema otomano, no coránico — pese a su uso extendido en banderas.</p>
+    </a>
+  </div>
+</section>
+
+<!-- SÍMBOLOS DE ESTADO Y ADVERTENCIA -->
+<section class="mood-explainers" id="estado">
+  <span class="article-section-label">Símbolos de estado y advertencia</span>
+  <h2>Símbolos de estado y advertencia</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/simbolo-de-anarquia/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de anarquía (Ⓐ): origen de 1964 y significado, explicados</h4>
+      <p>Copia y pega el símbolo de anarquía (Ⓐ, la A rodeada) y descubre su origen documentado de 1964, el debate sobre si significa «A de...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-enojo/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de enojo (💢): la marca de la vena del manga, explicada</h4>
+      <p>Copia y pega el símbolo de enojo (💢), la marca de «vena hinchada» de cuatro puntas que viene del manga japonés — más los emojis de enojo...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-autismo/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de autismo: copiar ♾️ infinito — no la pieza de puzle</h4>
+      <p>Copia y pega el símbolo de infinito (∞ ♾️) que usa la comunidad autista para el autismo y la neurodivergencia, por qué la pieza de puzle...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-peligro-biologico/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de peligro biológico (☣): el diseño de 1966 «memorable pero sin sentido»</h4>
+      <p>Copia y pega el símbolo de peligro biológico (☣) y descubre por qué se diseñó deliberadamente en 1966 para no significar nada por sí mismo.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-verificacion/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de verificación: copiar y pegar ✓ ✔ marcas de check</h4>
+      <p>Copia y pega el símbolo de verificación (✓, U+2713) — el check, el check grueso ✔, el emoji ✅ y la casilla ☑ — más el ✗ y el √ con los...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-la-paz/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de la Paz (☮): significado, historia y cómo escribirlo</h4>
+      <p>El símbolo de la paz ☮ (U+262E) explicado — el diseño de 1958 de Gerald Holtom basado en letras de semáforo, y cómo escribirlo en...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-reciclaje/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Reciclaje: Copiar y Pegar ♻ — Diseñado por un Estudiante de 23 Años para un Concurso del Día de la Tierra de 1970</h4>
+      <p>Copia y pega el símbolo de reciclaje (♻ U+267B), el bucle de Möbius de tres flechas diseñado en 1970 por el estudiante de la USC Gary...</p>
+    </a>
+    <a href="/es/symbol/senal-de-stop/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de la Señal de Stop: Copiar y Pegar 🛑 — Significado, Código y la Señal con la que se Confunde</h4>
+      <p>Copia y pega el emoji de la señal de stop (🛑), descubre por qué es un octógono, y aprende la diferencia entre 🛑 stop y ⛔ dirección...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-silla-de-ruedas/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Silla de Ruedas: Copiar y Pegar ♿ — El Símbolo Internacional de Accesibilidad</h4>
+      <p>Copia y pega el símbolo de la silla de ruedas (♿), el Símbolo Internacional de Accesibilidad, y el debate documentado entre la versión...</p>
+    </a>
+  </div>
+</section>
+
+<!-- OTROS SÍMBOLOS -->
+<section class="mood-explainers" id="otros">
+  <span class="article-section-label">Otros símbolos</span>
+  <h2>Otros símbolos</h2>
+  <div class="compare-grid">
+    <a href="/es/symbol/luna-negra-lilith/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de la Luna Negra Lilith (⚸): significado en astrología</h4>
+      <p>Copia y pega el símbolo de la Luna Negra o Lilith (⚸), un punto de la órbita lunar y no un objeto físico — más los símbolos lunares y de...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-corazon/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Corazón: Copiar y Pegar ♥ ❤ Corazones de Texto</h4>
+      <p>Copia y pega el símbolo de corazón (♥, U+2665) — el corazón de la baraja, el ❤ corazón negro pesado, los emoji de corazón de colores, y...</p>
+    </a>
+    <a href="/es/symbol/caracter-invisible/" class="compare-card variant-muted u-no-underline">
+      <h4>Carácter Invisible (⠀): Nombres en Blanco, Significado y Uso</h4>
+      <p>El carácter invisible ⠀ (U+2800) explicado — por qué sobrevive a la validación de nombres en blanco donde otros símbolos invisibles se...</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-estrella/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolo de Estrella: Copiar y Pegar ★ ☆ Estrellas y Emoji</h4>
+      <p>Copia y pega el símbolo de estrella (★, U+2605) — las estrellas sólida y de contorno para valoraciones y favoritos, estrellas...</p>
+    </a>
+    <a href="/es/symbol/colores-de-corazones-de-snapchat/" class="compare-card variant-muted u-no-underline">
+      <h4>💛 Colores de los Corazones de Snapchat</h4>
+      <p>Qué significa cada color de corazón junto al nombre de un amigo en Snapchat.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-gafas-de-sol/" class="compare-card variant-muted u-no-underline">
+      <h4>😎 Emoji de Gafas de Sol</h4>
+      <p>El código del emoji genial y seguro, y su papel en el sistema de Emoji de Amigos de Snapchat.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-calendario/" class="compare-card variant-muted u-no-underline">
+      <h4>📅 Emoji de Calendario</h4>
+      <p>Su código, y la verdadera historia de Apple detrás de que esté congelado en el 17 de julio.</p>
+    </a>
+    <a href="/es/symbol/calavera-y-huesos-cruzados/" class="compare-card variant-muted u-no-underline">
+      <h4>☠ Calavera y Huesos Cruzados</h4>
+      <p>La marca de veneno y piratería — no es el mismo carácter que 💀.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-microfono/" class="compare-card variant-muted u-no-underline">
+      <h4>🎤 Emoji de Micrófono</h4>
+      <p>Un original de Unicode 6.0 de 2010, y en qué se diferencia del micrófono de estudio 🎙️.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-cara-derretida/" class="compare-card variant-muted u-no-underline">
+      <h4>🫠 Emoji de Cara Derretida</h4>
+      <p>La cara de vergüenza y angustia de Unicode 14.0 — y el «sarcasm» de su propia lista de palabras clave.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-cara-distorsionada/" class="compare-card variant-muted u-no-underline">
+      <h4>🫪 Emoji de Cara Distorsionada</h4>
+      <p>La cara de Unicode 17.0 en U+1FAEA — qué significa realmente y de dónde salió su diseño.</p>
+    </a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CARTAS Y AJEDREZ -->
+<section class="mood-explainers" id="cartas-y-ajedrez">
+  <span class="article-section-label">Cartas y ajedrez</span>
+  <h2>Páginas individuales de cartas y ajedrez</h2>
+  <p class="u-secondary-tight">Sacados de las bibliotecas de <a href="/library/card-suit-symbols/">palos de baraja</a> y <a href="/es/library/simbolos-de-ajedrez/">símbolos de ajedrez</a> para tener su propia página dedicada.</p>
+  <div class="compare-grid">
+    <a href="/es/symbol/simbolo-de-picas/" class="compare-card variant-muted u-no-underline">
+      <h4>♠ ♤ Símbolo de Picas</h4>
+      <p>Debe su nombre a una espada, no a una pala — y la historia fiscal del As.</p>
+    </a>
+    <a href="/es/symbol/simbolo-de-peon/" class="compare-card variant-muted u-no-underline">
+      <h4>♟ ♙ Símbolo de Peón</h4>
+      <p>La pieza de menor valor del ajedrez — la única que puede convertirse en reina.</p>
+    </a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EMOJI (BORRADOR) -->
+<section class="mood-explainers" id="emoji-borrador">
+  <span class="article-section-label">Emoji en borrador</span>
+  <h2>Páginas de emoji en borrador de Unicode 18.0</h2>
+  <p class="u-secondary-tight">Todavía sin aprobar — candidatos para Emoji 18.0, previstos junto a Unicode 18.0 en septiembre de 2026. Sacados de las bibliotecas de <a href="/es/library/emojis-de-caras/">emoji de caras</a>, <a href="/library/food-drink-emojis/">emoji de comida y bebida</a>, <a href="/library/weather-symbols/">símbolos del tiempo</a>, <a href="/library/animal-emojis/">emoji de animales</a> y <a href="/library/hand-symbols/">símbolos de manos</a> para tener su propia página dedicada.</p>
+  <div class="compare-grid">
+    <a href="/es/symbol/emoji-de-cara-agrietada/" class="compare-card variant-muted u-no-underline">
+      <h4>🫫 Emoji de Cara Agrietada</h4>
+      <p>Ganó la votación pública para Emoji 18.0 — y sustituyó a otro emoji propuesto a mitad del borrador.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-pepinillo/" class="compare-card variant-muted u-no-underline">
+      <h4>🫝 Emoji de Pepinillo</h4>
+      <p>Heredó una casilla de código reservada originalmente para una propuesta aplazada de Apple Core.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-meteoro/" class="compare-card variant-muted u-no-underline">
+      <h4>🪋 Emoji de Meteoro</h4>
+      <p>Se separa de la división de renderizado del Cometa, entre hielo azul y bola de fuego roja.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-mariposa-monarca/" class="compare-card variant-muted u-no-underline">
+      <h4>🫌 Emoji de Mariposa Monarca</h4>
+      <p>Corrige una confusión entre plataformas de la Mariposa genérica y una Morpho azul.</p>
+    </a>
+    <a href="/es/symbol/emoji-de-senal-de-pulgar/" class="compare-card variant-muted u-no-underline">
+      <h4>🫹🫺 Emoji de Señal de Pulgar</h4>
+      <p>Un par direccional para señalar, no otro gesto de aprobación como Pulgar Arriba/Abajo.</p>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-card">
+  <h3>¿Quieres una categoría entera para explorar?</h3>
+  <p>La biblioteca reúne rejillas completas de símbolos relacionados — aesthetic, corazones, flechas, matemáticos, de moneda y más — listas para copiar de un toque.</p>
+  <a href="/es/library/" class="cta-btn">Ir a la biblioteca →</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<script src="/symbol-explorer.js" defer></script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "slug": "nieskonczonosc",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Nieskończoności (∞): Symbol do Skopiowania",
+  "meta_description": "Skopiuj znak nieskończoności ∞ oraz pokrewne symbole matematyczne — nierówności, przybliżenia i teorię mnogości. Kliknij symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/nieskonczonosc/",
+  "breadcrumb": "Znak Nieskończoności",
+  "hero_h1": "Znak Nieskończoności ∞",
+  "hero_tagline": "Symbol nieskończoności i pokrewne znaki matematyczne — kliknij, aby skopiować.",
+  "intro": "Znak nieskończoności ∞ oznacza coś bez końca — w matematyce, ale też w bio, tatuażach i biżuterii jako symbol wiecznej miłości czy przyjaźni. To prawdziwy znak Unicode (U+221E), więc kopiuje się jak zwykła litera. Poniżej nieskończoność oraz pokrewne symbole nierówności, przybliżenia i teorii mnogości.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/infinity/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/nieskonczonosc/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/infinity/" }
+  ],
+  "sections": [
+    {
+      "id": "nieskonczonosc",
+      "label": "Nieskończoność",
+      "h2": "Znak Nieskończoności",
+      "intro": "Symbol nieskończoności — matematyka, bio i tatuaże.",
+      "symbols": [
+        { "char": "∞", "label": "Znak Nieskończoności" }
+      ]
+    },
+    {
+      "id": "nierownosci",
+      "label": "Nierówności",
+      "h2": "Znaki Nierówności i Przybliżenia",
+      "intro": "Znaki porównania używane obok nieskończoności w zapisie matematycznym.",
+      "symbols": [
+        { "char": "≠", "label": "Znak Różny Od" },
+        { "char": "≈", "label": "Znak Przybliżenia" },
+        { "char": "≤", "label": "Mniejsze Lub Równe" },
+        { "char": "≥", "label": "Większe Lub Równe" },
+        { "char": "±", "label": "Plus-Minus" }
+      ]
+    },
+    {
+      "id": "logika-mnogosci",
+      "label": "Logika",
+      "h2": "Symbole Logiki i Teorii Mnogości",
+      "intro": "Symbole zbiorów i kwantyfikatory logiczne.",
+      "symbols": [
+        { "char": "∅", "label": "Zbiór Pusty" },
+        { "char": "∀", "label": "Kwantyfikator Ogólny (Dla Każdego)" },
+        { "char": "∃", "label": "Kwantyfikator Szczegółowy (Istnieje)" },
+        { "char": "√", "label": "Pierwiastek Kwadratowy" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro €",
+      "desc": "Symbol euro i inne znaki walut do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/stopnie-i-temperatura/",
+      "title": "Znak Stopnia i Temperatury",
+      "desc": "Stopnie Celsjusza, Fahrenheita i znaki kątów do skopiowania."
+    },
+    {
+      "href": "/pl/library/",
+      "title": "Biblioteka Symboli",
+      "desc": "Wszystkie kolekcje symboli i emotek do skopiowania w jednym miejscu."
+    }
+  ]
+}

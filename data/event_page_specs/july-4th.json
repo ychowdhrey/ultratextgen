@@ -1,0 +1,283 @@
+{
+  "slug": "july-4th",
+  "event_name": "4th of July",
+  "aliases": [
+    "Fourth of July",
+    "Independence Day",
+    "July 4th"
+  ],
+  "title": "4th of July Fonts, Emoji & Caption Generator | UltraTextGen",
+  "meta_description": "Style a 4th of July caption live, copy firework, flag, and star emoji, patriotic symbols, kaomoji, ASCII art, and ready-made Independence Day messages and captions to paste anywhere.",
+  "hero_h1": "4th of July Text & Symbol Generator",
+  "hero_tagline": "Type a name or caption and style it in bold, stencil, and script fonts, then copy firework, flag, and star emoji, kaomoji, and ASCII art — or tap a ready-made Independence Day line to style it instantly.",
+  "intro": "The 4th of July is a caption holiday: fireworks photos, cookout photos, lake photos, and a red-white-and-blue outfit that needs a line under it. This page gathers everything for writing and styling that line: curated bold and stencil fonts you can preview on your own text, the firework, flag, and star emoji people actually paste, star and sparkle symbols, kaomoji, a few original ASCII art pieces, and a bank of Independence Day greetings, cookout invitations, and short captions.",
+  "date_window": "July 4 every year",
+  "hub_card_desc": "Style a 4th of July caption live, then copy matching fonts, emoji, kaomoji, and ready-made messages.",
+  "sample_phrase": "Happy 4th of July",
+  "canonical": "https://ultratextgen.com/events/july-4th/",
+  "occurrence": {
+    "type": "fixed",
+    "month": 7,
+    "day": 4
+  },
+  "fonts": {
+    "curated_keys": [
+      "Ultra Bold",
+      "Ultra Bold Serif",
+      "Ultra Bold Italic Serif",
+      "Ultra Small Caps",
+      "Ultra Double-Struck",
+      "Ultra Squared",
+      "Ultra Fullwidth",
+      "Ultra Script Bold",
+      "Ultra Typewriter Document",
+      "Ultra Bubble Filled"
+    ],
+    "min_count": 8
+  },
+  "emoji_symbol_collections": [
+    {
+      "name": "4th of July Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": [
+        "🎆",
+        "🎇",
+        "🇺🇸",
+        "⭐",
+        "✨",
+        "🗽",
+        "🦅",
+        "🍔",
+        "🌭",
+        "🍉",
+        "🎉",
+        "🔴",
+        "⚪",
+        "🔵"
+      ]
+    },
+    {
+      "name": "Star & Sparkle Symbols",
+      "presentation_class": "symbol",
+      "copy_pattern": "collection",
+      "flags": [
+        "★",
+        "☆",
+        "✦",
+        "✧",
+        "✩",
+        "✪",
+        "✫",
+        "✬",
+        "❋",
+        "✵",
+        "✷",
+        "❈"
+      ]
+    }
+  ],
+  "kaomoji": [
+    {
+      "text": "٩(◕‿◕)۶",
+      "label": "celebrating"
+    },
+    {
+      "text": "\\(^ヮ^)/",
+      "label": "cheering"
+    },
+    {
+      "text": "(★‿★)",
+      "label": "starstruck"
+    },
+    {
+      "text": "( ˆ◡ˆ)っ🎆",
+      "label": "fireworks"
+    },
+    {
+      "text": "(っ^▿^)۶🍔",
+      "label": "cookout"
+    },
+    {
+      "text": "ヽ(•‿•)ノ",
+      "label": "party"
+    }
+  ],
+  "ascii_art": {
+    "items": [
+      {
+        "art": "  \\ | /\n -- * --\n  / | \\",
+        "label": "Firework burst"
+      },
+      {
+        "art": "★ ★ ★ ★ ★\n═══════════\n★ ★ ★ ★ ★",
+        "label": "Stars and stripes"
+      },
+      {
+        "art": "╔═════════════╗\n║  4TH OF     ║\n║    JULY     ║\n╚═════════════╝",
+        "label": "4th of July banner"
+      },
+      {
+        "art": "   .*.\n  *.*.*\n .*.*.*.\n    |",
+        "label": "Sparkler"
+      },
+      {
+        "art": "|*****|=======|\n|*****|=======|\n|=============|",
+        "label": "Flag"
+      },
+      {
+        "art": "✧･ﾟ: *✧ HAPPY 4TH ✧* :･ﾟ✧",
+        "label": "Sparkle line"
+      }
+    ]
+  },
+  "phrase_bank": [
+    {
+      "text": "Happy 4th of July",
+      "group": "Classic greetings",
+      "translation": "The one that always works."
+    },
+    {
+      "text": "Happy Independence Day",
+      "group": "Classic greetings",
+      "translation": "The formal name of the holiday."
+    },
+    {
+      "text": "Land of the free, home of the brave",
+      "group": "Classic greetings",
+      "translation": "The anthem line everyone knows."
+    },
+    {
+      "text": "Stars, stripes, and sunshine",
+      "group": "Classic greetings",
+      "translation": "Light, all-purpose greeting."
+    },
+    {
+      "text": "Happy 4th to you too!",
+      "group": "Replies",
+      "translation": "Plain reply."
+    },
+    {
+      "text": "Thanks — enjoy the fireworks",
+      "group": "Replies",
+      "translation": "Casual reply."
+    },
+    {
+      "text": "Happy 4th of July to you and the family",
+      "group": "For family",
+      "translation": "Family card wording."
+    },
+    {
+      "text": "Cookout at ours — bring an appetite",
+      "group": "For family",
+      "translation": "Invitation wording."
+    },
+    {
+      "text": "First 4th of July, little one",
+      "group": "For family",
+      "translation": "For a baby's first."
+    },
+    {
+      "text": "Missing the family cookout this year",
+      "group": "For family",
+      "translation": "For family you're apart from."
+    },
+    {
+      "text": "Fireworks, food, friends — in that order",
+      "group": "For friends",
+      "translation": "Playful group-chat line."
+    },
+    {
+      "text": "Red, white, and one too many hot dogs",
+      "group": "For friends",
+      "translation": "Funny caption-style message."
+    },
+    {
+      "text": "See you at the lake",
+      "group": "For friends",
+      "translation": "Short plan-making line."
+    },
+    {
+      "text": "Bring the sparklers, I've got the burgers",
+      "group": "For friends",
+      "translation": "Cookout invitation between friends."
+    },
+    {
+      "text": "Wishing you a safe and happy Independence Day",
+      "group": "Formal & work",
+      "translation": "Safe for colleagues and clients."
+    },
+    {
+      "text": "Happy 4th of July from all of us",
+      "group": "Formal & work",
+      "translation": "Team or company message."
+    },
+    {
+      "text": "Enjoy the long weekend",
+      "group": "Formal & work",
+      "translation": "Good for an out-of-office note."
+    },
+    {
+      "text": "Happy 4th",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Star-spangled",
+      "group": "Short for a caption",
+      "translation": "One word, fits any bio."
+    },
+    {
+      "text": "Red, white, and blue",
+      "group": "Short for a caption",
+      "translation": "For an outfit photo."
+    },
+    {
+      "text": "Sparkler season",
+      "group": "Short for a caption",
+      "translation": "Short and current."
+    },
+    {
+      "text": "Boom",
+      "group": "Short for a caption",
+      "translation": "One word for a fireworks photo."
+    },
+    {
+      "text": "Freedom and fireworks",
+      "group": "Short for a caption",
+      "translation": "Alliterative caption."
+    },
+    {
+      "text": "Sun's out, flags out",
+      "group": "Short for a caption",
+      "translation": "Playful summer caption."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/fourth-of-july-symbols/",
+      "title": "4th of July Symbols",
+      "desc": "Stars, stripes, and patriotic characters to copy and paste."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Every star and sparkle character to copy and paste."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emoji",
+      "desc": "Fireworks, confetti, and celebration emoji."
+    },
+    {
+      "href": "/library/emoji-flags/",
+      "title": "Flag Emoji",
+      "desc": "Every country flag emoji, searchable and copyable."
+    },
+    {
+      "href": "/category/bold-fonts/",
+      "title": "Bold Fonts",
+      "desc": "Heavy Unicode styles that hold up in a caption."
+    }
+  ]
+}

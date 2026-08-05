@@ -1183,7 +1183,9 @@
   font-size: 0.95rem;
 }
 
-.editorial-section code {
+.editorial-section code,
+.deco-showcase code,
+.small-caps-compare code {
   background: var(--bg-light, rgba(0, 0, 0, 0.06));
   padding: 0.05em 0.35em;
   border-radius: 4px;
@@ -1636,6 +1638,51 @@
   line-height: 1.5;
 }
 
+.compare-card p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Interactive variant: a .compare-card that's also a filter toggle
+   (e.g. /updates/'s "What we track" cards double as its category filter). */
+button.compare-card.is-toggle {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+button.compare-card.is-toggle:hover:not(:disabled) {
+  border-color: var(--accent-purple);
+}
+button.compare-card.is-toggle.active {
+  border-color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.07);
+}
+button.compare-card.is-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.compare-card-meta {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+}
+button.compare-card.is-toggle:disabled .compare-card-meta {
+  color: var(--text-muted);
+}
+
 .compare-badge {
   display: inline-block;
   font-size: 0.65rem;
@@ -1941,6 +1988,10 @@ a:hover {
   text-decoration: none;
 }
 
+/* .cta-btn is normally an <a>; when a card's action is a print button
+   (e.g. #pt-book-print) strip the native button chrome so it matches. */
+button.cta-btn { border: 0; cursor: pointer; }
+
 /* Mobile responsive additions for new classes */
 @media (max-width: 640px) {
   .compare-grid {
@@ -2150,6 +2201,166 @@ a:hover {
   font-weight: 700;
 }
 
+/* ============================================================
+   Embed widgets (Loop 3 — distribution). Shared by every
+   /usecase/<slug>/embed/ iframe body and every /embed/<slug>/
+   landing page, so a new embeddable widget never needs its own
+   <style> block — it just uses these classes.
+   ============================================================ */
+
+/* <body> of a /usecase/*/embed/ iframe page — no page chrome, just the widget */
+.embed-widget-body {
+  min-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Compact overrides applied to the <body> of a /usecase/*/embed/ iframe page */
+.embed-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 16px 12px;
+}
+.embed-wrapper .hero-card {
+  padding: 24px 20px;
+  box-shadow: none;
+  border: 1px solid var(--border-light);
+}
+.embed-wrapper .hero-headline {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.embed-wrapper .hero-tagline {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.embed-wrapper .main-input {
+  min-height: 64px;
+  font-size: 1rem;
+  padding: 12px 36px 28px 12px;
+}
+.embed-wrapper .counter-textarea {
+  min-height: 120px;
+  font-size: 1rem;
+}
+.embed-wrapper .helper-section {
+  margin-top: 1rem;
+}
+.embed-wrapper .style-phrase-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.embed-wrapper .helper-chip {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+}
+.embed-wrapper .decoration-tab {
+  padding: 5px 10px;
+  font-size: 0.7rem;
+}
+.embed-variations {
+  margin-top: 1rem;
+}
+.embed-variations h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.embed-attribution {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.embed-attribution a {
+  color: var(--accent-purple);
+  text-decoration: none;
+  font-weight: 500;
+}
+.embed-attribution a:hover {
+  text-decoration: underline;
+}
+.embed-attribution .embed-sep {
+  margin: 0 0.35rem;
+  color: var(--border-light);
+}
+
+/* /embed/<slug>/ landing pages: live iframe preview + copyable embed code */
+.embed-page-preview {
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 1.5rem 0;
+  background: var(--bg-base);
+}
+.embed-page-preview iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+.embed-code-block {
+  position: relative;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.embed-code-block code {
+  display: block;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.825rem;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.6;
+}
+.embed-code-copy {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.embed-notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.embed-notes-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+.embed-notes-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+.embed-usecases-list {
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.embed-usecases-list dt {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.925rem;
+  margin-top: 0.75rem;
+}
+.embed-usecases-list dd {
+  margin: 0.15rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2336,6 +2547,80 @@ a:hover {
   }
   .symbol-tile {
     font-size: 1.25rem;
+  }
+}
+
+/* -----------------------------------------------
+   Component: Symbol Hero (.symbol-hero)
+   Single-glyph showcase for a dedicated /symbol/ page —
+   the large, click-to-copy centerpiece a category grid can't provide.
+   ----------------------------------------------- */
+.symbol-hero {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.symbol-hero-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1rem;
+  font-size: 5rem;
+  line-height: 1;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.symbol-hero-tile:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.symbol-hero-tile:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+
+.symbol-hero-tile.is-copied {
+  background: var(--accent-purple);
+  color: #fff;
+  border-color: var(--accent-purple);
+}
+
+.symbol-hero-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.symbol-hero-tile--pair {
+  width: 110px;
+  height: 110px;
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.symbol-hero-caption {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .symbol-hero-tile {
+    width: 120px;
+    height: 120px;
+    font-size: 3.5rem;
   }
 }
 
@@ -2947,6 +3232,10 @@ button.clear-decoration {
   transition: transform .15s, box-shadow .15s, border-color .15s;
 }
 
+.related-card[hidden] {
+  display: none;
+}
+
 .related-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
@@ -3292,6 +3581,66 @@ button.clear-decoration {
   color: var(--text-primary);
   font-size: 0.95rem;
   text-align: center;
+}
+
+/* Game selector — the first decision, because it decides whether decoration is
+   even legal in the field the player is filling. */
+.ts-game-row {
+  max-width: 720px;
+  margin: 0 auto 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ts-game-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ts-game-select {
+  flex: 1 1 220px;
+  padding: 0.55rem 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+
+.ts-game-select:focus-visible { outline: 2px solid var(--accent-purple); outline-offset: 1px; }
+
+/* Verdict panel — empty and invisible until a game is picked. */
+.ts-verdict:empty { display: none; }
+
+.ts-verdict {
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-light);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  font-size: 0.95rem;
+}
+
+.ts-verdict.is-ok { border-left-color: var(--ts-safe); }
+.ts-verdict.is-fail { border-left-color: var(--ts-fail); }
+.ts-verdict.is-info { border-left-color: var(--accent-blue); }
+
+.ts-verdict-head { font-weight: 600; color: var(--text-primary); }
+.ts-verdict-line { margin-top: 0.4rem; color: var(--text-primary); }
+.ts-verdict.is-ok .ts-verdict-line { color: var(--ts-safe); font-weight: 600; }
+.ts-verdict.is-fail .ts-verdict-line { color: var(--ts-fail); font-weight: 600; }
+.ts-verdict-line.is-over { color: var(--ts-fail); font-weight: 700; }
+
+.ts-verdict-note {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
 }
 
 .ts-studio {
@@ -3646,6 +3995,26 @@ button.clear-decoration {
 }
 .bubble-alpha-cell:hover { border-color: var(--accent-purple); transform: translateY(-2px); }
 
+/* "Print size" field (js/printables/printablesEngine.js buildSizeControl,
+   #pt-size-control) — bulletin-board / poster sizes for the full alphabet
+   print. Reuses the shared .pt-choice-row/.pt-choice radiogroup component
+   (defined further below) for the buttons themselves; this block is just
+   the labeled field wrapper around it. */
+.pt-size-field { margin: 0.9rem 0; }
+.pt-size-field-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+}
+.pt-size-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0.55rem 0 0;
+}
+
 @media (max-width: 640px) {
   .bubble-stage { grid-template-columns: 1fr; }
 }
@@ -3732,6 +4101,75 @@ button.clear-decoration {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
   color: #fff;
+}
+
+/* Safe-mode toggle row (F2) — mirrors .scope-control / .format-control.
+   Off by default; when on, each result card gains a cross-device render
+   badge (see .ts-pill usage in script.js). */
+.safemode-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0 16px;
+}
+
+.safemode-control-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.safemode-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.safemode-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.safemode-chip:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.safemode-chip.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+
+.safemode-chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-light);
+  box-shadow: inset 0 0 0 1px var(--border-light);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.safemode-chip.active .safemode-chip-dot {
+  background: var(--ts-safe);
+  box-shadow: none;
+}
+
+.safemode-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 /* JTBD / SEO content section */
@@ -5336,7 +5774,125 @@ html[dir="rtl"] .rtl-flip { display: inline-block; transform: scaleX(-1); }
 /* ---- Print surfaces for the shared engine ---- */
 #pt-print-root { display: none; }
 .bubble-print-single { text-align: center; }
-.bubble-print-single .bubble-outline { width: 60%; max-width: 420px; margin: 0 auto; }
+/* Single-character print: fill the printed page. These nodes only ever render
+   inside the hidden print surface, so the sizes below are print sizes — the
+   fixed height (with the SVG's preserveAspectRatio centering) makes one
+   letter a full-page worksheet on Letter and A4 alike, instead of a small
+   floating figure. */
+.bubble-print-single .bubble-outline {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 8.4in;
+  margin: 0 auto;
+}
+
+/* Glyph-mode (cursive) prints render a text node, not an SVG — scale the
+   type itself so those pages fill the sheet too. */
+.bubble-print-single .pt-glyph-print,
+.bubble-print-book-page .pt-glyph-print {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8.2in;
+  font-size: 2.8in;
+  line-height: 1.2;
+}
+
+/* Alphabet "book" print — one character per printed sheet, in order
+   (printAlphabetBook in printablesEngine.js). */
+.bubble-print-book-page { text-align: center; }
+.bubble-print-book-page .bubble-outline {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 8.2in;
+  margin: 0 auto;
+}
+
+/* "Bulletin board" tiled alphabet print (printAlphabetTiled in
+   printablesEngine.js) — several letters per page at a fixed real height
+   (Medium ~4in / Small ~2in), instead of one huge letter per sheet. Column
+   widths + gap are computed per print job and set on .pt-tile-grid inline
+   (letter height varies by the chosen size); this block only supplies the
+   figure-in-cell centering, mirroring .bubble-print-book-page above. */
+.pt-tile-page:not(:first-child) { margin-top: 1rem; }
+.pt-tile-page { text-align: center; }
+.pt-tile-grid {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+}
+.pt-tile-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pt-tile-cell .bubble-outline { width: 100%; height: 100%; }
+.pt-tile-cell .pt-glyph-print { margin: 0; }
+
+@media print {
+  .bubble-print-book-page {
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .bubble-print-book-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  /* "Bulletin board" tiled alphabet print (printAlphabetTiled) — several
+     letters per page at a fixed real-world height, paginated across as many
+     sheets as needed. Grid column widths and per-cell heights are computed
+     per print job (letter height varies by the chosen size) and set inline;
+     this block only supplies the pagination + base layout, same break
+     pattern as .bubble-print-book-page above and .pt-banner-page below. */
+  .pt-tile-page {
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .pt-tile-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  .pt-tile-cell {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Fill the printed page: spread name-worksheet rows down the sheet and
+     center the name-puzzle sheet vertically, instead of leaving the bottom
+     third of the page blank. Print-only so on-screen previews are untouched. */
+  .bubble-print-wrap .pt-name-sheet {
+    min-height: 9.2in;
+    justify-content: space-between;
+  }
+  .pt-puzzle-print-holder .pt-puzzle-sheet {
+    min-height: 9.2in;
+    justify-content: center;
+    gap: 1.4rem;
+  }
+
+  /* Never slice a worksheet row across a page boundary on multi-page sheets. */
+  .cursive-print-row,
+  .pt-name-row,
+  .pt-gen-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Cross-stitch chart prints at page width (on screen it renders at its
+   natural stitch-grid size); the max-height keeps a tall single-letter
+   chart on one page with its legend. Only exists inside the print surface. */
+.cs-print-chart svg {
+  width: 100%;
+  max-height: 7.6in;
+}
 
 /* Name tracing worksheet (print) */
 .pt-name-sheet { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -5953,6 +6509,36 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
 .deco-chip.copied .deco-chip-label::after {
   content: " · Copied!";
 }
+
+/* Small-caps explainer — "which small style to use" comparison list.
+   Global reset zeroes list padding, so the list carries its own layout. */
+.small-caps-compare-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.75rem;
+}
+.small-caps-compare {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.small-caps-compare li {
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+.small-caps-compare li strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
 /* ==========================================================================
    CURVED / ARC TEXT TOOL  (/curved-text/)
    Pairs with the vertical-text module. Controls on the left, live SVG on the
@@ -6031,6 +6617,9 @@ body.dark-mode .pt-banner-index { color: var(--text-secondary); }
   overflow: auto;
 }
 .curved-preview .utg-curved-svg { max-width: 100%; height: auto; }
+/* The old-Roblox-font tool (/roblox/old-roblox-font/) reuses the curved-tool
+   layout; its builder emits its own SVG class. */
+.curved-preview .utg-oldroblox-svg { max-width: 100%; height: auto; }
 .curved-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .curved-toast {
   font-size: 0.8125rem;
@@ -6501,6 +7090,27 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
 .gr-note-over-limit, .gr-note-space, .gr-note-charset,
 .gr-note-underscore, .gr-note-too-short { color: var(--ts-fail); }
 .gr-note-unknown-chars, .gr-note-strict-symbols { color: var(--ts-risk); }
+
+/* Per-glyph compatibility panel — which characters in THIS name might get
+   boxed or stripped, not just an aggregate badge. Empty (no flagged chars)
+   collapses to nothing via :empty. */
+.gr-chars { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+.gr-chars:empty { display: none; }
+.gr-chars-label { font-size: 0.78rem; color: var(--text-secondary); margin-right: 0.15rem; }
+.gr-char {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0.3rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: help;
+}
+.gr-char-warn { color: var(--ts-risk); border-color: var(--ts-risk); }
+.gr-char-reject { color: var(--ts-fail); border-color: var(--ts-fail); }
 
 /* ==========================================================================
    CHARACTER & WORD COUNTER  (/character-counter/)
@@ -7038,4 +7648,910 @@ body.dark-mode .kana-cell-empty { opacity: 0.35; }
   line-height: 1.3;
   white-space: pre;
   color: var(--text-primary);
+}
+
+/* ==========================================================================
+   SCROLLING TEXT TOOL  (/usecase/scrolling-text/)
+   Two modes under one page: "bio" (a repeated, divider-separated block that
+   overflows a bio and scrolls — rendered into #resultsGrid via the shared
+   .style-card / .copy-btn contract) and "marquee" (a portable CSS-animation
+   banner with a live preview + embed code). Tokens only; no hardcoded colors.
+   ========================================================================== */
+
+/* Mode tabs — two big pills under the headline */
+.scroll-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 16px 0 4px;
+}
+.scroll-mode-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+}
+.scroll-mode-tab:hover {
+  border-color: var(--accent-purple);
+}
+.scroll-mode-tab.active {
+  border-color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+.scroll-mode-tab-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.scroll-mode-tab-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Panels + tool card */
+.scroll-panel {
+  margin-top: 18px;
+}
+.scroll-tool {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.scroll-tool-marquee {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Control blocks */
+.scroll-control-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.scroll-control-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* Fields (shared by both modes) */
+.scroll-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.scroll-field > label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.scroll-field textarea,
+.scroll-field input[type="text"],
+.scroll-field select,
+.scroll-select {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 8px 10px;
+}
+.scroll-field textarea { resize: vertical; min-height: 64px; }
+.scroll-field input[type="range"] { width: 100%; accent-color: var(--accent-purple); }
+.scroll-field input[type="color"] {
+  width: 44px; height: 32px; padding: 0;
+  border: 1px solid var(--border-light); border-radius: 8px;
+  background: var(--bg-white); cursor: pointer;
+}
+.scroll-row { display: flex; gap: 12px; }
+.scroll-row .scroll-field { flex: 1; }
+
+/* Preset quick-fill chips */
+.scroll-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scroll-preset-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.scroll-preset-chip:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+/* Divider group tabs */
+.scroll-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scroll-tab {
+  padding: 4px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.scroll-tab:hover { border-color: var(--accent-purple); color: var(--accent-purple); }
+.scroll-tab.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+
+/* Reused chip grid (divider / repeat-mode / join chips use .vertical-chip) */
+.scroll-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scroll-inline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.scroll-inline-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.scroll-range-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 34px;
+}
+.scroll-select { max-width: 260px; cursor: pointer; }
+
+/* Output note + fit badges (bio mode) */
+.scroll-output-note {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.scroll-fit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+.scroll-fit-count {
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-right: 4px;
+}
+.scroll-fit-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+}
+.scroll-fit-badge.scrolls {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.scroll-fit-legend {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Bio result cards — bounded height so a long repeated block stays tidy */
+.scroll-style-card .scroll-card-meta {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 2px 0 6px;
+}
+.scroll-preview {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow-y: auto;
+  line-height: 1.4;
+}
+.scroll-lazy-sentinel { width: 100%; height: 1px; }
+
+/* Marquee stage */
+.scroll-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.marquee-preview {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+.marquee-preview > div { width: 100%; }
+.scroll-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+/* Deliberately NOT .copy-btn: that class is matched by script.js's global
+   document click delegate (keyed off dataset.text), which would immediately
+   overwrite this button's own clipboard write with an empty string. Same
+   look, own click handling (see scrollPageController.js's copyEmbed()). */
+.scroll-copy-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.scroll-copy-btn:hover {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: white;
+}
+.scroll-embed-code {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Space Mono', ui-monospace, 'Courier New', monospace;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+@media (max-width: 780px) {
+  .scroll-tool-marquee { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .scroll-mode-tabs { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   REPEAT TEXT GENERATOR (/usecase/repeat-text/)
+   Reuses the .scroll-* field / chip / control-block / card styling; only the
+   arrangement (shape) picker and the shape-preserving preview are page-specific
+   (repeat-* prefix). Tokens only — no hardcoded colors — so dark mode adapts
+   the same way the shared .scroll-* classes do.
+   ========================================================================== */
+
+/* Arrangement picker — visual buttons with a mini preview per shape (mirrors
+   the vertical page's layout picker) */
+.repeat-shape-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+.repeat-shape-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 6px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.repeat-shape-option:hover {
+  border-color: var(--accent-purple);
+}
+.repeat-shape-option.active {
+  border-color: var(--accent-purple);
+  box-shadow: inset 0 0 0 1px var(--accent-purple);
+}
+.repeat-shape-mini {
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  font-family: monospace, monospace;
+  font-size: 0.5rem;
+  line-height: 1.15;
+  white-space: pre;
+  text-align: left;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.repeat-shape-option.active .repeat-shape-mini {
+  color: var(--accent-purple);
+}
+.repeat-shape-name {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Shape-preserving preview — monospace + real newlines so pyramids/box grids
+   keep their geometry; wide shapes scroll horizontally instead of wrapping. */
+.repeat-preview {
+  white-space: pre;
+  overflow: auto;
+  max-height: 240px;
+  font-family: monospace, monospace;
+  line-height: 1.4;
+}
+
+/* Dedicated ad slot — injected by header.js on every page.
+   Right rail only has room once the viewport clears the 900px container
+   plus its own 300px width on both sides without overlapping content. */
+.ad-slot {
+  display: flex;
+  justify-content: center;
+}
+
+.ad-rail-right {
+  display: none;
+}
+
+@media (min-width: 1600px) {
+  .ad-rail-right {
+    display: flex;
+    position: fixed;
+    top: 96px;
+    right: 24px;
+    width: 300px;
+    z-index: 5;
+  }
+}
+
+/* ==========================================================
+   Couple / pasangan matching-name generator
+   (js/gamename/couple-generator.js). Layout only — colors use
+   the shared theme tokens so dark mode is inherited.
+   ========================================================== */
+.couple-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.couple-field-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+.couple-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1.05rem;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.couple-input:focus {
+  border-color: var(--accent-purple);
+}
+.couple-output {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 1rem 0 0.5rem;
+}
+.couple-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.couple-card .uname-chip {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   Printables 2.0 — practice ladder, PDF hint, class-set roster,
+   coloring-maker step groups (2026-07)
+   --------------------------------------------------------------- */
+.pt-pdf-hint {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0.55rem 0 0;
+}
+.pt-dot-controls { margin-top: 1rem; }
+.pt-dot-controls .pt-choice-row { margin: 0.4rem 0 0.65rem; }
+.pt-dot-numbers-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0.2rem 0 0.5rem;
+  cursor: pointer;
+}
+.pt-roster-field { margin-top: 0.9rem; }
+.pt-roster-field summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+.pt-roster-field textarea { margin-top: 0.55rem; min-height: 104px; resize: vertical; }
+.pt-roster-hint {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 0.35rem 0 0;
+}
+/* One-tap word-list presets inside a roster field (Dolch / Fry lists). */
+.pt-roster-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+.pt-roster-preset {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.pt-roster-preset:hover {
+  border-color: var(--accent-purple);
+  background: var(--bg-white);
+}
+/* Difficulty-ladder pack button when it sits inside a control field
+   (preview-action instances inherit .pt-preview-actions sizing). */
+.pt-ladder-btn {
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.95rem;
+  font-size: 0.88rem;
+}
+.pt-step-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin: 1.1rem 0 0.25rem;
+}
+.pt-class-set .pt-sheet-page { break-after: page; page-break-after: always; }
+.pt-class-set .pt-sheet-page:last-child { break-after: auto; page-break-after: auto; }
+.footer-bridge {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 1.4rem 0 0.6rem;
+}
+.footer-bridge .footer-link { display: inline; }
+
+/* ── Filter pills (shared component — same pattern as library/index.html's
+   inline copy; kept here so new pages can reuse it without inline <style>) ── */
+.lib-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.lib-filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+.lib-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+  user-select: none;
+}
+.lib-pill:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.lib-pill.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.lib-pill .pill-count {
+  opacity: 0.75;
+  font-size: 0.72rem;
+}
+.lib-pill.active .pill-count {
+  opacity: 0.9;
+}
+.lib-pill.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.lib-pill.is-disabled:hover {
+  border-color: var(--border-light);
+  color: var(--text-secondary);
+}
+.lib-clear-btn {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+.lib-clear-btn:hover {
+  color: var(--text-primary);
+}
+.lib-clear-btn.visible {
+  display: inline-flex;
+
+/* Cursive hub A-Z chart (crawlable text glyphs, links to letter guides) */
+.cursive-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+.cursive-chart-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.6rem 0.3rem;
+  border: 1px solid var(--border-color, #e2e6ee);
+  border-radius: 12px;
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.cursive-chart-cell:hover { border-color: var(--accent-purple); transform: translateY(-1px); }
+.cursive-chart-glyphs { font-size: 1.5rem; color: var(--text-primary); }
+.cursive-chart-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+/* Bridge strip — generator + Learn links on every printable page (rule 5) */
+.pt-bridge {
+  border-left: 3px solid var(--accent-purple);
+  padding-left: 1rem;
+}
+
+/* Event phrase bank — optional grouped layout.
+   The bank's container is a .compare-grid; when the spec gives its phrases a
+   `group`, eventPageController.js emits one labelled block per group. Each
+   block spans the full row so its own nested grid controls the columns. */
+.event-phrase-group {
+  grid-column: 1 / -1;
+}
+
+.event-phrase-group-title {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 1rem 0 0;
+}
+
+.event-phrase-group:first-child .event-phrase-group-title {
+  margin-top: 0;
+}
+
+/* Next-occurrence line under an event page's hero tagline. Static for
+   fixed-date events, filled in at runtime for lunar ones (js/events/eventDates.js). */
+.event-next-date {
+  margin: .5rem 0 0;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+}
+
+/* Native-script copy tiles on event pages ("<Event> in Arabic/Hindi/Chinese").
+   Wider than a normal .glyph-copy tile because the payload is a phrase, not a
+   single glyph, and it carries its romanization underneath. */
+.event-native-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+  min-width: 0;
+  padding: .75rem 1rem;
+  height: auto;
+  line-height: 1.4;
+}
+
+.event-native-script {
+  font-size: 1.25rem;
+}
+
+.event-native-roman {
+  font-size: .75rem;
+  color: var(--text-secondary);
+}
+
+/* /events/ hub cards — emoji marker plus the next-occurrence chip.
+   Order and the lunar chips are set at runtime by js/events/eventDates.js. */
+.event-hub-emoji {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+
+.event-hub-when {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin: 0 0 .35rem;
+}
+
+.event-hub-when:empty {
+  display: none;
+}
+
+/* ============================================================
+   Instagram surface router (/instagram/ and its locale siblings)
+   Pick the field the text is going into; the counter rebinds to
+   that field's real limit and the verdict states whether styled
+   text survives there. Uses the shared --ts-* safety tokens.
+   ============================================================ */
+.ig-surface {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.ig-surface-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.ig-surface-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ig-surface-tab {
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ig-surface-tab:hover,
+.ig-surface-tab.active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.ig-counter {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ig-counter.over {
+  color: var(--ts-fail);
+  font-weight: 600;
+}
+
+.ig-verdict {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-base);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.ig-verdict::before {
+  content: "●";
+  font-size: 0.7rem;
+  line-height: 1.9;
+  flex-shrink: 0;
+}
+
+.ig-verdict[data-status="safe"] { border-color: var(--ts-safe); }
+.ig-verdict[data-status="safe"]::before { color: var(--ts-safe); }
+.ig-verdict[data-status="partial"] { border-color: var(--ts-risk); }
+.ig-verdict[data-status="partial"]::before { color: var(--ts-risk); }
+.ig-verdict[data-status="blocked"] { border-color: var(--ts-fail); }
+.ig-verdict[data-status="blocked"]::before { color: var(--ts-fail); }
+
+.ig-verdict-detail {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Where-it-works matrix ---------------------------------------- */
+.ig-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 0.92rem;
+}
+
+.ig-matrix th,
+.ig-matrix td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ig-matrix th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ig-matrix td:first-child { font-weight: 600; }
+
+.ig-yes { color: var(--ts-safe); font-weight: 600; }
+.ig-partial { color: var(--ts-risk); font-weight: 600; }
+.ig-no { color: var(--ts-fail); font-weight: 600; }
+
+.ig-matrix-wrap { overflow-x: auto; }
+
+/* Spoke routing cards ------------------------------------------ */
+.ig-routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.ig-route {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ig-route:hover {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+
+.ig-route-title {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.ig-route-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+
+/* Per-letter sierletters grid (nl/sierlijke-letters). GSC shows 23 distinct
+   single-letter queries ("sierlijke b", "sierletter o", …) landing on that page
+   at pos ~7.9 with almost no clicks — the page ranked for them but only offered
+   whole-alphabet copy rows. Each cell is individually anchored so those queries
+   land on the letter they asked for. Layout mirrors .cursive-letter-grid; no JS
+   of its own — the buttons inside are ordinary .glyph-copy targets. */
+.sierletter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+.sierletter-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  scroll-margin-top: 90px;
+}
+.sierletter-cell .alpha-label {
+  flex: none;
+}
+.sierletter-cell .glyph-copy {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  padding: 2px 6px;
 }

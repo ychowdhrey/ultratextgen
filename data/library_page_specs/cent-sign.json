@@ -1,0 +1,66 @@
+{
+  "slug": "cent-sign",
+  "page_type": "symbol",
+  "title": "Cent Sign: Copy & Paste ¢ Currency Symbol",
+  "meta_description": "Copy and paste the cent sign (¢) — why it's missing from most keyboards, its confusable neighbors, and how to type it on Windows and Mac. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/cent-sign/",
+  "breadcrumb": "Cent Sign",
+  "hero_h1": "Cent Sign",
+  "hero_tagline": "The ¢ that prices a fraction of a dollar — and the one common currency symbol with no dedicated key on almost any keyboard. Click any symbol to copy it instantly.",
+  "intro": "The cent sign (¢, Unicode U+00A2) marks a subunit of currency — one-hundredth of a dollar, as in 99¢. It's one of the oldest currency symbols in the Unicode Latin-1 Supplement block, inherited from legacy 8-bit encodings, which is exactly why it types easily via an Alt code even though almost no keyboard gives it its own key the way $ gets one.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "cent-sign",
+      "label": "Cent",
+      "h2": "Cent Sign",
+      "intro": "The correct Unicode cent sign, ready to paste after a number.",
+      "symbols": [
+        { "char": "¢", "label": "Cent Sign" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Confusable Neighbors",
+      "h2": "Symbols Often Mistaken for the Cent Sign",
+      "intro": "These get substituted for ¢ in practice — each is a distinct character with its own meaning.",
+      "symbols": [
+        { "char": "₵", "label": "Cedi Sign (Ghana) — Not the Cent Sign" },
+        { "char": "₡", "label": "Colón Sign (Costa Rica / El Salvador)" },
+        { "char": "¤", "label": "Generic Currency Sign" },
+        { "char": "c", "label": "Plain Letter C (Common Keyboard Substitute)" }
+      ]
+    },
+    {
+      "id": "related-currency",
+      "label": "Related Currency Symbols",
+      "h2": "Other Major Currency Symbols",
+      "intro": "Other world currency symbols that pair with ¢ in pricing and finance content.",
+      "symbols": [
+        { "char": "$", "label": "Dollar Sign" },
+        { "char": "€", "label": "Euro Sign" },
+        { "char": "£", "label": "Pound Sign" },
+        { "char": "¥", "label": "Yen Sign" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/euro-sign/",
+      "title": "Euro Sign (€)",
+      "desc": "A currency symbol deliberately designed in 1996."
+    },
+    {
+      "href": "/symbol/pound-sign/",
+      "title": "Pound Sign (£)",
+      "desc": "Over a thousand years old, from the Latin libra."
+    },
+    {
+      "href": "/library/currency-symbols/",
+      "title": "All Currency Symbols",
+      "desc": "Every world currency symbol, organized by region."
+    }
+  ]
+}

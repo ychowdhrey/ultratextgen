@@ -76,6 +76,64 @@
     }
   };
 
+  // ── Duo / Matching Names word banks ──────────────────────────────────────────
+  // Three pairing modes, mixed across themes so matches read as a set rather
+  // than two random names sharing one word:
+  //  - "sharedSuffix": two different prefixes + one shared suffix
+  //  - "pairedPrefix": prefix array is ordered 2-tuples (0+1, 2+3…), one shared suffix
+  //  - "pairedSuffix": one shared prefix, suffix array is ordered 2-tuples
+
+  const duoThemes = {
+    bestie: {
+      label: "Bestie",
+      mode: "sharedSuffix",
+      prefix: ["waffle", "pretzel", "nacho", "bagel", "churro", "muffin", "noodle", "pickle", "taco", "biscuit"],
+      suffix: ["gang", "pal", "mate", "bff", "buds", "fam", "duo", "snacc"]
+    },
+    lovebirds: {
+      label: "Lovebirds",
+      mode: "pairedPrefix",
+      prefix: ["bonnie", "clyde", "romeo", "juliet", "lock", "key", "honey", "bear", "cocoa", "mallow"],
+      suffix: ["luv", "boo", "bae", "mine", "dear", "dove", "kiss", "vow"]
+    },
+    sunmoon: {
+      label: "Sun & Moon",
+      mode: "pairedPrefix",
+      prefix: ["sun", "moon", "solar", "lunar", "day", "night", "dawn", "eve", "gold", "silver"],
+      suffix: ["sky", "ray", "halo", "lume", "veil", "arc", "tide", "hue"]
+    },
+    duoqueue: {
+      label: "Duo Queue",
+      mode: "pairedSuffix",
+      prefix: ["sync", "link", "tag", "combo", "wombo", "queue", "relay", "chain"],
+      suffix: ["entry", "anchor", "smoke", "flash", "tank", "medic", "scout", "decoy"]
+    },
+    royalty: {
+      label: "Royalty",
+      mode: "pairedSuffix",
+      prefix: ["royal", "crown", "regal", "throne", "gilded", "noble", "ivory", "ruby"],
+      suffix: ["king", "queen", "prince", "princess", "duke", "duchess", "knight", "lady"]
+    },
+    darkacademia: {
+      label: "Dark Academia",
+      mode: "sharedSuffix",
+      prefix: ["raven", "thorn", "omen", "cinder", "hex", "wraith", "vex", "nyx"],
+      suffix: ["moth", "noir", "oath", "rune", "bane", "wisp", "myst", "sable"]
+    }
+  };
+
+  // ── Clan Tag Builder bracket styles ──────────────────────────────────────────
+
+  const tagBracketStyles = [
+    { key: "square", label: "【 】", open: "【", close: "】" },
+    { key: "corner", label: "『 』", open: "『", close: "』" },
+    { key: "ornate", label: "꧁ ꧂", open: "꧁", close: "꧂" },
+    { key: "angle", label: "⟬ ⟭", open: "⟬", close: "⟭" },
+    { key: "blade", label: "◥ ◤", open: "◥", close: "◤" },
+    { key: "chevron", label: "≫ ≪", open: "≫", close: "≪" },
+    { key: "brackets", label: "[ ]", open: "[", close: "]" }
+  ];
+
   // Short word pools for N-letter generation
   const shortWords = {
     3: ["ace", "arc", "ash", "axe", "bat", "bay", "bee", "blu", "bop", "bro",
@@ -372,11 +430,22 @@
     checker: document.getElementById("rngCheckerInput"),
     checkerBtn: document.getElementById("rngCheckerBtn"),
     checkerResult: document.getElementById("rngCheckerResult"),
-    lengthTabs: document.querySelectorAll(".rng-length-tab")
+    lengthTabs: document.querySelectorAll(".rng-length-tab"),
+    modeTabs: document.querySelectorAll(".rng-mode-tab"),
+    modePanels: document.querySelectorAll(".rng-mode-panel"),
+    duoTheme: document.getElementById("rngDuoTheme"),
+    duoGenerate: document.getElementById("rngDuoGenerate"),
+    duoResults: document.getElementById("rngDuoResults"),
+    tagInput: document.getElementById("rngTagInput"),
+    tagNameInput: document.getElementById("rngTagNameInput"),
+    tagStyles: document.querySelectorAll(".rng-tag-style"),
+    tagPreview: document.getElementById("rngTagPreview"),
+    tagCopy: document.getElementById("rngTagCopy")
   };
 
   let currentLength = 0; // 0 = any
   let lastGenerated = [];
+  let currentTagStyle = tagBracketStyles[0];
 
   // ── Username generation ───────────────────────────────────────────────────────
 
@@ -490,6 +559,103 @@
     renderCards(lastGenerated);
   }
 
+  // ── Duo / Matching Names ─────────────────────────────────────────────────────
+
+  function pairIndex(len) {
+    return Math.floor(Math.random() * Math.floor(len / 2)) * 2;
+  }
+
+  function pickOne(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function pickTwoDistinct(arr) {
+    const i = Math.floor(Math.random() * arr.length);
+    if (arr.length < 2) return [arr[i], arr[i]];
+    let j;
+    do { j = Math.floor(Math.random() * arr.length); } while (j === i);
+    return [arr[i], arr[j]];
+  }
+
+  function generateDuoPair(theme) {
+    if (theme.mode === "pairedPrefix") {
+      const idx = pairIndex(theme.prefix.length);
+      const s = pickOne(theme.suffix);
+      return [buildName([theme.prefix[idx], s]), buildName([theme.prefix[idx + 1], s])];
+    }
+    if (theme.mode === "pairedSuffix") {
+      const p = pickOne(theme.prefix);
+      const idx = pairIndex(theme.suffix.length);
+      return [buildName([p, theme.suffix[idx]]), buildName([p, theme.suffix[idx + 1]])];
+    }
+    // sharedSuffix
+    const s = pickOne(theme.suffix);
+    const [p1, p2] = pickTwoDistinct(theme.prefix);
+    return [buildName([p1, s]), buildName([p2, s])];
+  }
+
+  function generateDuoPairs(themeKey, count) {
+    const theme = duoThemes[themeKey] || duoThemes.bestie;
+    const pairs = [];
+    let attempts = 0;
+    while (pairs.length < count && attempts < count * 8) {
+      attempts++;
+      const [a, b] = generateDuoPair(theme);
+      if (a && b && a !== b) pairs.push([a, b]);
+    }
+    return { theme, pairs };
+  }
+
+  function renderDuoResults(themeKey) {
+    if (!el.duoResults) return;
+    const { theme, pairs } = generateDuoPairs(themeKey, 6);
+
+    if (!pairs.length) {
+      el.duoResults.innerHTML = '<div class="rng-empty">No valid pairs generated. Try a different theme.</div>';
+      return;
+    }
+
+    el.duoResults.innerHTML = pairs
+      .map(function (pair) {
+        return (
+          '<div class="rng-duo-card">' +
+            '<div class="rng-duo-theme">' + theme.label + '</div>' +
+            pair.map(function (name) {
+              return (
+                '<div class="rng-duo-row" data-name="' + name + '" data-status="checking">' +
+                  '<div class="rng-duo-name">' + name + '</div>' +
+                  '<div class="rng-badge-wrap">' + badgeHtml("checking") + '</div>' +
+                  '<button class="copy-btn" type="button" data-name="' + name + '">Copy</button>' +
+                '</div>'
+              );
+            }).join("") +
+          '</div>'
+        );
+      })
+      .join("");
+
+    pairs.forEach(function (pair) {
+      pair.forEach(function (name) {
+        const row = el.duoResults.querySelector('[data-name="' + name + '"]');
+        if (!row) return;
+        enqueueCheck(name, function (status) {
+          row.dataset.status = status;
+          const badgeWrap = row.querySelector(".rng-badge-wrap");
+          if (badgeWrap) badgeWrap.innerHTML = badgeHtml(status);
+        });
+      });
+    });
+  }
+
+  // ── Clan Tag Builder ─────────────────────────────────────────────────────────
+
+  function updateTagPreview() {
+    if (!el.tagPreview) return;
+    const tag = (el.tagInput ? el.tagInput.value.trim() : "") || "TAG";
+    const name = (el.tagNameInput ? el.tagNameInput.value.trim() : "") || "YourName";
+    el.tagPreview.textContent = currentTagStyle.open + " " + tag + " " + currentTagStyle.close + " " + name;
+  }
+
   // ── Checker ────────────────────────────────────────────────────────────────
 
   function runChecker() {
@@ -563,9 +729,9 @@
       });
     });
 
-    // Copy
-    el.results.addEventListener("click", function (e) {
-      const btn = e.target.closest("button[data-name]");
+    // Copy (delegated — covers solo cards and duo rows alike)
+    document.body.addEventListener("click", function (e) {
+      const btn = e.target.closest(".rng-mode-panel button[data-name]");
       if (!btn) return;
       copyName(btn.dataset.name, btn);
     });
@@ -579,6 +745,53 @@
         if (e.key === "Enter") { e.preventDefault(); runChecker(); }
       });
     }
+
+    // Mode tabs (Solo / Duo / Clan Tag)
+    if (el.modeTabs.length) {
+      el.modeTabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          const mode = tab.dataset.mode;
+          el.modeTabs.forEach(function (t) { t.classList.remove("active"); });
+          tab.classList.add("active");
+          el.modePanels.forEach(function (panel) {
+            panel.classList.toggle("active", panel.dataset.modePanel === mode);
+          });
+          if (mode === "duo" && el.duoResults && !el.duoResults.children.length) {
+            renderDuoResults(el.duoTheme ? el.duoTheme.value : "bestie");
+          }
+          if (mode === "tag") {
+            updateTagPreview();
+          }
+        });
+      });
+    }
+
+    // Duo generator
+    if (el.duoGenerate) {
+      el.duoGenerate.addEventListener("click", function () {
+        renderDuoResults(el.duoTheme ? el.duoTheme.value : "bestie");
+      });
+    }
+
+    // Clan Tag Builder
+    if (el.tagStyles.length) {
+      el.tagStyles.forEach(function (styleBtn) {
+        styleBtn.addEventListener("click", function () {
+          el.tagStyles.forEach(function (b) { b.classList.remove("active"); });
+          styleBtn.classList.add("active");
+          currentTagStyle = tagBracketStyles.find(function (s) { return s.key === styleBtn.dataset.style; }) || tagBracketStyles[0];
+          updateTagPreview();
+        });
+      });
+    }
+    if (el.tagInput) el.tagInput.addEventListener("input", updateTagPreview);
+    if (el.tagNameInput) el.tagNameInput.addEventListener("input", updateTagPreview);
+    if (el.tagCopy) {
+      el.tagCopy.addEventListener("click", function () {
+        copyName(el.tagPreview ? el.tagPreview.textContent : "", el.tagCopy);
+      });
+    }
+    updateTagPreview();
   }
 
   if (document.readyState === "loading") {

@@ -1,0 +1,68 @@
+{
+  "slug": "symbole-tilde",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Tilde : Copier-Coller ~ ˜ ∼ ≈ — Du Raccourci des Scribes au ñ jusqu'au Dossier Home d'Unix",
+  "meta_description": "Copie et colle le tilde (~), le petit tilde ˜, le diacritique combinant du ñ, et les tildes mathématiques ∼ et ≈ — et découvre comment un raccourci de scribe médiéval a donné naissance au ñ. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-tilde/",
+  "breadcrumb": "Symbole Tilde",
+  "hero_h1": "Symbole Tilde (~)",
+  "hero_tagline": "Le tilde du clavier (~), qui désigne ton dossier personnel sous Unix et signifie « environ », le petit tilde ˜ et le diacritique combinant qui surmonte ñ, ã et õ, ainsi que les tildes mathématiques ∼ et ≈ avec lesquels on le confond sans cesse. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le tilde (~, U+007E TILDE) est le signe ondulé logé en haut à gauche du clavier, et il cumule plus de fonctions que presque n'importe quel autre signe de ponctuation. Dans un shell Unix ou Linux, il abrège le dossier personnel (~/) — une convention qui remonte au terminal Lear-Siegler ADM-3A des années 1970, dont le clavier affichait « ~ » et le mot « Home » sur la même touche. En conversation informelle, il signifie « environ » ou « à peu près » (~5 minutes), et les programmeurs le surnomment le « twiddle ». Son nom vient de l'espagnol tilde, lui-même issu du latin titulus (« titre » ou « suscription »), et son histoire commence avec les scribes médiévaux : un petit trait ondulé écrit au-dessus d'une lettre signalait un « n » ou un « m » omis, ce qui économisait un parchemin et une encre coûteux. C'est exactement ce raccourci qui explique le ñ espagnol — les scribes écrivaient un simple « n » surmonté du signe pour représenter un « nn » doublé. Ce diacritique survit aujourd'hui sous la forme du tilde combinant (◌̃, U+0303), un caractère différent du petit tilde autonome (˜, U+02DC) et du simple ~ du clavier. On le confond aussi régulièrement avec les signes mathématiques qui lui ressemblent : l'opérateur tilde ∼ (U+223C, « semblable à ») et le signe presque égal ≈ (U+2248) sont des caractères Unicode distincts, pas le tilde ASCII.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/tilde-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-tilde/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/tilde-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "le-tilde",
+      "label": "Le Tilde",
+      "h2": "Le Tilde ~ et Ses Sosies",
+      "intro": "Trois caractères Unicode bien distincts que tout le monde appelle « le tilde » — la touche du clavier, un modificateur autonome, et le diacritique combinant qui se pose sur une lettre.",
+      "symbols": [
+        { "char": "~", "label": "Tilde (U+007E) — la Touche du Clavier" },
+        { "char": "˜", "label": "Petit Tilde (U+02DC) — Modificateur Autonome" },
+        { "char": "̃", "label": "Tilde Combinant (U+0303) — se Pose sur une Lettre" }
+      ]
+    },
+    {
+      "id": "lettres-a-tilde",
+      "label": "Lettres à Tilde",
+      "h2": "Les Lettres qui Portent un Tilde",
+      "intro": "Le tilde combinant en action. Le ñ espagnol et les ã et õ portugais sont les héritiers quotidiens de ce raccourci de scribe pour un « n » omis.",
+      "symbols": [
+        { "char": "ñ", "label": "N Minuscule Tilde Latin (U+00F1)" },
+        { "char": "Ñ", "label": "N Majuscule Tilde Latin (U+00D1)" },
+        { "char": "ã", "label": "A Minuscule Tilde Latin (U+00E3)" },
+        { "char": "õ", "label": "O Minuscule Tilde Latin (U+00F5)" }
+      ]
+    },
+    {
+      "id": "tilde-mathematique",
+      "label": "Tildes Mathématiques",
+      "h2": "Les Tildes Mathématiques : Semblable-à et Presque-Égal",
+      "intro": "En équation, le tilde signifie « semblable à » ou « environ », mais les véritables signes mathématiques sont des caractères Unicode à part entière — pas le ~ ASCII que l'on tape habituellement à leur place.",
+      "symbols": [
+        { "char": "∼", "label": "Opérateur Tilde (U+223C) — « Semblable à »" },
+        { "char": "≈", "label": "Presque Égal à (U+2248) — « Approximativement Égal »" },
+        { "char": "≅", "label": "Approximativement Égal à (U+2245)" },
+        { "char": "≃", "label": "Asymptotiquement Égal à (U+2243)" },
+        { "char": "~", "label": "Tilde (U+007E) — le Caractère ASCII Souvent Tapé à sa Place" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/library/keyboard-symbols/", "title": "Keyboard Symbols", "desc": "Le tilde, l'accent grave, l'esperluette et le reste des touches de ponctuation d'un clavier standard, prêtes à copier (en anglais)." },
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Presque-égal, semblable-à, et les opérateurs et relations qui complètent une équation aux côtés du tilde (en anglais)." },
+    { "href": "/library/accent-marks-diacritics/", "title": "Accent Marks & Diacritics", "desc": "Le tilde combinant sur ñ et ã, ainsi que les accents aigus, graves, trémas et les autres marques posées sur une lettre (en anglais)." }
+  ]
+}

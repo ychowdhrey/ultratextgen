@@ -1,0 +1,76 @@
+{
+  "slug": "emoji-de-rosto-rachado",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Emoji de Rosto Rachado: Copiar e Colar 🫫 — o Candidato do Emoji 18.0 que Substituiu o \"Rosto de Olhos Semicerrados\"",
+  "meta_description": "Cracking Face (🫫, U+1FAEB) é um candidato rascunho para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026 — ainda não aprovado, e nenhuma fonte o renderiza hoje. Veja sua história, significado e status.",
+  "canonical": "https://ultratextgen.com/pt/symbol/emoji-de-rosto-rachado/",
+  "breadcrumb": "Emoji de Rosto Rachado",
+  "hero_h1": "Emoji de Rosto Rachado",
+  "hero_tagline": "Um rosto no meio de uma expressão, rachando sob pressão — proposto para o Emoji 18.0, previsto para junto do Unicode 18.0 em setembro de 2026. Ainda é só rascunho: não aprovado, e nenhuma fonte o renderiza ainda. Clique para copiar o código mesmo assim.",
+  "intro": "Cracking Face (🫫, U+1FAEB) é um emoji candidato proposto para o Emoji 18.0, o complemento de emoji do Unicode 18.0, com finalização prevista para setembro de 2026. Ele retrata um rosto no meio de uma expressão, com uma rachadura visível, lido pela maior parte da cobertura como tensão emocional ou «quebrando» ainda sorrindo — um encaixe perfeito para o meme geracional do «tô de boa», em que alguém parece composto por fora enquanto está sobrecarregado por dentro. Seu código tem uma história específica: o U+1FAEB era originalmente reservado para outro emoji proposto, «Face With Squinting Eyes» (rosto de olhos semicerrados), antes que o Grupo de Trabalho de Padrão e Pesquisa de Emoji do Unicode recomendasse substituí-lo por Cracking Face em janeiro de 2026. Até o momento desta publicação, a própria documentação do pipeline do Unicode ainda lista esse código sob o nome original, sinalizado como pendente de uma resolução de troca de nome — o que significa que até o nome «Cracking Face» ainda não está totalmente travado, apesar da ampla cobertura de imprensa que já o usa. Como ainda é um rascunho, nenhum sistema operacional, teclado ou fonte o renderiza atualmente; espere uma caixa em branco ou um glifo substituto até o Emoji 18.0 ser aprovado e as plataformas lançarem suporte, provavelmente em algum momento de 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/emoji-de-rosto-rachado/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "cracking-face",
+      "label": "Rosto Rachado",
+      "h2": "Emoji de Rosto Rachado",
+      "intro": "O caractere rascunho em si — já copiável hoje como código, mesmo que nenhuma fonte consiga renderizá-lo ainda.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (rascunho, U+1FAEB)" }
+      ]
+    },
+    {
+      "id": "related-face-emoji",
+      "label": "Emojis de Rosto Relacionados",
+      "h2": "Emojis Já Existentes com que É Comparado",
+      "intro": "Emojis de rosto já codificados e totalmente suportados que cobrem um território parecido de «tensão» ou «sobrecarga» — substitutos úteis até o Cracking Face realmente ser lançado.",
+      "symbols": [
+        { "char": "😬", "label": "Rosto Fazendo Careta" },
+        { "char": "🫠", "label": "Rosto Derretendo" },
+        { "char": "🥴", "label": "Rosto Zonzo" },
+        { "char": "🫪", "label": "Rosto Distorcido (o emoji novo mais popular do Unicode 17.0)" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Outros Candidatos Rascunho",
+      "h2": "Outros Candidatos Rascunho do Emoji 18.0",
+      "intro": "Cracking Face não é o único caractere ainda não aprovado deste lançamento — estes foram propostos junto com ele, igualmente sem renderização até a decisão de setembro de 2026.",
+      "symbols": [
+        { "char": "🫝", "label": "Pickle (rascunho, U+1FADD)" },
+        { "char": "🫌", "label": "Monarch Butterfly (rascunho, U+1FACC)" },
+        { "char": "🛙", "label": "Lighthouse (rascunho, U+1F6D9)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/symbol/emoji-de-picles/",
+      "title": "Emoji de Picles",
+      "desc": "Outro candidato rascunho do Emoji 18.0 — reatribuído de uma proposta adiada de Apple Core."
+    },
+    {
+      "href": "/pt/symbol/emoji-de-borboleta-monarca/",
+      "title": "Emoji de Borboleta Monarca",
+      "desc": "Outro candidato rascunho do Emoji 18.0 — corrige uma confusão de espécie entre plataformas."
+    },
+    {
+      "href": "/pt/symbol/",
+      "title": "Símbolos",
+      "desc": "Todas as páginas individuais de símbolos do site, para procurar um item específico já conhecido."
+    }
+  ]
+}

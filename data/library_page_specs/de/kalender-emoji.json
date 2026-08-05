@@ -1,0 +1,69 @@
+{
+  "slug": "kalender-emoji",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Kalender-Emoji (📅): kopieren & einfügen, Codepoint & warum immer der 17. Juli angezeigt wird",
+  "meta_description": "Das Kalender-Emoji 📅 (U+1F4C5) — Codepoint, wie man es tippt, und der wahre Grund, warum sein Datum bei Apple, Samsung, Google und den meisten anderen Plattformen auf den 17. Juli eingefroren ist.",
+  "canonical": "https://ultratextgen.com/de/symbol/kalender-emoji/",
+  "breadcrumb": "Kalender-Emoji",
+  "hero_h1": "Kalender-Emoji",
+  "hero_tagline": "Das Kalenderblatt 📅 — Codepoint, alternative Eingabemethoden und die konkrete Apple-Geschichte hinter dem auf fast allen Plattformen eingefrorenen Datum 17. Juli. Ein Klick genügt zum Kopieren.",
+  "intro": "📅 CALENDAR (U+1F4C5) ist Unicodes Kürzel für Termine, Fristen und Planung — ein oben angeheftetes, abgerissenes Kalenderblatt. Schaut man genauer hin, ändert sich das Datum auf den meisten Plattformen nie: Es ist fest auf den 17. Juli gesetzt, eine Design-Entscheidung, die auf eine bestimmte Apple-Produktankündigung zurückgeht und später zum Grund für einen ganzen inoffiziellen Feiertag wurde. Diese Seite identifiziert zunächst die Glyphe selbst — Bedeutung, Codepoint und wie man sie tippt —, und behandelt dann die Geschichte des 17. Juli vollständig, einschließlich der Plattformen, die dieser Konvention nicht folgen.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/calendar-emoji/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/kalender-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/calendar-emoji/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "kalender-emoji-kern",
+      "label": "Die Glyphe",
+      "h2": "Kalender-Emoji",
+      "intro": "Die zentrale Unicode-Glyphe — ein einzelnes, abgerissenes Kalenderblatt.",
+      "symbols": [
+        { "char": "📅", "label": "Kalender (U+1F4C5)" }
+      ]
+    },
+    {
+      "id": "verwandte-kalender-emojis",
+      "label": "Verwandte Kalender-Emojis",
+      "h2": "Weitere Kalender-Emojis, mit denen es verwechselt wird",
+      "intro": "Zwei benachbarte Unicode-Kalender-Glyphen, jede mit einem anderen physischen Kalenderstil.",
+      "symbols": [
+        { "char": "📆", "label": "Abreißkalender (U+1F4C6)" },
+        { "char": "🗓️", "label": "Spiralkalender (U+1F5D3)" }
+      ]
+    },
+    {
+      "id": "planungs-und-zeit-cluster",
+      "label": "Planung & Zeit",
+      "h2": "Verwandte Planungs- & Zeit-Emojis",
+      "intro": "Emojis, die im Planungs- und Erinnerungskontext häufig neben einem Kalender auftauchen.",
+      "symbols": [
+        { "char": "⏰", "label": "Wecker" },
+        { "char": "📌", "label": "Pinnnadel" },
+        { "char": "✅", "label": "Häkchen-Button" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Jedes bereits kodierte Objekt-Emoji, einschließlich des vollständigen Kalender- und Planungs-Sets."
+    },
+    {
+      "href": "/library/clock-time-symbols/",
+      "title": "Clock & Time Symbols",
+      "desc": "Zifferblatt, Wecker und zeitbezogene Emojis, durchstöberbar und sofort einsatzbereit."
+    }
+  ]
+}

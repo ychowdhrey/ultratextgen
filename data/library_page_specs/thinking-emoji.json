@@ -1,0 +1,137 @@
+{
+  "slug": "thinking-emoji",
+  "title": "Thinking Emoji & Kaomoji: Copy & Paste 🤔💭 Hmm Combos",
+  "meta_description": "Thinking emoji 🤔 🧐 🤨, skeptical and shrug combo sets, plus thinking kaomoji like (・_・?) for chats, comments, and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/thinking-emoji/",
+  "breadcrumb": "Thinking Emoji & Kaomoji",
+  "hero_h1": "Thinking Emoji & Kaomoji",
+  "hero_tagline": "The 🤔 thinking face, skeptical squints, honest shrugs, and pondering kaomoji — every shade of hmm and maybe. Click any symbol to copy it instantly.",
+  "intro": "The thinking emoji 🤔 is internet shorthand for 'hmm, let me consider that' — hand on the chin, eyebrow cocked, judgment still pending. This page gathers the whole pondering range: the skeptical squint of 🧐, the raised eyebrow of 🤨, the honest 🤷 shrug for when you truly have no idea, and the 💭 thought balloon and 🧠 brain for a big-brain moment. When an emoji won't carry the exact vibe, classic thinking kaomoji like (・_・?) and ¯\\_(ツ)_/¯ paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for chats, comments, and replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-thinking",
+      "label": "The Thinking Face",
+      "h2": "The Thinking Face Emoji",
+      "intro": "The one emoji everyone reaches for when something needs a second thought.",
+      "symbols": [
+        { "char": "🤔", "label": "Thinking Face" }
+      ]
+    },
+    {
+      "id": "skeptical-scrutinizing",
+      "label": "Skeptical & Scrutinizing",
+      "h2": "Skeptical & Scrutinizing Faces",
+      "intro": "Narrowed eyes and raised brows for when you're not quite buying it.",
+      "symbols": [
+        { "char": "🧐", "label": "Face With Monocle" },
+        { "char": "🤨", "label": "Face With Raised Eyebrow" },
+        { "char": "🫤", "label": "Face With Diagonal Mouth" },
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "🙄", "label": "Face With Rolling Eyes" }
+      ]
+    },
+    {
+      "id": "shrugging-unsure",
+      "label": "Shrugging & Unsure",
+      "h2": "Shrugging & Unsure Emojis",
+      "intro": "Open palms and thought bubbles for an honest 'I really don't know.'",
+      "symbols": [
+        { "char": "🤷", "label": "Person Shrugging" },
+        { "char": "🤷‍♂️", "label": "Man Shrugging" },
+        { "char": "🤷‍♀️", "label": "Woman Shrugging" },
+        { "char": "💭", "label": "Thought Balloon" },
+        { "char": "🧠", "label": "Brain" }
+      ]
+    },
+    {
+      "id": "thinking-kaomoji",
+      "label": "Thinking Kaomoji",
+      "h2": "Thinking Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces that ponder, smirk, and shrug in plain text.",
+      "symbols": [
+        { "char": "(・_・?)", "label": "Curious Question Kaomoji" },
+        { "char": "(¬‿¬)", "label": "Smug Knowing Kaomoji" },
+        { "char": "ヽ(´ー｀)ノ", "label": "Carefree Shrug Kaomoji" },
+        { "char": "(￣～￣;)", "label": "Unsure Pondering Kaomoji" },
+        { "char": "(・∀・)", "label": "Considering Grin Kaomoji" },
+        { "char": "( ˘ ³˘)?", "label": "Puzzled Wondering Kaomoji" },
+        { "char": "¯\\_(ツ)_/¯", "label": "Shrug Kaomoji" },
+        { "char": "(๑•́ ₃ •̀๑)", "label": "Pensive Pout Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Thinking Emoji Combo Sets",
+    "intro": "Copy a complete thinking combo in one click — from a quick hmm to full big-brain mode."
+  },
+  "collection_container_id": "thinkingSetsContainer",
+  "collections": [
+    {
+      "name": "Hmm Let Me Think",
+      "flags": ["🤔", "💭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Big Brain Moment",
+      "flags": ["🤔", "🧠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Not Sure About This",
+      "flags": ["🤔", "🤷"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Skeptical Side-Eye",
+      "flags": ["🧐", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I Have No Idea",
+      "flags": ["🤷", "🤷‍♂️", "🤷‍♀️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deep Thoughts",
+      "flags": ["🤔", "💭", "🧠"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Suspicious But Curious",
+      "flags": ["🧐", "🤔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Shrug It Off",
+      "flags": ["🤷", "¯\\_(ツ)_/¯"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji library — happy, skeptical, and everything between."
+    },
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "Suspicious glances and unimpressed side-eye reactions."
+    },
+    {
+      "href": "/library/nerd-emoji/",
+      "title": "Nerd Emoji & Kaomoji",
+      "desc": "Glasses, brains, and big-brain study combos to pair with a thinking face."
+    }
+  ]
+}

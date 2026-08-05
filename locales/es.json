@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Escribe aquí tu texto...",
-    "advertisement": "Publicidad"
+    "advertisement": "Publicidad",
+    "categoryTabs": {
+      "popular": "Populares",
+      "bold-fonts": "Negrita",
+      "italic-fonts": "Cursiva",
+      "bubble-fonts": "Burbuja",
+      "cursive-fonts": "Manuscrita",
+      "gothic-fonts": "Gótica",
+      "strikethrough-text": "Tachado",
+      "underline-text": "Subrayado",
+      "small-text": "Texto pequeño",
+      "cute-fonts": "Tierna",
+      "aesthetic-fonts": "Estética",
+      "upside-down-text": "Al revés",
+      "text-decorator": "Decorador de texto",
+      "classified": "Clasificado / Censurado",
+      "fullwidth-fonts": "Ancho completo",
+      "faux-fonts": "Alfabetos falsos",
+      "ancient-fonts": "Antiguas y rúnicas",
+      "emoji-letter-fonts": "Letras emoji",
+      "novelty-fonts": "Curiosidades"
+    },
+    "scopeControl": {
+      "label": "Aplicar estilo a",
+      "ariaLabel": "Elige cuánto texto quieres estilizar",
+      "whole": "Todo el texto",
+      "wholeTitle": "Aplica el estilo a cada línea de tu texto.",
+      "firstLine": "Solo la primera línea",
+      "firstLineTag": "para publicaciones",
+      "firstLineTitle": "Estiliza solo la primera línea (tu titular o gancho) y deja el resto como texto normal y legible — ideal para publicaciones en redes sociales.",
+      "share": "Compartir",
+      "shareTitle": "Comparte un enlace que reabre esta página con tu texto ya escrito",
+      "linkCopied": "Enlace copiado"
+    },
+    "safeMode": {
+      "label": "Seguridad al pegar",
+      "ariaLabel": "Comprueba qué estilos se ven bien en otros dispositivos",
+      "toggleLabel": "Modo seguro",
+      "hint": "Marca los estilos que pueden verse como cuadros (▯) en teléfonos antiguos de otras personas."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Puede verse como cuadros para algunas personas",
+      "boxesWarningTitle": "Este estilo usa caracteres Unicode poco comunes que algunos teléfonos y dispositivos antiguos no tienen. Puede aparecer como cuadros (▯) para la persona a la que se lo envíes. Si tu público puede usar dispositivos antiguos, prueba un estilo más simple o de mayor compatibilidad.",
+      "emojiWarning": "⚠ Usa emoji — puede variar en dispositivos antiguos",
+      "emojiWarningTitle": "Este estilo incluye emoji. Los emoji se ven bien en dispositivos modernos, pero pueden verse distintos, o como cuadros, en teléfonos muy antiguos.",
+      "modernDevices": "Se ve bien en dispositivos modernos",
+      "modernDevicesTitle": "Estas letras Unicode estilizadas se muestran en todos los teléfonos y computadoras actuales. En Android muy antiguo (aproximadamente anterior a 2016) o con fuentes de sistema mínimas, algunas podrían seguir viéndose como cuadros (▯). Pruébalo primero si tu público puede usar dispositivos antiguos.",
+      "rendersEverywhere": "✓ Se ve bien en todas partes",
+      "rendersEverywhereTitle": "Este estilo es texto plano: se ve bien en todas partes, sin riesgo de cuadros en ningún dispositivo.",
+      "deviceWarning": "⚠ Puede que no se vea en tu dispositivo",
+      "deviceWarningTitle": "Las fuentes de tu dispositivo no pueden mostrar este estilo — puede aparecer como cuadros (□). Aun así, puede verse bien en otros dispositivos.",
+      "safeAnywhere": "✓ Seguro en cualquier lugar",
+      "safeAnywhereTitle": "Se ve bien en todas las plataformas principales. Ten en cuenta que los lectores de pantalla pueden deletrear las letras estilizadas una por una, así que mantén el texto normal en el cuerpo del mensaje.",
+      "worksBestOn": "⚠ Funciona mejor en {platforms}",
+      "worksBestOnTitle": "Funciona mejor en: {platforms}. Otras plataformas pueden eliminarlo o mostrarlo mal — prueba antes de publicar."
+    },
+    "savedStyles": {
+      "ariaLabel": "Tus estilos guardados",
+      "heading": "Tus estilos guardados",
+      "clearAll": "Borrar todo",
+      "hint": "Guardados en este dispositivo — estarán aquí cuando vuelvas."
+    },
+    "textStats": {
+      "wordSingular": "1 palabra",
+      "wordPlural": "{n} palabras",
+      "charSingular": "1 carácter",
+      "charPlural": "{n} caracteres"
+    },
+    "decorationsNone": "Ninguno",
+    "categoryTabsToggle": {
+      "more": "Más",
+      "less": "Menos"
+    },
+    "demoText": "Bienvenido a UltraTextGen.\nEscribe lo que sea. Hazlo ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nombre",
+        "tabs": {
+          "playful": "Divertido",
+          "hearts": "Corazones",
+          "sparkle": "Brillo",
+          "faces": "Caras",
+          "stars": "Estrellas"
+        }
+      },
+      "bio": {
+        "word": "nombre",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "edgy": "Oscuro",
+          "royal": "Real",
+          "cute": "Tierna",
+          "bold": "Negrita",
+          "clean": "Limpio",
+          "mystical": "Místico",
+          "retro": "Retro",
+          "nature": "Naturaleza"
+        }
+      },
+      "small-text": {
+        "word": "texto",
+        "tabs": {
+          "subtle": "Sutil",
+          "tiny": "Diminuto",
+          "brackets": "Corchetes",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "nombre",
+        "tabs": {
+          "rounded": "Redondo",
+          "soft": "Suave",
+          "stars": "Estrellas",
+          "hearts": "Corazones",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "nombre",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Caras",
+          "hearts": "Corazones",
+          "sparkle": "Brillo",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "texto",
+        "tabs": {
+          "celestial": "Celestial",
+          "sparkle": "Brillo",
+          "y2k": "Y2K",
+          "soft": "Suave",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "nombre",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estética",
+          "symbols": "Símbolos",
+          "hearts": "Corazones",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Para qué se usan más",
@@ -149,7 +298,7 @@
           },
           {
             "question": "¿Funciona con la ñ, las tildes y otros caracteres del español?",
-            "answer": "Sí. La ñ, las vocales con tilde (á, é, í, ó, ú) y la ü se respetan en la mayoría de estilos. Algunos estilos muy decorativos no tienen versión Unicode para la ñ o las tildes: en esos casos la letra se queda tal cual, sin cambiar, pero el resto del texto sí se transforma. Nunca te va a salir un texto roto."
+            "answer": "Sí, y ya no solo se «respetan»: se estilizan igual que el resto de la palabra. La mayoría de generadores de letras dejan la ñ y las tildes en texto normal, porque Unicode no tiene una «ñ» en negrita. Este generador separa la letra base de su tilde o virgulilla, estiliza la base y vuelve a poner la marca encima — así «María» sale completa en negrita, tilde incluida, no a medias. Funciona en casi todos los estilos (negrita, cursiva, gótica, burbuja...). Las excepciones son los estilos de texto al revés (voltean la letra pero no el acento) y un puñado de letras sin marca suelta que reponer, como la ø o la ß. Nunca te va a salir un texto roto."
           },
           {
             "question": "¿Qué idiomas no funcionan?",
@@ -179,7 +328,7 @@
         "items": [
           {
             "question": "¿Qué tiene de distinto UltraTextGen?",
-            "answer": "Lo intentamos resumir sin marketing raro:\n    <br><br>\n    — Más estilos que la media, y con buena cobertura (la ñ, las tildes y los números también se transforman en la mayoría).<br>\n    — Puedes <strong>combinar</strong> estilos: por ejemplo, gótica + texto al revés, o burbuja + glitch.<br>\n    — Añades símbolos, marcos, separadores y emojis con un clic. No tienes que copiarlos de listas sueltas.<br>\n    — Páginas pensadas para cada plataforma (Instagram, TikTok, WhatsApp, Discord, Free Fire...) con los estilos que mejor funcionan en cada una.<br>\n    — Carga rápido, no hay ventanas emergentes raras, no hay publicidad invasiva.<br>\n    — Está en español (y en otros 10 idiomas), no es una traducción automática."
+            "answer": "Lo intentamos resumir sin marketing raro:\n    <br><br>\n    — Más estilos que la media, con números incluidos, y mejor cobertura de acentos: la ñ y las tildes (á é í ó ú) se estilizan igual que el resto de la palabra — la mayoría de generadores las dejan en texto plano.<br>\n    — Puedes <strong>combinar</strong> estilos: por ejemplo, gótica + texto al revés, o burbuja + glitch.<br>\n    — Añades símbolos, marcos, separadores y emojis con un clic. No tienes que copiarlos de listas sueltas.<br>\n    — Páginas pensadas para cada plataforma (Instagram, TikTok, WhatsApp, Discord, Free Fire...) con los estilos que mejor funcionan en cada una.<br>\n    — Carga rápido, no hay ventanas emergentes raras, no hay publicidad invasiva.<br>\n    — Está en español (y en otros 10 idiomas), no es una traducción automática."
           },
           {
             "question": "¿Suben tipos de letras nuevas?",

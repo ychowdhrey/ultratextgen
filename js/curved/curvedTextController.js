@@ -16,27 +16,32 @@
   var stylesRegistry = window.textStyles || {};
   if (!Curved) return;
 
+  // Optional page-level translations (see js/vertical/verticalPageController.js
+  // for the same pattern). Undefined on the EN page, so every lookup below
+  // falls back to the English default and behavior is unchanged there.
+  var I18N = window.curvedI18n || {};
+
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
 
   // Curated Unicode styles that read well on a curve. Only names that exist
   // in the registry are shown, so this stays correct as the registry changes.
   var STYLE_CHOICES = [
-    ["", "Normal"],
-    ["Ultra Bold", "Bold"],
-    ["Ultra Italic", "Italic"],
-    ["Ultra Script", "Script"],
-    ["Ultra Gothic", "Gothic"],
-    ["Ultra Bubble", "Bubble"],
-    ["Ultra Fullwidth", "Fullwidth"],
-    ["Ultra Runic", "Runic"],
-    ["Ultra Faux Cyrillic", "Faux Cyrillic"]
+    ["", I18N.styleNormal || "Normal"],
+    ["Ultra Bold", I18N.styleBold || "Bold"],
+    ["Ultra Italic", I18N.styleItalic || "Italic"],
+    ["Ultra Script", I18N.styleScript || "Script"],
+    ["Ultra Gothic", I18N.styleGothic || "Gothic"],
+    ["Ultra Bubble", I18N.styleBubble || "Bubble"],
+    ["Ultra Fullwidth", I18N.styleFullwidth || "Fullwidth"],
+    ["Ultra Runic", I18N.styleRunic || "Runic"],
+    ["Ultra Faux Cyrillic", I18N.styleFauxCyrillic || "Faux Cyrillic"]
   ];
 
   var FONT_CHOICES = [
-    ["system-ui, sans-serif", "Sans"],
-    ["Georgia, 'Times New Roman', serif", "Serif"],
-    ["'Courier New', monospace", "Mono"],
-    ["'Brush Script MT', cursive", "Cursive"]
+    ["system-ui, sans-serif", I18N.fontSans || "Sans"],
+    ["Georgia, 'Times New Roman', serif", I18N.fontSerif || "Serif"],
+    ["'Courier New', monospace", I18N.fontMono || "Mono"],
+    ["'Brush Script MT', cursive", I18N.fontCursive || "Cursive"]
   ];
 
   var el = {};
@@ -73,11 +78,13 @@
       var inFamily = shapes.filter(function (shape) { return shape.family === familyKey; });
       if (!inFamily.length) return;
       var group = document.createElement("optgroup");
-      group.label = familyLabels[familyKey] || familyKey;
+      var familyI18n = I18N.familyLabels || {};
+      group.label = familyI18n[familyKey] || familyLabels[familyKey] || familyKey;
+      var shapeI18n = I18N.shapeLabels || {};
       inFamily.forEach(function (shape) {
         var opt = document.createElement("option");
         opt.value = shape.key;
-        opt.textContent = shape.label;
+        opt.textContent = shapeI18n[shape.key] || shape.label;
         group.appendChild(opt);
       });
       select.appendChild(group);
@@ -119,10 +126,12 @@
     }
     var maxLines = shape ? shape.maxLines : 1;
     var lineMsg = maxLines === 1
-      ? "This shape supports up to 1 line"
-      : "This shape supports up to " + maxLines + " lines";
+      ? (I18N.lineMsgOne || "This shape supports up to 1 line")
+      : (I18N.lineMsgMany
+          ? I18N.lineMsgMany.replace("{n}", maxLines)
+          : "This shape supports up to " + maxLines + " lines");
     var overflowMsg = hasPathOverflow()
-      ? " — your text is longer than this shape's outline, so some characters may not display. Try a shorter phrase or a higher curve amount."
+      ? (I18N.overflowMsg || " — your text is longer than this shape's outline, so some characters may not display. Try a shorter phrase or a higher curve amount.")
       : "";
     hint.textContent = lineMsg + overflowMsg;
   }
@@ -145,7 +154,7 @@
   function render() {
     if (!el.preview) return;
     var raw = el.input ? el.input.value : "";
-    var text = transform(raw || "Curved text");
+    var text = transform(raw || I18N.demoText || "Curved text");
 
     var result = Curved.build({
       text: text,
@@ -175,7 +184,7 @@
 
   function copySvg() {
     if (!lastSvg) return;
-    var done = function () { toast("SVG copied"); };
+    var done = function () { toast(I18N.toastSvgCopied || "SVG copied"); };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(lastSvg).then(done, function () { fallbackCopy(lastSvg, done); });
     } else {
@@ -209,7 +218,7 @@
   function downloadSvg() {
     if (!lastSvg) return;
     downloadBlob(new Blob([lastSvg], { type: "image/svg+xml" }), "curved-text.svg");
-    toast("SVG downloaded");
+    toast(I18N.toastSvgDownloaded || "SVG downloaded");
   }
 
   function downloadPng() {
@@ -230,10 +239,10 @@
       ctx.drawImage(img, 0, 0);
       URL.revokeObjectURL(url);
       canvas.toBlob(function (pngBlob) {
-        if (pngBlob) { downloadBlob(pngBlob, "curved-text.png"); toast("PNG downloaded"); }
+        if (pngBlob) { downloadBlob(pngBlob, "curved-text.png"); toast(I18N.toastPngDownloaded || "PNG downloaded"); }
       }, "image/png");
     };
-    img.onerror = function () { URL.revokeObjectURL(url); toast("PNG export failed"); };
+    img.onerror = function () { URL.revokeObjectURL(url); toast(I18N.toastPngFailed || "PNG export failed"); };
     img.src = url;
   }
 

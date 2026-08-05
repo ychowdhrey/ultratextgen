@@ -7,6 +7,11 @@ Structural / SEO linter for Unicode library pages under /library/. Run it
 over the whole directory (default) or against specific paths before opening
 a batch PR.
 
+The default scan covers the English root (`library/`, `symbol/`) **and**
+every translated lane (`<lang>/library/`, `<lang>/symbol/`) — a translated
+page is just as capable of shipping with the wrong lane as an English one,
+and it must not go unchecked just because it lives under `id/`, `pl/`, etc.
+
 Checks per page
 ---------------
   - <title> present and non-empty
@@ -14,17 +19,34 @@ Checks per page
   - <link rel="canonical"> present
   - exactly one <h1>
   - at least three <h2>
-  - single-copy pages have at least MIN_SINGLE_BUTTONS `.symbol-tile` buttons
+  - single-copy pages have at least MIN_SINGLE_BUTTONS_LIBRARY (library/) or
+    MIN_SINGLE_BUTTONS_SYMBOL (symbol/) `.symbol-tile` buttons
   - every `.symbol-tile` button carries both data-symbol and aria-label
   - collection pages call UltraTextGen.buildGrids(...)
   - a #symbolToast element exists
   - /symbol-explorer.js is referenced
   - at least one related/internal link block is present
+  - lane matches its English hreflang counterpart (see below)
 
 Cross-page checks
 -----------------
   - duplicate <title> across library pages
   - duplicate <meta description> across library pages
+  - every /symbol/ spoke is linked from at least one /library/ hub
+    (orphan spokes are only discoverable via the sitemap; fix with
+    scripts/sync_symbol_spoke_links.py --write)
+
+Cross-language lane consistency
+--------------------------------
+A page's lane (`library/` vs `symbol/`) is a content-type decision, not a
+per-language one — a translation of a single-glyph `/symbol/` page must ship
+under `<lang>/symbol/`, never `<lang>/library/`, regardless of which session
+translates it. Every page in this repo carries a `hreflang="en"` alternate
+link pointing at its English counterpart, which makes this mechanically
+checkable: if a page lives under a `library/` directory but its own
+`hreflang="en"` href is under `/symbol/` (or vice versa), that is a lane
+mismatch, flagged as an ERROR. See CLAUDE.md's "Content Types: Library vs
+Symbol" section for the underlying rule.
 
 Exit status is non-zero if any ERROR-level issue is found, so the script is
 CI-friendly. WARN-level issues do not fail the run.
@@ -39,14 +61,22 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO = SCRIPT_DIR.parent
 LIBRARY_DIR = REPO / "library"
+SYMBOL_DIR = REPO / "symbol"
 
-MIN_SINGLE_BUTTONS = 6
+# library/ single-copy pages serve a browse-and-compare job (a small set of
+# peer symbols), so they need enough tiles to be worth a dedicated page.
+# symbol/ pages serve a different job -- one canonical glyph plus its
+# closest variants, per CLAUDE.md's "Content Types: Library vs Symbol" -- so
+# a 2-4 tile spoke is by design, not thin content. Calibrated against the
+# existing symbol/ corpus, whose smallest legitimate pages sit at 2 tiles.
+MIN_SINGLE_BUTTONS_LIBRARY = 6
+MIN_SINGLE_BUTTONS_SYMBOL = 2
 MIN_ART_PIECES = 6
 MIN_H2 = 3
 
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
 META_DESC_RE = re.compile(
-    r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']',
+    r'<meta\s+name=["\']description["\']\s+content=(["\'])(.*?)\1',
     re.IGNORECASE | re.DOTALL,
 )
 CANONICAL_RE = re.compile(
@@ -67,6 +97,10 @@ SYMBOL_TOAST_RE = re.compile(r'id=["\']symbolToast["\']')
 EXPLORER_JS_RE = re.compile(r'src=["\']/symbol-explorer\.js["\']')
 RELATED_RE = re.compile(r'Related Resources|class=["\'][^"\']*compare-card',
                         re.IGNORECASE)
+SYM_HREF_RE = re.compile(r'href="/symbol/([a-z0-9-]+)/"')
+HREFLANG_EN_RE = re.compile(
+    r'hreflang=["\']en["\']\s+href=["\']([^"\']+)["\']', re.IGNORECASE
+)
 
 
 class Issue:
@@ -87,6 +121,10 @@ def validate_page(path):
     html = path.read_text(encoding="utf-8", errors="replace")
     issues = []
 
+    # Lane is the page's own immediate parent-of-parent dir name: <slug>/index.html
+    # sits inside .../library/<slug>/ or .../symbol/<slug>/, in any language.
+    own_lane = path.resolve().parent.parent.name
+
     # Title
     m_title = TITLE_RE.search(html)
     title = m_title.group(1).strip() if m_title else ""
@@ -95,7 +133,7 @@ def validate_page(path):
 
     # Meta description
     m_desc = META_DESC_RE.search(html)
-    desc = m_desc.group(1).strip() if m_desc else ""
+    desc = m_desc.group(2).strip() if m_desc else ""
     if not desc:
         issues.append(Issue("ERROR", 'missing or empty <meta name="description">'))
 
@@ -151,13 +189,17 @@ def validate_page(path):
                   f"button(s); need >= {MIN_ART_PIECES}")
         )
 
-    # Minimum buttons for single-copy pages
+    # Minimum buttons for single-copy pages -- the floor depends on lane
+    # (see MIN_SINGLE_BUTTONS_SYMBOL comment above); unknown/other lanes
+    # fall back to the stricter library/ floor.
     if not is_collection and not is_art:
-        if len(tile_buttons) < MIN_SINGLE_BUTTONS:
+        min_buttons = (MIN_SINGLE_BUTTONS_SYMBOL if own_lane == "symbol"
+                       else MIN_SINGLE_BUTTONS_LIBRARY)
+        if len(tile_buttons) < min_buttons:
             issues.append(
                 Issue("ERROR",
                       f"single-copy page has {len(tile_buttons)} .symbol-tile "
-                      f"button(s); need >= {MIN_SINGLE_BUTTONS}")
+                      f"button(s); need >= {min_buttons}")
             )
 
     # Collection pages must actually call buildGrids (tautological here, but
@@ -181,6 +223,28 @@ def validate_page(path):
     # Related links
     if not RELATED_RE.search(html):
         issues.append(Issue("WARN", "no related-resources / internal link block found"))
+
+    # Cross-language lane consistency: this page's own directory (library/
+    # vs symbol/) must match the lane of its hreflang="en" counterpart. A
+    # translation session can pick the wrong lane independently of the
+    # English original; this is the only check that would catch it.
+    if own_lane in ("library", "symbol"):
+        m_en = HREFLANG_EN_RE.search(html)
+        if m_en:
+            en_href = m_en.group(1)
+            if "/symbol/" in en_href:
+                en_lane = "symbol"
+            elif "/library/" in en_href:
+                en_lane = "library"
+            else:
+                en_lane = None
+            if en_lane and en_lane != own_lane:
+                issues.append(
+                    Issue("ERROR",
+                          f'lane mismatch: page lives under {own_lane}/ but its '
+                          f'hreflang="en" counterpart is under {en_lane}/ '
+                          f'({en_href}) — move it to the matching lane')
+                )
 
     return {
         "title_norm": normalize_text(title),
@@ -209,13 +273,24 @@ def gather_paths(args_paths):
             else:
                 paths.append(pp)
         return paths
-    return sorted(LIBRARY_DIR.glob("*/index.html"))
+    paths = sorted(LIBRARY_DIR.glob("*/index.html")) + sorted(SYMBOL_DIR.glob("*/index.html"))
+    # Every translated lane (<lang>/library/, <lang>/symbol/) gets the same
+    # scan by default — a two-letter top-level dir with no such subfolder
+    # (e.g. js/) simply contributes nothing.
+    for lang_dir in sorted(REPO.glob("??")):
+        if not lang_dir.is_dir():
+            continue
+        for lane in ("library", "symbol"):
+            lane_dir = lang_dir / lane
+            if lane_dir.is_dir():
+                paths.extend(sorted(lane_dir.glob("*/index.html")))
+    return paths
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("paths", nargs="*",
-                        help="specific page paths or dirs (default: all /library/*)")
+                        help="specific page paths or dirs (default: all /library/* and /symbol/*)")
     parser.add_argument("--strict", action="store_true",
                         help="treat WARN as failure too")
     args = parser.parse_args(argv)
@@ -258,6 +333,29 @@ def main(argv=None):
             print(f"{rel(path)}  ({kind})")
             for issue in result["issues"]:
                 print(issue)
+
+    # Hub→spoke inbound coverage: every /symbol/ spoke in the validated set
+    # must be linked from at least one /library/ hub, or it is an orphan that
+    # only the sitemap can discover. The full library dir is always scanned
+    # for the inbound map, regardless of which pages are being validated.
+    # (spokes live at symbol/<slug>/index.html; symbol/index.html is the
+    # pillar index, not a spoke)
+    symbol_paths = [p for p in paths
+                    if p.exists()
+                    and p.resolve().parent.parent == SYMBOL_DIR.resolve()]
+    if symbol_paths and LIBRARY_DIR.is_dir():
+        linked_spokes = set()
+        for hub_page in LIBRARY_DIR.glob("*/index.html"):
+            hub_html = hub_page.read_text(encoding="utf-8", errors="replace")
+            linked_spokes.update(SYM_HREF_RE.findall(hub_html))
+        orphans = sorted(p.parent.name for p in symbol_paths
+                         if p.parent.name not in linked_spokes)
+        if orphans:
+            print("\nOrphan /symbol/ spokes (no /library/ hub links to them):")
+            for slug in orphans:
+                print(f"  [ERROR] symbol/{slug} — run "
+                      "scripts/sync_symbol_spoke_links.py --write")
+                total_errors += 1
 
     # Cross-page duplicate detection
     dup_titles = {t: s for t, s in titles.items() if len(s) > 1}

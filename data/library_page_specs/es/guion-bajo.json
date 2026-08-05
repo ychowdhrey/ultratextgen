@@ -1,0 +1,72 @@
+{
+  "lang": "es",
+  "slug": "guion-bajo",
+  "page_type": "symbol",
+  "title": "Guion Bajo: Copiar y Pegar _ ＿ ‾ — Del Subrayado a Máquina al snake_case",
+  "meta_description": "Copia y pega el guion bajo (_, U+005F LOW LINE) y sus primos de ancho completo ＿ y superrayado ‾, y descubre cómo un truco de subrayado en máquina de escribir se convirtió en el snake_case y en el único carácter seguro frente al espacio en nombres de usuario. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/guion-bajo/",
+  "breadcrumb": "Guion Bajo",
+  "hero_h1": "Guion Bajo (_)",
+  "hero_tagline": "El guion bajo del teclado (_) que empezó como un truco de subrayado en máquina de escribir y terminó dando forma al snake_case — el único carácter «con espacio» que aceptan nombres de usuario, correos electrónicos y nombres de archivo — junto a su primo de ancho completo ＿, el doble ‗ y el superrayado ‾. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El guion bajo, o línea baja (_, U+005F LOW LINE), es el trazo horizontal que se apoya en la línea base dentro del bloque Basic Latin de Unicode, donde pertenece a la categoría general «puntuación conectora». Nació como un truco puramente mecánico: en una máquina de escribir subrayabas una palabra escribiéndola, haciendo retroceder el carro hasta el principio y volviendo a teclear ese mismo tramo con la tecla de subrayado — una tecla dedicada presente ya en máquinas como la Caligraph de 1881. El carácter pasó a formar parte del ASCII en 1967, ocupando el código 95 (0x5F) que hasta entonces pertenecía a la flecha izquierda (←), después de que el EBCDIC de IBM ya lo hubiera incorporado en 1964 como «carácter de interrupción» (break character). Los programadores lo reutilizaron después como separador de palabras — el estilo de «guion bajo en vez de espacio» se remonta al lenguaje C de finales de los años sesenta y a la obra The C Programming Language (1978), aunque el nombre «snake_case» no se acuñó hasta que la comunidad de Ruby empezó a usarlo hacia 2004 (la guía de estilo PEP 8 de Python todavía lo llama «lower_case_with_underscores»). Hoy es el único carácter «seguro» frente al espacio que aceptan nombres de usuario, la parte local de un correo electrónico, nombres de archivo y slugs de URL, y Markdown interpreta _un guion bajo_ como cursiva y __dos__ como negrita. Se confunde constantemente con el guion (-, U+002D) y con sus primos más anchos, el guion bajo de ancho completo ＿ (U+FF3F) y el guion bajo doble ‗ (U+2017).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/guion-bajo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "el-guion-bajo",
+      "label": "El Guion Bajo",
+      "h2": "El Guion Bajo, de Ancho Completo y Doble",
+      "intro": "El guion bajo normal del teclado y sus dos variantes de ancho — la forma de ancho completo usada en la composición tipográfica del este asiático y el guion bajo doble de espaciado. Listo para pegar donde sea.",
+      "symbols": [
+        { "char": "_", "label": "Guion Bajo / Línea Baja (U+005F)" },
+        { "char": "＿", "label": "Guion Bajo de Ancho Completo (U+FF3F)" },
+        { "char": "‗", "label": "Guion Bajo Doble (U+2017)" }
+      ]
+    },
+    {
+      "id": "superrayado",
+      "label": "El Superrayado",
+      "h2": "El Superrayado: el Mismo Trazo, sobre el Texto",
+      "intro": "El superrayado es la imagen especular del guion bajo — el mismo trazo horizontal, pero colocado encima del texto en vez de debajo, razón por la que ambos se confunden como si fueran opuestos. El macrón es la barra corta que la gente suele escribir cuando en realidad quiere un superrayado.",
+      "symbols": [
+        { "char": "‾", "label": "Superrayado / Overscore de Espaciado (U+203E)" },
+        { "char": "¯", "label": "Macrón (U+00AF)" }
+      ]
+    },
+    {
+      "id": "guion-y-raya-confundibles",
+      "label": "Vs. Guion y Raya",
+      "h2": "Guion Bajo frente a la Familia de Guiones y Rayas",
+      "intro": "En URLs, nombres de usuario y nombres de archivo, el guion bajo y el guion se intercambian todo el tiempo por error — pero están a distinta altura, tienen distinto punto de código y cumplen funciones diferentes.",
+      "symbols": [
+        { "char": "-", "label": "Guion / Guion de Teclado (U+002D)" },
+        { "char": "‐", "label": "Guion Tipográfico (U+2010)" },
+        { "char": "–", "label": "Guion Medio (U+2013)" },
+        { "char": "−", "label": "Signo Menos (U+2212)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-teclado/",
+      "title": "Símbolos de Teclado",
+      "desc": "El guion bajo, el guion, el asterisco y el resto de la puntuación y teclas de símbolo de un teclado estándar."
+    },
+    {
+      "href": "/es/library/simbolos-de-puntuacion/",
+      "title": "Símbolos de Puntuación",
+      "desc": "Rayas, corchetes, comillas y la puntuación cotidiana de Unicode reunida en una sola referencia."
+    },
+    {
+      "href": "/es/symbol/arroba/",
+      "title": "Arroba (@)",
+      "desc": "El otro carácter especial en el corazón de las direcciones de correo y los usuarios en redes sociales, donde el guion bajo es el separador seguro frente al espacio."
+    }
+  ]
+}

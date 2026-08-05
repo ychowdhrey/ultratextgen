@@ -1,0 +1,156 @@
+{
+  "slug": "cringe-emoji",
+  "title": "Cringe Emoji & Kaomoji: Copy & Paste 😬 💀 Yikes Combos",
+  "meta_description": "Copy and paste the cringe emoji 😬, secondhand embarrassment reactions, and dying-of-cringe combos and kaomoji for chats and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/cringe-emoji/",
+  "breadcrumb": "Cringe Emoji & Kaomoji",
+  "hero_h1": "Cringe Emoji & Kaomoji",
+  "hero_tagline": "The 😬 grimacing face, secondhand embarrassment reactions, and 'I'm deceased' dying-of-cringe combos for everything someone else just said or did. Click any symbol to copy it instantly.",
+  "intro": "The grimacing face 😬 is the internet's universal 'yikes' — gritted teeth, closed eyes, the exact face for the moment someone else's words or actions land wrong. It's a secondhand reaction, not a personal one: you're not the one embarrassed, you're just watching it happen and feeling it in your bones. This page collects that whole reaction arc — the initial wince, the 🫣 can't-watch faces you make behind your hands, the 💀 'I'm deceased' dying-of-cringe slang that took over comment sections, and the flat 😶 awkward silence that follows a bad joke or a cringe compilation clip. When an emoji can't quite land it, plain-text kaomoji like (^_^;) and (¬_¬) carry the same energy anywhere text works. Grab a single face, or copy a ready-made combo for group chats, comment replies, and reaction posts.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-cringe",
+      "label": "Core Cringe Faces",
+      "h2": "Cringe Emoji: Grimace & Yikes Faces",
+      "intro": "The everyday cringe reactions — the faces you reach for the second someone else's moment goes sideways.",
+      "symbols": [
+        { "char": "😬", "label": "Grimacing Face" },
+        { "char": "🫣", "label": "Face With Peeking Eye" },
+        { "char": "🙈", "label": "See-No-Evil Monkey" },
+        { "char": "😅", "label": "Grinning Face With Sweat" },
+        { "char": "😓", "label": "Downcast Face With Sweat" },
+        { "char": "😐", "label": "Neutral Face" }
+      ]
+    },
+    {
+      "id": "secondhand-cringe",
+      "label": "Secondhand Embarrassment",
+      "h2": "Secondhand Embarrassment & Can't-Watch Reactions",
+      "intro": "Cringing on someone else's behalf — watching a moment unfold that you have zero part in, but can't look away from.",
+      "symbols": [
+        { "char": "🙊", "label": "Speak-No-Evil Monkey" },
+        { "char": "🤐", "label": "Zipper-Mouth Face" },
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "😩", "label": "Weary Face" },
+        { "char": "🙉", "label": "Hear-No-Evil Monkey" },
+        { "char": "😵", "label": "Dizzy Face" }
+      ]
+    },
+    {
+      "id": "dying-of-cringe",
+      "label": "Dying of Cringe",
+      "h2": "'I'm Deceased': Dying-of-Cringe Emoji",
+      "intro": "The exaggerated internet-slang tier of cringe, where the reaction is dramatic enough to require a coffin.",
+      "symbols": [
+        { "char": "💀", "label": "Skull" },
+        { "char": "☠️", "label": "Skull and Crossbones" },
+        { "char": "⚰️", "label": "Coffin" },
+        { "char": "🪦", "label": "Headstone" },
+        { "char": "🫥", "label": "Dotted Line Face" },
+        { "char": "🥴", "label": "Woozy Face" }
+      ]
+    },
+    {
+      "id": "awkward-silence",
+      "label": "Awkward Silence",
+      "h2": "Awkward Silence & Side-Eye Reactions",
+      "intro": "The flat stare and the pointed side-eye — what's left when there's genuinely nothing to say back.",
+      "symbols": [
+        { "char": "😶", "label": "Face Without Mouth" },
+        { "char": "🙄", "label": "Face With Rolling Eyes" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "🫤", "label": "Face With Diagonal Mouth" },
+        { "char": "😯", "label": "Hushed Face" },
+        { "char": "🤨", "label": "Face With Raised Eyebrow" }
+      ]
+    },
+    {
+      "id": "cringe-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Cringe Kaomoji & Text Faces",
+      "intro": "Plain-text cringe faces for anywhere emoji don't render — nervous sweats, side-eyes, and wincing stares.",
+      "symbols": [
+        { "char": "(^_^;)", "label": "Awkward Sweat Smile Kaomoji" },
+        { "char": "(-_-;)", "label": "Awkward Silence Kaomoji" },
+        { "char": "( ̄▽ ̄;)", "label": "Nervous Laugh Kaomoji" },
+        { "char": "(¬_¬)", "label": "Side-Eye Judgment Kaomoji" },
+        { "char": "(・へ・)", "label": "Displeased Wince Kaomoji" },
+        { "char": "(>_<)", "label": "Cringing Scrunch Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Cringe Emoji Combo Sets",
+    "intro": "Ready-made cringe combos — copy a full set with one click and paste it straight into a reply, comment, or group chat."
+  },
+  "collection_container_id": "cringeSetsContainer",
+  "collections": [
+    {
+      "name": "Yikes Reaction",
+      "flags": ["😬", "😅", "💀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Can't Watch",
+      "flags": ["🫣", "🙈", "🙊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I'm Deceased",
+      "flags": ["💀", "⚰️", "🪦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Awkward Silence",
+      "flags": ["😶", "🤐", "🫥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Side-Eye Cringe",
+      "flags": ["🙄", "😒", "🫤"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Watching It Unfold",
+      "flags": ["👀", "😬", "🫣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nervous Laugh",
+      "flags": ["😅", "😓", "😬"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cringe Compilation",
+      "flags": ["💀", "😬", "😩"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid, cringe included."
+    },
+    {
+      "href": "/library/brainrot-slang-emojis/",
+      "title": "Brainrot & Slang Emoji Combos",
+      "desc": "Sigma, rizz, and skull-spam — the internet slang that fuels dying-of-cringe reactions."
+    },
+    {
+      "href": "/library/shocked-emoji/",
+      "title": "Shocked Emoji & Kaomoji",
+      "desc": "Wide-eyed surprise and plot-twist reactions for the moment right before the cringe hits."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Kaomoji",
+      "desc": "The full kaomoji library — every mood from joy to secondhand embarrassment."
+    }
+  ]
+}

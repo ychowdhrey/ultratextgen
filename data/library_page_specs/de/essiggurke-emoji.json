@@ -1,0 +1,90 @@
+{
+  "slug": "essiggurke-emoji",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Essiggurke Emoji: 🫝 kopieren & einfügen — der Unicode-18.0-Kandidat auf einem umgewidmeten Apple-Core-Platz",
+  "meta_description": "Essiggurke (🫝, U+1FADD) ist ein Entwurfs-Kandidat für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Ihr Codepoint war ursprünglich für ein „Apfelgehäuse“-Emoji reserviert. Noch nicht genehmigt, von keiner Schriftart darstellbar.",
+  "canonical": "https://ultratextgen.com/de/symbol/essiggurke-emoji/",
+  "breadcrumb": "Essiggurke Emoji",
+  "hero_h1": "Essiggurke Emoji",
+  "hero_tagline": "Eine ganze Essiggurke, klar unterschieden von Gurke und Aubergine — im Entwurf für Emoji 18.0, erwartet zusammen mit Unicode 18.0 im September 2026. Nur ein Entwurf: von keiner Schriftart darstellbar. Trotzdem kannst du den Codepoint schon jetzt kopieren.",
+  "intro": "Essiggurke (🫝, U+1FADD) ist ein Kandidaten-Emoji im Entwurf für Emoji 18.0, das Emoji-Pendant zu Unicode 18.0, dessen finale Genehmigung für September 2026 erwartet wird. Ihr Codepoint hat eine ungewöhnliche Vorgeschichte: U+1FADD war im Entwurfszyklus von Emoji 17.0 ursprünglich für ein vorgeschlagenes „Apfelgehäuse“-Emoji reserviert; dieser Vorschlag wurde zurückgestellt, und Unicode vergab den frei gewordenen Platz für den 18.0-Zyklus stattdessen an die Essiggurke. Sie zeigt eine ganze eingelegte Gurke (Gewürzgurke), klar getrennt von den bereits vorhandenen Emojis Gurke und Aubergine, mit denen sie in Tech-Foren am häufigsten verglichen wird — dort reichten die Kommentare von „diese Gurke wird das Internet lahmlegen“ bis zu Spekulationen, sie werde der Aubergine „viel Geschäft wegnehmen“. Weil sie noch ein Entwurf ist, stellt derzeit kein Betriebssystem, keine Tastatur und keine Schriftart sie dar; bis zur Genehmigung von Emoji 18.0 und der Umsetzung durch die Plattformen erscheint an dieser Stelle nur ein leeres Kästchen oder eine Platzhalter-Glyphe.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/essiggurke-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "essiggurke",
+      "label": "Essiggurke",
+      "h2": "Essiggurke Emoji",
+      "intro": "Das Entwurfszeichen selbst — schon heute als Codepoint kopierbar, auch wenn noch keine Schriftart es darstellen kann.",
+      "symbols": [
+        { "char": "🫝", "label": "Essiggurke (Entwurf, U+1FADD)" }
+      ]
+    },
+    {
+      "id": "verwechselt-mit",
+      "label": "Verwechselt mit",
+      "h2": "Die Emojis, mit denen sie verwechselt wird",
+      "intro": "Bereits kodierte Gemüse-Emojis, mit denen die Essiggurke am häufigsten verglichen oder für überflüssig erklärt wird.",
+      "symbols": [
+        { "char": "🥒", "label": "Gurke" },
+        { "char": "🍆", "label": "Aubergine" },
+        { "char": "🫑", "label": "Paprika" }
+      ]
+    },
+    {
+      "id": "weitere-entwurfs-emojis",
+      "label": "Weitere Entwurfs-Kandidaten",
+      "h2": "Weitere Entwurfs-Kandidaten für Emoji 18.0",
+      "intro": "Die Essiggurke ist nicht das einzige noch nicht genehmigte Zeichen dieser Ausgabe — diese hier stehen im selben Entwurf und bleiben bis zur Entscheidung im September 2026 ebenso unsichtbar.",
+      "symbols": [
+        { "char": "🫫", "label": "Berstendes Gesicht (Entwurf, U+1FAEB)" },
+        { "char": "🫌", "label": "Monarchfalter (Entwurf, U+1FACC)" },
+        { "char": "🛙", "label": "Leuchtturm (Entwurf, U+1F6D9)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Jedes bereits kodierte Snack-, Mahlzeit- und Gemüse-Emoji, sofort einsatzbereit."
+    },
+    {
+      "href": "/de/symbol/berstendes-gesicht-emoji/",
+      "title": "Berstendes Gesicht Emoji",
+      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 — und der Gewinner der öffentlichen Abstimmung."
+    },
+    {
+      "href": "/de/symbol/meteor-emoji/",
+      "title": "Meteor Emoji",
+      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 — löst Komets jahrelange Darstellungs-Spaltung auf."
+    },
+    {
+      "href": "/de/symbol/monarchfalter-emoji/",
+      "title": "Monarchfalter Emoji",
+      "desc": "Ein weiterer Entwurfs-Kandidat für Emoji 18.0 — behebt eine plattformübergreifende Verwechslung beim Schmetterling-Emoji."
+    },
+    {
+      "href": "/de/symbol/daumenzeichen-emoji/",
+      "title": "Daumenzeichen Emoji",
+      "desc": "Ein weiteres Entwurfs-Paar für Emoji 18.0 — richtungsweisendes Zeigen, keine Zustimmungsgeste."
+    },
+    {
+      "href": "/de/updates/unicode-18-emoji-abstimmung/",
+      "title": "Unicode 18.0: Neue Emojis",
+      "desc": "Die vollständige Entwurfsliste aller 9 Kandidaten, sortiert nach öffentlicher Abstimmung."
+    }
+  ]
+}

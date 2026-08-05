@@ -1,0 +1,77 @@
+{
+  "slug": "hamsa",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Hamsa: Skopiuj 🪬 — Wspólny dla Tradycji Żydowskiej i Islamskiej",
+  "meta_description": "Skopiuj dłoń hamsa (🪬), dodaną do Unicode w 2021 roku, i zobacz, jak przedabrahamowy amulet ochronny jest dziś używany zarówno jako żydowska Dłoń Miriam, jak i islamska Dłoń Fatimy. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/hamsa/",
+  "breadcrumb": "Hamsa",
+  "hero_h1": "Symbol Hamsa",
+  "hero_tagline": "Otwarta dłoń hamsa (🪬) — amulet ochronny starszy niż judaizm i islam, używany dziś przez obie żywe tradycje pod różnymi nazwami: Dłoń Miriam i Dłoń Fatimy. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Hamsa (🪬, U+1FAAC) to amulet w kształcie dłoni, wierzony w to, że chroni przed „złym okiem”. Symbole ochronne w kształcie dłoni poprzedzają religie abrahamowe — amulety otwartej dłoni pojawiają się w mezopotamskiej ikonografii religijnej związanej z boginią Isztar, a osobne wyryte wizerunki dłoni znajdują się na fenickich i kartagińskich stelach z Afryki Północnej. Dziś ten sam pięciopalczasty kształt jest przypisywany do dwóch różnych, żywych tradycji pod dwiema różnymi nazwami: w użyciu żydowskim to „Dłoń Miriam”, a jej pięć palców bywa łączonych z pięcioma księgami Tory; w użyciu islamskim to „Dłoń Fatimy”, nazwana od córki proroka Mahometa, a jej palce łączy się z Pięcioma Filarami islamu. Ankieta wśród studentów UCLA z 2015 roku wykazała, że większość ankietowanych studentów żydowskich i muzułmańskich już wiedziała, że hamsa jest symbolem wspólnym dla obu wyznań — rzadki przypadek symbolu religijnego używanego jako znak wspólnoty, a nie podziału. Do Unicode trafiła we wrześniu 2021 roku (Unicode 14.0).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/hamsa-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/hamsa/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/hamsa-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "hamsa",
+      "label": "Hamsa",
+      "h2": "Dłoń Hamsa",
+      "intro": "Unicode'owe emoji hamsy oraz amulet nazar, z którym najczęściej łączy się ją w ochronnym, międzykulturowym użyciu.",
+      "symbols": [
+        { "char": "🪬", "label": "Dłoń Hamsa" },
+        { "char": "🧿", "label": "Amulet Nazar (Złe Oko)" }
+      ]
+    },
+    {
+      "id": "dlonie-i-ochrona",
+      "label": "Dłoń i Ochrona",
+      "h2": "Symbole Dłoni i Ochrony",
+      "intro": "Inne znaki otwartej dłoni i oka, używane obok hamsy w kontekście ochronnym lub duchowym.",
+      "symbols": [
+        { "char": "🖐️", "label": "Dłoń z Rozłożonymi Palcami" },
+        { "char": "🤚", "label": "Uniesiony Grzbiet Dłoni" },
+        { "char": "👁️", "label": "Oko" }
+      ]
+    },
+    {
+      "id": "symbole-religijne",
+      "label": "Symbole Religijne",
+      "h2": "Powiązane Symbole Religijne i Duchowe",
+      "intro": "Inne symbole wiary i duchowości, obok których hamsa jest często wyszukiwana i pokazywana.",
+      "symbols": [
+        { "char": "✡", "label": "Gwiazda Dawida" },
+        { "char": "☪", "label": "Gwiazda i Półksiężyc" },
+        { "char": "☯", "label": "Yin Yang" },
+        { "char": "☮", "label": "Symbol Pokoju" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/evil-eye-hamsa-symbols/",
+      "title": "Evil Eye & Hamsa Symbols",
+      "desc": "Amulet nazar, dłoń hamsa i symbole oka oraz talizmanów odpędzające pecha."
+    },
+    {
+      "href": "/pl/symbol/khanda/",
+      "title": "Symbol Khanda",
+      "desc": "Kolejny symbol z realną, udokumentowaną historią projektu, opisaną bez stawania po żadnej ze stron."
+    },
+    {
+      "href": "/symbol/star-of-david/",
+      "title": "Star of David",
+      "desc": "Zaskakująco niedawna droga wspólnego, starożytnego motywu do bycia symbolem jednej wiary."
+    }
+  ]
+}

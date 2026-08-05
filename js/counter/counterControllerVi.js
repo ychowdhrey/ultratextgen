@@ -59,6 +59,7 @@
     "li-headline": "Tiêu đề LinkedIn",
     "whatsapp-about": "Giới thiệu WhatsApp",
     "telegram-bio": "Tiểu sử Telegram",
+    "vk-status": "Trạng thái VK",
     "discord-nick": "Biệt danh Discord",
     "tiktok-username": "Tên người dùng TikTok",
     "ig-username": "Tên người dùng Instagram",

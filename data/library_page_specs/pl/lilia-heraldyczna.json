@@ -1,0 +1,79 @@
+{
+  "slug": "lilia-heraldyczna",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Lilia Heraldyczna (Fleur-de-lis): Skopiuj ⚜ — Od Francuskiej Monarchii po Herb Skautingu",
+  "meta_description": "Skopiuj lilię heraldyczną, fleur-de-lis (⚜ U+269C), stylizowaną lilię francuskiej monarchii — dziś emblemat skautingu, logo New Orleans Saints i element flagi Quebecu. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/lilia-heraldyczna/",
+  "breadcrumb": "Lilia Heraldyczna",
+  "hero_h1": "Lilia Heraldyczna (Fleur-de-lis)",
+  "hero_tagline": "Fleur-de-lis (⚜) — stylizowana lilia, która była emblematem francuskiej monarchii, a dziś żyje dalej w Światowym Godle Skautingu i logo New Orleans Saints. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Lilia heraldyczna, fleur-de-lis (⚜, U+269C), to figura heraldyczna w stylizowanym kształcie lilii lub irysa — po francusku fleur znaczy „kwiat”, a lis „lilia”. Najbardziej znana jest jako emblemat francuskiej monarchii, obecny w herbie Francji od wczesnego średniowiecza aż do upadku monarchii w 1792 roku. Unicode dodał ją w wersji 4.1 (2005 rok), w bloku Miscellaneous Symbols. Obok użycia monarszego kwiat niesie też udokumentowane skojarzenie chrześcijańskie: w sztuce religijnej wiąże się go z Marią Dziewicą, a jego trzy płatki bywają odczytywane jako Trójca Święta. Ten sam emblemat zyskał szerokie zastosowanie we współczesności. Tworzy Światowe Godło Skautingu — jego trzy ramiona mają symbolizować trzy części Przyrzeczenia Skautowego — wybrane przez założyciela skautingu Roberta Baden-Powella za podobieństwo do północnego grotu igły kompasu. To także logo drużyny NFL New Orleans Saints, znak francuskiego dziedzictwa regionu, i widnieje w centralnym miejscu na fladze prowincji Quebec.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/fleur-de-lis-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/lilia-heraldyczna/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/fleur-de-lis-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "lilia-heraldyczna",
+      "label": "Lilia Heraldyczna",
+      "h2": "Symbol Lilii Heraldycznej",
+      "intro": "Znaczek fleur-de-lis i jego prezentacja w stylu emoji.",
+      "symbols": [
+        { "char": "⚜", "label": "Lilia Heraldyczna" },
+        { "char": "⚜️", "label": "Lilia Heraldyczna (Styl Emoji)" }
+      ]
+    },
+    {
+      "id": "heraldyka-i-monarchia",
+      "label": "Monarchia i Heraldyka",
+      "h2": "Symbole Korony i Monarchii",
+      "intro": "Korony i insygnia dzielące z lilią heraldyczną ten sam, monarszy kontekst heraldyczny.",
+      "symbols": [
+        { "char": "👑", "label": "Korona" },
+        { "char": "🤴", "label": "Książę" },
+        { "char": "👸", "label": "Księżniczka" },
+        { "char": "🏰", "label": "Zamek" },
+        { "char": "🛡️", "label": "Tarcza" }
+      ]
+    },
+    {
+      "id": "kwiaty-i-emblematy",
+      "label": "Kwiaty i Ozdobniki",
+      "h2": "Symbole Kwiatów i Emblematów",
+      "intro": "Inne, pojedyncze emblematy kwiatowe z tej samej ozdobnej rodziny.",
+      "symbols": [
+        { "char": "🌸", "label": "Kwiat Wiśni" },
+        { "char": "🌼", "label": "Kwiat" },
+        { "char": "✿", "label": "Czarny Kwiatek" },
+        { "char": "❀", "label": "Biały Kwiatek" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/crown-royalty-symbols/",
+      "title": "Crown & Royalty Symbols",
+      "desc": "Korony, trony i insygnia — heraldyczne towarzystwo lilii heraldycznej."
+    },
+    {
+      "href": "/pl/symbol/gwiazda-dawida/",
+      "title": "Gwiazda Dawida",
+      "desc": "Kolejny pojedynczy, emblematyczny glif, którego droga od motywu dekoracyjnego do definiującego symbolu jest sprawą udokumentowaną."
+    },
+    {
+      "href": "/pl/symbol/pentagram/",
+      "title": "Pentagram",
+      "desc": "Kolejny pojedynczy emblemat w kształcie gwiazdy, obecny w heraldyce, religii i okultyzmie."
+    }
+  ]
+}

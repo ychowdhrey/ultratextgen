@@ -1,0 +1,138 @@
+{
+  "slug": "eyes-emoji",
+  "title": "Eyes Emoji & Kaomoji: Copy & Paste 👀 Watching Combos",
+  "meta_description": "Copy the eyes emoji 👀, the 👁️ eye, side-eye and peeking faces, eye kaomoji, and sus watching combo sets for replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/eyes-emoji/",
+  "breadcrumb": "Eyes Emoji & Kaomoji",
+  "hero_h1": "Eyes Emoji & Kaomoji",
+  "hero_tagline": "From the meme-famous 👀 to the single 👁️ eye, side-eye faces, and wide-eyed kaomoji — every way to say \"I'm watching this.\" Click any symbol to copy it instantly.",
+  "intro": "The eyes emoji 👀 is less a picture of eyeballs than a whole attitude — the internet's shorthand for \"I'm watching this,\" \"this is sus,\" or \"oh, go on…\" without typing a single word. Dropped under a spicy comment, slapped onto a screenshot, or stacked 👀👀👀 for maximum side-glancing energy, it turns silent observation into a reaction everyone reads instantly. This page rounds up the core eyes emoji and the lone 👁️ eye, the peeking and suspicious faces that pair with it, wide-eyed eye kaomoji like ಠ_ಠ, and one-click combo sets — \"Caught in 4K,\" \"Sus Behavior,\" \"Here for the Drama\" — built for exactly those moments. Copy any character or a full combo straight into a reply, caption, or group chat.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-eyes",
+      "label": "The Eyes Emoji",
+      "h2": "The Eyes Emoji",
+      "intro": "The meme-famous eyes plus the single eye and its speech-bubble variant.",
+      "symbols": [
+        { "char": "👀", "label": "Eyes" },
+        { "char": "👁️", "label": "Eye" },
+        { "char": "👁️‍🗨️", "label": "Eye in Speech Bubble" }
+      ]
+    },
+    {
+      "id": "peeking-watching",
+      "label": "Peeking & Watching",
+      "h2": "Peeking & Watching Faces",
+      "intro": "Faces caught mid-peek, mid-spy, or unable to look away.",
+      "symbols": [
+        { "char": "🫣", "label": "Face With Peeking Eye" },
+        { "char": "🙈", "label": "See-No-Evil Monkey" },
+        { "char": "😳", "label": "Flushed Face" },
+        { "char": "🤨", "label": "Face With Raised Eyebrow" },
+        { "char": "🧐", "label": "Face With Monocle" }
+      ]
+    },
+    {
+      "id": "side-eye-suspicious",
+      "label": "Side-Eye & Sus",
+      "h2": "Side-Eye & Suspicious Looks",
+      "intro": "Eye rolls, flat stares, and smirks for when something feels off.",
+      "symbols": [
+        { "char": "🙄", "label": "Face With Rolling Eyes" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "🤔", "label": "Thinking Face" }
+      ]
+    },
+    {
+      "id": "eyes-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Eye Kaomoji",
+      "intro": "Text-face eyes that stare, squint, and side-glance in plain characters — paste them anywhere.",
+      "symbols": [
+        { "char": "☉_☉", "label": "Wide Sun-Eyes Kaomoji" },
+        { "char": "ಠ_ಠ", "label": "Look of Disapproval Kaomoji" },
+        { "char": "⊙▂⊙", "label": "Startled Stare Kaomoji" },
+        { "char": "(⊙_⊙)", "label": "Round Eyes Kaomoji" },
+        { "char": "( ⚆ _ ⚆ )", "label": "Bewildered Stare Kaomoji" },
+        { "char": "(¬_¬)", "label": "Side-Eye Glance Kaomoji" },
+        { "char": "◉_◉", "label": "Blank Wide Eyes Kaomoji" },
+        { "char": "(° ͜ʖ °)", "label": "Sly Watching Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Eyes Emoji Combo Sets",
+    "intro": "Copy a full watching combo in one click and paste it straight into a reply or caption."
+  },
+  "collection_container_id": "eyesSetsContainer",
+  "collections": [
+    {
+      "name": "Watching You",
+      "flags": ["👀", "👀", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Suspicious Glance",
+      "flags": ["🙄", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Caught In 4K",
+      "flags": ["👀", "📸"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sus Behavior",
+      "flags": ["👀", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Peeking Through",
+      "flags": ["🫣", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Side-Eye Energy",
+      "flags": ["😒", "🙄", "👀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Here For The Drama",
+      "flags": ["👀", "🍿"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Monocle Inspection",
+      "flags": ["🧐", "👀"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/side-eye-emoji/",
+      "title": "Side Eye Emoji & Kaomoji",
+      "desc": "The suspicious side-glance in every form, from 👀 to (¬_¬)."
+    },
+    {
+      "href": "/library/shocked-emoji/",
+      "title": "Shocked Emoji & Kaomoji",
+      "desc": "Wide-eyed surprise and plot-twist reaction combos."
+    },
+    {
+      "href": "/library/body-language-emojis/",
+      "title": "Body Language Emojis",
+      "desc": "Shrugs, face-palms, and gestures that speak louder than words."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    }
+  ]
+}

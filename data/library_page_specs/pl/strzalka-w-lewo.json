@@ -1,0 +1,73 @@
+{
+  "slug": "strzalka-w-lewo",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Strzałki w Lewo: Skopiuj ← — Znaczenie i Jak Ją Wpisać",
+  "meta_description": "Skopiuj symbol strzałki w lewo (←, U+2190) — co oznacza i jak ją wpisać. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/strzalka-w-lewo/",
+  "breadcrumb": "Strzałka w Lewo",
+  "hero_h1": "Symbol Strzałki w Lewo (←)",
+  "hero_tagline": "Co oznacza ← i jak ją wpisać — kliknij, aby skopiować.",
+  "intro": "← należy do dedykowanego unikodowego bloku Arrows (U+2190–U+21FF), jednego z pierwotnych bloków obecnych już w Unicode 1.0 z 1991 roku — dowód na to, jak istotna była już wtedy notacja kierunkowa w składzie technicznym. Jako lustrzane odbicie →, jest używana w matematyce i informatyce wszędzie tam, gdzie relacja musi wskazywać w przeciwną stronę, na przykład w notacji przypisania (x ← 5) albo w odwróconych odwzorowaniach zbiorów. Nieformalnie ← czyta się jako „wstecz”, „poprzedni” albo „wróć do” — tę samą rolę pełni przycisk „wstecz” w przeglądarce, tylko zapisany jako pojedynczy znak. Działa na Instagramie, Discordzie, TikToku i WhatsAppie, ale nie w nazwach użytkownika Roblox, PlayStation czy Xbox, ograniczonych do znaków alfanumerycznych. Na Windows wpisuje się ją kombinacją Alt+27, na Macu nie ma dedykowanego skrótu — trzeba skopiować ją z podglądu znaków albo strony referencyjnej takiej jak ta.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/left-arrow/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/strzalka-w-lewo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/left-arrow/" }
+  ],
+  "sections": [
+    {
+      "id": "strzalka-w-lewo",
+      "label": "Strzałka w Lewo",
+      "h2": "Symbol Strzałki w Lewo",
+      "intro": "Właściwy unicode'owy znak strzałki w lewo, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "←", "label": "Strzałka w Lewo (U+2190)" }
+      ]
+    },
+    {
+      "id": "znaki-podobne",
+      "label": "Znaki Podobne",
+      "h2": "Symbole Podobnie Wyglądające",
+      "intro": "Znak czasem używany dekoracyjnie zamiast strzałki w lewo.",
+      "symbols": [
+        { "char": "◀", "label": "Czarny Trójkąt Wskazujący w Lewo (U+25C0) — często używany dekoracyjnie jako zamiennik „przewiń wstecz”/strzałki" }
+      ]
+    },
+    {
+      "id": "powiazane-strzalki",
+      "label": "Powiązane Strzałki",
+      "h2": "Powiązane Symbole Strzałek",
+      "intro": "Pozostałe kierunkowe strzałki, z którymi łączy się strzałka w lewo w notacji i codziennym użyciu.",
+      "symbols": [
+        { "char": "→", "label": "Strzałka w Prawo" },
+        { "char": "↑", "label": "Strzałka w Górę" },
+        { "char": "↓", "label": "Strzałka w Dół" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/strzalka-w-prawo/",
+      "title": "Strzałka w Prawo (→)",
+      "desc": "Odwzorowania, implikacje i „dalej”."
+    },
+    {
+      "href": "/pl/symbol/strzalka-w-gore/",
+      "title": "Strzałka w Górę (↑)",
+      "desc": "Wzrost, północ i rosnące ciągi."
+    },
+    {
+      "href": "/pl/symbol/strzalka-w-dol/",
+      "title": "Strzałka w Dół (↓)",
+      "desc": "Spadek, południe i sygnał przewijania w dół."
+    }
+  ]
+}

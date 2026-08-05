@@ -1,0 +1,101 @@
+{
+  "slug": "grad-zeichen",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Grad-Zeichen: ° kopieren — Temperatur- & Winkel-Symbole",
+  "meta_description": "Das Gradzeichen (°) sowie Celsius-, Fahrenheit-, Kelvin-, Winkel- und Geometriezeichen kopieren und einfügen. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "breadcrumb": "Grad-Zeichen",
+  "hero_h1": "Grad-Zeichen",
+  "hero_tagline": "Das Gradzeichen (°) und alle dazugehörigen Temperatur-, Winkel-, Strich- und Geometriezeichen. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "intro": "Das Gradzeichen markiert Temperaturen, Winkel und Koordinaten. Diese Sammlung enthält das Gradzeichen zusammen mit den Zeichen für Celsius, Fahrenheit und Kelvin, einen vollständigen Satz an Winkelzeichen, die Strichzeichen für Minuten und Sekunden sowie die dazugehörigen Geometriesymbole. Auf der Tastatur tippst du das Gradzeichen unter Windows mit Alt + 0176, auf dem Mac mit Shift + Alt + 8 — oder du kopierst es einfach hier direkt.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/de/symbol/grad-zeichen/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/degree-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/grad-zeichen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/degree-symbol/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "related": [
+    {
+      "href": "/de/library/griechische-symbole/",
+      "title": "Griechische Symbole",
+      "desc": "Das komplette griechische Alphabet — Groß-, Kleinbuchstaben und mathematische Varianten."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    },
+    {
+      "href": "/de/",
+      "title": "Schriftgenerator",
+      "desc": "Verwandle deinen Text in über 100 coole Schriftarten — kostenlos und sofort."
+    }
+  ],
+  "sections": [
+    {
+      "id": "degree-temperature",
+      "label": "Grad",
+      "h2": "Grad- & Temperaturzeichen",
+      "intro": "Das Gradzeichen und die eigenständigen Temperaturskalen-Zeichen.",
+      "symbols": [
+        { "char": "°", "label": "Gradzeichen" },
+        { "char": "℃", "label": "Grad Celsius" },
+        { "char": "℉", "label": "Grad Fahrenheit" },
+        { "char": "K", "label": "Kelvin-Zeichen" }
+      ]
+    },
+    {
+      "id": "angle-symbols",
+      "label": "Winkel",
+      "h2": "Winkelzeichen",
+      "intro": "Winkelzeichen, die häufig zusammen mit Gradangaben geschrieben werden.",
+      "symbols": [
+        { "char": "∠", "label": "Winkel" },
+        { "char": "∡", "label": "Gemessener Winkel" },
+        { "char": "∢", "label": "Sphärischer Winkel" },
+        { "char": "∟", "label": "Rechter Winkel" },
+        { "char": "⊾", "label": "Rechter Winkel mit Bogen" },
+        { "char": "⊿", "label": "Rechtwinkliges Dreieck" },
+        { "char": "⦝", "label": "Gemessener rechter Winkel mit Punkt" },
+        { "char": "⟂", "label": "Senkrecht" }
+      ]
+    },
+    {
+      "id": "prime-minute-second",
+      "label": "Strichzeichen",
+      "h2": "Strich-, Minuten- & Sekundenzeichen",
+      "intro": "Strichzeichen für Bogenminuten, Bogensekunden und Koordinatenangaben, einschließlich der gespiegelten Formen.",
+      "symbols": [
+        { "char": "′", "label": "Strich (Minute)" },
+        { "char": "″", "label": "Doppelstrich (Sekunde)" },
+        { "char": "‴", "label": "Dreifachstrich" },
+        { "char": "⁗", "label": "Vierfachstrich" },
+        { "char": "‵", "label": "Gespiegelter Strich" },
+        { "char": "‶", "label": "Gespiegelter Doppelstrich" },
+        { "char": "‷", "label": "Gespiegelter Dreifachstrich" }
+      ]
+    },
+    {
+      "id": "geometry-measurement",
+      "label": "Geometrie",
+      "h2": "Geometrie & Maße",
+      "intro": "Kreis- und Bogenzeichen, die zusammen mit Winkel- und Gradnotation verwendet werden.",
+      "symbols": [
+        { "char": "⌀", "label": "Durchmesserzeichen" },
+        { "char": "⌒", "label": "Bogen" },
+        { "char": "⌓", "label": "Segment" },
+        { "char": "⊙", "label": "Eingekreister Punktoperator" },
+        { "char": "⦿", "label": "Eingekreiste Kugel" },
+        { "char": "∅", "label": "Leere Menge" }
+      ]
+    }
+  ]
+}

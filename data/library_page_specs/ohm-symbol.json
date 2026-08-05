@@ -1,0 +1,101 @@
+{
+  "slug": "ohm-symbol",
+  "page_type": "symbol",
+  "title": "Ohm Symbol: Copy & Paste Ω ℧ — Named for the Physicist Behind V = IR",
+  "meta_description": "Copy and paste the ohm symbol (Ω) for electrical resistance — named after physicist Georg Simon Ohm and his 1827 law V = IR — plus the mho (℧) and siemens for its inverse. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/ohm-symbol/",
+  "breadcrumb": "Ohm Symbol",
+  "hero_h1": "Ohm Symbol",
+  "hero_tagline": "The Ω sign for electrical resistance, named after Georg Simon Ohm — the German physicist behind Ohm’s law, V = IR — plus ℧, the “mho” that measures its inverse. Click any symbol to copy it instantly.",
+  "intro": "The ohm symbol (Ω) is the unit of electrical resistance, named after Georg Simon Ohm (1789–1854), the German physicist and mathematician who set out what we now call Ohm’s law in his 1827 book Die galvanische Kette, mathematisch bearbeitet. The law is the one every electronics student memorizes: the current through a conductor is proportional to the voltage across it and inversely proportional to its resistance — the familiar V = I × R. Ohm’s work was largely ignored at first, but by 1841 the Royal Society had awarded him its Copley Medal. One wrinkle worth knowing up front: the character here is technically U+2126 OHM SIGN, a distinct codepoint that renders identically to the Greek capital letter omega (U+03A9), and Unicode’s own database treats the ohm sign as normalizing to plain omega. For the full story of that look-alike, see our omega symbol page — here we focus on the ohm as an electrical unit.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "ohm-sign",
+      "label": "Ohm Sign",
+      "h2": "The Ohm Symbol (Ω)",
+      "intro": "The unit of electrical resistance. U+2126 is the dedicated ohm sign, though in practice most people just type Greek capital omega, which looks the same. Lowercase omega (ω) rides alongside it in alternating-current math, where it denotes angular frequency, ω = 2πf.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Ohm Sign (U+2126) — Electrical Resistance"
+        },
+        {
+          "char": "ω",
+          "label": "Greek Small Omega (ω) — Angular Frequency"
+        }
+      ]
+    },
+    {
+      "id": "unicode-identity",
+      "label": "Ω vs Omega",
+      "h2": "Ohm Sign vs. Greek Omega",
+      "intro": "These two tiles are different Unicode characters — U+2126, the ohm sign, and U+03A9, Greek capital omega — that look identical in almost every font. Unicode’s database says the ohm sign should normalize to plain omega, and most keyboards and tools produce the omega, not the ohm sign. The mismatch has caused real document-conversion bugs. For copy-paste either one works; for the full disambiguation, including the documented Pandoc issue, see the omega symbol page.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Ohm Sign (U+2126) — the Legacy Codepoint"
+        },
+        {
+          "char": "Ω",
+          "label": "Greek Capital Omega (U+03A9) — What Unicode Prefers"
+        }
+      ]
+    },
+    {
+      "id": "mho-siemens",
+      "label": "Mho & Siemens",
+      "h2": "Mho & Siemens — the Reciprocal Unit",
+      "intro": "Conductance is the reciprocal of resistance — literally 1 ÷ Ω — and its old unit is the mho (℧), which is simply “ohm” spelled backwards. Lord Kelvin proposed the name in 1883. The modern SI system replaced it in 1971 with the siemens (symbol S, named after inventor Werner von Siemens); NIST now flags “mho” as a special name to avoid, though ℧ still turns up in older texts and schematics.",
+      "symbols": [
+        {
+          "char": "℧",
+          "label": "Mho Sign (U+2127) — “Ohm” Reversed"
+        },
+        {
+          "char": "S",
+          "label": "Siemens (S) — the Modern SI Unit of Conductance"
+        }
+      ]
+    },
+    {
+      "id": "circuit-symbols",
+      "label": "Circuit Symbols",
+      "h2": "Other Electrical & Circuit Symbols",
+      "intro": "The ohm sits among a family of glyphs that populate circuit diagrams and datasheets. Three more Unicode characters an electronics schematic might call for:",
+      "symbols": [
+        {
+          "char": "⏚",
+          "label": "Earth Ground (U+23DA)"
+        },
+        {
+          "char": "⚡",
+          "label": "High Voltage Sign (U+26A1)"
+        },
+        {
+          "char": "∿",
+          "label": "Sine Wave (U+223F) — Alternating Current"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/omega-symbol/",
+      "title": "Omega Symbol",
+      "desc": "The identical-looking Greek letter this page’s Ω normalizes to — the full Unicode disambiguation, the documented Pandoc conversion bug, and where the two glyphs quietly come apart."
+    },
+    {
+      "href": "/library/electrical-circuit-symbols/",
+      "title": "Electrical & Circuit Symbols",
+      "desc": "A browsable set of schematic glyphs — grounds, sources, switches, and the units that label them."
+    },
+    {
+      "href": "/symbol/micro-sign/",
+      "title": "Micro Sign",
+      "desc": "The exact same Unicode quirk as the ohm sign: µ is a legacy character that normalizes to Greek mu — another SI prefix (µF, µA) that looks like a Greek letter but isn’t one underneath."
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "title": "Skrifttyper – 88 Unicode-skrifttyper (kopiér og indsæt)",
+    "description": "Skrifttyper der gør almindelig tekst om til sej tekst: 88 Unicode-skrifttyper med fed skrift, kursiv/script, håndskrift, gotisk, bobler, små bogstaver, aesthetic, på hovedet og Zalgo. Kopiér til Instagram-bio, TikTok, Discord, LinkedIn og WhatsApp. Gratis, hurtigt og uden konto."
+  },
+  "hero": {
+    "title": "Skrifttyper til kopiér og indsæt",
+    "subtitle": "Skriv én gang, og få 88 seje skrifttyper du kan kopiere og indsætte med det samme: kursiv/script, fed skrift, håndskrift, fine bogstaver, Instagram-skrifttyper, TikTok-tekst, Discord-navne og WhatsApp-status."
+  },
+  "decorations": {
+    "label": "Tilføj symboler, rammer og pynt",
+    "tabs": {
+      "symbols": "Symboler",
+      "frames": "Rammer",
+      "dividers": "Skillelinjer",
+      "arrows": "Pile",
+      "minimal": "Minimal",
+      "emojis": "Emojis",
+      "flags": "Flag"
+    }
+  },
+  "ui": {
+    "placeholder": "Skriv din tekst her...",
+    "advertisement": "Annonce",
+    "categoryTabs": {
+      "popular": "Populær",
+      "bold-fonts": "Fed",
+      "italic-fonts": "Kursiv",
+      "bubble-fonts": "Boble",
+      "cursive-fonts": "Håndskrift",
+      "gothic-fonts": "Gotisk",
+      "strikethrough-text": "Gennemstreget",
+      "underline-text": "Understreget",
+      "small-text": "Lille tekst",
+      "cute-fonts": "Sød",
+      "aesthetic-fonts": "Æstetisk",
+      "upside-down-text": "På hovedet",
+      "text-decorator": "Tekstdekoration",
+      "classified": "Censureret",
+      "fullwidth-fonts": "Fuld bredde",
+      "faux-fonts": "Falske alfabeter",
+      "ancient-fonts": "Oldtid & runer",
+      "emoji-letter-fonts": "Emoji-bogstaver",
+      "novelty-fonts": "Sjove"
+    },
+    "scopeControl": {
+      "label": "Anvend stil på",
+      "ariaLabel": "Vælg hvor meget tekst der skal stylet",
+      "whole": "Hele teksten",
+      "wholeTitle": "Stylet hver linje i din tekst.",
+      "firstLine": "Kun første linje",
+      "firstLineTag": "til opslag",
+      "firstLineTitle": "Stylet kun første linje (din overskrift eller krog) og lader resten være almindelig, læsbar tekst — perfekt til opslag på sociale medier.",
+      "share": "Del",
+      "shareTitle": "Del et link, der genåbner denne side med din tekst allerede udfyldt",
+      "linkCopied": "Link kopieret"
+    },
+    "safeMode": {
+      "label": "Indsætningssikkerhed",
+      "ariaLabel": "Se hvilke stile der vises korrekt på andres enheder",
+      "toggleLabel": "Sikker tilstand",
+      "hint": "Markerer stile, der kan vises som firkanter (▯) på andres ældre telefoner."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Kan vises som firkanter for nogle",
+      "boxesWarningTitle": "Denne stil bruger sjældne Unicode-tegn, som nogle telefoner og ældre enheder mangler. Den kan vises som firkanter (▯) hos den person, du sender den til. Vælg en enklere eller mere udbredt stil, hvis din målgruppe kan bruge ældre enheder.",
+      "emojiWarning": "⚠ Bruger emoji — kan variere på ældre enheder",
+      "emojiWarningTitle": "Denne stil indeholder emoji. Emoji vises korrekt på moderne enheder, men kan se anderledes ud, eller vises som firkanter, på meget gamle telefoner.",
+      "modernDevices": "Vises korrekt på moderne enheder",
+      "modernDevicesTitle": "Disse stylede Unicode-bogstaver vises på alle nuværende telefoner og computere. På meget gamle Android-enheder (cirka før 2016) eller med minimale systemskrifttyper kan enkelte tegn stadig vises som firkanter (▯). Test det først, hvis din målgruppe kan bruge ældre enheder.",
+      "rendersEverywhere": "✓ Vises korrekt overalt",
+      "rendersEverywhereTitle": "Denne stil er almindelig tekst — den vises korrekt overalt uden risiko for firkanter på nogen enhed.",
+      "deviceWarning": "⚠ Vises muligvis ikke på din enhed",
+      "deviceWarningTitle": "Skrifttyperne på din enhed kan ikke vise denne stil — den kan vises som firkanter (□). Den kan stadig se korrekt ud på andre enheder.",
+      "safeAnywhere": "✓ Sikker overalt",
+      "safeAnywhereTitle": "Vises på alle større platforme. Bemærk: skærmlæsere kan stave stylede bogstaver ét ad gangen, så hold selve teksten almindelig.",
+      "worksBestOn": "⚠ Fungerer bedst på {platforms}",
+      "worksBestOnTitle": "Fungerer bedst på: {platforms}. Andre platforme kan fjerne den eller vise den forkert — test den, før du poster."
+    },
+    "savedStyles": {
+      "ariaLabel": "Dine gemte stile",
+      "heading": "Dine gemte stile",
+      "clearAll": "Ryd alle",
+      "hint": "Gemt på denne enhed — de venter her, når du kommer tilbage."
+    },
+    "textStats": {
+      "wordSingular": "1 ord",
+      "wordPlural": "{n} ord",
+      "charSingular": "1 tegn",
+      "charPlural": "{n} tegn"
+    },
+    "decorationsNone": "Ingen",
+    "categoryTabsToggle": {
+      "more": "Mere",
+      "less": "Mindre"
+    },
+    "demoText": "Velkommen til UltraTextGen.\nSkriv hvad som helst. Gør det ultra.",
+    "copyButtons": {
+      "copy": "Kopiér",
+      "copied": "✓ Kopieret",
+      "failed": "✗ Mislykkedes",
+      "copyTitle": "Kopiér til udklipsholder",
+      "save": "Gem",
+      "saved": "Gemt",
+      "saveTitle": "Gem denne stil",
+      "unsaveTitle": "Fjern fra gemte stile",
+      "empty": "Skriv noget ovenfor...",
+      "noStyles": "Ingen stile fundet. Prøv et andet filter eller søgeord."
+    }
+  },
+  "useCases": {
+    "title": "Hvad folk bruger sej tekst til",
+    "viewAll": "Se alle brugsområder ->",
+    "items": [
+      {
+        "title": "Instagram-bio, navn og billedtekster",
+        "description": "Gør din bio eller dit visningsnavn mere personligt med håndskrift, fed skrift, fine bogstaver og diskrete symboler, du kan indsætte med det samme."
+      },
+      {
+        "title": "TikTok-tekster der skiller sig ud",
+        "description": "Giv den første linje mere vægt med fed, kursiv eller aesthetic tekst, så billedteksten skiller sig ud uden at blive svær at læse."
+      },
+      {
+        "title": "Discord, Roblox og gamer-navne",
+        "description": "Skift stil på visningsnavn, servernavn eller gamertag med gotiske bogstaver, bobletekst, small caps eller glitch-effekter. Ingen app, ingen Nitro."
+      },
+      {
+        "title": "Håndskrift og lodret tekst",
+        "description": "Lav gammeldags håndskrift, stablet tekst og dekorative linjeskift til profiler, grupper, pins og beskeder."
+      }
+    ]
+  },
+  "guides": {
+    "title": "Populære guides",
+    "viewAll": "Se alle guides ->",
+    "items": [
+      {
+        "title": "Hvilken skrifttype passer til hvilken følelse?",
+        "description": "Let, elegant, tydelig eller edgy: lær at vælge Unicode-stil efter bio, billedtekst, overskrift eller navn."
+      },
+      {
+        "title": "Personlig branding med typografi",
+        "description": "Skab en genkendelig stil på tværs af sociale kanaler uden billeder, apps eller specialfonte."
+      },
+      {
+        "title": "Stop scrollet med tekstvariation",
+        "description": "Se hvordan små forskelle i fed skrift, kursiv, small caps og symboler kan gøre en linje mere synlig i feedet."
+      }
+    ]
+  },
+  "faq": {
+    "categories": [
+      {
+        "title": "Det grundlæggende om tekstgeneratoren",
+        "items": [
+          {
+            "question": "Hvad er en tekstgenerator til seje skrifttyper?",
+            "answer": "En tekstgenerator udskifter de bogstaver, du skriver, med andre Unicode-tegn, der allerede ser fede, kursiverede, håndskrevne, gotiske, boblede eller dekorative ud. Skriv <code>hej</code>, og få for eksempel fed skrift, kursiv skrift, håndskrift, gotisk skrift eller bobletekst.<br><br>Fordi resultatet er ægte Unicode — ikke et billede og ikke en installeret skrifttype — kan du kopiere og indsætte det i Instagram-bioer, TikTok-billedtekster, Discord-navne, LinkedIn-overskrifter, WhatsApp-statusser og næsten alle felter, der accepterer almindelig tekst."
+          },
+          {
+            "question": "Hvordan adskiller Unicode-skrifttyper sig fra almindelige skrifttyper som Arial?",
+            "answer": "En almindelig skrifttype er en fil på din enhed, der fortæller, hvordan bogstavet A skal tegnes. Hvis skrifttypen mangler, vises det samme A bare med et andet udseende.<br><br>Unicode-skrifttyper fungerer anderledes. De er selvstændige tegn med egne kodepunkter: A, matematisk fed A, kursiv A, script-A, gotisk A og et indrammet A er forskellige tegn. Derfor overlever de copy-paste. Du indsætter ikke formatering — du indsætter et andet bogstav, der allerede ser stylet ud.<br><br>Ulempen er tilgængelighed: skærmlæsere kan læse tegnet op bogstaveligt, for eksempel \"mathematical bold capital A\". Brug derfor sej tekst til korte accenter, ikke hele afsnit."
+          },
+          {
+            "question": "Er UltraTextGen gratis, og hvad er hagen?",
+            "answer": "Ja. Gratis, ingen konto, ingen daglig grænse, intet vandmærke og ingen indsamling af e-mails. Siden finansieres med annoncer. Vi opkræver ikke betaling pr. kopiering, gemmer ikke stilarter bag en oprettelse, og indsætter ikke usynlige sporingstegn i den tekst, du kopierer."
+          }
+        ]
+      },
+      {
+        "title": "Fed, kursiv og stylet tekst på platforme",
+        "items": [
+          {
+            "question": "Hvordan gør jeg min Instagram-bio fed eller kursiv?",
+            "answer": "Instagram har ingen reel formateringsknap til bio, navn eller kommentarer. Derfor bruger mange en tekstgenerator, der laver Unicode-bogstaver, som allerede ser fede eller kursiverede ud.<br><br><strong>Sådan gør du:</strong><br>1. Skriv din bio i UltraTextGen.<br>2. Vælg fed skrift, kursiv skrift, håndskrift eller en anden stil.<br>3. Tryk på Kopiér.<br>4. Indsæt den i Instagram-appen under Bio eller Navn.<br><br>For bedst kompatibilitet skal du vælge en enkel fed sans-serif- eller kursiv stil. Undgå for meget Zalgo eller meget dekorative tegn i brugernavnet, da Instagram kan afvise dem."
+          },
+          {
+            "question": "Kan jeg lave fed tekst på Discord uden Nitro?",
+            "answer": "Ja. I Discord-beskeder kan du bruge Markdown, for eksempel <code>**tekst**</code> for fed skrift. Men Markdown virker ikke i visningsnavne, servernavne (kaldenavne), status eller About me.<br><br>Unicode-fed skrift fungerer i disse felter uden Nitro, fordi selve tegnene er fede. Indsæt en fed version af dit navn, og det vises som fed tekst på servere, hvor Discord accepterer tegnene."
+          },
+          {
+            "question": "Hvilken skrifttype bruger LinkedIn, og hvorfor virker Unicode-fed skrift der?",
+            "answer": "LinkedIn bruger sin egen typografi, ofte kaldet LinkedIn Sans, til store dele af teksten på platformen. Men LinkedIn giver dig ingen fed-knap i overskrift, Om-sektionen eller opslag.<br><br>Unicode-fed skrift virker, fordi tegnene er selvstændige Unicode-tegn. LinkedIn behøver ikke fortolke formatering — det viser bare tegnene. Brug enkel fed skrift til overskrifter og korte fremhævninger. Undgå Zalgo, fullwidth og tung dekoration i professionelle profiler, da det kan forstyrre søgning og skærmlæsere."
+          },
+          {
+            "question": "Hvordan laver jeg lodret eller stablet tekst?",
+            "answer": "Lodret tekst placerer ét bogstav pr. linje, så ordet læses oppefra og ned. Det bruges i Discord-kanaler, Pinterest-pins, aesthetic Instagram-opslag og nogle gange i kommentarer, der skal skille sig ud.<br><br>Du kan skrive teksten her, vælge en stil og derefter bruge den lodrette tekstgenerator for at få linjeskiftene automatisk. Det fungerer godt med fed skrift, håndskrift og fullwidth."
+          }
+        ]
+      },
+      {
+        "title": "Skrifttyper, symboler og dekoration",
+        "items": [
+          {
+            "question": "Hvilke stilarter findes i generatoren?",
+            "answer": "Der findes omkring 88 stilarter organiseret i familier: fed skrift, kursiv, håndskrift, gotisk/fraktur, boblebogstaver, small caps, fullwidth, indrammede bogstaver, understregning, gennemstreget tekst, på hovedet, spejlvendt tekst, baglæns tekst, Zalgo/glitch og flere dekorative ordrammer.<br><br>Det betyder, at du kan lave alt fra diskret fin skrift til en bio til tydeligere gaming- og aesthetic-stilarter."
+          },
+          {
+            "question": "Kan jeg blande flere stilarter med symboler?",
+            "answer": "Ja. Unicode-stilarter kan kombineres med rammer, skillelinjer, pile, hjerter og andre symboler. Du kan for eksempel tage et navn i håndskrift, tilføje en tynd stjerne mellem ordene og ramme linjen ind med enkle symboler.<br><br>De pæneste resultater kommer ofte fra maks to stilarter ad gangen: fed + understregning, kursiv + small caps eller bobletekst + luftige mellemrum. For meget dekoration bliver hurtigt svært at læse."
+          },
+          {
+            "question": "Hvad er Zalgo eller glitch-tekst?",
+            "answer": "Zalgo er tekst, der ser ødelagt, hacket eller dryppende ud. Den laves med kombinerende mærker over og under bogstaverne. Effekten er populær til gys, memes, Halloween, Discord-navne og visuelt ekstreme billedtekster.<br><br>Brug den sparsomt. Mange platforme accepterer den i visningsnavne, men ikke i brugernavne, og for meget Zalgo kan blive svært at læse på mobilen."
+          }
+        ]
+      },
+      {
+        "title": "Kompatibilitet og fejlfinding",
+        "items": [
+          {
+            "question": "Hvorfor vises nogle bogstaver som firkanter eller spørgsmålstegn?",
+            "answer": "Firkanter, tomme blokke eller spørgsmålstegn betyder som regel, at den enhed, der viser teksten, mangler en skrifttype, der kan tegne netop det Unicode-tegn. Det er et visningsproblem hos modtageren — ikke at den kopierede tekst er ødelagt.<br><br>For bredest støtte, vælg fed skrift, kursiv, small caps, fullwidth eller indrammede bogstaver. Gotiske og meget dekorative stilarter kan nogle gange mangle på ældre telefoner."
+          },
+          {
+            "question": "Kan jeg bruge seje skrifttyper i brugernavn og visningsnavn?",
+            "answer": "Ofte ja, men det afhænger af platformen. Visningsnavne på Instagram, TikTok, Discord, Steam, Roblox og Telegram plejer at acceptere flere Unicode-tegn. Rigtige @-handles er strengere og tillader ofte kun almindelige bogstaver, tal, punktummer og understregninger.<br><br>En god tommelfingerregel: brug sej tekst i visningsnavn, bio og status. Hold selve brugernavnet enkelt, hvis platformen brokker sig."
+          },
+          {
+            "question": "Er sej Unicode-tekst god for tilgængelighed?",
+            "answer": "Ikke altid. Skærmlæsere kan læse hvert Unicode-tegn op med dets tekniske navn, hvilket gør lange linjer med stylet tekst trættende at høre på.<br><br>Brug derfor sej tekst som accent: ét ord, en kort overskrift eller én linje i en bio. Hold vigtig information, kontaktoplysninger og længere afsnit i almindelig tekst. Undgå Zalgo og tung dekoration, hvor tilgængelighed er vigtig."
+          },
+          {
+            "question": "Kan jeg bruge fed Unicode i e-mailemner?",
+            "answer": "Ja, e-mailemner er almindelig tekst, så Unicode er en af de få måder at få et ord til at se federe ud i indbakken. Brug det på et eller to ord, ikke hele emnefeltet.<br><br>For mange specialtegn kan udløse spamfiltre eller se rodet ud i visse e-mailklienter, så hold det kort og tydeligt."
+          }
+        ]
+      },
+      {
+        "title": "Sprog og alfabet",
+        "items": [
+          {
+            "question": "Hvilke sprog og alfabeter virker?",
+            "answer": "Unicode-stylede varianter findes hovedsageligt for latinske bogstaver (A-Z, a-z) og arabertal (0-9). Det betyder, at dansk, engelsk, norsk, svensk, spansk, fransk, tysk, hollandsk, polsk, tyrkisk, vietnamesisk og mange andre sprog med latinsk alfabet virker.<br><br>Danske bogstaver som æ, ø og å har ikke altid deres egne stylede Unicode-varianter. I mange stilarter forbliver de uændrede eller bevarer deres form. Prøv en anden stil, hvis netop disse bogstaver skal se perfekte ud."
+          },
+          {
+            "question": "Hvorfor ændres arabiske, kyrilliske, hindi, kinesiske eller japanske tegn ikke?",
+            "answer": "Unicode definerer ikke det samme sæt af dekorative, fede og kursiverede varianter for alle skriftsystemer. Derfor findes der ingen direkte erstatning for arabiske, hebraiske, devanagari-, kinesiske, japanske, koreanske, kyrilliske eller græske tegn.<br><br>Latinske ord midt i en anden tekst — for eksempel mærkenavne, hashtags eller engelske udtryk — kan stadig styles. Resten af teksten forbliver, som den er."
+          }
+        ]
+      },
+      {
+        "title": "Privatliv og sikkerhed",
+        "items": [
+          {
+            "question": "Gemmes, logges eller sendes den tekst, jeg skriver?",
+            "answer": "Nej. Selve konverteringen sker i din browser med JavaScript. Den tekst, du skriver, bliver ikke sendt til en server for at blive genereret.<br><br>Siden bruger analyse og annoncer, men indholdet i tekstfeltet behøver aldrig forlade browseren. Det, du kopierer, er ren Unicode uden skjulte vandmærker."
+          },
+          {
+            "question": "Virker generatoren på mobil og tablet?",
+            "answer": "Ja. UltraTextGen fungerer i moderne mobilbrowsere på iPhone, Android og tablets. Du skriver, trykker på Kopiér og indsætter direkte i Instagram, TikTok, WhatsApp, Discord eller hvilken app du vil."
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 UltraTextGen. Sej tekst der virker overalt."
+  },
+  "notFound": {
+    "eyebrow": "ERR · 404 · SIDEN MANGLER",
+    "title": "Denne side gled ud af stilbiblioteket.",
+    "subtitle": "Adressen findes ikke i vores samling, men generatoren virker stadig. Prøv 404 i fed skrift, bobler, gotisk tekst, Zalgo og flere stilarter.",
+    "backCta": "<- Til generatoren",
+    "browseCta": "Gennemse stilarter",
+    "wallTitle": "404 i alle de stilarter, vi kan.",
+    "wallSubtitle": "Alt herunder genereres af den samme motor, der driver UltraTextGen.",
+    "playgroundTitle": "Test din egen manglende tekst.",
+    "playgroundSubtitle": "Skriv noget, og se det i et par favoritstilarter, før du går tilbage.",
+    "playgroundPlaceholder": "Skriv din tekst her...",
+    "fullGeneratorCta": "Åbn hele generatoren",
+    "copy": "Kopiér",
+    "copied": "Kopieret"
+  }
+}

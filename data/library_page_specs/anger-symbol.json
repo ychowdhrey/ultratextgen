@@ -1,0 +1,57 @@
+{
+  "slug": "anger-symbol",
+  "page_type": "symbol",
+  "title": "Anger Symbol: Copy & Paste 💢 — The Manga Vein Mark, Explained",
+  "meta_description": "Copy and paste the anger symbol (💢), the four-pointed \"popping vein\" mark from Japanese manga — plus the anger and rage emoji it's most often paired with.",
+  "canonical": "https://ultratextgen.com/symbol/anger-symbol/",
+  "breadcrumb": "Anger Symbol",
+  "hero_h1": "Anger Symbol",
+  "hero_tagline": "💢 U+1F4A2 — the four-pointed cross that draws a popping forehead vein in Japanese manga, now a stand-alone \"someone's mad\" emoji everywhere else. Click any symbol to copy it instantly.",
+  "intro": "The anger symbol (💢, U+1F4A2) has the plain Unicode name ANGER SYMBOL, but its shape comes straight out of Japanese comics: manga artists draw a small cross-shaped burst on a character's forehead or temple to represent a bulging, throbbing vein — shorthand for barely-contained rage that reads instantly even with the character's face otherwise calm. The convention has a name in Japanese, ikari-mark (怒りマーク), and predates emoji by decades in print. It entered Unicode in version 6.0 (2010) as one of the original Japanese carrier symbols absorbed wholesale from SoftBank and DoCoMo's proprietary emoji sets, alongside 💥, 💦, and 💤 — the small set of manga sound-effect marks that became emoji rather than being designed as emoji from scratch.",
+  "date_published": "2026-07-14",
+  "date_modified": "2026-07-14",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "anger-symbol",
+      "label": "Anger Symbol",
+      "h2": "Anger Symbol (Manga Vein)",
+      "intro": "The vein mark itself, and the comic-panel effects it's part of the same family as.",
+      "symbols": [
+        { "char": "💢", "label": "Anger Symbol" },
+        { "char": "💥", "label": "Collision" },
+        { "char": "💦", "label": "Sweat Droplets" },
+        { "char": "💤", "label": "Zzz (Sleeping)" }
+      ]
+    },
+    {
+      "id": "angry-faces",
+      "label": "Angry Faces",
+      "h2": "Angry & Rage Face Emoji",
+      "intro": "The facial expressions 💢 gets paired with to push a reaction from annoyed to furious.",
+      "symbols": [
+        { "char": "😠", "label": "Angry Face" },
+        { "char": "😡", "label": "Pouting Face (Rage)" },
+        { "char": "🤬", "label": "Face with Symbols on Mouth" },
+        { "char": "🗯️", "label": "Right Anger Bubble" }
+      ]
+    },
+    {
+      "id": "frustration-symbols",
+      "label": "Frustration",
+      "h2": "Frustration & Annoyance Symbols",
+      "intro": "Quieter marks for irritation that hasn't tipped into full rage.",
+      "symbols": [
+        { "char": "😤", "label": "Face with Steam From Nose" },
+        { "char": "🙄", "label": "Face with Rolling Eyes" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "⚡", "label": "High Voltage" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/emoji-combos/", "title": "Emoji Combos", "desc": "Ready-made aesthetic and reaction combos, including several built around anger and rage faces." },
+    { "href": "/symbol/stop-sign/", "title": "Stop Sign Symbol", "desc": "Another emoji whose entire meaning rides on a familiar real-world shape rather than a face." },
+    { "href": "/usecase/zalgo-text/", "title": "Glitch Text Generator", "desc": "For when a plain angry face isn't unhinged enough — cursed Zalgo text with one-click presets." }
+  ]
+}

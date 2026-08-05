@@ -1,0 +1,98 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "omaanse-rial-teken",
+  "title": "Omaanse-Rial-teken: Kopieer en Plak ⃄ — Omans Nieuwe Valutateken, Bevroren voor Publicatie in Unicode 18.0",
+  "meta_description": "Het Omaanse-rial-teken (⃄, U+20C4) werd in november 2025 onthuld door de Centrale Bank van Oman en is bevroren voor publicatie in Unicode 18.0, verwacht in september 2026 — nog op geen enkel toetsenbord. Ontwerp, geschiedenis en status.",
+  "canonical": "https://ultratextgen.com/nl/symbol/omaanse-rial-teken/",
+  "breadcrumb": "Omaanse-Rial-teken",
+  "hero_h1": "Omaanse-Rial-teken",
+  "hero_tagline": "Omans officiële valutateken, onthuld op de Nationale Dag van 2025 en bevroren voor publicatie in Unicode 18.0 — goedgekeurd, maar nog altijd vóór op elk toetsenbord of lettertype.",
+  "intro": "Het Omaanse-rial-teken (⃄, U+20C4) is het officiële valutateken van de Centrale Bank van Oman, gepresenteerd aan het publiek op 19 november 2025, getimed rond Omans Nationale Dag. Het ontwerp is opgebouwd uit gestileerde Arabische letters — ʿayn (ع) en rāʾ (ر), de eerste en derde letter van het woord 'rial' — doorkruist door twee lijnen, in de stijl die veel moderne valutatekens delen. Gouverneur Ahmed bin Jafar Al-Musallami van de Centrale Bank omschreef de invoering als een strategische zet om Omans positie als regionaal financieel centrum te versterken en de rial makkelijker herkenbaar te maken op internationale, commerciële en digitale platforms. Het teken werd samen met de VAE-dirham en de Malediven-rufiyaa ingediend voor Unicode-codering, en draagt op het moment van schrijven de status 'white' in Unicodes eigen pipeline-documentatie — bevroren voor publicatie, in afwachting van alleen nog ISO-goedkeuring, met definitieve publicatie verwacht samen met de rest van Unicode 18.0 in september 2026. Geen enkel besturingssysteem, lettertype of toetsenbord biedt momenteel native ondersteuning. De ene praktische optie die vandaag al bestaat, is een bedrijfssoftwaremodule (een Odoo-ERP-app) die een lettertype inbedt om het teken te renderen voor bedrijven die het nu al nodig hebben — een smallere, meer utilitaire tegenhanger van de open-source-ontwikkelaarstools die al rond het VAE-dirhamteken zijn gebouwd.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/omaanse-rial-teken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/omani-rial-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "omaanse-rial-teken",
+      "label": "Omaanse-Rial-teken",
+      "h2": "Omaanse-Rial-teken",
+      "intro": "Het bevestigde teken zelf — vandaag al te kopiëren via het codepunt, ook al rendert nog geen enkel lettertype het native.",
+      "symbols": [
+        {
+          "char": "⃄",
+          "label": "Omaanse-Rial-teken (U+20C4, bevroren voor publicatie)"
+        }
+      ]
+    },
+    {
+      "id": "andere-golfvaluta",
+      "label": "Andere Nieuwe Golf-valutatekens",
+      "h2": "Andere Nieuwe Valutatekens in deze Release",
+      "intro": "De Omaanse rial is niet het enige nieuwe valutateken in Unicode 18.0 — twee andere munten kregen in dezelfde bèta hun eigen teken.",
+      "symbols": [
+        {
+          "char": "⃃",
+          "label": "VAE-Dirhamteken (U+20C3)"
+        },
+        {
+          "char": "⃂",
+          "label": "Malediven-Rufiyaateken (U+20C2)"
+        }
+      ]
+    },
+    {
+      "id": "een-versie-voor",
+      "label": "Eén Versie Voor",
+      "h2": "Het Golf-valutateken dat Eén Versie Eerder Verscheen",
+      "intro": "Saoedi-Arabiës riyal-teken doorliep dit pad al een volledige Unicode-versie eerder — al definitief sinds Unicode 17.0, niet enkel in bèta.",
+      "symbols": [
+        {
+          "char": "⃁",
+          "label": "Saudi-Riyal-teken (U+20C1, definitief sinds Unicode 17.0)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Elk wereldvalutateken dat je vandaag al kunt kopiëren en plakken (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/dirhamteken/",
+      "title": "Dirhamteken",
+      "desc": "Het nieuwe valutateken van de VAE, verschijnend in dezelfde Unicode-18.0-bèta."
+    },
+    {
+      "href": "/nl/symbol/saudi-riyal-teken/",
+      "title": "Saudi-Riyal-teken",
+      "desc": "Een Golf-valutateken dat al definitief is, één Unicode-versie eerder."
+    },
+    {
+      "href": "/updates/unicode-18-beta-review-opens/",
+      "title": "Unicode 18.0 Beta Review Opens",
+      "desc": "De volledige release waar dit teken deel van uitmaakt (Engelstalige update)."
+    }
+  ]
+}

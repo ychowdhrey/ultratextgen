@@ -1,0 +1,77 @@
+{
+  "slug": "symbole-psi",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Psi : Copier-Coller ψ Ψ — La Fonction d'Onde Quantique de Schrödinger & l'Icône Trident de la Psychologie",
+  "meta_description": "Copie et colle le symbole psi — ψ minuscule (U+03C8) et Ψ majuscule (U+03A8), la fonction d'onde quantique choisie par Schrödinger en 1926 et le glyphe trident adopté par la psychologie. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-psi/",
+  "breadcrumb": "Symbole Psi",
+  "hero_h1": "Symbole Psi",
+  "hero_tagline": "Le ψ minuscule et le Ψ majuscule — la lettre qu'Erwin Schrödinger a choisie pour nommer la fonction d'onde quantique, et le glyphe en forme de trident que le monde entier utilise comme icône de la psychologie et de la psychiatrie. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le glyphe minuscule de psi, ψ (U+03C8, GREEK SMALL LETTER PSI), et sa majuscule, Ψ (U+03A8), forment la 23ᵉ et avant-dernière lettre de l'alphabet grec — celle qui précède juste oméga, prononcée /ps/ comme dans « lapse » et valant 700 dans le système de numération grecque. Les deux points de code sont entrés dans Unicode dès la version 1.1, en 1993. Ce qui fait dépasser psi les autres lettres grecques, c'est sa place dans la science moderne : au début de 1926, Erwin Schrödinger a choisi ψ pour désigner la fonction d'onde dans sa nouvelle mécanique ondulatoire, et le choix a fait mouche — aujourd'hui, le Ψ majuscule nomme généralement la fonction d'onde complète et dépendante du temps d'un système, tandis que le ψ minuscule marque un état stationnaire ou spatial. Psi est aussi l'icône quasi universelle de la psychologie et de la psychiatrie, pour une raison bien documentée : le mot grec « psyché » (ψυχή, « esprit » ou « âme ») commence justement par cette lettre. La légende souvent répétée selon laquelle sa forme de trident serait empruntée à la fourche du diable n'est qu'un mythe — la silhouette à trois branches, en diapason, n'est autre que la forme même de la lettre, la même que celle que l'université d'Indiana dépose comme logo trident.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/psi-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-psi/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/psi-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "le-symbole-psi",
+      "label": "Le Symbole Psi",
+      "h2": "Le Symbole Psi — ψ & Ψ",
+      "intro": "La lettre grecque elle-même, dans ses deux casses. Le ψ minuscule et le Ψ majuscule sont les deux formes auxquelles tout le monde recourt — colle celle que réclame l'équation ou le logo.",
+      "symbols": [
+        { "char": "ψ", "label": "Psi Minuscule Grec (U+03C8)" },
+        { "char": "Ψ", "label": "Psi Majuscule Grec (U+03A8)" }
+      ]
+    },
+    {
+      "id": "psi-en-mecanique-quantique",
+      "label": "Quantique & Science",
+      "h2": "Psi en Mécanique Quantique",
+      "intro": "Le rôle signature de psi : la fonction d'onde de Schrödinger. Par convention, le Ψ majuscule désigne la fonction d'onde complète et dépendante du temps d'un système, et le ψ minuscule l'état stationnaire, indépendant du temps — souvent associé à φ (phi) pour un état compagnon.",
+      "symbols": [
+        { "char": "Ψ", "label": "Psi Majuscule (U+03A8) — Fonction d'Onde Dépendante du Temps" },
+        { "char": "ψ", "label": "Psi Minuscule (U+03C8) — Fonction d'Onde Stationnaire" },
+        { "char": "φ", "label": "Phi Minuscule Grec (U+03C6) — l'État Compagnon Souvent Associé à ψ" }
+      ]
+    },
+    {
+      "id": "psi-psychologie-trident",
+      "label": "Psychologie & Trident",
+      "h2": "Psi en Psychologie & la Forme du Trident",
+      "intro": "Le Ψ majuscule est la marque mondiale de la psychologie, de la psychiatrie et de la parapsychologie — choisie parce que « psyché » commence par psi, et non à cause d'une quelconque légende de fourche diabolique. Sa silhouette à trois branches explique pourquoi on la compare à un trident, l'arme de Poséidon.",
+      "symbols": [
+        { "char": "Ψ", "label": "Psi Majuscule (U+03A8) — l'Icône de la Psychologie & de la Psychiatrie" },
+        { "char": "ψ", "label": "Psi Minuscule (U+03C8) — la Lettre de « Psyché »" },
+        { "char": "🔱", "label": "Emblème Trident (U+1F531) — le Trident de Poséidon, la Forme que Psi Évoque" }
+      ]
+    },
+    {
+      "id": "lettres-grecques-associees",
+      "label": "Lettres Grecques",
+      "h2": "Lettres Grecques Associées",
+      "intro": "Psi est la 23ᵉ lettre grecque, juste avant qu'oméga ne referme l'alphabet. Voici les voisines que l'on copie le plus souvent à ses côtés.",
+      "symbols": [
+        { "char": "Ω", "label": "Oméga Majuscule Grec — la Lettre Juste Après Psi" },
+        { "char": "π", "label": "Pi Minuscule Grec" },
+        { "char": "Σ", "label": "Sigma Majuscule Grec" },
+        { "char": "Δ", "label": "Delta Majuscule Grec" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet — alpha, lambda, pi, sigma, oméga — en majuscules et minuscules, prêt à copier-coller." },
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Fonctions d'onde, opérateurs, et les lettres grecques qui complètent une équation de physique ou de mathématiques (en anglais)." },
+    { "href": "/fr/symbol/symbole-omega/", "title": "Symbole Oméga", "desc": "La voisine de psi : la dernière lettre de l'alphabet, et le symbole standard de la résistance en ohms." },
+    { "href": "/fr/symbol/symbole-pi/", "title": "Symbole Pi", "desc": "Une autre lettre grecque devenue un pilier scientifique : la constante du cercle π et l'opérateur produit Π." }
+  ]
+}

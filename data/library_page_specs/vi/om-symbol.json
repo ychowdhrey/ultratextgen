@@ -1,0 +1,68 @@
+{
+  "slug": "om-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Om: Sao Chép & Dán ॐ 🕉️ — Một Âm Thanh Thiêng, Ba Ý Nghĩa Trong Ấn Độ Giáo, Phật Giáo Và Kỳ Na Giáo",
+  "meta_description": "Sao chép Om / Aum (ॐ U+0950, 🕉️ U+1F549) — âm tiết thiêng liêng được đọc là âm thanh vũ trụ nguyên thủy trong Ấn Độ giáo, mở đầu câu thần chú Om mani padme hum trong Phật giáo, và dạng rút gọn của năm đấng tối cao trong Kỳ Na giáo. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/om-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Om",
+  "hero_h1": "Ký Hiệu Om",
+  "hero_tagline": "Om, hay Aum (ॐ, 🕉️) — âm thanh thiêng liêng chung của Ấn Độ giáo, Phật giáo và Kỳ Na giáo, nơi cùng một âm được diễn giải khác nhau trong mỗi truyền thống. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Om, cũng viết là Aum, là một âm thanh và ký hiệu thiêng liêng trung tâm của nhiều tôn giáo Ấn Độ. Unicode mã hóa nó theo hai cách. Cách thứ nhất là ॐ (U+0950 DEVANAGARI OM), một chữ ghép kiểu chữ thảo trong hệ chữ Devanagari, hợp nhất chữ a (अ) và u (उ) cùng một chandrabindu mũi; ký tự này được thêm vào Unicode 1.1 từ năm 1993. Cách thứ hai là 🕉️ (U+1F549 OM SYMBOL), một glyph hình ảnh độc lập được định nghĩa là «không phụ thuộc vào phông chữ Devanagari» và được thêm vào muộn hơn nhiều, ở Unicode 7.0 (2014), rồi được đưa vào làm emoji năm 2015 — cùng glyph mà trang ký hiệu Khanda đã hiển thị như một ký hiệu liên quan. Âm tiết này được tụng khi mở đầu hoặc kết thúc lời cầu nguyện, thần chú và thực hành yoga, nhưng ý nghĩa của nó không đồng nhất giữa các tôn giáo: truyền thống Ấn Độ giáo thường mô tả nó là âm thanh nguyên thủy của vũ trụ và biểu hiện của thực tại tối thượng; trong Phật giáo, nó mở đầu các thần chú như Om mani padme hum, gắn với vị bồ tát của lòng từ bi; còn trong Kỳ Na giáo, nó được hiểu là dạng rút gọn của Panch Parmeshthi, năm đấng tối cao. Trang này chỉ trình bày cách dùng đã được ghi chép, không xếp hạng các truyền thống.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/om-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/om-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/om-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "om-glyphs",
+      "label": "Om",
+      "h2": "Ký Hiệu Om",
+      "intro": "Ba ký tự Unicode cho Om: chữ ghép trong hệ chữ Devanagari, glyph hình ảnh độc lập OM SYMBOL, và Om Kỳ Na giáo riêng biệt.",
+      "symbols": [
+        { "char": "ॐ", "label": "Om Chữ Devanagari" },
+        { "char": "🕉️", "label": "Ký Hiệu Om" },
+        { "char": "ꣽ", "label": "Om Kỳ Na Giáo" }
+      ]
+    },
+    {
+      "id": "meditation-symbols",
+      "label": "Thiền Định & Yoga",
+      "h2": "Ký Hiệu Thiền Định & Yoga",
+      "intro": "Các ký hiệu thường được hiển thị cùng Om trong yoga, thiền định và các bối cảnh Ấn Độ giáo/Phật giáo/Kỳ Na giáo.",
+      "symbols": [
+        { "char": "🪷", "label": "Hoa Sen" },
+        { "char": "🧘", "label": "Người Ngồi Thiền" },
+        { "char": "📿", "label": "Chuỗi Hạt Cầu Nguyện" },
+        { "char": "☸️", "label": "Bánh Xe Pháp Luân" }
+      ]
+    },
+    {
+      "id": "faith-symbols",
+      "label": "Ký Hiệu Tôn Giáo",
+      "h2": "Các Ký Hiệu Tôn Giáo & Biểu Tượng Khác",
+      "intro": "Các ký hiệu từ những truyền thống khác thường phù hợp với nội dung về đức tin và bản sắc.",
+      "symbols": [
+        { "char": "🪯", "label": "Khanda" },
+        { "char": "✡️", "label": "Ngôi Sao David" },
+        { "char": "☪️", "label": "Ngôi Sao Và Trăng Lưỡi Liềm" },
+        { "char": "☯️", "label": "Âm Dương" },
+        { "char": "✝️", "label": "Thánh Giá Latinh" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu." },
+    { "href": "/vi/symbol/khanda-symbol/", "title": "Ký Hiệu Khanda", "desc": "Biểu tượng Sikh giáo mà chính trang riêng của nó đã hiển thị Om như một ký hiệu tôn giáo liên quan." },
+    { "href": "/vi/symbol/hamsa-symbol/", "title": "Ký Hiệu Hamsa", "desc": "Một ký hiệu liên tôn giáo khác được trình bày như lịch sử đã ghi chép, không thiên vị bên nào." }
+  ]
+}

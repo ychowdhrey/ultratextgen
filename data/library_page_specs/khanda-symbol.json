@@ -1,0 +1,93 @@
+{
+  "slug": "khanda-symbol",
+  "page_type": "symbol",
+  "title": "Khanda Symbol: Copy & Paste ☬ 🪯 Sikh Emblem & Ik Onkar",
+  "meta_description": "Copy and paste the Khanda (☬ 🪯), the Sikh emblem of the double-edged sword, chakkar, and two kirpans — and see how it differs from Ik Onkar (ੴ). Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/khanda-symbol/",
+  "breadcrumb": "Khanda Symbol",
+  "hero_h1": "Khanda Symbol",
+  "hero_tagline": "The Khanda (☬ 🪯) — the Sikh emblem of the double-edged sword, chakkar, and two crossed kirpans — plus Ik Onkar, the separate symbol it's often confused with. Click any symbol to copy it instantly.",
+  "intro": "The Khanda is the emblem of modern Sikhism: a double-edged sword (also called a khanda) at the center, framed by a circular chakkar, with two curved kirpans crossed underneath representing miri-piri — the unity of spiritual and temporal authority. It's not the same symbol as Ik Onkar (ੴ), the phrase for \"One Creator\" that appears on gurdwaras and the Guru Granth Sahib, and Unicode gives it two different codepoints depending on whether you want the plain dingbat or the full-color emoji.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "khanda-glyphs",
+      "label": "Khanda",
+      "h2": "Khanda Symbol",
+      "intro": "Two ways to render the Khanda in Unicode: the plain-text dingbat and the dedicated color emoji added in 2022.",
+      "symbols": [
+        {
+          "char": "☬",
+          "label": "Adi Shakti (Plain-Text Khanda)"
+        },
+        {
+          "char": "🪯",
+          "label": "Khanda Emoji"
+        }
+      ]
+    },
+    {
+      "id": "ik-onkar",
+      "label": "Ik Onkar",
+      "h2": "Ik Onkar — Not the Same Symbol",
+      "intro": "Ik Onkar (\"One Creator\") is the older, separate Gurmukhi character used on gurdwaras and the opening line of the Guru Granth Sahib. It is never interchanged with the Khanda in religious use.",
+      "symbols": [
+        {
+          "char": "ੴ",
+          "label": "Gurmukhi Ek Onkar"
+        }
+      ]
+    },
+    {
+      "id": "related-religious",
+      "label": "Related Symbols",
+      "h2": "Other Faith & Emblem Symbols",
+      "intro": "Symbols from other traditions that pair well with faith and identity content.",
+      "symbols": [
+        {
+          "char": "🕉️",
+          "label": "Om"
+        },
+        {
+          "char": "☪️",
+          "label": "Star and Crescent"
+        },
+        {
+          "char": "✡️",
+          "label": "Star of David"
+        },
+        {
+          "char": "☸️",
+          "label": "Dharma Wheel"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin Yang"
+        },
+        {
+          "char": "✝️",
+          "label": "Latin Cross"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith symbols from every major world religion in one reference."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol",
+      "desc": "The peace sign and the doves, gestures, and nature symbols that share its meaning."
+    },
+    {
+      "href": "/symbol/yin-yang/",
+      "title": "Yin Yang Symbol",
+      "desc": "The yin-yang symbol and related balance and harmony marks."
+    }
+  ]
+}

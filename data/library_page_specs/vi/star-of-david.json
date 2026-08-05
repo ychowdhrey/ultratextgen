@@ -1,0 +1,65 @@
+{
+  "slug": "star-of-david",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ngôi Sao David: Sao Chép & Dán ✡ — Một Hình Lục Giác Chung Trở Thành Biểu Tượng Do Thái Giáo Như Thế Nào",
+  "meta_description": "Sao chép Ngôi Sao David (✡) và tìm hiểu lịch sử nhiều tầng của nó — từ một họa tiết hình học cổ xưa được nhiều nền văn hóa chia sẻ đến biểu tượng của Do Thái giáo. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/star-of-david/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ngôi Sao David",
+  "hero_h1": "Ngôi Sao David",
+  "hero_tagline": "Ngôi Sao David sáu cánh (✡ ✡️) — Magen David, hay «Khiên của David» — mà hành trình trở thành biểu tượng của Do Thái giáo lại gần đây và nhiều tầng lớp hơn phần lớn mọi người vẫn nghĩ. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ngôi Sao David (✡, U+2721) — Magen David, «Khiên của David» trong tiếng Hebrew — là ngôi sao sáu cánh được công nhận ngày nay là biểu tượng của Do Thái giáo và là hình ảnh trung tâm trên quốc kỳ Israel. Thế nhưng bản thân hình lục giác này còn cổ xưa hơn và được chia sẻ rộng rãi hơn nhiều so với vai trò đó gợi ý: trong phần lớn lịch sử của mình, nó là một họa tiết hình học phổ biến được nhiều nền văn hóa sử dụng, và hành trình để trở thành một dấu hiệu riêng của người Do Thái là một câu chuyện tương đối gần đây, được ghi chép khá đầy đủ.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/star-of-david/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/star-of-david/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/star-of-david/" }
+  ],
+  "sections": [
+    {
+      "id": "star-of-david",
+      "label": "Ngôi Sao David",
+      "h2": "Ký Hiệu Ngôi Sao David",
+      "intro": "Ngôi Sao David trong Unicode, sẵn sàng để dán vào tiểu sử, bài viết hoặc hồ sơ. Hai dạng: glyph thuần và emoji đầy màu sắc.",
+      "symbols": [
+        { "char": "✡", "label": "Ngôi Sao David" },
+        { "char": "✡️", "label": "Emoji Ngôi Sao David" }
+      ]
+    },
+    {
+      "id": "jewish-symbols",
+      "label": "Ký Hiệu Do Thái Giáo",
+      "h2": "Các Ký Hiệu Do Thái Giáo Liên Quan",
+      "intro": "Các ký hiệu khác từ truyền thống Do Thái giáo mà Ngôi Sao David thường xuất hiện cùng.",
+      "symbols": [
+        { "char": "🕎", "label": "Menorah" },
+        { "char": "🕍", "label": "Giáo Đường Do Thái" },
+        { "char": "חי", "label": "Chai (Sự Sống)" }
+      ]
+    },
+    {
+      "id": "hexagram-variants",
+      "label": "Ngôi Sao Sáu Cánh & Hình Lục Giác Sao",
+      "h2": "Ngôi Sao Sáu Cánh & Biến Thể Hình Lục Giác Sao",
+      "intro": "Cùng hình học sáu cánh này xuất hiện rộng rãi vượt xa một tôn giáo duy nhất — như trang trí, trong thiên văn học và huyền bí học, và như hình học thuần túy.",
+      "symbols": [
+        { "char": "🔯", "label": "Ngôi Sao Sáu Cánh Có Chấm" },
+        { "char": "✶", "label": "Ngôi Sao Đen Sáu Cánh" },
+        { "char": "⬡", "label": "Hình Lục Giác Trắng" },
+        { "char": "⬢", "label": "Hình Lục Giác Đen" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu." },
+    { "href": "/vi/symbol/khanda-symbol/", "title": "Ký Hiệu Khanda", "desc": "Một biểu tượng tôn giáo cụ thể khác với lịch sử thật sự, có thể truy nguyên phía sau nó." },
+    { "href": "/library/star-symbols/", "title": "Ký Hiệu Ngôi Sao", "desc": "Mọi loại ngôi sao — bốn, năm, sáu và tám cánh — trong một trang tra cứu để sao chép và dán." }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "saudi-riyal-sign",
+  "page_type": "symbol",
+  "title": "Saudi Riyal Sign: Copy & Paste ⃁ — Approved by Royal Directive, Live in Unicode 17.0",
+  "meta_description": "The Saudi riyal sign (⃁, U+20C1) was approved by King Salman in February 2025 and encoded in Unicode 17.0 in September 2025 — already final, though most fonts still don't render it. Here's its design, history, and how to use it today.",
+  "canonical": "https://ultratextgen.com/symbol/saudi-riyal-sign/",
+  "breadcrumb": "Saudi Riyal Sign",
+  "hero_h1": "Saudi Riyal Sign",
+  "hero_tagline": "Saudi Arabia's official currency symbol, approved by royal directive and encoded in Unicode 17.0 — already final, though most fonts and keyboards still haven't caught up.",
+  "intro": "The Saudi riyal sign (⃁, U+20C1) is Saudi Arabia's official currency symbol, developed under a royal directive by a committee spanning the Saudi Central Bank (SAMA), the Ministry of Culture, the Ministry of Media, and the Saudi Standards organization. Its design draws on Arabic calligraphy, forming the Arabic letters of \"ريال\" (riyal) with the rāʾ (ر) letter's stroke doubling as a crossbar, in the same visual family as other crossbar-based currency symbols like the dollar and pound. King Salman officially approved the design on February 20, 2025, and SAMA submitted it for Unicode encoding shortly after (proposal L2/25-075, dated March 7, 2025). The Unicode Technical Committee approved it without changes at its 183rd meeting, April 22–24, 2025, and it shipped as a final, ratified character in Unicode 17.0 on September 9, 2025 — a full version ahead of the UAE dirham, Omani rial, and Maldivian rufiyaa signs, which are still in Unicode 18.0's beta as of this writing. Being final doesn't mean it's everywhere yet, though: an open GitHub issue on Inter, one of the most widely used open-source typefaces, requests the glyph be added — a sign that mainstream font coverage is still catching up even a full Unicode version after ratification. In the meantime, an open-source font (built specifically for this symbol) and community guides for using it in Word, Excel, and on the web already exist.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "saudi-riyal-sign",
+      "label": "Saudi Riyal Sign",
+      "h2": "Saudi Riyal Sign",
+      "intro": "The confirmed, final character — encoded in Unicode 17.0, copyable today, though most fonts don't render it natively yet.",
+      "symbols": [
+        {
+          "char": "⃁",
+          "label": "Saudi Riyal Sign (U+20C1, final since Unicode 17.0)"
+        }
+      ]
+    },
+    {
+      "id": "other-new-gulf-currency-symbols",
+      "label": "Other Gulf Currency Symbols",
+      "h2": "Other New Gulf Currency Symbols",
+      "intro": "Three more regional currencies got their own Unicode signs the following version, Unicode 18.0 — still in beta as of this writing.",
+      "symbols": [
+        {
+          "char": "⃃",
+          "label": "UAE Dirham Sign (U+20C3, Unicode 18.0 beta)"
+        },
+        {
+          "char": "⃄",
+          "label": "Omani Rial Sign (U+20C4, Unicode 18.0 beta)"
+        },
+        {
+          "char": "⃂",
+          "label": "Maldivian Rufiyaa Sign (U+20C2, Unicode 18.0 beta)"
+        }
+      ]
+    },
+    {
+      "id": "existing-middle-east-currency-you-can-type",
+      "label": "Existing Middle East Currency Symbols",
+      "h2": "Middle East Currency Symbols That Already Work Everywhere",
+      "intro": "For contrast — regional currency symbols that cleared the standard-to-font gap years ago and render on virtually any device today.",
+      "symbols": [
+        {
+          "char": "₪",
+          "label": "Israeli New Shekel Sign"
+        },
+        {
+          "char": "₺",
+          "label": "Turkish Lira Sign"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Every world currency symbol you can already copy and paste today."
+    },
+    {
+      "href": "/symbol/dirham-sign/",
+      "title": "Dirham Sign",
+      "desc": "The UAE's new currency symbol — one Unicode version behind, still in beta."
+    },
+    {
+      "href": "/symbol/omani-rial-sign/",
+      "title": "Omani Rial Sign",
+      "desc": "Another Gulf currency symbol shipping in the same Unicode 18.0 beta."
+    },
+    {
+      "href": "/updates/uae-dirham-symbol-unicode-18/",
+      "title": "UAE Dirham Symbol Update",
+      "desc": "The dated status tracker this symbol's own Gulf-currency cousin gets."
+    }
+  ]
+}

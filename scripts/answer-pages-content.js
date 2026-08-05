@@ -696,6 +696,419 @@ module.exports = [
     { q: 'How do I add kaomoji to a Samsung keyboard?', a: 'Open the emoji panel in Samsung Keyboard and look for the kaomoji or text-emoticon section. If it is missing, installing Gboard adds a dedicated kaomoji tab.' },
     { q: 'Is there a faster way than typing kaomoji?', a: 'Yes. Copying a ready-made kaomoji from a library and pasting it is the fastest method and works identically on every device with no setup.' }
   ]
+},
+
+/* ===================================================================== */
+{
+  slug: 'why-is-my-name-showing-as-boxes',
+  crumb: 'Name Showing as Boxes',
+  pageTitle: 'Why Is My Name Showing as Boxes or Question Marks?',
+  metaDesc: "Your styled name saved fine but shows as □ or ??? to friends or inside a game. That's a missing-glyph (tofu) problem on the other device — here's the quick fix and which styles are safe.",
+  h1: 'Why Is My Name Showing as Boxes or Question Marks?',
+  tagline: 'You set a fancy name, it looked perfect — then a friend (or the game) shows it as □□□ or ???. Nothing is broken on your end. The other device just can’t draw those characters.',
+  shortAnswer: 'Because the app, game or phone that’s <em>displaying</em> your name doesn’t have a picture (a glyph) for the fancy characters you used, so it draws an empty box (□) or a question mark instead. This is called <strong>tofu</strong>, and it’s decided by the <strong>viewer’s</strong> device, not yours — which is why your name looks fine to you and broken to them. The fix is to switch to a widely-supported style: <strong>bold, italic, small caps</strong> and <strong>script</strong> render almost everywhere, while <strong>fraktur, double-struck, zalgo and rare symbols</strong> are the ones that box out.',
+  oneLiner: '<strong>Safe:</strong> bold · italic · small caps · script. <strong>Boxes out:</strong> fraktur · double-struck · zalgo · rare symbols.',
+  sections: [
+    {
+      label: 'What’s happening',
+      h2: 'It’s a missing glyph, not corrupted text',
+      bodyHtml: `<div class="editorial-block">
+    <p>Your name is ordinary Unicode text — the fancy letters are real characters. To show them, each device reaches into <em>its own</em> fonts for a matching picture. When a font has no picture for a character, it falls back to the “not defined” box (□) or a <code>?</code>. Old phones, game clients with a small built-in font, and some desktop apps hit this most.</p>
+    <p>The key point: the box is drawn where the name is <strong>read</strong>, so the same name can look perfect on your phone and broken on someone else’s. See the full mechanism in <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a> and <a href="/guide/boxes-vs-mojibake-vs-question-marks/">boxes vs mojibake vs question marks</a>.</p>
+  </div>`
+    },
+    {
+      label: 'The quick fix',
+      h2: 'Swap to a style that renders everywhere',
+      bodyHtml: `<div class="editorial-block">
+    <p>Re-generate the same name in a more compatible style and paste it again:</p>
+    <ul>
+      <li><strong>Keep:</strong> bold, italic, bold-italic, small caps, script — these use characters nearly every font covers.</li>
+      <li><strong>Drop:</strong> fraktur/blackletter, double-struck, zalgo (stacked marks) and long runs of rare symbols — these are the usual culprits.</li>
+    </ul>
+    <p class="mood-example">𝗕𝗼𝗹𝗱 · 𝘐𝘵𝘢𝘭𝘪𝘤 · ꜱᴍᴀʟʟ ᴄᴀᴘꜱ — safe · 𝕯𝖔𝖚𝖇𝖑𝖊 — risky</p>
+  </div>`
+    },
+    {
+      label: 'Names &amp; games',
+      h2: 'In a game, boxes often mean the name will be rejected too',
+      bodyHtml: `<div class="editorial-block">
+    <p>Game name fields usually ship a small built-in font, so a character it can’t draw shows as a box <em>and</em> can trip the game’s filter — some games then refuse to save the name at all. If a symbol shows as □ or <code>?</code> in the preview, treat it as unsupported and replace it before you spend a rename card. More on that in <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Make a name that renders everywhere',
+    p: 'Generate your name in bold, italic or small caps — the styles that display on every device — and copy it in one tap.',
+    href: '/',
+    label: 'Open the Text Generator →'
+  },
+  related: 'Related: <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>, <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>, <a href="/answers/do-fancy-fonts-work-on-iphone/">do fancy fonts work on iPhone</a>, and <a href="/answers/why-fancy-text-looks-different-on-iphone-vs-android/">iPhone vs Android</a>.',
+  faq: [
+    { q: 'Why is my name showing as boxes?', a: 'Because the device or app displaying your name has no glyph for the fancy characters you used, so it draws an empty .notdef box instead. It is a missing-font problem on the viewer’s side, not corrupted text, and it happens most with fraktur, double-struck, zalgo and rare symbols.' },
+    { q: 'Why does my name show as question marks instead of boxes?', a: 'Same cause, different fallback. Some systems substitute a question mark for an unsupported character rather than a box. Both mean the character could not be rendered on that device.' },
+    { q: 'How do I fix a name that shows as boxes?', a: 'Re-create it in a widely-supported style — bold, italic, small caps or script — and avoid fraktur, double-struck, zalgo and obscure symbols. Those safe styles render on virtually every phone and app.' },
+    { q: 'Why does it look fine on my phone but broken to others?', a: 'The box is drawn by the reader’s device using its own fonts. Your phone has the glyph, theirs does not, so the same text renders on yours and boxes out on theirs — especially on older devices.' },
+    { q: 'Do boxes mean my account got hacked or my text got corrupted?', a: 'No. The underlying characters are intact; only the picture is missing on that device. Copy the name into a plain-text field and it is still the same text.' }
+  ]
+},
+
+/* ===================================================================== */
+{
+  slug: 'why-was-my-game-name-rejected',
+  crumb: 'Game Name Rejected',
+  pageTitle: 'Why Was My Game Name Rejected?',
+  metaDesc: "Free Fire, PUBG, Roblox or Valorant won't save your stylish name? Games filter certain characters and count styled letters toward a tight limit. Here's why it's rejected and how to fix it before you spend a rename card.",
+  h1: 'Why Was My Game Name Rejected?',
+  tagline: 'You paste a decorated name, hit save, and the game says it’s invalid — or silently strips it. Two things are almost always behind it.',
+  shortAnswer: 'Games run a <strong>name filter</strong> that only accepts certain characters, and a <strong>length limit</strong> where fancy Unicode letters and decorative glyphs often count for <em>more</em> than they look. So a name can be rejected because it contains a character the game blocks, because it’s over the limit once the styled characters are counted, or because it’s already taken. The fix is to keep decoration light, use symbols the game is known to accept, and <strong>preview before you spend a rename card</strong>.',
+  oneLiner: '<strong>Rejected because:</strong> a blocked character · over the (styled-counted) limit · name already taken.',
+  sections: [
+    {
+      label: 'Reason 1',
+      h2: 'The character filter blocks it',
+      bodyHtml: `<div class="editorial-block">
+    <p>Each game whitelists a range of characters. Simple frames and symbols (like ꧁ ꧂, ★, ツ) usually pass, but heavy math-styled letters, emoji, currency signs and rare codepoints are often <strong>rejected outright</strong> or shown as a box/<code>?</code>. If a character shows as □ in the preview, the game can’t render it — and frequently won’t save it. Restricted or banned <em>words</em> are filtered too, even with look-alike letters.</p>
+  </div>`
+    },
+    {
+      label: 'Reason 2',
+      h2: 'Styled letters eat the character limit',
+      bodyHtml: `<div class="editorial-block">
+    <p>Name fields are short, and a “fancy” letter is often built from more than one underlying character, so a name that <em>looks</em> short can still be over the limit. Rough limits to plan around, mobile games first:</p>
+    <ul>
+      <li><strong>Free Fire</strong> — about 12 characters</li>
+      <li><strong>PUBG Mobile</strong> — 14 characters (the PC game allows more)</li>
+      <li><strong>Mobile Legends</strong> — a short limit, and only a few special characters before the name is rejected</li>
+      <li><strong>Roblox</strong> — the <em>display name</em> rejects most decorative Unicode (“unsupported characters”); the <em>@username</em> is letters, numbers and a single underscore only</li>
+      <li><strong>Valorant / Riot</strong> — a Riot ID is a name plus a short letters-and-numbers tag; heavily-styled text is commonly rejected</li>
+    </ul>
+    <p>Treat these as guidance and check in-game — limits and filters change with updates. For the full allowed-character rules on the PC and console games (<strong>Roblox, Fortnite, Valorant and COD</strong>), see the <a href="/guide/game-username-allowed-symbols/">allowed characters in game usernames</a> guide.</p>
+  </div>`
+    },
+    {
+      label: 'The fix',
+      h2: 'Don’t waste a rename card',
+      bodyHtml: `<div class="editorial-block">
+    <p>Renames often cost real currency, so test first: paste your styled name into the field and watch the preview. If every character renders and it fits, save it; if anything shows as a box or gets stripped, simplify. Keep 2–3 decorative symbols at most, prefer frames the game clearly supports, and keep a plain fallback ready. If your name shows as boxes, see <a href="/answers/why-is-my-name-showing-as-boxes/">why is my name showing as boxes</a>.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Build a name that the game accepts',
+    p: 'Generate a decorated name, keep the styling light, and copy it to test in the field before you commit a rename.',
+    href: '/',
+    label: 'Open the Name Generator →'
+  },
+  related: 'Related: the full <a href="/guide/game-username-allowed-symbols/">allowed characters in game usernames</a> guide, <a href="/answers/why-is-my-name-showing-as-boxes/">why is my name showing as boxes</a>, <a href="/answers/how-to-make-a-blank-name/">how to make a blank name</a>, and <a href="/answers/where-do-fancy-fonts-work-username-vs-display-name/">username vs display name</a>.',
+  faq: [
+    { q: 'Why won’t my Free Fire / PUBG name save?', a: 'Usually because a character in it is outside the game’s allowed set (so it is rejected or shown as a box), or because the styled characters push the name over the length limit — roughly 12 for Free Fire and 14 for PUBG Mobile. Simplify the styling and keep it short.' },
+    { q: 'Why does Roblox say my name has unsupported characters?', a: 'Roblox filters display names through the same checks as usernames and rejects most decorative Unicode with an “unsupported characters” message. The @username is even stricter: letters, numbers and one underscore only. Use plain or lightly-styled text there.' },
+    { q: 'Do fancy characters count as more than one character in a game name?', a: 'Often, yes. Many styled letters are built from multiple underlying code units, so a name that looks short can exceed the limit. If you are near the cap, remove decoration or use fewer symbols.' },
+    { q: 'How do I avoid wasting a rename card?', a: 'Preview the name in the field before confirming. If every character renders and it fits the limit, save it; if anything shows as a box or is stripped out, fix it first. Keep decoration to a couple of well-supported symbols.' },
+    { q: 'Which symbols are safest for game names?', a: 'Common decorative frames and symbols such as ꧁ ꧂, brackets, stars and ツ tend to be accepted, while emoji, currency signs and rare codepoints are the ones most often rejected or boxed. Test in-game to be sure.' }
+  ]
+},
+
+/* ===================================================================== */
+{
+  slug: 'how-to-make-a-blank-name',
+  crumb: 'Blank / Invisible Name',
+  pageTitle: 'How to Make a Blank (Invisible) Name',
+  metaDesc: "Want a blank or invisible username in a game, on Discord, Steam or WhatsApp? A normal space gets trimmed, so you paste an invisible Unicode character instead. Here's how — and the catch.",
+  h1: 'How to Make a Blank (Invisible) Name',
+  tagline: 'A plain spacebar space almost always gets stripped, so the name comes back as “required” or reverts. The trick is a character that’s invisible but still counts as text.',
+  shortAnswer: 'Type a normal space and most apps trim it, so you can’t save an empty name that way. Instead you paste an <strong>invisible Unicode character</strong> that the field treats as a real letter but draws as nothing — the most reliable one is the <strong>Hangul Filler (U+3164)</strong>. Copy it, paste it into the name field, and the name shows blank. Two honest caveats: <strong>which invisible character works varies by app and can change with updates</strong>, and some games consider blank names against the rules, so there’s a small reset/ban risk.',
+  oneLiner: '<strong>How:</strong> paste an invisible character (e.g. Hangul Filler ㅤ) where a space would go. <strong>Catch:</strong> support varies by app and patch.',
+  sections: [
+    {
+      label: 'Why a space fails',
+      h2: 'Normal spaces get trimmed',
+      bodyHtml: `<div class="editorial-block">
+    <p>Most name fields strip leading, trailing and empty spaces so people can’t register a nameless or space-only account. A regular space therefore either disappears or triggers a “name required” error. An invisible character avoids this because, to the app, it’s a normal text character that just happens to have no visible shape.</p>
+  </div>`
+    },
+    {
+      label: 'How to do it',
+      h2: 'Paste an invisible character',
+      bodyHtml: `<div class="editorial-block">
+    <ol>
+      <li>Copy an invisible character from the <a href="/symbol/invisible-character/">invisible character tool</a> (the Hangul Filler ㅤ is the most widely accepted).</li>
+      <li>Paste it into the name field where you want the blank.</li>
+      <li>Some games reject a <em>single</em> invisible character because that “name” is already taken — paste it <strong>2–3 times</strong> to make it unique while still looking empty.</li>
+    </ol>
+    <p>The same trick makes an <strong>invisible space between words</strong> in games that block the spacebar.</p>
+  </div>`
+    },
+    {
+      label: 'The catch',
+      h2: 'Support varies — and some games ban it',
+      bodyHtml: `<div class="editorial-block">
+    <p>There’s no single character that works everywhere forever. Apps and games update their filters, so a character that works today (Hangul Filler, or fallbacks like Braille Blank U+2800) can stop working after a patch, and a blocked one shows up as a literal box or <code>?</code>. A few games also treat blank/invisible names as a rules violation and may reset the name or act on the account. So: <strong>test on the exact app</strong>, and don’t rely on a blank name where a reset would cost you.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Get an invisible character',
+    p: 'Copy a blank/invisible character in one tap, then paste it into any name, bio or message field.',
+    href: '/symbol/invisible-character/',
+    label: 'Open the Invisible Character Tool →'
+  },
+  related: 'Related: <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>, <a href="/answers/where-do-fancy-fonts-work-username-vs-display-name/">username vs display name</a>, and <a href="/answers/why-is-my-name-showing-as-boxes/">why is my name showing as boxes</a>.',
+  faq: [
+    { q: 'How do I make a blank name in a game?', a: 'Copy an invisible Unicode character — the Hangul Filler (U+3164) is the most reliable — and paste it into the name field instead of a space. If a single one is rejected as already taken, paste it two or three times so the name is unique but still looks empty.' },
+    { q: 'Why doesn’t a normal space work for a blank name?', a: 'Because apps trim leading, trailing and empty spaces to stop nameless accounts, so a spacebar space is removed or triggers a “name required” error. An invisible character is treated as real text, so it survives.' },
+    { q: 'Which invisible character should I use?', a: 'Start with the Hangul Filler (U+3164). If an app rejects it or shows a box, try an alternative such as the Braille Pattern Blank (U+2800). Which one is accepted depends on the app and can change with updates, so test on the target.' },
+    { q: 'Can I get banned for a blank or invisible name?', a: 'On most social apps it is harmless. In some games a blank or invisible name is against the rules and can be reset or flagged, so use it where a name reset would not cost you, and check the game’s policy.' },
+    { q: 'Does a blank name work on Discord, Steam and WhatsApp?', a: 'The display-name and profile-name fields on these accept invisible characters, so a blank name generally works — but support shifts with updates, and the @username/handle fields do not allow it. Test on the specific app.' }
+  ]
+},
+
+/* ===================================================================== */
+{
+  slug: 'where-do-fancy-fonts-work-username-vs-display-name',
+  crumb: 'Username vs Display Name',
+  pageTitle: 'Where Do Fancy Fonts Work — Username or Display Name?',
+  metaDesc: "Getting an “invalid characters” error pasting a fancy font? It goes in the display name, not the @username. Here's the rule, a per-platform table, and the exceptions where fancy text never works.",
+  h1: 'Where Do Fancy Fonts Work — Username or Display Name?',
+  tagline: 'You paste a stylish name, it’s rejected as “invalid characters,” and you assume fancy fonts don’t work here. They do — you just put them in the wrong field.',
+  shortAnswer: 'Fancy Unicode goes in your <strong>display name / nickname / bio</strong>, <strong>not</strong> your <strong>@username (handle)</strong>. Handles are the address people use to find and @-mention you, so nearly every app restricts them to plain ASCII — lowercase letters, numbers, dots and underscores — and rejects pasted fonts with an “invalid characters” error. The display name is a label, so it accepts styled Unicode. Put the style in the display field and leave the handle plain.',
+  oneLiner: '<strong>@username</strong> = plain ASCII (rejects fonts). <strong>Display name / bio</strong> = styled Unicode (accepts them).',
+  sections: [
+    {
+      label: 'The rule',
+      h2: 'Two fields, two very different rules',
+      bodyHtml: `<div class="editorial-block">
+    <p>Almost every profile has two name fields:</p>
+    <ul>
+      <li><strong>@username / handle</strong> — unique, used in your URL and @-mentions. Restricted to letters, numbers, <code>.</code> and <code>_</code>. Paste a font and you get “username can only use letters, numbers, underscores and periods.”</li>
+      <li><strong>Display name / nickname / bio</strong> — a human-readable label, not an address. Accepts styled Unicode, emoji and spaces.</li>
+    </ul>
+    <p>So the fix for “invalid characters” is almost always: move the fancy text out of the handle and into the display name.</p>
+  </div>`
+    },
+    {
+      label: 'By platform',
+      h2: 'Where the fancy text goes',
+      bodyHtml: `<div class="editorial-block">
+    <p>Same pattern across the board — style the field on the right, keep the handle plain:</p>
+    <ul>
+      <li><strong>Instagram / TikTok</strong> — handle plain; style the <em>Name</em> / <em>Nickname</em> and bio.</li>
+      <li><strong>Discord</strong> — username plain; style the <em>display name</em> and server nickname.</li>
+      <li><strong>WhatsApp</strong> — style the profile <em>name</em> and About (its new @username is plain).</li>
+      <li><strong>X / YouTube / Telegram</strong> — handle plain; style the <em>display name</em> / channel name / first name.</li>
+    </ul>
+    <p>Game names follow the same split — style the display name and keep any tag plain. For the per-game character rules, see <a href="/guide/game-username-allowed-symbols/">allowed characters in game usernames</a> and <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>.</p>
+  </div>`
+    },
+    {
+      label: 'Exceptions',
+      h2: 'Where fancy text genuinely doesn’t work',
+      bodyHtml: `<div class="editorial-block">
+    <p>A few fields reject styled text even though they’re display names:</p>
+    <ul>
+      <li><strong>Facebook</strong> — the real-name field blocks symbols, unusual capitalization and mixed scripts by policy (bio and posts are fine).</li>
+      <li><strong>Twitch</strong> — the Latin display name can only change capitalization, not font.</li>
+      <li><strong>LinkedIn</strong> — the headline stopped accepting stylized Unicode, and a styled name can make you invisible to recruiter search. See <a href="/answers/is-linkedin-bold-text-safe/">is LinkedIn bold text safe</a>.</li>
+    </ul>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Style the right field',
+    p: 'Generate your name in a style that works in display names and bios, then copy it — and keep your @handle plain.',
+    href: '/',
+    label: 'Open the Text Generator →'
+  },
+  related: 'Related: <a href="/answers/why-wont-instagram-accept-my-fancy-username/">why won’t Instagram accept my fancy username</a>, <a href="/answers/why-wont-discord-accept-fancy-username/">why won’t Discord accept a fancy username</a>, <a href="/answers/why-was-my-game-name-rejected/">why was my game name rejected</a>, and the <a href="/guide/game-username-allowed-symbols/">game username allowed characters</a> guide.',
+  faq: [
+    { q: 'Why do I get “invalid characters” when I paste a fancy font?', a: 'Because you pasted it into the @username / handle field, which only allows letters, numbers, dots and underscores. Put the styled text in the display name, nickname or bio instead — those accept Unicode.' },
+    { q: 'What is the difference between a username and a display name?', a: 'The username (handle) is your unique address, used in your URL and @-mentions, and is restricted to plain ASCII. The display name is a human-readable label shown above your posts, and it accepts styled Unicode, emoji and spaces.' },
+    { q: 'Can I put a fancy font in my Instagram or TikTok @username?', a: 'No. Handles on Instagram and TikTok are limited to lowercase letters, numbers, periods and underscores. Style the Name / Nickname field and the bio instead, which do accept fancy Unicode.' },
+    { q: 'Which platforms don’t allow fancy display names at all?', a: 'Facebook blocks symbols and unusual formatting in the real-name field by policy, Twitch only lets a Latin display name change capitalization, and LinkedIn no longer accepts stylized Unicode in the headline. Bios and posts on those platforms are usually fine.' },
+    { q: 'Will a fancy display name hurt search or mentions?', a: 'Your handle drives search and @-mentions and stays plain, so those are unaffected. A heavily-styled display name can be harder for screen readers and name search, so keep it readable if discoverability matters.' }
+  ]
+},
+
+/* ===================================================================== */
+{
+  slug: 'do-fancy-fonts-work-with-arabic',
+  crumb: 'Fancy Fonts with Arabic',
+  pageTitle: 'Do Fancy Fonts Work With Arabic?',
+  metaDesc: "You can't “bold” or “italicize” Arabic letters the way you can English — Arabic has no styled-letter Unicode block. Here's how Arabic name decoration actually works, plus the right-to-left gotchas.",
+  h1: 'Do Fancy Fonts Work With Arabic?',
+  tagline: 'You run an Arabic name through a font generator and nothing changes — or it breaks. Arabic decoration works differently from English, and it’s worth knowing why.',
+  shortAnswer: 'Not the same way as English. The “fancy fonts” you see for Latin text come from Unicode’s <strong>Mathematical Alphanumeric</strong> block — bold, italic, script versions of A–Z. <strong>Arabic has no equivalent block</strong>, so there’s no way to turn Arabic letters into bold or cursive Unicode. Arabic decoration (<em>zakhrafa</em>) instead works by wrapping the name in <strong>symbols and frames</strong>, adding decorative marks, and styling any <strong>Latin/transliterated</strong> part of the name. Mixed Arabic-and-Latin text also has right-to-left quirks that can flip the order or show boxes.',
+  oneLiner: '<strong>Arabic:</strong> can’t bold the letters (no Unicode block) — decorate with frames &amp; symbols instead.',
+  sections: [
+    {
+      label: 'Why not',
+      h2: 'There’s no styled-letter block for Arabic',
+      bodyHtml: `<div class="editorial-block">
+    <p>A “bold” Latin letter like <strong>𝗔</strong> is a separate Unicode character that font generators swap in. Unicode only ships those styled alphabets for <strong>Latin, and partly Greek and digits</strong> — not for Arabic script. So a generator can’t make ب into a “bold ب”; the letter simply stays as it is. This is a limit of Unicode, not of any one app.</p>
+  </div>`
+    },
+    {
+      label: 'What works',
+      h2: 'How Arabic decoration actually works',
+      bodyHtml: `<div class="editorial-block">
+    <p>Arabic name styling is built from things that <em>do</em> exist as characters:</p>
+    <ul>
+      <li><strong>Frames and symbols</strong> around the name — ꧁ ꧂, stars, ornaments — which work regardless of script.</li>
+      <li><strong>Decorative and cultural glyphs</strong>, including religious symbols, added around the text.</li>
+      <li><strong>Styling the Latin part</strong> — if your name is written in Latin letters or has a transliterated tag, that part <em>can</em> take bold, italic and other styles.</li>
+    </ul>
+    <p class="mood-example">꧁ اسمك ꧂ · ✦ اسمك ✦</p>
+    <p>The Arabic decoration tool does exactly this — <a href="/ar/zakhrafa/">زخرفة الأسماء</a>.</p>
+  </div>`
+    },
+    {
+      label: 'RTL gotchas',
+      h2: 'Right-to-left and mixed text',
+      bodyHtml: `<div class="editorial-block">
+    <p>Arabic runs right-to-left, so mixing it with Latin letters, numbers or symbols can make parts appear in the “wrong” order, and heavier decorative characters can show as boxes on some apps (especially iPhone-to-Android in messaging). If a decorated name flips direction or boxes out, simplify the symbols and keep the Arabic and Latin parts clearly separated. Boxes here are the same missing-glyph issue as everywhere — see <a href="/answers/why-is-my-name-showing-as-boxes/">why is my name showing as boxes</a>.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Decorate an Arabic name',
+    p: 'Wrap your name in frames and symbols, and style any Latin part — then copy it for your profile or game.',
+    href: '/ar/zakhrafa/',
+    label: 'Open the Arabic Decoration Tool →'
+  },
+  related: 'Related: <a href="/answers/why-fancy-text-removes-accents/">why fancy text removes accents</a>, <a href="/answers/do-fancy-fonts-work-with-vietnamese/">do fancy fonts work with Vietnamese</a>, and <a href="/answers/why-is-my-name-showing-as-boxes/">why is my name showing as boxes</a>.',
+  faq: [
+    { q: 'Can you make Arabic text bold or italic with a font generator?', a: 'No. The bold and italic “fonts” come from Unicode’s Mathematical Alphanumeric block, which only covers Latin (and some Greek and digits). Arabic has no such block, so Arabic letters cannot be converted to bold or cursive Unicode.' },
+    { q: 'How do you make a fancy Arabic name then?', a: 'By decorating around the letters: wrapping the name in frames and symbols (like ꧁ ꧂ or stars), adding ornamental or cultural glyphs, and styling any Latin or transliterated part of the name, which can take normal fancy fonts.' },
+    { q: 'Why does my mixed Arabic and English name appear in the wrong order?', a: 'Arabic is right-to-left and Latin is left-to-right, so mixing them can reorder parts of the name on some apps. Keeping the Arabic and Latin sections separate, and using fewer symbols between them, usually fixes the direction.' },
+    { q: 'Why does my decorated Arabic name show as boxes?', a: 'Because the viewing device lacks a glyph for one of the decorative characters, so it draws a box. It is the same missing-font issue as any other script — use simpler, widely-supported symbols and it renders reliably.' },
+    { q: 'Do these decorated Arabic names work in games like PUBG and Free Fire?', a: 'Frames and common symbols around an Arabic name usually work, but each game filters characters and limits length, and rare glyphs can be rejected or boxed. Keep the decoration light and test in the field before spending a rename card.' }
+  ]
+},
+
+/* ===================================================================== */
+{
+  slug: 'what-are-discord-display-name-styles',
+  crumb: 'What Are Discord Display Name Styles',
+  pageTitle: 'What Are Discord Display Name Styles?',
+  metaDesc: "Display Name Styles are a paid Nitro feature that gives your Discord display name a font, a colour and an animated effect. Here's exactly where each part shows up, why servers strip the colour, and the free Unicode alternative.",
+  h1: 'What Are Discord Display Name Styles?',
+  tagline: 'A Nitro feature with three parts — font, colour, effect — and each part survives in a different set of places. That mismatch is why your styled name never looks the same in a server as it does on your profile.',
+  shortAnswer: '<strong>Display Name Styles</strong> are a <strong>paid Discord Nitro feature</strong> that restyles your display name with a built-in <strong>font</strong>, a <strong>colour</strong> and an <strong>animated effect</strong>. The three parts do <em>not</em> travel together: inside a server, your <strong>role colour takes precedence</strong>, so the font carries over but the colour and effect generally do not. On mobile, everything renders <strong>static</strong> — no animation. If you don\'t have Nitro, <strong>Unicode fonts</strong> are the free alternative: they aren\'t a Discord feature at all, so they work on every account and in fields Nitro styles never reach.',
+  oneLiner: '<strong>Nitro Display Name Styles:</strong> font + colour + effect, display name only, animation on desktop. <strong>Free Unicode fonts:</strong> letterform only, but every account and nearly every field.',
+  sections: [
+    {
+      label: 'What it is',
+      h2: 'Display Name Styles, in one paragraph',
+      bodyHtml: `<div class="editorial-block">
+    <p>Discord launched Display Name Styles as a <strong>Nitro perk in late October 2025</strong>, reaching all Nitro subscribers by early December, and has kept adding options since — a rounded, comic-style <strong>Playpen Sans</strong> font and a <strong>“Gummy” effect</strong> that alternates colour letter by letter were both announced during 2026.</p>
+    <p>A style is made of three separate pieces:</p>
+    <ul>
+      <li><strong>Font</strong> — a different letterform for your display name, drawn by Discord.</li>
+      <li><strong>Colour</strong> — a colour or gradient applied to the name.</li>
+      <li><strong>Effect</strong> — motion or per-letter treatment layered on top.</li>
+    </ul>
+    <p>It applies to your <strong>display name only</strong> — never your <code>@username</code>, which stays lowercase Latin, digits, underscores and periods. You can also set a <strong>different style per server</strong> through your per-server profile.</p>
+    <p class="mood-example">Display name → styled &nbsp;·&nbsp; @username → never styled</p>
+  </div>`
+    },
+    {
+      label: 'Where it shows',
+      h2: 'Where each part of the style actually survives',
+      bodyHtml: `<div class="editorial-block">
+    <p>This is the part almost nobody explains, and it is the whole reason a style looks different depending on where you see it. The <strong>font</strong> is the durable piece; the <strong>colour and effect</strong> are the fragile ones.</p>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th scope="col">Where</th><th scope="col">Font</th><th scope="col">Colour &amp; effect</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Your profile / profile panel</td><td>Yes</td><td>Yes — the full style</td></tr>
+          <tr><td>DM and group-chat member lists</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>DM list (sidebar)</td><td>Yes</td><td>Hover to see it</td></tr>
+          <tr><td>Message author names</td><td>Yes</td><td>Hover to see it</td></tr>
+          <tr><td>Inside a server</td><td>Yes</td><td><strong>No — your role colour wins</strong></td></tr>
+          <tr><td>Your <code>@username</code></td><td>No</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>So if you bought Nitro mainly to have a coloured, animated name in the servers you're active in, that is the one place the colour and effect are most likely to be overridden — the server's role styling takes priority there.</p>
+  </div>`
+    },
+    {
+      label: 'Desktop vs mobile',
+      h2: 'Why the animation disappears on your phone',
+      bodyHtml: `<div class="editorial-block">
+    <p>Animated effects play on <strong>desktop</strong>. On <strong>mobile</strong>, the font, colour and effect still appear, but they render <strong>static</strong> — the motion is dropped.</p>
+    <p>That matters more than it sounds: most people read Discord on a phone. A style chosen for how it moves on desktop is, for a large share of the people looking at it, just a colour.</p>
+  </div>`
+    },
+    {
+      label: 'Compared',
+      h2: 'Display Name Styles vs. Unicode fonts',
+      bodyHtml: `<div class="editorial-block">
+    <p>These are two different mechanisms, not two versions of the same thing. Nitro styles are <strong>rendered by Discord</strong>. Unicode fonts are <strong>real characters</strong> you paste — the letters themselves are different codepoints, so no app has to support anything.</p>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">Paid — Nitro Display Name Styles</span>
+        <h4>Rendered by Discord</h4>
+        <ul>
+          <li>Requires an active Nitro subscription</li>
+          <li>Font <em>plus</em> colour and animated effect</li>
+          <li>Display name only, and can differ per server</li>
+          <li>Colour and effect overridden by role colour in servers</li>
+          <li>Static on mobile — no animation</li>
+          <li>Stops working if Nitro lapses</li>
+          <li>Discord only</li>
+        </ul>
+      </div>
+      <div class="compare-card variant-positive">
+        <span class="compare-badge">Free — Unicode fonts</span>
+        <h4>Real characters you paste</h4>
+        <ul>
+          <li>Free, and works on every account</li>
+          <li>Letterform only — no colour, no animation</li>
+          <li>Works in display names, server nicknames, About Me, messages and channel names</li>
+          <li>Not affected by role colour</li>
+          <li>Identical on desktop and mobile</li>
+          <li>Yours permanently once pasted</li>
+          <li>Pastes into Instagram, TikTok, games and anywhere else too</li>
+        </ul>
+      </div>
+    </div>
+    <p>The honest trade: Nitro buys you <strong>colour and motion</strong>, which Unicode genuinely cannot do. Unicode buys you <strong>reach</strong> — more fields, every account, every device, and no subscription to keep paying. Plenty of people use both: a Unicode letterform inside a Nitro colour.</p>
+  </div>`
+    },
+    {
+      label: 'No Nitro',
+      h2: 'What to do if you don’t have Nitro',
+      bodyHtml: `<div class="editorial-block">
+    <p>Paste a Unicode font into your display name. Nothing needs to be enabled, and it works on free, Classic and Nitro accounts alike:</p>
+    <ol>
+      <li>Generate the style you want and copy it.</li>
+      <li><strong>User Settings → Profile</strong>, paste it into <strong>Display Name</strong>, save.</li>
+      <li>For one server only, use <strong>Edit Server Profile</strong> and paste it into the nickname field instead.</li>
+    </ol>
+    <p class="mood-example">𝗔𝗹𝗲𝘅 · 𝘈𝘭𝘦𝘹 · 𝒜𝓁𝑒𝓍 · ᴀʟᴇx · 𝔄𝔩𝔢𝔵</p>
+    <p>Two cautions worth knowing before you commit a name to it. Rarer styles such as fraktur and double-struck can render as empty boxes on devices missing those glyphs — see <a href="/guide/why-fonts-show-as-boxes/">why fonts show as boxes</a>. And screen readers announce these characters awkwardly, which is covered in the <a href="/guide/fancy-fonts-accessibility-guide/">accessibility guide</a>.</p>
+  </div>`
+    }
+  ],
+  cta: {
+    h3: 'Style your Discord name for free',
+    p: 'Generate a Unicode display name that works on any account, in any server, on desktop and mobile — no Nitro, no subscription.',
+    href: '/discord/',
+    label: 'Open the Discord Font Generator →'
+  },
+  related: 'Related: <a href="/answers/do-you-need-nitro-for-discord-fonts/">do you need Nitro for Discord fonts</a>, <a href="/answers/discord-allowed-characters/">Discord allowed characters</a>, <a href="/guide/discord-text-formatting-explained/">Discord text formatting explained</a>, and <a href="/guide/discord-safe-name-styling/">Discord-safe name styling</a>.',
+  faq: [
+    { q: 'What are Discord Display Name Styles?', a: 'They are a paid Discord Nitro feature that restyles your display name with a built-in font, a colour and an animated effect. They apply to the display name only, never to your @username, and you can set a different style for each server through your per-server profile.' },
+    { q: 'Do you need Nitro for Discord Display Name Styles?', a: 'Yes. Display Name Styles are a Nitro feature and stop applying if the subscription lapses. Unicode fonts are the free alternative — they are ordinary characters you paste rather than a Discord feature, so they work on free, Classic and Nitro accounts alike.' },
+    { q: 'Why does my Display Name Style not show its colour in a server?', a: 'Because your role colour takes precedence inside servers. The font carries over, but the style colour and effect are generally overridden by the server role colour or enhanced role styling. The full style shows on your profile and in DM and group-chat member lists.' },
+    { q: 'Why is my Display Name Style not animated on mobile?', a: 'Animation plays on desktop only. On mobile the font, colour and effect still appear, but they render static. Nothing is broken — that is how the feature behaves on phones.' },
+    { q: 'Can Display Name Styles change my Discord username?', a: 'No. Only the display name can be styled. The @username stays restricted to lowercase letters, numbers, underscores and periods, and no Nitro feature or Unicode font changes that.' },
+    { q: 'Are Unicode fonts better than Nitro Display Name Styles?', a: 'Neither is strictly better — they do different things. Nitro adds colour and animation, which Unicode cannot do at all. Unicode fonts are free, work on every account and device, keep working in server nicknames, About Me, messages and channel names, and paste into other platforms. Many people combine the two.' }
+  ]
 }
 
 ];

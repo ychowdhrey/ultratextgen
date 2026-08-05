@@ -27,7 +27,9 @@ import csv
 import functools
 import importlib.util
 import os
+import re
 import textwrap
+from html import unescape
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -77,6 +79,42 @@ for _loc, (_fname, _t, _s) in ART.LOCALIZED_HOME.items():
     LOCALIZED_HOME_BY_SLUG[_loc] = (_t, _s)
 
 
+_TITLE_TAG_RE = re.compile(r"<title[^>]*>([^<]*)</title>", re.I)
+_DESC_TAG_RE = re.compile(r'<meta[^>]*name="description"[^>]*content="([^"]*)"', re.I)
+_SITE_SUFFIX_RE = re.compile(r"\s*[|—–-]\s*UltraTextGen[^|—–-]*$")
+
+
+def url_to_filepath(page_url):
+    path = page_url.replace(DOMAIN, "").strip("/")
+    return os.path.join(ROOT, path, "index.html") if path else os.path.join(ROOT, "index.html")
+
+
+def page_meta_fallback(page_url):
+    """Last-resort (title, sub) built from the page's OWN <title>/meta
+    description, for pages not registered in ART.PAGES/LOCALIZED_HOME_BY_SLUG/
+    GUIDE.GUIDES. Every indexable page already carries real, page-specific
+    copy in its <head> — reuse it instead of a generic ptype-derived string,
+    which otherwise collides across every unregistered page (see the
+    2026-07-24 pins-backlog build: 994/2402 pages shared one fallback title)."""
+    fp = url_to_filepath(page_url)
+    if not os.path.isfile(fp):
+        return None
+    html_text = open(fp, encoding="utf-8").read()
+    m = _TITLE_TAG_RE.search(html_text)
+    if not m:
+        return None
+    title = _SITE_SUFFIX_RE.sub("", unescape(m.group(1)).strip()).strip(" -—–|")
+    if not title:
+        return None
+    m2 = _DESC_TAG_RE.search(html_text)
+    sub = unescape(m2.group(1)).strip() if m2 else ""
+    if not sub:
+        sub = "Copy and paste Unicode fonts and symbols"
+    if len(sub) > 140:
+        sub = sub[:137].rsplit(" ", 1)[0].rstrip(" ,.;:") + "…"
+    return title, sub
+
+
 def resolve_design(slug, row):
     """Return (title, subtitle, motif_callable, kicker) for a page slug,
     reusing the existing brand registry wherever possible."""
@@ -95,7 +133,12 @@ def resolve_design(slug, row):
         if gkey in GUIDE.GUIDES:
             title, sub, motif = GUIDE.GUIDES[gkey]
             return title, sub, motif, K_GUIDE
-    # Fallback: should not happen for eligible pages; use a generic brand card.
+    meta = page_meta_fallback(row.get("Page URL", ""))
+    if meta:
+        title, sub = meta
+        return title, sub, ART.m_brand, K_HOME
+    # Last resort: should not happen for eligible pages (page file missing or
+    # has no <title>); use a generic brand card.
     title = (row.get("Primary intent") or slug.replace("-", " ")).title()
     return title, "Copy and paste Unicode fonts and symbols", ART.m_brand, K_HOME
 
@@ -186,6 +229,8 @@ def classify(row):
                        else "utility page")
     if ptype == "embed" or slug.startswith("embed-") or "/embed/" in row["Page URL"]:
         return False, "embed page"
+    if ptype == "updates":
+        return False, "dated status/verification log, not visual pin material"
     # The overview hubs (/category/, /usecase/, /library/, /answers/, /guide/)
     # are kept: each is a strong topical landing page with real keyword + visual
     # intent, not pure navigation.
@@ -510,7 +555,7 @@ def utm_url(page_url, slug):
 # ---------------------------------------------------------------- main
 COLUMNS = [
     "page_url", "page_path", "page_type", "primary_intent", "priority",
-    "search_volume", "include_in_pinterest", "exclusion_reason",
+    "include_in_pinterest", "exclusion_reason",
     "og_image_path", "pinterest_image_path", "pinterest_image_width",
     "pinterest_image_height", "pinterest_board_primary",
     "pinterest_board_secondary", "pin_title", "pin_description",
@@ -542,7 +587,6 @@ def main():
         if intent == "/" or not intent:
             intent = slug.replace("-", " ")
         priority = (row.get("Priority") or "").strip()
-        svol = (row.get("Search volume") or "").strip()
         og = (row.get("OG image path") or "").strip()
 
         rec = {c: "" for c in COLUMNS}
@@ -552,7 +596,6 @@ def main():
             "page_type": ptype,
             "primary_intent": intent,
             "priority": priority,
-            "search_volume": svol,
             "og_image_path": og,
             "pin_status": "pending",
         })
@@ -581,8 +624,14 @@ def main():
                 ptitle = ptitle[:88].rsplit(" ", 1)[0].rstrip(" —:|")
             if len(ptitle) < 40:
                 ptitle = f"{ptitle} | UltraTextGen"
-            while ptitle in used_titles:
+            while ptitle in used_titles and len(ptitle) <= 96:
                 ptitle += " ·"
+            if ptitle in used_titles:
+                # extremely rare: still colliding at the length cap — force
+                # uniqueness with a truncated slug suffix, never exceeding
+                # pinterest_csv.py's TITLE_MAX (100 chars).
+                suffix = f" [{slug[-12:]}]"
+                ptitle = ptitle[:100 - len(suffix)].rstrip(" —:|,.") + suffix
         used_titles.add(ptitle)
 
         pin_path = f"assets/pinterest/{slug}.png"

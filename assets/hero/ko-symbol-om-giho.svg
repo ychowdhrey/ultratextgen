@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340"
+     width="1200" height="340" role="img">
+  
+  <defs>
+    <linearGradient id="ghkosymbol" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="gvhkosymbol" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowhkosymbol" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dotshkosymbol" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#1a1a2e" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="20" fill="#FBFBFE"/>
+  <rect width="1200" height="340" rx="20" fill="url(#dotshkosymbol)"/>
+  <circle cx="1010" cy="60" r="260" fill="url(#glowhkosymbol)"/>
+  <rect x="0" y="0" width="8" height="340" fill="url(#gvhkosymbol)"/>
+  <g transform="translate(740 -10) scale(1.02)"><ellipse cx="276.0" cy="180.0" rx="26" ry="14" transform="rotate(0 276.0 180.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="247.9" cy="247.9" rx="26" ry="14" transform="rotate(45 247.9 247.9)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="180.0" cy="276.0" rx="26" ry="14" transform="rotate(90 180.0 276.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="112.1" cy="247.9" rx="26" ry="14" transform="rotate(135 112.1 247.9)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="84.0" cy="180.0" rx="26" ry="14" transform="rotate(180 84.0 180.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="112.1" cy="112.1" rx="26" ry="14" transform="rotate(225 112.1 112.1)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="180.0" cy="84.0" rx="26" ry="14" transform="rotate(270 180.0 84.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="247.9" cy="112.1" rx="26" ry="14" transform="rotate(315 247.9 112.1)" fill="url(#ghkosymbol)" opacity="0.85"/>
+    <circle cx="180" cy="180" r="52" fill="#FBFBFE"/>
+    <circle cx="180" cy="180" r="52" fill="none" stroke="url(#gvhkosymbol)" stroke-width="8"/></g>
+  <g transform="translate(420 -10) scale(0.62)" opacity="0.10"><ellipse cx="276.0" cy="180.0" rx="26" ry="14" transform="rotate(0 276.0 180.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="247.9" cy="247.9" rx="26" ry="14" transform="rotate(45 247.9 247.9)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="180.0" cy="276.0" rx="26" ry="14" transform="rotate(90 180.0 276.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="112.1" cy="247.9" rx="26" ry="14" transform="rotate(135 112.1 247.9)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="84.0" cy="180.0" rx="26" ry="14" transform="rotate(180 84.0 180.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="112.1" cy="112.1" rx="26" ry="14" transform="rotate(225 112.1 112.1)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="180.0" cy="84.0" rx="26" ry="14" transform="rotate(270 180.0 84.0)" fill="url(#ghkosymbol)" opacity="0.85"/><ellipse cx="247.9" cy="112.1" rx="26" ry="14" transform="rotate(315 247.9 112.1)" fill="url(#ghkosymbol)" opacity="0.85"/>
+    <circle cx="180" cy="180" r="52" fill="#FBFBFE"/>
+    <circle cx="180" cy="180" r="52" fill="none" stroke="url(#gvhkosymbol)" stroke-width="8"/></g>
+</svg>

@@ -1,0 +1,128 @@
+{
+  "slug": "geld-emojis",
+  "lang": "de",
+  "title": "Geld-Emojis: 💰 💸 kopieren — Cash- & Reich-Kombos",
+  "meta_description": "Geld-Emojis zum Kopieren und Einfügen — 💰 Geldsack, 💸 fliegendes Geld, 🤑 Geld-Gesicht — plus Reich-Ästhetik-Kombos für Bios und Zahltag-Posts. Tipp auf ein Emoji, um es sofort zu kopieren.",
+  "breadcrumb": "Geld-Emojis",
+  "hero_h1": "Geld-Emojis",
+  "hero_tagline": "Bargeld, Münzen, Banknoten und Reich-Ästhetik-Kombo-Sets für Hustle-Bios und Zahltag-Posts. Klick auf ein Emoji, um es sofort zu kopieren.",
+  "intro": "Geld-Emojis sind das universelle Symbol für Zahltage, Nebenjobs und Reich-Ästhetik-Bios. Diese Seite versammelt das komplette Geld-Cluster — 💰 Geldsack, 💸 Geld mit Flügeln, 🤑 Geld-Mund-Gesicht, 💵 Banknoten in jeder Währung — sowie Banking-, Business- und Luxus-Emojis. Sie tauchen in Hustle-Captions, Finanz-Bios, Zahltag-Gruppenchats und Feier-Posts auf. Für die reinen Text-Zeichen ¢ € ₿ statt Emojis kopierst du besser vom Gradzeichen-Nachbarn Währungszeichen — diese Seite hier gehört ganz den Emojis und Kombos.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/de/library/geld-emojis/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "collection_container_id": "geldSetsContainerDE",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/money-emojis/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/geld-emojis/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/money-emojis/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "related": [
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    },
+    {
+      "href": "/de/library/lenny-face/",
+      "title": "Lenny Face",
+      "desc": "Das klassische Grinse-Textgesicht und seine Varianten."
+    },
+    {
+      "href": "/de/",
+      "title": "Schriftgenerator",
+      "desc": "Verwandle deinen Text in über 100 coole Schriftarten — kostenlos und sofort."
+    }
+  ],
+  "sections": [
+    {
+      "id": "cash-currency",
+      "label": "Bargeld",
+      "h2": "Bargeld- & Währungs-Emojis",
+      "intro": "Säcke, Banknoten und Münzen — das Basis-Geld-Set.",
+      "symbols": [
+        { "char": "💰", "label": "Geldsack" },
+        { "char": "💵", "label": "Dollar-Banknote" },
+        { "char": "💴", "label": "Yen-Banknote" },
+        { "char": "💶", "label": "Euro-Banknote" },
+        { "char": "💷", "label": "Pfund-Banknote" },
+        { "char": "💸", "label": "Geld mit Flügeln" },
+        { "char": "🪙", "label": "Münze" },
+        { "char": "💲", "label": "Fettes Dollarzeichen" },
+        { "char": "💱", "label": "Währungsumtausch" }
+      ]
+    },
+    {
+      "id": "rich-faces",
+      "label": "Reich-Gesichter",
+      "h2": "Reich-Gesichter & Gesten-Emojis",
+      "intro": "Geld-Mund-Grinsen, Kronen und Flexen für den gesicherten Bag.",
+      "symbols": [
+        { "char": "🤑", "label": "Geld-Mund-Gesicht" },
+        { "char": "😎", "label": "Lächelndes Gesicht mit Sonnenbrille" },
+        { "char": "🤝", "label": "Handschlag" },
+        { "char": "🙌", "label": "Erhobene Hände" },
+        { "char": "💪", "label": "Angespannter Bizeps" },
+        { "char": "👑", "label": "Krone" },
+        { "char": "🔥", "label": "Feuer" }
+      ]
+    },
+    {
+      "id": "banking-business",
+      "label": "Banking",
+      "h2": "Banking- & Business-Emojis",
+      "intro": "Banken, Charts und Karten für Finanz-Accounts und Investment-Posts.",
+      "symbols": [
+        { "char": "🏦", "label": "Bank" },
+        { "char": "🏧", "label": "Geldautomat-Zeichen" },
+        { "char": "💳", "label": "Kreditkarte" },
+        { "char": "🧾", "label": "Quittung" },
+        { "char": "📈", "label": "Steigende Chart-Linie" },
+        { "char": "📉", "label": "Fallende Chart-Linie" },
+        { "char": "📊", "label": "Balkendiagramm" },
+        { "char": "💹", "label": "Steigender Chart mit Yen" },
+        { "char": "💼", "label": "Aktenkoffer" },
+        { "char": "🏛️", "label": "Klassisches Gebäude" }
+      ]
+    },
+    {
+      "id": "luxury-bling",
+      "label": "Luxus",
+      "h2": "Luxus- & Bling-Emojis",
+      "intro": "Edelsteine, Champagner und Yachten für die Reich-Ästhetik im Feed.",
+      "symbols": [
+        { "char": "💎", "label": "Edelstein" },
+        { "char": "💍", "label": "Ring" },
+        { "char": "⌚", "label": "Uhr" },
+        { "char": "🛥️", "label": "Motorboot" },
+        { "char": "🏎️", "label": "Rennwagen" },
+        { "char": "🚁", "label": "Hubschrauber" },
+        { "char": "🍾", "label": "Flasche mit knallendem Korken" },
+        { "char": "🥂", "label": "Anstoßende Gläser" },
+        { "char": "✨", "label": "Glitzer" },
+        { "char": "🌟", "label": "Leuchtender Stern" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Kombo-Sets",
+    "h2": "Geld- & Reich-Kombo-Sets",
+    "intro": "Kopiere eine komplette Geld-Kombo mit einem Klick — Reich-Ästhetik-Bios, Hustle-Captions und Zahltag-Energie zum sofortigen Einfügen."
+  },
+  "collections": [
+    { "name": "Reich-Ästhetik-Bio", "flags": ["💰", "✨", "💎", "🤍", "🥂"], "defaultFormat": "inline" },
+    { "name": "Hustle-Modus", "flags": ["💸", "📈", "💪", "🔥", "💼"], "defaultFormat": "inline" },
+    { "name": "Zahltag-Energie", "flags": ["🤑", "💵", "💳", "🛍️", "🎉"], "defaultFormat": "inline" },
+    { "name": "Geldsack-Stapel", "flags": ["💰", "💰", "💰", "💸", "🤑"], "defaultFormat": "inline" },
+    { "name": "Börsen-Watch", "flags": ["📈", "💹", "💻", "☕", "🏦"], "defaultFormat": "inline" },
+    { "name": "Luxus-Lifestyle", "flags": ["💎", "🍾", "🛥️", "⌚", "🌴"], "defaultFormat": "inline" },
+    { "name": "Nebenjob-Bio", "flags": ["💻", "💸", "📦", "🚀", "✨"], "defaultFormat": "inline" },
+    { "name": "Sparziele", "flags": ["🪙", "🏦", "📊", "🎯", "✅"], "defaultFormat": "inline" }
+  ]
+}

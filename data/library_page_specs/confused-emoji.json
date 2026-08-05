@@ -1,0 +1,142 @@
+{
+  "slug": "confused-emoji",
+  "title": "Confused Emoji & Kaomoji: Copy & Paste 😕😖🫤 Baffled Combos",
+  "meta_description": "Confused emoji 😕 😖 🫤, baffled combo sets, and lost-for-words kaomoji like (・・?) for chats, comments, and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/confused-emoji/",
+  "breadcrumb": "Confused Emoji & Kaomoji",
+  "hero_h1": "Confused Emoji & Kaomoji",
+  "hero_tagline": "The 😕 confused face, confounded scrunches, spiral-eyed overload, and baffled kaomoji — every shade of 'I don't get it.' Click any symbol to copy it instantly.",
+  "intro": "The confused emoji 😕 is the face you send when something just won't click — brow furrowed, mouth skewed, genuinely lost. It's the flip side of the 🤔 thinking face: not a deliberate 'let me consider that,' but an honest 'wait, what?' This page gathers the whole baffled range — the confounded scrunch of 😖, the diagonal-mouth uncertainty of 🫤, the spiral-eyed overload of 😵‍💫 when your brain gives out, and the question marks and raised brows you tack on when nothing adds up. When an emoji won't carry it, classic confused kaomoji like (・・?) and (@_@) paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for chats, comments, and replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-confused",
+      "label": "Core Confused Faces",
+      "h2": "Confused & Baffled Face Emojis",
+      "intro": "The everyday confused faces — the ones you reach for when something just isn't adding up.",
+      "symbols": [
+        { "char": "😕", "label": "Confused Face" },
+        { "char": "😖", "label": "Confounded Face" },
+        { "char": "🫤", "label": "Face With Diagonal Mouth" },
+        { "char": "😟", "label": "Worried Face" },
+        { "char": "🙁", "label": "Slightly Frowning Face" },
+        { "char": "😦", "label": "Frowning Face With Open Mouth" }
+      ]
+    },
+    {
+      "id": "baffled-overwhelmed",
+      "label": "Baffled & Overwhelmed",
+      "h2": "Baffled & Overwhelmed Faces",
+      "intro": "When confusion tips into full overload — spinning eyes, woozy stares, and a head about to pop.",
+      "symbols": [
+        { "char": "😵‍💫", "label": "Face With Spiral Eyes" },
+        { "char": "😵", "label": "Dizzy Face" },
+        { "char": "🥴", "label": "Woozy Face" },
+        { "char": "🤯", "label": "Exploding Head" },
+        { "char": "🫠", "label": "Melting Face" },
+        { "char": "😩", "label": "Weary Face" }
+      ]
+    },
+    {
+      "id": "puzzled-reactions",
+      "label": "Puzzled Reactions",
+      "h2": "Puzzled Reactions & Question Marks",
+      "intro": "The raised brow, the shrug, and the question marks you tack on when you genuinely don't get it.",
+      "symbols": [
+        { "char": "🤨", "label": "Face With Raised Eyebrow" },
+        { "char": "❓", "label": "Red Question Mark" },
+        { "char": "❔", "label": "White Question Mark" },
+        { "char": "⁉️", "label": "Exclamation Question Mark" },
+        { "char": "🤷", "label": "Person Shrugging" }
+      ]
+    },
+    {
+      "id": "confused-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Confused Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces for pure bafflement — dazed spins, nervous sweats, and blank stares.",
+      "symbols": [
+        { "char": "(・・?)", "label": "Puzzled Question Kaomoji" },
+        { "char": "(@_@)", "label": "Dazed Spinning Kaomoji" },
+        { "char": "(ーー;)", "label": "Awkward Sweat Kaomoji" },
+        { "char": "(⊙_⊙)", "label": "Wide-Eyed Baffled Kaomoji" },
+        { "char": "(・_・;)", "label": "Nervous Unsure Kaomoji" },
+        { "char": "(￣ヘ￣;)", "label": "Puzzled Frown Kaomoji" },
+        { "char": "( ﾟдﾟ)", "label": "Stunned Blank Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Confused Emoji Combo Sets",
+    "intro": "Copy a complete confused combo in one click — from a mild 'huh?' to total brain overload."
+  },
+  "collection_container_id": "confusedSetsContainer",
+  "collections": [
+    {
+      "name": "Totally Lost",
+      "flags": ["😕", "❓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I Don't Get It",
+      "flags": ["😕", "🤨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wait, What?",
+      "flags": ["🫤", "❓"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Brain Overload",
+      "flags": ["😵‍💫", "🤯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Makes No Sense",
+      "flags": ["😖", "❓", "❔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Huh?!",
+      "flags": ["🤨", "⁉️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Dazed and Confused",
+      "flags": ["🥴", "😵‍💫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "So Many Questions",
+      "flags": ["❓", "❔", "⁉️"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/thinking-emoji/",
+      "title": "Thinking Emoji & Kaomoji",
+      "desc": "Pondering and hmm faces for when you're weighing an idea, not lost."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "The full kaomoji library — every mood from joy to bafflement."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    },
+    {
+      "href": "/library/shocked-emoji/",
+      "title": "Shocked Emoji & Kaomoji",
+      "desc": "Wide-eyed surprise and plot-twist reaction combos."
+    }
+  ]
+}

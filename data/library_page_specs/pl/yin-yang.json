@@ -1,0 +1,74 @@
+{
+  "slug": "yin-yang",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Yin Yang (☯): Skopiuj — Starożytne Korzenie i Jak Go Wpisać",
+  "meta_description": "Skopiuj symbol yin yang (☯, U+262F) — co oznacza, jego starożytne korzenie i jak go wpisać. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/yin-yang/",
+  "breadcrumb": "Yin Yang",
+  "hero_h1": "Symbol Yin Yang (☯)",
+  "hero_tagline": "Co oznacza ☯, jego starożytne korzenie i jak go wpisać — kliknij, aby skopiować.",
+  "intro": "Koncepcja yin-yang wywodzi się ze starożytnej chińskiej kosmologii i stała się centralna dla filozofii taoistycznej: idea, że pozornie przeciwstawne siły — ciemność i światło, bierność i aktywność, kobiecość i męskość — wcale nie są w konflikcie, lecz uzupełniającymi się połówkami jednej całości, z których każda niesie w sobie „ziarno” drugiej. To ziarno przedstawia mała kropka przeciwnego koloru zagnieżdżona w każdej z połówek symbolu. Klasyczny, kolisty, wirowy projekt, formalnie zwany taijitu, osiągnął swoją znaną dziś, nowoczesną formę za czasów dynastii Song, mniej więcej w XI–XII wieku n.e., choć leżąca u jego podstaw koncepcja filozoficzna jest znacznie starsza. Pozostaje jednym z najbardziej rozpoznawalnych na świecie symboli filozofii chińskiej. Symbol działa na Instagramie, Discordzie, TikToku i WhatsAppie, ale nie w nazwach użytkownika Roblox, PlayStation czy Xbox, ograniczonych do znaków alfanumerycznych. Wykracza poza prosty, czterocyfrowy zakres kodów Alt na Windows, więc najłatwiej wpisać go metodą Alt+X w Wordzie (wpisz 262F, a potem naciśnij Alt+X), przez Mapę Znaków, albo skopiować bezpośrednio ze strony referencyjnej. W HTML używa się encji &#9775; — nie ma krótkiej nazwanej encji.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/yin-yang/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/yin-yang/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/yin-yang/" }
+  ],
+  "sections": [
+    {
+      "id": "yin-yang",
+      "label": "Yin Yang",
+      "h2": "Symbol Yin Yang",
+      "intro": "Unicode'owy znak yin yang, formalnie zwany taijitu, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "☯", "label": "Yin Yang (U+262F)" }
+      ]
+    },
+    {
+      "id": "znaki-powiazane",
+      "label": "Znaki Powiązane",
+      "h2": "Powiązane Symbole",
+      "intro": "Znaki bliskie yin yang w kształcie albo w kontekście duchowym.",
+      "symbols": [
+        { "char": "☰", "label": "Trigram I-Ching dla Nieba (U+2630) — pokrewny, lecz odrębny system symboli zbudowany z linii yin/yang" },
+        { "char": "🌗", "label": "Ostatnia Kwadra Księżyca (U+1F317) — wizualnie podobny podział jasne/ciemne, niezwiązane znaczenie" },
+        { "char": "☮", "label": "Symbol Pokoju (U+262E) — inny symbol, czasem łączony z obrazami yin-yang" }
+      ]
+    },
+    {
+      "id": "symbole-wschodnioazjatyckie",
+      "label": "Symbole Wschodnioazjatyckie",
+      "h2": "Powiązane Symbole Duchowe Azji Wschodniej",
+      "intro": "☯ łączy się z ośmioma trigramami I-Ching oraz monogramami i digramami linii yin/yang w sekcji Wschodnioazjatyckich Symboli Duchowych biblioteki symboli religijnych.",
+      "symbols": [
+        { "char": "☮", "label": "Symbol Pokoju" },
+        { "char": "☰", "label": "Trigram Nieba" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/symbol-pokoju/",
+      "title": "Symbol Pokoju (☮)",
+      "desc": "Semaforowy projekt Geralda Holtoma z 1958 roku."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Trigramy, linie yin-yang i symbole wiary w pełnej bibliotece."
+    },
+    {
+      "href": "/library/special-characters/",
+      "title": "Special Characters",
+      "desc": "Interpunkcja, typografia i rzadkie unikodowe ciekawostki."
+    }
+  ]
+}

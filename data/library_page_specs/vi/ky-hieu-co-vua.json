@@ -1,0 +1,340 @@
+{
+  "slug": "ky-hieu-co-vua",
+  "lang": "vi",
+  "title": "Ký Hiệu Cờ Vua: Copy Paste Quân Cờ ♔ ♛",
+  "meta_description": "Xem và sao chép ký hiệu Unicode của quân cờ vua, ô bàn cờ và ký hiệu ghi biên bản. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "breadcrumb": "Ký Hiệu Cờ Vua",
+  "hero_h1": "Ký Hiệu Cờ Vua",
+  "hero_tagline": "Bộ sưu tập tham khảo ký hiệu Unicode của quân cờ vua, ô bàn cờ và ký hiệu ghi biên bản. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "intro": "Thư viện này gồm ký hiệu Unicode của các quân cờ vua — vua, hậu, xe, tượng, mã và tốt, cả bên trắng lẫn bên đen — cùng với các ô bàn cờ và ký hiệu ghi biên bản theo lối đại số. Ký hiệu được sắp xếp theo màu quân và mục đích sử dụng.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/vi/library/ky-hieu-co-vua/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "library_url": "https://ultratextgen.com/vi/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/schach-symbole/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/simbolos-de-xadrez/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/chess-symbols/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/simbolos-de-ajedrez/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/symboles-echecs/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/simbol-catur/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/library/simboli-scacchi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/chess-symbols/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/library/chess-gihou/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/schaaksymbolen/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/symbole-szachowe/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/shakhmatnye-simvoly/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/chess-symbols/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/satranc-sembolleri/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-hieu-co-vua/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/chess-symbols/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "white-pieces",
+      "label": "Quân trắng",
+      "h2": "Quân Cờ Trắng",
+      "intro": "Sáu quân cờ trắng (nét rỗng) chuẩn trong Unicode: vua, hậu, xe, tượng, mã và tốt.",
+      "symbols": [
+        {
+          "char": "♔",
+          "label": "vua trắng"
+        },
+        {
+          "char": "♕",
+          "label": "hậu trắng"
+        },
+        {
+          "char": "♖",
+          "label": "xe trắng"
+        },
+        {
+          "char": "♗",
+          "label": "tượng trắng"
+        },
+        {
+          "char": "♘",
+          "label": "mã trắng"
+        },
+        {
+          "char": "♙",
+          "label": "tốt trắng"
+        }
+      ]
+    },
+    {
+      "id": "black-pieces",
+      "label": "Quân đen",
+      "h2": "Quân Cờ Đen",
+      "intro": "Sáu quân cờ đen (nét đặc) chuẩn trong Unicode, cùng thứ tự.",
+      "symbols": [
+        {
+          "char": "♚",
+          "label": "vua đen"
+        },
+        {
+          "char": "♛",
+          "label": "hậu đen"
+        },
+        {
+          "char": "♜",
+          "label": "xe đen"
+        },
+        {
+          "char": "♝",
+          "label": "tượng đen"
+        },
+        {
+          "char": "♞",
+          "label": "mã đen"
+        },
+        {
+          "char": "♟",
+          "label": "tốt đen"
+        }
+      ]
+    },
+    {
+      "id": "board-symbols",
+      "label": "Bàn cờ",
+      "h2": "Ô Bàn Cờ và Ký Hiệu Ván Đấu",
+      "intro": "Các ký tự ô vuông với nhiều kích thước, dùng để mô tả bàn cờ.",
+      "symbols": [
+        {
+          "char": "⬜",
+          "label": "Ô trắng"
+        },
+        {
+          "char": "⬛",
+          "label": "Ô đen"
+        },
+        {
+          "char": "▪",
+          "label": "Ô đen nhỏ"
+        },
+        {
+          "char": "▫",
+          "label": "Ô trắng nhỏ"
+        },
+        {
+          "char": "◻",
+          "label": "Ô trắng vừa"
+        },
+        {
+          "char": "◼",
+          "label": "Ô đen vừa"
+        }
+      ]
+    },
+    {
+      "id": "extended-symbols",
+      "label": "Quân mở rộng",
+      "h2": "Ký Hiệu Cờ Vua Mở Rộng",
+      "intro": "Quân cờ biến thể và ký hiệu ghi biên bản trong khối Chess Symbols của Unicode, gồm cả quân trung tính và các biến thể xoay.",
+      "symbols": [
+        {
+          "char": "🨀",
+          "label": "vua trung tính"
+        },
+        {
+          "char": "🨁",
+          "label": "hậu trung tính"
+        },
+        {
+          "char": "🨂",
+          "label": "xe trung tính"
+        },
+        {
+          "char": "🨃",
+          "label": "tượng trung tính"
+        },
+        {
+          "char": "🨄",
+          "label": "mã trung tính"
+        },
+        {
+          "char": "🨅",
+          "label": "tốt trung tính"
+        },
+        {
+          "char": "🨆",
+          "label": "mã trắng xoay 45°"
+        },
+        {
+          "char": "🨇",
+          "label": "mã đen xoay 45°"
+        },
+        {
+          "char": "🨈",
+          "label": "mã trung tính xoay 45°"
+        },
+        {
+          "char": "🨉",
+          "label": "vua trắng xoay 90°"
+        },
+        {
+          "char": "🨊",
+          "label": "hậu trắng xoay 90°"
+        },
+        {
+          "char": "🨋",
+          "label": "xe trắng xoay 90°"
+        },
+        {
+          "char": "🨌",
+          "label": "tượng trắng xoay 90°"
+        },
+        {
+          "char": "🨍",
+          "label": "mã trắng xoay 90°"
+        },
+        {
+          "char": "🨎",
+          "label": "tốt trắng xoay 90°"
+        }
+      ]
+    },
+    {
+      "id": "notation-symbols",
+      "label": "Ghi biên bản",
+      "h2": "Ký Hiệu Ghi Biên Bản và Nhận Xét",
+      "intro": "Những dấu dùng khi ghi biên bản để đánh dấu nước chiếu, nước ăn quân và chất lượng của nước đi.",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "Ăn quân"
+        },
+        {
+          "char": "+",
+          "label": "Chiếu"
+        },
+        {
+          "char": "#",
+          "label": "Chiếu hết"
+        },
+        {
+          "char": "‡",
+          "label": "Hết cờ"
+        },
+        {
+          "char": "!",
+          "label": "Nước đi hay"
+        },
+        {
+          "char": "!!",
+          "label": "Nước đi xuất sắc"
+        },
+        {
+          "char": "?",
+          "label": "Nước đi sai"
+        },
+        {
+          "char": "??",
+          "label": "Sai lầm nghiêm trọng"
+        },
+        {
+          "char": "!?",
+          "label": "Nước đi thú vị"
+        },
+        {
+          "char": "?!",
+          "label": "Nước đi đáng ngờ"
+        },
+        {
+          "char": "=",
+          "label": "Thế cân bằng"
+        },
+        {
+          "char": "±",
+          "label": "Trắng ưu thế"
+        },
+        {
+          "char": "∓",
+          "label": "Đen ưu thế"
+        },
+        {
+          "char": "⩲",
+          "label": "Ưu thế nhẹ"
+        }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để chuyển văn bản thường thành chữ đậm, nghiêng, viết tay và hơn 100 kiểu phông Unicode khác — miễn phí và tức thì.",
+  "related": [
+    {
+      "href": "/vi/ki-tu-ngoi-sao/",
+      "title": "Ký Hiệu Ngôi Sao",
+      "desc": "Ngôi sao, dấu hoa thị và ánh lấp lánh để sao chép."
+    },
+    {
+      "href": "/vi/symbol/pawn-symbol/",
+      "title": "Ký Hiệu Quân Tốt (♟)",
+      "desc": "Nguồn gốc, ý nghĩa và cách dùng ký hiệu quân tốt."
+    },
+    {
+      "href": "/vi/ki-tu-dac-biet/",
+      "title": "Ký Tự Aesthetic",
+      "desc": "Ký tự Unicode aesthetic cho bio và bài đăng."
+    },
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Cộng trừ, nhân, chia, căn bậc hai và vô cực."
+    }
+  ]
+}

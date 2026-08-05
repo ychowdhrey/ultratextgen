@@ -60,6 +60,7 @@
     "li-headline": "Titular de LinkedIn",
     "whatsapp-about": "Info de WhatsApp",
     "telegram-bio": "Biografía de Telegram",
+    "vk-status": "Estado de VK",
     "discord-nick": "Apodo de Discord",
     "tiktok-username": "Nombre de usuario de TikTok",
     "ig-username": "Nombre de usuario de Instagram",

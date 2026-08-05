@@ -1,0 +1,125 @@
+{
+  "slug": "interrobang-isareti",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "İnterrobang: Kopyala Yapıştır ‽ — 1962'de Türetildi, Kısa Süre Gerçek Bir Daktilo Tuşuydu",
+  "meta_description": "İnterrobangı (‽) ve ters interrobangı (⸘) kopyala yapıştır — reklamcı Martin Speckter'in 1962'de türettiği, '?' ve '!'yi birleştiren işaret. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/interrobang-isareti/",
+  "breadcrumb": "İnterrobang",
+  "hero_h1": "İnterrobang (‽)",
+  "hero_tagline": "'?' ile '!'yi tek bir işarette birleştirip şaşkın bir soruyu noktalayan interrobang (‽) — reklamcı Martin K. Speckter'in 1962'de türettiği ve kısa süreliğine gerçek bir daktilo tuşu olarak satılan işaret — ayrıca İspanyolca-tarzı açılış ikizi, ters interrobang (⸘). Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "İnterrobang (‽, Unicode U+203D), bir soru işaretiyle bir ünlem işaretini birleştiren tek bir glifdir; hem soran hem haykıran bir cümleyi noktalamak için tasarlanmıştır — \"Ne yaptın‽\" Amerikalı reklam yöneticisi Martin K. Speckter bunu 1962'de, editörlüğünü yaptığı TYPEtalks dergisinde \"Making a New Point, or, How About That…\" başlıklı bir yazıda önerdi; adını interrogatio'dan (Latince retorik soru) ve bang'dan (matbaacı argosunda ünlem işareti) inşa etti, \"exclamaquest\" ve \"exclarotive\" gibi reddedilen adayları geride bıraktı. Kısa süreliğine gerçek bir donanıma dönüştü: Richard Isbell'in 1965 tarihli Americana yazı tipi onu içeriyordu, bazı Remington daktiloları 1968'e kadar bir interrobang tuşu sunuyordu, yedek tuş kapakları 1970'lerde Smith-Corona makinelerine ulaştı — ama hiçbir zaman standart klavyeye giremedi ve 1970'lerin sonuna doğru sönümlendi. Unicode onu hâlâ kodlar, ayna görüntüsü ters interrobangla (⸘, U+2E18, Unicode 5.1'e 2008'de eklendi) birlikte; bu, İspanyolcada ¿ ve ¡'nin soru ile ünlemi açtığı gibi bir cümleyi açmak için tasarlanmıştır. Onu, kendi sayfası olan ayrı bir 1575 retorik işareti olan ters çevrilmiş soru işaretiyle (⸮) karıştırma.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-interrobang",
+      "label": "İnterrobang",
+      "h2": "İnterrobang — ‽ ve ⸘",
+      "intro": "İşaretin kendisi ve ayna görüntüsü: şaşkın bir soruyu kapatan standart interrobang ve bir cümleyi açmak için tasarlanan ters biçim.",
+      "symbols": [
+        {
+          "char": "‽",
+          "label": "Interrobang (U+203D) — Tek Glifte Soru ve Ünlem"
+        },
+        {
+          "char": "⸘",
+          "label": "Inverted Interrobang (U+2E18) — Cümle Açan İkizi"
+        }
+      ]
+    },
+    {
+      "id": "marks-it-merges",
+      "label": "Birleştirdiği İşaretler",
+      "h2": "Birleştirdiği Soru İşareti ve Ünlem İşareti",
+      "intro": "İnterrobang bu iki gündelik işareti tek birinde sıkıştırır. Bir klavye bunu üretemediğinde insanlar ikisini art arda yazar — ya da Unicode'un hazır birleşik biçimlerine başvurur.",
+      "symbols": [
+        {
+          "char": "?",
+          "label": "Question Mark (U+003F)"
+        },
+        {
+          "char": "!",
+          "label": "Exclamation Mark (U+0021)"
+        },
+        {
+          "char": "⁉",
+          "label": "Exclamation Question Mark (U+2049)"
+        },
+        {
+          "char": "⁈",
+          "label": "Question Exclamation Mark (U+2048)"
+        },
+        {
+          "char": "⁇",
+          "label": "Double Question Mark (U+2047)"
+        }
+      ]
+    },
+    {
+      "id": "opening-punctuation",
+      "label": "Açılış Noktalaması",
+      "h2": "Ters İnterrobang Neden Var",
+      "intro": "İspanyolca ve akraba diller bir soruyu ¿ ile, bir ünlemi ¡ ile açar; ters interrobang ⸘ bu açılış çiftini birleştirir, ‽'nin cümlenin sonunda yaptığını başında aynalar. Ters çevrilmiş soru işareti ⸮ ise tamamen ayrı bir işarettir — kendi sayfasına bak.",
+      "symbols": [
+        {
+          "char": "¿",
+          "label": "Inverted Question Mark (U+00BF)"
+        },
+        {
+          "char": "¡",
+          "label": "Inverted Exclamation Mark (U+00A1)"
+        },
+        {
+          "char": "⸘",
+          "label": "Inverted Interrobang (U+2E18)"
+        },
+        {
+          "char": "⸮",
+          "label": "Reversed Question Mark (U+2E2E)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Noktalama Sembolleri",
+      "desc": "Tirelerden ve parantezlerden interrobang gibi özel işaretlere kadar Unicode'daki gündelik ve uzmanlık noktalama işaretlerinin tam referansı."
+    },
+    {
+      "href": "/tr/symbol/ters-soru-isareti/",
+      "title": "Ters Soru İşareti (⸮)",
+      "desc": "Farklı bir tarihsel retorik işaret — 1575'te ortaya çıkan ters çevrilmiş soru işareti, interrobang gibi soru-artı-ünlem karışımı değil."
+    },
+    {
+      "href": "/tr/symbol/uzun-tire-isareti/",
+      "title": "Uzun Tire (—)",
+      "desc": "Canlı bir geçmişi ve insanların sürekli karıştırdığı bir benzeri ailesi olan bir başka noktalama işareti."
+    },
+    {
+      "href": "/tr/symbol/paragraf-isareti/",
+      "title": "Paragraf İşareti (¶)",
+      "desc": "Kendi uzun basılı geçmişi olan editöryal tipografi sembolü, paragraf işareti."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/interrobang-isareti/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/interrobang/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

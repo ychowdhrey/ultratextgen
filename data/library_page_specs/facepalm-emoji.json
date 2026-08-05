@@ -1,0 +1,140 @@
+{
+  "slug": "facepalm-emoji",
+  "title": "Facepalm Emoji & Kaomoji: Copy & Paste 🤦 Exasperated Combos",
+  "meta_description": "Facepalm emoji 🤦 😩 🙄, exasperated done-face combo sets, plus facepalm kaomoji like orz and (－‸ლ) for chats and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/facepalm-emoji/",
+  "breadcrumb": "Facepalm Emoji & Kaomoji",
+  "hero_h1": "Facepalm Emoji & Kaomoji",
+  "hero_tagline": "The 🤦 facepalm, exasperated done faces, and slumped-over kaomoji like orz — every flavor of 'I can't even.' Click any symbol to copy it instantly.",
+  "intro": "The facepalm emoji 🤦 is the internet's universal 'I can't believe this' — palm pressed to forehead in secondhand embarrassment or sheer disbelief. This page gathers the whole range: the person, man, and woman facepalm variants, the weary and exhaling 'done' faces for when the sigh is audible, the flat 😑 and eye-rolling 🙄 reactions for lower-grade frustration, and classic facepalm kaomoji like orz and (－‸ლ) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for chats, comments, and replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "facepalm-faces",
+      "label": "Face Palm",
+      "h2": "The Facepalm Emoji",
+      "intro": "The core facepalm — the emoji everyone reaches for when words fail, in every variant.",
+      "symbols": [
+        { "char": "🤦", "label": "Person Facepalming" },
+        { "char": "🤦‍♂️", "label": "Man Facepalming" },
+        { "char": "🤦‍♀️", "label": "Woman Facepalming" },
+        { "char": "🤦🏻", "label": "Person Facepalming: Light Skin Tone" },
+        { "char": "🤦🏽", "label": "Person Facepalming: Medium Skin Tone" },
+        { "char": "🤦🏿", "label": "Person Facepalming: Dark Skin Tone" }
+      ]
+    },
+    {
+      "id": "exasperated-faces",
+      "label": "Weary Face",
+      "h2": "Exasperated & Done Faces",
+      "intro": "The audible-sigh faces — weary, exhaling, and completely out of patience.",
+      "symbols": [
+        { "char": "😩", "label": "Weary Face" },
+        { "char": "😫", "label": "Tired Face" },
+        { "char": "😮‍💨", "label": "Face Exhaling" },
+        { "char": "😖", "label": "Confounded Face" },
+        { "char": "😣", "label": "Persevering Face" }
+      ]
+    },
+    {
+      "id": "frustrated-reactions",
+      "label": "Expressionless Face",
+      "h2": "Related Frustrated Reactions",
+      "intro": "Lower-grade irritation — flat stares and eye rolls for a milder 'seriously?'",
+      "symbols": [
+        { "char": "😑", "label": "Expressionless Face" },
+        { "char": "🙄", "label": "Face With Rolling Eyes" },
+        { "char": "😒", "label": "Unamused Face" },
+        { "char": "😔", "label": "Pensive Face" }
+      ]
+    },
+    {
+      "id": "facepalm-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Facepalm & Exasperated Kaomoji",
+      "intro": "The slumps, hand-over-face gestures, and fed-up shrugs of classic text faces.",
+      "symbols": [
+        { "char": "orz", "label": "Kneeling Despair Kaomoji" },
+        { "char": "OTL", "label": "Facepalm Slump Kaomoji" },
+        { "char": "(－‸ლ)", "label": "Hand-Over-Face Kaomoji" },
+        { "char": "╮(￣ω￣;)╭", "label": "Exasperated Shrug Kaomoji" },
+        { "char": "┐(´～｀)┌", "label": "Fed-Up Shrug Kaomoji" },
+        { "char": "(；一_一)", "label": "Unimpressed Sigh Kaomoji" },
+        { "char": "(ノдヽ)", "label": "Face-Covering Cringe Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Facepalm Combo Sets",
+    "intro": "Copy a complete facepalm combo in one click — from a quiet sigh to full 'I give up' mode."
+  },
+  "collection_container_id": "facepalmSetsContainer",
+  "collections": [
+    {
+      "name": "Facepalm Moment",
+      "flags": ["🤦", "😩"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "I Can't Even",
+      "flags": ["🤦‍♀️", "🙄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "So Done With This",
+      "flags": ["😮‍💨", "😑", "🤦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bro, Really?",
+      "flags": ["🤦‍♂️", "😫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Exasperated Sigh",
+      "flags": ["😩", "😮‍💨", "😔"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Total Cringe",
+      "flags": ["🤦", "😖", "(ノдヽ)"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Facepalm Kaomoji",
+      "flags": ["orz", "(－‸ლ)"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Just Give Up",
+      "flags": ["🤦", "😔", "orz"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Symbols",
+      "desc": "Hand and gesture symbols, including palm and face-covering picks."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid."
+    },
+    {
+      "href": "/library/shocked-emoji/",
+      "title": "Shocked Emoji & Kaomoji",
+      "desc": "Wide-eyed disbelief for when a facepalm just won't cut it."
+    },
+    {
+      "href": "/library/angry-emoji/",
+      "title": "Angry Emoji & Kaomoji",
+      "desc": "Turn the frustration up with rage faces and table-flip kaomoji."
+    }
+  ]
+}

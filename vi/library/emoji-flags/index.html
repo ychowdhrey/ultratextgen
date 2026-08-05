@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cờ Các Nước — Emoji Lá Cờ Quốc Gia (Cờ Việt Nam, Cờ Mỹ) Copy Paste</title>
+<meta name="description" content="Copy emoji cờ các nước: cờ Việt Nam 🇻🇳, cờ Mỹ, cờ Hàn Quốc, cờ Thái Lan và mọi quốc gia. Bấm lá cờ là sao chép, dán vào tên game, bio, caption và tin nhắn. Miễn phí.">
+
+<link rel="canonical" href="https://ultratextgen.com/vi/library/emoji-flags/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/emoji-flags/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/emoji-flags/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/emoji-flags/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/emoji-flags/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/library/emoji-flags/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/library/emoji-flags/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/library/emoji-flags/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/emoji-flags/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/emoji-flags/">
+
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="UltraTextGen">
+<meta property="og:title" content="Cờ Các Nước — Emoji Lá Cờ Quốc Gia (Cờ Việt Nam, Cờ Mỹ)">
+<meta property="og:description" content="Copy emoji cờ các nước: cờ Việt Nam, cờ Mỹ, cờ Hàn Quốc, cờ Thái Lan và mọi quốc gia. Bấm lá cờ là sao chép, dán vào tên game, bio, caption và tin nhắn.">
+<meta property="og:url" content="https://ultratextgen.com/vi/library/emoji-flags/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/vi-library-emoji-flags.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Cờ Các Nước — Emoji Lá Cờ Quốc Gia (Cờ Việt Nam, Cờ Mỹ)">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cờ Các Nước — Emoji Lá Cờ Quốc Gia (Cờ Việt Nam, Cờ Mỹ)">
+<meta name="twitter:description" content="Copy emoji cờ các nước: cờ Việt Nam, cờ Mỹ, cờ Hàn Quốc, cờ Thái Lan và mọi quốc gia. Bấm lá cờ là sao chép, dán vào tên game, bio và tin nhắn.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/vi-library-emoji-flags.png">
+
+<!-- Twemoji: hiển thị emoji đồng nhất trên mọi thiết bị -->
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cờ Các Nước — Emoji Lá Cờ Quốc Gia (Cờ Việt Nam, Cờ Mỹ) Copy Paste",
+  "alternateName": ["Cờ Các Nước", "Emoji Lá Cờ", "Cờ Việt Nam", "Cờ Quốc Gia Copy Paste", "Lá Cờ Các Nước Trên Thế Giới", "Biểu Tượng Cờ"],
+  "description": "Copy emoji cờ các nước: cờ Việt Nam, cờ Mỹ, cờ Hàn Quốc, cờ Thái Lan và mọi quốc gia. Bấm lá cờ là sao chép, dán vào tên game, bio, caption và tin nhắn.",
+  "inLanguage": "vi",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "image": "https://ultratextgen.com/assets/og/vi-library-emoji-flags.png",
+  "mainEntityOfPage": "https://ultratextgen.com/vi/library/emoji-flags/",
+  "datePublished": "2026-07-11",
+  "dateModified": "2026-07-11"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "vi",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Emoji cờ (lá cờ) là gì?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Emoji cờ là biểu tượng lá cờ quốc gia ở dạng kí tự Unicode thật — không phải hình ảnh chèn vào. Mỗi lá cờ được ghép từ hai chữ cái mã vùng (ví dụ 🇻🇳 là V + N, 🇺🇸 là U + S), nên bạn copy và dán được như chữ thường vào bio, tên game, caption và tin nhắn, không cần cài app hay font." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cách copy cờ các nước trên trang này như thế nào?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Bấm vào lá cờ bạn cần — kí tự được sao chép ngay vào bộ nhớ tạm kèm thông báo xác nhận. Sau đó mở Facebook, Zalo, TikTok, Instagram hay ô tên game và dán vào. Muốn lấy nguyên một bộ cờ (Đông Nam Á, EU, G20...) thì kéo xuống mục Bộ sưu tập cờ và bấm Sao chép cả bộ." }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao có máy hiện hai chữ cái (như VN) thay vì lá cờ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Đó là do thiết bị chưa có font vẽ lá cờ. Windows theo mặc định không hiển thị emoji cờ quốc gia mà chỉ hiện hai chữ cái mã nước (VN, US, KR...). Trên iPhone, Android, Mac và đa số điện thoại thì lá cờ hiện bình thường. Kí tự vẫn đúng và chuẩn Unicode — người xem bằng điện thoại vẫn thấy đủ lá cờ, nên bạn cứ dùng thoải mái." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cách dán cờ vào tên game, bio hay tin nhắn?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Copy lá cờ ở trên rồi dán vào ô tên hoặc bio. Ví dụ ghép cờ Việt Nam vào tên: 🇻🇳 Tên của bạn. Bạn có thể đặt cờ ở đầu hoặc cuối tên, hay ghép nhiều cờ liền nhau 🇻🇳🇺🇸. Một số game lọc kí tự lạ, nhưng emoji cờ thường được chấp nhận vì là Unicode phổ thông." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cờ Việt Nam, cờ Mỹ, cờ Hàn Quốc... lấy ở đâu nhanh nhất?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mục Cờ phổ biến ngay đầu trang gom sẵn cờ Việt Nam, cờ Mỹ, cờ Anh, cờ Thái Lan, cờ Hàn Quốc, cờ Trung Quốc, cờ Nhật và những nước hay được tìm nhất — cờ Việt Nam được ghim đầu tiên. Cần nước khác thì kéo xuống mục Tất cả cờ các nước rồi lọc theo châu lục." }
+    },
+    {
+      "@type": "Question",
+      "name": "Trang cờ các nước này có miễn phí không?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Miễn phí 100%, không cần đăng ký, không giới hạn lượt copy. Trang chạy thẳng trên trình duyệt điện thoại và máy tính — bấm lá cờ là copy, dán đi đâu tuỳ bạn." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://ultratextgen.com/vi/" },
+    { "@type": "ListItem", "position": 2, "name": "Thư viện", "item": "https://ultratextgen.com/library/" },
+    { "@type": "ListItem", "position": 3, "name": "Cờ Các Nước", "item": "https://ultratextgen.com/vi/library/emoji-flags/" }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/vi/">Trang chủ</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/vi/library/">Thư viện</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Cờ Các Nước</span>
+</nav>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/vi-library-emoji-flags.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Cờ Các Nước — Emoji Lá Cờ Quốc Gia</h1>
+    <p class="hero-tagline">Bấm lá cờ để copy ngay: cờ Việt Nam, cờ Mỹ, cờ Hàn Quốc và tất cả quốc gia. Dán vào tên game, bio, caption hay tin nhắn — không cần cài app.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Mọi lá cờ quốc gia chỉ cách bạn một cú bấm. Duyệt cờ của gần 200 nước, lọc theo châu lục và copy bất kỳ emoji cờ nào chỉ trong một chạm. Emoji cờ là kí tự Unicode thật nên dán được vào bài đăng, bio, caption và tin nhắn trên mọi nền tảng lớn — Facebook, Zalo, Instagram, TikTok, Telegram, Discord và cả ô tên game. Bên dưới, cờ Việt Nam và những lá cờ hay tìm nhất được gom sẵn ở đầu để bạn lấy cho nhanh.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CỜ PHỔ BIẾN -->
+<section class="mood-explainers" id="co-pho-bien">
+  <span class="article-section-label">Cờ phổ biến</span>
+  <h2>Cờ phổ biến — bấm là copy</h2>
+  <p class="u-secondary-tight">Cờ Việt Nam và những lá cờ được người Việt tìm nhiều nhất, gom sẵn để lấy nhanh. Bấm lá cờ để sao chép:</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇻🇳" aria-label="Sao chép cờ Việt Nam">🇻🇳</button>
+      <span class="flag-label">Việt Nam</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇺🇸" aria-label="Sao chép cờ Mỹ">🇺🇸</button>
+      <span class="flag-label">Mỹ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇬🇧" aria-label="Sao chép cờ Anh">🇬🇧</button>
+      <span class="flag-label">Anh</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇹🇭" aria-label="Sao chép cờ Thái Lan">🇹🇭</button>
+      <span class="flag-label">Thái Lan</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇫🇷" aria-label="Sao chép cờ Pháp">🇫🇷</button>
+      <span class="flag-label">Pháp</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇰🇷" aria-label="Sao chép cờ Hàn Quốc">🇰🇷</button>
+      <span class="flag-label">Hàn Quốc</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇨🇳" aria-label="Sao chép cờ Trung Quốc">🇨🇳</button>
+      <span class="flag-label">Trung Quốc</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇯🇵" aria-label="Sao chép cờ Nhật Bản">🇯🇵</button>
+      <span class="flag-label">Nhật Bản</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇷🇺" aria-label="Sao chép cờ Nga">🇷🇺</button>
+      <span class="flag-label">Nga</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇩🇪" aria-label="Sao chép cờ Đức">🇩🇪</button>
+      <span class="flag-label">Đức</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇦🇺" aria-label="Sao chép cờ Úc">🇦🇺</button>
+      <span class="flag-label">Úc</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇨🇭" aria-label="Sao chép cờ Thụy Sĩ">🇨🇭</button>
+      <span class="flag-label">Thụy Sĩ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇹" aria-label="Sao chép cờ Ý">🇮🇹</button>
+      <span class="flag-label">Ý</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇹🇼" aria-label="Sao chép cờ Đài Loan">🇹🇼</button>
+      <span class="flag-label">Đài Loan</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇷" aria-label="Sao chép cờ Iran">🇮🇷</button>
+      <span class="flag-label">Iran</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇩" aria-label="Sao chép cờ Indonesia">🇮🇩</button>
+      <span class="flag-label">Indonesia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇸🇬" aria-label="Sao chép cờ Singapore">🇸🇬</button>
+      <span class="flag-label">Singapore</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇰🇭" aria-label="Sao chép cờ Campuchia">🇰🇭</button>
+      <span class="flag-label">Campuchia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇱🇦" aria-label="Sao chép cờ Lào">🇱🇦</button>
+      <span class="flag-label">Lào</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇳" aria-label="Sao chép cờ Ấn Độ">🇮🇳</button>
+      <span class="flag-label">Ấn Độ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇲🇾" aria-label="Sao chép cờ Malaysia">🇲🇾</button>
+      <span class="flag-label">Malaysia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇵🇭" aria-label="Sao chép cờ Philippines">🇵🇭</button>
+      <span class="flag-label">Philippines</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇳🇱" aria-label="Sao chép cờ Hà Lan">🇳🇱</button>
+      <span class="flag-label">Hà Lan</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇪🇸" aria-label="Sao chép cờ Tây Ban Nha">🇪🇸</button>
+      <span class="flag-label">Tây Ban Nha</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇩🇰" aria-label="Sao chép cờ Đan Mạch">🇩🇰</button>
+      <span class="flag-label">Đan Mạch</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇸🇪" aria-label="Sao chép cờ Thụy Điển">🇸🇪</button>
+      <span class="flag-label">Thụy Điển</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇵🇱" aria-label="Sao chép cờ Ba Lan">🇵🇱</button>
+      <span class="flag-label">Ba Lan</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇰🇵" aria-label="Sao chép cờ Triều Tiên">🇰🇵</button>
+      <span class="flag-label">Triều Tiên</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇨🇦" aria-label="Sao chép cờ Canada">🇨🇦</button>
+      <span class="flag-label">Canada</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇧🇷" aria-label="Sao chép cờ Brazil">🇧🇷</button>
+      <span class="flag-label">Brazil</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇵🇹" aria-label="Sao chép cờ Bồ Đào Nha">🇵🇹</button>
+      <span class="flag-label">Bồ Đào Nha</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇭🇰" aria-label="Sao chép cờ Hồng Kông">🇭🇰</button>
+      <span class="flag-label">Hồng Kông</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇲🇽" aria-label="Sao chép cờ Mexico">🇲🇽</button>
+      <span class="flag-label">Mexico</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇲🇲" aria-label="Sao chép cờ Myanmar">🇲🇲</button>
+      <span class="flag-label">Myanmar</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇹🇷" aria-label="Sao chép cờ Thổ Nhĩ Kỳ">🇹🇷</button>
+      <span class="flag-label">Thổ Nhĩ Kỳ</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇳🇿" aria-label="Sao chép cờ New Zealand">🇳🇿</button>
+      <span class="flag-label">New Zealand</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇦🇹" aria-label="Sao chép cờ Áo">🇦🇹</button>
+      <span class="flag-label">Áo</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇲🇦" aria-label="Sao chép cờ Maroc">🇲🇦</button>
+      <span class="flag-label">Maroc</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇳🇴" aria-label="Sao chép cờ Na Uy">🇳🇴</button>
+      <span class="flag-label">Na Uy</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇬🇷" aria-label="Sao chép cờ Hy Lạp">🇬🇷</button>
+      <span class="flag-label">Hy Lạp</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TẤT CẢ CỜ CÁC NƯỚC -->
+<section class="mood-explainers" id="country-flags">
+  <span class="article-section-label">Cờ quốc gia</span>
+  <h2>Tất cả cờ các nước</h2>
+  <p class="u-secondary-tight">Gần 200 lá cờ quốc gia, lọc theo châu lục. Bấm lá cờ bất kỳ để sao chép ngay:</p>
+
+  <!-- Bộ lọc châu lục -->
+  <div class="region-filters" id="regionFilters">
+    <button class="region-filter active" data-region="all">Tất cả</button>
+    <button class="region-filter" data-region="europe">Châu Âu</button>
+    <button class="region-filter" data-region="asia">Châu Á</button>
+    <button class="region-filter" data-region="americas">Châu Mỹ</button>
+    <button class="region-filter" data-region="africa">Châu Phi</button>
+    <button class="region-filter" data-region="oceania">Châu Đại Dương</button>
+  </div>
+
+  <!-- Danh sách cờ (dựng bằng JS) -->
+  <div class="flag-rows" id="countryFlagList"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CỜ TỔ CHỨC -->
+<section class="mood-explainers" id="org-flags">
+  <span class="article-section-label">Cờ tổ chức</span>
+  <h2>Cờ tổ chức quốc tế</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇪🇺" aria-label="Sao chép cờ Liên minh châu Âu">🇪🇺</button>
+      <span class="flag-label">Liên minh châu Âu</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇺🇳" aria-label="Sao chép cờ Liên Hợp Quốc">🇺🇳</button>
+      <span class="flag-label">Liên Hợp Quốc</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CỜ VÙNG / LÃNH THỔ -->
+<section class="mood-explainers" id="regional-flags">
+  <span class="article-section-label">Cờ vùng lãnh thổ</span>
+  <h2>Cờ vùng &amp; lãnh thổ</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴󠁧󠁢󠁥󠁮󠁧󠁿" aria-label="Sao chép cờ England">🏴󠁧󠁢󠁥󠁮󠁧󠁿</button>
+      <span class="flag-label">England (Anh)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴󠁧󠁢󠁳󠁣󠁴󠁿" aria-label="Sao chép cờ Scotland">🏴󠁧󠁢󠁳󠁣󠁴󠁿</button>
+      <span class="flag-label">Scotland</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴󠁧󠁢󠁷󠁬󠁳󠁿" aria-label="Sao chép cờ Wales">🏴󠁧󠁢󠁷󠁬󠁳󠁿</button>
+      <span class="flag-label">Wales</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CỜ BẢN SẮC -->
+<section class="mood-explainers" id="identity-flags">
+  <span class="article-section-label">Cờ bản sắc</span>
+  <h2>Cờ bản sắc &amp; tự hào</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏳️‍🌈" aria-label="Sao chép cờ lục sắc tự hào">🏳️‍🌈</button>
+      <span class="flag-label">Cờ lục sắc (Pride)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏳️‍⚧️" aria-label="Sao chép cờ chuyển giới">🏳️‍⚧️</button>
+      <span class="flag-label">Cờ chuyển giới</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CỜ BIỂU TƯỢNG -->
+<section class="mood-explainers" id="symbolic-flags">
+  <span class="article-section-label">Cờ biểu tượng</span>
+  <h2>Cờ biểu tượng</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏁" aria-label="Sao chép cờ ô vuông (về đích)">🏁</button>
+      <span class="flag-label">Cờ ô vuông (về đích)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🚩" aria-label="Sao chép cờ tam giác">🚩</button>
+      <span class="flag-label">Cờ tam giác</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏳" aria-label="Sao chép cờ trắng">🏳</button>
+      <span class="flag-label">Cờ trắng</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴" aria-label="Sao chép cờ đen">🏴</button>
+      <span class="flag-label">Cờ đen</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴‍☠️" aria-label="Sao chép cờ cướp biển">🏴‍☠️</button>
+      <span class="flag-label">Cờ cướp biển</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🎌" aria-label="Sao chép cờ bắt chéo">🎌</button>
+      <span class="flag-label">Cờ bắt chéo</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BỘ SƯU TẬP CỜ -->
+<section class="mood-explainers" id="flag-grids">
+  <span class="article-section-label">Bộ sưu tập cờ</span>
+  <h2>Bộ sưu tập cờ theo khu vực</h2>
+  <p class="u-secondary-block">Copy nguyên một bộ cờ cho bài đăng, danh sách hay caption của bạn.</p>
+
+  <!-- Các grid dựng bằng JS -->
+  <div id="flagGridContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CÁCH DÙNG -->
+<section class="editorial-section" id="cach-dung-co">
+  <h2>Cách copy &amp; dán emoji cờ</h2>
+  <p class="editorial-intro">Emoji cờ dùng y như một kí tự chữ thường — bấm là copy, dán là xong:</p>
+  <div class="block-example">
+    ✔ <strong>Bấm để copy</strong>: nhấn vào lá cờ bất kỳ, kí tự vào bộ nhớ tạm ngay kèm thông báo.<br>
+    ✔ <strong>Dán vào chỗ cần</strong>: mở Facebook, Zalo, TikTok, Instagram, Telegram, Discord hoặc ô đổi tên game rồi dán (giữ để hiện nút Dán, hoặc Ctrl/Cmd + V trên máy tính).<br>
+    ✔ <strong>Ghép vào tên</strong>: đặt cờ ở đầu hoặc cuối, ví dụ 🇻🇳 Tên của bạn, hoặc xếp nhiều cờ liền nhau 🇻🇳🇰🇷🇯🇵.<br>
+    ✔ <strong>Lấy cả bộ</strong>: mục Bộ sưu tập cờ ở trên cho phép copy nguyên nhóm ASEAN, EU, G20... chỉ với một nút.
+  </div>
+</section>
+
+<!-- VÌ SAO HIỆN HAI CHỮ CÁI -->
+<section class="editorial-section" id="vi-sao-hai-chu-cai">
+  <h2>Vì sao có máy hiện "VN" thay vì lá cờ?</h2>
+  <p class="editorial-intro">Nếu lá cờ ra thành hai chữ cái (VN, US, KR…) trên một số máy, đây là lý do:</p>
+  <p>Emoji cờ quốc gia được ghép từ <strong>hai chữ cái mã vùng</strong> — 🇻🇳 thật ra là kí tự Ⓥ + Ⓝ, 🇺🇸 là Ⓤ + Ⓢ. Thiết bị nào có font vẽ cờ thì gộp hai chữ đó thành lá cờ; thiết bị nào không có thì hiển thị nguyên hai chữ cái. <strong>Windows</strong> theo mặc định không vẽ cờ quốc gia nên hay hiện "VN", "US"; còn <strong>iPhone, iPad, Android và Mac</strong> thì hiển thị lá cờ đầy đủ.</p>
+  <p>Điểm quan trọng: kí tự bạn copy vẫn <strong>đúng và chuẩn Unicode</strong> — người xem bằng điện thoại (phần lớn người dùng mạng xã hội ở Việt Nam) vẫn thấy lá cờ. Vì vậy dán cờ vào bio, caption hay tên game hoàn toàn an toàn, không lo lỗi kí tự.</p>
+</section>
+
+<!-- RELATED -->
+<section class="editorial-section">
+  <span class="article-section-label">Trang liên quan</span>
+  <div class="compare-grid">
+    <a href="/vi/combo-emoji/" class="compare-card variant-muted u-no-underline">
+      <h4>Combo Emoji</h4>
+      <p>Combo icon cute, tình yêu, dark, cool để ghép vào bio và tên — bấm là copy.</p>
+    </a>
+    <a href="/vi/ki-tu-trai-tim/" class="compare-card variant-muted u-no-underline">
+      <h4>Kí Tự Trái Tim</h4>
+      <p>Tim Unicode ♡ ❤ ❥, tim aesthetic ᥫ᭡ ꨄ và emoji tim đủ màu — bấm là copy.</p>
+    </a>
+    <a href="/vi/ki-tu-dac-biet/" class="compare-card variant-muted u-no-underline">
+      <h4>Kí Tự Đặc Biệt</h4>
+      <p>Kho kí hiệu đẹp — khung ꧁꧂, mũi tên, sao, đường kẻ — bấm là copy.</p>
+    </a>
+    <a href="/vi/" class="compare-card variant-muted u-no-underline">
+      <h4>Trang chủ tiếng Việt</h4>
+      <p>Toàn bộ công cụ chữ kiểu và kí tự đặc biệt gom về một trang.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <h2 class="faq-category">Hỏi đáp về cờ các nước</h2>
+    <div class="faq-item"><button class="faq-question" type="button">Emoji cờ (lá cờ) là gì?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Emoji cờ là biểu tượng lá cờ quốc gia ở dạng kí tự Unicode thật — không phải hình ảnh chèn vào. Mỗi lá cờ được ghép từ hai chữ cái mã vùng (ví dụ 🇻🇳 là V + N, 🇺🇸 là U + S), nên bạn copy và dán được như chữ thường vào bio, tên game, caption và tin nhắn, không cần cài app hay font.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Cách copy cờ các nước trên trang này như thế nào?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Bấm vào lá cờ bạn cần — kí tự được sao chép ngay vào bộ nhớ tạm kèm thông báo xác nhận. Sau đó mở Facebook, Zalo, TikTok, Instagram hay ô tên game và dán vào. Muốn lấy nguyên một bộ cờ (Đông Nam Á, EU, G20...) thì kéo xuống mục Bộ sưu tập cờ và bấm Sao chép cả bộ.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Vì sao có máy hiện hai chữ cái (như VN) thay vì lá cờ?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Đó là do thiết bị chưa có font vẽ lá cờ. Windows theo mặc định không hiển thị emoji cờ quốc gia mà chỉ hiện hai chữ cái mã nước (VN, US, KR...). Trên iPhone, Android, Mac và đa số điện thoại thì lá cờ hiện bình thường. Kí tự vẫn đúng và chuẩn Unicode — người xem bằng điện thoại vẫn thấy đủ lá cờ, nên bạn cứ dùng thoải mái.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Cách dán cờ vào tên game, bio hay tin nhắn?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Copy lá cờ ở trên rồi dán vào ô tên hoặc bio. Ví dụ ghép cờ Việt Nam vào tên: 🇻🇳 Tên của bạn. Bạn có thể đặt cờ ở đầu hoặc cuối tên, hay ghép nhiều cờ liền nhau 🇻🇳🇺🇸. Một số game lọc kí tự lạ, nhưng emoji cờ thường được chấp nhận vì là Unicode phổ thông.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Cờ Việt Nam, cờ Mỹ, cờ Hàn Quốc... lấy ở đâu nhanh nhất?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Mục Cờ phổ biến ngay đầu trang gom sẵn cờ Việt Nam, cờ Mỹ, cờ Anh, cờ Thái Lan, cờ Hàn Quốc, cờ Trung Quốc, cờ Nhật và những nước hay được tìm nhất — cờ Việt Nam được ghim đầu tiên. Cần nước khác thì kéo xuống mục Tất cả cờ các nước rồi lọc theo châu lục.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Trang cờ các nước này có miễn phí không?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Miễn phí 100%, không cần đăng ký, không giới hạn lượt copy. Trang chạy thẳng trên trình duyệt điện thoại và máy tính — bấm lá cờ là copy, dán đi đâu tuỳ bạn.</div></div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+      <a class="lang-option" href="/de/library/emoji-flags/" hreflang="de">DE</a>
+      <a class="lang-option" href="/library/emoji-flags/" hreflang="en">EN</a>
+      <a class="lang-option" href="/es/library/emoji-flags/" hreflang="es">ES</a>
+      <a class="lang-option" href="/pt/library/emoji-flags/" hreflang="pt">PT</a>
+      <a class="lang-option active" href="/vi/library/emoji-flags/" hreflang="vi">VI</a>
+      <a class="lang-option" href="/pl/library/emoji-flags/" hreflang="pl">PL</a>
+      <a class="lang-option" href="/th/library/emoji-flags/" hreflang="th">TH</a>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="copy-toast" id="copyToast">Đã sao chép!</div>
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<!-- Page-specific: dữ liệu quốc gia, bộ cờ, dựng danh sách -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+
+  const ns = window.UltraTextGen;
+  if (!ns) return;
+
+  /* ---------- Dữ liệu quốc gia (tên tiếng Việt) ---------- */
+  const COUNTRIES = [
+    { code: "AF", name: "Afghanistan", region: "asia" },
+    { code: "AL", name: "Albania", region: "europe" },
+    { code: "DZ", name: "Algeria", region: "africa" },
+    { code: "AD", name: "Andorra", region: "europe" },
+    { code: "AO", name: "Angola", region: "africa" },
+    { code: "AG", name: "Antigua và Barbuda", region: "americas" },
+    { code: "AR", name: "Argentina", region: "americas" },
+    { code: "AM", name: "Armenia", region: "asia" },
+    { code: "AU", name: "Úc", region: "oceania" },
+    { code: "AT", name: "Áo", region: "europe" },
+    { code: "AZ", name: "Azerbaijan", region: "asia" },
+    { code: "BS", name: "Bahamas", region: "americas" },
+    { code: "BH", name: "Bahrain", region: "asia" },
+    { code: "BD", name: "Bangladesh", region: "asia" },
+    { code: "BB", name: "Barbados", region: "americas" },
+    { code: "BY", name: "Belarus", region: "europe" },
+    { code: "BE", name: "Bỉ", region: "europe" },
+    { code: "BZ", name: "Belize", region: "americas" },
+    { code: "BJ", name: "Benin", region: "africa" },
+    { code: "BT", name: "Bhutan", region: "asia" },
+    { code: "BO", name: "Bolivia", region: "americas" },
+    { code: "BA", name: "Bosnia và Herzegovina", region: "europe" },
+    { code: "BW", name: "Botswana", region: "africa" },
+    { code: "BR", name: "Brazil", region: "americas" },
+    { code: "BN", name: "Brunei", region: "asia" },
+    { code: "BG", name: "Bulgaria", region: "europe" },
+    { code: "BF", name: "Burkina Faso", region: "africa" },
+    { code: "BI", name: "Burundi", region: "africa" },
+    { code: "CV", name: "Cabo Verde", region: "africa" },
+    { code: "KH", name: "Campuchia", region: "asia" },
+    { code: "CM", name: "Cameroon", region: "africa" },
+    { code: "CA", name: "Canada", region: "americas" },
+    { code: "CF", name: "Cộng hòa Trung Phi", region: "africa" },
+    { code: "TD", name: "Tchad", region: "africa" },
+    { code: "CL", name: "Chile", region: "americas" },
+    { code: "CN", name: "Trung Quốc", region: "asia" },
+    { code: "CO", name: "Colombia", region: "americas" },
+    { code: "KM", name: "Comoros", region: "africa" },
+    { code: "CG", name: "Congo", region: "africa" },
+    { code: "CD", name: "Cộng hòa Dân chủ Congo", region: "africa" },
+    { code: "CR", name: "Costa Rica", region: "americas" },
+    { code: "CI", name: "Bờ Biển Ngà", region: "africa" },
+    { code: "HR", name: "Croatia", region: "europe" },
+    { code: "CU", name: "Cuba", region: "americas" },
+    { code: "CY", name: "Síp", region: "europe" },
+    { code: "CZ", name: "Séc", region: "europe" },
+    { code: "DK", name: "Đan Mạch", region: "europe" },
+    { code: "DJ", name: "Djibouti", region: "africa" },
+    { code: "DM", name: "Dominica", region: "americas" },
+    { code: "DO", name: "Cộng hòa Dominica", region: "americas" },
+    { code: "EC", name: "Ecuador", region: "americas" },
+    { code: "EG", name: "Ai Cập", region: "africa" },
+    { code: "SV", name: "El Salvador", region: "americas" },
+    { code: "GQ", name: "Guinea Xích Đạo", region: "africa" },
+    { code: "ER", name: "Eritrea", region: "africa" },
+    { code: "EE", name: "Estonia", region: "europe" },
+    { code: "SZ", name: "Eswatini", region: "africa" },
+    { code: "ET", name: "Ethiopia", region: "africa" },
+    { code: "FJ", name: "Fiji", region: "oceania" },
+    { code: "FI", name: "Phần Lan", region: "europe" },
+    { code: "FR", name: "Pháp", region: "europe" },
+    { code: "GA", name: "Gabon", region: "africa" },
+    { code: "GM", name: "Gambia", region: "africa" },
+    { code: "GE", name: "Gruzia", region: "europe" },
+    { code: "DE", name: "Đức", region: "europe" },
+    { code: "GH", name: "Ghana", region: "africa" },
+    { code: "GR", name: "Hy Lạp", region: "europe" },
+    { code: "GD", name: "Grenada", region: "americas" },
+    { code: "GT", name: "Guatemala", region: "americas" },
+    { code: "GN", name: "Guinea", region: "africa" },
+    { code: "GW", name: "Guinea-Bissau", region: "africa" },
+    { code: "GY", name: "Guyana", region: "americas" },
+    { code: "HT", name: "Haiti", region: "americas" },
+    { code: "HN", name: "Honduras", region: "americas" },
+    { code: "HU", name: "Hungary", region: "europe" },
+    { code: "IS", name: "Iceland", region: "europe" },
+    { code: "IN", name: "Ấn Độ", region: "asia" },
+    { code: "ID", name: "Indonesia", region: "asia" },
+    { code: "IR", name: "Iran", region: "asia" },
+    { code: "IQ", name: "Iraq", region: "asia" },
+    { code: "IE", name: "Ireland", region: "europe" },
+    { code: "IL", name: "Israel", region: "asia" },
+    { code: "IT", name: "Ý", region: "europe" },
+    { code: "JM", name: "Jamaica", region: "americas" },
+    { code: "JP", name: "Nhật Bản", region: "asia" },
+    { code: "JO", name: "Jordan", region: "asia" },
+    { code: "KZ", name: "Kazakhstan", region: "asia" },
+    { code: "KE", name: "Kenya", region: "africa" },
+    { code: "KI", name: "Kiribati", region: "oceania" },
+    { code: "KW", name: "Kuwait", region: "asia" },
+    { code: "KG", name: "Kyrgyzstan", region: "asia" },
+    { code: "LA", name: "Lào", region: "asia" },
+    { code: "LV", name: "Latvia", region: "europe" },
+    { code: "LB", name: "Lebanon", region: "asia" },
+    { code: "LS", name: "Lesotho", region: "africa" },
+    { code: "LR", name: "Liberia", region: "africa" },
+    { code: "LY", name: "Libya", region: "africa" },
+    { code: "LI", name: "Liechtenstein", region: "europe" },
+    { code: "LT", name: "Litva", region: "europe" },
+    { code: "LU", name: "Luxembourg", region: "europe" },
+    { code: "MG", name: "Madagascar", region: "africa" },
+    { code: "MW", name: "Malawi", region: "africa" },
+    { code: "MY", name: "Malaysia", region: "asia" },
+    { code: "MV", name: "Maldives", region: "asia" },
+    { code: "ML", name: "Mali", region: "africa" },
+    { code: "MT", name: "Malta", region: "europe" },
+    { code: "MH", name: "Quần đảo Marshall", region: "oceania" },
+    { code: "MR", name: "Mauritania", region: "africa" },
+    { code: "MU", name: "Mauritius", region: "africa" },
+    { code: "MX", name: "Mexico", region: "americas" },
+    { code: "FM", name: "Micronesia", region: "oceania" },
+    { code: "MD", name: "Moldova", region: "europe" },
+    { code: "MC", name: "Monaco", region: "europe" },
+    { code: "MN", name: "Mông Cổ", region: "asia" },
+    { code: "ME", name: "Montenegro", region: "europe" },
+    { code: "MA", name: "Maroc", region: "africa" },
+    { code: "MZ", name: "Mozambique", region: "africa" },
+    { code: "MM", name: "Myanmar", region: "asia" },
+    { code: "NA", name: "Namibia", region: "africa" },
+    { code: "NR", name: "Nauru", region: "oceania" },
+    { code: "NP", name: "Nepal", region: "asia" },
+    { code: "NL", name: "Hà Lan", region: "europe" },
+    { code: "NZ", name: "New Zealand", region: "oceania" },
+    { code: "NI", name: "Nicaragua", region: "americas" },
+    { code: "NE", name: "Niger", region: "africa" },
+    { code: "NG", name: "Nigeria", region: "africa" },
+    { code: "KP", name: "Triều Tiên", region: "asia" },
+    { code: "MK", name: "Bắc Macedonia", region: "europe" },
+    { code: "NO", name: "Na Uy", region: "europe" },
+    { code: "OM", name: "Oman", region: "asia" },
+    { code: "PK", name: "Pakistan", region: "asia" },
+    { code: "PW", name: "Palau", region: "oceania" },
+    { code: "PS", name: "Palestine", region: "asia" },
+    { code: "PA", name: "Panama", region: "americas" },
+    { code: "PG", name: "Papua New Guinea", region: "oceania" },
+    { code: "PY", name: "Paraguay", region: "americas" },
+    { code: "PE", name: "Peru", region: "americas" },
+    { code: "PH", name: "Philippines", region: "asia" },
+    { code: "PL", name: "Ba Lan", region: "europe" },
+    { code: "PT", name: "Bồ Đào Nha", region: "europe" },
+    { code: "QA", name: "Qatar", region: "asia" },
+    { code: "RO", name: "Romania", region: "europe" },
+    { code: "RU", name: "Nga", region: "europe" },
+    { code: "RW", name: "Rwanda", region: "africa" },
+    { code: "KN", name: "Saint Kitts và Nevis", region: "americas" },
+    { code: "LC", name: "Saint Lucia", region: "americas" },
+    { code: "VC", name: "Saint Vincent và Grenadines", region: "americas" },
+    { code: "WS", name: "Samoa", region: "oceania" },
+    { code: "SM", name: "San Marino", region: "europe" },
+    { code: "ST", name: "São Tomé và Príncipe", region: "africa" },
+    { code: "SA", name: "Ả Rập Xê Út", region: "asia" },
+    { code: "SN", name: "Senegal", region: "africa" },
+    { code: "RS", name: "Serbia", region: "europe" },
+    { code: "SC", name: "Seychelles", region: "africa" },
+    { code: "SL", name: "Sierra Leone", region: "africa" },
+    { code: "SG", name: "Singapore", region: "asia" },
+    { code: "SK", name: "Slovakia", region: "europe" },
+    { code: "SI", name: "Slovenia", region: "europe" },
+    { code: "SB", name: "Quần đảo Solomon", region: "oceania" },
+    { code: "SO", name: "Somalia", region: "africa" },
+    { code: "ZA", name: "Nam Phi", region: "africa" },
+    { code: "KR", name: "Hàn Quốc", region: "asia" },
+    { code: "SS", name: "Nam Sudan", region: "africa" },
+    { code: "ES", name: "Tây Ban Nha", region: "europe" },
+    { code: "LK", name: "Sri Lanka", region: "asia" },
+    { code: "SD", name: "Sudan", region: "africa" },
+    { code: "SR", name: "Suriname", region: "americas" },
+    { code: "SE", name: "Thụy Điển", region: "europe" },
+    { code: "CH", name: "Thụy Sĩ", region: "europe" },
+    { code: "SY", name: "Syria", region: "asia" },
+    { code: "TJ", name: "Tajikistan", region: "asia" },
+    { code: "TZ", name: "Tanzania", region: "africa" },
+    { code: "TH", name: "Thái Lan", region: "asia" },
+    { code: "TL", name: "Đông Timor", region: "asia" },
+    { code: "TG", name: "Togo", region: "africa" },
+    { code: "TO", name: "Tonga", region: "oceania" },
+    { code: "TT", name: "Trinidad và Tobago", region: "americas" },
+    { code: "TN", name: "Tunisia", region: "africa" },
+    { code: "TR", name: "Thổ Nhĩ Kỳ", region: "europe" },
+    { code: "TM", name: "Turkmenistan", region: "asia" },
+    { code: "TV", name: "Tuvalu", region: "oceania" },
+    { code: "UG", name: "Uganda", region: "africa" },
+    { code: "UA", name: "Ukraine", region: "europe" },
+    { code: "AE", name: "Các Tiểu vương quốc Ả Rập Thống nhất", region: "asia" },
+    { code: "GB", name: "Vương Quốc Anh", region: "europe" },
+    { code: "US", name: "Hoa Kỳ", region: "americas" },
+    { code: "UY", name: "Uruguay", region: "americas" },
+    { code: "UZ", name: "Uzbekistan", region: "asia" },
+    { code: "VU", name: "Vanuatu", region: "oceania" },
+    { code: "VA", name: "Vatican", region: "europe" },
+    { code: "VE", name: "Venezuela", region: "americas" },
+    { code: "VN", name: "Việt Nam", region: "asia" },
+    { code: "YE", name: "Yemen", region: "asia" },
+    { code: "ZM", name: "Zambia", region: "africa" },
+    { code: "ZW", name: "Zimbabwe", region: "africa" }
+  ];
+
+  /* ---------- Dựng danh sách cờ quốc gia ---------- */
+  const list = document.getElementById("countryFlagList");
+  if (list) {
+    COUNTRIES.forEach(function (c) {
+      const flag = ns.isoToFlag(c.code);
+
+      const row = document.createElement("div");
+      row.className = "flag-row";
+      row.setAttribute("data-region", c.region);
+
+      const btn = document.createElement("button");
+      btn.className = "flag-emoji symbol-tile";
+      btn.setAttribute("data-symbol", flag);
+      btn.setAttribute("aria-label", "Sao chép cờ " + c.name);
+      btn.textContent = flag;
+
+      const label = document.createElement("span");
+      label.className = "flag-label";
+      label.textContent = c.name;
+
+      row.appendChild(btn);
+      row.appendChild(label);
+      list.appendChild(row);
+    });
+
+    /* ---------- Lọc theo châu lục ---------- */
+    const filterBtns = document.querySelectorAll(".region-filter");
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const region = btn.getAttribute("data-region");
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        const items = list.querySelectorAll(".flag-row");
+        items.forEach(function (item) {
+          if (region === "all" || item.getAttribute("data-region") === region) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
+  /* ---------- Bộ sưu tập cờ (ưu tiên Đông Nam Á) ---------- */
+  const FLAG_GROUPS = [
+    { name: "Đông Nam Á (ASEAN)",      flags: ["🇻🇳","🇹🇭","🇸🇬","🇲🇾","🇮🇩","🇵🇭","🇰🇭","🇱🇦","🇧🇳","🇲🇲"] },
+    { name: "Đông Á",                  flags: ["🇻🇳","🇨🇳","🇯🇵","🇰🇷","🇹🇼","🇭🇰","🇲🇳","🇲🇴"] },
+    { name: "Nam Á",                   flags: ["🇮🇳","🇵🇰","🇧🇩","🇱🇰","🇳🇵","🇧🇹","🇲🇻","🇦🇫"] },
+    { name: "Liên minh châu Âu (EU)",  flags: ["🇦🇹","🇧🇪","🇧🇬","🇭🇷","🇨🇾","🇨🇿","🇩🇰","🇪🇪","🇫🇮","🇫🇷","🇩🇪","🇬🇷","🇭🇺","🇮🇪","🇮🇹","🇱🇻","🇱🇹","🇱🇺","🇲🇹","🇳🇱","🇵🇱","🇵🇹","🇷🇴","🇸🇰","🇸🇮","🇪🇸","🇸🇪"] },
+    { name: "Bắc Âu",                  flags: ["🇩🇰","🇫🇮","🇮🇸","🇳🇴","🇸🇪"] },
+    { name: "Trung Đông",              flags: ["🇸🇦","🇦🇪","🇶🇦","🇰🇼","🇧🇭","🇴🇲","🇮🇱","🇯🇴","🇱🇧","🇮🇶","🇮🇷","🇾🇪"] },
+    { name: "G20",                     flags: ["🇦🇷","🇦🇺","🇧🇷","🇨🇦","🇨🇳","🇫🇷","🇩🇪","🇮🇳","🇮🇩","🇮🇹","🇯🇵","🇲🇽","🇷🇺","🇸🇦","🇿🇦","🇰🇷","🇹🇷","🇬🇧","🇺🇸"] }
+  ];
+
+  ns.buildGrids("flagGridContainer", FLAG_GROUPS);
+
+  /* ---------- Twemoji: đồng nhất emoji trên mọi thiết bị ---------- */
+  ns.parseTwemoji(document.body);
+});
+</script>
+
+<script src="/styles.js"></script>
+<script src="/renderer.js"></script>
+<script src="/script.js" defer=""></script>
+<script src="/symbol-explorer.js"></script>
+<script src="/footer.js"></script>
+</body>
+</html>

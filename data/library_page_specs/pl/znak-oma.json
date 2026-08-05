@@ -1,0 +1,85 @@
+{
+  "slug": "znak-oma",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Oma: Skopiuj Ω ℧ — Nazwany na Cześć Fizyka Stojącego za V = IR",
+  "meta_description": "Skopiuj znak oma (Ω) dla rezystancji elektrycznej — nazwany na cześć fizyka Georga Simona Ohma i jego prawa z 1827 roku, V = IR — plus mho (℧) i simens dla wielkości odwrotnej. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-oma/",
+  "breadcrumb": "Znak Oma",
+  "hero_h1": "Znak Oma",
+  "hero_tagline": "Znak Ω dla rezystancji elektrycznej, nazwany na cześć Georga Simona Ohma — niemieckiego fizyka stojącego za prawem Ohma, V = IR — plus ℧, czyli „mho”, mierzące wielkość do niego odwrotną. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Znak oma (Ω) to jednostka rezystancji elektrycznej, nazwana na cześć Georga Simona Ohma (1789–1854), niemieckiego fizyka i matematyka, który sformułował to, co dziś nazywamy prawem Ohma, w swojej książce z 1827 roku „Die galvanische Kette, mathematisch bearbeitet”. To prawo, które zapamiętuje na pamięć każdy student elektroniki: natężenie prądu płynącego przez przewodnik jest proporcjonalne do napięcia na jego końcach i odwrotnie proporcjonalne do jego rezystancji — znajome V = I × R. Praca Ohma początkowo była w dużej mierze ignorowana, ale już w 1841 roku Royal Society przyznało mu medal Copleya. Jedna rzecz warta wyjaśnienia na wstępie: znak, o którym mowa, to technicznie U+2126 OHM SIGN, odrębny punkt kodowy, który wyświetla się identycznie jak wielka grecka litera omega (U+03A9), a własna baza danych Unicode traktuje znak oma jako normalizujący się do zwykłej omegi. Pełną historię tego sobowtóra opisuje nasza strona o symbolu omega — tutaj skupiamy się na omie jako jednostce elektrycznej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/ohm-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-oma/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/ohm-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-oma",
+      "label": "Znak Oma",
+      "h2": "Symbol Oma (Ω)",
+      "intro": "Jednostka rezystancji elektrycznej. U+2126 to dedykowany znak oma, choć w praktyce większość osób po prostu wpisuje wielką grecką omegę, która wygląda tak samo. Mała omega (ω) towarzyszy mu w matematyce prądu przemiennego, gdzie oznacza częstość kątową, ω = 2πf.",
+      "symbols": [
+        { "char": "Ω", "label": "Znak Oma (U+2126) — Rezystancja Elektryczna" },
+        { "char": "ω", "label": "Mała Grecka Omega (ω) — Częstość Kątowa" }
+      ]
+    },
+    {
+      "id": "om-a-omega",
+      "label": "Ω a Omega",
+      "h2": "Znak Oma a Grecka Omega",
+      "intro": "Te dwa kafelki to różne znaki Unicode — U+2126, znak oma, i U+03A9, wielka grecka omega — które w niemal każdej czcionce wyglądają identycznie. Baza danych Unicode mówi, że znak oma powinien normalizować się do zwykłej omegi, a większość klawiatur i narzędzi generuje omegę, nie znak oma. Ta rozbieżność spowodowała realne błędy w konwersji dokumentów. Do kopiowania i wklejania działa każdy z nich; pełne wyjaśnienie różnicy, wraz z udokumentowanym problemem w Pandoc, znajdziesz na stronie symbolu omega.",
+      "symbols": [
+        { "char": "Ω", "label": "Znak Oma (U+2126) — Znak Historyczny" },
+        { "char": "Ω", "label": "Wielka Grecka Omega (U+03A9) — Preferowana przez Unicode" }
+      ]
+    },
+    {
+      "id": "mho-i-simens",
+      "label": "Mho i Simens",
+      "h2": "Mho i Simens — Jednostka Odwrotna",
+      "intro": "Konduktancja to odwrotność rezystancji — dosłownie 1 ÷ Ω — a jej dawną jednostką jest mho (℧), czyli po prostu „ohm” zapisany od tyłu. Nazwę zaproponował lord Kelvin w 1883 roku. Współczesny układ SI zastąpił ją w 1971 roku simensem (symbol S, nazwanym na cześć wynalazcy Wernera von Siemensa); amerykański NIST oznacza dziś „mho” jako nazwę, której należy unikać, choć ℧ wciąż pojawia się w starszych tekstach i schematach.",
+      "symbols": [
+        { "char": "℧", "label": "Znak Mho (U+2127) — „Ohm” Odwrócony" },
+        { "char": "S", "label": "Simens (S) — Współczesna Jednostka SI Konduktancji" }
+      ]
+    },
+    {
+      "id": "symbole-elektryczne",
+      "label": "Symbole Elektryczne",
+      "h2": "Inne Symbole Elektryczne i Obwodów",
+      "intro": "Om sąsiaduje z rodziną glifów wypełniających schematy obwodów i karty katalogowe. Trzy kolejne znaki Unicode, których może wymagać schemat elektroniczny:",
+      "symbols": [
+        { "char": "⏚", "label": "Uziemienie (U+23DA)" },
+        { "char": "⚡", "label": "Znak Wysokiego Napięcia (U+26A1)" },
+        { "char": "∿", "label": "Fala Sinusoidalna (U+223F) — Prąd Przemienny" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/symbol-omega/",
+      "title": "Symbol Omega",
+      "desc": "Identycznie wyglądająca grecka litera, do której normalizuje się Ω z tej strony — pełne wyjaśnienie różnicy w Unicode i udokumentowany błąd konwersji w Pandoc."
+    },
+    {
+      "href": "/library/electrical-circuit-symbols/",
+      "title": "Electrical & Circuit Symbols",
+      "desc": "Przeglądalny zestaw glifów schematów — uziemienia, źródła, przełączniki i jednostki, którymi się je opisuje."
+    },
+    {
+      "href": "/symbol/micro-sign/",
+      "title": "Micro Sign",
+      "desc": "Dokładnie ta sama unikodowa osobliwość co znak oma: µ to dawny znak normalizujący się do greckiej litery mu — kolejny przedrostek SI (µF, µA), który wygląda jak grecka litera, choć pod spodem nią nie jest."
+    }
+  ]
+}

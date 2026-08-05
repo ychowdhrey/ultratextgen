@@ -1,0 +1,74 @@
+{
+  "slug": "znak-jena",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Jena: Skopiuj ¥ — Znaczenie, Pochodzenie i Jak Go Wpisać",
+  "meta_description": "Skopiuj znak jena (¥, U+00A5) — co oznacza, skąd się wziął i jak go wpisać na Windows i Mac. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-jena/",
+  "breadcrumb": "Znak Jena",
+  "hero_h1": "Znak Jena (¥)",
+  "hero_tagline": "Co oznacza ¥, skąd się wziął i jak go wpisać — kliknij, aby skopiować.",
+  "intro": "¥ podąża za wzorem powszechnym dla wielu symboli walut: bierze pierwszą literę nazwy waluty i przekreśla ją jedną lub dwiema kreskami — tym samym trikiem, który zamienił S w $, a L w £. Japonia wprowadziła jena w 1871 roku w ramach szeroko zakrojonych reform walutowych rządu Meiji, zastępując mozaikę starszych, feudalnych monet jedną, zachodnią w stylu walutą dziesiętną, a przekreślony znak Y wszedł do użycia razem z nią. Ponieważ chiński juan opiera się na równoległej latynizacji alfabetycznej (zarówno „jen”, jak i „juan” wywodzą się od tego samego chińskiego znaku 圓/元 oznaczającego „okrągły”, w nawiązaniu do okrągłych monet), obie waluty skończyły dzielić ten sam, zwykły tekstowy symbol Unicode, zamiast każda otrzymać własny dedykowany znak. Znak działa na Instagramie, Discordzie, TikToku i WhatsAppie, ale nie w nazwach użytkownika Roblox, PlayStation czy Xbox, ograniczonych do znaków alfanumerycznych. Na Windows wpisuje się go kombinacją Alt+0165, na Macu Option+Y, a w HTML encją &yen; lub &#165;.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/yen-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-jena/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/yen-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-jena",
+      "label": "Jen",
+      "h2": "Znak Jena",
+      "intro": "Właściwy unicode'owy znak jena, gotowy do wklejenia, oraz jego wariant pełnej szerokości używany w składzie wschodnioazjatyckim.",
+      "symbols": [
+        { "char": "¥", "label": "Znak Jena (U+00A5)" },
+        { "char": "￥", "label": "Znak Jena Pełnej Szerokości (U+FFE5) — używany w składzie CJK" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Podobne",
+      "h2": "Symbole Podobne do Znaku Jena",
+      "intro": "Znaki, z którymi bywa mylony znak jena.",
+      "symbols": [
+        { "char": "€", "label": "Znak Euro (U+20AC) — osobny, celowo zaprojektowany symbol waluty" }
+      ]
+    },
+    {
+      "id": "inne-symbole-walut",
+      "label": "Inne Waluty",
+      "h2": "Inne Symbole Walut Świata",
+      "intro": "Pozostałe główne światowe znaki walut, obok których pojawia się jen.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara" },
+        { "char": "£", "label": "Znak Funta" },
+        { "char": "₹", "label": "Znak Rupii Indyjskiej" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-dolara/",
+      "title": "Znak Dolara ($)",
+      "desc": "Najbardziej rozpoznawalny symbol waluty na świecie — i jego sporne pochodzenie."
+    },
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro (€)",
+      "desc": "Symbol waluty zaprojektowany celowo w 1996 roku."
+    },
+    {
+      "href": "/pl/symbol/znak-funta/",
+      "title": "Znak Funta (£)",
+      "desc": "Ponad tysiąc lat historii, wywodzący się z łacińskiego libra."
+    }
+  ]
+}

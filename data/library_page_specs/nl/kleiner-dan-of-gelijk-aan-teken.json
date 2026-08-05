@@ -1,0 +1,121 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "kleiner-dan-of-gelijk-aan-teken",
+  "title": "Kleiner Dan of Gelijk Aan: Kopieer en Plak ≤ — Betekenis, Alt-code & LaTeX",
+  "meta_description": "Kopieer en plak het teken kleiner dan of gelijk aan ≤ (U+2264) — Alt+243, het LaTeX-commando \\leq, de HTML-entiteit en de verwarrende buurtekens ≦ ⩽ ≲. Klik om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/kleiner-dan-of-gelijk-aan-teken/",
+  "breadcrumb": "Kleiner Dan of Gelijk Aan",
+  "hero_h1": "Kleiner Dan of Gelijk Aan (≤)",
+  "hero_tagline": "Het ≤ dat je gebruikt als een waarde kleiner kan zijn dan een andere waarde, of er precies aan gelijk — Alt+243 op Windows, \\leq in LaTeX, en &le; in HTML. Klik om het direct te kopiëren.",
+  "intro": "Het teken kleiner dan of gelijk aan (≤, U+2264) combineert het kleiner-dan-teken met een horizontale streep eronder, om te laten zien dat een waarde kleiner kan zijn dan een andere waarde, of er precies aan gelijk — de relatie achter alles van simpele ongelijkheden tot de gesloten intervallen van de calculus. Anders dan de strikte tekens < en >, die de Engelse wiskundige Thomas Harriot in 1631 introduceerde, is het gecombineerde paar ≤/≥ een latere verfijning: de Franse wiskundige Pierre Bouguer krijgt doorgaans de eer voor de introductie ervan in 1734, in zijn essay over de gradatie van licht. ASCII heeft nooit een eigen plek voor ≤ gereserveerd, en dat is waarom bijna elke programmeertaal terugvalt op het tweetekenige <= in plaats van het losse Unicode-teken.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/kleiner-dan-of-gelijk-aan-teken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "kleiner-dan-of-gelijk-aan",
+      "label": "Kleiner Dan of Gelijk Aan",
+      "h2": "Kleiner Dan of Gelijk Aan, in Wiskunde en Code",
+      "intro": "Het wiskundige teken, en de tweetekenige vervanger die de meeste programmeertalen gebruiken omdat ≤ zelf nooit in ASCII zat.",
+      "symbols": [
+        {
+          "char": "≤",
+          "label": "Kleiner Dan of Gelijk Aan (Wiskunde)"
+        },
+        {
+          "char": "<=",
+          "label": "Kleiner Dan of Gelijk Aan (Code — C, Python, JavaScript, Java, SQL)"
+        }
+      ]
+    },
+    {
+      "id": "verwarrende-tekens",
+      "label": "Verwarrende Tekens",
+      "h2": "Tekens die vaak worden Aangezien voor ≤",
+      "intro": "Deze betekenen allemaal ongeveer hetzelfde, maar zijn losse Unicode-tekens uit verschillende zettradities.",
+      "symbols": [
+        {
+          "char": "≦",
+          "label": "Kleiner Dan boven Gelijk Aan (U+2266)"
+        },
+        {
+          "char": "⩽",
+          "label": "Kleiner Dan of Schuin Gelijk Aan (U+2A7D) — de door ISO 31-11 geprefereerde vorm"
+        },
+        {
+          "char": "≲",
+          "label": "Kleiner Dan of Equivalent Aan (U+2272)"
+        },
+        {
+          "char": "≪",
+          "label": "Veel Kleiner Dan (U+226A) — een andere relatie, geen variant van ≤"
+        }
+      ]
+    },
+    {
+      "id": "verwante-vergelijkingstekens",
+      "label": "Verwante Vergelijkingstekens",
+      "h2": "Verwante Vergelijkingstekens",
+      "intro": "De andere relatietekens waarmee ≤ samengaat in ongelijkheden en verzamelingsnotatie.",
+      "symbols": [
+        {
+          "char": "≥",
+          "label": "Groter Dan of Gelijk Aan (U+2265)"
+        },
+        {
+          "char": "<",
+          "label": "Kleiner Dan"
+        },
+        {
+          "char": ">",
+          "label": "Groter Dan"
+        },
+        {
+          "char": "≠",
+          "label": "Ongelijk Aan"
+        },
+        {
+          "char": "=",
+          "label": "Isgelijkteken"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "Operatoren, verzamelingsnotatie en wiskundige constanten in één doorbladerbaar overzicht."
+    },
+    {
+      "href": "/nl/symbol/ongelijkteken/",
+      "title": "Ongelijkteken (≠)",
+      "desc": "Gebruikt door Euler, ontbrak in ASCII — waarom code != gebruikt."
+    },
+    {
+      "href": "/nl/symbol/kleiner-dan-groter-dan-teken/",
+      "title": "Kleiner Dan & Groter Dan",
+      "desc": "De strikte vergelijkingstekens waaruit ≤ en ≥ zijn opgebouwd, en waarom ze HTML kunnen breken."
+    }
+  ]
+}

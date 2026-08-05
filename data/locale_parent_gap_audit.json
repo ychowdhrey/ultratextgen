@@ -1,0 +1,475 @@
+{
+  "_readme": "Ledger of recorded pre-build competitor+keyword gap checks for (Core-parent-pattern, locale) cells and gated-tail-pattern build exceptions — the instrument that replaces incidental discovery (the FR /symbol/ blind spot: EN had 77 symbol pages, FR had 6, and nothing flagged the substantial French demand until a manual keyword pull found it) with a standing, recorded pass. Read/written by scripts/audit-locale-parent-gap.js (whole-site discovery) and scripts/check-locale-parent-gap.js (per-PR gate). Do NOT add or edit an entry here unilaterally — every entry must reflect a real, run instrument check, discussed with the user the same way data/translation_parity_exceptions.json entries are (see CLAUDE.md, 'Locale Parent Governance'). Entry shape: { pattern (a data/core_parent_set.json pattern string, e.g. \"symbol/*\"), locale (locale code), checkedDate (YYYY-MM-DD), instruments: { competitorFootprintInLocale: bool|null, keywordVolumeInLocaleMonthly: number|null, enGscImpressionsFromLocale: number|null } — null means that instrument was not run/available, not zero, evidence (short citation of where the numbers came from), recordedBy }. verdict: \"mirror\" (Core parent, demand confirms the default — informational, not required for the check to pass), \"veto\" (Core parent, pre-build check showed genuinely negligible demand — overrides the default-mirror), \"gate-pass\" (gated-tail parent, pre-build check cleared threshold — authorizes the build), \"gate-fail\" (gated-tail parent, pre-build check did not clear threshold — build not authorized). scripts/check-locale-parent-gap.js treats \"mirror\" and \"gate-pass\" as passing verdicts for a newly-shipped locale page; \"veto\" and \"gate-fail\" record that a page was deliberately NOT built. Do not invent additional entries with fabricated numbers — every cell without a real entry here is genuinely unaudited right now, which is exactly the gap this tooling exists to surface, not paper over.",
+  "entries": [
+    {
+      "pattern": "symbol/*",
+      "locale": "fr",
+      "checkedDate": "2026-07-14",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 49960,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "euro-sign, micro-sign, not-equal-sign, delta-symbol + 11 more evidence-backed symbol slugs; substantial total French demand found via a manual keyword pull against 15 missing symbol/ pages",
+      "recordedBy": "governance-tooling-audit"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "de",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull (no live Semrush/GSC check run for this locale specifically). EN parents (aesthetic-contact-names, group-name-generator, stumble-guys-name-generator) were themselves built off a real internal opportunity analysis (ID/global broad-match demand for the aesthetic-contact-names, group-name and Stumble Guys concepts) plus a related internal game-symbol research pass. That research targeted Indonesian/global demand, not this locale specifically, so this entry is an explicit ledger note that the mirror decision here rests on user sign-off, not this locale's own cleared instrument thresholds. This governance system landed on main after these 21 pages (7 locales x 3 concepts) were already built; user was asked directly whether to run real per-locale checks, self-authorize, or hold the pages back, and chose to authorize now.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "es",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "fr",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "it",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "pl",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "pt",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "tr",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. See the \"de\"/usecase/* entry above for full context — same 21-page batch, same authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "ja",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception for the single aesthetic-contact-names/renrakusaki-aesthetic page (ja has no group-name/stumble-guys translation). Not a fresh per-locale instrument pull — see the \"de\"/usecase/* entry above for full context on this batch's authorization.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "usecase/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception for the single aesthetic-contact-names/tongxunlu-nicheng page. zh-tw is registered as a Tier-3 hold-stub locale in data/locale_qualification_tiers.json, a firmer default (\"no spec mirroring until promoted via the 7-point qualification gate\") than the gated-tail default this same entry shape also satisfies. User was explicitly asked whether to revert this one page given the stronger tier-3 policy stance, or treat it the same as the other 21 gated-tail pages, and chose the latter. Not a fresh per-locale instrument pull, and does not constitute promoting zh-tw out of Tier 3 generally — this is a single-page, explicitly-discussed exception, not a tier change.",
+      "recordedBy": "claude-session-012t4G6GBWjxDMCNHgUa3KAj-user-authorized"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "vi",
+      "checkedDate": "2026-07-25",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull. vi is registered in data/locale_qualification_tiers.json as Tier 2 with hold: true — its documented problem is an authority/indexing gap, not a content gap (\"do not add vi content; it needs backlinks, not translations\"). The user was told this directly (vi's gap was presented separately from the qualified-locale symbol/* coverage table, with the hold reasoning spelled out) and explicitly chose to include vi in this build batch anyway when asked. This entry records that authorization so scripts/check-locale-parent-gap.js passes for the 98 vi/symbol/* pages built in this pass; it does not flip vi's hold flag in data/locale_qualification_tiers.json and does not constitute a general re-qualification of vi — the underlying authority/indexing concern is unaddressed by adding this content, and future vi build decisions should still weigh that.",
+      "recordedBy": "claude-session-vi-symbol-build-user-authorized"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "fr",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name, username-vs-display. jeuxvideo.com Fortnite thread \"Faut mettre quoi pour avoir des caracteres invisibles dans son pseudo svp?\" (strong, fetched) + jeuxvideo.com \"Pseudo avec caracteres invisibles\" + cs-hackers.com \"Avoir un pseudo invisible en jeu\" (strong, fetched); Ikariam official FR forum readable-username ruling (strong, fetched) + Vossey.com CS 1.6 special-characters thread (medium, fetched) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "id",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name. Kaskus thread on blank Free Fire nicknames with multiple confirming replies (\"udah ane coba... work 90%\", \"its work gan\") (strong, fetched) + koransakti.co.id on empty nicknames used to hide identity (medium, fetched) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "it",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name, boxes. Multiplayer.it \"come avere un nome invisibile... copiare il carattere speciale\" (strong) + SERP-consensus Italian tofu explanation \"se vedi quadratini o punti interrogativi... il device non supporta quei caratteri\" (strong/medium-high) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "nl",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: boxes, username-vs-display. helpmij.nl \"speciale tekens niet herkend... wordt een ? weergegeven\" (strong, fetched) + a second fetched helpmij.nl alt-codes thread (medium); bokt.nl \"Tekentjes voor in je msn naam\" (medium-high) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "pl",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name. Three independent strong, fetched Polish threads: Wykop \"niewidzialny nick na steamie\", cshacked.pl \"jak zrobic niewidzialny nick w CS:GO\", cshacked.pl \"jakis inny bardzo maly znak\" Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "pt",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: name-rejected. Riot Games official pt-BR announcement thread on Riot ID rejection (strong, fetched) + Riot Comunidades \"NICK COM CARACTERE ESPECIAL\" and Adrenaline Forum \"colocar o nick com esses caracteres... pode dificultar na hora de tu logar\" (medium x2) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "ru",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name, boxes, name-rejected. Strongest evidence set in the library: 5 strong fetched blank-name threads (otvet.mail.ru x2, Pikabu Telegram empty-name, Steam Community x2 incl. the 32-byte limit discussion); forum.fw-free.com nickname-symbol rejection thread (strong, fetched); otvet.mail.ru \"я вижу квадратики\" tofu thread (strong, fetched) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "th",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Topics cleared: blank-name. Pantip \"ตัวอักษรล่องหนในเกมfreefire\" (strong) + Pantip LINE blank-name thread (medium) Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "de",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "No answer-topic cleared the rule. Only 3 German rows exist in the corpus and none reach strong/medium-high on these topics: two snippet-only gutefrage.net blank-name references and one gutefrage.net thread that is actually about Instagram script fonts, not name rejection. Zero rows on tofu/boxes and zero on username-vs-display. Not a claim that German demand is absent — it is genuinely unaudited at the required strength, which is what this ledger is meant to surface rather than paper over. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "ko",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "No Korean rows exist anywhere in the 248-row forum corpus — not weak rows, zero rows. The demand check cannot be run at all for this locale on the current instrument, so no build is authorised. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "answers/*",
+      "locale": "vi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-fail",
+      "evidence": "Vietnamese forum evidence is genuinely strong (VOZ, boxcongnghe.com, kituvui.com, Lemon8, powerpoint.com.vn — multiple strong fetched rows across blank-name, tofu and name-rejection), so this is NOT a demand failure. Not built because vi carries an explicit locale-level hold in data/locale_qualification_tiers.json (hold: true — the gap is authority/indexing, not content). The hold overrides a passing demand signal. Revisit if and when the vi hold is lifted; the demand side is already cleared. Instrument: forum-evidence demand check over the 248-row cross-language forum gap-evidence corpus, user-authorised on 2026-07-26 as the substitute instrument because Semrush is out of API units (the reason the original build was reverted in 4eeb80a2). Decision rule, set before reading results: a (locale, answer-topic) cell passes on >=1 forum row of evidence_strength strong or medium-high, or >=2 independent medium rows; native-language verbatim and a real source URL required for every row (no analyst inference). Only the topics that individually cleared the rule were rebuilt for this locale — this is a per-topic gate, not a per-locale all-or-nothing restore of the original 4-page set.",
+      "recordedBy": "claude-session-01LgKuxuNvwhxa3fD8bZYhB2-user-authorized-forum-instrument"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "sv",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized exception, not a fresh per-locale instrument pull (no Semrush credits available this session). sv is registered in data/locale_qualification_tiers.json as Tier 3 (hold-stub, \"no spec mirroring until promoted\") — a firmer default than a gated-tail parent's normal per-check gate, same class of override as the zh-tw/tongxunlu-nicheng entry above. The gap was surfaced by an internal translation-coverage analysis (sv missing all of the site's top-4-traffic library/ cluster — discord-symbols, roblox-symbols, y2k-symbols, emoji-combos — while it already carries real content elsewhere, i.e. this is a partially-built locale, not a bootstrap-from-zero). The user was told sv is Tier 3 directly and asked to build this specific 4-page cluster anyway, and confirmed. This entry authorizes sv/library/discord-symboler, sv/library/roblox-symboler, sv/library/y2k-symboler, and sv/library/emoji-combos; it does not change sv's tier in data/locale_qualification_tiers.json and does not constitute general re-qualification of sv — future sv build decisions should still go through the Tier-3 default (raise with the user first) unless/until sv is promoted via the 7-point gate.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 140,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized new-locale launch, not a fresh per-locale Semrush pull (no API access this session). fi is a brand-new locale, added to data/locale_qualification_tiers.json as Tier 3 (hold-stub) in this same change, matching the hr/hu/da precedent of starting new Latin-script European locales at Tier 3 regardless of build depth. Real competitor-footprint evidence found via web search in place of Semrush: fi.piliapp.com (a dedicated Finnish subdomain of an existing multi-locale competitor already tracked elsewhere in this repo's research), cooltextmaker.com/fi/, urwatools.com/fi/, and adamfaliq.com/fi/bold-text-generator-suomi/ all independently serve Finnish-language \"fonttigeneraattori\"/\"tekstigeneraattori\" (font/text generator) content today. An internal language-expansion analysis separately scored Finnish as a Phase-1 candidate alongside ms/da/hu, all three already live. User explicitly asked for a full Finnish locale launch. This entry authorizes the category/* pages built in this launch (bold-fonts, italic-fonts, gothic-fonts, small-text Finnish translations). || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (FI 100-keyword pull). The category terms this entry authorized all measure at or near zero demand in-locale. Recorded value is the highest of them. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged internally; awaiting that decision.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
+      "backfilledDate": "2026-08-02"
+    },
+    {
+      "pattern": "guide/*",
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry immediately above. Covers the standard 3-guide Discord trio (discord-text-formatting-explained, discord-where-fonts-work, discord-safe-name-styling) that every prior minimal-locale launch (hr, hu, da) has shipped alongside its core category/platform pages. || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (FI 100-keyword pull). Every Discord term returned NO volume data at all — i.e. below the tool's reporting threshold, distinct from the explicit zeros this export returns elsewhere. keywordVolumeInLocaleMonthly stays null because no volume was measurable, NOT because the instrument was skipped; the instrument ran and found none. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged internally; awaiting that decision.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
+      "backfilledDate": "2026-08-02"
+    },
+    {
+      "pattern": null,
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1900,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way. || BACKFILL 2026-08-02 (CLAUDE.md 'an all-instruments-null authorization is a bridge, not a pass'): real instrument data now exists (FI 100-keyword pull). Split result. The homepage's own head terms are dead, but 'fontti muunnin' measures real demand at low difficulty, so fi/index.html has a live retarget available and is NOT a candidate for retirement. The two platform pages this entry also covered do not: 'instagram fontit' and 'instagram bio fontti' both measure a hard 0. Recorded value is the surviving homepage term. *** THE BACKFILL CONTRADICTS THIS ENTRY'S RECORDED VERDICT. *** Per the same rule the verdict is deliberately NOT flipped here: the pages are already live, so the call (fold / de-index / keep-and-retarget) is a discussion with the user, flagged with the data rather than decided unilaterally. Flagged internally; awaiting that decision.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized",
+      "backfilledDate": "2026-08-02"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 12100,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "library/zodiac-symbols -> fi/library/horoskooppimerkit. 'horoskooppimerkit', Informational intent (FI keyword pull, 2026-08-02); broad-match adds 'horoskooppi symbolit' and 'horoskooppimerkit symbolit'. Highest-volume term in the entire 100-keyword FI request set. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 5400,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "category/cursive-fonts -> fi/kaunokirjoitus. 'kaunokirjoitus' plus its full cluster (kaunokirjaimet, kauno, kaunokirjoitus fontti). Resolves the FI-013 intent split: both terms return Informational intent on the same SERP type, so they are one cluster. Largest font-side opportunity in the locale; fi/kursivoitu-teksti correctly parents to category/italic-fonts, so cursive was genuinely unbuilt. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 3600,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "symbol/degree-symbol -> fi/symbol/asteen-merkki and symbol/euro-sign -> fi/symbol/euron-merkki, both evidenced by the FI keyword pull 2026-08-02. This is the FR /symbol/ blind spot repeating in Finnish, found by the instrument this ledger exists to require rather than by accident. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": "character-counter/*",
+      "locale": "fi",
+      "checkedDate": "2026-08-02",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 2400,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "mirror",
+      "evidence": "character-counter -> fi/merkkilaskuri. 'merkkilaskuri' shows Commercial intent on a Related-searches-only SERP at low difficulty — the best effort-adjusted opportunity in the FI set. Note the invisible-character half of this parent ('nakymaton merkki', 'tyhja merkki') returned no volume data, so the FI page should lead on counting, not on the blank-character job. INSTRUMENT: FI-market bulk keyword overview, 100-keyword request list (FI keyword-volume request list, held internally), two exports 2026-08-02. AUTHORIZATION: fi is Tier 3 (hold-stub) in data/locale_qualification_tiers.json, so the registry's standing default is skip-stub-locale. The hold reasoning was presented to the user in full before they decided, and the user explicitly authorized this five-page batch. Per CLAUDE.md's vi precedent, the override is recorded here as a dated decision and fi's tier/hold flag is deliberately left untouched. Unlike the 2026-07-26 fi entries, this one carries real instrument data rather than nulls.",
+      "recordedBy": "claude-session-finnish-translation-pages-lrvw31-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "fi",
+      "checkedDate": "2026-07-26",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 1900,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Same authorization and evidence as the category/*-locale-fi entry above. Covers fi/index.html, fi/discord-fontit/, and fi/instagram-fontit/, whose EN parents (index.html, discord/index.html, instagram/index.html) are bare top-level pages with no matching data/core_parent_set.json pattern, so scripts/lib/locale-parent-registry.js's classifyParent() reports them with pattern: null (tier \"unclassified\") rather than core/gated/never — the Tier-3-locale check (step 1 of decide()) still fires regardless of parent classification, hence this entry. Recorded as JSON null (not the string \"(unclassified)\" the console output displays as a fallback) to actually match scripts/check-locale-parent-gap.js's passingLedgerEntry() lookup, which compares the raw parentInfo.pattern value. Every prior minimal-locale launch (hr, hu, da, ms) shipped an equivalent homepage + top-level Discord/Instagram platform pages the same way.",
+      "recordedBy": "claude-session-pending-translation-projects-9atkxq-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of library/*'s own Core tier regardless — this entry is a user-authorized override of that hold for a specific, scoped slice of library/*, not a change to zh-tw's tier or hold flag. User was told directly that zh-tw is Tier 3/hold-stub and that its one proven first-party win is narrowly the game-name vertical (per the existing zh-tw entry in this ledger and data/locale_qualification_tiers.json's zh-tw notes) before authorizing this build. Competitor-footprint instrument (piliapp.com organic positions export, db=tw, pulled 2026-07-31) cleared for three specific library/* collection pages: the competitor's arrow, number and star symbol pages (each drawing substantial modeled TW traffic across many ranking keywords) — mapping to EN parents library/arrow-symbols/, library/number-symbols/, library/star-symbols/. No direct TW keyword-volume pull was run against the arrow/number/star terms specifically (the broad-match exports supplied this session were seeded on \"emoji\", \"字體\"/font, \"fb\", and \"表情符號\", not \"箭頭\"/\"數字\"/\"星星\"), so keywordVolumeInLocaleMonthly is left null rather than estimated — the competitor-footprint instrument alone is what's clearing the gated-tail threshold here. Scope is limited to these three library/* collection slugs; this is not a blanket library/* mirror decision for zh-tw (the existing zh-tw entry's \"deepen the game-name vertical, not blanket Core mirroring\" guidance still stands for the rest of library/* and all of symbol/*).",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": null,
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 105480,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers zh-tw/ig-ziti/, the translation of the EN instagram/ platform page (a bare top-level page with no data/core_parent_set.json pattern, so classifyParent() reports pattern: null / tier \"unclassified\"; the Tier-3-locale check still fires, hence this entry). User-authorized override of zh-tw's Tier 3 hold-stub default, presented before the decision, per the vi-override template — zh-tw's tier and hold flag left untouched. Keyword instrument: Semrush db=tw broad-match export (pulled 2026-07-31, seed \"字體\"), the IG/Instagram cluster is led by \"ig 字體\" — materially larger than \"英文字體\", the term the existing zh-tw/yingwen-ziti/ page targets. Competitor instrument: the competitor's Instagram fonts page is its 2nd-highest-traffic page site-wide, top keyword \"ig 字體\". zh-tw had no Instagram page of any kind before this build. Also records the Rule 3 de-confliction applied in the same change: zh-tw/yingwen-ziti/ had an IG-targeting FAQ answer, now reduced to a pointer link at the new page.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": "category/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-07-31",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 46570,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers zh-tw/shufa-ziti/ (translation of category/cursive-fonts/) and zh-tw/keai-ziti/ (translation of category/cute-fonts/). TWO overrides recorded together, both user-authorized after being presented: (1) zh-tw is Tier 3 hold-stub, same override shape as the entries above; (2) category/* is scriptIndependent:false — the registry's standing guidance is that Latin-transform category pages do NOT mirror into CJK locales, and that a script-appropriate Core subset be substituted instead. That second default is overridden here on direct evidence that the TW demand IS for Latin-script transforms, not Chinese-script ones: the top TW keyword on tw.piliapp.com/cool-text/cursive/ is \"英文草寫\" — literally \"English cursive\" — and that page draws substantial modeled traffic across many keywords. The same reasoning already underpins the ratified zh-tw/yingwen-ziti/ local-only page (a CJK-script-user tool for decorating Latin text). Both new pages state the Latin-only scope explicitly in their own copy rather than implying Chinese glyphs transform. Keyword instrument (Semrush db=tw broad-match, 2026-07-31): cursive cluster 書法 + 手寫 (head terms 書法字體, 手寫字體); cute cluster (head term 可愛字體) — a substantial combined opportunity. Competitor instrument for the cute page is weaker and recorded as such: piliapp has no dedicated cute-font page, ranking its IG page #1 for 可愛字體 instead.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": "symbol/*",
+      "locale": "zh-tw",
+      "checkedDate": "2026-08-01",
+      "instruments": {
+        "competitorFootprintInLocale": true,
+        "keywordVolumeInLocaleMonthly": 238540,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "Covers 27 zh-tw/symbol/* translations (currency 7, temperature/measurement 5, math 5, Greek 7, legal/editorial 3) plus the zh-tw/symbol/ pillar index that carries their breadcrumbs. zh-tw is Tier 3 hold-stub in data/locale_qualification_tiers.json, so the Tier-3 skip fires ahead of symbol/*'s own Core tier; this is a user-authorized override of that hold for this specific batch, not a change to zh-tw's tier or hold flag (both left untouched), same shape as the vi override template and as the three earlier zh-tw entries above. The hold reasoning and the standing Tier-3 default were presented to the user before they authorized the build. Competitor instrument (piliapp.com organic-positions export, db=tw, pulled 2026-07-31): 82 tw.piliapp.com/symbols/<x>/ single-item pages were mapped against UltraTextGen's 106 EN symbol/ parents; 27 matched a live EN parent and together draw substantial modeled TW traffic — led by celsius, plus-minus, degree, infinity, alpha, multiplication, not-equal, yen, omega and euro. Keyword instrument: the recorded figure is the SUM of each matched page's single top TW keyword volume. Recorded as a sum of per-slug head terms, NOT a modeled cluster total and NOT a full broad-match pull for each slug — it is an under-count of the clusters and an over-count of any single page's realistic ceiling; treat it as an order-of-magnitude floor on demand, not a forecast. zh-tw had 0 of 106 symbol/ parents translated before this build. The remaining 55 competitor single-item pages have no EN parent and are deliberately NOT built here — they are recorded in an internal opportunity backlog instead, per CLAUDE.md's English-Parent Rule.",
+      "recordedBy": "claude-session-report-ranking-analysis-3t05b4-user-authorized"
+    },
+    {
+      "pattern": "library/*",
+      "locale": "vi",
+      "checkedDate": "2026-08-01",
+      "instruments": {
+        "competitorFootprintInLocale": null,
+        "keywordVolumeInLocaleMonthly": null,
+        "enGscImpressionsFromLocale": null
+      },
+      "verdict": "gate-pass",
+      "evidence": "User-authorized override of vi's Tier-2 hold, for the seven mid-head library/* pages built 2026-08-01 (ky-hieu-tien-te, ky-tu-dac-biet-unicode, ky-hieu-am-nhac, ky-hieu-co-vua, ky-hieu-ton-giao, ky-hieu-hoi-giao, ky-tu-kawaii-de-thuong). Same shape as the 2026-07-25 symbol/* entry, with one difference worth recording: this time the hold's own premise was checked against data rather than simply overridden. vi is held because of an \"authority/indexing gap - not a content gap\", but the sitewide GSC pull of 2026-08-01 (ultratextgen-lab-, GSC-QUERY-LEVEL-PULL-2026-08-01.md sec 1b, window Jul 4-29) measures /vi/* at 163,411 impressions, 4,704 clicks, 2.88% CTR across 114 pages and 1,765 queries - indexed, ranked and converting, and 100x the 47-click figure the hold was originally reasoned from. The FF/gaming query family alone went from 19 impressions/2 clicks to 714/32 on the same aggregation method. The user was shown the hold and its reasoning before deciding, and chose to include vi. Instruments are null: this is an authorization plus a contradicted-premise finding, NOT a fresh Semrush/GSC per-cell pull. Per the 2026-08-01 CLAUDE.md rule, an all-null entry is a bridge, not a pass - it is complete only once instruments are backfilled or a dated veto is recorded. Re-check is logged in the lab repo's docs/review-register.md. vi's tier and hold flag in data/locale_qualification_tiers.json are deliberately left untouched: the registry keeps stating the standing default, and this ledger carries the dated, attributed exception. If the hold's premise is now simply wrong, that is a separate registry decision to raise on its own evidence, not something to change as a side effect of shipping pages."
+    }
+  ]
+}

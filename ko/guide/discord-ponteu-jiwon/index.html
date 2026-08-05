@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>디스코드에서 폰트가 되는 곳: 칸별 권한 지도 | UltraTextGen</title>
+<meta name="description" content="왜 디스코드가 사용자명이 잘못됐다고 하는지, 왜 채널 이름의 대문자가 사라지는지, 그리고 정확히 어떤 칸이 유니코드 폰트를 받아들이는지 — 하나의 칸별 권한 표가 시행착오를 끝냅니다.">
+
+<link rel="canonical" href="https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-where-fonts-work/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/amaken-khutut-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/gdje-rade-fontovi-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/kde-funguje-pismo-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/hvor-virker-skrifttyper-i-discord/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/wo-funktionieren-schriftarten-in-discord/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/donde-funcionan-las-fuentes-en-discord/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/ou-fonctionnent-les-polices-discord/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-font-kahan-kaam-karte-hain/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/gdje-rade-fontovi-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/di-mana-font-discord-bekerja/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/dove-funzionano-i-font-discord/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-font-doko/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/waar-lettertypes-werken-in-discord/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/hvor-fungerer-skrifter-i-discord/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/gdzie-dzialaja-czcionki-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/onde-as-fontes-funcionam-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/unde-functioneaza-fonturile-discord/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/gde-rabotayut-shrifty-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/kde-funguje-pismo-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/gde-fontovi-rade-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/var-typsnitt-fungerar-i-discord/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-font-thamngan-thinai/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/saan-gumagana-ang-font-sa-discord/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-fontlari-nerede-calisir/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/font-discord-dung-o-dau/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-ziti-nali-nengyong/">
+<link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/guide/hol-mukodnek-a-discord-fontok/">
+<link rel="alternate" hreflang="ms" href="https://ultratextgen.com/ms/guide/di-mana-font-discord-berfungsi/">
+<link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/guide/missa-discord-fontit-toimivat/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-where-fonts-work/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/ko-guide-discord-ponteu-jiwon.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="디스코드에서 폰트가 되는 곳: 칸별 권한 지도">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="디스코드에서 폰트가 되는 곳: 칸별 권한 지도 | UltraTextGen">
+<meta name="twitter:description" content="왜 디스코드가 사용자명이 잘못됐다고 하는지, 왜 채널 이름의 대문자가 사라지는지, 어떤 칸이 유니코드 폰트를 받아들이는지 — 하나의 칸별 권한 표가 시행착오를 끝냅니다.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/ko-guide-discord-ponteu-jiwon.png">
+<meta property="og:title" content="디스코드에서 폰트가 되는 곳: 칸별 권한 지도">
+<meta property="og:description" content="왜 디스코드가 사용자명이 잘못됐다고 하는지, 왜 채널 이름의 대문자가 사라지는지, 그리고 정확히 어떤 칸이 유니코드 폰트를 받아들이는지 — 하나의 칸별 권한 표가 시행착오를 끝냅니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "디스코드에서 폰트가 되는 곳: 칸별 권한 지도",
+  "description": "왜 디스코드가 사용자명이 잘못됐다고 하는지, 왜 채널 이름의 대문자가 사라지는지, 그리고 정확히 어떤 칸이 유니코드 폰트를 받아들이는지 — 하나의 칸별 권한 표가 시행착오를 끝냅니다.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/ko-guide-discord-ponteu-jiwon.png",
+  "inLanguage": "ko",
+  "mainEntityOfPage": "https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://ultratextgen.com/ko/" },
+    { "@type": "ListItem", "position": 2, "name": "가이드", "item": "https://ultratextgen.com/ko/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "디스코드에서 폰트가 되는 곳", "item": "https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "왜 디스코드가 제 사용자명이 잘못됐다고 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "고유 @사용자명은 표시용 칸이 아니라 신원 키이기 때문입니다. 소문자 a–z, 0–9, 밑줄, 마침표만 허용하므로 — 유니코드 폰트 문자(심지어 일반 대문자)를 붙여넣으면 디스코드가 저장을 거부합니다. 꾸민 버전은 표시 이름이나 서버 별명에 넣으세요. 그 칸들은 유니코드를 온전히 받아들입니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "디스코드 표시 이름에 폰트를 쓸 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 표시 이름, 서버 별명, 역할 이름, 서버 이름, 채널 이름, 자기소개는 모두 유니코드 폰트 문자와 이모지를 받아들입니다. 꾸민 텍스트를 만든 뒤 완성된 문자를 칸에 붙여넣으면 됩니다 — 따로 켤 것은 없습니다. 구형 기기와 스크린 리더 사용자도 읽을 수 있도록 볼드, 이탤릭, 스몰캡스처럼 읽기 쉬운 스타일을 권합니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "왜 제 채널 이름의 대문자가 사라졌나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "텍스트 채널 이름은 정규화됩니다: 디스코드는 일반 A–Z를 소문자로 바꾸고 공백을 하이픈으로 바꿉니다. 그래서 'General Chat'이 'general-chat'이 됩니다. 유니코드 폰트 문자는 일반 글자가 아니므로 그대로 통과합니다 — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟은 A–Z가 아니라 수학 볼드 문자이기 때문에 대문자를 유지합니다. 음성 채널과 카테고리 이름은 이 정규화를 건너뛰어 공백과 대문자를 유지합니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "디스코드 역할·서버 이름에서 폰트가 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. 둘 다 표시용 칸이라 유니코드 폰트, 기호, 이모지가 문제없이 저장되고, 꾸며서 별도 표시되는(호이스트된) 역할은 멤버 사이드바에 나타납니다. 다만 검색, 멘션 자동완성, 많은 관리 봇이 문자를 그대로 대조하므로, 과하게 꾸민 역할 이름은 찾고 입력하기가 더 어렵습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "이름을 꾸며도 다른 사람이 저를 @멘션할 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네 — 멘션은 꾸민 문자가 아니라 여러분의 계정을 기준으로 확인됩니다. 일반 @사용자명을 입력하면 언제나 여러분을 찾고, 이름을 클릭하거나 멤버 목록에서 고르는 것도 됩니다. 깨지는 것은 표시 이름 자동완성입니다: 'aesthetic'을 입력해도 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈은 나오지 않습니다. 서로 다른 문자이기 때문입니다. 바로 그래서 디스코드는 아이디를 일반 문자로 유지합니다: 여러분에게 확실히 닿는 방법이니까요." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/ko/">홈</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/ko/guide/">가이드</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">디스코드에서 폰트가 되는 곳</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">디스코드에서 폰트가 되는 곳</h1>
+    <p class="hero-tagline">'잘못된 사용자명.' 대문자가 사라진 채널 이름. 문제없이 저장된 별명. 디스코드가 제멋대로인 게 아닙니다 — 모든 칸에는 역할이 있고, 각 칸이 서로 다른 규칙을 강제합니다. 다시는 추측하지 않도록, 여기 전체 권한 지도를 담았습니다.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">플랫폼: 디스코드</span>
+      <span class="guide-pill">⏱ 9분 분량</span>
+      <span class="guide-pill">칸별 권한 표</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/ko-guide-discord-ponteu-jiwon.svg" width="1200" height="340"
+       alt="사용자명, 표시 이름, 채널, 역할 등 디스코드 칸의 격자 — 신원 칸에는 자물쇠, 표시용 칸에는 열린 체크 표시가 붙어 있습니다.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>핵심 요약</h2>
+  <ul>
+    <li>고유 <strong>@사용자명</strong>은 소문자 a–z, 0–9, 밑줄, 마침표만 받아들입니다. 거기에 폰트를 붙여넣으면 '잘못된 사용자명'이 뜹니다 — 설계상 매번 그렇습니다.</li>
+    <li>모든 <strong>표시용 칸</strong> — 표시 이름, 서버 별명, 역할, 서버·채널 이름, 자기소개 — 은 아무 요령 없이 유니코드 폰트와 이모지를 받아들입니다.</li>
+    <li><strong>마크다운은 메시지에서만 렌더링됩니다</strong>(자기소개의 기본 서식 포함). 모든 이름 칸에서는 별표가 그대로 남아 있을 뿐입니다.</li>
+    <li>꾸민 이름에는 실제 비용이 따릅니다: <kbd>Ctrl+K</kbd>로 'aesthetic'을 입력해도 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈은 못 찾고, 스크린 리더는 헛디디며, 구형 안드로이드는 네모를 보여줄 수 있습니다.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">핵심 개념</span>
+    <h2>디스코드는 일관성이 없는 게 아니라 — 칸마다 역할이 있습니다</h2>
+    <div class="editorial-block">
+      <p>시행착오 반복은 이렇게 흘러갑니다: 생성기로 이름을 꾸며 디스코드의 한 칸에 붙여넣으면 완벽하게 저장됩니다. 같은 텍스트를 다른 칸에 붙여넣으면 디스코드가 딱 거부합니다. 같은 문자, 같은 계정, 정반대 결과. 제멋대로인 것<em>처럼</em> 느껴집니다.</p>
+      <p>그렇지 않습니다. 디스코드의 칸은 두 가족으로 깔끔하게 나뉩니다. <strong>신원 칸</strong>은 다른 시스템이 의존하는 칸입니다 — 멘션, 친구 요청, 관리 로그, 계정 복구. 딱 하나뿐입니다: 여러분의 고유 @사용자명. 절대 사칭·오타·기기별 표시 차이가 생기지 않도록 아주 작은 문자 집합으로 잠겨 있습니다. <strong>표시용 칸</strong>은 사람들이 <em>바라보는</em> 모든 것입니다 — 표시 이름, 별명, 역할 이름, 서버·채널 이름, 자기소개. 이것들은 활짝 열려 있습니다. 중요한 것이 이 칸들을 거쳐 라우팅되지 않기 때문입니다.</p>
+      <p>두 가족을 보고 나면, 모든 '왜 저장이 안 되지?'가 스스로 답합니다. 여러분은 버그와 싸우는 게 아니라, 표시 등급 문자를 신원 등급 칸에 붙여넣고 있을 뿐입니다. 해결책은 언제나 같습니다: 스타일을 한 칸 옆으로 옮기세요.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the trap -->
+  <section class="editorial-section">
+    <span class="article-section-label">1순위 함정</span>
+    <h2>사용자명 vs 표시 이름: '잘못된 사용자명'은 왜 뜨나</h2>
+    <div class="editorial-block">
+      <p>이 하나의 혼동이 나머지 전부를 합친 것보다 많은 실패를 만듭니다. 디스코드가 옛 네 자리 식별 번호를 없앤 뒤로, 모든 계정에는 <strong>두 개</strong>의 이름이 있고, 서로 정반대 규칙을 따릅니다:</p>
+      <ul>
+        <li><strong>사용자명</strong> — 프로필에 @와 함께 표시되는 고유 아이디. 허용 문자: 소문자 <code>a–z</code>, <code>0–9</code>, <code>_</code>, <code>.</code> — 그 외에는 없음. 대문자도, 공백도, 당연히 𝓬𝓾𝓻𝓼𝓲𝓿𝓮도 안 됩니다. 이 집합을 벗어나면 '잘못된 사용자명' 오류가 뜹니다.</li>
+        <li><strong>표시 이름</strong> — 채팅과 프로필에 보이는 크고 친근한 이름. 공백, 대문자, 이모지, 붙여넣을 수 있는 모든 유니코드 폰트 문자를 받아들입니다.</li>
+      </ul>
+      <p>그래서 통하는 방식은 안은 밋밋하고 밖은 꾸며진 형태입니다:</p>
+      <div class="example-pair">
+        <span class="ex-label">거부됨</span>
+        <span class="ex-plain">@𝕹𝖔𝖛𝖆 → '잘못된 사용자명'</span>
+        <span class="ex-arrow">↓</span>
+        <span class="ex-label">통함</span>
+        <span class="ex-styled">@nova_riot &nbsp;+&nbsp; 표시 이름 𝕹𝖔𝖛𝖆 ⚔</span>
+      </div>
+      <p>서버 안에서는 세 번째 층인 <strong>서버 별명</strong>이 생깁니다. 이 별명은 그 서버에서만 표시 이름을 덮어쓰며, 똑같이 관대합니다. 커뮤니티별로 꾸며 보세요: 독서 모임에서는 ୨୧ 𝒩𝑜𝓋𝒶 ୨୧, e스포츠 서버에서는 𝗡𝗢𝗩𝗔. <a href="/ko/ireum-kkumigi/">이름 꾸미기 도구</a>가 문자 매핑을 대신 처리해 줍니다.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the framework -->
+  <section class="editorial-section">
+    <span class="article-section-label">프레임워크</span>
+    <h2>칸별 권한 표</h2>
+    <div class="editorial-block">
+      <p>여기 전체 지도가 있습니다 — 디스코드의 모든 텍스트 칸, 각 칸이 받아들이는 것, 그리고 <em>왜</em> 그런지. 이 표를 즐겨찾기에 넣으면 추측은 끝납니다.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>칸</th><th>마크다운?</th><th>유니코드 폰트?</th><th>이모지?</th><th>이렇게 만든 이유</th></tr></thead>
+        <tbody>
+          <tr><td><strong>사용자명(@아이디)</strong></td><td>✗</td><td>✗ 거부됨</td><td>✗</td><td>신원 키. <code>a–z 0–9 _ .</code>만 — 멘션과 친구 요청을 위해 입력 가능·고유·사칭 불가여야 함</td></tr>
+          <tr><td><strong>표시 이름</strong></td><td>✗ 그대로 표시</td><td>✓</td><td>✓</td><td>순수 표시용 — 채팅에 보이고 라우팅에는 안 쓰임</td></tr>
+          <tr><td><strong>서버 별명</strong></td><td>✗ 그대로 표시</td><td>✓</td><td>✓</td><td>서버별 표시용; 그 서버에서 표시 이름을 덮어씀</td></tr>
+          <tr><td><strong>역할 이름</strong></td><td>✗ 그대로 표시</td><td>✓</td><td>✓</td><td>ID가 아니라 라벨 — 호이스트된 역할은 멤버 사이드바에 표시됨</td></tr>
+          <tr><td><strong>서버 이름</strong></td><td>✗ 그대로 표시</td><td>✓</td><td>✓</td><td>브랜딩 표면; 초대와 디스커버리에 그대로 노출됨</td></tr>
+          <tr><td><strong>채널 이름(텍스트)</strong></td><td>✗</td><td>✓ 그대로 통과</td><td>✓</td><td>URL 같은 일관성을 위해 자동 소문자·하이픈 처리 — 단, 일반 A–Z만 건드림</td></tr>
+          <tr><td><strong>채널 주제</strong></td><td>✗ 대체로 그대로</td><td>✓</td><td>✓</td><td>설명 표면; 일반 텍스트 + 유니코드로 취급</td></tr>
+          <tr><td><strong>자기소개 / 바이오</strong></td><td>✓ 기본(볼드, 이탤릭, 링크)</td><td>✓</td><td>✓</td><td>프로필 카드가 가벼운 렌더러를 돌림</td></tr>
+          <tr><td><strong>메시지</strong></td><td>✓ 전체 엔진</td><td>✓</td><td>✓</td><td>채팅 표면 — 완전한 마크다운 엔진이 도는 유일한 곳</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="editorial-block">
+      <p>열을 위에서 아래로 읽으면 논리가 드러납니다: <strong>정확히 한 행만 유니코드를 거부하고, 정확히 한 행만 완전한 마크다운을 실행합니다.</strong> 그 사이의 모든 것이 열린 중간지대입니다 — 붙여넣는 스타일은 환영, 렌더링되는 스타일은 무시. 이것이 시스템 전부입니다.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: channel name quirk -->
+  <section class="editorial-section">
+    <span class="article-section-label">현장 노트</span>
+    <h2>채널 이름의 버릇: 자동 소문자, 자동 하이픈</h2>
+    <div class="editorial-block">
+      <p>텍스트 채널 이름은 저장할 때 조용히 다시 쓰입니다: 일반 대문자는 소문자가 되고 공백은 하이픈이 됩니다. 그래서 <code>General Chat</code>이 <code>#general-chat</code>으로 나옵니다. 사람들은 이걸 '디스코드가 내 스타일을 지웠다'로 읽습니다. 자세히 보세요 — 건드린 건 일반 글자뿐입니다.</p>
+      <div class="mood-explainer">
+        <div class="mood-example">입력: <strong>GENERAL CHAT</strong> → 저장: <strong>#general-chat</strong> &nbsp;·&nbsp; 입력: <strong>𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ✦ 𝗖𝗛𝗔𝗧</strong> → 저장: <strong>#𝗚𝗘𝗡𝗘𝗥𝗔𝗟-✦-𝗖𝗛𝗔𝗧</strong></div>
+      </div>
+      <p>수학 볼드 𝗚는 일반 대문자 G가 아니라 — 다른 유니코드 문자입니다 — 그래서 소문자 규칙이 건너뜁니다. 여러분이 본, 대문자로 꾸며진 채널 목록을 가진 모든 서버 뒤에 숨은 허점이 바로 이것입니다. 각주 둘: <strong>음성 채널과 카테고리는 전혀 정규화되지 않고</strong>(공백과 일반 대문자가 살아남음), 카테고리 헤더는 ─── ╭─ 같은 기호 구분선이 가장 빛을 발하는 곳입니다.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: markdown and color -->
+  <section class="editorial-section">
+    <span class="article-section-label">렌더링되는 스타일</span>
+    <h2>마크다운이 되는 곳 — 그리고 그냥 놓여 있는 곳</h2>
+    <div class="editorial-block">
+      <p>마크다운은 또 다른 종류의 스타일입니다: <code>**볼드**</code> 같은 기호를 디스코드가 메시지를 <em>렌더링할</em> 때 변환합니다. 표가 보여주듯 그 영역은 작습니다 — <strong>메시지, 그리고 자기소개의 기본 서식</strong>. 별명 칸에 <code>**Nova**</code>를 입력하면 별표는 문자 그대로 저장됩니다. 이름 칸은 원본 그대로 저장·표시되어 변환할 렌더링 과정이 없기 때문입니다.</p>
+      <p>실용적으로 기억할 구분은 이것입니다: <strong>말하는 것에는 렌더링 스타일(마크다운), 불리는 이름에는 붙여넣는 스타일(유니코드).</strong> 스포일러 태그, 코드 블록, 니트로 층, 그리고 '왜 내 별표가 볼드가 안 되지' 같은 고전적 실수 등 전체 메커니즘은 자매 가이드 <a href="/ko/guide/discord-tekseuteu-seosik/">디스코드 텍스트 서식 완벽 해설</a>에 있습니다.</p>
+      <p>짚어 둘 특수한 경우 하나: <strong>색깔 있는 글자</strong>. 이것은 오직 메시지 안에서만, 오직 ANSI 코드 블록으로만, 고정된 여덟 가지 색상과 불안정한 모바일 지원으로 존재합니다. 디스코드의 어떤 이름 칸도 색상을 받아들이지 않습니다.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: honest limits -->
+  <section class="editorial-section">
+    <span class="article-section-label">솔직한 한계</span>
+    <h2>할 수 있어도 꾸미지 말아야 할 때</h2>
+    <div class="editorial-block">
+      <p>'유니코드를 받아들인다'는 것은 허가이지 권장이 아닙니다. 꾸민 이름에는 세 가지 비용이 따르며, 결정하기 전에 따져 볼 가치가 있습니다:</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">검색이 깨짐</span>
+        <p><kbd>Ctrl+K</kbd>, 멤버 검색, 멘션 자동완성은 문자를 그대로 대조합니다. 'aesthetic'을 입력해도 <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong>은 절대 못 찾습니다 — 공통 문자가 하나도 없으니까요.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">스크린 리더가 헛디딤</span>
+        <p>보조 기술은 𝕹𝖔𝖛𝖆를 '수학 프락투어 대문자 N…'으로 읽거나 아예 건너뛸 수 있습니다.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">구형 안드로이드의 네모</span>
+        <p>화려한 스타일은 구형 기기에서 □□□□로 보일 수 있습니다.</p>
+      </div>
+    </div>
+    <div class="editorial-block">
+      <p>제 원칙: <strong>사람들이 바라보는 칸은 꾸미고, 사람들이 입력하는 칸은 일반 문자로 두기.</strong> 표시 이름과 카테고리 헤더요? 마음껏 꾸미세요 — 볼드, 스몰캡스, 가벼운 기호는 거의 어디서나 잘 읽힙니다. 멤버가 매일 검색하는 붐비는 텍스트 채널, 모더레이터가 끊임없이 핑하는 역할, 발견되길 바라는 서버 이름이라면? 일반 문자에 가깝게 두세요. 그리고 이름에는 잘고를 아예 쓰지 마세요 — 많은 대형 서버가 자동 제재하고, 렌더링이 가장 잘 깨지는 스타일입니다.</p>
+    </div>
+  </section>
+
+  <div class="pull-quote">여러분의 아이디는 열쇠입니다. 표시 이름은 의상입니다.<br><br>디스코드는 열쇠를 잠가 두어, 의상은 무엇이든 될 수 있게 합니다.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>디스코드에 바로 쓸 이름 꾸미기 →</h3>
+    <p>기기에서 안전한 유니코드 이름을 만들고, 표시 이름·별명·채널 목록에 붙여넣으세요 — 표가 '열림'으로 표시한 모든 칸에.</p>
+    <a href="/ko/font-byeonhwan/" class="cta-btn">폰트 변환 도구 열기 →</a>
+  </div>
+
+  <!-- Platform pills -->
+  <div class="platform-pills">
+    <a class="platform-pill" href="/ko/library/discord-giho/">디스코드 특수문자</a>
+    <a class="platform-pill" href="/ko/insta-font/">인스타 폰트</a>
+    <a class="platform-pill" href="/ko/tiktok-font/">틱톡 폰트</a>
+    <a class="platform-pill" href="/ko/font-byeonhwan/">폰트 변환</a>
+    <a class="platform-pill" href="/ko/ireum-kkumigi/">이름 꾸미기</a>
+    <a class="platform-pill" href="/ko/yeppeun-geulssi/">예쁜 글씨체</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">FAQ</span>
+  <h2>자주 묻는 질문</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">왜 디스코드가 제 사용자명이 잘못됐다고 하나요?</button>
+    <div class="faq-answer">
+      <p>고유 @사용자명은 표시용 칸이 아니라 신원 키이기 때문입니다. 소문자 a–z, 0–9, 밑줄, 마침표만 허용하므로 — 유니코드 폰트 문자(심지어 일반 대문자)를 붙여넣으면 디스코드가 저장을 거부합니다. 꾸민 버전은 표시 이름이나 서버 별명에 넣으세요. 그 칸들은 유니코드를 온전히 받아들입니다.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">디스코드 표시 이름에 폰트를 쓸 수 있나요?</button>
+    <div class="faq-answer">
+      <p>네. 표시 이름, 서버 별명, 역할 이름, 서버 이름, 채널 이름, 자기소개는 모두 유니코드 폰트 문자와 이모지를 받아들입니다. 꾸민 텍스트를 만든 뒤 완성된 문자를 칸에 붙여넣으면 됩니다 — 따로 켤 것은 없습니다. 구형 기기와 스크린 리더 사용자도 읽을 수 있도록 볼드, 이탤릭, 스몰캡스처럼 읽기 쉬운 스타일을 권합니다.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">왜 제 채널 이름의 대문자가 사라졌나요?</button>
+    <div class="faq-answer">
+      <p>텍스트 채널 이름은 정규화됩니다: 디스코드는 일반 A–Z를 소문자로 바꾸고 공백을 하이픈으로 바꿉니다. 그래서 'General Chat'이 'general-chat'이 됩니다. 유니코드 폰트 문자는 일반 글자가 아니므로 그대로 통과합니다 — 𝗚𝗘𝗡𝗘𝗥𝗔𝗟은 A–Z가 아니라 수학 볼드 문자이기 때문에 대문자를 유지합니다. 음성 채널과 카테고리 이름은 이 정규화를 건너뛰어 공백과 대문자를 유지합니다.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">디스코드 역할·서버 이름에서 폰트가 되나요?</button>
+    <div class="faq-answer">
+      <p>네. 둘 다 표시용 칸이라 유니코드 폰트, 기호, 이모지가 문제없이 저장되고, 꾸며서 별도 표시되는(호이스트된) 역할은 멤버 사이드바에 나타납니다. 다만 검색, 멘션 자동완성, 많은 관리 봇이 문자를 그대로 대조하므로, 과하게 꾸민 역할 이름은 찾고 입력하기가 더 어렵습니다.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">이름을 꾸며도 다른 사람이 저를 @멘션할 수 있나요?</button>
+    <div class="faq-answer">
+      <p>네 — 멘션은 꾸민 문자가 아니라 여러분의 계정을 기준으로 확인됩니다. 일반 @사용자명을 입력하면 언제나 여러분을 찾고, 이름을 클릭하거나 멤버 목록에서 고르는 것도 됩니다. 깨지는 것은 표시 이름 자동완성입니다: 'aesthetic'을 입력해도 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈은 나오지 않습니다. 서로 다른 문자이기 때문입니다. 바로 그래서 디스코드는 아이디를 일반 문자로 유지합니다: 여러분에게 확실히 닿는 방법이니까요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>이어서 읽어보기</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/ko/guide/discord-tekseuteu-seosik/">
+      <span class="related-tag">🧩</span>
+      <span class="related-title">디스코드 텍스트 서식 완벽 해설</span>
+      <span class="related-desc">마크다운 vs 유니코드 vs 니트로 — 상세 메커니즘.</span>
+    </a>
+    <a class="related-card" href="/ko/guide/discord-nikneim-anjeon/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">필터 없이 디스코드 닉네임 꾸미기</span>
+      <span class="related-desc">통과해야 할 세 가지 필터.</span>
+    </a>
+    <a class="related-card" href="/ko/library/discord-giho/">
+      <span class="related-tag">✦</span>
+      <span class="related-title">디스코드 특수문자</span>
+      <span class="related-desc">채널·서버 이름에 붙여넣는 구분선·프레임·기호.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

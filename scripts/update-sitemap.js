@@ -35,6 +35,38 @@ function findIndexFiles(dir, relativePath = '') {
   return results;
 }
 
+// ─── Image SEO ────────────────────────────────────────────────────────────────
+
+// Matches both attribute-quote styles used across the repo's page templates
+// (double-quoted, hand-authored pages vs single-quoted, generator-authored
+// locale pages) — see docs/image-seo-fixes.md for the og:image convention.
+const OG_IMAGE_RE = /<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/;
+const LOGO_FALLBACK = `${BASE_URL}/logo.png`;
+
+function getOgImage(filePath) {
+  let html;
+  try {
+    html = fs.readFileSync(path.join(REPO_ROOT, filePath), 'utf8');
+  } catch {
+    return null;
+  }
+  const m = html.match(OG_IMAGE_RE);
+  if (!m || m[1] === LOGO_FALLBACK) return null;
+  return m[1];
+}
+
+// A sitemap is a list of pages we WANT indexed — advertising a noindex page
+// (the /usecase/*/embed/ widgets, etc.) sends crawlers a contradictory signal.
+const NOINDEX_RE = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']/i;
+
+function isNoindex(filePath) {
+  try {
+    return NOINDEX_RE.test(fs.readFileSync(path.join(REPO_ROOT, filePath), 'utf8'));
+  } catch {
+    return false;
+  }
+}
+
 // ─── URL helpers ──────────────────────────────────────────────────────────────
 
 function pathToUrl(filePath) {
@@ -88,25 +120,30 @@ function todayDate() {
 
 // ─── XML builder ──────────────────────────────────────────────────────────────
 
-function buildUrlBlock(url, lastmod, changefreq, priority) {
-  return [
+function buildUrlBlock(url, lastmod, changefreq, priority, image) {
+  const lines = [
     '  <url>',
     `    <loc>${BASE_URL}${url}</loc>`,
     `    <lastmod>${lastmod}</lastmod>`,
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority}</priority>`,
-    '  </url>',
-  ].join('\n');
+  ];
+  if (image) {
+    lines.push('    <image:image>', `      <image:loc>${image}</image:loc>`, '    </image:image>');
+  }
+  lines.push('  </url>');
+  return lines.join('\n');
 }
 
 function buildSitemap(urlEntries) {
   const blocks = urlEntries.map(e =>
-    buildUrlBlock(e.url, e.lastmod, e.changefreq, e.priority)
+    buildUrlBlock(e.url, e.lastmod, e.changefreq, e.priority, e.image)
   );
 
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     '',
     blocks.join('\n\n'),
     '',
@@ -128,8 +165,12 @@ function urlSortKey(url) {
 function generateSitemap() {
   console.log('🔍 Scanning for index.html pages...');
 
-  const indexFiles = findIndexFiles(REPO_ROOT);
-  console.log(`   Pages discovered: ${indexFiles.length}`);
+  const discovered = findIndexFiles(REPO_ROOT);
+  const indexFiles = discovered.filter(f => !isNoindex(f));
+  console.log(`   Pages discovered: ${discovered.length}`);
+  if (discovered.length !== indexFiles.length) {
+    console.log(`   Skipped noindex:  ${discovered.length - indexFiles.length}`);
+  }
 
   // Build URL entries — fully derived from filesystem, no sitemap.xml read
   const urlEntries = indexFiles
@@ -137,7 +178,8 @@ function generateSitemap() {
       const url      = pathToUrl(filePath);
       const lastmod  = getGitLastMod(filePath);
       const defaults = getUrlDefaults(url);
-      return { url, lastmod, ...defaults };
+      const image    = getOgImage(filePath);
+      return { url, lastmod, image, ...defaults };
     })
     .sort((a, b) => urlSortKey(a.url).localeCompare(urlSortKey(b.url)));
 

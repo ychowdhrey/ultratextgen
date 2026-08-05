@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>أين تعمل الخطوط المزخرفة في ديسكورد: خريطة حقلاً حقلاً | UltraTextGen</title>
+<meta name="description" content="لماذا يقول ديسكورد إن اسم المستخدم غير صالح، ولماذا فقدت قناتك أحرفها الكبيرة، وأي الحقول بالضبط تقبل خطوط Unicode — مصفوفة أذونات واحدة تُنهي التجربة والخطأ.">
+
+<link rel="canonical" href="https://ultratextgen.com/ar/guide/amaken-khutut-discord/">
+
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/guide/discord-where-fonts-work/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/guide/amaken-khutut-discord/">
+<link rel="alternate" hreflang="bs" href="https://ultratextgen.com/bs/guide/gdje-rade-fontovi-na-discordu/">
+<link rel="alternate" hreflang="cs" href="https://ultratextgen.com/cs/guide/kde-funguje-pismo-na-discordu/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/guide/hvor-virker-skrifttyper-i-discord/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/guide/wo-funktionieren-schriftarten-in-discord/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/guide/donde-funcionan-las-fuentes-en-discord/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/guide/ou-fonctionnent-les-polices-discord/">
+<link rel="alternate" hreflang="hi" href="https://ultratextgen.com/hi/guide/discord-font-kahan-kaam-karte-hain/">
+<link rel="alternate" hreflang="hr" href="https://ultratextgen.com/hr/guide/gdje-rade-fontovi-na-discordu/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/guide/di-mana-font-discord-bekerja/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/guide/dove-funzionano-i-font-discord/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/guide/discord-font-doko/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/guide/discord-ponteu-jiwon/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/guide/waar-lettertypes-werken-in-discord/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/guide/hvor-fungerer-skrifter-i-discord/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/guide/gdzie-dzialaja-czcionki-na-discordzie/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/guide/onde-as-fontes-funcionam-no-discord/">
+<link rel="alternate" hreflang="ro" href="https://ultratextgen.com/ro/guide/unde-functioneaza-fonturile-discord/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/guide/gde-rabotayut-shrifty-discord/">
+<link rel="alternate" hreflang="sk" href="https://ultratextgen.com/sk/guide/kde-funguje-pismo-na-discorde/">
+<link rel="alternate" hreflang="sr" href="https://ultratextgen.com/sr/guide/gde-fontovi-rade-na-discordu/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/guide/var-typsnitt-fungerar-i-discord/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/guide/discord-font-thamngan-thinai/">
+<link rel="alternate" hreflang="tl" href="https://ultratextgen.com/tl/guide/saan-gumagana-ang-font-sa-discord/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/guide/discord-fontlari-nerede-calisir/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/guide/font-discord-dung-o-dau/">
+<link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/guide/discord-ziti-nali-nengyong/">
+<link rel="alternate" hreflang="hu" href="https://ultratextgen.com/hu/guide/hol-mukodnek-a-discord-fontok/">
+<link rel="alternate" hreflang="ms" href="https://ultratextgen.com/ms/guide/di-mana-font-discord-berfungsi/">
+<link rel="alternate" hreflang="fi" href="https://ultratextgen.com/fi/guide/missa-discord-fontit-toimivat/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/guide/discord-where-fonts-work/">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/ar-guide-amaken-khutut-discord.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="أين تعمل الخطوط المزخرفة في ديسكورد: خريطة الأذونات حقلاً حقلاً">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="أين تعمل الخطوط المزخرفة في ديسكورد: خريطة حقلاً حقلاً | UltraTextGen">
+<meta name="twitter:description" content="لماذا يقول ديسكورد إن اسم المستخدم غير صالح، ولماذا فقدت قناتك أحرفها الكبيرة، وأي الحقول بالضبط تقبل خطوط Unicode — مصفوفة أذونات واحدة تُنهي التجربة والخطأ.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/ar-guide-amaken-khutut-discord.png">
+<meta property="og:title" content="أين تعمل الخطوط المزخرفة في ديسكورد: خريطة الأذونات حقلاً حقلاً">
+<meta property="og:description" content="لماذا يقول ديسكورد إن اسم المستخدم غير صالح، ولماذا فقدت قناتك أحرفها الكبيرة، وأي الحقول بالضبط تقبل خطوط Unicode — مصفوفة أذونات واحدة تُنهي التجربة والخطأ.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ultratextgen.com/ar/guide/amaken-khutut-discord/">
+<meta property="og:locale" content="ar_AR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "أين تعمل الخطوط المزخرفة في ديسكورد: خريطة الأذونات حقلاً حقلاً",
+  "description": "لماذا يقول ديسكورد إن اسم المستخدم غير صالح، ولماذا فقدت قناتك أحرفها الكبيرة، وأي الحقول بالضبط تقبل خطوط Unicode — مصفوفة أذونات واحدة تُنهي التجربة والخطأ.",
+  "author": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "publisher": { "@type": "Organization", "name": "UltraTextGen", "url": "https://ultratextgen.com/" },
+  "image": "https://ultratextgen.com/assets/og/ar-guide-amaken-khutut-discord.png",
+  "mainEntityOfPage": "https://ultratextgen.com/ar/guide/amaken-khutut-discord/",
+  "inLanguage": "ar",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://ultratextgen.com/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "الأدلة", "item": "https://ultratextgen.com/ar/guide/" },
+    { "@type": "ListItem", "position": 3, "name": "أين تعمل الخطوط في ديسكورد", "item": "https://ultratextgen.com/ar/guide/amaken-khutut-discord/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "لماذا يقول ديسكورد إن اسم المستخدم غير صالح؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لأن اسم المستخدم @ الفريد مفتاح هوية لا حقل عرض. يقبل فقط الأحرف اللاتينية الصغيرة a–z و0–9 والشرطة السفلية والنقطة — فلصق أحرف خطوط Unicode (أو حتى حرف كبير عادي) يجعل ديسكورد يرفض الحفظ. ضع النسخة المزخرفة في اسمك الظاهر أو لقبك داخل السيرفر بدلاً من ذلك؛ فتلك الحقول تقبل Unicode بالكامل." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل أستطيع استخدام خطوط مزخرفة في اسمي الظاهر على ديسكورد؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم. الأسماء الظاهرة، والألقاب داخل السيرفر، وأسماء الأدوار، وأسماء السيرفرات، وأسماء القنوات، وخانة «نبذة عني» كلها تقبل أحرف خطوط Unicode والإيموجي. أنشئ النص المزخرف ثم الصق الأحرف الجاهزة في الحقل — لا شيء لتفعّله. فضّل الأنماط الواضحة كالعريض أو المائل أو الأحرف الكبيرة المصغّرة كي يستطيع الأعضاء على الأجهزة الأقدم وقارئات الشاشة قراءتك." }
+    },
+    {
+      "@type": "Question",
+      "name": "لماذا فقد اسم قناتي أحرفه الكبيرة؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "أسماء القنوات النصية تُطبَّع: يحوّل ديسكورد الأحرف اللاتينية العادية A–Z إلى صغيرة ويحوّل المسافات إلى شرطات، فتصير «General Chat» إلى «general-chat». أما أحرف خطوط Unicode فليست أحرفاً عادية، لذا تمرّ دون مساس — تبقى 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 بأحرفها الكبيرة لأنها أحرف رياضية عريضة لا A–Z. أما القنوات الصوتية وأسماء الفئات فتتخطّى هذا التطبيع وتحتفظ بالمسافات والأحرف الكبيرة." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تعمل الخطوط المزخرفة في أسماء الأدوار والسيرفرات في ديسكورد؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم. كلاهما حقل عرض، لذا تُحفَظ خطوط Unicode والرموز والإيموجي دون اعتراض، ويظهر الدور المزخرف المرفوع في شريط الأعضاء الجانبي. المقايضة: البحث والإكمال التلقائي للإشارة وكثير من بوتات الإشراف تطابق الأحرف الحرفية، فاسم الدور المُثقَل بالزخرفة أصعب في العثور عليه وكتابته." }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يستطيع الناس الإشارة إليّ (@) إن كان اسمي مزخرفاً؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم — الإشارة تُحلّ مقابل حسابك، لا مقابل الأحرف المزخرفة. كتابة اسم المستخدم العادي تجدك دائماً، والنقر على اسمك أو اختيارك من قائمة الأعضاء يعمل أيضاً. ما ينكسر هو الإكمال التلقائي بالاسم الظاهر: كتابة «aesthetic» لن تطابق 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈، لأنها أحرف مختلفة. ولهذا يبقي ديسكورد المعرّف عادياً: فهو الطريق المضمون للوصول إليك." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="مسار التنقّل">
+  <a href="/ar/">الرئيسية</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/ar/guide/">الأدلة</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">أين تعمل الخطوط في ديسكورد</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="max-width:800px;">
+    <h1 class="hero-headline">أين تعمل الخطوط المزخرفة في ديسكورد</h1>
+    <p class="hero-tagline">«اسم مستخدم غير صالح». اسم قناة فقد أحرفه الكبيرة. لقب حُفظ دون مشكلة. ديسكورد ليس متناقضاً — لكل حقل مهمة، وكلٌّ يفرض قواعد مختلفة. إليك خريطة الأذونات كاملة، فلا تخمّن مجدداً.</p>
+    <div class="guide-meta">
+      <span class="guide-pill is-accent">المنصّة: ديسكورد</span>
+      <span class="guide-pill">⏱ 9 دقائق قراءة</span>
+      <span class="guide-pill">مصفوفة أذونات الحقول</span>
+    </div>
+  </div>
+</section>
+
+<figure class="guide-hero-figure">
+  <img src="/assets/hero/ar-guide-amaken-khutut-discord.svg" width="1200" height="340"
+       alt="شبكة من أسماء حقول ديسكورد — اسم المستخدم، الاسم الظاهر، القناة، الدور — بأقفال على حقول الهوية وعلامات صح مفتوحة على حقول العرض.">
+</figure>
+
+<!-- KEY TAKEAWAYS -->
+<section class="key-takeaways">
+  <h2>أبرز النقاط</h2>
+  <ul>
+    <li>اسم المستخدم <strong>@ الفريد</strong> يقبل فقط الأحرف اللاتينية الصغيرة a–z و0–9 والشرطة السفلية والنقطة. الصق خطاً مزخرفاً هناك وستحصل على «اسم مستخدم غير صالح» — في كل مرة، بالتصميم.</li>
+    <li>كل <strong>حقل عرض</strong> — الاسم الظاهر، واللقب داخل السيرفر، والدور، وأسماء السيرفرات والقنوات، وخانة «نبذة عني» — يقبل خطوط Unicode والإيموجي دون حيل.</li>
+    <li><strong>Markdown يظهر في الرسائل فقط</strong> (مع أساسيات في خانة «نبذة عني»). في كل حقل اسم، تبقى النجمتان جالستين كما هما.</li>
+    <li>الأسماء المزخرفة لها تكاليف حقيقية: <kbd>Ctrl+K</kbd> لا يجد 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈 بكتابة «aesthetic»، وقارئات الشاشة تتعثّر، وأندرويد الأقدم قد يُظهر مربّعات.</li>
+  </ul>
+</section>
+
+<main class="container" style="max-width:900px;">
+
+  <!-- Section: the core idea -->
+  <section class="editorial-section">
+    <span class="article-section-label">الفكرة الأساسية</span>
+    <h2>ديسكورد ليس متناقضاً — لكل حقل مهمة</h2>
+    <div class="editorial-block">
+      <p>حلقة التجربة والخطأ تسير هكذا: تزخرف اسمك بمولّد، وتلصقه في حقل ديسكورد فيُحفَظ بجمال. تلصق النص نفسه في حقل آخر فيرفض ديسكورد بحزم. نفس الأحرف، ونفس الحساب، ونتيجتان متعاكستان. <em>يبدو</em> الأمر اعتباطياً.</p>
+      <p>لكنه ليس كذلك. تنقسم حقول ديسكورد بوضوح إلى عائلتين. <strong>حقول الهوية</strong> هي التي تعتمد عليها أنظمة أخرى — الإشارة، وطلبات الصداقة، وسجلّات الإشراف، واسترجاع الحساب. وهي واحد بالضبط: اسم المستخدم @ الفريد، وهو مقيَّد بمجموعة أحرف صغيرة كي لا يُنتحَل أو يُكتب خطأً أو يُعرَض بشكل مختلف على هواتف مختلفة. أما <strong>حقول العرض</strong> فهي كل ما <em>ينظر إليه</em> الناس — الأسماء الظاهرة، والألقاب، وأسماء الأدوار، وأسماء السيرفرات والقنوات، وخانة «نبذة عني». وهي مفتوحة على مصراعيها، لأن لا شيء حرجاً يمرّ عبرها.</p>
+      <p>حين ترى العائلتين، يجيب كل سؤال «لماذا لا يُحفَظ هذا؟» عن نفسه. أنت لا تحارب خللاً؛ بل تلصق أحرفاً بمستوى العرض في حقل بمستوى الهوية. والحل دائماً نفسه: انقل الزخرفة حقلاً واحداً جانباً.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the trap -->
+  <section class="editorial-section">
+    <span class="article-section-label">المطبّ الأول</span>
+    <h2>اسم المستخدم مقابل الاسم الظاهر: لماذا يحدث «اسم مستخدم غير صالح»</h2>
+    <div class="editorial-block">
+      <p>هذا الالتباس وحده يُنتج محاولات فاشلة أكثر من كل ما عداه مجتمعاً. منذ أن أسقط ديسكورد المميّزات القديمة ذات الأرقام الأربعة، صار لكل حساب <strong>اسمان</strong>، يتبعان قواعد متعاكسة:</p>
+      <ul>
+        <li><strong>اسم المستخدم</strong> — معرّفك الفريد، يظهر بعلامة @ في ملفك الشخصي. الأحرف المسموحة: اللاتينية الصغيرة <code>a–z</code> و<code>0–9</code> و<code>_</code> و<code>.</code> — لا غير. لا أحرف كبيرة، ولا مسافات، وقطعاً لا 𝓬𝓾𝓻𝓼𝓲𝓿𝓮. أي شيء خارج تلك المجموعة يُطلق خطأ «اسم مستخدم غير صالح».</li>
+        <li><strong>الاسم الظاهر</strong> — الاسم الكبير الودود الظاهر في الدردشة وفي ملفك الشخصي. يقبل المسافات والأحرف الكبيرة والإيموجي وأي أحرف خطوط Unicode تستطيع لصقها.</li>
+      </ul>
+      <p>فالنمط الذي ينجح مملّ من الداخل ومزخرف من الخارج:</p>
+      <div class="example-pair">
+        <span class="ex-label">مرفوض</span>
+        <span class="ex-plain">@𝕹𝖔𝖛𝖆 ← «اسم مستخدم غير صالح»</span>
+        <span class="ex-arrow">↓</span>
+        <span class="ex-label">يعمل</span>
+        <span class="ex-styled">@nova_riot &nbsp;+&nbsp; 𝕹𝖔𝖛𝖆 ⚔</span>
+      </div>
+      <p>داخل السيرفر تحصل على طبقة ثالثة، هي <strong>اللقب داخل السيرفر</strong>، الذي يتجاوز اسمك الظاهر في ذلك السيرفر وحده — وهو متساهل بالقدر نفسه. زخرِفه لكل مجتمع: ୨୧ 𝒩𝑜𝓋𝒶 ୨୧ في نادي الكتاب، و𝗡𝗢𝗩𝗔 في سيرفر الرياضات الإلكترونية. مولّد الألقاب يتكفّل بتحويل الأحرف نيابةً عنك.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: the framework -->
+  <section class="editorial-section">
+    <span class="article-section-label">إطار العمل</span>
+    <h2>مصفوفة أذونات الحقول</h2>
+    <div class="editorial-block">
+      <p>إليك الخريطة كاملة — كل حقل نصّي في ديسكورد، وما يقبله كلٌّ منه، و<em>لماذا</em>. احفظ هذا الجدول في المفضّلة وينتهي التخمين.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>الحقل</th><th>Markdown؟</th><th>خطوط Unicode؟</th><th>إيموجي؟</th><th>لماذا بُني هكذا</th></tr></thead>
+        <tbody>
+          <tr><td><strong>اسم المستخدم (المعرّف @)</strong></td><td>✗</td><td>✗ مرفوض</td><td>✗</td><td>مفتاح هوية. فقط <code>a–z 0–9 _ .</code> — يجب أن يكون قابلاً للكتابة وفريداً وغير قابل للانتحال للإشارة وطلبات الصداقة</td></tr>
+          <tr><td><strong>الاسم الظاهر</strong></td><td>✗ يظهر حرفياً</td><td>✓</td><td>✓</td><td>عرض محض — يظهر في الدردشة، لا يُستخدم للتوجيه أبداً</td></tr>
+          <tr><td><strong>اللقب داخل السيرفر</strong></td><td>✗ يظهر حرفياً</td><td>✓</td><td>✓</td><td>عرض لكل سيرفر؛ يتجاوز اسمك الظاهر في ذلك السيرفر</td></tr>
+          <tr><td><strong>اسم الدور</strong></td><td>✗ يظهر حرفياً</td><td>✓</td><td>✓</td><td>تسمية لا معرّف — الأدوار المرفوعة تعرضه في شريط الأعضاء الجانبي</td></tr>
+          <tr><td><strong>اسم السيرفر</strong></td><td>✗ يظهر حرفياً</td><td>✓</td><td>✓</td><td>واجهة علامة تجارية؛ الدعوات والاستكشاف تعرضه كما هو</td></tr>
+          <tr><td><strong>اسم القناة (نصية)</strong></td><td>✗</td><td>✓ يمرّ</td><td>✓</td><td>يُحوَّل تلقائياً إلى أحرف صغيرة وشرطات لاتّساق شبيه بالروابط — لكن لا يُمَسّ سوى A–Z العادية</td></tr>
+          <tr><td><strong>موضوع القناة</strong></td><td>✗ حرفيّ غالباً</td><td>✓</td><td>✓</td><td>واجهة وصف؛ عامله كنص عادي زائد Unicode</td></tr>
+          <tr><td><strong>خانة «نبذة عني»</strong></td><td>✓ أساسيات (عريض، مائل، روابط)</td><td>✓</td><td>✓</td><td>بطاقة الملف الشخصي تُشغّل محرّك عرض خفيفاً</td></tr>
+          <tr><td><strong>الرسائل</strong></td><td>✓ محرّك كامل</td><td>✓</td><td>✓</td><td>واجهة الدردشة — المكان الوحيد الذي يعمل فيه محرّك Markdown الكامل</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="editorial-block">
+      <p>اقرأ الأعمدة من الأعلى إلى الأسفل ويقفز المنطق إلى العين: <strong>صفّ واحد بالضبط يرفض Unicode، وصفّ واحد بالضبط يُشغّل Markdown الكامل.</strong> وكل ما بينهما هو الوسط المفتوح — الزخرفة باللصق مرحَّب بها، والزخرفة بالعرض متجاهَلة. هذا هو النظام كله.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: channel name quirk -->
+  <section class="editorial-section">
+    <span class="article-section-label">ملاحظات ميدانية</span>
+    <h2>خصوصية اسم القناة: تصغير تلقائي، وشرطات تلقائية</h2>
+    <div class="editorial-block">
+      <p>أسماء القنوات النصية تُعاد كتابتها بصمت عند الحفظ: تُصغَّر الأحرف الكبيرة العادية وتصير المسافات شرطات، ولهذا يخرج <code>General Chat</code> بصورة <code>#general-chat</code>. يقرأ الناس هذا على أنه «ديسكورد جرّد زخرفتي». انظر أقرب — لم يمسّ سوى الأحرف العادية.</p>
+      <div class="mood-explainer">
+        <div class="mood-example">كُتب: <strong>GENERAL CHAT</strong> ← حُفظ كـ <strong>#general-chat</strong> &nbsp;·&nbsp; كُتب: <strong>𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ✦ 𝗖𝗛𝗔𝗧</strong> ← حُفظ كـ <strong>#𝗚𝗘𝗡𝗘𝗥𝗔𝗟-✦-𝗖𝗛𝗔𝗧</strong></div>
+      </div>
+      <p>الحرف 𝗚 الرياضي العريض ليس حرف G كبيراً عادياً — بل حرف Unicode مختلف — لذا تتخطّاه قاعدة التصغير. تلك هي الثغرة وراء كل سيرفر رأيت فيه قوائم قنوات كبيرة الأحرف ومزخرفة. حاشيتان: <strong>القنوات الصوتية والفئات لا تُطبَّع إطلاقاً</strong> (تبقى فيها المسافات والأحرف الكبيرة العادية)، وعناوين الفئات هي حيث تؤدّي فواصل الرموز مثل ─── و╭─ أفضل عمل لها.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: markdown and color -->
+  <section class="editorial-section">
+    <span class="article-section-label">الزخرفة بالعرض</span>
+    <h2>أين يعمل Markdown — وأين يبقى جالساً فحسب</h2>
+    <div class="editorial-block">
+      <p>Markdown نوع آخر من الزخرفة: رموز مثل <code>**عريض**</code> يحوّلها ديسكورد حين <em>يعرض</em> رسالة. تُظهر المصفوفة أن أرضه ضيّقة — <strong>الرسائل، مع تنسيق أساسي في خانة «نبذة عني»</strong>. اكتب <code>**Nova**</code> في حقل لقب فتُحفَظ النجمتان أحرفاً حرفية، لأن حقول الأسماء تُخزَّن وتُعرَض خاماً؛ لا مرور لمحرّك عرض ليحوّلها.</p>
+      <p>هذا هو التقسيم العملي الذي يجب تذكّره: <strong>الزخرفة بالعرض (Markdown) لما تقوله، والزخرفة باللصق (Unicode) لما تُسمّى به.</strong> الآليات الكاملة — علامات الحجب، وكتل الكود، وطبقة Nitro، وأخطاء «لماذا لا يُصبح نجمتاي عريضاً» الكلاسيكية — في دليلنا الرفيق، <a href="/ar/guide/tanseeq-nusus-discord/">تنسيق نصوص ديسكورد، مفكوكاً</a>.</p>
+      <p>حالة خاصة تستحق التنويه: <strong>النص الملوّن</strong>. لا يوجد إلا داخل الرسائل، عبر كتل كود ANSI فقط، بثمانية ألوان ثابتة ودعم متذبذب على الجوال. لا حقل اسم في أي مكان في ديسكورد يقبل اللون.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section: honest limits -->
+  <section class="editorial-section">
+    <span class="article-section-label">حدود صادقة</span>
+    <h2>متى يجدر ألا تزخرف حقلاً (حتى لو استطعت)</h2>
+    <div class="editorial-block">
+      <p>«يقبل Unicode» إذنٌ لا توصية. ثلاثة تكاليف ترافق الاسم المزخرف، وتستحق الموازنة قبل أن تلتزم:</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">البحث ينكسر</span>
+        <p><kbd>Ctrl+K</kbd> وبحث الأعضاء والإكمال التلقائي للإشارة تطابق الأحرف الحرفية. كتابة «aesthetic» لن تجد <strong>𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈</strong> أبداً — لا تشترك في حرف واحد.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">قارئات الشاشة تتعثّر</span>
+        <p>قد تقرأ التقنية المساعِدة 𝕹𝖔𝖛𝖆 كـ «حرف N فراكتور كبير رياضي…» أو تتخطّاه كلياً.</p>
+      </div>
+      <div class="compare-card variant-muted">
+        <span class="compare-badge">مربّعات على أندرويد الأقدم</span>
+        <p>الأنماط المزخرفة قد تظهر كـ □□□□ على الأجهزة الأقدم؛ فضّل الطبقات الآمنة من الأنماط.</p>
+      </div>
+    </div>
+    <div class="editorial-block">
+      <p>قاعدتي: <strong>ازخرف الحقول التي ينظر إليها الناس، وأبقِ عادية الحقول التي يكتبها الناس.</strong> اسم ظاهر وعناوين فئات؟ ازخرف بلا تردّد — العريض والأحرف الكبيرة المصغّرة والرموز الخفيفة تُقرأ جيداً في كل مكان تقريباً. قناة نصية مزدحمة يبحث فيها الأعضاء يومياً، أو دور يناديه المشرفون باستمرار، أو اسم سيرفر تريده قابلاً للاكتشاف؟ أبقِ تلك عادية أو شبه عادية. وتجنّب زالغو في الأسماء تماماً — كثير من السيرفرات الكبيرة تُشرف عليه آلياً، وهو النمط الأكثر عرضة لكسر العرض.</p>
+    </div>
+  </section>
+
+  <div class="pull-quote">معرّفك مفتاح. اسمك الظاهر زيّ.<br><br>يقفل ديسكورد المفتاح كي يصبح الزيّ أي شيء.</div>
+
+  <!-- CTA Card -->
+  <div class="cta-card">
+    <h3>ازخرف اسماً جاهزاً لديسكورد ←</h3>
+    <p>أنشئ اسم Unicode آمناً على الأجهزة، ثم الصقه في اسمك الظاهر أو لقبك أو قائمة قنواتك — كل حقل تُعلّمه المصفوفة مفتوحاً.</p>
+    <a href="/ar/" class="cta-btn">افتح أداة خطوط ديسكورد ←</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+  </div>
+</footer>
+
+<!-- FAQ -->
+<section class="editorial-section">
+  <span class="article-section-label">الأسئلة الشائعة</span>
+  <h2>أسئلة شائعة</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">لماذا يقول ديسكورد إن اسم المستخدم غير صالح؟</button>
+    <div class="faq-answer">
+      <p>لأن اسم المستخدم @ الفريد مفتاح هوية لا حقل عرض. يقبل فقط الأحرف اللاتينية الصغيرة a–z و0–9 والشرطة السفلية والنقطة — فلصق أحرف خطوط Unicode (أو حتى حرف كبير عادي) يجعل ديسكورد يرفض الحفظ. ضع النسخة المزخرفة في اسمك الظاهر أو لقبك داخل السيرفر بدلاً من ذلك؛ فتلك الحقول تقبل Unicode بالكامل.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">هل أستطيع استخدام خطوط مزخرفة في اسمي الظاهر على ديسكورد؟</button>
+    <div class="faq-answer">
+      <p>نعم. الأسماء الظاهرة، والألقاب داخل السيرفر، وأسماء الأدوار، وأسماء السيرفرات، وأسماء القنوات، وخانة «نبذة عني» كلها تقبل أحرف خطوط Unicode والإيموجي. أنشئ النص المزخرف ثم الصق الأحرف الجاهزة في الحقل — لا شيء لتفعّله. فضّل الأنماط الواضحة كالعريض أو المائل أو الأحرف الكبيرة المصغّرة كي يستطيع الأعضاء على الأجهزة الأقدم وقارئات الشاشة قراءتك.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">لماذا فقد اسم قناتي أحرفه الكبيرة؟</button>
+    <div class="faq-answer">
+      <p>أسماء القنوات النصية تُطبَّع: يحوّل ديسكورد الأحرف اللاتينية العادية A–Z إلى صغيرة ويحوّل المسافات إلى شرطات، فتصير «General Chat» إلى «general-chat». أما أحرف خطوط Unicode فليست أحرفاً عادية، لذا تمرّ دون مساس — تبقى 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 بأحرفها الكبيرة لأنها أحرف رياضية عريضة لا A–Z. أما القنوات الصوتية وأسماء الفئات فتتخطّى هذا التطبيع وتحتفظ بالمسافات والأحرف الكبيرة.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">هل تعمل الخطوط المزخرفة في أسماء الأدوار والسيرفرات في ديسكورد؟</button>
+    <div class="faq-answer">
+      <p>نعم. كلاهما حقل عرض، لذا تُحفَظ خطوط Unicode والرموز والإيموجي دون اعتراض، ويظهر الدور المزخرف المرفوع في شريط الأعضاء الجانبي. المقايضة: البحث والإكمال التلقائي للإشارة وكثير من بوتات الإشراف تطابق الأحرف الحرفية، فاسم الدور المُثقَل بالزخرفة أصعب في العثور عليه وكتابته.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" type="button">هل يستطيع الناس الإشارة إليّ (@) إن كان اسمي مزخرفاً؟</button>
+    <div class="faq-answer">
+      <p>نعم — الإشارة تُحلّ مقابل حسابك، لا مقابل الأحرف المزخرفة. كتابة اسم المستخدم العادي تجدك دائماً، والنقر على اسمك أو اختيارك من قائمة الأعضاء يعمل أيضاً. ما ينكسر هو الإكمال التلقائي بالاسم الظاهر: كتابة «aesthetic» لن تطابق 𝕬𝖊𝖘𝖙𝖍𝖊𝖙𝖎𝖈، لأنها أحرف مختلفة. ولهذا يبقي ديسكورد المعرّف عادياً: فهو الطريق المضمون للوصول إليك.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-guides">
+  <h2>تابع القراءة</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/ar/guide/tanseeq-nusus-discord/">
+      <span class="related-tag">🎮</span>
+      <span class="related-title">تنسيق نصوص ديسكورد بوضوح</span>
+      <span class="related-desc">Markdown وUnicode وNitro — الآليات العميقة.</span>
+    </a>
+    <a class="related-card" href="/ar/guide/ism-discord-amin/">
+      <span class="related-tag">🛡️</span>
+      <span class="related-title">زخرفة اسم ديسكورد بأمان</span>
+      <span class="related-desc">اجتَز الفلاتر الثلاثة قبل صرف بطاقة إعادة تسمية.</span>
+    </a>
+    <a class="related-card" href="/ar/library/discord-symbols/">
+      <span class="related-tag">⌗</span>
+      <span class="related-title">رموز ديسكورد</span>
+      <span class="related-desc">رموز وزخارف جاهزة للنسخ واللصق في اسمك ونبذتك.</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.faq-item').classList.toggle('open');
+    });
+  });
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

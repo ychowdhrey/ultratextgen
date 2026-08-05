@@ -1,0 +1,140 @@
+{
+  "slug": "kiss-emoji",
+  "title": "Kiss Emoji & Kaomoji: Copy & Paste 😘💋 Kissing Combos",
+  "meta_description": "Kiss emoji 😘 💋 👄, kissing faces, lipstick kiss marks, and flirty kaomoji like ( ˘ ³˘) for texts, comments, and DMs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/kiss-emoji/",
+  "breadcrumb": "Kiss Emoji & Kaomoji",
+  "hero_h1": "Kiss Emoji & Kaomoji",
+  "hero_tagline": "Blown kisses, kissing faces, lipstick marks, and puckered-up kaomoji — every way to send a smooch in text. Click any symbol to copy it instantly.",
+  "intro": "The kiss emoji comes in a whole flirty range: the 😘 face blowing a kiss with a little heart, the softer 😗 kissing face, and the 💋 lipstick kiss mark you leave at the end of a message. This page gathers all the kissing faces, the kiss marks and 👄 mouths, the couple emojis for romantic pairings, and classic kissing kaomoji like ( ˘ ³˘) that paste anywhere plain text works. Grab a single symbol, or copy a ready-made combo set for flirty texts, comments, and DMs.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "kissing-faces",
+      "label": "Core Kissing Faces",
+      "h2": "Kissing Face Emojis",
+      "intro": "The core kiss faces, from a heart-blowing smooch to a soft closed-eye peck.",
+      "symbols": [
+        { "char": "😘", "label": "Face Blowing a Kiss" },
+        { "char": "😗", "label": "Kissing Face" },
+        { "char": "😙", "label": "Kissing Face With Smiling Eyes" },
+        { "char": "😚", "label": "Kissing Face With Closed Eyes" },
+        { "char": "😽", "label": "Kissing Cat" }
+      ]
+    },
+    {
+      "id": "kiss-marks-mouths",
+      "label": "Kiss Marks & Mouths",
+      "h2": "Kiss Marks, Lips & Mouths",
+      "intro": "The lipstick print and the lips and mouth emojis that seal a message with a smooch.",
+      "symbols": [
+        { "char": "💋", "label": "Kiss Mark" },
+        { "char": "👄", "label": "Mouth" },
+        { "char": "🫦", "label": "Biting Lip" },
+        { "char": "👅", "label": "Tongue" }
+      ]
+    },
+    {
+      "id": "romantic-pairings",
+      "label": "Romantic Pairings",
+      "h2": "Couples & Romantic Emojis",
+      "intro": "Kissing couples and heart-eyed faces for the pairings a single kiss can't quite carry.",
+      "symbols": [
+        { "char": "💏", "label": "Kiss" },
+        { "char": "💑", "label": "Couple With Heart" },
+        { "char": "😍", "label": "Smiling Face With Heart-Eyes" },
+        { "char": "🥰", "label": "Smiling Face With Hearts" },
+        { "char": "💕", "label": "Two Hearts" }
+      ]
+    },
+    {
+      "id": "kiss-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Kissing Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces that pucker up, smooch, and blow kisses in plain text.",
+      "symbols": [
+        { "char": "( ˘ ³˘)", "label": "Puckered Kiss Kaomoji" },
+        { "char": "(づ￣ ³￣)づ", "label": "Come Here and Kiss Kaomoji" },
+        { "char": "( ˘ ³˘)♥", "label": "Kiss With Heart Kaomoji" },
+        { "char": "(*˘︶˘*).｡.:*", "label": "Sweet Content Kiss Kaomoji" },
+        { "char": "(っ˘з˘)っ", "label": "Smooch Kaomoji" },
+        { "char": "( ᵔ ³ᵔ )", "label": "Pouty Kiss Kaomoji" },
+        { "char": "(˘ ³˘)♡", "label": "Loving Kiss Kaomoji" },
+        { "char": "( ˘ ³˘)ﾉ", "label": "Blowing a Kiss Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Kiss Combo Sets",
+    "intro": "Copy a complete kiss combo in one click — from a quick peck to full flirty mode."
+  },
+  "collection_container_id": "kissSetsContainer",
+  "collections": [
+    {
+      "name": "Blow a Kiss",
+      "flags": ["😘", "💋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sweet Kisses",
+      "flags": ["😗", "😙", "😚"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Lipstick Mark",
+      "flags": ["💋", "👄"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flirty Text",
+      "flags": ["😘", "😍", "💋"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Couple Goals",
+      "flags": ["💏", "💑", "💕"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Muah",
+      "flags": ["😚", "💋", "😘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Love & Kisses",
+      "flags": ["😘", "🥰", "💗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "XOXO",
+      "flags": ["❌", "⭕", "💋", "❤️"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-emoji/",
+      "title": "Heart Emoji & Kaomoji",
+      "desc": "Every heart color and love kaomoji to pair with a kiss."
+    },
+    {
+      "href": "/library/love-kaomoji/",
+      "title": "Love & Heart Kaomoji",
+      "desc": "Blushing, hugging, and heart-holding text faces for romance."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis by Feeling",
+      "desc": "The full face emoji grid, sorted by mood and ready to copy."
+    },
+    {
+      "href": "/library/friendship-emojis/",
+      "title": "Friendship & Love Emojis",
+      "desc": "Warm, affectionate emojis for friends and sweethearts alike."
+    }
+  ]
+}

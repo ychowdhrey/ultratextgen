@@ -1,0 +1,162 @@
+{
+  "slug": "heart-emoji",
+  "title": "Heart Emoji & Kaomoji: Copy & Paste ❤️ 💕 Love Combos",
+  "meta_description": "Copy and paste heart emoji in every color ❤️ 💜 🖤, love kaomoji like (♥ω♥), and heart combos for captions, bios, and DMs. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/heart-emoji/",
+  "breadcrumb": "Heart Emoji & Kaomoji",
+  "hero_h1": "Heart Emoji & Kaomoji",
+  "hero_tagline": "Every heart emoji color, the beating and sparkling variants, love kaomoji, and one-click heart combos for bios, captions, and DMs. Click any symbol to copy it instantly.",
+  "intro": "The heart emoji is the most-sent symbol on the internet, and each color quietly says something different — 🖤 leans dark humor or goth rather than hate, 💜 doubles as the US Purple Heart military medal and a fandom staple, and 💛 signals platonic friendship on apps like Snapchat. This page gathers every heart color, the beating 💓, growing 💗, and sparkling 💖 variants, the broken-and-healing set 💔 ❤️‍🩹, heart-eyed faces like 😍 and 🥰, love kaomoji such as (♥ω♥), and one-click combo sets for captions, bios, and DMs. If you want the outline heart glyphs and card suits instead of full-color emoji, the heart symbols page linked below has the copy-paste set.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "heart-colors",
+      "label": "Core Heart Colors",
+      "h2": "Heart Emoji Colors & Meanings",
+      "intro": "Every heart color in Unicode — and most have picked up their own slang: 🖤 reads as dark humor or goth rather than hate, 💜 also stands for the Purple Heart military medal, and 💛 signals friendship on apps like Snapchat.",
+      "symbols": [
+        { "char": "❤️", "label": "Red Heart" },
+        { "char": "🧡", "label": "Orange Heart" },
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "💚", "label": "Green Heart" },
+        { "char": "💙", "label": "Blue Heart" },
+        { "char": "💜", "label": "Purple Heart" },
+        { "char": "🖤", "label": "Black Heart" },
+        { "char": "🤍", "label": "White Heart" },
+        { "char": "🤎", "label": "Brown Heart" },
+        { "char": "🩷", "label": "Pink Heart" }
+      ]
+    },
+    {
+      "id": "heart-actions",
+      "label": "Heart Actions & Motion",
+      "h2": "Beating, Growing & Sparkling Hearts",
+      "intro": "Animated-style hearts that pulse, revolve, and sparkle to show love in motion.",
+      "symbols": [
+        { "char": "💗", "label": "Growing Heart" },
+        { "char": "💓", "label": "Beating Heart" },
+        { "char": "💕", "label": "Two Hearts" },
+        { "char": "💞", "label": "Revolving Hearts" },
+        { "char": "💘", "label": "Heart With Arrow" },
+        { "char": "💝", "label": "Heart With Ribbon" },
+        { "char": "💖", "label": "Sparkling Heart" },
+        { "char": "❣️", "label": "Heart Exclamation" }
+      ]
+    },
+    {
+      "id": "broken-healing-hearts",
+      "label": "Broken & Healing",
+      "h2": "Broken & Healing Hearts",
+      "intro": "The heartbreak-to-recovery arc, from a clean break to a bandaged, mending heart.",
+      "symbols": [
+        { "char": "💔", "label": "Broken Heart" },
+        { "char": "❤️‍🔥", "label": "Heart on Fire" },
+        { "char": "❤️‍🩹", "label": "Mending Heart" },
+        { "char": "💟", "label": "Heart Decoration" }
+      ]
+    },
+    {
+      "id": "heart-faces-hands",
+      "label": "Heart Faces & Hands",
+      "h2": "Heart Faces, Hands & Suits",
+      "intro": "Heart-eyed faces, a kiss mark, the heart-hands gesture, and the classic card suit.",
+      "symbols": [
+        { "char": "😍", "label": "Smiling Face With Heart-Eyes" },
+        { "char": "🥰", "label": "Smiling Face With Hearts" },
+        { "char": "😻", "label": "Smiling Cat With Heart-Eyes" },
+        { "char": "💋", "label": "Kiss Mark" },
+        { "char": "🫶", "label": "Heart Hands" },
+        { "char": "♥️", "label": "Heart Suit" }
+      ]
+    },
+    {
+      "id": "heart-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Heart Kaomoji & Text Faces",
+      "intro": "Japanese-style love faces built from full-width hearts — paste them anywhere plain text works.",
+      "symbols": [
+        { "char": "(♥ω♥)", "label": "Heart Eyes Kaomoji" },
+        { "char": "(｡♥‿♥｡)", "label": "In Love Kaomoji" },
+        { "char": "♡(๑ᴖ◡ᴖ๑)♡", "label": "Blissful Love Kaomoji" },
+        { "char": "(´ε｀ )♡", "label": "Blowing a Kiss Kaomoji" },
+        { "char": "(◕‿◕)♡", "label": "Adoring Kaomoji" },
+        { "char": "~♡(ゝ。∂)", "label": "Flirty Wink Kaomoji" },
+        { "char": "( ˘ ³˘)♥", "label": "Kissy Face Kaomoji" },
+        { "char": "❤(ӦｖӦ｡)", "label": "Sweet Smile Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Heart Emoji Combo Sets",
+    "intro": "Ready-made heart combos — copy a full set with one click and paste it straight into a caption, bio, or DM."
+  },
+  "collection_container_id": "heartSetsContainer",
+  "collections": [
+    {
+      "name": "Love at First Sight",
+      "flags": ["💘", "😍", "💖"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heartbreak Mode",
+      "flags": ["💔", "😭", "🥀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Best Friends Forever",
+      "flags": ["💕", "💞", "🤍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Healing & Growth",
+      "flags": ["❤️‍🩹", "🌱", "💗"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Villain Heart",
+      "flags": ["🖤", "🔥", "😈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wholesome Crush",
+      "flags": ["🥰", "💛", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Send All The Love",
+      "flags": ["❤️", "🧡", "💛", "💚", "💙", "💜"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Kiss and Hearts",
+      "flags": ["💋", "😘", "💕"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbol Collection",
+      "desc": "Outline hearts, card suits, and decorative heart glyphs to copy and paste."
+    },
+    {
+      "href": "/library/heart-kaomoji/",
+      "title": "Heart Kaomoji",
+      "desc": "Love-struck Japanese text faces built from full-width hearts."
+    },
+    {
+      "href": "/library/heart-ascii-art/",
+      "title": "Heart ASCII Art",
+      "desc": "Multi-line ASCII hearts for comments, bios, and code blocks."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What each emoji really signals in chats and captions — heart colors included."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-skorpiona",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Skorpiona: Skopiuj ♏ — Znak, Którego Gwiazdozbiór Nigdy Nie Dzieli Nieba z Orionem",
+  "meta_description": "Skopiuj symbol zodiakalnego Skorpiona (♏) i mit stojący za tym znakiem — olbrzymiego skorpiona zesłanego, by zabić Oriona, umieszczonego po przeciwnej stronie nieba, tak że oba gwiazdozbiory nigdy nie są widoczne razem. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-skorpiona/",
+  "breadcrumb": "Symbol Skorpiona",
+  "hero_h1": "Symbol Skorpiona",
+  "hero_tagline": "Glif Skorpiona (♏) to stylizowane „m”, którego ostatnia kreska zawija się ku górze w strzałę — uniesiony, żądlący ogon skorpiona. A jego gwiazdozbiór, Skorpion, leży naprzeciw Oriona, więc myśliwy i skorpion nigdy nie są nad horyzontem w tym samym czasie. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Skorpiona (♏, U+264F) rysowany jest jako stylizowane „m”, którego ostatnia kreska zawija się ku górze w strzałę — uniesiony, żądlący ogon skorpiona. Mit wiąże go z Orionem Myśliwym, który chełpił się, że potrafi zabić każde zwierzę na ziemi; w najbardziej znanej wersji bogini ziemi Gaja odpowiedziała na jego pychę, zsyłając olbrzymiego skorpiona, który użądlił go na śmierć (niektóre przekazy przypisują to zamiast tego bogini Artemidzie). Oboje zostali potem umieszczeni wśród gwiazd, ale po przeciwnych stronach nieba — a to umiejscowienie to prawdziwy, obserwowalny fakt, a nie tylko opowieść: gdy Skorpion wznosi się na wschodzie, Orion zachodzi na zachodzie, więc myśliwy i skorpion nigdy nie są nad horyzontem jednocześnie. Skorpion trwa od 23 października do 21 listopada, we współczesnej astrologii rządzony jest przez Plutona (tradycyjnie przez Marsa) i jest znakiem Wody o modalności stałej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/scorpio-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-skorpiona/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/scorpio-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-skorpiona",
+      "label": "Skorpion",
+      "h2": "Symbol Skorpiona",
+      "intro": "Unicode'owy glif zodiakalnego Skorpiona, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♏", "label": "Symbol Skorpiona" },
+        { "char": "♏️", "label": "Symbol Skorpiona (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Skorpionowi.",
+      "symbols": [
+        { "char": "♇", "label": "Pluton (Planeta Rządząca)" },
+        { "char": "🜄", "label": "Woda (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Skorpiona (Byk).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♉", "label": "Byk (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-byka/",
+      "title": "Symbol Byka",
+      "desc": "Astrologiczne przeciwieństwo Skorpiona, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/pl/symbol/symbol-wagi/",
+      "title": "Symbol Wagi",
+      "desc": "Jedyny symbol zodiaku przedstawiający przedmiot, a nie zwierzę czy osobę."
+    }
+  ]
+}

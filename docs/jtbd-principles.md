@@ -3,7 +3,7 @@
 This is the **why** behind UltraTextGen's content and information architecture,
 plus the reusable **global rules** every page decision follows. It is the
 evergreen reference; the concrete, dated applications of these rules live in
-build specs such as [`jtbd-build-spec.md`](./jtbd-build-spec.md). The
+per-batch build specs. The
 mechanical companion — *does this become a page or a section?* — is
 [`page-vs-section-decisions.md`](./page-vs-section-decisions.md), and the
 production pipeline that enforces demand gating is
@@ -109,9 +109,9 @@ Operationalized by the demand gate in the library workflow (`forum_evidence` +
 
 Every distinct query family has exactly **one** declared canonical owner; all
 related pages **link** to it instead of re-hosting the content. Maintain an
-explicit **canonical-ownership table** in each build spec (see the example in
-[`jtbd-build-spec.md`](./jtbd-build-spec.md)) so no two pages target the same
-primary query. This concentrates link equity and prevents self-cannibalization.
+explicit **canonical-ownership table** in each build spec so no two pages
+target the same primary query. This concentrates link equity and prevents
+self-cannibalization.
 
 **Corollary — additive only:** new pages must target *different* SERPs than the
 ones existing pages already win. Never remove or relocate content that holds a
@@ -142,7 +142,7 @@ The repeatable method that produced the small-text differentiator list
 (2026-06), to run **every** time we scope a cluster:
 
 1. **Read the same forum signal twice.** The forum sweep
-   ([`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md))
+   (the internal forum-research skill doc)
    surfaces both *intents* (→ JTBD/pages) and *frustrations* (→ features).
    Don't stop at intent. Harvest the complaints: "missing letters," "shows as
    boxes on Android," "Hypixel says invalid characters," "Reddit stopped

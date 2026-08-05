@@ -1,0 +1,75 @@
+{
+  "slug": "symbol-pokoju",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Pokoju (☮): Skopiuj — Historia Projektu z 1958 Roku i Jak Go Wpisać",
+  "meta_description": "Skopiuj symbol pokoju (☮, U+262E) — co oznacza, historię jego projektu z 1958 roku i jak go wpisać. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-pokoju/",
+  "breadcrumb": "Symbol Pokoju",
+  "hero_h1": "Symbol Pokoju (☮)",
+  "hero_tagline": "Co oznacza ☮, historia jego projektu z 1958 roku i jak go wpisać — kliknij, aby skopiować.",
+  "intro": "Symbol pokoju zaprojektował w 1958 roku brytyjski artysta Gerald Holtom, na zamówienie na pierwszy marsz w Aldermaston — brytyjską demonstrację antynuklearną zorganizowaną przez Kampanię na rzecz Rozbrojenia Nuklearnego (CND). Zamiast wymyślać abstrakcjonalny kształt, Holtom zbudował go z istniejącego systemu komunikacji: semafora, kodu sygnałów flagowych używanego przez marynarzy. Litera N w semaforze sygnalizowana jest dwiema flagami skierowanymi w dół w kształcie litery V; litera D sygnalizowana jest jedną flagą prosto w górę i jedną prosto w dół. Holtom nałożył na siebie kształty tych dwóch liter — oznaczających Nuclear Disarmament, rozbrojenie nuklearne — wewnątrz okręgu, tworząc trzykreskowy projekt natychmiast rozpoznawalny dziś. To, co zaczęło się jako symbol protestu jednej sprawy, zostało szybko przyjęte przez szersze ruchy antywojenne i kontrkulturowe lat 60., stając się jednym z najszerzej rozpoznawanych symboli XX wieku. Symbol działa na Instagramie, Discordzie, TikToku i WhatsAppie, ale nie w nazwach użytkownika Roblox, PlayStation czy Xbox, ograniczonych do znaków alfanumerycznych. Wykracza poza prosty, czterocyfrowy zakres kodów Alt na Windows, więc najłatwiej wpisać go metodą Alt+X w Wordzie (wpisz 262E, a potem naciśnij Alt+X), przez Mapę Znaków, albo skopiować bezpośrednio ze strony referencyjnej. W HTML używa się encji &#9774; — nie ma krótkiej nazwanej encji.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/peace-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-pokoju/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/peace-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-pokoju",
+      "label": "Pokój",
+      "h2": "Symbol Pokoju",
+      "intro": "Unicode'owy znak pokoju, zaprojektowany w 1958 roku, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "☮", "label": "Symbol Pokoju (U+262E)" }
+      ]
+    },
+    {
+      "id": "znaki-mylone",
+      "label": "Znaki Powiązane",
+      "h2": "Inne Symbole Bliskie Pokojowi",
+      "intro": "Znaki, z którymi bywa mylony albo łączony symbol pokoju.",
+      "symbols": [
+        { "char": "✌", "label": "Znak Zwycięstwa/Pokoju Dłonią (U+270C) — gest dłoni, nie okrągły symbol pokoju" },
+        { "char": "🕊", "label": "Gołąb (U+1F54A) — osobne emoji kojarzone z pokojem" },
+        { "char": "☯", "label": "Yin Yang (U+262F) — inny symbol, czasem łączony z obrazami pokoju" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-duchowe",
+      "label": "Symbole Duchowe",
+      "h2": "Powiązane Symbole Duchowe i Dobrej Woli",
+      "intro": "Symbol pokoju łączy się z gestami dłoni, gołębiami i symbolami dobrej woli w sekcji Uniwersalnych Symboli Duchowych biblioteki symboli religijnych.",
+      "symbols": [
+        { "char": "☯", "label": "Yin Yang" },
+        { "char": "🕊️", "label": "Gołąb Pokoju" },
+        { "char": "✌️", "label": "Znak Zwycięstwa" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/yin-yang/",
+      "title": "Yin Yang",
+      "desc": "Starożytna chińska filozofia stojąca za tym wirem."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Pokój, gesty, gołębie i symbole dobrej woli w pełnej bibliotece."
+    },
+    {
+      "href": "/library/peace-emoji/",
+      "title": "Peace Emoji",
+      "desc": "Znak pokoju, gołąb i kolekcja emoji harmonii."
+    }
+  ]
+}

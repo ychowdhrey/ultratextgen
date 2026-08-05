@@ -79,8 +79,8 @@ GTM_HEAD = """  <!-- Google Tag Manager -->
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
   <!-- End Google Tag Manager -->
-  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
-  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>"""
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>"""
 
 GTM_NOSCRIPT = """  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
@@ -233,12 +233,16 @@ def render_hub(spec):
         (
             "How do I print the whole dot-to-dot alphabet at once?",
             "Scroll to the <strong>Printable alphabet</strong> section and press "
-            "<strong>Print the alphabet</strong> to send all 26 numbered dot-to-dot "
-            "letters to your printer on one sheet — handy for a classroom set or a "
+            "<strong>Print the alphabet book</strong> — all 26 letters plus the "
+            "numbers 0–9 print in order, each on its own full page. Choose "
+            "<strong>Save as PDF</strong> in the print dialog to download the whole "
+            "thing as a 36-page PDF book — handy for a classroom set or a rainy-day "
+            "activity.",
+            "Scroll to the Printable alphabet section and press Print the alphabet "
+            "book — all 26 letters plus the numbers 0 to 9 print in order, each on "
+            "its own full page. Choose Save as PDF in the print dialog to download "
+            "the whole thing as a 36-page PDF book — handy for a classroom set or a "
             "rainy-day activity.",
-            "Scroll to the Printable alphabet section and press Print the alphabet to "
-            "send all 26 numbered dot-to-dot letters to your printer on one sheet — "
-            "handy for a classroom set or a rainy-day activity.",
         ),
         (
             "Can I get a dot-to-dot for just one letter?",
@@ -263,15 +267,15 @@ def render_hub(spec):
         ),
         (
             "Can I make a dot-to-dot of a whole name instead of one letter?",
-            "Yes. Open the <a href=\"/printables/coloring-page-maker/\">coloring page "
-            "maker</a>, switch Style to Dot-to-dot, and type any name or word — it "
+            "Yes. Use the <a href=\"/printables/dot-to-dot-name/\">dot-to-dot name "
+            "generator</a> — type any name or word and it becomes a personalized "
+            "connect-the-dots with an adjustable difficulty from Easy to Expert. These "
+            "letter pages are for one fixed A–Z letter at a time; the name generator is "
+            "for a whole name.",
+            "Yes. Use the dot-to-dot name generator — type any name or word and it "
             "becomes a personalized connect-the-dots with an adjustable difficulty from "
-            "Easy to Expert. These letter pages are for one fixed A–Z letter at a time; "
-            "the maker is for a whole name.",
-            "Yes. Open the coloring page maker, switch Style to Dot-to-dot, and type any "
-            "name or word — it becomes a personalized connect-the-dots with an "
-            "adjustable difficulty from Easy to Expert. These letter pages are for one "
-            "fixed A-Z letter at a time; the maker is for a whole name.",
+            "Easy to Expert. These letter pages are for one fixed A-Z letter at a time; "
+            "the name generator is for a whole name.",
         ),
     ]
 
@@ -306,7 +310,16 @@ def render_hub(spec):
         [ldjson(breadcrumb), ldjson(collection_ld), ldjson(faqpage_ld(faqs))]
     )
 
-    config = config_script(cfg)
+    # Hub-only engine extras: digits join the picker/grid, and the bulk
+    # "Print the alphabet" prints as a one-page-per-character book (the
+    # engine's alphabetPrint: "book" mode) rather than a compact sheet.
+    config = config_script(
+        cfg,
+        extra_lines=[
+            '      charset: "alnum",',
+            '      alphabetPrint: "book",',
+        ],
+    )
 
     return f"""<!DOCTYPE html><html lang="en"><head>
 {GTM_HEAD}
@@ -359,7 +372,7 @@ def render_hub(spec):
     <!-- Picker + selected-letter detail -->
     <section class="bubble-az" aria-labelledby="ptPickHeading">
       <h2 class="bubble-az-heading" id="ptPickHeading">Pick a letter to connect</h2>
-      <p class="bubble-az-intro">Tap any letter A–Z to see its numbered dot-to-dot, print it, or download a PNG. Want the letter's own page with an example word? Open it from the A–Z list below.</p>
+      <p class="bubble-az-intro">Tap any letter A–Z — or any number 0–9 — to see its numbered dot-to-dot, print it, or download a PNG. Want the letter's own page with an example word? Open it from the A–Z list below.</p>
       <div class="bubble-strip" id="pt-strip" role="tablist" aria-label="Choose a letter for a dot-to-dot"></div>
       <div class="bubble-letter-panel" id="pt-panel" aria-live="polite"></div>
     </section>
@@ -368,11 +381,18 @@ def render_hub(spec):
     <section class="bubble-alphabet" aria-labelledby="ptAlphaHeading">
       <div class="bubble-alphabet-head">
         <h2 id="ptAlphaHeading">Printable alphabet</h2>
-        <button class="bubble-btn bubble-btn-primary" type="button" id="pt-alphabet-print">Print the alphabet</button>
+        <button class="bubble-btn bubble-btn-primary" type="button" id="pt-alphabet-print">Print the alphabet book</button>
       </div>
-      <p class="bubble-az-intro">The full A–Z alphabet as numbered dot-to-dot puzzles. Print the whole sheet, or tap any letter to open its print and download options.</p>
+      <p class="bubble-az-intro">The full alphabet — A–Z plus 0–9 — as numbered dot-to-dot puzzles. Print it as a book with every letter and number on its own full page (choose “Save as PDF” in the print dialog to download it), or tap any character to open its print and download options.</p>
       <div class="bubble-alphabet-grid" id="pt-alphabet-grid"></div>
     </section>
+
+    <!-- Alphabet book — the whole set as a one-page-per-character printable -->
+    <div class="cta-card" id="alphabet-book">
+      <h3>Print the complete dot-to-dot book — A–Z plus 0–9</h3>
+      <p>All 26 letters and all 10 numbers as one ready-to-print book — every character gets its own full page, in order from A to Z then 0 to 9. Press the button and pick your printer, or choose <strong>Save as PDF</strong> in the print dialog to download the whole 36-page book as a PDF.</p>
+      <button class="cta-btn" type="button" id="pt-book-print">Print the A–Z + 0–9 book →</button>
+    </div>
 
     <!-- Real, crawlable per-letter links -->
     <section class="editorial-section" aria-labelledby="ptListHeading">
@@ -389,7 +409,7 @@ def render_hub(spec):
       <ul class="compat-list">
         <li><span class="ts-pill-safe">Count &amp; connect</span> Say each number out loud while connecting the dots in order — number recognition and letter recognition in one activity.</li>
         <li><span class="ts-pill-safe">Then color</span> Once the letter is revealed, the thin outline leaves room for crayons, markers, and colored pencils.</li>
-        <li><span class="ts-pill-safe">Classroom</span> Print the whole alphabet for a center activity, or one letter for the letter of the week.</li>
+        <li><span class="ts-pill-safe">Classroom</span> Print the whole alphabet book — one full page per letter and number — for a center activity, or one letter for the letter of the week.</li>
       </ul>
       <h3>Prefer copy-paste letters instead of a printable?</h3>
       <p>These dot-to-dot puzzles are for paper. If you want stylish letters you can paste into a bio or caption, use the
@@ -401,7 +421,7 @@ def render_hub(spec):
     <div class="cta-card">
       <h3>Want a dot-to-dot of a whole name?</h3>
       <p>Type any name or word and turn it into a personalized connect-the-dots — with an adjustable difficulty from Easy to Expert, an optional heading, and a name-and-date line.</p>
-      <a class="cta-btn" href="/printables/coloring-page-maker/">Open the coloring page maker →</a>
+      <a class="cta-btn" href="/printables/dot-to-dot-name/">Open the dot-to-dot name generator →</a>
     </div>
 
     <div class="cta-card">

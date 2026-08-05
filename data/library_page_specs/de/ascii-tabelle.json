@@ -1,0 +1,147 @@
+{
+  "slug": "ascii-tabelle",
+  "lang": "de",
+  "title": "ASCII-Tabelle & Zeichensatz: ASCII-Codes und Zeichen kopieren",
+  "meta_description": "ASCII-Tabelle mit Dezimal-, Hex-, Binär- und Oktalcodes für Satzzeichen, Ziffern, Buchstaben und Symbole — eine schnelle Entwickler-Referenz. Klick auf ein Zeichen, um es sofort zu kopieren.",
+  "breadcrumb": "ASCII-Tabelle",
+  "hero_h1": "ASCII-Tabelle",
+  "hero_tagline": "Druckbare ASCII-Zeichen 33–126 mit ihren Dezimal-, Hex-, Binär- und Oktalcodes. Klick auf ein Zeichen, um es sofort zu kopieren.",
+  "intro": "Die ASCII-Tabelle ordnet die 128 Zeichen des American Standard Code for Information Interchange den Zahlen 0–127 zu — die Grundlage der modernen Textkodierung und die ersten 128 Codepunkte von Unicode. Diese Referenz deckt den druckbaren Bereich (33–126) nach Typ gruppiert ab und beschriftet jedes Zeichen mit seinem Dezimal-, Hex-, Binär- und Oktalcode. Die Codes 0–31 sind nicht druckbare Steuerzeichen (wie 10, der Zeilenvorschub), und 32 ist das Leerzeichen.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/de/library/ascii-tabelle/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/ascii-table/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/ascii-tabelle/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/ascii-table/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "ascii-punctuation-33-47",
+      "label": "Satzzeichen 33–47",
+      "h2": "ASCII-Satzzeichen & Symbole (33–47)",
+      "intro": "Der erste druckbare Block: Satzzeichen und Rechenzeichen.",
+      "symbols": [
+        { "char": "!", "label": "33 / 0x21 / 0b0100001 / 0o41 — Ausrufezeichen" },
+        { "char": "\"", "label": "34 / 0x22 / 0b0100010 / 0o42 — Anführungszeichen" },
+        { "char": "#", "label": "35 / 0x23 / 0b0100011 / 0o43 — Doppelkreuz (Nummernzeichen)" },
+        { "char": "$", "label": "36 / 0x24 / 0b0100100 / 0o44 — Dollarzeichen" },
+        { "char": "%", "label": "37 / 0x25 / 0b0100101 / 0o45 — Prozentzeichen" },
+        { "char": "&", "label": "38 / 0x26 / 0b0100110 / 0o46 — Kaufmanns-Und (Ampersand)" },
+        { "char": "'", "label": "39 / 0x27 / 0b0100111 / 0o47 — Apostroph" },
+        { "char": "(", "label": "40 / 0x28 / 0b0101000 / 0o50 — Runde Klammer auf" },
+        { "char": ")", "label": "41 / 0x29 / 0b0101001 / 0o51 — Runde Klammer zu" },
+        { "char": "*", "label": "42 / 0x2A / 0b0101010 / 0o52 — Sternchen (Asterisk)" },
+        { "char": "+", "label": "43 / 0x2B / 0b0101011 / 0o53 — Pluszeichen" },
+        { "char": ",", "label": "44 / 0x2C / 0b0101100 / 0o54 — Komma" },
+        { "char": "-", "label": "45 / 0x2D / 0b0101101 / 0o55 — Bindestrich-Minus" },
+        { "char": ".", "label": "46 / 0x2E / 0b0101110 / 0o56 — Punkt" },
+        { "char": "/", "label": "47 / 0x2F / 0b0101111 / 0o57 — Schrägstrich (Slash)" }
+      ]
+    },
+    {
+      "id": "ascii-digits-48-57",
+      "label": "Ziffern 48–57",
+      "h2": "ASCII-Ziffern (48–57)",
+      "intro": "Die zehn Dezimalziffern — der Code jeder Ziffer ist 48 plus ihr Wert.",
+      "symbols": [
+        { "char": "0", "label": "48 / 0x30 / 0b0110000 / 0o60 — Ziffer Null" },
+        { "char": "1", "label": "49 / 0x31 / 0b0110001 / 0o61 — Ziffer Eins" },
+        { "char": "2", "label": "50 / 0x32 / 0b0110010 / 0o62 — Ziffer Zwei" },
+        { "char": "3", "label": "51 / 0x33 / 0b0110011 / 0o63 — Ziffer Drei" },
+        { "char": "4", "label": "52 / 0x34 / 0b0110100 / 0o64 — Ziffer Vier" },
+        { "char": "5", "label": "53 / 0x35 / 0b0110101 / 0o65 — Ziffer Fünf" },
+        { "char": "6", "label": "54 / 0x36 / 0b0110110 / 0o66 — Ziffer Sechs" },
+        { "char": "7", "label": "55 / 0x37 / 0b0110111 / 0o67 — Ziffer Sieben" },
+        { "char": "8", "label": "56 / 0x38 / 0b0111000 / 0o70 — Ziffer Acht" },
+        { "char": "9", "label": "57 / 0x39 / 0b0111001 / 0o71 — Ziffer Neun" }
+      ]
+    },
+    {
+      "id": "ascii-punctuation-58-64",
+      "label": "Satzzeichen 58–64",
+      "h2": "ASCII-Satzzeichen & Symbole (58–64)",
+      "intro": "Die Zeichen zwischen den Ziffern und den Großbuchstaben.",
+      "symbols": [
+        { "char": ":", "label": "58 / 0x3A / 0b0111010 / 0o72 — Doppelpunkt" },
+        { "char": ";", "label": "59 / 0x3B / 0b0111011 / 0o73 — Strichpunkt (Semikolon)" },
+        { "char": "<", "label": "60 / 0x3C / 0b0111100 / 0o74 — Kleiner-als-Zeichen" },
+        { "char": "=", "label": "61 / 0x3D / 0b0111101 / 0o75 — Gleichheitszeichen" },
+        { "char": ">", "label": "62 / 0x3E / 0b0111110 / 0o76 — Größer-als-Zeichen" },
+        { "char": "?", "label": "63 / 0x3F / 0b0111111 / 0o77 — Fragezeichen" },
+        { "char": "@", "label": "64 / 0x40 / 0b1000000 / 0o100 — At-Zeichen" }
+      ]
+    },
+    {
+      "id": "ascii-letters",
+      "label": "Buchstaben 65–122",
+      "h2": "ASCII-Buchstaben (65–90 und 97–122)",
+      "intro": "Großbuchstaben laufen von 65 (A) bis 90 (Z), Kleinbuchstaben von 97 (a) bis 122 (z) — immer der Großbuchstabe plus 32.",
+      "symbols": [
+        { "char": "A", "label": "65 / 0x41 / 0b1000001 / 0o101 — Lateinischer Großbuchstabe A" },
+        { "char": "B", "label": "66 / 0x42 / 0b1000010 / 0o102 — Lateinischer Großbuchstabe B" },
+        { "char": "C", "label": "67 / 0x43 / 0b1000011 / 0o103 — Lateinischer Großbuchstabe C" },
+        { "char": "M", "label": "77 / 0x4D / 0b1001101 / 0o115 — Lateinischer Großbuchstabe M" },
+        { "char": "N", "label": "78 / 0x4E / 0b1001110 / 0o116 — Lateinischer Großbuchstabe N" },
+        { "char": "X", "label": "88 / 0x58 / 0b1011000 / 0o130 — Lateinischer Großbuchstabe X" },
+        { "char": "Y", "label": "89 / 0x59 / 0b1011001 / 0o131 — Lateinischer Großbuchstabe Y" },
+        { "char": "Z", "label": "90 / 0x5A / 0b1011010 / 0o132 — Lateinischer Großbuchstabe Z" },
+        { "char": "a", "label": "97 / 0x61 / 0b1100001 / 0o141 — Lateinischer Kleinbuchstabe a" },
+        { "char": "b", "label": "98 / 0x62 / 0b1100010 / 0o142 — Lateinischer Kleinbuchstabe b" },
+        { "char": "m", "label": "109 / 0x6D / 0b1101101 / 0o155 — Lateinischer Kleinbuchstabe m" },
+        { "char": "n", "label": "110 / 0x6E / 0b1101110 / 0o156 — Lateinischer Kleinbuchstabe n" },
+        { "char": "x", "label": "120 / 0x78 / 0b1111000 / 0o170 — Lateinischer Kleinbuchstabe x" },
+        { "char": "z", "label": "122 / 0x7A / 0b1111010 / 0o172 — Lateinischer Kleinbuchstabe z" }
+      ]
+    },
+    {
+      "id": "ascii-brackets-91-96",
+      "label": "Klammern 91–96",
+      "h2": "ASCII-Klammern & Zeichen (91–96)",
+      "intro": "Eckige Klammern, Backslash, Zirkumflex, Unterstrich und der Gravis.",
+      "symbols": [
+        { "char": "[", "label": "91 / 0x5B / 0b1011011 / 0o133 — Eckige Klammer auf" },
+        { "char": "\\", "label": "92 / 0x5C / 0b1011100 / 0o134 — Umgekehrter Schrägstrich (Backslash)" },
+        { "char": "]", "label": "93 / 0x5D / 0b1011101 / 0o135 — Eckige Klammer zu" },
+        { "char": "^", "label": "94 / 0x5E / 0b1011110 / 0o136 — Zirkumflex (Caret)" },
+        { "char": "_", "label": "95 / 0x5F / 0b1011111 / 0o137 — Unterstrich" },
+        { "char": "`", "label": "96 / 0x60 / 0b1100000 / 0o140 — Gravis (Backtick)" }
+      ]
+    },
+    {
+      "id": "ascii-braces-123-126",
+      "label": "Geschweifte Klammern 123–126",
+      "h2": "ASCII-geschweifte Klammern & Tilde (123–126)",
+      "intro": "Die letzten druckbaren Zeichen vor dem Steuerzeichen DEL bei 127.",
+      "symbols": [
+        { "char": "{", "label": "123 / 0x7B / 0b1111011 / 0o173 — Geschweifte Klammer auf" },
+        { "char": "|", "label": "124 / 0x7C / 0b1111100 / 0o174 — Senkrechter Strich (Pipe)" },
+        { "char": "}", "label": "125 / 0x7D / 0b1111101 / 0o175 — Geschweifte Klammer zu" },
+        { "char": "~", "label": "126 / 0x7E / 0b1111110 / 0o176 — Tilde" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/de/library/alt-codes/",
+      "title": "Alt-Codes",
+      "desc": "Sonderzeichen mit der Windows-Tastatur tippen — Umlaute, €, © und mehr."
+    },
+    {
+      "href": "/de/library/rahmenzeichen/",
+      "title": "Rahmenzeichen & Blocksymbole",
+      "desc": "Linien, Ecken und Blöcke für ASCII-Kästen und Text-Art."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ]
+}

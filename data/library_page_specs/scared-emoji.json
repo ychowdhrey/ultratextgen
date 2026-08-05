@@ -1,0 +1,143 @@
+{
+  "slug": "scared-emoji",
+  "title": "Scared Emoji & Kaomoji: Copy & Paste 😨😱 Fear Combos",
+  "meta_description": "Scared emoji 😨 😱 😰, spooky ghost and spider symbols, plus panicked kaomoji like ((((；゜Д゜)))) for chats and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/scared-emoji/",
+  "breadcrumb": "Scared Emoji & Kaomoji",
+  "hero_h1": "Scared Emoji & Kaomoji",
+  "hero_tagline": "Fearful faces, screaming panic, spooky ghosts and spiders, and trembling kaomoji — real fright in every intensity. Click any symbol to copy it instantly.",
+  "intro": "The scared emoji range runs from a wide-eyed 😨 fearful face to the full-blown terror of 😱 screaming in fear — genuine fright, not the plot-twist surprise of a shocked face. This page gathers every frightened and panicked face, the cold-sweat anxious emojis for nervous dread, the spooky ghost, spider, and bat symbols that set a haunted-house scene, and one-click scared combo sets for chats, comments, horror posts, and Halloween captions. When an emoji won't carry the exact shiver, classic panicked kaomoji like ((((；゜Д゜)))) paste anywhere plain text works.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "scared-faces",
+      "label": "Core Scared Faces",
+      "h2": "Scared & Frightened Face Emojis",
+      "intro": "The core fright faces, from wide-eyed dread to open-mouthed screaming panic.",
+      "symbols": [
+        { "char": "😨", "label": "Fearful Face" },
+        { "char": "😱", "label": "Face Screaming in Fear" },
+        { "char": "😧", "label": "Anguished Face" },
+        { "char": "😬", "label": "Grimacing Face" },
+        { "char": "😖", "label": "Confounded Face" }
+      ]
+    },
+    {
+      "id": "anxious-nervous",
+      "label": "Anxious & Nervous Faces",
+      "h2": "Anxious & Nervous Faces",
+      "intro": "Cold sweat, worried brows, and pleading eyes for lower-grade nervous dread.",
+      "symbols": [
+        { "char": "😰", "label": "Anxious Face With Sweat" },
+        { "char": "😓", "label": "Face With Cold Sweat" },
+        { "char": "😟", "label": "Worried Face" },
+        { "char": "😥", "label": "Sad but Relieved Face" },
+        { "char": "🥺", "label": "Pleading Face" }
+      ]
+    },
+    {
+      "id": "spooky-symbols",
+      "label": "Spooky & Frightening Symbols",
+      "h2": "Spooky & Frightening Symbols",
+      "intro": "Ghosts, spiders, and graveyard glyphs to set a haunted, frightening scene.",
+      "symbols": [
+        { "char": "👻", "label": "Ghost" },
+        { "char": "🕷️", "label": "Spider" },
+        { "char": "🕸️", "label": "Spider Web" },
+        { "char": "🦇", "label": "Bat" },
+        { "char": "🎃", "label": "Jack-O-Lantern" },
+        { "char": "🧟", "label": "Zombie" },
+        { "char": "⚰️", "label": "Coffin" },
+        { "char": "🪦", "label": "Headstone" }
+      ]
+    },
+    {
+      "id": "scared-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Scared & Panicked Kaomoji",
+      "intro": "The trembles, cold sweats, and screams of classic frightened text faces.",
+      "symbols": [
+        { "char": "((((；゜Д゜))))", "label": "Trembling With Fear Kaomoji" },
+        { "char": "Σ(ﾟдﾟ|||)", "label": "Startled Shock Kaomoji" },
+        { "char": "(ﾟдﾟ；)", "label": "Frightened Sweat Kaomoji" },
+        { "char": "(；ﾟДﾟ)", "label": "Nervous Panic Kaomoji" },
+        { "char": "ヽ(ﾟДﾟ)ﾉ", "label": "Screaming In Fear Kaomoji" },
+        { "char": "(＠_＠;)", "label": "Dazed Fright Kaomoji" },
+        { "char": "((；ﾟдﾟ))", "label": "Shaking Dread Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Scared Emoji Combo Sets",
+    "intro": "Copy a complete scared combo in one click — from a nervous shiver to full-blown panic."
+  },
+  "collection_container_id": "scaredSetsContainer",
+  "collections": [
+    {
+      "name": "Scared Stiff",
+      "flags": ["😨", "😱"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Full Panic",
+      "flags": ["😱", "😰", "💦"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nervous Wreck",
+      "flags": ["😰", "😓", "😟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Spooked",
+      "flags": ["👻", "😨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Haunted House",
+      "flags": ["👻", "🕷️", "🦇", "🕸️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Graveyard Shift",
+      "flags": ["⚰️", "🪦", "🧟"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Jump Scare",
+      "flags": ["😱", "💥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Frozen in Fear",
+      "flags": ["🥶", "😰", "😨"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/shocked-emoji/",
+      "title": "Shocked Emoji & Kaomoji",
+      "desc": "Wide-eyed surprise and plot-twist reactions — the surprise to this page's fear."
+    },
+    {
+      "href": "/library/halloween-symbols/",
+      "title": "Halloween Symbols",
+      "desc": "Pumpkins, bats, and spooky glyphs for horror and Halloween posts."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    },
+    {
+      "href": "/library/text-faces-kaomoji/",
+      "title": "Text Faces & Kaomoji",
+      "desc": "Every kaomoji mood, from panic to joy, in plain text."
+    }
+  ]
+}

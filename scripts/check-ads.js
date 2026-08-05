@@ -1,19 +1,39 @@
 #!/usr/bin/env node
 'use strict';
 
-// Verifies the Journey ads script (scriptwrapper) is present on every page.
+// Verifies the Google AdSense loader is present on every page.
 //
-// The tag is hard-coded into each page's <head> (right after the Grow
-// initializer) so Journey's verification crawler — which reads raw HTML and
-// does not execute JS — can detect it. This check enforces that every
-// non-skipped HTML page carries exactly one copy of the tag.
+// The site monetizes via AdSense Auto Ads: each page carries a single
+// AdSense loader (client ca-pub-...) in its <head>. This check enforces that
+// every non-skipped HTML page carries exactly one copy of the loader — no
+// missing pages (unmonetized) and no duplicates (which can trip AdSense
+// policy). The previous Journey/Grow/Mediavine scripts were removed
+// site-wide; do not reintroduce them.
 
 const fs = require('fs');
 const path = require('path');
 const { globSync } = require('glob');
 
-const AD_TAG_ID = 'e381520a-ca23-48ca-a066-83c420ddddea';
+const AD_CLIENT = 'ca-pub-8242324164413945';
 const ROOT = path.resolve(__dirname, '..');
+
+// Guard ads.txt itself: it must authorize this site's own AdSense pub id and
+// must never carry Journey's managerdomain/seller lines again. Journey ran a
+// daily workflow that overwrote ads.txt from its hosted file every night;
+// that workflow is gone, but this check catches any future reintroduction
+// (manual edit, a resurrected workflow, a copy-pasted snippet) at PR time.
+const adsTxtPath = path.join(ROOT, 'ads.txt');
+const adsTxt = fs.readFileSync(adsTxtPath, 'utf8');
+let adsTxtOk = true;
+
+if (/journeymv\.com|managerdomain=/i.test(adsTxt)) {
+  console.log('  ✗ ads.txt: LEFTOVER Journey manager/seller line found');
+  adsTxtOk = false;
+}
+if (!adsTxt.includes('pub-8242324164413945')) {
+  console.log('  ✗ ads.txt: missing this site\'s AdSense pub id (pub-8242324164413945)');
+  adsTxtOk = false;
+}
 
 // Patterns in the file path that indicate files to skip
 const SKIP_SEGMENTS = ['embed', 'widget', 'test', 'demo', '404', '_root'];
@@ -51,20 +71,27 @@ for (const file of files) {
   const rel = path.relative(ROOT, file);
   const content = fs.readFileSync(file, 'utf8');
 
-  const count = (content.match(new RegExp(AD_TAG_ID, 'g')) || []).length;
+  // Guard against the old ad stack sneaking back in.
+  if (/scriptwrapper\.com|data-grow-initializer|faves\.grow\.me/.test(content)) {
+    errors.push(`LEFTOVER Journey/Grow/Mediavine script: ${rel}`);
+    failed++;
+    continue;
+  }
+
+  const count = (content.match(new RegExp(AD_CLIENT, 'g')) || []).length;
 
   if (count === 0) {
-    errors.push(`MISSING Journey ads script: ${rel}`);
+    errors.push(`MISSING AdSense loader: ${rel}`);
     failed++;
   } else if (count > 1) {
-    errors.push(`DUPLICATE Journey ads script: ${rel}`);
+    errors.push(`DUPLICATE AdSense loader: ${rel}`);
     failed++;
   } else {
     passed++;
   }
 }
 
-console.log(`Ads Check (${AD_TAG_ID})`);
+console.log(`Ads Check (${AD_CLIENT})`);
 console.log(`  Checked : ${passed + failed}`);
 console.log(`  Passed  : ${passed}`);
 console.log(`  Failed  : ${failed}`);
@@ -76,9 +103,12 @@ if (errors.length > 0) {
   for (const err of errors) {
     console.log(`  ✗ ${err}`);
   }
+}
+
+if (errors.length > 0 || !adsTxtOk) {
   process.exit(1);
 } else {
   console.log('');
-  console.log('All checked pages have the Journey ads script. ✓');
+  console.log('All checked pages have the AdSense loader, and ads.txt is clean. ✓');
   process.exit(0);
 }

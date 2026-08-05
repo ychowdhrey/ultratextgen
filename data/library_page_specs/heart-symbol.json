@@ -1,0 +1,70 @@
+{
+  "slug": "heart-symbol",
+  "page_type": "symbol",
+  "title": "Heart Symbol: Copy & Paste ♥ ❤ Heart Symbols & Text Hearts",
+  "meta_description": "Copy and paste the heart symbol (♥, U+2665) — the card-suit heart, the ❤ heavy heart, colored heart emoji, and text hearts like <3, plus how to type them on Windows and Mac. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/heart-symbol/",
+  "breadcrumb": "Heart Symbol",
+  "hero_h1": "Heart Symbol",
+  "hero_tagline": "The heart symbol (♥ ❤) — a card-suit glyph that became the universal sign for love — plus its emoji versions and the <3 text heart. Click any symbol to copy it instantly.",
+  "intro": "The heart symbol (♥, Unicode U+2665 BLACK HEART SUIT) began life as a playing-card suit mark and is now one of the most-copied characters on the internet. Unicode actually has several hearts: the monochrome card-suit ♥, the heavier ❤ (U+2764) that becomes the red heart emoji ❤️ with a variation selector, the outline ♡, and a full palette of colored heart emoji. The stylized shape has never matched a real anatomical heart — its origins are debated — but it has meant love and affection in Western art since the Middle Ages.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "heart-symbol",
+      "label": "Heart",
+      "h2": "Heart Symbol",
+      "intro": "The core heart glyphs: the card-suit heart, the heavy black heart that anchors the emoji, and the outline.",
+      "symbols": [
+        { "char": "♥", "label": "Black Heart Suit (U+2665)" },
+        { "char": "❤", "label": "Heavy Black Heart (U+2764)" },
+        { "char": "♡", "label": "White Heart Suit / Outline (U+2661)" }
+      ]
+    },
+    {
+      "id": "heart-emoji",
+      "label": "Heart Emoji",
+      "h2": "Colored Heart Emoji",
+      "intro": "The variation-selector emoji versions in the common colors.",
+      "symbols": [
+        { "char": "❤️", "label": "Red Heart" },
+        { "char": "🖤", "label": "Black Heart (U+1F5A4)" },
+        { "char": "💙", "label": "Blue Heart" },
+        { "char": "💜", "label": "Purple Heart" },
+        { "char": "💚", "label": "Green Heart" }
+      ]
+    },
+    {
+      "id": "text-hearts",
+      "label": "Text & Ornament Hearts",
+      "h2": "Text Hearts & Heart Ornaments",
+      "intro": "Typed shortcuts and decorative hearts used in bios and captions.",
+      "symbols": [
+        { "char": "<3", "label": "ASCII Text Heart" },
+        { "char": "❣", "label": "Heavy Heart Exclamation (U+2763)" },
+        { "char": "❥", "label": "Rotated Heavy Black Heart Bullet (U+2765)" },
+        { "char": "❦", "label": "Floral Heart (U+2766)" },
+        { "char": "💔", "label": "Broken Heart" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/star-symbol/",
+      "title": "Star Symbol (★)",
+      "desc": "The five-pointed star for ratings, favorites, and bios."
+    },
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Every heart character and colored heart emoji in one hub."
+    },
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "♥ ♦ ♣ ♠ — the four playing-card suits the heart comes from."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "lang": "es",
+  "slug": "media-luna-y-estrella",
+  "page_type": "symbol",
+  "title": "Media Luna y Estrella: Copiar y Pegar ☪ — Emblema Otomano, no un Símbolo Coránico",
+  "meta_description": "Copia y pega la media luna y estrella (☪, U+262A) — el emblema de bandera asociado al islam que en realidad procede de los otomanos, no del Corán. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/media-luna-y-estrella/",
+  "breadcrumb": "Media Luna y Estrella",
+  "hero_h1": "Media Luna y Estrella (☪)",
+  "hero_tagline": "La media luna y estrella (☪ ☪️) — el símbolo de luna y estrella que ondea en las banderas de Turquía, Pakistán, Argelia y Túnez, y el signo que la mayoría lee como «islam» aunque en realidad desciende de emblemas otomanos y preislámicos, y no de las escrituras. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "La media luna y estrella (☪, U+262A) es el conjunto de luna creciente y estrella de cinco puntas que la mayoría de la gente lee hoy como un símbolo del islam — y sin embargo no aparece en ningún lugar del Corán ni de los hadices, y muchos musulmanes rechazan que sea siquiera un símbolo religioso. Sus raíces son mucho más antiguas que el islam: el emparejamiento de una media luna con una estrella era iconografía del antiguo Oriente Próximo, asociada en Mesopotamia con el dios lunar Sin y la diosa Ishtar (Venus, la estrella de la mañana), y circuló en las monedas de la ciudad griega de Bizancio siglos antes de la era común. La versión que conoce el mundo actual desciende del Imperio Otomano, que la adoptó como emblema estatal a finales del siglo XVIII — bajo sultanes que van de Mustafá III (1757–1774) a Selim III (1789–1807) —, con la bandera roja estandarizada en 1844 convirtiéndose en la plantilla de la actual bandera de Turquía. Solo en el siglo XX, a través de la posición otomana como potencia islámica destacada, el símbolo se asoció de forma amplia con el islam en sí. Unicode lo codifica como U+262A STAR AND CRESCENT, añadido en la versión 1.1 en 1993; la forma emoji ☪️ añade un selector de variación (U+262A U+FE0F). Hoy aparece en las banderas de Turquía, Pakistán, Argelia, Túnez y Azerbaiyán, entre otras.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/crescent-and-star/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/media-luna-y-estrella/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/crescent-and-star/" }
+  ],
+  "sections": [
+    {
+      "id": "media-luna-y-estrella",
+      "label": "Media Luna y Estrella",
+      "h2": "Símbolo de Media Luna y Estrella — ☪ y ☪️",
+      "intro": "La media luna y estrella de Unicode, lista para pegar en una biografía, una publicación o un perfil. Dos formas: el glifo plano en blanco y negro y el emoji a todo color.",
+      "symbols": [
+        { "char": "☪", "label": "Media Luna y Estrella (U+262A)" },
+        { "char": "☪️", "label": "Emoji de Media Luna y Estrella (U+262A U+FE0F)" }
+      ]
+    },
+    {
+      "id": "luna-y-estrella-por-separado",
+      "label": "Luna y Estrella por Separado",
+      "h2": "No es lo Mismo que una Luna o una Estrella Sueltas",
+      "intro": "La media luna y estrella es un único glifo combinado. Los caracteres independientes de luna creciente y estrella a los que la gente suele recurrir en su lugar tienen cada uno su propio punto de código y su propia función.",
+      "symbols": [
+        { "char": "☾", "label": "Luna en Cuarto Menguante (U+263E) — Media Luna Simple" },
+        { "char": "☽", "label": "Luna en Cuarto Creciente (U+263D)" },
+        { "char": "🌙", "label": "Emoji de Luna Creciente (U+1F319)" },
+        { "char": "⭐", "label": "Estrella Blanca Mediana (U+2B50)" },
+        { "char": "★", "label": "Estrella Negra (U+2605)" },
+        { "char": "☆", "label": "Estrella Blanca (U+2606)" }
+      ]
+    },
+    {
+      "id": "simbolos-de-fe-relacionados",
+      "label": "Símbolos de Fe",
+      "h2": "Otros Símbolos de Fe con los que se Agrupa",
+      "intro": "La media luna y estrella suele buscarse y mostrarse junto a los símbolos identitarios de otras religiones del mundo. Estos son los que más veces la acompañan.",
+      "symbols": [
+        { "char": "✡️", "label": "Estrella de David (U+2721)" },
+        { "char": "✝️", "label": "Cruz Latina (U+271D)" },
+        { "char": "☸️", "label": "Rueda del Dharma (U+2638)" },
+        { "char": "🕉️", "label": "Om (U+1F549)" },
+        { "char": "☯️", "label": "Yin y Yang (U+262F)" },
+        { "char": "☬", "label": "Khanda / Adi Shakti (U+262C)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Símbolos Religiosos",
+      "desc": "Símbolos de fe de todas las grandes religiones del mundo en una sola referencia para explorar."
+    },
+    {
+      "href": "/library/islamic-symbols/",
+      "title": "Símbolos Islámicos",
+      "desc": "La media luna y estrella junto a la caligrafía de Alá, la mezquita, la oración y otros símbolos vinculados al islam."
+    },
+    {
+      "href": "/es/symbol/estrella-de-david/",
+      "title": "Estrella de David (✡)",
+      "desc": "Otro emblema de fe conocido sobre todo a través de una bandera nacional, con una geometría compartida mucho más antigua que la religión a la que hoy representa."
+    },
+    {
+      "href": "/es/symbol/simbolo-hamsa/",
+      "title": "Símbolo Hamsa",
+      "desc": "La Mano de Fátima — un signo protector compartido entre el islam y el judaísmo que, como la media luna y estrella, no está mandatado por las escrituras."
+    }
+  ]
+}

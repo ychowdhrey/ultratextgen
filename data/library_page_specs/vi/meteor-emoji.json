@@ -1,0 +1,64 @@
+{
+  "slug": "meteor-emoji",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Emoji Meteor: Sao Chép & Dán 🪋 — Ứng Viên Unicode 18.0 Tách Ra Từ Comet",
+  "meta_description": "Meteor (🪋, U+1FA8B) là ứng viên bản nháp cho Emoji 18.0, dự kiến ra mắt cùng Unicode 18.0 vào tháng 9/2026. Nó giải quyết cuộc chia rẽ hiển thị kéo dài nhiều năm của Comet — chưa được phê duyệt, chưa phông chữ nào hiển thị được. Bối cảnh, ý nghĩa và trạng thái đầy đủ tại đây.",
+  "canonical": "https://ultratextgen.com/vi/symbol/meteor-emoji/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Emoji Meteor",
+  "hero_h1": "Emoji Meteor",
+  "hero_tagline": "Một thiên thạch đang lao qua bầu trời, tách ra từ cuộc khủng hoảng bản sắc kéo dài cả thập kỷ của Comet — được phác thảo cho Emoji 18.0, dự kiến ra mắt cùng Unicode 18.0 vào tháng 9/2026. Chỉ là bản nháp: cứ nhấp để sao chép mã điểm trước.",
+  "intro": "Meteor (🪋, U+1FA8B) là một emoji ứng viên được phác thảo cho Emoji 18.0, phiên bản emoji đi kèm Unicode 18.0, dự kiến hoàn thiện vào tháng 9/2026. Nó khắc họa một quả cầu lửa đang lao vào khí quyển — và sự tồn tại của nó nhằm giải quyết một cuộc chia rẽ hiển thị giữa các nhà cung cấp đã đeo bám emoji Comet (☄️) hiện có kể từ khi ra mắt: một số nền tảng vẽ Comet như một quả cầu băng xanh lấp lánh, trong khi số khác lại thiết kế lại nó thành một tảng đá nóng đỏ giữa lúc va chạm — hai khái niệm hoàn toàn khác nhau dùng chung một mã điểm. Thông báo chính thức của Unicode nói thẳng: «ước nguyện dưới một ngôi sao băng và chứng kiến một sự kiện tuyệt chủng là hai nguồn năng lượng hoàn toàn khác nhau». Meteor tiếp quản ý nghĩa quả cầu lửa để Comet có thể trở lại ổn định với thiết kế băng xanh nhất quán ở mọi nơi. Vì vẫn còn là bản nháp, chưa có hệ điều hành, bàn phím hay phông chữ nào hiển thị được nó; hãy chờ đợi một ô trống hoặc glyph giữ chỗ cho đến khi Emoji 18.0 được phê duyệt và các nền tảng triển khai hỗ trợ, có khả năng vào khoảng năm 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/meteor-emoji/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/meteor-emoji/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/meteor-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "meteor",
+      "label": "Meteor",
+      "h2": "Emoji Meteor",
+      "intro": "Ký tự bản nháp chính nó — sao chép được ngay hôm nay dưới dạng mã điểm, dù chưa phông chữ nào có thể hiển thị nó.",
+      "symbols": [
+        { "char": "🪋", "label": "Meteor (bản nháp, U+1FA8B)" }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Khác Với",
+      "h2": "Các Emoji Thường Bị Nhầm Lẫn",
+      "intro": "Những emoji thiên thể đã được mã hóa mà Meteor thường bị so sánh hoặc bị cho là trùng lặp.",
+      "symbols": [
+        { "char": "☄️", "label": "Comet — thiết kế mà Meteor tách ra khỏi" },
+        { "char": "🌠", "label": "Shooting Star (Sao Băng)" },
+        { "char": "⭐", "label": "Star (Ngôi Sao)" }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Các Ứng Viên Khác",
+      "h2": "Các Ứng Viên Bản Nháp Khác Của Emoji 18.0",
+      "intro": "Meteor không phải ký tự chưa được phê duyệt duy nhất trong đợt này — đây là những ứng viên được phác thảo cùng lúc, cũng chưa hiển thị được cho đến quyết định vào tháng 9/2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cracking Face (bản nháp, U+1FAEB) — thắng cuộc bình chọn công khai" },
+        { "char": "🫝", "label": "Pickle (bản nháp, U+1FADD)" },
+        { "char": "🫌", "label": "Monarch Butterfly (bản nháp, U+1FACC)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/weather-symbols/", "title": "Ký Hiệu Thời Tiết", "desc": "Mặt trời, mưa, tuyết và mọi ký tự thiên thể đã được mã hóa, bao gồm cả Comet." },
+    { "href": "/vi/symbol/cracking-face-emoji/", "title": "Emoji Cracking Face", "desc": "Ứng viên bản nháp Emoji 18.0 đã thắng cuộc bình chọn công khai." },
+    { "href": "/vi/symbol/pickle-emoji/", "title": "Emoji Pickle", "desc": "Một ứng viên bản nháp khác của Emoji 18.0 — được chuyển từ một đề xuất Apple Core bị hoãn." },
+    { "href": "/updates/unicode-18-most-anticipated-emoji/", "title": "Các Emoji Mới Của Unicode 18.0", "desc": "Toàn bộ danh sách bản nháp gồm 9 ứng viên, xếp hạng theo bình chọn công khai." }
+  ]
+}

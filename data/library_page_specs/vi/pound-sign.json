@@ -1,0 +1,65 @@
+{
+  "slug": "pound-sign",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Bảng Anh (£): Ý Nghĩa, Lịch Sử Và Cách Gõ",
+  "meta_description": "Ký hiệu bảng Anh £ (U+00A3) được giải thích — nguồn gốc từ chữ Latin libra, cách nó khác với dấu # cũng được gọi là «pound sign» trong tiếng Anh Mỹ, và cách gõ trên Windows/Mac.",
+  "canonical": "https://ultratextgen.com/vi/symbol/pound-sign/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Bảng Anh",
+  "hero_h1": "Ký Hiệu Bảng Anh (£)",
+  "hero_tagline": "£ nghĩa là gì, nguồn gốc Latin của nó, và cách gõ ra nó — nhấp để sao chép ngay.",
+  "intro": "£ bắt nguồn từ chữ Latin libra, đơn vị đo khối lượng La Mã — cùng gốc từ đã cho tiếng Anh chữ viết tắt «lb» (pound, đơn vị cân). Các kế toán viên Anh thời trung cổ viết tắt libra bằng một chữ L hoa cách điệu, và qua nhiều thế kỷ viết tay, chữ L đó dần có thêm một vạch ngang, định hình thành ký hiệu £ dùng ngày nay. Bản thân đồng bảng Anh (pound sterling) là một trong những đồng tiền cổ nhất còn được sử dụng, có gốc rễ hơn một nghìn năm từ nước Anh thời Anglo-Saxon, khiến £ trở thành một trong những ký hiệu tiền tệ cổ nhất vẫn đang được dùng hằng ngày trên thế giới.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pound-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/pound-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pound-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "pound-sign",
+      "label": "Ký Hiệu Bảng Anh",
+      "h2": "Ký Hiệu Bảng Anh",
+      "intro": "Ký hiệu bảng Anh, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "£", "label": "Ký Hiệu Bảng Anh (U+00A3)" }
+      ]
+    },
+    {
+      "id": "confusable",
+      "label": "Ký Hiệu Cùng Tên",
+      "h2": "Ký Hiệu Dễ Nhầm Vì Trùng Tên",
+      "intro": "Trong tiếng Anh, «pound sign» còn được dùng để gọi cả một ký tự hoàn toàn khác.",
+      "symbols": [
+        { "char": "#", "label": "Dấu Thăng / Số (U+0023) — cũng được gọi là «pound sign» một cách không chính thức trong tiếng Anh Mỹ, nhưng là một ký tự hoàn toàn khác, không liên quan" },
+        { "char": "€", "label": "Ký Hiệu Euro (U+20AC) — một ký hiệu tiền tệ được thiết kế có chủ đích năm 1996, khác hẳn quá trình hình thành tự nhiên của £" }
+      ]
+    },
+    {
+      "id": "related-currency",
+      "label": "Ký Hiệu Tiền Tệ Khác",
+      "h2": "Các Ký Hiệu Tiền Tệ Lớn Khác",
+      "intro": "Những ký hiệu tiền tệ khác thường xuất hiện cùng £ trong nội dung tài chính.",
+      "symbols": [
+        { "char": "$", "label": "Ký Hiệu Đô La" },
+        { "char": "€", "label": "Ký Hiệu Euro" },
+        { "char": "¥", "label": "Ký Hiệu Yên" },
+        { "char": "₹", "label": "Ký Hiệu Rupee Ấn Độ" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/dollar-sign/", "title": "Ký Hiệu Đô La ($)", "desc": "Ký hiệu tiền tệ được công nhận rộng rãi nhất thế giới — và nguồn gốc còn gây tranh cãi của nó." },
+    { "href": "/vi/symbol/euro-sign/", "title": "Ký Hiệu Euro (€)", "desc": "Một ký hiệu tiền tệ được thiết kế có chủ đích vào năm 1996." },
+    { "href": "/vi/symbol/yen-sign/", "title": "Ký Hiệu Yên (¥)", "desc": "Ký hiệu chung của đồng yên Nhật Bản và nhân dân tệ Trung Quốc." },
+    { "href": "/vi/symbol/rupee-sign/", "title": "Ký Hiệu Rupee (₹)", "desc": "Được chọn qua một cuộc thi thiết kế quốc gia năm 2010." },
+    { "href": "/library/currency-symbols/", "title": "Tất Cả Ký Hiệu Tiền Tệ", "desc": "Đô la, euro, bảng Anh, yên và các ký hiệu tiền tệ khác trên thế giới." }
+  ]
+}

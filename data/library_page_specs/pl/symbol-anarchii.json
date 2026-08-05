@@ -1,0 +1,82 @@
+{
+  "slug": "symbol-anarchii",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Anarchii: Skopiuj Ⓐ — Rodowód Okrągłego A z 1964 Roku",
+  "meta_description": "Skopiuj symbol anarchii (Ⓐ, okrągłe A) i poznaj jego precyzyjnie datowany rodowód z 1964 roku, sporne znaczenie „A w O = Order” oraz to, jak zespół punkowy Crass uczynił go globalnym. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-anarchii/",
+  "breadcrumb": "Symbol Anarchii",
+  "hero_h1": "Symbol Anarchii",
+  "hero_tagline": "Okrągłe A (Ⓐ) — wymyślone przez Tomása Ibáñeza w 1964 roku i uczynione globalnie znanym przez punkowy zespół Crass. Nie ma własnego, dedykowanego punktu kodowego Unicode; zapisuje się je znakiem Ⓐ, CIRCLED LATIN CAPITAL LETTER A (U+24B6). Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol anarchii — wielkie A wewnątrz okręgu (Ⓐ) — to jeden z najbardziej rozpoznawalnych znaków protestu i subkultur na świecie. Ma zaskakująco precyzyjny, udokumentowany rodowód w Paryżu lat 60. XX wieku, ludową etymologię swojego znaczenia, którą kwestionuje jeden z jego własnych twórców, oraz drugie życie w muzyce punkowej, które uczyniło go wszechobecnym na całym świecie. Unicode nie ma dedykowanego znaku anarchii: symbol zapisuje się jako Ⓐ (U+24B6, CIRCLED LATIN CAPITAL LETTER A), ogólny glif z bloku „Enclosed Alphanumerics”, który ruchy anarchistyczne przyjęły dla tego konkretnego znaczenia.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/anarchy-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-anarchii/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/anarchy-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "glify-anarchii",
+      "label": "Anarchia",
+      "h2": "Symbol Anarchii (Okrągłe A)",
+      "intro": "Samo okrągłe A, gotowe do wklejenia gdziekolwiek. Unicode nie ma dedykowanego znaku anarchii — to glify okrągłego A, które go zastępują.",
+      "symbols": [
+        { "char": "Ⓐ", "label": "Wielkie A w Okręgu (U+24B6)" },
+        { "char": "🅐", "label": "Odwrócone Kolorystycznie Okrągłe A (Wariant Wypełniony)" }
+      ]
+    },
+    {
+      "id": "symbole-punkowe-i-subkulturowe",
+      "label": "Punk i Subkultury",
+      "h2": "Symbole Punkowe i Subkulturowe",
+      "intro": "Znaki alternatywnej estetyki, w towarzystwie których okrągłe A pojawia się najczęściej — ikonografia punkowa i DIY, która poniosła je po całym świecie.",
+      "symbols": [
+        { "char": "☠", "label": "Czaszka ze Skrzyżowanymi Piszczelami" },
+        { "char": "💀", "label": "Czaszka" },
+        { "char": "⚡", "label": "Wysokie Napięcie" },
+        { "char": "🤘", "label": "Znak Rogów" },
+        { "char": "★", "label": "Czarna Gwiazda" },
+        { "char": "🎸", "label": "Gitara" }
+      ]
+    },
+    {
+      "id": "symbole-protestu-i-polityczne",
+      "label": "Protest i Polityka",
+      "h2": "Symbole Protestu i Polityczne",
+      "intro": "Inne znaki ruchów i protestu, z którymi symbol anarchii jest zwykle grupowany — w tym czarna flaga od dawna kojarzona z anarchizmem.",
+      "symbols": [
+        { "char": "☮", "label": "Symbol Pokoju" },
+        { "char": "✊", "label": "Uniesiona Pięść" },
+        { "char": "🏴", "label": "Czarna Flaga (Powiewająca)" },
+        { "char": "⚑", "label": "Czarna Flaga" },
+        { "char": "✌️", "label": "Znak Zwycięstwa" },
+        { "char": "🕊️", "label": "Gołąb Pokoju" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/goth-grunge-symbols/",
+      "title": "Goth & Grunge Symbols",
+      "desc": "Znaki punkowe, gotyckie i alternatywnej estetyki, do których świetnie pasuje okrągłe A."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol",
+      "desc": "Kolejny symbol protestu z realną, precyzyjnie udokumentowaną historią jednego projektanta."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Pride & LGBTQ Symbols",
+      "desc": "Więcej symboli ruchów i tożsamości przyjętych przez subkultury dla protestu i przynależności."
+    }
+  ]
+}

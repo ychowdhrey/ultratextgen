@@ -1,0 +1,133 @@
+{
+  "slug": "fire-emoji",
+  "title": "Fire Emoji & Kaomoji: Copy & Paste 🔥💯 Hype Combos",
+  "meta_description": "Fire emoji 🔥 meaning 'this is fire,' plus 💯 🚀 approval pairings, heat symbols, and lit combo sets for captions and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/fire-emoji/",
+  "breadcrumb": "Fire Emoji & Kaomoji",
+  "hero_h1": "Fire Emoji & Kaomoji",
+  "hero_tagline": "The 🔥 that means 'this is fire' — hype pairings, heat-and-danger symbols, flame kaomoji, and ready-made lit combos. Click any symbol to copy it instantly.",
+  "intro": "The fire emoji 🔥 long ago outgrew literal flames — today it mostly means 'this is fire,' shorthand for something great, hot, or absolutely lit. This page gathers the core 🔥 itself, the hype-and-approval emoji that pair with it (💯 🚀 ⚡ 🙌 👑), the heat-and-danger symbols like 🌋 and 🥵 that push a message past its limit, and a handful of flame-flavored kaomoji for plain-text chats. Below the sections you'll find one-click combo sets — 'This Is Fire,' 'Absolutely Lit,' and more — built for captions, comments, and hype replies. Copy any single character or grab a whole set at once.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-fire",
+      "label": "The Fire Emoji",
+      "h2": "The Fire Emoji",
+      "intro": "The one glyph that carries the whole \"this is fire\" meaning.",
+      "symbols": [
+        { "char": "🔥", "label": "Fire" }
+      ]
+    },
+    {
+      "id": "hype-approval",
+      "label": "Hype & Approval",
+      "h2": "Hype & Approval Pairings",
+      "intro": "The emoji that turn 🔥 into full-on praise — a hundred, a rocket, pure energy.",
+      "symbols": [
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "👑", "label": "Crown" }
+      ]
+    },
+    {
+      "id": "heat-danger",
+      "label": "Heat & Danger",
+      "h2": "Heat & Danger Symbols",
+      "intro": "Literal-heat symbols that crank a hot take up to a warning.",
+      "symbols": [
+        { "char": "🌋", "label": "Volcano" },
+        { "char": "♨️", "label": "Hot Springs" },
+        { "char": "🥵", "label": "Hot Face" },
+        { "char": "🧯", "label": "Fire Extinguisher" }
+      ]
+    },
+    {
+      "id": "fire-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Fire & Flame Kaomoji",
+      "intro": "Fire is hard to draw in text, so these are the closest fired-up, sparkling text faces.",
+      "symbols": [
+        { "char": "(๑ᵔ⌣ᵔ๑)", "label": "Feeling Hot Kaomoji" },
+        { "char": "ᕙ(⇀‸↼‶)ᕗ", "label": "Flexing Fire Kaomoji" },
+        { "char": "(҂ `з´ )ﾉ⌒☆", "label": "Throwing Sparks Kaomoji" },
+        { "char": "✧⁠٩⁠(⁠ˊ⁠ᗜ⁠ˋ⁠*⁠)⁠و⁠✧", "label": "Lit and Sparkling Kaomoji" },
+        { "char": "ᕦ(ò_óˇ)ᕤ", "label": "Fired Up Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Fire Emoji Combo Sets",
+    "intro": "Copy a complete hype combo in one click — praise, heat, or pure flame."
+  },
+  "collection_container_id": "fireSetsContainer",
+  "collections": [
+    {
+      "name": "This Is Fire",
+      "flags": ["🔥", "💯"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Absolutely Lit",
+      "flags": ["🔥", "🎉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hot Take",
+      "flags": ["🔥", "🥵"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Rocket to the Top",
+      "flags": ["🔥", "🚀", "⚡"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Fire Emoji Only",
+      "flags": ["🔥", "🔥", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Turn Up The Heat",
+      "flags": ["🔥", "♨️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "King Energy",
+      "flags": ["🔥", "👑"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Danger Hot",
+      "flags": ["🔥", "🌋", "🥵"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Ready-made emoji strings for every mood and moment."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Meme-ready combos built to get a laugh in the replies."
+    },
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, poppers, and hype symbols for wins and big news."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "cross-symbol",
+  "page_type": "symbol",
+  "title": "Cross Symbol: Copy & Paste ✝ Latin Cross (Christian Cross)",
+  "meta_description": "Copy and paste the Latin cross (✝, U+271D), the main symbol of Christianity — plus Orthodox, Maltese, and other crosses, and how it differs from the dagger † and the ✗ X mark. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/cross-symbol/",
+  "breadcrumb": "Cross Symbol",
+  "hero_h1": "Cross Symbol",
+  "hero_tagline": "The Latin cross (✝) — the central symbol of Christianity — along with the Orthodox, shadowed, and Maltese crosses it is grouped with, and the dagger † and X marks it is often mistaken for. Click any symbol to copy it instantly.",
+  "intro": "The cross symbol (✝, Unicode U+271D LATIN CROSS) is the best-known symbol of Christianity: an upright cross with a longer lower arm, the shape traditionally tied to the crucifixion. Unicode places it in the Dingbats block alongside a family of related crosses, and with an emoji variation selector it renders as the ✝️ cross emoji. It is a different character from the multiplication and cancellation X marks (✕ ✗) and from the typographic dagger (†), even though the four are frequently swapped for one another.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "latin-cross",
+      "label": "Latin Cross",
+      "h2": "Latin Cross Symbol",
+      "intro": "The plain-text Latin cross and its color emoji version.",
+      "symbols": [
+        { "char": "✝", "label": "Latin Cross (U+271D)" },
+        { "char": "✝️", "label": "Latin Cross Emoji" }
+      ]
+    },
+    {
+      "id": "christian-crosses",
+      "label": "Christian Crosses",
+      "h2": "Other Christian & Liturgical Crosses",
+      "intro": "Cross variants used across Christian traditions, each a distinct Unicode character.",
+      "symbols": [
+        { "char": "☦", "label": "Orthodox Cross (U+2626)" },
+        { "char": "✞", "label": "Shadowed White Latin Cross (U+271E)" },
+        { "char": "✟", "label": "Outlined Latin Cross (U+271F)" },
+        { "char": "✠", "label": "Maltese Cross (U+2720)" },
+        { "char": "♰", "label": "West Syriac Cross (U+2670)" },
+        { "char": "♱", "label": "East Syriac Cross (U+2671)" }
+      ]
+    },
+    {
+      "id": "not-the-cross",
+      "label": "Not the Latin Cross",
+      "h2": "Marks the Cross Is Confused With",
+      "intro": "These look cross-like but carry unrelated meanings — none is the Christian cross.",
+      "symbols": [
+        { "char": "†", "label": "Dagger (U+2020) — Footnotes & the Deceased" },
+        { "char": "‡", "label": "Double Dagger (U+2021)" },
+        { "char": "✕", "label": "Multiplication X (U+2715)" },
+        { "char": "✗", "label": "Ballot X (U+2717) — Rejection" },
+        { "char": "⛨", "label": "Black Cross on Shield (U+26E8)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol (☮)",
+      "desc": "Gerald Holtom's 1958 design, and related goodwill symbols."
+    },
+    {
+      "href": "/symbol/khanda-symbol/",
+      "title": "Khanda Symbol (☬)",
+      "desc": "The Sikh emblem, pulled from the same religious library."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith symbols from every major world religion in one reference."
+    },
+    {
+      "href": "/library/cross-x-symbols/",
+      "title": "Cross & X Symbols",
+      "desc": "The ✕ and ✗ cancellation marks the Latin cross is confused with."
+    }
+  ]
+}

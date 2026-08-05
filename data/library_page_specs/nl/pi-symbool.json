@@ -1,0 +1,117 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "pi-symbool",
+  "title": "Pi-symbool: Kopieer en Plak π Π ∏ — Bedacht in 1706, Universeel Gemaakt door Euler",
+  "meta_description": "Kopieer en plak het pi-symbool — kleine letter π (de wiskundige constante), hoofdletter Π (de productoperator) en het eigen ∏-productteken — en ontdek hoe William Jones het in 1706 bedacht voordat Euler het de wereldstandaard maakte. Klik om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/pi-symbool/",
+  "breadcrumb": "Pi-symbool",
+  "hero_h1": "Pi-symbool",
+  "hero_tagline": "De kleine letter π die iedereen bedoelt met 'het pi-symbool', de hoofdletter Π die 'product' betekent in de wiskunde, en de eigen ∏-productoperator — de notatie die William Jones in 1706 introduceerde en die Leonhard Euler tot wereldstandaard maakte. Klik op een teken om het direct te kopiëren.",
+  "intro": "Pi's kleine letter, π (U+03C0, GREEK SMALL LETTER PI), is een van de meest herkenbare tekens in de hele wiskunde — de verhouding tussen de omtrek en de diameter van elke cirkel, ruwweg 3,14159 en zonder einde of herhaling. Wat de meeste mensen niet beseffen, is dat het teken veel jonger is dan het getal: de Welshe wiskundige William Jones gebruikte π voor het eerst op deze manier in zijn boek 'Synopsis Palmariorum Matheseos' uit 1706, waarbij hij de Griekse letter leende waarmee 'periferie' begint. Drie decennia lang gebeurde er niets mee — totdat Leonhard Euler, de invloedrijkste wiskundige van zijn tijd, het rond 1737 overnam en het via zijn 'Introductio in analysin infinitorum' uit 1748 tot wereldstandaard maakte. De hoofdlettervorm, Π (U+03A0), doet compleet ander werk: in de wiskunde is het de productoperator, de vermenigvuldigende tweelingbroer van de sommatie Σ, en heeft het een eigen, apart teken, ∏ (U+220F, N-ARY PRODUCT). Pi is zowel irrationaal (bewezen door Lambert in 1761) als transcendent (Lindemann, 1882) — en het krijgt zelfs elk jaar op 14 maart zijn eigen feestdag.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/pi-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/pi-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/pi-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "het-pi-symbool",
+      "label": "Het Pi-symbool",
+      "h2": "Het Pi-symbool — π & Π",
+      "intro": "De Griekse letter zelf. De kleine letter π is de beroemde wiskundige constante; de hoofdletter Π is een compleet ander gereedschap.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Griekse Kleine Letter Pi (U+03C0) — De Wiskundige Constante ≈ 3,14159"
+        },
+        {
+          "char": "Π",
+          "label": "Griekse Hoofdletter Pi (U+03A0) — De Productoperator"
+        }
+      ]
+    },
+    {
+      "id": "pi-in-wiskunde",
+      "label": "Wiskunde & Operatoren",
+      "h2": "Pi in de Wiskunde: Product vs. Sommatie",
+      "intro": "Hoofdletter Π is de productoperator, en — net als bij sigma — heeft het een eigen wiskundig teken, ∏ (N-ARY PRODUCT), dat een apart Unicode-teken is ten opzichte van de letter. Het is het vermenigvuldigende spiegelbeeld van de sommatie ∑, letter voor letter.",
+      "symbols": [
+        {
+          "char": "∏",
+          "label": "N-voudig Product (U+220F) — De Eigen Productoperator"
+        },
+        {
+          "char": "Π",
+          "label": "Hoofdletter Pi (U+03A0) — De Letter die Vaak voor Producten wordt Getypt"
+        },
+        {
+          "char": "∑",
+          "label": "N-voudige Sommatie (U+2211) — De Optellende Tweelingbroer van het Product"
+        },
+        {
+          "char": "Σ",
+          "label": "Hoofdletter Sigma (U+03A3) — De Letter achter de Sommatie"
+        }
+      ]
+    },
+    {
+      "id": "verwante-griekse-letters",
+      "label": "Griekse Letters",
+      "h2": "Verwante Griekse Letters",
+      "intro": "Pi is de zestiende letter van het Griekse alfabet. Dit zijn de buren waar mensen het meest naar zoeken.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Griekse Hoofdletter Omega"
+        },
+        {
+          "char": "Δ",
+          "label": "Griekse Hoofdletter Delta"
+        },
+        {
+          "char": "α",
+          "label": "Griekse Kleine Letter Alfa"
+        },
+        {
+          "char": "θ",
+          "label": "Griekse Kleine Letter Theta"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/griekse-letters/",
+      "title": "Griekse Letters",
+      "desc": "Het volledige Griekse alfabet in hoofdletters, kleine letters en wiskundige variantvormen om te kopiëren en te plakken."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "Product, sommatie en de operatoren en Griekse letters die een vergelijking compleet maken."
+    },
+    {
+      "href": "/nl/symbol/sigma-symbool/",
+      "title": "Sigma-symbool",
+      "desc": "Pi's operator-tweelingbroer: net zoals Π samengaat met het ∏-productteken, gaat Σ samen met het ∑-sommatieteken."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "symbol-niepelnosprawnosci",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Niepełnosprawności: Skopiuj ♿ — Międzynarodowy Symbol Dostępności",
+  "meta_description": "Skopiuj symbol niepełnosprawności (♿), czyli Międzynarodowy Symbol Dostępności, oraz poznaj udokumentowany spór o klasyczny wzór kontra „dynamiczną” ikonę Accessible Icon. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-niepelnosprawnosci/",
+  "breadcrumb": "Symbol Niepełnosprawności",
+  "hero_h1": "Symbol Niepełnosprawności",
+  "hero_tagline": "Niebiesko-biały Międzynarodowy Symbol Dostępności (♿), zaprojektowany w 1968 roku — i wciąż nierozstrzygnięty spór o jego „dynamiczny” redesign, Accessible Icon. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol niepełnosprawności (♿, U+267F) to oficjalnie Międzynarodowy Symbol Dostępności (International Symbol of Access, ISA) — znak oznaczający dostępne miejsca parkingowe, wejścia, toalety i miejsca siedzące na całym świecie. Zaprojektowano go w 1968 roku, a ONZ przyjęła go w 1974 roku. Od 2010 roku przeredagowana, „dynamiczna” wersja — przedstawiająca postać pochyloną do przodu, w aktywnym ruchu — została przyjęta przez kilka stanów USA i inne jurysdykcje, jednocześnie oficjalnie odrzucona na poziomie federalnym w USA i przez ISO — co czyni ją jednym z niewielu powszechnie rozpoznawanych symboli, którego standardowy wzór wciąż jest aktywnie dyskutowany.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/wheelchair-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-niepelnosprawnosci/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/wheelchair-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-niepelnosprawnosci",
+      "label": "Wózek Inwalidzki",
+      "h2": "Symbol Niepełnosprawności (Międzynarodowy Symbol Dostępności)",
+      "intro": "Unicode'owy znak wózka inwalidzkiego (U+267F) — glif, który na większości systemów wyświetla klasyczny Międzynarodowy Symbol Dostępności. Gotowy do wklejenia w dokumentach, notatkach o oznakowaniu czy bio.",
+      "symbols": [
+        { "char": "♿", "label": "Symbol Niepełnosprawności" },
+        { "char": "♿️", "label": "Symbol Niepełnosprawności (Emoji)" }
+      ]
+    },
+    {
+      "id": "dostepnosc-i-mobilnosc",
+      "label": "Dostępność i Mobilność",
+      "h2": "Symbole Dostępności i Mobilności",
+      "intro": "Powiązane znaki Unicode dla sprzętu wspomagającego mobilność i innych potrzeb związanych z dostępnością — każdy to osobny, odrębny znak, a nie odmiana symbolu wózka inwalidzkiego.",
+      "symbols": [
+        { "char": "🦽", "label": "Wózek Inwalidzki Ręczny" },
+        { "char": "🦼", "label": "Wózek Inwalidzki Elektryczny" },
+        { "char": "🦯", "label": "Biała Laska" },
+        { "char": "🧏", "label": "Osoba Niesłysząca" }
+      ]
+    },
+    {
+      "id": "symbole-zdrowia-i-medyczne",
+      "label": "Zdrowie i Medycyna",
+      "h2": "Powiązane Symbole Zdrowia i Medycyny",
+      "intro": "Symbole zdrowia, opieki i placówek medycznych, obok których znak dostępności zwykle pojawia się na mapach i oznakowaniu budynków.",
+      "symbols": [
+        { "char": "⚕", "label": "Symbol Medyczny (Laska Eskulapa)" },
+        { "char": "➕", "label": "Znak Plus" },
+        { "char": "🏥", "label": "Szpital" },
+        { "char": "🚑", "label": "Karetka" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/medical-symbols/",
+      "title": "Medical Symbols",
+      "desc": "Laska Eskulapa, krzyże medyczne, znaki aptek i symbole zdrowia oraz ratownictwa w jednym miejscu."
+    },
+    {
+      "href": "/symbol/autism-symbol/",
+      "title": "Autism Symbol",
+      "desc": "Kolejny symbol związany z dostępnością, wokół którego toczy się realna, wciąż nierozstrzygnięta dyskusja społeczności."
+    },
+    {
+      "href": "/library/traffic-road-sign-symbols/",
+      "title": "Traffic & Road Sign Symbols",
+      "desc": "Znaki parkingowe, ostrzegawcze i kierunkowe — kontekst oznakowania, w którym pojawia się symbol dostępności."
+    }
+  ]
+}

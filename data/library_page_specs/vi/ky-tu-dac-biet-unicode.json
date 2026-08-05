@@ -1,0 +1,529 @@
+{
+  "slug": "ky-tu-dac-biet-unicode",
+  "lang": "vi",
+  "title": "Ký Tự Đặc Biệt Unicode: Copy Paste Biểu Tượng Độc Đáo",
+  "meta_description": "Xem và sao chép các ký tự đặc biệt độc đáo — vô cực, hòa bình, khoa học, dấu pháp lý, ký tự trang trí và những ký hiệu Unicode hiếm. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "breadcrumb": "Ký Tự Đặc Biệt Unicode",
+  "hero_h1": "Ký Tự Đặc Biệt Unicode",
+  "hero_tagline": "Bộ sưu tập tham khảo các ký hiệu Unicode độc đáo — vô cực, hòa bình, khoa học, dấu pháp lý, ký tự trang trí và những ký hiệu hiếm. Nhấn vào ký hiệu bất kỳ để sao chép ngay.",
+  "intro": "Xem và sao chép các ký tự đặc biệt được sắp xếp theo ý nghĩa — từ ký hiệu vô cực và vĩnh cửu đến dấu hòa bình, ký hiệu khoa học, dấu pháp lý, ký tự trang trí và những ký hiệu Unicode hiếm gặp.\n\n“Ký tự đặc biệt” là mọi ký hiệu không phải chữ cái hay chữ số thông thường — như ∞, ©, ™, †, ★ và °. Chúng nằm trong chuẩn Unicode giống như văn bản bình thường, nên bạn có thể sao chép và dán ở bất cứ đâu chấp nhận văn bản.",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-unicode/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "library_url": "https://ultratextgen.com/vi/library/",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/library/special-characters/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/library/symbole-zum-kopieren/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/library/special-characters/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/library/special-characters/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/library/special-characters/"
+    },
+    {
+      "lang": "cs",
+      "href": "https://ultratextgen.com/cs/specialni-znaky/"
+    },
+    {
+      "lang": "hr",
+      "href": "https://ultratextgen.com/hr/posebni-znakovi/"
+    },
+    {
+      "lang": "hu",
+      "href": "https://ultratextgen.com/hu/kulonleges-karakterek/"
+    },
+    {
+      "lang": "ro",
+      "href": "https://ultratextgen.com/ro/caractere-speciale/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/library/semboller/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/library/caracteres-especiales/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/library/caracteres-speciaux/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/library/karakter-spesial/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/library/speciale-tekens/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/library/znaki-specjalne/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/library/caracteres-especiais/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/library/ky-tu-dac-biet-unicode/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/library/special-characters/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "infinity",
+      "label": "Vô cực & vĩnh cửu",
+      "h2": "Ký Hiệu Vô Cực và Vĩnh Cửu",
+      "intro": "Những ký hiệu biểu thị sự bất tận, vòng lặp và các khái niệm vĩnh cửu.",
+      "symbols": [
+        {
+          "char": "∞",
+          "label": "Vô cực"
+        },
+        {
+          "char": "♾️",
+          "label": "Emoji vô cực"
+        },
+        {
+          "char": "⧜",
+          "label": "Vô cực chưa khép"
+        },
+        {
+          "char": "⧝",
+          "label": "Vô cực có nét nối"
+        },
+        {
+          "char": "⧞",
+          "label": "Vô cực gạch dọc"
+        },
+        {
+          "char": "🔁",
+          "label": "Nút lặp lại"
+        },
+        {
+          "char": "🔂",
+          "label": "Lặp lại một lần"
+        },
+        {
+          "char": "⟳",
+          "label": "Mũi tên tròn theo chiều kim đồng hồ"
+        }
+      ]
+    },
+    {
+      "id": "peace-harmony",
+      "label": "Hòa bình & hòa hợp",
+      "h2": "Ký Hiệu Hòa Bình và Hòa Hợp",
+      "intro": "Ký hiệu về hòa bình, đoàn kết và sự hòa hợp toàn cầu từ nhiều nền văn hóa.",
+      "symbols": [
+        {
+          "char": "☮",
+          "label": "Ký hiệu hòa bình"
+        },
+        {
+          "char": "☯",
+          "label": "Âm dương"
+        },
+        {
+          "char": "✌",
+          "label": "Bàn tay chữ V"
+        },
+        {
+          "char": "🕊",
+          "label": "Chim bồ câu"
+        },
+        {
+          "char": "🤍",
+          "label": "Trái tim trắng"
+        },
+        {
+          "char": "🫶",
+          "label": "Bàn tay hình trái tim"
+        },
+        {
+          "char": "🌍",
+          "label": "Trái Đất (châu Phi – châu Âu)"
+        },
+        {
+          "char": "⚖",
+          "label": "Cán cân công lý"
+        },
+        {
+          "char": "🕉",
+          "label": "Om"
+        }
+      ]
+    },
+    {
+      "id": "science-knowledge",
+      "label": "Khoa học & tri thức",
+      "h2": "Ký Hiệu Khoa Học và Tri Thức",
+      "intro": "Ký hiệu khoa học, y tế và tri thức dùng cho nội dung giáo dục.",
+      "symbols": [
+        {
+          "char": "⚛",
+          "label": "Ký hiệu nguyên tử"
+        },
+        {
+          "char": "⚕",
+          "label": "Ký hiệu y tế"
+        },
+        {
+          "char": "♻",
+          "label": "Ký hiệu tái chế"
+        },
+        {
+          "char": "🔬",
+          "label": "Kính hiển vi"
+        },
+        {
+          "char": "🔭",
+          "label": "Kính thiên văn"
+        },
+        {
+          "char": "🧪",
+          "label": "Ống nghiệm"
+        },
+        {
+          "char": "⚗",
+          "label": "Bình chưng cất"
+        },
+        {
+          "char": "🧬",
+          "label": "ADN"
+        },
+        {
+          "char": "🧫",
+          "label": "Đĩa petri"
+        },
+        {
+          "char": "💡",
+          "label": "Bóng đèn"
+        },
+        {
+          "char": "⚙",
+          "label": "Bánh răng"
+        }
+      ]
+    },
+    {
+      "id": "legal-office",
+      "label": "Pháp lý & văn phòng",
+      "h2": "Ký Hiệu Pháp Lý và Văn Phòng",
+      "intro": "Dấu bản quyền, nhãn hiệu và các dấu ấn loát dùng trong văn bản chuyên nghiệp.",
+      "symbols": [
+        {
+          "char": "©",
+          "label": "Bản quyền"
+        },
+        {
+          "char": "®",
+          "label": "Nhãn hiệu đã đăng ký"
+        },
+        {
+          "char": "™",
+          "label": "Nhãn hiệu thương mại"
+        },
+        {
+          "char": "§",
+          "label": "Dấu điều khoản"
+        },
+        {
+          "char": "¶",
+          "label": "Dấu đoạn văn"
+        },
+        {
+          "char": "†",
+          "label": "Dấu thập (dagger)"
+        },
+        {
+          "char": "‡",
+          "label": "Dấu thập kép"
+        },
+        {
+          "char": "№",
+          "label": "Dấu số"
+        },
+        {
+          "char": "℗",
+          "label": "Bản quyền bản ghi âm"
+        },
+        {
+          "char": "℠",
+          "label": "Nhãn hiệu dịch vụ"
+        }
+      ]
+    },
+    {
+      "id": "punctuation-marks",
+      "label": "Dấu câu & ấn loát",
+      "h2": "Dấu Câu và Dấu Ấn Loát",
+      "intro": "Dấu a còng, dấu và, cùng những dấu ấn loát thường dùng — kèm biến thể toàn rộng, dạng nhỏ và dạng lịch sử.",
+      "symbols": [
+        {
+          "char": "@",
+          "label": "Dấu a còng"
+        },
+        {
+          "char": "＠",
+          "label": "Dấu a còng toàn rộng"
+        },
+        {
+          "char": "﹫",
+          "label": "Dấu a còng nhỏ"
+        },
+        {
+          "char": "&",
+          "label": "Dấu và"
+        },
+        {
+          "char": "＆",
+          "label": "Dấu và toàn rộng"
+        },
+        {
+          "char": "⅋",
+          "label": "Dấu và lộn ngược"
+        },
+        {
+          "char": "⁊",
+          "label": "Dấu et Tironian (và)"
+        },
+        {
+          "char": "※",
+          "label": "Dấu tham chiếu"
+        },
+        {
+          "char": "‰",
+          "label": "Phần nghìn"
+        },
+        {
+          "char": "‱",
+          "label": "Phần vạn"
+        },
+        {
+          "char": "＊",
+          "label": "Dấu sao toàn rộng"
+        },
+        {
+          "char": "＃",
+          "label": "Dấu thăng toàn rộng"
+        },
+        {
+          "char": "#",
+          "label": "Dấu thăng (hashtag)"
+        },
+        {
+          "char": "﹟",
+          "label": "Dấu thăng nhỏ"
+        },
+        {
+          "char": "#️⃣",
+          "label": "Dấu thăng trên phím"
+        },
+        {
+          "char": "♯",
+          "label": "Dấu thăng âm nhạc"
+        }
+      ]
+    },
+    {
+      "id": "aesthetic-standalone",
+      "label": "Ký tự aesthetic rời",
+      "h2": "Ký Tự Aesthetic Rời",
+      "intro": "Các ký tự Unicode trang trí, được ưa dùng trong bio, tên người dùng và chữ nghệ thuật.",
+      "symbols": [
+        {
+          "char": "✿",
+          "label": "Hoa đặc"
+        },
+        {
+          "char": "❦",
+          "label": "Trái tim hoa"
+        },
+        {
+          "char": "❧",
+          "label": "Trái tim hoa xoay"
+        },
+        {
+          "char": "♡",
+          "label": "Trái tim rỗng"
+        },
+        {
+          "char": "☾",
+          "label": "Trăng khuyết cuối tháng"
+        },
+        {
+          "char": "☽",
+          "label": "Trăng khuyết đầu tháng"
+        },
+        {
+          "char": "⊹",
+          "label": "Dấu lấp lánh"
+        },
+        {
+          "char": "₊",
+          "label": "Dấu cộng chỉ số dưới"
+        },
+        {
+          "char": "༄",
+          "label": "Hoa văn Tây Tạng"
+        },
+        {
+          "char": "⋆",
+          "label": "Ngôi sao nhỏ"
+        },
+        {
+          "char": "✧",
+          "label": "Sao bốn cánh rỗng"
+        },
+        {
+          "char": "❂",
+          "label": "Sao tám cánh trong vòng tròn"
+        },
+        {
+          "char": "˚",
+          "label": "Vòng tròn nhỏ phía trên"
+        },
+        {
+          "char": "Ɛ",
+          "label": "Số 3 ngược (E mở)"
+        },
+        {
+          "char": "Є",
+          "label": "Số 3 ngược (Ie Kirin)"
+        },
+        {
+          "char": "Я",
+          "label": "Chữ R ngược (Ya)"
+        },
+        {
+          "char": "ↄ",
+          "label": "Chữ C ngược"
+        },
+        {
+          "char": "и",
+          "label": "Chữ N ngược (I Kirin)"
+        },
+        {
+          "char": "ƨ",
+          "label": "Chữ S ngược"
+        }
+      ]
+    },
+    {
+      "id": "rare-unicode",
+      "label": "Ký hiệu Unicode hiếm",
+      "h2": "Ký Hiệu Unicode Hiếm Gặp",
+      "intro": "Những ký tự Unicode ít gặp, lấy từ các khối kỹ thuật và biểu tượng.",
+      "symbols": [
+        {
+          "char": "℞",
+          "label": "Dấu đơn thuốc"
+        },
+        {
+          "char": "⚜",
+          "label": "Hoa bách hợp"
+        },
+        {
+          "char": "⎈",
+          "label": "Ký hiệu bánh lái"
+        },
+        {
+          "char": "⌘",
+          "label": "Phím Command"
+        },
+        {
+          "char": "⏏",
+          "label": "Nút đẩy ra"
+        },
+        {
+          "char": "⌥",
+          "label": "Phím Option"
+        },
+        {
+          "char": "⇧",
+          "label": "Phím Shift"
+        },
+        {
+          "char": "⏎",
+          "label": "Phím Enter"
+        },
+        {
+          "char": "⌫",
+          "label": "Phím xóa lùi"
+        },
+        {
+          "char": "⏻",
+          "label": "Nút nguồn"
+        },
+        {
+          "char": "☙",
+          "label": "Trái tim hoa lộn ngược"
+        },
+        {
+          "char": "☤",
+          "label": "Cây gậy Hermes (caduceus)"
+        },
+        {
+          "char": "⚚",
+          "label": "Trượng Hermes"
+        }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để chuyển văn bản thường thành chữ đậm, nghiêng, viết tay và hơn 100 kiểu phông Unicode khác — miễn phí và tức thì.",
+  "related": [
+    {
+      "href": "/vi/library/math-symbols/",
+      "title": "Ký Hiệu Toán Học",
+      "desc": "Cộng trừ, nhân, chia, căn bậc hai và vô cực."
+    },
+    {
+      "href": "/vi/library/ky-hieu-tien-te/",
+      "title": "Ký Hiệu Tiền Tệ",
+      "desc": "Ký hiệu tiền tệ thế giới và tiền mã hóa."
+    },
+    {
+      "href": "/vi/symbol/copyright-symbol/",
+      "title": "Ký Hiệu Bản Quyền (©)",
+      "desc": "Nguồn gốc ký hiệu ©, mã Alt và cách gõ."
+    },
+    {
+      "href": "/vi/symbol/peace-sign/",
+      "title": "Ký Hiệu Hòa Bình (☮)",
+      "desc": "Lịch sử và cách dùng ký hiệu hòa bình."
+    },
+    {
+      "href": "/vi/ki-tu-dac-biet/",
+      "title": "Ký Tự Aesthetic",
+      "desc": "Ký tự Unicode aesthetic cho bio và bài đăng."
+    }
+  ]
+}

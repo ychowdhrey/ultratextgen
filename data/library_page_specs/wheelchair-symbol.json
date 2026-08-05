@@ -1,0 +1,67 @@
+{
+  "slug": "wheelchair-symbol",
+  "page_type": "symbol",
+  "title": "Wheelchair Symbol: Copy & Paste ♿ — The International Symbol of Access",
+  "meta_description": "Copy and paste the wheelchair symbol (♿), the International Symbol of Access, and the documented debate over the classic vs. the 'dynamic' Accessible Icon redesign. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/wheelchair-symbol/",
+  "breadcrumb": "Wheelchair Symbol",
+  "hero_h1": "Wheelchair Symbol",
+  "hero_tagline": "The blue-and-white International Symbol of Access (♿), designed in 1968 — and the still-unresolved debate over the 'dynamic' Accessible Icon redesign. Click any symbol to copy it instantly.",
+  "intro": "The wheelchair symbol (♿, U+267F) is officially the International Symbol of Access (ISA) — the sign that marks accessible parking, entrances, restrooms, and seating around the world. It was designed in 1968 and adopted by the United Nations in 1974. Since 2010, a redesigned 'dynamic' version showing a figure leaning forward in active motion has been adopted by several U.S. states and other jurisdictions while being formally declined at the U.S. federal level and by ISO — which makes it one of the few globally recognized symbols whose standard design is still actively debated today.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "wheelchair-symbol",
+      "label": "Wheelchair",
+      "h2": "Wheelchair Symbol (International Symbol of Access)",
+      "intro": "The Unicode wheelchair character (U+267F) — the glyph that renders the classic International Symbol of Access on most systems. Ready to paste into documents, signage notes, or bios.",
+      "symbols": [
+        { "char": "♿", "label": "Wheelchair Symbol" },
+        { "char": "♿️", "label": "Wheelchair Symbol (Emoji)" }
+      ]
+    },
+    {
+      "id": "accessibility-mobility-symbols",
+      "label": "Accessibility & Mobility",
+      "h2": "Accessibility & Mobility Symbols",
+      "intro": "Related Unicode symbols for mobility aids and other access needs — each a distinct character in its own right, not a variation of the wheelchair sign.",
+      "symbols": [
+        { "char": "🦽", "label": "Manual Wheelchair" },
+        { "char": "🦼", "label": "Motorized Wheelchair" },
+        { "char": "🦯", "label": "White Cane" },
+        { "char": "🧏", "label": "Deaf Person" }
+      ]
+    },
+    {
+      "id": "health-medical-symbols",
+      "label": "Health & Medical",
+      "h2": "Related Health & Medical Symbols",
+      "intro": "Health, care, and facility symbols the access sign commonly appears alongside on maps, wayfinding, and building signage.",
+      "symbols": [
+        { "char": "⚕", "label": "Medical Symbol (Staff of Aesculapius)" },
+        { "char": "➕", "label": "Plus Sign" },
+        { "char": "🏥", "label": "Hospital" },
+        { "char": "🚑", "label": "Ambulance" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/medical-symbols/",
+      "title": "Medical Symbols",
+      "desc": "Staff of Aesculapius, medical crosses, pharmacy signs, and health & emergency symbols in one reference."
+    },
+    {
+      "href": "/symbol/autism-symbol/",
+      "title": "Autism Symbol",
+      "desc": "Another accessibility-related symbol with a real, documented, and still-unresolved community design debate."
+    },
+    {
+      "href": "/library/traffic-road-sign-symbols/",
+      "title": "Traffic & Road Sign Symbols",
+      "desc": "Parking, warning, and directional road-sign symbols — the signage context the access sign appears in."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "symbol-om",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Om: Skopiuj ॐ 🕉️ — Jeden Święty Dźwięk, Trzy Znaczenia",
+  "meta_description": "Skopiuj Om / Aum (ॐ U+0950, 🕉️ U+1F549) — świętą sylabę odczytywaną jako pierwotny dźwięk kosmosu w hinduizmie, początek mantry Om mani padme hum w buddyzmie i skróconą formę pięciu najwyższych istot w dżinizmie. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-om/",
+  "breadcrumb": "Symbol Om",
+  "hero_h1": "Symbol Om",
+  "hero_tagline": "Om, zapisywane też jako Aum (ॐ, 🕉️) — święty dźwięk wspólny dla hinduizmu, buddyzmu i dżinizmu, gdzie ten sam dźwięk jest odczytywany inaczej w każdej z tych tradycji. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Om, zapisywane też jako Aum, to święty dźwięk i symbol centralny dla kilku religii Indii. Unicode koduje go na dwa sposoby. Pierwszy to ॐ (U+0950 DEVANAGARI OM), kursywna ligatura w piśmie dewanagari, łącząca litery a (अ) i u (उ) z nosowym chandrabindu; dodano ją już w Unicode 1.1 w 1993 roku. Drugi to 🕉️ (U+1F549 OM SYMBOL), samodzielny glif piktograficzny, zdefiniowany jako „niezależny od czcionki dewanagari” i dodany dużo później, w Unicode 7.0 (2014 rok), a następnie przyjęty jako emoji w 2015 roku — ten sam glif, który jako powiązany znak pokazuje już strona symbolu khanda. Sylabę śpiewa się na początku lub na końcu modlitw, mantr i praktyki jogi, ale jej znaczenie nie jest jednolite we wszystkich wyznaniach: tradycja hinduistyczna często opisuje ją jako pierwotny dźwięk wszechświata i wyraz ostatecznej rzeczywistości; w buddyzmie otwiera mantry takie jak Om mani padme hum, związane z bodhisattwą współczucia; a w dżinizmie rozumiana jest jako skrócona forma Panch Parmeshthi, pięciu najwyższych istot. Ta strona relacjonuje to udokumentowane użycie, nie stawiając żadnej tradycji ponad inne.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/om-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-om/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/om-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "glify-om",
+      "label": "Om",
+      "h2": "Symbol Om",
+      "intro": "Trzy znaki Unicode dla Om: ligatura w piśmie dewanagari, samodzielny piktograficzny OM SYMBOL oraz odrębny dżinijski Om.",
+      "symbols": [
+        { "char": "ॐ", "label": "Om w Dewanagari" },
+        { "char": "🕉️", "label": "Symbol Om" },
+        { "char": "ꣽ", "label": "Om Dżinijski" }
+      ]
+    },
+    {
+      "id": "medytacja-i-joga",
+      "label": "Medytacja i Joga",
+      "h2": "Symbole Medytacji i Jogi",
+      "intro": "Symbole często pokazywane obok Om w kontekście jogi, medytacji i tradycji dharmicznych.",
+      "symbols": [
+        { "char": "🪷", "label": "Lotos" },
+        { "char": "🧘", "label": "Osoba w Pozycji Lotosu" },
+        { "char": "📿", "label": "Różaniec Modlitewny" },
+        { "char": "☸️", "label": "Koło Dharmy" }
+      ]
+    },
+    {
+      "id": "symbole-wiary",
+      "label": "Symbole Wiary",
+      "h2": "Inne Symbole Wiary i Tożsamości",
+      "intro": "Symbole innych tradycji, które dobrze łączą się z treściami o wierze i tożsamości.",
+      "symbols": [
+        { "char": "🪯", "label": "Khanda" },
+        { "char": "✡️", "label": "Gwiazda Dawida" },
+        { "char": "☪️", "label": "Gwiazda i Półksiężyc" },
+        { "char": "☯️", "label": "Yin Yang" },
+        { "char": "✝️", "label": "Krzyż Łaciński" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Symbole wiary z każdej większej światowej religii w jednym miejscu."
+    },
+    {
+      "href": "/symbol/khanda-symbol/",
+      "title": "Khanda Symbol",
+      "desc": "Sikhijski emblemat, którego własna strona już pokazuje Om jako powiązany dharmiczny glif."
+    },
+    {
+      "href": "/symbol/hamsa-symbol/",
+      "title": "Hamsa Symbol",
+      "desc": "Kolejny symbol wspólny dla wielu tradycji, opisany jako udokumentowana historia, bez stawania po żadnej ze stron."
+    }
+  ]
+}

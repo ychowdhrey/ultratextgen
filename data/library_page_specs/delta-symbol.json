@@ -1,0 +1,94 @@
+{
+  "slug": "delta-symbol",
+  "page_type": "symbol",
+  "title": "Delta Symbol: Copy & Paste Δ δ — The Letter That Means ‘Change’ in Every Equation",
+  "meta_description": "Copy and paste the delta symbol — capital Δ (the universal ‘change in’ sign) and lowercase δ — and learn its real meanings across math, physics, chemistry, and options trading, plus the ∆ increment sign it's confused with. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/delta-symbol/",
+  "breadcrumb": "Delta Symbol",
+  "hero_h1": "Delta Symbol",
+  "hero_tagline": "The capital Δ that means ‘change in’ across math, physics, and engineering, and the lowercase δ used for infinitesimals and the partial charges of a polar bond. Click any symbol to copy it instantly.",
+  "intro": "Delta is the fourth letter of the Greek alphabet, and its capital form, Δ (U+0394, GREEK CAPITAL LETTER DELTA), is mathematical shorthand the whole world agrees on: it means ‘change in.’ Write Δx and every scientist reads ‘the change in x’; Δt is elapsed time, ΔV a change in voltage. The lowercase form, δ (U+03B4), takes the smaller jobs — an infinitesimal change in calculus, and in chemistry the partial charges δ+ and δ− that mark the slightly positive and slightly negative ends of a polar bond. The letter's triangular capital even named a landform: the fan-shaped mouth of a river is called a ‘delta’ because its shape echoes Δ, a comparison the ancient Greeks drew for the Nile. Delta reaches into finance too, where an option's ‘delta’ measures how much the option's price moves for every $1 move in the underlying asset. One letter, a dozen fields — all built on the single idea of difference.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-delta-symbol",
+      "label": "The Delta Symbol",
+      "h2": "The Delta Symbol — Δ & δ",
+      "intro": "The Greek letter itself, in both cases. Capital Δ is the ‘change in’ sign; lowercase δ handles the smaller-scale jobs.",
+      "symbols": [
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta (U+0394) — ‘Change In’"
+        },
+        {
+          "char": "δ",
+          "label": "Greek Small Letter Delta (U+03B4) — Infinitesimal / Partial Charge"
+        }
+      ]
+    },
+    {
+      "id": "increment-disambiguation",
+      "label": "Increment Sign",
+      "h2": "The Increment Sign Mix-Up",
+      "intro": "There is a separate math character, ∆ INCREMENT, that renders almost identically to capital delta but is a different codepoint — the same kind of look-alike trap as the ohm sign and omega. Some fonts and screen readers treat the two differently.",
+      "symbols": [
+        {
+          "char": "∆",
+          "label": "Increment (U+2206) — The Math Operator That Looks Like Δ, Different Codepoint"
+        },
+        {
+          "char": "Δ",
+          "label": "Capital Delta (U+0394) — The Greek Letter Itself"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Greek Letters",
+      "h2": "Related Greek Letters",
+      "intro": "Delta sits alongside the other most-searched Greek letters. Copy whichever one your equation needs.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "Σ",
+          "label": "Greek Capital Letter Sigma"
+        },
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "α",
+          "label": "Greek Small Letter Alpha"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet in uppercase, lowercase, and math variant forms to copy and paste."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "The ‘change in’ delta alongside the operators, relations, and Greek letters that fill out an equation."
+    },
+    {
+      "href": "/symbol/omega-symbol/",
+      "title": "Omega Symbol",
+      "desc": "One of the two Greek letters the omega page displays without a link — now it has its own page. Omega closes the alphabet; delta pairs with it in math."
+    },
+    {
+      "href": "/symbol/sigma-symbol/",
+      "title": "Sigma Symbol",
+      "desc": "Another workhorse Greek letter — the summation sign in math, and the ‘sigma male’ meme online."
+    }
+  ]
+}

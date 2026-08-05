@@ -142,7 +142,10 @@
     ctx.textBaseline = "middle";
     ctx.font = "700 " + Math.round(size * 0.6) + "px " + GLYPH_FONT;
     ctx.fillStyle = "#1a1a2e";
-    ctx.fillText(glyph, size / 2, size * 0.54);
+    ctx.fillText(glyph, size / 2, size * 0.5);
+    ctx.font = "22px 'Plus Jakarta Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#aeb4c0";
+    ctx.fillText("ultratextgen.com", size / 2, size - 32);
     canvas.toBlob((blob) => {
       if (!blob) return;
       const url = URL.createObjectURL(blob);

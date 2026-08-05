@@ -1,0 +1,97 @@
+{
+  "slug": "pi-symbol",
+  "page_type": "symbol",
+  "title": "Pi Symbol: Copy & Paste π Π ∏ — Coined in 1706, Made Universal by Euler",
+  "meta_description": "Copy and paste the pi symbol — lowercase π (the math constant), capital Π (the product operator), and the dedicated ∏ product sign — and learn how William Jones coined it in 1706 before Euler made it the world standard. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/pi-symbol/",
+  "breadcrumb": "Pi Symbol",
+  "hero_h1": "Pi Symbol",
+  "hero_tagline": "The lowercase π everyone means by ‘the pi symbol,’ the capital Π that means ‘product’ in math, and the dedicated ∏ product operator — the notation William Jones introduced in 1706 and Leonhard Euler turned into the world standard. Click any symbol to copy it instantly.",
+  "intro": "Pi's lowercase glyph, π (U+03C0, GREEK SMALL LETTER PI), is one of the most recognizable characters in all of mathematics — the ratio of any circle's circumference to its diameter, roughly 3.14159 and running forever without repeating. What most people don't realize is that the symbol is far younger than the number: the Welsh mathematician William Jones first used π this way in his 1706 book ‘Synopsis Palmariorum Matheseos,’ borrowing the Greek letter that begins ‘periphery.’ For three decades it went nowhere — until Leonhard Euler, the most influential mathematician of the age, adopted it around 1737 and cemented it as the global standard through his 1748 ‘Introductio in analysin infinitorum.’ The capital form, Π (U+03A0), does entirely different work: in math it's the product operator, the multiplicative twin of Σ summation, and it has its own dedicated glyph, ∏ (U+220F, N-ARY PRODUCT). Pi is both irrational (proved by Lambert in 1761) and transcendental (Lindemann, 1882) — and it even gets its own holiday every March 14.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-pi-symbol",
+      "label": "The Pi Symbol",
+      "h2": "The Pi Symbol — π & Π",
+      "intro": "The Greek letter itself. The lowercase π is the famous math constant; the capital Π is a different tool entirely.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi (U+03C0) — The Math Constant ≈ 3.14159"
+        },
+        {
+          "char": "Π",
+          "label": "Greek Capital Letter Pi (U+03A0) — The Product Operator"
+        }
+      ]
+    },
+    {
+      "id": "pi-in-math",
+      "label": "Math & Operators",
+      "h2": "Pi in Math: Product vs. Summation",
+      "intro": "Capital Π is the product operator, and — exactly like sigma — it has a dedicated math glyph, ∏ (N-ARY PRODUCT), that is a separate Unicode character from the letter. It's the multiplicative mirror of ∑ summation, letter for letter.",
+      "symbols": [
+        {
+          "char": "∏",
+          "label": "N-ary Product (U+220F) — The Dedicated Product Operator"
+        },
+        {
+          "char": "Π",
+          "label": "Capital Pi (U+03A0) — The Letter Often Typed for Products"
+        },
+        {
+          "char": "∑",
+          "label": "N-ary Summation (U+2211) — The Product's Additive Twin"
+        },
+        {
+          "char": "Σ",
+          "label": "Capital Sigma (U+03A3) — The Letter Behind Summation"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Greek Letters",
+      "h2": "Related Greek Letters",
+      "intro": "Pi is the 16th letter of the Greek alphabet. Here are the neighbors people search for most alongside it.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        },
+        {
+          "char": "α",
+          "label": "Greek Small Letter Alpha"
+        },
+        {
+          "char": "θ",
+          "label": "Greek Small Letter Theta"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet in uppercase, lowercase, and math variant forms to copy and paste."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Product, summation, and the operators and Greek letters that fill out an equation."
+    },
+    {
+      "href": "/symbol/sigma-symbol/",
+      "title": "Sigma Symbol",
+      "desc": "Pi's operator twin: just as Π pairs with the ∏ product sign, Σ pairs with the ∑ summation sign."
+    }
+  ]
+}

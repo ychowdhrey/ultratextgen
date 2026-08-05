@@ -1,0 +1,137 @@
+{
+  "slug": "psi-sembolu",
+  "lang": "tr",
+  "page_type": "symbol",
+  "title": "Psi Sembolü: Kopyala Yapıştır ψ Ψ — Schrödinger'in Kuantum Dalga Fonksiyonu ve Psikolojinin Trident İkonu",
+  "meta_description": "Psi sembolünü kopyala yapıştır — küçük ψ (U+03C8) ve büyük Ψ (U+03A8) — Schrödinger'in 1926'da seçtiği kuantum dalga fonksiyonu ve psikolojinin 'psyche' sözcüğünden aldığı trident glifi. Kopyalamak için herhangi bir sembole dokun.",
+  "canonical": "https://ultratextgen.com/tr/symbol/psi-sembolu/",
+  "breadcrumb": "Psi Sembolü",
+  "hero_h1": "Psi Sembolü",
+  "hero_tagline": "Erwin Schrödinger'in kuantum dalga fonksiyonunu adlandırmak için seçtiği küçük ψ ve büyük Ψ — dünyanın psikoloji ve psikiyatri için ikon olarak kullandığı trident biçimli glif. Kopyalamak için herhangi bir sembole dokun.",
+  "intro": "Psi'nin küçük harf glifi ψ (U+03C8, GREEK SMALL LETTER PSI) ve büyük harfi Ψ (U+03A8), Yunan alfabesinin 23. ve sondan bir önceki harfini oluşturur — omegadan hemen önce gelir, \"lapse\" sözcüğündeki /ps/ sesiyle okunur ve Yunan sayı sisteminde 700 değerindedir. Her iki kod noktası da 1993'te Unicode 1.1 ile standarda girdi. Psi'yi diğer Yunan harflerinden öne çıkaran şey, modern bilimdeki yeridir: 1926'nın başında Erwin Schrödinger, yeni dalga mekaniğinde dalga fonksiyonunu göstermek için ψ'yi seçti ve bu seçim kalıcı oldu — bugün büyük Ψ genellikle bir sistemin tam zamana bağlı dalga fonksiyonunu adlandırır, küçük ψ ise durağan ya da uzamsal bir fonksiyonu işaretler. Psi ayrıca psikoloji ve psikiyatri için neredeyse evrensel bir ikondur, bunun belgelenmiş bir nedeni de vardır: Yunanca \"psyche\" (ψυχή, \"zihin\" ya da \"ruh\") sözcüğü tam da bu harfle başlar. Trident şeklinin şeytanın dirgeninden esinlendiğine dair sıkça tekrarlanan efsane ise bir mittir — üç dişli, akort çatalı görünümlü siluet, tıpkı Indiana Üniversitesi'nin trident logosu olarak tescil ettirdiği gibi, harfin biçiminin ta kendisidir.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-psi-symbol",
+      "label": "Psi Sembolü",
+      "h2": "Psi Sembolü — ψ ve Ψ",
+      "intro": "Yunan harfinin kendisi, iki halde. Küçük ψ ve büyük Ψ herkesin başvurduğu iki biçimdir — denklem ya da logo hangisini gerektiriyorsa onu kopyala.",
+      "symbols": [
+        {
+          "char": "ψ",
+          "label": "Greek Small Letter Psi (U+03C8)"
+        },
+        {
+          "char": "Ψ",
+          "label": "Greek Capital Letter Psi (U+03A8)"
+        }
+      ]
+    },
+    {
+      "id": "psi-in-quantum-mechanics",
+      "label": "Kuantum ve Bilim",
+      "h2": "Kuantum Mekaniğinde Psi",
+      "intro": "Psi'nin imza rolü: Schrödinger'in dalga fonksiyonu. Kural gereği büyük Ψ bir sistemin tam zamana bağlı dalga fonksiyonu, küçük ψ ise durağan, zamandan bağımsız olanıdır — çoğu zaman eşlik eden bir durum için φ (fi) ile birlikte kullanılır.",
+      "symbols": [
+        {
+          "char": "Ψ",
+          "label": "Capital Psi (U+03A8) — Zamana Bağlı Dalga Fonksiyonu"
+        },
+        {
+          "char": "ψ",
+          "label": "Lowercase Psi (U+03C8) — Durağan Dalga Fonksiyonu"
+        },
+        {
+          "char": "φ",
+          "label": "Greek Small Letter Phi (U+03C6) — ψ İle Sık Eşleşen Ortak Durum"
+        }
+      ]
+    },
+    {
+      "id": "psi-psychology-trident",
+      "label": "Psikoloji ve Trident",
+      "h2": "Psikolojide Psi ve Trident Şekli",
+      "intro": "Büyük Ψ, psikolojinin, psikiyatrinin ve parapsikolojinin küresel işaretidir — herhangi bir şeytan-dirgeni efsanesinden değil, \"psyche\" sözcüğünün psi ile başlamasından seçilmiştir. Üç dişli siluetinin insanlara Poseidon'un silahı tridenti anımsatması da bu yüzdendir.",
+      "symbols": [
+        {
+          "char": "Ψ",
+          "label": "Capital Psi (U+03A8) — Psikoloji ve Psikiyatri İkonu"
+        },
+        {
+          "char": "ψ",
+          "label": "Lowercase Psi (U+03C8) — 'Psyche' Harfi"
+        },
+        {
+          "char": "🔱",
+          "label": "Trident Emblem (U+1F531) — Poseidon'un Tridenti, Psi'nin Andırdığı Şekil"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Yunan Harfleri",
+      "h2": "İlgili Yunan Harfleri",
+      "intro": "Psi, alfabeyi kapatan omegadan hemen önce gelen 23. Yunan harfidir. İşte onun yanında en çok kopyalanan komşu harfler.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega — Psi'den Hemen Sonraki Harf"
+        },
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Greek Capital Letter Sigma"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/tr/library/yunan-alfabesi-sembolleri/",
+      "title": "Yunan Alfabesi Sembolleri",
+      "desc": "Tam Yunan alfabesi — büyük, küçük ve matematik varyant biçimleriyle kopyala yapıştıra hazır."
+    },
+    {
+      "href": "/tr/library/matematik-sembolleri/",
+      "title": "Matematik Sembolleri",
+      "desc": "Dalga fonksiyonları, işleçler ve bir fizik ya da matematik denklemini tamamlayan Yunan harfleri."
+    },
+    {
+      "href": "/tr/symbol/omega-sembolu/",
+      "title": "Omega Sembolü",
+      "desc": "Psi'nin komşusu — alfabenin son harfi ve ohm'daki direncin standart sembolü."
+    },
+    {
+      "href": "/tr/symbol/pi-sembolu/",
+      "title": "Pi Sembolü",
+      "desc": "Bir bilim sabiti hâline gelen bir başka Yunan harfi: çember sabiti π ve çarpım işleci Π."
+    }
+  ],
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/psi-symbol/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/psi-sembolu/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/psi-symbol/"
+    }
+  ],
+  "home_url": "https://ultratextgen.com/tr/",
+  "crumb_home": "Ana Sayfa",
+  "crumb_library": "Semboller",
+  "library_url": "https://ultratextgen.com/tr/symbol/"
+}

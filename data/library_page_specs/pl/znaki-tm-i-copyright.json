@@ -1,0 +1,76 @@
+{
+  "slug": "znaki-tm-i-copyright",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak TM, © i ®: Znaki Towarowe i Praw Autorskich do Skopiowania",
+  "meta_description": "Skopiuj znak towarowy ™, copyright © i zastrzeżony znak towarowy ® oraz pokrewne znaki prawne i odniesień. Kliknij symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znaki-tm-i-copyright/",
+  "breadcrumb": "TM, © i ®",
+  "hero_h1": "Znak TM, © i ®",
+  "hero_tagline": "Znak towarowy, copyright, zastrzeżony znak towarowy i pokrewne znaki prawne — kliknij, aby skopiować.",
+  "intro": "Znaki ™, © i ® pojawiają się przy nazwach marek, logotypach i treściach chronionych prawem autorskim. To prawdziwe znaki Unicode, więc wklejasz je jak zwykły tekst — w dokumencie, poście czy na stronie internetowej, bez żadnych specjalnych czcionek.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/trademark-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znaki-tm-i-copyright/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/trademark-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "znaki-towarowe",
+      "label": "Znaki towarowe",
+      "h2": "Znaki Towarowe",
+      "intro": "Znaki oznaczające markę handlową lub usługę.",
+      "symbols": [
+        { "char": "™", "label": "Znak Towarowy (TM)" },
+        { "char": "®", "label": "Zastrzeżony Znak Towarowy" },
+        { "char": "℠", "label": "Znak Usługowy (SM)" }
+      ]
+    },
+    {
+      "id": "prawa-autorskie",
+      "label": "Prawa autorskie",
+      "h2": "Znak Praw Autorskich i Pokrewne",
+      "intro": "Znak copyright oraz pokrewny znak nagrań dźwiękowych.",
+      "symbols": [
+        { "char": "©", "label": "Znak Copyright" },
+        { "char": "℗", "label": "Znak Praw do Nagrania Dźwiękowego" }
+      ]
+    },
+    {
+      "id": "znaki-odniesien",
+      "label": "Odniesienia",
+      "h2": "Znaki Odniesień Prawnych",
+      "intro": "Znaki używane w dokumentach prawnych i administracyjnych.",
+      "symbols": [
+        { "char": "§", "label": "Znak Paragrafu" },
+        { "char": "¶", "label": "Znak Akapitu (Pilcrow)" },
+        { "char": "№", "label": "Znak Numeru" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro €",
+      "desc": "Symbol euro i inne znaki walut do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/nieskonczonosc/",
+      "title": "Znak Nieskończoności ∞",
+      "desc": "Symbol nieskończoności i pokrewne znaki matematyczne."
+    },
+    {
+      "href": "/pl/library/",
+      "title": "Biblioteka Symboli",
+      "desc": "Wszystkie kolekcje symboli i emotek do skopiowania w jednym miejscu."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "asterisk-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Dấu Sao: Sao Chép & Dán * ⁂ ✱ — Dấu Chú Thích Trở Thành Ký Tự Đại Diện & Ngôi Sao Kiểm Duyệt",
+  "meta_description": "Sao chép dấu sao (*), dấu ba sao ⁂, và dấu ✱ đậm — dấu chú thích cũng chạy chức năng ký tự đại diện tìm kiếm và kiểm duyệt từ tục. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/asterisk-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Dấu Sao",
+  "hero_h1": "Ký Hiệu Dấu Sao (*)",
+  "hero_tagline": "Dấu sao (*) bạn dùng cho chú thích, ký tự đại diện * khớp với mọi thứ trong tìm kiếm và mã nguồn, và ngôi sao kiểm duyệt trong f**k — cùng các «họ hàng» kiểu chữ của nó như dấu ba sao hình tam giác ⁂. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Dấu sao (*, Unicode U+002A) là dấu hình ngôi sao chia sẻ phím số 8 trên bàn phím, và tên gọi của nó bắt nguồn thẳng từ tiếng Hy Lạp cổ asteriskos, «ngôi sao nhỏ» — dạng giảm nhẹ của astēr, «ngôi sao». Đây là một trong những dấu biên tập cổ nhất trong truyền thống phương Tây: học giả Alexandria Aristarchus xứ Samothrace (khoảng 220–143 TCN) dùng asteriskos trong các bản hiệu đính Homer của ông để đánh dấu những dòng ông cho là bị lặp lại ở nơi khác, và nhà thần học Origen sau này đặt nó trong tác phẩm Hexapla để đánh dấu văn bản có trong tiếng Hebrew nhưng thiếu trong tiếng Hy Lạp. Ngày nay cùng một glyph đó đảm nhận ba công việc rất khác nhau: nó là dấu chú thích cổ điển đưa người đọc đến một ghi chú ở cuối trang, nó là ký tự đại diện khớp với mọi thứ trong tìm kiếm tệp, mẫu glob, và SELECT * của SQL, và nó là ký tự thay thế kiểm duyệt mặc định cho những chữ cái người ta muốn ẩn đi bằng dấu sao, như trong f**k. Kiểu chữ giữ cả một gia đình «họ hàng» quanh nó — ASTERISM ⁂ (U+2042) xếp chồng ba dấu sao thành một hình tam giác như một dấu ngắt phần, HEAVY ASTERISK ✱ (U+2731) và EIGHT SPOKED ASTERISK ✳ (U+2733) là các dạng trình bày đậm hơn, và ASTERISK OPERATOR ∗ (U+2217) là glyph toán học chuyên dùng cho phép nhân. Không cái nào trong số này là các hình ngôi sao trang trí — ngôi sao đen ★ (U+2605) hay ngôi sao emoji vàng ⭐ (U+2B50) — vốn thuộc về một hệ đăng ký hoàn toàn khác, mang tính trang trí.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/asterisk-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/asterisk-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "the-asterisk",
+      "label": "Dấu Sao",
+      "h2": "Dấu Sao & Các Biến Thể Trình Bày",
+      "intro": "Dấu sao thường trên bàn phím cộng với các dạng trình bày đậm hơn và toán tử chuyên dụng cho toán học. Tất cả đều sẵn sàng để dán.",
+      "symbols": [
+        { "char": "*", "label": "Dấu Sao (U+002A) — Chú Thích, Ký Tự Đại Diện & Dấu Kiểm Duyệt" },
+        { "char": "✱", "label": "Dấu Sao Đậm (U+2731)" },
+        { "char": "✳", "label": "Dấu Sao Tám Nan (U+2733)" },
+        { "char": "∗", "label": "Toán Tử Dấu Sao (U+2217) — Glyph Phép Nhân Trong Toán Học" },
+        { "char": "＊", "label": "Dấu Sao Chiều Rộng Đầy Đủ (U+FF0A)" }
+      ]
+    },
+    {
+      "id": "asterism-editorial",
+      "label": "Dấu Ba Sao & Dấu Biên Tập",
+      "h2": "Dấu Ba Sao & Dấu Ngắt Phần",
+      "intro": "Các dấu biên tập được xây từ dấu sao — dấu ba sao hình tam giác ngắt phần, cùng những «người anh em» xếp chồng và hạ thấp của nó.",
+      "symbols": [
+        { "char": "⁂", "label": "Dấu Ba Sao (U+2042) — Ba Dấu Sao Xếp Thành Tam Giác" },
+        { "char": "⁑", "label": "Hai Dấu Sao Xếp Dọc (U+2051)" },
+        { "char": "⁎", "label": "Dấu Sao Thấp (U+204E)" }
+      ]
+    },
+    {
+      "id": "stars-confused-with",
+      "label": "Ngôi Sao Dễ Nhầm",
+      "h2": "Hình Ngôi Sao Dễ Bị Nhầm Với Nó",
+      "intro": "Các glyph hình ngôi sao mà mọi người tìm khi thực ra ý họ là dấu sao. Đây là những ngôi sao trang trí — thuộc hệ đăng ký khác, không phải công cụ chú thích hay dấu câu.",
+      "symbols": [
+        { "char": "★", "label": "Ngôi Sao Đen (U+2605)" },
+        { "char": "☆", "label": "Ngôi Sao Trắng (U+2606)" },
+        { "char": "⭐", "label": "Ngôi Sao Trắng Cỡ Trung (U+2B50) — Emoji Ngôi Sao Vàng" },
+        { "char": "✦", "label": "Ngôi Sao Đen Bốn Cánh (U+2726)" },
+        { "char": "✧", "label": "Ngôi Sao Trắng Bốn Cánh (U+2727)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/punctuation-symbols/", "title": "Ký Hiệu Dấu Câu", "desc": "Dấu gạch ngang, dấu ngoặc, dấu ngoặc kép và họ dấu câu thông thường mà dấu sao thuộc về." },
+    { "href": "/library/keyboard-symbols/", "title": "Ký Hiệu Bàn Phím", "desc": "Dấu sao, ampersand, dấu thăng và phần còn lại của các ký hiệu in trên các hàng bàn phím." },
+    { "href": "/vi/symbol/star-symbol/", "title": "Ký Hiệu Ngôi Sao (★)", "desc": "Ngôi sao trang trí ★ và emoji ngôi sao vàng ⭐ — «họ hàng» trang trí mà mọi người thường nhầm với dấu sao." },
+    { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu § — một ký hiệu biên tập và chú thích khác từ thế giới in ấn." }
+  ]
+}

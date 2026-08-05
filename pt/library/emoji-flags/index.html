@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Emoji de Bandeiras — Bandeira do Brasil, dos EUA e de Todos os Países</title>
+<meta name="description" content="Copie emoji de bandeiras de todos os países: bandeira do Brasil 🇧🇷, dos Estados Unidos 🇺🇸, da Coreia do Sul, do Vaticano e de Portugal. Clique na bandeira pra copiar e cole no nome do jogo, bio, legenda ou mensagem. Grátis.">
+
+<link rel="canonical" href="https://ultratextgen.com/pt/library/emoji-flags/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/emoji-flags/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/emoji-flags/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/emoji-flags/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/emoji-flags/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/library/emoji-flags/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/library/emoji-flags/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/library/emoji-flags/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/emoji-flags/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/emoji-flags/">
+
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="UltraTextGen">
+<meta property="og:title" content="Emoji de Bandeiras — Bandeira do Brasil, dos EUA e de Todos os Países">
+<meta property="og:description" content="Copie emoji de bandeiras de todos os países: bandeira do Brasil, dos Estados Unidos, da Coreia do Sul, do Vaticano e de Portugal. Clique na bandeira pra copiar e cole no nome do jogo, bio, legenda ou mensagem.">
+<meta property="og:url" content="https://ultratextgen.com/pt/library/emoji-flags/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/pt-library-emoji-flags.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Emoji de Bandeiras — Bandeira do Brasil, dos EUA e de Todos os Países">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emoji de Bandeiras — Bandeira do Brasil, dos EUA e de Todos os Países">
+<meta name="twitter:description" content="Copie emoji de bandeiras de todos os países: bandeira do Brasil, dos EUA, da Coreia do Sul, do Vaticano e de Portugal. Clique pra copiar e cole no nome do jogo, bio ou mensagem.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/pt-library-emoji-flags.png">
+
+<!-- Twemoji: emoji uniforme em todos os aparelhos -->
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Emoji de Bandeiras — Bandeira do Brasil, dos EUA e de Todos os Países",
+  "alternateName": ["Emoji de Bandeira", "Bandeiras dos Países", "Bandeira do Brasil Emoji", "Bandeira dos Estados Unidos Emoji", "Bandeiras para Copiar e Colar", "Emoji Bandeira Copiar"],
+  "description": "Copie emoji de bandeiras de todos os países: bandeira do Brasil, dos Estados Unidos, da Coreia do Sul, do Vaticano e de Portugal. Clique na bandeira pra copiar e cole no nome do jogo, bio, legenda ou mensagem.",
+  "inLanguage": "pt",
+  "author": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraTextGen",
+    "url": "https://ultratextgen.com/"
+  },
+  "image": "https://ultratextgen.com/assets/og/pt-library-emoji-flags.png",
+  "mainEntityOfPage": "https://ultratextgen.com/pt/library/emoji-flags/",
+  "datePublished": "2026-07-11",
+  "dateModified": "2026-07-11"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é um emoji de bandeira?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Emoji de bandeira é o símbolo da bandeira de um país em forma de texto Unicode de verdade — não é uma imagem colada. Cada bandeira é montada com duas letras do código do país (por exemplo, 🇧🇷 é B + R e 🇺🇸 é U + S), então você copia e cola igual a uma letra comum na bio, no nome do jogo, na legenda e nas mensagens, sem precisar de app nem fonte instalada." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como copiar uma bandeira aqui nesta página?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Clique (ou toque) na bandeira que você quer — o caractere é copiado na hora pra área de transferência, com um aviso de confirmação. Depois é só abrir o Instagram, o WhatsApp, o TikTok, o Discord ou o campo de nome do jogo e colar. Pra levar um conjunto inteiro de bandeiras (América do Sul, União Europeia, G20...), desça até a seção Coleções de bandeiras e clique em Copiar coleção." }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que alguns aparelhos mostram duas letras (como BR ou US) em vez da bandeira?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Isso acontece quando o aparelho não tem a fonte que desenha a bandeira. O Windows, por padrão, não mostra os emoji de bandeira de país — ele exibe só as duas letras do código (BR, US, PT...). Já no iPhone, iPad, Android, Mac e na maioria dos celulares a bandeira aparece normal. O caractere que você copiou continua certo e no padrão Unicode: quem estiver vendo pelo celular vê a bandeira completa, então pode usar sem medo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como colar uma bandeira no nome do jogo, na bio ou numa mensagem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Copie a bandeira aqui em cima e cole no campo de nome ou de bio. Exemplo com a bandeira do Brasil no nome: 🇧🇷 Seu nome. Dá pra colocar a bandeira no começo ou no fim, ou juntar várias bandeiras coladas 🇧🇷🇵🇹. Alguns jogos filtram caracteres estranhos, mas o emoji de bandeira costuma ser aceito porque é Unicode padrão." }
+    },
+    {
+      "@type": "Question",
+      "name": "Onde encontro a bandeira do Brasil, dos Estados Unidos e de outros países mais rápido?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A seção Bandeiras populares, logo no começo da página, já reúne a bandeira dos Estados Unidos, do Brasil, da Coreia do Sul, do Vaticano, da Rússia, da Alemanha, do Egito, de Portugal e dos países mais procurados no Brasil. Precisa de outro país? Desça até a seção Todas as bandeiras dos países e filtre por continente." }
+    },
+    {
+      "@type": "Question",
+      "name": "Esta página de bandeiras é grátis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "100% grátis, sem cadastro e sem limite de cópias. A página roda direto no navegador do celular e do computador — clicou na bandeira, copiou, e cola onde você quiser." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://ultratextgen.com/pt/" },
+    { "@type": "ListItem", "position": 2, "name": "Biblioteca", "item": "https://ultratextgen.com/library/" },
+    { "@type": "ListItem", "position": 3, "name": "Emoji de Bandeiras", "item": "https://ultratextgen.com/pt/library/emoji-flags/" }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/pt/">Início</a>
+  <span class="breadcrumb-separator">›</span>
+  <a href="/pt/library/">Biblioteca</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Emoji de Bandeiras</span>
+</nav>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/pt-library-emoji-flags.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Emoji de Bandeiras — Bandeiras dos Países</h1>
+    <p class="hero-tagline">Clique na bandeira pra copiar na hora: bandeira do Brasil, dos Estados Unidos, da Coreia do Sul e de todos os países. Cole no nome do jogo, na bio, na legenda ou nas mensagens — sem precisar de app.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="editorial-section">
+  <div class="editorial-block">
+    <p>Toda bandeira de país está a um clique de distância. Navegue pelas bandeiras dos quase 200 países, filtre por continente e copie qualquer emoji de bandeira num toque só. Como o emoji de bandeira é texto Unicode de verdade, ele cola em posts, bio, legendas e mensagens em todas as grandes plataformas — Instagram, WhatsApp, TikTok, Facebook, Telegram, Discord e no campo de nome dos jogos. Logo abaixo, a bandeira dos Estados Unidos, a do Brasil e as mais procuradas por aqui vêm reunidas no topo pra você pegar rapidinho.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BANDEIRAS POPULARES -->
+<section class="mood-explainers" id="bandeiras-populares">
+  <span class="article-section-label">Bandeiras populares</span>
+  <h2>Bandeiras populares — clique pra copiar</h2>
+  <p class="u-secondary-tight">As bandeiras mais procuradas no Brasil, reunidas pra pegar rápido — com a bandeira dos Estados Unidos e a do Brasil no topo. Clique na bandeira pra copiar:</p>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇺🇸" aria-label="Copiar bandeira dos Estados Unidos">🇺🇸</button>
+      <span class="flag-label">Estados Unidos</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇧🇷" aria-label="Copiar bandeira do Brasil">🇧🇷</button>
+      <span class="flag-label">Brasil</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇰🇷" aria-label="Copiar bandeira da Coreia do Sul">🇰🇷</button>
+      <span class="flag-label">Coreia do Sul</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇻🇦" aria-label="Copiar bandeira do Vaticano">🇻🇦</button>
+      <span class="flag-label">Vaticano</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇷🇺" aria-label="Copiar bandeira da Rússia">🇷🇺</button>
+      <span class="flag-label">Rússia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇩🇪" aria-label="Copiar bandeira da Alemanha">🇩🇪</button>
+      <span class="flag-label">Alemanha</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇪🇬" aria-label="Copiar bandeira do Egito">🇪🇬</button>
+      <span class="flag-label">Egito</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇵🇹" aria-label="Copiar bandeira de Portugal">🇵🇹</button>
+      <span class="flag-label">Portugal</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇹" aria-label="Copiar bandeira da Itália">🇮🇹</button>
+      <span class="flag-label">Itália</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇨🇳" aria-label="Copiar bandeira da China">🇨🇳</button>
+      <span class="flag-label">China</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇹🇭" aria-label="Copiar bandeira da Tailândia">🇹🇭</button>
+      <span class="flag-label">Tailândia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇵🇸" aria-label="Copiar bandeira da Palestina">🇵🇸</button>
+      <span class="flag-label">Palestina</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇩" aria-label="Copiar bandeira da Indonésia">🇮🇩</button>
+      <span class="flag-label">Indonésia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇵🇰" aria-label="Copiar bandeira do Paquistão">🇵🇰</button>
+      <span class="flag-label">Paquistão</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇪🇪" aria-label="Copiar bandeira da Estônia">🇪🇪</button>
+      <span class="flag-label">Estônia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇪🇸" aria-label="Copiar bandeira da Espanha">🇪🇸</button>
+      <span class="flag-label">Espanha</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇨🇿" aria-label="Copiar bandeira da Tchéquia">🇨🇿</button>
+      <span class="flag-label">Tchéquia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇵🇱" aria-label="Copiar bandeira da Polônia">🇵🇱</button>
+      <span class="flag-label">Polônia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇫🇷" aria-label="Copiar bandeira da França">🇫🇷</button>
+      <span class="flag-label">França</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇾🇪" aria-label="Copiar bandeira do Iêmen">🇾🇪</button>
+      <span class="flag-label">Iêmen</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇬🇧" aria-label="Copiar bandeira do Reino Unido">🇬🇧</button>
+      <span class="flag-label">Reino Unido</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇸" aria-label="Copiar bandeira da Islândia">🇮🇸</button>
+      <span class="flag-label">Islândia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇲🇨" aria-label="Copiar bandeira de Mônaco">🇲🇨</button>
+      <span class="flag-label">Mônaco</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇧🇳" aria-label="Copiar bandeira de Brunei">🇧🇳</button>
+      <span class="flag-label">Brunei</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇯🇵" aria-label="Copiar bandeira do Japão">🇯🇵</button>
+      <span class="flag-label">Japão</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇭🇷" aria-label="Copiar bandeira da Croácia">🇭🇷</button>
+      <span class="flag-label">Croácia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇮🇱" aria-label="Copiar bandeira de Israel">🇮🇱</button>
+      <span class="flag-label">Israel</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇦🇷" aria-label="Copiar bandeira da Argentina">🇦🇷</button>
+      <span class="flag-label">Argentina</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇲🇽" aria-label="Copiar bandeira do México">🇲🇽</button>
+      <span class="flag-label">México</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TODAS AS BANDEIRAS DOS PAÍSES -->
+<section class="mood-explainers" id="country-flags">
+  <span class="article-section-label">Bandeiras dos países</span>
+  <h2>Todas as bandeiras dos países</h2>
+  <p class="u-secondary-tight">Quase 200 bandeiras de países, com filtro por continente. Clique em qualquer bandeira pra copiar na hora:</p>
+
+  <!-- Filtros de continente -->
+  <div class="region-filters" id="regionFilters">
+    <button class="region-filter active" data-region="all">Todos</button>
+    <button class="region-filter" data-region="europe">Europa</button>
+    <button class="region-filter" data-region="asia">Ásia</button>
+    <button class="region-filter" data-region="americas">Américas</button>
+    <button class="region-filter" data-region="africa">África</button>
+    <button class="region-filter" data-region="oceania">Oceania</button>
+  </div>
+
+  <!-- Lista de bandeiras (montada por JS) -->
+  <div class="flag-rows" id="countryFlagList"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BANDEIRAS DE ORGANIZAÇÕES -->
+<section class="mood-explainers" id="org-flags">
+  <span class="article-section-label">Bandeiras de organizações</span>
+  <h2>Bandeiras de organizações internacionais</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇪🇺" aria-label="Copiar bandeira da União Europeia">🇪🇺</button>
+      <span class="flag-label">União Europeia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🇺🇳" aria-label="Copiar bandeira das Nações Unidas">🇺🇳</button>
+      <span class="flag-label">Nações Unidas (ONU)</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BANDEIRAS REGIONAIS -->
+<section class="mood-explainers" id="regional-flags">
+  <span class="article-section-label">Bandeiras regionais</span>
+  <h2>Bandeiras regionais</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴󠁧󠁢󠁥󠁮󠁧󠁿" aria-label="Copiar bandeira da Inglaterra">🏴󠁧󠁢󠁥󠁮󠁧󠁿</button>
+      <span class="flag-label">Inglaterra</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴󠁧󠁢󠁳󠁣󠁴󠁿" aria-label="Copiar bandeira da Escócia">🏴󠁧󠁢󠁳󠁣󠁴󠁿</button>
+      <span class="flag-label">Escócia</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴󠁧󠁢󠁷󠁬󠁳󠁿" aria-label="Copiar bandeira do País de Gales">🏴󠁧󠁢󠁷󠁬󠁳󠁿</button>
+      <span class="flag-label">País de Gales</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BANDEIRAS DE IDENTIDADE -->
+<section class="mood-explainers" id="identity-flags">
+  <span class="article-section-label">Bandeiras de identidade</span>
+  <h2>Bandeiras de identidade &amp; orgulho</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏳️‍🌈" aria-label="Copiar bandeira do arco-íris (orgulho LGBT)">🏳️‍🌈</button>
+      <span class="flag-label">Arco-íris (Orgulho)</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏳️‍⚧️" aria-label="Copiar bandeira trans">🏳️‍⚧️</button>
+      <span class="flag-label">Bandeira Trans</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BANDEIRAS SIMBÓLICAS -->
+<section class="mood-explainers" id="symbolic-flags">
+  <span class="article-section-label">Bandeiras simbólicas</span>
+  <h2>Bandeiras simbólicas</h2>
+  <div class="flag-rows">
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏁" aria-label="Copiar bandeira quadriculada (de chegada)">🏁</button>
+      <span class="flag-label">Bandeira Quadriculada</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🚩" aria-label="Copiar bandeira triangular">🚩</button>
+      <span class="flag-label">Bandeira Triangular</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏳" aria-label="Copiar bandeira branca">🏳</button>
+      <span class="flag-label">Bandeira Branca</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴" aria-label="Copiar bandeira preta">🏴</button>
+      <span class="flag-label">Bandeira Preta</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🏴‍☠️" aria-label="Copiar bandeira pirata">🏴‍☠️</button>
+      <span class="flag-label">Bandeira Pirata</span>
+    </div>
+    <div class="flag-row">
+      <button class="flag-emoji symbol-tile" data-symbol="🎌" aria-label="Copiar bandeiras cruzadas">🎌</button>
+      <span class="flag-label">Bandeiras Cruzadas</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- COLEÇÕES DE BANDEIRAS -->
+<section class="mood-explainers" id="flag-grids">
+  <span class="article-section-label">Coleções de bandeiras</span>
+  <h2>Coleções de bandeiras por região</h2>
+  <p class="u-secondary-block">Copie um conjunto inteiro de bandeiras pro seu post, lista ou legenda.</p>
+
+  <!-- As coleções são montadas por JS -->
+  <div id="flagGridContainer"></div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- COMO USAR -->
+<section class="editorial-section" id="como-copiar">
+  <h2>Como copiar &amp; colar emoji de bandeira</h2>
+  <p class="editorial-intro">O emoji de bandeira funciona igualzinho a uma letra comum — clicou, copiou, colou:</p>
+  <div class="block-example">
+    ✔ <strong>Clique pra copiar</strong>: toque em qualquer bandeira e o caractere vai pra área de transferência na hora, com aviso de confirmação.<br>
+    ✔ <strong>Cole onde precisar</strong>: abra o Instagram, WhatsApp, TikTok, Facebook, Telegram, Discord ou o campo de trocar o nome do jogo e cole (segure pra aparecer o botão Colar, ou Ctrl/Cmd + V no computador).<br>
+    ✔ <strong>Junte no nome</strong>: coloque a bandeira no começo ou no fim, tipo 🇧🇷 Seu nome, ou várias bandeiras coladas 🇧🇷🇵🇹🇺🇸.<br>
+    ✔ <strong>Leve o conjunto inteiro</strong>: a seção Coleções de bandeiras acima deixa você copiar um grupo inteiro (América do Sul, União Europeia, G20...) com um clique só.
+  </div>
+</section>
+
+<!-- POR QUE APARECEM DUAS LETRAS -->
+<section class="editorial-section" id="por-que-duas-letras">
+  <h2>Por que alguns aparelhos mostram "BR" em vez da bandeira?</h2>
+  <p class="editorial-intro">Se a bandeira aparece como duas letras (BR, US, PT…) em alguns aparelhos, o motivo é este:</p>
+  <p>O emoji de bandeira de país é montado com <strong>duas letras indicadoras de região</strong> — 🇧🇷 na verdade é o caractere Ⓑ + Ⓡ, e 🇺🇸 é Ⓤ + Ⓢ. O aparelho que tem a fonte que desenha bandeiras junta essas duas letras numa bandeira só; o aparelho que não tem mostra as duas letras separadas. O <strong>Windows</strong>, por padrão, não desenha bandeiras de país, então costuma exibir "BR", "US"; já o <strong>iPhone, iPad, Android e Mac</strong> mostram a bandeira completa.</p>
+  <p>O importante: o caractere que você copiou continua <strong>certo e no padrão Unicode</strong> — quem estiver vendo pelo celular (a maior parte de quem usa redes sociais no Brasil) enxerga a bandeira. Por isso colar bandeira na bio, na legenda ou no nome do jogo é totalmente seguro, sem risco de dar erro de caractere.</p>
+</section>
+
+<!-- RELACIONADOS -->
+<section class="editorial-section">
+  <span class="article-section-label">Páginas relacionadas</span>
+  <div class="compare-grid">
+    <a href="/pt/library/simbolos/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos para Copiar</h4>
+      <p>Estrelas, corações, molduras ꧁꧂ e setas pra nick, bio e status — clique e copie.</p>
+    </a>
+    <a href="/pt/library/simbolos-de-coracao/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos de Coração</h4>
+      <p>Corações Unicode ♡ ❤ ❥, corações aesthetic e emojis de coração de todas as cores.</p>
+    </a>
+    <a href="/pt/simbolos-para-nick/" class="compare-card variant-muted u-no-underline">
+      <h4>Símbolos para Nick</h4>
+      <p>Símbolos e molduras pra montar nick estiloso de Free Fire, Roblox e outros games.</p>
+    </a>
+    <a href="/pt/" class="compare-card variant-muted u-no-underline">
+      <h4>Gerador de fontes</h4>
+      <p>Todas as ferramentas de letras diferentes e símbolos para copiar e colar num lugar só.</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <h2 class="faq-category">Dúvidas sobre emoji de bandeiras</h2>
+    <div class="faq-item"><button class="faq-question" type="button">O que é um emoji de bandeira?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Emoji de bandeira é o símbolo da bandeira de um país em forma de texto Unicode de verdade — não é uma imagem colada. Cada bandeira é montada com duas letras do código do país (por exemplo, 🇧🇷 é B + R e 🇺🇸 é U + S), então você copia e cola igual a uma letra comum na bio, no nome do jogo, na legenda e nas mensagens, sem precisar de app nem fonte instalada.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Como copiar uma bandeira aqui nesta página?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Clique (ou toque) na bandeira que você quer — o caractere é copiado na hora pra área de transferência, com um aviso de confirmação. Depois é só abrir o Instagram, o WhatsApp, o TikTok, o Discord ou o campo de nome do jogo e colar. Pra levar um conjunto inteiro de bandeiras (América do Sul, União Europeia, G20...), desça até a seção Coleções de bandeiras e clique em Copiar coleção.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Por que alguns aparelhos mostram duas letras (como BR ou US) em vez da bandeira?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Isso acontece quando o aparelho não tem a fonte que desenha a bandeira. O Windows, por padrão, não mostra os emoji de bandeira de país — ele exibe só as duas letras do código (BR, US, PT...). Já no iPhone, iPad, Android, Mac e na maioria dos celulares a bandeira aparece normal. O caractere que você copiou continua certo e no padrão Unicode: quem estiver vendo pelo celular vê a bandeira completa, então pode usar sem medo.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Como colar uma bandeira no nome do jogo, na bio ou numa mensagem?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">Copie a bandeira aqui em cima e cole no campo de nome ou de bio. Exemplo com a bandeira do Brasil no nome: 🇧🇷 Seu nome. Dá pra colocar a bandeira no começo ou no fim, ou juntar várias bandeiras coladas 🇧🇷🇵🇹. Alguns jogos filtram caracteres estranhos, mas o emoji de bandeira costuma ser aceito porque é Unicode padrão.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Onde encontro a bandeira do Brasil, dos Estados Unidos e de outros países mais rápido?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">A seção Bandeiras populares, logo no começo da página, já reúne a bandeira dos Estados Unidos, do Brasil, da Coreia do Sul, do Vaticano, da Rússia, da Alemanha, do Egito, de Portugal e dos países mais procurados no Brasil. Precisa de outro país? Desça até a seção Todas as bandeiras dos países e filtre por continente.</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">Esta página de bandeiras é grátis?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">100% grátis, sem cadastro e sem limite de cópias. A página roda direto no navegador do celular e do computador — clicou na bandeira, copiou, e cola onde você quiser.</div></div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+      <a class="lang-option" href="/de/library/emoji-flags/" hreflang="de">DE</a>
+      <a class="lang-option" href="/library/emoji-flags/" hreflang="en">EN</a>
+      <a class="lang-option" href="/es/library/emoji-flags/" hreflang="es">ES</a>
+      <a class="lang-option active" href="/pt/library/emoji-flags/" hreflang="pt">PT</a>
+      <a class="lang-option" href="/vi/library/emoji-flags/" hreflang="vi">VI</a>
+      <a class="lang-option" href="/pl/library/emoji-flags/" hreflang="pl">PL</a>
+      <a class="lang-option" href="/th/library/emoji-flags/" hreflang="th">TH</a>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="copy-toast" id="copyToast">Copiado!</div>
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<!-- Página-específico: dados dos países, coleções, montagem da lista -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+
+  const ns = window.UltraTextGen;
+  if (!ns) return;
+
+  /* ---------- Dados dos países (nomes em português) ---------- */
+  const COUNTRIES = [
+    { code: "AF", name: "Afeganistão", region: "asia" },
+    { code: "AL", name: "Albânia", region: "europe" },
+    { code: "DZ", name: "Argélia", region: "africa" },
+    { code: "AD", name: "Andorra", region: "europe" },
+    { code: "AO", name: "Angola", region: "africa" },
+    { code: "AG", name: "Antígua e Barbuda", region: "americas" },
+    { code: "AR", name: "Argentina", region: "americas" },
+    { code: "AM", name: "Armênia", region: "asia" },
+    { code: "AU", name: "Austrália", region: "oceania" },
+    { code: "AT", name: "Áustria", region: "europe" },
+    { code: "AZ", name: "Azerbaijão", region: "asia" },
+    { code: "BS", name: "Bahamas", region: "americas" },
+    { code: "BH", name: "Bahrein", region: "asia" },
+    { code: "BD", name: "Bangladesh", region: "asia" },
+    { code: "BB", name: "Barbados", region: "americas" },
+    { code: "BY", name: "Belarus", region: "europe" },
+    { code: "BE", name: "Bélgica", region: "europe" },
+    { code: "BZ", name: "Belize", region: "americas" },
+    { code: "BJ", name: "Benin", region: "africa" },
+    { code: "BT", name: "Butão", region: "asia" },
+    { code: "BO", name: "Bolívia", region: "americas" },
+    { code: "BA", name: "Bósnia e Herzegovina", region: "europe" },
+    { code: "BW", name: "Botsuana", region: "africa" },
+    { code: "BR", name: "Brasil", region: "americas" },
+    { code: "BN", name: "Brunei", region: "asia" },
+    { code: "BG", name: "Bulgária", region: "europe" },
+    { code: "BF", name: "Burquina Faso", region: "africa" },
+    { code: "BI", name: "Burundi", region: "africa" },
+    { code: "CV", name: "Cabo Verde", region: "africa" },
+    { code: "KH", name: "Camboja", region: "asia" },
+    { code: "CM", name: "Camarões", region: "africa" },
+    { code: "CA", name: "Canadá", region: "americas" },
+    { code: "CF", name: "República Centro-Africana", region: "africa" },
+    { code: "TD", name: "Chade", region: "africa" },
+    { code: "CL", name: "Chile", region: "americas" },
+    { code: "CN", name: "China", region: "asia" },
+    { code: "CO", name: "Colômbia", region: "americas" },
+    { code: "KM", name: "Comores", region: "africa" },
+    { code: "CG", name: "Congo", region: "africa" },
+    { code: "CD", name: "República Democrática do Congo", region: "africa" },
+    { code: "CR", name: "Costa Rica", region: "americas" },
+    { code: "CI", name: "Costa do Marfim", region: "africa" },
+    { code: "HR", name: "Croácia", region: "europe" },
+    { code: "CU", name: "Cuba", region: "americas" },
+    { code: "CY", name: "Chipre", region: "europe" },
+    { code: "CZ", name: "Tchéquia", region: "europe" },
+    { code: "DK", name: "Dinamarca", region: "europe" },
+    { code: "DJ", name: "Djibuti", region: "africa" },
+    { code: "DM", name: "Dominica", region: "americas" },
+    { code: "DO", name: "República Dominicana", region: "americas" },
+    { code: "EC", name: "Equador", region: "americas" },
+    { code: "EG", name: "Egito", region: "africa" },
+    { code: "SV", name: "El Salvador", region: "americas" },
+    { code: "GQ", name: "Guiné Equatorial", region: "africa" },
+    { code: "ER", name: "Eritreia", region: "africa" },
+    { code: "EE", name: "Estônia", region: "europe" },
+    { code: "SZ", name: "Essuatíni", region: "africa" },
+    { code: "ET", name: "Etiópia", region: "africa" },
+    { code: "FJ", name: "Fiji", region: "oceania" },
+    { code: "FI", name: "Finlândia", region: "europe" },
+    { code: "FR", name: "França", region: "europe" },
+    { code: "GA", name: "Gabão", region: "africa" },
+    { code: "GM", name: "Gâmbia", region: "africa" },
+    { code: "GE", name: "Geórgia", region: "europe" },
+    { code: "DE", name: "Alemanha", region: "europe" },
+    { code: "GH", name: "Gana", region: "africa" },
+    { code: "GR", name: "Grécia", region: "europe" },
+    { code: "GD", name: "Granada", region: "americas" },
+    { code: "GT", name: "Guatemala", region: "americas" },
+    { code: "GN", name: "Guiné", region: "africa" },
+    { code: "GW", name: "Guiné-Bissau", region: "africa" },
+    { code: "GY", name: "Guiana", region: "americas" },
+    { code: "HT", name: "Haiti", region: "americas" },
+    { code: "HN", name: "Honduras", region: "americas" },
+    { code: "HU", name: "Hungria", region: "europe" },
+    { code: "IS", name: "Islândia", region: "europe" },
+    { code: "IN", name: "Índia", region: "asia" },
+    { code: "ID", name: "Indonésia", region: "asia" },
+    { code: "IR", name: "Irã", region: "asia" },
+    { code: "IQ", name: "Iraque", region: "asia" },
+    { code: "IE", name: "Irlanda", region: "europe" },
+    { code: "IL", name: "Israel", region: "asia" },
+    { code: "IT", name: "Itália", region: "europe" },
+    { code: "JM", name: "Jamaica", region: "americas" },
+    { code: "JP", name: "Japão", region: "asia" },
+    { code: "JO", name: "Jordânia", region: "asia" },
+    { code: "KZ", name: "Cazaquistão", region: "asia" },
+    { code: "KE", name: "Quênia", region: "africa" },
+    { code: "KI", name: "Kiribati", region: "oceania" },
+    { code: "KW", name: "Kuwait", region: "asia" },
+    { code: "KG", name: "Quirguistão", region: "asia" },
+    { code: "LA", name: "Laos", region: "asia" },
+    { code: "LV", name: "Letônia", region: "europe" },
+    { code: "LB", name: "Líbano", region: "asia" },
+    { code: "LS", name: "Lesoto", region: "africa" },
+    { code: "LR", name: "Libéria", region: "africa" },
+    { code: "LY", name: "Líbia", region: "africa" },
+    { code: "LI", name: "Liechtenstein", region: "europe" },
+    { code: "LT", name: "Lituânia", region: "europe" },
+    { code: "LU", name: "Luxemburgo", region: "europe" },
+    { code: "MG", name: "Madagascar", region: "africa" },
+    { code: "MW", name: "Malaui", region: "africa" },
+    { code: "MY", name: "Malásia", region: "asia" },
+    { code: "MV", name: "Maldivas", region: "asia" },
+    { code: "ML", name: "Mali", region: "africa" },
+    { code: "MT", name: "Malta", region: "europe" },
+    { code: "MH", name: "Ilhas Marshall", region: "oceania" },
+    { code: "MR", name: "Mauritânia", region: "africa" },
+    { code: "MU", name: "Maurício", region: "africa" },
+    { code: "MX", name: "México", region: "americas" },
+    { code: "FM", name: "Micronésia", region: "oceania" },
+    { code: "MD", name: "Moldávia", region: "europe" },
+    { code: "MC", name: "Mônaco", region: "europe" },
+    { code: "MN", name: "Mongólia", region: "asia" },
+    { code: "ME", name: "Montenegro", region: "europe" },
+    { code: "MA", name: "Marrocos", region: "africa" },
+    { code: "MZ", name: "Moçambique", region: "africa" },
+    { code: "MM", name: "Mianmar", region: "asia" },
+    { code: "NA", name: "Namíbia", region: "africa" },
+    { code: "NR", name: "Nauru", region: "oceania" },
+    { code: "NP", name: "Nepal", region: "asia" },
+    { code: "NL", name: "Países Baixos", region: "europe" },
+    { code: "NZ", name: "Nova Zelândia", region: "oceania" },
+    { code: "NI", name: "Nicarágua", region: "americas" },
+    { code: "NE", name: "Níger", region: "africa" },
+    { code: "NG", name: "Nigéria", region: "africa" },
+    { code: "KP", name: "Coreia do Norte", region: "asia" },
+    { code: "MK", name: "Macedônia do Norte", region: "europe" },
+    { code: "NO", name: "Noruega", region: "europe" },
+    { code: "OM", name: "Omã", region: "asia" },
+    { code: "PK", name: "Paquistão", region: "asia" },
+    { code: "PW", name: "Palau", region: "oceania" },
+    { code: "PS", name: "Palestina", region: "asia" },
+    { code: "PA", name: "Panamá", region: "americas" },
+    { code: "PG", name: "Papua-Nova Guiné", region: "oceania" },
+    { code: "PY", name: "Paraguai", region: "americas" },
+    { code: "PE", name: "Peru", region: "americas" },
+    { code: "PH", name: "Filipinas", region: "asia" },
+    { code: "PL", name: "Polônia", region: "europe" },
+    { code: "PT", name: "Portugal", region: "europe" },
+    { code: "QA", name: "Catar", region: "asia" },
+    { code: "RO", name: "Romênia", region: "europe" },
+    { code: "RU", name: "Rússia", region: "europe" },
+    { code: "RW", name: "Ruanda", region: "africa" },
+    { code: "KN", name: "São Cristóvão e Névis", region: "americas" },
+    { code: "LC", name: "Santa Lúcia", region: "americas" },
+    { code: "VC", name: "São Vicente e Granadinas", region: "americas" },
+    { code: "WS", name: "Samoa", region: "oceania" },
+    { code: "SM", name: "San Marino", region: "europe" },
+    { code: "ST", name: "São Tomé e Príncipe", region: "africa" },
+    { code: "SA", name: "Arábia Saudita", region: "asia" },
+    { code: "SN", name: "Senegal", region: "africa" },
+    { code: "RS", name: "Sérvia", region: "europe" },
+    { code: "SC", name: "Seicheles", region: "africa" },
+    { code: "SL", name: "Serra Leoa", region: "africa" },
+    { code: "SG", name: "Singapura", region: "asia" },
+    { code: "SK", name: "Eslováquia", region: "europe" },
+    { code: "SI", name: "Eslovênia", region: "europe" },
+    { code: "SB", name: "Ilhas Salomão", region: "oceania" },
+    { code: "SO", name: "Somália", region: "africa" },
+    { code: "ZA", name: "África do Sul", region: "africa" },
+    { code: "KR", name: "Coreia do Sul", region: "asia" },
+    { code: "SS", name: "Sudão do Sul", region: "africa" },
+    { code: "ES", name: "Espanha", region: "europe" },
+    { code: "LK", name: "Sri Lanka", region: "asia" },
+    { code: "SD", name: "Sudão", region: "africa" },
+    { code: "SR", name: "Suriname", region: "americas" },
+    { code: "SE", name: "Suécia", region: "europe" },
+    { code: "CH", name: "Suíça", region: "europe" },
+    { code: "SY", name: "Síria", region: "asia" },
+    { code: "TJ", name: "Tadjiquistão", region: "asia" },
+    { code: "TZ", name: "Tanzânia", region: "africa" },
+    { code: "TH", name: "Tailândia", region: "asia" },
+    { code: "TL", name: "Timor-Leste", region: "asia" },
+    { code: "TG", name: "Togo", region: "africa" },
+    { code: "TO", name: "Tonga", region: "oceania" },
+    { code: "TT", name: "Trinidad e Tobago", region: "americas" },
+    { code: "TN", name: "Tunísia", region: "africa" },
+    { code: "TR", name: "Turquia", region: "europe" },
+    { code: "TM", name: "Turcomenistão", region: "asia" },
+    { code: "TV", name: "Tuvalu", region: "oceania" },
+    { code: "UG", name: "Uganda", region: "africa" },
+    { code: "UA", name: "Ucrânia", region: "europe" },
+    { code: "AE", name: "Emirados Árabes Unidos", region: "asia" },
+    { code: "GB", name: "Reino Unido", region: "europe" },
+    { code: "US", name: "Estados Unidos", region: "americas" },
+    { code: "UY", name: "Uruguai", region: "americas" },
+    { code: "UZ", name: "Uzbequistão", region: "asia" },
+    { code: "VU", name: "Vanuatu", region: "oceania" },
+    { code: "VA", name: "Vaticano", region: "europe" },
+    { code: "VE", name: "Venezuela", region: "americas" },
+    { code: "VN", name: "Vietnã", region: "asia" },
+    { code: "YE", name: "Iêmen", region: "asia" },
+    { code: "ZM", name: "Zâmbia", region: "africa" },
+    { code: "ZW", name: "Zimbábue", region: "africa" }
+  ];
+
+  /* ---------- Montagem da lista de bandeiras ---------- */
+  const list = document.getElementById("countryFlagList");
+  if (list) {
+    COUNTRIES.forEach(function (c) {
+      const flag = ns.isoToFlag(c.code);
+
+      const row = document.createElement("div");
+      row.className = "flag-row";
+      row.setAttribute("data-region", c.region);
+
+      const btn = document.createElement("button");
+      btn.className = "flag-emoji symbol-tile";
+      btn.setAttribute("data-symbol", flag);
+      btn.setAttribute("aria-label", "Copiar bandeira de " + c.name);
+      btn.textContent = flag;
+
+      const label = document.createElement("span");
+      label.className = "flag-label";
+      label.textContent = c.name;
+
+      row.appendChild(btn);
+      row.appendChild(label);
+      list.appendChild(row);
+    });
+
+    /* ---------- Filtro por continente ---------- */
+    const filterBtns = document.querySelectorAll(".region-filter");
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const region = btn.getAttribute("data-region");
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        const items = list.querySelectorAll(".flag-row");
+        items.forEach(function (item) {
+          if (region === "all" || item.getAttribute("data-region") === region) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
+  /* ---------- Coleções de bandeiras (destaque pra América do Sul e países lusófonos) ---------- */
+  const FLAG_GROUPS = [
+    { name: "América do Sul",             flags: ["🇧🇷","🇦🇷","🇨🇱","🇨🇴","🇵🇪","🇺🇾","🇵🇾","🇧🇴","🇪🇨","🇻🇪","🇬🇾","🇸🇷"] },
+    { name: "Países de Língua Portuguesa (CPLP)", flags: ["🇧🇷","🇵🇹","🇦🇴","🇲🇿","🇨🇻","🇬🇼","🇸🇹","🇹🇱","🇬🇶"] },
+    { name: "União Europeia (UE)",         flags: ["🇦🇹","🇧🇪","🇧🇬","🇭🇷","🇨🇾","🇨🇿","🇩🇰","🇪🇪","🇫🇮","🇫🇷","🇩🇪","🇬🇷","🇭🇺","🇮🇪","🇮🇹","🇱🇻","🇱🇹","🇱🇺","🇲🇹","🇳🇱","🇵🇱","🇵🇹","🇷🇴","🇸🇰","🇸🇮","🇪🇸","🇸🇪"] },
+    { name: "G20",                        flags: ["🇦🇷","🇦🇺","🇧🇷","🇨🇦","🇨🇳","🇫🇷","🇩🇪","🇮🇳","🇮🇩","🇮🇹","🇯🇵","🇲🇽","🇷🇺","🇸🇦","🇿🇦","🇰🇷","🇹🇷","🇬🇧","🇺🇸"] },
+    { name: "Oriente Médio",              flags: ["🇸🇦","🇦🇪","🇶🇦","🇰🇼","🇧🇭","🇴🇲","🇮🇱","🇯🇴","🇱🇧","🇮🇶","🇮🇷","🇾🇪"] },
+    { name: "Países Nórdicos",            flags: ["🇩🇰","🇫🇮","🇮🇸","🇳🇴","🇸🇪"] },
+    { name: "Sudeste Asiático (ASEAN)",   flags: ["🇸🇬","🇲🇾","🇮🇩","🇹🇭","🇵🇭","🇻🇳","🇧🇳","🇰🇭","🇱🇦","🇲🇲"] },
+    { name: "Ásia Oriental",              flags: ["🇨🇳","🇯🇵","🇰🇷","🇹🇼","🇲🇳","🇭🇰","🇲🇴"] },
+    { name: "Sul da Ásia",                flags: ["🇮🇳","🇵🇰","🇧🇩","🇱🇰","🇳🇵","🇧🇹","🇲🇻","🇦🇫"] }
+  ];
+
+  ns.buildGrids("flagGridContainer", FLAG_GROUPS);
+
+  /* ---------- Twemoji: emoji uniforme em todos os aparelhos ---------- */
+  ns.parseTwemoji(document.body);
+});
+</script>
+
+<script src="/styles.js"></script>
+<script src="/renderer.js"></script>
+<script src="/script.js" defer=""></script>
+<script src="/symbol-explorer.js"></script>
+<script src="/footer.js"></script>
+</body>
+</html>

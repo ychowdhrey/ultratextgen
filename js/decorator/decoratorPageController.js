@@ -79,6 +79,48 @@
         brackets: 'Parantezler',
         custom: 'Özel'
       }
+    },
+    es: {
+      allVibes: 'Todos los estilos',
+      vibe: 'Estilo',
+      decorate: 'Decorar',
+      wholeText: 'Todo el texto',
+      eachWord: 'Cada palabra',
+      eachLetter: 'Cada letra',
+      intensity: 'Intensidad',
+      light: 'Suave',
+      normal: 'Normal',
+      extra: 'Extra',
+      font: 'Fuente',
+      normalText: 'Texto normal',
+      yourSymbol: 'Tu símbolo',
+      symbolPlaceholder: '🇪🇸 ★ ♡ …',
+      symbolTitle: 'Pega cualquier emoji o símbolo para decorar tu texto con él',
+      shuffle: '🎲 Mezclar',
+      shuffleTitle: 'Genera un nuevo conjunto de decoraciones',
+      empty: 'Escribe algo arriba para decorarlo.',
+      copy: 'Copiar',
+      sample: 'Hola Mundo',
+      themes: {
+        sparkle: 'Destellos',
+        hearts: 'Corazones',
+        coquette: 'Coquette',
+        kawaii: 'Kawaii',
+        gaming: 'Gamer',
+        gothic: 'Gótico',
+        'dark-academia': 'Dark Academia',
+        celestial: 'Celestial',
+        flowers: 'Flores',
+        cottagecore: 'Cottagecore',
+        birthday: 'Cumpleaños',
+        energy: 'Fuego y hielo',
+        y2k: 'Y2K',
+        arrows: 'Flechas',
+        music: 'Música',
+        minimal: 'Minimalista',
+        brackets: 'Corchetes',
+        custom: 'Personalizado'
+      }
     }
   };
   var STR = UI[PAGE_LANG] || UI.en;

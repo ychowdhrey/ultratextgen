@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-byka",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Byka: Skopiuj ♉ — Najstarszy Śledzony Gwiazdozbiór Zodiaku",
+  "meta_description": "Skopiuj symbol zodiakalnego Byka (♉) i dwa różne mity o byku stojące za tym znakiem — Zeusa i Europę w micie greckim oraz starszego, babilońskiego Byka Niebios z Eposu o Gilgameszu. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-byka/",
+  "breadcrumb": "Symbol Byka",
+  "hero_h1": "Symbol Byka",
+  "hero_tagline": "Glif Byka (♉) to głowa i rogi byka — prawdopodobnie najstarszy nieprzerwanie śledzony gwiazdozbiór zodiaku, z dwoma odrębnymi mitami o byku dzielącymi go o tysiąc lat. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Byka (♉, U+2649) to okrąg zwieńczony dwoma zakrzywionymi rogami — stylizowana głowa byka. Znana wersja mitu jest grecka: Zeus przybiera postać białego byka, by porwać Europę, a następnie przepływa z nią przez morze na Kretę. Ale ta historia jest stosunkowo niedawna. Astronomowie i historycy śledzą obserwacje gwiazdozbioru Byka aż do epoki brązu w Mezopotamii, gdzie łączono go z „Bykiem Niebios” — bestią, którą bogini Isztar zsyła, by zabić Gilgamesza w Eposie o Gilgameszu — co prawdopodobnie czyni go najstarszym nieprzerwanie obserwowanym gwiazdozbiorem zodiaku, poprzedzającym historię Europy o ponad tysiąc lat. Byk trwa od 20 kwietnia do 20 maja, jest rządzony przez Wenus i jest znakiem Ziemi o modalności stałej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/taurus-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-byka/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/taurus-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-byka",
+      "label": "Byk",
+      "h2": "Symbol Byka",
+      "intro": "Unicode'owy glif zodiakalnego Byka, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♉", "label": "Symbol Byka" },
+        { "char": "♉️", "label": "Symbol Byka (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Bykowi.",
+      "symbols": [
+        { "char": "♀", "label": "Wenus (Planeta Rządząca)" },
+        { "char": "🜃", "label": "Ziemia (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Byka (Skorpion).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♏", "label": "Skorpion (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-skorpiona/",
+      "title": "Symbol Skorpiona",
+      "desc": "Astrologiczne przeciwieństwo Byka, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/pl/symbol/symbol-wagi/",
+      "title": "Symbol Wagi",
+      "desc": "Jedyny symbol zodiaku przedstawiający przedmiot, a nie zwierzę czy osobę."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "squared-cubed",
+  "page_type": "symbol",
+  "title": "Squared (²) & Cubed (³) Symbols: Copy & Paste Exponents",
+  "meta_description": "Copy and paste the squared (²) and cubed (³) symbols used for exponents and unit abbreviations like m² and cm³, plus why they work almost everywhere. Click to copy.",
+  "canonical": "https://ultratextgen.com/symbol/squared-cubed/",
+  "breadcrumb": "Squared & Cubed Symbols",
+  "hero_h1": "Squared (²) & Cubed (³) Symbols",
+  "hero_tagline": "The two superscript digits that predate the rest of the superscript set — for exponents, unit abbreviations, and \"x squared\" notation. Click any symbol to copy it instantly.",
+  "intro": "² and ³ (superscript two and three, U+00B2 and U+00B3) are the exponent characters behind x², E=mc², and unit abbreviations like m² and cm³. Unlike the rest of the superscript digits, they've been part of the standard Latin-1 character set since the 1980s — which is why they render correctly in far more places than ⁰, ¹, or ⁴–⁹.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "squared-cubed",
+      "label": "Squared & Cubed",
+      "h2": "Squared & Cubed Symbols",
+      "intro": "The two legacy superscript digits, ready to paste after a number or unit.",
+      "symbols": [
+        { "char": "²", "label": "Superscript Two (Squared)" },
+        { "char": "³", "label": "Superscript Three (Cubed)" }
+      ]
+    },
+    {
+      "id": "other-superscript-digits",
+      "label": "Other Superscript Digits",
+      "h2": "The Rest of the Superscript Digits",
+      "intro": "The remaining superscript numerals — added to Unicode much later, in a different block than ² and ³.",
+      "symbols": [
+        { "char": "⁰", "label": "Superscript Zero" },
+        { "char": "¹", "label": "Superscript One" },
+        { "char": "⁴", "label": "Superscript Four" },
+        { "char": "⁵", "label": "Superscript Five" },
+        { "char": "⁶", "label": "Superscript Six" },
+        { "char": "⁷", "label": "Superscript Seven" },
+        { "char": "⁸", "label": "Superscript Eight" },
+        { "char": "⁹", "label": "Superscript Nine" }
+      ]
+    },
+    {
+      "id": "unit-abbreviations",
+      "label": "Common Unit Abbreviations",
+      "h2": "Common Squared & Cubed Unit Abbreviations",
+      "intro": "The most-copied real-world uses of ² and ³ — area and volume units.",
+      "symbols": [
+        { "char": "m²", "label": "Square Meters" },
+        { "char": "cm²", "label": "Square Centimeters" },
+        { "char": "km²", "label": "Square Kilometers" },
+        { "char": "ft²", "label": "Square Feet" },
+        { "char": "m³", "label": "Cubic Meters" },
+        { "char": "cm³", "label": "Cubic Centimeters" },
+        { "char": "ft³", "label": "Cubic Feet" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/multiplication-sign/",
+      "title": "Multiplication Sign (×)",
+      "desc": "The “times” operator, and how it differs from the letter x."
+    },
+    {
+      "href": "/symbol/square-root/",
+      "title": "Square Root (√)",
+      "desc": "A 1525 origin and the vinculum bar's job."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "All Math Symbols",
+      "desc": "Operators, Greek letters, set theory, and calculus notation."
+    }
+  ]
+}

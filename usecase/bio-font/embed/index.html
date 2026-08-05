@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="en"><head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio Font Generator Widget | UltraTextGen</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ultratextgen.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Use Cases",
+      "item": "https://ultratextgen.com/usecase/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bio Font",
+      "item": "https://ultratextgen.com/usecase/bio-font/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Embed",
+      "item": "https://ultratextgen.com/usecase/bio-font/embed/"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="embed-widget-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="embed-wrapper">
+    <div class="hero-card">
+      <h1 class="hero-headline">Bio Font Generator</h1>
+      <p class="hero-tagline">Style your bio — fonts, symbols and dividers, ready to paste.</p>
+
+      <div class="input-wrapper">
+        <textarea class="main-input" id="mainInput" placeholder="Type your bio here..." maxlength="500"></textarea>
+        <span class="char-count"><span id="charCount">0</span>/150</span>
+      </div>
+
+      <!-- Style a Phrase -->
+      <div class="style-phrase-section">
+        <div class="style-phrase-title">Fonts — highlight text above, then apply</div>
+        <div class="decoration-tabs" id="fontTabs">
+          <button class="decoration-tab active" data-font="Ultra Script Bold">𝓢 Script Bold</button>
+          <button class="decoration-tab" data-font="Ultra Bold">𝗕 Bold</button>
+          <button class="decoration-tab" data-font="Ultra Gothic">𝔊 Gothic</button>
+          <button class="decoration-tab" data-font="Ultra Bubble">Ⓑ Bubble</button>
+          <button class="decoration-tab" data-font="Ultra Small Caps">ᴀ Small Caps</button>
+        </div>
+        <div class="selection-indicator" id="selectionIndicator">Highlight a phrase in your bio to style it</div>
+        <button class="apply-btn" id="applyFontBtn" disabled>Apply to selection</button>
+      </div>
+
+      <!-- Symbols & Dividers -->
+      <div class="helper-section">
+        <div class="helper-section-title">Symbols &amp; dividers — click to insert at cursor</div>
+        <div class="decoration-tabs" id="symTabs">
+          <button class="decoration-tab active" data-sym-tab="hearts">♡ Hearts</button>
+          <button class="decoration-tab" data-sym-tab="stars">✦ Stars</button>
+          <button class="decoration-tab" data-sym-tab="celestial">☾ Celestial</button>
+          <button class="decoration-tab" data-sym-tab="cute">❀ Cute</button>
+          <button class="decoration-tab" data-sym-tab="dividers">— Dividers</button>
+        </div>
+        <div class="helper-chip-grid" id="symGrid"></div>
+      </div>
+    </div>
+
+    <!-- Variations -->
+    <div class="embed-variations">
+      <h2>Bio Symbol Frames</h2>
+      <div id="variationsGrid">
+        <div class="variations-placeholder">Type your bio above to see symbol frames</div>
+      </div>
+    </div>
+
+    <!-- Attribution -->
+    <div class="embed-attribution">
+      <a href="https://ultratextgen.com/usecase/bio-font/?utm_source=embed&utm_medium=widget&utm_campaign=bio_font" target="_blank" rel="noopener nofollow">Bio Font Generator</a> by <a href="https://ultratextgen.com/?utm_source=embed&utm_medium=widget&utm_campaign=bio_font" target="_blank" rel="noopener nofollow">UltraTextGen</a>
+      <span class="embed-sep">·</span>
+      <a href="https://ultratextgen.com/instagram/?utm_source=embed&utm_medium=widget&utm_campaign=bio_font" target="_blank" rel="noopener nofollow">Style Instagram Bios →</a>
+    </div>
+  </div>
+
+  <script src="/styles.js" defer></script>
+  <script src="/renderer.js" defer></script>
+
+  <script>
+    // ── Symbols & dividers data (verbatim from usecase/bio-font/bio-font.js) ─────
+    const SYMBOL_TABS = {
+      hearts:   { label: "♡ Hearts",  items: ["♡", "♥", "❤", "❥", "❣", "ღ", "❦", "❧", "♥︎", "💗", "💖", "🤍", "💜", "💞", "💝"] },
+      stars:    { label: "✦ Stars",   items: ["✦", "✧", "⋆", "✩", "✯", "✰", "✵", "✷", "✸", "✹", "✻", "❂", "⁑", "⁕", "✨"] },
+      celestial:{ label: "☾ Celestial", items: ["☾", "☽", "★", "☆", "☀", "✦", "✷", "⊹", "⟡", "⋆｡°✩", "☄", "✺", "❈", "✶", "✴"] },
+      cute:     { label: "❀ Cute",    items: ["❀", "✿", "❁", "✾", "⚘", "♧", "♤", "ꕥ", "꒰꒱", "ʚɞ", "𖧧", "𖦹", "ꕤ", "⌗", "ᯓ"] },
+      dividers: { label: "— Dividers", items: [
+        "·",
+        "─────────",
+        "━━━━━━━━━",
+        "·  ·  ·  ·  ·",
+        "✦ ·············· ✦",
+        "⋆｡°✩ ────── ✩°｡⋆",
+        "˚｡⋆｡˚☽˚｡⋆｡˚",
+        "꒰ ꒱",
+        "♡ ⸝⸝ ♡ ⸝⸝ ♡",
+        "❀ ────── ❀",
+        "❦ ────── ❦",
+        "·˚ ༘ ⋆｡˚",
+        "▸ ◂ ▸ ◂ ▸ ◂"
+      ] }
+    };
+
+    // ── Bio symbol frames ───────────────────────────────────────────────────────
+    const FRAMES = [
+      { label: 'Gaming Frame', left: '꧁',   right: '꧂' },
+      { label: 'Cute Bracket', left: '꒰',   right: '꒱' },
+      { label: 'Star Wrap',    left: '✦',   right: '✦' },
+      { label: 'Crescent',     left: '☾',   right: '☽' },
+      { label: 'Heart',        left: '♡',   right: '♡' },
+      { label: 'Sparkle',      left: '⋆˙⟡', right: '⟡˙⋆' }
+    ];
+
+    const BIO_LIMIT = 150;
+
+    // ── Helpers ────────────────────────────────────────────────────────────────
+    const mainInput = document.getElementById('mainInput');
+    const charCount = document.getElementById('charCount');
+    const applyFontBtn = document.getElementById('applyFontBtn');
+    const selectionIndicator = document.getElementById('selectionIndicator');
+    const variationsGrid = document.getElementById('variationsGrid');
+
+    let activeFont = 'Ultra Script Bold';
+    let selStart = 0, selEnd = 0;
+
+    function updateCharCount() {
+      const len = mainInput.value.length;
+      charCount.textContent = len;
+      if (len > BIO_LIMIT) {
+        charCount.parentElement.classList.add('char-warning');
+      } else {
+        charCount.parentElement.classList.remove('char-warning');
+      }
+    }
+
+    function insertAtCursor(chip, isSeparator) {
+      const ta = mainInput;
+      const start = ta.selectionStart;
+      const end = ta.selectionEnd;
+      const val = ta.value;
+
+      let insert;
+      if (isSeparator) {
+        const atStart = (start === 0);
+        const atEnd = (start === val.length);
+        const charBefore = start > 0 ? val[start - 1] : '';
+        const charAfter = start < val.length ? val[start] : '';
+        const needSpaceBefore = !atStart && charBefore !== ' ';
+        const needSpaceAfter = !atEnd && charAfter !== ' ';
+        insert = (needSpaceBefore ? ' ' : '') + chip + (needSpaceAfter ? ' ' : '');
+      } else {
+        const charBefore = start > 0 ? val[start - 1] : '';
+        const charAfter = start < val.length ? val[start] : '';
+        const needSpaceBefore = start > 0 && charBefore !== ' ';
+        const needSpaceAfter = start < val.length && charAfter !== ' ';
+        insert = (needSpaceBefore ? ' ' : '') + chip + (needSpaceAfter ? ' ' : '');
+      }
+
+      const newVal = val.substring(0, start) + insert + val.substring(end);
+      ta.value = newVal;
+      const newCursor = start + insert.length;
+      ta.selectionStart = ta.selectionEnd = newCursor;
+      ta.focus();
+      updateCharCount();
+      renderVariations();
+    }
+
+    function buildChipGrid(gridEl, chips, isSeparator) {
+      gridEl.innerHTML = '';
+      chips.forEach(chip => {
+        const btn = document.createElement('button');
+        btn.className = 'helper-chip';
+        btn.textContent = chip;
+        btn.type = 'button';
+        btn.addEventListener('click', () => insertAtCursor(chip, isSeparator));
+        gridEl.appendChild(btn);
+      });
+    }
+
+    // ── Symbol tabs ────────────────────────────────────────────────────────────
+    const symGrid = document.getElementById('symGrid');
+    const symTabs = document.querySelectorAll('#symTabs [data-sym-tab]');
+    let activeSymTab = 'hearts';
+
+    function renderSymGrid() {
+      buildChipGrid(symGrid, SYMBOL_TABS[activeSymTab].items, false);
+    }
+
+    symTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        symTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeSymTab = tab.dataset.symTab;
+        renderSymGrid();
+      });
+    });
+
+    renderSymGrid();
+
+    // ── Font tabs ──────────────────────────────────────────────────────────────
+    const fontTabs = document.querySelectorAll('#fontTabs [data-font]');
+    fontTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        fontTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeFont = tab.dataset.font;
+      });
+    });
+
+    // ── Selection tracking ─────────────────────────────────────────────────────
+    function updateSelection() {
+      selStart = mainInput.selectionStart;
+      selEnd = mainInput.selectionEnd;
+      if (selStart !== selEnd) {
+        const selected = mainInput.value.substring(selStart, selEnd);
+        selectionIndicator.innerHTML = 'Selected: <em>' + escapeHtml(selected) + '</em>';
+        applyFontBtn.disabled = false;
+      } else {
+        selectionIndicator.textContent = 'Highlight a phrase in your bio to style it';
+        applyFontBtn.disabled = true;
+      }
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    mainInput.addEventListener('select', updateSelection);
+    mainInput.addEventListener('mouseup', updateSelection);
+    mainInput.addEventListener('keyup', updateSelection);
+
+    // ── Apply font to selection ────────────────────────────────────────────────
+    applyFontBtn.addEventListener('click', () => {
+      if (selStart === selEnd) return;
+      const val = mainInput.value;
+      const selectedText = val.substring(selStart, selEnd);
+      const style = textStyles[activeFont];
+      if (!style) return;
+      const transformed = UltraTextGenRender.renderAny(selectedText, style);
+      const newVal = val.substring(0, selStart) + transformed + val.substring(selEnd);
+      mainInput.value = newVal;
+      const newCursor = selStart + transformed.length;
+      mainInput.selectionStart = mainInput.selectionEnd = newCursor;
+      mainInput.focus();
+      selStart = selEnd = newCursor;
+      selectionIndicator.textContent = 'Highlight a phrase in your bio to style it';
+      applyFontBtn.disabled = true;
+      updateCharCount();
+      renderVariations();
+    });
+
+    // ── Input change ───────────────────────────────────────────────────────────
+    mainInput.addEventListener('input', () => {
+      updateCharCount();
+      renderVariations();
+    });
+
+    // ── Render variations ──────────────────────────────────────────────────────
+    function renderVariations() {
+      const text = mainInput.value.trim();
+      if (!text) {
+        variationsGrid.innerHTML = '<div class="variations-placeholder">Type your bio above to see symbol frames</div>';
+        return;
+      }
+
+      variationsGrid.innerHTML = '';
+
+      FRAMES.forEach(frame => {
+        const result = frame.left + ' ' + text + ' ' + frame.right;
+        const len = result.length;
+        const isOver = len > BIO_LIMIT;
+
+        const card = document.createElement('div');
+        card.className = 'style-card';
+
+        const info = document.createElement('div');
+        info.className = 'style-info';
+
+        const name = document.createElement('div');
+        name.className = 'style-name';
+        name.textContent = frame.label;
+
+        const preview = document.createElement('div');
+        preview.className = 'style-preview';
+        preview.textContent = result;
+
+        const charInfo = document.createElement('div');
+        charInfo.className = 'variation-char-count' + (isOver ? ' variation-char-over' : '');
+        charInfo.textContent = len + '/' + BIO_LIMIT + (isOver ? ' ⚠ over limit' : '');
+
+        info.appendChild(name);
+        info.appendChild(preview);
+        info.appendChild(charInfo);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.textContent = 'Copy';
+        copyBtn.type = 'button';
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(result).then(() => {
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('copied');
+            setTimeout(() => {
+              copyBtn.textContent = 'Copy';
+              copyBtn.classList.remove('copied');
+            }, 1500);
+          });
+        });
+
+        card.appendChild(info);
+        card.appendChild(copyBtn);
+        variationsGrid.appendChild(card);
+      });
+    }
+  </script>
+</body></html>

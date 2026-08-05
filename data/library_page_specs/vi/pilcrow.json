@@ -1,0 +1,62 @@
+{
+  "slug": "pilcrow",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Pilcrow (¶): Ý Nghĩa, Lịch Sử Và Cách Gõ",
+  "meta_description": "Pilcrow ¶ (U+00B6) được giải thích — dấu đoạn văn thời Trung Cổ đứng sau nút Ẩn/Hiện của Word, và cách gõ trên Windows/Mac.",
+  "canonical": "https://ultratextgen.com/vi/symbol/pilcrow/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Pilcrow",
+  "hero_h1": "Ký Hiệu Pilcrow (¶)",
+  "hero_tagline": "¶ nghĩa là gì, từ này bắt nguồn từ đâu, và cách gõ ra nó — nhấp để sao chép ngay.",
+  "intro": "Các bản viết tay thời Trung Cổ thường được viết thành một khối văn bản liên tục, không ngắt dòng hay thụt đầu dòng theo kiểu đoạn văn hiện đại. Các thầy dòng đánh dấu nơi một mạch lý lẽ mới bắt đầu bằng cách chèn một ký hiệu đặc biệt, thường bằng mực đỏ, và dần định hình thành hình dạng ¶. Bản thân từ «pilcrow» là một biến âm sai lệch của từ tiếng Pháp cổ paragraphe, bị người Anh đọc trại đi lặp đi lặp lại suốt thời Trung Cổ cho đến khi định hình thành dạng hiện tại, nghe không liên quan gì đến gốc từ. Ký hiệu này ngày nay tồn tại chủ yếu như chỉ báo «dấu định dạng» trong các trình xử lý văn bản — nút Ẩn/Hiện ¶ của Microsoft Word cho thấy chính xác nơi mỗi đoạn văn kết thúc, một dấu hiệu không hiển thị khi in cho đến khi bạn yêu cầu xem nó.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pilcrow/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/pilcrow/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pilcrow/" }
+  ],
+  "sections": [
+    {
+      "id": "pilcrow-sign",
+      "label": "Pilcrow",
+      "h2": "Ký Hiệu Pilcrow",
+      "intro": "Ký hiệu pilcrow, sẵn sàng để dán.",
+      "symbols": [
+        { "char": "¶", "label": "Ký Hiệu Pilcrow (U+00B6)" }
+      ]
+    },
+    {
+      "id": "confusable",
+      "label": "Ký Hiệu Dễ Nhầm",
+      "h2": "Ký Hiệu Trông Giống Pilcrow",
+      "intro": "Ký hiệu này có hình dáng gần giống pilcrow nhưng mang ý nghĩa hoàn toàn khác.",
+      "symbols": [
+        { "char": "§", "label": "Ký Hiệu Điều Khoản (U+00A7) — một dấu trích dẫn pháp lý, không phải dấu ngắt đoạn văn" }
+      ]
+    },
+    {
+      "id": "related",
+      "label": "Ký Hiệu Liên Quan",
+      "h2": "Các Ký Tự Đặc Biệt Khác",
+      "intro": "Những ký tự đặc biệt khác thường xuất hiện cùng pilcrow trong nội dung về dấu in ấn.",
+      "symbols": [
+        { "char": "§", "label": "Ký Hiệu Điều Khoản" },
+        { "char": "@", "label": "Ký Hiệu At" },
+        { "char": "&", "label": "Ampersand" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/section-sign/", "title": "Ký Hiệu Điều Khoản (§)", "desc": "Dấu hiệu mà luật sư dùng để trích dẫn một điều khoản cụ thể." },
+    { "href": "/vi/symbol/at-symbol/", "title": "Ký Hiệu At (@)", "desc": "Một dấu sổ sách 500 năm tuổi trở thành ký tự định danh của thư điện tử." },
+    { "href": "/vi/symbol/ampersand/", "title": "Ampersand (&)", "desc": "Một chữ ghép La Mã cho «et», và tên gọi của nó từ đâu mà có." },
+    { "href": "/library/special-characters/", "title": "Tất Cả Ký Tự Đặc Biệt", "desc": "Dấu câu, chữ in ấn và các ký tự Unicode hiếm gặp khác." }
+  ]
+}

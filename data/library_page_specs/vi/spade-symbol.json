@@ -1,0 +1,72 @@
+{
+  "slug": "spade-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Bích: Sao Chép & Dán ♠ ♤ — Chất Bài Đặt Tên Theo Thanh Kiếm, Không Phải Cái Xẻng",
+  "meta_description": "Sao chép ký hiệu bích — dạng đặc ♠ (U+2660) và dạng viền ♤ (U+2664) — và tìm hiểu cái tên của chất bài này bắt nguồn từ thanh kiếm ra sao, cùng con Át Bích từng mang dấu thuế chính thức của nước Anh. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/spade-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Bích",
+  "hero_h1": "Ký Hiệu Bích",
+  "hero_tagline": "Chất bích ở cả hai dạng Unicode — dạng đặc ♠ (U+2660) và dạng viền ♤ (U+2664) — ký hiệu bài mà cái tên của nó bắt nguồn từ chất kiếm, và con Át Bích từng mang dấu thuế chính thức của nước Anh. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Bích — ♠ (U+2660, BLACK SPADE SUIT) ở dạng đặc và ♤ (U+2664, WHITE SPADE SUIT) ở dạng viền — là một trong bốn chất của bộ bài kiểu Pháp tiêu chuẩn, được thêm vào Unicode 1.1 năm 1993 cùng cơ, rô và nhép, tám glyph chất bài chiếm từ U+2660 đến U+2667. Tên gọi của nó là một bài học lịch sử nhỏ: «spade» không đến từ dụng cụ đào đất mà từ espada trong tiếng Tây Ban Nha và spada trong tiếng Ý, nghĩa là «kiếm», chất bài của những bộ bài kiểu Latin cổ hơn. Khi các nhà làm bài Pháp chuẩn hóa hệ thống bốn chất vào nửa sau thế kỷ 15, họ vẽ lại thanh kiếm thành hình lá đơn giản màu đen mà chúng ta biết ngày nay — rẻ để in khuôn với hai màu, chính vì thế mà bộ bài Pháp sau đó tràn khắp châu Âu và đến được nước Anh. Theo quy ước của Unicode, «black» nghĩa là tô đặc còn «white» nghĩa là viền, còn màu sắc thực tế thì tùy phông chữ quyết định, nên cùng cặp đặc/viền đó tồn tại cho mọi chất bài. Con Át Bích mang theo kho truyền thuyết phong phú nhất bộ bài: ở nước Anh nó mang dấu thuế chính thức từ năm 1712 và, sau năm 1765, một thiết kế khắc công phu do Stamp Office (Sở Thuế Tem) in — tổ tiên của con át được trang trí cầu kỳ ngày nay.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/spade-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "spade-symbol",
+      "label": "Ký Hiệu Bích",
+      "h2": "Ký Hiệu Bích — ♠ & ♤",
+      "intro": "Chính chất bài, ở cả hai dạng Unicode. Dạng đặc ♠ là bích «đen» mặc định; ♤ là dạng viền «trắng», và ♠️ là dạng trình bày emoji có bộ chọn biến thể. Sẵn sàng để dán ở bất cứ đâu.",
+      "symbols": [
+        { "char": "♠", "label": "Bích Đen (U+2660) — Dạng Đặc / Tô Đặc" },
+        { "char": "♤", "label": "Bích Trắng (U+2664) — Dạng Viền" },
+        { "char": "♠️", "label": "Emoji Chất Bích (U+2660 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "all-four-suits",
+      "label": "Cả Bốn Chất",
+      "h2": "Cả Bốn Chất — Đặc & Viền",
+      "intro": "Unicode cấp cho mỗi chất bài kiểu Pháp một glyph «đen» đặc và một glyph «trắng» viền, gói gọn trong một dãy liền từ U+2660 đến U+2667. Lưu ý điểm đặc biệt: bích và nhép mặc định là dạng đặc trong khi cơ và rô mặc định là dạng viền.",
+      "symbols": [
+        { "char": "♠", "label": "Bích Đen (U+2660)" },
+        { "char": "♥", "label": "Cơ Đen (U+2665)" },
+        { "char": "♦", "label": "Rô Đen (U+2666)" },
+        { "char": "♣", "label": "Nhép Đen (U+2663)" },
+        { "char": "♤", "label": "Bích Trắng (U+2664)" },
+        { "char": "♡", "label": "Cơ Trắng (U+2661)" },
+        { "char": "♢", "label": "Rô Trắng (U+2662)" },
+        { "char": "♧", "label": "Nhép Trắng (U+2667)" }
+      ]
+    },
+    {
+      "id": "ace-and-cards",
+      "label": "Át Bích & Bài Tây",
+      "h2": "Át Bích & Các Glyph Bài Tây",
+      "intro": "Lá bài giàu truyền thuyết nhất bộ bài: nước Anh đóng dấu thuế lên Át Bích từ năm 1712 và in thiết kế Stamp Office công phu sau năm 1765, và một câu chuyện thời chiến được lan truyền rộng rãi (và gây tranh cãi) kể về việc lính Mỹ tại Việt Nam dùng nó như một «lá bài tử thần». Khối Playing Cards của Unicode cấp cho mỗi lá bài glyph riêng — đây là bốn con át và mặt sau lá bài.",
+      "symbols": [
+        { "char": "🂡", "label": "Bài Tây Át Bích (U+1F0A1)" },
+        { "char": "🂱", "label": "Bài Tây Át Cơ (U+1F0B1)" },
+        { "char": "🃁", "label": "Bài Tây Át Rô (U+1F0C1)" },
+        { "char": "🃑", "label": "Bài Tây Át Nhép (U+1F0D1)" },
+        { "char": "🂠", "label": "Mặt Sau Lá Bài (U+1F0A0)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/card-suit-symbols/", "title": "Ký Hiệu Chất Bài", "desc": "Cả bốn chất bài Tây — bích, cơ, rô và nhép — ở dạng đặc và viền để duyệt và sao chép." },
+    { "href": "/library/dice-domino-symbols/", "title": "Ký Hiệu Xúc Xắc, Domino & Mạt Chược", "desc": "Phần còn lại của bộ trò chơi trên bàn: mặt xúc xắc, quân domino và ký hiệu mạt chược Unicode." },
+    { "href": "/vi/symbol/heart-symbol/", "title": "Ký Hiệu Trái Tim (♥)", "desc": "Chất bài «anh em»: trái tim ở dạng đặc ♥ và viền ♡ trong Unicode, từ cùng dãy U+2660–U+2667." }
+  ]
+}

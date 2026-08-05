@@ -1,0 +1,105 @@
+{
+  "slug": "om-symbol",
+  "page_type": "symbol",
+  "title": "Om Symbol: Copy & Paste ॐ 🕉️ — One Sacred Sound, Three Meanings in Hinduism, Buddhism, and Jainism",
+  "meta_description": "Copy and paste Om / Aum (ॐ U+0950, 🕉️ U+1F549) — the sacred syllable read as the primordial cosmic sound in Hinduism, the opening of Om mani padme hum in Buddhism, and a condensed form of the five supreme beings in Jainism. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/om-symbol/",
+  "breadcrumb": "Om Symbol",
+  "hero_h1": "Om Symbol",
+  "hero_tagline": "Om, or Aum (ॐ, 🕉️) — the sacred syllable shared by Hinduism, Buddhism, and Jainism, where the same sound is read differently in each tradition. Click any symbol to copy it instantly.",
+  "intro": "Om, also spelled Aum, is a sacred sound and symbol central to several Indian religions. Unicode encodes it two ways. The first is ॐ (U+0950 DEVANAGARI OM), a cursive ligature in the Devanagari script that fuses the letters a (अ) and u (उ) with a nasal chandrabindu; it was added in Unicode 1.1 back in 1993. The second is 🕉️ (U+1F549 OM SYMBOL), a standalone pictographic glyph defined as \"independent of Devanagari font\" and added far later, in Unicode 7.0 (2014), then taken up as an emoji in 2015 — the same glyph the Khanda symbol page already displays as a related mark. The syllable is chanted at the start or end of prayers, mantras, and yoga practice, but its meaning is not uniform across faiths: Hindu tradition often describes it as the primordial sound of the universe and an expression of ultimate reality; in Buddhism it opens mantras such as Om mani padme hum, linked to the bodhisattva of compassion; and in Jainism it is understood as a condensed form of the Panch Parmeshthi, the five supreme beings. This page reports that documented usage without ranking the traditions.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "om-glyphs",
+      "label": "Om",
+      "h2": "Om Symbol",
+      "intro": "Three Unicode characters for Om: the Devanagari script ligature, the standalone pictographic OM SYMBOL, and the distinct Jain Om.",
+      "symbols": [
+        {
+          "char": "ॐ",
+          "label": "Devanagari Om"
+        },
+        {
+          "char": "🕉️",
+          "label": "Om Symbol"
+        },
+        {
+          "char": "ꣽ",
+          "label": "Jain Om"
+        }
+      ]
+    },
+    {
+      "id": "meditation-symbols",
+      "label": "Meditation & Yoga",
+      "h2": "Meditation & Yoga Symbols",
+      "intro": "Symbols commonly displayed alongside Om in yoga, meditation, and dharmic contexts.",
+      "symbols": [
+        {
+          "char": "🪷",
+          "label": "Lotus"
+        },
+        {
+          "char": "🧘",
+          "label": "Person in Lotus Position"
+        },
+        {
+          "char": "📿",
+          "label": "Prayer Beads"
+        },
+        {
+          "char": "☸️",
+          "label": "Dharma Wheel"
+        }
+      ]
+    },
+    {
+      "id": "faith-symbols",
+      "label": "Faith Symbols",
+      "h2": "Other Faith & Emblem Symbols",
+      "intro": "Symbols from other traditions that pair well with faith and identity content.",
+      "symbols": [
+        {
+          "char": "🪯",
+          "label": "Khanda"
+        },
+        {
+          "char": "✡️",
+          "label": "Star of David"
+        },
+        {
+          "char": "☪️",
+          "label": "Star and Crescent"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin Yang"
+        },
+        {
+          "char": "✝️",
+          "label": "Latin Cross"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith symbols from every major world religion in one reference."
+    },
+    {
+      "href": "/symbol/khanda-symbol/",
+      "title": "Khanda Symbol",
+      "desc": "The Sikh emblem whose own page already displays Om as a related dharmic glyph."
+    },
+    {
+      "href": "/symbol/hamsa-symbol/",
+      "title": "Hamsa Symbol",
+      "desc": "Another cross-tradition symbol reported as documented history, without picking a side."
+    }
+  ]
+}

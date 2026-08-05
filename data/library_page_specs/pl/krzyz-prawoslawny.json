@@ -1,0 +1,78 @@
+{
+  "slug": "krzyz-prawoslawny",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Krzyż Prawosławny: Skopiuj ☦ — Co Naprawdę Oznaczają Jego Trzy Belki",
+  "meta_description": "Skopiuj krzyż prawosławny (☦) i dowiedz się, co oznaczają jego trzy poprzeczne belki — titulus, główną poprzeczkę i ukośny podnóżek związany z dwoma łotrami ukrzyżowanymi obok Jezusa. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/krzyz-prawoslawny/",
+  "breadcrumb": "Krzyż Prawosławny",
+  "hero_h1": "Krzyż Prawosławny",
+  "hero_tagline": "Krzyż z trzema belkami (☦), kojarzony najczęściej z prawosławiem rosyjskim — gdzie górna belka przedstawia napis Piłata, a ukośna dolna belka niesie konkretne, liczące sobie wieki znaczenie związane z dwoma łotrami ukrzyżowanymi obok Jezusa. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Krzyż prawosławny (☦, U+2626) dodaje dwie dodatkowe belki do zwykłego krzyża łacińskiego. Krótka górna belka to titulus — tabliczka z napisem Piłata „Jezus Nazareński, Król Żydowski” (często skracana do INRI). Główna belka to zwykła poprzeczka. Dolna belka to suppedaneum, czyli podnóżek — i jest narysowana ukośnie, co tradycja bizantyjska, udokumentowana mniej więcej od XI wieku, tłumaczy dwoma łotrami ukrzyżowanymi obok Jezusa: strona skierowana ku górze wskazuje na skruszonego łotra wstępującego do nieba, a strona skierowana ku dołowi — na łotra nieskruszonego. Sama forma z trzema belkami jest poświadczona już od VI wieku i używana jest w całym prawosławiu wschodnim, ale dziś najbardziej konsekwentnie kojarzy się konkretnie z prawosławiem rosyjskim, ustandaryzowana na kopułach rosyjskich cerkwi już od XVI wieku — cerkwie greckie, serbskie, bułgarskie i rumuńskie częściej używają zamiast tego krzyży zwykłych lub dwubelkowych.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/orthodox-cross/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/krzyz-prawoslawny/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/orthodox-cross/" }
+  ],
+  "sections": [
+    {
+      "id": "krzyz-prawoslawny",
+      "label": "Krzyż Prawosławny",
+      "h2": "Krzyż Prawosławny",
+      "intro": "Sam krzyż z trzema belkami, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "☦", "label": "Krzyż Prawosławny" },
+        { "char": "☦️", "label": "Krzyż Prawosławny (Emoji)" }
+      ]
+    },
+    {
+      "id": "rodzina-krzyzy",
+      "label": "Rodzina Krzyży",
+      "h2": "Rodzina Symboli Krzyża",
+      "intro": "Jak ukośne, trzybelkowe ramię krzyża prawosławnego wypada na tle innych nazwanych form krzyża — przydatne, jeśli nie masz pewności, jaki krzyż widzisz.",
+      "symbols": [
+        { "char": "✝", "label": "Krzyż Łaciński — Jedna Poprzeczka, Chrześcijaństwo Zachodnie" },
+        { "char": "☨", "label": "Krzyż Lotaryński — Dwie Poziome Belki, Bez Ukosu, Użycie Patriarchalne" },
+        { "char": "☩", "label": "Krzyż Jerozolimski" },
+        { "char": "♱", "label": "Krzyż Wschodniosyryjski" }
+      ]
+    },
+    {
+      "id": "symbole-religijne",
+      "label": "Symbole Religijne",
+      "h2": "Powiązane Symbole Religijne i Duchowe",
+      "intro": "Inne symbole wiary często wyszukiwane i pokazywane obok krzyża prawosławnego.",
+      "symbols": [
+        { "char": "✡", "label": "Gwiazda Dawida" },
+        { "char": "☪", "label": "Gwiazda i Półksiężyc" },
+        { "char": "☯", "label": "Yin Yang" },
+        { "char": "☮", "label": "Symbol Pokoju" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Symbole wiary i duchowości z głównych światowych tradycji, w tym krzyże, półksiężyce i gwiazdy."
+    },
+    {
+      "href": "/symbol/cross-symbol/",
+      "title": "Cross Symbol",
+      "desc": "Zwykły krzyż łaciński chrześcijaństwa — i sztylet oraz znak ✕, z którymi bywa mylony."
+    },
+    {
+      "href": "/symbol/star-of-david/",
+      "title": "Star of David",
+      "desc": "Kolejny symbol z realną, udokumentowaną historią, opisaną bez stawania po żadnej ze stron."
+    }
+  ]
+}

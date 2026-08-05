@@ -1,0 +1,78 @@
+{
+  "slug": "symbole-lambda",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Lambda : Copier-Coller λ Λ — Le Signe de la Libération Gay & le Lambda-Calcul de Church",
+  "meta_description": "Copie et colle le symbole lambda — λ minuscule (longueur d'onde, signe de la libération gay de 1970) et Λ majuscule (la constante cosmologique) — et comment il a nommé le lambda de Python et AWS Lambda. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-lambda/",
+  "breadcrumb": "Symbole Lambda",
+  "hero_h1": "Symbole Lambda",
+  "hero_tagline": "Le λ minuscule que le graphiste Tom Doerr a transformé en emblème de la libération gay en 1970, la même lettre derrière le lambda-calcul d'Alonzo Church et le symbole physique de la longueur d'onde, et le Λ majuscule qui représente la constante cosmologique. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Le glyphe minuscule de lambda, λ (U+03BB, GREEK SMALL LETTER LAMDA), est la 11ᵉ lettre de l'alphabet grec — mais elle porte deux des significations les plus lourdes qu'un seul caractère ait jamais accumulées. En 1970, le graphiste Tom Doerr, membre fondateur de la Gay Activists Alliance (formée à New York en décembre 1969), a choisi le λ minuscule comme emblème du groupe — pour son sens physique de « échange complet d'énergie », dit-on — et dès décembre 1974, le Congrès international des droits gays d'Édimbourg l'avait déclaré symbole international des droits gays et lesbiens ; il nomme encore aujourd'hui Lambda Legal et la Lambda Literary Foundation. La même lettre ancre aussi l'informatique : Alonzo Church a bâti son lambda-calcul dans les années 1930, le système formel qui a plus tard donné à Python son mot-clé lambda pour les fonctions anonymes (ajouté en 1994) et à Amazon son service serverless AWS Lambda. En physique, λ est le symbole standard de la longueur d'onde, tandis que le Λ majuscule (U+039B) désigne la constante cosmologique — le terme d'énergie sombre du modèle ΛCDM de l'univers en expansion. Les deux formes sont entrées dans Unicode 1.1 en 1993.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/lambda-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-lambda/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/lambda-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "la-lettre-lambda",
+      "label": "La Lettre",
+      "h2": "Le Symbole Lambda — λ & Λ",
+      "intro": "La lettre grecque elle-même — la 11ᵉ de l'alphabet, valant 30 dans le système de numération grecque, descendue de la lettre phénicienne lamed. Le λ minuscule assure presque tout le travail culturel ; le Λ majuscule est un symbole distinct de mathématiques et de cosmologie.",
+      "symbols": [
+        { "char": "λ", "label": "Lambda Minuscule Grec (U+03BB)" },
+        { "char": "Λ", "label": "Lambda Majuscule Grec (U+039B)" }
+      ]
+    },
+    {
+      "id": "symbole-de-la-liberation-gay",
+      "label": "Libération Gay",
+      "h2": "Lambda comme Symbole de la Libération Gay",
+      "intro": "La Gay Activists Alliance de New York a adopté le λ minuscule en 1970, et le Congrès international des droits gays l'a déclaré symbole international des droits gays et lesbiens en 1974 — l'un des tout premiers emblèmes du mouvement. Colle-le aux côtés des symboles de fierté qu'il accompagne aujourd'hui.",
+      "symbols": [
+        { "char": "λ", "label": "Lambda Minuscule Grec (U+03BB) — le Signe de la Libération Gay" },
+        { "char": "🏳️‍🌈", "label": "Drapeau Arc-en-Ciel" },
+        { "char": "⚧", "label": "Symbole Transgenre (U+26A7)" }
+      ]
+    },
+    {
+      "id": "lambda-code-science",
+      "label": "Code & Science",
+      "h2": "Lambda en Code, en Maths & en Physique",
+      "intro": "La vie technique de la lettre. Le λ minuscule marque les fonctions anonymes — du lambda-calcul d'Alonzo Church jusqu'au mot-clé lambda de Python et à AWS Lambda — et représente la longueur d'onde en physique ; le Λ majuscule est la constante cosmologique du modèle ΛCDM.",
+      "symbols": [
+        { "char": "λ", "label": "Lambda Minuscule Grec (U+03BB) — Longueur d'Onde & Lambda-Calcul" },
+        { "char": "Λ", "label": "Lambda Majuscule Grec (U+039B) — Constante Cosmologique" },
+        { "char": "𝜆", "label": "Lambda Italique Mathématique (U+1D706) — la Variante d'Équation" }
+      ]
+    },
+    {
+      "id": "lettres-grecques-associees",
+      "label": "Lettres Grecques",
+      "h2": "Lettres Grecques Associées",
+      "intro": "Lambda est la 11ᵉ lettre de l'alphabet grec. Voici les voisines que l'on copie le plus souvent à ses côtés.",
+      "symbols": [
+        { "char": "π", "label": "Pi Minuscule Grec" },
+        { "char": "Σ", "label": "Sigma Majuscule Grec" },
+        { "char": "Δ", "label": "Delta Majuscule Grec" },
+        { "char": "Ω", "label": "Oméga Majuscule Grec" },
+        { "char": "α", "label": "Alpha Minuscule Grec" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet — alpha, lambda, pi, sigma, oméga — en majuscules et minuscules, prêt à copier-coller." },
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Longueur d'onde, constante cosmologique, et les opérateurs et lettres grecques qui complètent une équation (en anglais)." },
+    { "href": "/library/pride-lgbtq-symbols/", "title": "Pride & LGBTQ+ Symbols", "desc": "Le lambda, l'arc-en-ciel, la labrys et les autres emblèmes de l'identité LGBTQ+, réunis dans un même endroit pour être copiés (en anglais)." },
+    { "href": "/fr/symbol/symbole-pi/", "title": "Symbole Pi", "desc": "Une autre lettre grecque à la vie bien au-delà des maths : la constante que William Jones a nommée en 1706." }
+  ]
+}

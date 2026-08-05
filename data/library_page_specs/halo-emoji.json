@@ -1,0 +1,119 @@
+{
+  "slug": "halo-emoji",
+  "title": "Halo Emoji & Kaomoji: Copy & Paste 😇 Innocent Combos",
+  "meta_description": "Copy and paste the halo emoji 😇, angel 👼 combos, acting-innocent faces like 😇 👀, and sweet kaomoji such as (｡◕‿◕｡). Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/halo-emoji/",
+  "breadcrumb": "Halo Emoji & Kaomoji",
+  "hero_h1": "Halo Emoji & Kaomoji",
+  "hero_tagline": "The halo emoji 😇 with its angel, dove, and sparkle companions, the 'who, me?' faces that sell the innocent act, and sweet kaomoji to match. Click any symbol to copy it instantly.",
+  "intro": "The smiling face with halo 😇 means innocent, sweet, or blessed — and it's just as often used ironically, dropped right after a caption confesses to something a little mischievous. This page gathers the halo face with its angel 👼, dove 🕊️, and sparkle 🌟 companions, the 'who, me?' faces like 👀 and 🙈 that sell the innocent act, and sweet kaomoji such as (｡◕‿◕｡). For the other half of the bit — actual horns and mischief — the devil emoji page linked below is 😇's natural counterpart.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "halo-angel-core",
+      "label": "Core Halo & Angel",
+      "h2": "Halo & Angel Emoji",
+      "intro": "The halo face itself, plus the angel, dove, and light glyphs that build out a wholesome, blessed look.",
+      "symbols": [
+        { "char": "😇", "label": "Smiling Face With Halo" },
+        { "char": "👼", "label": "Baby Angel" },
+        { "char": "🕊️", "label": "Dove of Peace" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "🙏", "label": "Folded Hands" }
+      ]
+    },
+    {
+      "id": "innocent-act",
+      "label": "Innocent Act",
+      "h2": "Acting Innocent Emoji",
+      "intro": "The 'who, me?' faces that pair with the halo when a caption plays dumb after doing something cheeky.",
+      "symbols": [
+        { "char": "👀", "label": "Eyes" },
+        { "char": "🙈", "label": "See-No-Evil Monkey" },
+        { "char": "🤭", "label": "Face With Hand Over Mouth" },
+        { "char": "😊", "label": "Smiling Face With Smiling Eyes" },
+        { "char": "😌", "label": "Relieved Face" },
+        { "char": "🤫", "label": "Shushing Face" }
+      ]
+    },
+    {
+      "id": "halo-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Innocent & Angelic Kaomoji",
+      "intro": "Japanese-style text faces with the same sweet, butter-wouldn't-melt energy as the halo emoji.",
+      "symbols": [
+        { "char": "(｡◕‿◕｡)", "label": "Innocent Eyes Kaomoji" },
+        { "char": "(¬‿¬)", "label": "Butter Wouldn't Melt Kaomoji" },
+        { "char": "( ˘ᵕ˘ )", "label": "Sweet Content Kaomoji" },
+        { "char": "ヽ(´▽`)/", "label": "Cheerful Innocent Kaomoji" },
+        { "char": "(๑˘◡˘๑)", "label": "Blissful Innocent Kaomoji" },
+        { "char": "(◍•ᴗ•◍)", "label": "Adorable Innocent Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Halo Emoji Combo Sets",
+    "intro": "Ready-made halo combos — copy a full set with one click and paste it straight into a caption, bio, or comment."
+  },
+  "collection_container_id": "haloSetsContainer",
+  "collections": [
+    {
+      "name": "Halo Mode",
+      "flags": ["😇", "✨", "👼"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Acting Innocent",
+      "flags": ["😇", "👀", "🤭"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Little Angel",
+      "flags": ["👼", "🕊️", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Blessed Vibes",
+      "flags": ["🙏", "🌟", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sweet & Innocent",
+      "flags": ["😇", "😊", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Halo Kaomoji Set",
+      "flags": ["(｡◕‿◕｡)", "(¬‿¬)", "( ˘ᵕ˘ )"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/devil-emoji/",
+      "title": "Devil Emoji & Kaomoji",
+      "desc": "The direct counterpart to 😇 — devil, imp, and villain combos for the other half of the bit."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Crosses, stars of faith, and other religious and spiritual glyphs to copy and paste."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "Every smiley and face emoji in one browsable grid, organized by mood."
+    },
+    {
+      "href": "/library/fantasy-mythical-emojis/",
+      "title": "Fantasy & Mythical Emojis",
+      "desc": "Dragons, wizards, and other mythic and legendary emoji for lore-heavy posts."
+    }
+  ]
+}

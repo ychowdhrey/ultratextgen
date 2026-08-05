@@ -63,6 +63,21 @@ const CATEGORY_PAGES = {
     title: 'Small Text',
     description: 'Small and tiny Unicode text styles for names and bios.'
   },
+  'subscript': {
+    slug: 'subscript',
+    title: 'Subscript',
+    description: 'Subscript Unicode text for chemistry formulas, footnotes, and indices.'
+  },
+  'superscript': {
+    slug: 'superscript',
+    title: 'Superscript',
+    description: 'Superscript Unicode text for exponents, ordinals, and tiny asides.'
+  },
+  'small-caps': {
+    slug: 'small-caps',
+    title: 'Small Caps',
+    description: 'Small caps Unicode text for bios, headings, and clean editorial styling.'
+  },
   'cute-fonts': {
     slug: 'cute-fonts',
     title: 'Cute Fonts',
@@ -201,6 +216,11 @@ const PRINTABLE_PAGES = {
     slug: 'banner-maker',
     title: 'Printable Banner Maker',
     description: 'Type a word or phrase to build a printable letter banner — one cut-out flag per letter with string holes, paginated to print across multiple sheets.'
+  },
+  'spanish-alphabet-chart': {
+    slug: 'spanish-alphabet-chart',
+    title: 'Printable Spanish Alphabet Chart',
+    description: 'All 27 letters of the Spanish alphabet, A-Z plus Ñ, as a free printable reference chart — pick any single letter or print the whole set.'
   }
 };
 
@@ -543,6 +563,10 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'circle',
   slug: 'ultra-bubble',
+  // Enclosed Alphanumerics (U+24B6 circled letters) show as a tofu box when a
+  // combining accent mark is attached in most font stacks — safer to leave an
+  // accented letter unstyled here than risk an illegible glyph. See renderer.js.
+  accentSafe: false,
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
@@ -561,12 +585,16 @@ const textStyles = {
 'Ultra Bubble Light': {
   upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ',
   lower: '⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵',
-  nums: '⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽',
+  // No parenthesized-zero exists in Unicode, so digit 0 falls back to plain
+  // '0' (like a letter with no equivalent) instead of shifting ⑴-⑽ across
+  // all ten digits, which used to render "9" as "(10)".
+  nums: '0⑴⑵⑶⑷⑸⑹⑺⑻⑼',
   type: 'map',
   category: 'bubble',
   familySlug: 'bubble',
   groupSlug: 'light',
   slug: 'ultra-bubble-light',
+  accentSafe: false, // see Ultra Bubble — same Enclosed Alphanumerics tofu risk
   platforms: ['all', 'instagram', 'x', 'whatsapp']
 },
 
@@ -579,6 +607,10 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'tiles',
   slug: 'ultra-bubble-tiles',
+  // Squared Latin Capital Letter (U+1F130) silently drops a combining accent
+  // mark instead of rendering it — no visible glitch, but the accent is lost
+  // with no visual cue, so we keep the old plain-passthrough behaviour.
+  accentSafe: false,
   platforms: ['all', 'instagram', 'discord']
 },
 
@@ -629,6 +661,7 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'spaced',
   slug: 'ultra-bubble-spaced',
+  accentSafe: false, // see Ultra Bubble — same Enclosed Alphanumerics tofu risk
   platforms: ['all', 'instagram', 'tiktok', 'x']
 },
 
@@ -653,6 +686,7 @@ const textStyles = {
   familySlug: 'bubble',
   groupSlug: 'spaced',
   slug: 'ultra-bubble-tiles-spaced',
+  accentSafe: false, // see Ultra Bubble Tiles — combining marks silently drop
   platforms: ['all', 'instagram']
 },
 
@@ -1048,7 +1082,7 @@ const textStyles = {
   nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text', 'aesthetic-fonts'],
+  familySlug: ['small-text', 'aesthetic-fonts', 'superscript'],
   groupSlug: 'tiny',
   slug: 'ultra-small-superscript-style',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -1061,7 +1095,7 @@ const textStyles = {
   nums: '₀₁₂₃₄₅₆₇₈₉',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text'],
+  familySlug: ['small-text', 'subscript'],
   groupSlug: 'tiny',
   slug: 'ultra-tiny-subscript',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
@@ -1073,9 +1107,10 @@ const textStyles = {
   nums: '⁰¹²³⁴⁵⁶⁷⁸⁹',
   type: 'map',
   category: 'small-text',
-  familySlug: ['small-text', 'aesthetic-fonts'],
+  familySlug: ['small-text', 'aesthetic-fonts', 'small-caps'],
   groupSlug: 'small-caps',
   slug: 'ultra-small-caps',
+  note: 'Small caps · Q and X keep their normal shape (Unicode has no small-cap glyph for either)',
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
@@ -1100,6 +1135,7 @@ const textStyles = {
   familySlug: ['cute-fonts'],
   groupSlug: 'cute',
   slug: 'ultra-cute-bubble',
+  accentSafe: false, // see Ultra Bubble — same Enclosed Alphanumerics tofu risk
   platforms: ['all', 'instagram', 'tiktok', 'x', 'whatsapp', 'discord']
 },
 
@@ -1233,6 +1269,9 @@ const textStyles = {
     familySlug: ['fullwidth'],
     groupSlug: 'fullwidth',
     slug: 'ultra-fullwidth',
+    // Halfwidth/Fullwidth Forms shows a tofu box when a combining accent mark
+    // is attached in most font stacks — leave accented letters unstyled here.
+    accentSafe: false,
     platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
   },
 
@@ -1276,6 +1315,7 @@ const textStyles = {
     familySlug: ['faux'],
     groupSlug: 'faux',
     slug: 'ultra-katakana',
+    accentSafe: false, // Katakana block tofus a reattached combining accent mark
     platforms: ["all","instagram","tiktok","x","discord"]
   },
 
@@ -1294,6 +1334,7 @@ const textStyles = {
     familySlug: ['ancient'],
     groupSlug: 'runic',
     slug: 'ultra-runic',
+    accentSafe: false, // combining accent marks silently don't render on runes
     platforms: ["instagram","x","discord"]
   },
 
@@ -1333,6 +1374,7 @@ const textStyles = {
     familySlug: ['ancient'],
     groupSlug: 'ancient',
     slug: 'ultra-canadian-syllabics',
+    accentSafe: false, // combining accent marks silently don't render here
     platforms: ["discord","x"]
   },
 
@@ -1372,6 +1414,7 @@ const textStyles = {
     familySlug: ['ancient'],
     groupSlug: 'ancient',
     slug: 'ultra-bopomofo',
+    accentSafe: false, // Bopomofo block tofus a reattached combining accent mark
     platforms: ["discord","x"]
   },
 
@@ -1402,6 +1445,9 @@ const textStyles = {
     familySlug: ['emoji-letters'],
     groupSlug: 'emoji-letters',
     slug: 'ultra-emoji-block',
+    // Negative Squared Latin Capital Letter silently drops a combining accent
+    // mark instead of rendering it — keep the old plain-passthrough behaviour.
+    accentSafe: false,
     platforms: ["all","instagram","tiktok","x","whatsapp","discord"]
   },
 
@@ -1415,6 +1461,7 @@ const textStyles = {
     familySlug: ['emoji-letters'],
     groupSlug: 'emoji-letters',
     slug: 'ultra-squared',
+    accentSafe: false, // see Ultra Bubble Tiles — combining marks silently drop
     platforms: ["all","instagram","x","discord"]
   },
 
@@ -1428,6 +1475,12 @@ const textStyles = {
     familySlug: ['emoji-letters'],
     groupSlug: 'emoji-letters',
     slug: 'ultra-regional-indicator',
+    // Each token is a flag/regional-indicator emoji + word-joiner, not a
+    // literal base letter, so a reattached combining accent has nowhere
+    // correct to land — it ends up floating off the letterform's dashed
+    // fallback box instead of sitting on the letter. Same silent-mangle
+    // risk as Ultra Bubble Tiles/Ultra Squared (verified in Chromium).
+    accentSafe: false,
     platforms: ["all","instagram","x","discord"]
   },
 
@@ -1459,6 +1512,31 @@ const textStyles = {
     groupSlug: 'novelty',
     slug: 'ultra-currency',
     platforms: ["instagram","x","discord"]
+  },
+
+  // ギャル文字 (gyaru-moji) — 2002-2005 Japanese schoolgirl kana cipher.
+  // type: 'procedure' since it substitutes kana (not the Latin A-Z/a-z/0-9
+  // renderMap operates on) via a dedicated lookup table in renderer.js.
+  'Ultra Gal Moji': {
+    type: 'procedure',
+    procedureId: 'gal-moji',
+    note: 'ギャル文字 (gyaru-moji) · partial hiragana/katakana cipher',
+    category: 'novelty',
+    familySlug: ['gal-moji'],
+    groupSlug: 'gal-moji',
+    slug: 'gal-moji',
+    platforms: ["all","instagram","tiktok","x","discord"]
+  },
+
+  'Ultra Cuping': {
+    type: 'procedure',
+    procedureId: 'cuping',
+    note: 'Font Cuping · Indonesian "cute typing" phonetic respelling',
+    category: 'novelty',
+    familySlug: ['cuping'],
+    groupSlug: 'cuping',
+    slug: 'cuping',
+    platforms: ["all","instagram","tiktok","whatsapp","discord"]
   },
 
   /* =========================

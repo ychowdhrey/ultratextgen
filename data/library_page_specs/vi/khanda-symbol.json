@@ -1,0 +1,65 @@
+{
+  "slug": "khanda-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Khanda: Sao Chép & Dán ☬ 🪯 Biểu Tượng Sikh Giáo & Ik Onkar",
+  "meta_description": "Sao chép Khanda (☬ 🪯), biểu tượng Sikh giáo gồm thanh kiếm hai lưỡi, chakkar và hai kirpan bắt chéo — và tìm hiểu điểm khác biệt với Ik Onkar (ੴ). Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/khanda-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Khanda",
+  "hero_h1": "Ký Hiệu Khanda",
+  "hero_tagline": "Khanda (☬ 🪯) — biểu tượng Sikh giáo gồm thanh kiếm hai lưỡi, vòng tròn chakkar, và hai kirpan cong bắt chéo bên dưới — cùng Ik Onkar, ký hiệu riêng biệt thường bị nhầm với nó. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Khanda là biểu tượng của Sikh giáo hiện đại: một thanh kiếm hai lưỡi (cũng gọi là khanda) ở trung tâm, được bao quanh bởi một vòng tròn gọi là chakkar, cùng hai kirpan cong bắt chéo bên dưới đại diện cho miri-piri — sự thống nhất giữa quyền lực tâm linh và quyền lực thế tục. Đây không phải cùng một ký hiệu với Ik Onkar (ੴ), cụm từ mang nghĩa «Đấng Sáng Tạo Duy Nhất» xuất hiện trên các gurdwara (đền thờ Sikh) và trong Guru Granth Sahib, và Unicode cấp cho nó hai mã điểm khác nhau tùy vào việc bạn muốn dùng dạng ký tự dingbat đơn giản hay emoji đầy màu sắc.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/khanda-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/khanda-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/khanda-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "khanda-glyphs",
+      "label": "Khanda",
+      "h2": "Ký Hiệu Khanda",
+      "intro": "Hai cách thể hiện Khanda trong Unicode: dạng dingbat văn bản thuần, và emoji màu chuyên dụng được thêm vào năm 2022.",
+      "symbols": [
+        { "char": "☬", "label": "Adi Shakti (Dạng Dingbat Văn Bản Thuần Của Khanda)" },
+        { "char": "🪯", "label": "Emoji Khanda" }
+      ]
+    },
+    {
+      "id": "ik-onkar",
+      "label": "Ik Onkar",
+      "h2": "Ik Onkar — Không Phải Cùng Một Ký Hiệu",
+      "intro": "Ik Onkar («Đấng Sáng Tạo Duy Nhất») là ký tự Gurmukhi cổ hơn, tách biệt, được dùng trên các gurdwara và mở đầu Guru Granth Sahib. Nó không bao giờ được dùng thay thế cho Khanda trong thực hành tôn giáo.",
+      "symbols": [
+        { "char": "ੴ", "label": "Ek Onkar Chữ Gurmukhi" }
+      ]
+    },
+    {
+      "id": "related-religious",
+      "label": "Ký Hiệu Liên Quan",
+      "h2": "Các Ký Hiệu Tôn Giáo & Biểu Tượng Khác",
+      "intro": "Các ký hiệu từ những truyền thống khác thường phù hợp với nội dung về đức tin và bản sắc.",
+      "symbols": [
+        { "char": "🕉️", "label": "Om" },
+        { "char": "☪️", "label": "Ngôi Sao Và Trăng Lưỡi Liềm" },
+        { "char": "✡️", "label": "Ngôi Sao David" },
+        { "char": "☸️", "label": "Bánh Xe Pháp Luân" },
+        { "char": "☯️", "label": "Âm Dương" },
+        { "char": "✝️", "label": "Thánh Giá Latinh" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/religious-symbols/", "title": "Ký Hiệu Tôn Giáo", "desc": "Các ký hiệu tôn giáo từ mọi tôn giáo lớn trên thế giới, trong một trang tra cứu." },
+    { "href": "/vi/symbol/peace-sign/", "title": "Ký Hiệu Hòa Bình", "desc": "Ký hiệu hòa bình cùng các cử chỉ, chim bồ câu và ký hiệu thiên nhiên mang ý nghĩa tương đồng." },
+    { "href": "/vi/symbol/yin-yang/", "title": "Ký Hiệu Âm Dương", "desc": "Ký hiệu âm dương và các ký hiệu cân bằng, hài hòa liên quan." }
+  ]
+}

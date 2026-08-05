@@ -1,0 +1,58 @@
+{
+  "slug": "calendar-emoji",
+  "page_type": "symbol",
+  "title": "Calendar Emoji (📅): Copy & Paste, Codepoint & Why It Always Shows July 17",
+  "meta_description": "The calendar emoji 📅 (U+1F4C5) — codepoint, how to type it, and the real reason its date is frozen on July 17 on Apple, Samsung, Google, and most other platforms.",
+  "canonical": "https://ultratextgen.com/symbol/calendar-emoji/",
+  "breadcrumb": "Calendar Emoji",
+  "hero_h1": "Calendar Emoji",
+  "hero_tagline": "The calendar page 📅 — codepoint, alt-input shortcuts, and the specific Apple history behind why its date is frozen on July 17 almost everywhere. Click any symbol to copy it instantly.",
+  "intro": "📅 CALENDAR (U+1F4C5) is Unicode's shorthand for dates, deadlines, and scheduling — a torn calendar page pinned at the top. Look closely on most platforms and the date on it never changes: it's fixed at July 17, a design choice that traces back to a specific Apple product announcement and later became the reason an entire unofficial holiday exists. This page identifies the glyph itself — meaning, codepoint, and how to type it — then covers the July 17 backstory in full, including the platforms that don't follow it.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "calendar-emoji-core",
+      "label": "The Glyph",
+      "h2": "Calendar Emoji",
+      "intro": "The core Unicode glyph — a single torn calendar page.",
+      "symbols": [
+        { "char": "📅", "label": "Calendar (U+1F4C5)" }
+      ]
+    },
+    {
+      "id": "related-calendar-emoji",
+      "label": "Related Calendar Emoji",
+      "h2": "Other Calendar Emoji It Gets Confused With",
+      "intro": "Two adjacent Unicode calendar glyphs, each depicting a different physical calendar style.",
+      "symbols": [
+        { "char": "📆", "label": "Tear-Off Calendar (U+1F4C6)" },
+        { "char": "🗓️", "label": "Spiral Calendar (U+1F5D3)" }
+      ]
+    },
+    {
+      "id": "planning-cluster",
+      "label": "Planning & Time Cluster",
+      "h2": "Related Planning & Time Emoji",
+      "intro": "Emoji that often appear alongside a calendar in scheduling and reminder contexts.",
+      "symbols": [
+        { "char": "⏰", "label": "Alarm Clock" },
+        { "char": "📌", "label": "Pushpin" },
+        { "char": "✅", "label": "Check Mark Button" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Every already-encoded object emoji, including the full calendar and planning set."
+    },
+    {
+      "href": "/library/clock-time-symbols/",
+      "title": "Clock & Time Symbols",
+      "desc": "Clock face, alarm, and time-related emoji, browsable and copy-paste ready."
+    }
+  ]
+}

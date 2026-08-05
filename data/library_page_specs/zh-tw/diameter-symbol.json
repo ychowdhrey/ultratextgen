@@ -1,0 +1,186 @@
+{
+  "slug": "diameter-symbol",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "直徑符號 ⌀：複製貼上、工程圖面寫法與輸入方式 | UltraTextGen",
+  "meta_description": "點一下複製直徑符號 ⌀，附工程圖面正確用法，以及與空集合 ∅、字母 Ø 的差別。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/diameter-symbol/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "直徑符號",
+  "hero_h1": "直徑符號（⌀）",
+  "hero_tagline": "⌀ 用在工程圖面標示直徑——點一下就複製。",
+  "intro": "⌀（U+2300，DIAMETER SIGN）是機械與工程圖面標示圓形直徑的符號，寫在尺寸數字前面，例如 ⌀20 表示直徑 20 公釐。它和三個外形相似的字元經常被混用，但意義完全不同：∅（U+2205）是數學的空集合、Ø（U+00D8）是丹麥／挪威文字母、0（帶斜線的零）是字型顯示差異。正式圖面請務必使用 ⌀。台灣使用者最常在機械製圖、五金規格和 3D 列印參數裡需要它。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/diameter-symbol/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-diametra/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/chokkei-kigou/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-diameter/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-diametre/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/durchmesserzeichen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/cap-isareti/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-diametro/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/simbolo-de-diametro/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/simbolo-de-diametro/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-qutr/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/jireum-giho/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/sanyalak-sen-phan-sun-klang/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/diameterteken/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/symbol-srednicy/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/diameter-symbol/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/diameter-symbol/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/diameter-symbol/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/diameter-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "diameter-symbol-symbol",
+      "label": "直徑符號",
+      "h2": "直徑符號",
+      "intro": "直徑符號與三個容易混淆的字元。",
+      "symbols": [
+        {
+          "char": "⌀",
+          "label": "直徑符號（U+2300）"
+        },
+        {
+          "char": "∅",
+          "label": "空集合（U+2205）——數學用"
+        },
+        {
+          "char": "Ø",
+          "label": "丹麥／挪威文字母（U+00D8）"
+        }
+      ]
+    },
+    {
+      "id": "engineering-marks",
+      "label": "其他製圖標記",
+      "h2": "其他製圖標記",
+      "intro": "圖面尺寸常一起出現的符號。",
+      "symbols": [
+        {
+          "char": "°",
+          "label": "度數"
+        },
+        {
+          "char": "±",
+          "label": "正負公差"
+        },
+        {
+          "char": "√",
+          "label": "根號"
+        },
+        {
+          "char": "∠",
+          "label": "角"
+        }
+      ]
+    },
+    {
+      "id": "units",
+      "label": "常見尺寸單位",
+      "h2": "常見尺寸單位",
+      "intro": "與直徑並用的單位。",
+      "symbols": [
+        {
+          "char": "µ",
+          "label": "微"
+        },
+        {
+          "char": "″",
+          "label": "英吋（角秒符號借用）"
+        },
+        {
+          "char": "′",
+          "label": "英尺（角分符號借用）"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/degree-symbol/",
+      "title": "度數符號（°）",
+      "desc": "溫度、角度與座標共用的度數符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/plus-minus/",
+      "title": "正負符號（±）",
+      "desc": "公差與誤差範圍的標示。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    },
+    {
+      "href": "/zh-tw/library/jiantou-fuhao/",
+      "title": "箭頭符號大全",
+      "desc": "各種方向箭頭整理。"
+    }
+  ]
+}

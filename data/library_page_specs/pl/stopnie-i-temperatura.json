@@ -1,0 +1,85 @@
+{
+  "slug": "stopnie-i-temperatura",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Stopnia (°): Stopnie Celsjusza, Fahrenheita i Kąty do Skopiowania",
+  "meta_description": "Skopiuj znak stopnia °, stopnie Celsjusza ℃ i Fahrenheita ℉, znaki kątów oraz prim do minut i sekund. Kliknij symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/stopnie-i-temperatura/",
+  "breadcrumb": "Stopnie i Temperatura",
+  "hero_h1": "Znak Stopnia i Temperatury",
+  "hero_tagline": "Stopień, stopnie Celsjusza i Fahrenheita, znaki kątów oraz prim — kliknij, aby skopiować.",
+  "intro": "Znak stopnia (°) opisuje temperaturę, kąty i współrzędne geograficzne. Ta strona zbiera stopień razem z gotowymi znakami Celsjusza i Fahrenheita, pełny zestaw znaków kątów oraz znaki prim używane do zapisu minut i sekund kątowych.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/degree-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/grad-zeichen/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/simbolo-de-grado/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-derajat/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/stopnie-i-temperatura/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/degree-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "stopien-temperatura",
+      "label": "Stopień",
+      "h2": "Znak Stopnia i Temperatury",
+      "intro": "Znak stopnia oraz dedykowane znaki skal temperatury.",
+      "symbols": [
+        { "char": "°", "label": "Znak Stopnia" },
+        { "char": "℃", "label": "Stopień Celsjusza" },
+        { "char": "℉", "label": "Stopień Fahrenheita" },
+        { "char": "K", "label": "Znak Kelwina" }
+      ]
+    },
+    {
+      "id": "znaki-katow",
+      "label": "Kąty",
+      "h2": "Znaki Kątów",
+      "intro": "Znaki kątów używane razem z miarą w stopniach.",
+      "symbols": [
+        { "char": "∠", "label": "Kąt" },
+        { "char": "∡", "label": "Kąt mierzony" },
+        { "char": "∢", "label": "Kąt przestrzenny" },
+        { "char": "∟", "label": "Kąt prosty" },
+        { "char": "⊾", "label": "Kąt prosty z łukiem" },
+        { "char": "⊿", "label": "Trójkąt prostokątny" }
+      ]
+    },
+    {
+      "id": "prim-minuty-sekundy",
+      "label": "Prim",
+      "h2": "Prim, Minuty i Sekundy",
+      "intro": "Znaki prim używane do zapisu minut i sekund kątowych oraz współrzędnych.",
+      "symbols": [
+        { "char": "′", "label": "Prim (minuta)" },
+        { "char": "″", "label": "Podwójny prim (sekunda)" },
+        { "char": "‴", "label": "Potrójny prim" },
+        { "char": "⁗", "label": "Poczwórny prim" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/nieskonczonosc/",
+      "title": "Znak Nieskończoności ∞",
+      "desc": "Symbol nieskończoności i pokrewne znaki matematyczne."
+    },
+    {
+      "href": "/pl/symbol/znak-euro/",
+      "title": "Znak Euro €",
+      "desc": "Symbol euro i inne znaki walut do skopiowania."
+    },
+    {
+      "href": "/pl/library/",
+      "title": "Biblioteka Symboli",
+      "desc": "Wszystkie kolekcje symboli i emotek do skopiowania w jednym miejscu."
+    }
+  ]
+}

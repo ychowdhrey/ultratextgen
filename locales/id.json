@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Tulisan Aesthetic & Tulisan Keren — Copas Font Online (Copy Paste)",
-    "description": "Tulisan aesthetic, tulisan keren, huruf estetik & font unik buat bio IG, caption TikTok, status WA & nickname game. Copas font online — gratis, tanpa daftar."
+    "title": "Tulisan Keren & Tulisan Aesthetic — Copas Font Online (Copy Paste)",
+    "description": "Tulisan keren, font keren, huruf estetik & tulisan aesthetic buat bio IG, caption TikTok, status WA & nickname game. Copas font online — gratis, tanpa daftar."
   },
   "hero": {
-    "title": "Tulisan Aesthetic & Tulisan Keren",
+    "title": "Tulisan Keren & Tulisan Aesthetic",
     "subtitle": "Ubah tulisan biasa jadi tulisan keren, font keren, huruf estetik, dan simbol aesthetic yang siap copy paste ke bio Instagram, caption TikTok, status WhatsApp, sampai nickname ML & Free Fire."
   },
   "decorations": {
@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Ketik tulisanmu di sini...",
-    "advertisement": "Iklan"
+    "advertisement": "Iklan",
+    "categoryTabs": {
+      "popular": "Populer",
+      "bold-fonts": "Tebal",
+      "italic-fonts": "Miring",
+      "bubble-fonts": "Gelembung",
+      "cursive-fonts": "Kursif",
+      "gothic-fonts": "Gothic",
+      "strikethrough-text": "Coret",
+      "underline-text": "Garis Bawah",
+      "small-text": "Teks Kecil",
+      "cute-fonts": "Lucu",
+      "aesthetic-fonts": "Estetik",
+      "upside-down-text": "Terbalik",
+      "text-decorator": "Dekorator Teks",
+      "classified": "Disensor / Rahasia",
+      "fullwidth-fonts": "Lebar Penuh",
+      "faux-fonts": "Alfabet Palsu",
+      "ancient-fonts": "Kuno & Rune",
+      "emoji-letter-fonts": "Huruf Emoji",
+      "novelty-fonts": "Unik"
+    },
+    "scopeControl": {
+      "label": "Terapkan gaya ke",
+      "ariaLabel": "Pilih seberapa banyak teks yang ingin digayakan",
+      "whole": "Semua teks",
+      "wholeTitle": "Gayakan setiap baris teksmu.",
+      "firstLine": "Baris pertama saja",
+      "firstLineTag": "untuk postingan",
+      "firstLineTitle": "Gayakan hanya baris pertama (judul atau kalimat pembuka) dan biarkan sisanya sebagai teks biasa yang mudah dibaca — cocok untuk postingan media sosial.",
+      "share": "Bagikan",
+      "shareTitle": "Bagikan tautan yang membuka kembali halaman ini dengan teksmu sudah terisi",
+      "linkCopied": "Tautan disalin"
+    },
+    "safeMode": {
+      "label": "Keamanan tempel",
+      "ariaLabel": "Cek gaya mana yang tampil dengan baik di perangkat orang lain",
+      "toggleLabel": "Mode aman",
+      "hint": "Menandai gaya yang mungkin tampil sebagai kotak (▯) di ponsel lama milik orang lain."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Bisa tampil sebagai kotak bagi sebagian orang",
+      "boxesWarningTitle": "Gaya ini menggunakan karakter Unicode langka yang tidak dimiliki sebagian ponsel dan perangkat lama. Bisa tampil sebagai kotak (▯) bagi orang yang menerima tempelan teksmu. Pilih gaya yang lebih sederhana atau lebih didukung luas jika audiensmu mungkin memakai perangkat lama.",
+      "emojiWarning": "⚠ Menggunakan emoji — bisa berbeda di perangkat lama",
+      "emojiWarningTitle": "Gaya ini mengandung emoji. Emoji tampil dengan baik di perangkat modern, tapi bisa terlihat berbeda, atau muncul sebagai kotak, di ponsel yang sangat lama.",
+      "modernDevices": "Tampil baik di perangkat modern",
+      "modernDevicesTitle": "Huruf Unicode bergaya ini tampil di semua ponsel dan komputer masa kini. Di Android yang sangat lama (kira-kira sebelum 2016) atau dengan font sistem minimal, beberapa karakter mungkin masih tampil sebagai kotak (▯). Uji coba dulu jika audiensmu mungkin memakai perangkat lama.",
+      "rendersEverywhere": "✓ Tampil baik di mana saja",
+      "rendersEverywhereTitle": "Gaya ini adalah teks biasa — tampil baik di mana saja, tanpa risiko kotak di perangkat apa pun.",
+      "deviceWarning": "⚠ Mungkin tidak tampil di perangkatmu",
+      "deviceWarningTitle": "Font di perangkatmu tidak bisa menampilkan gaya ini — bisa muncul sebagai kotak (□). Gaya ini tetap bisa tampil baik di perangkat lain.",
+      "safeAnywhere": "✓ Aman di mana saja",
+      "safeAnywhereTitle": "Tampil baik di semua platform utama. Perlu diketahui: pembaca layar mungkin mengeja huruf bergaya satu per satu, jadi biarkan teks isi tetap biasa.",
+      "worksBestOn": "⚠ Paling cocok untuk {platforms}",
+      "worksBestOnTitle": "Paling cocok untuk: {platforms}. Platform lain mungkin menghapus atau menampilkannya secara berantakan — coba dulu sebelum diposting."
+    },
+    "savedStyles": {
+      "ariaLabel": "Gaya tersimpanmu",
+      "heading": "Gaya tersimpanmu",
+      "clearAll": "Hapus semua",
+      "hint": "Tersimpan di perangkat ini — akan menunggu di sini saat kamu kembali."
+    },
+    "textStats": {
+      "wordSingular": "1 kata",
+      "wordPlural": "{n} kata",
+      "charSingular": "1 karakter",
+      "charPlural": "{n} karakter"
+    },
+    "decorationsNone": "Tidak ada",
+    "categoryTabsToggle": {
+      "more": "Lainnya",
+      "less": "Lebih sedikit"
+    },
+    "demoText": "Selamat datang di UltraTextGen.\nKetik apa saja. Buat jadi ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nama",
+        "tabs": {
+          "playful": "Ceria",
+          "hearts": "Hati",
+          "sparkle": "Kilau",
+          "faces": "Wajah",
+          "stars": "Bintang"
+        }
+      },
+      "bio": {
+        "word": "nama",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "edgy": "Edgy",
+          "royal": "Kerajaan",
+          "cute": "Lucu",
+          "bold": "Tebal",
+          "clean": "Bersih",
+          "mystical": "Mistis",
+          "retro": "Retro",
+          "nature": "Alam"
+        }
+      },
+      "small-text": {
+        "word": "teks",
+        "tabs": {
+          "subtle": "Halus",
+          "tiny": "Mungil",
+          "brackets": "Kurung",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "nama",
+        "tabs": {
+          "rounded": "Bulat",
+          "soft": "Lembut",
+          "stars": "Bintang",
+          "hearts": "Hati",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "nama",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Wajah",
+          "hearts": "Hati",
+          "sparkle": "Kilau",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "teks",
+        "tabs": {
+          "celestial": "Angkasa",
+          "sparkle": "Kilau",
+          "y2k": "Y2K",
+          "soft": "Lembut",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "nama",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetik",
+          "symbols": "Simbol",
+          "hearts": "Hati",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Paling Sering Dipakai Buat",
@@ -121,7 +270,7 @@
           },
           {
             "question": "Buat nickname ML, Free Fire, atau PUBG bisa?",
-            "answer": "Bisa banget — emang banyak yang pakai buat itu. Karakter Unicode keterima di kolom username Mobile Legends, Free Fire, PUBG, Genshin, sampai Roblox.\n    <br><br>\n    <strong>Contoh nickname keren</strong><br>\n    Aslinya \"DarkWolf\" → bisa jadi:<br>\n    — 𝔇𝔞𝔯𝔨𝔚𝔬𝔩𝔣 (gotik, vibe sangar)<br>\n    — ꧁༒𝓓𝓪𝓻𝓴𝓦𝓸𝓵𝓯༒꧂ (script + ornamen — favorit ML)<br>\n    — ⓓⓐⓡⓚⓦⓞⓛⓕ (bubble, lebih playful)<br>\n    — ᴅᴀʀᴋᴡᴏʟꜰ (small caps, simple tapi beda)\n    <br><br>\n    <strong>Tips</strong><br>\n    Kalau gaya tertentu ditolak game, ganti ke gaya lain — Small Caps dan Ultra Bold biasanya paling aman. Mau ornamen tambahan? Cek tab Bingkai buat ꧁ ꧂, ༒, ㊊, dan simbol favorit gamer."
+            "answer": "Bisa banget — karakter Unicode keterima di kolom username Mobile Legends, Free Fire, PUBG, Genshin, sampai Roblox.\n    <br><br>\n    <strong>Contoh nickname keren</strong><br>\n    \"DarkWolf\" → ꧁༒𝓓𝓪𝓻𝓴𝓦𝓸𝓵𝓯༒꧂ (script + ornamen, favorit ML) atau ᴅᴀʀᴋᴡᴏʟꜰ (small caps, aman kalau gaya lain ditolak).\n    <br><br>\n    Mau ornamen tambahan? Cek tab Bingkai buat ꧁ ꧂ ༒. Kumpulan nama siap pakai, bingkai lengkap, dan racikan nama yang belum dipakai ada di <a href=\"/id/usecase/nama-keren/\">Nama Keren</a>."
           },
           {
             "question": "Bisa buat status WhatsApp dan caption TikTok juga?",

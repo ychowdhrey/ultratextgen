@@ -1,0 +1,113 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "khanda-symbool",
+  "title": "Khanda-symbool: Kopieer en Plak ☬ 🪯 Sikh-embleem & Ik Onkar",
+  "meta_description": "Kopieer en plak de Khanda (☬ 🪯), het Sikh-embleem van het dubbelzijdige zwaard, de chakkar en de twee kirpans — en ontdek het verschil met Ik Onkar (ੴ). Klik om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/khanda-symbool/",
+  "breadcrumb": "Khanda-symbool",
+  "hero_h1": "Khanda-symbool",
+  "hero_tagline": "De Khanda (☬ 🪯) — het Sikh-embleem van het dubbelzijdige zwaard, de chakkar en de twee gekruiste kirpans — plus Ik Onkar, het aparte symbool waarmee het vaak wordt verward. Klik op een teken om het direct te kopiëren.",
+  "intro": "De Khanda is het embleem van het moderne sikhisme: een dubbelzijdig zwaard (ook khanda genoemd) in het midden, omlijst door een ronde chakkar, met twee gebogen kirpans die eronder gekruist zijn en miri-piri voorstellen — de eenheid van geestelijk en wereldlijk gezag. Het is niet hetzelfde symbool als Ik Onkar (ੴ), de uitdrukking voor 'Eén Schepper' die op gurdwara's en de Guru Granth Sahib voorkomt, en Unicode geeft het twee verschillende codepunten, afhankelijk van of je de platte dingbat of de volledig gekleurde emoji wilt.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/khanda-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/khanda-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/khanda-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "khanda-glyphs",
+      "label": "Khanda",
+      "h2": "Khanda-symbool",
+      "intro": "Twee manieren om de Khanda in Unicode weer te geven: de platte-tekst-dingbat en de eigen kleuremoji die in 2022 werd toegevoegd.",
+      "symbols": [
+        {
+          "char": "☬",
+          "label": "Adi Shakti (Platte-tekst-Khanda)"
+        },
+        {
+          "char": "🪯",
+          "label": "Khanda-emoji"
+        }
+      ]
+    },
+    {
+      "id": "ik-onkar",
+      "label": "Ik Onkar",
+      "h2": "Ik Onkar — Niet Hetzelfde Symbool",
+      "intro": "Ik Onkar ('Eén Schepper') is het oudere, aparte Gurmukhi-teken dat op gurdwara's en als openingsregel van de Guru Granth Sahib voorkomt. Het wordt in religieus gebruik nooit verwisseld met de Khanda.",
+      "symbols": [
+        {
+          "char": "ੴ",
+          "label": "Gurmukhi Ek Onkar"
+        }
+      ]
+    },
+    {
+      "id": "verwante-symbolen",
+      "label": "Verwante Symbolen",
+      "h2": "Andere Geloofs- & Embleemsymbolen",
+      "intro": "Symbolen uit andere tradities die goed passen bij content over geloof en identiteit.",
+      "symbols": [
+        {
+          "char": "🕉️",
+          "label": "Om"
+        },
+        {
+          "char": "☪️",
+          "label": "Halvemaan en Ster"
+        },
+        {
+          "char": "✡️",
+          "label": "Davidster"
+        },
+        {
+          "char": "☸️",
+          "label": "Dharma-wiel"
+        },
+        {
+          "char": "☯️",
+          "label": "Yin en Yang"
+        },
+        {
+          "char": "✝️",
+          "label": "Latijns Kruis"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Geloofssymbolen uit elke grote wereldreligie in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/vredesteken/",
+      "title": "Vredesteken",
+      "desc": "Het vredesteken en de duiven, gebaren en natuursymbolen die dezelfde betekenis delen."
+    },
+    {
+      "href": "/nl/symbol/yin-yang-symbool/",
+      "title": "Yin-Yang-symbool",
+      "desc": "Het yin-yang-symbool en verwante balans- en harmonietekens."
+    }
+  ]
+}

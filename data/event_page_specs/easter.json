@@ -1,0 +1,228 @@
+{
+  "slug": "easter",
+  "event_name": "Easter",
+  "aliases": [],
+
+  "title": "Easter Fonts, Emoji & Symbol Generator | UltraTextGen",
+  "meta_description": "Style an Easter greeting live, copy bunny, egg, and chick emoji, cute kaomoji, curated ASCII art, and ready-made spring phrases and captions.",
+
+  "hero_h1": "Easter Text & Symbol Generator",
+  "hero_tagline": "Type a name or spring wish and style it in cute, script, and elegant fonts, then copy bunny, egg, and chick emoji, kaomoji, and ASCII art — or tap a ready-made Easter phrase to style it instantly.",
+
+  "intro": "Easter mixes two springs into one weekend — the egg-hunt side with bunnies, chicks, and chocolate, and the church side with crosses and \"He Is Risen\" cards. This page gathers everything for styling that post or card: curated cute and elegant fonts you can preview on your own text, the bunny, egg, and chick emoji people actually paste, bunny kaomoji for a chat message, a few original ASCII art pieces, and a phrase bank of Easter lines — from a classic \"Happy Easter\" to \"He Is Risen\" — that style instantly when you tap them.",
+
+  "date_window": "on a Sunday between March 22 and April 25 each year (the exact date shifts with the lunar calendar)",
+
+  "sample_phrase": "Happy Easter",
+
+  "canonical": "https://ultratextgen.com/events/easter/",
+
+  "occurrence": {"type": "easter"},
+  "fonts": {
+    "curated_keys": [
+      "Ultra Cute Script",
+      "Ultra Cute Bubble",
+      "Ultra Script Sparkle",
+      "Ultra Script Elegant",
+      "Ultra Script Bold Elegant",
+      "Ultra Bubble",
+      "Ultra Bubble Filled",
+      "Ultra Italic Serif",
+      "Ultra Small Caps",
+      "Ultra Script"
+    ]
+  },
+
+  "emoji_symbol_collections": [
+    {
+      "name": "Easter Emoji",
+      "presentation_class": "emoji",
+      "copy_pattern": "collection",
+      "flags": ["🐰", "🐇", "🥚", "🐣", "🐤", "🧺", "🍫", "🌷", "🌸", "✝️", "🕊", "🌈"],
+      "defaultFormat": "inline"
+    }
+  ],
+
+  "kaomoji": [
+    { "text": "(•ㅅ•)", "label": "Little Bunny" },
+    { "text": "／(^ ᆺ ^)＼", "label": "Floppy Ears" },
+    { "text": "٩(•ㅅ•)۶", "label": "Cheering Bunny" },
+    { "text": "(ᐢ ˃ ˕ ˂ ᐢ)", "label": "Delighted Bunny" },
+    { "text": "(•ㅅ•)♡", "label": "Loving Bunny" }
+  ],
+
+  "ascii_art": {
+    "items": [
+      {
+        "label": "Bunny",
+        "art": "  (\\_/)\n ( •_•)\n / >🥕"
+      },
+      {
+        "label": "Easter Egg",
+        "art": "   .-'''-.\n  / .-\"-. \\\n | (  o  ) |\n  \\ '-.-' /\n   '-...-'"
+      },
+      {
+        "label": "Chick",
+        "art": "   ,__\n  (o o)\n  ( V )\n  --m-m--"
+      },
+      {
+        "label": "Basket",
+        "art": " _.-\"\"\"-._\n/  o  o  o \\\n\\_________/\n  \\_______/"
+      },
+      {
+        "label": "Cross",
+        "art": "   |\n   |\n---+---\n   |\n   |"
+      },
+      {
+        "label": "Tulip",
+        "art": "   _\n  ( )\n (   )\n  \\_/\n   |\n   |"
+      }
+    ]
+  },
+
+  "phrase_bank": [
+    {
+      "text": "Happy Easter",
+      "group": "Classic greetings",
+      "translation": "The one that always works."
+    },
+    {
+      "text": "Happy Easter to you and your family",
+      "group": "Classic greetings",
+      "translation": "Standard card wording."
+    },
+    {
+      "text": "Wishing you a joyful Easter",
+      "group": "Classic greetings",
+      "translation": "Slightly warmer."
+    },
+    {
+      "text": "He Is Risen",
+      "group": "Classic greetings",
+      "translation": "The traditional religious greeting."
+    },
+    {
+      "text": "Blessed Easter",
+      "group": "Classic greetings",
+      "translation": "Religious but understated."
+    },
+    {
+      "text": "Happy Easter to you too!",
+      "group": "Replies",
+      "translation": "Plain reply."
+    },
+    {
+      "text": "Thank you — enjoy the long weekend",
+      "group": "Replies",
+      "translation": "Reply that works where Easter is a holiday weekend."
+    },
+    {
+      "text": "Happy Easter to my favourite egg hunters",
+      "group": "For family",
+      "translation": "For kids in the family."
+    },
+    {
+      "text": "Wishing your family a bright and happy Easter",
+      "group": "For family",
+      "translation": "Family card wording."
+    },
+    {
+      "text": "Hope your Easter is full of chocolate and sunshine",
+      "group": "For family",
+      "translation": "Light family message."
+    },
+    {
+      "text": "Happy first Easter, little one",
+      "group": "For family",
+      "translation": "For a baby's first Easter."
+    },
+    {
+      "text": "Missing you this Easter",
+      "group": "For family",
+      "translation": "For family you're apart from."
+    },
+    {
+      "text": "Happy Easter! May your chocolate outnumber your steps",
+      "group": "For friends",
+      "translation": "Playful message."
+    },
+    {
+      "text": "Hopping by to say Happy Easter",
+      "group": "For friends",
+      "translation": "Pun greeting that suits a story."
+    },
+    {
+      "text": "Somebunny loves you",
+      "group": "For friends",
+      "translation": "The classic Easter pun."
+    },
+    {
+      "text": "Wishing you a happy and restful Easter",
+      "group": "Formal & work",
+      "translation": "Safe for colleagues and clients."
+    },
+    {
+      "text": "Happy Easter from all of us",
+      "group": "Formal & work",
+      "translation": "Team or company message."
+    },
+    {
+      "text": "Enjoy the long weekend — Happy Easter",
+      "group": "Formal & work",
+      "translation": "Good for an out-of-office note."
+    },
+    {
+      "text": "Happy Easter",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "Egg hunt champion",
+      "group": "Short for a caption",
+      "translation": "For a kids' photo."
+    },
+    {
+      "text": "Chocolate for breakfast",
+      "group": "Short for a caption",
+      "translation": "Playful caption."
+    },
+    {
+      "text": "Pastels and sunshine",
+      "group": "Short for a caption",
+      "translation": "Spring-leaning caption."
+    },
+    {
+      "text": "Hop to it",
+      "group": "Short for a caption",
+      "translation": "Three words, works anywhere."
+    }
+  ],
+
+  "related": [
+    {
+      "href": "/library/easter-symbols/",
+      "title": "Easter Symbols",
+      "desc": "A broader reference library of Easter Unicode symbols and emoji combos."
+    },
+    {
+      "href": "/library/bunny-kaomoji/",
+      "title": "Bunny Kaomoji",
+      "desc": "More cute, floppy-eared, and happy bunny text faces to copy and paste."
+    },
+    {
+      "href": "/library/flower-symbols/",
+      "title": "Flower Symbols",
+      "desc": "Floral Unicode characters and flower emojis for spring captions."
+    },
+    {
+      "href": "/category/cute-fonts/",
+      "title": "Cute Fonts",
+      "desc": "The full cute and kawaii font family for a soft, playful look."
+    },
+    {
+      "href": "/ascii-art-generator/",
+      "title": "ASCII Art Generator",
+      "desc": "Type any word or name and turn it into big block-letter ASCII art live."
+    }
+  ]
+}

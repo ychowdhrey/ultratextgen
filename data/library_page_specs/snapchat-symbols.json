@@ -1,0 +1,87 @@
+{
+  "slug": "snapchat-symbols",
+  "title": "Snapchat Symbols: Copy & Paste 👻 ✨ Bio Decorations & Friend Emoji Guide",
+  "meta_description": "Copy and paste Snapchat bio and username symbols — ghost 👻, sparkles ✨, fire 🔥, sunglasses 😎 — plus a plain-English guide to Snapchat's streak, heart, and friend emoji badges.",
+  "canonical": "https://ultratextgen.com/library/snapchat-symbols/",
+  "breadcrumb": "Snapchat Symbols",
+  "hero_h1": "Snapchat Symbols",
+  "hero_tagline": "Ghost, sparkle, fire, and heart symbols to decorate your Snapchat name and captions, plus a plain-English guide to what the streak fire, hourglass, and friend emoji badges actually mean. Click any symbol to copy it instantly.",
+  "intro": "Snapchat culture runs on two different kinds of symbols. The first is the copy-paste kind — ghosts 👻, sparkles ✨, fire 🔥, and hearts that people add to a display name, bio, or caption to make it stand out, all free to grab below. The second is Snapchat's own Friend Emoji system — the small badges next to a friend's name that track your Snapstreak, show how deep a best-friendship runs, and flag new friends and birthdays. This page covers both: a full copy-paste symbol set first, then an honest explainer of how the Friend Emoji badges work. That system is customizable, so treat it as the long-standing classic default rather than a fixed chart, and check your own Settings > Friend Emojis for your current set.",
+  "date_published": "2026-07-16",
+  "date_modified": "2026-07-16",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "bio-username-symbols",
+      "label": "Copy & Paste",
+      "h2": "Snapchat Bio & Username Symbols",
+      "intro": "The exact decorative symbols Snapchatters use most in display names and bios — the same set featured on the Snapchat font generator.",
+      "symbols": [
+        { "char": "👻", "label": "Ghost" },
+        { "char": "⚡", "label": "Lightning Bolt" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "★", "label": "Star" },
+        { "char": "♡", "label": "Heart Outline" },
+        { "char": "☀", "label": "Sun" },
+        { "char": "✦", "label": "Sparkle Star" },
+        { "char": "⋆˙⟡", "label": "Sparkle Trail Accent" }
+      ]
+    },
+    {
+      "id": "snapchat-vibe-symbols",
+      "label": "More Snapchat Symbols",
+      "h2": "Snapchat Vibe & Caption Symbols",
+      "intro": "More symbols that show up constantly in Snapchat captions, chats, and bios — cool faces, extra heart colors, and story staples.",
+      "symbols": [
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "📸", "label": "Camera With Flash" },
+        { "char": "👀", "label": "Eyes" },
+        { "char": "😂", "label": "Face With Tears of Joy" },
+        { "char": "❤️", "label": "Red Heart" },
+        { "char": "💕", "label": "Two Hearts (Pink)" },
+        { "char": "💬", "label": "Speech Balloon" },
+        { "char": "🎉", "label": "Party Popper" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Snapchat Symbol Combo Sets",
+    "intro": "Ready-made Snapchat combos — copy a full set with one click and paste it straight into a bio, caption, or streak reply."
+  },
+  "collection_container_id": "snapchatSetsContainer",
+  "collections": [
+    { "name": "Best Friends", "flags": ["🔥", "💛"], "defaultFormat": "inline" },
+    { "name": "Story Vibe", "flags": ["✨", "👻"], "defaultFormat": "inline" },
+    { "name": "Snap Streak", "flags": ["🔥", "📸"], "defaultFormat": "inline" },
+    { "name": "New Bestie", "flags": ["👶", "✨"], "defaultFormat": "inline" },
+    { "name": "Birthday Snap", "flags": ["🎂", "🎉", "💛"], "defaultFormat": "inline" },
+    { "name": "Cool & Confident", "flags": ["😎", "✨"], "defaultFormat": "inline" },
+    { "name": "Squad Goals", "flags": ["👻", "✨", "🔥"], "defaultFormat": "inline" }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-emoji/",
+      "title": "Heart Emoji & Kaomoji",
+      "desc": "Every heart color, meaning, and combo set in one hub."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What popular emoji actually mean, from faces to heart colors."
+    },
+    {
+      "href": "/library/sunglasses-emoji/",
+      "title": "Sunglasses Emoji & Kaomoji",
+      "desc": "The full cool-and-confident sunglasses emoji collection and combos."
+    },
+    {
+      "href": "/snapchat/",
+      "title": "Snapchat Font Generator",
+      "desc": "Turn your name into stylish Unicode fonts for Snapchat, plus name decorations."
+    }
+  ]
+}

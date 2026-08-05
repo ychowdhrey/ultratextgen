@@ -1,0 +1,147 @@
+{
+  "slug": "dancing-emoji",
+  "title": "Dancing Emoji: Copy & Paste 💃🕺 Dance Floor & Party Combos",
+  "meta_description": "Copy and paste dancing emoji 💃 🕺 in every skin tone, DJ symbols, verified dance kaomoji, and ready-made party combos. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/dancing-emoji/",
+  "breadcrumb": "Dancing Emoji",
+  "hero_h1": "Dancing Emoji",
+  "hero_tagline": "Dancer emoji in every skin tone, dance-troupe pairs, DJ and rhythm symbols, and verified dance kaomoji for captions, bios, and party invites. Click any symbol to copy it instantly.",
+  "intro": "The 💃 and 🕺 dancer emoji turn a caption into a celebration — party invites, concert recaps, wedding reception posts, or just announcing a good mood. Both dancers support the full Fitzpatrick skin tone range, from 💃🏻 to 💃🏿, so the emoji can match who's actually on the floor. This page rounds up the dancer figures and their skin tone variants, the DJ and instrument emoji that carry the rhythm side of the moment, nightlife companions like sunglasses and a starry night sky, and a set of verified dance kaomoji such as ヽ(´▽`)/ for platforms where color emoji don't render. Grab a single symbol or copy a ready-made combo set for a caption, bio, or group chat in one click.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "dancer-figures",
+      "label": "Dancer Figures",
+      "h2": "Dancer Emoji & Skin Tone Variants",
+      "intro": "The core dancer figures, plus the Fitzpatrick skin tone modifiers both 💃 and 🕺 support, the gendered dance-troupe pair, and ballet shoes for the dance world beyond the club.",
+      "symbols": [
+        { "char": "💃", "label": "Woman Dancing" },
+        { "char": "🕺", "label": "Man Dancing" },
+        { "char": "💃🏻", "label": "Woman Dancing: Light Skin Tone" },
+        { "char": "💃🏿", "label": "Woman Dancing: Dark Skin Tone" },
+        { "char": "🕺🏻", "label": "Man Dancing: Light Skin Tone" },
+        { "char": "🕺🏿", "label": "Man Dancing: Dark Skin Tone" },
+        { "char": "👯‍♀️", "label": "Women With Bunny Ears" },
+        { "char": "👯‍♂️", "label": "Men With Bunny Ears" },
+        { "char": "🩰", "label": "Ballet Shoes" }
+      ]
+    },
+    {
+      "id": "music-rhythm",
+      "label": "Music & Rhythm",
+      "h2": "DJ & Rhythm Emoji",
+      "intro": "The instruments and gear that set the beat a dancer moves to — headphones and a mixer for the DJ booth, plus the instruments behind live music.",
+      "symbols": [
+        { "char": "🎧", "label": "Headphone" },
+        { "char": "🎛️", "label": "Control Knobs" },
+        { "char": "🥁", "label": "Drum" },
+        { "char": "🎸", "label": "Guitar" },
+        { "char": "🎹", "label": "Musical Keyboard" },
+        { "char": "🪘", "label": "Long Drum" },
+        { "char": "📻", "label": "Radio" },
+        { "char": "🎷", "label": "Saxophone" }
+      ]
+    },
+    {
+      "id": "party-nightlife",
+      "label": "Nightlife",
+      "h2": "Party & Nightlife Companions",
+      "intro": "The night-out mood that surrounds the dance floor — sunglasses, a starry night, and the energy words a good set brings out.",
+      "symbols": [
+        { "char": "🕶️", "label": "Sunglasses" },
+        { "char": "😎", "label": "Smiling Face With Sunglasses" },
+        { "char": "🌃", "label": "Night With Stars" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "💥", "label": "Collision" }
+      ]
+    },
+    {
+      "id": "dance-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Dance Kaomoji & Text Faces",
+      "intro": "Text-only dance moves built from brackets and arms — verified kaomoji that paste anywhere plain text works, no color emoji required.",
+      "symbols": [
+        { "char": "ヽ(´▽`)/", "label": "Cheerful Dance Kaomoji" },
+        { "char": "♪┏(・o･)┛♪", "label": "Dancing Man Kaomoji" },
+        { "char": "ᕕ( ᐛ )ᕗ", "label": "Happy Dance Kaomoji" },
+        { "char": "\\(^o^)/", "label": "Arms-Up Dance Kaomoji" },
+        { "char": "└(・∀・)┐", "label": "Shrugging Dance Kaomoji" },
+        { "char": "♬♪ヽ(ˇ∀ˇ )ゞ", "label": "Dancing To The Beat Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Dancing Emoji Combo Sets",
+    "intro": "Ready-made dance and party combos — copy a full set with one click and paste it straight into a caption, bio, or group chat."
+  },
+  "collection_container_id": "dancingSetsContainer",
+  "collections": [
+    {
+      "name": "Dance Floor Ready",
+      "flags": ["💃", "🕺", "🪩"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Girls' Night Out",
+      "flags": ["💃", "🍸", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Boys' Night Out",
+      "flags": ["🕺", "🍻", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "DJ Booth",
+      "flags": ["🎧", "🎛️", "🔊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "K-Pop Dance Break",
+      "flags": ["💃", "🎤", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Silent Disco",
+      "flags": ["🎧", "🪩", "🕺"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wedding Reception Dance",
+      "flags": ["💃", "🕺", "💍"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Club Night",
+      "flags": ["🌃", "🪩", "🍹"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/party-celebration-emojis/",
+      "title": "Party & Celebration Emojis",
+      "desc": "Confetti, cake, fireworks, and the full party emoji set for birthdays and big nights out."
+    },
+    {
+      "href": "/library/music-symbols/",
+      "title": "Music Note Symbols",
+      "desc": "Musical notes, sharps, flats, and sound glyphs to copy and paste."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Ready-made emoji combo sets for captions, bios, and comments across every mood."
+    },
+    {
+      "href": "/library/friendship-emojis/",
+      "title": "Friendship & Love Emojis",
+      "desc": "Best-friend emoji and combos for the people you'd drag onto the dance floor."
+    }
+  ]
+}

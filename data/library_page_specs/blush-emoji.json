@@ -1,0 +1,143 @@
+{
+  "slug": "blush-emoji",
+  "title": "Blush Emoji & Kaomoji: Copy & Paste ☺️😊😳 Bashful Combos",
+  "meta_description": "Blush emoji ☺️ 😊 😳, shy and flattered reaction sets, plus blushing kaomoji like (灬°ω°灬) for bashful chats and replies. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/blush-emoji/",
+  "breadcrumb": "Blush Emoji & Kaomoji",
+  "hero_h1": "Blush Emoji & Kaomoji",
+  "hero_tagline": "Rosy-cheeked smiles, shy hidden faces, flustered reactions, and blushing kaomoji — every shade of bashful. Click any symbol to copy it instantly.",
+  "intro": "The blush emoji is how you say 'you're making me shy' without a single word — a warm ☺️ smile, the smiling eyes of 😊, or the wide-eyed pink rush of 😳 flushed cheeks. This page gathers the whole bashful range: the shy hide-behind-your-hands reactions like 🙊 and 🫣, the warm and flattered faces for a genuine compliment, and classic blushing kaomoji like (灬°ω°灬) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for sweet chats, comments, and replies.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-blushing-faces",
+      "label": "Core Blushing Faces",
+      "h2": "Core Blushing Face Emojis",
+      "intro": "The everyday blush faces, from a soft warm smile to full flushed-cheek fluster.",
+      "symbols": [
+        { "char": "☺️", "label": "Smiling Face" },
+        { "char": "😊", "label": "Smiling Face With Smiling Eyes" },
+        { "char": "😳", "label": "Flushed Face" },
+        { "char": "🥰", "label": "Smiling Face With Hearts" },
+        { "char": "😚", "label": "Kissing Face With Closed Eyes" },
+        { "char": "😌", "label": "Relieved Face" }
+      ]
+    },
+    {
+      "id": "shy-bashful-reactions",
+      "label": "Shy & Bashful Reactions",
+      "h2": "Shy & Bashful Reaction Emojis",
+      "intro": "Hands over the mouth and peeking eyes for when you're too shy to look.",
+      "symbols": [
+        { "char": "🙊", "label": "Speak-No-Evil Monkey" },
+        { "char": "🫣", "label": "Face With Peeking Eye" },
+        { "char": "🙈", "label": "See-No-Evil Monkey" },
+        { "char": "🫢", "label": "Face With Open Eyes And Hand Over Mouth" },
+        { "char": "😅", "label": "Grinning Face With Sweat" },
+        { "char": "😬", "label": "Grimacing Face" }
+      ]
+    },
+    {
+      "id": "warm-flattered-faces",
+      "label": "Warm & Flattered Faces",
+      "h2": "Warm & Flattered Face Emojis",
+      "intro": "Melting, teary-happy, and heart-eyed faces for when a compliment really lands.",
+      "symbols": [
+        { "char": "🥹", "label": "Face Holding Back Tears" },
+        { "char": "😍", "label": "Smiling Face With Heart-Eyes" },
+        { "char": "🤗", "label": "Hugging Face" },
+        { "char": "🥲", "label": "Smiling Face With Tear" },
+        { "char": "😙", "label": "Kissing Face With Smiling Eyes" }
+      ]
+    },
+    {
+      "id": "blushing-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Blushing Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces with rosy cheeks and shy hands, ready to paste in plain text.",
+      "symbols": [
+        { "char": "(灬°ω°灬)", "label": "Blushing Cheeks Kaomoji" },
+        { "char": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "label": "Deeply Embarrassed Kaomoji" },
+        { "char": "(*ﾉωﾉ)", "label": "Shy Hiding Kaomoji" },
+        { "char": "(〃▽〃)", "label": "Bashful Smile Kaomoji" },
+        { "char": "(//∇//)", "label": "Flustered Blush Kaomoji" },
+        { "char": "(^人^)", "label": "Shy Thank-You Kaomoji" },
+        { "char": "(๑´ㅂ`๑)", "label": "Happy Blush Kaomoji" },
+        { "char": "(*/▽＼*)", "label": "Peeking Shy Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Blush Emoji Combo Sets",
+    "intro": "Copy a complete blush combo in one click — from a quiet warm smile to full flustered fluster."
+  },
+  "collection_container_id": "blushSetsContainer",
+  "collections": [
+    {
+      "name": "Soft Blush",
+      "flags": ["☺️", "😊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "You're Too Sweet",
+      "flags": ["😊", "🥰"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Caught Off Guard",
+      "flags": ["😳", "🙊"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Too Shy To Look",
+      "flags": ["🙈", "🫣"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flattered",
+      "flags": ["🥹", "😊", "🥰"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Heart Eyes Blush",
+      "flags": ["😍", "😳"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Flustered Mess",
+      "flags": ["😳", "😅", "🙈"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Bashful Kaomoji",
+      "flags": ["(灬°ω°灬)", "(*ﾉωﾉ)"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/happy-emoji/",
+      "title": "Happy Emoji & Kaomoji",
+      "desc": "Bright grins and joyful faces for every good mood."
+    },
+    {
+      "href": "/library/blushing-kaomoji/",
+      "title": "Blushing Kaomoji",
+      "desc": "The full text-face collection of rosy, shy, and flustered kaomoji."
+    },
+    {
+      "href": "/library/cute-kaomoji/",
+      "title": "Cute Kaomoji",
+      "desc": "Adorable text faces to pair with a bashful blush."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, ready to copy."
+    }
+  ]
+}

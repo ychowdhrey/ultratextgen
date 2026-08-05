@@ -1,0 +1,140 @@
+{
+  "slug": "facebook-symbols",
+  "title": "Facebook Symbols — Copy & Paste Reactions, Hearts & Emoji",
+  "meta_description": "Copy and paste Facebook symbols — reaction emoji, hearts, stars, and dividers for posts, comments, bios, and Page names. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/facebook-symbols/",
+  "breadcrumb": "Facebook Symbols",
+  "hero_h1": "Facebook Symbols",
+  "hero_tagline": "Copy and paste reaction emoji, hearts, stars, and dividers for Facebook posts, comments, bios, and Page names. Click any symbol to copy it instantly.",
+  "intro": "Facebook accepts standard Unicode text almost everywhere — posts, comments, the About/bio section, Page and Group descriptions, and Messenger. This library collects the symbols people paste there most: text equivalents of Facebook's own Like, Love, and Haha reactions, hearts and stars for a bio or About line, bullets and dividers for structuring a longer post, checkmarks for lists and announcements, and frame characters for Page and Group names. The one exception is the personal profile Name field, which is checked against Facebook's real-name policy and strips most decoration — see the FAQ for what still works there.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "notes": "OPP: 7th instance of the proven platform-symbol-library template (instagram-symbols, whatsapp-symbols, discord-symbols, tiktok-symbols, linkedin-symbol-library, x-twitter-symbols). Demand source: competitor gap analysis — piliapp's /facebook-symbols/ page carries 10,589 FR traffic, top keyword “emoji facebook,” 127 ranking keywords, no existing EN or FR equivalent anywhere on the site. English-first per the backlog; localize once translation pipeline reaches this page. The shipped library/facebook-symbols/index.html is hand-finished beyond this spec (hero image, FAQPage JSON-LD, alternateName) to match the current template standard set by discord-symbols/tiktok-symbols; this spec captures the section/symbol content for provenance and possible regeneration.",
+  "sections": [
+    {
+      "id": "reaction-symbols",
+      "label": "Reaction Symbols",
+      "h2": "Facebook Reaction Symbols",
+      "intro": "Text-paste equivalents of Facebook's Like, Love, Care, Haha, Wow, Sad, and Angry reactions — for comments and posts where the real sticker isn't available.",
+      "symbols": [
+        { "char": "👍", "label": "Like Reaction" },
+        { "char": "❤️", "label": "Love Reaction" },
+        { "char": "🥰", "label": "Care Reaction" },
+        { "char": "😆", "label": "Haha Reaction" },
+        { "char": "😮", "label": "Wow Reaction" },
+        { "char": "😢", "label": "Sad Reaction" },
+        { "char": "😠", "label": "Angry Reaction" }
+      ]
+    },
+    {
+      "id": "hearts",
+      "label": "Hearts",
+      "h2": "Hearts for Facebook Posts & Bios",
+      "intro": "Heart characters for anniversary posts, family Group names, and About-section decoration.",
+      "symbols": [
+        { "char": "♥", "label": "Black Heart Suit" },
+        { "char": "♡", "label": "White Heart Suit" },
+        { "char": "❣", "label": "Heavy Heart Exclamation" },
+        { "char": "💕", "label": "Two Hearts" },
+        { "char": "💙", "label": "Blue Heart" },
+        { "char": "💚", "label": "Green Heart" },
+        { "char": "💛", "label": "Yellow Heart" },
+        { "char": "🖤", "label": "Black Heart" }
+      ]
+    },
+    {
+      "id": "stars-sparkles",
+      "label": "Stars & Sparkles",
+      "h2": "Stars & Sparkles",
+      "intro": "Stars and sparkle characters that make a Page headline or About line stand out.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "✦", "label": "Black Four-Pointed Star" },
+        { "char": "✧", "label": "White Four-Pointed Star" },
+        { "char": "✩", "label": "Stress Outlined White Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌟", "label": "Glowing Star" }
+      ]
+    },
+    {
+      "id": "bullets-dividers",
+      "label": "Bullets & Dividers",
+      "h2": "Bullets, Arrows & Dividers for Posts",
+      "intro": "Structure a longer Facebook post, Group announcement, or Page update with bullets, arrows, and divider characters.",
+      "symbols": [
+        { "char": "•", "label": "Bullet" },
+        { "char": "‣", "label": "Triangular Bullet" },
+        { "char": "▪", "label": "Black Small Square" },
+        { "char": "➤", "label": "Black Rightwards Arrowhead" },
+        { "char": "→", "label": "Rightwards Arrow" },
+        { "char": "─", "label": "Light Horizontal Line" },
+        { "char": "┈", "label": "Dashed Horizontal Line" },
+        { "char": "│", "label": "Vertical Bar" }
+      ]
+    },
+    {
+      "id": "checks-status",
+      "label": "Checkmarks",
+      "h2": "Checkmarks & Status Symbols",
+      "intro": "Checkmark and cross characters for polls, to-do updates, and comparison posts.",
+      "symbols": [
+        { "char": "✓", "label": "Check Mark" },
+        { "char": "✔", "label": "Heavy Check Mark" },
+        { "char": "✅", "label": "White Heavy Check Mark" },
+        { "char": "☑", "label": "Ballot Box with Check" },
+        { "char": "✗", "label": "Ballot X" },
+        { "char": "❌", "label": "Cross Mark" }
+      ]
+    },
+    {
+      "id": "page-name-symbols",
+      "label": "Page & Group Names",
+      "h2": "Page & Group Name Symbols",
+      "intro": "Frame and bracket characters for Page names, Group names, and Business Page usernames — fields with more room for decoration than a personal profile Name.",
+      "symbols": [
+        { "char": "꒰", "label": "Yi Radical Shy" },
+        { "char": "꒱", "label": "Yi Radical Vep" },
+        { "char": "【", "label": "Left Black Lenticular Bracket" },
+        { "char": "】", "label": "Right Black Lenticular Bracket" },
+        { "char": "「", "label": "Left Corner Bracket" },
+        { "char": "」", "label": "Right Corner Bracket" },
+        { "char": "⋆", "label": "Star Operator" },
+        { "char": "⊹", "label": "Hermitian Conjugate Matrix" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/heart-symbols/",
+      "title": "Heart Symbols",
+      "desc": "Every heart emoji and Unicode heart character, in every color and style."
+    },
+    {
+      "href": "/library/star-symbols/",
+      "title": "Star Symbols",
+      "desc": "Stars, sparkles, and asterisk-related Unicode marks."
+    },
+    {
+      "href": "/library/sparkle-symbols/",
+      "title": "Sparkle Symbols",
+      "desc": "Sparkle symbols, glitter characters, and aesthetic decorators."
+    },
+    {
+      "href": "/library/bullet-point-symbols/",
+      "title": "Bullet Point Symbols",
+      "desc": "List markers, arrow bullets, and decorative bullets for posts."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Checkmark Symbols",
+      "desc": "Check marks, cross marks, and status indicators."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What every popular emoji — including reaction faces — actually means."
+    }
+  ]
+}

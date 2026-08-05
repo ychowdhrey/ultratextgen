@@ -21,7 +21,168 @@
   },
   "ui": {
     "placeholder": "Napiš text...",
-    "advertisement": "Reklama"
+    "advertisement": "Reklama",
+    "categoryTabs": {
+      "popular": "Oblíbené",
+      "bold-fonts": "Tučné",
+      "italic-fonts": "Kurzíva",
+      "bubble-fonts": "Bublinové",
+      "cursive-fonts": "Psací",
+      "gothic-fonts": "Gotické",
+      "strikethrough-text": "Přeškrtnuté",
+      "underline-text": "Podtržené",
+      "small-text": "Malý text",
+      "cute-fonts": "Roztomilé",
+      "aesthetic-fonts": "Estetické",
+      "upside-down-text": "Vzhůru nohama",
+      "text-decorator": "Dekorace textu",
+      "classified": "Cenzurováno / Utajeno",
+      "fullwidth-fonts": "Plná šířka",
+      "faux-fonts": "Falešné abecedy",
+      "ancient-fonts": "Starověké a runy",
+      "emoji-letter-fonts": "Emoji písmena",
+      "novelty-fonts": "Neobvyklé"
+    },
+    "scopeControl": {
+      "label": "Použít styl na",
+      "ariaLabel": "Vyber, kolik textu chceš stylizovat",
+      "whole": "Celý text",
+      "wholeTitle": "Stylizuje každý řádek tvého textu.",
+      "firstLine": "Jen první řádek",
+      "firstLineTag": "pro příspěvky",
+      "firstLineTitle": "Stylizuje jen první řádek (tvůj nadpis nebo poutavou větu) a zbytek nechá jako obyčejný, čitelný text — ideální pro příspěvky na sociálních sítích.",
+      "share": "Sdílet",
+      "shareTitle": "Sdílej odkaz, který znovu otevře tuto stránku s tvým textem už vyplněným",
+      "linkCopied": "Odkaz zkopírován"
+    },
+    "safeMode": {
+      "label": "Bezpečnost vkládání",
+      "ariaLabel": "Zjisti, které styly se správně zobrazí na jiných zařízeních",
+      "toggleLabel": "Bezpečný režim",
+      "hint": "Označuje styly, které se na starších telefonech ostatních lidí mohou zobrazit jako čtverečky (▯)."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Někomu se může zobrazit jako čtverečky",
+      "boxesWarningTitle": "Tento styl používá vzácné znaky Unicode, které některé telefony a starší zařízení nemají. Osobě, které text vložíš, se může zobrazit jako čtverečky (▯). Pokud tvé publikum může používat starší zařízení, zvol jednodušší nebo šířeji podporovaný styl.",
+      "emojiWarning": "⚠ Obsahuje emoji — na starších zařízeních se může lišit",
+      "emojiWarningTitle": "Tento styl obsahuje emoji. Na moderních zařízeních se emoji zobrazí správně, ale na velmi starých telefonech mohou vypadat jinak nebo se zobrazit jako čtverečky.",
+      "modernDevices": "Na moderních zařízeních se zobrazí správně",
+      "modernDevicesTitle": "Tato stylizovaná písmena Unicode se zobrazí na všech současných telefonech a počítačích. Na velmi starém Androidu (zhruba před rokem 2016) nebo s minimálními systémovými fonty se některá mohou stále zobrazit jako čtverečky (▯). Pokud tvé publikum může používat starší zařízení, vyzkoušej to nejdřív.",
+      "rendersEverywhere": "✓ Zobrazí se správně všude",
+      "rendersEverywhereTitle": "Tento styl je obyčejný text — zobrazí se správně všude, bez rizika čtverečků na jakémkoli zařízení.",
+      "deviceWarning": "⚠ Na tvém zařízení se nemusí zobrazit",
+      "deviceWarningTitle": "Fonty tvého zařízení tento styl nedokážou zobrazit — může se zobrazit jako čtverečky (□). Na jiných zařízeních může přesto vypadat správně.",
+      "safeAnywhere": "✓ Bezpečné všude",
+      "safeAnywhereTitle": "Zobrazí se na všech hlavních platformách. Pozor: čtečky obrazovky mohou stylizovaná písmena hláskovat po jednom, proto nech samotný text obyčejný.",
+      "worksBestOn": "⚠ Funguje nejlépe na {platforms}",
+      "worksBestOnTitle": "Funguje nejlépe na: {platforms}. Jiné platformy ho mohou odstranit nebo zobrazit špatně — vyzkoušej to před zveřejněním."
+    },
+    "savedStyles": {
+      "ariaLabel": "Tvé uložené styly",
+      "heading": "Tvé uložené styly",
+      "clearAll": "Vymazat vše",
+      "hint": "Uloženo v tomto zařízení — budou tu čekat, až se vrátíš."
+    },
+    "textStats": {
+      "wordSingular": "1 slovo",
+      "wordPlural": "{n} slov",
+      "charSingular": "1 znak",
+      "charPlural": "{n} znaků"
+    },
+    "decorationsNone": "Žádné",
+    "categoryTabsToggle": {
+      "more": "Více",
+      "less": "Méně"
+    },
+    "demoText": "Vítej v UltraTextGen.\nNapiš cokoliv. Udělej z toho ultra.",
+    "copyButtons": {
+      "copy": "Kopírovat",
+      "copied": "✓ Zkopírováno",
+      "failed": "✗ Selhalo",
+      "copyTitle": "Kopírovat do schránky",
+      "save": "Uložit",
+      "saved": "Uloženo",
+      "saveTitle": "Uložit tento styl",
+      "unsaveTitle": "Odebrat z uložených stylů",
+      "empty": "Napiš něco výše...",
+      "noStyles": "Nenalezeny žádné styly. Zkus jiný filtr nebo hledaný výraz."
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "jméno",
+        "tabs": {
+          "playful": "Hravé",
+          "hearts": "Srdce",
+          "sparkle": "Třpytky",
+          "faces": "Obličeje",
+          "stars": "Hvězdy"
+        }
+      },
+      "bio": {
+        "word": "jméno",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetické",
+          "edgy": "Temné",
+          "royal": "Královské",
+          "cute": "Roztomilé",
+          "bold": "Tučné",
+          "clean": "Čisté",
+          "mystical": "Mystické",
+          "retro": "Retro",
+          "nature": "Příroda"
+        }
+      },
+      "small-text": {
+        "word": "text",
+        "tabs": {
+          "subtle": "Jemné",
+          "tiny": "Drobné",
+          "brackets": "Závorky",
+          "minimal": "Minimalistické"
+        }
+      },
+      "bubble": {
+        "word": "jméno",
+        "tabs": {
+          "rounded": "Kulaté",
+          "soft": "Měkké",
+          "stars": "Hvězdy",
+          "hearts": "Srdce",
+          "minimal": "Minimalistické"
+        }
+      },
+      "cute": {
+        "word": "jméno",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Obličeje",
+          "hearts": "Srdce",
+          "sparkle": "Třpytky",
+          "pastel": "Pastelové"
+        }
+      },
+      "aesthetic": {
+        "word": "text",
+        "tabs": {
+          "celestial": "Nebeské",
+          "sparkle": "Třpytky",
+          "y2k": "Y2K",
+          "soft": "Měkké",
+          "minimal": "Minimalistické"
+        }
+      },
+      "nickname": {
+        "word": "jméno",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Estetické",
+          "symbols": "Symboly",
+          "hearts": "Srdce",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Na co to lidé nejčastěji používají",

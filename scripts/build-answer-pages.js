@@ -8,9 +8,24 @@
    answer page stays consistent. Mirrors the hand-authored answers template
    (Short-answer block, editorial-section bodies, CTA, related, FAQ).
 
-   Run:  node scripts/build-answer-pages.js
-   The site build injects the scriptwrapper tag server-side, so it is not
-   emitted here.
+   Run:
+     node scripts/build-answer-pages.js                    # DRY RUN — reports drift, writes nothing
+     node scripts/build-answer-pages.js <slug> [<slug>…]   # regenerate only those pages
+     node scripts/build-answer-pages.js --all              # rewrite every page from the config
+     node scripts/build-answer-pages.js --list             # list available slugs
+
+   A bare run used to rewrite all 19 pages, which silently reset any content
+   that lives only in the HTML — several live pages carry hand-added sections
+   and example blocks that were never back-ported into the config. So the
+   destructive mode is now opt-in (--all) and the default reports what would
+   change instead. Name the slug you mean when adding or editing one page.
+
+   Pages are emitted COMPLETE: the Funding Choices tag and the decorative hero
+   figure are part of the template, so no post-generation pass has to inject
+   them and regenerating a page cannot drop them.
+
+   Ads: pages carry the Google AdSense loader (Auto Ads). The Journey/Grow/
+   Mediavine scripts were removed site-wide in favor of AdSense.
    ========================================================================== */
 
 'use strict';
@@ -20,6 +35,16 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const BASE = 'https://ultratextgen.com';
+
+// Google Funding Choices (ad-blocking recovery) tag. Read from
+// scripts/data/funding-choices-tag.html — the single source of truth shared
+// with scripts/inject-funding-choices-tag.js, so this generator and the
+// injector can never emit different snippets. Every page must carry it
+// (scripts/check-funding-choices.js enforces it); emitting pages without it
+// meant a regenerated page silently lost a tag the injector had added.
+const FUNDING_CHOICES_TAG = fs
+  .readFileSync(path.join(__dirname, 'data', 'funding-choices-tag.html'), 'utf8')
+  .trim();
 
 function faqJsonLd(faq) {
   return JSON.stringify({
@@ -45,6 +70,34 @@ function breadcrumbJsonLd(slug, name) {
   }, null, 2);
 }
 
+/**
+ * Decorative hero figure, emitted here rather than injected afterwards by
+ * scripts/wire-site-art.py. The generator knows the slug, so it knows the art
+ * path — and a page that generates complete needs no post-hoc mutation pass,
+ * which is what made regenerating one page silently drop the figure from it.
+ *
+ * Emitted only when the SVG actually exists: referencing art that isn't on
+ * disk would ship a 404 to Googlebot (see CLAUDE.md, "New pages must ship with
+ * their hero/OG/Twitter art in the same change"), so a missing file warns and
+ * emits nothing instead.
+ */
+function heroFigure(slug) {
+  const rel = `assets/hero/answers-${slug}.svg`;
+  if (!fs.existsSync(path.join(ROOT, rel))) {
+    console.warn(
+      `  ! no hero art for answers/${slug} — expected ${rel}.\n` +
+        `    Register it in scripts/generate-site-art.py's PAGES dict as ` +
+        `"answers-${slug}" and run:\n` +
+        `      python3 scripts/generate-site-art.py answers-${slug}`
+    );
+    return '';
+  }
+  return `<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/${rel}" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>`;
+}
+
 function page(cfg) {
   const url = `${BASE}/answers/${cfg.slug}/`;
   const og = `${BASE}/assets/og/answers-${cfg.slug}.png`;
@@ -66,6 +119,7 @@ function page(cfg) {
   </div>`).join('');
 
   return `<!DOCTYPE html><html lang="en"><head>
+${FUNDING_CHOICES_TAG}
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -73,8 +127,6 @@ function page(cfg) {
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
   <!-- End Google Tag Manager -->
-  <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
-  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
        crossorigin="anonymous"></script>
 
@@ -129,6 +181,7 @@ ${breadcrumbJsonLd(cfg.slug, cfg.crumb)}
     <p class="hero-tagline">${cfg.tagline}</p>
   </div>
 </section>
+${heroFigure(cfg.slug)}
 
 <section class="editorial-section">
   <span class="article-section-label">Short answer</span>
@@ -178,12 +231,84 @@ ${faqItems}
 
 const PAGES = require('./answer-pages-content.js');
 
+// Slug filter. Without one this rewrites all 19 pages from the config on every
+// run, which silently reverts anything added to a page after it was generated —
+// exactly how a regenerated page used to lose its Funding Choices tag, and how
+// any later hand-edit would be lost too. Pass slugs to regenerate only those:
+//
+//   node scripts/build-answer-pages.js                       # all (unchanged)
+//   node scripts/build-answer-pages.js what-does-o7-mean     # just that page
+//   node scripts/build-answer-pages.js --list                # show slugs
+//
+// Prefer naming slugs when adding or editing one page. A full run is still
+// correct, but review its diff — a page that has drifted from the config will
+// be reset to it.
+const args = process.argv.slice(2).filter((a) => a !== '--');
+
+if (args.includes('--list')) {
+  PAGES.forEach((cfg) => console.log(cfg.slug));
+  process.exit(0);
+}
+
+const wantAll = args.includes('--all');
+const slugArgs = args.filter((a) => !a.startsWith('--'));
+
+const known = new Set(PAGES.map((cfg) => cfg.slug));
+const unknown = slugArgs.filter((a) => !known.has(a));
+if (unknown.length) {
+  console.error(`Unknown slug(s): ${unknown.join(', ')}`);
+  console.error('Run with --list to see the available slugs.');
+  process.exit(1);
+}
+
+// A full rewrite is destructive and no longer the default. Several live pages
+// carry content that exists only in their HTML — hand-added sections, examples,
+// styled blocks — and were being silently reset to the config on every run. So
+// with no slugs and no --all, report what a full run WOULD change and stop.
+if (!slugArgs.length && !wantAll) {
+  const drifted = [];
+  for (const cfg of PAGES) {
+    const file = path.join(ROOT, 'answers', cfg.slug, 'index.html');
+    if (!fs.existsSync(file)) {
+      drifted.push({ slug: cfg.slug, delta: null });
+      continue;
+    }
+    const current = fs.readFileSync(file, 'utf8');
+    const next = page(cfg);
+    if (current !== next) drifted.push({ slug: cfg.slug, delta: next.length - current.length });
+  }
+
+  console.log('Answer-page build — dry run (no files written)\n');
+  if (!drifted.length) {
+    console.log('Every page already matches its config. Nothing to do.');
+    process.exit(0);
+  }
+  for (const d of drifted) {
+    if (d.delta === null) console.log(`  + answers/${d.slug}/  (does not exist yet)`);
+    else if (d.delta < 0) console.log(`  ! answers/${d.slug}/  would SHRINK by ${-d.delta} bytes — likely HTML-only content that is not in the config`);
+    else console.log(`  ~ answers/${d.slug}/  would grow by ${d.delta} bytes`);
+  }
+  console.log(
+    `\n${drifted.length} page(s) differ from the config.\n` +
+      'Nothing was written. Name the slug(s) you mean, or pass --all to rewrite every page\n' +
+      'from the config — which will DISCARD any content that lives only in the HTML.\n' +
+      'Anything worth keeping should be moved into scripts/answer-pages-content.js first.'
+  );
+  process.exit(0);
+}
+
+const selected = slugArgs.length ? PAGES.filter((cfg) => slugArgs.includes(cfg.slug)) : PAGES;
+
 let count = 0;
-for (const cfg of PAGES) {
+for (const cfg of selected) {
   const dir = path.join(ROOT, 'answers', cfg.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), page(cfg));
   console.log('wrote answers/' + cfg.slug + '/index.html');
   count++;
 }
-console.log(`\n${count} answer pages written.`);
+console.log(
+  `\n${count} answer page${count === 1 ? '' : 's'} written` +
+    (slugArgs.length ? ` (filter: ${slugArgs.join(", ")})` : " — FULL run (--all)") +
+    '.'
+);

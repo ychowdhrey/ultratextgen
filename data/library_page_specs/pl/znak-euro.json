@@ -1,0 +1,80 @@
+{
+  "slug": "znak-euro",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Znak Euro (€): Symbol Euro i Inne Waluty do Skopiowania",
+  "meta_description": "Skopiuj znak euro € oraz symbole innych walut świata — dolar, funt, jen, rubel, hrywna i bitcoin. Kliknij symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/znak-euro/",
+  "breadcrumb": "Znak Euro",
+  "hero_h1": "Znak Euro €",
+  "hero_tagline": "Symbol euro i symbole walut z całego świata — kliknij, aby skopiować.",
+  "intro": "W Polsce płaci się złotym (zł), ale znak euro € pojawia się bez przerwy — na fakturach, cennikach dla turystów i w kontraktach z krajami Unii Europejskiej. Ten symbol to prawdziwy znak Unicode (U+20AC), więc kopiuje się i wkleja jak zwykła litera, bez konieczności przełączania układu klawiatury. Poniżej euro oraz symbole innych popularnych walut świata.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/euro-sign/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/znak-euro/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/euro-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "znak-euro",
+      "label": "Euro",
+      "h2": "Znak Euro",
+      "intro": "Symbol waluty Unii Europejskiej, wprowadzony w 1996 roku.",
+      "symbols": [
+        { "char": "€", "label": "Znak Euro" }
+      ]
+    },
+    {
+      "id": "waluty-swiata",
+      "label": "Waluty świata",
+      "h2": "Symbole Innych Walut",
+      "intro": "Najczęściej używane symbole walut z całego świata.",
+      "symbols": [
+        { "char": "$", "label": "Znak Dolara" },
+        { "char": "£", "label": "Znak Funta Brytyjskiego" },
+        { "char": "¥", "label": "Znak Jena / Juana" },
+        { "char": "₩", "label": "Znak Wona Koreańskiego" },
+        { "char": "₹", "label": "Znak Rupii Indyjskiej" },
+        { "char": "₽", "label": "Znak Rubla Rosyjskiego" },
+        { "char": "₴", "label": "Znak Hrywny Ukraińskiej" },
+        { "char": "₿", "label": "Znak Bitcoina" },
+        { "char": "¢", "label": "Znak Centa" }
+      ]
+    },
+    {
+      "id": "znaki-pokrewne",
+      "label": "Znaki pokrewne",
+      "h2": "Znaki Pokrewne",
+      "intro": "Znaki procentowe używane obok kwot i walut.",
+      "symbols": [
+        { "char": "‰", "label": "Znak Promila" },
+        { "char": "‱", "label": "Znak Bazowy (Permirade)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/nieskonczonosc/",
+      "title": "Znak Nieskończoności ∞",
+      "desc": "Symbol nieskończoności i pokrewne znaki matematyczne."
+    },
+    {
+      "href": "/pl/symbol/znaki-tm-i-copyright/",
+      "title": "TM, © i ®",
+      "desc": "Znak towarowy, copyright i zastrzeżony znak towarowy do skopiowania."
+    },
+    {
+      "href": "/pl/library/",
+      "title": "Biblioteka Symboli",
+      "desc": "Wszystkie kolekcje symboli i emotek do skopiowania w jednym miejscu."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "slug": "alfabeto-grego",
+  "lang": "pt",
+  "title": "Alfabeto Grego: Copiar e Colar α β Δ Σ Ω π",
+  "meta_description": "Copie e cole todas as letras gregas — maiúsculas, minúsculas e variantes matemáticas como alpha, beta, delta, sigma, ômega e pi. Clique em qualquer letra para copiar na hora.",
+  "breadcrumb": "Alfabeto Grego",
+  "hero_h1": "Alfabeto Grego",
+  "hero_tagline": "O alfabeto grego completo — maiúsculas, minúsculas e as variantes matemáticas — pronto para copiar. Clique em qualquer letra para copiar na hora.",
+  "intro": "Letras gregas aparecem em matemática, física, nomes de repúblicas estudantis e até em fontes decorativas. Esta biblioteca reúne o alfabeto grego completo em maiúsculas e minúsculas, o sigma final e as variantes usadas como símbolos matemáticos, para você copiar alfa, beta, delta, sigma, ômega, pi e o resto sem precisar caçar em mapa de caracteres.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/pt/library/alfabeto-grego/",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/library/simbolos/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/greek-letter-symbols/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/library/alfabeto-grego/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/greek-letter-symbols/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "uppercase-greek",
+      "label": "Maiúsculas",
+      "h2": "Letras Gregas Maiúsculas",
+      "intro": "As 24 letras maiúsculas do alfabeto grego, de Alfa a Ômega.",
+      "symbols": [
+        { "char": "Α", "label": "Letra Grega Maiúscula Alfa" },
+        { "char": "Β", "label": "Letra Grega Maiúscula Beta" },
+        { "char": "Γ", "label": "Letra Grega Maiúscula Gama" },
+        { "char": "Δ", "label": "Letra Grega Maiúscula Delta" },
+        { "char": "Ε", "label": "Letra Grega Maiúscula Épsilon" },
+        { "char": "Ζ", "label": "Letra Grega Maiúscula Zeta" },
+        { "char": "Η", "label": "Letra Grega Maiúscula Eta" },
+        { "char": "Θ", "label": "Letra Grega Maiúscula Teta" },
+        { "char": "Ι", "label": "Letra Grega Maiúscula Iota" },
+        { "char": "Κ", "label": "Letra Grega Maiúscula Kappa" },
+        { "char": "Λ", "label": "Letra Grega Maiúscula Lambda" },
+        { "char": "Μ", "label": "Letra Grega Maiúscula Mi" },
+        { "char": "Ν", "label": "Letra Grega Maiúscula Ni" },
+        { "char": "Ξ", "label": "Letra Grega Maiúscula Csi" },
+        { "char": "Ο", "label": "Letra Grega Maiúscula Ômicron" },
+        { "char": "Π", "label": "Letra Grega Maiúscula Pi" },
+        { "char": "Ρ", "label": "Letra Grega Maiúscula Rô" },
+        { "char": "Σ", "label": "Letra Grega Maiúscula Sigma" },
+        { "char": "Τ", "label": "Letra Grega Maiúscula Tau" },
+        { "char": "Υ", "label": "Letra Grega Maiúscula Ípsilon" },
+        { "char": "Φ", "label": "Letra Grega Maiúscula Fi" },
+        { "char": "Χ", "label": "Letra Grega Maiúscula Qui" },
+        { "char": "Ψ", "label": "Letra Grega Maiúscula Psi" },
+        { "char": "Ω", "label": "Letra Grega Maiúscula Ômega" }
+      ]
+    },
+    {
+      "id": "lowercase-greek",
+      "label": "Minúsculas",
+      "h2": "Letras Gregas Minúsculas",
+      "intro": "As letras minúsculas, incluindo o sigma final usado no fim de uma palavra.",
+      "symbols": [
+        { "char": "α", "label": "Letra Grega Minúscula Alfa" },
+        { "char": "β", "label": "Letra Grega Minúscula Beta" },
+        { "char": "γ", "label": "Letra Grega Minúscula Gama" },
+        { "char": "δ", "label": "Letra Grega Minúscula Delta" },
+        { "char": "ε", "label": "Letra Grega Minúscula Épsilon" },
+        { "char": "ζ", "label": "Letra Grega Minúscula Zeta" },
+        { "char": "η", "label": "Letra Grega Minúscula Eta" },
+        { "char": "θ", "label": "Letra Grega Minúscula Teta" },
+        { "char": "ι", "label": "Letra Grega Minúscula Iota" },
+        { "char": "κ", "label": "Letra Grega Minúscula Kappa" },
+        { "char": "λ", "label": "Letra Grega Minúscula Lambda" },
+        { "char": "μ", "label": "Letra Grega Minúscula Mi" },
+        { "char": "ν", "label": "Letra Grega Minúscula Ni" },
+        { "char": "ξ", "label": "Letra Grega Minúscula Csi" },
+        { "char": "ο", "label": "Letra Grega Minúscula Ômicron" },
+        { "char": "π", "label": "Letra Grega Minúscula Pi" },
+        { "char": "ρ", "label": "Letra Grega Minúscula Rô" },
+        { "char": "σ", "label": "Letra Grega Minúscula Sigma" },
+        { "char": "ς", "label": "Letra Grega Minúscula Sigma Final" },
+        { "char": "τ", "label": "Letra Grega Minúscula Tau" },
+        { "char": "υ", "label": "Letra Grega Minúscula Ípsilon" },
+        { "char": "φ", "label": "Letra Grega Minúscula Fi" },
+        { "char": "χ", "label": "Letra Grega Minúscula Qui" },
+        { "char": "ψ", "label": "Letra Grega Minúscula Psi" },
+        { "char": "ω", "label": "Letra Grega Minúscula Ômega" }
+      ]
+    },
+    {
+      "id": "variant-greek",
+      "label": "Variantes",
+      "h2": "Variantes e Símbolos",
+      "intro": "Formas alternativas de várias letras gregas, usadas como símbolos matemáticos e científicos distintos.",
+      "symbols": [
+        { "char": "ϑ", "label": "Símbolo Grego Teta" },
+        { "char": "ϕ", "label": "Símbolo Grego Fi" },
+        { "char": "ϖ", "label": "Símbolo Grego Pi" },
+        { "char": "ϱ", "label": "Símbolo Grego Rô" },
+        { "char": "ϵ", "label": "Símbolo Grego Épsilon Lunado" },
+        { "char": "ϐ", "label": "Símbolo Grego Beta" },
+        { "char": "ϰ", "label": "Símbolo Grego Kappa" },
+        { "char": "ϴ", "label": "Símbolo Grego Teta Maiúsculo" },
+        { "char": "∇", "label": "Nabla (Operador Del)" },
+        { "char": "∂", "label": "Diferencial Parcial" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Operadores, raízes, infinito e as letras gregas usadas em equações."
+    },
+    {
+      "href": "/pt/library/simbolos/",
+      "title": "Símbolos para Copiar",
+      "desc": "A biblioteca completa de símbolos para copiar, organizada por categoria."
+    },
+    {
+      "href": "/pt/conversor-de-letras/",
+      "title": "Conversor de Letras",
+      "desc": "Transforme texto comum em dezenas de fontes Unicode diferentes."
+    }
+  ]
+}

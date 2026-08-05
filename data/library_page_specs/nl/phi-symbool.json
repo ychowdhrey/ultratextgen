@@ -1,0 +1,121 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "phi-symbool",
+  "title": "Phi-symbool: Kopieer en Plak φ Φ ϕ — de Gulden-Snede-letter, Genoemd naar Phidias",
+  "meta_description": "Kopieer en plak het phi-symbool — kleine letter φ (U+03C6), hoofdletter Φ en de gesloten wiskundige variant ϕ — de gulden-snede-letter (≈1,618) die Mark Barr rond 1909 naar de beeldhouwer Phidias vernoemde. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/phi-symbool/",
+  "breadcrumb": "Phi-symbool",
+  "hero_h1": "Phi-symbool",
+  "hero_tagline": "De kleine letter φ die voor de gulden snede staat (≈1,618), de hoofdletter Φ die natuurkundigen gebruiken voor magnetische flux, en de gesloten wiskundige variant ϕ — de letter die Mark Barr rond 1909 vernoemde naar de beeldhouwer Phidias. Klik op een teken om het direct te kopiëren.",
+  "intro": "Phi's kleine letter, φ (U+03C6, GREEK SMALL LETTER PHI), is de eenentwintigste letter van het Griekse alfabet, maar vooral beroemd als teken voor de gulden snede — het irrationale getal (1 + √5) / 2 ≈ 1,6180339887 waar kunstenaars en architecten al eeuwenlang naar jagen. Die naamgeving is verrassend recent: de verhouding werd lange tijd geschreven met de Griekse letter tau (τ), totdat de Amerikaanse wiskundige Mark Barr rond 1909 φ voorstelde, gekozen als de eerste letter van Phidias (Φειδίας, ca. 490–430 v.Chr.), de beeldhouwer die verbonden is met de verhoudingen van het Parthenon. Phi draagt ook een eigenaardigheid die geen andere Griekse letter hier heeft — twee kleine-lettertekens. De alledaagse letter φ (U+03C6) wordt meestal als de 'lussige', open vorm weergegeven, terwijl een apart gecodeerd Grieks phi-teken, ϕ (U+03D5), de 'gesloten', doorgestreepte vorm is — een cirkel doorkruist door een verticale lijn — die Unicode sinds versie 3.0 aanbeveelt voor de wiskunde, al varieert het per lettertype welke vorm daadwerkelijk wordt getoond. De hoofdletter Φ (U+03A6) doet zwaarder werk in de wetenschap: het is het standaardteken voor magnetische flux in de natuurkunde, terwijl kleine letter φ Eulers totiëntfunctie, φ(n), markeert in de getaltheorie.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/phi-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/phi-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "het-phi-symbool",
+      "label": "Het Phi-symbool",
+      "h2": "Het Phi-symbool — φ, Φ & ϕ",
+      "intro": "De drie vormen die mensen bedoelen met 'het phi-symbool': de alledaagse kleine letter, de hoofdletter en de eigen wiskundige variant. Plak degene die je nodig hebt.",
+      "symbols": [
+        {
+          "char": "φ",
+          "label": "Griekse Kleine Letter Phi (U+03C6) — De Gulden-Snede-letter, 'Lussige' Open Vorm"
+        },
+        {
+          "char": "Φ",
+          "label": "Griekse Hoofdletter Phi (U+03A6) — Magnetische Flux in de Natuurkunde"
+        },
+        {
+          "char": "ϕ",
+          "label": "Grieks Phi-teken (U+03D5) — De 'Gesloten', Doorgestreepte Wiskundige Variant"
+        }
+      ]
+    },
+    {
+      "id": "phi-gulden-snede-wiskunde",
+      "label": "Gulden Snede & Wiskunde",
+      "h2": "Phi: de Gulden Snede & Wiskundig Gebruik",
+      "intro": "Phi's meest gezochte taak. Kleine letter φ geeft de gulden snede ≈ 1,618 een naam, gedefinieerd als (1 + √5) / 2; sinds Unicode 3.0 is de gesloten ϕ (U+03D5) het teken dat wordt aanbevolen voor dat wiskundige gebruik, en hoofdletter Φ markeert magnetische flux.",
+      "symbols": [
+        {
+          "char": "φ",
+          "label": "Kleine Letter Phi (U+03C6) — Gulden Snede ≈ 1,6180339887"
+        },
+        {
+          "char": "ϕ",
+          "label": "Grieks Phi-teken (U+03D5) — Het Wiskundig-geprefereerde Gesloten Teken"
+        },
+        {
+          "char": "Φ",
+          "label": "Hoofdletter Phi (U+03A6) — Magnetische Flux"
+        },
+        {
+          "char": "√",
+          "label": "Vierkantswortel (U+221A) — Komt Voor in Phi's Formule (1 + √5) / 2"
+        }
+      ]
+    },
+    {
+      "id": "verwante-griekse-letters",
+      "label": "Griekse Letters",
+      "h2": "Verwante Griekse Letters",
+      "intro": "Phi is de eenentwintigste letter van het Griekse alfabet. Dit zijn de buren en beroemde constanten waar het meest naast wordt gezocht.",
+      "symbols": [
+        {
+          "char": "π",
+          "label": "Griekse Kleine Letter Pi"
+        },
+        {
+          "char": "Σ",
+          "label": "Griekse Hoofdletter Sigma"
+        },
+        {
+          "char": "Ω",
+          "label": "Griekse Hoofdletter Omega"
+        },
+        {
+          "char": "θ",
+          "label": "Griekse Kleine Letter Theta"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/griekse-letters/",
+      "title": "Griekse Letters",
+      "desc": "Het volledige Griekse alfabet in hoofdletters, kleine letters en wiskundige variantvormen om te kopiëren en te plakken."
+    },
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "De gulden snede, vierkantswortel en de operatoren en Griekse letters die een vergelijking compleet maken."
+    },
+    {
+      "href": "/nl/symbol/pi-symbool/",
+      "title": "Pi-symbool",
+      "desc": "Phi's collega-beroemde constante: nog een Griekse letter, π ≈ 3,14159, die voor een getal staat in plaats van een klank."
+    }
+  ]
+}

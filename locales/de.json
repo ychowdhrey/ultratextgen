@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Schöne Schrift zum Kopieren — coole Schriftarten, Symbole & ästhetischer Text für Insta, TikTok & Co.",
-    "description": "Tipp deinen Text — und bekomm ihn sofort in schöner, stylischer, fancy oder ästhetischer Schrift zurück. Coole Schriftarten und Symbole zum Kopieren für Insta-Bio, TikTok, Discord, WhatsApp-Status und Gamer-Namen."
+    "title": "Schriftgenerator — Schöne Schrift zum Kopieren, coole Schriftarten & Symbole für Insta, TikTok & Co.",
+    "description": "Schriftgenerator: Tipp deinen Text — und bekomm ihn sofort in schöner, stylischer, fancy oder ästhetischer Schrift zurück. Coole Schriftarten und Symbole zum Kopieren für Insta-Bio, TikTok, Discord, WhatsApp-Status und Gamer-Namen."
   },
   "hero": {
-    "title": "Schöne Schrift & coole Symbole zum Kopieren",
+    "title": "Schriftgenerator — Schöne Schrift & coole Symbole zum Kopieren",
     "subtitle": "Tipp dein Wort, such dir den Look aus, klick auf Kopieren — fertig. Ästhetische, fette, kursive, verschnörkelte und stylische Schriftarten für Insta-Bio, TikTok-Caption, Discord- oder Gamer-Namen, WhatsApp-Status und überall, wo normale Buchstaben einfach zu langweilig sind."
   },
   "decorations": {
@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Hier deinen Text eintippen…",
-    "advertisement": "Werbung"
+    "advertisement": "Werbung",
+    "categoryTabs": {
+      "popular": "Beliebt",
+      "bold-fonts": "Fett",
+      "italic-fonts": "Kursiv",
+      "bubble-fonts": "Blasen",
+      "cursive-fonts": "Schreibschrift",
+      "gothic-fonts": "Gotisch",
+      "strikethrough-text": "Durchgestrichen",
+      "underline-text": "Unterstrichen",
+      "small-text": "Kleiner Text",
+      "cute-fonts": "Niedlich",
+      "aesthetic-fonts": "Ästhetisch",
+      "upside-down-text": "Verkehrt herum",
+      "text-decorator": "Text-Dekorator",
+      "classified": "Geschwärzt / Zensiert",
+      "fullwidth-fonts": "Volle Breite",
+      "faux-fonts": "Fake-Alphabete",
+      "ancient-fonts": "Antik & Runen",
+      "emoji-letter-fonts": "Emoji-Buchstaben",
+      "novelty-fonts": "Kurioses"
+    },
+    "scopeControl": {
+      "label": "Stil anwenden auf",
+      "ariaLabel": "Wähle, wie viel Text gestylt werden soll",
+      "whole": "Ganzer Text",
+      "wholeTitle": "Stylt jede Zeile deines Textes.",
+      "firstLine": "Nur erste Zeile",
+      "firstLineTag": "für Beiträge",
+      "firstLineTitle": "Stylt nur die erste Zeile (deine Überschrift oder deinen Aufhänger) und lässt den Rest als normalen, lesbaren Text — ideal für Social-Media-Beiträge.",
+      "share": "Teilen",
+      "shareTitle": "Teile einen Link, der diese Seite mit deinem Text wieder öffnet",
+      "linkCopied": "Link kopiert"
+    },
+    "safeMode": {
+      "label": "Einfüge-Sicherheit",
+      "ariaLabel": "Prüfe, welche Stile auf anderen Geräten korrekt angezeigt werden",
+      "toggleLabel": "Sicherer Modus",
+      "hint": "Markiert Stile, die auf älteren Handys anderer Personen als Kästchen (▯) angezeigt werden können."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Kann bei manchen als Kästchen angezeigt werden",
+      "boxesWarningTitle": "Dieser Stil verwendet seltene Unicode-Zeichen, für die manche Handys und ältere Geräte kein Glyph haben. Er kann bei der Person, der du ihn schickst, als Kästchen (▯) erscheinen. Wähle lieber einen einfacheren oder besser unterstützten Stil, falls dein Publikum ältere Geräte nutzen könnte.",
+      "emojiWarning": "⚠ Enthält Emoji — kann auf alten Geräten variieren",
+      "emojiWarningTitle": "Dieser Stil enthält Emoji. Emoji werden auf modernen Geräten korrekt angezeigt, können auf sehr alten Handys aber anders aussehen oder als Kästchen erscheinen.",
+      "modernDevices": "Wird auf modernen Geräten angezeigt",
+      "modernDevicesTitle": "Diese gestylten Unicode-Buchstaben werden auf allen aktuellen Handys und Computern angezeigt. Auf sehr altem Android (etwa vor 2016) oder mit minimalen Systemschriften können einzelne Zeichen noch als Kästchen (▯) erscheinen. Teste es vorher, falls dein Publikum ältere Geräte nutzen könnte.",
+      "rendersEverywhere": "✓ Wird überall angezeigt",
+      "rendersEverywhereTitle": "Dieser Stil ist reiner Text — er wird überall angezeigt, ohne Risiko von Kästchen auf irgendeinem Gerät.",
+      "deviceWarning": "⚠ Wird auf deinem Gerät eventuell nicht angezeigt",
+      "deviceWarningTitle": "Die Schriftarten deines Geräts können diesen Stil nicht darstellen — er kann als Kästchen (□) erscheinen. Auf anderen Geräten kann er trotzdem einwandfrei aussehen.",
+      "safeAnywhere": "✓ Überall sicher",
+      "safeAnywhereTitle": "Wird auf allen wichtigen Plattformen angezeigt. Hinweis: Screenreader lesen gestylte Buchstaben manchmal einzeln vor, halte den eigentlichen Text deshalb normal.",
+      "worksBestOn": "⚠ Funktioniert am besten auf {platforms}",
+      "worksBestOnTitle": "Am besten auf: {platforms}. Andere Plattformen könnten den Stil entfernen oder falsch darstellen — teste es vorher."
+    },
+    "savedStyles": {
+      "ariaLabel": "Deine gespeicherten Stile",
+      "heading": "Deine gespeicherten Stile",
+      "clearAll": "Alle löschen",
+      "hint": "Auf diesem Gerät gespeichert — sie warten hier, wenn du zurückkommst."
+    },
+    "textStats": {
+      "wordSingular": "1 Wort",
+      "wordPlural": "{n} Wörter",
+      "charSingular": "1 Zeichen",
+      "charPlural": "{n} Zeichen"
+    },
+    "decorationsNone": "Keine",
+    "categoryTabsToggle": {
+      "more": "Mehr",
+      "less": "Weniger"
+    },
+    "demoText": "Willkommen bei UltraTextGen.\nTipp einfach etwas ein. Mach es ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "Name",
+        "tabs": {
+          "playful": "Verspielt",
+          "hearts": "Herzen",
+          "sparkle": "Glitzer",
+          "faces": "Gesichter",
+          "stars": "Sterne"
+        }
+      },
+      "bio": {
+        "word": "Name",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Ästhetisch",
+          "edgy": "Düster",
+          "royal": "Königlich",
+          "cute": "Niedlich",
+          "bold": "Fett",
+          "clean": "Klar",
+          "mystical": "Mystisch",
+          "retro": "Retro",
+          "nature": "Natur"
+        }
+      },
+      "small-text": {
+        "word": "Text",
+        "tabs": {
+          "subtle": "Dezent",
+          "tiny": "Winzig",
+          "brackets": "Klammern",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "Name",
+        "tabs": {
+          "rounded": "Rund",
+          "soft": "Sanft",
+          "stars": "Sterne",
+          "hearts": "Herzen",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "Name",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Gesichter",
+          "hearts": "Herzen",
+          "sparkle": "Glitzer",
+          "pastel": "Pastell"
+        }
+      },
+      "aesthetic": {
+        "word": "Text",
+        "tabs": {
+          "celestial": "Himmlisch",
+          "sparkle": "Glitzer",
+          "y2k": "Y2K",
+          "soft": "Sanft",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "Name",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Ästhetisch",
+          "symbols": "Symbole",
+          "hearts": "Herzen",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Wofür Leute UltraTextGen am liebsten nutzen",

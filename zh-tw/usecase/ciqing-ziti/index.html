@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>刺青字體產生器 — 免費預覽紋身字體 | UltraTextGen</title>
+  <meta name="description" content="刺青字體產生器：輸入名字或字句，比較花體、哥德體、細斜體等紋身字體，把日期轉換成羅馬數字，預覽姓名縮寫和符號——刺青前先預覽，免費、不用下載。">
+  <link rel="canonical" href="https://ultratextgen.com/zh-tw/usecase/ciqing-ziti/">
+
+  <link rel="alternate" hreflang="en" href="https://ultratextgen.com/usecase/tattoo-fonts/">
+  <link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/usecase/tattoo-schrift/">
+  <link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/usecase/letras-para-tatuajes/">
+  <link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/usecase/ecriture-tatouage/">
+  <link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/usecase/font-tato/">
+  <link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/usecase/font-tatuaggi/">
+  <link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/usecase/tattoo-letters/">
+  <link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/usecase/czcionki-tatuaze/">
+  <link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/usecase/letras-para-tatuagem/">
+  <link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/usecase/dovme-yazi-fontlari/">
+  <link rel="alternate" hreflang="zh-TW" href="https://ultratextgen.com/zh-tw/usecase/ciqing-ziti/">
+  <link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/usecase/tattoo-fonts/">
+
+  <meta name="robots" content="index, follow">
+  <meta property="og:site_name" content="UltraTextGen">
+  <meta property="og:title" content="刺青字體產生器 — 免費預覽紋身字體 | UltraTextGen">
+  <meta property="og:description" content="輸入名字或字句，比較花體、哥德體、細斜體等紋身字體，刺青前先預覽。免費、不用下載 App。">
+  <meta property="og:url" content="https://ultratextgen.com/zh-tw/usecase/ciqing-ziti/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ultratextgen.com/assets/og/zh-tw-usecase-ciqing-ziti.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="刺青字體產生器 — 免費預覽紋身字體 | UltraTextGen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="刺青字體產生器 — 免費預覽紋身字體 | UltraTextGen">
+  <meta name="twitter:description" content="比較花體、哥德體、細斜體等紋身字體，截圖給刺青師看。免費。">
+  <meta name="twitter:image" content="https://ultratextgen.com/assets/og/zh-tw-usecase-ciqing-ziti.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/symbol-explorer.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "刺青字體產生器",
+  "alternateName": [
+    "刺青字體",
+    "紋身字體產生器",
+    "紋身字型",
+    "刺青花體字",
+    "刺青哥德體"
+  ],
+  "url": "https://ultratextgen.com/zh-tw/usecase/ciqing-ziti/",
+  "inLanguage": "zh-TW",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "description": "刺青前先預覽：比較花體、哥德體、細斜體、打字機體等紋身字體，把日期轉換成羅馬數字，做姓名縮寫組合，瀏覽刺青符號與含義——截圖喜歡的款式給刺青師看。免費、不用下載。",
+  "featureList": [
+    "在你的真實名字或字句上比較 10 種刺青字體",
+    "日期與數字轉羅馬數字，附刺青常用格式",
+    "單字母與雙字母姓名縮寫產生器",
+    "附含義的刺青符號庫",
+    "預覽字體在實際觀看尺寸下的樣子"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "TWD"
+  },
+  "image": "https://ultratextgen.com/assets/og/zh-tw-usecase-ciqing-ziti.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-TW",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "刺青字體風格要怎麼選？",
+      "acceptedAnswer": { "@type": "Answer", "text": "先想意義，再想外觀。名字或宣言 → 花體：溫暖、私人、耐看。有份量的單字或座右銘 → 哥德體：厚重有力。短句 → 細斜體：低調優雅。日期 → 羅馬數字或打字機體。在頁面上方輸入你的文字，把幾種風格並排比較，留下兩三個喜歡的——最後的決定，刺青師會幫你把關。" }
+    },
+    {
+      "@type": "Question",
+      "name": "名字刺青最適合哪種字體？",
+      "acceptedAnswer": { "@type": "Answer", "text": "花體是名字刺青的經典選擇：連筆的字母讀起來像手寫字，個人化又耐看。粗花體（𝓢𝓸𝓯𝓲𝓪）在皮膚上比較有存在感；細花體（𝒮ℴ𝒻𝒾𝒶）則比較纖細。如果名字短又想要態度，也可以試試哥德體，這是 Chicano 風格刺青的經典元素。這頁可以直接比較兩者。" }
+    },
+    {
+      "@type": "Question",
+      "name": "這些字體可以直接拿去刺青嗎？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不行——這點要說清楚。這些 Unicode 字體是給你參考的初稿，不是可以直接刺的完稿。它們幫你找到方向——花體、哥德體、斜體——清楚地展示給刺青師看。刺青師接著會依照你的皮膚調整：線條粗細、字母之間的連接、貼合部位的弧度。最終的線稿是刺青師的專業，不是產生器能取代的。" }
+    },
+    {
+      "@type": "Question",
+      "name": "細字刺青最小要多大？",
+      "acceptedAnswer": { "@type": "Answer", "text": "字體越細緻，需要的空間就越大。細線條和小圓圈隨著年紀增長容易暈開變粗，不到半英吋高的細花體字很可能變得難以辨認。簡單原則：想刺小一點，就選簡單的風格（斜體、打字機體）；想要華麗花體，就給它足夠的空間。實際部位的最小尺寸，刺青師會告訴你確切的建議。" }
+    },
+    {
+      "@type": "Question",
+      "name": "要怎麼把字體風格展示給刺青師看？",
+      "acceptedAnswer": { "@type": "Answer", "text": "在頁面上方輸入你真正要刺的文字（不是隨便打的範例），把喜歡的兩三種截圖，帶去預約時給刺青師看。說出你喜歡的地方——「花體的連筆」、「哥德體的厚重感」——而不是要求一模一樣的複製。好的刺青師會抓住方向，再依你的皮膚和部位手繪重新設計。" }
+    },
+    {
+      "@type": "Question",
+      "name": "日期要怎麼轉換成羅馬數字刺青？",
+      "acceptedAnswer": { "@type": "Answer", "text": "把日期的每個部分分開轉換——日、月、年——再用分隔符號連接：2020 年 6 月 12 日會變成 XII·VI·MMXX。這頁的「日期轉羅馬數字」模式會自動轉換，還可以比較不同分隔符號（點、破折號、直線、堆疊）和順序（日月年或月日年）。刺青前務必請刺青師再三確認數字：轉換錯誤的日期是紋身字體最常見的後悔原因。" }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "inLanguage": "zh-TW",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://ultratextgen.com/zh-tw/" },
+    { "@type": "ListItem", "position": 2, "name": "刺青字體產生器", "item": "https://ultratextgen.com/zh-tw/usecase/ciqing-ziti/" }
+  ]
+}
+</script>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/zh-tw/">首頁</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">刺青字體產生器</span>
+</nav>
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/zh-tw-usecase-ciqing-ziti.svg" width="1200" height="340" fetchpriority="high" alt="">
+</figure>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-card">
+      <h1 class="hero-headline">刺青字體產生器</h1>
+      <p class="hero-tagline">紋身字體一次比較：輸入名字或字句，花體、哥德體、細斜體、打字機體同時預覽；也能把日期轉成羅馬數字、比較姓名縮寫、瀏覽刺青符號。截圖喜歡的款式給刺青師看——最終線稿還是刺青師手繪，這頁幫你先想清楚方向。免費、不用下載 App。</p>
+      <div class="tattoo-mode-tabs" id="tattooModeTabs"></div>
+      <div class="input-wrapper" id="tattooTextWrap">
+        <textarea class="main-input" id="mainInput" placeholder="輸入名字、字句…" maxlength="500" autofocus=""></textarea>
+        <span class="char-count"><span id="charCount">0</span>/500</span>
+      </div>
+      <div id="tattooControlPanel"></div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="results-grid" id="resultsGrid"></div>
+
+  <section class="editorial-section glyph-section">
+    <h2>四大刺青字體風格</h2>
+    <p class="editorial-intro">四套完整字母、四種氣質——最核心的紋身字體風格。點一下整排就能複製，帶到備忘錄裡玩玩看。</p>
+    <div class="alpha-list">
+      <div class="alpha-row">
+        <span class="alpha-label">花體 / 手寫體</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩 𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃" aria-label="複製花體刺青字母">𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩 · 𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃</button>
+      </div>
+      <div class="alpha-row">
+        <span class="alpha-label">哥德體 / 黑體字</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ 𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷" aria-label="複製哥德體刺青字母">𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ · 𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷</button>
+      </div>
+      <div class="alpha-row">
+        <span class="alpha-label">細斜體</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡 𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻" aria-label="複製細斜體刺青字母">𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡 · 𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻</button>
+      </div>
+      <div class="alpha-row">
+        <span class="alpha-label">打字機體</span>
+        <button class="glyph-copy alpha-glyphs" type="button" data-text="𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉 𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣" aria-label="複製打字機體刺青字母">𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉 · 𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣</button>
+      </div>
+    </div>
+    <p class="u-mt-15"><strong>花體</strong>是名字和字句的經典選擇——像手寫字一樣溫暖、個人化、耐看。<strong>哥德體</strong>帶著老派和 Chicano 風格的血統：厚重有力，撐得住一個有份量的單字。<strong>細斜體</strong>安靜地順著肋骨或手腕流動。<strong>打字機體</strong>讀起來乾淨有文青感，很適合日期或短句。想看更完整的字母組合，可以到英文版的 <a href="/zh-tw/shufa-ziti/">cursive fonts</a>、<a href="/category/gothic-fonts/">gothic fonts</a> 瀏覽。</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>刺青風格怎麼配</h2>
+    <p class="editorial-intro">字體要襯托字句的意義，而不是搶戲。常見的搭配：</p>
+    <div class="block-example">
+      — <strong>名字</strong> → 花體：𝓢𝓸𝓯𝓲𝓪 ——連筆、溫暖、耐看<br>
+      — <strong>短句</strong> → 細斜體：𝘭𝘦𝘵 𝘪𝘵 𝘣𝘦 ——低調又不失優雅<br>
+      — <strong>有份量的單字</strong> → 哥德體：𝔣𝔢𝔞𝔯𝔩𝔢𝔰𝔰 ——厚重的筆畫給字句分量<br>
+      — <strong>日期</strong> → 羅馬數字（XII·VI·MMXX）或打字機體：𝟷𝟸.𝟶𝟼.𝟸𝟶𝟸𝟶
+    </div>
+    <p>同一個字換一種字體，氣質完全不同。以 "love" 為例：</p>
+    <div class="block-example">
+      "love" → 𝓵𝓸𝓿𝓮（花體）· 𝔩𝔬𝔳𝔢（哥德體）· 𝘭𝘰𝘷𝘦（斜體）· 𝚕𝚘𝚟𝚎（打字機體）
+    </div>
+  </section>
+
+  <section class="editorial-section">
+    <h2>從截圖到刺青師</h2>
+    <p class="editorial-intro">螢幕上的預覽只是第一步。幾個讓跟刺青師溝通更順利的習慣：</p>
+    <div class="block-example">
+      — 帶<strong>兩三種風格</strong>去，不要只帶一種：刺青師能馬上看出哪種適合你選的部位<br>
+      — 請刺青師<strong>調整</strong>，不要要求一模一樣複製：「這個感覺，但用你的方式畫」永遠比要求像素級複製好<br>
+      — 縮小截圖檢查<strong>字母的連接</strong>：如果螢幕上兩個字母糊在一起，刺在皮膚上也會糊<br>
+      — 細字體<strong>會隨年紀暈開變粗</strong>——想刺小一點就提早說，讓刺青師加粗線條來補償
+    </div>
+    <p>老實說：最終線稿是刺青師的專業，不是產生器能取代的。好的刺青師會依照墨水暈染的方式調整線條粗細，沿著身體的弧度排列字母，親手重新畫過連筆。這些預覽給你溝通的詞彙——這已經很有幫助，但也僅止於此。</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>星座符號：另一種極簡刺青選擇</h2>
+    <p class="editorial-intro">除了文字，十二星座符號本身就是很受歡迎的極簡刺青圖案——單一線條、不用配字就有意義，牡羊座♈、獅子座♌、水瓶座♒這類筆畫簡單的符號尤其耐看。這頁的刺青符號庫也收錄了十二星座符號；想先看完整的十二星座日期、代表意義和行星符號，可以到<a href="/zh-tw/library/xingzuo-fuhao/">十二星座符號大全</a>。</p>
+  </section>
+
+  <section class="editorial-section">
+    <h2>更多字體風格</h2>
+    <div class="compare-grid">
+      <a href="/zh-tw/shufa-ziti/" class="compare-card variant-muted u-no-underline">
+        <h4>Cursive Fonts</h4>
+        <p>完整花體字家族——名字和字句刺青的經典選擇。</p>
+      </a>
+      <a href="/category/gothic-fonts/" class="compare-card variant-muted u-no-underline">
+        <h4>Gothic Fonts</h4>
+        <p>老派與 Chicano 風格黑體字——厚重有力，適合有份量的單字。</p>
+      </a>
+      <a href="/zh-tw/yingwen-ziti/" class="compare-card variant-muted u-no-underline">
+        <h4>英文字體產生器</h4>
+        <p>把英文名字轉換成上百種 Unicode 花式字體。</p>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <h2 class="faq-category">刺青字體常見問題</h2>
+    <div class="faq-item"><button class="faq-question" type="button">刺青字體風格要怎麼選？<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">先想意義，再想外觀。名字或宣言 → 花體：溫暖、私人、耐看。有份量的單字或座右銘 → 哥德體：厚重有力。短句 → 細斜體：低調優雅。日期 → 羅馬數字或打字機體。在頁面上方輸入你的文字，把幾種風格並排比較，留下兩三個喜歡的——最後的決定，刺青師會幫你把關。</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">名字刺青最適合哪種字體？<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">花體是名字刺青的經典選擇：連筆的字母讀起來像手寫字，個人化又耐看。粗花體（𝓢𝓸𝓯𝓲𝓪）在皮膚上比較有存在感；細花體（𝒮ℴ𝒻𝒾𝒶）則比較纖細。如果名字短又想要態度，也可以試試哥德體，這是 Chicano 風格刺青的經典元素。這頁可以直接比較兩者。</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">這些字體可以直接拿去刺青嗎？<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">不行——這點要說清楚。這些 Unicode 字體是給你參考的初稿，不是可以直接刺的完稿。它們幫你找到方向——花體、哥德體、斜體——清楚地展示給刺青師看。刺青師接著會依照你的皮膚調整：線條粗細、字母之間的連接、貼合部位的弧度。最終的線稿是刺青師的專業，不是產生器能取代的。</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">細字刺青最小要多大？<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">字體越細緻，需要的空間就越大。細線條和小圓圈隨著年紀增長容易暈開變粗，不到半英吋高的細花體字很可能變得難以辨認。簡單原則：想刺小一點，就選簡單的風格（斜體、打字機體）；想要華麗花體，就給它足夠的空間。實際部位的最小尺寸，刺青師會告訴你確切的建議。</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">要怎麼把字體風格展示給刺青師看？<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">在頁面上方輸入你真正要刺的文字（不是隨便打的範例），把喜歡的兩三種截圖，帶去預約時給刺青師看。說出你喜歡的地方——「花體的連筆」、「哥德體的厚重感」——而不是要求一模一樣的複製。好的刺青師會抓住方向，再依你的皮膚和部位手繪重新設計。</div></div>
+    <div class="faq-item"><button class="faq-question" type="button">日期要怎麼轉換成羅馬數字刺青？<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer">把日期的每個部分分開轉換——日、月、年——再用分隔符號連接：2020 年 6 月 12 日會變成 XII·VI·MMXX。這頁的「日期轉羅馬數字」模式會自動轉換，還可以比較不同分隔符號（點、破折號、直線、堆疊）和順序（日月年或月日年）。刺青前務必請刺青師再三確認數字：轉換錯誤的日期是紋身字體最常見的後悔原因。</div></div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+      <a class="lang-option" href="/usecase/tattoo-fonts/" hreflang="en">EN</a>
+      <a class="lang-option" href="/de/usecase/tattoo-schrift/" hreflang="de">DE</a>
+      <a class="lang-option" href="/es/usecase/letras-para-tatuajes/" hreflang="es">ES</a>
+      <a class="lang-option" href="/fr/usecase/ecriture-tatouage/" hreflang="fr">FR</a>
+      <a class="lang-option" href="/id/usecase/font-tato/" hreflang="id">ID</a>
+      <a class="lang-option" href="/it/usecase/font-tatuaggi/" hreflang="it">IT</a>
+      <a class="lang-option" href="/nl/usecase/tattoo-letters/" hreflang="nl">NL</a>
+      <a class="lang-option" href="/pl/usecase/czcionki-tatuaze/" hreflang="pl">PL</a>
+      <a class="lang-option" href="/pt/usecase/letras-para-tatuagem/" hreflang="pt">PT</a>
+      <a class="lang-option" href="/tr/usecase/dovme-yazi-fontlari/" hreflang="tr">TR</a>
+      <a class="lang-option active" href="/zh-tw/usecase/ciqing-ziti/" hreflang="zh-TW">ZH</a>
+    </div>
+  </div>
+</footer>
+
+<div class="copy-toast" id="copyToast">已複製！</div>
+<div class="symbol-toast" id="symbolToast" aria-live="polite"></div>
+
+<!-- Page configuration: tattoo mode flag + i18n -->
+<script>
+window.UTG_TATTOO_MODE = true;
+window.tattooI18n = {
+  "sampleName": "Sofia",
+  "modeNamesLabel": "名字與字句",
+  "modeNamesHint": "輸入名字、字句或引言",
+  "modeDateLabel": "日期 → 羅馬數字",
+  "modeDateHint": "把日期或數字轉換成羅馬數字",
+  "modeLettersLabel": "字母與縮寫",
+  "modeLettersHint": "單一字母與姓名縮寫組合",
+  "modeSymbolsLabel": "符號",
+  "modeSymbolsHint": "附含義的小符號",
+  "sizeClose": "特寫",
+  "sizeArm": "一臂之遙",
+  "sizeRoom": "遠觀",
+  "inkTest": "墨水測試",
+  "yourDate": "你的日期",
+  "day": "日",
+  "month": "月",
+  "yearOrNumber": "年份或數字",
+  "order": "順序",
+  "separator": "分隔符號",
+  "yourLetter": "你的字母",
+  "secondInitial": "第二個字母",
+  "secondNone": "無 — 單一字母",
+  "joinedBy": "連接方式",
+  "symbolsNote": "點一下任何符號即可複製——可以搭配名字或日期，也可以單獨使用。",
+  "sampleHintName": "目前顯示「{text}」——在上方輸入你的名字、字句或引言。",
+  "sampleHintDate": "目前顯示範例日期（12 · 6 · 2020）——在上方輸入你的日期或數字。",
+  "romanRange": "羅馬數字僅支援 1 至 3999——請檢查上方輸入的數值。",
+  "headingRoman": "羅馬數字",
+  "headingFigures": "一般數字",
+  "badgeSafe": "縮小也清楚",
+  "badgeRoomy": "需要空間",
+  "copy": "複製",
+  "copyAria": "複製{name}",
+  "families": {
+    "Script": "花體",
+    "Gothic": "哥德",
+    "Italic": "斜體",
+    "Minimal": "簡約",
+    "Roman": "羅馬數字",
+    "Figures": "數字"
+  },
+  "orders": {
+    "dmy": "日 · 月 · 年",
+    "mdy": "月 · 日 · 年",
+    "y": "僅年份"
+  },
+  "seps": {
+    "space": "空格",
+    "stack": "堆疊"
+  },
+  "joiners": {
+    "none": "無"
+  },
+  "lettering": {
+    "Ultra Script Bold": {
+      "label": "粗花體",
+      "note": "經典的名字刺青字體——連筆流暢又溫暖，尺寸小也能維持清晰的輪廓。"
+    },
+    "Ultra Script": {
+      "label": "細花體",
+      "note": "纖細飄逸，中等尺寸最好看；細緻的迴圈需要足夠空間，時間久了才不會糊。"
+    },
+    "Ultra Chicano Script": {
+      "label": "Chicano 名牌花體",
+      "note": "粗花體被裝飾性緞帶環繞——經典的名牌式外框。"
+    },
+    "Ultra Gothic": {
+      "label": "哥德 Blackletter",
+      "note": "Fraktur 風格黑體字——濃密剛勁，撐得起一個有份量的單字。"
+    },
+    "Ultra Gothic Bold": {
+      "label": "厚重 Old English",
+      "note": "厚重的 Old English 風格——老派與 Chicano 刺青字體的代表之一。"
+    },
+    "Ultra Old English Banner": {
+      "label": "Old English 橫幅",
+      "note": "厚重黑體字搭配裝飾橫幅——存在感最強的名牌字體。"
+    },
+    "Ultra Italic": {
+      "label": "細斜體",
+      "note": "低調的斜角——安靜地順著肋骨、手腕或鎖骨流動。"
+    },
+    "Ultra Italic Serif": {
+      "label": "襯線斜體",
+      "note": "帶襯線的斜體，書卷氣十足——讀起來像從小說裡摘出的一行字。"
+    },
+    "Ultra Typewriter Document": {
+      "label": "打字機體",
+      "note": "質樸、帶點文學感的等寬字體——最適合日期或一小段短句。"
+    },
+    "Ultra Small Caps": {
+      "label": "小型大寫字母",
+      "note": "細緻均勻的迷你大寫字母——細線極簡風格的首選。"
+    }
+  },
+  "roman": {
+    "Classic": {
+      "label": "經典",
+      "note": "簡單的大寫字母——多數刺青師最常刺的款式。"
+    },
+    "Serif Italic": {
+      "label": "襯線斜體",
+      "note": "碑刻紀念風格，帶著斜角。"
+    },
+    "Script": {
+      "label": "花體",
+      "note": "以流暢花體呈現的羅馬數字。"
+    },
+    "Blackletter": {
+      "label": "哥德 Blackletter",
+      "note": "Fraktur 風格數字——深沉又華麗。"
+    },
+    "Heavy Old English": {
+      "label": "厚重 Old English",
+      "note": "份量最重的黑體風格數字。"
+    },
+    "Typewriter": {
+      "label": "打字機體",
+      "note": "等寬數字——乾淨、有紀實感。"
+    }
+  },
+  "digits": {
+    "Typewriter": {
+      "label": "打字機體",
+      "note": "等寬數字——經典的日期刺青風格。"
+    },
+    "Bold Serif": {
+      "label": "粗襯線體",
+      "note": "厚重的書籍印刷風數字——適合搭配哥德 Blackletter。"
+    },
+    "Bold Sans": {
+      "label": "粗黑體",
+      "note": "現代感十足的粗體數字——適合搭配粗花體。"
+    },
+    "Fine Sans": {
+      "label": "細黑體",
+      "note": "輕盈的數字——適合搭配細花體與細斜體。"
+    },
+    "Double-Struck": {
+      "label": "空心體",
+      "note": "外框數字——出人意料的細線刺青選擇。"
+    },
+    "Wide Spaced": {
+      "label": "寬字距體",
+      "note": "全形寬體數字——輕盈、帶編輯感的間距。"
+    },
+    "Tiny": {
+      "label": "迷你體",
+      "note": "袖珍數字——耳後刺青的尺寸。"
+    }
+  },
+  "groups": {
+    "minimal": "細線與簡約",
+    "celestial": "天象",
+    "love": "愛與紀念",
+    "faith": "信仰與守護",
+    "journey": "力量與旅程",
+    "music": "音樂與藝術",
+    "zodiac": "星座"
+  },
+  "symbols": {
+    ";": "分號 — 故事仍在繼續",
+    "∞": "無限符號 — 無窮無盡",
+    "·": "單點 — 一個停頓",
+    "—": "破折號 — 一條線，一段路",
+    "~": "波浪 — 平靜，流動",
+    "✕": "叉號 — 交會之處",
+    "°": "小圓圈 — 圓滿",
+    "⋮": "三個點 — mi vida loca（瘋狂人生）／未完待續",
+    "☾": "新月 — 改變，循環",
+    "☽": "盈月 — 成長",
+    "☼": "太陽 — 生命力",
+    "✦": "四角星 — 指引",
+    "✧": "空心星 — 希望",
+    "⋆": "小星星 — 一點微光",
+    "★": "實心星 — 抱負",
+    "✵": "放射星 — 能量",
+    "♡": "空心愛心 — 輕輕捧著的愛",
+    "❥": "傾斜愛心 — 奉獻",
+    "❦": "花飾愛心 — 追憶",
+    "➳": "箭頭 — 情箭穿心",
+    "✿": "花朵 — 盛開",
+    "❀": "花卉 — 思念一個人",
+    "✝": "拉丁十字 — 信仰",
+    "†": "短劍十字 — 犧牲",
+    "☦": "東正教十字",
+    "☯": "陰陽 — 平衡",
+    "ॐ": "唵（Om）— 最初的聲音",
+    "✡": "大衛之星",
+    "☪": "新月與星",
+    "ᛉ": "Algiz 符文 — 守護",
+    "⚓": "錨 — 穩固堅定",
+    "✈": "飛機 — 離開與歸來",
+    "➵": "箭頭 — 只能向前",
+    "→": "右箭頭 — 繼續前進",
+    "⚔": "交叉劍 — 奮戰到底",
+    "♆": "三叉戟 — 海洋",
+    "Δ": "Δ 符號 — 改變",
+    "Ω": "Ω 符號 — 終結，堅忍不拔",
+    "♪": "八分音符",
+    "♫": "連音符",
+    "♬": "雙連音符",
+    "𝄞": "高音譜號",
+    "✎": "鉛筆 — 創作者的印記",
+    "♈": "牡羊座",
+    "♉": "金牛座",
+    "♊": "雙子座",
+    "♋": "巨蟹座",
+    "♌": "獅子座",
+    "♍": "處女座",
+    "♎": "天秤座",
+    "♏": "天蠍座",
+    "♐": "射手座",
+    "♑": "摩羯座",
+    "♒": "水瓶座",
+    "♓": "雙魚座"
+  }
+};
+</script>
+<script src="/styles.js" defer></script>
+<script src="/renderer.js" defer></script>
+<script src="/js/tattoo/tattooData.js" defer></script>
+<script src="/script.js" defer></script>
+<script src="/js/tattoo/tattooPageController.js" defer></script>
+<script src="/symbol-explorer.js" defer></script>
+<script src="/footer.js"></script>
+</body></html>

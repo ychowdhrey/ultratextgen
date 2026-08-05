@@ -1,0 +1,83 @@
+{
+  "slug": "cudzyslow-polski",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Cudzysłów Polski „ \": Jak Wygląda i Jak Go Wpisać",
+  "meta_description": "Polski cudzysłów dolny „ i górny \" do skopiowania, plus cudzysłów francuski « » do zdania zagnieżdżonego. Kliknij znak, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/cudzyslow-polski/",
+  "breadcrumb": "Cudzysłów Polski",
+  "hero_h1": "Cudzysłów Polski „ \"",
+  "hero_tagline": "Polski cudzysłów dolny i górny oraz cudzysłów francuski « » — kliknij, aby skopiować.",
+  "intro": "Polska typografia ma własną, odrębną formę cudzysłowu: otwiera się na dole „, a zamyka na górze \" — inaczej niż angielskie cudzysłowy “ ”, które zaczynają się i kończą na górze. Gdy w zdaniu trzeba zacytować coś wewnątrz cytatu, po polsku używa się cudzysłowu francuskiego « » jako drugiego poziomu. Poniżej oba warianty gotowe do skopiowania, a także angielskie odpowiedniki, żeby ich nie pomylić.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/cudzyslow-polski/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/pl/symbol/cudzyslow-polski/" }
+  ],
+  "sections": [
+    {
+      "id": "cudzyslow-polski",
+      "label": "Cudzysłów polski",
+      "h2": "Cudzysłów Polski (Podstawowy)",
+      "intro": "Standardowy polski cudzysłów — otwierający na dole, zamykający na górze.",
+      "symbols": [
+        { "char": "„", "label": "Cudzysłów Polski Dolny (otwierający)" },
+        { "char": "”", "label": "Cudzysłów Polski Górny (zamykający)" }
+      ]
+    },
+    {
+      "id": "cudzyslow-francuski",
+      "label": "Cudzysłów francuski",
+      "h2": "Cudzysłów Francuski (Zagnieżdżony)",
+      "intro": "Używany jako drugi poziom, gdy wewnątrz cytatu pojawia się kolejny cytat.",
+      "symbols": [
+        { "char": "«", "label": "Cudzysłów Francuski Otwierający (Guillemet)" },
+        { "char": "»", "label": "Cudzysłów Francuski Zamykający (Guillemet)" }
+      ]
+    },
+    {
+      "id": "zeby-nie-pomylic",
+      "label": "Żeby nie pomylić",
+      "h2": "Inne Cudzysłowy — Żeby Nie Pomylić",
+      "intro": "Angielskie i pojedyncze warianty, które łatwo pomylić z polskim cudzysłowem.",
+      "symbols": [
+        { "char": "“", "label": "Cudzysłów Angielski Otwierający" },
+        { "char": "”", "label": "Cudzysłów Angielski Zamykający" },
+        { "char": "'", "label": "Apostrof Typograficzny Zamykający" },
+        { "char": "'", "label": "Apostrof Typograficzny Otwierający" },
+        { "char": "‚", "label": "Cudzysłów Pojedynczy Dolny" },
+        { "char": "‹", "label": "Pojedynczy Cudzysłów Francuski Otwierający" },
+        { "char": "›", "label": "Pojedynczy Cudzysłów Francuski Zamykający" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki α β Ω",
+      "desc": "Cały alfabet grecki, wielkie i małe litery, gotowe do skopiowania."
+    },
+    {
+      "href": "/pl/symbol/znaki-tm-i-copyright/",
+      "title": "TM, © i ®",
+      "desc": "Znak towarowy, copyright i zastrzeżony znak towarowy do skopiowania."
+    },
+    {
+      "href": "/pl/library/",
+      "title": "Biblioteka Symboli",
+      "desc": "Wszystkie kolekcje symboli i emotek do skopiowania w jednym miejscu."
+    },
+    {
+      "href": "/library/bracket-symbols/",
+      "title": "Bracket Symbols",
+      "desc": "Pełna kolekcja nawiasów i cudzysłowów (po angielsku)."
+    }
+  ]
+}

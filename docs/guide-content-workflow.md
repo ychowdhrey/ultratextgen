@@ -19,9 +19,9 @@ UltraTextGen the authority on expressive typography — not just a generator.
 
 | Asset | Role |
 |---|---|
-| `data/library_opportunities.csv` | **Unified backlog.** Guide opportunities are rows with `page_type=guide`. Same 21 columns as library rows. Guides dedupe per-lane against `/guide/*` only. |
+| `the internal opportunity backlog` | **Unified backlog.** Guide opportunities are rows with `page_type=guide`. Same 21 columns as library rows. Guides dedupe per-lane against `/guide/*` only. |
 | `docs/guide-opportunity-map-<date>.md` | Human-readable ranked map: scoring, clusters, briefs. Regenerated each research cycle. |
-| `data/forum_research_queries.csv` | Seed queries. Extend with guide-intent (`how-to`, `meaning`, `strategy`) seeds. |
+| `the internal forum-research query set` | Seed queries. Extend with guide-intent (`how-to`, `meaning`, `strategy`) seeds. |
 | `guide/index.html` | The hub. Four cluster sections today; new guides slot into an existing cluster or open a new one. |
 | `guide/<slug>/index.html` | The page. **Hand-built** — there is no guide generator (unlike the library lane). |
 
@@ -75,21 +75,20 @@ is a **dedupe reject**, not a new guide. (See §9 dedupe.)
 
 Before researching, read what already exists so you neither duplicate nor contradict it:
 
-- `data/library_opportunities.csv` — scan for `intent=how-to|meaning` rows that may
+- `the internal opportunity backlog` — scan for `intent=how-to|meaning` rows that may
   already cover a guide topic (improve the owner page instead of building new).
 - `docs/jtbd-principles.md`, `docs/page-vs-section-decisions.md` — page-type gates.
-- `docs/direction-audit-<date>.md` — **where demand actually is** (the highest-ROI
-  filter). As of 2026-06-27: Discord is under-converted (large impression pool of
-  informational "nitro / allowed-characters / what font" queries), Indonesian
-  aesthetic is the #1 engine, mobile is the business, emoji-combo pages are thin.
-- `docs/retention-loops.md`, `docs/distribution-loops.md` — every guide should feed
-  a loop (rank → some text spreads → SEO re-intercepts; or earn embeds/back-links).
+- Before committing to a topic, sanity-check where demand actually is (GSC
+  impressions/clicks, not just keyword volume) — don't build for a query the
+  data doesn't support.
+- Every guide should feed a loop back to the site (rank → some text spreads →
+  SEO re-intercepts; or earn embeds/back-links) — not just add a page.
 
 ---
 
 ## 4. Step 3 — Forum-led research
 
-Use the methodology in `docs/unicode-forum-research-skill.md`, tuned for guide intent.
+Use the methodology in `docs/the internal forum-research skill doc`, tuned for guide intent.
 
 **Sources, in priority order:** Reddit → Quora → Stack Exchange / Stack Overflow →
 Discord community help → gaming/clan forums (Roblox, Fortnite, Valorant, COD) →
@@ -242,7 +241,6 @@ shipped rows' `action`/`approval_status` updates. Do **not** edit `sitemap.xml`
 ---
 
 *Companion docs: `docs/unicode-library-workflow.md` (reference lane),
-`docs/unicode-forum-research-skill.md` (discovery method),
+`docs/the internal forum-research skill doc` (discovery method),
 `docs/jtbd-principles.md` (why a page exists),
-`docs/page-vs-section-decisions.md` (page vs section gate),
-`docs/direction-audit-2026-06-27.md` (where demand actually is).*
+`docs/page-vs-section-decisions.md` (page vs section gate).*

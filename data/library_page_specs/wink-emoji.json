@@ -1,0 +1,141 @@
+{
+  "slug": "wink-emoji",
+  "title": "Wink Emoji & Kaomoji: Copy & Paste 😉😜 Playful Combos",
+  "meta_description": "Wink emoji 😉 😜 🤪, playful and teasing combo sets, plus wink kaomoji like (^_-) for flirty replies, chats, and comments. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/wink-emoji/",
+  "breadcrumb": "Wink Emoji & Kaomoji",
+  "hero_h1": "Wink Emoji & Kaomoji",
+  "hero_tagline": "The 😉 winking face, tongue-out zany grins, sly smirks, and cheeky wink kaomoji — every shade of playful and just-kidding. Click any symbol to copy it instantly.",
+  "intro": "The wink emoji 😉 is the internet's nudge — it turns a flat line into a joke, softens a tease, and adds flirty subtext without a single extra word. This page gathers the whole playful range: the classic winking face and its kissy cousins, the tongue-out 😜 🤪 😝 zany crew, sly smirks and hand-over-mouth giggles, and the wink kaomoji like (^_-) and (^_~) that paste anywhere plain text works. Grab a single face, or copy a ready-made combo set for flirty replies, group chats, and comments.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "core-wink",
+      "label": "The Wink Emoji",
+      "h2": "The Winking Face Emoji",
+      "intro": "The one-eyed nudge — plus the cheeky kiss faces that live right next door.",
+      "symbols": [
+        { "char": "😉", "label": "Winking Face" },
+        { "char": "😘", "label": "Face Blowing a Kiss" },
+        { "char": "😗", "label": "Kissing Face" },
+        { "char": "😙", "label": "Kissing Face With Smiling Eyes" }
+      ]
+    },
+    {
+      "id": "playful-winks",
+      "label": "Playful Winks & Tongues",
+      "h2": "Playful & Tongue-Out Winks",
+      "intro": "Stuck-out tongues and zany eyes for full goofball, just-kidding energy.",
+      "symbols": [
+        { "char": "😜", "label": "Winking Face With Tongue" },
+        { "char": "🤪", "label": "Zany Face" },
+        { "char": "😝", "label": "Squinting Face With Tongue" },
+        { "char": "😛", "label": "Face With Tongue" },
+        { "char": "😋", "label": "Face Savoring Food" }
+      ]
+    },
+    {
+      "id": "silly-teasing",
+      "label": "Silly & Teasing Faces",
+      "h2": "Silly & Teasing Faces",
+      "intro": "Smug smirks, halo-innocent grins, and hand-over-mouth giggles for a sly tease.",
+      "symbols": [
+        { "char": "😏", "label": "Smirking Face" },
+        { "char": "😊", "label": "Smiling Face With Smiling Eyes" },
+        { "char": "🤭", "label": "Face With Hand Over Mouth" },
+        { "char": "🫢", "label": "Face With Open Eyes And Hand Over Mouth" },
+        { "char": "😈", "label": "Smiling Face With Horns" },
+        { "char": "😇", "label": "Smiling Face With Halo" }
+      ]
+    },
+    {
+      "id": "wink-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Wink Kaomoji & Text Faces",
+      "intro": "Japanese-style text faces that wink, grin, and tease in plain text.",
+      "symbols": [
+        { "char": "(^_-)", "label": "Classic Wink Kaomoji" },
+        { "char": "(^_~)", "label": "Winking Smile Kaomoji" },
+        { "char": "(^_-)☆", "label": "Sparkle Wink Kaomoji" },
+        { "char": "(･ω<)", "label": "Cheeky Wink Kaomoji" },
+        { "char": "(>ω^)", "label": "Sly Wink Kaomoji" },
+        { "char": ";)", "label": "Winking Smiley Kaomoji" },
+        { "char": ";-)", "label": "Classic Winking Emoticon" },
+        { "char": "(￣ω￣)", "label": "Playful Smirk Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Wink Emoji Combo Sets",
+    "intro": "Copy a complete playful combo in one click — from a light tease to full goofball mode."
+  },
+  "collection_container_id": "winkSetsContainer",
+  "collections": [
+    {
+      "name": "Just Kidding",
+      "flags": ["😉", "😆"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Playful Tease",
+      "flags": ["😜", "😝"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Wink & Kiss",
+      "flags": ["😘", "😉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Silly Mode",
+      "flags": ["🤪", "😜", "😛"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Sly Wink",
+      "flags": ["😏", "😉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Nudge Nudge",
+      "flags": ["😉", "😉"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Cheeky Mischief",
+      "flags": ["😈", "😉", "😜"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Tongue Out",
+      "flags": ["😝", "😛", "😋"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/laughing-emoji/",
+      "title": "Laughing Emoji & Kaomoji",
+      "desc": "Crying-laughing faces and giggle combos for when a wink turns into a laugh."
+    },
+    {
+      "href": "/library/happy-emoji/",
+      "title": "Happy Emoji & Kaomoji",
+      "desc": "Bright, cheerful smiley faces to pair with a playful wink."
+    },
+    {
+      "href": "/library/funny-emoji-combos/",
+      "title": "Funny Emoji Combos",
+      "desc": "Ready-made joke and reaction combos for chats and comments."
+    },
+    {
+      "href": "/library/face-emojis/",
+      "title": "Face Emojis",
+      "desc": "The complete face emoji grid, sorted by feeling."
+    }
+  ]
+}

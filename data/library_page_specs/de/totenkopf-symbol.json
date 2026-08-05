@@ -1,0 +1,77 @@
+{
+  "slug": "totenkopf-symbol",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Totenkopf mit gekreuzten Knochen: ☠ kopieren & einfügen — Gift-Piktogramm, Jolly Roger & nicht 💀",
+  "meta_description": "Den Totenkopf mit gekreuzten Knochen (☠, U+2620) kopieren und einfügen — das GHS-Gift-Piktogramm und die Piratenflagge Jolly Roger, nicht das 💀-Skull-Emoji. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/totenkopf-symbol/",
+  "breadcrumb": "Totenkopf-Symbol",
+  "hero_h1": "Totenkopf mit gekreuzten Knochen (☠)",
+  "hero_tagline": "Der Totenkopf mit gekreuzten Knochen (☠), der Gift markiert und auf dem Jolly Roger weht — das U+2620-Gefahrenzeichen, das ständig mit dem 💀-Skull-Emoji verwechselt wird. Ein Klick genügt zum Kopieren.",
+  "intro": "Der Totenkopf mit gekreuzten Knochen (☠, Unicode U+2620) zeigt einen menschlichen Schädel über zwei gekreuzten Knochen — ein Memento Mori, das seit Jahrhunderten Tod und Gefahr signalisiert. Unicode nahm ihn 1993 mit Version 1.1 auf und ordnete ihn dem Block Miscellaneous Symbols (U+2600–U+26FF) zu, direkt neben seinen Gefahren-Nachbarn ☢ Radioaktiv (U+2622) und ☣ Biohazard (U+2623). Er trägt zwei ganz unterschiedliche Aufgaben. Als Gefahrenzeichen ist er nach wie vor aktuell und offiziell: Der Totenkopf mit gekreuzten Knochen ist eines von neun GHS-Piktogrammen für akute Toxizität, in US-amerikanisches Recht über OSHAs Hazard Communication Standard übernommen — nicht ausgemustert, wenn auch der freundlichere „Mr. Yuk“-Aufkleber (1971 vom Pittsburgh Poison Center entwickelt, nachdem Kinder den Totenkopf eher mit Piraten als mit Gefahr assoziiert hatten) ihn auf Haushaltsprodukten ergänzt. In der Piratenüberlieferung ist er der Jolly Roger, die schwarze Flagge, die für die 1710er- und 1720er-Jahre bei Kapitänen wie Samuel „Black Sam“ Bellamy, Edward England und John Taylor dokumentiert ist — allerdings führten viele Crews andere Designs, sodass er nie die eine universelle Piratenflagge war. Ein Hinweis zur Vorsicht: ☠ ist nicht das schlichte Skull-Emoji 💀 (U+1F480), das Zeichen, das für „Ich bin tot vor Lachen“-Reaktionen gepostet wird — anderer Codepoint, anderes Register, ständig verwechselt.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/totenkopf-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "das-symbol",
+      "label": "Das Symbol",
+      "h2": "Der Totenkopf mit gekreuzten Knochen — ☠",
+      "intro": "Das Symbol selbst, sowohl in reiner Textform als auch in Emoji-Darstellung. Es ist derselbe Codepoint, U+2620 — ein angehängter Variationsselektor entscheidet allein, ob es als schwarz-weiße Glyphe oder als farbiges Emoji erscheint.",
+      "symbols": [
+        { "char": "☠", "label": "Totenkopf mit gekreuzten Knochen (U+2620)" },
+        { "char": "☠️", "label": "Totenkopf mit gekreuzten Knochen, Emoji-Stil (U+2620 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "totenkopf-vs-skull-emoji",
+      "label": "vs. das Skull-Emoji",
+      "h2": "☠ vs. das 💀-Skull-Emoji",
+      "intro": "Die Verwechslung, die sich lohnt aufzuklären: ☠ (Totenkopf mit gekreuzten Knochen) und 💀 (schlichter Schädel) sind unterschiedliche Unicode-Zeichen. 💀 posten die meisten für „Ich bin tot“ oder Lach-Reaktionen; ☠ ist das Gefahren- und Piratenzeichen. Passend dazu setzt sich das Piratenflagge-Emoji 🏴‍☠️ zusammen, indem eine schwarze Flagge mit genau U+2620 verbunden wird.",
+      "symbols": [
+        { "char": "☠️", "label": "Totenkopf mit gekreuzten Knochen (U+2620)" },
+        { "char": "💀", "label": "Schädel (U+1F480)" },
+        { "char": "🏴‍☠️", "label": "Piratenflagge (U+1F3F4 U+200D U+2620)" }
+      ]
+    },
+    {
+      "id": "gefahrenzeichen",
+      "label": "Gefahrenzeichen",
+      "h2": "Verwandte Gefahren- & Warnzeichen",
+      "intro": "Der Totenkopf mit gekreuzten Knochen sitzt in Unicodes Block Miscellaneous Symbols direkt neben den übrigen Warnzeichen, mit denen er oft gruppiert wird — jedes ein eigener Codepoint mit eigener Gefahrenbedeutung.",
+      "symbols": [
+        { "char": "☠", "label": "Totenkopf mit gekreuzten Knochen (U+2620)" },
+        { "char": "☢", "label": "Radioaktiv-Zeichen (U+2622)" },
+        { "char": "☣", "label": "Biohazard-Zeichen (U+2623)" },
+        { "char": "⚠", "label": "Warnzeichen (U+26A0)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Radioaktiv, Biohazard, Hochspannung und weitere Warn-Piktogramme in einer Referenz zum Kopieren."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Skull Emoji & Kaomoji",
+      "desc": "Das 💀-Skull-Emoji und seine Textgesicht-Verwandten — die Meme-Reaktions-Seite des Totenkopfs, gesammelt in einem Hub."
+    },
+    {
+      "href": "/de/symbol/biohazard-symbol/",
+      "title": "Biohazard-Symbol (☣)",
+      "desc": "Das ☣-Biohazard-Zeichen — ein Nachbar-Gefahrenzeichen in Unicodes Block Miscellaneous Symbols, ausführlich behandelt."
+    }
+  ]
+}

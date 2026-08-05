@@ -1,0 +1,137 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "ongelijkteken",
+  "title": "Ongelijkteken: Kopieer en Plak ≠ — Wiskundes Ontkenningsteken, en Waarom Code != Gebruikt",
+  "meta_description": "Kopieer en plak het ongelijkteken (≠), bekijk de hele ≁ ≉ ≢ ≮ ≯ ontkenningsfamilie waartoe het behoort, en leer waarom programmeertalen != of <> gebruiken. Klik om te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/ongelijkteken/",
+  "breadcrumb": "Ongelijkteken",
+  "hero_h1": "Ongelijkteken",
+  "hero_tagline": "Het isgelijkteken met een schuine streep erdoorheen (≠) — al minstens sinds Eulers tijd in gebruik in de wiskunde, de bron van een hele familie ontkende relatietekens, en niet opgenomen in ASCII, waardoor code != gebruikt. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het ongelijkteken (≠, U+2260) combineert het isgelijkteken met een diagonale streep — Unicodes eigen decompositie toont het letterlijk als ‘=’ plus een combinerende schuine streep (U+0338), hetzelfde teken dat een hele familie ontkende relaties oplevert: ≁, ≉, ≢, ≮, ≯. De schuine-streep-ontkenning is een apart, later verhaal dan Robert Recordes uitvinding van ‘=’ zelf in 1557 — het vroegst bekende geschreven gebruik gaat terug op de achttiende-eeuwse correspondentie van Leonhard Euler, al benadrukken wiskundehistorici dat het teken dóór Euler is gebruikt, niet per se dóór hem is uitgevonden. Omdat ASCII nooit een plek voor ≠ had gereserveerd, kozen programmeertalen hun eigen vervangers — != in C-achtige talen, <> in SQL en Pascal, ~= in Lua en MATLAB, /= in Fortran en Haskell — waardoor het wiskundeteken en de code die je daadwerkelijk typt bijna nooit hetzelfde teken zijn.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/not-equal-sign/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/ongelijkteken/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/not-equal-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ongelijk-aan",
+      "label": "Ongelijk Aan",
+      "h2": "Ongelijk Aan, in Wiskunde en Code",
+      "intro": "Het wiskundige teken, en de ASCII-vervangers die verschillende programmeertalen gebruiken omdat ≠ zelf nooit deel uitmaakte van de tekenset.",
+      "symbols": [
+        {
+          "char": "≠",
+          "label": "Ongelijk Aan (Wiskunde)"
+        },
+        {
+          "char": "!=",
+          "label": "Ongelijk (C, Python, JavaScript, Java)"
+        },
+        {
+          "char": "<>",
+          "label": "Ongelijk (SQL, Pascal, BASIC)"
+        },
+        {
+          "char": "~=",
+          "label": "Ongelijk (Lua, MATLAB)"
+        },
+        {
+          "char": "/=",
+          "label": "Ongelijk (Fortran, Haskell)"
+        }
+      ]
+    },
+    {
+      "id": "ontkenningsfamilie",
+      "label": "Ontkende Relaties",
+      "h2": "De Familie van Ontkende Relaties",
+      "intro": "≠ staat niet alleen — dezelfde diagonale-streep-overlay ontkent verschillende andere relatietekens in Unicodes Mathematical Operators-blok.",
+      "symbols": [
+        {
+          "char": "≁",
+          "label": "Niet Tilde"
+        },
+        {
+          "char": "≉",
+          "label": "Niet Ongeveer Gelijk Aan"
+        },
+        {
+          "char": "≢",
+          "label": "Niet Identiek Aan"
+        },
+        {
+          "char": "≮",
+          "label": "Niet Kleiner Dan"
+        },
+        {
+          "char": "≯",
+          "label": "Niet Groter Dan"
+        }
+      ]
+    },
+    {
+      "id": "verwante-vergelijkingstekens",
+      "label": "Vergelijkingstekens",
+      "h2": "Verwante Vergelijkingstekens",
+      "intro": "De positieve relaties die ≠ ontkent — handig wanneer je juist de niet-doorgestreepte versie nodig hebt.",
+      "symbols": [
+        {
+          "char": "=",
+          "label": "Isgelijkteken"
+        },
+        {
+          "char": "≈",
+          "label": "Ongeveer Gelijk Aan"
+        },
+        {
+          "char": "≡",
+          "label": "Identiek Aan"
+        },
+        {
+          "char": "<",
+          "label": "Kleiner Dan"
+        },
+        {
+          "char": ">",
+          "label": "Groter Dan"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/nl/library/wiskunde-symbolen/",
+      "title": "Wiskunde-symbolen",
+      "desc": "Operatoren, verzamelingsnotatie en wiskundige constanten in één doorbladerbaar overzicht."
+    },
+    {
+      "href": "/nl/symbol/kleiner-dan-groter-dan-teken/",
+      "title": "Kleiner Dan & Groter Dan",
+      "desc": "De vergelijkingstekens waar ≠ naast staat, en waarom ze HTML kunnen breken."
+    },
+    {
+      "href": "/nl/symbol/plusminus-teken/",
+      "title": "Plusminusteken",
+      "desc": "Nog een wiskundig relatieteken, met een eigen pagina."
+    }
+  ]
+}

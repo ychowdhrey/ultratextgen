@@ -3,12 +3,11 @@
 This document describes the end-to-end system for proposing, vetting,
 generating, validating, and shipping batches of Unicode symbol **library
 pages** (`/library/<slug>/`). It is the operating manual; the companion
-[`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md) covers
+the internal forum-research skill doc covers
 the discovery half in depth. The product *why* behind these mechanics lives in
 [`jtbd-principles.md`](./jtbd-principles.md), the page-vs-section call is
 codified in [`page-vs-section-decisions.md`](./page-vs-section-decisions.md),
-and dated approved-scope plans live in build specs like
-[`jtbd-build-spec.md`](./jtbd-build-spec.md).
+and dated approved-scope plans live in per-batch build specs.
 
 > **Golden rule: do not publish directly.** Every page reaches `master`
 > through a reviewed batch PR. Nothing in this system auto-merges or
@@ -28,18 +27,18 @@ to capture a raw idea the moment it appears, before it has earned any evidence.
 0. scouting        (raw idea → opportunity row, stage = scout)
         │            "this format/topic exists" — captured the moment we learn it
         ▼
-1. forum research  (data/forum_research_queries.csv → forum_evidence)
+1. forum research  (the internal forum-research query set → forum_evidence)
         │            qualitative demand + user language, captured FIRST
         ▼
 2. search volume   (keyword tooling → search_volume, demand_confidence)
         │            quantitative demand, captured SECOND
         ▼
 3. priority + dedupe
-data/library_opportunities.csv          ← one row per candidate page
+the internal opportunity backlog          ← one row per candidate page
         │
         ▼
-scripts/audit_library_opportunities.py  ← dedupe / overlap / block coverage
-        │   → data/library_opportunities_audit.csv   + research-gap flags
+the internal opportunity-audit tool  ← dedupe / overlap / block coverage
+        │   → the internal opportunity audit output   + research-gap flags
         ▼
 approve rows (approval_status = approved)
         │
@@ -67,13 +66,12 @@ research and volume.
 
 ## 1. The opportunity file
 
-`data/library_opportunities.csv` is the **living backlog and system of record**
+`the internal opportunity backlog` is the **living backlog and system of record**
 for what UltraTextGen might build — it grows continuously as scope increases.
 Each row is one **candidate page**, captured in user language with evidence and
 scoring attached. Field definitions are documented in the forum-research skill,
-Section 7. (Build specs such as
-[`jtbd-build-spec.md`](./jtbd-build-spec.md) are *dated snapshots* of the
-approved rows; the CSV is the canonical source, not the spec.)
+Section 7. (Build specs are *dated snapshots* of the
+approved rows; the CSV is the canonical source, not any one spec.)
 
 Keep the file append-only during a batch; don't delete rejected rows — set
 `approval_status = rejected` and explain why in `notes` so the same idea isn't
@@ -134,10 +132,10 @@ page-vs-section call once demand is known).
 
 ## 2. Forum research process
 
-See [`unicode-forum-research-skill.md`](./unicode-forum-research-skill.md).
+See the internal forum-research skill doc.
 In short:
 
-1. Run the seed queries in `data/forum_research_queries.csv` (Reddit, Quora,
+1. Run the seed queries in `the internal forum-research query set` (Reddit, Quora,
    StackExchange site searches).
 2. For each qualifying thread, extract head noun, modifier, constraints, and
    use case in the user's own words.
@@ -192,7 +190,7 @@ priority_score = search_volume_score
 
 `forum_evidence_score` is computed by the auditor from the `forum_evidence`
 label using the scale above (single source of truth:
-`FORUM_EVIDENCE_SCORE` in `scripts/audit_library_opportunities.py`). The other
+`FORUM_EVIDENCE_SCORE` in `the internal opportunity-audit tool`). The other
 four components are graded by the researcher; record the breakdown in `notes`
 so the total is auditable. Rank the batch by `priority_score` descending and
 spec the top rows first.
@@ -306,8 +304,8 @@ Two links to keep intact:
 Run the auditor before approving any batch:
 
 ```bash
-python3 scripts/audit_library_opportunities.py
-# → data/library_opportunities_audit.csv
+python3 the internal opportunity-audit tool
+# → the internal opportunity audit output
 ```
 
 It cross-references each opportunity against the published `/library/` pages
@@ -355,21 +353,53 @@ overlap/research gap has been consciously resolved).
 Before opening the PR, lint every generated/changed page:
 
 ```bash
-# whole library
+# whole library — English root AND every translated lane (<lang>/library/,
+# <lang>/symbol/) by default
 python3 scripts/validate_library_pages.py
 
 # or just the batch
 python3 scripts/validate_library_pages.py library/<slug>/ library/<slug2>/
+python3 scripts/validate_library_pages.py id/library/<slug>/
 ```
 
 Errors (fail the run): missing title/description/canonical, not exactly one
 `<h1>`, fewer than 3 `<h2>`, single-copy page under the minimum button count,
 `.symbol-tile` buttons missing `data-symbol`/`aria-label`, missing
 `#symbolToast` or `/symbol-explorer.js`, a collections container with no
-`buildGrids` call, and duplicate titles/descriptions across pages.
+`buildGrids` call, duplicate titles/descriptions across pages, and a **lane
+mismatch** — a page under a `library/` directory whose `hreflang="en"`
+counterpart is under `/symbol/`, or vice versa (see below).
 
 Fix all errors before the PR. Warnings (e.g. missing related-links block)
 should be reviewed but don't block.
+
+### Translating a page: the lane is inherited, never re-decided
+
+`library/` vs `symbol/` (CLAUDE.md, "Content Types: Library vs Symbol") is a
+**content-type** decision made once, on the English page, via its spec's
+`page_type`. Translating that page into `<lang>/` does not reopen the
+decision — a translation of a `/symbol/<slug>/` page ships to
+`<lang>/symbol/<slug>/`, full stop, even though `<lang>/library/` is the
+lane most translation batches actually touch and may be the only lane that
+already exists for that language.
+
+This has gone wrong repeatedly in practice — not as one session's mistake,
+but because most languages simply never built a `<lang>/symbol/` pillar, so
+every subsequent translation session defaulted to the one lane that existed
+(`<lang>/library/`) for single-glyph content too. `ar/` is the only language
+that got this right end-to-end (it has its own `ar/symbol/`). Before
+starting a translation batch:
+
+- Check whether the English source page lives under `symbol/` or `library/`
+  and mirror that, not the target language's existing folder layout.
+- If the language has no `<lang>/symbol/` directory yet, create it — "no
+  precedent in this language" is not a reason to fold single-glyph content
+  into `<lang>/library/`.
+- The validator now scans every `<lang>/library/` and `<lang>/symbol/` by
+  default specifically to catch this: it reads each page's own
+  `hreflang="en"` link and flags a mismatch between the page's directory and
+  its English counterpart's directory. Run it over your translated batch,
+  not just against the English pages you touched.
 
 ---
 

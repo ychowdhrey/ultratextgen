@@ -1,0 +1,69 @@
+{
+  "slug": "symbole-theta",
+  "lang": "fr",
+  "page_type": "symbol",
+  "title": "Symbole Thêta : Copier-Coller θ Θ ϑ — La « Lettre de la Mort » de la Grèce Antique",
+  "meta_description": "Copie et colle le symbole thêta — le θ minuscule, le Θ majuscule et la variante mathématique à boucle ouverte ϑ — la lettre que les Grecs anciens inscrivaient sur leur bulletin pour voter la peine de mort. Clique sur un symbole pour le copier instantanément.",
+  "canonical": "https://ultratextgen.com/fr/symbol/symbole-theta/",
+  "breadcrumb": "Symbole Thêta",
+  "hero_h1": "Symbole Thêta",
+  "hero_tagline": "Le θ minuscule qui marque un angle en trigonométrie, le Θ majuscule de la notation Grand-Thêta en complexité algorithmique, et la variante mathématique à boucle ouverte ϑ — la même lettre que les Athéniens classiques gravaient jadis sur un bulletin pour voter la mort. Clique sur un symbole pour le copier instantanément.",
+  "intro": "Thêta est la huitième lettre de l'alphabet grec, et son glyphe minuscule θ (U+03B8, GREEK SMALL LETTER THETA) — un cercle traversé d'une barre horizontale — traîne l'un des passifs les plus sombres de toutes les lettres. Dans l'Antiquité classique, thêta était la « lettre de la mort » : elle représentait θάνατος (thánatos, « mort »), et les jurés athéniens pouvaient la graver sur un bulletin de vote ou un tesson pour voter la condamnation ou l'exécution d'un accusé — un usage si tristement célèbre que le poète romain Ennius aurait qualifié thêta de la plus malchanceuse de toutes les lettres. La forme majuscule Θ (U+0398) et une variante distincte à boucle ouverte ϑ (U+03D1, GREEK THETA SYMBOL) complètent la famille — ϑ est un glyphe de style cursif utilisé dans certaines compositions de physique et de mathématiques, pas une lettre à part entière. Aujourd'hui, le travail de thêta est bien plus paisible : le θ minuscule est le symbole standard d'un angle inconnu ou mesuré en trigonométrie et en géométrie, tandis que le Θ majuscule nomme la notation Grand-Thêta, la « borne serrée » de l'analyse d'algorithmes que Donald Knuth a formalisée dans son article de 1976 « Big Omicron and Big Omega and Big Theta ». Dans le système de numération grecque, thêta porte aussi la valeur 9.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/fr/",
+  "crumb_home": "Accueil",
+  "crumb_library": "Symboles",
+  "library_url": "https://ultratextgen.com/fr/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
+    { "lang": "fr", "href": "https://ultratextgen.com/fr/symbol/symbole-theta/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "le-symbole-theta",
+      "label": "Le Symbole Thêta",
+      "h2": "Le Symbole Thêta — θ, Θ & ϑ",
+      "intro": "Thêta se décline en trois glyphes réellement utilisés : le θ minuscule du quotidien, le Θ majuscule, et la variante à boucle ouverte ϑ réservée aux mathématiques et à la physique. Une quatrième forme, majuscule barrée, n'existe que comme symbole mathématique.",
+      "symbols": [
+        { "char": "θ", "label": "Thêta Minuscule Grec (U+03B8) — le Symbole de l'Angle" },
+        { "char": "Θ", "label": "Thêta Majuscule Grec (U+0398) — la Notation Grand-Thêta" },
+        { "char": "ϑ", "label": "Symbole Thêta Grec (U+03D1) — la Variante Mathématique à Boucle Ouverte" },
+        { "char": "ϴ", "label": "Symbole Thêta Majuscule Grec (U+03F4) — la Variante Barrée" }
+      ]
+    },
+    {
+      "id": "theta-en-maths",
+      "label": "Maths & Sciences",
+      "h2": "Thêta en Mathématiques et en Informatique",
+      "intro": "Deux fonctions bien distinctes se partagent la même lettre. Le θ minuscule est le nom de référence pour un angle ; le Θ majuscule est la borne serrée en analyse de complexité, situé entre le Grand-O (borne supérieure) et le Grand-Oméga (borne inférieure).",
+      "symbols": [
+        { "char": "θ", "label": "Petit Thêta (U+03B8) — Angle en Trigonométrie & Géométrie" },
+        { "char": "Θ", "label": "Grand Thêta (U+0398) — Grand-Thêta, la Borne Serrée" },
+        { "char": "Ω", "label": "Oméga Majuscule (U+03A9) — Grand-Oméga, la Cousine Borne Inférieure" },
+        { "char": "ϑ", "label": "Symbole Thêta (U+03D1) — la Variante de Composition en Physique" }
+      ]
+    },
+    {
+      "id": "lettres-grecques-associees",
+      "label": "Lettres Grecques",
+      "h2": "Lettres Grecques Associées",
+      "intro": "Thêta est la 8ᵉ lettre de l'alphabet grec. Voici les voisines les plus recherchées et copiées à ses côtés.",
+      "symbols": [
+        { "char": "Ω", "label": "Oméga Majuscule Grec" },
+        { "char": "Δ", "label": "Delta Majuscule Grec" },
+        { "char": "π", "label": "Pi Minuscule Grec" },
+        { "char": "α", "label": "Alpha Minuscule Grec" }
+      ]
+    }
+  ],
+  "cta": "Utilise UltraTextGen pour transformer du texte brut en gras, italique, cursive et plus de 100 autres styles de police Unicode — gratuit et instantané.",
+  "related": [
+    { "href": "/fr/library/alphabet-grec/", "title": "Alphabet Grec", "desc": "L'alphabet grec complet, majuscules, minuscules et variantes mathématiques, prêt à copier-coller." },
+    { "href": "/library/math-symbols/", "title": "Math Symbols", "desc": "Angles, opérateurs, et les lettres grecques qui complètent une équation (en anglais)." },
+    { "href": "/fr/symbol/symbole-omega/", "title": "Symbole Oméga", "desc": "La cousine de thêta en notation de complexité : Θ est la borne serrée, Ω la borne inférieure en analyse d'algorithmes." },
+    { "href": "/fr/symbol/symbole-delta/", "title": "Symbole Delta", "desc": "Une autre lettre grecque isolée à la riche vie mathématique — le changement, la différence et le discriminant." }
+  ]
+}

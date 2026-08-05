@@ -1,0 +1,85 @@
+{
+  "slug": "won-sign",
+  "page_type": "symbol",
+  "title": "Won Symbol: Copy & Paste ₩ — The One Sign Two Rival Koreas Share",
+  "meta_description": "Copy and paste the won sign (₩) — the single currency symbol used by both the South Korean won (KRW) and the North Korean won (KPW), and a linguistic cousin of the yen and yuan. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/won-sign/",
+  "breadcrumb": "Won Sign",
+  "hero_h1": "Won Sign",
+  "hero_tagline": "The ₩ currency mark shared by both the South Korean won (KRW) and the North Korean won (KPW) — one Unicode character for two states that aren’t on speaking terms. Click any symbol to copy it instantly.",
+  "intro": "The won sign (₩) is a rare kind of currency symbol: a single Unicode character — U+20A9, added back in Unicode 1.1 in 1993 — that officially stands for two separate national currencies at once. Both the South Korean won (code KRW) and the North Korean won (KPW) are written with the identical ₩ glyph, a capital “W” crossed by a horizontal stroke, even though the two governments have been divided since 1948 and their wons trade at wildly different values. The name is old: the won was introduced under the Korean Empire in 1902, replacing the yang, and it comes from the hanja 圓 (원), meaning “round” — the very same root behind Japan’s yen and China’s yuan, all three descended from the round Spanish-American silver dollar that dominated East Asian trade for generations. One symbol, two countries, and a shared etymology stretching across the region.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "won-sign",
+      "label": "Won Sign",
+      "h2": "The Won Symbol (₩)",
+      "intro": "The mark itself: a capital W with a horizontal bar through the middle. U+20A9 is the standard sign for almost every context; the fullwidth version is a compatibility character that lines up with the fixed grid of Korean and other CJK text.",
+      "symbols": [
+        {
+          "char": "₩",
+          "label": "Won Sign (U+20A9)"
+        },
+        {
+          "char": "￦",
+          "label": "Fullwidth Won Sign (U+FFE6)"
+        }
+      ]
+    },
+    {
+      "id": "two-koreas",
+      "label": "Two Koreas",
+      "h2": "One Sign, Two Rival Currencies",
+      "intro": "The same ₩ denotes both the South Korean won (KRW) and the North Korean won (KPW) — two currencies from two states that split in 1948 and remain, technically, at war. In Korean the unit is written 원 in Hangul. Nothing about the symbol distinguishes the two; only the three-letter currency code does.",
+      "symbols": [
+        {
+          "char": "₩",
+          "label": "Won Sign (U+20A9) — Shared by KRW (South) and KPW (North)"
+        },
+        {
+          "char": "원",
+          "label": "Won Written in Hangul (원)"
+        }
+      ]
+    },
+    {
+      "id": "won-yen-yuan",
+      "label": "Yen & Yuan Family",
+      "h2": "The Won, Yen & Yuan Family",
+      "intro": "Won, yen, and yuan are linguistic cousins — all three trace back to the character 圓 (simplified to 元 in modern China), meaning “round,” after the round silver dollars that once circulated across Asia. Japan’s yen and China’s yuan even share a single symbol, ¥, which is part of why non-native readers occasionally confuse ₩ and ¥ at a glance.",
+      "symbols": [
+        {
+          "char": "¥",
+          "label": "Yen & Yuan Sign (U+00A5)"
+        },
+        {
+          "char": "圓",
+          "label": "Hanja 圓 — “Round,” the Shared Root"
+        },
+        {
+          "char": "元",
+          "label": "Yuan (元)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "A browsable set of world currency marks, from the dollar and euro to the rupee and bitcoin."
+    },
+    {
+      "href": "/symbol/yen-sign/",
+      "title": "Yen Sign",
+      "desc": "The won’s East Asian cousin — same “round” etymology, and the ¥ glyph non-native readers sometimes mix up with ₩."
+    },
+    {
+      "href": "/symbol/dollar-sign/",
+      "title": "Dollar Sign",
+      "desc": "The Spanish-American silver dollar that seeded the won, yen, and yuan is also the coin most often credited with the $ sign’s own origin."
+    }
+  ]
+}

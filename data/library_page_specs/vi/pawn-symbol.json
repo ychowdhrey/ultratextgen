@@ -1,0 +1,80 @@
+{
+  "slug": "pawn-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Tốt: Sao Chép & Dán ♟ ♙ — Người Lính Bộ Binh Có Thể Trở Thành Hậu",
+  "meta_description": "Sao chép ký hiệu quân tốt — tốt đen ♟ (U+265F) và tốt trắng ♙ (U+2659) — quân cờ giá trị thấp nhất trên bàn cờ, đặt tên theo người lính bộ binh, có thể phong thành hậu. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "canonical": "https://ultratextgen.com/vi/symbol/pawn-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Tốt",
+  "hero_h1": "Ký Hiệu Tốt (♟ ♙)",
+  "hero_tagline": "Tốt đen ♟ và tốt trắng ♙ — quân cờ giá trị thấp nhất trên bàn cờ và cũng là người lính bộ binh của nó, quân cờ duy nhất có thể tiến đến hàng cuối và biến thành hậu, và cũng là từ tiếng Anh mượn để chỉ người bị lợi dụng trong ván cờ của kẻ khác. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Ký hiệu quân tốt có hai dạng Unicode — tốt đen ♟ (U+265F, BLACK CHESS PAWN) và tốt trắng ♙ (U+2659, WHITE CHESS PAWN) — cả hai đều thuộc khối Miscellaneous Symbols, cùng bộ cờ vua đầy đủ 12 quân từ U+2654 đến U+265F. Từ «tốt» (pawn) trong tiếng Anh bắt nguồn từ tiếng Anh-Pháp «poun» và tiếng Pháp cổ «peon», từ tiếng Latin thời Trung Cổ «pedonem» (lính bộ binh), cuối cùng đến từ tiếng Latin «pes», nghĩa là chân — quân tốt theo đúng nghĩa đen là bộ binh của bàn cờ. Đây là quân cờ có giá trị thấp nhất, chỉ đáng 1 điểm trong hệ tính điểm chuẩn, nơi một mã hay tượng đáng 3 điểm, xe 5 điểm, và hậu 9 điểm. Đây cũng là quân duy nhất di chuyển và ăn quân theo hai cách khác nhau: nó tiến thẳng một ô về phía trước — hoặc hai ô ở nước đi đầu tiên — nhưng chỉ ăn quân theo đường chéo, và có thể bị một tốt đối phương bắt «qua đường» (en passant) khi nó cố lướt qua. Đến được hàng cuối cùng, một quân tốt được phong thành hậu, xe, tượng hoặc mã — bất cứ quân nào trừ vua, và nó không thể giữ nguyên là tốt. Trong ký hiệu, tốt là «P» (trắng) hoặc «p» (đen) trong FEN, và không mang chữ cái nào cả trong nước đi ký hiệu đại số, chỉ ô đích. Từ thập niên 1580, «pawn» đã trở thành phép ẩn dụ thường ngày cho một người bị dùng như công cụ có thể hy sinh trong mưu đồ của kẻ khác.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pawn-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/pawn-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pawn-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "pawn-symbol",
+      "label": "Ký Hiệu Tốt",
+      "h2": "Ký Hiệu Tốt — ♟ & ♙",
+      "intro": "Hai glyph quân tốt. Tốt đen đặc ♟ là dạng mà đa số người dán; tốt trắng viền ♙ là «người anh em» phe sáng của nó. Cả hai đều là một ký tự Unicode duy nhất, sẵn sàng để đưa vào bất kỳ văn bản nào.",
+      "symbols": [
+        { "char": "♟", "label": "Tốt Đen (U+265F)" },
+        { "char": "♙", "label": "Tốt Trắng (U+2659)" }
+      ]
+    },
+    {
+      "id": "black-chess-pieces",
+      "label": "Quân Đen",
+      "h2": "Đồng Đội Của Tốt Đen",
+      "intro": "Phần còn lại của phe đen xếp hàng phía sau quân tốt — vua, hậu, xe, tượng và mã, chạy từ U+265A đến U+265E trong cùng khối Unicode.",
+      "symbols": [
+        { "char": "♚", "label": "Vua Đen (U+265A)" },
+        { "char": "♛", "label": "Hậu Đen (U+265B)" },
+        { "char": "♜", "label": "Xe Đen (U+265C)" },
+        { "char": "♝", "label": "Tượng Đen (U+265D)" },
+        { "char": "♞", "label": "Mã Đen (U+265E)" }
+      ]
+    },
+    {
+      "id": "white-chess-pieces",
+      "label": "Quân Trắng",
+      "h2": "Các Quân Cờ Trắng",
+      "intro": "Bộ quân viền trắng đối mặt với tốt đen qua bàn cờ, chiếm từ U+2654 đến U+2658 — quân hậu mà nó có thể một ngày phải e sợ, và quân vua mà nó không bao giờ có thể trở thành.",
+      "symbols": [
+        { "char": "♔", "label": "Vua Trắng (U+2654)" },
+        { "char": "♕", "label": "Hậu Trắng (U+2655)" },
+        { "char": "♖", "label": "Xe Trắng (U+2656)" },
+        { "char": "♗", "label": "Tượng Trắng (U+2657)" },
+        { "char": "♘", "label": "Mã Trắng (U+2658)" }
+      ]
+    },
+    {
+      "id": "pawn-promotion",
+      "label": "Phong Cấp",
+      "h2": "Tốt Có Thể Trở Thành Gì",
+      "intro": "Một quân tốt đến được đầu kia bàn cờ bắt buộc phải phong cấp — thành hậu, xe, tượng hoặc mã cùng màu. Nó không bao giờ có thể trở thành vua, và không thể giữ nguyên là tốt. Hậu là lựa chọn thường thấy; bất kỳ quân nào khác là một «phong cấp non» (underpromotion).",
+      "symbols": [
+        { "char": "♛", "label": "Hậu Đen (U+265B) — Lựa Chọn Phong Cấp Thường Thấy" },
+        { "char": "♜", "label": "Xe Đen (U+265C)" },
+        { "char": "♝", "label": "Tượng Đen (U+265D)" },
+        { "char": "♞", "label": "Mã Đen (U+265E) — Một Kiểu Phong Cấp Non" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/chess-symbols/", "title": "Ký Hiệu Cờ Vua", "desc": "Trọn bộ cờ vua Unicode — vua, hậu, xe, tượng, mã và cả hai tốt — trong một trang tra cứu để sao chép và dán." },
+    { "href": "/library/card-suit-symbols/", "title": "Ký Hiệu Chất Bài", "desc": "Bích, cơ, rô và nhép — các glyph trò chơi khác, nằm ngay cạnh quân cờ trong khối Miscellaneous Symbols của Unicode." },
+    { "href": "/library/crown-royalty-symbols/", "title": "Ký Hiệu Vương Miện & Hoàng Gia", "desc": "Vương miện, ngai vàng và bảo vật hoàng gia — thật hợp với một quân tốt mơ được phong thành hậu." }
+  ]
+}

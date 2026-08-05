@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-    const EMOJI_LEXICON = {
+    const EMOJI_LEXICON_EN = {
       // --- Emotions & reactions ---
       "love": "❤️", "loves": "❤️", "loved": "❤️", "loving": "❤️", "heart": "❤️",
       "hearts": "💕", "romance": "💕", "romantic": "💕",
@@ -635,7 +635,7 @@
       "brown": "🟤",
     };
 
-    const EMOJI_TO_WORD = {
+    const EMOJI_TO_WORD_EN = {
       // Faces & feelings
       "😊": "happy", "😂": "laugh", "🤣": "hilarious", "😄": "joy", "😉": "wink",
       "😎": "cool", "😍": "beautiful", "🥰": "cute", "😘": "kiss", "😋": "yummy",
@@ -713,7 +713,7 @@
       "📰": "news", "📢": "announcement",
     };
 
-    const STARTER_PHRASES = [
+    const STARTER_PHRASES_EN = [
       "I love you",
       "Happy Birthday",
       "Good morning sunshine",
@@ -733,13 +733,24 @@
     ];
 
     // ── Function words (kept as text; never force-mapped) ───────────────────────
-    const STOP_WORDS = new Set([
+    const STOP_WORDS_EN = new Set([
       'a','an','the','is','am','are','was','were','be','been','being',
       'of','to','in','on','at','by','for','with','as','it','its',
       'and','or','but','so','if','then','than','that','this','these','those',
       'do','does','did','has','have','had','will','would','can','could','should',
       'i','you','he','she','we','they','me','him','her','us','them','my','your'
     ]);
+
+    // ── i18n: localized pages provide their own data via window.EMOJI_TOOL_CONFIG.
+    // When a field is absent the English default is used, so existing English
+    // pages behave exactly as before. ───────────────────────────────────────────
+    const CFG = window.EMOJI_TOOL_CONFIG || {};
+    const LANG = CFG.lang || 'en';
+    const EMOJI_LEXICON = CFG.lexicon || EMOJI_LEXICON_EN;
+    const EMOJI_TO_WORD = CFG.emojiToWord || EMOJI_TO_WORD_EN;
+    const STARTER_PHRASES = (CFG.starterPhrases && CFG.starterPhrases.length) ? CFG.starterPhrases : STARTER_PHRASES_EN;
+    const STOP_WORDS = CFG.stopWords ? new Set(CFG.stopWords) : STOP_WORDS_EN;
+    const STRINGS = CFG.strings || {};
 
     // Letter mode: A–Z → regional indicator symbols (space-separated so pairs
     // don't merge into flags), digits → keycaps.
@@ -755,6 +766,10 @@
     function lookupWord(raw) {
       const w = raw.toLowerCase();
       if (EMOJI_LEXICON[w]) return EMOJI_LEXICON[w];
+      // Plural/tense fallback is English-specific. Localized lexicons carry their
+      // own inflections, so we skip suffix-stripping for non-English pages to
+      // avoid producing wrong matches.
+      if (LANG !== 'en') return null;
       const tries = [];
       if (w.endsWith('ies') && w.length > 4) tries.push(w.slice(0, -3) + 'y');
       if (w.endsWith('es') && w.length > 3) tries.push(w.slice(0, -2));
@@ -765,9 +780,14 @@
       return null;
     }
 
-    // Split a token into leading punct / core word / trailing punct
+    // Split a token into leading punct / core word / trailing punct.
+    // Unicode-aware: the "core" keeps letters (\p{L}), numbers (\p{N}) and
+    // combining marks (\p{M}, e.g. Devanagari matras, Arabic diacritics) so
+    // non-Latin and accented words (café, süß, قطة, पिज़्ज़ा) resolve, while
+    // surrounding punctuation is still stripped. ASCII English is unchanged.
+    const TOKEN_RE = /^([^\p{L}\p{N}\p{M}]*)([\p{L}\p{N}\p{M}'’-]*?)([^\p{L}\p{N}\p{M}]*)$/u;
     function splitToken(tok) {
-      const m = tok.match(/^([^A-Za-z0-9]*)([A-Za-z0-9'’-]*?)([^A-Za-z0-9]*)$/);
+      const m = tok.match(TOKEN_RE);
       if (!m) return { lead: '', core: tok, trail: '' };
       return { lead: m[1], core: m[2], trail: m[3] };
     }
@@ -832,7 +852,7 @@
       const out = [];
       const breakdown = [];
       const seg = (typeof Intl !== 'undefined' && Intl.Segmenter)
-        ? Array.from(new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text), s => s.segment)
+        ? Array.from(new Intl.Segmenter(LANG, { granularity: 'grapheme' }).segment(text), s => s.segment)
         : Array.from(text);
       for (const g of seg) {
         if (/^\s+$/.test(g)) { out.push(' '); continue; }
@@ -844,30 +864,38 @@
       return { output: out.join('').replace(/\s{2,}/g, ' ').trim(), breakdown };
     }
 
+    const MODE_STR = STRINGS.modeStrings || {};
     const MODES = {
       emojify: { fn: convertEmojify, label: 'Emojified text', hint: 'Keeps your words and sprinkles a matching emoji after each one it recognises.' },
       replace: { fn: convertReplace, label: 'Emoji translation', hint: 'Swaps each recognised word for its emoji. Unmatched words stay as text.' },
       letters: { fn: convertLetters, label: 'Emoji letters', hint: 'Turns every letter into a boxed emoji letter — great for names and titles.' },
       decode:  { fn: convertDecode,  label: 'Decoded text', hint: 'Reverse mode: paste emoji and read them back as plain English words.' }
     };
+    // Localized mode labels/hints override the English defaults where provided.
+    for (const k in MODE_STR) {
+      if (!MODES[k]) continue;
+      if (MODE_STR[k].label) MODES[k].label = MODE_STR[k].label;
+      if (MODE_STR[k].hint) MODES[k].hint = MODE_STR[k].hint;
+    }
 
     // ── Config (set per page via window.EMOJI_TOOL_CONFIG) ────────────────────
-    const CFG = window.EMOJI_TOOL_CONFIG || {};
     const ORIGIN = 'https://ultratextgen.com';
     const DEFAULT_MODE = (CFG.defaultMode && MODES[CFG.defaultMode]) ? CFG.defaultMode : 'emojify';
     const PATH = CFG.path || '/usecase/text-to-emoji/';
     const SINGLE = !!CFG.singleMode;                       // spoke = single-mode page
     const LOCAL = new Set(CFG.localModes || ['emojify', 'replace', 'letters', 'decode']);
 
-    // The one canonical home URL for each mode (tab hrefs, redirects, canonical tag)
-    const MODE_URL = {
+    // The one canonical home URL for each mode (tab hrefs, redirects, canonical tag).
+    // Localized single-page tools point every mode at their own path so the
+    // canonical tag stays on the localized page.
+    const MODE_URL = CFG.modeUrl || {
       emojify: '/usecase/text-to-emoji/',
       replace: '/usecase/text-to-emoji/?mode=replace',
       letters: '/usecase/emoji-letters/',
       decode:  '/usecase/emoji-to-text/'
     };
 
-    const MODE_META = {
+    const MODE_META = CFG.modeMeta || {
       emojify: {
         title: 'Text to Emoji Converter, Emoji Letters & Emoji to Text | UltraTextGen',
         desc: 'Convert text to emoji instantly as you type. Emojify your words, replace them with emoji, spell in emoji letters, or decode emoji back to text. Free, no sign-up.'
@@ -903,7 +931,8 @@
     const modeHint = $id('modeHint');
     const phraseChips = $id('phraseChips');
 
-    const PLACEHOLDER = 'Your emoji translation will appear here.';
+    const PLACEHOLDER = STRINGS.resultPlaceholder || 'Your emoji translation will appear here.';
+    const INPUT_PLACEHOLDERS = STRINGS.inputPlaceholders || {};
     let currentMode = DEFAULT_MODE;
     let lastBreakdown = [];
 
@@ -989,8 +1018,10 @@
         });
       }
       mainInput.placeholder = mode === 'decode'
-        ? 'Paste emoji here to decode…'
-        : (mode === 'letters' ? 'Type a name or word…' : 'Type your sentence here…');
+        ? (INPUT_PLACEHOLDERS.decode || 'Paste emoji here to decode…')
+        : (mode === 'letters'
+            ? (INPUT_PLACEHOLDERS.letters || 'Type a name or word…')
+            : (INPUT_PLACEHOLDERS.default || 'Type your sentence here…'));
       if (LOCAL.has(mode)) updateHead(mode);
       render();
     }
@@ -1034,10 +1065,10 @@
       const text = emojiOutput.textContent;
       if (!text || text === PLACEHOLDER) return;
       navigator.clipboard.writeText(text).then(() => {
-        copyOutputBtn.textContent = 'Copied!';
+        copyOutputBtn.textContent = STRINGS.copied || 'Copied!';
         copyOutputBtn.classList.add('copied');
         setTimeout(() => {
-          copyOutputBtn.textContent = 'Copy';
+          copyOutputBtn.textContent = STRINGS.copy || 'Copy';
           copyOutputBtn.classList.remove('copied');
         }, 1500);
       });
@@ -1091,7 +1122,7 @@
       const surprise = document.createElement('button');
       surprise.type = 'button';
       surprise.className = 'phrase-chip surprise';
-      surprise.textContent = '🎲 Surprise me';
+      surprise.textContent = STRINGS.surpriseMe || '🎲 Surprise me';
       surprise.addEventListener('click', () => {
         surpriseIdx = (surpriseIdx + 1) % STARTER_PHRASES.length;
         loadPhrase(STARTER_PHRASES[surpriseIdx]);

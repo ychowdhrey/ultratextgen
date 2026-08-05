@@ -1,0 +1,186 @@
+{
+  "slug": "not-equal-sign",
+  "lang": "zh-tw",
+  "page_type": "symbol",
+  "title": "不等於符號 ≠：複製貼上與輸入方式 | UltraTextGen",
+  "meta_description": "點一下複製不等於符號 ≠，附 HTML 寫法，以及大於等於、小於等於等比較符號。",
+  "canonical": "https://ultratextgen.com/zh-tw/symbol/not-equal-sign/",
+  "home_url": "https://ultratextgen.com/zh-tw/",
+  "crumb_home": "首頁",
+  "crumb_library": "符號",
+  "library_url": "https://ultratextgen.com/zh-tw/symbol/",
+  "breadcrumb": "不等於符號",
+  "hero_h1": "不等於符號（≠）",
+  "hero_tagline": "≠ 表示兩邊不相等——點一下就複製。",
+  "intro": "≠（U+2260，NOT EQUAL TO）表示兩個值不相等，是等號加上一條斜線。在程式語言裡通常寫成 != 或 <>，但在數學排版、規格書和試算表說明中應該用真正的 ≠ 字元。Excel 等軟體的公式列仍需輸入 <>，顯示時才用 ≠。HTML 寫成 &ne; 或 &#8800;。",
+  "date_published": "2026-08-01",
+  "date_modified": "2026-08-01",
+  "copy_pattern": "single",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/not-equal-sign/"
+    },
+    {
+      "lang": "ru",
+      "href": "https://ultratextgen.com/ru/symbol/znak-ne-ravno/"
+    },
+    {
+      "lang": "id",
+      "href": "https://ultratextgen.com/id/symbol/simbol-tidak-sama-dengan/"
+    },
+    {
+      "lang": "fr",
+      "href": "https://ultratextgen.com/fr/symbol/symbole-different/"
+    },
+    {
+      "lang": "de",
+      "href": "https://ultratextgen.com/de/symbol/ungleichzeichen/"
+    },
+    {
+      "lang": "tr",
+      "href": "https://ultratextgen.com/tr/symbol/esit-degil-isareti/"
+    },
+    {
+      "lang": "it",
+      "href": "https://ultratextgen.com/it/symbol/simbolo-diverso/"
+    },
+    {
+      "lang": "pt",
+      "href": "https://ultratextgen.com/pt/symbol/sinal-de-diferente/"
+    },
+    {
+      "lang": "es",
+      "href": "https://ultratextgen.com/es/symbol/simbolo-de-diferente/"
+    },
+    {
+      "lang": "ar",
+      "href": "https://ultratextgen.com/ar/symbol/ramz-la-yusawi/"
+    },
+    {
+      "lang": "ja",
+      "href": "https://ultratextgen.com/ja/symbol/futougou/"
+    },
+    {
+      "lang": "th",
+      "href": "https://ultratextgen.com/th/symbol/khreuangmai-mai-thaokap/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/ongelijkteken/"
+    },
+    {
+      "lang": "pl",
+      "href": "https://ultratextgen.com/pl/symbol/znak-rozne-od/"
+    },
+    {
+      "lang": "vi",
+      "href": "https://ultratextgen.com/vi/symbol/not-equal-sign/"
+    },
+    {
+      "lang": "ko",
+      "href": "https://ultratextgen.com/ko/symbol/gatji-anta-giho/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/not-equal-sign/"
+    },
+    {
+      "lang": "zh-TW",
+      "href": "https://ultratextgen.com/zh-tw/symbol/not-equal-sign/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/not-equal-sign/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "not-equal-symbol",
+      "label": "不等於符號",
+      "h2": "不等於符號",
+      "intro": "不等於與程式寫法。",
+      "symbols": [
+        {
+          "char": "≠",
+          "label": "不等於（U+2260）"
+        },
+        {
+          "char": "!=",
+          "label": "程式常用寫法"
+        },
+        {
+          "char": "<>",
+          "label": "試算表／SQL 寫法"
+        }
+      ]
+    },
+    {
+      "id": "comparison-operators",
+      "label": "其他比較符號",
+      "h2": "其他比較符號",
+      "intro": "完整的比較關係符號。",
+      "symbols": [
+        {
+          "char": "≈",
+          "label": "約等於"
+        },
+        {
+          "char": "≡",
+          "label": "恆等於"
+        },
+        {
+          "char": "<",
+          "label": "小於"
+        },
+        {
+          "char": ">",
+          "label": "大於"
+        }
+      ]
+    },
+    {
+      "id": "math-operators",
+      "label": "運算符號",
+      "h2": "運算符號",
+      "intro": "算式裡的四則運算符。",
+      "symbols": [
+        {
+          "char": "×",
+          "label": "乘號"
+        },
+        {
+          "char": "÷",
+          "label": "除號"
+        },
+        {
+          "char": "±",
+          "label": "正負"
+        }
+      ]
+    }
+  ],
+  "cta": "用 UltraTextGen 把純文字轉換成粗體、斜體、花體等 100 多種 Unicode 字體——免費、即時。",
+  "related": [
+    {
+      "href": "/zh-tw/symbol/multiplication-sign/",
+      "title": "乘號（×）",
+      "desc": "乘法運算符號與尺寸寫法。"
+    },
+    {
+      "href": "/zh-tw/symbol/division-sign/",
+      "title": "除號（÷）",
+      "desc": "除法運算符號。"
+    },
+    {
+      "href": "/zh-tw/symbol/plus-minus/",
+      "title": "正負符號（±）",
+      "desc": "誤差範圍與公差標示。"
+    },
+    {
+      "href": "/zh-tw/library/shuzi-fuhao/",
+      "title": "數字符號大全",
+      "desc": "上標、下標與圈形數字整理。"
+    }
+  ]
+}

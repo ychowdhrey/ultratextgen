@@ -104,10 +104,14 @@
   }
 
   function detectLang() {
-    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro"];
+    // Locales recognized from the URL path so <html lang> and text direction get
+    // set correctly. Includes prerendered "shadow" locales (ko, hi, zh-tw) that
+    // ship fully translated pages but carry no runtime translation JSON — those
+    // only need the lang/dir attributes, not a fetch (see withRuntimeJson below).
+    var supported = ["en", "es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro", "hu", "ko", "hi", "zh-tw", "fi"];
 
-    // 1. Detect from URL path prefix (e.g. /fr/, /de/)
-    var pathMatch = window.location.pathname.match(/^\/([a-z]{2})\//);
+    // 1. Detect from URL path prefix (e.g. /fr/, /de/, /zh-tw/)
+    var pathMatch = window.location.pathname.match(/^\/([a-z]{2}(?:-[a-z]{2})?)\//);
     if (pathMatch && supported.indexOf(pathMatch[1]) !== -1) {
       return pathMatch[1];
     }
@@ -133,6 +137,14 @@
 
     if (lang === "en") return; // English is already in the HTML
 
+    // Only fetch a translation file for locales that actually ship one. The
+    // prerendered "shadow" locales (ko, hi, zh-tw), the hu stub, and fi (same
+    // static-HTML pattern as hu — see fi/index.html) have no /locales/<lang>.json,
+    // so their pages already carry translated HTML and only needed the lang/dir
+    // attributes set above — skip the fetch that would 404.
+    const withRuntimeJson = ["es", "fr", "pt", "de", "id", "it", "nl", "tr", "pl", "vi", "tl", "da", "sv", "no", "ja", "th", "ru", "ar", "cs", "sk", "hr", "bs", "sr", "ro"];
+    if (withRuntimeJson.indexOf(lang) === -1) return;
+
     fetch("/locales/" + lang + ".json")
       .then(function (r) {
         if (!r.ok) throw new Error("Not found");
@@ -140,6 +152,12 @@
       })
       .then(function (t) {
         applyTranslations(lang, t);
+        // Expose the fetched translation object so other already-loaded
+        // scripts (e.g. script.js's category-tab renderer) can read it
+        // after the fact, plus a ready event for scripts that want to react
+        // the moment it lands instead of polling.
+        window.UTG_I18N = t;
+        document.dispatchEvent(new CustomEvent("utg:i18nready", { detail: t }));
       })
       .catch(function () {
         // Fall back to English (default HTML content stays unchanged)

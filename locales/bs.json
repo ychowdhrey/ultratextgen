@@ -21,7 +21,92 @@
   },
   "ui": {
     "placeholder": "Upiši tekst...",
-    "advertisement": "Oglas"
+    "advertisement": "Oglas",
+    "categoryTabs": {
+      "popular": "Popularno",
+      "bold-fonts": "Podebljano",
+      "italic-fonts": "Kurziv",
+      "bubble-fonts": "Mjehurići",
+      "cursive-fonts": "Rukopis",
+      "gothic-fonts": "Gotika",
+      "strikethrough-text": "Precrtano",
+      "underline-text": "Podvučeno",
+      "small-text": "Mali tekst",
+      "cute-fonts": "Slatko",
+      "aesthetic-fonts": "Estetsko",
+      "upside-down-text": "Naopako",
+      "text-decorator": "Ukrašavanje teksta",
+      "classified": "Cenzurisano / Tajno",
+      "fullwidth-fonts": "Puna širina",
+      "faux-fonts": "Lažne abecede",
+      "ancient-fonts": "Drevno i rune",
+      "emoji-letter-fonts": "Emoji slova",
+      "novelty-fonts": "Neobično"
+    },
+    "scopeControl": {
+      "label": "Primijeni stil na",
+      "ariaLabel": "Odaberi koliko teksta želiš stilizirati",
+      "whole": "Cijeli tekst",
+      "wholeTitle": "Stilizira svaki red tvog teksta.",
+      "firstLine": "Samo prvi red",
+      "firstLineTag": "za objave",
+      "firstLineTitle": "Stilizira samo prvi red (tvoj naslov ili udicu) i ostatak ostavlja kao običan, čitljiv tekst — idealno za objave na društvenim mrežama.",
+      "share": "Podijeli",
+      "shareTitle": "Podijeli link koji ponovo otvara ovu stranicu s već unesenim tekstom",
+      "linkCopied": "Link kopiran"
+    },
+    "safeMode": {
+      "label": "Sigurnost lijepljenja",
+      "ariaLabel": "Provjeri koji se stilovi ispravno prikazuju na tuđim uređajima",
+      "toggleLabel": "Siguran način rada",
+      "hint": "Označava stilove koji se na starijim telefonima drugih ljudi mogu prikazati kao kvadratići (▯)."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Nekima se može prikazati kao kvadratići",
+      "boxesWarningTitle": "Ovaj stil koristi rijetke Unicode znakove koje neki telefoni i stariji uređaji nemaju. Osobi kojoj zalijepiš tekst može se prikazati kao kvadratići (▯). Ako tvoja publika možda koristi starije uređaje, odaberi jednostavniji ili šire podržan stil.",
+      "emojiWarning": "⚠ Koristi emojije — može se razlikovati na starijim uređajima",
+      "emojiWarningTitle": "Ovaj stil sadrži emojije. Emojiji se ispravno prikazuju na modernim uređajima, ali na vrlo starim telefonima mogu izgledati drugačije ili se prikazati kao kvadratići.",
+      "modernDevices": "Ispravno se prikazuje na modernim uređajima",
+      "modernDevicesTitle": "Ova stilizirana Unicode slova prikazuju se na svim aktuelnim telefonima i računarima. Na vrlo starom Androidu (otprilike prije 2016.) ili s minimalnim sistemskim fontovima, neki znakovi i dalje se mogu prikazati kao kvadratići (▯). Isprobaj prvo ako tvoja publika možda koristi starije uređaje.",
+      "rendersEverywhere": "✓ Ispravno se prikazuje svugdje",
+      "rendersEverywhereTitle": "Ovaj stil je obični tekst — ispravno se prikazuje svugdje, bez rizika od kvadratića na bilo kojem uređaju.",
+      "deviceWarning": "⚠ Možda se neće prikazati na tvom uređaju",
+      "deviceWarningTitle": "Fontovi tvog uređaja ne mogu prikazati ovaj stil — može se prikazati kao kvadratići (□). Na drugim uređajima ipak može izgledati ispravno.",
+      "safeAnywhere": "✓ Sigurno svugdje",
+      "safeAnywhereTitle": "Prikazuje se na svim glavnim platformama. Napomena: čitači ekrana mogu izgovoriti stilizirana slova jedno po jedno, pa glavni tekst zadrži običnim.",
+      "worksBestOn": "⚠ Najbolje radi na {platforms}",
+      "worksBestOnTitle": "Najbolje radi na: {platforms}. Druge platforme ga mogu ukloniti ili prikazati pogrešno — isprobaj prije objave."
+    },
+    "savedStyles": {
+      "ariaLabel": "Tvoji sačuvani stilovi",
+      "heading": "Tvoji sačuvani stilovi",
+      "clearAll": "Obriši sve",
+      "hint": "Sačuvano na ovom uređaju — čekat će te ovdje kad se vratiš."
+    },
+    "textStats": {
+      "wordSingular": "1 riječ",
+      "wordPlural": "{n} riječi",
+      "charSingular": "1 znak",
+      "charPlural": "{n} znakova"
+    },
+    "decorationsNone": "Nijedan",
+    "categoryTabsToggle": {
+      "more": "Više",
+      "less": "Manje"
+    },
+    "demoText": "Dobrodošao u UltraTextGen.\nUpiši bilo šta. Pretvori to u ultra.",
+    "copyButtons": {
+      "copy": "Kopiraj",
+      "copied": "✓ Kopirano",
+      "failed": "✗ Neuspjelo",
+      "copyTitle": "Kopiraj u međuspremnik",
+      "save": "Sačuvaj",
+      "saved": "Sačuvano",
+      "saveTitle": "Sačuvaj ovaj stil",
+      "unsaveTitle": "Ukloni iz sačuvanih stilova",
+      "empty": "Upiši nešto iznad...",
+      "noStyles": "Nema pronađenih stilova. Pokušaj drugi filter ili pojam za pretragu."
+    }
   },
   "useCases": {
     "title": "Za što ljudi ovo najčešće koriste",
@@ -129,7 +214,7 @@
         "items": [
           {
             "question": "A bosanski znakovi? Radi li s č, ć, đ, š, ž?",
-            "answer": "<strong>Ukratko:</strong> ovisi o stilu.\n    <br><br>\n    Unicode ima stilizirane verzije za osnovnu abecedu A–Z, pa se <em>c</em>, <em>s</em>, <em>z</em> bez problema pretvore npr. u podebljano. Ali za <em>č</em>, <em>ć</em>, <em>đ</em>, <em>š</em>, <em>ž</em> stilizirane verzije postoje samo u dijelu stilova (uglavnom bold, kurziv, kapitalke).\n    <br><br>\n    Ako stil nema verziju za bosanski znak, on ostaje u izvornom obliku — tekst je i dalje čitljiv, bosansko slovo naprosto izgleda „običnije\" od ostatka. Za nadimke bez kvačica to nije nikakav problem. Za cijele rečenice na bosanskom preporučujem <strong>bold</strong>, <strong>kurziv</strong> ili <strong>monospace</strong> — oni se najbolje snalaze s našom abecedom. Napomena i za digrafe: dž, lj i nj su samo dva obična slova jedno do drugoga, pa se svako stilizira zasebno."
+            "answer": "<strong>Ukratko:</strong> da, u gotovo svim stilovima.\n    <br><br>\n    Unicode ima stilizirane verzije samo za osnovnu abecedu A–Z, ali generator sad rastavlja <em>č</em>, <em>ć</em>, <em>š</em>, <em>ž</em> na osnovno slovo i kvačicu, stilizira slovo i vraća kvačicu na njega — pa se cijela riječ stilizira, kvačice uključene. To radi u gotovo svim stilovima (bold, kurziv, gotika, bubble...).\n    <br><br>\n    Jedini izuzetak je <em>đ</em>, koje nema odvojivu kvačicu pa ostaje kao obično d, i stilovi za tekst naopako, koji okrenu slovo ali ne i kvačicu. Za nadimke bez kvačica to uopće nije problem. Napomena i za digrafe: dž, lj i nj su samo dva obična slova jedno do drugoga, pa se svako stilizira zasebno."
           },
           {
             "question": "Zašto se nekome prikazuju kvadratići umjesto slova?",

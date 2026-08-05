@@ -23,6 +23,14 @@
    risky on a target platform should be dropped, not shipped as a top pick.
    Localized mirrors (vi/, tr/, pt/, ...) reference the same profile — do
    NOT fork bespoke sets per locale.
+
+   Display-only i18n: each tab's `label` and each profile's `word` are
+   DISPLAY values, translated (with English fallback) via
+   window.UTG_I18N.ui.decoratorProfiles[profileKey] once i18n.js's locale
+   fetch resolves (see i18n.js's withRuntimeJson + "utg:i18nready"). The
+   structural `key`s below (decorations[key] lookups) are never touched by
+   translation — same split script.js's getCategoryTabLabel() applies to
+   category tabs. Translations live in locales/<lang>.json, not here.
    ===================================================================== */
 (function () {
   "use strict";
@@ -210,6 +218,16 @@
         { key: "accent",   label: "Accent",   items: [["★ "," ★"],["✦ "," ✦"],["◆ "," ◆"],["▸ "," ◂"],["» "," «"],["❖ "," ❖"],["✧ "," ✧"],["➤ "," ➤"]] }
       ]
     },
+    "threads": {
+      defaultTab: "minimal",
+      tabs: [
+        { key: "minimal",   label: "Minimal",   items: MINIMAL.slice(0, 8) },
+        { key: "aesthetic", label: "Aesthetic", items: SPARKLE.slice(0, 8) },
+        { key: "arrows",    label: "Arrows",    items: ARROWS.slice(0, 8) },
+        { key: "symbols",   label: "Symbols",   items: STARS.slice(0, 8) },
+        { key: "dividers",  label: "Dividers",  items: [["─── "," ───"],["━━ "," ━━"],["· · · ",""],["✦ "," ✦"],["≡ "," ≡"],["|| "," ||"],["— "," —"],["⋆ "," ⋆"]] }
+      ]
+    },
     "snapchat": {
       word: "name",
       defaultTab: "playful",
@@ -356,26 +374,67 @@
   if (!name || !PROFILES[name]) return;
 
   var profile = PROFILES[name];
-  var word = profile.word || "text";
   var defaultTab = profile.defaultTab || (profile.tabs[0] && profile.tabs[0].key);
 
+  // Translated { word, tabs: { key: label } } for THIS profile, read from the
+  // locale JSON i18n.js fetches (locales/<lang>.json's ui.decoratorProfiles).
+  // Undefined until i18n.js's fetch resolves (see "utg:i18nready" below) —
+  // which is always true the first time this file runs, since this script is
+  // synchronous/non-defer and i18n.js's fetch is async — and stays undefined
+  // forever on the English site, where window.UTG_I18N is never set. Every
+  // caller falls back to the profile's own English word/label, so this is
+  // purely additive: same split as script.js's getCategoryTabLabel().
+  function translatedProfileData() {
+    var i18n = window.UTG_I18N;
+    return i18n && i18n.ui && i18n.ui.decoratorProfiles && i18n.ui.decoratorProfiles[name];
+  }
+
+  function currentWord() {
+    var t = translatedProfileData();
+    return (t && t.word) || profile.word || "text";
+  }
+
+  function tabLabel(tab) {
+    var t = translatedProfileData();
+    var translated = t && t.tabs && t.tabs[tab.key];
+    return translated || tab.label;
+  }
+
   var decorations = {};
-  profile.tabs.forEach(function (tab) {
-    decorations[tab.key] = tab.items.map(function (it) {
-      // Compact tuple form [prefix, suffix] — the resolver computes the preview.
-      if (Array.isArray(it)) {
-        var p = it[0], s = it[1];
-        return { text: p + word + s, prefix: p, suffix: s };
-      }
-      // Full object form { prefix, suffix, text? } — used by migrated profiles
-      // that carry their own exact preview strings.
-      return {
-        text: it.text || (it.prefix || "") + word + (it.suffix || ""),
-        prefix: it.prefix || "",
-        suffix: it.suffix || ""
-      };
+
+  // (Re)computes every tab's preview items from the CURRENT word (English on
+  // the first call, translated once i18n lands). Mutates existing item
+  // objects/arrays in place rather than replacing them, so that script.js's
+  // own `decorations` — captured once at parse time as
+  // Object.assign({}, DEFAULT_DECORATIONS, window.UTG_DECORATIONS), which
+  // holds these SAME array/object references — sees the updated text on its
+  // next render (tab switch, "Surprise" pick, etc.) without decorators.js
+  // ever reassigning window.UTG_DECORATIONS after the initial build.
+  function buildDecorations() {
+    var word = currentWord();
+    profile.tabs.forEach(function (tab) {
+      var list = decorations[tab.key] || (decorations[tab.key] = []);
+      tab.items.forEach(function (it, i) {
+        // Compact tuple form [prefix, suffix] — the resolver computes the preview.
+        // Full object form { prefix, suffix, text? } — used by migrated profiles
+        // that carry their own exact preview strings; a literal `text` has no
+        // {word} slot and is left exactly as authored.
+        var prefix = Array.isArray(it) ? it[0] : (it.prefix || "");
+        var suffix = Array.isArray(it) ? it[1] : (it.suffix || "");
+        var explicitText = Array.isArray(it) ? null : it.text;
+        var text = explicitText || (prefix + word + suffix);
+        if (list[i]) {
+          list[i].text = text;
+          list[i].prefix = prefix;
+          list[i].suffix = suffix;
+        } else {
+          list[i] = { text: text, prefix: prefix, suffix: suffix };
+        }
+      });
     });
-  });
+  }
+
+  buildDecorations();
 
   window.UTG_DECORATIONS = decorations;
   window.UTG_DEFAULT_DECO_TAB = defaultTab;
@@ -404,7 +463,7 @@
     var html = "";
     profile.tabs.forEach(function (tab) {
       var active = tab.key === defaultTab ? " active" : "";
-      html += '<button class="decoration-tab' + active + '" data-deco-tab="' + tab.key + '">' + tab.label + "</button>";
+      html += '<button class="decoration-tab' + active + '" data-deco-tab="' + tab.key + '">' + tabLabel(tab) + "</button>";
     });
     container.innerHTML = html;
     return true;
@@ -421,4 +480,52 @@
     // Safety net for any template that places scripts before the tabs.
     document.addEventListener("DOMContentLoaded", buildTabs);
   }
+
+  // i18n.js's fetch resolves asynchronously, after the synchronous build
+  // above has already rendered tabs + preview text with the English
+  // fallback. When the translation lands, patch everything in place instead
+  // of tearing the tabs down and rebuilding — same reasoning as script.js's
+  // updateCategoryTabLabels(): relabel the tab buttons, recompute preview
+  // text (mutating decorations in place, see buildDecorations() above so
+  // script.js's copy of the same objects stays in sync), and patch whatever
+  // decoration chips happen to already be on screen for the active tab.
+  //
+  // On the English site i18n.js returns early and never fetches, so this
+  // event never fires and nothing here runs — zero behavior change there.
+  function applyTranslatedProfile() {
+    if (!translatedProfileData()) return; // no translation for this profile/locale — stay on English fallback
+
+    buildDecorations();
+
+    var container = findTabsContainer();
+    if (!container) return;
+
+    var buttons = container.querySelectorAll("[data-deco-tab]");
+    for (var i = 0; i < buttons.length; i++) {
+      var btn = buttons[i];
+      for (var j = 0; j < profile.tabs.length; j++) {
+        if (profile.tabs[j].key === btn.dataset.decoTab) {
+          btn.textContent = tabLabel(profile.tabs[j]);
+          break;
+        }
+      }
+    }
+
+    // Patch whatever decoration chips script.js's renderDecorations() has
+    // already rendered into #decorationGrid for the currently active tab —
+    // those .decoration-item elements are built in the same order as
+    // decorations[currentDecoTab], the array we just mutated above.
+    var activeBtn = container.querySelector(".decoration-tab.active");
+    var activeKey = (activeBtn && activeBtn.dataset.decoTab) || defaultTab;
+    var activeItems = decorations[activeKey];
+    var grid = document.getElementById("decorationGrid");
+    if (grid && activeItems) {
+      var chips = grid.querySelectorAll(".decoration-item");
+      for (var k = 0; k < chips.length && k < activeItems.length; k++) {
+        chips[k].textContent = activeItems[k].text;
+      }
+    }
+  }
+
+  document.addEventListener("utg:i18nready", applyTranslatedProfile);
 })();

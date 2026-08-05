@@ -1,0 +1,110 @@
+{
+  "slug": "theta-symbol",
+  "page_type": "symbol",
+  "title": "Theta Symbol: Copy & Paste θ Θ ϑ — The Ancient Greek \"Letter of Death\"",
+  "meta_description": "Copy and paste the theta symbol — lowercase θ, capital Θ, and the open-loop math variant ϑ — the letter ancient Greeks marked on ballots to vote for a death sentence. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/theta-symbol/",
+  "breadcrumb": "Theta Symbol",
+  "hero_h1": "Theta Symbol",
+  "hero_tagline": "The lowercase θ that marks an angle in trigonometry, the capital Θ of Big-Theta complexity notation, and the open-loop math variant ϑ — the same letter classical Athenians once scratched on a ballot to vote for death. Click any symbol to copy it instantly.",
+  "intro": "Theta is the eighth letter of the Greek alphabet, and its lowercase glyph θ (U+03B8, GREEK SMALL LETTER THETA) — a circle crossed by a horizontal bar — carries one of the darkest backstories of any letter. In classical antiquity theta was the \"letter of death\": it stood for θάνατος (thánatos, \"death\"), and Athenian jurors could scratch it onto a ballot or potsherd to cast a vote for a defendant's condemnation or execution, a use so notorious that the Roman poet Ennius is said to have called theta the unluckiest letter of all. The capital form Θ (U+0398) and a distinct open-loop variant ϑ (U+03D1, GREEK THETA SYMBOL) round out the family — ϑ is a script-style glyph used in some physics and math typesetting, not a separate letter. Today theta's work is far tamer: lowercase θ is the standard symbol for an unknown or measured angle in trigonometry and geometry, while capital Θ names Big-Theta notation, the \"tight bound\" of algorithm analysis that Donald Knuth formalized in his 1976 paper \"Big Omicron and Big Omega and Big Theta.\" In the Greek numeral system, theta also carries the value 9.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-theta-symbol",
+      "label": "The Theta Symbol",
+      "h2": "The Theta Symbol — θ, Θ & ϑ",
+      "intro": "Theta comes in three glyphs people actually paste: the everyday lowercase θ, the capital Θ, and the open-loop ϑ variant reserved for math and physics. A fourth, barred capital form exists purely as a math symbol.",
+      "symbols": [
+        {
+          "char": "θ",
+          "label": "Greek Small Letter Theta (U+03B8) — The Angle Symbol"
+        },
+        {
+          "char": "Θ",
+          "label": "Greek Capital Letter Theta (U+0398) — Big-Theta Notation"
+        },
+        {
+          "char": "ϑ",
+          "label": "Greek Theta Symbol (U+03D1) — The Open-Loop Math Variant"
+        },
+        {
+          "char": "ϴ",
+          "label": "Greek Capital Theta Symbol (U+03F4) — The Barred Variant"
+        }
+      ]
+    },
+    {
+      "id": "theta-in-math",
+      "label": "Math & Science",
+      "h2": "Theta in Math & Computer Science",
+      "intro": "Two very different jobs share the letter. Lowercase θ is the go-to name for an angle; capital Θ is the tight bound in complexity analysis, sitting between Big-O (upper) and Big-Omega (lower).",
+      "symbols": [
+        {
+          "char": "θ",
+          "label": "Small Theta (U+03B8) — Angle in Trigonometry & Geometry"
+        },
+        {
+          "char": "Θ",
+          "label": "Capital Theta (U+0398) — Big-Theta, the Tight Bound"
+        },
+        {
+          "char": "Ω",
+          "label": "Capital Omega (U+03A9) — Big-Omega, the Lower-Bound Sibling"
+        },
+        {
+          "char": "ϑ",
+          "label": "Theta Symbol (U+03D1) — The Physics Typesetting Variant"
+        }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Greek Letters",
+      "h2": "Related Greek Letters",
+      "intro": "Theta is the 8th letter of the Greek alphabet. Here are the neighbors people search for and copy most often alongside it.",
+      "symbols": [
+        {
+          "char": "Ω",
+          "label": "Greek Capital Letter Omega"
+        },
+        {
+          "char": "Δ",
+          "label": "Greek Capital Letter Delta"
+        },
+        {
+          "char": "π",
+          "label": "Greek Small Letter Pi"
+        },
+        {
+          "char": "α",
+          "label": "Greek Small Letter Alpha"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/greek-letter-symbols/",
+      "title": "Greek Letter Symbols",
+      "desc": "The full Greek alphabet in uppercase, lowercase, and math variant forms to copy and paste."
+    },
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Angles, operators, and the Greek letters like theta that fill out an equation."
+    },
+    {
+      "href": "/symbol/omega-symbol/",
+      "title": "Omega Symbol",
+      "desc": "Theta's complexity-notation sibling: Θ is the tight bound, Ω the lower bound in algorithm analysis."
+    },
+    {
+      "href": "/symbol/delta-symbol/",
+      "title": "Delta Symbol",
+      "desc": "Another single Greek letter with a deep math life — change, difference, and the discriminant."
+    }
+  ]
+}

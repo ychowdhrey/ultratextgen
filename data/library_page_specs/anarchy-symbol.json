@@ -1,0 +1,71 @@
+{
+  "slug": "anarchy-symbol",
+  "page_type": "symbol",
+  "title": "Anarchy Symbol: Copy & Paste Ⓐ — The Circled-A's 1964 Origin",
+  "meta_description": "Copy and paste the anarchy symbol (Ⓐ, the circled A) and learn its precisely dated 1964 origin, the disputed 'A in O = Order' meaning, and how punk band Crass made it global. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/anarchy-symbol/",
+  "breadcrumb": "Anarchy Symbol",
+  "hero_h1": "Anarchy Symbol",
+  "hero_tagline": "The circled-A (Ⓐ) — conceived by Tomás Ibáñez in 1964 and made globally famous by the punk band Crass. It has no dedicated Unicode codepoint; it's written with Ⓐ, CIRCLED LATIN CAPITAL LETTER A (U+24B6). Click any symbol to copy it instantly.",
+  "intro": "The anarchy symbol — a capital A inside a circle (Ⓐ) — is one of the most recognizable protest and subculture marks in the world. It has a surprisingly precise, documented origin in 1960s Paris, a folk etymology about its meaning that one of its own creators disputes, and a second life in punk music that made it globally ubiquitous. Unicode has no purpose-built anarchy character: the symbol is typed with Ⓐ (U+24B6, CIRCLED LATIN CAPITAL LETTER A), a general glyph from the 'Enclosed Alphanumerics' block that anarchist movements adopted for this specific meaning.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "anarchy-glyphs",
+      "label": "Anarchy",
+      "h2": "Anarchy Symbol (Circled A)",
+      "intro": "The circled-A itself, ready to paste anywhere. Unicode has no dedicated anarchy character — these are the enclosed-A glyphs that stand in for it.",
+      "symbols": [
+        { "char": "Ⓐ", "label": "Circled Latin Capital Letter A (U+24B6)" },
+        { "char": "🅐", "label": "Negative Circled A (Filled Variant)" }
+      ]
+    },
+    {
+      "id": "punk-subculture-symbols",
+      "label": "Punk & Subculture Symbols",
+      "h2": "Punk & Subculture Symbols",
+      "intro": "The alternative-aesthetic marks the circled-A most often keeps company with — the punk and DIY iconography that carried it around the world.",
+      "symbols": [
+        { "char": "☠", "label": "Skull and Crossbones" },
+        { "char": "💀", "label": "Skull" },
+        { "char": "⚡", "label": "High Voltage" },
+        { "char": "🤘", "label": "Sign of the Horns" },
+        { "char": "★", "label": "Black Star" },
+        { "char": "🎸", "label": "Guitar" }
+      ]
+    },
+    {
+      "id": "protest-political-symbols",
+      "label": "Protest & Political Symbols",
+      "h2": "Protest & Political Symbols",
+      "intro": "Other movement and protest marks the anarchy symbol is commonly grouped with — including the black flag long associated with anarchism.",
+      "symbols": [
+        { "char": "☮", "label": "Peace Symbol" },
+        { "char": "✊", "label": "Raised Fist" },
+        { "char": "🏴", "label": "Black Flag (Waving)" },
+        { "char": "⚑", "label": "Black Flag" },
+        { "char": "✌️", "label": "Victory Hand" },
+        { "char": "🕊️", "label": "Dove of Peace" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/goth-grunge-symbols/",
+      "title": "Goth & Grunge Symbols",
+      "desc": "Punk, goth, and alternative-aesthetic marks the circled-A fits right in with."
+    },
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol",
+      "desc": "Another protest symbol with a real, precisely documented single-designer origin story."
+    },
+    {
+      "href": "/library/pride-lgbtq-symbols/",
+      "title": "Pride & LGBTQ Symbols",
+      "desc": "More movement and identity symbols adopted by subcultures for protest and belonging."
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="en"><head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zalgo Text Generator Widget | UltraTextGen</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ultratextgen.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Use Cases",
+      "item": "https://ultratextgen.com/usecase/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Zalgo Text",
+      "item": "https://ultratextgen.com/usecase/zalgo-text/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Embed",
+      "item": "https://ultratextgen.com/usecase/zalgo-text/embed/"
+    }
+  ]
+}
+  </script>
+</head>
+<body class="embed-widget-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="embed-wrapper">
+    <div class="hero-card">
+      <h1 class="hero-headline">Zalgo Text Generator</h1>
+      <p class="hero-tagline">Cursed glitch text — pick an intensity, type, copy.</p>
+
+      <div class="input-wrapper">
+        <textarea class="main-input" id="mainInput" placeholder="Type something cursed..." maxlength="60">hello</textarea>
+        <span class="char-count"><span id="charCount">5</span>/60</span>
+      </div>
+
+      <!-- Intensity Presets -->
+      <div class="helper-section">
+        <div class="helper-section-title">Intensity — click to choose</div>
+        <div class="decoration-tabs" id="presetTabs">
+          <button class="decoration-tab" data-preset="subtle" type="button">Subtle</button>
+          <button class="decoration-tab active" data-preset="classic" type="button">Classic</button>
+          <button class="decoration-tab" data-preset="cursed" type="button">Cursed</button>
+          <button class="decoration-tab" data-preset="chaos" type="button">HE COMES</button>
+          <button class="decoration-tab" data-preset="tinystack" type="button">Tiny Stack</button>
+        </div>
+      </div>
+
+      <!-- Live Output -->
+      <div class="style-card" id="zalgoOutputCard">
+        <div class="style-info">
+          <div class="style-name" id="zalgoOutputName">Classic</div>
+          <div class="style-preview" id="zalgoOutput"></div>
+        </div>
+        <button class="copy-btn" id="zalgoCopyBtn" type="button">Copy</button>
+      </div>
+    </div>
+
+    <!-- Variations -->
+    <div class="embed-variations">
+      <h2>More Flavors</h2>
+      <div id="variationsGrid">
+        <div class="variations-placeholder">Type something above to curse it</div>
+      </div>
+    </div>
+
+    <!-- Attribution -->
+    <div class="embed-attribution">
+      <a href="https://ultratextgen.com/usecase/zalgo-text/?utm_source=embed&utm_medium=widget&utm_campaign=zalgo_text" target="_blank" rel="noopener nofollow">Zalgo Text Generator</a> by <a href="https://ultratextgen.com/?utm_source=embed&utm_medium=widget&utm_campaign=zalgo_text" target="_blank" rel="noopener nofollow">UltraTextGen</a>
+      <span class="embed-sep">·</span>
+      <a href="https://ultratextgen.com/discord/?utm_source=embed&utm_medium=widget&utm_campaign=zalgo_text" target="_blank" rel="noopener nofollow">Style Discord Text →</a>
+    </div>
+  </div>
+
+  <script>
+    // ══════════════════════════════════════════════════════════════
+    // Zalgo generation logic — ported verbatim from
+    // /usecase/zalgo-text/zalgo-text.js (combining-mark engine).
+    // Only the pieces this scoped embed needs: the mark pools, the
+    // 'letters' sub-pool (Tiny Stack), shuffle/pickUnique, the uniform
+    // shape, generateZalgo, plus the PRESETS and VARIANTS arrays.
+    // ══════════════════════════════════════════════════════════════
+
+    // ── Unicode Combining Mark Pools ────────────────────────────────
+    // ABOVE marks (accents, dots, rings, hooks that render above)
+    const MARKS_UP = [
+      '̀','́','̂','̃','̄','̅','̆','̇',
+      '̈','̉','̊','̋','̌','̍','̎','̏',
+      '̐','̑','̒','̓','̔','̕','̚','̽',
+      '̾','̿','̀','́','͂','̓','̈́','͆',
+      '͊','͋','͌','͐','͑','͒','͗','͘',
+      '͛','͝','͞','͠','͡'
+    ];
+
+    // MID marks (strikethroughs and overlays — only the 5 that truly overlay)
+    const MARKS_MID = [
+      '̴','̵','̶','̷','̸'
+    ];
+
+    // BELOW marks (cedillas, underlines, hooks below)
+    const MARKS_DOWN = [
+      '̖','̗','̘','̙','̜','̝','̞','̟',
+      '̠','̡','̢','̣','̤','̥','̦','̧',
+      '̨','̩','̪','̫','̬','̭','̮','̯',
+      '̰','̱','̲','̳','̹','̺','̻','̼',
+      'ͅ','͇','͈','͉','͍','͎','͓','͔',
+      '͕','͖','͙','͚','͜','͟','͢'
+    ];
+
+    // ── Character Type Sub-Pools ────────────────────────────────────
+    // "letters" — superscript combining letter marks (small letters above).
+    // Drives the Tiny Stack preset / variant.
+    const CHAR_TYPE_UP_letters   = [
+      'ͣ','ͤ','ͥ','ͦ','ͧ','ͨ','ͩ','ͪ',
+      'ͫ','ͬ','ͭ','ͮ','ͯ'
+    ];
+    const CHAR_TYPE_MID_letters  = MARKS_MID;  // no letter mid marks exist
+    const CHAR_TYPE_DOWN_letters = MARKS_DOWN; // no letter below marks exist
+
+    // Map charType name → {up, mid, down} arrays. This widget only ever
+    // passes charType 'all' (most presets) or 'letters' (Tiny Stack), so
+    // only the letters sub-pool is carried over from the full generator.
+    const CHAR_TYPE_MAP = {
+      letters: { up: CHAR_TYPE_UP_letters, mid: CHAR_TYPE_MID_letters, down: CHAR_TYPE_DOWN_letters }
+    };
+
+    // ── Shape Functions ─────────────────────────────────────────────
+    // Only 'uniform' is needed — every preset/variant here uses it.
+    const SHAPES = {
+      uniform: (i, len) => 1.0
+    };
+
+    // ── Helpers ─────────────────────────────────────────────────────
+    // Fisher-Yates shuffle (returns a new array)
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+      }
+      return a;
+    }
+
+    // Pick `count` unique marks from a pool, cycling (re-shuffled) once
+    // every unique mark has been used.
+    function pickUnique(pool, count) {
+      if (!pool.length) return '';
+      let result = '';
+      let deck = [];
+      for (let m = 0; m < count; m++) {
+        if (deck.length === 0) deck = shuffle(pool);
+        result += deck.pop();
+      }
+      return result;
+    }
+
+    // ── Core Generator ──────────────────────────────────────────────
+    function generateZalgo(text, opts) {
+      const charType  = opts.charType  || 'all';
+      const position  = opts.position  || 'all';
+      const shape     = opts.shape     || 'uniform';
+      const frequency = opts.frequency != null ? opts.frequency : 0.7;
+      const amplitude = opts.amplitude != null ? opts.amplitude : 5;
+
+      // Resolve mark pools based on character type
+      let upPool, midPool, downPool;
+      if (charType !== 'all' && CHAR_TYPE_MAP[charType]) {
+        const ct = CHAR_TYPE_MAP[charType];
+        upPool   = ct.up;
+        midPool  = ct.mid;
+        downPool = ct.down;
+      } else {
+        upPool   = MARKS_UP;
+        midPool  = MARKS_MID;
+        downPool = MARKS_DOWN;
+      }
+
+      // Position flags
+      const useUp   = position === 'all' || position === 'up' || position === 'up-down';
+      const useMid  = position === 'all' || position === 'mid';
+      const useDown = position === 'all' || position === 'down' || position === 'up-down';
+
+      // Count active positions for even budget distribution
+      const activePositions = (useUp ? 1 : 0) + (useMid ? 1 : 0) + (useDown ? 1 : 0);
+
+      const shapeFn = SHAPES[shape] || SHAPES.uniform;
+      const chars = [...text];
+      const len = chars.length;
+
+      return chars.map((ch, i) => {
+        if (ch === ' ' || ch === '\n' || ch === '\t') return ch;
+
+        // Frequency: probability this char gets marks at all
+        if (Math.random() > frequency) return ch;
+
+        const shapeMultiplier = shapeFn(i, len);
+        // Allow 0 marks when shape multiplier is very low (preserves shape contrast)
+        const markCount = Math.round(amplitude * shapeMultiplier);
+        if (markCount <= 0) return ch;
+
+        // Distribute full amplitude budget to active positions.
+        let marks = '';
+
+        if (activePositions === 1) {
+          // Single position gets the entire budget
+          if (useUp)   marks += pickUnique(upPool, markCount);
+          if (useMid)  marks += pickUnique(midPool, markCount);
+          if (useDown) marks += pickUnique(downPool, markCount);
+        } else {
+          // Multiple positions: split budget proportionally
+          if (useUp && upPool.length) {
+            const count = useMid
+              ? Math.max(1, Math.round(markCount * 0.55))
+              : Math.max(1, Math.round(markCount * 0.60));
+            marks += pickUnique(upPool, count);
+          }
+
+          if (useMid && midPool.length) {
+            // Mid marks are visually dense — cap at 2 to avoid illegibility
+            const count = Math.min(2, Math.max(1, Math.round(markCount * 0.10)));
+            marks += pickUnique(midPool, count);
+          }
+
+          if (useDown && downPool.length) {
+            const count = useMid
+              ? Math.max(1, Math.round(markCount * 0.35))
+              : Math.max(1, Math.round(markCount * 0.35));
+            marks += pickUnique(downPool, count);
+          }
+        }
+
+        return ch + marks;
+      }).join('');
+    }
+
+    // ── Presets (intensity picker) ──────────────────────────────────
+    const PRESETS = [
+      { id: 'subtle',    label: 'Subtle',
+        settings: { charType: 'all', position: 'up-down', shape: 'uniform', frequency: 0.5, amplitude: 2 } },
+      { id: 'classic',   label: 'Classic',
+        settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 0.8, amplitude: 5 } },
+      { id: 'cursed',    label: 'Cursed',
+        settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 0.95, amplitude: 9 } },
+      { id: 'chaos',     label: 'HE COMES',
+        settings: { charType: 'all', position: 'all', shape: 'uniform', frequency: 1.0, amplitude: 18 } },
+      { id: 'tinystack', label: 'Tiny Stack',
+        settings: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1.0, amplitude: 1 } }
+    ];
+
+    // ── Output Variants (More Flavors grid) ─────────────────────────
+    const VARIANTS = [
+      { id: 'updown', label: 'Up & Down',
+        opts: { charType: 'all', position: 'up-down', shape: 'uniform', frequency: 0.9, amplitude: 5 } },
+      { id: 'spires', label: 'Spires',
+        opts: { charType: 'all', position: 'up', shape: 'uniform', frequency: 1, amplitude: 6 } },
+      { id: 'roots', label: 'Roots',
+        opts: { charType: 'all', position: 'down', shape: 'uniform', frequency: 1, amplitude: 6 } },
+      { id: 'strike', label: 'Strikethrough',
+        opts: { charType: 'all', position: 'mid', shape: 'uniform', frequency: 1, amplitude: 2 } },
+      { id: 'tiny', label: 'Tiny Stack',
+        opts: { charType: 'letters', position: 'up', shape: 'uniform', frequency: 1, amplitude: 1 } }
+    ];
+
+    // ── DOM references ──────────────────────────────────────────────
+    const mainInput = document.getElementById('mainInput');
+    const charCount = document.getElementById('charCount');
+    const presetTabs = document.querySelectorAll('#presetTabs [data-preset]');
+    const zalgoOutput = document.getElementById('zalgoOutput');
+    const zalgoOutputName = document.getElementById('zalgoOutputName');
+    const zalgoCopyBtn = document.getElementById('zalgoCopyBtn');
+    const variationsGrid = document.getElementById('variationsGrid');
+
+    let activePreset = 'classic';
+
+    // ── Clipboard helper (button feedback) ──────────────────────────
+    function copyWithFeedback(text, btn) {
+      if (!text) return;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    }
+
+    // ── Char counter (counts input chars typed, not output length) ──
+    function updateCharCount() {
+      charCount.textContent = mainInput.value.length;
+    }
+
+    // ── Main live output ────────────────────────────────────────────
+    function renderMain() {
+      const preset = PRESETS.find(p => p.id === activePreset) || PRESETS[1];
+      zalgoOutputName.textContent = preset.label;
+
+      const text = mainInput.value.trim();
+      if (!text) {
+        zalgoOutput.classList.add('placeholder');
+        zalgoOutput.textContent = 'Type something above to curse it';
+        return;
+      }
+      zalgoOutput.classList.remove('placeholder');
+      zalgoOutput.textContent = generateZalgo(text, preset.settings);
+    }
+
+    // ── Variations grid ─────────────────────────────────────────────
+    function renderVariations() {
+      const text = mainInput.value.trim();
+      if (!text) {
+        variationsGrid.innerHTML = '<div class="variations-placeholder">Type something above to curse it</div>';
+        return;
+      }
+
+      variationsGrid.innerHTML = '';
+
+      VARIANTS.forEach(variant => {
+        const result = generateZalgo(text, variant.opts);
+
+        const card = document.createElement('div');
+        card.className = 'style-card';
+
+        const info = document.createElement('div');
+        info.className = 'style-info';
+
+        const name = document.createElement('div');
+        name.className = 'style-name';
+        name.textContent = variant.label;
+
+        const preview = document.createElement('div');
+        preview.className = 'style-preview';
+        preview.textContent = result;
+
+        info.appendChild(name);
+        info.appendChild(preview);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-btn';
+        copyBtn.textContent = 'Copy';
+        copyBtn.type = 'button';
+        copyBtn.addEventListener('click', () => copyWithFeedback(result, copyBtn));
+
+        card.appendChild(info);
+        card.appendChild(copyBtn);
+        variationsGrid.appendChild(card);
+      });
+    }
+
+    // ── Render everything for the current input/preset ──────────────
+    function renderAll() {
+      renderMain();
+      renderVariations();
+    }
+
+    // ── Events ──────────────────────────────────────────────────────
+    presetTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        presetTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activePreset = tab.dataset.preset;
+        renderMain();
+      });
+    });
+
+    mainInput.addEventListener('input', () => {
+      updateCharCount();
+      renderAll();
+    });
+
+    zalgoCopyBtn.addEventListener('click', () => {
+      copyWithFeedback(zalgoOutput.textContent, zalgoCopyBtn);
+    });
+
+    // ── Init ────────────────────────────────────────────────────────
+    updateCharCount();
+    renderAll();
+  </script>
+</body></html>

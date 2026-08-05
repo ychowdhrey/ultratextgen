@@ -35,7 +35,9 @@ def page_type(url):
     if p == "":
         return "homepage"
     seg = p.split("/")
-    if seg[0] in ("de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr", "vi"):
+    if seg[0] in ("ar", "bs", "cs", "da", "de", "es", "fr", "hi", "hr", "hu",
+                  "id", "it", "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro",
+                  "ru", "sk", "sr", "sv", "th", "tl", "tr", "vi", "zh-tw"):
         return "localized"
     if seg[0] == "library":
         return "symbol library"

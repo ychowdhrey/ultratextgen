@@ -1,0 +1,84 @@
+{
+  "slug": "symbol-pika",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Pika: Skopiuj ♠ ♤ — Kolor Nazwany od Miecza, Nie od Łopaty",
+  "meta_description": "Skopiuj symbol pika — pełny ♠ (U+2660) i konturowy ♤ (U+2664) — i dowiedz się, skąd kolor karciany wziął swoją nazwę pochodzącą od miecza i skąd na Asie Pik brytyjski znaczek skarbowy. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-pika/",
+  "breadcrumb": "Symbol Pika",
+  "hero_h1": "Symbol Pika",
+  "hero_tagline": "Kolor pik w obu formach Unicode — pełnej ♠ (U+2660) i pustej w środku ♤ (U+2664) — karciany symbol, którego nazwa wywodzi się od koloru mieczy, a którego As Pik nosił niegdyś oficjalny brytyjski znaczek skarbowy. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Pik — ♠ (U+2660, BLACK SPADE SUIT) w formie pełnej i ♤ (U+2664, WHITE SPADE SUIT) jako kontur — to jeden z czterech kolorów standardowej talii francuskiej, dodany do Unicode 1.1 w 1993 roku obok kierów, kar i trefli, osiem glifów kolorów zajmujących zakres od U+2660 do U+2667. Jego angielska nazwa (spade) to mała lekcja historii: „spade” nie pochodzi od narzędzia do kopania, lecz od hiszpańskiego espada i włoskiego spada, oznaczających „miecz” — koloru starszych talii typu łacińskiego. Gdy francuscy producenci kart ustandaryzowali system czterech kolorów w drugiej połowie XV wieku, przerysowali miecz na prosty, czarny kształt liścia, który znamy dziś — tani do wycinania szablonem w dwóch kolorach, dlatego talia francuska później zalała Europę i dotarła do Anglii. W konwencji Unicode „czarny” oznacza wypełniony, a „biały” konturowy, przy czym faktyczny kolor pozostawiony jest czcionce — dlatego ta sama para wypełniona/konturowa istnieje dla każdego koloru kart. As Pik niesie najbogatszy folklor całej talii: w Anglii nosił oficjalny znaczek skarbowy od 1712 roku, a po 1765 roku — bogato zdobiony wzór drukowany przez Stamp Office, przodek dzisiejszego ozdobnego asa.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/spade-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-pika/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/spade-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-pika",
+      "label": "Symbol Pika",
+      "h2": "Symbol Pika — ♠ i ♤",
+      "intro": "Sam kolor, w obu formach Unicode. Pełne ♠ to domyślny „czarny” pik; ♤ to konturowa „biała” wersja, a ♠️ to forma prezentacji emoji z selektorem wariantu. Gotowe do wklejenia gdziekolwiek.",
+      "symbols": [
+        { "char": "♠", "label": "Czarny Kolor Pik (U+2660) — Pełny" },
+        { "char": "♤", "label": "Biały Kolor Pik (U+2664) — Kontur" },
+        { "char": "♠️", "label": "Emoji Koloru Pik (U+2660 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "wszystkie-cztery-kolory",
+      "label": "Wszystkie Cztery Kolory",
+      "h2": "Wszystkie Cztery Kolory — Pełne i Konturowe",
+      "intro": "Unicode nadaje każdemu francuskiemu kolorowi pełny „czarny” i konturowy „biały” glif, ułożone w jednym ciągu od U+2660 do U+2667. Warto zauważyć osobliwość: pik i trefl są domyślnie wypełnione, a kier i karo domyślnie konturowe.",
+      "symbols": [
+        { "char": "♠", "label": "Czarny Kolor Pik (U+2660)" },
+        { "char": "♥", "label": "Czarny Kolor Kier (U+2665)" },
+        { "char": "♦", "label": "Czarny Kolor Karo (U+2666)" },
+        { "char": "♣", "label": "Czarny Kolor Trefl (U+2663)" },
+        { "char": "♤", "label": "Biały Kolor Pik (U+2664)" },
+        { "char": "♡", "label": "Biały Kolor Kier (U+2661)" },
+        { "char": "♢", "label": "Biały Kolor Karo (U+2662)" },
+        { "char": "♧", "label": "Biały Kolor Trefl (U+2667)" }
+      ]
+    },
+    {
+      "id": "as-i-karty",
+      "label": "As i Karty do Gry",
+      "h2": "As Pik i Glify Kart do Gry",
+      "intro": "Najbardziej okryta legendami karta w talii: Anglia stemplowała Asa Pik znaczkiem skarbowym od 1712 roku i drukowała jego ozdobny wzór Stamp Office po 1765 roku, a szeroko powtarzana (i mocno dyskutowana) wojenna historia mówi o amerykańskich żołnierzach w Wietnamie używających go jako „karty śmierci”. Blok Playing Cards w Unicode nadaje każdej karcie własny glif — oto cztery asy i rewers karty.",
+      "symbols": [
+        { "char": "🂡", "label": "Karta do Gry: As Pik (U+1F0A1)" },
+        { "char": "🂱", "label": "Karta do Gry: As Kier (U+1F0B1)" },
+        { "char": "🃁", "label": "Karta do Gry: As Karo (U+1F0C1)" },
+        { "char": "🃑", "label": "Karta do Gry: As Trefl (U+1F0D1)" },
+        { "char": "🂠", "label": "Rewers Karty do Gry (U+1F0A0)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/card-suit-symbols/",
+      "title": "Card Suit Symbols",
+      "desc": "Wszystkie cztery kolory kart — pik, kier, karo i trefl — w formach pełnych i konturowych do przeglądania i kopiowania."
+    },
+    {
+      "href": "/library/dice-domino-symbols/",
+      "title": "Dice, Domino & Mahjong Symbols",
+      "desc": "Reszta zestawu stołowego: ścianki kostek, kamienie domina i unikodowe symbole madżonga."
+    },
+    {
+      "href": "/pl/symbol/symbol-serca/",
+      "title": "Symbol Serca (♥)",
+      "desc": "Bratni kolor: serce w unikodowych formach pełnej ♥ i konturowej ♡, z tego samego ciągu U+2660–U+2667."
+    }
+  ]
+}

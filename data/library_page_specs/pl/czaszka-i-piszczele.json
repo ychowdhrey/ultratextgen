@@ -1,0 +1,77 @@
+{
+  "slug": "czaszka-i-piszczele",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Czaszka ze Skrzyżowanymi Piszczelami: Skopiuj ☠ — Piktogram Trucizny, Jolly Roger i Nie 💀",
+  "meta_description": "Skopiuj czaszkę ze skrzyżowanymi piszczelami (☠, U+2620) — piktogram trucizny GHS i piracką flagę Jolly Roger, a nie emoji czaszki 💀. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/czaszka-i-piszczele/",
+  "breadcrumb": "Czaszka i Piszczele",
+  "hero_h1": "Czaszka ze Skrzyżowanymi Piszczelami (☠)",
+  "hero_tagline": "Czaszka ze skrzyżowanymi piszczelami (☠), która oznacza truciznę i powiewa na fladze Jolly Roger — znak zagrożenia U+2620, nieustannie mylony z emoji czaszki 💀. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Czaszka ze skrzyżowanymi piszczelami (☠, Unicode U+2620) to ludzka czaszka nad dwiema skrzyżowanymi kośćmi — memento mori sygnalizujące śmierć i niebezpieczeństwo od wieków. Unicode dodał ją w wersji 1.1 w 1993 roku, umieszczając w bloku Miscellaneous Symbols (U+2600–U+26FF) obok sąsiadów-znaków zagrożenia: ☢ promieniotwórczości (U+2622) i ☣ zagrożenia biologicznego (U+2623). Pełni dwie bardzo różne role. Jako znak zagrożenia wciąż jest aktualny i oficjalny: czaszka ze skrzyżowanymi piszczelami to jeden z dziewięciu piktogramów GHS oznaczających ostrą toksyczność, przyjęty w prawie USA poprzez normę OSHA Hazard Communication Standard — nie wycofany, choć na produktach domowego użytku uzupełnia go przyjaźniejsza naklejka „Mr. Yuk” (stworzona w 1971 roku przez Pittsburgh Poison Center, po tym jak dzieci kojarzyły czaszkę z piratami, a nie z niebezpieczeństwem). Jako element folkloru pirackiego to Jolly Roger, czarna flaga udokumentowana w latach 1710–1720 przy kapitanach takich jak Samuel „Black Sam” Bellamy, Edward England czy John Taylor — choć wiele załóg wywieszało inne wzory, więc nigdy nie była jedyną, uniwersalną flagą piracką. Jedna przestroga: ☠ to nie zwykłe emoji czaszki 💀 (U+1F480), znak wklejany w reakcjach „umieram ze śmiechu” — inny punkt kodowy, inny rejestr, wciąż mylone.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/czaszka-i-piszczele/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/skull-and-crossbones/" }
+  ],
+  "sections": [
+    {
+      "id": "czaszka-i-piszczele",
+      "label": "Sam Symbol",
+      "h2": "Czaszka ze Skrzyżowanymi Piszczelami — ☠",
+      "intro": "Sam symbol, zarówno w formie zwykłego tekstu, jak i w prezentacji emoji. To ten sam punkt kodowy, U+2620 — jedynie końcowy selektor wariantu przełącza go między czarno-białym glifem a kolorowym emoji.",
+      "symbols": [
+        { "char": "☠", "label": "Czaszka ze Skrzyżowanymi Piszczelami (U+2620)" },
+        { "char": "☠️", "label": "Czaszka ze Skrzyżowanymi Piszczelami, Styl Emoji (U+2620 U+FE0F)" }
+      ]
+    },
+    {
+      "id": "vs-emoji-czaszki",
+      "label": "vs. Emoji Czaszki",
+      "h2": "☠ kontra Emoji Czaszki 💀",
+      "intro": "Pomyłka warta wyjaśnienia: ☠ (czaszka ze skrzyżowanymi piszczelami) i 💀 (zwykła czaszka) to różne znaki Unicode. 💀 wkleja się w reakcjach „umieram” albo „umieram ze śmiechu”; ☠ to symbol zagrożenia i pirackiego folkloru. Nieprzypadkowo, emoji pirackiej flagi 🏴‍☠️ powstaje przez połączenie czarnej flagi z samym U+2620.",
+      "symbols": [
+        { "char": "☠️", "label": "Czaszka ze Skrzyżowanymi Piszczelami (U+2620)" },
+        { "char": "💀", "label": "Czaszka (U+1F480)" },
+        { "char": "🏴‍☠️", "label": "Flaga Piracka (U+1F3F4 U+200D U+2620)" }
+      ]
+    },
+    {
+      "id": "symbole-zagrozenia",
+      "label": "Symbole Zagrożenia",
+      "h2": "Powiązane Symbole Zagrożenia i Ostrzegawcze",
+      "intro": "Czaszka ze skrzyżowanymi piszczelami siedzi w unikodowym bloku Miscellaneous Symbols tuż obok innych znaków ostrzegawczych, z którymi bywa grupowana — każdy to osobny punkt kodowy z własnym znaczeniem zagrożenia.",
+      "symbols": [
+        { "char": "☠", "label": "Czaszka ze Skrzyżowanymi Piszczelami (U+2620)" },
+        { "char": "☢", "label": "Znak Promieniotwórczości (U+2622)" },
+        { "char": "☣", "label": "Znak Zagrożenia Biologicznego (U+2623)" },
+        { "char": "⚠", "label": "Znak Ostrzegawczy (U+26A0)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/hazard-warning-symbols/",
+      "title": "Hazard & Warning Symbols",
+      "desc": "Promieniotwórczość, zagrożenie biologiczne, wysokie napięcie i inne piktogramy ostrzegawcze do skopiowania w jednym miejscu."
+    },
+    {
+      "href": "/library/skull-emoji/",
+      "title": "Skull Emoji & Kaomoji",
+      "desc": "Emoji czaszki 💀 i jego tekstowe kuzyny — memowa strona czaszki, zebrana w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/zagrozenie-biologiczne/",
+      "title": "Symbol Zagrożenia Biologicznego",
+      "desc": "Znak ☣ zagrożenia biologicznego — sąsiedni glif zagrożenia w unikodowym bloku Miscellaneous Symbols, omówiony w pełni."
+    }
+  ]
+}

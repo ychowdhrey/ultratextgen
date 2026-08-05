@@ -3,6 +3,11 @@
   "event_name": "Halloween",
   "aliases": [],
 
+  "hreflang": {
+    "en": "https://ultratextgen.com/events/halloween/",
+    "es": "https://ultratextgen.com/es/events/halloween/",
+    "x_default": "en"
+  },
   "title": "Halloween Fonts, Emoji & Symbol Generator | UltraTextGen",
   "meta_description": "Style a Halloween greeting live, copy pumpkin, ghost, and bat emoji, spooky kaomoji, curated ASCII art, and ready-made trick-or-treat phrases and captions.",
 
@@ -17,6 +22,7 @@
 
   "canonical": "https://ultratextgen.com/events/halloween/",
 
+  "occurrence": {"type": "fixed", "month": 10, "day": 31},
   "fonts": {
     "curated_keys": [
       "Ultra Gothic",
@@ -86,59 +92,133 @@
   "phrase_bank": [
     {
       "text": "Happy Halloween",
-      "native_script": "Happy Halloween",
-      "romanization": "Happy Halloween",
-      "translation": "The classic, universal Halloween greeting",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The one that always works."
     },
     {
       "text": "Trick or Treat",
-      "native_script": "Trick or Treat",
-      "romanization": "Trick or Treat",
-      "translation": "The classic door-to-door candy chant",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The doorstep classic."
     },
     {
       "text": "Boo!",
-      "native_script": "Boo!",
-      "romanization": "Boo!",
-      "translation": "A short, playful scare greeting",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "Two letters, endlessly reusable."
     },
     {
-      "text": "Stay Spooky",
-      "native_script": "Stay Spooky",
-      "romanization": "Stay Spooky",
-      "translation": "A casual sign-off for captions and cards",
-      "needs_native_speaker_review": false
-    },
-    {
-      "text": "Have a Frightfully Good Halloween",
-      "native_script": "Have a Frightfully Good Halloween",
-      "romanization": "Have a Frightfully Good Halloween",
-      "translation": "A playful, card-ready wish",
-      "needs_native_speaker_review": false
-    },
-    {
-      "text": "Creep It Real",
-      "native_script": "Creep It Real",
-      "romanization": "Creep It Real",
-      "translation": "A punny Halloween caption",
-      "needs_native_speaker_review": false
+      "text": "Eat, Drink and Be Scary",
+      "group": "Classic greetings",
+      "translation": "The most-used Halloween party line."
     },
     {
       "text": "Happy Haunting",
-      "native_script": "Happy Haunting",
-      "romanization": "Happy Haunting",
-      "translation": "A festive alternative to Happy Halloween",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "A softer alternative to Happy Halloween."
     },
     {
-      "text": "Feliz Halloween",
-      "native_script": "Feliz Halloween",
-      "romanization": "feh-LEEZ ha-lo-WEEN",
-      "translation": "Happy Halloween (Spanish — Halloween is widely celebrated as a loanword event across Latin America, especially Mexico)",
-      "needs_native_speaker_review": true
+      "text": "Happy Halloween to you too!",
+      "group": "Replies",
+      "translation": "Plain reply when someone greets you first."
+    },
+    {
+      "text": "Same to you — stay spooky",
+      "group": "Replies",
+      "translation": "Casual, playful reply."
+    },
+    {
+      "text": "Wishing your family a spooky, sweet Halloween",
+      "group": "For family",
+      "translation": "Card wording that works for kids and adults."
+    },
+    {
+      "text": "Happy first Halloween, little one",
+      "group": "For family",
+      "translation": "For a baby's first Halloween."
+    },
+    {
+      "text": "Hope your night is full of treats and no tricks",
+      "group": "For family",
+      "translation": "Warm family message."
+    },
+    {
+      "text": "Halloween isn't the same without you",
+      "group": "For family",
+      "translation": "For family you're apart from."
+    },
+    {
+      "text": "Come for the costumes, stay for the candy",
+      "group": "For friends",
+      "translation": "Party invite or group-chat line."
+    },
+    {
+      "text": "If you've got it, haunt it",
+      "group": "For friends",
+      "translation": "Playful costume-photo caption."
+    },
+    {
+      "text": "Creep it real",
+      "group": "For friends",
+      "translation": "Short pun, good for a story."
+    },
+    {
+      "text": "I'm here for the snacks, not the scares",
+      "group": "For friends",
+      "translation": "For the friend who hates horror."
+    },
+    {
+      "text": "Witch better have my candy",
+      "group": "For friends",
+      "translation": "Well-worn pun that still lands."
+    },
+    {
+      "text": "Happy Halloween from all of us",
+      "group": "Formal & work",
+      "translation": "Safe for a team or company post."
+    },
+    {
+      "text": "Wishing you a fun and safe Halloween",
+      "group": "Formal & work",
+      "translation": "The safe-for-work version."
+    },
+    {
+      "text": "Have a spook-tacular Halloween",
+      "group": "Formal & work",
+      "translation": "Light but still workplace-appropriate."
+    },
+    {
+      "text": "Spooky season",
+      "group": "Short for a caption",
+      "translation": "The default October caption."
+    },
+    {
+      "text": "Boo crew",
+      "group": "Short for a caption",
+      "translation": "For a group costume photo."
+    },
+    {
+      "text": "Too cute to spook",
+      "group": "Short for a caption",
+      "translation": "For kids' and pets' costumes."
+    },
+    {
+      "text": "Ghouls night out",
+      "group": "Short for a caption",
+      "translation": "Pun caption for a night-out photo."
+    },
+    {
+      "text": "Bad witch, good candy",
+      "group": "Short for a caption",
+      "translation": "Costume-photo caption."
+    },
+    {
+      "text": "Pumpkin spice and everything nice",
+      "group": "Short for a caption",
+      "translation": "Autumn-leaning caption."
+    },
+    {
+      "text": "Just here for the boos",
+      "group": "Short for a caption",
+      "translation": "Drink-in-hand party caption."
     }
   ],
 

@@ -1,0 +1,74 @@
+{
+  "slug": "strzalka-w-prawo",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Strzałki w Prawo: Skopiuj → — Znaczenie i Jak Ją Wpisać",
+  "meta_description": "Skopiuj symbol strzałki w prawo (→, U+2192) — co oznacza i jak ją wpisać. Kliknij, aby skopiować od razu.",
+  "canonical": "https://ultratextgen.com/pl/symbol/strzalka-w-prawo/",
+  "breadcrumb": "Strzałka w Prawo",
+  "hero_h1": "Symbol Strzałki w Prawo (→)",
+  "hero_tagline": "Co oznacza → i jak ją wpisać — kliknij, aby skopiować.",
+  "intro": "Strzałki kierunkowe stały się standardowym matematycznym skrótem w XIX i XX wieku — notacja jak f: A → B (funkcja odwzorowująca zbiór A na zbiór B) oraz x → ∞ (zmienna dążąca do nieskończoności) uczyniła strzałki niezbędnymi w rachunku różniczkowym, teorii mnogości i logice na długo przed komputerami. Dedykowany unikodowy blok Arrows (U+2190–U+21FF) był obecny już w samej pierwszej wersji standardu z 1991 roku, co odzwierciedla, jak głęboko strzałki były już wtedy zakorzenione w składzie technicznym. Poza formalną notacją → jest dziś równie powszechna nieformalnie — sygnalizując „dalej”, „prowadzi do” albo „czytaj więcej” w podpisach, bio i wezwaniach do działania. Działa na Instagramie (popularna w podpisach w stylu „link w bio →”), Discordzie, TikToku i WhatsAppie, ale nie w nazwach użytkownika Roblox, PlayStation czy Xbox, ograniczonych do znaków alfanumerycznych. Na Windows wpisuje się ją kombinacją Alt+26, na Macu nie ma dedykowanego skrótu — trzeba skopiować ją z podglądu znaków albo strony referencyjnej takiej jak ta.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/right-arrow/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/strzalka-w-prawo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/right-arrow/" }
+  ],
+  "sections": [
+    {
+      "id": "strzalka-w-prawo",
+      "label": "Strzałka w Prawo",
+      "h2": "Symbol Strzałki w Prawo",
+      "intro": "Właściwy unicode'owy znak strzałki w prawo, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "→", "label": "Strzałka w Prawo (U+2192)" }
+      ]
+    },
+    {
+      "id": "znaki-podobne",
+      "label": "Znaki Podobne",
+      "h2": "Symbole Podobnie Wyglądające",
+      "intro": "Znaki, z którymi bywa mylona strzałka w prawo — jeden to dekoracyjny wariant z innego bloku Unicode, drugi to trójkąt używany zamiennie.",
+      "symbols": [
+        { "char": "➔", "label": "Wariant Strzałki z Dingbats — dekoracyjna typografia wyświetlania, inny blok Unicode" },
+        { "char": "▶", "label": "Czarny Trójkąt Wskazujący w Prawo (U+25B6) — często używany dekoracyjnie jako zamiennik „odtwórz”/strzałki" }
+      ]
+    },
+    {
+      "id": "powiazane-strzalki",
+      "label": "Powiązane Strzałki",
+      "h2": "Powiązane Symbole Strzałek",
+      "intro": "Pozostałe kierunkowe strzałki, z którymi łączy się strzałka w prawo w notacji i codziennym użyciu.",
+      "symbols": [
+        { "char": "←", "label": "Strzałka w Lewo" },
+        { "char": "↑", "label": "Strzałka w Górę" },
+        { "char": "↓", "label": "Strzałka w Dół" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/symbol/strzalka-w-lewo/",
+      "title": "Strzałka w Lewo (←)",
+      "desc": "„Wstecz”, „poprzedni” i odwrócona implikacja."
+    },
+    {
+      "href": "/pl/symbol/strzalka-w-gore/",
+      "title": "Strzałka w Górę (↑)",
+      "desc": "Wzrost, północ i rosnące ciągi."
+    },
+    {
+      "href": "/pl/symbol/strzalka-w-dol/",
+      "title": "Strzałka w Dół (↓)",
+      "desc": "Spadek, południe i sygnał przewijania w dół."
+    }
+  ]
+}

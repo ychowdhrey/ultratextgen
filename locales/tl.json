@@ -21,7 +21,168 @@
   },
   "ui": {
     "placeholder": "I-type ang text mo dito...",
-    "advertisement": "Patalastas"
+    "advertisement": "Patalastas",
+    "categoryTabs": {
+      "popular": "Popular",
+      "bold-fonts": "Bold",
+      "italic-fonts": "Italic",
+      "bubble-fonts": "Bubble",
+      "cursive-fonts": "Cursive",
+      "gothic-fonts": "Gothic",
+      "strikethrough-text": "May Guhit sa Gitna",
+      "underline-text": "May Salungguhit",
+      "small-text": "Maliit na Text",
+      "cute-fonts": "Cute",
+      "aesthetic-fonts": "Aesthetic",
+      "upside-down-text": "Baliktad",
+      "text-decorator": "Text Decorator",
+      "classified": "Classified / Sensored",
+      "fullwidth-fonts": "Full Width",
+      "faux-fonts": "Peke na Alpabeto",
+      "ancient-fonts": "Sinaunang & Rune",
+      "emoji-letter-fonts": "Emoji Letters",
+      "novelty-fonts": "Kakaiba"
+    },
+    "scopeControl": {
+      "label": "Ilapat ang istilo sa",
+      "ariaLabel": "Piliin kung gaano karaming teksto ang isstilo",
+      "whole": "Buong teksto",
+      "wholeTitle": "Isstilo ang bawat linya ng iyong teksto.",
+      "firstLine": "Unang linya lang",
+      "firstLineTag": "para sa mga post",
+      "firstLineTitle": "Isstilo lang ang unang linya (ang iyong headline o hook) at panatilihing plain at madaling basahin ang natitira — perpekto para sa mga post sa social media.",
+      "share": "I-share",
+      "shareTitle": "Mag-share ng link na magbubukas ulit ng page na ito kasama ang naka-fill in nang teksto mo",
+      "linkCopied": "Nakopya ang link"
+    },
+    "safeMode": {
+      "label": "Kaligtasan sa pag-paste",
+      "ariaLabel": "Tingnan kung aling mga istilo ang maayos na lumalabas sa device ng iba",
+      "toggleLabel": "Safe mode",
+      "hint": "Minamarkahan ang mga istilong maaaring lumabas na mga kahon (▯) sa lumang telepono ng iba."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Puwedeng lumabas na mga kahon para sa iba",
+      "boxesWarningTitle": "Gumagamit ang istilong ito ng bihirang Unicode characters na wala sa ibang telepono at lumang device. Puwede itong lumabas na mga kahon (▯) para sa taong pinadalhan mo. Pumili ng mas simpleng istilo o mas malawak ang suporta kung baka gumagamit ang audience mo ng lumang device.",
+      "emojiWarning": "⚠ May emoji — puwedeng magkaiba sa lumang device",
+      "emojiWarningTitle": "May kasamang emoji ang istilong ito. Maayos lumabas ang emoji sa modernong device, pero puwede itong magmukhang iba, o lumabas na mga kahon, sa napakalumang telepono.",
+      "modernDevices": "Maayos na lumalabas sa modernong device",
+      "modernDevicesTitle": "Lumalabas ang mga stylized na letrang Unicode na ito sa lahat ng kasalukuyang telepono at kompyuter. Sa napakalumang Android (mga bago pa ng 2016) o may minimal na system font, puwedeng lumabas pa rin ang ilan na mga kahon (▯). I-test muna kung baka gumagamit ang audience mo ng lumang device.",
+      "rendersEverywhere": "✓ Maayos na lumalabas kahit saan",
+      "rendersEverywhereTitle": "Plain text ang istilong ito — maayos itong lumalabas kahit saan, walang panganib na maging mga kahon sa kahit anong device.",
+      "deviceWarning": "⚠ Baka hindi lumabas sa device mo",
+      "deviceWarningTitle": "Hindi maipakita ng font ng device mo ang istilong ito — puwede itong lumabas na mga kahon (□). Puwede pa rin itong maging maayos sa ibang device.",
+      "safeAnywhere": "✓ Ligtas kahit saan",
+      "safeAnywhereTitle": "Maayos na lumalabas sa lahat ng pangunahing platform. Paalala: puwedeng i-spell out ng mga screen reader ang stylized na letra nang paisa-isa, kaya panatilihing plain ang teksto ng katawan.",
+      "worksBestOn": "⚠ Pinakamaayos sa {platforms}",
+      "worksBestOnTitle": "Pinakamaayos sa: {platforms}. Baka tanggalin o gulohin ito ng ibang platform — mag-test muna bago i-post."
+    },
+    "savedStyles": {
+      "ariaLabel": "Mga na-save mong istilo",
+      "heading": "Mga na-save mong istilo",
+      "clearAll": "I-clear lahat",
+      "hint": "Naka-save sa device na ito — nandito lang sila paguwi mo."
+    },
+    "textStats": {
+      "wordSingular": "1 salita",
+      "wordPlural": "{n} salita",
+      "charSingular": "1 character",
+      "charPlural": "{n} character"
+    },
+    "decorationsNone": "Wala",
+    "categoryTabsToggle": {
+      "more": "Higit pa",
+      "less": "Mas kaunti"
+    },
+    "demoText": "Welcome sa UltraTextGen.\nMag-type ka ng kahit ano. Gawin itong ultra.",
+    "copyButtons": {
+      "copy": "Kopyahin",
+      "copied": "✓ Nakopya",
+      "failed": "✗ Nabigo",
+      "copyTitle": "Kopyahin sa clipboard",
+      "save": "I-save",
+      "saved": "Na-save",
+      "saveTitle": "I-save ang istilong ito",
+      "unsaveTitle": "Alisin sa mga na-save na istilo",
+      "empty": "Mag-type ng kahit ano sa itaas...",
+      "noStyles": "Walang nahanap na istilo. Subukan ang ibang filter o search term."
+    },
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "pangalan",
+        "tabs": {
+          "playful": "Masaya",
+          "hearts": "Puso",
+          "sparkle": "Kislap",
+          "faces": "Mukha",
+          "stars": "Bituin"
+        }
+      },
+      "bio": {
+        "word": "pangalan",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "edgy": "Edgy",
+          "royal": "Royal",
+          "cute": "Cute",
+          "bold": "Bold",
+          "clean": "Malinis",
+          "mystical": "Mistikal",
+          "retro": "Retro",
+          "nature": "Kalikasan"
+        }
+      },
+      "small-text": {
+        "word": "teksto",
+        "tabs": {
+          "subtle": "Banayad",
+          "tiny": "Munti",
+          "brackets": "Panaklong",
+          "minimal": "Minimal"
+        }
+      },
+      "bubble": {
+        "word": "pangalan",
+        "tabs": {
+          "rounded": "Bilog",
+          "soft": "Malambot",
+          "stars": "Bituin",
+          "hearts": "Puso",
+          "minimal": "Minimal"
+        }
+      },
+      "cute": {
+        "word": "pangalan",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Mukha",
+          "hearts": "Puso",
+          "sparkle": "Kislap",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "teksto",
+        "tabs": {
+          "celestial": "Makalangit",
+          "sparkle": "Kislap",
+          "y2k": "Y2K",
+          "soft": "Malambot",
+          "minimal": "Minimal"
+        }
+      },
+      "nickname": {
+        "word": "pangalan",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Aesthetic",
+          "symbols": "Simbolo",
+          "hearts": "Puso",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Pinaka-Ginagamit Para Sa",

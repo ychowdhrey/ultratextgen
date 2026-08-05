@@ -21,7 +21,92 @@
   },
   "ui": {
     "placeholder": "Skriv din text här...",
-    "advertisement": "Annons"
+    "advertisement": "Annons",
+    "categoryTabs": {
+      "popular": "Populär",
+      "bold-fonts": "Fet",
+      "italic-fonts": "Kursiv",
+      "bubble-fonts": "Bubbla",
+      "cursive-fonts": "Handskrift",
+      "gothic-fonts": "Gotisk",
+      "strikethrough-text": "Genomstruken",
+      "underline-text": "Understruken",
+      "small-text": "Liten text",
+      "cute-fonts": "Söt",
+      "aesthetic-fonts": "Estetisk",
+      "upside-down-text": "Upp och ner",
+      "text-decorator": "Textdekoration",
+      "classified": "Censurerad",
+      "fullwidth-fonts": "Full bredd",
+      "faux-fonts": "Falska alfabet",
+      "ancient-fonts": "Antikt & runor",
+      "emoji-letter-fonts": "Emoji-bokstäver",
+      "novelty-fonts": "Roliga"
+    },
+    "scopeControl": {
+      "label": "Använd stil på",
+      "ariaLabel": "Välj hur mycket text som ska stylas",
+      "whole": "Hela texten",
+      "wholeTitle": "Stylar varje rad i din text.",
+      "firstLine": "Endast första raden",
+      "firstLineTag": "för inlägg",
+      "firstLineTitle": "Stylar bara första raden (din rubrik eller krok) och lämnar resten som vanlig, läsbar text — perfekt för inlägg i sociala medier.",
+      "share": "Dela",
+      "shareTitle": "Dela en länk som öppnar den här sidan igen med din text redan ifylld",
+      "linkCopied": "Länk kopierad"
+    },
+    "safeMode": {
+      "label": "Klistersäkerhet",
+      "ariaLabel": "Se vilka stilar som visas korrekt på andras enheter",
+      "toggleLabel": "Säkert läge",
+      "hint": "Markerar stilar som kan visas som rutor (▯) på andras äldre telefoner."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Kan visas som rutor för vissa",
+      "boxesWarningTitle": "Den här stilen använder ovanliga Unicode-tecken som saknas på vissa telefoner och äldre enheter. Den kan visas som rutor (▯) hos personen du skickar den till. Välj en enklare eller mer allmänt stödd stil om din målgrupp kan använda äldre enheter.",
+      "emojiWarning": "⚠ Använder emoji — kan variera på äldre enheter",
+      "emojiWarningTitle": "Den här stilen innehåller emoji. Emoji visas korrekt på moderna enheter, men kan se annorlunda ut, eller visas som rutor, på mycket gamla telefoner.",
+      "modernDevices": "Visas korrekt på moderna enheter",
+      "modernDevicesTitle": "Dessa stylade Unicode-bokstäver visas på alla nuvarande telefoner och datorer. På mycket gammal Android (ungefär före 2016) eller med minimala systemtypsnitt kan vissa tecken fortfarande visas som rutor (▯). Testa först om din målgrupp kan använda äldre enheter.",
+      "rendersEverywhere": "✓ Visas korrekt överallt",
+      "rendersEverywhereTitle": "Den här stilen är vanlig text — den visas korrekt överallt, utan risk för rutor på någon enhet.",
+      "deviceWarning": "⚠ Visas kanske inte på din enhet",
+      "deviceWarningTitle": "Typsnitten på din enhet kan inte visa den här stilen — den kan visas som rutor (□). Den kan fortfarande se korrekt ut på andra enheter.",
+      "safeAnywhere": "✓ Säker överallt",
+      "safeAnywhereTitle": "Visas på alla större plattformar. Obs: skärmläsare kan stava stylade bokstäver en i taget, så håll själva texten vanlig.",
+      "worksBestOn": "⚠ Fungerar bäst på {platforms}",
+      "worksBestOnTitle": "Fungerar bäst på: {platforms}. Andra plattformar kan ta bort den eller visa den fel — testa innan du postar."
+    },
+    "savedStyles": {
+      "ariaLabel": "Dina sparade stilar",
+      "heading": "Dina sparade stilar",
+      "clearAll": "Rensa allt",
+      "hint": "Sparade på den här enheten — de väntar här när du kommer tillbaka."
+    },
+    "textStats": {
+      "wordSingular": "1 ord",
+      "wordPlural": "{n} ord",
+      "charSingular": "1 tecken",
+      "charPlural": "{n} tecken"
+    },
+    "decorationsNone": "Ingen",
+    "categoryTabsToggle": {
+      "more": "Mer",
+      "less": "Mindre"
+    },
+    "demoText": "Välkommen till UltraTextGen.\nSkriv vad som helst. Gör det ultra.",
+    "copyButtons": {
+      "copy": "Kopiera",
+      "copied": "✓ Kopierad",
+      "failed": "✗ Misslyckades",
+      "copyTitle": "Kopiera till urklipp",
+      "save": "Spara",
+      "saved": "Sparad",
+      "saveTitle": "Spara den här stilen",
+      "unsaveTitle": "Ta bort från sparade stilar",
+      "empty": "Skriv något ovan...",
+      "noStyles": "Inga stilar hittades. Prova ett annat filter eller sökord."
+    }
   },
   "useCases": {
     "title": "Vad folk använder snygg text till",

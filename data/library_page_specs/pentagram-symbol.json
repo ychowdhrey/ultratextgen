@@ -1,0 +1,71 @@
+{
+  "slug": "pentagram-symbol",
+  "page_type": "symbol",
+  "title": "Pentagram Symbol: Copy & Paste ⛤ — Point-Up Wiccan Star vs. Point-Down Satanic Sigil",
+  "meta_description": "Copy and paste the pentagram (⛤) and inverted pentagram (⛧), and learn how the point-up Wiccan star and the point-down Satanic sigil came to mean different things — a distinction dated to 1966. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/pentagram-symbol/",
+  "breadcrumb": "Pentagram Symbol",
+  "hero_h1": "Pentagram Symbol",
+  "hero_tagline": "The five-pointed star (⛤) — a sacred elements symbol in Wicca when point-up, and the basis of the Church of Satan's sigil when point-down since 1966. One star, two communities, two orientations. Click any symbol to copy it instantly.",
+  "intro": "The pentagram (⛤, U+26E4) is a five-pointed star drawn in a single unbroken line. Point-up, it is a sacred symbol in Wicca and modern Paganism, standing for the five classical elements. Point-down — the inverted pentagram (⛧, U+26E7) — it is best known as the basis of the Church of Satan's official sigil, an association that is not ancient but traces to a specific, dateable choice in 1966. The same star, used by two different organized communities for genuinely different purposes.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "pentagram",
+      "label": "Pentagram",
+      "h2": "Pentagram — Point-Up & Point-Down",
+      "intro": "The five-pointed star in its main Unicode orientations. Point-up (⛤) is the standard Wiccan and Pagan form; the inverted, point-down star (⛧) is the one associated with the Church of Satan's sigil.",
+      "symbols": [
+        { "char": "⛤", "label": "Pentagram (Point-Up)" },
+        { "char": "⛧", "label": "Inverted Pentagram (Point-Down)" },
+        { "char": "⛥", "label": "Right-Handed Interlaced Pentagram" },
+        { "char": "⛦", "label": "Left-Handed Interlaced Pentagram" }
+      ]
+    },
+    {
+      "id": "occult-esoteric-symbols",
+      "label": "Occult & Esoteric Symbols",
+      "h2": "Occult & Esoteric Symbols",
+      "intro": "Symbols the pentagram commonly appears alongside in Wiccan, Pagan, and broader esoteric contexts — moon phases, alchemical marks, and other spiritual glyphs.",
+      "symbols": [
+        { "char": "☽", "label": "First Quarter Moon" },
+        { "char": "☾", "label": "Last Quarter Moon" },
+        { "char": "☿", "label": "Mercury (Alchemical)" },
+        { "char": "☥", "label": "Ankh" },
+        { "char": "☯", "label": "Yin Yang" }
+      ]
+    },
+    {
+      "id": "five-pointed-stars",
+      "label": "Five-Pointed Star Family",
+      "h2": "Five-Pointed Star Family",
+      "intro": "General five-pointed stars — the everyday, non-esoteric cousins of the pentagram, useful for bios, ratings, and decorative text.",
+      "symbols": [
+        { "char": "★", "label": "Black Star" },
+        { "char": "☆", "label": "White Star" },
+        { "char": "⭐", "label": "White Medium Star" },
+        { "char": "✰", "label": "Shadowed White Star" },
+        { "char": "✮", "label": "Heavy Outlined Black Star" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/witchy-occult-symbols/",
+      "title": "Witchy & Occult Symbols",
+      "desc": "Pentagrams, moon phases, alchemical marks, and other symbols in one browsable reference."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious Symbols",
+      "desc": "Faith and spiritual symbols from major world traditions, including living Pagan and Wiccan practice."
+    },
+    {
+      "href": "/symbol/autism-symbol/",
+      "title": "Autism Symbol",
+      "desc": "Another symbol with a real, documented meaning story reported without picking a side."
+    }
+  ]
+}

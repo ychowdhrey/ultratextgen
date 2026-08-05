@@ -21,7 +21,156 @@
   },
   "ui": {
     "placeholder": "Tape ton texte ici…",
-    "advertisement": "Publicité"
+    "advertisement": "Publicité",
+    "categoryTabs": {
+      "popular": "Populaire",
+      "bold-fonts": "Gras",
+      "italic-fonts": "Italique",
+      "bubble-fonts": "Bulles",
+      "cursive-fonts": "Cursive",
+      "gothic-fonts": "Gothique",
+      "strikethrough-text": "Barré",
+      "underline-text": "Souligné",
+      "small-text": "Petit texte",
+      "cute-fonts": "Mignon",
+      "aesthetic-fonts": "Esthétique",
+      "upside-down-text": "À l'envers",
+      "text-decorator": "Décorateur de texte",
+      "classified": "Classifié / Censuré",
+      "fullwidth-fonts": "Pleine largeur",
+      "faux-fonts": "Faux alphabets",
+      "ancient-fonts": "Anciennes & runes",
+      "emoji-letter-fonts": "Lettres emoji",
+      "novelty-fonts": "Insolite"
+    },
+    "scopeControl": {
+      "label": "Appliquer le style à",
+      "ariaLabel": "Choisis la quantité de texte à styliser",
+      "whole": "Tout le texte",
+      "wholeTitle": "Style chaque ligne de ton texte.",
+      "firstLine": "Première ligne seulement",
+      "firstLineTag": "pour les publications",
+      "firstLineTitle": "Style uniquement la première ligne (ton titre ou accroche) et laisse le reste en texte normal et lisible — idéal pour les publications sur les réseaux sociaux.",
+      "share": "Partager",
+      "shareTitle": "Partage un lien qui rouvre cette page avec ton texte déjà rempli",
+      "linkCopied": "Lien copié"
+    },
+    "safeMode": {
+      "label": "Sécurité au collage",
+      "ariaLabel": "Vérifie quels styles s'affichent bien sur d'autres appareils",
+      "toggleLabel": "Mode sécurisé",
+      "hint": "Signale les styles qui peuvent s'afficher sous forme de carrés (▯) sur les téléphones anciens des autres."
+    },
+    "safetyBadges": {
+      "boxesWarning": "⚠ Peut s'afficher en carrés pour certaines personnes",
+      "boxesWarningTitle": "Ce style utilise des caractères Unicode rares que certains téléphones et appareils anciens ne possèdent pas. Il peut s'afficher sous forme de carrés (▯) chez la personne à qui tu l'envoies. Préfère un style plus simple ou mieux pris en charge si ton public peut utiliser des appareils anciens.",
+      "emojiWarning": "⚠ Utilise des emoji — peut varier sur les anciens appareils",
+      "emojiWarningTitle": "Ce style inclut des emoji. Les emoji s'affichent bien sur les appareils récents, mais peuvent apparaître différemment, ou sous forme de carrés, sur de très anciens téléphones.",
+      "modernDevices": "S'affiche bien sur les appareils récents",
+      "modernDevicesTitle": "Ces lettres Unicode stylisées s'affichent sur tous les téléphones et ordinateurs actuels. Sur un très vieil Android (environ avant 2016) ou avec des polices système minimales, certaines peuvent encore apparaître sous forme de carrés (▯). Teste d'abord si ton public peut utiliser des appareils anciens.",
+      "rendersEverywhere": "✓ S'affiche partout",
+      "rendersEverywhereTitle": "Ce style est du texte brut : il s'affiche partout, sans aucun risque de carrés sur aucun appareil.",
+      "deviceWarning": "⚠ Peut ne pas s'afficher sur ton appareil",
+      "deviceWarningTitle": "Les polices de ton appareil ne peuvent pas afficher ce style — il peut apparaître sous forme de carrés (□). Il peut quand même s'afficher correctement sur d'autres appareils.",
+      "safeAnywhere": "✓ Sûr partout",
+      "safeAnywhereTitle": "S'affiche sur toutes les principales plateformes. À noter : les lecteurs d'écran peuvent épeler les lettres stylisées une par une, donc garde le texte du corps du message en texte normal.",
+      "worksBestOn": "⚠ Fonctionne mieux sur {platforms}",
+      "worksBestOnTitle": "Fonctionne mieux sur : {platforms}. Les autres plateformes peuvent le supprimer ou le déformer — fais un essai avant de publier."
+    },
+    "savedStyles": {
+      "ariaLabel": "Tes styles enregistrés",
+      "heading": "Tes styles enregistrés",
+      "clearAll": "Tout effacer",
+      "hint": "Enregistrés sur cet appareil — ils t'attendront ici à ton retour."
+    },
+    "textStats": {
+      "wordSingular": "1 mot",
+      "wordPlural": "{n} mots",
+      "charSingular": "1 caractère",
+      "charPlural": "{n} caractères"
+    },
+    "decorationsNone": "Aucun",
+    "categoryTabsToggle": {
+      "more": "Plus",
+      "less": "Moins"
+    },
+    "demoText": "Bienvenue sur UltraTextGen.\nTape n'importe quoi. Rends-le ultra.",
+    "decoratorProfiles": {
+      "snapchat": {
+        "word": "nom",
+        "tabs": {
+          "playful": "Ludique",
+          "hearts": "Cœurs",
+          "sparkle": "Paillettes",
+          "faces": "Visages",
+          "stars": "Étoiles"
+        }
+      },
+      "bio": {
+        "word": "nom",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Esthétique",
+          "edgy": "Sombre",
+          "royal": "Royal",
+          "cute": "Mignon",
+          "bold": "Gras",
+          "clean": "Épuré",
+          "mystical": "Mystique",
+          "retro": "Rétro",
+          "nature": "Nature"
+        }
+      },
+      "small-text": {
+        "word": "texte",
+        "tabs": {
+          "subtle": "Subtil",
+          "tiny": "Minuscule",
+          "brackets": "Crochets",
+          "minimal": "Minimaliste"
+        }
+      },
+      "bubble": {
+        "word": "nom",
+        "tabs": {
+          "rounded": "Arrondi",
+          "soft": "Doux",
+          "stars": "Étoiles",
+          "hearts": "Cœurs",
+          "minimal": "Minimaliste"
+        }
+      },
+      "cute": {
+        "word": "nom",
+        "tabs": {
+          "kawaii": "Kawaii",
+          "faces": "Visages",
+          "hearts": "Cœurs",
+          "sparkle": "Paillettes",
+          "pastel": "Pastel"
+        }
+      },
+      "aesthetic": {
+        "word": "texte",
+        "tabs": {
+          "celestial": "Céleste",
+          "sparkle": "Paillettes",
+          "y2k": "Y2K",
+          "soft": "Doux",
+          "minimal": "Minimaliste"
+        }
+      },
+      "nickname": {
+        "word": "nom",
+        "tabs": {
+          "gaming": "Gaming",
+          "aesthetic": "Esthétique",
+          "symbols": "Symboles",
+          "hearts": "Cœurs",
+          "faces": "Kaomoji"
+        }
+      }
+    }
   },
   "useCases": {
     "title": "Là où l'écriture stylée fait la différence",
@@ -125,7 +274,7 @@
           },
           {
             "question": "Pourquoi je vois des carrés ou des « ? » à la place du texte ?",
-            "answer": "Ça arrive quand la police installée sur le téléphone ou l'ordi de la personne qui lit ne contient pas le glyphe pour ce caractère Unicode-là. Ce n'est pas un bug du texte — sur la grande majorité des appareils modernes, tout s'affiche bien.\n    <br><br>\n    Si tu vois des carrés ou des points d'interrogation, change de style. Les classiques (Ultra Bold, Ultra Italic, Ultra Bubble) ont la meilleure couverture. Tu peux aussi passer par nos pages dédiées (Discord, Instagram…) pour des styles déjà testés sur ces apps."
+            "answer": "Ça arrive quand la police installée sur le téléphone ou l'ordi de la personne qui lit ne contient pas le glyphe pour ce caractère Unicode-là. Ce n'est pas un bug du texte — sur la grande majorité des appareils modernes, tout s'affiche bien.\n    <br><br>\n    Si tu vois des carrés ou des points d'interrogation, change de style. Les classiques (Ultra Bold, Ultra Italic, Ultra Bubble) ont la meilleure couverture. Tu peux aussi passer par nos pages dédiées (Discord, Instagram…) pour des styles déjà testés sur ces apps.\n    <br><br>\n    Pour le détail complet (pourquoi ça arrive et les styles sûrs), voir pourquoi mon nom s'affiche en carrés."
           }
         ]
       },

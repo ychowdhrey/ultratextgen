@@ -1,0 +1,77 @@
+{
+  "slug": "unterstrich",
+  "lang": "de",
+  "page_type": "symbol",
+  "title": "Unterstrich: _ ＿ ‾ kopieren & einfügen — von der Schreibmaschinen-Unterstreichung zu snake_case",
+  "meta_description": "Den Unterstrich (_, U+005F LOW LINE) kopieren und einfügen, dazu die Varianten ＿ in voller Breite und den Überstrich ‾ — und wie aus einem Schreibmaschinen-Trick snake_case und das eine leerzeichensichere Zeichen für Benutzernamen wurde. Ein Klick genügt zum Kopieren.",
+  "canonical": "https://ultratextgen.com/de/symbol/unterstrich/",
+  "breadcrumb": "Unterstrich",
+  "hero_h1": "Unterstrich (_)",
+  "hero_tagline": "Der schlichte Tastatur-Unterstrich (_), der als Schreibmaschinen-Trick zum Unterstreichen begann und zu snake_case wurde — dem einen leerzeichensicheren Zeichen, das Benutzernamen, E-Mails und Dateinamen erlauben —, hier neben seinen Verwandten: dem Unterstrich in voller Breite ＿, dem doppelten ‗ und dem Überstrich ‾. Ein Klick genügt zum Kopieren.",
+  "intro": "Der Unterstrich, auch Low Line genannt (_, U+005F LOW LINE), ist der waagerechte Strich, der in Unicodes Basic-Latin-Block auf der Grundlinie sitzt und dort die allgemeine Kategorie „Connector Punctuation“ trägt. Er begann als rein mechanischer Trick: Auf einer Schreibmaschine unterstrich man ein Wort, indem man es tippte, den Wagen zum Anfang zurücksetzte und dieselbe Stelle mit der Unterstrich-Taste erneut überschrieb — eine eigene Taste, die es etwa auf der 1881er Caligraph schon gab. 1967 wanderte das Zeichen in ASCII ein und übernahm dort den Codepoint 95 (0x5F) vom Linkspfeil (←), den es ersetzte, nachdem IBMs EBCDIC es bereits 1964 als „Break Character“ eingeführt hatte. Programmierer machten daraus später ein Worttrennzeichen — der Stil „Unterstrich statt Leerzeichen“ reicht bis in die späten 1960er-Jahre und zu C zurück und bis zu „The C Programming Language“ (1978), auch wenn der Name „snake_case“ erst um 2004 in der Ruby-Community geprägt wurde (Pythons PEP 8 nennt ihn bis heute „lower_case_with_underscores“). Heute ist er das eine leerzeichensichere Zeichen, das in Benutzernamen, im lokalen Teil von E-Mail-Adressen, in Dateinamen und URL-Slugs erlaubt ist, und Markdown liest _einzelne Unterstriche_ als kursiv und __doppelte__ als fett. Er wird routinemäßig mit dem Bindestrich (-, U+002D) verwechselt und mit seinen breiteren Verwandten, dem Unterstrich in voller Breite ＿ (U+FF3F) und dem doppelten Low Line ‗ (U+2017).",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/de/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/underscore-symbol/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/symbol/unterstrich/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/underscore-symbol/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "der-unterstrich",
+      "label": "Der Unterstrich",
+      "h2": "Der Unterstrich, in voller Breite & doppelt",
+      "intro": "Der schlichte Tastatur-Unterstrich und seine zwei Breitenvarianten — die in voller Breite genutzte Form aus dem ostasiatischen Schriftsatz und der doppelte, weiter beabstandete Unterstrich. Bereit zum Einfügen, überall.",
+      "symbols": [
+        { "char": "_", "label": "Unterstrich / Low Line (U+005F)" },
+        { "char": "＿", "label": "Low Line in voller Breite (U+FF3F)" },
+        { "char": "‗", "label": "Doppelter Low Line (U+2017)" }
+      ]
+    },
+    {
+      "id": "der-ueberstrich",
+      "label": "Der Überstrich",
+      "h2": "Der Überstrich: derselbe Strich, nur über dem Text",
+      "intro": "Der Überstrich ist das Spiegelbild des Unterstrichs — derselbe waagerechte Strich, nur über statt unter dem Text platziert, weshalb beide oft als Gegensatzpaar verwechselt werden. Der Makron ist der kurze Balken, den viele stattdessen tippen, wenn sie einen Überstrich meinen.",
+      "symbols": [
+        { "char": "‾", "label": "Überstrich / spacing Overscore (U+203E)" },
+        { "char": "¯", "label": "Makron (U+00AF)" }
+      ]
+    },
+    {
+      "id": "verwechslung-mit-bindestrich",
+      "label": "Vs. Bindestrich & Gedankenstrich",
+      "h2": "Unterstrich vs. die Familie aus Bindestrich & Gedankenstrich",
+      "intro": "In URLs, Benutzernamen und Dateinamen werden Unterstrich und Bindestrich ständig gegeneinander vertauscht — dabei sitzen sie auf unterschiedlicher Höhe, haben unterschiedliche Codepoints und erfüllen jeweils eine andere Aufgabe.",
+      "symbols": [
+        { "char": "-", "label": "Bindestrich / Tastatur-Bindestrich (U+002D)" },
+        { "char": "‐", "label": "Bindestrich, typografisch (U+2010)" },
+        { "char": "–", "label": "Halbgeviertstrich (U+2013)" },
+        { "char": "−", "label": "Minuszeichen (U+2212)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "Unterstrich, Bindestrich, Sternchen und die übrigen Interpunktions- und Sonderzeichen einer Standardtastatur."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Gedankenstriche, Klammern, Anführungszeichen und die alltägliche Interpunktion von Unicode in einer Referenz."
+    },
+    {
+      "href": "/de/symbol/at-zeichen/",
+      "title": "At-Zeichen (@)",
+      "desc": "Ein weiteres Sonderzeichen im Zentrum von E-Mail-Adressen und Social-Media-Handles, wo der Unterstrich das leerzeichensichere Trennzeichen ist."
+    }
+  ]
+}

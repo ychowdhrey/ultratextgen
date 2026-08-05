@@ -135,10 +135,10 @@ organic-positions export, then page type where no volume exists:
 | Medium | 203 | category, guide, answer, remaining library + localized pages |
 | Lower / Low | 10 | utility, legal, about/privacy/terms |
 
-GSC overview (Feb–Jun 2026) confirms impressions are scaling (≈530 impressions
-and 6 clicks/day by mid-June, up from near-zero in February), and the SEMrush
-PagesV3 export shows `/discord/` carrying ~98% of organic traffic — so the
-highest-traffic pages were verified first.
+GSC overview (Feb–Jun 2026) confirms impressions are scaling steadily from
+near-zero in February, and an organic-pages export shows `/discord/` carrying
+the large majority of organic traffic — so the highest-traffic pages were
+verified first.
 
 ---
 
@@ -248,3 +248,45 @@ gated on demonstrated demand here the same way it is everywhere else on the
 site (see CLAUDE.md's flair philosophy). As a locale's organic performance
 grows, add it to `LOCALIZED_HOME_MOTIF` — that registry is the whole
 extension point.
+
+---
+
+## 9. Arabic card text was garbled — fixed at the source (2026-07-13)
+
+Every AR page carrying its own OG/hero card (30 total: `mutarjim-emoji`,
+`khat-bio`, `zakhrafa`, 24 `library/*` pages, `asmaa-free-fire`,
+`asmaa-pubg`, `vertical-text`) had visibly broken title text on its social
+card — Arabic letters drawn in isolated form, disconnected from their
+neighbours, in reversed reading order. `cairosvg` lays out codepoints in
+logical string order with no shaping or bidi engine of its own, so Arabic —
+whose letters join contextually and read right-to-left — came out wrong
+while every other locale (including Devanagari, which doesn't need
+contextual joining) rendered fine.
+
+Fix: `spanned()` in `generate-site-art.py` now runs Arabic text through
+`arabic_reshaper.reshape()` (contextual joining) then `bidi.get_display()`
+(visual reordering) before the existing per-character font-cmap resolution
+— both are lightweight, build-time-only Python deps, same category as
+`cairosvg`. All 30 affected cards were regenerated; every other card on the
+site is untouched. `hi-usecase-emoji-anuvadak` also gained its own branded
+card in the same pass — it had been left on the generic English fallback
+even though Hindi was never actually affected by this bug.
+
+---
+
+## 10. Per-PR gate added for new pages specifically (2026-07-24)
+
+§1's original problem (duplicate images) was fixed; a different, ongoing one
+surfaced from live GSC Crawl Stats data (internal audit, 2026-07-24): new pages have a
+recurring habit of shipping before their `og:image`/hero art is generated and
+committed, so Google's first crawl of a fresh batch of pages 404s on the
+referenced image before a later cleanup pass lands. `scripts/check-image-
+assets.py` (this doc's original CI guard) can't catch this at PR time — it
+scans the whole site including the accepted, paced Pinterest-pin backlog, so
+it's effectively always red regardless of what any given PR touches.
+
+Added `scripts/check-new-page-image-assets.py`, diff-scoped to only the pages
+a PR actually adds or changes (og:image/twitter:image/hero only, not Pinterest
+pins), wired into `.github/workflows/validate.yml` as the real gate. See
+CLAUDE.md's "New pages must ship with their hero/OG/Twitter art in the same
+change" section for the full rationale and tooling split.

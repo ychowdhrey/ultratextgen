@@ -32,7 +32,14 @@
  * any print action):
  *   #pt-strip            character picker
  *   #pt-panel            selected-character detail
- *   #pt-alphabet-grid    printable alphabet grid   (+ button #pt-alphabet-print)
+ *   #pt-alphabet-grid    printable alphabet grid
+ *   #pt-alphabet-print   button: print the full alphabet (works with or without
+ *                        the grid; CFG.alphabetPrint: "book" prints one character
+ *                        per page instead of the compact sheet — see
+ *                        printAlphabetBook. Sheet-mode pages get an auto-added
+ *                        secondary book button beside it)
+ *   #pt-book-print       optional extra button (e.g. on a promo card) that
+ *                        prints the one-page-per-character alphabet book
  *   #pt-practice-print   button: print ruled practice sheet
  *   #pt-name-input       name / word field  (+ #pt-name-print, #pt-name-png,
  *                        #pt-name-preview, #pt-name-rows)
@@ -70,8 +77,22 @@
       copyPaste: "Copy-paste", copy: "Copy", howToDraw: "How to draw it", lowerSuffix: " · lower",
       level: "Level", nameLabel: "Name:", dateLabel: "Date:", space: "space",
       dotToDot: "dot to dot", bannerFlag: "Banner flag —",
+      dotsCount: "dots", dotNumbers: "Numbered dots",
+      dotLadderTitle: "Practice ladder",
+      dotLadderText: "Start easy and add dots as it gets comfortable. Mastered Expert? Turn the numbers off, then try drawing it freehand.",
+      pdfHint: "Tip: Print → “Save as PDF” downloads this sheet as a PDF.",
+      printBook: "Print as a book — one page per letter",
+      classSet: "Class set — one sheet per name", sheets: "sheets",
+      classSetPngHint: "PNG downloads the current name; use Print for the whole set.",
       bannerInstr: "Cut each flag along its dashed line, punch a hole at each dot, then thread string or ribbon through in order (1, 2, 3…) to spell it out.",
       puzzleCut: "Cut along the dashed lines to separate each letter piece.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "banner flags", ofWord: "of",
+      flagCount: { one: "flag", other: "flags" },
+      pageCount: { one: "page", other: "pages" },
+      modelCount: { one: "model", other: "model" },
+      traceCount: { one: "trace", other: "trace" },
+      blankCount: { one: "blank", other: "blank" },
       trace: {
         solid:    { label: "Solid model", hint: "Full dark letters — trace right on top" },
         "bold-dot": { label: "Bold dotted", hint: "Thick, closely-spaced dots to join" },
@@ -86,6 +107,12 @@
         medium: { label: "Medium", hint: "A balanced connect-the-dots" },
         hard:   { label: "Hard", hint: "More dots and finer letter detail" },
         expert: { label: "Expert", hint: "Lots of dots — a real challenge" }
+      },
+      size: {
+        label: "Print size",
+        full:   { label: "Full page", hint: "One big letter per sheet — today's default" },
+        medium: { label: "Medium (~4 in)", hint: "Several letters per sheet — good for posters" },
+        small:  { label: "Small (~2 in)", hint: "Many letters per sheet — great for bulletin boards" }
       }
     },
     fr: {
@@ -96,6 +123,13 @@
       copyPaste: "Copier-coller", copy: "Copier", howToDraw: "Comment la dessiner", lowerSuffix: " · min.",
       level: "Niveau", nameLabel: "Prénom :", dateLabel: "Date :", space: "espace",
       dotToDot: "point à point", bannerFlag: "Fanion —",
+      dotsCount: "points", dotNumbers: "Points numérotés",
+      dotLadderTitle: "Échelle de difficulté",
+      dotLadderText: "Commencez facile, puis ajoutez des points. Niveau Expert maîtrisé ? Retirez les numéros, puis essayez de dessiner à main levée.",
+      pdfHint: "Astuce : Imprimer → « Enregistrer au format PDF » télécharge la feuille en PDF.",
+      printBook: "Imprimer en livret — une page par lettre",
+      classSet: "Série pour la classe — une feuille par prénom", sheets: "feuilles",
+      classSetPngHint: "Le PNG télécharge le prénom affiché ; utilisez Imprimer pour toute la série.",
       bannerInstr: "Découpez chaque fanion le long de sa ligne pointillée, percez un trou à chaque point, puis passez une ficelle ou un ruban dans l'ordre (1, 2, 3…) pour former le mot.",
       puzzleCut: "Découpez le long des lignes pointillées pour séparer chaque pièce-lettre.",
       trace: {
@@ -112,6 +146,12 @@
         medium: { label: "Moyen", hint: "Un point à point équilibré" },
         hard:   { label: "Difficile", hint: "Plus de points et de détails dans la lettre" },
         expert: { label: "Expert", hint: "Beaucoup de points — un vrai défi" }
+      },
+      size: {
+        label: "Taille d'impression",
+        full:   { label: "Pleine page", hint: "Une grande lettre par feuille — le réglage par défaut" },
+        medium: { label: "Moyenne (~10 cm)", hint: "Plusieurs lettres par feuille — pratique pour des affiches" },
+        small:  { label: "Petite (~5 cm)", hint: "Beaucoup de lettres par feuille — idéal pour un panneau d'affichage" }
       }
     },
     es: {
@@ -122,6 +162,13 @@
       copyPaste: "Copiar y pegar", copy: "Copiar", howToDraw: "Cómo dibujarla", lowerSuffix: " · min.",
       level: "Nivel", nameLabel: "Nombre:", dateLabel: "Fecha:", space: "espacio",
       dotToDot: "unir los puntos", bannerFlag: "Banderín —",
+      dotsCount: "puntos", dotNumbers: "Puntos numerados",
+      dotLadderTitle: "Escalera de dificultad",
+      dotLadderText: "Empieza en fácil y añade puntos poco a poco. ¿Dominas el nivel experto? Quita los números y prueba a dibujar a mano alzada.",
+      pdfHint: "Consejo: Imprimir → «Guardar como PDF» descarga la hoja en PDF.",
+      printBook: "Imprimir como libro — una página por letra",
+      classSet: "Juego para la clase — una hoja por nombre", sheets: "hojas",
+      classSetPngHint: "El PNG descarga el nombre actual; usa Imprimir para el juego completo.",
       bannerInstr: "Recorta cada banderín por su línea punteada, haz un agujero en cada punto y pasa un cordel o cinta en orden (1, 2, 3…) para formar la palabra.",
       puzzleCut: "Recorta por las líneas punteadas para separar cada pieza-letra.",
       trace: {
@@ -138,6 +185,12 @@
         medium: { label: "Medio", hint: "Un unir-los-puntos equilibrado" },
         hard:   { label: "Difícil", hint: "Más puntos y más detalle en la letra" },
         expert: { label: "Experto", hint: "Muchos puntos — todo un reto" }
+      },
+      size: {
+        label: "Tamaño de impresión",
+        full:   { label: "Página completa", hint: "Una letra grande por hoja — la opción por defecto" },
+        medium: { label: "Mediano (~10 cm)", hint: "Varias letras por hoja — ideal para pósteres" },
+        small:  { label: "Pequeño (~5 cm)", hint: "Muchas letras por hoja — ideal para un mural" }
       }
     },
     pt: {
@@ -148,6 +201,13 @@
       copyPaste: "Copiar e colar", copy: "Copiar", howToDraw: "Como desenhar", lowerSuffix: " · min.",
       level: "Nível", nameLabel: "Nome:", dateLabel: "Data:", space: "espaço",
       dotToDot: "ligar os pontos", bannerFlag: "Bandeirinha —",
+      dotsCount: "pontos", dotNumbers: "Pontos numerados",
+      dotLadderTitle: "Escada de dificuldade",
+      dotLadderText: "Comece no fácil e adicione pontos aos poucos. Dominou o nível especialista? Desligue os números e tente desenhar à mão livre.",
+      pdfHint: "Dica: Imprimir → “Salvar como PDF” baixa a folha em PDF.",
+      printBook: "Imprimir como livro — uma página por letra",
+      classSet: "Conjunto para a turma — uma folha por nome", sheets: "folhas",
+      classSetPngHint: "O PNG baixa o nome atual; use Imprimir para o conjunto completo.",
       bannerInstr: "Recorte cada bandeirinha na linha pontilhada, faça um furo em cada ponto e passe um barbante ou fita na ordem (1, 2, 3…) para formar a palavra.",
       puzzleCut: "Recorte nas linhas pontilhadas para separar cada peça-letra.",
       trace: {
@@ -164,10 +224,158 @@
         medium: { label: "Médio", hint: "Um ligar-os-pontos equilibrado" },
         hard:   { label: "Difícil", hint: "Mais pontos e mais detalhe na letra" },
         expert: { label: "Expert", hint: "Muitos pontos — um baita desafio" }
+      },
+      size: {
+        label: "Tamanho de impressão",
+        full:   { label: "Página inteira", hint: "Uma letra grande por folha — o padrão de hoje" },
+        medium: { label: "Médio (~10 cm)", hint: "Várias letras por folha — bom para cartazes" },
+        small:  { label: "Pequeno (~5 cm)", hint: "Muitas letras por folha — ótimo para mural" }
+      }
+    },
+    it: {
+      letterWord: "lettera", numberWord: "numero",
+      copied: "Copiato!",
+      printThisLetter: "Stampa questa lettera", printThisNumber: "Stampa questo numero",
+      downloadPng: "Scarica PNG",
+      copyPaste: "Copia e incolla", copy: "Copia", howToDraw: "Come disegnarla", lowerSuffix: " · min.",
+      level: "Livello", nameLabel: "Nome:", dateLabel: "Data:", space: "spazio",
+      dotToDot: "unisci i puntini", bannerFlag: "Bandierina —",
+      dotsCount: "punti", dotNumbers: "Punti numerati",
+      dotLadderTitle: "Scala di difficoltà",
+      dotLadderText: "Inizia dal facile e aggiungi punti man mano. Livello esperto superato? Togli i numeri e prova a disegnare a mano libera.",
+      pdfHint: "Suggerimento: Stampa → “Salva come PDF” scarica il foglio in PDF.",
+      printBook: "Stampa come libretto — una pagina per lettera",
+      classSet: "Set per la classe — un foglio per nome", sheets: "fogli",
+      classSetPngHint: "Il PNG scarica il nome corrente; usa Stampa per l'intero set.",
+      bannerInstr: "Ritaglia ogni bandierina lungo la linea tratteggiata, fai un foro su ogni punto, poi infila uno spago o un nastro in ordine (1, 2, 3…) per comporre la parola.",
+      puzzleCut: "Ritaglia lungo le linee tratteggiate per separare ogni pezzo-lettera.",
+      trace: {
+        solid:    { label: "Modello pieno", hint: "Lettere piene e scure — ricalca sopra" },
+        "bold-dot": { label: "Puntinato spesso", hint: "Punti spessi e ravvicinati da unire" },
+        "fine-dot": { label: "Puntinato fine", hint: "Punti più sottili e un po' più distanziati" },
+        dashed:   { label: "Tratteggiato", hint: "Trattini spezzati — più linea da completare" },
+        faded:    { label: "Fantasma chiaro", hint: "Lettere grigio chiaro da ripassare" },
+        faint:    { label: "Guida leggera", hint: "Contorno appena visibile — quasi da solo" },
+        blank:    { label: "Riga vuota", hint: "Nessuna guida — scrivila a memoria" }
+      },
+      dot: {
+        easy:   { label: "Facile", hint: "Spazi ampi, pochi punti — i più piccoli" },
+        medium: { label: "Medio", hint: "Un unisci-i-puntini equilibrato" },
+        hard:   { label: "Difficile", hint: "Più punti e più dettaglio nella lettera" },
+        expert: { label: "Esperto", hint: "Tanti punti — una vera sfida" }
+      },
+      size: {
+        label: "Formato di stampa",
+        full:   { label: "Pagina intera", hint: "Una grande lettera per foglio — l'opzione predefinita" },
+        medium: { label: "Medio (~10 cm)", hint: "Diverse lettere per foglio — comodo per i poster" },
+        small:  { label: "Piccolo (~5 cm)", hint: "Tante lettere per foglio — ideale per una bacheca" }
+      }
+    },
+    pl: {
+      letterWord: "litera", numberWord: "cyfra",
+      copied: "Skopiowano!",
+      printThisLetter: "Wydrukuj tę literę", printThisNumber: "Wydrukuj tę cyfrę",
+      downloadPng: "Pobierz PNG",
+      copyPaste: "Kopiuj i wklej", copy: "Kopiuj", howToDraw: "Jak ją narysować", lowerSuffix: " · mała",
+      level: "Poziom", nameLabel: "Imię:", dateLabel: "Data:", space: "spacja",
+      dotToDot: "połącz kropki", bannerFlag: "Chorągiewka —",
+      dotsCount: "kropek", dotNumbers: "Ponumerowane kropki",
+      dotLadderTitle: "Drabinka trudności",
+      dotLadderText: "Zacznij od łatwego poziomu i stopniowo dodawaj kropki. Opanowane? Wyłącz numery i spróbuj narysować odręcznie.",
+      pdfHint: "Wskazówka: Drukuj → „Zapisz jako PDF”, aby pobrać arkusz w PDF.",
+      printBook: "Wydrukuj jako książeczkę — jedna strona na literę",
+      classSet: "Zestaw dla klasy — jedna karta na imię", sheets: "kart",
+      classSetPngHint: "PNG pobiera bieżące imię; użyj Drukuj dla całego zestawu.",
+      bannerInstr: "Wytnij każdą chorągiewkę wzdłuż przerywanej linii, zrób dziurkę w każdym punkcie, a następnie przewlecz sznurek lub wstążkę po kolei (1, 2, 3…), aby ułożyć napis.",
+      puzzleCut: "Tnij wzdłuż przerywanych linii, aby oddzielić każdy element-literę.",
+      usLetter: "US Letter",
+      bannerFlagsLabel: "chorągiewki", ofWord: "z",
+      flagCount: { one: "chorągiewka", few: "chorągiewki", many: "chorągiewek" },
+      pageCount: { one: "strona", few: "strony", many: "stron" },
+      trace: {
+        solid:    { label: "Pełny wzór", hint: "Ciemne, pełne litery — pisz po śladzie" },
+        "bold-dot": { label: "Grube kropki", hint: "Grube, gęsto rozmieszczone kropki do połączenia" },
+        "fine-dot": { label: "Drobne kropki", hint: "Cieńsze kropki z nieco większym odstępem" },
+        dashed:   { label: "Kreski", hint: "Przerywane kreski — więcej linii do uzupełnienia" },
+        faded:    { label: "Blady cień", hint: "Jasnoszare litery do pisania po śladzie" },
+        faint:    { label: "Lekki wzór", hint: "Ledwo widoczny kontur — prawie samodzielnie" },
+        blank:    { label: "Pusta linia", hint: "Bez wzoru — napisz z pamięci" }
+      },
+      dot: {
+        easy:   { label: "Łatwy", hint: "Duże odstępy, mało kropek — dla najmłodszych" },
+        medium: { label: "Średni", hint: "Zrównoważone łączenie kropek" },
+        hard:   { label: "Trudny", hint: "Więcej kropek i drobniejsze szczegóły litery" },
+        expert: { label: "Ekspert", hint: "Mnóstwo kropek — prawdziwe wyzwanie" }
+      },
+      size: {
+        label: "Rozmiar wydruku",
+        full:   { label: "Cała strona", hint: "Jedna duża litera na kartkę — dzisiejsze ustawienie domyślne" },
+        medium: { label: "Średni (~10 cm)", hint: "Kilka liter na kartkę — dobre na plakaty" },
+        small:  { label: "Mały (~5 cm)", hint: "Wiele liter na kartkę — świetne na tablicę ogłoszeń" }
+      }
+    },
+    de: {
+      letterWord: "Buchstabe", numberWord: "Zahl",
+      copied: "Kopiert!",
+      printThisLetter: "Diesen Buchstaben drucken", printThisNumber: "Diese Zahl drucken",
+      downloadPng: "PNG herunterladen",
+      copyPaste: "Kopieren", copy: "Kopieren", howToDraw: "So wird er gezeichnet", lowerSuffix: " · klein",
+      level: "Stufe", nameLabel: "Name:", dateLabel: "Datum:", space: "Leerzeichen",
+      dotToDot: "Punkte verbinden", bannerFlag: "Wimpel —",
+      dotsCount: "Punkte", dotNumbers: "Nummerierte Punkte",
+      dotLadderTitle: "Schwierigkeitsleiter",
+      dotLadderText: "Leicht anfangen, dann Punkte dazunehmen. Experte geschafft? Zahlen ausblenden und frei zeichnen.",
+      pdfHint: "Tipp: Drucken → „Als PDF speichern“ lädt das Blatt als PDF herunter.",
+      printBook: "Als Heft drucken — eine Seite pro Buchstabe",
+      classSet: "Klassensatz — ein Blatt pro Name", sheets: "Blätter",
+      classSetPngHint: "PNG lädt den aktuellen Namen; für den ganzen Satz Drucken verwenden.",
+      bannerInstr: "Schneide jeden Wimpel entlang der gestrichelten Linie aus, stich an jedem Punkt ein Loch und fädle eine Schnur oder ein Band der Reihe nach (1, 2, 3…) durch, um das Wort zu bilden.",
+      puzzleCut: "Schneide entlang der gestrichelten Linien, um jedes Buchstaben-Teil zu trennen.",
+      usLetter: "US Letter",
+      modelCount: { one: "Vorlagenzeile", other: "Vorlagenzeilen" },
+      traceCount: { one: "Nachspurzeile", other: "Nachspurzeilen" },
+      blankCount: { one: "Leerzeile", other: "Leerzeilen" },
+      trace: {
+        solid:    { label: "Volle Vorlage", hint: "Dunkle, volle Buchstaben — direkt nachfahren" },
+        "bold-dot": { label: "Dick gepunktet", hint: "Dicke, eng gesetzte Punkte zum Verbinden" },
+        "fine-dot": { label: "Fein gepunktet", hint: "Dünnere Punkte mit etwas mehr Abstand" },
+        dashed:   { label: "Gestrichelt", hint: "Unterbrochene Striche — mehr Linie zu ergänzen" },
+        faded:    { label: "Blasser Schatten", hint: "Hellgraue Buchstaben zum Überschreiben" },
+        faint:    { label: "Leichte Hilfe", hint: "Kaum sichtbarer Umriss — fast allein" },
+        blank:    { label: "Leere Linie", hint: "Keine Hilfe — aus dem Gedächtnis schreiben" }
+      },
+      dot: {
+        easy:   { label: "Leicht", hint: "Große Abstände, wenige Punkte — die Jüngsten" },
+        medium: { label: "Mittel", hint: "Ausgewogenes Punkte-Verbinden" },
+        hard:   { label: "Schwer", hint: "Mehr Punkte und feinere Details" },
+        expert: { label: "Experte", hint: "Viele Punkte — eine echte Herausforderung" }
+      },
+      size: {
+        label: "Druckgröße",
+        full:   { label: "Ganze Seite", hint: "Ein großer Buchstabe pro Blatt — die heutige Standardeinstellung" },
+        medium: { label: "Mittel (~10 cm)", hint: "Mehrere Buchstaben pro Blatt — gut für Poster" },
+        small:  { label: "Klein (~5 cm)", hint: "Viele Buchstaben pro Blatt — ideal für eine Pinnwand" }
       }
     }
   };
   const T = I18N[LANG] || I18N.en;
+
+  // Locale-aware pluralizer for the small count labels below (banner flags/
+  // pages, handwriting model/trace/blank rows). English deliberately keeps
+  // its labels invariant ("3 trace", not "3 traces" — a byte-for-byte-
+  // preserved stylistic choice, not an oversight), so its `forms` objects
+  // just repeat the same word for `one` and `other`. German only needs a
+  // one/other split. Polish needs a real one/few(2-4)/many(5+, excluding
+  // 12-14) split, per standard Polish cardinal-number agreement.
+  function plural(n, forms) {
+    if (LANG === "pl") {
+      if (n === 1) return forms.one;
+      const mod10 = n % 10, mod100 = n % 100;
+      if (forms.few && mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) return forms.few;
+      return forms.many || forms.other || forms.one;
+    }
+    return n === 1 ? forms.one : (forms.other || forms.one);
+  }
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -175,10 +383,27 @@
 
   const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const DIGITS = "0123456789".split("");
-  const CHARS = (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
+  // CFG.chars lets a page hand the engine an explicit, ordered character set
+  // instead of the default English A-Z (+0-9) — e.g. the 27-letter Spanish
+  // alphabet, which inserts Ñ between N and O. Purely additive: every page
+  // that doesn't set CFG.chars keeps computing CHARS exactly as before.
+  const CHARS = (Array.isArray(CFG.chars) && CFG.chars.length)
+    ? CFG.chars.slice()
+    : (CFG.charset === "alnum") ? LETTERS.concat(DIGITS) : LETTERS.slice();
 
   const RENDER = CFG.render || "outline";           // "outline" | "glyph"
-  const FONT = CFG.font || "'Plus Jakarta Sans', 'Segoe UI Symbol', sans-serif";
+  // Mutable (not const): pages that set CFG.scriptOptions let the visitor
+  // switch the active font at runtime (e.g. choosing which German school
+  // handwriting standard to practice). Every render function below reads
+  // FONT fresh on each call, so reassigning it here is enough to repaint
+  // every surface (preview, print sheet, PNG) in the new script — no other
+  // function needs to change. Pages that don't set scriptOptions never call
+  // setGenScript(), so FONT stays exactly as constant as it always was.
+  let FONT = CFG.font || "'Plus Jakarta Sans', 'Segoe UI Symbol', sans-serif";
+  const SCRIPT_OPTIONS = Array.isArray(CFG.scriptOptions) && CFG.scriptOptions.length
+    ? CFG.scriptOptions
+    : null;
+  let genScriptKey = SCRIPT_OPTIONS ? SCRIPT_OPTIONS[0].key : null;
   const STROKE = CFG.strokeWidth || 9;
   const NOUN = CFG.noun || "letter";                // "bubble letter", "block letter"…
   // Extra space between letters in multi-letter (word/name) output, expressed
@@ -196,8 +421,11 @@
     panel: $("#pt-panel"),
     alphaGrid: $("#pt-alphabet-grid"),
     alphaPrint: $("#pt-alphabet-print"),
+    bookPrint: $("#pt-book-print"),
+    sizeControl: $("#pt-size-control"),
     practicePrint: $("#pt-practice-print"),
     nameInput: $("#pt-name-input"),
+    nameRoster: $("#pt-name-roster"),
     namePrint: $("#pt-name-print"),
     namePng: $("#pt-name-png"),
     namePreview: $("#pt-name-preview"),
@@ -217,9 +445,14 @@
     genModel: $("#pt-gen-model"),
     genPrint: $("#pt-gen-print"),
     genPng: $("#pt-gen-png"),
+    genScript: $("#pt-gen-script"),
+    genRoster: $("#pt-gen-roster"),
+    genLadder: $("#pt-gen-ladder"),
     // Coloring-sheet designer (optional; gated on its own mounts)
     designInput: $("#pt-design-input"),
+    designInput2: $("#pt-design-input2"),
     designHeading: $("#pt-design-heading"),
+    designRoster: $("#pt-design-roster"),
     designFill: $("#pt-design-fill"),
     designBorder: $("#pt-design-border"),
     designFillGroup: $("#pt-design-fill-group"),
@@ -233,6 +466,7 @@
     designHint: $("#pt-design-hint"),
     designPreview: $("#pt-design-preview"),
     designPrint: $("#pt-design-print"),
+    designLadder: $("#pt-design-ladder"),
     designPng: $("#pt-design-png"),
     // Banner maker (optional; gated on its own mounts)
     bannerInput: $("#pt-banner-input"),
@@ -242,6 +476,7 @@
     bannerPng: $("#pt-banner-png"),
     // Name puzzle maker (optional; gated on its own mounts)
     puzzleInput: $("#pt-puzzle-input"),
+    puzzleRoster: $("#pt-puzzle-roster"),
     puzzleHeading: $("#pt-puzzle-heading"),
     puzzleBorderGroup: $("#pt-puzzle-border-group"),
     puzzleFooter: $("#pt-puzzle-footer"),
@@ -256,7 +491,15 @@
      --------------------------------------------------------------- */
 
   function charLabel(ch) { return /[0-9]/.test(ch) ? (T.numberWord + " " + ch) : (T.letterWord + " " + ch); }
-  function charSlug(ch) { return /[0-9]/.test(ch) ? ("number-" + ch) : ("letter-" + ch.toLowerCase()); }
+  // ASCII-safe slug for the one Latin letter in CFG.chars sets with no plain
+  // a-z form (Ñ, from the Spanish alphabet) — keeps PNG filenames and #hash
+  // anchors free of non-ASCII characters. Every other letter is unaffected.
+  function charSlug(ch) {
+    if (/[0-9]/.test(ch)) return "number-" + ch;
+    const lower = ch.toLowerCase();
+    if (lower === "ñ") return "letter-enye";
+    return "letter-" + lower;
+  }
   function slugify(s) {
     return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
@@ -574,6 +817,20 @@
     }, "image/png");
   }
 
+  // Small, low-contrast site credit near the bottom edge — the same
+  // sheet-like-printable convention used elsewhere in this engine (print
+  // titles, other PNG exports). Not drawn for RENDER === "glyph" (cursive/
+  // calligraphy pages): those are typed-word art the visitor downloads to
+  // use as-is, not a practice/coloring sheet, so they stay clean by design.
+  function drawCredit(ctx, w, h) {
+    ctx.textAlign = "center";
+    ctx.textBaseline = "alphabetic";
+    if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
+    ctx.font = "22px " + FONT;
+    ctx.fillStyle = "#aeb4c0";
+    ctx.fillText("ultratextgen.com", w / 2, h - 24);
+  }
+
   // Single character -> square PNG.
   function letterPNG(ch) {
     withFont(() => {
@@ -587,8 +844,9 @@
         // Same generous ~9% margin as singleDotSVG so number labels near the
         // box edges (e.g. a wide M/W) don't clip against the canvas edge.
         const pad = Math.round(size * 0.0875);
-        drawDotWordCanvas(ctx, ch.toUpperCase(), CFG.dotDifficulty || "medium", { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false);
-        downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png");
+        drawDotWordCanvas(ctx, ch.toUpperCase(), dotPageState.level, { x: pad, y: pad, w: size - pad * 2, h: size - pad * 2 }, CFG.dotHint !== false, dotPageState.numbers);
+        drawCredit(ctx, size, size);
+        downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + "-" + dotPageState.level + (dotPageState.numbers ? "" : "-no-numbers") + ".png");
         return;
       }
       ctx.textAlign = "center";
@@ -597,17 +855,18 @@
       const glyph = RENDER === "glyph"
         ? (/[0-9]/.test(ch) ? renderGlyph(ch.toUpperCase()) : (renderGlyph(ch.toUpperCase()) + renderGlyph(ch.toLowerCase())))
         : ch;
-      ctx.font = "700 " + Math.round(size * (RENDER === "glyph" ? 0.4 : 0.74)) + "px " + FONT;
+      ctx.font = "700 " + Math.round(size * (RENDER === "glyph" ? 0.4 : 0.66)) + "px " + FONT;
       if (RENDER === "outline") {
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(glyph, size / 2, size * 0.54);
+        ctx.fillText(glyph, size / 2, size * 0.5);
         ctx.lineWidth = Math.round(size * 0.045);
         ctx.strokeStyle = INK;
-        ctx.strokeText(glyph, size / 2, size * 0.54);
+        ctx.strokeText(glyph, size / 2, size * 0.5);
       } else {
         ctx.fillStyle = INK;
         ctx.fillText(glyph, size / 2, size * 0.54);
       }
+      if (RENDER !== "glyph") drawCredit(ctx, size, size);
       downloadCanvas(canvas, PNG_PREFIX + "-" + charSlug(ch) + ".png");
     });
   }
@@ -648,6 +907,7 @@
         ctx.fillStyle = INK;
         ctx.fillText(out, width / 2, height * 0.52);
       }
+      if (RENDER !== "glyph") drawCredit(ctx, width, height);
       downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "word") + ".png");
     });
   }
@@ -720,6 +980,13 @@
     actions.appendChild(pngBtn);
     figure.appendChild(actions);
 
+    // "Save as PDF" is the print dialog's native destination — say so, since
+    // PDF is the format most printable searchers are looking for.
+    const pdfTip = document.createElement("p");
+    pdfTip.className = "pt-pdf-hint";
+    pdfTip.textContent = T.pdfHint;
+    figure.appendChild(pdfTip);
+
     // Right — copy-paste variants (glyph mode) and/or how-to steps.
     const detail = document.createElement("div");
     detail.className = "bubble-detail";
@@ -756,6 +1023,10 @@
       }
       detail.appendChild(how);
     }
+
+    // Static dot-to-dot pages carry the live practice ladder (difficulty +
+    // numbers toggle) — the differentiator vs a fixed-PDF competitor page.
+    if (RENDER === "dots") detail.appendChild(dotControlsNode());
 
     stage.appendChild(figure);
     if (detail.childNodes.length) stage.appendChild(detail);
@@ -830,7 +1101,12 @@
     };
     const letterRow = document.createElement("div");
     letterRow.className = "bubble-strip-row";
-    LETTERS.forEach((ch) => letterRow.appendChild(make(ch)));
+    // Read from CHARS (not the fixed LETTERS constant) so a page that sets
+    // CFG.chars — e.g. the 27-letter Spanish alphabet — gets every one of
+    // its letters in the picker too. For every existing page CHARS's letter
+    // portion is exactly LETTERS, so this filter reproduces the prior output
+    // byte-for-byte; digits (alnum charset) still come from the row below.
+    CHARS.filter((ch) => !/[0-9]/.test(ch)).forEach((ch) => letterRow.appendChild(make(ch)));
     el.strip.appendChild(letterRow);
     if (CFG.charset === "alnum") {
       const digitRow = document.createElement("div");
@@ -844,7 +1120,182 @@
      Section: printable alphabet grid (outline mode)
      --------------------------------------------------------------- */
 
+  // "Print the alphabet" has two print layouts:
+  //   - "sheet" (default): the original compact grid — the whole set on as
+  //     few pages as possible, for a single-sheet reference/center activity.
+  //   - "book"  (CFG.alphabetPrint === "book"): every character on its own
+  //     full printed page, in order, so the print dialog's "Save as PDF"
+  //     produces a ready-made alphabet workbook.
+  // Book-mode pages print the book from the main #pt-alphabet-print button;
+  // sheet-mode pages keep the sheet there and get an auto-added secondary
+  // book button beside it. An optional #pt-book-print button anywhere else
+  // on the page (e.g. a promo card) triggers the same book print.
+  function printAlphabetBook() {
+    const book = document.createElement("div");
+    book.className = "bubble-print-book";
+    CHARS.forEach((ch) => {
+      const page = document.createElement("div");
+      page.className = "bubble-print-book-page";
+      const t = document.createElement("h3");
+      t.className = "bubble-print-title";
+      t.textContent = cap(NOUN) + " " + charLabel(ch) + " — ultratextgen.com";
+      page.appendChild(t);
+      page.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch)));
+      book.appendChild(page);
+    });
+    printWrap("", book);
+  }
+
+  function printAlphabetSheet() {
+    const sheet = document.createElement("div");
+    sheet.className = "bubble-print-sheet";
+    CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
+    printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
+  }
+
+  /* ---------------------------------------------------------------
+     "Print size" — bulletin-board / poster tiling for the full A–Z
+     alphabet print (forum-evidenced pain: "letters for bulletin board!!",
+     large display letters at 2–4in, not one more fixed-size sheet).
+     "full" is the default and pre-selected option and maps straight to the
+     print handler `buildAlphabetGrid` already wires (printAlphabetSheet or
+     printAlphabetBook per CFG.alphabetPrint) — completely unchanged output.
+     Only "medium"/"small" branch into printAlphabetTiled() below, and that
+     branch only exists at all on pages that add the optional
+     #pt-size-control mount (see buildSizeControl). Pages that don't add the
+     mount never build this control and never see the new code path.
+     --------------------------------------------------------------- */
+  const SIZE_PRESETS = [
+    { key: "full",   heightIn: null, label: T.size.full.label,   hint: T.size.full.hint },
+    { key: "medium", heightIn: 4,    label: T.size.medium.label, hint: T.size.medium.hint },
+    { key: "small",  heightIn: 2,    label: T.size.small.label,  hint: T.size.small.hint }
+  ];
+  let alphaSizeKey = "full";
+
+  // Conservative usable print area, safe across both US Letter (8.5x11in)
+  // and A4 (8.27x11.69in) with room left for default browser print margins
+  // plus the page title line — the same portrait budget printAlphabetBook's
+  // own fixed 8.2in single-letter height already assumes.
+  const TILE_PAGE_W_IN = 7.0;
+  const TILE_PAGE_H_IN = 9.3;
+  const TILE_GAP_IN = 0.25;
+
+  // How tall a rendered character is relative to its width, per render mode
+  // — used to size each tile's grid column so a "4 in" letter really is
+  // ~4in tall on paper, not just labeled that way.
+  function tileAspect() {
+    if (RENDER === "glyph") return 1.6; // "A a" pair (glyph mode) is wider than tall
+    return 200 / 240; // outlineSVG / singleDotSVG's own viewBox ratio
+  }
+
+  // How many CHARS fit on one tiled page at a given letter height, and the
+  // grid geometry to lay them out — the floor() below guarantees the tiles
+  // never overflow the safe usable area even when the division isn't exact.
+  function tileLayout(heightIn) {
+    const cellW = heightIn * tileAspect();
+    const cols = Math.max(1, Math.floor((TILE_PAGE_W_IN + TILE_GAP_IN) / (cellW + TILE_GAP_IN)));
+    const rows = Math.max(1, Math.floor((TILE_PAGE_H_IN + TILE_GAP_IN) / (heightIn + TILE_GAP_IN)));
+    return { cols: cols, rows: rows, perPage: cols * rows, cellW: cellW };
+  }
+
+  // The whole A–Z (or A–Z + 0–9) run, tiled several-per-page at a fixed real
+  // letter height, paginated across as many sheets as needed — the
+  // "bulletin board" size option. Reuses the exact same per-character figure
+  // the compact sheet/book prints already draw (outlineSVG / singleDotSVG /
+  // bigGlyphForPrint) and the same printWrap print call as every other
+  // multi-page job in this file — just a new size-driven grid layout, no new
+  // render primitive and no new print mechanism.
+  function printAlphabetTiled(sizeKey) {
+    const preset = SIZE_PRESETS.filter((p) => p.key === sizeKey)[0] || SIZE_PRESETS[1];
+    const heightIn = preset.heightIn || 4;
+    const layout = tileLayout(heightIn);
+    const small = heightIn <= 2;
+    const pages = [];
+    for (let i = 0; i < CHARS.length; i += layout.perPage) pages.push(CHARS.slice(i, i + layout.perPage));
+
+    const root = document.createElement("div");
+    root.className = "pt-tile-set";
+    pages.forEach((chunk, pi) => {
+      const page = document.createElement("div");
+      page.className = "pt-tile-page";
+      const title = document.createElement("h3");
+      title.className = "bubble-print-title";
+      title.textContent = cap(NOUN) + " alphabet — " + preset.label + " — page " + (pi + 1) + " of " + pages.length + " — ultratextgen.com";
+      page.appendChild(title);
+
+      const grid = document.createElement("div");
+      grid.className = "pt-tile-grid";
+      grid.style.gridTemplateColumns = "repeat(" + layout.cols + ", " + layout.cellW.toFixed(2) + "in)";
+      grid.style.gap = TILE_GAP_IN.toFixed(2) + "in";
+      chunk.forEach((ch) => {
+        const cell = document.createElement("div");
+        cell.className = "pt-tile-cell";
+        cell.style.height = heightIn.toFixed(2) + "in";
+        cell.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch, { small: small }) : outlineSVG(ch, { small: small })));
+        grid.appendChild(cell);
+      });
+      page.appendChild(grid);
+      root.appendChild(page);
+    });
+    printWrap("", root);
+  }
+
+  // Optional "print size" radiogroup (#pt-size-control). Entirely opt-in:
+  // pages that don't add the mount never call this and the alphabet-print
+  // button keeps calling exactly the same default handler it always has.
+  // "Full page" is pre-selected, so even a page that DOES add the mount
+  // still defaults to today's unaffected output until the visitor actively
+  // picks Medium or Small.
+  function buildSizeControl() {
+    if (!el.sizeControl) return;
+    const group = document.createElement("div");
+    group.className = "pt-choice-row pt-size-row";
+    group.setAttribute("role", "radiogroup");
+    group.setAttribute("aria-label", T.size.label);
+    SIZE_PRESETS.forEach((preset) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      const on = preset.key === alphaSizeKey;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.appendChild(document.createTextNode(preset.label));
+      const small = document.createElement("small");
+      small.textContent = preset.hint;
+      b.appendChild(small);
+      b.addEventListener("click", () => {
+        alphaSizeKey = preset.key;
+        $$(".pt-choice", group).forEach((o) => {
+          const isOn = o === b;
+          o.classList.toggle("is-active", isOn);
+          o.setAttribute("aria-checked", isOn ? "true" : "false");
+        });
+      });
+      group.appendChild(b);
+    });
+    el.sizeControl.appendChild(group);
+  }
+
   function buildAlphabetGrid() {
+    buildSizeControl();
+    if (el.bookPrint) el.bookPrint.addEventListener("click", printAlphabetBook);
+    if (el.alphaPrint) {
+      const bookMode = CFG.alphabetPrint === "book";
+      const printDefault = bookMode ? printAlphabetBook : printAlphabetSheet;
+      el.alphaPrint.addEventListener("click", () => {
+        if (el.sizeControl && alphaSizeKey !== "full") { printAlphabetTiled(alphaSizeKey); return; }
+        printDefault();
+      });
+      if (!bookMode) {
+        const bookBtn = document.createElement("button");
+        bookBtn.type = "button";
+        bookBtn.className = "bubble-btn";
+        bookBtn.textContent = T.printBook;
+        bookBtn.addEventListener("click", printAlphabetBook);
+        el.alphaPrint.insertAdjacentElement("afterend", bookBtn);
+      }
+    }
     if (!el.alphaGrid) return;
     CHARS.forEach((ch) => {
       const cell = document.createElement("button");
@@ -858,14 +1309,6 @@
       });
       el.alphaGrid.appendChild(cell);
     });
-    if (el.alphaPrint) {
-      el.alphaPrint.addEventListener("click", () => {
-        const sheet = document.createElement("div");
-        sheet.className = "bubble-print-sheet";
-        CHARS.forEach((ch) => sheet.appendChild(RENDER === "glyph" ? bigGlyphForPrint(ch) : (RENDER === "dots" ? singleDotSVG(ch) : outlineSVG(ch, { small: true }))));
-        printWrap(cap(NOUN) + " alphabet — ultratextgen.com", sheet);
-      });
-    }
   }
 
   function smallGlyphCell(ch) {
@@ -933,8 +1376,11 @@
     }
   }
 
-  function buildNameWorksheet() {
-    const name = nameValue();
+  // The full name worksheet as a DOM node — one primitive behind the single
+  // print and the class-set print, so every sheet in a set matches the solo
+  // one. `nameOverride` lets the roster path build one sheet per child.
+  function nameSheetNode(nameOverride) {
+    const name = nameOverride != null ? String(nameOverride).slice(0, 40) : nameValue();
     const rows = document.createElement("div");
     rows.className = "pt-name-sheet";
 
@@ -945,8 +1391,24 @@
     for (let i = 0; i < traceCount; i++) rows.appendChild(nameRow(name, "trace"));
     // Blank ruled rows for free practice.
     for (let i = 0; i < 2; i++) rows.appendChild(nameRow(name, "blank"));
+    return rows;
+  }
 
-    printWrap(name + " — tracing worksheet · ultratextgen.com", rows);
+  function buildNameWorksheet() {
+    const names = rosterNames(el.nameRoster);
+    if (names.length >= 2) {
+      const set = document.createElement("div");
+      set.className = "pt-class-set";
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(nameSheetNode(n));
+        set.appendChild(page);
+      });
+      printWrap(names.length + " " + T.sheets + " — tracing worksheets · ultratextgen.com", set);
+      return;
+    }
+    printWrap(nameValue() + " — tracing worksheet · ultratextgen.com", nameSheetNode());
   }
 
   function nameRow(name, kind) {
@@ -1096,11 +1558,60 @@
   }
   function genModelOn() { return !el.genModel || el.genModel.checked; }
 
+  // Script picker (CFG.scriptOptions only, e.g. choosing between real German
+  // school handwriting standards). Reassigns the shared FONT so every render
+  // path — live preview, print sheet, PNG — repaints in the new script.
+  function setGenScript(key) {
+    if (!SCRIPT_OPTIONS) return;
+    const opt = SCRIPT_OPTIONS.find((o) => o.key === key) || SCRIPT_OPTIONS[0];
+    genScriptKey = opt.key;
+    FONT = opt.font;
+    if (el.genScript) {
+      $$(".pt-gen-script-opt", el.genScript).forEach((b) => {
+        const on = b.dataset.script === genScriptKey;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    withFont(renderGenPreview);
+  }
+
+  // A pasted class roster (one name per line) turns one print job into one
+  // sheet per child — the workflow every teacher-facing worksheet generator
+  // is expected to support. Capped so a stray paste can't build 500 sheets;
+  // 60 leaves room for the whole Dolch primer list (52 words) as one packet.
+  const ROSTER_CAP = 60;
+  function rosterNames(mount) {
+    if (!mount) return [];
+    return mount.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean).slice(0, ROSTER_CAP);
+  }
+
+  // Word-list preset buttons (page-authored, crawlable): a .pt-roster-preset
+  // carries its whole list in data-words ("word|word|…") and one click fills
+  // the roster textarea with it — the "print the whole Dolch list in one job"
+  // path. Wired against whichever roster mount the page ships.
+  function wireRosterPresets(mount, onFill) {
+    if (!mount) return;
+    $$(".pt-roster-preset").forEach((b) => {
+      b.addEventListener("click", () => {
+        const words = String(b.dataset.words || "").split("|").map((s) => s.trim()).filter(Boolean);
+        if (!words.length) return;
+        mount.value = words.join("\n");
+        const field = mount.closest("details");
+        if (field) field.open = true;
+        if (onFill) onFill();
+      });
+    });
+  }
+
   // The full worksheet as a DOM node — the SINGLE primitive behind both the
   // live paper preview and the printed sheet, so what you see is what prints.
-  function genSheetNode() {
-    const word = genValue();
-    const level = genLevel();
+  // `wordOverride` lets the class-set print path build one sheet per roster
+  // name without touching the input field; `levelOverride` lets the ladder
+  // pack build one sheet per difficulty level the same way.
+  function genSheetNode(wordOverride, levelOverride) {
+    const word = wordOverride != null ? applyCase(String(wordOverride).slice(0, 42)) : genValue();
+    const level = levelOverride != null ? levelOverride : genLevel();
     const sheet = document.createElement("div");
     sheet.className = "pt-gen-sheet";
     // A solid model row on top so the target is always visible (unless the
@@ -1159,10 +1670,17 @@
     }
     if (el.genPreviewMeta) {
       const parts = [];
-      if (genModelOn() && level !== 1) parts.push("1 model");
-      parts.push(genRowCount() + " trace");
-      if (level !== TRACE_LEVELS.length) parts.push("2 blank");
-      el.genPreviewMeta.textContent = parts.join(" · ") + " · US Letter";
+      if (genModelOn() && level !== 1) parts.push("1 " + plural(1, T.modelCount));
+      parts.push(genRowCount() + " " + plural(genRowCount(), T.traceCount));
+      if (level !== TRACE_LEVELS.length) parts.push("2 " + plural(2, T.blankCount));
+      const rosterN = rosterNames(el.genRoster).length;
+      if (rosterN >= 2) parts.push(rosterN + " " + T.sheets);
+      el.genPreviewMeta.textContent = parts.join(" · ") + " · " + T.usLetter;
+    }
+    if (SCRIPT_OPTIONS) {
+      const active = SCRIPT_OPTIONS.find((o) => o.key === genScriptKey) || SCRIPT_OPTIONS[0];
+      const hintEl = $("#pt-gen-script-hint");
+      if (hintEl) hintEl.textContent = active.hint || "";
     }
   }
 
@@ -1175,7 +1693,36 @@
 
   function buildGeneratorSheet() {
     const spec = levelSpec(genLevel());
+    const names = rosterNames(el.genRoster);
+    if (names.length >= 2) {
+      const set = document.createElement("div");
+      set.className = "pt-class-set";
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(genSheetNode(n));
+        set.appendChild(page);
+      });
+      printWrap(names.length + " " + T.sheets + " — " + spec.label + " · ultratextgen.com", set);
+      return;
+    }
     printWrap(genValue() + " — " + spec.label + " worksheet · ultratextgen.com", genSheetNode());
+  }
+
+  // The whole difficulty ladder as one print job — one sheet per level,
+  // easiest to hardest, same word. The graded progression is the thing the
+  // level engine can batch that a static-PDF sheet never can.
+  function buildGeneratorLadder() {
+    const word = genValue();
+    const set = document.createElement("div");
+    set.className = "pt-class-set";
+    TRACE_LEVELS.forEach((spec, i) => {
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      page.appendChild(genSheetNode(word, i + 1));
+      set.appendChild(page);
+    });
+    printWrap(word + " — " + TRACE_LEVELS.length + " " + T.sheets + " · ultratextgen.com", set);
   }
 
   // Word at a level -> wide PNG (mirrors the SVG spec on Canvas).
@@ -1247,6 +1794,12 @@
     if (el.genCase) el.genCase.addEventListener("change", renderGenPreview);
     if (el.genRows) el.genRows.addEventListener("change", renderGenPreview);
     if (el.genModel) el.genModel.addEventListener("change", renderGenPreview);
+    if (el.genScript && SCRIPT_OPTIONS) {
+      $$(".pt-gen-script-opt", el.genScript).forEach((b) => {
+        b.addEventListener("click", () => setGenScript(b.dataset.script));
+      });
+      setGenScript(genScriptKey);
+    }
     // Level ladder — buttons authored in HTML (crawlable); wire + add samples.
     if (el.genLevels) {
       $$(".pt-level", el.genLevels).forEach((b) => {
@@ -1261,7 +1814,16 @@
         b.addEventListener("click", () => setGenLevel(parseInt(b.dataset.level, 10)));
       });
     }
+    if (el.genRoster) {
+      let rosterTimer = null;
+      el.genRoster.addEventListener("input", () => {
+        if (rosterTimer) clearTimeout(rosterTimer);
+        rosterTimer = setTimeout(updateGenUI, 150);
+      });
+      wireRosterPresets(el.genRoster, updateGenUI);
+    }
     if (el.genPrint) el.genPrint.addEventListener("click", buildGeneratorSheet);
+    if (el.genLadder) el.genLadder.addEventListener("click", buildGeneratorLadder);
     if (el.genPng) el.genPng.addEventListener("click", () => genWordPNG(genValue(), genLevel()));
     if (el.genSlider) genLevelState = clampLevel(parseInt(el.genSlider.value, 10));
     renderGenPreview();
@@ -1328,6 +1890,12 @@
   function designText() {
     const raw = el.designInput ? el.designInput.value : "";
     return (raw && raw.trim()) ? raw.trim().slice(0, 24) : DESIGN_DEMO;
+  }
+  // Optional second line ("Happy Birthday" / "Emma") — empty string when the
+  // page has no line-2 mount or it's blank.
+  function designLine2() {
+    const raw = el.designInput2 ? el.designInput2.value : "";
+    return raw ? raw.trim().slice(0, 24) : "";
   }
   function designHeadingText() {
     return el.designHeading ? el.designHeading.value.trim().slice(0, 48) : "";
@@ -1447,12 +2015,16 @@
      --------------------------------------------------------------- */
 
   // Difficulty ladder: more dots = harder / more detail. `total` is the
-  // whole-name target dot budget, shared out across the letters.
+  // whole-name target dot budget, shared out across the letters. `single` is
+  // the per-character dot count used when the text is exactly one character —
+  // the whole-word budgets all exceed the per-letter clamp for one character,
+  // so without it every level would render a single letter identically (which
+  // is why the per-letter pages historically hid the picker).
   const DOT_LEVELS = [
-    { key: "easy",   label: T.dot.easy.label,   total: 26, hint: T.dot.easy.hint },
-    { key: "medium", label: T.dot.medium.label, total: 42, hint: T.dot.medium.hint },
-    { key: "hard",   label: T.dot.hard.label,   total: 60, hint: T.dot.hard.hint },
-    { key: "expert", label: T.dot.expert.label, total: 84, hint: T.dot.expert.hint }
+    { key: "easy",   label: T.dot.easy.label,   total: 26, single: 12, hint: T.dot.easy.hint },
+    { key: "medium", label: T.dot.medium.label, total: 42, single: 16, hint: T.dot.medium.hint },
+    { key: "hard",   label: T.dot.hard.label,   total: 60, single: 19, hint: T.dot.hard.hint },
+    { key: "expert", label: T.dot.expert.label, total: 84, single: 22, hint: T.dot.expert.hint }
   ];
   function dotLevel(key) {
     for (let i = 0; i < DOT_LEVELS.length; i++) if (DOT_LEVELS[i].key === key) return DOT_LEVELS[i];
@@ -1632,7 +2204,9 @@
   // dots (with numbers) + closed hint loops. Consumed by both SVG and Canvas
   // so the preview, print and PNG stay identical.
   function layoutDotWord(text, level, box) {
-    const geom = dotWordGeometry(text, dotLevel(level).total);
+    const lvl = dotLevel(level);
+    const drawn = [...String(text)].filter((c) => c !== " ").length;
+    const geom = dotWordGeometry(text, drawn === 1 ? lvl.single : lvl.total);
     const b = geom.bbox;
     const bw = Math.max(1, b.maxx - b.minx), bh = Math.max(1, b.maxy - b.miny);
     const scale = Math.min(box.w / bw, box.h / bh);
@@ -1679,8 +2253,11 @@
   }
 
   // Render the dot-to-dot word into an SVG within the given box.
-  function addDotWordSVG(svg, text, level, box, hint) {
+  // `numbers` (default true) toggles the printed dot numbers — turning them
+  // off is the ladder's final stage before drawing freehand.
+  function addDotWordSVG(svg, text, level, box, hint, numbers) {
     const lay = layoutDotWord(text, level, box);
+    const numbered = numbers !== false;
     lay.letters.forEach((L) => {
       if (hint && L.loop.length > 1) {
         svgMake("polygon", {
@@ -1690,6 +2267,7 @@
       }
       L.dots.forEach((d) => {
         svgMake("circle", { cx: d.x.toFixed(1), cy: d.y.toFixed(1), r: (d.accent ? lay.dotR * 0.9 : lay.dotR).toFixed(1), fill: INK }, svg);
+        if (!numbered) return;
         const lp = dotLabelPos(d, lay.dotR, lay.numF);
         const t = svgMake("text", {
           x: lp.x.toFixed(1), y: lp.y.toFixed(1), "text-anchor": "middle",
@@ -1702,8 +2280,9 @@
   }
 
   // Render the dot-to-dot word onto a Canvas within the given box.
-  function drawDotWordCanvas(ctx, text, level, box, hint) {
+  function drawDotWordCanvas(ctx, text, level, box, hint, numbers) {
     const lay = layoutDotWord(text, level, box);
+    const numbered = numbers !== false;
     ctx.save();
     ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
     lay.letters.forEach((L) => {
@@ -1718,6 +2297,7 @@
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.accent ? lay.dotR * 0.9 : lay.dotR, 0, Math.PI * 2);
         ctx.fillStyle = INK; ctx.fill();
+        if (!numbered) return;
         const lp = dotLabelPos(d, lay.dotR, lay.numF);
         ctx.font = "700 " + lay.numF.toFixed(1) + "px " + FONT;
         ctx.lineWidth = lay.numF * 0.16; ctx.strokeStyle = "#ffffff"; ctx.lineJoin = "round";
@@ -1736,19 +2316,20 @@
      coloring-page-maker designer uses above — a single letter is just a
      1-character "word". No second tracer, no duplicated geometry.
 
-     Unlike the designer (which lets a visitor pick Easy/Medium/Hard/Expert
-     for an arbitrary-length name), a static single-letter page locks the
-     difficulty via CFG.dotDifficulty (defaults to "medium") and skips the
-     picker entirely. This isn't just a UI simplification: dotWordGeometry's
-     per-letter dot count is clamped to DOT_MAX (22) before the difficulty
-     total is ever applied, and every level's whole-word budget (26/42/60/84)
-     already exceeds 22 for a single character — so for exactly ONE letter,
-     every difficulty level renders an identical dot count. Exposing a picker
-     here would change nothing visible; it only matters once a name/word has
-     enough letters to spread that budget thin, which is what the
-     coloring-page-maker generator is for. CFG.dotHint (defaults on) mirrors
+     Single-letter pages get their own live difficulty picker (mirroring the
+     designer's Easy/Medium/Hard/Expert ladder) because DOT_LEVELS.single
+     gives each level a distinct per-character dot count (12/16/19/22) —
+     see layoutDotWord. CFG.dotDifficulty (defaults to "medium") only seeds
+     the initial level. The picker also carries a "numbered dots" toggle:
+     numbers-off is the progression's final printable stage before drawing
+     the letter freehand, so one static page serves the whole practice
+     ladder instead of one fixed sheet. CFG.dotHint (defaults on) mirrors
      the designer's "Show faint guide lines" default for this same audience.
      --------------------------------------------------------------- */
+  const dotPageState = {
+    level: CFG.dotDifficulty || "medium",
+    numbers: true
+  };
   // viewBox is 4x outlineSVG's 200x240 (same 5:6 aspect; on-screen size is
   // unchanged since CSS scales the SVG to width:100%). dotR/numF are clamped
   // to an ABSOLUTE unit range (see layoutDotWord), so a small viewBox makes
@@ -1762,15 +2343,76 @@
     svg.setAttribute("class", "bubble-outline" + (o.small ? " is-small" : ""));
     svg.setAttribute("role", "img");
     svg.setAttribute("aria-label", T.dotToDot + " " + charLabel(ch));
-    addDotWordSVG(svg, ch.toUpperCase(), CFG.dotDifficulty || "medium", { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false);
+    addDotWordSVG(svg, ch.toUpperCase(), dotPageState.level, { x: 70, y: 70, w: 660, h: 820 }, CFG.dotHint !== false, dotPageState.numbers);
     return svg;
+  }
+
+  // Difficulty picker + numbers toggle + practice-ladder note for the static
+  // per-letter dot-to-dot pages. Rebuilt on every selectChar so the active
+  // states always match dotPageState.
+  function dotControlsNode() {
+    const wrap = document.createElement("div");
+    wrap.className = "bubble-howto pt-dot-controls";
+
+    const title = document.createElement("h3");
+    title.className = "bubble-detail-title";
+    title.textContent = T.dotLadderTitle;
+    wrap.appendChild(title);
+
+    const group = document.createElement("div");
+    group.className = "pt-choice-row";
+    group.setAttribute("role", "radiogroup");
+    group.setAttribute("aria-label", T.dotLadderTitle);
+    DOT_LEVELS.forEach((lvl) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "pt-choice";
+      const on = lvl.key === dotPageState.level;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.appendChild(document.createTextNode(lvl.label));
+      const small = document.createElement("small");
+      small.textContent = lvl.single + " " + T.dotsCount;
+      b.appendChild(small);
+      b.addEventListener("click", () => {
+        dotPageState.level = lvl.key;
+        selectChar(activeChar, { silent: true });
+      });
+      group.appendChild(b);
+    });
+    wrap.appendChild(group);
+
+    const toggle = document.createElement("label");
+    toggle.className = "pt-dot-numbers-toggle";
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.checked = dotPageState.numbers;
+    cb.addEventListener("change", () => {
+      dotPageState.numbers = cb.checked;
+      selectChar(activeChar, { silent: true });
+    });
+    toggle.appendChild(cb);
+    toggle.appendChild(document.createTextNode(" " + T.dotNumbers));
+    wrap.appendChild(toggle);
+
+    const note = document.createElement("p");
+    note.className = "bubble-howto-tip";
+    note.textContent = T.dotLadderText;
+    wrap.appendChild(note);
+    return wrap;
   }
 
   function designModeIsDots() { return designState.mode === "dots"; }
 
-  // The whole designed sheet as one portrait SVG (1000x1400).
-  function designSheetSVG() {
-    const text = designText();
+  // The whole designed sheet as one portrait SVG (1000x1400). `textOverride`
+  // is the class-set print path (one roster name per sheet — always a single
+  // line); interactive use reads the input fields, including the optional
+  // second line.
+  function designSheetSVG(textOverride) {
+    const text = textOverride != null ? String(textOverride).slice(0, 24) : designText();
+    const line2 = textOverride != null ? "" : designLine2();
+    const lines = line2 ? [text, line2] : [text];
     const heading = designHeadingText();
     const fill = designFillKind();
     const borderSym = designBorderSym();
@@ -1778,7 +2420,7 @@
     const uid = ++designUid;
     const W = 1000, H = 1400, M = 70;
 
-    const svg = svgMake("svg", { viewBox: "0 0 " + W + " " + H, class: "pt-design-sheet-svg", role: "img", "aria-label": (heading || text) + " coloring sheet" });
+    const svg = svgMake("svg", { viewBox: "0 0 " + W + " " + H, class: "pt-design-sheet-svg", role: "img", "aria-label": (heading || lines.join(" ")) + " coloring sheet" });
     const defs = svgMake("defs", null, svg);
 
     svgMake("rect", { x: 18, y: 18, width: W - 36, height: H - 36, rx: 26, fill: "#ffffff", stroke: "#e2e6ee", "stroke-width": 3 }, svg);
@@ -1798,30 +2440,47 @@
 
     if (designModeIsDots()) {
       // Dot-to-dot: numbered dots along each letter's outline (uppercased for
-      // iconic silhouettes). Sits in the same central band the outline would.
+      // iconic silhouettes). Sits in the same central band the outline would;
+      // with a second line the band is split into two stacked half-bands.
       const cy = heading ? 720 : 690;
       const half = Math.min(cy - (heading ? 250 : 200), (footer ? H - 250 : H - 150) - cy);
-      addDotWordSVG(svg, String(text).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: half * 2 }, designState.hint);
+      if (lines.length === 2) {
+        const bandH = half - 18;
+        addDotWordSVG(svg, String(lines[0]).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: bandH }, designState.hint);
+        addDotWordSVG(svg, String(lines[1]).toUpperCase(), designState.density, { x: M, y: cy + 18, w: availW, h: bandH }, designState.hint);
+      } else {
+        addDotWordSVG(svg, String(text).toUpperCase(), designState.density, { x: M, y: cy - half, w: availW, h: half * 2 }, designState.hint);
+      }
     } else {
-      const len = Math.max(1, [...text].length);
-      const fs = Math.max(110, Math.min(360, Math.round(availW * 1.3 / len)));
-      const cy = heading ? 740 : 700;
-      const fontAttrs = {
-        x: W / 2, y: cy, "text-anchor": "middle", "dominant-baseline": "central",
-        "font-family": FONT, "font-weight": 700, "font-size": fs, "stroke-linejoin": "round"
-      };
-      // Guarantee the word fits the width; only compress when it would overflow.
-      if (len * fs * 0.66 > availW) { fontAttrs.textLength = availW; fontAttrs.lengthAdjust = "spacingAndGlyphs"; }
-
       // Interior: plain white (open to color), or a tiled pattern painted as
       // the glyph fill. Plain keeps stroke under fill (thin clean edge); a
       // pattern draws stroke on top so the letter boundary stays crisp.
       const fillRef = (fill !== "plain") ? addFillPattern(defs, fill, uid) : "#ffffff";
-      const outline = svgMake("text", Object.assign({}, fontAttrs, {
-        fill: fillRef, stroke: INK, "stroke-width": Math.max(4, STROKE),
-        "paint-order": (fill === "plain") ? "stroke" : ""
-      }), svg);
-      outline.textContent = text;
+      const cy = heading ? 740 : 700;
+      const maxLen = Math.max(1, ...lines.map((s) => [...s].length));
+      // Two lines get a tighter size cap so both fit the central band.
+      const fs = lines.length === 2
+        ? Math.max(90, Math.min(230, Math.round(availW * 1.3 / maxLen)))
+        : Math.max(110, Math.min(360, Math.round(availW * 1.3 / maxLen)));
+      const addOutlineLine = (str, y) => {
+        const fontAttrs = {
+          x: W / 2, y: y, "text-anchor": "middle", "dominant-baseline": "central",
+          "font-family": FONT, "font-weight": 700, "font-size": fs, "stroke-linejoin": "round"
+        };
+        // Guarantee the word fits the width; only compress when it would overflow.
+        if ([...str].length * fs * 0.66 > availW) { fontAttrs.textLength = availW; fontAttrs.lengthAdjust = "spacingAndGlyphs"; }
+        const outline = svgMake("text", Object.assign({}, fontAttrs, {
+          fill: fillRef, stroke: INK, "stroke-width": Math.max(4, STROKE),
+          "paint-order": (fill === "plain") ? "stroke" : ""
+        }), svg);
+        outline.textContent = str;
+      };
+      if (lines.length === 2) {
+        addOutlineLine(lines[0], cy - fs * 0.68);
+        addOutlineLine(lines[1], cy + fs * 0.68);
+      } else {
+        addOutlineLine(text, cy);
+      }
     }
 
     if (footer) addFooter(svg, H - 150);
@@ -1840,7 +2499,37 @@
   function printDesign() {
     const holder = document.createElement("div");
     holder.className = "pt-design-print-holder";
+    const names = rosterNames(el.designRoster);
+    if (names.length >= 2) {
+      holder.classList.add("pt-class-set");
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(designSheetSVG(n));
+        holder.appendChild(page);
+      });
+      printWrap("", holder);
+      return;
+    }
     holder.appendChild(designSheetSVG());
+    printWrap("", holder);
+  }
+
+  // Dot-to-dot difficulty ladder as one print job — the same word at every
+  // density, easy to expert. designSheetSVG reads designState.density, so the
+  // loop swaps it per page and restores the picked value afterwards.
+  function printDesignLadder() {
+    const holder = document.createElement("div");
+    holder.className = "pt-design-print-holder pt-class-set";
+    const picked = designState.density;
+    DOT_LEVELS.forEach((lvl) => {
+      designState.density = lvl.key;
+      const page = document.createElement("div");
+      page.className = "pt-sheet-page";
+      page.appendChild(designSheetSVG());
+      holder.appendChild(page);
+    });
+    designState.density = picked;
     printWrap("", holder);
   }
 
@@ -1868,7 +2557,8 @@
       ctx.strokeStyle = "#e2e6ee"; ctx.lineWidth = 3;
       roundRectPath(ctx, 18, 18, W - 36, H - 36, 26); ctx.stroke();
 
-      const text = designText(), heading = designHeadingText();
+      const text = designText(), line2 = designLine2(), heading = designHeadingText();
+      const lines = line2 ? [text, line2] : [text];
       const borderSym = designBorderSym();
       ctx.textAlign = "center"; ctx.textBaseline = "middle";
 
@@ -1889,17 +2579,33 @@
         const footerOn = designFooterOn();
         const cyD = hasHeading ? 720 : 690;
         const half = Math.min(cyD - (hasHeading ? 250 : 200), (footerOn ? H - 250 : H - 150) - cyD);
-        drawDotWordCanvas(ctx, String(text).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: half * 2 }, designState.hint);
+        if (lines.length === 2) {
+          const bandH = half - 18;
+          drawDotWordCanvas(ctx, String(lines[0]).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: bandH }, designState.hint);
+          drawDotWordCanvas(ctx, String(lines[1]).toUpperCase(), designState.density, { x: 70, y: cyD + 18, w: W - 140, h: bandH }, designState.hint);
+        } else {
+          drawDotWordCanvas(ctx, String(text).toUpperCase(), designState.density, { x: 70, y: cyD - half, w: W - 140, h: half * 2 }, designState.hint);
+        }
       } else {
         const cy = hasHeading ? 740 : 700;
-        const len = Math.max(1, [...text].length);
-        let fs = Math.max(110, Math.min(360, Math.round((W - 140) * 1.3 / len)));
+        const maxLen = Math.max(1, ...lines.map((s) => [...s].length));
+        let fs = lines.length === 2
+          ? Math.max(90, Math.min(230, Math.round((W - 140) * 1.3 / maxLen)))
+          : Math.max(110, Math.min(360, Math.round((W - 140) * 1.3 / maxLen)));
         ctx.font = "700 " + fs + "px " + FONT;
-        const measured = ctx.measureText(text).width;
-        if (measured > W - 140) { fs = Math.floor(fs * (W - 140) / measured); ctx.font = "700 " + fs + "px " + FONT; }
+        const widest = Math.max(...lines.map((s) => ctx.measureText(s).width));
+        if (widest > W - 140) { fs = Math.floor(fs * (W - 140) / widest); ctx.font = "700 " + fs + "px " + FONT; }
         ctx.lineJoin = "round";
-        ctx.fillStyle = "#ffffff"; ctx.fillText(text, W / 2, cy);
-        ctx.lineWidth = Math.max(6, STROKE); ctx.strokeStyle = INK; ctx.strokeText(text, W / 2, cy);
+        const drawLine = (str, y) => {
+          ctx.fillStyle = "#ffffff"; ctx.fillText(str, W / 2, y);
+          ctx.lineWidth = Math.max(6, STROKE); ctx.strokeStyle = INK; ctx.strokeText(str, W / 2, y);
+        };
+        if (lines.length === 2) {
+          drawLine(lines[0], cy - fs * 0.68);
+          drawLine(lines[1], cy + fs * 0.68);
+        } else {
+          drawLine(text, cy);
+        }
       }
 
       if (designFooterOn()) {
@@ -1913,7 +2619,7 @@
       }
 
       ctx.font = "22px " + FONT; ctx.fillStyle = "#aeb4c0"; ctx.fillText("ultratextgen.com", W / 2, H - 24);
-      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(text) || "sheet") + ".png");
+      downloadCanvas(canvas, PNG_PREFIX + "-" + (slugify(lines.join(" ")) || "sheet") + ".png");
     });
   }
 
@@ -1981,6 +2687,7 @@
     let timer = null;
     const schedule = () => { if (timer) clearTimeout(timer); timer = setTimeout(renderDesignPreview, 120); };
     el.designInput.addEventListener("input", schedule);
+    if (el.designInput2) el.designInput2.addEventListener("input", schedule);
     if (el.designHeading) el.designHeading.addEventListener("input", schedule);
     wireSwatchGroup(el.designFillGroup, "fill", fillSwatchSVG, designState, renderDesignPreview);
     wireSwatchGroup(el.designBorderGroup, "border", borderSwatchSVG, designState, renderDesignPreview);
@@ -1993,6 +2700,7 @@
     }
     [el.designFill, el.designBorder, el.designFooter].forEach((c) => { if (c) c.addEventListener("change", renderDesignPreview); });
     if (el.designPrint) el.designPrint.addEventListener("click", printDesign);
+    if (el.designLadder) el.designLadder.addEventListener("click", printDesignLadder);
     if (el.designPng) el.designPng.addEventListener("click", designPNG);
     syncDesignMode();
     renderDesignPreview();
@@ -2126,7 +2834,8 @@
       head.className = "pt-banner-page-head";
       const title = document.createElement("p");
       title.className = "pt-banner-page-title";
-      title.textContent = phrase.toUpperCase() + " — banner flags — page " + (pi + 1) + " of " + pages.length;
+      title.textContent = phrase.toUpperCase() + " — " + T.bannerFlagsLabel + " — " +
+        T.pageCount.one + " " + (pi + 1) + " " + T.ofWord + " " + pages.length;
       head.appendChild(title);
       if (pi === 0) {
         const instr = document.createElement("p");
@@ -2178,8 +2887,8 @@
     el.bannerPreview.innerHTML = "";
     el.bannerPreview.appendChild(bannerPagesNode(phrase));
     if (el.bannerMeta) {
-      el.bannerMeta.textContent = total + (total === 1 ? " flag" : " flags") + " · " +
-        pages.length + (pages.length === 1 ? " page" : " pages") + " · US Letter";
+      el.bannerMeta.textContent = total + " " + plural(total, T.flagCount) + " · " +
+        pages.length + " " + plural(pages.length, T.pageCount) + " · " + T.usLetter;
     }
   }
 
@@ -2374,8 +3083,11 @@
 
   // The whole puzzle as one DOM sheet — the single primitive behind both the
   // live preview and the printed page, so what's on screen is what prints.
-  function puzzleSheetNode() {
-    const word = puzzleValue();
+  // `wordOverride` lets the class-set print path build one puzzle per roster
+  // name; a typed heading (if any) applies to every sheet, while the default
+  // heading stays per-name.
+  function puzzleSheetNode(wordOverride) {
+    const word = wordOverride != null ? String(wordOverride).slice(0, 20) : puzzleValue();
     const heading = puzzleHeadingText();
     const strip = puzzleBorderSym().split(" ").filter(Boolean);
     const footer = puzzleFooterOn();
@@ -2417,6 +3129,18 @@
   function printPuzzle() {
     const holder = document.createElement("div");
     holder.className = "pt-puzzle-print-holder";
+    const names = rosterNames(el.puzzleRoster);
+    if (names.length >= 2) {
+      holder.classList.add("pt-class-set");
+      names.forEach((n) => {
+        const page = document.createElement("div");
+        page.className = "pt-sheet-page";
+        page.appendChild(puzzleSheetNode(n));
+        holder.appendChild(page);
+      });
+      printWrap("", holder);
+      return;
+    }
     holder.appendChild(puzzleSheetNode());
     printWrap("", holder);
   }

@@ -1,0 +1,80 @@
+{
+  "slug": "symbol-theta",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Theta: Skopiuj θ Θ ϑ — Starogrecka „Litera Śmierci”",
+  "meta_description": "Skopiuj symbol theta — małe θ, wielkie Θ i matematyczny wariant z otwartą pętlą ϑ — literę, którą starożytni Grecy zaznaczali na kartach do głosowania, oddając głos na wyrok śmierci. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-theta/",
+  "breadcrumb": "Symbol Theta",
+  "hero_h1": "Symbol Theta",
+  "hero_tagline": "Małe θ oznaczające kąt w trygonometrii, wielkie Θ notacji Big-Theta w złożoności obliczeniowej i matematyczny wariant z otwartą pętlą ϑ — ta sama litera, którą klasyczni Ateńczycy niegdyś zaznaczali na karcie do głosowania, oddając głos na śmierć. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Theta to ósma litera greckiego alfabetu, a jej mały glif θ (U+03B8, GREEK SMALL LETTER THETA) — okrąg przecięty poziomą kreską — niesie jedną z najmroczniejszych historii spośród wszystkich liter. W starożytności theta była „literą śmierci”: oznaczała θάνατος (thánatos, „śmierć”), a ateńscy sędziowie przysięgli mogli zaznaczyć ją na karcie do głosowania albo skorupie, oddając głos za skazaniem lub egzekucją oskarżonego — użycie na tyle osławione, że rzymski poeta Enniusz miał nazwać thetę najbardziej pechową ze wszystkich liter. Wielka forma Θ (U+0398) oraz odrębny wariant z otwartą pętlą ϑ (U+03D1, GREEK THETA SYMBOL) dopełniają tę rodzinę — ϑ to glif w stylu kaligraficznym, używany w niektórych składach fizycznych i matematycznych, a nie osobna litera. Dziś praca thety jest o wiele spokojniejsza: małe θ to standardowy symbol nieznanego lub mierzonego kąta w trygonometrii i geometrii, podczas gdy wielkie Θ nazywa notację Big-Theta, „ciasne ograniczenie” w analizie algorytmów, które Donald Knuth sformalizował w swoim artykule z 1976 roku „Big Omicron and Big Omega and Big Theta”. W greckim systemie liczbowym theta niesie też wartość 9.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-theta/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-theta",
+      "label": "Symbol Theta",
+      "h2": "Symbol Theta — θ, Θ i ϑ",
+      "intro": "Theta występuje w trzech glifach, których ludzie naprawdę używają: codzienne małe θ, wielkie Θ oraz wariant z otwartą pętlą ϑ, zarezerwowany dla matematyki i fizyki. Czwarta, przekreślona wielka forma istnieje wyłącznie jako symbol matematyczny.",
+      "symbols": [
+        { "char": "θ", "label": "Mała Grecka Litera Theta (U+03B8) — Symbol Kąta" },
+        { "char": "Θ", "label": "Wielka Grecka Litera Theta (U+0398) — Notacja Big-Theta" },
+        { "char": "ϑ", "label": "Grecki Symbol Theta (U+03D1) — Wariant z Otwartą Pętlą" },
+        { "char": "ϴ", "label": "Wielki Grecki Symbol Theta (U+03F4) — Wariant Przekreślony" }
+      ]
+    },
+    {
+      "id": "theta-w-matematyce",
+      "label": "Matematyka i Informatyka",
+      "h2": "Theta w Matematyce i Informatyce",
+      "intro": "Dwa bardzo różne zadania dzielą tę samą literę. Małe θ to podstawowa nazwa kąta; wielkie Θ to ciasne ograniczenie w analizie złożoności, leżące między Big-O (górnym) a Big-Omega (dolnym).",
+      "symbols": [
+        { "char": "θ", "label": "Małe Theta (U+03B8) — Kąt w Trygonometrii i Geometrii" },
+        { "char": "Θ", "label": "Wielkie Theta (U+0398) — Big-Theta, Ciasne Ograniczenie" },
+        { "char": "Ω", "label": "Wielka Omega (U+03A9) — Big-Omega, Dolne Ograniczenie" },
+        { "char": "ϑ", "label": "Symbol Theta (U+03D1) — Wariant ze Składu Fizycznego" }
+      ]
+    },
+    {
+      "id": "powiazane-litery-greckie",
+      "label": "Litery Greckie",
+      "h2": "Powiązane Litery Greckie",
+      "intro": "Theta to 8. litera greckiego alfabetu. Oto sąsiedzi, których szuka się i kopiuje najczęściej razem z nią.",
+      "symbols": [
+        { "char": "Ω", "label": "Wielka Grecka Litera Omega" },
+        { "char": "Δ", "label": "Wielka Grecka Litera Delta" },
+        { "char": "π", "label": "Mała Grecka Litera Pi" },
+        { "char": "α", "label": "Mała Grecka Litera Alfa" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/pl/library/alfabet-grecki/",
+      "title": "Alfabet Grecki",
+      "desc": "Pełny grecki alfabet w wielkich, małych i matematycznych wariantach do skopiowania."
+    },
+    {
+      "href": "/pl/library/symbole-matematyczne/",
+      "title": "Symbole Matematyczne",
+      "desc": "Kąty, operatory i litery greckie takie jak theta, wypełniające równanie."
+    },
+    {
+      "href": "/pl/symbol/symbol-omega/",
+      "title": "Symbol Omega",
+      "desc": "Siostrzana notacja złożoności thety: Θ to ciasne ograniczenie, Ω to dolne ograniczenie w analizie algorytmów."
+    }
+  ]
+}

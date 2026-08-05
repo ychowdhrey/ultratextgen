@@ -1,0 +1,76 @@
+{
+  "slug": "symbol-ryb",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Symbol Ryb: Skopiuj ♓ — Jedyny Glif Zodiaku Łączący Dwa Stworzenia",
+  "meta_description": "Skopiuj symbol zodiakalnych Ryb (♓) — dwie ryby związane ogonami sznurem, jedyny glif zodiaku łączący dwa stworzenia, z mitu o Afrodycie i Erosie uciekających przed Tyfonem. Kliknij, aby skopiować.",
+  "canonical": "https://ultratextgen.com/pl/symbol/symbol-ryb/",
+  "breadcrumb": "Symbol Ryb",
+  "hero_h1": "Symbol Ryb",
+  "hero_tagline": "Glif Ryb (♓) to dwa półksiężyce połączone poziomą kreską — dwie ryby związane ogonami sznurem, jedyny symbol zodiaku łączący ze sobą dwa stworzenia. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Symbol Ryb (♓, U+2653) to dwa półksiężyce połączone poziomą kreską — dosłowny obraz dwóch ryb związanych ogonami, przez co Ryby są jedynym znakiem, którego glif łączy dwa stworzenia. Ich mit: Afrodyta i jej syn Eros byli nad rzeką (Hyginus wskazuje Eufrat), gdy zaatakował potwór Tyfon; by uciec, oboje zamienili się w ryby i związali ogony sznurem, żeby prąd ich nie rozdzielił, a Zeus umieścił ten obraz wśród gwiazd. To ten sam szał zniszczenia, który zmusił Pana do skoku do wody jako kozłoryba Koziorożec — oba gwiazdozbiory zapisują tę samą chwilę boskiej ucieczki. Ryby trwają od 19 lutego do 20 marca, we współczesnej astrologii rządzone są przez Neptuna (tradycyjnie przez Jowisza) i są znakiem Wody o modalności zmiennej.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pisces-symbol/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/symbol-ryb/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pisces-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "symbol-ryb",
+      "label": "Ryby",
+      "h2": "Symbol Ryb",
+      "intro": "Unicode'owy glif zodiakalnych Ryb, gotowy do wklejenia.",
+      "symbols": [
+        { "char": "♓", "label": "Symbol Ryb" },
+        { "char": "♓️", "label": "Symbol Ryb (Emoji)" }
+      ]
+    },
+    {
+      "id": "planeta-i-zywiol",
+      "label": "Planeta i Żywioł",
+      "h2": "Planeta Rządząca i Żywioł",
+      "intro": "Planeta i klasyczny żywioł tradycyjnie przypisywane Rybom.",
+      "symbols": [
+        { "char": "♆", "label": "Neptun (Planeta Rządząca)" },
+        { "char": "🜄", "label": "Woda (Żywioł, Symbol Alchemiczny)" }
+      ]
+    },
+    {
+      "id": "powiazane-symbole-zodiaku",
+      "label": "Zodiak i Ciała Niebieskie",
+      "h2": "Więcej Symboli Zodiaku i Ciał Niebieskich",
+      "intro": "Ciała niebieskie oraz astrologiczne przeciwieństwo Ryb (Panna).",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☽", "label": "Księżyc (Pierwsza Kwadra)" },
+        { "char": "⛎", "label": "Wężownik (Nieoficjalny 13. Znak)" },
+        { "char": "♍", "label": "Panna (Znak Przeciwny)" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    {
+      "href": "/library/zodiac-symbols/",
+      "title": "Zodiac Symbols",
+      "desc": "Znaki zachodniego zodiaku, symbole planet i chińskie zwierzęta zodiakalne w jednym miejscu."
+    },
+    {
+      "href": "/pl/symbol/symbol-panny/",
+      "title": "Symbol Panny",
+      "desc": "Astrologiczne przeciwieństwo Ryb, leżące dokładnie po drugiej stronie koła zodiaku."
+    },
+    {
+      "href": "/pl/symbol/symbol-strzelca/",
+      "title": "Symbol Strzelca",
+      "desc": "Tradycyjny władca Ryb, Jowisz, rządzi też Strzelcem — łucznikiem wycelowanym w centrum galaktyki."
+    }
+  ]
+}

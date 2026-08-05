@@ -1,0 +1,115 @@
+{
+  "slug": "rahmenzeichen",
+  "lang": "de",
+  "title": "Rahmenzeichen & Blocksymbole: ─ │ ┌ █ ▓ ASCII-Kästen kopieren",
+  "meta_description": "Rahmenzeichen und Blockelemente kopieren und einfügen — Linien, Ecken, doppelte Rahmen, Vollblöcke und Schattierungszeichen für ASCII-Kästen. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "breadcrumb": "Rahmenzeichen & Blocksymbole",
+  "hero_h1": "Rahmenzeichen & Blocksymbole",
+  "hero_tagline": "Linien, Ecken, doppelte Rahmen und schattierte Blöcke zum Bauen von Textkästen und ASCII-Art. Klick auf ein Symbol, um es sofort zu kopieren.",
+  "intro": "Mit Rahmenzeichen und Blockelementen baust du Rahmen, Tabellen und ASCII-Art in reinem Text. Diese Bibliothek versammelt die einfachen Linienstücke und Ecken, die doppelten und fetten Rahmenvarianten sowie die vollen und teilweisen Blöcke für Schattierung und Balkendiagramme — alles reine Unicode-Zeichen, die du in Terminals, Code-Kommentare und Beiträge kopieren kannst.",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "collection",
+  "canonical": "https://ultratextgen.com/de/library/rahmenzeichen/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/box-drawing-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/rahmenzeichen/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/box-drawing-symbols/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "sections": [
+    {
+      "id": "lines-corners",
+      "label": "Linien",
+      "h2": "Linien, Ecken & Kreuzungen",
+      "intro": "Einfache waagerechte und senkrechte Linienstücke, Ecken und T-Kreuzungen.",
+      "symbols": [
+        { "char": "─", "label": "Rahmen leicht waagerecht" },
+        { "char": "│", "label": "Rahmen leicht senkrecht" },
+        { "char": "┌", "label": "Rahmen leicht nach unten und rechts" },
+        { "char": "┐", "label": "Rahmen leicht nach unten und links" },
+        { "char": "└", "label": "Rahmen leicht nach oben und rechts" },
+        { "char": "┘", "label": "Rahmen leicht nach oben und links" },
+        { "char": "├", "label": "Rahmen leicht senkrecht und rechts" },
+        { "char": "┤", "label": "Rahmen leicht senkrecht und links" },
+        { "char": "┬", "label": "Rahmen leicht nach unten und waagerecht" },
+        { "char": "┴", "label": "Rahmen leicht nach oben und waagerecht" },
+        { "char": "┼", "label": "Rahmen leicht senkrecht und waagerecht" }
+      ]
+    },
+    {
+      "id": "double-heavy",
+      "label": "Doppelt & Fett",
+      "h2": "Doppelte & fette Rahmen",
+      "intro": "Doppellinien- und fette Varianten für kräftigere Rahmen.",
+      "symbols": [
+        { "char": "═", "label": "Rahmen doppelt waagerecht" },
+        { "char": "║", "label": "Rahmen doppelt senkrecht" },
+        { "char": "╔", "label": "Rahmen doppelt nach unten und rechts" },
+        { "char": "╗", "label": "Rahmen doppelt nach unten und links" },
+        { "char": "╚", "label": "Rahmen doppelt nach oben und rechts" },
+        { "char": "╝", "label": "Rahmen doppelt nach oben und links" },
+        { "char": "╬", "label": "Rahmen doppelt senkrecht und waagerecht" },
+        { "char": "━", "label": "Rahmen fett waagerecht" },
+        { "char": "┃", "label": "Rahmen fett senkrecht" },
+        { "char": "┏", "label": "Rahmen fett nach unten und rechts" },
+        { "char": "┓", "label": "Rahmen fett nach unten und links" }
+      ]
+    },
+    {
+      "id": "blocks-shading",
+      "label": "Blöcke",
+      "h2": "Blockelemente & Schattierung",
+      "intro": "Volle, halbe und Teilblöcke sowie Schattierungszeichen für Flächen und Balken.",
+      "symbols": [
+        { "char": "█", "label": "Vollblock" },
+        { "char": "▉", "label": "Block sieben Achtel links" },
+        { "char": "▊", "label": "Block drei Viertel links" },
+        { "char": "▌", "label": "Halbblock links" },
+        { "char": "▎", "label": "Block ein Viertel links" },
+        { "char": "▏", "label": "Block ein Achtel links" },
+        { "char": "▀", "label": "Oberer Halbblock" },
+        { "char": "▄", "label": "Unterer Halbblock" },
+        { "char": "░", "label": "Leichte Schattierung" },
+        { "char": "▒", "label": "Mittlere Schattierung" },
+        { "char": "▓", "label": "Dunkle Schattierung" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "box-drawing-collections",
+    "label": "Rahmen-Sammlungen",
+    "h2": "Fertige Rahmen & Trennlinien",
+    "intro": "Fertige waagerechte Trennlinien und Rahmenkanten aus Rahmenzeichen — kopiere die ganze Zeile mit einem Klick."
+  },
+  "collection_container_id": "boxDrawingCollectionsContainer",
+  "collections": [
+    { "name": "Leichte Trennlinie", "flags": ["────────────"], "defaultFormat": "inline" },
+    { "name": "Fette Trennlinie", "flags": ["━━━━━━━━━━━━"], "defaultFormat": "inline" },
+    { "name": "Doppelte Trennlinie", "flags": ["════════════"], "defaultFormat": "inline" },
+    { "name": "Leichter oberer Rand", "flags": ["┌──────────┐"], "defaultFormat": "inline" },
+    { "name": "Doppelter oberer Rand", "flags": ["╔══════════╗"], "defaultFormat": "inline" },
+    { "name": "Schattierter Verlaufsbalken", "flags": ["░▒▓█▓▒░"], "defaultFormat": "inline" }
+  ],
+  "related": [
+    {
+      "href": "/de/library/ascii-tabelle/",
+      "title": "ASCII-Tabelle",
+      "desc": "Druckbare ASCII-Zeichen mit Dezimal-, Hex-, Binär- und Oktalcodes."
+    },
+    {
+      "href": "/de/library/aesthetische-symbole/",
+      "title": "Ästhetische Symbole",
+      "desc": "Funkel, Herzen, Blüten und Trenner für dekorative Bios."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ]
+}

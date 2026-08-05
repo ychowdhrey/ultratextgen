@@ -1,0 +1,117 @@
+{
+  "lang": "nl",
+  "page_type": "symbol",
+  "home_url": "https://ultratextgen.com/nl/",
+  "crumb_home": "Home",
+  "crumb_library": "Symbolen",
+  "library_url": "https://ultratextgen.com/nl/symbol/",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "cta": "Gebruik UltraTextGen om platte tekst om te zetten in vet, cursief, sierlijk en meer dan 100 andere Unicode-lettertypes — gratis en direct.",
+  "slug": "rolstoel-symbool",
+  "title": "Rolstoel-symbool: Kopieer en Plak ♿ — het Internationale Toegankelijkheidsteken",
+  "meta_description": "Kopieer en plak het rolstoelsymbool (♿), het Internationale Toegankelijkheidsteken, en het gedocumenteerde debat over het klassieke ontwerp vs. de 'dynamische' Accessible-Icon-herziening. Klik op een teken om het direct te kopiëren.",
+  "canonical": "https://ultratextgen.com/nl/symbol/rolstoel-symbool/",
+  "breadcrumb": "Rolstoel-symbool",
+  "hero_h1": "Rolstoel-symbool",
+  "hero_tagline": "Het blauw-witte Internationale Toegankelijkheidsteken (♿), ontworpen in 1968 — en het nog altijd onopgeloste debat over de 'dynamische' Accessible-Icon-herziening. Klik op een teken om het direct te kopiëren.",
+  "intro": "Het rolstoelsymbool (♿, U+267F) is officieel het International Symbol of Access (ISA) — het teken dat toegankelijke parkeerplaatsen, ingangen, toiletten en zitplaatsen wereldwijd markeert. Het werd in 1968 ontworpen en in 1974 door de Verenigde Naties aangenomen. Sinds 2010 is een herzien, 'dynamisch' ontwerp — met een figuur die voorovergebogen in actieve beweging is — overgenomen door verschillende Amerikaanse staten en andere rechtsgebieden, terwijl het formeel is afgewezen op Amerikaans federaal niveau en door ISO — wat het tot een van de weinige wereldwijd erkende symbolen maakt waarvan het standaardontwerp vandaag nog actief ter discussie staat.",
+  "hreflang": [
+    {
+      "lang": "en",
+      "href": "https://ultratextgen.com/symbol/wheelchair-symbol/"
+    },
+    {
+      "lang": "nl",
+      "href": "https://ultratextgen.com/nl/symbol/rolstoel-symbool/"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://ultratextgen.com/symbol/wheelchair-symbol/"
+    }
+  ],
+  "sections": [
+    {
+      "id": "rolstoel-symbool",
+      "label": "Rolstoel",
+      "h2": "Rolstoel-symbool (Internationaal Toegankelijkheidsteken)",
+      "intro": "Het Unicode-rolstoelteken (U+267F) — de glyph die het klassieke Internationale Toegankelijkheidsteken op de meeste systemen weergeeft. Klaar om te plakken in documenten, bewegwijzeringsnotities of bio's.",
+      "symbols": [
+        {
+          "char": "♿",
+          "label": "Rolstoel-symbool"
+        },
+        {
+          "char": "♿️",
+          "label": "Rolstoel-symbool (Emoji)"
+        }
+      ]
+    },
+    {
+      "id": "toegankelijkheid-mobiliteit",
+      "label": "Toegankelijkheid & Mobiliteit",
+      "h2": "Toegankelijkheids- & Mobiliteitssymbolen",
+      "intro": "Verwante Unicode-symbolen voor mobiliteitshulpmiddelen en andere toegankelijkheidsbehoeften — elk een apart teken op zich, geen variant van het rolstoelteken.",
+      "symbols": [
+        {
+          "char": "🦽",
+          "label": "Handmatige Rolstoel"
+        },
+        {
+          "char": "🦼",
+          "label": "Elektrische Rolstoel"
+        },
+        {
+          "char": "🦯",
+          "label": "Blindenstok"
+        },
+        {
+          "char": "🧏",
+          "label": "Dove Persoon"
+        }
+      ]
+    },
+    {
+      "id": "gezondheid-medisch",
+      "label": "Gezondheid & Medisch",
+      "h2": "Verwante Gezondheids- & Medische Symbolen",
+      "intro": "Gezondheids-, zorg- en voorzieningssymbolen waar het toegankelijkheidsteken vaak naast voorkomt op plattegronden en bewegwijzering.",
+      "symbols": [
+        {
+          "char": "⚕",
+          "label": "Medisch Symbool (Staf van Asclepius)"
+        },
+        {
+          "char": "➕",
+          "label": "Plusteken"
+        },
+        {
+          "char": "🏥",
+          "label": "Ziekenhuis"
+        },
+        {
+          "char": "🚑",
+          "label": "Ambulance"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/medical-symbols/",
+      "title": "Medical Symbols",
+      "desc": "Staf van Asclepius, medische kruizen, apotheektekens en gezondheids- en noodsymbolen in één overzicht (Engelstalige bibliotheek)."
+    },
+    {
+      "href": "/nl/symbol/autisme-symbool/",
+      "title": "Autisme-symbool",
+      "desc": "Nog een toegankelijkheidsgerelateerd symbool met een echt, gedocumenteerd en nog altijd onopgelost gemeenschapsdebat over het ontwerp."
+    },
+    {
+      "href": "/library/traffic-road-sign-symbols/",
+      "title": "Traffic & Road Sign Symbols",
+      "desc": "Parkeer-, waarschuwings- en richtingaanwijzende verkeersbordsymbolen — de bewegwijzeringscontext waarin het toegankelijkheidsteken voorkomt (Engelstalige bibliotheek)."
+    }
+  ]
+}

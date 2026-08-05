@@ -1,0 +1,66 @@
+{
+  "slug": "underscore-symbol",
+  "page_type": "symbol",
+  "title": "Underscore: Copy & Paste _ ＿ ‾ — From Typewriter Underlining to snake_case",
+  "meta_description": "Copy and paste the underscore (_, U+005F LOW LINE), plus its fullwidth ＿ and overline ‾ cousins, and see how a typewriter underlining trick became snake_case and the space-safe username character. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/underscore-symbol/",
+  "breadcrumb": "Underscore",
+  "hero_h1": "Underscore (_)",
+  "hero_tagline": "The plain keyboard underscore (_) that began as a typewriter underlining trick and became snake_case — the one space-safe character usernames, emails, and filenames allow — shown here beside its fullwidth ＿, doubled ‗, and overline ‾ relatives. Click any symbol to copy it instantly.",
+  "intro": "The underscore, or low line (_, U+005F LOW LINE), is the horizontal stroke that sits on the baseline in Unicode's Basic Latin block, where it carries the general category Connector Punctuation. It began as a purely mechanical trick: on a typewriter you underlined a word by typing it, backspacing the carriage to the start, and overtyping the same span with the underscore key — a dedicated key present on machines such as the 1881 Caligraph. The character passed into ASCII in 1967, taking code point 95 (0x5F) from the left-arrow (←) it replaced, after IBM's EBCDIC had already added it in 1964 as the \"break character.\" Programmers then repurposed it as a word separator — the underscores-as-spaces style traces to C in the late 1960s and to The C Programming Language (1978), though the name \"snake_case\" wasn't coined until the Ruby community used it around 2004 (Python's PEP 8 still calls it \"lower_case_with_underscores\"). Today it is the one space-safe character allowed in usernames, email local-parts, filenames, and URL slugs, and Markdown reads _single underscores_ as italic and __double__ as bold. It's routinely mixed up with the hyphen (-, U+002D) and confused with its wider cousins, the fullwidth ＿ (U+FF3F) and double low line ‗ (U+2017).",
+  "date_published": "2026-07-18",
+  "date_modified": "2026-07-18",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "the-underscore",
+      "label": "The Underscore",
+      "h2": "The Underscore, Fullwidth & Doubled",
+      "intro": "The plain keyboard low line and its two width variants — the fullwidth form used in East Asian typesetting and the doubled spacing underscore. Ready to paste anywhere.",
+      "symbols": [
+        { "char": "_", "label": "Underscore / Low Line (U+005F)" },
+        { "char": "＿", "label": "Fullwidth Low Line (U+FF3F)" },
+        { "char": "‗", "label": "Double Low Line (U+2017)" }
+      ]
+    },
+    {
+      "id": "overline",
+      "label": "The Overline",
+      "h2": "The Overline: the Same Stroke, Above the Text",
+      "intro": "The overline is the underscore's mirror image — the identical horizontal stroke placed above the text instead of below it, which is why the two get confused as opposites. The macron is the short bar people often type when they mean an overline.",
+      "symbols": [
+        { "char": "‾", "label": "Overline / Spacing Overscore (U+203E)" },
+        { "char": "¯", "label": "Macron (U+00AF)" }
+      ]
+    },
+    {
+      "id": "confused-hyphen",
+      "label": "Vs. Hyphen & Dash",
+      "h2": "Underscore vs. the Hyphen & Dash Family",
+      "intro": "In URLs, usernames, and filenames an underscore and a hyphen are constantly swapped for each other — but they sit at different heights and different code points, and each does a different job.",
+      "symbols": [
+        { "char": "-", "label": "Hyphen-Minus / Keyboard Hyphen (U+002D)" },
+        { "char": "‐", "label": "Hyphen (U+2010)" },
+        { "char": "–", "label": "En Dash (U+2013)" },
+        { "char": "−", "label": "Minus Sign (U+2212)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/keyboard-symbols/",
+      "title": "Keyboard Symbols",
+      "desc": "The underscore, hyphen, asterisk, and the rest of the punctuation and shift-key characters on a standard keyboard."
+    },
+    {
+      "href": "/library/punctuation-symbols/",
+      "title": "Punctuation Symbols",
+      "desc": "Dashes, brackets, quotation marks, and the everyday punctuation of Unicode in one reference."
+    },
+    {
+      "href": "/symbol/at-symbol/",
+      "title": "At Sign (@)",
+      "desc": "The other special character at the heart of email addresses and social handles, where the underscore is the space-safe separator."
+    }
+  ]
+}

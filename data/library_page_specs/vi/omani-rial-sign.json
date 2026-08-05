@@ -1,0 +1,60 @@
+{
+  "slug": "omani-rial-sign",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Rial Oman: Sao Chép & Dán ⃄ — Ký Hiệu Tiền Tệ Mới Của Oman, Đã Chốt Để Xuất Bản Trong Unicode 18.0",
+  "meta_description": "Ký hiệu rial Oman (⃄, U+20C4) được Ngân hàng Trung ương Oman công bố tháng 11 năm 2025, đã chốt để xuất bản trong Unicode 18.0, dự kiến tháng 9 năm 2026 — chưa có trên bất kỳ bàn phím nào. Thiết kế, lịch sử và tình trạng hiện tại.",
+  "canonical": "https://ultratextgen.com/vi/symbol/omani-rial-sign/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Rial Oman",
+  "hero_h1": "Ký Hiệu Rial Oman",
+  "hero_tagline": "Ký hiệu tiền tệ chính thức của Oman, ra mắt đúng dịp Quốc khánh 2025 và đã chốt để xuất bản trong Unicode 18.0 — đã được phê duyệt, nhưng vẫn đi trước cả bàn phím lẫn phông chữ.",
+  "intro": "Ký hiệu rial Oman (⃄, U+20C4) là ký hiệu tiền tệ chính thức của Ngân hàng Trung ương Oman, được công bố trước công chúng vào ngày 19 tháng 11 năm 2025, trùng dịp Quốc khánh Oman. Thiết kế của nó được xây dựng từ các chữ cái Ả Rập cách điệu — ʿayn (ع) và rāʾ (ر), chữ cái đầu và chữ cái thứ ba của từ «rial» — bị gạch ngang bởi hai vạch theo phong cách mà nhiều ký hiệu tiền tệ hiện đại khác cũng dùng. Thống đốc Ngân hàng Trung ương Ahmed bin Jafar Al-Musallami mô tả việc thông qua ký hiệu này là một bước đi chiến lược nhằm củng cố vị thế của Oman như một trung tâm tài chính khu vực và giúp đồng rial dễ nhận diện hơn trên các nền tảng quốc tế, thương mại và kỹ thuật số. Ký hiệu này được gửi đề nghị mã hóa Unicode cùng lúc với các ký hiệu dirham UAE và rufiyaa Maldives, và tính đến thời điểm viết bài này mang trạng thái «white» trong tài liệu quy trình nội bộ của Unicode — nghĩa là đã chốt để xuất bản, chỉ còn chờ ISO phê duyệt, với thời điểm xuất bản chính thức dự kiến cùng phần còn lại của Unicode 18.0 vào tháng 9 năm 2026. Hiện chưa có hệ điều hành, phông chữ hay bàn phím nào hỗ trợ sẵn ký hiệu này. Lựa chọn thực tế duy nhất hiện có là một mô-đun phần mềm doanh nghiệp (ứng dụng ERP Odoo) nhúng sẵn phông chữ để hiển thị ký hiệu cho các công ty cần dùng ngay bây giờ — một giải pháp hẹp và mang tính thực dụng hơn so với bộ công cụ mã nguồn mở đã được xây dựng cho ký hiệu dirham UAE.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/omani-rial-sign/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/omani-rial-sign/" }
+  ],
+  "sections": [
+    {
+      "id": "omani-rial-sign",
+      "label": "Ký Hiệu Rial Oman",
+      "h2": "Ký Hiệu Rial Oman",
+      "intro": "Ký tự đã được xác nhận — có thể sao chép ngay hôm nay theo mã điểm, dù chưa phông chữ nào hiển thị được nó theo cách gốc.",
+      "symbols": [
+        { "char": "⃄", "label": "Ký Hiệu Rial Oman (U+20C4, đã chốt để xuất bản)" }
+      ]
+    },
+    {
+      "id": "other-new-gulf-currency-symbols",
+      "label": "Ký Hiệu Vùng Vịnh Mới Khác",
+      "h2": "Các Ký Hiệu Tiền Tệ Mới Khác Trong Bản Phát Hành Này",
+      "intro": "Rial Oman không phải ký hiệu tiền tệ mới duy nhất xuất hiện trong Unicode 18.0 — hai đồng tiền khu vực khác cũng nhận được ký hiệu riêng trong cùng bản beta.",
+      "symbols": [
+        { "char": "⃃", "label": "Ký Hiệu Dirham UAE (U+20C3)" },
+        { "char": "⃂", "label": "Ký Hiệu Rufiyaa Maldives (U+20C2)" }
+      ]
+    },
+    {
+      "id": "gulf-currency-a-version-ahead",
+      "label": "Sớm Hơn Một Phiên Bản",
+      "h2": "Ký Hiệu Tiền Tệ Vùng Vịnh Ra Mắt Sớm Hơn Một Phiên Bản",
+      "intro": "Ký hiệu riyal Ả Rập Saudi đã đi qua con đường tương tự sớm hơn hẳn một phiên bản Unicode — đã chính thức từ Unicode 17.0, không chỉ dừng ở bản beta.",
+      "symbols": [
+        { "char": "⃁", "label": "Ký Hiệu Riyal Saudi (U+20C1, chính thức từ Unicode 17.0)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/library/currency-symbols/", "title": "Ký Hiệu Tiền Tệ", "desc": "Mọi ký hiệu tiền tệ thế giới mà bạn đã có thể sao chép và dán ngay hôm nay." },
+    { "href": "/vi/symbol/dirham-sign/", "title": "Ký Hiệu Dirham", "desc": "Ký hiệu tiền tệ mới của UAE, ra mắt trong cùng bản beta Unicode 18.0." },
+    { "href": "/vi/symbol/saudi-riyal-sign/", "title": "Ký Hiệu Riyal Saudi", "desc": "Một ký hiệu tiền tệ vùng Vịnh đã chính thức, đi trước một phiên bản Unicode." }
+  ]
+}

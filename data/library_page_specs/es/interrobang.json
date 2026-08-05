@@ -1,0 +1,79 @@
+{
+  "lang": "es",
+  "slug": "interrobang",
+  "page_type": "symbol",
+  "title": "Interrobang: Copiar y Pegar ‽ — Acuñado en 1962, Fue Brevemente una Tecla Real de Máquina de Escribir",
+  "meta_description": "Copia y pega el interrobang (‽) y el interrobang invertido (⸘) — el signo que fusiona ? y ! ideado por el publicista Martin Speckter en 1962. Haz clic en cualquier símbolo para copiarlo al instante.",
+  "canonical": "https://ultratextgen.com/es/symbol/interrobang/",
+  "breadcrumb": "Interrobang",
+  "hero_h1": "Interrobang (‽)",
+  "hero_tagline": "El interrobang (‽) que fusiona el «?» y el «!» en un solo signo para una pregunta de asombro — ideado por el publicista Martin Speckter en 1962 y vendido brevemente como una tecla real de máquina de escribir — junto a su gemelo de apertura al estilo español, el interrobang invertido (⸘). Haz clic en cualquier símbolo para copiarlo al instante.",
+  "intro": "El interrobang (‽, Unicode U+203D) es un único glifo que fusiona el signo de interrogación con el de exclamación, pensado para puntuar una frase que pregunta y exclama a la vez — «¿¡Que hiciste qué!?». El ejecutivo de publicidad estadounidense Martin K. Speckter lo propuso en 1962 en un artículo titulado «Making a New Point, or, How About That…», publicado en TYPEtalks, la revista que él mismo dirigía; construyó el nombre a partir de interrogatio (en latín, una pregunta retórica) y bang (jerga de imprenta para el signo de exclamación), descartando otros candidatos como «exclamaquest» o «exclarotive». Llegó a convertirse brevemente en hardware real: la tipografía Americana de Richard Isbell, de 1965, lo incluía, algunas máquinas de escribir Remington ofrecían una tecla de interrobang en 1968, y en la década de 1970 llegaron teclas de recambio para máquinas Smith-Corona — pero nunca entró en el teclado estándar y fue perdiendo uso hacia finales de los setenta. Unicode lo sigue codificando, junto a su imagen especular, el interrobang invertido (⸘, U+2E18, añadido en Unicode 5.1 en 2008), diseñado para abrir una frase igual que el ¿ y el ¡ abren preguntas y exclamaciones en español. No lo confundas con el signo de interrogación reflejo (⸮), una marca retórica distinta de 1575 con su propia página.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/interrobang/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/interrobang/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/interrobang/" }
+  ],
+  "sections": [
+    {
+      "id": "el-interrobang",
+      "label": "El Interrobang",
+      "h2": "El Interrobang — ‽ y ⸘",
+      "intro": "El signo en sí y su imagen especular: el interrobang estándar que cierra una pregunta de asombro, y la forma invertida construida para abrirla.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang (U+203D) — Interrogación y Exclamación en un Solo Glifo" },
+        { "char": "⸘", "label": "Interrobang Invertido (U+2E18) — el Gemelo de Apertura de Frase" }
+      ]
+    },
+    {
+      "id": "signos-que-fusiona",
+      "label": "Lo que Fusiona",
+      "h2": "El Signo de Interrogación y el de Exclamación que Combina",
+      "intro": "El interrobang comprime estos dos signos cotidianos en uno solo. Cuando un teclado no puede producirlo, la gente teclea el par — o recurre a las formas combinadas que Unicode ya trae listas.",
+      "symbols": [
+        { "char": "?", "label": "Signo de Interrogación (U+003F)" },
+        { "char": "!", "label": "Signo de Exclamación (U+0021)" },
+        { "char": "⁉", "label": "Signo de Exclamación e Interrogación (U+2049)" },
+        { "char": "⁈", "label": "Signo de Interrogación y Exclamación (U+2048)" },
+        { "char": "⁇", "label": "Doble Signo de Interrogación (U+2047)" }
+      ]
+    },
+    {
+      "id": "puntuacion-de-apertura",
+      "label": "Puntuación de Apertura",
+      "h2": "Por Qué Existe el Interrobang Invertido",
+      "intro": "El español y lenguas emparentadas abren una pregunta con ¿ y una exclamación con ¡; el interrobang invertido ⸘ fusiona ese par de apertura, reflejando al principio de la frase lo que ‽ hace al final. El signo de interrogación reflejo ⸮ es una marca totalmente distinta — consulta su propia página.",
+      "symbols": [
+        { "char": "¿", "label": "Signo de Interrogación Invertido (U+00BF)" },
+        { "char": "¡", "label": "Signo de Exclamación Invertido (U+00A1)" },
+        { "char": "⸘", "label": "Interrobang Invertido (U+2E18)" },
+        { "char": "⸮", "label": "Signo de Interrogación Reflejo (U+2E2E)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/es/library/simbolos-de-puntuacion/",
+      "title": "Símbolos de Puntuación",
+      "desc": "El conjunto completo de puntuación cotidiana y especializada en Unicode, desde rayas y corchetes hasta marcas poco comunes como el interrobang."
+    },
+    {
+      "href": "/es/symbol/interrogacion-reflexa/",
+      "title": "Interrogación Reflexa (⸮)",
+      "desc": "Una marca retórica histórica distinta — el signo de interrogación reflejo de 1575, no una mezcla de interrogación y exclamación como el interrobang."
+    },
+    {
+      "href": "/es/symbol/raya/",
+      "title": "Raya (—)",
+      "desc": "Otro signo de puntuación con una historia intensa y una familia de parecidos con los que la gente lo confunde sin parar."
+    },
+    {
+      "href": "/es/symbol/calderon/",
+      "title": "Calderón (¶)",
+      "desc": "La marca de párrafo — un símbolo tipográfico y editorial con su propia y larga historia impresa."
+    }
+  ]
+}

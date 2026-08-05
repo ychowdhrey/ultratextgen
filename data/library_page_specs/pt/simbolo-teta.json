@@ -1,0 +1,85 @@
+{
+  "slug": "simbolo-teta",
+  "lang": "pt",
+  "page_type": "symbol",
+  "title": "Símbolo Teta: Copiar e Colar θ Θ ϑ — a \"Letra da Morte\" da Grécia Antiga",
+  "meta_description": "Copie e cole o símbolo teta — o θ minúsculo, o Θ maiúsculo e a variante matemática de laço aberto ϑ — a letra que os gregos antigos marcavam nas cédulas para votar por uma condenação à morte. Clique em qualquer símbolo para copiar na hora.",
+  "canonical": "https://ultratextgen.com/pt/symbol/simbolo-teta/",
+  "breadcrumb": "Símbolo Teta",
+  "hero_h1": "Símbolo Teta",
+  "hero_tagline": "O θ minúsculo que marca um ângulo na trigonometria, o Θ maiúsculo da notação Big-Theta de complexidade, e a variante matemática de laço aberto ϑ — a mesma letra que os atenienses clássicos riscavam numa cédula para votar pela morte. Clique em qualquer símbolo para copiar na hora.",
+  "intro": "Teta é a oitava letra do alfabeto grego, e seu glifo minúsculo θ (U+03B8, GREEK SMALL LETTER THETA) — um círculo cruzado por uma barra horizontal — carrega uma das histórias mais sombrias entre todas as letras. Na Antiguidade Clássica, teta era a «letra da morte»: representava θάνατος (thánatos, «morte»), e jurados atenienses podiam riscá-la numa cédula ou caco de cerâmica para votar pela condenação ou execução de um réu — um uso tão famoso que o poeta romano Ênio teria chamado teta de a letra mais azarada de todas. A forma maiúscula Θ (U+0398) e uma variante distinta de laço aberto ϑ (U+03D1, GREEK THETA SYMBOL) completam a família — ϑ é um glifo de estilo cursivo usado em parte da tipografia de física e matemática, não uma letra separada. Hoje o trabalho de teta é bem mais pacífico: o θ minúsculo é o símbolo padrão para um ângulo desconhecido ou medido em trigonometria e geometria, enquanto o Θ maiúsculo nomeia a notação Big-Theta, o «limite justo» da análise de algoritmos que Donald Knuth formalizou em seu artigo de 1976, «Big Omicron and Big Omega and Big Theta». No sistema de numerais gregos, teta também carrega o valor 9.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pt/",
+  "crumb_home": "Início",
+  "crumb_library": "Símbolos",
+  "library_url": "https://ultratextgen.com/pt/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/theta-symbol/" },
+    { "lang": "pt", "href": "https://ultratextgen.com/pt/symbol/simbolo-teta/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/theta-symbol/" }
+  ],
+  "cta": "Use o UltraTextGen para transformar texto comum em negrito, itálico, cursiva e mais de 100 estilos de fonte Unicode — grátis e na hora.",
+  "sections": [
+    {
+      "id": "the-theta-symbol",
+      "label": "O Símbolo Teta",
+      "h2": "O Símbolo Teta — θ, Θ e ϑ",
+      "intro": "Teta aparece em três glifos que as pessoas realmente colam: o θ minúsculo do dia a dia, o Θ maiúsculo e a variante de laço aberto ϑ, reservada para matemática e física. Uma quarta forma, maiúscula e barrada, existe puramente como símbolo matemático.",
+      "symbols": [
+        { "char": "θ", "label": "Letra Grega Minúscula Teta (U+03B8) — o Símbolo de Ângulo" },
+        { "char": "Θ", "label": "Letra Grega Maiúscula Teta (U+0398) — Notação Big-Theta" },
+        { "char": "ϑ", "label": "Símbolo Grego Teta (U+03D1) — a Variante Matemática de Laço Aberto" },
+        { "char": "ϴ", "label": "Símbolo Grego Teta Maiúsculo (U+03F4) — a Variante Barrada" }
+      ]
+    },
+    {
+      "id": "theta-in-math",
+      "label": "Matemática e Ciência",
+      "h2": "Teta na Matemática e na Ciência da Computação",
+      "intro": "Duas funções bem diferentes dividem a letra. O θ minúsculo é o nome preferido para um ângulo; o Θ maiúsculo é o limite justo na análise de complexidade, entre o Big-O (limite superior) e o Big-Omega (limite inferior).",
+      "symbols": [
+        { "char": "θ", "label": "Teta Minúsculo (U+03B8) — Ângulo em Trigonometria e Geometria" },
+        { "char": "Θ", "label": "Teta Maiúsculo (U+0398) — Big-Theta, o Limite Justo" },
+        { "char": "Ω", "label": "Ômega Maiúsculo (U+03A9) — Big-Omega, o Irmão do Limite Inferior" },
+        { "char": "ϑ", "label": "Símbolo Teta (U+03D1) — a Variante Usada na Tipografia de Física" }
+      ]
+    },
+    {
+      "id": "related-greek-letters",
+      "label": "Letras Gregas",
+      "h2": "Letras Gregas Relacionadas",
+      "intro": "Teta é a 8ª letra do alfabeto grego. Aqui estão as vizinhas mais buscadas e copiadas junto com ela.",
+      "symbols": [
+        { "char": "Ω", "label": "Letra Grega Maiúscula Ômega" },
+        { "char": "Δ", "label": "Letra Grega Maiúscula Delta" },
+        { "char": "π", "label": "Letra Grega Minúscula Pi" },
+        { "char": "α", "label": "Letra Grega Minúscula Alfa" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/pt/library/alfabeto-grego/",
+      "title": "Alfabeto Grego",
+      "desc": "O alfabeto grego completo, em maiúsculas, minúsculas e variantes matemáticas, para copiar e colar."
+    },
+    {
+      "href": "/pt/library/simbolos-matematicos/",
+      "title": "Símbolos Matemáticos",
+      "desc": "Ângulos, operadores e as letras gregas, como teta, que completam uma equação."
+    },
+    {
+      "href": "/pt/symbol/simbolo-omega/",
+      "title": "Símbolo Ômega",
+      "desc": "A irmã de teta na notação de complexidade: Θ é o limite justo, Ω o limite inferior na análise de algoritmos."
+    },
+    {
+      "href": "/pt/symbol/simbolo-delta/",
+      "title": "Símbolo Delta",
+      "desc": "Outra letra grega isolada com uma vida matemática profunda — mudança, diferença e o discriminante."
+    }
+  ]
+}

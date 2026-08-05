@@ -1,0 +1,71 @@
+{
+  "slug": "czarny-ksiezyc-lilith",
+  "lang": "pl",
+  "page_type": "symbol",
+  "title": "Czarny Księżyc Lilith: Skopiuj ⚸ — Znaczenie w Astrologii",
+  "meta_description": "Skopiuj symbol Czarnego Księżyca Lilith (⚸) — punkt na orbicie Księżyca, a nie obiekt — plus inne symbole księżycowe i węzłów używane obok niego na wykresach astrologicznych.",
+  "canonical": "https://ultratextgen.com/pl/symbol/czarny-ksiezyc-lilith/",
+  "breadcrumb": "Czarny Księżyc Lilith",
+  "hero_h1": "Symbol Czarnego Księżyca Lilith",
+  "hero_tagline": "⚸ U+26B8 — astrologiczny glif matematycznego punktu na orbicie Księżyca, a nie planety, księżyca ani asteroidy. Kliknij dowolny symbol, aby skopiować go od razu.",
+  "intro": "Czarny Księżyc Lilith (⚸, U+26B8, oficjalnie BLACK MOON LILITH) w ogóle nie oznacza fizycznego ciała — oznacza najdalszy punkt eliptycznej orbity Księżyca wokół Ziemi, miejsce, w którym Księżyc znajduje się najdalej, znane w mechanice orbitalnej jako apogeum księżycowe. Ponieważ sama orbita Księżyca powoli się obraca, ten punkt przesuwa się przez zodiak w cyklu trwającym mniej więcej dziewięć lat, a astrolodzy śledzą go w horoskopie tak samo, jak śledziliby planetę. Nazwa zapożyczona jest od Lilith, postaci z mezopotamskiego, a później żydowskiego folkloru, kojarzonej z niezależnością i stłumioną albo cienistą stroną osobowości — motyw, który astrolodzy przenieśli na to, co ma reprezentować ten punkt. To coś innego niż asteroida 1181 Lilith, prawdziwa mała planeta z własnym (nieunikodowym) glifem astrologicznym; Unicode dodał ⚸ w wersji 7.0 (2014 rok) jako część szerszej partii symboli astrologicznych.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Symbole",
+  "library_url": "https://ultratextgen.com/pl/symbol/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/black-moon-lilith/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/symbol/czarny-ksiezyc-lilith/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/black-moon-lilith/" }
+  ],
+  "sections": [
+    {
+      "id": "czarny-ksiezyc-lilith",
+      "label": "Czarny Księżyc Lilith",
+      "h2": "Czarny Księżyc Lilith i Węzły Księżycowe",
+      "intro": "Symbole punktów orbitalnych, które horoskopy nanoszą tak samo, jak nanosi się planety.",
+      "symbols": [
+        { "char": "⚸", "label": "Czarny Księżyc Lilith" },
+        { "char": "☊", "label": "Węzeł Północny (Wstępujący)" },
+        { "char": "☋", "label": "Węzeł Południowy (Zstępujący)" }
+      ]
+    },
+    {
+      "id": "fazy-ksiezyca",
+      "label": "Fazy Księżyca",
+      "h2": "Symbole Faz Księżyca",
+      "intro": "Glify Księżyca, obok których symbol Lilith najczęściej pojawia się na wykresach i w podpisach.",
+      "symbols": [
+        { "char": "🌑", "label": "Nów" },
+        { "char": "🌓", "label": "Pierwsza Kwadra" },
+        { "char": "🌕", "label": "Pełnia" },
+        { "char": "🌗", "label": "Ostatnia Kwadra" },
+        { "char": "☽", "label": "Pierwsza Kwadra (Glif Astrologiczny)" },
+        { "char": "☾", "label": "Ostatnia Kwadra (Glif Astrologiczny)" }
+      ]
+    },
+    {
+      "id": "symbole-astrologiczne",
+      "label": "Glify Astrologiczne",
+      "h2": "Symbole Planet Astrologicznych",
+      "intro": "Standardowe glify planetarne, które horoskop urodzeniowy nanosi obok Lilith i węzłów.",
+      "symbols": [
+        { "char": "☉", "label": "Słońce" },
+        { "char": "☿", "label": "Merkury" },
+        { "char": "♀", "label": "Wenus" },
+        { "char": "♂", "label": "Mars" },
+        { "char": "♃", "label": "Jowisz" },
+        { "char": "♄", "label": "Saturn" }
+      ]
+    }
+  ],
+  "cta": "Skorzystaj z generatora UltraTextGen, aby zamienić zwykły tekst na pogrubiony, kursywą, gotycki i dziesiątki innych stylów Unicode — za darmo i od razu gotowe do skopiowania.",
+  "related": [
+    { "href": "/library/zodiac-symbols/", "title": "Zodiac Symbols", "desc": "Dwanaście glifów znaków zodiaku, względem których odczytuje się położenie Czarnego Księżyca Lilith." },
+    { "href": "/symbol/star-of-david/", "title": "Star of David", "desc": "Kolejny symbol, którego prawdziwa historia jest cichsza i późniejsza niż znaczenie, jakie ma dziś." },
+    { "href": "/pl/symbol/pentagram/", "title": "Pentagram", "desc": "Pięcioramienna gwiazda z własną, długą i sporną historią symboliczną, opisaną bez stawania po żadnej ze stron." }
+  ]
+}

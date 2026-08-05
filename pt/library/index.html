@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<script async src="https://fundingchoicesmessages.google.com/i/pub-8242324164413945?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<script>(function(){'use strict';var aa=typeof Object.create=="function"?Object.create:function(a){function b(){}b.prototype=a;return new b},ba=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function ca(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var da=ca(this);function l(a,b){if(b)a:{var c=da;a=a.split(".");for(var e=0;e<a.length-1;e++){var d=a[e];if(!(d in c))break a;c=c[d]}a=a[a.length-1];e=c[a];b=b(e);b!=e&&b!=null&&ba(c,a,{configurable:!0,writable:!0,value:b})}}var m;
+if(typeof Object.setPrototypeOf=="function")m=Object.setPrototypeOf;else{var n;a:{var ea={a:!0},fa={};try{fa.__proto__=ea;n=fa.a;break a}catch(a){}n=!1}m=n?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}var ha=m;
+function p(a,b){a.prototype=aa(b.prototype);a.prototype.constructor=a;if(ha)ha(a,b);else for(var c in b)if(c!="prototype")if(Object.defineProperties){var e=Object.getOwnPropertyDescriptor(b,c);e&&Object.defineProperty(a,c,e)}else a[c]=b[c];a.C=b.prototype}function ia(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}
+function q(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:ia(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}function ja(a){for(var b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function ka(a){return la(a,a)}function la(a,b){a.raw=b;Object.freeze&&(Object.freeze(a),Object.freeze(b));return a}
+function ma(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b}l("globalThis",function(a){return a||da});l("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});l("Number.isFinite",function(a){return a?a:function(b){return typeof b!=="number"?!1:!isNaN(b)&&b!==Infinity&&b!==-Infinity}});l("Number.MAX_SAFE_INTEGER",function(){return 9007199254740991});l("Number.MIN_SAFE_INTEGER",function(){return-9007199254740991});
+l("Number.isInteger",function(a){return a?a:function(b){return Number.isFinite(b)?b===Math.floor(b):!1}});l("Number.isSafeInteger",function(a){return a?a:function(b){return Number.isInteger(b)&&Math.abs(b)<=Number.MAX_SAFE_INTEGER}});l("Math.trunc",function(a){return a?a:function(b){b=Number(b);if(isNaN(b)||b===Infinity||b===-Infinity||b===0)return b;var c=Math.floor(Math.abs(b));return b<0?-c:c}});l("Number.isNaN",function(a){return a?a:function(b){return typeof b==="number"&&isNaN(b)}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var t=this||self;function na(a){t.setTimeout(function(){throw a;},0)};var v,x;a:{for(var oa=["CLOSURE_FLAGS"],y=t,z=0;z<oa.length;z++)if(y=y[oa[z]],y==null){x=null;break a}x=y}var pa=x&&x[748402147];v=pa!=null?pa:!0;var qa=void 0;function A(){return typeof BigInt==="function"};var B=typeof Symbol==="function"&&typeof Symbol()==="symbol";function C(a,b,c){return typeof Symbol==="function"&&typeof Symbol()==="symbol"?(c===void 0?0:c)&&Symbol.for&&a?Symbol.for(a):a!=null?Symbol(a):Symbol():b}var ra=C("jas",void 0,!0),sa=C(void 0,"0actk"),E=C("m_m","B",!0);var ta={u:{value:0,configurable:!0,writable:!0,enumerable:!1}},ua=Object.defineProperties,F=B?ra:"u";function va(a,b){B||F in a||ua(a,ta);a[F]|=b}function G(a,b){B||F in a||ua(a,ta);a[F]=b};var H={};function I(a,b){return b===void 0?a.h!==J&&!!(2&(a.g[F]|0)):!!(2&b)&&a.h!==J}var J={};function K(a){a.A=!0;return a};var wa=K(function(a){return typeof a==="number"}),xa=K(function(a){return typeof a==="string"}),ya=K(function(a){return typeof a==="boolean"});var L=typeof t.BigInt==="function"&&typeof t.BigInt(0)==="bigint";function M(a){var b=a;if(xa(b)){if(!/^\s*(?:-?[1-9]\d*|0)?\s*$/.test(b))throw Error(String(b));}else if(wa(b)&&!Number.isSafeInteger(b))throw Error(String(b));return L?BigInt(a):a=ya(a)?a?"1":"0":xa(a)?a.trim()||"0":String(a)}var Fa=K(function(a){return L?a>=za&&a<=Aa:a[0]==="-"?Ba(a,Ca):Ba(a,Da)}),Ca=Number.MIN_SAFE_INTEGER.toString(),za=L?BigInt(Number.MIN_SAFE_INTEGER):void 0,Da=Number.MAX_SAFE_INTEGER.toString(),Aa=L?BigInt(Number.MAX_SAFE_INTEGER):void 0;
+function Ba(a,b){if(a.length>b.length)return!1;if(a.length<b.length||a===b)return!0;for(var c=0;c<a.length;c++){var e=a[c],d=b[c];if(e>d)return!1;if(e<d)return!0}};var N=0,O=0;function Ga(a){var b=a>>>0;N=b;O=(a-b)/4294967296>>>0}function Ha(a){if(a<0){Ga(-a);var b=q(Ia(N,O));a=b.next().value;b=b.next().value;N=a>>>0;O=b>>>0}else Ga(a)}function Ja(a,b){b>>>=0;a>>>=0;if(b<=2097151)var c=""+(4294967296*b+a);else A()?c=""+(BigInt(b)<<BigInt(32)|BigInt(a)):(c=(a>>>24|b<<8)&16777215,b=b>>16&65535,a=(a&16777215)+c*6777216+b*6710656,c+=b*8147497,b*=2,a>=1E7&&(c+=a/1E7>>>0,a%=1E7),c>=1E7&&(b+=c/1E7>>>0,c%=1E7),c=b+Ka(c)+Ka(a));return c}
+function Ka(a){a=String(a);return"0000000".slice(a.length)+a}function La(){var a=N,b=O;b&2147483648?A()?a=""+(BigInt(b|0)<<BigInt(32)|BigInt(a>>>0)):(b=q(Ia(a,b)),a=b.next().value,b=b.next().value,a="-"+Ja(a,b)):a=Ja(a,b);return a}function Ia(a,b){b=~b;a?a=~a+1:b+=1;return[a,b]};var Ma=typeof BigInt==="function"?BigInt.asIntN:void 0,Q=Number.isSafeInteger,Na=Number.isFinite,Oa=Math.trunc,Pa=/^-?([1-9][0-9]*|0)(\.[0-9]+)?$/;function Qa(a){switch(typeof a){case "bigint":return!0;case "number":return Na(a);case "string":return Pa.test(a);default:return!1}}
+function Ra(a){var b=typeof a;if(a==null)return a;if(b==="bigint")return M(Ma(64,a));if(Qa(a)){if(b==="string")if(b=Oa(Number(a)),Q(b))a=M(b);else if(b=a.indexOf("."),b!==-1&&(a=a.substring(0,b)),A())a=M(Ma(64,BigInt(a)));else{b=a.length;if(!(a[0]==="-"?b<20||b===20&&a<="-9223372036854775808":b<19||b===19&&a<="9223372036854775807")){if(a.length<16)Ha(Number(a));else if(A())a=BigInt(a),N=Number(a&BigInt(4294967295))>>>0,O=Number(a>>BigInt(32)&BigInt(4294967295));else{b=+(a[0]==="-");O=N=0;for(var c=
+a.length,e=b,d=(c-b)%6+b;d<=c;e=d,d+=6)e=Number(a.slice(e,d)),O*=1E6,N=N*1E6+e,N>=4294967296&&(O+=Math.trunc(N/4294967296),O>>>=0,N>>>=0);b&&(b=q(Ia(N,O)),a=b.next().value,b=b.next().value,N=a,O=b)}a=La()}a=M(a)}else if(Q(a)){a=Oa(a);if(!Q(a)){Ha(a);b=N;c=O;if(a=c&2147483648)b=~b+1>>>0,c=~c>>>0,b==0&&(c=c+1>>>0);d=c*4294967296+(b>>>0);b=Number.isSafeInteger(d)?d:Ja(b,c);a=typeof b==="number"?a?-b:b:a?"-"+b:b}a=M(a)}else a=Oa(a),Q(a)?a=String(a):(Ha(a),a=La()),a=M(a);return a}}
+function Sa(a){return a==null||typeof a==="string"?a:void 0};function Ta(a){return a};function Ua(a,b,c,e){var d=e!==void 0;e=!!e;var f=[],g=a.length,h=4294967295,k=!1,r=!!(b&64),D=r?b&128?0:-1:void 0;if(!(b&1)){var u=g&&a[g-1];u!=null&&typeof u==="object"&&u.constructor===Object?(g--,h=g):u=void 0;if(r&&!(b&128)&&!d){k=!0;var w;h=((w=Va)!=null?w:Ta)(h-D,D,a,u,void 0)+D}}b=void 0;for(d=0;d<g;d++)if(w=a[d],w!=null&&(w=c(w,e))!=null)if(r&&d>=h){var yb=d-D,Ea=void 0;((Ea=b)!=null?Ea:b={})[yb]=w}else f[d]=w;if(u)for(var P in u)Object.prototype.hasOwnProperty.call(u,P)&&(a=u[P],a!=null&&
+(a=c(a,e))!=null&&(g=+P,d=void 0,r&&!Number.isNaN(g)&&(d=g+D)<h?f[d]=a:(g=void 0,((g=b)!=null?g:b={})[P]=a)));b&&(k?f.push(b):f[h]=b);return f}function Wa(a){switch(typeof a){case "number":return Number.isFinite(a)?a:""+a;case "bigint":return Fa(a)?Number(a):""+a;case "boolean":return a?1:0;case "object":if(Array.isArray(a)){var b=a[F]|0;return a.length===0&&b&1?void 0:Ua(a,b,Wa)}if(a!=null&&a[E]===H)return Xa(a);return}return a}var Va;function Xa(a){a=a.g;return Ua(a,a[F]|0,Wa)};function R(a,b,c,e){e=e===void 0?0:e;if(a==null){var d=32;c?(a=[c],d|=128):a=[];b&&(d=d&-16760833|(b&1023)<<14)}else{if(!Array.isArray(a))throw Error("narr");d=a[F]|0;if(v&&1&d)throw Error("rfarr");2048&d&&!(2&d)&&Ya();if(d&256)throw Error("farr");if(d&64)return(d|e)!==d&&G(a,d|e),a;if(c&&(d|=128,c!==a[0]))throw Error("mid");a:{c=a;d|=64;var f=c.length;if(f){var g=f-1,h=c[g];if(h!=null&&typeof h==="object"&&h.constructor===Object){b=d&128?0:-1;g-=b;if(g>=1024)throw Error("pvtlmt");for(var k in h)Object.prototype.hasOwnProperty.call(h,
+k)&&(f=+k,f<g&&(c[f+b]=h[k],delete h[k]));d=d&-16760833|(g&1023)<<14;break a}}if(b){k=Math.max(b,f-(d&128?0:-1));if(k>1024)throw Error("spvt");d=d&-16760833|(k&1023)<<14}}}G(a,d|64|e);return a}function Ya(){if(v)throw Error("carr");if(sa!=null){var a;var b=(a=qa)!=null?a:qa={};a=b[sa]||0;a>=5||(b[sa]=a+1,b=Error(),b.__closure__error__context__984382||(b.__closure__error__context__984382={}),b.__closure__error__context__984382.severity="incident",na(b))}};function Za(a,b){if(typeof a!=="object")return a;if(Array.isArray(a)){var c=a[F]|0;a.length===0&&c&1?a=void 0:c&2||(!b||4096&c||16&c?a=S(a,c,!1,b&&!(c&16)):(va(a,34),c&4&&Object.freeze(a)));return a}if(a!=null&&a[E]===H){b=a.g;c=b[F]|0;return I(a,c)?a:$a(a,b,c)?ab(a,b):S(b,c)}}function ab(a,b,c){a=new a.constructor(b);c&&(a.h=J);a.i=J;return a}function S(a,b,c,e){e!=null||(e=!!(34&b));a=Ua(a,b,Za,e);e=32;c&&(e|=2);b=b&16769217|e;G(a,b);return a}
+function bb(a,b){b===void 0&&(b=a[F]|0);b&32&&!(b&4096)&&G(a,b|4096)}function $a(a,b,c){return c&2?!0:c&32&&!(c&4096)?(G(b,c|2),a.h=J,!0):!1};var cb=M(0),db={};function T(a,b,c,e){b=eb(a.g,b,e);if(b!==null||c&&a.i!==J)return b}function eb(a,b,c){if(b===-1)return null;var e=b+-1,d=a.length-1;if(!(d<0)){if(e>=d){var f=a[d];if(f!=null&&typeof f==="object"&&f.constructor===Object){d=f[b];var g=!0}else if(e===d)d=f;else return}else d=a[e];if(c&&d!=null){c=c(d);if(c==null)return c;if(!Object.is(c,d))return g?f[b]=c:a[e]=c,c}return d}}
+function fb(a,b,c){var e=gb,d=!1;c=eb(a,c,function(f){if(f!=null&&f[E]===H)var g=f;else if(Array.isArray(f)){g=f[F]|0;var h=g|b&32;h|=b&2;h!==g&&G(f,h);g=new e(f)}else g=void 0;d=g!==f&&g!=null;return g});if(c!=null)return d&&!I(c)&&bb(a,b),c}
+function hb(a,b){var c=a.g,e=c[F]|0,d=fb(c,e,b);if(d==null)return d;e=c[F]|0;if(!I(a,e)){var f=d;var g=f.g,h=g[F]|0;f=I(f,h)?$a(f,g,h)?ab(f,g,!0):new f.constructor(S(g,h,!1)):f;if(f!==d){a.h===J?(d=a.g,d=S(d,d[F]|0),va(d,2048),a.g=d,a.h=void 0,a.i=void 0,d=!0):d=!1;d&&(c=a.g,e=c[F]|0);d=f;a:{a=c;f=d;g=b+-1;h=a.length-1;if(h>=0&&g>=h){var k=a[h];if(k!=null&&typeof k==="object"&&k.constructor===Object){k[b]=f;break a}}if(g<=h)a[g]=f;else if(f!==void 0){var r;h=((r=e)!=null?r:e=a[F]|0)>>14&1023||536870912;
+b>=h?f!=null&&(r={},a[h+-1]=(r[b]=f,r)):a[g]=f}}bb(c,e)}}return d}function ib(a,b){var c=c===void 0?cb:c;a=T(a,b,void 0,Ra);return a!=null?a:c}function U(a,b){var c=c===void 0?"":c;var e;return(e=Sa(T(a,b)))!=null?e:c};function V(a,b,c){this.g=R(a,b,c,2048)}V.prototype.toJSON=function(){var a=Xa(this);return a};V.prototype[E]=H;V.prototype.toString=function(){return this.g.toString()};function jb(a){return function(b){if(b==null||b=="")b=new a;else{b=JSON.parse(b);if(!Array.isArray(b))throw Error("dnarr");va(b,32);b=new a(b)}return b}};function kb(a){this.g=R(a,void 0,void 0,2048)}p(kb,V);var lb=jb(kb);/*
+
+ Copyright Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+var mb=globalThis.trustedTypes,nb;function ob(){var a=null;if(!mb)return a;try{var b=function(c){return c};a=mb.createPolicy("goog#html",{createHTML:b,createScript:b,createScriptURL:b})}catch(c){}return a};function pb(a){this.g=a}pb.prototype.toString=function(){return this.g+""};function qb(a){var b;nb===void 0&&(nb=ob());a=(b=nb)?b.createScriptURL(a):a;return new pb(a)};function rb(a,b){if(b instanceof pb)b=b.g;else throw Error("");a.src=b;var c;b=a.ownerDocument;b=b===void 0?document:b;var e;b=(e=(c=b).querySelector)==null?void 0:e.call(c,"script[nonce]");(c=b==null?"":b.nonce||b.getAttribute("nonce")||"")&&a.setAttribute("nonce",c)};function sb(){return Math.floor(Math.random()*2147483648).toString(36)+Math.abs(Math.floor(Math.random()*2147483648)^Date.now()).toString(36)};function tb(a){var b=ma.apply(1,arguments);if(b.length===0)return qb(a[0]);for(var c=a[0],e=0;e<b.length;e++)c+=encodeURIComponent(b[e])+a[e+1];return qb(c)};function ub(a){a=a===void 0?document:a;return a.createElement("script")};function vb(a,b){b=String(b);a.contentType==="application/xhtml+xml"&&(b=b.toLowerCase());return a.createElement(b)}function wb(a){this.g=a||t.document||document};function xb(a,b,c,e,d,f){try{var g=a.g,h=ub(g);h.async=!0;rb(h,b);g.head.appendChild(h);h.addEventListener("load",function(){d();e&&g.head.removeChild(h)});h.addEventListener("error",function(){c>0?xb(a,b,c-1,e,d,f):(e&&g.head.removeChild(h),f())})}catch(k){f()}};var zb=t.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),Ab=t.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),Bb=t.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu");function Cb(a,b,c){this.h=a;this.m=b;this.o=c;this.g=null;this.i=[];this.l=!1;this.j=new wb(this.h)}
+function Db(a){if(a.h.body&&!a.l){var b=function(){Eb(a);t.setTimeout(function(){Fb(a,3)},50)};xb(a.j,a.m,2,!0,function(){t[a.o]||b()},b);a.l=!0}}
+function Eb(a){for(var b=W(1,5),c=0;c<b;c++){var e=X(a);a.h.body.appendChild(e);a.i.push(e)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style.backgroundColor=Gb(249,259,242,252,219,229);b.style.boxShadow="0 0 12px #888";b.style.color=Gb(0,10,0,10,0,10);b.style.display="flex";b.style.justifyContent="center";b.style.fontFamily="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+
+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style.alignItems="flex-start";c.style.justifyContent="center";e=vb(a.j.g,"IMG");e.className=sb();e.src=zb;e.alt="Warning icon";e.style.height="24px";e.style.width="24px";e.style.paddingRight="16px";var d=X(a),f=X(a);f.style.fontWeight="bold";f.textContent=Ab;var g=X(a);g.textContent=Bb;Y(a,d,f);Y(a,d,g);Y(a,c,e);Y(a,c,d);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)e=X(a),a.h.body.appendChild(e),
+a.i.push(e)}function Y(a,b,c){for(var e=W(1,5),d=0;d<e;d++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(e=0;e<c;e++)d=X(a),b.appendChild(d)}function W(a,b){return Math.floor(a+Math.random()*(b-a))}function Gb(a,b,c,e,d,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(e,255)).toString()+","+W(Math.max(d,0),Math.min(f,255)).toString()+")"}function X(a){a=vb(a.j.g,"DIV");a.className=sb();return a}
+function Fb(a,b){b<=0||a.g!=null&&a.g.offsetHeight!==0&&a.g.offsetWidth!==0||(Hb(a),Eb(a),t.setTimeout(function(){Fb(a,b-1)},50))}function Hb(a){for(var b=q(a.i),c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};function Ib(a,b,c,e,d){function f(k){document.body?g(document.body):k>0?t.setTimeout(function(){f(k-1)},d):b()}function g(k){k.appendChild(h);t.setTimeout(function(){h?(h.offsetHeight!==0&&h.offsetWidth!==0?b():a(),h.parentNode&&h.parentNode.removeChild(h)):a()},e)}var h=Jb(c);f(3)}function Jb(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};function Kb(a){return Fa(a)?Number(a):String(a)};function gb(a){this.g=R(a,void 0,void 0,2048)}p(gb,V);function Lb(a){if(!a)return null;a=Sa(T(a,4,db));var b;a===null||a===void 0?b=null:b=qb(a);return b};var Mb=ka([""]),Nb=ka([""]);function Ob(a,b){this.l=a;this.g=b;this.m=new wb(a.document);this.i=U(b,1);this.v=Lb(hb(b,2))||tb(Mb);this.h=!1;this.o=Lb(hb(b,13))||tb(Nb);this.j=new Cb(a.document,this.o,U(b,12))}Ob.prototype.start=function(){Pb(this)};
+function Pb(a){Qb(a);xb(a.m,a.v,3,!1,function(){a:{var b=a.i;var c=t.btoa(b);if(c=t[c]){try{var e=lb(t.atob(c))}catch(d){b=!1;break a}b=b===Sa(T(e,1,db))}else b=!1}b?Z(a,U(a.g,14)):(Z(a,U(a.g,8)),Db(a.j))},function(){Ib(function(){Z(a,U(a.g,7));Db(a.j)},function(){Z(a,U(a.g,6))},U(a.g,9),Kb(ib(a.g,10)),Kb(ib(a.g,11)))})}function Z(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())}function Qb(a){var b=t.btoa(a.i);a.l[b]&&Z(a,U(a.g,5))};function Rb(a){this.g=R(a,void 0,void 0,2048)}p(Rb,V);var Sb=jb(Rb);(function(a,b){t[a]=function(){var c=ma.apply(0,arguments);t[a]=function(){};b.call.apply(b,[null].concat(c instanceof Array?c:ja(q(c))))}})("__h82AlnkH6D91__",function(a){typeof window.atob==="function"&&(new Ob(window,Sb(window.atob(a)))).start()});}).call(this);
+
+window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi04MjQyMzI0MTY0NDEzOTQ1Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hVR095eld0N1ZaZFFlVDNQQzN4cDRWNFFpM0VQWEdpLTNSOGJjOXBFOFZlOEZRZml1VVpydFFzOGdtWjZuWkNmUDBPdmdOZXIyWmhnQ0gwNnk4cnN1TDh3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdhMFNualdkTkRnTHdYTmRPWk9Ic1c4bzFhNFRhaGY5cWhkU1JVTHdCNmN1WDBpWDBveHBBOUhEaHI4OWR0UmdFcGZONHl1Yjk4TVZZMWFqTnJPY0Q0S3dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdpSXp3QnB6TlhidjVTWkNBLTllVzNaNVZZY1p0MjQ0T2V4V096dnlKYWVpTXU2RVpmX1hDLWU2N3plaG5QcEdoeXZFcWR5YnRhYzJZNFRUU21uR3I4d2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVYT3Nibmlmemp0ei1QVlN2SmFIY004dWhoZmNxX3I0UGwwMjhteDBhNU5DeGNnLXhEcEotdlZ1blNKS3pvRkRZZ3ZGa3QyZElnNGdmLVNRU3ZCTVBONkFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUZ3lOREl6TWpReE5qUTBNVE01TkRVXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi04MjQyMzI0MTY0NDEzOTQ1LmpzP3VzcXBcdTAwM2RDQkUiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4Vkl1eVduV3owazNiSTh5czVMUFg4amloM1M1LXdJVWhWNGJtb2EtcGtlazNmU0dEYVc0aXg2dDJlTEZHZWhMMWJMLXhuVTJrdTdKVkZpbXpmQzNBT0hSUVx1MDAzZFx1MDAzZCJd");</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
+<!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Símbolos para Copiar e Colar — Biblioteca de Símbolos, Emojis e Kaomoji | UltraTextGen</title>
+<meta name="description" content="Biblioteca de símbolos para copiar e colar — símbolos aesthetic, corações, estrelas, setas, check, alfabeto grego, kaomoji e emoji. Busque, filtre e clique para copiar símbolos na bio, na legenda, no Discord e no nick.">
+
+<link rel="canonical" href="https://ultratextgen.com/pt/library/">
+<link rel="alternate" hreflang="ar" href="https://ultratextgen.com/ar/library/">
+<link rel="alternate" hreflang="da" href="https://ultratextgen.com/da/library/">
+<link rel="alternate" hreflang="de" href="https://ultratextgen.com/de/library/">
+<link rel="alternate" hreflang="en" href="https://ultratextgen.com/library/">
+<link rel="alternate" hreflang="es" href="https://ultratextgen.com/es/library/">
+<link rel="alternate" hreflang="fr" href="https://ultratextgen.com/fr/library/">
+<link rel="alternate" hreflang="id" href="https://ultratextgen.com/id/library/">
+<link rel="alternate" hreflang="it" href="https://ultratextgen.com/it/library/">
+<link rel="alternate" hreflang="ja" href="https://ultratextgen.com/ja/library/">
+<link rel="alternate" hreflang="ko" href="https://ultratextgen.com/ko/library/">
+<link rel="alternate" hreflang="nl" href="https://ultratextgen.com/nl/library/">
+<link rel="alternate" hreflang="no" href="https://ultratextgen.com/no/library/">
+<link rel="alternate" hreflang="pl" href="https://ultratextgen.com/pl/library/">
+<link rel="alternate" hreflang="pt" href="https://ultratextgen.com/pt/library/">
+<link rel="alternate" hreflang="ru" href="https://ultratextgen.com/ru/library/">
+<link rel="alternate" hreflang="sv" href="https://ultratextgen.com/sv/library/">
+<link rel="alternate" hreflang="th" href="https://ultratextgen.com/th/library/">
+<link rel="alternate" hreflang="tr" href="https://ultratextgen.com/tr/library/">
+<link rel="alternate" hreflang="vi" href="https://ultratextgen.com/vi/library/">
+<link rel="alternate" hreflang="x-default" href="https://ultratextgen.com/library/">
+<meta property="og:title" content="Símbolos para Copiar e Colar — Biblioteca de Símbolos, Emojis e Kaomoji | UltraTextGen">
+<meta property="og:description" content="Biblioteca de símbolos e caracteres Unicode para copiar e colar — símbolos aesthetic, corações, estrelas, setas, check, alfabeto grego e kaomoji. Busque, filtre e clique para copiar.">
+<meta property="og:url" content="https://ultratextgen.com/pt/library/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ultratextgen.com/assets/og/pt-library.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Símbolos para Copiar e Colar — Biblioteca de Símbolos, Emojis e Kaomoji | UltraTextGen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Símbolos para Copiar e Colar — Biblioteca de Símbolos, Emojis e Kaomoji | UltraTextGen">
+<meta name="twitter:description" content="Biblioteca de símbolos e caracteres Unicode para copiar e colar — símbolos aesthetic, corações, estrelas, setas, check, alfabeto grego e kaomoji.">
+<meta name="twitter:image" content="https://ultratextgen.com/assets/og/pt-library.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://ultratextgen.com/pt/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Biblioteca",
+      "item": "https://ultratextgen.com/pt/library/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que são símbolos para copiar e colar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "São caracteres Unicode especiais que vão além das letras e números comuns — como corações ♡, estrelas ★, setas →, check ✓ e letras gregas Σ. Como tudo é texto de verdade, dá para copiar e colar direto na bio, na legenda, no Discord e no nick, sem app nenhum para instalar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre símbolo, caractere especial e emoji?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Na prática, muita gente digita símbolo, símbolos, caractere especial ou símbolos para copiar procurando a mesma coisa: caracteres Unicode prontos para colar. As coleções desta página são caracteres Unicode reais — não são imagens nem fontes para baixar, e aparecem em quase todo aparelho. Já o emoji (🌸 ⚽ 🎀) é um pictograma colorido que muda de desenho conforme o sistema. Clique em qualquer caractere para copiá-lo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como copiar símbolos aesthetic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Abra uma das coleções — por exemplo Símbolos de Estrela ou Símbolos Coquette — e toque ou clique em qualquer caractere para copiar na hora. Depois é só colar na bio do Instagram, na legenda do TikTok, no nick do Free Fire ou em qualquer campo. Use a busca lá em cima para achar um símbolo específico rapidinho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Esses símbolos são seguros para bio, Discord e nick de game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Como são caracteres Unicode padrão, colam com segurança no Instagram, WhatsApp, TikTok, Facebook, Discord e no nick de jogos como Free Fire, Roblox e Mobile Legends. Em aparelhos antigos, alguns símbolos raros podem aparecer como quadradinho — teste antes num app de notas se estiver na dúvida."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ── Library A–Z Directory ── */
+
+.lib-hero {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+.lib-hero h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+.lib-hero p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* ── Controls ── */
+.lib-controls {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lib-search-wrap {
+  position: relative;
+}
+.lib-search-wrap svg {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+#libSearch {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 1rem 0.65rem 2.6rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+#libSearch:focus {
+  border-color: var(--accent-purple);
+}
+
+.lib-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.lib-filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+
+/* ── Filter pills ── */
+.lib-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+  user-select: none;
+}
+.lib-pill:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.lib-pill.active {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.lib-pill .pill-count {
+  opacity: 0.75;
+  font-size: 0.72rem;
+}
+.lib-pill.active .pill-count {
+  opacity: 0.9;
+}
+
+.lib-clear-btn {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+.lib-clear-btn:hover {
+  color: var(--text-primary);
+}
+.lib-clear-btn.visible {
+  display: inline-flex;
+}
+
+/* ── Alpha jump bar ── */
+.lib-alpha-bar {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg-page, #f5f7f5);
+  backdrop-filter: saturate(180%) blur(6px);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
+}
+.lib-alpha-btn.is-current {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+}
+.lib-alpha-btn.is-current .alpha-count {
+  color: rgba(255, 255, 255, 0.85);
+}
+.lib-alpha-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 2rem;
+  padding: 0.3rem 0.4rem 0.2rem;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  text-decoration: none;
+  line-height: 1;
+}
+.lib-alpha-btn .alpha-count {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+.lib-alpha-btn:hover:not(.disabled) {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.lib-alpha-btn.disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Directory ── */
+.lib-directory {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1.25rem;
+}
+
+.lib-letter-section {
+  margin-bottom: 2rem;
+}
+.lib-letter-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-light);
+  margin: 0 0 0.75rem;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.lib-letter-heading .letter {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  line-height: 1;
+}
+.lib-letter-heading .lcount {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ── Entry rows ── */
+.lib-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 0.1rem 1rem;
+  padding: 0.7rem 0.5rem;
+  border-radius: 8px;
+  color: inherit;
+  border: 1px solid transparent;
+}
+.lib-entry-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  line-height: 1.3;
+}
+.lib-entry-title-link {
+  color: inherit;
+  text-decoration: none;
+  border-radius: 3px;
+}
+.lib-entry-title-link:hover,
+.lib-entry-title-link:focus-visible {
+  color: var(--accent-purple);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.lib-entry-title-link:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+.lib-entry-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+}
+.lib-entry-preview {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  white-space: nowrap;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+.lib-entry-meta {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+.lib-entry-tag {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: var(--bg-page, #eef0ee);
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.lib-entry-tag:hover {
+  background: var(--bg-white);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+.lib-entry-tag:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+}
+.lib-entry-tag.is-type {
+  color: var(--accent-purple);
+  border-color: var(--accent-purple);
+  background: transparent;
+}
+
+@media (max-width: 540px) {
+  .lib-entry {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+  .lib-entry-preview {
+    grid-column: 1;
+    grid-row: 3;
+    text-align: left;
+    margin-top: 0.2rem;
+  }
+  .lib-entry-meta {
+    grid-row: 4;
+  }
+}
+
+/* ── No-results ── */
+.lib-empty {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+}
+.lib-empty.visible {
+  display: block;
+}
+.lib-empty p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
+.lib-empty-btn {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+.lib-empty-btn:hover {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+/* ── CTA card ── */
+.lib-cta {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1.25rem;
+}
+
+/* ── Result count ── */
+.lib-result-count {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  padding: 0 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.lib-result-count[hidden] {
+  display: none;
+}
+
+/* ── Visually hidden (a11y) ── */
+.lib-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Back to top ── */
+.lib-back-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.lib-back-top:hover,
+.lib-back-top:focus-visible {
+  background: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: #fff;
+  outline: none;
+}
+.lib-back-top.visible {
+  display: inline-flex;
+}
+</style>
+</head>
+<body>
+  <script>try{if(localStorage.getItem("darkMode")==="true")document.body.classList.add("dark-mode")}catch(e){}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P55HXK8Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="shared-header"></div>
+<script src="/header.js" defer></script>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/pt/">Início</a>
+  <span class="breadcrumb-separator">›</span>
+  <span class="breadcrumb-current">Biblioteca</span>
+</nav>
+
+<!-- HERO -->
+<div class="lib-hero">
+  <h1>Símbolos para Copiar e Colar — Biblioteca de Símbolos</h1>
+  <p>Biblioteca de símbolos e caracteres Unicode para copiar e colar — de <a href="/pt/library/simbolos/">símbolos aesthetic</a> e corações a estrelas, setas, check, alfabeto grego e kaomoji. Busque, filtre por uso ou plataforma e clique para copiar. Todos os caracteres (ou <i>símbolos</i>) já ficam prontos para colar na bio, na legenda, no Discord e no nick.</p>
+</div>
+
+<!-- CONTROLS -->
+<div class="lib-controls" id="libControls">
+  <!-- Search -->
+  <div class="lib-search-wrap">
+    <label for="libSearch" class="lib-sr-only">Buscar símbolo</label>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" id="libSearch" placeholder="Buscar símbolo…" autocomplete="off">
+  </div>
+
+  <!-- Subject filter -->
+  <div class="lib-filter-row" id="subjectRow">
+    <span class="lib-filter-label">Categoria</span>
+  </div>
+
+  <!-- Use Case filter -->
+  <div class="lib-filter-row" id="useCaseRow">
+    <span class="lib-filter-label">Uso</span>
+  </div>
+
+  <!-- Platform filter -->
+  <div class="lib-filter-row" id="platformRow">
+    <span class="lib-filter-label">Plataforma</span>
+  </div>
+
+  <!-- Type filter -->
+  <div class="lib-filter-row" id="typeRow">
+    <span class="lib-filter-label">Tipo</span>
+  </div>
+
+  <!-- Clear filters -->
+  <div style="display:flex;align-items:center;gap:0.5rem;">
+    <button class="lib-clear-btn" id="clearFilters" aria-label="Limpar todos os filtros">✕ Limpar filtros</button>
+  </div>
+</div>
+
+<!-- ALPHA JUMP BAR -->
+<div class="lib-alpha-bar" id="alphaBar" aria-label="Pular para a letra"></div>
+
+<!-- RESULT COUNT -->
+<div class="lib-result-count" id="libResultCount" role="status" aria-live="polite" hidden></div>
+
+<!-- DIRECTORY -->
+
+
+<figure class="page-hero-figure" data-uthero aria-hidden="true">
+  <img src="/assets/hero/pt-library.svg" width="1200" height="340"
+       fetchpriority="high" alt="">
+</figure>
+<main class="lib-directory" id="libDirectory" aria-label="Diretório de símbolos"></main>
+
+<!-- NO RESULTS -->
+<div class="lib-empty" id="libEmpty" role="status" aria-live="polite">
+  <p>Nenhuma coleção combina com essa combinação.<br>Tente remover um ou mais filtros.</p>
+  <button class="lib-empty-btn" id="emptyResetBtn">Limpar todos os filtros</button>
+</div>
+
+<!-- CTA -->
+<div class="lib-cta">
+  <div class="cta-card">
+    <h3>Precisa de um estilo de letra específico?</h3>
+    <p>Transforme texto comum em letras aesthetic, bold e diferentes — e combine com os símbolos desta página para bio, legenda e nick.</p>
+    <a href="/pt/" class="cta-btn">Abrir o Gerador de Fontes →</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="editorial-section" id="faq">
+  <span class="article-section-label">FAQ</span>
+  <h2>Símbolos para copiar e colar, respondido</h2>
+  <details class="faq-item">
+    <summary class="faq-question">O que são símbolos para copiar e colar?</summary>
+    <p class="faq-answer">São caracteres Unicode especiais que vão além das letras e números comuns — como corações ♡, estrelas ★, setas →, check ✓ e letras gregas Σ. Como tudo é texto de verdade, dá para copiar e colar direto na bio, na legenda, no Discord e no nick, sem app nenhum para instalar.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Qual a diferença entre símbolo, caractere especial e emoji?</summary>
+    <p class="faq-answer">Na prática, muita gente digita <b>símbolo</b>, <b>símbolos</b>, <b>caractere especial</b> ou <b>símbolos para copiar</b> procurando a mesma coisa: caracteres Unicode prontos para colar. As coleções desta página são caracteres Unicode reais — não são imagens nem fontes para baixar, e aparecem em quase todo aparelho. Já o <i>emoji</i> (🌸 ⚽ 🎀) é um pictograma colorido que muda de desenho conforme o sistema. Clique em qualquer caractere para copiá-lo.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Como copiar símbolos aesthetic?</summary>
+    <p class="faq-answer">Abra uma das coleções — por exemplo <a href="/pt/library/simbolos-de-estrela/">Símbolos de Estrela</a> ou <a href="/pt/library/simbolos-coquette/">Símbolos Coquette</a> — e toque ou clique em qualquer caractere para copiar na hora. Depois é só colar na bio do Instagram, na legenda do TikTok, no nick do Free Fire ou em qualquer campo. Use a busca lá em cima para achar um símbolo específico rapidinho.</p>
+  </details>
+  <details class="faq-item">
+    <summary class="faq-question">Esses símbolos são seguros para bio, Discord e nick de game?</summary>
+    <p class="faq-answer">Sim. Como são caracteres Unicode padrão, colam com segurança no Instagram, WhatsApp, TikTok, Facebook, Discord e no nick de jogos como Free Fire, Roblox e Mobile Legends. Em aparelhos antigos, alguns símbolos raros podem aparecer como quadradinho — teste antes num app de notas se estiver na dúvida.</p>
+  </details>
+</section>
+
+<!-- STATIC INDEX (crawlable links to every collection) -->
+<nav class="lib-index" aria-label="Todas as coleções de símbolos">
+  <div class="lib-index-inner">
+    <h2 class="lib-index-title">Todas as Coleções A–Z</h2>
+    <p class="lib-index-note">Cada coleção de símbolos, emojis e kaomoji da Biblioteca UltraTextGen. Explore o diretório completo acima, ou vá direto para uma das páginas abaixo.</p>
+    <ul class="lib-index-list">
+      <li><a href="/pt/library/alfabeto-grego/">Alfabeto Grego</a></li>
+      <li><a href="/pt/library/caracteres-especiais/">Caracteres Especiais</a></li>
+      <li><a href="/pt/library/codigos-alt/">Códigos Alt</a></li>
+      <li><a href="/pt/library/emoji-combos/">Combos de Emoji</a></li>
+      <li><a href="/pt/library/emoji-flags/">Emoji de Bandeiras</a></li>
+      <li><a href="/pt/library/emojis-de-rosto/">Emojis de Rosto</a></li>
+      <li><a href="/pt/library/ronaldo-emoji-combos/">Emoji do Cristiano Ronaldo</a></li>
+      <li><a href="/pt/library/neymar-emoji-combos/">Emoji do Neymar</a></li>
+      <li><a href="/pt/library/vinicius-emoji-combos/">Emoji do Vini Jr</a></li>
+      <li><a href="/pt/library/love-kaomoji/">Kaomoji de Amor</a></li>
+      <li><a href="/pt/library/cat-kaomoji/">Kaomoji de Gato</a></li>
+      <li><a href="/pt/library/happy-kaomoji/">Kaomoji Felizes</a></li>
+      <li><a href="/pt/library/cute-kaomoji/">Kaomoji Fofos</a></li>
+      <li><a href="/pt/library/sad-kaomoji/">Kaomoji Tristes</a></li>
+      <li><a href="/pt/library/kaomoji/">Kaomoji — Carinhas Japonesas</a></li>
+      <li><a href="/pt/library/naipes-de-baralho/">Naipes de Baralho</a></li>
+      <li><a href="/pt/library/simbolos-musicais/">Notas Musicais</a></li>
+      <li><a href="/pt/library/simbolos-de-moeda/">Símbolos de Moeda</a></li>
+      <li><a href="/pt/library/simbolos-islamicos/">Símbolos Islâmicos</a></li>
+      <li><a href="/pt/library/simbolos/">Símbolos para Copiar e Colar</a></li>
+      <li><a href="/pt/library/simbolos-coquette/">Símbolos Coquette</a></li>
+      <li><a href="/pt/library/simbolos-cottagecore/">Símbolos Cottagecore</a></li>
+      <li><a href="/pt/library/simbolos-de-confirmacao/">Símbolos de Confirmação</a></li>
+      <li><a href="/pt/library/simbolos-copyright-marca-registrada/">Símbolos de Copyright e Marca Registrada</a></li>
+      <li><a href="/pt/library/simbolos-de-coracao/">Símbolos de Coração</a></li>
+      <li><a href="/pt/library/simbolos-de-cruz-e-x/">Símbolos de Cruz e X</a></li>
+      <li><a href="/pt/library/simbolos-de-estrela/">Símbolos de Estrela</a></li>
+      <li><a href="/pt/library/simbolos-de-marcadores/">Símbolos de Marcadores</a></li>
+      <li><a href="/pt/library/simbolos-de-natal/">Símbolos de Natal</a></li>
+      <li><a href="/pt/library/simbolos-de-xadrez/">Símbolos de Xadrez</a></li>
+      <li><a href="/pt/library/simbolos-discord/">Símbolos para Discord</a></li>
+      <li><a href="/pt/library/simbolos-para-free-fire/">Símbolos para Free Fire</a></li>
+      <li><a href="/pt/library/simbolos-dreamcore-weirdcore/">Símbolos Dreamcore &amp; Weirdcore</a></li>
+      <li><a href="/pt/library/simbolos-fairycore/">Símbolos Fairycore</a></li>
+      <li><a href="/pt/library/simbolos-goth-grunge/">Símbolos Goth &amp; Grunge</a></li>
+      <li><a href="/pt/library/simbolos-japoneses/">Símbolos Japoneses</a></li>
+      <li><a href="/pt/library/simbolos-kawaii-cute/">Símbolos Kawaii &amp; Fofos</a></li>
+      <li><a href="/pt/library/simbolos-matematicos/">Símbolos Matemáticos</a></li>
+      <li><a href="/pt/library/simbolos-roblox/">Símbolos do Roblox</a></li>
+      <li><a href="/pt/library/simbolos-religiosos/">Símbolos Religiosos</a></li>
+      <li><a href="/pt/library/simbolos-therian/">Símbolos Therian</a></li>
+      <li><a href="/pt/library/simbolos-witchy-occult/">Símbolos Witchy &amp; Ocultos</a></li>
+      <li><a href="/pt/library/simbolos-y2k/">Símbolos Y2K</a></li>
+      <li><a href="/pt/library/setas/">Símbolos de Seta</a></li>
+      <li><a href="/pt/library/tabela-ascii/">Tabela ASCII</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner"></div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button type="button" class="lib-back-top" id="libBackTop" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ── Data ───────────────────────────────────────────────────── */
+  const LIBRARY = [
+    {
+      title: "Símbolos Islâmicos",
+      slug: "simbolos-islamicos",
+      description: "Estrela e crescente ☪, ligaduras árabes ﷲ ﷺ, mesquita e votos de Eid.",
+      preview: "☪ ﷲ ﷺ 🕌 📿",
+      useCases: ["Referência", "Bio"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Espiritual & Crenças",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Religiosos",
+      slug: "simbolos-religiosos",
+      description: "Cruzes ✝, crescente ☪, estrela de Davi ✡, roda do Dharma ☸ e outros símbolos de fé.",
+      preview: "✝ ☪ ✡ ☸ ☯",
+      useCases: ["Referência", "Bio"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Espiritual & Crenças",
+      alpha: "S"
+    },
+    {
+      title: "Caracteres Especiais",
+      slug: "caracteres-especiais",
+      description: "Infinito ∞, paz ☮, ciência, marcas legais © ™ e curiosidades Unicode para copiar.",
+      preview: "∞ ☮ © ™ ✧",
+      useCases: ["Referência", "Bio"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Sinais & Indicadores",
+      alpha: "C"
+    },
+    {
+      title: "Símbolos de Moeda",
+      slug: "simbolos-de-moeda",
+      description: "Sinais de moeda $ € £ ¥ ₹ — moedas mundiais, regionais, históricas e criptomoedas.",
+      preview: "$ € £ ¥ ₿",
+      useCases: ["Referência", "Bio"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Sinais & Indicadores",
+      alpha: "S"
+    },
+    {
+      title: "Alfabeto Grego",
+      slug: "alfabeto-grego",
+      description: "Alfabeto grego completo Α–Ω — alfa, beta, sigma, delta e ômega, maiúsculas e minúsculas, para bio, fórmulas e referência.",
+      preview: "Α Β Σ Δ Ω",
+      useCases: ["Referência", "Bio", "Nick"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Cultura & Idioma",
+      alpha: "A"
+    },
+    {
+      title: "Códigos Alt",
+      slug: "codigos-alt",
+      description: "Lista completa de códigos Alt do teclado — Alt+0169 para ©, moeda, matemática, letras acentuadas e símbolos clássicos do DOS.",
+      preview: "© ± ÷ ♥",
+      useCases: ["Referência", "Bio"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Ciência & Técnica",
+      alpha: "C"
+    },
+    {
+      title: "Símbolos de Copyright e Marca Registrada",
+      slug: "simbolos-copyright-marca-registrada",
+      description: "Símbolos de copyright, marca registrada e comercial — ©, ®, ™, ℠, ℗ — além de marcas de seção, parágrafo e referência.",
+      preview: "© ® ™ §",
+      useCases: ["Bio", "Legenda", "Referência"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Sinais & Indicadores",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Natal",
+      slug: "simbolos-de-natal",
+      description: "Símbolos e emojis de Natal — árvores, flocos de neve, presentes e combos de saudação prontos para copiar.",
+      preview: "🎄 ❄ ☃ 🎁",
+      useCases: ["Legenda", "Bio", "Comentário"],
+      platforms: ["Instagram", "WhatsApp", "Universal"],
+      type: "Emoji",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Xadrez",
+      slug: "simbolos-de-xadrez",
+      description: "Símbolos de peças de xadrez em Unicode — reis, damas, torres, bispos, cavalos e peões, brancos e pretos, com notação.",
+      preview: "♔ ♕ ♞ ♟",
+      useCases: ["Referência", "Bio"],
+      platforms: ["Discord", "Universal"],
+      type: "Símbolo",
+      subject: "Jogos & Plataformas",
+      alpha: "S"
+    },
+    {
+      title: "Tabela ASCII",
+      slug: "tabela-ascii",
+      description: "Tabela ASCII com códigos decimal, hexadecimal, binário e octal de pontuação, dígitos, letras e símbolos.",
+      preview: "! A z ~",
+      useCases: ["Referência"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Ciência & Técnica",
+      alpha: "T"
+    },
+    {
+      title: "Combos de Emoji",
+      slug: "emoji-combos",
+      description: "Combos de emoji prontos para copiar e colar — fofo, coquette, amor, dark e praia — para deixar a bio, o status e a legenda com uma vibe só.",
+      preview: "🦋 ✨ 🌸",
+      useCases: ["Bio", "Legenda", "Comentário"],
+      platforms: ["Instagram", "TikTok", "Universal"],
+      type: "Combo de Emoji",
+      subject: "Estético & Decorativo",
+      alpha: "C"
+    },
+    {
+      title: "Emojis de Rosto",
+      slug: "emojis-de-rosto",
+      description: "Emojis de rosto por sentimento 😘 😉 😏 🙄 — beijo, piscadinha, sorriso de lado, olhos revirados e mais, com significado e combos prontos.",
+      preview: "😘 😉 😏 🙄",
+      useCases: ["Legenda", "Bio", "Comentário"],
+      platforms: ["Universal", "Instagram", "TikTok"],
+      type: "Emoji",
+      subject: "Emoções & Expressões",
+      alpha: "E"
+    },
+    {
+      title: "Emoji de Bandeiras",
+      slug: "emoji-flags",
+      description: "Emoji de bandeiras — Brasil 🇧🇷, Portugal 🇵🇹, EUA e todos os países para copiar no nick, na bio e nas mensagens.",
+      preview: "🇧🇷 🇵🇹 🇺🇸",
+      useCases: ["Nick", "Bio", "Comentário"],
+      platforms: ["Universal", "Instagram"],
+      type: "Emoji",
+      subject: "Cultura & Idioma",
+      alpha: "E"
+    },
+    {
+      title: "Emoji do Cristiano Ronaldo",
+      slug: "ronaldo-emoji-combos",
+      description: "Combos de emoji do Cristiano Ronaldo 🇵🇹⚽🐐 (CR7, GOAT, SIU) prontos para legenda, comentário e bio de torcedor.",
+      preview: "🇵🇹 ⚽ 🐐",
+      useCases: ["Legenda", "Comentário", "Bio"],
+      platforms: ["Instagram", "TikTok", "Universal"],
+      type: "Combo de Emoji",
+      subject: "Futebol & Ídolos",
+      alpha: "E"
+    },
+    {
+      title: "Emoji do Neymar",
+      slug: "neymar-emoji-combos",
+      description: "Combos de emoji do Neymar 🇧🇷⚽🐐 prontos para legenda, comentário e bio de torcedor.",
+      preview: "🇧🇷 ⚽ 🐐",
+      useCases: ["Legenda", "Comentário", "Bio"],
+      platforms: ["Instagram", "TikTok", "Universal"],
+      type: "Combo de Emoji",
+      subject: "Futebol & Ídolos",
+      alpha: "E"
+    },
+    {
+      title: "Emoji do Vini Jr",
+      slug: "vinicius-emoji-combos",
+      description: "Combos de emoji do Vini Jr 🇧🇷⚽🐐 prontos para legenda, comentário e bio de torcedor.",
+      preview: "🇧🇷 ⚽ 🐐",
+      useCases: ["Legenda", "Comentário", "Bio"],
+      platforms: ["Instagram", "TikTok", "Universal"],
+      type: "Combo de Emoji",
+      subject: "Futebol & Ídolos",
+      alpha: "E"
+    },
+    {
+      title: "Kaomoji de Amor",
+      slug: "love-kaomoji",
+      description: "Kaomoji de amor (♥‿♥) e corações para carinho, beijo e abraço no comentário e na bio.",
+      preview: "(♥‿♥)",
+      useCases: ["Comentário", "Legenda", "Bio"],
+      platforms: ["Universal", "WhatsApp", "Instagram"],
+      type: "Kaomoji",
+      subject: "Emoções & Expressões",
+      alpha: "K"
+    },
+    {
+      title: "Kaomoji de Gato",
+      slug: "cat-kaomoji",
+      description: "Carinhas de gato em texto (=^・ω・^=) — gatinho feliz, sonolento e fofo para comentário e legenda.",
+      preview: "(=^･ω･^=)",
+      useCases: ["Comentário", "Legenda"],
+      platforms: ["Universal", "WhatsApp", "Discord"],
+      type: "Kaomoji",
+      subject: "Natureza & Animais",
+      alpha: "K"
+    },
+    {
+      title: "Kaomoji Felizes",
+      slug: "happy-kaomoji",
+      description: "Carinhas felizes e sorridentes (◠‿◠) para comentário, legenda e status animado.",
+      preview: "(◠‿◠)",
+      useCases: ["Comentário", "Legenda"],
+      platforms: ["Universal", "WhatsApp"],
+      type: "Kaomoji",
+      subject: "Emoções & Expressões",
+      alpha: "K"
+    },
+    {
+      title: "Kaomoji Fofos",
+      slug: "cute-kaomoji",
+      description: "Kaomoji fofos (◕‿◕) com olhinhos brilhantes e bochechas rosadas para bio, comentário e recado.",
+      preview: "(◕‿◕)",
+      useCases: ["Comentário", "Legenda", "Bio"],
+      platforms: ["Universal", "WhatsApp"],
+      type: "Kaomoji",
+      subject: "Emoções & Expressões",
+      alpha: "K"
+    },
+    {
+      title: "Kaomoji Tristes",
+      slug: "sad-kaomoji",
+      description: "Carinhas tristes e chorosas (´･_･`) para decepção, saudade e clima melancólico.",
+      preview: "(´･_･`)",
+      useCases: ["Comentário", "Legenda"],
+      platforms: ["Universal", "WhatsApp"],
+      type: "Kaomoji",
+      subject: "Emoções & Expressões",
+      alpha: "K"
+    },
+    {
+      title: "Kaomoji — Carinhas Japonesas",
+      slug: "kaomoji",
+      description: "Coleção de carinhas japonesas de texto — fofas, felizes, tristes, de amor, animais e Lenny face.",
+      preview: "(ᵕ‿ᵕ) (◕‿◕)",
+      useCases: ["Comentário", "Legenda", "Bio"],
+      platforms: ["Universal", "WhatsApp", "Discord"],
+      type: "Kaomoji",
+      subject: "Emoções & Expressões",
+      alpha: "K"
+    },
+    {
+      title: "Naipes de Baralho",
+      slug: "naipes-de-baralho",
+      description: "Naipes de baralho ♠ ♥ ♦ ♣ em versões preenchida e vazada para copiar e colar na bio, na legenda e em jogos.",
+      preview: "♠ ♥ ♦ ♣",
+      useCases: ["Legenda", "Bio", "Referência"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Formas & Geometria",
+      alpha: "N"
+    },
+    {
+      title: "Notas Musicais",
+      slug: "simbolos-musicais",
+      description: "Notas ♪ ♫ ♬, claves, sustenido/bemol e ícones de instrumentos 🎸🎹🎤 para bio e legenda.",
+      preview: "♪ ♫ ♬ 🎵 🎸",
+      useCases: ["Bio", "Legenda"],
+      platforms: ["Universal", "Instagram"],
+      type: "Símbolo",
+      subject: "Música & Arte",
+      alpha: "N"
+    },
+    {
+      title: "Símbolos para Copiar e Colar",
+      slug: "simbolos",
+      description: "Biblioteca geral de símbolos para copiar e colar — estrelas, corações, setas e ornamentos para nick, Instagram e bio.",
+      preview: "✦ ★ ♡ ☾ ⋆",
+      useCases: ["Bio", "Nick", "Legenda"],
+      platforms: ["Universal", "Instagram", "TikTok"],
+      type: "Símbolo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Coquette",
+      slug: "simbolos-coquette",
+      description: "Laços 🎀, corações ♡, fitas e brilhos rosa no estilo coquette para bio e nome de usuário.",
+      preview: "🎀 ♡ ✿ ⋆ ˚",
+      useCases: ["Bio", "Nick"],
+      platforms: ["Universal", "Instagram", "TikTok"],
+      type: "Decorativo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Cottagecore",
+      slug: "simbolos-cottagecore",
+      description: "Cogumelos 🍄, flores 🌸, abelhas 🐝 e motivos campestres para decorar a bio com vibe cottagecore.",
+      preview: "🍄 🌸 🐝 ✿ 🌿",
+      useCases: ["Bio", "Legenda"],
+      platforms: ["Universal", "Instagram"],
+      type: "Decorativo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Confirmação",
+      slug: "simbolos-de-confirmacao",
+      description: "Check e visto ✓ ✔ ✅ ☑ mais X ✗ ❌ para listas, enquetes e marcar tarefas concluídas.",
+      preview: "✓ ✔ ✅ ☑ ✗",
+      useCases: ["Listas", "Legenda", "Bio"],
+      platforms: ["Universal", "WhatsApp"],
+      type: "Símbolo",
+      subject: "Sinais & Indicadores",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Coração",
+      slug: "simbolos-de-coracao",
+      description: "Corações ♥ ♡ ❤ ❥ ꨄ para bio do Insta e do Zap, nick de casal, legenda e recado.",
+      preview: "♥ ♡ ❤ ❥ ꨄ",
+      useCases: ["Bio", "Nick", "Legenda"],
+      platforms: ["Universal", "Instagram", "WhatsApp"],
+      type: "Símbolo",
+      subject: "Emoções & Expressões",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Cruz e X",
+      slug: "simbolos-de-cruz-e-x",
+      description: "Cruzes ✝ ☦ ✠ e formatos de X ✗ ✕ para logo, bio, legenda e referência.",
+      preview: "✝ ☦ ✠ ✗ ✕",
+      useCases: ["Bio", "Legenda", "Referência"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Espiritual & Crenças",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Estrela",
+      slug: "simbolos-de-estrela",
+      description: "Estrelas ★ ☆ ✦ ✧ ⋆ para avaliação, enfeite de nick e bio com vibe aesthetic.",
+      preview: "★ ☆ ✦ ✧ ⋆",
+      useCases: ["Legenda", "Nick", "Bio"],
+      platforms: ["Universal", "Instagram"],
+      type: "Símbolo",
+      subject: "Formas & Geometria",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Marcadores",
+      slug: "simbolos-de-marcadores",
+      description: "Marcadores e pontos • ● ◦ ‣ ▪ mais setas e estrelas para listas organizadas na legenda e na bio.",
+      preview: "• ● ◦ ‣ ▪",
+      useCases: ["Listas", "Legenda", "Bio"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Sinais & Indicadores",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos para Discord",
+      slug: "simbolos-discord",
+      description: "Decoração para nomes, canais e cargos do Discord — ▸ ┊ ➤ ꒱ ⟢, divisores, corações e estrelas.",
+      preview: "▸ ┊ ➤ ꒱ ⟢",
+      useCases: ["Nick", "Bio"],
+      platforms: ["Discord", "Universal"],
+      type: "Decorativo",
+      subject: "Jogos & Plataformas",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos para Free Fire",
+      slug: "simbolos-para-free-fire",
+      description: "Guarda-chuva ꧁꧂, coroas, katakana e espadas prontos para copiar e colar no nick de Free Fire — também funcionam em ML e Roblox.",
+      preview: "꧁ ꧂ ♛ メ ★",
+      useCases: ["Nick", "Clã"],
+      platforms: ["Free Fire", "Mobile Legends", "Roblox"],
+      type: "Decorativo",
+      subject: "Jogos & Plataformas",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Dreamcore & Weirdcore",
+      slug: "simbolos-dreamcore-weirdcore",
+      description: "Olhos surreais 👁, arco-íris 🌈 e blocos de glitch para posts liminais dreamcore e weirdcore.",
+      preview: "👁 🌈 ⋆ ▚ ⛩",
+      useCases: ["Bio", "Legenda"],
+      platforms: ["Universal", "TikTok"],
+      type: "Decorativo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Fairycore",
+      slug: "simbolos-fairycore",
+      description: "Fadas 🧚, cogumelos 🍄, brilhos ✨ e florzinhas para uma bio com clima mágico fairycore.",
+      preview: "🧚 🍄 ✨ ✿ ⋆",
+      useCases: ["Bio", "Nick"],
+      platforms: ["Universal", "Instagram"],
+      type: "Decorativo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Goth & Grunge",
+      slug: "simbolos-goth-grunge",
+      description: "Símbolos dark goth e grunge — cruz, caveira, aranha e adaga para perfil alternativo.",
+      preview: "✝ 🕷 🗡 ☠ ⛧",
+      useCases: ["Bio", "Nick"],
+      platforms: ["Universal", "Instagram"],
+      type: "Decorativo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Japoneses",
+      slug: "simbolos-japoneses",
+      description: "Kanji 桜 愛, hiragana, katakana e pontuação japonesa para bio sem teclado especial.",
+      preview: "桜 愛 あ ア ・",
+      useCases: ["Bio", "Nick", "Referência"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Cultura & Idioma",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Kawaii & Fofos",
+      slug: "simbolos-kawaii-cute",
+      description: "Corações suaves, carinhas mini, brilhos e decoração pastel no estilo kawaii para bio e recado.",
+      preview: "♡ ⋆ ✿ ˚ ⊹",
+      useCases: ["Bio", "Nick", "Comentário"],
+      platforms: ["Universal", "Instagram"],
+      type: "Decorativo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Matemáticos",
+      slug: "simbolos-matematicos",
+      description: "Operadores, comparação, teoria dos conjuntos, raiz, potência e o sinal de infinito ∞.",
+      preview: "± × ÷ √ ∞",
+      useCases: ["Referência", "Legenda"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Ciência & Técnica",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos do Roblox",
+      slug: "simbolos-roblox",
+      description: "40+ símbolos ✦ ⚡ ♡ para nome de exibição, bio e grupo do Roblox — testados com o filtro de nomes atual.",
+      preview: "✦ ⚡ ♡ ★ ◈",
+      useCases: ["Nick", "Bio"],
+      platforms: ["Roblox", "Universal"],
+      type: "Decorativo",
+      subject: "Jogos & Plataformas",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Therian",
+      slug: "simbolos-therian",
+      description: "Theta-delta θΔ, pegadas, fases da lua e símbolos animais da comunidade therian e alterhuman.",
+      preview: "θ Δ ☾ 🐾 ⧖",
+      useCases: ["Bio", "Nick"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Witchy & Ocultos",
+      slug: "simbolos-witchy-occult",
+      description: "Pentagrama, fases da lua, sinais planetários e alquimia para a estética witchy e ocultista.",
+      preview: "☽ ⛤ ☿ 🜁 ✵",
+      useCases: ["Bio", "Legenda"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Espiritual & Crenças",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos Y2K",
+      slug: "simbolos-y2k",
+      description: "Estrelas ✰, brilhos ✧, cruz ♱, borboleta 🦋 e CD 💿 para bio e nome com vibe Y2K.",
+      preview: "✰ ✧ ♱ 🦋 💿",
+      useCases: ["Bio", "Nick", "Legenda"],
+      platforms: ["Universal", "Instagram", "TikTok"],
+      type: "Decorativo",
+      subject: "Estético & Decorativo",
+      alpha: "S"
+    },
+    {
+      title: "Símbolos de Seta",
+      slug: "setas",
+      description: "Setas → ← ↑ ↓ ➤ ⇒ » para enfeitar nick, apontar direção e organizar listas.",
+      preview: "→ ← ↑ ↓ ➤",
+      useCases: ["Nick", "Legenda", "Bio"],
+      platforms: ["Universal"],
+      type: "Símbolo",
+      subject: "Formas & Geometria",
+      alpha: "S"
+    }
+  ];
+
+  /* ── Controlled vocabularies ── */
+  const SUBJECTS   = ["Estético & Decorativo","Emoções & Expressões","Formas & Geometria","Sinais & Indicadores","Ciência & Técnica","Cultura & Idioma","Jogos & Plataformas","Música & Arte","Espiritual & Crenças","Natureza & Animais","Futebol & Ídolos"];
+  const USE_CASES  = ["Bio","Legenda","Nick","Comentário","Listas","Referência"];
+  const PLATFORMS  = ["Instagram","TikTok","WhatsApp","Discord","Roblox","Universal"];
+  const TYPES      = ["Símbolo","Emoji","Decorativo","Kaomoji","Combo de Emoji"];
+
+  /* ── State ── */
+  let activeSubject = null;
+  let activeUseCase = null;
+  let activePlatform = null;
+  let activeType = null;
+  let searchQuery = "";
+
+  /* ── Helpers ── */
+  function countBy(data, key, value) {
+    return data.filter(function (item) {
+      if (key === "useCases") return item.useCases.indexOf(value) !== -1;
+      if (key === "platforms") return item.platforms.indexOf(value) !== -1;
+      if (key === "type") return item.type === value;
+      if (key === "subject") return item.subject === value;
+      return false;
+    }).length;
+  }
+
+  function buildPills(containerId, vocab, key, getActive, setActive) {
+    const row = document.getElementById(containerId);
+    vocab.forEach(function (val) {
+      const total = countBy(LIBRARY, key, val);
+      if (total === 0) return;
+      const btn = document.createElement("button");
+      btn.className = "lib-pill";
+      btn.dataset.value = val;
+      btn.setAttribute("aria-pressed", "false");
+      btn.innerHTML = val + ' <span class="pill-count">(' + total + ')</span>';
+      btn.addEventListener("click", function () {
+        if (getActive() === val) {
+          setActive(null);
+        } else {
+          setActive(val);
+        }
+        render();
+      });
+      row.appendChild(btn);
+    });
+  }
+
+  function updatePillStates() {
+    document.querySelectorAll("#subjectRow .lib-pill").forEach(function (btn) {
+      const active = btn.dataset.value === activeSubject;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+    document.querySelectorAll("#useCaseRow .lib-pill").forEach(function (btn) {
+      const active = btn.dataset.value === activeUseCase;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+    document.querySelectorAll("#platformRow .lib-pill").forEach(function (btn) {
+      const active = btn.dataset.value === activePlatform;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+    document.querySelectorAll("#typeRow .lib-pill").forEach(function (btn) {
+      const active = btn.dataset.value === activeType;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+
+    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
+    const clearBtn = document.getElementById("clearFilters");
+    clearBtn.classList.toggle("visible", !!anyFilter);
+  }
+
+  function getFiltered() {
+    return LIBRARY.filter(function (item) {
+      if (activeSubject && item.subject !== activeSubject) return false;
+      if (activeUseCase && item.useCases.indexOf(activeUseCase) === -1) return false;
+      if (activePlatform && item.platforms.indexOf(activePlatform) === -1) return false;
+      if (activeType && item.type !== activeType) return false;
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        if (item.title.toLowerCase().indexOf(q) === -1 &&
+            item.description.toLowerCase().indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+  }
+
+  /* ── Alphabet bar ── */
+  function buildAlphaBar(filtered) {
+    const bar = document.getElementById("alphaBar");
+    bar.innerHTML = "";
+    const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    ALPHABET.forEach(function (letter) {
+      const count = filtered.filter(function (item) { return item.alpha === letter; }).length;
+      const hasItems = count > 0;
+      const btn = document.createElement("a");
+      btn.className = "lib-alpha-btn" + (hasItems ? "" : " disabled");
+      btn.dataset.letter = letter;
+      if (hasItems) {
+        btn.href = "#lib-letter-" + letter;
+      } else {
+        btn.setAttribute("aria-disabled", "true");
+        btn.setAttribute("tabindex", "-1");
+      }
+      btn.setAttribute("aria-label", letter + (hasItems ? " — " + count + " coleções" : " — nenhuma coleção"));
+      btn.innerHTML = letter + '<span class="alpha-count">' + (hasItems ? count : "·") + '</span>';
+      bar.appendChild(btn);
+    });
+  }
+
+  /* ── Directory render ── */
+  let letterObserver = null;
+
+  function render() {
+    const filtered = getFiltered();
+    const dir = document.getElementById("libDirectory");
+    const empty = document.getElementById("libEmpty");
+    const countEl = document.getElementById("libResultCount");
+
+    updatePillStates();
+    buildAlphaBar(filtered);
+
+    // Update result count line
+    const anyFilter = activeSubject || activeUseCase || activePlatform || activeType || searchQuery;
+    if (anyFilter) {
+      countEl.hidden = false;
+      countEl.textContent = "Mostrando " + filtered.length + " de " + LIBRARY.length + " coleções";
+    } else {
+      countEl.hidden = true;
+      countEl.textContent = "";
+    }
+
+    if (filtered.length === 0) {
+      dir.innerHTML = "";
+      empty.classList.add("visible");
+      teardownLetterObserver();
+      return;
+    }
+    empty.classList.remove("visible");
+
+    // Group by alpha
+    const groups = {};
+    filtered.forEach(function (item) {
+      if (!groups[item.alpha]) groups[item.alpha] = [];
+      groups[item.alpha].push(item);
+    });
+
+    const letters = Object.keys(groups).sort();
+    let html = "";
+    letters.forEach(function (letter) {
+      const items = groups[letter];
+      html += '<section class="lib-letter-section" id="lib-letter-' + letter + '" aria-labelledby="lib-letter-heading-' + letter + '">';
+      html += '<h2 class="lib-letter-heading" id="lib-letter-heading-' + letter + '"><span class="letter">' + letter + '</span><span class="lcount">(' + items.length + ')</span></h2>';
+      items.forEach(function (item, idx) {
+        const titleId = "lib-entry-title-" + letter + "-" + idx;
+        const tags = [];
+        function tagBtn(filterKey, val, extraClass) {
+          const cls = "lib-entry-tag" + (extraClass ? " " + extraClass : "");
+          const label = "Filtrar por " + filterKey + ": " + val;
+          return '<button type="button" class="' + cls + '"' +
+            ' data-filter="' + escHtml(filterKey) + '"' +
+            ' data-value="' + escHtml(val) + '"' +
+            ' aria-label="' + escHtml(label) + '">' +
+            escHtml(val) + '</button>';
+        }
+        if (item.type) tags.push(tagBtn("type", item.type, "is-type"));
+        (item.useCases || []).slice(0, 3).forEach(function (uc) {
+          tags.push(tagBtn("useCases", uc));
+        });
+        (item.platforms || []).slice(0, 2).forEach(function (pl) {
+          if (pl === "Universal") return;
+          tags.push(tagBtn("platforms", pl));
+        });
+
+        html += '<article class="lib-entry">';
+        html += '<h3 class="lib-entry-title" id="' + titleId + '">' +
+          '<a class="lib-entry-title-link" href="' + (item.url || ("/pt/library/" + encodeURIComponent(item.slug) + "/")) + '">' +
+          escHtml(item.title) + '</a></h3>';
+        html += '<p class="lib-entry-desc">' + escHtml(item.description) + '</p>';
+        html += '<span class="lib-entry-preview" aria-hidden="true">' + escHtml(item.preview) + '</span>';
+        if (tags.length) {
+          html += '<div class="lib-entry-meta">' + tags.join("") + '</div>';
+        }
+        html += '</article>';
+      });
+      html += '</section>';
+    });
+
+    dir.innerHTML = html;
+
+    setupLetterObserver();
+  }
+
+  /* ── Active letter highlighting ── */
+  function teardownLetterObserver() {
+    if (letterObserver) {
+      letterObserver.disconnect();
+      letterObserver = null;
+    }
+    document.querySelectorAll(".lib-alpha-btn.is-current").forEach(function (el) {
+      el.classList.remove("is-current");
+    });
+  }
+
+  function setupLetterObserver() {
+    teardownLetterObserver();
+    if (!("IntersectionObserver" in window)) return;
+
+    const sections = document.querySelectorAll(".lib-letter-section");
+    if (!sections.length) return;
+
+    const visible = {};
+    letterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        const id = entry.target.id; // lib-letter-X
+        const letter = id.replace("lib-letter-", "");
+        if (entry.isIntersecting) {
+          visible[letter] = entry.intersectionRatio;
+        } else {
+          delete visible[letter];
+        }
+      });
+
+      // Pick the topmost visible letter
+      let current = null;
+      let topY = Infinity;
+      Object.keys(visible).forEach(function (letter) {
+        const el = document.getElementById("lib-letter-" + letter);
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top < topY) {
+          topY = rect.top;
+          current = letter;
+        }
+      });
+
+      document.querySelectorAll(".lib-alpha-btn").forEach(function (btn) {
+        btn.classList.toggle("is-current", btn.dataset.letter === current);
+      });
+    }, {
+      // Top offset accounts for the sticky alpha bar (~80px tall);
+      // bottom offset prevents the next section from activating too early.
+      rootMargin: "-80px 0px -60% 0px",
+      threshold: [0, 0.25, 0.5, 1]
+    });
+
+    sections.forEach(function (sec) { letterObserver.observe(sec); });
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function clearAll() {
+    activeSubject = null;
+    activeUseCase = null;
+    activePlatform = null;
+    activeType = null;
+    searchQuery = "";
+    document.getElementById("libSearch").value = "";
+    render();
+  }
+
+  /* ── Init ── */
+  buildPills("subjectRow", SUBJECTS, "subject",
+    function () { return activeSubject; },
+    function (v) { activeSubject = v; });
+
+  buildPills("useCaseRow", USE_CASES, "useCases",
+    function () { return activeUseCase; },
+    function (v) { activeUseCase = v; });
+
+  buildPills("platformRow", PLATFORMS, "platforms",
+    function () { return activePlatform; },
+    function (v) { activePlatform = v; });
+
+  buildPills("typeRow", TYPES, "type",
+    function () { return activeType; },
+    function (v) { activeType = v; });
+
+  document.getElementById("libSearch").addEventListener("input", function () {
+    searchQuery = this.value.trim();
+    render();
+  });
+
+  document.getElementById("clearFilters").addEventListener("click", clearAll);
+  document.getElementById("emptyResetBtn").addEventListener("click", clearAll);
+
+  /* ── Tag-button → filter (event delegation) ── */
+  document.getElementById("libDirectory").addEventListener("click", function (e) {
+    const btn = e.target.closest && e.target.closest(".lib-entry-tag");
+    if (!btn) return;
+    const key = btn.dataset.filter;
+    const val = btn.dataset.value;
+    if (!key || !val) return;
+    if (key === "type") {
+      activeType = (activeType === val) ? null : val;
+    } else if (key === "useCases") {
+      activeUseCase = (activeUseCase === val) ? null : val;
+    } else if (key === "platforms") {
+      activePlatform = (activePlatform === val) ? null : val;
+    } else {
+      return;
+    }
+    render();
+  });
+
+  /* ── Back-to-top ── */
+  const backTop = document.getElementById("libBackTop");
+  if (backTop) {
+    const toggleBackTop = function () {
+      if (window.scrollY > 600) {
+        backTop.classList.add("visible");
+      } else {
+        backTop.classList.remove("visible");
+      }
+    };
+    window.addEventListener("scroll", toggleBackTop, { passive: true });
+    backTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    toggleBackTop();
+  }
+
+  /* ── ItemList JSON-LD (SEO) ── */
+  function injectItemListJsonLd() {
+    const itemListElement = LIBRARY.map(function (item, idx) {
+      return {
+        "@type": "ListItem",
+        "position": idx + 1,
+        "url": "https://ultratextgen.com" + (item.url || ("/pt/library/" + item.slug + "/")),
+        "name": item.title
+      };
+    });
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Biblioteca de Símbolos UltraTextGen",
+      "url": "https://ultratextgen.com/pt/library/",
+      "numberOfItems": LIBRARY.length,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": itemListElement
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(data);
+    document.head.appendChild(script);
+  }
+  injectItemListJsonLd();
+
+  render();
+})();
+</script>
+<script src="/footer.js" defer></script>
+</body>
+</html>

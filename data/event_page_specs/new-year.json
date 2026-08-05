@@ -17,6 +17,7 @@
 
   "canonical": "https://ultratextgen.com/events/new-year/",
 
+  "occurrence": {"type": "fixed", "month": 1, "day": 1},
   "fonts": {
     "curated_keys": [
       "Ultra Bold",
@@ -93,64 +94,143 @@
   "phrase_bank": [
     {
       "text": "Happy New Year",
-      "native_script": "Happy New Year",
-      "romanization": "Pronounced as written",
-      "translation": "The classic, all-purpose New Year's greeting.",
-      "needs_native_speaker_review": false
+      "group": "Classic greetings",
+      "translation": "The one that always works."
     },
     {
-      "text": "Cheers to the New Year",
-      "native_script": "Cheers to the New Year",
-      "romanization": "Pronounced as written",
-      "translation": "A toast-ready line for midnight or a card.",
-      "needs_native_speaker_review": false
+      "text": "Happy New Year 2027",
+      "group": "Classic greetings",
+      "translation": "Swap the year to match — the generator restyles it either way."
     },
     {
-      "text": "New Year, New Me",
-      "native_script": "New Year, New Me",
-      "romanization": "Pronounced as written",
-      "translation": "The self-improvement / resolution classic.",
-      "needs_native_speaker_review": false
+      "text": "Wishing you a happy and healthy new year",
+      "group": "Classic greetings",
+      "translation": "Warm, all-purpose card wording."
     },
     {
-      "text": "Ring in the New Year",
-      "native_script": "Ring in the New Year",
-      "romanization": "Pronounced as written",
-      "translation": "A festive way of saying 'celebrate the year's start.'",
-      "needs_native_speaker_review": false
+      "text": "Cheers to the new year",
+      "group": "Classic greetings",
+      "translation": "Toast-style greeting."
     },
     {
-      "text": "Here's to New Beginnings",
-      "native_script": "Here's to New Beginnings",
-      "romanization": "Pronounced as written",
-      "translation": "A toast line for fresh starts and resolutions.",
-      "needs_native_speaker_review": false
+      "text": "New year, new start",
+      "group": "Classic greetings",
+      "translation": "Short and forward-looking."
     },
     {
-      "text": "Out with the Old, In with the New",
-      "native_script": "Out with the Old, In with the New",
-      "romanization": "Pronounced as written",
-      "translation": "The classic line for letting go of last year.",
-      "needs_native_speaker_review": false
+      "text": "Happy New Year to you too!",
+      "group": "Replies",
+      "translation": "Plain reply."
     },
     {
-      "text": "Wishing You a Bright New Year",
-      "native_script": "Wishing You a Bright New Year",
-      "romanization": "Pronounced as written",
-      "translation": "A warm, all-purpose greeting-card line.",
-      "needs_native_speaker_review": false
+      "text": "Thank you — wishing you an even better year",
+      "group": "Replies",
+      "translation": "Warmer reply that returns the wish."
     },
     {
-      "text": "Feliz Ano Nuevo",
-      "native_script": "Feliz Año Nuevo",
-      "romanization": "Feh-LEEZ AH-nyo NWEH-vo",
-      "translation": "Happy New Year (Spanish) — one of the most widely recognized New Year's greetings worldwide.",
-      "needs_native_speaker_review": true
+      "text": "Happy New Year to you and your family",
+      "group": "For family",
+      "translation": "Standard family card wording."
+    },
+    {
+      "text": "Wishing our family health and happiness this year",
+      "group": "For family",
+      "translation": "For the family group chat."
+    },
+    {
+      "text": "Here's to another year together",
+      "group": "For family",
+      "translation": "For a partner or close family."
+    },
+    {
+      "text": "Missing you as the clock strikes twelve",
+      "group": "For family",
+      "translation": "For family you're apart from."
+    },
+    {
+      "text": "Happy New Year! Same chaos, new calendar",
+      "group": "For friends",
+      "translation": "Light, funny group-chat line."
+    },
+    {
+      "text": "New year, same us — and that's the point",
+      "group": "For friends",
+      "translation": "Warm, informal message for close friends."
+    },
+    {
+      "text": "Cheers to surviving another one",
+      "group": "For friends",
+      "translation": "Wry toast for friends."
+    },
+    {
+      "text": "Let's make this one count",
+      "group": "For friends",
+      "translation": "Short and motivating."
+    },
+    {
+      "text": "First message of the year goes to you",
+      "group": "For friends",
+      "translation": "Sweet, personal opener at midnight."
+    },
+    {
+      "text": "Wishing you a successful and prosperous new year",
+      "group": "Formal & work",
+      "translation": "The standard business card line."
+    },
+    {
+      "text": "Thank you for your partnership this year — Happy New Year",
+      "group": "Formal & work",
+      "translation": "For clients."
+    },
+    {
+      "text": "Happy New Year from all of us",
+      "group": "Formal & work",
+      "translation": "Team or company-wide message."
+    },
+    {
+      "text": "Looking forward to what we build together this year",
+      "group": "Formal & work",
+      "translation": "Forward-looking work message."
+    },
+    {
+      "text": "Happy New Year",
+      "group": "Short for a caption",
+      "translation": "The caption that always works."
+    },
+    {
+      "text": "New year, new chapter",
+      "group": "Short for a caption",
+      "translation": "Reflective caption."
+    },
+    {
+      "text": "Countdown complete",
+      "group": "Short for a caption",
+      "translation": "For a midnight photo."
+    },
+    {
+      "text": "Bring it on",
+      "group": "Short for a caption",
+      "translation": "Three words, high energy."
+    },
+    {
+      "text": "See you next year",
+      "group": "Short for a caption",
+      "translation": "The New Year's Eve joke that never dies."
+    },
+    {
+      "text": "Onwards",
+      "group": "Short for a caption",
+      "translation": "One word, works in any bio."
     }
   ],
 
   "companion_answer_slug": "happy-new-year-wishes-what-to-write",
 
+  "phrase_cta": "Need the words instead of the look? See <a href=\"{href}\">New Year wishes and messages to write</a> for card-, text-, and work-appropriate lines.",
+  "companion_answer_title": "New Year Wishes &amp; Messages: What to Write",
+  "companion_answer_desc": "Short, funny, heartfelt, and professional Happy New Year message ideas for a card, text, or caption.",
+  "faq_more_q": "What should I actually write in a New Year's message?",
+  "faq_more_a": "The phrase bank above covers ready-made lines, but if you want more options for a card, text, or work message, see <a href=\"{href}\">New Year Wishes &amp; Messages: What to Write</a> for short, funny, heartfelt, and professional examples.",
   "related": [
     {
       "href": "/library/party-celebration-emojis/",

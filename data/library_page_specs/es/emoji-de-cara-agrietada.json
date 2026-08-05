@@ -1,0 +1,86 @@
+{
+  "lang": "es",
+  "slug": "emoji-de-cara-agrietada",
+  "page_type": "symbol",
+  "title": "Emoji de Cara Agrietada: Copiar y Pegar 🫫 — el Candidato en Borrador de Emoji 18.0 que Sustituye a «Cara con Ojos Entrecerrados»",
+  "meta_description": "Cara Agrietada (🫫, U+1FAEB) es un candidato en borrador para Emoji 18.0, previsto junto a Unicode 18.0 en septiembre de 2026 — aún no aprobado, y ninguna fuente lo renderiza hoy. Su historia, significado y estado.",
+  "canonical": "https://ultratextgen.com/es/symbol/emoji-de-cara-agrietada/",
+  "breadcrumb": "Emoji de Cara Agrietada",
+  "hero_h1": "Emoji de Cara Agrietada",
+  "hero_tagline": "Una cara a media expresión, agrietándose bajo presión — en fase de borrador para Emoji 18.0, previsto junto a Unicode 18.0 en septiembre de 2026. Solo borrador: aún no aprobado, y ninguna fuente lo renderiza. Haz clic para copiar el código igualmente.",
+  "intro": "Cara Agrietada (🫫, U+1FAEB) es un emoji candidato en fase de borrador para Emoji 18.0, la actualización de emoji que acompaña a Unicode 18.0 y que se espera finalizar en septiembre de 2026. Representa una cara a media expresión con una grieta visible, y la mayoría de la cobertura la interpreta como tensión emocional o «romperse» mientras se sigue sonriendo — encaja con el meme de la generación Z de «estoy bien», donde alguien parece tranquilo por fuera mientras por dentro está desbordado. Su punto de código tiene una historia concreta: U+1FAEB estaba reservado originalmente para otro emoji propuesto, «Cara con Ojos Entrecerrados», antes de que el grupo de trabajo de investigación y estándares de emoji de Unicode recomendara sustituirlo por Cara Agrietada en enero de 2026. En el momento de escribir esto, la propia documentación del proceso de Unicode sigue listando esa casilla bajo su nombre original, marcada como pendiente de una resolución de cambio de nombre — lo que significa que ni siquiera el nombre «Cara Agrietada» está del todo fijado todavía, pese a que buena parte de la prensa ya lo use. Como todavía es un borrador, ningún sistema operativo, teclado o fuente lo renderiza actualmente; espera un cuadro en blanco o un glifo de marcador de posición hasta que se apruebe Emoji 18.0 y las plataformas incorporen soporte, probablemente en algún momento de 2027.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/emoji-de-cara-agrietada/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/cracking-face-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "cara-agrietada",
+      "label": "Cara Agrietada",
+      "h2": "Emoji de Cara Agrietada",
+      "intro": "El carácter en borrador propiamente dicho — copiable hoy como código, aunque ninguna fuente pueda renderizarlo todavía.",
+      "symbols": [
+        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB)" }
+      ]
+    },
+    {
+      "id": "emoji-de-cara-relacionados",
+      "label": "Emoji de Cara Relacionados",
+      "h2": "Emoji ya Existentes con los que se Compara",
+      "intro": "Emoji de cara ya codificados y con soporte total que cubren un terreno parecido de «tensión» o «desbordamiento» — sustitutos útiles hasta que Cara Agrietada llegue de verdad.",
+      "symbols": [
+        { "char": "😬", "label": "Cara Haciendo Muecas" },
+        { "char": "🫠", "label": "Cara Derritiéndose" },
+        { "char": "🥴", "label": "Cara Mareada" },
+        { "char": "🫪", "label": "Cara Distorsionada (el emoji nuevo más popular de Unicode 17.0)" }
+      ]
+    },
+    {
+      "id": "otros-candidatos",
+      "label": "Otros Candidatos en Borrador",
+      "h2": "Otros Candidatos en Borrador de Emoji 18.0",
+      "intro": "Cara Agrietada no es el único carácter sin aprobar de esta versión — estos están en borrador junto a ella, igual de sin renderizar hasta la decisión de septiembre de 2026.",
+      "symbols": [
+        { "char": "🫝", "label": "Pepinillo (borrador, U+1FADD)" },
+        { "char": "🫌", "label": "Mariposa Monarca (borrador, U+1FACC)" },
+        { "char": "🛙", "label": "Faro (borrador, U+1F6D9)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/face-emojis/",
+      "title": "Emoji de Caras",
+      "desc": "Todo emoji de cara ya codificado, explorable y listo para copiar y pegar hoy."
+    },
+    {
+      "href": "/es/symbol/emoji-de-pepinillo/",
+      "title": "Emoji de Pepinillo",
+      "desc": "Otro candidato en borrador de Emoji 18.0 — reasignado de una propuesta aplazada de Apple Core."
+    },
+    {
+      "href": "/es/symbol/emoji-de-meteoro/",
+      "title": "Emoji de Meteoro",
+      "desc": "Otro candidato en borrador de Emoji 18.0 — se separa de la larga división de renderizado del Cometa."
+    },
+    {
+      "href": "/es/symbol/emoji-de-mariposa-monarca/",
+      "title": "Emoji de Mariposa Monarca",
+      "desc": "Otro candidato en borrador de Emoji 18.0 — corrige una confusión de Mariposa entre plataformas."
+    },
+    {
+      "href": "/es/symbol/emoji-de-senal-de-pulgar/",
+      "title": "Emoji de Señal de Pulgar",
+      "desc": "Otro par candidato en borrador de Emoji 18.0 — señalar direccional, no aprobación."
+    },
+    {
+      "href": "/es/updates/unicode-18-nuevos-emojis-votacion/",
+      "title": "Los Nuevos Emoji de Unicode 18.0",
+      "desc": "La lista completa de 9 candidatos en borrador, ordenados por votación pública."
+    }
+  ]
+}

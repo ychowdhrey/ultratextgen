@@ -1,0 +1,74 @@
+{
+  "slug": "less-than-or-equal-to-symbol",
+  "page_type": "symbol",
+  "title": "Less Than or Equal To Symbol: Copy & Paste ≤ — Meaning, Alt Code & LaTeX",
+  "meta_description": "Copy and paste the less-than-or-equal-to symbol ≤ (U+2264) — Alt+243, the LaTeX \\leq command, its HTML entity, and confusable neighbors ≦ ⩽ ≲. Click to copy it instantly.",
+  "canonical": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/",
+  "breadcrumb": "Less Than or Equal To Symbol",
+  "hero_h1": "Less Than or Equal To Symbol (≤)",
+  "hero_tagline": "The ≤ you reach for when a value can be smaller than another value or exactly equal to it — Alt+243 on Windows, \\leq in LaTeX, and &le; in HTML. Click to copy it instantly.",
+  "intro": "The less-than-or-equal-to symbol (≤, U+2264) combines the less-than sign with a horizontal bar underneath, showing that a value can be smaller than another value or exactly equal to it — the relation behind everything from simple inequalities to the closed intervals of calculus. Unlike the strict < and > signs, which English mathematician Thomas Harriot introduced in 1631, the combined ≤/≥ pair is a later refinement: French mathematician Pierre Bouguer is generally credited with introducing it in 1734, in his essay on the gradation of light. ASCII never allocated ≤ its own slot, which is why almost every programming language falls back on the two-character <= instead of the single Unicode glyph.",
+  "date_published": "2026-07-24",
+  "date_modified": "2026-07-24",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" },
+    { "lang": "id", "href": "https://ultratextgen.com/id/symbol/simbol-kurang-dari-sama-dengan/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/less-than-or-equal-to-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "less-than-or-equal-to",
+      "label": "Less Than or Equal To",
+      "h2": "Less Than or Equal To, in Math and Code",
+      "intro": "The math symbol, and the two-character stand-in most programming languages use instead since ≤ itself was never part of ASCII.",
+      "symbols": [
+        { "char": "≤", "label": "Less-Than or Equal To (Math)" },
+        { "char": "<=", "label": "Less Than or Equal To (Code — C, Python, JavaScript, Java, SQL)" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Confusable Neighbors",
+      "h2": "Symbols Often Mistaken for ≤",
+      "intro": "These all mean roughly the same thing but are distinct Unicode characters from different typesetting traditions.",
+      "symbols": [
+        { "char": "≦", "label": "Less-Than Over Equal To (U+2266)" },
+        { "char": "⩽", "label": "Less-Than or Slanted Equal To (U+2A7D) — the ISO 31-11 preferred form" },
+        { "char": "≲", "label": "Less-Than or Equivalent To (U+2272)" },
+        { "char": "≪", "label": "Much Less Than (U+226A) — a different relation, not a variant of ≤" }
+      ]
+    },
+    {
+      "id": "related-comparison-symbols",
+      "label": "Related Comparison Symbols",
+      "h2": "Related Comparison Symbols",
+      "intro": "The other relation symbols ≤ pairs with in inequalities and set notation.",
+      "symbols": [
+        { "char": "≥", "label": "Greater-Than or Equal To (U+2265)" },
+        { "char": "<", "label": "Less Than" },
+        { "char": ">", "label": "Greater Than" },
+        { "char": "≠", "label": "Not Equal To" },
+        { "char": "=", "label": "Equals Sign" }
+      ]
+    }
+  ],
+  "cta": "Use UltraTextGen to convert plain text into bold, italic, cursive, and 100+ other Unicode font styles — free and instant.",
+  "related": [
+    {
+      "href": "/library/math-symbols/",
+      "title": "Math Symbols",
+      "desc": "Operators, set notation, and mathematical constants in one browsable reference."
+    },
+    {
+      "href": "/symbol/not-equal-sign/",
+      "title": "Not Equal Sign (≠)",
+      "desc": "Used by Euler, left out of ASCII, and why code uses != instead."
+    },
+    {
+      "href": "/symbol/less-than-greater-than/",
+      "title": "Less Than & Greater Than",
+      "desc": "The strict comparison symbols ≤ and ≥ are built from, and why they can break HTML."
+    }
+  ]
+}

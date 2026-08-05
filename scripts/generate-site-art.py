@@ -12,6 +12,9 @@ For each page it emits:
 
 Run:  python3 scripts/generate-site-art.py
 Requires: cairosvg (PNG rasterization). SVGs are valid standalone assets.
+Arabic titles additionally need arabic-reshaper + python-bidi (cairosvg has
+no shaping/bidi engine of its own — see spanned()) and the fonts-noto-core
+apt package for Noto Sans Arabic/Devanagari glyph coverage.
 
 Visual system (shared with the guide set): soft off-white panel, brand
 purple->blue gradient accents, a faint dot grid, and one focal motif per page
@@ -87,6 +90,7 @@ NATIVE_SCRIPT = {
     "th": "Noto Sans Thai",
     "ja": "Noto Sans CJK JP",
     "ko": "Noto Sans CJK KR",
+    "zh": "WenQuanYi Zen Hei",
 }
 
 # (family name written into the SVG, glob patterns to find its file).
@@ -106,6 +110,7 @@ _NATIVE_FONT_FILE = {
     "Noto Sans Thai": "/usr/share/fonts/truetype/noto/NotoSansThai-Regular.ttf",
     "Noto Sans CJK JP": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "Noto Sans CJK KR": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "WenQuanYi Zen Hei": "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
 }
 
 _cmap_cache = {}
@@ -147,6 +152,17 @@ def spanned(text, native):
     font cmaps. native is a family name from NATIVE_SCRIPT, or None."""
     if not text:
         return ""
+    if native == "Noto Sans Arabic":
+        # cairosvg has no shaping engine — it draws codepoints in logical
+        # order, left to right, which renders Arabic as disconnected
+        # isolated-form letters read in the wrong direction. Reshape into
+        # the correct contextual (joined) presentation forms, then reorder
+        # into visual order, so the plain per-character layout below,
+        # which resolves each *already-correct* glyph against font cmaps,
+        # just works.
+        import arabic_reshaper
+        from bidi.algorithm import get_display
+        text = get_display(arabic_reshaper.reshape(text))
     runs, cur, cur_family = [], "", None
     first = True
     for ch in text:
@@ -472,6 +488,18 @@ def m_smiley(p, accent=PURPLE):
           stroke-linecap="round"/>"""
 
 
+def m_sunglasses(p, accent=PURPLE):
+    """A pair of flat sunglasses lenses on a bridge — sunglasses emoji is
+    color-only and does not rasterize in the bundled fonts."""
+    return f"""
+    <rect x="76" y="150" width="92" height="66" rx="20" fill="url(#g{p})"/>
+    <rect x="192" y="150" width="92" height="66" rx="20" fill="url(#g{p})"/>
+    <path d="M168 168 q12 -10 24 0" fill="none" stroke="url(#g{p})" stroke-width="9"
+          stroke-linecap="round"/>
+    <line x1="66" y1="164" x2="76" y2="170" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>
+    <line x1="294" y1="164" x2="284" y2="170" stroke="{SUB}" stroke-width="8" stroke-linecap="round"/>"""
+
+
 def m_camera(p, accent=PURPLE):
     return f"""
     <rect x="60" y="116" width="240" height="160" rx="30" fill="url(#g{p})"/>
@@ -479,6 +507,24 @@ def m_camera(p, accent=PURPLE):
     <circle cx="180" cy="196" r="52" fill="{PANEL}"/>
     <circle cx="180" cy="196" r="30" fill="url(#gv{p})"/>
     <circle cx="262" cy="146" r="10" fill="#fff"/>"""
+
+
+def m_calendar(p, accent=PURPLE):
+    """A calendar page with binder rings and a highlighted date cell — the
+    calendar emoji is color-only and does not rasterize in bundled fonts."""
+    return f"""
+    <rect x="88" y="112" width="184" height="168" rx="24" fill="{PANEL}" stroke="{INK}" stroke-opacity="0.08" stroke-width="2"/>
+    <path d="M88 168 v-32 a24 24 0 0 1 24 -24 h136 a24 24 0 0 1 24 24 v32 Z" fill="url(#g{p})"/>
+    <rect x="124" y="88" width="16" height="40" rx="8" fill="{INK}"/>
+    <rect x="220" y="88" width="16" height="40" rx="8" fill="{INK}"/>
+    <rect x="112" y="192" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="150" y="192" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="188" y="192" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="112" y="228" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <rect x="150" y="228" width="30" height="26" rx="6" fill="url(#gv{p})"/>
+    <rect x="188" y="228" width="30" height="26" rx="6" fill="{SUB}" opacity="0.18"/>
+    <text x="165" y="248" font-family="{SANS}" font-size="17" font-weight="700"
+          fill="#fff" text-anchor="middle">17</text>"""
 
 
 def m_flag(p, accent=PURPLE):
@@ -668,6 +714,20 @@ def m_plane(p, accent=PURPLE):
           stroke-width="6" stroke-linecap="round" opacity="0.3"/>"""
 
 
+def m_microphone(p, accent=PURPLE):
+    """A microphone capsule with grille lines and a stand base — the
+    microphone emoji is color-only and does not rasterize in bundled fonts."""
+    return f"""
+    <rect x="140" y="70" width="80" height="140" rx="40" fill="url(#g{p})"/>
+    <line x1="156" y1="100" x2="204" y2="100" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="122" x2="204" y2="122" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="144" x2="204" y2="144" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <line x1="156" y1="166" x2="204" y2="166" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+    <path d="M110 190 a70 70 0 0 0 140 0" fill="none" stroke="url(#g{p})" stroke-width="12" stroke-linecap="round"/>
+    <line x1="180" y1="260" x2="180" y2="292" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>
+    <line x1="146" y1="300" x2="214" y2="300" stroke="{INK}" stroke-width="10" stroke-linecap="round"/>"""
+
+
 def m_pumpkin(p, accent=PURPLE):
     """A jack-o'-lantern — for Halloween/spooky content."""
     return f"""
@@ -732,6 +792,108 @@ def m_shield(p, accent=PURPLE):
     <circle cx="180" cy="212" r="12" fill="#fff"/>"""
 
 
+def m_circled_letter(p, letter="A", accent=PURPLE):
+    """A bold letter in a ring — for glyphs that don't rasterize in the
+    bundled fonts (e.g. circled-Latin anarchy symbol Ⓐ)."""
+    return f"""
+    <circle cx="180" cy="180" r="104" fill="none" stroke="url(#g{p})" stroke-width="16"/>
+    <text x="180" y="222" font-family="{SANS}" font-size="140" font-weight="800"
+          fill="url(#g{p})" text-anchor="middle">{esc(letter)}</text>"""
+
+
+def m_burst_angry(p, accent=PURPLE):
+    """A tight comic anger-burst — anger-symbol glyph (💢) is emoji-only
+    tofu in the bundled fonts."""
+    import math
+    cx, cy = 180, 180
+    rays = ""
+    for i in range(6):
+        ang = math.radians(i * 60)
+        x1, y1 = cx + 46 * math.cos(ang), cy + 46 * math.sin(ang)
+        x2, y2 = cx + 118 * math.cos(ang), cy + 118 * math.sin(ang)
+        rays += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                 f'stroke="{PURPLE}" stroke-width="14" stroke-linecap="round"/>')
+    return f"""{rays}
+    <circle cx="{cx}" cy="{cy}" r="44" fill="url(#g{p})"/>"""
+
+
+def m_hamsa(p, accent=PURPLE):
+    """A simplified open-palm hand with a central eye — hamsa-symbol glyph
+    (🪬) is emoji-only tofu in the bundled fonts."""
+    return f"""
+    <path d="M180 92 q-40 0 -50 54 q-4 24 4 44
+             q-38 -8 -50 22 q-10 26 14 44 q22 16 46 4
+             q-6 30 16 48 q20 16 40 0
+             q22 -18 16 -48
+             q24 12 46 -4 q24 -18 14 -44 q-12 -30 -50 -22
+             q8 -20 4 -44 q-10 -54 -50 -54 Z" fill="url(#g{p})"/>
+    <circle cx="180" cy="188" r="24" fill="{PANEL}"/>
+    <circle cx="180" cy="188" r="11" fill="url(#gv{p})"/>"""
+
+
+def m_lotus_om(p, accent=PURPLE):
+    """A lotus-ring badge — om-symbol glyph (ॐ, Devanagari) needs a font
+    this pipeline doesn't bundle."""
+    import math
+    petals = ""
+    for i in range(8):
+        ang = math.radians(i * 45)
+        x, y = 180 + 96 * math.cos(ang), 180 + 96 * math.sin(ang)
+        petals += (f'<ellipse cx="{x:.1f}" cy="{y:.1f}" rx="26" ry="14" '
+                   f'transform="rotate({i * 45} {x:.1f} {y:.1f})" '
+                   f'fill="url(#g{p})" opacity="0.85"/>')
+    return f"""{petals}
+    <circle cx="180" cy="180" r="52" fill="{PANEL}"/>
+    <circle cx="180" cy="180" r="52" fill="none" stroke="url(#gv{p})" stroke-width="8"/>"""
+
+
+def m_pentagram(p, accent=PURPLE):
+    """A 5-point star inside a ring — pentagram-symbol glyph (⛧) is
+    emoji-only tofu in the bundled fonts."""
+    import math
+    cx, cy, r = 180, 180, 96
+    pts = []
+    for i in range(5):
+        ang = -math.pi / 2 + i * 2 * math.pi / 5
+        pts.append(f"{cx + r * math.cos(ang):.1f},{cy + r * math.sin(ang):.1f}")
+    path = f"M{pts[0]} L{pts[2]} L{pts[4]} L{pts[1]} L{pts[3]} Z"
+    return f"""
+    <circle cx="{cx}" cy="{cy}" r="118" fill="none" stroke="url(#g{p})" stroke-width="10"/>
+    <path d="{path}" fill="none" stroke="url(#gv{p})" stroke-width="10"
+          stroke-linejoin="round"/>"""
+
+
+def m_stop_octagon(p, accent=PURPLE):
+    """A regular octagon with a bar — stop-sign glyph (🛑) is emoji-only
+    tofu in the bundled fonts."""
+    import math
+    cx, cy, r = 180, 180, 110
+    pts = [f"{cx + r * math.sin(math.radians(22.5 + i * 45)):.1f},"
+           f"{cy - r * math.cos(math.radians(22.5 + i * 45)):.1f}"
+           for i in range(8)]
+    return f"""
+    <polygon points="{' '.join(pts)}" fill="url(#g{p})"/>
+    <rect x="{cx - 70}" y="{cy - 16}" width="140" height="32" rx="8" fill="#fff"/>"""
+
+
+def m_braille_blank(p, accent=PURPLE):
+    """An 8-dot Braille cell drawn with every dot unfilled — the
+    invisible-character glyph (⠀, U+2800 BRAILLE PATTERN BLANK) renders as
+    nothing at all, so the motif draws the cell structure itself (the "no
+    dots raised" pattern) instead of the invisible glyph."""
+    cx, cy = 180, 180
+    xs = [cx - 32, cx + 32]
+    ys = [cy - 68, cy - 22, cy + 22, cy + 68]
+    dots = "".join(
+        f'<circle cx="{x}" cy="{y}" r="13" fill="none" stroke="url(#g{p})" stroke-width="5"/>'
+        for x in xs for y in ys)
+    return f"""
+    <rect x="{cx - 92}" y="{cy - 112}" width="184" height="224" rx="26"
+          fill="none" stroke="url(#gv{p})" stroke-width="4"
+          stroke-dasharray="10 8" opacity="0.5"/>
+    {dots}"""
+
+
 # ----- per-letter printables motifs (parametrized by the page's own letter) -----
 
 
@@ -742,6 +904,19 @@ def m_letter_bubble(p, letter="A"):
     <circle cx="180" cy="190" r="76" fill="none" stroke="#fff" stroke-width="8"/>
     <text x="180" y="212" font-family="{SANS}" font-size="130" font-weight="800"
           fill="#fff" text-anchor="middle">{esc(letter)}</text>"""
+
+
+def m_letter_cursive(p, letter="A"):
+    """Capital + lowercase pair in italic serif — cursive per-letter printables.
+    Italic serif is the raster-safe stand-in for script glyphs (the Unicode
+    Mathematical Script block does not rasterize in the bundled fonts)."""
+    return f"""
+    <rect x="40" y="90" width="280" height="200" rx="36" fill="url(#g{p})"/>
+    <line x1="70" y1="252" x2="290" y2="252" stroke="#fff" stroke-width="3" opacity="0.55" stroke-dasharray="2 7"/>
+    <text x="150" y="238" font-family="{SERIF}" font-style="italic" font-size="132" font-weight="400"
+          fill="#fff" text-anchor="middle">{esc(letter.upper())}</text>
+    <text x="252" y="238" font-family="{SERIF}" font-style="italic" font-size="96" font-weight="400"
+          fill="#fff" text-anchor="middle">{esc(letter.lower())}</text>"""
 
 
 def m_letter_dots(p, letter="A"):
@@ -849,6 +1024,51 @@ def m_heart(p, accent=PURPLE):
     <ellipse cx="145" cy="140" rx="14" ry="9" fill="#fff" opacity="0.4"/>"""
 
 
+def m_bunny(p, accent=PURPLE):
+    """A rabbit face with long ears — Easter content."""
+    return f"""
+    <ellipse cx="150" cy="90" rx="20" ry="62" fill="url(#g{p})"/>
+    <ellipse cx="210" cy="90" rx="20" ry="62" fill="url(#g{p})"/>
+    <ellipse cx="150" cy="94" rx="9" ry="42" fill="#fbcfe8" opacity="0.6"/>
+    <ellipse cx="210" cy="94" rx="9" ry="42" fill="#fbcfe8" opacity="0.6"/>
+    <circle cx="180" cy="210" r="78" fill="url(#g{p})"/>
+    <circle cx="155" cy="195" r="9" fill="{PANEL}"/>
+    <circle cx="205" cy="195" r="9" fill="{PANEL}"/>
+    <ellipse cx="180" cy="222" rx="10" ry="7" fill="{PANEL}"/>"""
+
+
+def m_pie(p, accent=PURPLE):
+    """A sliced pie on a plate — Thanksgiving content."""
+    return f"""
+    <circle cx="180" cy="200" r="95" fill="url(#g{p})"/>
+    <circle cx="180" cy="200" r="95" fill="none" stroke="{PANEL}" stroke-width="6" opacity="0.5"/>
+    <path d="M180 200 L180 118 A82 82 0 0 1 251 241 Z" fill="{PANEL}" opacity="0.28"/>
+    <line x1="180" y1="200" x2="180" y2="118" stroke="{PANEL}" stroke-width="4" opacity="0.6"/>
+    <line x1="180" y1="200" x2="251" y2="241" stroke="{PANEL}" stroke-width="4" opacity="0.6"/>"""
+
+
+def m_thumb(p, accent=PURPLE):
+    """A rounded thumbs-up badge — reaction/"Like"-themed content."""
+    return f"""
+    <rect x="66" y="66" width="228" height="228" rx="44" fill="url(#g{p})"/>
+    <g transform="translate(150 96)">
+      <path d="M42 40
+               C 30 20 34 -4 54 -10
+               C 70 -15 84 -4 86 14
+               L 90 46
+               L 118 46
+               C 132 46 142 60 136 74
+               L 116 128
+               C 111 140 99 148 86 148
+               L 30 148
+               C 18 148 8 138 8 126
+               L 8 70
+               C 8 58 14 48 24 42
+               Z" fill="#fff"/>
+      <rect x="-30" y="66" width="34" height="90" rx="14" fill="#fff" opacity="0.92"/>
+    </g>"""
+
+
 # ----- printables-tool motifs -----
 
 
@@ -951,6 +1171,30 @@ def m_star(p, accent=PURPLE):
     <path d="M90 260 l6 14 l14 6 l-14 6 l-6 14 l-6 -14 l-14 -6 l14 -6 Z" fill="{BLUE}" opacity="0.6"/>"""
 
 
+def m_clover(p, accent=PURPLE):
+    """A four-leaf clover on a stem — St Patrick's Day."""
+    return f"""
+    <circle cx="150" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="148" r="46" fill="url(#g{p})"/>
+    <circle cx="150" cy="210" r="46" fill="url(#g{p})"/>
+    <circle cx="212" cy="210" r="46" fill="url(#g{p})"/>
+    <path d="M181 214 q6 48 -22 76" stroke="{PURPLE}" stroke-width="10"
+          fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M276 96 l7 17 l17 7 l-17 7 l-7 17 l-7 -17 l-17 -7 l17 -7 Z"
+          fill="{BLUE}" opacity="0.6"/>"""
+
+
+def m_gradcap(p, accent=PURPLE):
+    """A mortarboard with a tassel — graduation."""
+    return f"""
+    <path d="M180 108 L296 156 L180 204 L64 156 Z" fill="url(#g{p})"/>
+    <path d="M108 176 L108 232 q72 40 144 0 L252 176" stroke="{PURPLE}"
+          stroke-width="12" fill="none" stroke-linejoin="round" opacity="0.85"/>
+    <path d="M290 158 L290 224" stroke="{BLUE}" stroke-width="8"
+          fill="none" stroke-linecap="round"/>
+    <circle cx="290" cy="232" r="12" fill="{BLUE}"/>"""
+
+
 def m_arc(p, letters="ARC"):
     """Letters individually rotated along a circular arc — curved/arc text tool."""
     import math
@@ -1002,8 +1246,10 @@ K_CAT = "ULTRATEXTGEN · FONTS"
 K_USE = "ULTRATEXTGEN · GENERATOR"
 K_PLAT = "ULTRATEXTGEN · PLATFORM"
 K_ANS = "ULTRATEXTGEN · ANSWERS"
+K_SYM = "ULTRATEXTGEN · SYMBOLS"
 K_SITE = "ULTRATEXTGEN"
 K_PRINT = "ULTRATEXTGEN · PRINTABLES"
+K_UPDATE = "ULTRATEXTGEN · UPDATES"
 
 
 def glyphs(*g):
@@ -1036,6 +1282,8 @@ LOCALIZED_HOME = {
          "Generator Font Aesthetic", "Font dan simbol keren untuk disalin"),
   "vi": ("tao-chu-kieu-dep-preview",
          "Tạo Chữ Kiểu Đẹp", "Phông chữ và ký tự đặc biệt để sao chép"),
+  "hu": ("betu-generator-preview",
+         "Betű Generátor", "Menő betűtípusok és szimbólumok másolása"),
 }
 
 # Bespoke motifs for the locales with demonstrated organic performance (GSC
@@ -1062,6 +1310,45 @@ HOME_CARD = "fancy-text-generator-preview"
 
 
 PAGES = {
+  # ---- localized game-nickname generators & symbol libraries (new markets) ----
+  "pt-espaco-invisivel": ("Espaço Invisível", "Caractere em branco para copiar", m_block, K_LIB),
+  "pt-library-simbolos-para-free-fire": ("Símbolos para Nick de Free Fire", "Guarda-chuva, coroas e símbolos para o FF", m_grid, K_LIB),
+  "ro-nume-pentru-free-fire": ("Nume pentru Free Fire", "Generator de nick-uri și simboluri", m_trophy, K_USE),
+  "ro-caractere-speciale": ("Caractere Speciale", "Simboluri de copiat pentru nume", m_grid, K_LIB),
+  "hu-becenev-generator": ("Becenév Generátor", "Menő nevek és nickek játékokhoz", m_trophy, K_USE),
+  "hu-kulonleges-karakterek": ("Különleges Karakterek", "Szimbólumok másoláshoz", m_grid, K_LIB),
+  "cs-generator-prezdivek": ("Generátor Přezdívek", "Hezké nicky do her", m_trophy, K_USE),
+  "cs-specialni-znaky": ("Speciální Znaky", "Symboly na kopírování", m_grid, K_LIB),
+  "hr-generator-nadimaka": ("Generator Nadimaka", "Fensi nadimci za igre", m_trophy, K_USE),
+  "hr-posebni-znakovi": ("Posebni Znakovi", "Simboli za kopiranje", m_grid, K_LIB),
+
+  # ---- zh-tw (Traditional Chinese / Taiwan) pilot locale ----
+  # Root gets the highest-opportunity keyword for this market (kaomoji,
+  # per data/tw_piliapp_niche_keywords research: 110K volume, incumbent
+  # only #11) rather than a generic translated homepage — same pattern
+  # as ko/'s root going to "특수문자" instead of the font tool.
+  "zh-tw": ("顏文字大全", "複製貼上可愛表情符號", m_kaomoji, K_SITE),
+  "zh-tw-yingwen-ziti": ("英文字體產生器", "花式英文字體，複製貼上", m_typo, K_USE),
+  "zh-tw-library-xingzuo-fuhao": ("十二星座符號", "星座與行星符號大全", glyphs("♈", "♋", "♌", "♏", "♐"), K_LIB),
+  "zh-tw-library-kongbai-fuhao": ("空白符號", "隱形字元，貼哪都不留痕跡",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "zh-tw-da-xiao-xie-zhuanhuan": ("大小寫轉換", "英文大寫、小寫一鍵轉換",
+        P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
+  "zh-tw-usecase-ciqing-ziti": ("刺青字體產生器", "紋身字體預覽比較",
+        P(m_typo, sample="Love", ff=SERIF, style="italic", weight="400", size=64,
+          label="cursive · gothic · italic"), K_USE),
+  "zh-tw-usecase-youxi-mingzi-fuhao": ("遊戲暱稱特殊符號", "傳說對決・Discord暱稱裝飾", m_gamepad, K_USE),
+  "zh-tw-ig-ziti": ("IG 字體產生器", "個人簡介・名稱特殊字體",
+        P(m_typo, sample="ig", weight="700", size=88, label="bold · script · caps"), K_USE),
+  "zh-tw-shufa-ziti": ("書法字體產生器", "英文花體字，複製貼上",
+        P(m_typo, sample="Sofia", ff=SERIF, style="italic", weight="400", size=64,
+          label="cursive · script"), K_CAT),
+  "zh-tw-keai-ziti": ("可愛字體產生器", "圈圈字、泡泡字與可愛符號",
+        glyphs("♡", "✧", "❀", "✿", "❥"), K_CAT),
+  "zh-tw-library-jiantou-fuhao": ("箭頭符號大全", "各種方向箭頭，複製貼上", glyphs("→", "⇒", "↑", "➜", "↩"), K_LIB),
+  "zh-tw-library-shuzi-fuhao": ("數字符號大全", "圈形、上標、羅馬數字", glyphs("①", "⁵", "Ⅹ", "₂", "❶"), K_LIB),
+  "zh-tw-library-xingxing-fuhao": ("星星符號大全", "星星、閃光與評分符號", glyphs("★", "✦", "✰", "✧", "✩"), K_LIB),
+
   "kaomoji-dictionary": ("Kaomoji Dictionary", "Decode any text face", m_kaomoji, K_SITE),
   "kaomoji-generator": ("Kaomoji Generator", "Build your own text face", m_kaomoji, K_SITE),
   # ---- site root / overview ----
@@ -1072,6 +1359,7 @@ PAGES = {
 
   # ---- category overview + pages ----
   "category": ("Unicode Font Categories", "Choose a style by its visual intent", m_grid, K_CAT),
+  "pl-category": ("Kategorie Czcionek Unicode", "Wybierz styl pasujący do klimatu", m_grid, K_CAT),
   "category-aesthetic-fonts": ("Aesthetic Font Generator", "Soft, spaced-out vaporwave styling",
         P(m_typo, sample="a e s", size=72, spacing="6", label="a e s t h e t i c"), K_CAT),
   "category-bold-fonts": ("Bold Fonts Generator", "Heavy weight that commands attention",
@@ -1112,6 +1400,16 @@ PAGES = {
         P(m_typo, sample="Italic", style="italic", weight="600", size=72, label="emphasis & flow"), K_CAT),
   "category-small-text": ("Small Text Generator", "Tiny superscript and subscript letters",
         P(m_typo, sample=" small", size=44, label="tiny + small"), K_CAT),
+  "category-subscript": ("Subscript Generator", "Chemistry formulas, footnotes & indices",
+        P(m_typo, sample="H₂O", size=76, label="subscript notation"), K_CAT),
+  "category-superscript": ("Superscript Generator", "Exponents, ordinals & tiny asides",
+        P(m_typo, sample="x²", size=88, label="superscript notation"), K_CAT),
+  "de-tiefgestellt": ("Tiefgestellt Generator", "Chemieformeln, tiefgestellte Zahlen & Indizes",
+        P(m_typo, sample="H₂O", size=76, label="tiefgestellte Zeichen"), K_CAT),
+  "de-hochgestellt": ("Hochgestellt Generator", "Exponenten, hochgestellte Zahlen & Zeichen",
+        P(m_typo, sample="x²", size=88, label="hochgestellte Zeichen"), K_CAT),
+  "category-small-caps": ("Small Caps Generator", "Capital-shaped small letters for bios & headings",
+        P(m_typo, sample="AaBb", size=68, label="small caps style"), K_CAT),
   "category-strikethrough-text": ("Strikethrough Text Generator", "A line struck through every word",
         P(m_typo, sample="strike", size=64, deco="line-through", label="crossed out"), K_CAT),
   "category-underline-text": ("Underline Text Generator", "Clean underlines under every word",
@@ -1123,11 +1421,56 @@ PAGES = {
 
   # ---- usecase overview + pages ----
   "usecase": ("Choose What to Create", "Generators grouped by what you need", m_grid, K_USE),
+  "pl-usecase": ("Co Chcesz Stworzyć?", "Generatory pogrupowane według potrzeb", m_grid, K_USE),
   "usecase-before-after-emoji": ("Emoji Transformation Captions", "Before → after, told with emoji",
         P(m_transform, a="A", b="★"), K_USE),
+  "usecase-stumble-guys-name-generator": ("Stumble Guys Name Generator", "Funny & stylish nicknames, 4-12 char checker", m_gamepad, K_USE),
+  "usecase-clash-of-clans-name-generator": ("Clash of Clans Name Generator", "Stylish COC nicknames, 2-15 char checker", m_gamepad, K_USE),
+  "usecase-clash-royale-name-generator": ("Clash Royale Name Generator", "Stylish CR names, 2-15 char checker", m_gamepad, K_USE),
+  "usecase-xbox-name-generator": ("Xbox Gamertag Generator", "Cool, funny & sweaty name ideas", m_gamepad, K_USE),
+  "usecase-playstation-name-generator": ("PlayStation Name Generator", "PSN Online ID ideas & checker", m_gamepad, K_USE),
+  "usecase-fortnite-name-generator": ("Fortnite Name Generator", "Stylish Epic Games names, 3-16 char checker", m_gamepad, K_USE),
+  "usecase-pubg-name-generator": ("PUBG Name Generator", "Stylish PUBG & BGMI names, 14 char checker", m_gamepad, K_USE),
+  "usecase-mobile-legends-name-generator": ("Mobile Legends Name Generator", "Stylish MLBB names, 4-16 char checker", m_gamepad, K_USE),
+  "usecase-aesthetic-instagram-names": ("Aesthetic Instagram Names", "Cute username & display name ideas", m_heart, K_USE),
+  "id-usecase-nama-stumble-guys-keren": ("Nama Stumble Guys Keren", "Nickname lucu & aesthetic, cek 4-12 karakter", m_gamepad, K_USE),
+  "usecase-aesthetic-contact-names": ("Aesthetic Contact Names", "Cute names for bae's phone contact", m_heart, K_USE),
+  "id-usecase-nama-kontak-pacar-aesthetic": ("Nama Kontak Pacar Aesthetic", "Nama kontak estetik berhias hati", m_heart, K_USE),
+  "usecase-group-name-generator": ("Group Name Generator", "Cool names for squads, circles & group chats", m_chat, K_USE),
+  "id-usecase-nama-grup-keren": ("Nama Grup Keren", "Nama grup WA & circle aesthetic", m_chat, K_USE),
+
+  # ---- contact-names / group-name / stumble-guys locale expansion ----
+  "tr-usecase-rehber-adi-estetik": ("Rehber Adı Estetik", "Sevgiline özel estetik rehber ismi", m_heart, K_USE),
+  "pt-usecase-nomes-de-contato-aesthetic": ("Nomes de Contato Aesthetic", "Nome de contato estiloso pro crush", m_heart, K_USE),
+  "pl-usecase-nazwy-do-kontaktu": ("Nazwy do Kontaktu", "Estetyczna nazwa kontaktu dla ukochanej osoby", m_heart, K_USE),
+  "it-usecase-nomi-per-contatti-aesthetic": ("Nomi per Contatti Aesthetic", "Nome estetico per il contatto del tuo amore", m_heart, K_USE),
+  "fr-usecase-nom-de-contact-aesthetic": ("Nom de Contact Aesthetic", "Nom de contact stylé pour ton crush", m_heart, K_USE),
+  "es-usecase-nombres-de-contacto-aesthetic": ("Nombres de Contacto Aesthetic", "Nombre de contacto bonito para tu pareja", m_heart, K_USE),
+  "de-usecase-kontaktname-aesthetic": ("Kontaktname Aesthetic", "Süßer Kontaktname für deinen Schatz", m_heart, K_USE),
+  "zh-tw-usecase-tongxunlu-nicheng": ("通訊錄暱稱", "情侶通訊錄暱稱裝飾", m_heart, K_USE),
+  "ja-usecase-renrakusaki-aesthetic": ("連絡先の名前 かわいいジェネレーター", "彼氏彼女の連絡先をおしゃれに", m_heart, K_USE),
+
+  "tr-usecase-grup-ismi": ("Grup İsmi", "WhatsApp grubu ve arkadaş çevresi için isimler", m_chat, K_USE),
+  "pt-usecase-nomes-para-grupo": ("Nomes para Grupo", "Nomes estilosos pro grupo do zap e da galera", m_chat, K_USE),
+  "pl-usecase-nazwy-grupy": ("Nazwy Grupy", "Fajne nazwy dla grupy WhatsApp i paczki znajomych", m_chat, K_USE),
+  "it-usecase-nomi-per-gruppi": ("Nomi per Gruppi", "Nomi per gruppi WhatsApp, cerchie di amici e team", m_chat, K_USE),
+  "fr-usecase-nom-de-groupe": ("Nom de Groupe", "Noms stylés pour groupe WhatsApp et bande de potes", m_chat, K_USE),
+  "es-usecase-nombres-para-grupos": ("Nombres para Grupos", "Nombres bonitos para el grupo de WhatsApp y amigos", m_chat, K_USE),
+  "de-usecase-gruppennamen": ("Gruppennamen", "Coole Namen für WhatsApp-Gruppe und Freundeskreis", m_chat, K_USE),
+
+  "tr-usecase-stumble-guys-nick": ("Stumble Guys Nick", "Komik & şık takma isimler, 4-12 karakter kontrolü", m_gamepad, K_USE),
+  "pt-usecase-nomes-para-stumble-guys": ("Nomes para Stumble Guys", "Nomes engraçados e estilosos, checagem 4-12 caracteres", m_gamepad, K_USE),
+  "pl-usecase-nazwy-do-stumble-guys": ("Nazwy do Stumble Guys", "Zabawne i stylowe nicki, sprawdzenie 4-12 znaków", m_gamepad, K_USE),
+  "it-usecase-nomi-stumble-guys": ("Nomi Stumble Guys", "Nomi buffi e stilosi, controllo 4-12 caratteri", m_gamepad, K_USE),
+  "fr-usecase-pseudo-stumble-guys": ("Pseudo Stumble Guys", "Pseudos drôles et stylés, vérification 4-12 caractères", m_gamepad, K_USE),
+  "es-usecase-nombres-para-stumble-guys": ("Nombres para Stumble Guys", "Nombres divertidos y con estilo, chequeo 4-12 caracteres", m_gamepad, K_USE),
+  "de-usecase-stumble-guys-namensgenerator": ("Stumble Guys Namensgenerator", "Lustige & stylische Nicknames, 4-12-Zeichen-Check", m_gamepad, K_USE),
+
   "usecase-bio-font": ("Bio Font Generator", "Fonts, symbols and dividers for any bio", m_profile, K_USE),
   "usecase-bio-font-instagram": ("Instagram Bio Font Generator", "Fonts, symbols and aesthetic bio templates", m_camera, K_USE),
   "usecase-bio-font-discord": ("Discord Bio Font Generator", "Style your About Me — no Nitro needed", m_chat, K_USE),
+  "usecase-bio-font-whatsapp": ("WhatsApp Bio Font Generator", "Style your About — 139-char limit", m_chat, K_USE),
+  "usecase-bio-font-tiktok": ("TikTok Bio Font Generator", "Fonts and aesthetic bio ideas, 80-char limit", m_camera, K_USE),
 
   # ---- bio-font locale translations ----
   "de-usecase-bio-schriftart": ("Bio-Schriftart Generator", "Schriften, Symbole und Vorlagen für dein Bio", m_profile, K_USE),
@@ -1152,6 +1495,27 @@ PAGES = {
   "usecase-vertical-text": ("Vertical & Stacked Text", "Stack your text top to bottom",
         P(m_vertical, letters="TEXT"), K_USE),
   "usecase-zalgo-text": ("Zalgo Text Generator", "Create creepy glitch text", m_zalgo, K_USE),
+
+  # ---- localized emoji-translator + emoji-letters cards ----
+  # (bio-font locale cards are owned by the bio-font localization effort.)
+  # Arabic and Devanagari both get their own card: spanned() pre-shapes
+  # Arabic through arabic_reshaper + python-bidi before layout (cairosvg has
+  # no shaping/bidi engine of its own), and Noto Sans Devanagari's
+  # precomposed conjuncts already render correctly with simple mark
+  # placement, so neither needs the shared-English-card fallback.
+  "de-usecase-emoji-uebersetzer": ("Emoji-Übersetzer", "Text in Emojis – und zurück", m_smiley, K_USE),
+  "tr-usecase-emoji-ceviri": ("Emoji Çevirici", "Metni emojiye çevir, geri çöz", m_smiley, K_USE),
+  "ar-usecase-mutarjim-emoji": ("مترجم إيموجي", "النص إلى إيموجي، وبالعكس", m_smiley, K_USE),
+  "hi-usecase-emoji-anuvadak": ("इमोजी अनुवादक", "टेक्स्ट से इमोजी, और वापस", m_smiley, K_USE),
+  "vi-usecase-dich-emoji": ("Dịch Emoji", "Chuyển văn bản thành emoji", m_smiley, K_USE),
+  "es-usecase-traductor-de-emojis": ("Traductor de Emojis", "Texto a emojis y al revés", m_smiley, K_USE),
+  "pt-usecase-tradutor-de-emojis": ("Tradutor de Emojis", "Texto em emojis e de volta", m_smiley, K_USE),
+  "fr-usecase-traducteur-emoji": ("Traducteur Emoji", "Texte en emojis, et l'inverse", m_smiley, K_USE),
+  "it-usecase-traduttore-emoji": ("Traduttore Emoji", "Testo in emoji e viceversa", m_smiley, K_USE),
+  "id-usecase-penerjemah-emoji": ("Penerjemah Emoji", "Teks jadi emoji dan sebaliknya", m_smiley, K_USE),
+  "pl-usecase-tlumacz-emoji": ("Tłumacz Emoji", "Tekst na emoji i z powrotem", m_smiley, K_USE),
+  "de-usecase-emoji-buchstaben": ("Emoji-Buchstaben", "Namen im Emoji-Alphabet", m_flag, K_USE),
+  "tr-usecase-emoji-harfler": ("Emoji Harfleri", "İsmini emoji alfabesiyle yaz", m_flag, K_USE),
   "usecase-nickname-generator": ("Nickname Generator", "Stylish & cute name maker, copy and paste",
         m_gamepad, K_USE),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
@@ -1172,6 +1536,12 @@ PAGES = {
         m_gamepad, K_USE),
   "id-usecase-nama-squad-ml-keren": ("Nama Squad ML Keren", "Tag singkatan & font aesthetic squad Mobile Legends",
         m_trophy, K_USE),
+  "id-usecase-nama-roblox-keren": ("Nama Roblox Keren", "Simbol & generator nickname buat display name Roblox",
+        m_gamepad, K_USE),
+  "id-huruf-kecil-diatas": ("Huruf Kecil Diatas", "Superscript buat nickname Free Fire & status WA",
+        P(m_typo, sample="Sanz", size=76, label="huruf kecil diatas"), K_USE),
+  "id-tulisan-cuping": ("Font Cuping", "Generator cute typing ala RP buat WA & Telegram",
+        m_kaomoji, K_CAT),
 
   # ---- localized zalgo ----
   "de-usecase-zalgo-text": ("Zalgo-Textgenerator", "Erstelle gruseligen Glitch-Text", m_zalgo, K_USE),
@@ -1181,6 +1551,8 @@ PAGES = {
   "it-usecase-zalgo-text": ("Generatore di Testo Zalgo", "Crea testo glitch e inquietante", m_zalgo, K_USE),
   "nl-usecase-zalgo-text": ("Zalgo Tekstgenerator", "Maak griezelige glitch tekst", m_zalgo, K_USE),
   "pl-usecase-zalgo-text": ("Generator Tekstu Zalgo", "Twórz przerażający tekst glitch", m_zalgo, K_USE),
+  "pl-usecase-nazwy-do-robloxa": ("Fajne Nazwy do Robloxa", "Symbole i generator nicków na nazwę wyświetlaną",
+        m_gamepad, K_USE),
   "pt-usecase-zalgo-text": ("Gerador de Texto Zalgo", "Crie texto glitch e assustador", m_zalgo, K_USE),
   "pt-letras-diferentes": ("Letras Diferentes", "Fontes para copiar e colar em qualquer app",
         P(m_typo, sample="Abc", weight="700", size=88, label="copiar e colar"), K_USE),
@@ -1201,6 +1573,9 @@ PAGES = {
         P(m_typo, sample="Abc", weight="700", size=88, label="kopyala yapıştır"), K_USE),
   "tr-sekilli-nick": ("Şekilli Nick Oluşturucu", "꧁꧂ çerçeveli nickler kopyala yapıştır", m_gamepad, K_USE),
   "tr-usecase-pubg-nick": ("PUBG Şekilli Nick", "PUBG Mobile isimleri ve sembolleri", m_gamepad, K_USE),
+  "tr-usecase-free-fire-nick": ("Free Fire Şekilli Nick", "Free Fire isimleri, semboller ve isim kontrolü", m_gamepad, K_USE),
+  "tr-usecase-mobile-legends-nick": ("Mobile Legends Şekilli Nick", "MLBB isimleri, semboller ve isim kontrolü", m_gamepad, K_USE),
+  "tr-usecase-valorant-nick": ("Valorant Nick", "Riot ID kontrolü ve stil isimler", m_gamepad, K_USE),
   "tr-library-semboller": ("Şekilli Semboller", "Nick ve bio için semboller", m_grid, K_LIB),
   "tr-kucuk-yazi": ("Küçük Yazı", "Minik harfler kopyala yapıştır",
         P(m_typo, sample=" small", size=44, label="küçük yazı"), K_CAT),
@@ -1209,7 +1584,10 @@ PAGES = {
           label="zarif ve akıcı"), K_CAT),
   "tr-kalin-yazi": ("Kalın Yazı", "Kalın font kopyala yapıştır",
         P(m_typo, sample="Bold", weight="800", size=80, label="kalın ve net"), K_CAT),
+  "tr-alti-cizili-yazi": ("Altı Çizili Yazı", "Altı çizili font kopyala yapıştır",
+        P(m_typo, sample="Çizili", size=64, deco="underline", label="vurgulu ve net"), K_CAT),
   "tr-instagram-yazi-tipi": ("Instagram Yazı Tipi", "Bio için şekilli yazı ve semboller", m_camera, K_PLAT),
+  "tr-snapchat-yazi-tipi": ("Snapchat Yazı Tipi", "Snap ve görünen ad için şekilli yazı", m_chat, K_PLAT),
   "fr-police-d-ecriture": ("Police d'Écriture", "Polices à copier-coller",
         P(m_typo, sample="Abc", weight="700", size=88, label="copier-coller"), K_USE),
   "fr-ecriture-speciale": ("Écriture Spéciale", "Lettres spéciales à copier-coller",
@@ -1229,6 +1607,7 @@ PAGES = {
   "fr-petite-ecriture": ("Petite Écriture", "Petit texte à copier-coller",
         P(m_typo, sample=" small", size=44, label="petite écriture"), K_CAT),
   "fr-usecase-pseudo-fortnite": ("Pseudo Fortnite Stylé", "Symboles tryhard et pseudos 16 caractères", m_gamepad, K_USE),
+  "fr-usecase-pseudo-free-fire": ("Pseudo Free Fire Stylé", "Symboles ombrelle et pseudos 12 caractères", m_gamepad, K_USE),
   "fr-ecriture-style": ("Écriture Stylé", "60+ styles d'écriture à copier-coller",
         P(m_typo, sample="Stylé", weight="700", size=80, label="copier-coller"), K_USE),
   "fr-ecriture-aesthetic": ("Écriture Aesthetic", "Lettres et symboles aesthetic à copier",
@@ -1245,6 +1624,7 @@ PAGES = {
           label="sans plume ni encre"), K_CAT),
   "fr-police-linkedin": ("Police LinkedIn", "Écrire en gras et stylé sur LinkedIn", m_headline, K_PLAT),
   "fr-ecriture-facebook": ("Écriture Facebook", "Gras et polices stylées pour FB", m_profile, K_PLAT),
+  "fr-police-snapchat": ("Police Snapchat", "Snaps et pseudo stylés à copier-coller", m_chat, K_PLAT),
   "usecase-tattoo-fonts": ("Tattoo Fonts", "Preview your tattoo lettering before the ink",
         P(m_typo, sample="Love", ff=SERIF, style="italic", weight="400", size=64,
           label="cursive · gothic · italic"), K_USE),
@@ -1320,25 +1700,33 @@ PAGES = {
   "linkedin": ("LinkedIn Font Generator", "Professional text styling that pastes anywhere", m_headline, K_PLAT),
   "pinterest": ("Pinterest Text Generator", "Text that pops on every pin", m_pins, K_PLAT),
   "snapchat": ("Snapchat Font Generator", "Style your snaps and display name", m_chat, K_PLAT),
+  "ar-khat-snapchat": ("خط سناب شات", "زخرفة الاسم والكابشن بالنسخ واللصق", m_chat, K_PLAT),
   "telegram": ("Telegram Font Generator", "Styles optimised for Telegram", m_chat, K_PLAT),
+  "threads": ("Threads Font Generator", "No bold or italic button — style with copy-paste fonts", m_profile, K_PLAT),
   "whatsapp": ("WhatsApp Font Generator", "Friendly formatting and styles", m_chat, K_PLAT),
   "x": ("X (Twitter) Font Generator", "Stylish text for posts and bio", P(m_profile), K_PLAT),
   "youtube": ("YouTube Font Generator", "Channel name and description styling", m_play, K_PLAT),
   "youtube-name-generator": ("YouTube Channel Name Generator", "Find a name that stands out", m_play, K_PLAT),
-  "youtube-what-font-does-youtube-use": ("What Font Does YouTube Use?", "The UI typeface, explained", m_play, K_ANS),
   "tiktok": ("TikTok Font Generator", "Copy-and-paste fonts for TikTok", m_play, K_PLAT),
   "tiktok-name-generator": ("TikTok Name Generator", "Stylish names and handles", m_play, K_PLAT),
-  "tiktok-what-font-does-tiktok-use": ("What Font Does TikTok Use?", "The app's typeface, explained", m_play, K_ANS),
   "roblox": ("Roblox Username Tools", "Style your Roblox name and display", m_block, K_PLAT),
   "roblox-name-generator": ("Roblox Username Generator", "Generate available-looking names", m_block, K_PLAT),
+  "roblox-old-roblox-font": ("Old Roblox Font Generator", "The 2008-era look as free PNG & SVG", m_block, K_PLAT),
 
   # ---- answers ----
   "answers": ("Quick Answers", "Short, sourced answers to common questions", m_qa, K_ANS),
   "answers-change-font-size-on-facebook": ("Change Font Size on Facebook", "What's possible, and the workaround", m_qa, K_ANS),
   "answers-discord-allowed-characters": ("Discord Allowed Characters", "Which characters paste cleanly", m_qa, K_ANS),
+  "answers-why-is-my-name-showing-as-boxes": ("Name Showing as Boxes?", "The missing-glyph fix, and safe styles", m_qa, K_ANS),
+  "answers-why-was-my-game-name-rejected": ("Why Was My Game Name Rejected?", "The filter and the length limit", m_qa, K_ANS),
+  "answers-how-to-make-a-blank-name": ("How to Make a Blank Name", "The invisible-character method, and the catch", m_qa, K_ANS),
+  "answers-where-do-fancy-fonts-work-username-vs-display-name": ("Username vs Display Name", "Where fancy fonts actually work", m_qa, K_ANS),
+  "answers-do-fancy-fonts-work-with-arabic": ("Do Fancy Fonts Work With Arabic?", "Why not — and what does work", m_qa, K_ANS),
   "answers-do-you-need-nitro-for-discord-fonts": ("Do You Need Nitro for Fonts?", "The honest answer for Discord users", m_qa, K_ANS),
+  "answers-what-are-discord-display-name-styles": ("Discord Display Name Styles", "What Nitro styles do, and where they stop", m_qa, K_ANS),
   "answers-how-to-change-roblox-username": ("Change Your Roblox Username", "The steps and the catch", m_qa, K_ANS),
   "answers-how-to-change-tiktok-username": ("Change Your TikTok Username", "How and how often you can", m_qa, K_ANS),
+  "answers-how-to-change-minecraft-username": ("Change Your Minecraft Username", "Java vs. Bedrock, free vs. paid", m_qa, K_ANS),
   "answers-how-to-type-kaomoji": ("How to Type Kaomoji", "On Windows, iPhone, Android & Mac", m_kaomoji, K_ANS),
   "answers-is-linkedin-bold-text-safe": ("Is LinkedIn Bold Text Safe?", "Accessibility and reach, explained", m_qa, K_ANS),
   "answers-what-does-o7-mean": ("What Does o7 Mean?", "The saluting text face, explained", m_kaomoji, K_ANS),
@@ -1354,10 +1742,133 @@ PAGES = {
   "answers-what-is-kaomoji": ("What Is a Kaomoji?", "Japanese text faces, explained", m_kaomoji, K_ANS),
 
   # ---- embed ----
+  "embed": ("Embeddable Widgets", "Free tools for your website", m_grid, K_USE),
   "embed-linkedin-headline-generator": ("LinkedIn Headline Generator", "Embeddable headline styler", m_headline, K_USE),
+  "embed-bio-font-generator": ("Bio Font Generator", "Embeddable bio & symbol styler", m_profile, K_USE),
+  "embed-nickname-generator": ("Nickname Generator", "Embeddable name & frame styler", m_gamepad, K_USE),
+  "embed-zalgo-text-generator": ("Zalgo Text Generator", "Embeddable cursed text styler", m_zalgo, K_USE),
+  "embed-character-counter": ("Character Counter", "Embeddable word & character counter",
+        P(m_typo, sample="123", weight="800", size=88, label="words · characters"), K_USE),
+  "embed-name-checker": ("Game Name Checker", "Embeddable platform name-fit checker",
+        glyphs("✓", "⚠", "✗"), K_USE),
 
   # ---- library overview ----
   "library": ("Symbol & Emoji Library", "Copy-and-paste reference collections", m_grid, K_LIB),
+
+  # ---- symbol pillar: single-glyph identity pages ----
+  "symbol": ("Symbol Lookup", "Meaning, history & how to type any symbol",
+        glyphs("°", "÷", "∞", "√", "×"), K_SYM),
+  "symbol-degree-symbol": ("Degree Symbol", "° meaning, history & how to type it", glyphs("°"), K_SYM),
+  "symbol-division-sign": ("Division Sign", "÷ meaning, history & how to type it", glyphs("÷"), K_SYM),
+  "symbol-infinity": ("Infinity Symbol", "∞ meaning, history & how to type it", glyphs("∞"), K_SYM),
+  "symbol-invisible-character": ("Invisible Character", "⠀ meaning, blank names & how to use it", m_braille_blank, K_SYM),
+  "symbol-square-root": ("Square Root Symbol", "√ meaning, history & how to type it", glyphs("√"), K_SYM),
+  "symbol-multiplication-sign": ("Multiplication Sign", "Copy & paste the × times symbol", glyphs("×"), K_SYM),
+  "symbol-squared-cubed": ("Squared & Cubed", "Copy & paste ² and ³ exponents", glyphs("²", "³"), K_SYM),
+  "symbol-euro-sign": ("Euro Sign", "€ meaning, history & how to type it", glyphs("€"), K_SYM),
+  "symbol-pound-sign": ("Pound Sign", "£ meaning, history & how to type it", glyphs("£"), K_SYM),
+  "symbol-alpha-symbol": ("Alpha Symbol", "Α α meaning, history & how to type it", glyphs("Α", "α"), K_SYM),
+  "symbol-ampersand": ("Ampersand Symbol", "& meaning, history & how to type it", glyphs("&"), K_SYM),
+  "symbol-anarchy-symbol": ("Anarchy Symbol", "Ⓐ meaning, history & how to type it", P(m_circled_letter, letter="A"), K_SYM),
+  "symbol-anger-symbol": ("Anger Symbol", "💢 meaning & how to type it", m_burst_angry, K_SYM),
+  "symbol-ankh-symbol": ("Ankh Symbol", "☥ meaning, history & how to type it", m_ankh, K_SYM),
+  "symbol-aquarius-symbol": ("Aquarius Symbol", "♒ meaning & how to type it", glyphs("♒"), K_SYM),
+  "symbol-aries-symbol": ("Aries Symbol", "♈ meaning & how to type it", glyphs("♈"), K_SYM),
+  "symbol-at-symbol": ("At Symbol", "@ meaning, history & how to type it", glyphs("@"), K_SYM),
+  "symbol-autism-symbol": ("Autism Symbol", "∞ meaning & how to type it", glyphs("∞"), K_SYM),
+  "symbol-backwards-question-mark": ("Backwards Question Mark", "⸮ meaning & how to type it", glyphs("⸮"), K_SYM),
+  "symbol-biohazard-symbol": ("Biohazard Symbol", "☣ meaning, history & how to type it", glyphs("☣"), K_SYM),
+  "symbol-bitcoin-symbol": ("Bitcoin Symbol", "₿ meaning, history & how to type it", m_coin, K_SYM),
+  "symbol-black-moon-lilith": ("Black Moon Lilith", "⚸ meaning & how to type it", glyphs("⚸"), K_SYM),
+  "symbol-cancer-symbol": ("Cancer Symbol", "♋ meaning & how to type it", glyphs("♋"), K_SYM),
+  "symbol-capricorn-symbol": ("Capricorn Symbol", "♑ meaning & how to type it", glyphs("♑"), K_SYM),
+  "symbol-celsius-symbol": ("Celsius Symbol", "℃ meaning & how to type it", glyphs("℃"), K_SYM),
+  "symbol-cent-sign": ("Cent Sign", "¢ meaning, history & how to type it", glyphs("¢"), K_SYM),
+  "symbol-checkmark-symbol": ("Check Mark Symbol", "✓ meaning & how to type it", glyphs("✓", "✔"), K_SYM),
+  "symbol-congruent-symbol": ("Congruent Symbol", "≅ meaning & how to type it", glyphs("≅"), K_SYM),
+  "symbol-copyright-symbol": ("Copyright Symbol", "© meaning, history & how to type it", glyphs("©"), K_SYM),
+  "symbol-cross-symbol": ("Cross Symbol", "✝ meaning, history & how to type it", glyphs("✝"), K_SYM),
+  "symbol-delta-symbol": ("Delta Symbol", "Δ δ meaning & how to type it", glyphs("Δ", "δ"), K_SYM),
+  "symbol-diameter-symbol": ("Diameter Symbol", "⌀ meaning & how to type it", glyphs("⌀"), K_SYM),
+  "symbol-dollar-sign": ("Dollar Sign", "$ meaning, history & how to type it", glyphs("$"), K_SYM),
+  "symbol-down-arrow": ("Down Arrow Symbol", "↓ meaning & how to type it", glyphs("↓"), K_SYM),
+  "symbol-em-dash": ("Em Dash", "— meaning & how to type it", glyphs("—"), K_SYM),
+  "symbol-fahrenheit-symbol": ("Fahrenheit Symbol", "℉ meaning & how to type it", glyphs("℉"), K_SYM),
+  "symbol-fleur-de-lis-symbol": ("Fleur-de-lis Symbol", "⚜ meaning, history & how to type it", glyphs("⚜"), K_SYM),
+  "symbol-gemini-symbol": ("Gemini Symbol", "♊ meaning & how to type it", glyphs("♊"), K_SYM),
+  "symbol-hamsa-symbol": ("Hamsa Symbol", "🪬 meaning, history & how to type it", m_hamsa, K_SYM),
+  "symbol-heart-symbol": ("Heart Symbol", "♥ meaning, history & how to type it", glyphs("♥", "♡"), K_SYM),
+  "symbol-khanda-symbol": ("Khanda Symbol", "☬ meaning, history & how to type it", glyphs("☬"), K_SYM),
+  "symbol-left-arrow": ("Left Arrow Symbol", "← meaning & how to type it", glyphs("←"), K_SYM),
+  "symbol-leo-symbol": ("Leo Symbol", "♌ meaning & how to type it", glyphs("♌"), K_SYM),
+  "symbol-less-than-greater-than": ("Less Than & Greater Than", "< > meaning & how to type them", glyphs("<", ">"), K_SYM),
+  "symbol-libra-symbol": ("Libra Symbol", "♎ meaning & how to type it", glyphs("♎"), K_SYM),
+  "symbol-micro-sign": ("Micro Sign", "µ meaning, history & how to type it", glyphs("µ"), K_SYM),
+  "symbol-not-equal-sign": ("Not Equal Sign", "≠ meaning & how to type it", glyphs("≠"), K_SYM),
+  "symbol-ohm-symbol": ("Ohm Symbol", "Ω meaning & how to type it", glyphs("Ω"), K_SYM),
+  "symbol-om-symbol": ("Om Symbol", "ॐ meaning, history & how to type it", m_lotus_om, K_SYM),
+  "symbol-omega-symbol": ("Omega Symbol", "Ω ω meaning & how to type it", glyphs("Ω", "ω"), K_SYM),
+  "symbol-orthodox-cross": ("Orthodox Cross", "☦ meaning, history & how to type it", glyphs("☦"), K_SYM),
+  "symbol-peace-sign": ("Peace Symbol", "☮ meaning, history & how to type it", glyphs("☮"), K_SYM),
+  "symbol-pentagram-symbol": ("Pentagram Symbol", "⛧ meaning, history & how to type it", m_pentagram, K_SYM),
+  "symbol-pi-symbol": ("Pi Symbol", "π meaning & how to type it", glyphs("π"), K_SYM),
+  "symbol-pilcrow": ("Pilcrow Symbol", "¶ meaning, history & how to type it", glyphs("¶"), K_SYM),
+  "symbol-pisces-symbol": ("Pisces Symbol", "♓ meaning & how to type it", glyphs("♓"), K_SYM),
+  "symbol-plus-minus": ("Plus-Minus Symbol", "± meaning & how to type it", glyphs("±"), K_SYM),
+  "symbol-quotation-mark": ("Quotation Mark", "“ ” meaning & how to type it", glyphs("“", "”"), K_SYM),
+  "symbol-recycling-symbol": ("Recycling Symbol", "♻ meaning, history & how to type it", glyphs("♻"), K_SYM),
+  "symbol-right-arrow": ("Right Arrow Symbol", "→ meaning & how to type it", glyphs("→"), K_SYM),
+  "symbol-rupee-sign": ("Indian Rupee Sign", "₹ meaning, history & how to type it", glyphs("₹"), K_SYM),
+  "symbol-sagittarius-symbol": ("Sagittarius Symbol", "♐ meaning & how to type it", glyphs("♐"), K_SYM),
+  "symbol-scorpio-symbol": ("Scorpio Symbol", "♏ meaning & how to type it", glyphs("♏"), K_SYM),
+  "symbol-section-sign": ("Section Sign", "§ meaning, history & how to type it", glyphs("§"), K_SYM),
+  "symbol-sigma-symbol": ("Sigma Symbol", "Σ σ meaning & how to type it", glyphs("Σ", "σ"), K_SYM),
+  "symbol-star-of-david": ("Star of David", "✡ meaning, history & how to type it", glyphs("✡"), K_SYM),
+  "symbol-star-symbol": ("Star Symbol", "★ meaning & how to type it", glyphs("★"), K_SYM),
+  "symbol-stop-sign": ("Stop Sign", "🛑 meaning & how to type it", m_stop_octagon, K_SYM),
+  "symbol-taurus-symbol": ("Taurus Symbol", "♉ meaning & how to type it", glyphs("♉"), K_SYM),
+  "symbol-trademark-symbol": ("Trademark Symbol", "™ meaning, history & how to type it", glyphs("™"), K_SYM),
+  "symbol-up-arrow": ("Up Arrow Symbol", "↑ meaning & how to type it", glyphs("↑"), K_SYM),
+  "symbol-vertical-line": ("Vertical Line Symbol", "| meaning & how to type it", glyphs("|"), K_SYM),
+  "symbol-virgo-symbol": ("Virgo Symbol", "♍ meaning & how to type it", glyphs("♍"), K_SYM),
+  "symbol-wheelchair-symbol": ("Wheelchair Symbol", "♿ meaning, history & how to type it", glyphs("♿"), K_SYM),
+  "symbol-won-sign": ("Won Sign", "₩ meaning, history & how to type it", glyphs("₩"), K_SYM),
+  "symbol-yen-sign": ("Yen Sign", "¥ meaning, history & how to type it", glyphs("¥"), K_SYM),
+  "symbol-yin-yang": ("Yin Yang Symbol", "☯ meaning, history & how to type it", glyphs("☯"), K_SYM),
+
+  # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
+  "symbol-asterisk-symbol": ("Asterisk Symbol", "* meaning, history & how to type it", glyphs("*", "⁂"), K_SYM),
+  "symbol-chi-symbol": ("Chi Symbol", "Χ χ meaning, history & how to type it", glyphs("Χ", "χ"), K_SYM),
+  "symbol-crescent-and-star": ("Star and Crescent", "☪ meaning, history & how to type it", glyphs("☪"), K_SYM),
+  "symbol-en-dash": ("En Dash", "– meaning & how to type it", glyphs("–"), K_SYM),
+  "symbol-interrobang": ("Interrobang", "‽ meaning, history & how to type it", glyphs("‽"), K_SYM),
+  "symbol-lambda-symbol": ("Lambda Symbol", "Λ λ meaning, history & how to type it", glyphs("Λ", "λ"), K_SYM),
+  "symbol-pawn-symbol": ("Pawn Symbol", "♟ ♙ meaning & how to type it", glyphs("♟", "♙"), K_SYM),
+  "symbol-peso-sign": ("Peso Sign", "₱ meaning, history & how to type it", glyphs("₱"), K_SYM),
+  "symbol-phi-symbol": ("Phi Symbol", "Φ φ meaning, history & how to type it", glyphs("Φ", "φ"), K_SYM),
+  "symbol-psi-symbol": ("Psi Symbol", "Ψ ψ meaning, history & how to type it", glyphs("Ψ", "ψ"), K_SYM),
+  "symbol-ruble-sign": ("Ruble Sign", "₽ meaning, history & how to type it", glyphs("₽"), K_SYM),
+  "symbol-skull-and-crossbones": ("Skull and Crossbones", "☠ meaning, history & how to type it", m_skull, K_SYM),
+  "symbol-snapchat-heart-colors": ("Snapchat Heart Colors", "What each heart emoji color means", m_heart, K_SYM),
+  "symbol-spade-symbol": ("Spade Symbol", "♠ ♤ meaning & how to type it", glyphs("♠", "♤"), K_SYM),
+  "symbol-sunglasses-symbol": ("Sunglasses Symbol", "😎 meaning, codepoint & how to type it", m_sunglasses, K_SYM),
+  "symbol-theta-symbol": ("Theta Symbol", "Θ θ meaning, history & how to type it", glyphs("Θ", "θ"), K_SYM),
+  "symbol-tilde-symbol": ("Tilde Symbol", "~ meaning, history & how to type it", glyphs("~"), K_SYM),
+  "symbol-underscore-symbol": ("Underscore", "_ meaning, history & how to type it", glyphs("_"), K_SYM),
+  "symbol-calendar-emoji": ("Calendar Emoji", "Why it's always frozen on July 17", m_calendar, K_SYM),
+  "symbol-cracking-face-emoji": ("Cracking Face Emoji", "Draft Emoji 18.0 candidate, not live yet", m_smiley, K_SYM),
+  "symbol-distorted-face-emoji": ("Distorted Face Emoji", "U+1FAEA — meaning, codepoint & origin", m_smiley, K_SYM),
+  "symbol-melting-face-emoji": ("Melting Face Emoji", "U+1FAE0 — meaning, sarcasm reading & origin", m_smiley, K_SYM),
+  "symbol-pickle-emoji": ("Pickle Emoji", "Draft Emoji 18.0 candidate, not live yet", m_cup, K_SYM),
+  "symbol-meteor-emoji": ("Meteor Emoji", "Draft Emoji 18.0 candidate, not live yet",
+        glyphs("☄", "✦", "★", "☆", "✧"), K_SYM),
+  "symbol-monarch-butterfly-emoji": ("Monarch Butterfly Emoji", "Draft Emoji 18.0 candidate, not live yet", m_paw, K_SYM),
+  "symbol-thumb-sign-emoji": ("Thumb Sign Emoji", "Draft Emoji 18.0 candidate, not live yet",
+        glyphs("☝", "☞", "☜", "☟", "✌"), K_SYM),
+  "symbol-dirham-sign": ("Dirham Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
+  "symbol-omani-rial-sign": ("Omani Rial Sign", "Frozen for Unicode 18.0 publication", m_coin, K_SYM),
+  "symbol-saudi-riyal-sign": ("Saudi Riyal Sign", "Final since Unicode 17.0", m_coin, K_SYM),
+  "symbol-rufiyaa-sign": ("Rufiyaa Sign", "Accepted for Unicode 18.0 publication", m_coin, K_SYM),
 
   # ---- library: safe-glyph motifs ----
   "library-accent-marks-diacritics": ("Accent Marks & Diacritics", "Add accents to any letter",
@@ -1367,7 +1878,34 @@ PAGES = {
         glyphs("❖", "⟦", "⟧", "✦", "❝"), K_LIB),
   "library-aesthetic-symbols": ("Aesthetic Symbols", "Soft, decorative Unicode accents",
         glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "ar-library-aesthetic-symbols": ("رموز جمالية", "لمسات يونيكود ناعمة وزخرفية",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "pl-library-symbole-estetyczne": ("Symbole estetyczne", "Delikatne ozdobniki Unicode",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "ru-library-esteticheskie-simvoly": ("Эстетические символы", "Мягкие декоративные знаки Unicode",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
+  "th-library-aesthetic-symbols": ("สัญลักษณ์ Aesthetic", "ตัวตกแต่ง Unicode แนวนุ่มนวล",
+        glyphs("✦", "❀", "☾", "✧", "⊹"), K_LIB),
   "library-angry-kaomoji": ("Angry Kaomoji", "Mad, raging text faces", m_kaomoji, K_LIB),
+  "zh-tw-library-cat-kaomoji": ("貓咪顏文字", "可愛貓咪臉文字", m_kaomoji, K_LIB),
+  "zh-tw-library-crying-kaomoji": ("哭泣顏文字", "傷心流淚臉文字", m_kaomoji, K_LIB),
+  "zh-tw-library-cute-kaomoji": ("可愛顏文字", "萌系臉文字", m_kaomoji, K_LIB),
+  "zh-tw-library-divider-kaomoji": ("顏文字分隔線", "可愛文字分隔符號", m_kaomoji, K_LIB),
+  "zh-tw-library-happy-kaomoji": ("開心顏文字", "微笑愉快臉文字", m_kaomoji, K_LIB),
+  "zh-tw-library-heart-kaomoji": ("愛心顏文字", "愛心眼臉文字", m_kaomoji, K_LIB),
+  "zh-tw-library-love-kaomoji": ("戀愛顏文字", "告白愛心臉文字", m_kaomoji, K_LIB),
+  "zh-tw-library-sad-kaomoji": ("傷心顏文字", "難過臉文字", m_kaomoji, K_LIB),
+  "zh-tw-library-shrug-kaomoji": ("攤手顏文字", "無奈聳肩臉文字", m_kaomoji, K_LIB),
+  "ja-library-angry-kaomoji": ("怒り顔文字", "怒った顔文字", m_kaomoji, K_LIB),
+  "ja-library-cat-kaomoji": ("猫の顔文字", "可愛い猫の顔文字", m_kaomoji, K_LIB),
+  "ja-library-crying-kaomoji": ("泣き顔文字", "悲しい涙の顔文字", m_kaomoji, K_LIB),
+  "ja-library-divider-kaomoji": ("顔文字区切り線", "可愛い文字の区切り記号", m_kaomoji, K_LIB),
+  "ja-library-happy-kaomoji": ("嬉しい顔文字", "笑顔の顔文字", m_kaomoji, K_LIB),
+  "ja-library-heart-kaomoji": ("ハート顔文字", "ハート目の顔文字", m_kaomoji, K_LIB),
+  "ja-library-hug-kaomoji": ("ハグ顔文字", "抱きしめる顔文字", m_kaomoji, K_LIB),
+  "ja-library-love-kaomoji": ("恋する顔文字", "告白ハートの顔文字", m_kaomoji, K_LIB),
+  "ja-library-sad-kaomoji": ("悲しい顔文字", "落ち込んだ顔文字", m_kaomoji, K_LIB),
+  "ja-library-shrug-kaomoji": ("肩をすくめる顔文字", "やれやれ顔文字", m_kaomoji, K_LIB),
   "library-animal-emojis": ("Animal & Creature Emojis", "Paste creatures into any caption", m_paw, K_LIB),
   "library-arrow-symbols": ("Arrow Symbols", "Every direction, every weight",
         glyphs("→", "←", "↑", "↓", "⟶"), K_LIB),
@@ -1379,6 +1917,16 @@ PAGES = {
   "library-bracket-symbols": ("Brackets, Braces & Parentheses", "Every enclosing pair",
         glyphs("⟦", "⟧", "⟨", "⟩", "❲"), K_LIB),
   "library-bullet-point-symbols": ("Bullet Point Symbols", "Lead every list with style",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "tr-library-madde-imi-sembolleri": ("Madde İmi Sembolleri", "Listelerine tarz kat",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "it-library-simboli-punto-elenco": ("Simboli Punto Elenco", "Dai stile a ogni lista",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "ja-library-bullet-point-symbols": ("箇条書き記号", "リストにスタイルを",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "ru-library-markery-spiska": ("Маркеры для списка", "Стиль для каждого списка",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
+  "th-library-bullet-point-symbols": ("สัญลักษณ์จุดหัวข้อ", "เพิ่มสไตล์ให้ทุกลิสต์",
         glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   "library-bunny-kaomoji": ("Bunny Kaomoji", "Cute rabbit text faces", m_kaomoji, K_LIB),
   "library-card-suit-symbols": ("Card Suit Symbols", "Spades, hearts, diamonds, clubs",
@@ -1419,6 +1967,8 @@ PAGES = {
   "library-emoji-meanings-guide": ("Emoji Meanings Guide", "What each emoji really means", m_smiley, K_LIB),
   "library-excited-kaomoji": ("Excited Kaomoji", "Hyped, arms-up text faces", m_kaomoji, K_LIB),
   "library-face-emojis": ("Face & Emotion Emojis", "Every mood, every expression", m_smiley, K_LIB),
+  "library-facebook-symbols": ("Facebook Symbols", "Reactions, hearts, and dividers for FB",
+        m_thumb, K_LIB),
   "library-flower-kaomoji": ("Flower Kaomoji", "Blossom-framed text faces", m_kaomoji, K_LIB),
   "library-flower-symbols": ("Flower & Nature Symbols", "Blooms and botanical accents",
         glyphs("❀", "✿", "❁", "❃", "⚘"), K_LIB),
@@ -1427,6 +1977,8 @@ PAGES = {
         glyphs("½", "⅓", "¼", "¾", "⅔"), K_LIB),
   "library-gaming-aesthetic-symbols": ("Gaming Aesthetic Symbols", "Clan tag frames, HUD bars and battle icons",
         glyphs("▰", "▱", "⌖", "━", "▮"), K_LIB),
+  "library-vrchat-symbols": ("VRChat Symbols", "Name symbols that fit the 16-character limit",
+        glyphs("✦", "⚡", "♡", "❖", "･"), K_LIB),
   "library-geometric-symbols": ("Geometric Symbols", "Circles, squares and triangles",
         glyphs("●", "▲", "■", "◆", "◇"), K_LIB),
   "library-goth-grunge-symbols": ("Goth & Grunge Symbols", "Dark, edgy decorative marks",
@@ -1439,6 +1991,7 @@ PAGES = {
         glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB),
   "library-hug-kaomoji": ("Hug Kaomoji", "Open-armed hugging faces", m_kaomoji, K_LIB),
   "library-instagram-symbols": ("Instagram Symbols", "Symbols that shine in your bio", m_camera, K_LIB),
+  "library-iphone-emojis": ("iPhone Emojis", "Copy Apple's emoji artwork", m_smiley, K_LIB),
   "library-kawaii-cute-symbols": ("Kawaii & Cute Symbols", "Adorable Japanese-style accents",
         glyphs("♡", "❀", "✧", "⊹", "✦"), K_LIB),
   "library-kiss-kaomoji": ("Kiss Kaomoji", "Kiss-blowing text faces", m_kaomoji, K_LIB),
@@ -1462,10 +2015,17 @@ PAGES = {
   "library-people-profession-emojis": ("People & Profession Emojis", "Roles and people", m_person, K_LIB),
   "library-religious-symbols": ("Religious & Spiritual Symbols", "Faiths and beliefs",
         glyphs("✝", "☪", "☮", "☯", "✡"), K_LIB),
+  # ar/library translation (2026-07-23) — same motif as the EN parent above.
+  "ar-library-religious-symbols": ("الرموز الدينية والروحية", "رموز الأديان والمعتقدات",
+        glyphs("✝", "☪", "☮", "☯", "✡"), K_LIB),
   "library-roblox-symbols": ("Roblox Symbols", "Symbols for Roblox names and chat", m_block, K_LIB),
   "library-sad-kaomoji": ("Sad Kaomoji", "Downcast text faces", m_kaomoji, K_LIB),
   "library-shocked-kaomoji": ("Shocked Kaomoji", "Wide-eyed, stunned faces", m_kaomoji, K_LIB),
   "library-shrug-kaomoji": ("Shrug Kaomoji", "The shruggie and variants", m_kaomoji, K_LIB),
+  # 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
+  "library-snapchat-symbols": ("Snapchat Symbols", "Ghost, sparkle & bio decorations to copy",
+        glyphs("✧", "★", "♡", "✦"), K_LIB),
+  "library-table-flip-kaomoji": ("Table Flip Kaomoji", "Rage-quit text faces to copy", m_kaomoji, K_LIB),
   "library-slash-backslash-symbols": ("Slash & Backslash Symbols", "Dividers and dividing marks",
         glyphs("/", "\\", "⁄", "∕", "｜"), K_LIB),
   "library-sleepy-kaomoji": ("Sleepy Kaomoji", "Drowsy, dozing text faces", m_kaomoji, K_LIB),
@@ -1501,6 +2061,8 @@ PAGES = {
   "library-alt-codes": ("Alt Code Symbols", "Type symbols by their numeric codes",
         glyphs("☺", "♣", "♠", "♂", "♀"), K_LIB),
   "library-angry-emoji": ("Angry Emoji Collection", "Every shade of mad and furious", m_smiley, K_LIB),
+  "library-anime-symbols": ("Anime Symbols", "Sparkle, battle and moon accents for fandom names",
+        glyphs("✦", "⚔", "☽", "✧", "☠"), K_LIB),
   "library-art-stationery-emojis": ("Art & Stationery Emojis", "Pens, brushes and craft supplies",
         glyphs("✎", "✏", "✐", "✁", "✂"), K_LIB),
   "library-ascii-table": ("ASCII Table", "Every character and its code",
@@ -1533,6 +2095,9 @@ PAGES = {
   "library-emoji-combos": ("Emoji Combos", "Copy-and-paste emoji pairings", m_smiley, K_LIB),
   "library-evil-eye-hamsa-symbols": ("Evil Eye & Hamsa Symbols", "Protective marks and charms",
         glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
+  # ar/library translation (2026-08-01) — same motif as the EN parent above.
+  "ar-library-evil-eye-hamsa-symbols": ("رموز العين الزرقاء والخمسة", "تميمة النظرة وكف الخمسة",
+        glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
   "library-fairycore-symbols": ("Fairycore Symbols", "Whimsical, magical accents",
         glyphs("✦", "✧", "❀", "✿", "❁"), K_LIB),
   "library-fantasy-mythical-emojis": ("Fantasy & Mythical Emojis", "Dragons, magic and legends",
@@ -1543,6 +2108,10 @@ PAGES = {
         glyphs("★", "☆", "✯", "✪", "✦"), K_LIB),
   "library-free-fire-name-symbols": ("Free Fire Name Symbols", "Stylish marks for your in-game name",
         glyphs("☠", "⚔", "★", "✦", "➤"), K_LIB),
+  "library-pubg-symbols": ("PUBG / BGMI Name Symbols", "Battle-tested marks for your in-game name",
+        glyphs("彡", "乂", "★", "亗", "꧁"), K_LIB),
+  "library-steam-symbols": ("Steam Name Symbols", "Characters that actually survive your profile",
+        glyphs("★", "✦", "⚡", "☆", "✧"), K_LIB),
   "library-friendship-emojis": ("Friendship Emojis", "Show the bond with every send",
         glyphs("♥", "♡", "❣", "✦", "★"), K_LIB),
   "library-funny-emoji-combos": ("Funny Emoji Combos", "Pairings that land the joke", m_smiley, K_LIB),
@@ -1561,9 +2130,25 @@ PAGES = {
         glyphs("&", "<", ">", "§", "©"), K_LIB),
   "library-invisible-character": ("Invisible Character", "Blank space that pastes anywhere",
         glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  # root-level invisible-character/blank-space cluster translations (ar/ko/ja/ru/th, 2026-07-30)
+  # — no "-library-" segment since these pages live at locale root, matching
+  # slug_for(path)'s directory-path convention (e.g. it-testo-invisibile above).
+  "ar-nas-ghayr-marii": ("نص غير مرئي", "مسافة فارغة تُلصق في أي مكان",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "ko-bin-kan-munja": ("빈칸 문자", "어디에든 붙여넣는 투명 공백",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "ja-kuuhaku-moji": ("空白文字", "どこにでも貼り付けられる空白",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "ru-nevidimyy-tekst": ("Невидимый Текст", "Пустое место, которое вставляется где угодно",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
+  "th-khokhwam-long-hon": ("ข้อความล่องหน", "ช่องว่างที่วางได้ทุกที่",
+        glyphs("␣", "▢", "◌", "▯", "□"), K_LIB),
   "library-ipa-phonetic-symbols": ("IPA Phonetic Symbols", "Sounds of every language",
         glyphs("ə", "ʃ", "θ", "ʒ", "ŋ"), K_LIB),
   "library-islamic-symbols": ("Islamic Symbols", "Crescents and marks of faith",
+        glyphs("☪", "✦", "☾", "❂", "★"), K_LIB),
+  # ar/library translation (2026-07-23) — same motif as the EN parent above.
+  "ar-library-islamic-symbols": ("الرموز الإسلامية", "الهلال ورموز الإيمان",
         glyphs("☪", "✦", "☾", "❂", "★"), K_LIB),
   "library-japanese-symbols": ("Japanese Symbols", "Characters and marks for names", m_grid, K_LIB),
   "library-jewelry-gem-emojis": ("Jewelry & Gem Emojis", "Sparkle, shine and treasure",
@@ -1603,6 +2188,8 @@ PAGES = {
         glyphs("☮", "✌", "☯", "♡", "✦"), K_LIB),
   "library-poop-emoji": ("Poop Emoji", "The internet's favourite pile", m_smiley, K_LIB),
   "library-preppy-emoji-combos": ("Preppy Emoji Combos", "Polished, coastal-cool pairings", m_bow, K_LIB),
+  "library-pride-lgbtq-symbols": ("Pride & LGBTQ Symbols", "Flags and identity colors, copy-ready",
+        glyphs("⚧", "♡", "✦", "⚢", "✧"), K_LIB),
   "library-punctuation-symbols": ("Punctuation Symbols", "Marks beyond the basics",
         glyphs("‽", "¶", "§", "†", "‡"), K_LIB),
   "library-recycle-environment-symbols": ("Recycle & Environment Symbols", "Green marks for a cause",
@@ -1744,14 +2331,25 @@ PAGES = {
   "library-yamal-emoji-combos": ("Yamal Emoji Combos", "Fan emoji sets to copy and paste", m_ball, K_LIB),
 
   # ---- localized expansion: emoji combos / discord / stacked text / symbols ----
+  # German
+  "de-library-emoji-flags": ("Länderflaggen", "Flaggen-Emojis aller Länder", m_flag, K_LIB),
   # Portuguese
   "pt-combos-de-emoji": ("Combos de Emoji", "Combinações de emoji para copiar e colar", m_smiley, K_LIB),
   "pt-fontes-para-discord": ("Fontes para Discord", "Letras para nick, canal e bio — sem Nitro", m_chat, K_PLAT),
+  "pt-library-emoji-flags": ("Emoji de Bandeiras", "Bandeiras de todos os países", m_flag, K_LIB),
   # Vietnamese
   "vi-combo-emoji": ("Combo Emoji", "Bộ emoji để sao chép và dán", m_smiley, K_LIB),
   "vi-font-discord": ("Font Discord", "Chữ kiểu cho nick và bio Discord", m_chat, K_PLAT),
+  "vi-library-emoji-flags": ("Cờ Các Nước", "Emoji lá cờ mọi quốc gia", m_flag, K_LIB),
+  "vi-symbol-checkmark-symbol": ("Dấu Tích", "Ý nghĩa dấu tích & cách gõ", glyphs("✓", "✔"), K_SYM),
+  "vi-symbol-quotation-mark": ("Dấu Ngoặc Kép", "Ý nghĩa & cách gõ dấu ngoặc", glyphs("“", "”"), K_SYM),
+  "vi-library-math-symbols": ("Ký Hiệu Toán Học", "Toán tử, tập hợp và Hy Lạp",
+        glyphs("∑", "∫", "√", "π", "∞"), K_LIB),
+  "vi-library-bullet-point-symbols": ("Ký Hiệu Chấm Tròn", "Dẫn đầu danh sách thật đẹp",
+        glyphs("•", "◦", "▪", "‣", "◆"), K_LIB),
   # Spanish
   "es-combinaciones-de-emojis": ("Combinaciones de Emojis", "Sets de emoji para copiar y pegar", m_smiley, K_LIB),
+  "es-library-emoji-flags": ("Emoji Bandera", "Banderas de todos los países", m_flag, K_LIB),
   "es-letras-en-otros-idiomas": ("Letras en Otros Idiomas", "Alfabetos y letras del mundo para copiar",
         P(m_typo, sample="Åß", size=88, label="letras del mundo"), K_LIB),
   "es-letras-bonitas": ("Letras Bonitas", "Letras lindas para copiar y pegar",
@@ -1765,6 +2363,10 @@ PAGES = {
   "pl-litery-do-skopiowania": ("Litery do Skopiowania", "Alfabet w różnych stylach do skopiowania",
         P(m_typo, sample="Ab", size=88, label="do skopiowania"), K_CAT),
   "pl-ozdobniki": ("Ozdobniki do Skopiowania", "Symbole i ozdoby do nicku i bio", m_grid, K_LIB),
+  "pl-library": ("Biblioteka Symboli i Emotek", "Kolekcje gotowe do skopiowania", m_grid, K_LIB),
+  "pl-library-emoji-flags": ("Flagi Emoji — Wszystkie Kraje", "Flaga każdego kraju do skopiowania", m_flag, K_LIB),
+  "pl-library-alfabet-grecki": ("Alfabet Grecki", "Alfa do omega, gotowe do skopiowania",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
   # Turkish
   "tr-sekilli-yazi": ("Şekilli Yazı", "Şekilli harfler kopyala yapıştır",
         P(m_typo, sample="Şa", size=88, label="şekilli yazı"), K_CAT),
@@ -1779,6 +2381,97 @@ PAGES = {
   "es-fuentes-para-roblox": ("Fuentes para Roblox", "Letras para el nombre y la bio", m_chat, K_PLAT),
   "pl-czcionki-na-roblox": ("Czcionki na Roblox", "Generator czcionek do nazwy i bio", m_chat, K_PLAT),
   "vi-font-roblox": ("Font Chữ Roblox", "Tạo chữ đẹp cho tên và bio", m_chat, K_PLAT),
+
+  # ---- single-emoji spokes added 2026-07-13 (broad-match opportunity batch) ----
+  "library-heart-emoji": ("Heart Emoji Collection", "Every heart color and meaning", m_heart, K_LIB),
+  "library-check-mark-emoji": ("Check Mark Emoji", "Done, approved and verified marks",
+        glyphs("✓", "✔", "☑"), K_LIB),
+  "library-eyes-emoji": ("Eyes Emoji Collection", "The watching-this meme, in every form", m_smiley, K_LIB),
+  "library-skull-emoji": ("Skull Emoji Collection", "The internet's favorite way to say I'm dead", m_skull, K_LIB),
+  "library-praying-hands-emoji": ("Praying Hands Emoji", "Prayer, thanks and high-fives", m_smiley, K_LIB),
+  "library-thinking-emoji": ("Thinking Emoji Collection", "Hmm, skeptical and shrug faces", m_smiley, K_LIB),
+  "library-star-emoji": ("Star Emoji Collection", "Ratings, sparkle and shooting stars", m_star, K_LIB),
+  "library-fire-emoji": ("Fire Emoji Collection", "This is fire — hype and heat symbols", m_smiley, K_LIB),
+  "library-sunglasses-emoji": ("Sunglasses Emoji Collection", "Cool, confident and unbothered", m_smiley, K_LIB),
+  "library-tired-emoji": ("Tired Emoji Collection", "Sleepy, exhausted and running on empty", m_smiley, K_LIB),
+
+  # ---- single-emoji spokes added 2026-07-13 (broad-match opportunity batch 2) ----
+  "library-sick-emoji": ("Sick Emoji Collection", "Queasy, feverish and woozy faces", m_smiley, K_LIB),
+  "library-seahorse-emoji": ("Seahorse Emoji", "Why it doesn't exist, and the closest alternatives", m_smiley, K_LIB),
+  "library-blush-emoji": ("Blush Emoji Collection", "Bashful, shy and flattered faces", m_smiley, K_LIB),
+  "library-freaky-emoji": ("Freaky Emoji Collection", "Flirty, mischievous and devilish faces", m_smiley, K_LIB),
+  "library-kiss-emoji": ("Kiss Emoji Collection", "Every kissing face and kiss mark", m_smiley, K_LIB),
+  "library-eye-roll-emoji": ("Eye Roll Emoji Collection", "Exasperated, unimpressed reactions", m_smiley, K_LIB),
+  "library-wink-emoji": ("Wink Emoji Collection", "Playful winks and teasing faces", m_smiley, K_LIB),
+  "library-salute-emoji": ("Salute Emoji Collection", "Respect, honor and acknowledgment", m_smiley, K_LIB),
+  "library-lip-bite-emoji": ("Lip Bite Emoji Collection", "Flirty faces and teasing kaomoji", m_smiley, K_LIB),
+  "library-tongue-emoji": ("Tongue Emoji Collection", "Silly, playful tongue-out faces", m_smiley, K_LIB),
+  "library-smirk-emoji": ("Smirk Emoji Collection", "Smug, confident and sly faces", m_smiley, K_LIB),
+  "library-scared-emoji": ("Scared Emoji Collection", "Fearful, panicked and spooky faces", m_smiley, K_LIB),
+  "library-chefs-kiss-emoji": ("Chef's Kiss Emoji Collection", "This is absolutely perfect", m_smiley, K_LIB),
+  "library-handshake-emoji": ("Handshake Emoji Collection", "Greetings, deals and agreements", m_smiley, K_LIB),
+  "library-middle-finger-emoji": ("Middle Finger Emoji Collection", "The rude gesture and its variants", m_smiley, K_LIB),
+  "library-devil-emoji": ("Devil Emoji Collection", "Demons, monsters and villain symbols", m_smiley, K_LIB),
+  "library-confused-emoji": ("Confused Emoji Collection", "Baffled, puzzled and lost faces", m_smiley, K_LIB),
+  "library-eggplant-emoji": ("Eggplant Emoji Collection", "Literal meaning and internet slang", m_smiley, K_LIB),
+  "library-facepalm-emoji": ("Facepalm Emoji Collection", "Exasperated, done-with-it reactions", m_smiley, K_LIB),
+  "library-clown-emoji": ("Clown Emoji Collection", "Circus symbols and clown-check memes", m_smiley, K_LIB),
+
+  # ---- single-emoji spokes added 2026-07-13 (broad-match opportunity batch 3) ----
+  "library-pleading-emoji": ("Pleading Emoji Collection", "Puppy eyes and begging faces", m_smiley, K_LIB),
+  "library-embarrassed-emoji": ("Embarrassed Emoji Collection", "Mortified and caught-off-guard faces", m_smiley, K_LIB),
+  "library-annoyed-emoji": ("Annoyed Emoji Collection", "Irritated, fed-up and exasperated faces", m_smiley, K_LIB),
+  "library-cringe-emoji": ("Cringe Emoji Collection", "Secondhand embarrassment and yikes faces", m_smiley, K_LIB),
+  "library-sigh-emoji": ("Sigh Emoji Collection", "Relief, resignation and exhaling faces", m_smiley, K_LIB),
+  "library-choking-emoji": ("Choking Emoji Collection", "Knocked-out and dying-of-laughter faces", m_smiley, K_LIB),
+  "library-halo-emoji": ("Halo Emoji Collection", "Innocent and angelic smiley faces", m_smiley, K_LIB),
+  "library-rocket-emoji": ("Rocket Emoji Collection", "Launch, hype and to-the-moon symbols", m_plane, K_LIB),
+  "library-high-five-emoji": ("High Five Emoji Collection", "Celebration and team-cheer hands", m_thumb, K_LIB),
+  "library-clap-emoji": ("Clap Emoji Collection", "Applause and word-for-word emphasis combos", m_thumb, K_LIB),
+  "library-crown-emoji": ("Crown Emoji Collection", "Royalty, queen and king slang symbols", m_trophy, K_LIB),
+  "library-ghost-emoji": ("Ghost Emoji Collection", "Spooky faces and ghosting slang symbols", m_pumpkin, K_LIB),
+  "library-angel-emoji": ("Angel Emoji Collection", "Guardian angels and in-loving-memory symbols", m_heart, K_LIB),
+  "library-peace-emoji": ("Peace Emoji Collection", "Peace sign, dove and harmony symbols", m_thumb, K_LIB),
+  "library-dancing-emoji": ("Dancing Emoji Collection", "Dancer figures and dance-floor symbols", m_note, K_LIB),
+  "library-cowboy-emoji": ("Cowboy Emoji Collection", "Yeehaw and Wild West symbols", m_smiley, K_LIB),
+  "library-muscle-emoji": ("Muscle Emoji Collection", "Flex, gym and gains symbols", m_thumb, K_LIB),
+  "library-gift-emoji": ("Gift Emoji Collection", "Presents, surprises and celebration symbols", m_firework, K_LIB),
+
+  # ---- 2026-07-24 localization batch ----
+  # Alt-codes: 6 new locales
+  "tr-library-alt-kodlari": ("Alt Kodları", "Türkçe karakterler, para birimi ve tam liste", m_block, K_LIB),
+  "nl-library-alt-codes": ("Alt Codes", "é alt-code en volledige toetsenbordlijst", m_block, K_LIB),
+  "pl-library-kody-alt": ("Kody Alt", "Waluta, matematyka i znaki zachodnie", m_block, K_LIB),
+  "ko-library-alt-kodeu": ("알트 코드", "닉네임 꾸미기 기호와 전체 목록", m_block, K_LIB),
+  "id-library-kode-alt": ("Kode Alt", "Daftar lengkap kode simbol keyboard", m_block, K_LIB),
+  "es-library-codigos-alt": ("Códigos Alt", "Lista completa de símbolos del teclado", m_block, K_LIB),
+
+  # ---- 2026-07-30: ar + th alt-codes ----
+  "ar-library-alt-codes": ("أكواد Alt", "القائمة الكاملة لرموز لوحة المفاتيح", m_block, K_LIB),
+  "th-library-alt-codes": ("Alt Code ครบชุด", "พิมพ์สัญลักษณ์ด้วยรหัสตัวเลข", m_block, K_LIB),
+  # Library symbol batches: 5 new locale pages
+  "th-library-discord-symbols": ("สัญลักษณ์ Discord", "คัดลอกวางสำหรับชื่อผู้ใช้และไบโอ", m_block, K_LIB),
+  "th-library-greek-letter-symbols": ("รวมอักษรกรีก", "ตั้งแต่อัลฟาถึงโอเมกา คัดลอกได้ทันที",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
+  "th-library-heart-symbols": ("สัญลักษณ์หัวใจ", "อิโมจิหัวใจทุกสี คัดลอกวางได้เลย",
+        glyphs("♥", "♡", "❣", "❤", "♥"), K_LIB),
+  "ms-library-simbol-roblox": ("Simbol Roblox", "Salin & tampal untuk nama paparan", m_block, K_LIB),
+  "ar-library-y2k-symbols": ("رموز Y2K", "زخارف سايبر للنسخ واللصق", m_block, K_LIB),
+  "ru-library-simvoly-y2k": ("Символы Y2K", "Киберэстетика для копирования", m_block, K_LIB),
+  "ru-library-grecheskiy-alfavit": ("Греческий алфавит", "От альфы до омеги, готово к копированию",
+        glyphs("α", "β", "Δ", "Ω", "π"), K_LIB),
+  "ms-library-simbol-y2k": ("Simbol Y2K", "Hiasan cyber aesthetic untuk bio", m_block, K_LIB),
+  # Printables: 5 new locale hub pages
+  "pl-do-druku-litery-bombelkowe": ("Bąbelkowe litery do druku", "Obrysuj, pokoloruj, pobierz PNG — A–Z i 0–9", m_grid, K_PRINT),
+  "pl-do-druku-alfabet-kursywny": ("Alfabet kursywny do druku", "Karty kaligraficzne A–Z do obrysowania", m_grid, K_PRINT),
+  "pl-do-druku-alfabet-do-kolorowania": ("Alfabet do kolorowania", "Darmowe litery A–Z do druku i kolorowania", m_grid, K_PRINT),
+  "de-zum-ausdrucken-blasenbuchstaben": ("Blasenbuchstaben zum Ausdrucken", "Nachfahren, Ausmalen, PNG — A–Z & 0–9", m_grid, K_PRINT),
+  "de-zum-ausdrucken-alphabet-ausmalbilder": ("Alphabet-Ausmalbilder", "Kostenlose Buchstaben A–Z zum Ausdrucken", m_grid, K_PRINT),
+  # New symbol/ EN parents + id/ translations
+  "symbol-microphone-emoji": ("Microphone Emoji", "🎤 meaning, history & every way to type it", m_microphone, K_SYM),
+  "symbol-less-than-or-equal-to-symbol": ("Less Than or Equal To Symbol", "≤ meaning, Alt Code & LaTeX", glyphs("≤"), K_SYM),
+  "id-symbol-mikrofon-emoji": ("Emoji Mikrofon", "🎤 arti, sejarah & kode Unicode-nya", m_microphone, K_SYM),
+  "id-symbol-simbol-kurang-dari-sama-dengan": ("Simbol Kurang Dari Sama Dengan", "≤ arti, Alt Code & LaTeX", glyphs("≤"), K_SYM),
 }
 
 
@@ -1804,6 +2497,39 @@ for _l, _word in LETTER_WORD.items():
     PAGES[f"printables-alphabet-coloring-pages-letter-{_l}"] = (
         f"Letter {_L} Coloring Page", f"{_L} is for {_word} — color the outline",
         P(m_letter_outline, letter=_L), K_PRINT)
+    PAGES[f"printables-cursive-alphabet-letter-{_l}"] = (
+        f"Cursive {_L}", f"Capital & lowercase {_L} in cursive — free printable",
+        P(m_letter_cursive, letter=_L), K_PRINT)
+
+# ---- /learn/ education pillar ----
+PAGES.update({
+"learn-hub": ("Learn", "Stage-by-stage guides for handwriting & lettering",
+    P(m_doc), K_PRINT),
+"learn-dot-to-dots": ("Dot-to-Dots & Pencil Control", "A progression guide from many dots to freehand",
+    P(m_typo, sample="•••", size=92, label="pencil control"), K_PRINT),
+"learn-coloring-and-fine-motor": ("Coloring Letters", "Fine motor skills through letter-shaped coloring",
+    P(m_typo, sample="Aa", size=92, label="fine motor"), K_PRINT),
+"learn-handwriting": ("Teaching Handwriting", "A practical, stage-by-stage guide — readiness to cursive",
+    P(m_typo, sample="Aa", size=92, label="stage by stage"), K_PRINT),
+"learn-handwriting-when-to-start-handwriting": ("When to Start Handwriting", "Readiness signs that matter more than age",
+    P(m_typo, sample="A?", size=92, label="readiness"), K_PRINT),
+"learn-handwriting-pre-writing-strokes": ("Pre-Writing Strokes", "The lines every letter is built from",
+    P(m_typo, sample="l○", size=92, label="pre-writing"), K_PRINT),
+"learn-handwriting-first-letters-uppercase": ("First Letters", "Why uppercase usually comes first",
+    P(m_typo, sample="Aa", size=92, label="first letters"), K_PRINT),
+"learn-handwriting-lowercase-and-reversals": ("Lowercase & Reversals", "Fixing b/d/p/q confusion",
+    P(m_typo, sample="bd", size=92, label="reversals"), K_PRINT),
+"learn-handwriting-stroke-order-and-start-dots": ("Stroke Order & Start Dots", "Why how you trace matters more than how much",
+    P(m_typo, sample="1→", size=92, label="stroke order"), K_PRINT),
+"learn-handwriting-from-tracing-to-writing": ("From Tracing to Writing", "The 7-step fading ladder",
+    P(m_typo, sample="Aa", size=92, label="7 levels"), K_PRINT),
+"learn-handwriting-name-writing": ("Name Writing", "The first word worth practicing",
+    P(m_typo, sample="Aa", size=92, label="name writing"), K_PRINT),
+"learn-handwriting-cursive-when-and-how": ("Cursive: When & How", "Letter families, lowercase first, joins throughout",
+    P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive"), K_PRINT),
+"learn-handwriting-how-much-practice": ("How Much Practice?", "How much helps, and how to measure progress",
+    P(m_typo, sample="5m", size=92, label="practice & progress"), K_PRINT),
+})
 
 PAGES["printables-bubble-letters"] = (
     "Printable Bubble Letters", "Big puffy A-Z outlines to trace, color and print",
@@ -1833,12 +2559,15 @@ PAGES.update({
 "answers-how-to-change-discord-username": ("Change Your Discord Username", "Unique name vs display name, explained", m_qa, K_ANS),
 "answers-how-to-change-instagram-username": ("Change Your Instagram Username", "The rules, the 14-day limit, and fancy fonts", m_qa, K_ANS),
 "answers-how-to-make-bold-text-in-discord": ("Bold Text in Discord", "Markdown for messages, Unicode for names", m_qa, K_ANS),
+"answers-how-to-underline-in-discord": ("Underline in Discord", "Markdown for messages, Unicode for names", m_qa, K_ANS),
+"answers-how-to-make-big-text-in-discord": ("Big Text in Discord", "Headers for messages, a font for names", m_qa, K_ANS),
 "answers-how-to-remove-zalgo-text": ("How to Remove Zalgo Text", "Strip combining marks and recover the original", m_zalgo, K_ANS),
 "answers-how-to-uncover-redacted-text": ("Can You Uncover Redacted Text?", "Unicode blocks are permanent, images sometimes aren't", m_qa, K_ANS),
 "answers-is-fancy-text-bad-for-accessibility": ("Is Fancy Text Bad for Accessibility?", "How screen readers handle styled Unicode", m_qa, K_ANS),
 "answers-is-fancy-text-bad-for-seo": ("Is Fancy Text Bad for SEO?", "Fine as decoration, risky on keywords", m_qa, K_ANS),
 "answers-is-zalgo-text-safe": ("Is Zalgo Text Safe?", "No virus, no hack — the two real caveats", m_zalgo, K_ANS),
 "answers-merry-christmas-in-different-languages": ("Merry Christmas in Other Languages", "Feliz Navidad, Joyeux Noël & more, translated", m_qa, K_ANS),
+"answers-christmas-card-what-to-write": ("What to Write in a Christmas Card", "Lines by relationship, family to boss", m_qa, K_ANS),
 "answers-mothers-day-messages-what-to-write": ("Mother's Day Messages: What to Write", "Heartfelt lines for Mom, Grandma & more", m_qa, K_ANS),
 "answers-valentines-day-messages-what-to-write": ("Valentine's Day Messages: What to Write", "Sweet lines for partners, crushes & friends", m_qa, K_ANS),
 "answers-what-font-does-instagram-use": ("What Font Does Instagram Use?", "System fonts, Instagram Sans, and fancy fonts", m_qa, K_ANS),
@@ -1852,25 +2581,56 @@ PAGES.update({
 "answers-why-wont-discord-accept-fancy-username": ("Why Won't Discord Accept My Username?", "Usernames are ASCII-only; display names aren't", m_qa, K_ANS),
 "answers-why-wont-instagram-accept-my-fancy-username": ("Why Won't Instagram Accept My Username?", "Handles are ASCII-only — style your Name instead", m_qa, K_ANS),
 "events": ("Holiday & Event Text Generators", "Fonts, emoji, and phrases for every calendar holiday", m_grid, K_USE),
+"events-ramadan": ("Ramadan Text & Symbol Generator", "Crescent, lantern, and Ramadan Kareem greetings", m_crescent, K_USE),
+"events-st-patricks-day": ("St Patrick's Day Fonts & Symbols", "Shamrock, clover, and Irish blessing phrases", m_clover, K_USE),
+"events-july-4th": ("4th of July Fonts & Emoji Generator", "Fireworks, flags, and Independence Day captions", m_firework, K_USE),
+"events-graduation": ("Graduation Text & Symbol Generator", "Cap, scroll, and congratulations messages", m_gradcap, K_USE),
 "events-chinese-new-year": ("Chinese New Year Text & Symbol Generator", "Lanterns, fireworks, and Lunar New Year phrases", m_lantern, K_USE),
 "events-christmas": ("Christmas Fonts & Emoji Generator", "Style greetings with tree, Santa, and snow emoji", m_tree, K_USE),
 "events-diwali": ("Diwali Fonts & Symbol Generator", "Diya, fireworks, and festival-of-lights phrases", m_lamp, K_USE),
+"events-easter": ("Easter Fonts & Emoji Generator", "Bunny, egg, and chick emoji for spring greetings", m_bunny, K_USE),
 "events-eid-mubarak": ("Eid Mubarak Text & Symbol Generator", "Crescent moon emoji and ready-made Eid phrases", m_crescent, K_USE),
 "events-fathers-day": ("Father's Day Message Generator", "Bold, rugged fonts for World's Best Dad messages", m_necktie, K_USE),
 "events-halloween": ("Halloween Fonts & Emoji Generator", "Pumpkin, ghost, and bat emoji for spooky greetings", m_pumpkin, K_USE),
 "events-mothers-day": ("Mother's Day Message Generator", "Warm cursive fonts for Happy Mother's Day messages", m_bouquet, K_USE),
 "events-new-year": ("New Year Countdown Text Generator", "Firework emoji and Happy New Year phrases to paste", m_firework, K_USE),
+"events-thanksgiving": ("Thanksgiving Fonts & Emoji Generator", "Turkey, pie, and autumn-leaf emoji for gratitude posts", m_pie, K_USE),
 "events-valentines-day": ("Valentine's Day Text Generator", "Hearts, roses, and Be My Valentine phrases to style", m_heart, K_USE),
 "printables-banner-maker": ("Printable Banner Maker", "One flag per letter, cut and strung to spell any word", m_banner, K_PRINT),
 "printables-block-letters": ("Printable Block Letters & Stencils", "Bold hollow A-Z & 0-9 stencils to trace, cut and use", P(m_letter_stencil, letter="B"), K_PRINT),
 "printables-calligraphy-alphabet": ("Calligraphy Alphabet", "Blackletter and script letters to trace and print", P(m_typo, sample="Aa", ff=SERIF, weight="800", style="italic", size=90, label="blackletter & script"), K_PRINT),
 "printables-coloring-page-maker": ("Coloring Page Maker", "Any name or word becomes a colorable outline to print", m_crayons, K_PRINT),
+"printables-dot-to-dot-name": ("Dot-to-Dot Name Generator", "Any name becomes a personalized connect-the-dots", P(m_letter_dots, letter="Em"), K_PRINT),
 "printables-cursive-alphabet": ("Cursive Alphabet", "Cursive A-Z practice sheets to trace and print", P(m_typo, sample="Aa", ff=SERIF, style="italic", weight="400", size=92, label="cursive practice"), K_PRINT),
 "printables-handwriting-worksheet-generator": ("Handwriting Worksheet Generator", "Dial dotted-to-blank tracing difficulty for any word", m_pencil_ruled, K_PRINT),
 "printables": ("Printable Letters & Alphabets", "Bubble letters, cursive sheets, tracing pages and more", m_grid, K_PRINT),
 "printables-name-puzzle-maker": ("Name Puzzle Maker", "Any name becomes a cut-apart letter jigsaw puzzle", m_puzzle, K_PRINT),
 "printables-name-tracing": ("Name Tracing Worksheets", "Model row, faded trace rows and blank practice lines", P(m_trace_rows, sample="Emma"), K_PRINT),
 "printables-sight-word-tracing": ("Sight Word Tracing Worksheets", "Dolch sight words to trace at adjustable difficulty", P(m_trace_rows, sample="said"), K_PRINT),
+
+# 2026-07-22 GSC 404 cleanup: these pages shipped without ever being
+# registered here, so they had no og:image/hero art at all.
+"category-case-converter": ("Case Converter", "UPPERCASE, lowercase & Title Case",
+      P(m_typo, sample="Aa", weight="700", size=88, label="UPPER / lower"), K_CAT),
+"usecase-old-english-translator": ("Old English Translator", "Thee, thou & thy — Shakespearean text",
+      P(m_typo, sample="Thee", ff=SERIF, style="italic", weight="400", size=64, label="ye olde english"), K_USE),
+"usecase-pirate-translator": ("Pirate Translator", "Arrr! Turn any text into pirate speak", m_skull, K_USE),
+"printables-monogram-maker": ("Monogram Maker", "Up to 3 initials, classic or circle-frame", P(m_circled_letter, letter="M"), K_PRINT),
+"printables-cross-stitch-letters": ("Cross-Stitch Letters", "Any word as a charted stitch pattern", m_grid, K_PRINT),
+"printables-spanish-alphabet-chart": ("Spanish Alphabet Chart", "All 27 letters, A-Z plus Ñ, one printable chart", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"fr-imprimables-alphabet-espagnol": ("Alphabet Espagnol à Imprimer", "Les 27 lettres, A-Z plus Ñ, une seule fiche", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"es-imprimibles-abecedario-espanol": ("Abecedario Español para Imprimir", "Las 27 letras, A-Z más la Ñ, una sola tabla", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"pt-imprimiveis-alfabeto-espanhol": ("Alfabeto Espanhol para Imprimir", "As 27 letras, A-Z mais o Ñ, numa só tabela", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"pl-do-druku-alfabet-hiszpanski": ("Hiszpański Alfabet do Druku", "Wszystkie 27 liter, A-Z plus Ñ, jedna karta", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"de-zum-ausdrucken-spanisches-alphabet": ("Spanisches Alphabet zum Ausdrucken", "Alle 27 Buchstaben, A-Z plus Ñ, eine Karte", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"it-da-stampare-alfabeto-spagnolo": ("Alfabeto Spagnolo da Stampare", "Tutte le 27 lettere, A-Z più la Ñ, una scheda", P(m_letter_stencil, letter="Ñ"), K_PRINT),
+"printables-best-friend-in-cursive": ("Best Friend in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Friends"), K_PRINT),
+"printables-dad-in-cursive": ("Dad in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Dad"), K_PRINT),
+"printables-family-in-cursive": ("Family in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Family"), K_PRINT),
+"printables-happy-birthday-in-cursive": ("Happy Birthday in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Birthday"), K_PRINT),
+"printables-love-in-cursive": ("Love in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Love"), K_PRINT),
+"printables-mom-in-cursive": ("Mom in Cursive", "Free printable tracing worksheet", P(m_trace_rows, sample="Mom"), K_PRINT),
+
 "category-ancient-fonts": ("Ancient & Rune Fonts", "Rune, Cherokee & ancient script styling",
       P(m_typo, sample="Rune", ff=SERIF, weight="800", size=84, label="runic · cherokee · ethiopic"), K_CAT),
 "category-emoji-letter-fonts": ("Emoji Letter Generator", "Block, squared & flag-emoji letter styles",
@@ -1891,16 +2651,33 @@ PAGES.update({
 "library-skull-ascii-art": ("Skull ASCII Art", "Skulls and crossbones drawn in plain text", m_skull, K_LIB),
 "library-star-ascii-art": ("Star ASCII Art", "Sparkles, shooting stars & big text stars", m_star, K_LIB),
 "usecase-free-fire-guild-name-generator": ("Free Fire Guild Name Generator", "Squad tags in ꧁꧂ brackets, copy & paste", m_gamepad, K_USE),
+"usecase-mobile-legends-squad-name-generator": ("Mobile Legends Squad Name Generator", "Squad tags & aesthetic fonts, copy & paste", m_trophy, K_USE),
 "usecase-free-fire-name-generator": ("Free Fire Name Generator", "Stylish FF names with symbols & katakana", m_gamepad, K_USE),
 "usecase-stylish-name": ("Stylish Name Maker", "Fancy names for FF, Instagram & Facebook", m_gamepad, K_USE),
+"usecase-valorant-name-generator": ("Valorant Name Generator", "Live Riot ID checker + stylish names", m_gamepad, K_USE),
 "ascii-art-generator": ("ASCII Art Generator", "Turn any word into big block-letter ASCII art",
       P(m_transform, a="A", b="█"), K_USE),
 "ascii-converter": ("ASCII Converter", "Text to hex, binary, decimal & octal, and back",
       P(m_transform, a="A", b="01"), K_USE),
 "curved-text": ("Curved & Arc Text Generator", "Bend text into arcs, waves, spirals & shapes",
       P(m_arc, letters="ARC"), K_USE),
+# 2026-07-22 GSC 404 cleanup: shipped without og:image/twitter:image at all.
+"character-counter": ("Character Counter", "Live word & character stats as you type",
+      P(m_typo, sample="123", weight="800", size=88, label="words · characters"), K_USE),
 "hiragana-chart": ("Hiragana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
 "katakana-chart": ("Katakana Chart", "All 46 kana with romaji, printable & tap-to-copy", m_kana_grid, K_LIB),
+
+# ---- tr/library — piliapp-mining individual-symbol pages (2026-07-12) ----
+"tr-library-japon-alfabesi": ("Japon Alfabesi", "Hiragana, katakana ve kanji kopyala yapıştır", m_kana_grid, K_LIB),
+"tr-library-onay-isaretleri": ("Onay İşaretleri", "Tik, çarpı ve durum sembolleri kopyala", glyphs("✓", "✔", "☑", "✗"), K_LIB),
+"tr-library-ok-isaretleri": ("Ok İşaretleri", "Yön, çift ve emoji oklar kopyala yapıştır", glyphs("→", "⇒", "↩", "➤"), K_LIB),
+"tr-library-tirnak-isareti": ("Tırnak İşareti", "Düz, kıvrık tırnak ve dış tırnak kopyala", glyphs("\"", "“", "”", "«"), K_LIB),
+"tr-library-derece-isareti": ("Derece İşareti", "Sıcaklık, açı ve geometri sembolleri kopyala", glyphs("°", "℃", "∠", "′"), K_LIB),
+"tr-library-para-birimi-sembolleri": ("Para Birimi Sembolleri", "Türk Lirası, euro, dolar ve dünya paraları", glyphs("₺", "€", "$", "£"), K_LIB),
+"tr-library-yunan-alfabesi-sembolleri": ("Yunan Alfabesi Sembolleri", "Alfa, beta, pi ve tüm Yunan harfleri kopyala", glyphs("α", "β", "π", "Ω"), K_LIB),
+"tr-library-matematik-sembolleri": ("Matematik Sembolleri", "Artı eksi, eşitsizlik ve küme işaretleri", glyphs("±", "≥", "≠", "∫"), K_LIB),
+"tr-library-nazar-sembolleri": ("Nazar Sembolleri", "Nazar, hamsa ve göz işaretleri kopyala yapıştır",
+      glyphs("◉", "☽", "✦", "❂", "☉"), K_LIB),
 })
 
 
@@ -1945,20 +2722,152 @@ def og_png_svg(slug, title, sub, motif, kicker, a=PURPLE, b=BLUE, native=None):
 </svg>"""
 
 
+def _native_for_slug(slug):
+    """slug's locale prefix ('zh-tw...' -> 'zh', 'ja-...' -> 'ja') looked up
+    against NATIVE_SCRIPT, or None for slugs with no non-Latin script."""
+    for loc, fam in NATIVE_SCRIPT.items():
+        if slug == loc or slug.startswith(loc + "-"):
+            return fam
+    return None
+
+
+# ---- /updates/ — dated Unicode/platform/game rule-change log ----
+PAGES.update({
+"updates": ("UltraTextGen Updates", "What changed, and why your Check may too", m_doc, K_UPDATE),
+"updates-unicode-17-new-emoji-rollout": ("Unicode 17.0's New Emoji: Rollout Tracker", "8 new emoji, tracked platform by platform", m_doc, K_UPDATE),
+"updates-uae-dirham-symbol-unicode-18": ("UAE Dirham Symbol Approved for Unicode 18.0", "Approved for encoding, not on keyboards yet", m_doc, K_UPDATE),
+"ar-updates-uae-dirham-symbol-unicode-18": ("رمز الدرهم الإماراتي يُعتمد في يونيكود 18.0", "معتمد للترميز، وليس على لوحات المفاتيح بعد", m_doc, K_UPDATE),
+"de-updates-vae-dirham-symbol-unicode-18": ("VAE-Dirham-Symbol für Unicode 18.0 genehmigt", "Zur Kodierung genehmigt, noch nicht auf Tastaturen", m_doc, K_UPDATE),
+"es-updates-simbolo-dirham-emiratos-unicode-18": ("Símbolo del Dirham de los EAU Aprobado para Unicode 18.0", "Aprobado para codificación, aún no en teclados", m_doc, K_UPDATE),
+"it-updates-simbolo-dirham-unicode-18": ("Simbolo del Dirham degli Emirati Arabi Uniti Approvato per Unicode 18.0", "Approvato per la codifica, non ancora sulle tastiere", m_doc, K_UPDATE),
+"ko-updates-dirham-giho-unicode-18": ("UAE 디르함 기호, 유니코드 18.0 인코딩 승인", "인코딩 승인, 아직 키보드엔 없음", m_doc, K_UPDATE),
+"nl-updates-dirham-symbool-unicode-18": ("VAE-dirhamsymbool goedgekeurd voor Unicode 18.0", "Goedgekeurd voor codering, nog niet op toetsenborden", m_doc, K_UPDATE),
+"sv-updates-dirham-symbol-unicode-18": ("Förenade Arabemiratens dirhamsymbol godkänd för Unicode 18.0", "Godkänd för kodning, ännu inte på tangentbord", m_doc, K_UPDATE),
+"tr-updates-dirhem-sembolu-unicode-18": ("BAE Dirhemi Sembolü Unicode 18.0 İçin Onaylandı", "Kodlama için onaylandı, henüz klavyelerde değil", m_doc, K_UPDATE),
+"updates-middle-east-currency-symbols-scorecard": ("Middle East Currency Symbols in Unicode: The Scorecard", "5 have their own sign, 3 share one, 7 have none", m_doc, K_UPDATE),
+"ar-updates-middle-east-currency-symbols-scorecard": ("رموز عملات الشرق الأوسط في يونيكود: البطاقة التقييمية بعد إصدار 18.0", "5 عملات لها رمزها الخاص. 3 تتشارك رمزاً عاماً. 7 على الأقل بلا رمز.", m_doc, K_UPDATE),
+"de-updates-naher-osten-waehrungssymbole-unicode-18": ("Währungssymbole im Nahen Osten in Unicode: Die Bilanz nach 18.0", "5 Währungen haben ein eigenes Zeichen. 3 teilen sich eins. Mindestens 7 haben keins.", m_doc, K_UPDATE),
+"es-updates-simbolos-moneda-oriente-medio-unicode-18": ("Símbolos de Moneda de Oriente Medio en Unicode: El Marcador Tras la 18.0", "5 monedas tienen su propio signo. 3 comparten uno genérico. Al menos 7 no tienen ninguno.", m_doc, K_UPDATE),
+"it-updates-simboli-valuta-medio-oriente-unicode-18": ("I Simboli di Valuta del Medio Oriente in Unicode: Il Bilancio Dopo Unicode 18.0", "5 valute hanno un proprio segno. 3 ne condividono uno. Almeno 7 non ne hanno nessuno.", m_doc, K_UPDATE),
+"ko-updates-jungdong-hwapye-giho-unicode-18": ("유니코드 속 중동 화폐 기호: 18.0 이후 현황표", "5개 통화는 전용 기호를 갖췄습니다. 3개는 공용 기호를 씁니다. 최소 7개는 기호가 없습니다.", m_doc, K_UPDATE),
+"nl-updates-valutasymbolen-midden-oosten-unicode-18": ("Valutasymbolen Midden-Oosten in Unicode: het scorebord na versie 18.0", "5 valuta's hebben een eigen teken. 3 delen er een. Minstens 7 hebben er geen.", m_doc, K_UPDATE),
+"sv-updates-valutasymboler-mellanostern-unicode-18": ("Mellanösterns valutasymboler i Unicode: Lägesrapporten efter 18.0", "5 valutor har ett eget tecken. 3 delar ett. Minst 7 saknar helt.", m_doc, K_UPDATE),
+"tr-updates-orta-dogu-para-birimi-sembolleri-unicode-18": ("Unicode'da Orta Doğu Para Birimi Sembolleri: 18.0 Sonrası Karne", "5 para birimi kendi sembolüne sahip. 3'ü ortak sembol kullanıyor. En az 7'sinde sembol yok.", m_doc, K_UPDATE),
+"updates-unicode-18-beta-review-opens": ("Unicode 18.0 Beta Review Opens: What's Shipping", "13,047 new characters, four scripts, 9 draft emoji", m_doc, K_UPDATE),
+"ar-updates-unicode-18-beta-review-opens": ("انطلاق المراجعة التجريبية ليونيكود 18.0: ما الجديد", "13,047 حرفاً جديداً، أربع كتابات، 9 إيموجي أولية", m_doc, K_UPDATE),
+"de-updates-unicode-18-beta-startet": ("Unicode 18.0 Beta startet: Was jetzt kommt", "13.047 neue Zeichen, vier Schriftsysteme, 9 Entwurfs-Emojis", m_doc, K_UPDATE),
+"es-updates-unicode-18-beta-comienza-revision": ("Se Abre la Revisión Beta de Unicode 18.0: Qué Trae", "13.047 caracteres nuevos, cuatro escrituras, 9 emojis provisionales", m_doc, K_UPDATE),
+"it-updates-revisione-beta-unicode-18": ("Revisione Beta di Unicode 18.0 al Via: Cosa Sta Arrivando", "13.047 nuovi caratteri, quattro scritture, 9 emoji provvisorie", m_doc, K_UPDATE),
+"ko-updates-unicode-18-beta-sijak": ("유니코드 18.0 베타 심사 시작: 이번에 추가되는 것들", "새 문자 13,047개, 4종 문자 체계, 초안 이모지 9종", m_doc, K_UPDATE),
+"nl-updates-unicode-18-beta-van-start": ("Unicode 18.0-bèta van start: wat erin zit", "13.047 nieuwe tekens, vier schriftsystemen, 9 concept-emoji", m_doc, K_UPDATE),
+"sv-updates-unicode-18-betagranskning-oppnar": ("Unicode 18.0:s betagranskning öppnar: Det här ingår", "13 047 nya tecken, fyra skriftsystem, 9 utkastemoji", m_doc, K_UPDATE),
+"tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0 Beta İncelemesi Başlıyor: Neler Geliyor", "13.047 yeni karakter, dört yazı sistemi, 9 taslak emoji", m_doc, K_UPDATE),
+"updates-unicode-18-release-date-confirmed": ("Unicode 18.0 Date Confirmed", "September 16, 2026 — and one script got cut", m_doc, K_UPDATE),
+"updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
+"ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة: الوجه المتصدّع يفوز بالتصويت العام", "مخلل وشهاب يكملان المراكز الثلاثة الأولى", m_doc, K_UPDATE),
+"de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Neue Emojis – Berstendes Gesicht gewinnt die Abstimmung", "Essiggurke und Meteor komplettieren die Top 3", m_doc, K_UPDATE),
+"es-updates-unicode-18-nuevos-emojis-votacion": ("Los Nuevos Emojis de Unicode 18.0: Cara Agrietada Gana la Votación", "Pepinillo y Meteoro completan el top 3", m_doc, K_UPDATE),
+"fr-updates-unicode-18-nouveaux-emojis-vote": ("Nouveaux Emoji Unicode 18.0 : Visage Fissuré Remporte le Vote", "Cornichon et Météore complètent le top 3", m_doc, K_UPDATE),
+"id-updates-unicode-18-emoji-baru-voting": ("Emoji Baru Unicode 18.0: Cracking Face Menang Voting", "Pickle dan Meteor melengkapi 3 besar", m_doc, K_UPDATE),
+"ja-updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0の新絵文字：「ひび割れ顔」が投票で1位に", "ピクルスと流れ星が続く", m_doc, K_UPDATE),
+"ko-updates-unicode-18-imoji-tupyo": ("유니코드 18.0 신규 이모지: 공개 투표 1위는 Cracking Face", "Pickle과 Meteor가 2, 3위", m_doc, K_UPDATE),
+"nl-updates-unicode-18-nieuwe-emoji-stemming": ("Nieuwe emoji in Unicode 18.0: Cracking Face wint de stemming", "Pickle en Meteor maken de top 3 compleet", m_doc, K_UPDATE),
+"pl-updates-unicode-18-nowe-emoji-glosowanie": ("Nowe Emoji Unicode 18.0: Pękająca Twarz Wygrywa Głosowanie", "Kiszony Ogórek i Meteor uzupełniają podium", m_doc, K_UPDATE),
+"pt-updates-unicode-18-novos-emojis-votacao": ("Novos Emojis do Unicode 18.0: Rosto Rachando Vence a Votação", "Picles e Meteoro completam o top 3", m_doc, K_UPDATE),
+"ru-updates-unicode-18-most-anticipated-emoji": ("Новые эмодзи Unicode 18.0: «Трескающееся лицо» побеждает в голосовании", "Солёный огурец и Метеор замыкают тройку лидеров", m_doc, K_UPDATE),
+"th-updates-unicode-18-most-anticipated-emoji": ("อีโมจิใหม่ Unicode 18.0: ใบหน้าแตกร้าวคว้าอันดับ 1 โหวต", "แตงกวาดองและดาวตกครองอันดับ 2-3", m_doc, K_UPDATE),
+"tr-updates-unicode-18-yeni-emoji-oylama": ("Unicode 18.0'ın Yeni Emojileri: Oylamayı Cracking Face Kazandı", "Pickle ve Meteor ilk 3'ü tamamlıyor", m_doc, K_UPDATE),
+"updates-forza-horizon-6-gamertag-rules": ("Forza Horizon 6: Gamertag and Driver Name Split", "Two name fields, two very different rule sets", m_doc, K_UPDATE),
+"updates-whatsapp-usernames-rollout": ("WhatsApp Usernames: The New @Handle Rules, Explained", "3-35 characters, lowercase only, no styled Unicode", m_doc, K_UPDATE),
+"updates-xbox-gamertag-15-character-limit": ("Xbox Gamertags Grow From 12 to 15 Characters", "Only for unique, available, Latin-character gamertags", m_doc, K_UPDATE),
+"updates-lienquan-mobile-name-penalty-update": ("Liên Quân Mobile Tightens Rename Locks for Invalid Names", "Auto-corrected names now lock renames up to 3 years", m_doc, K_UPDATE),
+})
+
+# ---- Finnish locale build (2026-08-02): the five pages the FI keyword pull
+# ---- evidenced (horoskooppimerkit, kaunokirjoitus, asteen merkki,
+# ---- merkkilaskuri, euron merkki).
+PAGES.update({
+  "fi-library-horoskooppimerkit": (
+      "Horoskooppimerkit",
+      "Tähtimerkit ja planeetat kopioitavaksi", m_star, K_LIB),
+  "fi-kaunokirjoitus": (
+      "Kaunokirjoitus",
+      "Kaunokirjaimet A–Z, sanat ja nimet", m_letter_cursive, K_CAT),
+  "fi-symbol-asteen-merkki": (
+      "Asteen merkki °",
+      "Lämpötila- ja kulmamerkit", m_circled_letter, K_SYM),
+  "fi-symbol-euron-merkki": (
+      "Euron merkki €",
+      "Valuuttamerkit kopioitavaksi", m_coin, K_SYM),
+  "fi-merkkilaskuri": (
+      "Merkkilaskuri",
+      "Sanat, merkit ja palvelujen rajat", m_doc, K_USE),
+})
+
+
+# ---- 2026-07-30: th/library/star-symbols translation ----
+PAGES["th-library-star-symbols"] = (
+    "สัญลักษณ์ดาว ★ ☆ ✦", "รวมดาว ดอกจัน และอีโมจิดาวทุกแบบ",
+    glyphs("★", "☆", "✦", "✧", "✩"), K_LIB)
+
+# ---- 2026-07-30: library/math-symbols translations (fr, it, ja, ru, th) ----
+PAGES["fr-library-symboles-mathematiques"] = (
+    "Symboles Mathématiques", "Opérateurs, ensembles et grec",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["it-library-simboli-matematici"] = (
+    "Simboli Matematici", "Operatori, insiemi e greco",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["ja-library-math-symbols"] = (
+    "数学記号", "演算子・集合・ギリシャ文字",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["ru-library-matematicheskie-simvoly"] = (
+    "Математические символы", "Операторы, множества и греческий алфавит",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+PAGES["th-library-math-symbols"] = (
+    "สัญลักษณ์คณิตศาสตร์", "ตัวดำเนินการ เซต และอักษรกรีก",
+    glyphs("∑", "∫", "√", "π", "∞"), K_LIB)
+
+# ---- 2026-07-30: library/arrow-symbols translations (it, pl, ru, th) ----
+PAGES["it-library-simboli-freccia"] = (
+    "Simboli Freccia", "Frecce dritte, doppie e curve",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["pl-library-symbole-strzalek"] = (
+    "Symbole Strzałek", "Strzałki proste, podwójne i zakrzywione",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["ru-library-strelki"] = (
+    "Стрелки", "Простые, двойные и изогнутые стрелки",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+PAGES["th-library-arrow-symbols"] = (
+    "สัญลักษณ์ลูกศร", "ลูกศรตรง คู่ และโค้งทุกแบบ",
+    glyphs("→", "←", "↑", "↓", "⟶"), K_LIB)
+
+
 def main():
     import cairosvg
+    import sys
+    # Optional slug-prefix filter (e.g. `... printables-cursive-alphabet-letter`)
+    # regenerates only the matching pages instead of rewriting the whole set —
+    # keeps incremental additions from churning hundreds of existing assets.
+    only = sys.argv[1] if len(sys.argv) > 1 else None
     n = 0
     for slug, (title, sub, motif, kicker) in PAGES.items():
+        if only and not slug.startswith(only):
+            continue
+        native = _native_for_slug(slug)
         with open(os.path.join(HERO, f"{slug}.svg"), "w", encoding="utf-8") as f:
             f.write(hero_svg(slug, title, motif, kicker))
         cairosvg.svg2png(
-            bytestring=og_png_svg(slug, title, sub, motif, kicker).encode(),
+            bytestring=og_png_svg(slug, title, sub, motif, kicker, native=native).encode(),
             write_to=os.path.join(OG, f"{slug}.png"),
             output_width=1200, output_height=630)
         n += 1
 
     # Homepage social card + hero figure. The English root index.html
-    # references both.
+    # references both. Skipped when a slug filter is active — a filtered run
+    # is an incremental addition, not a full regeneration.
+    if only:
+        print(f"wrote {n} hero SVGs and OG PNGs (filter: {only})")
+        return
     with open(os.path.join(HERO, f"{HOME_CARD}.svg"), "w", encoding="utf-8") as f:
         f.write(hero_svg(HOME_CARD, "Fancy Text Generator", m_brand, K_SITE))
     cairosvg.svg2png(

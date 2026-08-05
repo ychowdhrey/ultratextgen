@@ -1,0 +1,100 @@
+{
+  "slug": "pickle-emoji",
+  "page_type": "symbol",
+  "title": "Pickle Emoji: Copy & Paste 🫝 — the Unicode 18.0 Candidate That Took Over a Deferred Apple Core Slot",
+  "meta_description": "Pickle (🫝, U+1FADD) is a draft candidate for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Its codepoint was originally reserved for Apple Core before being deferred and reassigned. Not approved yet, and no font renders it today.",
+  "canonical": "https://ultratextgen.com/symbol/pickle-emoji/",
+  "breadcrumb": "Pickle Emoji",
+  "hero_h1": "Pickle Emoji",
+  "hero_tagline": "A whole pickle (gherkin), distinct from cucumber and eggplant — drafted for Emoji 18.0, expected alongside Unicode 18.0 in September 2026. Draft only: no font renders it yet. Click to copy the codepoint anyway.",
+  "intro": "Pickle (🫝, U+1FADD) is a candidate emoji drafted for Emoji 18.0, the emoji companion to Unicode 18.0, expected to finalize in September 2026. Its codepoint has an unusual backstory: U+1FADD was originally reserved for a proposed \"Apple Core\" emoji in the Emoji 17.0 draft cycle; that proposal was deferred, and Unicode reassigned the freed slot to Pickle for the 18.0 cycle instead. It depicts a whole pickle (a pickled gherkin), distinct from the existing Cucumber and Eggplant emoji it's most often joked about alongside — tech-press comment sections have floated everything from \"that pickle is going to break the internet\" to speculation it'll \"take a lot of business from\" Eggplant. Because it's still a draft, no operating system, keyboard, or font currently renders it; expect a blank box or placeholder glyph until Emoji 18.0 is approved and platforms ship support.",
+  "date_published": "2026-07-22",
+  "date_modified": "2026-07-22",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "pickle",
+      "label": "Pickle",
+      "h2": "Pickle Emoji",
+      "intro": "The draft character itself — copyable today as a codepoint, even though no font can render it yet.",
+      "symbols": [
+        {
+          "char": "🫝",
+          "label": "Pickle (draft, U+1FADD)"
+        }
+      ]
+    },
+    {
+      "id": "distinct-from",
+      "label": "Distinct From",
+      "h2": "The Emoji It Gets Confused With",
+      "intro": "Already-encoded produce emoji that Pickle is most often compared to, or accused of overlapping with.",
+      "symbols": [
+        {
+          "char": "🥒",
+          "label": "Cucumber"
+        },
+        {
+          "char": "🍆",
+          "label": "Eggplant"
+        },
+        {
+          "char": "🫑",
+          "label": "Bell Pepper"
+        }
+      ]
+    },
+    {
+      "id": "fellow-candidates",
+      "label": "Fellow Draft Candidates",
+      "h2": "Other Emoji 18.0 Draft Candidates",
+      "intro": "Pickle isn't the only unapproved character in this release — these are drafted alongside it, equally unrendered until September 2026's decision.",
+      "symbols": [
+        {
+          "char": "🫫",
+          "label": "Cracking Face (draft, U+1FAEB)"
+        },
+        {
+          "char": "🫌",
+          "label": "Monarch Butterfly (draft, U+1FACC)"
+        },
+        {
+          "char": "🛙",
+          "label": "Lighthouse (draft, U+1F6D9)"
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Food & Drink Emojis",
+      "desc": "Every already-encoded snack, meal, and produce emoji, copy-paste ready today."
+    },
+    {
+      "href": "/symbol/cracking-face-emoji/",
+      "title": "Cracking Face Emoji",
+      "desc": "Another Emoji 18.0 draft candidate — and the one that won the public vote."
+    },
+    {
+      "href": "/symbol/meteor-emoji/",
+      "title": "Meteor Emoji",
+      "desc": "Another Emoji 18.0 draft candidate — splits off from Comet's long rendering split."
+    },
+    {
+      "href": "/symbol/monarch-butterfly-emoji/",
+      "title": "Monarch Butterfly Emoji",
+      "desc": "Another Emoji 18.0 draft candidate — fixes a cross-platform Butterfly mix-up."
+    },
+    {
+      "href": "/symbol/thumb-sign-emoji/",
+      "title": "Thumb Sign Emoji",
+      "desc": "Another Emoji 18.0 draft candidate pair — directional pointing, not approval."
+    },
+    {
+      "href": "/updates/unicode-18-most-anticipated-emoji/",
+      "title": "Unicode 18.0's New Emoji",
+      "desc": "The full draft slate of 9 candidates, ranked by public vote."
+    }
+  ]
+}

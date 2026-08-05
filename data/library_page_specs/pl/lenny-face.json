@@ -1,0 +1,99 @@
+{
+  "slug": "lenny-face",
+  "lang": "pl",
+  "title": "Lenny Face: Buźka ( ͡° ͜ʖ ͡°) do Skopiowania i Wklejenia",
+  "meta_description": "Buźka Lenny Face ( ͡° ͜ʖ ͡°) i dziesiątki wariantów do skopiowania i wklejenia — klasyczna, przebiegła buźka tekstowa do komentarzy, czatów i memów. Jedno kliknięcie, by skopiować.",
+  "breadcrumb": "Lenny Face",
+  "hero_h1": "Lenny Face",
+  "hero_tagline": "Kopiuj i wklejaj buźkę Lenny Face ( ͡° ͜ʖ ͡°) oraz jej liczne warianty — klasyczną, przebiegłą buźkę tekstową rodem z mema. Kliknij dowolną buźkę, aby skopiować ją od razu.",
+  "intro": "Lenny Face ( ͡° ͜ʖ ͡°) to buźka tekstowa w stylu japońskim — porozumiewawczy, przebiegły uśmieszek złożony wyłącznie ze znaków Unicode. Wkleisz ją wszędzie tam, gdzie działa Unicode — w komentarzach, na czacie i w podpisach zdjęć, bez żadnego pliku graficznego. Bywa też nazywana po prostu \"meme face\". Przeglądaj poniżej oryginał i jego liczne warianty, a potem kliknij buźkę, by skopiować ją od razu. Niezależnie od tego, czy szukasz frazy \"lenny face\", \"lenny face do skopiowania\" czy \"generator lenny face\" — każda buźka na tej stronie jest darmowa do skopiowania i wklejenia.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/pl/library/lenny-face/",
+  "home_url": "https://ultratextgen.com/pl/",
+  "crumb_home": "Strona główna",
+  "crumb_library": "Kaomoji",
+  "library_url": "https://ultratextgen.com/pl/library/kaomoji/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/lenny-face/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/lenny-face/" },
+    { "lang": "pl", "href": "https://ultratextgen.com/pl/library/lenny-face/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/lenny-face/" }
+  ],
+  "cta": "Użyj UltraTextGen, aby zamienić zwykły tekst na pogrubienie, kursywę, pismo odręczne i ponad 100 innych stylów czcionek Unicode — za darmo i od razu.",
+  "related": [
+    {
+      "href": "/pl/library/kaomoji/",
+      "title": "Kaomoji",
+      "desc": "Kompletne centrum kaomoji — wszystkie japońskie buźki tekstowe w jednym miejscu."
+    },
+    {
+      "href": "/pl/library/cute-kaomoji/",
+      "title": "Słodkie Kaomoji",
+      "desc": "Kawaii buźki tekstowe z błyszczącymi oczami i zarumienionymi policzkami."
+    },
+    {
+      "href": "/pl/library/cat-kaomoji/",
+      "title": "Kaomoji z Kotem",
+      "desc": "Słodkie kocie buźki tekstowe z wąsami i łapkami."
+    },
+    {
+      "href": "/kaomoji-generator/",
+      "title": "Generator Kaomoji",
+      "desc": "Stwórz własną buźkę — połącz oczy, usta i ramiona, a potem skopiuj."
+    }
+  ],
+  "sections": [
+    {
+      "id": "oryginal",
+      "label": "Oryginał",
+      "h2": "Oryginalna Buźka Lenny Face",
+      "intro": "Klasyczny uśmieszek i jego najbliżsi krewni.",
+      "symbols": [
+        { "char": "( ͡° ͜ʖ ͡°)", "label": "Klasyczny Lenny" },
+        { "char": "( ͡~ ͜ʖ ͡°)", "label": "Mrugający Lenny" },
+        { "char": "( ͡ᵔ ͜ʖ ͡ᵔ)", "label": "Radosny Lenny" },
+        { "char": "( ͠° ͟ʖ ͡°)", "label": "Intensywny Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)づ", "label": "Sięgający Lenny" }
+      ]
+    },
+    {
+      "id": "pozujacy",
+      "label": "Umięśniony Lenny",
+      "h2": "Umięśniony i Pozujący Lenny Face",
+      "intro": "Ręce w górze — pozuje, jest napędzony energią i gotowy do akcji.",
+      "symbols": [
+        { "char": "ᕦ( ͡° ͜ʖ ͡°)ᕤ", "label": "Pozujący Lenny" },
+        { "char": "ᕕ( ͡° ͜ʖ ͡°)ᕗ", "label": "Maszerujący Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)╭∩╮", "label": "Niegrzeczny Lenny" },
+        { "char": "ᕙ( ͡° ͜ʖ ͡°)ᕗ", "label": "Silny Lenny" }
+      ]
+    },
+    {
+      "id": "siegajacy",
+      "label": "Sięgający",
+      "h2": "Sięgający Lenny Face",
+      "intro": "Warianty łapiące, wskazujące i \"dawaj tu\".",
+      "symbols": [
+        { "char": "(づ ͡° ͜ʖ ͡°)づ", "label": "Przytulający Lenny" },
+        { "char": "☞ ͡° ͜ʖ ͡°☞", "label": "Wskazujący Lenny" },
+        { "char": "( ͡° ͜ʖ ͡°)੭", "label": "Proszący Lenny" },
+        { "char": "( ͡°Ѡ ͡°)", "label": "Rozbawiony Lenny" }
+      ]
+    },
+    {
+      "id": "warianty-oczu",
+      "label": "Warianty Oczu",
+      "h2": "Warianty Oczu Lenny Face",
+      "intro": "Ten sam uśmieszek, inne oczy.",
+      "symbols": [
+        { "char": "( ͡ʘ ͜ʖ ͡ʘ)", "label": "Zaskoczony Lenny" },
+        { "char": "( ͡◉ ͜ʖ ͡◉)", "label": "Wielkie Oczy Lenny" },
+        { "char": "( ͡• ͜ʖ ͡•)", "label": "Kropkowane Oczy Lenny" },
+        { "char": "( ͡⊙ ͜ʖ ͡⊙)", "label": "Szeroki Lenny" },
+        { "char": "( ͡ↀ ͜ʖ ͡ↀ)", "label": "Monetowe Oczy Lenny" }
+      ]
+    }
+  ]
+}

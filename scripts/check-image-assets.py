@@ -27,7 +27,9 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://ultratextgen.com"
 LOGO = f"{BASE}/logo.png"
-LOCALES = ("de", "es", "fr", "id", "it", "nl", "pl", "pt", "tr", "vi")
+LOCALES = ("ar", "bs", "cs", "da", "de", "es", "fi", "fr", "hi", "hr", "hu",
+           "id", "it", "ja", "ko", "ms", "nl", "no", "pl", "pt", "ro", "ru",
+           "sk", "sr", "sv", "th", "tl", "tr", "vi", "zh-tw")
 
 
 def attr(html, pattern):
@@ -68,10 +70,13 @@ def url_to_slug(url):
 
 def pin_eligible(url, ptype):
     """Mirror of generate-pinterest.py:classify — hubs stay in, only
-    legal/info and embed pages are excluded."""
+    legal/info, embed, and updates (dated status log, not visual pin
+    material) pages are excluded."""
     if ptype == "legal/info":
         return False
     if ptype == "embed" or "/embed/" in url:
+        return False
+    if ptype == "updates":
         return False
     return True
 

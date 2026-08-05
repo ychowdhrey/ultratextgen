@@ -1,0 +1,141 @@
+{
+  "slug": "rocket-emoji",
+  "title": "Rocket Emoji: Copy & Paste 🚀 Launch & Hype Combos",
+  "meta_description": "Copy the 🚀 rocket emoji plus moon, star, and hype symbols for 'to the moon' stock and crypto posts, launches, and growth captions. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/rocket-emoji/",
+  "breadcrumb": "Rocket Emoji",
+  "hero_h1": "Rocket Emoji",
+  "hero_tagline": "The rocket emoji for 'to the moon' stock and crypto hype, product launches, and big-ambition energy — plus the space, growth, and trail symbols people pair it with. Click any symbol to copy it instantly.",
+  "intro": "🚀 started as a plain space-travel emoji, but on stock and crypto Twitter it took on a life of its own: 'to the moon' became shorthand for a price about to explode upward, and the rocket became the visual shorthand for that bet. It's since spread far past finance — startup founders use it for launches, creators use it for 'we're growing fast,' and it shows up anywhere someone wants to signal momentum or ambition without saying a word. This page collects the rocket itself and its closest lookalikes, the moon-and-stars space theme that completes the 'to the moon' meme, the growth and hype emoji people stack next to it (📈 🔥 💯), and a few build-your-own launch-trail combos, plus ready-made sets you can copy in one click.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "rocket-variants",
+      "label": "Rocket & Launch",
+      "h2": "Rocket Emoji & Launch Symbols",
+      "intro": "The rocket itself, plus the launch-adjacent glyphs people reach for in the same breath — satellites, UFOs, and the countdown energy of a liftoff.",
+      "symbols": [
+        { "char": "🚀", "label": "Rocket" },
+        { "char": "🛸", "label": "Flying Saucer" },
+        { "char": "🛰️", "label": "Satellite" },
+        { "char": "🎯", "label": "Direct Hit" },
+        { "char": "⏱️", "label": "Stopwatch" },
+        { "char": "🧨", "label": "Firecracker" }
+      ]
+    },
+    {
+      "id": "space-moon-theme",
+      "label": "Moon & Space",
+      "h2": "Moon, Stars & Space Emoji",
+      "intro": "The 'to the moon' theme in full — moon phases, stars, and the night sky a rocket is always heading toward in crypto and stock hype posts.",
+      "symbols": [
+        { "char": "🌕", "label": "Full Moon" },
+        { "char": "🌙", "label": "Crescent Moon" },
+        { "char": "🌔", "label": "Waxing Gibbous Moon" },
+        { "char": "🌟", "label": "Glowing Star" },
+        { "char": "⭐", "label": "Star" },
+        { "char": "✨", "label": "Sparkles" },
+        { "char": "🌌", "label": "Milky Way" },
+        { "char": "🪐", "label": "Ringed Planet" },
+        { "char": "🌠", "label": "Shooting Star" }
+      ]
+    },
+    {
+      "id": "hype-growth",
+      "label": "Hype & Growth",
+      "h2": "Hype & Growth Emoji",
+      "intro": "The emoji that ride shotgun with 🚀 whenever the message is 'this is going up' — charts, fire, and maxed-out confidence.",
+      "symbols": [
+        { "char": "📈", "label": "Chart Increasing" },
+        { "char": "🔥", "label": "Fire" },
+        { "char": "💯", "label": "Hundred Points" },
+        { "char": "💎", "label": "Gem Stone" },
+        { "char": "🙌", "label": "Raising Hands" },
+        { "char": "💰", "label": "Money Bag" },
+        { "char": "📊", "label": "Bar Chart" }
+      ]
+    },
+    {
+      "id": "motion-trail",
+      "label": "Motion & Trail",
+      "h2": "Motion & Launch Trail Symbols",
+      "intro": "Building blocks for a text launch trail — flames, dashes, and arrows to fake the exhaust and upward streak behind a rocket.",
+      "symbols": [
+        { "char": "💨", "label": "Dashing Away" },
+        { "char": "⬆️", "label": "Up Arrow" },
+        { "char": "🔺", "label": "Red Triangle Pointed Up" },
+        { "char": "💥", "label": "Collision" },
+        { "char": "〰️", "label": "Wavy Dash" },
+        { "char": "➰", "label": "Curly Loop" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Rocket Emoji Combo Sets",
+    "intro": "Ready-made rocket combos — copy a full set with one click and paste it straight into a caption, post, or bio."
+  },
+  "collection_container_id": "rocketSetsContainer",
+  "collections": [
+    {
+      "name": "To The Moon",
+      "flags": ["🚀", "🌕", "💎"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Stock Hype",
+      "flags": ["🚀", "📈", "🔥"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Crypto Bull Run",
+      "flags": ["🚀", "💰", "📊", "🌙"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Launch Day",
+      "flags": ["🚀", "🎯", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Diamond Hands",
+      "flags": ["💎", "🙌", "🚀"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Deep Space",
+      "flags": ["🚀", "🪐", "🌌", "⭐"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Big Ambition",
+      "flags": ["🚀", "🔥", "💯"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/fantasy-mythical-emojis/",
+      "title": "Fantasy & Mythical Emojis",
+      "desc": "Aliens, UFOs, and the wider space-and-sci-fi emoji set the rocket flies alongside."
+    },
+    {
+      "href": "/library/emoji-combos/",
+      "title": "Emoji Combos",
+      "desc": "Ready-made emoji combo sets for captions, bios, and posts in every theme."
+    },
+    {
+      "href": "/library/money-emojis/",
+      "title": "Money Emojis",
+      "desc": "Cash, coins, and gains emoji for crypto and stock hype posts alongside the rocket."
+    },
+    {
+      "href": "/library/object-emojis/",
+      "title": "Object Emojis",
+      "desc": "Everyday object emoji, from tools to tech, for filling out any caption."
+    }
+  ]
+}

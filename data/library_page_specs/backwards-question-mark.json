@@ -1,0 +1,57 @@
+{
+  "slug": "backwards-question-mark",
+  "page_type": "symbol",
+  "title": "Backwards Question Mark: Copy & Paste ⸮ — Not the Same as ¿",
+  "meta_description": "Copy and paste the backwards question mark (⸮), a 16th-century mark for rhetorical questions — and see why it's different from ¿, which is upside-down, not backwards.",
+  "canonical": "https://ultratextgen.com/symbol/backwards-question-mark/",
+  "breadcrumb": "Backwards Question Mark",
+  "hero_h1": "Backwards Question Mark",
+  "hero_tagline": "⸮ U+2E2E REVERSED QUESTION MARK — mirrored left-right, not the same move as ¿, which is rotated 180°. Click any symbol to copy it instantly.",
+  "intro": "\"Backwards question mark\" usually means ⸮ (U+2E2E, REVERSED QUESTION MARK) — a plain \"?\" flipped left-right like a mirror image. English printer Henry Denham proposed it around 1575 as the punctus percontativus, a mark meant to close a rhetorical question and set it apart from a genuine one; it never caught on and mostly survives today as a curiosity and in linguistics notation for a sentence that's grammatically questionable rather than a real question. It's easy to confuse with two other marks that look similar but aren't the same transformation: ¿ (U+00BF, INVERTED QUESTION MARK) is rotated 180°, not mirrored — that's the mark Spanish and Catalan place at the start of a question, unrelated to Denham's proposal. And ؟ (U+061F, ARABIC QUESTION MARK) is mirrored like ⸮, but it isn't a novelty at all — it's simply the ordinary question mark in Arabic, Persian, and Urdu, shaped to match those scripts' right-to-left direction.",
+  "date_published": "2026-07-14",
+  "date_modified": "2026-07-14",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "backwards-question-mark",
+      "label": "Backwards Question Mark",
+      "h2": "Reversed vs. Inverted Question Marks",
+      "intro": "Three marks that get lumped together as \"backwards,\" and the different transformation each one actually is.",
+      "symbols": [
+        { "char": "⸮", "label": "Reversed Question Mark" },
+        { "char": "؟", "label": "Arabic Question Mark" },
+        { "char": "¿", "label": "Inverted Question Mark" },
+        { "char": "?", "label": "Question Mark" }
+      ]
+    },
+    {
+      "id": "rhetorical-punctuation",
+      "label": "Rhetorical Punctuation",
+      "h2": "Other Historical Rhetorical Marks",
+      "intro": "⸮ belongs to a small family of proposed-but-mostly-abandoned punctuation for tone that standard marks don't capture.",
+      "symbols": [
+        { "char": "‽", "label": "Interrobang" },
+        { "char": "⸘", "label": "Inverted Interrobang" },
+        { "char": "⁇", "label": "Double Question Mark" },
+        { "char": "⁈", "label": "Question Exclamation Mark" }
+      ]
+    },
+    {
+      "id": "punctuation-symbols",
+      "label": "Punctuation",
+      "h2": "General Punctuation Symbols",
+      "intro": "The everyday punctuation set ⸮ sits alongside once you're past the novelty marks.",
+      "symbols": [
+        { "char": "!", "label": "Exclamation Mark" },
+        { "char": "‥", "label": "Two Dot Leader" },
+        { "char": "…", "label": "Horizontal Ellipsis" },
+        { "char": "‽", "label": "Interrobang" }
+      ]
+    }
+  ],
+  "related": [
+    { "href": "/library/punctuation-symbols/", "title": "Punctuation Symbols", "desc": "The full reference set of quotation, ellipsis, and mark-of-omission characters." },
+    { "href": "/symbol/quotation-mark/", "title": "Quotation Mark", "desc": "Another punctuation character with more regional variants than the keyboard shows." },
+    { "href": "/category/upside-down-text/", "title": "Upside Down Text Generator", "desc": "For flipping a whole sentence, not just one mark — rotated, not mirrored, same distinction as ¿ vs ⸮." }
+  ]
+}

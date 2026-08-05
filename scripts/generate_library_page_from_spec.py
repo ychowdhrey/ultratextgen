@@ -33,6 +33,8 @@ The script refuses to overwrite an existing page unless --force is given.
 import argparse
 import html
 import json
+import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -58,6 +60,26 @@ REQUIRED_TOP = [
 
 class SpecError(Exception):
     """Raised when a spec fails validation."""
+
+
+def funding_choices_tag():
+    """Google Funding Choices (ad-blocking recovery) tag.
+
+    Read from scripts/data/funding-choices-tag.html — the single source of
+    truth shared with scripts/inject-funding-choices-tag.js, so the generator
+    and the injector can never emit different snippets. Every page on the site
+    is required to carry it (scripts/check-funding-choices.js enforces this);
+    omitting it here is what produced the 66-page locale-library backlog that
+    the injector then had to sweep up after the fact.
+    """
+    snippet_path = SCRIPT_DIR / "data" / "funding-choices-tag.html"
+    try:
+        return snippet_path.read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        raise SpecError(
+            f"cannot read the Funding Choices tag at {snippet_path}: {exc}. "
+            "Generated pages would fail scripts/check-funding-choices.js."
+        ) from exc
 
 
 def esc(text):
@@ -133,7 +155,87 @@ def validate_spec(spec):
 # --------------------------------------------------------------------------
 # Rendering
 # --------------------------------------------------------------------------
-def render_symbol_section(sec):
+# Per-locale UI-string defaults for pages built via this pipeline. Every
+# field falls back to the existing English wording when a locale is absent,
+# so English specs (and any locale not yet listed here) render exactly as
+# before. Values were sourced from already-shipped, real pages in each
+# locale (not invented) wherever a generator-built precedent existed, and
+# a plain natural translation of the English default otherwise.
+LOCALE_UI_STRINGS = {
+    "pt": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforme texto com fontes Unicode", "cta_btn": "Abrir o UltraTextGen →", "home": "Início", "symbols": "Símbolos", "library": "Biblioteca"},
+    "de": {"copy": "Kopieren", "related": "Verwandte Ressourcen", "cta_h3": "Text mit Unicode-Schriftarten verwandeln", "cta_btn": "UltraTextGen öffnen →", "home": "Startseite", "symbols": "Symbole", "library": "Bibliothek"},
+    "fr": {"copy": "Copier", "related": "Ressources liées", "cta_h3": "Transformez votre texte avec des polices Unicode", "cta_btn": "Ouvrir UltraTextGen →", "home": "Accueil", "symbols": "Symboles", "library": "Bibliothèque"},
+    "tr": {"copy": "Kopyala", "related": "İlgili Kaynaklar", "cta_h3": "Metni Unicode fontlarla dönüştür", "cta_btn": "UltraTextGen'i Aç →", "home": "Ana Sayfa", "symbols": "Semboller", "library": "Kütüphane"},
+    "it": {"copy": "Copia", "related": "Risorse Correlate", "cta_h3": "Trasforma il testo con i font Unicode", "cta_btn": "Apri UltraTextGen →", "home": "Home", "symbols": "Simboli", "library": "Libreria"},
+    "es": {"copy": "Copiar", "related": "Recursos Relacionados", "cta_h3": "Transforma texto con fuentes Unicode", "cta_btn": "Abrir UltraTextGen →", "home": "Inicio", "symbols": "Símbolos", "library": "Biblioteca"},
+    "pl": {"copy": "Kopiuj", "related": "Powiązane Zasoby", "cta_h3": "Zamień tekst na czcionki Unicode", "cta_btn": "Otwórz UltraTextGen →", "home": "Strona główna", "symbols": "Symbole", "library": "Biblioteka"},
+    "nl": {"copy": "Kopiëren", "related": "Gerelateerde Bronnen", "cta_h3": "Zet tekst om met Unicode-lettertypes", "cta_btn": "Open UltraTextGen →", "home": "Home", "symbols": "Symbolen", "library": "Bibliotheek"},
+    "vi": {"copy": "Sao chép", "related": "Tài Nguyên Liên Quan", "cta_h3": "Chuyển đổi văn bản bằng phông chữ Unicode", "cta_btn": "Mở UltraTextGen →", "home": "Trang chủ", "symbols": "Ký hiệu", "library": "Thư viện"},
+    "fi": {"copy": "Kopioi", "related": "Aiheeseen liittyvät sivut", "cta_h3": "Muunna teksti Unicode-fonteilla", "cta_btn": "Avaa UltraTextGen →", "home": "Etusivu", "symbols": "Symbolit", "library": "Kirjasto"},
+    # Values below match the chrome already used by these locales' hand-authored
+    # library pages (breadcrumbs, "related" label, copy aria-label, CTA button),
+    # so generated and hand-authored pages read the same inside one locale.
+    "ar": {"copy": "نسخ", "related": "صفحات ذات صلة", "cta_h3": "حوّل النص بخطوط يونيكود", "cta_btn": "افتح UltraTextGen →", "home": "الرئيسية", "symbols": "الرموز", "library": "المكتبة"},
+    "ru": {"copy": "Копировать", "related": "Похожие страницы", "cta_h3": "Преобразите текст с помощью Unicode-шрифтов", "cta_btn": "Открыть UltraTextGen →", "home": "Главная", "symbols": "Символы", "library": "Библиотека"},
+    "ja": {"copy": "コピー", "related": "関連ページ", "cta_h3": "Unicodeフォントでテキストを変換", "cta_btn": "UltraTextGenを開く →", "home": "ホーム", "symbols": "記号", "library": "ライブラリ"},
+    "ko": {"copy": "복사", "related": "관련 페이지", "cta_h3": "유니코드 폰트로 텍스트를 변환해보세요", "cta_btn": "UltraTextGen 열기 →", "home": "홈", "symbols": "기호", "library": "라이브러리"},
+    "th": {"copy": "คัดลอก", "related": "หน้าที่เกี่ยวข้อง", "cta_h3": "แปลงข้อความด้วยฟอนต์ Unicode", "cta_btn": "เปิด UltraTextGen →", "home": "หน้าแรก", "symbols": "สัญลักษณ์", "library": "คลังสัญลักษณ์"},
+    "id": {"copy": "Salin", "related": "Sumber Terkait", "cta_h3": "Ubah teks dengan font Unicode", "cta_btn": "Buka UltraTextGen →", "home": "Beranda", "symbols": "Simbol", "library": "Pustaka"},
+}
+
+# Section label for the optional FAQ block, per locale. Falls back to English.
+LOCALE_FAQ_LABEL = {
+    "pt": "Perguntas Frequentes",
+    "de": "Häufige Fragen",
+    "fr": "Questions fréquentes",
+    "tr": "Sıkça Sorulan Sorular",
+    "it": "Domande Frequenti",
+    "es": "Preguntas Frecuentes",
+    "pl": "Często Zadawane Pytania",
+    "nl": "Veelgestelde Vragen",
+    "vi": "Câu Hỏi Thường Gặp",
+    "fi": "Usein kysytyt kysymykset",
+    "ar": "الأسئلة الشائعة",
+    "ru": "Частые вопросы",
+    "ja": "よくある質問",
+    "ko": "자주 묻는 질문",
+    "th": "คำถามที่พบบ่อย",
+    "id": "Pertanyaan Umum",
+}
+
+
+def render_faq(faq, label):
+    """Render the optional FAQ block.
+
+    Uses the JS-free <details> disclosure variant deliberately: library pages
+    load /symbol-explorer.js, never /script.js, so there is nothing to bind the
+    accordion buttons — and nothing that could double-bind them later.
+    The FAQPage JSON-LD is built from this same list in render_page(), so the
+    visible copy and the markup cannot drift apart.
+    """
+    items = []
+    for entry in faq:
+        items.append(
+            '  <details class="faq-item">\n'
+            f'    <summary class="faq-question">{esc(entry["q"])}</summary>\n'
+            f'    <div class="faq-answer"><p>{esc(entry["a"])}</p></div>\n'
+            "  </details>"
+        )
+    return (
+        '<!-- FAQ -->\n'
+        '<section class="editorial-section" id="faq">\n'
+        f'  <span class="article-section-label">{esc(label)}</span>\n'
+        + "\n".join(items)
+        + "\n</section>"
+    )
+
+
+# Locales written right-to-left. The site's own RTL content locale is Arabic;
+# fa/ur/he are declared RTL in i18n.js but are not content locales today.
+RTL_LANGS = {"ar", "fa", "ur", "he"}
+
+
+def render_symbol_section(sec, copy_label="Copy"):
     rows = []
     for sym in sec["symbols"]:
         ch = sym["char"]
@@ -142,7 +244,7 @@ def render_symbol_section(sec):
             '    <div class="flag-row">\n'
             f'      <button class="flag-emoji symbol-tile" '
             f'data-symbol="{esc_attr(ch)}" '
-            f'aria-label="Copy {esc_attr(label)}">{esc(ch)}</button>\n'
+            f'aria-label="{esc_attr(copy_label)} {esc_attr(label)}">{esc(ch)}</button>\n'
             f'      <span class="flag-label">{esc(label)}</span>\n'
             '    </div>'
         )
@@ -239,10 +341,25 @@ def render_page(spec):
     # Locale support (all fields default to the English behaviour, so existing
     # English specs render byte-identically).
     lang = spec.get("lang", "en")
-    home_url = spec.get("home_url", f"{SITE}/")
-    crumb_home = spec.get("crumb_home", "Home")
-    crumb_library = spec.get("crumb_library", "Library")
-    library_url = spec.get("library_url", f"{SITE}/library/")
+    dir_attr = ' dir="rtl"' if lang in RTL_LANGS else ""
+    ui = LOCALE_UI_STRINGS.get(lang, {})
+    default_home_url = f"{SITE}/" if lang == "en" else f"{SITE}/{lang}/"
+    home_url = spec.get("home_url", default_home_url)
+    crumb_home = spec.get("crumb_home", ui.get("home", "Home"))
+    # page_type "symbol" pages sit under /symbol/ instead of /library/ and
+    # carry a "Symbols" breadcrumb crumb by default.
+    page_type = spec.get("page_type", "library")
+    default_crumb_library = ui.get("symbols", "Symbols") if page_type == "symbol" else ui.get("library", "Library")
+    default_library_url = (
+        f"{default_home_url}symbol/" if page_type == "symbol" else f"{default_home_url}library/"
+    )
+    crumb_library = spec.get("crumb_library", default_crumb_library)
+    library_url = spec.get("library_url", default_library_url)
+    copy_label = spec.get("copy_label", ui.get("copy", "Copy"))
+    related_label = spec.get("related_label", ui.get("related", "Related Resources"))
+    cta_h3 = spec.get("cta_h3", ui.get("cta_h3", "Transform text with Unicode fonts"))
+    cta_button_text = spec.get("cta_button_text", ui.get("cta_btn", "Open UltraTextGen →"))
+    cta_button_href = spec.get("cta_button_href", home_url)
     hreflang_html = "".join(
         f'\n<link rel="alternate" hreflang="{esc_attr(h["lang"])}" href="{esc_attr(h["href"])}">'
         for h in spec.get("hreflang", [])
@@ -308,8 +425,36 @@ def render_page(spec):
         ensure_ascii=False,
     )
 
+    # Optional FAQ — visible block and FAQPage JSON-LD are built from the same
+    # spec list, so a page can never ship schema for Q&A it doesn't render.
+    faq = spec.get("faq") or []
+    faq_label = spec.get("faq_label", LOCALE_FAQ_LABEL.get(lang, "Frequently Asked Questions"))
+    faq_html = f"\n\n<div class=\"section-divider\"></div>\n\n{render_faq(faq, faq_label)}" if faq else ""
+    ld_faq_html = ""
+    if faq:
+        ld_faq = json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": html.unescape(entry["q"]),
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": html.unescape(entry["a"]),
+                        },
+                    }
+                    for entry in faq
+                ],
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+        ld_faq_html = f'\n\n<script type="application/ld+json">\n{ld_faq}\n</script>'
+
     # Section bodies
-    section_blocks = [render_symbol_section(s) for s in spec["sections"]]
+    section_blocks = [render_symbol_section(s, copy_label) for s in spec["sections"]]
     if spec["copy_pattern"] == "collection":
         section_blocks.append(render_collection_section(spec))
     body_sections = "\n\n<div class=\"section-divider\"></div>\n\n".join(section_blocks)
@@ -322,8 +467,9 @@ def render_page(spec):
         runtime_scripts = '<script src="/symbol-explorer.js"></script>'
 
     page = f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}"{dir_attr}>
 <head>
+{funding_choices_tag()}
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
   new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
@@ -331,8 +477,8 @@ def render_page(spec):
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   }})(window,document,'script','dataLayer','GTM-P55HXK8Q');</script>
   <!-- End Google Tag Manager -->
-  <script data-grow-initializer="">!(function(){{window.growMe||((window.growMe=function(e){{window.growMe._.push(e);}}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTplMzgxNTIwYS1jYTIzLTQ4Y2EtYTA2Ni04M2M0MjBkZGRkZWE=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);}})();</script>
-  <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/e381520a-ca23-48ca-a066-83c420ddddea.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8242324164413945"
+       crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -362,7 +508,7 @@ def render_page(spec):
 
 <script type="application/ld+json">
 {ld_breadcrumb}
-</script>
+</script>{ld_faq_html}
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -388,18 +534,18 @@ def render_page(spec):
 
 <div class="section-divider"></div>
 
-{body_sections}
+{body_sections}{faq_html}
 
 <!-- CTA -->
 <div class="cta-card">
-  <h3>Transform text with Unicode fonts</h3>
+  <h3>{esc(cta_h3)}</h3>
   <p>{esc(cta)}</p>
-  <a href="{SITE}/" class="cta-btn">Open UltraTextGen →</a>
+  <a href="{esc_attr(cta_button_href)}" class="cta-btn">{esc(cta_button_text)}</a>
 </div>
 
 <!-- RELATED -->
 <section class="editorial-section">
-  <span class="article-section-label">Related Resources</span>
+  <span class="article-section-label">{esc(related_label)}</span>
   <div class="compare-grid">
 {related_html}
   </div>
@@ -459,9 +605,11 @@ def main(argv=None):
         return 2
 
     slug = spec["slug"]
-    # Localized specs (lang != "en") render under <lang>/library/<slug>/.
+    # Localized specs (lang != "en") render under <lang>/<base>/<slug>/.
+    # page_type "symbol" routes to /symbol/ instead of /library/.
     lang = spec.get("lang", "en")
-    out_dir = (REPO / lang / "library" / slug) if lang != "en" else (LIBRARY_DIR / slug)
+    base_folder = "symbol" if spec.get("page_type", "library") == "symbol" else "library"
+    out_dir = (REPO / lang / base_folder / slug) if lang != "en" else (REPO / base_folder / slug)
     out_path = out_dir / "index.html"
 
     if out_path.exists() and not args.force and not args.dry_run:
@@ -483,7 +631,59 @@ def main(argv=None):
     print(f"Wrote {out_path.relative_to(REPO)} "
           f"(pattern={spec['copy_pattern']}, "
           f"sections={len(spec['sections'])})")
+
+    if lang != "en" and not os.environ.get("SKIP_LOCALE_MESH_HOOK"):
+        _sync_locale_mesh(out_path)
+
     return 0
+
+
+def _sync_locale_mesh(out_path):
+    """Phase-0 mesh-automation hook: best-effort, in-place hreflang +
+    locale-native-link rewrite for the page just written, via
+    scripts/sync-locale-mesh.js --fix --files <path> (see CLAUDE.md, "Locale
+    Parent Governance" and docs/locale-parent-governance.md).
+
+    This is the first generator wired to the mesh-automation hook — the
+    flagship Core, script-independent pillar (library/symbol pages are
+    literally the FR /symbol/ lane the gap-check tooling exists to catch).
+    Other generators (answers, events, printables) should get the same hook
+    the next time they're touched; this pass only wires this one.
+
+    Deliberately best-effort: a missing `node` binary or a failing sync
+    script must never break page generation itself, so any failure here is
+    reported as a warning and swallowed rather than raised.
+    """
+    rel_path = out_path.relative_to(REPO).as_posix()
+    try:
+        result = subprocess.run(
+            ["node", "scripts/sync-locale-mesh.js", "--fix", "--files", rel_path],
+            cwd=REPO, capture_output=True, text=True, timeout=120,
+        )
+        if result.returncode != 0:
+            sys.stderr.write(
+                f"[warn] scripts/sync-locale-mesh.js --fix --files {rel_path} "
+                f"exited {result.returncode}; continuing without mesh sync.\n"
+            )
+            if result.stderr:
+                sys.stderr.write(result.stderr)
+        else:
+            print(f"Synced locale mesh for {rel_path} (scripts/sync-locale-mesh.js --fix).")
+    except FileNotFoundError:
+        sys.stderr.write(
+            "[warn] `node` not found on PATH; skipped scripts/sync-locale-mesh.js "
+            f"--fix --files {rel_path}. Run it by hand before opening the PR.\n"
+        )
+    except subprocess.TimeoutExpired:
+        sys.stderr.write(
+            f"[warn] scripts/sync-locale-mesh.js --fix --files {rel_path} timed out; "
+            "continuing without mesh sync. Run it by hand before opening the PR.\n"
+        )
+    except Exception as exc:  # noqa: BLE001 - best-effort by design, never break generation
+        sys.stderr.write(
+            f"[warn] scripts/sync-locale-mesh.js hook failed ({exc}); "
+            "continuing without mesh sync. Run it by hand before opening the PR.\n"
+        )
 
 
 if __name__ == "__main__":

@@ -52,6 +52,13 @@ SOURCES = {
         board="pinterest_board_primary", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords",
         include=lambda r: (r.get("include_in_pinterest") or "").strip().lower() == "yes"),
+    "variants": dict(
+        inventory="pinterest_pins_variants.csv",
+        out="pinterest_pins_variants_upload.csv",
+        title="pin_title", image="pinterest_image_path",
+        board="pinterest_board_primary", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords",
+        include=lambda r: (r.get("include_in_pinterest") or "").strip().lower() == "yes"),
     "collection": dict(
         inventory="collection_pins.csv",
         out="collection_pins_upload.csv",
@@ -92,6 +99,23 @@ SOURCES = {
         title="pin_title", image="image_path",
         board="board", description="pin_description",
         link="utm_destination_url", keywords="pin_keywords"),
+    "nama_ff_keren": dict(
+        inventory="nama_ff_keren_pinterest_pins.csv",
+        out="nama_ff_keren_pinterest_pins_upload.csv",
+        title="pin_title", image="image_path",
+        board="board", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords"),
+    # French topic boards (2026-07-20 expansion) — deep FR pages, not the /fr/
+    # homepage, so each is its own board key rather than reusing "fr".
+    **{loc: dict(
+        inventory=f"{loc}_pinterest_pins.csv",
+        out=f"{loc}_pinterest_pins_upload.csv",
+        title="pin_title", image="image_path",
+        board="board", description="pin_description",
+        link="utm_destination_url", keywords="pin_keywords")
+       for loc in ("fr_gaming", "fr_clavier", "fr_imprimables", "fr_tatouage",
+                   "fr_esthetique", "fr_kaomoji", "fr_zodiaque",
+                   "fr_style_reseau", "fr_outils")},
 }
 
 

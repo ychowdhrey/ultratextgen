@@ -1,0 +1,126 @@
+{
+  "slug": "griechische-symbole",
+  "lang": "de",
+  "title": "Griechische Buchstaben: α β Δ Σ Ω π kopieren — griechisches Alphabet",
+  "meta_description": "Jeden griechischen Buchstaben kopieren und einfügen — Groß-, Kleinbuchstaben und mathematische Varianten wie Alpha, Beta, Delta, Sigma, Omega und Pi. Klick auf einen Buchstaben, um ihn sofort zu kopieren.",
+  "breadcrumb": "Griechische Symbole",
+  "hero_h1": "Griechische Symbole",
+  "hero_tagline": "Das komplette griechische Alphabet — Großbuchstaben, Kleinbuchstaben und die mathematischen Sonderformen — bereit zum Kopieren. Klick auf einen Buchstaben, um ihn sofort zu kopieren.",
+  "intro": "Griechische Buchstaben begegnen dir überall — von Mathematik und Physik bis zu Studentenverbindungen und Schriftarten. Diese Sammlung enthält das komplette griechische Alphabet in Groß- und Kleinschreibung, das Schluss-Sigma sowie die Sonderformen, die als mathematische Symbole verwendet werden — damit du Alpha, Beta, Delta, Sigma, Omega, Pi und alle anderen kopieren kannst, ohne eine Zeichentabelle zu durchsuchen.",
+  "date_published": "2026-07-11",
+  "date_modified": "2026-07-11",
+  "copy_pattern": "single",
+  "canonical": "https://ultratextgen.com/de/library/griechische-symbole/",
+  "home_url": "https://ultratextgen.com/de/",
+  "crumb_home": "Startseite",
+  "crumb_library": "Bibliothek",
+  "library_url": "https://ultratextgen.com/de/library/",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/library/greek-letter-symbols/" },
+    { "lang": "de", "href": "https://ultratextgen.com/de/library/griechische-symbole/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/library/greek-letter-symbols/" }
+  ],
+  "cta": "Mit UltraTextGen verwandelst du normalen Text in fett, kursiv, Schreibschrift und über 100 weitere Unicode-Schriftstile — kostenlos und sofort.",
+  "related": [
+    {
+      "href": "/de/symbol/grad-zeichen/",
+      "title": "Grad-Zeichen",
+      "desc": "Das Gradzeichen (°) plus Temperatur-, Winkel- und Geometriezeichen."
+    },
+    {
+      "href": "/de/library/geschlechter-symbole/",
+      "title": "Geschlechter-Symbole",
+      "desc": "Männlich, weiblich, transgender und kombinierte Geschlechtszeichen."
+    },
+    {
+      "href": "/de/library/",
+      "title": "Symbol-Bibliothek",
+      "desc": "Alle Symbole und Emojis zum Kopieren an einem Ort."
+    }
+  ],
+  "sections": [
+    {
+      "id": "uppercase-greek",
+      "label": "Großbuchstaben",
+      "h2": "Griechische Großbuchstaben",
+      "intro": "Die 24 Großbuchstaben des griechischen Alphabets, von Alpha bis Omega.",
+      "symbols": [
+        { "char": "Α", "label": "Griechischer Großbuchstabe Alpha" },
+        { "char": "Β", "label": "Griechischer Großbuchstabe Beta" },
+        { "char": "Γ", "label": "Griechischer Großbuchstabe Gamma" },
+        { "char": "Δ", "label": "Griechischer Großbuchstabe Delta" },
+        { "char": "Ε", "label": "Griechischer Großbuchstabe Epsilon" },
+        { "char": "Ζ", "label": "Griechischer Großbuchstabe Zeta" },
+        { "char": "Η", "label": "Griechischer Großbuchstabe Eta" },
+        { "char": "Θ", "label": "Griechischer Großbuchstabe Theta" },
+        { "char": "Ι", "label": "Griechischer Großbuchstabe Iota" },
+        { "char": "Κ", "label": "Griechischer Großbuchstabe Kappa" },
+        { "char": "Λ", "label": "Griechischer Großbuchstabe Lambda" },
+        { "char": "Μ", "label": "Griechischer Großbuchstabe My" },
+        { "char": "Ν", "label": "Griechischer Großbuchstabe Ny" },
+        { "char": "Ξ", "label": "Griechischer Großbuchstabe Xi" },
+        { "char": "Ο", "label": "Griechischer Großbuchstabe Omikron" },
+        { "char": "Π", "label": "Griechischer Großbuchstabe Pi" },
+        { "char": "Ρ", "label": "Griechischer Großbuchstabe Rho" },
+        { "char": "Σ", "label": "Griechischer Großbuchstabe Sigma" },
+        { "char": "Τ", "label": "Griechischer Großbuchstabe Tau" },
+        { "char": "Υ", "label": "Griechischer Großbuchstabe Ypsilon" },
+        { "char": "Φ", "label": "Griechischer Großbuchstabe Phi" },
+        { "char": "Χ", "label": "Griechischer Großbuchstabe Chi" },
+        { "char": "Ψ", "label": "Griechischer Großbuchstabe Psi" },
+        { "char": "Ω", "label": "Griechischer Großbuchstabe Omega" }
+      ]
+    },
+    {
+      "id": "lowercase-greek",
+      "label": "Kleinbuchstaben",
+      "h2": "Griechische Kleinbuchstaben",
+      "intro": "Die Kleinbuchstaben, einschließlich des Schluss-Sigma am Wortende.",
+      "symbols": [
+        { "char": "α", "label": "Griechischer Kleinbuchstabe Alpha" },
+        { "char": "β", "label": "Griechischer Kleinbuchstabe Beta" },
+        { "char": "γ", "label": "Griechischer Kleinbuchstabe Gamma" },
+        { "char": "δ", "label": "Griechischer Kleinbuchstabe Delta" },
+        { "char": "ε", "label": "Griechischer Kleinbuchstabe Epsilon" },
+        { "char": "ζ", "label": "Griechischer Kleinbuchstabe Zeta" },
+        { "char": "η", "label": "Griechischer Kleinbuchstabe Eta" },
+        { "char": "θ", "label": "Griechischer Kleinbuchstabe Theta" },
+        { "char": "ι", "label": "Griechischer Kleinbuchstabe Iota" },
+        { "char": "κ", "label": "Griechischer Kleinbuchstabe Kappa" },
+        { "char": "λ", "label": "Griechischer Kleinbuchstabe Lambda" },
+        { "char": "μ", "label": "Griechischer Kleinbuchstabe My" },
+        { "char": "ν", "label": "Griechischer Kleinbuchstabe Ny" },
+        { "char": "ξ", "label": "Griechischer Kleinbuchstabe Xi" },
+        { "char": "ο", "label": "Griechischer Kleinbuchstabe Omikron" },
+        { "char": "π", "label": "Griechischer Kleinbuchstabe Pi" },
+        { "char": "ρ", "label": "Griechischer Kleinbuchstabe Rho" },
+        { "char": "σ", "label": "Griechischer Kleinbuchstabe Sigma" },
+        { "char": "ς", "label": "Griechischer Kleinbuchstabe Schluss-Sigma" },
+        { "char": "τ", "label": "Griechischer Kleinbuchstabe Tau" },
+        { "char": "υ", "label": "Griechischer Kleinbuchstabe Ypsilon" },
+        { "char": "φ", "label": "Griechischer Kleinbuchstabe Phi" },
+        { "char": "χ", "label": "Griechischer Kleinbuchstabe Chi" },
+        { "char": "ψ", "label": "Griechischer Kleinbuchstabe Psi" },
+        { "char": "ω", "label": "Griechischer Kleinbuchstabe Omega" }
+      ]
+    },
+    {
+      "id": "variant-greek",
+      "label": "Varianten",
+      "h2": "Varianten- & Symbolformen",
+      "intro": "Alternative Glyphenformen für mehrere griechische Buchstaben, die als eigenständige mathematische und wissenschaftliche Symbole verwendet werden.",
+      "symbols": [
+        { "char": "ϑ", "label": "Griechisches Theta-Symbol" },
+        { "char": "ϕ", "label": "Griechisches Phi-Symbol" },
+        { "char": "ϖ", "label": "Griechisches Pi-Symbol" },
+        { "char": "ϱ", "label": "Griechisches Rho-Symbol" },
+        { "char": "ϵ", "label": "Griechisches lunates Epsilon-Symbol" },
+        { "char": "ϐ", "label": "Griechisches Beta-Symbol" },
+        { "char": "ϰ", "label": "Griechisches Kappa-Symbol" },
+        { "char": "ϴ", "label": "Griechisches Großbuchstabe-Theta-Symbol" },
+        { "char": "∇", "label": "Nabla (Del-Operator)" },
+        { "char": "∂", "label": "Partielles Differential" }
+      ]
+    }
+  ]
+}

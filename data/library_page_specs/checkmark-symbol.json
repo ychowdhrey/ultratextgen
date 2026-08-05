@@ -1,0 +1,74 @@
+{
+  "slug": "checkmark-symbol",
+  "page_type": "symbol",
+  "title": "Check Mark Symbol: Copy & Paste ✓ ✔ Tick Symbols",
+  "meta_description": "Copy and paste the check mark symbol (✓, U+2713) — the tick, the heavy check ✔, the ✅ green check emoji and ☑ checkbox, plus the ✗ and √ it's confused with. Click any symbol to copy it.",
+  "canonical": "https://ultratextgen.com/symbol/checkmark-symbol/",
+  "breadcrumb": "Check Mark Symbol",
+  "hero_h1": "Check Mark Symbol",
+  "hero_tagline": "The check mark (✓ ✔) — the tick that means done, correct, or verified — along with the ✅ emoji, the ☑ checkbox, and the ✗ and √ it is mistaken for. Click any symbol to copy it instantly.",
+  "intro": "The check mark symbol (✓, Unicode U+2713 CHECK MARK) is the tick used to mark something done, correct, or verified. Unicode places it in the Dingbats block next to the bolder ✔ (U+2714 HEAVY CHECK MARK), and with a variation selector ✔️ becomes the check-mark emoji; the green ✅ and the ☑ checkbox are separate characters again. The check mark is distinct from the ✗ ballot X that means the opposite, and from the √ square-root sign that people often press by mistake.",
+  "date_published": "2026-07-12",
+  "date_modified": "2026-07-12",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "check-mark",
+      "label": "Check Mark",
+      "h2": "Check Mark Symbol",
+      "intro": "The standard and heavy check marks, ready to paste into lists and forms.",
+      "symbols": [
+        { "char": "✓", "label": "Check Mark (U+2713)" },
+        { "char": "✔", "label": "Heavy Check Mark (U+2714)" }
+      ]
+    },
+    {
+      "id": "check-emoji-boxes",
+      "label": "Emoji & Checkboxes",
+      "h2": "Check Mark Emoji & Checkboxes",
+      "intro": "The color check emoji and the ballot-box variants used in checklists.",
+      "symbols": [
+        { "char": "✅", "label": "Green Check Mark Emoji (U+2705)" },
+        { "char": "✔️", "label": "Heavy Check Mark Emoji" },
+        { "char": "☑", "label": "Ballot Box with Check (U+2611)" },
+        { "char": "🗹", "label": "Ballot Box with Bold Check (U+1F5F9)" },
+        { "char": "🗸", "label": "Light Check Mark (U+1F5F8)" }
+      ]
+    },
+    {
+      "id": "not-a-check",
+      "label": "Not a Check Mark",
+      "h2": "Marks the Check Mark Is Confused With",
+      "intro": "Each of these gets typed in place of a check, and each means something else.",
+      "symbols": [
+        { "char": "✗", "label": "Ballot X (U+2717) — Incorrect / No" },
+        { "char": "✘", "label": "Heavy Ballot X (U+2718)" },
+        { "char": "√", "label": "Square Root Sign (U+221A)" },
+        { "char": "✕", "label": "Multiplication X (U+2715)" },
+        { "char": "☒", "label": "Ballot Box with X (U+2612)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/multiplication-sign/",
+      "title": "Multiplication Sign (×)",
+      "desc": "The × the ballot-X check alternative is confused with."
+    },
+    {
+      "href": "/symbol/square-root/",
+      "title": "Square Root Symbol (√)",
+      "desc": "The radical sign people type instead of a check mark."
+    },
+    {
+      "href": "/library/checkmark-symbols/",
+      "title": "Check Mark Symbols",
+      "desc": "Every tick, ballot box, and status symbol in one hub."
+    },
+    {
+      "href": "/library/cross-x-symbols/",
+      "title": "Cross & X Symbols",
+      "desc": "The ✗ ✘ rejection marks that pair with the check."
+    }
+  ]
+}

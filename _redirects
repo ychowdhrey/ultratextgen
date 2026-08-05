@@ -1,11 +1,16 @@
 # Canonical host: enforce non-www
 https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 
-# Fallback rewrite: serve the English homepage for the root path.
-# The primary fix lives in functions/_middleware.js, which requests
-# /_root.html from ASSETS — a build-generated copy of index.html
-# with no locale variants, so i18n content negotiation cannot activate.
-# This rule acts as a safety net if the middleware is not deployed.
+# Serve the English homepage for the root path.
+#
+# This rule is what actually keeps / on English. It was previously
+# described as a "safety net if the middleware is not deployed", with
+# functions/_middleware.js as the primary fix — but the middleware does
+# not execute on this Pages project at all. Verified on the PR #674
+# preview: with this rule REMOVED (so nothing in _redirects matched /),
+# /?lang=de still returned 200 rather than the 301 the middleware issues
+# from its very first branch. Functions are inert here; this is primary,
+# not a fallback. Do not remove it expecting the middleware to cover /.
 /  /index.html  200
 
 # Canonical path: enforce trailing slash on platform root pages
@@ -16,14 +21,38 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /pinterest  /pinterest/  301
 /snapchat   /snapchat/   301
 /telegram   /telegram/   301
+/threads    /threads/    301
 /tiktok     /tiktok/     301
 /tiktok/name-generator  /tiktok/name-generator/  301
-/tiktok/what-font-does-tiktok-use  /tiktok/what-font-does-tiktok-use/  301
 /answers/how-to-change-tiktok-username  /answers/how-to-change-tiktok-username/  301
 /answers/what-is-a-tiktok-handle  /answers/what-is-a-tiktok-handle/  301
 /whatsapp   /whatsapp/   301
 /x          /x/          301
 /youtube    /youtube/    301
+
+# Answer content consolidated under /answers/ (2026-07-21) — duplicate
+# "what font does X use" pages under the platform namespace, retired
+/tiktok/what-font-does-tiktok-use    /answers/what-font-does-tiktok-use/   301
+/tiktok/what-font-does-tiktok-use/   /answers/what-font-does-tiktok-use/   301
+/youtube/what-font-does-youtube-use  /answers/what-font-does-youtube-use/  301
+/youtube/what-font-does-youtube-use/ /answers/what-font-does-youtube-use/  301
+
+# English-Parent Rule audit fixes (2026-07-25) — in-locale duplicates
+# retired in favor of the correctly-meshed EN-parented sibling
+/pt/usecase/nick-free-fire   /pt/usecase/nick-ff/  301
+/pt/usecase/nick-free-fire/  /pt/usecase/nick-ff/  301
+/ja/font-henkan              /ja/                   301
+/ja/font-henkan/             /ja/                   301
+
+# retired 2026-07-26: near-duplicate of fr/index.html's own head term
+# ("écriture stylée" / "générateur de texte stylé" both restate the
+# homepage's own pitch), confirmed via query-level GSC — see
+# ENGLISH-PARENT-RULE-AUDIT-2026-07-25.md §2c and the fr/ six-page
+# GSC follow-up analysis
+/fr/ecriture-style/          /fr/                   301
+/fr/ecriture-style          /fr/                   301
+/fr/generateur-de-texte/     /fr/                   301
+/fr/generateur-de-texte     /fr/                   301
 
 /category/special-fonts/                    /category/strikethrough-text/ 301
 /category/special-fonts/index.html          /category/strikethrough-text/ 301
@@ -41,22 +70,24 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /guide/is-linkedin-bold-text-safe/index.html  /answers/is-linkedin-bold-text-safe/ 301
 /usecase/linkedin-bold/                       /linkedin/ 301
 /usecase/linkedin-bold/index.html             /linkedin/ 301
+/usecase/glitch-text/                         /usecase/zalgo-text/ 301
+/usecase/glitch-text/index.html               /usecase/zalgo-text/ 301
+/usecase/glitch-text-generator/               /usecase/zalgo-text/ 301
 
 # Language query-param → path-based (301 permanent)
-/?lang=fr                                   /fr/    301
-/?lang=de                                   /de/    301
-/?lang=pt                                   /pt/    301
-/?lang=es                                   /es/    301
-/?lang=en                                   /       301
-/?lang=id                                   /id/    301
-/?lang=it                                   /it/    301
-/?lang=nl                                   /nl/    301
-/?lang=tr                                   /tr/    301
-/?lang=pl                                   /pl/    301
-/?lang=vi                                   /vi/    301
-/?lang=tl                                   /tl/    301
-/?lang=sv                                   /sv/    301
-/?lang=no                                   /no/    301
+#
+# DO NOT re-add these as `_redirects` rules. Cloudflare Pages matches
+# `_redirects` sources on the URL *path only* and ignores the query
+# string, so `/?lang=fr  /fr/  301` is parsed as `/  /fr/  301` — an
+# unconditional 301 of the English homepage to /fr/, for every visitor
+# and every crawler. That is exactly what happened between 2026-07-15
+# (PR #566, which added this block) and 2026-07-26: ultratextgen.com/
+# 301'd to /fr/ regardless of Accept-Language, and because a static
+# redirect short-circuits before Pages Functions, it also bypassed the
+# functions/_middleware.js fix that exists to keep / on English.
+#
+# Query-string matching now lives in functions/_middleware.js, which can
+# actually read url.searchParams. See LANG_REDIRECTS there.
 
 # Bold: thin/duplicate group pages folded into the parent family page (301)
 /category/bold-fonts/bold/                     /category/bold-fonts/ 301
@@ -80,8 +111,99 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /library/linkedin-post-formatting-symbols/index.html  /library/linkedin-symbol-library/ 301
 /library/whisper-subliminal-symbols/                  /library/aesthetic-symbols/ 301
 /library/whisper-subliminal-symbols/index.html        /library/aesthetic-symbols/ 301
+/library/youtube-symbols/                             /library/nickname-symbols/ 301
+/library/youtube-symbols/index.html                   /library/nickname-symbols/ 301
+
+# Usecase: dead/renamed slug → live equivalent (GSC 404 cleanup)
+/usecase/bio-text/                    /usecase/bio-font/     301
+/usecase/bio-text/index.html          /usecase/bio-font/     301
+/usecase/social-post-text/            /usecase/comment-font/ 301
+/usecase/social-post-text/index.html  /usecase/comment-font/ 301
+/usecase/comment-text/                /usecase/comment-font/ 301
+/usecase/comment-text/index.html      /usecase/comment-font/ 301
+
+# Category: dead slug → hub (GSC 404 cleanup, no single-category equivalent)
+/category/popular/            /category/ 301
+/category/popular/index.html  /category/ 301
+
+# Root asset: /og.png was renamed to a descriptive, convention-aligned asset
+# (see docs/image-seo-fixes.md). Redirect stale crawled/cached references
+# instead of letting them 404 (GSC 404 cleanup).
+/og.png  /assets/og/fancy-text-generator-preview.png  301
+
+# Cloudflare email-obfuscation artifact: if this ever reaches Netlify origin
+# directly (rather than being served at the CF edge), send it somewhere real
+# instead of 404ing (GSC 404 cleanup).
+/cdn-cgi/l/email-protection  /contact/ 301
+/cdn-cgi/*                   /contact/ 301
+
+# Library → Symbol pillar: single-glyph pages moved to their own top-level namespace
+/library/degree-symbol              /symbol/degree-symbol/    301
+/library/degree-symbol/            /symbol/degree-symbol/    301
+/library/degree-symbol/index.html  /symbol/degree-symbol/    301
+/library/peace-symbol/             /symbol/peace-sign/       301
+/library/peace-symbol/index.html   /symbol/peace-sign/       301
+/library/yin-yang-symbol/            /symbol/yin-yang/       301
+/library/yin-yang-symbol/index.html  /symbol/yin-yang/       301
+
+# Symbol pillar: slug consolidation (two independent sessions both split this
+# pillar out of library/; peace-sign/yin-yang were the names that stuck)
+/symbol/peace-symbol/             /symbol/peace-sign/  301
+/symbol/peace-symbol/index.html   /symbol/peace-sign/  301
+/symbol/yin-yang-symbol/            /symbol/yin-yang/  301
+/symbol/yin-yang-symbol/index.html  /symbol/yin-yang/  301
+
+# Library → Symbol pillar (i18n): single-glyph translated pages shipped under
+# <lang>/library/ instead of <lang>/symbol/ (see docs/unicode-library-workflow.md §7).
+# tr/library/derece-isareti/ is deliberately NOT here: unlike its siblings it's a
+# genuinely broader collection (19 symbols across degree/angle/geometry), kept in
+# place; only its own inaccurate hreflang="en" claim was wrong, now removed.
+/da/library/gradtegn/                       /da/symbol/gradtegn/                       301
+/da/library/gradtegn/index.html             /da/symbol/gradtegn/                       301
+/da/library/kvadratrodstegn/                /da/symbol/kvadratrodstegn/                301
+/da/library/kvadratrodstegn/index.html      /da/symbol/kvadratrodstegn/                301
+/de/library/euro-zeichen/                   /de/symbol/euro-zeichen/                   301
+/de/library/euro-zeichen/index.html         /de/symbol/euro-zeichen/                   301
+/de/library/grad-zeichen/                   /de/symbol/grad-zeichen/                   301
+/de/library/grad-zeichen/index.html         /de/symbol/grad-zeichen/                   301
+/es/library/comillas/                       /es/symbol/comillas/                       301
+/es/library/comillas/index.html             /es/symbol/comillas/                       301
+/es/library/signo-de-euro/                  /es/symbol/signo-de-euro/                  301
+/es/library/signo-de-euro/index.html        /es/symbol/signo-de-euro/                  301
+/es/library/signo-de-libra/                 /es/symbol/signo-de-libra/                 301
+/es/library/signo-de-libra/index.html       /es/symbol/signo-de-libra/                 301
+/es/library/simbolo-de-grado/               /es/symbol/simbolo-de-grado/               301
+/es/library/simbolo-de-grado/index.html     /es/symbol/simbolo-de-grado/               301
+/es/library/simbolo-de-infinito/            /es/symbol/simbolo-de-infinito/            301
+/es/library/simbolo-de-infinito/index.html  /es/symbol/simbolo-de-infinito/            301
+/id/library/simbol-derajat/                 /id/symbol/simbol-derajat/                 301
+/id/library/simbol-derajat/index.html       /id/symbol/simbol-derajat/                 301
+/id/library/simbol-kutip/                   /id/symbol/simbol-kutip/                   301
+/id/library/simbol-kutip/index.html         /id/symbol/simbol-kutip/                   301
+/no/library/eurotegn/                       /no/symbol/eurotegn/                       301
+/no/library/eurotegn/index.html             /no/symbol/eurotegn/                       301
+/no/library/pundtegn/                       /no/symbol/pundtegn/                       301
+/no/library/pundtegn/index.html             /no/symbol/pundtegn/                       301
+/pl/library/cudzyslow-polski/               /pl/symbol/cudzyslow-polski/               301
+/pl/library/cudzyslow-polski/index.html     /pl/symbol/cudzyslow-polski/               301
+/pl/library/nieskonczonosc/                 /pl/symbol/nieskonczonosc/                 301
+/pl/library/nieskonczonosc/index.html       /pl/symbol/nieskonczonosc/                 301
+/pl/library/stopnie-i-temperatura/          /pl/symbol/stopnie-i-temperatura/          301
+/pl/library/stopnie-i-temperatura/index.html /pl/symbol/stopnie-i-temperatura/         301
+/pl/library/znak-euro/                      /pl/symbol/znak-euro/                      301
+/pl/library/znak-euro/index.html            /pl/symbol/znak-euro/                      301
+/pl/library/znaki-tm-i-copyright/           /pl/symbol/znaki-tm-i-copyright/           301
+/pl/library/znaki-tm-i-copyright/index.html /pl/symbol/znaki-tm-i-copyright/          301
+/tr/library/tirnak-isareti/                 /tr/symbol/tirnak-isareti/                 301
+/tr/library/tirnak-isareti/index.html       /tr/symbol/tirnak-isareti/                 301
+
+# Library → Guide pillar: editorial how-to (no copy tiles, Article schema) misfiled under library/
+/library/linkedin-comment-styling/            /guide/linkedin-comment-styling/  301
+/library/linkedin-comment-styling/index.html  /guide/linkedin-comment-styling/  301
 
 # Consolidated localized pages → canonical equivalents (avoid keyword cannibalization)
+/vi/chu-kieu/            /vi/                          301
+/vi/chu-kieu/index.html  /vi/                          301
 /pt/gerador-de-fontes/            /pt/                          301
 /pt/gerador-de-fontes/index.html  /pt/                          301
 /pt/texto-empilhado/              /pt/usecase/vertical-text/    301
@@ -90,6 +212,86 @@ https://www.ultratextgen.com/*  https://ultratextgen.com/:splat  301!
 /fr/texte-empile/index.html       /fr/usecase/vertical-text/    301
 /de/gestapelter-text/             /de/usecase/vertical-text/    301
 /de/gestapelter-text/index.html   /de/usecase/vertical-text/    301
+
+# Retired FR Discord guide → its proper EN-parented translation (discord-where-fonts-work)
+/fr/guide/styliser-pseudo-serveur-discord/            /fr/guide/ou-fonctionnent-les-polices-discord/  301
+/fr/guide/styliser-pseudo-serveur-discord/index.html  /fr/guide/ou-fonctionnent-les-polices-discord/  301
+
+# PT Free Fire symbol spoke: renamed off a slug that collided with the
+# generic /pt/simbolos-para-nick/ hub one level up, to its own dedicated
+# Free Fire slug (mirrors es/simbolos-para-free-fire)
+/pt/library/simbolos-para-nick/            /pt/library/simbolos-para-free-fire/  301
+/pt/library/simbolos-para-nick/index.html  /pt/library/simbolos-para-free-fire/  301
+
+# id/es/pt emoji-combos: moved from orphaned top-level slugs into the
+# /library/ pillar (correct Core Parent Set lane), expanded toward EN's
+# 25-mood-section parity in the same change.
+/id/kombinasi-emoji/                     /id/library/emoji-combos/  301
+/id/kombinasi-emoji/index.html           /id/library/emoji-combos/  301
+/es/combinaciones-de-emojis/             /es/library/emoji-combos/  301
+/es/combinaciones-de-emojis/index.html   /es/library/emoji-combos/  301
+/pt/combos-de-emoji/                     /pt/library/emoji-combos/  301
+/pt/combos-de-emoji/index.html           /pt/library/emoji-combos/  301
+
+# fr/de/pl/tr/nl emoji-combos: same orphaned-slug-to-/library/-pillar move,
+# completing the batch above (id/es/pt were done first).
+/fr/combos-emoji/                        /fr/library/emoji-combos/  301
+/fr/combos-emoji/index.html              /fr/library/emoji-combos/  301
+/de/emoji-kombinationen/                 /de/library/emoji-combos/  301
+/de/emoji-kombinationen/index.html       /de/library/emoji-combos/  301
+/pl/kombinacje-emoji/                    /pl/library/emoji-combos/  301
+/pl/kombinacje-emoji/index.html          /pl/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/               /tr/library/emoji-combos/  301
+/tr/emoji-kombinasyonlari/index.html     /tr/library/emoji-combos/  301
+/nl/emoji-combinaties/                   /nl/library/emoji-combos/  301
+/nl/emoji-combinaties/index.html         /nl/library/emoji-combos/  301
+
+# pt/usecase/nick-free-fire retired: near-duplicate of pt/usecase/nick-ff
+# (same Free Fire nick-generator intent, no distinct EN parent of its own)
+# that was never picking up meaningful traffic of its own (19 impr/26 days
+# vs nick-ff's 1,147, 0 clicks) — consolidated into the established page.
+/pt/usecase/nick-free-fire/            /pt/usecase/nick-ff/  301
+/pt/usecase/nick-free-fire/index.html  /pt/usecase/nick-ff/  301
+
+# de/gotische-schrift retargeted to de/altdeutsche-schrift: 26-day GSC data
+# showed the German blackletter cluster earning ~0 clicks at avg. position
+# 15 while competitors rank dedicated Altdeutsch/Fraktur slugs — "altdeutsche
+# Schrift" is the term Germans actually search, not the literal rendering of
+# English "gothic font". See local-language phrase DE-008 in
+# data/local-language/de.json.
+/de/gotische-schrift/            /de/altdeutsche-schrift/  301
+/de/gotische-schrift/index.html  /de/altdeutsche-schrift/  301
+
+# tr/yazi-stilleri retired -> /tr/ (2026-08-01). Query-level GSC showed the
+# page owning no query of its own while the TR homepage already covered the
+# same ground, so it was consolidating nothing and competing for attention.
+# All 49 internal links were repointed to /tr/ in the same change; most carried
+# the anchor text "yazı stilleri", which now points at the surviving page.
+# SCHEDULED FOR RE-EVALUATION 2026-08-16 against query-level volume, not page
+# metrics — "yazı stilleri" is a very high-volume term whose SERP position was
+# never pulled for either URL. If /tr/ is not absorbing it, revert this block and
+# restore the directory from git history.
+/tr/yazi-stilleri             /tr/  301
+/tr/yazi-stilleri/            /tr/  301
+/tr/yazi-stilleri/index.html  /tr/  301
+
+# 2026-08-02 duplicate-claimant folds (parallel-session hreflang collision
+# cleanup): each pair had two same-locale pages claiming one hreflang
+# cluster slot; the less-integrated page folds into the survivor.
+/es/symbol/signo-de-grado/            /es/symbol/simbolo-de-grado/  301
+/es/symbol/signo-de-grado/index.html  /es/symbol/simbolo-de-grado/  301
+/ja/library/text-faces-kaomoji/            /ja/library/kaomoji/  301
+/ja/library/text-faces-kaomoji/index.html  /ja/library/kaomoji/  301
+
+# Duplicate-claimant merge (2026-08-03). es/symbol/signo-de-grado/ and
+# es/symbol/simbolo-de-grado/ both declared hreflang="en" -> symbol/degree-symbol/
+# and both ranked for "signo de grados" — a split, not coverage. Semrush settles
+# which survives: "símbolo de grado" 16,700/mo global (MX 5.4k, AR 1.9k, PE 1.6k,
+# CO 1.3k) vs "signo de grados" 9,500/mo (MX 3.6k, AR 880, CO 720), and 94 keyword
+# variations vs 54. The survivor's unique content (degree-sign history, the
+# ° vs º vs ∘ vs ˚ lookalike set, and the ° vs º FAQ) was ported before retiring.
+/es/symbol/signo-de-grado/            /es/symbol/simbolo-de-grado/  301
+/es/symbol/signo-de-grado/index.html  /es/symbol/simbolo-de-grado/  301
 
 /404  /404.html  200
 /*    /404.html  404

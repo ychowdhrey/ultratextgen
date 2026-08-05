@@ -1,0 +1,144 @@
+{
+  "slug": "peace-emoji",
+  "title": "Peace Emoji: Copy & Paste ✌️🕊️ Peace Sign & Harmony Combos",
+  "meta_description": "Copy and paste the ✌️ peace sign photo pose, the 🕊️ dove of peace, ☮️ and ☯️ harmony symbols, and calm-vibes emoji combos. Click any symbol to copy it instantly.",
+  "canonical": "https://ultratextgen.com/library/peace-emoji/",
+  "breadcrumb": "Peace Emoji",
+  "hero_h1": "Peace Emoji",
+  "hero_tagline": "The peace sign hand for photos, the dove and flag for anti-war and harmony posts, plus meditation and calm-vibes emoji for bios and captions. Click any symbol to copy it instantly.",
+  "intro": "The ✌️ victory hand is one of the most-used photo-pose emoji on the internet, thrown up in selfies and group shots as a quick, friendly ‘peace out.’ Alongside it sits a whole family of peace-themed picture emoji with a different register: 🕊️ the dove and 🏳️ the white flag carry anti-war and ceasefire symbolism, while ☯️ yin-yang and 🧘 meditation emoji lean into calm and inner harmony instead. This page collects that full picture-emoji set — the victory-hand gesture in every skin tone, dove and flag symbolism, harmony and meditation emoji, and peace-sign kaomoji — plus ready-made combo sets to copy and paste. Looking for the plain Unicode ☆ peace-sign character on its own, with its codepoint and design history? See the dedicated peace symbol page linked below.",
+  "date_published": "2026-07-13",
+  "date_modified": "2026-07-13",
+  "copy_pattern": "collection",
+  "sections": [
+    {
+      "id": "victory-hand",
+      "label": "Peace Sign & Victory Hand",
+      "h2": "Peace Sign & Victory Hand Emoji",
+      "intro": "The classic photo-pose gesture — two fingers raised — in the default cartoon-yellow tone and every skin-tone modifier.",
+      "symbols": [
+        { "char": "✌️", "label": "Victory Hand" },
+        { "char": "✌🏻", "label": "Victory Hand: Light Skin Tone" },
+        { "char": "✌🏼", "label": "Victory Hand: Medium-Light Skin Tone" },
+        { "char": "✌🏽", "label": "Victory Hand: Medium Skin Tone" },
+        { "char": "✌🏾", "label": "Victory Hand: Medium-Dark Skin Tone" },
+        { "char": "✌🏿", "label": "Victory Hand: Dark Skin Tone" }
+      ]
+    },
+    {
+      "id": "dove-flag-symbols",
+      "label": "Dove, Flag & Peace Symbols",
+      "h2": "Dove, Flag & Global Peace Symbols",
+      "intro": "The anti-war and ceasefire register — the dove of peace, the white flag of surrender, and balance symbols used in peace and harmony messaging.",
+      "symbols": [
+        { "char": "🕊️", "label": "Dove" },
+        { "char": "☮️", "label": "Peace Symbol" },
+        { "char": "🏳️", "label": "White Flag" },
+        { "char": "☯️", "label": "Yin Yang" },
+        { "char": "🌍", "label": "Globe Showing Europe-Africa" },
+        { "char": "🕯️", "label": "Candle" }
+      ]
+    },
+    {
+      "id": "calm-harmony",
+      "label": "Calm & Harmony Emoji",
+      "h2": "Calm & Harmony Emoji",
+      "intro": "Meditation, gratitude, and gentle-vibes emoji for captions about mindfulness, healing, or letting go of conflict.",
+      "symbols": [
+        { "char": "🧘", "label": "Person in Lotus Position" },
+        { "char": "🧘‍♀️", "label": "Woman in Lotus Position" },
+        { "char": "🧘‍♂️", "label": "Man in Lotus Position" },
+        { "char": "🙏", "label": "Folded Hands" },
+        { "char": "🫂", "label": "People Hugging" },
+        { "char": "🍃", "label": "Leaf Fluttering in Wind" },
+        { "char": "😌", "label": "Relieved Face" },
+        { "char": "🌈", "label": "Rainbow" }
+      ]
+    },
+    {
+      "id": "peace-kaomoji",
+      "label": "Kaomoji",
+      "h2": "Peace Sign Kaomoji & Text Faces",
+      "intro": "Text faces built around the peace-hand gesture — some use the ✌️ character, others the classic lowercase-v hand convention.",
+      "symbols": [
+        { "char": "(✌'ω')✌", "label": "Double Peace Kaomoji" },
+        { "char": "✌(≡∀≡)✌", "label": "Cheeky Peace Kaomoji" },
+        { "char": "(☉‿☉)✌", "label": "Grinning Peace Kaomoji" },
+        { "char": "v(^_^)v", "label": "Classic V-Hand Peace" },
+        { "char": "(⌒▽⌒)✌", "label": "Happy Peace Kaomoji" },
+        { "char": "✌(-‿-)✌", "label": "Chill Peace Kaomoji" }
+      ]
+    }
+  ],
+  "collection_section": {
+    "id": "combo-sets",
+    "label": "Combo Sets",
+    "h2": "Peace Emoji Combo Sets",
+    "intro": "Ready-made peace and harmony combos — copy a full set with one click and paste it straight into a caption, bio, or DM."
+  },
+  "collection_container_id": "peaceSetsContainer",
+  "collections": [
+    {
+      "name": "Peace Out",
+      "flags": ["✌️", "🕊️", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "World Peace",
+      "flags": ["🌍", "🕊️", "☮️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Calm & Chill",
+      "flags": ["🧘", "🍃", "😌"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Anti-War Statement",
+      "flags": ["🏳️", "🕊️", "☮️"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Good Vibes Only",
+      "flags": ["✌️", "🌈", "💫"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Namaste & Balance",
+      "flags": ["🙏", "☯️", "🧘"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Peace Sign Selfie",
+      "flags": ["✌️", "📸", "✨"],
+      "defaultFormat": "inline"
+    },
+    {
+      "name": "Hugs & Harmony",
+      "flags": ["🫂", "🕊️", "💛"],
+      "defaultFormat": "inline"
+    }
+  ],
+  "related": [
+    {
+      "href": "/symbol/peace-sign/",
+      "title": "Peace Symbol (☮)",
+      "desc": "The plain Unicode peace-sign character on its own — codepoint, 1958 design history, and how to type it."
+    },
+    {
+      "href": "/library/hand-symbols/",
+      "title": "Hand Gesture Symbols",
+      "desc": "Pointing fingers, OK signs, and other hand-gesture emoji and symbols to copy and paste."
+    },
+    {
+      "href": "/library/religious-symbols/",
+      "title": "Religious & Spiritual Symbols",
+      "desc": "Faith and spiritual symbols from major world traditions, including balance and harmony glyphs."
+    },
+    {
+      "href": "/library/emoji-meanings-guide/",
+      "title": "Emoji Meanings Guide",
+      "desc": "What popular emoji actually mean — hand gestures and double-meaning emoji included."
+    }
+  ]
+}

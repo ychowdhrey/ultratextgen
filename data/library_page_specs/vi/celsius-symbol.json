@@ -1,0 +1,68 @@
+{
+  "slug": "celsius-symbol",
+  "lang": "vi",
+  "page_type": "symbol",
+  "title": "Ký Hiệu Celsius: Sao Chép & Dán Dấu Độ Celsius ℃",
+  "meta_description": "Sao chép dấu độ Celsius (℃, U+2103) — ligature nhiệt độ một ký tự duy nhất, vì sao Unicode khuyến nghị dùng °C thay vào đó, và cách gõ nó trên Windows và Mac. Nhấp vào bất kỳ ký hiệu nào để sao chép.",
+  "canonical": "https://ultratextgen.com/vi/symbol/celsius-symbol/",
+  "home_url": "https://ultratextgen.com/vi/",
+  "crumb_home": "Trang chủ",
+  "crumb_library": "Ký hiệu",
+  "library_url": "https://ultratextgen.com/vi/symbol/",
+  "breadcrumb": "Ký Hiệu Celsius",
+  "hero_h1": "Ký Hiệu Celsius",
+  "hero_tagline": "℃ là một ký tự Unicode duy nhất gói gọn dấu độ và chữ C hoa thành một glyph — tiện để dán, dù hầu hết các nhà làm chữ vẫn ưa dùng °C thông thường hơn. Nhấp vào bất kỳ ký hiệu nào để sao chép ngay.",
+  "intro": "Dấu độ Celsius (℃, Unicode U+2103) là một ký tự đã ghép sẵn trong khối Letterlike Symbols, kết hợp dấu độ (°) và chữ C hoa thành một glyph duy nhất. Nó tồn tại chủ yếu để văn bản Đông Á cũ hơn — nơi một số đo nhiệt độ đầy đủ thường chiếm một ô ký tự — có thể chuyển đổi qua lại qua Unicode mà không đổi độ dài. Với văn bản mới, Unicode và hầu hết các hướng dẫn phong cách thực ra khuyến nghị viết dấu độ theo sau bởi chữ C thông thường (°C) thay vì ℃ một ký tự, nhưng glyph đơn lẻ đó vẫn là thứ nhanh nhất để sao chép khi bạn chỉ cần đúng ký hiệu.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/celsius-symbol/" },
+    { "lang": "vi", "href": "https://ultratextgen.com/vi/symbol/celsius-symbol/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/celsius-symbol/" }
+  ],
+  "sections": [
+    {
+      "id": "celsius-sign",
+      "label": "Celsius",
+      "h2": "Dấu Độ Celsius",
+      "intro": "Ký tự đơn ℃ và chuỗi hai ký tự °C mà Unicode ưu tiên — sao chép cái nào phù hợp với ngữ cảnh của bạn.",
+      "symbols": [
+        { "char": "℃", "label": "Độ Celsius (Ký Tự Đơn)" },
+        { "char": "°C", "label": "Dấu Độ + C (Dạng Được Khuyến Nghị)" }
+      ]
+    },
+    {
+      "id": "confusable-neighbors",
+      "label": "Dễ Nhầm Lẫn",
+      "h2": "Các Ký Hiệu Thường Bị Nhầm Với ℃",
+      "intro": "Mỗi ký hiệu này thường bị dùng thay cho ℃, và mỗi cái là một ký tự riêng biệt với ý nghĩa riêng.",
+      "symbols": [
+        { "char": "°", "label": "Dấu Độ (U+00B0) — Đứng Riêng" },
+        { "char": "℉", "label": "Độ Fahrenheit (U+2109)" },
+        { "char": "K", "label": "Dấu Kelvin (U+212A) — Chuẩn Hóa Về Chữ K Thường" },
+        { "char": "C", "label": "Chữ Latin C Hoa" }
+      ]
+    },
+    {
+      "id": "related-measurement",
+      "label": "Ký Hiệu Đo Lường Liên Quan",
+      "h2": "Các Ký Hiệu Đo Lường & Đơn Vị Khác",
+      "intro": "Các ký hiệu cùng lãnh thổ đo lường và ký hiệu khoa học với ℃.",
+      "symbols": [
+        { "char": "′", "label": "Prime (Phút / Feet)" },
+        { "char": "″", "label": "Double Prime (Giây / Inch)" },
+        { "char": "‰", "label": "Dấu Phần Nghìn" },
+        { "char": "µ", "label": "Ký Hiệu Micro (U+00B5)" },
+        { "char": "Ω", "label": "Ký Hiệu Ohm (U+2126)" }
+      ]
+    }
+  ],
+  "cta": "Dùng UltraTextGen để biến văn bản thường thành chữ đậm, nghiêng, thư pháp và hơn 100 kiểu phông chữ Unicode khác — miễn phí và tức thì.",
+  "related": [
+    { "href": "/vi/symbol/fahrenheit-symbol/", "title": "Ký Hiệu Fahrenheit (℉)", "desc": "Dấu độ Fahrenheit đã ghép sẵn, và dạng °F mà hầu hết hướng dẫn ưa dùng." },
+    { "href": "/vi/symbol/degree-symbol/", "title": "Ký Hiệu Độ (°)", "desc": "Dấu độ đứng riêng đằng sau ℃, góc và tọa độ." },
+    { "href": "/library/unit-measurement-symbols/", "title": "Ký Hiệu Đơn Vị & Đo Lường", "desc": "Nhiệt độ, đơn vị SI và các ký hiệu khoa học trong một trang tra cứu." },
+    { "href": "/library/weather-symbols/", "title": "Ký Hiệu Thời Tiết", "desc": "Ký hiệu nhiệt độ, mặt trời, mây và bão cho dự báo thời tiết." }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "lang": "es",
+  "slug": "emoji-de-pepinillo",
+  "page_type": "symbol",
+  "title": "Emoji de Pepinillo: Copiar y Pegar 🫝 — el Candidato de Unicode 18.0 que Heredó una Casilla Aplazada de Apple Core",
+  "meta_description": "Pepinillo (🫝, U+1FADD) es un candidato en borrador para Emoji 18.0, previsto junto a Unicode 18.0 en septiembre de 2026. Su punto de código estaba reservado originalmente para «Apple Core» antes de aplazarse y reasignarse. Aún no aprobado, y ninguna fuente lo renderiza hoy.",
+  "canonical": "https://ultratextgen.com/es/symbol/emoji-de-pepinillo/",
+  "breadcrumb": "Emoji de Pepinillo",
+  "hero_h1": "Emoji de Pepinillo",
+  "hero_tagline": "Un pepinillo entero, distinto del pepino y de la berenjena — en fase de borrador para Emoji 18.0, previsto junto a Unicode 18.0 en septiembre de 2026. Solo borrador: ninguna fuente lo renderiza todavía. Haz clic para copiar el código igualmente.",
+  "intro": "Pepinillo (🫝, U+1FADD) es un emoji candidato en fase de borrador para Emoji 18.0, la actualización de emoji que acompaña a Unicode 18.0 y que se espera finalizar en septiembre de 2026. Su punto de código tiene una historia curiosa: U+1FADD estaba reservado originalmente para un emoji propuesto de «corazón de manzana» (Apple Core) en el ciclo de borrador de Emoji 17.0; esa propuesta se aplazó, y Unicode reasignó la casilla liberada a Pepinillo para el ciclo 18.0. Representa un pepinillo entero (un gherkin encurtido), distinto de los ya existentes emoji de Pepino y Berenjena junto a los que suele bromearse — la prensa tecnológica ha llegado a comentar desde que «ese pepinillo va a romper internet» hasta especular con que «le va a quitar mucho negocio» a la Berenjena. Como todavía es un borrador, ningún sistema operativo, teclado o fuente lo renderiza actualmente; espera un cuadro en blanco o un glifo de marcador de posición hasta que se apruebe Emoji 18.0 y las plataformas incorporen soporte.",
+  "date_published": "2026-07-25",
+  "date_modified": "2026-07-25",
+  "copy_pattern": "single",
+  "hreflang": [
+    { "lang": "en", "href": "https://ultratextgen.com/symbol/pickle-emoji/" },
+    { "lang": "es", "href": "https://ultratextgen.com/es/symbol/emoji-de-pepinillo/" },
+    { "lang": "x-default", "href": "https://ultratextgen.com/symbol/pickle-emoji/" }
+  ],
+  "sections": [
+    {
+      "id": "pepinillo",
+      "label": "Pepinillo",
+      "h2": "Emoji de Pepinillo",
+      "intro": "El carácter en borrador propiamente dicho — copiable hoy como código, aunque ninguna fuente pueda renderizarlo todavía.",
+      "symbols": [
+        { "char": "🫝", "label": "Pepinillo (borrador, U+1FADD)" }
+      ]
+    },
+    {
+      "id": "se-distingue-de",
+      "label": "Se Distingue De",
+      "h2": "El Emoji con el que se Confunde",
+      "intro": "Emoji de producto ya codificados con los que más se compara Pepinillo, o de los que se le acusa de solaparse.",
+      "symbols": [
+        { "char": "🥒", "label": "Pepino" },
+        { "char": "🍆", "label": "Berenjena" },
+        { "char": "🫑", "label": "Pimiento" }
+      ]
+    },
+    {
+      "id": "otros-candidatos",
+      "label": "Otros Candidatos en Borrador",
+      "h2": "Otros Candidatos en Borrador de Emoji 18.0",
+      "intro": "Pepinillo no es el único carácter sin aprobar de esta versión — estos están en borrador junto a él, igual de sin renderizar hasta la decisión de septiembre de 2026.",
+      "symbols": [
+        { "char": "🫫", "label": "Cara Agrietada (borrador, U+1FAEB)" },
+        { "char": "🫌", "label": "Mariposa Monarca (borrador, U+1FACC)" },
+        { "char": "🛙", "label": "Faro (borrador, U+1F6D9)" }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/food-drink-emojis/",
+      "title": "Emoji de Comida y Bebida",
+      "desc": "Todo emoji de aperitivo, comida y producto ya codificado, listo para copiar y pegar hoy."
+    },
+    {
+      "href": "/es/symbol/emoji-de-cara-agrietada/",
+      "title": "Emoji de Cara Agrietada",
+      "desc": "Otro candidato en borrador de Emoji 18.0 — y el que ganó la votación pública."
+    },
+    {
+      "href": "/es/symbol/emoji-de-meteoro/",
+      "title": "Emoji de Meteoro",
+      "desc": "Otro candidato en borrador de Emoji 18.0 — se separa de la larga división de renderizado del Cometa."
+    },
+    {
+      "href": "/es/symbol/emoji-de-mariposa-monarca/",
+      "title": "Emoji de Mariposa Monarca",
+      "desc": "Otro candidato en borrador de Emoji 18.0 — corrige una confusión de Mariposa entre plataformas."
+    },
+    {
+      "href": "/es/symbol/emoji-de-senal-de-pulgar/",
+      "title": "Emoji de Señal de Pulgar",
+      "desc": "Otro par candidato en borrador de Emoji 18.0 — señalar direccional, no aprobación."
+    },
+    {
+      "href": "/es/updates/unicode-18-nuevos-emojis-votacion/",
+      "title": "Los Nuevos Emoji de Unicode 18.0",
+      "desc": "La lista completa de 9 candidatos en borrador, ordenados por votación pública."
+    }
+  ]
+}
