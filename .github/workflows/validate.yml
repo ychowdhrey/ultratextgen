@@ -1,16 +1,20 @@
 name: Validate Site
 
 # Required, blocking checks for structural correctness that must never merge
-# broken: hreflang reciprocity, /library/ and /symbol/ page structure,
-# per-page social/Pinterest image assets, new/changed pages' image assets
-# specifically, new/changed /symbol/ pages' Related-Symbols peer-link
-# reciprocity, translation parity — an EN <-> locale content change
-# introduced by this PR without its sibling being updated — locale mesh
-# health (hreflang reciprocity + locale-native internal links on any locale
-# page this PR touches), the locale-parent-gap pre-build check on any new
-# locale page, and FAQ schema visibility (FAQPage/QAPage JSON-LD whose
-# questions aren't actually on the page). Each validator already exits
-# non-zero on failure (see scripts/audit-hreflang.js,
+# broken: hreflang reciprocity, hreflang cluster completeness (every member
+# of a cluster links every other member — a distinct check from reciprocity,
+# see scripts/audit-hreflang-completeness.js's own header comment for why
+# pairwise reciprocity alone misses mutual omissions), /library/ and
+# /symbol/ page structure, per-page social/Pinterest image assets,
+# new/changed pages' image assets specifically, new/changed /symbol/ pages'
+# Related-Symbols peer-link reciprocity, translation parity — an EN <->
+# locale content change introduced by this PR without its sibling being
+# updated — locale mesh health (hreflang reciprocity + locale-native
+# internal links on any locale page this PR touches), the locale-parent-gap
+# pre-build check on any new locale page, and FAQ schema visibility
+# (FAQPage/QAPage JSON-LD whose questions aren't actually on the page). Each
+# validator already exits non-zero on failure (see scripts/audit-hreflang.js,
+# scripts/audit-hreflang-completeness.js,
 # scripts/validate_library_pages.py, scripts/check-image-assets.py,
 # scripts/check-new-page-image-assets.py,
 # scripts/check-new-symbol-peer-links.py,
@@ -94,6 +98,11 @@ jobs:
         continue-on-error: true
         run: npm run check:hreflang | tee hreflang-audit.log
 
+      - name: Run hreflang cluster completeness audit
+        id: hreflang_completeness
+        continue-on-error: true
+        run: npm run check:hreflang-completeness | tee hreflang-completeness.log
+
       - name: Run library/symbol page validator
         id: library
         continue-on-error: true
@@ -153,6 +162,11 @@ jobs:
             echo "### hreflang reciprocity audit — \`${{ steps.hreflang.outcome }}\`"
             echo '```'
             cat hreflang-audit.log
+            echo '```'
+            echo ""
+            echo "### hreflang cluster completeness audit — \`${{ steps.hreflang_completeness.outcome }}\`"
+            echo '```'
+            cat hreflang-completeness.log
             echo '```'
             echo ""
             echo "### Library/symbol page validator — \`${{ steps.library.outcome }}\`"
@@ -218,7 +232,7 @@ jobs:
         # steps.new_symbol_peer_links, steps.locale_mesh, and
         # steps.locale_parent_gap are the diff-scoped gates that actually
         # enforce these systems on new/changed pages.
-        if: steps.hreflang.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
+        if: steps.hreflang.outcome == 'failure' || steps.hreflang_completeness.outcome == 'failure' || steps.library.outcome == 'failure' || steps.new_images.outcome == 'failure' || steps.new_symbol_peer_links.outcome == 'failure' || steps.parity.outcome == 'failure' || steps.locale_mesh.outcome == 'failure' || steps.locale_parent_gap.outcome == 'failure' || steps.faq_schema.outcome == 'failure'
         run: |
           echo "One or more gating validators failed — see the Summary tab above for details."
           exit 1
