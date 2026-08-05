@@ -2756,6 +2756,7 @@ PAGES.update({
 "nl-updates-unicode-18-beta-van-start": ("Unicode 18.0-bèta van start: wat erin zit", "13.047 nieuwe tekens, vier schriftsystemen, 9 concept-emoji", m_doc, K_UPDATE),
 "sv-updates-unicode-18-betagranskning-oppnar": ("Unicode 18.0:s betagranskning öppnar: Det här ingår", "13 047 nya tecken, fyra skriftsystem, 9 utkastemoji", m_doc, K_UPDATE),
 "tr-updates-unicode-18-beta-inceleme-basliyor": ("Unicode 18.0 Beta İncelemesi Başlıyor: Neler Geliyor", "13.047 yeni karakter, dört yazı sistemi, 9 taslak emoji", m_doc, K_UPDATE),
+"updates-unicode-18-release-date-confirmed": ("Unicode 18.0 Date Confirmed", "September 16, 2026 — and one script got cut", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
 "ar-updates-unicode-18-most-anticipated-emoji": ("إيموجي يونيكود 18.0 الجديدة: الوجه المتصدّع يفوز بالتصويت العام", "مخلل وشهاب يكملان المراكز الثلاثة الأولى", m_doc, K_UPDATE),
 "de-updates-unicode-18-emoji-abstimmung": ("Unicode 18.0: Neue Emojis – Berstendes Gesicht gewinnt die Abstimmung", "Essiggurke und Meteor komplettieren die Top 3", m_doc, K_UPDATE),
