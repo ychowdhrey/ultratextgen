@@ -1240,6 +1240,54 @@ complete flowchart, and every script's flags/exit codes:
   non-reciprocal or headless member, or if it links an English hub/spoke
   where a locale-native equivalent already exists and wasn't rewritten. Fix
   is always `npm run sync:locale-mesh -- --fix`.
+- **`node scripts/audit-hreflang-completeness.js`** (`npm run
+  check:hreflang-completeness`) — whole-site, blocking (like
+  `audit-hreflang.js`), wired into `.github/workflows/validate.yml`. Checks a
+  DIFFERENT failure mode than `audit-hreflang.js`/`check-locale-mesh.js`:
+  those two check pairwise reciprocity (if A links B, does B link back to
+  A), which can only inspect edges that actually exist. If two cluster
+  members BOTH omit each other — no edge in either direction — there is
+  nothing for a reciprocity walk to catch. This script instead reconstructs
+  true cluster membership independent of the edges being checked (a page's
+  cluster is whichever EN URL its own `hreflang="en"` entry points at, same
+  as `scripts/lib/translation-clusters.js` uses for translation-parity), then
+  requires every member to link every other member. `--fix` inserts the
+  missing entries; run unscoped, review the diff, commit. It also detects
+  (but never auto-fixes) **duplicate-page clusters** — two members that
+  declare the *same* locale for one EN parent, a content bug not a
+  completeness gap (see "Parallel sessions build the same thing under
+  different names" above) — surfaced in its output for manual resolution,
+  which does not block the exit code.
+  **Case study (2026-08-05):** the mutual-omission gap was first discovered
+  2026-07-26 by a routine reciprocity spot-check that found 5 of 8 members
+  of `library/cross-x-symbols/` (es, ko, pt, ar, id) each missing 1-2
+  sibling entries, invisible to `audit-hreflang.js` because every gap was a
+  mutual omission. This script was built the same day and a first site-wide
+  `--fix` run (PR #702) queued a backfill of 8,414 links across 1,702 pages
+  — but by the time that PR was actually landed the site had grown
+  substantially further (new locale pages, new clusters), so the branch was
+  regenerated from a fresh run against current `main` instead of merging the
+  stale diff (and regenerated a second time after `main` moved again mid-work
+  — see the PR's own thread for the exact commit this run landed against).
+  The fresh run found a larger gap, consistent with that growth: 1,980 pages
+  across 277 clusters missing 13,495 sibling entries in total, auto-fixed in
+  one pass. It surfaced zero duplicate-page clusters this
+  time, but did catch one different kind of pre-existing bug the auto-fixer
+  correctly refused to touch: `fi/kaunokirjoitus/index.html` already
+  declared `hreflang="no"` pointing at its own URL (a mislabeled entry, not
+  a real Norwegian sibling link) instead of `no/kursiv-tekst/` — flagged as
+  a conflict and left for manual resolution rather than silently
+  overwritten. Also watch for genuine **duplicate-page clusters** as a
+  byproduct of any run — two members that declare the same locale for one
+  EN parent (a content bug, not a completeness gap) — which this script
+  surfaces but never auto-fixes; resolve those by hand per the "Parallel
+  sessions" protocol (keep the more-integrated page, 301 the other, repoint
+  references). A related, structurally-hidden variant is a page that never
+  declares `hreflang="en"` at all — invisible to this script's own
+  cluster-membership detection, which requires that declaration — so an
+  occasional manual spot-check for headless pages (`audit-hreflang.js`
+  already reports these as "Headless targets") remains worthwhile alongside
+  this tool.
 - **`node scripts/check-locale-parent-tier.js <path> <locale>`** (`npm run
   check:locale-parent-tier`) — advisory (always exits 0). Prints the
   registry's decision for a candidate (parent, locale) pair and, if a
