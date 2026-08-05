@@ -2779,7 +2779,6 @@ PAGES.update({
 "pl-updates-unicode-18-data-premiery-potwierdzona": ("Unicode 18.0: data potwierdzona", "16 września 2026 — jedno pismo usunięte", m_doc, K_UPDATE),
 "pt-updates-data-de-lancamento-unicode-18-confirmada": ("Unicode 18.0: data confirmada", "16 de setembro de 2026 — uma escrita cortada", m_doc, K_UPDATE),
 "ru-updates-unicode-18-release-date-confirmed": ("Дата выхода Unicode 18.0", "16 сентября 2026 — одна письменность исключена", m_doc, K_UPDATE),
-"sv-updates-unicode-18-releasedatum-bekraftat": ("Unicode 18.0: datum bekräftat", "16 september 2026 — ett skriftsystem struket", m_doc, K_UPDATE),
 "th-updates-unicode-18-release-date-confirmed": ("ยืนยันวันปล่อย Unicode 18.0", "16 กันยายน 2026 — ตัดอักษรออกหนึ่งชุด", m_doc, K_UPDATE),
 "tr-updates-unicode-18-cikis-tarihi-onaylandi": ("Unicode 18.0 çıkış tarihi onaylandı", "16 Eylül 2026 — bir yazı çıkarıldı", m_doc, K_UPDATE),
 "updates-unicode-18-most-anticipated-emoji": ("Unicode 18.0's New Emoji: Cracking Face Wins the Vote", "Pickle and Meteor round out the public's top 3", m_doc, K_UPDATE),
