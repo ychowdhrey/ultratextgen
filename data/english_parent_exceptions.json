@@ -99,6 +99,15 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/id/usecase/nama-discord-keren/",
+      "reason": "EN-parent-absent — no EN Discord-name page exists to be its parent: /discord/ is the generator hub and usecase/nickname-generator/ is the general nickname page, already claimed by id/usecase/nama-panggilan/. Ratified as local-only rather than force-fitted to either. Surfaced by the site-wide duplicate-claimant scan as a second id page claiming a parent another id page already owned; the fix was to drop the wrong parent claim, not to merge, because the two pages serve non-overlapping queries.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "GSC (Jul 2-28 2026) shows zero query overlap with the page that owns the nickname-generator parent: nama-discord-keren draws 118 impressions led by 'nama discord keren' (63) and 'nama role discord keren' (13), while id/usecase/nama-panggilan/ draws 28 led by 'buat nama panggilan keren' (5). EN side: no EN Discord-name page exists at all — this is an absent-parent claim, not a no-EN-demand claim, so the reverse-demand sweep should ask whether an EN Discord-name parent is worth building, not whether EN demand exists.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
     }
   ]
 }
