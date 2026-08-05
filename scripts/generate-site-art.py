@@ -1520,6 +1520,12 @@ PAGES = {
         m_gamepad, K_USE),
   "usecase-clan-tag-generator": ("Clan Tag Generator", "Stylish [TAG] maker with a shareable team template",
         m_gamepad, K_USE),
+  "usecase-free-fire-clan-tag-generator": ("Free Fire Clan Tag Generator", "A shared prefix your whole squad pastes into their name",
+        m_trophy, K_USE),
+  "es-usecase-tag-de-clan-free-fire": ("Tag para Clan de Free Fire", "Etiqueta corta que todo el clan comparte",
+        m_trophy, K_USE),
+  "pt-usecase-tag-de-cla-ff": ("Tag de Clã para Free Fire", "Etiqueta curta que todo o clã compartilha",
+        m_trophy, K_USE),
 
   # ---- gaming-name use cases (Indonesian) ----
   "id-usecase-nama-ff-keren": ("Nama FF Keren", "Simbol payung & font keren buat nickname Free Fire",
