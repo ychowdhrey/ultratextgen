@@ -1,0 +1,140 @@
+{
+  "slug": "belarusian-ruble-sign",
+  "page_type": "symbol",
+  "title": "Belarusian Ruble Sign (U+20C5): the Б With a Bar, Approved by the National Bank",
+  "meta_description": "The Belarusian ruble sign was approved by the National Bank of Belarus on 27 January 2026 and provisionally assigned to U+20C5, targeting Unicode 19.0. No font renders it yet — here is the design, its status, and what to type for BYN in the meantime.",
+  "canonical": "https://ultratextgen.com/symbol/belarusian-ruble-sign/",
+  "breadcrumb": "Belarusian Ruble Sign",
+  "hero_h1": "Belarusian Ruble Sign",
+  "hero_tagline": "Belarus's official currency symbol — a Cyrillic Б with a bar through its middle, approved by the National Bank in January 2026 and provisionally assigned to U+20C5. It is not in a released Unicode version yet, so nothing renders it today.",
+  "intro": "The Belarusian ruble sign is the official graphic symbol of the Belarusian ruble (ISO 4217 code BYN), approved by Resolution No. 25 of the Board of the National Bank of the Republic of Belarus on 27 January 2026. The design is the Cyrillic capital letter Б — the first letter of Беларусь (Belarus) — with an added horizontal line through the centre of the letter, parallel to its upper arm. The National Bank's own proposal describes that centre line as symbolising \"soundness, balance and stability\", and places the symbol deliberately within the visual family of crossbar-based currency signs like the dollar, pound and yen. The bank submitted it for encoding in March 2026 (proposal L2/26-089, filed by Roman Titov on the bank's behalf), and the Unicode Technical Committee provisionally assigned it to U+20C5 in the Currency Symbols block on 21 April 2026, targeting Unicode 19.0. That status matters: provisionally assigned is one step short of accepted, and Unicode 19.0 is not expected until well after Unicode 18.0's September 2026 release. So although the proposal notes that \"usage in general commerce within Belarus has already begun\", no operating system, keyboard or font ships the character, and it will render as an empty box or a missing-glyph placeholder wherever you paste it. Until then, Br and BYN remain the abbreviations that actually work.",
+  "date_published": "2026-08-05",
+  "date_modified": "2026-08-05",
+  "copy_pattern": "single",
+  "sections": [
+    {
+      "id": "belarusian-ruble-sign",
+      "label": "Belarusian Ruble Sign",
+      "h2": "Belarusian Ruble Sign",
+      "intro": "The provisionally assigned character itself. You can copy the codepoint, but expect a blank box — no released Unicode version contains it yet.",
+      "symbols": [
+        {
+          "char": "⃅",
+          "label": "Belarusian Ruble Sign (provisional, U+20C5, targeting Unicode 19.0)"
+        }
+      ]
+    },
+    {
+      "id": "what-to-use-now",
+      "label": "What to Use Now",
+      "h2": "What to Type for Belarusian Rubles Today",
+      "intro": "Until the sign is encoded and fonts ship it, these are the forms that render correctly everywhere.",
+      "symbols": [
+        {
+          "char": "Br",
+          "label": "Br — the Latin abbreviation used by the National Bank"
+        },
+        {
+          "char": "BYN",
+          "label": "BYN — the ISO 4217 currency code"
+        },
+        {
+          "char": "руб.",
+          "label": "руб. — the Cyrillic short form"
+        },
+        {
+          "char": "¤",
+          "label": "¤ — the generic currency sign, as a last resort"
+        }
+      ]
+    },
+    {
+      "id": "not-the-russian-ruble",
+      "label": "Not the Russian Ruble",
+      "h2": "The Sign It Is Most Often Confused With",
+      "intro": "The Belarusian and Russian rubles are separate currencies with separate symbols. The Russian one is already encoded and renders everywhere; the Belarusian one is neither.",
+      "symbols": [
+        {
+          "char": "₽",
+          "label": "₽ Russian Ruble Sign (U+20BD) — a different currency, encoded since Unicode 7.0"
+        },
+        {
+          "char": "Б",
+          "label": "Б Cyrillic Capital Be (U+0411) — the plain letter, without the centre bar"
+        }
+      ]
+    },
+    {
+      "id": "other-new-currency-signs",
+      "label": "Other New Currency Signs",
+      "h2": "Other Currency Signs Working Through the Same Pipeline",
+      "intro": "Recent national currency symbols at various stages of the same standard-to-keyboard journey.",
+      "symbols": [
+        {
+          "char": "⃁",
+          "label": "Saudi Riyal Sign (U+20C1) — final since Unicode 17.0"
+        },
+        {
+          "char": "⃃",
+          "label": "UAE Dirham Sign (U+20C3) — shipping in Unicode 18.0"
+        },
+        {
+          "char": "⃄",
+          "label": "Omani Rial Sign (U+20C4) — shipping in Unicode 18.0"
+        },
+        {
+          "char": "⃂",
+          "label": "Rufiyaa Sign (U+20C2) — shipping in Unicode 18.0"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the Belarusian ruble sign?",
+      "a": "It is the official graphic symbol of the Belarusian ruble (BYN), approved by Resolution No. 25 of the Board of the National Bank of the Republic of Belarus on 27 January 2026. The design is the Cyrillic capital letter Б, the first letter of Беларусь, with a horizontal line added through the centre of the letter, parallel to its upper arm."
+    },
+    {
+      "q": "Why does the Belarusian ruble sign show as an empty box?",
+      "a": "Because it is not in a released version of Unicode yet. The character was provisionally assigned to U+20C5 on 21 April 2026 and targets Unicode 19.0, which has not been published. No font covers the codepoint, so it renders as a blank box or a missing-glyph placeholder everywhere."
+    },
+    {
+      "q": "When will I be able to type the Belarusian ruble sign?",
+      "a": "Not before Unicode 19.0 publishes, and in practice later than that. Provisional assignment is one step short of formal acceptance, and even after a character is published, fonts, keyboards and operating systems each add support on their own schedules — a gap usually measured in months to years."
+    },
+    {
+      "q": "Is the Belarusian ruble sign the same as the Russian ruble sign?",
+      "a": "No. They are different currencies with different symbols. The Russian ruble sign is ₽ (U+20BD), encoded in Unicode 7.0 and rendering reliably everywhere. The Belarusian ruble sign is a separate character at U+20C5, based on the Cyrillic letter Б rather than Р, and is not yet encoded in any released version."
+    },
+    {
+      "q": "What should I use for Belarusian rubles in the meantime?",
+      "a": "Br is the Latin abbreviation used by the National Bank itself, and BYN is the ISO 4217 code — both render correctly everywhere. The Cyrillic short form руб. is also common in Belarusian and Russian text."
+    },
+    {
+      "q": "Who proposed the Belarusian ruble sign to Unicode?",
+      "a": "Roman Titov, Deputy Head of the Cash Circulation Directorate, filed the proposal on behalf of the National Bank of the Republic of Belarus. It was submitted on 5 March 2026 as document L2/26-089 and asks for a single character in the existing Currency Symbols block."
+    }
+  ],
+  "related": [
+    {
+      "href": "/library/currency-symbols/",
+      "title": "Currency Symbols",
+      "desc": "Every world currency symbol you can already copy and paste today."
+    },
+    {
+      "href": "/symbol/ruble-sign/",
+      "title": "Ruble Sign",
+      "desc": "The Russian ruble ₽ — the encoded, renderable symbol this one is confused with."
+    },
+    {
+      "href": "/symbol/saudi-riyal-sign/",
+      "title": "Saudi Riyal Sign",
+      "desc": "A national currency sign that already cleared the same pipeline."
+    },
+    {
+      "href": "/updates/unicode-18-release-date-confirmed/",
+      "title": "Unicode 18.0 Release Date",
+      "desc": "Where Unicode 19.0's preliminary repertoire, including this sign, currently stands."
+    }
+  ]
+}
