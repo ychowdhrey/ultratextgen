@@ -50,7 +50,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>YouTube Font Generator — Channel Name, Description & Comments | UltraTextGen</title>
-  <meta name="description" content="Style your YouTube channel name and profile text with copy-ready Unicode fonts. Switch destinations first to avoid handle and title formatting failures.">
+  <meta name="description" content="Style your YouTube channel name with copy-ready Unicode fonts, checked live against YouTube's real name and @handle rules. Destination-aware guidance for descriptions, comments, and titles.">
   <link rel="canonical" href="https://ultratextgen.com/youtube/">
   <meta property="og:title" content="YouTube Font Generator — Channel Name, Description & Comments | UltraTextGen">
   <meta property="og:description" content="Generate styled text for YouTube channel names, descriptions, and comments with destination-aware safety guidance.">
@@ -79,18 +79,10 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What font does YouTube use by default?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "YouTube uses Roboto for most interface text and YouTube Sans for logo and brand surfaces."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Do fancy Unicode fonts work in YouTube channel names?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Channel names, descriptions, and comments support Unicode text styles."
+        "text": "Yes. Channel names, descriptions, and comments accept Unicode text styles. Keep the name readable — since 2022 YouTube can reject names spelled entirely in lookalike special characters as an impersonation measure."
       }
     },
     {
@@ -98,7 +90,39 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       "name": "Can I use styled text in a YouTube @handle?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Handles are ASCII only (letters, numbers, _, -, .). Use styled text in your channel name instead."
+        "text": "No. Handles only allow letters and numbers plus periods, underscores, and hyphens (never at the start or end), 3–30 characters. Use styled text in your channel name instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often can you change your YouTube channel name or handle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Twice within a 14-day period, for both the channel name and the handle. Changing your channel name removes your verification badge, and a changed handle is held for 14 days in case you want to switch back."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does YouTube say my handle is taken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Handles are unique across all of YouTube, and deleted or inactive channels can still hold one. YouTube also rejects handles with disallowed characters, which can read like the name being taken. Try adding periods, numbers, or underscores to a plain-text version."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do styled fonts work in YouTube video titles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Styled Unicode does save in video titles, but search doesn't read a styled word as its plain spelling and screen readers may struggle with it. Keep keyword words plain and use styling as a short visual hook."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What font does YouTube use by default?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YouTube uses Roboto for most interface text and YouTube Sans for the logo and brand styling."
       }
     }
   ]
@@ -170,7 +194,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     <div class="hero-inner">
       <div class="hero-card">
         <h1 class="hero-headline">YouTube Font Generator — Channel Name First</h1>
-        <p class="hero-tagline">Style your YouTube channel name, About text, and descriptions with 100+ Unicode fonts. Pick your destination first so handles and titles don't silently fail.</p>
+        <p class="hero-tagline">Style your YouTube channel name, About text, and descriptions with 100+ Unicode fonts — checked live against YouTube's real name and @handle rules before you paste.</p>
 
         <div class="input-wrapper">
           <textarea class="main-input" id="mainInput" placeholder="Type your YouTube channel name or profile text..." maxlength="50"></textarea>
@@ -201,6 +225,11 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
           <div class="youtube-context-copy-status sr-only" id="youtubeCopyAnnounce" aria-live="polite"></div>
         </div>
 
+        <div class="decoration-section namecheck-inline">
+          <div class="decoration-label">YouTube name check — live as you type</div>
+          <div id="ytNameChecker"></div>
+        </div>
+
         <div class="decoration-section">
           <div class="decoration-label">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -208,15 +237,16 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
             </svg>
             Add decoration to results
           </div>
+          <button class="surprise-btn" id="surpriseBtn" type="button">🎲 Surprise me</button>
 
           <div class="decoration-tabs">
-            <button class="decoration-tab active" data-deco-tab="symbols">Symbols</button>
+            <button class="decoration-tab active" data-deco-tab="yt">YouTube</button>
+            <button class="decoration-tab" data-deco-tab="symbols">Symbols</button>
             <button class="decoration-tab" data-deco-tab="frames">Frames</button>
             <button class="decoration-tab" data-deco-tab="dividers">Dividers</button>
             <button class="decoration-tab" data-deco-tab="arrows">Arrows</button>
             <button class="decoration-tab" data-deco-tab="minimal">Minimal</button>
             <button class="decoration-tab" data-deco-tab="emojis">Emojis</button>
-            <button class="decoration-tab" data-deco-tab="flags">All</button>
           </div>
 
           <div class="decoration-grid" id="decorationGrid"></div>
@@ -253,6 +283,38 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
+<section class="editorial-section" id="name-vs-handle">
+  <h2>Channel name vs @handle — two different fields, two different rules</h2>
+  <p class="section-subline">The most common YouTube naming mistake is treating these as one thing. Your channel name is a display label; your @handle is your unique URL identity — and they accept completely different characters.</p>
+  <div class="compare-grid">
+    <div class="compare-card variant-positive">
+      <span class="compare-badge">Channel name</span>
+      <h4>Free-form — style it here</h4>
+      <ul>
+        <li>Accepts Unicode fonts, symbols, and emoji.</li>
+        <li>Not unique — another channel can use the same name. A styled version is how you stand out.</li>
+        <li>Changeable twice within a 14-day period. Renaming removes your verification badge.</li>
+        <li>Keep it readable: since 2022, names spelled entirely in lookalike symbols can be rejected as impersonation.</li>
+      </ul>
+    </div>
+    <div class="compare-card variant-muted">
+      <span class="compare-badge">@Handle</span>
+      <h4>Locked-down — keep it plain</h4>
+      <ul>
+        <li>Letters and numbers only, plus <code>.</code> <code>_</code> <code>-</code> — never at the start or end. No fonts, no emoji, no spaces.</li>
+        <li>3–30 characters, unique across all of YouTube.</li>
+        <li>Changeable twice within a 14-day period; your old handle is held for 14 days, then anyone can claim it.</li>
+        <li>If yours is taken, YouTube's own advice is to add periods, numbers, or underscores.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="editorial-block">
+    <p>That split is why a "taken" message doesn't always mean what it says: a handle held by a deleted channel still reads as taken, and a handle containing disallowed characters is <em>rejected</em> — which looks identical to unavailable. Check your name against both fields in the live checker above before you spend a rename.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="editorial-section" id="field-guide">
   <h2>YouTube text fields and what actually works</h2>
   <p class="section-subline">Set the destination first so character limits and Unicode support are clear before you copy.</p>
@@ -270,9 +332,9 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
       <tbody>
         <tr>
           <td>Channel name (display name)</td>
-          <td>~50 chars (verify)</td>
+          <td>~50 chars (client limit)</td>
           <td>Yes</td>
-          <td>Primary target for styling. Keep it readable.</td>
+          <td>Primary target for styling. Keep it readable — avoid all-symbol names.</td>
         </tr>
         <tr>
           <td>Video description</td>
@@ -282,7 +344,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
         <tr>
           <td>Channel description (About)</td>
-          <td>1,000 chars (verify)</td>
+          <td>1,000 chars (reported)</td>
           <td>Yes</td>
           <td>Use clean styles for the first line, then plain text detail.</td>
         </tr>
@@ -300,15 +362,15 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
         </tr>
         <tr>
           <td>@Handle</td>
-          <td>3-30 chars</td>
-          <td>No (ASCII only)</td>
+          <td>3–30 chars</td>
+          <td>No (letters, numbers, . _ -)</td>
           <td>Get ideas in <a href="/youtube/name-generator/">YouTube Name Generator</a>. Do not paste Unicode.</td>
         </tr>
         <tr>
           <td>Video title</td>
           <td>100 chars</td>
-          <td>No (stripped)</td>
-          <td>Keep titles plain text for readability and search.</td>
+          <td>Yes (use with care)</td>
+          <td>Unicode saves, but keep keyword words plain so search can read them.</td>
         </tr>
       </tbody>
     </table>
@@ -317,19 +379,62 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
 
 <div class="section-divider"></div>
 
-<section class="editorial-section">
-  <h2>Where YouTube fonts work best</h2>
+<section class="editorial-section" id="honest-guide">
+  <h2>Where fancy text helps on YouTube — and where it hurts</h2>
+  <p class="section-subline">Most font generators tell you styled text works everywhere. On YouTube that's half true, and the other half costs you discoverability. Here's the honest split.</p>
   <div class="editorial-block">
-    <h3>Channel name</h3>
-    <p>Use one high-contrast style so your channel identity stays readable in search and recommendations.</p>
+    <h3>Where it helps</h3>
+    <p>A <strong>decorated-but-readable channel name</strong> is the highest-value spot: names aren't unique on YouTube, so ꜱᴛʏʟᴇᴅ letters or a light frame is how two channels with the same name look different. Styling also earns its place as <strong>section headers in descriptions</strong> and as <strong>emphasis in comments</strong> — one styled phrase, not a styled wall.</p>
   </div>
   <div class="editorial-block">
-    <h3>Video and channel descriptions</h3>
-    <p>Use subtle styling for emphasis, but keep primary keywords and entity names in plain text for search parsing.</p>
+    <h3>Where it hurts</h3>
+    <p>Search doesn't read 𝔾𝕒𝕞𝕚𝕟𝕘 as "Gaming" — a styled keyword in a title or description is invisible to the query it should match, and screen readers announce styled letters awkwardly or skip them. Heavy lookalike-character text is also the signature of comment spam, so decorated comment walls risk being held by spam filters. Keep every word you want <em>found</em> in plain text.</p>
   </div>
   <div class="editorial-block">
-    <h3>Comments</h3>
-    <p>Comments are a safe place to test style visibility. Use short lines and avoid over-decoration.</p>
+    <h3>The impersonation line</h3>
+    <p>Since 2022 YouTube limits channel names spelled entirely in lookalike special characters — its own example is "¥ouⓉube" — because that pattern is a spam and impersonation tactic. A styled-but-legible name passes; an all-symbol name can be rejected. The checker above flags the risky characters in yours.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section" id="comment-syntax">
+  <h2>Bold in YouTube comments — the native syntax</h2>
+  <div class="editorial-block">
+    <p>YouTube comments have built-in formatting, no Unicode needed: <code>*bold*</code> makes <strong>bold</strong>, <code>_italic_</code> makes <em>italic</em>, and <code>-strikethrough-</code> strikes through. The catch that trips everyone up: it's a <strong>single</strong> asterisk — Discord/Reddit-style <code>**double asterisks**</code> won't work here. There's no native underline at all, which is where Unicode styles come in.</p>
+    <p>For copy-ready styled comment examples, use the <a href="/usecase/comment-font/">Comment Font Generator</a>.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="editorial-section" id="name-examples">
+  <span class="article-section-label">Ready-Made Examples</span>
+  <h2>Styled YouTube channel name examples (click to copy)</h2>
+  <p class="uname-note">Styled but readable — the pattern that passes YouTube's name rules and still stands out. Swap in your own name above to restyle any of these.</p>
+
+  <h3>Clean styled</h3>
+  <div class="uname-grid">
+    <button class="uname-chip symbol-tile" data-symbol="𝗡𝗼𝘃𝗮 𝗦𝘁𝘂𝗱𝗶𝗼" aria-label="Copy name">𝗡𝗼𝘃𝗮 𝗦𝘁𝘂𝗱𝗶𝗼</button>
+    <button class="uname-chip symbol-tile" data-symbol="𝘓𝘶𝘯𝘢 𝘝𝘭𝘰𝘨𝘴" aria-label="Copy name">𝘓𝘶𝘯𝘢 𝘝𝘭𝘰𝘨𝘴</button>
+    <button class="uname-chip symbol-tile" data-symbol="ᴀᴜʀᴀ ᴇᴅɪᴛꜱ" aria-label="Copy name">ᴀᴜʀᴀ ᴇᴅɪᴛꜱ</button>
+    <button class="uname-chip symbol-tile" data-symbol="𝒟𝓇𝑒𝒶𝓂 𝒟𝒾𝒶𝓇𝓎" aria-label="Copy name">𝒟𝓇𝑒𝒶𝓂 𝒟𝒾𝒶𝓇𝓎</button>
+    <button class="uname-chip symbol-tile" data-symbol="𝙋𝙞𝙭𝙚𝙡 𝙋𝙡𝙖𝙮𝙨" aria-label="Copy name">𝙋𝙞𝙭𝙚𝙡 𝙋𝙡𝙖𝙮𝙨</button>
+    <button class="uname-chip symbol-tile" data-symbol="𝔾𝕝𝕠𝕨 ℍ𝕦𝕓" aria-label="Copy name">𝔾𝕝𝕠𝕨 ℍ𝕦𝕓</button>
+  </div>
+
+  <h3>Framed</h3>
+  <div class="uname-grid">
+    <button class="uname-chip symbol-tile" data-symbol="▶ 𝗡𝗼𝘃𝗮 ◀" aria-label="Copy name">▶ 𝗡𝗼𝘃𝗮 ◀</button>
+    <button class="uname-chip symbol-tile" data-symbol="♪ 𝘔𝘦𝘭𝘰𝘥𝘺 ♪" aria-label="Copy name">♪ 𝘔𝘦𝘭𝘰𝘥𝘺 ♪</button>
+    <button class="uname-chip symbol-tile" data-symbol="✦ ᴀᴜʀᴀ ✦" aria-label="Copy name">✦ ᴀᴜʀᴀ ✦</button>
+    <button class="uname-chip symbol-tile" data-symbol="【𝙋𝙞𝙭𝙚𝙡】" aria-label="Copy name">【𝙋𝙞𝙭𝙚𝙡】</button>
+    <button class="uname-chip symbol-tile" data-symbol="★彡 𝐕𝐢𝐛𝐞 彡★" aria-label="Copy name">★彡 𝐕𝐢𝐛𝐞 彡★</button>
+    <button class="uname-chip symbol-tile" data-symbol="🎬 𝑺𝒕𝒖𝒅𝒊𝒐" aria-label="Copy name">🎬 𝑺𝒕𝒖𝒅𝒊𝒐</button>
+  </div>
+
+  <div class="editorial-block">
+    <p>These are styling examples, not name ideas — for keyword-and-vibe name ideas, use the <a href="/youtube/name-generator/">YouTube Channel Name Generator</a>, then bring your favorite back here to style it.</p>
   </div>
 </section>
 
@@ -340,18 +445,18 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
   <div class="compare-grid">
     <div class="compare-card variant-muted">
       <span class="compare-badge">Issue</span>
+      <h4>"My handle says it's taken — by nothing"</h4>
+      <ul><li>Deleted and inactive channels still hold their handles, and a handle with disallowed characters is rejected with the same message. Add periods, numbers, or underscores to a plain version and retry.</li></ul>
+    </div>
+    <div class="compare-card variant-muted">
+      <span class="compare-badge">Issue</span>
       <h4>"Styled text won't save in @handle"</h4>
-      <ul><li>Handles are ASCII only. Use channel name styling and keep handles plain.</li></ul>
+      <ul><li>Handles only accept letters, numbers, and . _ - — no Unicode fonts, ever. Style your channel name instead and keep the handle plain.</li></ul>
     </div>
     <div class="compare-card variant-muted">
       <span class="compare-badge">Issue</span>
-      <h4>"My video title lost formatting"</h4>
-      <ul><li>YouTube strips title styling. Keep titles plain text and style other fields instead.</li></ul>
-    </div>
-    <div class="compare-card variant-muted">
-      <span class="compare-badge">Issue</span>
-      <h4>"Styled text looks different on another device"</h4>
-      <ul><li>Unicode characters are the same, but glyph rendering differs by platform and font stack.</li></ul>
+      <h4>"My name shows boxes □ on another device"</h4>
+      <ul><li>Glyph rendering differs by device and font stack. The live checker above flags exactly which characters in your name are the risky ones — swap those for widely-supported styles.</li></ul>
     </div>
   </div>
 </section>
@@ -422,7 +527,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     Do fancy Unicode fonts work in YouTube channel names?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
-  <div class="faq-answer">Yes. Channel names, descriptions, and comments support Unicode text styles.</div>
+  <div class="faq-answer">Yes. Channel names, descriptions, and comments accept Unicode text styles. Keep the name readable — since 2022 YouTube can reject names spelled entirely in lookalike special characters as an impersonation measure.</div>
 </div>
 
 <div class="faq-item">
@@ -430,7 +535,23 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     Can I use styled text in a YouTube @handle?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
-  <div class="faq-answer">No. Handles are ASCII only (letters, numbers, _, -, .). Use styled text in your channel name instead.</div>
+  <div class="faq-answer">No. Handles only allow letters and numbers plus periods, underscores, and hyphens (never at the start or end), 3–30 characters. Use styled text in your channel name instead.</div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    How often can you change your YouTube channel name or handle?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <div class="faq-answer">Twice within a 14-day period, for both the channel name and the handle. Changing your channel name removes your verification badge, and a changed handle is held for 14 days in case you want to switch back.</div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" type="button">
+    Why does YouTube say my handle is taken?
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <div class="faq-answer">Handles are unique across all of YouTube, and deleted or inactive channels can still hold one. YouTube also rejects handles with disallowed characters, which can read like the name being taken. Try adding periods, numbers, or underscores to a plain-text version.</div>
 </div>
 
 <div class="faq-item">
@@ -438,7 +559,7 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     Do styled fonts work in YouTube video titles?
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </button>
-  <div class="faq-answer">YouTube usually strips title styling, so keep titles plain text and style other surfaces like channel name or description.</div>
+  <div class="faq-answer">Styled Unicode does save in video titles, but search doesn't read a styled word as its plain spelling and screen readers may struggle with it. Keep keyword words plain and use styling as a short visual hook.</div>
 </div>
 
 <div class="faq-item">
@@ -453,12 +574,70 @@ window.__h82AlnkH6D91__("WyJwdWItODI0MjMyNDE2NDQxMzk0NSIsW251bGwsbnVsbCxudWxsLCJ
     </div>
   </footer>
 
-  <script>window.UTG_DECORATOR_PROFILE = "youtube";</script>
-  <script src="/decorators.js"></script>
+  <!-- Flair engine: shared decoration packs (js/flair/flair-engine.js). Loaded
+       before the config so compose() is ready; non-deferred so it runs ahead of
+       the deferred generator scripts. -->
+  <script src="/js/flair/flair-engine.js"></script>
+  <!-- Page config: build the "YouTube" decoration tab from play/music/live
+       frames plus the shared bracket pack. Merged over the default tabs (see
+       script.js) and applied live to every generated style card. -->
+  <script>
+    window.UTG_DEFAULT_DECO_TAB = "yt";
+    window.UTG_DECORATIONS =
+      window.UltraTextGen && window.UltraTextGen.flair
+        ? window.UltraTextGen.flair.compose({
+            yt: [
+              [
+                { text: "▶ text ◀", prefix: "▶ ", suffix: " ◀" },
+                { text: "▶text◀", prefix: "▶", suffix: "◀" },
+                { text: "♪ text ♪", prefix: "♪ ", suffix: " ♪" },
+                { text: "♫text♫", prefix: "♫", suffix: "♫" },
+                { text: "» text «", prefix: "» ", suffix: " «" },
+                { text: "✦text✦", prefix: "✦", suffix: "✦" },
+                { text: "★彡text彡★", prefix: "★彡", suffix: "彡★" },
+                { text: "➤ text", prefix: "➤ ", suffix: "" },
+                { text: "🎬 text", prefix: "🎬 ", suffix: "" },
+                { text: "🔴 text", prefix: "🔴 ", suffix: "" }
+              ],
+              "brackets"
+            ]
+          })
+        : undefined;
+  </script>
   <script src="/styles.js" defer></script>
   <script src="/renderer.js" defer></script>
   <script src="/script.js" defer></script>
   <script src="youtube-context.js" defer></script>
+  <script src="/symbol-explorer.js" defer></script>
+  <script src="/js/gamename/game-rules.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      "use strict";
+      const ns = window.UltraTextGen;
+      if (ns && ns.gameRules) {
+        ns.gameRules.initChecker({
+          mount: "ytNameChecker",
+          games: ["youtube", "youtubeHandle"],
+          inputId: "mainInput",
+          text: {
+            placeholder: "Your name from above — or edit to test another",
+            ok: "Fits YouTube ✓",
+            warn: "May show boxes ▯ on some devices",
+            fail: "YouTube will reject this",
+            empty: "Type your name above — it checks live",
+            charsToWatch: "Check these characters:",
+            issue: {
+              "over-limit": "Too long — shorten the base name or drop a symbol.",
+              "charset": "Handles only allow plain letters and numbers plus . _ - (not at the start or end). Style your channel name instead.",
+              "space": "Handles can't contain spaces.",
+              "too-short": "Handles need at least 3 characters.",
+              "unknown-chars": "These characters are rarely supported and may render as boxes:"
+            }
+          }
+        });
+      }
+    });
+  </script>
 
 <script src="/footer.js" defer></script>
   <script src="/decorations-showcase.js"></script>
