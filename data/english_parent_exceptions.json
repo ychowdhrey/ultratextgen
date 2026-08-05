@@ -99,6 +99,42 @@
       "lastRechecked": null,
       "nextRecheck": "2026-09-01",
       "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/id/usecase/nama-discord-keren/",
+      "reason": "Surfaced from a site-wide duplicate-claimant scan: was a second ID page declaring usecase/nickname-generator/ as its EN parent, which id/usecase/nama-panggilan/ already owns. GSC (Jul 2-28) shows zero query overlap between the two (nama-discord-keren led by 'nama discord keren'/'nama role discord keren'; nama-panggilan led by 'buat nama panggilan keren') — not a duplicate of nama-panggilan, a genuinely different Discord-specific page. no-EN-demand-by-construction claim: this site has no EN Discord-name parent at all (/discord/ is the generator hub, usecase/nickname-generator/ is the general nickname page, neither is Discord-specific).",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "Asserted at ratification from the site's own structure (no EN Discord-name usecase page exists to be a parent), not instrument-checked.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/nl/sierlijke-letters/",
+      "reason": "Surfaced from the same duplicate-claimant scan as nama-discord-keren/ (2026-08-03): was a second NL page declaring category/cursive-fonts/ as its EN parent, which nl/cursieve-letters/ already owns — but in Dutch these are different concepts (cursief = italic/slanted; sierletters = ornamental/calligraphic). GSC confirms the split decisively: sierlijke-letters draws 1,768 imp / 45 clicks ('sierletters' alone 795/29) vs. cursieve-letters' 200 imp / 1 click, despite being the smaller, less-linked page — merging would have 301'd away the best-performing NL asset on the site. No EN 'sierletters' parent exists. Rule 3 was applied in the same change: nl/cursieve-letters/ had 'sierlijke letters A-Z' in its own title/meta (targeting this page's head term); retitled to 'cursief schrift A-Z'.",
+      "agreed": "2026-08-03",
+      "enDemandBasis": "GSC-confirmed real, independent NL demand for 'sierletters' (795 imp / 29 clicks on that query alone) — the EN side is asserted (no 'ornamental letters' EN parent exists), not instrument-checked against EN GSC/SERP.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/font-copia-e-incolla/",
+      "reason": "IT sibling on the fr/changeur-de-police/ cluster (no EN member — same EN-SERP-consolidation claim as that trio). Keeps the slot as the concept-equivalent of 'changeur de police'.",
+      "agreed": "2026-07-26",
+      "enDemandBasis": "Same inferred-not-verified EN consolidation premise as fr/calligraphie/ ('font changer'/'font converter' EN SERP believed to pull the same competitor set as 'font generator') — not independently re-verified for Italian demand specifically.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
+    },
+    {
+      "localeUrl": "https://ultratextgen.com/it/caratteri-speciali/",
+      "reason": "Correction, 2026-08-02: previously also claimed a slot on the fr/changeur-de-police/ cluster, making two IT claimants on one hreflang cluster — invalid, flagged by audit-hreflang.js as a stacked-cluster conflict. it/font-copia-e-incolla/ kept the concept-equivalent slot; this page now stands alone with only a self-reference + homepage x-default, same ratified no-EN-parent shape as the rest of this ledger.",
+      "agreed": "2026-08-02",
+      "enDemandBasis": "Not independently assessed — inherited the fr/changeur-de-police/ cluster's premise at the point it was split out, rather than its own EN demand check.",
+      "lastRechecked": null,
+      "nextRecheck": "2026-09-01",
+      "verdict": null
     }
   ]
 }

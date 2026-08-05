@@ -67,6 +67,28 @@ jobs:
     permissions:
       contents: read
 
+    # REQUIRED for any of the gating below to work at all. Every validator
+    # step below pipes into `tee` so its output can be replayed into the step
+    # summary — and a shell without `pipefail` reports the exit code of the
+    # LAST command in a pipeline, which is always `tee`, always 0. GitHub's
+    # default `run:` shell is `bash -e {0}` (no pipefail), so from the day
+    # this workflow was written (2026-07-22) until this fix EVERY validator
+    # step recorded `outcome: success` no matter what the validator returned,
+    # and the "fail the job if any gating validator reported problems" step
+    # below could never fire. Setting `shell: bash` here makes Actions use
+    # `bash --noprofile --norc -eo pipefail {0}`, so the validator's exit
+    # code survives the pipe.
+    #
+    # Found via a Retire-bucket stale-branch scan (ultratextgen-lab-'s
+    # gsc-breakout / portfolio-scan pass, 2026-08-05): a fix for this exact
+    # bug was drafted 2026-07-26 (branch
+    # claude/faqpage-schema-content-fix-gcaa10) but never merged — it sat
+    # stale for 10 days while every "required, blocking" check documented in
+    # this file's own comments and in CLAUDE.md was silently non-blocking.
+    defaults:
+      run:
+        shell: bash
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
