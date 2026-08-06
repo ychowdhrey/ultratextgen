@@ -246,11 +246,14 @@ default-mirror?*
 {
   "locales": {
     "fr": { "tier": 1, "action": "deepen-then-mirror-core", "hold": false },
-    "vi": { "tier": 2, "action": "qualify-then-mirror-core", "hold": true, "holdReason": "..." },
+    "<code>": { "tier": 2, "action": "qualify-then-mirror-core", "hold": true, "holdReason": "..." },
     ...
   }
 }
 ```
+
+(`hold` is a live mechanism, not vi-specific — see the 2026-08-06 note below on
+why `vi` no longer uses it.)
 
 Every one of the 29 canonical locale codes (the same list
 `scripts/check-image-assets.py` uses) has an entry, so no locale tool has to
@@ -265,15 +268,21 @@ prerequisites.)
 | Tier | Locales | Action |
 |---|---|---|
 | **1** — deepen + mirror Core now | id, pt, de, fr, tr, it, es | `deepen-then-mirror-core` |
-| **2** — qualify via the 7-point gate, then mirror Core | pl, nl, ar, ko, ja, ru, th, **vi** (HOLD) | `qualify-then-mirror-core` |
+| **2** — qualify via the 7-point gate, then mirror Core | pl, nl, ar, ko, ja, ru, th, vi | `qualify-then-mirror-core` |
 | **3** — hold/stub, no spec mirroring | hi, tl, hu, bs, cs, da, hr, ms, no, ro, sk, sr, sv, zh-tw | `hold-stub` |
 
-**`vi` is Tier 2 but `hold: true`.** Per the strategy that authorized this
-registry: vi's problem is an **authority/indexing gap, not a content gap** —
-do not add vi content; it needs backlinks, not translations. `decide()`
-(§3) treats a held locale the same as a stub for build purposes (its own
-`skip-hold-locale` decision, distinct from `skip-stub-locale` only so the
-reason surfaces correctly).
+**`vi`'s hold was lifted 2026-08-06 (user decision).** It carried `hold: true`
+from this registry's 2026-07-24 launch through 2026-08-05 on an
+**authority/indexing gap, not a content gap** basis — do not add vi content,
+it needs backlinks, not translations. That framing was already stale the day
+the registry shipped: the private research repo's
+`docs/locale-parent-strategy-2026-07-23.md` had recorded, one day earlier,
+that vi had recovered (109,278 impressions / 3,436 clicks / weighted
+position 6.2, `docs/locale-build-backlog-2026-07-23.md` caveats) and that
+the HOLD framing should be updated — that correction never made it into this
+registry until now. `vi` is plain Tier 2 going forward, same as its
+qualify-then-mirror-Core siblings; the `decide()` mechanism below (§3) still
+supports holding a locale, it's just not currently applied to any of the 29.
 
 ### `scripts/lib/locale-parent-registry.js`
 
@@ -302,9 +311,10 @@ stop wins. Steps 1-3 are what `decide()` implements; steps 4-5 are
 procedural and handled elsewhere (noted below).
 
 1. **Is `L` held or a Tier-3 stub?** → `skip-hold-locale` / `skip-stub-locale`.
-   No spec mirroring. (`vi`'s hold is checked first, ahead of the general
+   No spec mirroring. (A held locale is checked first, ahead of the general
    Tier-3 check, so its distinct reason — authority gap, not stub — surfaces
-   correctly.)
+   correctly. No locale currently carries `hold: true` — see the `vi` note
+   in §2 above.)
 2. **Is `P` script-incompatible with `L`?** (`P` is Core with
    `scriptIndependent: false`, and `L` is one of the CJK/Arabic/Indic locales
    — `ar, hi, ja, ko, th, zh-tw`) → `skip-script-incompatible`. Substitute
@@ -442,7 +452,11 @@ node scripts/check-locale-parent-tier.js category/bold-fonts ja
 # -> DECISION: skip-script-incompatible (ledger entry required to override)
 
 node scripts/check-locale-parent-tier.js usecase/free-fire-name-generator vi
-# -> DECISION: skip-hold-locale (vi is on hold — do not add vi content)
+# -> DECISION: gate (usecase/* is gated tail; vi is plain Tier 2, hold lifted
+#    2026-08-06 — this is the ordinary gated-tail path, not a hold skip)
+
+# skip-hold-locale fires only while some locale carries hold: true in
+# data/locale_qualification_tiers.json — none does right now (see §2).
 ```
 
 Always exits 0 — it's advisory, not a gate.
